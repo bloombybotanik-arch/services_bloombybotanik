@@ -1,6 +1,10 @@
 {
-  "name": "Bloom by BotaniK - Single Post Template",
-  "description": "Template éditorial asymétrique pour Bloom by BotaniK. Intègre une navigation latérale, l'offre hybride souveraineté vs délégation, et SEO avancé.",
-  "requestFramePermissions": [],
-  "majorCapabilities": []
+  "name": "Bloom by BotaniK - Souveraineté Sanitaire",
+  "description": "Plateforme premium Bloom by BotaniK. Incarne la souveraineté sanitaire via l'autonomie botanique, l'extraction intelligente (BloomLab) et l'éducation systémique.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

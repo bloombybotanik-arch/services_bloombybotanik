@@ -1,0 +1,432 @@
+[
+  {
+    "plant_id": "vitex_agnus_castus",
+    "nom_commun": "Gattilier (Vitex)",
+    "nom_latin": "Vitex agnus-castus",
+    "partie_utilisee": "Fruits séchés",
+    "famille_bloom": "Chef d'Orchestre (Régulateur Hormonal)",
+    "terrains_cibles": ["T8_Hormonal", "T5_HPA", "T7_Psycho_emotionnel"],
+    "actifs_cles": [
+      {"nom": "Diterpènes cycliques", "polarite": "Liposoluble"},
+      {"nom": "Flavonoïdes (Casticine)", "polarite": "Liposoluble"},
+      {"nom": "Iridoïdes (Agnuside)", "polarite": "Hydrosoluble"}
+    ],
+    "preuve_scientifique": "Action dopaminergique au niveau de l'hypophyse, inhibant la sécrétion de prolactine et favorisant la production de progestérone par le corps jaune. Maître du syndrome prémenstruel et de l'insuffisance lutéale.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les diterpènes (actifs endocriniens majeurs) sont strictement liposolubles. Une infusion aqueuse rate totalement l'action sur la progestérone.",
+      "phase_A": {"temp": "70°C", "temps": "2h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Iridoïdes (Agnuside)"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Diterpènes, Casticine"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Fruits de Vitex (légèrement concassées)", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Fruits de Vitex (poudre)", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["Concassez les 50g de fruits pour la Phase A (évitez la poudre fine pour ne pas géifier l'eau avec les mucilages).", "Mixez les 25g restants en poudre pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de fruits concassés.", "Fermez, mode manuel 'OIL', TEMP 70°C, TEMPS 2h00. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de poudre.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez fermement le marc.", "Le liquide sera brun foncé. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Magnésium Bisglycinate", "dose": "300mg/jour (phase lutéale)", "role": "Réduit les spasmes utérins et soutient la méthylation hépatique des œstrogènes."},
+        {"nom": "Vitamine B6 (P-5-P)", "dose": "50mg/jour", "role": "Cofacteur essentiel de la synthèse de la progestérone et de la dopamine."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Gestion du stress (Cohérence cardiaque)", "frequence": "Quotidienne", "role": "Le cortisol élevé vole les précurseurs de la progestérone (pregnenolone steal). Calmer l'axe HPA est obligatoire pour que le Vitex fonctionne."}
+      ]
+    },
+    "convergence_ancestrale": "Herbe des 'veuves' et des moines au Moyen Âge. Utilisé depuis l'Antiquité pour l'équilibre féminin.",
+    "synergies_recommandees": ["alchemilla_vulgaris", "shatavari", "paeonia_lactiflora"],
+    "precautions": "Contre-indiqué en cas de prise de contraceptifs oraux, de traitements dopaminergiques ou d'antécédents de cancers hormono-dépendants sans avis médical. Action lente (3 cycles minimum)."
+  },
+  {
+    "plant_id": "nigella_sativa",
+    "nom_commun": "Nigelle",
+    "nom_latin": "Nigella sativa",
+    "partie_utilisee": "Graines séchées",
+    "famille_bloom": "Gâchette (Immunomodulateur & Anti-inflammatoire)",
+    "terrains_cibles": ["T4_Immunité", "T8_Inflammation", "T1_Intestin"],
+    "actifs_cles": [
+      {"nom": "Thymoquinone", "polarite": "Liposoluble"},
+      {"nom": "Nigellone", "polarite": "Liposoluble"},
+      {"nom": "Acides gras insaturés", "polarite": "Liposoluble"}
+    ],
+    "preuve_scientifique": "La thymoquinone est un puissant inhibiteur de NF-κB et des leucotriènes. Action antihistaminique, bronchodilatatrice et protectrice des muqueuses. Modulation fine de la réponse Th1/Th2.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "La thymoquinone est strictement lipophile et volatile. Une extraction aqueuse est inutile. Une chaleur >60°C oxyde les acides gras précieux de la graine.",
+      "phase_A": {"temp": "60°C", "temps": "1h30", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Saponines, protéines hydrosolubles"},
+      "phase_B": {"temp": "45°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Thymoquinone, Nigellone"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Graines de Nigelle (légèrement concassées)", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Graines de Nigelle (poudre)", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["Concassez légèrement les 50g pour la Phase A.", "Mixez les 25g restants pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de graines.", "Fermez, mode manuel 'OIL', TEMP 60°C, TEMPS 1h30. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de poudre.", "Fermez, mode manuel 'OIL', TEMP 45°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez fermement.", "Le liquide sera noir/brun très foncé, avec une odeur épicée. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Oméga-3 (EPA/DHA)", "dose": "2g/jour", "role": "Synergie anti-inflammatoire majeure avec la thymoquinone sur les membranes cellulaires."},
+        {"nom": "Vitamine D3", "dose": "Selon bilan", "role": "Indispensable à la modulation immunitaire (Treg) que la Nigelle soutient."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Respiration nasale", "frequence": "Quotidienne", "role": "La Nigelle ouvre les bronches ; la respiration nasale filtre et humidifie l'air, potentialisant l'effet respiratoire."}
+      ]
+    },
+    "convergence_ancestrale": "La 'graine de bénédiction' de l'Islam et de la médecine unani. Utilisée pour 'tout sauf la mort'.",
+    "synergies_recommandees": ["curcuma_longa", "boswellia_serrata", "echinacea_purpurea"],
+    "precautions": "Peut avoir un effet hypoglycémiant (attention aux traitements antidiabétiques). Déconseillé en début de grossesse (effet utérotonique à haute dose)."
+  },
+  {
+    "plant_id": "cordyceps_militaris",
+    "nom_commun": "Cordyceps",
+    "nom_latin": "Cordyceps militaris / sinensis",
+    "partie_utilisee": "Fruit (champignon) séché",
+    "famille_bloom": "Chef d'Orchestre (Énergie Mitochondriale)",
+    "terrains_cibles": ["T6_Mitochondrie", "T5_HPA", "T3_Immunité"],
+    "actifs_cles": [
+      {"nom": "Cordycépine", "polarite": "Hydrosoluble"},
+      {"nom": "Adénosine", "polarite": "Hydrosoluble"},
+      {"nom": "Stérols (Ergostérol)", "polarite": "Liposoluble"}
+    ],
+    "preuve_scientifique": "Augmentation de la production d'ATP mitochondrial, amélioration de l'utilisation de l'oxygène (VO2 max), et modulation de l'immunité via les bêta-glucanes.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "La paroi de chitine du champignon nécessite une chaleur prolongée (80°C) pour libérer les polysaccharides. Les stérols nécessitent un solvant organique.",
+      "phase_A": {"temp": "80°C", "temps": "3h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Polysaccharides, Cordycépine"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Stérols, composés lipophiles"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Cordyceps en poudre grossière", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Cordyceps en poudre fine", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["Utilisez du Cordyceps déjà broyé. Séparez 50g pour la Phase A et 25g pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de poudre.", "Fermez, mode manuel 'OIL', TEMP 80°C, TEMPS 3h00. START."],
+      "transition": ["1. Éteignez. Laissez reposer 30 minutes (la poudre retient la chaleur).", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de poudre fine.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine double épaisseur. Pressez très fermement.", "Le liquide sera brun doré. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "CoQ10 (Ubiquinol)", "dose": "100-200mg/jour", "role": "Synergie directe avec le Cordyceps sur la chaîne respiratoire mitochondriale."},
+        {"nom": "Magnésium", "dose": "300mg/jour", "role": "Cofacteur obligatoire de la synthèse d'ATP."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Exercice en zone 2 (endurance fondamentale)", "frequence": "3x 45min/semaine", "role": "Le Cordyceps augmente la VO2 max ; l'entraînement en zone 2 construit les mitochondries."}
+      ]
+    },
+    "convergence_ancestrale": "Champignon de l'énergie en MTC, utilisé par les sherpas pour l'endurance en altitude.",
+    "synergies_recommandees": ["rhodiola_rosea", "panax_ginseng", "ganoderma_lucidum"],
+    "precautions": "Déconseillé en cas de maladies auto-immunes actives (stimulation immunitaire) ou de prise d'anticoagulants."
+  },
+  {
+    "plant_id": "hieracium_pilosella",
+    "nom_commun": "Piloselle",
+    "nom_latin": "Hieracium pilosella",
+    "partie_utilisee": "Plante entière séchée",
+    "famille_bloom": "Déclencheur (Drainage Rénal)",
+    "terrains_cibles": ["T1_Emonctoires", "T4_Immunité", "T8_Inflammation"],
+    "actifs_cles": [
+      {"nom": "Flavonoïdes", "polarite": "Hydrosoluble"},
+      {"nom": "Acide chlorogénique", "polarite": "Hydrosoluble"},
+      {"nom": "Ombelliférone", "polarite": "Liposoluble"}
+    ],
+    "preuve_scientifique": "Puissant diurétique épargnant le potassium (contrairement aux diurétiques chimiques). Action anti-inflammatoire sur les voies urinaires. Maître du drainage des surcharges hydriques.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les flavonoïdes diurétiques s'extraient à l'eau, mais l'ombelliférone (antibactérien urinaire) nécessite un solvant organique.",
+      "phase_A": {"temp": "65°C", "temps": "2h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Flavonoïdes, acide chlorogénique"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Ombelliférone"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Piloselle séchée", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Piloselle séchée", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["La plante est volumineuse. Tassez les 50g dans la cuve.", "Mixez les 25g restants pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de plante tassée.", "Fermez, mode manuel 'OIL', TEMP 65°C, TEMPS 2h00. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de plante mixée.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez le marc.", "Le liquide sera vert-brun. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Potassium", "dose": "Via alimentation (banane, avocat)", "role": "Bien que la Piloselle épargne le potassium, un apport alimentaire riche soutient la fonction rénale."},
+        {"nom": "Magnésium", "dose": "300mg/jour", "role": "Prévient les crampes lors d'un drainage intensif."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Hydratation massive", "frequence": "2,5L d'eau/jour", "role": "Un drainant rénal ne fonctionne que si le volume d'eau à filtrer est suffisant."}
+      ]
+    },
+    "convergence_ancestrale": "Utilisée depuis le Moyen Âge en Europe pour les 'eaux' (œdèmes) et les infections urinaires.",
+    "synergies_recommandees": ["pissenlit", "orthosiphon", "queue_de_cerise"],
+    "precautions": "Déconseillé en cas d'insuffisance rénale ou cardiaque sévère (nécessitant une restriction hydrique)."
+  },
+  {
+    "plant_id": "malva_sylvestris",
+    "nom_commun": "Mauve",
+    "nom_latin": "Malva sylvestris",
+    "partie_utilisee": "Feuilles et fleurs séchées",
+    "famille_bloom": "Réparateur (Muqueuse Intestinale)",
+    "terrains_cibles": ["T2_Intestin", "T9_Peau", "T1_Emonctoires"],
+    "actifs_cles": [
+      {"nom": "Mucilages", "polarite": "Hydrosoluble"},
+      {"nom": "Anthocyanes", "polarite": "Hydrosoluble"},
+      {"nom": "Flavonoïdes", "polarite": "Hydrosoluble"}
+    ],
+    "preuve_scientifique": "Action émolliente, anti-inflammatoire et protectrice des muqueuses (intestin, gorge, peau). Les mucilages forment un film protecteur sur l'épithélium intestinal, réduisant l'irritation et la perméabilité.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les mucilages sont extrêmement thermolabiles. Une température >60°C les dégrade en sucres simples, annulant l'effet protecteur.",
+      "phase_A": {"temp": "50°C", "temps": "1h30", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Mucilages, anthocyanes"},
+      "phase_B": {"temp": "40°C", "temps": "2h00", "solvant": "Alcool bio 70°", "cible": "Stabilisation douce"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Mauve (feuilles/fleurs)", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Mauve", "250ml d'Alcool bio 70°"]
+      },
+      "preparation": ["La plante est très volumineuse. Tassez fermement les 50g.", "Mixez les 25g restants pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de plante tassée.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 1h30. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de plante mixée.", "Fermez, mode manuel 'OIL', TEMP 40°C, TEMPS 2h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez doucement (le liquide sera visqueux).", "Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "L-Glutamine", "dose": "5g le matin", "role": "Synergie parfaite : la Mauve apaise la muqueuse, la Glutamine nourrit les entérocytes."},
+        {"nom": "Zinc Carnosine", "dose": "75mg 2x/jour", "role": "Réparation ciblée des jonctions serrées."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Éviction des irritants", "frequence": "Pendant la cure", "role": "Éviter gluten, lait, épices fortes pour laisser le film de mucilage agir sans être détruit."}
+      ]
+    },
+    "convergence_ancestrale": "La 'mauvaise' (malva) d'Hildegarde de Bingen, utilisée pour adoucir toutes les inflammations internes et externes.",
+    "synergies_recommandees": ["plantago_major", "aloe_vera", "calendula_officinalis"],
+    "precautions": "Peut ralentir l'absorption d'autres médicaments (prendre à distance des traitements)."
+  },
+  {
+    "plant_id": "asparagus_racemosus",
+    "nom_commun": "Shatavari",
+    "nom_latin": "Asparagus racemosus",
+    "partie_utilisee": "Racine séchée",
+    "famille_bloom": "Réparateur (Yin Féminin & Muqueuses)",
+    "terrains_cibles": ["T8_Hormonal", "T2_Intestin", "T7_Psycho_emotionnel"],
+    "actifs_cles": [
+      {"nom": "Shatavarines (Saponines stéroïdiques)", "polarite": "Liposoluble"},
+      {"nom": "Mucilages", "polarite": "Hydrosoluble"},
+      {"nom": "Alcaloïdes", "polarite": "Mixte"}
+    ],
+    "preuve_scientifique": "Adaptogène féminin majeur. Soutient la production d'œstrogènes naturels, hydrate les muqueuses (sècheresse vaginale, digestive), et module l'humeur via l'axe HPA.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les shatavarines (actifs hormonaux) sont liposolubles, tandis que les mucilages (hydratation) sont hydrosolubles et thermolabiles.",
+      "phase_A": {"temp": "65°C", "temps": "2h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Mucilages, alcaloïdes hydrosolubles"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Shatavarines"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Racine de Shatavari (copeaux)", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Racine de Shatavari (poudre)", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["Concassez les 50g de racine pour la Phase A.", "Mixez les 25g restants en poudre pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de copeaux.", "Fermez, mode manuel 'OIL', TEMP 65°C, TEMPS 2h00. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de poudre.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez fermement le marc.", "Le liquide sera brun clair, légèrement visqueux. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Oméga-3", "dose": "2g/jour", "role": "Fournit les lipides nécessaires à la synthèse hormonale et à l'hydratation cellulaire."},
+        {"nom": "Magnésium", "dose": "300mg/jour", "role": "Soutient le système nerveux pendant les fluctuations hormonales."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Hydratation profonde", "frequence": "Quotidienne", "role": "Le Shatavari attire l'eau dans les muqueuses ; boire 2L d'eau est obligatoire pour que l'effet 'Yin' opère."}
+      ]
+    },
+    "convergence_ancestrale": "'Celle qui possède cent maris' en Ayurveda. Tonique féminin sacré pour la fertilité et la longévité.",
+    "synergies_recommandees": ["vitex_agnus_castus", "alchemilla_vulgaris", "maca_lepidium"],
+    "precautions": "Déconseillé en cas de cancers hormono-dépendants (sein, utérus) ou d'endométriose sévère sans avis médical (effet phyto-œstrogénique)."
+  },
+  {
+    "plant_id": "hericium_erinaceus",
+    "nom_commun": "Lion's Mane (Hydne hérisson)",
+    "nom_latin": "Hericium erinaceus",
+    "partie_utilisee": "Fruit (champignon) séché",
+    "famille_bloom": "Réparateur (Neuroplasticité)",
+    "terrains_cibles": ["T7_Psycho_emotionnel", "T5_HPA", "T2_Intestin"],
+    "actifs_cles": [
+      {"nom": "Héricénones", "polarite": "Liposoluble"},
+      {"nom": "Érinacines", "polarite": "Liposoluble"},
+      {"nom": "Bêta-glucanes", "polarite": "Hydrosoluble"}
+    ],
+    "preuve_scientifique": "Stimulation de la synthèse du NGF (Nerve Growth Factor). Amélioration de la cognition, de la mémoire et de l'humeur. Réparation de la barrière intestinale via la modulation du microbiote.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les héricénones (NGF) sont liposolubles. La paroi de chitine nécessite une chaleur prolongée pour libérer les bêta-glucanes.",
+      "phase_A": {"temp": "80°C", "temps": "3h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Bêta-glucanes, polysaccharides"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Héricénones, Érinacines"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Lion's Mane en poudre grossière", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Lion's Mane en poudre fine", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["Utilisez du Lion's Mane déjà broyé. Séparez 50g pour la Phase A et 25g pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de poudre.", "Fermez, mode manuel 'OIL', TEMP 80°C, TEMPS 3h00. START."],
+      "transition": ["1. Éteignez. Laissez reposer 30 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de poudre fine.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine double épaisseur. Pressez très fermement.", "Le liquide sera brun ambré. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Oméga-3 (DHA)", "dose": "1000mg/jour", "role": "Le DHA est la brique structurelle des neurones que le Lion's Mane aide à réparer."},
+        {"nom": "Magnésium L-Thréonate", "dose": "Selon protocole", "role": "Seule forme de magnésium traversant efficacement la barrière hémato-encéphalique."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Apprentissage continu", "frequence": "Quotidienne", "role": "La neuroplasticité induite par le NGF nécessite une stimulation cognitive pour créer de nouvelles connexions."}
+      ]
+    },
+    "convergence_ancestrale": "Champignon de la clarté mentale en MTC, utilisé par les moines bouddhistes pour la méditation.",
+    "synergies_recommandees": ["bacopa_monnieri", "rhodiola_rosea", "ginkgo_biloba"],
+    "precautions": "Peut causer de légères démangeaisons chez les sujets très sensibles (stimulation du NGF). Déconseillé en cas d'allergie aux champignons."
+  },
+  {
+    "plant_id": "inonotus_obliquus",
+    "nom_commun": "Chaga",
+    "nom_latin": "Inonotus obliquus",
+    "partie_utilisee": "Sclérote (champignon) séché",
+    "famille_bloom": "Chef d'Orchestre (Antioxydant Majeur)",
+    "terrains_cibles": ["T3_Immunité", "T6_Mitochondrie", "T8_Inflammation"],
+    "actifs_cles": [
+      {"nom": "Mélanine", "polarite": "Hydrosoluble"},
+      {"nom": "Acide bétulinique", "polarite": "Liposoluble"},
+      {"nom": "SOD (Superoxyde Dismutase)", "polarite": "Hydrosoluble/Thermolabile"}
+    ],
+    "preuve_scientifique": "L'un des antioxydants les plus puissants de la planète (ORAC > 100 000). Modulation immunitaire, protection de l'ADN contre le stress oxydatif, et soutien de la fonction hépatique.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Le Chaga est dur comme de la pierre. La mélanine et la SOD nécessitent une extraction aqueuse chaude mais contrôlée. L'acide bétulinique (anti-tumoral) nécessite un solvant organique.",
+      "phase_A": {"temp": "75°C", "temps": "3h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Mélanine, SOD, bêta-glucanes"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Acide bétulinique, triterpènes"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Chaga en poudre grossière", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Chaga en poudre fine", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["Le Chaga doit être finement broyé (texture de marc de café). Séparez 50g et 25g."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de poudre.", "Fermez, mode manuel 'OIL', TEMP 75°C, TEMPS 3h00. START."],
+      "transition": ["1. Éteignez. Laissez reposer 30 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de poudre fine.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine double épaisseur. Pressez très fermement.", "Le liquide sera noir profond (mélanine). Mettez en flacon ambré ou violet (Miron)."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Vitamine C", "dose": "500mg/jour", "role": "Régénère les antioxydants du Chaga après qu'ils aient neutralisé les radicaux libres."},
+        {"nom": "Glutathion (ou NAC)", "dose": "Selon protocole", "role": "Synergie antioxydante majeure pour la détoxification cellulaire."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Réduction de l'exposition aux toxines", "frequence": "Quotidienne", "role": "Le Chaga protège l'ADN, mais réduire l'exposition (plastiques, pesticides) diminue la charge oxydative globale."}
+      ]
+    },
+    "convergence_ancestrale": "Champignon de l'immortalité en Sibérie et en MTC. Utilisé depuis des siècles pour la longévité.",
+    "synergies_recommandees": ["ganoderma_lucidum", "cordyceps_militaris", "curcuma_longa"],
+    "precautions": "Déconseillé en cas de maladies auto-immunes (stimulation immunitaire) ou de prise d'anticoagulants (acide bétulinique)."
+  },
+  {
+    "plant_id": "hamamelis_virginiana",
+    "nom_commun": "Hamamélis",
+    "nom_latin": "Hamamelis virginiana",
+    "partie_utilisee": "Feuilles et écorce séchées",
+    "famille_bloom": "Réparateur (Circulation Veineuse & Lymphatique)",
+    "terrains_cibles": ["T1_Emonctoires", "T9_Peau", "T8_Inflammation"],
+    "actifs_cles": [
+      {"nom": "Tanins galliques", "polarite": "Hydrosoluble"},
+      {"nom": "Hamamélitane", "polarite": "Hydrosoluble"},
+      {"nom": "Flavonoïdes", "polarite": "Hydrosoluble"}
+    ],
+    "preuve_scientifique": "Action veinotonique, lymphagogue et anti-inflammatoire puissante. Réduit la perméabilité capillaire et l'œdème. Maître des jambes lourdes, de la couperose et des hémorroïdes.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les tanins s'extraient bien à l'eau, mais une chaleur excessive (>70°C) les rend trop astringents et irritants pour les muqueuses.",
+      "phase_A": {"temp": "65°C", "temps": "2h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Hamamélitane, flavonoïdes"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Tanins contrôlés, composés lipophiles"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g d'Hamamélis (feuilles/écorce)", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g d'Hamamélis", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["Concassez grossièrement les 50g pour la Phase A.", "Mixez les 25g restants pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de plante.", "Fermez, mode manuel 'OIL', TEMP 65°C, TEMPS 2h00. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de plante mixée.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez le marc.", "Le liquide sera brun-rouge. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Vitamine C + Bioflavonoïdes (Rutine)", "dose": "500mg/jour", "role": "Renforce la paroi des capillaires en synergie avec l'hamamélis."},
+        {"nom": "Magnésium", "dose": "300mg/jour", "role": "Relaxe la paroi veineuse, réduisant la congestion."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Douche écossaise (jambes)", "frequence": "Quotidienne", "role": "L'alternance chaud/froid active la pompe veineuse, potentialisant l'effet de l'hamamélis."}
+      ]
+    },
+    "convergence_ancestrale": "Arbre magique des Amérindiens, utilisé pour les saignements et les inflammations.",
+    "synergies_recommandees": ["vitis_vinifera", "centella_asiatica", "marronnier_indien"],
+    "precautions": "En raison de sa teneur en tanins, une consommation excessive peut causer de la constipation. Faire des pauses."
+  },
+  {
+    "plant_id": "moringa_oleifera",
+    "nom_commun": "Moringa",
+    "nom_latin": "Moringa oleifera",
+    "partie_utilisee": "Feuilles séchées",
+    "famille_bloom": "Pharmacie Intérieure (Nutrition Cellulaire Dense)",
+    "terrains_cibles": ["T6_Mitochondrie", "T3_Immunité", "T5_HPA"],
+    "actifs_cles": [
+      {"nom": "Isothiocyanates", "polarite": "Liposoluble"},
+      {"nom": "Vitamines (A, C, E)", "polarite": "Mixte"},
+      {"nom": "Minéraux (Fer, Calcium)", "polarite": "Hydrosoluble"}
+    ],
+    "preuve_scientifique": "Densité nutritionnelle exceptionnelle. Action anti-inflammatoire via les isothiocyanates (similaires au sulforaphane). Soutien de l'énergie cellulaire et de l'immunité.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les vitamines et les isothiocyanates sont extrêmement thermolabiles. Une chaleur >65°C détruit 80% de la valeur nutritionnelle.",
+      "phase_A": {"temp": "60°C", "temps": "1h30", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Minéraux, vitamines hydrosolubles"},
+      "phase_B": {"temp": "45°C", "temps": "2h00", "solvant": "Alcool bio 70°", "cible": "Isothiocyanates, vitamines liposolubles"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Feuilles de Moringa", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Feuilles de Moringa", "250ml d'Alcool bio 70°"]
+      },
+      "preparation": ["Les feuilles sont volumineuses. Tassez les 50g dans la cuve.", "Mixez les 25g restants pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de feuilles tassées.", "Fermez, mode manuel 'OIL', TEMP 60°C, TEMPS 1h30. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de feuilles mixées.", "Fermez, mode manuel 'OIL', TEMP 45°C, TEMPS 2h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez le marc.", "Le liquide sera vert foncé. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Fer (si carence)", "dose": "Selon bilan", "role": "Le Moringa apporte du fer végétal, mais un complément peut être nécessaire en cas d'anémie avérée."},
+        {"nom": "Vitamine C", "dose": "500mg/jour", "role": "Augmente l'absorption du fer végétal du Moringa de 300%."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Alimentation dense en nutriments", "frequence": "Quotidienne", "role": "Le Moringa comble les carences, mais une alimentation vivante reste la base de la nutrition cellulaire."}
+      ]
+    },
+    "convergence_ancestrale": "L'arbre de vie en Ayurveda et en médecine traditionnelle africaine. Utilisé pour la malnutrition et la vitalité.",
+    "synergies_recommandees": ["spirulina", "chlorella", "ortica_dioica"],
+    "precautions": "Déconseillé en début de grossesse (effet utérotonique léger des racines/écorces, moins les feuilles, mais prudence). Peut avoir un effet laxatif à haute dose."
+  }
+]

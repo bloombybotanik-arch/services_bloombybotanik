@@ -1,0 +1,431 @@
+[
+  {
+    "plant_id": "ginkgo_biloba",
+    "nom_commun": "Ginkgo",
+    "nom_latin": "Ginkgo biloba",
+    "partie_utilisee": "Feuilles séchées",
+    "famille_bloom": "Pharmacie Intérieure (Microcirculation & Neuro)",
+    "terrains_cibles": ["T5_Mitochondrie", "T7_Psycho_emotionnel", "T9_Peau_Phaneres"],
+    "actifs_cles": [
+      {"nom": "Ginkgolides (A, B, C)", "polarite": "Liposoluble"},
+      {"nom": "Flavones glycosides", "polarite": "Hydrosoluble"},
+      {"nom": "Acide ginkgolique", "polarite": "Liposoluble"}
+    ],
+    "preuve_scientifique": "Amélioration de la microcirculation cérébrale et périphérique, protection contre le stress oxydatif neuronal, et inhibition du facteur d'activation plaquettaire (PAF).",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les ginkgolides (actifs vasculaires majeurs) sont liposolubles, tandis que les flavones sont hydrosolubles. Une infusion rate les ginkgolides, une macération alcoolique seule rate les flavones.",
+      "phase_A": {"temp": "70°C", "temps": "2h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Flavones glycosides"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Ginkgolides, acide ginkgolique"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Feuilles de Ginkgo", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Feuilles de Ginkgo", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["Les feuilles sont relativement légères. Tassez les 50g dans la cuve.", "Mixez les 25g restants pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de feuilles tassées.", "Fermez, mode manuel 'OIL', TEMP 70°C, TEMPS 2h00. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de feuilles mixées.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez le marc.", "Le liquide sera jaune-vert. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Oméga-3 (EPA/DHA)", "dose": "1000mg/jour", "role": "Fluidifie les membranes cellulaires, potentialisant l'action microcirculatoire du Ginkgo."},
+        {"nom": "Magnésium", "dose": "300mg/jour", "role": "Relaxant vasculaire naturel, synergique avec l'effet du Ginkgo."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Exercice cardiovasculaire léger", "frequence": "30 min/jour", "role": "Stimule la pompe cardiaque, maximisant la distribution des actifs du Ginkgo aux extrémités et au cerveau."}
+      ]
+    },
+    "convergence_ancestrale": "Utilisé en MTC depuis des millénaires pour 'nourrir le cerveau' et 'débloquer les méridiens'.",
+    "synergies_recommandees": ["bacopa_monnieri", "rhodiola_rosea", "vaccinium_myrtillus"],
+    "precautions": "Contre-indiqué en cas de traitement anticoagulant ou antiagrégant plaquettaire. À arrêter 1 semaine avant toute intervention chirurgicale."
+  },
+  {
+    "plant_id": "trigonella_foenum_graecum",
+    "nom_commun": "Fenugrec",
+    "nom_latin": "Trigonella foenum-graecum",
+    "partie_utilisee": "Graines séchées",
+    "famille_bloom": "Réparateur (Métabolique & Capillaire)",
+    "terrains_cibles": ["T10_Hormonal", "T1_Intestin", "T9_Peau_Phaneres"],
+    "actifs_cles": [
+      {"nom": "Saponines stéroïdiques", "polarite": "Liposoluble"},
+      {"nom": "Mucilages", "polarite": "Hydrosoluble"},
+      {"nom": "4-hydroxyisoleucine", "polarite": "Hydrosoluble"}
+    ],
+    "preuve_scientifique": "Modulation de la glycémie (stimulation de la sécrétion d'insuline), action galactogène, et apport de précurseurs hormonaux naturels soutenant la densité capillaire et la vitalité.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les mucilages (apaisants intestinaux) nécessitent de l'eau tiède, tandis que les saponines stéroïdiques (régulatrices) nécessitent un solvant organique et une chaleur modérée.",
+      "phase_A": {"temp": "65°C", "temps": "2h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Mucilages, 4-hydroxyisoleucine"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Saponines stéroïdiques"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Graines de Fenugrec (légèrement concassées)", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Graines de Fenugrec (poudre)", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["Concassez légèrement les 50g de graines pour la Phase A (évitez la poudre fine pour ne pas géifier l'eau).", "Mixez les 25g restants en poudre pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de graines concassées.", "Fermez, mode manuel 'OIL', TEMP 65°C, TEMPS 2h00. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de poudre.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Le mélange sera légèrement visqueux (mucilages). Pressez fermement.", "Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Zinc", "dose": "15mg/jour", "role": "Cofacteur essentiel de la synthèse des hormones stéroïdiennes et de la kératine."},
+        {"nom": "Vitamines B", "dose": "Complexe B", "role": "Soutien du métabolisme des glucides potentialisé par le fenugrec."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Réduction des sucres rapides", "frequence": "Quotidienne", "role": "Le fenugrec régule la glycémie, mais l'hygiène alimentaire reste le pilier de l'équilibre insulinique."}
+      ]
+    },
+    "convergence_ancestrale": "Utilisé en Égypte ancienne et en Ayurveda pour la vitalité, la digestion et la santé reproductive.",
+    "synergies_recommandees": ["urtica_dioica", "panax_ginseng", "cinnamomum_verum"],
+    "precautions": "Déconseillé en cas de diabète sous traitement (risque d'hypoglycémie) et pendant la grossesse (effet utérotonique à haute dose)."
+  },
+  {
+    "plant_id": "plantago_major",
+    "nom_commun": "Plantain majeur",
+    "nom_latin": "Plantago major",
+    "partie_utilisee": "Feuilles séchées",
+    "famille_bloom": "Réparateur (Muqueuses & Peau)",
+    "terrains_cibles": ["T1_Intestin", "T9_Peau_Phaneres", "T3_Immunité"],
+    "actifs_cles": [
+      {"nom": "Mucilages", "polarite": "Hydrosoluble"},
+      {"nom": "Iridoïdes (Aucuboside)", "polarite": "Hydrosoluble"},
+      {"nom": "Tanins", "polarite": "Hydrosoluble"}
+    ],
+    "preuve_scientifique": "Action émolliente, anti-inflammatoire et cicatrisante sur les muqueuses (intestinales, respiratoires) et la peau. Réduction de la perméabilité intestinale.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les mucilages sont très sensibles à la chaleur excessive (qui les dégrade en sucres simples) et aux solvants organiques forts.",
+      "phase_A": {"temp": "60°C", "temps": "1h30", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Mucilages, iridoïdes, tanins"},
+      "phase_B": {"temp": "45°C", "temps": "2h00", "solvant": "Alcool bio 70°", "cible": "Stabilisation et extraction douce des composés secondaires"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Feuilles de Plantain", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Feuilles de Plantain", "250ml d'Alcool bio 70°"]
+      },
+      "preparation": ["Les feuilles sont volumineuses. Tassez les 50g dans la cuve.", "Mixez les 25g restants pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de feuilles tassées.", "Fermez, mode manuel 'OIL', TEMP 60°C, TEMPS 1h30. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de feuilles mixées.", "Fermez, mode manuel 'OIL', TEMP 45°C, TEMPS 2h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez doucement pour éviter de troubler l'extrait avec trop de particules.", "Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "L-Glutamine", "dose": "5g le matin", "role": "Synergie parfaite avec les mucilages pour sceller les jonctions serrées de l'intestin."},
+        {"nom": "Zinc Carnosine", "dose": "75mg 2x/jour", "role": "Réparation ciblée de la muqueuse gastrique et intestinale."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Mastication extrême", "frequence": "40 fois par bouchée", "role": "Prédigère les aliments, réduisant la charge de travail et l'irritation pour un intestin déjà inflammé."}
+      ]
+    },
+    "convergence_ancestrale": "Considéré comme la 'trace de pas du blanc' par les Amérindiens, utilisé universellement pour cicatriser les plaies et apaiser les inflammations.",
+    "synergies_recommandees": ["aloe_vera", "calendula_officinalis", "glycyrrhiza_glabra"],
+    "precautions": "Aucune contre-indication majeure. Peut ralentir légèrement l'absorption d'autres médicaments pris simultanément (prendre à distance)."
+  },
+  {
+    "plant_id": "reynoutria_japonica",
+    "nom_commun": "Renouée du Japon (Racine)",
+    "nom_latin": "Reynoutria japonica (Polygonum cuspidatum)",
+    "partie_utilisee": "Racine et rhizome séchés",
+    "famille_bloom": "Gâchette (Anti-inflammatoire & Antioxydant)",
+    "terrains_cibles": ["T8_Inflammation", "T5_Mitochondrie", "T2_Foie"],
+    "actifs_cles": [
+      {"nom": "Resvératrol", "polarite": "Liposoluble"},
+      {"nom": "Émodine", "polarite": "Liposoluble"},
+      {"nom": "Polyphénols", "polarite": "Hydrosoluble"}
+    ],
+    "preuve_scientifique": "Inhibition puissante du NLRP3 inflammasome, protection mitochondriale, et action hépatoprotectrice. C'est l'une des sources naturelles les plus concentrées en resvératrol.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "La racine est très dure et lignifiée. Le resvératrol est strictement liposoluble et sensible à l'oxydation.",
+      "phase_A": {"temp": "75°C", "temps": "2h30", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Polyphénols hydrosolubles"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Resvératrol, émodine"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Racine de Renouée (copeaux)", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Racine de Renouée (poudre)", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["Concassez vigoureusement les 50g de racine pour la Phase A.", "Mixez les 25g restants en poudre fine pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de copeaux.", "Fermez, mode manuel 'OIL', TEMP 75°C, TEMPS 2h30. START."],
+      "transition": ["1. Éteignez. Laissez reposer 25 minutes (la racine dense retient la chaleur).", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de poudre.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez fermement le marc de racine.", "Le liquide sera brun-rouge. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Pipérine (Poivre noir)", "dose": "5-10mg", "role": "Augmente la biodisponibilité du resvératrol de plus de 2000%."},
+        {"nom": "NAC", "dose": "600mg/jour", "role": "Synergie antioxydante pour protéger les mitochondries avec le resvératrol."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Jeûne intermittent", "frequence": "14-16h de nuit", "role": "Active la sirtuine 1 (SIRT1), la même voie de longévité que cible le resvératrol."}
+      ]
+    },
+    "convergence_ancestrale": "Utilisée en MTC (Hu Zhang) pour 'invigorer le sang, disperser les stases et clarifier la chaleur'.",
+    "synergies_recommandees": ["curcuma_longa", "vitis_vinifera", "boswellia_serrata"],
+    "precautions": "Peut avoir un effet laxatif à haute dose (présence d'émodine). Déconseillé en cas de grossesse ou de traitement anticoagulant."
+  },
+  {
+    "plant_id": "picrasma_quassioides",
+    "nom_commun": "Quassia amer",
+    "nom_latin": "Picrasma quassioides (Quassia amara)",
+    "partie_utilisee": "Bois séché",
+    "famille_bloom": "Déclencheur (Amère & Antiparasitaire)",
+    "terrains_cibles": ["T1_Intestin", "T2_Foie", "T3_Immunité"],
+    "actifs_cles": [
+      {"nom": "Quassinoïdes", "polarite": "Hydrosoluble/Liposoluble"},
+      {"nom": "Tanins", "polarite": "Hydrosoluble"}
+    ],
+    "preuve_scientifique": "L'une des substances les plus amères connues. Stimule fortement la sécrétion de bile et de sucs gastriques. Action antiparasitaire et antifongique (Candida) douce mais efficace.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Le bois est très dur. Les quassinoïdes nécessitent une extraction séquentielle pour être pleinement capturés sans sur-extraction des tanins astringents.",
+      "phase_A": {"temp": "70°C", "temps": "2h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Quassinoïdes hydrosolubles, tanins"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Quassinoïdes liposolubles"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Copeaux de Quassia", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Quassia (poudre)", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["Utilisez des copeaux fins pour la Phase A.", "Mixez les 25g restants en poudre pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de copeaux.", "Fermez, mode manuel 'OIL', TEMP 70°C, TEMPS 2h00. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de poudre.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez fermement.", "Le liquide sera jaune pâle, d'une amertume extrême. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Probiotiques (S. Boulardii)", "dose": "Après la cure", "role": "Le Quassia nettoie le terrain des levures, les probiotiques reconstruisent la flore ensuite."},
+        {"nom": "Zinc", "dose": "15mg/jour", "role": "Restaure le sens du goût, souvent altéré par les régimes ou les carences, permettant de mieux tolérer l'amertume."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Éviction totale des sucres raffinés", "frequence": "Pendant la cure", "role": "Affame les candidas et parasites que le Quassia aide à éliminer."}
+      ]
+    },
+    "convergence_ancestrale": "Utilisé en Amérique du Sud et en Afrique de l'Ouest comme tonique amer et vermifuge naturel.",
+    "synergies_recommandees": ["gentiana_lutea", "origanum_vulgare", "nigella_sativa"],
+    "precautions": "Amertume extrême : commencer par de très petites doses. Déconseillé en cas d'ulcère gastrique ou de calculs biliaires."
+  },
+  {
+    "plant_id": "euphrasia_officinalis",
+    "nom_commun": "Euphraise",
+    "nom_latin": "Euphrasia officinalis",
+    "partie_utilisee": "Parties aériennes séchées",
+    "famille_bloom": "Réparateur (Muqueuses & Immunité)",
+    "terrains_cibles": ["T3_Immunité", "T9_Peau_Phaneres", "T1_Intestin"],
+    "actifs_cles": [
+      {"nom": "Iridoïdes (Euphrosine)", "polarite": "Hydrosoluble"},
+      {"nom": "Tanins", "polarite": "Hydrosoluble"},
+      {"nom": "Flavonoïdes", "polarite": "Hydrosoluble"}
+    ],
+    "preuve_scientifique": "Action astringente, anti-inflammatoire et décongestionnante spécifique des muqueuses (oculaires, respiratoires, intestinales).",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les iridoïdes sont sensibles à la chaleur prolongée. Une extraction douce et séquencée préserve leur activité sur les muqueuses.",
+      "phase_A": {"temp": "65°C", "temps": "1h30", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Iridoïdes, tanins, flavonoïdes"},
+      "phase_B": {"temp": "45°C", "temps": "2h00", "solvant": "Alcool bio 70°", "cible": "Stabilisation des composés"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g d'Euphraise séchée", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g d'Euphraise séchée", "250ml d'Alcool bio 70°"]
+      },
+      "preparation": ["La plante est très légère. Tassez les 50g dans la cuve.", "Mixez les 25g restants pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de plante tassée.", "Fermez, mode manuel 'OIL', TEMP 65°C, TEMPS 1h30. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de plante mixée.", "Fermez, mode manuel 'OIL', TEMP 45°C, TEMPS 2h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine fine. Pressez le marc.", "Le liquide sera brun-vert. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Vitamine A", "dose": "Selon besoins", "role": "Indispensable à l'intégrité de toutes les muqueuses (yeux, intestin, poumons)."},
+        {"nom": "Quercétine", "dose": "500mg/jour", "role": "Stabilise mastocytes, réduisant l'inflammation allergique des muqueuses."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Hydratation des muqueuses", "frequence": "Quotidienne", "role": "Boire de l'eau régulièrement maintient la couche de mucus protectrice que l'euphraise aide à réparer."}
+      ]
+    },
+    "convergence_ancestrale": "Nommée 'l'herbe aux yeux' depuis le Moyen Âge, utilisée par Hildegarde de Bingen pour les affections oculaires et respiratoires.",
+    "synergies_recommandees": ["plantago_major", "calendula_officinalis", "echinacea_purpurea"],
+    "precautions": "Aucune contre-indication majeure connue. Peut causer une légère constipation à très haute dose (effet astringent des tanins)."
+  },
+  {
+    "plant_id": "vaccinium_myrtillus",
+    "nom_commun": "Myrtille",
+    "nom_latin": "Vaccinium myrtillus",
+    "partie_utilisee": "Fruits séchés (ou feuilles pour usage spécifique)",
+    "famille_bloom": "Réparateur (Microcirculation & Collagène)",
+    "terrains_cibles": ["T5_Mitochondrie", "T9_Peau_Phaneres", "T7_Psycho_emotionnel"],
+    "actifs_cles": [
+      {"nom": "Anthocyanes", "polarite": "Hydrosoluble/Thermolabile"},
+      {"nom": "Myrtilline", "polarite": "Hydrosoluble"},
+      {"nom": "Tanins", "polarite": "Hydrosoluble"}
+    ],
+    "preuve_scientifique": "Protection de la microcirculation (rétine, peau, cerveau), renforcement du collagène, et action antioxydante puissante.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les anthocyanes sont extrêmement thermolabiles. Une cuisson >70°C les détruit presque entièrement, annulant le bénéfice microcirculatoire.",
+      "phase_A": {"temp": "60°C", "temps": "1h30", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Anthocyanes, myrtilline"},
+      "phase_B": {"temp": "45°C", "temps": "2h00", "solvant": "Alcool bio 70°", "cible": "Stabilisation des polyphénols"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Myrtilles séchées", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Myrtilles séchées", "250ml d'Alcool bio 70°"]
+      },
+      "preparation": ["Les fruits séchés sont collants. Séparez-les bien avant de les peser.", "Mixez légèrement les 25g de la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de myrtilles.", "Fermez, mode manuel 'OIL', TEMP 60°C, TEMPS 1h30. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de myrtilles mixées.", "Fermez, mode manuel 'OIL', TEMP 45°C, TEMPS 2h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez doucement.", "Le liquide sera rouge-violet profond. Mettez en flacon ambré ou violet (Miron)."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Vitamine C", "dose": "500mg/jour", "role": "Synergie obligatoire : la vitamine C est le cofacteur de la synthèse du collagène que les anthocyanes protègent."},
+        {"nom": "Oméga-3", "dose": "1000mg/jour", "role": "Fluidifie les membranes des capillaires, améliorant l'effet de la myrtille."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Protection solaire", "frequence": "Quotidienne", "role": "Les anthocyanes protègent la peau de l'intérieur, mais ne remplacent pas la protection physique contre les UV."}
+      ]
+    },
+    "convergence_ancestrale": "Utilisée par les aviateurs de la RAF pendant la Seconde Guerre mondiale pour améliorer la vision nocturne.",
+    "synergies_recommandees": ["centella_asiatica", "ginkgo_biloba", "rosa_canina"],
+    "precautions": "Peut avoir un léger effet astringent (constipant) à très haute dose en raison des tanins."
+  },
+  {
+    "plant_id": "lepidium_meyenii",
+    "nom_commun": "Maca",
+    "nom_latin": "Lepidium meyenii",
+    "partie_utilisee": "Racine (hypocotyle) séchée",
+    "famille_bloom": "Chef d'Orchestre (Adaptogène Hormonal)",
+    "terrains_cibles": ["T4_HPA", "T10_Hormonal", "T5_Mitochondrie"],
+    "actifs_cles": [
+      {"nom": "Macamides et Macaènes", "polarite": "Liposoluble"},
+      {"nom": "Glucosinolates", "polarite": "Hydrosoluble"},
+      {"nom": "Polysaccharides", "polarite": "Hydrosoluble"}
+    ],
+    "preuve_scientifique": "Modulation de l'axe HPA sans contenir d'hormones exogènes. Amélioration de la libido, de l'énergie et de l'humeur via l'équilibre des neurotransmetteurs.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "La racine de maca est très dense. Les macamides (actifs endocriniens) sont liposolubles, tandis que les glucosinolates sont hydrosolubles.",
+      "phase_A": {"temp": "70°C", "temps": "2h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Glucosinolates, polysaccharides"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Macamides, macaènes"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Racine de Maca (poudre grossière)", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Racine de Maca (poudre fine)", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["Utilisez de la poudre de maca de qualité alimentaire.", "Séparez 50g pour la Phase A et 25g pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de poudre.", "Fermez, mode manuel 'OIL', TEMP 70°C, TEMPS 2h00. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de poudre fine.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez fermement (la poudre de maca absorbe beaucoup de liquide).", "Le liquide sera beige-brun, avec un goût de caramel/malt. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Magnésium Bisglycinate", "dose": "300mg/jour", "role": "Soutient la production d'énergie cellulaire et calme le système nerveux, potentialisant l'adaptogène."},
+        {"nom": "Zinc", "dose": "15mg/jour", "role": "Cofacteur essentiel de la synthèse de la testostérone et de la santé reproductive, que la Maca soutient."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Sommeil régulier", "frequence": "Coucher à heure fixe", "role": "L'axe HPA se régénère principalement pendant le sommeil profond. La Maca optimise ce processus."}
+      ]
+    },
+    "convergence_ancestrale": "Cultivée depuis 2000 ans dans les Andes péruviennes comme 'viagra des Incas' et tonique de vitalité globale.",
+    "synergies_recommandees": ["ashwagandha_somnifera", "tribulus_terrestris", "rhodiola_rosea"],
+    "precautions": "Déconseillée en cas de pathologies hormonales sensibles (sein, utérus, prostate) sans avis médical, bien qu'elle ne contienne pas d'hormones."
+  },
+  {
+    "plant_id": "alchemilla_vulgaris",
+    "nom_commun": "Alchémille",
+    "nom_latin": "Alchemilla vulgaris",
+    "partie_utilisee": "Parties aériennes séchées",
+    "famille_bloom": "Réparateur (Cycle Féminin & Muqueuses)",
+    "terrains_cibles": ["T10_Hormonal", "T1_Intestin", "T9_Peau_Phaneres"],
+    "actifs_cles": [
+      {"nom": "Tanins ellagiques", "polarite": "Hydrosoluble"},
+      {"nom": "Flavonoïdes", "polarite": "Hydrosoluble"},
+      {"nom": "Acide salicylique", "polarite": "Liposoluble"}
+    ],
+    "preuve_scientifique": "Action astringente, hémostatique et régulatrice sur les muqueuses, en particulier l'utérus et le tube digestif. Soulage les règles douloureuses et les leucorrhées.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les tanins s'extraient bien à l'eau, mais l'acide salicylique (anti-inflammatoire doux) nécessite un solvant organique et une chaleur modérée.",
+      "phase_A": {"temp": "65°C", "temps": "2h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Tanins, flavonoïdes"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Acide salicylique, composés lipophiles"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g d'Alchémille séchée", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g d'Alchémille séchée", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["La plante est volumineuse. Tassez les 50g dans la cuve.", "Mixez les 25g restants pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de plante tassée.", "Fermez, mode manuel 'OIL', TEMP 65°C, TEMPS 2h00. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de plante mixée.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez le marc.", "Le liquide sera vert-brun, légèrement astringent. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Fer (Bisglycinate)", "dose": "Si ferritine < 50ng/mL", "role": "Compense les pertes sanguines menstruelles que l'alchémille aide à réguler."},
+        {"nom": "Magnésium", "dose": "300mg/jour", "role": "Relaxe les spasmes utérins et intestinaux, synergique avec l'action de l'alchémille."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Chaleur locale", "frequence": "Pendant les règles", "role": "Une bouillotte sur le bas-ventre potentialise l'effet antispasmodique de l'alchémille."}
+      ]
+    },
+    "convergence_ancestrale": "Plante sacrée des alchimistes du Moyen Âge, associée à la Vierge Marie pour ses vertus 'purificatrices' et gynécologiques.",
+    "synergies_recommandees": ["achillea_millefolium", "rubus_idaeus", "capsella_bursa_pastoris"],
+    "precautions": "En raison de sa teneur en tanins, une consommation excessive et prolongée peut causer de la constipation. Faire des pauses."
+  },
+  {
+    "plant_id": "artemisia_annua",
+    "nom_commun": "Armoise annuelle",
+    "nom_latin": "Artemisia annua",
+    "partie_utilisee": "Parties aériennes séchées",
+    "famille_bloom": "Gâchette (Immunité & Modulation)",
+    "terrains_cibles": ["T3_Immunité", "T8_Inflammation", "T1_Intestin"],
+    "actifs_cles": [
+      {"nom": "Artémisinine", "polarite": "Liposoluble/Thermolabile"},
+      {"nom": "Flavonoïdes", "polarite": "Hydrosoluble"},
+      {"nom": "Huiles essentielles", "polarite": "Volatile"}
+    ],
+    "preuve_scientifique": "Action immunomodulatrice puissante, antiparasitaire, et anti-inflammatoire via l'inhibition de la voie NF-κB. L'artémisinine agit en présence de fer (abondant dans les cellules inflammatoires ou parasitées).",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "L'artémisinine est très thermolabile et liposoluble. Une infusion à l'eau bouillante la détruit presque totalement.",
+      "phase_A": {"temp": "60°C", "temps": "1h30", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Flavonoïdes, composés hydrosolubles"},
+      "phase_B": {"temp": "45°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Artémisinine, huiles essentielles"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g d'Armoise annuelle", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g d'Armoise annuelle", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["La plante est légère et aromatique. Tassez les 50g.", "Mixez les 25g restants pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de plante tassée.", "Fermez, mode manuel 'OIL', TEMP 60°C, TEMPS 1h30. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de plante mixée.", "Fermez, mode manuel 'OIL', TEMP 45°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez le marc.", "Le liquide sera vert foncé, très aromatique. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Fer (si carence avérée)", "dose": "Selon bilan", "role": "L'artémisinine agit en synergie avec le fer pour cibler les cellules inflammatoires ou parasitées."},
+        {"nom": "Vitamine C", "dose": "500mg/jour", "role": "Potentialise l'action de l'artémisinine en générant des radicaux libres localisés dans les cellules cibles."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Jeûne intermittent", "frequence": "14-16h", "role": "Réduit la charge inflammatoire globale, laissant l'Artemisia agir plus précisément."}
+      ]
+    },
+    "convergence_ancestrale": "Qing Hao en MTC, utilisée depuis 1600 ans pour les 'fièvres'. Prix Nobel de Médecine 2015 pour la découverte de l'artémisinine.",
+    "synergies_recommandees": ["nigella_sativa", "origanum_vulgare", "curcuma_longa"],
+    "precautions": "Déconseillée pendant la grossesse et l'allaitement. Peut interagir avec certains médicaments métabolisés par le foie."
+  }
+]

@@ -1,0 +1,127 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // -------------------------------------------------------------------------
+    // HELPERS
+    // -------------------------------------------------------------------------
+    
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.token.email == 'bloombybotanik@gmail.com' ||
+        request.auth.token.email == 'bloombybotanique@gmail.com' ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // -------------------------------------------------------------------------
+    // ENTITY VALIDATIONS
+    // -------------------------------------------------------------------------
+
+    function isValidUser(data) {
+      return data.keys().hasAll(['uid', 'email', 'status', 'createdAt']) &&
+             data.uid == request.auth.uid &&
+             data.email is string &&
+             data.status in ['gratuit', 'freemium', 'premium', 'owner'] &&
+             data.createdAt == request.time;
+    }
+
+    function isValidOrder(data) {
+      return data.keys().hasAll(['userId', 'items', 'totalCents', 'status', 'createdAt']) &&
+             data.userId == request.auth.uid &&
+             data.items is list &&
+             data.totalCents is int &&
+             data.status in ['pending', 'paid', 'shipped', 'canceled'] &&
+             data.createdAt == request.time;
+    }
+
+    function isValidSubscription(data) {
+      return data.keys().hasAll(['userId', 'stripeSubscriptionId', 'status']) &&
+             data.userId == request.auth.uid &&
+             data.status in ['active', 'past_due', 'trialing', 'canceled'];
+    }
+
+    function isValidInteraction(data) {
+      return data.keys().hasAll(['userId', 'type', 'createdAt']) &&
+             data.userId == request.auth.uid &&
+             data.type is string &&
+             data.createdAt == request.time;
+    }
+
+    // -------------------------------------------------------------------------
+    // RULES
+    // -------------------------------------------------------------------------
+
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Users collection
+    match /users/{userId} {
+      allow get: if isOwner(userId) || isAdmin();
+      allow list: if isAdmin();
+      allow create: if isSignedIn() && isValidUser(incoming());
+      allow update: if (isOwner(userId) || isAdmin()) && (
+        // Action: Update profile
+        incoming().diff(existing()).affectedKeys().hasOnly(['displayName', 'optInNewsletter', 'optInNurturing', 'lastActivityAt', 'updatedAt']) ||
+        // Action: Admin update status
+        (isAdmin() && incoming().diff(existing()).affectedKeys().hasAny(['status', 'isPremiumUntil', 'machineOwned', 'machineSerialNumber']))
+      );
+    }
+
+    // Products collection (Statique)
+    match /products/{productId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Orders collection
+    match /orders/{orderId} {
+      allow get: if isOwner(existing().userId) || isAdmin();
+      allow list: if (isSignedIn() && resource.data.userId == request.auth.uid) || isAdmin();
+      allow create: if isSignedIn() && isValidOrder(incoming());
+      allow update: if isAdmin(); // Only admins can update order status (paid, shipped)
+    }
+
+    // Subscriptions collection
+    match /subscriptions/{subId} {
+      allow get: if isOwner(existing().userId) || isAdmin();
+      allow list: if (isSignedIn() && resource.data.userId == request.auth.uid) || isAdmin();
+      allow create: if isAdmin(); // Usually created via webhook
+      allow update: if isAdmin();
+    }
+
+    // Interactions collection
+    match /interactions/{interactionId} {
+      allow read: if isOwner(resource.data.userId) || isAdmin();
+      allow create: if isSignedIn() && isValidInteraction(incoming());
+      allow update, delete: if false; // Interactions are immutable records
+    }
+
+    // Admin lookup
+    match /admins/{adminId} {
+      allow read: if isSignedIn();
+      allow write: if false; // Provisioned manually
+    }
+  }
+}
