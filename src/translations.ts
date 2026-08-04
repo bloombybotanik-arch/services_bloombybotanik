@@ -581,7 +581,7 @@ export const translations = {
       },
       upsell: {
         title: "Optimisez votre Souveraineté",
-        description: "Le prix de l'abonnement annuel (99€) est inférieur au prix de deux Kits Renaissance. Accédez à l'intégralité de la bibliothèque sans limite.",
+        description: "Le prix de l'abonnement annuel (79€) est inférieur au prix de deux Kits Renaissance. Accédez à l'intégralité de la bibliothèque sans limite.",
         button: "Découvrir le Premium"
       },
       recommended: {
@@ -811,16 +811,16 @@ export const translations = {
         subtitle: "Débloquez l'Herbier complet, les 56 kits de précision et le suivi de progression.",
         monthly: {
           name: "Abonnement Mensuel",
-          price: "9,90€",
+          price: "7,90€",
           period: "/mois",
           features: ["Accès illimité à l'Herbier", "56 Kits de Précision", "Bibliothèque Premium", "Sans engagement"],
           button: "Choisir Mensuel"
         },
         yearly: {
           name: "Abonnement Annuel",
-          price: "99€",
+          price: "79€",
           period: "/an",
-          save: "Économisez 20€",
+          save: "2 mois offerts",
           features: ["Tout le contenu Premium", "Support prioritaire", "Accès anticipé nouveautés", "La meilleure valeur"],
           button: "Choisir Annuel"
         },
@@ -898,29 +898,45 @@ export const translations = {
       pricing: {
         title: "Tarification Souveraine",
         subtitle: "Choisissez la voie qui correspond à votre rythme d'apprentissage.",
-        monthly: {
-          title: "Mensuel",
-          price: "9,90€",
+        discovery: {
+          name: "Bloom Découverte",
+          price: "4,90€",
           period: "/mois",
-          feat1: "Accès Bibliothèque Complète",
-          feat2: "Support Communauté",
-          cta: "S'abonner"
+          tagline: "Le premier pas pour sécuriser ta pratique des plantes.",
+          bullets: [
+            "Accès à toutes les recettes freemium (4 par catégorie) + quelques recettes signature supplémentaires.",
+            "Accès aux fiches complètes des recettes : solvants, températures, séquençage, mode d'administration, doses journalières et maximales, précautions et contre-indications.",
+            "Accès au bot Bloom pour poser des questions sur la méthode, les recettes et l'usage général (dans les limites légales)."
+          ],
+          cta: "Commencer Bloom Découverte"
+        },
+        method: {
+          name: "Bloom Méthode",
+          price: "7,90€",
+          period: "/mois",
+          tagline: "Pour suivre la méthode Bloom, pas seulement consulter des recettes.",
+          bullets: [
+            "Tout Bloom Découverte.",
+            "Accès à la bibliothèque complète des recettes de plantes.",
+            "Accès aux protocoles structurés : séquences, phases, ordre d'extraction.",
+            "Accès aux contenus pédagogiques premium (guides, vidéos, décryptages du terrain).",
+            "Accès à la communauté et aux sessions Q&A Bloom."
+          ],
+          cta: "S'abonner à Bloom Méthode",
+          badge: "Recommandé"
         },
         annual: {
-          badge: "Recommandé",
-          title: "Annuel",
-          price: "99€",
+          name: "Bloom Méthode Annuel",
+          price: "79€",
           period: "/an",
-          feat1: "Tout l'Accès Premium",
-          feat2: "2 mois d'économie",
-          cta: "S'engager pour l'année"
-        },
-        lifetime: {
-          title: "À vie",
-          price: "297€",
-          feat1: "Accès Éternel",
-          feat2: "Aucun abonnement",
-          cta: "Membre à Vie"
+          tagline: "L'option la plus intelligente si tu veux vraiment suivre la méthode Bloom.",
+          bullets: [
+            "Tout Bloom Méthode.",
+            "2 mois offerts (équivalent ~6,6€/mois).",
+            "Accès continu à la bibliothèque, aux protocoles et aux contenus premium pendant 12 mois."
+          ],
+          cta: "S'engager pour l'année",
+          highlight: "Le plus avantageux"
         }
       },
       final_cta: {
@@ -1683,7 +1699,7 @@ export const translations = {
       },
       upsell: {
         title: "Optimize your Sovereignty",
-        description: "The price of the annual subscription (99€) is lower than the price of two Renaissance Kits. Access the entire library without limit.",
+        description: "The price of the annual subscription (79€) is lower than the price of two Renaissance Kits. Access the entire library without limit.",
         button: "Discover Premium"
       },
       recommended: {
@@ -1913,16 +1929,16 @@ export const translations = {
         subtitle: "Unlock the full Herbarium, the 56 precision kits and progress tracking.",
         monthly: {
           name: "Monthly Subscription",
-          price: "9.90€",
+          price: "7.90€",
           period: "/month",
           features: ["Unlimited Herbarium access", "56 Precision Kits", "Premium Library", "No commitment"],
           button: "Choose Monthly"
         },
         yearly: {
           name: "Annual Subscription",
-          price: "99€",
+          price: "79€",
           period: "/year",
-          save: "Save 20€",
+          save: "2 months free",
           features: ["All Premium content", "Priority support", "Early access to novelties", "Best value"],
           button: "Choose Annual"
         },
@@ -2000,29 +2016,45 @@ export const translations = {
       pricing: {
         title: "Sovereign Pricing",
         subtitle: "Choose the path that matches your learning pace.",
-        monthly: {
-          title: "Monthly",
-          price: "9.90€",
+        discovery: {
+          name: "Bloom Discovery",
+          price: "4.90€",
           period: "/month",
-          feat1: "Full Library Access",
-          feat2: "Community Support",
-          cta: "Subscribe"
+          tagline: "The first step to secure your plant practice.",
+          bullets: [
+            "Access to all freemium recipes (4 per category) + some additional signature recipes.",
+            "Access to full recipe details: solvents, temperatures, sequencing, administration mode, daily and maximum doses, precautions, and contraindications.",
+            "Access to the Bloom bot to ask questions about the method, recipes, and general use (within legal limits)."
+          ],
+          cta: "Start Bloom Discovery"
+        },
+        method: {
+          name: "Bloom Method",
+          price: "7.90€",
+          period: "/month",
+          tagline: "To follow the Bloom method, not just consult recipes.",
+          bullets: [
+            "Everything in Bloom Discovery.",
+            "Access to the full library of plant recipes.",
+            "Access to structured protocols: sequences, phases, extraction order.",
+            "Access to premium educational content (guides, videos, terrain decryptions).",
+            "Access to the community and Bloom Q&A sessions."
+          ],
+          cta: "Subscribe to Bloom Method",
+          badge: "Recommended"
         },
         annual: {
-          badge: "Recommended",
-          title: "Annual",
-          price: "99€",
+          name: "Bloom Method Annual",
+          price: "79€",
           period: "/year",
-          feat1: "All Premium Access",
-          feat2: "2 months savings",
-          cta: "Commit for the year"
-        },
-        lifetime: {
-          title: "Lifetime",
-          price: "297€",
-          feat1: "Eternal Access",
-          feat2: "No subscription",
-          cta: "Lifetime Member"
+          tagline: "The smartest option if you really want to follow the Bloom method.",
+          bullets: [
+            "Everything in Bloom Method.",
+            "2 months free (equivalent to ~6.6€/month).",
+            "Continuous access to the library, protocols, and premium content for 12 months."
+          ],
+          cta: "Commit for the year",
+          highlight: "Best Value"
         }
       },
       final_cta: {
@@ -3015,16 +3047,16 @@ export const translations = {
         subtitle: "Schalten Sie das vollständige Herbarium, die 56 Präzisionskits und die Fortschrittsverfolgung frei.",
         monthly: {
           name: "Monatliches Abonnement",
-          price: "9,90€",
+          price: "7,90€",
           period: "/Monat",
           features: ["Unbegrenzter Herbariumszugriff", "56 Präzisionskits", "Premium-Bibliothek", "Keine Bindung"],
           button: "Monatlich wählen"
         },
         yearly: {
           name: "Jahresabonnement",
-          price: "99€",
+          price: "79€",
           period: "/Jahr",
-          save: "20€ sparen",
+          save: "2 Monate geschenkt",
           features: ["Alle Premium-Inhalte", "Prioritärer Support", "Frühzeitiger Zugang zu Neuheiten", "Bester Wert"],
           button: "Jährlich wählen"
         },
@@ -3102,29 +3134,45 @@ export const translations = {
       pricing: {
         title: "Souveräne Preisgestaltung",
         subtitle: "Wählen Sie den Weg, der Ihrem Lerntempo entspricht.",
-        monthly: {
-          title: "Monatlich",
-          price: "9,90€",
+        discovery: {
+          name: "Bloom Entdeckung",
+          price: "4,90€",
           period: "/Monat",
-          feat1: "Voller Bibliothekszugriff",
-          feat2: "Community-Support",
-          cta: "Abonnieren"
+          tagline: "Der erste Schritt, um Ihre Pflanzenpraxis zu sichern.",
+          bullets: [
+            "Zugang zu allen Freemium-Rezepten (4 pro Kategorie) + einige zusätzliche Signature-Rezepte.",
+            "Zugang zu vollständigen Rezeptdetails: Lösungsmittel, Temperaturen, Sequenzierung, Verabreichungsmodus, Tages- und Maximaldosen, Vorsichtsmaßnahmen und Kontraindikationen.",
+            "Zugang zum Bloom-Bot, um Fragen zur Methode, zu Rezepten und zur allgemeinen Verwendung zu stellen (innerhalb gesetzlicher Grenzen)."
+          ],
+          cta: "Bloom Entdeckung starten"
+        },
+        method: {
+          name: "Bloom Methode",
+          price: "7,90€",
+          period: "/Monat",
+          tagline: "Um der Bloom-Methode zu folgen, nicht nur Rezepte zu konsultieren.",
+          bullets: [
+            "Alles in Bloom Entdeckung.",
+            "Zugang zur vollständigen Bibliothek der Pflanzenrezepte.",
+            "Zugang zu strukturierten Protokollen: Sequenzen, Phasen, Extraktionsreihenfolge.",
+            "Zugang zu Premium-Bildungsinhalten (Leitfäden, Videos, Terrain-Entschlüsselungen).",
+            "Zugang zur Community und Bloom Q&A-Sitzungen."
+          ],
+          cta: "Bloom Methode abonnieren",
+          badge: "Empfohlen"
         },
         annual: {
-          badge: "Empfohlen",
-          title: "Jährlich",
-          price: "99€",
+          name: "Bloom Methode Jährlich",
+          price: "79€",
           period: "/Jahr",
-          feat1: "Voller Premium-Zugang",
-          feat2: "2 Monate Ersparnis",
-          cta: "Für das Jahr verpflichten"
-        },
-        lifetime: {
-          title: "Lebenslang",
-          price: "297€",
-          feat1: "Ewiger Zugriff",
-          feat2: "Kein Abonnement",
-          cta: "Mitglied auf Lebenszeit"
+          tagline: "Die intelligenteste Option, wenn Sie der Bloom-Methode wirklich folgen wollen.",
+          bullets: [
+            "Alles in Bloom Methode.",
+            "2 Monate geschenkt (entspricht ~6,6€/Monat).",
+            "Kontinuierlicher Zugriff auf die Bibliothek, Protokolle und Premium-Inhalte für 12 Monate."
+          ],
+          cta: "Für das Jahr verpflichten",
+          highlight: "Bestes Angebot"
         }
       },
       final_cta: {

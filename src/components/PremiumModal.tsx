@@ -36,11 +36,11 @@ export function PremiumModal({ isOpen, onClose, onUpgrade }: PremiumModalProps) 
             <div className="flex items-center gap-4 mb-4 pb-4 border-b border-botanik-green/10">
               <ShieldCheck className="w-6 h-6 text-botanik-magenta" />
               <div>
-                <h4 className="font-bold text-botanik-green">Bloom Premium</h4>
+                <h4 className="font-bold text-botanik-green">Bloom Méthode</h4>
                 <p className="text-sm text-botanik-green/60">L'autonomie botanique complète</p>
               </div>
               <div className="ml-auto text-right">
-                <div className="text-2xl font-bold text-botanik-green">9,90€</div>
+                <div className="text-2xl font-bold text-botanik-green">7,90€</div>
                 <div className="text-xs text-botanik-green/50">/mois</div>
               </div>
             </div>

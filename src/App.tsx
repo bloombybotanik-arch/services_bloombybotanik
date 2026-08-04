@@ -3,21 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, lazy, Suspense } from 'react';
 import { Lock, ShoppingBag, BookOpen, FlaskConical, Menu, X, ChevronRight, Leaf, ShieldCheck, SearchCheck, Award, Star, User, Check, ArrowRight, ChefHat, Instagram, Youtube, Facebook, Pin as Pinterest, Music2 as TikTok, MessageSquare, Sparkles, Wind, Waves, Moon, Utensils, Activity, Globe } from 'lucide-react';
 import { translations, Language } from './translations';
-import LibraryContent from './LibraryContent';
-import HerbariumContent from './HerbariumContent';
-import StoreContent from './StoreContent';
-import PendingContent from './PendingContent';
-import CosmeticsContent from './CosmeticsContent';
-import CulinarySection from './CulinarySection';
-import ProductDetail from './ProductDetail';
-import CartContent from './CartContent';
-import CheckoutFlow from './CheckoutFlow';
-import LegalPages from './LegalPages';
-import ChatContent from './ChatContent';
-import AccountContent from './AccountContent';
 import Footer from './components/Footer';
 import { wrapTitle } from './lib/textUtils';
 import { AuthModal } from './components/AuthModal';
@@ -27,17 +15,38 @@ import { onAuthStateChanged, User as FirebaseUser, signOut } from 'firebase/auth
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import bloomLabImg from './assets/images/bloomlab_main_1784887530345.jpeg';
 import img05 from './assets/images/Img_05.jpeg';
-import ManifesteContent from './ManifesteContent';
 import HomeContent from './HomeContent';
-import GuideContent from './GuideContent';
-import MachineLanding from './MachineLanding';
-import PhytotherapyResetPage from './PhytotherapyResetPage';
-import LibraryLanding from './LibraryLanding';
-import ActivationPage from './ActivationPage';
 import headerImg from './assets/images/Header.jpeg';
 import logoSidebar from './assets/images/logo_sidebar_1784886108085.png';
 
 import { OptimizedImage } from './components/OptimizedImage';
+
+// --- LAZY LOADING FOR SECONDARY VIEWS ---
+const HerbariumContent = lazy(() => import('./HerbariumContent'));
+const LibraryContent = lazy(() => import('./LibraryContent'));
+const StoreContent = lazy(() => import('./StoreContent'));
+const GuideContent = lazy(() => import('./GuideContent'));
+const CartContent = lazy(() => import('./CartContent'));
+const CheckoutFlow = lazy(() => import('./CheckoutFlow'));
+const ProductDetail = lazy(() => import('./ProductDetail'));
+const CulinarySection = lazy(() => import('./CulinarySection'));
+const CosmeticsContent = lazy(() => import('./CosmeticsContent'));
+const LibraryLanding = lazy(() => import('./LibraryLanding'));
+const ActivationPage = lazy(() => import('./ActivationPage'));
+const LegalPages = lazy(() => import('./LegalPages'));
+const ChatContent = lazy(() => import('./ChatContent'));
+const AccountContent = lazy(() => import('./AccountContent'));
+const ManifesteContent = lazy(() => import('./ManifesteContent'));
+const MachineLanding = lazy(() => import('./MachineLanding'));
+const PhytotherapyResetPage = lazy(() => import('./PhytotherapyResetPage'));
+const PendingContent = lazy(() => import('./PendingContent'));
+
+// Loading Placeholder for Lazy components
+const ViewLoader = () => (
+  <div className="flex-1 flex items-center justify-center bg-[#F9F9F7]">
+    <div className="w-12 h-12 border-4 border-botanik-green/20 border-t-botanik-green rounded-full animate-spin" />
+  </div>
+);
 
 // --- SEO & DATA UTILS ---
 const POST_TITLE = "L'Élévation de l'Extraction : vers le Totum absolu";
@@ -624,6 +633,154 @@ export default function App() {
     </div>
   );
 
+  const renderMainContent = () => {
+    switch (currentView) {
+      case 'home': return <HomeContent onNavigate={navigateTo} lang={lang} />;
+      case 'machine': return <MachineLanding onNavigate={navigateTo} lang={lang} />;
+      case 'phytotherapie-reset': return <PhytotherapyResetPage onNavigate={navigateTo} lang={lang} />;
+      case 'library-landing': return <LibraryLanding onNavigate={navigateTo} lang={lang} />;
+      case 'guide': return <GuideContent onNavigate={navigateTo} lang={lang} />;
+      case 'ateliers': return (
+        <div className="max-w-[1200px] mx-auto px-6 py-12 animate-in fade-in duration-700">
+          <h2 className="text-3xl font-bold text-botanik-green mb-8">{t.nav.guide}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div onClick={() => navigateTo('culinaire')} className="group cursor-pointer bg-white border border-botanik-green/5 p-8 rounded-3xl hover:border-botanik-orange transition-colors">
+              <ChefHat className="w-12 h-12 text-botanik-orange mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-botanik-green mb-2">L'Atelier Culinaire</h3>
+              <p className="text-botanik-green/60 text-sm mb-6 leading-relaxed">Maîtrisez l'art de l'infusion et des terpènes pour une gastronomie vivante.</p>
+              <div className="flex items-center gap-2 text-botanik-orange font-bold text-sm">Découvrir <ArrowRight className="w-4 h-4" /></div>
+            </div>
+            <div onClick={() => navigateTo('cosmetiques')} className="group cursor-pointer bg-white border border-botanik-green/5 p-8 rounded-3xl hover:border-botanik-green transition-colors">
+              <Star className="w-12 h-12 text-botanik-green mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-botanik-green mb-2">Les Soins Cosmétiques</h3>
+              <p className="text-botanik-green/60 text-sm mb-6 leading-relaxed">Créez vos propres sérums et élixirs systémiques sans chimie de synthèse.</p>
+              <div className="flex items-center gap-2 text-botanik-green font-bold text-sm">Découvrir <ArrowRight className="w-4 h-4" /></div>
+            </div>
+            <div onClick={() => navigateTo('library')} className="group cursor-pointer bg-botanik-green/5 border border-botanik-green/10 p-8 rounded-3xl hover:bg-botanik-green transition-colors">
+              <FlaskConical className="w-12 h-12 text-botanik-green mb-6 group-hover:text-white transition-colors" />
+              <h3 className="text-xl font-bold text-botanik-green group-hover:text-white transition-colors mb-2">Phytothérapie Experte</h3>
+              <p className="text-botanik-green/60 group-hover:text-white/60 text-sm mb-6 leading-relaxed">Accédez aux protocoles avancés et aux 56 kits de précision BloomLab.</p>
+              <div className="flex items-center gap-2 text-botanik-green group-hover:text-white font-bold text-sm transition-colors">Explorer <ArrowRight className="w-4 h-4" /></div>
+            </div>
+          </div>
+        </div>
+      );
+      case 'library': return (
+        <LibraryContent 
+          isPremium={isPremium} 
+          onRequirePremium={handleRequirePremium} 
+          onNavigatePending={() => navigateTo('pending')}
+          onNavigate={navigateTo}
+          lang={lang}
+        />
+      );
+      case 'herbier': return (
+        <HerbariumContent 
+          isPremium={isPremium} 
+          onRequirePremium={handleRequirePremium} 
+          onNavigatePending={() => navigateTo('pending')}
+          onNavigate={navigateTo}
+          favorites={favorites}
+          onToggleFavorite={handleToggleFavorite}
+          initialPlantId={currentProductId}
+          lang={lang}
+        />
+      );
+      case 'culinaire': return (
+        <CulinarySection 
+          isPremium={isPremium} 
+          onRequirePremium={handleRequirePremium} 
+          onNavigatePending={() => navigateTo('pending')}
+          onNavigate={navigateTo}
+          favorites={favorites}
+          onToggleFavorite={handleToggleFavorite}
+          initialPlantId={currentProductId}
+          lang={lang}
+        />
+      );
+      case 'cosmetiques': return (
+        <CosmeticsContent 
+          isPremium={isPremium} 
+          onRequirePremium={handleRequirePremium} 
+          onNavigatePending={() => navigateTo('pending')}
+          onNavigate={navigateTo}
+          favorites={favorites}
+          onToggleFavorite={handleToggleFavorite}
+          initialPlantId={currentProductId}
+          lang={lang}
+        />
+      );
+      case 'pending': return <PendingContent onBack={() => navigateTo(previousView === 'pending' ? 'home' : previousView)} lang={lang} />;
+      case 'product-detail': return (
+        <ProductDetail onBack={() => navigateTo('boutique')} onAddToCart={(product) => {
+          addToCart(product);
+        }} productId={currentProductId} lang={lang} />
+      );
+      case 'cart': return (
+        <CartContent 
+          items={cart}
+          onUpdateQuantity={updateQuantity}
+          onRemove={removeFromCart}
+          onBack={() => navigateTo('boutique')}
+          onCheckout={() => navigateTo('checkout')}
+          lang={lang}
+        />
+      );
+      case 'checkout': return (
+        <CheckoutFlow 
+          cart={cart}
+          total={cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)}
+          onSuccess={() => {
+            setCart([]);
+            navigateTo('home');
+          }}
+          onCancel={() => navigateTo('cart')}
+          lang={lang}
+        />
+      );
+      case 'chat': return (
+        <ChatContent 
+          isPremium={isPremium} 
+          onNavigate={navigateTo} 
+          user={user}
+          onRequireAuth={() => setShowAuthModal(true)}
+          onSaveAssessment={handleSaveAssessment}
+          savedAssessment={assessmentResult}
+          onResetAssessment={handleResetAssessment}
+          lang={lang}
+        />
+      );
+      case 'manifeste': return <ManifesteContent onBack={() => navigateTo(previousView === 'manifeste' ? 'home' : previousView)} lang={lang} />;
+      case 'activation': return (
+        <ActivationPage 
+          userId={user?.uid || null} 
+          onSuccess={() => {
+            setIsPremium(true);
+            navigateTo('library');
+          }} 
+          lang={lang}
+        />
+      );
+      case 'account': return (
+        <AccountContent 
+          user={user} 
+          onNavigate={navigateTo} 
+          onLogout={handleLogout} 
+          lang={lang}
+        />
+      );
+      case 'legal': return <LegalPages type={legalType} onBack={() => navigateTo(previousView)} lang={lang} />;
+      default: return (
+        <StoreContent 
+          onNavigatePending={() => navigateTo('pending')} 
+          onNavigateDetail={(id) => navigateTo('product-detail', id)}
+          onAddToCart={(product) => addToCart(product)}
+          lang={lang}
+        />
+      );
+    }
+  };
+
   const MobileHeader = () => (
     <header className="lg:hidden sticky top-0 bg-botanik-green z-40 border-b border-white/5 px-4 py-3 flex items-center justify-between shadow-sm notranslate" translate="no">
       <div className="flex items-center gap-2 cursor-pointer group/logo" onClick={() => navigateTo('home')}>
@@ -685,147 +842,9 @@ export default function App() {
       {/* Main Content Area */}
       <main className="flex-1 min-w-0 w-full lg:max-w-[calc(100vw-20rem)] pb-24 lg:pb-0">
         <MobileHeader />
-        
-        {currentView === 'home' ? (
-          <HomeContent onNavigate={navigateTo} lang={lang} />
-        ) : currentView === 'machine' ? (
-          <MachineLanding onNavigate={navigateTo} lang={lang} />
-        ) : currentView === 'phytotherapie-reset' ? (
-          <PhytotherapyResetPage onNavigate={navigateTo} lang={lang} />
-        ) : currentView === 'library-landing' ? (
-          <LibraryLanding onNavigate={navigateTo} lang={lang} />
-        ) : currentView === 'guide' ? (
-          <GuideContent onNavigate={navigateTo} lang={lang} />
-        ) : currentView === 'ateliers' ? (
-          <div className="max-w-[1200px] mx-auto px-6 py-12 animate-in fade-in duration-700">
-            <h2 className="text-3xl font-bold text-botanik-green mb-8">{t.nav.guide}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div onClick={() => navigateTo('culinaire')} className="group cursor-pointer bg-white border border-botanik-green/5 p-8 rounded-3xl hover:border-botanik-orange transition-colors">
-                <ChefHat className="w-12 h-12 text-botanik-orange mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-bold text-botanik-green mb-2">L'Atelier Culinaire</h3>
-                <p className="text-botanik-green/60 text-sm mb-6 leading-relaxed">Maîtrisez l'art de l'infusion et des terpènes pour une gastronomie vivante.</p>
-                <div className="flex items-center gap-2 text-botanik-orange font-bold text-sm">Découvrir <ArrowRight className="w-4 h-4" /></div>
-              </div>
-              <div onClick={() => navigateTo('cosmetiques')} className="group cursor-pointer bg-white border border-botanik-green/5 p-8 rounded-3xl hover:border-botanik-green transition-colors">
-                <Star className="w-12 h-12 text-botanik-green mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-bold text-botanik-green mb-2">Les Soins Cosmétiques</h3>
-                <p className="text-botanik-green/60 text-sm mb-6 leading-relaxed">Créez vos propres sérums et élixirs systémiques sans chimie de synthèse.</p>
-                <div className="flex items-center gap-2 text-botanik-green font-bold text-sm">Découvrir <ArrowRight className="w-4 h-4" /></div>
-              </div>
-              <div onClick={() => navigateTo('library')} className="group cursor-pointer bg-botanik-green/5 border border-botanik-green/10 p-8 rounded-3xl hover:bg-botanik-green transition-colors">
-                <FlaskConical className="w-12 h-12 text-botanik-green mb-6 group-hover:text-white transition-colors" />
-                <h3 className="text-xl font-bold text-botanik-green group-hover:text-white transition-colors mb-2">Phytothérapie Experte</h3>
-                <p className="text-botanik-green/60 group-hover:text-white/60 text-sm mb-6 leading-relaxed">Accédez aux protocoles avancés et aux 56 kits de précision BloomLab.</p>
-                <div className="flex items-center gap-2 text-botanik-green group-hover:text-white font-bold text-sm transition-colors">Explorer <ArrowRight className="w-4 h-4" /></div>
-              </div>
-            </div>
-          </div>
-        ) : currentView === 'library' ? (
-          <LibraryContent 
-            isPremium={isPremium} 
-            onRequirePremium={handleRequirePremium} 
-            onNavigatePending={() => navigateTo('pending')}
-            onNavigate={navigateTo}
-            lang={lang}
-          />
-        ) : currentView === 'herbier' ? (
-          <HerbariumContent 
-            isPremium={isPremium} 
-            onRequirePremium={handleRequirePremium} 
-            onNavigatePending={() => navigateTo('pending')}
-            onNavigate={navigateTo}
-            favorites={favorites}
-            onToggleFavorite={handleToggleFavorite}
-            initialPlantId={currentProductId}
-            lang={lang}
-          />
-        ) : currentView === 'culinaire' ? (
-          <CulinarySection 
-            isPremium={isPremium} 
-            onRequirePremium={handleRequirePremium} 
-            onNavigatePending={() => navigateTo('pending')}
-            onNavigate={navigateTo}
-            favorites={favorites}
-            onToggleFavorite={handleToggleFavorite}
-            initialPlantId={currentProductId}
-            lang={lang}
-          />
-        ) : currentView === 'cosmetiques' ? (
-          <CosmeticsContent 
-            isPremium={isPremium} 
-            onRequirePremium={handleRequirePremium} 
-            onNavigatePending={() => navigateTo('pending')}
-            onNavigate={navigateTo}
-            favorites={favorites}
-            onToggleFavorite={handleToggleFavorite}
-            initialPlantId={currentProductId}
-            lang={lang}
-          />
-        ) : currentView === 'pending' ? (
-          <PendingContent onBack={() => navigateTo(previousView === 'pending' ? 'home' : previousView)} lang={lang} />
-        ) : currentView === 'product-detail' ? (
-          <ProductDetail onBack={() => navigateTo('boutique')} onAddToCart={(product) => {
-            addToCart(product);
-          }} productId={currentProductId} lang={lang} />
-        ) : currentView === 'cart' ? (
-          <CartContent 
-            items={cart}
-            onUpdateQuantity={updateQuantity}
-            onRemove={removeFromCart}
-            onBack={() => navigateTo('boutique')}
-            onCheckout={() => navigateTo('checkout')}
-            lang={lang}
-          />
-        ) : currentView === 'checkout' ? (
-          <CheckoutFlow 
-            cart={cart}
-            total={cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)}
-            onSuccess={() => {
-              setCart([]);
-              navigateTo('home');
-            }}
-            onCancel={() => navigateTo('cart')}
-            lang={lang}
-          />
-        ) : currentView === 'chat' ? (
-          <ChatContent 
-            isPremium={isPremium} 
-            onNavigate={navigateTo} 
-            user={user}
-            onRequireAuth={() => setShowAuthModal(true)}
-            onSaveAssessment={handleSaveAssessment}
-            savedAssessment={assessmentResult}
-            onResetAssessment={handleResetAssessment}
-            lang={lang}
-          />
-        ) : currentView === 'manifeste' ? (
-          <ManifesteContent onBack={() => navigateTo(previousView === 'manifeste' ? 'home' : previousView)} lang={lang} />
-        ) : currentView === 'activation' ? (
-          <ActivationPage 
-            userId={user?.uid || null} 
-            onSuccess={() => {
-              setIsPremium(true);
-              navigateTo('library');
-            }} 
-            lang={lang}
-          />
-        ) : currentView === 'account' ? (
-          <AccountContent 
-            user={user} 
-            onNavigate={navigateTo} 
-            onLogout={handleLogout} 
-            lang={lang}
-          />
-        ) : currentView === 'legal' ? (
-          <LegalPages type={legalType} onBack={() => navigateTo(previousView)} lang={lang} />
-        ) : (
-          <StoreContent 
-            onNavigatePending={() => navigateTo('pending')} 
-            onNavigateDetail={(id) => navigateTo('product-detail', id)}
-            onAddToCart={(product) => addToCart(product)}
-            lang={lang}
-          />
-        )}
+        <Suspense fallback={<ViewLoader />}>
+          {renderMainContent()}
+        </Suspense>
         <Footer onNavigate={navigateTo} lang={lang} />
       </main>
 

@@ -251,52 +251,71 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Mensuel */}
+            {/* Bloom Découverte */}
             <div className="bg-[#F9F9F7] rounded-3xl p-8 border border-botanik-green/5 flex flex-col">
-              <div className="mb-8">
-                <h3 className="text-xl font-bold text-botanik-green mb-2">{t.pricing.monthly.title}</h3>
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-botanik-green mb-1">{t.pricing.discovery.name}</h3>
+                <p className="text-xs text-botanik-green/60 mb-4">{t.pricing.discovery.tagline}</p>
                 <div className="flex items-baseline gap-1 mb-4">
-                  <span className="text-4xl font-black text-botanik-green">{t.pricing.monthly.price}</span>
-                  <span className="text-botanik-green/60 font-medium">{t.pricing.monthly.period}</span>
+                  <span className="text-4xl font-black text-botanik-green">{t.pricing.discovery.price}</span>
+                  <span className="text-botanik-green/60 font-medium">{t.pricing.discovery.period}</span>
                 </div>
               </div>
-              <ul className="space-y-4 mb-12 flex-1">
-                <li className="flex items-center gap-3 text-sm font-medium"><CheckCircle className="w-4 h-4 text-[#F97316]" /> {t.pricing.monthly.feat1}</li>
-                <li className="flex items-center gap-3 text-sm font-medium"><CheckCircle className="w-4 h-4 text-[#F97316]" /> {t.pricing.monthly.feat2}</li>
+              <ul className="space-y-3 mb-8 flex-1">
+                {t.pricing.discovery.bullets.map((bullet: string, i: number) => (
+                  <li key={i} className="flex items-start gap-3 text-xs leading-relaxed font-medium">
+                    <CheckCircle className="w-4 h-4 text-[#F97316] shrink-0 mt-0.5" /> 
+                    <span>{bullet}</span>
+                  </li>
+                ))}
               </ul>
-              <button onClick={() => onNavigate('boutique')} className="w-full py-4 bg-botanik-green text-white rounded-xl font-bold hover:bg-botanik-green/90 transition-all">{t.pricing.monthly.cta}</button>
+              <button onClick={() => onNavigate('boutique')} className="w-full py-4 bg-botanik-green text-white rounded-xl font-bold hover:bg-botanik-green/90 transition-all text-sm">{t.pricing.discovery.cta}</button>
             </div>
 
-            {/* Annuel */}
-            <div className="bg-botanik-green rounded-3xl p-8 border-4 border-[#F97316] flex flex-col relative transform scale-105 shadow-2xl shadow-botanik-green/20">
-              <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#F97316] text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">{t.pricing.annual.badge}</div>
-              <div className="mb-8">
-                <h3 className="text-xl font-bold text-white mb-2">{t.pricing.annual.title}</h3>
+            {/* Bloom Méthode (Recommended) */}
+            <div className="bg-botanik-green rounded-3xl p-8 border-4 border-[#F97316] flex flex-col relative transform lg:scale-110 shadow-2xl shadow-botanik-green/20 z-10">
+              <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#F97316] text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest whitespace-nowrap">{t.pricing.method.badge}</div>
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-white mb-1">{t.pricing.method.name}</h3>
+                <p className="text-xs text-white/60 mb-4">{t.pricing.method.tagline}</p>
                 <div className="flex items-baseline gap-1 mb-4 text-white">
-                  <span className="text-4xl font-black">{t.pricing.annual.price}</span>
-                  <span className="opacity-60 font-medium">{t.pricing.annual.period}</span>
+                  <span className="text-4xl font-black">{t.pricing.method.price}</span>
+                  <span className="opacity-60 font-medium">{t.pricing.method.period}</span>
                 </div>
               </div>
-              <ul className="space-y-4 mb-12 flex-1 text-white">
-                <li className="flex items-center gap-3 text-sm font-medium"><CheckCircle className="w-4 h-4 text-[#F97316]" /> {t.pricing.annual.feat1}</li>
-                <li className="flex items-center gap-3 text-sm font-medium"><CheckCircle className="w-4 h-4 text-[#F97316]" /> {t.pricing.annual.feat2}</li>
+              <ul className="space-y-3 mb-8 flex-1 text-white">
+                {t.pricing.method.bullets.map((bullet: string, i: number) => (
+                  <li key={i} className="flex items-start gap-3 text-xs leading-relaxed font-medium">
+                    <CheckCircle className="w-4 h-4 text-[#F97316] shrink-0 mt-0.5" /> 
+                    <span>{bullet}</span>
+                  </li>
+                ))}
               </ul>
-              <button onClick={() => onNavigate('boutique')} className="w-full py-4 bg-[#F97316] text-white rounded-xl font-bold hover:bg-[#EA580C] transition-all">{t.pricing.annual.cta}</button>
+              <button onClick={() => onNavigate('boutique')} className="w-full py-4 bg-[#F97316] text-white rounded-xl font-bold hover:bg-[#EA580C] transition-all text-sm">{t.pricing.method.cta}</button>
             </div>
 
-            {/* Lifetime */}
+            {/* Bloom Méthode Annuel */}
             <div className="bg-[#F9F9F7] rounded-3xl p-8 border border-botanik-green/5 flex flex-col">
-              <div className="mb-8">
-                <h3 className="text-xl font-bold text-botanik-green mb-2">{t.pricing.lifetime.title}</h3>
+              <div className="mb-6">
+                <div className="flex items-center gap-2 mb-1">
+                  <h3 className="text-xl font-bold text-botanik-green">{t.pricing.annual.name}</h3>
+                  <span className="bg-botanik-orange/10 text-botanik-orange text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">{t.pricing.annual.highlight}</span>
+                </div>
+                <p className="text-xs text-botanik-green/60 mb-4">{t.pricing.annual.tagline}</p>
                 <div className="flex items-baseline gap-1 mb-4">
-                  <span className="text-4xl font-black text-botanik-green">{t.pricing.lifetime.price}</span>
+                  <span className="text-4xl font-black text-botanik-green">{t.pricing.annual.price}</span>
+                  <span className="text-botanik-green/60 font-medium">{t.pricing.annual.period}</span>
                 </div>
               </div>
-              <ul className="space-y-4 mb-12 flex-1">
-                <li className="flex items-center gap-3 text-sm font-medium"><CheckCircle className="w-4 h-4 text-[#F97316]" /> {t.pricing.lifetime.feat1}</li>
-                <li className="flex items-center gap-3 text-sm font-medium"><CheckCircle className="w-4 h-4 text-[#F97316]" /> {t.pricing.lifetime.feat2}</li>
+              <ul className="space-y-3 mb-8 flex-1">
+                {t.pricing.annual.bullets.map((bullet: string, i: number) => (
+                  <li key={i} className="flex items-start gap-3 text-xs leading-relaxed font-medium">
+                    <CheckCircle className="w-4 h-4 text-[#F97316] shrink-0 mt-0.5" /> 
+                    <span>{bullet}</span>
+                  </li>
+                ))}
               </ul>
-              <button onClick={() => onNavigate('boutique')} className="w-full py-4 bg-botanik-green text-white rounded-xl font-bold hover:bg-botanik-green/90 transition-all">{t.pricing.lifetime.cta}</button>
+              <button onClick={() => onNavigate('boutique')} className="w-full py-4 bg-botanik-green text-white rounded-xl font-bold hover:bg-botanik-green/90 transition-all text-sm">{t.pricing.annual.cta}</button>
             </div>
           </div>
         </div>

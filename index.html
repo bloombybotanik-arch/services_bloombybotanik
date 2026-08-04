@@ -1,12 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <link rel="icon" type="image/png" href="/src/assets/images/favicon-dark-32.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="theme-color" content="#F9F9F7" />
+    <title>Bloom by Botanik | Extraction de Précision & Totum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="/src/assets/images/nature_biology_reset_hero_1785755295636.jpg" />
+    <style>
+      body { background: #F9F9F7; margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+      .initial-loader { display: flex; justify-content: center; align-items: center; height: 100vh; width: 100vw; background: #F9F9F7; }
+      .loader-logo { width: 80px; height: 80px; opacity: 0.5; animation: pulse 2s infinite; }
+      @keyframes pulse { 0%, 100% { opacity: 0.3; transform: scale(0.95); } 50% { opacity: 0.6; transform: scale(1); } }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="initial-loader">
+        <img src="/src/assets/images/logo_sidebar_1784886108085.png" class="loader-logo" alt="Chargement Bloom..." />
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
