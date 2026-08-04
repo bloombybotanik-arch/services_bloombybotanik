@@ -1,17 +1,18 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Search, ChevronDown, ChevronUp, ChefHat, Droplets, Flame, Hexagon, Beaker, Sprout, Star, ChevronRight, Lock } from 'lucide-react';
 import { wrapTitle } from './lib/textUtils';
-import { culinaryDatabase, CulinaryPlantData, ExtractionParams } from "./data/culinaryData";
+import { getCulinaryDatabase, CulinaryPlantData, ExtractionParams } from "./data/culinaryData";
+import { translations, Language } from './translations';
 
 
-const renderExtractionParam = (key: string, param: ExtractionParams) => {
+const renderExtractionParam = (key: string, param: ExtractionParams, t: any) => {
   const getIconAndTitle = () => {
     switch(key) {
-      case 'huile_finition': return { icon: <Droplets className="w-4 h-4" />, title: "Huile de Finition" };
-      case 'beurre_ghee': return { icon: <Flame className="w-4 h-4" />, title: "Beurre / Ghee" };
-      case 'miel': return { icon: <Hexagon className="w-4 h-4" />, title: "Miel Aromatique" };
-      case 'vinaigre': return { icon: <Beaker className="w-4 h-4" />, title: "Vinaigre Infusé" };
-      case 'sucre': return { icon: <Sprout className="w-4 h-4" />, title: "Sucre Aromatisé" };
+      case 'huile_finition': return { icon: <Droplets className="w-4 h-4" />, title: t.params.oil };
+      case 'beurre_ghee': return { icon: <Flame className="w-4 h-4" />, title: t.params.butter };
+      case 'miel': return { icon: <Hexagon className="w-4 h-4" />, title: t.params.honey };
+      case 'vinaigre': return { icon: <Beaker className="w-4 h-4" />, title: t.params.vinegar };
+      case 'sucre': return { icon: <Sprout className="w-4 h-4" />, title: t.params.sugar };
       default: return { icon: <ChefHat className="w-4 h-4" />, title: key };
     }
   };
@@ -24,13 +25,13 @@ const renderExtractionParam = (key: string, param: ExtractionParams) => {
         <span className="text-botanik-green">{icon}</span> {title}
       </h5>
       <div className="grid grid-cols-2 gap-y-2 text-sm text-[#1B3022]/80 mb-3">
-        <div><span className="font-semibold text-botanik-green">Temp :</span> {param.temp}</div>
-        <div><span className="font-semibold text-botanik-green">Temps :</span> {param.temps}</div>
-        <div className="col-span-2"><span className="font-semibold text-botanik-green">Ratio :</span> {param.ratio}</div>
-        <div className="col-span-2"><span className="font-semibold text-botanik-green">Solvant :</span> {param.solvant}</div>
+        <div><span className="font-semibold text-botanik-green">{t.params.temp}</span> {param.temp}</div>
+        <div><span className="font-semibold text-botanik-green">{t.params.time}</span> {param.temps}</div>
+        <div className="col-span-2"><span className="font-semibold text-botanik-green">{t.params.ratio}</span> {param.ratio}</div>
+        <div className="col-span-2"><span className="font-semibold text-botanik-green">{t.params.solvent}</span> {param.solvant}</div>
       </div>
       <div className="text-sm border-t border-botanik-green/10 pt-2 mt-2">
-        <span className="font-semibold text-[#1B3022]">Usage :</span> {param.usage}
+        <span className="font-semibold text-[#1B3022]">{t.params.usage}</span> {param.usage}
       </div>
     </div>
   );
@@ -42,8 +43,9 @@ const CulinaryAccordion: React.FC<{
   onRequirePremium?: () => void, 
   onNavigatePending?: () => void,
   isFavorite?: boolean,
-  onToggleFavorite?: () => void
-}> = ({ plant, isLocked, onRequirePremium, onNavigatePending, isFavorite, onToggleFavorite }) => {
+  onToggleFavorite?: () => void,
+  t: any
+}> = ({ plant, isLocked, onRequirePremium, onNavigatePending, isFavorite, onToggleFavorite, t }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -58,8 +60,8 @@ const CulinaryAccordion: React.FC<{
               <Lock className="w-5 h-5 text-white" />
             </div>
             <div>
-              <p className="text-sm font-bold text-botanik-green">Fiche Recette Premium</p>
-              <p className="text-[10px] text-botanik-green/60 uppercase tracking-widest font-black">Débloquer avec Bloom Complet</p>
+              <p className="text-sm font-bold text-botanik-green">{t.premium_badge}</p>
+              <p className="text-[10px] text-botanik-green/60 uppercase tracking-widest font-black">{t.unlock_label}</p>
             </div>
           </div>
           <ChevronRight className="w-5 h-5 text-botanik-green/30 group-hover:text-botanik-orange group-hover:translate-x-1 transition-all" />
@@ -75,7 +77,7 @@ const CulinaryAccordion: React.FC<{
             <div className="flex items-center gap-3 mb-2">
               <h3 className="text-2xl font-bold text-botanik-green group-hover:text-botanik-orange font-serif transition-colors">{wrapTitle(plant.nom_commun)}</h3>
               <span className="px-3 py-1 bg-botanik-green/5 text-botanik-green group-hover:bg-botanik-orange/10 group-hover:text-botanik-orange text-xs font-bold uppercase tracking-wider rounded-full border border-botanik-green/10 group-hover:border-botanik-orange/20 transition-colors">
-                Profil Culinaire
+                {t.profile_label}
               </span>
             </div>
             <p className="text-[#1B3022]/70 text-sm font-medium">{plant.profil_aromatique}</p>
@@ -103,11 +105,11 @@ const CulinaryAccordion: React.FC<{
           
           <div className="mb-8">
             <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-green mb-4 flex items-center gap-2">
-              <ChefHat className="w-4 h-4" /> Paramètres d'Extraction BloomLab
+              <ChefHat className="w-4 h-4" /> {t.extraction_title}
             </h4>
             <div className="grid md:grid-cols-2 gap-4">
               {Object.entries(plant.parametres_bloomlab).map(([key, param]) => 
-                param ? renderExtractionParam(key, param as ExtractionParams) : null
+                param ? renderExtractionParam(key, param as ExtractionParams, t) : null
               )}
             </div>
           </div>
@@ -115,11 +117,11 @@ const CulinaryAccordion: React.FC<{
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div>
               <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-green mb-4">
-                🤝 Synergies & Accords
+                {t.synergies_title}
               </h4>
               <ul className="space-y-3 text-sm text-[#1B3022]/80">
                 <li>
-                  <span className="font-semibold text-[#1B3022] block mb-1">Meilleures associations :</span> 
+                  <span className="font-semibold text-[#1B3022] block mb-1">{t.associations_label}</span> 
                   <div className="flex flex-wrap gap-2">
                     {plant.synergies_aliments.map((aliment, i) => (
                       <span key={i} className="px-2 py-1 bg-botanik-green/5 text-botanik-green rounded-md text-xs font-medium border border-botanik-green/10">
@@ -133,7 +135,7 @@ const CulinaryAccordion: React.FC<{
             <div>
               <div className="bg-botanik-green/5 p-5 rounded-xl border border-botanik-green/10 h-full flex flex-col justify-center">
                 <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-green mb-2 flex items-center gap-2">
-                  <ChefHat className="w-4 h-4" /> L'astuce du Chef
+                  <ChefHat className="w-4 h-4" /> {t.chef_tip}
                 </h4>
                 <p className="text-sm text-[#1B3022]/90 italic leading-relaxed">
                   "{plant.astuce_chef_bloom}"
@@ -154,7 +156,8 @@ export default function CulinarySection({
   onNavigatePending,
   initialPlantId,
   favorites = [],
-  onToggleFavorite
+  onToggleFavorite,
+  lang
 }: { 
   isPremium?: boolean, 
   onRequirePremium?: () => void,
@@ -162,8 +165,11 @@ export default function CulinarySection({
   onNavigatePending?: () => void,
   initialPlantId?: string,
   favorites?: string[],
-  onToggleFavorite?: (id: string) => void
+  onToggleFavorite?: (id: string) => void,
+  lang: Language
 }) {
+  const t = translations[lang].culinary;
+  const culinaryDatabase = useMemo(() => getCulinaryDatabase(lang), [lang]);
   const [searchQuery, setSearchQuery] = useState("");
   const [activeSearch, setActiveSearch] = useState("");
 
@@ -201,20 +207,20 @@ export default function CulinarySection({
       {/* Header */}
       <header className="mb-16">
         <div className="flex gap-4 text-sm font-medium text-botanik-green/60 mb-6 uppercase tracking-widest flex-wrap">
-          <span>Art Culinaire</span>
+          <span>{t.header.badge}</span>
           <span>•</span>
-          <span>Précision Aromatique</span>
+          <span>{t.header.badge_alt}</span>
         </div>
         <h1 className="leading-[1.1] tracking-tight text-botanik-green mb-8">
           <span className="block text-3xl md:text-[54px] font-bold mb-2">
-            {wrapTitle("L'Atelier Culinaire")}
+            {wrapTitle(t.header.title)}
           </span>
           <span className="block text-3xl md:text-[54px] text-botanik-green/80 font-bold">
-            {wrapTitle("Extraction & Gastronomie")}
+            {wrapTitle(t.header.subtitle)}
           </span>
         </h1>
         <p className="text-base md:text-xl text-botanik-green/80 max-w-2xl leading-relaxed">
-          De la cuisine à la pharmacie, une seule machine. La BloomLab préserve 98% des terpènes aromatiques (vs 40% en cuisson classique) grâce au contrôle précis de la température.
+          {t.header.description}
         </p>
       </header>
 
@@ -223,7 +229,7 @@ export default function CulinarySection({
           <Search className="absolute left-4 md:left-6 w-4 h-4 md:w-6 md:h-6 text-botanik-green/40 top-1/2 -translate-y-1/2" />
           <input
             type="text"
-            placeholder="Ex: Romarin, Boisé, Miel..."
+            placeholder={t.search.placeholder}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-12 md:pl-16 pr-24 md:pr-32 py-3 md:py-5 bg-white border-2 border-botanik-green/10 rounded-full text-sm md:text-lg text-[#1B3022] font-medium placeholder:text-botanik-green/30 focus:outline-none focus:border-botanik-green/30 focus:shadow-lg transition-all shadow-sm"
@@ -232,7 +238,7 @@ export default function CulinarySection({
             type="submit"
             className="absolute right-2 md:right-3 top-1.5 md:top-2 bottom-1.5 md:bottom-2 px-4 md:px-6 bg-botanik-green text-white rounded-full font-bold uppercase tracking-widest text-[10px] md:text-xs hover:bg-botanik-orange transition-colors"
           >
-            Rechercher
+            {t.search.button}
           </button>
         </div>
       </form>
@@ -240,9 +246,9 @@ export default function CulinarySection({
       <div>
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-sm font-bold uppercase tracking-widest text-botanik-green/60">
-            {activeSearch ? `Résultats pour "${activeSearch}"` : 'Tous les profils aromatiques'}
+            {activeSearch ? `${t.search.results_for} "${activeSearch}"` : t.search.all_profiles}
           </h2>
-          <span className="text-sm font-medium text-[#1B3022]/40">{filteredPlants.length} fiche(s) culinaire(s)</span>
+          <span className="text-sm font-medium text-[#1B3022]/40">{filteredPlants.length} {t.search.count_label}</span>
         </div>
 
         {filteredPlants.length > 0 ? (
@@ -258,6 +264,7 @@ export default function CulinarySection({
                   onNavigatePending={onNavigatePending}
                   isFavorite={favorites.includes(plant.plant_id)}
                   onToggleFavorite={() => onToggleFavorite?.(plant.plant_id)}
+                  t={t.card}
                 />
               );
             })}
@@ -265,8 +272,8 @@ export default function CulinarySection({
         ) : (
           <div className="bg-white p-12 rounded-2xl border border-botanik-green/10 text-center">
             <ChefHat className="w-12 h-12 text-botanik-green/20 mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-botanik-green mb-2">Aucune fiche trouvée</h3>
-            <p className="text-[#1B3022]/60">Essayez d'élargir votre recherche par arôme ou par plante.</p>
+            <h3 className="text-xl font-bold text-botanik-green mb-2">{t.search.no_results}</h3>
+            <p className="text-[#1B3022]/60">{t.search.no_results_desc}</p>
           </div>
         )}
       </div>

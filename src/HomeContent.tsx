@@ -4,15 +4,20 @@ import bloomImg from './assets/images/bloomlab_main_1784887530345.jpeg';
 import { resetDetailsData, ResetSectionDetail } from './data/resetDetails';
 import { motion, AnimatePresence } from 'motion/react';
 
+import { translations, Language } from './translations';
+
 interface HomeContentProps {
   onNavigate: (view: any) => void;
+  lang: Language;
 }
 
 const ResetDetailModal: React.FC<{ 
   detail: ResetSectionDetail; 
   onClose: () => void;
   onNavigate: (view: any) => void;
-}> = ({ detail, onClose, onNavigate }) => {
+  lang: Language;
+}> = ({ detail, onClose, onNavigate, lang }) => {
+  const t = translations[lang];
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -38,22 +43,24 @@ const ResetDetailModal: React.FC<{
         <div className="p-8 md:p-16">
           <div className="mb-12">
             <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6 leading-tight">
-              {detail.title}
+              {detail.translations?.[lang]?.title || detail.title}
             </h2>
             <div className="p-6 bg-botanik-orange/5 rounded-3xl border border-botanik-orange/10">
               <p className="text-botanik-green font-medium leading-relaxed italic">
-                {detail.objective}
+                {detail.translations?.[lang]?.objective || detail.objective}
               </p>
             </div>
           </div>
 
           <div className="space-y-12">
-            {detail.sections.map((section) => (
+            {detail.sections.map((section, sIdx) => (
               <div key={section.id} className="relative pl-8 border-l-2 border-botanik-orange/20">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-botanik-orange shadow-sm shadow-botanik-orange/20" />
-                <h3 className="text-xl font-bold text-botanik-green mb-6">{section.title}</h3>
+                <h3 className="text-xl font-bold text-botanik-green mb-6">
+                  {detail.translations?.[lang]?.sections?.[sIdx]?.title || section.title}
+                </h3>
                 <div className="space-y-4">
-                  {section.content.map((p, idx) => (
+                  {(detail.translations?.[lang]?.sections?.[sIdx]?.content || section.content).map((p: string, idx: number) => (
                     <p key={idx} className="text-botanik-green/70 leading-relaxed">
                       {p}
                     </p>
@@ -69,9 +76,9 @@ const ResetDetailModal: React.FC<{
                 <Sparkles className="w-32 h-32" />
               </div>
               <div className="relative z-10">
-                <h4 className="text-2xl font-bold mb-4">{detail.cta.label}</h4>
+                <h4 className="text-2xl font-bold mb-4">{detail.translations?.[lang]?.cta?.label || detail.cta.label}</h4>
                 <p className="text-white/70 mb-8 max-w-xl">
-                  {detail.cta.description}
+                  {detail.translations?.[lang]?.cta?.description || detail.cta.description}
                 </p>
                 <button 
                   onClick={() => {
@@ -81,7 +88,7 @@ const ResetDetailModal: React.FC<{
                   }}
                   className="px-8 py-4 bg-botanik-orange text-white rounded-2xl font-bold flex items-center gap-2 hover:scale-105 transition-all shadow-xl shadow-botanik-orange/20"
                 >
-                  Démarrer maintenant <ArrowRight className="w-5 h-5" />
+                  {t.common.start_now} <ArrowRight className="w-5 h-5" />
                 </button>
               </div>
             </div>
@@ -92,8 +99,9 @@ const ResetDetailModal: React.FC<{
   );
 };
 
-export default function HomeContent({ onNavigate }: HomeContentProps) {
+export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
   const [selectedResetDetail, setSelectedResetDetail] = useState<ResetSectionDetail | null>(null);
+  const t = translations[lang];
 
   return (
     <div className="max-w-[1200px] mx-auto px-6 py-12 lg:py-24 animate-in fade-in slide-in-from-bottom-4 duration-1000">
@@ -104,6 +112,7 @@ export default function HomeContent({ onNavigate }: HomeContentProps) {
             detail={selectedResetDetail} 
             onClose={() => setSelectedResetDetail(null)} 
             onNavigate={onNavigate}
+            lang={lang}
           />
         )}
       </AnimatePresence>
@@ -115,19 +124,19 @@ export default function HomeContent({ onNavigate }: HomeContentProps) {
           <div className="grid lg:grid-cols-[1fr_450px] gap-8 md:gap-12 items-center relative z-10">
             <div>
               <div className="flex gap-4 text-[10px] font-black text-botanik-green/40 uppercase tracking-[0.3em] items-center mb-8">
-                <span>Introduction</span>
+                <span>{t.home.hero.intro}</span>
                 <span className="w-1 h-1 rounded-full bg-botanik-green/20" />
-                <span>Onboarding</span>
+                <span>{t.home.hero.onboarding}</span>
               </div>
               <h1 className="text-3xl md:text-7xl font-bold text-botanik-green mb-6 md:mb-8 leading-[1.1]">
-                Commencer ici
+                {t.home.hero.title}
               </h1>
               <p className="text-base md:text-2xl text-botanik-green/60 leading-relaxed font-light">
-                Bienvenue dans l'écosystème Bloom by Botanik. Plus qu'une application, voici votre guide pour réapprendre à écouter, comprendre et accompagner votre biologie vivante.
+                {t.home.hero.description}
               </p>
             </div>
             <div className="relative aspect-square rounded-[32px] md:rounded-[40px] overflow-hidden border-4 md:border-8 border-white shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
-              <img src={bloomImg} className="w-full h-full object-cover" alt="BloomLab" />
+              <img src={bloomImg} loading="lazy" className="w-full h-full object-cover" alt="BloomLab" />
               <div className="absolute inset-0 ring-1 ring-inset ring-botanik-green/10 rounded-[32px] md:rounded-[40px]" />
             </div>
           </div>
@@ -138,9 +147,9 @@ export default function HomeContent({ onNavigate }: HomeContentProps) {
             <div className="w-12 h-12 bg-botanik-orange/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <Sparkles className="w-6 h-6 text-botanik-orange" />
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-botanik-green mb-4">Bienvenue chez Bloom by Botanik</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-botanik-green mb-4">{t.home.cards.welcome.title}</h3>
             <p className="text-sm md:text-base text-botanik-green/60 leading-relaxed">
-              Nous sommes un écosystème de soin botanique, éducatif et biologique. Notre mission est de restaurer la cohérence entre votre corps, vos soins et la nature à travers l'intelligence du Totum.
+              {t.home.cards.welcome.description}
             </p>
           </div>
 
@@ -148,9 +157,9 @@ export default function HomeContent({ onNavigate }: HomeContentProps) {
             <div className="w-12 h-12 bg-botanik-orange/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <FlaskConical className="w-6 h-6 text-botanik-orange" />
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-botanik-green mb-4">Ce que nous faisons</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-botanik-green mb-4">{t.home.cards.what_we_do.title}</h3>
             <p className="text-sm md:text-base text-botanik-green/60 leading-relaxed">
-              Nous unissons l'usage de la machine BloomLab, des produits d'exception, des protocoles rigoureux et des ateliers de transmission pour vous offrir une autonomie réelle dans votre pratique du soin.
+              {t.home.cards.what_we_do.description}
             </p>
           </div>
 
@@ -158,9 +167,9 @@ export default function HomeContent({ onNavigate }: HomeContentProps) {
             <div className="w-12 h-12 bg-botanik-orange/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <BookOpen className="w-6 h-6 text-botanik-orange" />
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-botanik-green mb-4">Dans cette application</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-botanik-green mb-4">{t.home.cards.in_app.title}</h3>
             <p className="text-sm md:text-base text-botanik-green/60 leading-relaxed">
-              Explorez l'Herbier systémique, accédez à vos protocoles de Reset, maîtrisez l'art de l'infusion via nos ateliers et apprenez à lire votre propre terrain biologique avec l'aide d'ALMA.
+              {t.home.cards.in_app.description}
             </p>
           </div>
 
@@ -168,15 +177,15 @@ export default function HomeContent({ onNavigate }: HomeContentProps) {
             <div className="w-12 h-12 bg-botanik-orange/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <ChevronRight className="w-6 h-6 text-botanik-orange" />
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-botanik-green mb-4">Par où commencer ?</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-botanik-green mb-4">{t.home.cards.start.title}</h3>
             <p className="text-sm md:text-base text-botanik-green/60 leading-relaxed mb-6">
-              Nous vous recommandons de débuter par un bilan personnalisé avec ALMA pour identifier vos besoins prioritaires ou de plonger dans la Science du Totum pour comprendre notre vision.
+              {t.home.cards.start.description}
             </p>
             <button 
               onClick={() => onNavigate('chat')}
               className="flex items-center gap-2 text-botanik-orange font-bold text-sm uppercase tracking-widest hover:gap-3 transition-all"
             >
-              Faire mon bilan <ChevronRight className="w-4 h-4" />
+              {t.home.cards.start.cta} <ChevronRight className="w-4 h-4" />
             </button>
           </div>
         </div>
@@ -185,45 +194,45 @@ export default function HomeContent({ onNavigate }: HomeContentProps) {
       {/* PAGE 2 — LA SCIENCE DU TOTUM */}
       <section id="science" className="mb-24 md:mb-32 scroll-mt-24">
         <div className="max-w-3xl mb-12 md:mb-16">
-          <span className="inline-block px-3 py-1 bg-botanik-green/5 text-botanik-green text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">Philosophie</span>
+          <span className="inline-block px-3 py-1 bg-botanik-green/5 text-botanik-green text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">{t.home.science.badge}</span>
           <h2 className="text-2xl md:text-6xl font-bold text-botanik-green mb-6 md:mb-8 leading-tight">
-            La science du Totum
+            {t.home.science.title}
           </h2>
           <p className="text-base md:text-xl text-botanik-green/60 leading-relaxed font-light">
-            La plante est une intelligence vivante que l'on ne peut réduire à une seule molécule isolée. Notre approche repose sur le respect de cette complexité biologique.
+            {t.home.science.description}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-10 md:gap-12">
           <div className="space-y-10 md:space-y-12">
             <div>
-              <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-2">Qu'est-ce que le Totum ?</h4>
-              <p className="text-[10px] md:text-sm font-medium text-botanik-orange uppercase tracking-wider mb-3 md:mb-4">L'INTÉGRALITÉ DU VIVANT</p>
+              <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-2">{t.home.science.q1.title}</h4>
+              <p className="text-[10px] md:text-sm font-medium text-botanik-orange uppercase tracking-wider mb-3 md:mb-4">{t.home.science.q1.subtitle}</p>
               <p className="text-sm md:text-base text-botanik-green/60 leading-relaxed">
-                Le Totum est l'ensemble des principes actifs d'une plante. Contrairement à l'approche industrielle qui isole une molécule, le Totum préserve la synergie naturelle où chaque composé module et soutient l'action des autres.
+                {t.home.science.q1.description}
               </p>
             </div>
             <div>
-              <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-2">Pourquoi cette approche ?</h4>
-              <p className="text-[10px] md:text-sm font-medium text-botanik-orange uppercase tracking-wider mb-3 md:mb-4">RÉPONSE BIOLOGIQUE</p>
+              <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-2">{t.home.science.q2.title}</h4>
+              <p className="text-[10px] md:text-sm font-medium text-botanik-orange uppercase tracking-wider mb-3 md:mb-4">{t.home.science.q2.subtitle}</p>
               <p className="text-sm md:text-base text-botanik-green/60 leading-relaxed">
-                Le corps reconnaît mieux les structures complexes du Totum. Cette "langue" biologique permet une assimilation optimale et réduit les effets secondaires souvent liés aux actifs isolés et sur-concentrés.
+                {t.home.science.q2.description}
               </p>
             </div>
           </div>
           <div className="space-y-10 md:space-y-12">
             <div>
-              <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-2">Notre lecture du corps</h4>
-              <p className="text-[10px] md:text-sm font-medium text-botanik-orange uppercase tracking-wider mb-3 md:mb-4">SYSTÈMES INTERCONNECTÉS</p>
+              <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-2">{t.home.science.q3.title}</h4>
+              <p className="text-[10px] md:text-sm font-medium text-botanik-orange uppercase tracking-wider mb-3 md:mb-4">{t.home.science.q3.subtitle}</p>
               <p className="text-sm md:text-base text-botanik-green/60 leading-relaxed">
-                Nous ne traitons pas des symptômes isolés. Stress, immunité, inflammation et microbiote forment un terrain unique. Bloom s'attache à restaurer la régulation globale de ces systèmes interconnectés.
+                {t.home.science.q3.description}
               </p>
             </div>
             <div>
-              <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-2">Le sens de l'extraction</h4>
-              <p className="text-[10px] md:text-sm font-medium text-botanik-orange uppercase tracking-wider mb-3 md:mb-4">RÉVÉLER LA PUISSANCE</p>
+              <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-2">{t.home.science.q4.title}</h4>
+              <p className="text-[10px] md:text-sm font-medium text-botanik-orange uppercase tracking-wider mb-3 md:mb-4">{t.home.science.q4.subtitle}</p>
               <p className="text-sm md:text-base text-botanik-green/60 leading-relaxed">
-                L'extraction est l'art de révéler les différentes familles de composés d'une plante. BloomLab permet de maîtriser ce processus pour capturer l'essence pure du Totum adaptée à votre terrain spécifique.
+                {t.home.science.q4.description}
               </p>
             </div>
           </div>
@@ -240,10 +249,10 @@ export default function HomeContent({ onNavigate }: HomeContentProps) {
           <div className="relative z-10">
             <div className="max-w-3xl mb-12 md:mb-20">
               <h2 className="text-3xl md:text-6xl font-bold mb-6 md:mb-8 leading-tight">
-                Une autre voie
+                {t.home.alternative.title}
               </h2>
               <p className="text-lg md:text-xl text-white/70 leading-relaxed font-light italic">
-                "Votre corps n'est pas cassé. Il est verrouillé."
+                {t.home.alternative.quote}
               </p>
             </div>
 
@@ -254,9 +263,9 @@ export default function HomeContent({ onNavigate }: HomeContentProps) {
                     <Leaf className="w-6 h-6 text-botanik-orange" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2">Pourquoi une autre voie ?</h4>
+                    <h4 className="text-xl font-bold mb-2">{t.home.alternative.q1.title}</h4>
                     <p className="text-white/60 text-sm leading-relaxed">
-                      Face à la fragmentation des routines modernes qui s'épuisent à masquer les signaux, nous proposons de revenir à la source : la régulation des systèmes biologiques profonds.
+                      {t.home.alternative.q1.description}
                     </p>
                   </div>
                 </div>
@@ -265,9 +274,9 @@ export default function HomeContent({ onNavigate }: HomeContentProps) {
                     <ShieldCheck className="w-6 h-6 text-botanik-orange" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2">La souveraineté</h4>
+                    <h4 className="text-xl font-bold mb-2">{t.home.alternative.q2.title}</h4>
                     <p className="text-white/60 text-sm leading-relaxed">
-                      La souveraineté n'est pas l'isolement, c'est l'autonomie par la connaissance. Comprendre son corps et maîtriser ses propres outils de soin est l'acte de liberté ultime.
+                      {t.home.alternative.q2.description}
                     </p>
                   </div>
                 </div>
@@ -278,9 +287,9 @@ export default function HomeContent({ onNavigate }: HomeContentProps) {
                     <Award className="w-6 h-6 text-botanik-orange" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2">La différence Bloom</h4>
+                    <h4 className="text-xl font-bold mb-2">{t.home.alternative.q3.title}</h4>
                     <p className="text-white/60 text-sm leading-relaxed">
-                      Nous ne cherchons pas l'accumulation d'actifs, mais la cohérence du geste. Chaque protocole Bloom est une éducation au vivant, alliant rigueur scientifique et respect botanique.
+                      {t.home.alternative.q3.description}
                     </p>
                   </div>
                 </div>
@@ -289,9 +298,9 @@ export default function HomeContent({ onNavigate }: HomeContentProps) {
                     <User className="w-6 h-6 text-botanik-orange" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2">Une vision profonde</h4>
+                    <h4 className="text-xl font-bold mb-2">{t.home.alternative.q4.title}</h4>
                     <p className="text-white/60 text-sm leading-relaxed">
-                      Le soin est un dialogue. Nous vous apprenons à lire les messages de votre peau, de votre énergie et de vos rythmes pour y répondre avec une justesse souveraine.
+                      {t.home.alternative.q4.description}
                     </p>
                   </div>
                 </div>
@@ -304,65 +313,65 @@ export default function HomeContent({ onNavigate }: HomeContentProps) {
       {/* PAGE 4 — TROUVER VOTRE VOIE */}
       <section id="choix" className="scroll-mt-24">
         <div className="max-w-3xl mb-16">
-          <span className="inline-block px-3 py-1 bg-botanik-orange/10 text-botanik-orange text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">Orientation</span>
+          <span className="inline-block px-3 py-1 bg-botanik-orange/10 text-botanik-orange text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">{t.home.way.badge}</span>
           <h2 className="text-3xl md:text-6xl font-bold text-botanik-green mb-8 leading-tight">
-            Trouver votre voie
+            {t.home.way.title}
           </h2>
           <p className="text-lg md:text-xl text-botanik-green/60 leading-relaxed font-light">
-            Chaque parcours commence par une intention. Identifiez le point d'entrée qui résonne avec votre besoin actuel.
+            {t.home.way.description}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           <div className="bg-white p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-botanik-green/5 shadow-sm hover:border-botanik-orange transition-all duration-300 flex flex-col group">
-            <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-4">Découvrir la marque</h4>
+            <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-4">{t.home.way.discover.title}</h4>
             <p className="text-botanik-green/60 text-xs md:text-sm mb-6 md:mb-8 leading-relaxed flex-grow">
-              Plongez dans l'univers Bloom, notre histoire et notre vision du Totum à travers nos dossiers thématiques et notre manifeste.
+              {t.home.way.discover.description}
             </p>
             <button 
               onClick={() => onNavigate('manifeste')}
               className="flex items-center gap-2 text-botanik-orange font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] group-hover:gap-3 transition-all"
             >
-              Manifeste <ChevronRight className="w-4 h-4" />
+              {t.home.way.discover.cta} <ChevronRight className="w-4 h-4" />
             </button>
           </div>
 
           <div className="bg-white p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-botanik-green/5 shadow-sm hover:border-botanik-orange transition-all duration-300 flex flex-col group">
-            <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-4">Solution concrète</h4>
+            <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-4">{t.home.way.solution.title}</h4>
             <p className="text-botanik-green/60 text-xs md:text-sm mb-6 md:mb-8 leading-relaxed flex-grow">
-              Vous cherchez un produit spécifique ou la machine BloomLab ? Accédez directement à notre boutique d'outils botaniques.
+              {t.home.way.solution.description}
             </p>
             <button 
               onClick={() => onNavigate('boutique')}
               className="flex items-center gap-2 text-botanik-orange font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] group-hover:gap-3 transition-all"
             >
-              La Boutique <ChevronRight className="w-4 h-4" />
+              {t.home.way.solution.cta} <ChevronRight className="w-4 h-4" />
             </button>
           </div>
 
           <div className="bg-white p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-botanik-green/5 shadow-sm hover:border-botanik-orange transition-all duration-300 flex flex-col group">
-            <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-4">Reset Systémique</h4>
+            <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-4">{t.home.way.reset.title}</h4>
             <p className="text-botanik-green/60 text-xs md:text-sm mb-6 md:mb-8 leading-relaxed flex-grow">
-              Prêt pour une transformation profonde ? Entrez dans le protocole de Reset pour rééquilibrer vos systèmes de régulation.
+              {t.home.way.reset.description}
             </p>
             <button 
               onClick={() => onNavigate('phytotherapie-reset')}
               className="flex items-center gap-2 text-botanik-orange font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] group-hover:gap-3 transition-all"
             >
-              Le Reset <ChevronRight className="w-4 h-4" />
+              {t.home.way.reset.cta} <ChevronRight className="w-4 h-4" />
             </button>
           </div>
 
           <div className="bg-white p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-botanik-green/5 shadow-sm hover:border-botanik-orange transition-all duration-300 flex flex-col group">
-            <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-4">Aller plus loin</h4>
+            <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-4">{t.home.way.more.title}</h4>
             <p className="text-botanik-green/60 text-xs md:text-sm mb-6 md:mb-8 leading-relaxed flex-grow">
-              Explorez l'Herbier systémique pour approfondir votre connaissance des plantes ou participez à nos ateliers experts.
+              {t.home.way.more.description}
             </p>
             <button 
               onClick={() => onNavigate('herbier')}
               className="flex items-center gap-2 text-botanik-orange font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] group-hover:gap-3 transition-all"
             >
-              L'Herbier <ChevronRight className="w-4 h-4" />
+              {t.home.way.more.cta} <ChevronRight className="w-4 h-4" />
             </button>
           </div>
         </div>
@@ -377,22 +386,22 @@ export default function HomeContent({ onNavigate }: HomeContentProps) {
           
           <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
             <div className="max-w-xl">
-              <span className="inline-block px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-[10px] font-bold uppercase tracking-widest mb-6">Protocole Signature</span>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">Le Reset <br /> Homéostatique</h2>
+              <span className="inline-block px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-[10px] font-bold uppercase tracking-widest mb-6">{t.home.featured.badge}</span>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">{t.home.featured.title}</h2>
               <p className="text-white/80 text-base md:text-lg mb-10 leading-relaxed">
-                Un voyage de 21 jours pour réinitialiser vos mécanismes naturels. La puissance du Totum à portée de main.
+                {t.home.featured.description}
               </p>
               <button onClick={() => onNavigate('phytotherapie-reset')} className="px-10 py-5 bg-white text-botanik-green rounded-2xl font-bold flex items-center gap-3 hover:bg-[#F5F3EB] transition-colors shadow-2xl">
-                Découvrir le Protocole <ChevronRight className="w-5 h-5" />
+                {t.home.featured.cta} <ChevronRight className="w-5 h-5" />
               </button>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { id: 'respiration', title: "Respiration", subtitle: "Nerf Vague & thymus", detail: "Système Nerveux Autonome", icon: Wind, color: "bg-[#E0F2FE] text-[#0369A1]", iconColor: "text-[#0369A1]" },
-                { id: 'mouvement', title: "Mouvement", subtitle: "Lymphe et Fascia", detail: "Système Lymphatique", icon: Waves, color: "bg-[#DCFCE7] text-[#15803D]", iconColor: "text-[#15803D]" },
-                { id: 'sommeil', title: "Sommeil", subtitle: "Nuit de reconstruction", detail: "Apaisement & Réparation", icon: Moon, color: "bg-[#F3E8FF] text-[#7E22CE]", iconColor: "text-[#7E22CE]" },
-                { id: 'alimentation', title: "Alimentation", subtitle: "Nourrir le terrain", detail: "Métabolisme & Vitalité", icon: Utensils, color: "bg-[#FEF9C3] text-[#854D0E]", iconColor: "text-[#854D0E]" }
+                { id: 'respiration', title: t.home.featured.items.respiration.title, subtitle: t.home.featured.items.respiration.subtitle, detail: t.home.featured.items.respiration.detail, icon: Wind, color: "bg-[#E0F2FE] text-[#0369A1]", iconColor: "text-[#0369A1]" },
+                { id: 'mouvement', title: t.home.featured.items.movement.title, subtitle: t.home.featured.items.movement.subtitle, detail: t.home.featured.items.movement.detail, icon: Waves, color: "bg-[#DCFCE7] text-[#15803D]", iconColor: "text-[#15803D]" },
+                { id: 'sommeil', title: t.home.featured.items.sleep.title, subtitle: t.home.featured.items.sleep.subtitle, detail: t.home.featured.items.sleep.detail, icon: Moon, color: "bg-[#F3E8FF] text-[#7E22CE]", iconColor: "text-[#7E22CE]" },
+                { id: 'alimentation', title: t.home.featured.items.nutrition.title, subtitle: t.home.featured.items.nutrition.subtitle, detail: t.home.featured.items.nutrition.detail, icon: Utensils, color: "bg-[#FEF9C3] text-[#854D0E]", iconColor: "text-[#854D0E]" }
               ].map((item, idx) => (
                 <div 
                   key={idx} 
@@ -423,7 +432,7 @@ export default function HomeContent({ onNavigate }: HomeContentProps) {
                     }}
                     className="mt-4 flex items-center gap-1 text-[10px] font-black uppercase tracking-widest opacity-80 group-hover/vignette:opacity-100"
                   >
-                    Détails <ChevronRight className="w-3 h-3" />
+                    {t.common.details} <ChevronRight className="w-3 h-3" />
                   </button>
                 </div>
               ))}

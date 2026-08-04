@@ -3,6 +3,12 @@ import { Shield, FlaskConical, Activity, Heart, ArrowRight, CheckCircle, Search,
 import { motion, AnimatePresence } from 'motion/react';
 import { resetPhasesData, ResetPhaseDetail } from './data/resetPhases';
 import { chronobiologyData, ChronoPhase } from './data/chronobiology';
+import { translations, Language } from './translations';
+
+import natureHero from './assets/images/nature_biology_reset_hero_1785755295636.jpg';
+import emonctoiresImg from './assets/images/emonctoires_natural_drainage_1785755307026.jpg';
+import hepaticImg from './assets/images/hepatic_balance_liver_1785755318947.jpg';
+import bloodPurityImg from './assets/images/blood_purity_lymphatic_1785755331143.jpg';
 
 const PhaseDetailModal: React.FC<{ 
   phase: ResetPhaseDetail; 
@@ -156,7 +162,8 @@ const PhaseDetailModal: React.FC<{
   );
 };
 
-export default function PhytotherapyResetPage({ onNavigate }: { onNavigate: (view: any) => void }) {
+export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate: (view: any) => void, lang: Language }) {
+  const t = translations[lang].phytotherapyReset;
   const [activeTab, setActiveTab] = useState<'protocol' | 'supplements' | 'chronobiology'>('protocol');
   const [selectedChrono, setSelectedChrono] = useState<string | null>(null);
   const [selectedPhase, setSelectedPhase] = useState<ResetPhaseDetail | null>(null);
@@ -227,20 +234,20 @@ export default function PhytotherapyResetPage({ onNavigate }: { onNavigate: (vie
 
       {/* Hero Section */}
       <section className="relative pt-20 pb-32 overflow-hidden bg-botanik-green text-white rounded-b-[60px] md:rounded-b-[100px] shadow-2xl">
-        <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-botanik-orange rounded-full blur-[150px] -mr-96 -mt-96"></div>
-          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-botanik-magenta rounded-full blur-[120px] -ml-72 -mb-72"></div>
+        <div className="absolute inset-0 pointer-events-none">
+          <img src={natureHero} className="w-full h-full object-cover opacity-40 mix-blend-overlay" alt="" />
+          <div className="absolute inset-0 bg-gradient-to-b from-botanik-green/20 to-botanik-green"></div>
         </div>
         <div className="container mx-auto px-6 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-botanik-orange px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-8 border border-white/10">
-            Souveraineté Biologique
+            {t.badge}
           </div>
           <h1 className="text-4xl md:text-8xl font-bold mb-8 leading-[0.9] tracking-tighter">
-            Reset <br />
-            <span className="text-botanik-orange">Homéostatique.</span>
+            {t.title} <br />
+            <span className="text-botanik-orange">{t.title_accent}</span>
           </h1>
           <p className="text-base md:text-2xl text-white/70 max-w-2xl mx-auto leading-relaxed font-light mb-12 italic">
-            "Votre corps n'est pas cassé. Il est verrouillé."
+            {t.quote}
           </p>
         </div>
       </section>
@@ -298,8 +305,8 @@ export default function PhytotherapyResetPage({ onNavigate }: { onNavigate: (vie
                   <div className="text-[10px] font-black text-botanik-orange tracking-[0.3em] mb-2 uppercase">{step.subtitle}</div>
                   <div className="flex items-center justify-between mb-6">
                     <h3 className="text-xl font-bold text-botanik-green">{step.id}</h3>
-                    <div className={`p-3 rounded-xl ${step.highlight ? 'bg-botanik-orange/10 text-botanik-orange' : 'bg-botanik-green/5 text-botanik-green'}`}>
-                      <step.icon className="w-6 h-6" />
+                    <div className={`p-2 rounded-lg ${step.highlight ? 'bg-botanik-orange/10 text-botanik-orange' : 'bg-botanik-green/5 text-botanik-green'}`}>
+                      <step.icon className="w-4 h-4" />
                     </div>
                   </div>
                   <h4 className="text-lg font-bold text-botanik-green mb-4">{step.title}</h4>
@@ -351,9 +358,9 @@ export default function PhytotherapyResetPage({ onNavigate }: { onNavigate: (vie
                        </div>
                     </div>
                   </div>
-                  <div className="rounded-[40px] overflow-hidden shadow-2xl">
+                  <div className="rounded-[40px] overflow-hidden shadow-2xl h-[400px]">
                     <img 
-                      src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=800" 
+                      src={emonctoiresImg} 
                       className="w-full h-full object-cover" 
                       alt="Phase 0 Plants" 
                     />
@@ -387,9 +394,9 @@ export default function PhytotherapyResetPage({ onNavigate }: { onNavigate: (vie
                        </div>
                     </div>
                   </div>
-                  <div className="rounded-[40px] overflow-hidden shadow-2xl">
+                  <div className="rounded-[40px] overflow-hidden shadow-2xl h-[400px]">
                     <img 
-                      src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800" 
+                      src={hepaticImg} 
                       className="w-full h-full object-cover" 
                       alt="Reset" 
                     />
@@ -407,7 +414,7 @@ export default function PhytotherapyResetPage({ onNavigate }: { onNavigate: (vie
                     Entre chaque phase de 21 jours, nous observons 7 jours de repos total. Ce n'est pas un arrêt, mais une étape d'intégration cruciale où votre corps stabilise les acquis et laisse sa propre pharmacie intérieure prendre le relais.
                   </p>
                   <div className="inline-flex items-center gap-2 bg-white/10 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] border border-white/10">
-                    Secret du Reset Homéostatique
+                    Secret du Reset Homéostasique
                   </div>
                </div>
             </div>
@@ -438,9 +445,9 @@ export default function PhytotherapyResetPage({ onNavigate }: { onNavigate: (vie
                        </div>
                     </div>
                   </div>
-                  <div className="rounded-[40px] overflow-hidden shadow-2xl">
+                  <div className="rounded-[40px] overflow-hidden shadow-2xl h-[400px]">
                     <img 
-                      src="https://images.unsplash.com/photo-1579154273821-ad99159ad997?auto=format&fit=crop&q=80&w=800" 
+                      src={bloodPurityImg} 
                       className="w-full h-full object-cover" 
                       alt="Pureté" 
                     />
@@ -474,9 +481,9 @@ export default function PhytotherapyResetPage({ onNavigate }: { onNavigate: (vie
                        </div>
                     </div>
                   </div>
-                  <div className="rounded-[40px] overflow-hidden shadow-2xl">
+                  <div className="rounded-[40px] overflow-hidden shadow-2xl h-[400px]">
                     <img 
-                      src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=800" 
+                      src={natureHero} 
                       className="w-full h-full object-cover" 
                       alt="Stabilisation" 
                     />
@@ -649,22 +656,22 @@ export default function PhytotherapyResetPage({ onNavigate }: { onNavigate: (vie
       <section className="mt-32 container mx-auto px-6">
         <div className="bg-botanik-green rounded-[60px] p-12 md:p-24 text-center text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.1)_0%,transparent_70%)]" />
-          <h2 className="text-3xl md:text-6xl font-bold mb-8 relative z-10">Commencez votre Reset aujourd'hui.</h2>
+          <h2 className="text-3xl md:text-6xl font-bold mb-8 relative z-10">{t.title} {t.title_accent}</h2>
           <p className="text-lg md:text-xl text-white/60 mb-12 max-w-2xl mx-auto relative z-10">
-            L'autonomie n'est pas une destination, c'est une pratique quotidienne. Reprenez le pouvoir sur votre biologie.
+            {t.description}
           </p>
           <div className="flex flex-wrap justify-center gap-6 relative z-10">
             <button 
               onClick={() => onNavigate('chat')}
               className="px-12 py-6 bg-botanik-orange text-white rounded-2xl font-bold shadow-2xl shadow-botanik-orange/20 hover:scale-105 transition-all flex items-center gap-3"
             >
-              Démarrer Bloom Complet (59€/mois) <ArrowRight className="w-5 h-5" />
+              {t.cta_primary} <ArrowRight className="w-5 h-5" />
             </button>
             <button 
               onClick={() => onNavigate('boutique')}
               className="px-12 py-6 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-2xl font-bold hover:bg-white/20 transition-all"
             >
-              Découvrir Bloom Lab
+              {t.cta_secondary}
             </button>
           </div>
         </div>

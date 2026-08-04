@@ -4,7 +4,8 @@
  */
 
 import { useEffect, useState } from 'react';
-import { Lock, ShoppingBag, BookOpen, FlaskConical, Menu, X, ChevronRight, Leaf, ShieldCheck, SearchCheck, Award, Star, User, Check, ArrowRight, ChefHat, Instagram, Youtube, Facebook, Pin as Pinterest, Music2 as TikTok, MessageSquare, Sparkles, Wind, Waves, Moon, Utensils, Activity } from 'lucide-react';
+import { Lock, ShoppingBag, BookOpen, FlaskConical, Menu, X, ChevronRight, Leaf, ShieldCheck, SearchCheck, Award, Star, User, Check, ArrowRight, ChefHat, Instagram, Youtube, Facebook, Pin as Pinterest, Music2 as TikTok, MessageSquare, Sparkles, Wind, Waves, Moon, Utensils, Activity, Globe } from 'lucide-react';
+import { translations, Language } from './translations';
 import LibraryContent from './LibraryContent';
 import HerbariumContent from './HerbariumContent';
 import StoreContent from './StoreContent';
@@ -131,22 +132,39 @@ const CertificationCarousel = () => {
 
 // --- COMPONENTS ---
 
-const NavigationSidebar = ({ className = "", currentView, navigateTo, user, handleLogout }: { className?: string, currentView: string, navigateTo: (v: any) => void, user?: any, handleLogout?: () => void }) => (
+const NavigationSidebar = ({ className = "", currentView, navigateTo, user, handleLogout, lang, setLang, t }: { className?: string, currentView: string, navigateTo: (v: any) => void, user?: any, handleLogout?: () => void, lang: Language, setLang: (l: Language) => void, t: any }) => (
   <aside className={`w-80 h-screen sticky top-0 bg-[#293228] p-8 flex flex-col justify-between ${className}`}>
     <div>
       <div 
-        className="flex items-center gap-4 mb-12 cursor-pointer group/logo"
+        className="flex items-center gap-4 mb-12 cursor-pointer group/logo notranslate"
         onClick={() => navigateTo('home')}
+        translate="no"
       >
-        <img src={logoSidebar} alt="Logo Bloom by BotaniK" className="w-16 h-16 object-contain group-hover/logo:brightness-0 group-hover/logo:invert-[51%] group-hover/logo:sepia-[95%] group-hover/logo:saturate-[2180%] group-hover/logo:hue-rotate-[1deg] group-hover/logo:brightness-[101%] group-hover/logo:contrast-[101%] transition-all" />
+        <img src={logoSidebar} alt="Logo Bloom by BotaniK" loading="lazy" className="w-16 h-16 object-contain group-hover/logo:brightness-0 group-hover/logo:invert-[51%] group-hover/logo:sepia-[95%] group-hover/logo:saturate-[2180%] group-hover/logo:hue-rotate-[1deg] group-hover/logo:brightness-[101%] group-hover/logo:contrast-[101%] transition-all" />
         <div className="flex flex-col leading-tight uppercase text-white group-hover/logo:text-[#F97316] transition-colors">
           <span className="text-[11px] font-bold tracking-[0.22em] opacity-80">Bloom by</span>
           <span className="text-xl font-black tracking-widest">botaniK</span>
         </div>
       </div>
 
+      {/* Language Selector */}
+      <div className="mb-10 flex items-center gap-2 px-2">
+        <Globe className="w-4 h-4 text-white/40 mr-1" />
+        {(['fr', 'en', 'de'] as Language[]).map((l) => (
+          <button
+            key={l}
+            onClick={() => setLang(l)}
+            className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded transition-all ${
+              lang === l ? 'bg-botanik-orange text-white' : 'text-white/40 hover:text-white/60'
+            }`}
+          >
+            {l}
+          </button>
+        ))}
+      </div>
+
       <nav className="mb-12">
-        <h3 className="text-xs uppercase tracking-[0.2em] text-[#F5F3EB] mb-6 font-semibold">Sommaire</h3>
+        <h3 className="text-xs uppercase tracking-[0.2em] text-[#F5F3EB] mb-6 font-semibold">{lang === 'fr' ? 'Sommaire' : lang === 'en' ? 'Summary' : 'Inhalt'}</h3>
         <ul className="space-y-4 text-sm font-medium">
           <li>
             <a 
@@ -158,7 +176,7 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
               }} 
               className="text-white hover:text-[#F97316] transition-colors"
             >
-              I. Commencer ici
+              I. {lang === 'fr' ? 'Commencer ici' : lang === 'en' ? 'Start here' : 'Hier beginnen'}
             </a>
           </li>
           <li>
@@ -171,7 +189,7 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
               }} 
               className="text-white hover:text-[#F97316] transition-colors"
             >
-              II. La science du Totum
+              II. {lang === 'fr' ? 'La science du Totum' : lang === 'en' ? 'The science of Totum' : 'Die Wissenschaft des Totum'}
             </a>
           </li>
           <li>
@@ -184,7 +202,7 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
               }} 
               className="text-white hover:text-[#F97316] transition-colors"
             >
-              III. Une autre voie
+              III. {lang === 'fr' ? 'Une autre voie' : lang === 'en' ? 'Another way' : 'Ein anderer Weg'}
             </a>
           </li>
           <li>
@@ -197,7 +215,7 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
               }} 
               className="text-white hover:text-[#F97316] transition-colors"
             >
-              IV. Trouver votre voie
+              IV. {lang === 'fr' ? 'Trouver votre voie' : lang === 'en' ? 'Find your way' : 'Finden Sie Ihren Weg'}
             </a>
           </li>
           <li>
@@ -209,63 +227,63 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
               }} 
               className="text-white hover:text-[#F97316] transition-colors"
             >
-              V. Activer ma BloomLab
+              V. {lang === 'fr' ? 'Activer ma BloomLab' : lang === 'en' ? 'Activate my BloomLab' : 'Meine BloomLab aktivieren'}
             </a>
           </li>
         </ul>
       </nav>
 
       <div className="space-y-4">
-        <h3 className="text-xs uppercase tracking-[0.2em] text-[#F5F3EB] mb-4 font-semibold">Accès Rapide</h3>
+        <h3 className="text-xs uppercase tracking-[0.2em] text-[#F5F3EB] mb-4 font-semibold">{lang === 'fr' ? 'Accès Rapide' : lang === 'en' ? 'Quick Access' : 'Schnellzugriff'}</h3>
         <a 
           href="#" 
           onClick={(e) => { e.preventDefault(); navigateTo('machine'); }}
           className={`flex items-center gap-3 text-sm font-medium transition-colors group ${currentView === 'machine' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
         >
-          <FlaskConical className={`w-4 h-4 transition-colors ${currentView === 'machine' ? 'text-[#F97316]' : 'group-hover:text-[#F97316]'}`} /> La Machine & Niveaux
+          <FlaskConical className={`w-4 h-4 transition-colors ${currentView === 'machine' ? 'text-[#F97316]' : 'group-hover:text-[#F97316]'}`} /> {lang === 'fr' ? 'La Machine & Niveaux' : lang === 'en' ? 'The Machine & Levels' : 'Die Maschine & Level'}
         </a>
         <a 
           href="#" 
           onClick={(e) => { e.preventDefault(); navigateTo('phytotherapie-reset'); }}
           className={`flex items-center gap-3 text-sm font-medium transition-colors group ${currentView === 'phytotherapie-reset' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
         >
-          <Activity className={`w-4 h-4 transition-colors ${currentView === 'phytotherapie-reset' ? 'text-[#F97316]' : 'group-hover:text-[#F97316]'}`} /> Phytothérapie & Reset
+          <Activity className={`w-4 h-4 transition-colors ${currentView === 'phytotherapie-reset' ? 'text-[#F97316]' : 'group-hover:text-[#F97316]'}`} /> {t.nav.guide}
         </a>
         <a 
           href="#" 
           onClick={(e) => { e.preventDefault(); navigateTo('boutique'); }}
           className={`flex items-center gap-3 text-sm font-medium transition-colors group ${currentView === 'boutique' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
         >
-          <ShoppingBag className={`w-4 h-4 transition-colors ${currentView === 'boutique' ? 'text-[#F97316]' : 'group-hover:text-[#F97316]'}`} /> Boutique
+          <ShoppingBag className={`w-4 h-4 transition-colors ${currentView === 'boutique' ? 'text-[#F97316]' : 'group-hover:text-[#F97316]'}`} /> {t.nav.shop}
         </a>
         <a 
           href="#" 
           onClick={(e) => { e.preventDefault(); navigateTo('culinaire'); }}
           className={`flex items-center gap-3 text-sm font-medium transition-colors group ${currentView === 'culinaire' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
         >
-          <ChefHat className={`w-4 h-4 transition-colors ${currentView === 'culinaire' ? 'text-[#F97316]' : 'group-hover:text-[#F97316]'}`} /> Atelier Culinaire
+          <ChefHat className={`w-4 h-4 transition-colors ${currentView === 'culinaire' ? 'text-[#F97316]' : 'group-hover:text-[#F97316]'}`} /> {t.nav.culinary}
         </a>
         <a 
           href="#" 
           onClick={(e) => { e.preventDefault(); navigateTo('cosmetiques'); }}
           className={`flex items-center gap-3 text-sm font-medium transition-colors group ${currentView === 'cosmetiques' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
         >
-          <Star className={`w-4 h-4 transition-colors ${currentView === 'cosmetiques' ? 'text-[#F97316]' : 'group-hover:text-[#F97316]'}`} /> Soins Cosmétiques
+          <Star className={`w-4 h-4 transition-colors ${currentView === 'cosmetiques' ? 'text-[#F97316]' : 'group-hover:text-[#F97316]'}`} /> {t.nav.cosmetics}
         </a>
         <a 
           href="#" 
           onClick={(e) => { e.preventDefault(); navigateTo('library-landing'); }}
           className={`flex items-center gap-3 text-sm font-medium transition-colors group ${currentView === 'library-landing' || currentView === 'herbier' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
         >
-          <Leaf className={`w-4 h-4 transition-colors ${currentView === 'library-landing' || currentView === 'herbier' ? 'text-[#F97316]' : 'group-hover:text-[#F97316]'}`} /> L'Herbier
+          <Leaf className={`w-4 h-4 transition-colors ${currentView === 'library-landing' || currentView === 'herbier' ? 'text-[#F97316]' : 'group-hover:text-[#F97316]'}`} /> {t.nav.herbarium}
         </a>
         <a 
           href="https://blog.bloombybotanik.com/" 
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 text-sm font-medium text-white hover:text-[#F97316] transition-colors group"
+          className="flex items-center gap-3 text-sm font-medium text-white hover:text-[#F97316] transition-colors group mb-12"
         >
-          <BookOpen className="w-4 h-4 group-hover:text-[#F97316]" /> Le Blog
+          <BookOpen className="w-4 h-4 group-hover:text-[#F97316]" /> {t.nav.blog}
         </a>
       </div>
     </div>
@@ -320,6 +338,7 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
         <img 
           src={bloomLabImg}
           alt={generateSeoAlt("Machine BloomLab")} 
+          loading="lazy"
           className="w-full h-auto object-contain p-4 transform group-hover:scale-105 transition-transform duration-700"
         />
       </div>
@@ -383,6 +402,8 @@ const HybridOffer = ({ onNavigate }: { onNavigate: (view: any) => void }) => (
 );
 
 export default function App() {
+  const [lang, setLang] = useState<Language>('fr');
+  const t = translations[lang];
   const [currentView, setCurrentView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'herbier' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste'>('home');
   const [previousView, setPreviousView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'herbier' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste'>('home');
 
@@ -563,10 +584,10 @@ export default function App() {
   );
 
   const MobileHeader = () => (
-    <header className="lg:hidden sticky top-0 bg-botanik-green z-40 border-b border-white/5 px-4 py-3 flex items-center justify-between shadow-sm">
+    <header className="lg:hidden sticky top-0 bg-botanik-green z-40 border-b border-white/5 px-4 py-3 flex items-center justify-between shadow-sm notranslate" translate="no">
       <div className="flex items-center gap-2 cursor-pointer group/logo" onClick={() => navigateTo('home')}>
         <div className="w-10 h-10 flex items-center justify-center overflow-hidden">
-          <img src={logoSidebar} alt="Bloom" className="w-full h-full object-contain scale-110" />
+          <img src={logoSidebar} alt="Bloom" loading="lazy" className="w-full h-full object-contain scale-110" />
         </div>
         <div className="flex flex-col leading-none uppercase text-white group-hover/logo:text-botanik-orange transition-colors">
           <span className="text-[8px] font-bold tracking-[0.2em] opacity-80">Bloom by</span>
@@ -615,6 +636,9 @@ export default function App() {
         navigateTo={navigateTo} 
         user={user} 
         handleLogout={handleLogout} 
+        lang={lang}
+        setLang={setLang}
+        t={t}
       />
 
       {/* Main Content Area */}
@@ -622,18 +646,18 @@ export default function App() {
         <MobileHeader />
         
         {currentView === 'home' ? (
-          <HomeContent onNavigate={navigateTo} />
+          <HomeContent onNavigate={navigateTo} lang={lang} />
         ) : currentView === 'machine' ? (
-          <MachineLanding onNavigate={navigateTo} />
+          <MachineLanding onNavigate={navigateTo} lang={lang} />
         ) : currentView === 'phytotherapie-reset' ? (
-          <PhytotherapyResetPage onNavigate={navigateTo} />
+          <PhytotherapyResetPage onNavigate={navigateTo} lang={lang} />
         ) : currentView === 'library-landing' ? (
-          <LibraryLanding onNavigate={navigateTo} />
+          <LibraryLanding onNavigate={navigateTo} lang={lang} />
         ) : currentView === 'guide' ? (
-          <GuideContent onNavigate={navigateTo} />
+          <GuideContent onNavigate={navigateTo} lang={lang} />
         ) : currentView === 'ateliers' ? (
           <div className="max-w-[1200px] mx-auto px-6 py-12 animate-in fade-in duration-700">
-            <h2 className="text-3xl font-bold text-botanik-green mb-8">Vos Ateliers</h2>
+            <h2 className="text-3xl font-bold text-botanik-green mb-8">{t.nav.guide}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div onClick={() => navigateTo('culinaire')} className="group cursor-pointer bg-white border border-botanik-green/5 p-8 rounded-3xl hover:border-botanik-orange transition-colors">
                 <ChefHat className="w-12 h-12 text-botanik-orange mb-6 group-hover:scale-110 transition-transform" />
@@ -661,6 +685,7 @@ export default function App() {
             onRequirePremium={handleRequirePremium} 
             onNavigatePending={() => navigateTo('pending')}
             onNavigate={navigateTo}
+            lang={lang}
           />
         ) : currentView === 'herbier' ? (
           <HerbariumContent 
@@ -671,6 +696,7 @@ export default function App() {
             favorites={favorites}
             onToggleFavorite={handleToggleFavorite}
             initialPlantId={currentProductId}
+            lang={lang}
           />
         ) : currentView === 'culinaire' ? (
           <CulinarySection 
@@ -681,6 +707,7 @@ export default function App() {
             favorites={favorites}
             onToggleFavorite={handleToggleFavorite}
             initialPlantId={currentProductId}
+            lang={lang}
           />
         ) : currentView === 'cosmetiques' ? (
           <CosmeticsContent 
@@ -691,13 +718,14 @@ export default function App() {
             favorites={favorites}
             onToggleFavorite={handleToggleFavorite}
             initialPlantId={currentProductId}
+            lang={lang}
           />
         ) : currentView === 'pending' ? (
-          <PendingContent onBack={() => navigateTo(previousView === 'pending' ? 'home' : previousView)} />
+          <PendingContent onBack={() => navigateTo(previousView === 'pending' ? 'home' : previousView)} lang={lang} />
         ) : currentView === 'product-detail' ? (
           <ProductDetail onBack={() => navigateTo('boutique')} onAddToCart={(product) => {
             addToCart(product);
-          }} productId={currentProductId} />
+          }} productId={currentProductId} lang={lang} />
         ) : currentView === 'cart' ? (
           <CartContent 
             items={cart}
@@ -705,6 +733,7 @@ export default function App() {
             onRemove={removeFromCart}
             onBack={() => navigateTo('boutique')}
             onCheckout={() => navigateTo('checkout')}
+            lang={lang}
           />
         ) : currentView === 'checkout' ? (
           <CheckoutFlow 
@@ -715,6 +744,7 @@ export default function App() {
               navigateTo('home');
             }}
             onCancel={() => navigateTo('cart')}
+            lang={lang}
           />
         ) : currentView === 'chat' ? (
           <ChatContent 
@@ -725,9 +755,10 @@ export default function App() {
             onSaveAssessment={handleSaveAssessment}
             savedAssessment={assessmentResult}
             onResetAssessment={handleResetAssessment}
+            lang={lang}
           />
         ) : currentView === 'manifeste' ? (
-          <ManifesteContent onBack={() => navigateTo(previousView === 'manifeste' ? 'home' : previousView)} />
+          <ManifesteContent onBack={() => navigateTo(previousView === 'manifeste' ? 'home' : previousView)} lang={lang} />
         ) : currentView === 'activation' ? (
           <ActivationPage 
             userId={user?.uid || null} 
@@ -735,34 +766,37 @@ export default function App() {
               setIsPremium(true);
               navigateTo('library');
             }} 
+            lang={lang}
           />
         ) : currentView === 'account' ? (
           <AccountContent 
             user={user} 
             onNavigate={navigateTo} 
             onLogout={handleLogout} 
+            lang={lang}
           />
         ) : currentView === 'legal' ? (
-          <LegalPages type={legalType} onBack={() => navigateTo(previousView)} />
+          <LegalPages type={legalType} onBack={() => navigateTo(previousView)} lang={lang} />
         ) : (
           <StoreContent 
             onNavigatePending={() => navigateTo('pending')} 
             onNavigateDetail={(id) => navigateTo('product-detail', id)}
             onAddToCart={(product) => addToCart(product)}
+            lang={lang}
           />
         )}
-        <Footer onNavigate={navigateTo} />
+        <Footer onNavigate={navigateTo} lang={lang} />
       </main>
 
       {/* Mobile Bottom Navigation */}
       <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-botanik-green/5 px-4 pt-4 pb-8 flex justify-between items-center z-50 shadow-[0_-4px_20px_rgba(27,48,34,0.05)]">
         {[
-          { id: 'home', label: 'Guide', icon: FlaskConical },
-          { id: 'library-landing', label: "L'Herbier", icon: Leaf },
-          { id: 'blog', label: 'Blog', icon: BookOpen, url: 'https://blog.bloombybotanik.com/' },
-          { id: 'chat', label: 'Conseils', icon: MessageSquare },
-          { id: 'boutique', label: 'Boutique', icon: ShoppingBag },
-          { id: 'account', label: 'Compte', icon: User }
+          { id: 'home', label: t.nav.guide, icon: FlaskConical },
+          { id: 'library-landing', label: t.nav.herbarium, icon: Leaf },
+          { id: 'blog', label: t.nav.blog, icon: BookOpen, url: 'https://blog.bloombybotanik.com/' },
+          { id: 'chat', label: t.nav.chat, icon: MessageSquare },
+          { id: 'boutique', label: t.nav.shop, icon: ShoppingBag },
+          { id: 'account', label: t.nav.account, icon: User }
         ].map((tab) => (
           <button
             key={tab.id}

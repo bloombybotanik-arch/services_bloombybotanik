@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import { ShieldCheck, Lock, CreditCard, ChevronRight, Truck, Building2, User, Mail, Phone, MapPin, CheckCircle2, Download, PackageCheck } from 'lucide-react';
+import { translations, Language } from './translations';
 
 interface CheckoutFlowProps {
   cart: any[];
   total: number;
   onSuccess: (orderData: any) => void;
   onCancel: () => void;
+  lang?: Language;
 }
 
 type Step = 'information' | 'shipping' | 'payment' | 'confirmation';
 
-export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: CheckoutFlowProps) {
+export default function CheckoutFlow({ cart, total, onSuccess, onCancel, lang = 'fr' }: CheckoutFlowProps) {
+  const t = translations[lang].checkout;
   const [step, setStep] = useState<Step>('information');
   const [formData, setFormData] = useState({
     email: '',
@@ -58,8 +61,8 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
         <div className="w-24 h-24 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-8">
           <CheckCircle2 className="w-12 h-12 text-green-500" />
         </div>
-        <h1 className="text-4xl font-bold text-[#1B3022] mb-4">Merci pour votre commande !</h1>
-        <p className="text-xl text-[#1B3022]/60 mb-8">Votre numéro de commande est <span className="font-bold text-[#1B3022]">#{orderId}</span></p>
+        <h1 className="text-4xl font-bold text-[#1B3022] mb-4">{t.confirmation.title}</h1>
+        <p className="text-xl text-[#1B3022]/60 mb-8">{t.confirmation.order_number} <span className="font-bold text-[#1B3022]">#{orderId}</span></p>
         
         <div className="bg-[#F9F9F7] p-8 rounded-[32px] border border-[#1B3022]/10 mb-12 text-left space-y-6">
           <div className="flex items-center gap-4">
@@ -67,8 +70,8 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
               <Mail className="w-5 h-5 text-[#1B3022]" />
             </div>
             <div>
-              <p className="font-bold">Confirmation envoyée</p>
-              <p className="text-sm opacity-60">Un email avec votre facture a été envoyé à {formData.email}</p>
+              <p className="font-bold">{t.confirmation.conf_sent}</p>
+              <p className="text-sm opacity-60">{t.confirmation.conf_desc} {formData.email}</p>
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -76,21 +79,21 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
               <Truck className="w-5 h-5 text-[#1B3022]" />
             </div>
             <div>
-              <p className="font-bold">Suivi logistique</p>
-              <p className="text-sm opacity-60">Vous recevrez une notification à chaque étape de l'acheminement.</p>
+              <p className="font-bold">{t.confirmation.logistics}</p>
+              <p className="text-sm opacity-60">{t.confirmation.logistics_desc}</p>
             </div>
           </div>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button className="bg-[#1B3022] text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-3">
-            <Download className="w-5 h-5" /> Télécharger la facture
+            <Download className="w-5 h-5" /> {t.confirmation.download_invoice}
           </button>
           <button 
             onClick={onCancel}
             className="border border-[#1B3022]/10 px-8 py-4 rounded-xl font-bold hover:bg-[#1B3022]/5 transition-colors"
           >
-            Retour à l'accueil
+            {t.confirmation.back_home}
           </button>
         </div>
       </div>
@@ -100,7 +103,7 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
   return (
     <article className="max-w-[1000px] mx-auto px-6 py-12 md:py-20 animate-in fade-in duration-700">
       <div className="flex items-center justify-between mb-12">
-        <h1 className="text-3xl font-bold text-[#1B3022]">Finalisation de commande</h1>
+        <h1 className="text-3xl font-bold text-[#1B3022]">{t.header}</h1>
         <div className="flex items-center gap-4">
           <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${step === 'information' ? 'bg-[#F97316] text-white' : 'bg-[#1B3022]/10 text-[#1B3022]'}`}>1</div>
           <div className="w-8 h-[2px] bg-[#1B3022]/10"></div>
@@ -115,7 +118,7 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
           {step === 'information' && (
             <section className="bg-white p-8 rounded-[32px] border border-[#1B3022]/10 shadow-sm animate-in slide-in-from-left-4 duration-500">
               <h2 className="text-2xl font-bold text-[#1B3022] mb-8 flex items-center gap-3">
-                <User className="w-6 h-6" /> Informations Client
+                <User className="w-6 h-6" /> {t.client_info.title}
               </h2>
               
               <div className="flex gap-4 mb-8">
@@ -123,13 +126,13 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
                   onClick={() => setFormData({...formData, type: 'individual'})}
                   className={`flex-1 p-4 rounded-2xl border-2 flex items-center justify-center gap-3 transition-all ${formData.type === 'individual' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
                 >
-                  <User className="w-5 h-5" /> Particulier
+                  <User className="w-5 h-5" /> {t.client_info.individual}
                 </button>
                 <button 
                   onClick={() => setFormData({...formData, type: 'professional'})}
                   className={`flex-1 p-4 rounded-2xl border-2 flex items-center justify-center gap-3 transition-all ${formData.type === 'professional' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
                 >
-                  <Building2 className="w-5 h-5" /> Professionnel
+                  <Building2 className="w-5 h-5" /> {t.client_info.professional}
                 </button>
               </div>
 
@@ -137,7 +140,7 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
                 {formData.type === 'professional' && (
                   <>
                     <div>
-                      <label className="block text-sm font-bold text-[#1B3022] mb-2">Nom de l'entreprise</label>
+                      <label className="block text-sm font-bold text-[#1B3022] mb-2">{t.client_info.company}</label>
                       <input 
                         type="text" 
                         value={formData.company}
@@ -147,7 +150,7 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-bold text-[#1B3022] mb-2">Numéro de TVA</label>
+                      <label className="block text-sm font-bold text-[#1B3022] mb-2">{t.client_info.vat}</label>
                       <input 
                         type="text" 
                         value={formData.vatNumber}
@@ -160,7 +163,7 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
                 )}
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-bold text-[#1B3022] mb-2">Prénom</label>
+                    <label className="block text-sm font-bold text-[#1B3022] mb-2">{t.client_info.first_name}</label>
                     <input 
                       type="text" 
                       value={formData.firstName}
@@ -169,7 +172,7 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-bold text-[#1B3022] mb-2">Nom</label>
+                    <label className="block text-sm font-bold text-[#1B3022] mb-2">{t.client_info.last_name}</label>
                     <input 
                       type="text" 
                       value={formData.lastName}
@@ -179,7 +182,7 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-[#1B3022] mb-2">Email</label>
+                  <label className="block text-sm font-bold text-[#1B3022] mb-2">{t.client_info.email}</label>
                   <input 
                     type="email" 
                     value={formData.email}
@@ -188,7 +191,7 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-[#1B3022] mb-2">Téléphone</label>
+                  <label className="block text-sm font-bold text-[#1B3022] mb-2">{t.client_info.phone}</label>
                   <input 
                     type="tel" 
                     value={formData.phone}
@@ -203,11 +206,11 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
           {step === 'shipping' && (
             <section className="bg-white p-8 rounded-[32px] border border-[#1B3022]/10 shadow-sm animate-in slide-in-from-left-4 duration-500">
               <h2 className="text-2xl font-bold text-[#1B3022] mb-8 flex items-center gap-3">
-                <Truck className="w-6 h-6" /> Adresse de livraison
+                <Truck className="w-6 h-6" /> {t.shipping.title}
               </h2>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-bold text-[#1B3022] mb-2">Adresse</label>
+                  <label className="block text-sm font-bold text-[#1B3022] mb-2">{t.shipping.address}</label>
                   <input 
                     type="text" 
                     value={formData.address}
@@ -217,7 +220,7 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-bold text-[#1B3022] mb-2">Code Postal</label>
+                    <label className="block text-sm font-bold text-[#1B3022] mb-2">{t.shipping.zip}</label>
                     <input 
                       type="text" 
                       value={formData.zipCode}
@@ -226,7 +229,7 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-bold text-[#1B3022] mb-2">Ville</label>
+                    <label className="block text-sm font-bold text-[#1B3022] mb-2">{t.shipping.city}</label>
                     <input 
                       type="text" 
                       value={formData.city}
@@ -242,7 +245,7 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
           {step === 'payment' && (
             <section className="bg-white p-8 rounded-[32px] border border-[#1B3022]/10 shadow-sm animate-in slide-in-from-left-4 duration-500">
               <h2 className="text-2xl font-bold text-[#1B3022] mb-8 flex items-center gap-3">
-                <CreditCard className="w-6 h-6" /> Paiement sécurisé
+                <CreditCard className="w-6 h-6" /> {t.payment.title}
               </h2>
               
               <div className="space-y-4">
@@ -251,7 +254,7 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
                     <div className="w-12 h-8 bg-[#1B3022]/5 rounded flex items-center justify-center">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-4" />
                     </div>
-                    <span className="font-bold">Carte Bancaire (Stripe)</span>
+                    <span className="font-bold">{t.payment.stripe}</span>
                   </div>
                   <div className="w-6 h-6 rounded-full border-2 border-[#1B3022]/20 group-hover:border-[#F97316]"></div>
                 </button>
@@ -260,7 +263,7 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
                     <div className="w-12 h-8 bg-[#1B3022]/5 rounded flex items-center justify-center">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" className="h-4" />
                     </div>
-                    <span className="font-bold">PayPal</span>
+                    <span className="font-bold">{t.payment.paypal}</span>
                   </div>
                   <div className="w-6 h-6 rounded-full border-2 border-[#1B3022]/20 group-hover:border-[#F97316]"></div>
                 </button>
@@ -268,7 +271,7 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
 
               <div className="mt-8 flex items-center gap-3 text-xs text-[#1B3022]/60">
                 <Lock className="w-4 h-4 text-green-500" />
-                Vos données bancaires sont cryptées et jamais stockées.
+                {t.payment.secure_note}
               </div>
             </section>
           )}
@@ -278,14 +281,14 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
               onClick={onCancel}
               className="text-[#1B3022]/60 font-bold hover:text-[#1B3022]"
             >
-              Annuler
+              {t.actions.cancel}
             </button>
             <button 
               onClick={step === 'payment' ? handlePayment : handleNext}
               disabled={isProcessing}
               className="bg-[#1B3022] text-white px-10 py-4 rounded-xl font-bold flex items-center gap-3 hover:bg-[#F97316] transition-all shadow-xl shadow-[#1B3022]/10 disabled:opacity-50"
             >
-              {isProcessing ? 'Traitement...' : step === 'payment' ? 'Payer maintenant' : 'Continuer'} 
+              {isProcessing ? t.actions.processing : step === 'payment' ? t.actions.pay : t.actions.continue} 
               {!isProcessing && <ChevronRight className="w-5 h-5" />}
             </button>
           </div>
@@ -294,7 +297,7 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
         {/* Order Summary Sidebar */}
         <div className="space-y-6">
           <div className="bg-[#F9F9F7] p-8 rounded-[40px] border border-[#1B3022]/10">
-            <h2 className="text-xl font-bold text-[#1B3022] mb-8">Votre commande</h2>
+            <h2 className="text-xl font-bold text-[#1B3022] mb-8">{t.summary.title}</h2>
             <div className="space-y-6 mb-8">
               {cart.map((item) => (
                 <div key={item.id} className="flex gap-4">
@@ -303,7 +306,7 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
                   </div>
                   <div className="flex-1">
                     <div className="font-bold text-[#1B3022] text-sm">{item.name}</div>
-                    <div className="text-xs opacity-60">Quantité : {item.quantity}</div>
+                    <div className="text-xs opacity-60">{t.summary.quantity} {item.quantity}</div>
                   </div>
                   <div className="font-bold text-[#1B3022]">{(item.price * item.quantity).toFixed(2)} €</div>
                 </div>
@@ -312,11 +315,11 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
             
             <div className="pt-6 border-t border-[#1B3022]/10 space-y-3">
               <div className="flex justify-between text-sm opacity-60">
-                <span>Livraison</span>
-                <span className="font-bold text-[#1B3022]">Offerte</span>
+                <span>{translations[lang].cart.summary.shipping}</span>
+                <span className="font-bold text-[#1B3022]">{t.summary.shipping_free}</span>
               </div>
               <div className="flex justify-between items-center pt-2">
-                <span className="text-lg font-bold">Total</span>
+                <span className="text-lg font-bold">{t.summary.total}</span>
                 <span className="text-2xl font-bold text-[#F97316]">{total.toFixed(2)} €</span>
               </div>
             </div>
@@ -324,10 +327,10 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel }: Check
 
           <div className="bg-white p-6 rounded-3xl border border-[#1B3022]/10 space-y-4">
             <div className="flex items-center gap-3 text-sm font-bold text-[#1B3022]">
-              <PackageCheck className="w-5 h-5 text-green-500" /> Logistique Premium
+              <PackageCheck className="w-5 h-5 text-green-500" /> {t.summary.premium_logistics}
             </div>
             <p className="text-xs text-[#1B3022]/60 leading-relaxed">
-              Expédition prioritaire sous 24h. Emballage éco-conçu et sécurisé. Suivi temps réel par SMS et Email.
+              {t.summary.premium_logistics_desc}
             </p>
           </div>
         </div>

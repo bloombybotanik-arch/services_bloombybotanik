@@ -2,8 +2,10 @@ import React, { useState, useMemo } from 'react';
 import { Search, Leaf, BookOpen, FlaskConical, Target, Zap, ChevronRight, ArrowRight, ShieldCheck, Star, Utensils, Sparkles } from 'lucide-react';
 import { wrapTitle } from './lib/textUtils';
 import { unifiedBotanicalDatabase } from './data/unifiedBotanicalData';
+import { translations, Language } from './translations';
 
-export default function LibraryLanding({ onNavigate }: { onNavigate: (view: any, id?: string) => void }) {
+export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view: any, id?: string) => void, lang: Language }) {
+  const t = translations[lang].library;
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredPlants = useMemo(() => {
@@ -54,11 +56,11 @@ export default function LibraryLanding({ onNavigate }: { onNavigate: (view: any,
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 bg-botanik-green/5 text-botanik-green px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-8">
-              L'Herbier Intelligent
+              {t.hero.badge}
             </div>
             <h1 className="text-4xl md:text-8xl font-bold text-botanik-green mb-8 leading-[0.9] tracking-tighter">
-              Le Répertoire<br />
-              <span className="text-[#F97316]">Végétal.</span>
+              {t.hero.title}<br />
+              <span className="text-[#F97316]">{t.hero.title_accent}</span>
             </h1>
             
             {/* Unified Search / Directory */}
@@ -66,7 +68,7 @@ export default function LibraryLanding({ onNavigate }: { onNavigate: (view: any,
               <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 md:w-6 h-5 md:h-6 text-botanik-green/30" />
               <input 
                 type="text" 
-                placeholder="Chercher une plante (Bardane, Romarin...)" 
+                placeholder={t.hero.search_placeholder} 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-14 md:pl-16 pr-6 py-4 md:py-6 bg-white rounded-[24px] md:rounded-[32px] border-none text-base md:text-xl text-botanik-green shadow-xl focus:ring-2 focus:ring-botanik-orange/20 transition-all"
@@ -107,13 +109,17 @@ export default function LibraryLanding({ onNavigate }: { onNavigate: (view: any,
       <section className="py-24 container mx-auto px-6">
         <div className="flex items-center justify-between mb-12">
           <div>
-            <h2 className="text-3xl font-bold text-botanik-green">Les Trois Dimensions</h2>
-            <p className="text-botanik-green/60">Explorez l'intelligence végétale par usage.</p>
+            <h2 className="text-3xl font-bold text-botanik-green">{t.categories.title}</h2>
+            <p className="text-botanik-green/60">{t.categories.subtitle}</p>
           </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {categories.map((cat) => (
+          {[
+            { id: 'therapeutic', t: t.categories.therapeutic, view: 'herbier', icon: Leaf, count: 56, color: 'text-botanik-green', bg: 'bg-botanik-green/5' },
+            { id: 'culinary', t: t.categories.culinary, view: 'culinaire', icon: Utensils, count: 15, color: 'text-botanik-orange', bg: 'bg-botanik-orange/5' },
+            { id: 'cosmetic', t: t.categories.cosmetic, view: 'cosmetiques', icon: Sparkles, count: 22, color: 'text-botanik-green', bg: 'bg-botanik-green/5' }
+          ].map((cat) => (
             <div 
               key={cat.id} 
               onClick={() => onNavigate(cat.view as any)}
@@ -121,14 +127,14 @@ export default function LibraryLanding({ onNavigate }: { onNavigate: (view: any,
             >
               <div className="flex justify-between items-start mb-8">
                 <cat.icon className={`w-8 h-8 ${cat.color} group-hover:scale-110 transition-transform`} />
-                <span className={`text-xs font-bold px-3 py-1 rounded-full bg-white/50 backdrop-blur-sm border border-botanik-green/5 ${cat.color}`}>{cat.count} fiches</span>
+                <span className={`text-xs font-bold px-3 py-1 rounded-full bg-white/50 backdrop-blur-sm border border-botanik-green/5 ${cat.color}`}>{cat.count} {t.categories.fiches}</span>
               </div>
-              <h3 className="text-2xl font-bold text-botanik-green mb-4">{cat.name}</h3>
+              <h3 className="text-2xl font-bold text-botanik-green mb-4">{cat.t.name}</h3>
               <p className="text-sm text-botanik-green/60 mb-8 leading-relaxed">
-                Accédez au répertoire complet des plantes {cat.name.toLowerCase()}s et leurs protocoles d'extraction.
+                {cat.t.desc}
               </p>
               <div className={`flex items-center gap-3 text-xs font-bold uppercase tracking-widest ${cat.color}`}>
-                Explorer <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                {t.categories.explorer} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
           ))}
@@ -139,10 +145,9 @@ export default function LibraryLanding({ onNavigate }: { onNavigate: (view: any,
       <section className="py-24 bg-[#F9F9F7]">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mb-16">
-            <h2 className="text-4xl font-bold text-botanik-green mb-6">L'Inventaire Complet</h2>
+            <h2 className="text-4xl font-bold text-botanik-green mb-6">{t.inventory.title}</h2>
             <p className="text-xl text-botanik-green/60">
-              Un répertoire unique regroupant toutes les plantes de l'écosystème Bloom. 
-              Cliquez sur une plante pour accéder à sa fiche protocolaire complète.
+              {t.inventory.description}
             </p>
           </div>
 
@@ -171,20 +176,20 @@ export default function LibraryLanding({ onNavigate }: { onNavigate: (view: any,
       <section className="py-24 bg-botanik-green text-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
-            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#F97316] mb-4 block">Contenu des Fiches</span>
-            <h2 className="text-4xl md:text-6xl font-bold">Une précision clinique.</h2>
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#F97316] mb-4 block">{t.features.badge}</span>
+            <h2 className="text-4xl md:text-6xl font-bold">{t.features.title}</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: Zap, title: "Signature Terrain", desc: "Quelle dimension systémique la plante active-t-elle ?" },
-              { icon: FlaskConical, title: "Paramètres Bloom", desc: "Température, durée et solvant exacts pour l'extraction." },
-              { icon: Star, title: "Signature Sensorielle", desc: "Profil aromatique et synergies culinaires expertes." },
-              { icon: ShieldCheck, title: "Traçabilité", desc: "Conseils de sourcing et critères de pureté du grade Totum." }
+              { icon: Zap, t: t.features.item1 },
+              { icon: FlaskConical, t: t.features.item2 },
+              { icon: Star, t: t.features.item3 },
+              { icon: ShieldCheck, t: t.features.item4 }
             ].map((item, idx) => (
               <div key={idx} className="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-sm">
                 <item.icon className="w-8 h-8 text-[#F97316] mb-6" />
-                <h4 className="font-bold text-lg mb-3">{item.title}</h4>
-                <p className="text-sm text-white/60 leading-relaxed">{item.desc}</p>
+                <h4 className="font-bold text-lg mb-3">{item.t.title}</h4>
+                <p className="text-sm text-white/60 leading-relaxed">{item.t.desc}</p>
               </div>
             ))}
           </div>

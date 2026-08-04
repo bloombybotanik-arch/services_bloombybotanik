@@ -1,7 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { Star, Leaf, Droplet, Wind, ArrowRight, ShieldCheck, Check, Search, Filter, Thermometer, Clock, Beaker, Lock, ChevronDown, ChevronUp, User, Activity } from 'lucide-react';
 import { wrapTitle } from './lib/textUtils';
-import { cosmeticsRecipes } from './cosmeticsData';
+import { getCosmeticsRecipes } from './cosmeticsData';
+import { translations, Language } from './translations';
 
 export default function CosmeticsContent({ 
   isPremium = false, 
@@ -10,7 +11,8 @@ export default function CosmeticsContent({
   onNavigatePending,
   initialPlantId,
   favorites = [],
-  onToggleFavorite
+  onToggleFavorite,
+  lang
 }: { 
   isPremium?: boolean, 
   onRequirePremium?: () => void,
@@ -18,11 +20,14 @@ export default function CosmeticsContent({
   onNavigatePending?: () => void,
   initialPlantId?: string,
   favorites?: string[],
-  onToggleFavorite?: (id: string) => void
+  onToggleFavorite?: (id: string) => void,
+  lang: Language
 }) {
+  const t = translations[lang].cosmetics;
+  const cosmeticsRecipes = useMemo(() => getCosmeticsRecipes(lang), [lang]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [filterCategorie, setFilterCategorie] = useState('Tous');
-  const [filterPeau, setFilterPeau] = useState('Tous');
+  const [filterCategorie, setFilterCategorie] = useState(t.filters.all);
+  const [filterPeau, setFilterPeau] = useState(t.filters.all);
   const [selectedRecipe, setSelectedRecipe] = useState(cosmeticsRecipes[0]);
 
   // Handle initial plant selection
@@ -36,19 +41,19 @@ export default function CosmeticsContent({
     }
   }, [initialPlantId]);
 
-  const categories = ['Tous', ...new Set(cosmeticsRecipes.map(r => r.categorie))];
-  const peaux = ['Tous', ...new Set(cosmeticsRecipes.map(r => r.peau))];
+  const categories = [t.filters.all, ...new Set(cosmeticsRecipes.map(r => r.categorie))];
+  const peaux = [t.filters.all, ...new Set(cosmeticsRecipes.map(r => r.peau))];
 
   const filteredRecipes = useMemo(() => {
     return cosmeticsRecipes.filter(recipe => {
       const matchesSearch = recipe.nom_commun.toLowerCase().includes(searchTerm.toLowerCase()) || 
                            recipe.cible.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesCategorie = filterCategorie === 'Tous' || recipe.categorie === filterCategorie;
-      const matchesPeau = filterPeau === 'Tous' || recipe.peau === filterPeau;
+      const matchesCategorie = filterCategorie === t.filters.all || recipe.categorie === filterCategorie;
+      const matchesPeau = filterPeau === t.filters.all || recipe.peau === filterPeau;
       
       return matchesSearch && matchesCategorie && matchesPeau;
     });
-  }, [searchTerm, filterCategorie, filterPeau]);
+  }, [searchTerm, filterCategorie, filterPeau, t.filters.all]);
 
   return (
     <div className="max-w-[1200px] mx-auto px-6 md:px-12 py-12 md:py-20 lg:py-24 animate-in fade-in duration-700">
@@ -56,21 +61,20 @@ export default function CosmeticsContent({
       {/* Header */}
       <header className="mb-16">
         <div className="flex gap-4 text-sm font-medium text-botanik-green/60 mb-6 uppercase tracking-widest flex-wrap">
-          <span>Vision 360°</span>
+          <span>{t.header.badge}</span>
           <span>•</span>
-          <span>Beauté Totale</span>
+          <span>{t.header.badge_alt}</span>
         </div>
         <h1 className="leading-[1.1] tracking-tight text-botanik-green mb-8">
           <span className="block text-3xl md:text-7xl font-bold mb-2">
-            {wrapTitle("Soin Cosmétique")}
+            {wrapTitle(t.header.title)}
           </span>
           <span className="block text-2xl md:text-6xl text-botanik-green/80 font-bold">
-            {wrapTitle("Grade Professionnel")}
+            {wrapTitle(t.header.subtitle)}
           </span>
         </h1>
         <p className="text-base md:text-xl text-botanik-green/80 max-w-2xl leading-relaxed">
-          La peau est un émonctoire majeur. L'extraction de niveau laboratoire de la BloomLab vous permet de formuler vos soins 
-          topiques avec des paramètres ultra-précis, en synergie parfaite avec vos protocoles internes.
+          {t.header.description}
         </p>
       </header>
 
@@ -80,7 +84,7 @@ export default function CosmeticsContent({
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 md:w-5 h-4 md:h-5 text-botanik-green/40" />
           <input 
             type="text"
-            placeholder="Rechercher une recette, un besoin, une plante..."
+            placeholder={t.filters.search_placeholder}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 md:pl-12 pr-4 py-3 md:py-4 bg-[#F5F3EB] rounded-xl md:rounded-2xl border-none focus:ring-2 focus:ring-botanik-magenta/20 text-sm md:text-base text-botanik-green placeholder:text-botanik-green/40"
@@ -89,7 +93,7 @@ export default function CosmeticsContent({
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-bold uppercase text-botanik-green/40 mb-2 ml-2">Zone du corps</label>
+            <label className="block text-xs font-bold uppercase text-botanik-green/40 mb-2 ml-2">{t.filters.body_zone}</label>
             <select 
               value={filterCategorie}
               onChange={(e) => setFilterCategorie(e.target.value)}
@@ -99,7 +103,7 @@ export default function CosmeticsContent({
             </select>
           </div>
           <div>
-            <label className="block text-xs font-bold uppercase text-botanik-green/40 mb-2 ml-2">Type de peau</label>
+            <label className="block text-xs font-bold uppercase text-botanik-green/40 mb-2 ml-2">{t.filters.skin_type}</label>
             <select 
               value={filterPeau}
               onChange={(e) => setFilterPeau(e.target.value)}
@@ -116,7 +120,7 @@ export default function CosmeticsContent({
         <div className="space-y-4">
           <div className="flex items-center justify-between mb-6 border-b border-botanik-green/10 pb-4">
             <h3 className="text-sm font-bold tracking-widest uppercase text-botanik-green">
-              Recettes Formulées
+              {t.sidebar.title}
             </h3>
             <span className="text-xs font-bold text-botanik-magenta bg-botanik-magenta/5 px-2 py-1 rounded-full">
               {filteredRecipes.length}
@@ -192,16 +196,16 @@ export default function CosmeticsContent({
               })
             ) : (
               <div className="text-center py-12 bg-white rounded-3xl border border-dashed border-botanik-green/20">
-                <p className="text-botanik-green/40 text-sm">Aucune recette ne correspond à vos filtres.</p>
+                <p className="text-botanik-green/40 text-sm">{t.sidebar.no_results}</p>
                 <button 
                   onClick={() => {
                     setSearchTerm('');
-                    setFilterCategorie('Tous');
-                    setFilterPeau('Tous');
+                    setFilterCategorie(t.filters.all);
+                    setFilterPeau(t.filters.all);
                   }}
                   className="mt-4 text-xs font-bold text-botanik-magenta uppercase tracking-widest hover:underline"
                 >
-                  Réinitialiser
+                  {t.sidebar.reset}
                 </button>
               </div>
             )}
@@ -209,12 +213,12 @@ export default function CosmeticsContent({
           
           <div className="mt-8 p-6 bg-[#F5F3EB] rounded-2xl">
             <h4 className="font-bold text-botanik-green mb-4 flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5 text-botanik-magenta" /> Règles d'Or BloomLab
+              <ShieldCheck className="w-5 h-5 text-botanik-magenta" /> {t.sidebar.rules.title}
             </h4>
             <ul className="space-y-3 text-sm text-botanik-green/80">
-              <li><strong>Température sacrée:</strong> Ne jamais dépasser 50°C pour préserver acides gras et vitamines.</li>
-              <li><strong>Volume labo:</strong> Formulez en batch de 750ml pour 6 mois d'autonomie.</li>
-              <li><strong>Vitamine E:</strong> Obligatoire pour la conservation des huiles.</li>
+              <li>{t.sidebar.rules.rule1}</li>
+              <li>{t.sidebar.rules.rule2}</li>
+              <li>{t.sidebar.rules.rule3}</li>
             </ul>
           </div>
         </div>
@@ -234,7 +238,7 @@ export default function CosmeticsContent({
                 <Filter className="w-3 h-3" /> {selectedRecipe.categorie}
               </div>
               <div className="inline-flex items-center gap-2 bg-botanik-orange/10 text-botanik-orange px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
-                <Droplet className="w-3 h-3" /> Peau {selectedRecipe.peau}
+                <Droplet className="w-3 h-3" /> {lang === 'fr' ? 'Peau' : lang === 'de' ? 'Haut' : 'Skin'} {selectedRecipe.peau}
               </div>
             </div>
 
@@ -248,7 +252,7 @@ export default function CosmeticsContent({
               </button>
             </div>
             <p className="text-base md:text-lg text-botanik-green/80 leading-relaxed max-w-3xl">
-              Les recettes et protocoles cosmétiques Bloom permettent de créer vos propres sérums et élixirs systémiques sans chimie de synthèse.
+              {t.details.intro}
             </p>
           </div>
 
@@ -257,16 +261,16 @@ export default function CosmeticsContent({
             <div>
               <h3 className="text-xl font-bold text-botanik-green mb-6 flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-botanik-green text-white flex items-center justify-center text-sm">A</div>
-                Phase A
+                {t.details.phase_a.title}
               </h3>
               <div className="bg-[#F5F3EB] p-6 rounded-2xl mb-6 border border-botanik-green/5">
                 <div className="mb-4">
-                  <span className="text-[10px] font-bold uppercase text-botanik-green/40 tracking-wider">Solvant</span>
+                  <span className="text-[10px] font-bold uppercase text-botanik-green/40 tracking-wider">{t.details.phase_a.solvent}</span>
                   <div className="font-semibold text-botanik-green">{selectedRecipe.solvants.phase_A.type} ({selectedRecipe.solvants.phase_A.volume})</div>
                   <div className="text-sm text-botanik-green/70 italic leading-snug mt-1">{selectedRecipe.solvants.phase_A.role}</div>
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold uppercase text-botanik-green/40 tracking-wider">Plante</span>
+                  <span className="text-[10px] font-bold uppercase text-botanik-green/40 tracking-wider">{t.details.phase_a.plant}</span>
                   <div className="font-semibold text-botanik-green">{selectedRecipe.plantes.phase_A.nom} ({selectedRecipe.plantes.phase_A.grammage})</div>
                   <div className="text-sm text-botanik-green/70 italic leading-snug mt-1">{selectedRecipe.plantes.phase_A.actifs}</div>
                 </div>
@@ -290,16 +294,16 @@ export default function CosmeticsContent({
             <div>
               <h3 className="text-xl font-bold text-botanik-green mb-6 flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-botanik-green text-white flex items-center justify-center text-sm">B</div>
-                Phase B
+                {t.details.phase_b.title}
               </h3>
               <div className="bg-[#F5F3EB] p-6 rounded-2xl mb-6 border border-botanik-green/5">
                 <div className="mb-4">
-                  <span className="text-[10px] font-bold uppercase text-botanik-green/40 tracking-wider">Solvant</span>
+                  <span className="text-[10px] font-bold uppercase text-botanik-green/40 tracking-wider">{t.details.phase_b.solvent}</span>
                   <div className="font-semibold text-botanik-green">{selectedRecipe.solvants.phase_B.type} ({selectedRecipe.solvants.phase_B.volume})</div>
                   <div className="text-sm text-botanik-green/70 italic leading-snug mt-1">{selectedRecipe.solvants.phase_B.role}</div>
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold uppercase text-botanik-green/40 tracking-wider">Plante</span>
+                  <span className="text-[10px] font-bold uppercase text-botanik-green/40 tracking-wider">{t.details.phase_b.plant}</span>
                   <div className="font-semibold text-botanik-green">{selectedRecipe.plantes.phase_B.nom} ({selectedRecipe.plantes.phase_B.grammage})</div>
                   <div className="text-sm text-botanik-green/70 italic leading-snug mt-1">{selectedRecipe.plantes.phase_B.actifs}</div>
                 </div>
@@ -323,14 +327,14 @@ export default function CosmeticsContent({
           {/* Protocole Pas à Pas */}
           <div className="border-t border-botanik-green/10 pt-12">
             <h3 className="text-xl md:text-2xl font-bold text-botanik-green mb-8 flex items-center gap-3">
-              <Check className="w-6 h-6 text-botanik-magenta" /> Protocole BloomLab
+              <Check className="w-6 h-6 text-botanik-magenta" /> {t.details.protocol.title}
             </h3>
             
             <div className="space-y-8">
               {/* Phase A Protocol */}
               <div className="pl-6 border-l-2 border-botanik-green/20 relative">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-botanik-green"></div>
-                <h4 className="font-bold text-lg mb-4 text-botanik-green">1. Extraction Primaire (Phase A)</h4>
+                <h4 className="font-bold text-lg mb-4 text-botanik-green">{t.details.protocol.step1}</h4>
                 <ul className="space-y-3 text-botanik-green/80">
                   {selectedRecipe.recette_pas_a_pas.phase_A_instructions.map((step, idx) => (
                     <li key={idx} className="flex gap-3">
@@ -344,7 +348,7 @@ export default function CosmeticsContent({
               {/* Transition Protocol */}
               <div className="pl-6 border-l-2 border-botanik-orange bg-botanik-orange/5 py-6 rounded-r-2xl relative">
                 <div className="absolute -left-[9px] top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-botanik-orange"></div>
-                <h4 className="font-bold text-lg mb-4 text-botanik-orange">2. Transition Thermique</h4>
+                <h4 className="font-bold text-lg mb-4 text-botanik-orange">{t.details.protocol.step2}</h4>
                 <ul className="space-y-3 text-botanik-green/80">
                   {selectedRecipe.recette_pas_a_pas.transition.map((step, idx) => (
                     <li key={idx} className={`flex gap-3 ${step.includes('⚠️') ? 'font-semibold text-botanik-orange' : ''}`}>
@@ -358,7 +362,7 @@ export default function CosmeticsContent({
               {/* Phase B Protocol */}
               <div className="pl-6 border-l-2 border-botanik-green/20 relative">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-botanik-green"></div>
-                <h4 className="font-bold text-lg mb-4 text-botanik-green">3. Intégration Secondaire (Phase B)</h4>
+                <h4 className="font-bold text-lg mb-4 text-botanik-green">{t.details.protocol.step3}</h4>
                 <ul className="space-y-3 text-botanik-green/80">
                   {selectedRecipe.recette_pas_a_pas.phase_B_instructions.map((step, idx) => (
                     <li key={idx} className="flex gap-3">
@@ -372,7 +376,7 @@ export default function CosmeticsContent({
               {/* Filtration */}
               <div className="pl-6 border-l-2 border-botanik-green/20 relative">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-botanik-green"></div>
-                <h4 className="font-bold text-lg mb-4 text-botanik-green">4. Filtration & Finition</h4>
+                <h4 className="font-bold text-lg mb-4 text-botanik-green">{t.details.protocol.step4}</h4>
                 <ul className="space-y-3 text-botanik-green/80">
                   {selectedRecipe.recette_pas_a_pas.filtration_et_finition.map((step, idx) => (
                     <li key={idx} className="flex gap-3">
@@ -389,37 +393,37 @@ export default function CosmeticsContent({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 bg-botanik-green/[0.02] border border-botanik-green/10 p-8 rounded-3xl">
             <div>
               <h4 className="font-bold text-botanik-green mb-4 uppercase text-xs tracking-widest flex items-center gap-2">
-                <Check className="w-4 h-4 text-botanik-magenta" /> Conditionnement & Usage
+                <Check className="w-4 h-4 text-botanik-magenta" /> {t.details.footer.usage}
               </h4>
               <div className="space-y-4">
                 <p className="text-sm text-botanik-green/80 leading-relaxed">
-                  <strong className="block text-botanik-green/40 uppercase text-[10px] mb-1">Format</strong>
+                  <strong className="block text-botanik-green/40 uppercase text-[10px] mb-1">{lang === 'fr' ? 'Format' : lang === 'de' ? 'Format' : 'Format'}</strong>
                   {selectedRecipe.conditionnement}
                 </p>
                 <p className="text-sm text-botanik-green/80 leading-relaxed">
-                  <strong className="block text-botanik-green/40 uppercase text-[10px] mb-1">Application</strong>
+                  <strong className="block text-botanik-green/40 uppercase text-[10px] mb-1">{lang === 'fr' ? 'Application' : lang === 'de' ? 'Anwendung' : 'Application'}</strong>
                   {selectedRecipe.mode_utilisation}
                 </p>
               </div>
             </div>
             <div>
               <h4 className="font-bold text-botanik-green mb-4 uppercase text-xs tracking-widest flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-botanik-magenta" /> Conservation & Précautions
+                <ShieldCheck className="w-4 h-4 text-botanik-magenta" /> {t.details.footer.safety}
               </h4>
               <div className="space-y-4">
                 <p className="text-sm text-botanik-green/80 leading-relaxed">
-                  <strong className="block text-botanik-green/40 uppercase text-[10px] mb-1">Durée</strong>
+                  <strong className="block text-botanik-green/40 uppercase text-[10px] mb-1">{lang === 'fr' ? 'Durée' : lang === 'de' ? 'Dauer' : 'Duration'}</strong>
                   {selectedRecipe.conservation}
                 </p>
                 <p className="text-sm text-botanik-green/80 leading-relaxed">
-                  <strong className="block text-botanik-green/40 uppercase text-[10px] mb-1">Avertissement</strong>
+                  <strong className="block text-botanik-green/40 uppercase text-[10px] mb-1">{lang === 'fr' ? 'Avertissement' : lang === 'de' ? 'Warnung' : 'Warning'}</strong>
                   {selectedRecipe.precautions}
                 </p>
               </div>
             </div>
             <div className="md:col-span-2 pt-6 border-t border-botanik-green/10 mt-2">
               <h4 className="font-bold text-botanik-magenta mb-3 uppercase text-xs tracking-widest flex items-center gap-2">
-                <Activity className="w-4 h-4" /> Synergie 360° (Logique Bloom)
+                <Activity className="w-4 h-4" /> {t.details.footer.synergy}
               </h4>
               <p className="text-sm text-botanik-green/80 leading-relaxed bg-botanik-magenta/[0.03] p-4 rounded-xl border border-botanik-magenta/10">
                 {selectedRecipe.synergies_kits_internes}

@@ -3,6 +3,7 @@ import { Search, ChevronDown, ChevronUp, Beaker, Leaf, AlertTriangle, Activity, 
 import { wrapTitle } from './lib/textUtils';
 import { plantsDatabase, PlantData } from './data/therapeuticData';
 import { unifiedBotanicalDatabase, UnifiedPlant } from './data/unifiedBotanicalData';
+import { translations, Language } from './translations';
 
 // --- DATA STRUCTURE (As requested for the CMS) ---
 // (Interface and array moved to therapeuticData.ts)
@@ -11,8 +12,18 @@ const PlantAccordion: React.FC<{
   plant: PlantData, 
   onSelect: () => void,
   isFavorite?: boolean,
-  onToggleFavorite?: () => void
-}> = ({ plant, onSelect, isFavorite, onToggleFavorite }) => {
+  onToggleFavorite?: () => void,
+  lang: Language
+}> = ({ plant, onSelect, isFavorite, onToggleFavorite, lang }) => {
+  const t = translations[lang].herbarium;
+  
+  const getTranslated = (field: keyof PlantData) => {
+    return (plant as any).translations?.[lang]?.[field] || plant[field];
+  };
+
+  const family = t.details.families[plant.famille_bloom] || plant.famille_bloom;
+  const terrains = plant.terrains_cibles.map(ter => t.details.terrains[ter] || ter);
+
   return (
     <div 
       onClick={onSelect}
@@ -20,7 +31,7 @@ const PlantAccordion: React.FC<{
     >
       <div className="flex items-center justify-between mb-6">
         <span className="px-3 py-1 bg-botanik-green/5 text-botanik-green text-[10px] font-black uppercase tracking-widest rounded-full border border-botanik-green/10">
-          {plant.famille_bloom}
+          {family}
         </span>
         <div className="flex items-center gap-2">
           <button 
@@ -40,17 +51,17 @@ const PlantAccordion: React.FC<{
 
       <div className="mb-4">
         <h3 className="text-2xl font-bold text-botanik-green group-hover:text-botanik-orange transition-colors duration-300">
-          {plant.nom_commun}
+          {getTranslated('nom_commun')}
         </h3>
         <p className="text-xs italic text-botanik-green/40 font-serif mt-1">{plant.nom_latin}</p>
       </div>
 
       <p className="text-sm text-botanik-green/60 leading-relaxed mb-8 flex-grow line-clamp-3">
-        {plant.preuve_scientifique.slice(0, 150)}...
+        {getTranslated('preuve_scientifique').slice(0, 150)}...
       </p>
 
       <div className="flex flex-wrap gap-2 mt-auto">
-        {plant.terrains_cibles.map(tag => (
+        {terrains.map(tag => (
           <span key={tag} className="text-[9px] font-bold px-2 py-1 bg-[#F9F9F7] rounded-md text-botanik-green/40 uppercase tracking-wider">
             {tag}
           </span>
@@ -67,7 +78,8 @@ export default function HerbariumContent({
   isPremium = false,
   onRequirePremium,
   favorites = [],
-  onToggleFavorite
+  onToggleFavorite,
+  lang
 }: { 
   onNavigate: (view: any, productId?: string) => void, 
   onNavigatePending?: () => void,
@@ -75,11 +87,14 @@ export default function HerbariumContent({
   isPremium?: boolean,
   onRequirePremium?: () => void,
   favorites?: string[],
-  onToggleFavorite?: (id: string) => void
+  onToggleFavorite?: (id: string) => void,
+  lang: Language
 }) {
   const [selectedPlant, setSelectedPlant] = useState<PlantData | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState<'all' | 'therapeutic' | 'culinary' | 'cosmetic'>('all');
+
+  const t = translations[lang].herbarium;
 
   // Handle initial plant selection from navigation
   useEffect(() => {
@@ -126,27 +141,34 @@ export default function HerbariumContent({
     }
   };
 
+  const getTranslated = (plant: PlantData, field: string) => {
+    return (plant as any).translations?.[lang]?.[field] || (plant as any)[field];
+  };
+
   if (selectedPlant) {
+    const family = t.details.families[selectedPlant.famille_bloom] || selectedPlant.famille_bloom;
+    const terrains = selectedPlant.terrains_cibles.map(ter => t.details.terrains[ter] || ter);
+
     return (
       <div className="max-w-[1200px] mx-auto px-6 py-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
         <button 
           onClick={() => setSelectedPlant(null)}
           className="flex items-center gap-2 text-botanik-green/60 hover:text-botanik-green font-bold mb-12 group transition-colors"
         >
-          <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" /> Retour au Répertoire
+          <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" /> {t.details.back}
         </button>
 
         <header className="mb-16">
           <div className="flex gap-4 text-sm font-medium text-botanik-green/60 mb-6 uppercase tracking-widest flex-wrap">
-            <span>{selectedPlant.famille_bloom}</span>
+            <span>{family}</span>
             <span>•</span>
             <span>{selectedPlant.nom_latin}</span>
           </div>
           <h1 className="text-3xl md:text-8xl font-bold text-botanik-green mb-6 md:mb-8 leading-[0.9] tracking-tighter">
-            {wrapTitle(selectedPlant.nom_commun)}
+            {wrapTitle(getTranslated(selectedPlant, 'nom_commun'))}
           </h1>
           <div className="flex flex-wrap gap-3">
-            {selectedPlant.terrains_cibles.map(t => (
+            {terrains.map(t => (
               <span key={t} className="px-4 py-2 bg-botanik-green/5 text-botanik-green rounded-full text-xs font-bold border border-botanik-green/10">
                 {t}
               </span>
@@ -159,24 +181,24 @@ export default function HerbariumContent({
             {/* 1. SCIENCE DU TOTUM */}
             <section className="bg-white p-10 rounded-[40px] border border-botanik-green/5 shadow-sm">
               <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-botanik-green/40 mb-8 flex items-center gap-2">
-                <Beaker className="w-4 h-4" /> I. La Science du Totum
+                <Beaker className="w-4 h-4" /> {t.details.science.title}
               </h2>
               <div className="grid md:grid-cols-2 gap-10">
                 <div>
-                  <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-green mb-4">Actifs Clés & Polarité</h4>
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-green mb-4">{t.details.science.actives_title}</h4>
                   <div className="space-y-4">
                     {selectedPlant.actifs_cles.map(a => (
                       <div key={a.nom} className="flex justify-between items-center py-2 border-b border-botanik-green/5">
-                        <span className="text-sm font-medium text-botanik-green">{a.nom}</span>
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-botanik-green/40">{a.polarite}</span>
+                        <span className="text-sm font-medium text-botanik-green">{(a as any).translations?.[lang]?.nom || a.nom}</span>
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-botanik-green/40">{(a as any).translations?.[lang]?.polarite || a.polarite}</span>
                       </div>
                     ))}
                   </div>
                 </div>
                 <div className="bg-botanik-green/5 p-8 rounded-3xl">
-                  <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-green mb-4">Preuve Scientifique</h4>
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-green mb-4">{t.details.science.evidence_title}</h4>
                   <p className="text-sm text-botanik-green/70 leading-relaxed italic">
-                    "{selectedPlant.preuve_scientifique}"
+                    "{getTranslated(selectedPlant, 'preuve_scientifique')}"
                   </p>
                 </div>
               </div>
@@ -189,30 +211,30 @@ export default function HerbariumContent({
               </div>
               <div className="relative z-10">
                 <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-white/40 mb-10 flex items-center gap-2">
-                  <FlaskConical className="w-4 h-4" /> II. Ingénierie BloomLab
+                  <FlaskConical className="w-4 h-4" /> {t.details.engineering.title}
                 </h2>
                 <div className="mb-12 max-w-2xl">
-                  <h3 className="text-3xl font-bold mb-4">Pourquoi l'extraction ?</h3>
-                  <p className="text-white/70 leading-relaxed">{selectedPlant.pourquoi_bloomlab.probleme_traditionnel}</p>
+                  <h3 className="text-3xl font-bold mb-4">{t.details.engineering.why_extraction}</h3>
+                  <p className="text-white/70 leading-relaxed">{selectedPlant.pourquoi_bloomlab.translations?.[lang]?.probleme_traditionnel || selectedPlant.pourquoi_bloomlab.probleme_traditionnel}</p>
                 </div>
                 
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10">
                     <div className="flex items-center gap-3 mb-6">
                       <div className="w-8 h-8 bg-botanik-orange rounded-lg flex items-center justify-center text-xs font-bold">A</div>
-                      <span className="font-bold uppercase tracking-widest text-xs">Phase A : Hydrosoluble</span>
+                      <span className="font-bold uppercase tracking-widest text-xs">{t.details.engineering.phase_a}</span>
                     </div>
                     <div className="space-y-4">
                       <div className="flex justify-between text-sm">
-                        <span className="opacity-60">Température</span>
+                        <span className="opacity-60">{t.details.engineering.temperature}</span>
                         <span className="font-bold">{selectedPlant.pourquoi_bloomlab.phase_A.temp}</span>
                       </div>
                       <div className="flex justify-between text-sm">
-                        <span className="opacity-60">Temps</span>
-                        <span className="font-bold">{selectedPlant.pourquoi_bloomlab.phase_A.temps || "Variable"}</span>
+                        <span className="opacity-60">{t.details.engineering.time}</span>
+                        <span className="font-bold">{selectedPlant.pourquoi_bloomlab.phase_A.temps || t.details.engineering.variable}</span>
                       </div>
                       <div className="pt-4 border-t border-white/10">
-                        <p className="text-xs italic text-white/80">{selectedPlant.pourquoi_bloomlab.phase_A.cible}</p>
+                        <p className="text-xs italic text-white/80">{selectedPlant.pourquoi_bloomlab.phase_A.translations?.[lang]?.cible || selectedPlant.pourquoi_bloomlab.phase_A.cible}</p>
                       </div>
                     </div>
                   </div>
@@ -220,19 +242,19 @@ export default function HerbariumContent({
                   <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10">
                     <div className="flex items-center gap-3 mb-6">
                       <div className="w-8 h-8 bg-botanik-orange rounded-lg flex items-center justify-center text-xs font-bold">B</div>
-                      <span className="font-bold uppercase tracking-widest text-xs">Phase B : Liposoluble</span>
+                      <span className="font-bold uppercase tracking-widest text-xs">{t.details.engineering.phase_b}</span>
                     </div>
                     <div className="space-y-4">
                       <div className="flex justify-between text-sm">
-                        <span className="opacity-60">Température</span>
+                        <span className="opacity-60">{t.details.engineering.temperature}</span>
                         <span className="font-bold">{selectedPlant.pourquoi_bloomlab.phase_B.temp}</span>
                       </div>
                       <div className="flex justify-between text-sm">
-                        <span className="opacity-60">Temps</span>
-                        <span className="font-bold">{selectedPlant.pourquoi_bloomlab.phase_B.temps || "Variable"}</span>
+                        <span className="opacity-60">{t.details.engineering.time}</span>
+                        <span className="font-bold">{selectedPlant.pourquoi_bloomlab.phase_B.temps || t.details.engineering.variable}</span>
                       </div>
                       <div className="pt-4 border-t border-white/10">
-                        <p className="text-xs italic text-white/80">{selectedPlant.pourquoi_bloomlab.phase_B.cible}</p>
+                        <p className="text-xs italic text-white/80">{selectedPlant.pourquoi_bloomlab.phase_B.translations?.[lang]?.cible || selectedPlant.pourquoi_bloomlab.phase_B.cible}</p>
                       </div>
                     </div>
                   </div>
@@ -244,20 +266,20 @@ export default function HerbariumContent({
             {selectedPlant.recette_pas_a_pas && (
               <section className="bg-white p-10 rounded-[40px] border border-botanik-green/5 shadow-sm">
                 <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-botanik-green/40 mb-10 flex items-center gap-2">
-                  <ChefHat className="w-4 h-4" /> III. Protocole d'Extraction
+                  <ChefHat className="w-4 h-4" /> {t.details.protocol.title}
                 </h2>
                 <div className="mb-12 p-6 bg-[#F9F9F7] rounded-3xl border border-botanik-green/5">
-                  <h4 className="font-bold text-botanik-green mb-2">{selectedPlant.recette_pas_a_pas.batch_standard}</h4>
+                  <h4 className="font-bold text-botanik-green mb-2">{selectedPlant.recette_pas_a_pas.translations?.[lang]?.batch_standard || selectedPlant.recette_pas_a_pas.batch_standard}</h4>
                 </div>
                 
                 <div className="space-y-12">
                   {/* Preparation */}
                   <div>
                     <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-orange mb-6 flex items-center gap-2">
-                      <Leaf className="w-4 h-4" /> 1. Préparation des plantes
+                      <Leaf className="w-4 h-4" /> {t.details.protocol.preparation}
                     </h4>
                     <div className="space-y-4">
-                      {selectedPlant.recette_pas_a_pas.preparation.map((step, i) => (
+                      {(selectedPlant.recette_pas_a_pas.translations?.[lang]?.preparation || selectedPlant.recette_pas_a_pas.preparation).map((step: string, i: number) => (
                         <div key={i} className="flex gap-4">
                           <span className="text-botanik-green/20 font-bold">{i+1}.</span>
                           <p className="text-sm text-botanik-green/80">{step}</p>
@@ -268,9 +290,9 @@ export default function HerbariumContent({
 
                   {/* Phase A */}
                   <div className="pl-6 border-l-2 border-botanik-orange/20">
-                    <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-orange mb-6">2. Lancement Phase A</h4>
+                    <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-orange mb-6">{t.details.protocol.phase_a}</h4>
                     <div className="space-y-4">
-                      {selectedPlant.recette_pas_a_pas.phase_A_instructions.map((step, i) => (
+                      {(selectedPlant.recette_pas_a_pas.translations?.[lang]?.phase_A_instructions || selectedPlant.recette_pas_a_pas.phase_A_instructions).map((step: string, i: number) => (
                         <div key={i} className="flex gap-4">
                           <span className="text-botanik-orange/40 font-bold">•</span>
                           <p className="text-sm text-botanik-green/80">{step}</p>
@@ -282,10 +304,10 @@ export default function HerbariumContent({
                   {/* Transition */}
                   <div className="p-8 bg-botanik-orange/5 rounded-3xl border border-botanik-orange/10">
                     <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-orange mb-4 flex items-center gap-2">
-                      <AlertTriangle className="w-4 h-4" /> Transition de Sécurité
+                      <AlertTriangle className="w-4 h-4" /> {t.details.protocol.transition}
                     </h4>
                     <div className="space-y-3">
-                      {selectedPlant.recette_pas_a_pas.transition.map((step, i) => (
+                      {(selectedPlant.recette_pas_a_pas.translations?.[lang]?.transition || selectedPlant.recette_pas_a_pas.transition).map((step: string, i: number) => (
                         <p key={i} className="text-xs font-medium text-botanik-orange/80 leading-relaxed">{step}</p>
                       ))}
                     </div>
@@ -293,9 +315,9 @@ export default function HerbariumContent({
 
                   {/* Phase B */}
                   <div className="pl-6 border-l-2 border-botanik-orange/20">
-                    <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-orange mb-6">3. Lancement Phase B</h4>
+                    <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-orange mb-6">{t.details.protocol.phase_b}</h4>
                     <div className="space-y-4">
-                      {selectedPlant.recette_pas_a_pas.phase_B_instructions.map((step, i) => (
+                      {(selectedPlant.recette_pas_a_pas.translations?.[lang]?.phase_B_instructions || selectedPlant.recette_pas_a_pas.phase_B_instructions).map((step: string, i: number) => (
                         <div key={i} className="flex gap-4">
                           <span className="text-botanik-orange/40 font-bold">•</span>
                           <p className="text-sm text-botanik-green/80">{step}</p>
@@ -306,9 +328,9 @@ export default function HerbariumContent({
 
                   {/* Filtration */}
                   <div>
-                    <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-orange mb-6">4. Filtration & Finition</h4>
+                    <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-orange mb-6">{t.details.protocol.filtration}</h4>
                     <div className="space-y-4">
-                      {selectedPlant.recette_pas_a_pas.filtration_et_finition.map((step, i) => (
+                      {(selectedPlant.recette_pas_a_pas.translations?.[lang]?.filtration_et_finition || selectedPlant.recette_pas_a_pas.filtration_et_finition).map((step: string, i: number) => (
                         <div key={i} className="flex gap-4">
                           <span className="text-botanik-green/20 font-bold">{i+1}.</span>
                           <p className="text-sm text-botanik-green/80">{step}</p>
@@ -324,22 +346,22 @@ export default function HerbariumContent({
             {selectedPlant.usage_standard && (
               <section className="bg-white p-10 rounded-[40px] border border-botanik-green/5 shadow-sm">
                 <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-botanik-green/40 mb-10 flex items-center gap-2">
-                  <Activity className="w-4 h-4" /> III bis. Mode d'Emploi & Sécurité
+                  <Activity className="w-4 h-4" /> {t.details.usage.title}
                 </h2>
                 <div className="grid md:grid-cols-2 gap-10">
                   <div className="space-y-6">
-                    <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-green">Utilisation quotidienne</h4>
+                    <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-green">{t.details.usage.daily}</h4>
                     <div className="space-y-4 text-sm text-botanik-green/80">
-                      <p><strong>Mode :</strong> {selectedPlant.usage_standard.mode_administration}</p>
-                      <p><strong>Posologie :</strong> {selectedPlant.usage_standard.posologie_quotidienne}</p>
-                      <p><strong>Dose max :</strong> {selectedPlant.usage_standard.dose_maximale}</p>
-                      <p><strong>Durée :</strong> {selectedPlant.usage_standard.duree_utilisation}</p>
+                      <p><strong>{t.details.usage.mode}</strong> {selectedPlant.usage_standard.translations?.[lang]?.mode_administration || selectedPlant.usage_standard.mode_administration}</p>
+                      <p><strong>{t.details.usage.dosage}</strong> {selectedPlant.usage_standard.translations?.[lang]?.posologie_quotidienne || selectedPlant.usage_standard.posologie_quotidienne}</p>
+                      <p><strong>{t.details.usage.max_dose}</strong> {selectedPlant.usage_standard.translations?.[lang]?.dose_maximale || selectedPlant.usage_standard.dose_maximale}</p>
+                      <p><strong>{t.details.usage.duration}</strong> {selectedPlant.usage_standard.translations?.[lang]?.duree_utilisation || selectedPlant.usage_standard.duree_utilisation}</p>
                     </div>
                   </div>
                   <div className="space-y-6">
-                    <h4 className="text-sm font-bold uppercase tracking-widest text-red-700">Contre-indications</h4>
+                    <h4 className="text-sm font-bold uppercase tracking-widest text-red-700">{t.details.usage.contraindications}</h4>
                     <ul className="space-y-2 text-sm text-red-900/70">
-                      {selectedPlant.usage_standard.contre_indications.map((ci, i) => (
+                      {(selectedPlant.usage_standard.translations?.[lang]?.contre_indications || selectedPlant.usage_standard.contre_indications).map((ci: string, i: number) => (
                         <li key={i} className="flex gap-2">
                           <span className="text-red-300">•</span> {ci}
                         </li>
@@ -354,7 +376,7 @@ export default function HerbariumContent({
             {selectedPlant.additional_recipes && selectedPlant.additional_recipes.length > 0 && (
               <section className="bg-white p-10 rounded-[40px] border border-botanik-green/5 shadow-sm">
                 <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-botanik-green/40 mb-10 flex items-center gap-2">
-                  <Utensils className="w-4 h-4" /> Protocoles Spécifiques
+                  <Utensils className="w-4 h-4" /> {t.details.specific_protocols.title}
                 </h2>
                 <div className="space-y-6">
                   {selectedPlant.additional_recipes.map((recipe, idx) => (
@@ -371,7 +393,7 @@ export default function HerbariumContent({
 
                       <div className="grid md:grid-cols-3 gap-8 mb-8">
                         <div className="space-y-3">
-                          <h5 className="text-[10px] font-bold uppercase tracking-widest text-botanik-green/40">Paramètres</h5>
+                          <h5 className="text-[10px] font-bold uppercase tracking-widest text-botanik-green/40">{t.details.specific_protocols.params}</h5>
                           <div className="flex items-center gap-3">
                             <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-botanik-orange shadow-sm">
                               <Droplets className="w-4 h-4" />
@@ -395,7 +417,7 @@ export default function HerbariumContent({
                         </div>
 
                         <div className="space-y-3">
-                          <h5 className="text-[10px] font-bold uppercase tracking-widest text-botanik-green/40">Plantes</h5>
+                          <h5 className="text-[10px] font-bold uppercase tracking-widest text-botanik-green/40">{t.details.specific_protocols.plants}</h5>
                           <p className="text-xs font-medium text-botanik-green">
                             {recipe.plant.sachet_count} sachets ({recipe.plant.total_plant_mass_g}g)
                           </p>
@@ -403,7 +425,7 @@ export default function HerbariumContent({
                         </div>
 
                         <div className="space-y-3">
-                          <h5 className="text-[10px] font-bold uppercase tracking-widest text-botanik-green/40">Usage</h5>
+                          <h5 className="text-[10px] font-bold uppercase tracking-widest text-botanik-green/40">{t.details.specific_protocols.usage}</h5>
                           <p className="text-xs font-medium text-botanik-green">
                             {recipe.use.servings.length} prises / jour
                           </p>
@@ -413,7 +435,7 @@ export default function HerbariumContent({
 
                       <div className="pt-6 border-t border-botanik-green/5 flex justify-between items-center">
                         <div className="flex items-center gap-2 text-[10px] font-bold text-botanik-green/40 uppercase tracking-wider">
-                           <Info className="w-3 h-3" /> {recipe.storage.max_hours}h max
+                           <Info className="w-3 h-3" /> {recipe.storage.max_hours}h {t.details.specific_protocols.max_hours}
                         </div>
                         <button 
                           onClick={(e) => {
@@ -435,30 +457,30 @@ export default function HerbariumContent({
             {selectedPlant.socle_synergique && (
               <section className="bg-[#F9F9F7] p-10 rounded-[40px] border border-botanik-green/5">
                 <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-botanik-green/40 mb-10 flex items-center gap-2">
-                  <Activity className="w-4 h-4" /> IV. Socle Synergique
+                  <Activity className="w-4 h-4" /> {t.details.synergy.title}
                 </h2>
                 <div className="grid md:grid-cols-2 gap-10">
                   <div className="space-y-8">
-                    <h4 className="text-xs font-bold uppercase tracking-widest text-botanik-green">Compléments Cofacteurs</h4>
+                    <h4 className="text-xs font-bold uppercase tracking-widest text-botanik-green">{t.details.synergy.cofactors}</h4>
                     {selectedPlant.socle_synergique.cofacteurs_complements.map(c => (
                       <div key={c.nom} className="bg-white p-6 rounded-2xl border border-botanik-green/5">
                         <div className="flex justify-between items-start mb-2">
-                          <span className="font-bold text-sm text-botanik-green">{c.nom}</span>
-                          <span className="text-[10px] font-bold text-botanik-orange">{c.dose}</span>
+                          <span className="font-bold text-sm text-botanik-green">{(c as any).translations?.[lang]?.nom || c.nom}</span>
+                          <span className="text-[10px] font-bold text-botanik-orange">{(c as any).translations?.[lang]?.dose || c.dose}</span>
                         </div>
-                        <p className="text-xs text-botanik-green/60 leading-relaxed">{c.role}</p>
+                        <p className="text-xs text-botanik-green/60 leading-relaxed">{(c as any).translations?.[lang]?.role || c.role}</p>
                       </div>
                     ))}
                   </div>
                   <div className="space-y-8">
-                    <h4 className="text-xs font-bold uppercase tracking-widest text-botanik-green">Leviers du Vivant</h4>
+                    <h4 className="text-xs font-bold uppercase tracking-widest text-botanik-green">{t.details.synergy.levers}</h4>
                     {selectedPlant.socle_synergique.leviers_du_vivant.map(l => (
                       <div key={l.nom} className="bg-white p-6 rounded-2xl border border-botanik-green/5">
                         <div className="flex justify-between items-start mb-2">
-                          <span className="font-bold text-sm text-botanik-green">{l.nom}</span>
-                          <span className="text-[10px] font-bold text-botanik-orange">{l.frequence}</span>
+                          <span className="font-bold text-sm text-botanik-green">{(l as any).translations?.[lang]?.nom || l.nom}</span>
+                          <span className="text-[10px] font-bold text-botanik-orange">{(l as any).translations?.[lang]?.frequence || l.frequence}</span>
                         </div>
-                        <p className="text-xs text-botanik-green/60 leading-relaxed">{l.role}</p>
+                        <p className="text-xs text-botanik-green/60 leading-relaxed">{(l as any).translations?.[lang]?.role || l.role}</p>
                       </div>
                     ))}
                   </div>
@@ -470,20 +492,20 @@ export default function HerbariumContent({
           <aside className="space-y-8">
             <div className="bg-white p-8 rounded-[40px] border border-botanik-green/5 sticky top-24">
               <div className="mb-10">
-                <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-botanik-green/30 mb-4">L'Expert Bloom</h4>
+                <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-botanik-green/30 mb-4">{t.details.expert.title}</h4>
                 <p className="text-sm font-medium text-botanik-green/80 leading-relaxed italic">
-                  "{selectedPlant.note_expert || "Cette plante est un pilier de la régulation systémique. Sa biodisponibilité est décuplée par l'extraction BloomLab."}"
+                  "{getTranslated(selectedPlant, 'note_expert') || t.details.expert.default_note}"
                 </p>
               </div>
 
               <div className="space-y-10">
                 <div>
-                  <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-botanik-green/30 mb-4">Convergence Ancestrale</h4>
-                  <p className="text-xs text-botanik-green/70 leading-relaxed">{selectedPlant.convergence_ancestrale}</p>
+                  <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-botanik-green/30 mb-4">{t.details.expert.convergence}</h4>
+                  <p className="text-xs text-botanik-green/70 leading-relaxed">{getTranslated(selectedPlant, 'convergence_ancestrale')}</p>
                 </div>
                 
                 <div>
-                  <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-botanik-green/30 mb-4">Synergies</h4>
+                  <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-botanik-green/30 mb-4">{t.details.expert.synergies}</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedPlant.synergies_recommandees.map(s => (
                       <span key={s} className="text-[10px] font-bold px-3 py-1 bg-botanik-green/5 rounded-full text-botanik-green/60 uppercase tracking-wider">{s}</span>
@@ -494,9 +516,9 @@ export default function HerbariumContent({
                 {selectedPlant.precautions && (
                   <div className="pt-8 border-t border-botanik-green/5">
                     <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-botanik-magenta/60 mb-3 flex items-center gap-2">
-                      <AlertTriangle className="w-3 h-3" /> Précautions
+                      <AlertTriangle className="w-3 h-3" /> {t.details.expert.precautions}
                     </h4>
-                    <p className="text-[10px] text-botanik-magenta/80 leading-relaxed">{selectedPlant.precautions}</p>
+                    <p className="text-[10px] text-botanik-magenta/80 leading-relaxed">{getTranslated(selectedPlant, 'precautions')}</p>
                   </div>
                 )}
               </div>
@@ -513,14 +535,14 @@ export default function HerbariumContent({
       
       {/* Search & Filter Header (App Style) */}
       <div className="bg-white px-4 md:px-6 pt-6 md:pt-8 pb-4 border-b border-botanik-green/5">
-        <h1 className="text-2xl md:text-3xl font-bold text-botanik-green mb-1 md:mb-2">Le Répertoire Botanique</h1>
-        <p className="text-[10px] md:text-sm text-botanik-green/40 font-medium uppercase tracking-widest mb-4 md:mb-6">Intelligence du Totum • Cartographie Systémique</p>
+        <h1 className="text-2xl md:text-3xl font-bold text-botanik-green mb-1 md:mb-2">{t.header.title}</h1>
+        <p className="text-[10px] md:text-sm text-botanik-green/40 font-medium uppercase tracking-widest mb-4 md:mb-6">{t.header.subtitle}</p>
         
         <div className="relative mb-4 md:mb-6 max-w-2xl">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 md:w-5 h-4 md:h-5 text-botanik-green/30" />
           <input
             type="text"
-            placeholder="Chercher une plante, un actif..."
+            placeholder={t.header.search_placeholder}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-10 md:pl-12 pr-4 py-2 md:py-3 bg-[#F9F9F7] rounded-xl md:rounded-2xl border-none text-sm md:text-base text-botanik-green focus:ring-2 focus:ring-botanik-orange/20"
@@ -532,10 +554,10 @@ export default function HerbariumContent({
       <div className="sticky top-0 z-30 bg-[#F9F9F7]/95 backdrop-blur-md py-3 md:py-4 px-4 md:px-6 mb-8 border-b border-botanik-green/5 overflow-x-auto whitespace-nowrap scrollbar-hide">
         <div className="flex gap-2 items-center">
           {[
-            { id: 'all', label: 'Tous', icon: Leaf, count: 93 },
-            { id: 'therapeutic', label: 'Thérapeutique', icon: Activity, count: 50 },
-            { id: 'culinary', label: 'Culinaire', icon: ChefHat, count: 21 },
-            { id: 'cosmetic', label: 'Cosmétique', icon: Sparkles, count: 22 }
+            { id: 'all', label: t.filters.all, icon: Leaf, count: 93 },
+            { id: 'therapeutic', label: t.filters.therapeutic, icon: Activity, count: 50 },
+            { id: 'culinary', label: t.filters.culinary, icon: ChefHat, count: 21 },
+            { id: 'cosmetic', label: t.filters.cosmetic, icon: Sparkles, count: 22 }
           ].map((f) => (
             <button
               key={f.id}
@@ -561,6 +583,25 @@ export default function HerbariumContent({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredDirectory.map((plant, index) => {
             const isLocked = index >= 4 && !isPremium;
+            const originalId = plant.id.split('-').slice(1).join('-');
+            const therapeuticData = plant.source === 'therapeutic' ? plantsDatabase.find(p => p.plant_id === originalId) : null;
+            
+            const displayName = therapeuticData 
+              ? (therapeuticData as any).translations?.[lang]?.nom_commun || therapeuticData.nom_commun
+              : plant.name;
+            
+            const displayDescription = therapeuticData
+              ? (therapeuticData as any).translations?.[lang]?.preuve_scientifique || therapeuticData.preuve_scientifique
+              : plant.description;
+
+            const displayFamily = therapeuticData
+              ? t.details.families[therapeuticData.famille_bloom] || therapeuticData.famille_bloom
+              : plant.category;
+
+            const displayTags = therapeuticData
+              ? therapeuticData.terrains_cibles.map(ter => t.details.terrains[ter] || ter)
+              : plant.tags;
+
             return (
               <div 
                 key={plant.id} 
@@ -572,8 +613,8 @@ export default function HerbariumContent({
                     <div className="w-12 h-12 bg-botanik-green rounded-2xl flex items-center justify-center mb-4 shadow-lg">
                       <Lock className="w-6 h-6 text-white" />
                     </div>
-                    <p className="text-sm font-bold uppercase tracking-widest text-botanik-green mb-1">Accès Premium</p>
-                    <p className="text-[10px] text-botanik-green/60 font-medium">Abonnez-vous pour débloquer</p>
+                    <p className="text-sm font-bold uppercase tracking-widest text-botanik-green mb-1">{t.card.premium_access}</p>
+                    <p className="text-[10px] text-botanik-green/60 font-medium">{t.card.subscribe}</p>
                   </div>
                 )}
                 {/* Category Badge */}
@@ -583,7 +624,7 @@ export default function HerbariumContent({
                     plant.source === 'culinary' ? 'bg-botanik-orange text-white border-botanik-orange' :
                     'bg-botanik-green text-white border-botanik-green'
                   }`}>
-                    {plant.category}
+                    {displayFamily}
                   </span>
                   <div className="flex items-center gap-2">
                     {plant.source === 'therapeutic' && (
@@ -606,7 +647,7 @@ export default function HerbariumContent({
 
                 <div className="mb-4">
                   <h3 className="text-xl md:text-2xl font-bold text-botanik-green group-hover:text-botanik-orange transition-colors duration-300">
-                    {plant.name}
+                    {displayName}
                   </h3>
                   {plant.latinName && (
                     <p className="text-xs italic text-botanik-green/40 font-serif mt-1">{plant.latinName}</p>
@@ -614,11 +655,11 @@ export default function HerbariumContent({
                 </div>
 
                 <p className="text-sm text-botanik-green/60 leading-relaxed mb-8 flex-grow line-clamp-3">
-                  {plant.description}
+                  {displayDescription}
                 </p>
 
                 <div className="flex flex-wrap gap-2 mt-auto">
-                  {plant.tags.slice(0, 3).map(tag => (
+                  {displayTags.slice(0, 3).map(tag => (
                     <span key={tag} className="text-[9px] font-bold px-2 py-1 bg-[#F9F9F7] rounded-md text-botanik-green/40 uppercase tracking-wider">
                       {tag}
                     </span>
@@ -640,8 +681,8 @@ export default function HerbariumContent({
       {filteredDirectory.length === 0 && (
         <div className="text-center py-24 bg-white rounded-[60px] border border-dashed border-botanik-green/10">
           <Leaf className="w-16 h-16 text-botanik-green/10 mx-auto mb-6" />
-          <h3 className="text-2xl font-bold text-botanik-green mb-2">Aucune plante trouvée</h3>
-          <p className="text-botanik-green/40">Essayez une autre recherche ou changez de catégorie.</p>
+          <h3 className="text-2xl font-bold text-botanik-green mb-2">{t.empty.title}</h3>
+          <p className="text-botanik-green/40">{t.empty.description}</p>
         </div>
       )}
     </div>

@@ -2,13 +2,16 @@ import React, { useState } from 'react';
 import { Upload, FileCheck, ShieldCheck, AlertCircle, Loader2, ChevronRight, Check } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { wrapTitle } from './lib/textUtils';
+import { translations, Language } from './translations';
 
 interface ActivationPageProps {
   userId: string | null;
   onSuccess: () => void;
+  lang: Language;
 }
 
-export default function ActivationPage({ userId, onSuccess }: ActivationPageProps) {
+export default function ActivationPage({ userId, onSuccess, lang }: ActivationPageProps) {
+  const t = translations[lang].activation;
   const [file, setFile] = useState<File | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -48,15 +51,15 @@ export default function ActivationPage({ userId, onSuccess }: ActivationPageProp
 
       if (response.ok) {
         setStatus('success');
-        setMessage('Votre BloomLab a été identifiée avec succès ! Votre accès Premium est activé pour 1 mois.');
+        setMessage(t.success.description);
         setTimeout(() => onSuccess(), 3000);
       } else {
         setStatus('error');
-        setMessage(data.message || 'Une erreur est survenue lors de la vérification.');
+        setMessage(data.message || t.error.generic);
       }
     } catch (error) {
       setStatus('error');
-      setMessage('Erreur de connexion au serveur.');
+      setMessage(t.error.connection);
     } finally {
       setLoading(false);
     }
@@ -73,7 +76,7 @@ export default function ActivationPage({ userId, onSuccess }: ActivationPageProp
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-2 px-3 py-1 bg-botanik-orange/10 rounded-full text-[10px] font-black uppercase tracking-widest text-botanik-orange mb-8"
           >
-            <ShieldCheck className="w-3 h-3" /> Souveraineté Activée
+            <ShieldCheck className="w-3 h-3" /> {t.badge}
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -81,7 +84,7 @@ export default function ActivationPage({ userId, onSuccess }: ActivationPageProp
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
           >
-            {wrapTitle("Activez votre Accès Premium Bloom")}
+            {wrapTitle(t.title)}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -89,7 +92,7 @@ export default function ActivationPage({ userId, onSuccess }: ActivationPageProp
             transition={{ delay: 0.2 }}
             className="text-lg md:text-xl text-[#1B3022]/70 max-w-2xl mx-auto mb-12 leading-relaxed"
           >
-            Téléversez votre facture d'achat de la BloomLab. Notre système vérifie votre achat instantanément et active votre accès aux protocoles experts.
+            {t.subtitle}
           </motion.p>
         </div>
       </section>
@@ -130,7 +133,7 @@ export default function ActivationPage({ userId, onSuccess }: ActivationPageProp
                         }}
                         className="text-xs text-red-500 font-bold hover:underline"
                       >
-                        Changer de fichier
+                        {t.form.change_file}
                       </button>
                     </div>
                   ) : (
@@ -139,10 +142,10 @@ export default function ActivationPage({ userId, onSuccess }: ActivationPageProp
                         <Upload className="w-10 h-10 text-[#1B3022]/40" />
                       </div>
                       <div>
-                        <p className="font-bold text-lg mb-1">Déposez votre facture ici</p>
-                        <p className="text-sm text-[#1B3022]/60">ou cliquez pour parcourir vos fichiers</p>
+                        <p className="font-bold text-lg mb-1">{t.form.invoice}</p>
+                        <p className="text-sm text-[#1B3022]/60">{t.form.invoice_sub}</p>
                       </div>
-                      <p className="text-[10px] text-[#1B3022]/40 uppercase tracking-widest font-bold">PDF, JPG, PNG · Max 10MB</p>
+                      <p className="text-[10px] text-[#1B3022]/40 uppercase tracking-widest font-bold">{t.form.invoice_limit}</p>
                     </div>
                   )}
                 </div>
@@ -181,11 +184,11 @@ export default function ActivationPage({ userId, onSuccess }: ActivationPageProp
                 {loading ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin" />
-                    Vérification par IA en cours...
+                    {t.form.loading}
                   </>
                 ) : (
                   <>
-                    Activer mon accès Premium
+                    {t.form.submit}
                     <ChevronRight className="w-5 h-5" />
                   </>
                 )}
@@ -198,18 +201,18 @@ export default function ActivationPage({ userId, onSuccess }: ActivationPageProp
       {/* FAQ Section */}
       <section className="px-6 py-24 bg-[#1B3022]/5">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-2xl font-bold mb-12 text-center italic">Questions fréquentes</h2>
+          <h2 className="text-2xl font-bold mb-12 text-center italic">{t.faq.title}</h2>
           <div className="space-y-8">
             <div className="bg-white p-6 rounded-2xl">
-              <h3 className="font-bold mb-2">Que se passe-t-il après le mois gratuit ?</h3>
+              <h3 className="font-bold mb-2">{t.faq.q1.q}</h3>
               <p className="text-sm text-[#1B3022]/70 leading-relaxed">
-                Votre compte basculera automatiquement en mode Freemium. Vous conserverez vos favoris mais n'aurez plus accès aux protocoles experts, sauf si vous choisissez de vous abonner.
+                {t.faq.q1.a}
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl">
-              <h3 className="font-bold mb-2">Combien de temps prend la vérification ?</h3>
+              <h3 className="font-bold mb-2">{t.faq.q2.q}</h3>
               <p className="text-sm text-[#1B3022]/70 leading-relaxed">
-                Grâce à notre intelligence artificielle Bloom, la vérification est instantanée. Dès que la facture est validée, vos droits sont mis à jour en temps réel.
+                {t.faq.q2.a}
               </p>
             </div>
           </div>

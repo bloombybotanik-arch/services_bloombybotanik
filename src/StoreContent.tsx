@@ -9,107 +9,112 @@ import bouclierHiverImg from './assets/images/product_bouclier_hiver.jpg';
 import nuitProfondeImg from './assets/images/product_nuit_profonde.jpg';
 import seveFondamentaleImg from './assets/images/product_seve_fondamentale.jpg';
 import digestionImg from './assets/images/product_digestion.jpeg';
+import { translations, Language } from './translations';
 
-const products = [
-  {
-    id: 'bloomlab',
-    name: "Machine d'Extraction Botanique",
-    subtitle: "SOUVERAINETÉ SANTÉ 2026",
-    price: 289.00,
-    originalPrice: 329.00,
-    image: bloomLabImg,
-    rating: 4.9,
-    reviews: 128,
-    description: "Élaborer vos propres remèdes et soins maison grade Laboratoire, c'est enfin possible ! Découvrez la seule machine capable d'extraire le Totum des Plantes avec une précision absolue.",
-    bullets: [
-      "Macérats huileux, teintures, extraits concentrés",
-      "Séquençage thermique ±0,5°C (0°C à 121°C)",
-      "Acier Inox 304 certifié, Cuve 1.2L"
-    ],
-    tags: ['Best-Seller', 'Inox 304', 'Garantie 1 an'],
-    featured: true
-  },
-  {
-    id: 'seve-fondamentale',
-    name: 'SÈVE FONDAMENTALE',
-    subtitle: 'VITALITÉ CAPILLAIRE',
-    price: 12.90,
-    image: seveFondamentaleImg,
-    rating: 4.8,
-    reviews: 42,
-    description: 'Soutien la vitalité des racines. Mélange de plantes pour infusion capillaire et corporelle.',
-    tags: ['Vitalité', 'Structure']
-  },
-  {
-    id: 'nuit-profonde',
-    name: 'NUIT PROFONDE',
-    subtitle: 'SOMMEIL & ANCRAGE',
-    price: 9.90,
-    image: nuitProfondeImg,
-    rating: 4.9,
-    reviews: 56,
-    description: 'Rituel du soir et ancrage. Mélange de plantes séchées pour un sommeil profond et réparateur.',
-    tags: ['Sommeil', 'Ancrage']
-  },
-  {
-    id: 'confort-digestif',
-    name: 'CONFORT DIGESTIF',
-    subtitle: 'ÉQUILIBRE INTESTINAL',
-    price: 9.90,
-    image: digestionImg,
-    rating: 4.7,
-    reviews: 38,
-    description: 'Équilibre et confort digestif. Mélange de plantes pour apaiser les ballonnements durablement.',
-    tags: ['Digestion', 'Équilibre']
-  },
-  {
-    id: 'feu-articulaire',
-    name: 'FEU ARTICULAIRE',
-    subtitle: 'SOUPLESSE & MOBILITÉ',
-    price: 9.90,
-    image: feuArticulaireImg,
-    rating: 4.8,
-    reviews: 29,
-    description: 'Souplesse articulaire. Mélange de plantes pour accompagner les zones sensibles et la mobilité.',
-    tags: ['Articulations', 'Mobilité']
-  },
-  {
-    id: 'duo-argiles',
-    name: 'Duo ARGILES Précision',
-    subtitle: 'ADSORBANT NATUREL',
-    price: 44.90,
-    originalPrice: 49.00,
-    image: duoArgilesImg,
-    rating: 5.0,
-    reviews: 15,
-    description: 'Haute précision (6µm). Une cure détoxifiante puissante pour libérer le corps des toxines.',
-    tags: ['Détox', 'Purification']
-  },
-  {
-    id: 'pack-trio',
-    name: 'Achetez par 3',
-    subtitle: 'LIVRAISON OFFERTE',
-    price: 26.90,
-    originalPrice: 29.70,
-    image: trioPouchesImg,
-    rating: 4.9,
-    reviews: 84,
-    description: 'Sélectionnez vos 3 mélanges préférés et profitez de la livraison offerte. Idéal pour un protocole complet.',
-    tags: ['Offre Spéciale', 'Best-Value']
-  }
-];
+const getProducts = (lang: Language) => {
+  const t = translations[lang].store.products;
+  return [
+    {
+      id: 'bloomlab',
+      name: t.bloomlab.name,
+      subtitle: t.bloomlab.subtitle,
+      price: 289.00,
+      originalPrice: 329.00,
+      image: bloomLabImg,
+      rating: 4.9,
+      reviews: 128,
+      description: t.bloomlab.description,
+      bullets: t.bloomlab.bullets,
+      tags: ['Best-Seller', 'Inox 304', 'Garantie 1 an'],
+      featured: true
+    },
+    {
+      id: 'seve-fondamentale',
+      name: t.seve.name,
+      subtitle: t.seve.subtitle,
+      price: 12.90,
+      image: seveFondamentaleImg,
+      rating: 4.8,
+      reviews: 42,
+      description: t.seve.description,
+      tags: ['Vitalité', 'Structure']
+    },
+    {
+      id: 'nuit-profonde',
+      name: t.nuit.name,
+      subtitle: t.nuit.subtitle,
+      price: 9.90,
+      image: nuitProfondeImg,
+      rating: 4.9,
+      reviews: 56,
+      description: t.nuit.description,
+      tags: ['Sommeil', 'Ancrage']
+    },
+    {
+      id: 'confort-digestif',
+      name: t.digestion.name,
+      subtitle: t.digestion.subtitle,
+      price: 9.90,
+      image: digestionImg,
+      rating: 4.7,
+      reviews: 38,
+      description: t.digestion.description,
+      tags: ['Digestion', 'Équilibre']
+    },
+    {
+      id: 'feu-articulaire',
+      name: t.articulaire.name,
+      subtitle: t.articulaire.subtitle,
+      price: 9.90,
+      image: feuArticulaireImg,
+      rating: 4.8,
+      reviews: 29,
+      description: t.articulaire.description,
+      tags: ['Articulations', 'Mobilité']
+    },
+    {
+      id: 'duo-argiles',
+      name: t.argiles.name,
+      subtitle: t.argiles.subtitle,
+      price: 44.90,
+      originalPrice: 49.00,
+      image: duoArgilesImg,
+      rating: 5.0,
+      reviews: 15,
+      description: t.argiles.description,
+      tags: ['Détox', 'Purification']
+    },
+    {
+      id: 'pack-trio',
+      name: t.trio.name,
+      subtitle: t.trio.subtitle,
+      price: 26.90,
+      originalPrice: 29.70,
+      image: trioPouchesImg,
+      rating: 4.9,
+      reviews: 84,
+      description: t.trio.description,
+      tags: ['Offre Spéciale', 'Best-Value']
+    }
+  ];
+};
 
 interface StoreContentProps {
   onNavigatePending: () => void;
   onNavigateDetail: (id: string) => void;
   onAddToCart: (product: any) => void;
+  lang: Language;
 }
 
-export default function StoreContent({ onNavigatePending, onNavigateDetail, onAddToCart }: StoreContentProps) {
+export default function StoreContent({ onNavigatePending, onNavigateDetail, onAddToCart, lang }: StoreContentProps) {
   const [searchQuery, setSearchQuery] = React.useState('');
+  const t = translations[lang].store;
+  const products = React.useMemo(() => getProducts(lang), [lang]);
   
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('fr-FR', {
+    return new Intl.NumberFormat(lang === 'fr' ? 'fr-FR' : lang === 'de' ? 'de-DE' : 'en-US', {
+      style: 'currency',
+      currency: 'EUR',
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     }).format(price);
@@ -126,14 +131,14 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
       
       {/* Search & Filter Header (App Style) */}
       <div className="bg-white px-4 md:px-6 pt-6 md:pt-8 pb-4">
-        <h1 className="text-2xl md:text-3xl font-bold text-botanik-green mb-1 md:mb-2">Boutique</h1>
-        <p className="text-[10px] md:text-sm text-botanik-green/40 font-medium uppercase tracking-widest mb-4 md:mb-6">L'Apothicaire Moderne</p>
+        <h1 className="text-2xl md:text-3xl font-bold text-botanik-green mb-1 md:mb-2">{t.header.title}</h1>
+        <p className="text-[10px] md:text-sm text-botanik-green/40 font-medium uppercase tracking-widest mb-4 md:mb-6">{t.header.subtitle}</p>
         
         <div className="relative mb-4 md:mb-6">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 md:w-5 h-4 md:h-5 text-botanik-green/30" />
           <input 
             type="text" 
-            placeholder="Chercher un kit, une plante..." 
+            placeholder={t.header.search_placeholder} 
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-10 md:pl-12 pr-4 py-2 md:py-3 bg-[#F9F9F7] rounded-xl md:rounded-2xl border-none text-sm md:text-base text-botanik-green focus:ring-2 focus:ring-botanik-orange/20"
@@ -152,24 +157,24 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                 <div className="lg:w-1/2 p-6 md:p-16 flex flex-col justify-center order-2 lg:order-1">
                   <div className="flex items-center gap-2 text-botanik-orange font-black uppercase tracking-[0.3em] text-[10px] mb-8">
                     <div className="w-1.5 h-1.5 rounded-full bg-botanik-orange animate-pulse" />
-                    L'Extracteur de Totum
+                    {t.hero.badge}
                   </div>
                   <h2 className="text-3xl md:text-6xl font-bold text-botanik-green mb-6 md:mb-8 leading-[1.1] tracking-tight">
-                    BloomLab <span className="text-botanik-orange md:whitespace-nowrap">La Boutique</span>
+                    {t.hero.title.split(' ')[0]} <span className="text-botanik-orange md:whitespace-nowrap">{t.hero.title.split(' ').slice(1).join(' ')}</span>
                   </h2>
                   <p className="text-base md:text-xl text-botanik-green/60 mb-8 md:mb-12 leading-relaxed max-w-md font-medium">
-                    Explorez notre sélection de kits et synergies pour accompagner votre reset homéostatique.
+                    {t.hero.description}
                   </p>
                   <div className="flex flex-wrap items-center gap-6 md:gap-10">
                     <div className="flex flex-col">
-                      <span className="text-[10px] font-bold text-botanik-green/40 uppercase tracking-widest mb-1">À partir de</span>
-                    <span className="text-3xl md:text-5xl font-bold text-botanik-green">{formatPrice(products[0].price).split(',')[0]}€</span>
+                      <span className="text-[10px] font-bold text-botanik-green/40 uppercase tracking-widest mb-1">{t.hero.price_from}</span>
+                    <span className="text-3xl md:text-5xl font-bold text-botanik-green">{formatPrice(products[0].price).split(',')[0].split('.')[0]}€</span>
                     </div>
                     <button 
                       onClick={() => onNavigateDetail('bloomlab')}
                       className="px-6 md:px-12 py-3 md:py-6 bg-botanik-green text-white rounded-[16px] md:rounded-[24px] font-bold shadow-2xl shadow-botanik-green/20 flex items-center justify-center gap-3 md:gap-4 group transition-all hover:-translate-y-1 hover:shadow-botanik-green/30 text-sm md:text-base"
                     >
-                      Découvrir
+                      {t.hero.cta}
                       <ArrowRight className="w-5 h-5 md:w-6 md:h-6 transition-transform group-hover:translate-x-1" />
                     </button>
                   </div>
@@ -195,7 +200,7 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
       {/* Product Grid */}
       <div className="px-4 md:px-6 mb-12">
         <h3 className="text-xs md:text-sm font-bold uppercase tracking-widest text-botanik-green/40 mb-4 md:mb-6">
-          {searchQuery ? `Résultats pour "${searchQuery}"` : "Nos Kits & Synergies"}
+          {searchQuery ? `${t.grid.results_for} "${searchQuery}"` : t.grid.title}
         </h3>
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
           {filteredProducts.filter(p => !p.featured || searchQuery).map((product) => {
@@ -226,7 +231,7 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                     {product.name}
                   </h4>
                   <div className="flex items-center justify-between mt-auto">
-                    <span className="text-base md:text-xl font-bold text-botanik-green">{formatPrice(product.price)}€</span>
+                    <span className="text-base md:text-xl font-bold text-botanik-green">{formatPrice(product.price)}</span>
                     <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-botanik-green/20 group-hover:text-botanik-green transition-colors" />
                   </div>
                 </div>
@@ -242,19 +247,19 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
           <div className="w-8 h-8 md:w-10 md:h-10 bg-botanik-green/5 rounded-full flex items-center justify-center shrink-0">
             <ShieldCheck className="w-4 h-4 md:w-5 md:h-5 text-botanik-green" />
           </div>
-          <span className="text-[10px] md:text-xs font-bold text-botanik-green uppercase tracking-wider leading-tight">Paiement 100% Sécurisé</span>
+          <span className="text-[10px] md:text-xs font-bold text-botanik-green uppercase tracking-wider leading-tight">{t.trust.payment}</span>
         </div>
         <div className="bg-white border border-botanik-green/5 p-4 md:p-5 rounded-2xl flex items-center gap-3 md:gap-4 shadow-sm">
           <div className="w-8 h-8 md:w-10 md:h-10 bg-botanik-green/5 rounded-full flex items-center justify-center shrink-0">
             <FlaskConical className="w-4 h-4 md:w-5 md:h-5 text-botanik-green" />
           </div>
-          <span className="text-[10px] md:text-xs font-bold text-botanik-green uppercase tracking-wider leading-tight">Grade Laboratoire</span>
+          <span className="text-[10px] md:text-xs font-bold text-botanik-green uppercase tracking-wider leading-tight">{t.trust.lab}</span>
         </div>
         <div className="bg-white border border-botanik-green/5 p-4 md:p-5 rounded-2xl flex items-center gap-3 md:gap-4 shadow-sm">
           <div className="w-8 h-8 md:w-10 md:h-10 bg-botanik-green/5 rounded-full flex items-center justify-center shrink-0">
             <Check className="w-4 h-4 md:w-5 md:h-5 text-botanik-green" />
           </div>
-          <span className="text-[10px] md:text-xs font-bold text-botanik-green uppercase tracking-wider leading-tight">Satisfait ou Remboursé</span>
+          <span className="text-[10px] md:text-xs font-bold text-botanik-green uppercase tracking-wider leading-tight">{t.trust.guarantee}</span>
         </div>
       </div>
     </div>
