@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from 'motion/react';
 
 import { translations, Language } from './translations';
 
+import { OptimizedImage } from './components/OptimizedImage';
+
 interface HomeContentProps {
   onNavigate: (view: any) => void;
   lang: Language;
@@ -136,7 +138,14 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
               </p>
             </div>
             <div className="relative aspect-square rounded-[32px] md:rounded-[40px] overflow-hidden border-4 md:border-8 border-white shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
-              <img src={bloomImg} loading="lazy" className="w-full h-full object-cover" alt="BloomLab" />
+              <OptimizedImage 
+                src={bloomImg} 
+                priority={true} 
+                width={450}
+                height={450}
+                className="w-full h-full object-cover" 
+                alt="BloomLab - Extraction de précision" 
+              />
               <div className="absolute inset-0 ring-1 ring-inset ring-botanik-green/10 rounded-[32px] md:rounded-[40px]" />
             </div>
           </div>

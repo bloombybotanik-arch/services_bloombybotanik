@@ -37,6 +37,8 @@ import ActivationPage from './ActivationPage';
 import headerImg from './assets/images/Header.jpeg';
 import logoSidebar from './assets/images/logo_sidebar_1784886108085.png';
 
+import { OptimizedImage } from './components/OptimizedImage';
+
 // --- SEO & DATA UTILS ---
 const POST_TITLE = "L'Élévation de l'Extraction : vers le Totum absolu";
 const MAIN_KEYWORDS = "extraction totum, laboratoire botanique, souveraineté santé";
@@ -46,12 +48,50 @@ const generateSeoAlt = (imageContext: string) => {
   return `${POST_TITLE} - ${imageContext} - ${MAIN_KEYWORDS}`;
 };
 
-// JSON-LD Injection Component
-const SEOMetadata = () => {
+// JSON-LD & Dynamic SEO Metadata Injection Component
+const SEOMetadata = ({ lang, currentView, t }: { lang: Language, currentView: string, t: any }) => {
   useEffect(() => {
+    // 1. Handle dynamic Title & Meta Description
+    let seoKey: 'home' | 'herbarium' | 'shop' | 'blog' = 'home';
+    
+    if (['herbier', 'library', 'library-landing', 'culinaire', 'cosmetiques'].includes(currentView)) {
+      seoKey = 'herbarium';
+    } else if (['boutique', 'product-detail', 'cart', 'checkout'].includes(currentView)) {
+      seoKey = 'shop';
+    }
+
+    const currentSeo = t.seo[seoKey];
+    document.title = currentSeo.title;
+    
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.setAttribute('name', 'description');
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.setAttribute('content', currentSeo.description);
+
+    // 2. JSON-LD Injection
     const jsonLd = {
       "@context": "https://schema.org",
       "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://bloombybotanik.com/#organization",
+          "name": "Bloom by BotaniK",
+          "url": "https://bloombybotanik.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://bloombybotanik.com/logo.png"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://bloombybotanik.com/#website",
+          "url": "https://bloombybotanik.com",
+          "name": "Bloom by BotaniK",
+          "publisher": { "@id": "https://bloombybotanik.com/#organization" }
+        },
         {
           "@type": "Product",
           "name": "BloomLab",
@@ -66,28 +106,21 @@ const SEOMetadata = () => {
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock"
           }
-        },
-        {
-          "@type": "Service",
-          "name": "Le Laboratoire - Extraction Déléguée",
-          "description": "Nous réalisons votre Totum sur-mesure sous contrat de traçabilité signé.",
-          "provider": {
-            "@type": "Organization",
-            "name": "Bloom by BotaniK"
-          }
         }
       ]
     };
 
     const script = document.createElement('script');
     script.type = 'application/ld+json';
+    script.id = 'json-ld-seo';
     script.text = JSON.stringify(jsonLd);
     document.head.appendChild(script);
 
     return () => {
-      document.head.removeChild(script);
+      const oldScript = document.getElementById('json-ld-seo');
+      if (oldScript) document.head.removeChild(oldScript);
     };
-  }, []);
+  }, [lang, currentView, t]);
 
   return null;
 };
@@ -140,7 +173,14 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
         onClick={() => navigateTo('home')}
         translate="no"
       >
-        <img src={logoSidebar} alt="Logo Bloom by BotaniK" loading="lazy" className="w-16 h-16 object-contain group-hover/logo:brightness-0 group-hover/logo:invert-[51%] group-hover/logo:sepia-[95%] group-hover/logo:saturate-[2180%] group-hover/logo:hue-rotate-[1deg] group-hover/logo:brightness-[101%] group-hover/logo:contrast-[101%] transition-all" />
+        <OptimizedImage 
+          src={logoSidebar} 
+          alt="Logo Bloom by BotaniK" 
+          priority={true}
+          width={64}
+          height={64}
+          className="w-16 h-16 object-contain group-hover/logo:brightness-0 group-hover/logo:invert-[51%] group-hover/logo:sepia-[95%] group-hover/logo:saturate-[2180%] group-hover/logo:hue-rotate-[1deg] group-hover/logo:brightness-[101%] group-hover/logo:contrast-[101%] transition-all" 
+        />
         <div className="flex flex-col leading-tight uppercase text-white group-hover/logo:text-[#F97316] transition-colors">
           <span className="text-[11px] font-bold tracking-[0.22em] opacity-80">Bloom by</span>
           <span className="text-xl font-black tracking-widest">botaniK</span>
@@ -335,10 +375,11 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
       {/* Product Reassurance Image - Restored per request */}
       <div className="mt-8 rounded-xl overflow-hidden relative group bg-white/5">
         {/* Note pour Hostinger : Utiliser /assets/images/IMG_9472.jpg */}
-        <img 
+        <OptimizedImage 
           src={bloomLabImg}
           alt={generateSeoAlt("Machine BloomLab")} 
-          loading="lazy"
+          width={300}
+          height={300}
           className="w-full h-auto object-contain p-4 transform group-hover:scale-105 transition-transform duration-700"
         />
       </div>
@@ -609,7 +650,7 @@ export default function App() {
 
   return (
     <div className="flex relative min-h-screen bg-[#F9F9F7]">
-      <SEOMetadata />
+      <SEOMetadata lang={lang} currentView={currentView} t={t} />
       
       <AuthModal 
         isOpen={showAuthModal} 
