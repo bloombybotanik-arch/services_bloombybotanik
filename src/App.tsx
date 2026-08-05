@@ -507,6 +507,30 @@ export default function App() {
     setCurrentView(view);
     window.scrollTo(0, 0);
   };
+
+  // --- Redirection des anciennes URLs (mapping legacy -> vues internes) ---
+  useEffect(() => {
+    const path = window.location.pathname.replace(/\/$/, '');
+    const legacyMap: Record<string, () => void> = {
+      '/en': () => { setLang('en'); navigateTo('home'); },
+      '/de': () => { setLang('de'); navigateTo('home'); },
+      '/en/about': () => navigateTo('manifeste'),
+      '/en/contact': () => navigateTo('manifeste'),
+      '/en/how-it-works-diy-natural-recipes': () => navigateTo('boutique'),
+      '/en/natural-herbal-infusion-body-care-oils-': () => navigateTo('cosmetiques'),
+      '/en/natural-herbal-infusion-face-skincare-recipes': () => navigateTo('cosmetiques'),
+      '/infusion-botanique-maison-comment-ca-marche': () => {
+        navigateTo('home');
+        setTimeout(() => document.getElementById('protocole')?.scrollIntoView({ behavior: 'smooth' }), 300);
+      },
+      '/ingenierie-de-la-vitalite-2026-autonomie-botanique': () => navigateTo('phytotherapie-reset'),
+      '/seve-fondamentale': () => navigateTo('boutique'),
+      '/termes-et-conditions': () => navigateTo('legal', undefined, 'cgu'),
+    };
+    if (path && legacyMap[path]) {
+      legacyMap[path]();
+    }
+  }, []);
   const [user, setUser] = useState<FirebaseUser | any | null>(null);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [isPremium, setIsPremium] = useState(false);
