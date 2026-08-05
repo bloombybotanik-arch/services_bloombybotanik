@@ -6,19 +6,19 @@ export const translations = {
     seo: {
       home: {
         title: "Bloom by Botanik | Extraction Botanique de Précision & Totum",
-        description: "Découvrez l'ingénierie du vivant. Protocoles d'extraction de précision, science du Totum et rituels botaniques pour soutenir votre équilibre biologique."
+                description: "Découvrez l'ingenierie du vivant : l'art de l'extraction, l'infusion botanique et les remèdes ancestraux au service des plantes et de votre équilibre biologique.",
       },
       herbarium: {
         title: "L'Herbier Systémique | Répertoire des Plantes & Totum | Bloom",
-        description: "Explorez notre bibliothèque botanique vivante. Comprendre les actifs des plantes et maîtriser les protocoles d'extraction pour une souveraineté santé."
+                description: "Explorez notre bibliothèque botanique vivante. Comprendre les remèdes issus des plantes et maîtriser les protocoles d'extraction pour une souveraineté santé.",
       },
       shop: {
         title: "Boutique BloomLab | Outils d'Extraction & Précision Botanique",
-        description: "Équipez votre laboratoire personnel. Machine BloomLab en inox 304 pour une extraction respectueuse de l'intelligence moléculaire des plantes."
+                description: "Équipez votre laboratoire personnel. Machine BloomLab en inox 304 pour une infusion botanique et une extraction respectueuse de l'intelligence moléculaire des plantes.",
       },
       blog: {
         title: "Science du Totum | Le Blog Bloom by Botanik",
-        description: "Articles approfondis sur l'extraction de précision, les cycles biologiques et la résilience naturelle à travers le prisme de la science du Totum."
+                description: "Articles approfondis sur l'art de l'extraction de précision, les remèdes ancestraux issus des plantes et la résilience naturelle à travers le prisme de la science du Totum."
       }
     },
     nav: {
@@ -1124,19 +1124,19 @@ export const translations = {
     seo: {
       home: {
         title: "Bloom by Botanik | Precision Botanical Extraction & Totum",
-        description: "Discover life engineering. Precision extraction protocols, Totum science, and botanical rituals to support your biological balance."
+                description: "Discover life engineering: the art of extraction, botanical infusion and ancestral remedies from plants to support your biological balance.",
       },
       herbarium: {
         title: "Systemic Herbarium | Plant Directory & Totum | Bloom",
-        description: "Explore our living botanical library. Understand plant actives and master extraction protocols for health sovereignty."
+                description: "Explore our living botanical library. Understand plant remedies and master extraction protocols for health sovereignty.",
       },
       shop: {
         title: "BloomLab Shop | Extraction Tools & Botanical Precision",
-        description: "Equip your personal lab. Stainless steel 304 BloomLab machine for an extraction that respects the molecular intelligence of plants."
+                description: "Equip your personal lab. Stainless steel 304 BloomLab machine for a botanical infusion and an extraction that respects the molecular intelligence of plants.",
       },
       blog: {
         title: "Totum Science | Bloom by Botanik Blog",
-        description: "In-depth articles on precision extraction, biological cycles, and natural resilience through the lens of Totum science."
+                description: "In-depth articles on the art of extraction, plant remedies and natural resilience through the lens of Totum science."
       }
     },
     nav: {
@@ -2242,19 +2242,19 @@ export const translations = {
     seo: {
       home: {
         title: "Bloom by Botanik | Präzisions-Botanik-Extraktion & Totum",
-        description: "Entdecken Sie Life Engineering. Präzisions-Extraktionsprotokolle, Totum-Wissenschaft und botanische Rituale zur Unterstützung Ihres biologischen Gleichgewichts."
+                description: "Entdecken Sie Life Engineering: die Kunst der Extraktion, botanische Infusion und althergebrachte Heilmittel aus Pflanzen zur Unterstützung Ihres biologischen Gleichgewichts.",
       },
       herbarium: {
         title: "Systemisches Herbarium | Pflanzenverzeichnis & Totum | Bloom",
-        description: "Erkunden Sie unsere lebendige botanische Bibliothek. Pflanzenwirkstoffe verstehen und Extraktionsprotokolle für gesundheitliche Souveränität meistern."
+                description: "Erkunden Sie unsere lebendige botanische Bibliothek. Verstehen Sie Heilmittel aus Pflanzen und meistern Sie Extraktionsprotokolle für gesundheitliche Souveränität.",
       },
       shop: {
         title: "BloomLab Shop | Extraktionswerkzeuge & botanische Präzision",
-        description: "Rüsten Sie Ihr persönliches Labor aus. Edelstahl 304 BloomLab Maschine für eine Extraktion, die die molekulare Intelligenz der Pflanzen respektiert."
+                description: "Rüsten Sie Ihr persönliches Labor aus. Edelstahl 304 BloomLab Maschine für eine botanische Infusion und eine Extraktion, die die molekulare Intelligenz der Pflanzen respektiert.",
       },
       blog: {
         title: "Totum Wissenschaft | Bloom by Botanik Blog",
-        description: "Tiefgehende Artikel über Präzisionsextraktion, biologische Zyklen und natürliche Resilienz durch das Prisma der Totum-Wissenschaft."
+                description: "Tiefgehende Artikel über die Kunst der Extraktion, Heilmittel aus Pflanzen und natürliche Resilienz durch das Prisma der Totum-Wissenschaft."
       }
     },
     nav: {
