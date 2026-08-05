@@ -467,6 +467,37 @@ export default function App() {
     const timer = setTimeout(() => setIsSplashFinished(true), 2500);
     return () => clearTimeout(timer);
   }, []);
+  
+    // --- SPA ROUTING: map URL path <-> currentView ---
+    const VIEW_PATHS: Record<string, string> = {
+      home: '/', machine: '/machine', 'phytotherapie-reset': '/phytotherapie-reset',
+      boutique: '/boutique', culinaire: '/culinaire', cosmetiques: '/cosmetiques',
+      'library-landing': '/library-landing', herbier: '/herbier', manifeste: '/manifeste',
+      activation: '/activation', account: '/compte', legal: '/legal', chat: '/chat',
+      cart: '/panier', checkout: '/checkout', guide: '/guide', pending: '/en-attente',
+      library: '/bibliotheque',
+    };
+    const PATH_VIEWS: Record<string, string> = Object.fromEntries(
+      Object.entries(VIEW_PATHS).map(([view, path]) => [path, view])
+    );
+    useEffect(() => {
+      const redirected = sessionStorage.getItem('spa-redirect-path');
+      if (redirected) {
+        sessionStorage.removeItem('spa-redirect-path');
+        const pathOnly = redirected.split('?')[0].split('#')[0];
+        const matchedView = PATH_VIEWS[pathOnly];
+        if (matchedView) {
+          setCurrentView(matchedView as typeof currentView);
+          return;
+        }
+      }
+      const currentPath = window.location.pathname;
+      const matchedView = PATH_VIEWS[currentPath];
+      if (matchedView) {
+        setCurrentView(matchedView as typeof currentView);
+      }
+    }, []);
+
 
   const addToCart = (product: any) => {
     setCart(prev => {
@@ -506,6 +537,10 @@ export default function App() {
     setCurrentProductId(productId);
     setCurrentView(view);
     window.scrollTo(0, 0);
+    const targetPath = VIEW_PATHS[view] || '/';
+    if (window.location.pathname !== targetPath) {
+      window.history.pushState({}, '', targetPath);
+    }
   };
   const [user, setUser] = useState<FirebaseUser | any | null>(null);
   const [showAuthModal, setShowAuthModal] = useState(false);
