@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Bloom by BotaniK</title>
+  <script>
+    // Redirection SPA pour GitHub Pages
+    // Convertit /chemin en /?/chemin puis redirige vers index.html
+    var path = window.location.pathname + window.location.search + window.location.hash;
+    sessionStorage.redirect = path;
+    window.location.replace('/');
+  </script>
+</head>
+<body>
+  Redirection en cours...
+</body>
+</html>
