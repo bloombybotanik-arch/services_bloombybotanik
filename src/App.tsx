@@ -50,7 +50,7 @@ const ViewLoader = () => (
 
 // --- SEO & DATA UTILS ---
 const POST_TITLE = "L'Élévation de l'Extraction : vers le Totum absolu";
-const MAIN_KEYWORDS = "extraction totum, laboratoire botanique, souveraineté santé";
+const MAIN_KEYWORDS = "extraction totum, laboratoire botanique, souveraineté santé, infusion botanique, art de l'extraction, plantes médicinales, remèdes naturels";
 
 // Generates dynamic ALT text (mimicking the requested PHP script)
 const generateSeoAlt = (imageContext: string) => {
@@ -111,7 +111,7 @@ const SEOMetadata = ({ lang, currentView, t }: { lang: Language, currentView: st
           },
           "offers": {
             "@type": "Offer",
-            "price": "329.00",
+            "price": "239.00",
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock"
           }
@@ -417,7 +417,7 @@ const HybridOffer = ({ onNavigate }: { onNavigate: (view: any) => void }) => (
           </ul>
         </div>
         <div>
-          <div className="text-3xl font-bold mb-6">289 €</div>
+          <div className="text-3xl font-bold mb-6">239 € <span className="text-lg line-through opacity-50 font-normal">289 €</span></div>
           <button onClick={() => onNavigate('boutique')} className="w-full py-4 px-6 bg-botanik-green text-white rounded-lg font-semibold hover:bg-botanik-green/90 transition-colors flex items-center justify-center gap-2 group">
             Acquérir ma BloomLab
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
