@@ -916,6 +916,17 @@ export default function App() {
             <span className="text-[9px] uppercase font-bold tracking-wider">{tab.label}</span>
           </button>
         ))}
+        <div className="flex gap-1 border-l border-botanik-green/10 pl-3 ml-1">
+          {(['fr', 'en', 'de'] as Language[]).map((l) => (
+            <button
+              key={l}
+              onClick={() => setLang(l)}
+              className={`text-[9px] font-bold uppercase tracking-widest px-1.5 py-1 rounded transition-all ${lang === l ? 'bg-botanik-orange text-white' : 'text-botanik-green/40'}`}
+            >
+              {l}
+            </button>
+          ))}
+        </div>
       </nav>
     </div>
   );
