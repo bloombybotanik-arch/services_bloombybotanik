@@ -127,23 +127,47 @@ export default function HerbariumContent({
   }, [searchQuery, activeFilter]);
 
   const handlePlantClick = (plant: UnifiedPlant) => {
-    const originalId = plant.id.split('-').slice(1).join('-');
     if (plant.source === 'therapeutic') {
-      const fullData = plantsDatabase.find(p => p.plant_id === originalId);
+      let fullData;
+      if (plant.id.startsWith('therapeutic-recipe-')) {
+        const recipeId = plant.id.replace('therapeutic-recipe-', '');
+        fullData = plantsDatabase.find(p => (p.additional_recipes || []).some(r => r.id === recipeId));
+      } else if (plant.id.startsWith('extra-recipe-')) {
+        const recipeId = plant.id.replace('extra-recipe-', '');
+        // For extra recipes from recipesData, they might correspond to plants in the database
+        // Like Artichoke.
+        fullData = plantsDatabase.find(p => (p.additional_recipes || []).some(r => r.id === recipeId));
+      } else {
+        const plantId = plant.id.replace('therapeutic-', '');
+        fullData = plantsDatabase.find(p => p.plant_id === plantId);
+      }
+      
       if (fullData) {
         setSelectedPlant(fullData);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     } else if (plant.source === 'culinary') {
-      onNavigate('culinaire', originalId);
+      const parts = plant.id.split('-');
+      const plantId = parts[1];
+      onNavigate('culinaire', plantId);
     } else if (plant.source === 'cosmetic') {
-      onNavigate('cosmetiques', originalId);
+      const plantId = plant.id.replace('cosmetic-', '');
+      onNavigate('cosmetiques', plantId);
     }
   };
 
   const getTranslated = (plant: PlantData, field: string) => {
     return (plant as any).translations?.[lang]?.[field] || (plant as any)[field];
   };
+
+  const counts = useMemo(() => {
+    return {
+      all: unifiedBotanicalDatabase.length,
+      therapeutic: unifiedBotanicalDatabase.filter(p => p.source === 'therapeutic').length,
+      culinary: unifiedBotanicalDatabase.filter(p => p.source === 'culinary').length,
+      cosmetic: unifiedBotanicalDatabase.filter(p => p.source === 'cosmetic').length
+    };
+  }, []);
 
   if (selectedPlant) {
     const family = t.details.families[selectedPlant.famille_bloom] || selectedPlant.famille_bloom;
@@ -554,10 +578,10 @@ export default function HerbariumContent({
       <div className="sticky top-0 z-30 bg-[#F9F9F7]/95 backdrop-blur-md py-3 md:py-4 px-4 md:px-6 mb-8 border-b border-botanik-green/5 overflow-x-auto whitespace-nowrap scrollbar-hide">
         <div className="flex gap-2 items-center">
           {[
-            { id: 'all', label: t.filters.all, icon: Leaf, count: 93 },
-            { id: 'therapeutic', label: t.filters.therapeutic, icon: Activity, count: 50 },
-            { id: 'culinary', label: t.filters.culinary, icon: ChefHat, count: 21 },
-            { id: 'cosmetic', label: t.filters.cosmetic, icon: Sparkles, count: 22 }
+            { id: 'all', label: t.filters.all, icon: Leaf, count: counts.all },
+            { id: 'therapeutic', label: t.filters.therapeutic, icon: Activity, count: counts.therapeutic },
+            { id: 'culinary', label: t.filters.culinary, icon: ChefHat, count: counts.culinary },
+            { id: 'cosmetic', label: t.filters.cosmetic, icon: Sparkles, count: counts.cosmetic }
           ].map((f) => (
             <button
               key={f.id}
@@ -581,8 +605,12 @@ export default function HerbariumContent({
       {/* GRID VIEW */}
       <div className="px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredDirectory.map((plant, index) => {
-            const isLocked = index >= 4 && !isPremium;
+          {filteredDirectory.map((plant) => {
+            // Locking logic: 4 free recipes per category based on global order
+            const categoryItems = unifiedBotanicalDatabase.filter(p => p.source === plant.source);
+            const itemIndexInCategory = categoryItems.findIndex(p => p.id === plant.id);
+            const isLocked = !isPremium && itemIndexInCategory >= 4;
+            
             const originalId = plant.id.split('-').slice(1).join('-');
             const therapeuticData = plant.source === 'therapeutic' ? plantsDatabase.find(p => p.plant_id === originalId) : null;
             

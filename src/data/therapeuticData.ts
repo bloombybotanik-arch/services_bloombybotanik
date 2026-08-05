@@ -5184,7 +5184,283 @@ export const plantsDatabase: PlantData[] = [
     }
   },
   {
-    "plant_id": "artichaut",
+    plant_id: "taraxacum_officinale",
+    nom_commun: "Pissenlit",
+    nom_latin: "Taraxacum officinale",
+    partie_utilisee: "Feuilles et Racines",
+    famille_bloom: "Médiateur (Détoxication & Digestion)",
+    terrains_cibles: ["T2_Foie", "T6_Émonctoires", "T1_Intestin"],
+    actifs_cles: [
+      { nom: "Principes amers (Lactones)", polarite: "Hydrosoluble" },
+      { nom: "Flavonoïdes", polarite: "Hydrosoluble" },
+      { nom: "Potassium", polarite: "Hydrosoluble" }
+    ],
+    preuve_scientifique: "Stimulation de la diurèse (augmentation du volume d'urine) sans perte de potassium. Effet cholérétique et cholagogue facilitant la digestion des graisses.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "L'infusion classique à l'eau bouillante peut être trop agressive pour les actifs sensibles. L'extraction contrôlée à 60°C préserve le ratio minéral/amer.",
+      phase_A: { temp: "60°C", temps: "1h30", solvant: "Eau purifiée", cible: "Minéraux et principes amers" },
+      phase_B: { temp: "45°C", temps: "1h00", solvant: "Eau / Glycérine", cible: "Stabilisation des flavonoïdes" },
+      resultat: "Un extrait dépuratif doux et reminéralisant."
+    },
+    recette_pas_a_pas: {
+      batch_standard: "750ml de solvant + 50g de plante",
+      ingredients: {
+        phase_A: ["35g de feuilles/racines de Pissenlit", "500ml d'Eau filtrée"],
+        phase_B: ["15g de Pissenlit", "250ml de mélange Eau/Glycérine"]
+      },
+      preparation: ["Mélanger feuilles et racines concassées."],
+      phase_A_instructions: ["Extraire à 60°C pendant 90 min."],
+      transition: ["Filtrer à l'étamine."],
+      phase_B_instructions: ["Ajouter le solvant B et extraire à 45°C pendant 60 min."],
+      filtration_et_finition: ["Mélanger les deux phases et mettre en flacon."]
+    },
+    convergence_ancestrale: "Utilisé depuis l'Antiquité pour 'nettoyer les filtres' du corps au printemps.",
+    synergies_recommandees: ["chardon_marie", "artichaut", "romarin"],
+    precautions: "Prudence en cas de calculs biliaires. Effet diurétique marqué."
+  },
+  {
+    plant_id: "ribes_nigrum",
+    nom_commun: "Cassis",
+    nom_latin: "Ribes nigrum",
+    partie_utilisee: "Feuilles et Baies",
+    famille_bloom: "Médiateur (Anti-inflammatoire & Vitalité)",
+    terrains_cibles: ["T8_Inflammation", "T4_HPA", "T9_Peau_Phaneres"],
+    actifs_cles: [
+      { nom: "Anthocyanes", polarite: "Hydrosoluble" },
+      { nom: "Flavonoïdes (Quercétine)", polarite: "Hydrosoluble" },
+      { nom: "Vitamine C", polarite: "Hydrosoluble" }
+    ],
+    preuve_scientifique: "Effet 'cortisone-like' naturel en stimulant doucement les glandes surrénales. Puissant antioxydant et anti-inflammatoire systémique.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "Les anthocyanes sont détruites par la chaleur excessive. L'extraction douce à 55°C est indispensable pour préserver la couleur et l'activité.",
+      phase_A: { temp: "55°C", temps: "2h00", solvant: "Eau distillée", cible: "Anthocyanes et Vitamine C" },
+      phase_B: { temp: "40°C", temps: "1h00", solvant: "Glycérine", cible: "Stabilisation" },
+      resultat: "Un élixir protecteur et revitalisant."
+    },
+    recette_pas_a_pas: {
+      batch_standard: "750ml + 60g de feuilles/baies",
+      ingredients: {
+        phase_A: ["40g de Cassis", "500ml d'Eau"],
+        phase_B: ["20g de Cassis", "250ml de Glycérine"]
+      },
+      preparation: ["Utiliser des baies séchées et des feuilles concassées."],
+      phase_A_instructions: ["Extraire à 55°C pendant 120 min."],
+      transition: ["Refroidir rapidement."],
+      phase_B_instructions: ["Ajouter la glycérine et maintenir à 40°C pendant 60 min."],
+      filtration_et_finition: ["Presser fermement le marc pour extraire tout le jus coloré."]
+    },
+    convergence_ancestrale: "Surnommé 'l'élixir de vie' au XVIIIe siècle pour ses propriétés polyvalentes.",
+    synergies_recommandees: ["urtica_dioica", "curcuma_longa", "rosa_canina"],
+    precautions: "Prudence en cas d'insuffisance cardiaque ou rénale sévère."
+  },
+  {
+    plant_id: "melissa_officinalis",
+    nom_commun: "Mélisse",
+    nom_latin: "Melissa officinalis",
+    partie_utilisee: "Feuilles",
+    famille_bloom: "Médiateur (Apaisement & Digestion)",
+    terrains_cibles: ["T7_Psycho_émotionnel", "T1_Intestin", "T4_HPA"],
+    actifs_cles: [
+      { nom: "Acide Rosmarinique", polarite: "Hydrosoluble" },
+      { nom: "Huiles essentielles (Citral)", polarite: "Volatile" }
+    ],
+    preuve_scientifique: "Action antispasmodique sur le tube digestif et régulatrice du système nerveux. Aide à l'endormissement et réduit l'anxiété légère.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "Les huiles essentielles s'échappent dès 40°C. L'extraction sous vide ou à basse température est cruciale.",
+      phase_A: { temp: "45°C", temps: "2h00", solvant: "Eau / Glycérine", cible: "Acide rosmarinique" },
+      phase_B: { temp: "35°C", temps: "1h00", solvant: "Eau", cible: "Huiles essentielles" },
+      resultat: "Une eau de mélisse apaisante et parfumée."
+    },
+    recette_pas_a_pas: {
+      batch_standard: "750ml + 40g de feuilles",
+      ingredients: {
+        phase_A: ["30g de Mélisse", "500ml de solvant"],
+        phase_B: ["10g de Mélisse", "250ml d'Eau"]
+      },
+      preparation: ["Utiliser des feuilles bien sèches pour éviter la fermentation."],
+      phase_A_instructions: ["Extraire à 45°C pendant 2h."],
+      transition: ["Garder le couvercle fermé pour piéger les arômes."],
+      phase_B_instructions: ["Finir à 35°C pendant 1h."],
+      filtration_et_finition: ["Mise en flacon immédiate."]
+    },
+    convergence_ancestrale: "Ingrédient principal de 'l'Eau des Carmes', célèbre remède de réconfort depuis le XVIIe siècle.",
+    synergies_recommandees: ["passiflora_incarnata", "valeriana_officinalis", "mentha_piperita"],
+    precautions: "Généralement sans danger. Peut interférer avec les traitements thyroïdiens à très haute dose."
+  },
+  {
+    plant_id: "passiflora_incarnata",
+    nom_commun: "Passiflore",
+    nom_latin: "Passiflora incarnata",
+    partie_utilisee: "Parties aériennes",
+    famille_bloom: "Médiateur (Sédation Douce)",
+    terrains_cibles: ["T7_Psycho_émotionnel", "T4_HPA"],
+    actifs_cles: [
+      { nom: "Flavonoïdes (Vitexine)", polarite: "Hydrosoluble" },
+      { nom: "Alcaloïdes (Harmala)", polarite: "Liposoluble" }
+    ],
+    preuve_scientifique: "Augmentation des niveaux de GABA dans le cerveau, favorisant la détente musculaire et nerveuse sans accoutumance.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "Le Totum nécessite à la fois une phase aqueuse et une phase alcoolique légère pour capturer les alcaloïdes.",
+      phase_A: { temp: "60°C", temps: "2h00", solvant: "Eau", cible: "Flavonoïdes" },
+      phase_B: { temp: "45°C", temps: "2h00", solvant: "Alcool bio 45°", cible: "Alcaloïdes" },
+      resultat: "Un extrait complet pour un sommeil réparateur."
+    },
+    recette_pas_a_pas: {
+      batch_standard: "750ml + 50g de plante",
+      ingredients: {
+        phase_A: ["35g de Passiflore", "500ml d'Eau"],
+        phase_B: ["15g de Passiflore", "250ml d'Alcool 45°"]
+      },
+      preparation: ["Tasser la plante dans la cuve."],
+      phase_A_instructions: ["Extraire à 60°C."],
+      transition: ["Laisser tiédir."],
+      phase_B_instructions: ["Ajouter l'alcool et extraire à 45°C."],
+      filtration_et_finition: ["Filtre fin requis."]
+    },
+    convergence_ancestrale: "Découverte par les missionnaires en Amérique, associée à la Passion pour sa structure florale unique.",
+    synergies_recommandees: ["eschscholzia_californica", "valeriana_officinalis", "humulus_lupulus"],
+    precautions: "Éviter avec d'autres sédatifs puissants ou antidépresseurs IMAO."
+  },
+  {
+    plant_id: "valeriana_officinalis",
+    nom_commun: "Valériane",
+    nom_latin: "Valeriana officinalis",
+    partie_utilisee: "Racines et Rhizomes",
+    famille_bloom: "Gâchette (Sommeil Profond)",
+    terrains_cibles: ["T7_Psycho_émotionnel", "T6_Nerveux"],
+    actifs_cles: [
+      { nom: "Acide valérénique", polarite: "Liposoluble" },
+      { nom: "Valépotriates", polarite: "Liposoluble" }
+    ],
+    preuve_scientifique: "Réduit le temps d'endormissement et améliore la qualité du sommeil profond. Action sur les récepteurs GABA.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "L'odeur est forte et les actifs sont principalement lipophiles. L'extraction doit être hermétique.",
+      phase_A: { temp: "50°C", temps: "3h00", solvant: "Eau / Alcool 70°", cible: "Acide valérénique" },
+      phase_B: { temp: "40°C", temps: "1h00", solvant: "Alcool", cible: "Stabilisation" },
+      resultat: "Une teinture mère puissante et normalisée."
+    },
+    recette_pas_a_pas: {
+      batch_standard: "750ml + 75g de racines",
+      ingredients: {
+        phase_A: ["50g de Valériane", "500ml de mélange"],
+        phase_B: ["25g de Valériane", "250ml d'Alcool"]
+      },
+      preparation: ["Concasser les racines dures."],
+      phase_A_instructions: ["Extraire à 50°C longuement."],
+      transition: ["Maintenir l'étanchéité."],
+      phase_B_instructions: ["Ajouter le reste d'alcool."],
+      filtration_et_finition: ["Filtrer et flaconner rapidement."]
+    },
+    convergence_ancestrale: "Le 'Phu' des Grecs anciens, utilisé pour calmer les nerfs et les spasmes.",
+    synergies_recommandees: ["passiflora_incarnata", "melissa_officinalis", "eschscholzia_californica"],
+    precautions: "Odeur caractéristique puissante. Éviter avant de conduire."
+  },
+  {
+    plant_id: "eschscholzia_californica",
+    nom_commun: "Eschscholtzia",
+    nom_latin: "Eschscholzia californica",
+    partie_utilisee: "Parties aériennes fleuries",
+    famille_bloom: "Médiateur (Sommeil & Relaxation)",
+    terrains_cibles: ["T7_Psycho_émotionnel", "T4_HPA"],
+    actifs_cles: [
+      { nom: "Alcaloïdes (Pavine)", polarite: "Liposoluble" },
+      { nom: "Flavonoïdes", polarite: "Hydrosoluble" }
+    ],
+    preuve_scientifique: "Action anxiolytique et sédative légère sans accoutumance. Aide à maintenir le sommeil tout au long de la nuit.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "Les alcaloïdes sont sensibles et nécessitent une extraction à température modérée pour ne pas être dénaturés.",
+      phase_A: { temp: "55°C", temps: "2h00", solvant: "Eau / Glycérine", cible: "Flavonoïdes" },
+      phase_B: { temp: "45°C", temps: "2h00", solvant: "Alcool bio 45°", cible: "Alcaloïdes" },
+      resultat: "Un extrait relaxant idéal pour la fin de journée."
+    },
+    recette_pas_a_pas: {
+      batch_standard: "750ml + 50g de plante",
+      ingredients: {
+        phase_A: ["35g d'Eschscholtzia", "500ml d'Eau/Gly"],
+        phase_B: ["15g d'Eschscholtzia", "250ml d'Alcool 45°"]
+      },
+      preparation: ["Plante séchée concassée."],
+      phase_A_instructions: ["Extraire à 55°C."],
+      transition: ["Laisser reposer."],
+      phase_B_instructions: ["Ajouter l'alcool et finir à 45°C."],
+      filtration_et_finition: ["Filtre étamine."]
+    },
+    convergence_ancestrale: "Le 'Pavot de Californie', utilisé par les Amérindiens pour apaiser les enfants et les douleurs.",
+    synergies_recommandees: ["valeriana_officinalis", "passiflora_incarnata", "lavandula_angustifolia"],
+    precautions: "Généralement très sûr. Éviter en cas de glaucome."
+  },
+  {
+    plant_id: "rosmarinus_officinalis",
+    nom_commun: "Romarin",
+    nom_latin: "Rosmarinus officinalis",
+    partie_utilisee: "Feuilles et Sommités fleuries",
+    famille_bloom: "Gâchette (Dynamisation & Foie)",
+    terrains_cibles: ["T2_Foie", "T5_Mitochondrie", "T7_Psycho_émotionnel"],
+    actifs_cles: [
+      { nom: "Acide Rosmarinique", polarite: "Hydrosoluble" },
+      { nom: "Diterpènes (Carnosol)", polarite: "Liposoluble" },
+      { nom: "Huiles essentielles (Cinole)", polarite: "Volatile" }
+    ],
+    preuve_scientifique: "Puissant antioxydant protecteur du foie et stimulant de la concentration et de la mémoire (neuroprotection).",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "L'infusion bouillante perd les huiles volatiles. L'extraction à 65°C capture les diterpènes protecteurs.",
+      phase_A: { temp: "65°C", temps: "1h30", solvant: "Eau distillée", cible: "Acide rosmarinique" },
+      phase_B: { temp: "45°C", temps: "1h00", solvant: "Eau / Alcool", cible: "Huiles essentielles" },
+      resultat: "Un tonique hépatique et cérébral majeur."
+    },
+    recette_pas_a_pas: {
+      batch_standard: "750ml + 40g de plante",
+      ingredients: {
+        phase_A: ["30g de Romarin", "500ml d'Eau"],
+        phase_B: ["10g de Romarin", "250ml d'Eau/Alcool"]
+      },
+      preparation: ["Feuilles sèches entières."],
+      phase_A_instructions: ["Extraire à 65°C."],
+      transition: ["Garder fermé."],
+      phase_B_instructions: ["Finir à 45°C."],
+      filtration_et_finition: ["Mise en flacon ambré."]
+    },
+    convergence_ancestrale: "L'herbe du souvenir et de la fidélité, utilisée pour 'éclaircir l'esprit' et fortifier le corps.",
+    synergies_recommandees: ["artichaut", "chardon_marie", "ginkgo_biloba"],
+    precautions: "Éviter à haute dose en cas d'hypertension sévère le soir (stimulant)."
+  },
+  {
+    plant_id: "lavandula_angustifolia",
+    nom_commun: "Lavande",
+    nom_latin: "Lavandula angustifolia",
+    partie_utilisee: "Fleurs séchées",
+    famille_bloom: "Médiateur (Apaisement & Harmonie)",
+    terrains_cibles: ["T7_Psycho_émotionnel", "T9_Peau_Phaneres"],
+    actifs_cles: [
+      { nom: "Linalol", polarite: "Volatile" },
+      { nom: "Acétate de linalyle", polarite: "Volatile" },
+      { nom: "Tanins", polarite: "Hydrosoluble" }
+    ],
+    preuve_scientifique: "Action anxiolytique démontrée par inhalation et ingestion. Régule l'humeur et apaise les tensions nerveuses.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "La lavande est très fragile. La chaleur doit être minimale pour ne pas transformer le parfum en odeur de 'foin'.",
+      phase_A: { temp: "45°C", temps: "1h00", solvant: "Eau / Glycérine", cible: "Tanins et arômes" },
+      phase_B: { temp: "35°C", temps: "1h00", solvant: "Eau", cible: "Stabilisation" },
+      resultat: "Une eau florale concentrée et apaisante."
+    },
+    recette_pas_a_pas: {
+      batch_standard: "750ml + 30g de fleurs",
+      ingredients: {
+        phase_A: ["20g de Lavande", "500ml de solvant"],
+        phase_B: ["10g de Lavande", "250ml d'Eau"]
+      },
+      preparation: ["Utiliser des fleurs de lavande vraie (angustifolia)."],
+      phase_A_instructions: ["Extraire à 45°C doucement."],
+      transition: ["Laisser tiédir."],
+      phase_B_instructions: ["Finir à 35°C."],
+      filtration_et_finition: ["Filtrer délicatement."]
+    },
+    convergence_ancestrale: "Utilisée dans les bains romains pour ses vertus purifiantes et apaisantes.",
+    synergies_recommandees: ["melissa_officinalis", "passiflora_incarnata", "calendula_officinalis"],
+    precautions: "Généralement très sûre. Prudence en cas d'hypotension."
+  },
+  {
+    plant_id: "artichaut",
     "nom_commun": "Artichaut",
     "nom_latin": "Cynara scolymus",
     "partie_utilisee": "Feuilles séchées",
