@@ -22,8 +22,8 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
     'bloomlab': {
       name: "BloomLab",
       subtitle: isFR ? "SOUVERAINETÉ SANTÉ 2026" : isDE ? "GESUNDHEITSSOUVERÄNITÄT 2026" : "HEALTH SOVEREIGNTY 2026",
-      price: 289,
-      originalPrice: 329,
+      price: 239,
+      originalPrice: 289,
       images: [bloomLabImg, img2, img3, img4, img5, img6],
       description: isFR 
         ? "La première machine 6-en-1 grand public capable de réaliser à domicile des extractions botaniques complexes — huiles infusées, sérums, teintures, macérats — avec un contrôle de paramètres (temps, température, séquençage) habituellement réservé aux laboratoires professionnels."
