@@ -481,18 +481,26 @@ export default function App() {
       Object.entries(VIEW_PATHS).map(([view, path]) => [path, view])
     );
     useEffect(() => {
-      const redirected = sessionStorage.getItem('spa-redirect-path');
-      if (redirected) {
-        sessionStorage.removeItem('spa-redirect-path');
-        const pathOnly = redirected.split('?')[0].split('#')[0];
-        const matchedView = PATH_VIEWS[pathOnly];
-        if (matchedView) {
-          setCurrentView(matchedView as typeof currentView);
-          return;
-        }
-      }
-      const currentPath = window.location.pathname;
-      const matchedView = PATH_VIEWS[currentPath];
+      // --- Detect legacy language prefix (/en, /de) and strip it ---
+      const rawPath = (sessionStorage.getItem('spa-redirect-path') || window.location.pathname).split('?')[0].split('#')[0];
+      const langMatch = rawPath.match(/^\/(en|de)(\/.*)?$/);
+      const detectedLang = (langMatch ? langMatch[1] : 'fr') as Language;
+      const restPath = langMatch ? (langMatch[2] || '/') : rawPath;
+      setLang(detectedLang);
+      sessionStorage.removeItem('spa-redirect-path');
+
+      // --- Legacy route aliases (pre-redesign URLs) mapped to current views ---
+      const LEGACY_ALIASES: Record<string, string> = {
+        '/about': '/manifeste',
+        '/contact': '/manifeste',
+        '/how-it-works-diy-natural-recipes': '/boutique',
+        '/natural-herbal-infusion-body-care-oils-': '/cosmetiques',
+        '/natural-herbal-infusion-face-skincare-recipes': '/cosmetiques',
+        '/infusion-botanique-maison-comment-ca-marche': '/',
+      };
+      const normalizedPath = LEGACY_ALIASES[restPath] || restPath;
+
+      const matchedView = PATH_VIEWS[normalizedPath];
       if (matchedView) {
         setCurrentView(matchedView as typeof currentView);
       }
