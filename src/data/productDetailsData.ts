@@ -429,6 +429,68 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
         { label: isFR ? "Cible" : isDE ? "Ziel" : "Target", value: isFR ? "Peau, Cheveux, Ongles" : isDE ? "Haut, Haare, Nägel" : "Skin, Hair, Nails", icon: ShieldCheck }
       ]
     },
+  'duo-argiles': {
+    name: "Duo ARGILES Précision",
+    subtitle: isFR ? "ADSORBANT NATUREL" : isDE ? "NATÜRLICHES ADSORBENS" : "NATURAL ADSORBENT",
+    price: 44.90,
+    originalPrice: 49.00,
+    images: [duoArgilesImg],
+    description: isFR
+      ? "Haute précision (6µm). Une cure détoxifiante puissante pour libérer le corps des toxines."
+      : isDE
+      ? "Hohe Präzision (6µm). Eine kraftvolle Entgiftungskur, um den Körper von Toxinen zu befreien."
+      : "High precision (6µm). A powerful detoxifying cure to free the body from toxins.",
+    fullDescription: isFR ? `
+<div class="prose prose-botanik max-w-none">
+<p class="text-lg mb-8">Le Duo ARGILES Précision associe deux argiles complémentaires — Montmorillonite et Kaolin — sélectionnées et tamisées à une granulométrie de haute précision (6µm) de grade médical, pour une action adsorbante puissante et douce à la fois.</p>
+<h2 class="text-3xl font-bold mb-6 mt-12">Un adsorbant naturel de précision</h2>
+<p class="mb-6">Les argiles agissent par un mécanisme purement physique d'adsorption : leur structure en feuillets microscopiques capte et retient les toxines, métaux lourds et impuretés, sans les agresser ni les transformer chimiquement.</p>
+<ul class="space-y-4 mb-8">
+<li><strong>Montmorillonite :</strong> argile à fort pouvoir adsorbant, reconnue pour sa capacité de détoxification profonde.</li>
+<li><strong>Kaolin :</strong> argile douce, apaisante, idéale pour les muqueuses et les terrains sensibles.</li>
+</ul>
+<div class="grid md:grid-cols-3 gap-6 mb-12">
+<div class="bg-[#1B3022]/5 p-6 rounded-2xl">
+<h4 class="font-bold text-[#F97316] mb-2">Grade médical</h4>
+<p class="text-sm">Pureté et sécurité contrôlées.</p>
+</div>
+<div class="bg-[#1B3022]/5 p-6 rounded-2xl">
+<h4 class="font-bold text-[#F97316] mb-2">Granulométrie 6µm</h4>
+<p class="text-sm">Précision de tamisage pour une action optimale.</p>
+</div>
+<div class="bg-[#1B3022]/5 p-6 rounded-2xl">
+<h4 class="font-bold text-[#F97316] mb-2">Adsorbant naturel</h4>
+<p class="text-sm">Action purement physique, sans transformation chimique.</p>
+</div>
+</div>
+</div>
+` : isDE ? `
+<div class="prose prose-botanik max-w-none">
+<p class="text-lg mb-8">Das Duo ARGILES Präzision kombiniert zwei sich ergänzende Tonerden — Montmorillonit und Kaolin — ausgewählt und auf eine hochpräzise Körnung (6µm) in medizinischer Qualität gesiebt, für eine kraftvolle und zugleich sanfte adsorbierende Wirkung.</p>
+<h2 class="text-3xl font-bold mb-6 mt-12">Ein natürliches Präzisionsadsorbens</h2>
+<p class="mb-6">Tonerden wirken durch einen rein physikalischen Adsorptionsmechanismus: Ihre mikroskopische Schichtstruktur bindet und hält Toxine, Schwermetalle und Verunreinigungen zurück, ohne sie chemisch anzugreifen oder zu verändern.</p>
+<ul class="space-y-4 mb-8">
+<li><strong>Montmorillonit:</strong> Tonerde mit starker Adsorptionskraft, bekannt für ihre tiefgehende Entgiftungswirkung.</li>
+<li><strong>Kaolin:</strong> sanfte, beruhigende Tonerde, ideal für Schleimhäute und empfindliche Terrains.</li>
+</ul>
+</div>
+` : `
+<div class="prose prose-botanik max-w-none">
+<p class="text-lg mb-8">The Duo ARGILES Précision combines two complementary clays — Montmorillonite and Kaolin — selected and sieved to a high-precision (6µm) medical-grade particle size, for a powerful yet gentle adsorbent action.</p>
+<h2 class="text-3xl font-bold mb-6 mt-12">A natural precision adsorbent</h2>
+<p class="mb-6">Clays act through a purely physical adsorption mechanism: their microscopic layered structure captures and retains toxins, heavy metals and impurities, without chemically altering them.</p>
+<ul class="space-y-4 mb-8">
+<li><strong>Montmorillonite:</strong> clay with strong adsorbent power, recognized for its deep detoxifying capacity.</li>
+<li><strong>Kaolin:</strong> gentle, soothing clay, ideal for mucous membranes and sensitive terrains.</li>
+</ul>
+</div>
+`,
+    specs: [
+      { label: isFR ? "Précision" : isDE ? "Präzision" : "Precision", value: "6µm", icon: FlaskConical },
+      { label: isFR ? "Grade" : isDE ? "Qualität" : "Grade", value: isFR ? "Médical" : isDE ? "Medizinisch" : "Medical", icon: ShieldCheck },
+      { label: isFR ? "Composition" : isDE ? "Zusammensetzung" : "Composition", value: "Montmorillonite & Kaolin", icon: Leaf }
+    ]
+  },
     // ... add more products as needed, I'll keep it concise for now and expand if I have space
   };
 };
