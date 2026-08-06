@@ -6,6 +6,7 @@
 import { useEffect, useState, lazy, Suspense } from 'react';
 import { Lock, ShoppingBag, BookOpen, FlaskConical, Menu, X, ChevronRight, Leaf, ShieldCheck, SearchCheck, Award, Star, User, Check, ArrowRight, ChefHat, Instagram, Youtube, Facebook, Pin as Pinterest, Music2 as TikTok, MessageSquare, Sparkles, Wind, Waves, Moon, Utensils, Activity, Globe } from 'lucide-react';
 import { translations, Language } from './translations';
+import { getProducts } from './StoreContent';
 import Footer from './components/Footer';
 import { wrapTitle } from './lib/textUtils';
 import { AuthModal } from './components/AuthModal';
@@ -58,7 +59,7 @@ const generateSeoAlt = (imageContext: string) => {
 };
 
 // JSON-LD & Dynamic SEO Metadata Injection Component
-const SEOMetadata = ({ lang, currentView, t }: { lang: Language, currentView: string, t: any }) => {
+const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, currentView: string, t: any, productId?: string }) => {
   useEffect(() => {
     // 1. Handle dynamic Title & Meta Description
     let seoKey: 'home' | 'herbarium' | 'shop' | 'blog' = 'home';
@@ -70,7 +71,19 @@ const SEOMetadata = ({ lang, currentView, t }: { lang: Language, currentView: st
     }
 
     const currentSeo = t.seo[seoKey];
-    document.title = currentSeo.title;
+
+      // Override with product-specific SEO when viewing a product detail page
+      let finalTitle = currentSeo.title;
+      let finalDescription = currentSeo.description;
+      if (currentView === 'product-detail' && productId) {
+        const products = getProducts(lang);
+        const product = products.find((p: any) => p.id === productId);
+        if (product) {
+          finalTitle = `${product.name} | ${product.subtitle} | Bloom by BotaniK`;
+          finalDescription = product.description;
+        }
+      }
+      document.title = finalTitle;
     
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) {
@@ -78,8 +91,8 @@ const SEOMetadata = ({ lang, currentView, t }: { lang: Language, currentView: st
       metaDesc.setAttribute('name', 'description');
       document.head.appendChild(metaDesc);
     }
-    metaDesc.setAttribute('content', currentSeo.description);
-
+      metaDesc.setAttribute('content', finalDescription);
+    
     // 2. JSON-LD Injection
     const jsonLd = {
       "@context": "https://schema.org",
@@ -115,7 +128,26 @@ const SEOMetadata = ({ lang, currentView, t }: { lang: Language, currentView: st
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock"
           }
-        }
+        },
+            ...getProducts(lang).filter((p: any) => p.id !== 'bloomlab').map((p: any) => ({
+              "@type": "Product",
+              "name": p.name,
+              "description": p.description,
+              "image": typeof p.image === 'string' ? p.image : undefined,
+              "brand": { "@type": "Brand", "name": "Bloom by BotaniK" },
+              "aggregateRating": p.reviews ? {
+                "@type": "AggregateRating",
+                "ratingValue": p.rating,
+                "reviewCount": p.reviews
+              } : undefined,
+              "offers": {
+                "@type": "Offer",
+                "price": p.price.toFixed(2),
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock",
+                "url": `https://bloombybotanik.com/boutique/${p.id}`
+              }
+            }))
       ]
     };
 
@@ -129,7 +161,7 @@ const SEOMetadata = ({ lang, currentView, t }: { lang: Language, currentView: st
       const oldScript = document.getElementById('json-ld-seo');
       if (oldScript) document.head.removeChild(oldScript);
     };
-  }, [lang, currentView, t]);
+    }, [lang, currentView, t, productId]);
 
   return null;
 };
@@ -500,6 +532,14 @@ export default function App() {
       };
       const normalizedPath = LEGACY_ALIASES[restPath] || restPath;
 
+      // --- Detect product detail URL pattern /boutique/:id ---
+      const productMatch = normalizedPath.match(/^\/boutique\/([a-z0-9-]+)$/);
+      if (productMatch) {
+        setCurrentProductId(productMatch[1]);
+        setCurrentView('product-detail');
+        return;
+      }
+
       const matchedView = PATH_VIEWS[normalizedPath];
       if (matchedView) {
         setCurrentView(matchedView as typeof currentView);
@@ -545,7 +585,7 @@ export default function App() {
     setCurrentProductId(productId);
     setCurrentView(view);
     window.scrollTo(0, 0);
-    const targetPath = VIEW_PATHS[view] || '/';
+    const targetPath = view === 'product-detail' && productId ? `/boutique/${productId}` : (VIEW_PATHS[view] || '/');
     if (window.location.pathname !== targetPath) {
       window.history.pushState({}, '', targetPath);
     }
@@ -850,7 +890,7 @@ export default function App() {
 
   return (
     <div className="flex relative min-h-screen bg-[#F9F9F7]">
-      <SEOMetadata lang={lang} currentView={currentView} t={t} />
+        <SEOMetadata lang={lang} currentView={currentView} t={t} productId={currentProductId} />
       
       <AuthModal 
         isOpen={showAuthModal} 
