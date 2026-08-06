@@ -38,6 +38,7 @@ const AccountContent = lazy(() => import('./AccountContent'));
 const ManifesteContent = lazy(() => import('./ManifesteContent'));
 const MachineLanding = lazy(() => import('./MachineLanding'));
 const PhytotherapyResetPage = lazy(() => import('./PhytotherapyResetPage'));
+const PillarExtraction = lazy(() => import('./PillarExtraction'));
 const PendingContent = lazy(() => import('./PendingContent'));
 
 // Loading Placeholder for Lazy components
@@ -45,6 +46,20 @@ const ViewLoader = () => (
   <div className="flex-1 flex items-center justify-center bg-[#F9F9F7]">
     <div className="w-12 h-12 border-4 border-botanik-green/20 border-t-botanik-green rounded-full animate-spin" />
   </div>
+);
+
+// --- SPA ROUTING CONFIG ---
+const VIEW_PATHS: Record<string, string> = {
+  home: '/', machine: '/machine', 'phytotherapie-reset': '/phytotherapie-reset',
+  boutique: '/boutique', culinaire: '/culinaire', cosmetiques: '/cosmetiques',
+  'library-landing': '/library-landing', manifeste: '/manifeste',
+  activation: '/activation', account: '/compte', legal: '/legal', chat: '/chat',
+  cart: '/panier', checkout: '/checkout', guide: '/guide', pending: '/en-attente',
+  library: '/bibliotheque', 'pillar-extraction': '/extraction-botanique-guide-complet'
+};
+
+const PATH_VIEWS: Record<string, string> = Object.fromEntries(
+  Object.entries(VIEW_PATHS).map(([view, path]) => [path, view])
 );
 
 // --- SEO & DATA UTILS ---
@@ -60,12 +75,14 @@ const generateSeoAlt = (imageContext: string) => {
 const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, currentView: string, t: any, productId?: string }) => {
   useEffect(() => {
     // 1. Handle dynamic Title & Meta Description
-    let seoKey: 'home' | 'herbarium' | 'shop' | 'blog' = 'home';
+    let seoKey: 'home' | 'herbarium' | 'shop' | 'blog' | 'pillar' | 'extraction' | 'infusion' = 'home';
     
     if (['herbier', 'library', 'library-landing', 'culinaire', 'cosmetiques'].includes(currentView)) {
       seoKey = 'herbarium';
     } else if (['boutique', 'product-detail', 'cart', 'checkout'].includes(currentView)) {
       seoKey = 'shop';
+    } else if (currentView === 'pillar-extraction') {
+      seoKey = 'pillar';
     }
 
     const currentSeo = t.seo[seoKey];
@@ -90,6 +107,13 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
       document.head.appendChild(metaDesc);
     }
       metaDesc.setAttribute('content', finalDescription);
+    
+    // Update canonical link
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      const path = currentView === 'product-detail' && productId ? `/boutique/${productId}` : (VIEW_PATHS[currentView as string] || '/');
+      canonical.setAttribute('href', `https://bloombybotanik.com${path}`);
+    }
     
     // 2. JSON-LD Injection
     const jsonLd = {
@@ -484,8 +508,8 @@ const HybridOffer = ({ onNavigate }: { onNavigate: (view: any) => void }) => (
 export default function App() {
   const [lang, setLang] = useState<Language>('fr');
   const t = translations[lang];
-  const [currentView, setCurrentView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste'>('home');
-  const [previousView, setPreviousView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction'>('home');
+  const [previousView, setPreviousView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction'>('home');
 
   const [currentProductId, setCurrentProductId] = useState<string | undefined>();
   const [legalType, setLegalType] = useState<'cgv' | 'cgu' | 'privacy' | 'mentions'>('mentions');
@@ -498,18 +522,7 @@ export default function App() {
     return () => clearTimeout(timer);
   }, []);
   
-    // --- SPA ROUTING: map URL path <-> currentView ---
-    const VIEW_PATHS: Record<string, string> = {
-      home: '/', machine: '/machine', 'phytotherapie-reset': '/phytotherapie-reset',
-      boutique: '/boutique', culinaire: '/culinaire', cosmetiques: '/cosmetiques',
-      'library-landing': '/library-landing', manifeste: '/manifeste',
-      activation: '/activation', account: '/compte', legal: '/legal', chat: '/chat',
-      cart: '/panier', checkout: '/checkout', guide: '/guide', pending: '/en-attente',
-      library: '/bibliotheque',
-    };
-    const PATH_VIEWS: Record<string, string> = Object.fromEntries(
-      Object.entries(VIEW_PATHS).map(([view, path]) => [path, view])
-    );
+    // --- SPA ROUTING: sync URL with state ---
     useEffect(() => {
       // --- Detect legacy language prefix (/en, /de) and strip it ---
       const rawPath = (sessionStorage.getItem('spa-redirect-path') || window.location.pathname).split('?')[0].split('#')[0];
@@ -527,6 +540,10 @@ export default function App() {
         '/natural-herbal-infusion-body-care-oils-': '/cosmetiques',
         '/natural-herbal-infusion-face-skincare-recipes': '/cosmetiques',
         '/infusion-botanique-maison-comment-ca-marche': '/',
+        '/extraction-plantes-naturelles-bienfaits': '/extraction-botanique-guide-complet',
+        '/chroniques': '/',
+        '/blog': '/',
+        '/blog/': '/',
       };
       const normalizedPath = LEGACY_ALIASES[restPath] || restPath;
 
@@ -820,6 +837,7 @@ export default function App() {
         />
       );
       case 'manifeste': return <ManifesteContent onBack={() => navigateTo(previousView === 'manifeste' ? 'home' : previousView)} lang={lang} />;
+      case 'pillar-extraction': return <PillarExtraction onNavigate={navigateTo} lang={lang} />;
       case 'activation': return (
         <ActivationPage 
           userId={user?.uid || null} 

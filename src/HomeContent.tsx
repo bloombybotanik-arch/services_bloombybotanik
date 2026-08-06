@@ -302,6 +302,89 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
         </div>
       </section>
 
+      {/* SEO PILLAR LINK - New Section */}
+      <section className="mt-32 mb-24 md:mb-32">
+        <div className="bg-botanik-green/5 rounded-[40px] md:rounded-[60px] p-8 md:p-16 border border-botanik-green/10 relative overflow-hidden group">
+          <div className="absolute top-[-10%] right-[-10%] w-64 h-64 bg-botanik-green/5 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-1000" />
+          <div className="max-w-3xl relative z-10">
+            <span className="inline-block px-3 py-1 bg-botanik-green text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">Guide de Référence</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6 leading-tight">
+              L'Art de l'Extraction Botanique : <br />
+              <span className="text-botanik-orange">Le Guide Complet.</span>
+            </h2>
+            <p className="text-lg md:text-xl text-botanik-green/60 mb-10 leading-relaxed font-light">
+              Maîtrisez les solvants, les températures précises et les protocoles de grade laboratoire pour révéler la puissance du Totum végétal chez vous.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button 
+                onClick={() => onNavigate('pillar-extraction')}
+                className="px-8 py-4 bg-botanik-green text-white rounded-2xl font-bold hover:bg-botanik-orange transition-all flex items-center justify-center gap-3 shadow-xl shadow-botanik-green/10"
+              >
+                Lire le guide complet <ArrowRight className="w-5 h-5" />
+              </button>
+              <button 
+                onClick={() => onNavigate('machine')}
+                className="px-8 py-4 bg-white text-botanik-green border border-botanik-green/10 rounded-2xl font-bold hover:bg-botanik-green/5 transition-all flex items-center justify-center"
+              >
+                Découvrir la BloomLab
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BLOG HIGHLIGHTS - TARGETING NICHE QUERIES */}
+      <section className="mt-32">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div className="max-w-2xl">
+            <span className="inline-block px-3 py-1 bg-botanik-orange/10 text-botanik-orange text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">Le Blog du Totum</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6 leading-tight">Dernières Recherches & Chroniques</h2>
+            <p className="text-lg text-botanik-green/60 font-light">Explorez nos dossiers de fond sur la science de l'extraction et la biophysique des plantes.</p>
+          </div>
+          <a href="https://blog.bloombybotanik.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-botanik-green font-bold group">
+            Voir tout le blog <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            { 
+              title: "La Thermorégulation du Vivant", 
+              desc: "Comment le contrôle précis de la température préserve l'intelligence moléculaire des extraits.",
+              tag: "Science",
+              url: "https://blog.bloombybotanik.com/thermoregulation-vivant"
+            },
+            { 
+              title: "Le Refroidisseur à Circulation", 
+              desc: "L'importance du choc thermique contrôlé dans la stabilisation des terpènes fragiles.",
+              tag: "Technique",
+              url: "https://blog.bloombybotanik.com/refroidisseur-circulation"
+            },
+            { 
+              title: "L'Humidificateur Diffuseur", 
+              desc: "Transformer votre atmosphère : pourquoi la diffusion ultrasonique respecte mieux le Totum.",
+              tag: "Usage",
+              url: "https://blog.bloombybotanik.com/humidificateur-diffuseur"
+            }
+          ].map((post, i) => (
+            <a 
+              key={i}
+              href={post.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-white p-8 rounded-[32px] border border-botanik-green/5 hover:border-botanik-orange transition-all duration-300 group flex flex-col"
+            >
+              <span className="text-[10px] font-bold text-botanik-orange uppercase tracking-widest mb-4">{post.tag}</span>
+              <h4 className="text-xl font-bold text-botanik-green mb-4 leading-snug group-hover:text-botanik-orange transition-colors">{post.title}</h4>
+              <p className="text-botanik-green/60 text-sm leading-relaxed mb-8 flex-grow">{post.desc}</p>
+              <div className="flex items-center gap-2 text-botanik-green font-bold text-xs uppercase tracking-widest">
+                Lire l'article <ChevronRight className="w-4 h-4" />
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
       {/* Featured Protocol Grid - Integrated as part of the flow */}
       <div className="mt-32">
         <div className="bg-botanik-green rounded-[40px] px-8 md:px-16 py-10 md:py-16 text-white overflow-hidden relative group">

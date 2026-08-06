@@ -5,8 +5,20 @@ export const translations = {
   fr: {
     seo: {
       home: {
-        title: "Qu'est ce que l'infusion botanique?",
-                description: "Découvrez l'ingenierie du vivant : l'art de l'extraction, l'infusion botanique et les remèdes ancestraux au service des plantes et de votre équilibre biologique.",
+        title: "Infusion Botanique Maison : Le Guide pour réussir ses Extractions",
+        description: "Apprenez l'art de l'infusion botanique et de l'extraction de précision. Maîtrisez le Totum des plantes pour votre équilibre biologique avec Bloom by BotaniK.",
+      },
+      extraction: {
+        title: "Extraction de Plantes Naturelles : Bienfaits et Méthodes | Bloom",
+        description: "Découvrez comment extraire le meilleur des plantes médicinales. Guide complet sur les méthodes d'extraction naturelle pour préserver le Totum végétal.",
+      },
+      infusion: {
+        title: "Comment faire une Infusion Botanique Maison ? Guide Complet",
+        description: "Réussir son infusion botanique maison : solvants, température et durée. Tout savoir pour créer vos propres remèdes naturels de qualité laboratoire.",
+      },
+      pillar: {
+        title: "Extraction Botanique : Le Guide Complet pour Maîtriser le Totum",
+        description: "Tout savoir sur l'extraction botanique moderne. De la macération à la précision thermique ±0,5°C avec BloomLab. Devenez souverain dans votre santé.",
       },
       herbarium: {
         title: "L'Herbier Systémique | Répertoire des Plantes & Totum | Bloom",
@@ -53,7 +65,7 @@ export const translations = {
       hero: {
         intro: "Introduction",
         onboarding: "Onboarding",
-                title: "Qu'est-ce que l'infusion botanique ?", description: "L'infusion et l'extraction botanique désignent l'art, millénaire, de révéler les principes actifs d'une plante grâce à un solvant — eau chaude, eau froide, alcool, huile ou vinaigre — chacun capturant une facette différente du végétal. Bloom by BotaniK prolonge ce savoir ancestral avec BloomLab, une technologie qui adapte automatiquement chaque extraction à la plante travaillée.",
+                title: "Infusion Botanique Maison : Le Guide pour réussir ses Extractions", description: "L'infusion et l'extraction botanique désignent l'art, millénaire, de révéler les principes actifs d'une plante grâce à un solvant — eau chaude, eau froide, alcool, huile ou vinaigre — chacun capturant une facette différente du végétal. Bloom by BotaniK prolonge ce savoir ancestral avec BloomLab, une technologie qui adapte automatiquement chaque extraction à la plante travaillée.",
       },
       cards: {
         welcome: {
@@ -1122,8 +1134,20 @@ export const translations = {
   en: {
     seo: {
       home: {
-        title: "What is botanical infusion? | Bloom by BotaniK",
-        description: "Discover life engineering: the art of extraction, botanical infusion and ancestral remedies from plants to support your biological balance.",
+        title: "Home Botanical Infusion: The Guide to Successful Extractions",
+        description: "Learn the art of botanical infusion and precision extraction. Master the Totum of plants for your biological balance with Bloom by BotaniK.",
+      },
+      extraction: {
+        title: "Natural Plant Extraction: Benefits and Methods | Bloom",
+        description: "Discover how to extract the best from medicinal plants. Complete guide on natural extraction methods to preserve the plant Totum.",
+      },
+      infusion: {
+        title: "How to make a Home Botanical Infusion? Complete Guide",
+        description: "Succeed in your home botanical infusion: solvents, temperature and duration. Everything you need to know to create your own laboratory-quality natural remedies.",
+      },
+      pillar: {
+        title: "Botanical Extraction: The Complete Guide to Mastering the Totum",
+        description: "Everything you need to know about modern botanical extraction. From maceration to ±0.5°C thermal precision with BloomLab. Become sovereign in your health.",
       },
       herbarium: {
         title: "Systemic Herbarium | Plant Directory & Totum | Bloom",
@@ -1170,7 +1194,7 @@ export const translations = {
       hero: {
         intro: "Introduction",
         onboarding: "Onboarding",
-        title: "What is botanical infusion?",
+        title: "Home Botanical Infusion: The Guide to Successful Extractions",
         description: "Botanical infusion and extraction refer to the ancient art of revealing a plant's active principles using a solvent — hot water, cold water, alcohol, oil, or vinegar — each capturing a different facet of the plant. Bloom by BotaniK extends this ancestral knowledge with BloomLab, a technology that automatically adapts each extraction to the specific plant."
       },
       cards: {
