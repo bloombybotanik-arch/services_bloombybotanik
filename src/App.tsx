@@ -23,7 +23,6 @@ import logoSidebar from './assets/images/logo_sidebar_1784886108085.png';
 import { OptimizedImage } from './components/OptimizedImage';
 
 // --- LAZY LOADING FOR SECONDARY VIEWS ---
-const HerbariumContent = lazy(() => import('./HerbariumContent'));
 const LibraryContent = lazy(() => import('./LibraryContent'));
 const StoreContent = lazy(() => import('./StoreContent'));
 const GuideContent = lazy(() => import('./GuideContent'));
@@ -354,9 +353,9 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
         <a 
           href="#" 
           onClick={(e) => { e.preventDefault(); navigateTo('library-landing'); }}
-          className={`flex items-center gap-3 text-sm font-medium transition-colors group ${currentView === 'library-landing' || currentView === 'herbier' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
+          className={`flex items-center gap-3 text-sm font-medium transition-colors group ${currentView === 'library-landing' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
         >
-          <Leaf className={`w-4 h-4 transition-colors ${currentView === 'library-landing' || currentView === 'herbier' ? 'text-[#F97316]' : 'group-hover:text-[#F97316]'}`} /> {t.nav.herbarium}
+          <Leaf className={`w-4 h-4 transition-colors ${currentView === 'library-landing' ? 'text-[#F97316]' : 'group-hover:text-[#F97316]'}`} /> {t.nav.herbarium}
         </a>
         <a 
           href="https://blog.bloombybotanik.com/" 
@@ -486,8 +485,8 @@ const HybridOffer = ({ onNavigate }: { onNavigate: (view: any) => void }) => (
 export default function App() {
   const [lang, setLang] = useState<Language>('fr');
   const t = translations[lang];
-  const [currentView, setCurrentView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'herbier' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste'>('home');
-  const [previousView, setPreviousView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'herbier' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste'>('home');
+  const [previousView, setPreviousView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste'>('home');
 
   const [currentProductId, setCurrentProductId] = useState<string | undefined>();
   const [legalType, setLegalType] = useState<'cgv' | 'cgu' | 'privacy' | 'mentions'>('mentions');
@@ -504,7 +503,7 @@ export default function App() {
     const VIEW_PATHS: Record<string, string> = {
       home: '/', machine: '/machine', 'phytotherapie-reset': '/phytotherapie-reset',
       boutique: '/boutique', culinaire: '/culinaire', cosmetiques: '/cosmetiques',
-      'library-landing': '/library-landing', herbier: '/herbier', manifeste: '/manifeste',
+      'library-landing': '/library-landing', manifeste: '/manifeste',
       activation: '/activation', account: '/compte', legal: '/legal', chat: '/chat',
       cart: '/panier', checkout: '/checkout', guide: '/guide', pending: '/en-attente',
       library: '/bibliotheque',
@@ -757,18 +756,6 @@ export default function App() {
           lang={lang}
         />
       );
-      case 'herbier': return (
-        <HerbariumContent 
-          isPremium={isPremium} 
-          onRequirePremium={handleRequirePremium} 
-          onNavigatePending={() => navigateTo('pending')}
-          onNavigate={navigateTo}
-          favorites={favorites}
-          onToggleFavorite={handleToggleFavorite}
-          initialPlantId={currentProductId}
-          lang={lang}
-        />
-      );
       case 'culinaire': return (
         <CulinarySection 
           isPremium={isPremium} 
@@ -876,6 +863,20 @@ export default function App() {
         </div>
       </div>
       <div className="flex items-center gap-4">
+        {/* Language Selector Mobile */}
+        <div className="flex items-center gap-1 bg-white/5 rounded-lg p-1">
+          {(['fr', 'en', 'de'] as Language[]).map((l) => (
+            <button
+              key={l}
+              onClick={() => setLang(l)}
+              className={`text-[9px] font-bold uppercase px-1.5 py-1 rounded transition-all ${
+                lang === l ? 'bg-botanik-orange text-white' : 'text-white/40 hover:text-white/60'
+              }`}
+            >
+              {l}
+            </button>
+          ))}
+        </div>
         <button onClick={() => navigateTo('cart')} className="relative p-2 text-white hover:bg-white/10 rounded-full transition-colors">
           <ShoppingBag className="w-6 h-6 md:w-7 md:h-7" />
           {cart.length > 0 && (

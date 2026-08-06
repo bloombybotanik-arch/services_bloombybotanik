@@ -22,8 +22,8 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
     'bloomlab': {
       name: "BloomLab",
       subtitle: isFR ? "SOUVERAINETÉ SANTÉ 2026" : isDE ? "GESUNDHEITSSOUVERÄNITÄT 2026" : "HEALTH SOVEREIGNTY 2026",
-      price: 239,
-      originalPrice: 289,
+      price: 289,
+      originalPrice: 329,
       images: [bloomLabImg, img2, img3, img4, img5, img6],
       description: isFR 
         ? "La première machine 6-en-1 grand public capable de réaliser à domicile des extractions botaniques complexes — huiles infusées, sérums, teintures, macérats — avec un contrôle de paramètres (temps, température, séquençage) habituellement réservé aux laboratoires professionnels."
@@ -429,60 +429,64 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
         { label: isFR ? "Cible" : isDE ? "Ziel" : "Target", value: isFR ? "Peau, Cheveux, Ongles" : isDE ? "Haut, Haare, Nägel" : "Skin, Hair, Nails", icon: ShieldCheck }
       ]
     },
-  'duo-argiles': {
-    name: isFR ? "Duo ARGILES : Adsorbant Naturel Métaux Lourds et Toxines-Haute précision (6μm)" : "Duo CLAYS: Natural Heavy Metal & Toxin Adsorbent-High Precision (6μm)",
-    subtitle: isFR ? "ADSORBANT NATUREL" : isDE ? "NATÜRLICHES ADSORBENS" : "NATURAL ADSORBENT",
-    price: 44.90,
-    originalPrice: 49.00,
-    images: [duoArgilesImg],
-    description: isFR
-      ? "Découvrez le Duo RESET Renaissance : une Zéolithe Clinoptilolite activée à 6 microns pour une pureté inégalée. Capturez les métaux lourds et restaurez votre terrain avec l'excellence minérale Bloom by BotaniK. Grade Médical. Livraison 48h."
-      : isDE
-      ? "Entdecken Sie das Duo RESET Renaissance: ein aktivierter Zeolith-Klinoptilolith mit 6 Mikron für unübertroffene Reinheit. Binden Sie Schwermetalle und stellen Sie Ihr Terrain mit der mineralischen Exzellenz von Bloom by BotaniK wieder her. Medizinische Qualität. Lieferung in 48 Stunden."
-      : "Discover the Duo RESET Renaissance: an activated Zeolite Clinoptilolite at 6 microns for unparalleled purity. Capture heavy metals and restore your terrain with Bloom by BotaniK mineral excellence. Medical Grade. 48h Delivery.",
-    fullDescription: isFR ? `
-<div class="prose prose-botanik max-w-none">
-<p class="text-lg mb-8">Le Duo RESET à 6 microns (3 fois plus fin que les standards du marché) et certifié grade Pharmacopée Européenne garantit une puissance d'adsorption et une pureté inégalée. Pour votre terrain, n'acceptez aucun compromis.</p>
-<h2 class="text-3xl font-bold mb-6 mt-12">Un adsorbant naturel de précision</h2>
-<p class="mb-6">La Zéolithe Clinoptilolite agit par un mécanisme purement physique d'adsorption : sa structure cristalline en nid d'abeille microscopique capte et retient les toxines, métaux lourds et impuretés dans ses cavités, sans les transformer chimiquement.</p>
-<ul class="space-y-4 mb-8">
-<li><strong>Pureté Absolue :</strong> Zéolithe activée par micronisation haute performance.</li>
-<li><strong>Haute Précision :</strong> 6 microns pour une surface d'échange maximale.</li>
-</ul>
-<div class="grid md:grid-cols-3 gap-6 mb-12">
-<div class="bg-[#1B3022]/5 p-6 rounded-2xl">
-<h4 class="font-bold text-[#F97316] mb-2">Grade Pharmacopée</h4>
-<p class="text-sm">Pureté et sécurité certifiées Européennes.</p>
-</div>
-<div class="bg-[#1B3022]/5 p-6 rounded-2xl">
-<h4 class="font-bold text-[#F97316] mb-2">Granulométrie 6µm</h4>
-<p class="text-sm">3 fois plus fin que les standards du marché.</p>
-</div>
-<div class="bg-[#1B3022]/5 p-6 rounded-2xl">
-<h4 class="font-bold text-[#F97316] mb-2">Renaissance</h4>
-<p class="text-sm">Capture des métaux lourds et restauration du terrain.</p>
-</div>
-</div>
-</div>
-` : isDE ? `
-<div class="prose prose-botanik max-w-none">
-<p class="text-lg mb-8">Das Duo RESET mit 6 Mikron (3-mal feiner als der Marktstandard) und zertifiziert nach europäischem Arzneibuch garantiert eine unübertroffene Adsorptionskraft und Reinheit. Akzeptieren Sie für Ihr Terrain keine Kompromisse.</p>
-<h2 class="text-3xl font-bold mb-6 mt-12">Ein natürliches Präzisionsadsorbens</h2>
-<p class="mb-6">Zeolith-Klinoptilolith wirkt durch einen rein physikalischen Adsorptionsmechanismus: Seine mikroskopische kristalline Wabenstruktur bindet und hält Toxine, Schwermetalle und Verunreinigungen in seinen Hohlräumen zurück, ohne sie chemisch zu verändern.</p>
-</div>
-` : `
-<div class="prose prose-botanik max-w-none">
-<p class="text-lg mb-8">The Duo RESET at 6 microns (3 times finer than market standards) and certified European Pharmacopoeia grade guarantees unparalleled adsorption power and purity. For your terrain, accept no compromises.</p>
-<h2 class="text-3xl font-bold mb-6 mt-12">A natural precision adsorbent</h2>
-<p class="mb-6">Zeolite Clinoptilolite acts through a purely physical adsorption mechanism: its microscopic crystalline honeycomb structure captures and retains toxins, heavy metals and impurities in its cavities, without chemically altering them.</p>
-</div>
-`,
-    specs: [
-      { label: isFR ? "Précision" : isDE ? "Präzision" : "Precision", value: "6µm", icon: FlaskConical },
-      { label: isFR ? "Grade" : isDE ? "Qualität" : "Grade", value: isFR ? "Pharmacopée" : isDE ? "Arzneibuch" : "Pharmacopoeia", icon: ShieldCheck },
-      { label: isFR ? "Composition" : isDE ? "Zusammensetzung" : "Composition", value: "Zéolithe Clinoptilolite", icon: Leaf }
-    ]
-  },
+    'duo-argiles': {
+      name: isFR ? "Duo ARGILES : Adsorbant Naturel Métaux Lourds et Toxines-Haute précision (6μm)" : "Precision CLAYS Duo: Natural Adsorbent (6μm)",
+      subtitle: isFR ? "Zéolithe Clinoptilolite activée à 6 microns - Grade Médical" : "6-Micron Activated Zeolite Clinoptilolite - Medical Grade",
+      price: 44.90,
+      images: [duoArgilesImg],
+      description: isFR 
+        ? "Découvrez le Duo RESET Renaissance : une Zéolithe Clinoptilolite activée à 6 microns pour une pureté inégalée. Capturez les métaux lourds et restaurez votre terrain avec l'excellence minérale Bloom by BotaniK. Grade Médical."
+        : "Discover the Duo RESET Renaissance: a 6-micron activated Zeolite Clinoptilolite for unparalleled purity. Capture heavy metals and restore your terrain with Bloom by BotaniK mineral excellence.",
+      fullDescription: isFR ? `
+        <div class="prose prose-botanik max-w-none">
+          <p class="text-lg mb-8">Le Duo RESET à 6 microns (3 fois plus fin que les standards du marché) et certifié grade Pharmacopée Européenne garantit une puissance d'adsorption et une pureté inégalée. Pour votre terrain, n'acceptez aucun compromis.</p>
+          
+          <h2 class="text-2xl font-bold mb-6 mt-12">La Science de l'Adsorption</h2>
+          <p class="mb-6">La Zéolithe Clinoptilolite est un minéral naturel d'origine volcanique possédant une structure cristalline en forme de cage. Cette structure microporeuse lui permet de capturer sélectivement les toxines, les métaux lourds (plomb, mercure, cadmium) et les résidus chimiques par un processus d'échange ionique.</p>
+          
+          <div class="bg-[#1B3022]/5 p-8 rounded-[40px] mb-12">
+            <h3 class="text-xl font-bold mb-4">Pourquoi 6 microns ?</h3>
+            <p class="text-sm leading-relaxed">La finesse de la poudre est le facteur déterminant de son efficacité. Plus la particule est fine, plus la surface de contact (surface spécifique) est grande. À 6 microns, notre zéolithe offre une capacité de capture démultipliée par rapport aux produits standards (souvent entre 20 et 50 microns).</p>
+          </div>
+
+          <h3 class="text-2xl font-bold mb-6 italic">"Votre corps n'est pas cassé. Il est verrouillé par la surcharge environnementale."</h3>
+          
+          <h2 class="text-2xl font-bold mb-6">Conseils d'utilisation</h2>
+          <div class="space-y-4 mb-12">
+            <div class="flex items-start gap-4 p-6 bg-white border border-[#1B3022]/10 rounded-2xl">
+              <span class="font-bold text-[#F97316]">Phase 1 :</span>
+              <p class="text-sm">Mélanger une cuillère doseuse rase dans un grand verre d'eau, de préférence le matin à jeun ou le soir au coucher.</p>
+            </div>
+            <div class="flex items-start gap-4 p-6 bg-white border border-[#1B3022]/10 rounded-2xl">
+              <span class="font-bold text-[#F97316]">Phase 2 :</span>
+              <p class="text-sm">Boire immédiatement après avoir mélangé. Il est crucial de maintenir une hydratation importante tout au long de la journée (minimum 2L d'eau).</p>
+            </div>
+          </div>
+
+          <div class="bg-[#293228] text-white p-10 rounded-[40px] mb-12">
+            <h3 class="text-2xl font-bold mb-6 text-[#F97316]">Précautions & Contre-indications</h3>
+            <ul class="space-y-3 text-sm opacity-90">
+              <li>• Ne pas inhaler la poudre.</li>
+              <li>• Espacer la prise de 2h avec tout médicament ou complément alimentaire (la zéolithe pourrait adsorber les principes actifs).</li>
+              <li>• Déconseillé aux femmes enceintes, allaitantes et aux personnes ayant des antécédents de pathologies rénales lourdes sans avis médical.</li>
+              <li>• Tenir hors de portée des enfants.</li>
+            </ul>
+          </div>
+        </div>
+      ` : `
+        <div class="prose prose-botanik max-w-none">
+          <p class="text-lg mb-8">The Duo RESET at 6 microns (3 times finer than market standards) and certified European Pharmacopoeia grade guarantees unparalleled adsorption power and purity. For your terrain, accept no compromise.</p>
+          <h2 class="text-2xl font-bold mb-6 mt-12">How to use</h2>
+          <p class="mb-6">Mix one level measuring spoon in a large glass of water, preferably in the morning on an empty stomach or in the evening at bedtime.</p>
+        </div>
+      `,
+      specs: [
+        { label: isFR ? "Granulométrie" : "Micronization", value: "6 μm (Ultra-fine)", icon: Award },
+        { label: isFR ? "Pureté" : "Purity", value: "Grade Médical", icon: ShieldCheck },
+        { label: isFR ? "Origine" : "Origin", value: isFR ? "Volcanique" : "Volcanic", icon: Leaf },
+        { label: isFR ? "Adsorption" : "Adsorption", value: "Haute Capacité", icon: ShoppingBag }
+      ]
+    },
     // ... add more products as needed, I'll keep it concise for now and expand if I have space
   };
 };

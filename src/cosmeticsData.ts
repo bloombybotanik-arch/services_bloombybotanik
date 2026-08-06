@@ -890,23 +890,75 @@ export const cosmeticsRecipesFR: CosmeticsRecipe[] = [
 
 // Placeholder arrays for other languages - Titles and Cible are translated for the 22 recipes
 // To keep the file manageable, we use the same IDs and similar structures.
-export const cosmeticsRecipesEN: CosmeticsRecipe[] = cosmeticsRecipesFR.map(r => ({
-  ...r,
-  nom_commun: r.nom_commun.replace('Sérum', 'Serum').replace('Élixir', 'Elixir').replace('Huile', 'Oil').replace('Masque', 'Mask').replace('Lotion', 'Lotion').replace('Baume', 'Balm').replace('Gommage', 'Scrub').replace('Nettoyant', 'Cleanser').replace('Soin', 'Treatment'),
-  type_produit: r.type_produit,
-  categorie: r.categorie === 'Visage' ? 'Face' : r.categorie === 'Corps' ? 'Body' : 'Hair',
-  peau: r.peau === 'Sensible' ? 'Sensitive' : r.peau === 'Toutes' ? 'All' : 'Dry/Sensitive',
-  cible: r.cible // Placeholder for full translation
-}));
+export const cosmeticsRecipesEN: CosmeticsRecipe[] = cosmeticsRecipesFR.map(r => {
+  const translations: Record<string, { name: string; target: string }> = {
+    "serum_reparateur_nuit": { name: "Night Repair Serum — Skin Barrier", target: "Sensitive skin, healing, skin microbiota repair" },
+    "elixir_croissance_capillaire": { name: "Growth & Scalp Elixir — Active Follicle", target: "Hair loss, inflamed scalp, dandruff, hair shaft strengthening" },
+    "huile_corps_drainante": { name: "Draining & Firming Body Oil — Silhouette", target: "Cellulite, water retention, skin firmness, lymphatic drainage" },
+    "nettoyant_botanique_doux": { name: "Gentle Botanical Cleansing Oil — Soft Purity", target: "Deep cleansing, makeup removal, respect for the hydrolipidic film" },
+    "masque_eclat_hibiscus": { name: "Radiance & Youth Mask — Hibiscus & Rose", target: "Complexion radiance, antioxidant, smoothing of fine lines" },
+    "huile_massage_recuperation": { name: "Recovery Massage Oil — Sport & Muscle", target: "Muscle pain, post-effort recovery, toxin drainage" },
+    "serum_anti_imperfections": { name: "Anti-Imperfection Serum — Burdock & Purified", target: "Excess sebum, imperfections, dilated pores" },
+    "elixir_regard_frais": { name: "Fresh Eyes Elixir — Eye Contour", target: "Dark circles, puffiness, dehydration lines" },
+    "baume_levres_calendula": { name: "Nourishing Lip Balm — Calendula & Honey", target: "Damaged lips, protection against cold" },
+    "lotion_tonique_camomille": { name: "Soothing Tonic Lotion — Chamomile & Lavender", target: "Soothing after cleansing, preparation for care" },
+    "huile_precieuse_rose": { name: "Regenerating Precious Oil — Rosehip & Argan", target: "Wrinkles, firmness, complexion radiance" },
+    "gommage_corps_sel_botanique": { name: "Botanical Body Scrub — Salt & Seaweed", target: "Exfoliation, detoxification, soft skin" },
+    "huile_jambes_legeres": { name: "Light Legs Oil — Red Vine & Horse Chestnut", target: "Heavy legs, spider veins, drainage" },
+    "masque_capillaire_nutrition": { name: "Nutrition Hair Mask — Avocado & Shea", target: "Dry, brittle hair, damaged ends" },
+    "baume_mains_karite": { name: "Protective Hand Balm — Shea & Glycerin", target: "Dry hands, cracks, daily protection" },
+    "huile_demaquillante_yeux": { name: "Eye Makeup Remover Oil — Cornflower & Almond", target: "Gentle eye makeup removal, lash care" },
+    "elixir_nuit_apaisant": { name: "Soothing Night Elixir — Lemon Balm & Valerian", target: "Skin fatigued by stress, nocturnal relaxation" },
+    "serum_hydratation_profonde": { name: "Hydration Serum — Aloe & Hyaluronic", target: "Lack of water, tightness" },
+    "huile_barbe_visage": { name: "Beard & Face Oil — Cedar & Jojoba", target: "Beard maintenance, irritated skin underneath" },
+    "masque_detox_argile": { name: "Detox Mask — Clay & Charcoal", target: "Detoxification, impurities, pollution" },
+    "lotion_capillaire_ortie": { name: "Hair Tonic Lotion — Nettle & Rosemary", target: "Fortification, shine, healthy scalp" },
+    "soin_pieds_relaxant": { name: "Relaxing Foot Balm — Mint & Camphor", target: "Tired feet, overheating" }
+  };
+  const t = translations[r.plant_id];
+  return {
+    ...r,
+    nom_commun: t ? t.name : r.nom_commun,
+    categorie: r.categorie === 'Visage' ? 'Face' : r.categorie === 'Corps' ? 'Body' : 'Hair',
+    peau: r.peau === 'Sensible' ? 'Sensitive' : r.peau === 'Toutes' ? 'All' : r.peau === 'Grasse / Acnéique' ? 'Oily / Acne' : 'Dry / Sensitive',
+    cible: t ? t.target : r.cible
+  };
+});
 
-export const cosmeticsRecipesDE: CosmeticsRecipe[] = cosmeticsRecipesFR.map(r => ({
-  ...r,
-  nom_commun: r.nom_commun, // Placeholder
-  type_produit: r.type_produit,
-  categorie: r.categorie === 'Visage' ? 'Gesicht' : r.categorie === 'Corps' ? 'Körper' : 'Haare',
-  peau: r.peau === 'Sensible' ? 'Empfindlich' : 'Alle',
-  cible: r.cible // Placeholder
-}));
+export const cosmeticsRecipesDE: CosmeticsRecipe[] = cosmeticsRecipesFR.map(r => {
+  const translations: Record<string, { name: string; target: string }> = {
+    "serum_reparateur_nuit": { name: "Nacht-Reparatur-Serum — Hautbarriere", target: "Empfindliche Haut, Heilung, Reparatur der Hautmikrobiota" },
+    "elixir_croissance_capillaire": { name: "Haarwachstums- & Kopfhaut-Elixier — Aktiver Follikel", target: "Haarausfall, entzündete Kopfhaut, Schuppen, Stärkung des Haarschafts" },
+    "huile_corps_drainante": { name: "Entwässerndes & Straffendes Körperöl — Silhouette", target: "Cellulite, Wassereinlagerungen, Hautfestigkeit, Lymphdrainage" },
+    "nettoyant_botanique_doux": { name: "Sanftes Botanisches Reinigungsöl — Milde Reinheit", target: "Tiefenreinigung, Make-up-Entfernung, Schutz des Hydrolipidfilms" },
+    "masque_eclat_hibiscus": { name: "Strahlkraft- & Jugendmaske — Hibiskus & Rose", target: "Strahlender Teint, Antioxidans, Glättung feiner Linien" },
+    "huile_massage_recuperation": { name: "Erholungs-Massageöl — Sport & Muskel", target: "Muskelschmerzen, Erholung nach dem Sport, Giftstoffdrainage" },
+    "serum_anti_imperfections": { name: "Anti-Unreinheiten-Serum — Klette & Gereinigt", target: "Talgüberschuss, Unreinheiten, erweiterte Poren" },
+    "elixir_regard_frais": { name: "Frische Augen Elixier — Augenkontur", target: "Dunkle Ringe, Schwellungen, Dehydrierungsfalten" },
+    "baume_levres_calendula": { name: "Nährender Lippenbalsam — Calendula & Honig", target: "Rissige Lippen, Schutz vor Kälte" },
+    "lotion_tonique_camomille": { name: "Beruhigendes Tonikum — Kamille & Lavendel", target: "Beruhigung nach der Reinigung, Vorbereitung auf die Pflege" },
+    "huile_precieuse_rose": { name: "Regenerierendes Kostbares Öl — Wildrose & Argan", target: "Falten, Festigkeit, strahlender Teint" },
+    "gommage_corps_sel_botanique": { name: "Botanisches Körperpeeling — Salz & Algen", target: "Peeling, Entgiftung, weiche Haut" },
+    "huile_jambes_legeres": { name: "Leichte Beine Öl — Roter Weinlaub & Rosskastanie", target: "Schwere Beine, Besenreiser, Drainage" },
+    "masque_capillaire_nutrition": { name: "Nährende Haarmaske — Avocado & Shea", target: "Trockenes, brüchiges Haar, geschädigte Spitzen" },
+    "baume_mains_karite": { name: "Schützender Handbalsam — Shea & Glycerin", target: "Trockene Hände, Risse, täglicher Schutz" },
+    "huile_demaquillante_yeux": { name: "Augen-Make-up-Entferneröl — Kornblume & Mandel", target: "Sanfte Augen-Make-up-Entfernung, Wimpernpflege" },
+    "elixir_nuit_apaisant": { name: "Beruhigendes Nachtelixier — Melisse & Baldrian", target: "Durch Stress ermüdete Haut, nächtliche Entspannung" },
+    "serum_hydratation_profonde": { name: "Hydratations-Serum — Aloe & Hyaluron", target: "Wassermangel, Spannungsgefühle" },
+    "huile_barbe_visage": { name: "Bart- & Gesichtsöl — Zeder & Jojoba", target: "Bartpflege, gereizte Haut darunter" },
+    "masque_detox_argile": { name: "Detox-Maske — Tonerde & Kohle", target: "Entgiftung, Unreinheiten, Verschmutzung" },
+    "lotion_capillaire_ortie": { name: "Haartonikum — Brennnessel & Rosmarin", target: "Stärkung, Glanz, gesunde Kopfhaut" },
+    "soin_pieds_relaxant": { name: "Entspannender Fußbalsam — Minze & Kampfer", target: "Müde Füße, Überhitzung" }
+  };
+  const t = translations[r.plant_id];
+  return {
+    ...r,
+    nom_commun: t ? t.name : r.nom_commun,
+    categorie: r.categorie === 'Visage' ? 'Gesicht' : r.categorie === 'Corps' ? 'Körper' : 'Haare',
+    peau: r.peau === 'Sensible' ? 'Empfindlich' : 'Alle',
+    cible: t ? t.target : r.cible
+  };
+});
 
 export const getCosmeticsRecipes = (lang: Language): CosmeticsRecipe[] => {
   switch (lang) {

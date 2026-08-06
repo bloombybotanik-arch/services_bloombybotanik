@@ -1,6 +1,5 @@
 import React from 'react';
 import { ChevronRight, ShieldCheck, Zap, FlaskConical, Award, Star, Activity, ArrowRight, Check, Utensils, CheckCircle } from 'lucide-react';
-import { wrapTitle } from './lib/textUtils';
 import bloomLabImg from './assets/images/bloomlab_main_1784887530345.jpeg';
 import bloomSoinsImg from './assets/images/Bloom_Soins.jpg';
 import fourMmImg from './assets/images/4MM.jpg';
@@ -47,7 +46,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         </div>
       </section>
 
-      {/* What is the machine? */}
+      {/* What is the machine? (Section 2) */}
       <section id="details" className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
@@ -82,34 +81,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         </div>
       </section>
 
-      {/* Why it exists */}
-      <section className="py-24 bg-botanik-green text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#F97316]/10 rounded-full blur-[120px] -mr-48 -mt-48"></div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-6xl font-bold mb-12 leading-tight italic">{t.vision.quote}</h2>
-            <p className="text-lg md:text-2xl text-white/80 mb-12 leading-relaxed font-light">
-              {t.vision.p1}
-            </p>
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-8 h-8 rounded-full bg-[#F97316] flex items-center justify-center shrink-0 mt-1">
-                  <Check className="w-5 h-5 text-white" />
-                </div>
-                <p className="text-lg text-white/90" dangerouslySetInnerHTML={{ __html: t.vision.check1 }}></p>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="w-8 h-8 rounded-full bg-[#F97316] flex items-center justify-center shrink-0 mt-1">
-                  <Check className="w-5 h-5 text-white" />
-                </div>
-                <p className="text-lg text-white/90" dangerouslySetInnerHTML={{ __html: t.vision.check2 }}></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Les 3 Niveaux d'Expertise */}
+      {/* Les 3 Niveaux d'Expertise (Move here after details) */}
       <section id="niveaux" className="py-24 bg-[#F9F9F7]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -341,6 +313,33 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
             >
               {t.final_cta.guide}
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Why it exists (Moved here after final cta) */}
+      <section className="py-24 bg-botanik-green text-white overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#F97316]/10 rounded-full blur-[120px] -mr-48 -mt-48"></div>
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-6xl font-bold mb-12 leading-tight italic">{t.vision.quote}</h2>
+            <p className="text-lg md:text-2xl text-white/80 mb-12 leading-relaxed font-light">
+              {t.vision.p1}
+            </p>
+            <div className="space-y-6 text-left inline-block">
+              <div className="flex items-start gap-4">
+                <div className="w-8 h-8 rounded-full bg-[#F97316] flex items-center justify-center shrink-0 mt-1">
+                  <Check className="w-5 h-5 text-white" />
+                </div>
+                <p className="text-lg text-white/90" dangerouslySetInnerHTML={{ __html: t.vision.check1 }}></p>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-8 h-8 rounded-full bg-[#F97316] flex items-center justify-center shrink-0 mt-1">
+                  <Check className="w-5 h-5 text-white" />
+                </div>
+                <p className="text-lg text-white/90" dangerouslySetInnerHTML={{ __html: t.vision.check2 }}></p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
