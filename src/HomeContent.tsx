@@ -121,19 +121,19 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
 
       {/* PAGE 1 — COMMENCER ICI */}
       <section id="protocole" className="mb-24 md:mb-32 scroll-mt-24">
-        <div className="bg-white rounded-[40px] md:rounded-[60px] p-6 md:p-16 border border-botanik-green/5 shadow-2xl mb-16 md:mb-24 overflow-hidden relative group">
+        <div className="bg-white rounded-[40px] md:rounded-[60px] p-6 md:p-12 lg:p-16 border border-botanik-green/5 shadow-2xl mb-16 md:mb-24 overflow-hidden relative group">
           <div className="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 bg-botanik-orange/5 rounded-bl-full -z-0" />
-          <div className="grid lg:grid-cols-[1fr_450px] gap-8 md:gap-12 items-center relative z-10">
-            <div>
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center relative z-10">
+            <div className="max-w-xl">
               <div className="flex gap-4 text-[10px] font-black text-botanik-green/40 uppercase tracking-[0.3em] items-center mb-8">
                 <span>{t.home.hero.intro}</span>
                 <span className="w-1 h-1 rounded-full bg-botanik-green/20" />
                 <span>{t.home.hero.onboarding}</span>
               </div>
-              <h1 className="text-3xl md:text-7xl font-bold text-botanik-green mb-6 md:mb-8 leading-[1.1]">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-botanik-green mb-6 md:mb-8 leading-[1.1]">
                 {t.home.hero.title}
               </h1>
-              <p className="text-base md:text-2xl text-botanik-green/60 leading-relaxed font-light">
+              <p className="text-base md:text-lg lg:text-xl text-botanik-green/60 leading-relaxed font-light">
                 {t.home.hero.description}
               </p>
             </div>
@@ -141,8 +141,8 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
               <OptimizedImage 
                 src={bloomImg} 
                 priority={true} 
-                width={450}
-                height={450}
+                width={500}
+                height={500}
                 className="w-full h-full object-cover" 
                 alt="BloomLab - Extraction de précision" 
               />
