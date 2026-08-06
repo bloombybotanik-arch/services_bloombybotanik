@@ -43,6 +43,12 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
             <p className="text-white/60 text-sm leading-relaxed max-w-md mb-8">
               {t.footer.description}
             </p>
+            <div className="mb-8">
+              <h4 className="text-xs uppercase tracking-widest font-bold mb-4 text-[#F5F3EB]">Contact</h4>
+              <a href="mailto:bloombybotanik@gmail.com" className="text-white/60 hover:text-white transition-colors text-sm">
+                bloombybotanik@gmail.com
+              </a>
+            </div>
             <div className="flex gap-6">
               {socialLinks.map((social) => (
                 <a

@@ -57,12 +57,12 @@ export const translations = {
       },
       cards: {
         welcome: {
-                  title: "Un savoir ancestral, encore incomplet hier",
+          title: "Un savoir ancestral, encore incomplet hier",
           description: "Infuser à l'eau chaude, macérer dans l'huile, laisser infuser dans l'alcool : nos anciens savaient déjà que chaque solvant révèle des molécules différentes. Ce qui manquait, c'était la constance — reproduire le même résultat, plante après plante."
         },
         what_we_do: {
-                  title: "Ce que la précision moderne apporte",
-                    description: "Nous unissons ce savoir ancestral à la machine BloomLab, qui calibre solvant, température et durée selon la structure de chaque plante — pour révéler fidèlement son Totum, sans approximation."
+          title: "Ce que la précision moderne apporte",
+          description: "Nous unissons ce savoir ancestral à la machine BloomLab, qui calibre solvant, température et durée selon la structure de chaque plante — pour révéler fidèlement son Totum, sans approximation."
         },
         in_app: {
           title: "Dans cette application",
@@ -450,7 +450,7 @@ export const translations = {
           description: "Souplesse articulaire. Mélange de plantes pour accompagner les zones sensibles et la mobilité."
         },
         argiles: {
-          name: "Duo ARGILES Précision",
+          name: "Duo RESET Renaissance",
           subtitle: "ADSORBANT NATUREL",
           description: "Haute précision (6µm). Une cure détoxifiante puissante pour libérer le corps des toxines."
         },
@@ -1122,8 +1122,8 @@ export const translations = {
   en: {
     seo: {
       home: {
-        title: "Bloom by Botanik | Precision Botanical Extraction & Totum",
-                description: "Discover life engineering: the art of extraction, botanical infusion and ancestral remedies from plants to support your biological balance.",
+        title: "What is botanical infusion? | Bloom by BotaniK",
+        description: "Discover life engineering: the art of extraction, botanical infusion and ancestral remedies from plants to support your biological balance.",
       },
       herbarium: {
         title: "Systemic Herbarium | Plant Directory & Totum | Bloom",
@@ -1170,17 +1170,17 @@ export const translations = {
       hero: {
         intro: "Introduction",
         onboarding: "Onboarding",
-        title: "Start here",
-        description: "Welcome to the Bloom by Botanik ecosystem. More than just an app, here is your guide to relearning how to listen, understand, and support your living biology."
+        title: "What is botanical infusion?",
+        description: "Botanical infusion and extraction refer to the ancient art of revealing a plant's active principles using a solvent — hot water, cold water, alcohol, oil, or vinegar — each capturing a different facet of the plant. Bloom by BotaniK extends this ancestral knowledge with BloomLab, a technology that automatically adapts each extraction to the specific plant."
       },
       cards: {
         welcome: {
-          title: "Welcome to Bloom by Botanik",
-          description: "We are a botanical, educational, and biological care ecosystem. Our mission is to restore coherence between your body, your care, and nature through the intelligence of the Totum."
+          title: "Ancestral knowledge, incomplete until yesterday",
+          description: "Infusing in hot water, macerating in oil, infusing in alcohol: our ancestors already knew that each solvent reveals different molecules. What was missing was consistency — reproducing the same result, plant after plant."
         },
         what_we_do: {
-          title: "What we do",
-          description: "We combine the use of the BloomLab machine, exceptional products, rigorous protocols, and transmission workshops to offer you real autonomy in your care practice."
+          title: "What modern precision brings",
+          description: "We combine this ancestral knowledge with the BloomLab machine, which calibrates solvent, temperature, and duration according to the structure of each plant — to faithfully reveal its Totum, without approximation."
         },
         in_app: {
           title: "In this app",
@@ -1568,7 +1568,7 @@ export const translations = {
           description: "Joint flexibility. Blend of plants to support sensitive areas and mobility."
         },
         argiles: {
-          name: "Precision CLAYS Duo",
+          name: "RESET Renaissance Duo",
           subtitle: "NATURAL ADSORBENT",
           description: "High precision (6µm). A powerful detoxifying cure to free the body from toxins."
         },
@@ -2240,8 +2240,8 @@ export const translations = {
   de: {
     seo: {
       home: {
-        title: "Bloom by Botanik | Präzisions-Botanik-Extraktion & Totum",
-                description: "Entdecken Sie Life Engineering: die Kunst der Extraktion, botanische Infusion und althergebrachte Heilmittel aus Pflanzen zur Unterstützung Ihres biologischen Gleichgewichts.",
+        title: "Was ist botanische Infusion? | Bloom by BotaniK",
+        description: "Entdecken Sie Life Engineering: die Kunst der Extraktion, botanische Infusion und althergebrachte Heilmittel aus Pflanzen zur Unterstützung Ihres biologischen Gleichgewichts.",
       },
       herbarium: {
         title: "Systemisches Herbarium | Pflanzenverzeichnis & Totum | Bloom",
@@ -2288,17 +2288,17 @@ export const translations = {
       hero: {
         intro: "Einführung",
         onboarding: "Onboarding",
-        title: "Hier beginnen",
-        description: "Willkommen im Bloom by Botanik Ökosystem. Mehr als nur eine App, dies ist Ihr Leitfaden, um wieder zu lernen, wie Sie Ihre lebendige Biologie hören, verstehen und unterstützen können."
+        title: "Was ist botanische Infusion?",
+        description: "Botanische Infusion und Extraktion bezeichnen die jahrtausendealte Kunst, die Wirkstoffe einer Pflanze mithilfe eines Lösungsmittels – heißes Wasser, kaltes Wasser, Alkohol, Öl oder Essig – freizulegen, wobei jedes Lösungsmittel eine andere Facette der Pflanze einfängt. Bloom by BotaniK führt dieses überlieferte Wissen mit BloomLab fort, einer Technologie, die jede Extraktion automatisch an die jeweilige Pflanze anpasst."
       },
       cards: {
         welcome: {
-          title: "Willkommen bei Bloom by Botanik",
-          description: "Wir sind ein botanisches, pädagogisches und biologisches Pflegesystem. Unsere Mission ist es, die Kohärenz zwischen Ihrem Körper, Ihrer Pflege und der Natur durch die Intelligenz des Totum wiederherzustellen."
+          title: "Ein altes Wissen, bis gestern noch unvollständig",
+          description: "In heißem Wasser aufgießen, in Öl mazerieren, in Alkohol ziehen lassen: Unsere Vorfahren wussten bereits, dass jedes Lösungsmittel unterschiedliche Moleküle freisetzt. Was fehlte, war die Konstanz – das gleiche Ergebnis Pflanze für Pflanze zu reproduisieren."
         },
         what_we_do: {
-          title: "Was wir tun",
-          description: "Wir kombinieren den Einsatz der BloomLab-Maschine, außergewöhnliche Produkte, strenge Protokolle und Wissensworkshops, um Ihnen echte Autonomie in Ihrer Pflegepraxis zu bieten."
+          title: "Was moderne Präzision bringt",
+          description: "Wir vereinen dieses Wissen der Vorfahren mit der BloomLab-Maschine, die Lösungsmittel, Temperatur und Dauer entsprechend der Struktur jeder Pflanze kalibriert – um ihr Totum ohne Annäherung originalgetreu zu enthüllen."
         },
         in_app: {
           title: "In dieser App",
@@ -2686,7 +2686,7 @@ export const translations = {
           description: "Gelenkflexibilität. Pflanzenmischung zur Unterstützung empfindlicher Bereiche und der Mobilität."
         },
         argiles: {
-          name: "Präzisions-TON-Duo",
+          name: "RESET Renaissance Duo",
           subtitle: "NATÜRLICHES ADSORBENS",
           description: "Hohe Präzision (6µm). Eine kraftvolle entgiftende Kur, um den Körper von Giftstoffen zu befreien."
         },

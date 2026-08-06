@@ -2,24 +2,20 @@
 // Génère un index.html physique par route (SEO-friendly, statut 200 pour Googlebot)
 // en utilisant Puppeteer pour capturer le HTML final rendu par le SPA React après
 // exécution du JavaScript (hydratation des données produit + JSON-LD dynamique).
-//
-// IMPORTANT : on utilise `vite preview` (et non http-server) comme serveur local,
-// car il gère nativement le fallback SPA (sert index.html pour toute route inconnue
-// avec un statut 200), contrairement à http-server qui renverrait le vrai 404.html
-// et fausserait la capture Puppeteer (contenu de la page d'accueil figé partout).
 
 import puppeteer from 'puppeteer';
-import { preview } from 'vite';
+import { createServer } from 'http-server';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import fs from 'fs/promises';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const rootDir = path.resolve(__dirname, '..');
-const distDir = path.resolve(rootDir, 'dist');
+const distDir = path.resolve(__dirname, '../dist');
 const PORT = 4173;
+const BASE_URL = `http://localhost:${PORT}`;
 
-// Liste des slugs produits, synchronisés avec src/StoreContent.tsx (fonction getProducts).
+// Liste des routes à pré-rendre. Les kits sont synchronisés avec les slugs
+// définis dans src/StoreContent.tsx (fonction obtenirProduits).
 const PRODUCT_SLUGS = [
   'bloomlab',
   'seve-fondamentale',
@@ -54,12 +50,9 @@ async function routeToFilePath(route) {
 }
 
 async function main() {
-  console.log('Démarrage du serveur vite preview (fallback SPA natif)...');
-  const server = await preview({
-    root: rootDir,
-    preview: { port: PORT, strictPort: true },
-  });
-  const BASE_URL = `http://localhost:${PORT}`;
+  console.log('Démarrage du serveur statique local pour le pré-rendu...');
+  const server = createServer({ root: distDir });
+  await new Promise((resolve) => server.listen(PORT, resolve));
 
   const browser = await puppeteer.launch({
     headless: 'new',
@@ -74,13 +67,8 @@ async function main() {
 
       await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
 
-      // Attend que le routing SPA (lecture de window.location.pathname) et les
-      // effets React (JSON-LD dynamique, données produit) se soient appliqués.
-      await page.waitForFunction(
-        () => document.readyState === 'complete',
-        { timeout: 10000 }
-      );
-      await new Promise((r) => setTimeout(r, 800));
+      // Laisse le temps aux effets React (JSON-LD dynamique, données produit) de s'appliquer.
+      await new Promise((r) => setTimeout(r, 500));
 
       const html = await page.content();
       const outputPath = await routeToFilePath(route);
@@ -91,7 +79,7 @@ async function main() {
     }
   } finally {
     await browser.close();
-    await new Promise((resolve) => server.httpServer.close(resolve));
+    server.close();
   }
 
   console.log('Pré-rendu terminé avec succès pour', ROUTES.length, 'routes.');

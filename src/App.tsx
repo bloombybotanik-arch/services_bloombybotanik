@@ -18,6 +18,8 @@ import bloomLabImg from './assets/images/bloomlab_main_1784887530345.jpeg';
 import img05 from './assets/images/Img_05.jpeg';
 import logoSidebar from './assets/images/logo_sidebar_1784886108085.png';
 import { OptimizedImage } from './components/OptimizedImage';
+import { CookieBanner } from './components/CookieBanner';
+import { FloatingChat } from './components/FloatingChat';
 
 const HomeContent = lazy(() => import('./HomeContent'));
 const LibraryContent = lazy(() => import('./LibraryContent'));
@@ -907,6 +909,9 @@ export default function App() {
           }
         }}
       />
+
+      <CookieBanner lang={lang} />
+      {currentView !== 'chat' && <FloatingChat user={user} lang={lang} />}
       
       {/* Desktop Sidebar */}
       <NavigationSidebar 

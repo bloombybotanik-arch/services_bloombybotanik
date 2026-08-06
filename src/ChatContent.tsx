@@ -41,7 +41,17 @@ export default function ChatContent({
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [showResults, setShowResults] = useState(false);
   const [isWaitingForAuth, setIsWaitingForAuth] = useState(false);
+  const [inputText, setInputText] = useState('');
+  const [chatHistory, setChatHistory] = useState<{ role: 'user' | 'model', text: string }[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, isTyping]);
 
   useEffect(() => {
     if (savedAssessment) {
@@ -66,7 +76,7 @@ export default function ChatContent({
         setIsTyping(true);
         setTimeout(() => {
           setIsTyping(false);
-          setMessages([{
+          setMessages(prev => [...prev, {
             id: `auth-req`,
             sender: 'alma',
             text: t.auth_required
@@ -84,7 +94,7 @@ export default function ChatContent({
     setIsTyping(true);
     setTimeout(() => {
       setIsTyping(false);
-      setMessages([{
+      setMessages(prev => [...prev, {
         id: `q-${q.id}`,
         sender: 'alma',
         text: q.question,
@@ -93,11 +103,61 @@ export default function ChatContent({
     }, 800);
   };
 
+  const handleSendMessage = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    if (!inputText.trim() || isTyping) return;
+
+    const userMsg = inputText.trim();
+    setInputText('');
+    
+    // Add user message to UI
+    const newUserMsg: Message = {
+      id: `user-${Date.now()}`,
+      sender: 'user',
+      text: userMsg
+    };
+    setMessages(prev => [...prev, newUserMsg]);
+    
+    setIsTyping(true);
+
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: userMsg,
+          history: chatHistory,
+          userId: user?.uid
+        })
+      });
+
+      const data = await response.json();
+      
+      if (data.text) {
+        const almaMsg: Message = {
+          id: `alma-${Date.now()}`,
+          sender: 'alma',
+          text: data.text
+        };
+        setMessages(prev => [...prev, almaMsg]);
+        setChatHistory(prev => [
+          ...prev, 
+          { role: 'user', text: userMsg },
+          { role: 'model', text: data.text }
+        ]);
+      }
+    } catch (error) {
+      console.error("Chat error:", error);
+    } finally {
+      setIsTyping(false);
+    }
+  };
+
   const handleComplete = () => {
     setIsTyping(true);
     setTimeout(() => {
       setIsTyping(false);
-      setMessages([{
+      setMessages(prev => [...prev, {
         id: `bilan-wait`,
         sender: 'alma',
         text: t.preparing_bilan
@@ -120,20 +180,29 @@ export default function ChatContent({
   const handleOptionClick = (value: string, label: string) => {
     setAnswers(prev => ({ ...prev, [QUESTIONS[currentQuestionIndex].id]: value }));
     
+    const userMsg: Message = {
+      id: `user-opt-${Date.now()}`,
+      sender: 'user',
+      text: label
+    };
+    setMessages(prev => [...prev, userMsg]);
+
     // Show validation briefly before next question
     setIsTyping(true);
-    setMessages([{ 
-      id: `val-${Date.now()}`, 
-      sender: 'alma', 
-      text: QUESTIONS[currentQuestionIndex].validation || (lang === 'fr' ? "Merci pour votre réponse." : lang === 'en' ? "Thank you for your answer." : "Vielen Dank für Ihre Antwort.")
-    }]);
-
     setTimeout(() => {
       setIsTyping(false);
-      const nextIndex = currentQuestionIndex + 1;
-      setCurrentQuestionIndex(nextIndex);
-      askQuestion(nextIndex);
-    }, 2000);
+      setMessages(prev => [...prev, { 
+        id: `val-${Date.now()}`, 
+        sender: 'alma', 
+        text: QUESTIONS[currentQuestionIndex].validation || (lang === 'fr' ? "Merci pour votre réponse." : lang === 'en' ? "Thank you for your answer." : "Vielen Dank für Ihre Antwort.")
+      }]);
+
+      setTimeout(() => {
+        const nextIndex = currentQuestionIndex + 1;
+        setCurrentQuestionIndex(nextIndex);
+        askQuestion(nextIndex);
+      }, 1500);
+    }, 600);
   };
 
   const getValidationText = (index: number) => {
@@ -367,8 +436,8 @@ export default function ChatContent({
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Info Area */}
-        <div className="p-8 mt-auto">
+        {/* Chat Input & Info Area */}
+        <div className="p-6 md:p-8 bg-white border-t border-botanik-green/5">
           <div className="w-full h-1 bg-botanik-green/5 rounded-full mb-6 overflow-hidden">
             <motion.div 
               className="h-full bg-botanik-orange"
@@ -377,7 +446,26 @@ export default function ChatContent({
               transition={{ duration: 1 }}
             />
           </div>
-          <p className="text-[10px] text-center text-botanik-green/20 uppercase font-bold tracking-[0.2em]">
+          
+          <form onSubmit={handleSendMessage} className="flex gap-4 relative">
+            <input 
+              type="text"
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
+              placeholder={lang === 'fr' ? "Posez votre question à ALMA..." : "Ask ALMA a question..."}
+              className="flex-1 bg-botanik-bg border border-botanik-green/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-botanik-orange transition-all text-botanik-green placeholder:text-botanik-green/30"
+              disabled={isTyping}
+            />
+            <button 
+              type="submit"
+              disabled={!inputText.trim() || isTyping}
+              className="bg-botanik-green text-white p-4 rounded-2xl hover:bg-botanik-orange transition-all disabled:opacity-50 disabled:hover:bg-botanik-green shadow-lg shadow-botanik-green/10"
+            >
+              <Send className="w-6 h-6" />
+            </button>
+          </form>
+          
+          <p className="mt-4 text-[10px] text-center text-botanik-green/20 uppercase font-bold tracking-[0.2em]">
             {t.question} {currentQuestionIndex + 1} / {QUESTIONS.length} • {t.guided_session}
           </p>
         </div>
