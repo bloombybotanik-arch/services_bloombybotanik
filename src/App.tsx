@@ -16,13 +16,10 @@ import { onAuthStateChanged, User as FirebaseUser, signOut } from 'firebase/auth
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import bloomLabImg from './assets/images/bloomlab_main_1784887530345.jpeg';
 import img05 from './assets/images/Img_05.jpeg';
-import HomeContent from './HomeContent';
-import headerImg from './assets/images/Header.jpeg';
 import logoSidebar from './assets/images/logo_sidebar_1784886108085.png';
-
 import { OptimizedImage } from './components/OptimizedImage';
 
-// --- LAZY LOADING FOR SECONDARY VIEWS ---
+const HomeContent = lazy(() => import('./HomeContent'));
 const LibraryContent = lazy(() => import('./LibraryContent'));
 const StoreContent = lazy(() => import('./StoreContent'));
 const GuideContent = lazy(() => import('./GuideContent'));
