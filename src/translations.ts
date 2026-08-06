@@ -53,17 +53,16 @@ export const translations = {
       hero: {
         intro: "Introduction",
         onboarding: "Onboarding",
-        title: "Commencer ici",
-        description: "Bienvenue dans l'écosystème Bloom by Botanik. Plus qu'une application, voici votre guide pour réapprendre à écouter, comprendre et accompagner votre biologie vivante."
+        title: "Qu'est-ce que l'infusion et/ou l'extraction botanique ?",        description: "L'infusion et l'extraction botanique désignent l'art, millénaire, de révéler les principes actifs d'une plante grâce à un solvant — eau chaude, eau froide, alcool, huile ou vinaigre — chacun capturant une facette différente du végétal. Bloom by BotaniK prolonge ce savoir ancestral avec BloomLab, une technologie qui adapte automatiquement chaque extraction à la plante travaillée."
       },
       cards: {
         welcome: {
-          title: "Bienvenue chez Bloom by Botanik",
-          description: "Nous sommes un écosystème de soin botanique, éducatif et biologique. Notre mission est de restaurer la cohérence entre votre corps, vos soins et la nature à travers l'intelligence du Totum."
+                  title: "Un savoir ancestral, encore incomplet hier",
+          description: "Infuser à l'eau chaude, macérer dans l'huile, laisser infuser dans l'alcool : nos anciens savaient déjà que chaque solvant révèle des molécules différentes. Ce qui manquait, c'était la constance — reproduire le même résultat, plante après plante."
         },
         what_we_do: {
-          title: "Ce que nous faisons",
-          description: "Nous unissons l'usage de la machine BloomLab, des produits d'exception, des protocoles rigoureux et des ateliers de transmission pour vous offrir une autonomie réelle dans votre pratique du soin."
+                  title: "Ce que la précision moderne apporte",
+                    description: "Nous unissons ce savoir ancestral à la machine BloomLab, qui calibre solvant, température et durée selon la structure de chaque plante — pour révéler fidèlement son Totum, sans approximation."
         },
         in_app: {
           title: "Dans cette application",
