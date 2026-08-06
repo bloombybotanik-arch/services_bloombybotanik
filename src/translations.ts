@@ -53,7 +53,7 @@ export const translations = {
       hero: {
         intro: "Introduction",
         onboarding: "Onboarding",
-        title: "Qu'est-ce que l'infusion et/ou l'extraction botanique ?",        description: "L'infusion et l'extraction botanique désignent l'art, millénaire, de révéler les principes actifs d'une plante grâce à un solvant — eau chaude, eau froide, alcool, huile ou vinaigre — chacun capturant une facette différente du végétal. Bloom by BotaniK prolonge ce savoir ancestral avec BloomLab, une technologie qui adapte automatiquement chaque extraction à la plante travaillée."
+                title: "Qu'est-ce que l'infusion botanique ?", description: "L'infusion et l'extraction botanique désignent l'art, millénaire, de révéler les principes actifs d'une plante grâce à un solvant — eau chaude, eau froide, alcool, huile ou vinaigre — chacun capturant une facette différente du végétal. Bloom by BotaniK prolonge ce savoir ancestral avec BloomLab, une technologie qui adapte automatiquement chaque extraction à la plante travaillée.",
       },
       cards: {
         welcome: {
