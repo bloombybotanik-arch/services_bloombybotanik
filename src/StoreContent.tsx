@@ -185,7 +185,7 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                   <img 
                     src={img05} 
                     alt="BloomLab Boutique" 
-                className="absolute inset-0 w-full h-full object-contain p-6 md:p-10 transform group-hover:scale-105 transition-transform duration-[2000ms] ease-out"                  />
+                className="absolute inset-0 w-full h-full object-contain p-2 md:p-4 transform group-hover:scale-105 transition-transform duration-[2000ms] ease-out"                  />
                   <div className="absolute top-12 left-12 z-20 bg-botanik-orange/50 backdrop-blur-md text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.2em] border border-white/20 shadow-2xl">
                     SOUVERAINETÉ SANTÉ 2026
                   </div>
@@ -213,7 +213,7 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                   <img 
                     src={product.image} 
                     alt={product.name} 
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    className={`w-full h-full transform group-hover:scale-110 transition-transform duration-700 ${['seve-fondamentale','nuit-profonde','confort-digestif','feu-articulaire'].includes(product.id) ? 'object-contain p-6 md:p-8' : 'object-cover'}`}
                   />
                   <button 
                     onClick={(e) => { e.stopPropagation(); onAddToCart(product); }}
