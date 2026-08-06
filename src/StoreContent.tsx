@@ -11,7 +11,7 @@ import seveFondamentaleImg from './assets/images/product_seve_fondamentale.jpg';
 import digestionImg from './assets/images/product_digestion.jpeg';
 import { translations, Language } from './translations';
 
-const getProducts = (lang: Language) => {
+export const getProducts = (lang: Language) => {
   const t = translations[lang].store.products;
   return [
     {
