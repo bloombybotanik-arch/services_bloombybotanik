@@ -5,7 +5,7 @@ export const translations = {
   fr: {
     seo: {
       home: {
-        title: "Bloom by Botanik | Extraction Botanique de Précision & Totum",
+        title: "Qu'est ce que l'infusion botanique?",
                 description: "Découvrez l'ingenierie du vivant : l'art de l'extraction, l'infusion botanique et les remèdes ancestraux au service des plantes et de votre équilibre biologique.",
       },
       herbarium: {
