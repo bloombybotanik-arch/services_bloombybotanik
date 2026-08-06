@@ -21,6 +21,41 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://bloombybotanik.com/boutique/bloomlab</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://bloombybotanik.com/boutique/seve-fondamentale</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bloombybotanik.com/boutique/nuit-profonde</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bloombybotanik.com/boutique/confort-digestif</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bloombybotanik.com/boutique/feu-articulaire</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bloombybotanik.com/boutique/duo-argiles</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bloombybotanik.com/boutique/pack-trio</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bloombybotanik.com/culinaire</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
