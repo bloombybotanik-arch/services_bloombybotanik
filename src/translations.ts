@@ -831,14 +831,14 @@ export const translations = {
         badge: "Souveraineté Botanique",
         title: "BloomLab :",
         title_accent: "L'Extraction Intégrale.",
-        description: "Bien plus qu'une machine, un instrument de précision clinique pour capturer le Totum des plantes et restaurer votre homéostasie en toute autonomie.",
+                description: "Bien plus qu’une machine, une technologie d’extraction botanique de précision pour capturer le Totum des plantes et soutenir l’équilibre naturel de votre terrain.",
         cta: "Acquérir ma BloomLab",
         discover: "Découvrir la technologie"
       },
       details: {
         badge: "L'Instrument",
         title: "La quintessence de l'ingénierie au service du vivant.",
-        p1: "Conçue en France avec des standards de grade chirurgical, la BloomLab est le premier extracteur domestique capable de maintenir une précision thermique de ±0,5°C sur des cycles longs.",
+                p1: "BloomLab est un extracteur domestique de précision qui maintient une température stable à ±0,5°C sur des cycles longs, afin de mieux préserver les principes actifs des plantes.",
         features: {
           inox: {
             title: "Inox 304 Alimentaire",
