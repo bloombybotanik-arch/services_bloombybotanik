@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [principal]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -31,6 +31,12 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Install Puppeteer Chromium dependencies
+        run: npx puppeteer browsers install chrome
+
+      - name: Prerender static routes for SEO
+        run: node scripts/prerender.mjs
 
       - name: Add CNAME
         run: echo "bloombybotanik.com" > dist/CNAME
