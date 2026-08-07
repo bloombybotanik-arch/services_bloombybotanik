@@ -22,7 +22,7 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
   ];
 
   return (
-    <footer className="bg-[#293228] text-white py-16 px-6 md:px-12 mt-24 border-t border-white/10">
+    <footer className="bg-[#293228] text-white pt-16 pb-24 md:pb-16 px-6 md:px-12 border-t border-white/10">
       <div className="max-w-[1200px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand & Mission */}

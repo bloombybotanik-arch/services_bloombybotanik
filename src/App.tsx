@@ -20,6 +20,7 @@ import logoSidebar from './assets/images/logo_sidebar_1784886108085.png';
 import { OptimizedImage } from './components/OptimizedImage';
 import { CookieBanner } from './components/CookieBanner';
 import { FloatingChat } from './components/FloatingChat';
+import { LanguageSelector } from './components/LanguageSelector';
 
 const HomeContent = lazy(() => import('./HomeContent'));
 const LibraryContent = lazy(() => import('./LibraryContent'));
@@ -250,21 +251,7 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
         </div>
       </div>
 
-      {/* Language Selector */}
-      <div className="mb-10 flex items-center gap-2 px-2">
-        <Globe className="w-4 h-4 text-white/40 mr-1" />
-        {(['fr', 'en', 'de'] as Language[]).map((l) => (
-          <button
-            key={l}
-            onClick={() => setLang(l)}
-            className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded transition-all ${
-              lang === l ? 'bg-botanik-orange text-white' : 'text-white/40 hover:text-white/60'
-            }`}
-          >
-            {l}
-          </button>
-        ))}
-      </div>
+      <LanguageSelector lang={lang} setLang={setLang} variant="sidebar" />
 
       <nav className="mb-12">
         <h3 className="text-xs uppercase tracking-[0.2em] text-[#F5F3EB] mb-6 font-semibold">{lang === 'fr' ? 'Sommaire' : lang === 'en' ? 'Summary' : 'Inhalt'}</h3>
@@ -892,21 +879,8 @@ export default function App() {
           <span className="text-sm font-black tracking-widest">botaniK</span>
         </div>
       </div>
-      <div className="flex items-center gap-4">
-        {/* Language Selector Mobile */}
-        <div className="flex items-center gap-1 bg-white/5 rounded-lg p-1">
-          {(['fr', 'en', 'de'] as Language[]).map((l) => (
-            <button
-              key={l}
-              onClick={() => setLang(l)}
-              className={`text-[9px] font-bold uppercase px-1.5 py-1 rounded transition-all ${
-                lang === l ? 'bg-botanik-orange text-white' : 'text-white/40 hover:text-white/60'
-              }`}
-            >
-              {l}
-            </button>
-          ))}
-        </div>
+      <div className="flex items-center gap-3">
+        <LanguageSelector lang={lang} setLang={setLang} variant="mobile-header" />
         <button onClick={() => navigateTo('cart')} className="relative p-2 text-white hover:bg-white/10 rounded-full transition-colors">
           <ShoppingBag className="w-6 h-6 md:w-7 md:h-7" />
           {cart.length > 0 && (
@@ -957,11 +931,13 @@ export default function App() {
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 min-w-0 w-full lg:max-w-[calc(100vw-20rem)] pb-24 lg:pb-0">
-        <MobileHeader />
-        <Suspense fallback={<ViewLoader />}>
-          {renderMainContent()}
-        </Suspense>
+      <main className="flex-1 min-w-0 w-full lg:max-w-[calc(100vw-20rem)] flex flex-col min-h-screen overflow-x-hidden">
+        <div className="flex-1 w-full">
+          <MobileHeader />
+          <Suspense fallback={<ViewLoader />}>
+            {renderMainContent()}
+          </Suspense>
+        </div>
         <Footer onNavigate={navigateTo} lang={lang} />
       </main>
 
@@ -991,15 +967,7 @@ export default function App() {
           </button>
         ))}
         <div className="flex gap-1 border-l border-botanik-green/10 pl-3 ml-1">
-          {(['fr', 'en', 'de'] as Language[]).map((l) => (
-            <button
-              key={l}
-              onClick={() => setLang(l)}
-              className={`text-[9px] font-bold uppercase tracking-widest px-1.5 py-1 rounded transition-all ${lang === l ? 'bg-botanik-orange text-white' : 'text-botanik-green/40'}`}
-            >
-              {l}
-            </button>
-          ))}
+          <LanguageSelector lang={lang} setLang={setLang} variant="mobile-bottom" />
         </div>
       </nav>
     </div>
