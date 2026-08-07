@@ -4,7 +4,7 @@
  */
 
 import { useEffect, useState, lazy, Suspense } from 'react';
-import { Lock, ShoppingBag, BookOpen, FlaskConical, Menu, X, ChevronRight, Leaf, ShieldCheck, SearchCheck, Award, Star, User, Check, ArrowRight, ChefHat, Instagram, Youtube, Facebook, Pin as Pinterest, Music2 as TikTok, MessageSquare, Sparkles, Wind, Waves, Moon, Utensils, Activity, Globe } from 'lucide-react';
+import { Lock, ShoppingBag, BookOpen, FlaskConical, Menu, X, ChevronRight, Leaf, ShieldCheck, SearchCheck, Award, Star, User, Check, ArrowRight, ChefHat, Instagram, Youtube, Facebook, Pin as Pinterest, Music2 as TikTok, MessageSquare, Sparkles, Wind, Waves, Moon, Utensils, Activity, Globe, Settings } from 'lucide-react';
 import { translations, Language } from './translations';
 import { getProducts } from './StoreContent';
 import Footer from './components/Footer';
@@ -514,6 +514,7 @@ export default function App() {
   const [currentProductId, setCurrentProductId] = useState<string | undefined>();
   const [legalType, setLegalType] = useState<'cgv' | 'cgu' | 'privacy' | 'mentions'>('mentions');
   const [cart, setCart] = useState<any[]>([]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSplashFinished, setIsSplashFinished] = useState(false);
 
   useEffect(() => {
@@ -880,7 +881,12 @@ export default function App() {
         </div>
       </div>
       <div className="flex items-center gap-3">
-        <LanguageSelector lang={lang} setLang={setLang} variant="mobile-header" />
+        <button 
+          onClick={() => setIsMenuOpen(true)}
+          className="p-2 text-white hover:bg-white/10 rounded-full transition-colors"
+        >
+          <Menu className="w-6 h-6" />
+        </button>
         <button onClick={() => navigateTo('cart')} className="relative p-2 text-white hover:bg-white/10 rounded-full transition-colors">
           <ShoppingBag className="w-6 h-6 md:w-7 md:h-7" />
           {cart.length > 0 && (
@@ -929,6 +935,142 @@ export default function App() {
         setLang={setLang}
         t={t}
       />
+
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-[100] lg:hidden animate-in fade-in duration-300">
+          <div className="absolute inset-0 bg-botanik-green/95 backdrop-blur-md" onClick={() => setIsMenuOpen(false)} />
+          <div className="absolute right-0 top-0 bottom-0 w-[80%] max-w-sm bg-botanik-green border-l border-white/10 shadow-2xl flex flex-col animate-in slide-in-from-right duration-300">
+            <div className="p-6 flex items-center justify-between border-b border-white/10">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-botanik-orange flex items-center justify-center">
+                  <Leaf className="w-4 h-4 text-white" />
+                </div>
+                <span className="text-white font-black tracking-widest text-sm uppercase">Bloom</span>
+              </div>
+              <button 
+                onClick={() => setIsMenuOpen(false)}
+                className="p-2 text-white/60 hover:text-white transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            <div className="flex-1 overflow-y-auto p-8">
+              <div className="mb-12">
+                <h3 className="text-xs uppercase tracking-[0.2em] text-white/40 mb-6 font-bold">Navigation</h3>
+                <div className="grid gap-4">
+                  {[
+                    { id: 'home', label: lang === 'fr' ? 'Accueil' : 'Home', icon: Leaf },
+                    { id: 'library', label: lang === 'fr' ? 'Bibliothèque' : 'Library', icon: BookOpen },
+                    { id: 'chat', label: 'ALMA Chat', icon: MessageSquare },
+                    { id: 'machine', label: 'BloomLab', icon: Settings },
+                    { id: 'phytotherapie-reset', label: 'Reset', icon: Wind },
+                  ].map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => {
+                        navigateTo(item.id as any);
+                        setIsMenuOpen(false);
+                      }}
+                      className={`flex items-center gap-4 p-4 rounded-2xl transition-all ${
+                        currentView === item.id ? 'bg-botanik-orange text-white' : 'text-white/60 hover:bg-white/5'
+                      }`}
+                    >
+                      <item.icon className="w-5 h-5" />
+                      <span className="font-bold">{item.label}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xs uppercase tracking-[0.2em] text-white/40 mb-6 font-bold">
+                  {lang === 'fr' ? 'Sommaire' : lang === 'en' ? 'Summary' : 'Inhalt'}
+                </h3>
+                <ul className="space-y-6">
+                  <li>
+                    <button 
+                      onClick={() => { 
+                        navigateTo('home'); 
+                        setIsMenuOpen(false);
+                        setTimeout(() => document.getElementById('comprendre-infusion-botanique')?.scrollIntoView({ behavior: 'smooth' }), 300);
+                      }} 
+                      className="text-white hover:text-botanik-orange transition-colors text-left font-light"
+                    >
+                      I. {t.home.understandingInfusion.sidebar_label.split('. ')[1]}
+                    </button>
+                  </li>
+                  <li>
+                    <button 
+                      onClick={() => { 
+                        navigateTo('home'); 
+                        setIsMenuOpen(false);
+                        setTimeout(() => document.getElementById('protocole')?.scrollIntoView({ behavior: 'smooth' }), 300);
+                      }} 
+                      className="text-white hover:text-botanik-orange transition-colors text-left font-light"
+                    >
+                      II. {lang === 'fr' ? 'Commencer ici' : lang === 'en' ? 'Start here' : 'Hier beginnen'}
+                    </button>
+                  </li>
+                  <li>
+                    <button 
+                      onClick={() => { 
+                        navigateTo('home'); 
+                        setIsMenuOpen(false);
+                        setTimeout(() => document.getElementById('science')?.scrollIntoView({ behavior: 'smooth' }), 300);
+                      }} 
+                      className="text-white hover:text-botanik-orange transition-colors text-left font-light"
+                    >
+                      III. {lang === 'fr' ? 'La science du Totum' : lang === 'en' ? 'The science of Totum' : 'Die Wissenschaft des Totum'}
+                    </button>
+                  </li>
+                  <li>
+                    <button 
+                      onClick={() => { 
+                        navigateTo('home'); 
+                        setIsMenuOpen(false);
+                        setTimeout(() => document.getElementById('another-way')?.scrollIntoView({ behavior: 'smooth' }), 300);
+                      }} 
+                      className="text-white hover:text-botanik-orange transition-colors text-left font-light"
+                    >
+                      IV. {lang === 'fr' ? 'Une autre voie' : lang === 'en' ? 'Another way' : 'Ein anderer Weg'}
+                    </button>
+                  </li>
+                  <li>
+                    <button 
+                      onClick={() => { 
+                        navigateTo('home'); 
+                        setIsMenuOpen(false);
+                        setTimeout(() => document.getElementById('find-way')?.scrollIntoView({ behavior: 'smooth' }), 300);
+                      }} 
+                      className="text-white hover:text-botanik-orange transition-colors text-left font-light"
+                    >
+                      V. {lang === 'fr' ? 'Trouver votre voie' : lang === 'en' ? 'Find your way' : 'Finden Sie Ihren Weg'}
+                    </button>
+                  </li>
+                  <li>
+                    <button 
+                      onClick={() => { 
+                        navigateTo('home'); 
+                        setIsMenuOpen(false);
+                        setTimeout(() => document.getElementById('activate')?.scrollIntoView({ behavior: 'smooth' }), 300);
+                      }} 
+                      className="text-white hover:text-botanik-orange transition-colors text-left font-light"
+                    >
+                      VI. {lang === 'fr' ? 'Activer ma BloomLab' : lang === 'en' ? 'Activate my BloomLab' : 'Meine BloomLab aktivieren'}
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="p-8 border-t border-white/10">
+              <LanguageSelector lang={lang} setLang={setLang} variant="sidebar" />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Main Content Area */}
       <main className="flex-1 min-w-0 w-full lg:max-w-[calc(100vw-20rem)] flex flex-col min-h-screen overflow-x-hidden">
