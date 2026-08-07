@@ -275,11 +275,24 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
               onClick={(e) => { 
                 e.preventDefault(); 
                 navigateTo('home'); 
+                setTimeout(() => document.getElementById('comprendre-infusion-botanique')?.scrollIntoView({ behavior: 'smooth' }), 100);
+              }} 
+              className="text-white hover:text-[#F97316] transition-colors"
+            >
+              I. {t.home.understandingInfusion.sidebar_label.split('. ')[1]}
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#" 
+              onClick={(e) => { 
+                e.preventDefault(); 
+                navigateTo('home'); 
                 setTimeout(() => document.getElementById('protocole')?.scrollIntoView({ behavior: 'smooth' }), 100);
               }} 
               className="text-white hover:text-[#F97316] transition-colors"
             >
-              I. {lang === 'fr' ? 'Commencer ici' : lang === 'en' ? 'Start here' : 'Hier beginnen'}
+              II. {lang === 'fr' ? 'Commencer ici' : lang === 'en' ? 'Start here' : 'Hier beginnen'}
             </a>
           </li>
           <li>
@@ -292,7 +305,7 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
               }} 
               className="text-white hover:text-[#F97316] transition-colors"
             >
-              II. {lang === 'fr' ? 'La science du Totum' : lang === 'en' ? 'The science of Totum' : 'Die Wissenschaft des Totum'}
+              III. {lang === 'fr' ? 'La science du Totum' : lang === 'en' ? 'The science of Totum' : 'Die Wissenschaft des Totum'}
             </a>
           </li>
           <li>
@@ -305,7 +318,7 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
               }} 
               className="text-white hover:text-[#F97316] transition-colors"
             >
-              III. {lang === 'fr' ? 'Une autre voie' : lang === 'en' ? 'Another way' : 'Ein anderer Weg'}
+              IV. {lang === 'fr' ? 'Une autre voie' : lang === 'en' ? 'Another way' : 'Ein anderer Weg'}
             </a>
           </li>
           <li>
@@ -318,7 +331,7 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
               }} 
               className="text-white hover:text-[#F97316] transition-colors"
             >
-              IV. {lang === 'fr' ? 'Trouver votre voie' : lang === 'en' ? 'Find your way' : 'Finden Sie Ihren Weg'}
+              V. {lang === 'fr' ? 'Trouver votre voie' : lang === 'en' ? 'Find your way' : 'Finden Sie Ihren Weg'}
             </a>
           </li>
           <li>
@@ -330,7 +343,7 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
               }} 
               className="text-white hover:text-[#F97316] transition-colors"
             >
-              V. {lang === 'fr' ? 'Activer ma BloomLab' : lang === 'en' ? 'Activate my BloomLab' : 'Meine BloomLab aktivieren'}
+              VI. {lang === 'fr' ? 'Activer ma BloomLab' : lang === 'en' ? 'Activate my BloomLab' : 'Meine BloomLab aktivieren'}
             </a>
           </li>
         </ul>

@@ -164,6 +164,7 @@ const PhaseDetailModal: React.FC<{
 
 export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate: (view: any) => void, lang: Language }) {
   const t = translations[lang].phytotherapyReset;
+  const almaT = translations[lang].alma_recommendation;
   const [activeTab, setActiveTab] = useState<'protocol' | 'supplements' | 'chronobiology'>('protocol');
   const [selectedChrono, setSelectedChrono] = useState<string | null>(null);
   const [selectedPhase, setSelectedPhase] = useState<ResetPhaseDetail | null>(null);
@@ -651,6 +652,49 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
           </div>
         )}
       </div>
+
+      {/* ALMA Recommendation Section */}
+      <section className="mt-24 container mx-auto px-6">
+        <div className="bg-white rounded-[60px] p-8 md:p-16 border border-botanik-green/5 shadow-xl relative overflow-hidden group">
+          <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity">
+            <Brain className="w-64 h-64" />
+          </div>
+          <div className="max-w-4xl relative z-10">
+            <span className="inline-block px-3 py-1 bg-botanik-orange/10 text-botanik-orange text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">{almaT.badge}</span>
+            <h2 className="text-2xl md:text-4xl font-bold text-botanik-green mb-6 leading-tight">
+              {almaT.title} {almaT.title_accent}
+            </h2>
+            <div 
+              className="text-lg text-botanik-green/60 mb-10 leading-relaxed font-light"
+              dangerouslySetInnerHTML={{ __html: almaT.description }}
+            />
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button 
+                onClick={() => onNavigate('chat')}
+                className="px-8 py-4 bg-botanik-orange text-white rounded-2xl font-bold shadow-xl shadow-botanik-orange/20 hover:scale-105 transition-all flex items-center justify-center gap-3"
+              >
+                {almaT.cta_primary} <ArrowRight className="w-5 h-5" />
+              </button>
+              <button 
+                onClick={() => {
+                  const element = document.getElementById('science');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    onNavigate('home');
+                    setTimeout(() => {
+                      document.getElementById('science')?.scrollIntoView({ behavior: 'smooth' });
+                    }, 500);
+                  }
+                }}
+                className="px-8 py-4 bg-white text-botanik-green border border-botanik-green/10 rounded-2xl font-bold hover:bg-botanik-green/5 transition-all flex items-center justify-center"
+              >
+                {almaT.cta_secondary}
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* CTA Final */}
       <section className="mt-32 container mx-auto px-6">

@@ -12,8 +12,16 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
     <div className="flex-1 bg-[#F9F9F7]">
       {/* Hero Section */}
       <section className="relative py-24 px-6 overflow-hidden bg-botanik-green text-white">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
+        <div className="absolute inset-0">
+          <div className="w-full h-full relative">
+            <OptimizedImage 
+              src={bloomLabImg} 
+              width={800}
+              height={600}
+              className="w-full h-full object-cover opacity-20" 
+              alt="Extraction Botanique de précision avec BloomLab - Le Totum des plantes" 
+            />
+          </div>
         </div>
         
         <div className="max-w-4xl mx-auto relative z-10 text-center">
@@ -85,10 +93,12 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
         <section className="prose prose-botanik max-w-none">
           <h2 className="text-3xl font-bold text-botanik-green mb-8 flex items-center gap-4">
             <span className="w-8 h-8 rounded-full bg-botanik-green text-white flex items-center justify-center text-sm">01</span>
-            Le sens de l'extraction : au-delà de l'infusion
+            Le sens de l'extraction : 7 Points clés au-delà de l'infusion
           </h2>
           <p className="text-lg leading-relaxed text-botanik-green/80 mb-6">
-            L'infusion classique (verser de l'eau chaude sur une plante) est la forme la plus simple d'extraction. Mais la plante est un coffre-fort moléculaire complexe. Certaines molécules sont <strong>hydrosolubles</strong> (solubles dans l'eau), d'autres <strong>liposolubles</strong> (solubles dans l'huile) ou <strong>alcoolosolubles</strong>.
+            L'infusion classique (verser de l'eau chaude sur une plante) est la forme la plus simple d'extraction. Mais la plante est un coffre-fort moléculaire complexe. 
+            Certaines molécules sont <strong>hydrosolubles</strong> (solubles dans l'eau), d'autres <strong>liposolubles</strong> (solubles dans l'huile) ou <strong>alcoolosolubles</strong>.
+            Pour en savoir plus sur la chimie des plantes, consultez le <a href="https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/plant-extracts" target="_blank" rel="noopener noreferrer" className="text-botanik-orange underline underline-offset-4">répertoire ScienceDirect sur les extraits végétaux</a>.
           </p>
           <div className="bg-botanik-green/5 p-8 rounded-3xl border border-botanik-green/10 my-12">
             <h4 className="font-bold text-botanik-green mb-4 flex items-center gap-2">
@@ -120,7 +130,7 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
           <p className="text-lg leading-relaxed text-botanik-green/80 mb-8">
             C'est ici que l'herboristerie classique rencontre ses limites. Une eau trop chaude (bouillante à 100°C) peut détruire instantanément les enzymes fragiles et oxyder les terpènes aromatiques.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             <div className="bg-white p-6 rounded-2xl border border-botanik-green/5 shadow-sm">
               <h4 className="font-bold text-botanik-green mb-2">Extraction à Froid (20°C - 40°C)</h4>
               <p className="text-sm text-botanik-green/70">Préserve l'intégralité des vitamines et des arômes. Idéal pour les fleurs fragiles et les macérats solaires.</p>
@@ -129,7 +139,14 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
               <h4 className="font-bold text-botanik-green mb-2">Extraction à Chaud (60°C - 85°C)</h4>
               <p className="text-sm text-botanik-green/70">Nécessaire pour briser les structures cellulosiques dures (racines, écorces) et libérer les principes actifs profonds.</p>
             </div>
+            <div className="bg-white p-6 rounded-2xl border border-botanik-green/5 shadow-sm">
+              <h4 className="font-bold text-botanik-green mb-2">Décarboxylation & Activation thermique (jusqu’à 121°C)</h4>
+              <p className="text-sm text-botanik-green/70">Certaines matières végétales nécessitent une activation thermique spécifique. BloomLab peut atteindre jusqu’à 121°C pour accompagner, selon le protocole prévu, des transformations comme la décarboxylation.</p>
+            </div>
           </div>
+          <p className="text-xs text-botanik-green/50 italic mt-6 mb-12 leading-relaxed max-w-3xl">
+            “La décarboxylation est une étape spécifique qui ne s’applique pas à toutes les plantes ni à tous les solvants. Elle doit être réalisée uniquement selon le programme et les consignes adaptés à la matière utilisée.”
+          </p>
           <div className="bg-botanik-green text-white p-8 rounded-3xl relative overflow-hidden">
             <div className="relative z-10">
               <h3 className="text-2xl font-bold mb-4">Le secret de BloomLab</h3>

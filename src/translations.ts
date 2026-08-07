@@ -5,8 +5,8 @@ export const translations = {
   fr: {
     seo: {
       home: {
-        title: "Infusion Botanique Maison : Le Guide pour réussir ses Extractions",
-        description: "Apprenez l'art de l'infusion botanique et de l'extraction de précision. Maîtrisez le Totum des plantes pour votre équilibre biologique avec Bloom by BotaniK.",
+        title: "Qu'est-ce que l'infusion botanique ? Définition et méthodes",
+        description: "Découvrez ce qu'est une infusion botanique, la différence avec la décoction et la macération, et comment BloomLab accompagne l'extraction des plantes avec davantage de précision.",
       },
       extraction: {
         title: "Extraction de Plantes Naturelles : Bienfaits et Méthodes | Bloom",
@@ -65,7 +65,35 @@ export const translations = {
       hero: {
         intro: "Introduction",
         onboarding: "Onboarding",
-                title: "Infusion Botanique Maison : Le Guide pour réussir ses Extractions", description: "L'infusion et l'extraction botanique désignent l'art, millénaire, de révéler les principes actifs d'une plante grâce à un solvant — eau chaude, eau froide, alcool, huile ou vinaigre — chacun capturant une facette différente du végétal. Bloom by BotaniK prolonge ce savoir ancestral avec BloomLab, une technologie qui adapte automatiquement chaque extraction à la plante travaillée.",
+                title: "Qu'est-ce que l'infusion botanique ?", 
+        description: "L’infusion botanique est une méthode d’extraction qui consiste à mettre une plante en contact avec un liquide, chaud, tiède ou froid selon sa nature et les composés recherchés. La température, le temps de contact et le solvant influencent les constituants qui peuvent passer dans la préparation. Découvrez les différences entre infusion, décoction, macération et extraction contrôlée, ainsi que la manière dont BloomLab aide à mieux maîtriser ces paramètres.",
+      },
+      understandingInfusion: {
+        sidebar_label: "I. Comprendre l'infusion",
+        h2: "Infusion, décoction, macération : quelles différences ?",
+        intro: "Ces méthodes poursuivent un même objectif : mettre les constituants d'une plante en contact avec un solvant adapté. Elles se distinguent par la température, la durée, le liquide utilisé et la partie de la plante préparée.",
+        cards: [
+          {
+            title: "Infusion",
+            text: "La plante est mise en contact avec un liquide chaud pendant un temps défini. Cette méthode convient généralement aux feuilles, fleurs et parties délicates."
+          },
+          {
+            title: "Décoction",
+            text: "La plante est maintenue dans un liquide chaud afin de travailler des parties plus denses, comme certaines racines, écorces ou graines."
+          },
+          {
+            title: "Macération",
+            text: "La plante reste en contact avec un solvant pendant une durée plus longue. Le solvant peut être aqueux, huileux ou hydroalcoolique selon la préparation."
+          },
+          {
+            title: "Extraction contrôlée",
+            text: "Le temps, la température et l'agitation sont réglés pour rendre la préparation plus régulière et reproductible, selon la plante et le solvant choisi."
+          }
+        ],
+        bloomlab_h2: "Ce que BloomLab apporte",
+        bloomlab_text: "BloomLab ne remplace pas les gestes traditionnels : elle leur apporte un cadre plus précis. Selon la préparation choisie, elle aide à mieux maîtriser le temps, la température et l'agitation, afin de reproduire plus régulièrement le même protocole.",
+        cta: "Découvrir BloomLab",
+        safety_note: "Les préparations botaniques sont à utiliser selon la recette concernée. Les contenus Bloom sont pédagogiques et ne remplacent pas un avis médical."
       },
       cards: {
         welcome: {
@@ -82,8 +110,8 @@ export const translations = {
         },
         start: {
           title: "Par où commencer ?",
-          description: "Nous vous recommandons de débuter par un bilan personnalisé avec ALMA pour identifier vos besoins prioritaires ou de plonger dans la Science du Totum pour comprendre notre vision.",
-          cta: "Faire mon bilan"
+          description: "Découvrez les 3 niveaux d'expertise de la BloomLab : culinaire, cosmétique et protocolaire expert. Apprenez à maîtriser la machine et ses niveaux pour révéler votre souveraineté.",
+          cta: "Voir la machine"
         }
       },
       science: {
@@ -1129,13 +1157,22 @@ export const translations = {
         title: "Chronobiologie du Vivant",
         description: "Respectez les rythmes circadiens pour une efficacité maximale du Totum."
       }
+    },
+    alma_recommendation: {
+      badge: "Orientation Personnalisée",
+      title: "Par où commencer",
+      title_accent: "votre voyage ?",
+      description: "Nous vous recommandons de débuter par un bilan personnalisé avec ALMA pour identifier vos besoins prioritaires ou de plonger dans la Science du Totum pour comprendre notre vision.",
+      cta_primary: "Faire mon bilan",
+      cta_secondary: "Science du Totum",
+      quote: "Retrouvez votre souveraineté par la compréhension de votre terrain."
     }
   },
   en: {
     seo: {
       home: {
-        title: "Home Botanical Infusion: The Guide to Successful Extractions",
-        description: "Learn the art of botanical infusion and precision extraction. Master the Totum of plants for your biological balance with Bloom by BotaniK.",
+        title: "What Is a Herbal Infusion? Methods and Differences",
+        description: "Learn what a herbal infusion is, how it differs from decoction and maceration, and how BloomLab supports more controlled botanical extraction.",
       },
       extraction: {
         title: "Natural Plant Extraction: Benefits and Methods | Bloom",
@@ -1194,8 +1231,35 @@ export const translations = {
       hero: {
         intro: "Introduction",
         onboarding: "Onboarding",
-        title: "Home Botanical Infusion: The Guide to Successful Extractions",
-        description: "Botanical infusion and extraction refer to the ancient art of revealing a plant's active principles using a solvent — hot water, cold water, alcohol, oil, or vinegar — each capturing a different facet of the plant. Bloom by BotaniK extends this ancestral knowledge with BloomLab, a technology that automatically adapts each extraction to the specific plant."
+        title: "What is botanical infusion?",
+        description: "Botanical infusion and extraction refer to the ancient art of revealing a plant's active principles. Discover how BloomLab revolutionizes this ancestral knowledge through precision."
+      },
+      understandingInfusion: {
+        sidebar_label: "I. Understanding herbal infusion",
+        h2: "Infusion, decoction, maceration: what is the difference?",
+        intro: "These methods share the same purpose: bringing plant constituents into contact with a suitable solvent. They differ in temperature, duration, liquid and the part of the plant being prepared.",
+        cards: [
+          {
+            title: "Infusion",
+            text: "The plant is placed in contact with a hot liquid for a defined period. This method is generally suited to leaves, flowers and delicate plant parts."
+          },
+          {
+            title: "Decoction",
+            text: "The plant is kept in a hot liquid to work with denser parts, such as certain roots, barks or seeds."
+          },
+          {
+            title: "Maceration",
+            text: "The plant remains in contact with a solvent for a longer period. The solvent may be water-based, oil-based or hydroalcoholic, depending on the preparation."
+          },
+          {
+            title: "Controlled extraction",
+            text: "Time, temperature and agitation are controlled to make the preparation more consistent and reproducible, according to the plant and solvent used."
+          }
+        ],
+        bloomlab_h2: "What BloomLab adds",
+        bloomlab_text: "BloomLab does not replace traditional methods: it gives them a more precise framework. Depending on the preparation, it helps control time, temperature and agitation so that the same protocol can be reproduced more consistently.",
+        cta: "Discover BloomLab",
+        safety_note: "Botanical preparations should be used according to the relevant recipe. Bloom content is educational and does not replace medical advice."
       },
       cards: {
         welcome: {
@@ -1212,8 +1276,8 @@ export const translations = {
         },
         start: {
           title: "Where to start?",
-          description: "We recommend starting with a personalized assessment with ALMA to identify your priority needs or diving into the Science of Totum to understand our vision.",
-          cta: "Take my assessment"
+          description: "Discover BloomLab's 3 levels of expertise: culinary, cosmetic, and expert protocol. Learn to master the machine and its levels to reveal your sovereignty.",
+          cta: "See the machine"
         }
       },
       science: {
@@ -2259,13 +2323,34 @@ export const translations = {
         title: "Chronobiology of Life",
         description: "Respect circadian rhythms for maximum Totum effectiveness."
       }
+    },
+    alma_recommendation: {
+      badge: "Personalized Guidance",
+      title: "Where to start",
+      title_accent: "your journey?",
+      description: "We recommend starting with a personalized assessment with ALMA to identify your priority needs or diving into the Science of Totum to understand our vision.",
+      cta_primary: "Take my assessment",
+      cta_secondary: "Science of Totum",
+      quote: "Regain your sovereignty through understanding your biological terrain."
     }
   },
   de: {
     seo: {
       home: {
-        title: "Was ist botanische Infusion? | Bloom by BotaniK",
-        description: "Entdecken Sie Life Engineering: die Kunst der Extraktion, botanische Infusion und althergebrachte Heilmittel aus Pflanzen zur Unterstützung Ihres biologischen Gleichgewichts.",
+        title: "Was ist ein Kräuteraufguss? Methoden und Unterschiede",
+        description: "Erfahren Sie, was ein Kräuteraufguss ist, wie er sich von Dekokt und Mazeration unterscheidet und wie BloomLab eine kontrolliertere Pflanzenextraktion unterstützt.",
+      },
+      extraction: {
+        title: "Extraktion von natürlichen Pflanzen: Vorteile und Methoden | Bloom",
+        description: "Entdecken Sie, wie Sie das Beste aus Heilpflanzen extrahieren. Vollständiger Leitfaden zu natürlichen Extraktionsmethoden zur Erhaltung des pflanzlichen Totums.",
+      },
+      infusion: {
+        title: "Wie man eine botanische Hausinfusion macht? Vollständiger Leitfaden",
+        description: "Erfolgreiche botanische Infusion zu Hause: Lösungsmittel, Temperatur und Dauer. Alles, was Sie wissen müssen, um Ihre eigenen natürlichen Heilmittel in Laborqualität herzustellen.",
+      },
+      pillar: {
+        title: "Botanische Extraktion: Der vollständige Leitfaden zur Beherrschung des Totums",
+        description: "Alles, was Sie über die moderne botanische Extraktion wissen müssen. Von der Mazeration bis zur thermischen Präzision von ±0,5°C mit BloomLab. Werden Sie souverän in Ihrer Gesundheit.",
       },
       herbarium: {
         title: "Systemisches Herbarium | Pflanzenverzeichnis & Totum | Bloom",
@@ -2313,7 +2398,34 @@ export const translations = {
         intro: "Einführung",
         onboarding: "Onboarding",
         title: "Was ist botanische Infusion?",
-        description: "Botanische Infusion und Extraktion bezeichnen die jahrtausendealte Kunst, die Wirkstoffe einer Pflanze mithilfe eines Lösungsmittels – heißes Wasser, kaltes Wasser, Alkohol, Öl oder Essig – freizulegen, wobei jedes Lösungsmittel eine andere Facette der Pflanze einfängt. Bloom by BotaniK führt dieses überlieferte Wissen mit BloomLab fort, einer Technologie, die jede Extraktion automatisch an die jeweilige Pflanze anpasst."
+        description: "Botanische Infusion und Extraktion bezeichnen die jahrtausendealte Kunst, die Wirkstoffe einer Pflanze freizulegen. Entdecken Sie, wie BloomLab dieses überlieferte Wissen durch Präzision revolutioniert."
+      },
+      understandingInfusion: {
+        sidebar_label: "I. Kräuteraufgüsse verstehen",
+        h2: "Aufguss, Dekokt, Mazeration: Was ist der Unterschied?",
+        intro: "Diese Methoden verfolgen dasselbe Ziel: Pflanzenbestandteile mit einem geeigneten Lösungsmittel in Kontakt zu bringen. Sie unterscheiden sich in Temperatur, Dauer, Flüssigkeit und dem verwendeten Pflanzenteil.",
+        cards: [
+          {
+            title: "Aufguss",
+            text: "Die Pflanze wird für eine festgelegte Zeit mit einer warmen Flüssigkeit in Kontakt gebracht. Diese Methode eignet sich in der Regel für Blätter, Blüten und empfindliche Pflanzenteile."
+          },
+          {
+            title: "Dekokt",
+            text: "Die Pflanze wird länger in einer warmen Flüssigkeit erhitzt, um dichtere Pflanzenteile wie bestimmte Wurzeln, Rinden oder Samen zu bearbeiten."
+          },
+          {
+            title: "Mazeration",
+            text: "Die Pflanze bleibt über einen längeren Zeitraum mit einem Lösungsmittel in Kontakt. Je nach Zubereitung kann das Lösungsmittel wasserbasiert, ölhaltig oder hydroalkoholisch sein."
+          },
+          {
+            title: "Kontrollierte Extraktion",
+            text: "Zeit, Temperatur und Bewegung werden gesteuert, damit die Zubereitung je nach Pflanze und Lösungsmittel gleichmäßiger und reproduzierbarer wird."
+          }
+        ],
+        bloomlab_h2: "Was BloomLab ergänzt",
+        bloomlab_text: "BloomLab ersetzt traditionelle Methoden nicht, sondern gibt ihnen einen präziseren Rahmen. Je nach Zubereitung unterstützt BloomLab die Kontrolle von Zeit, Temperatur und Bewegung, damit sich dasselbe Verfahren regelmäßiger wiederholen lässt.",
+        cta: "BloomLab entdecken",
+        safety_note: "Botanische Zubereitungen sollten entsprechend dem jeweiligen Rezept verwendet werden. Die Inhalte von Bloom dienen der Information und ersetzen keine medizinische Beratung."
       },
       cards: {
         welcome: {
@@ -2330,8 +2442,8 @@ export const translations = {
         },
         start: {
           title: "Wo soll ich anfangen?",
-          description: "Wir empfehlen, mit einer persönlichen Bewertung durch ALMA zu beginnen, um Ihre vordringlichen Bedürfnisse zu ermitteln, oder in die Wissenschaft des Totum einer anderen zu verstehen.",
-          cta: "Meine Bewertung machen"
+          description: "Entdecken Sie die 3 Expertenstufen des BloomLab: Kulinarik, Kosmetik und Expertenprotokoll. Lernen Sie, die Maschine und ihre Stufen zu beherrschen, um Ihre Souveränität zu entfalten.",
+          cta: "Maschine ansehen"
         }
       },
       science: {
@@ -3377,6 +3489,15 @@ export const translations = {
         title: "Chronobiologie des Lebendigen",
         description: "Respektieren Sie die zirkadianen Rhythmen für eine maximale Wirksamkeit des Totums."
       }
+    },
+    alma_recommendation: {
+      badge: "Personalisierte Orientierung",
+      title: "Wo beginnt",
+      title_accent: "Ihre Reise?",
+      description: "Wir empfehlen, mit einer persönlichen Bewertung durch ALMA zu beginnen, um Ihre vordringlichen Bedürfnisse zu ermitteln, oder in die Wissenschaft des Totum einzutauchen, um unsere Vision zu verstehen.",
+      cta_primary: "Meine Bewertung machen",
+      cta_secondary: "Wissenschaft des Totum",
+      quote: "Gewinnen Sie Ihre Souveränität zurück, indem Sie Ihr biologisches Terrain verstehen."
     }
   }
 };

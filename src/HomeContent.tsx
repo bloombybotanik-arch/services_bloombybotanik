@@ -60,7 +60,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
                 width={500}
                 height={500}
                 className="w-full h-full object-cover" 
-                alt="BloomLab - Extraction de précision" 
+                alt="BloomLab - Appareil d'infusion botanique et extraction de précision pour le Totum des plantes" 
               />
               <div className="absolute inset-0 ring-1 ring-inset ring-botanik-green/10 rounded-[32px] md:rounded-[40px]" />
             </div>
@@ -107,11 +107,66 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
               {t.home.cards.start.description}
             </p>
             <button 
-              onClick={() => onNavigate('chat')}
+              onClick={() => onNavigate('machine')}
               className="flex items-center gap-2 text-botanik-orange font-bold text-sm uppercase tracking-widest hover:gap-3 transition-all"
             >
               {t.home.cards.start.cta} <ChevronRight className="w-4 h-4" />
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION I - Comprendre l'infusion */}
+      <section id="comprendre-infusion-botanique" className="mb-24 md:mb-32 scroll-mt-24">
+        <div className="bg-white rounded-[40px] md:rounded-[60px] p-8 md:p-16 border border-botanik-green/5 shadow-2xl relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-botanik-orange/5 rounded-bl-full -z-0" />
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-8 leading-tight max-w-2xl">
+              {t.home.understandingInfusion.h2}
+            </h2>
+            <p className="text-lg md:text-xl text-botanik-green/60 mb-12 max-w-3xl leading-relaxed font-light">
+              {t.home.understandingInfusion.intro}
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+              {t.home.understandingInfusion.cards.map((card: any, idx: number) => (
+                <div key={idx} className="bg-[#F9F9F7] p-8 rounded-3xl border border-botanik-green/5 hover:border-botanik-orange/30 transition-all duration-300 group/card">
+                  <h3 className="text-xl font-bold text-botanik-green mb-4 group-hover/card:text-botanik-orange transition-colors flex items-center gap-3">
+                    <span className="w-8 h-8 rounded-full bg-botanik-orange/10 flex items-center justify-center text-botanik-orange text-xs font-black">{idx + 1}</span>
+                    {card.title}
+                  </h3>
+                  <p className="text-sm md:text-base text-botanik-green/60 leading-relaxed font-light">
+                    {card.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="border-t border-botanik-green/10 pt-16">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-botanik-green mb-6">
+                    {t.home.understandingInfusion.bloomlab_h2}
+                  </h3>
+                  <p className="text-base md:text-lg text-botanik-green/60 leading-relaxed font-light mb-10">
+                    {t.home.understandingInfusion.bloomlab_text}
+                  </p>
+                  <button 
+                    onClick={() => onNavigate('machine')}
+                    className="inline-flex items-center gap-3 px-8 py-4 bg-botanik-green text-white rounded-2xl font-bold text-sm hover:bg-botanik-orange transition-all group/btn shadow-xl shadow-botanik-green/10"
+                  >
+                    {t.home.understandingInfusion.cta}
+                    <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+                <div className="bg-botanik-orange/5 p-8 rounded-[32px] border border-botanik-orange/10 relative">
+                  <Sparkles className="absolute top-4 right-4 w-6 h-6 text-botanik-orange/20" />
+                  <p className="text-sm md:text-base text-botanik-orange font-medium leading-relaxed italic pr-8">
+                    {t.home.understandingInfusion.safety_note}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -338,8 +393,11 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="max-w-2xl">
             <span className="inline-block px-3 py-1 bg-botanik-orange/10 text-botanik-orange text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">Le Blog du Totum</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6 leading-tight">Dernières Recherches & Chroniques</h2>
-            <p className="text-lg text-botanik-green/60 font-light">Explorez nos dossiers de fond sur la science de l'extraction et la biophysique des plantes.</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6 leading-tight">Dernières Recherches sur l'Infusion Botanique</h2>
+            <p className="text-lg text-botanik-green/60 font-light">
+              Explorez nos dossiers de fond sur la science de l'extraction et la biophysique des plantes. 
+              Pour approfondir, consultez les <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7074153/" target="_blank" rel="noopener noreferrer" className="text-botanik-orange underline underline-offset-4 decoration-1">études scientifiques sur les extraits botaniques</a>.
+            </p>
           </div>
           <a href="https://blog.bloombybotanik.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-botanik-green font-bold group">
             Voir tout le blog <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -352,19 +410,19 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
               title: "La Thermorégulation du Vivant", 
               desc: "Comment le contrôle précis de la température préserve l'intelligence moléculaire des extraits.",
               tag: "Science",
-              url: "https://blog.bloombybotanik.com/thermoregulation-vivant"
+              url: "https://blog.bloombybotanik.com/thermoregulation-du-vivant-extraction-botanique/"
             },
             { 
               title: "Le Refroidisseur à Circulation", 
               desc: "L'importance du choc thermique contrôlé dans la stabilisation des terpènes fragiles.",
               tag: "Technique",
-              url: "https://blog.bloombybotanik.com/refroidisseur-circulation"
+              url: "https://blog.bloombybotanik.com/refroidissement-stabilite-thermique-extraction-botanique/"
             },
             { 
               title: "L'Humidificateur Diffuseur", 
               desc: "Transformer votre atmosphère : pourquoi la diffusion ultrasonique respecte mieux le Totum.",
               tag: "Usage",
-              url: "https://blog.bloombybotanik.com/humidificateur-diffuseur"
+              url: "https://blog.bloombybotanik.com/humidificateur-diffuseur-rituel-botanique-interieur/"
             }
           ].map((post, i) => (
             <a 
