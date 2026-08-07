@@ -9,6 +9,18 @@ import { createServer as createViteServer } from "vite";
 import dotenv from "dotenv";
 
 dotenv.config();
+console.log("Bloom production startup");
+console.log("NODE_ENV:", process.env.NODE_ENV);
+console.log("PORT:", process.env.PORT);
+console.log("Working directory:", process.cwd());
+
+process.on("uncaughtException", (error) => {
+  console.error("Uncaught exception:", error);
+});
+
+process.on("unhandledRejection", (reason) => {
+  console.error("Unhandled rejection:", reason);
+});
 
 const app = express();
 const PORT = 3000;
