@@ -164,6 +164,14 @@ export default function AccountContent({ user, onNavigate, onLogout, lang = 'fr'
             >
               <LogOut className="w-4 h-4" /> {t.logout}
             </button>
+            {user.email === 'bloombybotanik@gmail.com' && (
+              <button 
+                onClick={() => onNavigate('admin')}
+                className="mt-4 w-full py-3 bg-botanik-green text-white rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-botanik-green/90 transition-all flex items-center justify-center gap-2"
+              >
+                <Settings className="w-4 h-4" /> Admin Dashboard
+              </button>
+            )}
           </div>
 
           <div className="bg-white border border-botanik-green/10 rounded-[32px] p-6 space-y-4">

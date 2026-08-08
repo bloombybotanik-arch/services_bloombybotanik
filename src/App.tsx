@@ -36,6 +36,7 @@ const ActivationPage = lazy(() => import('./ActivationPage'));
 const LegalPages = lazy(() => import('./LegalPages'));
 const ChatContent = lazy(() => import('./ChatContent'));
 const AccountContent = lazy(() => import('./AccountContent'));
+const AdminDashboard = lazy(() => import('./components/AdminDashboard'));
 const ManifesteContent = lazy(() => import('./ManifesteContent'));
 const MachineLanding = lazy(() => import('./MachineLanding'));
 const PhytotherapyResetPage = lazy(() => import('./PhytotherapyResetPage'));
@@ -56,7 +57,8 @@ const VIEW_PATHS: Record<string, string> = {
   'library-landing': '/library-landing', manifeste: '/manifeste',
   activation: '/activation', account: '/compte', legal: '/legal', chat: '/chat',
   cart: '/panier', checkout: '/checkout', guide: '/guide', pending: '/en-attente',
-  library: '/bibliotheque', 'pillar-extraction': '/extraction-botanique-guide-complet'
+  library: '/bibliotheque', 'pillar-extraction': '/extraction-botanique-guide-complet',
+  admin: '/admin'
 };
 
 const PATH_VIEWS: Record<string, string> = Object.fromEntries(
@@ -87,6 +89,11 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
     }
 
     const currentSeo = t.seo[seoKey];
+
+    if (!currentSeo) {
+      document.title = "Bloom by BotaniK";
+      return;
+    }
 
       // Override with product-specific SEO when viewing a product detail page
       let finalTitle = currentSeo.title;
@@ -508,8 +515,8 @@ const HybridOffer = ({ onNavigate }: { onNavigate: (view: any) => void }) => (
 export default function App() {
   const [lang, setLang] = useState<Language>('fr');
   const t = translations[lang];
-  const [currentView, setCurrentView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction'>('home');
-  const [previousView, setPreviousView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction' | 'admin'>('home');
+  const [previousView, setPreviousView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction' | 'admin'>('home');
 
   const [currentProductId, setCurrentProductId] = useState<string | undefined>();
   const [legalType, setLegalType] = useState<'cgv' | 'cgu' | 'privacy' | 'mentions'>('mentions');
@@ -600,12 +607,16 @@ export default function App() {
     
     setCurrentProductId(productId);
     setCurrentView(view);
-    window.scrollTo(0, 0);
     const targetPath = view === 'product-detail' && productId ? `/boutique/${productId}` : (VIEW_PATHS[view] || '/');
     if (window.location.pathname !== targetPath) {
       window.history.pushState({}, '', targetPath);
     }
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentView, currentProductId]);
+
   const [user, setUser] = useState<FirebaseUser | any | null>(null);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [isPremium, setIsPremium] = useState(false);
@@ -706,8 +717,8 @@ export default function App() {
     return () => unsubscribe();
   }, []);
 
-  const handleNavigate = (view: 'home' | 'library' | 'herbier' | 'boutique' | 'culinaire' | 'cosmetiques' | 'account') => {
-    setCurrentView(view);
+  const handleNavigate = (view: any) => {
+    navigateTo(view);
   };
 
   const handleRequirePremium = () => {
@@ -856,6 +867,9 @@ export default function App() {
           onLogout={handleLogout} 
           lang={lang}
         />
+      );
+      case 'admin': return (
+        user?.email === 'bloombybotanik@gmail.com' ? <AdminDashboard lang={lang} /> : <HomeContent onNavigate={navigateTo} lang={lang} />
       );
       case 'legal': return <LegalPages type={legalType} onBack={() => navigateTo(previousView)} lang={lang} />;
       default: return (

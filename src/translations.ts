@@ -91,7 +91,7 @@ export const translations = {
           }
         ],
         bloomlab_h2: "Ce que BloomLab apporte",
-        bloomlab_text: "BloomLab ne remplace pas les gestes traditionnels : elle leur apporte un cadre plus précis. Selon la préparation choisie, elle aide à mieux maîtriser le temps, la température et l'agitation, afin de reproduire plus régulièrement le même protocole.",
+        bloomlab_text: "BloomLab transforme une préparation botanique approximative en un protocole maîtrisé : temps, température, agitation et hygiène sont réunis dans un seul appareil pour vous aider à extraire les constituants des plantes avec davantage de régularité.",
         cta: "Découvrir BloomLab",
         safety_note: "Les préparations botaniques sont à utiliser selon la recette concernée. Les contenus Bloom sont pédagogiques et ne remplacent pas un avis médical."
       },

@@ -41,9 +41,9 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
           <div className="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 bg-botanik-orange/5 rounded-bl-full -z-0" />
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center relative z-10">
             <div className="max-w-xl">
-              <div className="flex gap-4 text-[10px] font-black text-botanik-green/40 uppercase tracking-[0.3em] items-center mb-8">
+              <div className="flex gap-4 text-[10px] font-black text-botanik-orange uppercase tracking-[0.3em] items-center mb-8">
                 <span>{t.home.hero.intro}</span>
-                <span className="w-1 h-1 rounded-full bg-botanik-green/20" />
+                <span className="w-1 h-1 rounded-full bg-botanik-orange/20" />
                 <span>{t.home.hero.onboarding}</span>
               </div>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-botanik-green mb-6 md:mb-8 leading-[1.1]">
@@ -53,12 +53,12 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
                 {t.home.hero.description}
               </p>
             </div>
-            <div className="relative aspect-square rounded-[32px] md:rounded-[40px] overflow-hidden border-4 md:border-8 border-white shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
+            <div className="relative aspect-[4/5] lg:aspect-[3/4] rounded-[32px] md:rounded-[40px] overflow-hidden border-4 md:border-8 border-white shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
               <OptimizedImage 
                 src={bloomImg} 
                 priority={true} 
-                width={500}
-                height={500}
+                width={800}
+                height={1000}
                 className="w-full h-full object-cover" 
                 alt="BloomLab - Appareil d'infusion botanique et extraction de précision pour le Totum des plantes" 
               />

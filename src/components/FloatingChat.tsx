@@ -15,6 +15,8 @@ export const FloatingChat = ({ user, lang }: { user?: FirebaseUser | null, lang:
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputText, setInputText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [sessionId] = useState(() => Math.random().toString(36).substring(7));
   const [chatHistory, setChatHistory] = useState<{ role: 'user' | 'model', text: string }[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const t = translations[lang];
@@ -36,34 +38,47 @@ export const FloatingChat = ({ user, lang }: { user?: FirebaseUser | null, lang:
         setMessages([{ id: 'welcome', text: greeting, sender: 'alma' }]);
       }
     }
-  }, [isOpen, messages, isTyping]);
+  }, [isOpen, messages.length]);
 
-  const handleSendMessage = async (e?: React.FormEvent) => {
+  const [lastMessage, setLastMessage] = useState<string>('');
+
+  const handleSendMessage = async (e?: React.FormEvent, retryText?: string) => {
     if (e) e.preventDefault();
-    if (!inputText.trim() || isTyping) return;
+    const textToSubmit = retryText || inputText.trim();
+    if (!textToSubmit || isTyping) return;
 
-    const userMsg = inputText.trim();
-    setInputText('');
+    if (!retryText) {
+      setLastMessage(textToSubmit);
+      setInputText('');
+    }
+    setError(null);
     
-    const newUserMsg: Message = {
-      id: `user-${Date.now()}`,
-      sender: 'user',
-      text: userMsg
-    };
-    setMessages(prev => [...prev, newUserMsg]);
+    if (!retryText) {
+      const newUserMsg: Message = {
+        id: `user-${Date.now()}`,
+        sender: 'user',
+        text: textToSubmit
+      };
+      setMessages(prev => [...prev, newUserMsg]);
+    }
     setIsTyping(true);
+    setTimeout(scrollToBottom, 50);
 
     try {
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          message: userMsg,
+          message: textToSubmit,
           history: chatHistory,
-          userId: user?.uid
+          userId: user?.uid,
+          anonymousSessionId: sessionId,
+          language: lang,
+          pageUrl: window.location.href
         })
       });
 
+      if (!response.ok) throw new Error('Network response was not ok');
       const data = await response.json();
       
       if (data.text) {
@@ -75,14 +90,18 @@ export const FloatingChat = ({ user, lang }: { user?: FirebaseUser | null, lang:
         setMessages(prev => [...prev, almaMsg]);
         setChatHistory(prev => [
           ...prev, 
-          { role: 'user', text: userMsg },
+          { role: 'user', text: textToSubmit },
           { role: 'model', text: data.text }
         ]);
+      } else {
+        throw new Error('Empty response');
       }
     } catch (error) {
       console.error("Chat error:", error);
+      setError(lang === 'fr' ? "Alma n'a pas pu répondre. Réessayez ?" : "Alma couldn't answer. Try again?");
     } finally {
       setIsTyping(false);
+      scrollToBottom();
     }
   };
 
@@ -141,6 +160,17 @@ export const FloatingChat = ({ user, lang }: { user?: FirebaseUser | null, lang:
                   <span className="w-1.5 h-1.5 bg-botanik-green/40 rounded-full animate-bounce" />
                   <span className="w-1.5 h-1.5 bg-botanik-green/40 rounded-full animate-bounce [animation-delay:0.2s]" />
                   <span className="w-1.5 h-1.5 bg-botanik-green/40 rounded-full animate-bounce [animation-delay:0.4s]" />
+                </div>
+              )}
+              {error && (
+                <div className="p-4 rounded-2xl bg-red-50 text-red-600 text-xs flex flex-col gap-2 items-center border border-red-100">
+                  <p>{error}</p>
+                  <button 
+                    onClick={() => handleSendMessage(undefined, lastMessage)}
+                    className="text-[10px] font-bold uppercase tracking-widest bg-red-600 text-white px-3 py-1.5 rounded-lg hover:bg-red-700 transition-colors"
+                  >
+                    {lang === 'fr' ? 'Réessayer' : 'Retry'}
+                  </button>
                 </div>
               )}
               <div ref={messagesEndRef} />

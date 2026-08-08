@@ -81,6 +81,28 @@
         "createdAt": { "type": "string", "format": "date-time" }
       },
       "required": ["userId", "type", "createdAt"]
+    },
+    "CustomerConcern": {
+      "title": "Customer Concern",
+      "description": "Logging for Alma bot interactions and user needs",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "anonymousSessionId": { "type": "string" },
+        "userQuestion": { "type": "string" },
+        "answerSummary": { "type": "string" },
+        "mainConcern": { "type": "string" },
+        "category": { "type": "string" },
+        "severity": { "type": "string" },
+        "emotion": { "type": "string" },
+        "productArea": { "type": "string" },
+        "suggestedImprovement": { "type": "string" },
+        "recurrenceHint": { "type": "string" },
+        "language": { "type": "string" },
+        "pageUrl": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userQuestion", "createdAt"]
     }
   },
   "firestore": {
@@ -103,6 +125,10 @@
     "/interactions/{interactionId}": {
       "schema": "Interaction",
       "description": "CRM activity logs"
+    },
+    "/customer_concerns/{concernId}": {
+      "schema": "CustomerConcern",
+      "description": "Bot interaction logs"
     }
   }
 }
