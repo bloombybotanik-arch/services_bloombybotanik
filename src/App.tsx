@@ -51,14 +51,16 @@ const ViewLoader = () => (
 );
 
 // --- SPA ROUTING CONFIG ---
+const BlogContent = lazy(() => import('./BlogContent'));
+
 const VIEW_PATHS: Record<string, string> = {
-  home: '/', machine: '/machine', 'phytotherapie-reset': '/phytotherapie-reset',
+  home: '/', machine: '/bloomlab', 'phytotherapie-reset': '/phytotherapie-reset',
   boutique: '/boutique', culinaire: '/culinaire', cosmetiques: '/cosmetiques',
   'library-landing': '/library-landing', manifeste: '/manifeste',
   activation: '/activation', account: '/compte', legal: '/legal', chat: '/chat',
-  cart: '/panier', checkout: '/checkout', guide: '/guide', pending: '/en-attente',
+  cart: '/panier', checkout: '/checkout', guide: '/qu-est-ce-que-l-infusion-botanique', pending: '/en-attente',
   library: '/bibliotheque', 'pillar-extraction': '/extraction-botanique-guide-complet',
-  admin: '/admin'
+  admin: '/admin', blog: '/blog'
 };
 
 const PATH_VIEWS: Record<string, string> = Object.fromEntries(
@@ -78,7 +80,7 @@ const generateSeoAlt = (imageContext: string) => {
 const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, currentView: string, t: any, productId?: string }) => {
   useEffect(() => {
     // 1. Handle dynamic Title & Meta Description
-    let seoKey: 'home' | 'herbarium' | 'shop' | 'blog' | 'pillar' | 'extraction' | 'infusion' = 'home';
+    let seoKey: 'home' | 'herbarium' | 'shop' | 'blog' | 'pillar' | 'extraction' | 'infusion' | 'machine' | 'manifesto' = 'home';
     
     if (['herbier', 'library', 'library-landing', 'culinaire', 'cosmetiques'].includes(currentView)) {
       seoKey = 'herbarium';
@@ -86,6 +88,12 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
       seoKey = 'shop';
     } else if (currentView === 'pillar-extraction') {
       seoKey = 'pillar';
+    } else if (currentView === 'blog') {
+      seoKey = 'blog';
+    } else if (currentView === 'machine') {
+      seoKey = 'machine';
+    } else if (currentView === 'manifeste') {
+      seoKey = 'manifesto';
     }
 
     const currentSeo = t.seo[seoKey];
@@ -515,8 +523,8 @@ const HybridOffer = ({ onNavigate }: { onNavigate: (view: any) => void }) => (
 export default function App() {
   const [lang, setLang] = useState<Language>('fr');
   const t = translations[lang];
-  const [currentView, setCurrentView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction' | 'admin'>('home');
-  const [previousView, setPreviousView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction' | 'admin'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction' | 'admin' | 'blog'>('home');
+  const [previousView, setPreviousView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction' | 'admin' | 'blog'>('home');
 
   const [currentProductId, setCurrentProductId] = useState<string | undefined>();
   const [legalType, setLegalType] = useState<'cgv' | 'cgu' | 'privacy' | 'mentions'>('mentions');
@@ -871,6 +879,7 @@ export default function App() {
       case 'admin': return (
         user?.email === 'bloombybotanik@gmail.com' ? <AdminDashboard lang={lang} /> : <HomeContent onNavigate={navigateTo} lang={lang} />
       );
+      case 'blog': return <BlogContent lang={lang} onNavigate={navigateTo} />;
       case 'legal': return <LegalPages type={legalType} onBack={() => navigateTo(previousView)} lang={lang} />;
       default: return (
         <StoreContent 

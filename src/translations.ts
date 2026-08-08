@@ -5,12 +5,16 @@ export const translations = {
   fr: {
     seo: {
       home: {
-        title: "Qu'est-ce que l'infusion botanique ? Définition et méthodes",
-        description: "Découvrez ce qu'est une infusion botanique, la différence avec la décoction et la macération, et comment BloomLab accompagne l'extraction des plantes avec davantage de précision.",
+        title: "Infuseur Botanique & Extracteur de Précision | Bloom by BotaniK",
+        description: "Découvrez Bloom by BotaniK, l'expert en extraction botanique de précision. BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels et soins naturels.",
+      },
+      machine: {
+        title: "BloomLab® - L'Extracteur Botanique N°1 en France | Précision Thermique",
+        description: "Maîtrisez l'extraction du totum avec BloomLab®. Extraction basse température, macération et décarboxylation pour des remèdes de plantes d'une qualité exceptionnelle.",
       },
       extraction: {
-        title: "Extraction de Plantes Naturelles : Bienfaits et Méthodes | Bloom",
-        description: "Découvrez comment extraire le meilleur des plantes médicinales. Guide complet sur les méthodes d'extraction naturelle pour préserver le Totum végétal.",
+        title: "Extraction Botanique de Précision : Totum & Basse Température",
+        description: "Découvrez l'extraction botanique de précision. Apprenez à extraire le totum des plantes médicinales à basse température pour préserver tous les bienfaits naturels.",
       },
       infusion: {
         title: "Comment faire une Infusion Botanique Maison ? Guide Complet",
@@ -31,7 +35,11 @@ export const translations = {
       blog: {
         title: "Science du Totum | Le Blog Bloom by Botanik",
                 description: "Articles approfondis sur l'art de l'extraction de précision, les remèdes ancestraux issus des plantes et la résilience naturelle à travers le prisme de la science du Totum."
-      }
+      },
+      manifesto: {
+        title: "Notre Laboratoire : Souveraineté Sanitaire | Bloom by BotaniK",
+        description: "Découvrez la vision de Bloom by BotaniK. Notre laboratoire vous accompagne dans votre projet de soins sur mesure avec l'extraction du totum de précision.",
+      },
     },
     nav: {
       guide: "Guide",
@@ -90,10 +98,14 @@ export const translations = {
             text: "Le temps, la température et l'agitation sont réglés pour rendre la préparation plus régulière et reproductible, selon la plante et le solvant choisi."
           }
         ],
-        bloomlab_h2: "Ce que BloomLab apporte",
-        bloomlab_text: "BloomLab transforme une préparation botanique approximative en un protocole maîtrisé : temps, température, agitation et hygiène sont réunis dans un seul appareil pour vous aider à extraire les constituants des plantes avec davantage de régularité.",
+        bloomlab_h2: "BloomLab : L'Extracteur Botanique N°1 en France",
+        bloomlab_text: "BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels. Faites fleurir toutes vos envies de bien-être végétal avec notre technologie d'extraction botanique de précision.",
         cta: "Découvrir BloomLab",
         safety_note: "Les préparations botaniques sont à utiliser selon la recette concernée. Les contenus Bloom sont pédagogiques et ne remplacent pas un avis médical."
+      },
+      manifesto: {
+        h2: "Souveraineté Sanitaire et Précision",
+        text: "Nos équipes vous accompagnent dans votre projet de soins sur mesure. Une place pour chaque plante et chaque plante à sa place."
       },
       cards: {
         welcome: {
@@ -109,9 +121,9 @@ export const translations = {
           description: "Explorez l'Herbier systémique, accédez à vos protocoles de Reset, maîtrisez l'art de l'infusion via nos ateliers et apprenez à lire votre propre terrain biologique avec l'aide d'ALMA."
         },
         start: {
-          title: "Par où commencer ?",
-          description: "Découvrez les 3 niveaux d'expertise de la BloomLab : culinaire, cosmétique et protocolaire expert. Apprenez à maîtriser la machine et ses niveaux pour révéler votre souveraineté.",
-          cta: "Voir la machine"
+          title: "Une place pour chaque plante",
+          description: "Découvrez les 3 niveaux d'expertise de la BloomLab : culinaire, cosmétique et protocolaire expert. Nos équipes vous accompagnent dans votre projet de soins sur mesure.",
+          cta: "Voir BloomLab"
         }
       },
       science: {
@@ -1032,21 +1044,21 @@ export const translations = {
         subtitle: "Maîtriser la Souveraineté Botanique",
         description: "Apprenez à utiliser votre BloomLab et à suivre nos protocoles pour une régulation systémique optimale.",
         tags: ["Souveraineté", "Transmission", "Extraction"],
-        main_title: "L'Écosystème Bloom.",
-        main_title_accent: "Souveraineté & Précision.",
-        main_desc: "Découvrez la BloomLab, notre extracteur de Totum intégral, ainsi que notre gamme de remèdes botaniques experts pour restaurer votre homéostasie.",
+        main_title: "L'Extracteur Botanique BloomLab®.",
+        main_title_accent: "Précision & Souveraineté.",
+        main_desc: "BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels. Découvrez l'infuseur botanique N°1 en France pour une extraction du totum de grade laboratoire.",
         cta_shop: "Voir la Boutique",
         cta_levels: "Découvrir les Niveaux"
       },
       machine: {
-        title: "Le Compagnon de votre Autonomie",
+        title: "BloomLab® : L'Instrument de votre Souveraineté Sanitaire",
         precision: {
-          title: "Précision Labo",
-          desc: "Contrôle thermique au 0.5°C près pour préserver l'intégrité du Totum."
+          title: "Précision Thermique ±0,5°C",
+          desc: "Un contrôle absolu pour une extraction botanique de précision respectant l'intelligence moléculaire."
         },
         extraction: {
-          title: "Extraction 6-en-1",
-          desc: "Huiles, sérums, teintures, macérats, sirops et infusions complexes."
+          title: "Extraction Intégrale",
+          desc: "Maîtrisez l'infusion, la décarboxylation et la macération pour vos sérums et baumes maison."
         },
         price_save: "Économisez 49€"
       },
@@ -1415,8 +1427,8 @@ export const translations = {
       },
       section7: {
         title: "Connecting Knowledge.",
-        p1: "We defend a simple idea: you don't get real lasting results with scattered gestures, poorly extracted actives, or protocols without hierarchy. You must understand the terrain, open the right paths, respect the body's rhythm, choose the right plants, and then above all extract them according to the parameters that allow their active principles to be released with rigor.",
-        box: "Bloom by BotaniK is this: a method for restoring the terrain, a systemic reading of the living, and a botanical technology designed to make the link between ancient knowledge, modern biochemistry, and the concrete uses of today."
+        p1: "We defend a simple idea: you don't get real lasting results with scattered gestures, poorly extracted actives, or protocols without hierarchy. You must understand the terrain, open the right paths, respect the body's rhythm, choose the right plants, and then above all extract them according to the parameters that allow their active principles to be released with rigor. Nos équipes vous accompagnent dans votre projet de soins sur mesure.",
+        box: "Une place pour chaque plante et chaque plante à sa place. Bloom by BotaniK is this: a method for restoring the terrain, a systemic reading of the living, and a botanical technology designed to make the link between ancient knowledge, modern biochemistry, and the concrete uses of today."
       },
       cta: {
         badge: "Continue the Exploration",
