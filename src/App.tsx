@@ -156,15 +156,42 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
           "@type": "Product",
           "name": "BloomLab",
           "description": "Extracteur Inox 304 avec précision ±0,5°C",
+          "image": "https://bloombybotanik.com/assets/images/bloomlab_main_1784887530345.jpeg",
           "brand": {
             "@type": "Brand",
             "name": "Bloom by BotaniK"
           },
+          "sku": "BLOOM-LAB-2026",
+          "mpn": "BL-2026",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "127"
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Marie D."
+              },
+              "datePublished": "2026-06-15",
+              "reviewBody": "Une précision incroyable pour mes macérats huileux. Je ne m'en passe plus.",
+              "reviewRating": {
+                "@type": "Rating",
+                "bestRating": "5",
+                "ratingValue": "5",
+                "worstRating": "1"
+              }
+            }
+          ],
           "offers": {
             "@type": "Offer",
             "price": "239.00",
             "priceCurrency": "EUR",
-            "availability": "https://schema.org/InStock"
+            "availability": "https://schema.org/InStock",
+            "url": "https://bloombybotanik.com/bloomlab",
+            "itemCondition": "https://schema.org/NewCondition"
           }
         },
             ...getProducts(lang).filter((p: any) => p.id !== 'bloomlab').map((p: any) => ({
@@ -984,11 +1011,13 @@ export default function App() {
                 <h3 className="text-xs uppercase tracking-[0.2em] text-white/40 mb-6 font-bold">Navigation</h3>
                 <div className="grid gap-4">
                   {[
-                    { id: 'home', label: lang === 'fr' ? 'Accueil' : 'Home', icon: Leaf },
-                    { id: 'library', label: lang === 'fr' ? 'Bibliothèque' : 'Library', icon: BookOpen },
-                    { id: 'chat', label: 'ALMA Chat', icon: MessageSquare },
-                    { id: 'machine', label: 'BloomLab', icon: Settings },
+                    { id: 'home', label: lang === 'fr' ? 'Accueil' : lang === 'en' ? 'Home' : 'Startseite', icon: Leaf },
+                    { id: 'library-landing', label: t.nav.herbarium, icon: BookOpen },
                     { id: 'phytotherapie-reset', label: 'Reset', icon: Wind },
+                    { id: 'machine', label: 'BloomLab', icon: Settings },
+                    { id: 'boutique', label: t.nav.shop, icon: ShoppingBag },
+                    { id: 'chat', label: 'Alma Chat', icon: MessageSquare },
+                    { id: 'account', label: t.nav.account, icon: User },
                   ].map((item) => (
                     <button
                       key={item.id}

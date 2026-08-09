@@ -35,6 +35,52 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
         )}
       </AnimatePresence>
 
+      {/* SEO PILLAR LINK - New Section - MOVED TO TOP */}
+      <section className="mb-24 md:mb-32">
+        <div className="bg-botanik-green/5 rounded-[40px] md:rounded-[60px] p-8 md:p-16 border border-botanik-green/10 relative overflow-hidden group">
+          <div className="absolute top-[-10%] right-[-10%] w-64 h-64 bg-botanik-green/5 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-1000" />
+          <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div className="max-w-3xl">
+              <span className="inline-block px-3 py-1 bg-botanik-green text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">
+                {t.home.extractionGuide.badge}
+              </span>
+              <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6 leading-tight">
+                {t.home.extractionGuide.title} <br />
+                <span className="text-botanik-orange">{t.home.extractionGuide.subtitle}</span>
+              </h2>
+              <p className="text-lg md:text-xl text-botanik-green/60 mb-10 leading-relaxed font-light">
+                {t.home.extractionGuide.description}
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <button 
+                  onClick={() => onNavigate('phytotherapie-reset')}
+                  className="px-6 md:px-8 py-3 md:py-4 bg-botanik-green text-white rounded-2xl font-bold hover:bg-botanik-orange transition-all flex items-center justify-center gap-3 shadow-xl shadow-botanik-green/10 text-sm md:text-base flex-1 sm:flex-none"
+                >
+                  {t.home.extractionGuide.cta_read} <ArrowRight className="w-5 h-5" />
+                </button>
+                <button 
+                  onClick={() => onNavigate('machine')}
+                  className="px-6 md:px-8 py-3 md:py-4 bg-white text-botanik-green border border-botanik-green/10 rounded-2xl font-bold hover:bg-botanik-green/5 transition-all flex items-center justify-center text-sm md:text-base flex-1 sm:flex-none whitespace-nowrap"
+                >
+                  {t.home.extractionGuide.cta_discover}
+                </button>
+              </div>
+            </div>
+            <div className="relative h-[250px] md:h-[450px] rounded-3xl overflow-hidden shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] bg-botanik-green/10">
+              <video 
+                src="/BloomLab_demo.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-botanik-green/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PAGE 1 — COMMENCER ICI */}
       <section id="protocole" className="mb-24 md:mb-32 scroll-mt-24">
         <div className="bg-white rounded-[40px] md:rounded-[60px] p-6 md:p-12 lg:p-16 border border-botanik-green/5 shadow-2xl mb-16 md:mb-24 overflow-hidden relative group">
@@ -353,37 +399,6 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
             >
               {t.home.way.more.cta} <ChevronRight className="w-4 h-4" />
             </button>
-          </div>
-        </div>
-      </section>
-
-      {/* SEO PILLAR LINK - New Section */}
-      <section className="mt-32 mb-24 md:mb-32">
-        <div className="bg-botanik-green/5 rounded-[40px] md:rounded-[60px] p-8 md:p-16 border border-botanik-green/10 relative overflow-hidden group">
-          <div className="absolute top-[-10%] right-[-10%] w-64 h-64 bg-botanik-green/5 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-1000" />
-          <div className="max-w-3xl relative z-10">
-            <span className="inline-block px-3 py-1 bg-botanik-green text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">Guide de Référence</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6 leading-tight">
-              L'Art de l'Extraction Botanique : <br />
-              <span className="text-botanik-orange">Le Guide Complet.</span>
-            </h2>
-            <p className="text-lg md:text-xl text-botanik-green/60 mb-10 leading-relaxed font-light">
-              Maîtrisez les solvants, les températures précises et les protocoles de grade laboratoire pour révéler la puissance du Totum végétal chez vous.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button 
-                onClick={() => onNavigate('pillar-extraction')}
-                className="px-8 py-4 bg-botanik-green text-white rounded-2xl font-bold hover:bg-botanik-orange transition-all flex items-center justify-center gap-3 shadow-xl shadow-botanik-green/10"
-              >
-                Lire le guide complet <ArrowRight className="w-5 h-5" />
-              </button>
-              <button 
-                onClick={() => onNavigate('machine')}
-                className="px-8 py-4 bg-white text-botanik-green border border-botanik-green/10 rounded-2xl font-bold hover:bg-botanik-green/5 transition-all flex items-center justify-center"
-              >
-                Découvrir la BloomLab
-              </button>
-            </div>
           </div>
         </div>
       </section>

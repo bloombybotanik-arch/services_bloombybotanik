@@ -45,7 +45,7 @@ export const translations = {
       guide: "Guide",
       herbarium: "L'Herbier",
       blog: "Le Blog",
-      chat: "Conseils",
+      chat: "Alma Chat",
       shop: "Boutique",
       account: "Compte",
       manifesto: "Le Manifeste",
@@ -75,6 +75,14 @@ export const translations = {
         onboarding: "Onboarding",
                 title: "Qu'est-ce que l'infusion botanique ?", 
         description: "L’infusion botanique est une méthode d’extraction qui consiste à mettre une plante en contact avec un liquide, chaud, tiède ou froid selon sa nature et les composés recherchés. La température, le temps de contact et le solvant influencent les constituants qui peuvent passer dans la préparation. Découvrez les différences entre infusion, décoction, macération et extraction contrôlée, ainsi que la manière dont BloomLab aide à mieux maîtriser ces paramètres.",
+      },
+      extractionGuide: {
+        badge: "Guide de Référence",
+        title: "L'Art de l'Extraction Botanique :",
+        subtitle: "Le Guide Complet.",
+        description: "Maîtrisez les solvants, les températures précises et les protocoles de grade laboratoire pour révéler la puissance du Totum végétal chez vous.",
+        cta_read: "Lire le guide complet",
+        cta_discover: "Découvrir la BloomLab"
       },
       understandingInfusion: {
         sidebar_label: "I. Comprendre l'infusion",
@@ -1215,7 +1223,7 @@ export const translations = {
       guide: "Guide",
       herbarium: "Herbarium",
       blog: "The Blog",
-      chat: "Advice",
+      chat: "Alma Chat",
       shop: "Shop",
       account: "Account",
       manifesto: "Manifesto",
@@ -1245,6 +1253,14 @@ export const translations = {
         onboarding: "Onboarding",
         title: "What is botanical infusion?",
         description: "Botanical infusion and extraction refer to the ancient art of revealing a plant's active principles. Discover how BloomLab revolutionizes this ancestral knowledge through precision."
+      },
+      extractionGuide: {
+        badge: "Reference Guide",
+        title: "The Art of Botanical Extraction:",
+        subtitle: "The Complete Guide.",
+        description: "Master solvents, precise temperatures, and laboratory-grade protocols to reveal the power of the vegetable Totum at home.",
+        cta_read: "Read the complete guide",
+        cta_discover: "Discover BloomLab"
       },
       understandingInfusion: {
         sidebar_label: "I. Understanding herbal infusion",
@@ -2381,7 +2397,7 @@ export const translations = {
       guide: "Leitfaden",
       herbarium: "Herbarium",
       blog: "Der Blog",
-      chat: "Beratung",
+      chat: "Alma Chat",
       shop: "Shop",
       account: "Konto",
       manifesto: "Manifest",
@@ -2411,6 +2427,14 @@ export const translations = {
         onboarding: "Onboarding",
         title: "Was ist botanische Infusion?",
         description: "Botanische Infusion und Extraktion bezeichnen die jahrtausendealte Kunst, die Wirkstoffe einer Pflanze freizulegen. Entdecken Sie, wie BloomLab dieses überlieferte Wissen durch Präzision revolutioniert."
+      },
+      extractionGuide: {
+        badge: "Referenz-Leitfaden",
+        title: "Die Kunst der botanischen Extraktion:",
+        subtitle: "Der komplette Leitfaden.",
+        description: "Meistern Sie Lösungsmittel, präzise Temperaturen und Protokolle in Laborqualität, um die Kraft des pflanzlichen Totums bei Ihnen zu Hause zu enthüllen.",
+        cta_read: "Den kompletten Leitfaden lesen",
+        cta_discover: "BloomLab entdecken"
       },
       understandingInfusion: {
         sidebar_label: "I. Kräuteraufgüsse verstehen",

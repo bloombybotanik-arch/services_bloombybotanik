@@ -75,7 +75,14 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
             </div>
             <div className="relative">
               <div className="absolute -inset-4 bg-[#F97316]/5 rounded-[60px] blur-3xl"></div>
-              <img src={bloomLabImg} alt="BloomLab Details" className="relative rounded-[40px] shadow-2xl border border-botanik-green/5 w-full object-cover aspect-square" />
+              <video 
+                src="/demo_bloomlab.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="relative rounded-[40px] shadow-2xl border border-botanik-green/5 w-full object-cover aspect-square bg-botanik-green/5" 
+              />
             </div>
           </div>
         </div>
