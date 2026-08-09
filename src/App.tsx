@@ -304,11 +304,11 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
               onClick={(e) => { 
                 e.preventDefault(); 
                 navigateTo('home'); 
-                setTimeout(() => document.getElementById('comprendre-infusion-botanique')?.scrollIntoView({ behavior: 'smooth' }), 100);
+                setTimeout(() => document.getElementById('protocole')?.scrollIntoView({ behavior: 'smooth' }), 100);
               }} 
               className="text-white hover:text-[#F97316] transition-colors"
             >
-              I. {t.home.understandingInfusion.sidebar_label.split('. ')[1]}
+              I. {lang === 'fr' ? 'Commencer ici' : lang === 'en' ? 'Start here' : 'Hier beginnen'}
             </a>
           </li>
           <li>
@@ -317,11 +317,11 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
               onClick={(e) => { 
                 e.preventDefault(); 
                 navigateTo('home'); 
-                setTimeout(() => document.getElementById('protocole')?.scrollIntoView({ behavior: 'smooth' }), 100);
+                setTimeout(() => document.getElementById('comprendre-infusion-botanique')?.scrollIntoView({ behavior: 'smooth' }), 100);
               }} 
               className="text-white hover:text-[#F97316] transition-colors"
             >
-              II. {lang === 'fr' ? 'Commencer ici' : lang === 'en' ? 'Start here' : 'Hier beginnen'}
+              II. {t.home.understandingInfusion.sidebar_label.split('. ')[1]}
             </a>
           </li>
           <li>
@@ -582,7 +582,7 @@ export default function App() {
         '/how-it-works-diy-natural-recipes': '/boutique',
         '/natural-herbal-infusion-body-care-oils-': '/cosmetiques',
         '/natural-herbal-infusion-face-skincare-recipes': '/cosmetiques',
-        '/infusion-botanique-maison-comment-ca-marche': '/',
+        '/infusion-botanique-maison-comment-ca-marche': '/extraction-botanique-guide-complet',
         '/extraction-plantes-naturelles-bienfaits': '/extraction-botanique-guide-complet',
         '/chroniques': '/',
         '/blog': '/',
@@ -1016,7 +1016,7 @@ export default function App() {
                     { id: 'phytotherapie-reset', label: 'Reset', icon: Wind },
                     { id: 'machine', label: 'BloomLab', icon: Settings },
                     { id: 'boutique', label: t.nav.shop, icon: ShoppingBag },
-                    { id: 'chat', label: 'Alma Chat', icon: MessageSquare },
+                    { id: 'chat', label: t.nav.chat, icon: MessageSquare },
                     { id: 'account', label: t.nav.account, icon: User },
                   ].map((item) => (
                     <button
@@ -1046,11 +1046,11 @@ export default function App() {
                       onClick={() => { 
                         navigateTo('home'); 
                         setIsMenuOpen(false);
-                        setTimeout(() => document.getElementById('comprendre-infusion-botanique')?.scrollIntoView({ behavior: 'smooth' }), 300);
+                        setTimeout(() => document.getElementById('protocole')?.scrollIntoView({ behavior: 'smooth' }), 300);
                       }} 
                       className="text-white hover:text-botanik-orange transition-colors text-left font-light"
                     >
-                      I. {t.home.understandingInfusion.sidebar_label.split('. ')[1]}
+                      I. {lang === 'fr' ? 'Commencer ici' : lang === 'en' ? 'Start here' : 'Hier beginnen'}
                     </button>
                   </li>
                   <li>
@@ -1058,11 +1058,11 @@ export default function App() {
                       onClick={() => { 
                         navigateTo('home'); 
                         setIsMenuOpen(false);
-                        setTimeout(() => document.getElementById('protocole')?.scrollIntoView({ behavior: 'smooth' }), 300);
+                        setTimeout(() => document.getElementById('comprendre-infusion-botanique')?.scrollIntoView({ behavior: 'smooth' }), 300);
                       }} 
                       className="text-white hover:text-botanik-orange transition-colors text-left font-light"
                     >
-                      II. {lang === 'fr' ? 'Commencer ici' : lang === 'en' ? 'Start here' : 'Hier beginnen'}
+                      II. {t.home.understandingInfusion.sidebar_label.split('. ')[1]}
                     </button>
                   </li>
                   <li>

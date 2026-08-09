@@ -67,13 +67,13 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
               </div>
             </div>
             <div className="relative h-[250px] md:h-[450px] rounded-3xl overflow-hidden shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] bg-botanik-green/10">
-              <video 
-                src="/BloomLab_demo.mp4" 
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+              <OptimizedImage 
+                src={bloomImg} 
+                priority={true} 
+                width={800}
+                height={1000}
+                className="w-full h-full object-cover" 
+                alt="BloomLab - Appareil d'infusion botanique et extraction de précision pour le Totum des plantes" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-botanik-green/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
@@ -100,13 +100,13 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
               </p>
             </div>
             <div className="relative aspect-[4/5] lg:aspect-[3/4] rounded-[32px] md:rounded-[40px] overflow-hidden border-4 md:border-8 border-white shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
-              <OptimizedImage 
-                src={bloomImg} 
-                priority={true} 
-                width={800}
-                height={1000}
-                className="w-full h-full object-cover" 
-                alt="BloomLab - Appareil d'infusion botanique et extraction de précision pour le Totum des plantes" 
+              <video 
+                src="/demo_bloomlab.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
               />
               <div className="absolute inset-0 ring-1 ring-inset ring-botanik-green/10 rounded-[32px] md:rounded-[40px]" />
             </div>

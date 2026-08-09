@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { X, ArrowRight, Sparkles } from 'lucide-react';
+import { X, ArrowRight, Sparkles, CheckCircle2, Clock, Calendar, AlertCircle, Info, Activity, Zap } from 'lucide-react';
 import { translations, Language } from '../translations';
 import { ResetSectionDetail } from '../data/resetDetails';
 
@@ -36,19 +36,79 @@ export const ResetDetailModal: React.FC<ResetDetailModalProps> = ({ detail, onCl
         </button>
 
         <div className="p-6 md:p-16">
-          <div className="mb-8 md:mb-12">
-            <h2 className="text-2xl md:text-5xl font-bold text-botanik-green mb-4 md:mb-6 leading-tight">
+          <div className="mb-12">
+            <div className="text-[10px] font-black text-botanik-orange tracking-[0.3em] mb-4 uppercase">{detail.subtitle || "Axe de Vie"}</div>
+            <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6 leading-tight">
               {detail.translations?.[lang]?.title || detail.title}
             </h2>
-            <div className="p-4 md:p-6 bg-botanik-orange/5 rounded-3xl border border-botanik-orange/10">
-              <p className="text-sm md:text-base text-botanik-green font-medium leading-relaxed italic">
+            <div className="p-6 bg-botanik-orange/5 rounded-[32px] border border-botanik-orange/10 mb-8">
+              <p className="text-sm md:text-lg text-botanik-green font-medium leading-relaxed italic">
                 {detail.translations?.[lang]?.objective || detail.objective}
               </p>
             </div>
+
+            {detail.why && (
+              <div className="mb-12">
+                <h3 className="text-xl font-bold text-botanik-green mb-4 flex items-center gap-2">
+                   <Info className="w-5 h-5 text-botanik-orange" /> Pourquoi cet axe est vital ?
+                </h3>
+                <p className="text-sm md:text-base text-botanik-green/70 leading-relaxed">
+                  {detail.why}
+                </p>
+              </div>
+            )}
+
+            {detail.objectives && detail.objectives.length > 0 && (
+              <div className="mb-12">
+                <h3 className="text-xl font-bold text-botanik-green mb-6 flex items-center gap-2">
+                   <CheckCircle2 className="w-5 h-5 text-botanik-orange" /> Objectifs Physiologiques
+                </h3>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {detail.objectives.map((obj, idx) => (
+                    <div key={idx} className="flex gap-3 p-4 bg-white rounded-2xl border border-botanik-green/5 shadow-sm">
+                      <div className="w-1.5 h-1.5 rounded-full bg-botanik-orange shrink-0 mt-2" />
+                      <p className="text-xs md:text-sm text-botanik-green/80 font-medium">{obj}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
-          <div className="space-y-8 md:space-y-12">
-            {detail.sections.map((section, sIdx) => (
+          <div className="space-y-12">
+            {detail.daily_rituals && detail.daily_rituals.length > 0 && (
+              <div className="space-y-8">
+                <h3 className="text-2xl font-bold text-botanik-green flex items-center gap-2">
+                  <Calendar className="w-6 h-6 text-botanik-orange" /> Rituels Quotidiens
+                </h3>
+                <div className="grid gap-6">
+                  {detail.daily_rituals.map((ritual, idx) => (
+                    <div key={idx} className="p-6 md:p-8 bg-white rounded-[32px] border border-botanik-green/5 shadow-lg group hover:border-botanik-orange/20 transition-all">
+                      <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+                        <h4 className="text-lg font-bold text-botanik-green">{ritual.name}</h4>
+                        <div className="flex items-center gap-3">
+                          {ritual.time_of_day && (
+                            <span className="px-3 py-1 bg-botanik-green/5 text-botanik-green rounded-full text-[10px] font-bold uppercase tracking-wider">
+                              {ritual.time_of_day}
+                            </span>
+                          )}
+                          {ritual.estimated_duration_minutes !== undefined && (
+                            <span className="flex items-center gap-1.5 text-[10px] font-bold text-botanik-orange uppercase">
+                              <Clock className="w-3 h-3" /> {ritual.estimated_duration_minutes} min
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      <p className="text-sm md:text-base text-botanik-green/70 leading-relaxed">
+                        {ritual.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {detail.sections && detail.sections.map((section, sIdx) => (
               <div key={section.id} className="relative pl-6 md:pl-8 border-l-2 border-botanik-orange/20">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-botanik-orange shadow-sm shadow-botanik-orange/20" />
                 <h3 className="text-lg md:text-xl font-bold text-botanik-green mb-4 md:mb-6">
@@ -63,6 +123,40 @@ export const ResetDetailModal: React.FC<ResetDetailModalProps> = ({ detail, onCl
                 </div>
               </div>
             ))}
+
+            {detail.progression_21_days && (
+              <div className="p-8 bg-botanik-green/5 rounded-[40px] border border-botanik-green/10">
+                <h3 className="text-xl font-bold text-botanik-green mb-4 flex items-center gap-2">
+                   <Activity className="w-5 h-5 text-botanik-orange" /> Progression sur 21 jours
+                </h3>
+                <p className="text-sm md:text-base text-botanik-green/70 leading-relaxed">
+                  {detail.progression_21_days}
+                </p>
+              </div>
+            )}
+
+            {detail.integration_with_reset && (
+              <div className="p-8 bg-botanik-orange/5 rounded-[40px] border border-botanik-orange/10">
+                <h3 className="text-xl font-bold text-botanik-green mb-4 flex items-center gap-2">
+                   <Zap className="w-5 h-5 text-botanik-orange" /> Intégration avec le Reset
+                </h3>
+                <p className="text-sm md:text-base text-botanik-green/70 leading-relaxed">
+                  {detail.integration_with_reset}
+                </p>
+              </div>
+            )}
+
+            {detail.precautions && (
+              <div className="p-6 md:p-8 bg-red-50 rounded-[32px] border border-red-100 flex gap-4">
+                <AlertCircle className="w-6 h-6 text-red-500 shrink-0" />
+                <div>
+                  <h3 className="text-lg font-bold text-red-900 mb-2">Précautions & Contre-indications</h3>
+                  <p className="text-xs md:text-sm text-red-700/80 leading-relaxed italic">
+                    {detail.precautions}
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="mt-12 md:mt-16 pt-8 md:pt-12 border-t border-botanik-green/10">

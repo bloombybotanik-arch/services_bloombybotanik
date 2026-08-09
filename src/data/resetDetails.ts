@@ -1,252 +1,230 @@
 export interface ResetSectionDetail {
   id: string;
   title: string;
+  subtitle?: string;
+  why?: string;
   objective: string;
-  sections: {
+  objectives?: string[];
+  sections?: {
     id: string;
     title: string;
     content: string[];
   }[];
+  daily_rituals?: {
+    name: string;
+    description: string;
+    estimated_duration_minutes?: number;
+    time_of_day?: 'matin' | 'midi' | 'apres-midi' | 'soir' | 'flexible';
+  }[];
+  progression_21_days?: string;
+  precautions?: string;
+  integration_with_reset?: string;
   cta: {
     label: string;
     description: string;
     href: string;
   };
+  vignette_key?: string;
+  translations?: any;
 }
 
 export const resetDetailsData: ResetSectionDetail[] = [
   {
-    "id": "respiration",
-    "title": "Respiration – Vague & Thymus",
-    "objective": "Activer le nerf vague, éteindre l’inflammation",
-    "sections": [
+    vignette_key: "respiration",
+    id: "respiration",
+    title: "Respiration – Nerf Vague & Thymus",
+    subtitle: "Réactiver le réflexe anti‑inflammatoire naturel",
+    objective: "Activer le nerf vague, éteindre l’inflammation",
+    why: "Le nerf vague est le câble biologique qui relie ton cerveau à tes organes vitaux et qui pilote le réflexe anti‑inflammatoire découvert par Kevin Tracey. Quand il est tonique, il peut couper la surproduction de cytokines qui entretient l'inflammation chronique dans tout le corps. Quand il est épuisé par le stress, la sédentarité, le manque de sommeil ou la malbouffe, ce réflexe s’affaiblit et la douleur, la fatigue et les troubles digestifs se chronicisent. La respiration profonde et régulière est l’un des moyens les plus simples et les plus accessibles pour rééduquer ce nerf, imposer un rythme calme au cœur et ouvrir la voie à une meilleure digestion, un sommeil plus réparateur et une immunité plus stable.",
+    objectives: [
+      "Augmenter le tonus vagal pour mieux réguler l'inflammation et le stress.",
+      "Installer des réflexes respiratoires simples qui ramènent le corps en mode réparation.",
+      "Préparer le terrain pour un sommeil plus profond et une digestion plus fluide.",
+      "Offrir des rituels courts, reproductibles, qui deviennent des automatismes quotidiens."
+    ],
+    daily_rituals: [
       {
-        "id": "intro",
-        "title": "Respirer autrement : un levier biochimique",
-        "content": [
-          "Respirer autrement n’est pas un « exercice de relaxation », c’est un levier biochimique direct sur un système entier : axe HPA (cortisol), nerf vague, variabilité cardiaque, digestion, sommeil et immunité de base.",
-          "Dans le Reset, la respiration structurée est toujours le premier remède, avant la plante et avant le Binder : elle prépare le terrain sur lequel tout le reste va agir."
-        ]
+        name: "Souffle long du matin",
+        description: "Assis, une main sur le ventre. Inspire par le nez pendant 4 secondes, puis expire par la bouche pendant 6 à 8 secondes, sans forcer. Répète une dizaine de cycles. Ce souffle long impose un rythme calme à ton cœur, commence à faire baisser les hormones du stress et signale à ton système nerveux que la journée peut démarrer en mode parasympathique.",
+        estimated_duration_minutes: 5,
+        time_of_day: "matin"
       },
       {
-        "id": "respiration_pourquoi",
-        "title": "Pourquoi respirer autrement change le corps",
-        "content": [
-          "Le nerf vague est la ligne directe entre cerveau, cœur, poumons, estomac et intestins : il module l’inflammation, le rythme cardiaque, la motilité digestive et la profondeur du sommeil.",
-          "Quand il est sous‑sollicité (stress chronique, écrans, apnées, respiration courte et haute), il perd sa capacité à envoyer des signaux de calme et de réparation : l’inflammation de bas grade s’installe, le cortisol reste élevé, la digestion ralentit et le système reste coincé en mode « alerte » au lieu de passer en mode « réparation ».",
-          "Respirer en conscience, selon une structure stable, ne cherche pas à « faire disparaître un symptôme » : cela remet en route le frein parasympathique et redonne au corps la capacité de se réguler lui‑même. C’est un reset fonctionnel, pas une astuce anti‑stress."
-        ]
+        name: "Cohérence cardiaque en journée",
+        description: "Trois fois par jour si possible (matin, midi, fin de journée), pratique la cohérence cardiaque : inspire 5 secondes, expire 5 secondes, pendant 5 minutes. Ce protocole est largement étudié pour réduire l'activation du système sympathique et harmoniser cœur, respiration et nerf vague.",
+        estimated_duration_minutes: 5,
+        time_of_day: "flexible"
       },
       {
-        "id": "respiration_coherence_cardiaque",
-        "title": "La cohérence cardiaque de base",
-        "content": [
-          "Protocole recommandé : 3 fois par jour (matin, midi, fin d’après‑midi), pendant 5 minutes par session.",
-          "6 respirations par minute : inspirer 5 secondes, expirer 5 secondes, par le nez si possible.",
-          "Position : assise, pieds au sol, épaules lourdes, regard posé vers le bas ou la fenêtre, sans téléphone ni notification. Le corps doit pouvoir « sentir » que rien ne lui est demandé pendant ces 5 minutes.",
-          "Effets attendus : baisse progressive du cortisol, amélioration de la variabilité cardiaque (HRV), bascule vers le parasympathique (digestion, réparation, immunité innée), préparation idéale pour les phases de drainage et pour le Binder du soir, que le corps recevra dans un état de réceptivité plutôt que de défense."
-        ]
+        name: "Micro‑gestes vagaux",
+        description: "Chaque jour, ajoute un micro‑geste : hum vibratoire, soupir décompresseur (inspiration normale, longue expiration audible), ton simple chant doux ou une vibration dans la gorge. Ces signaux sensoriels répétés entraînent ton nerf vague à envoyer des messages de calme à l’ensemble des organes.",
+        estimated_duration_minutes: 3,
+        time_of_day: "apres-midi"
       },
       {
-        "id": "respiration_4_8_soir",
-        "title": "La respiration 4–8 avant le Binder",
-        "content": [
-          "Juste avant le Binder du soir : 4 minutes de respiration 4–8.",
-          "Technique : inspirer pendant 4 temps, expirer pendant 8 temps, de préférence par le nez. Si 8 temps sont difficiles au début, rester dans une zone confortable et l’allonger progressivement.",
-          "L’expiration longue est un signal direct pour le parasympathique : elle abaisse la tension fasciale, assouplit le diaphragme, ralentit le rythme cardiaque et ouvre le tube digestif.",
-          "Dans le protocole Bloom, la 4–8 prépare le terrain digestif : le Binder arrive sur un intestin moins spasmodique, une motilité plus fluide et un nerf vague déjà engagé. On ne « calme » pas l’estomac, on change le mode de fonctionnement de l’ensemble axe HPA–vague–intestin."
-        ]
-      },
-      {
-        "id": "respiration_microcodage_vagal",
-        "title": "Micro‑codage vagal au quotidien",
-        "content": [
-          "Ces micro‑gestes peuvent être insérés dans la journée, en complément de la cohérence cardiaque et de la 4–8.",
-          "Soupir décompresseur : Inspirer légèrement. Expirer en deux temps : un premier soupir, puis un second plus long. Visualiser le diaphragme qui se défait, comme une ceinture desserrée. Ce double soupir déverrouille le diaphragme et le haut du fascia, libère la pression thoracique et envoie un signal rapide de désactivation de l’alerte interne.",
-          "Vibration douce (son O ou M) : 3 minutes de son tenu, bouche ouverte (O) ou fermée (M). Le son doit être doux, confortable, sans forcer la voix. La vibration du thorax et de la zone laryngée stimule le nerf vague et le thymus, comme un petit massage interne de l’axe cœur–poumons–système immunitaire.",
-          "Ces micro‑codages vagaux ne remplacent pas les phases du Reset, ils les amplifient : plus le nerf vague est entraîné, plus les plantes, les Binder et les changements alimentaires peuvent travailler sur un terrain qui sait déjà revenir au calme. Bloom ne traite pas un symptôme, Bloom rééduque un système. La respiration en est la première langue."
-        ]
+        name: "Respiration diaphragmatique du soir",
+        description: "Allongé, une main sur le diaphragme, inspire en gonflant doucement le ventre, puis expire lentement jusqu’à ressentir une descente intérieure. Quelques minutes suffisent pour basculer vers le sommeil en limitant les ruminations et l’activation inflammatoire nocturne.",
+        estimated_duration_minutes: 3,
+        time_of_day: "soir"
       }
     ],
-    "cta": {
-      "label": "Démarrer le Reset respiratoire",
-      "description": "La respiration est la première langue du corps. Apprenez à lui parler pour éteindre l'inflammation.",
-      "href": "/reset-homeostasique"
+    progression_21_days: "Jours 1–7 : installer au moins un rituel par jour (souffle long du matin ou respiration du soir). Jours 8–14 : ajouter la cohérence cardiaque une à deux fois par jour. Jours 15–21 : intégrer les micro‑gestes vagaux dans des moments clés (avant un repas, après le brossage des dents, avant un rendez‑vous stressant), jusqu’à ce que ces réflexes deviennent naturels. L’objectif n’est pas la performance, mais la répétition douce pour recréer une mémoire corporelle de calme.",
+    precautions: "En cas de vertiges, d’oppression thoracique, de douleurs inhabituelles ou de pathologies cardiaques ou respiratoires déjà suivies par un médecin, réduire l’intensité des exercices et demander un avis médical avant de prolonger ou d’ajouter des apnées. Éviter les pratiques trop agressives (hyperventilation, apnées très longues) dans un contexte d’inflammation chronique, de fatigue extrême ou d’anxiété importante : le système nerveux a besoin de douceur.",
+    integration_with_reset: "La respiration est la clé d’entrée du Reset Homéostasique : elle réactive le nerf vague, crée une base de sécurité intérieure et rend chaque autre axe plus efficace. Les extraits botaniques préparés avec la BloomLab viennent soutenir ce travail en modulant le terrain inflammatoire et digestif, mais ils s’ancrent dans un corps qui a réappris à envoyer des signaux de calme.",
+    cta: {
+      label: "Démarrer le Reset respiratoire",
+      description: "La respiration est la première langue du corps. Apprenez à lui parler pour éteindre l'inflammation.",
+      href: "/reset-homeostasique"
     }
   },
   {
-    "id": "mouvement",
-    "title": "Mouvement – Fascia & fluides",
-    "objective": "Mouvement : faire circuler les fluides, libérer le fascia",
-    "sections": [
+    vignette_key: "mouvement",
+    id: "mouvement",
+    title: "Mouvement – Lymphe & Fascia",
+    subtitle: "Relancer le drainage et libérer les tissus",
+    objective: "Mouvement : faire circuler les fluides, libérer le fascia",
+    why: "Le système lymphatique est le grand système de drainage du corps : il collecte les déchets, les protéines et une partie des cytokines produites par l’inflammation. Contrairement au sang, la lymphe n’a pas de pompe centrale : elle dépend presque entièrement des contractions musculaires et de la respiration. La sédentarité prolongée augmente les marqueurs d’inflammation de bas grade (CRP, IL‑6, TNF‑α), favorise le surpoids viscéral et ralentit la circulation lymphatique. Des mouvements doux, fréquents, associés à une respiration profonde, peuvent améliorer nettement ce flux, réduire les oedèmes, libérer les fascias et soutenir la réparation tissulaire.",
+    objectives: [
+      "Réduire l’impact inflammatoire de la sédentarité en multipliant les micro‑mouvements.",
+      "Relancer la circulation lymphatique pour mieux évacuer cytokines et déchets métaboliques.",
+      "Assouplir les fascias pour diminuer les sensations de raideur, de lourdeur et de douleur diffuse.",
+      "Installer une hygiène de mouvement réaliste, compatible avec une vie quotidienne chargée."
+    ],
+    daily_rituals: [
       {
-        "id": "mouvement_intro",
-        "title": "Une hygiène biologique indispensable",
-        "content": [
-          "Le mouvement quotidien n’est pas un sport en plus du Reset, c’est une hygiène biologique au même titre que la respiration ou l’alimentation : il met en circulation les fluides, libère le fascia, active la lymphe, protège les reins et le foie, et stimule le système endocannabinoïde.",
-          "Sans circulation, les plantes mobilisent, mais les toxines restent piégées. Bloom ne cherche pas à « brûler des calories », mais à remettre en mouvement un système entier."
-        ]
+        name: "Break anti‑inflammation toutes les 30–60 minutes",
+        description: "Si tu passes beaucoup de temps assis, programme un rappel toutes les 30 à 60 minutes : lève‑toi, marche dans la pièce, monte une ou deux marches, fais 10 flexions‑extensions de chevilles et de genoux. Ces micro‑pauses sont suffisantes pour interrompre la montée des marqueurs inflammatoires liée au temps assis.",
+        estimated_duration_minutes: 2,
+        time_of_day: "flexible"
       },
       {
-        "id": "mouvement_fascia",
-        "title": "Le fascia, réseau caché du corps",
-        "content": [
-          "Le fascia est le tissu qui relie muscles, organes et peau : il transporte fluide, tension et information immunitaire, comme une toile vivante qui enveloppe tout.",
-          "Un fascia figé (sédentarité, stress, écrans, postures répétitives) bloque la circulation lymphatique et ralentit l’élimination des toxines mobilisées par les plantes et les Binder. Le Reset ne peut pas circuler dans un corps immobile : les voies sont ouvertes, mais l’eau ne coule pas."
-        ]
+        name: "Marche quotidienne",
+        description: "Installe 20 à 30 minutes de marche à ton rythme, idéalement en extérieur. Tu peux les fractionner en 2 × 10 minutes. Cette marche modérée améliore le flux lymphatique, réduit la fibrose tissulaire et contribue à abaisser l’inflammation de bas grade chez les personnes sédentaires.",
+        estimated_duration_minutes: 20,
+        time_of_day: "apres-midi"
       },
       {
-        "id": "mouvement_marche_quotidienne",
-        "title": "45 minutes de mouvement simple par jour",
-        "content": [
-          "Objectif quotidien : marcher 30 à 45 minutes par jour, idéalement dehors, à rythme confortable, sans chercher la performance.",
-          "Possibilité de fractionner : 3 × 15 minutes autour des repas (après le déjeuner et/ou le dîner, ce qui aide aussi la glycémie).",
-          "Ajouter 2 à 3 fois par semaine : une séance de musculation douce (poids du corps, bandes élastiques) ou de yoga/pilates pour mobiliser le fascia, les hanches et la colonne.",
-          "Ce mouvement n’est pas un « bonus fitness » : c’est ce qui permet à la lymphe, au sang et aux Binders de faire leur travail jusqu’au bout."
-        ]
+        name: "Routine fascia & diaphragme",
+        description: "Chaque jour, prends 5 à 10 minutes pour mobiliser en douceur les grands axes : enrouler‑dérouler la colonne, ouvrir les hanches, faire des rotations lentes des épaules. Combine ces mouvements avec une respiration abdominale pour mobiliser les fascias thoraco‑abdominaux.",
+        estimated_duration_minutes: 10,
+        time_of_day: "soir"
       },
       {
-        "id": "mouvement_effets_systemiques",
-        "title": "Effets sur les systèmes du corps",
-        "content": [
-          "Axe HPA / nerf vague : le mouvement régulier baisse le cortisol chronique, protège le nerf vague et évite l’axe « stress permanent » qui maintient NF‑κB actif et l’inflammation de bas grade.",
-          "Terrain intestinal : le mouvement stimule le péristaltisme, réduit la stagnation qui nourrit dysbiose, LPS et fermentation excessive ; il aide l’intestin à « suivre » le travail des plantes et des fibres.",
-          "Terrain énergétique (pré‑ménopause & au‑delà) : la marche et la musculation douce maintiennent la masse musculaire et la dépense de repos ; le même repas est alors utilisé et non stocké. On ne corrige pas seulement un poids, on corrige une façon d’utiliser l’énergie.",
-          "Bloom n’utilise pas le mouvement pour faire disparaître un symptôme : il le place au service d’un terrain qui doit redevenir capable de brûler, drainer et réparer."
-        ]
-      },
-      {
-        "id": "mouvement_rituels_fascia",
-        "title": "Rituels fascia à intégrer",
-        "content": [
-          "Étirements myofasciaux : 10 minutes le matin (hanches, dos, cage thoracique, épaules) pour « ouvrir les éponges » tissulaires et relâcher les zones qui accumulent la tension.",
-          "Thymus tapping : 5 minutes de tapotements doux sur le sternum, en respiration lente, pour stimuler le thymus, le nerf vague et l’immunité innée. Le corps reçoit un signal clair : il peut passer du mode alerte au mode réparation.",
-          "Ces rituels ne remplacent pas les phases du Reset, ils les accompagnent : plus le fascia circule, plus les plantes et les Binder travaillent sur un terrain vivant."
-        ]
+        name: "Activation lymphatique ciblée (option)",
+        description: "Selon ton niveau d’énergie, ajoute quelques mouvements simples : pompage des chevilles, contractions‑relâchements des muscles des jambes, mouvements de bras façon 'pompe'. Dans les études, ce type d’exercices contribue à réduire la surcharge hydrique et à améliorer le confort dans les membres.",
+        estimated_duration_minutes: 5,
+        time_of_day: "flexible"
       }
     ],
-    "cta": {
-      "label": "Activer la circulation du Reset",
-      "description": "Le mouvement n'est pas un bonus, c'est ce qui permet aux Binders de faire leur travail jusqu'au bout.",
-      "href": "/reset-homeostasique"
+    progression_21_days: "Jours 1–7 : installer les breaks de 2 minutes, en les rendant automatiques (timer, application, rappel visuel). Jours 8–14 : ajouter la marche quotidienne, même si ce n’est que 10 minutes au début. Jours 15–21 : stabiliser la routine fascia/diaphragme et, si le corps le permet, introduire quelques exercices ciblés de pompage lymphatique. L’objectif est d’ancrer l’idée qu’aucune journée ne se passe sans mouvement doux au service du terrain.",
+    precautions: "En cas d’insuffisance cardiaque, d’œdèmes importants, d’arthrose sévère ou de fatigue extrême, commencer avec des mouvements très doux, parfois assis ou semi‑couché, et ajuster en lien avec un professionnel de santé. Éviter les séances très intenses et ponctuelles qui épuisent le corps inflammé : dans un Reset, on privilégie la régularité modérée à la performance.",
+    integration_with_reset: "Le mouvement agit comme la pompe du Reset Homéostasique : il fait circuler la lymphe, libère les fascias et aide les extraits botaniques à atteindre plus efficacement les tissus. Combiné à la respiration vagale, il transforme chaque journée en une succession de petites vagues de drainage et de libération, plutôt qu’en blocs de sédentarité qui entretiennent le feu inflammatoire.",
+    cta: {
+      label: "Activer la circulation du Reset",
+      description: "Le mouvement n'est pas un bonus, c'est ce qui permet aux Binders de faire leur travail jusqu'au bout.",
+      href: "/reset-homeostasique"
     }
   },
   {
-    "id": "sommeil",
-    "title": "Sommeil – Nuit de reconstruction",
-    "objective": "Sommeil : la nuit reconstruit ce que le jour draine",
-    "sections": [
+    vignette_key: "sommeil",
+    id: "sommeil",
+    title: "Sommeil – Nuit de reconstruction",
+    subtitle: "Redonner au corps ses nuits de réparation",
+    objective: "Sommeil : la nuit reconstruit ce que le jour draine",
+    why: "Le sommeil profond est un moment de recalibration de l’immunité et de la réparation tissulaire. Quand le sommeil est court, fragmenté ou irrégulier, la production de cytokines pro‑inflammatoires augmente, la régulation glycémique se dégrade et le risque de maladies cardio‑vasculaires, auto‑immunes et neurodégénératives s’élève. Quelques heures de manque de sommeil répétées suffisent à modifier le profil des cellules immunitaires comme si le corps était déjà dans un état d’inflammation ou de stress métabolique avancé. Restaurer une nuit de reconstruction, ce n’est pas chercher la nuit parfaite : c’est créer des conditions stables et simples qui permettent au système nerveux de basculer plus souvent en mode réparation.",
+    objectives: [
+      "Stabiliser une plage de sommeil suffisante et régulière.",
+      "Réduire la fragmentation du sommeil liée aux écrans, au stress et aux rythmes irréguliers.",
+      "Mettre en place des rituels de pré‑sommeil qui soutiennent le passage en mode parasympathique.",
+      "Laisser au corps des fenêtres nocturnes de repos métabolique."
+    ],
+    daily_rituals: [
       {
-        "id": "sommeil_intro",
-        "title": "La nuit : phase de reconstruction",
-        "content": [
-          "Le Reset Homéostasique sépare volontairement les moments de mobilisation (plantes, drainage, Binder) et les moments de reconstruction (sommeil profond).",
-          "La nuit n’est pas une pause neutre : c’est la phase où le fascia, le foie, l’intestin et les axes HPA/SEC reconstruisent ce que le jour a libéré."
-        ]
+        name: "Plage de sommeil stable",
+        description: "Choisis un créneau de 7 à 8 heures de sommeil et garde autant que possible des horaires de coucher et de réveil proches d’un jour à l’autre. La régularité est plus importante que des nuits de 'rattrapage' occasionnelles pour réduire la charge inflammatoire.",
+        estimated_duration_minutes: 0,
+        time_of_day: "soir"
       },
       {
-        "id": "sommeil_circadien_foie",
-        "title": "Le foie travaille la nuit",
-        "content": [
-          "Le foie a son pic de détoxification entre 1h et 3h du matin : il déverse ses toxines dans la bile, puis vers l’intestin.",
-          "Le Binder (zéolithe, bentonite, charbon) pris au coucher capture ce flux nocturne, évite la recirculation entero‑hépatique et protège le terrain pendant que le corps reconstruit. On ne « nettoie » pas le foie une fois pour toutes, on lui donne chaque nuit un moyen de terminer son cycle."
-        ]
+        name: "Routine de pré‑sommeil sans écrans",
+        description: "30 minutes avant le coucher, coupe les écrans. Remplace‑les par une lumière douce, une lecture légère, une douche tiède ou un temps calme. Ajoute 5 minutes de respiration vagale (souffle long ou cohérence cardiaque) pour signaler au système nerveux que la journée se termine.",
+        estimated_duration_minutes: 30,
+        time_of_day: "soir"
       },
       {
-        "id": "sommeil_quatuor_soir",
-        "title": "Le quatuor de reconstruction du soir",
-        "content": [
-          "Ashwagandha (extrait standardisé) : frein de l’axe HPA, baisse du cortisol vespéral, prépare la reméthylation de FKBP5 et la consolidation hippocampique : moins de boucle « stress – rumination », plus de mémoire des signaux de sécurité.",
-          "Houblon : Effet GABA‑ergique, facilite l’endormissement et agit sur NF‑κB et les cytokines vespérales : il aide le corps à quitter la veille inflammatoire pour entrer dans un sommeil réparateur.",
-          "Glycine (environ 3 g) : Baisse la température centrale, induit le sommeil delta, stimule la synthèse de collagène (fascia) et renforce les jonctions serrées intestinales : elle nourrit à la fois le tissu conjonctif et la barrière intestinale pendant la phase de réparation.",
-          "Bardane (si incluse) : Inuline et lactones sesquiterpéniques : travail nocturne sur microbiote, foie et terrain cutané. Elle participe au volet « terrain » du quatuor plutôt qu’ à un effet sédatif direct."
-        ]
+        name: "Environnement de nuit protecteur",
+        description: "Garde la chambre plutôt fraîche, sombre et silencieuse. Limite les sources de bruit et de lumière qui fragmentent le sommeil. Un environnement stable diminue les micro‑réveils qui activent l’inflammation nocturne.",
+        estimated_duration_minutes: 0,
+        time_of_day: "soir"
       },
       {
-        "id": "sommeil_timing_remedes",
-        "title": "Timing du soir : remèdes et Binder",
-        "content": [
-          "Prendre le quatuor nocturne 45 à 60 minutes avant le coucher.",
-          "Prendre le Binder au moment du coucher, pour capturer toxines, LPS et métaux lourds mobilisés dans la journée, sans interférer avec les actifs déjà absorbés.",
-          "Ce timing respecte la chronobiologie : les remèdes entrent d’abord dans le système, puis le Binder vient refermer la porte sur ce que le foie et l’intestin évacuent."
-        ]
-      },
-      {
-        "id": "sommeil_hygiene",
-        "title": "Hygiène de sommeil Bloom",
-        "content": [
-          "Dîner léger et tôt : Dîner avant 19h, en quantité modérée, pour ne pas surcharger le foie au moment de sa phase de détox nocturne. Un repas tardif ou lourd détourne l’énergie vers la digestion au lieu de la régénération.",
-          "Lumière & obscurité : Exposition à la lumière naturelle le matin (dans les 30 minutes après le réveil) pour ancrer la courbe cortisol–mélatonine, et obscurité réelle le soir (pas d’écran au lit, téléphone en mode avion) pour laisser la mélatonine travailler.",
-          "Rituel complet : Respiration 4–8, quatuor nocturne, Binder, puis sommeil dans une chambre sombre et calme. Ce rituel ne combat pas l’insomnie par la force, il aligne les signaux : nerf vague, HPA, SEC, foie et intestin reçoivent tous la même information de nuit."
-        ]
-      },
-      {
-        "id": "sommeil_systemes",
-        "title": "Systèmes reconstruits pendant la nuit",
-        "content": [
-          "Fascia et peau : la glycine et le sommeil delta permettent la reconstruction du collagène et du tissu conjonctif ; c’est la « couture nocturne » des tissus mobilisés par les phases de journée.",
-          "Intestin et microbiote : la nuit laisse les fibres, les polysaccharides marins et les probiotiques travailler sur la barrière intestinale sans nouveaux stress mécaniques ou glycémiques.",
-          "Axes HPA / SEC : un sommeil stable baisse le cortisol chronique, rééquilibre le système endocannabinoïde et réduit cravings, inflammation et fatigue. On ne vise pas seulement « mieux dormir », on vise un changement de mode de fonctionnement du système de stress."
-        ]
+        name: "Micro‑règles de journée pour mieux dormir",
+        description: "Expose‑toi à la lumière naturelle dans la matinée, limite la caféine après 14–16 h et évite les repas très lourds tardifs. Ces habitudes soutiennent la horloge intérieure et facilitent l’endormissement sans recourir à des solutions agressives.",
+        estimated_duration_minutes: 10,
+        time_of_day: "matin"
       }
     ],
-    "cta": {
-      "label": "Consolider la nuit",
-      "description": "Le sommeil est l'espace où le corps redevient capable de se réguler. Optimisez votre reconstruction nocturne.",
-      "href": "/reset-homeostasique"
+    progression_21_days: "Jours 1–7 : sécuriser l’heure de coucher/réveil et instaurer au moins 15–20 minutes de pré‑sommeil sans écran. Jours 8–14 : consolider la routine (lumière douce, respiration, lecture) et ajuster progressivement la caféine et la lourdeur des repas du soir. Jours 15–21 : affiner l’environnement de nuit (température, obscurité, bruit) et stabiliser une fenêtre nocturne cohérente, en acceptant que certaines nuits restent imparfaites : l’essentiel est le mouvement global vers une nuit plus réparatrice.",
+    precautions: "En cas d’insomnie sévère, de nuits très courtes répétées, de ronflements importants avec pauses respiratoires, ou de suspicion de syndrome d’apnée du sommeil, consulter un médecin avant de se contenter de ces seules mesures. Ne pas transformer la gestion du sommeil en source de culpabilité ou de perfectionnisme : le Reset vise à soutenir le corps, pas à le juger.",
+    integration_with_reset: "Le sommeil est le moment où le Reset Homéostasique capitalise les efforts des autres axes : le nerf vague consolide ses réflexes, la lymphe draine plus efficacement, le terrain métabolique se rééquilibre. Les préparations botaniques peuvent soutenir l’apaisement et la régénération (selon les plantes choisies), mais elles s’inscrivent dans un cadre d’hygiène de sommeil clair, ce qui évite de les utiliser comme simples 'somnifères naturels'.",
+    cta: {
+      label: "Consolider la nuit",
+      description: "Le sommeil est l'espace où le corps redevient capable de se réguler. Optimisez votre reconstruction nocturne.",
+      href: "/reset-homeostasique"
     }
   },
   {
-    "id": "alimentation",
-    "title": "Alimentation – Nourrir le terrain",
-    "objective": "Alimentation : nourrir le terrain plutôt que le symptôme",
-    "sections": [
+    vignette_key: "alimentation",
+    id: "alimentation",
+    title: "Alimentation – Nourrir le terrain",
+    subtitle: "Mettre la métabolique et l’immunité de ton côté",
+    objective: "Alimentation : nourrir le terrain plutôt que le symptôme",
+    why: "Ce que nous mangeons chaque jour est l’un des déterminants majeurs de l’inflammation de bas grade, de la résistance à l’insuline et du surpoids viscéral. Une alimentation riche en sucres rapides, farines raffinées et produits ultra‑transformés entretient un état inflammatoire silencieux qui fragilise le système cardio‑vasculaire, le foie, le microbiote et le cerveau. À l’inverse, une alimentation structurée autour de vrais aliments, de bonnes graisses, de fibres et de fenêtres métaboliques de repos peut améliorer nettement les marqueurs de santé, soutenir l’immunité et rendre le corps plus réceptif aux signaux de réparation envoyés par le nerf vague.",
+    objectives: [
+      "Réduire l’exposition quotidienne aux sucres rapides et aux produits ultra‑transformés.",
+      "Stabiliser la glycémie et le métabolisme pour diminuer l’inflammation de bas grade.",
+      "Soutenir le microbiote intestinal par des apports progressifs en fibres et nutriments.",
+      "Intégrer les plantes (totum) comme soutien du terrain, pas comme substitut magique."
+    ],
+    daily_rituals: [
       {
-        "id": "alimentation_intro",
-        "title": "Nourrir les fondations",
-        "content": [
-          "L’alimentation Bloom ne cherche pas à « manger anti‑symptôme » mais à nourrir les fondations : foie, microbiote, barrière intestinale, système rénine–angiotensine et axe HPA.",
-          "Hydratation, timing, mastication et choix des aliments sont les gestes quotidiens qui mettent le Reset au service d’un terrain vivant."
-        ]
+        name: "2–3 vrais repas, peu de grignotages",
+        description: "Organise ta journée autour de 2 ou 3 repas complets, en limitant au maximum les grignotages. Laisse au corps des fenêtres de repos métabolique, notamment la nuit, pour soutenir les processus d’autophagie et de réparation.",
+        estimated_duration_minutes: 0,
+        time_of_day: "flexible"
       },
       {
-        "id": "alimentation_hydratation",
-        "title": "Hydratation et ouverture du terrain",
-        "content": [
-          "Au réveil : 500 ml d’eau tiède avec 1/2 citron et une pincée de sel marin non raffiné pour ouvrir les canaux d’élimination, préparer foie et reins et relancer doucement la circulation.",
-          "Puis séquence Phase 0 :",
-          "Psyllium (gel protecteur) : tapisse et protège la muqueuse, aide le transit et prépare la barrière à recevoir les plantes.",
-          "Aloé + citron : jonctions serrées + bile, soutien des entérocytes et du foie.",
-          "Chondrus + Dulse : prébiotique marin + minéraux anti‑inflammatoires, soutien simultané des reins, de l’intestin et du terrain minéral.",
-          "Hydrater ne sert pas à « boire plus » : cela met en mouvement la Phase III (élimination) avant de mobiliser, pour que ce qui est lâché puisse sortir."
-        ]
+        name: "Qualité des glucides",
+        description: "Diminue les sucres ajoutés, les boissons sucrées et les farines blanches. Privilégie les légumes, quelques fruits, des tubercules, et éventuellement des céréales complètes si elles sont bien tolérées. Cela réduit les pics de glucose, la résistance à l’insuline et l’activation inflammatoire qui en découle.",
+        estimated_duration_minutes: 10,
+        time_of_day: "flexible"
       },
       {
-        "id": "alimentation_mastication_timing",
-        "title": "Mastication et fenêtre alimentaire",
-        "content": [
-          "Mastication : viser au moins 20 mastications par bouchée pour réduire fermentation, LPS et améliorer la satiété. La bouche est la première « BloomLab » : moins elle fait, plus l’intestin souffre.",
-          "Fenêtre alimentaire : idéalement 8h–18h/19h, avec dîner léger et pris tôt. Cette organisation réduit l’inflammation de bas grade, stabilise le métabolisme et respecte l’horloge du foie et du microbiome.",
-          "On ne compte pas les calories : on aligne l’heure, la quantité et l’état dans lequel on mange (présence, mastication, rythme)."
-        ]
+        name: "Graisses protectrices et protéines suffisantes",
+        description: "Chaque jour, ajoute une source d’oméga‑3 (poisson gras de qualité ou certaines graines/huile adaptées) et veille à de bonnes protéines (surtout si tu perds du muscle). Ces apports soutiennent la réparation, la stabilité glycémique et les membranes cellulaires.",
+        estimated_duration_minutes: 10,
+        time_of_day: "flexible"
       },
       {
-        "id": "alimentation_a_favoriser",
-        "title": "Ce qu’il faut privilégier",
-        "content": [
-          "Légumes verts de saison (épinards, céleri, courgette, brocoli, artichaut, asperges) : soutien du foie, baisse de la « chaleur interne » et apport de fibres fermentescibles pour le microbiote.",
-          "Bouillons d’os 3 fois par semaine : Source de glycine, collagène, minéraux et glutamine pour fascia et barrière intestinale. Ils complémentent le travail nocturne du quatuor et des phases de reconstruction.",
-          "Glucides de qualité (carottes, betteraves, patates douces, riz complet, millet, quinoa, azuki, yuca) : soutien de l’énergie sans surcharger en sucres rapides ; ils nourrissent la cellule plutôt que le craving.",
-          "Poisson bleu, oméga‑3, graines de qualité (sardines, maquereaux, huiles riches en oméga‑3, sésame noir, noix) : baisse de NF‑κB, soutien des membranes et du système endocannabinoïde, protection vasculaire.",
-          "Algues (Chondrus, Dulse, autres) : Minéraux, fucanes anti‑inflammatoires, soutien des reins et de l’intestin ; elles complètent la dimension « eau salée vivante » du protocole.",
-          "Bloom ne construit pas un « régime spécial maladie ». Il construit une routine alimentaire de terrain qui rend le corps capable de recevoir les plantes, d’en extraire ce qui lui convient, et de renvoyer le reste vers la sortie."
-        ]
+        name: "Fiber & microbiote",
+        description: "Augmente progressivement les légumes et les fibres fermentescibles, en respectant ta tolérance digestive. Un microbiote diversifié aide à moduler l’inflammation, la métabolique et même l’humeur.",
+        estimated_duration_minutes: 10,
+        time_of_day: "flexible"
+      },
+      {
+        name: "Fenêtre nocturne de repos",
+        description: "Installe une fenêtre de 12 heures sans apport calorique entre le dernier repas du soir et le petit‑déjeuner (par exemple dîner à 19 h, petit‑déjeuner à 7 h). Cela donne au corps un temps de repos métabolique et de nettoyage.",
+        estimated_duration_minutes: 0,
+        time_of_day: "soir"
       }
     ],
-    "cta": {
-      "label": "Nourrir mon terrain",
-      "description": "L'alimentation est le socle de la transformation. Adoptez une routine qui respecte votre biologie.",
-      "href": "/culinaire"
+    progression_21_days: "Jours 1–7 : stabiliser les horaires de repas et réduire une source évidente de sucre (boisson sucrée, dessert quotidien). Jours 8–14 : améliorer la qualité des glucides (plus de légumes, moins de farines blanches) et introduire une source quotidienne d’oméga‑3. Jours 15–21 : installer la fenêtre nocturne de repos et travailler sur les fibres/microbiote, en ajustant en fonction de la digestion. L’idée n’est pas de lancer un régime violent, mais de déplacer progressivement le centre de gravité alimentaire vers un terrain moins inflammatoire.",
+    precautions: "Adapter toujours ces conseils aux pathologies existantes (diabète, insuffisance rénale, maladies digestives) et aux traitements en cours. En cas de terrain complexe, l’accompagnement par un professionnel de santé est vivement recommandé. Éviter les changements alimentaires brutaux qui peuvent déstabiliser la glycémie, le sommeil ou la digestion : un pas tenable vaut mieux qu’une révolution épuisante.",
+    integration_with_reset: "L’alimentation est la matrice du Reset Homéostasique : elle nourrit ou entrave les efforts des autres axes. Une alimentation cohérente rend le nerf vague plus réceptif, facilite la circulation lymphatique, améliore le sommeil et permet aux extraits botaniques issus de la BloomLab de travailler sur un terrain plus favorable. Le totum des plantes ne remplace pas une hygiène alimentaire ; il la renforce et l’affine.",
+    cta: {
+      label: "Nourrir mon terrain",
+      description: "L'alimentation est le socle de la transformation. Adoptez une routine qui respecte votre biologie.",
+      href: "/culinaire"
     }
   }
 ];
