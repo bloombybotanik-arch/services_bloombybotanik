@@ -582,7 +582,7 @@ export default function App() {
         '/how-it-works-diy-natural-recipes': '/boutique',
         '/natural-herbal-infusion-body-care-oils-': '/cosmetiques',
         '/natural-herbal-infusion-face-skincare-recipes': '/cosmetiques',
-        '/infusion-botanique-maison-comment-ca-marche': '/extraction-botanique-guide-complet',
+        '/infusion-botanique-maison-comment-ca-marche': '/',
         '/extraction-plantes-naturelles-bienfaits': '/extraction-botanique-guide-complet',
         '/chroniques': '/',
         '/blog': '/',
@@ -601,6 +601,16 @@ export default function App() {
       const matchedView = PATH_VIEWS[normalizedPath];
       if (matchedView) {
         setCurrentView(matchedView as typeof currentView);
+        
+        // Handle scrolling to specific section for legacy URL
+        if (restPath === '/infusion-botanique-maison-comment-ca-marche') {
+          setTimeout(() => {
+            const element = document.getElementById('comprendre-infusion-botanique');
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 1500);
+        }
       }
     }, []);
 
