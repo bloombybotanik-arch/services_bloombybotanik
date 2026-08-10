@@ -43,6 +43,12 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
             <p className="text-white/60 text-sm leading-relaxed max-w-md mb-8">
               {t.footer.description}
             </p>
+            <div className="mb-12 border-l-2 border-botanik-orange pl-6 py-2">
+              <p className="text-xl md:text-2xl font-light italic text-white/90 leading-tight">
+                {lang === 'fr' ? "Votre corps sait se guérir." : lang === 'en' ? "Your body knows how to heal itself." : "Ihr Körper weiß, wie er sich selbst heilt."} <br />
+                <span className="text-botanik-orange font-bold not-italic">{lang === 'fr' ? "Donnez-lui simplement les bons outils." : lang === 'en' ? "Just give it the right tools." : "Geben Sie ihm einfach die richtigen Werkzeuge."}</span>
+              </p>
+            </div>
             <div className="mb-8">
               <h4 className="text-xs uppercase tracking-widest font-bold mb-4 text-[#F5F3EB]">Contact</h4>
               <a href="mailto:bloombybotanik@gmail.com" className="text-white/60 hover:text-white transition-colors text-sm">
@@ -69,13 +75,13 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
           <div>
             <h4 className="text-xs uppercase tracking-widest font-bold mb-6 text-[#F5F3EB]">Navigation</h4>
             <ul className="space-y-4 text-sm text-white/60">
-              <li><button onClick={() => onNavigate('phytotherapie-reset')} className="hover:text-white transition-colors">{t.nav.guide}</button></li>
-              <li><button onClick={() => onNavigate('machine')} className="hover:text-white transition-colors">{lang === 'fr' ? 'La Machine & Niveaux' : lang === 'en' ? 'The Machine & Levels' : 'Die Maschine & Level'}</button></li>
               <li><button onClick={() => onNavigate('boutique')} className="hover:text-white transition-colors">{t.nav.shop}</button></li>
               <li><button onClick={() => onNavigate('culinaire')} className="hover:text-white transition-colors">{t.nav.culinary}</button></li>
               <li><button onClick={() => onNavigate('cosmetiques')} className="hover:text-white transition-colors">{t.nav.cosmetics}</button></li>
-              <li><button onClick={() => onNavigate('library-landing')} className="hover:text-white transition-colors">{t.nav.herbarium}</button></li>
-              <li><a href="https://blog.bloombybotanik.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{t.nav.blog}</a></li>
+              <li><button onClick={() => onNavigate('phytotherapie-reset')} className="hover:text-white transition-colors">{t.nav.reset}</button></li>
+              <li><button onClick={() => onNavigate('library-landing')} className="hover:text-white transition-colors">{t.nav.blog}</button></li>
+              <li><button onClick={() => onNavigate('manifeste')} className="hover:text-white transition-colors">{t.nav.manifesto}</button></li>
+              <li><button onClick={() => onNavigate('activation')} className="hover:text-white transition-colors">{lang === 'fr' ? 'Activer ma BloomLab' : lang === 'en' ? 'Activate my BloomLab' : 'Meine BloomLab aktivieren'}</button></li>
             </ul>
           </div>
 

@@ -349,35 +349,49 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
       <LanguageSelector lang={lang} setLang={setLang} variant="sidebar" />
 
       <nav className="mb-12">
-        <h3 className="text-xs uppercase tracking-[0.2em] text-[#F5F3EB] mb-6 font-semibold">{lang === 'fr' ? 'Sommaire' : lang === 'en' ? 'Summary' : 'Inhalt'}</h3>
         <ul className="space-y-4 text-sm font-medium">
           <li>
             <a 
               href="#" 
-              onClick={(e) => { 
-                e.preventDefault(); 
-                navigateTo('home'); 
-                setTimeout(() => document.getElementById('protocole')?.scrollIntoView({ behavior: 'smooth' }), 100);
-              }} 
-              className="text-white hover:text-[#F97316] transition-colors"
+              onClick={(e) => { e.preventDefault(); navigateTo('boutique'); }}
+              className={`flex items-center gap-3 transition-colors group ${currentView === 'boutique' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
             >
-              I. {lang === 'fr' ? 'Commencer ici' : lang === 'en' ? 'Start here' : 'Hier beginnen'}
+              <ShoppingBag className="w-4 h-4" /> {t.nav.shop}
             </a>
           </li>
           <li>
-            <a 
-              href="#" 
-              onClick={(e) => { 
-                e.preventDefault(); 
-                navigateTo('home'); 
-                setTimeout(() => document.getElementById('comprendre-infusion-botanique')?.scrollIntoView({ behavior: 'smooth' }), 100);
-              }} 
-              className="text-white hover:text-[#F97316] transition-colors"
-            >
-              II. {t.home.understandingInfusion.sidebar_label.split('. ')[1]}
-            </a>
+            <div className="text-xs uppercase tracking-[0.2em] text-[#F5F3EB] mb-4 mt-8 font-semibold opacity-50">{t.nav.universes}</div>
+            <ul className="space-y-4 ml-2 border-l border-white/10 pl-4">
+              <li>
+                <a 
+                  href="#" 
+                  onClick={(e) => { e.preventDefault(); navigateTo('culinaire'); }}
+                  className={`flex items-center gap-3 transition-colors group ${currentView === 'culinaire' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
+                >
+                  <ChefHat className="w-4 h-4" /> {t.nav.culinary}
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#" 
+                  onClick={(e) => { e.preventDefault(); navigateTo('cosmetiques'); }}
+                  className={`flex items-center gap-3 transition-colors group ${currentView === 'cosmetiques' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
+                >
+                  <Star className="w-4 h-4" /> {t.nav.cosmetics}
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#" 
+                  onClick={(e) => { e.preventDefault(); navigateTo('phytotherapie-reset'); }}
+                  className={`flex items-center gap-3 transition-colors group ${currentView === 'phytotherapie-reset' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
+                >
+                  <Activity className="w-4 h-4" /> {t.nav.reset}
+                </a>
+              </li>
+            </ul>
           </li>
-          <li>
+          <li className="pt-4">
             <a 
               href="#" 
               onClick={(e) => { 
@@ -385,103 +399,40 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
                 navigateTo('home'); 
                 setTimeout(() => document.getElementById('science')?.scrollIntoView({ behavior: 'smooth' }), 100);
               }} 
-              className="text-white hover:text-[#F97316] transition-colors"
+              className="flex items-center gap-3 text-white hover:text-[#F97316] transition-colors"
             >
-              III. {lang === 'fr' ? 'La science du Totum' : lang === 'en' ? 'The science of Totum' : 'Die Wissenschaft des Totum'}
+              <FlaskConical className="w-4 h-4" /> {lang === 'fr' ? 'Science du Totum' : lang === 'en' ? 'Totum Science' : 'Totum-Wissenschaft'}
             </a>
           </li>
           <li>
             <a 
               href="#" 
-              onClick={(e) => { 
-                e.preventDefault(); 
-                navigateTo('home'); 
-                setTimeout(() => document.getElementById('alternative')?.scrollIntoView({ behavior: 'smooth' }), 100);
-              }} 
-              className="text-white hover:text-[#F97316] transition-colors"
+              onClick={(e) => { e.preventDefault(); navigateTo('library-landing'); }}
+              className={`flex items-center gap-3 transition-colors group ${currentView === 'library-landing' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
             >
-              IV. {lang === 'fr' ? 'Une autre voie' : lang === 'en' ? 'Another way' : 'Ein anderer Weg'}
+              <BookOpen className="w-4 h-4" /> {t.nav.blog}
             </a>
           </li>
           <li>
             <a 
               href="#" 
-              onClick={(e) => { 
-                e.preventDefault(); 
-                navigateTo('home'); 
-                setTimeout(() => document.getElementById('choix')?.scrollIntoView({ behavior: 'smooth' }), 100);
-              }} 
-              className="text-white hover:text-[#F97316] transition-colors"
+              onClick={(e) => { e.preventDefault(); navigateTo('manifeste'); }}
+              className={`flex items-center gap-3 transition-colors group ${currentView === 'manifeste' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
             >
-              V. {lang === 'fr' ? 'Trouver votre voie' : lang === 'en' ? 'Find your way' : 'Finden Sie Ihren Weg'}
-            </a>
-          </li>
-          <li>
-            <a 
-              href="#" 
-              onClick={(e) => { 
-                e.preventDefault(); 
-                navigateTo('activation'); 
-              }} 
-              className="text-white hover:text-[#F97316] transition-colors"
-            >
-              VI. {lang === 'fr' ? 'Activer ma BloomLab' : lang === 'en' ? 'Activate my BloomLab' : 'Meine BloomLab aktivieren'}
+              <Leaf className="w-4 h-4" /> {t.nav.manifesto}
             </a>
           </li>
         </ul>
       </nav>
 
-      <div className="space-y-4">
-        <h3 className="text-xs uppercase tracking-[0.2em] text-[#F5F3EB] mb-4 font-semibold">{lang === 'fr' ? 'Accès Rapide' : lang === 'en' ? 'Quick Access' : 'Schnellzugriff'}</h3>
+      <div className="space-y-4 mb-12">
+        <h3 className="text-xs uppercase tracking-[0.2em] text-[#F5F3EB] mb-4 font-semibold opacity-50">{lang === 'fr' ? 'Configuration' : lang === 'en' ? 'Setup' : 'Konfiguration'}</h3>
         <a 
           href="#" 
-          onClick={(e) => { e.preventDefault(); navigateTo('machine'); }}
-          className={`flex items-center gap-3 text-sm font-medium transition-colors group ${currentView === 'machine' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
+          onClick={(e) => { e.preventDefault(); navigateTo('activation'); }} 
+          className={`flex items-center gap-3 text-sm font-medium transition-colors group ${currentView === 'activation' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
         >
-          <FlaskConical className={`w-4 h-4 transition-colors ${currentView === 'machine' ? 'text-[#F97316]' : 'group-hover:text-[#F97316]'}`} /> {lang === 'fr' ? 'La Machine & Niveaux' : lang === 'en' ? 'The Machine & Levels' : 'Die Maschine & Level'}
-        </a>
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); navigateTo('phytotherapie-reset'); }}
-          className={`flex items-center gap-3 text-sm font-medium transition-colors group ${currentView === 'phytotherapie-reset' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
-        >
-          <Activity className={`w-4 h-4 transition-colors ${currentView === 'phytotherapie-reset' ? 'text-[#F97316]' : 'group-hover:text-[#F97316]'}`} /> {t.nav.guide}
-        </a>
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); navigateTo('boutique'); }}
-          className={`flex items-center gap-3 text-sm font-medium transition-colors group ${currentView === 'boutique' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
-        >
-          <ShoppingBag className={`w-4 h-4 transition-colors ${currentView === 'boutique' ? 'text-[#F97316]' : 'group-hover:text-[#F97316]'}`} /> {t.nav.shop}
-        </a>
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); navigateTo('culinaire'); }}
-          className={`flex items-center gap-3 text-sm font-medium transition-colors group ${currentView === 'culinaire' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
-        >
-          <ChefHat className={`w-4 h-4 transition-colors ${currentView === 'culinaire' ? 'text-[#F97316]' : 'group-hover:text-[#F97316]'}`} /> {t.nav.culinary}
-        </a>
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); navigateTo('cosmetiques'); }}
-          className={`flex items-center gap-3 text-sm font-medium transition-colors group ${currentView === 'cosmetiques' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
-        >
-          <Star className={`w-4 h-4 transition-colors ${currentView === 'cosmetiques' ? 'text-[#F97316]' : 'group-hover:text-[#F97316]'}`} /> {t.nav.cosmetics}
-        </a>
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); navigateTo('library-landing'); }}
-          className={`flex items-center gap-3 text-sm font-medium transition-colors group ${currentView === 'library-landing' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
-        >
-          <Leaf className={`w-4 h-4 transition-colors ${currentView === 'library-landing' ? 'text-[#F97316]' : 'group-hover:text-[#F97316]'}`} /> {t.nav.herbarium}
-        </a>
-        <a 
-          href="https://blog.bloombybotanik.com/" 
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-3 text-sm font-medium text-white hover:text-[#F97316] transition-colors group mb-12"
-        >
-          <BookOpen className="w-4 h-4 group-hover:text-[#F97316]" /> {t.nav.blog}
+          <Settings className="w-4 h-4" /> {lang === 'fr' ? 'Activer ma BloomLab' : lang === 'en' ? 'Activate my BloomLab' : 'Meine BloomLab aktivieren'}
         </a>
       </div>
     </div>

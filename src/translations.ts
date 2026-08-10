@@ -44,14 +44,35 @@ export const translations = {
     nav: {
       guide: "Guide",
       herbarium: "L'Herbier",
-      blog: "Le Blog",
+      blog: "La Bibliothèque",
       chat: "Alma Chat",
       shop: "Boutique",
       account: "Compte",
       manifesto: "Le Manifeste",
       culinary: "Atelier Culinaire",
       cosmetics: "Cosmétique",
+      reset: "Reset Homéostasique",
+      universes: "Les 3 Univers",
       cart: "Panier"
+    },
+    universes: {
+      title: "Devenez l'Architecte de votre Terrain",
+      subtitle: "Trois univers d'offres nourris par l'intelligence du Totum végétal.",
+      culinaire: {
+        title: "Atelier Culinaire",
+        description: "Transformez vos plantes en beurres, huiles et élixirs fonctionnels.",
+        cta: "Infuser mes recettes"
+      },
+      cosmetique: {
+        title: "Soin Cosmétique",
+        description: "Formulez vos propres sérums et soins topiques de grade laboratoire.",
+        cta: "Créer mes soins"
+      },
+      reset: {
+        title: "Reset Homéostasique",
+        description: "Un protocole complet pour libérer votre énergie et équilibrer votre terrain.",
+        cta: "Démarrer mon Reset"
+      }
     },
     footer: {
       description: "L'ingénierie de la résilience biologique par l'extraction botanique de précision.",
@@ -82,6 +103,7 @@ export const translations = {
         subtitle: "Le Guide Complet.",
         description: "Maîtrisez les solvants, les températures précises et les protocoles d'infusion botanique pour révéler la puissance du Totum végétal chez vous.",
         cta_read: "Lire le guide complet",
+        cta_buy: "Acheter BloomLab",
         cta_discover: "Découvrir la BloomLab"
       },
       understandingInfusion: {
@@ -518,6 +540,21 @@ export const translations = {
           name: "Achetez par 3",
           subtitle: "LIVRAISON OFFERTE",
           description: "Sélectionnez vos 3 mélanges préférés et profitez de la livraison offerte. Idéal pour un protocole complet."
+        },
+        bundle_cosme: {
+          name: "Pack BloomLab + Kit Cosmétique",
+          subtitle: "SÉLECTION BEAUTÉ TOTUM",
+          description: "Le BloomLab accompagné de 3 recettes signature et du matériel de formulation pour vos soins visage & corps."
+        },
+        bundle_culinary: {
+          name: "Pack BloomLab + Kit Culinaire",
+          subtitle: "GASTRONOMIE FONCTIONNELLE",
+          description: "Le BloomLab avec un kit de plantes aromatiques et livret de recettes pour huiles et beurres botaniques."
+        },
+        bundle_reset: {
+          name: "Pack BloomLab + Protocole Reset",
+          subtitle: "SOUVERAINETÉ BIOLOGIQUE",
+          description: "L'offre la plus complète : BloomLab + Kits de plantes + Accès illimité au protocole Reset 21 jours."
         }
       }
     },
@@ -1344,14 +1381,35 @@ export const translations = {
     nav: {
       guide: "Guide",
       herbarium: "Herbarium",
-      blog: "The Blog",
+      blog: "The Library",
       chat: "Alma Chat",
       shop: "Shop",
       account: "Account",
-      manifesto: "Manifesto",
+      manifesto: "The Manifesto",
       culinary: "Culinary Workshop",
       cosmetics: "Cosmetics",
+      reset: "Homeostatic Reset",
+      universes: "The 3 Universes",
       cart: "Cart"
+    },
+    universes: {
+      title: "Become the Architect of Your Terrain",
+      subtitle: "Three universes of offerings nourished by the intelligence of the vegetable Totum.",
+      culinaire: {
+        title: "Culinary Workshop",
+        description: "Transform your plants into functional butters, oils, and elixirs.",
+        cta: "Infuse my recipes"
+      },
+      cosmetique: {
+        title: "Cosmetic Care",
+        description: "Formulate your own lab-grade serums and topical treatments.",
+        cta: "Create my care"
+      },
+      reset: {
+        title: "Homeostatic Reset",
+        description: "A complete protocol to release your energy and balance your terrain.",
+        cta: "Start my Reset"
+      }
     },
     footer: {
       description: "Biological resilience engineering through precision botanical extraction.",
@@ -1382,6 +1440,7 @@ export const translations = {
         subtitle: "The Complete Guide.",
         description: "Master solvents, precise temperatures, and botanical infusion protocols to reveal the power of the vegetable Totum at home.",
         cta_read: "Read the complete guide",
+        cta_buy: "Buy BloomLab",
         cta_discover: "Discover BloomLab"
       },
       understandingInfusion: {
@@ -1814,6 +1873,21 @@ export const translations = {
           name: "Buy 3",
           subtitle: "FREE SHIPPING",
           description: "Select your 3 favorite blends and enjoy free shipping. Ideal for a complete protocol."
+        },
+        bundle_cosme: {
+          name: "BloomLab + Cosmetic Kit Pack",
+          subtitle: "TOTUM BEAUTY SELECTION",
+          description: "The BloomLab accompanied by 3 signature recipes and formulation equipment for your face & body care."
+        },
+        bundle_culinary: {
+          name: "BloomLab + Culinary Kit Pack",
+          subtitle: "FUNCTIONAL GASTRONOMY",
+          description: "The BloomLab with a kit of aromatic plants and recipe booklet for botanical oils and butters."
+        },
+        bundle_reset: {
+          name: "BloomLab + Reset Protocol Pack",
+          subtitle: "BIOLOGICAL SOVEREIGNTY",
+          description: "The most complete offer: BloomLab + Plant Kits + Unlimited access to the 21-day Reset protocol."
         }
       }
     },
@@ -2526,14 +2600,35 @@ export const translations = {
     nav: {
       guide: "Leitfaden",
       herbarium: "Herbarium",
-      blog: "Der Blog",
+      blog: "Die Bibliothek",
       chat: "Alma Chat",
       shop: "Shop",
       account: "Konto",
-      manifesto: "Manifest",
-      culinary: "Kulinarik-Workshop",
+      manifesto: "Das Manifest",
+      culinary: "Kulinarische Werkstatt",
       cosmetics: "Kosmetik",
+      reset: "Homöostatisches Reset",
+      universes: "Die 3 Universen",
       cart: "Warenkorb"
+    },
+    universes: {
+      title: "Werden Sie zum Architekten Ihres Terrains",
+      subtitle: "Drei Universen von Angeboten, genährt durch die Intelligenz des pflanzlichen Totums.",
+      culinaire: {
+        title: "Kulinarische Werkstatt",
+        description: "Verwandeln Sie Ihre Pflanzen in funktionelle Butter, Öle und Elixiere.",
+        cta: "Meine Rezepte aufgießen"
+      },
+      cosmetique: {
+        title: "Kosmetische Pflege",
+        description: "Formulieren Sie Ihre eigenen Seren und topischen Behandlungen in Laborqualität.",
+        cta: "Meine Pflege erstellen"
+      },
+      reset: {
+        title: "Homöostatisches Reset",
+        description: "Ein komplettes Protokoll, um Ihre Energie freizusetzen und Ihr Terrain auszugleichen.",
+        cta: "Mein Reset starten"
+      }
     },
     footer: {
       description: "Biologische Resilienz-Technik durch präzise botanische Extraktion.",
@@ -2564,6 +2659,7 @@ export const translations = {
         subtitle: "Der komplette Leitfaden.",
         description: "Meistern Sie Lösungsmittel, präzise Temperaturen und Protokolle für die botanische Infusion, um die Kraft des pflanzlichen Totums zu Hause zu enthüllen.",
         cta_read: "Den kompletten Leitfaden lesen",
+        cta_buy: "BloomLab kaufen",
         cta_discover: "BloomLab entdecken"
       },
       understandingInfusion: {
@@ -2996,6 +3092,21 @@ export const translations = {
           name: "3er-Pack kaufen",
           subtitle: "KOSTENLOSER VERSAND",
           description: "Wählen Sie Ihre 3 Lieblingsmischungen und genießen Sie den kostenlosen Versand. Ideal für ein vollständiges Protokoll."
+        },
+        bundle_cosme: {
+          name: "BloomLab + Kosmetik-Kit Pack",
+          subtitle: "TOTUM BEAUTY SELECTION",
+          description: "Die BloomLab zusammen mit 3 Signature-Rezepten und Formulierungsausrüstung für Ihre Gesichts- & Körperpflege."
+        },
+        bundle_culinary: {
+          name: "BloomLab + Kulinarik-Kit Pack",
+          subtitle: "FUNKTIONELLE GASTRONOMIE",
+          description: "Die BloomLab mit einem Set aromatischer Pflanzen und Rezeptheft für botanische Öle und Butter."
+        },
+        bundle_reset: {
+          name: "BloomLab + Reset-Protokoll Pack",
+          subtitle: "BIOLOGISCHE SOUVERÄNITÄT",
+          description: "Das umfassendste Angebot: BloomLab + Pflanzen-Kits + Unbegrenzter Zugang zum 21-Tage-Reset-Protokoll."
         }
       }
     },

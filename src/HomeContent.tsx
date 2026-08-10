@@ -1,5 +1,5 @@
 import React, { useState, lazy, Suspense } from 'react';
-import { Sparkles, Leaf, ShieldCheck, Award, User, ChevronRight, FlaskConical, BookOpen, ShoppingBag, ChefHat, Star, Wind, Waves, Moon, Utensils, X, ArrowRight } from 'lucide-react';
+import { Sparkles, Leaf, ShieldCheck, Award, User, ChevronRight, FlaskConical, BookOpen, ShoppingBag, ChefHat, Star, Wind, Waves, Moon, Utensils, X, ArrowRight, Activity } from 'lucide-react';
 import bloomImg from './assets/images/bloomlab_main_1784887530345.jpeg';
 import { resetDetailsData, ResetSectionDetail } from './data/resetDetails';
 import { motion, AnimatePresence } from 'motion/react';
@@ -53,16 +53,16 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
               </p>
               <div className="flex flex-wrap gap-4">
                 <button 
-                  onClick={() => onNavigate('phytotherapie-reset')}
+                  onClick={() => onNavigate('boutique')}
                   className="px-6 md:px-8 py-3 md:py-4 bg-botanik-green text-white rounded-2xl font-bold hover:bg-botanik-orange transition-all flex items-center justify-center gap-3 shadow-xl shadow-botanik-green/10 text-sm md:text-base flex-1 sm:flex-none"
                 >
-                  {t.home.extractionGuide.cta_read} <ArrowRight className="w-5 h-5" />
+                  {t.home.extractionGuide.cta_buy} <ArrowRight className="w-5 h-5" />
                 </button>
                 <button 
-                  onClick={() => onNavigate('machine')}
+                  onClick={() => onNavigate('phytotherapie-reset')}
                   className="px-6 md:px-8 py-3 md:py-4 bg-white text-botanik-green border border-botanik-green/10 rounded-2xl font-bold hover:bg-botanik-green/5 transition-all flex items-center justify-center text-sm md:text-base flex-1 sm:flex-none whitespace-nowrap"
                 >
-                  {t.home.extractionGuide.cta_discover}
+                  {lang === 'fr' ? "Démarrer l'expérience" : lang === 'en' ? "Start the experience" : "Erfahrung starten"}
                 </button>
               </div>
             </div>
@@ -76,6 +76,76 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
                 alt="BloomLab - Appareil d'infusion botanique et extraction de précision pour le Totum des plantes" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-botanik-green/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* UNIVERSES SECTION - NEW Transactional Hub */}
+      <section className="mb-24 md:mb-32">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6">{t.universes.title}</h2>
+          <p className="text-lg text-botanik-green/60 font-light">{t.universes.subtitle}</p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* CULINARY */}
+          <div className="group relative bg-[#FFF9F2] rounded-[40px] p-8 border border-orange-100 hover:border-botanik-orange transition-all duration-500 overflow-hidden">
+            <div className="absolute -right-4 -top-4 w-24 h-24 bg-botanik-orange/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+            <div className="relative z-10">
+              <div className="w-14 h-14 bg-botanik-orange/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                <ChefHat className="w-7 h-7 text-botanik-orange" />
+              </div>
+              <h3 className="text-2xl font-bold text-botanik-green mb-4">{t.universes.culinaire.title}</h3>
+              <p className="text-botanik-green/60 mb-8 font-light leading-relaxed">
+                {t.universes.culinaire.description}
+              </p>
+              <button 
+                onClick={() => onNavigate('culinaire')}
+                className="w-full py-4 bg-botanik-orange text-white rounded-2xl font-bold hover:bg-botanik-green transition-all shadow-lg shadow-botanik-orange/10 flex items-center justify-center gap-2"
+              >
+                {t.universes.culinaire.cta} <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          {/* COSMETICS */}
+          <div className="group relative bg-[#F7FBF7] rounded-[40px] p-8 border border-green-100 hover:border-botanik-green transition-all duration-500 overflow-hidden">
+            <div className="absolute -right-4 -top-4 w-24 h-24 bg-botanik-green/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+            <div className="relative z-10">
+              <div className="w-14 h-14 bg-botanik-green/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                <Star className="w-7 h-7 text-botanik-green" />
+              </div>
+              <h3 className="text-2xl font-bold text-botanik-green mb-4">{t.universes.cosmetique.title}</h3>
+              <p className="text-botanik-green/60 mb-8 font-light leading-relaxed">
+                {t.universes.cosmetique.description}
+              </p>
+              <button 
+                onClick={() => onNavigate('cosmetiques')}
+                className="w-full py-4 bg-botanik-green text-white rounded-2xl font-bold hover:bg-botanik-orange transition-all shadow-lg shadow-botanik-green/10 flex items-center justify-center gap-2"
+              >
+                {t.universes.cosmetique.cta} <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          {/* RESET */}
+          <div className="group relative bg-[#F5F7FF] rounded-[40px] p-8 border border-blue-100 hover:border-botanik-green transition-all duration-500 overflow-hidden">
+            <div className="absolute -right-4 -top-4 w-24 h-24 bg-blue-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+            <div className="relative z-10">
+              <div className="w-14 h-14 bg-botanik-green/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                <Activity className="w-7 h-7 text-botanik-green" />
+              </div>
+              <h3 className="text-2xl font-bold text-botanik-green mb-4">{t.universes.reset.title}</h3>
+              <p className="text-botanik-green/60 mb-8 font-light leading-relaxed">
+                {t.universes.reset.description}
+              </p>
+              <button 
+                onClick={() => onNavigate('phytotherapie-reset')}
+                className="w-full py-4 border-2 border-botanik-green text-botanik-green rounded-2xl font-bold hover:bg-botanik-green hover:text-white transition-all flex items-center justify-center gap-2"
+              >
+                {t.universes.reset.cta} <ArrowRight className="w-4 h-4" />
+              </button>
             </div>
           </div>
         </div>

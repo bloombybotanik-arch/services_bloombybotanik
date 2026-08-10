@@ -95,6 +95,45 @@ export const getProducts = (lang: Language) => {
       reviews: 84,
       description: t.trio.description,
       tags: ['Offre Spéciale', 'Best-Value']
+    },
+    {
+      id: 'bundle-cosme',
+      name: t.bundle_cosme.name,
+      subtitle: t.bundle_cosme.subtitle,
+      price: 349.00,
+      originalPrice: 389.00,
+      image: duoArgilesImg,
+      rating: 5.0,
+      reviews: 12,
+      description: t.bundle_cosme.description,
+      tags: ['Pack', 'Cosmétique', 'Économie 40€'],
+      isBundle: true
+    },
+    {
+      id: 'bundle-culinary',
+      name: t.bundle_culinary.name,
+      subtitle: t.bundle_culinary.subtitle,
+      price: 329.00,
+      originalPrice: 359.00,
+      image: trioPouchesImg,
+      rating: 4.9,
+      reviews: 8,
+      description: t.bundle_culinary.description,
+      tags: ['Pack', 'Culinaire', 'Économie 30€'],
+      isBundle: true
+    },
+    {
+      id: 'bundle-reset',
+      name: t.bundle_reset.name,
+      subtitle: t.bundle_reset.subtitle,
+      price: 399.00,
+      originalPrice: 459.00,
+      image: bloomLabImg,
+      rating: 5.0,
+      reviews: 24,
+      description: t.bundle_reset.description,
+      tags: ['Pack', 'Reset', 'Souveraineté'],
+      isBundle: true
     }
   ];
 };
@@ -197,13 +236,72 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
         </div>
       )}
 
+      {/* Bundles Section */}
+      {!searchQuery && (
+        <div className="px-4 md:px-6 mb-16">
+          <div className="flex items-center justify-between mb-8">
+            <h3 className="text-xl md:text-2xl font-bold text-botanik-green">
+              {lang === 'fr' ? 'Nos Offres Groupées (Bundles)' : lang === 'en' ? 'Our Bundle Offers' : 'Unsere Bundle-Angebote'}
+            </h3>
+            <span className="px-3 py-1 bg-botanik-orange/10 text-botanik-orange text-[10px] font-bold uppercase tracking-widest rounded-full">
+              {lang === 'fr' ? 'Économie Garantie' : lang === 'en' ? 'Guaranteed Savings' : 'Garantierte Ersparnis'}
+            </span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {products.filter(p => (p as any).isBundle).map((product) => (
+              <div 
+                key={product.id} 
+                onClick={() => onNavigateDetail(product.id)}
+                className="bg-white rounded-[40px] border-2 border-botanik-orange/20 overflow-hidden flex flex-col cursor-pointer hover:shadow-2xl transition-all group relative"
+              >
+                <div className="absolute top-4 left-4 z-10 bg-botanik-orange text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg">
+                  Bundle
+                </div>
+                <div className="relative h-64 overflow-hidden bg-[#F9F9F7]">
+                  <img 
+                    src={product.image} 
+                    alt={product.name} 
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="text-[10px] font-bold text-botanik-orange uppercase tracking-widest mb-2">
+                    {product.subtitle}
+                  </div>
+                  <h4 className="text-lg font-bold text-botanik-green mb-4 leading-tight">
+                    {product.name}
+                  </h4>
+                  <p className="text-sm text-botanik-green/60 mb-6 font-light line-clamp-2">
+                    {product.description}
+                  </p>
+                  <div className="flex items-center justify-between mt-auto">
+                    <div className="flex flex-col">
+                      {product.originalPrice && (
+                        <span className="text-xs text-botanik-green/30 line-through">{formatPrice(product.originalPrice)}</span>
+                      )}
+                      <span className="text-2xl font-bold text-botanik-green">{formatPrice(product.price)}</span>
+                    </div>
+                    <button 
+                      onClick={(e) => { e.stopPropagation(); onAddToCart(product); }}
+                      className="w-12 h-12 bg-botanik-green text-white rounded-2xl flex items-center justify-center shadow-lg hover:bg-botanik-orange transition-colors"
+                    >
+                      <ShoppingBag className="w-5 h-5" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Product Grid */}
       <div className="px-4 md:px-6 mb-12">
         <h3 className="text-xs md:text-sm font-bold uppercase tracking-widest text-botanik-green/40 mb-4 md:mb-6">
           {searchQuery ? `${t.grid.results_for} "${searchQuery}"` : t.grid.title}
         </h3>
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
-          {filteredProducts.filter(p => !p.featured || searchQuery).map((product) => {
+          {filteredProducts.filter(p => (!p.featured && !(p as any).isBundle) || searchQuery).map((product) => {
             return (
               <div 
                 key={product.id} 
