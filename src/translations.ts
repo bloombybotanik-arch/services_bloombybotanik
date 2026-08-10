@@ -78,7 +78,7 @@ export const translations = {
       },
       extractionGuide: {
         badge: "Guide de Référence",
-        title: "L'Art de l'Extracteur Botanique :",
+        title: "L'Art de l'Extraction Botanique :",
         subtitle: "Le Guide Complet.",
         description: "Maîtrisez les solvants, les températures précises et les protocoles d'infusion botanique pour révéler la puissance du Totum végétal chez vous.",
         cta_read: "Lire le guide complet",

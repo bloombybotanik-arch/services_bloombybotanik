@@ -290,6 +290,11 @@ RÈGLES DE VÉRIFICATION STRICTES :
   }
 });
 
+// Redirections for SEO and legacy URLs
+app.get("/bloomlab-extracteur-botanique-et-infuseur-dhuile-intelligent-6-en-1", (req, res) => {
+  res.redirect(301, "/bloomlab");
+});
+
 // Vite middleware
 async function setupVite() {
   if (process.env.NODE_ENV !== "production") {

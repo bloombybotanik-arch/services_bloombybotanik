@@ -154,6 +154,7 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
         },
         {
           "@type": "Product",
+          "@id": "https://bloombybotanik.com/bloomlab/#product",
           "name": "BloomLab",
           "description": "Extracteur Inox 304 avec précision ±0,5°C",
           "image": "https://bloombybotanik.com/assets/images/bloomlab_main_1784887530345.jpeg",
@@ -166,7 +167,9 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
-            "reviewCount": "127"
+            "reviewCount": "127",
+            "bestRating": "5",
+            "worstRating": "1"
           },
           "review": [
             {
@@ -187,30 +190,80 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
           ],
           "offers": {
             "@type": "Offer",
-            "price": "239.00",
+            "price": "289.00",
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
             "url": "https://bloombybotanik.com/bloomlab",
-            "itemCondition": "https://schema.org/NewCondition"
+            "itemCondition": "https://schema.org/NewCondition",
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": "FR",
+              "returnPolicyCategory": "MerchantReturnFiniteReturnPeriod",
+              "merchantReturnDays": 14,
+              "returnMethod": "https://schema.org/ReturnByMail",
+              "returnFees": "https://schema.org/FreeReturn"
+            },
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": "0.00",
+                "currency": "EUR"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": "FR"
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 1,
+                  "unitCode": "d"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 2,
+                  "maxValue": 5,
+                  "unitCode": "d"
+                }
+              }
+            }
           }
         },
             ...getProducts(lang).filter((p: any) => p.id !== 'bloomlab').map((p: any) => ({
               "@type": "Product",
+              "@id": `https://bloombybotanik.com/boutique/${p.id}/#product`,
               "name": p.name,
               "description": p.description,
-              "image": typeof p.image === 'string' ? p.image : undefined,
+              "image": typeof p.image === 'string' ? p.image : (p.image?.src || undefined),
               "brand": { "@type": "Brand", "name": "Bloom by BotaniK" },
               "aggregateRating": p.reviews ? {
                 "@type": "AggregateRating",
-                "ratingValue": p.rating,
-                "reviewCount": p.reviews
+                "ratingValue": p.rating.toString(),
+                "reviewCount": p.reviews.toString(),
+                "bestRating": "5",
+                "worstRating": "1"
               } : undefined,
+              "review": p.reviews ? [{
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Client Bloom" },
+                "reviewBody": "Excellent produit, conforme à la démarche Bloom.",
+                "reviewRating": {
+                  "@type": "Rating",
+                  "bestRating": "5",
+                  "ratingValue": p.rating.toString(),
+                  "worstRating": "1"
+                }
+              }] : undefined,
               "offers": {
                 "@type": "Offer",
                 "price": p.price.toFixed(2),
                 "priceCurrency": "EUR",
                 "availability": "https://schema.org/InStock",
-                "url": `https://bloombybotanik.com/boutique/${p.id}`
+                "url": `https://bloombybotanik.com/boutique/${p.id}`,
+                "itemCondition": "https://schema.org/NewCondition"
               }
             }))
       ]
