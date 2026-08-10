@@ -40,11 +40,11 @@ export default function CartContent({ items, onUpdateQuantity, onRemove, onBack,
     }
     
     switch (shippingMethod) {
-      case 'mondialrelay': return 4.90;
-      case 'colissimo': return 6.90;
-      case 'laposte': return 7.50;
-      case 'express': return 14.90;
-      default: return 6.90;
+      case 'mondialrelay': return 5.90;
+      case 'colissimo': return 14.90;
+      case 'laposte': return 5.90;
+      case 'express': return 21.90;
+      default: return 5.90;
     }
   };
 
@@ -212,7 +212,7 @@ export default function CartContent({ items, onUpdateQuantity, onRemove, onBack,
                 <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.mondialrelay}</div>
                 <div className="text-sm opacity-60">{t.shipping.methods.mondialrelay_desc}</div>
                 <div className="mt-4 font-bold text-[#F97316]">
-                  {!hasRemedies && subtotal >= 150 ? t.shipping.free : '4,90 €'}
+                  {!hasRemedies && subtotal >= 150 ? t.shipping.free : '5,90 €'}
                 </div>
               </button>
               <button 
@@ -222,7 +222,7 @@ export default function CartContent({ items, onUpdateQuantity, onRemove, onBack,
                 <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.colissimo}</div>
                 <div className="text-sm opacity-60">{t.shipping.methods.colissimo_desc}</div>
                 <div className="mt-4 font-bold text-[#F97316]">
-                  {!hasRemedies && subtotal >= 150 ? t.shipping.free : '6,90 €'}
+                  {!hasRemedies && subtotal >= 150 ? t.shipping.free : '14,90 €'}
                 </div>
               </button>
               <button 
@@ -231,7 +231,7 @@ export default function CartContent({ items, onUpdateQuantity, onRemove, onBack,
               >
                 <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.laposte}</div>
                 <div className="text-sm opacity-60">{t.shipping.methods.laposte_desc}</div>
-                <div className="mt-4 font-bold text-[#F97316]">7,50 €</div>
+                <div className="mt-4 font-bold text-[#F97316]">5,90 €</div>
               </button>
               <button 
                 onClick={() => setShippingMethod('express')}
@@ -239,7 +239,7 @@ export default function CartContent({ items, onUpdateQuantity, onRemove, onBack,
               >
                 <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.express}</div>
                 <div className="text-sm opacity-60">{t.shipping.methods.express_desc}</div>
-                <div className="mt-4 font-bold text-[#F97316]">14,90 €</div>
+                <div className="mt-4 font-bold text-[#F97316]">21,90 €</div>
               </button>
             </div>
             {!hasRemedies && subtotal < 150 && (

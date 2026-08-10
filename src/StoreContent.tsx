@@ -159,7 +159,7 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                     <div className="w-1.5 h-1.5 rounded-full bg-botanik-orange animate-pulse" />
                     {t.hero.badge}
                   </div>
-                  <h2 className="text-3xl md:text-6xl font-bold text-botanik-green mb-6 md:mb-8 leading-[1.1] tracking-tight">
+                  <h2 className="text-2xl sm:text-3xl md:text-6xl font-bold text-botanik-green mb-6 md:mb-8 leading-[1.1] tracking-tight">
                     {t.hero.title.split(' ')[0]} <span className="text-botanik-orange md:whitespace-nowrap">{t.hero.title.split(' ').slice(1).join(' ')}</span>
                   </h2>
                   <p className="text-base md:text-xl text-botanik-green/60 mb-8 md:mb-12 leading-relaxed max-w-md font-medium">
@@ -187,7 +187,7 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                     alt="BloomLab Boutique" 
                     className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[2000ms] ease-out"
                   />
-                  <div className="absolute top-12 left-12 z-20 bg-botanik-orange/50 backdrop-blur-md text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.2em] border border-white/20 shadow-2xl">
+                  <div className="absolute top-4 md:top-12 left-4 md:left-12 z-20 bg-botanik-orange/50 backdrop-blur-md text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] border border-white/20 shadow-2xl whitespace-nowrap">
                     SOUVERAINETÉ SANTÉ 2026
                   </div>
                 </div>
@@ -224,7 +224,7 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                   </button>
                 </div>
                 <div className="p-4 md:p-6 flex flex-col flex-1">
-                  <div className="text-[8px] md:text-[10px] font-bold text-botanik-orange uppercase tracking-widest mb-1 md:mb-2">
+                  <div className="text-[8px] md:text-[10px] font-bold text-botanik-orange uppercase tracking-widest mb-1 md:mb-2 whitespace-nowrap overflow-hidden text-ellipsis">
                     {product.subtitle}
                   </div>
                   <h4 className="text-sm md:text-lg font-bold text-botanik-green mb-2 md:mb-4 leading-tight flex-1">

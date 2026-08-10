@@ -77,7 +77,7 @@ export const translations = {
         description: "L’infusion botanique est une méthode d’extraction de précision. Découvrez comment l'extracteur botanique BloomLab® permet de maîtriser la température, le temps et le solvant pour vos remèdes naturels.",
       },
       extractionGuide: {
-        badge: "Guide de Référence",
+        badge: "N°1 France — Souveraineté Botanique",
         title: "L'Art de l'Extraction Botanique :",
         subtitle: "Le Guide Complet.",
         description: "Maîtrisez les solvants, les températures précises et les protocoles d'infusion botanique pour révéler la puissance du Totum végétal chez vous.",
@@ -660,9 +660,9 @@ export const translations = {
         methods: {
           mondialrelay: "Mondial Relay (4-5j)",
           mondialrelay_desc: "Point Relais de votre choix",
-          colissimo: "Colissimo (48h-72h)",
+          colissimo: "Colissimo 3.5kg (48h-72h)",
           colissimo_desc: "Livraison à domicile",
-          laposte: "La Poste (48h)",
+          laposte: "La Poste >1kg (48h)",
           laposte_desc: "Courrier suivi prioritaires",
           express: "Express (24h)",
           express_desc: "Chronopost Premium"
@@ -749,46 +749,106 @@ export const translations = {
     legal: {
       back: "Retour",
       cgv: {
-        title: "Conditions Générales de Vente",
-        intro: "Les présentes conditions régissent l’acquisition des instruments et remèdes Bloom by Botanik. Elles incarnent notre engagement de transparence et de souveraineté.",
+        title: "Conditions Générales de Vente (CGV)",
+        intro: "Les présentes Conditions Générales de Vente (CGV) s’appliquent à toute commande passée sur le site bloombybotanik.com par un consommateur majeur résidant en France. En passant commande, le client reconnaît avoir pris connaissance et accepté sans réserve les présentes CGV.",
         sections: [
           {
-            title: "1. Philosophie de l'Offre",
-            text: "Bloom by Botanik propose des instruments d'extraction (BloomLab) et des remèdes botaniques. Nos produits ne sont pas des dispositifs médicaux et ne remplacent en aucun cas un avis médical professionnel."
+            title: "1. Champ d’application",
+            text: "Les présentes Conditions Générales de Vente (CGV) s’appliquent à toute commande passée sur le site bloombybotanik.com par un consommateur majeur résidant en France.\nEn passant commande, le client reconnaît avoir pris connaissance et accepté sans réserve les présentes CGV."
           },
           {
-            title: "2. Acquisition et Engagement",
-            text: "Toute commande validée sur notre plateforme constitue un engagement ferme. Les prix sont exprimés en Euros TTC. La propriété de l'instrument n'est transférée qu'après paiement intégral."
+            title: "2. Produits et services",
+            text: "Les produits proposés à la vente sont décrits et présentés avec le plus grand soin (appareils BloomLab, produits botaniques, kits, contenus et services). Les photographies et illustrations n’ont pas de valeur contractuelle.\nBloom by BotaniK se réserve le droit de modifier à tout moment l’assortiment des produits, sans préjudice pour les commandes déjà validées."
           },
           {
-            title: "3. Expédition et Logistique du Vivant",
-            text: "Nous accordons un soin extrême à la préparation de vos colis. Les remèdes botaniques, par leur nature précieuse, font l'objet d'un traitement logistique spécifique. Les délais de livraison sont donnés à titre indicatif selon les transporteurs partenaires."
+            title: "3. Prix",
+            text: "Les prix sont indiqués en euros, toutes taxes comprises (TTC), hors frais de livraison. Les frais de livraison sont précisés avant la validation définitive de la commande.\nBloom by BotaniK / Globsell se réserve le droit de modifier ses prix à tout moment, mais les produits seront facturés sur la base des tarifs en vigueur au moment de l’enregistrement de la commande."
           },
           {
-            title: "4. Garantie Souveraineté",
-            text: "L'instrument BloomLab bénéficie d'une garantie de conformité de 2 ans. Cette garantie couvre les défauts de fabrication dans le cadre d'un usage conforme aux protocoles Bloom."
+            title: "4. Commande",
+            text: "La validation de la commande par le client constitue une acceptation irrévocable des présentes CGV, sans préjudice du droit de rétractation légal pour les achats à distance.\nLe client reçoit un e‑mail de confirmation récapitulant sa commande. Bloom by BotaniK / Globsell se réserve le droit d’annuler ou de refuser toute commande en cas de litige existant avec le client, de non‑paiement, ou de comportement manifestement frauduleux."
           },
           {
-            title: "5. Droit de Rétractation",
-            text: "Conformément au code de la consommation, vous disposez de 14 jours pour exercer votre droit de rétractation, à condition que les produits n'aient pas été ouverts ou utilisés."
+            title: "5. Paiement",
+            text: "Le paiement s’effectue en ligne par les moyens indiqués sur le site (carte bancaire, autres solutions). Le client garantit qu’il dispose des autorisations nécessaires pour utiliser le moyen de paiement choisi.\nEn cas de refus de paiement par l’établissement bancaire, la commande est automatiquement annulée."
+          },
+          {
+            title: "6. Livraison",
+            text: "Les produits sont livrés à l’adresse indiquée par le client lors de la commande.\nLe délai indicatif de livraison est précisé lors de la validation de la commande. En cas de retard, le client est informé et peut, le cas échéant, exercer ses droits légaux.\nLes risques liés au transport sont supportés par Bloom by BotaniK / Globsell jusqu’à la livraison effective au client. En cas de colis endommagé, il appartient au client de formuler les réserves nécessaires auprès du transporteur et d’en informer Bloom by BotaniK / Globsell dans un délai raisonnable."
+          },
+          {
+            title: "7. Droit de rétractation",
+            text: "Le client dispose d’un délai de quatorze (14) jours calendaires pour exercer son droit de rétractation à compter de la réception du produit, conformément aux articles L.221‑18 et suivants du Code de la consommation, sauf exceptions légales (produits personnalisés, biens périssables, contenus numériques déjà consommés, etc.).\nLes modalités détaillées d’exercice du droit de rétractation (conditions, formulaire type, frais de retour, remboursement) sont précisées sur la page dédiée « Droit de rétractation »."
+          },
+          {
+            title: "8. Retours et remboursement",
+            text: "En cas de rétractation dans le délai légal, le client doit retourner les produits dans leur état d’origine, complets et non endommagés, au plus tard dans les quatorze (14) jours suivant la communication de sa décision.\nBloom by BotaniK / Globsell rembourse l’intégralité des sommes versées (y compris les frais de livraison initiaux) au plus tard quatorze (14) jours après avoir été informé de la décision de rétractation. Le remboursement peut être différé jusqu’à réception des biens ou de la preuve d’expédition."
+          },
+          {
+            title: "9. Garanties légales",
+            text: "Les produits bénéficient des garanties légales de conformité (articles L.217‑3 et suivants du Code de la consommation) et de la garantie des vices cachés (articles 1641 et suivants du Code civil).\nEn cas de défaut de conformité ou de vice caché, le client peut obtenir la réparation, le remplacement ou le remboursement du produit conformément aux textes applicables."
+          },
+          {
+            title: "10. Responsabilité",
+            text: "Bloom by BotaniK / Globsell ne saurait être tenu responsable des dommages indirects ou immatériels résultant de l’utilisation des produits. L’usage des produits BloomLab et des préparations botaniques doit se conformer aux notices et précautions fournies.\nLe client reste responsable de la compatibilité des produits et protocoles avec son état de santé et est invité à consulter un professionnel de santé en cas de doute."
+          },
+          {
+            title: "11. Propriété intellectuelle",
+            text: "Les contenus (textes, images, protocoles, documents) restent la propriété exclusive de Bloom by BotaniK / Globsell. Toute reproduction, diffusion ou utilisation non autorisée est interdite."
+          },
+          {
+            title: "12. Données personnelles",
+            text: "Les données collectées dans le cadre des commandes sont traitées conformément à la Politique de confidentialité du site, dans le respect du RGPD."
+          },
+          {
+            title: "13. Règlement des litiges",
+            text: "En cas de litige, le client doit d’abord contacter le service clientèle de Bloom by BotaniK / Globsell pour rechercher une solution amiable.\nÀ défaut d’accord amiable, le consommateur peut saisir le médiateur de la consommation désigné dans les mentions légales, puis, en dernier recours, les tribunaux compétents.\nLes présentes CGV sont soumises au droit français."
           }
         ]
       },
       cgu: {
-        title: "Conditions Générales d'Utilisation",
-        intro: "L'écosystème numérique Bloom est un espace d'apprentissage et de guidage vers l'autonomie botanique.",
+        title: "Conditions Générales d’Utilisation (CGU)",
+        intro: "Les présentes CGU ont pour objet de définir les modalités d’accès et d’utilisation du site bloombybotanik.com et des espaces associés (contenus, bibliothèque, outils pédagogiques, application ALMA le cas échéant).",
         sections: [
           {
-            title: "1. Cadre de l'Application",
-            text: "Les protocoles, recettes et conseils prodigués via l'application sont destinés à l'accompagnement du bien-être. Ils ne constituent pas des prescriptions. L'utilisateur est seul responsable de l'usage qu'il fait des extractions réalisées avec la BloomLab."
+            title: "1. Objet",
+            text: "Les présentes CGU ont pour objet de définir les modalités d’accès et d’utilisation du site bloombybotanik.com et des espaces associés (contenus, bibliothèque, outils pédagogiques, application ALMA le cas échéant)."
           },
           {
-            title: "2. Propriété Intellectuelle",
-            text: "L'intégralité du contenu (textes, vidéos, protocoles, algorithmes de reset) est la propriété exclusive de Bloom by Botanik. Toute reproduction ou partage hors du cadre privé est strictement interdit."
+            title: "2. Acceptation des CGU",
+            text: "En consultant le site, en créant un compte ou en utilisant les services proposés, l’utilisateur accepte sans réserve les présentes CGU."
           },
           {
-            title: "3. Accès Premium",
-            text: "L'accès à la bibliothèque experte et aux protocoles avancés est réservé aux abonnés Premium. L'abonnement est personnel et non cessible."
+            title: "3. Accès au site",
+            text: "Le site est accessible 24h/24 et 7j/7, sauf interruption programmée ou non pour maintenance ou cas de force majeure. Bloom by BotaniK / Globsell ne peut garantir l’absence totale d’interruptions ou d’anomalies mais s’engage à faire ses meilleurs efforts pour assurer la disponibilité du service."
+          },
+          {
+            title: "4. Compte utilisateur",
+            text: "Certaines fonctionnalités peuvent nécessiter la création d’un compte (bibliothèque, suivis, commandes). L’utilisateur s’engage à fournir des informations exactes et à les mettre à jour.\nLes identifiants de connexion sont personnels et confidentiels. Toute activité réalisée via ce compte est présumée être le fait de l’utilisateur."
+          },
+          {
+            title: "5. Usage du site et des contenus",
+            text: "L’utilisateur s’engage à ne pas utiliser le site à des fins illicites ou contraires aux lois et règlements en vigueur, ni à porter atteinte aux droits de tiers.\nLes contenus proposés (articles, herbier, protocoles, vidéos, textes) ont une vocation pédagogique et ne constituent pas un avis médical personnalisé. Ils ne se substituent pas à une consultation médicale ou à un traitement prescrit."
+          },
+          {
+            title: "6. Propriété intellectuelle",
+            text: "Tous les contenus du site bloombybotanik.com restent la propriété exclusive de Bloom by BotaniK / Globsell ou de ses partenaires. Toute reproduction, représentation, modification, adaptation ou exploitation non autorisée est strictement interdit."
+          },
+          {
+            title: "7. Liens hypertextes",
+            text: "Le site peut proposer des liens vers d’autres sites. Bloom by BotaniK / Globsell n’est pas responsable du contenu ni des pratiques de ces sites tiers.\nLa création de liens vers bloombybotanik.com est autorisée dans la mesure où elle ne porte pas atteinte à l’image de la marque et ne suggère pas un partenariat inexistant. Bloom by BotaniK / Globsell se réserve le droit de demander la suppression d’un lien jugé préjudiciable."
+          },
+          {
+            title: "8. Responsabilité de l’éditeur",
+            text: "Bloom by BotaniK / Globsell ne peut être tenue responsable des dommages directs ou indirects résultant de l’utilisation du site ou de l’impossibilité d’y accéder.\nL’utilisateur est seul responsable de la vérification de la compatibilité des informations et des protocoles proposés avec sa situation personnelle."
+          },
+          {
+            title: "9. Modifications des CGU",
+            text: "Bloom by BotaniK / Globsell se réserve le droit de modifier les présentes CGU à tout moment. La version applicable est celle disponible sur le site au moment de l’utilisation. L’utilisateur est invité à consulter régulièrement cette page."
+          },
+          {
+            title: "10. Droit applicable",
+            text: "Les présentes CGU sont régies par le droit français. En cas de litige, et après tentative de résolution amiable, les tribunaux compétents seront ceux du ressort du siège social de Bloom by BotaniK / Globsell, sauf règles d’ordre public contraires."
           }
         ]
       },
@@ -797,41 +857,95 @@ export const translations = {
         intro: "Votre intimité biologique et numérique est sacrée. Nous protégeons vos données avec la même rigueur que nous sélectionnons nos plantes.",
         sections: [
           {
-            title: "1. Collecte Intelligente",
-            text: "Nous collectons uniquement les données nécessaires à la personnalisation de votre expérience : profil de terrain (anamnèse), historique de recettes et informations de livraison."
+            title: "1. Responsable de traitement",
+            text: "Les données personnelles collectées sur le site bloombybotanik.com sont traitées par : Bloom by BotaniK / Globsell. Email de contact : bloombybotanik@gmail.com"
           },
           {
-            title: "2. Usage des Données",
-            text: "Vos données ne sont jamais vendues ou cédées. Elles servent exclusivement à affiner les recommandations de protocoles et à assurer le suivi de vos commandes."
+            title: "2. Données collectées",
+            text: "Nous collectons et traitons notamment les données suivantes :\n- Données d’identification : nom, prénom, adresse postale, adresse e‑mail, numéro de téléphone.\n- Données de commande : produits achetés, montant, mode de paiement, historique de commandes.\n- Données de navigation : pages consultées, temps de visite, préférences (via cookies et outils de mesure d’audience).\n- Éventuels questionnaires ou bilans (données de terrain, préférences de soin) lorsque l’utilisateur les renseigne volontairement."
           },
           {
-            title: "3. Sécurité et Hébergement",
-            text: "Vos informations sont stockées sur des serveurs sécurisés conformes au RGPD. Nous utilisons des protocoles de chiffrement de pointe pour vos transactions et vos données de profil."
+            title: "3. Finalités et bases légales",
+            text: "Les données sont traitées pour les finalités suivantes :\n- Gestion des commandes et de la relation client (exécution du contrat).\n- Envoi d’e‑mails de confirmation, de suivi, de factures (exécution du contrat).\n- Gestion du compte utilisateur et accès à la bibliothèque/protocoles (exécution du contrat).\n- Envoi d’informations et contenus pédagogiques (newsletter) sur la base du consentement de l’utilisateur.\n- Analyse statistique de l’utilisation du site pour améliorer l’expérience (intérêt légitime).\n- Respect des obligations légales (facturation, comptabilité, exercice des droits des personnes)."
           },
           {
-            title: "4. Vos Droits",
-            text: "Vous disposez d'un droit total d'accès, de rectification et d'effacement de vos données sur simple demande à bloombybotanik@gmail.com."
+            title: "4. Durée de conservation",
+            text: "Les données sont conservées pour la durée nécessaire aux finalités ci‑dessus, dans les limites suivantes :\n- Données de commande : durée légale de conservation (facturation et comptabilité).\n- Données liées au compte : tant que le compte est actif, puis pour une durée limitée après fermeture, selon les contraintes légales.\n- Données de prospection : jusqu’au retrait du consentement ou opposition de la personne concernée."
+          },
+          {
+            title: "5. Destinataires des données",
+            text: "Les données sont susceptibles d’être communiquées :\n- Aux équipes internes de Bloom by BotaniK / Globsell chargées de la gestion des commandes, du support client et des contenus.\n- À des prestataires techniques (hébergement, solution de paiement, e‑mailing) dans le cadre de l’exécution des services, dans le respect du RGPD.\nAucune donnée n’est vendue à des tiers. Toute sous‑traitance fait l’objet d’un encadrement contractuel."
+          },
+          {
+            title: "6. Droits des personnes",
+            text: "Conformément au RGPD, vous disposez des droits suivants :\n- Droit d’accès à vos données.\n- Droit de rectification de données inexactes ou incomplètes.\n- Droit d’effacement (dans les limites légales).\n- Droit d’opposition au traitement de vos données pour la prospection.\n- Droit à la limitation du traitement.\n- Droit à la portabilité de certaines données.\nPour exercer ces droits, vous pouvez contacter bloombybotanik@gmail.com ou écrire au siège social."
+          },
+          {
+            title: "7. Cookies et traceurs",
+            text: "Le site utilise des cookies pour assurer le bon fonctionnement (cookies techniques), mesurer l'audience et proposer éventuellement des contenus adaptés.\nLors de votre première visite, un bandeau d’information vous permet d’accepter, de refuser ou de paramétrer les cookies."
+          },
+          {
+            title: "8. Transfert hors Union européenne",
+            text: "Si certains prestataires sont situés hors de l’Union européenne, nous nous assurons que des garanties appropriées sont mises en place."
+          },
+          {
+            title: "9. Mise à jour",
+            text: "La présente Politique de confidentialité peut être mise à jour pour tenir compte des évolutions légales et des traitements réalisés. La version en vigueur est celle publiée sur cette page."
           }
         ]
       },
       mentions: {
         title: "Mentions Légales",
         publisher: {
-          title: "Éditeur",
-          text: "Bloom by Botanik SAS\nSiège social : 75008 Paris, France\nRCS Paris : B 123 456 789"
+          title: "Éditeur du site",
+          text: "Bloom by BotaniK / Globsell\nSiège social : 58 rue Monceau Cs 48756 75380 75008 Paris France\nImmatriculée au RCS de Paris sous le numéro SIREN 933678898\nNuméro de TVA intracommunautaire : FR07933678898"
         },
         director: {
-          title: "Directeur de la Publication",
-          text: "Équipe Fondatrice Bloom by Botanik"
+          title: "Directeur de publication",
+          text: "Direction de la publication : Équipe Bloom by BotaniK\nContact : bloombybotanik@gmail.com"
         },
         hosting: {
           title: "Hébergement",
-          text: "Google Cloud Platform / Firebase\n8 rue de Londres, 75009 Paris"
+          text: "Hostinger international LTD\n61 Lordou Vironos Street, 6023 Larnaca, Chypre"
         },
         contact: {
-          title: "Contact",
-          text: "Email : bloombybotanik@gmail.com"
+          title: "Activité et responsabilité",
+          text: "Bloom by BotaniK propose à la vente des appareils d’extraction botanique, des produits botaniques et des services associés. Les informations fournies sur le site ne constituent ni un diagnostic médical, ni une prescription.\nBloom by BotaniK / Globsell ne saurait être tenu responsable des dommages directs ou indirects résultant de l’accès ou de l’utilisation du site."
         }
+      },
+      withdrawal: {
+        title: "Droit de Rétractation",
+        intro: "Conformément à la loi, vous disposez d'un droit de rétractation pour vos achats en ligne.",
+        sections: [
+          {
+            title: "1. Principe",
+            text: "Conformément aux articles L.221‑18 et suivants du Code de la consommation, le client dispose d’un délai de quatorze (14) jours calendaires pour exercer son droit de rétractation à compter de la réception du bien pour les contrats de vente de produits."
+          },
+          {
+            title: "2. Exercice du droit de rétractation",
+            text: "Pour exercer son droit de rétractation, le client doit notifier à Bloom by BotaniK / Globsell sa décision de se rétracter avant l’expiration du délai de 14 jours par e-mail à bloombybotanik@gmail.com ou par courrier au siège social."
+          },
+          {
+            title: "3. Formulaire type de rétractation",
+            text: "« Je vous notifie par la présente ma rétractation du contrat portant sur la vente du bien ci‑dessous :\n– Commande du : [date]\n– Numéro de commande : [numéro]\n– Produit(s) : [description]\nNom : [Nom]\nAdresse : [Adresse]\nDate : [Date] »"
+          },
+          {
+            title: "4. Effets de la rétractation",
+            text: "En cas de rétractation, nous remboursons tous les paiements reçus, y compris les frais de livraison initiaux, au plus tard quatorze jours à compter de la date à laquelle nous sommes informés de votre décision."
+          },
+          {
+            title: "5. Retour des produits",
+            text: "Le client doit renvoyer les produits au siège social sans retard excessif et au plus tard quatorze jours après sa décision. Les produits doivent être dans leur état d’origine. Les frais de retour sont à la charge du client."
+          },
+          {
+            title: "6. Exceptions",
+            text: "Le droit de rétractation ne s’applique pas notamment aux biens susceptibles de se détériorer ou de se périmer rapidement, ou aux produits ouverts pour des raisons d'hygiène."
+          },
+          {
+            title: "7. Information",
+            text: "Si le consommateur n’a pas été informé de son droit de rétractation, le délai est prolongé conformément à la loi."
+          }
+        ]
       }
     },
     account: {
@@ -963,7 +1077,7 @@ export const translations = {
           period: "/mois",
           tagline: "Le premier pas pour sécuriser ta pratique des plantes.",
           bullets: [
-            "Accès à toutes les recettes freemium (4 par catégorie) + quelques recettes signature supplémentaires.",
+            "Accès à toutes les recettes freemium (9 par catégorie) + quelques recettes signature supplémentaires.",
             "Accès aux fiches complètes des recettes : solvants, températures, séquençage, mode d'administration, doses journalières et maximales, précautions et contre-indications.",
             "Accès au bot Bloom pour poser des questions sur la méthode, les recettes et l'usage général (dans les limites légales)."
           ],
@@ -1078,14 +1192,14 @@ export const translations = {
           status: "Libre accès • Gratuit",
           title: "L'Art Culinaire Botanique",
           desc: "Huiles aromatiques, Miels infusés, Vinaigres botaniques. Maîtrisez l'art de l'infusion pour une gastronomie vivante.",
-          cta: "Voir les 4 recettes gratuites"
+          cta: "Voir les 9 recettes gratuites"
         },
         lvl2: {
           badge: "Niveau 2",
           status: "Intermédiaire • Gratuit",
           title: "La Cosmétique Systémique",
           desc: "Sérums, Élixirs, Huiles de massage. Créez vos propres soins topiques avec des paramètres ultra-précis.",
-          cta: "Voir les 4 soins gratuits"
+          cta: "Voir les 9 soins gratuits"
         },
         lvl3: {
           badge: "Niveau 3",
@@ -1842,9 +1956,9 @@ export const translations = {
         methods: {
           mondialrelay: "Mondial Relay (4-5d)",
           mondialrelay_desc: "Pick-up point of your choice",
-          colissimo: "Colissimo (48h-72h)",
+          colissimo: "Colissimo 3.5kg (48h-72h)",
           colissimo_desc: "Home delivery",
-          laposte: "La Poste (48h)",
+          laposte: "La Poste >1kg (48h)",
           laposte_desc: "Priority tracked mail",
           express: "Express (24h)",
           express_desc: "Chronopost Premium"
@@ -2000,19 +2114,19 @@ export const translations = {
         title: "Legal Mentions",
         publisher: {
           title: "Publisher",
-          text: "Bloom by Botanik SAS\nHead office: 75008 Paris, France\nRCS Paris: B 123 456 789"
+          text: "Bloom by BotaniK / Globsell\nHead office: 58 rue Monceau Cs 48756 75380 75008 Paris France\nRegistered at the RCS of Paris under number SIREN 933678898\nIntra-community VAT number: FR07933678898"
         },
         director: {
           title: "Publication Director",
-          text: "Bloom by Botanik Founding Team"
+          text: "Publication direction: Bloom by BotaniK Team\nContact: bloombybotanik@gmail.com"
         },
         hosting: {
           title: "Hosting",
-          text: "Google Cloud Platform / Firebase\n8 rue de Londres, 75009 Paris"
+          text: "Hostinger international LTD\n61 Lordou Vironos Street, 6023 Larnaca, Cyprus"
         },
         contact: {
-          title: "Contact",
-          text: "Email: bloombybotanik@gmail.com"
+          title: "Activity and Responsibility",
+          text: "Bloom by BotaniK offers botanical extraction devices, botanical products, and associated services for sale. The information provided on the site does not constitute a medical diagnosis or a prescription.\nBloom by BotaniK / Globsell cannot be held responsible for direct or indirect damage resulting from access to or use of the site."
         }
       }
     },
@@ -2145,7 +2259,7 @@ export const translations = {
           period: "/month",
           tagline: "The first step to secure your plant practice.",
           bullets: [
-            "Access to all freemium recipes (4 per category) + some additional signature recipes.",
+            "Access to all freemium recipes (9 per category) + some additional signature recipes.",
             "Access to full recipe details: solvents, temperatures, sequencing, administration mode, daily and maximum doses, precautions, and contraindications.",
             "Access to the Bloom bot to ask questions about the method, recipes, and general use (within legal limits)."
           ],
@@ -2260,14 +2374,14 @@ export const translations = {
           status: "Free access • Free",
           title: "Botanical Culinary Art",
           desc: "Aromatic oils, Infused honeys, Botanical vinegars. Master the art of infusion for a living gastronomy.",
-          cta: "See the 4 free recipes"
+          cta: "See the 9 free recipes"
         },
         lvl2: {
           badge: "Level 2",
           status: "Intermediate • Free",
           title: "Systemic Cosmetics",
           desc: "Serums, Elixirs, Massage oils. Create your own topical care with ultra-precise parameters.",
-          cta: "See the 4 free treatments"
+          cta: "See the 9 free treatments"
         },
         lvl3: {
           badge: "Level 3",
@@ -3024,9 +3138,9 @@ export const translations = {
         methods: {
           mondialrelay: "Mondial Relay (4-5 Tage)",
           mondialrelay_desc: "Abholstation Ihrer Wahl",
-          colissimo: "Colissimo (48h-72h)",
+          colissimo: "Colissimo 3.5kg (48h-72h)",
           colissimo_desc: "Lieferung nach Hause",
-          laposte: "La Poste (48h)",
+          laposte: "La Poste >1kg (48h)",
           laposte_desc: "Prioritäts-Einschreiben",
           express: "Express (24h)",
           express_desc: "Chronopost Premium"
@@ -3182,19 +3296,19 @@ export const translations = {
         title: "Impressum",
         publisher: {
           title: "Herausgeber",
-          text: "Bloom by Botanik SAS\nSitz der Gesellschaft: 75008 Paris, Frankreich\nRCS Paris: B 123 456 789"
+          text: "Bloom by BotaniK / Globsell\nSitz der Gesellschaft: 58 rue Monceau Cs 48756 75380 75008 Paris France\nEingetragen im Handelsregister (RCS) von Paris unter der Nummer SIREN 933678898\nUSt-IdNr.: FR07933678898"
         },
         director: {
           title: "Verantwortlich für die Veröffentlichung",
-          text: "Gründerteam Bloom by Botanik"
+          text: "Verantwortlich für die Veröffentlichung: Team Bloom by BotaniK\nKontakt: bloombybotanik@gmail.com"
         },
         hosting: {
           title: "Hosting",
-          text: "Google Cloud Platform / Firebase\n8 rue de Londres, 75009 Paris"
+          text: "Hostinger international LTD\n61 Lordou Vironos Street, 6023 Larnaca, Zypern"
         },
         contact: {
-          title: "Kontakt",
-          text: "E-Mail: bloombybotanik@gmail.com"
+          title: "Aktivität und Verantwortung",
+          text: "Bloom by BotaniK bietet botanische Extraktionsgeräte, botanische Produkte und damit verbundene Dienstleistungen zum Verkauf an. Die auf der Website bereitgestellten Informationen stellen weder eine medizinische Diagnose noch eine Verschreibung dar.\nBloom by BotaniK / Globsell kann nicht für direkte oder indirekte Schäden haftbar gemacht werden, die aus dem Zugriff auf oder der Nutzung der Website entstehen."
         }
       }
     },
@@ -3327,7 +3441,7 @@ export const translations = {
           period: "/Monat",
           tagline: "Der erste Schritt, um Ihre Pflanzenpraxis zu sichern.",
           bullets: [
-            "Zugang zu allen Freemium-Rezepten (4 pro Kategorie) + einige zusätzliche Signature-Rezepte.",
+            "Zugang zu allen Freemium-Rezepten (9 pro Kategorie) + einige zusätzliche Signature-Rezepte.",
             "Zugang zu vollständigen Rezeptdetails: Lösungsmittel, Temperaturen, Sequenzierung, Verabreichungsmodus, Tages- und Maximaldosen, Vorsichtsmaßnahmen und Kontraindikationen.",
             "Zugang zum Bloom-Bot, um Fragen zur Methode, zu Rezepten und zur allgemeinen Verwendung zu stellen (innerhalb gesetzlicher Grenzen)."
           ],
@@ -3442,14 +3556,14 @@ export const translations = {
           status: "Freier Zugang • Kostenlos",
           title: "Botanische Kulinarik-Kunst",
           desc: "Aromatische Öle, Infusionierter Honig, Botanische Essige. Meistern Sie die Kunst der Infusion für eine lebendige Gastronomie.",
-          cta: "Die 4 kostenlosen Rezepte ansehen"
+          cta: "Die 9 kostenlosen Rezepte ansehen"
         },
         lvl2: {
           badge: "Ebene 2",
           status: "Mittelstufe • Kostenlos",
           title: "Systemische Kosmetik",
           desc: "Seren, Elixiere, Massageöle. Erstellen Sie Ihre eigenen topischen Pflegeprodukte mit ultra-präzisen Parametern.",
-          cta: "Die 4 kostenlosen Pflegeprodukte ansehen"
+          cta: "Die 9 kostenlosen Pflegeprodukte ansehen"
         },
         lvl3: {
           badge: "Ebene 3",

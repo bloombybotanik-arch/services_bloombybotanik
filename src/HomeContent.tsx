@@ -41,7 +41,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
           <div className="absolute top-[-10%] right-[-10%] w-64 h-64 bg-botanik-green/5 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-1000" />
           <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
             <div className="max-w-3xl">
-              <span className="inline-block px-3 py-1 bg-botanik-green text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">
+              <span className="inline-block px-3 py-1 bg-botanik-green text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-6 whitespace-nowrap">
                 {t.home.extractionGuide.badge}
               </span>
               <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6 leading-tight">

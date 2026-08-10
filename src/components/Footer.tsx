@@ -87,7 +87,7 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
               <li><button onClick={() => onNavigate('legal', undefined, 'cgv')} className="hover:text-white transition-colors">{t.footer.cgv}</button></li>
               <li><button onClick={() => onNavigate('legal', undefined, 'cgu')} className="hover:text-white transition-colors">CGU</button></li>
               <li><button onClick={() => onNavigate('legal', undefined, 'privacy')} className="hover:text-white transition-colors">{t.footer.privacy}</button></li>
-              <li><button onClick={() => onNavigate('legal', undefined, 'cgv')} className="hover:text-white transition-colors">Droit de Rétractation</button></li>
+              <li><button onClick={() => onNavigate('legal', undefined, 'withdrawal')} className="hover:text-white transition-colors">Droit de Rétractation</button></li>
             </ul>
           </div>
         </div>

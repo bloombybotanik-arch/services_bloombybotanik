@@ -60,7 +60,7 @@ const VIEW_PATHS: Record<string, string> = {
   activation: '/activation', account: '/compte', legal: '/legal', chat: '/chat',
   cart: '/panier', checkout: '/checkout', guide: '/qu-est-ce-que-l-infusion-botanique', pending: '/en-attente',
   library: '/bibliotheque', 'pillar-extraction': '/extraction-botanique-guide-complet',
-  admin: '/admin', blog: '/blog'
+  admin: '/admin', blog: '/blog', withdrawal: '/droit-de-retractation'
 };
 
 const PATH_VIEWS: Record<string, string> = Object.fromEntries(
@@ -607,7 +607,7 @@ export default function App() {
   const [previousView, setPreviousView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction' | 'admin' | 'blog'>('home');
 
   const [currentProductId, setCurrentProductId] = useState<string | undefined>();
-  const [legalType, setLegalType] = useState<'cgv' | 'cgu' | 'privacy' | 'mentions'>('mentions');
+  const [legalType, setLegalType] = useState<'cgv' | 'cgu' | 'privacy' | 'mentions' | 'withdrawal'>('mentions');
   const [cart, setCart] = useState<any[]>([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSplashFinished, setIsSplashFinished] = useState(false);
@@ -628,6 +628,12 @@ export default function App() {
       setLang(detectedLang);
       sessionStorage.removeItem('spa-redirect-path');
 
+      if (restPath === '/droit-de-retractation') {
+        setLegalType('withdrawal');
+        setCurrentView('legal');
+        return;
+      }
+
       // --- Legacy route aliases (pre-redesign URLs) mapped to current views ---
       const LEGACY_ALIASES: Record<string, string> = {
         '/about': '/manifeste',
@@ -637,6 +643,7 @@ export default function App() {
         '/natural-herbal-infusion-face-skincare-recipes': '/cosmetiques',
         '/infusion-botanique-maison-comment-ca-marche': '/',
         '/extraction-plantes-naturelles-bienfaits': '/extraction-botanique-guide-complet',
+        '/bloomlab-extracteur-botanique-et-infuseur-dhuile-intelligent-6-en-1': '/boutique/bloomlab',
         '/chroniques': '/',
         '/blog': '/',
         '/blog/': '/',

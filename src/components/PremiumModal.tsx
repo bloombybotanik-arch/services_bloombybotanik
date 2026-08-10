@@ -49,7 +49,7 @@ export function PremiumModal({ isOpen, onClose, onUpgrade }: PremiumModalProps) 
               <div>
                 <h5 className="font-bold text-botanik-green/50 mb-2 uppercase text-xs">Gratuit</h5>
                 <ul className="space-y-2 text-botanik-green/70">
-                  <li>• 4 recettes</li>
+                  <li>• 9 recettes</li>
                   <li>• Paramètres de base</li>
                 </ul>
               </div>
