@@ -408,7 +408,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="max-w-2xl">
             <span className="inline-block px-3 py-1 bg-botanik-orange/10 text-botanik-orange text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">Le Blog du Totum</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6 leading-tight">Dernières Recherches sur l'Infusion Botanique</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6 leading-tight">Extracteur Botanique & Infusion : Dernières Recherches</h2>
             <p className="text-lg text-botanik-green/60 font-light">
               Explorez nos dossiers de fond sur la science de l'extraction et la biophysique des plantes. 
               Pour approfondir, consultez les <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7074153/" target="_blank" rel="noopener noreferrer" className="text-botanik-orange underline underline-offset-4 decoration-1">études scientifiques sur les extraits botaniques</a>.

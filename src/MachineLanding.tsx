@@ -300,6 +300,46 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         </div>
       </section>
 
+      {/* Comparative Section for SEO */}
+      <section className="py-24 bg-[#F9F9F7]">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6">BloomLab vs Autres Extracteurs Botaniques</h2>
+            <p className="text-lg text-botanik-green/60">Pourquoi choisir la précision BloomLab face aux alternatives du marché ?</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="bg-white p-10 rounded-[40px] shadow-sm border border-botanik-green/5">
+              <h3 className="text-2xl font-bold text-botanik-green mb-6">Comparatif Technique</h3>
+              <p className="text-botanik-green/70 mb-8 leading-relaxed">
+                Contrairement à des modèles comme le <strong>MagicalButter MB2e</strong> ou le <strong>ONGROK Botanical Extractor</strong>, le BloomLab® mise sur une précision thermique chirurgicale (±0,5°C). 
+                Là où la plupart des machines grand public ont des variations de température importantes, BloomLab protège l'intelligence moléculaire (le Totum) de vos plantes.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-3 text-sm text-botanik-green/80"><CheckCircle className="w-5 h-5 text-[#F97316]" /> Inox 304 vs Plastique/Alu</li>
+                <li className="flex items-center gap-3 text-sm text-botanik-green/80"><CheckCircle className="w-5 h-5 text-[#F97316]" /> Précision ±0,5°C vs ±5°C</li>
+                <li className="flex items-center gap-3 text-sm text-botanik-green/80"><CheckCircle className="w-5 h-5 text-[#F97316]" /> Protocoles Totum 56 vs Modes Basiques</li>
+              </ul>
+            </div>
+            <div className="bg-white p-10 rounded-[40px] shadow-sm border border-botanik-green/5">
+              <h3 className="text-2xl font-bold text-botanik-green mb-6">L'Expertise Européenne</h3>
+              <p className="text-botanik-green/70 mb-8 leading-relaxed">
+                Face à des solutions comme <strong>Nebula Boost</strong> ou <strong>Ardent FX</strong>, BloomLab offre une approche globale combinant décarboxylation, infusion et macération dans un seul instrument certifié aux normes européennes les plus strictes.
+              </p>
+              <div className="flex flex-col gap-4">
+                <div className="flex justify-between items-center p-4 bg-botanik-green/5 rounded-2xl">
+                  <span className="font-bold text-botanik-green">Souveraineté</span>
+                  <span className="text-[#F97316] font-black">★★★</span>
+                </div>
+                <div className="flex justify-between items-center p-4 bg-botanik-green/5 rounded-2xl">
+                  <span className="font-bold text-botanik-green">Précision Thermique</span>
+                  <span className="text-[#F97316] font-black">★★★</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-24 bg-[#293228] text-white text-center">
         <div className="container mx-auto px-6 max-w-4xl">
