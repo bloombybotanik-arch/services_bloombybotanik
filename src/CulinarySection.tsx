@@ -254,7 +254,7 @@ export default function CulinarySection({
         {filteredPlants.length > 0 ? (
           <div className="space-y-6">
             {filteredPlants.map((plant, index) => {
-              const isLocked = index >= 4 && !isPremium;
+              const isLocked = index >= 9 && !isPremium;
               return (
                 <CulinaryAccordion 
                   key={plant.plant_id} 

@@ -131,7 +131,7 @@ export default function CosmeticsContent({
             {filteredRecipes.length > 0 ? (
               filteredRecipes.map((recipe) => {
                 const globalIndex = cosmeticsRecipes.findIndex(r => r.plant_id === recipe.plant_id);
-                const isLocked = globalIndex >= 4 && !isPremium;
+                const isLocked = globalIndex >= 9 && !isPremium;
                 return (
                   <div
                     key={recipe.plant_id}
