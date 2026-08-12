@@ -58,7 +58,8 @@ const VIEW_PATHS: Record<string, string> = {
   boutique: '/boutique', culinaire: '/culinaire', cosmetiques: '/cosmetiques',
   'library-landing': '/library-landing', manifeste: '/manifeste',
   activation: '/activation', account: '/compte', legal: '/legal', chat: '/chat',
-  cart: '/panier', checkout: '/checkout', guide: '/qu-est-ce-que-l-infusion-botanique', pending: '/en-attente',
+  cart: '/panier', checkout: '/checkout', guide: '/qu-est-ce-que-l-infusion-botanique',
+  how_it_works: '/infusion-botanique-maison-comment-ca-marche', pending: '/en-attente',
   library: '/bibliotheque', 'pillar-extraction': '/extraction-botanique-guide-complet',
   admin: '/admin', blog: '/blog', withdrawal: '/droit-de-retractation'
 };
@@ -80,7 +81,7 @@ const generateSeoAlt = (imageContext: string) => {
 const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, currentView: string, t: any, productId?: string }) => {
   useEffect(() => {
     // 1. Handle dynamic Title & Meta Description
-    let seoKey: 'home' | 'herbarium' | 'shop' | 'blog' | 'pillar' | 'extraction' | 'infusion' | 'machine' | 'manifesto' = 'home';
+    let seoKey: 'home' | 'herbarium' | 'shop' | 'blog' | 'pillar' | 'extraction' | 'infusion' | 'machine' | 'manifesto' | 'how_it_works' = 'home';
     
     if (['herbier', 'library', 'library-landing', 'culinaire', 'cosmetiques'].includes(currentView)) {
       seoKey = 'herbarium';
@@ -94,6 +95,8 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
       seoKey = 'machine';
     } else if (currentView === 'manifeste') {
       seoKey = 'manifesto';
+    } else if (currentView === 'how_it_works') {
+      seoKey = 'how_it_works';
     }
 
     const currentSeo = t.seo[seoKey];
@@ -805,7 +808,8 @@ export default function App() {
       case 'machine': return <MachineLanding onNavigate={navigateTo} lang={lang} />;
       case 'phytotherapie-reset': return <PhytotherapyResetPage onNavigate={navigateTo} lang={lang} />;
       case 'library-landing': return <LibraryLanding onNavigate={navigateTo} lang={lang} />;
-      case 'guide': return <GuideContent onNavigate={navigateTo} lang={lang} />;
+      case 'guide':
+      case 'how_it_works': return <GuideContent onNavigate={navigateTo} lang={lang} />;
       case 'ateliers': return (
         <div className="max-w-[1200px] mx-auto px-6 py-12 animate-in fade-in duration-700">
           <h2 className="text-3xl font-bold text-botanik-green mb-8">{t.nav.guide}</h2>
