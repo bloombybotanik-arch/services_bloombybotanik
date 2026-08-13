@@ -1,7 +1,9 @@
 import React from 'react';
 import { ShoppingBag, Star, Check, ArrowRight, ShieldCheck, Leaf, FlaskConical, Search } from 'lucide-react';
 import bloomLabImg from './assets/images/bloomlab_main_1784887530345.jpeg';
-import img05 from './assets/images/Img_05.jpeg';
+import img05 from './assets/images/lifestyle_botanik_cleaned_1786616810137.jpg';
+import labHeroImg from './assets/images/lab_detail_cleaned_1786616788618.jpg';
+import remediesImg from './assets/images/natural_remedies_cleaned_1786616831671.jpg';
 import duoArgilesImg from './assets/images/product_duo_argiles.jpg';
 import trioPouchesImg from './assets/images/product_trio_pouches.jpg';
 import feuArticulaireImg from './assets/images/product_feu_articulaire.jpg';
@@ -123,12 +125,13 @@ export const getProducts = (lang: Language) => {
       name: t.freemium_access.name,
       subtitle: t.freemium_access.subtitle,
       price: 0.00,
-      image: img05,
+      image: remediesImg,
       rating: 4.7,
       reviews: 156,
       description: t.freemium_access.description,
       tags: ['Gratuit', 'Digital', 'Découverte'],
-      isSpecial: true
+      isSpecial: true,
+      isDigital: true
     },
     {
       id: 'premium-access',
@@ -140,7 +143,8 @@ export const getProducts = (lang: Language) => {
       reviews: 89,
       description: t.premium_access.description,
       tags: ['Abonnement', 'Digital', 'Complet'],
-      isSpecial: true
+      isSpecial: true,
+      isDigital: true
     }
   ];
 };
@@ -249,31 +253,28 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                   <p className="text-base md:text-xl text-botanik-green/60 mb-8 md:mb-12 leading-relaxed max-w-md font-medium">
                     {t.hero.description}
                   </p>
-                  <div className="flex flex-wrap items-center gap-6 md:gap-10">
-                    <div className="flex flex-col">
-                      <span className="text-[10px] font-bold text-botanik-green/40 uppercase tracking-widest mb-1">{t.hero.price_from}</span>
-                    <span className="text-3xl md:text-5xl font-bold text-botanik-green">{formatPrice(products[0].price).split(',')[0].split('.')[0]}€</span>
-                    </div>
+                  <div className="flex flex-wrap gap-4 mt-4">
                     <button 
-                      onClick={() => onNavigateDetail('bloomlab')}
-                      className="px-6 md:px-12 py-3 md:py-6 bg-botanik-green text-white rounded-[16px] md:rounded-[24px] font-bold shadow-2xl shadow-botanik-green/20 flex items-center justify-center gap-3 md:gap-4 group transition-all hover:-translate-y-1 hover:shadow-botanik-green/30 text-sm md:text-base"
+                      onClick={() => {
+                        const el = document.getElementById('product-bloomlab');
+                        el?.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className="px-10 py-5 bg-botanik-green text-white rounded-2xl font-bold flex items-center gap-3 hover:bg-botanik-orange transition-all shadow-xl shadow-botanik-green/10"
                     >
-                      {t.hero.cta}
-                      <ArrowRight className="w-5 h-5 md:w-6 md:h-6 transition-transform group-hover:translate-x-1" />
+                      {t.hero.cta} <ArrowRight className="w-5 h-5" />
                     </button>
                   </div>
                 </div>
-
+                
                 {/* Right Side: Image */}
-                <div className="lg:w-1/2 bg-[#F9F9F7] relative overflow-hidden min-h-[400px] lg:h-auto order-1 lg:order-2 cursor-pointer" onClick={() => onNavigateDetail('bloomlab')}>
+                <div className="lg:w-1/2 relative order-1 lg:order-2 h-64 lg:h-auto min-h-[400px]">
                   <img 
-                    src={img05} 
-                    alt="BloomLab Boutique" 
-                    className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[2000ms] ease-out"
+                    src={bloomLabImg} 
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" 
+                    alt="BloomLab - Votre Laboratoire de Phytothérapie Maison" 
                   />
-                  <div className="absolute top-4 md:top-12 left-4 md:left-12 z-20 bg-botanik-orange/50 backdrop-blur-md text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] border border-white/20 shadow-2xl whitespace-nowrap">
-                    SOUVERAINETÉ SANTÉ 2026
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent hidden lg:block" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent lg:hidden" />
                 </div>
               </div>
             </div>

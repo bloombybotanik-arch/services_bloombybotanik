@@ -6,11 +6,12 @@ import { getProductSheets } from './data/productDetailsData';
 interface ProductDetailProps {
   onBack: () => void;
   onAddToCart: (product: any) => void;
+  onNavigate: (view: any, productId?: string, type?: any) => void;
   productId?: string;
   lang: Language;
 }
 
-export default function ProductDetail({ onBack, onAddToCart, productId = 'bloomlab', lang }: ProductDetailProps) {
+export default function ProductDetail({ onBack, onAddToCart, onNavigate, productId = 'bloomlab', lang }: ProductDetailProps) {
   const [activeImage, setActiveImage] = useState(0);
   const t = translations[lang].product_detail;
   const productSheets = useMemo(() => getProductSheets(lang), [lang]);
@@ -27,14 +28,6 @@ export default function ProductDetail({ onBack, onAddToCart, productId = 'blooml
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           {t.back}
         </button>
-        <div className="flex items-center gap-4">
-          <button className="p-2 rounded-full bg-[#1B3022]/5 hover:bg-[#1B3022]/10 transition-colors">
-            <Heart className="w-5 h-5 text-[#1B3022]" />
-          </button>
-          <button className="p-2 rounded-full bg-[#1B3022]/5 hover:bg-[#1B3022]/10 transition-colors">
-            <Share2 className="w-5 h-5 text-[#1B3022]" />
-          </button>
-        </div>
       </div>
 
       <div className="flex flex-col lg:flex-row items-stretch bg-white border border-[#1B3022]/5 rounded-[48px] overflow-hidden shadow-2xl mb-24 min-h-[600px] lg:min-h-[700px]">
@@ -131,6 +124,11 @@ export default function ProductDetail({ onBack, onAddToCart, productId = 'blooml
       </div>
       
       <footer className="mt-20 border-t border-[#1B3022]/10 pt-10 text-center">
+        <div className="flex flex-wrap justify-center gap-6 mb-8 text-xs font-bold uppercase tracking-widest text-[#1B3022]/40">
+          <button onClick={() => onNavigate('legal', undefined, 'mentions')} className="hover:text-botanik-orange transition-colors">Mentions Légales</button>
+          <button onClick={() => onNavigate('legal', undefined, 'cgv')} className="hover:text-botanik-orange transition-colors">CGV</button>
+          <button onClick={() => onNavigate('legal', undefined, 'cgu')} className="hover:text-botanik-orange transition-colors">CGU</button>
+        </div>
         <p className="text-sm text-[#1B3022]/40 italic max-w-2xl mx-auto">
           {sheet.name} {t.disclaimer}
         </p>

@@ -870,9 +870,13 @@ export default function App() {
       );
       case 'pending': return <PendingContent onBack={() => navigateTo(previousView === 'pending' ? 'home' : previousView)} lang={lang} />;
       case 'product-detail': return (
-        <ProductDetail onBack={() => navigateTo('boutique')} onAddToCart={(product) => {
-          addToCart(product);
-        }} productId={currentProductId} lang={lang} />
+        <ProductDetail 
+          onBack={() => navigateTo('boutique')} 
+          onAddToCart={(product) => addToCart(product)} 
+          onNavigate={navigateTo}
+          productId={currentProductId} 
+          lang={lang} 
+        />
       );
       case 'cart': return (
         <CartContent 
@@ -881,6 +885,7 @@ export default function App() {
           onRemove={removeFromCart}
           onBack={() => navigateTo('boutique')}
           onCheckout={() => navigateTo('checkout')}
+          onNavigate={navigateTo}
           lang={lang}
         />
       );

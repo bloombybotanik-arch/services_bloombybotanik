@@ -17,10 +17,11 @@ interface CartContentProps {
   onRemove: (id: string) => void;
   onBack: () => void;
   onCheckout: () => void;
+  onNavigate: (view: any, productId?: string, type?: any) => void;
   lang?: Language;
 }
 
-export default function CartContent({ items, onUpdateQuantity, onRemove, onBack, onCheckout, lang = 'fr' }: CartContentProps) {
+export default function CartContent({ items, onUpdateQuantity, onRemove, onBack, onCheckout, onNavigate, lang = 'fr' }: CartContentProps) {
   const t = translations[lang].cart;
   const common = translations[lang].common;
   
@@ -29,9 +30,10 @@ export default function CartContent({ items, onUpdateQuantity, onRemove, onBack,
   
   const subtotal = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
   const hasRemedies = items.some(item => item.id !== 'bloomlab');
+  const allDigital = items.every(item => (item as any).isDigital);
   
   const getShippingPrice = () => {
-    if (items.length === 0) return 0;
+    if (items.length === 0 || allDigital) return 0;
     
     // Free shipping ONLY if NO remedies AND subtotal >= 150 (example threshold for machine)
     // AND only for Colissimo or Mondial Relay
@@ -94,9 +96,9 @@ export default function CartContent({ items, onUpdateQuantity, onRemove, onBack,
                 <div className="w-32 h-32 rounded-2xl overflow-hidden bg-[#F9F9F7] flex-shrink-0 relative">
                   <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                 </div>
-                <div className="flex-1 text-center sm:text-left">
-                  <div className="text-[10px] font-bold text-[#F97316] uppercase tracking-widest mb-1">{item.subtitle}</div>
-                  <h3 className="text-xl font-bold text-[#1B3022] mb-2">{item.name}</h3>
+                <div className="flex-1 min-w-0 text-center sm:text-left">
+                  <div className="text-[10px] font-bold text-[#F97316] uppercase tracking-widest mb-1 truncate">{item.subtitle}</div>
+                  <h3 className="text-xl font-bold text-[#1B3022] mb-2 truncate sm:whitespace-normal">{item.name}</h3>
                   <div className="text-lg font-bold text-[#1B3022]">{item.price.toFixed(2)} €</div>
                 </div>
                 <div className="flex items-center gap-4 bg-[#F9F9F7] p-2 rounded-xl">
@@ -199,62 +201,64 @@ export default function CartContent({ items, onUpdateQuantity, onRemove, onBack,
           </div>
 
           {/* Delivery Options */}
-          <div className="bg-white p-8 rounded-[32px] border border-[#1B3022]/10">
-            <div className="flex items-center gap-3 mb-8">
-              <Truck className="w-6 h-6 text-[#1B3022]" />
-              <h2 className="text-2xl font-bold text-[#1B3022]">{t.shipping.title}</h2>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <button 
-                onClick={() => setShippingMethod('mondialrelay')}
-                className={`p-6 rounded-2xl border-2 transition-all text-left ${shippingMethod === 'mondialrelay' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
-              >
-                <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.mondialrelay}</div>
-                <div className="text-sm opacity-60">{t.shipping.methods.mondialrelay_desc}</div>
-                <div className="mt-4 font-bold text-[#F97316]">
-                  {!hasRemedies && subtotal >= 150 ? t.shipping.free : '5,90 €'}
-                </div>
-              </button>
-              <button 
-                onClick={() => setShippingMethod('colissimo')}
-                className={`p-6 rounded-2xl border-2 transition-all text-left ${shippingMethod === 'colissimo' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
-              >
-                <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.colissimo}</div>
-                <div className="text-sm opacity-60">{t.shipping.methods.colissimo_desc}</div>
-                <div className="mt-4 font-bold text-[#F97316]">
-                  {!hasRemedies && subtotal >= 150 ? t.shipping.free : '14,90 €'}
-                </div>
-              </button>
-              <button 
-                onClick={() => setShippingMethod('laposte')}
-                className={`p-6 rounded-2xl border-2 transition-all text-left ${shippingMethod === 'laposte' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
-              >
-                <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.laposte}</div>
-                <div className="text-sm opacity-60">{t.shipping.methods.laposte_desc}</div>
-                <div className="mt-4 font-bold text-[#F97316]">5,90 €</div>
-              </button>
-              <button 
-                onClick={() => setShippingMethod('express')}
-                className={`p-6 rounded-2xl border-2 transition-all text-left ${shippingMethod === 'express' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
-              >
-                <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.express}</div>
-                <div className="text-sm opacity-60">{t.shipping.methods.express_desc}</div>
-                <div className="mt-4 font-bold text-[#F97316]">21,90 €</div>
-              </button>
-            </div>
-            {!hasRemedies && subtotal < 150 && (
-              <div className="mt-6 p-4 bg-[#1B3022]/5 rounded-xl flex items-center gap-3">
-                <Plus className="w-5 h-5 text-[#F97316]" />
-                <p className="text-sm">{t.shipping.more_for_free.replace('{amount}', (150 - subtotal).toFixed(2))}</p>
+          {!allDigital && (
+            <div className="bg-white p-8 rounded-[32px] border border-[#1B3022]/10">
+              <div className="flex items-center gap-3 mb-8">
+                <Truck className="w-6 h-6 text-[#1B3022]" />
+                <h2 className="text-2xl font-bold text-[#1B3022]">{t.shipping.title}</h2>
               </div>
-            )}
-            {hasRemedies && (
-              <div className="mt-6 p-4 bg-[#F97316]/5 rounded-xl flex items-center gap-3 border border-[#F97316]/10">
-                <Info className="w-5 h-5 text-[#F97316]" />
-                <p className="text-xs text-[#1B3022]/70 italic">{t.shipping.remedies_note}</p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <button 
+                  onClick={() => setShippingMethod('mondialrelay')}
+                  className={`p-6 rounded-2xl border-2 transition-all text-left ${shippingMethod === 'mondialrelay' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
+                >
+                  <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.mondialrelay}</div>
+                  <div className="text-sm opacity-60">{t.shipping.methods.mondialrelay_desc}</div>
+                  <div className="mt-4 font-bold text-[#F97316]">
+                    {!hasRemedies && subtotal >= 150 ? t.shipping.free : '5,90 €'}
+                  </div>
+                </button>
+                <button 
+                  onClick={() => setShippingMethod('colissimo')}
+                  className={`p-6 rounded-2xl border-2 transition-all text-left ${shippingMethod === 'colissimo' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
+                >
+                  <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.colissimo}</div>
+                  <div className="text-sm opacity-60">{t.shipping.methods.colissimo_desc}</div>
+                  <div className="mt-4 font-bold text-[#F97316]">
+                    {!hasRemedies && subtotal >= 150 ? t.shipping.free : '14,90 €'}
+                  </div>
+                </button>
+                <button 
+                  onClick={() => setShippingMethod('laposte')}
+                  className={`p-6 rounded-2xl border-2 transition-all text-left ${shippingMethod === 'laposte' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
+                >
+                  <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.laposte}</div>
+                  <div className="text-sm opacity-60">{t.shipping.methods.laposte_desc}</div>
+                  <div className="mt-4 font-bold text-[#F97316]">5,90 €</div>
+                </button>
+                <button 
+                  onClick={() => setShippingMethod('express')}
+                  className={`p-6 rounded-2xl border-2 transition-all text-left ${shippingMethod === 'express' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
+                >
+                  <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.express}</div>
+                  <div className="text-sm opacity-60">{t.shipping.methods.express_desc}</div>
+                  <div className="mt-4 font-bold text-[#F97316]">21,90 €</div>
+                </button>
               </div>
-            )}
-          </div>
+              {!hasRemedies && subtotal < 150 && (
+                <div className="mt-6 p-4 bg-[#1B3022]/5 rounded-xl flex items-center gap-3">
+                  <Plus className="w-5 h-5 text-[#F97316]" />
+                  <p className="text-sm">{t.shipping.more_for_free.replace('{amount}', (150 - subtotal).toFixed(2))}</p>
+                </div>
+              )}
+              {hasRemedies && (
+                <div className="mt-6 p-4 bg-[#F97316]/5 rounded-xl flex items-center gap-3 border border-[#F97316]/10">
+                  <Info className="w-5 h-5 text-[#F97316]" />
+                  <p className="text-xs text-[#1B3022]/70 italic">{t.shipping.remedies_note}</p>
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
         {/* Summary */}
@@ -278,10 +282,16 @@ export default function CartContent({ items, onUpdateQuantity, onRemove, onBack,
 
             <button 
               onClick={onCheckout}
-              className="w-full bg-[#F97316] text-white py-5 rounded-2xl font-bold text-lg hover:bg-[#EA580C] transition-all flex items-center justify-center gap-3 shadow-xl shadow-[#F97316]/20 mb-8"
+              className="w-full bg-[#F97316] text-white py-5 rounded-2xl font-bold text-lg hover:bg-[#EA580C] transition-all flex items-center justify-center gap-3 shadow-xl shadow-[#F97316]/20 mb-6"
             >
               {t.summary.checkout} <ChevronRight className="w-5 h-5" />
             </button>
+
+            <div className="text-center mb-8">
+              <p className="text-[10px] text-white/40 leading-relaxed">
+                En validant votre commande, vous acceptez nos <button onClick={() => onNavigate('legal', undefined, 'cgv')} className="underline hover:text-botanik-orange transition-colors">CGV</button> et nos <button onClick={() => onNavigate('legal', undefined, 'mentions')} className="underline hover:text-botanik-orange transition-colors">Mentions Légales</button>.
+              </p>
+            </div>
 
             <div className="space-y-6">
               <div className="flex items-center gap-3 text-sm opacity-60">

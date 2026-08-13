@@ -516,9 +516,9 @@ export const translations = {
           ]
         },
         pack_signature: {
-          name: "Pack Signature — BloomLab + Kit de Démarrage",
+          name: "Pack Signature — BloomLab + Kit Sève Fondamentale",
           subtitle: "IDÉAL POUR DÉBUTER",
-          description: "L'essentiel pour commencer : Votre BloomLab accompagnée du kit 'Sève Fondamentale' et du matériel de filtration professionnel."
+          description: "Le choix privilégié pour démarrer : Votre BloomLab accompagnée du kit 'Sève Fondamentale' pour restaurer votre vitalité profonde dès réception."
         },
         bundle_apothicaire: {
           name: "L'Herbier Complet — Pack Rentrée 2026",
@@ -526,29 +526,29 @@ export const translations = {
           description: "L'offre la plus irrésistible de la rentrée. Regroupe l'intégralité de nos mélanges de plantes (Sève, Nuit, Digestion, Articulaire) et le Duo Argiles Renaissance pour un reset total."
         },
         kit_starter: {
-          name: "Kit de Démarrage — Sève Fondamentale",
-          subtitle: "COMPATIBLE BLOOMLAB",
-          description: "Le mélange de plantes idéal pour vos premières extractions. Vitalité capillaire et structurelle."
+          name: "Kit Sève Fondamentale",
+          subtitle: "VITALITÉ & STRUCTURE",
+          description: "Le mélange signature pour restaurer la vitalité profonde. Une synergie de plantes adaptogènes pour soutenir les surrénales et la structure."
         },
         kit_nuit: {
           name: "Remède Nuit Profonde",
           subtitle: "SOMMEIL & ANCRAGE",
-          description: "Mélange de plantes séchées pour un sommeil profond et réparateur."
+          description: "Un protocole d'apaisement pour un sommeil réparateur. Calme le système nerveux et favorise l'ancrage sans somnolence."
         },
         kit_digestion: {
           name: "Remède Confort Digestif",
           subtitle: "ÉQUILIBRE INTESTINAL",
-          description: "Mélange de plantes pour apaiser les ballonnements durablement."
+          description: "Équilibre le microbiote et apaise les inflammations intestinales pour une digestion fluide et un ventre apaisé."
         },
         kit_articulaire: {
           name: "Remède Feu Articulaire",
           subtitle: "SOUPLESSE & MOBILITÉ",
-          description: "Mélange de plantes pour accompagner les zones sensibles."
+          description: "Synergie anti-inflammatoire pour retrouver souplesse et mobilité. Idéal pour apaiser les raideurs chroniques."
         },
         kit_reset: {
           name: "Duo RESET Renaissance — Kit Argiles & Plantes",
-          subtitle: "CURE DÉTOX & TERRAIN",
-          description: "Zéolithe Clinoptilolite 6µm et mélange de plantes drainantes. Idéal pour ceux possédant déjà une BloomLab."
+          subtitle: "DÉTOX & HOMÉOSTASIE",
+          description: "L'alliance de la Zéolithe Clinoptilolite et de plantes drainantes de grade pharma. Le pilier indispensable de votre transformation."
         },
         freemium_access: {
           name: "Accès Découverte — 10 Recettes Gratuites",
@@ -1845,17 +1845,17 @@ export const translations = {
         bloomlab: {
           name: "BloomLab® — Botanical Extractor & Precision Infuser",
           subtitle: "HEALTH SOVEREIGNTY — 2026 EDITION",
-          description: "The first counter-top botanical extractor capable of extracting the integral Totum of plants with absolute thermal precision (±0.5°C). Create your own natural remedies and organic cosmetics at home.",
+          description: "The first precision botanical extractor. Capable of extracting the integral Totum of plants with absolute thermal precision (±0.5°C). Create your own natural remedies and organic cosmetics at home.",
           bullets: [
-            "Oily macerates, tinctures, concentrated extracts",
+            "Oil macerates, tinctures, concentrated extracts",
             "Thermal sequencing ±0.5°C (0°C to 121°C)",
             "Certified 304 Stainless Steel, 1.2L Tank"
           ]
         },
         pack_signature: {
-          name: "Signature Pack — BloomLab + Starter Kit",
+          name: "Signature Pack — BloomLab + Fundamental Sap Kit",
           subtitle: "IDEAL FOR BEGINNERS",
-          description: "Everything you need to start: Your BloomLab accompanied by the 'Fundamental Sap' kit and professional filtration equipment."
+          description: "The preferred choice to start: Your BloomLab accompanied by the 'Fundamental Sap' kit to restore your deep vitality upon receipt."
         },
         bundle_apothicaire: {
           name: "Complete Herbarium — 2026 Back-to-School Pack",
@@ -1863,39 +1863,39 @@ export const translations = {
           description: "The most irresistible offer of the season. Includes all our plant blends (Sap, Night, Digestion, Joint) and the Renaissance Clays Duo for a total reset."
         },
         kit_starter: {
-          name: "Starter Kit — Fundamental Sap",
-          subtitle: "BLOOMLAB COMPATIBLE",
-          description: "The ideal plant blend for your first extractions. Capillary and structural vitality."
+          name: "Fundamental Sap Kit",
+          subtitle: "VITALITY & STRUCTURE",
+          description: "The signature plant blend to restore deep vitality. An adaptogenic synergy to support adrenals and bone structure."
         },
         kit_nuit: {
           name: "Deep Night Remedy",
           subtitle: "SLEEP & GROUNDING",
-          description: "Dried plant blend for deep and restorative sleep."
+          description: "A soothing protocol for restorative sleep. Calms the nervous system and promotes grounding without drowsiness."
         },
         kit_digestion: {
           name: "Digestive Comfort Remedy",
           subtitle: "INTESTINAL BALANCE",
-          description: "Plant blend to lastingly soothe bloating."
+          description: "Balances the microbiota and soothes intestinal inflammation for fluid, light digestion and a soothed stomach."
         },
         kit_articulaire: {
           name: "Joint Fire Remedy",
           subtitle: "FLEXIBILITY & MOBILITY",
-          description: "Plant blend to support sensitive areas."
+          description: "Anti-inflammatory synergy to regain flexibility and mobility. Ideal for soothing chronic joint stiffness."
         },
         kit_reset: {
-          name: "RESET Renaissance Duo — Clays & Plants Kit",
-          subtitle: "DETOX & TERRAIN CURE",
-          description: "6µm Clinoptilolite Zeolite and draining plant blend. Ideal for those who already own a BloomLab."
+          name: "Duo RESET Renaissance — Clay & Plant Kit",
+          subtitle: "DETOX & HOMEOSTASIS",
+          description: "The alliance of Clinoptilolite Zeolite and pharmaceutical-grade draining plants. The essential pillar of your transformation."
         },
         freemium_access: {
           name: "Discovery Access — 10 Free Recipes",
           subtitle: "YOUR ENTRY POINT",
-          description: "Explore the Bloom universe with a selection of 10 guided recipes to begin your first infusions."
+          description: "Explore the Bloom universe with a selection of 10 guided recipes to start your first infusions."
         },
         premium_access: {
           name: "Premium Subscription — Unlimited Access",
-          subtitle: "ALL HERBARIUM & PROTOCOLS",
-          description: "Access over 100 recipes, expert protocols and monthly updates. 1 month free for BloomLab customers."
+          subtitle: "FULL HERBARIUM & PROTOCOLS",
+          description: "Access over 100 recipes, expert protocols, and monthly updates. 1 month free for BloomLab customers."
         }
       }
     },
@@ -3068,7 +3068,7 @@ export const translations = {
         bloomlab: {
           name: "BloomLab® — Botanischer Extraktor & Präzisions-Infuser",
           subtitle: "GESUNDHEITSSOUVERÄNITÄT — EDITION 2026",
-          description: "Der erste botanische Extraktor für die Arbeitsplatte, der in der Lage ist, das integrale Totum von Pflanzen mit absoluter thermischer Präzision (±0,5°C) zu extrahieren. Erstellen Sie Ihre eigenen natürlichen Heilmittel und Bio-Kosmetik zu Hause.",
+          description: "Der erste botanische Präzisionsextraktor für die Arbeitsplatte. In der Lage, das integrale Totum von Pflanzen mit absoluter thermischer Präzision (±0,5°C) zu extrahieren. Erstellen Sie Ihre eigenen natürlichen Heilmittel und Bio-Kosmetik zu Hause.",
           bullets: [
             "Ölige Mazerate, Tinkturen, konzentrierte Extrakte",
             "Thermische Sequenzierung ±0,5°C (0°C bis 121°C)",
@@ -3076,39 +3076,39 @@ export const translations = {
           ]
         },
         pack_signature: {
-          name: "Signature-Paket — BloomLab + Starter-Set",
+          name: "Signatur-Paket — BloomLab + Set Fundamentaler Saft",
           subtitle: "IDEAL FÜR EINSTEIGER",
-          description: "Alles, was Sie für den Start benötigen: Ihr BloomLab zusammen mit dem Set 'Fundamentaler Saft' und professioneller Filtrationsausrüstung."
+          description: "Die bevorzugte Wahl für den Start: Ihr BloomLab zusammen mit dem Set 'Fundamentaler Saft', um Ihre tiefe Vitalität sofort nach Erhalt wiederherzustellen."
         },
         bundle_apothicaire: {
           name: "Das vollständige Herbarium — Paket Rente 2026",
           subtitle: "ALLE HEILMITTEL + ERDEN-DUO",
-          description: "Das unwiderstehlichste Angebot der Saison. Enthält alle unsere Pflanzenmischungen (Saft, Nacht, Verdauung, Gelenke) und das Renaissance Erden-Duo für einen totalen Reset."
+          description: "Das unwiderstehlichste Angebot der Saison. Enthält alle unsere Pflanzenmischungen (Saft, Nacht, Verdauung, Gelenke) und das Renaissance-Erden-Duo für einen totalen Reset."
         },
         kit_starter: {
-          name: "Starter-Set — Fundamentaler Saft",
-          subtitle: "BLOOMLAB KOMPATIBEL",
-          description: "Die ideale Pflanzenmischung für Ihre ersten Extraktionen. Kapillare und strukturelle Vitalität."
+          name: "Set Fundamentaler Saft",
+          subtitle: "VITALITÄT & STRUKTUR",
+          description: "Die Signatur-Pflanzenmischung zur Wiederherstellung tiefer Vitalität. Eine adaptogene Synergie zur Unterstützung der Nebennieren und der Knochenstruktur."
         },
         kit_nuit: {
           name: "Heilmittel Tiefe Nacht",
-          subtitle: "SCHLAF & VERANKERUNG",
-          description: "Mischung aus getrockneten Pflanzen für einen tiefen und erholsamen Schlaf."
+          subtitle: "SCHLAF & ERDUNG",
+          description: "Ein beruhigendes Protokoll für erholsamen Schlaf. Beruhigt das Nervensystem und fördert die Erdung ohne morgendliche Schläfrigkeit."
         },
         kit_digestion: {
           name: "Heilmittel Verdauungskomfort",
           subtitle: "DARMGLEICHGEWICHT",
-          description: "Pflanzenmischung zur dauerhaften Linderung von Blähungen."
+          description: "Gleicht die Mikrobiota aus und lindert Darmentzündungen für eine flüssige, leichte Verdauung und einen beruhigten Bauch."
         },
         kit_articulaire: {
           name: "Heilmittel Gelenkfeuer",
           subtitle: "FLEXIBILITÄT & MOBILITÄT",
-          description: "Pflanzenmischung zur Unterstützung empfindlicher Bereiche."
+          description: "Entzündungshemmende Synergie zur Wiedererlangung von Flexibilität und Mobilität. Ideal zur Linderung chronischer Gelenksteifheit."
         },
         kit_reset: {
           name: "RESET Renaissance Duo — Erden- & Pflanzen-Set",
-          subtitle: "DETOX- & TERRAIN-KUR",
-          description: "6µm Clinoptilolit-Zeolith und entwässernde Pflanzenmischung. Ideal für diejenigen, die bereits ein BloomLab besitzen."
+          subtitle: "DETOX & HOMÖOSTASE",
+          description: "Die Allianz aus Clinoptilolith-Zeolith und entwässernden Pflanzen in Pharmaqualität. Die unverzichtbare Säule Ihrer Transformation."
         },
         freemium_access: {
           name: "Entdecker-Zugang — 10 kostenlose Rezepte",
