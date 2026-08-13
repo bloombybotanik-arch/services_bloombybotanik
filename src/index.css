@@ -8,11 +8,17 @@
   --color-botanik-magenta: #334155; /* Anthracite Gray */
   --color-botanik-indigo: #4f46e5; /* New secondary color for variety */
   --animate-loading-bar: loading-bar 2s ease-in-out infinite;
+  --animate-bounce-horizontal: bounce-horizontal 1.5s infinite;
 
   @keyframes loading-bar {
     0% { left: -100%; width: 100%; }
     50% { left: 0%; width: 100%; }
     100% { left: 100%; width: 100%; }
+  }
+
+  @keyframes bounce-horizontal {
+    0%, 100% { transform: translateX(-25%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
+    50% { transform: translateX(0); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
   }
 }
 

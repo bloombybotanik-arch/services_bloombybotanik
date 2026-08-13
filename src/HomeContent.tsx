@@ -33,7 +33,7 @@ const ResetDetailModal = lazy(() => import('./components/ResetDetailModal').then
 
 
 interface HomeContentProps {
-  onNavigate: (view: any) => void;
+  onNavigate: (view: any, id?: string) => void;
   lang: Language;
 }
 
@@ -63,12 +63,12 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
   const homeSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": isFR ? "Bloom by BotaniK — Soins Botaniques Famille" : "Bloom by BotaniK — Family Botanical Care",
-    "description": "Découvrez l'extraction botanique de précision. Soins naturels pour toute la famille, remèdes maison et autonomie santé.",
+    "name": isFR ? "Bloom by BotaniK — Extracteur Botanique & Infuseur de Précision" : "Bloom by BotaniK — Precision Botanical Extractor & Infuser",
+    "description": "Créez vos propres remèdes naturels avec BloomLab®, l'extracteur botanique n°1. Infusion, macération et extraction de précision pour votre santé.",
     "specialAnnouncement": {
       "@type": "SpecialAnnouncement",
-      "name": "Offre Rentrée 2026 Soins Famille",
-      "text": "Profitez de l'herbier complet à 59€ et de la BloomLab à 239€ pour prendre soin de votre famille.",
+      "name": "Offres BloomLab® 2026",
+      "text": "Économisez sur l'extracteur botanique BloomLab® et l'herbier complet pour vos soins naturels maison.",
       "url": "https://bloombybotanik.com/shop"
     }
   };
@@ -107,19 +107,19 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
               <div className="max-w-xl">
                 <span className="inline-block px-3 py-1 bg-botanik-orange text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">
-                  {lang === 'fr' ? "OFFRES DE LA RENTRÉE — SPÉCIAL FAMILLE" : "BACK TO SCHOOL — FAMILY SPECIAL"}
+                  {lang === 'fr' ? "LA RÉVOLUTION DE LA PHYTOTHÉRAPIE MAISON" : "HOME PHYTOTHERAPY REVOLUTION"}
                 </span>
-                <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-4 leading-tight">
-                  {lang === 'fr' ? "Prenez soin de toute la Famille naturellement" : "Take care of the whole Family naturally"}
-                </h2>
+                <h1 className="text-3xl md:text-5xl font-bold text-botanik-green mb-4 leading-tight">
+                  {lang === 'fr' ? "L'infuseur Botanique de Précision pour vos Remèdes maison" : "The Precision Botanical Infuser for your Home Remedies"}
+                </h1>
                 <p className="text-lg text-botanik-green/70 mb-8 font-light leading-relaxed">
                   {lang === 'fr' 
-                    ? "Découvrez notre herbier complet pensé pour le bien-être de tous, des petits aux plus grands. Une solution unique pour l'autonomie santé à la maison." 
-                    : "Discover our complete herbarium designed for the well-being of all, from the youngest to the oldest. A unique solution for health autonomy at home."}
+                    ? "Faites fleurir votre santé avec BloomLab®, l'extracteur de précision qui transforme vos plantes en soins naturels puissants. Sérums, baumes et infusions : le Totum végétal enfin accessible." 
+                    : "Make your health bloom with BloomLab®, the precision extractor that transforms your plants into powerful natural care. Serums, balms, and infusions: the plant Totum finally accessible."}
                 </p>
                 <div className="flex items-center gap-4">
                   <button 
-                    onClick={() => onNavigate('shop')}
+                    onClick={() => onNavigate('boutique')}
                     className="px-8 py-4 bg-botanik-green text-white rounded-2xl font-bold hover:bg-botanik-orange transition-all flex items-center gap-2 shadow-xl shadow-botanik-green/10"
                   >
                     {lang === 'fr' ? "Voir toutes les offres" : "View all offers"} <ArrowRight className="w-4 h-4" />
@@ -127,49 +127,98 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
                 </div>
               </div>
               
-              <div className="w-full lg:w-[600px] relative">
-                <div className="flex overflow-x-auto pb-8 gap-6 no-scrollbar snap-x snap-mandatory">
+              <div className="w-full lg:w-[650px] relative">
+                <div className="flex overflow-x-auto pb-8 gap-8 no-scrollbar snap-x snap-mandatory scroll-smooth relative">
                   {[
                     { id: 'bloomlab', name: 'BloomLab®', price: 239, oldPrice: 289, img: bloomImg, badge: 'N°1 France' },
-                    { id: 'seve', name: 'Kit Sève Fondamentale', price: 29, oldPrice: 35, img: seveImg, badge: 'Best Seller' },
-                    { id: 'herbier', name: "L'Herbier Complet", price: 59, oldPrice: 87, img: trioImg, badge: 'Pack Famille' },
-                    { id: 'nuit', name: 'Remède Nuit Profonde', price: 29, oldPrice: 35, img: nuitImg, badge: 'Sommeil' },
-                    { id: 'digestion', name: 'Confort Digestif', price: 29, oldPrice: 35, img: digestionImg, badge: 'Ventre Plat' },
-                    { id: 'articulaire', name: 'Feu Articulaire', price: 29, oldPrice: 35, img: articulaireImg, badge: 'Mobilité' },
-                    { id: 'reset', name: 'Duo RESET Renaissance', price: 49, oldPrice: 65, img: resetImg, badge: 'Détox' },
+                    { id: 'kit-starter', name: 'Kit Sève Fondamentale', price: 29, oldPrice: 35, img: seveImg, badge: 'Best Seller' },
+                    { id: 'bundle-apothicaire', name: "L'Herbier Complet", price: 59, oldPrice: 87, img: trioImg, badge: 'Pack Famille' },
+                    { id: 'kit-nuit', name: 'Remède Nuit Profonde', price: 29, oldPrice: 35, img: nuitImg, badge: 'Sommeil' },
+                    { id: 'kit-digestion', name: 'Confort Digestif', price: 29, oldPrice: 35, img: digestionImg, badge: 'Ventre Plat' },
+                    { id: 'kit-articulaire', name: 'Feu Articulaire', price: 29, oldPrice: 35, img: articulaireImg, badge: 'Mobilité' },
+                    { id: 'kit-reset', name: 'Duo RESET Renaissance', price: 49, oldPrice: 65, img: resetImg, badge: 'Détox' },
                   ].map((product, idx) => (
                     <motion.div 
                       key={idx}
                       whileHover={{ y: -5 }}
-                      className="min-w-[240px] md:min-w-[280px] bg-white rounded-[32px] p-4 shadow-sm border border-botanik-green/5 snap-center flex flex-col group"
+                      className="min-w-[300px] md:min-w-[340px] bg-white rounded-[40px] p-6 shadow-sm border border-botanik-green/5 snap-center flex flex-col group transition-all hover:shadow-xl hover:shadow-botanik-green/5"
                     >
-                      <div className="relative aspect-square rounded-2xl overflow-hidden mb-4 bg-[#F9F9F7]">
+                      <div className="relative aspect-square rounded-[32px] overflow-hidden mb-6 bg-[#F9F9F7]">
                         <OptimizedImage 
                           src={product.img} 
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                           alt={product.name}
                         />
-                        <div className="absolute top-3 left-3 px-2 py-1 bg-white/90 backdrop-blur-sm rounded-lg text-[8px] font-black uppercase tracking-widest text-botanik-green">
+                        <div className="absolute top-4 left-4 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-xl text-[10px] font-black uppercase tracking-widest text-botanik-green">
                           {product.badge}
                         </div>
                       </div>
-                      <h3 className="font-bold text-botanik-green mb-1 text-sm md:text-base">{product.name}</h3>
-                      <div className="flex items-center gap-2 mb-4">
-                        <span className="text-lg font-bold text-botanik-orange">{product.price}€</span>
-                        <span className="text-xs text-botanik-green/30 line-through">{product.oldPrice}€</span>
+                      <h3 className="font-bold text-botanik-green mb-2 text-lg">{product.name}</h3>
+                      <div className="flex items-center gap-3 mb-6">
+                        <span className="text-2xl font-bold text-botanik-orange">{product.price}€</span>
+                        <span className="text-sm text-botanik-green/30 line-through">{product.oldPrice}€</span>
                       </div>
                       <button 
-                        onClick={() => onNavigate('shop')}
-                        className="w-full py-2.5 bg-botanik-green text-white text-[10px] font-bold rounded-xl hover:bg-botanik-orange transition-colors"
+                        onClick={() => onNavigate('product-detail', product.id)}
+                        className="w-full py-4 bg-botanik-green text-white text-xs font-bold rounded-2xl hover:bg-botanik-orange transition-colors flex items-center justify-center gap-2"
                       >
-                        {lang === 'fr' ? "Découvrir" : "Discover"}
+                        {lang === 'fr' ? "Découvrir" : "Discover"} <ChevronRight className="w-4 h-4" />
                       </button>
                     </motion.div>
                   ))}
                 </div>
+                
+                {/* Scroll Indicator Arrow */}
+                <div className="absolute -right-4 top-1/2 -translate-y-1/2 z-20 hidden md:flex items-center justify-center">
+                  <div className="w-12 h-12 bg-white rounded-full shadow-lg border border-botanik-green/5 flex items-center justify-center text-botanik-orange animate-bounce-horizontal">
+                    <ArrowRight className="w-6 h-6" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* WHY BLOOMLAB - BENEFITS SECTION (VegMilk Inspired) */}
+      <section className="mb-24 md:mb-32">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            {
+              title: lang === 'fr' ? "Efficacité Totum" : "Totum Efficacy",
+              desc: lang === 'fr' ? "Extraction basse température préservant 100% des principes actifs." : "Low temperature extraction preserving 100% of active principles.",
+              icon: Sparkles,
+              color: "text-botanik-orange"
+            },
+            {
+              title: lang === 'fr' ? "Souveraineté" : "Sovereignty",
+              desc: lang === 'fr' ? "Prenez le contrôle de votre pharmacie naturelle à la maison." : "Take control of your natural pharmacy at home.",
+              icon: ShieldCheck,
+              color: "text-botanik-green"
+            },
+            {
+              title: lang === 'fr' ? "Économique" : "Economic",
+              desc: lang === 'fr' ? "Réalisez des centaines de remèdes pour le prix d'un seul soin du commerce." : "Make hundreds of remedies for the price of a single store-bought treatment.",
+              icon: Activity,
+              color: "text-blue-500"
+            },
+            {
+              title: lang === 'fr' ? "Zéro Déchet" : "Zero Waste",
+              desc: lang === 'fr' ? "Réduisez vos emballages en créant vos propres cosmétiques et soins." : "Reduce packaging by creating your own cosmetics and care.",
+              icon: Leaf,
+              color: "text-green-600"
+            }
+          ].map((benefit, idx) => (
+            <div key={idx} className="bg-white p-8 rounded-[32px] border border-botanik-green/5 shadow-sm hover:shadow-md transition-all group text-center">
+              <div className={`w-14 h-14 mx-auto rounded-2xl bg-botanik-green/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                <benefit.icon className={`w-7 h-7 ${benefit.color}`} />
+              </div>
+              <h3 className="text-xl font-bold text-botanik-green mb-3">{benefit.title}</h3>
+              <p className="text-sm text-botanik-green/60 leading-relaxed font-light">
+                {benefit.desc}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -187,14 +236,14 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="max-w-2xl">
                 <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6 leading-tight">
-                  La Maîtrise de l'Extraction : <span className="text-botanik-orange">Le Guide Expert</span>
+                  L'Extraction Botanique : <span className="text-botanik-orange">Le Guide Expert</span>
                 </h2>
                 <p className="text-lg md:text-xl text-botanik-green/60 mb-10 leading-relaxed font-light">
                   L’infusion botanique est une méthode d’extraction de précision. Découvrez comment l'extracteur botanique BloomLab® permet de maîtriser la température, le temps et le solvant pour vos remèdes naturels.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <button 
-                    onClick={() => onNavigate('shop')}
+                    onClick={() => onNavigate('boutique')}
                     className="px-8 py-4 bg-botanik-green text-white rounded-2xl font-bold hover:bg-botanik-orange transition-all shadow-xl shadow-botanik-green/10 flex items-center gap-2"
                   >
                     {t.home.extractionGuide.cta_buy} <ArrowRight className="w-4 h-4" />
@@ -392,7 +441,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
             <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
               <div className="max-w-2xl">
                 <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-8 leading-tight">
-                  Le Rituel à la Maison : <span className="text-botanik-orange">Comment ça marche ?</span>
+                  L'Infusion Botanique Maison : <span className="text-botanik-orange">Comment ça marche</span>
                 </h2>
                 <p className="text-lg md:text-xl text-botanik-green/60 leading-relaxed font-light">
                   Un extracteur botanique maison comme BloomLab® permet de capturer l'intégralité du Totum végétal via l'eau, l'huile ou l'alcool. Maîtrisez l'art de l'infusion, de la décoction et de la macération avec une précision thermique inégalée.
@@ -678,7 +727,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-2xl">
               <span className="inline-block px-3 py-1 bg-botanik-orange/10 text-botanik-orange text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">Le Blog du Totum</span>
-              <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6 leading-tight">Extracteur Botanique & Infusion : <span className="text-botanik-orange">Dernières Recherches</span></h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6 leading-tight">Extracteur Botanique & Phytothérapie Maison : <span className="text-botanik-orange">Dernières Recherches</span></h2>
               <p className="text-lg text-botanik-green/60 font-light">
                 Explorez nos dossiers de fond sur la science de l'extraction et la biophysique des plantes. 
                 Pour approfondir, consultez les <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7074153/" target="_blank" rel="noopener noreferrer" className="text-botanik-orange underline underline-offset-4 decoration-1">études scientifiques sur les extraits botaniques</a>.

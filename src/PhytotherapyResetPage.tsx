@@ -6,6 +6,7 @@ import { chronobiologyData, ChronoPhase } from './data/chronobiology';
 import { translations, Language } from './translations';
 
 import natureHero from './assets/images/nature_biology_reset_hero_1785755295636.jpg';
+import strengthPlant from './assets/images/strength_courage_plant_1786630685093.jpg';
 import emonctoiresImg from './assets/images/emonctoires_natural_drainage_1785755307026.jpg';
 import hepaticImg from './assets/images/hepatic_balance_liver_1785755318947.jpg';
 import bloodPurityImg from './assets/images/blood_purity_lymphatic_1785755331143.jpg';
@@ -484,9 +485,9 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
                   </div>
                   <div className="rounded-[40px] overflow-hidden shadow-2xl h-[400px]">
                     <img 
-                      src={natureHero} 
+                      src={strengthPlant} 
                       className="w-full h-full object-cover" 
-                      alt="Stabilisation" 
+                      alt="Stabilisation & Renforcement" 
                     />
                   </div>
                </div>

@@ -60,7 +60,7 @@ export const translations = {
       cart: "Panier"
     },
     universes: {
-      title: "Devenez l'Architecte de votre Terrain",
+      title: "1 machine 3 Niveaux d'Expertise",
       subtitle: "Trois univers d'offres nourris par l'intelligence du Totum végétal.",
       culinaire: {
         title: "Atelier Culinaire",
@@ -98,21 +98,21 @@ export const translations = {
       hero: {
         intro: "Introduction",
         onboarding: "Onboarding",
-                title: "Infusion Botanique & Extraction : Le Guide", 
+        title: "Extracteur Botanique BloomLab® : La Maîtrise de l'Infusion", 
         description: "L’infusion botanique est une méthode d’extraction de précision. Découvrez comment l'extracteur botanique BloomLab® permet de maîtriser la température, le temps et le solvant pour vos remèdes naturels.",
       },
       extractionGuide: {
         badge: "N°1 France — Souveraineté Botanique",
-        title: "Infusion Botanique Maison :",
-        subtitle: "Comment ça marche ?",
+        title: "Infuseur Botanique & Remèdes de Plantes :",
+        subtitle: "Le Guide Expert du Totum",
         description: "Maîtrisez les solvants, les températures précises et les protocoles d'infusion botanique pour révéler la puissance du Totum végétal chez vous avec l'extracteur BloomLab®.",
         cta_read: "Lire le guide complet",
         cta_buy: "Acheter BloomLab",
         cta_discover: "Découvrir la BloomLab"
       },
       understandingInfusion: {
-        sidebar_label: "I. Infusion Botanique Maison",
-        h2: "Infusion Botanique Maison : Comment ça marche ?",
+        sidebar_label: "I. Infuseur Botanique Maison",
+        h2: "Extraction Botanique de Précision à la Maison : Comment ça marche ?",
         intro: "Un extracteur botanique maison comme BloomLab® permet de capturer l'intégralité du Totum végétal via l'eau, l'huile ou l'alcool. Maîtrisez l'art de l'infusion, de la décoction et de la macération avec une précision thermique inégalée.",
         cards: [
           {
@@ -516,9 +516,9 @@ export const translations = {
           ]
         },
         pack_signature: {
-          name: "Pack Signature — BloomLab + Kit Sève Fondamentale",
-          subtitle: "IDÉAL POUR DÉBUTER",
-          description: "Le choix privilégié pour démarrer : Votre BloomLab accompagnée du kit 'Sève Fondamentale' pour restaurer votre vitalité profonde dès réception."
+          name: "Pack Signature Rentrée — BloomLab® + Herbier Complet + 3 Mois Premium",
+          subtitle: "OFFRE RENTRÉE SCOLAIRE 2026",
+          description: "L'offre ultime pour l'autonomie santé : BloomLab®, l'intégralité de nos mélanges de plantes et 3 mois d'accès illimité à l'abonnement Premium."
         },
         bundle_apothicaire: {
           name: "L'Herbier Complet — Pack Rentrée 2026",
@@ -1401,7 +1401,7 @@ export const translations = {
       cart: "Cart"
     },
     universes: {
-      title: "Become the Architect of Your Terrain",
+      title: "1 Machine 3 Levels of Expertise",
       subtitle: "Three universes of offerings nourished by the intelligence of the vegetable Totum.",
       culinaire: {
         title: "Culinary Workshop",
@@ -1439,21 +1439,21 @@ export const translations = {
       hero: {
         intro: "Introduction",
         onboarding: "Onboarding",
-        title: "Herbal Infusion & Botanical Extraction Guide",
+        title: "Botanical Infuser & Infusion: The Precision Guide",
         description: "Master the art of botanical infusion with precision. Discover how the BloomLab® botanical extractor allows you to control temperature, time, and solvents for your natural remedies.",
       },
       extractionGuide: {
         badge: "N°1 Reference Guide — Botanical Sovereignty",
-        title: "Home Botanical Infusion:",
-        subtitle: "How does it work?",
+        title: "Precision Botanical Extraction:",
+        subtitle: "The BloomLab Expert Guide",
         description: "Master solvents, precise temperatures, and botanical infusion protocols to reveal the power of the plant Totum at home with BloomLab® extractor.",
         cta_read: "Read the complete guide",
         cta_buy: "Buy BloomLab",
         cta_discover: "Discover BloomLab"
       },
       understandingInfusion: {
-        sidebar_label: "I. Home Botanical Infusion",
-        h2: "Home Botanical Infusion: How does it work?",
+        sidebar_label: "I. Home Botanical Infuser",
+        h2: "Botanical Infuser & Well-being: The Home Ritual",
         intro: "A home botanical extractor like BloomLab® allows you to capture the full plant Totum using water, oil, or alcohol. Master the art of infusion, decoction, and maceration with unparalleled thermal precision.",
         cards: [
           {
@@ -1853,9 +1853,9 @@ export const translations = {
           ]
         },
         pack_signature: {
-          name: "Signature Pack — BloomLab + Fundamental Sap Kit",
-          subtitle: "IDEAL FOR BEGINNERS",
-          description: "The preferred choice to start: Your BloomLab accompanied by the 'Fundamental Sap' kit to restore your deep vitality upon receipt."
+          name: "Back-to-School Signature Pack — BloomLab® + Full Herbarium + 3 Months Premium",
+          subtitle: "2026 BACK-TO-SCHOOL OFFER",
+          description: "The ultimate health autonomy offer: BloomLab®, all our plant blends, and 3 months of unlimited Premium access."
         },
         bundle_apothicaire: {
           name: "Complete Herbarium — 2026 Back-to-School Pack",
@@ -2624,7 +2624,7 @@ export const translations = {
       cart: "Warenkorb"
     },
     universes: {
-      title: "Werden Sie zum Architekten Ihres Terrains",
+      title: "1 Maschine 3 Expertenstufen",
       subtitle: "Drei Universen von Angeboten, genährt durch die Intelligenz des pflanzlichen Totums.",
       culinaire: {
         title: "Kulinarische Werkstatt",
@@ -2662,21 +2662,21 @@ export const translations = {
       hero: {
         intro: "Einführung",
         onboarding: "Onboarding",
-        title: "Kräuterinfusion & botanische Extraktion Leitfaden",
+        title: "Botanischer Infuser & Extraktion: Der Präzisionsleitfaden",
         description: "Meistern Sie die Kunst der botanischen Infusion mit Präzision. Entdecken Sie, wie der BloomLab® Extraktor Temperatur, Zeit und Lösungsmittel für Ihre Naturheilmittel steuert.",
       },
       extractionGuide: {
         badge: "N°1 Referenz-Leitfaden — Botanische Souveränität",
-        title: "Kräuterinfusion zu Hause:",
-        subtitle: "Wie funktioniert das?",
+        title: "Präzise botanische Extraktion:",
+        subtitle: "Der BloomLab Experten-Leitfaden",
         description: "Meistern Sie Lösungsmittel, präzise Temperaturen und Protokolle für die botanische Infusion, um die Kraft des pflanzlichen Totums zu Hause mit dem BloomLab®-Extraktor zu enthüllen.",
         cta_read: "Den kompletten Leitfaden lesen",
         cta_buy: "BloomLab kaufen",
         cta_discover: "BloomLab entdecken"
       },
       understandingInfusion: {
-        sidebar_label: "I. Kräuterinfusion zu Hause",
-        h2: "Kräuterinfusion zu Hause: Wie funktioniert das?",
+        sidebar_label: "I. Botanischer Infuser zu Hause",
+        h2: "Botanischer Infuser & Wohlbefinden: Das Ritual zu Hause",
         intro: "Ein botanischer Extraktor für zu Hause wie BloomLab® ermöglicht es Ihnen, das gesamte pflanzliche Totum über Wasser, Öl oder Alkohol einzufangen. Meistern Sie die Kunst der Infusion, des Dekokts und der Mazeration mit unübertroffener thermischer Präzision.",
         cards: [
           {
@@ -3076,9 +3076,9 @@ export const translations = {
           ]
         },
         pack_signature: {
-          name: "Signatur-Paket — BloomLab + Set Fundamentaler Saft",
-          subtitle: "IDEAL FÜR EINSTEIGER",
-          description: "Die bevorzugte Wahl für den Start: Ihr BloomLab zusammen mit dem Set 'Fundamentaler Saft', um Ihre tiefe Vitalität sofort nach Erhalt wiederherzustellen."
+          name: "Schulstart Signatur-Paket — BloomLab® + Vollständiges Herbarium + 3 Monate Premium",
+          subtitle: "SCHULSTART-ANGEBOT 2026",
+          description: "Das ultimative Angebot für Gesundheitsautonomie: BloomLab®, alle unsere Pflanzenmischungen und 3 Monate unbegrenzter Premium-Zugang."
         },
         bundle_apothicaire: {
           name: "Das vollständige Herbarium — Paket Rente 2026",

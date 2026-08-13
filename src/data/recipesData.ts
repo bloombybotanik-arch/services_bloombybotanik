@@ -1,303 +1,123 @@
-import { PlantSource } from './unifiedBotanicalData';
+import { BookOpen, Moon, Activity, Sparkles, ChefHat, ShieldCheck, Droplets, Leaf, FlaskConical, Wind } from 'lucide-react';
 
 export interface Recipe {
   id: string;
   title: string;
-  goal: string;
-  plant: {
-    name: string;
-    part: string;
-    sachet_weight_g: number;
-    sachet_count: number;
-    total_plant_mass_g: number;
-  };
-  solvent: {
-    type: string;
-    volume_ml?: number;
-    water_volume_ml?: number;
-    ethanol_volume_ml?: number;
-    ethanol_percent_final?: number;
-    notes: string;
-  };
-  process: {
-    method: string;
-    temperature_c: number;
-    time_min: number;
-    steps: string[];
-  };
-  use: {
-    duration_hours: number;
-    servings: {
-      time: string;
-      volume_ml: number;
-    }[];
-    notes: string;
-  };
-  storage: {
-    fridge: boolean;
-    max_hours: number;
-    absolute_max_hours: number;
-    notes: string;
-  };
-  cta: {
-    label: string;
-    href: string;
-  };
+  description: string;
+  ingredients: string[];
+  instructions: string[];
+  benefits: string[];
+  icon: any;
+  category: string;
+  plant?: { name: string };
+  goal?: string;
 }
 
-export const herbariumRecipes: Recipe[] = [
+export const discoveryRecipes: Recipe[] = [
   {
-    "id": "artichaut-classique-750ml",
-    "title": "Artichaut classique 750 ml",
-    "goal": "Extraire un concentré polyphénolique doux pour soutien hépatique quotidien.",
-    "plant": {
-      "name": "Artichaut",
-      "part": "feuilles sèches en sachets",
-      "sachet_weight_g": 2.46,
-      "sachet_count": 10,
-      "total_plant_mass_g": 24.6
-    },
-    "solvent": {
-      "type": "water",
-      "volume_ml": 750,
-      "notes": "Eau filtrée ou eau faiblement minéralisée."
-    },
-    "process": {
-      "method": "infusion_decoction_douce",
-      "temperature_c": 60,
-      "time_min": 90,
-      "steps": [
-        "Ouvrir les sachets et verser le contenu dans la cuve.",
-        "Ajouter 750 ml d'eau.",
-        "Chauffer à 60 °C pendant 90 minutes.",
-        "Filtrer à chaud.",
-        "Refroidir rapidement et conserver au réfrigérateur."
-      ]
-    },
-    "use": {
-      "duration_hours": 24,
-      "servings": [
-        {
-          "time": "matin",
-          "volume_ml": 190
-        },
-        {
-          "time": "midi",
-          "volume_ml": 190
-        },
-        {
-          "time": "apres-midi",
-          "volume_ml": 190
-        },
-        {
-          "time": "fin_d_apres_midi",
-          "volume_ml": 190
-        }
-      ],
-      "notes": "Boire sur la journée pour répartir la charge polyphénolique et soutenir le foie de manière progressive."
-    },
-    "storage": {
-      "fridge": true,
-      "max_hours": 24,
-      "absolute_max_hours": 48,
-      "notes": "Conserver dans un récipient propre et fermé. Jeter si odeur, couleur ou aspect changent."
-    },
-    "cta": {
-      "label": "Utiliser cette recette dans le Reset Homéostasique",
-      "href": "/reset-homeostasique"
-    }
+    id: '01',
+    title: "Infusion Sommeil Profond",
+    description: "Un mélange apaisant pour favoriser l'endormissement et un sommeil réparateur.",
+    ingredients: ["Valériane", "Passiflore", "Mélisse", "Eau filtrée"],
+    instructions: ["Chauffer l'eau à 85°C", "Infuser le mélange pendant 10 minutes", "Filtrer et déguster 30 minutes avant le coucher"],
+    benefits: ["Réduction de l'anxiété", "Facilite l'endormissement", "Améliore la qualité du sommeil"],
+    icon: Moon,
+    category: "Infusion"
   },
   {
-    "id": "artichaut-intense-750ml",
-    "title": "Artichaut intense 750 ml",
-    "goal": "Extraire un concentré plus riche en polyphénols avec une intensité supérieure.",
-    "plant": {
-      "name": "Artichaut",
-      "part": "feuilles sèches en sachets",
-      "sachet_weight_g": 2.46,
-      "sachet_count": 10,
-      "total_plant_mass_g": 24.6
-    },
-    "solvent": {
-      "type": "water_ethanol",
-      "water_volume_ml": 550,
-      "ethanol_volume_ml": 200,
-      "ethanol_percent_final": 25,
-      "notes": "Éthanol alimentaire dilué avant usage."
-    },
-    "process": {
-      "method": "infusion_renforcee",
-      "temperature_c": 70,
-      "time_min": 60,
-      "steps": [
-        "Ouvrir les sachets et verser le contenu dans la cuve.",
-        "Ajouter le mélange eau-éthanol.",
-        "Chauffer à 70 °C pendant 60 minutes.",
-        "Filtrer à chaud.",
-        "Refroidir puis conserver au réfrigérateur."
-      ]
-    },
-    "use": {
-      "duration_hours": 24,
-      "servings": [
-        {
-          "time": "matin",
-          "volume_ml": 180
-        },
-        {
-          "time": "midi",
-          "volume_ml": 180
-        },
-        {
-          "time": "apres-midi",
-          "volume_ml": 180
-        },
-        {
-          "time": "fin_d_apres_midi",
-          "volume_ml": 180
-        }
-      ],
-      "notes": "Version plus active, à utiliser si la tolérance digestive est bonne."
-    },
-    "storage": {
-      "fridge": true,
-      "max_hours": 24,
-      "absolute_max_hours": 48,
-      "notes": "Mêmes règles de conservation que l'infusion classique."
-    },
-    "cta": {
-      "label": "Utiliser cette recette dans le Reset Homéostasique",
-      "href": "/reset-homeostasique"
-    }
+    id: '02',
+    title: "Huile de Massage Articulaire",
+    description: "Une huile de soin pour soulager les tensions et l'inflammation articulaire.",
+    ingredients: ["Huile végétale d'Arnica", "Hélichryse italienne", "Gaulthérie", "Laurier noble"],
+    instructions: ["Mélanger les huiles", "Laisser macérer au BloomLab à 40°C", "Appliquer en massage circulaire sur les zones sensibles"],
+    benefits: ["Anti-inflammatoire", "Soulage la douleur", "Améliore la souplesse"],
+    icon: Activity,
+    category: "Huile de soin"
   },
   {
-    "id": "artichaut-citron-750ml",
-    "title": "Artichaut + citron 750 ml",
-    "goal": "Stabiliser légèrement l'infusion grâce à l'acidification et améliorer la tolérance.",
-    "plant": {
-      "name": "Artichaut",
-      "part": "feuilles sèches en sachets",
-      "sachet_weight_g": 2.46,
-      "sachet_count": 10,
-      "total_plant_mass_g": 24.6
-    },
-    "solvent": {
-      "type": "water",
-      "volume_ml": 750,
-      "notes": "Citron ajouté après extraction, jamais pendant la chauffe."
-    },
-    "process": {
-      "method": "infusion_acidifiee",
-      "temperature_c": 60,
-      "time_min": 90,
-      "steps": [
-        "Faire l'infusion classique à 60 °C pendant 90 minutes.",
-        "Filtrer à chaud.",
-        "Laisser refroidir légèrement.",
-        "Ajouter le citron après extraction.",
-        "Conserver immédiatement au réfrigérateur."
-      ]
-    },
-    "use": {
-      "duration_hours": 24,
-      "servings": [
-        {
-          "time": "matin",
-          "volume_ml": 190
-        },
-        {
-          "time": "midi",
-          "volume_ml": 190
-        },
-        {
-          "time": "apres-midi",
-          "volume_ml": 190
-        },
-        {
-          "time": "fin_d_apres_midi",
-          "volume_ml": 190
-        }
-      ],
-      "notes": "Ajout de citron modéré : environ 1/2 citron pour 750 ml."
-    },
-    "storage": {
-      "fridge": true,
-      "max_hours": 24,
-      "absolute_max_hours": 48,
-      "notes": "Le citron améliore un peu la stabilité mais ne remplace pas le froid."
-    },
-    "cta": {
-      "label": "Utiliser cette recette dans le Reset Homéostasique",
-      "href": "/reset-homeostasique"
-    }
+    id: '03',
+    title: "Sérum Visage Éclat Botanique",
+    description: "Un sérum précieux pour revitaliser la peau et redonner de l'éclat au teint.",
+    ingredients: ["Huile de Jojoba", "Huile de Rose musquée", "Vitamine E", "HE de Géranium"],
+    instructions: ["Extraction douce à basse température", "Mélange homogène", "Appliquer le soir sur peau propre"],
+    benefits: ["Régénérant", "Antioxydant", "Éclat du teint"],
+    icon: Sparkles,
+    category: "Sérum"
   },
   {
-    "id": "artichaut-base-quotidienne-24h",
-    "title": "Artichaut base quotidienne 24 h",
-    "goal": "Protocole simple pour consommation journalière régulière.",
-    "plant": {
-      "name": "Artichaut",
-      "part": "feuilles sèches en sachets",
-      "sachet_weight_g": 2.46,
-      "sachet_count": 10,
-      "total_plant_mass_g": 24.6
-    },
-    "solvent": {
-      "type": "water",
-      "volume_ml": 750,
-      "notes": "Version la plus simple et la plus sûre pour un usage quotidien."
-    },
-    "process": {
-      "method": "infusion_standard",
-      "temperature_c": 60,
-      "time_min": 90,
-      "steps": [
-        "Placer 10 sachets ouverts dans 750 ml d'eau.",
-        "Chauffer à 60 °C pendant 90 minutes.",
-        "Filtrer.",
-        "Refroidir.",
-        "Boire dans la journée."
-      ]
-    },
-    "use": {
-      "duration_hours": 24,
-      "servings": [
-        {
-          "time": "matin",
-          "volume_ml": 125
-        },
-        {
-          "time": "milieu_de_matinee",
-          "volume_ml": 125
-        },
-        {
-          "time": "midi",
-          "volume_ml": 125
-        },
-        {
-          "time": "apres-midi",
-          "volume_ml": 125
-        },
-        {
-          "time": "fin_d_apres_midi",
-          "volume_ml": 125
-        },
-        {
-          "time": "soir_tot",
-          "volume_ml": 125
-        }
-      ],
-      "notes": "Fractionner la prise aide à répartir l'effet sur le foie et le confort digestif."
-    },
-    "storage": {
-      "fridge": true,
-      "max_hours": 24,
-      "absolute_max_hours": 48,
-      "notes": "Au-delà de 24 h, la qualité baisse; au-delà de 48 h, ne pas consommer."
-    },
-    "cta": {
-      "label": "Utiliser cette recette dans le Reset Homéostasique",
-      "href": "/reset-homeostasique"
-    }
+    id: '04',
+    title: "Baume à Lèvres au Calendula",
+    description: "Un baume protecteur et réparateur pour les lèvres gercées ou sèches.",
+    ingredients: ["Cire d'abeille", "Beurre de Karité", "Macérat de Calendula", "Miel de lavande"],
+    instructions: ["Fondre la cire et le beurre", "Intégrer le macérat", "Couler en pots et laisser figer"],
+    benefits: ["Réparateur", "Protecteur", "Apaisant"],
+    icon: Droplets,
+    category: "Baume"
+  },
+  {
+    id: '05',
+    title: "Teinture de Propolis Maison",
+    description: "Un concentré protecteur pour renforcer les défenses naturelles.",
+    ingredients: ["Propolis brute", "Alcool à 70°", "Eau de source"],
+    instructions: ["Macération longue (21 jours)", "Agitation régulière", "Filtration fine"],
+    benefits: ["Antibactérien", "Immunostimulant", "Antiseptique"],
+    icon: FlaskConical,
+    category: "Teinture"
+  },
+  {
+    id: '06',
+    title: "Sirop de Sureau Immunité",
+    description: "Le remède traditionnel contre les maux de l'hiver et pour l'immunité.",
+    ingredients: ["Baies de sureau", "Gingembre frais", "Cannelle", "Miel"],
+    instructions: ["Décoction des baies", "Réduction du liquide", "Ajout du miel après refroidissement"],
+    benefits: ["Antiviral", "Riche en antioxydants", "Renforce l'immunité"],
+    icon: ShieldCheck,
+    category: "Sirop"
+  },
+  {
+    id: '07',
+    title: "Eau Florale de Lavande",
+    description: "Un hydrolat apaisant pour la peau et l'esprit, issu d'une extraction de précision.",
+    ingredients: ["Fleurs de Lavande vraie", "Eau de source"],
+    instructions: ["Extraction vapeur au BloomLab", "Refroidissement contrôlé", "Mise en flacon stérile"],
+    benefits: ["Apaisant", "Cicatrisant", "Relaxant"],
+    icon: Wind,
+    category: "Hydrolat"
+  },
+  {
+    id: '08',
+    title: "Macérat de Pâquerette Tenseur",
+    description: "Une huile de beauté réputée pour son effet tenseur sur les tissus.",
+    ingredients: ["Fleurs de Pâquerettes séchées", "Huile de Tournesol bio"],
+    instructions: ["Macération solaire ou au BloomLab à 35°C", "Filtration sous presse", "Stockage à l'abri de la lumière"],
+    benefits: ["Galbant", "Tenseur", "Circulatoire"],
+    icon: Leaf,
+    category: "Macérat"
+  },
+  {
+    id: '09',
+    title: "Gel d'Aloe Vera Frais",
+    description: "L'hydratant universel, extrait directement de la feuille fraîche.",
+    ingredients: ["Feuille d'Aloe Vera", "Conservateur naturel (Vitamine C)"],
+    instructions: ["Extraction du filet", "Mixage lent", "Stabilisation"],
+    benefits: ["Hydratant", "Apaisant brûlures", "Réparateur"],
+    icon: Droplets,
+    category: "Gel"
+  },
+  {
+    id: '10',
+    title: "Infusion Digestive au Gingembre",
+    description: "Un tonique digestif pour soulager les lourdeurs et stimuler le métabolisme.",
+    ingredients: ["Gingembre frais", "Citron bio", "Menthe poivrée", "Miel"],
+    instructions: ["Décoction légère du gingembre", "Ajout des feuilles de menthe hors du feu", "Citron et miel à la dégustation"],
+    benefits: ["Digestif", "Anti-nausée", "Tonifiant"],
+    icon: ChefHat,
+    category: "Infusion"
   }
 ];
+
+export const herbariumRecipes: Recipe[] = discoveryRecipes.map(r => ({
+  ...r,
+  plant: { name: r.title.split(' ').pop() || 'Plante' },
+  goal: r.description
+}));

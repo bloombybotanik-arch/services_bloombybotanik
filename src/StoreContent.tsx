@@ -56,12 +56,12 @@ export const getProducts = (lang: Language) => {
       name: t.pack_signature.name,
       subtitle: t.pack_signature.subtitle,
       price: 319.00,
-      originalPrice: 349.00,
+      originalPrice: 429.00,
       image: bloomLabImg,
       rating: 5.0,
       reviews: 42,
       description: t.pack_signature.description,
-      tags: ['Pack', 'Débutant', 'Prêt à l\'emploi'],
+      tags: ['Offre Rentrée 2026', 'Complet', 'Best-Seller'],
       isBundle: true
     },
     {
@@ -255,10 +255,7 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                   </p>
                   <div className="flex flex-wrap gap-4 mt-4">
                     <button 
-                      onClick={() => {
-                        const el = document.getElementById('product-bloomlab');
-                        el?.scrollIntoView({ behavior: 'smooth' });
-                      }}
+                      onClick={() => onNavigateDetail('bloomlab')}
                       className="px-10 py-5 bg-botanik-green text-white rounded-2xl font-bold flex items-center gap-3 hover:bg-botanik-orange transition-all shadow-xl shadow-botanik-green/10"
                     >
                       {t.hero.cta} <ArrowRight className="w-5 h-5" />

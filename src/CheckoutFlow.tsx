@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { ShieldCheck, Lock, CreditCard, ChevronRight, Truck, Building2, User, Mail, Phone, MapPin, CheckCircle2, Download, PackageCheck } from 'lucide-react';
+import { ShieldCheck, Lock, CreditCard, ChevronRight, Truck, Building2, User, Mail, Phone, MapPin, CheckCircle2, Download, PackageCheck, AlertCircle } from 'lucide-react';
 import { translations, Language } from './translations';
+import { db } from './lib/firebase';
+import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 
 interface CheckoutFlowProps {
   cart: any[];
   total: number;
+  user: any;
   onSuccess: (orderData: any) => void;
   onCancel: () => void;
   lang?: Language;
@@ -12,13 +15,13 @@ interface CheckoutFlowProps {
 
 type Step = 'information' | 'shipping' | 'payment' | 'confirmation';
 
-export default function CheckoutFlow({ cart, total, onSuccess, onCancel, lang = 'fr' }: CheckoutFlowProps) {
+export default function CheckoutFlow({ cart, total, user, onSuccess, onCancel, lang = 'fr' }: CheckoutFlowProps) {
   const t = translations[lang].checkout;
-  const [step, setStep] = useState<Step>('information');
+  const [step, setStep] = useState<Step>(user ? 'information' : 'information'); // We'll show a warning if not logged in
   const [formData, setFormData] = useState({
-    email: '',
-    firstName: '',
-    lastName: '',
+    email: user?.email || '',
+    firstName: user?.displayName?.split(' ')[0] || '',
+    lastName: user?.displayName?.split(' ')[1] || '',
     phone: '',
     type: 'individual' as 'individual' | 'professional',
     company: '',
@@ -42,17 +45,60 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel, lang = 
   };
 
   const handlePayment = async () => {
+    if (!user) return;
     setIsProcessing(true);
-    // Simulate API call to process payment and store in Firestore
-    await new Promise(resolve => setTimeout(resolve, 2000));
     
-    const newOrderId = `BLM-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
-    setOrderId(newOrderId);
-    setIsProcessing(false);
-    setStep('confirmation');
-    
-    // In a real app, this would be a server call
-    console.log("Emails envoyés : Confirmation de commande, Facture générée, Confirmation de paiement");
+    try {
+      // 1. Create Order in Firestore
+      const newOrderId = `BLM-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
+      
+      const orderData = {
+        userId: user.uid,
+        email: formData.email,
+        items: cart.map(item => ({
+          id: item.id,
+          name: item.name,
+          price: item.price,
+          quantity: item.quantity,
+          isDigital: item.isDigital || false
+        })),
+        totalCents: Math.round(total * 100),
+        status: 'paid',
+        shippingAddress: step === 'shipping' ? {
+          address: formData.address,
+          city: formData.city,
+          zipCode: formData.zipCode,
+          country: formData.country
+        } : null,
+        createdAt: serverTimestamp(),
+        updatedAt: serverTimestamp()
+      };
+
+      await setDoc(doc(db, 'orders', newOrderId), orderData);
+
+      // 2. Update User Status if digital products are bought
+      const hasPremium = cart.some(item => item.id === 'premium-access');
+      const hasFreemium = cart.some(item => item.id === 'freemium-access');
+
+      if (hasPremium || hasFreemium) {
+        const userRef = doc(db, 'users', user.uid);
+        const newStatus = hasPremium ? 'premium' : 'freemium';
+        
+        await setDoc(userRef, {
+          status: newStatus,
+          updatedAt: serverTimestamp()
+        }, { merge: true });
+      }
+
+      setOrderId(newOrderId);
+      setStep('confirmation');
+      console.log("Emails envoyés : Confirmation de commande, Facture générée, Confirmation de paiement");
+    } catch (error) {
+      console.error("Error during checkout:", error);
+      alert("Une erreur est survenue lors de la validation de votre commande.");
+    } finally {
+      setIsProcessing(false);
+    }
   };
 
   if (step === 'confirmation') {
@@ -115,6 +161,17 @@ export default function CheckoutFlow({ cart, total, onSuccess, onCancel, lang = 
 
       <div className="grid lg:grid-cols-2 gap-12">
         <div className="space-y-8">
+          {!user && step === 'information' && (
+            <div className="mb-8 p-6 bg-botanik-orange/10 border border-botanik-orange/20 rounded-2xl flex items-start gap-4">
+              <AlertCircle className="w-6 h-6 text-botanik-orange flex-shrink-0 mt-1" />
+              <div>
+                <p className="font-bold text-botanik-green mb-1">Authentification requise</p>
+                <p className="text-sm text-botanik-green/70 mb-4">Vous devez être connecté pour finaliser votre commande et accéder à vos produits numériques.</p>
+                <p className="text-xs italic text-botanik-green/50">Veuillez vous connecter via le menu en haut à droite avant de continuer.</p>
+              </div>
+            </div>
+          )}
+
           {step === 'information' && (
             <section className="bg-white p-8 rounded-[32px] border border-[#1B3022]/10 shadow-sm animate-in slide-in-from-left-4 duration-500">
               <h2 className="text-2xl font-bold text-[#1B3022] mb-8 flex items-center gap-3">

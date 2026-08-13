@@ -36,6 +36,7 @@ const ActivationPage = lazy(() => import('./ActivationPage'));
 const LegalPages = lazy(() => import('./LegalPages'));
 const ChatContent = lazy(() => import('./ChatContent'));
 const AccountContent = lazy(() => import('./AccountContent'));
+const RecipesContent = lazy(() => import('./RecipesContent'));
 const AdminDashboard = lazy(() => import('./components/AdminDashboard'));
 const ManifesteContent = lazy(() => import('./ManifesteContent'));
 const MachineLanding = lazy(() => import('./MachineLanding'));
@@ -323,7 +324,7 @@ const CertificationCarousel = () => {
 
 // --- COMPONENTS ---
 
-const NavigationSidebar = ({ className = "", currentView, navigateTo, user, handleLogout, lang, setLang, t }: { className?: string, currentView: string, navigateTo: (v: any) => void, user?: any, handleLogout?: () => void, lang: Language, setLang: (l: Language) => void, t: any }) => (
+const NavigationSidebar = ({ className = "", currentView, navigateTo, user, handleLogout, lang, setLang, t, isDiscovery, isPremium }: { className?: string, currentView: string, navigateTo: (v: any) => void, user?: any, handleLogout?: () => void, lang: Language, setLang: (l: Language) => void, t: any, isDiscovery: boolean, isPremium: boolean }) => (
   <aside className={`w-80 h-screen sticky top-0 bg-[#293228] p-8 flex flex-col justify-between ${className}`}>
     <div>
       <div 
@@ -358,6 +359,17 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
               <ShoppingBag className="w-4 h-4" /> {t.nav.shop}
             </a>
           </li>
+          {(isPremium || isDiscovery) && (
+            <li>
+              <a 
+                href="#" 
+                onClick={(e) => { e.preventDefault(); navigateTo('recipes'); }}
+                className={`flex items-center gap-3 transition-colors group ${currentView === 'recipes' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
+              >
+                <ChefHat className="w-4 h-4" /> {lang === 'fr' ? 'Mes Recettes' : 'My Recipes'}
+              </a>
+            </li>
+          )}
           <li>
             <div className="text-xs uppercase tracking-[0.2em] text-[#F5F3EB] mb-4 mt-8 font-semibold opacity-50">{t.nav.universes}</div>
             <ul className="space-y-4 ml-2 border-l border-white/10 pl-4">
@@ -675,6 +687,7 @@ export default function App() {
   const [user, setUser] = useState<FirebaseUser | any | null>(null);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [isPremium, setIsPremium] = useState(false);
+  const [isDiscovery, setIsDiscovery] = useState(false);
   const [showPremiumModal, setShowPremiumModal] = useState(false);
   const [authLoading, setAuthLoading] = useState(true);
   const [assessmentResult, setAssessmentResult] = useState<any>(null);
@@ -748,21 +761,27 @@ export default function App() {
           const userDoc = await getDoc(doc(db, 'users', user.uid));
           if (userDoc.exists()) {
             const data = userDoc.data();
-            setIsPremium(data?.isPremium || false);
+            const premium = data?.isPremium || data?.status === 'premium';
+            const discovery = data?.isDiscovery || data?.status === 'freemium' || premium;
+            setIsPremium(premium);
+            setIsDiscovery(discovery);
             setAssessmentResult(data?.assessment || null);
             setFavorites(data?.favorites || []);
           } else {
             await setDoc(doc(db, 'users', user.uid), {
               isPremium: false,
+              isDiscovery: false,
               createdAt: new Date().toISOString()
             });
             setIsPremium(false);
+            setIsDiscovery(false);
             setAssessmentResult(null);
             setFavorites([]);
           }
         }
       } else {
         setIsPremium(false);
+        setIsDiscovery(false);
         setAssessmentResult(null);
         setFavorites([]);
       }
@@ -893,6 +912,7 @@ export default function App() {
         <CheckoutFlow 
           cart={cart}
           total={cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)}
+          user={user}
           onSuccess={() => {
             setCart([]);
             navigateTo('home');
@@ -901,6 +921,7 @@ export default function App() {
           lang={lang}
         />
       );
+      case 'recipes': return <RecipesContent onBack={() => navigateTo('home')} lang={lang} />;
       case 'chat': return (
         <ChatContent 
           isPremium={isPremium} 
@@ -1014,6 +1035,8 @@ export default function App() {
         lang={lang}
         setLang={setLang}
         t={t}
+        isDiscovery={isDiscovery}
+        isPremium={isPremium}
       />
 
       {/* Mobile Menu Overlay */}
@@ -1040,29 +1063,30 @@ export default function App() {
               <div className="mb-12">
                 <h3 className="text-xs uppercase tracking-[0.2em] text-white/40 mb-6 font-bold">Navigation</h3>
                 <div className="grid gap-4">
-                  {[
-                    { id: 'home', label: lang === 'fr' ? 'Accueil' : lang === 'en' ? 'Home' : 'Startseite', icon: Leaf },
-                    { id: 'library-landing', label: t.nav.herbarium, icon: BookOpen },
-                    { id: 'phytotherapie-reset', label: 'Reset', icon: Wind },
-                    { id: 'machine', label: 'BloomLab', icon: Settings },
-                    { id: 'boutique', label: t.nav.shop, icon: ShoppingBag },
-                    { id: 'chat', label: t.nav.chat, icon: MessageSquare },
-                    { id: 'account', label: t.nav.account, icon: User },
-                  ].map((item) => (
-                    <button
-                      key={item.id}
-                      onClick={() => {
-                        navigateTo(item.id as any);
-                        setIsMenuOpen(false);
-                      }}
-                      className={`flex items-center gap-4 p-4 rounded-2xl transition-all ${
-                        currentView === item.id ? 'bg-botanik-orange text-white' : 'text-white/60 hover:bg-white/5'
-                      }`}
-                    >
-                      <item.icon className="w-5 h-5" />
-                      <span className="font-bold">{item.label}</span>
-                    </button>
-                  ))}
+                    {[
+                      { id: 'home', label: lang === 'fr' ? 'Accueil' : lang === 'en' ? 'Home' : 'Startseite', icon: Leaf },
+                      { id: 'library-landing', label: t.nav.herbarium, icon: BookOpen },
+                      (isPremium || isDiscovery) && { id: 'recipes', label: lang === 'fr' ? 'Mes Recettes' : 'My Recipes', icon: ChefHat },
+                      { id: 'phytotherapie-reset', label: 'Reset', icon: Wind },
+                      { id: 'machine', label: 'BloomLab', icon: Settings },
+                      { id: 'boutique', label: t.nav.shop, icon: ShoppingBag },
+                      { id: 'chat', label: t.nav.chat, icon: MessageSquare },
+                      { id: 'account', label: t.nav.account, icon: User },
+                    ].filter(Boolean).map((item: any) => (
+                      <button
+                        key={item.id}
+                        onClick={() => {
+                          navigateTo(item.id as any);
+                          setIsMenuOpen(false);
+                        }}
+                        className={`flex items-center gap-4 p-4 rounded-2xl transition-all ${
+                          currentView === item.id ? 'bg-botanik-orange text-white' : 'text-white/60 hover:bg-white/5'
+                        }`}
+                      >
+                        <item.icon className="w-5 h-5" />
+                        <span className="font-bold">{item.label}</span>
+                      </button>
+                    ))}
                 </div>
               </div>
 
@@ -1170,11 +1194,11 @@ export default function App() {
         {[
           { id: 'home', label: t.nav.guide, icon: FlaskConical },
           { id: 'library-landing', label: t.nav.herbarium, icon: Leaf },
-          { id: 'blog', label: lang === 'fr' ? 'Biblio' : 'Library', icon: BookOpen, url: 'https://blog.bloombybotanik.com/' },
+          (isPremium || isDiscovery) && { id: 'recipes', label: lang === 'fr' ? 'Recettes' : 'Recipes', icon: ChefHat },
           { id: 'chat', label: lang === 'fr' ? 'Alma' : 'Alma', icon: MessageSquare },
           { id: 'boutique', label: t.nav.shop, icon: ShoppingBag },
           { id: 'account', label: t.nav.account, icon: User }
-        ].map((tab) => (
+        ].filter(Boolean).map((tab: any) => (
           <button
             key={tab.id}
             onClick={() => {

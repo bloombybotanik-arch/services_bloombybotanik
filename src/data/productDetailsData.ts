@@ -15,6 +15,11 @@ import img6 from '../assets/images/extraction_precision_cleaned_1786616821723.jp
 import img7 from '../assets/images/natural_remedies_cleaned_1786616831671.jpg';
 import img8 from '../assets/images/7.png';
 import img9 from '../assets/images/home_lab_vibe_cleaned_1786616854146.jpg';
+import img2_1 from '../assets/images/2-1.png';
+import img3_1 from '../assets/images/3-1.png';
+import img4_1 from '../assets/images/4-1.png';
+import img5_1 from '../assets/images/5-1.png';
+import img6_1 from '../assets/images/6-1.png';
 
 export const getProductSheets = (lang: Language): Record<string, any> => {
   const isFR = lang === 'fr';
@@ -31,7 +36,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
         subtitle: isFR ? "SOUVERAINETÉ SANTÉ — ÉDITION 2026" : isDE ? "GESUNDHEITSSOUVERÄNITÄT — EDITION 2026" : "HEALTH SOVEREIGNTY — 2026 EDITION",
         price: bloomLabPrice,
         originalPrice: isPromoActive ? 289 : null,
-        images: [bloomLabImg, img3, img6, img9, img8, img4],
+        images: [bloomLabImg, img2_1, img3_1, img4_1, img5_1, img6_1],
         description: isFR 
           ? "L'extracteur botanique de précision n°1 en France. Capable d'extraire le Totum intégral des plantes avec une précision thermique absolue (±0,5°C)."
           : isDE 
