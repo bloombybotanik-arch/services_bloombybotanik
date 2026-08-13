@@ -23,7 +23,7 @@ import { FloatingChat } from './components/FloatingChat';
 import { LanguageSelector } from './components/LanguageSelector';
 
 const HomeContent = lazy(() => import('./HomeContent'));
-const LibraryContent = lazy(() => import('./LibraryContent'));
+const HerbariumContent = lazy(() => import('./HerbariumContent'));
 const StoreContent = lazy(() => import('./StoreContent'));
 const GuideContent = lazy(() => import('./GuideContent'));
 const CartContent = lazy(() => import('./CartContent'));
@@ -185,9 +185,7 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
               "reviewBody": "Une précision incroyable pour mes macérats huileux. Je ne m'en passe plus.",
               "reviewRating": {
                 "@type": "Rating",
-                "bestRating": "5",
-                "ratingValue": "5",
-                "worstRating": "1"
+                "ratingValue": "5"
               }
             }
           ],
@@ -255,9 +253,7 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
                 "reviewBody": "Excellent produit, conforme à la démarche Bloom.",
                 "reviewRating": {
                   "@type": "Rating",
-                  "bestRating": "5",
-                  "ratingValue": p.rating.toString(),
-                  "worstRating": "1"
+                  "ratingValue": p.rating.toString()
                 }
               }] : undefined,
               "offers": {
@@ -835,12 +831,16 @@ export default function App() {
           </div>
         </div>
       );
-      case 'library': return (
-        <LibraryContent 
+      case 'library':
+      case 'herbier': return (
+        <HerbariumContent 
           isPremium={isPremium} 
           onRequirePremium={handleRequirePremium} 
           onNavigatePending={() => navigateTo('pending')}
           onNavigate={navigateTo}
+          favorites={favorites}
+          onToggleFavorite={handleToggleFavorite}
+          initialPlantId={currentProductId}
           lang={lang}
         />
       );
@@ -1165,8 +1165,8 @@ export default function App() {
         {[
           { id: 'home', label: t.nav.guide, icon: FlaskConical },
           { id: 'library-landing', label: t.nav.herbarium, icon: Leaf },
-          { id: 'blog', label: t.nav.blog, icon: BookOpen, url: 'https://blog.bloombybotanik.com/' },
-          { id: 'chat', label: t.nav.chat, icon: MessageSquare },
+          { id: 'blog', label: lang === 'fr' ? 'Biblio' : 'Library', icon: BookOpen, url: 'https://blog.bloombybotanik.com/' },
+          { id: 'chat', label: lang === 'fr' ? 'Alma' : 'Alma', icon: MessageSquare },
           { id: 'boutique', label: t.nav.shop, icon: ShoppingBag },
           { id: 'account', label: t.nav.account, icon: User }
         ].map((tab) => (

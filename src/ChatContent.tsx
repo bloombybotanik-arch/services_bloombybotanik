@@ -44,6 +44,7 @@ export default function ChatContent({
   const [inputText, setInputText] = useState('');
   const [chatHistory, setChatHistory] = useState<{ role: 'user' | 'model', text: string }[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const hasInitialized = useRef(false);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -56,7 +57,8 @@ export default function ChatContent({
   useEffect(() => {
     if (savedAssessment) {
       setShowResults(true);
-    } else {
+    } else if (!hasInitialized.current) {
+      hasInitialized.current = true;
       // Start immediately with first question if no saved result
       askQuestion(0);
     }
@@ -71,16 +73,22 @@ export default function ChatContent({
   }, [user, isWaitingForAuth]);
 
   const askQuestion = (index: number) => {
+    // Prevent duplicate questions if one is already being asked or present
+    if (index === 0 && messages.some(m => m.id === `q-${QUESTIONS[0].id}`)) return;
+
     if (index >= QUESTIONS.length) {
       if (!user) {
         setIsTyping(true);
         setTimeout(() => {
           setIsTyping(false);
-          setMessages(prev => [...prev, {
-            id: `auth-req`,
-            sender: 'alma',
-            text: t.auth_required
-          }]);
+          setMessages(prev => {
+            if (prev.some(m => m.id === 'auth-req')) return prev;
+            return [...prev, {
+              id: `auth-req`,
+              sender: 'alma',
+              text: t.auth_required
+            }];
+          });
           setIsWaitingForAuth(true);
           setTimeout(() => onRequireAuth(), 1500);
         }, 1000);
@@ -94,12 +102,16 @@ export default function ChatContent({
     setIsTyping(true);
     setTimeout(() => {
       setIsTyping(false);
-      setMessages(prev => [...prev, {
-        id: `q-${q.id}`,
-        sender: 'alma',
-        text: q.question,
-        options: q.options
-      }]);
+      setMessages(prev => {
+        // Final guard against duplicates
+        if (prev.some(m => m.id === `q-${q.id}`)) return prev;
+        return [...prev, {
+          id: `q-${q.id}`,
+          sender: 'alma',
+          text: q.question,
+          options: q.options
+        }];
+      });
     }, 800);
   };
 
@@ -351,9 +363,9 @@ export default function ChatContent({
 
 
   return (
-    <div className="flex flex-col h-[calc(100vh-64px)] lg:h-[100vh] bg-botanik-bg">
+    <div className="flex flex-col min-h-[calc(100vh-64px)] bg-botanik-bg">
       {/* Header */}
-      <div className="bg-white border-b border-botanik-green/5 px-6 py-4 flex items-center gap-4">
+      <div className="bg-white border-b border-botanik-green/5 px-6 py-4 flex items-center gap-4 sticky top-0 z-30">
         <div className="w-10 h-10 bg-botanik-green rounded-xl flex items-center justify-center text-botanik-orange">
           <Sparkles className="w-5 h-5" />
         </div>
@@ -368,7 +380,7 @@ export default function ChatContent({
 
       <div className="flex-1 flex flex-col max-w-[800px] mx-auto w-full">
         {/* Messages Area */}
-        <div className="flex-1 overflow-y-auto px-6 py-8 md:py-16 space-y-6 no-scrollbar">
+        <div className="flex-1 px-6 py-8 md:py-16 space-y-6">
           <AnimatePresence mode="wait">
             {messages.length === 0 && (
               <div className="flex flex-col items-center justify-center h-full text-center py-12">
@@ -437,7 +449,7 @@ export default function ChatContent({
         </div>
 
         {/* Chat Input & Info Area */}
-        <div className="p-6 md:p-8 bg-white border-t border-botanik-green/5">
+        <div className="p-6 md:p-8 bg-white border-t border-botanik-green/5 sticky bottom-0 z-30 lg:bottom-0">
           <div className="w-full h-1 bg-botanik-green/5 rounded-full mb-6 overflow-hidden">
             <motion.div 
               className="h-full bg-botanik-orange"

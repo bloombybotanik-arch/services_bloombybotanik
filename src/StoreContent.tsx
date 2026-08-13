@@ -13,127 +13,134 @@ import { translations, Language } from './translations';
 
 export const getProducts = (lang: Language) => {
   const t = translations[lang].store.products;
+  
+  // Logic for Promotion (September 2026 -> January 1, 2027)
+  // Current date in metadata is 2026-08-13.
+  const now = new Date();
+  const isPromoActive = now >= new Date('2026-09-01') && now < new Date('2027-01-01');
+  const bloomLabPrice = isPromoActive ? 239.00 : 289.00;
+  const bloomLabOriginal = isPromoActive ? 289.00 : 329.00;
+
   return [
     {
       id: 'bloomlab',
       name: t.bloomlab.name,
       subtitle: t.bloomlab.subtitle,
-      price: 289.00,
-      originalPrice: 329.00,
+      price: bloomLabPrice,
+      originalPrice: bloomLabOriginal,
       image: bloomLabImg,
       rating: 4.9,
       reviews: 128,
       description: t.bloomlab.description,
       bullets: t.bloomlab.bullets,
-      tags: ['Best-Seller', 'Inox 304', 'Garantie 1 an'],
+      tags: ['Best-Seller', 'Inox 304', 'Souveraineté'],
       featured: true
     },
     {
-      id: 'seve-fondamentale',
-      name: t.seve.name,
-      subtitle: t.seve.subtitle,
+      id: 'bundle-apothicaire',
+      name: t.bundle_apothicaire.name,
+      subtitle: t.bundle_apothicaire.subtitle,
+      price: 59.00,
+      originalPrice: 87.50,
+      image: trioPouchesImg,
+      rating: 5.0,
+      reviews: 64,
+      description: t.bundle_apothicaire.description,
+      tags: ['Offre Limitée', 'Rentrée 2026', 'Best-Value'],
+      isBundle: true
+    },
+    {
+      id: 'pack-signature',
+      name: t.pack_signature.name,
+      subtitle: t.pack_signature.subtitle,
+      price: 319.00,
+      originalPrice: 349.00,
+      image: bloomLabImg,
+      rating: 5.0,
+      reviews: 42,
+      description: t.pack_signature.description,
+      tags: ['Pack', 'Débutant', 'Prêt à l\'emploi'],
+      isBundle: true
+    },
+    {
+      id: 'kit-starter',
+      name: t.kit_starter.name,
+      subtitle: t.kit_starter.subtitle,
       price: 12.90,
       image: seveFondamentaleImg,
       rating: 4.8,
-      reviews: 42,
-      description: t.seve.description,
-      tags: ['Vitalité', 'Structure']
+      reviews: 56,
+      description: t.kit_starter.description,
+      tags: ['Kit', 'Plantes']
     },
     {
-      id: 'nuit-profonde',
-      name: t.nuit.name,
-      subtitle: t.nuit.subtitle,
+      id: 'kit-nuit',
+      name: t.kit_nuit.name,
+      subtitle: t.kit_nuit.subtitle,
       price: 9.90,
       image: nuitProfondeImg,
       rating: 4.9,
-      reviews: 56,
-      description: t.nuit.description,
-      tags: ['Sommeil', 'Ancrage']
+      reviews: 42,
+      description: t.kit_nuit.description,
+      tags: ['Sommeil']
     },
     {
-      id: 'confort-digestif',
-      name: t.digestion.name,
-      subtitle: t.digestion.subtitle,
+      id: 'kit-digestion',
+      name: t.kit_digestion.name,
+      subtitle: t.kit_digestion.subtitle,
       price: 9.90,
       image: digestionImg,
       rating: 4.7,
-      reviews: 38,
-      description: t.digestion.description,
-      tags: ['Digestion', 'Équilibre']
+      reviews: 35,
+      description: t.kit_digestion.description,
+      tags: ['Digestion']
     },
     {
-      id: 'feu-articulaire',
-      name: t.articulaire.name,
-      subtitle: t.articulaire.subtitle,
+      id: 'kit-articulaire',
+      name: t.kit_articulaire.name,
+      subtitle: t.kit_articulaire.subtitle,
       price: 9.90,
       image: feuArticulaireImg,
       rating: 4.8,
-      reviews: 29,
-      description: t.articulaire.description,
-      tags: ['Articulations', 'Mobilité']
+      reviews: 28,
+      description: t.kit_articulaire.description,
+      tags: ['Mobilité']
     },
     {
-      id: 'duo-argiles',
-      name: t.argiles.name,
-      subtitle: t.argiles.subtitle,
+      id: 'kit-reset',
+      name: t.kit_reset.name,
+      subtitle: t.kit_reset.subtitle,
       price: 44.90,
       originalPrice: 49.00,
       image: duoArgilesImg,
-      rating: 5.0,
-      reviews: 15,
-      description: t.argiles.description,
-      tags: ['Détox', 'Purification']
-    },
-    {
-      id: 'pack-trio',
-      name: t.trio.name,
-      subtitle: t.trio.subtitle,
-      price: 26.90,
-      originalPrice: 29.70,
-      image: trioPouchesImg,
       rating: 4.9,
-      reviews: 84,
-      description: t.trio.description,
-      tags: ['Offre Spéciale', 'Best-Value']
+      reviews: 31,
+      description: t.kit_reset.description,
+      tags: ['Kit', 'Détox']
     },
     {
-      id: 'bundle-cosme',
-      name: t.bundle_cosme.name,
-      subtitle: t.bundle_cosme.subtitle,
-      price: 349.00,
-      originalPrice: 389.00,
-      image: duoArgilesImg,
-      rating: 5.0,
-      reviews: 12,
-      description: t.bundle_cosme.description,
-      tags: ['Pack', 'Cosmétique', 'Économie 40€'],
-      isBundle: true
+      id: 'freemium-access',
+      name: t.freemium_access.name,
+      subtitle: t.freemium_access.subtitle,
+      price: 0.00,
+      image: img05,
+      rating: 4.7,
+      reviews: 156,
+      description: t.freemium_access.description,
+      tags: ['Gratuit', 'Digital', 'Découverte'],
+      isSpecial: true
     },
     {
-      id: 'bundle-culinary',
-      name: t.bundle_culinary.name,
-      subtitle: t.bundle_culinary.subtitle,
-      price: 329.00,
-      originalPrice: 359.00,
-      image: trioPouchesImg,
+      id: 'premium-access',
+      name: t.premium_access.name,
+      subtitle: t.premium_access.subtitle,
+      price: 9.00,
+      image: img05,
       rating: 4.9,
-      reviews: 8,
-      description: t.bundle_culinary.description,
-      tags: ['Pack', 'Culinaire', 'Économie 30€'],
-      isBundle: true
-    },
-    {
-      id: 'bundle-reset',
-      name: t.bundle_reset.name,
-      subtitle: t.bundle_reset.subtitle,
-      price: 399.00,
-      originalPrice: 459.00,
-      image: bloomLabImg,
-      rating: 5.0,
-      reviews: 24,
-      description: t.bundle_reset.description,
-      tags: ['Pack', 'Reset', 'Souveraineté'],
-      isBundle: true
+      reviews: 89,
+      description: t.premium_access.description,
+      tags: ['Abonnement', 'Digital', 'Complet'],
+      isSpecial: true
     }
   ];
 };
@@ -148,6 +155,7 @@ interface StoreContentProps {
 export default function StoreContent({ onNavigatePending, onNavigateDetail, onAddToCart, lang }: StoreContentProps) {
   const [searchQuery, setSearchQuery] = React.useState('');
   const t = translations[lang].store;
+  const isFR = lang === 'fr';
   const products = React.useMemo(() => getProducts(lang), [lang]);
   
   const formatPrice = (price: number) => {
@@ -165,8 +173,45 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
     product.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
   );
 
+  // SEO JSON-LD for the 2026 Offer
+  const seoSchema = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": isFR ? "Soins Botaniques Famille — Pack Rentrée 2026" : "Family Botanical Care — 2026 Back-to-School Pack",
+    "description": "Prenez soin de toute la famille avec l'herbier complet Bloom. Extraction botanique de précision pour des remèdes naturels faits maison : sommeil, digestion, vitalité et mobilité.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Bloom by BotaniK"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "EUR",
+      "price": "59.00",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2026-08-15",
+      "url": "https://bloombybotanik.com/shop",
+      "category": "Phytothérapie & Soins Naturels"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "156"
+    }
+  };
+
   return (
     <div className="animate-in slide-in-from-right duration-500 pb-20">
+      {/* SEO Injection */}
+      <script type="application/ld+json">
+        {JSON.stringify(seoSchema)}
+      </script>
+
+      {/* Promotional Banner */}
+      <div className="bg-botanik-orange text-white text-center py-2 px-4 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] animate-pulse">
+        {isFR 
+          ? "Rentrée 2026 : Soins Botaniques pour toute la Famille - Pack Complet à 59€" 
+          : "Back to School 2026: Botanical Care for the Whole Family - Complete Pack at 59€"}
+      </div>
       
       {/* Search & Filter Header (App Style) */}
       <div className="bg-white px-4 md:px-6 pt-6 md:pt-8 pb-4">
@@ -295,13 +340,63 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
         </div>
       )}
 
+      {/* Digital Universe Section */}
+      {!searchQuery && (
+        <div className="px-4 md:px-6 mb-16">
+          <div className="bg-botanik-green/5 rounded-[48px] p-8 md:p-12 border border-botanik-green/5">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="max-w-md">
+                <h3 className="text-2xl md:text-3xl font-bold text-botanik-green mb-4">
+                  {lang === 'fr' ? "L'Écosystème Digital" : lang === 'en' ? 'The Digital Ecosystem' : 'Das digitale Ökosystem'}
+                </h3>
+                <p className="text-botanik-green/60 leading-relaxed mb-6">
+                  {lang === 'fr' 
+                    ? "Accédez à notre bibliothèque de savoirs et à nos protocoles experts pour transformer votre pratique de l'herboristerie."
+                    : lang === 'en'
+                    ? "Access our knowledge library and expert protocols to transform your herbal practice."
+                    : "Greifen Sie auf unsere Wissensbibliothek und Expertenprotokolle zu, um Ihre Kräuterpraxis zu transformieren."}
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <div className="flex items-center gap-2 text-[10px] font-bold text-botanik-orange uppercase tracking-widest">
+                    <Check className="w-4 h-4" /> 10 recettes gratuites
+                  </div>
+                  <div className="flex items-center gap-2 text-[10px] font-bold text-botanik-orange uppercase tracking-widest">
+                    <Check className="w-4 h-4" /> Protocoles experts
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full md:w-auto">
+                {products.filter(p => (p as any).isSpecial).map((product) => (
+                  <div 
+                    key={product.id}
+                    className="bg-white p-6 rounded-3xl shadow-sm hover:shadow-xl transition-all cursor-pointer group border border-botanik-green/5"
+                    onClick={() => onNavigateDetail(product.id)}
+                  >
+                    <div className="text-[10px] font-bold text-botanik-orange uppercase tracking-widest mb-2">{product.subtitle}</div>
+                    <h4 className="text-lg font-bold text-botanik-green mb-4">{product.name}</h4>
+                    <div className="flex items-center justify-between gap-4">
+                      <span className="text-xl font-bold text-botanik-green">
+                        {product.price === 0 ? (lang === 'fr' ? 'Gratuit' : lang === 'en' ? 'Free' : 'Gratis') : formatPrice(product.price)}
+                      </span>
+                      <button className="w-10 h-10 bg-[#F9F9F7] text-botanik-green rounded-xl flex items-center justify-center group-hover:bg-botanik-green group-hover:text-white transition-colors">
+                        <ArrowRight className="w-5 h-5" />
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Product Grid */}
       <div className="px-4 md:px-6 mb-12">
         <h3 className="text-xs md:text-sm font-bold uppercase tracking-widest text-botanik-green/40 mb-4 md:mb-6">
           {searchQuery ? `${t.grid.results_for} "${searchQuery}"` : t.grid.title}
         </h3>
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
-          {filteredProducts.filter(p => (!p.featured && !(p as any).isBundle) || searchQuery).map((product) => {
+          {filteredProducts.filter(p => (!p.featured && !(p as any).isBundle && !(p as any).isSpecial) || searchQuery).map((product) => {
             return (
               <div 
                 key={product.id} 

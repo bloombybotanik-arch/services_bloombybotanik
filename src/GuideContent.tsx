@@ -169,7 +169,7 @@ export default function GuideContent({ onNavigate, lang }: GuideContentProps) {
 
           {/* Niveau 3 */}
           <div 
-            onClick={() => onNavigate('library')}
+            onClick={() => onNavigate('library-landing')}
             className="bg-white rounded-[40px] border border-botanik-green/5 p-10 shadow-sm hover:bg-[#F5F3EB] hover:shadow-xl transition-all duration-500 group cursor-pointer"
           >
             <div className="w-16 h-16 bg-[#F5F3EB] rounded-2xl flex items-center justify-center mb-8 group-hover:bg-botanik-orange/10 transition-colors">
@@ -237,7 +237,7 @@ export default function GuideContent({ onNavigate, lang }: GuideContentProps) {
               {t.home.way.more.description}
             </p>
             <button 
-              onClick={() => onNavigate('herbier')}
+              onClick={() => onNavigate('library-landing')}
               className="flex items-center gap-2 text-botanik-orange font-bold text-xs uppercase tracking-[0.2em] group-hover:gap-3 transition-all"
             >
               {t.home.way.more.cta} <ChevronRight className="w-4 h-4" />

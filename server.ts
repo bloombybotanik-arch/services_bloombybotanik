@@ -295,6 +295,10 @@ app.get("/bloomlab-extracteur-botanique-et-infuseur-dhuile-intelligent-6-en-1", 
   res.redirect(301, "/bloomlab");
 });
 
+app.get("/infusion-botanique-maison-comment-ca-marche", (req, res) => {
+  res.redirect(301, "/qu-est-ce-que-l-infusion-botanique");
+});
+
 // Vite middleware
 async function setupVite() {
   if (process.env.NODE_ENV !== "production") {

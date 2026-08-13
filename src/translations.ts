@@ -491,7 +491,7 @@ export const translations = {
       hero: {
         badge: "L'Extracteur de Totum N°1",
         title: "Boutique BloomLab® — Votre Laboratoire de Phytothérapie Maison",
-        description: "Explorez notre sélection d'extracteurs botaniques et kits de plantes pour une autonomie santé totale.",
+        description: "Explorez notre sélection d'extracteurs botaniques et kits de plantes pour une autonomie santé totale. Profitez de 1 mois d'accès premium offert pour tout achat d'une BloomLab.",
         price_from: "À partir de",
         cta: "Découvrir"
       },
@@ -515,50 +515,50 @@ export const translations = {
             "Acier Inox 304 certifié, Cuve 1.2L"
           ]
         },
-        seve: {
-          name: "SÈVE FONDAMENTALE",
-          subtitle: "VITALITÉ CAPILLAIRE",
-          description: "Soutien la vitalité des racines. Mélange de plantes pour infusion capillaire et corporelle."
+        pack_signature: {
+          name: "Pack Signature — BloomLab + Kit de Démarrage",
+          subtitle: "IDÉAL POUR DÉBUTER",
+          description: "L'essentiel pour commencer : Votre BloomLab accompagnée du kit 'Sève Fondamentale' et du matériel de filtration professionnel."
         },
-        nuit: {
-          name: "NUIT PROFONDE",
+        bundle_apothicaire: {
+          name: "L'Herbier Complet — Pack Rentrée 2026",
+          subtitle: "TOUS LES REMÈDES + DUO ARGILES",
+          description: "L'offre la plus irrésistible de la rentrée. Regroupe l'intégralité de nos mélanges de plantes (Sève, Nuit, Digestion, Articulaire) et le Duo Argiles Renaissance pour un reset total."
+        },
+        kit_starter: {
+          name: "Kit de Démarrage — Sève Fondamentale",
+          subtitle: "COMPATIBLE BLOOMLAB",
+          description: "Le mélange de plantes idéal pour vos premières extractions. Vitalité capillaire et structurelle."
+        },
+        kit_nuit: {
+          name: "Remède Nuit Profonde",
           subtitle: "SOMMEIL & ANCRAGE",
-          description: "Rituel du soir et ancrage. Mélange de plantes séchées pour un sommeil profond et réparateur."
+          description: "Mélange de plantes séchées pour un sommeil profond et réparateur."
         },
-        digestion: {
-          name: "CONFORT DIGESTIF",
+        kit_digestion: {
+          name: "Remède Confort Digestif",
           subtitle: "ÉQUILIBRE INTESTINAL",
-          description: "Équilibre et confort digestif. Mélange de plantes pour apaiser les ballonnements durablement."
+          description: "Mélange de plantes pour apaiser les ballonnements durablement."
         },
-        articulaire: {
-          name: "FEU ARTICULAIRE",
+        kit_articulaire: {
+          name: "Remède Feu Articulaire",
           subtitle: "SOUPLESSE & MOBILITÉ",
-          description: "Souplesse articulaire. Mélange de plantes pour accompagner les zones sensibles et la mobilité."
+          description: "Mélange de plantes pour accompagner les zones sensibles."
         },
-        argiles: {
-          name: "Duo RESET Renaissance",
-          subtitle: "ADSORBANT NATUREL",
-          description: "Haute précision (6µm). Une cure détoxifiante puissante pour libérer le corps des toxines."
+        kit_reset: {
+          name: "Duo RESET Renaissance — Kit Argiles & Plantes",
+          subtitle: "CURE DÉTOX & TERRAIN",
+          description: "Zéolithe Clinoptilolite 6µm et mélange de plantes drainantes. Idéal pour ceux possédant déjà une BloomLab."
         },
-        trio: {
-          name: "Achetez par 3",
-          subtitle: "LIVRAISON OFFERTE",
-          description: "Sélectionnez vos 3 mélanges préférés et profitez de la livraison offerte. Idéal pour un protocole complet."
+        freemium_access: {
+          name: "Accès Découverte — 10 Recettes Gratuites",
+          subtitle: "VOTRE POINT D'ENTRÉE",
+          description: "Explorez l'univers Bloom avec une sélection de 10 recettes guidées pour débuter vos premières infusions."
         },
-        bundle_cosme: {
-          name: "Pack BloomLab + Kit Cosmétique",
-          subtitle: "SÉLECTION BEAUTÉ TOTUM",
-          description: "Le BloomLab accompagné de 3 recettes signature et du matériel de formulation pour vos soins visage & corps."
-        },
-        bundle_culinary: {
-          name: "Pack BloomLab + Kit Culinaire",
-          subtitle: "GASTRONOMIE FONCTIONNELLE",
-          description: "Le BloomLab avec un kit de plantes aromatiques et livret de recettes pour huiles et beurres botaniques."
-        },
-        bundle_reset: {
-          name: "Pack BloomLab + Protocole Reset",
-          subtitle: "SOUVERAINETÉ BIOLOGIQUE",
-          description: "L'offre la plus complète : BloomLab + Kits de plantes + Accès illimité au protocole Reset 21 jours."
+        premium_access: {
+          name: "Abonnement Premium — Accès Illimité",
+          subtitle: "TOUT L'HERBIER & PROTOCOLES",
+          description: "Accédez à plus de 100 recettes, protocoles experts et mises à jour mensuelles. 1 mois offert pour les clients BloomLab."
         }
       }
     },
@@ -1208,8 +1208,8 @@ export const translations = {
         description: "Apprenez à utiliser votre BloomLab et à suivre nos protocoles pour une régulation systémique optimale.",
         tags: ["Souveraineté", "Transmission", "Extraction"],
         main_title: "L'Extracteur Botanique BloomLab®.",
-        main_title_accent: "Précision & Souveraineté.",
-        main_desc: "BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels. Découvrez l'infuseur botanique N°1 en France pour une extraction du totum de grade laboratoire.",
+        main_title_accent: "Infuseur Botanique de Précision.",
+        main_desc: "BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes de plantes. Découvrez l'infuseur botanique N°1 en France pour une extraction du totum et une phytothérapie de précision.",
         cta_shop: "Voir la Boutique",
         cta_levels: "Découvrir les Niveaux"
       },
@@ -1826,76 +1826,76 @@ export const translations = {
         search_placeholder: "Search for a kit, a plant..."
       },
       hero: {
-        badge: "The Totum Extractor",
-        title: "BloomLab The Shop",
-        description: "Explore our selection of kits and synergies to support your homeostatic reset.",
+        badge: "N°1 Totum Extractor",
+        title: "BloomLab® Shop — Your Home Phytotherapy Laboratory",
+        description: "Explore our selection of botanical extractors and plant kits for total health autonomy. Get 1 month of premium access free with any BloomLab purchase.",
         price_from: "Starting from",
         cta: "Discover"
       },
       grid: {
         results_for: "Results for",
-        title: "Our Kits & Synergies"
+        title: "Our Botanical Extractors & Synergies"
       },
       trust: {
         payment: "100% Secure Payment",
-        lab: "Laboratory Grade",
-        guarantee: "Money Back Guarantee"
+        lab: "Certified Laboratory Quality",
+        guarantee: "1-Year Bloom Guarantee"
       },
       products: {
         bloomlab: {
-          name: "Botanical Extraction Machine",
-          subtitle: "HEALTH SOVEREIGNTY 2026",
-          description: "Making your own laboratory-grade remedies and home care is finally possible! Discover the only machine capable of extracting the Totum of plants with absolute precision.",
+          name: "BloomLab® — Botanical Extractor & Precision Infuser",
+          subtitle: "HEALTH SOVEREIGNTY — 2026 EDITION",
+          description: "The first counter-top botanical extractor capable of extracting the integral Totum of plants with absolute thermal precision (±0.5°C). Create your own natural remedies and organic cosmetics at home.",
           bullets: [
             "Oily macerates, tinctures, concentrated extracts",
             "Thermal sequencing ±0.5°C (0°C to 121°C)",
             "Certified 304 Stainless Steel, 1.2L Tank"
           ]
         },
-        seve: {
-          name: "FUNDAMENTAL SAP",
-          subtitle: "CAPILLARY VITALITY",
-          description: "Supports root vitality. Blend of plants for hair and body infusion."
+        pack_signature: {
+          name: "Signature Pack — BloomLab + Starter Kit",
+          subtitle: "IDEAL FOR BEGINNERS",
+          description: "Everything you need to start: Your BloomLab accompanied by the 'Fundamental Sap' kit and professional filtration equipment."
         },
-        nuit: {
-          name: "DEEP NIGHT",
+        bundle_apothicaire: {
+          name: "Complete Herbarium — 2026 Back-to-School Pack",
+          subtitle: "ALL REMEDIES + CLAYS DUO",
+          description: "The most irresistible offer of the season. Includes all our plant blends (Sap, Night, Digestion, Joint) and the Renaissance Clays Duo for a total reset."
+        },
+        kit_starter: {
+          name: "Starter Kit — Fundamental Sap",
+          subtitle: "BLOOMLAB COMPATIBLE",
+          description: "The ideal plant blend for your first extractions. Capillary and structural vitality."
+        },
+        kit_nuit: {
+          name: "Deep Night Remedy",
           subtitle: "SLEEP & GROUNDING",
-          description: "Evening ritual and grounding. Blend of dried plants for a deep and restorative sleep."
+          description: "Dried plant blend for deep and restorative sleep."
         },
-        digestion: {
-          name: "DIGESTIVE COMFORT",
+        kit_digestion: {
+          name: "Digestive Comfort Remedy",
           subtitle: "INTESTINAL BALANCE",
-          description: "Digestive balance and comfort. Blend of plants to lastingly soothe bloating."
+          description: "Plant blend to lastingly soothe bloating."
         },
-        articulaire: {
-          name: "JOINT FIRE",
+        kit_articulaire: {
+          name: "Joint Fire Remedy",
           subtitle: "FLEXIBILITY & MOBILITY",
-          description: "Joint flexibility. Blend of plants to support sensitive areas and mobility."
+          description: "Plant blend to support sensitive areas."
         },
-        argiles: {
-          name: "RESET Renaissance Duo",
-          subtitle: "NATURAL ADSORBENT",
-          description: "High precision (6µm). A powerful detoxifying cure to free the body from toxins."
+        kit_reset: {
+          name: "RESET Renaissance Duo — Clays & Plants Kit",
+          subtitle: "DETOX & TERRAIN CURE",
+          description: "6µm Clinoptilolite Zeolite and draining plant blend. Ideal for those who already own a BloomLab."
         },
-        trio: {
-          name: "Buy 3",
-          subtitle: "FREE SHIPPING",
-          description: "Select your 3 favorite blends and enjoy free shipping. Ideal for a complete protocol."
+        freemium_access: {
+          name: "Discovery Access — 10 Free Recipes",
+          subtitle: "YOUR ENTRY POINT",
+          description: "Explore the Bloom universe with a selection of 10 guided recipes to begin your first infusions."
         },
-        bundle_cosme: {
-          name: "BloomLab + Cosmetic Kit Pack",
-          subtitle: "TOTUM BEAUTY SELECTION",
-          description: "The BloomLab accompanied by 3 signature recipes and formulation equipment for your face & body care."
-        },
-        bundle_culinary: {
-          name: "BloomLab + Culinary Kit Pack",
-          subtitle: "FUNCTIONAL GASTRONOMY",
-          description: "The BloomLab with a kit of aromatic plants and recipe booklet for botanical oils and butters."
-        },
-        bundle_reset: {
-          name: "BloomLab + Reset Protocol Pack",
-          subtitle: "BIOLOGICAL SOVEREIGNTY",
-          description: "The most complete offer: BloomLab + Plant Kits + Unlimited access to the 21-day Reset protocol."
+        premium_access: {
+          name: "Premium Subscription — Unlimited Access",
+          subtitle: "ALL HERBARIUM & PROTOCOLS",
+          description: "Access over 100 recipes, expert protocols and monthly updates. 1 month free for BloomLab customers."
         }
       }
     },
@@ -3049,76 +3049,76 @@ export const translations = {
         search_placeholder: "Suchen Sie nach einem Set, einer Pflanze..."
       },
       hero: {
-        badge: "Der Totum-Extraktor",
-        title: "BloomLab Der Shop",
-        description: "Entdecken Sie unsere Auswahl an Sets und Synergien, um Ihren homöostatischen Reset zu unterstützen.",
+        badge: "N°1 Totum-Extraktor",
+        title: "BloomLab® Shop — Ihr Phytotherapie-Labor für zu Hause",
+        description: "Entdecken Sie unsere Auswahl an botanischen Extraktoren und Pflanzen-Sets für totale Gesundheitsautonomie. Erhalten Sie 1 Monat Premium-Zugang kostenlos beim Kauf eines BloomLab.",
         price_from: "Ab",
         cta: "Entdecken"
       },
       grid: {
         results_for: "Ergebnisse für",
-        title: "Unsere Sets & Synergien"
+        title: "Unsere botanischen Extraktoren & Synergien"
       },
       trust: {
         payment: "100% sichere Zahlung",
-        lab: "Labor-Qualität",
-        guarantee: "Geld-zurück-Garantie"
+        lab: "Zertifizierte Labor-Qualität",
+        guarantee: "1 Jahr Bloom-Garantie"
       },
       products: {
         bloomlab: {
-          name: "Botanische Extraktionsmaschine",
-          subtitle: "GESUNDHEITSSOUVERÄNITÄT 2026",
-          description: "Eigene Heilmittel und Heimpflege in Laborqualität herzustellen, ist endlich möglich! Entdecken Sie die einzige Maschine, die in der Lage ist, das Totum von Pflanzen mit absoluter Präzision zu extrahieren.",
+          name: "BloomLab® — Botanischer Extraktor & Präzisions-Infuser",
+          subtitle: "GESUNDHEITSSOUVERÄNITÄT — EDITION 2026",
+          description: "Der erste botanische Extraktor für die Arbeitsplatte, der in der Lage ist, das integrale Totum von Pflanzen mit absoluter thermischer Präzision (±0,5°C) zu extrahieren. Erstellen Sie Ihre eigenen natürlichen Heilmittel und Bio-Kosmetik zu Hause.",
           bullets: [
             "Ölige Mazerate, Tinkturen, konzentrierte Extrakte",
             "Thermische Sequenzierung ±0,5°C (0°C bis 121°C)",
             "Zertifizierter 304 Edelstahl, 1,2L Tank"
           ]
         },
-        seve: {
-          name: "FUNDAMENTALER SAFT",
-          subtitle: "KAPILLARE VITALITÄT",
-          description: "Unterstützt die Vitalität der Wurzeln. Pflanzenmischung für Haar- und Körperaufguss."
+        pack_signature: {
+          name: "Signature-Paket — BloomLab + Starter-Set",
+          subtitle: "IDEAL FÜR EINSTEIGER",
+          description: "Alles, was Sie für den Start benötigen: Ihr BloomLab zusammen mit dem Set 'Fundamentaler Saft' und professioneller Filtrationsausrüstung."
         },
-        nuit: {
-          name: "TIEFE NACHT",
+        bundle_apothicaire: {
+          name: "Das vollständige Herbarium — Paket Rente 2026",
+          subtitle: "ALLE HEILMITTEL + ERDEN-DUO",
+          description: "Das unwiderstehlichste Angebot der Saison. Enthält alle unsere Pflanzenmischungen (Saft, Nacht, Verdauung, Gelenke) und das Renaissance Erden-Duo für einen totalen Reset."
+        },
+        kit_starter: {
+          name: "Starter-Set — Fundamentaler Saft",
+          subtitle: "BLOOMLAB KOMPATIBEL",
+          description: "Die ideale Pflanzenmischung für Ihre ersten Extraktionen. Kapillare und strukturelle Vitalität."
+        },
+        kit_nuit: {
+          name: "Heilmittel Tiefe Nacht",
           subtitle: "SCHLAF & VERANKERUNG",
-          description: "Abendritual und Verankerung. Mischung aus getrockneten Pflanzen für einen tiefen und erholsamen Schlaf."
+          description: "Mischung aus getrockneten Pflanzen für einen tiefen und erholsamen Schlaf."
         },
-        digestion: {
-          name: "VERDAUUNGSKOMFORT",
+        kit_digestion: {
+          name: "Heilmittel Verdauungskomfort",
           subtitle: "DARMGLEICHGEWICHT",
-          description: "Verdauungsgleichgewicht und Komfort. Pflanzenmischung zur dauerhaften Linderung von Blähungen."
+          description: "Pflanzenmischung zur dauerhaften Linderung von Blähungen."
         },
-        articulaire: {
-          name: "GELENKFEUER",
+        kit_articulaire: {
+          name: "Heilmittel Gelenkfeuer",
           subtitle: "FLEXIBILITÄT & MOBILITÄT",
-          description: "Gelenkflexibilität. Pflanzenmischung zur Unterstützung empfindlicher Bereiche und der Mobilität."
+          description: "Pflanzenmischung zur Unterstützung empfindlicher Bereiche."
         },
-        argiles: {
-          name: "RESET Renaissance Duo",
-          subtitle: "NATÜRLICHES ADSORBENS",
-          description: "Hohe Präzision (6µm). Eine kraftvolle entgiftende Kur, um den Körper von Giftstoffen zu befreien."
+        kit_reset: {
+          name: "RESET Renaissance Duo — Erden- & Pflanzen-Set",
+          subtitle: "DETOX- & TERRAIN-KUR",
+          description: "6µm Clinoptilolit-Zeolith und entwässernde Pflanzenmischung. Ideal für diejenigen, die bereits ein BloomLab besitzen."
         },
-        trio: {
-          name: "3er-Pack kaufen",
-          subtitle: "KOSTENLOSER VERSAND",
-          description: "Wählen Sie Ihre 3 Lieblingsmischungen und genießen Sie den kostenlosen Versand. Ideal für ein vollständiges Protokoll."
+        freemium_access: {
+          name: "Entdecker-Zugang — 10 kostenlose Rezepte",
+          subtitle: "IHR EINSTIEGSPUNKT",
+          description: "Erkunden Sie das Bloom-Universum mit einer Auswahl von 10 geführten Rezepten, um mit Ihren ersten Infusionen zu beginnen."
         },
-        bundle_cosme: {
-          name: "BloomLab + Kosmetik-Kit Pack",
-          subtitle: "TOTUM BEAUTY SELECTION",
-          description: "Die BloomLab zusammen mit 3 Signature-Rezepten und Formulierungsausrüstung für Ihre Gesichts- & Körperpflege."
-        },
-        bundle_culinary: {
-          name: "BloomLab + Kulinarik-Kit Pack",
-          subtitle: "FUNKTIONELLE GASTRONOMIE",
-          description: "Die BloomLab mit einem Set aromatischer Pflanzen und Rezeptheft für botanische Öle und Butter."
-        },
-        bundle_reset: {
-          name: "BloomLab + Reset-Protokoll Pack",
-          subtitle: "BIOLOGISCHE SOUVERÄNITÄT",
-          description: "Das umfassendste Angebot: BloomLab + Pflanzen-Kits + Unbegrenzter Zugang zum 21-Tage-Reset-Protokoll."
+        premium_access: {
+          name: "Premium-Abonnement — Unbegrenzter Zugang",
+          subtitle: "GESAMTES HERBARIUM & PROTOKOLLE",
+          description: "Greifen Sie auf über 100 Rezepte, Expertenprotokolle und monatliche Updates zu. 1 Monat kostenlos für BloomLab-Kunden."
         }
       }
     },

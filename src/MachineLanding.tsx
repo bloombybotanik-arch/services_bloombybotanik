@@ -1,16 +1,47 @@
-import React from 'react';
-import { ChevronRight, ShieldCheck, Zap, FlaskConical, Award, Star, Activity, ArrowRight, Check, Utensils, CheckCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { ChevronRight, ShieldCheck, Zap, FlaskConical, Award, Star, Activity, ArrowRight, Check, Utensils, CheckCircle, X, Maximize2 } from 'lucide-react';
 import bloomLabImg from './assets/images/bloomlab_main_1784887530345.jpeg';
 import bloomSoinsImg from './assets/images/Bloom_Soins.jpg';
 import fourMmImg from './assets/images/4MM.jpg';
+import { motion, AnimatePresence } from 'motion/react';
 
 import { translations, Language } from './translations';
 
 export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view: any) => void, lang: Language }) {
   const t = translations[lang].machine;
+  const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
 
   return (
     <div className="animate-in fade-in duration-700">
+      {/* Fullscreen Image Overlay */}
+      <AnimatePresence>
+        {fullscreenImage && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setFullscreenImage(null)}
+            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-12 cursor-zoom-out"
+          >
+            <button 
+              onClick={() => setFullscreenImage(null)}
+              className="absolute top-6 right-6 p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
+            >
+              <X className="w-8 h-8" />
+            </button>
+            <motion.img 
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              src={fullscreenImage} 
+              alt="Fullscreen view" 
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#293228]">
         <div className="absolute inset-0 opacity-20">
@@ -133,15 +164,27 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                   {t.levels.lvl1.cta} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
-              <div className="relative aspect-square rounded-[40px] overflow-hidden bg-[#F5F3EB] hidden lg:block">
+              <div 
+                className="relative aspect-square rounded-[40px] overflow-hidden bg-[#F5F3EB] hidden lg:block cursor-zoom-in group/img"
+                onClick={() => setFullscreenImage("https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=800")}
+              >
                 <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" alt="Culinaire" />
+                <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover/img:opacity-100">
+                  <Maximize2 className="w-8 h-8 text-white" />
+                </div>
               </div>
             </div>
 
             {/* Niveau 2 */}
             <div className="grid lg:grid-cols-[450px_1fr] gap-12 items-center bg-white rounded-[60px] p-8 md:p-16 border border-botanik-green/5 shadow-sm hover:shadow-xl transition-all duration-700 group">
-              <div className="relative aspect-square rounded-[40px] overflow-hidden bg-[#F5F3EB] hidden lg:block">
+              <div 
+                className="relative aspect-square rounded-[40px] overflow-hidden bg-[#F5F3EB] hidden lg:block cursor-zoom-in group/img"
+                onClick={() => setFullscreenImage(bloomSoinsImg)}
+              >
                 <img src={bloomSoinsImg} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" alt="Cosmétique" />
+                <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover/img:opacity-100">
+                  <Maximize2 className="w-8 h-8 text-white" />
+                </div>
               </div>
               <div>
                 <div className="flex items-center gap-4 mb-8">
@@ -213,8 +256,14 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                   {t.levels.lvl3.cta} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
-              <div className="relative aspect-square rounded-[40px] overflow-hidden bg-[#F5F3EB] hidden lg:block">
+              <div 
+                className="relative aspect-square rounded-[40px] overflow-hidden bg-[#F5F3EB] hidden lg:block cursor-zoom-in group/img"
+                onClick={() => setFullscreenImage(fourMmImg)}
+              >
                 <img src={fourMmImg} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" alt="Expert" />
+                <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover/img:opacity-100">
+                  <Maximize2 className="w-8 h-8 text-white" />
+                </div>
               </div>
             </div>
           </div>

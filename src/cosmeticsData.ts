@@ -883,8 +883,60 @@ export const cosmeticsRecipesFR: CosmeticsRecipe[] = [
     conditionnement: "Pot 100ml.",
     mode_utilisation: "Massage des pieds le soir.",
     synergies_kits_internes: "Kit Reset Homéostasique",
-    conservation: "12 mois.",
+    conservation: "6 mois.",
     precautions: "Effet glaçon garanti."
+  },
+  {
+    plant_id: "dentifrice_remineralisant_coco_girofle",
+    nom_commun: "Dentifrice Reminéralisant & Pubbling Coco — Hygiène Buccale",
+    type_produit: "Dentifrice solide / Macérat buccal",
+    categorie: "Visage",
+    peau: "Toutes",
+    cible: "Reminéralisation de l'émail, hygiène anti-plaque, santé des gencives, inflammation buccale",
+    solvants: {
+      phase_A: { type: "Huile de Coco BIO", volume: "200ml", role: "Base lipidique, anti-plaque, anti-inflammatoire" },
+      phase_B: { type: "Phase poudreuse", volume: "N/A", role: "Reminéralisation et texture" }
+    },
+    plantes: {
+      phase_A: { nom: "Clou de Girofle & Cannelle", partie: "Moulus / Poudre", grammage: "10g + 2g", actifs: "Eugénol, cinnamaldéhyde (antiseptiques puissants)" },
+      phase_B: { nom: "Hydroxyapatite & Argile", partie: "Poudres fines", grammage: "15g + 30g", actifs: "Minéraux biomimétiques, adsorption des toxines" }
+    },
+    parametres_bloomlab: {
+      phase_A: { temp: "45°C", temps: "2h00", agitation: "Douce" },
+      phase_B: { temp: "N/A", temps: "N/A", agitation: "N/A" }
+    },
+    recette_pas_a_pas: {
+      batch_standard: "Cible BloomLab : 200ml d'huile infusée + poudres pour ~250g de dentifrice",
+      ingredients: {
+        phase_A: ["200ml Huile de Noix de Coco BIO", "10g Clous de Girofle moulus", "2g Cannelle en poudre"],
+        phase_B: ["30g Argile blanche (kaolin)", "15g Hydroxyapatite nano-biodisponible", "10g Bicarbonate de sodium alimentaire", "10g Xylitol", "2g Extrait de réglisse", "10 gouttes HE Menthe poivrée"]
+      },
+      phase_A_instructions: [
+        "1. Versez l'huile de coco dans la cuve (elle fondra dès 25°C).",
+        "2. Ajoutez les clous de girofle et la cannelle.",
+        "3. Sélectionnez TEMP 45°C, TEMPS 2h00, agitation douce.",
+        "4. Filtrez l'huile encore tiède avec le sac filtre fin."
+      ],
+      transition: [
+        "1. Laissez l'huile infusée refroidir jusqu'à ce qu'elle commence à redevenir opaque/pommade.",
+        "2. Transférez dans un bol de mélange."
+      ],
+      phase_B_instructions: [
+        "1. Ajoutez progressivement l'argile et l'hydroxyapatite en mélangeant.",
+        "2. Incorporez le bicarbonate, le xylitol et la réglisse.",
+        "3. Terminez par l'huile essentielle de Menthe poivrée."
+      ],
+      filtration_et_finition: [
+        "1. Mélangez vigoureusement pour obtenir une pâte lisse sans grumeaux.",
+        "2. Transférez dans un pot opaque en verre.",
+        "3. Étiquetez avec la date de fabrication."
+      ]
+    },
+    conditionnement: "Pot en verre ambré ou aluminium de 100ml.",
+    mode_utilisation: "Pour le brossage : une petite noisette sur la brosse. Pour le 'Pubbling' : 1 cuillère à soupe d'huile infusée en bouche pendant 10 min avant le brossage.",
+    synergies_kits_internes: "Kit Pureté Sanguine (réduction de l'inflammation gingivale)",
+    conservation: "4 à 6 mois à l'abri de la lumière.",
+    precautions: "Ne pas avaler. Déconseillé aux enfants de moins de 6 ans. L'huile essentielle de menthe est puissante."
   }
 ];
 
@@ -907,6 +959,7 @@ export const cosmeticsRecipesEN: CosmeticsRecipe[] = cosmeticsRecipesFR.map(r =>
     "huile_jambes_legeres": { name: "Light Legs Oil — Red Vine & Horse Chestnut", target: "Heavy legs, spider veins, drainage" },
     "masque_capillaire_nutrition": { name: "Nutrition Hair Mask — Avocado & Shea", target: "Dry, brittle hair, damaged ends" },
     "baume_mains_karite": { name: "Protective Hand Balm — Shea & Glycerin", target: "Dry hands, cracks, daily protection" },
+    "dentifrice_remineralisant_coco_girofle": { name: "Remineralizing Toothpaste & Coco Pubbling", target: "Enamel remineralization, anti-plaque hygiene, gum health" },
     "huile_demaquillante_yeux": { name: "Eye Makeup Remover Oil — Cornflower & Almond", target: "Gentle eye makeup removal, lash care" },
     "elixir_nuit_apaisant": { name: "Soothing Night Elixir — Lemon Balm & Valerian", target: "Skin fatigued by stress, nocturnal relaxation" },
     "serum_hydratation_profonde": { name: "Hydration Serum — Aloe & Hyaluronic", target: "Lack of water, tightness" },

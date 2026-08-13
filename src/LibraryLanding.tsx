@@ -20,7 +20,7 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
     { 
       id: 'therapeutic', 
       name: 'Thérapeutique', 
-      view: 'herbier', 
+      view: 'library', 
       icon: Leaf, 
       count: 56,
       color: 'text-botanik-green',
@@ -79,7 +79,7 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
                   {filteredPlants.map((plant) => (
                     <div 
                       key={plant.id}
-                      onClick={() => onNavigate(plant.source === 'therapeutic' ? 'herbier' : plant.source === 'culinary' ? 'culinaire' : 'cosmetiques', plant.id)}
+                      onClick={() => onNavigate(plant.source === 'therapeutic' ? 'library' : plant.source === 'culinary' ? 'culinaire' : 'cosmetiques', plant.id)}
                       className="px-8 py-4 hover:bg-botanik-green/5 cursor-pointer flex items-center justify-between border-b border-botanik-green/5 last:border-0 group"
                     >
                       <div>
@@ -116,7 +116,7 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
 
         <div className="grid md:grid-cols-3 gap-8">
           {[
-            { id: 'therapeutic', t: t.categories.therapeutic, view: 'herbier', icon: Leaf, count: 56, color: 'text-botanik-green', bg: 'bg-botanik-green/5' },
+            { id: 'therapeutic', t: t.categories.therapeutic, view: 'library', icon: Leaf, count: 56, color: 'text-botanik-green', bg: 'bg-botanik-green/5' },
             { id: 'culinary', t: t.categories.culinary, view: 'culinaire', icon: Utensils, count: 15, color: 'text-botanik-orange', bg: 'bg-botanik-orange/5' },
             { id: 'cosmetic', t: t.categories.cosmetic, view: 'cosmetiques', icon: Sparkles, count: 22, color: 'text-botanik-green', bg: 'bg-botanik-green/5' }
           ].map((cat) => (
@@ -155,7 +155,7 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
             {unifiedBotanicalDatabase.sort((a, b) => a.name.localeCompare(b.name)).map((plant) => (
               <div 
                 key={plant.id}
-                onClick={() => onNavigate(plant.source === 'therapeutic' ? 'herbier' : plant.source === 'culinary' ? 'culinaire' : 'cosmetiques', plant.id)}
+                onClick={() => onNavigate(plant.source === 'therapeutic' ? 'library' : plant.source === 'culinary' ? 'culinaire' : 'cosmetiques', plant.id)}
                 className="bg-white p-4 rounded-2xl border border-botanik-green/5 hover:border-botanik-orange/30 hover:shadow-lg transition-all cursor-pointer group"
               >
                 <div className="text-xs font-bold text-botanik-green mb-1 truncate group-hover:text-botanik-orange transition-colors">

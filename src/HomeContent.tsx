@@ -19,8 +19,34 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
   const [selectedResetDetail, setSelectedResetDetail] = useState<ResetSectionDetail | null>(null);
   const t = translations[lang];
 
+  // Promotion Logic (Sept 2026 -> Jan 2027)
+  const now = new Date();
+  const isPromoActive = now >= new Date('2026-09-01') && now < new Date('2027-01-01');
+  const bloomLabPrice = isPromoActive ? 239.00 : 289.00;
+  const bundlePrice = 59.00;
+
+  const isFR = lang === 'fr';
+
+  // Home Page SEO Schema
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": isFR ? "Bloom by BotaniK — Soins Botaniques Famille" : "Bloom by BotaniK — Family Botanical Care",
+    "description": "Découvrez l'extraction botanique de précision. Soins naturels pour toute la famille, remèdes maison et autonomie santé.",
+    "specialAnnouncement": {
+      "@type": "SpecialAnnouncement",
+      "name": "Offre Rentrée 2026 Soins Famille",
+      "text": "Profitez de l'herbier complet à 59€ et de la BloomLab à 239€ pour prendre soin de votre famille.",
+      "url": "https://bloombybotanik.com/shop"
+    }
+  };
+
   return (
     <div className="max-w-[1200px] mx-auto px-6 py-12 lg:py-24 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+      {/* SEO Injection */}
+      <script type="application/ld+json">
+        {JSON.stringify(homeSchema)}
+      </script>
       
       <AnimatePresence>
         {selectedResetDetail && (
@@ -130,8 +156,8 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
           </div>
 
           {/* RESET */}
-          <div className="group relative bg-[#F5F7FF] rounded-[40px] p-8 border border-blue-100 hover:border-botanik-green transition-all duration-500 overflow-hidden">
-            <div className="absolute -right-4 -top-4 w-24 h-24 bg-blue-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+          <div className="group relative bg-[#F1F5F1] rounded-[40px] p-8 border border-botanik-green/10 hover:border-botanik-green transition-all duration-500 overflow-hidden">
+            <div className="absolute -right-4 -top-4 w-24 h-24 bg-botanik-green/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
             <div className="relative z-10">
               <div className="w-14 h-14 bg-botanik-green/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
                 <Activity className="w-7 h-7 text-botanik-green" />
@@ -151,6 +177,59 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
         </div>
       </section>
 
+      {/* OFFRES DE LA RENTRÉE 2026 */}
+      <section className="mb-24 md:mb-32">
+        <div className="bg-botanik-orange/5 rounded-[40px] p-8 md:p-12 border border-botanik-orange/20">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="max-w-xl">
+              <span className="inline-block px-3 py-1 bg-botanik-orange text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">
+                {lang === 'fr' ? "OFFRES DE LA RENTRÉE 2026 — SPÉCIAL FAMILLE" : "2026 BACK TO SCHOOL — FAMILY SPECIAL"}
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-botanik-green mb-4">
+                {lang === 'fr' ? "Prenez soin de toute la Famille naturellement" : "Take care of the whole Family naturally"}
+              </h2>
+              <p className="text-botanik-green/70 mb-6 font-light">
+                {lang === 'fr' 
+                  ? "Découvrez notre herbier complet pensé pour le bien-être de tous, des petits aux plus grands." 
+                  : "Discover our complete herbarium designed for the well-being of all, from the youngest to the oldest."}
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full md:w-auto">
+              {/* BloomLab Card */}
+              <div className="bg-white p-6 rounded-3xl shadow-sm border border-botanik-green/5 flex flex-col items-center text-center">
+                <span className="text-[10px] font-bold text-botanik-green/40 uppercase mb-2">BloomLab®</span>
+                <div className="flex items-baseline gap-2 mb-4">
+                  <span className="text-2xl font-bold text-botanik-orange">{bloomLabPrice}€</span>
+                  <span className="text-sm text-botanik-green/30 line-through">289€</span>
+                </div>
+                <button 
+                  onClick={() => onNavigate('shop')}
+                  className="w-full py-2 bg-botanik-green text-white text-xs font-bold rounded-xl hover:bg-botanik-green/90 transition-colors"
+                >
+                  {lang === 'fr' ? "Voir l'offre" : "View offer"}
+                </button>
+              </div>
+
+              {/* Bundle Card */}
+              <div className="bg-white p-6 rounded-3xl shadow-sm border border-botanik-green/5 flex flex-col items-center text-center">
+                <span className="text-[10px] font-bold text-botanik-green/40 uppercase mb-2">L'Herbier Complet</span>
+                <div className="flex items-baseline gap-2 mb-4">
+                  <span className="text-2xl font-bold text-botanik-orange">{bundlePrice}€</span>
+                  <span className="text-sm text-botanik-green/30 line-through">87€</span>
+                </div>
+                <button 
+                  onClick={() => onNavigate('shop')}
+                  className="w-full py-2 bg-botanik-green text-white text-xs font-bold rounded-xl hover:bg-botanik-green/90 transition-colors"
+                >
+                  {lang === 'fr' ? "Voir l'offre" : "View offer"}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PAGE 1 — COMMENCER ICI */}
       <section id="protocole" className="mb-24 md:mb-32 scroll-mt-24">
         <div className="bg-white rounded-[40px] md:rounded-[60px] p-6 md:p-12 lg:p-16 border border-botanik-green/5 shadow-2xl mb-16 md:mb-24 overflow-hidden relative group">
@@ -162,8 +241,9 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
                 <span className="w-1 h-1 rounded-full bg-botanik-orange/20" />
                 <span>{t.home.hero.onboarding}</span>
               </div>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-botanik-green mb-6 md:mb-8 leading-[1.1]">
-                {t.home.hero.title}
+              <h1 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6 md:mb-8 leading-[1.1]">
+                {t.home.hero.title.replace(': Le Guide', '')}
+                <span className="text-botanik-orange">: Le Guide</span>
               </h1>
               <p className="text-base md:text-lg lg:text-xl text-botanik-green/60 leading-relaxed font-light">
                 {t.home.hero.description}
@@ -419,57 +499,65 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          <div className="bg-white p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-botanik-green/5 shadow-sm hover:border-botanik-orange transition-all duration-300 flex flex-col group">
-            <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-4">{t.home.way.discover.title}</h4>
-            <p className="text-botanik-green/60 text-xs md:text-sm mb-6 md:mb-8 leading-relaxed flex-grow">
-              {t.home.way.discover.description}
-            </p>
-            <button 
+            <div 
               onClick={() => onNavigate('manifeste')}
-              className="flex items-center gap-2 text-botanik-orange font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] group-hover:gap-3 transition-all"
+              className="bg-white p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-botanik-green/5 shadow-sm hover:border-botanik-orange transition-all duration-300 flex flex-col group cursor-pointer"
             >
-              {t.home.way.discover.cta} <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
+              <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-4">{t.home.way.discover.title}</h4>
+              <p className="text-botanik-green/60 text-xs md:text-sm mb-6 md:mb-8 leading-relaxed flex-grow">
+                {t.home.way.discover.description}
+              </p>
+              <button 
+                className="flex items-center gap-2 text-botanik-orange font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] group-hover:gap-3 transition-all"
+              >
+                {t.home.way.discover.cta} <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
 
-          <div className="bg-white p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-botanik-green/5 shadow-sm hover:border-botanik-orange transition-all duration-300 flex flex-col group">
-            <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-4">{t.home.way.solution.title}</h4>
-            <p className="text-botanik-green/60 text-xs md:text-sm mb-6 md:mb-8 leading-relaxed flex-grow">
-              {t.home.way.solution.description}
-            </p>
-            <button 
+            <div 
               onClick={() => onNavigate('boutique')}
-              className="flex items-center gap-2 text-botanik-orange font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] group-hover:gap-3 transition-all"
+              className="bg-white p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-botanik-green/5 shadow-sm hover:border-botanik-orange transition-all duration-300 flex flex-col group cursor-pointer"
             >
-              {t.home.way.solution.cta} <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
+              <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-4">{t.home.way.solution.title}</h4>
+              <p className="text-botanik-green/60 text-xs md:text-sm mb-6 md:mb-8 leading-relaxed flex-grow">
+                {t.home.way.solution.description}
+              </p>
+              <button 
+                className="flex items-center gap-2 text-botanik-orange font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] group-hover:gap-3 transition-all"
+              >
+                {t.home.way.solution.cta} <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
 
-          <div className="bg-white p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-botanik-green/5 shadow-sm hover:border-botanik-orange transition-all duration-300 flex flex-col group">
-            <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-4">{t.home.way.reset.title}</h4>
-            <p className="text-botanik-green/60 text-xs md:text-sm mb-6 md:mb-8 leading-relaxed flex-grow">
-              {t.home.way.reset.description}
-            </p>
-            <button 
+            <div 
               onClick={() => onNavigate('phytotherapie-reset')}
-              className="flex items-center gap-2 text-botanik-orange font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] group-hover:gap-3 transition-all"
+              className="bg-white p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-botanik-green/5 shadow-sm hover:border-botanik-orange transition-all duration-300 flex flex-col group cursor-pointer"
             >
-              {t.home.way.reset.cta} <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
+              <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-4">{t.home.way.reset.title}</h4>
+              <p className="text-botanik-green/60 text-xs md:text-sm mb-6 md:mb-8 leading-relaxed flex-grow">
+                {t.home.way.reset.description}
+              </p>
+              <button 
+                className="flex items-center gap-2 text-botanik-orange font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] group-hover:gap-3 transition-all"
+              >
+                {t.home.way.reset.cta} <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
 
-          <div className="bg-white p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-botanik-green/5 shadow-sm hover:border-botanik-orange transition-all duration-300 flex flex-col group">
-            <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-4">{t.home.way.more.title}</h4>
-            <p className="text-botanik-green/60 text-xs md:text-sm mb-6 md:mb-8 leading-relaxed flex-grow">
-              {t.home.way.more.description}
-            </p>
-            <button 
-              onClick={() => onNavigate('herbier')}
-              className="flex items-center gap-2 text-botanik-orange font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] group-hover:gap-3 transition-all"
+            <div 
+              onClick={() => onNavigate('library-landing')}
+              className="bg-white p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-botanik-green/5 shadow-sm hover:border-botanik-orange transition-all duration-300 flex flex-col group cursor-pointer"
             >
-              {t.home.way.more.cta} <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
+              <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-4">{t.home.way.more.title}</h4>
+              <p className="text-botanik-green/60 text-xs md:text-sm mb-6 md:mb-8 leading-relaxed flex-grow">
+                {t.home.way.more.description}
+              </p>
+              <button 
+                className="flex items-center gap-2 text-botanik-orange font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] group-hover:gap-3 transition-all"
+              >
+                {t.home.way.more.cta} <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
         </div>
       </section>
 

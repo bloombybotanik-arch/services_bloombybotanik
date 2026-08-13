@@ -226,7 +226,7 @@ export const FloatingChat = ({ user, lang }: { user?: FirebaseUser | null, lang:
           )}
         </AnimatePresence>
         {!isOpen && (
-          <span className="absolute right-full mr-4 bg-botanik-green text-white px-4 py-2 rounded-xl text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl">
+          <span className="absolute bottom-full mb-4 right-0 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 lg:right-full lg:mr-4 bg-botanik-green text-white px-4 py-2 rounded-xl text-xs lg:text-sm font-bold opacity-0 group-hover:opacity-100 transition-all whitespace-nowrap pointer-events-none shadow-xl transform translate-y-2 group-hover:translate-y-0 lg:group-hover:-translate-y-1/2">
             {lang === 'fr' ? "Besoin d'aide ?" : "Need help?"}
           </span>
         )}
