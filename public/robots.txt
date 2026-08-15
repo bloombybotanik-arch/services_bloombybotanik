@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
+
+# Sitemap de l'App React (Source de vérité site principal)
 Sitemap: https://bloombybotanik.com/sitemap.xml
