@@ -334,28 +334,28 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
             </div>
 
             {/* Détails des Phases */}
-            <div className="bg-white rounded-[60px] p-10 md:p-20 border border-botanik-green/5 shadow-2xl mt-16 relative overflow-hidden">
+            <div className="bg-white rounded-[60px] p-8 md:p-20 border border-botanik-green/5 shadow-2xl mt-16 relative overflow-hidden">
                <div className="absolute top-0 right-0 w-64 h-64 bg-botanik-orange/5 rounded-bl-full -z-10" />
                <div className="grid lg:grid-cols-2 gap-16 items-center">
                   <div>
-                    <h3 className="text-2xl md:text-4xl font-bold text-botanik-green mb-8">Phase 0 : Préparation des Émonctoires</h3>
-                    <div className="space-y-6">
-                       <div className="flex gap-6 p-6 bg-[#F9F9F7] rounded-3xl border border-botanik-green/5">
-                          <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shadow-sm shrink-0">
+                    <h3 className="text-2xl md:text-4xl font-bold text-botanik-green mb-12">Phase 0 : Préparation des Émonctoires</h3>
+                    <div className="space-y-12">
+                       <div className="flex flex-col items-start gap-4">
+                          <div className="w-12 h-12 rounded-2xl bg-[#F9F9F7] flex items-center justify-center shadow-sm border border-botanik-green/5">
                             <Wind className="w-6 h-6 text-botanik-orange" />
                           </div>
-                          <div>
-                            <h4 className="font-bold text-botanik-green mb-2">Ouverture & Drainage (Prêle, Orthosiphon)</h4>
-                            <p className="text-sm text-botanik-green/60">Étape cruciale pour éliminer les acides et préparer la filtration lymphatique. Prépare les reins et la lymphe.</p>
+                          <div className="w-full">
+                            <h4 className="text-xl font-bold text-botanik-green mb-3">Ouverture & Drainage (Prêle, Orthosiphon)</h4>
+                            <p className="text-base text-botanik-green/60 leading-relaxed">Étape cruciale pour éliminer les acides et préparer la filtration lymphatique. Prépare les reins et la lymphe.</p>
                           </div>
                        </div>
-                       <div className="flex gap-6 p-6 bg-[#F9F9F7] rounded-3xl border border-botanik-green/5">
-                          <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shadow-sm shrink-0">
+                       <div className="flex flex-col items-start gap-4">
+                          <div className="w-12 h-12 rounded-2xl bg-[#F9F9F7] flex items-center justify-center shadow-sm border border-botanik-green/5">
                             <Shield className="w-6 h-6 text-botanik-orange" />
                           </div>
-                          <div>
-                            <h4 className="font-bold text-botanik-green mb-2">Dépuration & Douceur (Bardane, Mauve)</h4>
-                            <p className="text-sm text-botanik-green/60">Soutient le foie et l'intestin tout en apaisant les muqueuses. Indispensable avant le drainage profond.</p>
+                          <div className="w-full">
+                            <h4 className="text-xl font-bold text-botanik-green mb-3">Dépuration & Douceur (Bardane, Mauve)</h4>
+                            <p className="text-base text-botanik-green/60 leading-relaxed">Soutient le foie et l'intestin tout en apaisant les muqueuses. Indispensable avant le drainage profond.</p>
                           </div>
                        </div>
                     </div>
@@ -370,28 +370,28 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
                </div>
             </div>
 
-            <div className="bg-white rounded-[60px] p-10 md:p-20 border border-botanik-green/5 shadow-2xl mt-16 relative overflow-hidden">
+            <div className="bg-white rounded-[60px] p-8 md:p-20 border border-botanik-green/5 shadow-2xl mt-16 relative overflow-hidden">
                <div className="absolute top-0 right-0 w-64 h-64 bg-botanik-orange/5 rounded-bl-full -z-10" />
                <div className="grid lg:grid-cols-2 gap-16 items-center">
                   <div>
-                    <h3 className="text-2xl md:text-4xl font-bold text-botanik-green mb-8">Phase 1 : Relance Hépatique</h3>
-                    <div className="space-y-6">
-                       <div className="flex gap-6 p-6 bg-[#F9F9F7] rounded-3xl border border-botanik-green/5">
-                          <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shadow-sm shrink-0">
+                    <h3 className="text-2xl md:text-4xl font-bold text-botanik-green mb-12">Phase 1 : Relance Hépatique</h3>
+                    <div className="space-y-12">
+                       <div className="flex flex-col items-start gap-4">
+                          <div className="w-12 h-12 rounded-2xl bg-[#F9F9F7] flex items-center justify-center shadow-sm border border-botanik-green/5">
                             <FlaskConical className="w-6 h-6 text-botanik-orange" />
                           </div>
-                          <div>
-                            <h4 className="font-bold text-botanik-green mb-2">Mobilisation Totale (Gentiane, Radis Noir)</h4>
-                            <p className="text-sm text-botanik-green/60">Gentiane, Salsepareille, Pissenlit racine et Radis noir pour mobiliser les toxines et relancer la filtration profonde.</p>
+                          <div className="w-full">
+                            <h4 className="text-xl font-bold text-botanik-green mb-3">Mobilisation Totale (Gentiane, Radis Noir)</h4>
+                            <p className="text-base text-botanik-green/60 leading-relaxed">Gentiane, Salsepareille, Pissenlit racine et Radis noir pour mobiliser les toxines et relancer la filtration profonde.</p>
                           </div>
                        </div>
-                       <div className="flex gap-6 p-6 bg-[#F9F9F7] rounded-3xl border border-botanik-green/5">
-                          <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shadow-sm shrink-0">
+                       <div className="flex flex-col items-start gap-4">
+                          <div className="w-12 h-12 rounded-2xl bg-[#F9F9F7] flex items-center justify-center shadow-sm border border-botanik-green/5">
                             <Waves className="w-6 h-6 text-botanik-orange" />
                           </div>
-                          <div>
-                            <h4 className="font-bold text-botanik-green mb-2">Soutien Bilio-Digestif (Artichaut, Chrysanthellum)</h4>
-                            <p className="text-sm text-botanik-green/60">Artichaut, Orange amère, Gingembre et Poivre Noir pour protéger les hépatocytes et fluidifier la bile.</p>
+                          <div className="w-full">
+                            <h4 className="text-xl font-bold text-botanik-green mb-3">Soutien Bilio-Digestif (Artichaut, Chrysanthellum)</h4>
+                            <p className="text-base text-botanik-green/60 leading-relaxed">Artichaut, Orange amère, Gingembre et Poivre Noir pour protéger les hépatocytes et fluidifier la bile.</p>
                           </div>
                        </div>
                     </div>
@@ -421,28 +421,28 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
                </div>
             </div>
 
-            <div className="bg-white rounded-[60px] p-10 md:p-20 border border-botanik-green/5 shadow-2xl mt-16 relative overflow-hidden">
+            <div className="bg-white rounded-[60px] p-8 md:p-20 border border-botanik-green/5 shadow-2xl mt-16 relative overflow-hidden">
                <div className="absolute top-0 right-0 w-64 h-64 bg-botanik-orange/5 rounded-bl-full -z-10" />
                <div className="grid lg:grid-cols-2 gap-16 items-center">
                   <div>
-                    <h3 className="text-2xl md:text-4xl font-bold text-botanik-green mb-8">Phase 2 : Pureté Sanguine</h3>
-                    <div className="space-y-6">
-                       <div className="flex gap-6 p-6 bg-[#F9F9F7] rounded-3xl border border-botanik-green/5">
-                          <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shadow-sm shrink-0">
+                    <h3 className="text-2xl md:text-4xl font-bold text-botanik-green mb-12">Phase 2 : Pureté Sanguine</h3>
+                    <div className="space-y-12">
+                       <div className="flex flex-col items-start gap-4">
+                          <div className="w-12 h-12 rounded-2xl bg-[#F9F9F7] flex items-center justify-center shadow-sm border border-botanik-green/5">
                             <Shield className="w-6 h-6 text-botanik-orange" />
                           </div>
-                          <div>
-                            <h4 className="font-bold text-botanik-green mb-2">Purification du Sang (Manjishtha, Ortie)</h4>
-                            <p className="text-sm text-botanik-green/60">Nettoyage de fond du terrain sanguin et diminution de l'inflammation circulante via des plantes ancestrales.</p>
+                          <div className="w-full">
+                            <h4 className="text-xl font-bold text-botanik-green mb-3">Purification du Sang (Manjishtha, Ortie)</h4>
+                            <p className="text-base text-botanik-green/60 leading-relaxed">Nettoyage de fond du terrain sanguin et diminution de l'inflammation circulante via des plantes ancestrales.</p>
                           </div>
                        </div>
-                       <div className="flex gap-6 p-6 bg-[#F9F9F7] rounded-3xl border border-botanik-green/5">
-                          <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shadow-sm shrink-0">
+                       <div className="flex flex-col items-start gap-4">
+                          <div className="w-12 h-12 rounded-2xl bg-[#F9F9F7] flex items-center justify-center shadow-sm border border-botanik-green/5">
                             <Activity className="w-6 h-6 text-botanik-orange" />
                           </div>
-                          <div>
-                            <h4 className="font-bold text-botanik-green mb-2">Anti-Inflammatoire Global (Cassis, Curcuma)</h4>
-                            <p className="text-sm text-botanik-green/60">Soutien de la réactivité immunitaire et protection des tissus contre l'inflammation de bas grade.</p>
+                          <div className="w-full">
+                            <h4 className="text-xl font-bold text-botanik-green mb-3">Anti-Inflammatoire Global (Cassis, Curcuma)</h4>
+                            <p className="text-base text-botanik-green/60 leading-relaxed">Soutien de la réactivité immunitaire et protection des tissus contre l'inflammation de bas grade.</p>
                           </div>
                        </div>
                     </div>
@@ -457,28 +457,28 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
                </div>
             </div>
 
-            <div className="bg-white rounded-[60px] p-10 md:p-20 border border-botanik-green/5 shadow-2xl mt-16 relative overflow-hidden">
+            <div className="bg-white rounded-[60px] p-8 md:p-20 border border-botanik-green/5 shadow-2xl mt-16 relative overflow-hidden">
                <div className="absolute top-0 right-0 w-64 h-64 bg-botanik-orange/5 rounded-bl-full -z-10" />
                <div className="grid lg:grid-cols-2 gap-16 items-center">
                   <div>
-                    <h3 className="text-2xl md:text-4xl font-bold text-botanik-green mb-8">Phase 3 : Stabilisation & Renforcement</h3>
-                    <div className="space-y-6">
-                       <div className="flex gap-6 p-6 bg-[#F9F9F7] rounded-3xl border border-botanik-green/5">
-                          <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shadow-sm shrink-0">
+                    <h3 className="text-2xl md:text-4xl font-bold text-botanik-green mb-12">Phase 3 : Stabilisation & Renforcement</h3>
+                    <div className="space-y-12">
+                       <div className="flex flex-col items-start gap-4">
+                          <div className="w-12 h-12 rounded-2xl bg-[#F9F9F7] flex items-center justify-center shadow-sm border border-botanik-green/5">
                             <Sparkles className="w-6 h-6 text-botanik-orange" />
                           </div>
-                          <div>
-                            <h4 className="font-bold text-botanik-green mb-2">Régénération Tissulaire (Centella, Prêle)</h4>
-                            <p className="text-sm text-botanik-green/60">Consolidation de la barrière intestinale et cutanée pour un ancrage durable des résultats.</p>
+                          <div className="w-full">
+                            <h4 className="text-xl font-bold text-botanik-green mb-3">Régénération Tissulaire (Centella, Prêle)</h4>
+                            <p className="text-base text-botanik-green/60 leading-relaxed">Consolidation de la barrière intestinale et cutanée pour un ancrage durable des résultats.</p>
                           </div>
                        </div>
-                       <div className="flex gap-6 p-6 bg-[#F9F9F7] rounded-3xl border border-botanik-green/5">
-                          <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shadow-sm shrink-0">
+                       <div className="flex flex-col items-start gap-4">
+                          <div className="w-12 h-12 rounded-2xl bg-[#F9F9F7] flex items-center justify-center shadow-sm border border-botanik-green/5">
                             <Zap className="w-6 h-6 text-botanik-orange" />
                           </div>
-                          <div>
-                            <h4 className="font-bold text-botanik-green mb-2">Bouclier Immunitaire (Astragale, Romarin)</h4>
-                            <p className="text-sm text-botanik-green/60">Renforcement du terrain de fond et protection cellulaire contre les stress futurs.</p>
+                          <div className="w-full">
+                            <h4 className="text-xl font-bold text-botanik-green mb-3">Bouclier Immunitaire (Astragale, Romarin)</h4>
+                            <p className="text-base text-botanik-green/60 leading-relaxed">Renforcement du terrain de fond et protection cellulaire contre les stress futurs.</p>
                           </div>
                        </div>
                     </div>

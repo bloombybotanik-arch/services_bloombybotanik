@@ -45,7 +45,7 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl text-white/80 leading-relaxed mb-12 max-w-3xl mx-auto font-serif"
+            className="text-xl md:text-2xl text-white/80 leading-relaxed mb-12 max-w-3xl mx-auto"
           >
             Passer de la simple infusion domestique à l'extraction de grade laboratoire. 
             Découvrez comment capturer l'intégralité du génie moléculaire des plantes.

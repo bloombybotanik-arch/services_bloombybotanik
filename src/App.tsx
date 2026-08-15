@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useEffect, useState, lazy, Suspense } from 'react';
-import { Lock, ShoppingBag, BookOpen, FlaskConical, Menu, X, ChevronRight, Leaf, ShieldCheck, SearchCheck, Award, Star, User, Check, ArrowRight, ChefHat, Instagram, Youtube, Facebook, Pin as Pinterest, Music2 as TikTok, MessageSquare, Sparkles, Wind, Waves, Moon, Utensils, Activity, Globe, Settings } from 'lucide-react';
+import { useEffect, useState, lazy, Suspense, ReactNode } from 'react';
+import { Lock, ShoppingBag, BookOpen, FlaskConical, Menu, X, ChevronRight, Leaf, ShieldCheck, SearchCheck, Award, Star, User, Check, ArrowRight, ChefHat, Instagram, Youtube, Facebook, Pin as Pinterest, Music2 as TikTok, MessageSquare, Sparkles, Wind, Waves, Moon, Utensils, Activity, Globe, Settings, Droplets, MessageCircle, ShoppingCart, Home, FileText } from 'lucide-react';
 import { translations, Language } from './translations';
 import { getProducts } from './StoreContent';
 import Footer from './components/Footer';
@@ -43,6 +43,7 @@ const MachineLanding = lazy(() => import('./MachineLanding'));
 const PhytotherapyResetPage = lazy(() => import('./PhytotherapyResetPage'));
 const PillarExtraction = lazy(() => import('./PillarExtraction'));
 const PendingContent = lazy(() => import('./PendingContent'));
+const IndexBisContent = lazy(() => import('./IndexBisContent'));
 
 // Loading Placeholder for Lazy components
 const ViewLoader = () => (
@@ -62,7 +63,7 @@ const VIEW_PATHS: Record<string, string> = {
   cart: '/panier', checkout: '/checkout', guide: '/qu-est-ce-que-l-infusion-botanique',
   how_it_works: '/infusion-botanique-maison-comment-ca-marche', pending: '/en-attente',
   library: '/bibliotheque', 'pillar-extraction': '/extraction-botanique-guide-complet',
-  admin: '/admin', blog: '/blog', withdrawal: '/droit-de-retractation'
+  admin: '/admin', blog: '/blog', withdrawal: '/droit-de-retractation', indexbis: '/indexbis'
 };
 
 const PATH_VIEWS: Record<string, string> = Object.fromEntries(
@@ -96,6 +97,8 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
       seoKey = 'machine';
     } else if (currentView === 'manifeste') {
       seoKey = 'manifesto';
+    } else if (currentView === 'indexbis') {
+      seoKey = 'machine';
     } else if (currentView === 'how_it_works') {
       seoKey = 'how_it_works';
     }
@@ -147,7 +150,8 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
           "logo": {
             "@type": "ImageObject",
             "url": "https://bloombybotanik.com/logo.png"
-          }
+          },
+          "description": "N°1 de l'extraction botanique de précision. BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels."
         },
         {
           "@type": "WebSite",
@@ -160,7 +164,7 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
           "@type": "Product",
           "@id": "https://bloombybotanik.com/bloomlab/#product",
           "name": "BloomLab",
-          "description": "Extracteur Inox 304 avec précision ±0,5°C",
+          "description": "Extracteur botanique de précision BloomLab®. Machine d'extraction du totum à basse température pour phytothérapie, cosmétique et culinaire.",
           "image": "https://bloombybotanik.com/assets/images/bloomlab_main_1784887530345.jpeg",
           "brand": {
             "@type": "Brand",
@@ -175,63 +179,13 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
             "bestRating": "5",
             "worstRating": "1"
           },
-          "review": [
-            {
-              "@type": "Review",
-              "author": {
-                "@type": "Person",
-                "name": "Marie D."
-              },
-              "datePublished": "2026-06-15",
-              "reviewBody": "Une précision incroyable pour mes macérats huileux. Je ne m'en passe plus.",
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5"
-              }
-            }
-          ],
           "offers": {
             "@type": "Offer",
-            "price": "289.00",
+            "price": "239.00",
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
             "url": "https://bloombybotanik.com/bloomlab",
-            "itemCondition": "https://schema.org/NewCondition",
-            "hasMerchantReturnPolicy": {
-              "@type": "MerchantReturnPolicy",
-              "applicableCountry": "FR",
-              "returnPolicyCategory": "MerchantReturnFiniteReturnPeriod",
-              "merchantReturnDays": 14,
-              "returnMethod": "https://schema.org/ReturnByMail",
-              "returnFees": "https://schema.org/FreeReturn"
-            },
-            "shippingDetails": {
-              "@type": "OfferShippingDetails",
-              "shippingRate": {
-                "@type": "MonetaryAmount",
-                "value": "0.00",
-                "currency": "EUR"
-              },
-              "shippingDestination": {
-                "@type": "DefinedRegion",
-                "addressCountry": "FR"
-              },
-              "deliveryTime": {
-                "@type": "ShippingDeliveryTime",
-                "handlingTime": {
-                  "@type": "QuantitativeValue",
-                  "minValue": 0,
-                  "maxValue": 1,
-                  "unitCode": "d"
-                },
-                "transitTime": {
-                  "@type": "QuantitativeValue",
-                  "minValue": 2,
-                  "maxValue": 5,
-                  "unitCode": "d"
-                }
-              }
-            }
+            "itemCondition": "https://schema.org/NewCondition"
           }
         },
             ...getProducts(lang).filter((p: any) => p.id !== 'bloomlab').map((p: any) => ({
@@ -324,188 +278,169 @@ const CertificationCarousel = () => {
 
 // --- COMPONENTS ---
 
-const NavigationSidebar = ({ className = "", currentView, navigateTo, user, handleLogout, lang, setLang, t, isDiscovery, isPremium }: { className?: string, currentView: string, navigateTo: (v: any) => void, user?: any, handleLogout?: () => void, lang: Language, setLang: (l: Language) => void, t: any, isDiscovery: boolean, isPremium: boolean }) => (
-  <aside className={`w-80 h-screen sticky top-0 bg-[#293228] p-8 flex flex-col justify-between ${className}`}>
-    <div>
-      <div 
-        className="flex items-center gap-4 mb-12 cursor-pointer group/logo notranslate"
-        onClick={() => navigateTo('home')}
-        translate="no"
-      >
-        <OptimizedImage 
-          src={logoSidebar} 
-          alt="Logo Bloom by BotaniK" 
-          priority={true}
-          width={64}
-          height={64}
-          className="w-16 h-16 object-contain group-hover/logo:brightness-0 group-hover/logo:invert-[51%] group-hover/logo:sepia-[95%] group-hover/logo:saturate-[2180%] group-hover/logo:hue-rotate-[1deg] group-hover/logo:brightness-[101%] group-hover/logo:contrast-[101%] transition-all" 
-        />
-        <div className="flex flex-col leading-tight uppercase text-white group-hover/logo:text-[#F97316] transition-colors">
-          <span className="text-[11px] font-bold tracking-[0.22em] opacity-80">Bloom by</span>
-          <span className="text-xl font-black tracking-widest">botaniK</span>
-        </div>
-      </div>
+const NavigationSidebar = ({ className = "", currentView, navigateTo, user, handleLogout, lang, setLang, t, isDiscovery, isPremium }: { className?: string, currentView: string, navigateTo: (v: any) => void, user?: any, handleLogout?: () => void, lang: Language, setLang: (l: Language) => void, t: any, isDiscovery: boolean, isPremium: boolean }) => {
+  const NavItem = ({ id, label, icon: Icon, onClick, isActive, isSub }: { id?: string, label: string, icon?: any, onClick?: () => void, isActive?: boolean, isSub?: boolean }) => (
+    <button
+      onClick={onClick || (() => navigateTo(id as any))}
+      className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all text-left group ${
+        isActive 
+          ? 'bg-white/10 text-white shadow-sm' 
+          : 'text-white/60 hover:text-white hover:bg-white/5'
+      } ${isSub ? 'pl-11 text-xs font-medium' : 'text-sm font-bold'}`}
+    >
+      {Icon && <Icon className={`w-4 h-4 shrink-0 transition-colors ${isActive ? 'text-botanik-orange' : 'group-hover:text-botanik-orange'}`} />}
+      <span className="truncate">{label}</span>
+    </button>
+  );
 
-      <LanguageSelector lang={lang} setLang={setLang} variant="sidebar" />
-
-      <nav className="mb-12">
-        <ul className="space-y-4 text-sm font-medium">
-          <li>
-            <a 
-              href="#" 
-              onClick={(e) => { e.preventDefault(); navigateTo('boutique'); }}
-              className={`flex items-center gap-3 transition-colors group ${currentView === 'boutique' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
-            >
-              <ShoppingBag className="w-4 h-4" /> {t.nav.shop}
-            </a>
-          </li>
-          {(isPremium || isDiscovery) && (
-            <li>
-              <a 
-                href="#" 
-                onClick={(e) => { e.preventDefault(); navigateTo('recipes'); }}
-                className={`flex items-center gap-3 transition-colors group ${currentView === 'recipes' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
-              >
-                <ChefHat className="w-4 h-4" /> {lang === 'fr' ? 'Mes Recettes' : 'My Recipes'}
-              </a>
-            </li>
-          )}
-          <li>
-            <div className="text-xs uppercase tracking-[0.2em] text-[#F5F3EB] mb-4 mt-8 font-semibold opacity-50">{t.nav.universes}</div>
-            <ul className="space-y-4 ml-2 border-l border-white/10 pl-4">
-              <li>
-                <a 
-                  href="#" 
-                  onClick={(e) => { e.preventDefault(); navigateTo('culinaire'); }}
-                  className={`flex items-center gap-3 transition-colors group ${currentView === 'culinaire' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
-                >
-                  <ChefHat className="w-4 h-4" /> {t.nav.culinary}
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#" 
-                  onClick={(e) => { e.preventDefault(); navigateTo('cosmetiques'); }}
-                  className={`flex items-center gap-3 transition-colors group ${currentView === 'cosmetiques' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
-                >
-                  <Star className="w-4 h-4" /> {t.nav.cosmetics}
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#" 
-                  onClick={(e) => { e.preventDefault(); navigateTo('phytotherapie-reset'); }}
-                  className={`flex items-center gap-3 transition-colors group ${currentView === 'phytotherapie-reset' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
-                >
-                  <Activity className="w-4 h-4" /> {t.nav.reset}
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className="pt-4">
-            <a 
-              href="#" 
-              onClick={(e) => { 
-                e.preventDefault(); 
-                navigateTo('home'); 
-                setTimeout(() => document.getElementById('science')?.scrollIntoView({ behavior: 'smooth' }), 100);
-              }} 
-              className="flex items-center gap-3 text-white hover:text-[#F97316] transition-colors"
-            >
-              <FlaskConical className="w-4 h-4" /> {lang === 'fr' ? 'Science du Totum' : lang === 'en' ? 'Totum Science' : 'Totum-Wissenschaft'}
-            </a>
-          </li>
-          <li>
-            <a 
-              href="#" 
-              onClick={(e) => { e.preventDefault(); navigateTo('library-landing'); }}
-              className={`flex items-center gap-3 transition-colors group ${currentView === 'library-landing' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
-            >
-              <BookOpen className="w-4 h-4" /> {t.nav.blog}
-            </a>
-          </li>
-          <li>
-            <a 
-              href="#" 
-              onClick={(e) => { e.preventDefault(); navigateTo('manifeste'); }}
-              className={`flex items-center gap-3 transition-colors group ${currentView === 'manifeste' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
-            >
-              <Leaf className="w-4 h-4" /> {t.nav.manifesto}
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-      <div className="space-y-4 mb-12">
-        <h3 className="text-xs uppercase tracking-[0.2em] text-[#F5F3EB] mb-4 font-semibold opacity-50">{lang === 'fr' ? 'Configuration' : lang === 'en' ? 'Setup' : 'Konfiguration'}</h3>
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); navigateTo('activation'); }} 
-          className={`flex items-center gap-3 text-sm font-medium transition-colors group ${currentView === 'activation' ? 'text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
-        >
-          <Settings className="w-4 h-4" /> {lang === 'fr' ? 'Activer ma BloomLab' : lang === 'en' ? 'Activate my BloomLab' : 'Meine BloomLab aktivieren'}
-        </a>
+  const NavGroup = ({ title, children }: { title: string, children: ReactNode }) => (
+    <div className="space-y-1 mb-8">
+      <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-3 select-none">
+        {title}
+      </h3>
+      <div className="space-y-0.5">
+        {children}
       </div>
     </div>
+  );
 
-    <div>
-      {/* Social Links */}
-      <div className="flex justify-between items-center px-2 mb-8">
-        <a href="https://www.youtube.com/@BloomByBotanik" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#F97316] transition-colors" aria-label="YouTube">
-          <Youtube className="w-5 h-5" />
-        </a>
-        <a href="https://fr.pinterest.com/bloombybotanik" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#F97316] transition-colors" aria-label="Pinterest">
-          <img src="https://cdn.simpleicons.org/pinterest/white" className="w-5 h-5 opacity-40 hover:opacity-100 transition-opacity" alt="Pinterest" />
-        </a>
-        <a href="https://www.instagram.com/bloombybotanik/" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#F97316] transition-colors" aria-label="Instagram">
-          <Instagram className="w-5 h-5" />
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=61577892110122" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#F97316] transition-colors" aria-label="Facebook">
-          <Facebook className="w-5 h-5" />
-        </a>
-        <a href="https://www.tiktok.com/@bloombybotanik" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#F97316] transition-colors" aria-label="TikTok">
-          <img src="https://cdn.simpleicons.org/tiktok/white" className="w-5 h-5 opacity-40 hover:opacity-100 transition-opacity" alt="TikTok" />
-        </a>
-      </div>
+  const scrollTo = (id: string) => {
+    if (currentView !== 'indexbis') {
+      navigateTo('indexbis');
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
-      {/* Auth Status */}
-      {user ? (
-        <div className="mb-6 p-4 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between">
-          <div className="flex items-center gap-3 text-sm text-white">
-            <div className="w-8 h-8 rounded-full bg-botanik-green flex items-center justify-center">
-              <User className="w-4 h-4 text-white" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-semibold text-xs truncate max-w-[120px]">{user.email}</span>
-              <button onClick={handleLogout} className="text-left text-[10px] text-white/50 hover:text-white transition-colors">Déconnexion</button>
-            </div>
+  const cartItemsCount = 0; // I will compute this from cart if available in scope
+
+  return (
+    <aside className={`w-[280px] h-screen sticky top-0 bg-botanik-green flex flex-col border-r border-white/5 z-50 ${className}`}>
+      {/* Header / Logo */}
+      <div className="p-8 pb-10">
+        <div 
+          className="flex items-center gap-3 cursor-pointer group/logo"
+          onClick={() => navigateTo('home')}
+        >
+          <img src={logoSidebar} alt="Bloom" className="w-10 h-10 object-contain group-hover:scale-105 transition-transform" />
+          <div className="flex flex-col leading-tight uppercase text-white">
+            <span className="text-[9px] font-bold tracking-[0.2em] opacity-50">Bloom by</span>
+            <span className="text-lg font-black tracking-widest">botaniK</span>
           </div>
         </div>
-        ) : (
-        <div className="mb-6">
+      </div>
+
+      {/* Main Nav */}
+      <div className="flex-1 overflow-y-auto px-4 custom-scrollbar">
+        <NavGroup title="Boutique">
+          <NavItem 
+            id="boutique" 
+            label={lang === 'fr' ? 'Découvrir la Boutique' : 'Explore Shop'} 
+            icon={ShoppingBag} 
+            isActive={currentView === 'boutique'}
+          />
+        </NavGroup>
+
+        <NavGroup title={lang === 'fr' ? 'Les 3 Univers' : 'The 3 Universes'}>
+          <NavItem 
+            id="culinaire" 
+            label={lang === 'fr' ? 'Atelier Culinaire' : 'Culinary Workshop'} 
+            icon={ChefHat} 
+            isActive={currentView === 'culinaire'}
+          />
+          <NavItem 
+            id="cosmetiques" 
+            label={lang === 'fr' ? 'Soin Cosmétique' : 'Cosmetic Care'} 
+            icon={Sparkles} 
+            isActive={currentView === 'cosmetiques'}
+          />
+          <NavItem 
+            id="phytotherapie-reset" 
+            label={lang === 'fr' ? 'Reset Homéostatique' : 'Homeostatic Reset'} 
+            icon={Wind} 
+            isActive={currentView === 'phytotherapie-reset'}
+          />
+        </NavGroup>
+
+        <NavGroup title="BloomLab">
+          <NavItem 
+            id="indexbis" 
+            label={lang === 'fr' ? 'Découvrir BloomLab®' : 'Discover BloomLab®'} 
+            icon={Settings} 
+            isActive={currentView === 'indexbis'}
+          />
+          <NavItem 
+            label={lang === 'fr' ? 'Bain-Marie vs BloomLab' : 'Bain-Marie vs BloomLab'} 
+            onClick={() => scrollTo('comparatif')}
+            isSub
+          />
+          <NavItem 
+            label={lang === 'fr' ? 'Duo Argiles Bloom' : 'Bloom Clay Duo'} 
+            onClick={() => scrollTo('klinomont')}
+            isSub
+          />
+        </NavGroup>
+
+        <NavGroup title={lang === 'fr' ? 'Science du Totum' : 'Totum Science'}>
+          <NavItem 
+            label={lang === 'fr' ? 'La Méthode' : 'The Method'} 
+            icon={Activity} 
+            onClick={() => scrollTo('solvants')}
+          />
+          <NavItem 
+            label="FAQ" 
+            icon={MessageCircle} 
+            onClick={() => scrollTo('faq')}
+          />
+        </NavGroup>
+
+        <NavGroup title="Ressources">
+          <NavItem 
+            id="blog" 
+            label={lang === 'fr' ? 'La Bibliothèque' : 'The Library'} 
+            icon={BookOpen} 
+            isActive={currentView === 'blog'}
+          />
+          <NavItem 
+            id="manifesto" 
+            label={lang === 'fr' ? 'Le Manifeste' : 'The Manifesto'} 
+            icon={FileText} 
+            isActive={currentView === 'manifesto'}
+          />
+        </NavGroup>
+      </div>
+
+      {/* Footer / User */}
+      <div className="p-6 mt-auto border-t border-white/5 space-y-4">
+        <button 
+          onClick={() => navigateTo('cart')}
+          className="w-full flex items-center justify-between p-3 rounded-xl bg-botanik-orange text-white font-bold text-sm hover:scale-[1.02] transition-all"
+        >
+          <div className="flex items-center gap-3">
+            <ShoppingCart className="w-4 h-4" />
+            <span>{t.nav.cart || 'Panier'}</span>
+          </div>
+        </button>
+
+        <div className="flex items-center justify-between gap-2 px-2">
+          <LanguageSelector lang={lang} setLang={setLang} variant="sidebar" />
           <button 
-            onClick={() => navigateTo('account')} 
-            className="w-full py-3 px-4 bg-white/10 text-white rounded-xl text-sm font-semibold hover:bg-white/20 transition-colors flex items-center justify-center gap-2"
+            onClick={() => navigateTo('account')}
+            className="p-2 text-white/40 hover:text-white transition-colors"
+            title={t.nav.account}
           >
-            <User className="w-4 h-4" /> Espace Membre
+            <User className="w-5 h-5" />
           </button>
         </div>
-      )}
-
-      {/* Product Reassurance Image - Restored per request */}
-      <div className="mt-8 rounded-xl overflow-hidden relative group bg-white/5">
-        {/* Note pour Hostinger : Utiliser /assets/images/IMG_9472.jpg */}
-        <OptimizedImage 
-          src={bloomLabImg}
-          alt={generateSeoAlt("Machine BloomLab")} 
-          width={300}
-          height={300}
-          className="w-full h-auto object-contain p-4 transform group-hover:scale-105 transition-transform duration-700"
-        />
       </div>
-    </div>
-  </aside>
-);
+    </aside>
+  );
+};
 
 const HybridOffer = ({ onNavigate }: { onNavigate: (view: any) => void }) => (
   <section id="choix" className="my-24 scroll-mt-24">
@@ -565,12 +500,13 @@ const HybridOffer = ({ onNavigate }: { onNavigate: (view: any) => void }) => (
 export default function App() {
   const [lang, setLang] = useState<Language>('fr');
   const t = translations[lang];
-  const [currentView, setCurrentView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction' | 'admin' | 'blog'>('home');
-  const [previousView, setPreviousView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction' | 'admin' | 'blog'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction' | 'admin' | 'blog' | 'indexbis'>('home');
+  const [previousView, setPreviousView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction' | 'admin' | 'blog' | 'indexbis'>('home');
 
   const [currentProductId, setCurrentProductId] = useState<string | undefined>();
   const [legalType, setLegalType] = useState<'cgv' | 'cgu' | 'privacy' | 'mentions' | 'withdrawal'>('mentions');
   const [cart, setCart] = useState<any[]>([]);
+  const [shippingMethod, setShippingMethod] = useState<any>('mondialrelay');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSplashFinished, setIsSplashFinished] = useState(false);
 
@@ -819,10 +755,11 @@ export default function App() {
 
   const renderMainContent = () => {
     switch (currentView) {
-      case 'home': return <HomeContent onNavigate={navigateTo} lang={lang} />;
+      case 'home': return <IndexBisContent onNavigate={navigateTo} lang={lang} />;
       case 'machine': return <MachineLanding onNavigate={navigateTo} lang={lang} />;
       case 'phytotherapie-reset': return <PhytotherapyResetPage onNavigate={navigateTo} lang={lang} />;
       case 'library-landing': return <LibraryLanding onNavigate={navigateTo} lang={lang} />;
+      case 'indexbis': return <IndexBisContent onNavigate={navigateTo} lang={lang} />;
       case 'guide':
       case 'how_it_works': return <GuideContent onNavigate={navigateTo} lang={lang} />;
       case 'ateliers': return (
@@ -906,12 +843,15 @@ export default function App() {
           onCheckout={() => navigateTo('checkout')}
           onNavigate={navigateTo}
           lang={lang}
+          shippingMethod={shippingMethod}
+          setShippingMethod={setShippingMethod}
         />
       );
       case 'checkout': return (
         <CheckoutFlow 
           cart={cart}
           total={cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)}
+          shippingMethod={shippingMethod}
           user={user}
           onSuccess={() => {
             setCart([]);
@@ -971,30 +911,29 @@ export default function App() {
   };
 
   const MobileHeader = () => (
-    <header className="lg:hidden sticky top-0 bg-botanik-green z-40 border-b border-white/5 px-4 py-3 flex items-center justify-between shadow-sm notranslate" translate="no">
-      <div className="flex items-center gap-2 cursor-pointer group/logo" onClick={() => navigateTo('home')}>
-        <div className="w-10 h-10 flex items-center justify-center overflow-hidden">
-          <img src={logoSidebar} alt="Bloom" loading="lazy" className="w-full h-full object-contain scale-110" />
-        </div>
-        <div className="flex flex-col leading-none uppercase text-white group-hover/logo:text-botanik-orange transition-colors">
-          <span className="text-[8px] font-bold tracking-[0.2em] opacity-80">Bloom by</span>
-          <span className="text-sm font-black tracking-widest">botaniK</span>
-        </div>
+    <header className="lg:hidden sticky top-0 bg-botanik-green z-[60] border-b border-white/5 px-4 py-4 flex items-center justify-between shadow-sm">
+      <div 
+        className="flex items-center gap-3 cursor-pointer"
+        onClick={() => navigateTo('home')}
+      >
+        <img src={logoSidebar} alt="Bloom" className="w-8 h-8 object-contain" />
+        <span className="text-white font-black tracking-widest text-sm uppercase">Bloom</span>
       </div>
-      <div className="flex items-center gap-3">
-        <button 
-          onClick={() => setIsMenuOpen(true)}
-          className="p-2 text-white hover:bg-white/10 rounded-full transition-colors"
-        >
-          <Menu className="w-6 h-6" />
-        </button>
-        <button onClick={() => navigateTo('cart')} className="relative p-2 text-white hover:bg-white/10 rounded-full transition-colors">
-          <ShoppingBag className="w-6 h-6 md:w-7 md:h-7" />
+      <div className="flex items-center gap-4">
+        <button onClick={() => navigateTo('cart')} className="relative text-white p-2">
+          <ShoppingCart className="w-6 h-6" />
           {cart.length > 0 && (
-            <span className="absolute top-0 right-0 w-4 h-4 bg-botanik-orange text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+            <span className="absolute -top-1 -right-1 w-5 h-5 bg-botanik-orange text-white text-[10px] font-black rounded-full flex items-center justify-center border-2 border-botanik-green">
               {cart.reduce((s, i) => s + i.quantity, 0)}
             </span>
           )}
+        </button>
+        <button 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="text-white p-2"
+          aria-label="Menu"
+        >
+          {isMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
         </button>
       </div>
     </header>
@@ -1041,138 +980,107 @@ export default function App() {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-[100] lg:hidden animate-in fade-in duration-300">
-          <div className="absolute inset-0 bg-botanik-green/95 backdrop-blur-md" onClick={() => setIsMenuOpen(false)} />
-          <div className="absolute right-0 top-0 bottom-0 w-[80%] max-w-sm bg-botanik-green border-l border-white/10 shadow-2xl flex flex-col animate-in slide-in-from-right duration-300">
-            <div className="p-6 flex items-center justify-between border-b border-white/10">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-botanik-orange flex items-center justify-center">
-                  <Leaf className="w-4 h-4 text-white" />
-                </div>
+        <div className="fixed inset-0 z-[100] lg:hidden">
+          <div 
+            className="absolute inset-0 bg-botanik-green/60 backdrop-blur-md animate-in fade-in duration-300" 
+            onClick={() => setIsMenuOpen(false)} 
+          />
+          <div className="absolute right-0 top-0 bottom-0 w-[85%] max-w-sm bg-botanik-green shadow-2xl flex flex-col animate-in slide-in-from-right duration-500 border-l border-white/5">
+            <div className="p-6 flex items-center justify-between border-b border-white/5 bg-black/10">
+              <div className="flex items-center gap-3">
+                <img src={logoSidebar} alt="Bloom" className="w-8 h-8 object-contain" />
                 <span className="text-white font-black tracking-widest text-sm uppercase">Bloom</span>
               </div>
               <button 
                 onClick={() => setIsMenuOpen(false)}
                 className="p-2 text-white/60 hover:text-white transition-colors"
               >
-                <X className="w-6 h-6" />
+                <X className="w-7 h-7" />
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto p-8">
-              <div className="mb-12">
-                <h3 className="text-xs uppercase tracking-[0.2em] text-white/40 mb-6 font-bold">Navigation</h3>
-                <div className="grid gap-4">
+            <div className="flex-1 overflow-y-auto p-6 py-8 custom-scrollbar">
+              <div className="space-y-10">
+                <div>
+                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">Écosystème Bloom</h3>
+                  <div className="space-y-2">
                     {[
-                      { id: 'home', label: lang === 'fr' ? 'Accueil' : lang === 'en' ? 'Home' : 'Startseite', icon: Leaf },
-                      { id: 'library-landing', label: t.nav.herbarium, icon: BookOpen },
-                      (isPremium || isDiscovery) && { id: 'recipes', label: lang === 'fr' ? 'Mes Recettes' : 'My Recipes', icon: ChefHat },
-                      { id: 'phytotherapie-reset', label: 'Reset', icon: Wind },
-                      { id: 'machine', label: 'BloomLab', icon: Settings },
-                      { id: 'boutique', label: t.nav.shop, icon: ShoppingBag },
-                      { id: 'chat', label: t.nav.chat, icon: MessageSquare },
-                      { id: 'account', label: t.nav.account, icon: User },
-                    ].filter(Boolean).map((item: any) => (
+                      { id: 'home', label: lang === 'fr' ? 'Accueil' : 'Home', icon: Home },
+                      { id: 'indexbis', label: 'BloomLab®', icon: Settings, highlight: true },
+                      { id: 'boutique', label: lang === 'fr' ? 'Boutique' : 'Shop', icon: ShoppingBag },
+                    ].map((item: any) => (
                       <button
                         key={item.id}
-                        onClick={() => {
-                          navigateTo(item.id as any);
-                          setIsMenuOpen(false);
-                        }}
-                        className={`flex items-center gap-4 p-4 rounded-2xl transition-all ${
-                          currentView === item.id ? 'bg-botanik-orange text-white' : 'text-white/60 hover:bg-white/5'
+                        onClick={() => { navigateTo(item.id); setIsMenuOpen(false); }}
+                        className={`w-full flex items-center justify-between px-6 py-4 rounded-2xl transition-all text-left group ${
+                          currentView === item.id 
+                            ? 'bg-white/10 text-white shadow-lg shadow-black/10' 
+                            : item.highlight ? 'bg-botanik-orange/10 text-white border border-botanik-orange/20' : 'text-white/70 hover:bg-white/5'
                         }`}
                       >
-                        <item.icon className="w-5 h-5" />
-                        <span className="font-bold">{item.label}</span>
+                        <div className="flex items-center gap-4">
+                          <item.icon className={`w-5 h-5 transition-colors ${currentView === item.id ? 'text-botanik-orange' : 'text-white/40 group-hover:text-white/60'}`} />
+                          <span className="font-bold text-base tracking-tight">{item.label}</span>
+                        </div>
+                        {item.highlight && <div className="w-1.5 h-1.5 rounded-full bg-botanik-orange animate-pulse" />}
+                        {currentView === item.id && <ChevronRight className="w-4 h-4 text-botanik-orange" />}
                       </button>
                     ))}
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <h3 className="text-xs uppercase tracking-[0.2em] text-white/40 mb-6 font-bold">
-                  {lang === 'fr' ? 'Sommaire' : lang === 'en' ? 'Summary' : 'Inhalt'}
-                </h3>
-                <ul className="space-y-6">
-                  <li>
-                    <button 
-                      onClick={() => { 
-                        navigateTo('home'); 
-                        setIsMenuOpen(false);
-                        setTimeout(() => document.getElementById('protocole')?.scrollIntoView({ behavior: 'smooth' }), 300);
-                      }} 
-                      className="text-white hover:text-botanik-orange transition-colors text-left font-light"
-                    >
-                      I. {lang === 'fr' ? 'Commencer ici' : lang === 'en' ? 'Start here' : 'Hier beginnen'}
-                    </button>
-                  </li>
-                  <li>
-                    <button 
-                      onClick={() => { 
-                        navigateTo('home'); 
-                        setIsMenuOpen(false);
-                        setTimeout(() => document.getElementById('comprendre-infusion-botanique')?.scrollIntoView({ behavior: 'smooth' }), 300);
-                      }} 
-                      className="text-white hover:text-botanik-orange transition-colors text-left font-light"
-                    >
-                      II. {t.home.understandingInfusion.sidebar_label.split('. ')[1]}
-                    </button>
-                  </li>
-                  <li>
-                    <button 
-                      onClick={() => { 
-                        navigateTo('home'); 
-                        setIsMenuOpen(false);
-                        setTimeout(() => document.getElementById('science')?.scrollIntoView({ behavior: 'smooth' }), 300);
-                      }} 
-                      className="text-white hover:text-botanik-orange transition-colors text-left font-light"
-                    >
-                      III. {lang === 'fr' ? 'La science du Totum' : lang === 'en' ? 'The science of Totum' : 'Die Wissenschaft des Totum'}
-                    </button>
-                  </li>
-                  <li>
-                    <button 
-                      onClick={() => { 
-                        navigateTo('home'); 
-                        setIsMenuOpen(false);
-                        setTimeout(() => document.getElementById('another-way')?.scrollIntoView({ behavior: 'smooth' }), 300);
-                      }} 
-                      className="text-white hover:text-botanik-orange transition-colors text-left font-light"
-                    >
-                      IV. {lang === 'fr' ? 'Une autre voie' : lang === 'en' ? 'Another way' : 'Ein anderer Weg'}
-                    </button>
-                  </li>
-                  <li>
-                    <button 
-                      onClick={() => { 
-                        navigateTo('home'); 
-                        setIsMenuOpen(false);
-                        setTimeout(() => document.getElementById('find-way')?.scrollIntoView({ behavior: 'smooth' }), 300);
-                      }} 
-                      className="text-white hover:text-botanik-orange transition-colors text-left font-light"
-                    >
-                      V. {lang === 'fr' ? 'Trouver votre voie' : lang === 'en' ? 'Find your way' : 'Finden Sie Ihren Weg'}
-                    </button>
-                  </li>
-                  <li>
-                    <button 
-                      onClick={() => { 
-                        navigateTo('home'); 
-                        setIsMenuOpen(false);
-                        setTimeout(() => document.getElementById('activate')?.scrollIntoView({ behavior: 'smooth' }), 300);
-                      }} 
-                      className="text-white hover:text-botanik-orange transition-colors text-left font-light"
-                    >
-                      VI. {lang === 'fr' ? 'Activer ma BloomLab' : lang === 'en' ? 'Activate my BloomLab' : 'Meine BloomLab aktivieren'}
-                    </button>
-                  </li>
-                </ul>
+                <div>
+                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">Expertise & Savoir</h3>
+                  <div className="space-y-2">
+                    {[
+                      { id: 'culinaire', label: lang === 'fr' ? 'Atelier Culinaire' : 'Culinary Workshop', icon: ChefHat },
+                      { id: 'cosmetiques', label: lang === 'fr' ? 'Soin Cosmétique' : 'Cosmetic Care', icon: Sparkles },
+                      { id: 'phytotherapie-reset', label: lang === 'fr' ? 'Reset Homéostatique' : 'Homeostatic Reset', icon: Wind },
+                      { id: 'blog', label: lang === 'fr' ? 'La Bibliothèque' : 'Library', icon: BookOpen },
+                      { id: 'manifesto', label: lang === 'fr' ? 'Le Manifeste' : 'Manifesto', icon: FileText },
+                    ].map((item: any) => (
+                      <button
+                        key={item.id}
+                        onClick={() => { navigateTo(item.id); setIsMenuOpen(false); }}
+                        className={`w-full flex items-center justify-between px-6 py-4 rounded-2xl transition-all text-left group ${
+                          currentView === item.id ? 'bg-white/10 text-white shadow-lg shadow-black/10' : 'text-white/70 hover:bg-white/5'
+                        }`}
+                      >
+                        <div className="flex items-center gap-4">
+                          <item.icon className={`w-5 h-5 transition-colors ${currentView === item.id ? 'text-botanik-orange' : 'text-white/40 group-hover:text-white/60'}`} />
+                          <span className="font-bold text-base tracking-tight">{item.label}</span>
+                        </div>
+                        {currentView === item.id && <ChevronRight className="w-4 h-4 text-botanik-orange" />}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="p-8 border-t border-white/10">
-              <LanguageSelector lang={lang} setLang={setLang} variant="sidebar" />
+            <div className="mt-auto p-8 border-t border-white/5 bg-black/10 space-y-8">
+              <button 
+                onClick={() => { navigateTo('account'); setIsMenuOpen(false); }}
+                className="w-full flex items-center gap-4 p-5 rounded-3xl bg-white/5 border border-white/5 text-white hover:bg-white/10 transition-colors shadow-inner"
+              >
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-botanik-orange to-[#FF9D66] flex items-center justify-center text-white shadow-lg shadow-botanik-orange/20">
+                  <User className="w-6 h-6" />
+                </div>
+                <div className="flex flex-col text-left">
+                  <span className="font-bold text-base tracking-tight">Mon Compte</span>
+                  <span className="text-xs text-white/30 uppercase tracking-widest font-black">Espace Membre</span>
+                </div>
+              </button>
+              
+              <div className="space-y-6">
+                <div className="flex justify-center">
+                  <LanguageSelector lang={lang} setLang={setLang} variant="sidebar" />
+                </div>
+                
+                <p className="text-center text-[10px] text-white/20 italic leading-relaxed px-4">
+                  "Votre corps n'est pas cassé, il est verrouillé. Bloom by BotaniK est la clé."
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -1188,36 +1096,6 @@ export default function App() {
         </div>
         <Footer onNavigate={navigateTo} lang={lang} />
       </main>
-
-      {/* Mobile Bottom Navigation */}
-      <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-botanik-green/5 px-4 pt-4 pb-8 flex justify-between items-center z-50 shadow-[0_-4px_20px_rgba(27,48,34,0.05)]">
-        {[
-          { id: 'home', label: t.nav.guide, icon: FlaskConical },
-          { id: 'library-landing', label: t.nav.herbarium, icon: Leaf },
-          (isPremium || isDiscovery) && { id: 'recipes', label: lang === 'fr' ? 'Recettes' : 'Recipes', icon: ChefHat },
-          { id: 'chat', label: lang === 'fr' ? 'Alma' : 'Alma', icon: MessageSquare },
-          { id: 'boutique', label: t.nav.shop, icon: ShoppingBag },
-          { id: 'account', label: t.nav.account, icon: User }
-        ].filter(Boolean).map((tab: any) => (
-          <button
-            key={tab.id}
-            onClick={() => {
-              if (tab.url) {
-                window.open(tab.url, '_blank');
-              } else {
-                navigateTo(tab.id as any);
-              }
-            }}
-            className={`flex flex-col items-center gap-1 min-w-[50px] transition-all ${currentView === tab.id || (tab.id === 'library-landing' && currentView === 'herbier') ? 'text-botanik-orange scale-110' : 'text-botanik-green/40'}`}
-          >
-            <tab.icon className={`w-5 h-5 ${currentView === tab.id ? 'fill-botanik-orange/10' : ''}`} />
-            <span className="text-[9px] uppercase font-bold tracking-wider">{tab.label}</span>
-          </button>
-        ))}
-        <div className="flex gap-1 border-l border-botanik-green/10 pl-3 ml-1">
-          <LanguageSelector lang={lang} setLang={setLang} variant="mobile-bottom" />
-        </div>
-      </nav>
     </div>
   );
 }

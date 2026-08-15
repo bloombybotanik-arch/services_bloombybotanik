@@ -13,6 +13,7 @@ interface ProductDetailProps {
 
 export default function ProductDetail({ onBack, onAddToCart, onNavigate, productId = 'bloomlab', lang }: ProductDetailProps) {
   const [activeImage, setActiveImage] = useState(0);
+  const [isZoomed, setIsZoomed] = useState(false);
   const t = translations[lang].product_detail;
   const productSheets = useMemo(() => getProductSheets(lang), [lang]);
   const sheet = productSheets[productId] || productSheets['bloomlab'];
@@ -32,14 +33,17 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
 
       <div className="flex flex-col lg:flex-row items-stretch bg-white border border-[#1B3022]/5 rounded-[48px] overflow-hidden shadow-2xl mb-24 min-h-[600px] lg:min-h-[700px]">
         {/* Left Side: Image (Occupies full space) */}
-        <div className="lg:w-1/2 relative bg-[#F9F9F7] overflow-hidden min-h-[400px] lg:min-h-0">
+        <div 
+          className="lg:w-1/2 relative bg-[#F9F9F7] overflow-hidden min-h-[400px] lg:min-h-[600px] cursor-zoom-in flex items-stretch"
+          onClick={() => setIsZoomed(true)}
+        >
           <img 
             src={gallery[activeImage].src} 
             alt={gallery[activeImage].alt} 
-            className="w-full h-full object-cover transition-all duration-500"
+            className="w-full h-full object-cover transition-all duration-500 scale-110 hover:scale-125"
           />
           {productId === 'bloomlab' && (
-            <div className="absolute top-10 left-10 bg-[#F97316]/50 backdrop-blur-md text-white px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] border border-white/20 shadow-xl z-20">
+            <div className="absolute top-6 left-6 bg-[#F97316]/50 backdrop-blur-md text-white px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] border border-white/20 shadow-xl z-20 whitespace-nowrap">
               {sheet.subtitle}
             </div>
           )}
@@ -103,15 +107,15 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {sheet.specs.map((spec: any, i: number) => (
-              <div key={i} className="bg-[#1B3022]/5 p-5 rounded-2xl flex items-center gap-4">
-                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm">
+              <div key={i} className="bg-[#1B3022]/5 p-5 rounded-2xl flex items-center gap-4 group hover:bg-[#1B3022]/10 transition-colors">
+                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm shrink-0">
                   <spec.icon className="w-5 h-5 text-[#1B3022]" />
                 </div>
-                <div>
-                  <div className="text-[10px] uppercase font-bold text-[#1B3022]/40 tracking-wider">{spec.label}</div>
-                  <div className="text-sm font-bold text-[#1B3022]">{spec.value}</div>
+                <div className="min-w-0">
+                  <div className="text-[10px] uppercase font-bold text-[#1B3022]/40 tracking-wider truncate">{spec.label}</div>
+                  <div className="text-sm font-bold text-[#1B3022] truncate sm:whitespace-normal">{spec.value}</div>
                 </div>
               </div>
             ))}
@@ -133,6 +137,26 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
           {sheet.name} {t.disclaimer}
         </p>
       </footer>
+
+      {/* Zoom Modal */}
+      {isZoomed && (
+        <div 
+          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-300 cursor-zoom-out"
+          onClick={() => setIsZoomed(false)}
+        >
+          <button 
+            className="absolute top-6 right-6 text-white/60 hover:text-white transition-colors"
+            onClick={() => setIsZoomed(false)}
+          >
+            <X className="w-8 h-8" />
+          </button>
+          <img 
+            src={gallery[activeImage].src} 
+            alt={gallery[activeImage].alt} 
+            className="max-w-full max-h-full object-contain animate-in zoom-in-95 duration-300"
+          />
+        </div>
+      )}
     </article>
   );
 }

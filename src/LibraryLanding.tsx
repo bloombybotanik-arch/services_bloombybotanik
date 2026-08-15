@@ -16,22 +16,21 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
     ).slice(0, 10);
   }, [searchQuery]);
 
+  const counts = useMemo(() => {
+    return {
+      culinary: unifiedBotanicalDatabase.filter(p => p.source === 'culinary').length,
+      cosmetic: unifiedBotanicalDatabase.filter(p => p.source === 'cosmetic').length,
+      therapeutic: unifiedBotanicalDatabase.filter(p => p.source === 'therapeutic').length
+    };
+  }, []);
+
   const categories = [
-    { 
-      id: 'therapeutic', 
-      name: 'Thérapeutique', 
-      view: 'library', 
-      icon: Leaf, 
-      count: 56,
-      color: 'text-botanik-green',
-      bg: 'bg-botanik-green/5'
-    },
     { 
       id: 'culinary', 
       name: 'Culinaire', 
       view: 'culinaire', 
       icon: Utensils, 
-      count: 15,
+      count: counts.culinary,
       color: 'text-botanik-orange',
       bg: 'bg-botanik-orange/5'
     },
@@ -40,7 +39,16 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
       name: 'Cosmétique', 
       view: 'cosmetiques', 
       icon: Sparkles, 
-      count: 22,
+      count: counts.cosmetic,
+      color: 'text-botanik-green',
+      bg: 'bg-botanik-green/5'
+    },
+    { 
+      id: 'therapeutic', 
+      name: 'Thérapeutique', 
+      view: 'library', 
+      icon: Leaf, 
+      count: counts.therapeutic,
       color: 'text-botanik-green',
       bg: 'bg-botanik-green/5'
     }
@@ -115,11 +123,7 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {[
-            { id: 'therapeutic', t: t.categories.therapeutic, view: 'library', icon: Leaf, count: 56, color: 'text-botanik-green', bg: 'bg-botanik-green/5' },
-            { id: 'culinary', t: t.categories.culinary, view: 'culinaire', icon: Utensils, count: 15, color: 'text-botanik-orange', bg: 'bg-botanik-orange/5' },
-            { id: 'cosmetic', t: t.categories.cosmetic, view: 'cosmetiques', icon: Sparkles, count: 22, color: 'text-botanik-green', bg: 'bg-botanik-green/5' }
-          ].map((cat) => (
+          {categories.map((cat) => (
             <div 
               key={cat.id} 
               onClick={() => onNavigate(cat.view as any)}
@@ -129,9 +133,9 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
                 <cat.icon className={`w-8 h-8 ${cat.color} group-hover:scale-110 transition-transform`} />
                 <span className={`text-xs font-bold px-3 py-1 rounded-full bg-white/50 backdrop-blur-sm border border-botanik-green/5 ${cat.color}`}>{cat.count} {t.categories.fiches}</span>
               </div>
-              <h3 className="text-2xl font-bold text-botanik-green mb-4">{cat.t.name}</h3>
+              <h3 className="text-2xl font-bold text-botanik-green mb-4">{t.categories[cat.id].name}</h3>
               <p className="text-sm text-botanik-green/60 mb-8 leading-relaxed">
-                {cat.t.desc}
+                {t.categories[cat.id].desc}
               </p>
               <div className={`flex items-center gap-3 text-xs font-bold uppercase tracking-widest ${cat.color}`}>
                 {t.categories.explorer} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

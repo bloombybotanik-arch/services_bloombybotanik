@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Trash2, Plus, Minus, ShieldCheck, Truck, CreditCard, Lock, ArrowLeft, ChevronRight, Info, Sparkles, FlaskConical, BookOpen } from 'lucide-react';
 import { translations, Language } from './translations';
+import { getShippingPrice, ShippingMethod } from './lib/shippingUtils';
 
 interface CartItem {
   id: string;
@@ -19,39 +20,40 @@ interface CartContentProps {
   onCheckout: () => void;
   onNavigate: (view: any, productId?: string, type?: any) => void;
   lang?: Language;
+  shippingMethod: ShippingMethod;
+  setShippingMethod: (method: ShippingMethod) => void;
 }
 
-export default function CartContent({ items, onUpdateQuantity, onRemove, onBack, onCheckout, onNavigate, lang = 'fr' }: CartContentProps) {
+export default function CartContent({ 
+  items, 
+  onUpdateQuantity, 
+  onRemove, 
+  onBack, 
+  onCheckout, 
+  onNavigate, 
+  lang = 'fr',
+  shippingMethod,
+  setShippingMethod
+}: CartContentProps) {
   const t = translations[lang].cart;
   const common = translations[lang].common;
   
   const hasBloomLab = items.some(item => item.id === 'bloomlab');
-  const [shippingMethod, setShippingMethod] = useState<'colissimo' | 'laposte' | 'mondialrelay' | 'express'>(hasBloomLab ? 'laposte' : 'colissimo');
+  const [promoCode, setPromoCode] = useState('');
+  const [isPromoApplied, setIsPromoApplied] = useState(false);
   
   const subtotal = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  const hasRemedies = items.some(item => item.id !== 'bloomlab');
   const allDigital = items.every(item => (item as any).isDigital);
   
-  const getShippingPrice = () => {
-    if (items.length === 0 || allDigital) return 0;
-    
-    // Free shipping ONLY if NO remedies AND subtotal >= 150 (example threshold for machine)
-    // AND only for Colissimo or Mondial Relay
-    if (!hasRemedies && subtotal >= 150 && (shippingMethod === 'colissimo' || shippingMethod === 'mondialrelay')) {
-      return 0;
-    }
-    
-    switch (shippingMethod) {
-      case 'mondialrelay': return 5.90;
-      case 'colissimo': return 14.90;
-      case 'laposte': return 5.90;
-      case 'express': return 21.90;
-      default: return 5.90;
-    }
-  };
-
-  const shipping = getShippingPrice();
+  const shipping = getShippingPrice(shippingMethod, items);
   const total = subtotal + shipping;
+
+  const sachetCount = items.filter(item => item.id !== 'bloomlab' && !(item as any).isDigital).reduce((acc, item) => acc + item.quantity, 0);
+
+  const getMethodPriceLabel = (method: ShippingMethod) => {
+    const price = getShippingPrice(method, items);
+    return price === 0 ? t.summary.free : `${price.toFixed(2).replace('.', ',')} €`;
+  };
 
   if (items.length === 0) {
     return (
@@ -92,14 +94,16 @@ export default function CartContent({ items, onUpdateQuantity, onRemove, onBack,
         <div className="lg:col-span-2 space-y-12">
           <div className="space-y-6">
             {items.map((item) => (
-              <div key={item.id} className="bg-white p-6 rounded-[32px] border border-[#1B3022]/10 flex flex-col sm:flex-row gap-6 items-center group hover:shadow-xl transition-all duration-500">
-                <div className="w-32 h-32 rounded-2xl overflow-hidden bg-[#F9F9F7] flex-shrink-0 relative">
-                  <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div key={item.id} className="bg-white p-6 rounded-[32px] border border-[#1B3022]/10 flex flex-col sm:flex-row gap-8 items-center group hover:shadow-xl transition-all duration-500">
+                <div className="w-full sm:w-48 aspect-square rounded-2xl overflow-hidden bg-[#F9F9F7] flex-shrink-0 relative border border-[#1B3022]/5">
+                  <div className="absolute inset-2 overflow-hidden rounded-xl">
+                    <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  </div>
                 </div>
-                <div className="flex-1 min-w-0 text-center sm:text-left">
+                <div className="flex-1 min-w-0 text-center sm:text-left space-y-2">
                   <div className="text-[10px] font-bold text-[#F97316] uppercase tracking-widest mb-1 truncate">{item.subtitle}</div>
-                  <h3 className="text-xl font-bold text-[#1B3022] mb-2 truncate sm:whitespace-normal">{item.name}</h3>
-                  <div className="text-lg font-bold text-[#1B3022]">{item.price.toFixed(2)} €</div>
+                  <h3 className="text-xl md:text-2xl font-bold text-[#1B3022] truncate sm:whitespace-normal leading-tight">{item.name}</h3>
+                  <div className="text-xl font-bold text-[#1B3022]">{item.price.toFixed(2)} €</div>
                 </div>
                 <div className="flex items-center gap-4 bg-[#F9F9F7] p-2 rounded-xl">
                   <button 
@@ -170,32 +174,30 @@ export default function CartContent({ items, onUpdateQuantity, onRemove, onBack,
           )}
 
           {/* Cross-sell / Recommended */}
-          <div>
+          <div className="bg-white p-8 rounded-[40px] border border-[#1B3022]/10">
             <h4 className="text-xs font-black uppercase tracking-[0.3em] text-[#1B3022]/40 mb-8 px-4">{t.recommended.title}</h4>
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {!hasBloomLab && (
-                <div className="bg-white p-6 rounded-[32px] border border-[#F97316]/20 shadow-sm hover:shadow-xl transition-all group">
-                  <div className="w-16 h-16 bg-[#F97316]/5 rounded-2xl flex items-center justify-center mb-6">
+                <div className="bg-[#F9F9F7] p-8 rounded-[32px] border border-[#F97316]/20 shadow-sm hover:shadow-xl transition-all group">
+                  <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
                     <FlaskConical className="w-8 h-8 text-[#F97316]" />
                   </div>
-                  <h5 className="font-bold text-[#1B3022] mb-2">{t.recommended.bloomlab_title}</h5>
-                  <p className="text-xs text-[#1B3022]/60 mb-6 leading-relaxed">{t.recommended.bloomlab_desc}</p>
+                  <h5 className="text-lg font-bold text-[#1B3022] mb-3">{t.recommended.bloomlab_title}</h5>
+                  <p className="text-sm text-[#1B3022]/60 mb-8 leading-relaxed">{t.recommended.bloomlab_desc}</p>
                   <button onClick={() => onBack()} className="text-sm font-bold text-[#F97316] flex items-center gap-2 group-hover:gap-3 transition-all">
                     {t.recommended.bloomlab_btn} <ChevronRight className="w-4 h-4" />
                   </button>
                 </div>
               )}
-              <div className="bg-white p-6 rounded-[32px] border border-[#1B3022]/10 shadow-sm hover:shadow-xl transition-all group">
-                <div className="w-16 h-16 bg-[#1B3022]/5 rounded-2xl flex items-center justify-center mb-6">
-                  <div className="w-16 h-16 bg-[#1B3022]/5 rounded-2xl flex items-center justify-center mb-6">
-                    <BookOpen className="w-8 h-8 text-[#1B3022]" />
-                  </div>
-                  <h5 className="font-bold text-[#1B3022] mb-2">{t.recommended.premium_title}</h5>
-                  <p className="text-xs text-[#1B3022]/60 mb-6 leading-relaxed">{t.recommended.premium_desc}</p>
-                  <button onClick={() => onBack()} className="text-sm font-bold text-[#1B3022] flex items-center gap-2 group-hover:gap-3 transition-all">
-                    {t.recommended.premium_btn} <ChevronRight className="w-4 h-4" />
-                  </button>
+              <div className="bg-[#F9F9F7] p-8 rounded-[32px] border border-[#1B3022]/10 shadow-sm hover:shadow-xl transition-all group">
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                  <BookOpen className="w-8 h-8 text-[#1B3022]" />
                 </div>
+                <h5 className="text-lg font-bold text-[#1B3022] mb-3">{t.recommended.premium_title}</h5>
+                <p className="text-sm text-[#1B3022]/60 mb-8 leading-relaxed">{t.recommended.premium_desc}</p>
+                <button onClick={() => onBack()} className="text-sm font-bold text-[#1B3022] flex items-center gap-2 group-hover:gap-3 transition-all">
+                  {t.recommended.premium_btn} <ChevronRight className="w-4 h-4" />
+                </button>
               </div>
             </div>
           </div>
@@ -207,51 +209,63 @@ export default function CartContent({ items, onUpdateQuantity, onRemove, onBack,
                 <Truck className="w-6 h-6 text-[#1B3022]" />
                 <h2 className="text-2xl font-bold text-[#1B3022]">{t.shipping.title}</h2>
               </div>
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <button 
                   onClick={() => setShippingMethod('mondialrelay')}
-                  className={`p-6 rounded-2xl border-2 transition-all text-left ${shippingMethod === 'mondialrelay' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
+                  className={`p-6 rounded-3xl border-2 transition-all text-left flex flex-col justify-between h-full ${shippingMethod === 'mondialrelay' ? 'border-[#F97316] bg-[#F97316]/5 shadow-inner' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30 bg-white'}`}
                 >
-                  <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.mondialrelay}</div>
-                  <div className="text-sm opacity-60">{t.shipping.methods.mondialrelay_desc}</div>
-                  <div className="mt-4 font-bold text-[#F97316]">
-                    {!hasRemedies && subtotal >= 150 ? t.shipping.free : '5,90 €'}
+                  <div>
+                    <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.mondialrelay}</div>
+                    <div className="text-xs opacity-60 leading-relaxed">{t.shipping.methods.mondialrelay_desc}</div>
+                  </div>
+                  <div className="mt-4 font-bold text-[#F97316] text-lg">
+                    {getMethodPriceLabel('mondialrelay')}
                   </div>
                 </button>
                 <button 
                   onClick={() => setShippingMethod('colissimo')}
-                  className={`p-6 rounded-2xl border-2 transition-all text-left ${shippingMethod === 'colissimo' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
+                  className={`p-6 rounded-3xl border-2 transition-all text-left flex flex-col justify-between h-full ${shippingMethod === 'colissimo' ? 'border-[#F97316] bg-[#F97316]/5 shadow-inner' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30 bg-white'}`}
                 >
-                  <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.colissimo}</div>
-                  <div className="text-sm opacity-60">{t.shipping.methods.colissimo_desc}</div>
-                  <div className="mt-4 font-bold text-[#F97316]">
-                    {!hasRemedies && subtotal >= 150 ? t.shipping.free : '14,90 €'}
+                  <div>
+                    <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.colissimo}</div>
+                    <div className="text-xs opacity-60 leading-relaxed">{t.shipping.methods.colissimo_desc}</div>
+                  </div>
+                  <div className="mt-4 font-bold text-[#F97316] text-lg">
+                    {getMethodPriceLabel('colissimo')}
                   </div>
                 </button>
                 <button 
                   onClick={() => setShippingMethod('laposte')}
-                  className={`p-6 rounded-2xl border-2 transition-all text-left ${shippingMethod === 'laposte' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
+                  className={`p-6 rounded-3xl border-2 transition-all text-left flex flex-col justify-between h-full ${shippingMethod === 'laposte' ? 'border-[#F97316] bg-[#F97316]/5 shadow-inner' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30 bg-white'}`}
                 >
-                  <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.laposte}</div>
-                  <div className="text-sm opacity-60">{t.shipping.methods.laposte_desc}</div>
-                  <div className="mt-4 font-bold text-[#F97316]">5,90 €</div>
+                  <div>
+                    <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.laposte}</div>
+                    <div className="text-xs opacity-60 leading-relaxed">{t.shipping.methods.laposte_desc}</div>
+                  </div>
+                  <div className="mt-4 font-bold text-[#F97316] text-lg">
+                    {getMethodPriceLabel('laposte')}
+                  </div>
                 </button>
                 <button 
                   onClick={() => setShippingMethod('express')}
-                  className={`p-6 rounded-2xl border-2 transition-all text-left ${shippingMethod === 'express' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
+                  className={`p-6 rounded-3xl border-2 transition-all text-left flex flex-col justify-between h-full ${shippingMethod === 'express' ? 'border-[#F97316] bg-[#F97316]/5 shadow-inner' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30 bg-white'}`}
                 >
-                  <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.express}</div>
-                  <div className="text-sm opacity-60">{t.shipping.methods.express_desc}</div>
-                  <div className="mt-4 font-bold text-[#F97316]">21,90 €</div>
+                  <div>
+                    <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.express}</div>
+                    <div className="text-xs opacity-60 leading-relaxed">{t.shipping.methods.express_desc}</div>
+                  </div>
+                  <div className="mt-4 font-bold text-[#F97316] text-lg">
+                    {getMethodPriceLabel('express')}
+                  </div>
                 </button>
               </div>
-              {!hasRemedies && subtotal < 150 && (
+              {!hasBloomLab && sachetCount < 3 && (
                 <div className="mt-6 p-4 bg-[#1B3022]/5 rounded-xl flex items-center gap-3">
                   <Plus className="w-5 h-5 text-[#F97316]" />
-                  <p className="text-sm">{t.shipping.more_for_free.replace('{amount}', (150 - subtotal).toFixed(2))}</p>
+                  <p className="text-sm">{t.shipping.more_for_free.replace('{amount}', (3 - sachetCount).toString())} sachets</p>
                 </div>
               )}
-              {hasRemedies && (
+              {sachetCount > 0 && (
                 <div className="mt-6 p-4 bg-[#F97316]/5 rounded-xl flex items-center gap-3 border border-[#F97316]/10">
                   <Info className="w-5 h-5 text-[#F97316]" />
                   <p className="text-xs text-[#1B3022]/70 italic">{t.shipping.remedies_note}</p>
@@ -265,18 +279,49 @@ export default function CartContent({ items, onUpdateQuantity, onRemove, onBack,
         <div className="space-y-6">
           <div className="bg-[#1B3022] text-white p-8 rounded-[40px] sticky top-24">
             <h2 className="text-2xl font-bold mb-8">{t.summary.title}</h2>
+            
+            {/* Promo Code Field */}
+            <div className="mb-8">
+              <div className="flex gap-2">
+                <input 
+                  type="text" 
+                  value={promoCode}
+                  onChange={(e) => setPromoCode(e.target.value.toUpperCase())}
+                  placeholder="CODE PROMO"
+                  className="flex-1 bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm focus:border-botanik-orange outline-none transition-all placeholder:text-white/20"
+                />
+                <button 
+                  onClick={() => setIsPromoApplied(true)}
+                  className="bg-white/10 hover:bg-white/20 px-4 rounded-xl text-xs font-bold transition-all border border-white/20"
+                >
+                  Appliquer
+                </button>
+              </div>
+              {isPromoApplied && (
+                <div className="mt-2 text-[10px] text-botanik-orange flex items-center gap-2">
+                  <Sparkles className="w-3 h-3" /> Code activé avec succès
+                </div>
+              )}
+            </div>
+
             <div className="space-y-4 mb-8">
               <div className="flex justify-between text-white/60">
                 <span>{t.summary.subtotal}</span>
                 <span className="font-bold text-white">{subtotal.toFixed(2)} €</span>
               </div>
+              {isPromoApplied && (
+                <div className="flex justify-between text-botanik-orange">
+                  <span>Remise (Code Promo)</span>
+                  <span className="font-bold">-{ (subtotal * 0.1).toFixed(2) } €</span>
+                </div>
+              )}
               <div className="flex justify-between text-white/60">
                 <span>{t.summary.shipping}</span>
                 <span className="font-bold text-white">{shipping === 0 ? t.summary.free : `${shipping.toFixed(2)} €`}</span>
               </div>
               <div className="pt-4 border-t border-white/10 flex justify-between items-center">
                 <span className="text-lg font-bold">{t.summary.total}</span>
-                <span className="text-3xl font-bold text-[#F97316]">{total.toFixed(2)} €</span>
+                <span className="text-3xl font-bold text-[#F97316]">{(isPromoApplied ? total * 0.9 : total).toFixed(2)} €</span>
               </div>
             </div>
 

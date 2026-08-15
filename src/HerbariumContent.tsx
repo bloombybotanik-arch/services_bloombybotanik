@@ -53,7 +53,7 @@ const PlantAccordion: React.FC<{
         <h3 className="text-2xl font-bold text-botanik-green group-hover:text-botanik-orange transition-colors duration-300">
           {getTranslated('nom_commun')}
         </h3>
-        <p className="text-xs italic text-botanik-green/40 font-serif mt-1">{plant.nom_latin}</p>
+        <p className="text-xs italic text-botanik-green/40 mt-1">{plant.nom_latin}</p>
       </div>
 
       <p className="text-sm text-botanik-green/60 leading-relaxed mb-8 flex-grow line-clamp-3">
@@ -678,7 +678,7 @@ export default function HerbariumContent({
                     {displayName}
                   </h3>
                   {plant.latinName && (
-                    <p className="text-xs italic text-botanik-green/40 font-serif mt-1">{plant.latinName}</p>
+                    <p className="text-xs italic text-botanik-green/40 mt-1">{plant.latinName}</p>
                   )}
                 </div>
 

@@ -44,6 +44,7 @@ export default function ChatContent({
   const [inputText, setInputText] = useState('');
   const [chatHistory, setChatHistory] = useState<{ role: 'user' | 'model', text: string }[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messageRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const hasInitialized = useRef(false);
 
   const scrollToBottom = () => {
@@ -51,6 +52,22 @@ export default function ChatContent({
   };
 
   useEffect(() => {
+    if (messages.length > 0) {
+      const lastMsg = messages[messages.length - 1];
+      
+      // If Alma is typing or just sent a message, try to position so the previous user message is at the top
+      if (messages.length >= 2) {
+        const lastUserMsgIndex = [...messages].reverse().findIndex(m => m.sender === 'user');
+        if (lastUserMsgIndex !== -1) {
+          const actualIndex = messages.length - 1 - lastUserMsgIndex;
+          const lastUserMsg = messages[actualIndex];
+          if (messageRefs.current[lastUserMsg.id]) {
+            messageRefs.current[lastUserMsg.id]?.scrollIntoView({ behavior: "smooth", block: "start" });
+            return;
+          }
+        }
+      }
+    }
     scrollToBottom();
   }, [messages, isTyping]);
 
@@ -261,7 +278,7 @@ export default function ChatContent({
               {t.bilan_dominant}
             </div>
             
-            <h3 className="text-3xl md:text-4xl font-bold text-botanik-green mb-8 leading-[1.1] font-serif">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-botanik-green mb-8 leading-[1.1]">
               {t.verrouillage_title} <br />
               <span className="text-botanik-orange">{t.verrouillage_subtitle}</span>
             </h3>
@@ -269,7 +286,7 @@ export default function ChatContent({
             <div className="space-y-6 text-botanik-green/70 leading-relaxed text-base mb-10">
               <p>{t.bilan_desc}</p>
               <div className="bg-[#FFF8F0] p-6 rounded-2xl border border-botanik-orange/10">
-                <p className="italic font-serif text-botanik-green text-lg text-center">{t.quote}</p>
+                <p className="italic text-botanik-green text-lg text-center">{t.quote}</p>
               </div>
             </div>
 
@@ -396,10 +413,11 @@ export default function ChatContent({
             {messages.map((msg) => (
               <motion.div 
                 key={msg.id}
+                ref={el => messageRefs.current[msg.id] = el}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'} scroll-mt-24`}
               >
                 <div className={`w-full max-w-[90%] space-y-6 ${msg.sender === 'user' ? 'items-end' : 'items-start'}`}>
                   <div 

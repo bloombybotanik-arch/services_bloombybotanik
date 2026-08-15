@@ -4,6 +4,7 @@ import bloomLabImg from './assets/images/bloomlab_main_1784887530345.jpeg';
 import img05 from './assets/images/lifestyle_botanik_cleaned_1786616810137.jpg';
 import labHeroImg from './assets/images/lab_detail_cleaned_1786616788618.jpg';
 import remediesImg from './assets/images/natural_remedies_cleaned_1786616831671.jpg';
+import herbsCloseUpImg from './assets/images/herbs_close_up_cleaned_1786616800877.jpg';
 import duoArgilesImg from './assets/images/product_duo_argiles.jpg';
 import trioPouchesImg from './assets/images/product_trio_pouches.jpg';
 import feuArticulaireImg from './assets/images/product_feu_articulaire.jpg';
@@ -11,6 +12,7 @@ import bouclierHiverImg from './assets/images/product_bouclier_hiver.jpg';
 import nuitProfondeImg from './assets/images/product_nuit_profonde.jpg';
 import seveFondamentaleImg from './assets/images/product_seve_fondamentale.jpg';
 import digestionImg from './assets/images/product_digestion.jpeg';
+import modernShelvesImg from './assets/images/modern_herbalist_shelves_1786699793560.jpg';
 import { translations, Language } from './translations';
 
 export const getProducts = (lang: Language) => {
@@ -55,8 +57,8 @@ export const getProducts = (lang: Language) => {
       id: 'pack-signature',
       name: t.pack_signature.name,
       subtitle: t.pack_signature.subtitle,
-      price: 319.00,
-      originalPrice: 429.00,
+      price: 289.00,
+      oldPriceStrike: 389.00,
       image: bloomLabImg,
       rating: 5.0,
       reviews: 42,
@@ -125,7 +127,7 @@ export const getProducts = (lang: Language) => {
       name: t.freemium_access.name,
       subtitle: t.freemium_access.subtitle,
       price: 0.00,
-      image: remediesImg,
+      image: herbsCloseUpImg,
       rating: 4.7,
       reviews: 156,
       description: t.freemium_access.description,
@@ -138,9 +140,9 @@ export const getProducts = (lang: Language) => {
       name: t.premium_access.name,
       subtitle: t.premium_access.subtitle,
       price: 9.00,
-      image: img05,
+      image: modernShelvesImg,
       rating: 4.9,
-      reviews: 89,
+      reviews: 128,
       description: t.premium_access.description,
       tags: ['Abonnement', 'Digital', 'Complet'],
       isSpecial: true,
@@ -267,7 +269,7 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                 <div className="lg:w-1/2 relative order-1 lg:order-2 h-64 lg:h-auto min-h-[400px]">
                   <img 
                     src={bloomLabImg} 
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" 
+                    className="absolute inset-0 w-full h-full object-cover" 
                     alt="BloomLab - Votre Laboratoire de Phytothérapie Maison" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent hidden lg:block" />
@@ -319,8 +321,15 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                   </p>
                   <div className="flex items-center justify-between mt-auto">
                     <div className="flex flex-col">
-                      {product.originalPrice && (
-                        <span className="text-xs text-botanik-green/30 line-through">{formatPrice(product.originalPrice)}</span>
+                      {(product.originalPrice || (product as any).oldPriceStrike) && (
+                        <div className="flex items-center gap-2">
+                          {product.originalPrice && (
+                            <span className="text-xs text-botanik-green/30 line-through">{formatPrice(product.originalPrice)}</span>
+                          )}
+                          {(product as any).oldPriceStrike && (
+                            <span className="text-xs text-botanik-green/30 line-through">{formatPrice((product as any).oldPriceStrike)}</span>
+                          )}
+                        </div>
                       )}
                       <span className="text-2xl font-bold text-botanik-green">{formatPrice(product.price)}</span>
                     </div>
@@ -367,18 +376,34 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                 {products.filter(p => (p as any).isSpecial).map((product) => (
                   <div 
                     key={product.id}
-                    className="bg-white p-6 rounded-3xl shadow-sm hover:shadow-xl transition-all cursor-pointer group border border-botanik-green/5"
+                    className="bg-white rounded-[40px] shadow-sm hover:shadow-xl transition-all cursor-pointer group border border-botanik-green/5 overflow-hidden flex flex-col"
                     onClick={() => onNavigateDetail(product.id)}
                   >
-                    <div className="text-[10px] font-bold text-botanik-orange uppercase tracking-widest mb-2">{product.subtitle}</div>
-                    <h4 className="text-lg font-bold text-botanik-green mb-4">{product.name}</h4>
-                    <div className="flex items-center justify-between gap-4">
-                      <span className="text-xl font-bold text-botanik-green">
-                        {product.price === 0 ? (lang === 'fr' ? 'Gratuit' : lang === 'en' ? 'Free' : 'Gratis') : formatPrice(product.price)}
-                      </span>
-                      <button className="w-10 h-10 bg-[#F9F9F7] text-botanik-green rounded-xl flex items-center justify-center group-hover:bg-botanik-green group-hover:text-white transition-colors">
-                        <ArrowRight className="w-5 h-5" />
-                      </button>
+                    <div className="relative aspect-square md:aspect-video overflow-hidden bg-[#F9F9F7]">
+                      <img 
+                        src={product.image} 
+                        alt={product.name} 
+                        className="w-full h-full object-cover transform scale-110 group-hover:scale-125 transition-transform duration-700"
+                      />
+                    </div>
+                    <div className="p-6 flex flex-col flex-1">
+                      <div className="flex items-center gap-1 mb-2">
+                        <div className="flex items-center text-botanik-orange">
+                          <Star className="w-3 h-3 fill-current" />
+                          <span className="text-[10px] font-bold ml-1">{product.rating}/5</span>
+                        </div>
+                        <span className="text-[10px] text-botanik-green/30">({product.reviews} {lang === 'fr' ? 'avis' : 'reviews'})</span>
+                      </div>
+                      <div className="text-[10px] font-bold text-botanik-orange uppercase tracking-widest mb-1">{product.subtitle}</div>
+                      <h4 className="text-lg font-bold text-botanik-green mb-4 leading-tight">{product.name}</h4>
+                      <div className="flex items-center justify-between gap-4 mt-auto">
+                        <span className="text-xl font-bold text-botanik-green">
+                          {product.price === 0 ? (lang === 'fr' ? 'Gratuit' : lang === 'en' ? 'Free' : 'Gratis') : formatPrice(product.price)}
+                        </span>
+                        <button className="w-10 h-10 bg-[#F9F9F7] text-botanik-green rounded-xl flex items-center justify-center group-hover:bg-botanik-green group-hover:text-white transition-colors">
+                          <ArrowRight className="w-5 h-5" />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 ))}

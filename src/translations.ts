@@ -5,16 +5,16 @@ export const translations = {
   fr: {
     seo: {
       home: {
-        title: "Extracteur Botanique & Infuseur d'Huiles de Précision | Bloom by BotaniK",
-        description: "BloomLab® : L'extracteur botanique N°1 en France pour vos remèdes de plantes. Infuseur d'huiles végétales, beurres et teintures avec précision thermique ±0,5°C.",
+        title: "Bloom by BotaniK | Infuseur et Extracteur Botanique de Précision",
+        description: "Découvrez BloomLab®, l'infuseur botanique N°1 en France pour l'extraction du totum à basse température. Réalisez vos propres remèdes, soins et recettes.",
       },
       machine: {
-        title: "Extracteur Botanique Maison BloomLab® | Infuseur d'Huile & Beurre",
-        description: "Découvrez l'extracteur botanique de comptoir BloomLab®. Machine à infusion d'huiles essentielles, décarboxylation et macération pour cosmétique naturelle et soins maison.",
+        title: "BloomLab® | L'Extracteur Botanique de Précision N°1 en France",
+        description: "Optimisez vos extractions botaniques avec BloomLab®. Température contrôlée ±0,5°C, décarboxylation intégrée et extraction du totum pour vos remèdes.",
       },
       extraction: {
         title: "Extraction Botanique de Précision : Maîtriser le Totum des Plantes",
-        description: "Guide complet sur l'extraction botanique basse température. Apprenez à utiliser un extracteur botanique maison pour préserver l'intelligence moléculaire des plantes.",
+        description: "Guide complet sur l'extraction botanique basse température. Apprenez à utiliser un extracteur botanique maison pour préserver l'intelligence moléculaire.",
       },
       infusion: {
         title: "Infusion Botanique & Macération : Guide de l'Extracteur Domestique",
@@ -33,7 +33,7 @@ export const translations = {
         description: "Équipez-vous du meilleur infuseur botanique de comptoir. Inox 304, précision thermique ±0,5°C, idéal pour huiles végétales, beurres et teintures.",
       },
       blog: {
-        title: "Blog Phytothérapie & Extraction : L'Art du Totum | Bloom",
+        title: "Blog Phytothérapie & Extraction : L'Art du Totum | Bloom by BotaniK",
         description: "Dossiers sur l'extraction botanique maison, la cosmétique naturelle et les remèdes de plantes. Devenez expert en infusion botanique de précision."
       },
       how_it_works: {
@@ -249,26 +249,28 @@ export const translations = {
         title: "Manifeste Bloom"
       },
       hero: {
-        badge: "Conviction Fondatrice",
-        title: "Votre corps n'est pas cassé.",
-        title_accent: "Il est verrouillé.",
-        quote: "Bloom by BotaniK est né d’une conviction simple : le corps n’est pas une somme de symptômes isolés, mais un système vivant qui parle, compense, sature et cherche en permanence à retrouver son équilibre."
+        badge: "Philosophie & Science",
+        title: "L'art de l'extraction",
+        title_accent: "au service du vivant",
+        quote: "Nos équipes vous accompagnent dans votre projet de soins sur mesure. BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels."
       },
       section1: {
         title: "La Troisième Voie",
-        p1: "Quand un déséquilibre apparaît, notre rôle n’est pas seulement de regarder ce qui se voit, mais de comprendre ce qui, en profondeur, a désorganisé le terrain.",
-        p2: "Notre point de vue est celui d’une troisième voie. Ni opposition stérile à la médecine conventionnelle, ni retour à une herboristerie approximative détachée de la physiologie moderne.",
-        box: "Bloom relie les sciences empiriques des sagesses anciennes, qui ont observé le vivant pendant des siècles, et les découvertes modernes en biochimie, microbiome, rythmes biologiques, inflammation, fascia, neurobiologie et épigénétique."
+        p1: "Nous ne sommes plus à l'époque de l'herboristerie approximative, ni à celle de la chimie de synthèse isolée. Bloom by BotaniK trace une troisième voie : l'extraction botanique de précision.",
+        p2: "Une place pour chaque plante et chaque plante à sa place. Nous utilisons la science moderne pour révéler la sagesse ancienne.",
+        box: "L'ingénierie de la résilience biologique par l'extraction du totum."
       },
       section2: {
-        title: "Comprendre le Signal",
-        p1: "Nous partons d’une idée fondatrice : l’inflammation chronique n’est pas forcément une erreur du corps, mais souvent un signal d’alarme face à une surcharge allostatique, toxique, émotionnelle, environnementale ou métabolique.",
-        p2: "Là où beaucoup cherchent à faire taire le signal, Bloom cherche d’abord à comprendre pourquoi le corps crie, puis à restaurer les conditions dans lesquelles son autorégulation peut à nouveau émerger."
+        title: "Le Signal",
+        p1: "Le corps ne vous trahit pas, il vous signale. Une inflammation chronique, un déséquilibre du microbiome, une maladie auto-immune... ce sont des verrous que nous aidons à libérer.",
+        p2: "Votre corps sait se guérir. Donnez-lui simplement les bons outils.",
+        box: ""
       },
       section3: {
-        title: "L'exigence de la molécule.",
-        p1: "Chez Bloom, une plante n’est pas qu’un ingrédient. Tout dépend de ce qu’on en extrait réellement. Une plante mal extraite, extraite trop chaud, trop vite, avec le mauvais solvant ou dans le mauvais ordre, ne libère pas la même richesse moléculaire et ne produit pas la même qualité d’expérience.",
-        box: "C’est pourquoi notre démarche ne repose pas seulement sur le choix des plantes, mais sur une méthodologie d’extraction botanique séquencée pensée pour respecter la nature biochimique de leurs principes actifs."
+        title: "Souveraineté Sanitaire",
+        p1: "Réappropriez-vous votre santé. BloomLab® n'est pas qu'une machine, c'est un outil de souveraineté pour votre foyer.",
+        p2: "Maîtrisez la décarboxylation, l'émulsion et la stérilisation pour créer vos propres sérums, baumes et huiles végétales de grade laboratoire.",
+        box: ""
       },
       section4: {
         title: "L'Outil de Précision",
@@ -279,24 +281,25 @@ export const translations = {
         },
         phaseB: {
           title: "Seconde Phase : Hydroalcoolique",
-          description: "Menée après refroidissement et dans une plage thermique plus basse, elle vise les composés plus thermolabiles et liposolubles comme certains terpènes, curcuminoïdes, flavonoïdes fragiles ou résines spécifiques."
+          description: "Menée après refroidissement et dans une plage thermique plus basse, elle vise les composés plus thermolabiles et liposolubles comme certains terpènes, flavonoïdes fragiles ou résines spécifiques."
         },
-        footer: "Ce séquençage n’est pas cosmétique : l’ordre, la température, le ratio des solvants, la durée et le moment d’ajout de l’alcool sont présentés dans vos documents comme des paramètres non négociables, justement parce qu’ils conditionnent le rendement, la préservation moléculaire et la qualité du totum final."
+        footer: "Ce séquençage n’est pas cosmétique : l’ordre, la température, le ratio des solvants et la durée conditionnent le rendement, la préservation moléculaire et la qualité du totum final."
       },
       section5: {
         title: "L'Exigence qui nous distingue.",
-        p1: "Beaucoup de produits parlent de plantes. Peu travaillent réellement la question décisive : comment obtenir, chez l’utilisateur, une extraction pertinente du spectre actif de la plante, au lieu d’une simple infusion approximative ou d’une extraction unique qui sous-extrait certaines familles moléculaires et en dégrade d’autres.",
-        p2: "Bloom ajoute donc un chaînon manquant entre la plante brute et l’usage réel : une méthode, un protocole, un séquençage, un outil et une pédagogie pour transformer la puissance botanique en expérience plus cohérente et potentiellement plus utile."
+        p1: "Beaucoup de produits parlent de plantes. Peu travaillent réellement la question décisive : comment obtenir une extraction pertinente du spectre actif de la plante, au lieu d’une simple infusion approximative.",
+        p2: "Bloom ajoute un chaînon manquant entre la plante brute et l’usage réel : une méthode, un protocole, un séquençage et un outil pour transformer la puissance botanique en expérience souveraine."
       },
       section6: {
         title: "Une Architecture",
-        p1: "Notre service consiste précisément à relier ces niveaux. Bloom propose un cadre de compréhension du terrain, des protocoles structurés, des séquences d’action, des contenus pédagogiques et des outils d’extraction conçus pour guider l’utilisateur dans un ordre logique.",
+        p1: "Bloom propose un cadre de compréhension du terrain, des protocoles structurés, des séquences d’action et des outils d’extraction conçus pour guider l’utilisateur dans un ordre logique.",
         p2: "Nous n’ajoutons pas une solution de plus au bruit du marché ; nous apportons une architecture là où beaucoup ne proposent que des produits isolés."
       },
       section7: {
         title: "Relier les Savoirs.",
-        p1: "Nous défendons une idée simple : on n’obtient pas de vrais résultats durables avec des gestes dispersés, des actifs mal extraits ou des protocoles sans hiérarchie. Il faut comprendre le terrain, ouvrir les bonnes voies, respecter le rythme du corps, choisir les bonnes plantes, puis surtout les extraire selon les paramètres qui permettent d’en libérer les principes actifs avec rigueur.",
-        box: "Bloom by BotaniK, c’est cela : une méthode de restauration du terrain, une lecture systémique du vivant, et une technologie botanique pensée pour faire le lien entre les savoirs anciens, la biochimie moderne et les usages concrets d’aujourd’hui."
+        p1: "On n’obtient pas de vrais résultats durables avec des gestes dispersés. Il faut comprendre le terrain, ouvrir les bonnes voies, respecter le rythme du corps, choisir les bonnes plantes, puis surtout les extraire selon les paramètres qui permettent d’en libérer les principes actifs avec rigueur.",
+        p2: "",
+        box: "Bloom by BotaniK, c’est cela : une méthode de restauration du terrain, une lecture systémique du vivant, et une technologie botanique pensée pour faire le lien entre les savoirs anciens et la biochimie moderne."
       },
       cta: {
         badge: "Continuer l'Exploration",
@@ -375,8 +378,8 @@ export const translations = {
         others: "+ 48 autres recettes",
         cta_premium: "Découvrir Bloom Premium",
         recipes: {
-          kit_renaissance: { name: "Kit Renaissance (Foie)", desc: "Protocole complet · 12 plantes · 84 jours" },
-          kit_purete: { name: "Kit Pureté Sanguine", desc: "Protocole complet · 10 plantes · 84 jours" },
+          kit_renaissance: { name: "Kit Renaissance (Terrain)", desc: "Protocole complet · 12 plantes · 84 jours" },
+          kit_purete: { name: "Kit Pureté Minérale", desc: "Protocole complet · 10 plantes · 84 jours" },
           kit_nerveux: { name: "Élixir Système Nerveux", desc: "Séquençage Actif · 6 plantes" },
           reset_84: { name: "Protocole Reset 84 Jours", desc: "Systémique complète · 15 plantes" },
           p1: { name: "Élixir Immunité", desc: "Extraction Biphasique · 4 plantes" },
@@ -546,9 +549,9 @@ export const translations = {
           description: "Synergie anti-inflammatoire pour retrouver souplesse et mobilité. Idéal pour apaiser les raideurs chroniques."
         },
         kit_reset: {
-          name: "Duo RESET Renaissance — Kit Argiles & Plantes",
-          subtitle: "DÉTOX & HOMÉOSTASIE",
-          description: "L'alliance de la Zéolithe Clinoptilolite et de plantes drainantes de grade pharma. Le pilier indispensable de votre transformation."
+          name: "Duo Argiles",
+          subtitle: "SYNERGIE MINÉRALE & TERRAIN",
+          description: "Association de zéolithes et bentonites naturelles de grade Pharmacopée Européenne pour l'accompagnement du terrain."
         },
         freemium_access: {
           name: "Accès Découverte — 10 Recettes Gratuites",
@@ -556,7 +559,7 @@ export const translations = {
           description: "Explorez l'univers Bloom avec une sélection de 10 recettes guidées pour débuter vos premières infusions."
         },
         premium_access: {
-          name: "Abonnement Premium — Accès Illimité",
+          name: "Abonnement Mensuel Premium — Accès Illimité",
           subtitle: "TOUT L'HERBIER & PROTOCOLES",
           description: "Accédez à plus de 100 recettes, protocoles experts et mises à jour mensuelles. 1 mois offert pour les clients BloomLab."
         }
@@ -696,8 +699,8 @@ export const translations = {
       shipping: {
         title: "Mode de livraison",
         free: "Gratuit",
-        more_for_free: "Plus que {amount} € pour bénéficier de la livraison offerte !",
-        remedies_note: "Note : Les remèdes botaniques nécessitent une expédition spécifique non éligible à la gratuité standard.",
+        more_for_free: "Ajoutez {amount} sachet(s) de plus pour bénéficier de la livraison offerte !",
+        remedies_note: "Note : La livraison est offerte à partir de 3 sachets (kits thés).",
         methods: {
           mondialrelay: "Mondial Relay (4-5j)",
           mondialrelay_desc: "Point Relais de votre choix",
@@ -1883,9 +1886,9 @@ export const translations = {
           description: "Anti-inflammatory synergy to regain flexibility and mobility. Ideal for soothing chronic joint stiffness."
         },
         kit_reset: {
-          name: "Duo RESET Renaissance — Clay & Plant Kit",
-          subtitle: "DETOX & HOMEOSTASIS",
-          description: "The alliance of Clinoptilolite Zeolite and pharmaceutical-grade draining plants. The essential pillar of your transformation."
+          name: "Clay Duo",
+          subtitle: "MINERAL SYNERGY & TERRAIN",
+          description: "Association of natural zeolites and bentonites (European Pharmacopoeia grade) for terrain support."
         },
         freemium_access: {
           name: "Discovery Access — 10 Free Recipes",
@@ -2033,8 +2036,8 @@ export const translations = {
       shipping: {
         title: "Shipping method",
         free: "Free",
-        more_for_free: "Only {amount} € more to benefit from free shipping!",
-        remedies_note: "Note: Botanical remedies require specific shipping not eligible for standard free shipping.",
+        more_for_free: "Add {amount} more sachet(s) to benefit from free shipping!",
+        remedies_note: "Note: Free shipping for orders of 3 sachets or more.",
         methods: {
           mondialrelay: "Mondial Relay (4-5d)",
           mondialrelay_desc: "Pick-up point of your choice",
@@ -3106,9 +3109,9 @@ export const translations = {
           description: "Entzündungshemmende Synergie zur Wiedererlangung von Flexibilität und Mobilität. Ideal zur Linderung chronischer Gelenksteifheit."
         },
         kit_reset: {
-          name: "RESET Renaissance Duo — Erden- & Pflanzen-Set",
-          subtitle: "DETOX & HOMÖOSTASE",
-          description: "Die Allianz aus Clinoptilolith-Zeolith und entwässernden Pflanzen in Pharmaqualität. Die unverzichtbare Säule Ihrer Transformation."
+          name: "Erden-Duo",
+          subtitle: "MINERALISCHE SYNERGIE & TERRAIN",
+          description: "Kombination aus natürlichen Zeolithen und Bentoniten (europäischer Arzneibuchgrad) zur Unterstützung des Terrains."
         },
         freemium_access: {
           name: "Entdecker-Zugang — 10 kostenlose Rezepte",
@@ -3256,8 +3259,8 @@ export const translations = {
       shipping: {
         title: "Versandart",
         free: "Kostenlos",
-        more_for_free: "Nur noch {amount} €, um von kostenlosem Versand zu profitieren!",
-        remedies_note: "Hinweis: Botanische Heilmittel erfordern einen spezifischen Versand, der nicht für den Standard-Kostenlosversand berechtigt ist.",
+        more_for_free: "Fügen Sie noch {amount} Beutel hinzu, um von kostenlosem Versand zu profitieren!",
+        remedies_note: "Hinweis: Kostenloser Versand ab 3 Beuteln (Tee-Kits).",
         methods: {
           mondialrelay: "Mondial Relay (4-5 Tage)",
           mondialrelay_desc: "Abholstation Ihrer Wahl",

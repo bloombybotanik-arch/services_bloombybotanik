@@ -9,7 +9,7 @@ interface ManifesteContentProps {
 }
 
 export default function ManifesteContent({ onBack, lang }: ManifesteContentProps) {
-  const t = translations[lang].manifesto;
+  const t = translations[lang].manifesto as any;
 
   return (
     <div className="min-h-screen bg-[#FDFCFB] text-[#1B3022]">
@@ -98,7 +98,7 @@ export default function ManifesteContent({ onBack, lang }: ManifesteContentProps
                   {t.section3.p1}
                 </p>
                 <p className="p-8 border border-white/20 rounded-3xl bg-white/5 backdrop-blur-sm">
-                  {t.section3.box}
+                  {t.section3.p2}
                 </p>
               </div>
             </div>

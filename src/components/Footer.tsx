@@ -5,106 +5,126 @@ import { Language, translations } from '../translations';
 
 const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId?: string, type?: any) => void, lang?: Language }) => {
   const t = translations[lang];
+  
   const socialLinks = [
     { icon: Youtube, href: 'https://www.youtube.com/@BloomByBotanik', label: 'YouTube' },
     {
-      customIcon: <img src="https://cdn.simpleicons.org/pinterest/white" className="w-6 h-6 opacity-40 group-hover:opacity-100 group-hover:filter group-hover:sepia group-hover:hue-rotate-[15deg] group-hover:saturate-[500%] transition-all" alt="Pinterest" />,
+      customIcon: <img src="https://cdn.simpleicons.org/pinterest/white" className="w-5 h-5 opacity-40 group-hover:opacity-100 transition-all" alt="Pinterest" />,
       href: 'https://fr.pinterest.com/bloombybotanik',
       label: 'Pinterest'
     },
     { icon: Instagram, href: 'https://www.instagram.com/bloombybotanik/', label: 'Instagram' },
     { icon: Facebook, href: 'https://www.facebook.com/profile.php?id=61577892110122', label: 'Facebook' },
     {
-      customIcon: <img src="https://cdn.simpleicons.org/tiktok/white" className="w-6 h-6 opacity-40 group-hover:opacity-100 group-hover:filter group-hover:sepia group-hover:hue-rotate-[15deg] group-hover:saturate-[500%] transition-all" alt="TikTok" />,
+      customIcon: <img src="https://cdn.simpleicons.org/tiktok/white" className="w-5 h-5 opacity-40 group-hover:opacity-100 transition-all" alt="TikTok" />,
       href: 'https://www.tiktok.com/@bloombybotanik',
       label: 'TikTok'
     },
   ];
 
+  const FooterGroup = ({ title, children }: { title: string, children: React.ReactNode }) => (
+    <div className="flex flex-col gap-6">
+      <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40">{title}</h4>
+      <ul className="flex flex-col gap-3">
+        {children}
+      </ul>
+    </div>
+  );
+
+  const FooterLink = ({ onClick, label }: { onClick: () => void, label: string }) => (
+    <li>
+      <button 
+        onClick={onClick}
+        className="text-sm text-white/60 hover:text-botanik-orange transition-colors text-left"
+      >
+        {label}
+      </button>
+    </li>
+  );
+
   return (
-    <footer className="bg-[#293228] text-white pt-16 pb-24 md:pb-16 px-6 md:px-12 border-t border-white/10">
-      <div className="max-w-[1200px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          {/* Brand & Mission */}
-          <div className="col-span-1 md:col-span-2">
+    <footer className="bg-botanik-green text-white border-t border-white/5 selection:bg-botanik-orange/30">
+      {/* Upper Footer: Main Content */}
+      <div className="max-w-[1440px] mx-auto px-8 md:px-12 lg:px-24 py-20 lg:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+          
+          {/* Column 1: Brand & Mantra */}
+          <div className="lg:col-span-5 space-y-10">
             <div
-              className="flex items-center gap-3 md:gap-4 mb-6 cursor-pointer group/footer-logo w-fit notranslate"
+              className="flex items-center gap-4 cursor-pointer group/f-logo w-fit"
               onClick={() => onNavigate('home')}
-              translate="no"
             >
-              <div className="w-14 h-14 md:w-20 md:h-20 flex items-center justify-center flex-shrink-0 overflow-hidden">
-                <img src={logoSidebar} alt="Logo Bloom by BotaniK" loading="lazy" className="w-full h-full object-contain scale-125 group-hover/footer-logo:brightness-0 group-hover/footer-logo:invert-[51%] group-hover/footer-logo:sepia-[95%] group-hover/footer-logo:saturate-[2180%] group-hover/footer-logo:hue-rotate-[1deg] group-hover/footer-logo:brightness-[101%] group-hover/footer-logo:contrast-[101%] transition-all" />
-              </div>
-              <div className="flex flex-col leading-tight uppercase text-white group-hover/footer-logo:text-[#F97316] transition-colors">
-                <span className="text-[10px] md:text-[12px] font-bold tracking-[0.22em] opacity-80">Bloom by</span>
-                <span className="text-xl md:text-2xl font-black tracking-widest">botaniK</span>
+              <img src={logoSidebar} alt="Bloom" className="w-12 h-12 object-contain group-hover:scale-105 transition-transform" />
+              <div className="flex flex-col leading-tight uppercase">
+                <span className="text-[9px] font-bold tracking-[0.2em] opacity-50">Bloom by</span>
+                <span className="text-xl font-black tracking-widest">botaniK</span>
               </div>
             </div>
-            <p className="text-white/60 text-sm leading-relaxed max-w-md mb-8">
-              {t.footer.description}
-            </p>
-            <div className="mb-12 border-l-2 border-botanik-orange pl-6 py-2">
-              <p className="text-xl md:text-2xl font-light italic text-white/90 leading-tight">
-                {lang === 'fr' ? "Votre corps sait se guérir." : lang === 'en' ? "Your body knows how to heal itself." : "Ihr Körper weiß, wie er sich selbst heilt."} <br />
-                <span className="text-botanik-orange font-bold not-italic">{lang === 'fr' ? "Donnez-lui simplement les bons outils." : lang === 'en' ? "Just give it the right tools." : "Geben Sie ihm einfach die richtigen Werkzeuge."}</span>
+
+            <div className="space-y-6">
+              <h2 className="text-2xl md:text-3xl font-extrabold leading-snug text-white/90">
+                {lang === 'fr' ? "Votre corps n’est pas cassé. Il est verrouillé." : "Your body isn't broken. It's locked."}
+              </h2>
+              <p className="text-sm text-white/50 leading-relaxed max-w-sm">
+                Bloom by BotaniK réconcilie l'herboristerie ancestrale et l'ingénierie moléculaire de pointe pour libérer le plein potentiel de votre pharmacie intérieure.
               </p>
             </div>
-            <div className="mb-8">
-              <h4 className="text-xs uppercase tracking-widest font-bold mb-4 text-[#F5F3EB]">Contact</h4>
-              <a href="mailto:bloombybotanik@gmail.com" className="text-white/60 hover:text-white transition-colors text-sm">
-                bloombybotanik@gmail.com
-              </a>
-            </div>
-            <div className="flex gap-6">
+
+            <div className="flex items-center gap-6">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/40 hover:text-botanik-orange transition-colors group"
+                  className="text-white/30 hover:text-white transition-colors"
                   aria-label={social.label}
                 >
-                  {social.customIcon ? social.customIcon : <social.icon className="w-6 h-6" />}
+                  {social.customIcon ? social.customIcon : <social.icon className="w-5 h-5" />}
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Navigation */}
-          <div>
-            <h4 className="text-xs uppercase tracking-widest font-bold mb-6 text-[#F5F3EB]">Navigation</h4>
-            <ul className="space-y-4 text-sm text-white/60">
-              <li><button onClick={() => onNavigate('boutique')} className="hover:text-white transition-colors">{t.nav.shop}</button></li>
-              <li><button onClick={() => onNavigate('culinaire')} className="hover:text-white transition-colors">{t.nav.culinary}</button></li>
-              <li><button onClick={() => onNavigate('cosmetiques')} className="hover:text-white transition-colors">{t.nav.cosmetics}</button></li>
-              <li><button onClick={() => onNavigate('phytotherapie-reset')} className="hover:text-white transition-colors">{t.nav.reset}</button></li>
-              <li><button onClick={() => onNavigate('library-landing')} className="hover:text-white transition-colors">{t.nav.blog}</button></li>
-              <li><button onClick={() => onNavigate('manifeste')} className="hover:text-white transition-colors">{t.nav.manifesto}</button></li>
-              <li><button onClick={() => onNavigate('activation')} className="hover:text-white transition-colors">{lang === 'fr' ? 'Activer ma BloomLab' : lang === 'en' ? 'Activate my BloomLab' : 'Meine BloomLab aktivieren'}</button></li>
-            </ul>
-          </div>
+          {/* Column 2: Navigation Groups */}
+          <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-12 lg:gap-8">
+            <FooterGroup title="Boutique">
+              <FooterLink label="Tous les produits" onClick={() => onNavigate('boutique')} />
+              <FooterLink label="BloomLab®" onClick={() => onNavigate('indexbis')} />
+              <FooterLink label="Atelier Culinaire" onClick={() => onNavigate('culinaire')} />
+              <FooterLink label="Soin Cosmétique" onClick={() => onNavigate('cosmetiques')} />
+              <FooterLink label="Reset Homéostatique" onClick={() => onNavigate('phytotherapie-reset')} />
+            </FooterGroup>
 
-          {/* Légal */}
-          <div>
-            <h4 className="text-xs uppercase tracking-widest font-bold mb-6 text-[#F5F3EB]">Informations Légales</h4>
-            <ul className="space-y-4 text-sm text-white/60">
-              <li><button onClick={() => onNavigate('legal', undefined, 'mentions')} className="hover:text-white transition-colors">{t.footer.legal}</button></li>
-              <li><button onClick={() => onNavigate('legal', undefined, 'cgv')} className="hover:text-white transition-colors">{t.footer.cgv}</button></li>
-              <li><button onClick={() => onNavigate('legal', undefined, 'cgu')} className="hover:text-white transition-colors">CGU</button></li>
-              <li><button onClick={() => onNavigate('legal', undefined, 'privacy')} className="hover:text-white transition-colors">{t.footer.privacy}</button></li>
-              <li><button onClick={() => onNavigate('legal', undefined, 'withdrawal')} className="hover:text-white transition-colors">Droit de Rétractation</button></li>
-            </ul>
+            <FooterGroup title="Savoir">
+              <FooterLink label="La Bibliothèque" onClick={() => onNavigate('blog')} />
+              <FooterLink label="Le Manifeste" onClick={() => onNavigate('manifesto')} />
+              <FooterLink label="Science du Totum" onClick={() => onNavigate('indexbis')} />
+              <FooterLink label="FAQ" onClick={() => onNavigate('indexbis')} />
+            </FooterGroup>
+
+            <FooterGroup title="Légal">
+              <FooterLink label="Mentions Légales" onClick={() => onNavigate('legal', undefined, 'mentions')} />
+              <FooterLink label="CGV / CGU" onClick={() => onNavigate('legal', undefined, 'cgv')} />
+              <FooterLink label="Confidentialité" onClick={() => onNavigate('legal', undefined, 'privacy')} />
+              <FooterLink label="Contact" onClick={() => window.location.href = 'mailto:bloombybotanik@gmail.com'} />
+            </FooterGroup>
           </div>
         </div>
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[10px] uppercase tracking-widest text-white/30">
-            copyright @ 2024 Bloom by botaniK
-          </p>
-          <p className="text-[10px] uppercase tracking-widest text-white/30 text-center md:text-right">
-            Dispositif d'extraction végétale à usage personnel.
-            Ceci n'est pas un dispositif médical.
-          </p>
+      </div>
+
+      {/* Lower Footer: Copyright & Disclaimers */}
+      <div className="border-t border-white/5 bg-black/5">
+        <div className="max-w-[1440px] mx-auto px-8 md:px-12 lg:px-24 py-8 flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-[10px] uppercase tracking-[0.15em] text-white/20">
+            <span>© 2024 Bloom by BotaniK</span>
+            <span className="hidden md:inline">•</span>
+            <span>N°1 de l'extraction botanique de précision</span>
+          </div>
+          
+          <div className="text-[10px] text-white/30 text-center md:text-right leading-relaxed max-w-sm">
+            Dispositif d'extraction végétale à usage personnel. Ceci n'est pas un dispositif médical. Consultez toujours un professionnel de santé.
+          </div>
         </div>
       </div>
     </footer>

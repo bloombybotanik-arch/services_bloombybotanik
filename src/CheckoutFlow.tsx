@@ -3,10 +3,12 @@ import { ShieldCheck, Lock, CreditCard, ChevronRight, Truck, Building2, User, Ma
 import { translations, Language } from './translations';
 import { db } from './lib/firebase';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { getShippingPrice, ShippingMethod } from './lib/shippingUtils';
 
 interface CheckoutFlowProps {
   cart: any[];
   total: number;
+  shippingMethod: ShippingMethod;
   user: any;
   onSuccess: (orderData: any) => void;
   onCancel: () => void;
@@ -15,8 +17,11 @@ interface CheckoutFlowProps {
 
 type Step = 'information' | 'shipping' | 'payment' | 'confirmation';
 
-export default function CheckoutFlow({ cart, total, user, onSuccess, onCancel, lang = 'fr' }: CheckoutFlowProps) {
+export default function CheckoutFlow({ cart, total, shippingMethod, user, onSuccess, onCancel, lang = 'fr' }: CheckoutFlowProps) {
   const t = translations[lang].checkout;
+  const cartT = translations[lang].cart;
+  const shipping = getShippingPrice(shippingMethod, cart);
+  const finalTotal = total + shipping;
   const [step, setStep] = useState<Step>(user ? 'information' : 'information'); // We'll show a warning if not logged in
   const [formData, setFormData] = useState({
     email: user?.email || '',
@@ -52,7 +57,7 @@ export default function CheckoutFlow({ cart, total, user, onSuccess, onCancel, l
       // 1. Create Order in Firestore
       const newOrderId = `BLM-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
       
-      const orderData = {
+            const orderData = {
         userId: user.uid,
         email: formData.email,
         items: cart.map(item => ({
@@ -62,7 +67,9 @@ export default function CheckoutFlow({ cart, total, user, onSuccess, onCancel, l
           quantity: item.quantity,
           isDigital: item.isDigital || false
         })),
-        totalCents: Math.round(total * 100),
+        shippingMethod,
+        shippingPrice: shipping,
+        totalCents: Math.round(finalTotal * 100),
         status: 'paid',
         shippingAddress: step === 'shipping' ? {
           address: formData.address,
@@ -76,8 +83,8 @@ export default function CheckoutFlow({ cart, total, user, onSuccess, onCancel, l
 
       await setDoc(doc(db, 'orders', newOrderId), orderData);
 
-      // 2. Update User Status if digital products are bought
-      const hasPremium = cart.some(item => item.id === 'premium-access');
+      // 2. Update User Status if digital products or signature packs are bought
+      const hasPremium = cart.some(item => item.id === 'premium-access' || item.id === 'pack-signature');
       const hasFreemium = cart.some(item => item.id === 'freemium-access');
 
       if (hasPremium || hasFreemium) {
@@ -372,12 +379,14 @@ export default function CheckoutFlow({ cart, total, user, onSuccess, onCancel, l
             
             <div className="pt-6 border-t border-[#1B3022]/10 space-y-3">
               <div className="flex justify-between text-sm opacity-60">
-                <span>{translations[lang].cart.summary.shipping}</span>
-                <span className="font-bold text-[#1B3022]">{t.summary.shipping_free}</span>
+                <span>{cartT.summary.shipping} ({shippingMethod})</span>
+                <span className="font-bold text-[#1B3022]">
+                  {shipping === 0 ? t.summary.shipping_free : `${shipping.toFixed(2).replace('.', ',')} €`}
+                </span>
               </div>
               <div className="flex justify-between items-center pt-2">
                 <span className="text-lg font-bold">{t.summary.total}</span>
-                <span className="text-2xl font-bold text-[#F97316]">{total.toFixed(2)} €</span>
+                <span className="text-2xl font-bold text-[#F97316]">{finalTotal.toFixed(2).replace('.', ',')} €</span>
               </div>
             </div>
           </div>
