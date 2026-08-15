@@ -102,7 +102,7 @@ export const translations = {
       },
       alternative: {
         title: "Une autre voie",
-        quote: "\"Votre corps n'est pas cassé. Il est verrouillé.\"",
+        quote: "\"L'Ingénierie au service du vivant.\"",
         q1: {
           title: "Pourquoi une autre voie ?",
           description: "Face à la fragmentation des routines modernes qui s'épuisent à masquer les signaux, nous proposons de revenir à la source : la régulation des systèmes biologiques profonds."
@@ -852,7 +852,7 @@ export const translations = {
         }
       },
       vision: {
-        quote: "\"Votre corps n'est pas cassé. Il est verrouillé.\"",
+        quote: "\"L'Ingénierie au service du vivant.\"",
         p1: "Nous avons créé Bloom pour redonner à chacun la clé de sa propre pharmacie intérieure. Le système industriel actuel standardise les remèdes, oubliant que chaque terrain biologique est unique.",
         check1: "<strong>Sortez de la dépendance :</strong> Ne subissez plus les formulations génériques du commerce.",
         check2: "<strong>Précision Thérapeutique :</strong> Adaptez chaque gramme, chaque minute, chaque degré à vos besoins réels."
@@ -956,7 +956,7 @@ export const translations = {
       verrouillage_title: "Verrouillage Systémique",
       verrouillage_subtitle: "T8 (Inflammation) & T1",
       bilan_desc: "Votre terrain exprime une saturation inflammatoire couplée à une fragilité de la barrière intestinale. Ce double verrouillage empêche une régulation fluide de votre énergie.",
-      quote: "Votre corps n'est pas cassé. Il est verrouillé.",
+      quote: "L'Ingénierie au service du vivant.",
       priority_axe_1: "Axe Prioritaire 1",
       priority_axe_2: "Axe Prioritaire 2",
       axe_1_desc: "Apaisement T8",
@@ -1104,7 +1104,7 @@ export const translations = {
       title: "Reset",
       title_accent: "Homéostasique.",
       subtitle: "Le protocole de régulation profonde",
-      quote: "\"Votre corps n'est pas cassé. Il est verrouillé.\"",
+      quote: "\"L'Ingénierie au service du vivant.\"",
       description: "L'autonomie n'est pas une destination, c'est une pratique quotidienne. Reprenez le pouvoir sur votre biologie.",
       cta_primary: "Démarrer Bloom Complet (59€/mois)",
       cta_secondary: "Découvrir Bloom Lab",

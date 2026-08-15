@@ -83,24 +83,26 @@ const generateSeoAlt = (imageContext: string) => {
 const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, currentView: string, t: any, productId?: string }) => {
   useEffect(() => {
     // 1. Handle dynamic Title & Meta Description
-    let seoKey: 'home' | 'herbarium' | 'shop' | 'blog' | 'pillar' | 'extraction' | 'infusion' | 'machine' | 'manifesto' | 'how_it_works' = 'home';
+    let seoKey: 'home' | 'herbarium' | 'shop' | 'blog' | 'pillar' | 'extraction' | 'infusion' | 'machine' | 'manifesto' | 'how_it_works' | 'reset' = 'home';
     
-    if (['herbier', 'library', 'library-landing', 'culinaire', 'cosmetiques'].includes(currentView)) {
+    if (['herbier', 'culinaire', 'cosmetiques'].includes(currentView)) {
       seoKey = 'herbarium';
     } else if (['boutique', 'product-detail', 'cart', 'checkout'].includes(currentView)) {
       seoKey = 'shop';
     } else if (currentView === 'pillar-extraction') {
       seoKey = 'pillar';
-    } else if (currentView === 'blog') {
+    } else if (currentView === 'guide') {
+      seoKey = 'extraction';
+    } else if (currentView === 'how_it_works') {
+      seoKey = 'infusion';
+    } else if (currentView === 'blog' || currentView === 'library-landing' || currentView === 'library') {
       seoKey = 'blog';
-    } else if (currentView === 'machine') {
+    } else if (currentView === 'machine' || currentView === 'indexbis') {
       seoKey = 'machine';
     } else if (currentView === 'manifeste') {
       seoKey = 'manifesto';
-    } else if (currentView === 'indexbis') {
-      seoKey = 'machine';
-    } else if (currentView === 'how_it_works') {
-      seoKey = 'how_it_works';
+    } else if (currentView === 'phytotherapie-reset') {
+      seoKey = 'reset';
     }
 
     const currentSeo = t.seo[seoKey];
@@ -1078,7 +1080,7 @@ export default function App() {
                 </div>
                 
                 <p className="text-center text-[10px] text-white/20 italic leading-relaxed px-4">
-                  "Votre corps n'est pas cassé, il est verrouillé. Bloom by BotaniK est la clé."
+                  "L'Ingénierie au service du vivant. Bloom by BotaniK est la clé."
                 </p>
               </div>
             </div>

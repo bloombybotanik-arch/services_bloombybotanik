@@ -44,6 +44,10 @@ export const translations = {
         title: "Notre Laboratoire de Précision Botanique | Bloom by BotaniK",
         description: "La vision Bloom : allier herboristerie traditionnelle et science moderne. Votre extracteur botanique pour une souveraineté sanitaire retrouvée.",
       },
+      reset: {
+        title: "Reset Homéostatique & Terrain | Bloom by BotaniK",
+        description: "Protocole de reset systémique pour restaurer l'homéostasie. L'alliance des argiles, zéolithes et plantes pour un terrain équilibré.",
+      },
     },
     nav: {
       guide: "Guide",
@@ -187,7 +191,7 @@ export const translations = {
       },
       alternative: {
         title: "Une autre voie",
-        quote: "\"Votre corps n'est pas cassé. Il est verrouillé.\"",
+        quote: "\"L'Ingénierie au service du vivant.\"",
         q1: {
           title: "Pourquoi une autre voie ?",
           description: "Face à la fragmentation des routines modernes qui s'épuisent à masquer les signaux, nous proposons de revenir à la source : la régulation des systèmes biologiques profonds."
@@ -1069,7 +1073,7 @@ export const translations = {
         }
       },
       vision: {
-        quote: "\"Votre corps n'est pas cassé. Il est verrouillé.\"",
+        quote: "\"L'Ingénierie au service du vivant.\"",
         p1: "Nous avons créé Bloom pour redonner à chacun la clé de sa propre pharmacie intérieure. Le système industriel actuel standardise les remèdes, oubliant que chaque terrain biologique est unique.",
         check1: "<strong>Sortez de la dépendance :</strong> Ne subissez plus les formulations génériques du commerce.",
         check2: "<strong>Précision Thérapeutique :</strong> Adaptez chaque gramme, chaque minute, chaque degré à vos besoins réels."
@@ -1173,7 +1177,7 @@ export const translations = {
       verrouillage_title: "Verrouillage Systémique",
       verrouillage_subtitle: "T8 (Inflammation) & T1",
       bilan_desc: "Votre terrain exprime une saturation inflammatoire couplée à une fragilité de la barrière intestinale. Ce double verrouillage empêche une régulation fluide de votre énergie.",
-      quote: "Votre corps n'est pas cassé. Il est verrouillé.",
+      quote: "L'Ingénierie au service du vivant.",
       priority_axe_1: "Axe Prioritaire 1",
       priority_axe_2: "Axe Prioritaire 2",
       axe_1_desc: "Apaisement T8",
@@ -1321,7 +1325,7 @@ export const translations = {
       title: "Phytothérapie & Reset",
       title_accent: "Homéostasique.",
       subtitle: "Le protocole de régulation profonde par les plantes",
-      quote: "\"Votre corps n'est pas cassé. Il est verrouillé.\"",
+      quote: "\"L'Ingénierie au service du vivant.\"",
       description: "Retrouvez votre autonomie avec l'extraction botanique de précision. Le protocole Bloom pour rééquilibrer vos systèmes de régulation profonde.",
       cta_primary: "Démarrer Bloom Complet (59€/mois)",
       cta_secondary: "Découvrir Bloom Lab",
@@ -1387,6 +1391,10 @@ export const translations = {
       manifesto: {
         title: "Our Botanical Precision Laboratory | Bloom by BotaniK",
         description: "The Bloom vision: bridging traditional herbalism and modern science. Your botanical extractor for restored health sovereignty.",
+      },
+      reset: {
+        title: "Homeostatic Reset & Terrain | Bloom by BotaniK",
+        description: "Systemic reset protocol to restore homeostasis. The alliance of clays, zeolites and plants for a balanced terrain.",
       },
     },
     nav: {
@@ -1527,7 +1535,7 @@ export const translations = {
       },
       alternative: {
         title: "Another way",
-        quote: "\"Your body is not broken. It is locked.\"",
+        quote: "\"Engineering for life.\"",
         q1: {
           title: "Why another way?",
           description: "Faced with the fragmentation of modern routines that exhaust themselves masking signals, we propose to return to the source: the regulation of deep biological systems."
@@ -2292,7 +2300,7 @@ export const translations = {
         }
       },
       vision: {
-        quote: "\"Your body is not broken. It is locked.\"",
+        quote: "\"Engineering for life.\"",
         p1: "We created Bloom to give everyone back the key to their own interior pharmacy. The current industrial system standardizes remedies, forgetting that each biological terrain is unique.",
         check1: "<strong>Get out of dependency:</strong> No longer suffer from generic commercial formulations.",
         check2: "<strong>Therapeutic Precision:</strong> Adapt every gram, every minute, every degree to your real needs."
@@ -2396,7 +2404,7 @@ export const translations = {
       verrouillage_title: "Systemic Locking",
       verrouillage_subtitle: "T8 (Inflammation) & T1",
       bilan_desc: "Your terrain expresses inflammatory saturation coupled with fragility of the intestinal barrier. This double locking prevents a fluid regulation of your energy.",
-      quote: "Your body is not broken. It is locked.",
+      quote: "Engineering for life.",
       priority_axe_1: "Priority Axis 1",
       priority_axe_2: "Priority Axis 2",
       axe_1_desc: "T8 Soothing",
@@ -2544,7 +2552,7 @@ export const translations = {
       title: "Homeostatic",
       title_accent: "Reset.",
       subtitle: "Deep regulation protocol",
-      quote: "\"Your body is not broken. It is locked.\"",
+      quote: "\"Engineering for life.\"",
       description: "Autonomy is not a destination, it's a daily practice. Take back power over your biology.",
       cta_primary: "Start Bloom Complet (59€/month)",
       cta_secondary: "Discover Bloom Lab",
@@ -2610,6 +2618,10 @@ export const translations = {
       manifesto: {
         title: "Unser Labor für botanische Präzision | Bloom by BotaniK",
         description: "Die Bloom-Vision: Verbindung von traditioneller Kräuterkunde und moderner Wissenschaft. Ihr botanischer Extraktor für neue Souveränität.",
+      },
+      reset: {
+        title: "Homeostatischer Reset & Terrain | Bloom by BotaniK",
+        description: "Systemisches Reset-Protokoll zur Wiederherstellung der Homöostase. Die Allianz aus Tonerden, Zeolithen und Pflanzen für ein ausgewogenes Terrain.",
       },
     },
     nav: {
@@ -2750,7 +2762,7 @@ export const translations = {
       },
       alternative: {
         title: "Ein anderer Weg",
-        quote: "\"Dein Körper ist nicht kaputt. Er ist verschlossen.\"",
+        quote: "\"Ingenieurwesen im Dienste des Lebens.\"",
         q1: {
           title: "Warum ein anderer Weg?",
           description: "Angesichts der Fragmentierung moderner Routinen, die sich darin erschöpfen, Signale zu maskieren, schlagen wir vor, zur Quelle zurückzukehren: zur Regulierung der tiefen biologischen Systeme."
@@ -3515,7 +3527,7 @@ export const translations = {
         }
       },
       vision: {
-        quote: "\"Dein Körper ist nicht kaputt. Er ist verschlossen.\"",
+        quote: "\"Ingenieurwesen im Dienste des Lebens.\"",
         p1: "Wir haben Bloom geschaffen, um jedem den Schlüssel zu seiner eigenen inneren Apotheke zurückzugeben. Das aktuelle industrielle System standardisiert Heilmittel und vergisst dabei, dass jedes biologische Terrain einzigartig ist.",
         check1: "<strong>Raus aus der Abhängigkeit:</strong> Leiden Sie nicht länger unter generischen kommerziellen Formulierungen.",
         check2: "<strong>Therapeutische Präzision:</strong> Passen Sie jedes Gramm, jede Minute, jeden Grad an Ihre tatsächlichen Bedürfnisse an."
@@ -3767,7 +3779,7 @@ export const translations = {
       title: "Homöostatisches",
       title_accent: "Reset.",
       subtitle: "Protokoll zur tiefen Regulierung",
-      quote: "\"Dein Körper ist nicht kaputt. Er ist verschlossen.\"",
+      quote: "\"Ingenieurwesen im Dienste des Lebens.\"",
       description: "Autonomie ist kein Ziel, es ist eine tägliche Praxis. Nehmen Sie die Macht über Ihre Biologie zurück.",
       cta_primary: "Bloom Complet starten (59€/Monat)",
       cta_secondary: "Bloom Lab entdecken",

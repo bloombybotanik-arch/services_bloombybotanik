@@ -45,7 +45,7 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
   return (
     <footer className="bg-botanik-green text-white border-t border-white/5 selection:bg-botanik-orange/30">
       {/* Upper Footer: Main Content */}
-      <div className="max-w-[1440px] mx-auto px-8 md:px-12 lg:px-24 py-20 lg:py-32">
+      <div className="max-w-[1440px] mx-auto px-8 md:px-12 lg:px-24 py-12 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
           
           {/* Column 1: Brand & Mantra */}
@@ -63,7 +63,7 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
 
             <div className="space-y-6">
               <h2 className="text-2xl md:text-3xl font-extrabold leading-snug text-white/90">
-                {lang === 'fr' ? "Votre corps n’est pas cassé. Il est verrouillé." : "Your body isn't broken. It's locked."}
+                {lang === 'fr' ? "L'Ingénierie au service du vivant." : "Engineering for life."}
               </h2>
               <p className="text-sm text-white/50 leading-relaxed max-w-sm">
                 Bloom by BotaniK réconcilie l'herboristerie ancestrale et l'ingénierie moléculaire de pointe pour libérer le plein potentiel de votre pharmacie intérieure.

@@ -1105,7 +1105,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </div>
 
           <p class="text-center italic text-botanik-green/40 mt-12">
-            "Votre corps n'est pas cassé, il est encombré. Le Duo Argiles est l'outil minéral de votre souveraineté." — L'Architecte Bloom
+            "L'Ingénierie au service du vivant. Le Duo Argiles est l'outil minéral de votre souveraineté." — L'Architecte Bloom
           </p>
         </div>
       ` : `

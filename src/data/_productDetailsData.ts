@@ -449,7 +449,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             <p class="text-sm leading-relaxed">La finesse de la poudre est le facteur déterminant de son efficacité. Plus la particule est fine, plus la surface de contact (surface spécifique) est grande. À 6 microns, notre zéolithe offre une capacité de capture démultipliée par rapport aux produits standards (souvent entre 20 et 50 microns).</p>
           </div>
 
-          <h3 class="text-2xl font-bold mb-6 italic">"Votre corps n'est pas cassé. Il est verrouillé par la surcharge environnementale."</h3>
+          <h3 class="text-2xl font-bold mb-6 italic">"L'Ingénierie au service du vivant.par la surcharge environnementale."</h3>
           
           <h2 class="text-2xl font-bold mb-6">Conseils d'utilisation</h2>
           <div class="space-y-4 mb-12">

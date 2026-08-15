@@ -99,7 +99,7 @@ const translationsIndexBis = {
         culinaire: {
           title: "Atelier Culinaire & Gastronomie Botanique",
           badge: "Savoir-Faire Gourmand & Santé",
-          image: bloomSoinsImg,
+          image: herbsImg,
           description: "Transformez vos aromates et plantes fraîches en beurres parfumés, huiles d'olive infusées et élixirs gastronomiques sans jamais développer d'amertume.",
           exampleTitle: "Huile d'Olive Infusée au Romarin, Piment & Ail",
           temp: "38°C", time: "1h 30m", solvent: "Huile d'Olive",
@@ -558,7 +558,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
           </div>
           <div className="bg-white rounded-[32px] border border-[#F3EEE6] overflow-hidden shadow-xl">
              <div className="grid grid-cols-2 md:grid-cols-3 bg-[#FAF7F2] border-b border-[#F3EEE6]">
-               <div className="p-6 md:p-8 font-black text-[#0F261E] uppercase tracking-widest text-xs hidden md:block">{lang === 'fr' ? 'Critères' : 'Criteria'}</div>
+               <div className="p-6 md:p-8 font-black text-[#0F261E] uppercase tracking-widest text-xs hidden md:block border-r border-[#F3EEE6]">{lang === 'fr' ? 'Critères' : 'Criteria'}</div>
                <div className="p-6 md:p-8 font-black text-red-600 uppercase tracking-widest text-xs text-center">Bain-Marie</div>
                <div className="p-6 md:p-8 font-black text-[#1C3F34] uppercase tracking-widest text-xs text-center bg-white border-x border-[#F3EEE6] relative">
                  BloomLab®
@@ -573,7 +573,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
                { label: lang === 'fr' ? "Sécurité des Solvants" : "Solvent Safety", bm: lang === 'fr' ? "Risqué. Vapeurs d'alcool sur feu vif." : "Risky. Alcohol vapors on open flame.", bl: lang === 'fr' ? "Circuit Hermétique. Zéro fuite de vapeurs." : "Hermetic Circuit. Zero vapor leakage." }
              ].map((row, i) => (
                <div key={i} className="grid grid-cols-2 md:grid-cols-3 border-b border-[#F3EEE6] last:border-0 hover:bg-[#FAF7F2]/50 transition-colors">
-                 <div className="p-5 md:p-6 text-sm font-bold text-[#0F261E] hidden md:flex items-center">{row.label}</div>
+                 <div className="p-5 md:p-6 text-sm font-bold text-[#0F261E] hidden md:flex items-center border-r border-[#F3EEE6]">{row.label}</div>
                  <div className="p-5 md:p-6 text-sm text-red-600 text-center font-medium">{row.bm}</div>
                  <div className="p-5 md:p-6 text-sm font-bold text-[#1C3F34] text-center bg-white border-x border-[#F3EEE6] flex items-center justify-center gap-2">
                    <Check className="w-4 h-4 text-emerald-600 shrink-0" /> {row.bl}

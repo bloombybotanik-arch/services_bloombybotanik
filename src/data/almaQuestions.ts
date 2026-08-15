@@ -18,7 +18,7 @@ export const getAlmaQuestions = (lang: Language): Question[] => {
       questions: [
         {
           id: 1,
-          question: "Bonjour, je suis ALMA. 'Votre corps n'est pas cassé. Il est verrouillé.' Pour commencer notre exploration, quel est votre niveau de vitalité globale aujourd'hui ?",
+          question: "Bonjour, je suis ALMA. 'L'Ingénierie au service du vivant.' Pour commencer notre exploration, quel est votre niveau de vitalité globale aujourd'hui ?",
           options: [
             { label: "Pleine d'énergie", value: "high" },
             { label: "Fatiguée mais stable", value: "medium" },
