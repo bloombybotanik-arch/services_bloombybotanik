@@ -8,10 +8,16 @@ export const CookieBanner = ({ lang }: { lang: Language }) => {
   const t = translations[lang].common;
 
   useEffect(() => {
+    const handleOpen = () => setIsVisible(true);
+    window.addEventListener('bloom-open-cookies', handleOpen);
+    
     const consent = localStorage.getItem('cookie-consent');
     if (!consent) {
       const timer = setTimeout(() => setIsVisible(true), 2000);
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(timer);
+        window.removeEventListener('bloom-open-cookies', handleOpen);
+      };
     } else if (typeof window.gtag === 'function') {
       // If consent already exists, update GTM
       const isAccepted = consent === 'accepted';
@@ -22,6 +28,8 @@ export const CookieBanner = ({ lang }: { lang: Language }) => {
         ad_personalization: isAccepted ? 'granted' : 'denied'
       });
     }
+    
+    return () => window.removeEventListener('bloom-open-cookies', handleOpen);
   }, []);
 
   const handleAccept = () => {

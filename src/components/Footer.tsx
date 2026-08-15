@@ -107,6 +107,10 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
               <FooterLink label="Mentions Légales" onClick={() => onNavigate('legal', undefined, 'mentions')} />
               <FooterLink label="CGV / CGU" onClick={() => onNavigate('legal', undefined, 'cgv')} />
               <FooterLink label="Confidentialité" onClick={() => onNavigate('legal', undefined, 'privacy')} />
+              <FooterLink 
+                label={lang === 'fr' ? "Gestion des cookies" : lang === 'en' ? "Manage cookies" : "Cookie-Einstellungen"} 
+                onClick={() => window.dispatchEvent(new CustomEvent('bloom-open-cookies'))} 
+              />
               <FooterLink label="Contact" onClick={() => window.location.href = 'mailto:bloombybotanik@gmail.com'} />
             </FooterGroup>
           </div>
