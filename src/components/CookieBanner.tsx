@@ -12,16 +12,41 @@ export const CookieBanner = ({ lang }: { lang: Language }) => {
     if (!consent) {
       const timer = setTimeout(() => setIsVisible(true), 2000);
       return () => clearTimeout(timer);
+    } else if (typeof window.gtag === 'function') {
+      // If consent already exists, update GTM
+      const isAccepted = consent === 'accepted';
+      window.gtag('consent', 'update', {
+        ad_storage: isAccepted ? 'granted' : 'denied',
+        analytics_storage: isAccepted ? 'granted' : 'denied',
+        ad_user_data: isAccepted ? 'granted' : 'denied',
+        ad_personalization: isAccepted ? 'granted' : 'denied'
+      });
     }
   }, []);
 
   const handleAccept = () => {
     localStorage.setItem('cookie-consent', 'accepted');
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        ad_storage: 'granted',
+        analytics_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted'
+      });
+    }
     setIsVisible(false);
   };
 
   const handleDecline = () => {
     localStorage.setItem('cookie-consent', 'declined');
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+      });
+    }
     setIsVisible(false);
   };
 

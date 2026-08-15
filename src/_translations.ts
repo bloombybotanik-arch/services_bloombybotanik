@@ -707,7 +707,7 @@ export const translations = {
           },
           {
             title: "4. Garantie Souveraineté",
-            text: "L'instrument BloomLab bénéficie d'une garantie de conformité de 2 ans. Cette garantie couvre les défauts de fabrication dans le cadre d'un usage conforme aux protocoles Bloom."
+            text: "L'instrument BloomLab bénéficie d'une garantie de conformité de 1 an. Cette garantie couvre les défauts de fabrication dans le cadre d'un usage conforme aux protocoles Bloom."
           },
           {
             title: "5. Droit de Rétractation",
@@ -1825,7 +1825,7 @@ export const translations = {
           },
           {
             title: "4. Sovereignty Guarantee",
-            text: "The BloomLab instrument benefits from a 2-year conformity guarantee. This guarantee covers manufacturing defects within the framework of use conforming to Bloom protocols."
+            text: "The BloomLab instrument benefits from a 1-year conformity guarantee. This guarantee covers manufacturing defects within the framework of use conforming to Bloom protocols."
           },
           {
             title: "5. Right of Withdrawal",
@@ -2943,7 +2943,7 @@ export const translations = {
           },
           {
             title: "4. Souveränitätsgarantie",
-            text: "Das BloomLab-Instrument profitiert von einer 2-jährigen Konformitätsgarantie. Diese Garantie deckt Herstellungsfehler im Rahmen einer den Bloom-Protokollen entsprechenden Verwendung ab."
+            text: "Das BloomLab-Instrument profitiert von einer 1-jährigen Konformitätsgarantie. Diese Garantie deckt Herstellungsfehler im Rahmen einer den Bloom-Protokollen entsprechenden Verwendung ab."
           },
           {
             title: "5. Widerrufsrecht",

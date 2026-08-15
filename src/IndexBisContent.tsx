@@ -66,21 +66,21 @@ type UniverseType = 'culinaire' | 'cosmetique' | 'phytotherapie';
 
 const translationsIndexBis = {
   fr: {
-    marquee: ["🇫🇷 Marque Française Botanique", "🚚 Expédition Prioritaire sous 24/48h", "🛡️ Satisfait ou Remboursé 30 Jours", "⚡ Garantie Constructeur 2 Ans"],
+    marquee: ["🇫🇷 Marque Française Botanique", "🚚 Expédition Prioritaire sous 24/48h", "🛡️ Satisfait ou Remboursé 30 Jours", "⚡ Garantie Constructeur 1 An"],
     hero: {
       badge: "N°1 France — Édition Limitée 2026 : Thermorégulation MTC 2.0",
       title: "L'extracteur botanique qui révèle le <span class='text-[#D97706]'>totum</span> de vos plantes.",
       subtitle: "<strong>BloomLab® : L'infuseur botanique de précision.</strong> Un seul appareil pour l'extraction du totum à basse température : huiles culinaires, soins cosmétiques et remèdes de plantes.",
-      rating: "Basé sur +2 500 utilisateurs passionnés",
+      rating: "Une conception dédiée à l’extraction botanique de précision.",
       buyBtn: "Acheter la BloomLab® — <span class='line-through opacity-60 mr-2'>289€</span> 239€",
       installment: "Paiement en 3x sans frais par Klarna",
       installmentSub: "Soit 79,66€ / mois",
       guarantee: "Testez 30 jours sans risque",
       shipping: "Expédié sous 24/48h",
       features: [
-        { title: "Inox 304 Pur", sub: "Grade Laboratoire", icon: Microscope },
-        { title: "Précision ±0.5°C", sub: "Zéro Surchauffe", icon: Thermometer },
-        { title: "3 Solvants", sub: "Eau, Huile, Alcool", icon: Droplets }
+        { title: "Acier Inoxydable", sub: "Qualité alimentaire", icon: Microscope },
+        { title: "Température contrôlée", sub: "Zéro Surchauffe", icon: Thermometer },
+        { title: "Multi-Solvants", sub: "Eau, Huile, Alcool", icon: Droplets }
       ]
     },
     selector: {
@@ -139,26 +139,26 @@ const translationsIndexBis = {
       items: [
         { q: "En quoi la BloomLab® est-elle différente d'un simple bain-marie ?", a: "Le bain-marie traditionnel ne permet aucun contrôle précis : l'eau atteint rapidement 60°C à 100°C, détruisant les molécules thermosensibles (terpènes, flavonoïdes). La BloomLab® possède un capteur thermique au degré près qui régule la chauffe pour préserver 100% du Totum sans risque de brûler vos préparations." },
         { q: "Faut-il être herboriste ou chimiste pour l'utiliser ?", a: "Absolument pas ! La BloomLab® est livrée avec un guide pratique simple et des programmes préenregistrés. Vous ajoutez vos ingrédients (eau, huile ou alcool), vous choisissez le profil (Culinaire, Cosmétique ou Remède) et la machine gère tout." },
-        { q: "Quels solvants puis-je utiliser en toute sécurité ?", a: "La cuve Inox 304 de grade laboratoire est conçue pour fonctionner avec l'eau purifiée, toutes les huiles végétales (Jojoba, Olive, Argan) et les alcools alimentaires titrés de 45° à 60°. Sa conception hermétique empêche toute évaporation volatile." }
+        { q: "Quels solvants puis-je utiliser en toute sécurité ?", a: "La cuve Inox 304 de grade alimentaire est conçue pour fonctionner avec l'eau purifiée, toutes les huiles végétales (Jojoba, Olive, Argan) et les alcools alimentaires titrés de 45° à 60°. Sa conception hermétique empêche toute évaporation volatile." }
       ]
     }
   },
   en: {
-    marquee: ["🇫🇷 French Botanical Brand", "🚚 Priority Shipping in 24/48h", "🛡️ 30-Day Money Back Guarantee", "⚡ 2-Year Manufacturer Warranty"],
+    marquee: ["🇫🇷 French Botanical Brand", "🚚 Priority Shipping in 24/48h", "🛡️ 30-Day Money Back Guarantee", "⚡ 1-Year Manufacturer Warranty"],
     hero: {
       badge: "2026 Limited Edition: MTC 2.0 Thermoregulation",
       title: "The Botanical Extractor that releases the <span class='text-[#D97706] underline underline-offset-8 decoration-[#D97706]/30'>pure Totum</span> of your plants.",
       subtitle: "<strong>Say goodbye to the chore of approximate bain-marie.</strong> A single precision device to easily prepare your Culinary oils, Cosmetic Skincare, and Health Remedies at home.",
-      rating: "Based on +2,500 passionate users",
+      rating: "A design dedicated to precision botanical extraction.",
       buyBtn: "Buy the BloomLab® — €239",
       installment: "3x interest-free payment by Klarna",
       installmentSub: "Or €79.66 / month",
       guarantee: "Test risk-free for 30 days",
       shipping: "Shipped within 24/48h",
       features: [
-        { title: "Pure 304 Inox", sub: "Laboratory Grade", icon: Microscope },
-        { title: "Precision ±0.5°C", sub: "Zero Overheating", icon: Thermometer },
-        { title: "3 Solvents", sub: "Water, Oil, Alcohol", icon: Droplets }
+        { title: "Stainless Steel", sub: "Food Grade", icon: Microscope },
+        { title: "Controlled Temperature", sub: "Zero Overheating", icon: Thermometer },
+        { title: "Multi-Solvents", sub: "Water, Oil, Alcohol", icon: Droplets }
       ]
     },
     selector: {
@@ -222,21 +222,21 @@ const translationsIndexBis = {
     }
   },
   de: {
-    marquee: ["🇫🇷 Französische botanische Marke", "🚚 Prioritärer Versand in 24/48h", "🛡️ 30-Tage-Geld-zurück-Garantie", "⚡ 2 Jahre Herstellergarantie"],
+    marquee: ["🇫🇷 Französische botanische Marke", "🚚 Prioritärer Versand in 24/48h", "🛡️ 30-Tage-Geld-zurück-Garantie", "⚡ 1 Jahr Herstellergarantie"],
     hero: {
       badge: "Limitierte Auflage 2026: TCM 2.0 Thermoregulation",
       title: "Der botanische Extraktor, der das <span class='text-[#D97706] underline underline-offset-8 decoration-[#D97706]/30'>reine Totum</span> Ihrer Pflanzen freisetzt.",
       subtitle: "<strong>Verabschieden Sie sich von der mühsamen Arbeit des ungefähren Wasserbads.</strong> Ein einziges Präzisionsgerät, um Ihre kulinarischen Öle, kosmetischen Hautpflegeprodukte und Heilmittel ganz einfach zu Hause zuzubereiten.",
-      rating: "Basierend auf über 2.500 leidenschaftlichen Nutzern",
+      rating: "Ein Design für die präzise botanische Extraktion.",
       buyBtn: "BloomLab® kaufen — 239 €",
       installment: "Zahlung in 3 zinsfreien Raten von Klarna",
       installmentSub: "Oder 79,66 € / Monat",
       guarantee: "30 Tage risikofrei testen",
       shipping: "Versand innerhalb von 24/48h",
       features: [
-        { title: "Reiner 304 Edelstahl", sub: "Laborqualität", icon: Microscope },
-        { title: "Präzision ±0,5°C", sub: "Keine Überhitzung", icon: Thermometer },
-        { title: "3 Lösungsmittel", sub: "Wasser, Öl, Alkohol", icon: Droplets }
+        { title: "Edelstahl", sub: "Lebensmittelqualität", icon: Microscope },
+        { title: "Kontrollierte Temperatur", sub: "Keine Überhitzung", icon: Thermometer },
+        { title: "Multi-Lösungsmittel", sub: "Wasser, Öl, Alkohol", icon: Droplets }
       ]
     },
     selector: {
@@ -403,12 +403,11 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
 
                 <p className="text-base sm:text-lg text-slate-700 font-normal leading-relaxed max-w-2xl" dangerouslySetInnerHTML={{ __html: currentT.hero.subtitle }} />
 
-                <div className="flex items-center space-x-3 pt-1">
-                  <div className="flex text-[#D97706] space-x-1 text-sm">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
-                  </div>
-                  <span className="text-sm font-bold text-[#0F261E]">4,9/5</span>
-                  <span className="text-xs text-slate-500">— {currentT.hero.rating}</span>
+                <div className="flex items-center space-x-2 pt-2">
+                  <ShieldCheck className="w-5 h-5 text-[#1C3F34]" aria-hidden="true" />
+                  <span className="text-sm font-semibold text-[#0F261E]">
+                    {currentT.hero.rating}
+                  </span>
                 </div>
               </div>
 

@@ -66,13 +66,9 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
 
         {/* Right Side: Info & Buy */}
         <div className="lg:w-1/2 p-8 md:p-16 lg:p-20 flex flex-col justify-center">
-          <div className="flex items-center gap-2 text-[#F97316] font-bold uppercase tracking-widest text-xs mb-4">
-            <Star className="w-4 h-4 fill-[#F97316]" /> 
-            <Star className="w-4 h-4 fill-[#F97316]" /> 
-            <Star className="w-4 h-4 fill-[#F97316]" /> 
-            <Star className="w-4 h-4 fill-[#F97316]" /> 
-            <Star className="w-4 h-4 fill-[#F97316]" />
-            <span className="ml-2 text-[#1B3022]/60">4.9/5 (128 {t.reviews_count})</span>
+          <div className="flex items-center gap-2 text-[#1C3F34] font-bold uppercase tracking-widest text-[10px] mb-4">
+            <ShieldCheck className="w-4 h-4" /> 
+            <span>{lang === 'fr' ? 'Conception Botanique de Précision' : lang === 'de' ? 'Botanische Präzisionsentwicklung' : 'Precision Botanical Design'}</span>
           </div>
           
           <h1 className="text-3xl md:text-5xl font-bold text-[#1B3022] mb-4 md:mb-6 tracking-tight">{sheet.name}</h1>
