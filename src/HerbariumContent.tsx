@@ -609,7 +609,7 @@ export default function HerbariumContent({
             // Locking logic: 4 free recipes per category based on global order
             const categoryItems = unifiedBotanicalDatabase.filter(p => p.source === plant.source);
             const itemIndexInCategory = categoryItems.findIndex(p => p.id === plant.id);
-            const isLocked = !isPremium && itemIndexInCategory >= 9;
+            const isLocked = !isPremium && itemIndexInCategory >= 10;
             
             const originalId = plant.id.split('-').slice(1).join('-');
             const therapeuticData = plant.source === 'therapeutic' ? plantsDatabase.find(p => p.plant_id === originalId) : null;

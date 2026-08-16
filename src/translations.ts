@@ -52,7 +52,7 @@ export const translations = {
     nav: {
       guide: "Guide",
       herbarium: "L'Herbier",
-      blog: "La Bibliothèque",
+      blog: "Journal Botanique",
       chat: "Alma Chat",
       shop: "Boutique",
       account: "Compte",
@@ -253,62 +253,62 @@ export const translations = {
         title: "Manifeste Bloom"
       },
       hero: {
-        badge: "Philosophie & Science",
-        title: "L'art de l'extraction",
-        title_accent: "au service du vivant",
-        quote: "Nos équipes vous accompagnent dans votre projet de soins sur mesure. BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels."
+        badge: "ADN & Philosophie",
+        title: "Le corps n'est pas trahi,",
+        title_accent: "il signale.",
+        quote: "Votre corps n'est pas cassé. Il est verrouillé. Nous sommes ici pour vous donner les clés de sa libération."
       },
       section1: {
-        title: "La Troisième Voie",
-        p1: "Nous ne sommes plus à l'époque de l'herboristerie approximative, ni à celle de la chimie de synthèse isolée. Bloom by BotaniK trace une troisième voie : l'extraction botanique de précision.",
-        p2: "Une place pour chaque plante et chaque plante à sa place. Nous utilisons la science moderne pour révéler la sagesse ancienne.",
-        box: "L'ingénierie de la résilience biologique par l'extraction du totum."
+        title: "Notre ADN",
+        p1: "Bloom by BotaniK est né d'une conviction profonde : la santé n'est pas l'absence de symptômes, mais la présence de vitalité. Nous traçons une troisième voie entre l'herboristerie traditionnelle et la science moderne.",
+        p2: "Nous croyons en l'intelligence du Totum végétal — cette synergie complexe de molécules qu'aucune chimie de synthèse ne peut égaler. Notre mission est de vous rendre cette souveraineté.",
+        box: "L'alliance des sagesses ancestrales et de l'ingénierie de précision."
       },
       section2: {
-        title: "Le Signal",
-        p1: "Le corps ne vous trahit pas, il vous signale. Une inflammation chronique, un déséquilibre du microbiome, une maladie auto-immune... ce sont des verrous que nous aidons à libérer.",
-        p2: "Votre corps sait se guérir. Donnez-lui simplement les bons outils.",
+        title: "Le Signal Botanique",
+        p1: "Le corps ne vous trahit pas. Une inflammation, une fatigue chronique ou un déséquilibre sont des messages. Chez Bloom, nous ne cherchons pas à faire taire le symptôme, mais à comprendre le terrain.",
+        p2: "Votre corps sait se guérir. Donnez-lui simplement les bons outils. Notre approche systémique permet de restaurer l'homéostasie en profondeur.",
         box: ""
       },
       section3: {
-        title: "Souveraineté Sanitaire",
-        p1: "Réappropriez-vous votre santé. BloomLab® n'est pas qu'une machine, c'est un outil de souveraineté pour votre foyer.",
-        p2: "Maîtrisez la décarboxylation, l'émulsion et la stérilisation pour créer vos propres sérums, baumes et huiles végétales de grade laboratoire.",
+        title: "Nos Objectifs",
+        p1: "Notre objectif est simple : vous offrir l'autonomie sanitaire. Grâce à BloomLab®, vous cessez d'être un simple consommateur pour devenir l'artisan de votre propre santé.",
+        p2: "Nous vous accompagnons dans la création de vos propres remèdes, de vos soins cosmétiques et de votre cuisine fonctionnelle, avec une rigueur de grade laboratoire.",
         box: ""
       },
       section4: {
-        title: "L'Outil de Précision",
-        p1: "C’est là qu’intervient BloomLab. BloomLab n’est pas un accessoire ; c’est l’outil technologique qui rend possible une extraction plus juste, plus stable et plus exigeante. Notre méthode de Séquençage Actif A/B a été conçue pour répondre à une réalité simple : toutes les familles moléculaires d’une plante ne s’extraient ni avec les mêmes solvants, ni aux mêmes températures, ni sur les mêmes durées.",
+        title: "L'Intelligence de l'Extraction",
+        p1: "L'extraction est le pont entre la plante et votre biologie. BloomLab® permet de maîtriser ce processus avec une précision absolue de ±0,5°C, garantissant que chaque molécule précieuse est préservée et rendue biodisponible.",
         phaseA: {
-          title: "Première Phase : Hydroglycérinée",
-          description: "Cette phase travaille les fondations hydrosolubles, avec des paramètres précis de température, de solvant et de temps pour extraire notamment les polysaccharides, saponines, iridoïdes, minéraux et autres composés compatibles avec cette fenêtre technique."
+          title: "Le Respect du Vivant",
+          description: "Chaque plante a son rythme. Notre technologie respecte la structure moléculaire pour extraire le totum intégral, sans dégradation thermique."
         },
         phaseB: {
-          title: "Seconde Phase : Hydroalcoolique",
-          description: "Menée après refroidissement et dans une plage thermique plus basse, elle vise les composés plus thermolabiles et liposolubles comme certains terpènes, flavonoïdes fragiles ou résines spécifiques."
+          title: "La Souveraineté par l'Outil",
+          description: "Avoir une BloomLab chez soi, c'est posséder un laboratoire de précision accessible, transformant votre cuisine en un sanctuaire de santé."
         },
-        footer: "Ce séquençage n’est pas cosmétique : l’ordre, la température, le ratio des solvants et la durée conditionnent le rendement, la préservation moléculaire et la qualité du totum final."
+        footer: "Une place pour chaque plante et chaque plante à sa place."
       },
       section5: {
-        title: "L'Exigence qui nous distingue.",
-        p1: "Beaucoup de produits parlent de plantes. Peu travaillent réellement la question décisive : comment obtenir une extraction pertinente du spectre actif de la plante, au lieu d’une simple infusion approximative.",
-        p2: "Bloom ajoute un chaînon manquant entre la plante brute et l’usage réel : une méthode, un protocole, un séquençage et un outil pour transformer la puissance botanique en expérience souveraine."
+        title: "Une Vision Holistique",
+        p1: "Nous ne vendons pas des produits, nous proposons une architecture de soin. Une lecture globale du corps où chaque système — nerveux, immunitaire, digestif — dialogue avec les autres.",
+        p2: "Bloom est une éducation au vivant, un retour à la source de ce qui nous rend résilients."
       },
       section6: {
-        title: "Une Architecture",
-        p1: "Bloom propose un cadre de compréhension du terrain, des protocoles structurés, des séquences d’action et des outils d’extraction conçus pour guider l’utilisateur dans un ordre logique.",
-        p2: "Nous n’ajoutons pas une solution de plus au bruit du marché ; nous apportons une architecture là où beaucoup ne proposent que des produits isolés."
+        title: "Engagement & Rigueur",
+        p1: "Nous sommes rigoureux car le vivant ne supporte pas l'approximation. Sourcing éthique, matériaux inertes, précision clinique : voilà nos piliers pour votre sécurité.",
+        p2: "La troisième voie est celle de la clarté et de l'excellence."
       },
       section7: {
-        title: "Relier les Savoirs.",
-        p1: "On n’obtient pas de vrais résultats durables avec des gestes dispersés. Il faut comprendre le terrain, ouvrir les bonnes voies, respecter le rythme du corps, choisir les bonnes plantes, puis surtout les extraire selon les paramètres qui permettent d’en libérer les principes actifs avec rigueur.",
+        title: "Faites fleurir votre bien-être.",
+        p1: "Rejoindre Bloom, c'est choisir de ne plus subir. C'est entrer dans un écosystème où la connaissance et l'outil se rejoignent pour servir votre vitalité.",
         p2: "",
-        box: "Bloom by BotaniK, c’est cela : une méthode de restauration du terrain, une lecture systémique du vivant, et une technologie botanique pensée pour faire le lien entre les savoirs anciens et la biochimie moderne."
+        box: "Bloom by BotaniK : L'ingénierie au service de votre pharmacie intérieure."
       },
       cta: {
-        badge: "Continuer l'Exploration",
-        title: "Le voyage ne fait que commencer.",
-        button: "Retour à l'écosystème"
+        badge: "Rejoindre l'Écosystème",
+        title: "Prêt à libérer votre terrain ?",
+        button: "Découvrir la méthode"
       }
     },
     library: {
@@ -401,7 +401,7 @@ export const translations = {
       },
       filters: {
         all: "Tous",
-        therapeutic: "Thérapeutique",
+        therapeutic: "Phytothérapie",
         culinary: "Culinaire",
         cosmetic: "Cosmétique"
       },

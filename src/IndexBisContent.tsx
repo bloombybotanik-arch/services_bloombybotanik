@@ -776,6 +776,64 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
         </div>
       </section>
 
+      {/* JOURNAL BOTANIQUE SECTION */}
+      <section id="journal" className="py-24 bg-white border-t border-[#F3EEE6]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div className="inline-block px-4 py-2 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-bold uppercase tracking-widest rounded-md shadow-sm border border-[#D8CBB7]">
+                {lang === 'fr' ? 'Savoir & Transmission' : 'Knowledge & Transmission'}
+              </div>
+              <h2 className="text-4xl md:text-5xl font-black text-[#0F261E] leading-[1.1]">
+                {lang === 'fr' ? "Le Journal Botanique : L'Art du Totum au quotidien." : "The Botanical Journal: The Art of Totum in daily life."}
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                {lang === 'fr' 
+                  ? "Explorez nos dossiers approfondis sur l'herboristerie moderne, nos guides d'extraction et les dernières découvertes sur l'intelligence des plantes." 
+                  : "Explore our in-depth dossiers on modern herbalism, our extraction guides and the latest discoveries on plant intelligence."}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <a 
+                  href="https://blog.bloombybotanik.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-3 bg-[#1C3F34] text-white font-bold px-8 py-4 rounded-full hover:bg-[#2A5245] transition-all group"
+                >
+                  {lang === 'fr' ? 'Accéder au Journal' : 'Access the Journal'}
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+                <button 
+                  onClick={() => onNavigate('herbarium')}
+                  className="inline-flex items-center justify-center gap-3 border-2 border-[#1C3F34] text-[#1C3F34] font-bold px-8 py-4 rounded-full hover:bg-[#1C3F34]/5 transition-all"
+                >
+                  {lang === 'fr' ? "Explorer l'Herbier" : "Explore the Herbarium"}
+                </button>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+               <div className="space-y-4">
+                 <div className="h-64 bg-[#FAF7F2] rounded-[40px] border border-[#F3EEE6] overflow-hidden group">
+                    <img src={herbsImg} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Blog 1" />
+                 </div>
+                 <div className="p-6 bg-[#E8F1EE] rounded-[40px] border border-[#D8CBB7]">
+                    <h4 className="font-black text-[#0F261E] mb-2">{lang === 'fr' ? "L'extraction du Totum" : "Totum Extraction"}</h4>
+                    <p className="text-xs text-[#1C3F34]/60">{lang === 'fr' ? "Pourquoi la température change tout." : "Why temperature changes everything."}</p>
+                 </div>
+               </div>
+               <div className="space-y-4 pt-8">
+                 <div className="p-6 bg-[#F3EEE6] rounded-[40px] border border-[#E7DFD3]">
+                    <h4 className="font-black text-[#0F261E] mb-2">{lang === 'fr' ? "Souveraineté Santé" : "Health Sovereignty"}</h4>
+                    <p className="text-xs text-slate-500">{lang === 'fr' ? "L'autonomie par la connaissance." : "Autonomy through knowledge."}</p>
+                 </div>
+                 <div className="h-64 bg-[#FAF7F2] rounded-[40px] border border-[#F3EEE6] overflow-hidden group">
+                    <img src={labImg} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Blog 2" />
+                 </div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section id="faq" className="py-12 bg-white">
         <div className="max-w-4xl mx-auto px-4 space-y-12">

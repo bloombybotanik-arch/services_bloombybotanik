@@ -97,7 +97,17 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
             </FooterGroup>
 
             <FooterGroup title="Savoir">
-              <FooterLink label="La Bibliothèque" onClick={() => onNavigate('blog')} />
+              <FooterLink label="L'Herbier" onClick={() => onNavigate('herbarium')} />
+              <li className="mt-1">
+                <a 
+                  href="https://blog.bloombybotanik.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-sm text-botanik-orange font-bold hover:underline"
+                >
+                  Journal Botanique
+                </a>
+              </li>
               <FooterLink label="Le Manifeste" onClick={() => onNavigate('manifesto')} />
               <FooterLink label="Science du Totum" onClick={() => onNavigate('indexbis')} />
               <FooterLink label="FAQ" onClick={() => onNavigate('indexbis')} />

@@ -383,7 +383,7 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
           />
           <NavItem 
             label={lang === 'fr' ? 'Duo Argiles Bloom' : 'Bloom Clay Duo'} 
-            onClick={() => scrollTo('klinomont')}
+            onClick={() => scrollTo('duo-argiles')}
             isSub
           />
         </NavGroup>
@@ -403,16 +403,25 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
 
         <NavGroup title="Ressources">
           <NavItem 
-            id="blog" 
-            label={lang === 'fr' ? 'La Bibliothèque' : 'The Library'} 
+            id="herbarium" 
+            label={t.nav.herbarium} 
             icon={BookOpen} 
-            isActive={currentView === 'blog'}
+            isActive={currentView === 'herbarium'}
           />
+          <a 
+            href="https://blog.bloombybotanik.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-full flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all text-left group text-white/60 hover:text-white hover:bg-white/5 text-sm font-bold"
+          >
+            <SearchCheck className="w-4 h-4 shrink-0 transition-colors group-hover:text-botanik-orange" />
+            <span className="truncate">{lang === 'fr' ? 'Journal Botanique' : 'Botanical Journal'}</span>
+          </a>
           <NavItem 
-            id="manifesto" 
-            label={lang === 'fr' ? 'Le Manifeste' : 'The Manifesto'} 
+            id="manifeste" 
+            label={t.nav.manifesto} 
             icon={FileText} 
-            isActive={currentView === 'manifesto'}
+            isActive={currentView === 'manifeste'}
           />
         </NavGroup>
       </div>
@@ -790,7 +799,8 @@ export default function App() {
         </div>
       );
       case 'library':
-      case 'herbier': return (
+      case 'herbier':
+      case 'herbarium': return (
         <HerbariumContent 
           isPremium={isPremium} 
           onRequirePremium={handleRequirePremium} 
