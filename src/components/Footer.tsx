@@ -93,7 +93,7 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
               <FooterLink label="BloomLab®" onClick={() => onNavigate('indexbis')} />
               <FooterLink label="Atelier Culinaire" onClick={() => onNavigate('culinaire')} />
               <FooterLink label="Soin Cosmétique" onClick={() => onNavigate('cosmetiques')} />
-              <FooterLink label="Reset Homéostatique" onClick={() => onNavigate('phytotherapie-reset')} />
+              <FooterLink label="Reset Homéostasique" onClick={() => onNavigate('phytotherapie-reset')} />
             </FooterGroup>
 
             <FooterGroup title="Savoir">

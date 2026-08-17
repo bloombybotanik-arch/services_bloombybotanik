@@ -201,7 +201,25 @@ export default function ManifesteContent({ onBack, lang }: ManifesteContentProps
               onClick={onBack}
               className="px-12 py-6 bg-botanik-orange text-white rounded-2xl font-bold hover:bg-[#F97316] transition-all shadow-xl inline-flex items-center gap-3 group text-lg"
             >
-              {t.cta.button} <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              {t.cta.buttons.bloomlab} <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            </button>
+            <button 
+              onClick={onBack}
+              className="px-12 py-6 border border-white/20 text-white rounded-2xl font-bold hover:bg-white/10 transition-all inline-flex items-center gap-3 group text-lg"
+            >
+              {t.cta.buttons.kits} <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            </button>
+            <button 
+              onClick={onBack}
+              className="px-12 py-6 border border-white/20 text-white rounded-2xl font-bold hover:bg-white/10 transition-all inline-flex items-center gap-3 group text-lg"
+            >
+              {t.cta.buttons.protocols} <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            </button>
+            <button 
+              onClick={onBack}
+              className="px-12 py-6 border border-white/20 text-white rounded-2xl font-bold hover:bg-white/10 transition-all inline-flex items-center gap-3 group text-lg"
+            >
+              {t.cta.buttons.approach} <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>

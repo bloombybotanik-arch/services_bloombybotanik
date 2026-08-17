@@ -231,6 +231,15 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
     script.text = JSON.stringify(jsonLd);
     document.head.appendChild(script);
 
+    // 3. Keywords Meta Tag
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', MAIN_KEYWORDS);
+
     return () => {
       const oldScript = document.getElementById('json-ld-seo');
       if (oldScript) document.head.removeChild(oldScript);
@@ -330,9 +339,9 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
           onClick={() => navigateTo('home')}
         >
           <img src={logoSidebar} alt="Bloom" className="w-10 h-10 object-contain group-hover:scale-105 transition-transform" />
-          <div className="flex flex-col leading-tight uppercase text-white">
-            <span className="text-[9px] font-bold tracking-[0.2em] opacity-50">Bloom by</span>
-            <span className="text-lg font-black tracking-widest">botaniK</span>
+          <div className="flex flex-col leading-none text-white">
+            <span className="text-xl font-black tracking-widest">Bloom</span>
+            <span className="text-[10px] font-bold tracking-[0.1em] opacity-70">by BotaniK</span>
           </div>
         </div>
       </div>
@@ -363,7 +372,7 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
           />
           <NavItem 
             id="phytotherapie-reset" 
-            label={lang === 'fr' ? 'Reset Homéostatique' : 'Homeostatic Reset'} 
+            label={lang === 'fr' ? 'Reset Homéostasique' : 'Homeostatic Reset'} 
             icon={Wind} 
             isActive={currentView === 'phytotherapie-reset'}
           />
@@ -929,7 +938,10 @@ export default function App() {
         onClick={() => navigateTo('home')}
       >
         <img src={logoSidebar} alt="Bloom" className="w-8 h-8 object-contain" />
-        <span className="text-white font-black tracking-widest text-sm uppercase">Bloom</span>
+        <div className="flex flex-col leading-none text-white">
+          <span className="text-base font-black tracking-wider">Bloom</span>
+          <span className="text-[8px] font-bold tracking-[0.1em] opacity-70">by BotaniK</span>
+        </div>
       </div>
       <div className="flex items-center gap-4">
         <button onClick={() => navigateTo('cart')} className="relative text-white p-2">
@@ -1001,7 +1013,10 @@ export default function App() {
             <div className="p-6 flex items-center justify-between border-b border-white/5 bg-black/10">
               <div className="flex items-center gap-3">
                 <img src={logoSidebar} alt="Bloom" className="w-8 h-8 object-contain" />
-                <span className="text-white font-black tracking-widest text-sm uppercase">Bloom</span>
+              <div className="flex flex-col leading-none text-white">
+                <span className="text-sm font-black tracking-widest">Bloom</span>
+                <span className="text-[8px] font-bold tracking-[0.1em] opacity-70">by BotaniK</span>
+              </div>
               </div>
               <button 
                 onClick={() => setIsMenuOpen(false)}
@@ -1047,7 +1062,7 @@ export default function App() {
                     {[
                       { id: 'culinaire', label: lang === 'fr' ? 'Atelier Culinaire' : 'Culinary Workshop', icon: ChefHat },
                       { id: 'cosmetiques', label: lang === 'fr' ? 'Soin Cosmétique' : 'Cosmetic Care', icon: Sparkles },
-                      { id: 'phytotherapie-reset', label: lang === 'fr' ? 'Reset Homéostatique' : 'Homeostatic Reset', icon: Wind },
+                      { id: 'phytotherapie-reset', label: lang === 'fr' ? 'Reset Homéostasique' : 'Homeostatic Reset', icon: Wind },
                       { id: 'blog', label: lang === 'fr' ? 'La Bibliothèque' : 'Library', icon: BookOpen },
                       { id: 'manifesto', label: lang === 'fr' ? 'Le Manifeste' : 'Manifesto', icon: FileText },
                     ].map((item: any) => (

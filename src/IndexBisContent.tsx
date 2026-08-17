@@ -10,6 +10,8 @@ import {
   Activity, 
   ChevronDown, 
   ChevronUp,
+  ChevronRight,
+  ChefHat,
   Clock,
   Thermometer,
   Zap,
@@ -49,7 +51,7 @@ ChartJS.register(
 );
 
 import bloomImg from './assets/images/bloomlab_main_1784887530345.jpeg';
-import labImg from './assets/images/lab_detail_cleaned_1786616788618.jpg';
+import labImg from './assets/images/Gemini_Generated_Image_r0bctrr0bctrr0bc.png';
 import herbsImg from './assets/images/herbs_close_up_cleaned_1786616800877.jpg';
 import lifestyleImg from './assets/images/home_lab_vibe_cleaned_1786616854146.jpg';
 import duoArgilesImg from './assets/images/product_duo_argiles.jpg';
@@ -72,7 +74,7 @@ const translationsIndexBis = {
       title: "L'extracteur botanique qui révèle le <span class='text-[#D97706]'>totum</span> de vos plantes.",
       subtitle: "<strong>BloomLab® : L'infuseur botanique de précision.</strong> Un seul appareil pour l'extraction du totum à basse température : huiles culinaires, soins cosmétiques et remèdes de plantes.",
       rating: "Une conception dédiée à l’extraction botanique de précision.",
-      buyBtn: "Acheter la BloomLab® — <span class='line-through opacity-60 mr-2'>289€</span> 239€",
+      buyBtn: "Acheter la BloomLab® — 239€ <span class='line-through opacity-60 ml-2'>289€</span> offre rentrée",
       installment: "Paiement en 3x sans frais par Klarna",
       installmentSub: "Soit 79,66€ / mois",
       guarantee: "Testez 30 jours sans risque",
@@ -91,10 +93,36 @@ const translationsIndexBis = {
         sante: { label: "Phytothérapie", desc: "🧪 <strong>Mode Phytothérapie :</strong> Teintures-mères et extraits concentrés de résines/racines à 45°C." }
       }
     },
+    whyBloomLab: {
+      title: "Pourquoi la BloomLab change votre quotidien",
+      without: {
+        title: "Sans la BloomLab",
+        items: [
+          "Vous dépendez de l'industrie pour vos soins.",
+          "Vous perdez 80% des bienfaits de vos plantes.",
+          "Vous accumulez des produits coûteux et complexes."
+        ]
+      },
+      with: {
+        title: "Avec la BloomLab",
+        items: [
+          "Vous créez vos propres remèdes, 100% transparents.",
+          "Vous extrayez jusqu'à 98% de leurs actifs.",
+          "Une seule machine pour trois univers de soin."
+        ]
+      }
+    },
     universes: {
-      title: "Une seule machine. Trois univers de soin souverain au quotidien.",
-      subtitle: "Explorez les recettes et protocoles réalisables en un clic avec la BloomLab®.",
+      title: "Une Seule Machine. Trois Univers de soin Souverain au Quotidien.",
+      subtitle_part1: "La BloomLab est l'alternative concrète que vous attendiez : une machine qui transforme vos plantes en soins actifs, sans chimie, sans déchets, sans dépendance. En 2026, il ne s'agit plus seulement de consommer, mais de (re)devenir acteur de sa santé. Et ça commence par la bonne extraction.",
+      subtitle_part2: "🔬 L'Extraction Précise, Clé de l'Efficacité\nAvec les méthodes traditionnelles (infusion, bain-marie, macération), vous perdez jusqu'à 80% des principes actifs de vos plantes. Ils restent prisonniers des fibres.",
+      subtitle_part3: "La BloomLab change la donne. Grâce au contrôle millimétré de la température, du temps et de l'agitation, elle libère jusqu'à 98% du totum végétal – l'intégralité du spectre d'action de la plante. C'est la différence entre une \"tisane améliorée\" et un véritable élixir de soin.",
       tabs: { culinaire: "Culinaire", cosmetique: "Cosmétique", phytotherapie: "Phytothérapie" },
+      descriptions: {
+        culinaire: "1. La Santé Digestive : Les plantes amères (gentiane, artichaut) sont des alliées précieuses. Avec l'extraction de précision, vous récupérez toute leur puissance amère et cholagogue.",
+        cosmetique: "2. La Beauté Naturelle : Les huiles de soin (calendula, arnica) infusées à basse température préservent leurs propriétés émollientes et régénérantes. Sans conservateurs.",
+        phytotherapie: "3. Le Bien-Être Global : Les plantes dépuratives (pissenlit, bardane) extraites selon le protocole optimal soutiennent votre vitalité sans agresser votre corps."
+      },
       data: {
         culinaire: {
           title: "Atelier Culinaire & Gastronomie Botanique",
@@ -124,6 +152,16 @@ const translationsIndexBis = {
           benefits: ["Capture intégrale du Totum moléculaire", "Assimilation cellulaire instantanée", "Protocoles testés 100% sécurisés"]
         }
       }
+    },
+    footerCTA: {
+      badge: "Engagement Souverain",
+      title: "La Souveraineté Sanitaire Commence Ici",
+      subtitle: "Avec la BloomLab, vous ne vous contentez plus de \"consommer\" des soins. Vous les créez – en toute autonomie, avec la rigueur d'un laboratoire et la sagesse ancestrale des plantes médicinales. Notre mission est de vous redonner le pouvoir sur votre pharmacie naturelle en vous fournissant l'outil ultime d'extraction.",
+      italic: "C'est une alternative réelle, concrète et accessible pour soutenir votre corps au quotidien, en respectant son rythme et ses besoins profonds.",
+      quote: "Jusqu'à 98% des principes actifs sont préservés et extraits grâce à la maîtrise millimétrique du temps, de la température et de l'agitation. Un rendement optimal qui fait de la BloomLab une alternative crédible, durable et efficace aux méthodes traditionnelles d'herboristerie souvent trop approximatives.",
+      btn: "👉 Découvrir la BloomLab – Paiement en 3x sans frais",
+      noteTitle: "Note Technique & Biologique Appliquée",
+      totumNote: "*Le <strong>Totum</strong> d'une plante représente l'intégralité de ses principes actifs agissant en synergie. Contrairement aux molécules isolées par l'industrie pharmaceutique, le Totum respecte la complexité biologique du vivant et évite les effets secondaires liés à l'isolement chimique. Son extraction de précision à basse température garantit une biodisponibilité optimale pour l'organisme humain. En maîtrisant la thermorégulation, la BloomLab® empêche la dégradation des enzymes et des vitamines sensibles, favorisant ainsi un rééquilibrage profond et durable du terrain biologique. C'est la garantie d'un soin vivant, vibrant et pleinement actif pour votre microbiome et votre santé globale."
     },
     steps: {
       title: "3 Étapes. Du végétal brut à votre soin pur.",
@@ -169,15 +207,41 @@ const translationsIndexBis = {
         sante: { label: "Phytotherapy", desc: "🧪 <strong>Phytotherapy Mode:</strong> Mother tinctures and concentrated resin/root extracts at 45°C." }
       }
     },
+    whyBloomLab: {
+      title: "Why BloomLab changes your daily life",
+      without: {
+        title: "Without BloomLab",
+        items: [
+          "You depend on industry for your care.",
+          "You lose 80% of your plants' benefits.",
+          "You accumulate expensive and complex products."
+        ]
+      },
+      with: {
+        title: "With BloomLab",
+        items: [
+          "You create your own 100% transparent remedies.",
+          "You extract up to 98% of their active ingredients.",
+          "One single machine for three worlds of care."
+        ]
+      }
+    },
     universes: {
       title: "One single machine. Three universes of sovereign care every day.",
-      subtitle: "Explore recipes and protocols achievable in one click with BloomLab®.",
+      subtitle_part1: "The BloomLab is the concrete alternative you've been waiting for: a machine that transforms your plants into active treatments, without chemistry, without waste, without dependence. In 2026, it is no longer just about consuming, but about (re)becoming an actor in your own health. And it starts with the right extraction.",
+      subtitle_part2: "🔬 Precise Extraction, the Key to Efficacy\nWith traditional methods (infusion, bain-marie, maceration), you lose up to 80% of your plants' active principles. They remain trapped in the fibers.",
+      subtitle_part3: "The BloomLab changes the game. Thanks to the millimetric control of temperature, time, and agitation, it releases up to 98% of the plant totum – the entire spectrum of action of the plant. This is the difference between an 'improved herbal tea' and a true elixir of care.",
       tabs: { culinaire: "Culinary", cosmetique: "Cosmetic", phytotherapie: "Phytotherapy" },
+      descriptions: {
+        culinaire: "1. Digestive Health: Bitter plants (gentian, artichoke) are precious allies. With precision extraction, you recover all their bitter and cholagogue power.",
+        cosmetique: "2. Natural Beauty: Care oils (calendula, arnica) infused at low temperature preserve their emollient and regenerating properties. Without preservatives.",
+        phytotherapie: "3. Global Well-being: Depurative plants (dandelion, burdock) extracted according to the optimal protocol support your vitality without agressing your body."
+      },
       data: {
         culinaire: {
           title: "Culinary Atelier & Botanical Gastronomy",
           badge: "Gourmet & Health Know-How",
-          image: bloomSoinsImg,
+          image: herbsImg,
           description: "Transform your herbs and fresh plants into scented butters, infused olive oils, and gastronomic elixirs without ever developing bitterness.",
           exampleTitle: "Olive Oil Infused with Rosemary, Chili & Garlic",
           temp: "38°C", time: "1h 30m", solvent: "Olive Oil",
@@ -202,6 +266,16 @@ const translationsIndexBis = {
           benefits: ["Integral capture of the molecular Totum", "Instant cellular assimilation", "100% secure tested protocols"]
         }
       }
+    },
+    footerCTA: {
+      badge: "Sovereign Commitment",
+      title: "Health Sovereignty Starts Here",
+      subtitle: "With BloomLab, you no longer just \"consume\" care. You create it – in total autonomy, with laboratory rigor and the ancestral wisdom of medicinal plants. Our mission is to give you back power over your natural pharmacy by providing the ultimate extraction tool.",
+      italic: "It is a real, concrete, and accessible alternative to support your body daily, respecting its rhythm and deep needs.",
+      quote: "Up to 98% of active principles are preserved and extracted thanks to the millimetric control of time, temperature and agitation. An optimal yield that makes BloomLab a credible, sustainable and effective alternative to traditional herbal methods that are often too approximate.",
+      btn: "👉 Discover BloomLab – Payment in 3x interest-free",
+      noteTitle: "Applied Technical & Biological Note",
+      totumNote: "*The <strong>Totum</strong> of a plant represents all of its active principles acting in synergy. Unlike industry's isolated molecules, the Totum respects the biological complexity of life and avoids the side effects associated with chemical isolation. Its precision extraction at low temperature guarantees optimal bioavailability for the human organism. By mastering thermoregulation, BloomLab® prevents the degradation of sensitive enzymes and vitamins, thus promoting a deep and lasting rebalancing of the biological terrain. It is the guarantee of a living, vibrant and fully active care for your microbiome and your global health."
     },
     steps: {
       title: "3 Steps. From raw plant to your pure care.",
@@ -247,10 +321,36 @@ const translationsIndexBis = {
         sante: { label: "Phytotherapie", desc: "🧪 <strong>Phytotherapie-Modus:</strong> Urtinkturen und konzentrierte Harz-/Wurzelextrakte bei 45°C." }
       }
     },
+    whyBloomLab: {
+      title: "Warum die BloomLab Ihren Alltag verändert",
+      without: {
+        title: "Ohne BloomLab",
+        items: [
+          "Sie sind für Ihre Pflege von der Industrie abhängig.",
+          "Sie verlieren 80 % der Vorteile Ihrer Pflanzen.",
+          "Sie häufen teure und komplexe Produkte an."
+        ]
+      },
+      with: {
+        title: "Mit BloomLab",
+        items: [
+          "Sie kreieren Ihre eigenen, 100 % transparenten Heilmittel.",
+          "Sie extrahieren bis zu 98 % ihrer Wirkstoffe.",
+          "Eine einzige Maschine für drei Welten der Pflege."
+        ]
+      }
+    },
     universes: {
       title: "Eine einzige Maschine. Drei Universen souveräner Pflege jeden Tag.",
-      subtitle: "Entdecken Sie Rezepte und Protokolle, die mit einem Klick mit BloomLab® erreichbar sind.",
+      subtitle_part1: "Die BloomLab ist die konkrete Alternative, auf die Sie gewartet haben: eine Maschine, die Ihre Pflanzen in aktive Heilmittel verwandelt – ohne Chemie, ohne Abfall, ohne Abhängigkeit. Im Jahr 2026 geht es nicht mehr nur um Konsum, sondern darum, wieder zum Akteur der eigenen Gesundheit zu werden. Und das beginnt mit der richtigen Extraktion.",
+      subtitle_part2: "🔬 Präzise Extraktion, der Schlüssel zur Wirksamkeit\nBei herkömmlichen Methoden (Infusion, Wasserbad, Mazeration) verlieren Sie bis zu 80 % der Wirkstoffe Ihrer Pflanzen. Sie bleiben in den Fasern gefangen.",
+      subtitle_part3: "Die BloomLab ändert alles. Dank der millimetergenauen Kontrolle von Temperatur, Zeit und Rühren setzt sie bis zu 98 % des pflanzlichen Totums frei – das gesamte Wirkungsspektrum der Pflanze. Das ist der Unterschied zwischen einem „verbesserten Kräutertee“ und einem echten Pflegeelixier.",
       tabs: { culinaire: "Kulinarisch", cosmetique: "Kosmetisch", phytotherapie: "Phytotherapie" },
+      descriptions: {
+        culinaire: "1. Verdauungsgesundheit: Bitterpflanzen (Enzian, Artischocke) sind wertvolle Verbündete. Mit der Präzisionsextraktion gewinnen Sie ihre volle Bitter- und Cholerika-Kraft zurück.",
+        cosmetique: "2. Natürliche Schönheit: Pflegeöle (Ringelblume, Arnika), die bei niedriger Temperatur infundiert werden, bewahren ihre weichmachenden und regenerierenden Eigenschaften. Ohne Konservierungsstoffe.",
+        phytotherapie: "3. Globales Wohlbefinden: Reinigungspflanzen (Löwenzahn, Klette), die nach dem optimalen Protokoll extrahiert werden, unterstützen Ihre Vitalität, ohne Ihren Körper zu belasten."
+      },
       data: {
         culinaire: {
           title: "Kulinarisches Atelier & Botanische Gastronomie",
@@ -280,6 +380,16 @@ const translationsIndexBis = {
           benefits: ["Integrale Erfassung des molekularen Totums", "Sofortige zelluläre Assimilation", "100% sicher getestete Protokolle"]
         }
       }
+    },
+    footerCTA: {
+      badge: "Souveränes Engagement",
+      title: "Sanitäre Souveränität beginnt hier",
+      subtitle: "Mit der BloomLab konsumieren Sie Pflegeprodukte nicht mehr nur. Sie kreieren sie – in völliger Autonomie, mit Laborstrenge und der uralten Weisheit der Heilpflanzen. Unsere Mission ist es, Ihnen die Macht über Ihre natürliche Apotheke zurückzugeben, indem wir Ihnen das ultimative Extraktionswerkzeug zur Verfügung stellen.",
+      italic: "Es ist eine reale, konkrete und zugängliche Alternative, um Ihren Körper täglich zu unterstützen und dabei seinen Rhythmus und seine tiefen Bedürfnisse zu respektieren.",
+      quote: "Bis zu 98 % der Wirkstoffe werden dank der millimetergenauen Kontrolle von Zeit, Temperatur und Rührung erhalten und extrahiert. Ein optimaler Ertrag, der BloomLab zu einer glaubwürdigen, nachhaltigen und effektiven Alternative zu herkömmlichen Kräutermethoden macht, die oft zu ungenau sind.",
+      btn: "👉 BloomLab entdecken – Zahlung in 3x zinsfreien Raten",
+      noteTitle: "Angewandte technische und biologische Anmerkung",
+      totumNote: "*Das <strong>Totum</strong> einer Pflanze stellt die Gesamtheit ihrer Wirkstoffe dar, die synergetisch wirken. Im Gegensatz zu den isolierten Molekülen der Industrie respektiert das Totum die biologische Komplexität des Lebens und vermeidet die mit chemischer Isolation verbundenen Nebenwirkungen. Seine Präzisionsextraktion bei niedriger Temperatur garantiert eine optimale Bioverfügbarkeit für den menschlichen Organismus. Durch die Beherrschung der Thermoregulation verhindert BloomLab® den Abbau empfindlicher Enzyme und Vitamine und fördert so eine tiefe und dauerhafte Neuausrichtung des biologischen Terrains. Es ist die Garantie für eine lebendige, vitale und voll aktive Pflege für Ihr Mikrobiom und Ihre globale Gesundheit."
     },
     steps: {
       title: "3 Schritte. Von der Rohpflanze zu Ihrer reinen Pflege.",
@@ -362,14 +472,14 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
   };
 
   return (
-    <div className="bg-[#FAF7F2] text-slate-800 font-sans antialiased selection:bg-[#1C3F34] selection:text-white pb-20">
+    <div className="bg-[#FAF7F2] text-slate-800 font-sans antialiased selection:bg-[#1C3F34] selection:text-white">
       
       {/* TOP ANNOUNCEMENT BAR (MARQUEE) */}
-      <div className="bg-[#0F261E] text-[#FAF7F2] py-4 overflow-hidden border-b border-white/10 shadow-sm relative z-50">
+      <div className="bg-[#D97706] text-white py-1 overflow-hidden border-b border-white/10 shadow-sm relative z-50">
         <motion.div 
           className="flex whitespace-nowrap items-center"
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
         >
           {[...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, i) => (
             <div key={i} className="flex items-center gap-12 px-12 shrink-0">
@@ -382,6 +492,45 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
         </motion.div>
       </div>
 
+      {/* MOBILE ONLY TOP HERO SECTION */}
+      <section className="lg:hidden relative bg-[#0F261E] overflow-hidden">
+        <div className="flex flex-col">
+          <div className="relative h-[600px]">
+            <img 
+              src={bloomImg} 
+              alt="BloomLab" 
+              className="w-full h-full object-cover brightness-105" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0F261E]/40 via-transparent to-[#0F261E]/60 pb-10" />
+            <div className="absolute inset-0 flex flex-col p-6">
+              <div className="flex flex-col space-y-1.5 mt-2 max-w-[90%]">
+                <div className="inline-block self-start px-3 py-1.5 border border-[#1C3F34] rounded-md text-white bg-[#0F261E] text-[11px] font-semibold uppercase tracking-wider shadow-sm">
+                  {lang === 'fr' ? 'N°1 EN FRANCE · ÉDITION LIMITÉE 2026' : (lang === 'de' ? 'NR. 1 IN FRANKREICH · LIMITIERTE AUSGABE 2026' : 'No. 1 IN FRANCE · LIMITED EDITION 2026')}
+                </div>
+                <div className="inline-block self-start px-3 py-1.5 border border-[#D97706] rounded-md text-white bg-[#D97706] text-[10px] font-semibold uppercase tracking-widest shadow-sm">
+                  {lang === 'fr' ? 'THERMORÉGULATION INTELLIGENTE' : (lang === 'de' ? 'INTELLIGENTE THERMOREGULATION' : 'INTELLIGENT THERMOREGULATION')}
+                </div>
+                <h2 
+                  className="text-[28px] xs:text-[32px] sm:text-[36px] font-black text-white leading-[1.1] tracking-tighter mt-2 drop-shadow-md" 
+                  style={{ width: '90%' }}
+                  dangerouslySetInnerHTML={{ __html: currentT.hero.title }} 
+                />
+              </div>
+              
+              <div className="mt-auto pb-4">
+                <div className="flex flex-wrap justify-center gap-x-2 gap-y-1 text-[11px] font-bold text-white uppercase tracking-widest bg-black/20 backdrop-blur-sm py-1.5 px-3 rounded-full border border-white/10">
+                  <span className="whitespace-nowrap">{lang === 'fr' ? 'CULINAIRE' : (lang === 'de' ? 'KULINARISCH' : 'CULINARY')}</span>
+                  <span className="text-[#D97706]">·</span>
+                  <span className="whitespace-nowrap">{lang === 'fr' ? 'COSMÉTIQUE' : (lang === 'de' ? 'KOSMETISCH' : 'COSMETIC')}</span>
+                  <span className="text-[#D97706]">·</span>
+                  <span className="whitespace-nowrap">{lang === 'fr' ? 'PHYTO-THÉRAPEUTIQUE' : (lang === 'de' ? 'PHYTO-THERAPEUTISCH' : 'PHYTO-THERAPEUTIC')}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* HERO SECTION */}
       <section className="relative pt-12 pb-16 md:pt-16 md:pb-24 overflow-hidden bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -389,35 +538,46 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
             
             <div className="lg:col-span-7 flex flex-col justify-between">
               <div className="space-y-6">
-                <div className="inline-block px-4 py-2 bg-[#1C3F34] text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="flex h-2 w-2 relative">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D97706] opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D97706]"></span>
-                    </span>
-                    {currentT.hero.badge}
+                <h1 className="hidden lg:block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#0F261E] leading-[1.1] tracking-tighter" dangerouslySetInnerHTML={{ __html: currentT.hero.title }} />
+
+                {lang === 'fr' && (
+                  <div className="space-y-4 pt-4 border-l-4 border-[#D97706] pl-6 bg-[#D97706]/5 py-4 rounded-r-2xl">
+                    <h3 className="text-xl font-bold text-[#D97706]">"Vos plantes ont un trésor caché. La BloomLab le révèle."</h3>
+                    <p className="text-base text-slate-700 leading-relaxed">
+                      Une simple infusion ne libère que 20% des bienfaits d'une plante. L'extraction de précision BloomLab libère 98% de son <strong>Totum*</strong> – l'intégralité de ses actifs synergiques.
+                    </p>
+                    <p className="text-base text-slate-700 leading-relaxed">
+                      Résultat : des remèdes et soins maison d'une efficacité inégalée, comme si vous aviez un laboratoire dans votre cuisine.
+                    </p>
+                    <p className="text-base font-black text-[#0F261E]">
+                      La souveraineté sanitaire commence par la bonne extraction.
+                    </p>
+                    <div className="mt-4 p-4 bg-white/50 rounded-xl border border-[#D97706]/20 text-xs text-slate-600 leading-relaxed italic">
+                      <span className="font-bold text-[#0F261E] block mb-1">Note Technique & Biologique :</span>
+                      Le Totum d'une plante représente l'intégralité de ses principes actifs agissant en synergie. Contrairement aux molécules isolées de l'industrie, le Totum respecte la complexité biologique du vivant. Son extraction de précision garantit une biodisponibilité optimale pour l'organisme humain, favorisant un rééquilibrage profond et durable du terrain sans les effets secondaires des extractions incomplètes ou surchauffées.
+                    </div>
                   </div>
-                </div>
+                )}
 
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#0F261E] leading-[1.1]" dangerouslySetInnerHTML={{ __html: currentT.hero.title }} />
+                <p className="hidden lg:block text-base sm:text-lg text-slate-700 font-normal leading-relaxed max-w-2xl" dangerouslySetInnerHTML={{ __html: currentT.hero.subtitle }} />
 
-                <p className="text-base sm:text-lg text-slate-700 font-normal leading-relaxed max-w-2xl" dangerouslySetInnerHTML={{ __html: currentT.hero.subtitle }} />
-
-                <div className="flex items-center space-x-2 pt-2">
-                  <ShieldCheck className="w-5 h-5 text-[#1C3F34]" aria-hidden="true" />
-                  <span className="text-sm font-semibold text-[#0F261E]">
-                    {currentT.hero.rating}
-                  </span>
+                <div className="flex items-center lg:items-start flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-2 pt-2">
+                  <div className="flex items-center space-x-2">
+                    <ShieldCheck className="w-5 h-5 text-[#1C3F34]" aria-hidden="true" />
+                    <span className="text-sm font-semibold text-[#0F261E]">
+                      {currentT.hero.rating}
+                    </span>
+                  </div>
                 </div>
               </div>
 
               <div className="space-y-8 mt-12">
-                <div className="grid grid-cols-3 gap-4 pb-8 border-b border-[#F3EEE6]">
+                <div className="grid grid-cols-3 gap-1 pb-8 border-b border-[#F3EEE6]">
                   {currentT.hero.features.map((f, i) => (
-                    <div key={i} className="p-3.5 rounded-2xl bg-white border border-[#F3EEE6] text-center shadow-sm">
-                      <f.icon className="w-6 h-6 text-[#1C3F34] mx-auto mb-1" />
-                      <div className="text-xs font-bold text-[#0F261E]">{f.title}</div>
-                      <div className="text-[11px] text-slate-500">{f.sub}</div>
+                    <div key={i} className="p-2 rounded-xl bg-white border border-[#F3EEE6] text-center shadow-sm">
+                      <f.icon className="w-4 h-4 text-[#1C3F34] mx-auto mb-1" />
+                      <div className="text-[9px] font-black text-[#0F261E] uppercase tracking-tighter whitespace-nowrap overflow-visible leading-none">{f.title}</div>
+                      <div className="text-[8px] text-slate-500 mt-1">{f.sub}</div>
                     </div>
                   ))}
                 </div>
@@ -442,23 +602,33 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
               </div>
             </div>
 
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-5 hidden lg:block">
               <div className="relative rounded-3xl bg-white border border-[#F3EEE6] p-6 shadow-xl flex flex-col h-full glow-subtle">
                 <div className="absolute -top-3 -right-3 bg-[#D97706] text-white font-black text-xs px-4 py-1.5 rounded-full shadow-md z-10">
                   {lang === 'fr' ? 'ÉCONOMISEZ 50€' : 'SAVE €50'}
                 </div>
 
-                <div className="flex-1 flex flex-col min-h-[400px]">
+                <div className="flex-1 flex flex-col min-h-[550px]">
                   <div className="relative rounded-2xl overflow-hidden border border-[#F3EEE6] bg-[#F3EEE6] flex-1 group mb-6">
-                    <img src={bloomImg} alt="BloomLab" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0F261E]/80 via-transparent to-transparent flex flex-col justify-between p-6">
-                      <div className="flex justify-between items-start">
-                        <span className="bg-white/90 backdrop-blur-sm text-[#0F261E] text-xs font-bold px-3 py-1 rounded-full border border-[#F3EEE6] font-sans">L'ingénierie du Vivant</span>
-                        <span className="bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full font-sans">{lang === 'fr' ? 'En Stock' : 'In Stock'}</span>
-                      </div>
-                      <div className="text-white mt-auto">
-                        <p className="text-xs font-semibold text-[#E8F1EE] uppercase tracking-wider">{lang === 'fr' ? 'Thermorégulation Intelligente' : 'Intelligent Thermoregulation'}</p>
-                        <h3 className="text-xl font-black">{lang === 'fr' ? 'Totum Botanique Conservé à 100%' : '100% Preserved Botanical Totum'}</h3>
+                    <img src={bloomImg} alt="BloomLab" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 brightness-110" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0F261E]/80 via-transparent to-transparent flex flex-col p-6">
+                      <div className="flex flex-col gap-2">
+                        <div className="flex justify-between items-start">
+                          <div className="flex flex-col gap-2">
+                            <span className="bg-[#D97706] text-white text-[10px] font-black px-3 py-1 rounded-full font-sans uppercase tracking-widest">
+                              {lang === 'fr' ? 'Édition limitée 2026' : 'Limited edition 2026'}
+                            </span>
+                            <div className="inline-block self-start px-3 py-1.5 border border-[#1C3F34] rounded-md text-white bg-[#0F261E] text-[10px] font-black uppercase tracking-widest shadow-sm">
+                              N°1 EN FRANCE
+                            </div>
+                            <div className="inline-block self-start px-3 py-1.5 border border-[#D97706] rounded-md text-white bg-[#D97706] text-[9px] font-black uppercase tracking-widest shadow-sm">
+                              {lang === 'fr' ? 'THERMORÉGULATION INTELLIGENTE' : 'INTELLIGENT THERMOREGULATION'}
+                            </div>
+                          </div>
+                          <span className="bg-[#1C3F34] text-white text-[10px] font-black px-3 py-1 rounded-full font-sans uppercase tracking-widest">
+                            {lang === 'fr' ? 'En Stock' : 'In Stock'}
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -469,7 +639,17 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
                       {(Object.keys(currentT.selector.modes) as HeroType[]).map((mode) => (
                         <button 
                           key={mode}
-                          onClick={() => setActiveHeroType(mode)} 
+                          onClick={() => {
+                            setActiveHeroType(mode);
+                            const universeMap: Record<HeroType, UniverseType> = {
+                              culinaire: 'culinaire',
+                              cosmetique: 'cosmetique',
+                              sante: 'phytotherapie'
+                            };
+                            setActiveUniverse(universeMap[mode]);
+                            const el = document.getElementById('3-univers');
+                            if (el) el.scrollIntoView({ behavior: 'smooth' });
+                          }} 
                           className={`px-2 py-2.5 rounded-xl text-[10px] sm:text-xs font-bold font-sans transition-all text-center flex items-center justify-center whitespace-nowrap overflow-hidden ${activeHeroType === mode ? 'bg-[#1C3F34] text-white shadow-sm' : 'bg-[#F3EEE6] text-slate-700 hover:bg-[#E7DFD3]'}`}
                         >
                           <span className="truncate">{currentT.selector.modes[mode].label}</span>
@@ -484,6 +664,34 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
                       dangerouslySetInnerHTML={{ __html: currentT.selector.modes[activeHeroType].desc }}
                     />
                   </div>
+
+                  <div className="space-y-4 pt-4 border-t border-[#F3EEE6]">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-3xl font-black text-[#0F261E]">239€</span>
+                        <span className="text-lg text-slate-400 line-through">289€</span>
+                        <span className="text-[10px] font-black text-[#D97706] uppercase tracking-wider ml-2">{lang === 'fr' ? 'Offre Rentrée' : 'Back to school'}</span>
+                      </div>
+                    </div>
+                    <button 
+                      onClick={() => onNavigate('commande')}
+                      className="w-full py-4 bg-[#D97706] text-white rounded-xl font-black shadow-lg hover:bg-[#B45309] transition-all flex items-center justify-center gap-2"
+                    >
+                      <ShoppingCart className="w-5 h-5" />
+                      <span dangerouslySetInnerHTML={{ __html: currentT.hero.buyBtn }} />
+                    </button>
+                    
+                    {/* Payment Logos under Buy Button */}
+                    <div className="flex flex-wrap justify-center items-center gap-3 pt-2 opacity-100 transition-all">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_Pay_logo.svg" alt="Apple Pay" className="h-5" />
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" className="h-4" />
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-3" />
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="h-5" />
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/American_Express_logo_%282018%29.svg" alt="Amex" className="h-5" />
+                      <div className="px-1.5 py-0.5 border border-slate-300 rounded-[2px] text-[8px] font-black tracking-tighter text-[#1C3F34]">KLARNA</div>
+                      <div className="px-1.5 py-0.5 border border-slate-300 rounded-[2px] text-[8px] font-black tracking-tighter text-[#1C3F34]">CB</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -491,56 +699,138 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
         </div>
       </section>
 
-      {/* SECTION PROBLÈME VS SOLUTION */}
-      <section className="py-12 bg-white border-y border-[#F3EEE6]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <div className="space-y-4">
-            <div className="inline-block px-4 py-2 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-bold uppercase tracking-widest rounded-md shadow-sm border border-[#D8CBB7]">
-              {lang === 'fr' ? "Le Dilemme de l'Herboristerie Maison" : "Home Herbalism Dilemma"}
-            </div>
-            <h2 className="text-3xl font-black text-[#0F261E]">
-              Pour celles et ceux qui ne font plus confiance aux étiquettes industrielles ni aux macérations approximatives.
-            </h2>
+      <section id="3-univers" className="py-16 bg-white relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="text-center pt-2">
+             <div className="inline-block px-4 py-2 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-bold uppercase tracking-widest rounded-md shadow-sm border border-[#D8CBB7] mb-8">
+                {lang === 'fr' ? 'Polyvalence Absolue' : (lang === 'de' ? 'Absolute Vielseitigkeit' : 'Absolute Versatility')}
+             </div>
+             <h2 className="text-3xl md:text-5xl font-black text-[#0F261E] mb-8">{currentT.universes.title}</h2>
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-slate-600 max-w-7xl mx-auto text-justify">
+               <p className="leading-relaxed">{currentT.universes.subtitle_part1}</p>
+               <p className="whitespace-pre-line leading-relaxed">{currentT.universes.subtitle_part2}</p>
+               <p className="leading-relaxed">{(currentT.universes as any).subtitle_part3}</p>
+             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-            <div className="bg-red-50/50 p-8 rounded-[40px] border border-red-100 space-y-6">
-              <div className="flex items-center space-x-4 text-red-600">
-                <div className="w-12 h-12 rounded-2xl bg-red-100 flex items-center justify-center text-xl">
-                  <AlertTriangle />
+          <div className="space-y-12">
+            {/* 3-COLUMN UNIVERSES GRID */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {(Object.keys(currentT.universes.tabs) as UniverseType[]).map((tab) => (
+                <div 
+                  key={tab} 
+                  onClick={() => setActiveUniverse(tab)}
+                  className={`flex flex-col p-4 md:p-6 rounded-[24px] border transition-all cursor-pointer group ${
+                    activeUniverse === tab 
+                      ? 'bg-white border-[#D97706] shadow-xl ring-1 ring-[#D97706]' 
+                      : 'bg-[#FAF7F2] border-[#F3EEE6] shadow-sm hover:shadow-md'
+                  }`}
+                >
+                  <div className={`w-9 h-9 rounded-lg flex items-center justify-center mb-4 transition-colors ${
+                    activeUniverse === tab ? 'bg-[#1C3F34] text-white' : 'bg-white text-[#1C3F34] shadow-sm'
+                  }`}>
+                    {tab === 'culinaire' && <ChefHat className="w-4 h-4" />}
+                    {tab === 'cosmetique' && <Star className="w-4 h-4" />}
+                    {tab === 'phytotherapie' && <Activity className="w-4 h-4" />}
+                  </div>
+                  <h3 className="text-sm md:text-xl font-black text-[#0F261E] mb-2">{currentT.universes.tabs[tab]}</h3>
+                  <p className="text-[11px] md:text-sm text-slate-600 text-justify leading-relaxed flex-grow mb-3">
+                    {currentT.universes.descriptions[tab]}
+                  </p>
+                  <div 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (tab === 'culinaire') onNavigate('atelier-culinaire');
+                      if (tab === 'cosmetique') onNavigate('cosmetiques');
+                      if (tab === 'phytotherapie') onNavigate('phytotherapie-reset');
+                    }}
+                    className={`text-xs font-bold uppercase tracking-widest flex items-center gap-2 transition-colors ${
+                      activeUniverse === tab ? 'text-[#D97706]' : 'text-slate-400 group-hover:text-[#1C3F34]'
+                    }`}
+                  >
+                    {lang === 'fr' ? 'Détails du Protocole' : 'Protocol Details'}
+                    <ChevronRight className={`w-4 h-4 transition-transform ${activeUniverse === tab ? 'translate-x-1' : ''}`} />
+                  </div>
                 </div>
-                <h3 className="font-black text-xl text-slate-900">{lang === 'fr' ? 'Le piège de la Casserole' : 'The Pot Trap'}</h3>
-              </div>
-              <ul className="space-y-4 text-sm text-slate-700">
-                <li className="flex items-start gap-3">
-                  <X className="w-5 h-5 text-red-500 shrink-0" />
-                  <span><strong>{lang === 'fr' ? 'Température incontrôlée' : 'Uncontrolled Temperature'} :</strong> {lang === 'fr' ? 'Le bain-marie dépasse vite 60°C, brûlant les terpènes.' : 'Bain-marie quickly exceeds 60°C, burning terpenes.'}</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <X className="w-5 h-5 text-red-500 shrink-0" />
-                  <span><strong>{lang === 'fr' ? 'Attente interminable' : 'Endless Waiting'} :</strong> {lang === 'fr' ? '4 à 6 semaines de macération passive avec risque d\'oxydation.' : '4 to 6 weeks of passive maceration with oxidation risk.'}</span>
-                </li>
-              </ul>
+              ))}
             </div>
 
-            <div className="bg-[#E8F1EE] p-8 rounded-[40px] border border-[#D8CBB7] space-y-6">
-              <div className="flex items-center space-x-4 text-[#1C3F34]">
-                <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center text-xl shadow-sm">
-                  <Sparkles />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeUniverse}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-white p-8 md:p-12 rounded-[48px] border border-[#F3EEE6] shadow-2xl overflow-hidden relative"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#E8F1EE] rounded-bl-full -mr-16 -mt-16 opacity-50" />
+                
+                <div className="space-y-8 order-2 lg:order-1 text-left relative z-10">
+                  <div className="space-y-4">
+                    <div className="inline-block px-3 py-1 bg-[#D97706]/10 text-[#D97706] text-[10px] font-bold uppercase tracking-widest rounded-full">
+                      {currentT.universes.data[activeUniverse].badge}
+                    </div>
+                    <h3 className="text-3xl sm:text-4xl font-black text-[#0F261E] leading-tight">{currentT.universes.data[activeUniverse].title}</h3>
+                    <p className="text-slate-600 leading-relaxed text-lg">{currentT.universes.data[activeUniverse].description}</p>
+                  </div>
+
+                  <div className="bg-[#FAF7F2] p-5 md:p-6 rounded-[32px] border border-[#F3EEE6] space-y-4 w-full">
+                    <div className="flex items-center justify-between">
+                      <h4 className="text-[10px] md:text-sm font-black text-[#0F261E] uppercase tracking-[0.2em]">{lang === 'fr' ? 'Configuration de Précision' : 'Precision Settings'}</h4>
+                      <div className="px-2 py-0.5 bg-[#1C3F34] text-white text-[8px] font-bold rounded-full uppercase tracking-widest">Grade Laboratoire</div>
+                    </div>
+                    
+                    <div className="grid grid-cols-3 gap-3 md:gap-6">
+                      {[
+                        { label: lang === 'fr' ? 'Temp.' : (lang === 'de' ? 'Temp.' : 'Temp.'), val: currentT.universes.data[activeUniverse].temp, icon: Thermometer },
+                        { label: lang === 'fr' ? 'Durée' : (lang === 'de' ? 'Dauer' : 'Time'), val: currentT.universes.data[activeUniverse].time, icon: Clock },
+                        { label: lang === 'fr' ? 'Solvant' : (lang === 'de' ? 'Lösungsm.' : 'Solvent'), val: currentT.universes.data[activeUniverse].solvent, icon: Droplets }
+                      ].map((stat, i) => (
+                        <div key={i} className="bg-white p-3 md:p-5 rounded-2xl border border-[#F3EEE6] shadow-sm flex flex-col items-center justify-center text-center flex-1 min-w-0 transition-all hover:border-[#D97706]/30">
+                          <stat.icon className="w-5 h-5 text-[#D97706] mb-1.5" />
+                          <div className="text-[10px] md:text-[11px] text-slate-400 uppercase font-black tracking-widest leading-tight mb-1">
+                            {stat.label}
+                          </div>
+                          <div className="text-[12px] md:text-base font-black text-[#0F261E] break-words w-full px-1">{stat.val}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="pt-3 border-t border-[#F3EEE6]">
+                      <div className="flex items-center gap-2 overflow-visible">
+                        <span className="w-2 h-2 bg-[#D97706] rounded-full shrink-0" />
+                        <h5 className="text-xs md:text-base font-black text-[#1C3F34] whitespace-nowrap overflow-visible leading-tight">
+                          {currentT.universes.data[activeUniverse].exampleTitle}
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-2">
+                    <h4 className="text-xs font-black text-[#0F261E] uppercase tracking-[0.2em] mb-6">{lang === 'fr' ? 'Avantages de l\'Extraction du Totum' : 'Totum Extraction Benefits'}</h4>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {currentT.universes.data[activeUniverse].benefits.map((benefit, i) => (
+                        <li key={i} className="flex items-start gap-3 text-sm text-slate-700 font-medium">
+                          <Check className="w-5 h-5 text-emerald-600 shrink-0" />
+                          <span>{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <h3 className="font-black text-xl text-[#0F261E]">{lang === 'fr' ? 'L\'Alternative BloomLab®' : 'The BloomLab® Alternative'}</h3>
-              </div>
-              <ul className="space-y-4 text-sm text-slate-700">
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-emerald-600 shrink-0" />
-                  <span><strong>{lang === 'fr' ? 'Précision au degré près' : 'Degree Precision'} :</strong> {lang === 'fr' ? 'Garantit la conservation intégrale du Totum.' : 'Guarantees full Totum preservation.'}</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-emerald-600 shrink-0" />
-                  <span><strong>{lang === 'fr' ? 'Résultat en 1 à 4h' : 'Results in 1 to 4h'} :</strong> {lang === 'fr' ? 'Une extraction purifiée utilisable immédiatement.' : 'Purified extraction ready to use immediately.'}</span>
-                </li>
-              </ul>
-            </div>
+
+                <div className="order-1 lg:order-2">
+                  <div className="relative aspect-square rounded-[32px] overflow-hidden border-8 border-white shadow-2xl">
+                    <img 
+                      src={currentT.universes.data[activeUniverse].image} 
+                      alt={activeUniverse} 
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0F261E]/40 to-transparent"></div>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </section>
@@ -550,14 +840,14 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="flex flex-col items-center">
             <div className="inline-block px-4 py-2 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-bold uppercase tracking-widest rounded-md shadow-sm border border-[#D8CBB7]">
-              {lang === 'fr' ? "L'Argument Preuve" : "Proof Argument"}
+              {lang === 'fr' ? "L'Argument Preuve" : (lang === 'de' ? "Beweisargument" : "Proof Argument")}
             </div>
             <h2 className="text-3xl font-black text-[#0F261E] mt-6">Bain-Marie Classique <span className="text-slate-400">VS</span> Extracteur BloomLab®</h2>
-            <p className="text-slate-600 text-sm max-w-2xl mx-auto mt-4">{lang === 'fr' ? "Découvrez pourquoi nos utilisateurs ont définitivement remisé leurs casseroles au placard." : "Discover why our users have permanently retired their pans to the closet."}</p>
+            <p className="text-slate-600 text-sm max-w-2xl mx-auto mt-4">{lang === 'fr' ? "Découvrez pourquoi nos utilisateurs ont définitivement remisé leurs casseroles au placard." : (lang === 'de' ? "Erfahren Sie, warum unsere Nutzer ihre Töpfe endgültig in den Schrank gestellt haben." : "Discover why our users have permanently retired their pans to the closet.")}</p>
           </div>
           <div className="bg-white rounded-[32px] border border-[#F3EEE6] overflow-hidden shadow-xl">
              <div className="grid grid-cols-2 md:grid-cols-3 bg-[#FAF7F2] border-b border-[#F3EEE6]">
-               <div className="p-6 md:p-8 font-black text-[#0F261E] uppercase tracking-widest text-xs hidden md:block border-r border-[#F3EEE6]">{lang === 'fr' ? 'Critères' : 'Criteria'}</div>
+               <div className="p-6 md:p-8 font-black text-[#0F261E] uppercase tracking-widest text-xs hidden md:block border-r border-[#F3EEE6]">{lang === 'fr' ? 'Critères' : (lang === 'de' ? 'Kriterien' : 'Criteria')}</div>
                <div className="p-6 md:p-8 font-black text-red-600 uppercase tracking-widest text-xs text-center">Bain-Marie</div>
                <div className="p-6 md:p-8 font-black text-[#1C3F34] uppercase tracking-widest text-xs text-center bg-white border-x border-[#F3EEE6] relative">
                  BloomLab®
@@ -565,11 +855,11 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
                </div>
              </div>
              {[
-               { label: lang === 'fr' ? "Contrôle Thermique" : "Thermal Control", bm: lang === 'fr' ? "Incertain (+60°C à 100°C). Destruction des terpènes fragiles." : "Uncertain (+60°C to 100°C). Destruction of fragile terpenes.", bl: lang === 'fr' ? "Degré près (±0.5°C). Thermorégulation MTC 2.0." : "Degree precision (±0.5°C). MTC 2.0 Thermoregulation." },
-               { label: lang === 'fr' ? "Rendement du Totum" : "Totum Yield", bm: lang === 'fr' ? "Faible (30-40%). Dégradation des principes actifs." : "Low (30-40%). Degradation of active ingredients.", bl: lang === 'fr' ? "Maximale (95-100%). Extraction intégrale." : "Maximum (95-100%). Integral extraction." },
-               { label: lang === 'fr' ? "Temps de Préparation" : "Preparation Time", bm: lang === 'fr' ? "4 à 6 Semaines de macération lente." : "4 to 6 weeks of slow maceration.", bl: lang === 'fr' ? "1 à 4 Heures selon le protocole." : "1 to 4 hours depending on the protocol." },
-               { label: lang === 'fr' ? "Nettoyage & Ergonomie" : "Cleaning & Ergonomics", bm: lang === 'fr' ? "Fastidieux. Étamines salissantes à presser." : "Tedious. Messy strainers to squeeze.", bl: lang === 'fr' ? "Nettoyage Express (60s). Cuve Inox 304." : "Express Cleaning (60s). 304 Stainless Steel tank." },
-               { label: lang === 'fr' ? "Sécurité des Solvants" : "Solvent Safety", bm: lang === 'fr' ? "Risqué. Vapeurs d'alcool sur feu vif." : "Risky. Alcohol vapors on open flame.", bl: lang === 'fr' ? "Circuit Hermétique. Zéro fuite de vapeurs." : "Hermetic Circuit. Zero vapor leakage." }
+               { label: lang === 'fr' ? "Contrôle Thermique" : (lang === 'de' ? "Thermische Kontrolle" : "Thermal Control"), bm: lang === 'fr' ? "Incertain (+60°C à 100°C). Destruction des terpènes fragiles." : (lang === 'de' ? "Unsicher (+60°C bis 100°C). Zerstörung empfindlicher Terpene." : "Uncertain (+60°C to 100°C). Destruction of fragile terpenes."), bl: lang === 'fr' ? "Degré près (±0.5°C). Thermorégulation MTC 2.0." : (lang === 'de' ? "Gradgenau (±0,5°C). TCM 2.0 Thermoregulation." : "Degree precision (±0.5°C). MTC 2.0 Thermoregulation.") },
+               { label: lang === 'fr' ? "Rendement du Totum" : (lang === 'de' ? "Totum-Ertrag" : "Totum Yield"), bm: lang === 'fr' ? "Faible (30-40%). Dégradation des principes actifs." : (lang === 'de' ? "Gering (30-40%). Abbau der Wirkstoffe." : "Low (30-40%). Degradation of active ingredients."), bl: lang === 'fr' ? "Maximale (95-100%). Extraction intégrale." : (lang === 'de' ? "Maximal (95-100%). Integrale Extraktion." : "Maximum (95-100%). Integral extraction.") },
+               { label: lang === 'fr' ? "Temps de Préparation" : (lang === 'de' ? "Vorbereitungszeit" : "Preparation Time"), bm: lang === 'fr' ? "4 à 6 Semaines de macération lente." : (lang === 'de' ? "4 bis 6 Wochen langsame Mazeration." : "4 to 6 weeks of slow maceration."), bl: lang === 'fr' ? "1 à 4 Heures selon le protocole." : (lang === 'de' ? "1 bis 4 Stunden je nach Protokoll." : "1 to 4 hours depending on the protocol.") },
+               { label: lang === 'fr' ? "Nettoyage & Ergonomie" : (lang === 'de' ? "Reinigung & Ergonomie" : "Cleaning & Ergonomics"), bm: lang === 'fr' ? "Fastidieux. Étamines salissantes à presser." : (lang === 'de' ? "Mühsam. Verschmutzte Siebe zum Auspressen." : "Tedious. Messy strainers to squeeze."), bl: lang === 'fr' ? "Nettoyage Express (60s). Cuve Inox 304." : (lang === 'de' ? "Express-Reinigung (60s). 304 Edelstahlbehälter." : "Express Cleaning (60s). 304 Stainless Steel tank.") },
+               { label: lang === 'fr' ? "Sécurité des Solvants" : (lang === 'de' ? "Lösungsmittelsicherheit" : "Solvent Safety"), bm: lang === 'fr' ? "Risqué. Vapeurs d'alcool sur feu vif." : (lang === 'de' ? "Riskant. Alkoholdämpfe auf offener Flamme." : "Risky. Alcohol vapors on open flame."), bl: lang === 'fr' ? "Circuit Hermétique. Zéro fuite de vapeurs." : (lang === 'de' ? "Hermetischer Kreislauf. Keine Dampflecks." : "Hermetic Circuit. Zero vapor leakage.") }
              ].map((row, i) => (
                <div key={i} className="grid grid-cols-2 md:grid-cols-3 border-b border-[#F3EEE6] last:border-0 hover:bg-[#FAF7F2]/50 transition-colors">
                  <div className="p-5 md:p-6 text-sm font-bold text-[#0F261E] hidden md:flex items-center border-r border-[#F3EEE6]">{row.label}</div>
@@ -583,55 +873,13 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
         </div>
       </section>
 
-      {/* UNIVERSES */}
-      <section id="3-univers" className="py-12 bg-white relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center space-y-4 relative">
-             <div className="inline-block px-4 py-2 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-bold uppercase tracking-widest rounded-md shadow-sm border border-[#D8CBB7]">
-                {lang === 'fr' ? 'Polyvalence Absolue' : 'Absolute Versatility'}
-             </div>
-             <h2 className="text-3xl sm:text-4xl font-black text-[#0F261E] mt-4">{currentT.universes.title}</h2>
-             <p className="text-slate-600">{currentT.universes.subtitle}</p>
-          </div>
-          <div className="flex flex-wrap justify-center gap-4">
-            {(Object.keys(currentT.universes.tabs) as UniverseType[]).map((key) => (
-              <button 
-                key={key} 
-                onClick={() => setActiveUniverse(key)}
-                className={`px-6 py-3 rounded-2xl font-bold transition-all ${activeUniverse === key ? 'bg-[#1C3F34] text-white' : 'bg-[#FAF7F2] text-slate-500'}`}
-              >
-                {currentT.universes.tabs[key]}
-              </button>
-            ))}
-          </div>
-          <AnimatePresence mode="wait">
-            <motion.div key={activeUniverse} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-               <div className="space-y-6">
-                 <div className="text-[#D97706] font-black uppercase text-xs">{currentT.universes.data[activeUniverse].badge}</div>
-                 <h3 className="text-3xl font-black text-[#0F261E]">{currentT.universes.data[activeUniverse].title}</h3>
-                 <p className="text-slate-600">{currentT.universes.data[activeUniverse].description}</p>
-                 <ul className="space-y-3">
-                   {currentT.universes.data[activeUniverse].benefits.map((b, i) => (
-                     <li key={i} className="flex items-center gap-2 text-sm font-medium"><Check className="w-4 h-4 text-emerald-600" /> {b}</li>
-                   ))}
-                 </ul>
-               </div>
-               <div className="rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
-                 <img src={currentT.universes.data[activeUniverse].image} className="w-full aspect-[4/3] object-cover" alt="Universe" />
-               </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </section>
-
-      {/* STEPS */}
       <section className="py-12 bg-[#FAF7F2] border-t border-[#F3EEE6]">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12 space-y-3">
-            <div className="inline-block px-4 py-2 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-bold uppercase tracking-widest rounded-md shadow-sm border border-[#D8CBB7]">
+          <div className="text-center pt-2 mb-16">
+            <div className="inline-block px-4 py-2 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-bold uppercase tracking-widest rounded-md shadow-sm border border-[#D8CBB7] mb-8">
                {lang === 'fr' ? 'Simplicité Totale' : 'Total Simplicity'}
             </div>
-            <h2 className="text-3xl font-black text-[#0F261E] mt-4">{currentT.steps.title}</h2>
+            <h2 className="text-3xl font-black text-[#0F261E]">{currentT.steps.title}</h2>
             <p className="text-slate-600 mt-2">{currentT.steps.subtitle}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -703,14 +951,15 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
         </div>
       </section>
 
+
       {/* AVIS */}
       <section id="avis" className="py-12 bg-white border-t border-[#F3EEE6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center space-y-4">
-            <div className="inline-block px-4 py-2 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-bold uppercase tracking-widest rounded-md shadow-sm border border-[#D8CBB7]">
+          <div className="text-center pt-2 space-y-4">
+            <div className="inline-block px-4 py-2 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-bold uppercase tracking-widest rounded-md shadow-sm border border-[#D8CBB7] mb-8">
               {lang === 'fr' ? 'Avis Authentiques' : 'Authentic Reviews'}
             </div>
-            <h2 className="text-3xl sm:text-4xl font-black text-[#0F261E] mt-4">{lang === 'fr' ? 'Vus dans leurs ateliers et cuisines' : 'Seen in their workshops and kitchens'}</h2>
+            <h2 className="text-3xl sm:text-4xl font-black text-[#0F261E]">{lang === 'fr' ? 'Vus dans leurs ateliers et cuisines' : 'Seen in their workshops and kitchens'}</h2>
             <p className="text-slate-600">{lang === 'fr' ? 'Ce que disent nos clients après avoir jeté leurs casseroles au bain-marie.' : 'What our customers say after throwing away their bain-marie pans.'}</p>
           </div>
 
@@ -743,11 +992,11 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
       {/* DUO ARGILES */}
       <section id="duo-argiles" className="py-12 bg-[#FAF7F2]">
         <div className="max-w-6xl mx-auto px-4 bg-[#0F261E] rounded-[48px] p-12 lg:p-20 text-white grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative overflow-hidden">
-           <div className="space-y-6 relative z-10">
-             <div className="inline-block px-4 py-2 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-bold uppercase tracking-widest rounded-md shadow-sm border border-[#D8CBB7]">
+           <div className="space-y-6 pt-2 relative z-10">
+             <div className="inline-block px-4 py-2 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-bold uppercase tracking-widest rounded-md shadow-sm border border-[#D8CBB7] mb-8">
                 {lang === 'fr' ? 'Ingénierie Minérale' : 'Mineral Engineering'}
              </div>
-             <h2 className="text-4xl font-black mt-4">{lang === 'fr' ? 'Duo Argiles' : 'Clay Duo'}</h2>
+             <h2 className="text-4xl font-black">{lang === 'fr' ? 'Duo Argiles' : 'Clay Duo'}</h2>
              <p className="text-xl text-white/70">
                {lang === 'fr' 
                  ? 'Une association de zéolithes et bentonites naturelles sélectionnées pour leurs propriétés d\'adsorption et leur structure microporeuse unique.' 
@@ -777,11 +1026,11 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
       </section>
 
       {/* JOURNAL BOTANIQUE SECTION */}
-      <section id="journal" className="py-24 bg-white border-t border-[#F3EEE6]">
+      <section id="journal" className="py-16 bg-white border-t border-[#F3EEE6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="inline-block px-4 py-2 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-bold uppercase tracking-widest rounded-md shadow-sm border border-[#D8CBB7]">
+            <div className="space-y-8 pt-2">
+              <div className="inline-block px-4 py-2 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-bold uppercase tracking-widest rounded-md shadow-sm border border-[#D8CBB7] mb-8">
                 {lang === 'fr' ? 'Savoir & Transmission' : 'Knowledge & Transmission'}
               </div>
               <h2 className="text-4xl md:text-5xl font-black text-[#0F261E] leading-[1.1]">
@@ -834,14 +1083,100 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
         </div>
       </section>
 
+      {/* FOOTER CTA SECTION */}
+      <section className="py-24 bg-[#0F261E] text-white overflow-hidden relative">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#D97706] to-transparent"></div>
+        <div className="max-w-4xl mx-auto px-4 text-center space-y-12 relative z-10">
+          <div className="space-y-6">
+            <div className="inline-block px-4 py-2 bg-[#D97706] text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-2">
+              {currentT.footerCTA.badge}
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-white">{currentT.footerCTA.title}</h2>
+            <p className="text-xl text-[#E8F1EE]/80 leading-relaxed">
+              {currentT.footerCTA.subtitle}
+            </p>
+            <p className="text-lg text-[#E8F1EE]/60 italic leading-relaxed">
+              {currentT.footerCTA.italic}
+            </p>
+          </div>
+
+          <div className="pt-12 border-t border-white/10 text-center flex flex-col items-center">
+            <p className="text-[10px] text-white/40 uppercase tracking-[0.2em] mb-4">Engagement & Transparence</p>
+          </div>
+
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-[40px] space-y-6">
+            <p className="text-sm text-[#E8F1EE]/70 leading-relaxed max-w-2xl mx-auto italic">
+              "{currentT.footerCTA.quote}"
+            </p>
+            <div className="pt-6">
+              <button 
+                onClick={() => selectPackage('solo', 239)}
+                className="inline-flex items-center justify-center gap-3 bg-[#D97706] hover:bg-[#B45309] text-white font-black text-xl px-10 py-5 rounded-full transition-all hover:scale-105 shadow-2xl"
+              >
+                {currentT.footerCTA.btn}
+              </button>
+            </div>
+          </div>
+
+          <div className="pt-12 border-t border-white/10 text-center">
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white border-y border-[#F3EEE6]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
+          <div className="space-y-4 pt-2 mb-10">
+            <div className="inline-block px-4 py-2 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-bold uppercase tracking-widest rounded-md shadow-sm border border-[#D8CBB7] mb-8">
+              {lang === 'fr' ? "Le Dilemme de l'Herboristerie Maison" : (lang === 'de' ? "Dilemma der Hausapotheke" : "Home Herbalism Dilemma")}
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0F261E] leading-tight">
+              {lang === 'fr' ? "Pour celles et ceux qui ne font plus confiance aux étiquettes industrielles ni aux macérations approximatives." : (lang === 'de' ? "Für diejenigen, die industriellen Etiketten und ungefähren Mazerationen nicht mehr vertrauen." : "For those who no longer trust industrial labels or approximate macerations.")}
+            </h2>
+          </div>
+
+          <div className="overflow-hidden rounded-[40px] border border-[#F3EEE6] shadow-2xl">
+            <div className="bg-[#1C3F34] text-white p-8 text-center">
+              <h3 className="text-2xl font-black text-white flex items-center justify-center gap-3">
+                <Check className="w-8 h-8 text-[#D97706]" />
+                {currentT.whyBloomLab.title}
+              </h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 bg-white">
+              <div className="p-10 border-r border-[#F3EEE6] bg-red-50/20 text-left">
+                <h4 className="text-red-600 font-black uppercase tracking-[0.2em] text-xs mb-8 text-center">{currentT.whyBloomLab.without.title}</h4>
+                <ul className="space-y-6">
+                  {currentT.whyBloomLab.without.items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-4 text-sm text-slate-600 leading-relaxed">
+                      <X className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="p-10 bg-[#E8F1EE]/30 text-left">
+                <h4 className="text-[#1C3F34] font-black uppercase tracking-[0.2em] text-xs mb-8 text-center">{currentT.whyBloomLab.with.title}</h4>
+                <ul className="space-y-6">
+                  {currentT.whyBloomLab.with.items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-4 text-sm text-slate-900 font-bold leading-relaxed">
+                      <Check className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section id="faq" className="py-12 bg-white">
         <div className="max-w-4xl mx-auto px-4 space-y-12">
-          <div className="text-center space-y-4">
-            <div className="inline-block px-4 py-2 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-bold uppercase tracking-widest rounded-md shadow-sm border border-[#D8CBB7]">
+          <div className="text-center pt-2 mb-16">
+            <div className="inline-block px-4 py-2 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-bold uppercase tracking-widest rounded-md shadow-sm border border-[#D8CBB7] mb-8">
                {lang === 'fr' ? 'Questions Fréquentes' : 'Frequent Questions'}
             </div>
-            <h2 className="text-3xl font-black text-[#0F261E] mt-4">{currentT.faq.title}</h2>
+            <h2 className="text-3xl font-black text-[#0F261E]">{currentT.faq.title}</h2>
           </div>
           <div className="space-y-4">
             {currentT.faq.items.map((item, i) => (
@@ -860,21 +1195,25 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
       {/* SECTION COMMANDE */}
       <section id="commande" className="py-12 bg-white border-t border-[#F3EEE6]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center space-y-4">
-            <div className="inline-block px-4 py-2 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-bold uppercase tracking-widest rounded-md shadow-sm border border-[#D8CBB7]">
+          <div className="text-center pt-2 mb-16">
+            <div className="inline-block px-4 py-2 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-bold uppercase tracking-widest rounded-md shadow-sm border border-[#D8CBB7] mb-8">
               {lang === 'fr' ? 'Offre Exclusive Web' : 'Exclusive Web Offer'}
             </div>
-            <h2 className="text-3xl font-black text-[#0F261E] mt-4">{lang === 'fr' ? 'Choisissez votre configuration BloomLab®' : 'Choose your BloomLab® configuration'}</h2>
+            <h2 className="text-3xl font-black text-[#0F261E]">{lang === 'fr' ? 'Choisissez votre configuration BloomLab®' : 'Choose your BloomLab® configuration'}</h2>
             <p className="text-slate-600">{lang === 'fr' ? 'Expédition prioritaire sous 24/48h & paiement sécurisé SSL.' : 'Priority shipping within 24/48h & SSL secure payment.'}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-[#FAF7F2] p-10 rounded-[48px] border border-[#F3EEE6] space-y-8 shadow-sm">
+            <div className="bg-[#FAF7F2] p-8 md:p-10 rounded-[40px] md:rounded-[48px] border border-[#F3EEE6] space-y-8 shadow-sm">
               <div className="space-y-2">
-                <h3 className="text-2xl font-black text-[#0F261E]">BloomLab® Solo</h3>
-                <p className="text-slate-500 font-medium">{lang === 'fr' ? 'L\'essentiel pour commencer.' : 'The essentials to get started.'}</p>
+                <h3 className="text-xl md:text-2xl font-black text-[#0F261E]">BloomLab® Solo</h3>
+                <p className="text-[13px] md:text-base text-slate-500 font-medium">{lang === 'fr' ? 'L\'essentiel pour commencer.' : 'The essentials to get started.'}</p>
               </div>
-              <div className="text-4xl font-black text-[#0F261E]">239€</div>
+              <div className="flex flex-wrap items-baseline gap-3">
+                <div className="text-3xl md:text-4xl font-black text-[#0F261E]">239€</div>
+                <div className="text-lg md:text-xl text-slate-400 line-through">289€</div>
+                <div className="text-[10px] md:text-sm font-bold text-[#D97706] uppercase tracking-wider">{lang === 'fr' ? '(OFFRE RENTRÉE)' : '(BACK TO SCHOOL)'}</div>
+              </div>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3 text-sm font-medium"><Check className="w-5 h-5 text-emerald-600" /> {lang === 'fr' ? 'Machine BloomLab® v2' : 'BloomLab® v2 Machine'}</li>
                 <li className="flex items-center gap-3 text-sm font-medium"><Check className="w-5 h-5 text-emerald-600" /> {lang === 'fr' ? 'Guide Digital 100 recettes' : '100 recipes Digital Guide'}</li>
@@ -901,10 +1240,6 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
         </div>
       </section>
 
-      {/* FOOTER & NEWSLETTER REMOVED (Handled by global Footer) */}
-      <div className="h-px bg-[#F3EEE6] mt-20" />
-      
-      {/* CART MODAL (SIMPLIFIED) */}
       <AnimatePresence>
         {isCartOpen && (
           <div className="fixed inset-0 z-[100] flex justify-end">

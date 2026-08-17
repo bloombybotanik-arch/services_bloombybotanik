@@ -300,7 +300,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
       <section className="mb-24 md:mb-32">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6">{t.universes.title}</h2>
-          <p className="text-lg text-botanik-green/60 font-light">{t.universes.subtitle}</p>
+          <p className="text-lg text-botanik-green/60 font-light">{t.universes.subtitle_part1}</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -311,15 +311,15 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
               <div className="w-14 h-14 bg-botanik-orange/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
                 <ChefHat className="w-7 h-7 text-botanik-orange" />
               </div>
-              <h3 className="text-2xl font-bold text-botanik-green mb-4">{t.universes.culinaire.title}</h3>
+              <h3 className="text-2xl font-bold text-botanik-green mb-4">{t.universes.tabs.culinaire}</h3>
               <p className="text-botanik-green/60 mb-8 font-light leading-relaxed">
-                {t.universes.culinaire.description}
+                {t.universes.descriptions.culinaire}
               </p>
               <button 
                 onClick={() => onNavigate('culinaire')}
                 className="w-full py-4 bg-botanik-orange text-white rounded-2xl font-bold hover:bg-botanik-green transition-all shadow-lg shadow-botanik-orange/10 flex items-center justify-center gap-2"
               >
-                {t.universes.culinaire.cta} <ArrowRight className="w-4 h-4" />
+                {t.common.discover} <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
@@ -331,15 +331,15 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
               <div className="w-14 h-14 bg-botanik-green/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
                 <Star className="w-7 h-7 text-botanik-green" />
               </div>
-              <h3 className="text-2xl font-bold text-botanik-green mb-4">{t.universes.cosmetique.title}</h3>
+              <h3 className="text-2xl font-bold text-botanik-green mb-4">{t.universes.tabs.cosmetique}</h3>
               <p className="text-botanik-green/60 mb-8 font-light leading-relaxed">
-                {t.universes.cosmetique.description}
+                {t.universes.descriptions.cosmetique}
               </p>
               <button 
                 onClick={() => onNavigate('cosmetiques')}
                 className="w-full py-4 bg-botanik-green text-white rounded-2xl font-bold hover:bg-botanik-orange transition-all shadow-lg shadow-botanik-green/10 flex items-center justify-center gap-2"
               >
-                {t.universes.cosmetique.cta} <ArrowRight className="w-4 h-4" />
+                {t.common.discover} <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
@@ -351,15 +351,15 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
               <div className="w-14 h-14 bg-botanik-green/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
                 <Activity className="w-7 h-7 text-botanik-green" />
               </div>
-              <h3 className="text-2xl font-bold text-botanik-green mb-4">{t.universes.reset.title}</h3>
+              <h3 className="text-2xl font-bold text-botanik-green mb-4">{t.universes.tabs.phytotherapie}</h3>
               <p className="text-botanik-green/60 mb-8 font-light leading-relaxed">
-                {t.universes.reset.description}
+                {t.universes.descriptions.phytotherapie}
               </p>
               <button 
                 onClick={() => onNavigate('phytotherapie-reset')}
                 className="w-full py-4 border-2 border-botanik-green text-botanik-green rounded-2xl font-bold hover:bg-botanik-green hover:text-white transition-all flex items-center justify-center gap-2"
               >
-                {t.universes.reset.cta} <ArrowRight className="w-4 h-4" />
+                {t.common.discover} <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
