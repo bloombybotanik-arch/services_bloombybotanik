@@ -1345,6 +1345,24 @@ export const translations = {
       cta_primary: "Faire mon bilan",
       cta_secondary: "Science du Totum",
       quote: "Retrouvez votre souveraineté par la compréhension de votre terrain."
+    },
+    newsletter: {
+      title: "Rejoignez la souveraineté",
+      subtitle: "Recevez nos protocoles saisonniers, conseils de terrain et exclusivités botaniques.",
+      placeholder: "votre@email.com",
+      button: "S'inscrire",
+      success: "Bienvenue dans l'écosystème Bloom.",
+      privacy: "Vos données sont protégées et ne seront jamais partagées."
+    },
+    admin_newsletter: {
+      title: "Gestion Newsletter",
+      generate: "Générer la prochaine édition",
+      approve: "Approuver & Envoyer",
+      history: "Historique des envois",
+      preview: "Aperçu de l'édition",
+      status_draft: "Brouillon",
+      status_sent: "Envoyé",
+      status_scheduled: "Planifié"
     }
   },
   en: {
@@ -2572,6 +2590,24 @@ export const translations = {
       cta_primary: "Take my assessment",
       cta_secondary: "Science of Totum",
       quote: "Regain your sovereignty through understanding your biological terrain."
+    },
+    newsletter: {
+      title: "Join the Sovereignty",
+      subtitle: "Receive our seasonal protocols, terrain advice, and botanical exclusives.",
+      placeholder: "your@email.com",
+      button: "Subscribe",
+      success: "Welcome to the Bloom ecosystem.",
+      privacy: "Your data is protected and will never be shared."
+    },
+    admin_newsletter: {
+      title: "Newsletter Management",
+      generate: "Generate Next Edition",
+      approve: "Approve & Send",
+      history: "Send History",
+      preview: "Edition Preview",
+      status_draft: "Draft",
+      status_sent: "Sent",
+      status_scheduled: "Scheduled"
     }
   },
   de: {
@@ -3799,6 +3835,24 @@ export const translations = {
       cta_primary: "Meine Bewertung machen",
       cta_secondary: "Wissenschaft des Totum",
       quote: "Gewinnen Sie Ihre Souveränität zurück, indem Sie Ihr biologisches Terrain verstehen."
+    },
+    newsletter: {
+      title: "Werden Sie Teil der Souveränität",
+      subtitle: "Erhalten Sie unsere saisonalen Protokolle, Terrain-Ratschläge und botanischen Exklusivitäten.",
+      placeholder: "ihre@email.com",
+      button: "Abonnieren",
+      success: "Willkommen im Bloom-Ökosystem.",
+      privacy: "Ihre Daten sind geschützt und werden niemals weitergegeben."
+    },
+    admin_newsletter: {
+      title: "Newsletter-Verwaltung",
+      generate: "Nächste Ausgabe generieren",
+      approve: "Genehmigen & Senden",
+      history: "Versandverlauf",
+      preview: "Vorschau der Ausgabe",
+      status_draft: "Entwurf",
+      status_sent: "Gesendet",
+      status_scheduled: "Geplant"
     }
   }
 };

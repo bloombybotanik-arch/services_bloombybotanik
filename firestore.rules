@@ -67,6 +67,41 @@ service cloud.firestore {
              data.createdAt == request.time;
     }
 
+    // --- Newsletter & Customer Validations ---
+
+    function isValidSubscriber(data) {
+      return data.keys().hasAll(['email', 'marketing_consent', 'email_status', 'created_at', 'updated_at']) &&
+             data.email is string && data.email.size() <= 256 &&
+             data.marketing_consent is bool &&
+             data.email_status in ['active', 'unsubscribed', 'bounced', 'suppressed'] &&
+             data.created_at <= request.time &&
+             data.updated_at == request.time;
+    }
+
+    function isValidCustomer(data) {
+      return data.keys().hasAll(['subscriber_id', 'bloomlab_purchase_verified', 'created_at', 'updated_at']) &&
+             isValidId(data.subscriber_id) &&
+             data.bloomlab_purchase_verified is bool &&
+             data.created_at <= request.time &&
+             data.updated_at == request.time;
+    }
+
+    function isValidCampaign(data) {
+      return data.keys().hasAll(['theme', 'status', 'created_at', 'updated_at']) &&
+             data.theme is string && data.theme.size() <= 512 &&
+             data.status in ['draft', 'review', 'approved', 'scheduled', 'sent', 'blocked', 'cancelled'] &&
+             data.created_at <= request.time &&
+             data.updated_at == request.time;
+    }
+
+    function isValidCampaignEvent(data) {
+      return data.keys().hasAll(['campaign_id', 'subscriber_id', 'event_type', 'timestamp']) &&
+             isValidId(data.campaign_id) &&
+             isValidId(data.subscriber_id) &&
+             data.event_type in ['delivered', 'opened', 'clicked', 'unsubscribed', 'bounced', 'complained', 'converted'] &&
+             data.timestamp <= request.time;
+    }
+
     // -------------------------------------------------------------------------
     // RULES
     // -------------------------------------------------------------------------
@@ -87,6 +122,34 @@ service cloud.firestore {
         // Action: Admin update status
         (isAdmin() && incoming().diff(existing()).affectedKeys().hasAny(['status', 'isPremiumUntil', 'machineOwned', 'machineSerialNumber']))
       );
+    }
+
+    // Subscribers collection
+    match /subscribers/{subId} {
+      allow get: if isAdmin() || (isSignedIn() && (resource.data.email == request.auth.token.email || subId == request.auth.uid));
+      allow list: if isAdmin();
+      allow create: if true; // Allow anyone to subscribe via footer
+      allow update: if isAdmin() || (isSignedIn() && (existing().email == request.auth.token.email || subId == request.auth.uid) && 
+        incoming().diff(existing()).affectedKeys().hasOnly(['first_name', 'preferences', 'marketing_consent', 'updated_at']));
+    }
+
+    // Customers collection (linked to subscribers)
+    match /customers/{custId} {
+      allow get: if isAdmin();
+      allow list: if isAdmin();
+      allow create, update: if isAdmin();
+    }
+
+    // Newsletter Campaigns
+    match /newsletter_campaigns/{campId} {
+      allow read: if isAdmin();
+      allow write: if isAdmin();
+    }
+
+    // Campaign Events
+    match /campaign_events/{eventId} {
+      allow read: if isAdmin();
+      allow create: if true; // Tracking pixels/links can create events
     }
 
     // Products collection (Statique)

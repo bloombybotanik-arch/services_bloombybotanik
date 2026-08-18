@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { NewsletterSection } from './components/NewsletterSection';
 import { 
   ShieldCheck, 
   Star, 
@@ -1169,6 +1170,8 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
       </section>
 
       {/* FAQ */}
+      <NewsletterSection lang={lang} />
+      
       <section id="faq" className="py-12 bg-white">
         <div className="max-w-4xl mx-auto px-4 space-y-12">
           <div className="text-center pt-2 mb-16">

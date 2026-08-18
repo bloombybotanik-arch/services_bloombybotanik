@@ -44,6 +44,8 @@ const PhytotherapyResetPage = lazy(() => import('./PhytotherapyResetPage'));
 const PillarExtraction = lazy(() => import('./PillarExtraction'));
 const PendingContent = lazy(() => import('./PendingContent'));
 const IndexBisContent = lazy(() => import('./IndexBisContent'));
+const NewsletterPreferences = lazy(() => import('./NewsletterPreferences').then(m => ({ default: m.NewsletterPreferences })));
+const AdminNewsletter = lazy(() => import('./components/AdminNewsletter').then(m => ({ default: m.AdminNewsletter })));
 
 // Loading Placeholder for Lazy components
 const ViewLoader = () => (
@@ -63,7 +65,9 @@ const VIEW_PATHS: Record<string, string> = {
   cart: '/panier', checkout: '/checkout', guide: '/qu-est-ce-que-l-infusion-botanique',
   how_it_works: '/infusion-botanique-maison-comment-ca-marche', pending: '/en-attente',
   library: '/bibliotheque', 'pillar-extraction': '/extraction-botanique-guide-complet',
-  admin: '/admin', blog: '/blog', withdrawal: '/droit-de-retractation', indexbis: '/indexbis'
+  admin: '/admin', blog: '/blog', withdrawal: '/droit-de-retractation', indexbis: '/indexbis',
+  'newsletter-preferences': '/newsletter/preferences',
+  'admin-newsletter': '/admin/newsletter'
 };
 
 const PATH_VIEWS: Record<string, string> = Object.fromEntries(
@@ -348,52 +352,52 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
 
       {/* Main Nav */}
       <div className="flex-1 overflow-y-auto px-4 custom-scrollbar">
-        <NavGroup title="Boutique">
+        <NavGroup title="BloomLab">
           <NavItem 
-            id="boutique" 
-            label={lang === 'fr' ? 'Découvrir la Boutique' : 'Explore Shop'} 
-            icon={ShoppingBag} 
-            isActive={currentView === 'boutique'}
+            id="indexbis" 
+            label={lang === 'fr' ? 'Découvrir BloomLab®' : lang === 'de' ? 'Entdecken Sie BloomLab®' : 'Discover BloomLab®'} 
+            icon={Settings} 
+            isActive={currentView === 'indexbis'}
+          />
+          <NavItem 
+            label={lang === 'fr' ? 'Bain-Marie vs BloomLab' : lang === 'de' ? 'Wasserbad vs BloomLab' : 'Bain-Marie vs BloomLab'} 
+            onClick={() => scrollTo('comparatif')}
+            isSub
+          />
+          <NavItem 
+            label={lang === 'fr' ? 'Duo Argiles Bloom' : lang === 'de' ? 'Bloom Tonerde-Duo' : 'Bloom Clay Duo'} 
+            onClick={() => scrollTo('duo-argiles')}
+            isSub
           />
         </NavGroup>
 
-        <NavGroup title={lang === 'fr' ? 'Les 3 Univers' : 'The 3 Universes'}>
+        <NavGroup title={lang === 'fr' ? 'Les 3 Univers' : lang === 'de' ? 'Die 3 Universen' : 'The 3 Universes'}>
           <NavItem 
             id="culinaire" 
-            label={lang === 'fr' ? 'Atelier Culinaire' : 'Culinary Workshop'} 
+            label={lang === 'fr' ? 'Atelier Culinaire' : lang === 'de' ? 'Kulinarik-Atelier' : 'Culinary Workshop'} 
             icon={ChefHat} 
             isActive={currentView === 'culinaire'}
           />
           <NavItem 
             id="cosmetiques" 
-            label={lang === 'fr' ? 'Soin Cosmétique' : 'Cosmetic Care'} 
+            label={lang === 'fr' ? 'Soin Cosmétique' : lang === 'de' ? 'Kosmetische Pflege' : 'Cosmetic Care'} 
             icon={Sparkles} 
             isActive={currentView === 'cosmetiques'}
           />
           <NavItem 
             id="phytotherapie-reset" 
-            label={lang === 'fr' ? 'Reset Homéostasique' : 'Homeostatic Reset'} 
+            label={lang === 'fr' ? 'Reset Homéostasique' : lang === 'de' ? 'Homöostatisches Reset' : 'Homeostatic Reset'} 
             icon={Wind} 
             isActive={currentView === 'phytotherapie-reset'}
           />
         </NavGroup>
 
-        <NavGroup title="BloomLab">
+        <NavGroup title="Boutique">
           <NavItem 
-            id="indexbis" 
-            label={lang === 'fr' ? 'Découvrir BloomLab®' : 'Discover BloomLab®'} 
-            icon={Settings} 
-            isActive={currentView === 'indexbis'}
-          />
-          <NavItem 
-            label={lang === 'fr' ? 'Bain-Marie vs BloomLab' : 'Bain-Marie vs BloomLab'} 
-            onClick={() => scrollTo('comparatif')}
-            isSub
-          />
-          <NavItem 
-            label={lang === 'fr' ? 'Duo Argiles Bloom' : 'Bloom Clay Duo'} 
-            onClick={() => scrollTo('duo-argiles')}
-            isSub
+            id="boutique" 
+            label={lang === 'fr' ? 'Découvrir la Boutique' : lang === 'de' ? 'Entdecken Sie den Shop' : 'Explore Shop'} 
+            icon={ShoppingBag} 
+            isActive={currentView === 'boutique'}
           />
         </NavGroup>
 
@@ -573,6 +577,14 @@ export default function App() {
       if (productMatch) {
         setCurrentProductId(productMatch[1]);
         setCurrentView('product-detail');
+        return;
+      }
+
+      // --- Detect newsletter preferences URL pattern /newsletter/preferences/:id ---
+      const newsletterMatch = normalizedPath.match(/^\/newsletter\/preferences\/([a-z0-9-]+)$/);
+      if (newsletterMatch) {
+        setCurrentProductId(newsletterMatch[1]);
+        setCurrentView('newsletter-preferences');
         return;
       }
 
@@ -918,8 +930,12 @@ export default function App() {
       case 'admin': return (
         user?.email === 'bloombybotanik@gmail.com' ? <AdminDashboard lang={lang} /> : <HomeContent onNavigate={navigateTo} lang={lang} />
       );
+      case 'admin-newsletter': return (
+        user?.email === 'bloombybotanik@gmail.com' ? <AdminNewsletter lang={lang} /> : <HomeContent onNavigate={navigateTo} lang={lang} />
+      );
       case 'blog': return <BlogContent lang={lang} onNavigate={navigateTo} />;
       case 'legal': return <LegalPages type={legalType} onBack={() => navigateTo(previousView)} lang={lang} />;
+      case 'newsletter-preferences': return <NewsletterPreferences subscriberId={currentProductId || ''} lang={lang} />;
       default: return (
         <StoreContent 
           onNavigatePending={() => navigateTo('pending')} 
@@ -1029,12 +1045,10 @@ export default function App() {
             <div className="flex-1 overflow-y-auto p-6 py-8 custom-scrollbar">
               <div className="space-y-10">
                 <div>
-                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">Écosystème Bloom</h3>
+                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">BloomLab</h3>
                   <div className="space-y-2">
                     {[
-                      { id: 'home', label: lang === 'fr' ? 'Accueil' : 'Home', icon: Home },
-                      { id: 'indexbis', label: 'BloomLab®', icon: Settings, highlight: true },
-                      { id: 'boutique', label: lang === 'fr' ? 'Boutique' : 'Shop', icon: ShoppingBag },
+                      { id: 'indexbis', label: lang === 'fr' ? 'Découvrir BloomLab®' : lang === 'de' ? 'Entdecken Sie BloomLab®' : 'Discover BloomLab®', icon: Settings, highlight: true },
                     ].map((item: any) => (
                       <button
                         key={item.id}
@@ -1042,14 +1056,38 @@ export default function App() {
                         className={`w-full flex items-center justify-between px-6 py-4 rounded-2xl transition-all text-left group ${
                           currentView === item.id 
                             ? 'bg-white/10 text-white shadow-lg shadow-black/10' 
-                            : item.highlight ? 'bg-botanik-orange/10 text-white border border-botanik-orange/20' : 'text-white/70 hover:bg-white/5'
+                            : 'bg-botanik-orange/10 text-white border border-botanik-orange/20'
+                        }`}
+                      >
+                        <div className="flex items-center gap-4">
+                          <item.icon className={`w-5 h-5 transition-colors ${currentView === item.id ? 'text-botanik-orange' : 'text-botanik-orange/60 group-hover:text-botanik-orange'}`} />
+                          <span className="font-bold text-base tracking-tight">{item.label}</span>
+                        </div>
+                        <div className="w-1.5 h-1.5 rounded-full bg-botanik-orange animate-pulse" />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">{lang === 'fr' ? 'Les 3 Univers' : lang === 'de' ? 'Die 3 Universen' : 'The 3 Universes'}</h3>
+                  <div className="space-y-2">
+                    {[
+                      { id: 'culinaire', label: lang === 'fr' ? 'Atelier Culinaire' : lang === 'de' ? 'Kulinarik-Atelier' : 'Culinary Workshop', icon: ChefHat },
+                      { id: 'cosmetiques', label: lang === 'fr' ? 'Soin Cosmétique' : lang === 'de' ? 'Kosmetische Pflege' : 'Cosmetic Care', icon: Sparkles },
+                      { id: 'phytotherapie-reset', label: lang === 'fr' ? 'Reset Homéostasique' : lang === 'de' ? 'Homöostatisches Reset' : 'Homeostatic Reset', icon: Wind },
+                    ].map((item: any) => (
+                      <button
+                        key={item.id}
+                        onClick={() => { navigateTo(item.id); setIsMenuOpen(false); }}
+                        className={`w-full flex items-center justify-between px-6 py-4 rounded-2xl transition-all text-left group ${
+                          currentView === item.id ? 'bg-white/10 text-white shadow-lg shadow-black/10' : 'text-white/70 hover:bg-white/5'
                         }`}
                       >
                         <div className="flex items-center gap-4">
                           <item.icon className={`w-5 h-5 transition-colors ${currentView === item.id ? 'text-botanik-orange' : 'text-white/40 group-hover:text-white/60'}`} />
                           <span className="font-bold text-base tracking-tight">{item.label}</span>
                         </div>
-                        {item.highlight && <div className="w-1.5 h-1.5 rounded-full bg-botanik-orange animate-pulse" />}
                         {currentView === item.id && <ChevronRight className="w-4 h-4 text-botanik-orange" />}
                       </button>
                     ))}
@@ -1057,14 +1095,10 @@ export default function App() {
                 </div>
 
                 <div>
-                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">Expertise & Savoir</h3>
+                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">Boutique</h3>
                   <div className="space-y-2">
                     {[
-                      { id: 'culinaire', label: lang === 'fr' ? 'Atelier Culinaire' : 'Culinary Workshop', icon: ChefHat },
-                      { id: 'cosmetiques', label: lang === 'fr' ? 'Soin Cosmétique' : 'Cosmetic Care', icon: Sparkles },
-                      { id: 'phytotherapie-reset', label: lang === 'fr' ? 'Reset Homéostasique' : 'Homeostatic Reset', icon: Wind },
-                      { id: 'blog', label: lang === 'fr' ? 'La Bibliothèque' : 'Library', icon: BookOpen },
-                      { id: 'manifesto', label: lang === 'fr' ? 'Le Manifeste' : 'Manifesto', icon: FileText },
+                      { id: 'boutique', label: lang === 'fr' ? 'Découvrir la Boutique' : lang === 'de' ? 'Den Shop entdecken' : 'Explore Shop', icon: ShoppingBag },
                     ].map((item: any) => (
                       <button
                         key={item.id}

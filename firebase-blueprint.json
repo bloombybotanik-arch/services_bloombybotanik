@@ -1,134 +1,210 @@
 {
   "entities": {
-    "User": {
-      "title": "User",
-      "description": "User profile with status and subscription tracking",
+    "Subscriber": {
+      "title": "Subscriber",
+      "description": "A person subscribed to the newsletter or a customer with marketing preferences.",
       "type": "object",
       "properties": {
-        "uid": { "type": "string" },
-        "email": { "type": "string", "format": "email" },
-        "displayName": { "type": "string" },
-        "status": { 
-          "type": "string", 
-          "enum": ["gratuit", "freemium", "premium", "owner"] 
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Unique email address of the subscriber."
         },
-        "isPremiumUntil": { "type": "string", "format": "date-time" },
-        "machineOwned": { "type": "boolean" },
-        "machineSerialNumber": { "type": "string" },
-        "optInNewsletter": { "type": "boolean" },
-        "optInNurturing": { "type": "boolean" },
-        "createdAt": { "type": "string", "format": "date-time" },
-        "updatedAt": { "type": "string", "format": "date-time" },
-        "lastActivityAt": { "type": "string", "format": "date-time" }
+        "first_name": {
+          "type": "string",
+          "description": "First name of the subscriber."
+        },
+        "locale": {
+          "type": "string",
+          "description": "Language and region (e.g., fr-FR)."
+        },
+        "marketing_consent": {
+          "type": "boolean",
+          "description": "Whether the user has consented to marketing emails."
+        },
+        "consent_source": {
+          "type": "string",
+          "description": "Where the consent was obtained (e.g., footer_form, checkout)."
+        },
+        "consent_timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the consent was obtained."
+        },
+        "consent_version": {
+          "type": "string",
+          "description": "Version of the terms accepted."
+        },
+        "email_status": {
+          "type": "string",
+          "enum": ["active", "unsubscribed", "bounced", "suppressed"],
+          "description": "Status of the email delivery."
+        },
+        "preferences": {
+          "type": "object",
+          "description": "User preferences including family rhythm and zones.",
+          "properties": {
+            "family_rhythm": { "type": "boolean" },
+            "school_calendar_zone": { "type": "string", "enum": ["A", "B", "C", "hors_france", "non_precise"] },
+            "content_context": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
       },
-      "required": ["uid", "email", "status", "createdAt"]
+      "required": ["email", "marketing_consent", "email_status", "created_at", "updated_at"]
     },
-    "Product": {
-      "title": "Product",
-      "description": "Bloom items: Machine, Kits, or Subscriptions",
+    "Customer": {
+      "title": "Customer",
+      "description": "Detailed purchase history linked to a subscriber.",
       "type": "object",
       "properties": {
-        "id": { "type": "string" },
-        "type": { "type": "string", "enum": ["machine", "kit", "subscription"] },
-        "name": { "type": "string" },
-        "sku": { "type": "string" },
-        "priceCents": { "type": "integer" },
-        "currency": { "type": "string" },
-        "description": { "type": "string" }
+        "subscriber_id": {
+          "type": "string",
+          "description": "Reference to the subscriber document ID."
+        },
+        "bloomlab_purchase_verified": {
+          "type": "boolean",
+          "description": "Verified owner of a BloomLab instrument."
+        },
+        "bloomlab_purchase_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "kit_purchase_verified": {
+          "type": "boolean",
+          "description": "Verified owner of one or more botanical kits."
+        },
+        "last_purchase_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "purchase_source": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
       },
-      "required": ["id", "type", "name", "priceCents"]
+      "required": ["subscriber_id", "bloomlab_purchase_verified", "created_at", "updated_at"]
     },
-    "Order": {
-      "title": "Order",
-      "description": "Purchase records for machine and kits",
+    "NewsletterCampaign": {
+      "title": "Newsletter Campaign",
+      "description": "A scheduled or sent newsletter edition.",
       "type": "object",
       "properties": {
-        "id": { "type": "string" },
-        "userId": { "type": "string" },
-        "items": { "type": "array" },
-        "totalCents": { "type": "integer" },
-        "status": { "type": "string", "enum": ["pending", "paid", "shipped", "canceled"] },
-        "shippingAddress": { "type": "object" },
-        "stripeSessionId": { "type": "string" },
-        "createdAt": { "type": "string", "format": "date-time" },
-        "updatedAt": { "type": "string", "format": "date-time" }
+        "edition_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "theme": {
+          "type": "string"
+        },
+        "target_segments": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "subject": {
+          "type": "string"
+        },
+        "preheader": {
+          "type": "string"
+        },
+        "html_content": {
+          "type": "string"
+        },
+        "text_content": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["draft", "review", "approved", "scheduled", "sent", "blocked", "cancelled"]
+        },
+        "quality_report": {
+          "type": "object"
+        },
+        "created_by": {
+          "type": "string",
+          "enum": ["agent", "human"]
+        },
+        "approved_by": {
+          "type": "string"
+        },
+        "scheduled_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "sent_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
       },
-      "required": ["userId", "items", "totalCents", "status", "createdAt"]
+      "required": ["theme", "status", "created_at", "updated_at"]
     },
-    "Subscription": {
-      "title": "Subscription",
-      "description": "SaaS recurring billing info",
+    "CampaignEvent": {
+      "title": "Campaign Event",
+      "description": "Tracking event for a newsletter (open, click, etc.).",
       "type": "object",
       "properties": {
-        "id": { "type": "string" },
-        "userId": { "type": "string" },
-        "stripeSubscriptionId": { "type": "string" },
-        "planId": { "type": "string" },
-        "status": { "type": "string", "enum": ["active", "past_due", "trialing", "canceled"] },
-        "currentPeriodEnd": { "type": "string", "format": "date-time" },
-        "cancelAtPeriodEnd": { "type": "boolean" }
+        "campaign_id": {
+          "type": "string"
+        },
+        "subscriber_id": {
+          "type": "string"
+        },
+        "event_type": {
+          "type": "string",
+          "enum": ["delivered", "opened", "clicked", "unsubscribed", "bounced", "complained", "converted"]
+        },
+        "link_id": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "metadata": {
+          "type": "object"
+        }
       },
-      "required": ["userId", "stripeSubscriptionId", "status"]
-    },
-    "Interaction": {
-      "title": "Interaction",
-      "description": "Tracking for CRM and personalized marketing",
-      "type": "object",
-      "properties": {
-        "userId": { "type": "string" },
-        "type": { "type": "string" },
-        "metadata": { "type": "object" },
-        "createdAt": { "type": "string", "format": "date-time" }
-      },
-      "required": ["userId", "type", "createdAt"]
-    },
-    "CustomerConcern": {
-      "title": "Customer Concern",
-      "description": "Logging for Alma bot interactions and user needs",
-      "type": "object",
-      "properties": {
-        "userId": { "type": "string" },
-        "anonymousSessionId": { "type": "string" },
-        "userQuestion": { "type": "string" },
-        "answerSummary": { "type": "string" },
-        "mainConcern": { "type": "string" },
-        "category": { "type": "string" },
-        "severity": { "type": "string" },
-        "emotion": { "type": "string" },
-        "productArea": { "type": "string" },
-        "suggestedImprovement": { "type": "string" },
-        "recurrenceHint": { "type": "string" },
-        "language": { "type": "string" },
-        "pageUrl": { "type": "string" },
-        "createdAt": { "type": "string", "format": "date-time" }
-      },
-      "required": ["userQuestion", "createdAt"]
+      "required": ["campaign_id", "subscriber_id", "event_type", "timestamp"]
     }
   },
   "firestore": {
-    "/users/{userId}": {
-      "schema": "User",
-      "description": "Individual user profiles"
+    "/subscribers/{subscriberId}": {
+      "schema": "Subscriber",
+      "description": "Collection of newsletter subscribers."
     },
-    "/products/{productId}": {
-      "schema": "Product",
-      "description": "Public product catalog"
+    "/customers/{customerId}": {
+      "schema": "Customer",
+      "description": "Collection of customer purchase data."
     },
-    "/orders/{orderId}": {
-      "schema": "Order",
-      "description": "Order history"
+    "/newsletter_campaigns/{campaignId}": {
+      "schema": "NewsletterCampaign",
+      "description": "Collection of newsletter campaigns."
     },
-    "/subscriptions/{subId}": {
-      "schema": "Subscription",
-      "description": "User subscriptions"
-    },
-    "/interactions/{interactionId}": {
-      "schema": "Interaction",
-      "description": "CRM activity logs"
-    },
-    "/customer_concerns/{concernId}": {
-      "schema": "CustomerConcern",
-      "description": "Bot interaction logs"
+    "/campaign_events/{eventId}": {
+      "schema": "CampaignEvent",
+      "description": "Collection of engagement events."
     }
   }
 }

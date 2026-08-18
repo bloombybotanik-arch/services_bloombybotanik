@@ -113,6 +113,14 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
               <FooterLink label="FAQ" onClick={() => onNavigate('indexbis')} />
             </FooterGroup>
 
+            <FooterGroup title="Newsletter">
+              <FooterLink label={lang === 'fr' ? 'S\'abonner' : 'Subscribe'} onClick={() => {
+                const el = document.getElementById('newsletter');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }} />
+              <FooterLink label={lang === 'fr' ? 'Préférences' : 'Preferences'} onClick={() => onNavigate('newsletter-preferences')} />
+            </FooterGroup>
+
             <FooterGroup title="Légal">
               <FooterLink label="Mentions Légales" onClick={() => onNavigate('legal', undefined, 'mentions')} />
               <FooterLink label="CGV / CGU" onClick={() => onNavigate('legal', undefined, 'cgv')} />

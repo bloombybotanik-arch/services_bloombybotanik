@@ -70,3 +70,84 @@ export interface UserInteraction {
   metadata?: any;
   createdAt: string;
 }
+
+export type EmailStatus = 'active' | 'unsubscribed' | 'bounced' | 'suppressed';
+export type SchoolCalendarZone = 'A' | 'B' | 'C' | 'hors_france' | 'non_precise';
+
+export interface SubscriberPreferences {
+  family_rhythm: boolean;
+  school_calendar_zone: SchoolCalendarZone;
+  content_context: string[];
+}
+
+export interface Subscriber {
+  id?: string;
+  email: string;
+  first_name?: string;
+  locale: string;
+  marketing_consent: boolean;
+  consent_source?: string;
+  consent_timestamp?: any;
+  consent_version?: string;
+  email_status: EmailStatus;
+  preferences: SubscriberPreferences;
+  created_at: any;
+  updated_at: any;
+}
+
+export interface CustomerData {
+  id?: string;
+  subscriber_id: string;
+  bloomlab_purchase_verified: boolean;
+  bloomlab_purchase_date?: any;
+  kit_purchase_verified: boolean;
+  last_purchase_date?: any;
+  purchase_source?: string;
+  created_at: any;
+  updated_at: any;
+}
+
+export type CampaignStatus = 'draft' | 'review' | 'approved' | 'scheduled' | 'sent' | 'blocked' | 'cancelled';
+
+export interface NewsletterCampaign {
+  id?: string;
+  edition_date?: string;
+  theme: string;
+  target_segments: string[];
+  subject?: string;
+  preheader?: string;
+  html_content?: string;
+  text_content?: string;
+  status: CampaignStatus;
+  quality_report?: any;
+  created_by: 'agent' | 'human';
+  approved_by?: string;
+  scheduled_at?: any;
+  sent_at?: any;
+  created_at: any;
+  updated_at: any;
+}
+
+export interface NewsletterGenerationSession {
+  id: string;
+  status: 'initialized' | 'research' | 'draft' | 'review' | 'approved' | 'scheduled' | 'blocked' | 'sent';
+  current_agent?: string;
+  shared_memory: {
+    audience_needs?: any;
+    trends?: any;
+    seasonal_context?: any;
+    customer_voice?: any;
+    selected_topic?: any;
+    fact_research?: any;
+    editorial_draft?: any;
+    claims_review?: any;
+    personalization?: any;
+    html_output?: any;
+    quality_report?: any;
+    performance_recommendations?: any;
+  };
+  risk_level: 'low' | 'medium' | 'high';
+  blocking_reasons: string[];
+  created_at: any;
+  updated_at: any;
+}

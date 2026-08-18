@@ -64,6 +64,12 @@ export default function AdminDashboard({ lang = 'fr' }: AdminDashboardProps) {
           >
             <Users className="w-4 h-4" /> Utilisateurs
           </button>
+          <button 
+            onClick={() => window.location.href = '/admin/newsletter'}
+            className="px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2 text-botanik-green/40 hover:text-botanik-green"
+          >
+            <Calendar className="w-4 h-4" /> Newsletter
+          </button>
         </div>
       </div>
 

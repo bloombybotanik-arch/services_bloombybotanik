@@ -138,6 +138,239 @@ Object.entries(redirects).forEach(([from, to]) => {
   app.get(from, (req, res) => res.redirect(301, to));
 });
 
+// --- NEWSLETTER AGENT INSTRUCTIONS ---
+
+const NEWSLETTER_PLANNER_INSTRUCTION = `Tu es l'Agent Planificateur Éditorial de Bloom by BotaniK.
+Mission : Sélectionner le sujet et l'objectif de la newsletter de la semaine.
+Règles :
+- BloomLab et les extraits ne sont pas des médicaments.
+- Suivre le calendrier saisonnier fourni.
+- Alterner pédagogie (40%), usage BloomLab (20%), kits (15%), marque (15%), communauté (10%).
+- Un seul CTA principal.
+Output : JSON avec theme, editorial_angle, target_segments, primary_goal, cta.`;
+
+const NEWSLETTER_WRITER_INSTRUCTION = `Tu es l'Agent Rédacteur de Bloom by BotaniK.
+Mission : Rédiger une newsletter hebdomadaire utile, lisible et premium.
+Ton : clair, rigoureux, pédagogique, chaleureux.
+Sections requises : sujet, preheader, salutation, leçon principale, conseil pratique, section produit, CTA, note de prudence (SÉCURITÉ), footer.
+Règles : Phrases courtes, sous-titres, pas d'allégation médicale.`;
+
+// --- NEWSLETTER API ROUTES ---
+
+app.post("/api/newsletter/subscribe", async (req, res) => {
+  try {
+    const { email, firstName, source } = req.body;
+    if (!email) return res.status(400).json({ error: "Email requis" });
+
+    const firestore = getDb();
+    const normalizedEmail = email.toLowerCase().trim();
+    
+    // Find or create subscriber
+    const subQuery = await firestore.collection('subscribers').where('email', '==', normalizedEmail).get();
+    let subscriberId;
+    
+    if (subQuery.empty) {
+      const newSub = await firestore.collection('subscribers').add({
+        email: normalizedEmail,
+        first_name: firstName || '',
+        locale: 'fr-FR',
+        marketing_consent: false, // Wait for double opt-in
+        consent_source: source || 'footer_form',
+        email_status: 'active',
+        preferences: {
+          family_rhythm: false,
+          school_calendar_zone: 'non_precise',
+          content_context: ['routine_personnelle']
+        },
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString()
+      });
+      subscriberId = newSub.id;
+    } else {
+      subscriberId = subQuery.docs[0].id;
+    }
+
+    // Send Double Opt-in Email (Simulation)
+    const confirmLink = `https://${req.get('host')}/api/newsletter/confirm?id=${subscriberId}`;
+    console.log("Sending confirmation email to:", normalizedEmail, "Link:", confirmLink);
+    
+    // In real app, use transporter.sendMail(...)
+    
+    res.json({ success: true, subscriberId, message: "Email de confirmation envoyé" });
+  } catch (error: any) {
+    console.error("Subscription error:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get("/api/newsletter/confirm", async (req, res) => {
+  try {
+    const { id } = req.query;
+    if (!id) return res.status(400).send("ID manquant");
+
+    const firestore = getDb();
+    const subRef = firestore.collection('subscribers').doc(id as string);
+    const subDoc = await subRef.get();
+
+    if (!subDoc.exists) return res.status(404).send("Abonné non trouvé");
+
+    await subRef.update({
+      marketing_consent: true,
+      consent_timestamp: new Date().toISOString(),
+      updated_at: new Date().toISOString()
+    });
+
+    res.send("<h1>Inscription confirmée !</h1><p>Merci d'avoir rejoint la communauté Bloom. Vous pouvez fermer cette page.</p>");
+  } catch (error: any) {
+    res.status(500).send("Erreur lors de la confirmation");
+  }
+});
+
+app.get("/api/newsletter/unsubscribe", async (req, res) => {
+  try {
+    const { id } = req.query;
+    if (!id) return res.status(400).send("ID manquant");
+
+    const firestore = getDb();
+    await firestore.collection('subscribers').doc(id as string).update({
+      marketing_consent: false,
+      email_status: 'unsubscribed',
+      updated_at: new Date().toISOString()
+    });
+
+    res.send("<h1>Désinscription réussie</h1><p>Vous ne recevrez plus de newsletters de notre part.</p>");
+  } catch (error: any) {
+    res.status(500).send("Erreur lors de la désinscription");
+  }
+});
+
+import { NewsletterOrchestrator } from "./server/newsletter-orchestrator";
+
+const orchestrator = new NewsletterOrchestrator(process.env.GEMINI_API_KEY!);
+
+// Admin Route to generate newsletter using Multi-Agent Orchestrator
+app.post("/api/admin/newsletter/generate", async (req, res) => {
+  try {
+    const { season, context_data } = req.body;
+    
+    const sharedMemory = await orchestrator.generateNewsletter({
+      season,
+      ...context_data
+    });
+    
+    const firestore = getDb();
+    const campaign = await firestore.collection('newsletter_campaigns').add({
+      theme: sharedMemory.selected_topic.selected_topic,
+      subject: sharedMemory.editorial_draft.subject,
+      preheader: sharedMemory.editorial_draft.preheader,
+      html_content: sharedMemory.html_output.html,
+      text_content: sharedMemory.html_output.plain_text,
+      status: sharedMemory.quality_report.status === 'pass' ? 'review' : 'draft',
+      quality_report: sharedMemory.quality_report,
+      target_segments: sharedMemory.selected_topic.target_segments || [],
+      created_by: 'agent',
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
+    });
+
+    // Also save the full session for audit
+    await firestore.collection('newsletter_generation_sessions').add({
+      campaign_id: campaign.id,
+      status: 'review',
+      shared_memory: sharedMemory,
+      risk_level: sharedMemory.quality_report.score < 80 ? 'medium' : 'low',
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
+    });
+
+    res.json({ success: true, campaignId: campaign.id, sharedMemory });
+  } catch (error: any) {
+    console.error("Newsletter generation error:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post("/api/admin/newsletter/approve", async (req, res) => {
+  try {
+    const { campaignId } = req.body;
+    if (!campaignId) return res.status(400).json({ error: "Campaign ID requis" });
+
+    const firestore = getDb();
+    await firestore.collection('newsletter_campaigns').doc(campaignId).update({
+      status: 'approved',
+      approved_by: 'admin_user', // Simulation
+      updated_at: new Date().toISOString()
+    });
+
+    res.json({ success: true, message: "Campagne approuvée" });
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Webhook Simulation for Purchases
+app.post("/api/webhooks/purchase", async (req, res) => {
+  try {
+    const { email, productId, orderId } = req.body;
+    if (!email || !productId) return res.status(400).json({ error: "Données manquantes" });
+
+    const firestore = getDb();
+    const normalizedEmail = email.toLowerCase().trim();
+    
+    // Find subscriber
+    const subQuery = await firestore.collection('subscribers').where('email', '==', normalizedEmail).get();
+    let subscriberId;
+    
+    if (subQuery.empty) {
+      // Create shadow subscriber if not exists (no marketing consent)
+      const newSub = await firestore.collection('subscribers').add({
+        email: normalizedEmail,
+        marketing_consent: false,
+        email_status: 'active',
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString()
+      });
+      subscriberId = newSub.id;
+    } else {
+      subscriberId = subQuery.docs[0].id;
+    }
+
+    const isBloomLab = productId.includes('bloomlab');
+    
+    // Update or create customer record
+    const custQuery = await firestore.collection('customers').where('subscriber_id', '==', subscriberId).get();
+    if (custQuery.empty) {
+      await firestore.collection('customers').add({
+        subscriber_id: subscriberId,
+        bloomlab_purchase_verified: isBloomLab,
+        bloomlab_purchase_date: isBloomLab ? new Date().toISOString() : null,
+        kit_purchase_verified: !isBloomLab,
+        last_purchase_date: new Date().toISOString(),
+        purchase_source: 'webhook_simulation',
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString()
+      });
+    } else {
+      const custRef = custQuery.docs[0].ref;
+      const updateData: any = {
+        last_purchase_date: new Date().toISOString(),
+        updated_at: new Date().toISOString()
+      };
+      if (isBloomLab) {
+        updateData.bloomlab_purchase_verified = true;
+        updateData.bloomlab_purchase_date = new Date().toISOString();
+      } else {
+        updateData.kit_purchase_verified = true;
+      }
+      await custRef.update(updateData);
+    }
+
+    res.json({ success: true, message: "Achat synchronisé" });
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Middleware pour servir index.html sur toutes les routes non-API (SPA Fallback)
 // Placé AVANT le démarrage de Vite en prod, mais APRES les routes API
 app.post("/api/chat", async (req: express.Request, res: express.Response) => {
