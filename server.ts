@@ -124,26 +124,10 @@ Tu dois impérativement répondre au format JSON :
 app.use(cors());
 app.use(express.json({ limit: '10mb' }));
 
-// Configuration Prerender.io pour les robots
-app.use((req, res, next) => {
-  const userAgent = req.headers['user-agent'] || '';
-  const isBot = /bot|google|bing|yandex|baidu|facebook|twitter|crawler|spider/i.test(userAgent);
-  const isPrerenderRequest = req.query._escaped_fragment_ === '';
-  
-  if (isBot || isPrerenderRequest) {
-    // Only redirect if it's not a static asset
-    const isStatic = /\.(js|css|xml|json|png|jpg|jpeg|gif|svg|mp4|ico)$/i.test(req.path);
-    if (!isStatic) {
-      return res.redirect(301, `https://service.prerender.io/https://bloombybotanik.com${req.url}`);
-    }
-  }
-  next();
-});
-
 // Redirections 301 pour le SEO
 const redirects: Record<string, string> = {
   '/indexbis': '/',
-  '/boutique/confort-digestif': '/boutique/renaissance',
+  '/boutique/confort-digestif': '/boutique/duo-argiles', // Corrected to match sitemap
   '/boutique/feu-actualisateur': '/boutique/purete-sanguine',
   '/boutique/nutri-profonde': '/boutique/expert-peaux',
   '/bloomlab-extracteur-botanique-et-infuseur-dhuile-intelligent-6-en-1': '/bloomlab',
@@ -153,6 +137,9 @@ const redirects: Record<string, string> = {
 Object.entries(redirects).forEach(([from, to]) => {
   app.get(from, (req, res) => res.redirect(301, to));
 });
+
+// Middleware pour servir index.html sur toutes les routes non-API (SPA Fallback)
+// Placé AVANT le démarrage de Vite en prod, mais APRES les routes API
 app.post("/api/chat", async (req: express.Request, res: express.Response) => {
   try {
     const { message, history, userId, anonymousSessionId, language, pageUrl } = req.body;

@@ -538,6 +538,14 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
             
             <div className="lg:col-span-7 flex flex-col justify-between">
               <div className="space-y-6">
+                <div className="hidden lg:flex flex-wrap gap-2 mb-4">
+                  <div className="inline-block px-3 py-1 bg-[#1C3F34] text-white text-[10px] font-black uppercase tracking-widest rounded-full shadow-sm">
+                    N°1 EN FRANCE
+                  </div>
+                  <div className="inline-block px-3 py-1 bg-[#D97706] text-white text-[10px] font-black uppercase tracking-widest rounded-full shadow-sm">
+                    {lang === 'fr' ? 'THERMORÉGULATION INTELLIGENTE' : 'INTELLIGENT THERMOREGULATION'}
+                  </div>
+                </div>
                 <h1 className="hidden lg:block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#0F261E] leading-[1.1] tracking-tighter" dangerouslySetInnerHTML={{ __html: currentT.hero.title }} />
 
                 {lang === 'fr' && (
@@ -594,9 +602,11 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
                     </div>
                   </div>
                   
-                  <div className="flex flex-wrap items-center gap-4 text-xs text-slate-600 font-medium pt-2">
-                    <span className="flex items-center"><ShieldCheck className="w-4 h-4 text-[#1C3F34] mr-1.5" /> {currentT.hero.guarantee}</span>
-                    <span className="flex items-center"><Truck className="w-4 h-4 text-[#1C3F34] mr-1.5" /> {currentT.hero.shipping}</span>
+                  <div className="flex flex-wrap items-center gap-6 pt-4">
+                    <div className="flex flex-wrap items-center gap-4 text-xs text-slate-600 font-medium">
+                      <span className="flex items-center"><ShieldCheck className="w-4 h-4 text-[#1C3F34] mr-1.5" /> {currentT.hero.guarantee}</span>
+                      <span className="flex items-center"><Truck className="w-4 h-4 text-[#1C3F34] mr-1.5" /> {currentT.hero.shipping}</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -613,18 +623,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
                     <img src={bloomImg} alt="BloomLab" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 brightness-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0F261E]/80 via-transparent to-transparent flex flex-col p-6">
                       <div className="flex flex-col gap-2">
-                        <div className="flex justify-between items-start">
-                          <div className="flex flex-col gap-2">
-                            <span className="bg-[#D97706] text-white text-[10px] font-black px-3 py-1 rounded-full font-sans uppercase tracking-widest">
-                              {lang === 'fr' ? 'Édition limitée 2026' : 'Limited edition 2026'}
-                            </span>
-                            <div className="inline-block self-start px-3 py-1.5 border border-[#1C3F34] rounded-md text-white bg-[#0F261E] text-[10px] font-black uppercase tracking-widest shadow-sm">
-                              N°1 EN FRANCE
-                            </div>
-                            <div className="inline-block self-start px-3 py-1.5 border border-[#D97706] rounded-md text-white bg-[#D97706] text-[9px] font-black uppercase tracking-widest shadow-sm">
-                              {lang === 'fr' ? 'THERMORÉGULATION INTELLIGENTE' : 'INTELLIGENT THERMOREGULATION'}
-                            </div>
-                          </div>
+                        <div className="flex justify-end items-start">
                           <span className="bg-[#1C3F34] text-white text-[10px] font-black px-3 py-1 rounded-full font-sans uppercase tracking-widest">
                             {lang === 'fr' ? 'En Stock' : 'In Stock'}
                           </span>
@@ -680,7 +679,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
                       <ShoppingCart className="w-5 h-5" />
                       <span dangerouslySetInnerHTML={{ __html: currentT.hero.buyBtn }} />
                     </button>
-                    
+
                     {/* Payment Logos under Buy Button */}
                     <div className="flex flex-wrap justify-center items-center gap-3 pt-2 opacity-100 transition-all">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_Pay_logo.svg" alt="Apple Pay" className="h-5" />
