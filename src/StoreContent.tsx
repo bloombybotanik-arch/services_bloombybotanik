@@ -382,7 +382,7 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                     <div className="relative aspect-square md:aspect-video overflow-hidden bg-[#F9F9F7]">
                       <img 
                         src={product.image} 
-                        alt={product.name} 
+                        alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Machine à infusion botanique, tisanes et remèdes naturels`} 
                         className="w-full h-full object-cover transform scale-110 group-hover:scale-125 transition-transform duration-700"
                       />
                     </div>
@@ -429,7 +429,7 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                 <div className="relative h-64 md:h-80 overflow-hidden bg-[#F9F9F7]">
                   <img 
                     src={product.image} 
-                    alt={product.name} 
+                    alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Machine à infusion botanique, tisanes et remèdes naturels`} 
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
                   <button 

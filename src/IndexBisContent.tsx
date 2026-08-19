@@ -499,7 +499,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
           <div className="relative h-[600px]">
             <img 
               src={bloomImg} 
-              alt="BloomLab" 
+              alt="Machine à infusion botanique BloomLab - Extraction de précision du Totum à basse température" 
               className="w-full h-full object-cover brightness-105" 
             />
             <div className="absolute inset-0 bg-gradient-to-b from-[#0F261E]/40 via-transparent to-[#0F261E]/60 pb-10" />
@@ -621,7 +621,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
 
                 <div className="flex-1 flex flex-col min-h-[550px]">
                   <div className="relative rounded-2xl overflow-hidden border border-[#F3EEE6] bg-[#F3EEE6] flex-1 group mb-6">
-                    <img src={bloomImg} alt="BloomLab" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 brightness-110" />
+                    <img src={bloomImg} alt="L'extracteur botanique BloomLab - N°1 France pour remèdes naturels et cosmétiques maison" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 brightness-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0F261E]/80 via-transparent to-transparent flex flex-col p-6">
                       <div className="flex flex-col gap-2">
                         <div className="flex justify-end items-start">
@@ -823,7 +823,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
                   <div className="relative aspect-square rounded-[32px] overflow-hidden border-8 border-white shadow-2xl">
                     <img 
                       src={currentT.universes.data[activeUniverse].image} 
-                      alt={activeUniverse} 
+                      alt={currentT.universes.data[activeUniverse].title} 
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0F261E]/40 to-transparent"></div>
@@ -1020,7 +1020,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
            </div>
            <div className="relative group">
              <div className="absolute -inset-4 bg-[#D97706]/20 rounded-[40px] blur-2xl group-hover:bg-[#D97706]/30 transition-all"></div>
-             <img src={duoArgilesImg} className="rounded-3xl shadow-2xl relative z-10 w-full object-cover" alt="Duo Argiles" />
+             <img src={duoArgilesImg} className="rounded-3xl shadow-2xl relative z-10 w-full object-cover" alt="Argiles Duo Zeolithe Bentonite - Cure détox et reset homéostasique Bloom by BotaniK" />
            </div>
         </div>
       </section>
@@ -1062,7 +1062,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
             <div className="grid grid-cols-2 gap-4">
                <div className="space-y-4">
                  <div className="h-64 bg-[#FAF7F2] rounded-[40px] border border-[#F3EEE6] overflow-hidden group">
-                    <img src={herbsImg} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Blog 1" />
+                    <img src={herbsImg} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Plantes médicinales et infusion botanique - Guide d'extraction du Totum Bloom by BotaniK" />
                  </div>
                  <div className="p-6 bg-[#E8F1EE] rounded-[40px] border border-[#D8CBB7]">
                     <h4 className="font-black text-[#0F261E] mb-2">{lang === 'fr' ? "L'extraction du Totum" : "Totum Extraction"}</h4>
@@ -1075,7 +1075,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
                     <p className="text-xs text-slate-500">{lang === 'fr' ? "L'autonomie par la connaissance." : "Autonomy through knowledge."}</p>
                  </div>
                  <div className="h-64 bg-[#FAF7F2] rounded-[40px] border border-[#F3EEE6] overflow-hidden group">
-                    <img src={labImg} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Blog 2" />
+                    <img src={labImg} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Laboratoire botanique Bloom - Recherche et développement en phytothérapie de précision" />
                  </div>
                </div>
             </div>

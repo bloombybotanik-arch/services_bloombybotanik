@@ -45,7 +45,11 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#293228]">
         <div className="absolute inset-0 opacity-20">
-          <img src={bloomLabImg} alt="BloomLab background" className="w-full h-full object-cover blur-sm" />
+          <img 
+            src={bloomLabImg} 
+            alt="Extracteur botanique BloomLab - Machine à infusion de précision pour remèdes naturels et tisanes" 
+            className="w-full h-full object-cover blur-sm" 
+          />
         </div>
         <div className="container mx-auto px-6 relative z-10 py-24">
           <div className="max-w-4xl">
@@ -112,6 +116,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 loop 
                 muted 
                 playsInline
+                title="Démonstration BloomLab - Machine à infusion botanique et extraction de totum"
                 className="relative rounded-[40px] shadow-2xl border border-botanik-green/5 w-full object-cover aspect-square bg-botanik-green/5" 
               />
             </div>

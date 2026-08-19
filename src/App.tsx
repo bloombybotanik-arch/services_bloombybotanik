@@ -139,6 +139,16 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
     }
     metaDesc.setAttribute('content', finalDescription);
     
+    // Update keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    const additionalKeywords = "machine à infusion botanique, tisanes, remèdes naturels, Argiles Duo Zeolithe Bentonite, extraction totum, phytothérapie, BloomLab";
+    metaKeywords.setAttribute('content', `${MAIN_KEYWORDS}, ${additionalKeywords}`);
+    
     // Update canonical link
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
@@ -232,6 +242,8 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
         "description": productData.description,
         "image": typeof productData.image === 'string' ? productData.image : (productData.image?.src || undefined),
         "brand": { "@type": "Brand", "name": "Bloom by BotaniK" },
+        "sku": `BLOOM-${productData.id.toUpperCase()}`,
+        "keywords": "tisanes, remèdes naturels, phytothérapie, extraction botanique",
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": (productData.rating || 4.8).toString(),
@@ -254,7 +266,7 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
           "itemCondition": "https://schema.org/NewCondition"
         }
       });
-    } else if (currentView === 'machine' || currentView === 'indexbis') {
+    } else if (currentView === 'machine' || currentView === 'indexbis' || currentView === 'how_it_works') {
       // Add BloomLab product on its dedicated landing
       graph.push({
         "@type": "Product",
@@ -268,6 +280,7 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
         "brand": { "@type": "Brand", "name": "Bloom by BotaniK" },
         "sku": "BLOOM-LAB-2026",
         "mpn": "BL-2026",
+        "keywords": "machine à infusion botanique, extracteur botanique, totum, phytothérapie de précision",
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.9",
@@ -275,14 +288,6 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
           "bestRating": "5",
           "worstRating": "1"
         },
-        "review": [
-          {
-            "@type": "Review",
-            "author": { "@type": "Person", "name": "Sophie M." },
-            "reviewBody": "Une révolution dans ma cuisine botanique. L'extraction du totum est d'une pureté incroyable.",
-            "reviewRating": { "@type": "Rating", "ratingValue": "5" }
-          }
-        ],
         "offers": {
           "@type": "Offer",
           "price": "239.00",
@@ -291,6 +296,20 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
           "url": "https://bloombybotanik.com/bloomlab",
           "itemCondition": "https://schema.org/NewCondition"
         }
+      });
+
+      // Add VideoObject Schema
+      graph.push({
+        "@type": "VideoObject",
+        "name": "Démonstration BloomLab - Extraction Botanique de Précision",
+        "description": "Découvrez comment fonctionne la BloomLab, l'extracteur botanique N°1 en France pour vos remèdes et cosmétiques maison.",
+        "thumbnailUrl": [
+          "https://bloombybotanik.com/assets/images/bloomlab_main_1784887530345.jpeg"
+        ],
+        "uploadDate": "2026-08-01T08:00:00+08:00",
+        "contentUrl": "https://bloombybotanik.com/demo_bloomlab.mp4",
+        "embedUrl": "https://bloombybotanik.com/bloomlab",
+        "duration": "PT1M30S"
       });
     }
 
@@ -304,15 +323,6 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
     script.id = 'json-ld-seo';
     script.text = JSON.stringify(jsonLd);
     document.head.appendChild(script);
-
-    // 3. Keywords Meta Tag
-    let metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (!metaKeywords) {
-      metaKeywords = document.createElement('meta');
-      metaKeywords.setAttribute('name', 'keywords');
-      document.head.appendChild(metaKeywords);
-    }
-    metaKeywords.setAttribute('content', MAIN_KEYWORDS);
 
     return () => {
       const oldScript = document.getElementById('json-ld-seo');
@@ -633,7 +643,6 @@ export default function App() {
         '/how-it-works-diy-natural-recipes': '/boutique',
         '/natural-herbal-infusion-body-care-oils-': '/cosmetiques',
         '/natural-herbal-infusion-face-skincare-recipes': '/cosmetiques',
-        '/infusion-botanique-maison-comment-ca-marche': '/infusion-botanique',
         '/qu-est-ce-que-l-infusion-botanique': '/infusion-botanique',
         '/extraction-plantes-naturelles-bienfaits': '/extraction-botanique',
         '/extraction-botanique-guide-complet': '/extraction-botanique',
