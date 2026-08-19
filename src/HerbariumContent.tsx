@@ -560,7 +560,8 @@ export default function HerbariumContent({
       {/* Search & Filter Header (App Style) */}
       <div className="bg-white px-4 md:px-6 pt-6 md:pt-8 pb-4 border-b border-botanik-green/5">
         <h1 className="text-2xl md:text-3xl font-bold text-botanik-green mb-1 md:mb-2">{t.header.title}</h1>
-        <p className="text-[10px] md:text-sm text-botanik-green/40 font-medium uppercase tracking-widest mb-4 md:mb-6">{t.header.subtitle}</p>
+        <p className="text-[10px] md:text-sm text-botanik-green/40 font-medium uppercase tracking-widest mb-2">{t.header.subtitle}</p>
+        <p className="text-sm text-botanik-green/60 mb-4 md:mb-6">{t.header.description}</p>
         
         <div className="relative mb-4 md:mb-6 max-w-2xl">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 md:w-5 h-4 md:h-5 text-botanik-green/30" />

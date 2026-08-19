@@ -62,7 +62,7 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
             </div>
 
             <div className="space-y-6">
-              <h2 className="text-2xl md:text-3xl font-extrabold leading-snug text-white/90">
+              <h2 className="text-lg md:text-xl font-extrabold leading-snug text-white/90">
                 {lang === 'fr' ? "L'Ingénierie au service du vivant." : "Engineering for life."}
               </h2>
               <p className="text-sm text-white/50 leading-relaxed max-w-sm">
@@ -98,18 +98,10 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
 
             <FooterGroup title="Savoir">
               <FooterLink label="L'Herbier" onClick={() => onNavigate('herbarium')} />
-              <li className="mt-1">
-                <a 
-                  href="https://blog.bloombybotanik.com/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-sm text-botanik-orange font-bold hover:underline"
-                >
-                  Journal Botanique
-                </a>
-              </li>
+              <FooterLink label={lang === 'fr' ? "Guide de l'Extraction" : "Extraction Guide"} onClick={() => onNavigate('pillar-extraction')} />
+              <FooterLink label={lang === 'fr' ? "L'Infusion Botanique" : "Botanical Infusion"} onClick={() => onNavigate('guide')} />
               <FooterLink label="Le Manifeste" onClick={() => onNavigate('manifesto')} />
-              <FooterLink label="Science du Totum" onClick={() => onNavigate('indexbis')} />
+              <FooterLink label="Journal Botanique" onClick={() => onNavigate('blog')} />
               <FooterLink label="FAQ" onClick={() => onNavigate('indexbis')} />
             </FooterGroup>
 

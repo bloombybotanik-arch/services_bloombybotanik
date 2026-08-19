@@ -73,7 +73,7 @@ const translationsIndexBis = {
     hero: {
       badge: "N°1 France — Édition Limitée 2026 : Thermorégulation MTC 2.0",
       title: "L'extracteur botanique qui révèle le <span class='text-[#D97706]'>totum</span> de vos plantes.",
-      subtitle: "<strong>BloomLab® : L'infuseur botanique de précision.</strong> Un seul appareil pour l'extraction du totum à basse température : huiles culinaires, soins cosmétiques et remèdes de plantes.",
+      subtitle: "<strong>BloomLab® : L'infuseur botanique de précision.</strong> BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels. Faites fleurir toutes vos envies de bien-être végétal.",
       rating: "Une conception dédiée à l’extraction botanique de précision.",
       buyBtn: "Acheter la BloomLab® — 239€ <span class='line-through opacity-60 ml-2'>289€</span> offre rentrée",
       installment: "Paiement en 3x sans frais par Klarna",
@@ -1034,7 +1034,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
                 {lang === 'fr' ? 'Savoir & Transmission' : 'Knowledge & Transmission'}
               </div>
               <h2 className="text-4xl md:text-5xl font-black text-[#0F261E] leading-[1.1]">
-                {lang === 'fr' ? "Le Journal Botanique : L'Art du Totum au quotidien." : "The Botanical Journal: The Art of Totum in daily life."}
+                {lang === 'fr' ? <span className="whitespace-nowrap">Le Journal Botanique&nbsp;: L'Art du Totum au quotidien.</span> : "The Botanical Journal: The Art of Totum in daily life."}
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 {lang === 'fr' 

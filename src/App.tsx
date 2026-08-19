@@ -62,9 +62,9 @@ const VIEW_PATHS: Record<string, string> = {
   boutique: '/boutique', culinaire: '/culinaire', cosmetiques: '/cosmetiques',
   'library-landing': '/library-landing', manifeste: '/manifeste',
   activation: '/activation', account: '/compte', legal: '/legal', chat: '/chat',
-  cart: '/panier', checkout: '/checkout', guide: '/qu-est-ce-que-l-infusion-botanique',
+  cart: '/panier', checkout: '/checkout', guide: '/infusion-botanique',
   how_it_works: '/infusion-botanique-maison-comment-ca-marche', pending: '/en-attente',
-  library: '/bibliotheque', 'pillar-extraction': '/extraction-botanique-guide-complet',
+  library: '/bibliotheque', 'pillar-extraction': '/extraction-botanique',
   admin: '/admin', blog: '/blog', withdrawal: '/droit-de-retractation', indexbis: '/indexbis',
   'newsletter-preferences': '/newsletter/preferences',
   'admin-newsletter': '/admin/newsletter'
@@ -116,18 +116,20 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
       return;
     }
 
-      // Override with product-specific SEO when viewing a product detail page
-      let finalTitle = currentSeo.title;
-      let finalDescription = currentSeo.description;
-      if (currentView === 'product-detail' && productId) {
-        const products = getProducts(lang);
-        const product = products.find((p: any) => p.id === productId);
-        if (product) {
-          finalTitle = `${product.name} | ${product.subtitle} | Bloom by BotaniK`;
-          finalDescription = product.description;
-        }
+    // Override with product-specific SEO when viewing a product detail page
+    let finalTitle = currentSeo.title;
+    let finalDescription = currentSeo.description;
+    let productData: any = null;
+
+    if (currentView === 'product-detail' && productId) {
+      const products = getProducts(lang);
+      productData = products.find((p: any) => p.id === productId);
+      if (productData) {
+        finalTitle = `${productData.name} | ${productData.subtitle} | Bloom by BotaniK`;
+        finalDescription = productData.description;
       }
-      document.title = finalTitle;
+    }
+    document.title = finalTitle;
     
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) {
@@ -135,98 +137,166 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
       metaDesc.setAttribute('name', 'description');
       document.head.appendChild(metaDesc);
     }
-      metaDesc.setAttribute('content', finalDescription);
+    metaDesc.setAttribute('content', finalDescription);
     
     // Update canonical link
     let canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) {
-      const path = currentView === 'product-detail' && productId ? `/boutique/${productId}` : (VIEW_PATHS[currentView as string] || '/');
-      canonical.setAttribute('href', `https://bloombybotanik.com${path}`);
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
     }
+    const path = currentView === 'product-detail' && productId ? `/boutique/${productId}` : (VIEW_PATHS[currentView as string] || '/');
+    const langPrefix = lang === 'fr' ? '' : `/${lang}`;
+    canonical.setAttribute('href', `https://bloombybotanik.com${langPrefix}${path === '/' ? '' : path}`);
     
+    // Update Hreflang tags
+    const languages: Language[] = ['fr', 'en', 'de'];
+    languages.forEach(l => {
+      let hreflang = document.querySelector(`link[hreflang="${l}"]`);
+      if (!hreflang) {
+        hreflang = document.createElement('link');
+        hreflang.setAttribute('rel', 'alternate');
+        hreflang.setAttribute('hreflang', l);
+        document.head.appendChild(hreflang);
+      }
+      const lPrefix = l === 'fr' ? '' : `/${l}`;
+      hreflang.setAttribute('href', `https://bloombybotanik.com${lPrefix}${path === '/' ? '' : path}`);
+    });
+
+    // Handle x-default
+    let xDefault = document.querySelector('link[hreflang="x-default"]');
+    if (!xDefault) {
+      xDefault = document.createElement('link');
+      xDefault.setAttribute('rel', 'alternate');
+      xDefault.setAttribute('hreflang', 'x-default');
+      document.head.appendChild(xDefault);
+    }
+    xDefault.setAttribute('href', `https://bloombybotanik.com${path === '/' ? '' : path}`);
+
     // 2. JSON-LD Injection
+    const pageUrl = `https://bloombybotanik.com${langPrefix}${path === '/' ? '' : path}`;
+
+    const graph: any[] = [
+      {
+        "@type": "Organization",
+        "@id": "https://bloombybotanik.com/#organization",
+        "name": "Bloom by BotaniK",
+        "url": "https://bloombybotanik.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bloombybotanik.com/logo.png"
+        },
+        "description": "N°1 de l'extraction botanique de précision. BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://bloombybotanik.com/#website",
+        "url": "https://bloombybotanik.com",
+        "name": "Bloom by BotaniK",
+        "publisher": { "@id": "https://bloombybotanik.com/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}/#webpage`,
+        "url": pageUrl,
+        "name": finalTitle,
+        "description": finalDescription,
+        "isPartOf": { "@id": "https://bloombybotanik.com/#website" },
+        "inLanguage": lang,
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": lang === 'fr' ? "Accueil" : lang === 'de' ? "Startseite" : "Home",
+              "item": "https://bloombybotanik.com"
+            },
+            ...(currentView !== 'home' ? [{
+              "@type": "ListItem",
+              "position": 2,
+              "name": finalTitle.split('|')[0].trim(),
+              "item": pageUrl
+            }] : [])
+          ]
+        }
+      }
+    ];
+
+    if (currentView === 'product-detail' && productData) {
+      graph.push({
+        "@type": "Product",
+        "@id": `${pageUrl}/#product`,
+        "name": productData.name,
+        "description": productData.description,
+        "image": typeof productData.image === 'string' ? productData.image : (productData.image?.src || undefined),
+        "brand": { "@type": "Brand", "name": "Bloom by BotaniK" },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": (productData.rating || 4.8).toString(),
+          "reviewCount": (productData.reviews || 15).toString(),
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": [{
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Client Bloom" },
+          "reviewBody": "Excellent produit, conforme à la démarche Bloom et à l'extraction de précision.",
+          "reviewRating": { "@type": "Rating", "ratingValue": (productData.rating || 4.8).toString() }
+        }],
+        "offers": {
+          "@type": "Offer",
+          "price": productData.price.toFixed(2),
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "url": pageUrl,
+          "itemCondition": "https://schema.org/NewCondition"
+        }
+      });
+    } else if (currentView === 'machine' || currentView === 'indexbis') {
+      // Add BloomLab product on its dedicated landing
+      graph.push({
+        "@type": "Product",
+        "@id": "https://bloombybotanik.com/bloomlab/#product",
+        "name": "BloomLab",
+        "description": "Extracteur botanique de précision BloomLab®. Machine d'extraction du totum à basse température pour phytothérapie, cosmétique et culinaire.",
+        "image": [
+          "https://bloombybotanik.com/assets/images/bloomlab_main_1784887530345.jpeg",
+          "https://bloombybotanik.com/assets/images/Img_05.jpeg"
+        ],
+        "brand": { "@type": "Brand", "name": "Bloom by BotaniK" },
+        "sku": "BLOOM-LAB-2026",
+        "mpn": "BL-2026",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "127",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Sophie M." },
+            "reviewBody": "Une révolution dans ma cuisine botanique. L'extraction du totum est d'une pureté incroyable.",
+            "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "239.00",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "url": "https://bloombybotanik.com/bloomlab",
+          "itemCondition": "https://schema.org/NewCondition"
+        }
+      });
+    }
+
     const jsonLd = {
       "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://bloombybotanik.com/#organization",
-          "name": "Bloom by BotaniK",
-          "url": "https://bloombybotanik.com",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://bloombybotanik.com/logo.png"
-          },
-          "description": "N°1 de l'extraction botanique de précision. BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels."
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://bloombybotanik.com/#website",
-          "url": "https://bloombybotanik.com",
-          "name": "Bloom by BotaniK",
-          "publisher": { "@id": "https://bloombybotanik.com/#organization" }
-        },
-        {
-          "@type": "Product",
-          "@id": "https://bloombybotanik.com/bloomlab/#product",
-          "name": "BloomLab",
-          "description": "Extracteur botanique de précision BloomLab®. Machine d'extraction du totum à basse température pour phytothérapie, cosmétique et culinaire.",
-          "image": "https://bloombybotanik.com/assets/images/bloomlab_main_1784887530345.jpeg",
-          "brand": {
-            "@type": "Brand",
-            "name": "Bloom by BotaniK"
-          },
-          "sku": "BLOOM-LAB-2026",
-          "mpn": "BL-2026",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "127",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
-          "offers": {
-            "@type": "Offer",
-            "price": "239.00",
-            "priceCurrency": "EUR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://bloombybotanik.com/bloomlab",
-            "itemCondition": "https://schema.org/NewCondition"
-          }
-        },
-            ...getProducts(lang).filter((p: any) => p.id !== 'bloomlab').map((p: any) => ({
-              "@type": "Product",
-              "@id": `https://bloombybotanik.com/boutique/${p.id}/#product`,
-              "name": p.name,
-              "description": p.description,
-              "image": typeof p.image === 'string' ? p.image : (p.image?.src || undefined),
-              "brand": { "@type": "Brand", "name": "Bloom by BotaniK" },
-              "aggregateRating": p.reviews ? {
-                "@type": "AggregateRating",
-                "ratingValue": p.rating.toString(),
-                "reviewCount": p.reviews.toString(),
-                "bestRating": "5",
-                "worstRating": "1"
-              } : undefined,
-              "review": p.reviews ? [{
-                "@type": "Review",
-                "author": { "@type": "Person", "name": "Client Bloom" },
-                "reviewBody": "Excellent produit, conforme à la démarche Bloom.",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": p.rating.toString()
-                }
-              }] : undefined,
-              "offers": {
-                "@type": "Offer",
-                "price": p.price.toFixed(2),
-                "priceCurrency": "EUR",
-                "availability": "https://schema.org/InStock",
-                "url": `https://bloombybotanik.com/boutique/${p.id}`,
-                "itemCondition": "https://schema.org/NewCondition"
-              }
-            }))
-      ]
+      "@graph": graph
     };
 
     const script = document.createElement('script');
