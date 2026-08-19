@@ -64,7 +64,7 @@ const VIEW_PATHS: Record<string, string> = {
   activation: '/activation', account: '/compte', legal: '/legal', chat: '/chat',
   cart: '/panier', checkout: '/checkout', guide: '/infusion-botanique',
   how_it_works: '/infusion-botanique-maison-comment-ca-marche', pending: '/en-attente',
-  library: '/bibliotheque', 'pillar-extraction': '/extraction-botanique',
+  library: '/bibliotheque', herbier: '/herbier', 'pillar-extraction': '/extraction-botanique',
   admin: '/admin', blog: '/blog', withdrawal: '/droit-de-retractation', indexbis: '/indexbis',
   'newsletter-preferences': '/newsletter/preferences',
   'admin-newsletter': '/admin/newsletter'
@@ -98,7 +98,7 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
     } else if (currentView === 'guide') {
       seoKey = 'extraction';
     } else if (currentView === 'how_it_works') {
-      seoKey = 'infusion';
+      seoKey = 'how_it_works';
     } else if (currentView === 'blog' || currentView === 'library-landing' || currentView === 'library') {
       seoKey = 'blog';
     } else if (currentView === 'machine' || currentView === 'indexbis') {

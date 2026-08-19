@@ -548,7 +548,12 @@ export const translations = {
         kit_articulaire: {
           name: "Remède Feu Articulaire",
           subtitle: "SOUPLESSE & MOBILITÉ",
-          description: "Synergie anti-inflammatoire pour retrouver souplesse et mobilité. Idéal pour apaiser les raideurs chroniques."
+          description: "Synergie anti-inflammatoire pour retrouver souplesse et mobility. Idéal pour apaiser les raideurs chroniques."
+        },
+        kit_hiver: {
+          name: "Remède Bouclier Hiver",
+          subtitle: "RÉSILIENCE SAISONNIÈRE",
+          description: "Protocole de soutien immunitaire pour les périodes de froid. Une synergie puissante pour renforcer les barrières naturelles de l'organisme."
         },
         kit_reset: {
           name: "Duo Argiles",
@@ -1910,6 +1915,11 @@ export const translations = {
           subtitle: "FLEXIBILITY & MOBILITY",
           description: "Anti-inflammatory synergy to regain flexibility and mobility. Ideal for soothing chronic joint stiffness."
         },
+        kit_hiver: {
+          name: "Winter Shield Remedy",
+          subtitle: "SEASONAL RESILIENCE",
+          description: "Immune support protocol for cold periods. A powerful synergy to strengthen the organism's natural barriers."
+        },
         kit_reset: {
           name: "Clay Duo",
           subtitle: "MINERAL SYNERGY & TERRAIN",
@@ -3155,6 +3165,11 @@ export const translations = {
           name: "Heilmittel Gelenkfeuer",
           subtitle: "FLEXIBILITÄT & MOBILITÄT",
           description: "Entzündungshemmende Synergie zur Wiedererlangung von Flexibilität und Mobilität. Ideal zur Linderung chronischer Gelenksteifheit."
+        },
+        kit_hiver: {
+          name: "Winterschutz-Heilmittel",
+          subtitle: "SAISONALE RESILIENZ",
+          description: "Immununterstützungsprotokoll für kalte Perioden. Eine kraftvolle Synergie zur Stärkung der natürlichen Barrieren des Organismus."
         },
         kit_reset: {
           name: "Erden-Duo",

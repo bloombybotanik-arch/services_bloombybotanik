@@ -111,6 +111,17 @@ export const getProducts = (lang: Language) => {
       tags: ['Mobilité']
     },
     {
+      id: 'kit-hiver',
+      name: t.kit_hiver.name,
+      subtitle: t.kit_hiver.subtitle,
+      price: 9.90,
+      image: bouclierHiverImg,
+      rating: 4.8,
+      reviews: 32,
+      description: t.kit_hiver.description,
+      tags: ['Immunité', 'Hiver']
+    },
+    {
       id: 'kit-reset',
       name: t.kit_reset.name,
       subtitle: t.kit_reset.subtitle,
