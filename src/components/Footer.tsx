@@ -62,7 +62,7 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
             </div>
 
             <div className="space-y-6">
-              <h2 className="text-lg md:text-xl font-extrabold leading-snug text-white/90">
+              <h2 className="text-base md:text-lg font-extrabold leading-snug text-white/90">
                 {lang === 'fr' ? "L'Ingénierie au service du vivant." : "Engineering for life."}
               </h2>
               <p className="text-sm text-white/50 leading-relaxed max-w-sm">
@@ -87,10 +87,10 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
           </div>
 
           {/* Column 2: Navigation Groups */}
-          <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-12 lg:gap-8">
+          <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-8">
             <FooterGroup title="Boutique">
               <FooterLink label="Tous les produits" onClick={() => onNavigate('boutique')} />
-              <FooterLink label="BloomLab®" onClick={() => onNavigate('indexbis')} />
+              <FooterLink label="BloomLab®" onClick={() => onNavigate('machine')} />
               <FooterLink label="Atelier Culinaire" onClick={() => onNavigate('culinaire')} />
               <FooterLink label="Soin Cosmétique" onClick={() => onNavigate('cosmetiques')} />
               <FooterLink label="Reset Homéostasique" onClick={() => onNavigate('phytotherapie-reset')} />
@@ -102,7 +102,7 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
               <FooterLink label={lang === 'fr' ? "L'Infusion Botanique" : "Botanical Infusion"} onClick={() => onNavigate('guide')} />
               <FooterLink label="Le Manifeste" onClick={() => onNavigate('manifesto')} />
               <FooterLink label="Journal Botanique" onClick={() => onNavigate('blog')} />
-              <FooterLink label="FAQ" onClick={() => onNavigate('indexbis')} />
+              <FooterLink label="FAQ" onClick={() => onNavigate('chat')} />
             </FooterGroup>
 
             <FooterGroup title="Newsletter">

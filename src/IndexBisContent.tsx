@@ -1034,7 +1034,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
                 {lang === 'fr' ? 'Savoir & Transmission' : 'Knowledge & Transmission'}
               </div>
               <h2 className="text-4xl md:text-5xl font-black text-[#0F261E] leading-[1.1]">
-                {lang === 'fr' ? <span className="whitespace-nowrap">Le Journal Botanique&nbsp;: L'Art du Totum au quotidien.</span> : "The Botanical Journal: The Art of Totum in daily life."}
+                {lang === 'fr' ? <>Le Journal Botanique : L'Art du Totum au quotidien.</> : "The Botanical Journal: The Art of Totum in daily life."}
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 {lang === 'fr' 

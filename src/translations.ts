@@ -1754,6 +1754,7 @@ export const translations = {
       header: {
         title: "The Botanical Directory",
         subtitle: "Totum Intelligence • Systemic Mapping",
+        description: "BloomLab® offers you all the keys to create your own natural remedies.",
         search_placeholder: "Search for a plant, an active..."
       },
       filters: {
@@ -2999,6 +3000,7 @@ export const translations = {
       header: {
         title: "Das Botanische Verzeichnis",
         subtitle: "Totum-Intelligenz • Systemische Kartierung",
+        description: "BloomLab® bietet Ihnen alle Schlüssel zur Erstellung Ihrer eigenen natürlichen Heilmittel.",
         search_placeholder: "Suchen Sie nach einer Pflanze, einem Wirkstoff..."
       },
       filters: {

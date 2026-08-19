@@ -633,12 +633,14 @@ export default function App() {
         '/how-it-works-diy-natural-recipes': '/boutique',
         '/natural-herbal-infusion-body-care-oils-': '/cosmetiques',
         '/natural-herbal-infusion-face-skincare-recipes': '/cosmetiques',
-        '/infusion-botanique-maison-comment-ca-marche': '/',
-        '/extraction-plantes-naturelles-bienfaits': '/extraction-botanique-guide-complet',
-        '/bloomlab-extracteur-botanique-et-infuseur-dhuile-intelligent-6-en-1': '/boutique/bloomlab',
-        '/chroniques': '/',
-        '/blog': '/',
-        '/blog/': '/',
+        '/infusion-botanique-maison-comment-ca-marche': '/infusion-botanique',
+        '/qu-est-ce-que-l-infusion-botanique': '/infusion-botanique',
+        '/extraction-plantes-naturelles-bienfaits': '/extraction-botanique',
+        '/extraction-botanique-guide-complet': '/extraction-botanique',
+        '/herbier': '/bibliotheque',
+        '/bloomlab-extracteur-botanique-et-infuseur-dhuile-intelligent-6-en-1': '/bloomlab',
+        '/indexbis': '/',
+        '/chroniques': '/blog',
       };
       const normalizedPath = LEGACY_ALIASES[restPath] || restPath;
 
