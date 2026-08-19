@@ -131,10 +131,6 @@ const redirects: Record<string, string> = {
   '/boutique/feu-actualisateur': '/boutique/purete-sanguine',
   '/boutique/nutri-profonde': '/boutique/expert-peaux',
   '/bloomlab-extracteur-botanique-et-infuseur-dhuile-intelligent-6-en-1': '/bloomlab',
-  '/qu-est-ce-que-l-infusion-botanique': '/infusion-botanique',
-  '/extraction-botanique-guide-complet': '/extraction-botanique',
-  '/herbier': '/bibliotheque',
-  '/tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes-spoiler-la-difference-est-de-1-a-98': '/extraction-botanique',
   '/termes-et-conditions': '/legal',
   '/chroniques': '/blog'
 };

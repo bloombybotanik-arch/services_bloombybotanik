@@ -65,6 +65,8 @@ const VIEW_PATHS: Record<string, string> = {
   cart: '/panier', checkout: '/checkout', guide: '/infusion-botanique',
   how_it_works: '/infusion-botanique-maison-comment-ca-marche', pending: '/en-attente',
   library: '/bibliotheque', herbier: '/herbier', 'pillar-extraction': '/extraction-botanique',
+  'guide-complet': '/extraction-botanique-guide-complet',
+  'qu-est-ce-que-infusion': '/qu-est-ce-que-l-infusion-botanique',
   admin: '/admin', blog: '/blog', withdrawal: '/droit-de-retractation', indexbis: '/indexbis',
   'newsletter-preferences': '/newsletter/preferences',
   'admin-newsletter': '/admin/newsletter'
@@ -93,11 +95,11 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
       seoKey = 'herbarium';
     } else if (['boutique', 'product-detail', 'cart', 'checkout'].includes(currentView)) {
       seoKey = 'shop';
-    } else if (currentView === 'pillar-extraction') {
+    } else if (currentView === 'pillar-extraction' || currentView === 'guide-complet') {
       seoKey = 'pillar';
     } else if (currentView === 'guide') {
       seoKey = 'extraction';
-    } else if (currentView === 'how_it_works') {
+    } else if (currentView === 'how_it_works' || currentView === 'qu-est-ce-que-infusion') {
       seoKey = 'how_it_works';
     } else if (currentView === 'blog' || currentView === 'library-landing' || currentView === 'library') {
       seoKey = 'blog';
@@ -874,6 +876,7 @@ export default function App() {
       case 'library-landing': return <LibraryLanding onNavigate={navigateTo} lang={lang} />;
       case 'indexbis': return <IndexBisContent onNavigate={navigateTo} lang={lang} />;
       case 'guide':
+      case 'qu-est-ce-que-infusion':
       case 'how_it_works': return <GuideContent onNavigate={navigateTo} lang={lang} />;
       case 'ateliers': return (
         <div className="max-w-[1200px] mx-auto px-6 py-12 animate-in fade-in duration-700">
@@ -989,7 +992,8 @@ export default function App() {
         />
       );
       case 'manifeste': return <ManifesteContent onBack={() => navigateTo(previousView === 'manifeste' ? 'home' : previousView)} lang={lang} />;
-      case 'pillar-extraction': return <PillarExtraction onNavigate={navigateTo} lang={lang} />;
+      case 'pillar-extraction': 
+      case 'guide-complet': return <PillarExtraction onNavigate={navigateTo} lang={lang} />;
       case 'activation': return (
         <ActivationPage 
           userId={user?.uid || null} 
