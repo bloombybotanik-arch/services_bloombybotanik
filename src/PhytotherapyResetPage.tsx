@@ -237,7 +237,7 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
       {/* Hero Section */}
       <section className="relative pt-20 pb-32 overflow-hidden bg-botanik-green text-white rounded-b-[60px] md:rounded-b-[100px] shadow-2xl">
         <div className="absolute inset-0 pointer-events-none">
-          <img src={natureHero} className="w-full h-full object-cover opacity-40 mix-blend-overlay" alt="" />
+          <img src={natureHero} className="w-full h-full object-cover opacity-40 mix-blend-overlay" alt={translations[lang].seo.alt.reset_hero} />
           <div className="absolute inset-0 bg-gradient-to-b from-botanik-green/20 to-botanik-green"></div>
         </div>
         <div className="container mx-auto px-6 relative z-10 text-center">
@@ -364,7 +364,7 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
                     <img 
                       src={emonctoiresImg} 
                       className="w-full h-full object-cover" 
-                      alt="Phase 0 Plants" 
+                      alt={translations[lang].seo.alt.phase0} 
                     />
                   </div>
                </div>
@@ -400,7 +400,7 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
                     <img 
                       src={hepaticImg} 
                       className="w-full h-full object-cover" 
-                      alt="Reset" 
+                      alt={translations[lang].seo.alt.phase1} 
                     />
                   </div>
                </div>
@@ -451,7 +451,7 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
                     <img 
                       src={bloodPurityImg} 
                       className="w-full h-full object-cover" 
-                      alt="Pureté" 
+                      alt={translations[lang].seo.alt.phase2} 
                     />
                   </div>
                </div>
@@ -487,7 +487,7 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
                     <img 
                       src={strengthPlant} 
                       className="w-full h-full object-cover" 
-                      alt="Stabilisation & Renforcement" 
+                      alt={translations[lang].seo.alt.phase3} 
                     />
                   </div>
                </div>

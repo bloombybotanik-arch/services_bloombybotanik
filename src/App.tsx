@@ -78,11 +78,11 @@ const PATH_VIEWS: Record<string, string> = Object.fromEntries(
 
 // --- SEO & DATA UTILS ---
 const POST_TITLE = "L'Élévation de l'Extraction : vers le Totum absolu";
-const MAIN_KEYWORDS = "extraction totum, laboratoire botanique, souveraineté santé, infusion botanique, art de l'extraction, plantes médicinales, remèdes naturels";
 
 // Generates dynamic ALT text (mimicking the requested PHP script)
-const generateSeoAlt = (imageContext: string) => {
-  return `${POST_TITLE} - ${imageContext} - ${MAIN_KEYWORDS}`;
+const generateSeoAlt = (imageContext: string, t: any) => {
+  const extendedKeywords = t.seo.keywords || "";
+  return `${POST_TITLE} - ${imageContext} - ${extendedKeywords}`;
 };
 
 // JSON-LD & Dynamic SEO Metadata Injection Component
@@ -148,8 +148,8 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    const additionalKeywords = "machine à infusion botanique, tisanes, remèdes naturels, Argiles Duo Zeolithe Bentonite, extraction totum, phytothérapie, BloomLab";
-    metaKeywords.setAttribute('content', `${MAIN_KEYWORDS}, ${additionalKeywords}`);
+    const seoKeywords = t.seo.keywords || "";
+    metaKeywords.setAttribute('content', seoKeywords);
     
     // Update canonical link
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -606,8 +606,8 @@ const HybridOffer = ({ onNavigate }: { onNavigate: (view: any) => void }) => (
 export default function App() {
   const [lang, setLang] = useState<Language>('fr');
   const t = translations[lang];
-  const [currentView, setCurrentView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction' | 'admin' | 'blog' | 'indexbis'>('home');
-  const [previousView, setPreviousView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction' | 'admin' | 'blog' | 'indexbis'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction' | 'admin' | 'blog' | 'indexbis' | 'how_it_works' | 'guide-complet' | 'qu-est-ce-que-infusion' | 'newsletter-preferences' | 'admin-newsletter' | 'withdrawal' | 'recipes'>('home');
+  const [previousView, setPreviousView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction' | 'admin' | 'blog' | 'indexbis' | 'how_it_works' | 'guide-complet' | 'qu-est-ce-que-infusion' | 'newsletter-preferences' | 'admin-newsletter' | 'withdrawal' | 'recipes'>('home');
 
   const [currentProductId, setCurrentProductId] = useState<string | undefined>();
   const [legalType, setLegalType] = useState<'cgv' | 'cgu' | 'privacy' | 'mentions' | 'withdrawal'>('mentions');
@@ -628,7 +628,13 @@ export default function App() {
       const rawPath = (sessionStorage.getItem('spa-redirect-path') || window.location.pathname).split('?')[0].split('#')[0];
       const langMatch = rawPath.match(/^\/(en|de)(\/.*)?$/);
       const detectedLang = (langMatch ? langMatch[1] : 'fr') as Language;
-      const restPath = langMatch ? (langMatch[2] || '/') : rawPath;
+      let restPath = langMatch ? (langMatch[2] || '/') : rawPath;
+      
+      // Normalize: remove trailing slash except for root
+      if (restPath !== '/' && restPath.endsWith('/')) {
+        restPath = restPath.slice(0, -1);
+      }
+      
       setLang(detectedLang);
       sessionStorage.removeItem('spa-redirect-path');
 

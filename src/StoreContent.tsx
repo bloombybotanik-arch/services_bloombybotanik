@@ -25,6 +25,8 @@ export const getProducts = (lang: Language) => {
   const bloomLabPrice = isPromoActive ? 239.00 : 289.00;
   const bloomLabOriginal = isPromoActive ? 289.00 : 329.00;
 
+  const seoTags = (translations[lang].seo.keywords || "").split(', ').slice(3, 8); // Take 5 keywords from the list
+
   return [
     {
       id: 'bloomlab',
@@ -37,7 +39,7 @@ export const getProducts = (lang: Language) => {
       reviews: 128,
       description: t.bloomlab.description,
       bullets: t.bloomlab.bullets,
-      tags: ['Best-Seller', 'Inox 304', 'Souveraineté'],
+      tags: ['Best-Seller', 'Inox 304', 'Souveraineté', ...seoTags],
       featured: true
     },
     {
@@ -50,7 +52,7 @@ export const getProducts = (lang: Language) => {
       rating: 5.0,
       reviews: 64,
       description: t.bundle_apothicaire.description,
-      tags: ['Offre Limitée', 'Rentrée 2026', 'Best-Value'],
+      tags: ['Offre Limitée', 'Rentrée 2026', 'Best-Value', ...seoTags.slice(0, 4)],
       isBundle: true
     },
     {
@@ -194,20 +196,23 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
   const seoSchema = {
     "@context": "https://schema.org/",
     "@type": "Product",
-    "name": isFR ? "Soins Botaniques Famille — Pack Rentrée 2026" : "Family Botanical Care — 2026 Back-to-School Pack",
-    "description": "Prenez soin de toute la famille avec l'herbier complet Bloom. Extraction botanique de précision pour des remèdes naturels faits maison : sommeil, digestion, vitalité et mobilité.",
+    "name": isFR ? "BloomLab® - Extracteur Botanique & Infuseur de précision" : "BloomLab® - Precision Botanical Extractor & Infuser",
+    "description": isFR 
+      ? "L'infuseur botanique N°1 en France pour réaliser vos tisanes, remèdes naturels de grand mère et extractions de plantes médicinales. Récupérez le Totum de vos plantes à basse température."
+      : translations[lang].seo.shop.description,
     "brand": {
       "@type": "Brand",
       "name": "Bloom by BotaniK"
     },
+    "keywords": translations[lang].seo.keywords || "",
     "offers": {
       "@type": "Offer",
       "priceCurrency": "EUR",
-      "price": "59.00",
+      "price": "239.00",
       "availability": "https://schema.org/InStock",
       "validFrom": "2026-08-15",
-      "url": "https://bloombybotanik.com/shop",
-      "category": "Phytothérapie & Soins Naturels"
+      "url": isFR ? "https://bloombybotanik.com/boutique" : `https://bloombybotanik.com/${lang}/shop`,
+      "category": isFR ? "Phytothérapie & Soins Naturels" : "Phytotherapy & Natural Care"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -281,7 +286,7 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                   <img 
                     src={bloomLabImg} 
                     className="absolute inset-0 w-full h-full object-cover" 
-                    alt="BloomLab - Votre Laboratoire de Phytothérapie Maison" 
+                    alt="BloomLab - Votre Laboratoire de Phytothérapie Maison - Infusion Botanique, Tisanes et Remèdes Naturels" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent hidden lg:block" />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent lg:hidden" />

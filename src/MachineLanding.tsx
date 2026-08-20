@@ -47,7 +47,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         <div className="absolute inset-0 opacity-20">
           <img 
             src={bloomLabImg} 
-            alt="Extracteur botanique BloomLab - Machine à infusion de précision pour remèdes naturels et tisanes" 
+            alt={translations[lang].seo.alt.extracteur} 
             className="w-full h-full object-cover blur-sm" 
           />
         </div>

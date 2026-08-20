@@ -20,7 +20,7 @@ export default function GuideContent({ onNavigate, lang }: GuideContentProps) {
   ].filter(Boolean);
 
   return (
-    <div className="max-w-[1200px] mx-auto px-6 py-12 lg:py-24 animate-in fade-in duration-1000">
+    <div id="comprendre-infusion-botanique" className="max-w-[1200px] mx-auto px-6 py-12 lg:py-24 animate-in fade-in duration-1000">
       
       {/* Header: Mode d'Emploi */}
       <header className="mb-24 text-center">
@@ -105,7 +105,7 @@ export default function GuideContent({ onNavigate, lang }: GuideContentProps) {
             <div className="lg:w-1/2 relative min-h-[500px] lg:min-h-0 overflow-hidden bg-[#F9F9F7]">
               <img 
                 src={bloomLabImg} 
-                alt="BloomLab Machine" 
+                alt={t.seo.alt.bloomlab} 
                 className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-90" 
               />
             </div>

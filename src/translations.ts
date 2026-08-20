@@ -48,6 +48,18 @@ export const translations = {
         title: "Reset Homéostasique & Terrain | Phytothérapie de Précision",
         description: "Protocole de reset systémique pour restaurer l'homéostasie. L'alliance des argiles, zéolithes et plantes extraites par précision pour un terrain équilibré.",
       },
+      keywords: "extraction totum, laboratoire botanique, souveraineté santé, infusion botanique, art de l'extraction, plantes médicinales, remèdes naturels, tisanes, remèdes de grand mère, remèdes de plantes médicinales, phytothérapie, BloomLab",
+      alt: {
+        bloomlab: "BloomLab Machine - Infusion Botanique, Tisanes, Remèdes Naturels de plantes médicinales",
+        extracteur: "L'extracteur botanique BloomLab - N°1 France pour infusion botanique, tisanes, remèdes naturels de grand mère et cosmétiques maison",
+        herbs: "Plantes médicinales, infusion botanique et tisanes - Guide d'extraction du Totum Bloom by BotaniK - Remèdes naturels de grand mère",
+        lab: "Laboratoire botanique Bloom - Recherche en phytothérapie de précision, remèdes de plantes médicinales et extraction botanique",
+        reset_hero: "Phytothérapie Reset - Bloom by BotaniK - Infusion botanique et remèdes naturels de grand mère",
+        phase0: "Phase 0 : Émonctoires et Drainage Naturel - Infusion botanique et tisanes médicinales",
+        phase1: "Phase 1 : Relance Hépatique et Reset du Terrain - Remèdes naturels de plantes médicinales",
+        phase2: "Phase 2 : Pureté Sanguine et Anti-inflammation - Tisanes et extraits botaniques",
+        phase3: "Phase 3 : Stabilisation & Renforcement Immunitaire - Remèdes de grand mère naturels",
+      }
     },
     nav: {
       guide: "Guide",
@@ -1417,6 +1429,18 @@ export const translations = {
         title: "Homeostatic Reset & Terrain | Precision Phytotherapy",
         description: "Systemic reset protocol to restore homeostasis. The alliance of clays, zeolites and plants extracted by precision for a balanced terrain.",
       },
+      keywords: "totum extraction, botanical laboratory, health sovereignty, botanical infusion, art of extraction, medicinal plants, natural remedies, herbal teas, home remedies, medicinal plant remedies, phytotherapy, BloomLab",
+      alt: {
+        bloomlab: "BloomLab Machine - Botanical Infusion, Herbal Teas, Natural Medicinal Plant Remedies",
+        extracteur: "BloomLab Botanical Extractor - #1 in France for botanical infusion, herbal teas, home remedies, and homemade cosmetics",
+        herbs: "Medicinal plants, botanical infusion, and herbal teas - Bloom by BotaniK Totum Extraction Guide - Natural home remedies",
+        lab: "Bloom Botanical Laboratory - Research in precision phytotherapy, medicinal plant remedies, and botanical extraction",
+        reset_hero: "Phytotherapy Reset - Bloom by BotaniK - Botanical infusion and natural home remedies",
+        phase0: "Phase 0: Emunctories and Natural Drainage - Botanical infusion and medicinal herbal teas",
+        phase1: "Phase 1: Hepatic Boost and Terrain Reset - Natural medicinal plant remedies",
+        phase2: "Phase 2: Blood Purity and Anti-inflammation - Herbal teas and botanical extracts",
+        phase3: "Phase 3: Stabilization & Immune Strengthening - Natural home remedies",
+      }
     },
     nav: {
       guide: "Guide",
@@ -2668,6 +2692,18 @@ export const translations = {
         title: "Homöostatischer Reset & Terrain | Präzisions-Phytotherapie",
         description: "Systemisches Reset-Protokoll zur Wiederherstellung der Homöostase. Die Allianz aus Tonen, Zeolithen und präzise extrahierten Pflanzen.",
       },
+      keywords: "Totum-Extraktion, botanisches Labor, Gesundheitssouveränität, botanische Infusion, Kunst der Extraktion, Heilpflanzen, natürliche Heilmittel, Kräutertees, Hausmittel, Heilpflanzen-Heilmittel, Phytotherapie, BloomLab",
+      alt: {
+        bloomlab: "BloomLab Maschine - Botanische Infusion, Kräutertees, natürliche Heilpflanzen-Heilmittel",
+        extracteur: "BloomLab Botanischer Extraktor - Nr. 1 in Frankreich für botanische Infusion, Kräutertees, Hausmittel und selbstgemachte Kosmetik",
+        herbs: "Heilpflanzen, botanische Infusion und Kräutertees - Bloom by BotaniK Totum-Extraktionsleitfaden - Natürliche Hausmittel",
+        lab: "Bloom Botanisches Labor - Forschung in Präzisions-Phytotherapie, Heilpflanzen-Heilmitteln und botanischer Extraktion",
+        reset_hero: "Phytotherapie Reset - Bloom by BotaniK - Botanische Infusion und natürliche Hausmittel",
+        phase0: "Phase 0: Emunctorien und natürliche Drainage - Botanische Infusion und medizinische Kräutertees",
+        phase1: "Phase 1: Hepatischer Schub und Terrain-Reset - Natürliche Heilpflanzen-Heilmittel",
+        phase2: "Phase 2: Blutreinheit und Entzündungshemmung - Kräutertees und botanische Extrakte",
+        phase3: "Phase 3: Stabilisierung & Immunstärkung - Natürliche Hausmittel",
+      }
     },
     nav: {
       guide: "Leitfaden",

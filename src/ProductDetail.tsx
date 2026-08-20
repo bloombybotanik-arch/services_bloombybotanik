@@ -17,7 +17,10 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
   const t = translations[lang].product_detail;
   const productSheets = useMemo(() => getProductSheets(lang), [lang]);
   const sheet = productSheets[productId] || productSheets['bloomlab'];
-  const gallery = sheet.images.map((img: string, i: number) => ({ src: img, alt: `${sheet.name} - ${t.view_alt} ${i + 1}` }));
+  const gallery = sheet.images.map((img: string, i: number) => ({ 
+    src: img, 
+    alt: `${sheet.name} - ${t.view_alt} ${i + 1} - ${translations[lang].seo.keywords.split(', ').slice(0, 4).join(', ')}` 
+  }));
 
   return (
     <article className="max-w-[1200px] mx-auto px-6 py-12 md:py-20 animate-in fade-in slide-in-from-bottom-4 duration-700">

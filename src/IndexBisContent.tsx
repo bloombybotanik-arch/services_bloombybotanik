@@ -38,6 +38,7 @@ import {
   Filler
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import { translations as globalTranslations } from './translations';
 
 // Register ChartJS components
 ChartJS.register(
@@ -420,6 +421,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
   const [cartItem, setCartItem] = useState({ title: "Pack Signature Rentrée — BloomLab® + Duo Argiles", price: 289 });
 
   const currentT = translationsIndexBis[lang as keyof typeof translationsIndexBis] || translationsIndexBis.fr;
+  const t = globalTranslations[lang];
 
   const marqueeItems = currentT.marquee;
 
@@ -621,7 +623,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
 
                 <div className="flex-1 flex flex-col min-h-[550px]">
                   <div className="relative rounded-2xl overflow-hidden border border-[#F3EEE6] bg-[#F3EEE6] flex-1 group mb-6">
-                    <img src={bloomImg} alt="L'extracteur botanique BloomLab - N°1 France pour remèdes naturels et cosmétiques maison" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 brightness-110" />
+                    <img src={bloomImg} alt={t.seo.alt.extracteur} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 brightness-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0F261E]/80 via-transparent to-transparent flex flex-col p-6">
                       <div className="flex flex-col gap-2">
                         <div className="flex justify-end items-start">
@@ -1062,7 +1064,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
             <div className="grid grid-cols-2 gap-4">
                <div className="space-y-4">
                  <div className="h-64 bg-[#FAF7F2] rounded-[40px] border border-[#F3EEE6] overflow-hidden group">
-                    <img src={herbsImg} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Plantes médicinales et infusion botanique - Guide d'extraction du Totum Bloom by BotaniK" />
+                    <img src={herbsImg} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={t.seo.alt.herbs} />
                  </div>
                  <div className="p-6 bg-[#E8F1EE] rounded-[40px] border border-[#D8CBB7]">
                     <h4 className="font-black text-[#0F261E] mb-2">{lang === 'fr' ? "L'extraction du Totum" : "Totum Extraction"}</h4>
@@ -1075,7 +1077,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
                     <p className="text-xs text-slate-500">{lang === 'fr' ? "L'autonomie par la connaissance." : "Autonomy through knowledge."}</p>
                  </div>
                  <div className="h-64 bg-[#FAF7F2] rounded-[40px] border border-[#F3EEE6] overflow-hidden group">
-                    <img src={labImg} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Laboratoire botanique Bloom - Recherche et développement en phytothérapie de précision" />
+                    <img src={labImg} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={t.seo.alt.lab} />
                  </div>
                </div>
             </div>
