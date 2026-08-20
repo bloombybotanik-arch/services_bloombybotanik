@@ -131,6 +131,7 @@ const redirects: Record<string, string> = {
   '/boutique/feu-actualisateur': '/boutique/purete-sanguine',
   '/boutique/nutri-profonde': '/boutique/expert-peaux',
   '/bloomlab-extracteur-botanique-et-infuseur-dhuile-intelligent-6-en-1': '/bloomlab',
+  '/infusion-botanique-maison-comment-ca-marche': '/infusion-botanique#comprendre-infusion-botanique',
   '/termes-et-conditions': '/legal',
   '/chroniques': '/blog'
 };

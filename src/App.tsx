@@ -315,6 +315,21 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
       });
     }
 
+    if (currentView === 'how_it_works' || currentView === 'qu-est-ce-que-infusion') {
+      graph.push({
+        "@type": "FAQPage",
+        "@id": `${pageUrl}/#faq`,
+        "mainEntity": t.seo.infusion_guide.faq.map((item: any) => ({
+          "@type": "Question",
+          "name": item.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.a
+          }
+        }))
+      });
+    }
+
     const jsonLd = {
       "@context": "https://schema.org",
       "@graph": graph
@@ -654,6 +669,7 @@ export default function App() {
         '/qu-est-ce-que-l-infusion-botanique': '/infusion-botanique',
         '/extraction-plantes-naturelles-bienfaits': '/extraction-botanique',
         '/extraction-botanique-guide-complet': '/extraction-botanique',
+        '/infusion-botanique-maison-comment-ca-marche': '/infusion-botanique',
         '/herbier': '/bibliotheque',
         '/bloomlab-extracteur-botanique-et-infuseur-dhuile-intelligent-6-en-1': '/bloomlab',
         '/indexbis': '/',
@@ -682,7 +698,7 @@ export default function App() {
         setCurrentView(matchedView as typeof currentView);
         
         // Handle scrolling to specific section for legacy URL
-        if (restPath === '/infusion-botanique-maison-comment-ca-marche') {
+        if (restPath === '/infusion-botanique-maison-comment-ca-marche' || (matchedView === 'guide' && window.location.hash === '#comprendre-infusion-botanique')) {
           setTimeout(() => {
             const element = document.getElementById('comprendre-infusion-botanique');
             if (element) {

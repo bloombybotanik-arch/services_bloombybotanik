@@ -24,36 +24,62 @@ export default function GuideContent({ onNavigate, lang }: GuideContentProps) {
       
       {/* Header: Mode d'Emploi */}
       <header className="mb-24 text-center">
-        <div className="inline-flex gap-4 text-[10px] font-black text-botanik-orange mb-6 uppercase tracking-[0.3em] bg-botanik-orange/5 px-4 py-2 rounded-full">
-          {t.guide.hero.tags.map((tag: string, idx: number) => (
-            <React.Fragment key={idx}>
-              <span>{tag}</span>
-              {idx < t.guide.hero.tags.length - 1 && <span>•</span>}
-            </React.Fragment>
-          ))}
-        </div>
-        <h1 className="text-6xl md:text-8xl font-bold text-botanik-green mb-8 leading-[1] tracking-tight">
-          {t.guide.hero.main_title}<br/>
-          <span className="text-botanik-orange">{t.guide.hero.main_title_accent}</span>
+        <h1 className="text-5xl md:text-7xl font-black text-[#0F261E] mb-8 tracking-tighter leading-none">
+          {t.seo.infusion_guide.title}
         </h1>
-        <p className="text-xl md:text-2xl text-botanik-green/60 max-w-3xl mx-auto leading-relaxed font-light mb-12">
-          {t.guide.hero.main_desc}
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <button 
-            onClick={() => onNavigate('boutique')}
-            className="px-8 py-4 bg-botanik-green text-white rounded-2xl font-bold hover:bg-botanik-green/90 transition-all shadow-xl flex items-center gap-2 group"
-          >
-            {t.guide.hero.cta_shop} <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
-          <button 
-            onClick={() => document.getElementById('usage-levels')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-8 py-4 bg-white border border-botanik-green/10 text-botanik-green rounded-2xl font-bold hover:bg-[#F5F3EB] transition-all flex items-center gap-2"
-          >
-            {t.guide.hero.cta_levels}
-          </button>
+        <div className="max-w-3xl mx-auto">
+          <p className="text-xl text-[#0F261E]/70 leading-relaxed font-medium mb-8">
+            {t.seo.infusion_guide.summary}
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <span className="px-4 py-2 bg-[#E8F1EE] text-[#0F261E] rounded-full text-sm font-bold border border-[#D8CBB7]">#1 France</span>
+            <span className="px-4 py-2 bg-[#E8F1EE] text-[#0F261E] rounded-full text-sm font-bold border border-[#D8CBB7]">Totum Absolute</span>
+            <span className="px-4 py-2 bg-[#E8F1EE] text-[#0F261E] rounded-full text-sm font-bold border border-[#D8CBB7]">Précision Thermique</span>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4">
+            <button 
+              onClick={() => onNavigate('boutique')}
+              className="px-8 py-4 bg-botanik-green text-white rounded-2xl font-bold hover:bg-botanik-green/90 transition-all shadow-xl flex items-center gap-2 group"
+            >
+              {t.guide.hero.cta_shop} <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+            <button 
+              onClick={() => document.getElementById('usage-levels')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 py-4 bg-white border border-botanik-green/10 text-botanik-green rounded-2xl font-bold hover:bg-[#F5F3EB] transition-all flex items-center gap-2"
+            >
+              {t.guide.hero.cta_levels}
+            </button>
+          </div>
         </div>
       </header>
+
+      {/* FAQ Section: Strategic SEO Visibility */}
+      <section className="mb-32">
+        <div className="bg-[#FAF7F2] rounded-[40px] border border-[#F3EEE6] p-8 md:p-16">
+          <h2 className="text-3xl md:text-4xl font-black text-[#0F261E] mb-12 flex items-center gap-4">
+            <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center border border-[#F3EEE6] shadow-sm">
+              <span className="text-botanik-green font-bold">?</span>
+            </div>
+            {t.seo.infusion_guide.faq_title}
+          </h2>
+          
+          <div className="grid gap-8">
+            {t.seo.infusion_guide.faq.map((item: any, index: number) => (
+              <div key={index} className="bg-white rounded-3xl p-8 border border-[#F3EEE6] hover:shadow-md transition-shadow duration-300">
+                <h3 className="text-xl font-bold text-[#0F261E] mb-4 flex items-start gap-3">
+                  <span className="text-botanik-green opacity-50 shrink-0">Q.</span>
+                  {item.q}
+                </h3>
+                <div className="pl-8 border-l-2 border-[#E8F1EE]">
+                  <p className="text-[#0F261E]/70 leading-relaxed">
+                    {item.a}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Machine Intro Section */}
       <section className="mb-32">

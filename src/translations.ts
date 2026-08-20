@@ -48,6 +48,33 @@ export const translations = {
         title: "Reset Homéostasique & Terrain | Phytothérapie de Précision",
         description: "Protocole de reset systémique pour restaurer l'homéostasie. L'alliance des argiles, zéolithes et plantes extraites par précision pour un terrain équilibré.",
       },
+      infusion_guide: {
+        title: "Infusion Botanique : Le Guide Complet des Remèdes Naturels",
+        summary: "Bienvenue dans l'ère de la phytothérapie de précision. Chez Bloom by BotaniK, nous croyons que votre corps n'est pas cassé, il est simplement verrouillé. L'infusion botanique n'est plus une simple boisson, mais un outil de souveraineté sanitaire. Grâce au BloomLab®, premier extracteur botanique de précision en France, vous accédez au Totum absolu des plantes médicinales. Notre technologie d'extraction basse température préserve l'intégrité biochimique de chaque feuille, racine ou fleur pour transformer vos plantes en véritables alliés de votre homéostasie.",
+        faq_title: "Questions fréquentes sur l'infusion botanique",
+        faq: [
+          {
+            q: "Quelle est la différence entre une tisane classique et une infusion botanique Bloom ?",
+            a: "Là où une tisane classique se contente d'ébouillanter des plantes, l'infusion botanique Bloom utilise la précision thermique du BloomLab® pour extraire le Totum (l'intégralité des actifs) sans les dénaturer. C'est le passage d'un moment de détente à un véritable remède de terrain."
+          },
+          {
+            q: "Pourquoi choisir l'extraction basse température pour ses remèdes de plantes ?",
+            a: "La chaleur excessive détruit les enzymes et les huiles essentielles fragiles. En restant sous les 40-45°C, le BloomLab® garantit une extraction préservée, offrant des remèdes naturels d'une puissance thérapeutique inégalée pour votre santé."
+          },
+          {
+            q: "Comment réaliser ses propres remèdes naturels avec le BloomLab® ?",
+            a: "Le BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels. En quelques gestes simples, vous programmez la température et la durée idéales pour chaque plante. Faites fleurir toutes vos envies de bien-être végétal en créant vos propres élixirs, huiles infusées et baumes."
+          },
+          {
+            q: "Qu'est-ce que le Totum d'une plante médicinale ?",
+            a: "Le Totum représente l'ensemble des molécules actives d'une plante agissant en synergie. Notre technologie d'extraction de précision permet de capturer cette harmonie biochimique, bien plus efficace pour le microbiome et l'inflammation chronique qu'un actif isolé."
+          },
+          {
+            q: "Pourquoi BloomLab® est-il considéré comme le N°1 en France ?",
+            a: "BloomLab® est le seul infuseur botanique combinant précision thermique au degré près, extraction basse température et design premium en inox 304. C'est l'outil indispensable pour ceux qui cherchent une autonomie réelle dans leur projet de soins sur mesure."
+          }
+        ]
+      },
       keywords: "extraction totum, laboratoire botanique, souveraineté santé, infusion botanique, art de l'extraction, plantes médicinales, remèdes naturels, tisanes, remèdes de grand mère, remèdes de plantes médicinales, phytothérapie, BloomLab",
       alt: {
         bloomlab: "BloomLab Machine - Infusion Botanique, Tisanes, Remèdes Naturels de plantes médicinales",
@@ -1429,6 +1456,33 @@ export const translations = {
         title: "Homeostatic Reset & Terrain | Precision Phytotherapy",
         description: "Systemic reset protocol to restore homeostasis. The alliance of clays, zeolites and plants extracted by precision for a balanced terrain.",
       },
+      infusion_guide: {
+        title: "Botanical Infusion: The Complete Guide to Natural Remedies",
+        summary: "Welcome to the era of precision phytotherapy. At Bloom by BotaniK, we believe your body isn't broken, it's simply locked. Botanical infusion is no longer just a drink, but a tool for health sovereignty. Thanks to BloomLab®, the first precision botanical extractor in France, you access the absolute Totum of medicinal plants. Our low-temperature extraction technology preserves the biochemical integrity of every leaf, root, or flower to transform your plants into true allies for your homeostasis.",
+        faq_title: "Frequently Asked Questions about Botanical Infusion",
+        faq: [
+          {
+            q: "What is the difference between a classic herbal tea and a Bloom botanical infusion?",
+            a: "Where a classic herbal tea simply boils plants, Bloom botanical infusion uses BloomLab®'s thermal precision to extract the Totum (all active ingredients) without denaturing them. It's the transition from a moment of relaxation to a true terrain remedy."
+          },
+          {
+            q: "Why choose low-temperature extraction for your plant remedies?",
+            a: "Excessive heat destroys fragile enzymes and essential oils. By staying below 40-45°C, BloomLab® guarantees a preserved extraction, offering natural remedies of unparalleled therapeutic power for your health."
+          },
+          {
+            q: "How to make your own natural remedies with BloomLab®?",
+            a: "BloomLab® gives you all the keys to making your own natural remedies. In a few simple steps, you program the ideal temperature and duration for each plant. Make all your desires for plant-based well-being flourish by creating your own elixirs, infused oils, and balms."
+          },
+          {
+            q: "What is the Totum of a medicinal plant?",
+            a: "The Totum represents the set of active molecules in a plant acting in synergy. Our precision extraction technology captures this biochemical harmony, far more effective for the microbiome and chronic inflammation than an isolated active ingredient."
+          },
+          {
+            q: "Why is BloomLab® considered #1 in France?",
+            a: "BloomLab® is the only botanical infuser combining degree-precise thermal control, low-temperature extraction, and premium 304 stainless steel design. It is the essential tool for those seeking real autonomy in their custom care project."
+          }
+        ]
+      },
       keywords: "totum extraction, botanical laboratory, health sovereignty, botanical infusion, art of extraction, medicinal plants, natural remedies, herbal teas, home remedies, medicinal plant remedies, phytotherapy, BloomLab",
       alt: {
         bloomlab: "BloomLab Machine - Botanical Infusion, Herbal Teas, Natural Medicinal Plant Remedies",
@@ -2691,6 +2745,33 @@ export const translations = {
       reset: {
         title: "Homöostatischer Reset & Terrain | Präzisions-Phytotherapie",
         description: "Systemisches Reset-Protokoll zur Wiederherstellung der Homöostase. Die Allianz aus Tonen, Zeolithen und präzise extrahierten Pflanzen.",
+      },
+      infusion_guide: {
+        title: "Botanische Infusion: Der komplette Leitfaden für natürliche Heilmittel",
+        summary: "Willkommen im Zeitalter der Präzisions-Phytotherapie. Wir bei Bloom by BotaniK glauben, dass Ihr Körper nicht kaputt ist, er ist lediglich blockiert. Eine botanische Infusion ist nicht mehr nur ein Getränk, sondern ein Werkzeug für die Gesundheitssouveränität. Dank BloomLab®, dem ersten Präzisions-Extraktor in Frankreich, erhalten Sie Zugang zum absoluten Totum der Heilpflanzen. Unsere Niedrigtemperatur-Extraktionstechnologie bewahrt die biochemische Integrität jedes Blattes, jeder Wurzel oder Blüte, um Ihre Pflanzen in echte Verbündete für Ihre Homöostase zu verwandeln.",
+        faq_title: "Häufig gestellte Fragen zur botanischen Infusion",
+        faq: [
+          {
+            q: "Was ist der Unterschied zwischen einem klassischen Kräutertee und einer Bloom botanischen Infusion?",
+            a: "Während ein klassischer Kräutertee Pflanzen einfach nur abkocht, nutzt die Bloom botanische Infusion die thermische Präzision des BloomLab®, um das Totum (alle Wirkstoffe) zu extrahieren, ohne sie zu denaturieren. Es ist der Übergang von einem Moment der Entspannung zu einem echten Terrain-Heilmittel."
+          },
+          {
+            q: "Warum sollte man die Niedrigtemperatur-Extraktion für seine Pflanzenheilmittel wählen?",
+            a: "Übermäßige Hitze zerstört empfindliche Enzyme und ätherische Öle. Durch das Einhalten von Temperaturen unter 40-45°C garantiert BloomLab® eine schonende Extraktion und bietet natürliche Heilmittel von unvergleichlicher therapeutischer Kraft für Ihre Gesundheit."
+          },
+          {
+            q: "Wie stellt man seine eigenen natürlichen Heilmittel mit BloomLab® her?",
+            a: "BloomLab® bietet Ihnen alle Schlüssel zur Herstellung Ihrer eigenen natürlichen Heilmittel. In wenigen einfachen Schritten programmieren Sie die ideale Temperatur und Dauer für jede Pflanze. Lassen Sie all Ihre Wünsche nach pflanzlichem Wohlbefinden erblühen, indem Sie Ihre eigenen Elixiere, infundierten Öle und Balsame kreieren."
+          },
+          {
+            q: "Was ist das Totum einer Heilpflanze?",
+            a: "Das Totum stellt die Gesamtheit der Wirkmoleküle einer Pflanze dar, die in Synergie wirken. Unsere Präzisions-Extraktionstechnologie fängt diese biochemische Harmonie ein, die für das Mikrobiom und chronische Entzündungen weitaus effektiver ist als ein isolierter Wirkstoff."
+          },
+          {
+            q: "Warum gilt BloomLab® als die Nummer 1 in Frankreich?",
+            a: "BloomLab® ist der einzige botanische Infuser, der gradgenaue thermische Kontrolle, Niedrigtemperatur-Extraktion und hochwertiges Design aus 304 Edelstahl kombiniert. Es ist das unverzichtbare Werkzeug für alle, die eine echte Autonomie in ihrem maßgeschneiderten Pflegeprojekt suchen."
+          }
+        ]
       },
       keywords: "Totum-Extraktion, botanisches Labor, Gesundheitssouveränität, botanische Infusion, Kunst der Extraktion, Heilpflanzen, natürliche Heilmittel, Kräutertees, Hausmittel, Heilpflanzen-Heilmittel, Phytotherapie, BloomLab",
       alt: {
