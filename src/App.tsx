@@ -625,6 +625,7 @@ export default function App() {
   const [previousView, setPreviousView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction' | 'admin' | 'blog' | 'indexbis' | 'how_it_works' | 'guide-complet' | 'qu-est-ce-que-infusion' | 'newsletter-preferences' | 'admin-newsletter' | 'withdrawal' | 'recipes'>('home');
 
   const [currentProductId, setCurrentProductId] = useState<string | undefined>();
+  const [blogPostSlug, setBlogPostSlug] = useState<string | undefined>();
   const [legalType, setLegalType] = useState<'cgv' | 'cgu' | 'privacy' | 'mentions' | 'withdrawal'>('mentions');
   const [cart, setCart] = useState<any[]>([]);
   const [shippingMethod, setShippingMethod] = useState<any>('mondialrelay');
@@ -637,78 +638,142 @@ export default function App() {
     return () => clearTimeout(timer);
   }, []);
   
-    // --- SPA ROUTING: sync URL with state ---
-    useEffect(() => {
-      // --- Detect legacy language prefix (/en, /de) and strip it ---
-      const rawPath = (sessionStorage.getItem('spa-redirect-path') || window.location.pathname).split('?')[0].split('#')[0];
-      const langMatch = rawPath.match(/^\/(en|de)(\/.*)?$/);
-      const detectedLang = (langMatch ? langMatch[1] : 'fr') as Language;
-      let restPath = langMatch ? (langMatch[2] || '/') : rawPath;
+  // --- SPA ROUTING: sync URL with state ---
+  const parseCurrentUrl = () => {
+    const rawPath = (sessionStorage.getItem('spa-redirect-path') || window.location.pathname).split('?')[0].split('#')[0];
+    const langMatch = rawPath.match(/^\/(en|de)(\/.*)?$/);
+    const detectedLang = (langMatch ? langMatch[1] : 'fr') as Language;
+    let restPath = langMatch ? (langMatch[2] || '/') : rawPath;
+    
+    // Normalize: remove trailing slash except for root
+    if (restPath !== '/' && restPath.endsWith('/')) {
+      restPath = restPath.slice(0, -1);
+    }
+    
+    setLang(detectedLang);
+    sessionStorage.removeItem('spa-redirect-path');
+
+    const searchParams = new URLSearchParams(window.location.search);
+    const queryPost = searchParams.get('post');
+    if (queryPost) {
+      setBlogPostSlug(queryPost);
+    }
+
+    if (restPath === '/droit-de-retractation' || restPath === '/retour-et-remboursement') {
+      setLegalType('withdrawal');
+      setCurrentView('legal');
+      return;
+    }
+
+    if (restPath === '/termes-et-conditions' || restPath === '/conditions-generales-de-vente' || restPath === '/cgv') {
+      setLegalType('terms');
+      setCurrentView('legal');
+      return;
+    }
+
+    if (restPath === '/mentions-legales') {
+      setLegalType('mentions');
+      setCurrentView('legal');
+      return;
+    }
+
+    // --- Legacy route aliases (pre-redesign URLs) mapped to current views ---
+    const LEGACY_ALIASES: Record<string, string> = {
+      '/about': '/manifeste',
+      '/contact': '/manifeste',
+      '/how-it-works-diy-natural-recipes': '/boutique',
+      '/natural-herbal-infusion-body-care-oils-': '/cosmetiques',
+      '/natural-herbal-infusion-face-skincare-recipes': '/cosmetiques',
+      '/qu-est-ce-que-l-infusion-botanique': '/infusion-botanique',
+      '/extraction-plantes-naturelles-bienfaits': '/extraction-botanique',
+      '/extraction-botanique-guide-complet': '/extraction-botanique',
+      '/infusion-botanique-maison-comment-ca-marche': '/infusion-botanique',
+      '/herbier': '/bibliotheque',
+      '/bloomlab-extracteur-botanique-et-infuseur-dhuile-intelligent-6-en-1': '/bloomlab',
+      '/indexbis': '/',
+      '/chroniques': '/blog',
+      '/tisane-ba': '/blog',
+      '/tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes-spoiler-la-difference-est-de-1-a-98': '/blog',
+    };
+
+    if (restPath === '/tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes-spoiler-la-difference-est-de-1-a-98') {
+      setBlogPostSlug('tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes-spoiler-la-difference-est-de-1-a-98');
+      setCurrentView('blog');
+      return;
+    }
+
+    const normalizedPath = LEGACY_ALIASES[restPath] || restPath;
+
+    // --- Detect Blog detail URL pattern /blog/:slug ---
+    const blogMatch = normalizedPath.match(/^\/blog\/([a-z0-9-]+)$/);
+    if (blogMatch) {
+      setBlogPostSlug(blogMatch[1]);
+      setCurrentView('blog');
+      return;
+    }
+
+    // --- Detect Herbier detail URL pattern /bibliotheque/:id or /herbier/:id ---
+    const herbierMatch = normalizedPath.match(/^\/(bibliotheque|herbier)\/([a-z0-9-]+)$/);
+    if (herbierMatch) {
+      setCurrentProductId(herbierMatch[2]);
+      setCurrentView('herbier');
+      return;
+    }
+
+    // --- Detect product detail URL pattern /boutique/:id ---
+    const productMatch = normalizedPath.match(/^\/boutique\/([a-z0-9-]+)$/);
+    if (productMatch) {
+      setCurrentProductId(productMatch[1]);
+      setCurrentView('product-detail');
+      return;
+    }
+
+    // --- Detect newsletter preferences URL pattern /newsletter/preferences/:id ---
+    const newsletterMatch = normalizedPath.match(/^\/newsletter\/preferences\/([a-z0-9-]+)$/);
+    if (newsletterMatch) {
+      setCurrentProductId(newsletterMatch[1]);
+      setCurrentView('newsletter-preferences');
+      return;
+    }
+
+    const matchedView = PATH_VIEWS[normalizedPath];
+    if (matchedView) {
+      setCurrentView(matchedView as typeof currentView);
       
-      // Normalize: remove trailing slash except for root
-      if (restPath !== '/' && restPath.endsWith('/')) {
-        restPath = restPath.slice(0, -1);
+      // Handle scrolling to specific section for legacy URL
+      if (restPath === '/infusion-botanique-maison-comment-ca-marche' || (matchedView === 'guide' && window.location.hash === '#comprendre-infusion-botanique')) {
+        setTimeout(() => {
+          const element = document.getElementById('comprendre-infusion-botanique');
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 1500);
       }
-      
-      setLang(detectedLang);
-      sessionStorage.removeItem('spa-redirect-path');
+    }
+  };
 
-      if (restPath === '/droit-de-retractation') {
-        setLegalType('withdrawal');
-        setCurrentView('legal');
-        return;
-      }
+  useEffect(() => {
+    parseCurrentUrl();
 
-      // --- Legacy route aliases (pre-redesign URLs) mapped to current views ---
-      const LEGACY_ALIASES: Record<string, string> = {
-        '/about': '/manifeste',
-        '/contact': '/manifeste',
-        '/how-it-works-diy-natural-recipes': '/boutique',
-        '/natural-herbal-infusion-body-care-oils-': '/cosmetiques',
-        '/natural-herbal-infusion-face-skincare-recipes': '/cosmetiques',
-        '/qu-est-ce-que-l-infusion-botanique': '/infusion-botanique',
-        '/extraction-plantes-naturelles-bienfaits': '/extraction-botanique',
-        '/extraction-botanique-guide-complet': '/extraction-botanique',
-        '/infusion-botanique-maison-comment-ca-marche': '/infusion-botanique',
-        '/herbier': '/bibliotheque',
-        '/bloomlab-extracteur-botanique-et-infuseur-dhuile-intelligent-6-en-1': '/bloomlab',
-        '/indexbis': '/',
-        '/chroniques': '/blog',
-      };
-      const normalizedPath = LEGACY_ALIASES[restPath] || restPath;
+    const handlePopState = () => {
+      parseCurrentUrl();
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
-      // --- Detect product detail URL pattern /boutique/:id ---
-      const productMatch = normalizedPath.match(/^\/boutique\/([a-z0-9-]+)$/);
-      if (productMatch) {
-        setCurrentProductId(productMatch[1]);
-        setCurrentView('product-detail');
-        return;
-      }
-
-      // --- Detect newsletter preferences URL pattern /newsletter/preferences/:id ---
-      const newsletterMatch = normalizedPath.match(/^\/newsletter\/preferences\/([a-z0-9-]+)$/);
-      if (newsletterMatch) {
-        setCurrentProductId(newsletterMatch[1]);
-        setCurrentView('newsletter-preferences');
-        return;
-      }
-
-      const matchedView = PATH_VIEWS[normalizedPath];
-      if (matchedView) {
-        setCurrentView(matchedView as typeof currentView);
-        
-        // Handle scrolling to specific section for legacy URL
-        if (restPath === '/infusion-botanique-maison-comment-ca-marche' || (matchedView === 'guide' && window.location.hash === '#comprendre-infusion-botanique')) {
-          setTimeout(() => {
-            const element = document.getElementById('comprendre-infusion-botanique');
-            if (element) {
-              element.scrollIntoView({ behavior: 'smooth' });
-            }
-          }, 1500);
-        }
-      }
-    }, []);
-
+  const handleLanguageChange = (newLang: Language) => {
+    setLang(newLang);
+    const langPrefix = newLang === 'fr' ? '' : `/${newLang}`;
+    let basePath = currentView === 'product-detail' && currentProductId 
+      ? `/boutique/${currentProductId}` 
+      : (VIEW_PATHS[currentView] || '/');
+    if (basePath === '/' && newLang !== 'fr') basePath = '';
+    const newPath = `${langPrefix}${basePath}` || '/';
+    if (window.location.pathname !== newPath) {
+      window.history.pushState({}, '', newPath);
+    }
+  };
 
   const addToCart = (product: any) => {
     setCart(prev => {
@@ -747,7 +812,12 @@ export default function App() {
     
     setCurrentProductId(productId);
     setCurrentView(view);
-    const targetPath = view === 'product-detail' && productId ? `/boutique/${productId}` : (VIEW_PATHS[view] || '/');
+
+    const langPrefix = lang === 'fr' ? '' : `/${lang}`;
+    let basePath = view === 'product-detail' && productId ? `/boutique/${productId}` : (VIEW_PATHS[view] || '/');
+    if (basePath === '/' && lang !== 'fr') basePath = '';
+    const targetPath = `${langPrefix}${basePath}` || '/';
+
     if (window.location.pathname !== targetPath) {
       window.history.pushState({}, '', targetPath);
     }
@@ -1013,7 +1083,7 @@ export default function App() {
           lang={lang}
         />
       );
-      case 'manifeste': return <ManifesteContent onBack={() => navigateTo(previousView === 'manifeste' ? 'home' : previousView)} lang={lang} />;
+      case 'manifeste': return <ManifesteContent onBack={() => navigateTo(previousView === 'manifeste' ? 'home' : previousView)} onNavigate={navigateTo} lang={lang} />;
       case 'pillar-extraction': 
       case 'guide-complet': return <PillarExtraction onNavigate={navigateTo} lang={lang} />;
       case 'activation': return (
@@ -1040,7 +1110,7 @@ export default function App() {
       case 'admin-newsletter': return (
         user?.email === 'bloombybotanik@gmail.com' ? <AdminNewsletter lang={lang} /> : <HomeContent onNavigate={navigateTo} lang={lang} />
       );
-      case 'blog': return <BlogContent lang={lang} onNavigate={navigateTo} />;
+      case 'blog': return <BlogContent lang={lang} onNavigate={navigateTo} initialSlug={blogPostSlug} />;
       case 'legal': return <LegalPages type={legalType} onBack={() => navigateTo(previousView)} lang={lang} />;
       case 'newsletter-preferences': return <NewsletterPreferences subscriberId={currentProductId || ''} lang={lang} />;
       default: return (
@@ -1119,7 +1189,7 @@ export default function App() {
         user={user} 
         handleLogout={handleLogout} 
         lang={lang}
-        setLang={setLang}
+        setLang={handleLanguageChange}
         t={t}
         isDiscovery={isDiscovery}
         isPremium={isPremium}
@@ -1242,7 +1312,7 @@ export default function App() {
               
               <div className="space-y-6">
                 <div className="flex justify-center">
-                  <LanguageSelector lang={lang} setLang={setLang} variant="sidebar" />
+                  <LanguageSelector lang={lang} setLang={handleLanguageChange} variant="sidebar" />
                 </div>
                 
                 <p className="text-center text-[10px] text-white/20 italic leading-relaxed px-4">

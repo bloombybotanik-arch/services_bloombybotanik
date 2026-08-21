@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
+Allow: /en/
+Allow: /de/
+Disallow: /admin
+Disallow: /admin/
+Disallow: /checkout
+Disallow: /panier
+Disallow: /compte
+Disallow: /en-attente
 
 Sitemap: https://bloombybotanik.com/sitemap.xml

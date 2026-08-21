@@ -124,20 +124,82 @@ Tu dois impérativement répondre au format JSON :
 app.use(cors());
 app.use(express.json({ limit: '10mb' }));
 
-// Redirections 301 pour le SEO
-const redirects: Record<string, string> = {
+// Canonical Host & Protocol Normalization Middleware (301)
+app.use((req, res, next) => {
+  const host = req.get('host') || '';
+  const proto = req.get('x-forwarded-proto') || req.protocol;
+
+  // 1. Host normalization: redirect www.bloombybotanik.com -> bloombybotanik.com
+  if (host.startsWith('www.bloombybotanik.com')) {
+    return res.redirect(301, `https://bloombybotanik.com${req.originalUrl}`);
+  }
+  
+  // 2. Protocol normalization: redirect http -> https on live domain
+  if (host.includes('bloombybotanik.com') && proto === 'http') {
+    return res.redirect(301, `https://bloombybotanik.com${req.originalUrl}`);
+  }
+
+  next();
+});
+
+// Sitemaps & robots.txt explicit delivery
+app.get('/sitemap.xml', (req, res) => {
+  res.header('Content-Type', 'application/xml');
+  res.sendFile(path.join(process.cwd(), 'public', 'sitemap.xml'));
+});
+app.get('/sitemap-fr.xml', (req, res) => {
+  res.header('Content-Type', 'application/xml');
+  res.sendFile(path.join(process.cwd(), 'public', 'sitemap-fr.xml'));
+});
+app.get('/sitemap-en.xml', (req, res) => {
+  res.header('Content-Type', 'application/xml');
+  res.sendFile(path.join(process.cwd(), 'public', 'sitemap-en.xml'));
+});
+app.get('/sitemap-de.xml', (req, res) => {
+  res.header('Content-Type', 'application/xml');
+  res.sendFile(path.join(process.cwd(), 'public', 'sitemap-de.xml'));
+});
+app.get('/robots.txt', (req, res) => {
+  res.header('Content-Type', 'text/plain');
+  res.sendFile(path.join(process.cwd(), 'public', 'robots.txt'));
+});
+
+// Redirections 301 pour le SEO & correction d'erreurs 404
+const redirects301: Record<string, string> = {
+  // Erreurs 404 critiques
+  '/bloomlab-extracteur-botanique-et-infuseur-dhuile-intelligent-6-en-1': '/bloomlab',
+  '/retour-et-remboursement': '/droit-de-retractation',
+  '/retours-et-remboursements': '/droit-de-retractation',
+  '/termes-et-conditions': '/legal',
+  '/conditions-generales-de-vente': '/legal',
+  '/cgv': '/legal',
+  '/cgu': '/legal',
+  '/mentions-legales': '/legal',
+  '/politique-de-confidentialite': '/legal',
+  '/tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes-spoiler-la-difference-est-de-1-a-98': '/blog?post=tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes-spoiler-la-difference-est-de-1-a-98',
+  '/chroniques': '/blog',
+  '/infusion-botanique-maison-comment-ca-marche': '/infusion-botanique#comprendre-infusion-botanique',
+  
+  // URLs d'anciennes versions & alias
   '/indexbis': '/',
+  '/about': '/manifeste',
+  '/contact': '/manifeste',
+  '/how-it-works-diy-natural-recipes': '/boutique',
+  '/natural-herbal-infusion-body-care-oils-': '/cosmetiques',
+  '/natural-herbal-infusion-face-skincare-recipes': '/cosmetiques',
+  '/extraction-plantes-naturelles-bienfaits': '/extraction-botanique',
+  '/extraction-botanique-guide-complet': '/extraction-botanique',
+  '/herbier': '/bibliotheque',
   '/boutique/confort-digestif': '/boutique/duo-argiles',
   '/boutique/feu-actualisateur': '/boutique/purete-sanguine',
   '/boutique/nutri-profonde': '/boutique/expert-peaux',
-  '/bloomlab-extracteur-botanique-et-infuseur-dhuile-intelligent-6-en-1': '/bloomlab',
-  '/infusion-botanique-maison-comment-ca-marche': '/infusion-botanique#comprendre-infusion-botanique',
-  '/termes-et-conditions': '/legal',
-  '/chroniques': '/blog'
 };
 
-Object.entries(redirects).forEach(([from, to]) => {
+Object.entries(redirects301).forEach(([from, to]) => {
   app.get(from, (req, res) => res.redirect(301, to));
+  // Support multilingual prefix redirects
+  app.get(`/en${from}`, (req, res) => res.redirect(301, `/en${to}`));
+  app.get(`/de${from}`, (req, res) => res.redirect(301, `/de${to}`));
 });
 
 // --- NEWSLETTER AGENT INSTRUCTIONS ---
