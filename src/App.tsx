@@ -158,13 +158,12 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    const path = currentView === 'product-detail' && productId ? `/boutique/${productId}` : (VIEW_PATHS[currentView as string] || '/');
-    const langPrefix = lang === 'fr' ? '' : `/${lang}`;
-    canonical.setAttribute('href', `https://bloombybotanik.com${langPrefix}${path === '/' ? '' : path}`);
-    
-    // Update Hreflang tags
-    const languages: Language[] = ['fr', 'en', 'de'];
-    languages.forEach(l => {
+    const currentUrl = `https://bloombybotanik.com${window.location.pathname}`;
+    canonical.setAttribute('href', currentUrl);
+
+    // Update hreflang tags
+    const langs: Language[] = ['fr', 'en', 'de'];
+    langs.forEach(l => {
       let hreflang = document.querySelector(`link[hreflang="${l}"]`);
       if (!hreflang) {
         hreflang = document.createElement('link');
@@ -172,11 +171,22 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
         hreflang.setAttribute('hreflang', l);
         document.head.appendChild(hreflang);
       }
-      const lPrefix = l === 'fr' ? '' : `/${l}`;
-      hreflang.setAttribute('href', `https://bloombybotanik.com${lPrefix}${path === '/' ? '' : path}`);
+      
+      let localizedPath = window.location.pathname;
+      // Strip current lang prefix if exists
+      if (localizedPath.startsWith('/en/')) localizedPath = localizedPath.replace('/en/', '/');
+      else if (localizedPath.startsWith('/de/')) localizedPath = localizedPath.replace('/de/', '/');
+      else if (localizedPath === '/en') localizedPath = '/';
+      else if (localizedPath === '/de') localizedPath = '/';
+
+      let href = 'https://bloombybotanik.com';
+      if (l === 'fr') href += localizedPath;
+      else href += `/${l}${localizedPath === '/' ? '' : localizedPath}`;
+      
+      hreflang.setAttribute('href', href);
     });
 
-    // Handle x-default
+    // x-default
     let xDefault = document.querySelector('link[hreflang="x-default"]');
     if (!xDefault) {
       xDefault = document.createElement('link');
@@ -184,9 +194,11 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
       xDefault.setAttribute('hreflang', 'x-default');
       document.head.appendChild(xDefault);
     }
-    xDefault.setAttribute('href', `https://bloombybotanik.com${path === '/' ? '' : path}`);
+    xDefault.setAttribute('href', `https://bloombybotanik.com${window.location.pathname.replace(/^\/(en|de)(\/|$)/, '/')}`);
 
     // 2. JSON-LD Injection
+    const path = currentView === 'product-detail' && productId ? `/boutique/${productId}` : (VIEW_PATHS[currentView as string] || '/');
+    const langPrefix = lang === 'fr' ? '' : `/${lang}`;
     const pageUrl = `https://bloombybotanik.com${langPrefix}${path === '/' ? '' : path}`;
 
     const graph: any[] = [
@@ -197,7 +209,7 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
         "url": "https://bloombybotanik.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://bloombybotanik.com/logo.png"
+          "url": `https://bloombybotanik.com${logoSidebar}`
         },
         "description": "N°1 de l'extraction botanique de précision. BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels."
       },
@@ -619,14 +631,73 @@ const HybridOffer = ({ onNavigate }: { onNavigate: (view: any) => void }) => (
 );
 
 export default function App() {
-  const [lang, setLang] = useState<Language>('fr');
-  const t = translations[lang];
-  const [currentView, setCurrentView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction' | 'admin' | 'blog' | 'indexbis' | 'how_it_works' | 'guide-complet' | 'qu-est-ce-que-infusion' | 'newsletter-preferences' | 'admin-newsletter' | 'withdrawal' | 'recipes'>('home');
-  const [previousView, setPreviousView] = useState<'home' | 'guide' | 'article' | 'boutique' | 'culinaire' | 'cosmetiques' | 'library' | 'pending' | 'product-detail' | 'cart' | 'checkout' | 'legal' | 'account' | 'chat' | 'machine' | 'phytotherapie-reset' | 'library-landing' | 'activation' | 'manifeste' | 'pillar-extraction' | 'admin' | 'blog' | 'indexbis' | 'how_it_works' | 'guide-complet' | 'qu-est-ce-que-infusion' | 'newsletter-preferences' | 'admin-newsletter' | 'withdrawal' | 'recipes'>('home');
+  const [lang, setLang] = useState<Language>(() => {
+    if (typeof window === 'undefined') return 'fr';
+    const path = window.location.pathname;
+    if (path.startsWith('/en')) return 'en';
+    if (path.startsWith('/de')) return 'de';
+    return 'fr';
+  });
 
-  const [currentProductId, setCurrentProductId] = useState<string | undefined>();
-  const [blogPostSlug, setBlogPostSlug] = useState<string | undefined>();
-  const [legalType, setLegalType] = useState<'cgv' | 'cgu' | 'privacy' | 'mentions' | 'withdrawal'>('mentions');
+  const t = translations[lang];
+
+  const [currentView, setCurrentView] = useState<View>(() => {
+    if (typeof window === 'undefined') return 'home';
+    const rawPath = window.location.pathname;
+    const langMatch = rawPath.match(/^\/(en|de)(\/.*)?$/);
+    let restPath = langMatch ? (langMatch[2] || '/') : rawPath;
+    if (restPath !== '/' && restPath.endsWith('/')) restPath = restPath.slice(0, -1);
+    
+    // Check for blog/product detail patterns first
+    if (restPath.startsWith('/blog/')) return 'blog';
+    if (restPath.startsWith('/boutique/')) return 'product-detail';
+    if (restPath.startsWith('/bibliotheque/') || restPath.startsWith('/herbier/')) return 'herbier';
+    
+    const LEGACY_ALIASES: Record<string, string> = {
+      '/about': '/manifeste',
+      '/contact': '/manifeste',
+      '/qu-est-ce-que-l-infusion-botanique': '/infusion-botanique',
+      '/herbier': '/bibliotheque',
+      '/indexbis': '/',
+      '/chroniques': '/blog',
+    };
+    const normalizedPath = LEGACY_ALIASES[restPath] || restPath;
+    return (PATH_VIEWS[normalizedPath] as View) || 'home';
+  });
+
+  const [currentProductId, setCurrentProductId] = useState<string | undefined>(() => {
+    if (typeof window === 'undefined') return undefined;
+    const rawPath = window.location.pathname;
+    const langMatch = rawPath.match(/^\/(en|de)(\/.*)?$/);
+    let restPath = langMatch ? (langMatch[2] || '/') : rawPath;
+    
+    const productMatch = restPath.match(/^\/boutique\/([a-z0-9-]+)$/);
+    if (productMatch) return productMatch[1];
+    
+    const herbierMatch = restPath.match(/^\/(bibliotheque|herbier)\/([a-z0-9-]+)$/);
+    if (herbierMatch) return herbierMatch[2];
+
+    const newsletterMatch = restPath.match(/^\/newsletter\/preferences\/([a-z0-9-]+)$/);
+    if (newsletterMatch) return newsletterMatch[1];
+    
+    return undefined;
+  });
+
+  const [blogPostSlug, setBlogPostSlug] = useState<string | undefined>(() => {
+    if (typeof window === 'undefined') return undefined;
+    const rawPath = (sessionStorage.getItem('spa-redirect-path') || window.location.pathname).split('?')[0].split('#')[0];
+    const langMatch = rawPath.match(/^\/(en|de)(\/.*)?$/);
+    let restPath = langMatch ? (langMatch[2] || '/') : rawPath;
+    
+    const blogMatch = restPath.match(/^\/blog\/([a-z0-9-]+)$/);
+    if (blogMatch) return blogMatch[1];
+    
+    const searchParams = new URLSearchParams(window.location.search);
+    return searchParams.get('post') || undefined;
+  });
+
+  const [previousView, setPreviousView] = useState<View>('home');
+  const [legalType, setLegalType] = useState<'cgv' | 'cgu' | 'privacy' | 'mentions' | 'withdrawal' | 'terms'>('mentions');
   const [cart, setCart] = useState<any[]>([]);
   const [shippingMethod, setShippingMethod] = useState<any>('mondialrelay');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -951,7 +1022,9 @@ export default function App() {
     navigateTo('home');
   };
 
-  if (authLoading || !isSplashFinished) return (
+  const isPrerender = typeof window !== 'undefined' && (navigator.webdriver || window.location.search.includes('prerender=true'));
+
+  if ((authLoading || !isSplashFinished) && !isPrerender) return (
     <div className="min-h-screen bg-[#293228] flex flex-col items-center justify-center animate-in fade-in duration-1000">
       <img src={logoSidebar} alt="Bloom" className="w-24 h-24 mb-6" />
       <div className="w-12 h-1 border-2 border-white/10 overflow-hidden relative rounded-full">
@@ -1304,10 +1377,14 @@ export default function App() {
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-botanik-orange to-[#FF9D66] flex items-center justify-center text-white shadow-lg shadow-botanik-orange/20">
                   <User className="w-6 h-6" />
                 </div>
-                <div className="flex flex-col text-left">
-                  <span className="font-bold text-base tracking-tight">Mon Compte</span>
-                  <span className="text-xs text-white/30 uppercase tracking-widest font-black">Espace Membre</span>
-                </div>
+                  <div className="flex flex-col text-left">
+                    <span className="font-bold text-base tracking-tight">
+                      {lang === 'fr' ? 'Mon Compte' : lang === 'de' ? 'Mein Konto' : 'My Account'}
+                    </span>
+                    <span className="text-xs text-white/30 uppercase tracking-widest font-black">
+                      {lang === 'fr' ? 'Espace Membre' : lang === 'de' ? 'Mitgliederbereich' : 'Member Area'}
+                    </span>
+                  </div>
               </button>
               
               <div className="space-y-6">
@@ -1316,7 +1393,12 @@ export default function App() {
                 </div>
                 
                 <p className="text-center text-[10px] text-white/20 italic leading-relaxed px-4">
-                  "L'Ingénierie au service du vivant. Bloom by BotaniK est la clé."
+                  {lang === 'fr' 
+                    ? '"L\'Ingénierie au service du vivant. Bloom by BotaniK est la clé."'
+                    : lang === 'de'
+                    ? '"Ingenieurwesen im Dienste des Lebens. Bloom by BotaniK ist der Schlüssel."'
+                    : '"Engineering for life. Bloom by BotaniK is the key."'
+                  }
                 </p>
               </div>
             </div>

@@ -26,7 +26,18 @@ const PRODUCT_SLUGS = [
   'pack-trio',
 ];
 
-const ROUTES = [
+const BLOG_SLUGS = [
+  'tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes'
+];
+
+const PLANT_IDS = [
+  'chaga_vitality', 'urtica_dioica', 'melissa_officinalis', 'curcuma_longa_poivre', 
+  'zingiber_officinale', 'rosmarinus_officinalis', 'lavandula_angustifolia', 'artichaut'
+];
+
+const LANGUAGES = ['', '/en', '/de'];
+
+const BASE_ROUTES = [
   '/',
   '/machine',
   '/phytotherapie-reset',
@@ -37,8 +48,38 @@ const ROUTES = [
   '/herbier',
   '/manifeste',
   '/activation',
-  ...PRODUCT_SLUGS.map((slug) => `/boutique/${slug}`),
+  '/chat',
+  '/mentions-legales',
+  '/termes-et-conditions',
+  '/conditions-generales-de-vente',
+  '/cgv',
+  '/retour-et-remboursement',
+  '/tisane-ba',
+  '/extraction-botanique',
+  '/infusion-botanique',
+  '/qu-est-ce-que-l-infusion-botanique',
+  '/legal',
+  '/droit-de-retractation'
 ];
+
+const ROUTES = [];
+
+for (const lang of LANGUAGES) {
+  for (const base of BASE_ROUTES) {
+    const route = lang === '' ? base : `${lang}${base === '/' ? '' : base}`;
+    ROUTES.push(route);
+  }
+  for (const slug of PRODUCT_SLUGS) {
+    ROUTES.push(lang === '' ? `/boutique/${slug}` : `${lang}/boutique/${slug}`);
+  }
+  for (const slug of BLOG_SLUGS) {
+    ROUTES.push(lang === '' ? `/blog/${slug}` : `${lang}/blog/${slug}`);
+  }
+  for (const id of PLANT_IDS) {
+    ROUTES.push(lang === '' ? `/herbier/${id}` : `${lang}/herbier/${id}`);
+    ROUTES.push(lang === '' ? `/bibliotheque/${id}` : `${lang}/bibliotheque/${id}`);
+  }
+}
 
 async function routeToFilePath(route) {
   if (route === '/') {
@@ -51,7 +92,12 @@ async function routeToFilePath(route) {
 
 async function main() {
   console.log('Démarrage du serveur statique local pour le pré-rendu...');
-  const server = createServer({ root: distDir });
+  // On utilise l'option proxy pour rediriger toutes les requêtes vers index.html (SPA fallback)
+  // Cela permet à Puppeteer de charger n'importe quelle route même si le fichier n'existe pas encore.
+  const server = createServer({ 
+    root: distDir,
+    proxy: `${BASE_URL}/index.html?`
+  });
   await new Promise((resolve) => server.listen(PORT, resolve));
 
   const browser = await puppeteer.launch({
@@ -59,23 +105,33 @@ async function main() {
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
 
+  const CONCURRENCY = 8;
+  const chunks = [];
+  for (let i = 0; i < ROUTES.length; i += CONCURRENCY) {
+    chunks.push(ROUTES.slice(i, i + CONCURRENCY));
+  }
+
   try {
-    for (const route of ROUTES) {
-      const page = await browser.newPage();
-      const url = `${BASE_URL}${route}`;
-      console.log(`Pré-rendu : ${url}`);
+    for (const chunk of chunks) {
+      await Promise.all(chunk.map(async (route) => {
+        const page = await browser.newPage();
+        const url = `${BASE_URL}${route}${route.includes('?') ? '&' : '?'}prerender=true`;
+        console.log(`Pré-rendu : ${url}`);
 
-      await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
-
-      // Laisse le temps aux effets React (JSON-LD dynamique, données produit) de s'appliquer.
-      await new Promise((r) => setTimeout(r, 500));
-
-      const html = await page.content();
-      const outputPath = await routeToFilePath(route);
-      await fs.writeFile(outputPath, html, 'utf-8');
-      console.log(`  -> écrit dans ${path.relative(distDir, outputPath)}`);
-
-      await page.close();
+        try {
+          await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
+          // Augmentation du délai pour s'assurer que React a fini de rendre et que SEOMetadata a tourné
+          await new Promise(r => setTimeout(r, 1500));
+          const html = await page.content();
+          const outputPath = await routeToFilePath(route);
+          await fs.writeFile(outputPath, html, 'utf-8');
+          console.log(`  -> écrit dans ${path.relative(distDir, outputPath)}`);
+        } catch (err) {
+          console.error(`Erreur sur ${url}:`, err.message);
+        } finally {
+          await page.close();
+        }
+      }));
     }
   } finally {
     await browser.close();

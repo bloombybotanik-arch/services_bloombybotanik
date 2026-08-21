@@ -61,14 +61,17 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
               </div>
             </div>
 
-            <div className="space-y-6">
               <h2 className="text-base md:text-lg font-extrabold leading-snug text-white/90">
-                {lang === 'fr' ? "L'Ingénierie au service du vivant." : "Engineering for life."}
+                {lang === 'fr' ? "L'Ingénierie au service du vivant." : lang === 'de' ? "Ingenieurwesen für das Leben." : "Engineering for life."}
               </h2>
               <p className="text-sm text-white/50 leading-relaxed max-w-sm">
-                Bloom by BotaniK réconcilie l'herboristerie ancestrale et l'ingénierie moléculaire de pointe pour libérer le plein potentiel de votre pharmacie intérieure.
+                {lang === 'fr' 
+                  ? "Bloom by BotaniK réconcilie l'herboristerie ancestrale et l'ingénierie moléculaire de pointe pour libérer le plein potentiel de votre pharmacie intérieure."
+                  : lang === 'de'
+                  ? "Bloom by BotaniK vereint traditionelle Kräuterkunde mit modernster Molekulartechnik, um das volle Potenzial Ihrer inneren Apotheke freizusetzen."
+                  : "Bloom by BotaniK reconciles ancestral herbalism with cutting-edge molecular engineering to release the full potential of your inner pharmacy."
+                }
               </p>
-            </div>
 
             <div className="flex items-center gap-6">
               {socialLinks.map((social) => (
@@ -88,35 +91,35 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
 
           {/* Column 2: Navigation Groups */}
           <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-8">
-            <FooterGroup title="Boutique">
-              <FooterLink label="Tous les produits" onClick={() => onNavigate('boutique')} />
+            <FooterGroup title={lang === 'fr' ? "Boutique" : lang === 'de' ? "Shop" : "Shop"}>
+              <FooterLink label={lang === 'fr' ? "Tous les produits" : lang === 'de' ? "Alle Produkte" : "All products"} onClick={() => onNavigate('boutique')} />
               <FooterLink label="BloomLab®" onClick={() => onNavigate('machine')} />
-              <FooterLink label="Atelier Culinaire" onClick={() => onNavigate('culinaire')} />
-              <FooterLink label="Soin Cosmétique" onClick={() => onNavigate('cosmetiques')} />
-              <FooterLink label="Reset Homéostasique" onClick={() => onNavigate('phytotherapie-reset')} />
+              <FooterLink label={lang === 'fr' ? "Atelier Culinaire" : lang === 'de' ? "Kulinarik" : "Culinary"} onClick={() => onNavigate('culinaire')} />
+              <FooterLink label={lang === 'fr' ? "Soin Cosmétique" : lang === 'de' ? "Kosmetik" : "Cosmetics"} onClick={() => onNavigate('cosmetiques')} />
+              <FooterLink label={lang === 'fr' ? "Reset Homéostasique" : lang === 'de' ? "Homeostase-Reset" : "Homeostatic Reset"} onClick={() => onNavigate('phytotherapie-reset')} />
             </FooterGroup>
 
-            <FooterGroup title="Savoir">
-              <FooterLink label="L'Herbier" onClick={() => onNavigate('herbarium')} />
-              <FooterLink label={lang === 'fr' ? "Guide de l'Extraction" : "Extraction Guide"} onClick={() => onNavigate('pillar-extraction')} />
-              <FooterLink label={lang === 'fr' ? "L'Infusion Botanique" : "Botanical Infusion"} onClick={() => onNavigate('guide')} />
-              <FooterLink label="Le Manifeste" onClick={() => onNavigate('manifesto')} />
-              <FooterLink label="Journal Botanique" onClick={() => onNavigate('blog')} />
+            <FooterGroup title={lang === 'fr' ? "Savoir" : lang === 'de' ? "Wissen" : "Knowledge"}>
+              <FooterLink label={lang === 'fr' ? "L'Herbier" : lang === 'de' ? "Herbarium" : "Herbarium"} onClick={() => onNavigate('herbarium')} />
+              <FooterLink label={lang === 'fr' ? "Guide de l'Extraction" : lang === 'de' ? "Extraktions-Guide" : "Extraction Guide"} onClick={() => onNavigate('pillar-extraction')} />
+              <FooterLink label={lang === 'fr' ? "L'Infusion Botanique" : lang === 'de' ? "Botanische Infusion" : "Botanical Infusion"} onClick={() => onNavigate('guide')} />
+              <FooterLink label={lang === 'fr' ? "Le Manifeste" : lang === 'de' ? "Das Manifest" : "The Manifesto"} onClick={() => onNavigate('manifesto')} />
+              <FooterLink label={lang === 'fr' ? "Journal Botanique" : lang === 'de' ? "Botanisches Journal" : "Botanical Journal"} onClick={() => onNavigate('blog')} />
               <FooterLink label="FAQ" onClick={() => onNavigate('chat')} />
             </FooterGroup>
 
             <FooterGroup title="Newsletter">
-              <FooterLink label={lang === 'fr' ? 'S\'abonner' : 'Subscribe'} onClick={() => {
+              <FooterLink label={lang === 'fr' ? 'S\'abonner' : lang === 'de' ? 'Abonnieren' : 'Subscribe'} onClick={() => {
                 const el = document.getElementById('newsletter');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }} />
-              <FooterLink label={lang === 'fr' ? 'Préférences' : 'Preferences'} onClick={() => onNavigate('newsletter-preferences')} />
+              <FooterLink label={lang === 'fr' ? 'Préférences' : lang === 'de' ? 'Einstellungen' : 'Preferences'} onClick={() => onNavigate('newsletter-preferences')} />
             </FooterGroup>
 
-            <FooterGroup title="Légal">
-              <FooterLink label="Mentions Légales" onClick={() => onNavigate('legal', undefined, 'mentions')} />
-              <FooterLink label="CGV / CGU" onClick={() => onNavigate('legal', undefined, 'cgv')} />
-              <FooterLink label="Confidentialité" onClick={() => onNavigate('legal', undefined, 'privacy')} />
+            <FooterGroup title={lang === 'fr' ? "Légal" : lang === 'de' ? "Rechtliches" : "Legal"}>
+              <FooterLink label={lang === 'fr' ? "Mentions Légales" : lang === 'de' ? "Impressum" : "Legal Mentions"} onClick={() => onNavigate('legal', undefined, 'mentions')} />
+              <FooterLink label={lang === 'fr' ? "CGV / CGU" : "T&C / TOS"} onClick={() => onNavigate('legal', undefined, 'cgv')} />
+              <FooterLink label={lang === 'fr' ? "Confidentialité" : lang === 'de' ? "Datenschutz" : "Privacy"} onClick={() => onNavigate('legal', undefined, 'privacy')} />
               <FooterLink 
                 label={lang === 'fr' ? "Gestion des cookies" : lang === 'en' ? "Manage cookies" : "Cookie-Einstellungen"} 
                 onClick={() => window.dispatchEvent(new CustomEvent('bloom-open-cookies'))} 
@@ -133,11 +136,16 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-[10px] uppercase tracking-[0.15em] text-white/20">
             <span>© 2024 Bloom by BotaniK</span>
             <span className="hidden md:inline">•</span>
-            <span>N°1 de l'extraction botanique de précision</span>
+            <span>{lang === 'fr' ? "N°1 de l'extraction botanique de précision" : "N°1 in precision botanical extraction"}</span>
           </div>
           
           <div className="text-[10px] text-white/30 text-center md:text-right leading-relaxed max-w-sm">
-            Dispositif d'extraction végétale à usage personnel. Ceci n'est pas un dispositif médical. Consultez toujours un professionnel de santé.
+            {lang === 'fr' 
+              ? "Dispositif d'extraction végétale à usage personnel. Ceci n'est pas un dispositif médical. Consultez toujours un professionnel de santé."
+              : lang === 'de'
+              ? "Pflanzenextraktionsgerät für den persönlichen Gebrauch. Dies ist kein medizinisches Gerät. Konsultieren Sie immer eine medizinische Fachkraft."
+              : "Plant extraction device for personal use. This is not a medical device. Always consult a healthcare professional."
+            }
           </div>
         </div>
       </div>
