@@ -7,9 +7,10 @@ import { motion, AnimatePresence } from 'motion/react';
 interface RecipesContentProps {
   onBack: () => void;
   lang: Language;
+  t: any;
 }
 
-export default function RecipesContent({ onBack, lang }: RecipesContentProps) {
+export default function RecipesContent({ onBack, lang, t }: RecipesContentProps) {
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
@@ -35,10 +36,10 @@ export default function RecipesContent({ onBack, lang }: RecipesContentProps) {
             Retour
           </button>
           <h1 className="text-4xl md:text-6xl font-bold text-botanik-green mb-4">
-            Espace <span className="text-botanik-orange">Découverte</span>
+            {t.seo.recettes.h1}
           </h1>
           <p className="text-xl text-botanik-green/60 font-light max-w-2xl">
-            Vos 10 recettes fondamentales pour maîtriser votre BloomLab® et commencer votre voyage vers la souveraineté sanitaire.
+            {t.seo.recettes.intro}
           </p>
         </div>
 

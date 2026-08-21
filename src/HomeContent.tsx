@@ -57,28 +57,9 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
   const bloomLabPrice = isPromoActive ? 239.00 : 289.00;
   const bundlePrice = 59.00;
 
-  const isFR = lang === 'fr';
-
-  // Home Page SEO Schema
-  const homeSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": isFR ? "Bloom by BotaniK | Extracteur Botanique & Infuseur de Précision N°1" : "Bloom by BotaniK | Precision Botanical Extractor & Infuser N°1",
-    "description": "Optimisez vos remèdes de plantes avec BloomLab®, l'extracteur botanique de précision N°1 en France. Extraction du totum, macération et précision thermique ±0,5°C.",
-    "specialAnnouncement": {
-      "@type": "SpecialAnnouncement",
-      "name": "Offres BloomLab® 2026",
-      "text": "Souveraineté sanitaire : Économisez sur l'extracteur botanique BloomLab® et réalisez vos propres remèdes naturels maison.",
-      "url": "https://bloombybotanik.com/shop"
-    }
-  };
-
   return (
     <div className="max-w-[1200px] mx-auto px-6 py-12 lg:py-24 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-      {/* SEO Injection */}
-      <script type="application/ld+json">
-        {JSON.stringify(homeSchema)}
-      </script>
+      {/* SEO Injection handled by SEOMetadata */}
       
       <AnimatePresence>
         {selectedResetDetail && (
@@ -110,12 +91,10 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
                   {lang === 'fr' ? "N°1 FRANCE — EXTRACTION BOTANIQUE DE PRÉCISION" : "N°1 FRANCE — PRECISION BOTANICAL EXTRACTION"}
                 </span>
                 <h1 className="text-3xl md:text-5xl font-extrabold text-botanik-green mb-4 leading-[1.05] tracking-tight">
-                  {lang === 'fr' ? "L'extracteur botanique qui révèle le totum de vos plantes" : "The botanical extractor that reveals the totum of your plants"}
+                  {(t.seo.home as any).h1}
                 </h1>
                 <p className="text-lg text-botanik-green/70 mb-8 font-light leading-relaxed">
-                  {lang === 'fr' 
-                    ? "Faites fleurir votre santé avec BloomLab®, l'extracteur de précision qui transforme vos plantes en soins naturels puissants. Sérums, baumes et infusions : le Totum végétal enfin accessible." 
-                    : "Make your health bloom with BloomLab®, the precision extractor that transforms your plants into powerful natural care. Serums, balms, and infusions: the plant Totum finally accessible."}
+                  {(t.seo.home as any).intro}
                 </p>
                 <div className="flex items-center gap-4">
                   <button 

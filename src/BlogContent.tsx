@@ -15,6 +15,8 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
     }
   }, [initialSlug]);
 
+  const t = translations[lang];
+
   if (selectedPost) {
     return (
       <div className="max-w-4xl mx-auto px-6 py-24 animate-in fade-in slide-in-from-bottom-4 duration-700">
@@ -81,14 +83,10 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
     <div className="max-w-7xl mx-auto px-6 py-24 animate-in fade-in duration-700">
       <div className="text-center mb-24">
         <h1 className="text-4xl md:text-7xl font-bold text-botanik-green mb-8">
-          {lang === 'fr' ? 'Journal Botanique' : lang === 'en' ? 'Botanical Journal' : 'Botanisches Journal'}
+          {(t.seo.blog as any).h1}
         </h1>
         <p className="text-xl text-botanik-green/60 max-w-2xl mx-auto leading-relaxed">
-          {lang === 'fr'
-            ? "Exploration scientifique, tutoriels et réflexions sur le travail du terrain et l'extraction botanique de précision."
-            : lang === 'en'
-            ? "Scientific exploration, tutorials, and reflections on field work and precision botanical extraction."
-            : "Wissenschaftliche Erkundung, Tutorials und Reflexionen über die Feldarbeit und die botanische Präzisionsextraktion."}
+          {(t.seo.blog as any).intro}
         </p>
       </div>
 

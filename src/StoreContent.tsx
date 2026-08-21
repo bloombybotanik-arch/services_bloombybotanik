@@ -223,10 +223,7 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
 
   return (
     <div className="animate-in slide-in-from-right duration-500 pb-20">
-      {/* SEO Injection */}
-      <script type="application/ld+json">
-        {JSON.stringify(seoSchema)}
-      </script>
+      {/* SEO Injection handled by SEOMetadata */}
 
       {/* Promotional Banner */}
       <div className="bg-botanik-orange text-white text-center py-2 px-4 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] animate-pulse">
