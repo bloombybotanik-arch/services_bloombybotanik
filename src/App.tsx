@@ -4,7 +4,7 @@
  */
 
 import { useEffect, useState, lazy, Suspense, ReactNode } from 'react';
-import { Lock, ShoppingBag, BookOpen, FlaskConical, Menu, X, ChevronRight, Leaf, ShieldCheck, SearchCheck, Award, Star, User, Check, ArrowRight, ChefHat, Instagram, Youtube, Facebook, Pin as Pinterest, Music2 as TikTok, MessageSquare, Sparkles, Wind, Waves, Moon, Utensils, Activity, Globe, Settings, Droplets, MessageCircle, ShoppingCart, Home, FileText } from 'lucide-react';
+import { Lock, ShoppingBag, BookOpen, FlaskConical, Menu, X, ChevronRight, Leaf, ShieldCheck, SearchCheck, Award, Star, User, Check, ArrowRight, ChefHat, Instagram, Youtube, Facebook, Pin as Pinterest, Music2 as TikTok, MessageSquare, Sparkles, Wind, Waves, Moon, Utensils, Activity, Globe, Settings, Droplets, MessageCircle, ShoppingCart, Home, FileText, Newspaper } from 'lucide-react';
 import { translations, Language } from './translations';
 import { getProducts } from './StoreContent';
 import Footer from './components/Footer';
@@ -21,6 +21,8 @@ import { OptimizedImage } from './components/OptimizedImage';
 import { CookieBanner } from './components/CookieBanner';
 import { FloatingChat } from './components/FloatingChat';
 import { LanguageSelector } from './components/LanguageSelector';
+import { blogPosts } from './data/blogPosts';
+import { discoveryRecipes } from './data/recipesData';
 
 const HomeContent = lazy(() => import('./HomeContent'));
 const HerbariumContent = lazy(() => import('./HerbariumContent'));
@@ -71,7 +73,10 @@ const VIEW_PATHS: Record<string, string> = {
   'qu-est-ce-que-infusion': '/qu-est-ce-que-l-infusion-botanique',
   admin: '/admin', blog: '/blog', withdrawal: '/droit-de-retractation', indexbis: '/indexbis',
   'newsletter-preferences': '/newsletter/preferences',
-  'admin-newsletter': '/admin/newsletter'
+  'admin-newsletter': '/admin/newsletter',
+  'recettes': '/recettes',
+  'guides': '/guides',
+  'questions-frequentes': '/questions-frequentes'
 };
 
 const PATH_VIEWS: Record<string, string> = Object.fromEntries(
@@ -88,10 +93,10 @@ const generateSeoAlt = (imageContext: string, t: any) => {
 };
 
 // JSON-LD & Dynamic SEO Metadata Injection Component
-const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, currentView: string, t: any, productId?: string }) => {
+const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: Language, currentView: string, t: any, productId?: string, blogPostSlug?: string }) => {
   useEffect(() => {
     // 1. Handle dynamic Title & Meta Description
-    let seoKey: 'home' | 'herbarium' | 'shop' | 'blog' | 'pillar' | 'extraction' | 'infusion' | 'machine' | 'manifesto' | 'how_it_works' | 'reset' = 'home';
+    let seoKey: 'home' | 'herbarium' | 'shop' | 'blog' | 'pillar' | 'extraction' | 'infusion' | 'machine' | 'manifesto' | 'how_it_works' | 'reset' | 'recettes' | 'faq' = 'home';
     
     if (['herbier', 'culinaire', 'cosmetiques'].includes(currentView)) {
       seoKey = 'herbarium';
@@ -100,10 +105,10 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
     } else if (currentView === 'pillar-extraction' || currentView === 'guide-complet') {
       seoKey = 'pillar';
     } else if (currentView === 'guide') {
-      seoKey = 'extraction';
+      seoKey = 'infusion';
     } else if (currentView === 'how_it_works' || currentView === 'qu-est-ce-que-infusion') {
       seoKey = 'how_it_works';
-    } else if (currentView === 'blog' || currentView === 'library-landing' || currentView === 'library') {
+    } else if (currentView === 'blog' || currentView === 'library-landing' || currentView === 'library' || currentView === 'guides') {
       seoKey = 'blog';
     } else if (currentView === 'machine' || currentView === 'indexbis') {
       seoKey = 'machine';
@@ -111,6 +116,10 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
       seoKey = 'manifesto';
     } else if (currentView === 'phytotherapie-reset') {
       seoKey = 'reset';
+    } else if (currentView === 'recettes') {
+      seoKey = 'recettes';
+    } else if (currentView === 'questions-frequentes') {
+      seoKey = 'faq';
     }
 
     const currentSeo = t.seo[seoKey];
@@ -409,6 +418,45 @@ const SEOMetadata = ({ lang, currentView, t, productId }: { lang: Language, curr
       });
     }
 
+    if (currentView === 'blog' && blogPostSlug) {
+      const post = blogPosts.find(p => p.slug === blogPostSlug);
+      if (post) {
+        graph.push({
+          "@type": "Article",
+          "@id": `${pageUrl}/#article`,
+          "headline": post.title[lang],
+          "description": post.content[lang].substring(0, 160).replace(/<[^>]*>/g, ''),
+          "image": post.image ? `https://bloombybotanik.com${post.image}` : undefined,
+          "datePublished": post.date,
+          "author": { "@type": "Person", "name": post.author },
+          "publisher": { "@id": "https://bloombybotanik.com/#organization" },
+          "mainEntityOfPage": { "@id": pageUrl }
+        });
+      }
+    }
+
+    if (currentView === 'recettes') {
+      discoveryRecipes.forEach(recipe => {
+        graph.push({
+          "@type": "Recipe",
+          "@id": `${pageUrl}/${recipe.id}/#recipe`,
+          "name": recipe.title,
+          "description": recipe.description,
+          "author": { "@type": "Organization", "name": "Bloom by BotaniK" },
+          "recipeCategory": recipe.category,
+          "prepTime": "PT15M",
+          "cookTime": "PT30M",
+          "totalTime": "PT45M",
+          "recipeYield": "1 préparation",
+          "recipeIngredient": recipe.ingredients,
+          "recipeInstructions": recipe.instructions.map((step: string) => ({
+            "@type": "HowToStep",
+            "text": step
+          }))
+        });
+      });
+    }
+
     const jsonLd = {
       "@context": "https://schema.org",
       "@graph": graph
@@ -599,17 +647,26 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
             id="herbarium" 
             label={t.nav.herbarium} 
             icon={BookOpen} 
-            isActive={currentView === 'herbarium'}
+            isActive={currentView === 'herbarium' || currentView === 'herbier'}
           />
-          <a 
-            href="https://blog.bloombybotanik.com/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="w-full flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all text-left group text-white/60 hover:text-white hover:bg-white/5 text-sm font-bold"
-          >
-            <SearchCheck className="w-4 h-4 shrink-0 transition-colors group-hover:text-botanik-orange" />
-            <span className="truncate">{lang === 'fr' ? 'Journal Botanique' : 'Botanical Journal'}</span>
-          </a>
+          <NavItem 
+            id="recettes" 
+            label={lang === 'fr' ? 'Recettes' : 'Recipes'} 
+            icon={ChefHat} 
+            isActive={currentView === 'recettes'}
+          />
+          <NavItem 
+            id="blog" 
+            label={t.nav.blog} 
+            icon={Newspaper} 
+            isActive={currentView === 'blog'}
+          />
+          <NavItem 
+            id="questions-frequentes" 
+            label="FAQ" 
+            icon={MessageCircle} 
+            isActive={currentView === 'questions-frequentes'}
+          />
           <NavItem 
             id="manifeste" 
             label={t.nav.manifesto} 
@@ -1214,7 +1271,9 @@ export default function App() {
           lang={lang}
         />
       );
-      case 'recipes': return <RecipesContent onBack={() => navigateTo('home')} lang={lang} />;
+      case 'recettes': return <RecipesContent onBack={() => navigateTo('home')} lang={lang} t={t} />;
+      case 'guides': return <BlogContent lang={lang} onNavigate={navigateTo} initialSlug={blogPostSlug} />;
+      case 'questions-frequentes': return <HomeContent onNavigate={navigateTo} lang={lang} scrollToId="faq" />;
       case 'chat': return (
         <ChatContent 
           isPremium={isPremium} 
@@ -1302,8 +1361,6 @@ export default function App() {
 
   return (
     <div className="flex relative min-h-screen bg-[#F9F9F7]">
-        <SEOMetadata lang={lang} currentView={currentView} t={t} productId={currentProductId} />
-      
       <AuthModal 
         isOpen={showAuthModal} 
         onClose={() => setShowAuthModal(false)} 
@@ -1324,6 +1381,8 @@ export default function App() {
 
       <CookieBanner lang={lang} />
       {currentView !== 'chat' && <FloatingChat user={user} lang={lang} />}
+      
+      <SEOMetadata lang={lang} currentView={currentView} t={t} productId={currentProductId} blogPostSlug={blogPostSlug} />
       
       {/* Desktop Sidebar */}
       <NavigationSidebar 
