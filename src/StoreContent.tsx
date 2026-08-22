@@ -34,12 +34,12 @@ export const getProducts = (lang: Language) => {
       subtitle: t.bloomlab.subtitle,
       price: bloomLabPrice,
       originalPrice: bloomLabOriginal,
-      image: bloomLabImg,
+      image: "/products/bloomlab.jpg",
       rating: 4.9,
       reviews: 128,
       description: t.bloomlab.description,
       bullets: t.bloomlab.bullets,
-      tags: ['Best-Seller', 'Inox 304', 'Souveraineté', ...seoTags],
+      tags: ['Best-Seller', 'Inox 304', 'Souveraineté'],
       featured: true
     },
     {
@@ -48,11 +48,11 @@ export const getProducts = (lang: Language) => {
       subtitle: t.bundle_apothicaire.subtitle,
       price: 59.00,
       originalPrice: 87.50,
-      image: trioPouchesImg,
+      image: "/products/trio-pouches.jpg",
       rating: 5.0,
       reviews: 64,
       description: t.bundle_apothicaire.description,
-      tags: ['Offre Limitée', 'Rentrée 2026', 'Best-Value', ...seoTags.slice(0, 4)],
+      tags: ['Offre Limitée', 'Rentrée 2026', 'Best-Value'],
       isBundle: true
     },
     {
@@ -61,7 +61,7 @@ export const getProducts = (lang: Language) => {
       subtitle: t.pack_signature.subtitle,
       price: 289.00,
       oldPriceStrike: 389.00,
-      image: bloomLabImg,
+      image: "/products/bloomlab.jpg",
       rating: 5.0,
       reviews: 42,
       description: t.pack_signature.description,
@@ -73,7 +73,7 @@ export const getProducts = (lang: Language) => {
       name: t.kit_starter.name,
       subtitle: t.kit_starter.subtitle,
       price: 12.90,
-      image: seveFondamentaleImg,
+      image: "/products/seve-fondamentale.jpg",
       rating: 4.8,
       reviews: 56,
       description: t.kit_starter.description,
@@ -84,7 +84,7 @@ export const getProducts = (lang: Language) => {
       name: t.kit_nuit.name,
       subtitle: t.kit_nuit.subtitle,
       price: 9.90,
-      image: nuitProfondeImg,
+      image: "/products/nuit-profonde.jpg",
       rating: 4.9,
       reviews: 42,
       description: t.kit_nuit.description,
@@ -95,7 +95,7 @@ export const getProducts = (lang: Language) => {
       name: t.kit_digestion.name,
       subtitle: t.kit_digestion.subtitle,
       price: 9.90,
-      image: digestionImg,
+      image: "/products/digestion.jpg",
       rating: 4.7,
       reviews: 35,
       description: t.kit_digestion.description,
@@ -106,7 +106,7 @@ export const getProducts = (lang: Language) => {
       name: t.kit_articulaire.name,
       subtitle: t.kit_articulaire.subtitle,
       price: 9.90,
-      image: feuArticulaireImg,
+      image: "/products/feu-articulaire.jpg",
       rating: 4.8,
       reviews: 28,
       description: t.kit_articulaire.description,
@@ -117,7 +117,7 @@ export const getProducts = (lang: Language) => {
       name: t.kit_hiver.name,
       subtitle: t.kit_hiver.subtitle,
       price: 9.90,
-      image: bouclierHiverImg,
+      image: "/products/bouclier-hiver.jpg",
       rating: 4.8,
       reviews: 32,
       description: t.kit_hiver.description,
@@ -129,7 +129,7 @@ export const getProducts = (lang: Language) => {
       subtitle: t.kit_reset.subtitle,
       price: 44.90,
       originalPrice: 49.00,
-      image: duoArgilesImg,
+      image: "/products/duo-argiles.jpg",
       rating: 4.9,
       reviews: 31,
       description: t.kit_reset.description,
@@ -192,38 +192,52 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
     product.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
   );
 
-  // SEO JSON-LD for the 2026 Offer
-  const seoSchema = {
-    "@context": "https://schema.org/",
-    "@type": "Product",
-    "name": isFR ? "BloomLab® - Extracteur Botanique & Infuseur de précision" : "BloomLab® - Precision Botanical Extractor & Infuser",
-    "description": isFR 
-      ? "L'infuseur botanique N°1 en France pour réaliser vos tisanes, remèdes naturels de grand mère et extractions de plantes médicinales. Récupérez le Totum de vos plantes à basse température."
-      : translations[lang].seo.shop.description,
-    "brand": {
-      "@type": "Brand",
-      "name": "Bloom by BotaniK"
-    },
-    "keywords": translations[lang].seo.keywords || "",
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "EUR",
-      "price": "239.00",
-      "availability": "https://schema.org/InStock",
-      "validFrom": "2026-08-15",
-      "url": isFR ? "https://bloombybotanik.com/boutique" : `https://bloombybotanik.com/${lang}/shop`,
-      "category": isFR ? "Phytothérapie & Soins Naturels" : "Phytotherapy & Natural Care"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "156"
+  // Schema.org Logic
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": isFR ? "Accueil" : "Home",
+        "item": "https://bloombybotanik.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": isFR ? "Boutique" : "Shop",
+        "item": "https://bloombybotanik.com/boutique"
+      }
+    ]
+  };
+
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": t.header.title,
+    "description": t.header.subtitle,
+    "url": "https://bloombybotanik.com/boutique",
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": filteredProducts.length,
+      "itemListElement": filteredProducts.map((p, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "url": `https://bloombybotanik.com/boutique/${p.id}`,
+        "name": p.name
+      }))
     }
   };
 
   return (
     <div className="animate-in slide-in-from-right duration-500 pb-20">
-      {/* SEO Injection handled by SEOMetadata */}
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbSchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(collectionSchema)}
+      </script>
 
       {/* Promotional Banner */}
       <div className="bg-botanik-orange text-white text-center py-2 px-4 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] animate-pulse">
@@ -234,8 +248,23 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
       
       {/* Search & Filter Header (App Style) */}
       <div className="bg-white px-4 md:px-6 pt-6 md:pt-8 pb-4">
-        <h1 className="text-2xl md:text-3xl font-bold text-botanik-green mb-1 md:mb-2">{t.header.title}</h1>
-        <p className="text-[10px] md:text-sm text-botanik-green/40 font-medium uppercase tracking-widest mb-4 md:mb-6">{t.header.subtitle}</p>
+        <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-botanik-green/40 mb-4">
+          <button onClick={() => window.location.href='/'} className="hover:text-botanik-orange transition-colors">
+            {isFR ? "Accueil" : "Home"}
+          </button>
+          <span>/</span>
+          <span className="text-botanik-green/60">{isFR ? "Boutique" : "Shop"}</span>
+        </div>
+
+        <h1 className="text-2xl md:text-4xl font-bold text-botanik-green mb-2">{t.header.title}</h1>
+        <div className="max-w-2xl mb-6">
+          <p className="text-sm md:text-base text-botanik-green/60 font-light leading-relaxed">
+            {isFR 
+              ? "Découvrez l'univers Bloom by BotaniK : de l'extracteur botanique BloomLab aux mélanges de plantes médicinales rigoureusement sélectionnés. Notre boutique vous offre toutes les clés pour réaliser vos propres remèdes naturels, huiles infusées et rituels de soin avec une précision laboratoire. Chaque produit est conçu pour soutenir votre souveraineté sanitaire et libérer le plein potentiel du Totum végétal."
+              : "Discover the Bloom by BotaniK universe: from the BloomLab botanical extractor to rigorously selected medicinal plant blends. Our shop offers all the keys to create your own natural remedies, infused oils, and care rituals with laboratory precision."
+            }
+          </p>
+        </div>
         
         <div className="relative mb-4 md:mb-6">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 md:w-5 h-4 md:h-5 text-botanik-green/30" />

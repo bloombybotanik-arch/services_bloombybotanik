@@ -1,8 +1,9 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
-import { Sparkles, Leaf, ShieldCheck, Award, User, ChevronRight, FlaskConical, BookOpen, ShoppingBag, ChefHat, Star, Wind, Waves, Moon, Utensils, X, ArrowRight, Activity } from 'lucide-react';
+import { Sparkles, Leaf, ShieldCheck, Award, User, ChevronRight, FlaskConical, BookOpen, ShoppingBag, ChefHat, Star, Wind, Waves, Moon, Utensils, X, ArrowRight, Activity, Settings } from 'lucide-react';
 import bloomImg from './assets/images/bloomlab_main_1784887530345.jpeg';
 import { resetDetailsData, ResetSectionDetail } from './data/resetDetails';
 import { motion, AnimatePresence } from 'motion/react';
+import { VIEW_PATHS } from './App';
 
 import img1 from './assets/images/Gemini_Generated_Image_r0bctrr0bctrr0bc.png';
 import img2 from './assets/images/family_care_cleaned_1786616776823.jpg';
@@ -50,6 +51,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
   }, []);
 
   const t = translations[lang];
+  const isFR = lang === 'fr';
 
   // Promotion Logic (Aug 2026 -> Jan 2027)
   const now = new Date();
@@ -73,6 +75,26 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
           </Suspense>
         )}
       </AnimatePresence>
+
+      {/* VISIBLE INTRODUCTION - BRAND IDENTITY */}
+      <section className="mb-24 md:mb-32 text-center max-w-4xl mx-auto px-4">
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-botanik-green/5 rounded-full mb-8 border border-botanik-green/10">
+          <Sparkles className="w-4 h-4 text-botanik-orange" />
+          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-botanik-green/60">
+            {isFR ? "L'Expertise de l'Infusion" : "The Expertise of Infusion"}
+          </span>
+        </div>
+        <h2 className="text-3xl md:text-5xl font-extrabold text-botanik-green mb-8 leading-tight tracking-tight">
+          {isFR ? "Faire fleurir toutes vos envies de bien-être végétal." : "Let all your plant wellness desires bloom."}
+        </h2>
+        <div className="h-px w-24 bg-botanik-orange/20 mx-auto mb-10" />
+        <p className="text-lg md:text-xl text-botanik-green/80 font-light leading-relaxed max-w-2xl mx-auto">
+          {isFR 
+            ? "Bienvenue dans l'ère de la phytothérapie de précision. Bloom by BotaniK est la référence de l'infusion et de l'extraction botanique à domicile, alliant sagesses anciennes et technologie moderne pour votre souveraineté sanitaire."
+            : "Welcome to the era of precision phytotherapy. Bloom by BotaniK is the reference for home infusion and botanical extraction, combining ancient wisdom and modern technology for your health sovereignty."
+          }
+        </p>
+      </section>
 
       {/* OFFRES DE LA RENTRÉE 2026 */}
       <section className="mb-24 md:mb-32">
@@ -275,73 +297,110 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
         </div>
       </section>
 
-      {/* UNIVERSES SECTION - NEW Transactional Hub */}
+      {/* UNIVERSES SECTION - Improved for Sitelink Optimization */}
       <section className="mb-24 md:mb-32">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6">{t.universes.title}</h2>
-          <p className="text-lg text-botanik-green/60 font-light">{t.universes.subtitle_part1}</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6">
+            {isFR ? "Explorez l'Univers Bloom" : "Explore the Bloom Universe"}
+          </h2>
+          <p className="text-lg text-botanik-green/60 font-light leading-relaxed">
+            {isFR 
+              ? "De l'instrument de précision aux rituels de soins quotidiens, découvrez les piliers de la souveraineté sanitaire Bloom by BotaniK."
+              : "From precision instruments to daily care rituals, discover the pillars of Bloom by BotaniK health sovereignty."}
+          </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* CULINARY */}
-          <div className="group relative bg-[#FFF9F2] rounded-[40px] p-8 border border-orange-100 hover:border-botanik-orange transition-all duration-500 overflow-hidden">
-            <div className="absolute -right-4 -top-4 w-24 h-24 bg-botanik-orange/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-            <div className="relative z-10">
-              <div className="w-14 h-14 bg-botanik-orange/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
-                <ChefHat className="w-7 h-7 text-botanik-orange" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            {
+              id: 'machine',
+              title: isFR ? "BloomLab®" : "BloomLab®",
+              desc: isFR ? "L'instrument de précision pour libérer 98% du Totum de vos plantes." : "The precision instrument to release 98% of your plants' Totum.",
+              cta: isFR ? "Découvrir BloomLab" : "Discover BloomLab",
+              icon: Settings,
+              image: bloomImg,
+              color: "bg-[#F7FBF7]"
+            },
+            {
+              id: 'boutique',
+              title: isFR ? "Boutique" : "Shop",
+              desc: isFR ? "Préparations botaniques, mélanges de plantes et kits de rentrée 2026." : "Botanical preparations, plant blends, and 2026 back-to-school kits.",
+              cta: isFR ? "Découvrir les produits" : "Discover products",
+              icon: ShoppingBag,
+              image: trioImg,
+              color: "bg-[#FFF9F2]"
+            },
+            {
+              id: 'cosmetiques',
+              title: isFR ? "Duo Argiles" : "Clay Duo",
+              desc: isFR ? "Le rituel minéral de détoxification et de reset profond du terrain." : "The mineral ritual for detoxification and deep terrain reset.",
+              cta: isFR ? "Découvrir le rituel" : "Discover the ritual",
+              icon: Sparkles,
+              image: resetImg,
+              color: "bg-[#F1F5F1]"
+            },
+            {
+              id: 'recettes',
+              title: isFR ? "Recettes" : "Recipes",
+              desc: isFR ? "Explorez nos fiches de précision pour vos miels, huiles et remèdes." : "Explore our precision sheets for your honeys, oils, and remedies.",
+              cta: isFR ? "Explorer les recettes" : "Explore recipes",
+              icon: ChefHat,
+              image: img1,
+              color: "bg-[#F9F9F7]"
+            },
+            {
+              id: 'guide',
+              title: isFR ? "L'Infusion" : "Infusion",
+              desc: isFR ? "Comprendre la science de l'extraction et maîtriser l'infusion botanique." : "Understand the science of extraction and master botanical infusion.",
+              cta: isFR ? "Comprendre l'infusion" : "Understand infusion",
+              icon: Activity,
+              image: img9,
+              color: "bg-[#F7FBF7]"
+            },
+            {
+              id: 'herbier',
+              title: isFR ? "L'Herbier" : "Herbarium",
+              desc: isFR ? "Guide rigoureux des plantes médicinales et de leurs usages documentés." : "Rigorous guide to medicinal plants and their documented uses.",
+              cta: isFR ? "Découvrir l'Herbier" : "Discover the Herbarium",
+              icon: BookOpen,
+              image: img4,
+              color: "bg-[#FFF9F2]"
+            }
+          ].map((pillar) => (
+            <div 
+              key={pillar.id}
+              className={`group relative ${pillar.color} rounded-[40px] p-8 border border-botanik-green/5 hover:border-botanik-green transition-all duration-500 overflow-hidden flex flex-col h-full`}
+            >
+              <div className="relative h-48 mb-8 rounded-3xl overflow-hidden shadow-sm">
+                <OptimizedImage 
+                  src={pillar.image} 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                  alt={pillar.title} 
+                />
+                <div className="absolute top-4 left-4">
+                  <div className="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg">
+                    <pillar.icon className="w-5 h-5 text-botanik-green" />
+                  </div>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-botanik-green mb-4">{t.universes.tabs.culinaire}</h3>
-              <p className="text-botanik-green/60 mb-8 font-light leading-relaxed">
-                {t.universes.descriptions.culinaire}
+              
+              <h3 className="text-2xl font-bold text-botanik-green mb-4">{pillar.title}</h3>
+              <p className="text-botanik-green/60 mb-8 font-light leading-relaxed flex-grow">
+                {pillar.desc}
               </p>
-              <button 
-                onClick={() => onNavigate('culinaire')}
-                className="w-full py-4 bg-botanik-orange text-white rounded-2xl font-bold hover:bg-botanik-green transition-all shadow-lg shadow-botanik-orange/10 flex items-center justify-center gap-2"
+              
+              <a 
+                href={VIEW_PATHS[pillar.id] || '#'}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate(pillar.id as any);
+                }}
+                className="w-full py-4 bg-botanik-green text-white rounded-2xl font-bold hover:bg-botanik-orange transition-all shadow-lg shadow-botanik-green/10 flex items-center justify-center gap-2 group/btn"
               >
-                {t.common.discover} <ArrowRight className="w-4 h-4" />
-              </button>
+                {pillar.cta} <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+              </a>
             </div>
-          </div>
-
-          {/* COSMETICS */}
-          <div className="group relative bg-[#F7FBF7] rounded-[40px] p-8 border border-green-100 hover:border-botanik-green transition-all duration-500 overflow-hidden">
-            <div className="absolute -right-4 -top-4 w-24 h-24 bg-botanik-green/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-            <div className="relative z-10">
-              <div className="w-14 h-14 bg-botanik-green/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
-                <Star className="w-7 h-7 text-botanik-green" />
-              </div>
-              <h3 className="text-2xl font-bold text-botanik-green mb-4">{t.universes.tabs.cosmetique}</h3>
-              <p className="text-botanik-green/60 mb-8 font-light leading-relaxed">
-                {t.universes.descriptions.cosmetique}
-              </p>
-              <button 
-                onClick={() => onNavigate('cosmetiques')}
-                className="w-full py-4 bg-botanik-green text-white rounded-2xl font-bold hover:bg-botanik-orange transition-all shadow-lg shadow-botanik-green/10 flex items-center justify-center gap-2"
-              >
-                {t.common.discover} <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-
-          {/* RESET */}
-          <div className="group relative bg-[#F1F5F1] rounded-[40px] p-8 border border-botanik-green/10 hover:border-botanik-green transition-all duration-500 overflow-hidden">
-            <div className="absolute -right-4 -top-4 w-24 h-24 bg-botanik-green/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-            <div className="relative z-10">
-              <div className="w-14 h-14 bg-botanik-green/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
-                <Activity className="w-7 h-7 text-botanik-green" />
-              </div>
-              <h3 className="text-2xl font-bold text-botanik-green mb-4">{t.universes.tabs.phytotherapie}</h3>
-              <p className="text-botanik-green/60 mb-8 font-light leading-relaxed">
-                {t.universes.descriptions.phytotherapie}
-              </p>
-              <button 
-                onClick={() => onNavigate('phytotherapie-reset')}
-                className="w-full py-4 border-2 border-botanik-green text-botanik-green rounded-2xl font-bold hover:bg-botanik-green hover:text-white transition-all flex items-center justify-center gap-2"
-              >
-                {t.common.discover} <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 

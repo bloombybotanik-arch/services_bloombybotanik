@@ -2,6 +2,7 @@ import React from 'react';
 import { Youtube, Instagram, Facebook, Pin as Pinterest, Music2 as TikTok } from 'lucide-react';
 import logoSidebar from '../assets/images/logo_sidebar_1784886108085.png';
 import { Language, translations } from '../translations';
+import { VIEW_PATHS } from '../App';
 
 const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId?: string, type?: any) => void, lang?: Language }) => {
   const t = translations[lang];
@@ -31,14 +32,18 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
     </div>
   );
 
-  const FooterLink = ({ onClick, label }: { onClick: () => void, label: string }) => (
+  const FooterLink = ({ onClick, label, id }: { onClick: () => void, label: string, id?: string }) => (
     <li>
-      <button 
-        onClick={onClick}
+      <a 
+        href={id ? VIEW_PATHS[id as keyof typeof VIEW_PATHS] || '#' : '#'}
+        onClick={(e) => {
+          e.preventDefault();
+          onClick();
+        }}
         className="text-sm text-white/60 hover:text-botanik-orange transition-colors text-left"
       >
         {label}
-      </button>
+      </a>
     </li>
   );
 
@@ -91,39 +96,35 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
 
           {/* Column 2: Navigation Groups */}
           <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-8">
-            <FooterGroup title={lang === 'fr' ? "Boutique" : lang === 'de' ? "Shop" : "Shop"}>
-              <FooterLink label={lang === 'fr' ? "Tous les produits" : lang === 'de' ? "Alle Produkte" : "All products"} onClick={() => onNavigate('boutique')} />
-              <FooterLink label="BloomLab®" onClick={() => onNavigate('machine')} />
-              <FooterLink label={lang === 'fr' ? "Atelier Culinaire" : lang === 'de' ? "Kulinarik" : "Culinary"} onClick={() => onNavigate('culinaire')} />
-              <FooterLink label={lang === 'fr' ? "Soin Cosmétique" : lang === 'de' ? "Kosmetik" : "Cosmetics"} onClick={() => onNavigate('cosmetiques')} />
-              <FooterLink label={lang === 'fr' ? "Reset Homéostasique" : lang === 'de' ? "Homeostase-Reset" : "Homeostatic Reset"} onClick={() => onNavigate('phytotherapie-reset')} />
+            <FooterGroup title={lang === 'fr' ? "Boutique" : "Shop"}>
+              <FooterLink id="boutique" label={lang === 'fr' ? "Tous les produits" : "All products"} onClick={() => onNavigate('boutique')} />
+              <FooterLink id="machine" label="BloomLab®" onClick={() => onNavigate('machine')} />
+              <FooterLink id="cosmetiques" label={lang === 'fr' ? "Duo Argiles" : "Clay Duo"} onClick={() => onNavigate('cosmetiques')} />
+              <FooterLink id="phytotherapie-reset" label={lang === 'fr' ? "Reset Homéostasique" : "Homeostatic Reset"} onClick={() => onNavigate('phytotherapie-reset')} />
+              <FooterLink id="culinaire" label={lang === 'fr' ? "Gastronomie Botanique" : "Botanical Gastronomy"} onClick={() => onNavigate('culinaire')} />
             </FooterGroup>
 
-            <FooterGroup title={lang === 'fr' ? "Savoir" : lang === 'de' ? "Wissen" : "Knowledge"}>
-              <FooterLink label={lang === 'fr' ? "L'Herbier" : lang === 'de' ? "Herbarium" : "Herbarium"} onClick={() => onNavigate('herbarium')} />
-              <FooterLink label={lang === 'fr' ? "Guide de l'Extraction" : lang === 'de' ? "Extraktions-Guide" : "Extraction Guide"} onClick={() => onNavigate('pillar-extraction')} />
-              <FooterLink label={lang === 'fr' ? "L'Infusion Botanique" : lang === 'de' ? "Botanische Infusion" : "Botanical Infusion"} onClick={() => onNavigate('guide')} />
-              <FooterLink label={lang === 'fr' ? "Le Manifeste" : lang === 'de' ? "Das Manifest" : "The Manifesto"} onClick={() => onNavigate('manifesto')} />
-              <FooterLink label={lang === 'fr' ? "Journal Botanique" : lang === 'de' ? "Botanisches Journal" : "Botanical Journal"} onClick={() => onNavigate('blog')} />
-              <FooterLink label="FAQ" onClick={() => onNavigate('chat')} />
+            <FooterGroup title={lang === 'fr' ? "Savoir-faire" : "Knowledge"}>
+              <FooterLink id="guide" label={lang === 'fr' ? "L'Infusion Botanique" : "Botanical Infusion"} onClick={() => onNavigate('guide')} />
+              <FooterLink id="pillar-extraction" label={lang === 'fr' ? "L'Extraction de Précision" : "Precision Extraction"} onClick={() => onNavigate('pillar-extraction')} />
+              <FooterLink id="herbier" label={lang === 'fr' ? "L'Herbier Bloom" : "Bloom Herbarium"} onClick={() => onNavigate('herbier')} />
+              <FooterLink id="recettes" label={lang === 'fr' ? "Recettes Botaniques" : "Botanical Recipes"} onClick={() => onNavigate('recettes')} />
             </FooterGroup>
 
-            <FooterGroup title="Newsletter">
-              <FooterLink label={lang === 'fr' ? 'S\'abonner' : lang === 'de' ? 'Abonnieren' : 'Subscribe'} onClick={() => {
+            <FooterGroup title="Transmission">
+              <FooterLink id="blog" label={lang === 'fr' ? "Journal Botanique" : "Botanical Journal"} onClick={() => onNavigate('blog')} />
+              <FooterLink id="manifeste" label={lang === 'fr' ? "Le Manifeste" : "The Manifesto"} onClick={() => onNavigate('manifeste')} />
+              <FooterLink id="questions-frequentes" label="FAQ" onClick={() => onNavigate('questions-frequentes')} />
+              <FooterLink label="Newsletter" onClick={() => {
                 const el = document.getElementById('newsletter');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }} />
-              <FooterLink label={lang === 'fr' ? 'Préférences' : lang === 'de' ? 'Einstellungen' : 'Preferences'} onClick={() => onNavigate('newsletter-preferences')} />
             </FooterGroup>
 
-            <FooterGroup title={lang === 'fr' ? "Légal" : lang === 'de' ? "Rechtliches" : "Legal"}>
-              <FooterLink label={lang === 'fr' ? "Mentions Légales" : lang === 'de' ? "Impressum" : "Legal Mentions"} onClick={() => onNavigate('legal', undefined, 'mentions')} />
+            <FooterGroup title={lang === 'fr' ? "Légal" : "Legal"}>
+              <FooterLink label={lang === 'fr' ? "Mentions Légales" : "Legal Mentions"} onClick={() => onNavigate('legal', undefined, 'mentions')} />
               <FooterLink label={lang === 'fr' ? "CGV / CGU" : "T&C / TOS"} onClick={() => onNavigate('legal', undefined, 'cgv')} />
-              <FooterLink label={lang === 'fr' ? "Confidentialité" : lang === 'de' ? "Datenschutz" : "Privacy"} onClick={() => onNavigate('legal', undefined, 'privacy')} />
-              <FooterLink 
-                label={lang === 'fr' ? "Gestion des cookies" : lang === 'en' ? "Manage cookies" : "Cookie-Einstellungen"} 
-                onClick={() => window.dispatchEvent(new CustomEvent('bloom-open-cookies'))} 
-              />
+              <FooterLink label={lang === 'fr' ? "Confidentialité" : "Privacy"} onClick={() => onNavigate('legal', undefined, 'privacy')} />
               <FooterLink label="Contact" onClick={() => window.location.href = 'mailto:bloombybotanik@gmail.com'} />
             </FooterGroup>
           </div>

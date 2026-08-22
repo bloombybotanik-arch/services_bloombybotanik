@@ -61,17 +61,33 @@ const BlogContent = lazy(() => import('./BlogContent'));
 
 type View = 'home' | 'machine' | 'phytotherapie-reset' | 'boutique' | 'product-detail' | 'culinaire' | 'cosmetiques' | 'library-landing' | 'manifeste' | 'activation' | 'account' | 'legal' | 'chat' | 'cart' | 'checkout' | 'guide' | 'how_it_works' | 'pending' | 'library' | 'herbier' | 'pillar-extraction' | 'guide-complet' | 'qu-est-ce-que-infusion' | 'admin' | 'blog' | 'withdrawal' | 'indexbis' | 'newsletter-preferences' | 'admin-newsletter';
 
-const VIEW_PATHS: Record<string, string> = {
-  home: '/', machine: '/bloomlab', 'phytotherapie-reset': '/phytotherapie-reset',
-  boutique: '/boutique', culinaire: '/culinaire', cosmetiques: '/cosmetiques',
-  'library-landing': '/library-landing', manifeste: '/manifeste',
-  activation: '/activation', account: '/compte', legal: '/legal', chat: '/chat',
-  cart: '/panier', checkout: '/checkout', guide: '/infusion-botanique',
-  how_it_works: '/infusion-botanique-maison-comment-ca-marche', pending: '/en-attente',
-  library: '/bibliotheque', herbier: '/herbier', 'pillar-extraction': '/extraction-botanique',
+export const VIEW_PATHS: Record<string, string> = {
+  home: '/', 
+  machine: '/bloomlab', 
+  'phytotherapie-reset': '/phytotherapie-reset',
+  boutique: '/boutique', 
+  culinaire: '/gastronomie-botanique', 
+  cosmetiques: '/duo-argiles',
+  'library-landing': '/bibliotheque-savoirs', 
+  manifeste: '/manifeste',
+  activation: '/activation', 
+  account: '/compte', 
+  legal: '/legal', 
+  chat: '/chat',
+  cart: '/panier', 
+  checkout: '/checkout', 
+  guide: '/infusion-botanique',
+  how_it_works: '/infusion-botanique-maison-comment-ca-marche', 
+  pending: '/en-attente',
+  library: '/bibliotheque', 
+  herbier: '/herbier', 
+  'pillar-extraction': '/extraction-botanique',
   'guide-complet': '/extraction-botanique-guide-complet',
   'qu-est-ce-que-infusion': '/qu-est-ce-que-l-infusion-botanique',
-  admin: '/admin', blog: '/blog', withdrawal: '/droit-de-retractation', indexbis: '/indexbis',
+  admin: '/admin', 
+  blog: '/journal-botanique', 
+  withdrawal: '/droit-de-retractation', 
+  indexbis: '/indexbis',
   'newsletter-preferences': '/newsletter/preferences',
   'admin-newsletter': '/admin/newsletter',
   'recettes': '/recettes',
@@ -123,6 +139,7 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
     }
 
     const currentSeo = t.seo[seoKey];
+    const isFR = lang === 'fr';
 
     if (!currentSeo) {
       document.title = "Bloom by BotaniK";
@@ -130,7 +147,7 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
     }
 
     // Override with product-specific SEO when viewing a product detail page
-    let finalTitle = currentSeo.title;
+    let finalTitle = isFR && currentView === 'home' ? "Bloom by BotaniK | Infusion et Extraction Botanique de Précision" : currentSeo.title;
     let finalDescription = currentSeo.description;
     let productData: any = null;
 
@@ -151,16 +168,6 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
       document.head.appendChild(metaDesc);
     }
     metaDesc.setAttribute('content', finalDescription);
-    
-    // Update keywords
-    let metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (!metaKeywords) {
-      metaKeywords = document.createElement('meta');
-      metaKeywords.setAttribute('name', 'keywords');
-      document.head.appendChild(metaKeywords);
-    }
-    const seoKeywords = t.seo.keywords || "";
-    metaKeywords.setAttribute('content', seoKeywords);
     
     // Update canonical link
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -211,8 +218,56 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
     const path = currentView === 'product-detail' && productId ? `/boutique/${productId}` : (VIEW_PATHS[currentView as string] || '/');
     const langPrefix = lang === 'fr' ? '' : `/${lang}`;
     const pageUrl = `https://bloombybotanik.com${langPrefix}${path === '/' ? '' : path}`;
+    const logoUrl = "https://bloombybotanik.com/brand/logo-org.jpg";
+    const socialLogoUrl = "https://bloombybotanik.com/brand/social-logo.jpg";
+
+    const breadcrumbs = [
+      { name: "Bloom by BotaniK", url: "https://bloombybotanik.com" }
+    ];
+
+    if (currentView !== 'home') {
+      breadcrumbs.push({
+        name: finalTitle.split('|')[0].trim(),
+        url: pageUrl
+      });
+    }
+
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": breadcrumbs.map((b, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "name": b.name,
+        "item": b.url
+      }))
+    };
+
+    // Social Metadata
+    const updateMetaTag = (property: string, content: string, isName = false) => {
+      const attr = isName ? 'name' : 'property';
+      let tag = document.querySelector(`meta[${attr}="${property}"]`);
+      if (!tag) {
+        tag = document.createElement('meta');
+        tag.setAttribute(attr, property);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute('content', content);
+    };
+
+    updateMetaTag('og:site_name', 'Bloom by BotaniK');
+    updateMetaTag('og:type', 'website');
+    updateMetaTag('og:url', pageUrl);
+    updateMetaTag('og:title', finalTitle);
+    updateMetaTag('og:description', finalDescription);
+    updateMetaTag('og:image', socialLogoUrl);
+    updateMetaTag('twitter:card', 'summary_large_image', true);
+    updateMetaTag('twitter:title', finalTitle, true);
+    updateMetaTag('twitter:description', finalDescription, true);
+    updateMetaTag('twitter:image', socialLogoUrl, true);
 
     const graph: any[] = [
+      breadcrumbSchema,
       {
         "@type": "Organization",
         "@id": "https://bloombybotanik.com/#organization",
@@ -220,16 +275,25 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
         "url": "https://bloombybotanik.com",
         "logo": {
           "@type": "ImageObject",
-          "url": `https://bloombybotanik.com${logoSidebar}`
+          "url": logoUrl,
+          "width": 1024,
+          "height": 1024
         },
-        "description": "N°1 de l'extraction botanique de précision. BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels."
+        "description": isFR ? "Expertise en infusion et extraction botanique de précision. BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels." : "Expertise in precision botanical infusion and extraction. BloomLab® gives you all the keys to create your own natural remedies.",
+        "sameAs": [
+          "https://www.instagram.com/bloombybotanik/",
+          "https://www.youtube.com/@bloombybotanik",
+          "https://www.facebook.com/bloombybotanik"
+        ]
       },
       {
         "@type": "WebSite",
         "@id": "https://bloombybotanik.com/#website",
         "url": "https://bloombybotanik.com",
         "name": "Bloom by BotaniK",
-        "publisher": { "@id": "https://bloombybotanik.com/#organization" }
+        "alternateName": ["Bloom by Botanik", "BloomBotanik"],
+        "publisher": { "@id": "https://bloombybotanik.com/#organization" },
+        "inLanguage": "fr-FR"
       },
       {
         "@type": "WebPage",
@@ -523,8 +587,13 @@ const CertificationCarousel = () => {
 
 const NavigationSidebar = ({ className = "", currentView, navigateTo, user, handleLogout, lang, setLang, t, isDiscovery, isPremium }: { className?: string, currentView: string, navigateTo: (v: any) => void, user?: any, handleLogout?: () => void, lang: Language, setLang: (l: Language) => void, t: any, isDiscovery: boolean, isPremium: boolean }) => {
   const NavItem = ({ id, label, icon: Icon, onClick, isActive, isSub }: { id?: string, label: string, icon?: any, onClick?: () => void, isActive?: boolean, isSub?: boolean }) => (
-    <button
-      onClick={onClick || (() => navigateTo(id as any))}
+    <a
+      href={id ? VIEW_PATHS[id] : '#'}
+      onClick={(e) => {
+        e.preventDefault();
+        if (onClick) onClick();
+        else if (id) navigateTo(id as any);
+      }}
       className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all text-left group ${
         isActive 
           ? 'bg-white/10 text-white shadow-sm' 
@@ -533,12 +602,12 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
     >
       {Icon && <Icon className={`w-4 h-4 shrink-0 transition-colors ${isActive ? 'text-botanik-orange' : 'group-hover:text-botanik-orange'}`} />}
       <span className="truncate">{label}</span>
-    </button>
+    </a>
   );
 
   const NavGroup = ({ title, children }: { title: string, children: ReactNode }) => (
-    <div className="space-y-1 mb-8">
-      <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-3 select-none">
+    <div className="space-y-1 mb-6">
+      <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-2 select-none">
         {title}
       </h3>
       <div className="space-y-0.5">
@@ -548,8 +617,8 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
   );
 
   const scrollTo = (id: string) => {
-    if (currentView !== 'indexbis') {
-      navigateTo('indexbis');
+    if (currentView !== 'home') {
+      navigateTo('home');
       setTimeout(() => {
         const el = document.getElementById(id);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -560,104 +629,94 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
     }
   };
 
-  const cartItemsCount = 0; // I will compute this from cart if available in scope
+  const isFR = lang === 'fr';
 
   return (
     <aside className={`w-[280px] h-screen sticky top-0 bg-botanik-green flex flex-col border-r border-white/5 z-50 ${className}`}>
       {/* Header / Logo */}
-      <div className="p-8 pb-10">
-        <div 
+      <div className="p-8 pb-8">
+        <a 
+          href="/"
           className="flex items-center gap-3 cursor-pointer group/logo"
-          onClick={() => navigateTo('home')}
+          onClick={(e) => { e.preventDefault(); navigateTo('home'); }}
         >
           <img src={logoSidebar} alt="Bloom" className="w-10 h-10 object-contain group-hover:scale-105 transition-transform" />
           <div className="flex flex-col leading-none text-white">
-            <span className="text-xl font-black tracking-widest">Bloom</span>
+            <span className="text-xl font-black tracking-widest uppercase">Bloom</span>
             <span className="text-[10px] font-bold tracking-[0.1em] opacity-70">by BotaniK</span>
           </div>
-        </div>
+        </a>
       </div>
 
       {/* Main Nav */}
-      <div className="flex-1 overflow-y-auto px-4 custom-scrollbar">
-        <NavGroup title="BloomLab">
+      <div className="flex-1 overflow-y-auto px-4 custom-scrollbar pb-10">
+        <NavGroup title={isFR ? "L'Essentiel" : "Essentials"}>
           <NavItem 
-            id="indexbis" 
-            label={lang === 'fr' ? 'Découvrir BloomLab®' : lang === 'de' ? 'Entdecken Sie BloomLab®' : 'Discover BloomLab®'} 
+            id="boutique" 
+            label={isFR ? 'Boutique' : 'Shop'} 
+            icon={ShoppingBag} 
+            isActive={currentView === 'boutique'}
+          />
+          <NavItem 
+            id="machine" 
+            label="BloomLab®" 
             icon={Settings} 
-            isActive={currentView === 'indexbis'}
-          />
-          <NavItem 
-            label={lang === 'fr' ? 'Bain-Marie vs BloomLab' : lang === 'de' ? 'Wasserbad vs BloomLab' : 'Bain-Marie vs BloomLab'} 
-            onClick={() => scrollTo('comparatif')}
-            isSub
-          />
-          <NavItem 
-            label={lang === 'fr' ? 'Duo Argiles Bloom' : lang === 'de' ? 'Bloom Tonerde-Duo' : 'Bloom Clay Duo'} 
-            onClick={() => scrollTo('duo-argiles')}
-            isSub
+            isActive={currentView === 'machine'}
           />
         </NavGroup>
 
-        <NavGroup title={lang === 'fr' ? 'Les 3 Univers' : lang === 'de' ? 'Die 3 Universen' : 'The 3 Universes'}>
-          <NavItem 
-            id="culinaire" 
-            label={lang === 'fr' ? 'Atelier Culinaire' : lang === 'de' ? 'Kulinarik-Atelier' : 'Culinary Workshop'} 
-            icon={ChefHat} 
-            isActive={currentView === 'culinaire'}
-          />
+        <NavGroup title={isFR ? "Rituels & Soins" : "Rituals & Care"}>
           <NavItem 
             id="cosmetiques" 
-            label={lang === 'fr' ? 'Soin Cosmétique' : lang === 'de' ? 'Kosmetische Pflege' : 'Cosmetic Care'} 
+            label={isFR ? 'Duo Argiles' : 'Clay Duo'} 
             icon={Sparkles} 
             isActive={currentView === 'cosmetiques'}
           />
           <NavItem 
             id="phytotherapie-reset" 
-            label={lang === 'fr' ? 'Reset Homéostasique' : lang === 'de' ? 'Homöostatisches Reset' : 'Homeostatic Reset'} 
+            label={isFR ? 'Reset Homéostasique' : 'Homeostatic Reset'} 
             icon={Wind} 
             isActive={currentView === 'phytotherapie-reset'}
           />
-        </NavGroup>
-
-        <NavGroup title="Boutique">
           <NavItem 
-            id="boutique" 
-            label={lang === 'fr' ? 'Découvrir la Boutique' : lang === 'de' ? 'Entdecken Sie den Shop' : 'Explore Shop'} 
-            icon={ShoppingBag} 
-            isActive={currentView === 'boutique'}
+            id="culinaire" 
+            label={isFR ? 'Gastronomie Botanique' : 'Botanical Gastronomy'} 
+            icon={ChefHat} 
+            isActive={currentView === 'culinaire'}
           />
         </NavGroup>
 
-        <NavGroup title={lang === 'fr' ? 'Science du Totum' : 'Totum Science'}>
+        <NavGroup title={isFR ? "Savoir-faire" : "Knowledge"}>
           <NavItem 
-            label={lang === 'fr' ? 'La Méthode' : 'The Method'} 
+            id="guide" 
+            label={isFR ? "L'Infusion Botanique" : "Botanical Infusion"} 
             icon={Activity} 
-            onClick={() => scrollTo('solvants')}
+            isActive={currentView === 'guide'}
           />
           <NavItem 
-            label="FAQ" 
-            icon={MessageCircle} 
-            onClick={() => scrollTo('faq')}
-          />
-        </NavGroup>
-
-        <NavGroup title="Ressources">
-          <NavItem 
-            id="herbarium" 
-            label={t.nav.herbarium} 
-            icon={BookOpen} 
-            isActive={currentView === 'herbarium' || currentView === 'herbier'}
+            id="pillar-extraction" 
+            label={isFR ? "L'Extraction de Précision" : "Precision Extraction"} 
+            icon={FlaskConical} 
+            isActive={currentView === 'pillar-extraction'}
           />
           <NavItem 
             id="recettes" 
-            label={lang === 'fr' ? 'Recettes' : 'Recipes'} 
-            icon={ChefHat} 
+            label={isFR ? 'Recettes Botaniques' : 'Botanical Recipes'} 
+            icon={FileText} 
             isActive={currentView === 'recettes'}
+          />
+        </NavGroup>
+
+        <NavGroup title={isFR ? "Transmission" : "Resources"}>
+          <NavItem 
+            id="herbier" 
+            label={isFR ? "L'Herbier Bloom" : "Bloom Herbarium"} 
+            icon={BookOpen} 
+            isActive={currentView === 'herbier'}
           />
           <NavItem 
             id="blog" 
-            label={t.nav.blog} 
+            label={isFR ? 'Journal Botanique' : 'Botanical Journal'} 
             icon={Newspaper} 
             isActive={currentView === 'blog'}
           />
@@ -666,12 +725,6 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
             label="FAQ" 
             icon={MessageCircle} 
             isActive={currentView === 'questions-frequentes'}
-          />
-          <NavItem 
-            id="manifeste" 
-            label={t.nav.manifesto} 
-            icon={FileText} 
-            isActive={currentView === 'manifeste'}
           />
         </NavGroup>
       </div>
@@ -1425,14 +1478,16 @@ export default function App() {
             <div className="flex-1 overflow-y-auto p-6 py-8 custom-scrollbar">
               <div className="space-y-10">
                 <div>
-                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">BloomLab</h3>
+                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">{lang === 'fr' ? "L'Essentiel" : "Essentials"}</h3>
                   <div className="space-y-2">
                     {[
-                      { id: 'indexbis', label: lang === 'fr' ? 'Découvrir BloomLab®' : lang === 'de' ? 'Entdecken Sie BloomLab®' : 'Discover BloomLab®', icon: Settings, highlight: true },
+                      { id: 'boutique', label: lang === 'fr' ? 'Boutique' : 'Shop', icon: ShoppingBag },
+                      { id: 'machine', label: 'BloomLab®', icon: Settings },
                     ].map((item: any) => (
-                      <button
+                      <a
                         key={item.id}
-                        onClick={() => { navigateTo(item.id); setIsMenuOpen(false); }}
+                        href={VIEW_PATHS[item.id]}
+                        onClick={(e) => { e.preventDefault(); navigateTo(item.id); setIsMenuOpen(false); }}
                         className={`w-full flex items-center justify-between px-6 py-4 rounded-2xl transition-all text-left group ${
                           currentView === item.id 
                             ? 'bg-white/10 text-white shadow-lg shadow-black/10' 
@@ -1444,22 +1499,23 @@ export default function App() {
                           <span className="font-bold text-base tracking-tight">{item.label}</span>
                         </div>
                         <div className="w-1.5 h-1.5 rounded-full bg-botanik-orange animate-pulse" />
-                      </button>
+                      </a>
                     ))}
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">{lang === 'fr' ? 'Les 3 Univers' : lang === 'de' ? 'Die 3 Universen' : 'The 3 Universes'}</h3>
+                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">{lang === 'fr' ? 'Rituels & Soins' : 'Rituals & Care'}</h3>
                   <div className="space-y-2">
                     {[
-                      { id: 'culinaire', label: lang === 'fr' ? 'Atelier Culinaire' : lang === 'de' ? 'Kulinarik-Atelier' : 'Culinary Workshop', icon: ChefHat },
-                      { id: 'cosmetiques', label: lang === 'fr' ? 'Soin Cosmétique' : lang === 'de' ? 'Kosmetische Pflege' : 'Cosmetic Care', icon: Sparkles },
-                      { id: 'phytotherapie-reset', label: lang === 'fr' ? 'Reset Homéostasique' : lang === 'de' ? 'Homöostatisches Reset' : 'Homeostatic Reset', icon: Wind },
+                      { id: 'cosmetiques', label: lang === 'fr' ? 'Duo Argiles' : 'Clay Duo', icon: Sparkles },
+                      { id: 'phytotherapie-reset', label: lang === 'fr' ? 'Reset Homéostasique' : 'Homeostatic Reset', icon: Wind },
+                      { id: 'culinaire', label: lang === 'fr' ? 'Gastronomie Botanique' : 'Botanical Gastronomy', icon: ChefHat },
                     ].map((item: any) => (
-                      <button
+                      <a
                         key={item.id}
-                        onClick={() => { navigateTo(item.id); setIsMenuOpen(false); }}
+                        href={VIEW_PATHS[item.id]}
+                        onClick={(e) => { e.preventDefault(); navigateTo(item.id); setIsMenuOpen(false); }}
                         className={`w-full flex items-center justify-between px-6 py-4 rounded-2xl transition-all text-left group ${
                           currentView === item.id ? 'bg-white/10 text-white shadow-lg shadow-black/10' : 'text-white/70 hover:bg-white/5'
                         }`}
@@ -1469,20 +1525,23 @@ export default function App() {
                           <span className="font-bold text-base tracking-tight">{item.label}</span>
                         </div>
                         {currentView === item.id && <ChevronRight className="w-4 h-4 text-botanik-orange" />}
-                      </button>
+                      </a>
                     ))}
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">Boutique</h3>
+                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">{lang === 'fr' ? 'Savoir-faire' : 'Knowledge'}</h3>
                   <div className="space-y-2">
                     {[
-                      { id: 'boutique', label: lang === 'fr' ? 'Découvrir la Boutique' : lang === 'de' ? 'Den Shop entdecken' : 'Explore Shop', icon: ShoppingBag },
+                      { id: 'guide', label: lang === 'fr' ? "L'Infusion Botanique" : "Botanical Infusion", icon: Activity },
+                      { id: 'pillar-extraction', label: lang === 'fr' ? "L'Extraction de Précision" : "Precision Extraction", icon: FlaskConical },
+                      { id: 'recettes', label: lang === 'fr' ? 'Recettes Botaniques' : 'Botanical Recipes', icon: FileText },
                     ].map((item: any) => (
-                      <button
+                      <a
                         key={item.id}
-                        onClick={() => { navigateTo(item.id); setIsMenuOpen(false); }}
+                        href={VIEW_PATHS[item.id]}
+                        onClick={(e) => { e.preventDefault(); navigateTo(item.id); setIsMenuOpen(false); }}
                         className={`w-full flex items-center justify-between px-6 py-4 rounded-2xl transition-all text-left group ${
                           currentView === item.id ? 'bg-white/10 text-white shadow-lg shadow-black/10' : 'text-white/70 hover:bg-white/5'
                         }`}
@@ -1492,7 +1551,7 @@ export default function App() {
                           <span className="font-bold text-base tracking-tight">{item.label}</span>
                         </div>
                         {currentView === item.id && <ChevronRight className="w-4 h-4 text-botanik-orange" />}
-                      </button>
+                      </a>
                     ))}
                   </div>
                 </div>

@@ -5,28 +5,28 @@ export const translations = {
   fr: {
     seo: {
       home: {
-        title: "Bloom by BotaniK | Infuseur & Extracteur Botanique de Précision N°1",
-        description: "BloomLab® : L'extracteur botanique de précision pour l'extraction du totum à basse température. Réalisez vos propres remèdes de plantes, huiles et cosmétiques naturels.",
+        title: "Bloom by BotaniK | Infusion et Extraction Botanique de Précision",
+        description: "Bloom by BotaniK explore l’infusion et l’extraction botanique à domicile. Découvrez BloomLab, les plantes, les recettes, les rituels de soin naturel et les préparations botaniques.",
         h1: "L’Expertise de l’Infusion et de l’Extraction Botanique",
         intro: "Bienvenue dans l'ère de la phytothérapie de précision. Bloom by BotaniK est la référence de l'infusion et de l'extraction botanique à domicile, alliant sagesses anciennes et technologie moderne pour votre souveraineté sanitaire.",
       },
       machine: {
-        title: "BloomLab® | L'Extracteur Botanique de Précision N°1 en France",
-        description: "Découvrez BloomLab®, l'extracteur botanique intelligent. Extraction de précision, décarboxylation et préservation du totum pour vos remèdes et soins naturels.",
+        title: "BloomLab : infusion et extraction botanique | Bloom by BotaniK",
+        description: "Découvrez BloomLab, le premier extracteur botanique de comptoir capable d'extraire le Totum intégral des plantes avec une précision thermique absolue.",
         h1: "BloomLab® : L’Extracteur Botanique de Précision à Domicile",
         intro: "Libérez jusqu'à 98% des actifs de vos plantes. BloomLab est l'appareil d'infusion et d'extraction botanique conçu pour préparer vos huiles infusées, macérâts et remèdes avec une précision thermique absolue.",
       },
       extraction: {
-        title: "Extraction Botanique : Comprendre la Méthode de Précision",
-        description: "Guide expert sur l'extraction botanique basse température. Apprenez à utiliser un extracteur botanique pour préserver l'intelligence moléculaire des plantes.",
+        title: "Extraction botanique : méthode et plantes | Bloom by BotaniK",
+        description: "Comprendre l'extraction botanique basse température pour préserver le Totum des plantes. Guide expert sur les méthodes et précautions d'extraction.",
         h1: "Extraction Botanique : L’Art de la Précision Thermique",
         intro: "L'extraction botanique n'est pas une simple macération. C'est un procédé rigoureux qui, grâce à la technologie BloomLab, permet de capturer le Totum intégral des plantes sans altérer leurs principes actifs fragiles.",
       },
       infusion: {
-        title: "Infusion Botanique : Le Guide Complet de l'Herboristerie",
-        description: "Réussir son infusion botanique maison : température, solvants et précision. Transformez votre cuisine en laboratoire de remèdes naturels avec BloomLab®.",
+        title: "Infusion botanique : méthode et plantes | Bloom by BotaniK",
+        description: "Qu’est-ce qu’une infusion botanique ? Découvrez les techniques d'herboristerie moderne pour préparer vos remèdes naturels avec précision.",
         h1: "L’Art de l’Infusion Botanique : Guide Complet et Pratiques",
-        intro: "Qu’est-ce qu’une infusion botanique ? Bien plus qu'une tisane, c'est un rituel de soin documenté. Découvrez comment choisir vos plantes, vos solvants et maîtriser vos extractions pour un bien-être optimal.",
+        intro: "Bien plus qu'une tisane, l'infusion botanique est un rituel de soin documenté. Découvrez comment choisir vos plantes, vos solvants et maîtriser vos extractions pour un bien-être optimal.",
       },
       pillar: {
         title: "Extracteur Botanique & Totum : Le Guide Ultime de l'Extraction",
@@ -35,8 +35,8 @@ export const translations = {
         intro: "Naviguez entre science et tradition. Ce guide explore les différences entre infusion, macération et extraction, et vous explique pourquoi le Totum est la clé d'une phytothérapie efficace.",
       },
       herbarium: {
-        title: "Herbier Botanique : Guide des Plantes Médicinales | Bloom",
-        description: "Répertoire des plantes médicinales et protocoles d'extraction botanique. Créez vos propres remèdes naturels et phytothérapie DIY avec précision thermique.",
+        title: "Herbier Botanique : Guide des Plantes Médicinales | Bloom by BotaniK",
+        description: "Explorez l'Herbier Bloom : guide rigoureux des plantes médicinales, leurs parties utilisées, précautions et méthodes de préparation idéales.",
         h1: "L’Herbier Bloom : Comprendre les Plantes et leurs Usages",
         intro: "Une place pour chaque plante et chaque plante à sa place. Explorez notre guide rigoureux des plantes médicinales, leurs parties utilisées, précautions et méthodes de préparation idéales.",
       },
@@ -47,8 +47,8 @@ export const translations = {
         intro: "Nos équipes vous accompagnent dans votre projet de soins sur mesure. Retrouvez le BloomLab, nos kits de plantes bio et le Duo Argiles pour vos rituels quotidiens.",
       },
       blog: {
-        title: "Journal Botanique : Phytothérapie, Guides et Actualités | Bloom",
-        description: "Dossiers sur l'extraction botanique maison, la cosmétique naturelle et les remèdes de plantes. Devenez expert en infusion botanique de précision.",
+        title: "Journal Botanique : Savoirs et Transmissions | Bloom by BotaniK",
+        description: "Dossiers sur l'extraction botanique maison, la cosmétique naturelle et les soins DIY. Une approche documentée pour comprendre le vivant.",
         h1: "Le Journal Botanique : Savoirs et Transmissions",
         intro: "Approfondissez vos connaissances avec nos guides thématiques, études de cas et actualités sur le monde végétal et la souveraineté sanitaire.",
       },
@@ -167,8 +167,8 @@ export const translations = {
       hero: {
         intro: "Introduction",
         onboarding: "Onboarding",
-        title: "L’extracteur botanique<br/>qui révèle le totum<br/>de vos plantes.", 
-        description: "L’infusion botanique est une méthode d’extraction de précision. Découvrez comment l'extracteur botanique BloomLab® permet de maîtriser la température, le temps et le solvant pour vos remèdes naturels.",
+        title: "L’Expertise de l’Infusion et de l’Extraction Botanique", 
+        description: "Bienvenue dans l'ère de la phytothérapie de précision. Bloom by BotaniK est la référence de l'infusion et de l'extraction botanique à domicile, alliant sagesses anciennes et technologie moderne pour votre souveraineté sanitaire.",
       },
       extractionGuide: {
         badge: "N°1 France — Souveraineté Botanique",
@@ -1129,7 +1129,7 @@ export const translations = {
         badge: "N°1 France — Souveraineté Botanique",
         title: "BloomLab :",
         title_accent: "l’infuseur botanique pour vos préparations maison",
-        description: "Une place pour chaque plante et chaque plante à sa place.",
+        description: "Libérez jusqu'à 98% des actifs de vos plantes. BloomLab est l'appareil d'infusion et d'extraction botanique conçu pour préparer vos huiles infusées, macérâts et remèdes avec une précision thermique absolue.",
         cta: "Acquérir ma BloomLab",
         discover: "Découvrir la technologie"
       },
