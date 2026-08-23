@@ -1274,9 +1274,21 @@ export default function App() {
     navigateTo('home');
   };
 
-  const isPrerender = typeof window !== 'undefined' && (navigator.webdriver || window.location.search.includes('prerender=true'));
+  const isBotOrPrerender = typeof window !== 'undefined' && (
+    /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i.test(navigator.userAgent) ||
+    navigator.webdriver || 
+    window.location.search.includes('prerender=true')
+  );
 
-  if ((authLoading || !isSplashFinished) && !isPrerender) return (
+  useEffect(() => {
+    // Security timeout for Auth loading to prevent blocking bots/users indefinitely
+    const timeout = setTimeout(() => {
+      if (authLoading) setAuthLoading(false);
+    }, isBotOrPrerender ? 500 : 3000);
+    return () => clearTimeout(timeout);
+  }, [authLoading, isBotOrPrerender]);
+
+  if ((authLoading || !isSplashFinished) && !isBotOrPrerender) return (
     <div className="min-h-screen bg-[#293228] flex flex-col items-center justify-center animate-in fade-in duration-1000">
       <img src={logoSidebar} alt="Bloom" className="w-24 h-24 mb-6" />
       <div className="w-12 h-1 border-2 border-white/10 overflow-hidden relative rounded-full">
