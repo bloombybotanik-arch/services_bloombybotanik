@@ -88,6 +88,24 @@ export const translations = {
         h1: "Vos Questions, Nos Réponses Botaniques",
         intro: "Nous répondons ici aux questions réellement posées par notre communauté pour vous guider dans votre pratique de l'extraction de précision.",
       },
+      infusion_precision: {
+        title: "Méthode d'Infusion Botanique de Précision | BloomLab®",
+        description: "Apprenez à maîtriser les paramètres d'infusion : temps, température et agitation pour des remèdes de plantes médicinales d'une pureté absolue.",
+        h1: "L'Infusion de Précision : Maîtriser le Temps et la Température",
+        intro: "L'infusion n'est pas une approximation. Découvrez comment la science de la précision thermique transforme une simple tisane en un extrait botanique puissant.",
+      },
+      totum_definition: {
+        title: "Le Totum Végétal : Définition et Bienfaits en Phytothérapie",
+        description: "Qu'est-ce que le Totum d'une plante ? Comprendre la synergie moléculaire et pourquoi l'extraction intégrale est supérieure aux actifs isolés.",
+        h1: "Le Totum Végétal : L'Intelligence Collective de la Plante",
+        intro: "Découvrez pourquoi l'intégralité des molécules d'une plante (le Totum) est plus efficace que la somme de ses parties pour votre santé et votre microbiome.",
+      },
+      solvants_extraction: {
+        title: "Solvants d'Extraction : Eau, Huile, Alcool | Guide Pratique",
+        description: "Comment choisir le bon solvant pour vos plantes ? Guide sur l'extraction aqueuse, huileuse et hydroalcoolique avec le BloomLab®.",
+        h1: "Eau, Huile ou Alcool : Choisir le Bon Vecteur d'Actifs",
+        intro: "Chaque molécule végétale a son affinité. Apprenez à choisir le solvant idéal pour extraire les principes actifs dont votre terrain a besoin.",
+      },
       infusion_guide: {
         title: "Infusion Botanique : Le Guide Complet des Remèdes Naturels",
         summary: "Bienvenue dans l'ère de la phytothérapie de précision. Chez Bloom by BotaniK, nous croyons que votre corps n'est pas cassé, il est simplement verrouillé. L'infusion botanique n'est plus une simple boisson, mais un outil de souveraineté sanitaire. Grâce au BloomLab®, premier extracteur botanique de précision en France, vous accédez au Totum absolu des plantes médicinales. Notre technologie d'extraction basse température préserve l'intégrité biochimique de chaque feuille, racine ou fleur pour transformer vos plantes en véritables alliés de votre homéostasie.",

@@ -69,6 +69,9 @@ const BASE_ROUTES = [
   '/mentions-legales',
   '/retour-et-remboursement',
   '/questions-frequentes',
+  '/methode-infusion-botanique-precision',
+  '/totum-vegetal-definition',
+  '/solvants-extraction-botanique',
   '/legal'
 ];
 
@@ -86,7 +89,6 @@ for (const lang of LANGUAGES) {
     ROUTES.push(lang === '' ? `/blog/${slug}` : `${lang}/blog/${slug}`);
   }
   for (const id of PLANT_IDS) {
-    ROUTES.push(lang === '' ? `/herbier/${id}` : `${lang}/herbier/${id}`);
     ROUTES.push(lang === '' ? `/bibliotheque/${id}` : `${lang}/bibliotheque/${id}`);
   }
 }

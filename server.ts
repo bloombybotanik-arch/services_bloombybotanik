@@ -182,10 +182,22 @@ const redirects301: Record<string, string> = {
   '/natural-herbal-infusion-face-skincare-recipes': '/cosmetiques',
   '/extraction-plantes-naturelles-bienfaits': '/extraction-botanique',
   '/extraction-botanique-guide-complet': '/extraction-botanique',
-  '/herbier': '/bibliotheque',
+  '/herbier': '/bibliotheque-savoirs',
+  '/herbier/': '/bibliotheque-savoirs',
+  '/bibliotheque': '/bibliotheque-savoirs',
   '/boutique/confort-digestif': '/boutique/duo-argiles',
   '/boutique/feu-actualisateur': '/boutique/purete-sanguine',
   '/boutique/nutri-profonde': '/boutique/expert-peaux',
+  
+  // Unification Herbier -> Bibliothèque (URLs dynamiques)
+  '/herbier/chaga_vitality': '/bibliotheque/chaga_vitality',
+  '/herbier/urtica_dioica': '/bibliotheque/urtica_dioica',
+  '/herbier/melissa_officinalis': '/bibliotheque/melissa_officinalis',
+  '/herbier/curcuma_longa_poivre': '/bibliotheque/curcuma_longa_poivre',
+  '/herbier/zingiber_officinale': '/bibliotheque/zingiber_officinale',
+  '/herbier/rosmarinus_officinalis': '/bibliotheque/rosmarinus_officinalis',
+  '/herbier/lavandula_angustifolia': '/bibliotheque/lavandula_angustifolia',
+  '/herbier/artichaut': '/bibliotheque/artichaut',
   
   // Doublons WordPress Blog (suffixes -2, -3, -4)
   '/autonomie-botanique-pourquoi-une-maison-qui-utilise-des-plantes-a-besoin-dun-vrai-outil-dextraction-2': '/blog?post=autonomie-botanique-pourquoi-une-maison-qui-utilise-des-plantes-a-besoin-dun-vrai-outil-dextraction',

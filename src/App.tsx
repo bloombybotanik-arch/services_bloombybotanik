@@ -46,6 +46,14 @@ const PhytotherapyResetPage = lazy(() => import('./PhytotherapyResetPage'));
 const PillarExtraction = lazy(() => import('./PillarExtraction'));
 const PendingContent = lazy(() => import('./PendingContent'));
 const IndexBisContent = lazy(() => import('./IndexBisContent'));
+const SEOArticles = lazy(() => import('./SEOArticlesContent').then(m => ({ 
+  default: ({ view, lang, t }: { view: string, lang: string, t: any }) => {
+    if (view === 'infusion-precision') return <m.InfusionPrecision lang={lang} t={t} />;
+    if (view === 'totum-definition') return <m.TotumDefinition lang={lang} t={t} />;
+    if (view === 'solvants-extraction') return <m.SolvantsExtraction lang={lang} t={t} />;
+    return null;
+  }
+})));
 const NewsletterPreferences = lazy(() => import('./NewsletterPreferences').then(m => ({ default: m.NewsletterPreferences })));
 const AdminNewsletter = lazy(() => import('./components/AdminNewsletter').then(m => ({ default: m.AdminNewsletter })));
 
@@ -98,7 +106,10 @@ export const VIEW_PATHS: Record<string, string> = {
   'admin-newsletter': '/admin/newsletter',
   'recettes': '/recettes',
   'guides': '/guides',
-  'questions-frequentes': '/questions-frequentes'
+  'questions-frequentes': '/questions-frequentes',
+  'infusion-precision': '/methode-infusion-botanique-precision',
+  'totum-definition': '/totum-vegetal-definition',
+  'solvants-extraction': '/solvants-extraction-botanique'
 };
 
 const PATH_VIEWS: Record<string, string> = Object.fromEntries(
@@ -118,7 +129,7 @@ const generateSeoAlt = (imageContext: string, t: any) => {
 const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: Language, currentView: string, t: any, productId?: string, blogPostSlug?: string }) => {
   useEffect(() => {
     // 1. Handle dynamic Title & Meta Description
-    let seoKey: 'home' | 'herbarium' | 'shop' | 'blog' | 'pillar' | 'extraction' | 'infusion' | 'infuseur' | 'machine' | 'manifesto' | 'how_it_works' | 'reset' | 'recettes' | 'faq' = 'home';
+    let seoKey: 'home' | 'herbarium' | 'shop' | 'blog' | 'pillar' | 'extraction' | 'infusion' | 'infuseur' | 'machine' | 'manifesto' | 'how_it_works' | 'reset' | 'recettes' | 'faq' | 'infusion_precision' | 'totum_definition' | 'solvants_extraction' = 'home';
     
     if (['herbier', 'culinaire', 'cosmetiques'].includes(currentView)) {
       seoKey = 'herbarium';
@@ -144,6 +155,12 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
       seoKey = 'recettes';
     } else if (currentView === 'questions-frequentes') {
       seoKey = 'faq';
+    } else if (currentView === 'infusion-precision') {
+      seoKey = 'infusion_precision';
+    } else if (currentView === 'totum-definition') {
+      seoKey = 'totum_definition';
+    } else if (currentView === 'solvants-extraction') {
+      seoKey = 'solvants_extraction';
     }
 
     const currentSeo = t.seo[seoKey];
@@ -1381,6 +1398,13 @@ export default function App() {
       case 'recettes': return <RecipesContent onBack={() => navigateTo('home')} lang={lang} t={t} />;
       case 'guides': return <BlogContent lang={lang} onNavigate={navigateTo} initialSlug={blogPostSlug} />;
       case 'questions-frequentes': return <HomeContent onNavigate={navigateTo} lang={lang} scrollToId="faq" />;
+      case 'infusion-precision':
+      case 'totum-definition':
+      case 'solvants-extraction': return (
+        <Suspense fallback={<ViewLoader />}>
+          <SEOArticles view={currentView} lang={lang} t={t} />
+        </Suspense>
+      );
       case 'chat': return (
         <ChatContent 
           isPremium={isPremium} 
