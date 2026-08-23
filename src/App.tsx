@@ -381,6 +381,7 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
           "url": pageUrl,
           "itemCondition": "https://schema.org/NewCondition",
           "priceValidUntil": "2026-12-31",
+          "validFrom": "2024-01-01",
           "shippingDetails": {
             "@type": "OfferShippingDetails",
             "shippingRate": {
@@ -411,10 +412,10 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
           "hasMerchantReturnPolicy": {
             "@type": "MerchantReturnPolicy",
             "applicableCountry": "FR",
-            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnPeriod",
+            "returnPolicyCategory": "MerchantReturnFiniteReturnPeriod",
             "merchantReturnDays": 14,
-            "returnMethod": "https://schema.org/ReturnByMail",
-            "returnFees": "https://schema.org/FreeReturn"
+            "returnMethod": "ReturnByMail",
+            "returnFees": "FreeReturn"
           }
         }
       });
@@ -455,6 +456,7 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
           "url": "https://bloombybotanik.com/machine",
           "itemCondition": "https://schema.org/NewCondition",
           "priceValidUntil": "2026-12-31",
+          "validFrom": "2024-01-01",
           "shippingDetails": {
             "@type": "OfferShippingDetails",
             "shippingRate": {
@@ -465,15 +467,30 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
             "shippingDestination": {
               "@type": "DefinedRegion",
               "addressCountry": "FR"
+            },
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "handlingTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 0,
+                "maxValue": 1,
+                "unitCode": "d"
+              },
+              "transitTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 2,
+                "maxValue": 4,
+                "unitCode": "d"
+              }
             }
           },
           "hasMerchantReturnPolicy": {
             "@type": "MerchantReturnPolicy",
             "applicableCountry": "FR",
-            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnPeriod",
+            "returnPolicyCategory": "MerchantReturnFiniteReturnPeriod",
             "merchantReturnDays": 14,
-            "returnMethod": "https://schema.org/ReturnByMail",
-            "returnFees": "https://schema.org/FreeReturn"
+            "returnMethod": "ReturnByMail",
+            "returnFees": "FreeReturn"
           }
         }
       });
