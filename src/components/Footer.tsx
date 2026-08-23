@@ -138,7 +138,7 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-[10px] uppercase tracking-[0.15em] text-white/20">
             <span>© 2024 Bloom by BotaniK</span>
             <span className="hidden md:inline">•</span>
-            <span>{lang === 'fr' ? "N°1 de l'extraction botanique de précision" : "N°1 in precision botanical extraction"}</span>
+            <span>{lang === 'fr' ? "Référence de l'extraction botanique de précision" : "Leader in precision botanical extraction"}</span>
           </div>
           
           <div className="text-[10px] text-white/30 text-center md:text-right leading-relaxed max-w-sm">

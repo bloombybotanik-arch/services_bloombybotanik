@@ -110,7 +110,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
               <div className="max-w-xl">
                 <span className="inline-block px-3 py-1 bg-botanik-orange text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">
-                  {lang === 'fr' ? "N°1 FRANCE — EXTRACTION BOTANIQUE DE PRÉCISION" : "N°1 FRANCE — PRECISION BOTANICAL EXTRACTION"}
+                  {lang === 'fr' ? "EXPERTISE FRANCE — EXTRACTION BOTANIQUE DE PRÉCISION" : "FRENCH EXPERTISE — PRECISION BOTANICAL EXTRACTION"}
                 </span>
                 <h1 className="text-3xl md:text-5xl font-extrabold text-botanik-green mb-4 leading-[1.05] tracking-tight">
                   {(t.seo.home as any).h1}
@@ -135,7 +135,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
                   {[
-                    { id: 'bloomlab', name: 'BloomLab®', price: 239, oldPrice: 289, img: bloomImg, badge: 'N°1 France', promoCode: 'Rentrée 2026' },
+                    { id: 'bloomlab', name: 'BloomLab®', price: 239, oldPrice: 289, img: bloomImg, badge: 'Expertise France', promoCode: 'Rentrée 2026' },
                     { id: 'kit-starter', name: 'Kit Sève Fondamentale', price: 12.9, img: seveImg, badge: 'Best Seller' },
                     { id: 'bundle-apothicaire', name: "L'Herbier Complet", price: 59, oldPrice: 87, img: trioImg, badge: 'Pack Famille' },
                     { id: 'kit-nuit', name: 'Remède Nuit Profonde', price: 9.9, img: nuitImg, badge: 'Sommeil' },

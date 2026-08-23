@@ -72,7 +72,7 @@ const translationsIndexBis = {
   fr: {
     marquee: ["🇫🇷 Marque Française Botanique", "🚚 Expédition Prioritaire sous 24/48h", "🛡️ Satisfait ou Remboursé 30 Jours", "⚡ Garantie Constructeur 1 An"],
     hero: {
-      badge: "N°1 France — Édition Limitée 2026 : Thermorégulation MTC 2.0",
+      badge: "Expertise France — Édition Limitée 2026 : Thermorégulation MTC 2.0",
       title: "L'extracteur botanique qui révèle le <span class='text-[#D97706]'>totum</span> de vos plantes.",
       subtitle: "<strong>BloomLab® : L'infuseur botanique de précision.</strong> BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels. Faites fleurir toutes vos envies de bien-être végétal.",
       rating: "Une conception dédiée à l’extraction botanique de précision.",
@@ -508,7 +508,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
             <div className="absolute inset-0 flex flex-col p-6">
               <div className="flex flex-col space-y-1.5 mt-2 max-w-[90%]">
                 <div className="inline-block self-start px-3 py-1.5 border border-[#1C3F34] rounded-md text-white bg-[#0F261E] text-[11px] font-semibold uppercase tracking-wider shadow-sm">
-                  {lang === 'fr' ? 'N°1 EN FRANCE · ÉDITION LIMITÉE 2026' : (lang === 'de' ? 'NR. 1 IN FRANKREICH · LIMITIERTE AUSGABE 2026' : 'No. 1 IN FRANCE · LIMITED EDITION 2026')}
+                  {lang === 'fr' ? 'EXPERTISE FRANCE · ÉDITION LIMITÉE 2026' : (lang === 'de' ? 'EXPERTISE FRANKREICH · LIMITIERTE AUSGABE 2026' : 'FRENCH EXPERTISE · LIMITED EDITION 2026')}
                 </div>
                 <div className="inline-block self-start px-3 py-1.5 border border-[#D97706] rounded-md text-white bg-[#D97706] text-[10px] font-semibold uppercase tracking-widest shadow-sm">
                   {lang === 'fr' ? 'THERMORÉGULATION INTELLIGENTE' : (lang === 'de' ? 'INTELLIGENTE THERMOREGULATION' : 'INTELLIGENT THERMOREGULATION')}
@@ -543,7 +543,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
               <div className="space-y-6">
                 <div className="hidden lg:flex flex-wrap gap-2 mb-4">
                   <div className="inline-block px-3 py-1 bg-[#1C3F34] text-white text-[10px] font-black uppercase tracking-widest rounded-full shadow-sm">
-                    N°1 EN FRANCE
+                    EXPERTISE FRANCE
                   </div>
                   <div className="inline-block px-3 py-1 bg-[#D97706] text-white text-[10px] font-black uppercase tracking-widest rounded-full shadow-sm">
                     {lang === 'fr' ? 'THERMORÉGULATION INTELLIGENTE' : 'INTELLIGENT THERMOREGULATION'}

@@ -186,6 +186,24 @@ const redirects301: Record<string, string> = {
   '/boutique/confort-digestif': '/boutique/duo-argiles',
   '/boutique/feu-actualisateur': '/boutique/purete-sanguine',
   '/boutique/nutri-profonde': '/boutique/expert-peaux',
+  
+  // Doublons WordPress Blog (suffixes -2, -3, -4)
+  '/autonomie-botanique-pourquoi-une-maison-qui-utilise-des-plantes-a-besoin-dun-vrai-outil-dextraction-2': '/blog?post=autonomie-botanique-pourquoi-une-maison-qui-utilise-des-plantes-a-besoin-dun-vrai-outil-dextraction',
+  '/autonomie-botanique-pourquoi-une-maison-qui-utilise-des-plantes-a-besoin-dun-vrai-outil-dextraction-3': '/blog?post=autonomie-botanique-pourquoi-une-maison-qui-utilise-des-plantes-a-besoin-dun-vrai-outil-dextraction',
+  '/autonomie-botanique-pourquoi-une-maison-qui-utilise-des-plantes-a-besoin-dun-vrai-outil-dextraction-4': '/blog?post=autonomie-botanique-pourquoi-une-maison-qui-utilise-des-plantes-a-besoin-dun-vrai-outil-dextraction',
+  '/melisse-la-difference-entre-une-infusion-du-soir-et-une-extraction-pensee-pour-le-systeme-nerveux-3': '/blog?post=melisse-la-difference-entre-une-infusion-du-soir-et-une-extraction-pensee-pour-le-systeme-nerveux',
+  '/melisse-la-difference-entre-une-infusion-du-soir-et-une-extraction-pensee-pour-le-systeme-nerveux-5': '/blog?post=melisse-la-difference-entre-une-infusion-du-soir-et-une-extraction-pensee-pour-le-systeme-nerveux',
+  '/melisse-la-difference-entre-une-infusion-du-soir-et-une-extraction-pensee-pour-le-systeme-nerveux-6': '/blog?post=melisse-la-difference-entre-une-infusion-du-soir-et-une-extraction-pensee-pour-le-systeme-nerveux',
+  
+  // Articles Blog additionnels (Doublons/Séquences)
+  '/chardon-marie-la-silymarine-pourquoi-la-tisane-ne-peut-pas-la-liberer-correctement-6': '/blog?post=chardon-marie-la-silymarine-pourquoi-la-tisane-ne-peut-pas-la-liberer-correctement',
+  '/lavande-pourquoi-lhuile-essentielle-et-lhuile-infusee-ne-font-pas-le-meme-travail-2': '/blog?post=lavande-pourquoi-lhuile-essentielle-et-lhuile-infusee-ne-font-pas-le-meme-travail',
+  '/lavande-pourquoi-lhuile-essentielle-et-lhuile-infusee-ne-font-pas-le-meme-travail-3': '/blog?post=lavande-pourquoi-lhuile-essentielle-et-lhuile-infusee-ne-font-pas-le-meme-travail',
+  '/gingembre-le-bain-marie-ancestral-avait-raison-sur-le-principe-muts-pas-sur-la-precision-3': '/blog?post=gingembre-le-bain-marie-ancestral-avait-raison-sur-le-principe-mais-pas-sur-la-precision',
+  '/gingembre-le-bain-marie-ancestral-avait-raison-sur-le-principe-mais-pas-sur-la-precision-5': '/blog?post=gingembre-le-bain-marie-ancestral-avait-raison-sur-le-principe-mais-pas-sur-la-precision',
+  
+  // Boutique Redundancy
+  '/boutique/bloomlab': '/bloomlab',
 };
 
 Object.entries(redirects301).forEach(([from, to]) => {

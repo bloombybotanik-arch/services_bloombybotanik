@@ -5,16 +5,16 @@ export const translations = {
   fr: {
     seo: {
       home: {
-        title: "Bloom by BotaniK | Infuseur & Extracteur Botanique de Précision",
+        title: "Bloom by BotaniK | Infuseur & Extracteur Botanique",
         description: "Découvrez BloomLab®, l'infuseur & extracteur botanique de précision. Réalisez vos propres huiles infusées, macérats et extraits de plantes avec une technologie maîtrisée.",
         h1: "L’Expertise de l’Infusion et de l’Extraction Botanique",
         intro: "Bienvenue dans l'ère de la phytothérapie de précision. Bloom by BotaniK est la référence de l'infusion et de l'extraction botanique à domicile, alliant sagesses anciennes et technologie moderne pour votre souveraineté sanitaire.",
       },
       machine: {
         title: "BloomLab : infusion et extraction botanique | Bloom by BotaniK",
-        description: "Découvrez BloomLab, le premier extracteur botanique de comptoir capable d'extraire le Totum intégral des plantes avec une précision thermique absolue.",
+        description: "Découvrez BloomLab, le premier extracteur botanique de comptoir capable d'extraire le Totum intégral des plantes avec une haute précision thermique.",
         h1: "BloomLab® : L’Extracteur Botanique de Précision à Domicile",
-        intro: "Libérez jusqu'à 98% des actifs de vos plantes. BloomLab est l'appareil d'infusion et d'extraction botanique conçu pour préparer vos huiles infusées, macérâts et remèdes avec une précision thermique absolue.",
+        intro: "Libérez jusqu'à 98% des actifs de vos plantes. BloomLab est l'appareil d'infusion et d'extraction botanique conçu pour préparer vos huiles infusées, macérâts et remèdes avec une haute précision thermique.",
       },
       extraction: {
         title: "Extraction botanique : méthode et plantes | Bloom by BotaniK",
@@ -110,7 +110,7 @@ export const translations = {
             a: "Le Totum représente l'ensemble des molécules actives d'une plante agissant en synergie. Notre technologie d'extraction de précision permet de capturer cette harmonie biochimique, bien plus efficace pour le microbiome et l'inflammation chronique qu'un actif isolé."
           },
           {
-            q: "Pourquoi BloomLab® est-il considéré comme le N°1 en France ?",
+            q: "Pourquoi BloomLab® est-il considéré comme la référence en France ?",
             a: "BloomLab® est le seul infuseur botanique combinant précision thermique au degré près, extraction basse température et design premium en inox 304. C'est l'outil indispensable pour ceux qui cherchent une autonomie réelle dans leur projet de soins sur mesure."
           }
         ]
@@ -118,7 +118,7 @@ export const translations = {
       keywords: "extraction totum, laboratoire botanique, souveraineté santé, infusion botanique, art de l'extraction, plantes médicinales, remèdes naturels, tisanes, remèdes de grand mère, remèdes de plantes médicinales, phytothérapie, BloomLab",
       alt: {
         bloomlab: "BloomLab Machine - Infusion Botanique, Tisanes, Remèdes Naturels de plantes médicinales",
-        extracteur: "L'extracteur botanique BloomLab - N°1 France pour infusion botanique, tisanes, remèdes naturels de grand mère et cosmétiques maison",
+        extracteur: "L'extracteur botanique BloomLab - Référence France pour infusion botanique, tisanes, remèdes naturels et cosmétiques maison",
         herbs: "Plantes médicinales, infusion botanique et tisanes - Guide d'extraction du Totum Bloom by BotaniK - Remèdes naturels de grand mère",
         lab: "Laboratoire botanique Bloom - Recherche en phytothérapie de précision, remèdes de plantes médicinales et extraction botanique",
         reset_hero: "Phytothérapie Reset - Bloom by BotaniK - Infusion botanique et remèdes naturels de grand mère",
@@ -207,7 +207,7 @@ export const translations = {
             text: "Le temps, la température et l'agitation sont réglés pour rendre la préparation plus régulière et reproductible, selon la plante et le solvant choisi."
           }
         ],
-        bloomlab_h2: "BloomLab : L'Extracteur Botanique N°1 en France",
+        bloomlab_h2: "BloomLab : L'Extracteur Botanique de Précision",
         bloomlab_text: "BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels. Faites fleurir toutes vos envies de bien-être végétal avec notre technologie d'extraction botanique de précision.",
         cta: "Découvrir BloomLab",
         safety_note: "Les préparations botaniques sont à utiliser selon la recette concernée. Les contenus Bloom sont pédagogiques et ne remplacent pas un avis médical."
@@ -349,7 +349,7 @@ export const translations = {
       },
       section4: {
         title: "L'Intelligence de l'Extraction",
-        p1: "L'extraction est le pont entre la plante et votre biologie. BloomLab® permet de maîtriser ce processus avec une précision absolue de ±0,5°C, garantissant que chaque molécule précieuse est préservée et rendue biodisponible.",
+        p1: "L'extraction est le pont entre la plante et votre biologie. BloomLab® permet de maîtriser ce processus avec une haute précision de ±0,5°C, garantissant que chaque molécule précieuse est préservée et rendue biodisponible.",
         phaseA: {
           title: "Le Respect du Vivant",
           description: "Chaque plante a son rythme. Notre technologie respecte la structure moléculaire pour extraire le totum intégral, sans dégradation thermique."
@@ -1132,7 +1132,7 @@ export const translations = {
     },
     machine: {
       hero: {
-        badge: "N°1 France — Souveraineté Botanique",
+        badge: "Expertise France — Souveraineté Botanique",
         title: "BloomLab :",
         title_accent: "l’infuseur botanique pour vos préparations maison",
         description: "Libérez jusqu'à 98% des actifs de vos plantes. BloomLab est l'appareil d'infusion et d'extraction botanique conçu pour préparer vos huiles infusées, macérâts et remèdes avec une précision thermique absolue.",
@@ -1591,7 +1591,7 @@ export const translations = {
         description: "Master the art of botanical infusion with precision. Discover how the BloomLab® botanical extractor allows you to control temperature, time, and solvents for your natural remedies.",
       },
       extractionGuide: {
-        badge: "N°1 Reference Guide — Botanical Sovereignty",
+        badge: "Reference Guide — Botanical Sovereignty",
         title: "Precision Botanical Extraction:",
         subtitle: "The BloomLab Expert Guide",
         description: "Master solvents, precise temperatures, and botanical infusion protocols to reveal the power of the plant Totum at home with BloomLab® extractor.",
@@ -1983,7 +1983,7 @@ export const translations = {
         search_placeholder: "Search for a kit, a plant..."
       },
       hero: {
-        badge: "N°1 Totum Extractor",
+        badge: "Totum Extractor",
         title: "BloomLab® Shop — Your Home Phytotherapy Laboratory",
         description: "Explore our selection of botanical extractors and plant kits for total health autonomy. Get 1 month of premium access free with any BloomLab purchase.",
         price_from: "Starting from",
@@ -2428,7 +2428,7 @@ export const translations = {
     },
     machine: {
       hero: {
-        badge: "N°1 France — Botanical Sovereignty",
+        badge: "France — Botanical Sovereignty",
         title: "BloomLab:",
         title_accent: "Botanical Extractor & Infuser.",
         description: "Discover the most precise countertop botanical extractor. A master herbal infusion machine for oils, butters, and tinctures for your natural remedies.",
@@ -2887,7 +2887,7 @@ export const translations = {
         description: "Meistern Sie die Kunst der botanischen Infusion mit Präzision. Entdecken Sie, wie der BloomLab® Extraktor Temperatur, Zeit und Lösungsmittel für Ihre Naturheilmittel steuert.",
       },
       extractionGuide: {
-        badge: "N°1 Referenz-Leitfaden — Botanische Souveränität",
+        badge: "Referenz-Leitfaden — Botanische Souveränität",
         title: "Präzise botanische Extraktion:",
         subtitle: "Der BloomLab Experten-Leitfaden",
         description: "Meistern Sie Lösungsmittel, präzise Temperaturen und Protokolle für die botanische Infusion, um die Kraft des pflanzlichen Totums zu Hause mit dem BloomLab®-Extraktor zu enthüllen.",
@@ -3279,7 +3279,7 @@ export const translations = {
         search_placeholder: "Suchen Sie nach einem Set, einer Pflanze..."
       },
       hero: {
-        badge: "N°1 Totum-Extraktor",
+        badge: "Totum-Extraktor",
         title: "BloomLab® Shop — Ihr Phytotherapie-Labor für zu Hause",
         description: "Entdecken Sie unsere Auswahl an botanischen Extraktoren und Pflanzen-Sets für totale Gesundheitsautonomie. Erhalten Sie 1 Monat Premium-Zugang kostenlos beim Kauf eines BloomLab.",
         price_from: "Ab",
@@ -3724,7 +3724,7 @@ export const translations = {
     },
     machine: {
       hero: {
-        badge: "N°1 Frankreich — Botanische Souveränität",
+        badge: "Frankreich — Botanische Souveränität",
         title: "BloomLab:",
         title_accent: "Botanischer Extraktor & Infusor.",
         description: "Entdecken Sie den präzisesten botanischen Extraktor für Ihr Zuhause. Ein Kräuter-Infusionsgerät für Öle, Butter und Tinkturen für Ihre Naturheilmittel.",

@@ -177,55 +177,6 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
     }
     metaDesc.setAttribute('content', finalDescription);
     
-    // Update canonical link
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonical);
-    }
-    let path = window.location.pathname;
-    if (path.length > 1 && path.endsWith('/')) {
-      path = path.slice(0, -1);
-    }
-    const currentUrl = `https://bloombybotanik.com${path}`;
-    canonical.setAttribute('href', currentUrl);
-
-    // Update hreflang tags
-    const langs: Language[] = ['fr', 'en', 'de'];
-    langs.forEach(l => {
-      let hreflang = document.querySelector(`link[hreflang="${l}"]`);
-      if (!hreflang) {
-        hreflang = document.createElement('link');
-        hreflang.setAttribute('rel', 'alternate');
-        hreflang.setAttribute('hreflang', l);
-        document.head.appendChild(hreflang);
-      }
-      
-      let localizedPath = window.location.pathname;
-      // Strip current lang prefix if exists
-      if (localizedPath.startsWith('/en/')) localizedPath = localizedPath.replace('/en/', '/');
-      else if (localizedPath.startsWith('/de/')) localizedPath = localizedPath.replace('/de/', '/');
-      else if (localizedPath === '/en') localizedPath = '/';
-      else if (localizedPath === '/de') localizedPath = '/';
-
-      let href = 'https://bloombybotanik.com';
-      if (l === 'fr') href += localizedPath;
-      else href += `/${l}${localizedPath === '/' ? '' : localizedPath}`;
-      
-      hreflang.setAttribute('href', href);
-    });
-
-    // x-default
-    let xDefault = document.querySelector('link[hreflang="x-default"]');
-    if (!xDefault) {
-      xDefault = document.createElement('link');
-      xDefault.setAttribute('rel', 'alternate');
-      xDefault.setAttribute('hreflang', 'x-default');
-      document.head.appendChild(xDefault);
-    }
-    xDefault.setAttribute('href', `https://bloombybotanik.com${window.location.pathname.replace(/^\/(en|de)(\/|$)/, '/')}`);
-
     // Update robots meta for indexing
     let robots = document.querySelector('meta[name="robots"]');
     if (!robots) {
@@ -241,11 +192,53 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
     }
 
     // 2. JSON-LD Injection
-    const viewPath = currentView === 'product-detail' && productId ? `/boutique/${productId}` : (VIEW_PATHS[currentView as string] || '/');
+    let viewPath = currentView === 'product-detail' && productId ? `/boutique/${productId}` : (VIEW_PATHS[currentView as string] || '/');
+    
+    // Safety check: if viewPath is / but we are on a known path, use the known path
+    const currentPath = window.location.pathname.replace(/^\/(en|de)(\/|$)/, '/').replace(/\/$/, '');
+    if (viewPath === '/' && currentPath !== '' && currentPath !== '/') {
+      viewPath = currentPath;
+    }
+    
     const langPrefix = lang === 'fr' ? '' : `/${lang}`;
-    const pageUrl = `https://bloombybotanik.com${langPrefix}${viewPath === '/' ? '' : viewPath};`
+    const pageUrl = `https://bloombybotanik.com${langPrefix}${viewPath === '/' ? '' : viewPath}`;
     const logoUrl = "https://bloombybotanik.com/brand/logo-org.jpg";
     const socialLogoUrl = "https://bloombybotanik.com/brand/social-logo.jpg";
+
+    // Update canonical link to use the normalized pageUrl
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', pageUrl);
+
+    // Update hreflang tags
+    const langs: Language[] = ['fr', 'en', 'de'];
+    langs.forEach(l => {
+      let hreflang = document.querySelector(`link[hreflang="${l}"]`);
+      if (!hreflang) {
+        hreflang = document.createElement('link');
+        hreflang.setAttribute('rel', 'alternate');
+        hreflang.setAttribute('hreflang', l);
+        document.head.appendChild(hreflang);
+      }
+      
+      const lPrefix = l === 'fr' ? '' : `/${l}`;
+      const href = `https://bloombybotanik.com${lPrefix}${viewPath === '/' ? '' : viewPath}`;
+      hreflang.setAttribute('href', href);
+    });
+
+    // x-default
+    let xDefault = document.querySelector('link[hreflang="x-default"]');
+    if (!xDefault) {
+      xDefault = document.createElement('link');
+      xDefault.setAttribute('rel', 'alternate');
+      xDefault.setAttribute('hreflang', 'x-default');
+      document.head.appendChild(xDefault);
+    }
+    xDefault.setAttribute('href', `https://bloombybotanik.com${viewPath === '/' ? '' : viewPath}`);
 
     const breadcrumbs = [
       { name: "Bloom by BotaniK", url: "https://bloombybotanik.com" }

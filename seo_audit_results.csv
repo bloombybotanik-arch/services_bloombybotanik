@@ -1,0 +1,15 @@
+URL,Statut HTTP,URL finale,Robots Meta,X-Robots-Tag,Canonical,Indexable,Anomalie
+http://localhost:3000/,200,http://localhost:3000/,index, follow,N/A,https://bloombybotanik.com/,Oui,Canonical mismatch: https://bloombybotanik.com/. 
+http://localhost:3000/bloomlab,200,http://localhost:3000/bloomlab,index, follow,N/A,https://bloombybotanik.com/,Oui,Canonical mismatch: https://bloombybotanik.com/. 
+http://localhost:3000/boutique,200,http://localhost:3000/boutique,index, follow,N/A,https://bloombybotanik.com/,Oui,Canonical mismatch: https://bloombybotanik.com/. 
+http://localhost:3000/infuseur-botanique,200,http://localhost:3000/infuseur-botanique,index, follow,N/A,https://bloombybotanik.com/,Oui,Canonical mismatch: https://bloombybotanik.com/. 
+http://localhost:3000/manifeste,200,http://localhost:3000/manifeste,index, follow,N/A,https://bloombybotanik.com/,Oui,Canonical mismatch: https://bloombybotanik.com/. 
+http://localhost:3000/phytotherapie-reset,200,http://localhost:3000/phytotherapie-reset,index, follow,N/A,https://bloombybotanik.com/,Oui,Canonical mismatch: https://bloombybotanik.com/. 
+http://localhost:3000/bibliotheque,200,http://localhost:3000/bibliotheque,index, follow,N/A,https://bloombybotanik.com/,Oui,Canonical mismatch: https://bloombybotanik.com/. 
+http://localhost:3000/cosmetiques,200,http://localhost:3000/cosmetiques,index, follow,N/A,https://bloombybotanik.com/,Oui,Canonical mismatch: https://bloombybotanik.com/. 
+http://localhost:3000/culinaire,200,http://localhost:3000/culinaire,index, follow,N/A,https://bloombybotanik.com/,Oui,Canonical mismatch: https://bloombybotanik.com/. 
+http://localhost:3000/herbier,200,http://localhost:3000/bibliotheque,index, follow,N/A,https://bloombybotanik.com/,Oui,Redirected to http://localhost:3000/bibliotheque. Canonical mismatch: https://bloombybotanik.com/. 
+http://localhost:3000/legal,200,http://localhost:3000/legal,index, follow,N/A,https://bloombybotanik.com/,Oui,Canonical mismatch: https://bloombybotanik.com/. 
+http://localhost:3000/blog,200,http://localhost:3000/blog,index, follow,N/A,https://bloombybotanik.com/,Oui,Canonical mismatch: https://bloombybotanik.com/. 
+http://localhost:3000/boutique/kit-starter,200,http://localhost:3000/boutique/kit-starter,index, follow,N/A,https://bloombybotanik.com/,Oui,Canonical mismatch: https://bloombybotanik.com/. 
+http://localhost:3000/boutique/pack-signature,200,http://localhost:3000/boutique/pack-signature,index, follow,N/A,https://bloombybotanik.com/,Oui,Canonical mismatch: https://bloombybotanik.com/. 
