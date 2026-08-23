@@ -4,7 +4,7 @@ import { AGENT_INSTRUCTIONS } from "./newsletter-agents";
 
 export class NewsletterOrchestrator {
   private ai: any;
-  private model: string = "gemini-3.7-flash";
+  private model: string = "gemini-1.5-flash";
 
   constructor(apiKey: string) {
     this.ai = new GoogleGenAI({

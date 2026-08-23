@@ -168,14 +168,7 @@ app.get('/robots.txt', (req, res) => {
 const redirects301: Record<string, string> = {
   // Erreurs 404 critiques
   '/bloomlab-extracteur-botanique-et-infuseur-dhuile-intelligent-6-en-1': '/bloomlab',
-  '/retour-et-remboursement': '/droit-de-retractation',
-  '/retours-et-remboursements': '/droit-de-retractation',
-  '/termes-et-conditions': '/legal',
-  '/conditions-generales-de-vente': '/legal',
-  '/cgv': '/legal',
-  '/cgu': '/legal',
-  '/mentions-legales': '/legal',
-  '/politique-de-confidentialite': '/legal',
+  '/retours-et-remboursements': '/retour-et-remboursement',
   '/tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes-spoiler-la-difference-est-de-1-a-98': '/blog?post=tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes-spoiler-la-difference-est-de-1-a-98',
   '/chroniques': '/blog',
   '/infusion-botanique-maison-comment-ca-marche': '/infusion-botanique#comprendre-infusion-botanique',

@@ -85,8 +85,14 @@ export const VIEW_PATHS: Record<string, string> = {
   'guide-complet': '/extraction-botanique-guide-complet',
   'qu-est-ce-que-infusion': '/qu-est-ce-que-l-infusion-botanique',
   admin: '/admin', 
-  blog: '/journal-botanique', 
+  blog: '/blog', 
   withdrawal: '/droit-de-retractation', 
+  'infuseur-botanique': '/infuseur-botanique',
+  cgv: '/conditions-generales-de-vente',
+  cgu: '/termes-et-conditions',
+  privacy: '/politique-de-confidentialite',
+  mentions: '/mentions-legales',
+  returns: '/retour-et-remboursement',
   indexbis: '/indexbis',
   'newsletter-preferences': '/newsletter/preferences',
   'admin-newsletter': '/admin/newsletter',
@@ -112,7 +118,7 @@ const generateSeoAlt = (imageContext: string, t: any) => {
 const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: Language, currentView: string, t: any, productId?: string, blogPostSlug?: string }) => {
   useEffect(() => {
     // 1. Handle dynamic Title & Meta Description
-    let seoKey: 'home' | 'herbarium' | 'shop' | 'blog' | 'pillar' | 'extraction' | 'infusion' | 'machine' | 'manifesto' | 'how_it_works' | 'reset' | 'recettes' | 'faq' = 'home';
+    let seoKey: 'home' | 'herbarium' | 'shop' | 'blog' | 'pillar' | 'extraction' | 'infusion' | 'infuseur' | 'machine' | 'manifesto' | 'how_it_works' | 'reset' | 'recettes' | 'faq' = 'home';
     
     if (['herbier', 'culinaire', 'cosmetiques'].includes(currentView)) {
       seoKey = 'herbarium';
@@ -130,6 +136,8 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
       seoKey = 'machine';
     } else if (currentView === 'manifeste') {
       seoKey = 'manifesto';
+    } else if (currentView === 'infuseur-botanique') {
+      seoKey = 'infuseur';
     } else if (currentView === 'phytotherapie-reset') {
       seoKey = 'reset';
     } else if (currentView === 'recettes') {
@@ -147,7 +155,7 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
     }
 
     // Override with product-specific SEO when viewing a product detail page
-    let finalTitle = isFR && currentView === 'home' ? "Bloom by BotaniK | Infusion et Extraction Botanique de Précision" : currentSeo.title;
+    let finalTitle = isFR && currentView === 'home' ? "Bloom by BotaniK | Infuseur & Extracteur Botanique de Précision" : currentSeo.title;
     let finalDescription = currentSeo.description;
     let productData: any = null;
 
@@ -176,7 +184,11 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    const currentUrl = `https://bloombybotanik.com${window.location.pathname}`;
+    let path = window.location.pathname;
+    if (path.length > 1 && path.endsWith('/')) {
+      path = path.slice(0, -1);
+    }
+    const currentUrl = `https://bloombybotanik.com${path}`;
     canonical.setAttribute('href', currentUrl);
 
     // Update hreflang tags
@@ -214,10 +226,24 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
     }
     xDefault.setAttribute('href', `https://bloombybotanik.com${window.location.pathname.replace(/^\/(en|de)(\/|$)/, '/')}`);
 
+    // Update robots meta for indexing
+    let robots = document.querySelector('meta[name="robots"]');
+    if (!robots) {
+      robots = document.createElement('meta');
+      robots.setAttribute('name', 'robots');
+      document.head.appendChild(robots);
+    }
+    const noIndexViews = ['admin', 'checkout', 'cart', 'account', 'pending'];
+    if (noIndexViews.includes(currentView)) {
+      robots.setAttribute('content', 'noindex, nofollow');
+    } else {
+      robots.setAttribute('content', 'index, follow');
+    }
+
     // 2. JSON-LD Injection
-    const path = currentView === 'product-detail' && productId ? `/boutique/${productId}` : (VIEW_PATHS[currentView as string] || '/');
+    const viewPath = currentView === 'product-detail' && productId ? `/boutique/${productId}` : (VIEW_PATHS[currentView as string] || '/');
     const langPrefix = lang === 'fr' ? '' : `/${lang}`;
-    const pageUrl = `https://bloombybotanik.com${langPrefix}${path === '/' ? '' : path}`;
+    const pageUrl = `https://bloombybotanik.com${langPrefix}${viewPath === '/' ? '' : viewPath};`
     const logoUrl = "https://bloombybotanik.com/brand/logo-org.jpg";
     const socialLogoUrl = "https://bloombybotanik.com/brand/social-logo.jpg";
 
@@ -694,6 +720,12 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
             isActive={currentView === 'guide'}
           />
           <NavItem 
+            id="infuseur-botanique" 
+            label={isFR ? "L'Infuseur Botanique" : "Botanical Infuser"} 
+            icon={FlaskConical} 
+            isActive={currentView === 'infuseur-botanique'}
+          />
+          <NavItem 
             id="pillar-extraction" 
             label={isFR ? "L'Extraction de Précision" : "Precision Extraction"} 
             icon={FlaskConical} 
@@ -917,8 +949,20 @@ export default function App() {
       return;
     }
 
-    if (restPath === '/termes-et-conditions' || restPath === '/conditions-generales-de-vente' || restPath === '/cgv') {
-      setLegalType('terms');
+    if (restPath === '/conditions-generales-de-vente' || restPath === '/cgv') {
+      setLegalType('cgv');
+      setCurrentView('legal');
+      return;
+    }
+
+    if (restPath === '/termes-et-conditions' || restPath === '/cgu') {
+      setLegalType('cgu');
+      setCurrentView('legal');
+      return;
+    }
+
+    if (restPath === '/politique-de-confidentialite') {
+      setLegalType('privacy');
       setCurrentView('legal');
       return;
     }
@@ -1341,6 +1385,7 @@ export default function App() {
       );
       case 'manifeste': return <ManifesteContent onBack={() => navigateTo(previousView === 'manifeste' ? 'home' : previousView)} onNavigate={navigateTo} lang={lang} />;
       case 'pillar-extraction': 
+      case 'infuseur-botanique':
       case 'guide-complet': return <PillarExtraction onNavigate={navigateTo} lang={lang} />;
       case 'activation': return (
         <ActivationPage 
@@ -1535,6 +1580,7 @@ export default function App() {
                   <div className="space-y-2">
                     {[
                       { id: 'guide', label: lang === 'fr' ? "L'Infusion Botanique" : "Botanical Infusion", icon: Activity },
+                      { id: 'infuseur-botanique', label: lang === 'fr' ? "L'Infuseur Botanique" : "Botanical Infuser", icon: FlaskConical },
                       { id: 'pillar-extraction', label: lang === 'fr' ? "L'Extraction de Précision" : "Precision Extraction", icon: FlaskConical },
                       { id: 'recettes', label: lang === 'fr' ? 'Recettes Botaniques' : 'Botanical Recipes', icon: FileText },
                     ].map((item: any) => (

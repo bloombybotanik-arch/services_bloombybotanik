@@ -4,30 +4,36 @@
 // exécution du JavaScript (hydratation des données produit + JSON-LD dynamique).
 
 import puppeteer from 'puppeteer';
-import { createServer } from 'http-server';
+import express from 'express';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import fs from 'fs/promises';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, '../dist');
-const PORT = 4173;
+const PORT = 4175;
 const BASE_URL = `http://localhost:${PORT}`;
 
 // Liste des routes à pré-rendre. Les kits sont synchronisés avec les slugs
 // définis dans src/StoreContent.tsx (fonction obtenirProduits).
 const PRODUCT_SLUGS = [
   'bloomlab',
-  'seve-fondamentale',
-  'nuit-profonde',
-  'confort-digestif',
-  'feu-articulaire',
-  'duo-argiles',
-  'pack-trio',
+  'bundle-apothicaire',
+  'pack-signature',
+  'kit-starter',
+  'kit-nuit',
+  'kit-digestion',
+  'kit-articulaire',
+  'kit-hiver',
+  'kit-reset',
+  'freemium-access',
+  'premium-access'
 ];
 
 const BLOG_SLUGS = [
-  'tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes'
+  'tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes',
+  'macers-huileux-maison-les-5-erreurs-qui-detruisent-vos-actifs',
+  'inflammation-chronique-le-role-des-plantes-dans-le-reset-homeostasique'
 ];
 
 const PLANT_IDS = [
@@ -39,27 +45,31 @@ const LANGUAGES = ['', '/en', '/de'];
 
 const BASE_ROUTES = [
   '/',
-  '/machine',
+  '/bloomlab',
   '/phytotherapie-reset',
   '/boutique',
-  '/culinaire',
-  '/cosmetiques',
-  '/library-landing',
+  '/gastronomie-botanique',
+  '/duo-argiles',
+  '/bibliotheque-savoirs',
   '/herbier',
   '/manifeste',
   '/activation',
   '/chat',
-  '/mentions-legales',
-  '/termes-et-conditions',
-  '/conditions-generales-de-vente',
-  '/cgv',
-  '/retour-et-remboursement',
-  '/tisane-ba',
-  '/extraction-botanique',
   '/infusion-botanique',
+  '/infuseur-botanique',
+  '/infusion-botanique-maison-comment-ca-marche',
+  '/extraction-botanique',
+  '/extraction-botanique-guide-complet',
   '/qu-est-ce-que-l-infusion-botanique',
-  '/legal',
-  '/droit-de-retractation'
+  '/blog',
+  '/droit-de-retractation',
+  '/conditions-generales-de-vente',
+  '/termes-et-conditions',
+  '/politique-de-confidentialite',
+  '/mentions-legales',
+  '/retour-et-remboursement',
+  '/questions-frequentes',
+  '/legal'
 ];
 
 const ROUTES = [];
@@ -91,14 +101,14 @@ async function routeToFilePath(route) {
 }
 
 async function main() {
-  console.log('Démarrage du serveur statique local pour le pré-rendu...');
-  // On utilise l'option proxy pour rediriger toutes les requêtes vers index.html (SPA fallback)
-  // Cela permet à Puppeteer de charger n'importe quelle route même si le fichier n'existe pas encore.
-  const server = createServer({ 
-    root: distDir,
-    proxy: `${BASE_URL}/index.html?`
+  console.log('Démarrage du serveur statique pour le pré-rendu...');
+  const app = express();
+  app.use(express.static(distDir));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(distDir, 'index.html'));
   });
-  await new Promise((resolve) => server.listen(PORT, resolve));
+  
+  const server = app.listen(PORT);
 
   const browser = await puppeteer.launch({
     headless: 'new',

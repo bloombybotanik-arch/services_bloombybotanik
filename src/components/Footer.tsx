@@ -106,6 +106,7 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
 
             <FooterGroup title={lang === 'fr' ? "Savoir-faire" : "Knowledge"}>
               <FooterLink id="guide" label={lang === 'fr' ? "L'Infusion Botanique" : "Botanical Infusion"} onClick={() => onNavigate('guide')} />
+              <FooterLink id="infuseur-botanique" label={lang === 'fr' ? "Infuseur Botanique" : "Botanical Infuser"} onClick={() => onNavigate('infuseur-botanique')} />
               <FooterLink id="pillar-extraction" label={lang === 'fr' ? "L'Extraction de Précision" : "Precision Extraction"} onClick={() => onNavigate('pillar-extraction')} />
               <FooterLink id="herbier" label={lang === 'fr' ? "L'Herbier Bloom" : "Bloom Herbarium"} onClick={() => onNavigate('herbier')} />
               <FooterLink id="recettes" label={lang === 'fr' ? "Recettes Botaniques" : "Botanical Recipes"} onClick={() => onNavigate('recettes')} />

@@ -7,6 +7,7 @@ import { OptimizedImage } from './components/OptimizedImage';
 
 export default function PillarExtraction({ lang, onNavigate }: { lang: Language, onNavigate: (v: any) => void }) {
   const t = translations[lang];
+  const seo = t.seo.infuseur || t.seo.pillar;
 
   return (
     <div className="flex-1 bg-[#F9F9F7]">
@@ -19,7 +20,7 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
               width={800}
               height={600}
               className="w-full h-full object-cover opacity-20" 
-              alt="Extraction Botanique de précision avec BloomLab - Le Totum des plantes" 
+              alt={(seo as any).h1 || "Extraction Botanique"} 
             />
           </div>
         </div>
@@ -38,8 +39,12 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-6xl font-black mb-8 font-sans tracking-tight leading-tight"
           >
-            Extraction botanique : <br />
-            <span className="text-botanik-orange">méthodes, paramètres et bonnes pratiques</span>
+            {(seo as any).h1?.split(':').length > 1 ? (
+              <>
+                {(seo as any).h1.split(':')[0]} : <br />
+                <span className="text-botanik-orange">{(seo as any).h1.split(':')[1]}</span>
+              </>
+            ) : (seo as any).h1 || (lang === 'fr' ? "Extraction Botanique de Précision" : "Precision Botanical Extraction")}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -47,7 +52,7 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
             transition={{ delay: 0.2 }}
             className="text-xl md:text-2xl text-white/80 leading-relaxed mb-12 max-w-3xl mx-auto"
           >
-            Nos équipes vous accompagnent dans votre projet de soins sur mesure.
+            {(seo as any).intro || (lang === 'fr' ? "Maîtrisez l'art de l'extraction avec BloomLab." : "Master the art of extraction with BloomLab.")}
           </motion.p>
         </div>
       </section>

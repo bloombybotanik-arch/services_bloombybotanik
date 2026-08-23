@@ -32,22 +32,21 @@ export default function GuideContent({ onNavigate, lang }: GuideContentProps) {
             {t.seo.infusion_guide.summary}
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <span className="px-4 py-2 bg-[#E8F1EE] text-[#0F261E] rounded-full text-sm font-bold border border-[#D8CBB7]">#1 France</span>
             <span className="px-4 py-2 bg-[#E8F1EE] text-[#0F261E] rounded-full text-sm font-bold border border-[#D8CBB7]">Totum Absolute</span>
             <span className="px-4 py-2 bg-[#E8F1EE] text-[#0F261E] rounded-full text-sm font-bold border border-[#D8CBB7]">Précision Thermique</span>
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             <button 
-              onClick={() => onNavigate('boutique')}
+              onClick={() => onNavigate('infuseur-botanique')}
               className="px-8 py-4 bg-botanik-green text-white rounded-2xl font-bold hover:bg-botanik-green/90 transition-all shadow-xl flex items-center gap-2 group"
             >
-              {t.guide.hero.cta_shop} <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              {lang === 'fr' ? "Découvrir l'infuseur botanique" : "Discover the botanical infuser"} <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
             <button 
-              onClick={() => document.getElementById('usage-levels')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => onNavigate('boutique')}
               className="px-8 py-4 bg-white border border-botanik-green/10 text-botanik-green rounded-2xl font-bold hover:bg-[#F5F3EB] transition-all flex items-center gap-2"
             >
-              {t.guide.hero.cta_levels}
+              {t.guide.hero.cta_shop}
             </button>
           </div>
         </div>

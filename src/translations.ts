@@ -5,8 +5,8 @@ export const translations = {
   fr: {
     seo: {
       home: {
-        title: "Bloom by BotaniK | Infusion et Extraction Botanique de Précision",
-        description: "Bloom by BotaniK explore l’infusion et l’extraction botanique à domicile. Découvrez BloomLab, les plantes, les recettes, les rituels de soin naturel et les préparations botaniques.",
+        title: "Bloom by BotaniK | Infuseur & Extracteur Botanique de Précision",
+        description: "Découvrez BloomLab®, l'infuseur & extracteur botanique de précision. Réalisez vos propres huiles infusées, macérats et extraits de plantes avec une technologie maîtrisée.",
         h1: "L’Expertise de l’Infusion et de l’Extraction Botanique",
         intro: "Bienvenue dans l'ère de la phytothérapie de précision. Bloom by BotaniK est la référence de l'infusion et de l'extraction botanique à domicile, alliant sagesses anciennes et technologie moderne pour votre souveraineté sanitaire.",
       },
@@ -27,6 +27,12 @@ export const translations = {
         description: "Qu’est-ce qu’une infusion botanique ? Découvrez les techniques d'herboristerie moderne pour préparer vos remèdes naturels avec précision.",
         h1: "L’Art de l’Infusion Botanique : Guide Complet et Pratiques",
         intro: "Bien plus qu'une tisane, l'infusion botanique est un rituel de soin documenté. Découvrez comment choisir vos plantes, vos solvants et maîtriser vos extractions pour un bien-être optimal.",
+      },
+      infuseur: {
+        title: "Infuseur botanique BloomLab® | Extraction et huiles infusées",
+        description: "Découvrez BloomLab®, l’infuseur botanique de précision pour préparer huiles infusées, macérats et extraits végétaux selon vos protocoles.",
+        h1: "BloomLab : infuseur botanique et extracteur de plantes de précision",
+        intro: "BloomLab® est l’infuseur botanique de précision conçu pour transformer vos plantes en extraits de haute pureté. Que vous soyez artisan, thérapeute ou passionné de phytothérapie, notre technologie d’extraction basse température respecte le Totum intégral du végétal.",
       },
       pillar: {
         title: "Extracteur Botanique & Totum : Le Guide Ultime de l'Extraction",
@@ -1447,7 +1453,7 @@ export const translations = {
   en: {
     seo: {
       home: {
-        title: "Botanical Extractor & Herbal Infusion Machine N°1 | Bloom by BotaniK",
+        title: "Botanical Extractor & Herbal Infusion Machine | Bloom by BotaniK",
         description: "BloomLab®: The #1 precision botanical extractor for plant totum extraction. Infuse plant oils, butters, and tinctures with ±0.5°C thermal precision.",
       },
       machine: {
@@ -1462,6 +1468,12 @@ export const translations = {
         title: "Herbal Infusion & Maceration: The Home Botanical Extractor Guide",
         description: "Master herbal infusions: temperature, solvents, and precision. Turn your kitchen into a natural remedy lab with the BloomLab® extractor.",
       },
+      infuseur: {
+        title: "BloomLab® Botanical Infuser | Oil Extraction & Infusions",
+        description: "Discover BloomLab®, the precision botanical infuser to prepare infused oils, macerates and plant extracts according to your protocols.",
+        h1: "BloomLab: Precision Botanical Infuser and Plant Extractor",
+        intro: "BloomLab® is the precision botanical infuser designed to transform your plants into high purity extracts.",
+      },
       pillar: {
         title: "Botanical Extractor & Totum: The Ultimate Precision Extraction Guide",
         description: "Everything about the BloomLab® botanical infuser. Extractors comparison, maceration, and decarboxylation for exceptionally pure natural care.",
@@ -1471,7 +1483,7 @@ export const translations = {
         description: "Medicinal plants directory and botanical extraction protocols. Create your own natural remedies and DIY phytotherapy with thermal precision.",
       },
       shop: {
-        title: "BloomLab Shop | Buy a Precision Botanical Extractor N°1",
+        title: "BloomLab Shop | Buy a Precision Botanical Extractor | Bloom",
         description: "Get the best countertop botanical infuser. 304 stainless steel, ±0.5°C precision, perfect for botanical oils, butters, and pure tinctures.",
       },
       blog: {
@@ -2737,7 +2749,7 @@ export const translations = {
   de: {
     seo: {
       home: {
-        title: "Botanischer Extraktor & Pflanzen-Infusionsgerät N°1 | Bloom",
+        title: "Botanischer Extraktor & Pflanzen-Infusionsgerät | Bloom by BotaniK",
         description: "BloomLab®: Der #1 botanische Extraktor für Kräuterheilmittel zu Hause. Öle, Butter und Tinkturen mit einer Präzision von ±0,5°C extrahieren.",
       },
       machine: {
@@ -2752,6 +2764,12 @@ export const translations = {
         title: "Pflanzen-Infusion & Mazeration: Leitfaden für Extraktoren",
         description: "Pflanzliche Infusionen meistern: Temperatur, Lösungsmittel und Präzision. Verwandeln Sie Ihre Küche in ein Labor für natürliche Heilmittel.",
       },
+      infuseur: {
+        title: "BloomLab® Botanisches Infusionsgerät | Ölextraktion & Infusionen",
+        description: "Entdecken Sie BloomLab®, das botanische Präzisions-Infusionsgerät zur Herstellung von Ölauszügen, Mazeraten und Pflanzenextrakten nach Ihren Protokollen.",
+        h1: "BloomLab: Botanisches Präzisions-Infusionsgerät und Pflanzenextraktor",
+        intro: "BloomLab® ist das botanische Präzisions-Infusionsgerät, das Ihre Pflanzen in hochreine Extrakte verwandelt.",
+      },
       pillar: {
         title: "Botanischer Extraktor & Totum: Der ultimative Extraktionsleitfaden",
         description: "Alles über den BloomLab® botanischen Infuser. Extraktoren-Vergleich, Mazeration und Decarboxylierung für außergewöhnlich reine Pflege.",
@@ -2761,7 +2779,7 @@ export const translations = {
         description: "Verzeichnis von Heilpflanzen und botanischen Extraktionsprotokollen. Erstellen Sie Ihre eigenen natürlichen Heilmittel mit thermischer Präzision.",
       },
       shop: {
-        title: "BloomLab Shop | Einen Präzisions-Extraktor N°1 kaufen",
+        title: "BloomLab Shop | Einen Präzisions-Extraktor kaufen | Bloom",
         description: "Holen Sie sich den besten botanischen Infuser. Edelstahl 304, ±0,5°C Präzision, ideal für botanische Öle, Butter und Tinkturen.",
       },
       blog: {
@@ -2774,7 +2792,7 @@ export const translations = {
       },
       manifesto: {
         title: "Unser botanisches Präzisionslabor | Bloom by BotaniK",
-        description: "La vision Bloom : allier herboristerie traditionnelle et science moderne. Votre extracteur botanique pour une souveraineté sanitaire retrouvée.",
+        description: "Die Bloom-Vision: Die Verbindung von traditioneller Kräuterkunde und moderner Wissenschaft. Ihr botanischer Extraktor für eine wiedergewonnene Gesundheitssouveränität.",
       },
       reset: {
         title: "Homöostatischer Reset & Terrain | Präzisions-Phytotherapie",
