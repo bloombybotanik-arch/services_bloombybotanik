@@ -4,7 +4,7 @@
  */
 
 import { useEffect, useState, lazy, Suspense, ReactNode } from 'react';
-import { Lock, ShoppingBag, BookOpen, FlaskConical, Menu, X, ChevronRight, Leaf, ShieldCheck, SearchCheck, Award, Star, User, Check, ArrowRight, ChefHat, Instagram, Youtube, Facebook, Pin as Pinterest, Music2 as TikTok, MessageSquare, Sparkles, Wind, Waves, Moon, Utensils, Activity, Globe, Settings, Droplets, MessageCircle, ShoppingCart, Home, FileText, Newspaper } from 'lucide-react';
+import { Lock, ShoppingBag, BookOpen, FlaskConical, Menu, X, ChevronRight, Leaf, ShieldCheck, SearchCheck, Award, Star, User, Check, ArrowRight, ChefHat, Instagram, Youtube, Facebook, Pin as Pinterest, Music2 as TikTok, MessageSquare, Sparkles, Wind, Waves, Moon, Utensils, Activity, Globe, Settings, Droplets, MessageCircle, ShoppingCart, Home, FileText, Newspaper, Microscope } from 'lucide-react';
 import { translations, Language } from './translations';
 import { getProducts } from './StoreContent';
 import Footer from './components/Footer';
@@ -87,8 +87,8 @@ export const VIEW_PATHS: Record<string, string> = {
   guide: '/infusion-botanique',
   how_it_works: '/infusion-botanique-maison-comment-ca-marche', 
   pending: '/en-attente',
-  library: '/bibliotheque', 
-  herbier: '/herbier', 
+  library: '/bibliotheque-savoirs', 
+  herbier: '/bibliotheque-savoirs', 
   'pillar-extraction': '/extraction-botanique',
   'guide-complet': '/extraction-botanique-guide-complet',
   'qu-est-ce-que-infusion': '/qu-est-ce-que-l-infusion-botanique',
@@ -211,6 +211,11 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
     // 2. JSON-LD Injection
     let viewPath = currentView === 'product-detail' && productId ? `/boutique/${productId}` : (VIEW_PATHS[currentView as string] || '/');
     
+    // Normalize path for canonical: if we have a blog slug, use the blog URL
+    if (currentView === 'blog' && blogPostSlug) {
+      viewPath = `/blog/${blogPostSlug}`;
+    }
+
     // Safety check: if viewPath is / but we are on a known path, use the known path
     const currentPath = window.location.pathname.replace(/^\/(en|de)(\/|$)/, '/').replace(/\/$/, '');
     if (viewPath === '/' && currentPath !== '' && currentPath !== '/') {
@@ -422,10 +427,10 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
           "hasMerchantReturnPolicy": {
             "@type": "MerchantReturnPolicy",
             "applicableCountry": "FR",
-            "returnPolicyCategory": "MerchantReturnFiniteReturnPeriod",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
             "merchantReturnDays": 14,
-            "returnMethod": "ReturnByMail",
-            "returnFees": "FreeReturn"
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn"
           }
         }
       });
@@ -497,10 +502,10 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
           "hasMerchantReturnPolicy": {
             "@type": "MerchantReturnPolicy",
             "applicableCountry": "FR",
-            "returnPolicyCategory": "MerchantReturnFiniteReturnPeriod",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
             "merchantReturnDays": 14,
-            "returnMethod": "ReturnByMail",
-            "returnFees": "FreeReturn"
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn"
           }
         }
       });
@@ -638,7 +643,7 @@ const CertificationCarousel = () => {
 
 // --- COMPONENTS ---
 
-const NavigationSidebar = ({ className = "", currentView, navigateTo, user, handleLogout, lang, setLang, t, isDiscovery, isPremium }: { className?: string, currentView: string, navigateTo: (v: any) => void, user?: any, handleLogout?: () => void, lang: Language, setLang: (l: Language) => void, t: any, isDiscovery: boolean, isPremium: boolean }) => {
+const NavigationSidebar = ({ className = "", currentView, currentProductId, navigateTo, user, handleLogout, lang, setLang, t, isDiscovery, isPremium }: { className?: string, currentView: string, currentProductId?: string, navigateTo: (v: any, p?: string) => void, user?: any, handleLogout?: () => void, lang: Language, setLang: (l: Language) => void, t: any, isDiscovery: boolean, isPremium: boolean }) => {
   const NavItem = ({ id, label, icon: Icon, onClick, isActive, isSub }: { id?: string, label: string, icon?: any, onClick?: () => void, isActive?: boolean, isSub?: boolean }) => (
     <a
       href={id ? VIEW_PATHS[id] : '#'}
@@ -703,27 +708,39 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
 
       {/* Main Nav */}
       <div className="flex-1 overflow-y-auto px-4 custom-scrollbar pb-10">
-        <NavGroup title={isFR ? "L'Essentiel" : "Essentials"}>
-          <NavItem 
-            id="boutique" 
-            label={isFR ? 'Boutique' : 'Shop'} 
-            icon={ShoppingBag} 
-            isActive={currentView === 'boutique'}
-          />
+        <NavGroup title={isFR ? "BloomLab" : "BloomLab"}>
           <NavItem 
             id="machine" 
-            label="BloomLab®" 
-            icon={Settings} 
+            label={isFR ? "Découvrir BloomLab®" : "Discover BloomLab®"} 
+            icon={Sparkles} 
             isActive={currentView === 'machine'}
+          />
+          <NavItem 
+            label={isFR ? "Bain-Marie vs BloomLab" : "Bain-Marie vs BloomLab"} 
+            icon={FlaskConical} 
+            onClick={() => navigateTo('blog', 'tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes')}
+            isActive={currentView === 'blog' && currentProductId === 'tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes'}
+          />
+          <NavItem 
+            id="cosmetiques" 
+            label={isFR ? 'Duo Argiles Bloom' : 'Bloom Clay Duo'} 
+            icon={Droplets} 
+            isActive={currentView === 'cosmetiques' && currentProductId === 'duo-argiles'}
           />
         </NavGroup>
 
-        <NavGroup title={isFR ? "Rituels & Soins" : "Rituals & Care"}>
+        <NavGroup title={isFR ? "Les 3 Univers" : "The 3 Universes"}>
+          <NavItem 
+            id="culinaire" 
+            label={isFR ? 'Atelier Culinaire' : 'Culinary Workshop'} 
+            icon={ChefHat} 
+            isActive={currentView === 'culinaire'}
+          />
           <NavItem 
             id="cosmetiques" 
-            label={isFR ? 'Duo Argiles' : 'Clay Duo'} 
+            label={isFR ? 'Soin Cosmétique' : 'Cosmetic Care'} 
             icon={Sparkles} 
-            isActive={currentView === 'cosmetiques'}
+            isActive={currentView === 'cosmetiques' && !currentProductId}
           />
           <NavItem 
             id="phytotherapie-reset" 
@@ -731,45 +748,36 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
             icon={Wind} 
             isActive={currentView === 'phytotherapie-reset'}
           />
+        </NavGroup>
+
+        <NavGroup title={isFR ? "Boutique" : "Shop"}>
           <NavItem 
-            id="culinaire" 
-            label={isFR ? 'Gastronomie Botanique' : 'Botanical Gastronomy'} 
-            icon={ChefHat} 
-            isActive={currentView === 'culinaire'}
+            id="boutique" 
+            label={isFR ? 'Découvrir la Boutique' : 'Discover the Shop'} 
+            icon={ShoppingBag} 
+            isActive={currentView === 'boutique'}
           />
         </NavGroup>
 
-        <NavGroup title={isFR ? "Savoir-faire" : "Knowledge"}>
+        <NavGroup title={isFR ? "Science du Totum" : "Science of Totum"}>
           <NavItem 
-            id="guide" 
-            label={isFR ? "L'Infusion Botanique" : "Botanical Infusion"} 
-            icon={Activity} 
-            isActive={currentView === 'guide'}
-          />
-          <NavItem 
-            id="infuseur-botanique" 
-            label={isFR ? "L'Infuseur Botanique" : "Botanical Infuser"} 
+            id="infusion-precision" 
+            label={isFR ? "La Méthode" : "The Method"} 
             icon={FlaskConical} 
-            isActive={currentView === 'infuseur-botanique'}
+            isActive={currentView === 'infusion-precision'}
           />
           <NavItem 
-            id="pillar-extraction" 
-            label={isFR ? "L'Extraction de Précision" : "Precision Extraction"} 
-            icon={FlaskConical} 
-            isActive={currentView === 'pillar-extraction'}
-          />
-          <NavItem 
-            id="recettes" 
-            label={isFR ? 'Recettes Botaniques' : 'Botanical Recipes'} 
-            icon={FileText} 
-            isActive={currentView === 'recettes'}
+            id="questions-frequentes" 
+            label="FAQ" 
+            icon={MessageCircle} 
+            isActive={currentView === 'questions-frequentes'}
           />
         </NavGroup>
 
-        <NavGroup title={isFR ? "Transmission" : "Resources"}>
+        <NavGroup title={isFR ? "Ressources" : "Resources"}>
           <NavItem 
             id="herbier" 
-            label={isFR ? "L'Herbier Bloom" : "Bloom Herbarium"} 
+            label={isFR ? "L'Herbier" : "The Herbarium"} 
             icon={BookOpen} 
             isActive={currentView === 'herbier'}
           />
@@ -777,13 +785,13 @@ const NavigationSidebar = ({ className = "", currentView, navigateTo, user, hand
             id="blog" 
             label={isFR ? 'Journal Botanique' : 'Botanical Journal'} 
             icon={Newspaper} 
-            isActive={currentView === 'blog'}
+            isActive={currentView === 'blog' && !currentProductId}
           />
           <NavItem 
-            id="questions-frequentes" 
-            label="FAQ" 
-            icon={MessageCircle} 
-            isActive={currentView === 'questions-frequentes'}
+            id="manifeste" 
+            label={isFR ? 'Le Manifeste' : 'The Manifesto'} 
+            icon={FileText} 
+            isActive={currentView === 'manifeste'}
           />
         </NavGroup>
       </div>
@@ -836,7 +844,7 @@ const HybridOffer = ({ onNavigate }: { onNavigate: (view: any) => void }) => (
           </ul>
         </div>
         <div>
-          <div className="text-3xl font-bold mb-6">239 € <span className="text-lg line-through opacity-50 font-normal">289 €</span></div>
+          <div className="text-3xl font-bold mb-6 whitespace-nowrap">239&nbsp;€ <span className="text-lg line-through opacity-50 font-normal">289&nbsp;€</span></div>
           <button onClick={() => onNavigate('boutique')} className="w-full py-4 px-6 bg-botanik-green text-white rounded-lg font-semibold hover:bg-botanik-green/90 transition-colors flex items-center justify-center gap-2 group">
             Acquérir ma BloomLab
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -1035,11 +1043,27 @@ export default function App() {
       return;
     }
 
-    // --- Detect Herbier detail URL pattern /bibliotheque/:id or /herbier/:id ---
-    const herbierMatch = normalizedPath.match(/^\/(bibliotheque|herbier)\/([a-z0-9-]+)$/);
+    // --- Detect Herbier detail URL pattern /bibliotheque/:id or /herbier/:id or /bibliotheque-savoirs/:id ---
+    const herbierMatch = normalizedPath.match(/^\/(bibliotheque|herbier|bibliotheque-savoirs)\/([a-z0-9-]+)$/);
     if (herbierMatch) {
       setCurrentProductId(herbierMatch[2]);
       setCurrentView('herbier');
+      return;
+    }
+
+    // --- Detect culinary detail URL pattern /gastronomie-botanique/:id ---
+    const culinaryMatch = normalizedPath.match(/^\/gastronomie-botanique\/([a-z0-9-]+)$/);
+    if (culinaryMatch) {
+      setCurrentProductId(culinaryMatch[1]);
+      setCurrentView('culinaire');
+      return;
+    }
+
+    // --- Detect cosmetics detail URL pattern /cosmetiques/:id ---
+    const cosmeticsMatch = normalizedPath.match(/^\/cosmetiques\/([a-z0-9-]+)$/);
+    if (cosmeticsMatch) {
+      setCurrentProductId(cosmeticsMatch[1]);
+      setCurrentView('cosmetiques');
       return;
     }
 
@@ -1134,10 +1158,36 @@ export default function App() {
     if (view === 'legal' && type) setLegalType(type);
     
     setCurrentProductId(productId);
+    if (view === 'blog') {
+      setBlogPostSlug(productId);
+    } else {
+      setBlogPostSlug(undefined);
+    }
     setCurrentView(view);
 
     const langPrefix = lang === 'fr' ? '' : `/${lang}`;
     let basePath = view === 'product-detail' && productId ? `/boutique/${productId}` : (VIEW_PATHS[view] || '/');
+    
+    // SEO Clean URLs for Blog
+    if (view === 'blog' && productId) {
+      basePath = `/blog/${productId}`;
+    }
+    
+    // SEO Clean URLs for Herbarium
+    if (view === 'herbier' && productId) {
+      basePath = `/bibliotheque-savoirs/${productId}`;
+    }
+    
+    // SEO Clean URLs for Cosmetics
+    if (view === 'cosmetiques' && productId) {
+      basePath = `/cosmetiques/${productId}`;
+    }
+    
+    // SEO Clean URLs for Culinary
+    if (view === 'culinaire' && productId) {
+      basePath = `/gastronomie-botanique/${productId}`;
+    }
+    
     if (basePath === '/' && lang !== 'fr') basePath = '';
     const targetPath = `${langPrefix}${basePath}` || '/';
 
@@ -1409,7 +1459,7 @@ export default function App() {
       );
       case 'recettes': return <RecipesContent onBack={() => navigateTo('home')} lang={lang} t={t} />;
       case 'guides': return <BlogContent lang={lang} onNavigate={navigateTo} initialSlug={blogPostSlug} />;
-      case 'questions-frequentes': return <HomeContent onNavigate={navigateTo} lang={lang} scrollToId="faq" />;
+      case 'questions-frequentes': return <IndexBisContent onNavigate={navigateTo} lang={lang} scrollToId="faq" />;
       case 'infusion-precision':
       case 'totum-definition':
       case 'solvants-extraction': return (
@@ -1472,32 +1522,35 @@ export default function App() {
   };
 
   const MobileHeader = () => (
-    <header className="lg:hidden sticky top-0 bg-botanik-green z-[60] border-b border-white/5 px-4 py-4 flex items-center justify-between shadow-sm">
+    <header className="lg:hidden sticky top-0 bg-botanik-green z-[60] border-b border-white/5 px-4 py-3 flex items-center justify-between shadow-sm">
       <div 
         className="flex items-center gap-3 cursor-pointer"
         onClick={() => navigateTo('home')}
       >
         <img src={logoSidebar} alt="Bloom" className="w-8 h-8 object-contain" />
         <div className="flex flex-col leading-none text-white">
-          <span className="text-base font-black tracking-wider">Bloom</span>
+          <span className="text-base font-black tracking-wider uppercase">Bloom</span>
           <span className="text-[8px] font-bold tracking-[0.1em] opacity-70">by BotaniK</span>
         </div>
       </div>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2">
+        <LanguageSelector lang={lang} setLang={handleLanguageChange} variant="mobile-header" />
+        
         <button onClick={() => navigateTo('cart')} className="relative text-white p-2">
-          <ShoppingCart className="w-6 h-6" />
+          <ShoppingCart className="w-5 h-5" />
           {cart.length > 0 && (
-            <span className="absolute -top-1 -right-1 w-5 h-5 bg-botanik-orange text-white text-[10px] font-black rounded-full flex items-center justify-center border-2 border-botanik-green">
+            <span className="absolute top-0 right-0 w-4 h-4 bg-botanik-orange text-white text-[9px] font-black rounded-full flex items-center justify-center border border-botanik-green">
               {cart.reduce((s, i) => s + i.quantity, 0)}
             </span>
           )}
         </button>
+        
         <button 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="text-white p-2"
           aria-label="Menu"
         >
-          {isMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
     </header>
@@ -1532,6 +1585,7 @@ export default function App() {
       <NavigationSidebar 
         className="hidden lg:flex" 
         currentView={currentView} 
+        currentProductId={currentProductId}
         navigateTo={navigateTo} 
         user={user} 
         handleLogout={handleLogout} 
@@ -1568,81 +1622,120 @@ export default function App() {
 
             <div className="flex-1 overflow-y-auto p-6 py-8 custom-scrollbar">
               <div className="space-y-10">
+                {/* 1. Main Action: The Product */}
                 <div>
-                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">{lang === 'fr' ? "L'Essentiel" : "Essentials"}</h3>
-                  <div className="space-y-2">
+                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-botanik-orange mb-6">BloomLab® — Le Produit</h3>
+                  <div className="space-y-3">
+                    <a
+                      href={VIEW_PATHS['machine']}
+                      onClick={(e) => { e.preventDefault(); navigateTo('machine'); setIsMenuOpen(false); }}
+                      className={`w-full flex items-center justify-between px-6 py-5 rounded-2xl transition-all text-left group border-2 ${
+                        currentView === 'machine'
+                          ? 'bg-botanik-orange text-white border-botanik-orange shadow-lg shadow-botanik-orange/20' 
+                          : 'bg-white/5 text-white/90 border-white/10 hover:border-botanik-orange/50'
+                      }`}
+                    >
+                      <div className="flex items-center gap-4">
+                        <Sparkles className={`w-6 h-6 ${(currentView === 'machine') ? 'text-white' : 'text-botanik-orange'}`} />
+                        <div className="flex flex-col">
+                          <span className="font-black text-lg tracking-tight leading-none">{lang === 'fr' ? 'Découvrir BloomLab®' : 'Discover BloomLab®'}</span>
+                          <span className="text-[10px] uppercase font-bold opacity-60 mt-1">{lang === 'fr' ? 'L\'extracteur de Totum N°1' : 'The #1 Totum Extractor'}</span>
+                        </div>
+                      </div>
+                      <ArrowRight className="w-5 h-5 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                    </a>
+                  </div>
+                </div>
+
+                {/* 2. Applications: Why you need it */}
+                <div>
+                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">{lang === 'fr' ? 'Vos Univers de Soin' : 'Your Care Universes'}</h3>
+                  <div className="grid grid-cols-1 gap-2">
                     {[
-                      { id: 'boutique', label: lang === 'fr' ? 'Boutique' : 'Shop', icon: ShoppingBag },
-                      { id: 'machine', label: 'BloomLab®', icon: Settings },
+                      { id: 'culinaire', label: lang === 'fr' ? 'Atelier Culinaire' : 'Culinary Workshop', icon: ChefHat, color: 'text-orange-400' },
+                      { id: 'cosmetiques', label: lang === 'fr' ? 'Soin Cosmétique' : 'Cosmetic Care', icon: Droplets, color: 'text-blue-400' },
+                      { id: 'phytotherapie-reset', label: lang === 'fr' ? 'Reset Homéostasique' : 'Homeostatic Reset', icon: Wind, color: 'text-emerald-400' },
                     ].map((item: any) => (
                       <a
                         key={item.id}
                         href={VIEW_PATHS[item.id]}
                         onClick={(e) => { e.preventDefault(); navigateTo(item.id); setIsMenuOpen(false); }}
-                        className={`w-full flex items-center justify-between px-6 py-4 rounded-2xl transition-all text-left group ${
-                          currentView === item.id 
-                            ? 'bg-white/10 text-white shadow-lg shadow-black/10' 
-                            : 'bg-botanik-orange/10 text-white border border-botanik-orange/20'
+                        className={`w-full flex items-center gap-4 px-6 py-4 rounded-2xl transition-all text-left group ${
+                          (currentView === item.id && !currentProductId) ? 'bg-white/10 text-white shadow-md' : 'text-white/70 hover:bg-white/5'
                         }`}
                       >
-                        <div className="flex items-center gap-4">
-                          <item.icon className={`w-5 h-5 transition-colors ${currentView === item.id ? 'text-botanik-orange' : 'text-botanik-orange/60 group-hover:text-botanik-orange'}`} />
-                          <span className="font-bold text-base tracking-tight">{item.label}</span>
-                        </div>
-                        <div className="w-1.5 h-1.5 rounded-full bg-botanik-orange animate-pulse" />
+                        <item.icon className={`w-5 h-5 ${item.color} opacity-80`} />
+                        <span className="font-bold text-base tracking-tight">{item.label}</span>
                       </a>
                     ))}
                   </div>
                 </div>
 
+                {/* 3. Social Proof & Education */}
                 <div>
-                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">{lang === 'fr' ? 'Rituels & Soins' : 'Rituals & Care'}</h3>
+                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">Expertise & Savoir</h3>
                   <div className="space-y-2">
                     {[
-                      { id: 'cosmetiques', label: lang === 'fr' ? 'Duo Argiles' : 'Clay Duo', icon: Sparkles },
-                      { id: 'phytotherapie-reset', label: lang === 'fr' ? 'Reset Homéostasique' : 'Homeostatic Reset', icon: Wind },
-                      { id: 'culinaire', label: lang === 'fr' ? 'Gastronomie Botanique' : 'Botanical Gastronomy', icon: ChefHat },
+                      { id: 'infusion-precision', label: lang === 'fr' ? "La Méthode d'Extraction" : "Extraction Method", icon: FlaskConical },
+                      { id: 'blog', label: 'Bain-Marie vs BloomLab', icon: Microscope, slug: 'tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes' },
+                      { id: 'questions-frequentes', label: "Questions Fréquentes (FAQ)", icon: MessageCircle },
                     ].map((item: any) => (
                       <a
-                        key={item.id}
-                        href={VIEW_PATHS[item.id]}
-                        onClick={(e) => { e.preventDefault(); navigateTo(item.id); setIsMenuOpen(false); }}
-                        className={`w-full flex items-center justify-between px-6 py-4 rounded-2xl transition-all text-left group ${
-                          currentView === item.id ? 'bg-white/10 text-white shadow-lg shadow-black/10' : 'text-white/70 hover:bg-white/5'
+                        key={item.id + (item.slug || '')}
+                        href={item.slug ? `/blog/${item.slug}` : VIEW_PATHS[item.id]}
+                        onClick={(e) => { 
+                          e.preventDefault(); 
+                          if (item.slug) navigateTo('blog', item.slug);
+                          else navigateTo(item.id); 
+                          setIsMenuOpen(false); 
+                        }}
+                        className={`w-full flex items-center gap-4 px-6 py-4 rounded-2xl transition-all text-left group ${
+                          (currentView === item.id && currentProductId === item.slug) ? 'bg-white/10 text-white shadow-md' : 'text-white/70 hover:bg-white/5'
                         }`}
                       >
-                        <div className="flex items-center gap-4">
-                          <item.icon className={`w-5 h-5 transition-colors ${currentView === item.id ? 'text-botanik-orange' : 'text-white/40 group-hover:text-white/60'}`} />
-                          <span className="font-bold text-base tracking-tight">{item.label}</span>
-                        </div>
-                        {currentView === item.id && <ChevronRight className="w-4 h-4 text-botanik-orange" />}
+                        <item.icon className="w-5 h-5 text-white/30" />
+                        <span className="font-bold text-base tracking-tight">{item.label}</span>
                       </a>
                     ))}
                   </div>
                 </div>
 
-                <div>
-                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">{lang === 'fr' ? 'Savoir-faire' : 'Knowledge'}</h3>
-                  <div className="space-y-2">
+                {/* 4. The Shop */}
+                <div className="pt-4">
+                  <a
+                    href={VIEW_PATHS['boutique']}
+                    onClick={(e) => { e.preventDefault(); navigateTo('boutique'); setIsMenuOpen(false); }}
+                    className={`w-full flex items-center justify-between px-8 py-6 rounded-3xl transition-all text-left group ${
+                      currentView === 'boutique' ? 'bg-white text-botanik-green' : 'bg-botanik-orange text-white'
+                    } shadow-xl shadow-black/20`}
+                  >
+                    <div className="flex items-center gap-4">
+                      <ShoppingBag className="w-6 h-6" />
+                      <div className="flex flex-col">
+                        <span className="font-black text-xl tracking-tight leading-none">{lang === 'fr' ? 'La Boutique' : 'The Shop'}</span>
+                        <span className="text-[10px] uppercase font-bold opacity-70 mt-1">{lang === 'fr' ? 'Commandez vos remèdes' : 'Order your remedies'}</span>
+                      </div>
+                    </div>
+                    <ChevronRight className="w-6 h-6" />
+                  </a>
+                </div>
+
+                {/* 5. Additional Resources */}
+                <div className="opacity-60 pt-6">
+                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/40 mb-6">Autres Ressources</h3>
+                  <div className="grid grid-cols-2 gap-2">
                     {[
-                      { id: 'guide', label: lang === 'fr' ? "L'Infusion Botanique" : "Botanical Infusion", icon: Activity },
-                      { id: 'infuseur-botanique', label: lang === 'fr' ? "L'Infuseur Botanique" : "Botanical Infuser", icon: FlaskConical },
-                      { id: 'pillar-extraction', label: lang === 'fr' ? "L'Extraction de Précision" : "Precision Extraction", icon: FlaskConical },
-                      { id: 'recettes', label: lang === 'fr' ? 'Recettes Botaniques' : 'Botanical Recipes', icon: FileText },
+                      { id: 'herbier', label: lang === 'fr' ? "L'Herbier" : "Herbarium", icon: BookOpen },
+                      { id: 'manifeste', label: lang === 'fr' ? 'Manifeste' : 'Manifesto', icon: FileText },
                     ].map((item: any) => (
                       <a
                         key={item.id}
                         href={VIEW_PATHS[item.id]}
                         onClick={(e) => { e.preventDefault(); navigateTo(item.id); setIsMenuOpen(false); }}
-                        className={`w-full flex items-center justify-between px-6 py-4 rounded-2xl transition-all text-left group ${
-                          currentView === item.id ? 'bg-white/10 text-white shadow-lg shadow-black/10' : 'text-white/70 hover:bg-white/5'
-                        }`}
+                        className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all text-left bg-white/5 text-white/60 hover:text-white`}
                       >
-                        <div className="flex items-center gap-4">
-                          <item.icon className={`w-5 h-5 transition-colors ${currentView === item.id ? 'text-botanik-orange' : 'text-white/40 group-hover:text-white/60'}`} />
-                          <span className="font-bold text-base tracking-tight">{item.label}</span>
-                        </div>
-                        {currentView === item.id && <ChevronRight className="w-4 h-4 text-botanik-orange" />}
+                        <item.icon className="w-4 h-4" />
+                        <span className="font-bold text-xs tracking-tight">{item.label}</span>
                       </a>
                     ))}
                   </div>

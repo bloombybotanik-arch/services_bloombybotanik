@@ -1153,14 +1153,14 @@ export const translations = {
         badge: "Expertise France — Souveraineté Botanique",
         title: "BloomLab :",
         title_accent: "l’infuseur botanique pour vos préparations maison",
-        description: "Libérez jusqu'à 98% des actifs de vos plantes. BloomLab est l'appareil d'infusion et d'extraction botanique conçu pour préparer vos huiles infusées, macérâts et remèdes avec une précision thermique absolue.",
+        description: "Libérez jusqu'à 98% des actifs de vos plantes. Avec BloomLab, vous ne faites plus “chauffer une plante”, vous libérez réellement ses principes actifs dans des conditions proches d’un laboratoire. La température est maintenue au degré près : assez élevée pour optimiser l’extraction des phytocomposés (polyphénols, flavonoïdes, huiles essentielles…), mais jamais au‑delà des seuils qui les dégradent, ce qui est exactement ce que montrent les études sur l’impact de la température en extraction végétale.\n\nLà où une casserole ou un bain‑marie improvisé chauffent trop fort ou de façon irrégulière (perte d’antioxydants, arômes brûlés, actifs détruits), BloomLab offre un profil thermique maîtrisé qui préserve les molécules sensibles à la chaleur et améliore la quantité d’actifs réellement présents dans vos huiles infusées et macérâts.",
         cta: "Acquérir ma BloomLab",
         discover: "Découvrir la technologie"
       },
       details: {
         badge: "L'Instrument",
         title: "Extracteur Botanique Maison : L'Art de l'Infusion de Précision.",
-        p1: "BloomLab est l'extracteur botanique domestique de référence. Il maintient une température stable à ±0,5°C pour vos infusions d'huiles essentielles et macérations.",
+        p1: "BloomLab est l'extracteur botanique domestique de référence. Il maintient une température stable à ±0,5°C pour vos infusions d'huiles essentielles et macérations. Vous obtenez des préparations plus puissantes, plus régulières et plus reproductibles, avec la même recette, jour après jour. Acheter BloomLab, c’est passer d'infusion approximative à l’extraction botanique de haute précision, pour que chaque plante donne le meilleur de ce qu’elle contient.",
         features: {
           inox: {
             title: "Inox 304 & Extraction Pure",

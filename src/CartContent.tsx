@@ -52,7 +52,11 @@ export default function CartContent({
 
   const getMethodPriceLabel = (method: ShippingMethod) => {
     const price = getShippingPrice(method, items);
-    return price === 0 ? t.summary.free : `${price.toFixed(2).replace('.', ',')} €`;
+    return price === 0 ? t.summary.free : (
+      <span className="whitespace-nowrap">
+        {price.toFixed(2).replace('.', ',')}&nbsp;€
+      </span>
+    );
   };
 
   if (items.length === 0) {
@@ -103,7 +107,7 @@ export default function CartContent({
                 <div className="flex-1 min-w-0 text-center sm:text-left space-y-2">
                   <div className="text-[10px] font-bold text-[#F97316] uppercase tracking-widest mb-1 truncate">{item.subtitle}</div>
                   <h3 className="text-xl md:text-2xl font-bold text-[#1B3022] truncate sm:whitespace-normal leading-tight">{item.name}</h3>
-                  <div className="text-xl font-bold text-[#1B3022]">{item.price.toFixed(2)} €</div>
+                  <div className="text-xl font-bold text-[#1B3022] whitespace-nowrap">{item.price.toFixed(2)}&nbsp;€</div>
                 </div>
                 <div className="flex items-center gap-4 bg-[#F9F9F7] p-2 rounded-xl">
                   <button 
@@ -305,23 +309,23 @@ export default function CartContent({
             </div>
 
             <div className="space-y-4 mb-8">
-              <div className="flex justify-between text-white/60">
+              <div className="flex justify-between text-white/60 whitespace-nowrap">
                 <span>{t.summary.subtotal}</span>
-                <span className="font-bold text-white">{subtotal.toFixed(2)} €</span>
+                <span className="font-bold text-white">{subtotal.toFixed(2)}&nbsp;€</span>
               </div>
               {isPromoApplied && (
-                <div className="flex justify-between text-botanik-orange">
+                <div className="flex justify-between text-botanik-orange whitespace-nowrap">
                   <span>Remise (Code Promo)</span>
-                  <span className="font-bold">-{ (subtotal * 0.1).toFixed(2) } €</span>
+                  <span className="font-bold">-{ (subtotal * 0.1).toFixed(2) }&nbsp;€</span>
                 </div>
               )}
-              <div className="flex justify-between text-white/60">
+              <div className="flex justify-between text-white/60 whitespace-nowrap">
                 <span>{t.summary.shipping}</span>
-                <span className="font-bold text-white">{shipping === 0 ? t.summary.free : `${shipping.toFixed(2)} €`}</span>
+                <span className="font-bold text-white">{shipping === 0 ? t.summary.free : `${shipping.toFixed(2)}&nbsp;€`}</span>
               </div>
-              <div className="pt-4 border-t border-white/10 flex justify-between items-center">
+              <div className="pt-4 border-t border-white/10 flex justify-between items-center whitespace-nowrap">
                 <span className="text-lg font-bold">{t.summary.total}</span>
-                <span className="text-3xl font-bold text-[#F97316]">{(isPromoApplied ? total * 0.9 : total).toFixed(2)} €</span>
+                <span className="text-3xl font-bold text-[#F97316]">{(isPromoApplied ? total * 0.9 : total).toFixed(2)}&nbsp;€</span>
               </div>
             </div>
 

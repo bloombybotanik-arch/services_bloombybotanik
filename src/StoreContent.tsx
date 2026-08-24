@@ -178,12 +178,14 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
   const products = React.useMemo(() => getProducts(lang), [lang]);
   
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat(lang === 'fr' ? 'fr-FR' : lang === 'de' ? 'de-DE' : 'en-US', {
-      style: 'currency',
-      currency: 'EUR',
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }).format(price);
+    return (
+      <span className="whitespace-nowrap">
+        {new Intl.NumberFormat(lang === 'fr' ? 'fr-FR' : lang === 'de' ? 'de-DE' : 'en-US', {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        }).format(price)}&nbsp;€
+      </span>
+    );
   };
 
   const filteredProducts = products.filter(product => 
@@ -242,8 +244,8 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
       {/* Promotional Banner */}
       <div className="bg-botanik-orange text-white text-center py-2 px-4 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] animate-pulse">
         {isFR 
-          ? "Rentrée 2026 : Soins Botaniques pour toute la Famille - Pack Complet à 59€" 
-          : "Back to School 2026: Botanical Care for the Whole Family - Complete Pack at 59€"}
+          ? "Rentrée 2026 : Soins Botaniques pour toute la Famille - Pack Complet à 59&nbsp;€" 
+          : "Back to School 2026: Botanical Care for the Whole Family - Complete Pack at 59&nbsp;€"}
       </div>
       
       {/* Search & Filter Header (App Style) */}

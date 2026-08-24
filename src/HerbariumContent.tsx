@@ -143,7 +143,7 @@ export default function HerbariumContent({
       }
       
       if (fullData) {
-        setSelectedPlant(fullData);
+        onNavigate('herbier', fullData.plant_id);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     } else if (plant.source === 'culinary') {

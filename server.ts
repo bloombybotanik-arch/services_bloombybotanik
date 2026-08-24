@@ -188,16 +188,28 @@ const redirects301: Record<string, string> = {
   '/boutique/confort-digestif': '/boutique/duo-argiles',
   '/boutique/feu-actualisateur': '/boutique/purete-sanguine',
   '/boutique/nutri-profonde': '/boutique/expert-peaux',
+  '/shop': '/boutique',
+  '/products': '/boutique',
+  '/herboristerie': '/bibliotheque-savoirs',
+  '/phytotherapie': '/phytotherapie-reset',
   
   // Unification Herbier -> Bibliothèque (URLs dynamiques)
-  '/herbier/chaga_vitality': '/bibliotheque/chaga_vitality',
-  '/herbier/urtica_dioica': '/bibliotheque/urtica_dioica',
-  '/herbier/melissa_officinalis': '/bibliotheque/melissa_officinalis',
-  '/herbier/curcuma_longa_poivre': '/bibliotheque/curcuma_longa_poivre',
-  '/herbier/zingiber_officinale': '/bibliotheque/zingiber_officinale',
-  '/herbier/rosmarinus_officinalis': '/bibliotheque/rosmarinus_officinalis',
-  '/herbier/lavandula_angustifolia': '/bibliotheque/lavandula_angustifolia',
-  '/herbier/artichaut': '/bibliotheque/artichaut',
+  '/herbier/chaga_vitality': '/bibliotheque-savoirs/chaga_vitality',
+  '/herbier/urtica_dioica': '/bibliotheque-savoirs/urtica_dioica',
+  '/herbier/melissa_officinalis': '/bibliotheque-savoirs/melissa_officinalis',
+  '/herbier/curcuma_longa_poivre': '/bibliotheque-savoirs/curcuma_longa_poivre',
+  '/herbier/zingiber_officinale': '/bibliotheque-savoirs/zingiber_officinale',
+  '/herbier/rosmarinus_officinalis': '/bibliotheque-savoirs/rosmarinus_officinalis',
+  '/herbier/lavandula_angustifolia': '/bibliotheque-savoirs/lavandula_angustifolia',
+  '/herbier/artichaut': '/bibliotheque-savoirs/artichaut',
+  '/bibliotheque/chaga_vitality': '/bibliotheque-savoirs/chaga_vitality',
+  '/bibliotheque/urtica_dioica': '/bibliotheque-savoirs/urtica_dioica',
+  '/bibliotheque/melissa_officinalis': '/bibliotheque-savoirs/melissa_officinalis',
+  '/bibliotheque/curcuma_longa_poivre': '/bibliotheque-savoirs/curcuma_longa_poivre',
+  '/bibliotheque/zingiber_officinale': '/bibliotheque-savoirs/zingiber_officinale',
+  '/bibliotheque/rosmarinus_officinalis': '/bibliotheque-savoirs/rosmarinus_officinalis',
+  '/bibliotheque/lavandula_angustifolia': '/bibliotheque-savoirs/lavandula_angustifolia',
+  '/bibliotheque/artichaut': '/bibliotheque-savoirs/artichaut',
   
   // Doublons WordPress Blog (suffixes -2, -3, -4)
   '/autonomie-botanique-pourquoi-une-maison-qui-utilise-des-plantes-a-besoin-dun-vrai-outil-dextraction-2': '/blog?post=autonomie-botanique-pourquoi-une-maison-qui-utilise-des-plantes-a-besoin-dun-vrai-outil-dextraction',
@@ -635,8 +647,72 @@ async function setupVite() {
     app.use(vite.middlewares);
   } else {
     const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath));
-    app.get('*', (req, res) => {
+    app.use(express.static(distPath, { index: false })); // Don't serve index.html automatically
+
+    app.get('*', async (req, res) => {
+      const urlPath = req.path;
+      const langMatch = urlPath.match(/^\/(en|de)(\/|$)/);
+      const lang = langMatch ? langMatch[1] : 'fr';
+      const restPath = langMatch ? urlPath.replace(/^\/(en|de)/, '') : urlPath;
+
+      // SSR-Lite: Inject metadata for Blog Posts
+      if (restPath.startsWith('/blog/')) {
+        const slug = restPath.replace('/blog/', '').split('/')[0];
+        // Note: In a real production environment, you'd import the blogPosts data here.
+        // For this implementation, we will use a simplified detection or read the file if needed.
+        // However, since we're in the same repo, we can assume the data is available if we import it.
+        try {
+          const blogPostsModule = await import('./src/data/blogPosts');
+          const post = blogPostsModule.blogPosts.find((p: any) => p.slug === slug);
+          
+          if (post) {
+            let indexPath = path.join(distPath, 'index.html');
+            let html = require('fs').readFileSync(indexPath, 'utf8');
+            
+            const title = `${post.title[lang]} | Journal Bloom`;
+            const desc = post.excerpt[lang];
+            const ogImage = post.image ? `https://bloombybotanik.com${post.image}` : "https://bloombybotanik.com/brand/social-logo.jpg";
+            
+            // Inject Title
+            html = html.replace(/<title>.*?<\/title>/, `<title>${title}</title>`);
+            
+            // Inject Meta Description
+            if (html.includes('name="description"')) {
+              html = html.replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${desc}" />`);
+            } else {
+              html = html.replace('</head>', `<meta name="description" content="${desc}" />\n</head>`);
+            }
+            
+            // Inject OpenGraph
+            const ogTags = `
+<meta property="og:title" content="${title}" />
+<meta property="og:description" content="${desc}" />
+<meta property="og:image" content="${ogImage}" />
+<meta property="og:url" content="https://bloombybotanik.com${urlPath}" />
+<meta property="og:type" content="article" />
+            `;
+            html = html.replace('</head>', `${ogTags}\n</head>`);
+            
+            // Add Schema.org Article
+            const schema = {
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": post.title[lang],
+              "description": desc,
+              "image": ogImage,
+              "datePublished": post.date,
+              "author": { "@type": "Person", "name": post.author },
+              "publisher": { "@type": "Organization", "name": "Bloom by BotaniK", "logo": { "@type": "ImageObject", "url": "https://bloombybotanik.com/brand/logo-org.jpg" } }
+            };
+            html = html.replace('</head>', `<script type="application/ld+json">${JSON.stringify(schema)}</script>\n</head>`);
+
+            return res.send(html);
+          }
+        } catch (e) {
+          console.error("SSR-lite error:", e);
+        }
+      }
+
       res.sendFile(path.join(distPath, 'index.html'));
     });
   }

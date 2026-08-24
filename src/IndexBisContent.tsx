@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { NewsletterSection } from './components/NewsletterSection';
 import { 
@@ -63,6 +63,7 @@ import cosmetiqueImg from './assets/images/bloom_logo_final_1784886077159.png';
 interface IndexBisContentProps {
   onNavigate: (view: any, id?: string) => void;
   lang?: string;
+  scrollToId?: string;
 }
 
 type HeroType = 'culinaire' | 'cosmetique' | 'sante';
@@ -76,7 +77,7 @@ const translationsIndexBis = {
       title: "L'extracteur botanique qui révèle le <span class='text-[#D97706]'>totum</span> de vos plantes.",
       subtitle: "<strong>BloomLab® : L'infuseur botanique de précision.</strong> BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels. Faites fleurir toutes vos envies de bien-être végétal.",
       rating: "Une conception dédiée à l’extraction botanique de précision.",
-      buyBtn: "Acheter la BloomLab® — 239€ <span class='line-through opacity-60 ml-2'>289€</span> offre rentrée",
+      buyBtn: "Acheter la BloomLab® — 239&nbsp;€ <span class='line-through opacity-60 ml-2'>289&nbsp;€</span> code rentrée2026",
       installment: "Paiement en 3x sans frais par Klarna",
       installmentSub: "Soit 79,66€ / mois",
       guarantee: "Testez 30 jours sans risque",
@@ -413,7 +414,18 @@ const translationsIndexBis = {
   }
 };
 
-export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisContentProps) {
+export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }: IndexBisContentProps) {
+  useEffect(() => {
+    if (scrollToId) {
+      const el = document.getElementById(scrollToId);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }, 500);
+      }
+    }
+  }, [scrollToId]);
+
   const [activeHeroType, setActiveHeroType] = useState<HeroType>('culinaire');
   const [activeUniverse, setActiveUniverse] = useState<UniverseType>('culinaire');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -566,6 +578,44 @@ export default function IndexBisContent({ onNavigate, lang = 'fr' }: IndexBisCon
                     <div className="mt-4 p-4 bg-white/50 rounded-xl border border-[#D97706]/20 text-xs text-slate-600 leading-relaxed italic">
                       <span className="font-bold text-[#0F261E] block mb-1">Note Technique & Biologique :</span>
                       Le Totum d'une plante représente l'intégralité de ses principes actifs agissant en synergie. Contrairement aux molécules isolées de l'industrie, le Totum respecte la complexité biologique du vivant. Son extraction de précision garantit une biodisponibilité optimale pour l'organisme humain, favorisant un rééquilibrage profond et durable du terrain sans les effets secondaires des extractions incomplètes ou surchauffées.
+                    </div>
+                  </div>
+                )}
+
+                {lang === 'en' && (
+                  <div className="space-y-4 pt-4 border-l-4 border-[#D97706] pl-6 bg-[#D97706]/5 py-4 rounded-r-2xl">
+                    <h3 className="text-xl font-bold text-[#D97706]">"Your plants have a hidden treasure. BloomLab reveals it."</h3>
+                    <p className="text-base text-slate-700 leading-relaxed">
+                      A simple infusion only releases 20% of a plant's benefits. BloomLab precision extraction releases 98% of its <strong>Totum*</strong> – all of its synergistic active ingredients.
+                    </p>
+                    <p className="text-base text-slate-700 leading-relaxed">
+                      The result: homemade remedies and skincare with unparalleled efficacy, as if you had a laboratory in your kitchen.
+                    </p>
+                    <p className="text-base font-black text-[#0F261E]">
+                      Health sovereignty starts with the right extraction.
+                    </p>
+                    <div className="mt-4 p-4 bg-white/50 rounded-xl border border-[#D97706]/20 text-xs text-slate-600 leading-relaxed italic">
+                      <span className="font-bold text-[#0F261E] block mb-1">Technical & Biological Note:</span>
+                      The Totum of a plant represents the entirety of its active principles acting in synergy. Unlike isolated industrial molecules, the Totum respects the biological complexity of living things. Its precision extraction guarantees optimal bioavailability for the human body, promoting a deep and lasting rebalancing of the terrain without the side effects of incomplete or overheated extractions.
+                    </div>
+                  </div>
+                )}
+
+                {lang === 'de' && (
+                  <div className="space-y-4 pt-4 border-l-4 border-[#D97706] pl-6 bg-[#D97706]/5 py-4 rounded-r-2xl">
+                    <h3 className="text-xl font-bold text-[#D97706]">"Ihre Pflanzen haben einen verborgenen Schatz. BloomLab offenbart ihn."</h3>
+                    <p className="text-base text-slate-700 leading-relaxed">
+                      Ein einfacher Aufguss setzt nur 20 % der Wirkstoffe einer Pflanze frei. Die BloomLab-Präzisionsextraktion setzt 98 % ihres <strong>Totums*</strong> frei – die Gesamtheit ihrer synergetischen Wirkstoffe.
+                    </p>
+                    <p className="text-base text-slate-700 leading-relaxed">
+                      Das Ergebnis: hausgemachte Heilmittel und Pflegeprodukte mit unvergleichlicher Wirksamkeit, als hätten Sie ein Labor in Ihrer Küche.
+                    </p>
+                    <p className="text-base font-black text-[#0F261E]">
+                      Sanitäre Souveränität beginnt mit der richtigen Extraktion.
+                    </p>
+                    <div className="mt-4 p-4 bg-white/50 rounded-xl border border-[#D97706]/20 text-xs text-slate-600 leading-relaxed italic">
+                      <span className="font-bold text-[#0F261E] block mb-1">Technische & Biologische Notiz:</span>
+                      Das Totum einer Pflanze stellt die Gesamtheit ihrer synergetisch wirkenden Wirkstoffe dar. Im Gegensatz zu isolierten Industriemolekülen respektiert das Totum die biologische Komplexität des Lebendigen. Seine Präzisionsextraktion garantiert eine optimale Bioverfügbarkeit für den menschlichen Organismus und fördert ein tiefes und dauerhaftes Rebalancing des Terrains ohne die Nebenwirkungen unvollständiger oder überhitzter Extraktionen.
                     </div>
                   </div>
                 )}

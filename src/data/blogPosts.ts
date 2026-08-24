@@ -162,19 +162,69 @@ export const blogPosts: BlogPost[] = [
     },
     content: {
       fr: `
-<p>Chez Bloom, nous ne traitons pas les symptômes, nous travaillons sur le <strong>terrain</strong>. L'inflammation chronique est souvent le signe d'un "verrouillage" systémique.</p>
+<p>L’inflammation n’est pas une ennemie. C’est un signal. Cependant, lorsqu’elle devient chronique, elle témoigne d’un état de "verrouillage" systémique. Chez Bloom, nous appelons cela un déséquilibre du <strong>Terrain T8</strong>. Pour sortir de ce cercle vicieux, la phytothérapie moderne propose une approche révolutionnaire : le <strong>Reset Homéostasique</strong>.</p>
 
-<h4>Qu'est-ce que le Reset Homéostasique ?</h4>
-<p>C'est le processus par lequel le corps retrouve son équilibre naturel. Les plantes ne "soignent" pas au sens chimique du terme ; elles fournissent les outils nécessaires pour que votre propre pharmacie intérieure puisse reprendre son travail.</p>
+<h3>Qu'est-ce que l'inflammation chronique ?</h3>
+<p>Contrairement à l'inflammation aiguë (une réponse saine à une blessure), l'inflammation chronique est un feu à bas bruit qui consume les tissus et épuise les glandes surrénales. Elle est le dénominateur commun des maladies modernes, du syndrome métabolique aux troubles auto-immuns.</p>
 
-<h4>L'apport du Totum</h4>
-<p>En utilisant l'intégralité des molécules de la plante (le Totum), nous évitons les effets secondaires des principes isolés et maximisons la synergie biologique.</p>
+<h3>La plante comme "clé" de déverrouillage</h3>
+<p>Les plantes médicinales ne sont pas des médicaments "naturels" destinés à supprimer un symptôme. Ce sont des vecteurs d'information. En apportant le <strong>Totum</strong> d'une plante adaptogène comme l'Ashwagandha ou d'une plante anti-inflammatoire comme le Curcuma (extrait avec précision), on envoie au corps les codes biochimiques nécessaires pour :</p>
+<ul>
+  <li><strong>Réguler l'axe HPA :</strong> (Hypothalamus-Hypophyse-Surrénales) pour calmer la réponse au stress.</li>
+  <li><strong>Saturer les récepteurs cellulaires :</strong> avec des molécules antioxydantes biodisponibles.</li>
+  <li><strong>Soutenir le microbiome :</strong> véritable chef d'orchestre de l'immunité.</li>
+</ul>
+
+<h3>Pourquoi l'extraction de précision est-elle vitale ici ?</h3>
+<p>Dans un état d'inflammation chronique, le système digestif est souvent affaibli. Il ne peut pas extraire efficacement les principes actifs d'une plante brute ou d'une tisane légère. Le <strong>BloomLab®</strong> réalise ce travail "pré-digestif" pour vous. En créant un extrait hautement biodisponible à basse température, vous garantissez que les molécules arrivent intactes jusqu'aux cellules cibles.</p>
       `,
       en: `
 <p>At Bloom, we don't treat symptoms; we work on the <strong>terrain</strong>. Chronic inflammation is often a sign of a systemic "lock".</p>
       `,
       de: `
 <p>Bei Bloom behandeln wir keine Symptome; wir arbeiten am <strong>Terrain</strong>. Chronische Entzündungen sind oft ein Zeichen für eine systemische \"Sperre\".</p>
+      `
+    }
+  },
+  {
+    slug: 'extraction-botanique-vs-huiles-essentielles-pourquoi-choisir-le-totum',
+    date: '2026-08-23',
+    category: 'Science du Totum',
+    author: 'Équipe Bloom',
+    readTime: '15 min',
+    title: {
+      fr: "Extraction Botanique vs Huiles Essentielles : Pourquoi nous préférons le Totum",
+      en: "Botanical Extraction vs Essential Oils: Why we prefer the Totum",
+      de: "Botanische Extraktion vs. Ätherische Öle: Warum wir das Totum bevorzugen"
+    },
+    excerpt: {
+      fr: "L'aromathérapie est puissante, mais elle est incomplète. Découvrez pourquoi l'extraction globale (Totum) est plus sûre et plus efficace pour un travail de terrain profond.",
+      en: "Aromatherapy is powerful, but incomplete. Discover why global extraction (Totum) is safer and more effective for deep system work.",
+      de: "Aromatherapie ist kraftvoll, aber unvollständig. Entdecken Sie, warum die globale Extraktion (Totum) sicherer und effektiver für eine tiefe Systemarbeit ist."
+    },
+    content: {
+      fr: `
+<p>Dans le monde du bien-être naturel, l’huile essentielle est souvent considérée comme le summum de la puissance. Pourtant, pour un herboriste ou un biochimiste du végétal, elle représente une forme d’isolement moléculaire qui peut s’avérer incomplète, voire agressive.</p>
+
+<h3>1. L'Huile Essentielle : Une fraction, pas la plante</h3>
+<p>L'huile essentielle est obtenue par distillation à la vapeur d'eau. Ce processus ne capture que les molécules aromatiques volatiles. Toutes les autres richesses de la plante (polyphénols, flavonoïdes, alcaloïdes, mucilages) sont laissées de côté ou détruites par la chaleur.</p>
+
+<h3>2. La sécurité du Totum</h3>
+<p>Le <strong>Totum végétal</strong> est l'ensemble des molécules contenues dans la plante vivante. La nature a prévu des "molécules de sécurité" qui accompagnent les principes actifs les plus puissants. Par exemple, dans la Reine des Prés, le totum contient des molécules qui protègent l'estomac des effets de l'acide salicylique. L'isolat chimique (ou une huile essentielle mal utilisée) perd ce rempart naturel.</p>
+
+<h3>3. Le BloomLab® : Le meilleur des deux mondes</h3>
+<p>Grâce à l'extraction à basse température et sous vortex, le BloomLab® permet de capturer :</p>
+<ul>
+  <li><strong>Les fractions volatiles :</strong> comme une huile essentielle.</li>
+  <li><strong>Les fractions hydrosolubles & liposolubles :</strong> qui sont habituellement absentes de l'aromathérapie.</li>
+</ul>
+<p>C'est ce que nous appelons l'<strong>Extraction Intégrale</strong>. Elle offre une puissance d'action réelle sans la toxicité potentielle des isolats concentrés.</p>
+      `,
+      en: `
+<p>Aromatherapy is powerful, but it is incomplete. Discover why global extraction (Totum) is safer and more effective.</p>
+      `,
+      de: `
+<p>Aromatherapie ist kraftvoll, aber sie ist unvollständig. Entdecken Sie, warum die globale Extraktion (Totum) sicherer und effektiver ist.</p>
       `
     }
   }

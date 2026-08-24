@@ -20,8 +20,26 @@ type Step = 'information' | 'shipping' | 'payment' | 'confirmation';
 export default function CheckoutFlow({ cart, total, shippingMethod, user, onSuccess, onCancel, lang = 'fr' }: CheckoutFlowProps) {
   const t = translations[lang].checkout;
   const cartT = translations[lang].cart;
+  const [promoCode, setPromoCode] = useState('');
+  const [isPromoApplied, setIsPromoApplied] = useState(false);
+  const [promoError, setPromoError] = useState('');
+  
   const shipping = getShippingPrice(shippingMethod, cart);
-  const finalTotal = total + shipping;
+  
+  // Adjust total if promo applied
+  let adjustedTotal = total;
+  if (isPromoApplied) {
+    // Calculate total with promo prices
+    adjustedTotal = cart.reduce((sum, item) => {
+      let p = item.price;
+      if (isPromoApplied && (item.id === 'bloomlab' || item.id === 'pack-signature' || item.name.includes('BloomLab')) && p > 239) {
+        p = 239;
+      }
+      return sum + (p * item.quantity);
+    }, 0);
+  }
+  const finalTotal = adjustedTotal + shipping;
+
   const [step, setStep] = useState<Step>(user ? 'information' : 'information'); // We'll show a warning if not logged in
   const [formData, setFormData] = useState({
     email: user?.email || '',
@@ -44,6 +62,16 @@ export default function CheckoutFlow({ cart, total, shippingMethod, user, onSucc
   const [isProcessing, setIsProcessing] = useState(false);
   const [orderId, setOrderId] = useState('');
 
+  const applyPromoCode = () => {
+    if (promoCode.trim().toUpperCase() === 'RENTRÉE2026') {
+      setIsPromoApplied(true);
+      setPromoError('');
+    } else {
+      setPromoError(lang === 'fr' ? 'Code invalide' : 'Invalid code');
+      setIsPromoApplied(false);
+    }
+  };
+
   const handleNext = () => {
     if (step === 'information') setStep('shipping');
     else if (step === 'shipping') setStep('payment');
@@ -57,7 +85,7 @@ export default function CheckoutFlow({ cart, total, shippingMethod, user, onSucc
       // 1. Create Order in Firestore
       const newOrderId = `BLM-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
       
-            const orderData = {
+      const orderData = {
         userId: user.uid,
         email: formData.email,
         items: cart.map(item => ({
@@ -71,6 +99,8 @@ export default function CheckoutFlow({ cart, total, shippingMethod, user, onSucc
         shippingPrice: shipping,
         totalCents: Math.round(finalTotal * 100),
         status: 'paid',
+        promoCode: isPromoApplied ? 'RENTRÉE2026' : null,
+        freeMonthRecipes: isPromoApplied,
         shippingAddress: step === 'shipping' ? {
           address: formData.address,
           city: formData.city,
@@ -87,13 +117,14 @@ export default function CheckoutFlow({ cart, total, shippingMethod, user, onSucc
       const hasPremium = cart.some(item => item.id === 'premium-access' || item.id === 'pack-signature');
       const hasFreemium = cart.some(item => item.id === 'freemium-access');
 
-      if (hasPremium || hasFreemium) {
+      if (hasPremium || hasFreemium || isPromoApplied) {
         const userRef = doc(db, 'users', user.uid);
-        const newStatus = hasPremium ? 'premium' : 'freemium';
+        const newStatus = (hasPremium || isPromoApplied) ? 'premium' : 'freemium';
         
         await setDoc(userRef, {
           status: newStatus,
-          updatedAt: serverTimestamp()
+          updatedAt: serverTimestamp(),
+          freeRecipesUntil: isPromoApplied ? new Date(Date.now() + 30 * 24 * 60 * 60 * 1000) : null
         }, { merge: true });
       }
 
@@ -362,31 +393,75 @@ export default function CheckoutFlow({ cart, total, shippingMethod, user, onSucc
         <div className="space-y-6">
           <div className="bg-[#F9F9F7] p-8 rounded-[40px] border border-[#1B3022]/10">
             <h2 className="text-xl font-bold text-[#1B3022] mb-8">{t.summary.title}</h2>
+            
+            {/* Promo Code Input */}
+            <div className="mb-8">
+              <label className="block text-xs font-bold text-[#1B3022]/40 uppercase tracking-widest mb-2">Code Promo</label>
+              <div className="flex gap-2">
+                <input 
+                  type="text"
+                  value={promoCode}
+                  onChange={(e) => setPromoCode(e.target.value)}
+                  placeholder="EX: RENTRÉE2026"
+                  className="flex-1 bg-white border border-[#1B3022]/10 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-[#F97316] outline-none"
+                />
+                <button 
+                  onClick={applyPromoCode}
+                  className="px-4 py-2 bg-[#1B3022] text-white rounded-xl text-sm font-bold hover:bg-[#F97316] transition-colors"
+                >
+                  {lang === 'fr' ? 'Appliquer' : 'Apply'}
+                </button>
+              </div>
+              {promoError && <p className="text-red-500 text-xs mt-2">{promoError}</p>}
+              {isPromoApplied && (
+                <p className="text-green-600 text-xs mt-2 font-bold flex items-center gap-1">
+                  <CheckCircle2 className="w-3 h-3" /> {lang === 'fr' ? 'Code RENTRÉE2026 appliqué : -50€ & 1 mois de recettes offerts' : 'Code RENTRÉE2026 applied: -50€ & 1 month free recipes'}
+                </p>
+              )}
+            </div>
+
             <div className="space-y-6 mb-8">
-              {cart.map((item) => (
-                <div key={item.id} className="flex gap-4">
-                  <div className="w-16 h-16 rounded-xl overflow-hidden bg-white flex-shrink-0">
-                    <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+              {cart.map((item) => {
+                let displayPrice = item.price;
+                if (isPromoApplied && (item.id === 'bloomlab' || item.id === 'pack-signature' || item.name.includes('BloomLab')) && displayPrice > 239) {
+                  displayPrice = 239;
+                }
+                return (
+                  <div key={item.id} className="flex gap-4">
+                    <div className="w-16 h-16 rounded-xl overflow-hidden bg-white flex-shrink-0">
+                      <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-bold text-[#1B3022] text-sm">{item.name}</div>
+                      <div className="text-xs opacity-60">{t.summary.quantity} {item.quantity}</div>
+                    </div>
+                    <div className="font-bold text-[#1B3022]">{(displayPrice * item.quantity).toFixed(2).replace('.', ',')}&nbsp;€</div>
                   </div>
-                  <div className="flex-1">
-                    <div className="font-bold text-[#1B3022] text-sm">{item.name}</div>
-                    <div className="text-xs opacity-60">{t.summary.quantity} {item.quantity}</div>
-                  </div>
-                  <div className="font-bold text-[#1B3022]">{(item.price * item.quantity).toFixed(2)} €</div>
-                </div>
-              ))}
+                );
+              })}
             </div>
             
             <div className="pt-6 border-t border-[#1B3022]/10 space-y-3">
               <div className="flex justify-between text-sm opacity-60">
                 <span>{cartT.summary.shipping} ({shippingMethod})</span>
                 <span className="font-bold text-[#1B3022]">
-                  {shipping === 0 ? t.summary.shipping_free : `${shipping.toFixed(2).replace('.', ',')} €`}
+                  {shipping === 0 ? t.summary.shipping_free : `${shipping.toFixed(2).replace('.', ',')}&nbsp;€`}
                 </span>
               </div>
               <div className="flex justify-between items-center pt-2">
                 <span className="text-lg font-bold">{t.summary.total}</span>
-                <span className="text-2xl font-bold text-[#F97316]">{finalTotal.toFixed(2).replace('.', ',')} €</span>
+                <span className="text-2xl font-bold text-[#F97316]">
+                  {(() => {
+                    let currentTotal = cart.reduce((sum, item) => {
+                      let p = item.price;
+                      if (isPromoApplied && (item.id === 'bloomlab' || item.id === 'pack-signature' || item.name.includes('BloomLab')) && p > 239) {
+                        p = 239;
+                      }
+                      return sum + (p * item.quantity);
+                    }, 0);
+                    return (currentTotal + shipping).toFixed(2).replace('.', ',');
+                  })()}&nbsp;€
+                </span>
               </div>
             </div>
           </div>

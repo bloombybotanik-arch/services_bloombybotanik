@@ -159,10 +159,10 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
                         </div>
                       </div>
                       <h3 className="font-bold text-botanik-green mb-1 text-lg">{product.name}</h3>
-                      <div className="flex items-center gap-3 mb-2">
-                        <span className="text-2xl font-bold text-botanik-orange">{product.price.toLocaleString('fr-FR', { minimumFractionDigits: 2 })}€</span>
+                      <div className="flex items-center gap-3 mb-2 whitespace-nowrap">
+                        <span className="text-2xl font-bold text-botanik-orange">{product.price.toLocaleString('fr-FR', { minimumFractionDigits: 2 })}&nbsp;€</span>
                         {product.oldPrice && (
-                          <span className="text-sm text-botanik-green/30 line-through">{product.oldPrice}€</span>
+                          <span className="text-sm text-botanik-green/30 line-through">{product.oldPrice}&nbsp;€</span>
                         )}
                       </div>
                       {(product as any).promoCode && (

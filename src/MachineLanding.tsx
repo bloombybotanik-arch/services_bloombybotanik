@@ -60,7 +60,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               {t.hero.title}<br />
               <span className="text-[#F97316]">{t.hero.title_accent}</span>
             </h1>
-            <p className="text-base md:text-2xl text-white/70 mb-12 max-w-2xl leading-relaxed font-light">
+            <p className="text-base md:text-2xl text-white/70 mb-12 max-w-2xl leading-relaxed font-light whitespace-pre-wrap">
               {t.hero.description}
             </p>
             <div className="flex flex-wrap gap-6">

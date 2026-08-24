@@ -43,10 +43,10 @@ export default function GuideContent({ onNavigate, lang }: GuideContentProps) {
               {lang === 'fr' ? "Découvrir l'infuseur botanique" : "Discover the botanical infuser"} <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
             <button 
-              onClick={() => onNavigate('boutique')}
+              onClick={() => onNavigate('home')}
               className="px-8 py-4 bg-white border border-botanik-green/10 text-botanik-green rounded-2xl font-bold hover:bg-[#F5F3EB] transition-all flex items-center gap-2"
             >
-              {t.guide.hero.cta_shop}
+              {lang === 'fr' ? "Retour à l'accueil" : "Back to home"}
             </button>
           </div>
         </div>
@@ -108,16 +108,6 @@ export default function GuideContent({ onNavigate, lang }: GuideContentProps) {
               </div>
               
               <div className="flex flex-col gap-4 mt-8">
-                <div className="flex flex-col">
-                  <div className="flex items-center gap-4">
-                    <span className="text-7xl font-black text-botanik-orange">289€</span>
-                    <div className="flex flex-col">
-                      <span className="text-sm line-through text-botanik-green/30">329€</span>
-                      <span className="text-xs font-bold text-botanik-magenta uppercase tracking-widest italic">{t.guide.machine.price_save}</span>
-                    </div>
-                  </div>
-                </div>
-                
                 <button 
                   onClick={() => onNavigate('cart')}
                   className="w-full md:w-auto px-10 py-6 bg-white border-2 border-botanik-green text-botanik-green rounded-2xl font-bold hover:bg-botanik-green hover:text-white transition-all shadow-xl flex items-center justify-center gap-3 group"

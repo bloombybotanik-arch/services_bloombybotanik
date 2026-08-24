@@ -77,6 +77,29 @@
   </url>
 
   <url>
+    <loc>https://bloombybotanik.com/bibliotheque-savoirs</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/bibliotheque-savoirs"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/bibliotheque-savoirs"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/bibliotheque-savoirs"/>
+    <lastmod>2026-08-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/cosmetiques</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/cosmetiques"/>
+    <lastmod>2026-08-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/gastronomie-botanique</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/gastronomie-botanique"/>
+    <lastmod>2026-08-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://bloombybotanik.com/blog</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/blog"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/blog"/>
@@ -104,6 +127,13 @@
   <url>
     <loc>https://bloombybotanik.com/blog/inflammation-chronique-le-role-des-plantes-dans-le-reset-homeostasique</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/blog/inflammation-chronique-le-role-des-plantes-dans-le-reset-homeostasique"/>
+    <lastmod>2026-08-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/blog/extraction-botanique-vs-huiles-essentielles-pourquoi-choisir-le-totum</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/blog/extraction-botanique-vs-huiles-essentielles-pourquoi-choisir-le-totum"/>
     <lastmod>2026-08-23</lastmod>
     <priority>0.8</priority>
   </url>

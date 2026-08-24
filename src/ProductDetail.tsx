@@ -82,10 +82,10 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
           </p>
 
           <div className="bg-[#F9F9F7] p-6 md:p-8 rounded-[32px] border border-[#1B3022]/5 mb-8 md:mb-10">
-            <div className="flex items-baseline gap-3 md:gap-4 mb-4 md:mb-6">
-              <span className="text-3xl md:text-5xl font-bold text-[#1B3022]">{sheet.price.toFixed(2)} €</span>
+            <div className="flex items-baseline gap-3 md:gap-4 mb-4 md:mb-6 whitespace-nowrap">
+              <span className="text-3xl md:text-5xl font-bold text-[#1B3022]">{sheet.price.toFixed(2)}&nbsp;€</span>
               {sheet.originalPrice && (
-                <span className="text-[#1B3022]/40 line-through text-lg md:text-xl">{sheet.originalPrice.toFixed(2)} €</span>
+                <span className="text-[#1B3022]/40 line-through text-lg md:text-xl">{sheet.originalPrice.toFixed(2)}&nbsp;€</span>
               )}
             </div>
             
