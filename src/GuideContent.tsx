@@ -109,10 +109,10 @@ export default function GuideContent({ onNavigate, lang }: GuideContentProps) {
               
               <div className="flex flex-col gap-4 mt-8">
                 <button 
-                  onClick={() => onNavigate('cart')}
-                  className="w-full md:w-auto px-10 py-6 bg-white border-2 border-botanik-green text-botanik-green rounded-2xl font-bold hover:bg-botanik-green hover:text-white transition-all shadow-xl flex items-center justify-center gap-3 group"
+                  onClick={() => onNavigate('bloomlab')}
+                  className="w-full md:w-auto px-10 py-6 bg-botanik-orange text-white rounded-2xl font-bold hover:bg-botanik-orange/90 transition-all shadow-xl flex items-center justify-center gap-3 group"
                 >
-                  <span className="uppercase tracking-widest">{t.common.add_to_cart}</span>
+                  <span className="uppercase tracking-widest">{lang === 'fr' ? 'Découvrir la BloomLab' : 'Discover the BloomLab'}</span>
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
