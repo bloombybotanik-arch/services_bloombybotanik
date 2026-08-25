@@ -76,7 +76,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
         )}
       </AnimatePresence>
 
-      {/* VISIBLE INTRODUCTION - BRAND IDENTITY */}
+      {/* INTRODUCTION - BRAND IDENTITY */}
       <section className="mb-24 md:mb-32 text-center max-w-4xl mx-auto px-4">
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-botanik-green/5 rounded-full mb-8 border border-botanik-green/10">
           <Sparkles className="w-4 h-4 text-botanik-orange" />
@@ -143,7 +143,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
                     { id: 'kit-articulaire', name: 'Feu Articulaire', price: 9.9, img: articulaireImg, badge: 'Mobilité' },
                     { id: 'kit-reset', name: 'Duo RESET Renaissance', price: 49, oldPrice: 65, img: resetImg, badge: 'Détox' },
                   ].map((product, idx) => (
-                    <motion.div 
+                    <motion.article 
                       key={idx}
                       whileHover={{ y: -5 }}
                       className="min-w-[240px] md:min-w-[340px] bg-white rounded-[40px] p-6 shadow-sm border border-botanik-green/5 snap-center flex flex-col group transition-all hover:shadow-xl hover:shadow-botanik-green/5"
@@ -178,7 +178,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
                           {lang === 'fr' ? "Découvrir" : "Discover"} <ChevronRight className="w-4 h-4" />
                         </button>
                       </div>
-                    </motion.div>
+                    </motion.article>
                   ))}
                 </div>
                 

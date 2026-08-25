@@ -690,7 +690,7 @@ const NavigationSidebar = ({ className = "", currentView, currentProductId, navi
   const isFR = lang === 'fr';
 
   return (
-    <aside className={`w-[280px] h-screen sticky top-0 bg-botanik-green flex flex-col border-r border-white/5 z-50 ${className}`}>
+    <header className={`w-[280px] h-screen sticky top-0 bg-botanik-green flex flex-col border-r border-white/5 z-50 ${className}`}>
       {/* Header / Logo */}
       <div className="p-8 pb-8">
         <a 
@@ -819,7 +819,7 @@ const NavigationSidebar = ({ className = "", currentView, currentProductId, navi
           </button>
         </div>
       </div>
-    </aside>
+    </header>
   );
 };
 

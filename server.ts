@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+import fs from "fs";
 import cors from "cors";
 import multer from "multer";
 import nodemailer from "nodemailer";
@@ -652,68 +653,97 @@ async function setupVite() {
     app.get('*', async (req, res) => {
       const urlPath = req.path;
       const langMatch = urlPath.match(/^\/(en|de)(\/|$)/);
-      const lang = langMatch ? langMatch[1] : 'fr';
-      const restPath = langMatch ? urlPath.replace(/^\/(en|de)/, '') : urlPath;
+      const lang = (langMatch ? langMatch[1] : 'fr') as 'fr' | 'en' | 'de';
+      const restPath = langMatch ? urlPath.replace(/^\/(en|de)/, '') || '/' : urlPath;
 
-      // SSR-Lite: Inject metadata for Blog Posts
+      let indexPath = path.join(distPath, 'index.html');
+      let html = fs.readFileSync(indexPath, 'utf8');
+
+      // 1. Dynamic Hreflang Injection
+      const baseUrl = 'https://bloombybotanik.com';
+      const cleanPath = restPath === '/' ? '' : restPath;
+      const hreflangs = `
+    <link rel="canonical" href="${baseUrl}${lang === 'fr' ? '' : '/' + lang}${cleanPath}" />
+    <link rel="alternate" hreflang="fr" href="${baseUrl}${cleanPath}" />
+    <link rel="alternate" hreflang="en" href="${baseUrl}/en${cleanPath}" />
+    <link rel="alternate" hreflang="de" href="${baseUrl}/de${cleanPath}" />
+    <link rel="alternate" hreflang="x-default" href="${baseUrl}${cleanPath}" />`;
+      
+      // Remove existing canonical and hreflang to avoid duplicates
+      html = html.replace(/<link rel="canonical".*?\/>/g, '');
+      html = html.replace(/<link rel="alternate" hreflang=".*?".*?\/>/g, '');
+      html = html.replace('</head>', `${hreflangs}\n</head>`);
+
+      // 2. Localized Metadata (Basic logic for main pages)
+      const seoData: any = {
+        fr: {
+          '/': { title: 'Bloom by BotaniK | Infuseur & Extracteur Botanique de Précision', desc: 'Découvrez BloomLab®, l\'infuseur & extracteur botanique de précision. Réalisez vos propres remèdes naturels.' },
+          '/bloomlab': { title: 'BloomLab® | L\'Extracteur Botanique de Précision N°1 en France', desc: 'Maîtrisez l\'extraction basse température avec le BloomLab®. Le premier infuseur botanique professionnel.' },
+          '/phytotherapie-reset': { title: 'Reset Homéostasique | Le voyage botanique de 90 jours', desc: 'Accompagnez vos fonctions naturelles et installez une routine de mieux-être durable avec le protocole Bloom.' },
+          '/boutique': { title: 'Boutique BloomLab | Kits, Extraits & Accessoires Botaniques', desc: 'Trouvez tous les outils nécessaires pour votre autonomie santé : BloomLab, kits RESET et extraits de plantes.' },
+          '/manifeste': { title: 'Notre Manifeste | L\'Ingénierie au service du vivant', desc: 'Découvrez l\'ADN de Bloom : l\'alliance entre sagesses anciennes et science moderne pour une santé souveraine.' },
+          '/extraction-botanique': { title: 'Guide de l\'Extraction Botanique | Technologie Totum', desc: 'Apprenez les secrets de l\'extraction de précision : température, solvants et conservation des actifs.' }
+        },
+        en: {
+          '/': { title: 'Bloom by BotaniK | Precision Botanical Infuser & Extractor', desc: 'Discover BloomLab®, the precision botanical infuser & extractor. Create your own natural remedies.' },
+          '/bloomlab': { title: 'BloomLab® | The #1 Precision Botanical Extractor in France', desc: 'Master low-temperature extraction with BloomLab®. The first professional botanical infuser.' },
+          '/phytotherapie-reset': { title: 'Homeostatic Reset | The 90-day Botanical Journey', desc: 'Support your natural functions and establish a sustainable wellness routine with the Bloom protocol.' },
+          '/boutique': { title: 'Bloom Store | Botanical Kits, Extracts & Accessories', desc: 'Find everything you need for health autonomy: BloomLab, RESET kits, and botanical extracts.' },
+          '/manifeste': { title: 'Our Manifesto | Engineering at the Service of Life', desc: 'Discover the DNA of Bloom: the alliance of ancient wisdom and modern science for sovereign health.' },
+          '/extraction-botanique': { title: 'Botanical Extraction Guide | Totum Technology', desc: 'Learn the secrets of precision extraction: temperature, solvents, and active preservation.' }
+        },
+        de: {
+          '/': { title: 'Bloom by BotaniK | Präzisions-Botanischer Infuser & Extrahierer', desc: 'Entdecken Sie BloomLab®, den Präzisions-Extraktor. Erstellen Sie Ihre eigenen natürlichen Heilmittel.' },
+          '/bloomlab': { title: 'BloomLab® | Der Präzisions-Extraktor Nr. 1 in Frankreich', desc: 'Meistern Sie die Niedertemperaturextraktion mit BloomLab®. Der erste professionelle botanische Infuser.' },
+          '/phytotherapie-reset': { title: 'Homöostatischer Reset | Die botanische 90-Tage-Reise', desc: 'Unterstützen Sie Ihre natürlichen Funktionen und etablieren Sie eine nachhaltige Wellness-Routine.' },
+          '/boutique': { title: 'Bloom Shop | Botanische Kits, Extrakte & Zubehör', desc: 'Alles für Ihre Gesundheitsautonomie: BloomLab, RESET-Kits und botanische Extrakte.' },
+          '/manifeste': { title: 'Unser Manifest | Engineering im Dienste des Lebens', desc: 'Entdecken Sie die DNA von Bloom: Weisheit und moderne Wissenschaft für souveräne Gesundheit.' },
+          '/extraction-botanique': { title: 'Leitfaden zur botanischen Extraktion | Totum-Technologie', desc: 'Lernen Sie die Geheimnisse der Präzisionsextraktion: Temperatur, Lösungsmittel und Wirkstofferhalt.' }
+        }
+      };
+
+      const pageSeo = seoData[lang]?.[restPath] || seoData[lang]?.['/'];
+      if (pageSeo) {
+        html = html.replace(/<title>.*?<\/title>/, `<title>${pageSeo.title}</title>`);
+        html = html.replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${pageSeo.desc}" />`);
+        html = html.replace(/<html lang=".*?"/, `<html lang="${lang}"`);
+      }
+
+      // 3. Localized Noscript Content (Structural injection)
+      const noscriptContent: any = {
+        fr: `<h1>Bloom by BotaniK | Infuseur & Extracteur Botanique de Précision</h1><p>Expertise en infusion et extraction botanique de précision. BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels.</p>`,
+        en: `<h1>Bloom by BotaniK | Precision Botanical Infuser & Extractor</h1><p>Expertise in precision botanical infusion and extraction. BloomLab® gives you all the keys to create your own natural remedies.</p>`,
+        de: `<h1>Bloom by BotaniK | Präzisions-Botanischer Infuser & Extrahierer</h1><p>Expertise in präziser botanischer Infusion und Extraktion. BloomLab® bietet Ihnen alle Schlüssel zur Erstellung Ihrer eigenen natürlichen Heilmittel.</p>`
+      };
+
+      if (noscriptContent[lang]) {
+        html = html.replace(/<noscript>[\s\S]*?<\/noscript>/, `<noscript><div style="padding: 20px; font-family: sans-serif; line-height: 1.6;">${noscriptContent[lang]}</div></noscript>`);
+      }
+
+      // SSR-Lite: Inject metadata for Blog Posts (Keep existing logic but localized)
       if (restPath.startsWith('/blog/')) {
         const slug = restPath.replace('/blog/', '').split('/')[0];
-        // Note: In a real production environment, you'd import the blogPosts data here.
-        // For this implementation, we will use a simplified detection or read the file if needed.
-        // However, since we're in the same repo, we can assume the data is available if we import it.
         try {
           const blogPostsModule = await import('./src/data/blogPosts');
           const post = blogPostsModule.blogPosts.find((p: any) => p.slug === slug);
           
           if (post) {
-            let indexPath = path.join(distPath, 'index.html');
-            let html = require('fs').readFileSync(indexPath, 'utf8');
-            
             const title = `${post.title[lang]} | Journal Bloom`;
             const desc = post.excerpt[lang];
             const ogImage = post.image ? `https://bloombybotanik.com${post.image}` : "https://bloombybotanik.com/brand/social-logo.jpg";
             
-            // Inject Title
             html = html.replace(/<title>.*?<\/title>/, `<title>${title}</title>`);
+            html = html.replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${desc}" />`);
             
-            // Inject Meta Description
-            if (html.includes('name="description"')) {
-              html = html.replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${desc}" />`);
-            } else {
-              html = html.replace('</head>', `<meta name="description" content="${desc}" />\n</head>`);
-            }
-            
-            // Inject OpenGraph
-            const ogTags = `
-<meta property="og:title" content="${title}" />
-<meta property="og:description" content="${desc}" />
-<meta property="og:image" content="${ogImage}" />
-<meta property="og:url" content="https://bloombybotanik.com${urlPath}" />
-<meta property="og:type" content="article" />
-            `;
+            const ogTags = `<meta property="og:title" content="${title}" />\n<meta property="og:description" content="${desc}" />\n<meta property="og:image" content="${ogImage}" />\n<meta property="og:url" content="https://bloombybotanik.com${urlPath}" />\n<meta property="og:type" content="article" />`;
             html = html.replace('</head>', `${ogTags}\n</head>`);
-            
-            // Add Schema.org Article
-            const schema = {
-              "@context": "https://schema.org",
-              "@type": "Article",
-              "headline": post.title[lang],
-              "description": desc,
-              "image": ogImage,
-              "datePublished": post.date,
-              "author": { "@type": "Person", "name": post.author },
-              "publisher": { "@type": "Organization", "name": "Bloom by BotaniK", "logo": { "@type": "ImageObject", "url": "https://bloombybotanik.com/brand/logo-org.jpg" } }
-            };
-            html = html.replace('</head>', `<script type="application/ld+json">${JSON.stringify(schema)}</script>\n</head>`);
-
-            return res.send(html);
           }
         } catch (e) {
           console.error("SSR-lite error:", e);
         }
       }
 
-      res.sendFile(path.join(distPath, 'index.html'));
+      res.send(html);
     });
   }
 

@@ -8,31 +8,62 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/"/>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://bloombybotanik.com/de/bloomlab</loc>
-    <lastmod>2026-08-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/bloomlab"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/bloomlab"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/bloomlab"/>
+    <lastmod>2026-08-25</lastmod>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://bloombybotanik.com/de/infuseur-botanique</loc>
-    <lastmod>2026-08-23</lastmod>
+    <loc>https://bloombybotanik.com/de/boutique</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/boutique"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/boutique"/>
+    <lastmod>2026-08-25</lastmod>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://bloombybotanik.com/de/boutique</loc>
-    <lastmod>2026-08-23</lastmod>
+    <loc>https://bloombybotanik.com/de/phytotherapie-reset</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/phytotherapie-reset"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/phytotherapie-reset"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/phytotherapie-reset"/>
+    <lastmod>2026-08-25</lastmod>
     <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/de/extraction-botanique</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/extraction-botanique"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/extraction-botanique"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/extraction-botanique"/>
+    <lastmod>2026-08-25</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/de/bibliotheque-savoirs</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/bibliotheque-savoirs"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/bibliotheque-savoirs"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/bibliotheque-savoirs"/>
+    <lastmod>2026-08-25</lastmod>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://bloombybotanik.com/de/blog</loc>
-    <lastmod>2026-08-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/blog"/>
+    <lastmod>2026-08-25</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>

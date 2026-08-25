@@ -1,11 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /admin
-Disallow: /api
 Disallow: /checkout
-Disallow: /panier
 
 Sitemap: https://bloombybotanik.com/sitemap.xml
-Sitemap: https://bloombybotanik.com/sitemap-fr.xml
-Sitemap: https://bloombybotanik.com/sitemap-en.xml
-Sitemap: https://bloombybotanik.com/sitemap-de.xml

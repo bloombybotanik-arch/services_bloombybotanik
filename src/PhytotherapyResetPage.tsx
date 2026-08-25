@@ -244,11 +244,11 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-botanik-orange px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-8 border border-white/10">
             {t.badge}
           </div>
-          <h1 className="text-4xl md:text-8xl font-bold mb-8 leading-[0.9] tracking-tighter">
+          <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-[0.9] tracking-tighter">
             {t.title} <br />
-            <span className="text-botanik-orange">{t.title_accent}</span>
+            <span className="text-botanik-orange text-3xl md:text-5xl block mt-4">{t.title_accent}</span>
           </h1>
-          <p className="text-base md:text-2xl text-white/70 max-w-2xl mx-auto leading-relaxed font-light mb-12 italic">
+          <p className="text-xl md:text-3xl text-white/90 max-w-3xl mx-auto leading-relaxed font-bold mb-12 italic">
             {t.quote}
           </p>
         </div>
@@ -258,9 +258,9 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
       <div className="container mx-auto px-6 -mt-10 mb-20 relative z-20">
         <div className="flex flex-wrap justify-center gap-4">
           {[
-            { id: 'protocol', label: 'Le Protocole', icon: Activity },
-            { id: 'supplements', label: 'Compléments', icon: Beaker },
-            { id: 'chronobiology', label: 'Chronobiologie', icon: Clock }
+            { id: 'protocol', label: lang === 'fr' ? 'Le Protocole' : 'Protocol', icon: Activity },
+            { id: 'supplements', label: lang === 'fr' ? 'Compléments' : 'Supplements', icon: Beaker },
+            { id: 'chronobiology', label: lang === 'fr' ? 'Chronobiologie' : 'Chronobiology', icon: Clock }
           ].map((tab) => (
             <button
               key={tab.id}
@@ -281,8 +281,52 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
       <div className="container mx-auto px-6">
         {activeTab === 'protocol' && (
           <div className="space-y-12">
+            {/* New Editorial Section */}
+            <div className="max-w-4xl mx-auto text-center mb-20">
+              <p className="text-lg md:text-xl text-botanik-green/80 leading-relaxed font-medium">
+                {t.intro_editorial}
+              </p>
+            </div>
+
+            {/* New Journey Phases Block */}
+            <div className="bg-white rounded-[60px] p-8 md:p-16 border border-botanik-green/5 shadow-2xl mb-20 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-botanik-orange/5 rounded-bl-full -z-10" />
+              <h2 className="text-2xl md:text-4xl font-bold text-botanik-green mb-8">{t.journey.subtitle}</h2>
+              <p className="text-lg text-botanik-green/70 mb-12">{t.journey.text}</p>
+              
+              <div className="space-y-10 text-left">
+                {[
+                  t.journey.step0,
+                  t.journey.phase0,
+                  t.journey.phase1,
+                  t.journey.phase2,
+                  t.journey.phase3,
+                  t.journey.pauses
+                ].map((step, idx) => {
+                  const labels = ['0', '0', '1', '2', '3', '∞'];
+                  return (
+                    <div key={idx} className="flex gap-6">
+                      <div className="w-10 h-10 rounded-full bg-botanik-orange/10 flex items-center justify-center shrink-0 text-botanik-orange font-black text-xs">
+                        {labels[idx]}
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-bold text-botanik-green mb-2">{step.title}</h4>
+                        <p className="text-base text-botanik-green/60 leading-relaxed">{step.desc}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="mt-12 pt-8 border-t border-botanik-green/10 text-center">
+                <p className="text-lg font-bold text-botanik-green leading-relaxed max-w-2xl mx-auto italic">
+                  {t.journey.footer}
+                </p>
+              </div>
+            </div>
+
             <div className="text-center mb-16">
-              <h2 className="text-2xl md:text-5xl font-bold text-botanik-green mb-6">Un voyage de 90 jours</h2>
+              <h2 className="text-2xl md:text-5xl font-bold text-botanik-green mb-6">{lang === 'fr' ? 'Détail des Étapes' : 'Steps Detail'}</h2>
               <p className="text-base md:text-lg text-botanik-green/60 max-w-2xl mx-auto">
                 Suivez les étapes clés pour déverrouiller votre terrain et stabiliser vos ressources vitales durablement.
               </p>

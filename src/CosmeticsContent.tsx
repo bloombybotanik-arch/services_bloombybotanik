@@ -30,16 +30,24 @@ export default function CosmeticsContent({
   const [filterPeau, setFilterPeau] = useState(t.filters.all);
   const [selectedRecipe, setSelectedRecipe] = useState(cosmeticsRecipes[0]);
 
+  const detailRef = React.useRef<HTMLDivElement>(null);
+
   // Handle initial plant selection
   React.useEffect(() => {
     if (initialPlantId) {
       const recipe = cosmeticsRecipes.find(r => r.plant_id === initialPlantId);
       if (recipe) {
         setSelectedRecipe(recipe);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (window.innerWidth < 1024) {
+          setTimeout(() => {
+            detailRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
       }
     }
-  }, [initialPlantId]);
+  }, [initialPlantId, cosmeticsRecipes]);
 
   const categories = [t.filters.all, ...new Set(cosmeticsRecipes.map(r => r.categorie))];
   const peaux = [t.filters.all, ...new Set(cosmeticsRecipes.map(r => r.peau))];
@@ -53,7 +61,7 @@ export default function CosmeticsContent({
       
       return matchesSearch && matchesCategorie && matchesPeau;
     });
-  }, [searchTerm, filterCategorie, filterPeau, t.filters.all]);
+  }, [searchTerm, filterCategorie, filterPeau, t.filters.all, cosmeticsRecipes]);
 
   return (
     <div className="max-w-[1200px] mx-auto px-6 md:px-12 py-12 md:py-20 lg:py-24 animate-in fade-in duration-700">
@@ -140,6 +148,9 @@ export default function CosmeticsContent({
                         onRequirePremium?.();
                       } else {
                         setSelectedRecipe(recipe);
+                        if (window.innerWidth < 1024) {
+                          detailRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
                       }
                     }}
                     className={`w-full text-left p-4 rounded-xl transition-all duration-300 relative cursor-pointer ${
@@ -224,7 +235,7 @@ export default function CosmeticsContent({
         </div>
 
         {/* Main Content: Recipe Details */}
-        <div className="bg-white rounded-3xl border border-botanik-green/10 p-8 md:p-12 shadow-sm relative overflow-hidden">
+        <div ref={detailRef} className="bg-white rounded-3xl border border-botanik-green/10 p-8 md:p-12 shadow-sm relative overflow-hidden">
           {/* Subtle Background Pattern */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-botanik-green/5 rounded-full -mr-32 -mt-32 blur-3xl pointer-events-none"></div>
 
