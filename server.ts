@@ -677,28 +677,46 @@ async function setupVite() {
       // 2. Localized Metadata (Basic logic for main pages)
       const seoData: any = {
         fr: {
-          '/': { title: 'Bloom by BotaniK | Infuseur & Extracteur Botanique de Précision', desc: 'Découvrez BloomLab®, l\'infuseur & extracteur botanique de précision. Réalisez vos propres remèdes naturels.' },
-          '/bloomlab': { title: 'BloomLab® | L\'Extracteur Botanique de Précision N°1 en France', desc: 'Maîtrisez l\'extraction basse température avec le BloomLab®. Le premier infuseur botanique professionnel.' },
-          '/phytotherapie-reset': { title: 'Reset Homéostasique | Le voyage botanique de 90 jours', desc: 'Accompagnez vos fonctions naturelles et installez une routine de mieux-être durable avec le protocole Bloom.' },
-          '/boutique': { title: 'Boutique BloomLab | Kits, Extraits & Accessoires Botaniques', desc: 'Trouvez tous les outils nécessaires pour votre autonomie santé : BloomLab, kits RESET et extraits de plantes.' },
-          '/manifeste': { title: 'Notre Manifeste | L\'Ingénierie au service du vivant', desc: 'Découvrez l\'ADN de Bloom : l\'alliance entre sagesses anciennes et science moderne pour une santé souveraine.' },
-          '/extraction-botanique': { title: 'Guide de l\'Extraction Botanique | Technologie Totum', desc: 'Apprenez les secrets de l\'extraction de précision : température, solvants et conservation des actifs.' }
+          '/': { 
+            title: 'Extracteur Botanique & Infuseur de Précision | BloomLab', 
+            desc: 'Découvrez BloomLab®, l\'extracteur botanique de précision et infuseur de plantes pour la phytothérapie maison. Maîtrisez l\'extraction du totum végétal à basse température pour soigner le terrain biologique.' 
+          },
+          '/bloomlab': { 
+            title: 'BloomLab® | L\'Extracteur Botanique de Précision N°1 en France', 
+            desc: 'La machine pour extraction de plantes de référence. Appareil de phytothérapie maison pour réaliser vos propres remèdes naturels et extractions du totum à basse température.' 
+          },
+          '/phytotherapie-reset': { 
+            title: 'Reset Homéostasique | Le voyage de phytothérapie de 90 jours', 
+            desc: 'Accompagnez vos fonctions naturelles, soignez le terrain biologique et installez un reset homéostasique durable avec le protocole expert Bloom.' 
+          },
+          '/boutique': { 
+            title: 'Boutique BloomLab | Machine pour extraction de plantes & Kits', 
+            desc: 'Trouvez votre appareil de phytothérapie maison BloomLab, nos kits de plantes médicinales et ressources pour votre souveraineté sanitaire.' 
+          },
+          '/manifeste': { 
+            title: 'Notre Manifeste | Souveraineté Sanitaire & Médecine des Systèmes', 
+            desc: 'Découvrez l\'ADN de Bloom : l\'alliance de l\'ingénierie et de la médecine des systèmes pour une souveraineté sanitaire retrouvée.' 
+          },
+          '/extraction-botanique': { 
+            title: 'Guide de l\'Extraction Botanique | Extraction du Totum Végétal', 
+            desc: 'Apprenez les secrets de l\'extraction botanique de précision : basse température, biodisponibilité optimale et préservation du totum.' 
+          }
         },
         en: {
-          '/': { title: 'Bloom by BotaniK | Precision Botanical Infuser & Extractor', desc: 'Discover BloomLab®, the precision botanical infuser & extractor. Create your own natural remedies.' },
-          '/bloomlab': { title: 'BloomLab® | The #1 Precision Botanical Extractor in France', desc: 'Master low-temperature extraction with BloomLab®. The first professional botanical infuser.' },
-          '/phytotherapie-reset': { title: 'Homeostatic Reset | The 90-day Botanical Journey', desc: 'Support your natural functions and establish a sustainable wellness routine with the Bloom protocol.' },
-          '/boutique': { title: 'Bloom Store | Botanical Kits, Extracts & Accessories', desc: 'Find everything you need for health autonomy: BloomLab, RESET kits, and botanical extracts.' },
-          '/manifeste': { title: 'Our Manifesto | Engineering at the Service of Life', desc: 'Discover the DNA of Bloom: the alliance of ancient wisdom and modern science for sovereign health.' },
-          '/extraction-botanique': { title: 'Botanical Extraction Guide | Totum Technology', desc: 'Learn the secrets of precision extraction: temperature, solvents, and active preservation.' }
+          '/': { title: 'Precision Botanical Extractor & Infuser | BloomLab', desc: 'Discover BloomLab®, the precision botanical extractor and infuser. Master the extraction of the plant totum at low temperature for home phytotherapy.' },
+          '/bloomlab': { title: 'BloomLab® | The #1 Precision Botanical Extractor in France', desc: 'The reference machine for plant extraction. Home phytotherapy device for creating your own natural remedies and low-temperature totum extractions.' },
+          '/phytotherapie-reset': { title: 'Homeostatic Reset | The 90-day Botanical Journey', desc: 'Support your natural functions, care for the biological terrain, and establish a sustainable homeostatic reset with the Bloom protocol.' },
+          '/boutique': { title: 'Bloom Store | Plant Extraction Machine & Kits', desc: 'Find your BloomLab home phytotherapy device, our medicinal plant kits, and resources for your health sovereignty.' },
+          '/manifeste': { title: 'Our Manifesto | Health Sovereignty & Systems Medicine', desc: 'Discover the DNA of Bloom: the alliance of engineering and systems medicine for regained health sovereignty.' },
+          '/extraction-botanique': { title: 'Botanical Extraction Guide | Plant Totum Extraction', desc: 'Learn the secrets of precision botanical extraction: low temperature, optimal bioavailability, and totum preservation.' }
         },
         de: {
-          '/': { title: 'Bloom by BotaniK | Präzisions-Botanischer Infuser & Extrahierer', desc: 'Entdecken Sie BloomLab®, den Präzisions-Extraktor. Erstellen Sie Ihre eigenen natürlichen Heilmittel.' },
-          '/bloomlab': { title: 'BloomLab® | Der Präzisions-Extraktor Nr. 1 in Frankreich', desc: 'Meistern Sie die Niedertemperaturextraktion mit BloomLab®. Der erste professionelle botanische Infuser.' },
-          '/phytotherapie-reset': { title: 'Homöostatischer Reset | Die botanische 90-Tage-Reise', desc: 'Unterstützen Sie Ihre natürlichen Funktionen und etablieren Sie eine nachhaltige Wellness-Routine.' },
-          '/boutique': { title: 'Bloom Shop | Botanische Kits, Extrakte & Zubehör', desc: 'Alles für Ihre Gesundheitsautonomie: BloomLab, RESET-Kits und botanische Extrakte.' },
-          '/manifeste': { title: 'Unser Manifest | Engineering im Dienste des Lebens', desc: 'Entdecken Sie die DNA von Bloom: Weisheit und moderne Wissenschaft für souveräne Gesundheit.' },
-          '/extraction-botanique': { title: 'Leitfaden zur botanischen Extraktion | Totum-Technologie', desc: 'Lernen Sie die Geheimnisse der Präzisionsextraktion: Temperatur, Lösungsmittel und Wirkstofferhalt.' }
+          '/': { title: 'Botanischer Präzisions-Extraktor & Infuser | BloomLab', desc: 'Entdecken Sie BloomLab®, den Präzisions-Extraktor. Meistern Sie die Extraktion des pflanzlichen Totums bei niedriger Temperatur für die Phytotherapie zu Hause.' },
+          '/bloomlab': { title: 'BloomLab® | Der Präzisions-Extraktor Nr. 1 in Frankreich', desc: 'Die Referenzmaschine für die Pflanzenextraktion. Phytotherapie-Gerät für zu Hause zur Erstellung eigener natürlicher Heilmittel.' },
+          '/phytotherapie-reset': { title: 'Homöostatischer Reset | Die botanische 90-Tage-Reise', desc: 'Unterstützen Sie Ihre natürlichen Funktionen, pflegen Sie das biologische Terrain und etablieren Sie einen nachhaltigen homöostatischen Reset.' },
+          '/boutique': { title: 'Bloom Shop | Pflanzenextraktionsmaschine & Kits', desc: 'Finden Sie Ihr BloomLab-Phytotherapie-Gerät für zu Hause, unsere Heilpflanzen-Kits und Ressourcen für Ihre Gesundheitsautonomie.' },
+          '/manifeste': { title: 'Unser Manifest | Gesundheits-Souveränität & Systemmedizin', desc: 'Entdecken Sie die DNA von Bloom: die Allianz von Engineering und Systemmedizin für wiedergewonnene Gesundheitsautonomie.' },
+          '/extraction-botanique': { title: 'Leitfaden zur botanischen Extraktion | Totum-Technologie', desc: 'Lernen Sie die Geheimnisse der botanischen Präzisionsextraktion: Niedertemperatur, optimale Bioverfügbarkeit und Totum-Erhalt.' }
         }
       };
 
@@ -708,6 +726,46 @@ async function setupVite() {
         html = html.replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${pageSeo.desc}" />`);
         html = html.replace(/<html lang=".*?"/, `<html lang="${lang}"`);
       }
+
+      // 2.5 Structured Data (JSON-LD)
+      const schemas: any[] = [
+        {
+          "@context": "https://schema.org",
+          "@type": "HealthAndBeautyBusiness",
+          "name": "Bloom by BotaniK",
+          "description": "Expertise en médecine des systèmes, reset homéostasique et souveraineté sanitaire par l'extraction botanique de précision.",
+          "url": baseUrl,
+          "logo": `${baseUrl}/brand/logo-org.jpg`,
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "FR"
+          }
+        }
+      ];
+
+      if (restPath === '/bloomlab' || restPath === '/') {
+        schemas.push({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "BloomLab®",
+          "description": "L'extracteur botanique de précision et infuseur botanique de référence. Permet l'extraction du totum végétal à basse température (extraction basse température) pour une biodisponibilité optimale et une souveraineté sanitaire retrouvée.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Bloom by BotaniK"
+          },
+          "image": `${baseUrl}/assets/bloomlab_main_1784887530345.png`,
+          "offers": {
+            "@type": "Offer",
+            "url": `${baseUrl}/bloomlab`,
+            "priceCurrency": "EUR",
+            "price": "239.00",
+            "availability": "https://schema.org/InStock"
+          }
+        });
+      }
+
+      const schemaHtml = schemas.map(s => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n');
+      html = html.replace('</head>', `${schemaHtml}\n</head>`);
 
       // 3. Localized Noscript Content (Structural injection)
       const noscriptContent: any = {

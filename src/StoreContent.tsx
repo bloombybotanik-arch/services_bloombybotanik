@@ -1,5 +1,6 @@
-import React from 'react';
-import { ShoppingBag, Star, Check, ArrowRight, ShieldCheck, Leaf, FlaskConical, Search } from 'lucide-react';
+import React, { useState, useMemo } from 'react';
+import { Search, ShoppingCart, Info, Check, Filter, ChevronRight, ArrowRight, Star, ShieldCheck, Zap, Package, FlaskConical, Leaf, Heart, Wind, Flame, Droplets, User, FileText, Globe, ShoppingBag } from 'lucide-react';
+import { OptimizedImage } from './components/OptimizedImage';
 import bloomLabImg from './assets/images/bloomlab_main_1784887530345.jpeg';
 import img05 from './assets/images/lifestyle_botanik_cleaned_1786616810137.jpg';
 import labHeroImg from './assets/images/lab_detail_cleaned_1786616788618.jpg';
@@ -347,9 +348,9 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                   Bundle
                 </div>
                 <div className="relative h-64 overflow-hidden bg-[#F9F9F7]">
-                  <img 
+                  <OptimizedImage 
                     src={product.image} 
-                    alt={product.name} 
+                    alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Machine à infusion botanique, tisanes et remèdes naturels`} 
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
@@ -380,6 +381,7 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                     <button 
                       onClick={(e) => { e.stopPropagation(); onAddToCart(product); }}
                       className="w-12 h-12 bg-botanik-green text-white rounded-2xl flex items-center justify-center shadow-lg hover:bg-botanik-orange transition-colors"
+                      aria-label={`${lang === 'fr' ? 'Ajouter au panier' : 'Add to cart'} ${product.name}`}
                     >
                       <ShoppingBag className="w-5 h-5" />
                     </button>
@@ -444,7 +446,10 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                         <span className="text-xl font-bold text-botanik-green">
                           {product.price === 0 ? (lang === 'fr' ? 'Gratuit' : lang === 'en' ? 'Free' : 'Gratis') : formatPrice(product.price)}
                         </span>
-                        <button className="w-10 h-10 bg-[#F9F9F7] text-botanik-green rounded-xl flex items-center justify-center group-hover:bg-botanik-green group-hover:text-white transition-colors">
+                        <button 
+                          className="w-10 h-10 bg-[#F9F9F7] text-botanik-green rounded-xl flex items-center justify-center group-hover:bg-botanik-green group-hover:text-white transition-colors"
+                          aria-label={`${lang === 'fr' ? 'Découvrir' : 'Discover'} ${product.name}`}
+                        >
                           <ArrowRight className="w-5 h-5" />
                         </button>
                       </div>

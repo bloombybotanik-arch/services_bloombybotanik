@@ -652,6 +652,7 @@ const NavigationSidebar = ({ className = "", currentView, currentProductId, navi
         if (onClick) onClick();
         else if (id) navigateTo(id as any);
       }}
+      aria-label={label}
       className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all text-left group ${
         isActive 
           ? 'bg-white/10 text-white shadow-sm' 
@@ -801,6 +802,7 @@ const NavigationSidebar = ({ className = "", currentView, currentProductId, navi
         <button 
           onClick={() => navigateTo('cart')}
           className="w-full flex items-center justify-between p-3 rounded-xl bg-botanik-orange text-white font-bold text-sm hover:scale-[1.02] transition-all"
+          aria-label={lang === 'fr' ? 'Accéder au panier BloomLab' : 'Access BloomLab shopping cart'}
         >
           <div className="flex items-center gap-3">
             <ShoppingCart className="w-4 h-4" />
@@ -814,6 +816,7 @@ const NavigationSidebar = ({ className = "", currentView, currentProductId, navi
             onClick={() => navigateTo('account')}
             className="p-2 text-white/40 hover:text-white transition-colors"
             title={t.nav.account}
+            aria-label={t.nav.account || 'Compte'}
           >
             <User className="w-5 h-5" />
           </button>
@@ -1536,7 +1539,7 @@ export default function App() {
       <div className="flex items-center gap-2">
         <LanguageSelector lang={lang} setLang={handleLanguageChange} variant="mobile-header" />
         
-        <button onClick={() => navigateTo('cart')} className="relative text-white p-2">
+        <button onClick={() => navigateTo('cart')} className="relative text-white p-2" aria-label={lang === 'fr' ? 'Accéder au panier Bloom' : 'Access Bloom shopping cart'}>
           <ShoppingCart className="w-5 h-5" />
           {cart.length > 0 && (
             <span className="absolute top-0 right-0 w-4 h-4 bg-botanik-orange text-white text-[9px] font-black rounded-full flex items-center justify-center border border-botanik-green">

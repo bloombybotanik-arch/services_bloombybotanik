@@ -122,6 +122,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
                   <button 
                     onClick={() => onNavigate('boutique')}
                     className="px-8 py-4 bg-botanik-green text-white rounded-2xl font-bold hover:bg-botanik-orange transition-all flex items-center gap-2 shadow-xl shadow-botanik-green/10"
+                    aria-label={lang === 'fr' ? 'Découvrir la Boutique BloomLab' : 'Discover BloomLab Shop'}
                   >
                     {lang === 'fr' ? "Voir toutes les offres" : "View all offers"} <ArrowRight className="w-4 h-4" />
                   </button>
@@ -174,6 +175,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
                         <button 
                           onClick={() => onNavigate('product-detail', product.id)}
                           className="w-full py-4 bg-botanik-green text-white text-xs font-bold rounded-2xl hover:bg-botanik-orange transition-colors flex items-center justify-center gap-2"
+                          aria-label={`${lang === 'fr' ? 'Découvrir' : 'Discover'} ${product.name}`}
                         >
                           {lang === 'fr' ? "Découvrir" : "Discover"} <ChevronRight className="w-4 h-4" />
                         </button>

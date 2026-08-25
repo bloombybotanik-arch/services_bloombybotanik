@@ -109,7 +109,7 @@ export default function GuideContent({ onNavigate, lang }: GuideContentProps) {
               
               <div className="flex flex-col gap-4 mt-8">
                 <button 
-                  onClick={() => onNavigate('bloomlab')}
+                  onClick={() => onNavigate('machine')}
                   className="w-full md:w-auto px-10 py-6 bg-botanik-orange text-white rounded-2xl font-bold hover:bg-botanik-orange/90 transition-all shadow-xl flex items-center justify-center gap-3 group"
                 >
                   <span className="uppercase tracking-widest">{lang === 'fr' ? 'Découvrir la BloomLab' : 'Discover the BloomLab'}</span>

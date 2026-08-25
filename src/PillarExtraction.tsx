@@ -186,8 +186,8 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
                     ? "Que vous travailliez l'écorce de cannelle, la racine de réglisse ou le pétale de rose, le BloomLab adapte sa signature thermique et cinétique pour respecter l'intégrité de votre matière première." 
                     : "Whether you work with cinnamon bark, licorice root, or rose petals, BloomLab adapts its thermal and kinetic signature to respect the integrity of your raw material."}
                 </p>
-                <button onClick={() => onNavigate('machine')} className="bg-white text-botanik-orange px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-botanik-green hover:text-white transition-all shadow-lg">
-                  {lang === 'fr' ? 'Découvrir la Technologie' : 'Discover the Technology'}
+                <button onClick={() => onNavigate('machine')} className="bg-[#F97316] text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-[#EA580C] transition-all shadow-lg">
+                  {lang === 'fr' ? 'Découvrir la BloomLab' : 'Discover the BloomLab'}
                 </button>
               </div>
               <Activity className="absolute bottom-[-10%] right-[-5%] w-64 h-64 text-white/10" />
@@ -267,9 +267,9 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button 
               onClick={() => onNavigate('machine')}
-              className="px-12 py-5 bg-botanik-green text-white rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-botanik-orange transition-all shadow-2xl shadow-botanik-green/20 flex items-center justify-center gap-3 group"
+              className="px-12 py-5 bg-[#F97316] text-white rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-[#EA580C] transition-all shadow-2xl shadow-[#F97316]/20 flex items-center justify-center gap-3 group"
             >
-              {lang === 'fr' ? 'Acquérir la BloomLab®' : 'Acquire BloomLab®'}
+              {lang === 'fr' ? 'Découvrir la BloomLab' : 'Discover the BloomLab'}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
             <button 

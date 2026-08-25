@@ -77,7 +77,7 @@ const translationsIndexBis = {
       title: "L'extracteur botanique qui révèle le <span class='text-[#D97706]'>totum</span> de vos plantes.",
       subtitle: "<strong>BloomLab® : L'infuseur botanique de précision.</strong> BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels. Faites fleurir toutes vos envies de bien-être végétal.",
       rating: "Une conception dédiée à l’extraction botanique de précision.",
-      buyBtn: "Acheter la BloomLab® — 239&nbsp;€ <span class='line-through opacity-60 ml-2'>289&nbsp;€</span> code rentrée2026",
+      buyBtn: "Découvrir la BloomLab®",
       installment: "Paiement en 3x sans frais par Klarna",
       installmentSub: "Soit 79,66€ / mois",
       guarantee: "Testez 30 jours sans risque",
@@ -191,7 +191,7 @@ const translationsIndexBis = {
       title: "The Botanical Extractor that releases the <span class='text-[#D97706] underline underline-offset-8 decoration-[#D97706]/30'>pure Totum</span> of your plants.",
       subtitle: "<strong>Say goodbye to the chore of approximate bain-marie.</strong> A single precision device to easily prepare your Culinary oils, Cosmetic Skincare, and Health Remedies at home.",
       rating: "A design dedicated to precision botanical extraction.",
-      buyBtn: "Buy the BloomLab® — €239",
+      buyBtn: "Discover the BloomLab®",
       installment: "3x interest-free payment by Klarna",
       installmentSub: "Or €79.66 / month",
       guarantee: "Test risk-free for 30 days",
@@ -305,7 +305,7 @@ const translationsIndexBis = {
       title: "Der botanische Extraktor, der das <span class='text-[#D97706] underline underline-offset-8 decoration-[#D97706]/30'>reine Totum</span> Ihrer Pflanzen freisetzt.",
       subtitle: "<strong>Verabschieden Sie sich von der mühsamen Arbeit des ungefähren Wasserbads.</strong> Ein einziges Präzisionsgerät, um Ihre kulinarischen Öle, kosmetischen Hautpflegeprodukte und Heilmittel ganz einfach zu Hause zuzubereiten.",
       rating: "Ein Design für die präzise botanische Extraktion.",
-      buyBtn: "BloomLab® kaufen — 239 €",
+      buyBtn: "Die BloomLab® entdecken",
       installment: "Zahlung in 3 zinsfreien Raten von Klarna",
       installmentSub: "Oder 79,66 € / Monat",
       guarantee: "30 Tage risikofrei testen",
@@ -645,10 +645,13 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
 
                 <div className="space-y-4">
                   <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                    <a href="#commande" className="inline-flex items-center justify-center space-x-3 bg-[#D97706] hover:bg-[#B45309] text-white font-extrabold text-lg px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl">
+                    <button 
+                      onClick={() => onNavigate('machine')}
+                      className="inline-flex items-center justify-center space-x-3 bg-[#D97706] hover:bg-[#B45309] text-white font-extrabold text-lg px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl"
+                    >
                       <FlaskConical className="w-5 h-5" />
                       <span dangerouslySetInnerHTML={{ __html: currentT.hero.buyBtn }} />
-                    </a>
+                    </button>
                     <div className="text-xs text-slate-600 bg-[#F3EEE6] p-3 rounded-2xl border border-[#E7DFD3] flex flex-col justify-center">
                       <span className="font-bold text-[#0F261E] flex items-center gap-1"><CreditCard className="w-3.5 h-3.5 text-[#D97706]" /> {currentT.hero.installment}</span>
                       <span>{currentT.hero.installmentSub}</span>
@@ -726,10 +729,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                       </div>
                     </div>
                     <button 
-                      onClick={() => onNavigate('commande')}
+                      onClick={() => onNavigate('machine')}
                       className="w-full py-4 bg-[#D97706] text-white rounded-xl font-black shadow-lg hover:bg-[#B45309] transition-all flex items-center justify-center gap-2"
                     >
-                      <ShoppingCart className="w-5 h-5" />
+                      <FlaskConical className="w-5 h-5" />
                       <span dangerouslySetInnerHTML={{ __html: currentT.hero.buyBtn }} />
                     </button>
 
