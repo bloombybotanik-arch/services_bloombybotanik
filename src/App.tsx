@@ -513,14 +513,13 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
       // Add VideoObject Schema
       graph.push({
         "@type": "VideoObject",
-        "name": "Démonstration BloomLab - Extraction Botanique de Précision",
-        "description": "Découvrez comment fonctionne la BloomLab, l'extracteur botanique N°1 en France pour vos remèdes et cosmétiques maison.",
+        "name": "Démonstration de l'extracteur botanique BloomLab",
+        "description": "Découvrez comment fonctionne la BloomLab, l'extracteur botanique N°1 en France pour l'extraction du totum à basse température.",
         "thumbnailUrl": [
           `https://bloombybotanik.com${bloomLabImg}`
         ],
-        "uploadDate": "2026-08-01T08:00:00+08:00",
+        "uploadDate": "2026-08-01T08:00:00Z",
         "contentUrl": "https://bloombybotanik.com/demo_bloomlab.mp4",
-        "embedUrl": "https://bloombybotanik.com/bloomlab",
         "duration": "PT1M30S"
       });
     }

@@ -680,7 +680,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       price: 9.90,
       images: [digestionImg],
       description: isFR 
-        ? "Le CONCENTRÉ ÉQUILIBRE & FLUX est un protocole de gestion des fluides et de maintenance des réseaux internes."
+        ? "Le CONCENTRÉ ÉQUILIBRE & FLUX est un protocole de gestion des fluides et de maintenance des réseaux internes à base de <a href=\"/boutique\" class=\"text-botanik-orange font-bold hover:underline\">Gingembre</a> et Romarin."
         : "The BALANCE & FLOW CONCENTRATE is a fluid management and internal network maintenance protocol.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
@@ -696,11 +696,11 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <div class="grid md:grid-cols-2 gap-8 mb-12">
             <div class="bg-white border border-botanik-green/10 p-8 rounded-3xl shadow-sm">
               <h4 class="font-bold text-botanik-green mb-4">SACHET A : "La Purge Structurelle" (20g)</h4>
-              <p class="text-sm"><strong>Brou de Noix & Gingembre :</strong> Des composants denses et fibreux. Ils constituent les "filtres" naturels du mélange. Leur extraction à haute température (90°C) est indispensable pour libérer les principes purifiants.</p>
+              <p class="text-sm"><strong>Brou de Noix & <a href=\"/boutique\" class=\"text-botanik-orange font-bold hover:underline\">Gingembre</a> :</strong> Des composants denses et fibreux. Ils constituent les "filtres" naturels du mélange. Leur extraction à haute température (90°C) est indispensable pour libérer les principes purifiants.</p>
             </div>
             <div class="bg-white border border-botanik-green/10 p-8 rounded-3xl shadow-sm">
               <h4 class="font-bold text-botanik-green mb-4">SACHET B : "La Régulation des Flux" (30g)</h4>
-              <p class="text-sm"><strong>Romarin & Ginkgo Biloba :</strong> Les ingénieurs de votre circulation interne. Leurs feuilles contiennent des essences volatiles fragiles qui nécessitent une extraction douce et contrôlée (55°C).</p>
+              <p class="text-sm"><strong><a href=\"/boutique\" class=\"text-botanik-orange font-bold hover:underline\">Romarin</a> & Ginkgo Biloba :</strong> Les ingénieurs de votre circulation interne. Leurs feuilles contiennent des essences volatiles fragiles qui nécessitent une extraction douce et contrôlée (55°C).</p>
             </div>
           </div>
 
@@ -710,14 +710,14 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
               <div class="w-12 h-12 bg-botanik-orange text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
               <div>
                 <h4 class="font-bold text-botanik-green">Étape 1 : Phase de Dissolution Structurelle (90°C / 2h)</h4>
-                <p class="text-sm text-botanik-green/70">Épuise les fibres dures du Brou de Noix et active le Gingembre pour assainir le terrain (Sachet A + 700ml base).</p>
+                <p class="text-sm text-botanik-green/70">Épuise les fibres dures du Brou de Noix et active le <a href=\"/boutique\" class=\"text-botanik-orange font-bold hover:underline\">Gingembre</a> pour assainir le terrain (Sachet A + 700ml base).</p>
               </div>
             </div>
             <div class="flex gap-6">
               <div class="w-12 h-12 bg-botanik-orange text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
               <div>
                 <h4 class="font-bold text-botanik-green">Étape 2 : Phase d'Harmonisation des Fluides (55°C / 4h)</h4>
-                <p class="text-sm text-botanik-green/70">Fusionne les propriétés toniques du Romarin et du Ginkgo sans dénaturer leurs principes actifs.</p>
+                <p class="text-sm text-botanik-green/70">Fusionne les propriétés toniques du <a href=\"/boutique\" class=\"text-botanik-orange font-bold hover:underline\">Romarin</a> et du Ginkgo sans dénaturer leurs principes actifs.</p>
               </div>
             </div>
           </div>
@@ -801,7 +801,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       price: 9.90,
       images: [feuArticulaireImg],
       description: isFR 
-        ? "Le CONCENTRÉ MOUVEMENT LIBRE est une réponse technique aux besoins de flexibilité de votre édifice biologique."
+        ? "Le CONCENTRÉ MOUVEMENT LIBRE est une réponse technique aux besoins de flexibilité de votre édifice biologique grâce au <a href=\"/boutique/kit-articulaire\" class=\"text-botanik-orange font-bold hover:underline\">Boswellia Serrata</a>."
         : "The JOINT FIRE CONCENTRATE is a technical response to the flexibility needs of your biological building.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
@@ -817,11 +817,11 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <div class="grid md:grid-cols-2 gap-8 mb-12">
             <div class="bg-white border border-botanik-green/10 p-8 rounded-3xl shadow-sm">
               <h4 class="font-bold text-botanik-green mb-4">SACHET A : "L'Ancrage Moléculaire" (30g)</h4>
-              <p class="text-sm"><strong>Reine des Prés & Gingembre :</strong> Sélectionnés pour leur richesse en dérivés salicylés naturels et en catalyseurs thermiques. Cette phase prépare le "terrain" et amorce la fluidification des fluides internes.</p>
+              <p class="text-sm"><strong>Reine des Prés & <a href=\"/boutique\" class=\"text-botanik-orange font-bold hover:underline\">Gingembre</a> :</strong> Sélectionnés pour leur richesse en dérivés salicylés naturels et en catalyseurs thermiques. Cette phase prépare le "terrain" et amorce la fluidification des fluides internes.</p>
             </div>
             <div class="bg-white border border-botanik-green/10 p-8 rounded-3xl shadow-sm">
               <h4 class="font-bold text-botanik-green mb-4">SACHET B : "La Cohésion Résineuse" (20g)</h4>
-              <p class="text-sm"><strong>Boswellia Serrata (Gomme-Résine) :</strong> Une substance millénaire et dense. Elle est le pilier de la souplesse structurelle. Sa structure exige une phase d'extraction spécifique pour rendre ses acides boswelliques biodisponibles.</p>
+              <p class="text-sm"><strong><a href=\"/boutique/kit-articulaire\" class=\"text-botanik-orange font-bold hover:underline\">Boswellia Serrata</a> (Gomme-Résine) :</strong> Une substance millénaire et dense. Elle est le pilier de la souplesse structurelle. Sa structure exige une phase d'extraction spécifique pour rendre ses acides boswelliques biodisponibles.</p>
             </div>
           </div>
 

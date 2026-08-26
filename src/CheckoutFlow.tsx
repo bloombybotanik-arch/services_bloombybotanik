@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ShieldCheck, Lock, CreditCard, ChevronRight, Truck, Building2, User, Mail, Phone, MapPin, CheckCircle2, Download, PackageCheck, AlertCircle } from 'lucide-react';
 import { translations, Language } from './translations';
-import { db } from './lib/firebase';
-import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { getShippingPrice, ShippingMethod } from './lib/shippingUtils';
+
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY || "");
 
 interface CheckoutFlowProps {
   cart: any[];
@@ -16,20 +19,98 @@ interface CheckoutFlowProps {
 }
 
 type Step = 'information' | 'shipping' | 'payment' | 'confirmation';
+type PaymentMethod = 'stripe' | 'paypal';
 
-export default function CheckoutFlow({ cart, total, shippingMethod, user, onSuccess, onCancel, lang = 'fr' }: CheckoutFlowProps) {
+function StripePaymentForm({ finalTotal, onPaymentSuccess, cart, shippingMethod, formData, user, t }: any) {
+  const stripe = useStripe();
+  const elements = useElements();
+  const [error, setError] = useState<string | null>(null);
+  const [processing, setProcessing] = useState(false);
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    if (!stripe || !elements) return;
+
+    setProcessing(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/checkout/create-payment-intent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          cart,
+          shippingMethod,
+          formData,
+          userId: user.uid,
+          userEmail: user.email
+        }),
+      });
+
+      const { clientSecret, error: backendError } = await response.json();
+      if (backendError) throw new Error(backendError);
+
+      const result = await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: elements.getElement(CardElement) as any,
+          billing_details: {
+            name: `${formData.firstName} ${formData.lastName}`,
+            email: formData.email,
+          },
+        },
+      });
+
+      if (result.error) {
+        setError(result.error.message || "Erreur de paiement");
+      } else {
+        if (result.paymentIntent && result.paymentIntent.status === 'succeeded') {
+          onPaymentSuccess((result.paymentIntent as any).metadata?.orderId);
+        }
+      }
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setProcessing(false);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="p-4 bg-[#F9F9F7] rounded-xl border border-[#1B3022]/10">
+        <CardElement options={{
+          style: {
+            base: {
+              fontSize: '16px',
+              color: '#1B3022',
+              '::placeholder': { color: '#1B302260' },
+            },
+          },
+        }} />
+      </div>
+      {error && <div className="text-red-500 text-sm">{error}</div>}
+      <button 
+        type="submit" 
+        disabled={!stripe || processing}
+        className="w-full bg-[#1B3022] text-white px-10 py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-[#F97316] transition-all shadow-xl shadow-[#1B3022]/10 disabled:opacity-50"
+      >
+        {processing ? t.actions.processing : t.actions.pay} <ChevronRight className="w-5 h-5" />
+      </button>
+    </form>
+  );
+}
+
+function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onCancel, lang = 'fr' }: CheckoutFlowProps) {
   const t = translations[lang].checkout;
   const cartT = translations[lang].cart;
   const [promoCode, setPromoCode] = useState('');
   const [isPromoApplied, setIsPromoApplied] = useState(false);
   const [promoError, setPromoError] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('stripe');
   
   const shipping = getShippingPrice(shippingMethod, cart);
   
-  // Adjust total if promo applied
   let adjustedTotal = total;
   if (isPromoApplied) {
-    // Calculate total with promo prices
     adjustedTotal = cart.reduce((sum, item) => {
       let p = item.price;
       if (isPromoApplied && (item.id === 'bloomlab' || item.id === 'pack-signature' || item.name.includes('BloomLab')) && p > 239) {
@@ -40,7 +121,7 @@ export default function CheckoutFlow({ cart, total, shippingMethod, user, onSucc
   }
   const finalTotal = adjustedTotal + shipping;
 
-  const [step, setStep] = useState<Step>(user ? 'information' : 'information'); // We'll show a warning if not logged in
+  const [step, setStep] = useState<Step>('information');
   const [formData, setFormData] = useState({
     email: user?.email || '',
     firstName: user?.displayName?.split(' ')[0] || '',
@@ -54,9 +135,6 @@ export default function CheckoutFlow({ cart, total, shippingMethod, user, onSucc
     zipCode: '',
     country: 'France',
     billingSameAsShipping: true,
-    billingAddress: '',
-    billingCity: '',
-    billingZipCode: '',
   });
 
   const [isProcessing, setIsProcessing] = useState(false);
@@ -77,66 +155,10 @@ export default function CheckoutFlow({ cart, total, shippingMethod, user, onSucc
     else if (step === 'shipping') setStep('payment');
   };
 
-  const handlePayment = async () => {
-    if (!user) return;
-    setIsProcessing(true);
-    
-    try {
-      // 1. Create Order in Firestore
-      const newOrderId = `BLM-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
-      
-      const orderData = {
-        userId: user.uid,
-        email: formData.email,
-        items: cart.map(item => ({
-          id: item.id,
-          name: item.name,
-          price: item.price,
-          quantity: item.quantity,
-          isDigital: item.isDigital || false
-        })),
-        shippingMethod,
-        shippingPrice: shipping,
-        totalCents: Math.round(finalTotal * 100),
-        status: 'paid',
-        promoCode: isPromoApplied ? 'RENTRÉE2026' : null,
-        freeMonthRecipes: isPromoApplied,
-        shippingAddress: step === 'shipping' ? {
-          address: formData.address,
-          city: formData.city,
-          zipCode: formData.zipCode,
-          country: formData.country
-        } : null,
-        createdAt: serverTimestamp(),
-        updatedAt: serverTimestamp()
-      };
-
-      await setDoc(doc(db, 'orders', newOrderId), orderData);
-
-      // 2. Update User Status if digital products or signature packs are bought
-      const hasPremium = cart.some(item => item.id === 'premium-access' || item.id === 'pack-signature');
-      const hasFreemium = cart.some(item => item.id === 'freemium-access');
-
-      if (hasPremium || hasFreemium || isPromoApplied) {
-        const userRef = doc(db, 'users', user.uid);
-        const newStatus = (hasPremium || isPromoApplied) ? 'premium' : 'freemium';
-        
-        await setDoc(userRef, {
-          status: newStatus,
-          updatedAt: serverTimestamp(),
-          freeRecipesUntil: isPromoApplied ? new Date(Date.now() + 30 * 24 * 60 * 60 * 1000) : null
-        }, { merge: true });
-      }
-
-      setOrderId(newOrderId);
-      setStep('confirmation');
-      console.log("Emails envoyés : Confirmation de commande, Facture générée, Confirmation de paiement");
-    } catch (error) {
-      console.error("Error during checkout:", error);
-      alert("Une erreur est survenue lors de la validation de votre commande.");
-    } finally {
-      setIsProcessing(false);
-    }
+  const onPaymentSuccess = (id: string) => {
+    setOrderId(id);
+    setStep('confirmation');
+    onSuccess && onSuccess({ orderId: id });
   };
 
   if (step === 'confirmation') {
@@ -173,10 +195,7 @@ export default function CheckoutFlow({ cart, total, shippingMethod, user, onSucc
           <button className="bg-[#1B3022] text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-3">
             <Download className="w-5 h-5" /> {t.confirmation.download_invoice}
           </button>
-          <button 
-            onClick={onCancel}
-            className="border border-[#1B3022]/10 px-8 py-4 rounded-xl font-bold hover:bg-[#1B3022]/5 transition-colors"
-          >
+          <button onClick={onCancel} className="border border-[#1B3022]/10 px-8 py-4 rounded-xl font-bold hover:bg-[#1B3022]/5 transition-colors">
             {t.confirmation.back_home}
           </button>
         </div>
@@ -204,8 +223,7 @@ export default function CheckoutFlow({ cart, total, shippingMethod, user, onSucc
               <AlertCircle className="w-6 h-6 text-botanik-orange flex-shrink-0 mt-1" />
               <div>
                 <p className="font-bold text-botanik-green mb-1">Authentification requise</p>
-                <p className="text-sm text-botanik-green/70 mb-4">Vous devez être connecté pour finaliser votre commande et accéder à vos produits numériques.</p>
-                <p className="text-xs italic text-botanik-green/50">Veuillez vous connecter via le menu en haut à droite avant de continuer.</p>
+                <p className="text-sm text-botanik-green/70 mb-4">Vous devez être connecté pour finaliser votre commande.</p>
               </div>
             </div>
           )}
@@ -236,64 +254,16 @@ export default function CheckoutFlow({ cart, total, shippingMethod, user, onSucc
                   <>
                     <div>
                       <label className="block text-sm font-bold text-[#1B3022] mb-2">{t.client_info.company}</label>
-                      <input 
-                        type="text" 
-                        value={formData.company}
-                        onChange={(e) => setFormData({...formData, company: e.target.value})}
-                        className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]"
-                        placeholder="Botanique SAS"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-bold text-[#1B3022] mb-2">{t.client_info.vat}</label>
-                      <input 
-                        type="text" 
-                        value={formData.vatNumber}
-                        onChange={(e) => setFormData({...formData, vatNumber: e.target.value})}
-                        className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]"
-                        placeholder="FR 12 3456789"
-                      />
+                      <input type="text" value={formData.company} onChange={(e) => setFormData({...formData, company: e.target.value})} className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]" />
                     </div>
                   </>
                 )}
                 <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-bold text-[#1B3022] mb-2">{t.client_info.first_name}</label>
-                    <input 
-                      type="text" 
-                      value={formData.firstName}
-                      onChange={(e) => setFormData({...formData, firstName: e.target.value})}
-                      className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-[#1B3022] mb-2">{t.client_info.last_name}</label>
-                    <input 
-                      type="text" 
-                      value={formData.lastName}
-                      onChange={(e) => setFormData({...formData, lastName: e.target.value})}
-                      className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]"
-                    />
-                  </div>
+                  <input type="text" placeholder={t.client_info.first_name} value={formData.firstName} onChange={(e) => setFormData({...formData, firstName: e.target.value})} className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]" />
+                  <input type="text" placeholder={t.client_info.last_name} value={formData.lastName} onChange={(e) => setFormData({...formData, lastName: e.target.value})} className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]" />
                 </div>
-                <div>
-                  <label className="block text-sm font-bold text-[#1B3022] mb-2">{t.client_info.email}</label>
-                  <input 
-                    type="email" 
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-bold text-[#1B3022] mb-2">{t.client_info.phone}</label>
-                  <input 
-                    type="tel" 
-                    value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]"
-                  />
-                </div>
+                <input type="email" placeholder={t.client_info.email} value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]" />
+                <input type="tel" placeholder={t.client_info.phone} value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]" />
               </div>
             </section>
           )}
@@ -304,34 +274,10 @@ export default function CheckoutFlow({ cart, total, shippingMethod, user, onSucc
                 <Truck className="w-6 h-6" /> {t.shipping.title}
               </h2>
               <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-bold text-[#1B3022] mb-2">{t.shipping.address}</label>
-                  <input 
-                    type="text" 
-                    value={formData.address}
-                    onChange={(e) => setFormData({...formData, address: e.target.value})}
-                    className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]"
-                  />
-                </div>
+                <input type="text" placeholder={t.shipping.address} value={formData.address} onChange={(e) => setFormData({...formData, address: e.target.value})} className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]" />
                 <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-bold text-[#1B3022] mb-2">{t.shipping.zip}</label>
-                    <input 
-                      type="text" 
-                      value={formData.zipCode}
-                      onChange={(e) => setFormData({...formData, zipCode: e.target.value})}
-                      className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-[#1B3022] mb-2">{t.shipping.city}</label>
-                    <input 
-                      type="text" 
-                      value={formData.city}
-                      onChange={(e) => setFormData({...formData, city: e.target.value})}
-                      className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]"
-                    />
-                  </div>
+                  <input type="text" placeholder={t.shipping.zip} value={formData.zipCode} onChange={(e) => setFormData({...formData, zipCode: e.target.value})} className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]" />
+                  <input type="text" placeholder={t.shipping.city} value={formData.city} onChange={(e) => setFormData({...formData, city: e.target.value})} className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]" />
                 </div>
               </div>
             </section>
@@ -343,26 +289,58 @@ export default function CheckoutFlow({ cart, total, shippingMethod, user, onSucc
                 <CreditCard className="w-6 h-6" /> {t.payment.title}
               </h2>
               
-              <div className="space-y-4">
-                <button className="w-full p-6 rounded-2xl border-2 border-[#1B3022]/10 hover:border-[#1B3022]/30 flex items-center justify-between group transition-all">
+              <div className="space-y-4 mb-8">
+                <button 
+                  onClick={() => setPaymentMethod('stripe')}
+                  className={`w-full p-6 rounded-2xl border-2 flex items-center justify-between group transition-all ${paymentMethod === 'stripe' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
+                >
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-8 bg-[#1B3022]/5 rounded flex items-center justify-center">
+                    <div className="w-12 h-8 bg-white rounded flex items-center justify-center">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-4" />
                     </div>
                     <span className="font-bold">{t.payment.stripe}</span>
                   </div>
-                  <div className="w-6 h-6 rounded-full border-2 border-[#1B3022]/20 group-hover:border-[#F97316]"></div>
+                  <div className={`w-6 h-6 rounded-full border-2 ${paymentMethod === 'stripe' ? 'border-[#F97316] bg-[#F97316] bg-[url(\'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0yMCA2TDkgMTcgNCAxMiIvPjwvc3ZnPg==\')] bg-center bg-no-repeat bg-[length:14px]' : 'border-[#1B3022]/20'}`}></div>
                 </button>
-                <button className="w-full p-6 rounded-2xl border-2 border-[#1B3022]/10 hover:border-[#1B3022]/30 flex items-center justify-between group transition-all">
+                <button 
+                  onClick={() => setPaymentMethod('paypal')}
+                  className={`w-full p-6 rounded-2xl border-2 flex items-center justify-between group transition-all ${paymentMethod === 'paypal' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
+                >
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-8 bg-[#1B3022]/5 rounded flex items-center justify-center">
+                    <div className="w-12 h-8 bg-white rounded flex items-center justify-center">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" className="h-4" />
                     </div>
                     <span className="font-bold">{t.payment.paypal}</span>
                   </div>
-                  <div className="w-6 h-6 rounded-full border-2 border-[#1B3022]/20 group-hover:border-[#F97316]"></div>
+                  <div className={`w-6 h-6 rounded-full border-2 ${paymentMethod === 'paypal' ? 'border-[#F97316] bg-[#F97316] bg-[url(\'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0yMCA2TDkgMTcgNCAxMiIvPjwvc3ZnPg==\')] bg-center bg-no-repeat bg-[length:14px]' : 'border-[#1B3022]/20'}`}></div>
                 </button>
               </div>
+
+              {paymentMethod === 'stripe' ? (
+                <StripePaymentForm finalTotal={finalTotal} onPaymentSuccess={onPaymentSuccess} cart={cart} shippingMethod={shippingMethod} formData={formData} user={user} t={t} />
+              ) : (
+                <PayPalButtons 
+                  style={{ layout: "vertical", shape: "pill", label: "pay" }}
+                  createOrder={async () => {
+                    const response = await fetch("/api/checkout/paypal/create-order", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({ cart, shippingMethod, formData, userId: user.uid, userEmail: user.email }),
+                    });
+                    const { orderId: paypalOrderId } = await response.json();
+                    return paypalOrderId;
+                  }}
+                  onApprove={async (data, actions) => {
+                    const response = await fetch("/api/checkout/paypal/capture", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({ orderId: data.orderID }),
+                    });
+                    const result = await response.json();
+                    if (result.success) onPaymentSuccess(data.orderID);
+                  }}
+                />
+              )}
 
               <div className="mt-8 flex items-center gap-3 text-xs text-[#1B3022]/60">
                 <Lock className="w-4 h-4 text-green-500" />
@@ -371,61 +349,27 @@ export default function CheckoutFlow({ cart, total, shippingMethod, user, onSucc
             </section>
           )}
 
-          <div className="flex justify-between items-center pt-8">
-            <button 
-              onClick={onCancel}
-              className="text-[#1B3022]/60 font-bold hover:text-[#1B3022]"
-            >
-              {t.actions.cancel}
-            </button>
-            <button 
-              onClick={step === 'payment' ? handlePayment : handleNext}
-              disabled={isProcessing}
-              className="bg-[#1B3022] text-white px-10 py-4 rounded-xl font-bold flex items-center gap-3 hover:bg-[#F97316] transition-all shadow-xl shadow-[#1B3022]/10 disabled:opacity-50"
-            >
-              {isProcessing ? t.actions.processing : step === 'payment' ? t.actions.pay : t.actions.continue} 
-              {!isProcessing && <ChevronRight className="w-5 h-5" />}
-            </button>
-          </div>
+          {step !== 'payment' && (
+            <div className="flex justify-between items-center pt-8">
+              <button onClick={onCancel} className="text-[#1B3022]/60 font-bold hover:text-[#1B3022]">{t.actions.cancel}</button>
+              <button 
+                onClick={handleNext}
+                disabled={isProcessing}
+                className="bg-[#1B3022] text-white px-10 py-4 rounded-xl font-bold flex items-center gap-3 hover:bg-[#F97316] transition-all shadow-xl shadow-[#1B3022]/10 disabled:opacity-50"
+              >
+                {t.actions.continue} <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          )}
         </div>
 
-        {/* Order Summary Sidebar */}
         <div className="space-y-6">
           <div className="bg-[#F9F9F7] p-8 rounded-[40px] border border-[#1B3022]/10">
             <h2 className="text-xl font-bold text-[#1B3022] mb-8">{t.summary.title}</h2>
-            
-            {/* Promo Code Input */}
-            <div className="mb-8">
-              <label className="block text-xs font-bold text-[#1B3022]/40 uppercase tracking-widest mb-2">Code Promo</label>
-              <div className="flex gap-2">
-                <input 
-                  type="text"
-                  value={promoCode}
-                  onChange={(e) => setPromoCode(e.target.value)}
-                  placeholder="EX: RENTRÉE2026"
-                  className="flex-1 bg-white border border-[#1B3022]/10 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-[#F97316] outline-none"
-                />
-                <button 
-                  onClick={applyPromoCode}
-                  className="px-4 py-2 bg-[#1B3022] text-white rounded-xl text-sm font-bold hover:bg-[#F97316] transition-colors"
-                >
-                  {lang === 'fr' ? 'Appliquer' : 'Apply'}
-                </button>
-              </div>
-              {promoError && <p className="text-red-500 text-xs mt-2">{promoError}</p>}
-              {isPromoApplied && (
-                <p className="text-green-600 text-xs mt-2 font-bold flex items-center gap-1">
-                  <CheckCircle2 className="w-3 h-3" /> {lang === 'fr' ? 'Code RENTRÉE2026 appliqué : -50€ & 1 mois de recettes offerts' : 'Code RENTRÉE2026 applied: -50€ & 1 month free recipes'}
-                </p>
-              )}
-            </div>
-
             <div className="space-y-6 mb-8">
               {cart.map((item) => {
                 let displayPrice = item.price;
-                if (isPromoApplied && (item.id === 'bloomlab' || item.id === 'pack-signature' || item.name.includes('BloomLab')) && displayPrice > 239) {
-                  displayPrice = 239;
-                }
+                if (isPromoApplied && (item.id === 'bloomlab' || item.id === 'pack-signature' || item.name.includes('BloomLab')) && displayPrice > 239) displayPrice = 239;
                 return (
                   <div key={item.id} className="flex gap-4">
                     <div className="w-16 h-16 rounded-xl overflow-hidden bg-white flex-shrink-0">
@@ -444,38 +388,26 @@ export default function CheckoutFlow({ cart, total, shippingMethod, user, onSucc
             <div className="pt-6 border-t border-[#1B3022]/10 space-y-3">
               <div className="flex justify-between text-sm opacity-60">
                 <span>{cartT.summary.shipping} ({shippingMethod})</span>
-                <span className="font-bold text-[#1B3022]">
-                  {shipping === 0 ? t.summary.shipping_free : `${shipping.toFixed(2).replace('.', ',')}&nbsp;€`}
-                </span>
+                <span className="font-bold text-[#1B3022]">{shipping === 0 ? t.summary.shipping_free : `${shipping.toFixed(2).replace('.', ',')}&nbsp;€`}</span>
               </div>
               <div className="flex justify-between items-center pt-2">
                 <span className="text-lg font-bold">{t.summary.total}</span>
-                <span className="text-2xl font-bold text-[#F97316]">
-                  {(() => {
-                    let currentTotal = cart.reduce((sum, item) => {
-                      let p = item.price;
-                      if (isPromoApplied && (item.id === 'bloomlab' || item.id === 'pack-signature' || item.name.includes('BloomLab')) && p > 239) {
-                        p = 239;
-                      }
-                      return sum + (p * item.quantity);
-                    }, 0);
-                    return (currentTotal + shipping).toFixed(2).replace('.', ',');
-                  })()}&nbsp;€
-                </span>
+                <span className="text-2xl font-bold text-[#F97316]">{finalTotal.toFixed(2).replace('.', ',')}&nbsp;€</span>
               </div>
             </div>
-          </div>
-
-          <div className="bg-white p-6 rounded-3xl border border-[#1B3022]/10 space-y-4">
-            <div className="flex items-center gap-3 text-sm font-bold text-[#1B3022]">
-              <PackageCheck className="w-5 h-5 text-green-500" /> {t.summary.premium_logistics}
-            </div>
-            <p className="text-xs text-[#1B3022]/60 leading-relaxed">
-              {t.summary.premium_logistics_desc}
-            </p>
           </div>
         </div>
       </div>
     </article>
+  );
+}
+
+export default function CheckoutFlow(props: CheckoutFlowProps) {
+  return (
+    <PayPalScriptProvider options={{ "client-id": import.meta.env.VITE_PAYPAL_CLIENT_ID || "" }}>
+      <Elements stripe={stripePromise}>
+        <CheckoutFlowContent {...props} />
+      </Elements>
+    </PayPalScriptProvider>
   );
 }

@@ -111,14 +111,16 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
             <div className="relative">
               <div className="absolute -inset-4 bg-[#F97316]/5 rounded-[60px] blur-3xl"></div>
               <video 
-                src="/demo_bloomlab.mp4" 
+                poster={bloomLabImg}
                 autoPlay 
                 loop 
                 muted 
                 playsInline
                 title="Démonstration BloomLab - Machine à infusion botanique et extraction de totum"
                 className="relative rounded-[40px] shadow-2xl border border-botanik-green/5 w-full object-cover aspect-square bg-botanik-green/5" 
-              />
+              >
+                <source src="/demo_bloomlab.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>

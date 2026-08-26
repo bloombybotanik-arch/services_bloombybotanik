@@ -4,6 +4,8 @@ import fs from "fs";
 import cors from "cors";
 import multer from "multer";
 import nodemailer from "nodemailer";
+import { jsPDF } from "jspdf";
+import Stripe from "stripe";
 import { GoogleGenAI } from "@google/genai";
 import { initializeApp, getApps, cert } from "firebase-admin/app";
 import { getFirestore, Firestore } from "firebase-admin/firestore";
@@ -11,6 +13,16 @@ import { createServer as createViteServer } from "vite";
 import dotenv from "dotenv";
 
 dotenv.config();
+
+const getStripe = () => {
+  const apiKey = process.env.STRIPE_SECRET_KEY;
+  if (!apiKey) {
+    throw new Error('STRIPE_SECRET_KEY is missing');
+  }
+  return new Stripe(apiKey, {
+    apiVersion: "2023-10-16" as any,
+  });
+};
 
 const app = express();
 const PORT = 3000;
@@ -123,7 +135,13 @@ Tu dois impérativement répondre au format JSON :
 }`;
 
 app.use(cors());
-app.use(express.json({ limit: '10mb' }));
+app.use((req, res, next) => {
+  if (req.originalUrl === '/api/webhooks/stripe') {
+    next();
+  } else {
+    express.json({ limit: '10mb' })(req, res, next);
+  }
+});
 
 // Canonical Host & Protocol Normalization Middleware (301)
 app.use((req, res, next) => {
@@ -471,6 +489,347 @@ app.post("/api/webhooks/purchase", async (req, res) => {
   }
 });
 
+// --- PAYMENT UTILS ---
+
+async function handleSuccessfulPayment(orderData: any, orderId: string) {
+  const firestore = getDb();
+  
+  // 1. Update Order Status
+  await firestore.collection('orders').doc(orderId).update({
+    status: 'paid',
+    updatedAt: new Date().toISOString()
+  });
+
+  // 2. Update User for Premium Access
+  const userRef = firestore.collection('users').doc(orderData.userId);
+  const premiumUntil = new Date();
+  premiumUntil.setMonth(premiumUntil.getMonth() + 1);
+
+  await userRef.set({
+    status: 'premium',
+    isPremiumUntil: premiumUntil.toISOString(),
+    updatedAt: new Date().toISOString()
+  }, { merge: true });
+
+  // 3. Generate PDF Invoice
+  const pdfBuffer = await generateInvoicePDF(orderData, orderId);
+
+  // 4. Send Emails
+  // To Buyer
+  await transporter.sendMail({
+    from: `"Bloom by BotaniK" <${process.env.SMTP_USER}>`,
+    to: orderData.email,
+    subject: `Confirmation de votre commande ${orderId} - Bloom by BotaniK`,
+    text: `Bonjour,
+
+Merci pour votre confiance ! Votre commande ${orderId} est bien validée.
+
+Vous trouverez votre facture en pièce jointe.
+
+CADEAU : Votre accès Premium d'un mois a été activé ! Vous pouvez désormais accéder librement à nos 3 bibliothèques (Atelier Culinaire, Soin Cosmétique, Reset Homéostasique) directement depuis votre compte.
+
+L'équipe Bloom`,
+    attachments: [{
+      filename: `Facture-${orderId}.pdf`,
+      content: pdfBuffer
+    }]
+  });
+
+  // To Admin
+  await transporter.sendMail({
+    from: `"Système de Commande" <${process.env.SMTP_USER}>`,
+    to: "bloombybotanik@gmail.com",
+    subject: `URGENT - NOUVELLE COMMANDE ${orderId}`,
+    text: `Une nouvelle commande vient d'être passée sur le site.
+
+Récapitulatif :
+Client : ${orderData.customerName} (${orderData.email})
+ID Commande : ${orderId}
+Montant Total : ${orderData.total.toFixed(2)} €
+Livraison : ${orderData.shippingMethod}
+Adresse : ${orderData.address}
+
+Items :
+${orderData.items.map((i: any) => `- ${i.name} x${i.quantity}`).join('\n')}
+
+Action requise : Préparer l'expédition.`,
+    attachments: [{
+      filename: `Facture-${orderId}.pdf`,
+      content: pdfBuffer
+    }]
+  });
+}
+
+// --- CHECKOUT API ---
+
+const PRODUCT_PRICES: Record<string, number> = {
+  'bloomlab': 239.00, // Promo price
+  'bundle-apothicaire': 59.00,
+  'pack-signature': 289.00,
+  'kit-starter': 12.90,
+  'kit-nuit': 9.90,
+  'kit-digestion': 9.90,
+  'kit-articulaire': 9.90,
+  'kit-hiver': 9.90,
+  'kit-reset': 44.90,
+  'premium-access': 9.00,
+  'freemium-access': 0.00
+};
+
+const getShippingPrice = (method: string, cart: any[]): number => {
+  const hasBloomLab = cart.some(item => item.id === 'bloomlab');
+  const sachetCount = cart
+    .filter(item => !item.isDigital && item.id !== 'bloomlab')
+    .reduce((sum, item) => sum + (item.quantity || 1), 0);
+
+  if (hasBloomLab) {
+    switch (method) {
+      case 'mondialrelay': return 7.90;
+      case 'colissimo': return 12.90;
+      case 'laposte': return 5.90;
+      case 'express': return 21.90;
+      default: return 7.90;
+    }
+  }
+
+  switch (method) {
+    case 'mondialrelay': return sachetCount >= 3 ? 0 : 3.90;
+    case 'colissimo': return sachetCount >= 3 ? 0 : 4.90;
+    case 'laposte': return 5.90;
+    case 'express': return 21.90;
+    default: return 3.90;
+  }
+};
+
+async function generateInvoicePDF(order: any, orderId: string) {
+  const doc = new jsPDF();
+  
+  // Header
+  doc.setFontSize(22);
+  doc.setTextColor(27, 48, 34); // Botanik Green
+  doc.text("Bloom by BotaniK", 20, 20);
+  
+  doc.setFontSize(10);
+  doc.setTextColor(100);
+  doc.text("L'Ingénierie au service du vivant", 20, 27);
+  
+  doc.setFontSize(14);
+  doc.setTextColor(0);
+  doc.text(`FACTURE: ${orderId}`, 140, 20);
+  doc.text(`Date: ${new Date().toLocaleDateString('fr-FR')}`, 140, 30);
+  
+  // Addresses
+  doc.setFontSize(12);
+  doc.setFont("helvetica", "bold");
+  doc.text("Vendu par:", 20, 45);
+  doc.setFont("helvetica", "normal");
+  doc.text("BotaniK Labs", 20, 52);
+  doc.text("France", 20, 59);
+  
+  doc.setFont("helvetica", "bold");
+  doc.text("Facturé à:", 120, 45);
+  doc.setFont("helvetica", "normal");
+  doc.text(order.customerName || "Client Bloom", 120, 52);
+  doc.text(order.email, 120, 59);
+  doc.text(order.address || "", 120, 66);
+  
+  // Items Table
+  let y = 85;
+  doc.setFont("helvetica", "bold");
+  doc.text("Produit", 20, y);
+  doc.text("Qté", 120, y);
+  doc.text("Prix Unit.", 140, y);
+  doc.text("Total", 170, y);
+  
+  doc.line(20, y + 2, 190, y + 2);
+  y += 10;
+  
+  doc.setFont("helvetica", "normal");
+  order.items.forEach((item: any) => {
+    doc.text(item.name, 20, y);
+    doc.text(item.quantity.toString(), 120, y);
+    doc.text(`${item.price.toFixed(2)} €`, 140, y);
+    doc.text(`${(item.price * item.quantity).toFixed(2)} €`, 170, y);
+    y += 8;
+  });
+  
+  y += 5;
+  doc.line(120, y, 190, y);
+  y += 10;
+  
+  doc.text("Sous-total:", 120, y);
+  doc.text(`${(order.total - order.shippingPrice).toFixed(2)} €`, 170, y);
+  
+  y += 8;
+  doc.text("Livraison:", 120, y);
+  doc.text(`${order.shippingPrice.toFixed(2)} €`, 170, y);
+  
+  y += 10;
+  doc.setFontSize(14);
+  doc.setFont("helvetica", "bold");
+  doc.text("TOTAL:", 120, y);
+  doc.text(`${order.total.toFixed(2)} €`, 170, y);
+  
+  // Footer
+  doc.setFontSize(10);
+  doc.setFont("helvetica", "italic");
+  doc.text("Merci pour votre confiance. Faites fleurir votre bien-être.", 20, 270);
+  doc.text("Facture acquittée - Paiement sécurisé via Stripe", 20, 277);
+  
+  return Buffer.from(doc.output('arraybuffer'));
+}
+
+app.post("/api/checkout/create-payment-intent", async (req, res) => {
+  try {
+    const { cart, shippingMethod, formData, userId, userEmail } = req.body;
+    
+    if (!cart || !userId || !userEmail) {
+      return res.status(400).json({ error: "Données de commande incomplètes" });
+    }
+
+    // 1. Strict Validation
+    let subtotal = 0;
+    const validatedItems = cart.map((item: any) => {
+      const officialPrice = PRODUCT_PRICES[item.id] || item.price;
+      subtotal += officialPrice * item.quantity;
+      return {
+        id: item.id,
+        name: item.name,
+        price: officialPrice,
+        quantity: item.quantity
+      };
+    });
+
+    const shippingPrice = getShippingPrice(shippingMethod, validatedItems);
+    const total = subtotal + shippingPrice;
+
+    // 2. Persist to Firestore (pending)
+    const firestore = getDb();
+    const orderId = `BLM-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
+    const orderData = {
+      userId,
+      email: userEmail,
+      customerName: `${formData.firstName} ${formData.lastName}`,
+      address: `${formData.address}, ${formData.zipCode} ${formData.city}, ${formData.country}`,
+      items: validatedItems,
+      shippingMethod,
+      shippingPrice,
+      total,
+      status: 'pending',
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
+    };
+
+    await firestore.collection('orders').doc(orderId).set(orderData);
+
+    // 3. Create Stripe Payment Intent
+    const stripeClient = getStripe();
+    const paymentIntent = await stripeClient.paymentIntents.create({
+      amount: Math.round(total * 100),
+      currency: 'eur',
+      metadata: { orderId, userId },
+      receipt_email: userEmail,
+    });
+
+    res.json({ 
+      clientSecret: paymentIntent.client_secret,
+      orderId,
+      total 
+    });
+
+  } catch (error: any) {
+    console.error("Stripe Checkout error:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post("/api/webhooks/stripe", express.raw({ type: 'application/json' }), async (req, res) => {
+  const sig = req.headers['stripe-signature'];
+  let event;
+
+  try {
+    const stripeClient = getStripe();
+    event = stripeClient.webhooks.constructEvent(
+      req.body,
+      sig!,
+      process.env.STRIPE_WEBHOOK_SECRET || ""
+    );
+  } catch (err: any) {
+    console.error(`Webhook signature verification failed: ${err.message}`);
+    return res.status(400).send(`Webhook Error: ${err.message}`);
+  }
+
+  if (event.type === 'payment_intent.succeeded') {
+    const paymentIntent = event.data.object as Stripe.PaymentIntent;
+    const { orderId } = paymentIntent.metadata;
+
+    if (orderId) {
+      const firestore = getDb();
+      const orderDoc = await firestore.collection('orders').doc(orderId).get();
+      if (orderDoc.exists) {
+        await handleSuccessfulPayment(orderDoc.data(), orderId);
+      }
+    }
+  }
+
+  res.json({ received: true });
+});
+
+app.post("/api/checkout/paypal/create-order", async (req, res) => {
+  try {
+    const { cart, shippingMethod, formData, userId, userEmail } = req.body;
+    
+    let subtotal = 0;
+    const validatedItems = cart.map((item: any) => {
+      const officialPrice = PRODUCT_PRICES[item.id] || item.price;
+      subtotal += officialPrice * item.quantity;
+      return {
+        id: item.id,
+        name: item.name,
+        price: officialPrice,
+        quantity: item.quantity
+      };
+    });
+    const shippingPrice = getShippingPrice(shippingMethod, validatedItems);
+    const total = subtotal + shippingPrice;
+
+    const firestore = getDb();
+    const orderId = `BLM-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
+    const orderData = {
+      userId,
+      email: userEmail,
+      customerName: `${formData.firstName} ${formData.lastName}`,
+      address: `${formData.address}, ${formData.zipCode} ${formData.city}, ${formData.country}`,
+      items: validatedItems,
+      shippingMethod,
+      shippingPrice,
+      total,
+      status: 'pending',
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
+    };
+    await firestore.collection('orders').doc(orderId).set(orderData);
+
+    res.json({ orderId, total });
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post("/api/checkout/paypal/capture", async (req, res) => {
+  try {
+    const { orderId } = req.body;
+    const firestore = getDb();
+    const orderDoc = await firestore.collection('orders').doc(orderId).get();
+    if (orderDoc.exists) {
+      await handleSuccessfulPayment(orderDoc.data(), orderId);
+    }
+    res.json({ success: true });
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Middleware pour servir index.html sur toutes les routes non-API (SPA Fallback)
 // Placé AVANT le démarrage de Vite en prod, mais APRES les routes API
 app.post("/api/chat", async (req: express.Request, res: express.Response) => {
@@ -754,12 +1113,70 @@ async function setupVite() {
             "name": "Bloom by BotaniK"
           },
           "image": `${baseUrl}/assets/bloomlab_main_1784887530345.png`,
+          "sku": "BLM-LAB-V2",
+          "mpn": "BLM-LAB-V2",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "3"
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Clara M." },
+              "reviewBody": "Je brûlais constamment mes huiles au bain-marie. Avec la BloomLab, la couleur et la texture de mes sérums n'ont plus rien à voir !",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Dr. Renaud P." },
+              "reviewBody": "Mes teintures-mères se font maintenant en 3h au lieu de 6 semaines. Un gain de temps exceptionnel pour mes préparations.",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Antoine L." },
+              "reviewBody": "Mon huile infusée au romarin sans amertume est devenue incontournable dans ma cuisine.",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+            }
+          ],
           "offers": {
             "@type": "Offer",
             "url": `${baseUrl}/bloomlab`,
             "priceCurrency": "EUR",
             "price": "239.00",
-            "availability": "https://schema.org/InStock"
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2026-08-01T00:00:00Z",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": "0.00",
+                "currency": "EUR"
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 1,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 1,
+                  "maxValue": 2,
+                  "unitCode": "DAY"
+                }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+              "merchantReturnDays": 30,
+              "returnMethod": "https://schema.org/ReturnByMail",
+              "returnFees": "https://schema.org/FreeReturn"
+            }
           }
         });
       }
