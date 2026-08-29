@@ -31,7 +31,7 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
             animate={{ opacity: 1, y: 0 }}
             className="inline-block px-4 py-1 bg-white/10 rounded-full text-xs font-bold uppercase tracking-widest mb-8 border border-white/10"
           >
-            Guide Complet de Souveraineté
+            Ingénierie de la Vitalité & Souveraineté
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -39,12 +39,12 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-6xl font-black mb-8 font-sans tracking-tight leading-tight"
           >
-            {(seo as any).h1?.split(':').length > 1 ? (
+            {lang === 'fr' ? (
               <>
-                {(seo as any).h1.split(':')[0]} : <br />
-                <span className="text-botanik-orange">{(seo as any).h1.split(':')[1]}</span>
+                L'Extraction du Totum : <br />
+                <span className="text-botanik-orange">Précision Thermique & Biodisponibilité</span>
               </>
-            ) : (seo as any).h1 || (lang === 'fr' ? "Extraction Botanique de Précision" : "Precision Botanical Extraction")}
+            ) : (seo as any).h1 || "Precision Botanical Extraction"}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -52,7 +52,7 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
             transition={{ delay: 0.2 }}
             className="text-xl md:text-2xl text-white/80 leading-relaxed mb-12 max-w-3xl mx-auto"
           >
-            {(seo as any).intro || (lang === 'fr' ? "Maîtrisez l'art de l'extraction avec BloomLab." : "Master the art of extraction with BloomLab.")}
+            {lang === 'fr' ? "Réalisez votre rééquilibrage de terrain avec l'extraction botanique de précision." : (seo as any).intro}
           </motion.p>
         </div>
       </section>
@@ -65,8 +65,8 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
               <FlaskConical className="w-5 h-5 text-botanik-green" />
             </div>
             <div>
-              <h3 className="font-bold text-botanik-green text-sm mb-1">Méthodes</h3>
-              <p className="text-xs text-botanik-green/60">Eau, alcool, huile : choisir son solvant.</p>
+              <h3 className="font-bold text-botanik-green text-sm mb-1">Biodisponibilité</h3>
+              <p className="text-xs text-botanik-green/60">Optimisez l'assimilation des actifs végétaux.</p>
             </div>
           </div>
           <div className="flex items-start gap-4">
@@ -74,8 +74,8 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
               <Thermometer className="w-5 h-5 text-botanik-orange" />
             </div>
             <div>
-              <h3 className="font-bold text-botanik-green text-sm mb-1">Paramètres</h3>
-              <p className="text-xs text-botanik-green/60">Température et durée : la précision ±0,5°C.</p>
+              <h3 className="font-bold text-botanik-green text-sm mb-1">Thermorégulation</h3>
+              <p className="text-xs text-botanik-green/60">Maîtrise thermique intelligente à ±0,5°C.</p>
             </div>
           </div>
           <div className="flex items-start gap-4">
@@ -83,8 +83,8 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
               <ShieldCheck className="w-5 h-5 text-botanik-magenta" />
             </div>
             <div>
-              <h3 className="font-bold text-botanik-green text-sm mb-1">Sécurité</h3>
-              <p className="text-xs text-botanik-green/60">Dosage et conservation de vos extraits.</p>
+              <h3 className="font-bold text-botanik-green text-sm mb-1">Homéostasie</h3>
+              <p className="text-xs text-botanik-green/60">Soutien systémique de votre terrain biologique.</p>
             </div>
           </div>
         </div>
@@ -97,34 +97,34 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
         <section className="prose prose-botanik max-w-none">
           <h2 className="text-3xl font-bold text-botanik-green mb-8 flex items-center gap-4">
             <span className="w-8 h-8 rounded-full bg-botanik-green text-white flex items-center justify-center text-sm font-black">01</span>
-            {lang === 'fr' ? 'La Science du Totum : Révéler l\'Intelligence du Vivant' : 'The Science of Totum: Unlocking Life\'s Intelligence'}
+            {lang === 'fr' ? 'La Médecine des Systèmes : Révéler le Totum' : 'The Science of Totum: Unlocking Life\'s Intelligence'}
           </h2>
           <div className="space-y-6 text-lg leading-relaxed text-botanik-green/80">
             <p>
-              L'extraction n'est pas une simple étape technique ; c'est un acte de traduction biochimique. La plante médicinale est un coffre-fort moléculaire dont l'intelligence est protégée par des parois cellulosiques et lignifiées extrêmement résistantes. L'infusion classique (verser de l'eau bouillante) est souvent insuffisante car elle ne propose qu'une seule clé pour une serrure complexe, tout en détruisant les éléments les plus fragiles par choc thermique.
+              L'extraction n'est pas une simple étape technique ; c'est un acte de souveraineté sanitaire. La Médecine des Systèmes (ou MTC 2.0) considère que la plante médicinale est un coffre-fort moléculaire dont l'intelligence est protégée par des structures complexes. L'infusion classique est souvent insuffisante car elle ne propose qu'une seule clé pour une serrure complexe.
             </p>
             <p>
-              Le concept de <strong>Totum végétal</strong> est au cœur de la démarche Bloom. Contrairement à la pharmacologie moderne qui isole une molécule unique (le principe actif), nous cherchons à capturer la synergie naturelle. Pourquoi ? Parce que dans la nature, les molécules ne voyagent jamais seules : elles sont accompagnées de co-facteurs qui facilitent leur absorption, modulent leur toxicité potentielle et amplifient leur efficacité par effet de réseau.
+              Le concept de <strong>Totum végétal</strong> est au cœur de la démarche BloomLab. Nous cherchons à capturer la synergie naturelle pour un soutien de l'homéostasie durable. La biodisponibilité optimale est atteinte lorsque chaque composé module et soutient l'action des autres, respectant ainsi votre pharmacie intérieure.
             </p>
             <div className="bg-botanik-green/5 p-10 rounded-[32px] border border-botanik-green/10 my-12">
               <h4 className="font-black text-botanik-green mb-6 flex items-center gap-2 uppercase tracking-widest text-sm">
-                <Droplets className="w-5 h-5 text-botanik-orange" /> {lang === 'fr' ? 'La Polarité des Solvants' : 'Solvent Polarity'}
+                <Droplets className="w-5 h-5 text-botanik-orange" /> {lang === 'fr' ? 'Protocoles d\'Extraction et Solvants' : 'Solvent Polarity'}
               </h4>
               <p className="mb-6 text-base italic">
-                Chaque famille de molécules possède une affinité spécifique pour un milieu donné. Choisir son solvant, c'est choisir quelle partie de l'intelligence végétale vous souhaitez mobiliser.
+                Chaque famille de molécules possède une affinité spécifique. Maîtriser le solvant et sa température, c'est choisir quel levier de rééquilibrage de terrain vous activez.
               </p>
               <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <li className="p-6 bg-white rounded-2xl border border-botanik-green/5 shadow-sm">
                   <div className="font-black text-botanik-orange mb-2 text-xs uppercase tracking-widest">Milieu Aqueux</div>
-                  <p className="text-sm"><strong>L'eau :</strong> Indispensable pour les sels minéraux, les mucilages (apaisants), les tanins et les flavonoïdes hydrosolubles.</p>
+                  <p className="text-sm"><strong>L'eau :</strong> Indispensable pour les sels minéraux et les mucilages apaisants. Protocoles fleurs tendres à 45°C.</p>
                 </li>
                 <li className="p-6 bg-white rounded-2xl border border-botanik-green/5 shadow-sm">
                   <div className="font-black text-botanik-orange mb-2 text-xs uppercase tracking-widest">Milieu Lipidique</div>
-                  <p className="text-sm"><strong>L'huile & Beurres :</strong> Capturent les terpènes (arômes), les vitamines liposolubles (A, D, E, K) et les acides gras essentiels.</p>
+                  <p className="text-sm"><strong>L'huile & Beurres :</strong> Capturent les terpènes et vitamines liposolubles. Idéal pour les macérats de terrain.</p>
                 </li>
                 <li className="p-6 bg-white rounded-2xl border border-botanik-green/5 shadow-sm">
                   <div className="font-black text-botanik-orange mb-2 text-xs uppercase tracking-widest">Milieu Hydroalcoolique</div>
-                  <p className="text-sm"><strong>L'alcool :</strong> Le solvant le plus universel, capable d'extraire les résines, les alcaloïdes et les molécules complexes.</p>
+                  <p className="text-sm"><strong>L'alcool :</strong> Extraction profonde des résines (60° pour le Boswellia) et racines denses (55°).</p>
                 </li>
               </ul>
             </div>
@@ -135,29 +135,30 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
         <section className="prose prose-botanik max-w-none">
           <h2 className="text-3xl font-bold text-botanik-green mb-8 flex items-center gap-4">
             <span className="w-8 h-8 rounded-full bg-botanik-green text-white flex items-center justify-center text-sm font-black">02</span>
-            {lang === 'fr' ? 'La Variable Critique : La Précision Thermique ±0,5°C' : 'The Critical Variable: ±0.5°C Thermal Precision'}
+            {lang === 'fr' ? 'Thermorégulation Intelligente : La Précision ±0,5°C' : 'The Critical Variable: ±0.5°C Thermal Precision'}
           </h2>
           <div className="space-y-6 text-lg leading-relaxed text-botanik-green/80">
             <p>
-              C'est ici que l'herboristerie classique rencontre ses limites technologiques. Une eau à 100°C détruit instantanément les enzymes fragiles (comme la myrosinase) et évapore les monoterpènes volatils avant même qu'ils n'aient pu infuser. À l'inverse, une macération trop froide ne parvient pas à fluidifier les lipides pour une extraction profonde des racines.
+              C'est ici que l'ingénierie de la vitalité prend tout son sens. Une température mal maîtrisée détruit les molécules fragiles avant même qu'elles n'atteignent votre terrain biologique.
             </p>
             <p>
-              Le <strong>BloomLab®</strong> introduit la notion de "fenêtres thermiques dynamiques". En maintenant une température stable au demi-degré près, nous pouvons cibler précisément le point de rupture des parois cellulaires sans atteindre le point de dénaturation des actifs. 
+              Le <strong>BloomLab®</strong> utilise la thermorégulation intelligente pour cibler précisément le point de biodisponibilité maximale : 
             </p>
             <div className="my-12 grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="p-8 bg-white rounded-3xl border-l-4 border-l-botanik-orange shadow-sm border border-botanik-green/5">
-                <h4 className="text-xl font-bold text-botanik-green mb-3">La Décarboxylation</h4>
-                <p className="text-sm leading-relaxed mb-4">
-                  Certaines plantes nécessitent une étape d'activation thermique spécifique pour transformer les acides inactifs en molécules biodisponibles. Ce processus, appelé décarboxylation, exige une stabilité thermique rigoureuse que seul un outil de grade laboratoire peut garantir.
-                </p>
-                <div className="text-[10px] font-black text-botanik-orange uppercase tracking-widest">Température cible : 105°C - 120°C</div>
+                <h4 className="text-xl font-bold text-botanik-green mb-3">Protocoles de Précision</h4>
+                <ul className="space-y-2 text-sm leading-relaxed mb-4">
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-botanik-orange" /> 60°C : Résines et huiles essentielles (Boswellia).</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-botanik-orange" /> 55°C : Racines et parties denses.</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-botanik-orange" /> 45°C : Mucilages et fleurs tendres.</li>
+                </ul>
               </div>
               <div className="p-8 bg-white rounded-3xl border-l-4 border-l-botanik-green shadow-sm border border-botanik-green/5">
-                <h4 className="text-xl font-bold text-botanik-green mb-3">L'Extraction Totum Douce</h4>
+                <h4 className="text-xl font-bold text-botanik-green mb-3">Extraction Basse Température</h4>
                 <p className="text-sm leading-relaxed mb-4">
-                  Pour les fleurs délicates et les huiles de soin, nous privilégions la zone des 42°C. C'est la température du vivant, celle qui permet une agitation moléculaire suffisante pour l'échange sans aucune dégradation oxydative.
+                  Pour préserver l'intelligence du vivant, nous privilégions l'infuseur basse température. Cela permet une agitation moléculaire sans dégradation oxydative pour une biodisponibilité optimale.
                 </p>
-                <div className="text-[10px] font-black text-botanik-green uppercase tracking-widest">Température cible : 38°C - 45°C</div>
+                <div className="text-[10px] font-black text-botanik-green uppercase tracking-widest">Soutien de l'homéostasie par le Totum</div>
               </div>
             </div>
           </div>

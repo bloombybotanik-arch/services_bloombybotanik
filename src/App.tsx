@@ -320,7 +320,7 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
           "width": 1024,
           "height": 1024
         },
-        "description": isFR ? "Expertise en infusion et extraction botanique de précision. BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels." : "Expertise in precision botanical infusion and extraction. BloomLab® gives you all the keys to create your own natural remedies.",
+        "description": isFR ? "L'ingénierie de la résilience biologique par l'extraction botanique de précision. Réalisez vos remèdes naturels aux plantes et soins naturels visages, corps et cheveux." : "Expertise in precision botanical infusion and extraction. BloomLab® gives you all the keys to create your own natural remedies.",
         "sameAs": [
           "https://www.instagram.com/bloombybotanik/",
           "https://www.youtube.com/@bloombybotanik",
@@ -335,6 +335,21 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
         "alternateName": ["Bloom by Botanik", "BloomBotanik"],
         "publisher": { "@id": "https://bloombybotanik.com/#organization" },
         "inLanguage": "fr-FR"
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://bloombybotanik.com/#expert",
+        "mainEntity": {
+          "@type": "Person",
+          "@id": "https://bloombybotanik.com/#rd-lead",
+          "name": "Responsable Recherche & Développement",
+          "jobTitle": "Expert en Médecine des Systèmes",
+          "affiliation": {
+            "@type": "Organization",
+            "name": "BloomLab – Ingénierie de la Vitalité"
+          },
+          "description": "Spécialiste de l'extraction du totum végétal et de l'homéostasie systémique."
+        }
       },
       {
         "@type": "WebPage",
@@ -375,6 +390,7 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
         "sku": `BLOOM-${productData.id.toUpperCase()}`,
         "mpn": `BL-${productData.id.toUpperCase()}`,
         "keywords": "tisanes, remèdes naturels, phytothérapie, extraction botanique",
+        "reviewedBy": { "@id": "https://bloombybotanik.com/#rd-lead" },
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": (productData.rating || 4.8).toString(),
@@ -434,13 +450,13 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
           }
         }
       });
-    } else if (currentView === 'home' || currentView === 'machine' || currentView === 'indexbis' || currentView === 'how_it_works') {
+    } else if (currentView === 'home' || currentView === 'machine' || currentView === 'indexbis' || currentView === 'how_it_works' || currentView === 'infuseur-botanique') {
       // Add BloomLab product on its dedicated landing or home page
       graph.push({
         "@type": "Product",
         "@id": "https://bloombybotanik.com/bloomlab/#product",
         "name": "BloomLab® - Extracteur Botanique",
-        "description": "L'extracteur de précision qui libère jusqu'à 98% du totum végétal. Machine d'extraction du totum à basse température pour phytothérapie, cosmétique et culinaire.",
+        "description": "L'extracteur de précision qui libère jusqu'à 98% du totum végétal. Machine d'infusion de plantes pour réaliser vos remèdes naturels aux plantes, soins naturels visages, corps et cheveux à basse température.",
         "image": [
           `https://bloombybotanik.com${bloomLabImg}`,
           `https://bloombybotanik.com${img05}`
@@ -449,7 +465,8 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
         "sku": "BLOOM-LAB-2026",
         "mpn": "BL-2026",
         "gtin13": "3770000000001",
-        "keywords": "machine à infusion botanique, extracteur botanique, totum, phytothérapie de précision",
+        "keywords": "infuseur botanique, extracteur botanique, machine d'infusion de plantes, remèdes naturels aux plantes, soins naturels visages, soins naturels corps, soins naturels cheveux",
+        "reviewedBy": { "@id": "https://bloombybotanik.com/#rd-lead" },
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.9",
@@ -524,7 +541,7 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
       });
     }
 
-    if (currentView === 'how_it_works' || currentView === 'qu-est-ce-que-infusion') {
+    if (currentView === 'how_it_works' || currentView === 'qu-est-ce-que-infusion' || currentView === 'machine' || currentView === 'home' || currentView === 'infuseur-botanique') {
       graph.push({
         "@type": "FAQPage",
         "@id": `${pageUrl}/#faq`,
@@ -549,8 +566,9 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
           "description": post.content[lang].substring(0, 160).replace(/<[^>]*>/g, ''),
           "image": post.image ? `https://bloombybotanik.com${post.image}` : undefined,
           "datePublished": post.date,
-          "author": { "@type": "Person", "name": post.author },
+          "author": { "@id": "https://bloombybotanik.com/#rd-lead" },
           "publisher": { "@id": "https://bloombybotanik.com/#organization" },
+          "reviewedBy": { "@id": "https://bloombybotanik.com/#rd-lead" },
           "mainEntityOfPage": { "@id": pageUrl }
         });
       }

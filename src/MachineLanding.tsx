@@ -86,24 +86,24 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
-              <span className="text-sm font-black uppercase tracking-[0.3em] text-[#F97316] mb-4 block italic">{t.details.badge}</span>
+              <span className="text-sm font-black uppercase tracking-[0.3em] text-[#F97316] mb-4 block italic">Ingénierie de la Vitalité</span>
               <h2 className="text-2xl md:text-6xl font-bold text-botanik-green mb-8 leading-tight">
-                {t.details.title}
+                L'Extracteur Botanique <br /> de Précision N°1
               </h2>
               <div className="space-y-8">
                 <p className="text-lg text-botanik-green/70 leading-relaxed">
-                  {t.details.p1}
+                  Le <strong>BloomLab®</strong> n'est pas une simple machine à infusion. C'est un instrument de grade laboratoire conçu pour la <strong>thermorégulation intelligente</strong> et l'<strong>extraction du totum</strong> végétal. En maintenant une précision à ±0,5°C, il libère l'intelligence moléculaire des plantes pour un rééquilibrage de terrain profond et une biodisponibilité optimale.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-8">
                   <div className="p-6 bg-[#F9F9F7] rounded-3xl border border-botanik-green/5">
                     <ShieldCheck className="w-10 h-10 text-botanik-green mb-4" />
-                    <h4 className="font-bold text-botanik-green mb-2">{t.details.features.inox.title}</h4>
-                    <p className="text-sm text-botanik-green/60">{t.details.features.inox.desc}</p>
+                    <h4 className="font-bold text-botanik-green mb-2">Inox 304 Biocompatible</h4>
+                    <p className="text-sm text-botanik-green/60">Une extraction sans perturbateurs endocriniens pour préserver votre homéostasie.</p>
                   </div>
                   <div className="p-6 bg-[#F9F9F7] rounded-3xl border border-botanik-green/5">
                     <Activity className="w-10 h-10 text-botanik-green mb-4" />
-                    <h4 className="font-bold text-botanik-green mb-2">{t.details.features.digital.title}</h4>
-                    <p className="text-sm text-botanik-green/60">{t.details.features.digital.desc}</p>
+                    <h4 className="font-bold text-botanik-green mb-2">Contrôle Systémique</h4>
+                    <p className="text-sm text-botanik-green/60">Agitation vortex et cinétique moléculaire pour un rendement de 98% des actifs.</p>
                   </div>
                 </div>
               </div>
@@ -116,7 +116,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 loop 
                 muted 
                 playsInline
-                title="Démonstration BloomLab - Machine à infusion botanique et extraction de totum"
+                title="BloomLab - Extracteur Botanique de Précision pour le Totum"
                 className="relative rounded-[40px] shadow-2xl border border-botanik-green/5 w-full object-cover aspect-square bg-botanik-green/5" 
               >
                 <source src="/demo_bloomlab.mp4" type="video/mp4" />
@@ -130,9 +130,9 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
       <section id="niveaux" className="py-24 bg-[#F9F9F7]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-sm font-black uppercase tracking-[0.3em] text-[#F97316] mb-4 block italic">{t.levels.badge}</span>
-            <h2 className="text-2xl md:text-6xl font-bold text-botanik-green mb-6">{t.levels.title}</h2>
-            <p className="text-base md:text-xl text-botanik-green/60 max-w-2xl mx-auto">{t.levels.description}</p>
+            <span className="text-sm font-black uppercase tracking-[0.3em] text-[#F97316] mb-4 block italic">Médecine des Systèmes</span>
+            <h2 className="text-2xl md:text-6xl font-bold text-botanik-green mb-6">3 Niveaux de Souveraineté</h2>
+            <p className="text-base md:text-xl text-botanik-green/60 max-w-2xl mx-auto">De l'usage culinaire à la pharmacie intérieure, BloomLab vous accompagne dans votre projet de soins sur mesure.</p>
           </div>
 
           <div className="space-y-12">
