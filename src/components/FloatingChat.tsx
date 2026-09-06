@@ -119,7 +119,7 @@ export const FloatingChat = ({ user, lang }: { user?: FirebaseUser | null, lang:
             <div className="bg-botanik-green p-6 text-white flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                  <Sparkles className="w-6 h-6 text-botanik-orange" />
+                  <Sparkles className="w-6 h-6 text-[#D4AF37]" />
                 </div>
                 <div>
                   <h3 className="font-bold">ALMA</h3>
@@ -142,7 +142,7 @@ export const FloatingChat = ({ user, lang }: { user?: FirebaseUser | null, lang:
                   className={`flex items-start gap-3 ${msg.sender === 'user' ? 'flex-row-reverse' : ''}`}
                 >
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                    msg.sender === 'alma' ? 'bg-botanik-green/5 text-botanik-green' : 'bg-botanik-orange/10 text-botanik-orange'
+                    msg.sender === 'alma' ? 'bg-botanik-green/5 text-botanik-green' : 'bg-[#D4AF37]/10 text-[#D4AF37]'
                   }`}>
                     {msg.sender === 'alma' ? <Sparkles className="w-4 h-4" /> : <UserIcon className="w-4 h-4" />}
                   </div>
@@ -183,13 +183,13 @@ export const FloatingChat = ({ user, lang }: { user?: FirebaseUser | null, lang:
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
                 placeholder={lang === 'fr' ? "Écrivez ici..." : "Write here..."}
-                className="flex-1 bg-botanik-bg border border-botanik-green/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-botanik-orange transition-all"
+                className="flex-1 bg-botanik-bg border border-botanik-green/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#D4AF37] transition-all"
                 disabled={isTyping}
               />
               <button
                 type="submit"
                 disabled={!inputText.trim() || isTyping}
-                className="bg-botanik-green text-white p-3 rounded-xl hover:bg-botanik-orange transition-all disabled:opacity-50"
+                className="bg-botanik-green text-white p-3 rounded-xl hover:bg-[#D4AF37] transition-all disabled:opacity-50"
               >
                 <Send className="w-5 h-5" />
               </button>
@@ -202,7 +202,7 @@ export const FloatingChat = ({ user, lang }: { user?: FirebaseUser | null, lang:
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-16 h-16 bg-botanik-green text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-botanik-orange transition-all relative group"
+        className="w-16 h-16 bg-botanik-green text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-[#D4AF37] transition-all relative group"
       >
         <AnimatePresence mode="wait">
           {isOpen ? (

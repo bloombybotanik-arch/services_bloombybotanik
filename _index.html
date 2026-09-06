@@ -17,12 +17,14 @@
     </style>
   </head>
   <body>
+    <h1>🟢 CONNEXION VITE RÉUSSIE (_INDEX)</h1>
+    <script>document.body.innerHTML += '<h2 style="color:cyan; z-index:9999; position:relative;">🔵 INLINE JS OK (_INDEX)</h2>';</script>
     <div id="root">
       <div class="initial-loader">
         <img src="/logo_white.png" class="loader-logo" alt="Chargement Bloom..." />
       </div>
     </div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="src/main.tsx" onerror="document.body.innerHTML += '<h2 style=\'color:red; z-index:9999; position:relative;\'>❌ SCRIPT 404 OR LOAD ERROR (_INDEX)</h2>'"></script>
   </body>
 </html>
 

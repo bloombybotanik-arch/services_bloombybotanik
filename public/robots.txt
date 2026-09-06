@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
-Disallow: /admin
-Disallow: /checkout
+Disallow: /admin/
+Disallow: /checkout/
+Disallow: /panier/
+Disallow: /compte/
+Disallow: /en-attente/
 
 Sitemap: https://bloombybotanik.com/sitemap.xml

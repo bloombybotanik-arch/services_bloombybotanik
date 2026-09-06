@@ -1,19 +1,33 @@
 import React, { useState, useMemo } from 'react';
 import { Search, ShoppingCart, Info, Check, Filter, ChevronRight, ArrowRight, Star, ShieldCheck, Zap, Package, FlaskConical, Leaf, Heart, Wind, Flame, Droplets, User, FileText, Globe, ShoppingBag } from 'lucide-react';
 import { OptimizedImage } from './components/OptimizedImage';
-import bloomLabImg from './assets/images/bloomlab_main_1784887530345.jpeg';
-import img05 from './assets/images/lifestyle_botanik_cleaned_1786616810137.jpg';
-import labHeroImg from './assets/images/lab_detail_cleaned_1786616788618.jpg';
-import remediesImg from './assets/images/natural_remedies_cleaned_1786616831671.jpg';
-import herbsCloseUpImg from './assets/images/herbs_close_up_cleaned_1786616800877.jpg';
-import duoArgilesImg from './assets/images/product_duo_argiles.jpg';
-import trioPouchesImg from './assets/images/product_trio_pouches.jpg';
-import feuArticulaireImg from './assets/images/product_feu_articulaire.jpg';
-import bouclierHiverImg from './assets/images/product_bouclier_hiver.jpg';
-import nuitProfondeImg from './assets/images/product_nuit_profonde.jpg';
-import seveFondamentaleImg from './assets/images/product_seve_fondamentale.jpg';
-import digestionImg from './assets/images/product_digestion.jpeg';
-import modernShelvesImg from './assets/images/modern_herbalist_shelves_1786699793560.jpg';
+// import bloomLabImg from './assets/images/bloomlab_main_1784887530345.jpeg';
+// import img05 from './assets/images/lifestyle_botanik_cleaned_1786616810137.jpg';
+// import labHeroImg from './assets/images/lab_detail_cleaned_1786616788618.jpg';
+// import remediesImg from './assets/images/natural_remedies_cleaned_1786616831671.jpg';
+// import herbsCloseUpImg from './assets/images/herbs_close_up_cleaned_1786616800877.jpg';
+// import duoArgilesImg from './assets/images/product_duo_argiles.jpg';
+// import trioPouchesImg from './assets/images/product_trio_pouches.jpg';
+// import feuArticulaireImg from './assets/images/product_feu_articulaire.jpg';
+// import bouclierHiverImg from './assets/images/product_bouclier_hiver.jpg';
+// import nuitProfondeImg from './assets/images/product_nuit_profonde.jpg';
+// import seveFondamentaleImg from './assets/images/product_seve_fondamentale.jpg';
+// import digestionImg from './assets/images/product_digestion.jpeg';
+// import modernShelvesImg from './assets/images/modern_herbalist_shelves_1786699793560.jpg';
+
+const bloomLabImg = "/assets/images/bloomlab_main_1784887530345.jpeg";
+const img05 = "/assets/images/lifestyle_botanik_cleaned_1786616810137.jpg";
+const labHeroImg = "/assets/images/lab_detail_cleaned_1786616788618.jpg";
+const remediesImg = "/assets/images/natural_remedies_cleaned_1786616831671.jpg";
+const herbsCloseUpImg = "/assets/images/herbs_close_up_cleaned_1786616800877.jpg";
+const duoArgilesImg = "/assets/images/product_duo_argiles.jpg";
+const trioPouchesImg = "/assets/images/product_trio_pouches.jpg";
+const feuArticulaireImg = "/assets/images/product_feu_articulaire.jpg";
+const bouclierHiverImg = "/assets/images/product_bouclier_hiver.jpg";
+const nuitProfondeImg = "/assets/images/product_nuit_profonde.jpg";
+const seveFondamentaleImg = "/assets/images/product_seve_fondamentale.jpg";
+const digestionImg = "/assets/images/product_digestion.jpeg";
+const modernShelvesImg = "/assets/images/modern_herbalist_shelves_1786699793560.jpg";
 import { translations, Language } from './translations';
 
 export const getProducts = (lang: Language) => {
@@ -166,13 +180,23 @@ export const getProducts = (lang: Language) => {
 };
 
 interface StoreContentProps {
-  onNavigatePending: () => void;
-  onNavigateDetail: (id: string) => void;
+  onNavigate?: (view: any, productId?: string, type?: any) => void;
+  onNavigatePending?: () => void;
+  onNavigateDetail?: (id: string) => void;
   onAddToCart: (product: any) => void;
   lang: Language;
 }
 
-export default function StoreContent({ onNavigatePending, onNavigateDetail, onAddToCart, lang }: StoreContentProps) {
+export default function StoreContent({ onNavigate, onNavigatePending, onNavigateDetail, onAddToCart, lang }: StoreContentProps) {
+  const handleNavigateDetail = (id: string) => {
+    if (onNavigateDetail) onNavigateDetail(id);
+    else if (onNavigate) onNavigate('product-detail', id);
+  };
+  const handleNavigatePending = () => {
+    if (onNavigatePending) onNavigatePending();
+    else if (onNavigate) onNavigate('pending');
+  };
+
   const [searchQuery, setSearchQuery] = React.useState('');
   const t = translations[lang].store;
   const isFR = lang === 'fr';
@@ -204,13 +228,13 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
         "@type": "ListItem",
         "position": 1,
         "name": isFR ? "Accueil" : "Home",
-        "item": "https://bloombybotanik.com"
+        "item": "https://bloombybotanik.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": isFR ? "Boutique" : "Shop",
-        "item": "https://bloombybotanik.com/boutique"
+        "item": "https://bloombybotanik.com/boutique/"
       }
     ]
   };
@@ -220,14 +244,14 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
     "@type": "CollectionPage",
     "name": t.header.title,
     "description": t.header.subtitle,
-    "url": "https://bloombybotanik.com/boutique",
+    "url": "https://bloombybotanik.com/boutique/",
     "mainEntity": {
       "@type": "ItemList",
       "numberOfItems": filteredProducts.length,
       "itemListElement": filteredProducts.map((p, i) => ({
         "@type": "ListItem",
         "position": i + 1,
-        "url": `https://bloombybotanik.com/boutique/${p.id}`,
+        "url": `https://bloombybotanik.com/boutique/${p.id}/`,
         "name": p.name
       }))
     }
@@ -302,8 +326,8 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                   </p>
                   <div className="flex flex-wrap gap-4 mt-4">
                     <button 
-                      onClick={() => onNavigateDetail('bloomlab')}
-                      className="px-10 py-5 bg-botanik-green text-white rounded-2xl font-bold flex items-center gap-3 hover:bg-botanik-orange transition-all shadow-xl shadow-botanik-green/10"
+                      onClick={() => handleNavigateDetail('bloomlab')}
+                      className="px-10 py-5 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-2xl font-bold flex items-center gap-3 transition-all shadow-xl shadow-black/10 cursor-pointer"
                     >
                       {t.hero.cta} <ArrowRight className="w-5 h-5" />
                     </button>
@@ -341,7 +365,7 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
             {products.filter(p => (p as any).isBundle).map((product) => (
               <div 
                 key={product.id} 
-                onClick={() => onNavigateDetail(product.id)}
+                onClick={() => handleNavigateDetail(product.id)}
                 className="bg-white rounded-[40px] border-2 border-botanik-orange/20 overflow-hidden flex flex-col cursor-pointer hover:shadow-2xl transition-all group relative"
               >
                 <div className="absolute top-4 left-4 z-10 bg-botanik-orange text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg">
@@ -367,12 +391,17 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                   <div className="flex items-center justify-between mt-auto">
                     <div className="flex flex-col">
                       {(product.originalPrice || (product as any).oldPriceStrike) && (
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 flex-wrap">
                           {product.originalPrice && (
                             <span className="text-xs text-botanik-green/30 line-through">{formatPrice(product.originalPrice)}</span>
                           )}
                           {(product as any).oldPriceStrike && (
                             <span className="text-xs text-botanik-green/30 line-through">{formatPrice((product as any).oldPriceStrike)}</span>
+                          )}
+                          {product.id === 'bloomlab' && (
+                            <span className="text-[10px] font-bold uppercase tracking-wider text-[#D97706] bg-[#D97706]/10 px-2 py-0.5 rounded-full whitespace-nowrap">
+                              code: Rentrée 2026
+                            </span>
                           )}
                         </div>
                       )}
@@ -380,7 +409,7 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                     </div>
                     <button 
                       onClick={(e) => { e.stopPropagation(); onAddToCart(product); }}
-                      className="w-12 h-12 bg-botanik-green text-white rounded-2xl flex items-center justify-center shadow-lg hover:bg-botanik-orange transition-colors"
+                      className="w-12 h-12 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-2xl flex items-center justify-center shadow-lg transition-colors cursor-pointer"
                       aria-label={`${lang === 'fr' ? 'Ajouter au panier' : 'Add to cart'} ${product.name}`}
                     >
                       <ShoppingBag className="w-5 h-5" />
@@ -423,7 +452,7 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                   <div 
                     key={product.id}
                     className="bg-white rounded-[40px] shadow-sm hover:shadow-xl transition-all cursor-pointer group border border-botanik-green/5 overflow-hidden flex flex-col"
-                    onClick={() => onNavigateDetail(product.id)}
+                    onClick={() => handleNavigateDetail(product.id)}
                   >
                     <div className="relative aspect-square md:aspect-video overflow-hidden bg-[#F9F9F7]">
                       <img 
@@ -447,7 +476,7 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                           {product.price === 0 ? (lang === 'fr' ? 'Gratuit' : lang === 'en' ? 'Free' : 'Gratis') : formatPrice(product.price)}
                         </span>
                         <button 
-                          className="w-10 h-10 bg-[#F9F9F7] text-botanik-green rounded-xl flex items-center justify-center group-hover:bg-botanik-green group-hover:text-white transition-colors"
+                          className="w-10 h-10 bg-[#0F261E] text-white rounded-xl flex items-center justify-center group-hover:bg-botanik-orange transition-colors"
                           aria-label={`${lang === 'fr' ? 'Découvrir' : 'Discover'} ${product.name}`}
                         >
                           <ArrowRight className="w-5 h-5" />
@@ -472,7 +501,7 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
             return (
               <div 
                 key={product.id} 
-                onClick={() => onNavigateDetail(product.id)}
+                onClick={() => handleNavigateDetail(product.id)}
                 className="bg-white rounded-[40px] border border-botanik-green/5 overflow-hidden flex flex-col cursor-pointer hover:shadow-2xl transition-all group"
               >
                 <div className="relative h-64 md:h-80 overflow-hidden bg-[#F9F9F7]">
@@ -483,7 +512,7 @@ export default function StoreContent({ onNavigatePending, onNavigateDetail, onAd
                   />
                   <button 
                     onClick={(e) => { e.stopPropagation(); onAddToCart(product); }}
-                    className="absolute bottom-4 right-4 w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-lg text-botanik-green hover:bg-botanik-orange hover:text-white transition-colors"
+                    className="absolute bottom-4 right-4 w-12 h-12 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-2xl flex items-center justify-center shadow-lg transition-colors cursor-pointer"
                   >
                     <ShoppingBag className="w-5 h-5" />
                   </button>

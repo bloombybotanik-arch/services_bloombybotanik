@@ -42,7 +42,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ lang, setLan
       <div className="relative mb-10 px-2" ref={dropdownRef}>
         <button
           onClick={toggleDropdown}
-          className="flex items-center justify-center w-12 h-12 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all text-white"
+          className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#1C3F34] border border-white/10 hover:bg-[#0F261E] transition-all text-white"
         >
           <span className="text-xl">{currentLang.flag}</span>
         </button>
@@ -71,7 +71,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ lang, setLan
       <div className="relative" ref={dropdownRef}>
         <button
           onClick={toggleDropdown}
-          className="flex items-center justify-center w-10 h-10 rounded-lg bg-white/10 border border-white/10 text-white"
+          className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#1C3F34] border border-white/10 text-white hover:bg-[#0F261E] transition-all"
         >
           <span className="text-xl">{currentLang.flag}</span>
         </button>

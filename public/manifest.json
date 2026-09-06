@@ -1,0 +1,16 @@
+{
+  "name": "Bloom by BotaniK",
+  "short_name": "Bloom",
+  "description": "L'ingénierie de l'extraction botanique de précision.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F9F9F7",
+  "theme_color": "#1C3F34",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}

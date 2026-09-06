@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, BookOpen, Clock, Heart, Share2, Search, Filter, PlayCircle, Download } from 'lucide-react';
+import { ArrowLeft, BookOpen, Clock, Heart, Share2, Search, Filter, PlayCircle, Download, ShieldCheck } from 'lucide-react';
 import { discoveryRecipes, Recipe } from './data/recipesData';
 import { translations, Language } from './translations';
 import { motion, AnimatePresence } from 'motion/react';
@@ -23,6 +23,16 @@ export default function RecipesContent({ onBack, lang, t }: RecipesContentProps)
     const matchesCategory = activeCategory === 'All' || recipe.category === activeCategory;
     return matchesSearch && matchesCategory;
   });
+
+  // Limit to 5 per category for freemium (mocking premium check)
+  const isPremium = false; // This should be dynamic in a real app
+  const visibleRecipes = isPremium ? filteredRecipes : filteredRecipes.reduce((acc: Recipe[], recipe) => {
+    const categoryCount = acc.filter(r => r.category === recipe.category).length;
+    if (categoryCount < 5) {
+      acc.push(recipe);
+    }
+    return acc;
+  }, []);
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-12 md:py-24 animate-in fade-in duration-700">
@@ -70,19 +80,24 @@ export default function RecipesContent({ onBack, lang, t }: RecipesContentProps)
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredRecipes.map((recipe, index) => (
+        {visibleRecipes.map((recipe, index) => (
           <motion.div
             key={recipe.id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
             onClick={() => setSelectedRecipe(recipe)}
-            className="group bg-white rounded-[32px] border border-botanik-green/5 overflow-hidden shadow-sm hover:shadow-xl transition-all cursor-pointer relative"
+            className="group bg-white rounded-[32px] border border-botanik-green/5 overflow-hidden shadow-sm hover:shadow-xl transition-all cursor-pointer relative flex flex-col"
           >
-            <div className="aspect-square bg-[#F9F9F7] flex items-center justify-center p-12 group-hover:bg-botanik-orange/5 transition-colors">
-              <recipe.icon className="w-24 h-24 text-botanik-green group-hover:scale-110 group-hover:text-botanik-orange transition-all duration-700" />
+            <div className="aspect-[4/3] overflow-hidden relative">
+              <img 
+                src={recipe.image} 
+                alt={recipe.title} 
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+              />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors" />
             </div>
-            <div className="p-8">
+            <div className="p-8 flex-1 flex flex-col">
               <div className="flex justify-between items-start mb-4">
                 <span className="px-3 py-1 bg-botanik-green/5 text-botanik-green text-[10px] font-bold uppercase tracking-widest rounded-full">
                   {recipe.category}
@@ -95,7 +110,7 @@ export default function RecipesContent({ onBack, lang, t }: RecipesContentProps)
               <p className="text-botanik-green/60 text-sm leading-relaxed line-clamp-2">
                 {recipe.description}
               </p>
-              <div className="mt-8 pt-6 border-t border-botanik-green/5 flex items-center justify-between">
+              <div className="mt-auto pt-6 border-t border-botanik-green/5 flex items-center justify-between">
                 <div className="flex items-center gap-2 text-xs font-bold text-botanik-green/40">
                   <Clock className="w-4 h-4" /> 15-45 MIN
                 </div>
@@ -164,6 +179,59 @@ export default function RecipesContent({ onBack, lang, t }: RecipesContentProps)
                         </ul>
                       </section>
 
+                      <div className="grid sm:grid-cols-2 gap-8">
+                        <section className="bg-botanik-green/5 p-6 rounded-2xl">
+                          <h4 className="text-[10px] font-bold text-botanik-green uppercase tracking-widest mb-4">Sachet A</h4>
+                          <div className="text-sm space-y-2 text-botanik-green/80">
+                            <p><strong>Compo:</strong> {selectedRecipe.sachetA.composition.join(', ')}</p>
+                            <p><strong>Solvant:</strong> {selectedRecipe.sachetA.solvant}</p>
+                            <p><strong>Cycle:</strong> {selectedRecipe.sachetA.temp} | {selectedRecipe.sachetA.duration}</p>
+                          </div>
+                        </section>
+                        <section className="bg-botanik-green/5 p-6 rounded-2xl">
+                          <h4 className="text-[10px] font-bold text-botanik-green uppercase tracking-widest mb-4">Sachet B</h4>
+                          <div className="text-sm space-y-2 text-botanik-green/80">
+                            <p><strong>Compo:</strong> {selectedRecipe.sachetB.composition.join(', ')}</p>
+                            <p><strong>Solvant:</strong> {selectedRecipe.sachetB.solvant}</p>
+                            <p><strong>Cycle:</strong> {selectedRecipe.sachetB.temp} | {selectedRecipe.sachetB.duration}</p>
+                          </div>
+                        </section>
+                      </div>
+
+                      <section>
+                        <h4 className="text-xs font-bold text-botanik-green uppercase tracking-[0.2em] mb-4">Administration & Dosage</h4>
+                        <div className="bg-[#F9F9F7] p-8 rounded-3xl space-y-4 text-sm text-botanik-green/80 border border-botanik-green/5">
+                          <p><strong>Mode:</strong> {selectedRecipe.administration.mode}</p>
+                          <div className="grid grid-cols-2 gap-4">
+                            <p><strong>Dose:</strong> {selectedRecipe.administration.dailyDose}</p>
+                            <p><strong>Max:</strong> {selectedRecipe.administration.maxDose}</p>
+                          </div>
+                          <p><strong>Fréquence:</strong> {selectedRecipe.administration.frequency} ({selectedRecipe.administration.timing})</p>
+                          {selectedRecipe.administration.usageDuration && (
+                            <p><strong>Durée:</strong> {selectedRecipe.administration.usageDuration}</p>
+                          )}
+                        </div>
+                      </section>
+
+                      <section className="grid sm:grid-cols-2 gap-8">
+                        <div>
+                          <h4 className="text-[10px] font-bold text-red-800 uppercase tracking-widest mb-4">Contre-indications</h4>
+                          <ul className="space-y-2">
+                            {selectedRecipe.contraindications.map((c, i) => (
+                              <li key={i} className="text-xs text-red-800/70 flex gap-2"><span>•</span> {c}</li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="text-[10px] font-bold text-botanik-green uppercase tracking-widest mb-4">Précautions</h4>
+                          <ul className="space-y-2">
+                            {selectedRecipe.precautions.map((p, i) => (
+                              <li key={i} className="text-xs text-botanik-green/60 flex gap-2"><span>•</span> {p}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </section>
+
                       <section>
                         <h4 className="text-xs font-bold text-botanik-green uppercase tracking-[0.2em] mb-6 border-b border-botanik-green/10 pb-4">
                           Bienfaits ciblés
@@ -180,8 +248,12 @@ export default function RecipesContent({ onBack, lang, t }: RecipesContentProps)
                   </div>
 
                   <div className="space-y-12">
-                    <div className="aspect-square bg-[#F9F9F7] rounded-[40px] flex items-center justify-center p-20">
-                      <selectedRecipe.icon className="w-full h-full text-botanik-green" />
+                    <div className="aspect-square overflow-hidden rounded-[40px] shadow-lg">
+                      <img 
+                        src={selectedRecipe.image} 
+                        alt={selectedRecipe.title} 
+                        className="w-full h-full object-cover" 
+                      />
                     </div>
 
                     <section className="bg-[#F9F9F7] p-10 rounded-[40px]">
@@ -199,9 +271,22 @@ export default function RecipesContent({ onBack, lang, t }: RecipesContentProps)
                     </section>
 
                     <div className="flex gap-4">
-                      <button className="flex-1 bg-botanik-green text-white py-5 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-botanik-orange transition-all shadow-xl shadow-botanik-green/10">
+                      <button className="flex-1 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white py-5 rounded-2xl font-bold flex items-center justify-center gap-3 transition-all shadow-xl shadow-black/10 cursor-pointer">
                         <Download className="w-5 h-5" /> Télécharger la fiche
                       </button>
+                    </div>
+
+                    <div className="mt-8 p-6 bg-botanik-orange/5 border border-botanik-orange/20 rounded-2xl">
+                      <p className="text-xs font-bold text-botanik-orange uppercase tracking-widest mb-2 flex items-center gap-2">
+                        <ShieldCheck className="w-4 h-4" /> Message de sécurité
+                      </p>
+                      <p className="text-sm text-botanik-green/80 italic">"{selectedRecipe.safetyMessage}"</p>
+                    </div>
+
+                    <div className="mt-6 p-6 bg-[#0F261E] text-white rounded-2xl shadow-lg relative overflow-hidden" style={{ backgroundColor: '#0F261E', color: '#ffffff' }}>
+                      <div className="absolute -right-4 -top-4 w-24 h-24 bg-white/10 rounded-full blur-2xl" />
+                      <p className="text-xs font-bold uppercase tracking-widest mb-2 opacity-60 text-white">Note d'ALMA</p>
+                      <p className="text-sm font-medium leading-relaxed italic text-white/90">{selectedRecipe.bloomNote}</p>
                     </div>
                   </div>
                 </div>

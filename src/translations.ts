@@ -12,15 +12,15 @@ export const translations = {
       },
       machine: {
         title: "BloomLab : Extracteur Botanique & Machine d'infusion de plantes médicinales",
-        description: "BloomLab® : l'infuseur botanique de précision conçu pour l'extraction du totum végétal. Réalisez vos infusions aux plantes médicinales avec une précision thermique ±0,5°C.",
+        description: "BloomLab : né de la sagesse herboriste asiatique et de la science moderne, l'infuseur botanique de précision pour libérer jusqu'à 98% du totum de vos plantes.",
         h1: "BloomLab® : L'Extracteur Botanique de Précision pour le Totum Végétal",
         intro: "Libérez jusqu'à 98% des principes actifs. BloomLab® est la machine d'infusion de plantes qui garantit une extraction du totum respectant l'homéostasie du vivant.",
       },
       extraction: {
-        title: "Extraction Botanique de Précision : Méthodes et Protocoles Totum",
-        description: "Maîtrisez l'extraction du totum végétal. Protocoles de précision : 60° pour les résines, 55° pour les racines et 45° pour les fleurs tendres.",
-        h1: "L'Extraction du Totum : Précision Thermique et Biodisponibilité",
-        intro: "L'extraction botanique de précision est le pont entre la plante et votre biologie. Grâce à la thermorégulation intelligente, capturez l'intégralité du spectre moléculaire sans dénaturation.",
+        title: "Extraction Botanique : Méthodes, Solvants & Guide Complet",
+        description: "Infusion, décoction, macération, extraction séquentielle : comparez les méthodes, choisissez le bon solvant et maîtrisez température et agitation. Le guide Bloom by BotaniK.",
+        h1: "Extraction botanique : guide complet des méthodes, solvants et paramètres",
+        intro: "Infusion, décoction, macération, extraction séquentielle : comparez les méthodes, choisissez le bon solvant et maîtrisez température et agitation pour libérer le Totum végétal.",
       },
       infusion: {
         title: "Infuseur Basse Température : L'Art de l'Infusion Botanique",
@@ -133,13 +133,25 @@ export const translations = {
           }
         ]
       },
-      keywords: "extraction totum, laboratoire botanique, souveraineté santé, infusion botanique, art de l'extraction, plantes médicinales, remèdes naturels, tisanes, remèdes de grand mère, remèdes de plantes médicinales, phytothérapie, BloomLab",
+      oil: {
+        title: "Huiles Infusées & Macérâts : Guide d'Extraction Liposoluble | BloomLab",
+        description: "Apprenez à créer des huiles infusées et macérâts de qualité laboratoire. Extraction basse température des actifs liposolubles pour soins et remèdes.",
+        h1: "L'Art de l'Huile Infusée et du Macérât Botanique",
+        intro: "Capturez l'or végétal. L'extraction lipidique de précision permet de libérer les molécules que l'eau ne peut atteindre, pour un soin profond de la peau et du terrain.",
+      },
+      adaptogens: {
+        title: "Plantes Adaptogènes : Résilience et Équilibre Systémique | Bloom",
+        description: "Guide expert sur les plantes adaptogènes : Ashwagandha, Rhodiola, Ginseng. Comment extraire leur totum pour soutenir l'homéostasie face au stress.",
+        h1: "Les Plantes Adaptogènes : Souveraineté et Résilience",
+        intro: "Donnez à votre corps les outils pour s'adapter. Découvrez comment l'extraction de précision des plantes adaptogènes déverrouille votre potentiel de vitalité.",
+      },
+      keywords: "infuseur botanique, extracteur botanique, BloomLab, extraction botanique de précision, remèdes de plantes, phytothérapie, plantes médicinales, extraction basse température, extraction du totum, macération, infusion, décarboxylation, émulsion, stérilisation, huiles végétales, sérums, baumes, soins naturels, travail du terrain, microbiome, inflammation chronique, maladies auto-immunes, santé de la peau, souveraineté sanitaire, précision thermique, Bloom by BotaniK, N°1 France",
       alt: {
         bloomlab: "La BloomLab, extracteur botanique réalisant une macération huileuse à basse température pour extraire le totum végétal",
         extracteur: "L'extracteur botanique BloomLab - Appareil de phytothérapie maison pour infusion et macération de précision en France",
         herbs: "Plantes médicinales pour infusion botanique et extraction du totum - Guide d'herboristerie moderne Bloom by BotaniK",
-        lab: "Laboratoire botanique Bloom - Recherche en médecine des systèmes, reset homéostasique et extraction de précision",
-        reset_hero: "Reset Homéostasique Bloom by BotaniK - Protocole de phytothérapie pour soigner le terrain biologique",
+        lab: "Laboratoire botanique Bloom - Recherche en médecine des systèmes, protocoles systémiques et extraction de précision",
+        reset_hero: "Protocoles Systémiques Bloom by BotaniK - Protocole de phytothérapie pour soigner le terrain biologique",
         phase0: "Phase 0 : Reset Émonctoires - Extraction botanique et tisanes médicinales pour la souveraineté sanitaire",
         phase1: "Phase 1 : Reset Terrain Hépatique - Remèdes naturels de plantes médicinales extraits à basse température",
         phase2: "Phase 2 : Pureté Sanguine - Infuseur botanique BloomLab pour extraction du totum anti-inflammatoire",
@@ -147,6 +159,58 @@ export const translations = {
       }
     },
     nav: {
+      accueil: "ACCUEIL",
+      pourquoi_bloom: "POURQUOI BLOOM",
+      pourquoi_bloom_sub: {
+        manifeste: "Le Manifeste",
+        audit: "Je commence / Diagnostic"
+      },
+      methode_ab: "LA MÉTHODE A/B",
+      methode_ab_sub: {
+        extraction: "Extraction de précision",
+        bloomlab: "L'Extracteur BloomLab®",
+        totum: "Le Totum Végétal"
+      },
+      votre_pratique: "VOTRE PRATIQUE",
+      votre_pratique_sub: {
+        culinaire: "Atelier Culinaire",
+        cosmetique: "Cosmétique Botanique",
+        systemique: "Protocoles Systémiques",
+        herbier: "L'Herbier"
+      },
+      transmission: "TRANSMISSION",
+      transmission_sub: {
+        bibliotheque: "Bibliothèque Scientifique",
+        faq: "Questions Fréquentes",
+        contact: "Nous Contacter"
+      },
+      decouvrir: "DÉCOUVRIR",
+      decouvrir_sub: {
+        how_it_works: "BloomLab : comment ça marche ?",
+        herbier: "L'Herbier",
+        recettes: "10 recettes gratuites"
+      },
+      apprendre: "APPRENDRE",
+      apprendre_sub: {
+        preparations: "Préparations avancées",
+        cosmetiques: "Recettes cosmétiques",
+        bibliotheque: "Bibliothèque de protocoles"
+      },
+      boutique_nav: "BOUTIQUE",
+      boutique_sub: {
+        bloomlab: "L'extracteur BloomLab",
+        kits: "Kits de plantes",
+        abonnement: "Abonnement premium"
+      },
+      marque: "LA MARQUE",
+      marque_sub: {
+        manifeste: "Notre manifeste",
+        contact: "Contact"
+      },
+      compte: "MON COMPTE",
+      compte_sub: {
+        espace: "Espace membre"
+      },
       guide: "Guide",
       herbarium: "L'Herbier",
       blog: "Journal Botanique",
@@ -156,9 +220,105 @@ export const translations = {
       manifesto: "Le Manifeste",
       culinary: "Atelier Culinaire",
       cosmetics: "Cosmétique",
-      reset: "Reset Homéostasique",
+      reset: "Protocoles Systémiques",
       universes: "Les 3 Univers",
       cart: "Panier"
+    },
+    home2026: {
+      hero: {
+        h1: "Créez vos soins et remèdes maison avec la précision d'un laboratoire. Sans chimie, sans dépendance, sans compromis.",
+        subtitle: "La BloomLab est conçue pour maximiser l'extraction des actifs de vos plantes en quelques heures. Huiles, sérums, teintures : une seule machine pour tout créer.",
+        cta_primary: "Je découvre la BloomLab",
+        cta_secondary: "Voir les offres"
+      },
+      problem: {
+        title: "Vous perdez une grande partie des bienfaits de vos plantes avec les méthodes traditionnelles.",
+        content: "L'infusion classique, le bain-marie ou la macération artisanale ne permettent pas de capturer l'intégralité des principes actifs. Une température mal maîtrisée détruit les molécules fragiles, tandis qu'un temps trop court laisse les bienfaits prisonniers des fibres végétales. Résultat : vous gaspillez vos plantes et vos efforts.",
+        cta: "Découvrir la solution"
+      },
+      solution: {
+        title: "La BloomLab : l'extraction de précision à la maison.",
+        content: "Grâce à un contrôle millimétré du temps, de la température et de l'agitation, la BloomLab libère l'intégralité des actifs de vos plantes. Sa cuve en inox 304, ses programmes guidés et son nettoyage simplifié en font l'outil indispensable de votre autonomie sanitaire.",
+        cta: "Comment ça marche ?"
+      },
+      universes: {
+        title: "Une machine, trois univers de soin.",
+        culinaire: {
+          title: "Culinaire",
+          desc: "Huiles infusées, beurres aromatiques, élixirs gastronomiques sans amertume.",
+          cta: "Voir les recettes culinaires"
+        },
+        cosmetique: {
+          title: "Cosmétique",
+          desc: "Sérums visage, huiles capillaires, baumes régénérants 100 % purs.",
+          cta: "Découvrir les soins cosmétiques"
+        },
+        phytotherapie: {
+          title: "Phytothérapie",
+          desc: "Teintures mères, macérats, extraits concentrés pour votre vitalité.",
+          cta: "Explorer les protocoles"
+        }
+      },
+      comparison: {
+        title: "BloomLab vs Bain-Marie : la différence est flagrante.",
+        headers: ["Critère", "Bain-Marie", "BloomLab"],
+        rows: [
+          ["Contrôle thermique", "Incertain (variations fréquentes)", "Contrôlé (±0,5 °C)"],
+          ["Rendement des actifs", "Variable selon la plante", "Extraction optimisée par conception"],
+          ["Temps de préparation", "Plusieurs semaines", "Quelques heures"],
+          ["Nettoyage", "Fastidieux", "Rapide"],
+          ["Sécurité", "Vapeurs, risque de brûlure", "Circuit fermé"]
+        ]
+      },
+      testimonials: {
+        title: "Ils ont adopté la BloomLab.",
+        list: [
+          { name: "Clara M.", role: "Herboriste passionnée", text: "J'ai enfin la certitude que mes macérats huileux contiennent tous les actifs de mes plantes." },
+          { name: "Dr Renaud P.", role: "Naturopathe", text: "La précision thermique est la clé. BloomLab apporte une rigueur de grade laboratoire dans la cuisine de mes patients." },
+          { name: "Antoine L.", role: "Chef cuisinier", text: "Mes huiles aromatiques n'ont jamais été aussi intenses. Un outil fabuleux pour la gastronomie végétale." }
+        ]
+      },
+      offers: {
+        title: "Choisissez votre configuration.",
+        solo: {
+          title: "BloomLab Solo",
+          price: "239 €",
+          tag: "Offre rentrée",
+          desc: "Machine BloomLab v2 + Guide digital 100 recettes",
+          cta: "Ajouter au panier"
+        },
+        signature: {
+          title: "Pack Signature",
+          price: "289 €",
+          tag: "Le plus complet",
+          desc: "Machine BloomLab v2 + Guide digital 100 recettes + Duo d'argiles",
+          cta: "Commander le Pack"
+        },
+        mention: "Paiement en 3x sans frais. Expédition sous 24/48h."
+      },
+      guarantee_faq: {
+        title: "Testez sans risque pendant 30 jours.",
+        guarantee: "Satisfait ou remboursé. Sans poser de questions.",
+        faq: [
+          {
+            q: "Est-ce compliqué à utiliser ?",
+            a: "Pas du tout. La BloomLab dispose de programmes pré-enregistrés. Il vous suffit de choisir votre préparation, d'ajouter vos ingrédients et de laisser la machine travailler pour vous."
+          },
+          {
+            q: "Que puis-je créer avec BloomLab ?",
+            a: "Tout ce qui nécessite une extraction : huiles de soin, sérums, beurres aromatiques, teintures végétales, macérats aqueux et bien plus encore."
+          },
+          {
+            q: "Pourquoi c'est mieux qu'un bain-marie ?",
+            a: "Le bain-marie ne permet pas une température stable, ce qui dégrade souvent les principes actifs. BloomLab garantit une extraction optimisée et un gain de temps considérable."
+          }
+        ]
+      },
+      newsletter: {
+        title: "Recevez 10 recettes gratuites pour débuter.",
+        desc: "Conseil d'expert, recette de saison, témoignage client chaque mardi.",
+        cta: "M'inscrire gratuitement"
+      }
     },
     universes: {
       title: "Une Seule Machine. Trois Univers de soin Souverain au Quotidien.",
@@ -249,7 +409,7 @@ export const translations = {
         },
         start: {
           title: "Une place pour chaque plante",
-          description: "Découvrez les 3 niveaux d'expertise de la BloomLab : culinaire, cosmétique et protocolaire expert. Nos équipes vous accompagnent dans votre projet de soins sur mesure.",
+          description: "Évoluez à votre rythme à travers nos 4 niveaux d'expertise : Découverte, Initiation, Maîtrise et Expertise. BloomLab® vous accompagne de vos premières infusions à la formulation systémique avancée.",
           cta: "Voir BloomLab"
         }
       },
@@ -325,7 +485,7 @@ export const translations = {
       },
       featured: {
         badge: "Protocole Signature",
-        title: "Le Reset Homéostasique",
+        title: "Le Protocoles Systémiques",
         description: "Un voyage de 21 jours pour réinitialiser vos mécanismes naturels. La puissance du Totum à portée de main.",
         cta: "Découvrir le Protocole",
         items: {
@@ -438,7 +598,7 @@ export const translations = {
         category: "Reset Systémique",
         subtitle: "Fiches Protocoles",
         info: "Reset O inclus • 93 fiches premium",
-        title: "Reset Homéostasique",
+        title: "Protocoles Systémiques",
         description: "Un protocole de régulation systémique profonde."
       },
       free: {
@@ -797,7 +957,7 @@ export const translations = {
         bloomlab_desc: "Passez de spectateur à acteur. Extrayez vous-même vos principes actifs pour une puissance multipliée par 4.",
         bloomlab_btn: "Découvrir l'instrument",
         premium_title: "L'Abonnement Premium",
-        premium_desc: "Accédez à l'intégralité des 56 kits de précision et aux protocoles de Reset Homéostasique.",
+        premium_desc: "Accédez à l'intégralité des 56 kits de précision et aux protocoles de Protocoles Systémiques.",
         premium_btn: "Voir les avantages"
       },
       shipping: {
@@ -1151,11 +1311,23 @@ export const translations = {
     machine: {
       hero: {
         badge: "Expertise France — Souveraineté Botanique",
-        title: "BloomLab :",
-        title_accent: "l’infuseur botanique pour vos préparations maison",
+        title: "BloomLab® :",
+        title_accent: "L'Extracteur botanique de précision pour maîtriser vos préparations maison",
+        history_badge: "Héritage Millénaire & Rigueur Botanique",
+        history_title: "Le naturel ne doit plus être approximatif.",
+        history_subtitle: "Il y a 5 000 ans, l'Asie savait déjà tout de l'extraction.",
+        history_p1: "En Médecine Traditionnelle Chinoise comme en Ayurveda, l'extraction n'était ni un geste approximatif, ni une habitude de cuisine. C'était un art codifié, où le temps, le feu et la matière obéissaient à des règles précises. Décoctions longuement mijotées, macérations à feu doux, résines travaillées avec patience : les praticiens d'Orient savaient qu'une plante trahie par la chaleur est une plante qui perd son intelligence.",
+        history_p2: "Ce savoir a fondé l'herboristerie du monde.",
         description: "Libérez jusqu'à 98% des actifs de vos plantes. Avec BloomLab, vous ne faites plus “chauffer une plante”, vous libérez réellement ses principes actifs dans des conditions proches d’un laboratoire. La température est maintenue au degré près : assez élevée pour optimiser l’extraction des phytocomposés (polyphénols, flavonoïdes, huiles essentielles…), mais jamais au‑delà des seuils qui les dégradent, ce qui est exactement ce que montrent les études sur l’impact de la température en extraction végétale.\n\nLà où une casserole ou un bain‑marie improvisé chauffent trop fort ou de façon irrégulière (perte d’antioxydants, arômes brûlés, actifs détruits), BloomLab offre un profil thermique maîtrisé qui préserve les molécules sensibles à la chaleur et améliore la quantité d’actifs réellement présents dans vos huiles infusées et macérâts.",
         cta: "Acquérir ma BloomLab",
         discover: "Découvrir la technologie"
+      },
+      heritage: {
+        badge: "Origines & Sagesse Botanique",
+        title: "Un héritage de sagesse pour un monde moderne",
+        subtitle: "Aux origines asiatiques de l'extraction de précision",
+        text: "BloomLab n'est pas une invention occidentale. C'est la réponse moderne à un besoin millénaire né au cœur des traditions botaniques asiatiques. Pendant des siècles, les maîtres herboristes d'Asie ont cherché un moyen d'extraire l'essence parfaite de leurs plantes, sans la brûler ni la gaspiller. La BloomLab est l'aboutissement de cette quête : un outil de précision qui réconcilie la sagesse ancestrale avec la technologie du XXIe siècle. Approuvée d'abord par les experts asiatiques, elle arrive aujourd'hui en Europe pour redonner à chacun le pouvoir de créer ses propres élixirs de soin.",
+        quote: "Extraire sans brûler, révéler sans dénaturer : l'alliance de la tradition herboriste asiatique et de la thermorégulation contemporaine."
       },
       details: {
         badge: "L'Instrument",
@@ -1212,7 +1384,7 @@ export const translations = {
           description: "Le sommet de la souveraineté. Accédez aux 56 protocoles de précision BloomLab. Ici, vous utilisez la machine comme un outil de laboratoire clinique.",
           learn_title: "Votre niveau d'expertise :",
           learn1: "Protocoles Totum 56",
-          learn2: "Reset Homéostasique",
+          learn2: "Protocoles Systémiques",
           cta: "Accéder aux Protocoles Experts"
         }
       },
@@ -1265,7 +1437,25 @@ export const translations = {
         description: "La BloomLab est disponible dès maintenant pour vous accompagner vers une souveraineté santé retrouvée.",
         button: "Commander ma Machine",
         guide: "Voir le Guide d'Usage"
-      }
+      },
+      faq: [
+        {
+          q: "Faut-il des compétences particulières en herboristerie pour utiliser BloomLab ?",
+          a: "Absolument pas. BloomLab a été conçu pour guider chaque étape. Nos protocoles indiquent précisément la température, le solvant (eau, huile végétale, glycérine) et la durée optimale pour chaque plante."
+        },
+        {
+          q: "Pourquoi une précision thermique à ±0,5°C est-elle indispensable ?",
+          a: "Les principes actifs végétaux (flavonoïdes, terpènes, polyphénols) sont thermolabiles : au-delà de 75°C à 85°C selon les espèces, ils se dénaturent et perdent leur vitalité. Une régulation chirurgicale protège l'intégrité moléculaire du Totum."
+        },
+        {
+          q: "Comment se déroule le nettoyage de l'appareil ?",
+          a: "La cuve en Inox 304 et le panier filtrant se nettoient en moins de deux minutes à l'eau tiède avec un savon doux ou un cycle d'auto-nettoyage rapide."
+        },
+        {
+          q: "Quelle est la garantie de l'extracteur BloomLab ?",
+          a: "L'appareil bénéficie d'une garantie constructeur de 1 an complète (pièces et main-d'œuvre), avec un support client et technique réactif basé en Europe."
+        }
+      ]
     },
     alma: {
       online: "En ligne",
@@ -1283,8 +1473,8 @@ export const translations = {
       axe_1_desc: "Apaisement T8",
       axe_2_desc: "Perméabilité T1",
       solution_recommended: "Solution Recommandée",
-      solution_title: "Le Reset Homéostasique Bloom",
-      discover_reset: "Découvrir le Reset Homéostasique",
+      solution_title: "Le Protocoles Systémiques Bloom",
+      discover_reset: "Découvrir le Protocoles Systémiques",
       resolution_paths: "Chemins de Résolution",
       recommended_for_you: "Recommandé pour vous",
       redo_diagnostic: "Refaire le diagnostic",
@@ -1422,14 +1612,14 @@ export const translations = {
     },
     phytotherapyReset: {
       badge: "Souveraineté Biologique & Sanitaire",
-      title: "Phytothérapie & Reset Homéostasique",
+      title: "Phytothérapie & Protocoles Systémiques",
       title_accent: "\"L'Ingénierie au service du vivant.\"",
       subtitle: "Le protocole de régulation profonde par les plantes",
       quote: "Réinitialiser vos systèmes de régulation, pas “juste” détoxifier.",
-      intro_editorial: "Le Reset Homéostasique Bloom est un voyage botanique de 90 jours pensé pour accompagner en douceur vos fonctions naturelles et installer une routine de mieux‑être durable. Phase après phase, il invite à prendre soin de vos voies d’élimination et de votre digestion, à retrouver des sensations de légèreté, de confort corporel et de vitalité, tout en respectant les rythmes propres à votre organisme.\n\nGuidé par notre ingénierie botanique et la chronobiologie des organes, vous traversez un parcours structuré : ouverture des émonctoires, phases de drainage et de soutien digestif, temps de purification intérieure au sens du ressenti (clarité, énergie, qualité du sommeil), puis stabilisation et renforcement des ressources, rythmé par des pauses intégratives où vous laissez votre corps intégrer les changements.\n\nCe protocole s’inscrit dans une démarche globale d’hygiène de vie et de bien‑être et ne se substitue pas à un avis ni à un traitement médical ; il propose un cadre botanique pour mieux écouter votre terrain et soutenir vos sensations de régulation au quotidien.",
+      intro_editorial: "Le Protocoles Systémiques Bloom est un voyage botanique de 90 jours pensé pour accompagner en douceur vos fonctions naturelles et installer une routine de mieux‑être durable. Phase après phase, il invite à prendre soin de vos voies d’élimination et de votre digestion, à retrouver des sensations de légèreté, de confort corporel et de vitalité, tout en respectant les rythmes propres à votre organisme.\n\nGuidé par notre ingénierie botanique et la chronobiologie des organes, vous traversez un parcours structuré : ouverture des émonctoires, phases de drainage et de soutien digestif, temps de purification intérieure au sens du ressenti (clarité, énergie, qualité du sommeil), puis stabilisation et renforcement des ressources, rythmé par des pauses intégratives où vous laissez votre corps intégrer les changements.\n\nCe protocole s’inscrit dans une démarche globale d’hygiène de vie et de bien‑être et ne se substitue pas à un avis ni à un traitement médical ; il propose un cadre botanique pour mieux écouter votre terrain et soutenir vos sensations de régulation au quotidien.",
       journey: {
         subtitle: "Un voyage de 90 jours en 5 temps",
-        text: "Le Reset Homéostasique se déploie en phases successives, chacune avec une intention précise et des plantes ciblées :",
+        text: "Le Protocoles Systémiques se déploie en phases successives, chacune avec une intention précise et des plantes ciblées :",
         step0: { title: "Étape 0 – Anamnèse systémique", desc: "L’intelligence ALMA cartographie vos terrains biologiques (T1–T10) pour personnaliser le protocole : on ne lance pas un reset sans savoir où votre corps a besoin d’aide en priorité." },
         phase0: { title: "Phase 0 – Préparation des émonctoires", desc: "Ouverture douce des voies d’élimination (reins, lymphe, intestin, peau) pour que le corps puisse drainer sans se fragiliser. C’est le socle sur lequel les phases suivantes peuvent agir en profondeur." },
         phase1: { title: "Phase 1 – Relance hépatique", desc: "Travail ciblé sur le foie et la bile pour mobiliser les toxines, relancer la filtration et fluidifier les sorties. Le terrain se décrasse, les flux se réorganisent." },
@@ -1488,11 +1678,13 @@ export const translations = {
       },
       machine: {
         title: "BloomLab® Botanical Extractor | Herbal Oil & Butter Infuser",
-        description: "Discover the BloomLab® botanical extractor. Professional-grade herbal infusion machine for DIY skincare, tinctures, and natural botanical home remedies.",
+        description: "Discover BloomLab: born from Asian botanical wisdom and modern science, the precision botanical infuser for your pure homemade preparations and remedies.",
       },
       extraction: {
-        title: "Precision Botanical Extraction: Master the Plant Totum Guide",
-        description: "Expert guide to low-temperature botanical extraction. Learn how to use a botanical extractor to preserve the plant's molecular intelligence.",
+        title: "Botanical Extraction: Methods, Solvents & Complete Guide",
+        description: "Infusion, decoction, maceration, sequential extraction: compare methods, choose the right solvent and master temperature and agitation.",
+        h1: "Botanical extraction: a complete guide to methods, solvents and parameters",
+        intro: "Infusion, decoction, maceration, sequential extraction: compare methods, choose the right solvent and master temperature and agitation to unlock the botanical Totum.",
       },
       infusion: {
         title: "Herbal Infusion & Maceration: The Home Botanical Extractor Guide",
@@ -1529,7 +1721,7 @@ export const translations = {
         description: "The Bloom vision: bridging traditional herbalism and modern science. Your botanical extractor for restored health sovereignty.",
       },
       reset: {
-        title: "Homeostatic Reset & Terrain | Precision Phytotherapy",
+        title: "Systemic Protocols & Terrain | Precision Phytotherapy",
         description: "Systemic reset protocol to restore homeostasis. The alliance of clays, zeolites and plants extracted by precision for a balanced terrain.",
       },
       infusion_guide: {
@@ -1559,6 +1751,18 @@ export const translations = {
           }
         ]
       },
+      oil: {
+        title: "Infused Oils & Macerates: Liposoluble Extraction Guide | BloomLab",
+        description: "Learn to create laboratory-quality infused oils and macerates. Low-temperature extraction of liposoluble actives for care and remedies.",
+        h1: "The Art of Infused Oils and Botanical Macerates",
+        intro: "Capture botanical gold. Precision lipid extraction releases molecules water cannot reach, for deep skin and system care.",
+      },
+      adaptogens: {
+        title: "Adaptogenic Plants: Resilience and Systemic Balance | Bloom",
+        description: "Expert guide on adaptogenic plants: Ashwagandha, Rhodiola, Ginseng. How to extract their totum to support homeostasis against stress.",
+        h1: "Adaptogenic Plants: Sovereignty and Resilience",
+        intro: "Give your body the tools to adapt. Discover how precision extraction of adaptogenic plants unlocks your vitality potential.",
+      },
       keywords: "totum extraction, botanical laboratory, health sovereignty, botanical infusion, art of extraction, medicinal plants, natural remedies, herbal teas, home remedies, medicinal plant remedies, phytotherapy, BloomLab",
       alt: {
         bloomlab: "BloomLab Machine - Botanical Infusion, Herbal Teas, Natural Medicinal Plant Remedies",
@@ -1573,18 +1777,166 @@ export const translations = {
       }
     },
     nav: {
+      accueil: "HOME",
+      pourquoi_bloom: "WHY BLOOM",
+      pourquoi_bloom_sub: {
+        manifeste: "The Manifesto",
+        audit: "Start Here / Diagnosis"
+      },
+      methode_ab: "THE A/B METHOD",
+      methode_ab_sub: {
+        extraction: "Precision Extraction",
+        bloomlab: "BloomLab® Extractor",
+        totum: "The Plant Totum"
+      },
+      votre_pratique: "YOUR PRACTICE",
+      votre_pratique_sub: {
+        culinaire: "Culinary Workshop",
+        cosmetique: "Botanical Cosmetics",
+        systemique: "Systemic Protocols",
+        herbier: "The Herbarium"
+      },
+      transmission: "TRANSMISSION",
+      transmission_sub: {
+        bibliotheque: "Scientific Library",
+        faq: "FAQ",
+        contact: "Contact Us"
+      },
+      decouvrir: "DISCOVER",
+      decouvrir_sub: {
+        how_it_works: "BloomLab: How does it work?",
+        herbier: "The Herbarium",
+        recettes: "10 Free Recipes"
+      },
+      apprendre: "LEARN",
+      apprendre_sub: {
+        preparations: "Advanced Preparations",
+        cosmetiques: "Homemade Cosmetics",
+        bibliotheque: "Protocol Library"
+      },
+      boutique_nav: "SHOP",
+      boutique_sub: {
+        bloomlab: "BloomLab Extractor",
+        kits: "Plant Kits",
+        abonnement: "Premium Subscription"
+      },
+      marque: "THE BRAND",
+      marque_sub: {
+        manifeste: "Our Manifesto",
+        contact: "Contact"
+      },
+      compte: "MY ACCOUNT",
+      compte_sub: {
+        espace: "Member Area"
+      },
       guide: "Guide",
       herbarium: "Herbarium",
-      blog: "The Library",
+      blog: "Botanical Journal",
       chat: "Alma Chat",
       shop: "Shop",
       account: "Account",
-      manifesto: "The Manifesto",
-      culinary: "Culinary Workshop",
+      manifesto: "Manifesto",
+      culinary: "Culinary Atelier",
       cosmetics: "Cosmetics",
-      reset: "Homeostatic Reset",
+      reset: "Systemic Protocols",
       universes: "The 3 Universes",
       cart: "Cart"
+    },
+    home2026: {
+      hero: {
+        h1: "Create your home care and remedies with laboratory precision. No chemicals, no addiction, no compromise.",
+        subtitle: "The BloomLab is designed to maximize the extraction of your plants' active principles in just a few hours. Oils, serums, tinctures: one single machine to create everything.",
+        cta_primary: "I discover the BloomLab",
+        cta_secondary: "See offers"
+      },
+      problem: {
+        title: "You lose a large part of your plants' benefits with traditional methods.",
+        content: "Classic infusion, bain-marie or artisanal maceration do not capture all active principles. Poorly controlled temperature destroys fragile molecules, while too short a time leaves the benefits trapped in the plant fibers. Result: you waste your plants and your efforts.",
+        cta: "Discover the solution"
+      },
+      solution: {
+        title: "BloomLab: precision extraction at home.",
+        content: "Thanks to millimetric control of time, temperature and agitation, the BloomLab releases all your plants' active principles. Its 304 stainless steel tank, guided programs and simplified cleaning make it the essential tool for your health autonomy.",
+        cta: "How does it work?"
+      },
+      universes: {
+        title: "One machine, three universes of care.",
+        culinaire: {
+          title: "Culinary",
+          desc: "Infused oils, aromatic butters, gastronomic elixirs without bitterness.",
+          cta: "See culinary recipes"
+        },
+        cosmetique: {
+          title: "Cosmetic",
+          desc: "Face serums, hair oils, regenerating balms 100% pure.",
+          cta: "Discover cosmetic care"
+        },
+        phytotherapie: {
+          title: "Phytotherapy",
+          desc: "Mother tinctures, macerates, concentrated extracts for your vitality.",
+          cta: "Explore protocols"
+        }
+      },
+      comparison: {
+        title: "BloomLab vs Bain-Marie: the difference is clear.",
+        headers: ["Criterion", "Bain-Marie", "BloomLab"],
+        rows: [
+          ["Thermal control", "Uncertain (frequent variations)", "Controlled (±0.5 °C)"],
+          ["Active yield", "Variable depending on the plant", "Optimized extraction by design"],
+          ["Preparation time", "Several weeks", "A few hours"],
+          ["Cleaning", "Tedious", "Fast"],
+          ["Safety", "Vapors, risk of burning", "Closed circuit"]
+        ]
+      },
+      testimonials: {
+        title: "They adopted the BloomLab.",
+        list: [
+          { name: "Clara M.", role: "Passionate herbalist", text: "I finally have the certainty that my oil macerates contain all my plants' active principles." },
+          { name: "Dr Renaud P.", role: "Naturopath", text: "Thermal precision is key. BloomLab brings laboratory-grade rigor to my patients' kitchens." },
+          { name: "Antoine L.", role: "Chef", text: "My aromatic oils have never been so intense. A fabulous tool for plant-based gastronomy." }
+        ]
+      },
+      offers: {
+        title: "Choose your configuration.",
+        solo: {
+          title: "BloomLab Solo",
+          price: "239 €",
+          tag: "Back-to-school offer",
+          desc: "BloomLab v2 machine + Digital guide 100 recipes",
+          cta: "Add to cart"
+        },
+        signature: {
+          title: "Signature Pack",
+          price: "289 €",
+          tag: "Most complete",
+          desc: "BloomLab v2 machine + Digital guide 100 recipes + Duo of clays",
+          cta: "Order the Pack"
+        },
+        mention: "Payment in 3 installments without fees. Shipping within 24/48h."
+      },
+      guarantee_faq: {
+        title: "Test risk-free for 30 days.",
+        guarantee: "Satisfied or refunded. No questions asked.",
+        faq: [
+          {
+            q: "Is it complicated to use?",
+            a: "Not at all. The BloomLab has pre-recorded programs. Just choose your preparation, add your ingredients and let the machine work for you."
+          },
+          {
+            q: "What can I create with BloomLab?",
+            a: "Everything that requires extraction: care oils, serums, aromatic butters, plant tinctures, aqueous macerates and much more."
+          },
+          {
+            q: "Why is it better than a bain-marie?",
+            a: "The bain-marie does not allow a stable temperature, which often degrades the active principles. BloomLab guarantees optimized extraction and a considerable time saving."
+          }
+        ]
+      },
+      newsletter: {
+        title: "Receive 10 free recipes to start.",
+        desc: "Expert advice, seasonal recipe, customer testimony every Tuesday.",
+        cta: "Sign up for free"
+      }
     },
     universes: {
       title: "One Single Machine. Three Universes of Sovereign Care Every Day.",
@@ -2219,7 +2571,7 @@ export const translations = {
         bloomlab_desc: "Go from spectator to actor. Extract your own active principles for a power multiplied by 4.",
         bloomlab_btn: "Discover the instrument",
         premium_title: "Premium Subscription",
-        premium_desc: "Access all 56 precision kits and Homeostatic Reset protocols.",
+        premium_desc: "Access all 56 precision kits and Systemic Protocols protocols.",
         premium_btn: "See advantages"
       },
       shipping: {
@@ -2458,12 +2810,24 @@ export const translations = {
     },
     machine: {
       hero: {
-        badge: "France — Botanical Sovereignty",
-        title: "BloomLab:",
-        title_accent: "Botanical Extractor & Infuser.",
-        description: "Discover the most precise countertop botanical extractor. A master plant totum extraction machine for oils, butters, and tinctures for your natural remedies and homeostatic reset.",
-        cta: "Discover BloomLab",
-        discover: "Scientific Precision"
+        badge: "Expertise France — Botanical Sovereignty",
+        title: "BloomLab® :",
+        title_accent: "The precision botanical extractor to master your homemade preparations",
+        history_badge: "Millenary Heritage & Botanical Rigor",
+        history_title: "Nature must no longer be approximate.",
+        history_subtitle: "5,000 years ago, Asia already knew everything about extraction.",
+        history_p1: "In Traditional Chinese Medicine as in Ayurveda, extraction was neither an approximation nor a kitchen habit. It was a codified art where time, fire, and matter followed precise rules. Long-simmered decoctions, gentle low-heat macerations, patiently crafted resins: Eastern practitioners knew that a plant betrayed by heat is a plant that loses its intelligence.",
+        history_p2: "This knowledge laid the foundations of world herbalism.",
+        description: "Release up to 98% of your plants' active ingredients. With BloomLab, you no longer just \"heat a plant\", you truly release its active principles under near-laboratory conditions. The temperature is maintained to the exact degree: high enough to optimize the extraction of phytocompounds, yet never beyond the thresholds that degrade them.\n\nWhere an improvised pot or water bath heats too aggressively or irregularly (loss of antioxidants, burnt aromas, destroyed actives), BloomLab offers a mastered thermal profile that protects delicate heat-sensitive molecules.",
+        cta: "Acquire my BloomLab",
+        discover: "Discover the technology"
+      },
+      heritage: {
+        badge: "Origins & Botanical Wisdom",
+        title: "A Heritage of Wisdom for a Modern World",
+        subtitle: "At the Asian origins of precision extraction",
+        text: "BloomLab is not a Western invention. It is the modern answer to a millennia-old need born at the heart of Asian botanical traditions. For centuries, master herbalists across Asia sought a way to extract the perfect essence of their plants without burning or wasting it. BloomLab is the culmination of this quest: a precision instrument reconciling ancestral wisdom with 21st-century technology. First approved by Asian botanical experts, it now arrives in Europe to empower everyone to craft their own restorative herbal elixirs.",
+        quote: "Extract without burning, reveal without denaturing: uniting Asian herbal tradition with contemporary thermoregulation."
       },
       details: {
         badge: "The Instrument",
@@ -2573,7 +2937,25 @@ export const translations = {
         description: "The BloomLab is available now to accompany you towards a rediscovered health sovereignty.",
         button: "Order my Machine",
         guide: "View Usage Guide"
-      }
+      },
+      faq: [
+        {
+          q: "Do you need special herbalist knowledge to use BloomLab?",
+          a: "Not at all. BloomLab is designed for turnkey precision. Each protocol provides the exact temperature, solvent, and duration for your plants."
+        },
+        {
+          q: "Why is thermal precision at ±0.5°C essential?",
+          a: "Plant active compounds are heat-sensitive. Precise temperature control preserves the integrity of the botanical Totum."
+        },
+        {
+          q: "How do you clean the device?",
+          a: "The food-grade stainless steel tank and filter basket rinse clean in under two minutes with warm water."
+        },
+        {
+          q: "What is the warranty on the BloomLab extractor?",
+          a: "The device includes a full 1-year manufacturer warranty (parts and labor) with responsive European technical support."
+        }
+      ]
     },
     alma: {
       online: "Online",
@@ -2591,8 +2973,8 @@ export const translations = {
       axe_1_desc: "T8 Soothing",
       axe_2_desc: "T1 Permeability",
       solution_recommended: "Recommended Solution",
-      solution_title: "The Bloom Homeostatic Reset",
-      discover_reset: "Discover the Homeostatic Reset",
+      solution_title: "The Bloom Systemic Protocols",
+      discover_reset: "Discover the Systemic Protocols",
       resolution_paths: "Resolution Paths",
       recommended_for_you: "Recommended for you",
       redo_diagnostic: "Redo diagnostic",
@@ -2730,14 +3112,14 @@ export const translations = {
     },
     phytotherapyReset: {
       badge: "Biological Sovereignty",
-      title: "Phytotherapy & Homeostatic Reset",
+      title: "Phytotherapy & Systemic Protocols",
       title_accent: "\"Engineering at the service of life.\"",
       subtitle: "Deep regulation protocol by plants",
       quote: "Reset your regulation systems, not 'just' detoxify.",
-      intro_editorial: "The Bloom Homeostatic Reset is a 90-day botanical journey designed to gently support your natural functions and establish a sustainable wellness routine. Phase after phase, it invites you to take care of your elimination pathways and digestion, rediscovering sensations of lightness, bodily comfort, and vitality, while respecting your organism's own rhythms.\n\nGuided by our botanical engineering and organ chronobiology, you navigate a structured path: opening of emunctories, phases of drainage and digestive support, times of inner purification in terms of feeling (clarity, energy, sleep quality), then stabilization and resource strengthening, punctuated by integrative pauses where you let your body integrate the changes.\n\nThis protocol is part of a global lifestyle and well-being approach and does not substitute for medical advice or treatment; it offers a botanical framework to better listen to your terrain and support your daily regulation sensations.",
+      intro_editorial: "The Bloom Systemic Protocols is a 90-day botanical journey designed to gently support your natural functions and establish a sustainable wellness routine. Phase after phase, it invites you to take care of your elimination pathways and digestion, rediscovering sensations of lightness, bodily comfort, and vitality, while respecting your organism's own rhythms.\n\nGuided by our botanical engineering and organ chronobiology, you navigate a structured path: opening of emunctories, phases of drainage and digestive support, times of inner purification in terms of feeling (clarity, energy, sleep quality), then stabilization and resource strengthening, punctuated by integrative pauses where you let your body integrate the changes.\n\nThis protocol is part of a global lifestyle and well-being approach and does not substitute for medical advice or treatment; it offers a botanical framework to better listen to your terrain and support your daily regulation sensations.",
       journey: {
         subtitle: "A 90-day journey in 5 steps",
-        text: "The Homeostatic Reset unfolds in successive phases, each with a precise intention and targeted plants:",
+        text: "The Systemic Protocols unfolds in successive phases, each with a precise intention and targeted plants:",
         step0: { title: "Step 0 – Systemic anamnesis", desc: "ALMA intelligence maps your biological terrains (T1–T10) to personalize the protocol: we don't start a reset without knowing where your body needs help first." },
         phase0: { title: "Phase 0 – Emunctories preparation", desc: "Gentle opening of the elimination pathways (kidneys, lymph, intestine, skin) so that the body can drain without becoming fragile. This is the foundation on which the following phases can act in depth." },
         phase1: { title: "Phase 1 – Hepatic relaunch", desc: "Targeted work on the liver and bile to mobilize toxins, restart filtration and fluidize exits. The terrain is cleaned, flows are reorganized." },
@@ -2796,11 +3178,13 @@ export const translations = {
       },
       machine: {
         title: "BloomLab® Botanischer Extraktor | Infusionsgerät für Öle & Butter",
-        description: "Entdecken Sie den BloomLab® botanischen Extraktor. Professionelles Infusionsgerät für DIY-Hautpflege, Tinkturen und natürliche Heilmittel.",
+        description: "BloomLab: aus asiatischer Kräutertradition und moderner Wissenschaft entstanden – der botanische Präzisionsextraktor für eigene Hauszubereitungen.",
       },
       extraction: {
-        title: "Botanische Präzisionsextraktion: Das Pflanzen-Totum meistern",
-        description: "Expertenleitfaden zur botanischen Niedrigtemperaturextraktion. Bewahren Sie die molekulare Intelligenz der Pflanzen mit Präzisionsextraktion.",
+        title: "Botanische Extraktion: Methoden, Lösungsmittel & Komplett-Guide",
+        description: "Infusion, Dekokt, Mazeration, sequenzielle Extraktion: Methoden vergleichen, Lösungsmittel wählen, Temperatur und Bewegung meistern.",
+        h1: "Botanische Extraktion: der komplette Guide zu Methoden, Lösungsmitteln und Parametern",
+        intro: "Infusion, Dekokt, Mazeration, sequenzielle Extraktion: Methoden vergleichen, Lösungsmittel wählen, Temperatur und Bewegung meistern, um das botanische Totum freizusetzen.",
       },
       infusion: {
         title: "Pflanzen-Infusion & Mazeration: Leitfaden für Extraktoren",
@@ -2867,6 +3251,18 @@ export const translations = {
           }
         ]
       },
+      oil: {
+        title: "Infundierte Öle & Mazerate: Leitfaden zur liposolublen Extraktion | BloomLab",
+        description: "Lernen Sie, infundierte Öle und Mazerate in Laborqualität herzustellen. Niedrigtemperaturextraktion von fettlöslichen Wirkstoffen für Pflege und Heilmittel.",
+        h1: "Die Kunst der infundierten Öle und botanischen Mazerate",
+        intro: "Fangen Sie botanisches Gold ein. Die Präzisions-Lipidextraktion setzt Moleküle frei, die Wasser nicht erreichen kann, für eine tiefe Haut- und Systempflege.",
+      },
+      adaptogens: {
+        title: "Adaptogene Pflanzen: Resilienz und systemisches Gleichgewicht | Bloom",
+        description: "Expertenleitfaden zu adaptogenen Pflanzen: Ashwagandha, Rhodiola, Ginseng. Wie man ihr Totum extrahiert, um die Homöostase gegen Stress zu unterstützen.",
+        h1: "Adaptogene Pflanzen: Souveränität und Resilienz",
+        intro: "Geben Sie Ihrem Körper die Werkzeuge zur Anpassung. Entdecken Sie, wie die Präzisionsextraktion adaptogener Pflanzen Ihr Vitalitätspotenzial freisetzt.",
+      },
       keywords: "Totum-Extraktion, botanisches Labor, Gesundheitssouveränität, botanische Infusion, Kunst der Extraktion, Heilpflanzen, natürliche Heilmittel, Kräutertees, Hausmittel, Heilpflanzen-Heilmittel, Phytotherapie, BloomLab",
       alt: {
         bloomlab: "BloomLab Maschine - Botanische Infusion, Kräutertees, natürliche Heilpflanzen-Heilmittel",
@@ -2881,18 +3277,166 @@ export const translations = {
       }
     },
     nav: {
-      guide: "Leitfaden",
+      accueil: "STARTSEITE",
+      pourquoi_bloom: "WARUM BLOOM",
+      pourquoi_bloom_sub: {
+        manifeste: "Das Manifest",
+        audit: "Ich starte / Diagnose"
+      },
+      methode_ab: "DIE A/B-METHODE",
+      methode_ab_sub: {
+        extraction: "Präzisionsextraktion",
+        bloomlab: "BloomLab® Extraktor",
+        totum: "Das Pflanzen-Totum"
+      },
+      votre_pratique: "IHRE PRAXIS",
+      votre_pratique_sub: {
+        culinaire: "Kulinarische Werkstatt",
+        cosmetique: "Botanische Kosmetik",
+        systemique: "Systemische Protokolle",
+        herbier: "Das Herbarium"
+      },
+      transmission: "ÜBERTRAGUNG",
+      transmission_sub: {
+        bibliotheque: "Wissenschaftliche Bibliothek",
+        faq: "Häufige Fragen",
+        contact: "Kontakt"
+      },
+      decouvrir: "ENTDECKEN",
+      decouvrir_sub: {
+        how_it_works: "BloomLab: Wie funktioniert das?",
+        herbier: "Das Herbarium",
+        recettes: "10 kostenlose Rezepte"
+      },
+      apprendre: "LERNEN",
+      apprendre_sub: {
+        preparations: "Fortgeschrittene Vorbereitungen",
+        cosmetiques: "Hausgemachte Kosmetik",
+        bibliotheque: "Protokoll-Bibliothek"
+      },
+      boutique_nav: "SHOP",
+      boutique_sub: {
+        bloomlab: "BloomLab Extraktor",
+        kits: "Pflanzen-Kits",
+        abonnement: "Premium-Abonnement"
+      },
+      marque: "DIE MARKE",
+      marque_sub: {
+        manifeste: "Unser Manifest",
+        contact: "Kontakt"
+      },
+      compte: "MEIN KONTO",
+      compte_sub: {
+        espace: "Mitgliederbereich"
+      },
+      guide: "Guide",
       herbarium: "Herbarium",
-      blog: "Die Bibliothek",
+      blog: "Botanisches Journal",
       chat: "Alma Chat",
       shop: "Shop",
       account: "Konto",
-      manifesto: "Das Manifest",
-      culinary: "Kulinarische Werkstatt",
+      manifesto: "Manifest",
+      culinary: "Kulinarisches Atelier",
       cosmetics: "Kosmetik",
-      reset: "Homöostatisches Reset",
+      reset: "Systemische Protokolle",
       universes: "Die 3 Universen",
       cart: "Warenkorb"
+    },
+    home2026: {
+      hero: {
+        h1: "Erstellen Sie Ihre häusliche Pflege und Heilmittel mit Laborpräzision. Ohne Chemie, ohne Abhängigkeit, ohne Kompromisse.",
+        subtitle: "Die BloomLab wurde entwickelt, um die Extraktion der Wirkstoffe Ihrer Pflanzen in nur wenigen Stunden zu maximieren. Öle, Seren, Tinkturen: eine einzige Maschine, um alles zu kreieren.",
+        cta_primary: "Ich entdecke die BloomLab",
+        cta_secondary: "Angebote sehen"
+      },
+      problem: {
+        title: "Mit traditionellen Methoden verlieren Sie einen Großteil der Vorteile Ihrer Pflanzen.",
+        content: "Klassische Infusionen, Wasserbäder oder handwerkliche Mazeration erfassen nicht alle Wirkstoffe. Eine schlecht kontrollierte Temperatur zerstört zerbrechliche Moleküle, während eine zu kurze Zeit die Vorteile in den Pflanzenfasern gefangen lässt. Das Ergebnis: Sie verschwenden Ihre Pflanzen und Ihre Mühen.",
+        cta: "Die Lösung entdecken"
+      },
+      solution: {
+        title: "BloomLab: Präzisionsextraktion zu Hause.",
+        content: "Dank der millimetergenauen Kontrolle von Zeit, Temperatur und Agitation setzt die BloomLab alle Wirkstoffe Ihrer Pflanzen frei. Sein Tank aus Edelstahl 304, die geführten Programme und die vereinfachte Reinigung machen ihn zum unverzichtbaren Werkzeug für Ihre gesundheitliche Autonomie.",
+        cta: "Wie funktioniert es?"
+      },
+      universes: {
+        title: "Eine Maschine, drei Universen der Pflege.",
+        culinaire: {
+          title: "Kulinarisch",
+          desc: "Infusionierte Öle, aromatische Butter, gastronomische Elixiere ohne Bitterkeit.",
+          cta: "Kulinarische Rezepte ansehen"
+        },
+        cosmetique: {
+          title: "Kosmetisch",
+          desc: "Gesichtsseren, Haaröle, regenerierende Balsame, 100 % rein.",
+          cta: "Kosmetische Pflege entdecken"
+        },
+        phytotherapie: {
+          title: "Phytotherapie",
+          desc: "Urtinkturen, Mazerate, konzentrierte Extrakte für Ihre Vitalität.",
+          cta: "Protokolle erkunden"
+        }
+      },
+      comparison: {
+        title: "BloomLab vs. Wasserbad: Der Unterschied ist deutlich.",
+        headers: ["Kriterium", "Wasserbad", "BloomLab"],
+        rows: [
+          ["Thermische Kontrolle", "Unsicher (häufige Schwankungen)", "Kontrolliert (±0,5 °C)"],
+          ["Wirkstoffausbeute", "Variabel je nach Pflanze", "Durch Design optimierte Extraktion"],
+          ["Vorbereitungszeit", "Mehrere Wochen", "Einige Stunden"],
+          ["Reinigung", "Mühsam", "Schnell"],
+          ["Sicherheit", "Dämpfe, Verbrennungsgefahr", "Geschlossener Kreislauf"]
+        ]
+      },
+      testimonials: {
+        title: "Sie haben die BloomLab adoptiert.",
+        list: [
+          { name: "Clara M.", role: "Leidenschaftliche Kräuterkundlerin", text: "Ich habe endlich die Gewissheit, dass meine Ölmazerate alle Wirkstoffe meiner Pflanzen enthalten." },
+          { name: "Dr. Renaud P.", role: "Heilpraktiker", text: "Thermische Präzision ist der Schlüssel. BloomLab bringt laborreife Strenge in die Küchen meiner Patienten." },
+          { name: "Antoine L.", role: "Küchenchef", text: "Meine aromatischen Öle waren noch nie so intensiv. Ein fabelhaftes Werkzeug für die pflanzliche Gastronomie." }
+        ]
+      },
+      offers: {
+        title: "Wählen Sie Ihre Konfiguration.",
+        solo: {
+          title: "BloomLab Solo",
+          price: "239 €",
+          tag: "Herbstangebot",
+          desc: "BloomLab v2 Maschine + Digitaler Leitfaden 100 Rezepte",
+          cta: "In den Warenkorb"
+        },
+        signature: {
+          title: "Signatur-Paket",
+          price: "289 €",
+          tag: "Das vollständigste",
+          desc: "BloomLab v2 Maschine + Digitaler Leitfaden 100 Rezepte + Duo aus Tonerden",
+          cta: "Paket bestellen"
+        },
+        mention: "Zahlung in 3 Raten ohne Gebühren. Versand innerhalb von 24/48 Std."
+      },
+      guarantee_faq: {
+        title: "30 Tage lang risikofrei testen.",
+        guarantee: "Zufrieden oder Geld zurück. Ohne Fragen zu stellen.",
+        faq: [
+          {
+            q: "Ist die Anwendung kompliziert?",
+            a: "Ganz und gar nicht. Die BloomLab verfügt über vorinstallierte Programme. Wählen Sie einfach Ihre Zubereitung, fügen Sie Ihre Zutaten hinzu und lassen Sie die Maschine für Sie arbeiten."
+          },
+          {
+            q: "Was kann ich mit BloomLab kreieren?",
+            a: "Alles, was eine Extraktion erfordert: Pflegeöle, Seren, aromatische Butter, Pflanzentinkturen, wässrige Mazerate und vieles mehr."
+          },
+          {
+            q: "Warum ist es besser als ein Wasserbad?",
+            a: "Das Wasserbad ermöglicht keine stabile Temperatur, was oft die Wirkstoffe verschlechtert. BloomLab garantiert eine optimierte Extraktion und eine erhebliche Zeitersparnis."
+          }
+        ]
+      },
+      newsletter: {
+        title: "Erhalten Sie 10 kostenlose Rezepte zum Einstieg.",
+        desc: "Expertenrat, saisonales Rezept, Kundenaussage jeden Dienstag.",
+        cta: "Kostenlos anmelden"
+      }
     },
     universes: {
       title: "Eine einzige Maschine. Drei Universen souveräner Pflege im Alltag.",
@@ -3766,12 +4310,24 @@ export const translations = {
     },
     machine: {
       hero: {
-        badge: "Frankreich — Botanische Souveränität",
-        title: "BloomLab:",
-        title_accent: "Botanischer Extraktor & Infusor.",
-        description: "Entdecken Sie den präzisesten botanischen Extraktor für Ihr Zuhause. Ein Kräuter-Infusionsgerät für Öle, Butter und Tinkturen für Ihre Naturheilmittel.",
-        cta: "Mein BloomLab erwerben",
+        badge: "Expertise Frankreich — Botanische Souveränität",
+        title: "BloomLab® :",
+        title_accent: "Der botanische Präzisionsextraktor für Ihre hausgemachten Zubereitungen",
+        history_badge: "Jahrtausendealtes Erbe & Botanische Strenge",
+        history_title: "Das Natürliche darf nicht mehr ungefähr sein.",
+        history_subtitle: "Vor 5.000 Jahren wusste Asien bereits alles über die Extraktion.",
+        history_p1: "Sowohl in der Traditionellen Chinesischen Medizin als auch im Ayurveda war die Extraktion weder eine ungefähre Geste noch eine Küchengewohnheit. Es war eine kodifizierte Kunst, bei der Zeit, Feuer und Materie präzisen Regeln gehorchten. Langsam gekochte Abkochungen, sanfte Mazerationen bei schwacher Hitze, geduldig bearbeitete Harze: Die Praktiker des Orients wussten, dass eine durch Hitze verratene Pflanze ihre Intelligenz verliert.",
+        history_p2: "Dieses Wissen begründete die Kräuterkunde der Welt.",
+        description: "Setzen Sie bis zu 98% der Wirkstoffe Ihrer Pflanzen frei. Mit BloomLab erhitzen Sie Pflanzen nicht einfach nur, sondern setzen deren aktive Wirkstoffe unter laboratoriennahen Bedingungen frei. Die Temperatur wird aufs Grad genau gehalten: hoch genug, um die Extraktion zu optimieren, aber niemals über der Zersetzungsschwelle.\n\nWo traditionelle Töpfe oder Wasserbäder unkontrolliert überhitzen, bietet BloomLab ein beherrschtes thermisches Profil, das empfindliche Moleküle schützt.",
+        cta: "Mein BloomLab bestellen",
         discover: "Technologie entdecken"
+      },
+      heritage: {
+        badge: "Ursprung & Botanische Weisheit",
+        title: "Ein Erbe der Weisheit für eine moderne Welt",
+        subtitle: "Die asiatischen Ursprünge der Präzisionsextraktion",
+        text: "BloomLab ist keine westliche Erfindung. Sie ist die moderne Antwort auf ein jahrtausendealtes Bedürfnis, das im Herzen der asiatischen botanischen Traditionen entstand. Über Jahrhunderte suchten asiatische Kräutermeister nach einem Weg, die vollkommene Essenz ihrer Pflanzen zu extrahieren, ohne sie zu verbrennen oder zu verschwenden. BloomLab ist die Vollendung dieser Suche: ein Präzisionswerkzeug, das uralte Weisheit mit der Technologie des 21. Jahrhunderts vereint. Zunächst von asiatischen Experten geschätzt, erreicht sie nun Europa, um jedem die Freiheit zu schenken, eigene wirksame Heil- und Pflegeelixiere herzustellen.",
+        quote: "Extrahieren ohne Verbrennen, Entfalten ohne Denaturieren: Die Verbindung asiatischer Kräutertradition mit moderner Thermoregulation."
       },
       details: {
         badge: "Das Instrument",
@@ -3881,7 +4437,25 @@ export const translations = {
         description: "Das BloomLab ist ab sofort verfügbar, um Sie auf dem Weg zu einer wiedergefundenen Gesundheitssouveränität zu begleiten.",
         button: "Meine Maschine bestellen",
         guide: "Leitfaden ansehen"
-      }
+      },
+      faq: [
+        {
+          q: "Benötigt man besondere Kenntnisse in Kräuterkunde für den BloomLab?",
+          a: "Absolut nicht. BloomLab führt Sie Schritt für Schritt durch jedes Protokoll mit exakten Temperatur- und Lösungsmittelangaben."
+        },
+        {
+          q: "Warum ist eine Temperaturgenauigkeit von ±0,5°C unverzichtbar?",
+          a: "Pflanzliche Wirkstoffe sind hitzeempfindlich. Eine exakte thermische Kontrolle schützt das Totum vor Hitzeschäden."
+        },
+        {
+          q: "Wie wird das Gerät gereinigt?",
+          a: "Der Edelstahlbehälter und der Filterkorb lassen sich in weniger als zwei Minuten mit warmem Wasser und Seife reinigen."
+        },
+        {
+          q: "Wie lange gilt die Garantie für den BloomLab?",
+          a: "Das Gerät verfügt über eine 1-jährige Herstellergarantie (Teile und Arbeitsleistung) mit europäischem Kundenservice."
+        }
+      ]
     },
     alma: {
       online: "Online",
@@ -4042,7 +4616,7 @@ export const translations = {
       title_accent: "\"Engineering im Dienste des Lebens.\"",
       subtitle: "Protokoll zur tiefen Regulierung durch Pflanzen",
       quote: "Regulierungssysteme zurücksetzen, nicht 'nur' entgiften.",
-      intro_editorial: "Der Bloom Homeostatic Reset ist eine 90-tägige botanische Reise, die darauf ausgelegt ist, Ihre natürlichen Funktionen sanft zu unterstützen und eine nachhaltige Wellness-Routine zu etablieren. Phase für Phase lädt er Sie ein, sich um Ihre Ausscheidungswege und Verdauung zu kümmern, Gefühle von Leichtigkeit, körperlichem Wohlbefinden und Vitalität wiederzuentdecken und dabei die eigenen Rhythmen Ihres Organismus zu respektieren.\n\nGeleitet von unserer botanischen Ingenieurskunst und der Chronobiologie der Organe durchlaufen Sie einen strukturierten Pfad: Öffnung der Emunktorien, Phasen der Drainage und Verdauungsunterstützung, Zeiten der inneren Reinigung im Sinne des Empfindens (Klarheit, Energie, Schlafqualität), dann Stabilisierung und Stärkung der Ressourcen, unterbrochen von integrativen Pausen, in denen Sie Ihren Körper die Veränderungen integrieren lassen.\n\nDieses Protokoll ist Teil eines globalen Lebensstil- und Wohlbefindensansatzes und ersetzt keine ärztliche Beratung oder Behandlung; es bietet einen botanischen Rahmen, um besser auf Ihr Terrain zu hören und Ihre täglichen Regulationsgefühle zu unterstützen.",
+      intro_editorial: "Der Bloom Systemic Protocols ist eine 90-tägige botanische Reise, die darauf ausgelegt ist, Ihre natürlichen Funktionen sanft zu unterstützen und eine nachhaltige Wellness-Routine zu etablieren. Phase für Phase lädt er Sie ein, sich um Ihre Ausscheidungswege und Verdauung zu kümmern, Gefühle von Leichtigkeit, körperlichem Wohlbefinden und Vitalität wiederzuentdecken und dabei die eigenen Rhythmen Ihres Organismus zu respektieren.\n\nGeleitet von unserer botanischen Ingenieurskunst und der Chronobiologie der Organe durchlaufen Sie einen strukturierten Pfad: Öffnung der Emunktorien, Phasen der Drainage und Verdauungsunterstützung, Zeiten der inneren Reinigung im Sinne des Empfindens (Klarheit, Energie, Schlafqualität), dann Stabilisierung und Stärkung der Ressourcen, unterbrochen von integrativen Pausen, in denen Sie Ihren Körper die Veränderungen integrieren lassen.\n\nDieses Protokoll ist Teil eines globalen Lebensstil- und Wohlbefindensansatzes und ersetzt keine ärztliche Beratung oder Behandlung; es bietet einen botanischen Rahmen, um besser auf Ihr Terrain zu hören und Ihre täglichen Regulationsgefühle zu unterstützen.",
       journey: {
         subtitle: "Eine 90-Tage-Reise in 5 Schritten",
         text: "Der Homöostatische Reset entfaltet sich in aufeinanderfolgenden Phasen, jede mit einer präzisen Absicht und gezielten Pflanzen:",

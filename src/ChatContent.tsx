@@ -310,7 +310,7 @@ export default function ChatContent({
                 <p className="text-xl font-bold mb-4">{t.solution_title}</p>
                 <button 
                   onClick={() => onNavigate('phytotherapie-reset')}
-                  className="bg-botanik-orange text-white px-8 py-4 rounded-xl font-bold text-sm shadow-lg shadow-botanik-orange/20 hover:bg-botanik-orange/90 transition-all hover:-translate-y-1 active:translate-y-0"
+                  className="bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white px-8 py-4 rounded-xl font-bold text-sm shadow-lg shadow-black/10 transition-all hover:-translate-y-0.5 cursor-pointer"
                 >
                   {t.discover_reset}
                 </button>
@@ -413,7 +413,7 @@ export default function ChatContent({
             {messages.map((msg) => (
               <motion.div 
                 key={msg.id}
-                ref={el => messageRefs.current[msg.id] = el}
+                ref={el => { if (el) messageRefs.current[msg.id] = el; }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -489,7 +489,7 @@ export default function ChatContent({
             <button 
               type="submit"
               disabled={!inputText.trim() || isTyping}
-              className="bg-botanik-green text-white p-4 rounded-2xl hover:bg-botanik-orange transition-all disabled:opacity-50 disabled:hover:bg-botanik-green shadow-lg shadow-botanik-green/10"
+              className="bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white p-4 rounded-2xl transition-all disabled:opacity-50 disabled:hover:bg-[#0F261E] shadow-lg shadow-black/10 cursor-pointer"
             >
               <Send className="w-6 h-6" />
             </button>

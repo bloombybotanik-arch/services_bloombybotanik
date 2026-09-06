@@ -109,7 +109,7 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
                 </button>
                 <button 
                   onClick={() => onNavigate('boutique')}
-                  className="px-10 py-5 bg-white/10 text-white rounded-2xl font-bold hover:bg-white/20 transition-all border border-white/10"
+                  className="px-10 py-5 bg-[#0F261E] text-white rounded-2xl font-bold hover:bg-[#1C3F34] transition-all border border-white/20"
                 >
                   {lang === 'fr' ? 'Voir la Boutique' : 'Visit Shop'}
                 </button>

@@ -3,7 +3,7 @@ import { ArrowLeft, Shield, Scale, FileText } from 'lucide-react';
 import { translations, Language } from './translations';
 
 interface LegalPagesProps {
-  type: 'cgv' | 'cgu' | 'privacy' | 'mentions' | 'withdrawal';
+  type: 'cgv' | 'cgu' | 'privacy' | 'mentions' | 'withdrawal' | 'terms';
   onBack: () => void;
   lang?: Language;
 }
@@ -17,6 +17,7 @@ export default function LegalPages({ type, onBack, lang = 'fr' }: LegalPagesProp
       case 'cgv': return Scale;
       case 'privacy': return Shield;
       case 'withdrawal': return ArrowLeft;
+      case 'terms': return Shield;
       default: return FileText;
     }
   };

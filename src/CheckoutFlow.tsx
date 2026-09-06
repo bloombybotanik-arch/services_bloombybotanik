@@ -91,7 +91,7 @@ function StripePaymentForm({ finalTotal, onPaymentSuccess, cart, shippingMethod,
       <button 
         type="submit" 
         disabled={!stripe || processing}
-        className="w-full bg-[#1B3022] text-white px-10 py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-[#F97316] transition-all shadow-xl shadow-[#1B3022]/10 disabled:opacity-50"
+        className="w-full bg-[#0F261E] text-white px-10 py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-[#D97706] transition-all shadow-xl shadow-[#0F261E]/10 disabled:opacity-50"
       >
         {processing ? t.actions.processing : t.actions.pay} <ChevronRight className="w-5 h-5" />
       </button>
@@ -192,7 +192,7 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-[#1B3022] text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-3">
+          <button className="bg-[#0F261E] text-white hover:bg-[#1C3F34] px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition-colors">
             <Download className="w-5 h-5" /> {t.confirmation.download_invoice}
           </button>
           <button onClick={onCancel} className="border border-[#1B3022]/10 px-8 py-4 rounded-xl font-bold hover:bg-[#1B3022]/5 transition-colors">
@@ -355,7 +355,7 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
               <button 
                 onClick={handleNext}
                 disabled={isProcessing}
-                className="bg-[#1B3022] text-white px-10 py-4 rounded-xl font-bold flex items-center gap-3 hover:bg-[#F97316] transition-all shadow-xl shadow-[#1B3022]/10 disabled:opacity-50"
+                className="bg-[#0F261E] text-white px-10 py-4 rounded-xl font-bold flex items-center gap-3 hover:bg-[#D97706] transition-all shadow-xl shadow-[#0F261E]/10 disabled:opacity-50"
               >
                 {t.actions.continue} <ChevronRight className="w-5 h-5" />
               </button>
@@ -404,7 +404,7 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
 
 export default function CheckoutFlow(props: CheckoutFlowProps) {
   return (
-    <PayPalScriptProvider options={{ "client-id": import.meta.env.VITE_PAYPAL_CLIENT_ID || "" }}>
+    <PayPalScriptProvider options={{ clientId: import.meta.env.VITE_PAYPAL_CLIENT_ID || "" }}>
       <Elements stripe={stripePromise}>
         <CheckoutFlowContent {...props} />
       </Elements>

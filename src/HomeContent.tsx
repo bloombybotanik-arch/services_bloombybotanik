@@ -1,37 +1,17 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
-import { Sparkles, Leaf, ShieldCheck, Award, User, ChevronRight, FlaskConical, BookOpen, ShoppingBag, ChefHat, Star, Wind, Waves, Moon, Utensils, X, ArrowRight, Activity, Settings } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Sparkles, Leaf, ShieldCheck, Award, User, ChevronRight, FlaskConical, BookOpen, ShoppingBag, ChefHat, Star, Wind, Waves, Moon, Utensils, X, ArrowRight, Activity, Settings, Check, HelpCircle, Mail } from 'lucide-react';
 import bloomImg from './assets/images/bloomlab_main_1784887530345.jpeg';
-import { resetDetailsData, ResetSectionDetail } from './data/resetDetails';
 import { motion, AnimatePresence } from 'motion/react';
-import { VIEW_PATHS } from './App';
+import { VIEW_PATHS } from './types';
 
 import img1 from './assets/images/Gemini_Generated_Image_r0bctrr0bctrr0bc.png';
-import img2 from './assets/images/family_care_cleaned_1786616776823.jpg';
 import img3 from './assets/images/lab_detail_cleaned_1786616788618.jpg';
-import img4 from './assets/images/herbs_close_up_cleaned_1786616800877.jpg';
-import img5 from './assets/images/lifestyle_botanik_cleaned_1786616810137.jpg';
 import img6 from './assets/images/extraction_precision_cleaned_1786616821723.jpg';
-import img7 from './assets/images/natural_remedies_cleaned_1786616831671.jpg';
 import img8 from './assets/images/8.png';
 import img9 from './assets/images/home_lab_vibe_cleaned_1786616854146.jpg';
 
-import carImg1 from './assets/images/1.png';
-import carImg2 from './assets/images/2.png';
-import carImg8 from './assets/images/8.png';
-import carImg9 from './assets/images/9.png';
-
-import seveImg from './assets/images/product_seve_fondamentale.jpg';
-import nuitImg from './assets/images/product_nuit_profonde.jpg';
-import digestionImg from './assets/images/product_digestion.jpeg';
-import articulaireImg from './assets/images/product_feu_articulaire.jpg';
-import resetImg from './assets/images/product_duo_argiles.jpg';
-import trioImg from './assets/images/product_trio_pouches.jpg';
-
 import { translations, Language } from './translations';
 import { OptimizedImage } from './components/OptimizedImage';
-
-const ResetDetailModal = lazy(() => import('./components/ResetDetailModal').then(m => ({ default: m.ResetDetailModal })));
-
 
 interface HomeContentProps {
   onNavigate: (view: any, id?: string) => void;
@@ -39,870 +19,441 @@ interface HomeContentProps {
 }
 
 export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
-  const [selectedResetDetail, setSelectedResetDetail] = useState<ResetSectionDetail | null>(null);
-  const [guideImageIndex, setGuideImageIndex] = useState(0);
-  const guideImages = [carImg1, carImg2, carImg8, carImg9];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setGuideImageIndex((prev) => (prev + 1) % guideImages.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
-
   const t = translations[lang];
+  const h = t.home2026;
   const isFR = lang === 'fr';
 
-  // Promotion Logic (Aug 2026 -> Jan 2027)
-  const now = new Date();
-  const isPromoActive = now >= new Date('2026-08-01') && now < new Date('2027-01-01');
-  const bloomLabPrice = isPromoActive ? 239.00 : 289.00;
-  const bundlePrice = 59.00;
-
   return (
-    <div className="max-w-[1200px] mx-auto px-6 py-12 lg:py-24 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-      {/* SEO Injection handled by SEOMetadata */}
+    <div className="max-w-[1200px] mx-auto px-6 py-12 lg:py-24 animate-in fade-in slide-in-from-bottom-4 duration-1000 overflow-x-hidden">
       
-      <AnimatePresence>
-        {selectedResetDetail && (
-          <Suspense fallback={null}>
-            <ResetDetailModal 
-              detail={selectedResetDetail} 
-              onClose={() => setSelectedResetDetail(null)} 
-              onNavigate={onNavigate}
-              lang={lang}
-            />
-          </Suspense>
-        )}
-      </AnimatePresence>
-
-      {/* INTRODUCTION - BRAND IDENTITY */}
-      <section className="mb-24 md:mb-32 text-center max-w-4xl mx-auto px-4">
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-botanik-green/5 rounded-full mb-8 border border-botanik-green/10">
+      {/* 1. HERO - BENEFIT ORIENTED */}
+      <section className="mb-24 md:mb-32 text-center max-w-4xl mx-auto px-4 relative">
+        <div className="absolute -top-24 -left-24 w-64 h-64 bg-botanik-orange/5 rounded-full blur-3xl -z-10" />
+        <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-botanik-green/5 rounded-full blur-3xl -z-10" />
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="inline-flex items-center gap-2 px-4 py-2 bg-botanik-green/5 rounded-full mb-8 border border-botanik-green/10"
+        >
           <Sparkles className="w-4 h-4 text-botanik-orange" />
           <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-botanik-green/60">
-            {isFR ? "L'Expertise de l'Infusion" : "The Expertise of Infusion"}
+            {isFR ? "L'Expertise de l'Extraction 2026" : "2026 Extraction Expertise"}
           </span>
-        </div>
-        <h2 className="text-3xl md:text-5xl font-extrabold text-botanik-green mb-8 leading-tight tracking-tight">
-          {isFR ? "Faire fleurir toutes vos envies de bien-être végétal." : "Let all your plant wellness desires bloom."}
-        </h2>
-        <div className="h-px w-24 bg-botanik-orange/20 mx-auto mb-10" />
-        <p className="text-lg md:text-xl text-botanik-green/80 font-light leading-relaxed max-w-2xl mx-auto">
-          {isFR 
-            ? "Bienvenue dans l'ère de la phytothérapie de précision. Bloom by BotaniK est la référence de l'infusion et de l'extraction botanique à domicile, alliant sagesses anciennes et technologie moderne pour votre souveraineté sanitaire."
-            : "Welcome to the era of precision phytotherapy. Bloom by BotaniK is the reference for home infusion and botanical extraction, combining ancient wisdom and modern technology for your health sovereignty."
-          }
-        </p>
+        </motion.div>
+        
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-4xl md:text-6xl font-extrabold text-botanik-green mb-8 leading-[1.1] tracking-tight"
+        >
+          {h.hero.h1}
+        </motion.h1>
+        
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-lg md:text-xl text-botanik-green/80 font-light leading-relaxed max-w-2xl mx-auto mb-10"
+        >
+          {h.hero.subtitle}
+        </motion.p>
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <button 
+            onClick={() => onNavigate('machine')}
+            className="w-full sm:w-auto px-8 py-4 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-2xl font-bold transition-all flex items-center justify-center gap-2 shadow-xl shadow-black/10 cursor-pointer"
+          >
+            {h.hero.cta_primary} <ArrowRight className="w-4 h-4" />
+          </button>
+          <button 
+            onClick={() => onNavigate('boutique')}
+            className="w-full sm:w-auto px-8 py-4 bg-white text-botanik-green border border-botanik-green/10 rounded-2xl font-bold hover:bg-botanik-green/5 transition-all flex items-center justify-center gap-2"
+          >
+            {h.hero.cta_secondary}
+          </button>
+        </motion.div>
       </section>
 
-      {/* OFFRES DE LA RENTRÉE 2026 */}
+      {/* 2. PROBLEM - THE WASTE */}
       <section className="mb-24 md:mb-32">
-        <div className="bg-botanik-green/5 rounded-[40px] md:rounded-[60px] p-6 md:p-12 border border-botanik-green/10 relative overflow-hidden group">
+        <div className="bg-botanik-orange/5 rounded-[40px] md:rounded-[60px] p-8 md:p-16 border border-botanik-orange/10 relative overflow-hidden">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative order-2 lg:order-1">
+              <div className="rounded-[32px] overflow-hidden shadow-2xl">
+                <OptimizedImage 
+                  src={img9} 
+                  className="w-full aspect-[4/3] object-cover" 
+                  alt="Traditional infusion vs Precision" 
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-white rounded-3xl shadow-xl flex items-center justify-center p-6 border border-botanik-orange/10">
+                <X className="w-12 h-12 text-botanik-orange" />
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6 leading-tight">
+                {h.problem.title}
+              </h2>
+              <p className="text-lg text-botanik-green/70 mb-8 font-light leading-relaxed">
+                {h.problem.content}
+              </p>
+              <button 
+                onClick={() => {
+                  const el = document.getElementById('solution-section');
+                  el?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="text-botanik-orange font-bold flex items-center gap-2 hover:gap-3 transition-all"
+              >
+                {h.problem.cta} <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. SOLUTION - THE PRECISION */}
+      <section id="solution-section" className="mb-24 md:mb-32">
+        <div className="bg-botanik-green rounded-[40px] md:rounded-[60px] p-8 md:p-16 text-white relative overflow-hidden">
           <div className="absolute inset-0 z-0">
             <OptimizedImage 
-              src={img2} 
-              className="w-full h-full object-cover opacity-[0.08]" 
-              alt="Extracteur Botanique BloomLab" 
+              src={img3} 
+              className="w-full h-full object-cover opacity-10" 
+              alt="BloomLab detail" 
             />
           </div>
-          <div className="relative z-10">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-              <div className="max-w-xl">
-                <span className="inline-block px-3 py-1 bg-botanik-orange text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">
-                  {lang === 'fr' ? "EXPERTISE FRANCE — EXTRACTION BOTANIQUE DE PRÉCISION" : "FRENCH EXPERTISE — PRECISION BOTANICAL EXTRACTION"}
-                </span>
-                <h1 className="text-3xl md:text-5xl font-extrabold text-botanik-green mb-4 leading-[1.05] tracking-tight">
-                  {(t.seo.home as any).h1}
-                </h1>
-                <p className="text-lg text-botanik-green/70 mb-8 font-light leading-relaxed">
-                  {(t.seo.home as any).intro}
-                </p>
-                <div className="flex items-center gap-4">
-                  <button 
-                    onClick={() => onNavigate('boutique')}
-                    className="px-8 py-4 bg-botanik-green text-white rounded-2xl font-bold hover:bg-botanik-orange transition-all flex items-center gap-2 shadow-xl shadow-botanik-green/10"
-                    aria-label={lang === 'fr' ? 'Découvrir la Boutique BloomLab' : 'Discover BloomLab Shop'}
-                  >
-                    {lang === 'fr' ? "Voir toutes les offres" : "View all offers"} <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-              
-              <div className="w-full lg:w-[650px] relative">
-                <div 
-                id="product-scroll-container"
-                className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide scroll-smooth"
-                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-              >
-                  {[
-                    { id: 'bloomlab', name: 'BloomLab®', price: 239, oldPrice: 289, img: bloomImg, badge: 'Expertise France', promoCode: 'Rentrée 2026' },
-                    { id: 'kit-starter', name: 'Kit Sève Fondamentale', price: 12.9, img: seveImg, badge: 'Best Seller' },
-                    { id: 'bundle-apothicaire', name: "L'Herbier Complet", price: 59, oldPrice: 87, img: trioImg, badge: 'Pack Famille' },
-                    { id: 'kit-nuit', name: 'Remède Nuit Profonde', price: 9.9, img: nuitImg, badge: 'Sommeil' },
-                    { id: 'kit-digestion', name: 'Confort Digestif', price: 9.9, img: digestionImg, badge: 'Ventre Plat' },
-                    { id: 'kit-articulaire', name: 'Feu Articulaire', price: 9.9, img: articulaireImg, badge: 'Mobilité' },
-                    { id: 'kit-reset', name: 'Duo RESET Renaissance', price: 49, oldPrice: 65, img: resetImg, badge: 'Détox' },
-                  ].map((product, idx) => (
-                    <motion.article 
-                      key={idx}
-                      whileHover={{ y: -5 }}
-                      className="min-w-[240px] md:min-w-[340px] bg-white rounded-[40px] p-6 shadow-sm border border-botanik-green/5 snap-center flex flex-col group transition-all hover:shadow-xl hover:shadow-botanik-green/5"
-                    >
-                      <div className="relative aspect-square rounded-[32px] overflow-hidden mb-6 bg-[#F9F9F7]">
-                        <OptimizedImage 
-                          src={product.img} 
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                          alt={product.name}
-                        />
-                        <div className="absolute top-4 left-4 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-xl text-[10px] font-black uppercase tracking-widest text-botanik-green">
-                          {product.badge}
-                        </div>
-                      </div>
-                      <h3 className="font-bold text-botanik-green mb-1 text-lg">{product.name}</h3>
-                      <div className="flex items-center gap-3 mb-2 whitespace-nowrap">
-                        <span className="text-2xl font-bold text-botanik-orange">{product.price.toLocaleString('fr-FR', { minimumFractionDigits: 2 })}&nbsp;€</span>
-                        {product.oldPrice && (
-                          <span className="text-sm text-botanik-green/30 line-through">{product.oldPrice}&nbsp;€</span>
-                        )}
-                      </div>
-                      {(product as any).promoCode && (
-                        <div className="text-[#F97316] text-[10px] font-black uppercase tracking-[0.2em] mb-4">
-                          code "{(product as any).promoCode}"
-                        </div>
-                      )}
-                      <div className="mt-auto">
-                        <button 
-                          onClick={() => onNavigate('product-detail', product.id)}
-                          className="w-full py-4 bg-botanik-green text-white text-xs font-bold rounded-2xl hover:bg-botanik-orange transition-colors flex items-center justify-center gap-2"
-                          aria-label={`${lang === 'fr' ? 'Découvrir' : 'Discover'} ${product.name}`}
-                        >
-                          {lang === 'fr' ? "Découvrir" : "Discover"} <ChevronRight className="w-4 h-4" />
-                        </button>
-                      </div>
-                    </motion.article>
-                  ))}
-                </div>
-                
-                {/* Scroll Indicator Arrow */}
-                <div className="absolute -right-4 top-1/2 -translate-y-1/2 z-20 flex md:flex items-center justify-center">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg border border-botanik-green/5 flex items-center justify-center text-botanik-orange animate-bounce-horizontal">
-                    <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* WHY BLOOMLAB - BENEFITS SECTION (VegMilk Inspired) */}
-      <section className="mb-24 md:mb-32">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[
-            {
-              title: lang === 'fr' ? "Efficacité Totum" : "Totum Efficacy",
-              desc: lang === 'fr' ? "Extraction basse température préservant 100% des principes actifs." : "Low temperature extraction preserving 100% of active principles.",
-              icon: Sparkles,
-              color: "text-botanik-orange"
-            },
-            {
-              title: lang === 'fr' ? "Souveraineté" : "Sovereignty",
-              desc: lang === 'fr' ? "Prenez le contrôle de votre pharmacie naturelle à la maison." : "Take control of your natural pharmacy at home.",
-              icon: ShieldCheck,
-              color: "text-[#334155]"
-            },
-            {
-              title: lang === 'fr' ? "Économique" : "Economic",
-              desc: lang === 'fr' ? "Réalisez des centaines de remèdes pour le prix d'un seul soin du commerce." : "Make hundreds of remedies for the price of a single store-bought treatment.",
-              icon: Activity,
-              color: "text-botanik-orange"
-            },
-            {
-              title: lang === 'fr' ? "Zéro Déchet" : "Zero Waste",
-              desc: lang === 'fr' ? "Réduisez vos emballages en créant vos propres cosmétiques et soins." : "Reduce packaging by creating your own cosmetics and care.",
-              icon: Leaf,
-              color: "text-[#334155]"
-            }
-          ].map((benefit, idx) => (
-            <div key={idx} className="bg-white p-8 rounded-[32px] border border-botanik-green/5 shadow-sm hover:shadow-md transition-all group text-center">
-              <div className={`w-14 h-14 mx-auto rounded-2xl bg-botanik-green/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                <benefit.icon className={`w-7 h-7 ${benefit.color}`} />
-              </div>
-              <h3 className="text-xl font-bold text-botanik-green mb-3">{benefit.title}</h3>
-              <p className="text-sm text-botanik-green/60 leading-relaxed font-light">
-                {benefit.desc}
+          <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                {h.solution.title}
+              </h2>
+              <p className="text-lg text-white/70 mb-8 font-light leading-relaxed">
+                {h.solution.content}
               </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* PAGE 1 — GUIDE D'EXTRACTION */}
-      <section id="extraction-guide" className="mb-24 md:mb-32 scroll-mt-24">
-        <div className="bg-white rounded-[40px] md:rounded-[60px] p-8 md:p-16 border border-botanik-green/5 shadow-2xl relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-botanik-orange/5 rounded-bl-full -z-0" />
-          <div className="relative z-10">
-            <div className="flex flex-col gap-2 mb-12">
-              <span className="text-[10px] font-black text-botanik-orange uppercase tracking-[0.2em] block">
-                {t.home.extractionGuide.badge}
-              </span>
-              <span className="text-[10px] font-bold text-botanik-green/40 uppercase tracking-[0.3em] block">
-                introduction - Onboarding
-              </span>
-            </div>
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6 leading-tight">
-                  L'Extraction Botanique : <span className="text-botanik-orange">Le Guide Expert</span>
-                </h2>
-                <p className="text-lg md:text-xl text-botanik-green/60 mb-10 leading-relaxed font-light">
-                  L’infusion botanique est une méthode d’extraction de précision. Découvrez comment l'extracteur botanique BloomLab® permet de maîtriser la température, le temps et le solvant pour vos remèdes naturels.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <button 
-                    onClick={() => onNavigate('boutique')}
-                    className="px-8 py-4 bg-botanik-green text-white rounded-2xl font-bold hover:bg-botanik-orange transition-all shadow-xl shadow-botanik-green/10 flex items-center gap-2"
-                  >
-                    {t.home.extractionGuide.cta_buy} <ArrowRight className="w-4 h-4" />
-                  </button>
+              <div className="grid grid-cols-2 gap-6 mb-10">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
+                    <Check className="w-4 h-4 text-botanik-orange" />
+                  </div>
+                  <span className="text-sm font-medium text-white/90">{isFR ? "Inox 304 Certifié" : "Certified 304 Stainless"}</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
+                    <Check className="w-4 h-4 text-botanik-orange" />
+                  </div>
+                  <span className="text-sm font-medium text-white/90">{isFR ? "Précision ±0,5°C" : "±0.5°C Precision"}</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
+                    <Check className="w-4 h-4 text-botanik-orange" />
+                  </div>
+                  <span className="text-sm font-medium text-white/90">{isFR ? "Programmes Guidés" : "Guided Programs"}</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
+                    <Check className="w-4 h-4 text-botanik-orange" />
+                  </div>
+                  <span className="text-sm font-medium text-white/90">{isFR ? "Auto-Nettoyage" : "Self-Cleaning"}</span>
                 </div>
               </div>
-              <div className="relative h-[350px] md:h-[550px] rounded-[40px] overflow-hidden shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] bg-botanik-green/10">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={guideImageIndex}
-                    initial={{ opacity: 0, scale: 1.1 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 1 }}
-                    className="absolute inset-0"
-                  >
-                    <OptimizedImage 
-                      src={guideImages[guideImageIndex]} 
-                      className="w-full h-full object-cover" 
-                      alt="Guide de l'extraction" 
-                    />
-                  </motion.div>
-                </AnimatePresence>
-                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-                  {guideImages.map((_, i) => (
-                    <div 
-                      key={i} 
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${i === guideImageIndex ? 'bg-white w-6' : 'bg-white/30'}`} 
-                    />
-                  ))}
-                </div>
+              <button 
+                onClick={() => onNavigate('guide')}
+                className="px-8 py-4 bg-white text-botanik-green rounded-2xl font-bold hover:bg-botanik-orange hover:text-white transition-all shadow-xl shadow-black/10 flex items-center gap-2"
+              >
+                {h.solution.cta} <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+            <div className="relative">
+              <div className="rounded-[40px] overflow-hidden shadow-2xl border-4 border-white/10">
+                <OptimizedImage 
+                  src={bloomImg} 
+                  className="w-full aspect-square object-cover" 
+                  alt="BloomLab Machine" 
+                />
+              </div>
+              <div className="absolute -top-6 -left-6 bg-botanik-orange text-white px-6 py-3 rounded-2xl font-bold shadow-xl rotate-[-5deg]">
+                98% {isFR ? "d'actifs préservés" : "active principles preserved"}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* UNIVERSES SECTION - Improved for Sitelink Optimization */}
+      {/* 4. UNIVERSES - THE 3 DIMENSIONS */}
       <section className="mb-24 md:mb-32">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6">
-            {isFR ? "Explorez l'Univers Bloom" : "Explore the Bloom Universe"}
+            {h.universes.title}
           </h2>
-          <p className="text-lg text-botanik-green/60 font-light leading-relaxed">
-            {isFR 
-              ? "De l'instrument de précision aux rituels de soins quotidiens, découvrez les piliers de la souveraineté sanitaire Bloom by BotaniK."
-              : "From precision instruments to daily care rituals, discover the pillars of Bloom by BotaniK health sovereignty."}
-          </p>
+          <div className="h-px w-24 bg-botanik-orange/20 mx-auto" />
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
-              id: 'machine',
-              title: isFR ? "BloomLab®" : "BloomLab®",
-              desc: isFR ? "L'instrument de précision pour libérer 98% du Totum de vos plantes." : "The precision instrument to release 98% of your plants' Totum.",
-              cta: isFR ? "Découvrir BloomLab" : "Discover BloomLab",
-              icon: Settings,
-              image: bloomImg,
-              color: "bg-[#F7FBF7]"
-            },
-            {
-              id: 'boutique',
-              title: isFR ? "Boutique" : "Shop",
-              desc: isFR ? "Préparations botaniques, mélanges de plantes et kits de rentrée 2026." : "Botanical preparations, plant blends, and 2026 back-to-school kits.",
-              cta: isFR ? "Découvrir les produits" : "Discover products",
-              icon: ShoppingBag,
-              image: trioImg,
-              color: "bg-[#FFF9F2]"
-            },
-            {
-              id: 'cosmetiques',
-              title: isFR ? "Duo Argiles" : "Clay Duo",
-              desc: isFR ? "Le rituel minéral de détoxification et de reset profond du terrain." : "The mineral ritual for detoxification and deep terrain reset.",
-              cta: isFR ? "Découvrir le rituel" : "Discover the ritual",
-              icon: Sparkles,
-              image: resetImg,
-              color: "bg-[#F1F5F1]"
-            },
-            {
-              id: 'recettes',
-              title: isFR ? "Recettes" : "Recipes",
-              desc: isFR ? "Explorez nos fiches de précision pour vos miels, huiles et remèdes." : "Explore our precision sheets for your honeys, oils, and remedies.",
-              cta: isFR ? "Explorer les recettes" : "Explore recipes",
+              id: 'culinaire',
+              title: h.universes.culinaire.title,
+              desc: h.universes.culinaire.desc,
+              cta: h.universes.culinaire.cta,
               icon: ChefHat,
               image: img1,
               color: "bg-[#F9F9F7]"
             },
             {
-              id: 'guide',
-              title: isFR ? "L'Infusion" : "Infusion",
-              desc: isFR ? "Comprendre la science de l'extraction et maîtriser l'infusion botanique." : "Understand the science of extraction and master botanical infusion.",
-              cta: isFR ? "Comprendre l'infusion" : "Understand infusion",
-              icon: Activity,
-              image: img9,
+              id: 'cosmetique',
+              title: h.universes.cosmetique.title,
+              desc: h.universes.cosmetique.desc,
+              cta: h.universes.cosmetique.cta,
+              icon: Sparkles,
+              image: img6,
               color: "bg-[#F7FBF7]"
             },
             {
-              id: 'herbier',
-              title: isFR ? "L'Herbier" : "Herbarium",
-              desc: isFR ? "Guide rigoureux des plantes médicinales et de leurs usages documentés." : "Rigorous guide to medicinal plants and their documented uses.",
-              cta: isFR ? "Découvrir l'Herbier" : "Discover the Herbarium",
-              icon: BookOpen,
-              image: img4,
+              id: 'phytotherapie',
+              title: h.universes.phytotherapie.title,
+              desc: h.universes.phytotherapie.desc,
+              cta: h.universes.phytotherapie.cta,
+              icon: FlaskConical,
+              image: img3,
               color: "bg-[#FFF9F2]"
             }
-          ].map((pillar) => (
-            <div 
-              key={pillar.id}
-              className={`group relative ${pillar.color} rounded-[40px] p-8 border border-botanik-green/5 hover:border-botanik-green transition-all duration-500 overflow-hidden flex flex-col h-full`}
+          ].map((universe) => (
+            <motion.div 
+              key={universe.id}
+              whileHover={{ y: -8 }}
+              className={`${universe.color} rounded-[40px] p-8 border border-botanik-green/5 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col h-full`}
             >
               <div className="relative h-48 mb-8 rounded-3xl overflow-hidden shadow-sm">
                 <OptimizedImage 
-                  src={pillar.image} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
-                  alt={pillar.title} 
+                  src={universe.image} 
+                  className="w-full h-full object-cover transition-transform duration-700" 
+                  alt={universe.title} 
                 />
                 <div className="absolute top-4 left-4">
                   <div className="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg">
-                    <pillar.icon className="w-5 h-5 text-botanik-green" />
+                    <universe.icon className="w-5 h-5 text-botanik-green" />
                   </div>
                 </div>
               </div>
               
-              <h3 className="text-2xl font-bold text-botanik-green mb-4">{pillar.title}</h3>
+              <h3 className="text-2xl font-bold text-botanik-green mb-4">{universe.title}</h3>
               <p className="text-botanik-green/60 mb-8 font-light leading-relaxed flex-grow">
-                {pillar.desc}
+                {universe.desc}
               </p>
               
-              <a 
-                href={VIEW_PATHS[pillar.id] || '#'}
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate(pillar.id as any);
+              <button 
+                onClick={() => {
+                  const viewMap: any = { culinaire: 'culinaire', cosmetique: 'cosmetiques', phytotherapie: 'phytotherapie-reset' };
+                  onNavigate(viewMap[universe.id]);
                 }}
-                className="w-full py-4 bg-botanik-green text-white rounded-2xl font-bold hover:bg-botanik-orange transition-all shadow-lg shadow-botanik-green/10 flex items-center justify-center gap-2 group/btn"
+                className="w-full py-4 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-2xl font-bold transition-all flex items-center justify-center gap-2 group cursor-pointer"
               >
-                {pillar.cta} <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-              </a>
+                {universe.cta} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* 5. COMPARISON - THE TABLE */}
+      <section className="mb-24 md:mb-32">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold text-botanik-green">
+            {h.comparison.title}
+          </h2>
+        </div>
+        
+        <div className="overflow-x-auto">
+          <table className="w-full bg-white rounded-[32px] overflow-hidden border border-botanik-green/5 shadow-xl">
+            <thead>
+              <tr className="bg-botanik-green text-white">
+                <th className="px-6 py-6 text-left font-bold">{h.comparison.headers[0]}</th>
+                <th className="px-6 py-6 text-center font-bold">{h.comparison.headers[1]}</th>
+                <th className="px-6 py-6 text-center font-bold bg-botanik-orange">{h.comparison.headers[2]}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {h.comparison.rows.map((row: string[], idx: number) => (
+                <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-botanik-green/5'}>
+                  <td className="px-6 py-6 font-bold text-botanik-green">{row[0]}</td>
+                  <td className="px-6 py-6 text-center text-botanik-green/60">{row[1]}</td>
+                  <td className="px-6 py-6 text-center text-botanik-green font-bold border-x border-botanik-orange/10">{row[2]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* 6. TESTIMONIALS - SOCIAL PROOF */}
+      <section className="mb-24 md:mb-32">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-botanik-green">
+            {h.testimonials.title}
+          </h2>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {h.testimonials.list.map((tst: any, idx: number) => (
+            <div key={idx} className="bg-white p-10 rounded-[40px] border border-botanik-green/5 shadow-sm relative group hover:shadow-xl transition-all duration-500">
+              <div className="flex gap-1 mb-6">
+                {[1, 2, 3, 4, 5].map((s) => (
+                  <Star key={s} className="w-4 h-4 fill-botanik-orange text-botanik-orange" />
+                ))}
+              </div>
+              <p className="text-lg text-botanik-green/80 italic mb-8 leading-relaxed">
+                "{tst.text}"
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-botanik-green/5 rounded-full flex items-center justify-center">
+                  <User className="w-6 h-6 text-botanik-green/40" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-botanik-green">{tst.name}</h4>
+                  <p className="text-xs text-botanik-orange font-bold uppercase tracking-widest">{tst.role}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* PAGE 1 — COMMENCER ICI */}
-      <section id="protocole" className="mb-24 md:mb-32 scroll-mt-24">
-        <div className="bg-white rounded-[40px] md:rounded-[60px] p-6 md:p-12 lg:p-16 border border-botanik-green/5 shadow-2xl mb-16 md:mb-24 overflow-hidden relative group">
-          <div className="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 bg-botanik-orange/5 rounded-bl-full -z-0" />
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center relative z-10">
-            <div className="max-w-xl">
-              <div className="flex gap-4 text-[10px] font-black text-botanik-orange uppercase tracking-[0.3em] items-center mb-8">
-                <span>{t.home.hero.intro}</span>
-                <span className="w-1 h-1 rounded-full bg-botanik-orange/20" />
-                <span>{t.home.hero.onboarding}</span>
-              </div>
-              <h1 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6 md:mb-8 leading-[1.1]">
-                {t.home.hero.title.split(':')[0].trim()} :
-                <span className="text-botanik-orange block md:inline"> {t.home.hero.title.split(':')[1].trim()}</span>
-              </h1>
-              <p className="text-base md:text-lg lg:text-xl text-botanik-green/60 leading-relaxed font-light">
-                {t.home.hero.description}
-              </p>
-            </div>
-            <div className="relative aspect-[4/5] lg:aspect-[3/4] rounded-[32px] md:rounded-[40px] overflow-hidden border-4 md:border-8 border-white shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
-              <video 
-                src="/demo_bloomlab.mp4" 
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-              />
-              <div className="absolute inset-0 ring-1 ring-inset ring-botanik-green/10 rounded-[32px] md:rounded-[40px]" />
-            </div>
-          </div>
+      {/* 7. OFFERS - THE PRICING */}
+      <section className="mb-24 md:mb-32">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6">
+            {h.offers.title}
+          </h2>
+          <p className="text-lg text-botanik-green/60 font-light italic">
+            {h.offers.mention}
+          </p>
         </div>
-
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-          <div className="bg-white p-6 md:p-12 rounded-[32px] md:rounded-[40px] border border-botanik-green/5 shadow-sm hover:shadow-xl transition-all duration-500 group">
-            <div className="w-12 h-12 bg-botanik-orange/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <Sparkles className="w-6 h-6 text-botanik-orange" />
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {/* Offer 1: Solo */}
+          <div className="bg-white rounded-[40px] p-10 border-2 border-botanik-green/5 flex flex-col group hover:border-botanik-green transition-all duration-500">
+            <div className="flex justify-between items-start mb-8">
+              <div>
+                <h3 className="text-2xl font-bold text-botanik-green mb-2">{h.offers.solo.title}</h3>
+                <span className="inline-block px-3 py-1 bg-botanik-green/5 text-botanik-green text-[10px] font-black uppercase tracking-widest rounded-full">{h.offers.solo.tag}</span>
+              </div>
+              <div className="text-3xl font-black text-botanik-green">{h.offers.solo.price}</div>
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-botanik-green mb-4">{t.home.cards.welcome.title}</h3>
-            <p className="text-sm md:text-base text-botanik-green/60 leading-relaxed">
-              {t.home.cards.welcome.description}
-            </p>
-          </div>
-
-          <div className="bg-white p-6 md:p-12 rounded-[32px] md:rounded-[40px] border border-botanik-green/5 shadow-sm hover:shadow-xl transition-all duration-500 group">
-            <div className="w-12 h-12 bg-botanik-orange/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <FlaskConical className="w-6 h-6 text-botanik-orange" />
-            </div>
-            <h3 className="text-xl md:text-2xl font-bold text-botanik-green mb-4">{t.home.cards.what_we_do.title}</h3>
-            <p className="text-sm md:text-base text-botanik-green/60 leading-relaxed">
-              {t.home.cards.what_we_do.description}
-            </p>
-          </div>
-
-          <div className="bg-white p-6 md:p-12 rounded-[32px] md:rounded-[40px] border border-botanik-green/5 shadow-sm hover:shadow-xl transition-all duration-500 group">
-            <div className="w-12 h-12 bg-botanik-orange/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <BookOpen className="w-6 h-6 text-botanik-orange" />
-            </div>
-            <h3 className="text-xl md:text-2xl font-bold text-botanik-green mb-4">{t.home.cards.in_app.title}</h3>
-            <p className="text-sm md:text-base text-botanik-green/60 leading-relaxed">
-              {t.home.cards.in_app.description}
-            </p>
-          </div>
-
-          <div className="bg-white p-6 md:p-12 rounded-[32px] md:rounded-[40px] border border-botanik-green/5 shadow-sm hover:shadow-xl transition-all duration-500 group">
-            <div className="w-12 h-12 bg-botanik-orange/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <ChevronRight className="w-6 h-6 text-botanik-orange" />
-            </div>
-            <h3 className="text-xl md:text-2xl font-bold text-botanik-green mb-4">{t.home.cards.start.title}</h3>
-            <p className="text-sm md:text-base text-botanik-green/60 leading-relaxed mb-6">
-              {t.home.cards.start.description}
+            <p className="text-botanik-green/60 mb-8 flex-grow">
+              {h.offers.solo.desc}
             </p>
             <button 
-              onClick={() => onNavigate('machine')}
-              className="flex items-center gap-2 text-botanik-orange font-bold text-sm uppercase tracking-widest hover:gap-3 transition-all"
+              onClick={() => onNavigate('product-detail', 'bloomlab')}
+              className="w-full py-4 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-2xl font-bold transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
-              {t.home.cards.start.cta} <ChevronRight className="w-4 h-4" />
+              <ShoppingBag className="w-5 h-5" /> {h.offers.solo.cta}
+            </button>
+          </div>
+          
+          {/* Offer 2: Signature */}
+          <div className="bg-white rounded-[40px] p-10 border-2 border-botanik-orange flex flex-col relative group hover:shadow-2xl transition-all duration-500">
+            <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-botanik-orange text-white px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest shadow-lg">
+              {isFR ? "Recommandé" : "Recommended"}
+            </div>
+            <div className="flex justify-between items-start mb-8">
+              <div>
+                <h3 className="text-2xl font-bold text-botanik-green mb-2">{h.offers.signature.title}</h3>
+                <span className="inline-block px-3 py-1 bg-botanik-orange/10 text-botanik-orange text-[10px] font-black uppercase tracking-widest rounded-full">{h.offers.signature.tag}</span>
+              </div>
+              <div className="text-3xl font-black text-botanik-green">{h.offers.signature.price}</div>
+            </div>
+            <p className="text-botanik-green/60 mb-8 flex-grow">
+              {h.offers.signature.desc}
+            </p>
+            <button 
+              onClick={() => onNavigate('product-detail', 'pack_signature')}
+              className="w-full py-4 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-2xl font-bold transition-all flex items-center justify-center gap-2 shadow-xl shadow-black/10 cursor-pointer"
+            >
+              <ShoppingBag className="w-5 h-5" /> {h.offers.signature.cta}
             </button>
           </div>
         </div>
       </section>
 
-      {/* SECTION I - Comprendre l'infusion */}
-      <section id="comprendre-infusion-botanique" className="mb-24 md:mb-32 scroll-mt-24">
-        <div className="bg-white rounded-[40px] md:rounded-[60px] p-8 md:p-16 border border-botanik-green/5 shadow-2xl relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-botanik-orange/5 rounded-bl-full -z-0" />
-          <div className="relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
-              <div className="max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-8 leading-tight">
-                  L'Infusion Botanique Maison : <span className="text-botanik-orange">Comment ça marche</span>
-                </h2>
-                <p className="text-lg md:text-xl text-botanik-green/60 leading-relaxed font-light">
-                  Un extracteur botanique maison comme BloomLab® permet de capturer l'intégralité du Totum végétal via l'eau, l'huile ou l'alcool. Maîtrisez l'art de l'infusion, de la décoction et de la macération avec une précision thermique inégalée.
-                </p>
-              </div>
-              <div className="rounded-3xl overflow-hidden shadow-lg border border-botanik-green/5 aspect-square">
-                <OptimizedImage 
-                  src={img1} 
-                  className="w-full h-full object-cover" 
-                  alt="Rituel BloomLab" 
-                />
+      {/* 8. GUARANTEE & FAQ */}
+      <section className="mb-24 md:mb-32">
+        <div className="grid lg:grid-cols-2 gap-16">
+          <div>
+            <div className="bg-botanik-green/5 p-10 rounded-[40px] border border-botanik-green/10 mb-12 relative overflow-hidden">
+              <Award className="w-24 h-24 text-botanik-green/5 absolute -top-4 -right-4 rotate-12" />
+              <h2 className="text-3xl font-bold text-botanik-green mb-4">{h.guarantee_faq.title}</h2>
+              <p className="text-xl text-botanik-green font-medium mb-6">{h.guarantee_faq.guarantee}</p>
+              <div className="flex items-center gap-4 text-botanik-green/60">
+                <ShieldCheck className="w-6 h-6 text-botanik-orange" />
+                <span>{isFR ? "Garantie constructeur 1 an incluse" : (lang === 'de' ? "1 Jahr Herstellergarantie inklusive" : "1-year manufacturer warranty included")}</span>
               </div>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-              {t.home.understandingInfusion.cards.map((card: any, idx: number) => (
-                <div key={idx} className="bg-[#F9F9F7] p-8 rounded-3xl border border-botanik-green/5 hover:border-botanik-orange/30 transition-all duration-300 group/card">
-                  <h3 className="text-xl font-bold text-botanik-green mb-4 group-hover/card:text-botanik-orange transition-colors flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-botanik-orange/10 flex items-center justify-center text-botanik-orange text-xs font-black">{idx + 1}</span>
-                    {card.title}
-                  </h3>
-                  <p className="text-sm md:text-base text-botanik-green/60 leading-relaxed font-light">
-                    {card.text}
-                  </p>
-                </div>
-              ))}
+            
+            <div className="rounded-[40px] overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
+              <OptimizedImage src={img8} className="w-full aspect-video object-cover" alt="Souveraineté Sanitaire" />
             </div>
-
-            <div className="border-t border-botanik-green/10 pt-16">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-botanik-green mb-6">
-                    {t.home.understandingInfusion.bloomlab_h2}
-                  </h3>
-                  <p className="text-base md:text-lg text-botanik-green/60 leading-relaxed font-light mb-10">
-                    {t.home.understandingInfusion.bloomlab_text}
-                  </p>
-                  <button 
-                    onClick={() => onNavigate('machine')}
-                    className="inline-flex items-center gap-3 px-8 py-4 bg-botanik-green text-white rounded-2xl font-bold text-sm hover:bg-botanik-orange transition-all group/btn shadow-xl shadow-botanik-green/10"
-                  >
-                    {t.home.understandingInfusion.cta}
-                    <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-                <div className="bg-botanik-orange/5 p-8 rounded-[32px] border border-botanik-orange/10 relative">
-                  <Sparkles className="absolute top-4 right-4 w-6 h-6 text-botanik-orange/20" />
-                  <p className="text-sm md:text-base text-botanik-orange font-medium leading-relaxed italic pr-8">
-                    {t.home.understandingInfusion.safety_note}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PAGE 2 — LA SCIENCE DU TOTUM */}
-      <section id="science" className="mb-24 md:mb-32 scroll-mt-24">
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <div className="max-w-3xl">
-            <span className="inline-block px-3 py-1 bg-botanik-green/5 text-botanik-green text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">{t.home.science.badge}</span>
-            <h2 className="text-2xl md:text-6xl font-bold text-botanik-green mb-6 md:mb-8 leading-tight">
-              {t.home.science.title}
-            </h2>
-            <p className="text-base md:text-xl text-botanik-green/60 leading-relaxed font-light">
-              {t.home.science.description}
-            </p>
-          </div>
-          <div className="rounded-[40px] overflow-hidden shadow-2xl border-4 border-white">
-            <OptimizedImage 
-              src={img8} 
-              className="w-full h-full object-cover aspect-video" 
-              alt="Science de l'extraction de précision" 
-            />
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-10 md:gap-12">
-          <div className="space-y-10 md:space-y-12">
-            <div>
-              <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-2">{t.home.science.q1.title}</h4>
-              <p className="text-[10px] md:text-sm font-medium text-botanik-orange uppercase tracking-wider mb-3 md:mb-4">{t.home.science.q1.subtitle}</p>
-              <p className="text-sm md:text-base text-botanik-green/60 leading-relaxed">
-                {t.home.science.q1.description}
-              </p>
-            </div>
-            <div>
-              <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-2">{t.home.science.q2.title}</h4>
-              <p className="text-[10px] md:text-sm font-medium text-botanik-orange uppercase tracking-wider mb-3 md:mb-4">{t.home.science.q2.subtitle}</p>
-              <p className="text-sm md:text-base text-botanik-green/60 leading-relaxed">
-                {t.home.science.q2.description}
-              </p>
-            </div>
-          </div>
-          <div className="space-y-10 md:space-y-12">
-            <div>
-              <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-2">{t.home.science.q3.title}</h4>
-              <p className="text-[10px] md:text-sm font-medium text-botanik-orange uppercase tracking-wider mb-3 md:mb-4">{t.home.science.q3.subtitle}</p>
-              <p className="text-sm md:text-base text-botanik-green/60 leading-relaxed">
-                {t.home.science.q3.description}
-              </p>
-            </div>
-            <div>
-              <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-2">{t.home.science.q4.title}</h4>
-              <p className="text-[10px] md:text-sm font-medium text-botanik-orange uppercase tracking-wider mb-3 md:mb-4">{t.home.science.q4.subtitle}</p>
-              <p className="text-sm md:text-base text-botanik-green/60 leading-relaxed">
-                {t.home.science.q4.description}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PAGE 3 — UNE AUTRE VOIE */}
-      <section id="alternative" className="mb-32 scroll-mt-24">
-        <div className="bg-botanik-green rounded-[60px] p-8 md:p-20 text-white overflow-hidden relative">
-          <div className="absolute inset-0 z-0">
-            <OptimizedImage 
-              src={img8} 
-              className="w-full h-full object-cover opacity-10" 
-              alt="Botanical Synergy Background" 
-            />
-          </div>
-          <div className="absolute top-0 right-0 p-12 opacity-5">
-            <Sparkles className="w-96 h-96 rotate-12" />
           </div>
           
-          <div className="relative z-10">
-            <div className="max-w-3xl mb-12 md:mb-20">
-              <h2 className="text-3xl md:text-6xl font-bold mb-6 md:mb-8 leading-tight">
-                {t.home.alternative.title}
-              </h2>
-              <p className="text-lg md:text-xl text-white/70 leading-relaxed font-light italic">
-                {t.home.alternative.quote}
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-16">
-              <div className="space-y-10">
-                <div className="flex gap-6">
-                  <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center shrink-0">
-                    <Leaf className="w-6 h-6 text-botanik-orange" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-2">{t.home.alternative.q1.title}</h4>
-                    <p className="text-white/60 text-sm leading-relaxed">
-                      {t.home.alternative.q1.description}
-                    </p>
-                  </div>
+          <div className="space-y-6">
+            {h.guarantee_faq.faq.map((item: any, idx: number) => (
+              <details key={idx} className="group bg-white rounded-3xl border border-botanik-green/5 shadow-sm overflow-hidden">
+                <summary className="flex items-center justify-between p-8 cursor-pointer list-none">
+                  <span className="text-lg font-bold text-botanik-green flex items-center gap-4">
+                    <HelpCircle className="w-6 h-6 text-botanik-orange" />
+                    {item.q}
+                  </span>
+                  <ChevronRight className="w-5 h-5 text-botanik-green/30 group-open:rotate-90 transition-transform" />
+                </summary>
+                <div className="px-8 pb-8 text-botanik-green/70 leading-relaxed font-light">
+                  {item.a}
                 </div>
-                <div className="flex gap-6">
-                  <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center shrink-0">
-                    <ShieldCheck className="w-6 h-6 text-botanik-orange" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-2">{t.home.alternative.q2.title}</h4>
-                    <p className="text-white/60 text-sm leading-relaxed">
-                      {t.home.alternative.q2.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-10">
-                <div className="flex gap-6">
-                  <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center shrink-0">
-                    <Award className="w-6 h-6 text-botanik-orange" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-2">{t.home.alternative.q3.title}</h4>
-                    <p className="text-white/60 text-sm leading-relaxed">
-                      {t.home.alternative.q3.description}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-6">
-                  <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center shrink-0">
-                    <User className="w-6 h-6 text-botanik-orange" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-2">{t.home.alternative.q4.title}</h4>
-                    <p className="text-white/60 text-sm leading-relaxed">
-                      {t.home.alternative.q4.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PAGE 4 — TROUVER VOTRE VOIE */}
-      <section id="choix" className="scroll-mt-24">
-        <div className="max-w-3xl mb-16">
-          <span className="inline-block px-3 py-1 bg-botanik-orange/10 text-botanik-orange text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">{t.home.way.badge}</span>
-          <h2 className="text-3xl md:text-6xl font-bold text-botanik-green mb-8 leading-tight">
-            {t.home.way.title}
-          </h2>
-          <p className="text-lg md:text-xl text-botanik-green/60 leading-relaxed font-light">
-            {t.home.way.description}
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            <div 
-              onClick={() => onNavigate('manifeste')}
-              className="bg-white p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-botanik-green/5 shadow-sm hover:border-botanik-orange transition-all duration-300 flex flex-col group cursor-pointer"
-            >
-              <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-4">{t.home.way.discover.title}</h4>
-              <p className="text-botanik-green/60 text-xs md:text-sm mb-6 md:mb-8 leading-relaxed flex-grow">
-                {t.home.way.discover.description}
-              </p>
-              <button 
-                className="flex items-center gap-2 text-botanik-orange font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] group-hover:gap-3 transition-all"
-              >
-                {t.home.way.discover.cta} <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
-
-            <div 
-              onClick={() => onNavigate('boutique')}
-              className="bg-white p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-botanik-green/5 shadow-sm hover:border-botanik-orange transition-all duration-300 flex flex-col group cursor-pointer relative overflow-hidden"
-            >
-              <div className="absolute inset-0 z-0">
-                <OptimizedImage src={img7} className="w-full h-full object-cover opacity-[0.05] group-hover:scale-110 transition-transform duration-700" alt="Boutique Bloom" />
-              </div>
-              <div className="relative z-10 flex flex-col h-full">
-                <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-4">{t.home.way.solution.title}</h4>
-                <p className="text-botanik-green/60 text-xs md:text-sm mb-6 md:mb-8 leading-relaxed flex-grow">
-                  {t.home.way.solution.description}
-                </p>
-                <button 
-                  className="flex items-center gap-2 text-botanik-orange font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] group-hover:gap-3 transition-all"
-                >
-                  {t.home.way.solution.cta} <ChevronRight className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-
-            <div 
-              onClick={() => onNavigate('phytotherapie-reset')}
-              className="bg-white p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-botanik-green/5 shadow-sm hover:border-botanik-orange transition-all duration-300 flex flex-col group cursor-pointer"
-            >
-              <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-4">{t.home.way.reset.title}</h4>
-              <p className="text-botanik-green/60 text-xs md:text-sm mb-6 md:mb-8 leading-relaxed flex-grow">
-                {t.home.way.reset.description}
-              </p>
-              <button 
-                className="flex items-center gap-2 text-botanik-orange font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] group-hover:gap-3 transition-all"
-              >
-                {t.home.way.reset.cta} <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
-
-            <div 
-              onClick={() => onNavigate('library-landing')}
-              className="bg-white p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-botanik-green/5 shadow-sm hover:border-botanik-orange transition-all duration-300 flex flex-col group cursor-pointer"
-            >
-              <h4 className="text-lg md:text-xl font-bold text-botanik-green mb-4">{t.home.way.more.title}</h4>
-              <p className="text-botanik-green/60 text-xs md:text-sm mb-6 md:mb-8 leading-relaxed flex-grow">
-                {t.home.way.more.description}
-              </p>
-              <button 
-                className="flex items-center gap-2 text-botanik-orange font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] group-hover:gap-3 transition-all"
-              >
-                {t.home.way.more.cta} <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
-        </div>
-      </section>
-
-      {/* BLOG HIGHLIGHTS - TARGETING NICHE QUERIES */}
-      <section className="mt-32 relative overflow-hidden rounded-[40px] p-8 md:p-16">
-        <div className="absolute inset-0 z-0">
-          <OptimizedImage 
-            src={img5} 
-            className="w-full h-full object-cover opacity-[0.03]" 
-            alt="Lifestyle Bloom" 
-          />
-        </div>
-        <div className="relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-            <div className="max-w-2xl">
-              <span className="inline-block px-3 py-1 bg-botanik-orange/10 text-botanik-orange text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">Le Blog du Totum</span>
-              <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6 leading-tight">Extracteur Botanique & Phytothérapie Maison : <span className="text-botanik-orange">Dernières Recherches</span></h2>
-              <p className="text-lg text-botanik-green/60 font-light">
-                Explorez nos dossiers de fond sur la science de l'extraction et la biophysique des plantes. 
-                Pour approfondir, consultez les <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7074153/" target="_blank" rel="noopener noreferrer" className="text-botanik-orange underline underline-offset-4 decoration-1">études scientifiques sur les extraits botaniques</a>.
-              </p>
-            </div>
-            <a href="https://blog.bloombybotanik.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-botanik-green font-bold group">
-              Voir tout le blog <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { 
-                title: "La Thermorégulation du Vivant", 
-                desc: "Comment le contrôle précis de la température préserve l'intelligence moléculaire des extraits.",
-                tag: "Science",
-                url: "https://blog.bloombybotanik.com/thermoregulation-du-vivant-extraction-botanique/"
-              },
-              { 
-                title: "Le Refroidisseur à Circulation", 
-                desc: "L'importance du choc thermique contrôlé dans la stabilisation des terpènes fragiles.",
-                tag: "Technique",
-                url: "https://blog.bloombybotanik.com/refroidissement-stabilite-thermique-extraction-botanique/"
-              },
-              { 
-                title: "L'Humidificateur Diffuseur", 
-                desc: "Transformer votre atmosphère : pourquoi la diffusion ultrasonique respecte mieux le Totum.",
-                tag: "Usage",
-                url: "https://blog.bloombybotanik.com/humidificateur-diffuseur-rituel-botanique-interieur/"
-              }
-            ].map((post, i) => (
-              <a 
-                key={i}
-                href={post.url} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-white/80 backdrop-blur-sm p-8 rounded-[32px] border border-botanik-green/5 hover:border-botanik-orange transition-all duration-300 group flex flex-col"
-              >
-                <span className="text-[10px] font-bold text-botanik-orange uppercase tracking-widest mb-4">{post.tag}</span>
-                <h4 className="text-xl font-bold text-botanik-green mb-4 leading-snug group-hover:text-botanik-orange transition-colors">{post.title}</h4>
-                <p className="text-botanik-green/60 text-sm leading-relaxed mb-8 flex-grow">{post.desc}</p>
-                <div className="flex items-center gap-2 text-botanik-green font-bold text-xs uppercase tracking-widest">
-                  Lire l'article <ChevronRight className="w-4 h-4" />
-                </div>
-              </a>
+              </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Protocol Grid - Integrated as part of the flow */}
-      <div className="mt-32">
-        <div className="bg-botanik-green rounded-[40px] px-8 md:px-16 py-10 md:py-16 text-white overflow-hidden relative group">
-          <div className="absolute inset-0 z-0">
-            <OptimizedImage 
-              src={img9} 
-              className="w-full h-full object-cover opacity-10 transition-transform duration-1000 group-hover:scale-110" 
-              alt="Home Lab Vibe" 
-            />
-          </div>
-          <div className="absolute top-0 right-0 p-12 opacity-5 group-hover:scale-110 transition-transform duration-1000">
-            <FlaskConical className="w-96 h-96 rotate-12" />
-          </div>
+      {/* 9. NEWSLETTER - OPT-IN */}
+      <section className="mb-12">
+        <div className="bg-botanik-green rounded-[40px] md:rounded-[60px] p-8 md:p-20 text-center relative overflow-hidden">
+          <div className="absolute inset-0 bg-botanik-orange/10 mix-blend-overlay opacity-20" />
+          <div className="absolute -top-24 -left-24 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
           
-          <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-            <div className="max-w-xl">
-              <span className="inline-block px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-[10px] font-bold uppercase tracking-widest mb-6">{t.home.featured.badge}</span>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">{t.home.featured.title}</h2>
-              <p className="text-white/80 text-base md:text-lg mb-10 leading-relaxed">
-                {t.home.featured.description}
-              </p>
-              <button onClick={() => onNavigate('phytotherapie-reset')} className="px-10 py-5 bg-white text-botanik-green rounded-2xl font-bold flex items-center gap-3 hover:bg-[#F5F3EB] transition-colors shadow-2xl">
-                {t.home.featured.cta} <ChevronRight className="w-5 h-5" />
+          <div className="relative z-10 max-w-2xl mx-auto">
+            <div className="w-20 h-20 bg-white/10 rounded-3xl flex items-center justify-center mx-auto mb-10 shadow-inner">
+              <Mail className="w-10 h-10 text-botanik-orange" />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+              {h.newsletter.title}
+            </h2>
+            <p className="text-lg text-white/70 mb-10 font-light leading-relaxed">
+              {h.newsletter.desc}
+            </p>
+            <form className="flex flex-col sm:flex-row gap-4" onSubmit={(e) => e.preventDefault()}>
+              <input 
+                type="email" 
+                placeholder={isFR ? "Votre email..." : "Your email..."} 
+                className="flex-grow px-8 py-5 bg-white/10 border border-white/20 rounded-2xl text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-botanik-orange transition-all"
+                required
+              />
+              <button className="px-10 py-5 bg-botanik-orange text-white rounded-2xl font-bold hover:bg-[#1C3F34] hover:text-white transition-all shadow-xl shadow-black/20">
+                {h.newsletter.cta}
               </button>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                { id: 'respiration', title: t.home.featured.items.respiration.title, subtitle: t.home.featured.items.respiration.subtitle, detail: t.home.featured.items.respiration.detail, icon: Wind, color: "bg-[#E0F2FE] text-[#0369A1]", iconColor: "text-[#0369A1]" },
-                { id: 'mouvement', title: t.home.featured.items.movement.title, subtitle: t.home.featured.items.movement.subtitle, detail: t.home.featured.items.movement.detail, icon: Waves, color: "bg-[#DCFCE7] text-[#15803D]", iconColor: "text-[#15803D]" },
-                { id: 'sommeil', title: t.home.featured.items.sleep.title, subtitle: t.home.featured.items.sleep.subtitle, detail: t.home.featured.items.sleep.detail, icon: Moon, color: "bg-[#F3E8FF] text-[#7E22CE]", iconColor: "text-[#7E22CE]" },
-                { id: 'alimentation', title: t.home.featured.items.nutrition.title, subtitle: t.home.featured.items.nutrition.subtitle, detail: t.home.featured.items.nutrition.detail, icon: Utensils, color: "bg-[#FEF9C3] text-[#854D0E]", iconColor: "text-[#854D0E]" }
-              ].map((item, idx) => (
-                <div 
-                  key={idx} 
-                  onClick={() => {
-                    const detail = resetDetailsData.find(d => d.id === item.id);
-                    if (detail) setSelectedResetDetail(detail);
-                  }}
-                  className={`${item.color} p-4 rounded-3xl relative overflow-hidden group/vignette transition-transform hover:-translate-y-1 cursor-pointer`}
-                >
-                  <div className="absolute top-2 right-2">
-                    <div className="w-5 h-5 bg-white/50 rounded-full flex items-center justify-center">
-                      <ChevronRight className="w-3 h-3 text-green-600" />
-                    </div>
-                  </div>
-                  <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center mb-4 shadow-sm">
-                    <item.icon className={`w-5 h-5 ${item.iconColor}`} />
-                  </div>
-                  <div className="space-y-0.5">
-                    <h4 className="text-[13px] font-black leading-tight uppercase tracking-tight">{item.title}</h4>
-                    <p className="text-[11px] font-bold opacity-90">{item.subtitle}</p>
-                    <p className="text-[9px] opacity-70 mt-1">{item.detail}</p>
-                  </div>
-                  <button 
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      const detail = resetDetailsData.find(d => d.id === item.id);
-                      if (detail) setSelectedResetDetail(detail);
-                    }}
-                    className="mt-4 flex items-center gap-1 text-[10px] font-black uppercase tracking-widest opacity-80 group-hover/vignette:opacity-100"
-                  >
-                    {t.common.details} <ChevronRight className="w-3 h-3" />
-                  </button>
-                </div>
-              ))}
-            </div>
+            </form>
+            <p className="mt-6 text-[10px] text-white/40 uppercase tracking-[0.2em] font-medium">
+              {isFR ? "Pas de spam. Désinscription en un clic." : "No spam. One-click unsubscribe."}
+            </p>
           </div>
         </div>
-      </div>
+      </section>
+      
     </div>
   );
 }

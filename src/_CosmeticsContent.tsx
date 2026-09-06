@@ -178,7 +178,7 @@ export default function CosmeticsContent({
                           }}
                           className={`p-1.5 rounded-full transition-colors ${
                             selectedRecipe.plant_id === recipe.plant_id
-                              ? favorites.includes(recipe.plant_id) ? 'text-white bg-white/20' : 'text-white/40 hover:text-white hover:bg-white/10'
+                              ? favorites.includes(recipe.plant_id) ? 'text-white bg-white/20' : 'text-white/70 hover:text-white hover:bg-[#1C3F34]'
                               : favorites.includes(recipe.plant_id) ? 'text-botanik-orange bg-botanik-orange/10' : 'text-botanik-green/20 hover:text-botanik-orange hover:bg-botanik-orange/5'
                           }`}
                         >

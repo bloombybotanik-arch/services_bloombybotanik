@@ -1,33 +1,56 @@
 import { Language } from '../translations';
 import { Thermometer, Timer, RefreshCw, FlaskConical, Leaf, ShieldCheck, Info, Award, ShoppingBag, ChefHat, Check, ArrowRight } from 'lucide-react';
-import bloomLabImg from '../assets/images/bloomlab_main_1784887530345.jpeg';
-import duoArgilesImg from '../assets/images/product_duo_argiles.jpg';
-import trioPouchesImg from '../assets/images/product_trio_pouches.jpg';
-import feuArticulaireImg from '../assets/images/product_feu_articulaire.jpg';
-import nuitProfondeImg from '../assets/images/product_nuit_profonde.jpg';
-import seveFondamentaleImg from '../assets/images/product_seve_fondamentale.jpg';
-import digestionImg from '../assets/images/product_digestion.jpeg';
-import bouclierHiverImg from '../assets/images/product_bouclier_hiver.jpg';
-import modernShelvesImg from '../assets/images/modern_herbalist_shelves_1786699793560.jpg';
-import img2 from '../assets/images/family_care_cleaned_1786616776823.jpg';
-import img3 from '../assets/images/lab_detail_cleaned_1786616788618.jpg';
-import img4 from '../assets/images/herbs_close_up_cleaned_1786616800877.jpg';
-import img5 from '../assets/images/lifestyle_botanik_cleaned_1786616810137.jpg';
-import img6 from '../assets/images/extraction_precision_cleaned_1786616821723.jpg';
-import img7 from '../assets/images/natural_remedies_cleaned_1786616831671.jpg';
-import img8 from '../assets/images/7.png';
-import img9 from '../assets/images/home_lab_vibe_cleaned_1786616854146.jpg';
-import img2_1 from '../assets/images/2-1.png';
-import img3_1 from '../assets/images/3-1.png';
-import img4_1 from '../assets/images/4-1.png';
-import img5_1 from '../assets/images/5-1.png';
-import img6_1 from '../assets/images/6-1.png';
+// import bloomLabImg from '../assets/images/bloomlab_main_1784887530345.jpeg';
+// import duoArgilesImg from '../assets/images/product_duo_argiles.jpg';
+// import trioPouchesImg from '../assets/images/product_trio_pouches.jpg';
+// import feuArticulaireImg from '../assets/images/product_feu_articulaire.jpg';
+// import nuitProfondeImg from '../assets/images/product_nuit_profonde.jpg';
+// import seveFondamentaleImg from '../assets/images/product_seve_fondamentale.jpg';
+// import digestionImg from '../assets/images/product_digestion.jpeg';
+// import bouclierHiverImg from '../assets/images/product_bouclier_hiver.jpg';
+// import modernShelvesImg from '../assets/images/modern_herbalist_shelves_1786699793560.jpg';
+// import img2 from '../assets/images/family_care_cleaned_1786616776823.jpg';
+// import img3 from '../assets/images/lab_detail_cleaned_1786616788618.jpg';
+// import img4 from '../assets/images/herbs_close_up_cleaned_1786616800877.jpg';
+// import img5 from '../assets/images/lifestyle_botanik_cleaned_1786616810137.jpg';
+// import img6 from '../assets/images/extraction_precision_cleaned_1786616821723.jpg';
+// import img7 from '../assets/images/natural_remedies_cleaned_1786616831671.jpg';
+// import img8 from '../assets/images/7.png';
+// import img9 from '../assets/images/home_lab_vibe_cleaned_1786616854146.jpg';
+// import img2_1 from '../assets/images/2-1.png';
+// import img3_1 from '../assets/images/3-1.png';
+// import img4_1 from '../assets/images/4-1.png';
+// import img5_1 from '../assets/images/5-1.png';
+// import img6_1 from '../assets/images/6-1.png';
+
+const bloomLabImg = "/assets/images/bloomlab_main_1784887530345.jpeg";
+const duoArgilesImg = "/assets/images/product_duo_argiles.jpg";
+const trioPouchesImg = "/assets/images/product_trio_pouches.jpg";
+const feuArticulaireImg = "/assets/images/product_feu_articulaire.jpg";
+const nuitProfondeImg = "/assets/images/product_nuit_profonde.jpg";
+const seveFondamentaleImg = "/assets/images/product_seve_fondamentale.jpg";
+const digestionImg = "/assets/images/product_digestion.jpeg";
+const bouclierHiverImg = "/assets/images/product_bouclier_hiver.jpg";
+const modernShelvesImg = "/assets/images/modern_herbalist_shelves_1786699793560.jpg";
+const img2 = "/assets/images/family_care_cleaned_1786616776823.jpg";
+const img3 = "/assets/images/lab_detail_cleaned_1786616788618.jpg";
+const img4 = "/assets/images/herbs_close_up_cleaned_1786616800877.jpg";
+const img5 = "/assets/images/lifestyle_botanik_cleaned_1786616810137.jpg";
+const img6 = "/assets/images/extraction_precision_cleaned_1786616821723.jpg";
+const img7 = "/assets/images/natural_remedies_cleaned_1786616831671.jpg";
+const img8 = "/assets/images/7.png";
+const img9 = "/assets/images/home_lab_vibe_cleaned_1786616854146.jpg";
+const img2_1 = "/assets/images/2-1.png";
+const img3_1 = "/assets/images/3-1.png";
+const img4_1 = "/assets/images/4-1.png";
+const img5_1 = "/assets/images/5-1.png";
+const img6_1 = "/assets/images/6-1.png";
 
 export const getProductSheets = (lang: Language): Record<string, any> => {
   const isFR = lang === 'fr';
   const isDE = lang === 'de';
 
-  return {
+  const sheets: Record<string, any> = {
     'bloomlab': (() => {
       const now = new Date();
       const isPromoActive = now >= new Date('2026-09-01') && now < new Date('2027-01-01');
@@ -96,27 +119,27 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             <h3 class="text-2xl font-bold text-botanik-green mb-6">Un protocole automatisé 6-en-1</h3>
             <div class="space-y-4 mb-12">
               <div class="flex items-center gap-4 p-4 bg-[#1B3022]/5 rounded-xl">
-                <span class="w-8 h-8 bg-botanik-green text-white rounded-full flex items-center justify-center font-bold">1</span>
+                <span class="w-8 h-8 bg-[#0F261E] text-white rounded-full flex items-center justify-center font-bold shadow-sm" style="background-color: #0F261E; color: #ffffff;">1</span>
                 <span>Préparation de la plante</span>
               </div>
               <div class="flex items-center gap-4 p-4 bg-[#1B3022]/5 rounded-xl">
-                <span class="w-8 h-8 bg-botanik-green text-white rounded-full flex items-center justify-center font-bold">2</span>
+                <span class="w-8 h-8 bg-[#0F261E] text-white rounded-full flex items-center justify-center font-bold shadow-sm" style="background-color: #0F261E; color: #ffffff;">2</span>
                 <span>Infusion dynamique par agitation</span>
               </div>
               <div class="flex items-center gap-4 p-4 bg-[#1B3022]/5 rounded-xl">
-                <span class="w-8 h-8 bg-botanik-green text-white rounded-full flex items-center justify-center font-bold">3</span>
+                <span class="w-8 h-8 bg-[#0F261E] text-white rounded-full flex items-center justify-center font-bold shadow-sm" style="background-color: #0F261E; color: #ffffff;">3</span>
                 <span>Contrôle thermique précis (±1 °C)</span>
               </div>
               <div class="flex items-center gap-4 p-4 bg-[#1B3022]/5 rounded-xl">
-                <span class="w-8 h-8 bg-botanik-green text-white rounded-full flex items-center justify-center font-bold">4</span>
+                <span class="w-8 h-8 bg-[#0F261E] text-white rounded-full flex items-center justify-center font-bold shadow-sm" style="background-color: #0F261E; color: #ffffff;">4</span>
                 <span>Liaison homogène plante / solvant</span>
               </div>
               <div class="flex items-center gap-4 p-4 bg-[#1B3022]/5 rounded-xl">
-                <span class="w-8 h-8 bg-botanik-green text-white rounded-full flex items-center justify-center font-bold">5</span>
+                <span class="w-8 h-8 bg-[#0F261E] text-white rounded-full flex items-center justify-center font-bold shadow-sm" style="background-color: #0F261E; color: #ffffff;">5</span>
                 <span>Filtration nette pour un extrait limpide</span>
               </div>
               <div class="flex items-center gap-4 p-4 bg-[#1B3022]/5 rounded-xl">
-                <span class="w-8 h-8 bg-botanik-green text-white rounded-full flex items-center justify-center font-bold">6</span>
+                <span class="w-8 h-8 bg-[#0F261E] text-white rounded-full flex items-center justify-center font-bold shadow-sm" style="background-color: #0F261E; color: #ffffff;">6</span>
                 <span>Cycle de nettoyage automatique</span>
               </div>
             </div>
@@ -155,7 +178,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
               </ul>
             </div>
 
-            <div class="bg-botanik-green text-white p-6 md:p-10 rounded-[32px]">
+            <div class="bg-[#0F261E] text-white p-6 md:p-10 rounded-[32px] shadow-lg" style="background-color: #0F261E; color: #ffffff;">
               <h3 class="text-xl font-bold mb-8 text-white">Spécifications techniques</h3>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-white/80">
                 <div class="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/10">
@@ -265,7 +288,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
         : "The Signature Pack includes the BloomLab® instrument and the entire 2026 remedy kit collection.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
-          <div class="bg-botanik-green text-white p-8 rounded-[40px] mb-12">
+          <div class="bg-[#0F261E] text-white p-8 rounded-[40px] mb-12 shadow-lg" style="background-color: #0F261E; color: #ffffff;">
             <h2 class="text-3xl font-bold text-white mb-4 text-center">DÉCOUVREZ NOS KITS</h2>
             <p class="text-xl font-medium text-white/90 text-center">Nouvelle Collection 2026</p>
           </div>
@@ -378,7 +401,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             </div>
           </div>
 
-          <div class="bg-botanik-orange text-white p-10 rounded-[40px] mb-12 shadow-xl shadow-botanik-orange/20 relative overflow-hidden">
+          <div class="bg-[#D97706] text-white p-10 rounded-[40px] mb-12 shadow-xl shadow-[#D97706]/20 relative overflow-hidden" style="background-color: #D97706; color: #ffffff;">
             <div class="relative z-10">
               <div class="flex items-center gap-4 mb-6">
                 <div class="bg-white/20 p-3 rounded-2xl">
@@ -456,14 +479,14 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <h3 class="text-2xl font-bold text-botanik-green mb-6">Protocole de Restauration (Mode d'Emploi)</h3>
           <div class="space-y-8 mb-12">
             <div class="flex gap-6">
-              <div class="w-12 h-12 bg-botanik-orange text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+              <div class="w-12 h-12 bg-[#D97706] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #D97706; color: #ffffff;">1</div>
               <div>
                 <h4 class="font-bold text-botanik-green">Étape 1 : Phase de Dissolution Structurelle (90°C / 2h)</h4>
                 <p class="text-sm text-botanik-green/70">Libère la silice et les minéraux des fibres denses de la Prêle et de l'Ortie (Sachet A + 700ml base).</p>
               </div>
             </div>
             <div class="flex gap-6">
-              <div class="w-12 h-12 bg-botanik-orange text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+              <div class="w-12 h-12 bg-[#D97706] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #D97706; color: #ffffff;">2</div>
               <div>
                 <h4 class="font-bold text-botanik-green">Étape 2 : Phase de Protection Moléculaire (55°C / 4h)</h4>
                 <p class="text-sm text-botanik-green/70">Ajout du Sachet B pour extraire les flavonoïdes et antioxydants sans stress thermique.</p>
@@ -498,7 +521,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             </ul>
           </div>
 
-          <div class="bg-botanik-green text-white p-10 rounded-[40px] mb-12">
+          <div class="bg-[#0F261E] text-white p-10 rounded-[40px] mb-12 shadow-lg" style="background-color: #0F261E; color: #ffffff;">
             <h4 class="font-bold mb-6 text-white text-xl">Usage du Concentré "SÈVE FONDAMENTALE"</h4>
             <div class="grid md:grid-cols-2 gap-8">
               <div>
@@ -586,14 +609,14 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <h3 class="text-2xl font-bold text-botanik-green mb-6">Protocole de Relaxation (Mode d'Emploi)</h3>
           <div class="space-y-8 mb-12">
             <div class="flex gap-6">
-              <div class="w-12 h-12 bg-botanik-orange text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+              <div class="w-12 h-12 bg-[#D97706] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #D97706; color: #ffffff;">1</div>
               <div>
                 <h4 class="font-bold text-botanik-green">Étape 1 : Phase de Libération des Racines (80°C / 2h)</h4>
                 <p class="text-sm text-botanik-green/70">Ouvre les fibres de la Valériane pour en extraire la quintessence apaisante (Sachet A + 700ml base).</p>
               </div>
             </div>
             <div class="flex gap-6">
-              <div class="w-12 h-12 bg-botanik-orange text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+              <div class="w-12 h-12 bg-[#D97706] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #D97706; color: #ffffff;">2</div>
               <div>
                 <h4 class="font-bold text-botanik-green">Étape 2 : Phase d'Apaisement Moléculaire (55°C / 4h)</h4>
                 <p class="text-sm text-botanik-green/70">Fusionne la douceur de la Passiflore à la puissance de la Valériane sans altérer les composés fragiles.</p>
@@ -619,7 +642,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             </ul>
           </div>
 
-          <div class="bg-botanik-green text-white p-10 rounded-[40px] mb-12">
+          <div class="bg-[#0F261E] text-white p-10 rounded-[40px] mb-12 shadow-lg" style="background-color: #0F261E; color: #ffffff;">
             <h4 class="font-bold mb-6 text-white text-xl">Usage du Concentré "NUIT PROFONDE"</h4>
             <div class="grid md:grid-cols-2 gap-8">
               <div>
@@ -707,14 +730,14 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <h3 class="text-2xl font-bold text-botanik-green mb-6">Protocole de Maintenance (Mode d'Emploi)</h3>
           <div class="space-y-8 mb-12">
             <div class="flex gap-6">
-              <div class="w-12 h-12 bg-botanik-orange text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+              <div class="w-12 h-12 bg-[#D97706] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #D97706; color: #ffffff;">1</div>
               <div>
                 <h4 class="font-bold text-botanik-green">Étape 1 : Phase de Dissolution Structurelle (90°C / 2h)</h4>
                 <p class="text-sm text-botanik-green/70">Épuise les fibres dures du Brou de Noix et active le <a href=\"/boutique\" class=\"text-botanik-orange font-bold hover:underline\">Gingembre</a> pour assainir le terrain (Sachet A + 700ml base).</p>
               </div>
             </div>
             <div class="flex gap-6">
-              <div class="w-12 h-12 bg-botanik-orange text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+              <div class="w-12 h-12 bg-[#D97706] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #D97706; color: #ffffff;">2</div>
               <div>
                 <h4 class="font-bold text-botanik-green">Étape 2 : Phase d'Harmonisation des Fluides (55°C / 4h)</h4>
                 <p class="text-sm text-botanik-green/70">Fusionne les propriétés toniques du <a href=\"/boutique\" class=\"text-botanik-orange font-bold hover:underline\">Romarin</a> et du Ginkgo sans dénaturer leurs principes actifs.</p>
@@ -740,7 +763,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             </ul>
           </div>
 
-          <div class="bg-botanik-green text-white p-10 rounded-[40px] mb-12">
+          <div class="bg-[#0F261E] text-white p-10 rounded-[40px] mb-12 shadow-lg" style="background-color: #0F261E; color: #ffffff;">
             <h4 class="font-bold mb-6 text-white text-xl">Usage du Concentré "ÉQUILIBRE & FLUX"</h4>
             <div class="grid md:grid-cols-2 gap-8">
               <div>
@@ -801,7 +824,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       price: 9.90,
       images: [feuArticulaireImg],
       description: isFR 
-        ? "Le CONCENTRÉ MOUVEMENT LIBRE est une réponse technique aux besoins de flexibilité de votre édifice biologique grâce au <a href=\"/boutique/kit-articulaire\" class=\"text-botanik-orange font-bold hover:underline\">Boswellia Serrata</a>."
+        ? "Le CONCENTRÉ MOUVEMENT LIBRE est une réponse technique aux besoins de flexibilité de votre édifice biologique grâce au <a href=\"/boutique/kit-articulaire/\" class=\"text-botanik-orange font-bold hover:underline\">Boswellia Serrata</a>."
         : "The JOINT FIRE CONCENTRATE is a technical response to the flexibility needs of your biological building.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
@@ -817,25 +840,25 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <div class="grid md:grid-cols-2 gap-8 mb-12">
             <div class="bg-white border border-botanik-green/10 p-8 rounded-3xl shadow-sm">
               <h4 class="font-bold text-botanik-green mb-4">SACHET A : "L'Ancrage Moléculaire" (30g)</h4>
-              <p class="text-sm"><strong>Reine des Prés & <a href=\"/boutique\" class=\"text-botanik-orange font-bold hover:underline\">Gingembre</a> :</strong> Sélectionnés pour leur richesse en dérivés salicylés naturels et en catalyseurs thermiques. Cette phase prépare le "terrain" et amorce la fluidification des fluides internes.</p>
+              <p class="text-sm"><strong>Reine des Prés & <a href=\"/boutique/\" class=\"text-botanik-orange font-bold hover:underline\">Gingembre</a> :</strong> Sélectionnés pour leur richesse en dérivés salicylés naturels et en catalyseurs thermiques. Cette phase prépare le "terrain" et amorce la fluidification des fluides internes.</p>
             </div>
             <div class="bg-white border border-botanik-green/10 p-8 rounded-3xl shadow-sm">
               <h4 class="font-bold text-botanik-green mb-4">SACHET B : "La Cohésion Résineuse" (20g)</h4>
-              <p class="text-sm"><strong><a href=\"/boutique/kit-articulaire\" class=\"text-botanik-orange font-bold hover:underline\">Boswellia Serrata</a> (Gomme-Résine) :</strong> Une substance millénaire et dense. Elle est le pilier de la souplesse structurelle. Sa structure exige une phase d'extraction spécifique pour rendre ses acides boswelliques biodisponibles.</p>
+              <p class="text-sm"><strong><a href=\"/boutique/kit-articulaire/\" class=\"text-botanik-orange font-bold hover:underline\">Boswellia Serrata</a> (Gomme-Résine) :</strong> Une substance millénaire et dense. Elle est le pilier de la souplesse structurelle. Sa structure exige une phase d'extraction spécifique pour rendre ses acides boswelliques biodisponibles.</p>
             </div>
           </div>
 
           <h3 class="text-2xl font-bold text-botanik-green mb-6">Protocole de Flexibilité (Mode d'Emploi)</h3>
           <div class="space-y-8 mb-12">
             <div class="flex gap-6">
-              <div class="w-12 h-12 bg-botanik-orange text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+              <div class="w-12 h-12 bg-[#D97706] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #D97706; color: #ffffff;">1</div>
               <div>
                 <h4 class="font-bold text-botanik-green">Étape 1 : Phase de Libération des Actifs (80°C / 2h)</h4>
                 <p class="text-sm text-botanik-green/70">Libère les principes fluides de la Reine des Prés et activer la thermogenèse du Gingembre. (Sachet A + 700ml base).</p>
               </div>
             </div>
             <div class="flex gap-6">
-              <div class="w-12 h-12 bg-botanik-orange text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+              <div class="w-12 h-12 bg-[#D97706] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #D97706; color: #ffffff;">2</div>
               <div>
                 <h4 class="font-bold text-botanik-green">Étape 2 : Phase d'Inclusion des Résines (55°C / 4h)</h4>
                 <p class="text-sm text-botanik-green/70">Permet à la résine de Boswellia de se dissoudre progressivement et de fusionner avec le concentré sans altérer les molécules de la phase A.</p>
@@ -861,7 +884,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             </ul>
           </div>
 
-          <div class="bg-botanik-green text-white p-10 rounded-[40px] mb-12">
+          <div class="bg-[#0F261E] text-white p-10 rounded-[40px] mb-12 shadow-lg" style="background-color: #0F261E; color: #ffffff;">
             <h4 class="font-bold mb-6 text-white text-xl">Usage du Concentré "MOUVEMENT LIBRE"</h4>
             <div class="grid md:grid-cols-2 gap-8">
               <div>
@@ -953,14 +976,14 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <h3 class="text-2xl font-bold text-botanik-green mb-6">Protocole de Création (Le Mode d'Emploi)</h3>
           <div class="space-y-8 mb-12">
             <div class="flex gap-6">
-              <div class="w-12 h-12 bg-botanik-orange text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+              <div class="w-12 h-12 bg-[#D97706] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #D97706; color: #ffffff;">1</div>
               <div>
                 <h4 class="font-bold text-botanik-green">Étape 1 : Phase d'Ancrage (90°C / 2h)</h4>
                 <p class="text-sm text-botanik-green/70">Casser la cellulose et libérer les molécules de défense lourdes (Sachet A + 700ml base).</p>
               </div>
             </div>
             <div class="flex gap-6">
-              <div class="w-12 h-12 bg-botanik-orange text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+              <div class="w-12 h-12 bg-[#D97706] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #D97706; color: #ffffff;">2</div>
               <div>
                 <h4 class="font-bold text-botanik-green">Étape 2 : Phase Moléculaire (55°C / 4h)</h4>
                 <p class="text-sm text-botanik-green/70">Capture les essences aromatiques fragiles sans les dénaturer (Sachet B + Sachet A déjà présent).</p>
@@ -986,7 +1009,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             </ul>
           </div>
 
-          <div class="bg-botanik-green text-white p-10 rounded-[40px] mb-12">
+          <div class="bg-[#0F261E] text-white p-10 rounded-[40px] mb-12 shadow-lg" style="background-color: #0F261E; color: #ffffff;">
             <h4 class="font-bold mb-6 text-white text-xl">Usage du Concentré "BOUCLIER HIVER"</h4>
             <div class="grid md:grid-cols-2 gap-8">
               <div>
@@ -1078,14 +1101,14 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <h3 class="text-2xl font-bold text-botanik-green mb-6">Protocole d'Usage Conseillé</h3>
           <div class="space-y-8 mb-12">
             <div class="flex gap-6">
-              <div class="w-12 h-12 bg-botanik-orange text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+              <div class="w-12 h-12 bg-[#D97706] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #D97706; color: #ffffff;">1</div>
               <div>
                 <h4 class="font-bold text-botanik-green">Mise en Suspension</h4>
                 <p class="text-sm text-botanik-green/70">Mélangez une dose dans un grand verre d'eau filtrée. Utilisez de préférence des ustensiles non métalliques pour préserver la charge électrique des minéraux.</p>
               </div>
             </div>
             <div class="flex gap-6">
-              <div class="w-12 h-12 bg-botanik-orange text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+              <div class="w-12 h-12 bg-[#D97706] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #D97706; color: #ffffff;">2</div>
               <div>
                 <h4 class="font-bold text-botanik-green">Rythme de Croisière</h4>
                 <p class="text-sm text-botanik-green/70">À consommer à distance des repas et de toute prise de compléments ou médicaments (intervalle de 2h minimum).</p>
@@ -1093,7 +1116,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             </div>
           </div>
 
-          <div class="bg-botanik-green text-white p-10 rounded-[40px] mb-12">
+          <div class="bg-[#0F261E] text-white p-10 rounded-[40px] mb-12 shadow-lg" style="background-color: #0F261E; color: #ffffff;">
             <h4 class="font-bold mb-6 text-white text-xl text-center">Qualité & Certification</h4>
             <p class="text-center text-sm text-white/80 mb-0">
               Grade Pharmacopée Européenne. 100% pur, sans additif, sans nanoparticules. Une intégrité minérale totale pour un respect absolu de votre physiologie.
@@ -1130,43 +1153,43 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <h3 class="text-xl font-bold mb-6">Vos 10 Recettes Offertes :</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
             <div class="flex items-center gap-3 p-4 bg-[#1B3022]/5 rounded-xl">
-              <span class="w-8 h-8 bg-botanik-green text-white rounded-full flex items-center justify-center font-bold text-xs">01</span>
+              <span class="w-8 h-8 bg-[#0F261E] text-white rounded-full flex items-center justify-center font-bold text-xs shadow-sm" style="background-color: #0F261E; color: #ffffff;">01</span>
               <span class="font-medium text-botanik-green">Infusion Sommeil Profond</span>
             </div>
             <div class="flex items-center gap-3 p-4 bg-[#1B3022]/5 rounded-xl">
-              <span class="w-8 h-8 bg-botanik-green text-white rounded-full flex items-center justify-center font-bold text-xs">02</span>
+              <span class="w-8 h-8 bg-[#0F261E] text-white rounded-full flex items-center justify-center font-bold text-xs shadow-sm" style="background-color: #0F261E; color: #ffffff;">02</span>
               <span class="font-medium text-botanik-green">Huile de Massage Articulaire</span>
             </div>
             <div class="flex items-center gap-3 p-4 bg-[#1B3022]/5 rounded-xl">
-              <span class="w-8 h-8 bg-botanik-green text-white rounded-full flex items-center justify-center font-bold text-xs">03</span>
+              <span class="w-8 h-8 bg-[#0F261E] text-white rounded-full flex items-center justify-center font-bold text-xs shadow-sm" style="background-color: #0F261E; color: #ffffff;">03</span>
               <span class="font-medium text-botanik-green">Sérum Visage Éclat Botanique</span>
             </div>
             <div class="flex items-center gap-3 p-4 bg-[#1B3022]/5 rounded-xl">
-              <span class="w-8 h-8 bg-botanik-green text-white rounded-full flex items-center justify-center font-bold text-xs">04</span>
+              <span class="w-8 h-8 bg-[#0F261E] text-white rounded-full flex items-center justify-center font-bold text-xs shadow-sm" style="background-color: #0F261E; color: #ffffff;">04</span>
               <span class="font-medium text-botanik-green">Baume à Lèvres au Calendula</span>
             </div>
             <div class="flex items-center gap-3 p-4 bg-[#1B3022]/5 rounded-xl">
-              <span class="w-8 h-8 bg-botanik-green text-white rounded-full flex items-center justify-center font-bold text-xs">05</span>
+              <span class="w-8 h-8 bg-[#0F261E] text-white rounded-full flex items-center justify-center font-bold text-xs shadow-sm" style="background-color: #0F261E; color: #ffffff;">05</span>
               <span class="font-medium text-botanik-green">Teinture de Propolis Maison</span>
             </div>
             <div class="flex items-center gap-3 p-4 bg-[#1B3022]/5 rounded-xl">
-              <span class="w-8 h-8 bg-botanik-green text-white rounded-full flex items-center justify-center font-bold text-xs">06</span>
+              <span class="w-8 h-8 bg-[#0F261E] text-white rounded-full flex items-center justify-center font-bold text-xs shadow-sm" style="background-color: #0F261E; color: #ffffff;">06</span>
               <span class="font-medium text-botanik-green">Sirop de Sureau Immunité</span>
             </div>
             <div class="flex items-center gap-3 p-4 bg-[#1B3022]/5 rounded-xl">
-              <span class="w-8 h-8 bg-botanik-green text-white rounded-full flex items-center justify-center font-bold text-xs">07</span>
+              <span class="w-8 h-8 bg-[#0F261E] text-white rounded-full flex items-center justify-center font-bold text-xs shadow-sm" style="background-color: #0F261E; color: #ffffff;">07</span>
               <span class="font-medium text-botanik-green">Eau Florale de Lavande</span>
             </div>
             <div class="flex items-center gap-3 p-4 bg-[#1B3022]/5 rounded-xl">
-              <span class="w-8 h-8 bg-botanik-green text-white rounded-full flex items-center justify-center font-bold text-xs">08</span>
+              <span class="w-8 h-8 bg-[#0F261E] text-white rounded-full flex items-center justify-center font-bold text-xs shadow-sm" style="background-color: #0F261E; color: #ffffff;">08</span>
               <span class="font-medium text-botanik-green">Macérat de Pâquerette Tenseur</span>
             </div>
             <div class="flex items-center gap-3 p-4 bg-[#1B3022]/5 rounded-xl">
-              <span class="w-8 h-8 bg-botanik-green text-white rounded-full flex items-center justify-center font-bold text-xs">09</span>
+              <span class="w-8 h-8 bg-[#0F261E] text-white rounded-full flex items-center justify-center font-bold text-xs shadow-sm" style="background-color: #0F261E; color: #ffffff;">09</span>
               <span class="font-medium text-botanik-green">Gel d'Aloe Vera Frais</span>
             </div>
             <div class="flex items-center gap-3 p-4 bg-[#1B3022]/5 rounded-xl">
-              <span class="w-8 h-8 bg-botanik-green text-white rounded-full flex items-center justify-center font-bold text-xs">10</span>
+              <span class="w-8 h-8 bg-[#0F261E] text-white rounded-full flex items-center justify-center font-bold text-xs shadow-sm" style="background-color: #0F261E; color: #ffffff;">10</span>
               <span class="font-medium text-botanik-green">Infusion Digestive au Gingembre</span>
             </div>
           </div>
@@ -1214,4 +1237,10 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       specs: [{ label: "Type", value: "Abonnement", icon: Info }]
     }
   };
+  
+  if (sheets['kit-bouclier-hiver']) {
+    sheets['kit-hiver'] = sheets['kit-bouclier-hiver'];
+  }
+
+  return sheets;
 };

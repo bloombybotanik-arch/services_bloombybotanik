@@ -38,7 +38,7 @@ export default function GuideContent({ onNavigate, lang }: GuideContentProps) {
           <div className="flex flex-wrap justify-center gap-4">
             <button 
               onClick={() => onNavigate('infuseur-botanique')}
-              className="px-8 py-4 bg-botanik-green text-white rounded-2xl font-bold hover:bg-botanik-green/90 transition-all shadow-xl flex items-center gap-2 group"
+              className="px-8 py-4 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-2xl font-bold transition-all shadow-xl flex items-center gap-2 group cursor-pointer"
             >
               {lang === 'fr' ? "Découvrir l'infuseur botanique" : "Discover the botanical infuser"} <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
@@ -110,7 +110,7 @@ export default function GuideContent({ onNavigate, lang }: GuideContentProps) {
               <div className="flex flex-col gap-4 mt-8">
                 <button 
                   onClick={() => onNavigate('machine')}
-                  className="w-full md:w-auto px-10 py-6 bg-botanik-orange text-white rounded-2xl font-bold hover:bg-botanik-orange/90 transition-all shadow-xl flex items-center justify-center gap-3 group"
+                  className="w-full md:w-auto px-10 py-6 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-2xl font-bold transition-all shadow-xl flex items-center justify-center gap-3 group cursor-pointer"
                 >
                   <span className="uppercase tracking-widest">{lang === 'fr' ? 'Découvrir la BloomLab' : 'Discover the BloomLab'}</span>
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

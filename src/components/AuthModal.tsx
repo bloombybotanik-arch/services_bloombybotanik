@@ -123,7 +123,7 @@ export function AuthModal({ isOpen, onClose, onSuccess, onAdminLogin }: AuthModa
             <button 
               type="submit"
               disabled={loading}
-              className="w-full py-4 bg-botanik-green text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-botanik-green/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed mt-6"
+              className="w-full py-4 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-xl font-bold flex items-center justify-center gap-2 transition-colors disabled:opacity-70 disabled:cursor-not-allowed mt-6 cursor-pointer"
             >
               {loading ? (
                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />

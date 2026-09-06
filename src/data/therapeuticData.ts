@@ -5754,5 +5754,594 @@ export const plantsDatabase: PlantData[] = [
         }
       }
     ]
+  },
+  {
+    plant_id: "saule_blanc",
+    nom_commun: "Saule Blanc",
+    nom_latin: "Salix alba",
+    partie_utilisee: "Écorce",
+    famille_bloom: "Gâchette (Anti-douleur)",
+    terrains_cibles: ["T8 (Inflammation)", "T1 (Intestin)"],
+    actifs_cles: [
+      { nom: "Salicine", polarite: "Hydrosoluble" },
+      { nom: "Tannins", polarite: "Hydrosoluble" }
+    ],
+    preuve_scientifique: "Inhibition COX-2, protection muqueuses par tannins.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "Salicine se dégrade à haute température.",
+      phase_A: { temp: "60°C", temps: "1h30", solvant: "Eau/Glycérine", cible: "Salicine, tannins" },
+      phase_B: { temp: "45°C", temps: "2h00", solvant: "Alcool 70°", cible: "Stabilisation" }
+    },
+    recette_pas_a_pas: {
+      batch_standard: "750ml + 75g",
+      ingredients: {
+        phase_A: ["500ml Eau/Glycérine", "50g Écorce"],
+        phase_B: ["250ml Alcool 70°", "25g Écorce"]
+      },
+      preparation: ["Pesez précisément les ingrédients."],
+      phase_A_instructions: ["500ml Eau/Glycérine + 50g Écorce. 60°C, 1h30."],
+      transition: ["Repos 20 min. Test sensoriel ~40°C."],
+      phase_B_instructions: ["250ml Alcool 70° + 25g Écorce. 45°C, 2h."],
+      filtration_et_finition: ["Étamine. Flacon ambré."]
+    },
+    socle_synergique: {
+      cofacteurs_complements: [{ nom: "L-Glutamine", dose: "5g", role: "Protection intestinale" }],
+      leviers_du_vivant: [{ nom: "Prise milieu repas", frequence: "À chaque repas", role: "Protection gastrique" }]
+    },
+    convergence_ancestrale: "Grèce : calme la douleur.",
+    synergies_recommandees: ["reine_des_pres", "curcuma"],
+    precautions: "Allergie aspirine, <16 ans."
+  },
+  {
+    plant_id: "valeriane",
+    nom_commun: "Valériane",
+    nom_latin: "Valeriana officinalis",
+    partie_utilisee: "Racine",
+    famille_bloom: "Verrou (Sommeil & Anxiété)",
+    terrains_cibles: ["T7 (Psycho-émotionnel)", "T9 (Sommeil)"],
+    actifs_cles: [
+      { nom: "Acide valérénique", polarite: "Liposoluble" },
+      { nom: "Valépotriates", polarite: "Très thermolabile" }
+    ],
+    preuve_scientifique: "Modulation GABA-A, latence endormissement.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "Valépotriates se dégradent à la chaleur.",
+      phase_A: { temp: "65°C", temps: "2h00", solvant: "Eau/Glycérine", cible: "Iridoïdes" },
+      phase_B: { temp: "45°C", temps: "3h00", solvant: "Alcool 96°", cible: "Acide valérénique" }
+    },
+    recette_pas_a_pas: {
+      batch_standard: "750ml + 75g",
+      ingredients: {
+        phase_A: ["500ml Eau/Glycérine", "50g Racine"],
+        phase_B: ["250ml Alcool", "25g Racine"]
+      },
+      preparation: ["Pesez précisément les ingrédients."],
+      phase_A_instructions: ["500ml Eau/Glycérine + 50g Racine. 65°C, 2h."],
+      transition: ["Repos 20 min. Test sensoriel ~40°C."],
+      phase_B_instructions: ["250ml Alcool + 25g Racine. 45°C, 3h."],
+      filtration_et_finition: ["Étamine. Flacon bien fermé."]
+    },
+    socle_synergique: {
+      cofacteurs_complements: [{ nom: "Glycine", dose: "3g", role: "Température corporelle" }],
+      leviers_du_vivant: [{ nom: "Cohérence cardiaque soir", frequence: "Quotidien", role: "Parasympathique" }]
+    },
+    convergence_ancestrale: "Grèce antique.",
+    synergies_recommandees: ["passiflore", "melisse"],
+    precautions: "Somnolence, grossesse."
+  },
+  {
+    plant_id: "artichaut_souverain",
+    nom_commun: "Artichaut",
+    nom_latin: "Cynara scolymus",
+    partie_utilisee: "Feuilles",
+    famille_bloom: "Réparateur (Hépatique & Biliaire)",
+    terrains_cibles: ["T2 (Énergie)", "T10 (Métabolisme)"],
+    actifs_cles: [
+      { nom: "Cynarine", polarite: "Thermolabile" },
+      { nom: "Inuline", polarite: "Hydrosoluble" }
+    ],
+    preuve_scientifique: "Stimulation cholérétique, réduction cholestérol, prébiotique.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "Cynarine sensible >65°C. Inuline nécessite eau chaude.",
+      phase_A: { temp: "70°C", temps: "2h00", solvant: "Eau/Glycérine", cible: "Inuline" },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool 96°", cible: "Cynarine" }
+    },
+    recette_pas_a_pas: {
+      batch_standard: "750ml + 75g",
+      ingredients: {
+        phase_A: ["500ml Eau/Glycérine", "50g Feuilles"],
+        phase_B: ["250ml Alcool", "25g Feuilles"]
+      },
+      preparation: ["Pesez précisément les ingrédients."],
+      phase_A_instructions: ["500ml Eau/Glycérine + 50g Feuilles. 70°C, 2h."],
+      transition: ["Repos 20 min. Test sensoriel ~40°C."],
+      phase_B_instructions: ["250ml Alcool + 25g Feuilles. 50°C, 3h."],
+      filtration_et_finition: ["Étamine. Flacon ambré."]
+    },
+    socle_synergique: {
+      cofacteurs_complements: [{ nom: "Chardon-Marie", dose: "200mg", role: "Duo hépatique" }],
+      leviers_du_vivant: [{ nom: "Fenêtre alimentaire", frequence: "16/8", role: "Repos hépatique" }]
+    },
+    convergence_ancestrale: "Égypte ancienne.",
+    synergies_recommandees: ["radis_noir", "pissenlit"],
+    precautions: "Calculs biliaires obstructifs."
+  },
+  {
+    plant_id: "millepertuis",
+    nom_commun: "Millepertuis",
+    nom_latin: "Hypericum perforatum",
+    partie_utilisee: "Parties aériennes",
+    famille_bloom: "Verrou (Neurochimie)",
+    terrains_cibles: ["T4 (HPA)", "T7 (Psycho-émotionnel)"],
+    actifs_cles: [
+      { nom: "Hyperforine", polarite: "Liposoluble/Photosensible" },
+      { nom: "Hypericine", polarite: "Liposoluble" }
+    ],
+    preuve_scientifique: "Inhibition recapture sérotonine/dopamine/noradrénaline.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "Hyperforine se dégrade à la lumière et chaleur.",
+      phase_A: { temp: "60°C", temps: "1h30", solvant: "Eau/Glycérine", cible: "Flavonoïdes" },
+      phase_B: { temp: "45°C", temps: "2h00", solvant: "Alcool 96°", cible: "Hyperforine" }
+    },
+    recette_pas_a_pas: {
+      batch_standard: "750ml + 75g",
+      ingredients: {
+        phase_A: ["500ml Eau/Glycérine", "50g Plante"],
+        phase_B: ["250ml Alcool", "25g Plante"]
+      },
+      preparation: ["Pesez précisément les ingrédients."],
+      phase_A_instructions: ["500ml Eau/Glycérine + 50g Plante. 60°C, 1h30."],
+      transition: ["Repos 20 min. Test sensoriel ~40°C."],
+      phase_B_instructions: ["250ml Alcool + 25g Plante. 45°C, 2h."],
+      filtration_et_finition: ["Étamine. Flacon verre violet (Miron)."]
+    },
+    socle_synergique: {
+      cofacteurs_complements: [{ nom: "Magnésium", dose: "300mg", role: "GABA" }],
+      leviers_du_vivant: [{ nom: "Lumière matinale", frequence: "Quotidien", role: "Circadien" }]
+    },
+    convergence_ancestrale: "Antiquité : protège l'âme.",
+    synergies_recommandees: ["safran", "griffonia"],
+    precautions: "PHOTOSENSIBILISANT. JAMAIS avec ISRS/pilule."
+  },
+  {
+    plant_id: "shiquandabutang",
+    nom_commun: "Shi Quan Da Bu Tang — La Grande Formule de Reconstruction",
+    nom_latin: "Shi Quan Da Bu Tang",
+    partie_utilisee: "Formule composée (racines, écorces, rhizomes)",
+    famille_bloom: "Chef d’Orchestre (Qi, Sang, Convalescence)",
+    terrains_cibles: ["T3_Sang", "T5_HPA", "T7_Psycho_émotionnel", "T6_Mitochondrie"],
+    actifs_cles: [
+      { nom: "Polysaccharides toniques", polarite: "Hydrosoluble" },
+      { nom: "Saponines", polarite: "Mixte" },
+      { nom: "Composés aromatiques chauds", polarite: "Mixte" }
+    ],
+    preuve_scientifique: "Grande formule de la médecine chinoise, Shi Quan Da Bu Tang est utilisée depuis des siècles pour relever le Qi et le Sang dans les états de fatigue profonde, de pâleur, de convalescence ou de faiblesse prolongée. Elle agit moins sur un organe spécifique que sur la réserve, la circulation et l’endurance systémique.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "Une décoction brute respecte la tradition, mais BloomLab permet un protocole reproductible, stable et mieux contrôlé pour les fractions toniques hydrosolubles et les essences plus fragiles.",
+      phase_A: { temp: "75°C", temps: "2h00", solvant: "Eau distillée + glycérine légère", cible: "Polysaccharides, saponines toniques, fondation Qi-Sang" },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 70°", cible: "Fraction aromatique et constituants plus lipophiles" }
+    },
+    recette_pas_a_pas: {
+      batch_standard: "Cible BloomLab : 750ml (A+B combinés)",
+      ingredients: {
+        phase_A: ["50 g de formule Shi Quan Da Bu", "600 ml d’eau distillée", "150 ml de glycérine végétale"],
+        phase_B: ["20 g de formule", "750 ml d’alcool bio 70°"]
+      },
+      preparation: [
+        "1. Faire tremper 50 g de formule Shi Quan Da Bu dans 600 ml d’eau distillée + 150 ml de glycérine végétale pendant 30 minutes."
+      ],
+      phase_A_instructions: [
+        "1. Lancer la Phase A : mode manuel, 75°C, 2h00."
+      ],
+      transition: [
+        "1. Laisser reposer 20 à 30 minutes, filtrer et presser fermement le marc."
+      ],
+      phase_B_instructions: [
+        "1. Placer 20 g de formule dans 750 ml d’alcool bio 70°, mode manuel 50°C, 3h00."
+      ],
+      filtration_et_finition: [
+        "1. Filtrer finement et assembler les deux fractions si un totum complet est souhaité."
+      ]
+    },
+    convergence_ancestrale: "Utilisée en Chine pour relever Qi et Sang, souvent dans les états de fatigue profonde et de convalescence.",
+    synergies_recommandees: ["Goji", "Jujube", "Astragale"],
+    precautions: "À manier avec prudence en cas de terrain inflammatoire très actif, d’hypertension non contrôlée, de fièvre ou de surcharge digestive marquée."
+  },
+  {
+    plant_id: "lycium_barbarum_herbarium",
+    nom_commun: "Lycium barbarum — Le Goji, Nourrissant du Sang",
+    nom_latin: "Lycium barbarum",
+    partie_utilisee: "Baies séchées",
+    famille_bloom: "Réparateur (Sang, Foie, Réserve)",
+    terrains_cibles: ["T3_Sang", "T2_Foie", "T9_Peau", "T5_HPA"],
+    actifs_cles: [
+      { nom: "Polysaccharides de Lycium (LBP)", polarite: "Hydrosoluble" },
+      { nom: "Caroténoïdes (zéaxanthine)", polarite: "Liposoluble" },
+      { nom: "Composés phénoliques et bétaïne", polarite: "Hydrosoluble" }
+    ],
+    preuve_scientifique: "Fruit majeur de la pharmacopée chinoise, le goji est traditionnellement orienté Foie-Rein, vision, longévité et soutien du Sang. Il est consommé depuis plus de 2000 ans pour renforcer le système immunitaire et réduire la fatigue.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "Une infusion simple extrait surtout les sucres et une partie des polysaccharides, mais laisse de côté une partie de la fraction caroténoïde et du potentiel nourrissant complet.",
+      phase_A: { temp: "72°C", temps: "2h00", solvant: "Eau distillée", cible: "Polysaccharides, bétaïne, fraction phénolique hydrosoluble" },
+      phase_B: { temp: "45°C", temps: "3h00", solvant: "Huile végétale légère ou alcool doux", cible: "Caroténoïdes et fraction lipophile" }
+    },
+    recette_pas_a_pas: {
+      batch_standard: "Cible BloomLab : 750ml",
+      ingredients: {
+        phase_A: ["35 g de baies de goji", "750 ml d’eau distillée"],
+        phase_B: ["20 g de baies réhydratées et séchées en surface", "750 ml d’huile de jojoba ou de tournesol oléique"]
+      },
+      preparation: [
+        "1. Faire tremper 35 g de baies de goji dans 750 ml d’eau distillée pendant 20 à 30 minutes."
+      ],
+      phase_A_instructions: [
+        "1. Phase A : mode manuel, 72°C, 2h00."
+      ],
+      transition: [
+        "1. Filtrer soigneusement."
+      ],
+      phase_B_instructions: [
+        "1. Phase B : placer 20 g de baies réhydratées et séchées en surface dans 750 ml d’huile de jojoba ou de tournesol oléique, mode manuel 45°C, 3h00."
+      ],
+      filtration_et_finition: [
+        "1. Filtrer à l’étamine. L’extrait aqueux soutient le terrain interne ; l’huile est orientée vers la peau et les sérums."
+      ]
+    },
+    convergence_ancestrale: "Fruit traditionnellement associé à la vision, à la longévité et au soutien du Sang.",
+    synergies_recommandees: ["Jujube", "Bardane", "Adzuki"],
+    precautions: "Prudence en cas de traitement anticoagulant ou de terrain très chaud/agité. Surveiller la tolérance digestive."
+  },
+  {
+    plant_id: "runfeitang",
+    nom_commun: "Run Fei Tang — Formule Nourrissant le Poumon",
+    nom_latin: "Run Fei Tang",
+    partie_utilisee: "Formule composée (fruits, graines, racines, matières adoucissantes)",
+    famille_bloom: "Réparateur (Muqueuses, Poumon, Peau sèche)",
+    terrains_cibles: ["T2_Intestin", "T3_Sang", "T9_Peau", "T1_Emonctoires"],
+    actifs_cles: [
+      { nom: "Polysaccharides et mucilages", polarite: "Hydrosoluble" },
+      { nom: "Saponines douces", polarite: "Mixte" },
+      { nom: "Flavonoïdes nourrissants", polarite: "Hydrosoluble" }
+    ],
+    preuve_scientifique: "Issue de la médecine chinoise, la logique Run-Fei vise à nourrir le Yin, humidifier les poumons et restaurer les barrières vivantes quand le sec consume les tissus. Elle agit sur les muqueuses, la peau sèche et les irritations.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "Une décoction agressive peut casser la dimension émolliente d’une formule Run-Fei. BloomLab permet une extraction plus douce, plus longue, mieux adaptée aux fractions muqueuses et polysaccharidiques.",
+      phase_A: { temp: "72°C", temps: "2h00", solvant: "Eau distillée", cible: "Mucilages, polysaccharides, fraction adoucissante" },
+      phase_B: { temp: "45°C", temps: "2h30", solvant: "Glycérine renforcée ou alcool doux", cible: "Fraction aromatique légère, saponines douces, stabilisation" }
+    },
+    recette_pas_a_pas: {
+      batch_standard: "Cible BloomLab : 750ml",
+      ingredients: {
+        phase_A: ["45 g de formule Run-Fei", "750 ml d’eau distillée"],
+        phase_B: ["15 g de formule", "750 ml de solvant doux (glycérine ou alcool)"]
+      },
+      preparation: [
+        "1. Faire tremper 45 g de formule Run-Fei dans 750 ml d’eau distillée pendant 30 à 60 minutes si la formule contient fruits secs, graines ou tremelles."
+      ],
+      phase_A_instructions: [
+        "1. Phase A : mode manuel, 72°C, 2h00."
+      ],
+      transition: [
+        "1. Laisser tiédir 20 minutes, filtrer sans presser trop brutalement."
+      ],
+      phase_B_instructions: [
+        "1. Phase B : placer 15 g de formule dans 750 ml de solvant doux, mode manuel 45°C, 2h30."
+      ],
+      filtration_et_finition: [
+        "1. Assembler les deux fractions si souhaité."
+      ]
+    },
+    convergence_ancestrale: "Formule chinoise pour “humidifier les poumons et arrêter la toux”.",
+    synergies_recommandees: ["Jujube", "Goji", "Mauve"],
+    precautions: "La composition exacte variant selon les écoles, vérifier chaque ingrédient en cas de grossesse, de diabète, d’allergies ou de traitement concomitant."
+  },
+  {
+    plant_id: "ziziphus_jujuba_herbarium",
+    nom_commun: "Ziziphus jujuba — Le Jujube, Harmonisateur des Muqueuses",
+    nom_latin: "Ziziphus jujuba",
+    partie_utilisee: "Fruit séché",
+    famille_bloom: "Harmonisateur (Qi, Muqueuses, Système nerveux)",
+    terrains_cibles: ["T3_Sang", "T7_Psycho_émotionnel", "T2_Intestin", "T9_Peau"],
+    actifs_cles: [
+      { nom: "Polysaccharides, flavonoïdes", polarite: "Hydrosoluble" },
+      { nom: "Saponines", polarite: "Mixte" },
+      { nom: "Tritérpénoïdes", polarite: "Liposoluble" }
+    ],
+    preuve_scientifique: "Grand harmonisateur des terrains secs, épuisés, irrités ou trop mobilisés. Utilisé dans les médecines chinoise, persane et arabo-islamique traditionnelles.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "Une infusion courte sous-exploite le potentiel polysaccharidique et nourrissant. Une chaleur trop forte peut alourdir le profil.",
+      phase_A: { temp: "70°C", temps: "1h00", solvant: "Eau distillée", cible: "Polysaccharides, flavonoïdes, fraction adoucissante" },
+      phase_B: { temp: "45°C", temps: "2h30", solvant: "Alcool doux ou glycérine végétale renforcée", cible: "Saponines et triterpénoïdes doux" }
+    },
+    recette_pas_a_pas: {
+      batch_standard: "Cible BloomLab : 750ml",
+      ingredients: {
+        phase_A: ["25 g de jujubes dénoyautés ou fendus", "750 ml d’eau distillée"],
+        phase_B: ["15 g de jujubes coupés", "750 ml de solvant doux"]
+      },
+      preparation: [
+        "1. Faire tremper 25 g de jujubes dénoyautés ou fendus dans 750 ml d’eau distillée pendant 20 à 40 minutes."
+      ],
+      phase_A_instructions: [
+        "1. Phase A : mode manuel, 70°C, 1h00."
+      ],
+      transition: [
+        "1. Filtrer en pressant légèrement les fruits ramollis."
+      ],
+      phase_B_instructions: [
+        "1. Phase B : placer 15 g de jujubes coupés dans 750 ml de solvant doux, mode manuel 45°C, 2h30."
+      ],
+      filtration_et_finition: [
+        "1. Filtrer à l’étamine."
+      ]
+    },
+    convergence_ancestrale: "Fruit majeur des médecines chinoise, persane et islamique, relié à l’apaisement, au Sang et aux muqueuses.",
+    synergies_recommandees: ["Goji", "Badiane", "Run Fei"],
+    precautions: "Prudence en cas de diabète mal équilibré ou de sensibilité digestive aux fruits très concentrés."
+  },
+  {
+    plant_id: "schisandra_chinensis_herbarium",
+    nom_commun: "Schisandra chinensis — La Baie des Cinq Saveurs",
+    nom_latin: "Schisandra chinensis",
+    partie_utilisee: "Baies séchées",
+    famille_bloom: "Réparateur (Foie, Cellule, Adaptation)",
+    terrains_cibles: ["T2_Foie", "T5_HPA", "T6_Mitochondrie", "T3_Sang"],
+    actifs_cles: [
+      { nom: "Lignanes de schisandra", polarite: "Liposoluble/Alcoolosoluble" },
+      { nom: "Acides organiques", polarite: "Hydrosoluble" },
+      { nom: "Composés phénoliques", polarite: "Hydrosoluble" }
+    ],
+    preuve_scientifique: "Baie des cinq saveurs en médecine chinoise, symbole de convergence organique et de capacité à retenir, protéger et raffermir la vitalité. Appartient au versant Nrf2, protection cellulaire, adaptation au stress et soutien hépatique fin.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "Les baies livrent une partie de leurs composés à l’eau, mais les lignanes signature demandent un solvant organique doux et un contrôle thermique strict.",
+      phase_A: { temp: "70°C", temps: "1h30", solvant: "Eau distillée", cible: "Acides organiques et fraction hydrosoluble" },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 70°", cible: "Lignanes et fraction lipophile" }
+    },
+    recette_pas_a_pas: {
+      batch_standard: "Cible BloomLab : 750ml",
+      ingredients: {
+        phase_A: ["25 g de schisandra concassée", "750 ml d’eau distillée"],
+        phase_B: ["15 g de schisandra concassée", "750 ml d’alcool bio 70°"]
+      },
+      preparation: [
+        "1. Concasser légèrement 25 g de schisandra et faire tremper 20 minutes dans 750 ml d’eau distillée."
+      ],
+      phase_A_instructions: [
+        "1. Phase A : mode manuel, 70°C, 1h30."
+      ],
+      transition: [
+        "1. Filtrer puis laisser tiédir."
+      ],
+      phase_B_instructions: [
+        "1. Phase B : placer 15 g de schisandra concassée dans 750 ml d’alcool bio 70°, mode manuel 50°C, 3h00."
+      ],
+      filtration_et_finition: [
+        "1. Filtrer et conserver en flacon ambré."
+      ]
+    },
+    convergence_ancestrale: "Symbole de convergence organique, utilisée pour retenir et protéger la vitalité.",
+    synergies_recommandees: ["Astragale", "Reishi", "Goji"],
+    precautions: "Prudence en cas de reflux sévère, d’ulcère actif ou de traitement hépatique spécifique."
+  },
+  {
+    plant_id: "arctium_lappa_herbarium",
+    nom_commun: "Arctium lappa — La Bardane, Grand Dépuratif",
+    nom_latin: "Arctium lappa",
+    partie_utilisee: "Racine séchée",
+    famille_bloom: "Déclencheur (Peau–Foie–Intestin)",
+    terrains_cibles: ["T1_Emonctoires", "T2_Intestin", "T2_Foie", "T9_Peau"],
+    actifs_cles: [
+      { nom: "Inuline", polarite: "Hydrosoluble" },
+      { nom: "Arctiine/arctigénine", polarite: "Mixte" },
+      { nom: "Acides phénoliques (chlorogénique)", polarite: "Hydrosoluble" },
+      { nom: "Lignanes", polarite: "Mixte" }
+    ],
+    preuve_scientifique: "Grande dépurative des traditions européennes et asiatiques, la bardane est utilisée depuis l’Antiquité pour ses propriétés drainantes et sudorifiques. Surnommée “Herbe aux teigneux”, elle fait le pont entre microbiote, foie, circulation des déchets et expression cutanée.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "Une infusion brève sous-extrait l’inuline et les fractions profondes de la racine. Pour une plante-terrain comme la bardane, le temps et la température comptent autant que la plante elle-même.",
+      phase_A: { temp: "75°C", temps: "2h00", solvant: "Eau distillée", cible: "Inuline, acides phénoliques, fraction prébiotique" },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 70°", cible: "Lignanes et fraction mixte" }
+    },
+    recette_pas_a_pas: {
+      batch_standard: "Cible BloomLab : 750ml",
+      ingredients: {
+        phase_A: ["40 g de racine de bardane coupée", "750 ml d’eau distillée"],
+        phase_B: ["20 g de racine en poudre grossière", "750 ml d’alcool bio 70°"]
+      },
+      preparation: [
+        "1. Faire tremper 40 g de racine de bardane coupée dans 750 ml d’eau distillée pendant 2 à 8 heures si elle est très sèche."
+      ],
+      phase_A_instructions: [
+        "1. Phase A : mode manuel, 75°C, 2h00."
+      ],
+      transition: [
+        "1. Laisser reposer 20 à 30 minutes, filtrer et presser fermement."
+      ],
+      phase_B_instructions: [
+        "1. Phase B : placer 20 g de racine en poudre grossière dans 750 ml d’alcool bio 70°, mode manuel 50°C, 3h00."
+      ],
+      filtration_et_finition: [
+        "1. Filtrer soigneusement."
+      ]
+    },
+    convergence_ancestrale: "Utilisée en Europe et en Asie pour “purifier le sang” et traiter les affections cutanées.",
+    synergies_recommandees: ["Goji", "Pissenlit", "Salsepareille"],
+    precautions: "Prudence en cas d’hypoglycémie, d’allergie aux Astéracées, de grossesse ou d’allaitement sans avis professionnel."
+  },
+  {
+    plant_id: "astragalus_membranaceus_herbarium",
+    nom_commun: "Astragalus membranaceus — L’Astragale, Protecteur du Qi",
+    nom_latin: "Astragalus membranaceus",
+    partie_utilisee: "Racine séchée",
+    famille_bloom: "Chef d’Orchestre (Immunité, Barrière, Réserve)",
+    terrains_cibles: ["T4_Immunite", "T5_HPA", "T6_Mitochondrie", "T1_Emonctoires"],
+    actifs_cles: [
+      { nom: "Polysaccharides d’astragale", polarite: "Hydrosoluble" },
+      { nom: "Astragalosides", polarite: "Mixte" },
+      { nom: "Flavonoïdes", polarite: "Hydrosoluble" }
+    ],
+    preuve_scientifique: "Grand tonique du Qi protecteur en médecine chinoise, l’astragale est historiquement associé à la résistance, à la récupération et à la force intérieure. Elle soutient la résilience, les télomères et l’immunité de fond.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "Les racines épaisses demandent du temps pour livrer leurs polysaccharides. Une infusion trop courte donne un extrait appauvri.",
+      phase_A: { temp: "75°C", temps: "2h00", solvant: "Eau distillée + glycérine légère", cible: "Polysaccharides et flavonoïdes" },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 70°", cible: "Astragalosides et fraction mixte" }
+    },
+    recette_pas_a_pas: {
+      batch_standard: "Cible BloomLab : 750ml",
+      ingredients: {
+        phase_A: ["35 g de racine d’astragale coupée", "600 ml d’eau distillée", "150 ml de glycérine végétale"],
+        phase_B: ["15 g de racine en coupe fine", "750 ml d’alcool bio 70°"]
+      },
+      preparation: [
+        "1. Faire tremper 35 g de racine d’astragale coupée dans 600 ml d’eau distillée + 150 ml de glycérine végétale pendant 30 à 60 minutes."
+      ],
+      phase_A_instructions: [
+        "1. Phase A : mode manuel, 75°C, 2h00."
+      ],
+      transition: [
+        "1. Refroidir 20 minutes puis filtrer."
+      ],
+      phase_B_instructions: [
+        "1. Phase B : placer 15 g de racine en coupe fine dans 750 ml d’alcool bio 70°, mode manuel 50°C, 3h00."
+      ],
+      filtration_et_finition: [
+        "1. Filtrer et conserver en flacon ambré."
+      ]
+    },
+    convergence_ancestrale: "Grand tonique du Qi protecteur en médecine chinoise.",
+    synergies_recommandees: ["Réglisse", "Reishi", "Schisandra"],
+    precautions: "Prudence en cas de maladie auto-immune active, d’immunosuppresseurs ou d’hypertension mal contrôlée."
+  },
+  {
+    plant_id: "ganoderma_lucidum_herbarium",
+    nom_commun: "Ganoderma lucidum — Le Reishi, Champignon de Longévité",
+    nom_latin: "Ganoderma lucidum",
+    partie_utilisee: "Champignon séché",
+    famille_bloom: "Chef d’Orchestre (Immunité, Stress, Longévité)",
+    terrains_cibles: ["T4_Immunite", "T5_HPA", "T6_Mitochondrie", "T7_Psycho_émotionnel"],
+    actifs_cles: [
+      { nom: "Bêta-glucanes", polarite: "Hydrosoluble" },
+      { nom: "Triterpènes", polarite: "Liposoluble/Alcoolosoluble" },
+      { nom: "Polysaccharides", polarite: "Hydrosoluble" }
+    ],
+    preuve_scientifique: "Champignon de longévité et de stabilité intérieure dans les traditions chinoise et japonaise, le Reishi est recherché pour la clarté, la résistance et l’endurance du vivant. Il incarne une logique de régulation plus que de stimulation.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "Le champignon demande chaleur prolongée pour libérer les bêta-glucanes, tandis que les triterpènes bénéficient d’une phase alcoolique plus douce et plus ciblée.",
+      phase_A: { temp: "80°C", temps: "3h00", solvant: "Eau distillée + glycérine légère", cible: "Bêta-glucanes et polysaccharides" },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 70°", cible: "Triterpènes et fraction lipophile" }
+    },
+    recette_pas_a_pas: {
+      batch_standard: "Cible BloomLab : 750ml",
+      ingredients: {
+        phase_A: ["35 g de reishi en poudre grossière", "600 ml d’eau distillée", "150 ml de glycérine végétale"],
+        phase_B: ["15 g de reishi en poudre fine", "750 ml d’alcool bio 70°"]
+      },
+      preparation: [
+        "1. Utiliser 35 g de reishi en poudre grossière dans 600 ml d’eau distillée + 150 ml de glycérine végétale."
+      ],
+      phase_A_instructions: [
+        "1. Phase A : mode manuel, 80°C, 3h00."
+      ],
+      transition: [
+        "1. Laisser redescendre en température puis filtrer."
+      ],
+      phase_B_instructions: [
+        "1. Phase B : placer 15 g de reishi en poudre fine dans 750 ml d’alcool bio 70°, mode manuel 50°C, 3h00."
+      ],
+      filtration_et_finition: [
+        "1. Filtrer à l’étamine double et conserver en flacon ambré."
+      ]
+    },
+    convergence_ancestrale: "“Ling Zhi” en chinois, champignon de l’immortalité utilisé pour calmer l’esprit et tonifier le Qi.",
+    synergies_recommandees: ["Astragale", "Schisandra", "Réglisse"],
+    precautions: "Prudence en cas d’anticoagulants, de chirurgie proche, de maladie auto-immune active ou d’allergie aux champignons."
+  },
+  {
+    plant_id: "glycyrrhiza_glabra_herbarium",
+    nom_commun: "Glycyrrhiza glabra — La Réglisse, Catalyseur et Protecteur",
+    nom_latin: "Glycyrrhiza glabra",
+    partie_utilisee: "Racine séchée",
+    famille_bloom: "Catalyseur (Muqueuses, Surrénales, Harmonie)",
+    terrains_cibles: ["T2_Intestin", "T5_HPA", "T3_Sang"],
+    actifs_cles: [
+      { nom: "Glycyrrhizine", polarite: "Hydrosoluble" },
+      { nom: "Flavonoïdes", polarite: "Hydrosoluble" },
+      { nom: "Saponines", polarite: "Mixte" }
+    ],
+    preuve_scientifique: "Racine millénaire des médecines chinoise, grecque et proche-orientale, la réglisse est utilisée pour adoucir, harmoniser et protéger les tissus irrités. Elle intervient souvent comme catalyseur plutôt que comme vedette solitaire.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "La réglisse extrait bien à l’eau, mais une extraction contrôlée permet de mieux calibrer son intensité et sa douceur, notamment pour les terrains sensibles ou hypertendus.",
+      phase_A: { temp: "72°C", temps: "2h00", solvant: "Eau distillée", cible: "Glycyrrhizine, flavonoïdes, mucoprotection" },
+      phase_B: { temp: "50°C", temps: "2h30", solvant: "Alcool bio 70°", cible: "Fraction complémentaire et stabilisation" }
+    },
+    recette_pas_a_pas: {
+      batch_standard: "Cible BloomLab : 750ml",
+      ingredients: {
+        phase_A: ["30 g de racine de réglisse coupée", "750 ml d’eau distillée"],
+        phase_B: ["15 g de racine en coupe fine", "750 ml d’alcool bio 70°"]
+      },
+      preparation: [
+        "1. Faire tremper 30 g de racine de réglisse coupée dans 750 ml d’eau distillée pendant 30 minutes."
+      ],
+      phase_A_instructions: [
+        "1. Phase A : mode manuel, 72°C, 2h00."
+      ],
+      transition: [
+        "1. Filtrer soigneusement."
+      ],
+      phase_B_instructions: [
+        "1. Phase B : placer 15 g de racine en coupe fine dans 750 ml d’alcool bio 70°, mode manuel 50°C, 2h30."
+      ],
+      filtration_et_finition: [
+        "1. Filtrer et conserver en flacon ambré."
+      ]
+    },
+    convergence_ancestrale: "Utilisée depuis l’Antiquité pour adoucir et harmoniser les tissus irrités.",
+    synergies_recommandees: ["Astragale", "Jujube", "Ashwagandha"],
+    precautions: "Contre-indiquée ou à surveiller étroitement en cas d’hypertension, d’hypokaliémie, d’insuffisance rénale, de grossesse ou de prise prolongée à dose élevée. Une consommation excessive peut entraîner une hypokaliémie et une hypertension artérielle."
+  },
+  {
+    plant_id: "vigna_angularis_herbarium",
+    nom_commun: "Vigna angularis — L’Adzuki, Drainant Nourrissant",
+    nom_latin: "Vigna angularis",
+    partie_utilisee: "Graine sèche",
+    famille_bloom: "Drainant nourrissant (Humidité, stagnation, surcharge)",
+    terrains_cibles: ["T1_Emonctoires", "T2_Intestin", "T3_Sang", "T8_Inflammation"],
+    actifs_cles: [
+      { nom: "Fibres solubles et insolubles", polarite: "Hydrosoluble" },
+      { nom: "Polyphénols", polarite: "Hydrosoluble" },
+      { nom: "Protéines végétales et minéraux", polarite: "Hydrosoluble" }
+    ],
+    preuve_scientifique: "Très utilisé en diététique asiatique pour alléger l’humidité, soutenir les reins au sens traditionnel et accompagner la récupération sans surcharger.",
+    pourquoi_bloomlab: {
+      probleme_traditionnel: "Traiter l’adzuki comme une simple tisane n’a pas grand sens. Son intérêt est dans une extraction-cuisson douce, prolongée, qui ouvre la graine et rend sa matrice alimentaire digestible.",
+      phase_A: { temp: "85°C", temps: "3h00", solvant: "Eau distillée", cible: "Fibres solubles, polyphénols, minéraux et fraction nutritive" },
+      phase_B: { temp: "—", solvant: "—", cible: "—" }
+    },
+    recette_pas_a_pas: {
+      batch_standard: "Cible BloomLab : 750ml",
+      ingredients: {
+        phase_A: ["60 g de haricots adzuki", "750 ml d’eau distillée"],
+        phase_B: ["—"]
+      },
+      preparation: [
+        "1. Faire tremper 60 g de haricots adzuki dans 750 ml d’eau distillée pendant 8 à 12 heures. Rincer avant mise en cuve."
+      ],
+      phase_A_instructions: [
+        "1. Phase A : mode manuel, 85°C, 3h00."
+      ],
+      transition: [
+        "1. Le liquide peut être consommé comme bouillon fonctionnel."
+      ],
+      phase_B_instructions: [
+        "1. —"
+      ],
+      filtration_et_finition: [
+        "1. Les graines peuvent être réutilisées en préparation alimentaire."
+      ]
+    },
+    convergence_ancestrale: "Utilisé en diététique asiatique pour alléger l’humidité et soutenir la récupération.",
+    synergies_recommandees: ["Bardane", "Goji", "Jujube"],
+    precautions: "Prudence en cas de faiblesse digestive marquée, de maigreur extrême ou de terrain déjà trop sec."
   }
 ];

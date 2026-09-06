@@ -236,7 +236,7 @@ export default function CulinarySection({
           />
           <button 
             type="submit"
-            className="absolute right-2 md:right-3 top-1.5 md:top-2 bottom-1.5 md:bottom-2 px-4 md:px-6 bg-botanik-green text-white rounded-full font-bold uppercase tracking-widest text-[10px] md:text-xs hover:bg-botanik-orange transition-colors"
+            className="absolute right-2 md:right-3 top-1.5 md:top-2 bottom-1.5 md:bottom-2 px-4 md:px-6 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-full font-bold uppercase tracking-widest text-[10px] md:text-xs transition-colors cursor-pointer"
           >
             {t.search.button}
           </button>

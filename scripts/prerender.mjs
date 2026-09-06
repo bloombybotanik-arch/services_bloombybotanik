@@ -11,87 +11,81 @@ import fs from 'fs/promises';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, '../dist');
-const PORT = 4175;
+const rootDir = path.resolve(__dirname, '..');
+const PORT = 4176;
 const BASE_URL = `http://localhost:${PORT}`;
 
-// Liste des routes à pré-rendre. Les kits sont synchronisés avec les slugs
-// définis dans src/StoreContent.tsx (fonction obtenirProduits).
-const PRODUCT_SLUGS = [
-  'bloomlab',
-  'bundle-apothicaire',
-  'pack-signature',
-  'kit-starter',
-  'kit-nuit',
-  'kit-digestion',
-  'kit-articulaire',
-  'kit-hiver',
-  'kit-reset',
-  'freemium-access',
-  'premium-access'
-];
+/**
+ * Extraction dynamique des slugs et IDs depuis les fichiers source
+ */
+async function getDynamicRoutes() {
+  const products = [];
+  const blogPosts = [];
+  const plants = [];
 
-const BLOG_SLUGS = [
-  'tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes',
-  'macers-huileux-maison-les-5-erreurs-qui-detruisent-vos-actifs',
-  'inflammation-chronique-le-role-des-plantes-dans-le-reset-homeostasique'
-];
+  try {
+    // 1. Products from StoreContent.tsx
+    const storeContent = await fs.readFile(path.join(rootDir, 'src/StoreContent.tsx'), 'utf-8');
+    const productMatches = storeContent.matchAll(/id:\s*['"]([a-z0-9-]+)['"]/g);
+    for (const match of productMatches) {
+      if (!products.includes(match[1])) products.push(match[1]);
+    }
 
-const PLANT_IDS = [
-  'chaga_vitality', 'urtica_dioica', 'melissa_officinalis', 'curcuma_longa_poivre', 
-  'zingiber_officinale', 'rosmarinus_officinalis', 'lavandula_angustifolia', 'artichaut'
-];
+    // 2. Blog posts from blogPosts.ts
+    const blogContent = await fs.readFile(path.join(rootDir, 'src/data/blogPosts.ts'), 'utf-8');
+    const blogMatches = blogContent.matchAll(/slug:\s*['"]([a-z0-9-]+)['"]/g);
+    for (const match of blogMatches) {
+      if (!blogPosts.includes(match[1])) blogPosts.push(match[1]);
+    }
+
+    // 3. Plants from therapeuticData.ts
+    const plantContent = await fs.readFile(path.join(rootDir, 'src/data/therapeuticData.ts'), 'utf-8');
+    const plantMatches = plantContent.matchAll(/plant_id:\s*['"]([A-Za-z0-9_]+)['"]/g);
+    for (const match of plantMatches) {
+      if (!plants.includes(match[1])) plants.push(match[1]);
+    }
+
+    console.log(`Routes découvertes : ${products.length} produits, ${blogPosts.length} articles, ${plants.length} plantes.`);
+  } catch (err) {
+    console.error('Erreur lors de la découverte des routes :', err);
+  }
+
+  return { products, blogPosts, plants };
+}
 
 const LANGUAGES = ['', '/en', '/de'];
 
 const BASE_ROUTES = [
   '/',
-  '/bloomlab',
-  '/phytotherapie-reset',
-  '/boutique',
-  '/gastronomie-botanique',
-  '/duo-argiles',
-  '/bibliotheque-savoirs',
-  '/herbier',
-  '/manifeste',
-  '/activation',
-  '/chat',
-  '/infusion-botanique',
-  '/infuseur-botanique',
-  '/infusion-botanique-maison-comment-ca-marche',
-  '/extraction-botanique',
-  '/extraction-botanique-guide-complet',
-  '/qu-est-ce-que-l-infusion-botanique',
-  '/blog',
-  '/droit-de-retractation',
-  '/conditions-generales-de-vente',
-  '/termes-et-conditions',
-  '/politique-de-confidentialite',
-  '/mentions-legales',
-  '/retour-et-remboursement',
-  '/questions-frequentes',
-  '/methode-infusion-botanique-precision',
-  '/totum-vegetal-definition',
-  '/solvants-extraction-botanique',
-  '/legal'
+  '/bloomlab/',
+  '/phytotherapie-reset/',
+  '/boutique/',
+  '/gastronomie-botanique/',
+  '/duo-argiles/',
+  '/herbier/',
+  '/manifeste/',
+  '/activation/',
+  '/infusion-botanique/',
+  '/infuseur-botanique/',
+  '/infusion-botanique-maison-comment-ca-marche/',
+  '/extraction-botanique/',
+  '/extraction-botanique-guide-complet/',
+  '/qu-est-ce-que-l-infusion-botanique/',
+  '/blog/',
+  '/droit-de-retractation/',
+  '/conditions-generales-de-vente/',
+  '/termes-et-conditions/',
+  '/politique-de-confidentialite/',
+  '/mentions-legales/',
+  '/retour-et-remboursement/',
+  '/questions-frequentes/',
+  '/methode-infusion-botanique-precision/',
+  '/totum-vegetal-definition/',
+  '/solvants-extraction-botanique/',
+  '/panier/',
+  '/compte/',
+  '/legal/'
 ];
-
-const ROUTES = [];
-
-for (const lang of LANGUAGES) {
-  for (const base of BASE_ROUTES) {
-    const route = lang === '' ? base : `${lang}${base === '/' ? '' : base}`;
-    ROUTES.push(route);
-  }
-  for (const slug of PRODUCT_SLUGS) {
-    ROUTES.push(lang === '' ? `/boutique/${slug}` : `${lang}/boutique/${slug}`);
-  }
-  for (const slug of BLOG_SLUGS) {
-    ROUTES.push(lang === '' ? `/blog/${slug}` : `${lang}/blog/${slug}`);
-  }
-  for (const id of PLANT_IDS) {
-    ROUTES.push(lang === '' ? `/bibliotheque/${id}` : `${lang}/bibliotheque/${id}`);
-  }
-}
 
 async function routeToFilePath(route) {
   if (route === '/') {
@@ -102,8 +96,62 @@ async function routeToFilePath(route) {
   return path.join(dir, 'index.html');
 }
 
+/**
+ * Génération automatique du sitemap.xml
+ */
+async function generateSitemaps(routes) {
+  const baseUrl = 'https://bloombybotanik.com';
+  const now = new Date().toISOString().split('T')[0];
+
+  const generateXml = (langs) => `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${routes.filter(r => {
+    // Exclure les routes techniques ou privées du sitemap
+    const excluded = ['/panier/', '/checkout/', '/admin/', '/compte/', '/en-attente/', '/legal/'];
+    return !excluded.some(ex => r.includes(ex));
+  }).map(route => {
+    const isMain = !route.startsWith('/en/') && !route.startsWith('/de/');
+    if (!isMain) return ''; // On ne traite que les routes principales pour générer les alternates
+    
+    const cleanRoute = route;
+    return `  <url>
+    <loc>${baseUrl}${cleanRoute}</loc>
+    <lastmod>${now}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>${cleanRoute === '/' ? '1.0' : '0.8'}</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="${baseUrl}${cleanRoute}" />
+    <xhtml:link rel="alternate" hreflang="en" href="${baseUrl}/en${cleanRoute}" />
+    <xhtml:link rel="alternate" hreflang="de" href="${baseUrl}/de${cleanRoute}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${baseUrl}${cleanRoute}" />
+  </url>`;
+  }).join('\n')}
+</urlset>`;
+
+  await fs.writeFile(path.join(distDir, 'sitemap.xml'), generateXml(['fr', 'en', 'de']), 'utf-8');
+  console.log('Sitemap généré avec succès.');
+}
+
 async function main() {
-  console.log('Démarrage du serveur statique pour le pré-rendu...');
+  const { products, blogPosts, plants } = await getDynamicRoutes();
+  const ROUTES = [];
+
+  for (const lang of LANGUAGES) {
+    for (const base of BASE_ROUTES) {
+      const route = lang === '' ? base : `${lang}${base === '/' ? '' : base}`;
+      ROUTES.push(route);
+    }
+    for (const slug of products) {
+      ROUTES.push(lang === '' ? `/boutique/${slug}/` : `${lang}/boutique/${slug}/`);
+    }
+    for (const slug of blogPosts) {
+      ROUTES.push(lang === '' ? `/blog/${slug}/` : `${lang}/blog/${slug}/`);
+    }
+    for (const id of plants) {
+      ROUTES.push(lang === '' ? `/herbier/${id}/` : `${lang}/herbier/${id}/`);
+    }
+  }
+
+  console.log(`Démarrage du pré-rendu pour ${ROUTES.length} routes...`);
   const app = express();
   app.use(express.static(distDir));
   app.get('*', (req, res) => {
@@ -127,17 +175,24 @@ async function main() {
     for (const chunk of chunks) {
       await Promise.all(chunk.map(async (route) => {
         const page = await browser.newPage();
+        // Force evaluation of SEOMetadata by passing prerender=true
         const url = `${BASE_URL}${route}${route.includes('?') ? '&' : '?'}prerender=true`;
-        console.log(`Pré-rendu : ${url}`);
-
+        
         try {
           await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
-          // Augmentation du délai pour s'assurer que React a fini de rendre et que SEOMetadata a tourné
-          await new Promise(r => setTimeout(r, 1500));
+          // Wait for React to hydrate and SEO tags to be injected
+          await new Promise(r => setTimeout(r, 1000));
+          
           const html = await page.content();
+          
+          // Quality check: verify canonical exists and has trailing slash
+          if (!html.includes('rel="canonical"') || !html.includes('href="https://bloombybotanik.com')) {
+            console.warn(`  [!] Attention: Canonical manquante ou incorrecte sur ${route}`);
+          }
+          
           const outputPath = await routeToFilePath(route);
           await fs.writeFile(outputPath, html, 'utf-8');
-          console.log(`  -> écrit dans ${path.relative(distDir, outputPath)}`);
+          console.log(`  -> écrit : ${path.relative(distDir, outputPath)}`);
         } catch (err) {
           console.error(`Erreur sur ${url}:`, err.message);
         } finally {
@@ -145,12 +200,15 @@ async function main() {
         }
       }));
     }
+
+    await generateSitemaps(ROUTES);
+
   } finally {
     await browser.close();
     server.close();
   }
 
-  console.log('Pré-rendu terminé avec succès pour', ROUTES.length, 'routes.');
+  console.log('Pré-rendu terminé avec succès.');
 }
 
 main().catch((err) => {

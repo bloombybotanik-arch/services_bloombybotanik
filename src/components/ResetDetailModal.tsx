@@ -30,7 +30,7 @@ export const ResetDetailModal: React.FC<ResetDetailModalProps> = ({ detail, onCl
       >
         <button 
           onClick={onClose}
-          className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white flex items-center justify-center text-botanik-green hover:bg-botanik-orange hover:text-white transition-all shadow-sm z-10"
+          className="absolute top-6 right-6 w-12 h-12 rounded-full bg-[#0F261E] flex items-center justify-center text-white hover:bg-botanik-orange transition-all shadow-md z-10"
         >
           <X className="w-6 h-6" />
         </button>
@@ -175,7 +175,7 @@ export const ResetDetailModal: React.FC<ResetDetailModalProps> = ({ detail, onCl
                     onNavigate(view);
                     onClose();
                   }}
-                  className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-botanik-orange text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:scale-105 transition-all shadow-xl shadow-botanik-orange/20"
+                  className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-2xl font-bold flex items-center justify-center gap-2 transition-all shadow-xl shadow-black/10 cursor-pointer"
                 >
                   {t.common.start_now} <ArrowRight className="w-5 h-5" />
                 </button>

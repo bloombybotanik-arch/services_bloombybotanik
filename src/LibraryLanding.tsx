@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Search, Leaf, BookOpen, FlaskConical, Target, Zap, ChevronRight, ArrowRight, ShieldCheck, Star, Utensils, Sparkles } from 'lucide-react';
+import { Search, Leaf, BookOpen, FlaskConical, Target, Zap, ChevronRight, ArrowRight, ShieldCheck, Star, Utensils, Sparkles, Droplets, Flame, Moon, Wind } from 'lucide-react';
 import { wrapTitle } from './lib/textUtils';
 import { unifiedBotanicalDatabase } from './data/unifiedBotanicalData';
 import { translations, Language } from './translations';
@@ -52,6 +52,15 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
       color: 'text-botanik-green',
       bg: 'bg-botanik-green/5'
     }
+  ];
+
+  const terrains = [
+    { id: 'T1', name: lang === 'fr' ? 'Microbiome' : 'Microbiome', icon: Droplets, color: 'bg-blue-500' },
+    { id: 'T2', name: lang === 'fr' ? 'Énergie' : 'Energy', icon: Zap, color: 'bg-yellow-500' },
+    { id: 'T3', name: lang === 'fr' ? 'Immunité' : 'Immunity', icon: ShieldCheck, color: 'bg-green-500' },
+    { id: 'T8', name: lang === 'fr' ? 'Inflammation' : 'Inflammation', icon: Flame, color: 'bg-red-500' },
+    { id: 'T7', name: lang === 'fr' ? 'Sérénité' : 'Serenity', icon: Wind, color: 'bg-indigo-500' },
+    { id: 'T9', name: lang === 'fr' ? 'Sommeil' : 'Sleep', icon: Moon, color: 'bg-slate-700' },
   ];
 
   return (
@@ -110,6 +119,29 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
               )}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Terrains Section */}
+      <section className="py-20 bg-white container mx-auto px-6 border-b border-botanik-green/5">
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-botanik-green mb-2">Navigation par Terrains</h2>
+          <p className="text-botanik-green/60">Ciblez les piliers systémiques de votre santé.</p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          {terrains.map((terrain) => (
+            <div 
+              key={terrain.id}
+              onClick={() => onNavigate('terrain', terrain.id)}
+              className="flex flex-col items-center p-6 rounded-3xl bg-[#FAF7F2] hover:bg-white hover:shadow-xl transition-all cursor-pointer group border border-[#D8CBB7]/30 hover:border-[#1C3F34]/40"
+            >
+              <div className="w-14 h-14 bg-[#1C3F34] group-hover:bg-[#FAF7F2] text-white group-hover:text-[#1C3F34] border border-[#D8CBB7] group-hover:border-[#1C3F34] rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-300 shadow-sm">
+                <terrain.icon className="w-6 h-6 transition-colors duration-300" />
+              </div>
+              <span className="text-sm font-bold text-botanik-green text-center group-hover:text-[#1C3F34] transition-colors">{terrain.name}</span>
+              <span className="text-[10px] font-black uppercase tracking-widest text-botanik-green/40 mt-1">{terrain.id}</span>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -177,11 +209,13 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
       </section>
 
       {/* Content description */}
-      <section className="py-24 bg-botanik-green text-white">
+      <section className="py-24 bg-[#0F261E] text-white border-t border-white/5">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
-            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#F97316] mb-4 block">{t.features.badge}</span>
-            <h2 className="text-4xl md:text-6xl font-bold">{t.features.title}</h2>
+            <span className="inline-block px-4 py-1.5 rounded-full bg-[#1C3F34] border border-[#D8CBB7]/40 text-[#D97706] text-[10px] font-black uppercase tracking-[0.3em] mb-4">
+              {t.features.badge}
+            </span>
+            <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight">{t.features.title}</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -190,10 +224,12 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
               { icon: Star, t: t.features.item3 },
               { icon: ShieldCheck, t: t.features.item4 }
             ].map((item, idx) => (
-              <div key={idx} className="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-sm">
-                <item.icon className="w-8 h-8 text-[#F97316] mb-6" />
-                <h4 className="font-bold text-lg mb-3">{item.t.title}</h4>
-                <p className="text-sm text-white/60 leading-relaxed">{item.t.desc}</p>
+              <div key={idx} className="bg-[#16352B] border border-[#D8CBB7]/30 hover:border-[#D97706]/60 p-8 rounded-3xl shadow-lg transition-all duration-300">
+                <div className="w-12 h-12 rounded-2xl bg-[#1C3F34] border border-[#D8CBB7]/30 flex items-center justify-center mb-6">
+                  <item.icon className="w-6 h-6 text-[#D97706]" />
+                </div>
+                <h4 className="font-bold text-lg mb-3 text-white">{item.t.title}</h4>
+                <p className="text-sm text-[#E8F1EE]/80 leading-relaxed">{item.t.desc}</p>
               </div>
             ))}
           </div>

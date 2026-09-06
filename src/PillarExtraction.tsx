@@ -1,26 +1,28 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { FlaskConical, Thermometer, Clock, Droplets, Leaf, ShieldCheck, ChevronRight, BookOpen, Activity, ArrowRight, Check, Compass } from 'lucide-react';
+import { FlaskConical, Thermometer, Clock, Droplets, Leaf, ShieldCheck, ChevronRight, BookOpen, Activity, ArrowRight, Check, Compass, Sparkles, AlertCircle } from 'lucide-react';
 import { Language, translations } from './translations';
-import bloomLabImg from './assets/images/bloomlab_main_1784887530345.jpeg';
 import { OptimizedImage } from './components/OptimizedImage';
+import ExtractionCalculator from './components/ExtractionCalculator';
 
-export default function PillarExtraction({ lang, onNavigate }: { lang: Language, onNavigate: (v: any) => void }) {
+const bloomLabImg = "https://images.unsplash.com/photo-1611078767398-fcfe88fdb728?auto=format&fit=crop&w=1200&q=80";
+
+export default function PillarExtraction({ lang, onNavigate }: { lang: Language, onNavigate: (v: any, productId?: string) => void }) {
   const t = translations[lang];
-  const seo = t.seo.infuseur || t.seo.pillar;
+  const isFR = lang === 'fr';
 
   return (
     <div className="flex-1 bg-[#F9F9F7]">
-      {/* Hero Section */}
+      {/* Hero Section - Single H1 on page */}
       <section className="relative py-24 px-6 overflow-hidden bg-botanik-green text-white">
         <div className="absolute inset-0">
           <div className="w-full h-full relative">
             <OptimizedImage 
               src={bloomLabImg} 
-              width={800}
-              height={600}
+              width={1200}
+              height={800}
               className="w-full h-full object-cover opacity-20" 
-              alt={(seo as any).h1 || "Extraction Botanique"} 
+              alt={isFR ? "Extraction botanique : guide complet des méthodes, solvants et paramètres" : "Botanical extraction guide"} 
             />
           </div>
         </div>
@@ -29,259 +31,489 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-block px-4 py-1 bg-white/10 rounded-full text-xs font-bold uppercase tracking-widest mb-8 border border-white/10"
+            className="inline-block px-4 py-1.5 bg-white/10 rounded-full text-xs font-bold uppercase tracking-widest mb-8 border border-white/10 text-botanik-orange"
           >
-            Ingénierie de la Vitalité & Souveraineté
+            {isFR ? "Guide Pilier • Autonomie Botanique" : "Pillar Guide • Botanical Autonomy"}
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-black mb-8 font-sans tracking-tight leading-tight"
+            className="text-3xl sm:text-4xl md:text-6xl font-bold mb-8 font-sans tracking-tight leading-tight"
           >
-            {lang === 'fr' ? (
-              <>
-                L'Extraction du Totum : <br />
-                <span className="text-botanik-orange">Précision Thermique & Biodisponibilité</span>
-              </>
-            ) : (seo as any).h1 || "Precision Botanical Extraction"}
+            {isFR ? (
+              <>Extraction botanique : guide complet des méthodes, solvants et paramètres</>
+            ) : lang === 'de' ? (
+              <>Botanische Extraktion: der komplette Guide zu Methoden, Lösungsmitteln und Parametern</>
+            ) : (
+              <>Botanical extraction: a complete guide to methods, solvents and parameters</>
+            )}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl text-white/80 leading-relaxed mb-12 max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-white/85 leading-relaxed mb-10 max-w-3xl mx-auto"
           >
-            {lang === 'fr' ? "Réalisez votre rééquilibrage de terrain avec l'extraction botanique de précision." : (seo as any).intro}
+            {isFR 
+              ? "Infusion, décoction, macération, extraction séquentielle : comparez les méthodes, choisissez le bon solvant et maîtrisez température et agitation pour libérer le Totum végétal."
+              : "Infusion, decoction, maceration, sequential extraction: compare methods, choose the right solvent and master temperature and agitation to unlock the botanical Totum."}
           </motion.p>
         </div>
       </section>
 
       {/* Sommaire Rapide */}
-      <section className="max-w-4xl mx-auto -mt-12 px-6 mb-24 relative z-20">
-        <div className="bg-white rounded-3xl p-8 shadow-2xl border border-botanik-green/5 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section className="max-w-4xl mx-auto -mt-12 px-6 mb-20 relative z-20">
+        <div className="bg-white rounded-3xl p-8 shadow-xl border border-botanik-green/5 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex items-start gap-4">
             <div className="w-10 h-10 rounded-xl bg-botanik-green/5 flex items-center justify-center flex-shrink-0">
               <FlaskConical className="w-5 h-5 text-botanik-green" />
             </div>
             <div>
-              <h3 className="font-bold text-botanik-green text-sm mb-1">Biodisponibilité</h3>
-              <p className="text-xs text-botanik-green/60">Optimisez l'assimilation des actifs végétaux.</p>
+              <h3 className="font-bold text-botanik-green text-sm mb-1">{isFR ? "Totum Végétal" : "Botanical Totum"}</h3>
+              <p className="text-xs text-botanik-green/70">{isFR ? "Préservez l'intégralité du profil moléculaire végétal." : "Preserve the complete molecular profile."}</p>
             </div>
           </div>
           <div className="flex items-start gap-4">
-            <div className="w-10 h-10 rounded-xl bg-botanik-orange/5 flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-botanik-orange/10 flex items-center justify-center flex-shrink-0">
               <Thermometer className="w-5 h-5 text-botanik-orange" />
             </div>
             <div>
-              <h3 className="font-bold text-botanik-green text-sm mb-1">Thermorégulation</h3>
-              <p className="text-xs text-botanik-green/60">Maîtrise thermique intelligente à ±0,5°C.</p>
+              <h3 className="font-bold text-botanik-green text-sm mb-1">{isFR ? "Thermorégulation" : "Thermoregulation"}</h3>
+              <p className="text-xs text-botanik-green/70">{isFR ? "Stabilité thermique rigoureuse sans dénaturation." : "Rigorous thermal stability without breakdown."}</p>
             </div>
           </div>
           <div className="flex items-start gap-4">
-            <div className="w-10 h-10 rounded-xl bg-botanik-magenta/5 flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-botanik-magenta/10 flex items-center justify-center flex-shrink-0">
               <ShieldCheck className="w-5 h-5 text-botanik-magenta" />
             </div>
             <div>
-              <h3 className="font-bold text-botanik-green text-sm mb-1">Homéostasie</h3>
-              <p className="text-xs text-botanik-green/60">Soutien systémique de votre terrain biologique.</p>
+              <h3 className="font-bold text-botanik-green text-sm mb-1">{isFR ? "Inox 304 Inerte" : "Inert 304 Stainless Steel"}</h3>
+              <p className="text-xs text-botanik-green/70">{isFR ? "Cuve alimentaire inerte, facile à nettoyer et durable." : "Inert food-grade bowl, easy to clean and durable."}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Content */}
-      <div className="max-w-4xl mx-auto px-6 pb-24 space-y-24">
+      {/* Main Content */}
+      <div className="max-w-4xl mx-auto px-6 pb-24 space-y-20">
         
-        {/* Section 1: Qu'est-ce que l'extraction ? */}
-        <section className="prose prose-botanik max-w-none">
-          <h2 className="text-3xl font-bold text-botanik-green mb-8 flex items-center gap-4">
-            <span className="w-8 h-8 rounded-full bg-botanik-green text-white flex items-center justify-center text-sm font-black">01</span>
-            {lang === 'fr' ? 'La Médecine des Systèmes : Révéler le Totum' : 'The Science of Totum: Unlocking Life\'s Intelligence'}
+        {/* Section 1: Qu'est-ce que l'extraction botanique ? */}
+        <section className="bg-white rounded-3xl p-8 md:p-12 border border-botanik-green/10 shadow-sm space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-botanik-green flex items-center gap-3">
+            <span className="w-8 h-8 rounded-full bg-botanik-green text-white flex items-center justify-center text-sm font-bold">1</span>
+            {isFR ? "Qu'est-ce que l'extraction botanique ?" : "What is botanical extraction?"}
           </h2>
-          <div className="space-y-6 text-lg leading-relaxed text-botanik-green/80">
-            <p>
-              L'extraction n'est pas une simple étape technique ; c'est un acte de souveraineté sanitaire. La Médecine des Systèmes (ou MTC 2.0) considère que la plante médicinale est un coffre-fort moléculaire dont l'intelligence est protégée par des structures complexes. L'infusion classique est souvent insuffisante car elle ne propose qu'une seule clé pour une serrure complexe.
+
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold text-botanik-green/90">
+              {isFR ? "Définition et principes fondamentaux" : "Definition and fundamental principles"}
+            </h3>
+            <p className="text-base text-botanik-green/80 leading-relaxed">
+              {isFR 
+                ? "L'extraction botanique est le processus physique et chimique par lequel un solvant (eau, huile, glycérine ou alcool) dissout et capture les principes actifs contenus dans la matrice d'une plante. Loin d'une simple dissolution passive, une extraction réussie repose sur un équilibre rigoureux entre le choix du solvant, le gradient de concentration, la température et la cinétique d'agitation."
+                : "Botanical extraction is the physical and chemical process through which a solvent dissolves and captures the active compounds inside a plant matrix."}
             </p>
-            <p>
-              Le concept de <strong>Totum végétal</strong> est au cœur de la démarche BloomLab. Nous cherchons à capturer la synergie naturelle pour un soutien de l'homéostasie durable. La biodisponibilité optimale est atteinte lorsque chaque composé module et soutient l'action des autres, respectant ainsi votre pharmacie intérieure.
+            <p className="text-base text-botanik-green/80 leading-relaxed">
+              {isFR 
+                ? "Chaque plante recèle des composés hydrophiles (solubles dans l'eau) et lipophiles (solubles dans les corps gras). Comprendre ces affinités permet de concevoir des préparations botaniques riches, équilibrées et fidèles à la plante d'origine."
+                : "Every plant contains hydrophilic and lipophilic components. Mastering these affinities allows creating balanced, faithful botanical preparations."}
             </p>
-            <div className="bg-botanik-green/5 p-10 rounded-[32px] border border-botanik-green/10 my-12">
-              <h4 className="font-black text-botanik-green mb-6 flex items-center gap-2 uppercase tracking-widest text-sm">
-                <Droplets className="w-5 h-5 text-botanik-orange" /> {lang === 'fr' ? 'Protocoles d\'Extraction et Solvants' : 'Solvent Polarity'}
-              </h4>
-              <p className="mb-6 text-base italic">
-                Chaque famille de molécules possède une affinité spécifique. Maîtriser le solvant et sa température, c'est choisir quel levier de rééquilibrage de terrain vous activez.
-              </p>
-              <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <li className="p-6 bg-white rounded-2xl border border-botanik-green/5 shadow-sm">
-                  <div className="font-black text-botanik-orange mb-2 text-xs uppercase tracking-widest">Milieu Aqueux</div>
-                  <p className="text-sm"><strong>L'eau :</strong> Indispensable pour les sels minéraux et les mucilages apaisants. Protocoles fleurs tendres à 45°C.</p>
-                </li>
-                <li className="p-6 bg-white rounded-2xl border border-botanik-green/5 shadow-sm">
-                  <div className="font-black text-botanik-orange mb-2 text-xs uppercase tracking-widest">Milieu Lipidique</div>
-                  <p className="text-sm"><strong>L'huile & Beurres :</strong> Capturent les terpènes et vitamines liposolubles. Idéal pour les macérats de terrain.</p>
-                </li>
-                <li className="p-6 bg-white rounded-2xl border border-botanik-green/5 shadow-sm">
-                  <div className="font-black text-botanik-orange mb-2 text-xs uppercase tracking-widest">Milieu Hydroalcoolique</div>
-                  <p className="text-sm"><strong>L'alcool :</strong> Extraction profonde des résines (60° pour le Boswellia) et racines denses (55°).</p>
-                </li>
-              </ul>
-            </div>
+          </div>
+
+          <div className="pt-4 border-t border-botanik-green/10 space-y-4">
+            <h3 className="text-xl font-bold text-botanik-green/90">
+              {isFR ? "Différence avec l'infusion classique" : "Difference with classic infusion"}
+            </h3>
+            <p className="text-base text-botanik-green/80 leading-relaxed">
+              {isFR 
+                ? "L'infusion classique consiste à verser de l'eau chaude sur une plante et à laisser reposer. Si elle est agréable et accessible, elle présente deux limites majeures : l'eau bouillante détruit les fractions thermolabiles fragiles, et l'absence d'agitation continue crée une couche de saturation autour des feuilles, limitant le rendement d'extraction."
+                : "Classic infusion pours boiling water over a plant. While traditional, boiling water denatures fragile compounds, and the absence of agitation limits molecular transfer."}
+            </p>
           </div>
         </section>
 
-        {/* Section 2: La Variable Thermique */}
-        <section className="prose prose-botanik max-w-none">
-          <h2 className="text-3xl font-bold text-botanik-green mb-8 flex items-center gap-4">
-            <span className="w-8 h-8 rounded-full bg-botanik-green text-white flex items-center justify-center text-sm font-black">02</span>
-            {lang === 'fr' ? 'Thermorégulation Intelligente : La Précision ±0,5°C' : 'The Critical Variable: ±0.5°C Thermal Precision'}
+        {/* Section 2: Pourquoi l'extraction séquentielle change tout */}
+        <section className="bg-white rounded-3xl p-8 md:p-12 border border-botanik-green/10 shadow-sm space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-botanik-green flex items-center gap-3">
+            <span className="w-8 h-8 rounded-full bg-botanik-green text-white flex items-center justify-center text-sm font-bold">2</span>
+            {isFR ? "Pourquoi l'extraction séquentielle change tout" : "Why sequential extraction changes everything"}
           </h2>
-          <div className="space-y-6 text-lg leading-relaxed text-botanik-green/80">
-            <p>
-              C'est ici que l'ingénierie de la vitalité prend tout son sens. Une température mal maîtrisée détruit les molécules fragiles avant même qu'elles n'atteignent votre terrain biologique.
+
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold text-botanik-green/90">
+              {isFR ? "Les limites des méthodes traditionnelles" : "The limitations of traditional methods"}
+            </h3>
+            <p className="text-base text-botanik-green/80 leading-relaxed">
+              {isFR 
+                ? "Les méthodes traditionnelles à solvant unique sont confrontées à une contradiction physique : un solvant aqueux ne peut pas solubiliser les résines ou les flavonoïdes lipophiles, tandis qu'un corps gras ne capte pas les minéraux ou les mucilages. Tenter d'extraire une plante entière en une seule étape mène souvent à un profil moléculaire incomplet."
+                : "Single-solvent traditional methods face a physical contradiction: an aqueous solvent cannot dissolve lipophilic resins, while oils cannot capture water-soluble minerals."}
             </p>
-            <p>
-              Le <strong>BloomLab®</strong> utilise la thermorégulation intelligente pour cibler précisément le point de biodisponibilité maximale : 
+          </div>
+
+          <div className="pt-4 border-t border-botanik-green/10 space-y-4">
+            <h3 className="text-xl font-bold text-botanik-green/90">
+              {isFR ? "Le défi du totum végétal" : "The challenge of the plant totum"}
+            </h3>
+            <p className="text-base text-botanik-green/80 leading-relaxed">
+              {isFR 
+                ? "Le totum désigne l'ensemble des substances actives et secondaires contenues dans le végétal vivant, agissant en synergie naturelle. Pour "
+                : "The totum represents all active compounds acting in synergy. To "}
+              <button 
+                onClick={() => onNavigate('totum-definition')}
+                className="text-botanik-green font-bold underline hover:text-botanik-orange transition-colors cursor-pointer"
+              >
+                {isFR ? "comprendre le totum végétal" : "understand the plant totum"}
+              </button>
+              {isFR 
+                ? ", il est indispensable de préserver ces interactions moléculaires sans isoler artificiellement une seule molécule chimique."
+                : ", it is essential to preserve these molecular interactions."}
             </p>
-            <div className="my-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="p-8 bg-white rounded-3xl border-l-4 border-l-botanik-orange shadow-sm border border-botanik-green/5">
-                <h4 className="text-xl font-bold text-botanik-green mb-3">Protocoles de Précision</h4>
-                <ul className="space-y-2 text-sm leading-relaxed mb-4">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-botanik-orange" /> 60°C : Résines et huiles essentielles (Boswellia).</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-botanik-orange" /> 55°C : Racines et parties denses.</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-botanik-orange" /> 45°C : Mucilages et fleurs tendres.</li>
-                </ul>
-              </div>
-              <div className="p-8 bg-white rounded-3xl border-l-4 border-l-botanik-green shadow-sm border border-botanik-green/5">
-                <h4 className="text-xl font-bold text-botanik-green mb-3">Extraction Basse Température</h4>
-                <p className="text-sm leading-relaxed mb-4">
-                  Pour préserver l'intelligence du vivant, nous privilégions l'infuseur basse température. Cela permet une agitation moléculaire sans dégradation oxydative pour une biodisponibilité optimale.
+          </div>
+        </section>
+
+        {/* Section 3: Phase A : extraction des composés hydrosolubles */}
+        <section className="bg-white rounded-3xl p-8 md:p-12 border border-botanik-green/10 shadow-sm space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-botanik-green flex items-center gap-3">
+            <span className="w-8 h-8 rounded-full bg-botanik-green text-white flex items-center justify-center text-sm font-bold">3</span>
+            {isFR ? "Phase A : extraction des composés hydrosolubles" : "Phase A: extracting water-soluble compounds"}
+          </h2>
+
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold text-botanik-green/90">
+              {isFR ? "Solvants adaptés : eau, glycérine" : "Suitable solvents: water, glycerin"}
+            </h3>
+            <p className="text-base text-botanik-green/80 leading-relaxed">
+              {isFR 
+                ? "La Phase A mobilise des solvants à polarité élevée. L'eau déminéralisée ou filtrée extrait les tanins, les polyphénols hydrosolubles et les mucilages. La glycérine végétale, solvant doux et émollient, capture les flavonoïdes tout en stabilisant la préparation dans le temps."
+                : "Phase A uses high polarity solvents such as filtered water or vegetable glycerin."}
+            </p>
+          </div>
+
+          <div className="pt-4 border-t border-botanik-green/10 space-y-4">
+            <h3 className="text-xl font-bold text-botanik-green/90">
+              {isFR ? "Températures selon la matrice végétale" : "Temperatures according to plant matrix"}
+            </h3>
+            <p className="text-base text-botanik-green/80 leading-relaxed">
+              {isFR 
+                ? "La sensibilité thermique varie considérablement selon la partie de la plante utilisée :"
+                : "Thermal sensitivity varies widely depending on the plant part used:"}
+            </p>
+            <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+              <li className="p-4 bg-[#F9F9F7] rounded-2xl border border-botanik-green/10">
+                <div className="text-botanik-orange font-bold text-sm mb-1">45°C</div>
+                <div className="font-semibold text-botanik-green text-sm mb-1">Fleurs tendres</div>
+                <p className="text-xs text-botanik-green/70">Camomille, mauve, calendula. Préserve les mucilages et arômes subtils.</p>
+              </li>
+              <li className="p-4 bg-[#F9F9F7] rounded-2xl border border-botanik-green/10">
+                <div className="text-botanik-orange font-bold text-sm mb-1">55°C</div>
+                <div className="font-semibold text-botanik-green text-sm mb-1">Feuilles & tiges</div>
+                <p className="text-xs text-botanik-green/70">Menthe, mélisse, ortie. Assure une diffusion sans surchauffe enzymatique.</p>
+              </li>
+              <li className="p-4 bg-[#F9F9F7] rounded-2xl border border-botanik-green/10">
+                <div className="text-botanik-orange font-bold text-sm mb-1">60°C</div>
+                <div className="font-semibold text-botanik-green text-sm mb-1">Écorces & racines</div>
+                <p className="text-xs text-botanik-green/70">Cannelle, réglisse, gingembre. Pénètre les tissus fibreux denses.</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Section 4: Phase B : extraction des composés liposolubles */}
+        <section className="bg-white rounded-3xl p-8 md:p-12 border border-botanik-green/10 shadow-sm space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-botanik-green flex items-center gap-3">
+            <span className="w-8 h-8 rounded-full bg-botanik-green text-white flex items-center justify-center text-sm font-bold">4</span>
+            {isFR ? "Phase B : extraction des composés liposolubles" : "Phase B: extracting lipid-soluble compounds"}
+          </h2>
+
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold text-botanik-green/90">
+              {isFR ? "Solvants adaptés : alcool, huiles" : "Suitable solvents: alcohol, oils"}
+            </h3>
+            <p className="text-base text-botanik-green/80 leading-relaxed">
+              {isFR 
+                ? "La Phase B mobilise des solvants apolaires ou semi-polaires. Les huiles végétales stables (jojoba, sésame, olive) sont idéales pour "
+                : "Phase B leverages lipid or hydroalcoholic solvents. Stable vegetable oils are ideal to "}
+              <button 
+                onClick={() => onNavigate('huile-infusee')}
+                className="text-botanik-green font-bold underline hover:text-botanik-orange transition-colors cursor-pointer"
+              >
+                {isFR ? "réussir une huile infusée maison" : "succeed in making homemade infused oil"}
+              </button>
+              {isFR 
+                ? ". En milieu hydroalcoolique dosé avec rigueur, l'alcool éthylique permet de "
+                : ". With accurate hydroalcoholic dilution, alcohol allows you to "}
+              <button 
+                onClick={() => onNavigate('solvants-extraction')}
+                className="text-botanik-green font-bold underline hover:text-botanik-orange transition-colors cursor-pointer"
+              >
+                {isFR ? "préparer une teinture mère hydroalcoolique" : "prepare a hydroalcoholic mother tincture"}
+              </button>
+              {isFR ? " capable de capter les résines et principes amers." : " capable of capturing dense resins."}
+            </p>
+          </div>
+
+          <div className="pt-4 border-t border-botanik-green/10 space-y-4">
+            <h3 className="text-xl font-bold text-botanik-green/90">
+              {isFR ? "Préservation des fractions thermolabiles" : "Preserving thermolabile fractions"}
+            </h3>
+            <p className="text-base text-botanik-green/80 leading-relaxed">
+              {isFR 
+                ? "Les terpènes aromatiques et les acides gras insaturés rancissent ou s'évaporent rapidement sous l'effet des UV et d'une chaleur incontrôlée. Une extraction fermée à température modérée garantit l'intégrité de ces molécules protectrices."
+                : "Volatile terpenes and unsaturated fatty acids evaporate or oxidize quickly under direct light and excess heat. Closed extraction at controlled temperature protects them."}
+            </p>
+          </div>
+        </section>
+
+        {/* Section 5: Les 3 paramètres critiques */}
+        <section className="bg-white rounded-3xl p-8 md:p-12 border border-botanik-green/10 shadow-sm space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-botanik-green flex items-center gap-3">
+            <span className="w-8 h-8 rounded-full bg-botanik-green text-white flex items-center justify-center text-sm font-bold">5</span>
+            {isFR ? "Les 3 paramètres critiques : température, agitation, environnement clos" : "The 3 critical parameters: temperature, agitation, closed chamber"}
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+            <div className="p-6 bg-[#F9F9F7] rounded-2xl border border-botanik-green/10 flex flex-col justify-between">
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-botanik-orange/10 flex items-center justify-center text-botanik-orange mb-4">
+                  <Thermometer className="w-5 h-5" />
+                </div>
+                <h3 className="font-bold text-botanik-green text-lg mb-2">1. Température stable</h3>
+                <p className="text-sm text-botanik-green/80 leading-relaxed">
+                  {isFR ? "Contrôle précis sans pics thermiques pour respecter les seuils de tolérance de chaque famille végétale." : "Precise control without heat spikes to preserve each plant family."}
                 </p>
-                <div className="text-[10px] font-black text-botanik-green uppercase tracking-widest">Soutien de l'homéostasie par le Totum</div>
               </div>
             </div>
-          </div>
-        </section>
 
-        {/* Section 3: Dynamique Moléculaire */}
-        <section className="prose prose-botanik max-w-none">
-          <h2 className="text-3xl font-bold text-botanik-green mb-8 flex items-center gap-4">
-            <span className="w-8 h-8 rounded-full bg-botanik-green text-white flex items-center justify-center text-sm font-black">03</span>
-            {lang === 'fr' ? 'Cinétique et Cavitation : Au-delà de la chaleur' : 'Kinetics and Cavitation: Beyond Heat'}
-          </h2>
-          <div className="space-y-6 text-lg leading-relaxed text-botanik-green/80">
-            <p>
-              La chaleur n'est qu'un vecteur. L'extraction efficace repose sur la cinétique. Dans un récipient statique (bol de tisane), une couche de saturation se forme rapidement autour de la plante, bloquant tout transfert supplémentaire de molécules. 
-            </p>
-            <p>
-              BloomLab utilise un système d'agitation vortex contrôlée qui crée une micro-cavitation. Ce mouvement permanent renouvelle le solvant au contact de la matière végétale, créant un gradient de concentration optimal qui "aspire" littéralement les actifs hors de la plante. C'est ce qui permet d'atteindre des rendements proches de 98% là où une infusion classique plafonne à 5%.
-            </p>
-            <div className="bg-botanik-orange text-white p-10 rounded-[40px] relative overflow-hidden shadow-2xl shadow-botanik-orange/20">
-              <div className="relative z-10">
-                <h3 className="text-2xl md:text-3xl font-black mb-4 uppercase tracking-tight italic">
-                  {lang === 'fr' ? 'Une place pour chaque plante.' : 'A place for every plant.'}
-                </h3>
-                <p className="text-lg opacity-90 mb-8 leading-relaxed font-medium">
-                  {lang === 'fr' 
-                    ? "Que vous travailliez l'écorce de cannelle, la racine de réglisse ou le pétale de rose, le BloomLab adapte sa signature thermique et cinétique pour respecter l'intégrité de votre matière première." 
-                    : "Whether you work with cinnamon bark, licorice root, or rose petals, BloomLab adapts its thermal and kinetic signature to respect the integrity of your raw material."}
+            <div className="p-6 bg-[#F9F9F7] rounded-2xl border border-botanik-green/10 flex flex-col justify-between">
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-botanik-green/10 flex items-center justify-center text-botanik-green mb-4">
+                  <Activity className="w-5 h-5" />
+                </div>
+                <h3 className="font-bold text-botanik-green text-lg mb-2">2. Agitation cinétique</h3>
+                <p className="text-sm text-botanik-green/80 leading-relaxed">
+                  {isFR ? "Le vortex continu brise la couche de saturation statique et renouvelle le solvant au cœur des tissus." : "Continuous movement breaks the static boundary layer and renews solvent contact."}
                 </p>
-                <button onClick={() => onNavigate('machine')} className="bg-[#F97316] text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-[#EA580C] transition-all shadow-lg">
-                  {lang === 'fr' ? 'Découvrir la BloomLab' : 'Discover the BloomLab'}
-                </button>
               </div>
-              <Activity className="absolute bottom-[-10%] right-[-5%] w-64 h-64 text-white/10" />
+            </div>
+
+            <div className="p-6 bg-[#F9F9F7] rounded-2xl border border-botanik-green/10 flex flex-col justify-between">
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-botanik-magenta/10 flex items-center justify-center text-botanik-magenta mb-4">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <h3 className="font-bold text-botanik-green text-lg mb-2">3. Environnement clos</h3>
+                <p className="text-sm text-botanik-green/80 leading-relaxed">
+                  {isFR ? "Cuve en acier inoxydable 304 inerte et étanche : pas de perte de composés volatils, ni d'oxydation prématurée." : "Inert food-grade 304 stainless steel chamber preventing volatile loss and oxidation."}
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Section 4: Souveraineté Sanitaire */}
-        <section className="prose prose-botanik max-w-none">
-          <h2 className="text-3xl font-bold text-botanik-green mb-8 flex items-center gap-4">
-            <span className="w-8 h-8 rounded-full bg-botanik-green text-white flex items-center justify-center text-sm font-black">04</span>
-            {lang === 'fr' ? 'Vers une Souveraineté Sanitaire Authentique' : 'Towards Authentic Health Sovereignty'}
+        {/* Section 6: Comparaison des méthodes */}
+        <section className="bg-white rounded-3xl p-8 md:p-12 border border-botanik-green/10 shadow-sm space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-botanik-green flex items-center gap-3">
+            <span className="w-8 h-8 rounded-full bg-botanik-green text-white flex items-center justify-center text-sm font-bold">6</span>
+            {isFR ? "Infusion, décoction, macération : comparaison des méthodes" : "Infusion, decoction, maceration: comparison of methods"}
           </h2>
-          <div className="space-y-6 text-lg leading-relaxed text-botanik-green/80">
-            <p>
-              Reprendre le contrôle de son extraction, c'est reprendre le pouvoir sur sa santé. En 2026, l'autonomie ne signifie pas le rejet de la science, mais son intégration intelligente au foyer. Posséder un extracteur de grade clinique en <strong>Inox 304</strong> (inerte et biocompatible) permet de s'affranchir des additifs, conservateurs et solvants pétrochimiques omniprésents dans les produits du commerce.
-            </p>
-            <p>
-              Chaque remède que vous créez est une pièce unique, adaptée à votre terrain, à votre génétique et à votre environnement. C'est la médecine du futur : une phytothérapie de précision, préventive et souveraine.
-            </p>
-          </div>
-        </section>
 
-        {/* Section 5: FAQ & JSON-LD Section */}
-        <section className="bg-white rounded-[48px] p-10 md:p-16 border border-botanik-green/10 shadow-sm relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-botanik-orange via-botanik-green to-botanik-magenta" />
-          <h2 className="text-3xl font-black text-botanik-green mb-16 text-center uppercase tracking-widest">{lang === 'fr' ? 'Foire Aux Questions' : 'Frequently Asked Questions'}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="space-y-4">
-              <h4 className="font-bold text-botanik-green text-lg">{lang === 'fr' ? 'Quelle est la différence entre infusion et extraction ?' : 'What is the difference between infusion and extraction?'}</h4>
-              <p className="text-botanik-green/70 leading-relaxed text-sm">
-                {lang === 'fr' 
-                  ? "L'infusion est un type d'extraction utilisant l'eau. L'extraction au sens large inclut l'utilisation de différents solvants et des paramètres de température et de temps contrôlés pour capturer une palette moléculaire plus large (le Totum)." 
-                  : "Infusion is a type of extraction using water. Extraction in a broad sense includes the use of different solvents and controlled temperature and time parameters to capture a wider molecular palette (the Totum)."}
-              </p>
-            </div>
-            <div className="space-y-4">
-              <h4 className="font-bold text-botanik-green text-lg">{lang === 'fr' ? 'Combien de temps se conserve un extrait maison ?' : 'How long does a homemade extract keep?'}</h4>
-              <p className="text-botanik-green/70 leading-relaxed text-sm">
-                {lang === 'fr'
-                  ? "Cela dépend du solvant. Une infusion aqueuse se consomme dans les 24h. Un macérat huileux stabilisé peut durer 6 mois, et une teinture alcoolique plusieurs années si elle est conservée à l'abri de la lumière."
-                  : "It depends on the solvent. A water-based infusion should be consumed within 24 hours. A stabilized oil macerate can last 6 months, and an alcohol tincture for several years if kept away from light."}
-              </p>
-            </div>
-            <div className="space-y-4">
-              <h4 className="font-bold text-botanik-green text-lg">{lang === 'fr' ? 'Peut-on extraire toutes les plantes ?' : 'Can all plants be extracted?'}</h4>
-              <p className="text-botanik-green/70 leading-relaxed text-sm">
-                {lang === 'fr'
-                  ? "La plupart des plantes médicinales et aromatiques se prêtent à l'extraction. Cependant, il est crucial de respecter les dosages et les contre-indications propres à chaque plante. Notre Herbarium systémique est là pour vous guider."
-                  : "Most medicinal and aromatic plants are suitable for extraction. However, it is crucial to respect the dosages and contraindications specific to each plant. Our systemic Herbarium is here to guide you."}
-              </p>
-            </div>
-            <div className="space-y-4">
-              <h4 className="font-bold text-botanik-green text-lg">{lang === 'fr' ? 'Pourquoi l\'inox 304 est-il important ?' : 'Why is 304 stainless steel important?'}</h4>
-              <p className="text-botanik-green/70 leading-relaxed text-sm">
-                {lang === 'fr'
-                  ? "Contrairement au plastique ou à l'aluminium, l'inox 304 est neutre. Il ne libère aucun perturbateur endocrinien ou nanoparticule dans vos préparations, même lors d'extractions à haute température."
-                  : "Unlike plastic or aluminum, 304 stainless steel is neutral. It does not release any endocrine disruptors or nanoparticles into your preparations, even during high-temperature extractions."}
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Area */}
-        <section className="text-center bg-[#F4F4F0] rounded-[60px] p-12 md:p-24 border border-botanik-green/5 shadow-inner">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-botanik-orange/10 text-botanik-orange mb-10 shadow-sm border border-botanik-orange/10">
-            <Compass className="w-10 h-10" />
-          </div>
-          <h2 className="text-3xl md:text-5xl font-black text-botanik-green mb-8 tracking-tight">
-            {lang === 'fr' ? 'Prêt à devenir l\'artisan de votre santé ?' : 'Ready to become the architect of your health?'}
-          </h2>
-          <p className="text-xl text-botanik-green/60 mb-12 max-w-2xl mx-auto leading-relaxed">
-            {lang === 'fr' 
-              ? "Rejoignez la révolution de l'extraction de précision. Donnez à votre corps les outils qu'il mérite pour restaurer son homéostasie naturelle." 
-              : "Join the precision extraction revolution. Give your body the tools it deserves to restore its natural homeostasis."}
+          <p className="text-base text-botanik-green/80 leading-relaxed">
+            {isFR ? "Chaque méthode historique possède des atouts et des limites qu'il convient de distinguer :" : "Each traditional method has strengths and constraints:"}
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-botanik-green/15 text-botanik-green">
+                  <th className="py-3 px-4 font-bold">Méthode</th>
+                  <th className="py-3 px-4 font-bold">Solvant</th>
+                  <th className="py-3 px-4 font-bold">Température</th>
+                  <th className="py-3 px-4 font-bold">Forces & Limites</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-botanik-green/10 text-botanik-green/80">
+                <tr>
+                  <td className="py-3 px-4 font-semibold text-botanik-green">Infusion</td>
+                  <td className="py-3 px-4">Eau</td>
+                  <td className="py-3 px-4">70°C - 90°C</td>
+                  <td className="py-3 px-4">Rapide, mais perte des composés volatils. Pour aller plus loin : <button onClick={() => onNavigate('infusion-botanique')} className="text-botanik-green font-bold underline hover:text-botanik-orange cursor-pointer">comprendre l'infusion botanique et ses limites</button>.</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 font-semibold text-botanik-green">Décoction</td>
+                  <td className="py-3 px-4">Eau</td>
+                  <td className="py-3 px-4">100°C ébullition</td>
+                  <td className="py-3 px-4">Efficace pour les racines dures, mais dénature les molécules thermolabiles.</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 font-semibold text-botanik-green">Macération</td>
+                  <td className="py-3 px-4">Huile, Alcool, Eau</td>
+                  <td className="py-3 px-4">Ambiante (semaines)</td>
+                  <td className="py-3 px-4">Respectueuse mais très lente avec risques d'oxydation. Découvrez comment <button onClick={() => onNavigate('huile-infusee')} className="text-botanik-green font-bold underline hover:text-botanik-orange cursor-pointer">maîtriser la macération de plantes</button>.</td>
+                </tr>
+                <tr className="bg-botanik-green/5 font-medium">
+                  <td className="py-3 px-4 font-bold text-botanik-green">Méthode A/B de précision</td>
+                  <td className="py-3 px-4">Multi-solvants</td>
+                  <td className="py-3 px-4">40°C - 60°C régulée</td>
+                  <td className="py-3 px-4">Extraction séquentielle rapide en milieu clos avec agitation vortex, respectant le Totum.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="pt-4 border-t border-botanik-green/10">
+            <p className="text-sm text-botanik-green/80 leading-relaxed">
+              {isFR ? "Avant d'engager une extraction, prenez le temps de " : "Before starting an extraction, take time to "}
+              <button 
+                onClick={() => onNavigate('library-landing')} 
+                className="text-botanik-green font-bold underline hover:text-botanik-orange transition-colors cursor-pointer"
+              >
+                {isFR ? "choisir les plantes adaptées à votre extraction" : "select the appropriate plants for your extraction"}
+              </button>
+              {isFR ? " au sein de notre Herbier documenté." : " inside our documented Herbarium."}
+            </p>
+          </div>
+        </section>
+
+        {/* Dynamic Calculator Section */}
+        <section className="scroll-mt-32" id="calculator">
+          <ExtractionCalculator />
+        </section>
+
+        {/* Section 7: Comment BloomLab applique la méthode A/B */}
+        <section className="bg-[#1C3F34] text-white rounded-3xl p-8 md:p-12 shadow-xl space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold flex items-center gap-3">
+            <span className="w-8 h-8 rounded-full bg-botanik-orange text-white flex items-center justify-center text-sm font-bold">7</span>
+            {isFR ? "Comment BloomLab applique la méthode A/B" : "How BloomLab applies the A/B method"}
+          </h2>
+
+          <p className="text-base text-white/85 leading-relaxed">
+            {isFR 
+              ? "La machine BloomLab® intègre un système breveté combinant cuve en acier inoxydable 304, inerte et facile à nettoyer, contrôle thermique au degré près et cinétique vortex brevetée. Elle permet de conduire successivement la Phase A hydrosoluble et la Phase B liposoluble pour obtenir des préparations botaniques de haute pureté directement dans votre cuisine."
+              : "The BloomLab® instrument brings laboratory precision into your kitchen with 304 stainless steel, degree-level thermal regulation and continuous agitation."}
+          </p>
+
+          <div className="pt-4">
             <button 
-              onClick={() => onNavigate('machine')}
-              className="px-12 py-5 bg-[#F97316] text-white rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-[#EA580C] transition-all shadow-2xl shadow-[#F97316]/20 flex items-center justify-center gap-3 group"
+              onClick={() => onNavigate('product-detail', 'bloomlab')}
+              className="px-8 py-4 bg-botanik-orange hover:bg-white hover:text-botanik-green text-white font-bold rounded-2xl transition-all duration-300 inline-flex items-center gap-2 shadow-lg cursor-pointer"
             >
-              {lang === 'fr' ? 'Découvrir la BloomLab' : 'Discover the BloomLab'}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              {isFR ? "Voir comment BloomLab applique la méthode A/B" : "See how BloomLab applies the A/B method"}
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+        </section>
+
+        {/* Section 8: Questions fréquentes sur l'extraction botanique */}
+        <section className="bg-white rounded-3xl p-8 md:p-12 border border-botanik-green/10 shadow-sm space-y-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-botanik-green flex items-center gap-3">
+            <span className="w-8 h-8 rounded-full bg-botanik-green text-white flex items-center justify-center text-sm font-bold">8</span>
+            {isFR ? "Questions fréquentes sur l'extraction botanique" : "Frequently Asked Questions"}
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-2">
+              <h3 className="font-bold text-botanik-green text-base">
+                {isFR ? "Quelle est la différence entre infusion et extraction ?" : "What is the difference between infusion and extraction?"}
+              </h3>
+              <p className="text-sm text-botanik-green/80 leading-relaxed">
+                {isFR 
+                  ? "L'infusion est une forme particulière d'extraction n'utilisant que l'eau. L'extraction au sens large utilise divers solvants (eau, glycérine, huile, alcool) avec un contrôle strict du temps, de la température et de l'agitation pour mobiliser l'ensemble du Totum végétal."
+                  : "Infusion uses only water. Broad extraction utilizes various solvents under tight control of temperature and agitation."}
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="font-bold text-botanik-green text-base">
+                {isFR ? "Qu'est-ce que l'extraction séquentielle A/B ?" : "What is sequential A/B extraction?"}
+              </h3>
+              <p className="text-sm text-botanik-green/80 leading-relaxed">
+                {isFR 
+                  ? "C'est un procédé en deux étapes distinctes : la Phase A capture les principes hydrosolubles (eau, glycérine) à température douce, puis la Phase B capture les composés liposolubles (huiles végétales, alcool) sans altérer les molécules fragiles."
+                  : "It is a two-phase protocol: Phase A captures water-soluble compounds, and Phase B extracts lipophilic fractions."}
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="font-bold text-botanik-green text-base">
+                {isFR ? "Combien de temps se conserve un extrait maison ?" : "How long does a homemade extract keep?"}
+              </h3>
+              <p className="text-sm text-botanik-green/80 leading-relaxed">
+                {isFR 
+                  ? "Une infusion aqueuse se consomme dans les 24 heures. Un macérat huileux stabilisé et conservé à l'abri de la lumière se conserve environ 6 mois, et une préparation hydroalcoolique peut durer plusieurs années."
+                  : "Water infusions should be consumed within 24 hours. Oil macerates last about 6 months, and hydroalcoholic tinctures keep for years."}
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="font-bold text-botanik-green text-base">
+                {isFR ? "Pourquoi l'acier inoxydable 304 est-il important ?" : "Why is 304 stainless steel important?"}
+              </h3>
+              <p className="text-sm text-botanik-green/80 leading-relaxed">
+                {isFR 
+                  ? "Contrairement aux plastiques ou métaux poreux, l'acier inoxydable 304 est inerte chimiquement, facile à nettoyer et résistant aux acides végétaux. Il ne migre pas dans vos préparations."
+                  : "Unlike porous metals, 304 stainless steel is chemically inert, food-safe, and does not leach into preparations."}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 9: CTA Final & Maillage */}
+        <section className="text-center bg-[#F4F4F0] rounded-3xl p-10 md:p-16 border border-botanik-green/10 shadow-sm space-y-6">
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-botanik-green/10 text-botanik-green mb-2">
+            <Compass className="w-7 h-7" />
+          </div>
+
+          <h2 className="text-2xl md:text-4xl font-bold text-botanik-green tracking-tight">
+            {isFR ? "Développez votre autonomie botanique" : "Build your botanical autonomy"}
+          </h2>
+
+          <p className="text-base text-botanik-green/70 max-w-xl mx-auto leading-relaxed">
+            {isFR 
+              ? "Découvrez notre sélection de plantes sélectionnées avec rigueur et nos kits guidés pour réussir vos premières extractions."
+              : "Discover our botanicals and curated kits to master your first extractions."}
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
+            <button 
+              onClick={() => onNavigate('boutique-kits')}
+              className="px-8 py-4 bg-botanik-green hover:bg-botanik-orange text-white rounded-2xl font-bold text-sm transition-all shadow-md cursor-pointer inline-flex items-center justify-center gap-2"
+            >
+              {isFR ? "Démarrer avec un kit de plantes guidé" : "Start with a guided herbal kit"}
+              <ArrowRight className="w-4 h-4" />
             </button>
             <button 
               onClick={() => onNavigate('library-landing')}
-              className="px-12 py-5 bg-white text-botanik-green border border-botanik-green/10 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-botanik-green/5 transition-all shadow-sm"
+              className="px-8 py-4 bg-white text-botanik-green border border-botanik-green/15 rounded-2xl font-bold text-sm hover:bg-botanik-green/5 transition-all shadow-sm cursor-pointer"
             >
-              {lang === 'fr' ? 'Explorer l\'Herbier' : 'Explore the Herbarium'}
+              {isFR ? "Explorer l'Herbier" : "Explore Herbarium"}
             </button>
           </div>
-          <p className="mt-12 text-[10px] text-botanik-green/40 uppercase tracking-[0.3em] font-black">
-            {lang === 'fr' ? 'Bloom by BotaniK — N°1 France' : 'Bloom by BotaniK — France N°1'}
+
+          {/* Bloc Pour aller plus loin */}
+          <div className="pt-8 border-t border-botanik-green/10 max-w-lg mx-auto text-center">
+            <div className="text-xs uppercase tracking-widest font-bold text-botanik-green/60 mb-2">
+              {isFR ? "Pour aller plus loin dans le Journal" : "Further reading"}
+            </div>
+            <button 
+              onClick={() => onNavigate('blog', 'saule-salicine-aspirine-histoire-totum')}
+              className="text-sm font-semibold text-botanik-green underline hover:text-botanik-orange transition-colors cursor-pointer"
+            >
+              {isFR 
+                ? "Du saule à l'aspirine : ce que l'isolement nous apprend du totum →"
+                : "From willow to aspirin: what molecular isolation teaches us about totum →"}
+            </button>
+          </div>
+        </section>
+
+        {/* Mandatory Educational Disclaimer */}
+        <section className="p-6 bg-botanik-green/5 rounded-2xl border border-botanik-green/10 flex items-start gap-4 text-xs text-botanik-green/80 leading-relaxed">
+          <AlertCircle className="w-5 h-5 text-botanik-green flex-shrink-0 mt-0.5" />
+          <p>
+            <strong>{isFR ? "Avertissement éducatif : " : "Educational disclaimer: "}</strong>
+            {isFR 
+              ? "Bloom by BotaniK propose une approche éducative de la préparation botanique. Nos contenus ne remplacent pas un avis médical, un diagnostic ou un traitement."
+              : "Bloom by BotaniK offers an educational approach to botanical preparation. Our content does not replace medical advice, diagnosis, or treatment."}
           </p>
         </section>
 

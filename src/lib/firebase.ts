@@ -1,25 +1,16 @@
-import { initializeApp, getApps, getApp } from 'firebase/app';
+import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
-// Note: In Vite, we can import JSON files directly
-import firebaseConfig from '../../firebase-applet-config.json';
+const firebaseConfig = {
+  apiKey: "demo-api-key",
+  authDomain: "demo-bloomlab.firebaseapp.com",
+  projectId: "demo-bloomlab",
+  storageBucket: "demo-bloomlab.appspot.com",
+  messagingSenderId: "000000000",
+  appId: "1:000000000:web:000000000"
+};
 
-// Detect bot/prerender to avoid Firebase Auth domain errors during indexing
-const isBot = typeof window !== 'undefined' && (
-  /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i.test(navigator.userAgent) ||
-  navigator.webdriver ||
-  window.location.search.includes('prerender=true')
-);
-
-// Initialize Firebase only once
-const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
-
+export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
-
-// For SEO: ensure we don't block indexing if Firebase fails or is unauthorized
-if (isBot) {
-  // Disable persistence for bots to avoid some IndexedDB errors in headless environments
-  auth.setPersistence({ type: 'NONE' }).catch(() => {});
-}

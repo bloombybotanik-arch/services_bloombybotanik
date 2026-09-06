@@ -86,7 +86,7 @@ export const CookieBanner = ({ lang }: { lang: Language }) => {
             <div className="flex gap-3">
               <button
                 onClick={handleAccept}
-                className="flex-1 bg-botanik-green text-white py-3 rounded-xl font-bold hover:bg-botanik-orange transition-all"
+                className="flex-1 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white py-3 rounded-xl font-bold transition-all cursor-pointer"
               >
                 Accepter
               </button>

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useEffect, useState, lazy, Suspense, ReactNode } from 'react';
-import { Lock, ShoppingBag, BookOpen, FlaskConical, Menu, X, ChevronRight, Leaf, ShieldCheck, SearchCheck, Award, Star, User, Check, ArrowRight, ChefHat, Instagram, Youtube, Facebook, Pin as Pinterest, Music2 as TikTok, MessageSquare, Sparkles, Wind, Waves, Moon, Utensils, Activity, Globe, Settings, Droplets, MessageCircle, ShoppingCart, Home, FileText, Newspaper, Microscope } from 'lucide-react';
+import { useEffect, useState, ReactNode } from 'react';
+import { Lock, ShoppingBag, BookOpen, FlaskConical, Menu, X, ChevronRight, Leaf, ShieldCheck, SearchCheck, Award, Star, User, Check, ArrowRight, ChefHat, Instagram, Youtube, Facebook, Pin as Pinterest, Music2 as TikTok, MessageSquare, Sparkles, Wind, Waves, Moon, Utensils, Activity, Globe, Settings, Droplets, MessageCircle, ShoppingCart, Home, FileText, Newspaper, Microscope, HelpCircle, Package } from 'lucide-react';
 import { translations, Language } from './translations';
 import { getProducts } from './StoreContent';
 import Footer from './components/Footer';
@@ -14,106 +14,70 @@ import { PremiumModal } from './components/PremiumModal';
 import { auth, db } from './lib/firebase';
 import { onAuthStateChanged, User as FirebaseUser, signOut } from 'firebase/auth';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
-import bloomLabImg from './assets/images/bloomlab_main_1784887530345.jpeg';
-import img05 from './assets/images/Img_05.jpeg';
-import logoSidebar from './assets/images/logo_sidebar_1784886108085.png';
+// import bloomLabImg from './assets/images/bloomlab_main_1784887530345.jpeg';
+// import img05 from './assets/images/Img_05.jpeg';
+const bloomLabImg = "https://images.unsplash.com/photo-1611078767398-fcfe88fdb728?auto=format&fit=crop&w=800&q=80";
+const img05 = "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=800&q=80";
+// import logoSidebar from './assets/images/logo_sidebar_1784886108085.png';
+const logoSidebar = "/assets/images/logo_sidebar_1784886108085.png";
 import { OptimizedImage } from './components/OptimizedImage';
 import { CookieBanner } from './components/CookieBanner';
 import { FloatingChat } from './components/FloatingChat';
 import { LanguageSelector } from './components/LanguageSelector';
 import { blogPosts } from './data/blogPosts';
 import { discoveryRecipes } from './data/recipesData';
+import TerrainPillar from './TerrainPillar';
+import { View, VIEW_PATHS } from './types';
 
-const HomeContent = lazy(() => import('./HomeContent'));
-const HerbariumContent = lazy(() => import('./HerbariumContent'));
-const StoreContent = lazy(() => import('./StoreContent'));
-const GuideContent = lazy(() => import('./GuideContent'));
-const CartContent = lazy(() => import('./CartContent'));
-const CheckoutFlow = lazy(() => import('./CheckoutFlow'));
-const ProductDetail = lazy(() => import('./ProductDetail'));
-const CulinarySection = lazy(() => import('./CulinarySection'));
-const CosmeticsContent = lazy(() => import('./CosmeticsContent'));
-const LibraryLanding = lazy(() => import('./LibraryLanding'));
-const ActivationPage = lazy(() => import('./ActivationPage'));
-const LegalPages = lazy(() => import('./LegalPages'));
-const ChatContent = lazy(() => import('./ChatContent'));
-const AccountContent = lazy(() => import('./AccountContent'));
-const RecipesContent = lazy(() => import('./RecipesContent'));
-const AdminDashboard = lazy(() => import('./components/AdminDashboard'));
-const ManifesteContent = lazy(() => import('./ManifesteContent'));
-const MachineLanding = lazy(() => import('./MachineLanding'));
-const PhytotherapyResetPage = lazy(() => import('./PhytotherapyResetPage'));
-const PillarExtraction = lazy(() => import('./PillarExtraction'));
-const PendingContent = lazy(() => import('./PendingContent'));
-const IndexBisContent = lazy(() => import('./IndexBisContent'));
-const SEOArticles = lazy(() => import('./SEOArticlesContent').then(m => ({ 
-  default: ({ view, lang, t }: { view: string, lang: string, t: any }) => {
-    if (view === 'infusion-precision') return <m.InfusionPrecision lang={lang} t={t} />;
-    if (view === 'totum-definition') return <m.TotumDefinition lang={lang} t={t} />;
-    if (view === 'solvants-extraction') return <m.SolvantsExtraction lang={lang} t={t} />;
-    return null;
-  }
-})));
-const NewsletterPreferences = lazy(() => import('./NewsletterPreferences').then(m => ({ default: m.NewsletterPreferences })));
-const AdminNewsletter = lazy(() => import('./components/AdminNewsletter').then(m => ({ default: m.AdminNewsletter })));
+import HomeContent from './HomeContent';
+import HerbariumContent from './HerbariumContent';
+import StoreContent from './StoreContent';
+import GuideContent from './GuideContent';
+import CartContent from './CartContent';
+import CheckoutFlow from './CheckoutFlow';
+import ProductDetail from './ProductDetail';
+import CulinarySection from './CulinarySection';
+import CosmeticsContent from './CosmeticsContent';
+import LibraryLanding from './LibraryLanding';
+import ActivationPage from './ActivationPage';
+import LegalPages from './LegalPages';
+import ChatContent from './ChatContent';
+import AccountContent from './AccountContent';
+import RecipesContent from './RecipesContent';
+import AdminDashboard from './components/AdminDashboard';
+import ManifesteContent from './ManifesteContent';
+import MachineLanding from './MachineLanding';
+import PhytotherapyResetPage from './PhytotherapyResetPage';
+import PillarExtraction from './PillarExtraction';
+import PillarInfusion from './PillarInfusion';
+import PillarOil from './PillarOil';
+import PillarAdaptogens from './PillarAdaptogens';
+import PendingContent from './PendingContent';
+import IndexBisContent from './IndexBisContent';
+import * as SEOArticlesExports from './SEOArticlesContent';
+import { NewsletterPreferences } from './NewsletterPreferences';
+import { AdminNewsletter } from './components/AdminNewsletter';
+import BlogContent from './BlogContent';
+import FaqContent from './FaqContent';
+import ContactContent from './ContactContent';
+import ArticlesContent from './ArticlesContent';
 
-// Loading Placeholder for Lazy components
-const ViewLoader = () => (
-  <div className="flex-1 flex items-center justify-center bg-[#F9F9F7]">
-    <div className="w-12 h-12 border-4 border-botanik-green/20 border-t-botanik-green rounded-full animate-spin" />
-  </div>
-);
-
-// --- SPA ROUTING CONFIG ---
-const BlogContent = lazy(() => import('./BlogContent'));
-
-type View = 'home' | 'machine' | 'phytotherapie-reset' | 'boutique' | 'product-detail' | 'culinaire' | 'cosmetiques' | 'library-landing' | 'manifeste' | 'activation' | 'account' | 'legal' | 'chat' | 'cart' | 'checkout' | 'guide' | 'how_it_works' | 'pending' | 'library' | 'herbier' | 'pillar-extraction' | 'guide-complet' | 'qu-est-ce-que-infusion' | 'admin' | 'blog' | 'withdrawal' | 'indexbis' | 'newsletter-preferences' | 'admin-newsletter';
-
-export const VIEW_PATHS: Record<string, string> = {
-  home: '/', 
-  machine: '/bloomlab', 
-  'phytotherapie-reset': '/phytotherapie-reset',
-  boutique: '/boutique', 
-  culinaire: '/gastronomie-botanique', 
-  cosmetiques: '/duo-argiles',
-  'library-landing': '/bibliotheque-savoirs', 
-  manifeste: '/manifeste',
-  activation: '/activation', 
-  account: '/compte', 
-  legal: '/legal', 
-  chat: '/chat',
-  cart: '/panier', 
-  checkout: '/checkout', 
-  guide: '/infusion-botanique',
-  how_it_works: '/infusion-botanique-maison-comment-ca-marche', 
-  pending: '/en-attente',
-  library: '/bibliotheque-savoirs', 
-  herbier: '/bibliotheque-savoirs', 
-  'pillar-extraction': '/extraction-botanique',
-  'guide-complet': '/extraction-botanique-guide-complet',
-  'qu-est-ce-que-infusion': '/qu-est-ce-que-l-infusion-botanique',
-  admin: '/admin', 
-  blog: '/blog', 
-  withdrawal: '/droit-de-retractation', 
-  'infuseur-botanique': '/infuseur-botanique',
-  cgv: '/conditions-generales-de-vente',
-  cgu: '/termes-et-conditions',
-  privacy: '/politique-de-confidentialite',
-  mentions: '/mentions-legales',
-  returns: '/retour-et-remboursement',
-  indexbis: '/indexbis',
-  'newsletter-preferences': '/newsletter/preferences',
-  'admin-newsletter': '/admin/newsletter',
-  'recettes': '/recettes',
-  'guides': '/guides',
-  'questions-frequentes': '/questions-frequentes',
-  'infusion-precision': '/methode-infusion-botanique-precision',
-  'totum-definition': '/totum-vegetal-definition',
-  'solvants-extraction': '/solvants-extraction-botanique'
+const SEOArticles = ({ view, lang, t, onNavigate }: { view: string, lang: string, t: any, onNavigate?: (view: any, param?: string) => void }) => {
+  if (view === 'infusion-precision') return <SEOArticlesExports.InfusionPrecision lang={lang} t={t} onNavigate={onNavigate} />;
+  if (view === 'totum-definition') return <SEOArticlesExports.TotumDefinition lang={lang} t={t} onNavigate={onNavigate} />;
+  if (view === 'solvants-extraction') return <SEOArticlesExports.SolvantsExtraction lang={lang} t={t} onNavigate={onNavigate} />;
+  return null;
 };
 
 const PATH_VIEWS: Record<string, string> = Object.fromEntries(
-  Object.entries(VIEW_PATHS).map(([view, path]) => [path, view])
+  Object.entries(VIEW_PATHS).flatMap(([view, path]) => {
+    const withSlash = path.endsWith('/') ? path : `${path}/`;
+    const withoutSlash = path.endsWith('/') ? path.slice(0, -1) : path;
+    return [
+      [withSlash, view],
+      [withoutSlash, view]
+    ];
+  })
 );
 
 // --- SEO & DATA UTILS ---
@@ -129,17 +93,21 @@ const generateSeoAlt = (imageContext: string, t: any) => {
 const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: Language, currentView: string, t: any, productId?: string, blogPostSlug?: string }) => {
   useEffect(() => {
     // 1. Handle dynamic Title & Meta Description
-    let seoKey: 'home' | 'herbarium' | 'shop' | 'blog' | 'pillar' | 'extraction' | 'infusion' | 'infuseur' | 'machine' | 'manifesto' | 'how_it_works' | 'reset' | 'recettes' | 'faq' | 'infusion_precision' | 'totum_definition' | 'solvants_extraction' = 'home';
+    let seoKey: 'home' | 'herbarium' | 'shop' | 'blog' | 'pillar' | 'extraction' | 'infusion' | 'oil' | 'adaptogens' | 'infuseur' | 'machine' | 'manifesto' | 'how_it_works' | 'reset' | 'recettes' | 'faq' | 'infusion_precision' | 'totum_definition' | 'solvants_extraction' = 'home';
     
     if (['herbier', 'culinaire', 'cosmetiques'].includes(currentView)) {
       seoKey = 'herbarium';
-    } else if (['boutique', 'product-detail', 'cart', 'checkout'].includes(currentView)) {
+    } else if (['boutique', 'product-detail', 'cart', 'checkout', 'premium-info'].includes(currentView)) {
       seoKey = 'shop';
-    } else if (currentView === 'pillar-extraction' || currentView === 'guide-complet') {
-      seoKey = 'pillar';
-    } else if (currentView === 'guide') {
+    } else if (currentView === 'pillar-extraction' || currentView === 'extraction-botanique' || currentView === 'guide-complet') {
+      seoKey = 'extraction';
+    } else if (currentView === 'infusion-botanique' || currentView === 'guide') {
       seoKey = 'infusion';
-    } else if (currentView === 'how_it_works' || currentView === 'qu-est-ce-que-infusion') {
+    } else if (currentView === 'huile-infusee') {
+      seoKey = 'oil';
+    } else if (currentView === 'plantes-adaptogenes') {
+      seoKey = 'adaptogens';
+    } else if (currentView === 'how_it_works' || currentView === 'qu-est-ce-que-infusion' || currentView === 'comment-ca-marche') {
       seoKey = 'how_it_works';
     } else if (currentView === 'blog' || currentView === 'library-landing' || currentView === 'library' || currentView === 'guides') {
       seoKey = 'blog';
@@ -155,6 +123,8 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
       seoKey = 'recettes';
     } else if (currentView === 'questions-frequentes') {
       seoKey = 'faq';
+    } else if (currentView === 'terrain') {
+      seoKey = 'herbarium'; // Fallback to herbarium for now or define a new one
     } else if (currentView === 'infusion-precision') {
       seoKey = 'infusion_precision';
     } else if (currentView === 'totum-definition') {
@@ -184,6 +154,24 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
         finalDescription = productData.description;
       }
     }
+
+    if (currentView === 'blog' && blogPostSlug) {
+      const post = blogPosts.find(p => p.slug === blogPostSlug);
+      if (post) {
+        if (post.metaTitle && post.metaTitle[lang]) {
+          finalTitle = post.metaTitle[lang];
+        } else {
+          finalTitle = `${post.title[lang]} | Journal Bloom by BotaniK`;
+        }
+        
+        if (post.metaDescription && post.metaDescription[lang]) {
+          finalDescription = post.metaDescription[lang];
+        } else if (post.excerpt && post.excerpt[lang]) {
+          finalDescription = post.excerpt[lang];
+        }
+      }
+    }
+
     document.title = finalTitle;
     
     let metaDesc = document.querySelector('meta[name="description"]');
@@ -209,22 +197,32 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
     }
 
     // 2. JSON-LD Injection
-    let viewPath = currentView === 'product-detail' && productId ? `/boutique/${productId}` : (VIEW_PATHS[currentView as string] || '/');
+    let viewPath = currentView === 'product-detail' && productId ? `/boutique/${productId}/` : (VIEW_PATHS[currentView as string] || '/');
     
     // Normalize path for canonical: if we have a blog slug, use the blog URL
     if (currentView === 'blog' && blogPostSlug) {
-      viewPath = `/blog/${blogPostSlug}`;
+      viewPath = `/blog/${blogPostSlug}/`;
+    }
+
+    // Herbarium canonical
+    if (currentView === 'herbier' && productId) {
+      viewPath = `/herbier/${productId}/`;
+    }
+
+    // Safety check: ensure trailing slash except for root
+    if (viewPath !== '/' && !viewPath.endsWith('/')) {
+      viewPath += '/';
     }
 
     // Safety check: if viewPath is / but we are on a known path, use the known path
-    const currentPath = window.location.pathname.replace(/^\/(en|de)(\/|$)/, '/').replace(/\/$/, '');
+    const currentPath = window.location.pathname.replace(/^\/(en|de)(\/|$)/, '/');
     if (viewPath === '/' && currentPath !== '' && currentPath !== '/') {
-      viewPath = currentPath;
+      viewPath = currentPath.endsWith('/') ? currentPath : `${currentPath}/`;
     }
     
     const langPrefix = lang === 'fr' ? '' : `/${lang}`;
     const pageUrl = `https://bloombybotanik.com${langPrefix}${viewPath === '/' ? '' : viewPath}`;
-    const logoUrl = "https://bloombybotanik.com/brand/logo-org.jpg";
+    const logoUrl = "https://bloombybotanik.com/logo_white.png";
     const socialLogoUrl = "https://bloombybotanik.com/brand/social-logo.jpg";
 
     // Update canonical link to use the normalized pageUrl
@@ -328,13 +326,49 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
         ]
       },
       {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Menu principal Bloom",
+        "itemListElement": [
+          {
+            "@type": "SiteNavigationElement",
+            "position": 1,
+            "name": "La Machine BloomLab",
+            "url": "https://bloombybotanik.com/bloomlab/"
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "position": 2,
+            "name": "L'Herbier",
+            "url": "https://bloombybotanik.com/herbier/"
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "position": 3,
+            "name": "Journal Botanique",
+            "url": "https://bloombybotanik.com/blog/"
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "position": 4,
+            "name": "Boutique",
+            "url": "https://bloombybotanik.com/boutique/"
+          }
+        ]
+      },
+      {
         "@type": "WebSite",
         "@id": "https://bloombybotanik.com/#website",
         "url": "https://bloombybotanik.com",
         "name": "Bloom by BotaniK",
         "alternateName": ["Bloom by Botanik", "BloomBotanik"],
         "publisher": { "@id": "https://bloombybotanik.com/#organization" },
-        "inLanguage": "fr-FR"
+        "inLanguage": "fr-FR",
+        "potentialAction": [{
+          "@type": "SearchAction",
+          "target": "https://bloombybotanik.com/herbier/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }]
       },
       {
         "@type": "ProfilePage",
@@ -459,7 +493,8 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
         "description": "L'extracteur de précision qui libère jusqu'à 98% du totum végétal. Machine d'infusion de plantes pour réaliser vos remèdes naturels aux plantes, soins naturels visages, corps et cheveux à basse température.",
         "image": [
           `https://bloombybotanik.com${bloomLabImg}`,
-          `https://bloombybotanik.com${img05}`
+          `https://bloombybotanik.com${img05}`,
+          "https://bloombybotanik.com/assets/images/lab_detail_cleaned_1786616788618.jpg"
         ],
         "brand": { "@type": "Brand", "name": "Bloom by BotaniK" },
         "sku": "BLOOM-LAB-2026",
@@ -596,6 +631,106 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
       });
     }
 
+    if (currentView === 'machine' || currentView === 'home' || productId === 'bloomlab') {
+      graph.push({
+        "@type": "Product",
+        "name": "BloomLab® - Extracteur Botanique de Précision",
+        "image": "https://bloombybotanik.com/assets/images/bloomlab_main_1784887530345.jpeg",
+        "description": lang === 'fr' ? "L'extracteur botanique qui révèle le totum de vos plantes. Thermorégulation de précision au degré près pour infusions, huiles et extraits." : "The botanical extractor that reveals the totum of your plants. Precision thermoregulation for infusions, oils, and botanical extracts.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Bloom by BotaniK"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://bloombybotanik.com/machine",
+          "priceCurrency": "EUR",
+          "price": "239.00",
+          "availability": "https://schema.org/InStock"
+        }
+      });
+    }
+
+    if (currentView === 'pillar-extraction' || currentView === 'extraction-botanique' || currentView === 'guide-complet') {
+      // 1. Specific BreadcrumbList
+      graph.push({
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}/#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": isFR ? "Accueil" : "Home",
+            "item": "https://bloombybotanik.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": isFR ? "La Méthode A/B" : "The A/B Method",
+            "item": "https://bloombybotanik.com/bloomlab/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": isFR ? "Extraction botanique" : "Botanical extraction",
+            "item": "https://bloombybotanik.com/extraction-botanique/"
+          }
+        ]
+      });
+
+      // 2. Article Schema
+      graph.push({
+        "@type": "Article",
+        "@id": `${pageUrl}/#article`,
+        "headline": isFR ? "Extraction botanique : guide complet des méthodes, solvants et paramètres" : (currentSeo.h1 || currentSeo.title),
+        "description": currentSeo.description,
+        "inLanguage": isFR ? 'fr-FR' : (lang === 'de' ? 'de-DE' : 'en-US'),
+        "author": { "@id": "https://bloombybotanik.com/#rd-lead" },
+        "publisher": { "@id": "https://bloombybotanik.com/#organization" },
+        "mainEntityOfPage": { "@id": pageUrl }
+      });
+
+      // 3. FAQPage Schema
+      graph.push({
+        "@type": "FAQPage",
+        "@id": `${pageUrl}/#faq`,
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quelle est la différence entre infusion et extraction ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "L'infusion est un type d'extraction utilisant l'eau comme solvant. L'extraction au sens large inclut l'utilisation de différents solvants (eau, huile, glycérine, alcool) et le contrôle précis de la température, du temps et de l'agitation pour capturer l'ensemble du Totum végétal sans le dénaturer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qu'est-ce que la méthode séquentielle A/B ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La méthode séquentielle A/B sépare l'extraction en deux étapes : la Phase A pour les principes hydrosolubles (solvants aqueux) et la Phase B pour les principes liposolubles (huiles végétales ou alcool), permettant de reconstituer le Totum végétal complet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Combien de temps se conserve un extrait botanique maison ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Une infusion aqueuse se consomme idéalement dans les 24 heures. Un macérat huileux stabilisé peut se conserver 6 mois à l'abri de la lumière et de la chaleur, tandis qu'une teinture mère hydroalcoolique se conserve plusieurs années."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Pourquoi l'acier inoxydable 304 est-il essentiel ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "L'acier inoxydable 304 est un matériau inerte et neutre. Il ne libère aucun composé indésirable ou perturbateur dans les préparations, même sous température élevée ou agitation constante."
+            }
+          }
+        ]
+      });
+    }
+
     const jsonLd = {
       "@context": "https://schema.org",
       "@graph": graph
@@ -661,9 +796,10 @@ const CertificationCarousel = () => {
 // --- COMPONENTS ---
 
 const NavigationSidebar = ({ className = "", currentView, currentProductId, navigateTo, user, handleLogout, lang, setLang, t, isDiscovery, isPremium }: { className?: string, currentView: string, currentProductId?: string, navigateTo: (v: any, p?: string) => void, user?: any, handleLogout?: () => void, lang: Language, setLang: (l: Language) => void, t: any, isDiscovery: boolean, isPremium: boolean }) => {
+  const searchParams = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
   const NavItem = ({ id, label, icon: Icon, onClick, isActive, isSub }: { id?: string, label: string, icon?: any, onClick?: () => void, isActive?: boolean, isSub?: boolean }) => (
     <a
-      href={id ? VIEW_PATHS[id] : '#'}
+      href={id ? VIEW_PATHS[id as keyof typeof VIEW_PATHS] || '#' : '#'}
       onClick={(e) => {
         e.preventDefault();
         if (onClick) onClick();
@@ -672,18 +808,18 @@ const NavigationSidebar = ({ className = "", currentView, currentProductId, navi
       aria-label={label}
       className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all text-left group ${
         isActive 
-          ? 'bg-white/10 text-white shadow-sm' 
-          : 'text-white/60 hover:text-white hover:bg-white/5'
+          ? 'bg-[#1C3F34] text-white shadow-sm ring-1 ring-white/20' 
+          : 'text-[#F9F9F7]/80 hover:text-white hover:bg-[#1C3F34]'
       } ${isSub ? 'pl-11 text-xs font-medium' : 'text-sm font-bold'}`}
     >
-      {Icon && <Icon className={`w-4 h-4 shrink-0 transition-colors ${isActive ? 'text-botanik-orange' : 'group-hover:text-botanik-orange'}`} />}
+      {Icon && <Icon className={`w-4 h-4 shrink-0 transition-colors ${isActive ? 'text-[#D4AF37]' : 'group-hover:text-[#D4AF37]'}`} />}
       <span className="truncate">{label}</span>
     </a>
   );
 
   const NavGroup = ({ title, children }: { title: string, children: ReactNode }) => (
     <div className="space-y-1 mb-6">
-      <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-2 select-none">
+      <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.2em] text-[#F9F9F7]/30 mb-2 select-none">
         {title}
       </h3>
       <div className="space-y-0.5">
@@ -692,23 +828,8 @@ const NavigationSidebar = ({ className = "", currentView, currentProductId, navi
     </div>
   );
 
-  const scrollTo = (id: string) => {
-    if (currentView !== 'home') {
-      navigateTo('home');
-      setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 300);
-    } else {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const isFR = lang === 'fr';
-
   return (
-    <header className={`w-[280px] h-screen sticky top-0 bg-botanik-green flex flex-col border-r border-white/5 z-50 ${className}`}>
+    <header className={`w-[280px] h-screen sticky top-0 bg-[#0F261E] flex flex-col border-r border-white/5 z-50 ${className}`}>
       {/* Header / Logo */}
       <div className="p-8 pb-8">
         <a 
@@ -716,110 +837,168 @@ const NavigationSidebar = ({ className = "", currentView, currentProductId, navi
           className="flex items-center gap-3 cursor-pointer group/logo"
           onClick={(e) => { e.preventDefault(); navigateTo('home'); }}
         >
-          <img src={logoSidebar} alt="Bloom" className="w-10 h-10 object-contain group-hover:scale-105 transition-transform" />
-          <div className="flex flex-col leading-none text-white">
-            <span className="text-xl font-black tracking-widest uppercase">Bloom</span>
-            <span className="text-[10px] font-bold tracking-[0.1em] opacity-70">by BotaniK</span>
+          <img 
+            src="/assets/images/logo_sidebar_1784886108085.png" 
+            alt="Bloom by BotaniK" 
+            className="h-12 w-auto"
+          />
+          <div className="ml-3 font-semibold tracking-wide flex flex-col leading-tight text-[#F9F9F7]">
+            <span className="text-lg">Bloom</span>
+            <span className="text-sm">by BotaniK</span>
           </div>
         </a>
       </div>
 
       {/* Main Nav */}
-      <div className="flex-1 overflow-y-auto px-4 custom-scrollbar pb-10">
-        <NavGroup title={isFR ? "BloomLab" : "BloomLab"}>
+      <nav className="flex-1 overflow-y-auto px-4 custom-scrollbar pb-10 text-[#F9F9F7]" aria-label="Menu principal">
+        <NavGroup title={t.nav.accueil}>
           <NavItem 
-            id="machine" 
-            label={isFR ? "Découvrir BloomLab®" : "Discover BloomLab®"} 
-            icon={Sparkles} 
-            isActive={currentView === 'machine'}
-          />
-          <NavItem 
-            label={isFR ? "Bain-Marie vs BloomLab" : "Bain-Marie vs BloomLab"} 
-            icon={FlaskConical} 
-            onClick={() => navigateTo('blog', 'tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes')}
-            isActive={currentView === 'blog' && currentProductId === 'tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes'}
-          />
-          <NavItem 
-            id="cosmetiques" 
-            label={isFR ? 'Duo Argiles Bloom' : 'Bloom Clay Duo'} 
-            icon={Droplets} 
-            isActive={currentView === 'cosmetiques' && currentProductId === 'duo-argiles'}
+            id="home" 
+            label={t.nav.accueil} 
+            icon={Home} 
+            isActive={currentView === 'home'}
           />
         </NavGroup>
 
-        <NavGroup title={isFR ? "Les 3 Univers" : "The 3 Universes"}>
+        {/* 1. POURQUOI BLOOM */}
+        <NavGroup title={t.nav.pourquoi_bloom || "POURQUOI BLOOM"}>
+          <NavItem 
+            id="manifeste" 
+            label={t.nav.pourquoi_bloom_sub?.manifeste || "Le Manifeste"} 
+            icon={FileText} 
+            isActive={currentView === 'manifeste'}
+          />
+          <NavItem 
+            id="chat" 
+            label={t.nav.pourquoi_bloom_sub?.audit || "Je commence / Diagnostic"} 
+            icon={Sparkles} 
+            isActive={currentView === 'chat'}
+          />
+        </NavGroup>
+
+        {/* 2. LA MÉTHODE A/B */}
+        <NavGroup title={t.nav.methode_ab || "LA MÉTHODE A/B"}>
+          <NavItem 
+            id="machine" 
+            label={t.nav.methode_ab_sub?.extraction || "Extraction de précision"} 
+            icon={FlaskConical} 
+            isActive={currentView === 'machine'}
+          />
+          <NavItem 
+            id="product-detail" 
+            label={t.nav.methode_ab_sub?.bloomlab || "L'Extracteur BloomLab®"} 
+            icon={Award} 
+            isActive={currentView === 'product-detail' && currentProductId === 'bloomlab'}
+            onClick={() => navigateTo('product-detail', 'bloomlab')}
+          />
+          <NavItem 
+            id="totum-definition" 
+            label={t.nav.methode_ab_sub?.totum || "Le Totum Végétal"} 
+            icon={Leaf} 
+            isActive={currentView === 'totum-definition'}
+          />
+        </NavGroup>
+
+        {/* 3. VOTRE PRATIQUE */}
+        <NavGroup title={t.nav.votre_pratique || "VOTRE PRATIQUE"}>
           <NavItem 
             id="culinaire" 
-            label={isFR ? 'Atelier Culinaire' : 'Culinary Workshop'} 
-            icon={ChefHat} 
+            label={t.nav.votre_pratique_sub?.culinaire || "Atelier Culinaire"} 
+            icon={Utensils} 
             isActive={currentView === 'culinaire'}
           />
           <NavItem 
             id="cosmetiques" 
-            label={isFR ? 'Soin Cosmétique' : 'Cosmetic Care'} 
-            icon={Sparkles} 
-            isActive={currentView === 'cosmetiques' && !currentProductId}
+            label={t.nav.votre_pratique_sub?.cosmetique || "Cosmétique Botanique"} 
+            icon={Droplets} 
+            isActive={currentView === 'cosmetiques'}
           />
           <NavItem 
             id="phytotherapie-reset" 
-            label={isFR ? 'Reset Homéostasique' : 'Homeostatic Reset'} 
+            label={t.nav.votre_pratique_sub?.systemique || "Protocoles Systémiques"} 
             icon={Wind} 
             isActive={currentView === 'phytotherapie-reset'}
           />
-        </NavGroup>
-
-        <NavGroup title={isFR ? "Boutique" : "Shop"}>
-          <NavItem 
-            id="boutique" 
-            label={isFR ? 'Découvrir la Boutique' : 'Discover the Shop'} 
-            icon={ShoppingBag} 
-            isActive={currentView === 'boutique'}
-          />
-        </NavGroup>
-
-        <NavGroup title={isFR ? "Science du Totum" : "Science of Totum"}>
-          <NavItem 
-            id="infusion-precision" 
-            label={isFR ? "La Méthode" : "The Method"} 
-            icon={FlaskConical} 
-            isActive={currentView === 'infusion-precision'}
-          />
-          <NavItem 
-            id="questions-frequentes" 
-            label="FAQ" 
-            icon={MessageCircle} 
-            isActive={currentView === 'questions-frequentes'}
-          />
-        </NavGroup>
-
-        <NavGroup title={isFR ? "Ressources" : "Resources"}>
           <NavItem 
             id="herbier" 
-            label={isFR ? "L'Herbier" : "The Herbarium"} 
+            label={t.nav.votre_pratique_sub?.herbier || "L'Herbier"} 
             icon={BookOpen} 
             isActive={currentView === 'herbier'}
           />
+        </NavGroup>
+
+        {/* 4. TRANSMISSION */}
+        <NavGroup title={t.nav.transmission || "TRANSMISSION"}>
           <NavItem 
-            id="blog" 
-            label={isFR ? 'Journal Botanique' : 'Botanical Journal'} 
-            icon={Newspaper} 
-            isActive={currentView === 'blog' && !currentProductId}
+            id="library-landing" 
+            label={t.nav.transmission_sub?.bibliotheque || "Bibliothèque Scientifique"} 
+            icon={Microscope} 
+            isActive={currentView === 'library-landing'}
           />
           <NavItem 
-            id="manifeste" 
-            label={isFR ? 'Le Manifeste' : 'The Manifesto'} 
-            icon={FileText} 
-            isActive={currentView === 'manifeste'}
+            id="faq" 
+            label={t.nav.transmission_sub?.faq || "Questions Fréquentes"} 
+            icon={HelpCircle} 
+            isActive={currentView === 'faq' || currentView === 'questions-frequentes'}
+            onClick={() => navigateTo('faq')}
+          />
+          <NavItem 
+            id="contact" 
+            label={t.nav.transmission_sub?.contact || "Nous Contacter"} 
+            icon={MessageCircle} 
+            isActive={currentView === 'contact'}
+            onClick={() => navigateTo('contact')}
           />
         </NavGroup>
-      </div>
+
+        <NavGroup title={t.nav.boutique_nav || "BOUTIQUE & REMÈDES"}>
+          <NavItem 
+            id="boutique" 
+            label={lang === 'fr' ? "Toute la Boutique" : lang === 'de' ? "Gesamter Shop" : "All Products"} 
+            icon={ShoppingBag} 
+            isActive={currentView === 'boutique' && !searchParams.get('category')}
+            onClick={() => navigateTo('boutique')}
+          />
+          <NavItem 
+            id="machine" 
+            label={t.nav.boutique_sub.bloomlab} 
+            icon={Sparkles} 
+            isActive={currentView === 'machine'}
+            onClick={() => navigateTo('machine')}
+          />
+          <NavItem 
+            id="boutique-kits" 
+            label={t.nav.boutique_sub.kits} 
+            icon={Package} 
+            isActive={currentView === 'boutique' && searchParams.get('category') === 'kits'}
+            onClick={() => navigateTo('boutique', 'kits')}
+          />
+          <NavItem 
+            id="premium-info" 
+            label={t.nav.boutique_sub.abonnement} 
+            icon={Star} 
+            isActive={currentView === 'premium-info'}
+            onClick={() => navigateTo('premium-info')}
+          />
+        </NavGroup>
+
+        <NavGroup title={t.nav.compte}>
+          <NavItem 
+            id="account" 
+            label={t.nav.compte_sub.espace} 
+            icon={User} 
+            isActive={currentView === 'account'}
+            onClick={() => navigateTo('account')}
+          />
+        </NavGroup>
+      </nav>
 
       {/* Footer / User */}
       <div className="p-6 mt-auto border-t border-white/5 space-y-4">
         <button 
           onClick={() => navigateTo('cart')}
-          className="w-full flex items-center justify-between p-3 rounded-xl bg-botanik-orange text-white font-bold text-sm hover:scale-[1.02] transition-all"
-          aria-label={lang === 'fr' ? 'Accéder au panier BloomLab' : 'Access BloomLab shopping cart'}
+          className="w-full flex items-center justify-between p-3 rounded-xl bg-botanik-green text-white font-bold text-sm hover:scale-[1.02] transition-all"
+          aria-label={t.nav.cart}
         >
           <div className="flex items-center gap-3">
             <ShoppingCart className="w-4 h-4" />
@@ -831,7 +1010,7 @@ const NavigationSidebar = ({ className = "", currentView, currentProductId, navi
           <LanguageSelector lang={lang} setLang={setLang} variant="sidebar" />
           <button 
             onClick={() => navigateTo('account')}
-            className="p-2 text-white/40 hover:text-white transition-colors"
+            className="p-2 text-[#F9F9F7]/40 hover:text-white transition-colors"
             title={t.nav.account}
             aria-label={t.nav.account || 'Compte'}
           >
@@ -864,7 +1043,11 @@ const HybridOffer = ({ onNavigate }: { onNavigate: (view: any) => void }) => (
           </ul>
         </div>
         <div>
-          <div className="text-3xl font-bold mb-6 whitespace-nowrap">239&nbsp;€ <span className="text-lg line-through opacity-50 font-normal">289&nbsp;€</span></div>
+          <div className="text-3xl font-bold mb-6 flex items-baseline gap-2 flex-wrap">
+            <span>239&nbsp;€</span>
+            <span className="text-lg line-through opacity-50 font-normal">289&nbsp;€</span>
+            <span className="text-xs font-bold uppercase tracking-wider bg-[#D97706]/10 text-[#D97706] border border-[#D97706]/20 px-2.5 py-0.5 rounded-full whitespace-nowrap">code: Rentrée 2026</span>
+          </div>
           <button onClick={() => onNavigate('boutique')} className="w-full py-4 px-6 bg-botanik-green text-white rounded-lg font-semibold hover:bg-botanik-green/90 transition-colors flex items-center justify-center gap-2 group">
             Acquérir ma BloomLab
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -877,7 +1060,7 @@ const HybridOffer = ({ onNavigate }: { onNavigate: (view: any) => void }) => (
         <div className="absolute top-0 right-0 w-32 h-32 bg-botanik-magenta/5 rounded-bl-full -z-10" />
         
         <div className="mb-8 flex-1">
-          <div className="inline-block px-3 py-1 bg-botanik-magenta text-white text-xs font-bold uppercase tracking-widest rounded-full mb-6 relative z-10">Service Premium</div>
+          <div className="inline-block px-3 py-1 bg-botanik-green text-white text-xs font-bold uppercase tracking-widest rounded-full mb-6 relative z-10">Service Premium</div>
           <h3 className="text-2xl lg:text-3xl font-medium tracking-wide mb-4 text-botanik-magenta">Déléguez votre extraction</h3>
           <p className="text-lg mb-6 leading-relaxed font-medium text-gray-800">Nous réalisons votre Totum sur-mesure sous contrat de traçabilité signé.</p>
           <ul className="space-y-3 mb-8">
@@ -888,7 +1071,7 @@ const HybridOffer = ({ onNavigate }: { onNavigate: (view: any) => void }) => (
         </div>
         <div>
           <p className="text-sm text-botanik-magenta/80 mb-4 font-medium uppercase tracking-wide">Sur devis & disponibilité</p>
-          <button onClick={() => onNavigate('pending')} className="w-full py-4 px-6 bg-botanik-magenta text-white rounded-lg font-semibold hover:bg-[#5a0b21] transition-colors flex items-center justify-center gap-2 shadow-[0_4px_14px_rgba(118,14,43,0.39)] group">
+          <button onClick={() => onNavigate('pending')} className="w-full py-4 px-6 bg-botanik-green text-white rounded-lg font-semibold hover:bg-botanik-sage transition-colors flex items-center justify-center gap-2 shadow-xl group">
             Solliciter le Laboratoire
             <FlaskConical className="w-4 h-4 group-hover:rotate-12 transition-transform" />
           </button>
@@ -899,6 +1082,8 @@ const HybridOffer = ({ onNavigate }: { onNavigate: (view: any) => void }) => (
 );
 
 export default function App() {
+  console.log("App: Component render function called");
+  const searchParams = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
   const [lang, setLang] = useState<Language>(() => {
     if (typeof window === 'undefined') return 'fr';
     const path = window.location.pathname;
@@ -911,26 +1096,42 @@ export default function App() {
 
   const [currentView, setCurrentView] = useState<View>(() => {
     if (typeof window === 'undefined') return 'home';
+    
+    // 1. Check Hash first (as requested for environment isolation)
+    const hash = window.location.hash.replace('#', '');
+    if (hash && VIEW_PATHS[hash]) return hash as View;
+    
+    // 2. Check Pathname with fallback to exotic prefixes
     const rawPath = window.location.pathname;
     const langMatch = rawPath.match(/^\/(en|de)(\/.*)?$/);
     let restPath = langMatch ? (langMatch[2] || '/') : rawPath;
     if (restPath !== '/' && restPath.endsWith('/')) restPath = restPath.slice(0, -1);
     
-    // Check for blog/product detail patterns first
+    // Check for blog/product detail/terrain patterns first
     if (restPath.startsWith('/blog/')) return 'blog';
+    if (restPath === '/boutique' || restPath === '/boutique/') return 'boutique';
+    if (restPath === '/boutique/kits' || restPath === '/boutique/kits/') return 'boutique';
     if (restPath.startsWith('/boutique/')) return 'product-detail';
+    if (restPath.startsWith('/terrain/')) return 'terrain';
     if (restPath.startsWith('/bibliotheque/') || restPath.startsWith('/herbier/')) return 'herbier';
+    if (restPath.startsWith('/articles/')) return 'articles';
     
     const LEGACY_ALIASES: Record<string, string> = {
       '/about': '/manifeste',
-      '/contact': '/manifeste',
       '/qu-est-ce-que-l-infusion-botanique': '/infusion-botanique',
+      '/guide-extraction-botanique': '/extraction-botanique',
+      '/extraction-botanique-guide-complet': '/extraction-botanique',
       '/herbier': '/bibliotheque',
       '/indexbis': '/',
       '/chroniques': '/blog',
+      '/duo-argiles': '/cosmetique-botanique',
+      '/cosmetiques': '/cosmetique-botanique',
     };
     const normalizedPath = LEGACY_ALIASES[restPath] || restPath;
-    return (PATH_VIEWS[normalizedPath] as View) || 'home';
+    
+    // Final fallback: if nothing matches normalizedPath, return 'home' instead of undefined
+    const view = (PATH_VIEWS[normalizedPath] as View);
+    return view || 'home';
   });
 
   const [currentProductId, setCurrentProductId] = useState<string | undefined>(() => {
@@ -941,6 +1142,9 @@ export default function App() {
     
     const productMatch = restPath.match(/^\/boutique\/([a-z0-9-]+)$/);
     if (productMatch) return productMatch[1];
+    
+    const terrainMatch = restPath.match(/^\/terrain\/([A-Z0-9_]+)$/);
+    if (terrainMatch) return terrainMatch[1];
     
     const herbierMatch = restPath.match(/^\/(bibliotheque|herbier)\/([a-z0-9-]+)$/);
     if (herbierMatch) return herbierMatch[2];
@@ -953,7 +1157,12 @@ export default function App() {
 
   const [blogPostSlug, setBlogPostSlug] = useState<string | undefined>(() => {
     if (typeof window === 'undefined') return undefined;
-    const rawPath = (sessionStorage.getItem('spa-redirect-path') || window.location.pathname).split('?')[0].split('#')[0];
+    let rawPath = window.location.pathname;
+    try {
+      rawPath = (sessionStorage.getItem('spa-redirect-path') || window.location.pathname).split('?')[0].split('#')[0];
+    } catch (e) {
+      console.warn("sessionStorage not available", e);
+    }
     const langMatch = rawPath.match(/^\/(en|de)(\/.*)?$/);
     let restPath = langMatch ? (langMatch[2] || '/') : rawPath;
     
@@ -969,12 +1178,13 @@ export default function App() {
   const [cart, setCart] = useState<any[]>([]);
   const [shippingMethod, setShippingMethod] = useState<any>('mondialrelay');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSplashFinished, setIsSplashFinished] = useState(false);
+  const [isSplashFinished, setIsSplashFinished] = useState(true);
 
   useEffect(() => {
-    // Simple splash timeout
-    const timer = setTimeout(() => setIsSplashFinished(true), 2500);
-    return () => clearTimeout(timer);
+    // Simple splash timeout - disabled for debug
+    // const timer = setTimeout(() => setIsSplashFinished(true), 2500);
+    // return () => clearTimeout(timer);
+    setIsSplashFinished(true);
   }, []);
   
   // --- SPA ROUTING: sync URL with state ---
@@ -990,6 +1200,7 @@ export default function App() {
     }
     
     setLang(detectedLang);
+    const langPrefix = detectedLang !== 'fr' ? `/${detectedLang}` : '';
     sessionStorage.removeItem('spa-redirect-path');
 
     const searchParams = new URLSearchParams(window.location.search);
@@ -1030,21 +1241,24 @@ export default function App() {
 
     // --- Legacy route aliases (pre-redesign URLs) mapped to current views ---
     const LEGACY_ALIASES: Record<string, string> = {
-      '/about': '/manifeste',
-      '/contact': '/manifeste',
-      '/how-it-works-diy-natural-recipes': '/boutique',
-      '/natural-herbal-infusion-body-care-oils-': '/cosmetiques',
-      '/natural-herbal-infusion-face-skincare-recipes': '/cosmetiques',
-      '/qu-est-ce-que-l-infusion-botanique': '/infusion-botanique',
-      '/extraction-plantes-naturelles-bienfaits': '/extraction-botanique',
-      '/extraction-botanique-guide-complet': '/extraction-botanique',
-      '/infusion-botanique-maison-comment-ca-marche': '/infusion-botanique',
-      '/herbier': '/bibliotheque',
-      '/bloomlab-extracteur-botanique-et-infuseur-dhuile-intelligent-6-en-1': '/bloomlab',
+      '/about': '/manifeste/',
+      '/contact': '/manifeste/',
+      '/how-it-works-diy-natural-recipes': '/boutique/',
+      '/natural-herbal-infusion-body-care-oils-': '/cosmetique-botanique/',
+      '/natural-herbal-infusion-face-skincare-recipes': '/cosmetique-botanique/',
+      '/duo-argiles': '/cosmetique-botanique/',
+      '/cosmetiques': '/cosmetique-botanique/',
+      '/qu-est-ce-que-l-infusion-botanique': '/infusion-botanique/',
+      '/extraction-plantes-naturelles-bienfaits': '/extraction-botanique/',
+      '/guide-extraction-botanique': '/extraction-botanique/',
+      '/extraction-botanique-guide-complet': '/extraction-botanique/',
+      '/infusion-botanique-maison-comment-ca-marche': '/infusion-botanique/',
+      '/herbier': '/herbier/',
+      '/bloomlab-extracteur-botanique-et-infuseur-dhuile-intelligent-6-en-1': '/bloomlab/',
       '/indexbis': '/',
-      '/chroniques': '/blog',
-      '/tisane-ba': '/blog',
-      '/tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes-spoiler-la-difference-est-de-1-a-98': '/blog',
+      '/chroniques': '/blog/',
+      '/tisane-ba': '/blog/',
+      '/tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes-spoiler-la-difference-est-de-1-a-98': '/blog/',
     };
 
     if (restPath === '/tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes-spoiler-la-difference-est-de-1-a-98') {
@@ -1053,26 +1267,41 @@ export default function App() {
       return;
     }
 
-    const normalizedPath = LEGACY_ALIASES[restPath] || restPath;
+    const normalizedPathRaw = LEGACY_ALIASES[restPath] || restPath;
+    const normalizedPath = normalizedPathRaw === '/' ? '/' : (normalizedPathRaw.endsWith('/') ? normalizedPathRaw : `${normalizedPathRaw}/`);
+
+    // 301 Permanent Client Redirection when hitting legacy alias
+    if (LEGACY_ALIASES[restPath] && typeof window !== 'undefined') {
+      const canonicalTargetUrl = `${langPrefix}${normalizedPath}`;
+      window.history.replaceState({}, '', canonicalTargetUrl);
+    }
 
     // --- Detect Blog detail URL pattern /blog/:slug ---
-    const blogMatch = normalizedPath.match(/^\/blog\/([a-z0-9-]+)$/);
+    const blogMatch = normalizedPath.match(/^\/blog\/([a-z0-9-]+)\/$/);
     if (blogMatch) {
       setBlogPostSlug(blogMatch[1]);
       setCurrentView('blog');
       return;
     }
 
-    // --- Detect Herbier detail URL pattern /bibliotheque/:id or /herbier/:id or /bibliotheque-savoirs/:id ---
-    const herbierMatch = normalizedPath.match(/^\/(bibliotheque|herbier|bibliotheque-savoirs)\/([a-z0-9-]+)$/);
+    // --- Detect Herbier detail URL pattern /herbier/:id ---
+    const herbierMatch = normalizedPath.match(/^\/herbier\/([A-Za-z0-9_]+)\/$/);
     if (herbierMatch) {
-      setCurrentProductId(herbierMatch[2]);
+      setCurrentProductId(herbierMatch[1]);
+      setCurrentView('herbier');
+      return;
+    }
+
+    // --- Detect legacy herbarium patterns ---
+    const legacyHerbariumMatch = normalizedPath.match(/^\/(bibliotheque|bibliotheque-savoirs)\/([A-Za-z0-9_]+)\/?$/);
+    if (legacyHerbariumMatch) {
+      setCurrentProductId(legacyHerbariumMatch[2]);
       setCurrentView('herbier');
       return;
     }
 
     // --- Detect culinary detail URL pattern /gastronomie-botanique/:id ---
-    const culinaryMatch = normalizedPath.match(/^\/gastronomie-botanique\/([a-z0-9-]+)$/);
+    const culinaryMatch = normalizedPath.match(/^\/gastronomie-botanique\/([a-z0-9-]+)\/$/);
     if (culinaryMatch) {
       setCurrentProductId(culinaryMatch[1]);
       setCurrentView('culinaire');
@@ -1080,23 +1309,39 @@ export default function App() {
     }
 
     // --- Detect cosmetics detail URL pattern /cosmetiques/:id ---
-    const cosmeticsMatch = normalizedPath.match(/^\/cosmetiques\/([a-z0-9-]+)$/);
+    const cosmeticsMatch = normalizedPath.match(/^\/cosmetiques\/([a-z0-9-]+)\/$/);
     if (cosmeticsMatch) {
       setCurrentProductId(cosmeticsMatch[1]);
       setCurrentView('cosmetiques');
       return;
     }
 
+    // --- Detect terrain detail URL pattern /terrain/:id ---
+    const terrainMatch = normalizedPath.match(/^\/terrain\/([A-Z0-9_]+)\/$/);
+    if (terrainMatch) {
+      setCurrentProductId(terrainMatch[1]);
+      setCurrentView('terrain');
+      return;
+    }
+
     // --- Detect product detail URL pattern /boutique/:id ---
-    const productMatch = normalizedPath.match(/^\/boutique\/([a-z0-9-]+)$/);
-    if (productMatch) {
+    const productMatch = normalizedPath.match(/^\/boutique\/([a-z0-9-]+)\/$/);
+    if (productMatch && productMatch[1] !== 'kits') {
       setCurrentProductId(productMatch[1]);
       setCurrentView('product-detail');
       return;
     }
 
+    // --- Detect articles detail URL pattern /articles/:id ---
+    const articlesMatch = normalizedPath.match(/^\/articles\/([a-z0-9-]+)\/$/);
+    if (articlesMatch) {
+      setCurrentProductId(articlesMatch[1]);
+      setCurrentView('articles');
+      return;
+    }
+
     // --- Detect newsletter preferences URL pattern /newsletter/preferences/:id ---
-    const newsletterMatch = normalizedPath.match(/^\/newsletter\/preferences\/([a-z0-9-]+)$/);
+    const newsletterMatch = normalizedPath.match(/^\/newsletter\/preferences\/([a-z0-9-]+)\/$/);
     if (newsletterMatch) {
       setCurrentProductId(newsletterMatch[1]);
       setCurrentView('newsletter-preferences');
@@ -1108,7 +1353,7 @@ export default function App() {
       setCurrentView(matchedView as typeof currentView);
       
       // Handle scrolling to specific section for legacy URL
-      if (restPath === '/infusion-botanique-maison-comment-ca-marche' || (matchedView === 'guide' && window.location.hash === '#comprendre-infusion-botanique')) {
+      if (normalizedPath === '/infusion-botanique-maison-comment-ca-marche/' || (matchedView === 'guide' && window.location.hash === '#comprendre-infusion-botanique')) {
         setTimeout(() => {
           const element = document.getElementById('comprendre-infusion-botanique');
           if (element) {
@@ -1132,9 +1377,22 @@ export default function App() {
   const handleLanguageChange = (newLang: Language) => {
     setLang(newLang);
     const langPrefix = newLang === 'fr' ? '' : `/${newLang}`;
-    let basePath = currentView === 'product-detail' && currentProductId 
-      ? `/boutique/${currentProductId}` 
-      : (VIEW_PATHS[currentView] || '/');
+    let basePath = (VIEW_PATHS[currentView] || '/');
+    if (currentView === 'product-detail' && currentProductId) {
+      basePath = `/boutique/${currentProductId}/`;
+    } else if (currentView === 'blog' && blogPostSlug) {
+      basePath = `/blog/${blogPostSlug}/`;
+    } else if (currentView === 'herbier' && currentProductId) {
+      basePath = `/herbier/${currentProductId}/`;
+    } else if (currentView === 'terrain' && currentProductId) {
+      basePath = `/terrain/${currentProductId}/`;
+    }
+    
+    // Ensure trailing slash for consistent URLs
+    if (basePath !== '/' && !basePath.endsWith('/')) {
+      basePath += '/';
+    }
+    
     if (basePath === '/' && newLang !== 'fr') basePath = '';
     const newPath = `${langPrefix}${basePath}` || '/';
     if (window.location.pathname !== newPath) {
@@ -1186,26 +1444,59 @@ export default function App() {
     setCurrentView(view);
 
     const langPrefix = lang === 'fr' ? '' : `/${lang}`;
-    let basePath = view === 'product-detail' && productId ? `/boutique/${productId}` : (VIEW_PATHS[view] || '/');
+    let basePath = view === 'product-detail' && productId ? `/boutique/${productId}/` : (VIEW_PATHS[view] || '/');
     
     // SEO Clean URLs for Blog
     if (view === 'blog' && productId) {
-      basePath = `/blog/${productId}`;
+      basePath = `/blog/${productId}/`;
+    }
+
+    // SEO Clean URLs for Articles
+    if (view === 'articles' && productId) {
+      basePath = `/articles/${productId}/`;
     }
     
     // SEO Clean URLs for Herbarium
     if (view === 'herbier' && productId) {
-      basePath = `/bibliotheque-savoirs/${productId}`;
+      basePath = `/herbier/${productId}/`;
     }
     
     // SEO Clean URLs for Cosmetics
     if (view === 'cosmetiques' && productId) {
-      basePath = `/cosmetiques/${productId}`;
+      basePath = `/cosmetiques/${productId}/`;
     }
     
     // SEO Clean URLs for Culinary
     if (view === 'culinaire' && productId) {
-      basePath = `/gastronomie-botanique/${productId}`;
+      basePath = `/gastronomie-botanique/${productId}/`;
+    }
+
+    // SEO Clean URLs for Terrains
+    if (view === 'terrain' && productId) {
+      basePath = `/terrain/${productId}/`;
+    }
+    
+    // SEO Clean URLs for specific view combinations
+    if (view === 'boutique' && productId === 'kits') {
+      basePath = '/boutique/kits/';
+    }
+    if (view === 'manifeste' && productId === 'contact') {
+      basePath = '/contact/';
+    }
+    if (view === 'legal' && productId) {
+      basePath = `/legal/${productId}/`;
+    }
+    
+    // Consistent mapping for cosmetiques
+    if (view === 'cosmetiques' && !productId) {
+      basePath = '/cosmetique-botanique/';
+    } else if (view === 'cosmetiques' && productId) {
+      basePath = `/cosmetique-botanique/${productId}/`;
+    }
+    
+    // Ensure trailing slash for all URLs except home
+    if (basePath !== '/' && !basePath.endsWith('/')) {
+      basePath += '/';
     }
     
     if (basePath === '/' && lang !== 'fr') basePath = '';
@@ -1225,7 +1516,7 @@ export default function App() {
   const [isPremium, setIsPremium] = useState(false);
   const [isDiscovery, setIsDiscovery] = useState(false);
   const [showPremiumModal, setShowPremiumModal] = useState(false);
-  const [authLoading, setAuthLoading] = useState(true);
+  const [authLoading, setAuthLoading] = useState(false);
   const [assessmentResult, setAssessmentResult] = useState<any>(null);
   const [favorites, setFavorites] = useState<string[]>([]);
 
@@ -1358,9 +1649,12 @@ export default function App() {
     return () => clearTimeout(timeout);
   }, [authLoading, isBotOrPrerender]);
 
-  if ((authLoading || !isSplashFinished) && !isBotOrPrerender) return (
+  // FORCE BYPASS LOADER FOR DEBUGGING
+  if (false && (authLoading || !isSplashFinished) && !isBotOrPrerender) return (
     <div className="min-h-screen bg-[#293228] flex flex-col items-center justify-center animate-in fade-in duration-1000">
-      <img src={logoSidebar} alt="Bloom" className="w-24 h-24 mb-6" />
+      <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mb-6">
+        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+      </svg>
       <div className="w-12 h-1 border-2 border-white/10 overflow-hidden relative rounded-full">
         <div className="absolute inset-0 bg-white/40 animate-loading-bar" />
       </div>
@@ -1370,7 +1664,30 @@ export default function App() {
   const renderMainContent = () => {
     switch (currentView) {
       case 'home': return <IndexBisContent onNavigate={navigateTo} lang={lang} />;
+      case 'boutique':
+      case 'boutique-kits': return (
+        <StoreContent 
+          onNavigate={navigateTo} 
+          onAddToCart={(product) => addToCart(product)} 
+          lang={lang} 
+        />
+      );
+      case 'faq':
+      case 'questions-frequentes': return (
+        <FaqContent 
+          onNavigate={navigateTo} 
+          lang={lang} 
+        />
+      );
+      case 'contact': return (
+        <ContactContent 
+          onNavigate={navigateTo} 
+          lang={lang} 
+        />
+      );
       case 'machine': return <MachineLanding onNavigate={navigateTo} lang={lang} />;
+      case 'votre-pratique':
+      case 'parcours':
       case 'phytotherapie-reset': return <PhytotherapyResetPage onNavigate={navigateTo} lang={lang} />;
       case 'library-landing': return <LibraryLanding onNavigate={navigateTo} lang={lang} />;
       case 'indexbis': return <IndexBisContent onNavigate={navigateTo} lang={lang} />;
@@ -1479,13 +1796,17 @@ export default function App() {
       );
       case 'recettes': return <RecipesContent onBack={() => navigateTo('home')} lang={lang} t={t} />;
       case 'guides': return <BlogContent lang={lang} onNavigate={navigateTo} initialSlug={blogPostSlug} />;
-      case 'questions-frequentes': return <IndexBisContent onNavigate={navigateTo} lang={lang} scrollToId="faq" />;
+      case 'articles': return (
+        <ArticlesContent 
+          lang={lang} 
+          onNavigate={navigateTo} 
+          initialSlug={currentProductId} 
+        />
+      );
       case 'infusion-precision':
       case 'totum-definition':
       case 'solvants-extraction': return (
-        <Suspense fallback={<ViewLoader />}>
-          <SEOArticles view={currentView} lang={lang} t={t} />
-        </Suspense>
+        <SEOArticles view={currentView} lang={lang} t={t} onNavigate={navigateTo} />
       );
       case 'chat': return (
         <ChatContent 
@@ -1500,9 +1821,20 @@ export default function App() {
         />
       );
       case 'manifeste': return <ManifesteContent onBack={() => navigateTo(previousView === 'manifeste' ? 'home' : previousView)} onNavigate={navigateTo} lang={lang} />;
+      case 'terrain': return (
+        <TerrainPillar 
+          terrainId={currentProductId || 'T1'} 
+          lang={lang} 
+          onNavigate={navigateTo} 
+        />
+      );
       case 'pillar-extraction': 
+      case 'extraction-botanique':
       case 'infuseur-botanique':
       case 'guide-complet': return <PillarExtraction onNavigate={navigateTo} lang={lang} />;
+      case 'infusion-botanique': return <PillarInfusion lang={lang} onNavigate={navigateTo} />;
+      case 'huile-infusee': return <PillarOil lang={lang} onNavigate={navigateTo} />;
+      case 'plantes-adaptogenes': return <PillarAdaptogens lang={lang} onNavigate={navigateTo} />;
       case 'activation': return (
         <ActivationPage 
           userId={user?.uid || null} 
@@ -1530,27 +1862,24 @@ export default function App() {
       case 'blog': return <BlogContent lang={lang} onNavigate={navigateTo} initialSlug={blogPostSlug} />;
       case 'legal': return <LegalPages type={legalType} onBack={() => navigateTo(previousView)} lang={lang} />;
       case 'newsletter-preferences': return <NewsletterPreferences subscriberId={currentProductId || ''} lang={lang} />;
-      default: return (
-        <StoreContent 
-          onNavigatePending={() => navigateTo('pending')} 
-          onNavigateDetail={(id) => navigateTo('product-detail', id)}
-          onAddToCart={(product) => addToCart(product)}
-          lang={lang}
-        />
-      );
+      default: return <IndexBisContent onNavigate={navigateTo} lang={lang} />;
     }
   };
 
   const MobileHeader = () => (
-    <header className="lg:hidden sticky top-0 bg-botanik-green z-[60] border-b border-white/5 px-4 py-3 flex items-center justify-between shadow-sm">
+    <header className="lg:hidden sticky top-0 bg-[#0F261E] z-[60] border-b border-white/5 px-4 py-3 flex items-center justify-between shadow-sm">
       <div 
         className="flex items-center gap-3 cursor-pointer"
         onClick={() => navigateTo('home')}
       >
-        <img src={logoSidebar} alt="Bloom" className="w-8 h-8 object-contain" />
-        <div className="flex flex-col leading-none text-white">
-          <span className="text-base font-black tracking-wider uppercase">Bloom</span>
-          <span className="text-[8px] font-bold tracking-[0.1em] opacity-70">by BotaniK</span>
+        <img 
+          src="/assets/images/logo_sidebar_1784886108085.png" 
+          alt="Bloom by BotaniK" 
+          className="h-10 w-auto"
+        />
+        <div className="ml-3 font-semibold tracking-wide flex flex-col leading-tight text-[#F9F9F7]">
+          <span className="text-xl font-bold">Bloom</span>
+          <span className="text-sm opacity-80">by BotaniK</span>
         </div>
       </div>
       <div className="flex items-center gap-2">
@@ -1559,7 +1888,7 @@ export default function App() {
         <button onClick={() => navigateTo('cart')} className="relative text-white p-2" aria-label={lang === 'fr' ? 'Accéder au panier Bloom' : 'Access Bloom shopping cart'}>
           <ShoppingCart className="w-5 h-5" />
           {cart.length > 0 && (
-            <span className="absolute top-0 right-0 w-4 h-4 bg-botanik-orange text-white text-[9px] font-black rounded-full flex items-center justify-center border border-botanik-green">
+            <span className="absolute top-0 right-0 w-4 h-4 bg-[#D4AF37] text-white text-[9px] font-black rounded-full flex items-center justify-center border border-[#293228]">
               {cart.reduce((s, i) => s + i.quantity, 0)}
             </span>
           )}
@@ -1620,46 +1949,49 @@ export default function App() {
       {isMenuOpen && (
         <div className="fixed inset-0 z-[100] lg:hidden">
           <div 
-            className="absolute inset-0 bg-botanik-green/60 backdrop-blur-md animate-in fade-in duration-300" 
+            className="absolute inset-0 bg-[#0F261E]/60 backdrop-blur-md animate-in fade-in duration-300" 
             onClick={() => setIsMenuOpen(false)} 
           />
-          <div className="absolute right-0 top-0 bottom-0 w-[85%] max-w-sm bg-botanik-green shadow-2xl flex flex-col animate-in slide-in-from-right duration-500 border-l border-white/5">
+          <div className="absolute right-0 top-0 bottom-0 w-[85%] max-w-sm bg-[#0F261E] shadow-2xl flex flex-col animate-in slide-in-from-right duration-500 border-l border-white/5">
             <div className="p-6 flex items-center justify-between border-b border-white/5 bg-black/10">
               <div className="flex items-center gap-3">
-                <img src={logoSidebar} alt="Bloom" className="w-8 h-8 object-contain" />
-              <div className="flex flex-col leading-none text-white">
-                <span className="text-sm font-black tracking-widest">Bloom</span>
-                <span className="text-[8px] font-bold tracking-[0.1em] opacity-70">by BotaniK</span>
-              </div>
+                <img 
+                  src="/assets/images/logo_sidebar_1784886108085.png" 
+                  alt="Bloom by BotaniK" 
+                  className="h-10 w-auto"
+                />
+                <div className="ml-3 font-semibold tracking-wide flex flex-col leading-tight text-[#F9F9F7]">
+                  <span className="text-lg">Bloom</span>
+                  <span className="text-sm">by BotaniK</span>
+                </div>
               </div>
               <button 
                 onClick={() => setIsMenuOpen(false)}
-                className="p-2 text-white/60 hover:text-white transition-colors"
+                className="p-2 text-[#F9F9F7]/60 hover:text-[#F9F9F7] transition-colors"
               >
                 <X className="w-7 h-7" />
               </button>
             </div>
 
             <div className="flex-1 overflow-y-auto p-6 py-8 custom-scrollbar">
-              <div className="space-y-10">
-                {/* 1. Main Action: The Product */}
+              <div className="space-y-10 text-[#F9F9F7]">
+                {/* 1. ACCUEIL */}
                 <div>
-                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-botanik-orange mb-6">BloomLab® — Le Produit</h3>
+                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">{t.nav.accueil}</h3>
                   <div className="space-y-3">
                     <a
-                      href={VIEW_PATHS['machine']}
-                      onClick={(e) => { e.preventDefault(); navigateTo('machine'); setIsMenuOpen(false); }}
+                      href={VIEW_PATHS['home']}
+                      onClick={(e) => { e.preventDefault(); navigateTo('home'); setIsMenuOpen(false); }}
                       className={`w-full flex items-center justify-between px-6 py-5 rounded-2xl transition-all text-left group border-2 ${
-                        currentView === 'machine'
+                        currentView === 'home'
                           ? 'bg-botanik-orange text-white border-botanik-orange shadow-lg shadow-botanik-orange/20' 
-                          : 'bg-white/5 text-white/90 border-white/10 hover:border-botanik-orange/50'
+                          : 'bg-white/5 text-[#F9F9F7] border-white/10 hover:border-botanik-orange/50'
                       }`}
                     >
                       <div className="flex items-center gap-4">
-                        <Sparkles className={`w-6 h-6 ${(currentView === 'machine') ? 'text-white' : 'text-botanik-orange'}`} />
+                        <Home className={`w-6 h-6 ${(currentView === 'home') ? 'text-white' : 'text-botanik-orange'}`} />
                         <div className="flex flex-col">
-                          <span className="font-black text-lg tracking-tight leading-none">{lang === 'fr' ? 'Découvrir BloomLab®' : 'Discover BloomLab®'}</span>
-                          <span className="text-[10px] uppercase font-bold opacity-60 mt-1">{lang === 'fr' ? 'L\'extracteur de Totum N°1' : 'The #1 Totum Extractor'}</span>
+                          <span className="font-black text-lg tracking-tight leading-none">{t.nav.accueil.toUpperCase()}</span>
                         </div>
                       </div>
                       <ArrowRight className="w-5 h-5 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
@@ -1667,97 +1999,163 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* 2. Applications: Why you need it */}
+                {/* 1. POURQUOI BLOOM */}
                 <div>
-                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">{lang === 'fr' ? 'Vos Univers de Soin' : 'Your Care Universes'}</h3>
+                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-3">{t.nav.pourquoi_bloom || "POURQUOI BLOOM"}</h3>
                   <div className="grid grid-cols-1 gap-2">
                     {[
-                      { id: 'culinaire', label: lang === 'fr' ? 'Atelier Culinaire' : 'Culinary Workshop', icon: ChefHat, color: 'text-orange-400' },
-                      { id: 'cosmetiques', label: lang === 'fr' ? 'Soin Cosmétique' : 'Cosmetic Care', icon: Droplets, color: 'text-blue-400' },
-                      { id: 'phytotherapie-reset', label: lang === 'fr' ? 'Reset Homéostasique' : 'Homeostatic Reset', icon: Wind, color: 'text-emerald-400' },
+                      { id: 'manifeste', label: t.nav.pourquoi_bloom_sub?.manifeste || "Le Manifeste", icon: FileText },
+                      { id: 'chat', label: t.nav.pourquoi_bloom_sub?.audit || "Je commence / Diagnostic", icon: Sparkles },
                     ].map((item: any) => (
                       <a
                         key={item.id}
                         href={VIEW_PATHS[item.id]}
                         onClick={(e) => { e.preventDefault(); navigateTo(item.id); setIsMenuOpen(false); }}
-                        className={`w-full flex items-center gap-4 px-6 py-4 rounded-2xl transition-all text-left group ${
-                          (currentView === item.id && !currentProductId) ? 'bg-white/10 text-white shadow-md' : 'text-white/70 hover:bg-white/5'
+                        className={`w-full flex items-center gap-4 px-6 py-3.5 rounded-2xl transition-all text-left group ${
+                          (currentView === item.id) ? 'bg-[#1C3F34] text-white shadow-md' : 'text-[#F9F9F7]/80 hover:bg-[#1C3F34] hover:text-white'
                         }`}
                       >
-                        <item.icon className={`w-5 h-5 ${item.color} opacity-80`} />
+                        <item.icon className="w-5 h-5 text-botanik-orange opacity-80" />
                         <span className="font-bold text-base tracking-tight">{item.label}</span>
                       </a>
                     ))}
                   </div>
                 </div>
 
-                {/* 3. Social Proof & Education */}
+                {/* 2. LA MÉTHODE A/B */}
                 <div>
-                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">Expertise & Savoir</h3>
-                  <div className="space-y-2">
+                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-3">{t.nav.methode_ab || "LA MÉTHODE A/B"}</h3>
+                  <div className="grid grid-cols-1 gap-2">
                     {[
-                      { id: 'infusion-precision', label: lang === 'fr' ? "La Méthode d'Extraction" : "Extraction Method", icon: FlaskConical },
-                      { id: 'blog', label: 'Bain-Marie vs BloomLab', icon: Microscope, slug: 'tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes' },
-                      { id: 'questions-frequentes', label: "Questions Fréquentes (FAQ)", icon: MessageCircle },
+                      { id: 'machine', label: t.nav.methode_ab_sub?.extraction || "Extraction de précision", icon: FlaskConical },
+                      { id: 'product-detail', label: t.nav.methode_ab_sub?.bloomlab || "L'Extracteur BloomLab®", icon: Award, param: 'bloomlab' },
+                      { id: 'totum-definition', label: t.nav.methode_ab_sub?.totum || "Le Totum Végétal", icon: Leaf },
                     ].map((item: any) => (
                       <a
-                        key={item.id + (item.slug || '')}
-                        href={item.slug ? `/blog/${item.slug}` : VIEW_PATHS[item.id]}
+                        key={item.id}
+                        href={item.param ? '#' : VIEW_PATHS[item.id]}
                         onClick={(e) => { 
                           e.preventDefault(); 
-                          if (item.slug) navigateTo('blog', item.slug);
+                          if (item.param) navigateTo(item.id, item.param);
                           else navigateTo(item.id); 
                           setIsMenuOpen(false); 
                         }}
-                        className={`w-full flex items-center gap-4 px-6 py-4 rounded-2xl transition-all text-left group ${
-                          (currentView === item.id && currentProductId === item.slug) ? 'bg-white/10 text-white shadow-md' : 'text-white/70 hover:bg-white/5'
+                        className={`w-full flex items-center gap-4 px-6 py-3.5 rounded-2xl transition-all text-left group ${
+                          (currentView === item.id && (!item.param || currentProductId === item.param)) ? 'bg-[#1C3F34] text-white shadow-md' : 'text-[#F9F9F7]/80 hover:bg-[#1C3F34] hover:text-white'
                         }`}
                       >
-                        <item.icon className="w-5 h-5 text-white/30" />
+                        <item.icon className="w-5 h-5 text-botanik-orange opacity-80" />
                         <span className="font-bold text-base tracking-tight">{item.label}</span>
                       </a>
                     ))}
                   </div>
                 </div>
 
-                {/* 4. The Shop */}
-                <div className="pt-4">
-                  <a
-                    href={VIEW_PATHS['boutique']}
-                    onClick={(e) => { e.preventDefault(); navigateTo('boutique'); setIsMenuOpen(false); }}
-                    className={`w-full flex items-center justify-between px-8 py-6 rounded-3xl transition-all text-left group ${
-                      currentView === 'boutique' ? 'bg-white text-botanik-green' : 'bg-botanik-orange text-white'
-                    } shadow-xl shadow-black/20`}
-                  >
-                    <div className="flex items-center gap-4">
-                      <ShoppingBag className="w-6 h-6" />
-                      <div className="flex flex-col">
-                        <span className="font-black text-xl tracking-tight leading-none">{lang === 'fr' ? 'La Boutique' : 'The Shop'}</span>
-                        <span className="text-[10px] uppercase font-bold opacity-70 mt-1">{lang === 'fr' ? 'Commandez vos remèdes' : 'Order your remedies'}</span>
-                      </div>
-                    </div>
-                    <ChevronRight className="w-6 h-6" />
-                  </a>
-                </div>
-
-                {/* 5. Additional Resources */}
-                <div className="opacity-60 pt-6">
-                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/40 mb-6">Autres Ressources</h3>
-                  <div className="grid grid-cols-2 gap-2">
+                {/* 3. VOTRE PRATIQUE */}
+                <div>
+                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-3">{t.nav.votre_pratique || "VOTRE PRATIQUE"}</h3>
+                  <div className="space-y-2">
                     {[
-                      { id: 'herbier', label: lang === 'fr' ? "L'Herbier" : "Herbarium", icon: BookOpen },
-                      { id: 'manifeste', label: lang === 'fr' ? 'Manifeste' : 'Manifesto', icon: FileText },
+                      { id: 'culinaire', label: t.nav.votre_pratique_sub?.culinaire || "Atelier Culinaire", icon: Utensils },
+                      { id: 'cosmetiques', label: t.nav.votre_pratique_sub?.cosmetique || "Cosmétique Botanique", icon: Droplets },
+                      { id: 'phytotherapie-reset', label: t.nav.votre_pratique_sub?.systemique || "Protocoles Systémiques", icon: Wind },
+                      { id: 'herbier', label: t.nav.votre_pratique_sub?.herbier || "L'Herbier", icon: BookOpen },
                     ].map((item: any) => (
                       <a
                         key={item.id}
                         href={VIEW_PATHS[item.id]}
-                        onClick={(e) => { e.preventDefault(); navigateTo(item.id); setIsMenuOpen(false); }}
-                        className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all text-left bg-white/5 text-white/60 hover:text-white`}
+                        onClick={(e) => { 
+                          e.preventDefault(); 
+                          navigateTo(item.id); 
+                          setIsMenuOpen(false); 
+                        }}
+                        className={`w-full flex items-center gap-4 px-6 py-3.5 rounded-2xl transition-all text-left group ${
+                          (currentView === item.id) ? 'bg-[#1C3F34] text-white shadow-md' : 'text-[#F9F9F7]/80 hover:bg-[#1C3F34] hover:text-white'
+                        }`}
                       >
-                        <item.icon className="w-4 h-4" />
-                        <span className="font-bold text-xs tracking-tight">{item.label}</span>
+                        <item.icon className="w-5 h-5 text-botanik-orange" />
+                        <span className="font-bold text-base tracking-tight">{item.label}</span>
                       </a>
                     ))}
+                  </div>
+                </div>
+
+                {/* 4. TRANSMISSION */}
+                <div>
+                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-3">{t.nav.transmission || "TRANSMISSION"}</h3>
+                  <div className="grid grid-cols-1 gap-2">
+                    {[
+                      { id: 'library-landing', label: t.nav.transmission_sub?.bibliotheque || "Bibliothèque Scientifique", icon: Microscope, onClick: () => navigateTo('library-landing') },
+                      { id: 'faq', label: t.nav.transmission_sub?.faq || "Questions Fréquentes", icon: HelpCircle, onClick: () => navigateTo('faq') },
+                      { id: 'contact', label: t.nav.transmission_sub?.contact || "Nous Contacter", icon: MessageCircle, onClick: () => navigateTo('contact') },
+                    ].map((item: any) => (
+                      <a
+                        key={item.id}
+                        href={VIEW_PATHS[item.id] || '#'}
+                        onClick={(e) => { 
+                          e.preventDefault(); 
+                          if (item.onClick) item.onClick();
+                          else navigateTo(item.id); 
+                          setIsMenuOpen(false); 
+                        }}
+                        className={`w-full flex items-center gap-4 px-6 py-3.5 rounded-2xl transition-all text-left group ${
+                          (currentView === item.id) ? 'bg-[#1C3F34] text-white shadow-md' : 'text-[#F9F9F7]/80 hover:bg-[#1C3F34] hover:text-white'
+                        }`}
+                      >
+                        <item.icon className="w-5 h-5 text-botanik-orange opacity-80" />
+                        <span className="font-bold text-base tracking-tight">{item.label}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 5. BOUTIQUE */}
+                <div>
+                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-3">{t.nav.boutique_nav}</h3>
+                  <div className="space-y-2">
+                    <a
+                      href={VIEW_PATHS['boutique']}
+                      onClick={(e) => { e.preventDefault(); navigateTo('boutique'); setIsMenuOpen(false); }}
+                      className={`w-full flex items-center gap-4 px-6 py-3.5 rounded-2xl transition-all text-left group ${
+                        currentView === 'boutique' && !searchParams.get('category') ? 'bg-[#1C3F34] text-white shadow-md' : 'text-[#F9F9F7]/80 hover:bg-[#1C3F34] hover:text-white'
+                      }`}
+                    >
+                      <ShoppingBag className="w-5 h-5 text-botanik-orange" />
+                      <span className="font-bold text-base tracking-tight">{lang === 'fr' ? "Toute la Boutique" : "All Products"}</span>
+                    </a>
+                    <a
+                      href={VIEW_PATHS['machine']}
+                      onClick={(e) => { e.preventDefault(); navigateTo('machine'); setIsMenuOpen(false); }}
+                      className={`w-full flex items-center gap-4 px-6 py-3.5 rounded-2xl transition-all text-left group ${
+                        currentView === 'machine' ? 'bg-[#1C3F34] text-white shadow-md' : 'text-[#F9F9F7]/80 hover:bg-[#1C3F34] hover:text-white'
+                      }`}
+                    >
+                      <Sparkles className="w-5 h-5 text-botanik-orange" />
+                      <span className="font-bold text-base tracking-tight">{t.nav.boutique_sub.bloomlab}</span>
+                    </a>
+                    <a
+                      href={VIEW_PATHS['boutique-kits'] || '/boutique/kits/'}
+                      onClick={(e) => { e.preventDefault(); navigateTo('boutique', 'kits'); setIsMenuOpen(false); }}
+                      className={`w-full flex items-center gap-4 px-6 py-3.5 rounded-2xl transition-all text-left group ${
+                        currentView === 'boutique' && searchParams.get('category') === 'kits' ? 'bg-[#1C3F34] text-white shadow-md' : 'text-[#F9F9F7]/80 hover:bg-[#1C3F34] hover:text-white'
+                      }`}
+                    >
+                      <Package className="w-5 h-5 text-botanik-orange" />
+                      <span className="font-bold text-base tracking-tight">{t.nav.boutique_sub.kits}</span>
+                    </a>
+                    <a
+                      href={VIEW_PATHS['premium-info']}
+                      onClick={(e) => { e.preventDefault(); navigateTo('premium-info'); setIsMenuOpen(false); }}
+                      className={`w-full flex items-center justify-between px-6 py-4 rounded-2xl transition-all text-left group bg-botanik-orange text-white shadow-xl shadow-black/10`}
+                    >
+                      <div className="flex items-center gap-4">
+                        <Star className="w-6 h-6" />
+                        <div className="flex flex-col">
+                          <span className="font-black text-lg tracking-tight leading-none">{t.nav.boutique_sub.abonnement.toUpperCase()}</span>
+                        </div>
+                      </div>
+                      <ChevronRight className="w-5 h-5" />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -1766,16 +2164,16 @@ export default function App() {
             <div className="mt-auto p-8 border-t border-white/5 bg-black/10 space-y-8">
               <button 
                 onClick={() => { navigateTo('account'); setIsMenuOpen(false); }}
-                className="w-full flex items-center gap-4 p-5 rounded-3xl bg-white/5 border border-white/5 text-white hover:bg-white/10 transition-colors shadow-inner"
+                className="w-full flex items-center gap-4 p-5 rounded-3xl bg-[#1C3F34] border border-white/5 text-[#F9F9F7] hover:bg-[#1C3F34]/80 transition-colors shadow-inner"
               >
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-botanik-orange to-[#FF9D66] flex items-center justify-center text-white shadow-lg shadow-botanik-orange/20">
                   <User className="w-6 h-6" />
                 </div>
                   <div className="flex flex-col text-left">
-                    <span className="font-bold text-base tracking-tight">
-                      {lang === 'fr' ? 'Mon Compte' : lang === 'de' ? 'Mein Konto' : 'My Account'}
+                    <span className="font-bold text-base tracking-tight text-[#F9F9F7]">
+                      {t.nav.compte_sub.espace}
                     </span>
-                    <span className="text-xs text-white/30 uppercase tracking-widest font-black">
+                    <span className="text-xs text-[#F9F9F7]/30 uppercase tracking-widest font-black">
                       {lang === 'fr' ? 'Espace Membre' : lang === 'de' ? 'Mitgliederbereich' : 'Member Area'}
                     </span>
                   </div>
@@ -1804,9 +2202,7 @@ export default function App() {
       <main className="flex-1 min-w-0 w-full lg:max-w-[calc(100vw-20rem)] flex flex-col min-h-screen overflow-x-hidden">
         <div className="flex-1 w-full">
           <MobileHeader />
-          <Suspense fallback={<ViewLoader />}>
-            {renderMainContent()}
-          </Suspense>
+          {renderMainContent()}
         </div>
         <Footer onNavigate={navigateTo} lang={lang} />
       </main>

@@ -5,11 +5,27 @@ import { resetPhasesData, ResetPhaseDetail } from './data/resetPhases';
 import { chronobiologyData, ChronoPhase } from './data/chronobiology';
 import { translations, Language } from './translations';
 
-import natureHero from './assets/images/nature_biology_reset_hero_1785755295636.jpg';
-import strengthPlant from './assets/images/strength_courage_plant_1786630685093.jpg';
-import emonctoiresImg from './assets/images/emonctoires_natural_drainage_1785755307026.jpg';
-import hepaticImg from './assets/images/hepatic_balance_liver_1785755318947.jpg';
-import bloodPurityImg from './assets/images/blood_purity_lymphatic_1785755331143.jpg';
+// import natureHero from './assets/images/nature_biology_reset_hero_1785755295636.jpg';
+// import strengthPlant from './assets/images/strength_courage_plant_1786630685093.jpg';
+// import emonctoiresImg from './assets/images/emonctoires_natural_drainage_1785755307026.jpg';
+// import hepaticImg from './assets/images/hepatic_balance_liver_1785755318947.jpg';
+// import bloodPurityImg from './assets/images/blood_purity_lymphatic_1785755331143.jpg';
+
+const natureHero = "/images/nature_biology_reset_hero_1785755295636.jpg";
+const strengthPlant = "/images/strength_courage_plant_1786630685093.jpg";
+const emonctoiresImg = "/images/emonctoires_natural_drainage_1785755307026.jpg";
+const hepaticImg = "/images/hepatic_balance_liver_1785755318947.jpg";
+const bloodPurityImg = "/images/blood_purity_lymphatic_1785755331143.jpg";
+
+// Pastel palette for cards
+const pastelThemes = [
+  { bg: 'bg-[#EAF2ED]', border: 'border-[#D2E2D8]', badge: 'bg-[#1C3F34] text-white', accent: 'bg-[#1C3F34]' },
+  { bg: 'bg-[#FAF2E6]', border: 'border-[#EEDFC6]', badge: 'bg-[#92400E] text-white', accent: 'bg-[#92400E]' },
+  { bg: 'bg-[#F5EFEB]', border: 'border-[#E4D7CD]', badge: 'bg-[#7C2D12] text-white', accent: 'bg-[#7C2D12]' },
+  { bg: 'bg-[#EEF2F6]', border: 'border-[#D0DCE7]', badge: 'bg-[#1E3A5F] text-white', accent: 'bg-[#1E3A5F]' },
+  { bg: 'bg-[#F2EFE9]', border: 'border-[#DDD4C7]', badge: 'bg-[#3F3F46] text-white', accent: 'bg-[#3F3F46]' },
+  { bg: 'bg-[#E8F0EA]', border: 'border-[#CFDFD3]', badge: 'bg-[#14532D] text-white', accent: 'bg-[#14532D]' }
+];
 
 const PhaseDetailModal: React.FC<{ 
   phase: ResetPhaseDetail; 
@@ -21,31 +37,31 @@ const PhaseDetailModal: React.FC<{
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-botanik-green/80 backdrop-blur-md"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-[#0F261E]/80 backdrop-blur-md"
       onClick={onClose}
     >
       <motion.div 
         initial={{ scale: 0.9, opacity: 0, y: 20 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
         exit={{ scale: 0.9, opacity: 0, y: 20 }}
-        className="bg-[#F9F9F7] w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[40px] shadow-2xl relative"
+        className="bg-[#FAF7F2] w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[40px] shadow-2xl relative border border-[#E7DFD3]"
         onClick={e => e.stopPropagation()}
       >
         <button 
           onClick={onClose}
-          className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white flex items-center justify-center text-botanik-green hover:bg-botanik-orange hover:text-white transition-all shadow-sm z-10"
+          className="absolute top-6 right-6 w-12 h-12 rounded-full bg-[#0F261E] hover:bg-[#D97706] active:bg-[#B45309] flex items-center justify-center text-white transition-all shadow-md z-10 cursor-pointer"
         >
-          <X className="w-6 h-6" />
+          <X className="w-6 h-6 stroke-[1.5]" />
         </button>
 
         <div className="p-8 md:p-16">
           <div className="mb-12">
-            <div className="text-sm font-black text-botanik-orange tracking-[0.3em] mb-2 uppercase">{phase.subtitle}</div>
-            <h2 className="text-3xl md:text-5xl font-bold text-botanik-green mb-6 leading-tight">
+            <div className="text-xs font-black text-[#B45309] tracking-[0.25em] mb-2 uppercase">{phase.subtitle}</div>
+            <h2 className="text-3xl md:text-5xl font-black text-[#0F261E] mb-6 leading-tight">
               {phase.title} : {phase.name}
             </h2>
-            <div className="p-6 bg-botanik-orange/5 rounded-3xl border border-botanik-orange/10">
-              <p className="text-botanik-green font-medium leading-relaxed italic">
+            <div className="p-6 bg-[#FAF2E6] rounded-3xl border border-[#EEDFC6]">
+              <p className="text-[#0F261E] font-medium leading-relaxed italic">
                 {phase.long_text}
               </p>
             </div>
@@ -53,24 +69,24 @@ const PhaseDetailModal: React.FC<{
 
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-xl font-bold text-botanik-green mb-6 flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-botanik-orange" /> Objectifs de la Phase
+              <h3 className="text-xl font-black text-[#0F261E] mb-6 flex items-center gap-2.5">
+                <CheckCircle className="w-5 h-5 text-[#374151] stroke-[1.5]" /> Objectifs de la Phase
               </h3>
               <ul className="space-y-4">
                 {phase.objectives.map((obj, idx) => (
-                  <li key={idx} className="flex gap-3 text-botanik-green/70 text-sm leading-relaxed">
-                    <span className="w-1.5 h-1.5 rounded-full bg-botanik-orange shrink-0 mt-2" />
+                  <li key={idx} className="flex gap-3 text-slate-700 text-sm leading-relaxed">
+                    <span className="w-2 h-2 rounded-full bg-[#374151] shrink-0 mt-2" />
                     {obj}
                   </li>
                 ))}
               </ul>
 
-              <h3 className="text-xl font-bold text-botanik-green mt-12 mb-6 flex items-center gap-2">
-                <Activity className="w-5 h-5 text-botanik-orange" /> Systèmes Clés
+              <h3 className="text-xl font-black text-[#0F261E] mt-12 mb-6 flex items-center gap-2.5">
+                <Activity className="w-5 h-5 text-[#374151] stroke-[1.5]" /> Systèmes Clés
               </h3>
               <div className="flex flex-wrap gap-2">
                 {phase.focus_systems.map((sys, idx) => (
-                  <span key={idx} className="px-4 py-2 bg-botanik-green/5 text-botanik-green rounded-xl text-xs font-bold uppercase tracking-wider">
+                  <span key={idx} className="px-4 py-2 bg-[#EAF2ED] text-[#1C3F34] border border-[#D2E2D8] rounded-xl text-xs font-bold uppercase tracking-wider">
                     {sys}
                   </span>
                 ))}
@@ -81,17 +97,17 @@ const PhaseDetailModal: React.FC<{
               {/* Plantes de base */}
               {phase.core_plants && (
                 <>
-                  <h3 className="text-xl font-bold text-botanik-green mb-6 flex items-center gap-2">
-                    <FlaskConical className="w-5 h-5 text-botanik-orange" /> Plantes de base (Reset standard)
+                  <h3 className="text-xl font-black text-[#0F261E] mb-6 flex items-center gap-2.5">
+                    <FlaskConical className="w-5 h-5 text-[#374151] stroke-[1.5]" /> Plantes de base (Protocole standard)
                   </h3>
                   <div className="space-y-4 mb-12">
                     {phase.core_plants.map((plant, idx) => (
-                      <div key={idx} className="p-4 bg-white rounded-3xl border border-botanik-green/5 shadow-sm hover:shadow-md transition-shadow">
+                      <div key={idx} className="p-4 bg-[#EAF2ED] rounded-2xl border border-[#D2E2D8] shadow-xs">
                         <div className="flex justify-between items-start mb-2">
-                          <span className="font-bold text-botanik-green">{plant.nom}</span>
-                          <span className="text-[10px] bg-botanik-green/5 text-botanik-green px-2 py-0.5 rounded-full uppercase tracking-widest font-black">{plant.partie}</span>
+                          <span className="font-black text-[#0F261E]">{plant.nom}</span>
+                          <span className="text-[10px] bg-[#1C3F34] text-white px-2.5 py-0.5 rounded-full uppercase tracking-widest font-black">{plant.partie}</span>
                         </div>
-                        <p className="text-xs text-botanik-green/60 leading-relaxed italic">{plant.role}</p>
+                        <p className="text-xs text-slate-700 leading-relaxed italic">{plant.role}</p>
                       </div>
                     ))}
                   </div>
@@ -101,31 +117,31 @@ const PhaseDetailModal: React.FC<{
               {/* Plantes optionnelles */}
               {phase.optional_plants && phase.optional_plants.length > 0 && (
                 <>
-                  <h3 className="text-xl font-bold text-botanik-green mb-6 flex items-center gap-2">
-                    <Sparkles className="w-5 h-5 text-botanik-magenta" /> Options selon Bilan ALMA
+                  <h3 className="text-xl font-black text-[#0F261E] mb-6 flex items-center gap-2.5">
+                    <Sparkles className="w-5 h-5 text-[#374151] stroke-[1.5]" /> Options selon Bilan ALMA
                   </h3>
                   <div className="space-y-4 mb-12">
                     {phase.optional_plants.map((plant, idx) => (
-                      <div key={idx} className="p-4 bg-botanik-magenta/5 rounded-3xl border border-botanik-magenta/10 shadow-sm hover:shadow-md transition-shadow">
+                      <div key={idx} className="p-4 bg-[#FAF2E6] rounded-2xl border border-[#EEDFC6] shadow-xs">
                         <div className="flex justify-between items-start mb-2">
-                          <span className="font-bold text-botanik-magenta">{plant.nom}</span>
-                          <span className="text-[10px] bg-botanik-magenta/10 text-botanik-magenta px-2 py-0.5 rounded-full uppercase tracking-widest font-black">{plant.partie}</span>
+                          <span className="font-black text-[#92400E]">{plant.nom}</span>
+                          <span className="text-[10px] bg-[#92400E] text-white px-2.5 py-0.5 rounded-full uppercase tracking-widest font-black">{plant.partie}</span>
                         </div>
-                        <p className="text-xs text-botanik-magenta/60 leading-relaxed italic">{plant.role}</p>
+                        <p className="text-xs text-slate-700 leading-relaxed italic">{plant.role}</p>
                       </div>
                     ))}
                   </div>
                 </>
               )}
 
-              <h3 className="text-xl font-bold text-botanik-green mb-6 flex items-center gap-2">
-                <Zap className="w-5 h-5 text-botanik-orange" /> Actions Recommandées
+              <h3 className="text-xl font-black text-[#0F261E] mb-6 flex items-center gap-2.5">
+                <Zap className="w-5 h-5 text-[#374151] stroke-[1.5]" /> Actions Recommandées
               </h3>
               <ul className="space-y-4">
                 {phase.actions.map((action, idx) => (
-                  <li key={idx} className="flex gap-3 text-botanik-green/70 text-sm leading-relaxed">
-                    <div className="w-5 h-5 rounded-full bg-botanik-green/5 flex items-center justify-center shrink-0">
-                      <div className="w-1 h-1 rounded-full bg-botanik-green" />
+                  <li key={idx} className="flex gap-3 text-slate-700 text-sm leading-relaxed">
+                    <div className="w-5 h-5 rounded-full bg-[#374151]/10 flex items-center justify-center shrink-0">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#374151]" />
                     </div>
                     {action}
                   </li>
@@ -135,12 +151,12 @@ const PhaseDetailModal: React.FC<{
           </div>
 
           {phase.system_message && (
-            <div className="mt-12 p-6 bg-botanik-green text-white rounded-3xl text-center">
+            <div className="mt-12 p-6 bg-[#0F261E] text-white rounded-3xl text-center border border-[#1C3F34]">
               <p className="text-sm font-medium italic">"{phase.system_message}"</p>
             </div>
           )}
 
-          <div className="mt-16 pt-12 border-t border-botanik-green/10 flex justify-center">
+          <div className="mt-16 pt-12 border-t border-[#E7DFD3] flex justify-center">
             <button 
               onClick={() => {
                 if (phase.type === 'phase') {
@@ -152,9 +168,10 @@ const PhaseDetailModal: React.FC<{
                 }
                 onClose();
               }}
-              className="px-12 py-6 bg-botanik-orange text-white rounded-2xl font-bold shadow-2xl shadow-botanik-orange/20 hover:scale-105 transition-all flex items-center gap-3"
+              className="px-12 py-5 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#B45309] text-white rounded-2xl font-black text-base shadow-xl hover:shadow-2xl transition-all flex items-center gap-3 cursor-pointer"
             >
-              {phase.cta} <ArrowRight className="w-5 h-5" />
+              <span>{phase.cta}</span>
+              <ArrowRight className="w-5 h-5 stroke-[2]" />
             </button>
           </div>
         </div>
@@ -235,28 +252,28 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-32 overflow-hidden bg-botanik-green text-white rounded-b-[60px] md:rounded-b-[100px] shadow-2xl">
+      <section className="relative pt-20 pb-28 overflow-hidden bg-[#0F261E] text-white rounded-b-[48px] md:rounded-b-[64px] shadow-2xl">
         <div className="absolute inset-0 pointer-events-none">
-          <img src={natureHero} className="w-full h-full object-cover opacity-40 mix-blend-overlay" alt={translations[lang].seo.alt.reset_hero} />
-          <div className="absolute inset-0 bg-gradient-to-b from-botanik-green/20 to-botanik-green"></div>
+          <img src={natureHero} className="w-full h-full object-cover opacity-30 mix-blend-overlay" alt={translations[lang].seo.alt.reset_hero} />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0F261E]/40 via-[#0F261E]/80 to-[#0F261E]"></div>
         </div>
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-botanik-orange px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-8 border border-white/10">
+          <div className="inline-flex items-center gap-2 bg-[#1C3F34]/90 backdrop-blur-md text-emerald-300 px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.25em] mb-6 border border-emerald-500/30 shadow-sm">
             {t.badge}
           </div>
-          <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-[0.9] tracking-tighter">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black mb-6 leading-tight tracking-tight text-white">
             {t.title} <br />
-            <span className="text-botanik-orange text-3xl md:text-5xl block mt-4">{t.title_accent}</span>
+            <span className="text-[#D97706] text-2xl sm:text-3xl md:text-4xl block mt-3 font-extrabold">{t.title_accent}</span>
           </h1>
-          <p className="text-xl md:text-3xl text-white/90 max-w-3xl mx-auto leading-relaxed font-bold mb-12 italic">
-            {t.quote}
+          <p className="text-base sm:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed font-normal mb-8 italic">
+            "{t.quote}"
           </p>
         </div>
       </section>
 
       {/* Navigation Tabs */}
-      <div className="container mx-auto px-6 -mt-10 mb-20 relative z-20">
-        <div className="flex flex-wrap justify-center gap-4">
+      <div className="container mx-auto px-6 -mt-8 mb-16 relative z-20">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
           {[
             { id: 'protocol', label: lang === 'fr' ? 'Le Protocole' : 'Protocol', icon: Activity },
             { id: 'supplements', label: lang === 'fr' ? 'Compléments' : 'Supplements', icon: Beaker },
@@ -265,14 +282,14 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-sm transition-all shadow-xl ${
+              className={`flex items-center gap-2.5 px-6 sm:px-8 py-3.5 rounded-2xl font-black text-xs sm:text-sm transition-all shadow-md cursor-pointer ${
                 activeTab === tab.id 
-                  ? 'bg-botanik-orange text-white scale-105' 
-                  : 'bg-white text-botanik-green hover:bg-gray-50'
+                  ? 'bg-[#0F261E] text-white ring-2 ring-[#D97706] shadow-lg' 
+                  : 'bg-white text-slate-700 hover:bg-[#FAF7F2] border border-[#E7DFD3]'
               }`}
             >
-              <tab.icon className="w-5 h-5" />
-              {tab.label}
+              <tab.icon className={`w-4 h-4 stroke-[1.5] ${activeTab === tab.id ? 'text-white' : 'text-[#374151]'}`} />
+              <span>{tab.label}</span>
             </button>
           ))}
         </div>
@@ -282,19 +299,19 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
         {activeTab === 'protocol' && (
           <div className="space-y-12">
             {/* New Editorial Section */}
-            <div className="max-w-4xl mx-auto text-center mb-20">
-              <p className="text-lg md:text-xl text-botanik-green/80 leading-relaxed font-medium">
+            <div className="max-w-4xl mx-auto text-center mb-16">
+              <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-medium">
                 {t.intro_editorial}
               </p>
             </div>
 
             {/* New Journey Phases Block */}
-            <div className="bg-white rounded-[60px] p-8 md:p-16 border border-botanik-green/5 shadow-2xl mb-20 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-botanik-orange/5 rounded-bl-full -z-10" />
-              <h2 className="text-2xl md:text-4xl font-bold text-botanik-green mb-8">{t.journey.subtitle}</h2>
-              <p className="text-lg text-botanik-green/70 mb-12">{t.journey.text}</p>
+            <div className="bg-[#FAF7F2] rounded-[48px] p-8 md:p-14 border border-[#E7DFD3] shadow-xl mb-16 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#EAF2ED] rounded-bl-full -z-10 opacity-70" />
+              <h2 className="text-2xl md:text-4xl font-black text-[#0F261E] mb-6">{t.journey.subtitle}</h2>
+              <p className="text-base text-slate-600 mb-10 leading-relaxed">{t.journey.text}</p>
               
-              <div className="space-y-10 text-left">
+              <div className="space-y-8 text-left">
                 {[
                   t.journey.step0,
                   t.journey.phase0,
@@ -304,107 +321,111 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
                   t.journey.pauses
                 ].map((step, idx) => {
                   const labels = ['0', '0', '1', '2', '3', '∞'];
+                  const pastelBg = pastelThemes[idx % pastelThemes.length].bg;
+                  const pastelBorder = pastelThemes[idx % pastelThemes.length].border;
                   return (
-                    <div key={idx} className="flex gap-6">
-                      <div className="w-10 h-10 rounded-full bg-botanik-orange/10 flex items-center justify-center shrink-0 text-botanik-orange font-black text-xs">
+                    <div key={idx} className={`flex gap-5 p-4 sm:p-5 rounded-2xl ${pastelBg} border ${pastelBorder}`}>
+                      <div className="w-9 h-9 rounded-xl bg-[#0F261E] text-white flex items-center justify-center shrink-0 font-black text-xs shadow-xs">
                         {labels[idx]}
                       </div>
                       <div>
-                        <h4 className="text-xl font-bold text-botanik-green mb-2">{step.title}</h4>
-                        <p className="text-base text-botanik-green/60 leading-relaxed">{step.desc}</p>
+                        <h4 className="text-lg font-black text-[#0F261E] mb-1.5">{step.title}</h4>
+                        <p className="text-sm text-slate-700 leading-relaxed">{step.desc}</p>
                       </div>
                     </div>
                   );
                 })}
               </div>
 
-              <div className="mt-12 pt-8 border-t border-botanik-green/10 text-center">
-                <p className="text-lg font-bold text-botanik-green leading-relaxed max-w-2xl mx-auto italic">
+              <div className="mt-10 pt-6 border-t border-[#E7DFD3] text-center">
+                <p className="text-base sm:text-lg font-bold text-[#0F261E] leading-relaxed max-w-2xl mx-auto italic">
                   {t.journey.footer}
                 </p>
               </div>
             </div>
 
-            <div className="text-center mb-16">
-              <h2 className="text-2xl md:text-5xl font-bold text-botanik-green mb-6">{lang === 'fr' ? 'Détail des Étapes' : 'Steps Detail'}</h2>
-              <p className="text-base md:text-lg text-botanik-green/60 max-w-2xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-4xl font-black text-[#0F261E] mb-4">{lang === 'fr' ? 'Détail des Étapes' : 'Steps Detail'}</h2>
+              <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto">
                 Suivez les étapes clés pour déverrouiller votre terrain et stabiliser vos ressources vitales durablement.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {resetSteps.map((step, idx) => (
-                <div 
-                  key={idx} 
-                  onClick={() => {
-                    if (step.phaseKey !== 'step_0') {
-                      const phase = resetPhasesData.find(p => p.key === step.phaseKey);
-                      if (phase) setSelectedPhase(phase);
-                    }
-                  }}
-                  className={`${
-                    step.type === 'diagnostic' || step.type === 'pause' ? 'bg-botanik-orange/10' : 'bg-white'
-                  } p-8 rounded-[48px] border transition-all duration-500 relative group overflow-hidden cursor-pointer ${
-                    step.highlight ? 'border-botanik-orange ring-4 ring-botanik-orange/5 shadow-2xl' : 'border-botanik-green/5 shadow-lg hover:shadow-xl'
-                  }`}
-                >
-                  <div className="text-[10px] font-black text-botanik-orange tracking-[0.3em] mb-2 uppercase">{step.subtitle}</div>
-                  <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-xl font-bold text-botanik-green">{step.id}</h3>
-                    <div className={`p-2 rounded-lg ${step.highlight ? 'bg-botanik-orange/10 text-botanik-orange' : 'bg-botanik-green/5 text-botanik-green'}`}>
-                      <step.icon className="w-4 h-4" />
-                    </div>
-                  </div>
-                  <h4 className="text-lg font-bold text-botanik-green mb-4">{step.title}</h4>
-                  <p className="text-sm text-botanik-green/60 leading-relaxed mb-8 flex-1">{step.desc}</p>
-                  <button 
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      if (step.phaseKey === 'step_0') {
-                        onNavigate(step.target as any);
-                      } else {
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {resetSteps.map((step, idx) => {
+                const theme = pastelThemes[idx % pastelThemes.length];
+                return (
+                  <div 
+                    key={idx} 
+                    onClick={() => {
+                      if (step.phaseKey !== 'step_0') {
                         const phase = resetPhasesData.find(p => p.key === step.phaseKey);
                         if (phase) setSelectedPhase(phase);
                       }
                     }}
-                    className={`w-full py-4 rounded-2xl font-bold text-xs uppercase tracking-widest transition-all ${
-                      step.highlight ? 'bg-botanik-orange text-white shadow-lg' : 'bg-botanik-green/5 text-botanik-green hover:bg-botanik-green/10'
-                    }`}
+                    className={`${theme.bg} p-6 sm:p-7 rounded-[36px] border ${theme.border} transition-all duration-300 relative group overflow-hidden cursor-pointer shadow-md hover:shadow-xl flex flex-col justify-between`}
                   >
-                    {step.action}
-                  </button>
-                </div>
-              ))}
+                    <div>
+                      <div className="text-[10px] font-black text-slate-600 tracking-[0.2em] mb-2 uppercase">{step.subtitle}</div>
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="text-lg font-black text-[#0F261E]">{step.id}</h3>
+                        <div className="p-2.5 rounded-xl bg-white/80 border border-slate-300/60 text-[#2D3748] shadow-xs">
+                          <step.icon className="w-4 h-4 stroke-[1.5] text-[#2D3748]" />
+                        </div>
+                      </div>
+                      <h4 className="text-base font-bold text-[#0F261E] mb-3">{step.title}</h4>
+                      <p className="text-xs sm:text-sm text-slate-700 leading-relaxed mb-6">{step.desc}</p>
+                    </div>
+
+                    <button 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (step.phaseKey === 'step_0') {
+                          onNavigate(step.target as any);
+                        } else {
+                          const phase = resetPhasesData.find(p => p.key === step.phaseKey);
+                          if (phase) setSelectedPhase(phase);
+                        }
+                      }}
+                      className="w-full py-3.5 px-4 rounded-xl font-black text-xs uppercase tracking-wider bg-[#0F261E] hover:bg-[#D97706] active:bg-[#B45309] text-white shadow-md hover:shadow-lg transition-all cursor-pointer"
+                    >
+                      {step.action}
+                    </button>
+                  </div>
+                );
+              })}
             </div>
 
-            {/* Détails des Phases */}
-            <div className="bg-white rounded-[60px] p-8 md:p-20 border border-botanik-green/5 shadow-2xl mt-16 relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-64 h-64 bg-botanik-orange/5 rounded-bl-full -z-10" />
-               <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Détails des Phases - VIGNETTES EN FONDS PASTELS DIVERS */}
+            <div className="bg-[#EAF2ED] rounded-[48px] p-8 md:p-14 border border-[#D2E2D8] shadow-xl mt-12 relative overflow-hidden">
+               <div className="grid lg:grid-cols-2 gap-12 items-center">
                   <div>
-                    <h3 className="text-2xl md:text-4xl font-bold text-botanik-green mb-12">Phase 0 : Préparation des Émonctoires</h3>
-                    <div className="space-y-12">
-                       <div className="flex flex-col items-start gap-4">
-                          <div className="w-12 h-12 rounded-2xl bg-[#F9F9F7] flex items-center justify-center shadow-sm border border-botanik-green/5">
-                            <Wind className="w-6 h-6 text-botanik-orange" />
+                    <div className="inline-block px-3 py-1 bg-[#1C3F34] text-white text-[10px] font-black uppercase tracking-widest rounded-full mb-4">
+                      Étape 0
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-black text-[#0F261E] mb-8">Phase 0 : Préparation des Émonctoires</h3>
+                    <div className="space-y-6">
+                       <div className="p-5 rounded-2xl bg-white/80 border border-[#D2E2D8] flex flex-col items-start gap-3">
+                          <div className="w-10 h-10 rounded-xl bg-[#FAF7F2] border border-[#D2E2D8] flex items-center justify-center text-[#2D3748]">
+                            <Wind className="w-5 h-5 stroke-[1.5]" />
                           </div>
-                          <div className="w-full">
-                            <h4 className="text-xl font-bold text-botanik-green mb-3">Ouverture & Drainage (Prêle, Orthosiphon)</h4>
-                            <p className="text-base text-botanik-green/60 leading-relaxed">Étape cruciale pour éliminer les acides et préparer la filtration lymphatique. Prépare les reins et la lymphe.</p>
+                          <div>
+                            <h4 className="text-lg font-black text-[#0F261E] mb-1.5">Ouverture & Drainage (Prêle, Orthosiphon)</h4>
+                            <p className="text-sm text-slate-700 leading-relaxed">Étape cruciale pour éliminer les acides et préparer la filtration lymphatique. Prépare les reins et la lymphe.</p>
                           </div>
                        </div>
-                       <div className="flex flex-col items-start gap-4">
-                          <div className="w-12 h-12 rounded-2xl bg-[#F9F9F7] flex items-center justify-center shadow-sm border border-botanik-green/5">
-                            <Shield className="w-6 h-6 text-botanik-orange" />
+                       <div className="p-5 rounded-2xl bg-white/80 border border-[#D2E2D8] flex flex-col items-start gap-3">
+                          <div className="w-10 h-10 rounded-xl bg-[#FAF7F2] border border-[#D2E2D8] flex items-center justify-center text-[#2D3748]">
+                            <Shield className="w-5 h-5 stroke-[1.5]" />
                           </div>
-                          <div className="w-full">
-                            <h4 className="text-xl font-bold text-botanik-green mb-3">Dépuration & Douceur (Bardane, Mauve)</h4>
-                            <p className="text-base text-botanik-green/60 leading-relaxed">Soutient le foie et l'intestin tout en apaisant les muqueuses. Indispensable avant le drainage profond.</p>
+                          <div>
+                            <h4 className="text-lg font-black text-[#0F261E] mb-1.5">Dépuration & Douceur (Bardane, Mauve)</h4>
+                            <p className="text-sm text-slate-700 leading-relaxed">Soutient le foie et l'intestin tout en apaisant les muqueuses. Indispensable avant le drainage profond.</p>
                           </div>
                        </div>
                     </div>
                   </div>
-                  <div className="rounded-[40px] overflow-hidden shadow-2xl h-[400px]">
+                  <div className="rounded-[32px] overflow-hidden shadow-xl h-[360px] border border-white/50">
                     <img 
                       src={emonctoiresImg} 
                       className="w-full h-full object-cover" 
@@ -414,33 +435,35 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
                </div>
             </div>
 
-            <div className="bg-white rounded-[60px] p-8 md:p-20 border border-botanik-green/5 shadow-2xl mt-16 relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-64 h-64 bg-botanik-orange/5 rounded-bl-full -z-10" />
-               <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="bg-[#FAF2E6] rounded-[48px] p-8 md:p-14 border border-[#EEDFC6] shadow-xl mt-12 relative overflow-hidden">
+               <div className="grid lg:grid-cols-2 gap-12 items-center">
                   <div>
-                    <h3 className="text-2xl md:text-4xl font-bold text-botanik-green mb-12">Phase 1 : Relance Hépatique</h3>
-                    <div className="space-y-12">
-                       <div className="flex flex-col items-start gap-4">
-                          <div className="w-12 h-12 rounded-2xl bg-[#F9F9F7] flex items-center justify-center shadow-sm border border-botanik-green/5">
-                            <FlaskConical className="w-6 h-6 text-botanik-orange" />
+                    <div className="inline-block px-3 py-1 bg-[#92400E] text-white text-[10px] font-black uppercase tracking-widest rounded-full mb-4">
+                      Étape 1
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-black text-[#0F261E] mb-8">Phase 1 : Relance Hépatique</h3>
+                    <div className="space-y-6">
+                       <div className="p-5 rounded-2xl bg-white/80 border border-[#EEDFC6] flex flex-col items-start gap-3">
+                          <div className="w-10 h-10 rounded-xl bg-[#FAF7F2] border border-[#EEDFC6] flex items-center justify-center text-[#2D3748]">
+                            <FlaskConical className="w-5 h-5 stroke-[1.5]" />
                           </div>
-                          <div className="w-full">
-                            <h4 className="text-xl font-bold text-botanik-green mb-3">Mobilisation Totale (Gentiane, Radis Noir)</h4>
-                            <p className="text-base text-botanik-green/60 leading-relaxed">Gentiane, Salsepareille, Pissenlit racine et Radis noir pour mobiliser les toxines et relancer la filtration profonde.</p>
+                          <div>
+                            <h4 className="text-lg font-black text-[#0F261E] mb-1.5">Mobilisation Totale (Gentiane, Radis Noir)</h4>
+                            <p className="text-sm text-slate-700 leading-relaxed">Gentiane, Salsepareille, Pissenlit racine et Radis noir pour mobiliser les toxines et relancer la filtration profonde.</p>
                           </div>
                        </div>
-                       <div className="flex flex-col items-start gap-4">
-                          <div className="w-12 h-12 rounded-2xl bg-[#F9F9F7] flex items-center justify-center shadow-sm border border-botanik-green/5">
-                            <Waves className="w-6 h-6 text-botanik-orange" />
+                       <div className="p-5 rounded-2xl bg-white/80 border border-[#EEDFC6] flex flex-col items-start gap-3">
+                          <div className="w-10 h-10 rounded-xl bg-[#FAF7F2] border border-[#EEDFC6] flex items-center justify-center text-[#2D3748]">
+                            <Waves className="w-5 h-5 stroke-[1.5]" />
                           </div>
-                          <div className="w-full">
-                            <h4 className="text-xl font-bold text-botanik-green mb-3">Soutien Bilio-Digestif (Artichaut, Chrysanthellum)</h4>
-                            <p className="text-base text-botanik-green/60 leading-relaxed">Artichaut, Orange amère, Gingembre et Poivre Noir pour protéger les hépatocytes et fluidifier la bile.</p>
+                          <div>
+                            <h4 className="text-lg font-black text-[#0F261E] mb-1.5">Soutien Bilio-Digestif (Artichaut, Chrysanthellum)</h4>
+                            <p className="text-sm text-slate-700 leading-relaxed">Artichaut, Orange amère, Gingembre et Poivre Noir pour protéger les hépatocytes et fluidifier la bile.</p>
                           </div>
                        </div>
                     </div>
                   </div>
-                  <div className="rounded-[40px] overflow-hidden shadow-2xl h-[400px]">
+                  <div className="rounded-[32px] overflow-hidden shadow-xl h-[360px] border border-white/50">
                     <img 
                       src={hepaticImg} 
                       className="w-full h-full object-cover" 
@@ -451,47 +474,48 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
             </div>
 
             {/* Pause Block */}
-            <div className="bg-botanik-green rounded-[60px] p-10 md:p-20 text-white mt-16 relative overflow-hidden shadow-2xl">
-               <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-bl-full -z-10" />
+            <div className="bg-[#0F261E] rounded-[48px] p-8 md:p-14 text-white mt-12 relative overflow-hidden shadow-2xl border border-[#1C3F34]">
                <div className="max-w-3xl mx-auto text-center">
-                  <Clock className="w-16 h-16 text-botanik-orange mx-auto mb-8" />
-                  <h3 className="text-2xl md:text-4xl font-bold mb-6">La Pause Intégrative</h3>
-                  <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-8">
+                  <Clock className="w-12 h-12 text-[#E2E8F0] stroke-[1.5] mx-auto mb-6" />
+                  <h3 className="text-2xl md:text-3xl font-black mb-4">La Pause Intégrative</h3>
+                  <p className="text-base sm:text-lg text-slate-200 leading-relaxed mb-6">
                     Entre chaque phase de 21 jours, nous observons 7 jours de repos total. Ce n'est pas un arrêt, mais une étape d'intégration cruciale où votre corps stabilise les acquis et laisse sa propre pharmacie intérieure prendre le relais.
                   </p>
-                  <div className="inline-flex items-center gap-2 bg-white/10 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] border border-white/10">
-                    Secret du Reset Homéostasique
+                  <div className="inline-flex items-center gap-2 bg-[#1C3F34] px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.25em] border border-emerald-500/30 text-emerald-300">
+                    Secret du Protocole Systémique
                   </div>
                </div>
             </div>
 
-            <div className="bg-white rounded-[60px] p-8 md:p-20 border border-botanik-green/5 shadow-2xl mt-16 relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-64 h-64 bg-botanik-orange/5 rounded-bl-full -z-10" />
-               <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="bg-[#F5EFEB] rounded-[48px] p-8 md:p-14 border border-[#E4D7CD] shadow-xl mt-12 relative overflow-hidden">
+               <div className="grid lg:grid-cols-2 gap-12 items-center">
                   <div>
-                    <h3 className="text-2xl md:text-4xl font-bold text-botanik-green mb-12">Phase 2 : Pureté Sanguine</h3>
-                    <div className="space-y-12">
-                       <div className="flex flex-col items-start gap-4">
-                          <div className="w-12 h-12 rounded-2xl bg-[#F9F9F7] flex items-center justify-center shadow-sm border border-botanik-green/5">
-                            <Shield className="w-6 h-6 text-botanik-orange" />
+                    <div className="inline-block px-3 py-1 bg-[#7C2D12] text-white text-[10px] font-black uppercase tracking-widest rounded-full mb-4">
+                      Étape 2
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-black text-[#0F261E] mb-8">Phase 2 : Pureté Sanguine</h3>
+                    <div className="space-y-6">
+                       <div className="p-5 rounded-2xl bg-white/80 border border-[#E4D7CD] flex flex-col items-start gap-3">
+                          <div className="w-10 h-10 rounded-xl bg-[#FAF7F2] border border-[#E4D7CD] flex items-center justify-center text-[#2D3748]">
+                            <Shield className="w-5 h-5 stroke-[1.5]" />
                           </div>
-                          <div className="w-full">
-                            <h4 className="text-xl font-bold text-botanik-green mb-3">Purification du Sang (Manjishtha, Ortie)</h4>
-                            <p className="text-base text-botanik-green/60 leading-relaxed">Nettoyage de fond du terrain sanguin et diminution de l'inflammation circulante via des plantes ancestrales.</p>
+                          <div>
+                            <h4 className="text-lg font-black text-[#0F261E] mb-1.5">Purification du Sang (Manjishtha, Ortie)</h4>
+                            <p className="text-sm text-slate-700 leading-relaxed">Nettoyage de fond du terrain sanguin et régulation de l'équilibre circulatoire via des plantes ancestrales.</p>
                           </div>
                        </div>
-                       <div className="flex flex-col items-start gap-4">
-                          <div className="w-12 h-12 rounded-2xl bg-[#F9F9F7] flex items-center justify-center shadow-sm border border-botanik-green/5">
-                            <Activity className="w-6 h-6 text-botanik-orange" />
+                       <div className="p-5 rounded-2xl bg-white/80 border border-[#E4D7CD] flex flex-col items-start gap-3">
+                          <div className="w-10 h-10 rounded-xl bg-[#FAF7F2] border border-[#E4D7CD] flex items-center justify-center text-[#2D3748]">
+                            <Activity className="w-5 h-5 stroke-[1.5]" />
                           </div>
-                          <div className="w-full">
-                            <h4 className="text-xl font-bold text-botanik-green mb-3">Anti-Inflammatoire Global (Cassis, Curcuma)</h4>
-                            <p className="text-base text-botanik-green/60 leading-relaxed">Soutien de la réactivité immunitaire et protection des tissus contre l'inflammation de bas grade.</p>
+                          <div>
+                            <h4 className="text-lg font-black text-[#0F261E] mb-1.5">Équilibre Global (Cassis, Curcuma)</h4>
+                            <p className="text-sm text-slate-700 leading-relaxed">Soutien de la réactivité immunitaire et protection des tissus contre l'usure de fond.</p>
                           </div>
                        </div>
                     </div>
                   </div>
-                  <div className="rounded-[40px] overflow-hidden shadow-2xl h-[400px]">
+                  <div className="rounded-[32px] overflow-hidden shadow-xl h-[360px] border border-white/50">
                     <img 
                       src={bloodPurityImg} 
                       className="w-full h-full object-cover" 
@@ -501,33 +525,35 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
                </div>
             </div>
 
-            <div className="bg-white rounded-[60px] p-8 md:p-20 border border-botanik-green/5 shadow-2xl mt-16 relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-64 h-64 bg-botanik-orange/5 rounded-bl-full -z-10" />
-               <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="bg-[#EEF2F6] rounded-[48px] p-8 md:p-14 border border-[#D0DCE7] shadow-xl mt-12 relative overflow-hidden">
+               <div className="grid lg:grid-cols-2 gap-12 items-center">
                   <div>
-                    <h3 className="text-2xl md:text-4xl font-bold text-botanik-green mb-12">Phase 3 : Stabilisation & Renforcement</h3>
-                    <div className="space-y-12">
-                       <div className="flex flex-col items-start gap-4">
-                          <div className="w-12 h-12 rounded-2xl bg-[#F9F9F7] flex items-center justify-center shadow-sm border border-botanik-green/5">
-                            <Sparkles className="w-6 h-6 text-botanik-orange" />
+                    <div className="inline-block px-3 py-1 bg-[#1E3A5F] text-white text-[10px] font-black uppercase tracking-widest rounded-full mb-4">
+                      Étape 3
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-black text-[#0F261E] mb-8">Phase 3 : Stabilisation & Renforcement</h3>
+                    <div className="space-y-6">
+                       <div className="p-5 rounded-2xl bg-white/80 border border-[#D0DCE7] flex flex-col items-start gap-3">
+                          <div className="w-10 h-10 rounded-xl bg-[#FAF7F2] border border-[#D0DCE7] flex items-center justify-center text-[#2D3748]">
+                            <Sparkles className="w-5 h-5 stroke-[1.5]" />
                           </div>
-                          <div className="w-full">
-                            <h4 className="text-xl font-bold text-botanik-green mb-3">Régénération Tissulaire (Centella, Prêle)</h4>
-                            <p className="text-base text-botanik-green/60 leading-relaxed">Consolidation de la barrière intestinale et cutanée pour un ancrage durable des résultats.</p>
+                          <div>
+                            <h4 className="text-lg font-black text-[#0F261E] mb-1.5">Régénération Tissulaire (Centella, Prêle)</h4>
+                            <p className="text-sm text-slate-700 leading-relaxed">Consolidation de la barrière intestinale et cutanée pour un ancrage durable des résultats.</p>
                           </div>
                        </div>
-                       <div className="flex flex-col items-start gap-4">
-                          <div className="w-12 h-12 rounded-2xl bg-[#F9F9F7] flex items-center justify-center shadow-sm border border-botanik-green/5">
-                            <Zap className="w-6 h-6 text-botanik-orange" />
+                       <div className="p-5 rounded-2xl bg-white/80 border border-[#D0DCE7] flex flex-col items-start gap-3">
+                          <div className="w-10 h-10 rounded-xl bg-[#FAF7F2] border border-[#D0DCE7] flex items-center justify-center text-[#2D3748]">
+                            <Zap className="w-5 h-5 stroke-[1.5]" />
                           </div>
-                          <div className="w-full">
-                            <h4 className="text-xl font-bold text-botanik-green mb-3">Bouclier Immunitaire (Astragale, Romarin)</h4>
-                            <p className="text-base text-botanik-green/60 leading-relaxed">Renforcement du terrain de fond et protection cellulaire contre les stress futurs.</p>
+                          <div>
+                            <h4 className="text-lg font-black text-[#0F261E] mb-1.5">Bouclier Botanique (Astragale, Romarin)</h4>
+                            <p className="text-sm text-slate-700 leading-relaxed">Renforcement du terrain de fond et protection cellulaire contre les stress futurs.</p>
                           </div>
                        </div>
                     </div>
                   </div>
-                  <div className="rounded-[40px] overflow-hidden shadow-2xl h-[400px]">
+                  <div className="rounded-[32px] overflow-hidden shadow-xl h-[360px] border border-white/50">
                     <img 
                       src={strengthPlant} 
                       className="w-full h-full object-cover" 
@@ -541,200 +567,173 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
 
         {activeTab === 'supplements' && (
           <div className="animate-in slide-in-from-bottom duration-700">
-            <div className="text-center mb-16">
-              <h2 className="text-2xl md:text-5xl font-bold text-botanik-green mb-6">Compléments Alimentaires</h2>
-              <p className="text-base md:text-lg text-botanik-green/60 max-w-2xl mx-auto">
-                Le socle indispensable pour que le Totum puisse s'exprimer pleinement dans vos cellules.
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-4xl font-black text-[#0F261E] mb-4">Compléments Alimentaires</h2>
+              <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto">
+                Le socle indispensable pour que le Totum végétal puisse s'exprimer pleinement dans vos cellules.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {supplements.map((item, idx) => (
-                <div key={idx} className="bg-white p-8 rounded-[40px] border border-botanik-green/5 shadow-lg flex gap-6 items-center">
-                  <div className="w-14 h-14 bg-botanik-orange/10 rounded-2xl flex items-center justify-center shrink-0">
-                    <Beaker className="w-7 h-7 text-botanik-orange" />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-3 mb-1">
-                      <h4 className="font-bold text-botanik-green">{item.name}</h4>
-                      <span className="text-[10px] bg-botanik-green/5 text-botanik-green px-2 py-0.5 rounded-full font-black uppercase tracking-widest">{item.dose}</span>
+            <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+              {supplements.map((item, idx) => {
+                const theme = pastelThemes[idx % pastelThemes.length];
+                return (
+                  <div key={idx} className={`${theme.bg} p-6 sm:p-7 rounded-[32px] border ${theme.border} shadow-md flex gap-5 items-center`}>
+                    <div className="w-12 h-12 bg-white rounded-2xl border border-slate-200 flex items-center justify-center shrink-0 shadow-xs">
+                      <Beaker className="w-6 h-6 stroke-[1.5] text-[#2D3748]" />
                     </div>
-                    <p className="text-sm text-botanik-green/60">{item.role}</p>
+                    <div>
+                      <div className="flex items-center gap-2.5 mb-1.5 flex-wrap">
+                        <h4 className="font-black text-[#0F261E] text-base">{item.name}</h4>
+                        <span className="text-[10px] bg-[#0F261E] text-white px-2.5 py-0.5 rounded-full font-black uppercase tracking-wider">{item.dose}</span>
+                      </div>
+                      <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">{item.role}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}
 
         {activeTab === 'chronobiology' && (
           <div className="animate-in slide-in-from-bottom duration-700">
-            <div className="text-center mb-16">
-              <h2 className="text-2xl md:text-5xl font-bold text-botanik-green mb-6">Chronobiologie du Reset</h2>
-              <p className="text-base md:text-lg text-botanik-green/60 max-w-2xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-4xl font-black text-[#0F261E] mb-4">Chronobiologie du Protocole</h2>
+              <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto">
                 Respecter les rythmes circadiens pour une efficacité décuplée de votre pharmacie intérieure. Cliquez sur une phase pour découvrir son protocole.
               </p>
             </div>
 
-            <div className="max-w-5xl mx-auto space-y-6">
-               {chronoSteps.map((step, idx) => (
-                 <div key={idx} className="space-y-4">
-                   <button 
-                    onClick={() => setSelectedChrono(selectedChrono === step.id ? null : step.id)}
-                    className={`w-full bg-white p-8 rounded-[40px] border shadow-lg flex flex-col md:flex-row items-center gap-8 group transition-all text-left ${selectedChrono === step.id ? 'border-botanik-orange ring-2 ring-botanik-orange/10' : 'border-botanik-green/5 hover:border-botanik-orange'}`}
-                   >
-                      <div className="flex flex-col items-center gap-2 min-w-[120px]">
-                        <span className="text-sm font-black text-botanik-green/40 tracking-widest">{step.data.time_window}</span>
-                        <div className={`p-4 rounded-2xl bg-gray-50 ${step.color} group-hover:scale-110 transition-transform`}>
-                           <step.icon className="w-8 h-8" />
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                         <h4 className="text-2xl font-bold text-botanik-green mb-2">{step.data.title}</h4>
-                         <p className="text-botanik-green/60 leading-relaxed">{step.data.short_text}</p>
-                      </div>
-                      <div className="hidden md:block">
-                         <motion.div
-                          animate={{ rotate: selectedChrono === step.id ? 90 : 0 }}
-                          transition={{ duration: 0.3 }}
-                         >
-                          <ArrowRight className={`w-8 h-8 transition-colors ${selectedChrono === step.id ? 'text-botanik-orange' : 'text-botanik-green/10 group-hover:text-botanik-orange'}`} />
-                         </motion.div>
-                      </div>
-                   </button>
-                   
-                   {selectedChrono === step.id && (
-                     <motion.div 
-                      initial={{ opacity: 0, y: -20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="bg-white p-10 rounded-[40px] border border-botanik-orange/20 mx-4 md:mx-10 shadow-xl"
+            <div className="max-w-5xl mx-auto space-y-5">
+               {chronoSteps.map((step, idx) => {
+                 const theme = pastelThemes[idx % pastelThemes.length];
+                 const isSelected = selectedChrono === step.id;
+                 return (
+                   <div key={idx} className="space-y-4">
+                     <button 
+                      onClick={() => setSelectedChrono(isSelected ? null : step.id)}
+                      className={`w-full ${theme.bg} p-6 sm:p-7 rounded-[32px] border ${theme.border} shadow-md flex flex-col md:flex-row items-center gap-6 group transition-all text-left cursor-pointer ${isSelected ? 'ring-2 ring-[#0F261E]' : 'hover:shadow-lg'}`}
                      >
-                       <div className="mb-12">
-                         <p className="text-botanik-green font-medium leading-relaxed italic mb-8">
-                           {step.data.long_text}
-                         </p>
-                         
-                         <div className="grid md:grid-cols-2 gap-12">
-                           <div>
-                             <h5 className="text-sm font-black text-botanik-orange uppercase tracking-widest mb-6">Objectifs</h5>
-                             <ul className="space-y-4">
-                               {step.data.objectives.map((obj, i) => (
-                                 <li key={i} className="flex gap-3 text-botanik-green/70 text-sm leading-relaxed">
-                                   <span className="w-1.5 h-1.5 rounded-full bg-botanik-orange shrink-0 mt-2" />
-                                   {obj}
-                                 </li>
-                               ))}
-                             </ul>
-                           </div>
+                        <div className="flex flex-col items-center gap-2 min-w-[120px]">
+                          <span className="text-xs font-black text-[#0F261E] tracking-widest">{step.data.time_window}</span>
+                          <div className="p-3.5 rounded-2xl bg-white border border-slate-200 text-[#2D3748] shadow-xs group-hover:scale-105 transition-transform">
+                             <step.icon className="w-6 h-6 stroke-[1.5] text-[#2D3748]" />
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                           <h4 className="text-xl font-black text-[#0F261E] mb-1.5">{step.data.title}</h4>
+                           <p className="text-sm text-slate-700 leading-relaxed">{step.data.short_text}</p>
+                        </div>
+                        <div className="hidden md:block">
+                           <motion.div
+                            animate={{ rotate: isSelected ? 90 : 0 }}
+                            transition={{ duration: 0.3 }}
+                           >
+                            <ArrowRight className="w-6 h-6 stroke-[2] text-[#2D3748]" />
+                           </motion.div>
+                        </div>
+                     </button>
+                     
+                     {isSelected && (
+                       <motion.div 
+                        initial={{ opacity: 0, y: -15 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="bg-white p-8 sm:p-10 rounded-[32px] border border-[#E7DFD3] mx-2 sm:mx-6 shadow-xl"
+                       >
+                         <div className="mb-10">
+                           <p className="text-slate-800 font-medium leading-relaxed italic mb-8 p-5 bg-[#FAF7F2] rounded-2xl border border-[#E7DFD3]">
+                             "{step.data.long_text}"
+                           </p>
                            
-                           <div>
-                             <h5 className="text-sm font-black text-botanik-orange uppercase tracking-widest mb-6">Plantes Clés</h5>
-                             <div className="space-y-4">
-                               {step.data.core_plants.map((plant, i) => (
-                                 <div key={i} className="p-4 bg-botanik-green/5 rounded-2xl border border-botanik-green/10">
-                                   <div className="font-bold text-botanik-green mb-1">{plant.nom}</div>
-                                   <p className="text-xs text-botanik-green/60 leading-relaxed">{plant.role}</p>
-                                 </div>
-                               ))}
+                           <div className="grid md:grid-cols-2 gap-10">
+                             <div>
+                               <h5 className="text-xs font-black text-[#0F261E] uppercase tracking-widest mb-4 flex items-center gap-2">
+                                 <CheckCircle className="w-4 h-4 stroke-[1.5] text-[#2D3748]" /> Objectifs
+                               </h5>
+                               <ul className="space-y-3">
+                                 {step.data.objectives.map((obj, i) => (
+                                   <li key={i} className="flex gap-2.5 text-slate-700 text-sm leading-relaxed">
+                                     <span className="w-1.5 h-1.5 rounded-full bg-[#0F261E] shrink-0 mt-2" />
+                                     {obj}
+                                   </li>
+                                 ))}
+                                </ul>
+                             </div>
+                             
+                             <div>
+                               <h5 className="text-xs font-black text-[#0F261E] uppercase tracking-widest mb-4 flex items-center gap-2">
+                                 <FlaskConical className="w-4 h-4 stroke-[1.5] text-[#2D3748]" /> Plantes Clés
+                               </h5>
+                               <div className="space-y-3">
+                                 {step.data.core_plants.map((plant, i) => (
+                                   <div key={i} className="p-3.5 bg-[#FAF7F2] rounded-xl border border-[#E7DFD3]">
+                                     <div className="font-bold text-[#0F261E] text-sm mb-0.5">{plant.nom}</div>
+                                     <p className="text-xs text-slate-600 leading-relaxed">{plant.role}</p>
+                                   </div>
+                                 ))}
 
-                               {step.data.core_supplements && step.data.core_supplements.length > 0 && (
-                                 <div className="mt-8">
-                                   <h6 className="text-[10px] font-black text-botanik-orange uppercase tracking-widest mb-4">Compléments de terrain</h6>
-                                   <div className="space-y-3">
-                                     {step.data.core_supplements.map((supp, i) => (
-                                       <div key={i} className="p-4 bg-botanik-orange/5 rounded-2xl border border-botanik-orange/10">
-                                         <div className="font-bold text-botanik-orange mb-1">{supp.nom}</div>
-                                         <p className="text-xs text-botanik-orange/60 leading-relaxed">{supp.role}</p>
-                                         {supp.avertissement && (
-                                           <p className="mt-2 text-[10px] text-red-500 font-medium italic">⚠️ {supp.avertissement}</p>
-                                         )}
-                                       </div>
-                                     ))}
+                                 {step.data.core_supplements && step.data.core_supplements.length > 0 && (
+                                   <div className="mt-6">
+                                     <h6 className="text-[10px] font-black text-[#92400E] uppercase tracking-widest mb-2">Compléments de terrain</h6>
+                                     <div className="space-y-2.5">
+                                       {step.data.core_supplements.map((supp, i) => (
+                                         <div key={i} className="p-3.5 bg-[#FAF2E6] rounded-xl border border-[#EEDFC6]">
+                                           <div className="font-bold text-[#92400E] text-sm mb-0.5">{supp.nom}</div>
+                                           <p className="text-xs text-slate-700 leading-relaxed">{supp.role}</p>
+                                           {supp.avertissement && (
+                                             <p className="mt-1 text-[10px] text-red-600 font-bold italic">⚠️ {supp.avertissement}</p>
+                                           )}
+                                         </div>
+                                       ))}
+                                     </div>
                                    </div>
-                                 </div>
-                               )}
-                               
-                               {step.data.optional_plants.length > 0 && (
-                                 <div className="mt-8">
-                                   <h6 className="text-[10px] font-black text-botanik-magenta uppercase tracking-widest mb-4">Plantes Optionnelles (selon bilan ALMA)</h6>
-                                   <div className="space-y-3">
-                                     {step.data.optional_plants.map((plant, i) => (
-                                       <div key={i} className="p-3 bg-botanik-magenta/5 rounded-2xl border border-botanik-magenta/10">
-                                         <div className="font-bold text-botanik-magenta text-sm mb-1">{plant.nom}</div>
-                                         <p className="text-[10px] text-botanik-magenta/60 leading-relaxed italic">{plant.role}</p>
-                                       </div>
-                                     ))}
-                                   </div>
-                                 </div>
-                               )}
-
-                               {step.data.optional_supplements && step.data.optional_supplements.length > 0 && (
-                                 <div className="mt-8">
-                                   <h6 className="text-[10px] font-black text-botanik-magenta uppercase tracking-widest mb-4">Compléments Optionnels</h6>
-                                   <div className="space-y-3">
-                                     {step.data.optional_supplements.map((supp, i) => (
-                                       <div key={i} className="p-3 bg-botanik-magenta/5 rounded-2xl border border-botanik-magenta/10">
-                                         <div className="font-bold text-botanik-magenta text-sm mb-1">{supp.nom}</div>
-                                         <p className="text-[10px] text-botanik-magenta/60 leading-relaxed italic">{supp.role}</p>
-                                       </div>
-                                     ))}
-                                   </div>
-                                 </div>
-                               )}
+                                 )}
+                               </div>
                              </div>
                            </div>
                          </div>
-                       </div>
-                       
-                       <div className="p-6 bg-botanik-green text-white rounded-3xl text-center">
-                         <p className="text-sm font-medium italic">"{step.data.system_message}"</p>
-                       </div>
-                     </motion.div>
-                   )}
-                 </div>
-               ))}
+                         
+                         <div className="p-5 bg-[#0F261E] text-white rounded-2xl text-center border border-[#1C3F34]">
+                           <p className="text-xs sm:text-sm font-medium italic">"{step.data.system_message}"</p>
+                         </div>
+                       </motion.div>
+                     )}
+                   </div>
+                 );
+               })}
             </div>
           </div>
         )}
       </div>
 
       {/* ALMA Recommendation Section */}
-      <section className="mt-24 container mx-auto px-6">
-        <div className="bg-white rounded-[60px] p-8 md:p-16 border border-botanik-green/5 shadow-xl relative overflow-hidden group">
-          <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity">
-            <Brain className="w-64 h-64" />
-          </div>
+      <section className="mt-20 container mx-auto px-6">
+        <div className="bg-[#FAF7F2] rounded-[48px] p-8 md:p-14 border border-[#E7DFD3] shadow-xl relative overflow-hidden group">
           <div className="max-w-4xl relative z-10">
-            <span className="inline-block px-3 py-1 bg-botanik-orange/10 text-botanik-orange text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">{almaT.badge}</span>
-            <h2 className="text-2xl md:text-4xl font-bold text-botanik-green mb-6 leading-tight">
+            <span className="inline-block px-3.5 py-1 bg-[#1C3F34] text-white text-[10px] font-black uppercase tracking-widest rounded-full mb-6">
+              {almaT.badge}
+            </span>
+            <h2 className="text-2xl md:text-4xl font-black text-[#0F261E] mb-4 leading-tight">
               {almaT.title} {almaT.title_accent}
             </h2>
             <div 
-              className="text-lg text-botanik-green/60 mb-10 leading-relaxed font-light"
+              className="text-base sm:text-lg text-slate-700 mb-8 leading-relaxed font-normal"
               dangerouslySetInnerHTML={{ __html: almaT.description }}
             />
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
                 onClick={() => onNavigate('chat')}
-                className="px-8 py-4 bg-botanik-orange text-white rounded-2xl font-bold shadow-xl shadow-botanik-orange/20 hover:scale-105 transition-all flex items-center justify-center gap-3"
+                className="px-8 py-4 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#B45309] text-white rounded-2xl font-black text-sm sm:text-base shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-3 cursor-pointer"
               >
-                {almaT.cta_primary} <ArrowRight className="w-5 h-5" />
+                <span>{almaT.cta_primary}</span>
+                <ArrowRight className="w-5 h-5 stroke-[2]" />
               </button>
               <button 
-                onClick={() => {
-                  const element = document.getElementById('science');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  } else {
-                    onNavigate('home');
-                    setTimeout(() => {
-                      document.getElementById('science')?.scrollIntoView({ behavior: 'smooth' });
-                    }, 500);
-                  }
-                }}
-                className="px-8 py-4 bg-white text-botanik-green border border-botanik-green/10 rounded-2xl font-bold hover:bg-botanik-green/5 transition-all flex items-center justify-center"
+                onClick={() => onNavigate('pillar-extraction')}
+                className="px-8 py-4 bg-white text-[#0F261E] border border-[#0F261E]/30 rounded-2xl font-bold text-sm sm:text-base hover:bg-[#F3EEE6] active:bg-[#E7DFD3] transition-all flex items-center justify-center cursor-pointer"
               >
-                {almaT.cta_secondary}
+                <span>{almaT.cta_secondary}</span>
               </button>
             </div>
           </div>
@@ -742,23 +741,23 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
       </section>
 
       {/* CTA Final */}
-      <section className="mt-32 container mx-auto px-6">
-        <div className="bg-botanik-green rounded-[60px] p-12 md:p-24 text-center text-white relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.1)_0%,transparent_70%)]" />
-          <h2 className="text-3xl md:text-6xl font-bold mb-8 relative z-10">{t.title} {t.title_accent}</h2>
-          <p className="text-lg md:text-xl text-white/60 mb-12 max-w-2xl mx-auto relative z-10">
+      <section className="mt-24 container mx-auto px-6">
+        <div className="bg-[#0F261E] rounded-[48px] p-10 md:p-18 text-center text-white relative overflow-hidden shadow-2xl border border-[#1C3F34]">
+          <h2 className="text-2xl md:text-5xl font-black mb-6 relative z-10 text-white">{t.title} {t.title_accent}</h2>
+          <p className="text-base md:text-lg text-slate-300 mb-10 max-w-2xl mx-auto relative z-10 leading-relaxed">
             {t.description}
           </p>
-          <div className="flex flex-wrap justify-center gap-6 relative z-10">
+          <div className="flex flex-wrap justify-center gap-4 relative z-10">
             <button 
               onClick={() => onNavigate('chat')}
-              className="px-12 py-6 bg-botanik-orange text-white rounded-2xl font-bold shadow-2xl shadow-botanik-orange/20 hover:scale-105 transition-all flex items-center gap-3"
+              className="px-9 py-4 bg-[#D97706] hover:bg-[#B45309] active:bg-[#92400E] text-white rounded-2xl font-black text-base shadow-xl hover:shadow-2xl transition-all flex items-center gap-2.5 cursor-pointer"
             >
-              {t.cta_primary} <ArrowRight className="w-5 h-5" />
+              <span>{t.cta_primary}</span>
+              <ArrowRight className="w-5 h-5 stroke-[2]" />
             </button>
             <button 
               onClick={() => onNavigate('boutique')}
-              className="px-12 py-6 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-2xl font-bold hover:bg-white/20 transition-all"
+              className="px-9 py-4 bg-[#1C3F34] hover:bg-[#D97706] active:bg-[#B45309] text-white border border-emerald-500/30 rounded-2xl font-black text-base transition-all shadow-md cursor-pointer"
             >
               {t.cta_secondary}
             </button>

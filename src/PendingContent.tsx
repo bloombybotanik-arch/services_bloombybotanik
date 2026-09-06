@@ -3,9 +3,10 @@ import { ArrowLeft, Clock } from 'lucide-react';
 
 interface PendingContentProps {
   onBack: () => void;
+  lang?: string;
 }
 
-const PendingContent: React.FC<PendingContentProps> = ({ onBack }) => {
+const PendingContent: React.FC<PendingContentProps> = ({ onBack, lang }) => {
   return (
     <div className="min-h-[60vh] flex flex-col items-center justify-center p-8 text-center animate-in fade-in duration-700">
       <div className="w-24 h-24 bg-[#1B3022]/10 rounded-full flex items-center justify-center mb-6">
@@ -17,7 +18,7 @@ const PendingContent: React.FC<PendingContentProps> = ({ onBack }) => {
       </p>
       <button
         onClick={onBack}
-        className="flex items-center gap-2 px-8 py-4 bg-[#1B3022] text-white rounded-full font-medium hover:bg-[#1B3022]/90 transition-colors shadow-lg"
+        className="flex items-center gap-2 px-8 py-4 bg-[#0F261E] text-white rounded-full font-medium hover:bg-[#1C3F34] transition-colors shadow-lg"
       >
         <ArrowLeft className="w-5 h-5" />
         Retour à la page précédente

@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Search, ChevronDown, ChevronUp, Beaker, Leaf, AlertTriangle, Activity, ChefHat, Lock, Sparkles, Star, FlaskConical, ChevronRight, Filter, Info, ArrowLeft, Droplets, Wind, Waves, Moon, Utensils } from 'lucide-react';
+import { Search, ChevronDown, ChevronUp, Beaker, Leaf, AlertTriangle, Activity, ChefHat, Lock, Sparkles, Star, FlaskConical, ChevronRight, Filter, Info, ArrowLeft, Droplets, Wind, Waves, Moon, Utensils, ShieldCheck } from 'lucide-react';
 import { wrapTitle } from './lib/textUtils';
 import { plantsDatabase, PlantData } from './data/therapeuticData';
 import { unifiedBotanicalDatabase, UnifiedPlant } from './data/unifiedBotanicalData';
@@ -30,7 +30,10 @@ const PlantAccordion: React.FC<{
       className="bg-white rounded-[40px] border border-botanik-green/5 p-8 hover:shadow-xl transition-all duration-500 group cursor-pointer flex flex-col h-full relative overflow-hidden"
     >
       <div className="flex items-center justify-between mb-6">
-        <span className="px-3 py-1 bg-botanik-green/5 text-botanik-green text-[10px] font-black uppercase tracking-widest rounded-full border border-botanik-green/10">
+        <span 
+          className="px-3.5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest text-white shadow-xs border border-white/10"
+          style={{ backgroundColor: '#0F261E', color: '#ffffff' }}
+        >
           {family}
         </span>
         <div className="flex items-center gap-2">
@@ -62,7 +65,7 @@ const PlantAccordion: React.FC<{
 
       <div className="flex flex-wrap gap-2 mt-auto">
         {terrains.map(tag => (
-          <span key={tag} className="text-[9px] font-bold px-2 py-1 bg-[#F9F9F7] rounded-md text-botanik-green/40 uppercase tracking-wider">
+          <span key={tag} className="text-[9px] font-bold px-2 py-1 bg-botanik-orange/10 rounded-md text-botanik-orange uppercase tracking-wider">
             {tag}
           </span>
         ))}
@@ -177,7 +180,7 @@ export default function HerbariumContent({
       <div className="max-w-[1200px] mx-auto px-6 py-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
         <button 
           onClick={() => setSelectedPlant(null)}
-          className="flex items-center gap-2 text-botanik-green/60 hover:text-botanik-green font-bold mb-12 group transition-colors"
+          className="flex items-center gap-2 text-[#0F261E]/70 hover:text-[#D97706] active:text-[#D97706] font-bold mb-12 group transition-colors cursor-pointer"
         >
           <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" /> {t.details.back}
         </button>
@@ -193,7 +196,7 @@ export default function HerbariumContent({
           </h1>
           <div className="flex flex-wrap gap-3">
             {terrains.map(t => (
-              <span key={t} className="px-4 py-2 bg-botanik-green/5 text-botanik-green rounded-full text-xs font-bold border border-botanik-green/10">
+              <span key={t} className="px-4 py-2 bg-botanik-orange/10 text-botanik-orange rounded-full text-xs font-bold border border-botanik-orange/20">
                 {t}
               </span>
             ))}
@@ -229,23 +232,23 @@ export default function HerbariumContent({
             </section>
 
             {/* 2. INGÉNIERIE BLOOMLAB */}
-            <section className="bg-botanik-green text-white p-10 md:p-16 rounded-[60px] relative overflow-hidden">
+            <section className="bg-[#0F261E] text-white p-10 md:p-16 rounded-[60px] relative overflow-hidden shadow-xl" style={{ backgroundColor: '#0F261E', color: '#ffffff' }}>
               <div className="absolute top-0 right-0 p-12 opacity-5">
                 <FlaskConical className="w-64 h-64" />
               </div>
               <div className="relative z-10">
-                <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-white/40 mb-10 flex items-center gap-2">
+                <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-white/50 mb-10 flex items-center gap-2">
                   <FlaskConical className="w-4 h-4" /> {t.details.engineering.title}
                 </h2>
                 <div className="mb-12 max-w-2xl">
                   <h3 className="text-3xl font-bold mb-4">{t.details.engineering.why_extraction}</h3>
-                  <p className="text-white/70 leading-relaxed">{selectedPlant.pourquoi_bloomlab.translations?.[lang]?.probleme_traditionnel || selectedPlant.pourquoi_bloomlab.probleme_traditionnel}</p>
+                  <p className="text-white/80 leading-relaxed">{selectedPlant.pourquoi_bloomlab.translations?.[lang]?.probleme_traditionnel || selectedPlant.pourquoi_bloomlab.probleme_traditionnel}</p>
                 </div>
                 
                 <div className="grid md:grid-cols-2 gap-8">
-                  <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10">
+                  <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/15">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-8 h-8 bg-botanik-orange rounded-lg flex items-center justify-center text-xs font-bold">A</div>
+                      <div className="w-8 h-8 bg-[#D97706] text-white rounded-lg flex items-center justify-center text-xs font-bold shadow-md" style={{ backgroundColor: '#D97706', color: '#ffffff' }}>A</div>
                       <span className="font-bold uppercase tracking-widest text-xs">{t.details.engineering.phase_a}</span>
                     </div>
                     <div className="space-y-4">
@@ -263,9 +266,9 @@ export default function HerbariumContent({
                     </div>
                   </div>
 
-                  <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10">
+                  <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/15">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-8 h-8 bg-botanik-orange rounded-lg flex items-center justify-center text-xs font-bold">B</div>
+                      <div className="w-8 h-8 bg-[#D97706] text-white rounded-lg flex items-center justify-center text-xs font-bold shadow-md" style={{ backgroundColor: '#D97706', color: '#ffffff' }}>B</div>
                       <span className="font-bold uppercase tracking-widest text-xs">{t.details.engineering.phase_b}</span>
                     </div>
                     <div className="space-y-4">
@@ -366,15 +369,15 @@ export default function HerbariumContent({
               </section>
             )}
 
-            {/* USAGE STANDARD */}
+            {/* USAGE STANDARD & SÉCURITÉ */}
             {selectedPlant.usage_standard && (
               <section className="bg-white p-10 rounded-[40px] border border-botanik-green/5 shadow-sm">
                 <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-botanik-green/40 mb-10 flex items-center gap-2">
-                  <Activity className="w-4 h-4" /> {t.details.usage.title}
+                  <ShieldCheck className="w-4 h-4" /> {t.details.usage.title}
                 </h2>
                 <div className="grid md:grid-cols-2 gap-10">
                   <div className="space-y-6">
-                    <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-green">{t.details.usage.daily}</h4>
+                    <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-green">Dosage & Administration</h4>
                     <div className="space-y-4 text-sm text-botanik-green/80">
                       <p><strong>{t.details.usage.mode}</strong> {selectedPlant.usage_standard.translations?.[lang]?.mode_administration || selectedPlant.usage_standard.mode_administration}</p>
                       <p><strong>{t.details.usage.dosage}</strong> {selectedPlant.usage_standard.translations?.[lang]?.posologie_quotidienne || selectedPlant.usage_standard.posologie_quotidienne}</p>
@@ -392,6 +395,15 @@ export default function HerbariumContent({
                       ))}
                     </ul>
                   </div>
+                </div>
+
+                <div className="mt-10 p-8 bg-botanik-orange/5 border border-botanik-orange/20 rounded-3xl">
+                  <p className="text-xs font-bold text-botanik-orange uppercase tracking-widest mb-2 flex items-center gap-2">
+                    <AlertTriangle className="w-4 h-4" /> Rappel de sécurité
+                  </p>
+                  <p className="text-sm text-botanik-green/80 italic leading-relaxed">
+                    "{getTranslated(selectedPlant, 'precautions') || 'Usage responsable recommandé.'}"
+                  </p>
                 </div>
               </section>
             )}
@@ -587,15 +599,15 @@ export default function HerbariumContent({
             <button
               key={f.id}
               onClick={() => setActiveFilter(f.id as any)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-[10px] md:text-xs font-bold transition-all ${
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-[10px] md:text-xs font-bold transition-all duration-200 cursor-pointer ${
                 activeFilter === f.id 
-                  ? 'bg-botanik-green text-white shadow-md' 
-                  : 'bg-white text-botanik-green/40 border border-botanik-green/5 hover:border-botanik-green/20'
+                  ? 'bg-[#0F261E] text-white shadow-md hover:bg-[#D97706] active:bg-[#D97706]' 
+                  : 'bg-white text-[#0F261E]/70 border border-[#0F261E]/15 hover:border-[#D97706] hover:text-[#D97706] hover:bg-[#FAF7F2] active:bg-[#D97706] active:text-white'
               }`}
             >
               <f.icon className="w-3.5 h-3.5 md:w-4 md:h-4" />
               <span>{f.label}</span>
-              <span className={`text-[8px] md:text-[10px] px-1.5 py-0.5 rounded-md ${activeFilter === f.id ? 'bg-white/20 text-white' : 'bg-botanik-green/5 text-botanik-green/40'}`}>
+              <span className={`text-[8px] md:text-[10px] px-1.5 py-0.5 rounded-md font-bold ${activeFilter === f.id ? 'bg-white/20 text-white' : 'bg-[#0F261E]/5 text-[#0F261E]/60'}`}>
                 {f.count}
               </span>
             </button>
@@ -648,11 +660,10 @@ export default function HerbariumContent({
                 )}
                 {/* Category Badge */}
                 <div className="flex items-center justify-between mb-6">
-                  <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest border shadow-sm ${
-                    plant.source === 'therapeutic' ? 'bg-botanik-green text-white border-botanik-green' :
-                    plant.source === 'culinary' ? 'bg-botanik-orange text-white border-botanik-orange' :
-                    'bg-botanik-green text-white border-botanik-green'
-                  }`}>
+                  <span 
+                    className="px-3.5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest text-white shadow-xs border border-white/10"
+                    style={{ backgroundColor: '#0F261E', color: '#ffffff' }}
+                  >
                     {displayFamily}
                   </span>
                   <div className="flex items-center gap-2">
@@ -663,12 +674,16 @@ export default function HerbariumContent({
                           const originalId = plant.id.split('-').slice(1).join('-');
                           onToggleFavorite?.(originalId);
                         }}
-                        className={`p-2 rounded-full transition-colors ${favorites.includes(plant.id.split('-').slice(1).join('-')) ? 'text-botanik-orange bg-botanik-orange/10' : 'text-botanik-green/20 hover:text-botanik-orange hover:bg-botanik-orange/5'}`}
+                        className={`p-2 rounded-full transition-all duration-200 cursor-pointer ${
+                          favorites.includes(plant.id.split('-').slice(1).join('-')) 
+                            ? 'text-[#D97706] bg-[#D97706]/15 hover:bg-[#D97706]/25 active:bg-[#D97706] active:text-white' 
+                            : 'text-[#0F261E]/30 hover:text-[#D97706] hover:bg-[#D97706]/10 active:bg-[#D97706] active:text-white'
+                        }`}
                       >
-                        <Star className={`w-4 h-4 ${favorites.includes(plant.id.split('-').slice(1).join('-')) ? 'fill-botanik-orange' : ''}`} />
+                        <Star className={`w-4 h-4 ${favorites.includes(plant.id.split('-').slice(1).join('-')) ? 'fill-[#D97706]' : ''}`} />
                       </button>
                     )}
-                    <div className="w-8 h-8 rounded-full bg-botanik-green/5 flex items-center justify-center text-botanik-green group-hover:bg-botanik-orange group-hover:text-white transition-all">
+                    <div className="w-8 h-8 rounded-full bg-[#0F261E]/5 flex items-center justify-center text-[#0F261E] group-hover:bg-[#D97706] group-hover:text-white active:bg-[#D97706] transition-all">
                       <ChevronRight className="w-4 h-4" />
                     </div>
                   </div>
@@ -689,7 +704,7 @@ export default function HerbariumContent({
 
                 <div className="flex flex-wrap gap-2 mt-auto">
                   {displayTags.slice(0, 3).map(tag => (
-                    <span key={tag} className="text-[9px] font-bold px-2 py-1 bg-[#F9F9F7] rounded-md text-botanik-green/40 uppercase tracking-wider">
+                    <span key={tag} className="text-[9px] font-bold px-2 py-1 bg-botanik-orange/10 rounded-md text-botanik-orange uppercase tracking-wider">
                       {tag}
                     </span>
                   ))}

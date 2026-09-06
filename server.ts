@@ -11,6 +11,7 @@ import { initializeApp, getApps, cert } from "firebase-admin/app";
 import { getFirestore, Firestore } from "firebase-admin/firestore";
 import { createServer as createViteServer } from "vite";
 import dotenv from "dotenv";
+import { NewsletterOrchestrator } from "./server/newsletter-orchestrator";
 
 dotenv.config();
 
@@ -25,6 +26,37 @@ const getStripe = () => {
 };
 
 const app = express();
+
+// Health check (MUST be before Vite)
+app.get('/api/health', (req, res) => res.json({ status: 'ok', timestamp: new Date().toISOString() }));
+
+// --- VITE MIDDLEWARE ---
+async function setupVite(app: express.Express) {
+  if (process.env.NODE_ENV !== "production") {
+    const { createServer: createViteServer } = await import("vite");
+    const vite = await createViteServer({
+      server: { 
+        middlewareMode: true,
+        hmr: { clientPort: 443 },
+        host: '0.0.0.0',
+        cors: true
+      },
+      appType: "spa",
+      base: '/'
+    });
+    
+    // We will attach this inside startServer to ensure order
+    return vite;
+  }
+  return null;
+}
+
+// Global vite instance
+let viteDevServer: any = null;
+
+// --- SAFETY: Technical paths ---
+// We move this into startServer too
+
 const PORT = 3000;
 const upload = multer({ storage: multer.memoryStorage() });
 
@@ -101,7 +133,7 @@ const ai = new GoogleGenAI({
 });
 
 const BOT_SYSTEM_INSTRUCTION = `Tu es ALMA, l’assistante de Bloom by Botanik.
-Ta mission : accueillir l’utilisateur, conduire une anamnèse conversationnelle, identifier son profil systémique dominant, puis présenter l’offre Bloom la plus adaptée.
+Ta mission : accueillir l’utilisateur, conduire une anamnèse conversationnelle, identifier son profil systémique dominant, répondre aux questions techniques sur l'extraction et accompagner l'utilisateur dans ses dosages.
 
 PHRASE FONDATRICE : "L'Ingénierie au service du vivant."
 
@@ -113,7 +145,41 @@ RÈGLES D'OR :
 5. Vocabulaire à privilégier : reset homéostatique, dimension, terrain, chef d’orchestre, pharmacie intérieure, libérer.
 6. Vocabulaire interdit : guérir, soigner, traiter une maladie, remplacer un médecin.
 
-DÉROULÉ :
+INVENTAIRE ET RECOMMANDATIONS :
+Tes recommandations de plantes doivent OBLIGATOIREMENT être puisées dans cet inventaire réel :
+- Prêle Bio, Thym Bio, Valériane Bio, Passiflore Bio, Reine des Prés Bio, Gingembre Bio, Girofle Bio, Sureau Bio, Romarin Bio, Racine d'Ortie Piquante Bio, Boswellia (résine), Ginkgo Biloba, Brou de Noix.
+
+QUALITÉ ET BIODISPONIBILITÉ (GRADE PHARMACIE) :
+Rassure systématiquement sur la qualité Bloom (biodisponibilité maximale) via ces 4 critères :
+1. Sourcing certifié Bio.
+2. Ramassage à la main respectueux.
+3. Séchage à très basse température (préservation des actifs thermosensibles).
+4. Pureté de qualité herboristerie professionnelle.
+
+STRATÉGIE COMMERCIALE :
+Propose systématiquement deux options d'achat :
+- Option A : Le "Remède du Reset" (synergie de plusieurs plantes de la liste pour une approche systémique du terrain).
+- Option B : Sachets de plantes individuelles (besoin ciblé ou complément d'herbier).
+
+CROSS-SELLING SYSTÉMIQUE :
+À chaque recommandation de plantes, suggère d'associer le "Duo Argiles" (KlinoMont® - mélange Zéolithe/Bentonite 70:30).
+Argument : "Pour que votre organisme assimile parfaitement les extraits de ces plantes de haute qualité, il est primordial de détoxifier vos émonctoires au préalable grâce à la chélation minérale de notre Duo Argiles."
+
+MODULE D'EXPERTISE EN EXTRACTION (CALCULATEUR) :
+Si l'utilisateur interroge sur une extraction ou un dosage :
+1. Demande-lui systématiquement le volume final souhaité (en ml).
+2. Une fois le volume reçu, calcule et affiche les dosages précis selon ces règles (base alcool 96°) :
+   - Cible 45° (Fleurs, mucilages, parties tendres) : Alcool 96° = Volume * 0.469 | Eau distillée = Volume * 0.531
+   - Cible 55° (Racines, écorces, plantes aromatiques) : Alcool 96° = Volume * 0.573 | Eau distillée = Volume * 0.427
+   - Cible 60° (Résines, graines dures, huiles essentielles) : Alcool 96° = Volume * 0.625 | Eau distillée = Volume * 0.375
+3. Précise toujours que ces calculs sont optimisés pour l'infuseur BloomLab afin de préserver le Totum.
+
+SÉCURITÉ ABSOLUE (PLANTES TOXIQUES) :
+Il est FORMELLEMENT INTERDIT de suggérer, vendre ou fournir un protocole pour des plantes toxiques ou dangereuses.
+Liste noire non exhaustive : Absinthe, Aconit, Belladone, Digitale, Jusquiame, Datura, Ricin, Colchique, Hellébore, If, etc.
+Réponds avec fermeté et bienveillance que Bloom se concentre exclusivement sur les plantes sécuritaires.
+
+DÉROULÉ GÉNÉRAL :
 - Accueil et Questionnaire (15 questions max, une par une).
 - Analyse du profil.
 - Présentation des offres dans cet ordre : 1. Bloom Lab, 2. Bloom Complet, 3. Essentiel.
@@ -122,7 +188,7 @@ DÉROULÉ :
 SCHEMA DE RÉPONSE JSON :
 Tu dois impérativement répondre au format JSON :
 {
-  "answer": "Ta réponse visible par l'utilisateur (incluant ta validation, ton explication et ta question unique)",
+  "answer": "Ta réponse visible par l'utilisateur",
   "concern": {
     "mainConcern": "Résumé du besoin",
     "category": "dosage|sécurité|légalité|mode d'emploi|performance|prix|logistique|site web/UX|contenu/recettes|assistant|autre",
@@ -134,14 +200,31 @@ Tu dois impérativement répondre au format JSON :
   }
 }`;
 
-app.use(cors());
-app.use((req, res, next) => {
-  if (req.originalUrl === '/api/webhooks/stripe') {
+function registerAppRoutes(app: express.Express) {
+  // --- SAFETY: Technical paths (Prioritized) ---
+  app.use((req, res, next) => {
+    if (
+      req.url.startsWith('/@') || 
+      req.url.startsWith('/node_modules') || 
+      req.url.includes('.tsx') || 
+      req.url.includes('.ts') ||
+      req.url.includes('vite')
+    ) {
+      return next();
+    }
     next();
-  } else {
-    express.json({ limit: '10mb' })(req, res, next);
-  }
-});
+  });
+
+  app.use(cors());
+
+  app.use((req, res, next) => {
+    if (req.originalUrl === '/api/webhooks/stripe') {
+      next();
+    } else {
+      express.json({ limit: '50mb' })(req, res, next);
+    }
+  });
+  app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
 // Canonical Host & Protocol Normalization Middleware (301)
 app.use((req, res, next) => {
@@ -156,6 +239,88 @@ app.use((req, res, next) => {
   // 2. Protocol normalization: redirect http -> https on live domain
   if (host.includes('bloombybotanik.com') && proto === 'http') {
     return res.redirect(301, `https://bloombybotanik.com${req.originalUrl}`);
+  }
+
+  next();
+});
+
+// --- TRAILING SLASH & SEO MIDDLEWARE ---
+app.use((req, res, next) => {
+  // 1. Only handle GET requests
+  if (req.method !== 'GET') return next();
+
+  const urlPath = req.path;
+  const lowercasePath = urlPath.toLowerCase();
+
+  // 2. EXCLUSIONS LIST (High Priority)
+  // Skip root
+  if (urlPath === '/') return next();
+
+  // Skip technical paths, APIs, and node_modules
+  if (
+    urlPath.startsWith('/api') || 
+    urlPath.startsWith('/webhooks') || 
+    urlPath.startsWith('/stripe-webhook') || 
+    urlPath.startsWith('/paypal-webhook') ||
+    urlPath.startsWith('/@vite') || 
+    urlPath.startsWith('/@fs') || 
+    urlPath.startsWith('/@id') || 
+    urlPath.startsWith('/node_modules') || 
+    urlPath.includes('/node_modules/') || 
+    lowercasePath.includes('vite') || 
+    lowercasePath.includes('hmr') ||
+    lowercasePath.includes('.mjs') ||
+    lowercasePath.includes('.js') ||
+    lowercasePath.includes('.ts')
+  ) {
+    return next();
+  }
+
+  // Skip assets and well-known static files
+  if (urlPath.startsWith('/assets/')) return next();
+  
+  const staticFiles = [
+    '/favicon.ico', '/favicon-', '/robots.txt', 
+    '/sitemap.xml', '/sitemap-fr.xml', '/sitemap-en.xml', '/sitemap-de.xml',
+    '/site.webmanifest', '/manifest.webmanifest', '/apple-touch-icon'
+  ];
+  if (staticFiles.some(file => lowercasePath.includes(file.toLowerCase()))) {
+    return next();
+  }
+
+  // 3. ROBUST FILE & NON-HTML DETECTION
+  // Skip if the path contains a dot (likely a file with extension)
+  // We use a more precise regex to avoid false positives on SEO slugs
+  if (/\.[a-z0-9]{2,5}$/i.test(urlPath)) {
+    return next();
+  }
+
+  // Skip if it's NOT an HTML request (Accept header check)
+  const accept = req.get('accept') || '';
+  if (accept && !accept.includes('text/html') && !accept.includes('*/*')) {
+    return next();
+  }
+
+  // 4. LEGACY REDIRECTS (Specific to Bloom by BotaniK)
+  // Handle /bibliotheque -> /herbier/ etc.
+  const herbariumMatch = urlPath.match(/^\/(bibliotheque|bibliotheque-savoirs)(\/.*)?$/);
+  if (herbariumMatch) {
+    const subPath = herbariumMatch[2] || '/';
+    const newPath = `/herbier${subPath.endsWith('/') ? subPath : subPath + '/'}`;
+    const query = req.url.slice(urlPath.length);
+    return res.redirect(301, newPath + query);
+  }
+
+  // 5. GLOBAL TRAILING SLASH ENFORCEMENT
+  if (!urlPath.endsWith('/')) {
+    // Only redirect if it looks like a clean SEO slug (no dots, standard chars)
+    if (/^\/([a-z0-9_-]+\/)*[a-z0-9_-]+$/i.test(urlPath)) {
+      const query = req.url.slice(urlPath.length);
+      // Extra safety: double check we aren't redirecting something that should be a file
+      if (!urlPath.includes('.')) {
+        return res.redirect(301, urlPath + '/' + query);
+      }
+    }
   }
 
   next();
@@ -186,67 +351,57 @@ app.get('/robots.txt', (req, res) => {
 // Redirections 301 pour le SEO & correction d'erreurs 404
 const redirects301: Record<string, string> = {
   // Erreurs 404 critiques
-  '/bloomlab-extracteur-botanique-et-infuseur-dhuile-intelligent-6-en-1': '/bloomlab',
-  '/retours-et-remboursements': '/retour-et-remboursement',
-  '/tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes-spoiler-la-difference-est-de-1-a-98': '/blog?post=tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes-spoiler-la-difference-est-de-1-a-98',
-  '/chroniques': '/blog',
-  '/infusion-botanique-maison-comment-ca-marche': '/infusion-botanique#comprendre-infusion-botanique',
+  '/bloomlab-extracteur-botanique-et-infuseur-dhuile-intelligent-6-en-1': '/bloomlab/',
+  '/retours-et-remboursements': '/retour-et-remboursement/',
+  '/tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes-spoiler-la-difference-est-de-1-a-98': '/blog/tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes-spoiler-la-difference-est-de-1-a-98/',
+  '/chroniques': '/blog/',
+  '/infusion-botanique-maison-comment-ca-marche': '/infusion-botanique/',
   
   // URLs d'anciennes versions & alias
   '/indexbis': '/',
-  '/about': '/manifeste',
-  '/contact': '/manifeste',
-  '/how-it-works-diy-natural-recipes': '/boutique',
-  '/natural-herbal-infusion-body-care-oils-': '/cosmetiques',
-  '/natural-herbal-infusion-face-skincare-recipes': '/cosmetiques',
-  '/extraction-plantes-naturelles-bienfaits': '/extraction-botanique',
-  '/extraction-botanique-guide-complet': '/extraction-botanique',
-  '/herbier': '/bibliotheque-savoirs',
-  '/herbier/': '/bibliotheque-savoirs',
-  '/bibliotheque': '/bibliotheque-savoirs',
-  '/boutique/confort-digestif': '/boutique/duo-argiles',
-  '/boutique/feu-actualisateur': '/boutique/purete-sanguine',
-  '/boutique/nutri-profonde': '/boutique/expert-peaux',
-  '/shop': '/boutique',
-  '/products': '/boutique',
-  '/herboristerie': '/bibliotheque-savoirs',
-  '/phytotherapie': '/phytotherapie-reset',
+  '/about': '/manifeste/',
+  '/contact': '/manifeste/',
+  '/how-it-works-diy-natural-recipes': '/boutique/',
+  '/natural-herbal-infusion-body-care-oils-': '/cosmetiques/',
+  '/natural-herbal-infusion-face-skincare-recipes': '/cosmetiques/',
+  '/extraction-plantes-naturelles-bienfaits': '/extraction-botanique/',
+  '/extraction-botanique-guide-complet': '/extraction-botanique/',
+  '/herbier': '/herbier/',
+  '/bibliotheque': '/herbier/',
+  '/bibliotheque-savoirs': '/herbier/',
+  '/boutique/confort-digestif': '/boutique/duo-argiles/',
+  '/boutique/feu-actualisateur': '/boutique/purete-sanguine/',
+  '/boutique/nutri-profonde': '/boutique/expert-peaux/',
+  '/shop': '/boutique/',
+  '/products': '/boutique/',
+  '/herboristerie': '/herbier/',
+  '/phytotherapie': '/phytotherapie-reset/',
   
   // Unification Herbier -> Bibliothèque (URLs dynamiques)
-  '/herbier/chaga_vitality': '/bibliotheque-savoirs/chaga_vitality',
-  '/herbier/urtica_dioica': '/bibliotheque-savoirs/urtica_dioica',
-  '/herbier/melissa_officinalis': '/bibliotheque-savoirs/melissa_officinalis',
-  '/herbier/curcuma_longa_poivre': '/bibliotheque-savoirs/curcuma_longa_poivre',
-  '/herbier/zingiber_officinale': '/bibliotheque-savoirs/zingiber_officinale',
-  '/herbier/rosmarinus_officinalis': '/bibliotheque-savoirs/rosmarinus_officinalis',
-  '/herbier/lavandula_angustifolia': '/bibliotheque-savoirs/lavandula_angustifolia',
-  '/herbier/artichaut': '/bibliotheque-savoirs/artichaut',
-  '/bibliotheque/chaga_vitality': '/bibliotheque-savoirs/chaga_vitality',
-  '/bibliotheque/urtica_dioica': '/bibliotheque-savoirs/urtica_dioica',
-  '/bibliotheque/melissa_officinalis': '/bibliotheque-savoirs/melissa_officinalis',
-  '/bibliotheque/curcuma_longa_poivre': '/bibliotheque-savoirs/curcuma_longa_poivre',
-  '/bibliotheque/zingiber_officinale': '/bibliotheque-savoirs/zingiber_officinale',
-  '/bibliotheque/rosmarinus_officinalis': '/bibliotheque-savoirs/rosmarinus_officinalis',
-  '/bibliotheque/lavandula_angustifolia': '/bibliotheque-savoirs/lavandula_angustifolia',
-  '/bibliotheque/artichaut': '/bibliotheque-savoirs/artichaut',
-  
-  // Doublons WordPress Blog (suffixes -2, -3, -4)
-  '/autonomie-botanique-pourquoi-une-maison-qui-utilise-des-plantes-a-besoin-dun-vrai-outil-dextraction-2': '/blog?post=autonomie-botanique-pourquoi-une-maison-qui-utilise-des-plantes-a-besoin-dun-vrai-outil-dextraction',
-  '/autonomie-botanique-pourquoi-une-maison-qui-utilise-des-plantes-a-besoin-dun-vrai-outil-dextraction-3': '/blog?post=autonomie-botanique-pourquoi-une-maison-qui-utilise-des-plantes-a-besoin-dun-vrai-outil-dextraction',
-  '/autonomie-botanique-pourquoi-une-maison-qui-utilise-des-plantes-a-besoin-dun-vrai-outil-dextraction-4': '/blog?post=autonomie-botanique-pourquoi-une-maison-qui-utilise-des-plantes-a-besoin-dun-vrai-outil-dextraction',
-  '/melisse-la-difference-entre-une-infusion-du-soir-et-une-extraction-pensee-pour-le-systeme-nerveux-3': '/blog?post=melisse-la-difference-entre-une-infusion-du-soir-et-une-extraction-pensee-pour-le-systeme-nerveux',
-  '/melisse-la-difference-entre-une-infusion-du-soir-et-une-extraction-pensee-pour-le-systeme-nerveux-5': '/blog?post=melisse-la-difference-entre-une-infusion-du-soir-et-une-extraction-pensee-pour-le-systeme-nerveux',
-  '/melisse-la-difference-entre-une-infusion-du-soir-et-une-extraction-pensee-pour-le-systeme-nerveux-6': '/blog?post=melisse-la-difference-entre-une-infusion-du-soir-et-une-extraction-pensee-pour-le-systeme-nerveux',
-  
-  // Articles Blog additionnels (Doublons/Séquences)
-  '/chardon-marie-la-silymarine-pourquoi-la-tisane-ne-peut-pas-la-liberer-correctement-6': '/blog?post=chardon-marie-la-silymarine-pourquoi-la-tisane-ne-peut-pas-la-liberer-correctement',
-  '/lavande-pourquoi-lhuile-essentielle-et-lhuile-infusee-ne-font-pas-le-meme-travail-2': '/blog?post=lavande-pourquoi-lhuile-essentielle-et-lhuile-infusee-ne-font-pas-le-meme-travail',
-  '/lavande-pourquoi-lhuile-essentielle-et-lhuile-infusee-ne-font-pas-le-meme-travail-3': '/blog?post=lavande-pourquoi-lhuile-essentielle-et-lhuile-infusee-ne-font-pas-le-meme-travail',
-  '/gingembre-le-bain-marie-ancestral-avait-raison-sur-le-principe-muts-pas-sur-la-precision-3': '/blog?post=gingembre-le-bain-marie-ancestral-avait-raison-sur-le-principe-mais-pas-sur-la-precision',
-  '/gingembre-le-bain-marie-ancestral-avait-raison-sur-le-principe-mais-pas-sur-la-precision-5': '/blog?post=gingembre-le-bain-marie-ancestral-avait-raison-sur-le-principe-mais-pas-sur-la-precision',
-  
-  // Boutique Redundancy
-  '/boutique/bloomlab': '/bloomlab',
+  '/herbier/chaga_vitality': '/herbier/chaga_vitality/',
+  '/herbier/urtica_dioica': '/herbier/urtica_dioica/',
+  '/herbier/melissa_officinalis': '/herbier/melissa_officinalis/',
+  '/herbier/curcuma_longa_poivre': '/herbier/curcuma_longa_poivre/',
+  '/herbier/zingiber_officinale': '/herbier/zingiber_officinale/',
+  '/herbier/rosmarinus_officinalis': '/herbier/rosmarinus_officinalis/',
+  '/herbier/lavandula_angustifolia': '/herbier/lavandula_angustifolia/',
+  '/herbier/artichaut': '/herbier/artichaut/',
+  '/bibliotheque/chaga_vitality': '/herbier/chaga_vitality/',
+  '/bibliotheque/urtica_dioica': '/herbier/urtica_dioica/',
+  '/bibliotheque/melissa_officinalis': '/herbier/melissa_officinalis/',
+  '/bibliotheque/curcuma_longa_poivre': '/herbier/curcuma_longa_poivre/',
+  '/bibliotheque/zingiber_officinale': '/herbier/zingiber_officinale/',
+  '/bibliotheque/rosmarinus_officinalis': '/herbier/rosmarinus_officinalis/',
+  '/bibliotheque/lavandula_angustifolia': '/herbier/lavandula_angustifolia/',
+  '/bibliotheque/artichaut': '/herbier/artichaut/',
+  '/bibliotheque-savoirs/chaga_vitality': '/herbier/chaga_vitality/',
+  '/bibliotheque-savoirs/urtica_dioica': '/herbier/urtica_dioica/',
+  '/bibliotheque-savoirs/melissa_officinalis': '/herbier/melissa_officinalis/',
+  '/bibliotheque-savoirs/curcuma_longa_poivre': '/herbier/curcuma_longa_poivre/',
+  '/bibliotheque-savoirs/zingiber_officinale': '/herbier/zingiber_officinale/',
+  '/bibliotheque-savoirs/rosmarinus_officinalis': '/herbier/rosmarinus_officinalis/',
+  '/bibliotheque-savoirs/lavandula_angustifolia': '/herbier/lavandula_angustifolia/',
+  '/bibliotheque-savoirs/artichaut': '/herbier/artichaut/',
 };
 
 Object.entries(redirects301).forEach(([from, to]) => {
@@ -361,8 +516,6 @@ app.get("/api/newsletter/unsubscribe", async (req, res) => {
     res.status(500).send("Erreur lors de la désinscription");
   }
 });
-
-import { NewsletterOrchestrator } from "./server/newsletter-orchestrator";
 
 const orchestrator = new NewsletterOrchestrator(process.env.GEMINI_API_KEY!);
 
@@ -489,6 +642,54 @@ app.post("/api/webhooks/purchase", async (req, res) => {
   }
 });
 
+// --- CRM & AUTOMATION UTILS ---
+
+async function notifyOrderToBrevo(orderData: { email: string, customerName: string, items: any[], total: number }) {
+  const BREVO_API_KEY = process.env.BREVO_API_KEY;
+  if (!BREVO_API_KEY) {
+    console.warn("[CRM] BREVO_API_KEY manquante, saut de la notification d'événement.");
+    return;
+  }
+
+  const url = "https://api.brevo.com/v3/event";
+  
+  // On prend le premier produit pour le lien d'avis (simplification)
+  const mainProduct = orderData.items[0]?.name || "Produit Bloom";
+  const reviewUrl = `https://bloombybotanik.com/boutique`; // URL générique vers la boutique/avis
+
+  const payload = {
+    "event": "order_completed",
+    "email": orderData.email,
+    "properties": {
+      "FIRSTNAME": orderData.customerName.split(' ')[0],
+      "PRODUCT_NAME": mainProduct,
+      "REVIEW_URL": reviewUrl,
+      "ORDER_TOTAL": orderData.total
+    }
+  };
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'api-key': BREVO_API_KEY,
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
+    
+    if (response.ok) {
+      console.log(`[CRM] Commande synchronisée pour automation : ${orderData.email}`);
+    } else {
+      const errorText = await response.text();
+      console.error(`[CRM] Erreur Brevo Event API (${response.status}):`, errorText);
+    }
+  } catch (error) {
+    console.error("[CRM] Erreur synchronisation Brevo:", error);
+  }
+}
+
 // --- PAYMENT UTILS ---
 
 async function handleSuccessfulPayment(orderData: any, orderId: string) {
@@ -535,7 +736,10 @@ L'équipe Bloom`,
     }]
   });
 
-  // To Admin
+  // 5. Notify Brevo for CRM Automation (Reviews after 21 days)
+  await notifyOrderToBrevo(orderData);
+
+  // 6. To Admin
   await transporter.sendMail({
     from: `"Système de Commande" <${process.env.SMTP_USER}>`,
     to: "bloombybotanik@gmail.com",
@@ -996,235 +1200,53 @@ RÈGLES DE VÉRIFICATION STRICTES :
     res.status(500).json({ error: error.message });
   }
 });
+}
 
-// Vite middleware
-async function setupVite() {
+async function startServer() {
+  // 1. Health check
+  app.get('/api/health', (req, res) => res.json({ status: 'ok', timestamp: new Date().toISOString() }));
+
+  // 2. Vite Setup (DEV ONLY)
   if (process.env.NODE_ENV !== "production") {
-    const vite = await createViteServer({
-      server: { middlewareMode: true },
-      appType: "spa",
-    });
-    app.use(vite.middlewares);
-  } else {
-    const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath, { index: false })); // Don't serve index.html automatically
+    viteDevServer = await setupVite(app);
+    app.use(viteDevServer.middlewares);
+    console.log("Vite middleware attached first in dev");
+  }
 
-    app.get('*', async (req, res) => {
-      const urlPath = req.path;
-      const langMatch = urlPath.match(/^\/(en|de)(\/|$)/);
-      const lang = (langMatch ? langMatch[1] : 'fr') as 'fr' | 'en' | 'de';
-      const restPath = langMatch ? urlPath.replace(/^\/(en|de)/, '') || '/' : urlPath;
+  // 3. Register All App Routes and Middlewares
+  registerAppRoutes(app);
 
-      let indexPath = path.join(distPath, 'index.html');
-      let html = fs.readFileSync(indexPath, 'utf8');
+  // 5. Production specific logic
+  if (process.env.NODE_ENV === "production") {
+    const distPath = path.join(process.cwd(), "dist");
+    app.use(express.static(distPath, { index: false }));
 
-      // 1. Dynamic Hreflang Injection
-      const baseUrl = 'https://bloombybotanik.com';
-      const cleanPath = restPath === '/' ? '' : restPath;
-      const hreflangs = `
-    <link rel="canonical" href="${baseUrl}${lang === 'fr' ? '' : '/' + lang}${cleanPath}" />
-    <link rel="alternate" hreflang="fr" href="${baseUrl}${cleanPath}" />
-    <link rel="alternate" hreflang="en" href="${baseUrl}/en${cleanPath}" />
-    <link rel="alternate" hreflang="de" href="${baseUrl}/de${cleanPath}" />
-    <link rel="alternate" hreflang="x-default" href="${baseUrl}${cleanPath}" />`;
-      
-      // Remove existing canonical and hreflang to avoid duplicates
-      html = html.replace(/<link rel="canonical".*?\/>/g, '');
-      html = html.replace(/<link rel="alternate" hreflang=".*?".*?\/>/g, '');
-      html = html.replace('</head>', `${hreflangs}\n</head>`);
-
-      // 2. Localized Metadata (Basic logic for main pages)
-      const seoData: any = {
-        fr: {
-          '/': { 
-            title: 'Extracteur Botanique & Infuseur de Précision | BloomLab', 
-            desc: 'Découvrez BloomLab®, l\'extracteur botanique de précision et infuseur de plantes pour la phytothérapie maison. Maîtrisez l\'extraction du totum végétal à basse température pour soigner le terrain biologique.' 
-          },
-          '/bloomlab': { 
-            title: 'BloomLab® | L\'Extracteur Botanique de Précision N°1 en France', 
-            desc: 'La machine pour extraction de plantes de référence. Appareil de phytothérapie maison pour réaliser vos propres remèdes naturels et extractions du totum à basse température.' 
-          },
-          '/phytotherapie-reset': { 
-            title: 'Reset Homéostasique | Le voyage de phytothérapie de 90 jours', 
-            desc: 'Accompagnez vos fonctions naturelles, soignez le terrain biologique et installez un reset homéostasique durable avec le protocole expert Bloom.' 
-          },
-          '/boutique': { 
-            title: 'Boutique BloomLab | Machine pour extraction de plantes & Kits', 
-            desc: 'Trouvez votre appareil de phytothérapie maison BloomLab, nos kits de plantes médicinales et ressources pour votre souveraineté sanitaire.' 
-          },
-          '/manifeste': { 
-            title: 'Notre Manifeste | Souveraineté Sanitaire & Médecine des Systèmes', 
-            desc: 'Découvrez l\'ADN de Bloom : l\'alliance de l\'ingénierie et de la médecine des systèmes pour une souveraineté sanitaire retrouvée.' 
-          },
-          '/extraction-botanique': { 
-            title: 'Guide de l\'Extraction Botanique | Extraction du Totum Végétal', 
-            desc: 'Apprenez les secrets de l\'extraction botanique de précision : basse température, biodisponibilité optimale et préservation du totum.' 
-          }
-        },
-        en: {
-          '/': { title: 'Precision Botanical Extractor & Infuser | BloomLab', desc: 'Discover BloomLab®, the precision botanical extractor and infuser. Master the extraction of the plant totum at low temperature for home phytotherapy.' },
-          '/bloomlab': { title: 'BloomLab® | The #1 Precision Botanical Extractor in France', desc: 'The reference machine for plant extraction. Home phytotherapy device for creating your own natural remedies and low-temperature totum extractions.' },
-          '/phytotherapie-reset': { title: 'Homeostatic Reset | The 90-day Botanical Journey', desc: 'Support your natural functions, care for the biological terrain, and establish a sustainable homeostatic reset with the Bloom protocol.' },
-          '/boutique': { title: 'Bloom Store | Plant Extraction Machine & Kits', desc: 'Find your BloomLab home phytotherapy device, our medicinal plant kits, and resources for your health sovereignty.' },
-          '/manifeste': { title: 'Our Manifesto | Health Sovereignty & Systems Medicine', desc: 'Discover the DNA of Bloom: the alliance of engineering and systems medicine for regained health sovereignty.' },
-          '/extraction-botanique': { title: 'Botanical Extraction Guide | Plant Totum Extraction', desc: 'Learn the secrets of precision botanical extraction: low temperature, optimal bioavailability, and totum preservation.' }
-        },
-        de: {
-          '/': { title: 'Botanischer Präzisions-Extraktor & Infuser | BloomLab', desc: 'Entdecken Sie BloomLab®, den Präzisions-Extraktor. Meistern Sie die Extraktion des pflanzlichen Totums bei niedriger Temperatur für die Phytotherapie zu Hause.' },
-          '/bloomlab': { title: 'BloomLab® | Der Präzisions-Extraktor Nr. 1 in Frankreich', desc: 'Die Referenzmaschine für die Pflanzenextraktion. Phytotherapie-Gerät für zu Hause zur Erstellung eigener natürlicher Heilmittel.' },
-          '/phytotherapie-reset': { title: 'Homöostatischer Reset | Die botanische 90-Tage-Reise', desc: 'Unterstützen Sie Ihre natürlichen Funktionen, pflegen Sie das biologische Terrain und etablieren Sie einen nachhaltigen homöostatischen Reset.' },
-          '/boutique': { title: 'Bloom Shop | Pflanzenextraktionsmaschine & Kits', desc: 'Finden Sie Ihr BloomLab-Phytotherapie-Gerät für zu Hause, unsere Heilpflanzen-Kits und Ressourcen für Ihre Gesundheitsautonomie.' },
-          '/manifeste': { title: 'Unser Manifest | Gesundheits-Souveränität & Systemmedizin', desc: 'Entdecken Sie die DNA von Bloom: die Allianz von Engineering und Systemmedizin für wiedergewonnene Gesundheitsautonomie.' },
-          '/extraction-botanique': { title: 'Leitfaden zur botanischen Extraktion | Totum-Technologie', desc: 'Lernen Sie die Geheimnisse der botanischen Präzisionsextraktion: Niedertemperatur, optimale Bioverfügbarkeit und Totum-Erhalt.' }
+    app.get("*", async (req, res) => {
+      try {
+        // Skip API and files
+        if (req.path.startsWith('/api') || /\.[a-z0-9]{2,5}$/i.test(req.path)) {
+          return res.status(404).send("Not found");
         }
-      };
 
-      const pageSeo = seoData[lang]?.[restPath] || seoData[lang]?.['/'];
-      if (pageSeo) {
-        html = html.replace(/<title>.*?<\/title>/, `<title>${pageSeo.title}</title>`);
-        html = html.replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${pageSeo.desc}" />`);
-        html = html.replace(/<html lang=".*?"/, `<html lang="${lang}"`);
-      }
-
-      // 2.5 Structured Data (JSON-LD)
-      const schemas: any[] = [
-        {
-          "@context": "https://schema.org",
-          "@type": "HealthAndBeautyBusiness",
-          "name": "Bloom by BotaniK",
-          "description": "Expertise en médecine des systèmes, reset homéostasique et souveraineté sanitaire par l'extraction botanique de précision.",
-          "url": baseUrl,
-          "logo": `${baseUrl}/brand/logo-org.jpg`,
-          "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "FR"
-          }
+        const indexPath = path.join(distPath, "index.html");
+        if (fs.existsSync(indexPath)) {
+          res.send(fs.readFileSync(indexPath, "utf-8"));
+        } else {
+          res.status(404).send("Index not found");
         }
-      ];
-
-      if (restPath === '/bloomlab' || restPath === '/') {
-        schemas.push({
-          "@context": "https://schema.org",
-          "@type": "Product",
-          "name": "BloomLab®",
-          "description": "L'extracteur botanique de précision et infuseur botanique de référence. Permet l'extraction du totum végétal à basse température (extraction basse température) pour une biodisponibilité optimale et une souveraineté sanitaire retrouvée.",
-          "brand": {
-            "@type": "Brand",
-            "name": "Bloom by BotaniK"
-          },
-          "image": `${baseUrl}/assets/bloomlab_main_1784887530345.png`,
-          "sku": "BLM-LAB-V2",
-          "mpn": "BLM-LAB-V2",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "3"
-          },
-          "review": [
-            {
-              "@type": "Review",
-              "author": { "@type": "Person", "name": "Clara M." },
-              "reviewBody": "Je brûlais constamment mes huiles au bain-marie. Avec la BloomLab, la couleur et la texture de mes sérums n'ont plus rien à voir !",
-              "reviewRating": { "@type": "Rating", "ratingValue": "5" }
-            },
-            {
-              "@type": "Review",
-              "author": { "@type": "Person", "name": "Dr. Renaud P." },
-              "reviewBody": "Mes teintures-mères se font maintenant en 3h au lieu de 6 semaines. Un gain de temps exceptionnel pour mes préparations.",
-              "reviewRating": { "@type": "Rating", "ratingValue": "5" }
-            },
-            {
-              "@type": "Review",
-              "author": { "@type": "Person", "name": "Antoine L." },
-              "reviewBody": "Mon huile infusée au romarin sans amertume est devenue incontournable dans ma cuisine.",
-              "reviewRating": { "@type": "Rating", "ratingValue": "5" }
-            }
-          ],
-          "offers": {
-            "@type": "Offer",
-            "url": `${baseUrl}/bloomlab`,
-            "priceCurrency": "EUR",
-            "price": "239.00",
-            "availability": "https://schema.org/InStock",
-            "validFrom": "2026-08-01T00:00:00Z",
-            "shippingDetails": {
-              "@type": "OfferShippingDetails",
-              "shippingRate": {
-                "@type": "MonetaryAmount",
-                "value": "0.00",
-                "currency": "EUR"
-              },
-              "deliveryTime": {
-                "@type": "ShippingDeliveryTime",
-                "handlingTime": {
-                  "@type": "QuantitativeValue",
-                  "minValue": 0,
-                  "maxValue": 1,
-                  "unitCode": "DAY"
-                },
-                "transitTime": {
-                  "@type": "QuantitativeValue",
-                  "minValue": 1,
-                  "maxValue": 2,
-                  "unitCode": "DAY"
-                }
-              }
-            },
-            "hasMerchantReturnPolicy": {
-              "@type": "MerchantReturnPolicy",
-              "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-              "merchantReturnDays": 30,
-              "returnMethod": "https://schema.org/ReturnByMail",
-              "returnFees": "https://schema.org/FreeReturn"
-            }
-          }
-        });
+      } catch (err) {
+        res.status(500).send("Internal Server Error");
       }
-
-      const schemaHtml = schemas.map(s => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n');
-      html = html.replace('</head>', `${schemaHtml}\n</head>`);
-
-      // 3. Localized Noscript Content (Structural injection)
-      const noscriptContent: any = {
-        fr: `<h1>Bloom by BotaniK | Infuseur & Extracteur Botanique de Précision</h1><p>Expertise en infusion et extraction botanique de précision. BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels.</p>`,
-        en: `<h1>Bloom by BotaniK | Precision Botanical Infuser & Extractor</h1><p>Expertise in precision botanical infusion and extraction. BloomLab® gives you all the keys to create your own natural remedies.</p>`,
-        de: `<h1>Bloom by BotaniK | Präzisions-Botanischer Infuser & Extrahierer</h1><p>Expertise in präziser botanischer Infusion und Extraktion. BloomLab® bietet Ihnen alle Schlüssel zur Erstellung Ihrer eigenen natürlichen Heilmittel.</p>`
-      };
-
-      if (noscriptContent[lang]) {
-        html = html.replace(/<noscript>[\s\S]*?<\/noscript>/, `<noscript><div style="padding: 20px; font-family: sans-serif; line-height: 1.6;">${noscriptContent[lang]}</div></noscript>`);
-      }
-
-      // SSR-Lite: Inject metadata for Blog Posts (Keep existing logic but localized)
-      if (restPath.startsWith('/blog/')) {
-        const slug = restPath.replace('/blog/', '').split('/')[0];
-        try {
-          const blogPostsModule = await import('./src/data/blogPosts');
-          const post = blogPostsModule.blogPosts.find((p: any) => p.slug === slug);
-          
-          if (post) {
-            const title = `${post.title[lang]} | Journal Bloom`;
-            const desc = post.excerpt[lang];
-            const ogImage = post.image ? `https://bloombybotanik.com${post.image}` : "https://bloombybotanik.com/brand/social-logo.jpg";
-            
-            html = html.replace(/<title>.*?<\/title>/, `<title>${title}</title>`);
-            html = html.replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${desc}" />`);
-            
-            const ogTags = `<meta property="og:title" content="${title}" />\n<meta property="og:description" content="${desc}" />\n<meta property="og:image" content="${ogImage}" />\n<meta property="og:url" content="https://bloombybotanik.com${urlPath}" />\n<meta property="og:type" content="article" />`;
-            html = html.replace('</head>', `${ogTags}\n</head>`);
-          }
-        } catch (e) {
-          console.error("SSR-lite error:", e);
-        }
-      }
-
-      res.send(html);
     });
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server listening on http://0.0.0.0:${PORT} (${process.env.NODE_ENV || 'development'})`);
   });
 }
 
-setupVite();
+startServer().catch(err => {
+  console.error("Critical server startup error:", err);
+  process.exit(1);
+});
+

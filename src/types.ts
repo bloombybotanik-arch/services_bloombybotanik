@@ -1,78 +1,77 @@
-export type UserStatus = 'gratuit' | 'freemium' | 'premium' | 'owner';
 
-export interface BloomUser {
-  uid: string;
-  email: string;
-  displayName?: string;
-  status: UserStatus;
-  isPremiumUntil?: string; // ISO string
-  machineOwned: boolean;
-  machineSerialNumber?: string;
-  optInNewsletter: boolean;
-  optInNurturing: boolean;
-  createdAt: string;
-  updatedAt?: string;
-  lastActivityAt?: string;
-}
+export type View = 'home' | 'machine' | 'phytotherapie-reset' | 'votre-pratique' | 'parcours' | 'boutique' | 'product-detail' | 'culinaire' | 'cosmetiques' | 'library-landing' | 'manifeste' | 'activation' | 'account' | 'legal' | 'chat' | 'cart' | 'checkout' | 'guide' | 'how_it_works' | 'pending' | 'library' | 'herbier' | 'pillar-extraction' | 'guide-complet' | 'qu-est-ce-que-infusion' | 'admin' | 'blog' | 'withdrawal' | 'indexbis' | 'newsletter-preferences' | 'admin-newsletter' | 'terrain' | 'infuseur-botanique' | 'cgv' | 'cgu' | 'privacy' | 'mentions' | 'returns' | 'recettes' | 'guides' | 'ateliers' | 'herbarium' | 'questions-frequentes' | 'faq' | 'infusion-precision' | 'totum-definition' | 'solvants-extraction' | 'premium-info' | 'decouvrir' | 'comment-ca-marche' | 'recettes-gratuites' | 'apprendre' | 'preparations-avancees' | 'recettes-cosmetiques' | 'bibliotheque' | 'boutique-kits' | 'abonnement' | 'la-marque' | 'contact' | 'extraction-botanique' | 'infusion-botanique' | 'huile-infusee' | 'plantes-adaptogenes' | 'totum-vegetal' | 'maceration-plantes' | 'teinture-mere' | 'kits-botaniques' | 'articles';
 
-export type ProductType = 'machine' | 'kit' | 'subscription';
+export const VIEW_PATHS: Record<string, string> = {
+  home: '/', 
+  machine: '/produit/bloomlab/', 
+  'phytotherapie-reset': '/phytotherapie-reset/',
+  'votre-pratique': '/phytotherapie-reset/',
+  'parcours': '/phytotherapie-reset/',
+  boutique: '/boutique/', 
+  'boutique-kits': '/boutique/kits/',
+  'kits-botaniques': '/kits-botaniques/',
+  'abonnement': '/abonnement/',
+  culinaire: '/gastronomie-botanique/', 
+  cosmetiques: '/cosmetique-botanique/',
+  'library-landing': '/herbier/', 
+  manifeste: '/manifeste/',
+  'la-marque': '/la-marque/',
+  contact: '/contact/',
+  faq: '/questions-frequentes/',
+  activation: '/activation/', 
+  account: '/compte/', 
+  legal: '/legal/', 
+  chat: '/chat/',
+  cart: '/panier/', 
+  checkout: '/checkout/', 
+  guide: '/infusion-botanique/',
+  how_it_works: '/comment-ca-marche/', 
+  'comment-ca-marche': '/comment-ca-marche/',
+  'decouvrir': '/decouvrir/',
+  'recettes-gratuites': '/recettes-gratuites/',
+  'apprendre': '/apprendre/',
+  'preparations-avancees': '/preparations-avancees/',
+  'recettes-cosmetiques': '/recettes-cosmetiques/',
+  'bibliotheque': '/bibliotheque/',
+  pending: '/en-attente/',
+  library: '/herbier/', 
+  herbier: '/herbier/', 
+  'pillar-extraction': '/extraction-botanique/',
+  'extraction-botanique': '/extraction-botanique/',
+  'infusion-botanique': '/infusion-botanique/',
+  'huile-infusee': '/huile-infusee/',
+  'maceration-plantes': '/maceration-plantes/',
+  'teinture-mere': '/teinture-mere/',
+  'totum-vegetal': '/totum-vegetal/',
+  'plantes-adaptogenes': '/plantes-adaptogenes/',
+  'guide-complet': '/extraction-botanique/',
+  'articles': '/articles/',
+  'qu-est-ce-que-infusion': '/qu-est-ce-que-l-infusion-botanique/',
+  admin: '/admin/', 
+  blog: '/blog/', 
+  withdrawal: '/droit-de-retractation/', 
+  'infuseur-botanique': '/infuseur-botanique/',
+  'terrain': '/terrain/',
+  cgv: '/conditions-generales-de-vente/',
+  cgu: '/termes-et-conditions/',
+  privacy: '/politique-de-confidentialite/',
+  mentions: '/mentions-legales/',
+  returns: '/retour-et-remboursement/',
+  indexbis: '/indexbis/',
+  'newsletter-preferences': '/newsletter/preferences/',
+  'admin-newsletter': '/admin/newsletter/',
+  'recettes': '/recettes/',
+  'guides': '/guides/',
+  'ateliers': '/ateliers/',
+  'herbarium': '/herbier/',
+  'questions-frequentes': '/questions-frequentes/',
+  'infusion-precision': '/infusion-precision/',
+  'totum-definition': '/totum-definition/',
+  'solvants-extraction': '/solvants-extraction/',
+  'premium-info': '/premium-info/'
+};
 
-export interface BloomProduct {
-  id: string;
-  type: ProductType;
-  name: string;
-  sku: string;
-  priceCents: number;
-  currency: string;
-  description: string;
-  image?: string;
-}
-
-export type OrderStatus = 'pending' | 'paid' | 'shipped' | 'canceled';
-
-export interface BloomOrder {
-  id: string;
-  userId: string;
-  items: {
-    productId: string;
-    name: string;
-    priceCents: number;
-    quantity: number;
-    type: ProductType;
-  }[];
-  totalCents: number;
-  status: OrderStatus;
-  shippingAddress?: {
-    street: string;
-    city: string;
-    zipCode: string;
-    country: string;
-  };
-  stripeSessionId?: string;
-  createdAt: string;
-  updatedAt?: string;
-}
-
-export interface BloomSubscription {
-  id: string;
-  userId: string;
-  stripeSubscriptionId: string;
-  planId: string;
-  status: 'active' | 'past_due' | 'trialing' | 'canceled';
-  currentPeriodEnd: string;
-  cancelAtPeriodEnd: boolean;
-}
-
-export interface UserInteraction {
-  id?: string;
-  userId: string;
-  type: string;
-  metadata?: any;
-  createdAt: string;
-}
-
-export type EmailStatus = 'active' | 'unsubscribed' | 'bounced' | 'suppressed';
-export type SchoolCalendarZone = 'A' | 'B' | 'C' | 'hors_france' | 'non_precise';
+export type SchoolCalendarZone = 'A' | 'B' | 'C' | 'non_precise' | 'hors_france';
 
 export interface SubscriberPreferences {
   family_rhythm: boolean;
@@ -81,73 +80,31 @@ export interface SubscriberPreferences {
 }
 
 export interface Subscriber {
-  id?: string;
+  id: string;
   email: string;
-  first_name?: string;
-  locale: string;
+  first_name: string;
   marketing_consent: boolean;
-  consent_source?: string;
-  consent_timestamp?: any;
-  consent_version?: string;
-  email_status: EmailStatus;
+  email_status: 'active' | 'unsubscribed';
   preferences: SubscriberPreferences;
   created_at: any;
   updated_at: any;
 }
 
-export interface CustomerData {
-  id?: string;
-  subscriber_id: string;
-  bloomlab_purchase_verified: boolean;
-  bloomlab_purchase_date?: any;
-  kit_purchase_verified: boolean;
-  last_purchase_date?: any;
-  purchase_source?: string;
-  created_at: any;
-  updated_at: any;
-}
-
-export type CampaignStatus = 'draft' | 'review' | 'approved' | 'scheduled' | 'sent' | 'blocked' | 'cancelled';
-
 export interface NewsletterCampaign {
-  id?: string;
-  edition_date?: string;
-  theme: string;
-  target_segments: string[];
-  subject?: string;
-  preheader?: string;
-  html_content?: string;
-  text_content?: string;
-  status: CampaignStatus;
-  quality_report?: any;
-  created_by: 'agent' | 'human';
-  approved_by?: string;
-  scheduled_at?: any;
+  id: string;
+  title: string;
+  subject: string;
+  content: string;
+  status: 'draft' | 'scheduled' | 'sent' | 'archived' | 'approved';
+  theme?: string;
+  created_at?: any;
   sent_at?: any;
-  created_at: any;
-  updated_at: any;
+  recipient_count?: number;
 }
 
 export interface NewsletterGenerationSession {
   id: string;
-  status: 'initialized' | 'research' | 'draft' | 'review' | 'approved' | 'scheduled' | 'blocked' | 'sent';
-  current_agent?: string;
-  shared_memory: {
-    audience_needs?: any;
-    trends?: any;
-    seasonal_context?: any;
-    customer_voice?: any;
-    selected_topic?: any;
-    fact_research?: any;
-    editorial_draft?: any;
-    claims_review?: any;
-    personalization?: any;
-    html_output?: any;
-    quality_report?: any;
-    performance_recommendations?: any;
-  };
-  risk_level: 'low' | 'medium' | 'high';
-  blocking_reasons: string[];
-  created_at: any;
-  updated_at: any;
+  status: 'pending' | 'processing' | 'completed' | 'failed';
+  result?: any;
+  error?: string;
 }

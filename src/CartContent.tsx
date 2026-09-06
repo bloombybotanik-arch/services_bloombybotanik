@@ -69,7 +69,7 @@ export default function CartContent({
         <p className="text-[#1B3022]/60 mb-10 max-w-md mx-auto">{t.empty.subtitle}</p>
         <button 
           onClick={onBack}
-          className="bg-[#1B3022] text-white px-10 py-4 rounded-xl font-bold hover:bg-[#F97316] transition-all"
+          className="bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white px-10 py-4 rounded-xl font-bold transition-all cursor-pointer"
         >
           {t.empty.button}
         </button>
@@ -296,7 +296,7 @@ export default function CartContent({
                 />
                 <button 
                   onClick={() => setIsPromoApplied(true)}
-                  className="bg-white/10 hover:bg-white/20 px-4 rounded-xl text-xs font-bold transition-all border border-white/20"
+                  className="bg-[#0F261E] text-white hover:bg-[#1C3F34] px-4 rounded-xl text-xs font-bold transition-all border border-white/20"
                 >
                   Appliquer
                 </button>
