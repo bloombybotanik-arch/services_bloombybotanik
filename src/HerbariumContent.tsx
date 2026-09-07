@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Search, ChevronDown, ChevronUp, Beaker, Leaf, AlertTriangle, Activity, ChefHat, Lock, Sparkles, Star, FlaskConical, ChevronRight, Filter, Info, ArrowLeft, Droplets, Wind, Waves, Moon, Utensils, ShieldCheck } from 'lucide-react';
+import { Search, ChevronDown, ChevronUp, Beaker, Leaf, AlertTriangle, Activity, ChefHat, Lock, Sparkles, Star, FlaskConical, ChevronRight, Filter, Info, ArrowLeft, ArrowRight, Droplets, Wind, Waves, Moon, Utensils, ShieldCheck } from 'lucide-react';
 import { wrapTitle } from './lib/textUtils';
 import { plantsDatabase, PlantData } from './data/therapeuticData';
 import { unifiedBotanicalDatabase, UnifiedPlant } from './data/unifiedBotanicalData';
@@ -102,13 +102,26 @@ export default function HerbariumContent({
   // Handle initial plant selection from navigation
   useEffect(() => {
     if (initialPlantId) {
+      // Guard: if navigation passed a category name instead of a plant ID, redirect to dedicated recipe pages
+      if (initialPlantId === 'phytotherapie' || initialPlantId === 'phytotherapie-reset' || initialPlantId === 'therapeutic') {
+        onNavigate('phytotherapie-reset');
+        return;
+      }
+      if (initialPlantId === 'cosmetique' || initialPlantId === 'cosmetiques' || initialPlantId === 'cosmetic' || initialPlantId === 'recettes-cosmetiques') {
+        onNavigate('cosmetiques');
+        return;
+      }
+      if (initialPlantId === 'culinaire' || initialPlantId === 'culinary' || initialPlantId === 'gastronomie') {
+        onNavigate('culinaire');
+        return;
+      }
       const plant = plantsDatabase.find(p => p.plant_id === initialPlantId);
       if (plant) {
         setSelectedPlant(plant);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
-  }, [initialPlantId]);
+  }, [initialPlantId, onNavigate]);
 
   const filteredDirectory = useMemo(() => {
     let results = unifiedBotanicalDatabase;
@@ -571,8 +584,20 @@ export default function HerbariumContent({
       
       {/* Search & Filter Header (App Style) */}
       <div className="bg-white px-4 md:px-6 pt-6 md:pt-8 pb-4 border-b border-botanik-green/5">
-        <h1 className="text-2xl md:text-3xl font-bold text-botanik-green mb-1 md:mb-2">{t.header.title}</h1>
-        <p className="text-[10px] md:text-sm text-botanik-green/40 font-medium uppercase tracking-widest mb-2">{t.header.subtitle}</p>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-2">
+          <div>
+            <h1 className="text-2xl md:text-3xl font-bold text-botanik-green mb-1">{t.header.title}</h1>
+            <p className="text-[10px] md:text-sm text-botanik-green/40 font-medium uppercase tracking-widest">{t.header.subtitle}</p>
+          </div>
+          {/* Cocoon Internal Link: Herbier -> Extraction Botanique */}
+          <button
+            onClick={() => onNavigate('extraction-botanique')}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-botanik-green/5 hover:bg-botanik-green hover:text-white text-botanik-green rounded-xl text-xs font-bold transition-all border border-botanik-green/10 self-start md:self-auto cursor-pointer"
+          >
+            <FlaskConical className="w-3.5 h-3.5 text-botanik-orange" />
+            <span>Guide : L'Extraction Botanique & le Totum →</span>
+          </button>
+        </div>
         <p className="text-sm text-botanik-green/60 mb-4 md:mb-6">{t.header.description}</p>
         
         <div className="relative mb-4 md:mb-6 max-w-2xl">
@@ -587,32 +612,125 @@ export default function HerbariumContent({
         </div>
       </div>
 
-      {/* FILTERS with Counts moved here for mobile/desktop alignment */}
+      {/* FILTERS with dedicated shortcuts to recipe pages */}
       <div className="sticky top-0 z-30 bg-[#F9F9F7]/95 backdrop-blur-md py-3 md:py-4 px-4 md:px-6 mb-8 border-b border-botanik-green/5 overflow-x-auto whitespace-nowrap scrollbar-hide">
-        <div className="flex gap-2 items-center">
-          {[
-            { id: 'all', label: t.filters.all, icon: Leaf, count: counts.all },
-            { id: 'therapeutic', label: t.filters.therapeutic, icon: Activity, count: counts.therapeutic },
-            { id: 'culinary', label: t.filters.culinary, icon: ChefHat, count: counts.culinary },
-            { id: 'cosmetic', label: t.filters.cosmetic, icon: Sparkles, count: counts.cosmetic }
-          ].map((f) => (
+        <div className="flex flex-wrap gap-2 items-center justify-between">
+          <div className="flex gap-2 items-center">
+            {[
+              { id: 'all', label: t.filters.all, icon: Leaf, count: counts.all },
+              { id: 'therapeutic', label: t.filters.therapeutic, icon: Activity, count: counts.therapeutic },
+              { id: 'culinary', label: t.filters.culinary, icon: ChefHat, count: counts.culinary },
+              { id: 'cosmetic', label: t.filters.cosmetic, icon: Sparkles, count: counts.cosmetic }
+            ].map((f) => (
+              <button
+                key={f.id}
+                onClick={() => setActiveFilter(f.id as any)}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-[10px] md:text-xs font-bold transition-all duration-200 cursor-pointer ${
+                  activeFilter === f.id 
+                    ? 'bg-[#0F261E] text-white shadow-md hover:bg-[#D97706] active:bg-[#D97706]' 
+                    : 'bg-white text-[#0F261E]/70 border border-[#0F261E]/15 hover:border-[#D97706] hover:text-[#D97706] hover:bg-[#FAF7F2] active:bg-[#D97706] active:text-white'
+                }`}
+              >
+                <f.icon className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                <span>{f.label}</span>
+                <span className={`text-[8px] md:text-[10px] px-1.5 py-0.5 rounded-md font-bold ${activeFilter === f.id ? 'bg-white/20 text-white' : 'bg-[#0F261E]/5 text-[#0F261E]/60'}`}>
+                  {f.count}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          {/* Quick shortcuts to dedicated recipe portals */}
+          <div className="hidden lg:flex items-center gap-2">
             <button
-              key={f.id}
-              onClick={() => setActiveFilter(f.id as any)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-[10px] md:text-xs font-bold transition-all duration-200 cursor-pointer ${
-                activeFilter === f.id 
-                  ? 'bg-[#0F261E] text-white shadow-md hover:bg-[#D97706] active:bg-[#D97706]' 
-                  : 'bg-white text-[#0F261E]/70 border border-[#0F261E]/15 hover:border-[#D97706] hover:text-[#D97706] hover:bg-[#FAF7F2] active:bg-[#D97706] active:text-white'
-              }`}
+              onClick={() => onNavigate('phytotherapie-reset')}
+              className="text-xs font-bold text-botanik-green hover:text-botanik-orange px-3 py-1.5 rounded-lg bg-botanik-green/5 hover:bg-botanik-green/10 transition-colors flex items-center gap-1.5 cursor-pointer"
             >
-              <f.icon className="w-3.5 h-3.5 md:w-4 md:h-4" />
-              <span>{f.label}</span>
-              <span className={`text-[8px] md:text-[10px] px-1.5 py-0.5 rounded-md font-bold ${activeFilter === f.id ? 'bg-white/20 text-white' : 'bg-[#0F261E]/5 text-[#0F261E]/60'}`}>
-                {f.count}
-              </span>
+              <Activity className="w-3.5 h-3.5 text-botanik-orange" />
+              <span>56 Recettes Phytothérapie</span>
             </button>
-          ))}
+            <button
+              onClick={() => onNavigate('cosmetiques')}
+              className="text-xs font-bold text-botanik-green hover:text-botanik-orange px-3 py-1.5 rounded-lg bg-botanik-green/5 hover:bg-botanik-green/10 transition-colors flex items-center gap-1.5 cursor-pointer"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-botanik-orange" />
+              <span>Soins Cosmétiques</span>
+            </button>
+            <button
+              onClick={() => onNavigate('culinaire')}
+              className="text-xs font-bold text-botanik-green hover:text-botanik-orange px-3 py-1.5 rounded-lg bg-botanik-green/5 hover:bg-botanik-green/10 transition-colors flex items-center gap-1.5 cursor-pointer"
+            >
+              <ChefHat className="w-3.5 h-3.5 text-botanik-orange" />
+              <span>Gastronomie Botanique</span>
+            </button>
+          </div>
         </div>
+      </div>
+
+      {/* Contextual Banners for dedicated recipe collections */}
+      <div className="px-4 md:px-6 mb-6">
+        {activeFilter === 'therapeutic' && (
+          <div className="p-4 sm:p-5 bg-[#0F261E]/5 border border-[#0F261E]/15 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl bg-[#0F261E] text-white flex items-center justify-center flex-shrink-0">
+                <Activity className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-bold text-[#0F261E] text-sm">Protocoles & Recettes de Phytothérapie</h4>
+                <p className="text-xs text-[#0F261E]/70">Accédez aux fiches recettes détaillées avec sachet A/B, solvants et modes de prise.</p>
+              </div>
+            </div>
+            <button
+              onClick={() => onNavigate('phytotherapie-reset')}
+              className="w-full sm:w-auto px-4 py-2 bg-[#0F261E] hover:bg-[#D97706] text-white rounded-xl text-xs font-bold transition-colors cursor-pointer flex items-center justify-center gap-2 whitespace-nowrap shadow-sm"
+            >
+              <span>Accéder aux 56 Recettes Dédiées</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        )}
+
+        {activeFilter === 'cosmetic' && (
+          <div className="p-4 sm:p-5 bg-botanik-orange/5 border border-botanik-orange/20 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl bg-botanik-orange text-white flex items-center justify-center flex-shrink-0">
+                <Sparkles className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-bold text-[#0F261E] text-sm">Atelier des Recettes Cosmétiques</h4>
+                <p className="text-xs text-[#0F261E]/70">Explorez nos sérums, baumes botaniques et rituels d'infusion cutanée.</p>
+              </div>
+            </div>
+            <button
+              onClick={() => onNavigate('cosmetiques')}
+              className="w-full sm:w-auto px-4 py-2 bg-botanik-orange hover:bg-[#0F261E] text-white rounded-xl text-xs font-bold transition-colors cursor-pointer flex items-center justify-center gap-2 whitespace-nowrap shadow-sm"
+            >
+              <span>Accéder aux Recettes Dédiées</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        )}
+
+        {activeFilter === 'culinary' && (
+          <div className="p-4 sm:p-5 bg-botanik-green/5 border border-botanik-green/15 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl bg-botanik-green text-white flex items-center justify-center flex-shrink-0">
+                <ChefHat className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-bold text-[#0F261E] text-sm">Atelier Gastronomique & Recettes Culinaires</h4>
+                <p className="text-xs text-[#0F261E]/70">Huiles aromatisées, beurres d'herbes et infusions culinaires de précision.</p>
+              </div>
+            </div>
+            <button
+              onClick={() => onNavigate('culinaire')}
+              className="w-full sm:w-auto px-4 py-2 bg-botanik-green hover:bg-botanik-orange text-white rounded-xl text-xs font-bold transition-colors cursor-pointer flex items-center justify-center gap-2 whitespace-nowrap shadow-sm"
+            >
+              <span>Accéder aux Recettes Culinaires</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        )}
       </div>
 
       {/* GRID VIEW */}
@@ -723,10 +841,32 @@ export default function HerbariumContent({
       </div>
 
       {filteredDirectory.length === 0 && (
-        <div className="text-center py-24 bg-white rounded-[60px] border border-dashed border-botanik-green/10">
-          <Leaf className="w-16 h-16 text-botanik-green/10 mx-auto mb-6" />
+        <div className="text-center py-20 bg-white rounded-[40px] border border-dashed border-botanik-green/15 max-w-2xl mx-auto p-8 shadow-sm">
+          <Leaf className="w-16 h-16 text-botanik-green/20 mx-auto mb-6" />
           <h3 className="text-2xl font-bold text-botanik-green mb-2">{t.empty.title}</h3>
-          <p className="text-botanik-green/40">{t.empty.description}</p>
+          <p className="text-botanik-green/70 mb-8 max-w-md mx-auto text-sm">{t.empty.description}</p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <button
+              onClick={() => { setSearchQuery(''); setActiveFilter('all'); }}
+              className="px-5 py-2.5 bg-botanik-green/10 text-botanik-green rounded-xl text-xs font-bold hover:bg-botanik-green hover:text-white transition-all cursor-pointer"
+            >
+              Réinitialiser les filtres
+            </button>
+            <button
+              onClick={() => onNavigate('phytotherapie-reset')}
+              className="px-5 py-2.5 bg-[#0F261E] text-white rounded-xl text-xs font-bold hover:bg-[#D97706] transition-all cursor-pointer flex items-center gap-2"
+            >
+              <Activity className="w-3.5 h-3.5 text-botanik-orange" />
+              <span>56 Recettes Phytothérapie →</span>
+            </button>
+            <button
+              onClick={() => onNavigate('cosmetiques')}
+              className="px-5 py-2.5 bg-botanik-orange text-white rounded-xl text-xs font-bold hover:bg-[#0F261E] transition-all cursor-pointer flex items-center gap-2"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-white" />
+              <span>Recettes Cosmétiques →</span>
+            </button>
+          </div>
         </div>
       )}
     </div>

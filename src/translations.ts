@@ -11,10 +11,10 @@ export const translations = {
         intro: "Bienvenue dans l'ère de la Médecine des Systèmes. Bloom by BotaniK est la référence de l'infuseur botanique pour vos infusions arômatiques et un rééquilibrage de terrain profond.",
       },
       machine: {
-        title: "BloomLab : Extracteur Botanique & Machine d'infusion de plantes médicinales",
-        description: "BloomLab : né de la sagesse herboriste asiatique et de la science moderne, l'infuseur botanique de précision pour libérer jusqu'à 98% du totum de vos plantes.",
-        h1: "BloomLab® : L'Extracteur Botanique de Précision pour le Totum Végétal",
-        intro: "Libérez jusqu'à 98% des principes actifs. BloomLab® est la machine d'infusion de plantes qui garantit une extraction du totum respectant l'homéostasie du vivant.",
+        title: "BloomLab® : L'Extracteur botanique de précision pour maîtriser vos préparations maison",
+        description: "BloomLab® : l'extracteur botanique de précision pour maîtriser vos préparations maison, réaliser vos macérâts et infusions à basse température et libérer le totum végétal.",
+        h1: "BloomLab® : L'Extracteur botanique de précision pour maîtriser vos préparations maison",
+        intro: "Libérez jusqu'à 98% des principes actifs. BloomLab® est l'extracteur botanique de précision pour maîtriser vos préparations maison et extraire le totum en préservant le vivant.",
       },
       extraction: {
         title: "Extraction Botanique : Méthodes, Solvants & Guide Complet",

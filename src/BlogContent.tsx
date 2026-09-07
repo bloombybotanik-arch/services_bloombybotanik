@@ -77,7 +77,17 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
             </div>
           )}
 
-          <article className="prose prose-xl prose-botanik max-w-none 
+          <article 
+            onClick={(e) => {
+              const target = (e.target as HTMLElement).closest('a');
+              if (target && target.getAttribute('href')?.startsWith('/')) {
+                e.preventDefault();
+                const path = target.getAttribute('href')!;
+                const view = path.replace(/^\//, '').replace(/\/$/, '');
+                onNavigate(view);
+              }
+            }}
+            className="prose prose-xl prose-botanik max-w-none 
             prose-headings:text-botanik-green prose-headings:font-bold prose-headings:tracking-tight
             prose-p:text-botanik-green/80 prose-p:leading-relaxed
             prose-strong:text-botanik-green prose-strong:font-black
@@ -86,6 +96,21 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
             prose-img:rounded-[32px] prose-img:shadow-lg">
             <div dangerouslySetInnerHTML={{ __html: selectedPost.content[lang] }} />
           </article>
+
+          {/* Internal linking pillar banner */}
+          <div className="mt-12 p-8 bg-white rounded-3xl border border-botanik-green/10 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div className="space-y-1">
+              <span className="text-[10px] font-black uppercase tracking-widest text-[#D97706]">Pilier Central du Cocoon</span>
+              <h4 className="text-xl font-bold text-botanik-green">{lang === 'fr' ? "Extraction Botanique : Le Guide Pilier Fondateur" : "Botanical Extraction: Foundational Guide"}</h4>
+              <p className="text-sm text-botanik-green/70">{lang === 'fr' ? "Approfondissez les méthodes, la thermodynamique et les solvants de la méthode A/B séquentielle." : "Explore methods, thermodynamics, and solvents of the sequential A/B method."}</p>
+            </div>
+            <button
+              onClick={() => onNavigate('extraction-botanique')}
+              className="px-6 py-3 bg-botanik-green text-white text-xs font-bold rounded-xl hover:bg-[#D97706] transition-colors cursor-pointer flex-shrink-0"
+            >
+              {lang === 'fr' ? "Consulter le Guide" : "Explore Guide"}
+            </button>
+          </div>
 
           {/* CTA Section */}
           <div className="mt-24 p-12 bg-botanik-green rounded-[48px] text-center relative overflow-hidden shadow-2xl group">

@@ -34,7 +34,7 @@ export const blogPosts: BlogPost[] = [
     },
     content: {
       fr: `
-<p>On nous a appris qu’une bonne tisane consistait à verser de l’eau bouillante sur un sachet et à attendre cinq minutes. C’est un rituel apaisant, certes, mais est-ce une méthode efficace pour se soigner par les plantes ?</p>
+<p>On nous a appris qu’une bonne tisane consistait à verser de l’eau bouillante sur un sachet et à attendre cinq minutes. C’est un rituel apaisant, certes, mais est-ce une méthode efficace pour agir profondément sur son terrain et stimuler sa pharmacie intérieure ?</p>
 
 <h3>1. Le mythe de l'eau bouillante</h3>
 <p>L'eau à 100°C est le premier ennemi du <strong>Totum végétal</strong>. À cette température, les huiles essentielles volatiles s'évaporent instantanément et les molécules fragiles (vitamines, enzymes) subissent un choc thermique qui les dénature. Vous obtenez une boisson parfumée, mais biologiquement appauvrie.</p>
@@ -57,9 +57,10 @@ export const blogPosts: BlogPost[] = [
 
 <h3>Conclusion : Devenez souverain</h3>
 <p>La différence entre une tisane et une extraction BloomLab est la même qu'entre une bougie et un laser. Si vous cherchez un plaisir sensoriel, la tisane suffit. Si vous cherchez une réponse biologique profonde pour votre terrain, l'extraction de précision est votre seule alliée.</p>
+<p>Pour approfondir la démarche, explorez notre <a href="/extraction-botanique">guide complet de l'extraction botanique</a> qui détaille chaque paramètre physique, solvant et palier de température.</p>
       `,
       en: `
-<p>We've been taught that a good herbal tea consists of pouring boiling water over a bag and waiting five minutes. It's a soothing ritual, certainly, but is it an effective method for healing with plants?</p>
+<p>We've been taught that a good herbal tea consists of pouring boiling water over a bag and waiting five minutes. It's a soothing ritual, certainly, but is it an effective method to act deeply on your terrain and stimulate your inner pharmacy?</p>
 
 <h3>1. The boiling water myth</h3>
 <p>Water at 100°C (212°F) is the primary enemy of the <strong>Botanical Totum</strong>. At this temperature, volatile essential oils evaporate instantly, and fragile molecules (vitamins, enzymes) undergo a thermal shock that denatures them. You get a fragrant drink, but a biologically impoverished one.</p>
@@ -82,6 +83,7 @@ export const blogPosts: BlogPost[] = [
 
 <h3>Conclusion: Become sovereign</h3>
 <p>The difference between an herbal tea and a BloomLab extraction is the same as between a candle and a laser. If you're looking for sensory pleasure, tea is enough. If you're looking for a deep biological response for your system, precision extraction is your only ally.</p>
+<p>To go deeper, read our <a href="/extraction-botanique">complete botanical extraction guide</a> detailing physical parameters and solvent polarities.</p>
       `,
       de: `
 <p>Uns wurde beigebracht, dass ein guter Kräutertee darin besteht, kochendes Wasser über einen Beutel zu gießen und fünf Minuten zu warten. Es ist sicherlich ein beruhigendes Ritual, aber ist es eine effektive Methode zur Heilung mit Pflanzen?</p>
@@ -222,6 +224,7 @@ export const blogPosts: BlogPost[] = [
   <li><strong>Les fractions hydrosolubles & liposolubles :</strong> qui sont habituellement absentes de l'aromathérapie.</li>
 </ul>
 <p>C'est ce que nous appelons l'<strong>Extraction Intégrale</strong>. Elle offre une puissance d'action réelle sans la toxicité potentielle des isolats concentrés.</p>
+<p>Découvrez les détails des solvants polaires et apolaires dans notre <a href="/extraction-botanique">guide pilier de l'extraction botanique</a>.</p>
       `,
       en: `
 <p>Aromatherapy is powerful, but it is incomplete. Discover why global extraction (Totum) is safer and more effective.</p>

@@ -1522,6 +1522,14 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <button
               type="button"
+              onClick={() => onNavigate('extraction-botanique')}
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#1C3F34] hover:bg-[#D97706] text-white font-bold text-sm transition-all shadow-xs cursor-pointer"
+            >
+              <span>{isFR ? "Guide Pilier : Extraction Botanique" : "Pillar Guide: Botanical Extraction"}</span>
+              <ChevronRight className="w-4 h-4" />
+            </button>
+            <button
+              type="button"
               onClick={() => onNavigate('articles')}
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-[#FAF7F2] border-2 border-[#1C3F34] text-[#1C3F34] font-bold text-sm transition-all shadow-xs cursor-pointer"
             >

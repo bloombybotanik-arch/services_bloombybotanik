@@ -61,11 +61,12 @@ import BlogContent from './BlogContent';
 import FaqContent from './FaqContent';
 import ContactContent from './ContactContent';
 import ArticlesContent from './ArticlesContent';
+import PremiumInfoContent from './PremiumInfoContent';
 
 const SEOArticles = ({ view, lang, t, onNavigate }: { view: string, lang: string, t: any, onNavigate?: (view: any, param?: string) => void }) => {
   if (view === 'infusion-precision') return <SEOArticlesExports.InfusionPrecision lang={lang} t={t} onNavigate={onNavigate} />;
-  if (view === 'totum-definition') return <SEOArticlesExports.TotumDefinition lang={lang} t={t} onNavigate={onNavigate} />;
-  if (view === 'solvants-extraction') return <SEOArticlesExports.SolvantsExtraction lang={lang} t={t} onNavigate={onNavigate} />;
+  if (view === 'totum-definition' || view === 'totum-vegetal') return <SEOArticlesExports.TotumDefinition lang={lang} t={t} onNavigate={onNavigate} />;
+  if (view === 'solvants-extraction' || view === 'teinture-mere') return <SEOArticlesExports.SolvantsExtraction lang={lang} t={t} onNavigate={onNavigate} />;
   return null;
 };
 
@@ -222,8 +223,8 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
     
     const langPrefix = lang === 'fr' ? '' : `/${lang}`;
     const pageUrl = `https://bloombybotanik.com${langPrefix}${viewPath === '/' ? '' : viewPath}`;
-    const logoUrl = "https://bloombybotanik.com/logo_white.png";
-    const socialLogoUrl = "https://bloombybotanik.com/brand/social-logo.jpg";
+    const logoUrl = "https://bloombybotanik.com/logo.png";
+    const socialLogoUrl = "https://bloombybotanik.com/logo.png";
 
     // Update canonical link to use the normalized pageUrl
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -294,16 +295,24 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
       tag.setAttribute('content', content);
     };
 
+    const bloomlabImg = "https://bloombybotanik.com/assets/images/bloomlab_main_1784887530345.jpeg";
+    let shareImage = socialLogoUrl;
+    if (productData && productData.image) {
+      shareImage = productData.image.startsWith('http') ? productData.image : `https://bloombybotanik.com${productData.image}`;
+    } else if (currentView === 'machine' || currentView === 'home' || currentView === 'pillar-extraction' || currentView === 'extraction-botanique') {
+      shareImage = bloomlabImg;
+    }
+
     updateMetaTag('og:site_name', 'Bloom by BotaniK');
     updateMetaTag('og:type', 'website');
     updateMetaTag('og:url', pageUrl);
     updateMetaTag('og:title', finalTitle);
     updateMetaTag('og:description', finalDescription);
-    updateMetaTag('og:image', socialLogoUrl);
+    updateMetaTag('og:image', shareImage);
     updateMetaTag('twitter:card', 'summary_large_image', true);
     updateMetaTag('twitter:title', finalTitle, true);
     updateMetaTag('twitter:description', finalDescription, true);
-    updateMetaTag('twitter:image', socialLogoUrl, true);
+    updateMetaTag('twitter:image', shareImage, true);
 
     const graph: any[] = [
       breadcrumbSchema,
@@ -974,11 +983,11 @@ const NavigationSidebar = ({ className = "", currentView, currentProductId, navi
             onClick={() => navigateTo('boutique', 'kits')}
           />
           <NavItem 
-            id="premium-info" 
+            id="abonnement" 
             label={t.nav.boutique_sub.abonnement} 
             icon={Star} 
-            isActive={currentView === 'premium-info'}
-            onClick={() => navigateTo('premium-info')}
+            isActive={currentView === 'premium-info' || currentView === 'abonnement'}
+            onClick={() => navigateTo('abonnement')}
           />
         </NavGroup>
 
@@ -1254,6 +1263,16 @@ export default function App() {
       '/extraction-botanique-guide-complet': '/extraction-botanique/',
       '/infusion-botanique-maison-comment-ca-marche': '/infusion-botanique/',
       '/herbier': '/herbier/',
+      '/herbier/phytotherapie': '/phytotherapie-reset/',
+      '/herbier/phytotherapie/': '/phytotherapie-reset/',
+      '/herbier/therapeutic': '/phytotherapie-reset/',
+      '/herbier/therapeutic/': '/phytotherapie-reset/',
+      '/herbier/cosmetique': '/cosmetique-botanique/',
+      '/herbier/cosmetique/': '/cosmetique-botanique/',
+      '/herbier/cosmetiques': '/cosmetique-botanique/',
+      '/herbier/cosmetiques/': '/cosmetique-botanique/',
+      '/herbier/culinaire': '/gastronomie-botanique/',
+      '/herbier/culinaire/': '/gastronomie-botanique/',
       '/bloomlab-extracteur-botanique-et-infuseur-dhuile-intelligent-6-en-1': '/bloomlab/',
       '/indexbis': '/',
       '/chroniques': '/blog/',
@@ -1665,7 +1684,8 @@ export default function App() {
     switch (currentView) {
       case 'home': return <IndexBisContent onNavigate={navigateTo} lang={lang} />;
       case 'boutique':
-      case 'boutique-kits': return (
+      case 'boutique-kits':
+      case 'kits-botaniques': return (
         <StoreContent 
           onNavigate={navigateTo} 
           onAddToCart={(product) => addToCart(product)} 
@@ -1805,8 +1825,18 @@ export default function App() {
       );
       case 'infusion-precision':
       case 'totum-definition':
-      case 'solvants-extraction': return (
+      case 'totum-vegetal':
+      case 'solvants-extraction':
+      case 'teinture-mere': return (
         <SEOArticles view={currentView} lang={lang} t={t} onNavigate={navigateTo} />
+      );
+      case 'premium-info':
+      case 'abonnement': return (
+        <PremiumInfoContent 
+          onNavigate={navigateTo} 
+          onAddToCart={addToCart} 
+          lang={lang} 
+        />
       );
       case 'chat': return (
         <ChatContent 
@@ -1833,7 +1863,8 @@ export default function App() {
       case 'infuseur-botanique':
       case 'guide-complet': return <PillarExtraction onNavigate={navigateTo} lang={lang} />;
       case 'infusion-botanique': return <PillarInfusion lang={lang} onNavigate={navigateTo} />;
-      case 'huile-infusee': return <PillarOil lang={lang} onNavigate={navigateTo} />;
+      case 'huile-infusee':
+      case 'maceration-plantes': return <PillarOil lang={lang} onNavigate={navigateTo} />;
       case 'plantes-adaptogenes': return <PillarAdaptogens lang={lang} onNavigate={navigateTo} />;
       case 'activation': return (
         <ActivationPage 
@@ -2144,8 +2175,8 @@ export default function App() {
                       <span className="font-bold text-base tracking-tight">{t.nav.boutique_sub.kits}</span>
                     </a>
                     <a
-                      href={VIEW_PATHS['premium-info']}
-                      onClick={(e) => { e.preventDefault(); navigateTo('premium-info'); setIsMenuOpen(false); }}
+                      href={VIEW_PATHS['abonnement'] || '/abonnement/'}
+                      onClick={(e) => { e.preventDefault(); navigateTo('abonnement'); setIsMenuOpen(false); }}
                       className={`w-full flex items-center justify-between px-6 py-4 rounded-2xl transition-all text-left group bg-botanik-orange text-white shadow-xl shadow-black/10`}
                     >
                       <div className="flex items-center gap-4">

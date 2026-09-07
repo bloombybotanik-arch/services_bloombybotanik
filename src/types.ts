@@ -11,6 +11,7 @@ export const VIEW_PATHS: Record<string, string> = {
   'boutique-kits': '/boutique/kits/',
   'kits-botaniques': '/kits-botaniques/',
   'abonnement': '/abonnement/',
+  'premium-info': '/abonnement/',
   culinaire: '/gastronomie-botanique/', 
   cosmetiques: '/cosmetique-botanique/',
   'library-landing': '/herbier/', 

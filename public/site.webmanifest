@@ -4,19 +4,20 @@
   "description": "Infusion et Extraction Botanique de Précision",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#2D4739",
+  "background_color": "#0F261E",
+  "theme_color": "#0F261E",
   "icons": [
     {
-      "src": "/brand/favicon-512.jpg",
-      "sizes": "512x512",
-      "type": "image/jpeg",
+      "src": "/assets/favicon/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/favicon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
+      "src": "/assets/favicon/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

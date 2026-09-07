@@ -79,6 +79,23 @@ export default function PillarInfusion({ lang, onNavigate }: { lang: Language, o
           </div>
         </section>
 
+        <section className="p-8 bg-white rounded-3xl border border-botanik-green/10 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="space-y-1">
+            <span className="text-xs font-black uppercase tracking-widest text-[#D97706]">Pilier Central du Cocoon</span>
+            <h3 className="text-xl font-bold text-botanik-green">L'Extraction Botanique Séquentielle</h3>
+            <p className="text-sm text-botanik-green/70">
+              L'infusion aqueuse constitue la Phase A. Découvrez comment capturer le totum végétal intégral dans notre guide pilier complet.
+            </p>
+          </div>
+          <button
+            onClick={() => onNavigate('extraction-botanique')}
+            className="px-6 py-3 rounded-xl bg-botanik-green text-white font-bold text-xs hover:bg-[#D97706] transition-all flex-shrink-0 cursor-pointer flex items-center gap-2"
+          >
+            <span>Consulter le Guide Pilier</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </section>
+
         <section className="text-center bg-[#F4F4F0] rounded-[60px] p-12 md:p-24 border border-botanik-green/5 shadow-inner">
           <h2 className="text-3xl md:text-5xl font-black text-botanik-green mb-8 tracking-tight">
             Prêt à infuser avec précision ?

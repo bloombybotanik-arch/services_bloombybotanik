@@ -749,7 +749,7 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
           </p>
           <div className="flex flex-wrap justify-center gap-4 relative z-10">
             <button 
-              onClick={() => onNavigate('chat')}
+              onClick={() => onNavigate('abonnement')}
               className="px-9 py-4 bg-[#D97706] hover:bg-[#B45309] active:bg-[#92400E] text-white rounded-2xl font-black text-base shadow-xl hover:shadow-2xl transition-all flex items-center gap-2.5 cursor-pointer"
             >
               <span>{t.cta_primary}</span>

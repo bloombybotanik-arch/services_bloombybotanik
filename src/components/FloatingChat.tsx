@@ -202,7 +202,9 @@ export const FloatingChat = ({ user, lang }: { user?: FirebaseUser | null, lang:
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-16 h-16 bg-botanik-green text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-[#D4AF37] transition-all relative group"
+        aria-label={isOpen ? "Fermer le chat avec ALMA" : "Ouvrir le chat avec ALMA"}
+        className="w-16 h-16 !bg-[#0F261E] !text-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(15,38,30,0.4)] border-2 border-[#FAF7F2]/20 hover:!bg-[#D97706] transition-all relative group cursor-pointer"
+        style={{ backgroundColor: '#0F261E', color: '#ffffff' }}
       >
         <AnimatePresence mode="wait">
           {isOpen ? (
@@ -211,8 +213,9 @@ export const FloatingChat = ({ user, lang }: { user?: FirebaseUser | null, lang:
               initial={{ rotate: -90, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: 90, opacity: 0 }}
+              className="text-white"
             >
-              <X className="w-8 h-8" />
+              <X className="w-8 h-8 text-white stroke-[2.5]" />
             </motion.div>
           ) : (
             <motion.div
@@ -220,14 +223,15 @@ export const FloatingChat = ({ user, lang }: { user?: FirebaseUser | null, lang:
               initial={{ rotate: 90, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: -90, opacity: 0 }}
+              className="text-white"
             >
-              <MessageCircle className="w-8 h-8" />
+              <MessageCircle className="w-8 h-8 text-white stroke-[2.5]" />
             </motion.div>
           )}
         </AnimatePresence>
         {!isOpen && (
-          <span className="absolute bottom-full mb-4 right-0 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 lg:right-full lg:mr-4 bg-botanik-green text-white px-4 py-2 rounded-xl text-xs lg:text-sm font-bold opacity-0 group-hover:opacity-100 transition-all whitespace-nowrap pointer-events-none shadow-xl transform translate-y-2 group-hover:translate-y-0 lg:group-hover:-translate-y-1/2">
-            {lang === 'fr' ? "Besoin d'aide ?" : "Need help?"}
+          <span className="absolute bottom-full mb-4 right-0 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 lg:right-full lg:mr-4 !bg-[#0F261E] !text-white px-4 py-2 rounded-xl text-xs lg:text-sm font-bold opacity-0 group-hover:opacity-100 transition-all whitespace-nowrap pointer-events-none shadow-xl transform translate-y-2 group-hover:translate-y-0 lg:group-hover:-translate-y-1/2 border border-white/10">
+            {lang === 'fr' ? "Besoin d'aide ? Discutez avec ALMA" : "Need help? Chat with ALMA"}
           </span>
         )}
       </motion.button>

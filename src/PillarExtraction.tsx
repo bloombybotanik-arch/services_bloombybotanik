@@ -160,10 +160,10 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
                 ? "Le totum désigne l'ensemble des substances actives et secondaires contenues dans le végétal vivant, agissant en synergie naturelle. Pour "
                 : "The totum represents all active compounds acting in synergy. To "}
               <button 
-                onClick={() => onNavigate('totum-definition')}
+                onClick={() => onNavigate('totum-vegetal')}
                 className="text-botanik-green font-bold underline hover:text-botanik-orange transition-colors cursor-pointer"
               >
-                {isFR ? "comprendre le totum végétal" : "understand the plant totum"}
+                {isFR ? "comprendre le totum végétal et sa synergie" : "understand the plant totum and its synergy"}
               </button>
               {isFR 
                 ? ", il est indispensable de préserver ces interactions moléculaires sans isoler artificiellement une seule molécule chimique."
@@ -244,7 +244,7 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
                 ? ". En milieu hydroalcoolique dosé avec rigueur, l'alcool éthylique permet de "
                 : ". With accurate hydroalcoholic dilution, alcohol allows you to "}
               <button 
-                onClick={() => onNavigate('solvants-extraction')}
+                onClick={() => onNavigate('teinture-mere')}
                 className="text-botanik-green font-bold underline hover:text-botanik-orange transition-colors cursor-pointer"
               >
                 {isFR ? "préparer une teinture mère hydroalcoolique" : "prepare a hydroalcoholic mother tincture"}
@@ -349,7 +349,7 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
                   <td className="py-3 px-4 font-semibold text-botanik-green">Macération</td>
                   <td className="py-3 px-4">Huile, Alcool, Eau</td>
                   <td className="py-3 px-4">Ambiante (semaines)</td>
-                  <td className="py-3 px-4">Respectueuse mais très lente avec risques d'oxydation. Découvrez comment <button onClick={() => onNavigate('huile-infusee')} className="text-botanik-green font-bold underline hover:text-botanik-orange cursor-pointer">maîtriser la macération de plantes</button>.</td>
+                  <td className="py-3 px-4">Respectueuse mais très lente avec risques d'oxydation. Découvrez comment <button onClick={() => onNavigate('maceration-plantes')} className="text-botanik-green font-bold underline hover:text-botanik-orange cursor-pointer">maîtriser la macération de plantes</button>.</td>
                 </tr>
                 <tr className="bg-botanik-green/5 font-medium">
                   <td className="py-3 px-4 font-bold text-botanik-green">Méthode A/B de précision</td>
@@ -458,6 +458,47 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
           </div>
         </section>
 
+        {/* Section Écosystème du Cocoon Extraction Botanique */}
+        <section className="bg-white rounded-3xl p-8 md:p-12 border border-botanik-green/10 shadow-sm space-y-6">
+          <div className="flex items-center gap-3">
+            <span className="w-8 h-8 rounded-full bg-botanik-green/10 text-botanik-green flex items-center justify-center text-sm font-bold">
+              <Compass className="w-4 h-4" />
+            </span>
+            <h2 className="text-2xl md:text-3xl font-bold text-botanik-green">
+              {isFR ? "L'Écosystème du Cocoon 'Extraction Botanique'" : "The Botanical Extraction Ecosystem"}
+            </h2>
+          </div>
+          <p className="text-sm md:text-base text-botanik-green/80 leading-relaxed">
+            {isFR 
+              ? "Approfondissez chaque dimension de l'extraction végétale pour orchestrer vos préparations avec exactitude :"
+              : "Explore every branch of our botanical extraction cluster:"}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
+            {[
+              { id: 'infusion-botanique', title: isFR ? "Infusion Botanique" : "Botanical Infusion", desc: isFR ? "L'eau comme solvant doux : températures idéales et principes hydrosolubles." : "Low-temperature water extraction." },
+              { id: 'maceration-plantes', title: isFR ? "Macération de Plantes" : "Plant Maceration", desc: isFR ? "Extraction lente à froid pour les actifs fragiles et résines." : "Slow, light-protected maceration." },
+              { id: 'huile-infusee', title: isFR ? "Huiles Infusées & Macérâts" : "Infused Oils", desc: isFR ? "Extraction lipidique des fractions liposolubles et soins de peau." : "Lipophilic plant concentrates." },
+              { id: 'teinture-mere', title: isFR ? "Teintures Mères" : "Mother Tinctures", desc: isFR ? "Solvants hydroalcooliques et extraction des principes amers." : "Hydroalcoholic extraction." },
+              { id: 'totum-vegetal', title: isFR ? "Le Totum Végétal" : "The Plant Totum", desc: isFR ? "Pourquoi préserver la synergie intégrale de la plante vivante." : "Whole plant synergy vs isolates." },
+              { id: 'kits-botaniques', title: isFR ? "Kits Botaniques Prêts à l'Emploi" : "Curated Botanical Kits", desc: isFR ? "Plantes pures sélectionnées pour réussir vos protocoles chez vous." : "Ready-to-use botanical kits." },
+            ].map(item => (
+              <div 
+                key={item.id}
+                onClick={() => onNavigate(item.id)}
+                className="p-5 bg-[#F9F9F7] rounded-2xl border border-botanik-green/10 hover:border-botanik-orange hover:shadow-md transition-all cursor-pointer group flex flex-col justify-between"
+              >
+                <div>
+                  <h3 className="font-bold text-botanik-green text-sm group-hover:text-botanik-orange transition-colors mb-1.5 flex items-center justify-between">
+                    <span>{item.title}</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-botanik-green/40 group-hover:text-botanik-orange group-hover:translate-x-0.5 transition-all" />
+                  </h3>
+                  <p className="text-xs text-botanik-green/70 leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Section 9: CTA Final & Maillage */}
         <section className="text-center bg-[#F4F4F0] rounded-3xl p-10 md:p-16 border border-botanik-green/10 shadow-sm space-y-6">
           <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-botanik-green/10 text-botanik-green mb-2">
@@ -470,17 +511,23 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
 
           <p className="text-base text-botanik-green/70 max-w-xl mx-auto leading-relaxed">
             {isFR 
-              ? "Découvrez notre sélection de plantes sélectionnées avec rigueur et nos kits guidés pour réussir vos premières extractions."
-              : "Discover our botanicals and curated kits to master your first extractions."}
+              ? "Découvrez l'extracteur BloomLab®, nos kits de plantes sélectionnés avec rigueur et nos guides pas-à-pas pour réussir vos premières extractions."
+              : "Discover the BloomLab® extractor, our curated botanical kits, and step-by-step guides."}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
             <button 
-              onClick={() => onNavigate('boutique-kits')}
+              onClick={() => onNavigate('machine')}
               className="px-8 py-4 bg-botanik-green hover:bg-botanik-orange text-white rounded-2xl font-bold text-sm transition-all shadow-md cursor-pointer inline-flex items-center justify-center gap-2"
             >
-              {isFR ? "Démarrer avec un kit de plantes guidé" : "Start with a guided herbal kit"}
+              {isFR ? "Découvrir la BloomLab®" : "Discover BloomLab®"}
               <ArrowRight className="w-4 h-4" />
+            </button>
+            <button 
+              onClick={() => onNavigate('boutique-kits')}
+              className="px-8 py-4 bg-white text-botanik-green border border-botanik-green/15 rounded-2xl font-bold text-sm hover:bg-botanik-green/5 transition-all shadow-sm cursor-pointer"
+            >
+              {isFR ? "Découvrir nos Kits Botaniques" : "Explore Botanical Kits"}
             </button>
             <button 
               onClick={() => onNavigate('library-landing')}
@@ -491,18 +538,28 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
           </div>
 
           {/* Bloc Pour aller plus loin */}
-          <div className="pt-8 border-t border-botanik-green/10 max-w-lg mx-auto text-center">
+          <div className="pt-8 border-t border-botanik-green/10 max-w-lg mx-auto text-center space-y-2">
             <div className="text-xs uppercase tracking-widest font-bold text-botanik-green/60 mb-2">
-              {isFR ? "Pour aller plus loin dans le Journal" : "Further reading"}
+              {isFR ? "Articles de fond dans le Journal Botanique" : "Botanical Journal Articles"}
             </div>
-            <button 
-              onClick={() => onNavigate('blog', 'saule-salicine-aspirine-histoire-totum')}
-              className="text-sm font-semibold text-botanik-green underline hover:text-botanik-orange transition-colors cursor-pointer"
-            >
-              {isFR 
-                ? "Du saule à l'aspirine : ce que l'isolement nous apprend du totum →"
-                : "From willow to aspirin: what molecular isolation teaches us about totum →"}
-            </button>
+            <div>
+              <button 
+                onClick={() => onNavigate('blog', 'saule-salicine-aspirine-histoire-totum')}
+                className="text-sm font-semibold text-botanik-green underline hover:text-botanik-orange transition-colors cursor-pointer"
+              >
+                {isFR 
+                  ? "Du saule à l'aspirine : ce que l'isolement nous apprend du totum →"
+                  : "From willow to aspirin: what molecular isolation teaches us about totum →"}
+              </button>
+            </div>
+            <div>
+              <button 
+                onClick={() => onNavigate('blog')}
+                className="text-xs font-semibold text-botanik-green/70 hover:text-botanik-orange transition-colors cursor-pointer"
+              >
+                {isFR ? "Consulter l'ensemble du Journal Botanique & Blog →" : "Browse the Botanical Journal & Blog →"}
+              </button>
+            </div>
           </div>
         </section>
 

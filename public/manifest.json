@@ -4,12 +4,24 @@
   "description": "L'ingénierie de l'extraction botanique de précision.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#F9F9F7",
-  "theme_color": "#1C3F34",
+  "background_color": "#0F261E",
+  "theme_color": "#0F261E",
   "icons": [
     {
+      "src": "/assets/favicon/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/favicon/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
       "src": "/favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "48x48 32x32 16x16",
       "type": "image/x-icon"
     }
   ]
