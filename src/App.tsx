@@ -70,16 +70,24 @@ const SEOArticles = ({ view, lang, t, onNavigate }: { view: string, lang: string
   return null;
 };
 
-const PATH_VIEWS: Record<string, string> = Object.fromEntries(
-  Object.entries(VIEW_PATHS).flatMap(([view, path]) => {
-    const withSlash = path.endsWith('/') ? path : `${path}/`;
-    const withoutSlash = path.endsWith('/') ? path.slice(0, -1) : path;
-    return [
-      [withSlash, view],
-      [withoutSlash, view]
-    ];
-  })
-);
+const PATH_VIEWS: Record<string, string> = {
+  ...Object.fromEntries(
+    Object.entries(VIEW_PATHS).flatMap(([view, path]) => {
+      const withSlash = path.endsWith('/') ? path : `${path}/`;
+      const withoutSlash = path.endsWith('/') ? path.slice(0, -1) : path;
+      return [
+        [withSlash, view],
+        [withoutSlash, view]
+      ];
+    })
+  ),
+  '/bloomlab': 'machine',
+  '/bloomlab/': 'machine',
+  '/totum-vegetal': 'totum-vegetal',
+  '/totum-vegetal/': 'totum-vegetal',
+  '/abonnement': 'abonnement',
+  '/abonnement/': 'abonnement',
+};
 
 // --- SEO & DATA UTILS ---
 const POST_TITLE = "L'Élévation de l'Extraction : vers le Totum absolu";
@@ -143,7 +151,9 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
     }
 
     // Override with product-specific SEO when viewing a product detail page
-    let finalTitle = isFR && currentView === 'home' ? "Bloom by BotaniK | Infuseur & Extracteur Botanique de Précision" : currentSeo.title;
+    let finalTitle = isFR && (currentView === 'home' || currentView === 'machine') 
+      ? "BloomLab® : L'Extracteur botanique de précision pour maîtriser vos préparations maison" 
+      : currentSeo.title;
     let finalDescription = currentSeo.description;
     let productData: any = null;
 
@@ -223,8 +233,8 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
     
     const langPrefix = lang === 'fr' ? '' : `/${lang}`;
     const pageUrl = `https://bloombybotanik.com${langPrefix}${viewPath === '/' ? '' : viewPath}`;
-    const logoUrl = "https://bloombybotanik.com/logo.png";
-    const socialLogoUrl = "https://bloombybotanik.com/logo.png";
+    const logoUrl = "https://bloombybotanik.com/assets/img/logo-bloom-square-512.png";
+    const socialLogoUrl = "https://bloombybotanik.com/assets/img/logo-bloom-square-512.png";
 
     // Update canonical link to use the normalized pageUrl
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -295,12 +305,10 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
       tag.setAttribute('content', content);
     };
 
-    const bloomlabImg = "https://bloombybotanik.com/assets/images/bloomlab_main_1784887530345.jpeg";
-    let shareImage = socialLogoUrl;
+    const bloomlabImg = "https://bloombybotanik.com/assets/img/produit/bloomlab-face-1200x1200.jpg";
+    let shareImage = bloomlabImg;
     if (productData && productData.image) {
       shareImage = productData.image.startsWith('http') ? productData.image : `https://bloombybotanik.com${productData.image}`;
-    } else if (currentView === 'machine' || currentView === 'home' || currentView === 'pillar-extraction' || currentView === 'extraction-botanique') {
-      shareImage = bloomlabImg;
     }
 
     updateMetaTag('og:site_name', 'Bloom by BotaniK');
@@ -309,6 +317,11 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
     updateMetaTag('og:title', finalTitle);
     updateMetaTag('og:description', finalDescription);
     updateMetaTag('og:image', shareImage);
+    updateMetaTag('og:image:secure_url', shareImage);
+    updateMetaTag('og:image:width', '1200');
+    updateMetaTag('og:image:height', '1200');
+    updateMetaTag('og:image:type', 'image/jpeg');
+    updateMetaTag('og:image:alt', 'BloomLab, extracteur botanique domestique en acier inoxydable');
     updateMetaTag('twitter:card', 'summary_large_image', true);
     updateMetaTag('twitter:title', finalTitle, true);
     updateMetaTag('twitter:description', finalDescription, true);
@@ -969,13 +982,6 @@ const NavigationSidebar = ({ className = "", currentView, currentProductId, navi
             onClick={() => navigateTo('boutique')}
           />
           <NavItem 
-            id="machine" 
-            label={t.nav.boutique_sub.bloomlab} 
-            icon={Sparkles} 
-            isActive={currentView === 'machine'}
-            onClick={() => navigateTo('machine')}
-          />
-          <NavItem 
             id="boutique-kits" 
             label={t.nav.boutique_sub.kits} 
             icon={Package} 
@@ -1053,8 +1059,8 @@ const HybridOffer = ({ onNavigate }: { onNavigate: (view: any) => void }) => (
         </div>
         <div>
           <div className="text-3xl font-bold mb-6 flex items-baseline gap-2 flex-wrap">
-            <span>239&nbsp;€</span>
-            <span className="text-lg line-through opacity-50 font-normal">289&nbsp;€</span>
+            <span>239 €</span>
+            <span className="text-lg line-through opacity-50 font-normal">289 €</span>
             <span className="text-xs font-bold uppercase tracking-wider bg-[#D97706]/10 text-[#D97706] border border-[#D97706]/20 px-2.5 py-0.5 rounded-full whitespace-nowrap">code: Rentrée 2026</span>
           </div>
           <button onClick={() => onNavigate('boutique')} className="w-full py-4 px-6 bg-botanik-green text-white rounded-lg font-semibold hover:bg-botanik-green/90 transition-colors flex items-center justify-center gap-2 group">
@@ -1753,7 +1759,8 @@ export default function App() {
           lang={lang}
         />
       );
-      case 'culinaire': return (
+      case 'culinaire':
+      case 'gastronomie-botanique': return (
         <CulinarySection 
           isPremium={isPremium} 
           onRequirePremium={handleRequirePremium} 
@@ -1765,7 +1772,8 @@ export default function App() {
           lang={lang}
         />
       );
-      case 'cosmetiques': return (
+      case 'cosmetiques':
+      case 'cosmetique-botanique': return (
         <CosmeticsContent 
           isPremium={isPremium} 
           onRequirePremium={handleRequirePremium} 
@@ -2153,16 +2161,6 @@ export default function App() {
                     >
                       <ShoppingBag className="w-5 h-5 text-botanik-orange" />
                       <span className="font-bold text-base tracking-tight">{lang === 'fr' ? "Toute la Boutique" : "All Products"}</span>
-                    </a>
-                    <a
-                      href={VIEW_PATHS['machine']}
-                      onClick={(e) => { e.preventDefault(); navigateTo('machine'); setIsMenuOpen(false); }}
-                      className={`w-full flex items-center gap-4 px-6 py-3.5 rounded-2xl transition-all text-left group ${
-                        currentView === 'machine' ? 'bg-[#1C3F34] text-white shadow-md' : 'text-[#F9F9F7]/80 hover:bg-[#1C3F34] hover:text-white'
-                      }`}
-                    >
-                      <Sparkles className="w-5 h-5 text-botanik-orange" />
-                      <span className="font-bold text-base tracking-tight">{t.nav.boutique_sub.bloomlab}</span>
                     </a>
                     <a
                       href={VIEW_PATHS['boutique-kits'] || '/boutique/kits/'}

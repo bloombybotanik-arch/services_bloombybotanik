@@ -756,7 +756,7 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
               <ArrowRight className="w-5 h-5 stroke-[2]" />
             </button>
             <button 
-              onClick={() => onNavigate('boutique')}
+              onClick={() => onNavigate('machine')}
               className="px-9 py-4 bg-[#1C3F34] hover:bg-[#D97706] active:bg-[#B45309] text-white border border-emerald-500/30 rounded-2xl font-black text-base transition-all shadow-md cursor-pointer"
             >
               {t.cta_secondary}

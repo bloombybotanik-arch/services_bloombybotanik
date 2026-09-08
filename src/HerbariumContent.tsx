@@ -612,28 +612,28 @@ export default function HerbariumContent({
         </div>
       </div>
 
-      {/* FILTERS with dedicated shortcuts to recipe pages */}
+      {/* FILTERS with direct links to dedicated recipe pages */}
       <div className="sticky top-0 z-30 bg-[#F9F9F7]/95 backdrop-blur-md py-3 md:py-4 px-4 md:px-6 mb-8 border-b border-botanik-green/5 overflow-x-auto whitespace-nowrap scrollbar-hide">
         <div className="flex flex-wrap gap-2 items-center justify-between">
-          <div className="flex gap-2 items-center">
+          <div className="flex flex-wrap gap-2 items-center">
             {[
-              { id: 'all', label: t.filters.all, icon: Leaf, count: counts.all },
-              { id: 'therapeutic', label: t.filters.therapeutic, icon: Activity, count: counts.therapeutic },
-              { id: 'culinary', label: t.filters.culinary, icon: ChefHat, count: counts.culinary },
-              { id: 'cosmetic', label: t.filters.cosmetic, icon: Sparkles, count: counts.cosmetic }
+              { id: 'all', label: t.filters.all, icon: Leaf, count: counts.all, onClick: () => { setActiveFilter('all'); setSearchQuery(''); } },
+              { id: 'therapeutic', label: "Recettes Phytothérapie", icon: Activity, count: 56, onClick: () => onNavigate('phytotherapie-reset') },
+              { id: 'cosmetic', label: "Soins Cosmétiques", icon: Sparkles, count: 48, onClick: () => onNavigate('cosmetiques') },
+              { id: 'culinary', label: "Gastronomie Botanique", icon: ChefHat, count: 32, onClick: () => onNavigate('culinaire') }
             ].map((f) => (
               <button
                 key={f.id}
-                onClick={() => setActiveFilter(f.id as any)}
+                onClick={f.onClick}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-[10px] md:text-xs font-bold transition-all duration-200 cursor-pointer ${
-                  activeFilter === f.id 
-                    ? 'bg-[#0F261E] text-white shadow-md hover:bg-[#D97706] active:bg-[#D97706]' 
-                    : 'bg-white text-[#0F261E]/70 border border-[#0F261E]/15 hover:border-[#D97706] hover:text-[#D97706] hover:bg-[#FAF7F2] active:bg-[#D97706] active:text-white'
+                  f.id === 'all' && activeFilter === 'all'
+                    ? 'bg-[#0F261E] text-white shadow-md' 
+                    : 'bg-white text-[#0F261E]/80 border border-[#0F261E]/15 hover:border-[#D97706] hover:text-[#D97706] hover:bg-[#FAF7F2] active:bg-[#D97706] active:text-white'
                 }`}
               >
-                <f.icon className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                <f.icon className={`w-3.5 h-3.5 md:w-4 md:h-4 ${f.id === 'all' && activeFilter === 'all' ? 'text-white' : 'text-[#D97706]'}`} />
                 <span>{f.label}</span>
-                <span className={`text-[8px] md:text-[10px] px-1.5 py-0.5 rounded-md font-bold ${activeFilter === f.id ? 'bg-white/20 text-white' : 'bg-[#0F261E]/5 text-[#0F261E]/60'}`}>
+                <span className={`text-[8px] md:text-[10px] px-1.5 py-0.5 rounded-md font-bold ${f.id === 'all' && activeFilter === 'all' ? 'bg-white/20 text-white' : 'bg-[#0F261E]/5 text-[#0F261E]/60'}`}>
                   {f.count}
                 </span>
               </button>

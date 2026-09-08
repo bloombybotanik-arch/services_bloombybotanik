@@ -162,8 +162,8 @@ Propose systématiquement deux options d'achat :
 - Option B : Sachets de plantes individuelles (besoin ciblé ou complément d'herbier).
 
 CROSS-SELLING SYSTÉMIQUE :
-À chaque recommandation de plantes, suggère d'associer le "Duo Argiles" (KlinoMont® - mélange Zéolithe/Bentonite 70:30).
-Argument : "Pour que votre organisme assimile parfaitement les extraits de ces plantes de haute qualité, il est primordial de détoxifier vos émonctoires au préalable grâce à la chélation minérale de notre Duo Argiles."
+À chaque recommandation de plantes, suggère d'associer le "Duo Argiles Bloom — Purification Systémique Zeolithe-Bentonite" (mélange Zéolithe/Bentonite 70:30).
+Argument : "Pour que votre organisme assimile parfaitement les extraits de ces plantes de haute qualité, il est primordial de détoxifier vos émonctoires au préalable grâce à la chélation minérale de notre Duo Argiles Bloom."
 
 MODULE D'EXPERTISE EN EXTRACTION (CALCULATEUR) :
 Si l'utilisateur interroge sur une extraction ou un dosage :
@@ -201,6 +201,27 @@ Tu dois impérativement répondre au format JSON :
 }`;
 
 function registerAppRoutes(app: express.Express) {
+  // --- Static Assets: Favicon, Assets, Public (Never serve index.html for these) ---
+  app.get('/favicon.ico', (req, res) => {
+    const icoPath = path.join(process.cwd(), 'public', 'favicon.ico');
+    if (fs.existsSync(icoPath)) {
+      res.setHeader('Content-Type', 'image/x-icon');
+      res.setHeader('Cache-Control', 'public, max-age=86400, s-maxage=604800');
+      return res.sendFile(icoPath);
+    }
+    res.status(404).end();
+  });
+
+  app.use('/assets', express.static(path.join(process.cwd(), 'public', 'assets'), {
+    maxAge: '7d',
+    immutable: true
+  }));
+
+  app.use(express.static(path.join(process.cwd(), 'public'), {
+    maxAge: '1d',
+    index: false
+  }));
+
   // --- SAFETY: Technical paths (Prioritized) ---
   app.use((req, res, next) => {
     if (
@@ -376,6 +397,19 @@ const redirects301: Record<string, string> = {
   '/products': '/boutique/',
   '/herboristerie': '/herbier/',
   '/phytotherapie': '/phytotherapie-reset/',
+  '/abonnement': '/abonnement/',
+  
+  // Redirections catégories Herbier vers pages de recettes dédiées
+  '/herbier/phytotherapie': '/phytotherapie-reset/',
+  '/herbier/phytotherapie/': '/phytotherapie-reset/',
+  '/herbier/therapeutic': '/phytotherapie-reset/',
+  '/herbier/therapeutic/': '/phytotherapie-reset/',
+  '/herbier/cosmetique': '/cosmetique-botanique/',
+  '/herbier/cosmetique/': '/cosmetique-botanique/',
+  '/herbier/cosmetiques': '/cosmetique-botanique/',
+  '/herbier/cosmetiques/': '/cosmetique-botanique/',
+  '/herbier/culinaire': '/gastronomie-botanique/',
+  '/herbier/culinaire/': '/gastronomie-botanique/',
   
   // Unification Herbier -> Bibliothèque (URLs dynamiques)
   '/herbier/chaga_vitality': '/herbier/chaga_vitality/',
@@ -1206,17 +1240,17 @@ async function startServer() {
   // 1. Health check
   app.get('/api/health', (req, res) => res.json({ status: 'ok', timestamp: new Date().toISOString() }));
 
-  // 2. Vite Setup (DEV ONLY)
+  // 2. Register All App Routes, Static Assets & SEO 301 Middlewares
+  registerAppRoutes(app);
+
+  // 3. Vite Setup (DEV ONLY)
   if (process.env.NODE_ENV !== "production") {
     viteDevServer = await setupVite(app);
     app.use(viteDevServer.middlewares);
-    console.log("Vite middleware attached first in dev");
+    console.log("Vite middleware attached in dev");
   }
 
-  // 3. Register All App Routes and Middlewares
-  registerAppRoutes(app);
-
-  // 5. Production specific logic
+  // 4. Production specific logic
   if (process.env.NODE_ENV === "production") {
     const distPath = path.join(process.cwd(), "dist");
     app.use(express.static(distPath, { index: false }));

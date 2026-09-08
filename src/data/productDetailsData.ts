@@ -1065,8 +1065,8 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       specs: [{ label: "Format", value: "50g", icon: Leaf }]
     },
     'kit-reset': {
-      name: isFR ? "Duo Argiles" : isDE ? "Erden-Duo" : "Clay Duo",
-      subtitle: isFR ? "SYNERGIE MINÉRALE & TERRAIN" : isDE ? "MINERALISCHE SYNERGIE & TERRAIN" : "MINERAL SYNERGY & TERRAIN",
+      name: isFR ? "Duo Argiles Bloom — Purification Systémique Zeolithe-Bentonite" : isDE ? "Bloom Erden-Duo — Systemische Reinigung Zeolith-Bentonit" : "Bloom Clays Duo — Systemic Purification Zeolite-Bentonite",
+      subtitle: isFR ? "CHÉLATION NATURELLE & RÉÉQUILIBRAGE DE TERRAIN" : isDE ? "MINERALISCHE SYNERGIE & TERRAIN" : "MINERAL SYNERGY & TERRAIN",
       price: 44.90,
       originalPrice: 49.00,
       images: [duoArgilesImg],

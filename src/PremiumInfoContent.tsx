@@ -41,22 +41,26 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
 
   return (
     <div className="flex-1 bg-[#F9F9F7] min-h-screen">
-      {/* Hero */}
-      <section className="relative py-20 px-6 overflow-hidden bg-botanik-green text-white">
+      {/* Hero: Fond sombre garanti vert profond #0F261E avec texte blanc et accents ambrés */}
+      <section 
+        className="relative py-20 px-6 overflow-hidden text-white"
+        style={{ backgroundColor: '#0F261E', color: '#ffffff' }}
+      >
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 rounded-full text-xs font-bold uppercase tracking-widest mb-6 border border-white/10 text-botanik-orange"
+            className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 rounded-full text-xs font-bold uppercase tracking-widest mb-6 border border-white/20 text-[#D97706]"
           >
-            <Star className="w-3.5 h-3.5 fill-botanik-orange" />
-            {isFR ? "L'Abonnement Bloom Premium" : "Bloom Premium Membership"}
+            <Star className="w-3.5 h-3.5 fill-[#D97706]" />
+            <span style={{ color: '#D97706' }}>{isFR ? "L'Abonnement Bloom Premium" : "Bloom Premium Membership"}</span>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-tight text-white"
+            style={{ color: '#ffffff' }}
           >
             {isFR ? "Débloquez l'Intégralité du Totum Botanique" : "Unlock the Full Botanical Totum"}
           </motion.h1>
@@ -64,7 +68,8 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-base sm:text-lg text-white/85 max-w-2xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed"
+            style={{ color: '#F3F4F6' }}
           >
             {isFR 
               ? "Rejoignez le cercle des praticiens autonomes. Accédez à l'ensemble de nos protocoles cliniques de précision, aux ratios de solvants et aux synergies de terrain."
@@ -77,128 +82,138 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
       <section className="max-w-6xl mx-auto px-6 -mt-10 mb-20 relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           
-          {/* Formule 1: Digitale Mensuelle */}
-          <div className="bg-white rounded-3xl p-8 border border-botanik-green/10 shadow-lg flex flex-col justify-between">
+          {/* Formule 1: Digitale Mensuelle - Fond Ivoire Clair avec texte sombre #0F261E */}
+          <div 
+            className="rounded-3xl p-8 border border-[#E7DFD3] shadow-lg flex flex-col justify-between"
+            style={{ backgroundColor: '#FAF7F2', color: '#0F261E' }}
+          >
             <div>
-              <div className="text-xs uppercase font-bold tracking-widest text-botanik-green/60 mb-2">
+              <div className="text-xs uppercase font-bold tracking-widest text-[#0F261E]/70 mb-2">
                 {isFR ? "Formule Essentielle" : "Essential Formula"}
               </div>
-              <h3 className="text-2xl font-bold text-botanik-green mb-2">
+              <h3 className="text-2xl font-bold text-[#0F261E] mb-2" style={{ color: '#0F261E' }}>
                 {isFR ? "Digital Mensuel" : "Monthly Digital"}
               </h3>
-              <p className="text-sm text-botanik-green/70 mb-6 leading-relaxed">
+              <p className="text-sm text-[#0F261E]/80 mb-6 leading-relaxed">
                 {isFR ? "Pour explorer à votre rythme, sans engagement de durée." : "Explore at your own pace, cancel anytime."}
               </p>
               <div className="mb-6 flex items-baseline gap-1">
-                <span className="text-4xl font-black text-botanik-green">9€</span>
-                <span className="text-sm text-botanik-green/60">/mois</span>
+                <span className="text-4xl font-black text-[#0F261E]" style={{ color: '#0F261E' }}>9€</span>
+                <span className="text-sm text-[#0F261E]/70">/mois</span>
               </div>
-              <ul className="space-y-3 text-sm text-botanik-green/80 mb-8">
+              <ul className="space-y-3 text-sm text-[#0F261E]/85 mb-8">
                 <li className="flex items-center gap-3">
-                  <Check className="w-4 h-4 text-botanik-green flex-shrink-0" />
+                  <Check className="w-4 h-4 text-emerald-700 flex-shrink-0" />
                   <span>Accès aux 60+ protocoles complets</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Check className="w-4 h-4 text-botanik-green flex-shrink-0" />
+                  <Check className="w-4 h-4 text-emerald-700 flex-shrink-0" />
                   <span>Paramètres précis (t°, temps, solvants)</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Check className="w-4 h-4 text-botanik-green flex-shrink-0" />
+                  <Check className="w-4 h-4 text-emerald-700 flex-shrink-0" />
                   <span>Résiliable en 1 clic à tout moment</span>
                 </li>
               </ul>
             </div>
             <button
               onClick={() => handleSubscribe('monthly')}
-              className="w-full py-3.5 px-6 rounded-2xl border-2 border-botanik-green text-botanik-green font-bold text-sm hover:bg-botanik-green hover:text-white transition-all cursor-pointer"
+              className="w-full py-3.5 px-6 rounded-2xl border-2 border-[#0F261E] text-[#0F261E] font-bold text-sm hover:bg-[#0F261E] hover:text-white transition-all cursor-pointer"
             >
               {isFR ? "Choisir la formule mensuelle" : "Select Monthly Plan"}
             </button>
           </div>
 
-          {/* Formule 2: Bloom Complet - Formule Centrale Recommandée */}
-          <div className="bg-botanik-green text-white rounded-3xl p-8 shadow-2xl border-2 border-botanik-orange relative flex flex-col justify-between transform md:-translate-y-4">
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-botanik-orange text-white text-[11px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md">
+          {/* Formule 2: Bloom Complet - Formule Centrale Recommandée (Fond Vert Sombre #0F261E garanti, texte Blanc) */}
+          <div 
+            className="rounded-3xl p-8 shadow-2xl border-2 border-[#D97706] relative flex flex-col justify-between transform md:-translate-y-4"
+            style={{ backgroundColor: '#0F261E', color: '#ffffff' }}
+          >
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#D97706] text-white text-[11px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md">
               {isFR ? "Recommandé • Le Plus Complet" : "Recommended • Best Value"}
             </div>
             <div>
-              <div className="text-xs uppercase font-bold tracking-widest text-botanik-orange mb-2 pt-2">
+              <div className="text-xs uppercase font-bold tracking-widest text-[#D97706] mb-2 pt-2" style={{ color: '#D97706' }}>
                 {isFR ? "Accompagnement Global" : "Complete Protocol"}
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">
+              <h3 className="text-2xl font-bold text-white mb-2" style={{ color: '#ffffff' }}>
                 {isFR ? "Bloom Complet" : "Bloom Complete"}
               </h3>
-              <p className="text-sm text-white/80 mb-6 leading-relaxed">
+              <p className="text-sm text-white/85 mb-6 leading-relaxed" style={{ color: '#E5E7EB' }}>
                 {isFR ? "Le protocole complet, avec vos mélanges botaniques livrés chaque mois et l'accès expert." : "Complete protocol with botanicals delivered monthly and expert guidance."}
               </p>
               <div className="mb-6 flex items-baseline gap-1">
-                <span className="text-4xl font-black text-white">59€</span>
-                <span className="text-sm text-white/70">/mois</span>
+                <span className="text-4xl font-black text-white" style={{ color: '#ffffff' }}>59€</span>
+                <span className="text-sm text-white/75" style={{ color: '#D1D5DB' }}>/mois</span>
               </div>
               <ul className="space-y-3 text-sm text-white/90 mb-8">
                 <li className="flex items-center gap-3">
-                  <Check className="w-4 h-4 text-botanik-orange flex-shrink-0" />
-                  <span><strong>Accès illimité</strong> à tous les protocoles et recettes</span>
+                  <Check className="w-4 h-4 text-[#D97706] flex-shrink-0" />
+                  <span style={{ color: '#ffffff' }}><strong>Accès illimité</strong> à tous les protocoles et recettes</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Check className="w-4 h-4 text-botanik-orange flex-shrink-0" />
-                  <span><strong>Kits botaniques de plantes</strong> livrés chez vous</span>
+                  <Check className="w-4 h-4 text-[#D97706] flex-shrink-0" />
+                  <span style={{ color: '#ffffff' }}><strong>Kits botaniques de plantes</strong> livrés chez vous</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Check className="w-4 h-4 text-botanik-orange flex-shrink-0" />
-                  <span>Reset homéostatique personnalisé par terrain</span>
+                  <Check className="w-4 h-4 text-[#D97706] flex-shrink-0" />
+                  <span style={{ color: '#ffffff' }}>Reset homéostatique personnalisé par terrain</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Check className="w-4 h-4 text-botanik-orange flex-shrink-0" />
-                  <span>Sans engagement, liberté absolue</span>
+                  <Check className="w-4 h-4 text-[#D97706] flex-shrink-0" />
+                  <span style={{ color: '#ffffff' }}>Sans engagement, liberté absolue</span>
                 </li>
               </ul>
             </div>
             <button
               onClick={() => handleSubscribe('complet')}
-              className="w-full py-4 px-6 rounded-2xl bg-botanik-orange text-white font-bold text-sm hover:bg-white hover:text-botanik-green transition-all shadow-lg cursor-pointer"
+              className="w-full py-4 px-6 rounded-2xl bg-[#D97706] hover:bg-[#b45309] text-white font-bold text-sm transition-all shadow-lg cursor-pointer"
+              style={{ backgroundColor: '#D97706', color: '#ffffff' }}
             >
               {isFR ? "Rejoindre Bloom Complet" : "Join Bloom Complete"}
             </button>
           </div>
 
-          {/* Formule 3: Digitale Annuelle */}
-          <div className="bg-white rounded-3xl p-8 border border-botanik-green/10 shadow-lg flex flex-col justify-between">
+          {/* Formule 3: Digitale Annuelle - Fond Ivoire Clair avec texte sombre #0F261E */}
+          <div 
+            className="rounded-3xl p-8 border border-[#E7DFD3] shadow-lg flex flex-col justify-between"
+            style={{ backgroundColor: '#FAF7F2', color: '#0F261E' }}
+          >
             <div>
-              <div className="text-xs uppercase font-bold tracking-widest text-botanik-green/60 mb-2">
+              <div className="text-xs uppercase font-bold tracking-widest text-[#0F261E]/70 mb-2">
                 {isFR ? "Souveraineté Annuelle" : "Annual Sovereignty"}
               </div>
-              <h3 className="text-2xl font-bold text-botanik-green mb-2">
+              <h3 className="text-2xl font-bold text-[#0F261E] mb-2" style={{ color: '#0F261E' }}>
                 {isFR ? "Digital Annuel" : "Annual Digital"}
               </h3>
-              <p className="text-sm text-botanik-green/70 mb-6 leading-relaxed">
+              <p className="text-sm text-[#0F261E]/80 mb-6 leading-relaxed">
                 {isFR ? "L'accès illimité pendant 1 an avec 2 mois offerts inclus." : "Unlimited access for 1 full year with 2 months free."}
               </p>
               <div className="mb-6 flex items-baseline gap-1">
-                <span className="text-4xl font-black text-botanik-green">79€</span>
-                <span className="text-sm text-botanik-green/60">/an</span>
-                <span className="ml-2 text-xs bg-botanik-orange/10 text-botanik-orange font-bold px-2 py-0.5 rounded-full">
+                <span className="text-4xl font-black text-[#0F261E]" style={{ color: '#0F261E' }}>79€</span>
+                <span className="text-sm text-[#0F261E]/70">/an</span>
+                <span className="ml-2 text-xs bg-[#D97706]/10 text-[#D97706] font-bold px-2 py-0.5 rounded-full border border-[#D97706]/20">
                   {isFR ? "2 mois offerts" : "2 months free"}
                 </span>
               </div>
-              <ul className="space-y-3 text-sm text-botanik-green/80 mb-8">
+              <ul className="space-y-3 text-sm text-[#0F261E]/85 mb-8">
                 <li className="flex items-center gap-3">
-                  <Check className="w-4 h-4 text-botanik-green flex-shrink-0" />
+                  <Check className="w-4 h-4 text-emerald-700 flex-shrink-0" />
                   <span>Tout le catalogue de protocoles d'extraction</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Check className="w-4 h-4 text-botanik-green flex-shrink-0" />
+                  <Check className="w-4 h-4 text-emerald-700 flex-shrink-0" />
                   <span>Mises à jour mensuelles des nouvelles recettes</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Check className="w-4 h-4 text-botanik-green flex-shrink-0" />
+                  <Check className="w-4 h-4 text-emerald-700 flex-shrink-0" />
                   <span>Économie de plus de 28% par rapport au mensuel</span>
                 </li>
               </ul>
             </div>
             <button
               onClick={() => handleSubscribe('annual')}
-              className="w-full py-3.5 px-6 rounded-2xl border-2 border-botanik-green text-botanik-green font-bold text-sm hover:bg-botanik-green hover:text-white transition-all cursor-pointer"
+              className="w-full py-3.5 px-6 rounded-2xl border-2 border-[#0F261E] text-[#0F261E] font-bold text-sm hover:bg-[#0F261E] hover:text-white transition-all cursor-pointer"
             >
               {isFR ? "Choisir la formule annuelle (79€)" : "Select Annual Plan (79€)"}
             </button>
@@ -210,10 +225,10 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
       {/* Ce que vous débloquez */}
       <section className="max-w-5xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-botanik-green mb-4">
+          <h2 className="text-3xl font-bold text-[#0F261E] mb-4" style={{ color: '#0F261E' }}>
             {isFR ? "Ce que comprend votre Abonnement Premium" : "What is included in your Premium Membership"}
           </h2>
-          <p className="text-base text-botanik-green/70 max-w-2xl mx-auto">
+          <p className="text-base text-[#0F261E]/75 max-w-2xl mx-auto" style={{ color: '#2C4A3E' }}>
             {isFR 
               ? "Une boîte à outils complète pour comprendre le vivant et réussir vos préparations botaniques."
               : "A complete toolkit to understand plant synergies and master botanical preparations."}
@@ -221,42 +236,42 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="p-6 bg-white rounded-2xl border border-botanik-green/10 space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-botanik-green/10 flex items-center justify-center text-botanik-green">
-              <BookOpen className="w-5 h-5" />
+          <div className="p-6 bg-white rounded-2xl border border-[#0F261E]/15 shadow-sm space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-[#0F261E]/10 flex items-center justify-center text-[#0F261E]">
+              <BookOpen className="w-5 h-5 text-[#0F261E]" />
             </div>
-            <h3 className="font-bold text-botanik-green text-lg">
+            <h3 className="font-bold text-[#0F261E] text-lg" style={{ color: '#0F261E' }}>
               {isFR ? "60+ Fiches et Protocoles" : "60+ Protocols and Monographs"}
             </h3>
-            <p className="text-sm text-botanik-green/70 leading-relaxed">
+            <p className="text-sm text-[#0F261E]/80 leading-relaxed" style={{ color: '#374151' }}>
               {isFR 
                 ? "Fiches complètes avec ratios de solvants (eau, alcool, glycérine, huile), polarité et temps d'extraction."
                 : "Complete monographs with exact solvent ratios, polarities, and kinetic durations."}
             </p>
           </div>
 
-          <div className="p-6 bg-white rounded-2xl border border-botanik-green/10 space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-botanik-orange/10 flex items-center justify-center text-botanik-orange">
-              <Activity className="w-5 h-5" />
+          <div className="p-6 bg-white rounded-2xl border border-[#0F261E]/15 shadow-sm space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-[#D97706]/15 flex items-center justify-center text-[#D97706]">
+              <Activity className="w-5 h-5 text-[#D97706]" />
             </div>
-            <h3 className="font-bold text-botanik-green text-lg">
+            <h3 className="font-bold text-[#0F261E] text-lg" style={{ color: '#0F261E' }}>
               {isFR ? "Protocoles Systémiques" : "Systemic Protocols"}
             </h3>
-            <p className="text-sm text-botanik-green/70 leading-relaxed">
+            <p className="text-sm text-[#0F261E]/80 leading-relaxed" style={{ color: '#374151' }}>
               {isFR 
                 ? "Des protocoles ciblés pour accompagner les 9 terrains biologiques (Microbiome, Énergie, Sommeil, Sérénité...)."
                 : "Targeted protocols to support the 9 biological terrains (Microbiome, Energy, Sleep, Serenity...)."}
             </p>
           </div>
 
-          <div className="p-6 bg-white rounded-2xl border border-botanik-green/10 space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-botanik-green/10 flex items-center justify-center text-botanik-green">
-              <Sparkles className="w-5 h-5" />
+          <div className="p-6 bg-white rounded-2xl border border-[#0F261E]/15 shadow-sm space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-[#0F261E]/10 flex items-center justify-center text-[#0F261E]">
+              <Sparkles className="w-5 h-5 text-[#0F261E]" />
             </div>
-            <h3 className="font-bold text-botanik-green text-lg">
+            <h3 className="font-bold text-[#0F261E] text-lg" style={{ color: '#0F261E' }}>
               {isFR ? "Recettes Cosmétiques & Culinaires" : "Cosmetic & Culinary Recipes"}
             </h3>
-            <p className="text-sm text-botanik-green/70 leading-relaxed">
+            <p className="text-sm text-[#0F261E]/80 leading-relaxed" style={{ color: '#374151' }}>
               {isFR 
                 ? "Accès illimité aux ateliers : sérums précieux, baumes botaniques, huiles gastronomiques et beurres aromatiques."
                 : "Full access to cosmetic serums, botanical balms, gourmet oils, and aromatic butters."}
@@ -267,17 +282,17 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
 
       {/* FAQ */}
       <section className="max-w-4xl mx-auto px-6 py-12 mb-16">
-        <div className="bg-white rounded-3xl p-8 md:p-12 border border-botanik-green/10 shadow-sm space-y-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-botanik-green mb-6">
+        <div className="bg-white rounded-3xl p-8 md:p-12 border border-[#0F261E]/15 shadow-sm space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#0F261E] mb-6" style={{ color: '#0F261E' }}>
             {isFR ? "Questions fréquentes sur l'abonnement" : "Subscription FAQ"}
           </h2>
 
-          <div className="space-y-6 divide-y divide-botanik-green/10">
+          <div className="space-y-6 divide-y divide-[#0F261E]/10">
             <div className="pt-4 first:pt-0">
-              <h4 className="font-bold text-botanik-green text-base mb-2">
+              <h4 className="font-bold text-[#0F261E] text-base mb-2" style={{ color: '#0F261E' }}>
                 {isFR ? "L'abonnement est-il sans engagement ?" : "Is the subscription commitment-free?"}
               </h4>
-              <p className="text-sm text-botanik-green/80 leading-relaxed">
+              <p className="text-sm text-[#0F261E]/80 leading-relaxed" style={{ color: '#374151' }}>
                 {isFR 
                   ? "Oui, absolument. Vous pouvez résilier en un clic depuis votre espace membre à tout moment. Vous conserverez l'accès jusqu'à la fin de votre période en cours."
                   : "Yes, absolutely. You can cancel with a single click from your member account at any time."}
@@ -285,10 +300,10 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
             </div>
 
             <div className="pt-4">
-              <h4 className="font-bold text-botanik-green text-base mb-2">
+              <h4 className="font-bold text-[#0F261E] text-base mb-2" style={{ color: '#0F261E' }}>
                 {isFR ? "Dois-je obligatoirement posséder la machine BloomLab® ?" : "Do I need the BloomLab® machine?"}
               </h4>
-              <p className="text-sm text-botanik-green/80 leading-relaxed">
+              <p className="text-sm text-[#0F261E]/80 leading-relaxed" style={{ color: '#374151' }}>
                 {isFR 
                   ? "Non, les savoirs et protocoles sont consultables librement. Cependant, l'utilisation de la BloomLab® garantit une précision thermique à ±0,5°C et une agitation cinétique impossible à reproduire au bain-marie."
                   : "No, the monographs and recipes can be consulted on any device. However, BloomLab allows you to execute them with degree-level thermal precision."}
@@ -296,10 +311,10 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
             </div>
 
             <div className="pt-4">
-              <h4 className="font-bold text-botanik-green text-base mb-2">
+              <h4 className="font-bold text-[#0F261E] text-base mb-2" style={{ color: '#0F261E' }}>
                 {isFR ? "Quelle est la différence entre Bloom Complet et l'abonnement digital ?" : "Difference between Bloom Complete and Digital?"}
               </h4>
-              <p className="text-sm text-botanik-green/80 leading-relaxed">
+              <p className="text-sm text-[#0F261E]/80 leading-relaxed" style={{ color: '#374151' }}>
                 {isFR 
                   ? "L'abonnement digital (9€/mois) vous donne accès à tous les contenus numériques. La formule Bloom Complet (59€/mois) inclut en plus la réception régulière de nos mélanges botaniques rigoureusement sourcés pour réaliser vos cures en toute sérénité."
                   : "The digital plan provides complete library access. The Bloom Complete plan also includes our physical botanical blends shipped directly to your door."}
@@ -311,10 +326,10 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
 
       {/* Mandatory Disclaimer */}
       <section className="max-w-4xl mx-auto px-6 pb-20">
-        <div className="p-6 bg-botanik-green/5 rounded-2xl border border-botanik-green/10 flex items-start gap-4 text-xs text-botanik-green/80 leading-relaxed">
-          <AlertCircle className="w-5 h-5 text-botanik-green flex-shrink-0 mt-0.5" />
-          <p>
-            <strong>{isFR ? "Avertissement : " : "Disclaimer: "}</strong>
+        <div className="p-6 bg-[#0F261E]/5 rounded-2xl border border-[#0F261E]/15 flex items-start gap-4 text-xs text-[#0F261E]/85 leading-relaxed">
+          <AlertCircle className="w-5 h-5 text-[#0F261E] flex-shrink-0 mt-0.5" />
+          <p style={{ color: '#1F2937' }}>
+            <strong className="text-[#0F261E]">{isFR ? "Avertissement : " : "Disclaimer: "}</strong>
             {isFR 
               ? "Bloom by BotaniK propose une approche éducative de la préparation botanique. Nos contenus ne remplacent pas un avis médical, un diagnostic ou un traitement."
               : "Bloom by BotaniK offers an educational approach to botanical preparation. Our content does not replace medical advice, diagnosis, or treatment."}

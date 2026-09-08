@@ -85,10 +85,21 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
-              {(t.hero as any).title || "BloomLab® :"} <br />
-              <span className="text-[#D97706] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold">
-                {(t.hero as any).title_accent || "L'Extracteur botanique de précision pour maîtriser vos préparations maison"}
-              </span>
+              {lang === 'fr' ? (
+                <>
+                  BloomLab® : <br />
+                  <span className="text-[#D97706] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold">
+                    L'Extracteur botanique de précision pour maîtriser vos préparations maison
+                  </span>
+                </>
+              ) : (
+                <>
+                  {(t.hero as any)?.title || "BloomLab® :"} <br />
+                  <span className="text-[#D97706] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold">
+                    {(t.hero as any)?.title_accent || "Precision Botanical Extractor"}
+                  </span>
+                </>
+              )}
             </h1>
           </div>
 

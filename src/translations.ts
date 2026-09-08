@@ -48,7 +48,7 @@ export const translations = {
       },
       shop: {
         title: "Boutique BloomLab : Extracteur Botanique & Machine d'infusion de plantes",
-        description: "Équipez-vous du meilleur infuseur botanique de précision pour vos infusions aux plantes médicinales. Retrouvez aussi KlinoMont pour une purification systémique.",
+        description: "Équipez-vous du meilleur infuseur botanique de précision pour vos infusions aux plantes médicinales. Retrouvez aussi le Duo Argiles Bloom pour une purification systémique.",
         h1: "La Boutique BloomLab : Ingénierie de la Vitalité et Souveraineté",
         intro: "Nos équipes vous accompagnent dans votre projet de soins sur mesure. Du BloomLab® aux infusions arômatiques, reprenez le contrôle de votre souveraineté sanitaire.",
       },
@@ -813,9 +813,9 @@ export const translations = {
           description: "Protocole de soutien immunitaire pour les périodes de froid. Une synergie puissante pour renforcer les barrières naturelles de l'organisme."
         },
         kit_reset: {
-          name: "Duo Argiles KlinoMont — Purification Systémique",
+          name: "Duo Argiles Bloom — Purification Systémique Zeolithe-Bentonite",
           subtitle: "CHÉLATION NATURELLE & RÉÉQUILIBRAGE DE TERRAIN",
-          description: "Le Duo Argiles KlinoMont combine Zéolithe et Bentonite (ratio 70:30) avec une microporosité de 6µm pour une purification systémique et une chélation naturelle de grade Pharmacopée."
+          description: "Le Duo Argiles Bloom combine Zéolithe et Bentonite (ratio 70:30) avec une microporosité de 6µm pour une purification systémique et une chélation naturelle de grade Pharmacopée."
         },
         freemium_access: {
           name: "Accès Découverte — 10 Recettes Gratuites",
@@ -2427,7 +2427,7 @@ export const translations = {
           description: "Immune support protocol for cold periods. A powerful synergy to strengthen the organism's natural barriers."
         },
         kit_reset: {
-          name: "Clay Duo",
+          name: "Bloom Clays Duo — Systemic Purification Zeolite-Bentonite",
           subtitle: "MINERAL SYNERGY & TERRAIN",
           description: "Association of natural zeolites and bentonites (European Pharmacopoeia grade) for terrain support."
         },
@@ -3927,7 +3927,7 @@ export const translations = {
           description: "Immununterstützungsprotokoll für kalte Perioden. Eine kraftvolle Synergie zur Stärkung der natürlichen Barrieren des Organismus."
         },
         kit_reset: {
-          name: "Erden-Duo",
+          name: "Bloom Erden-Duo — Systemische Reinigung Zeolith-Bentonit",
           subtitle: "MINERALISCHE SYNERGIE & TERRAIN",
           description: "Kombination aus natürlichen Zeolithen und Bentoniten (europäischer Arzneibuchgrad) zur Unterstützung des Terrains."
         },

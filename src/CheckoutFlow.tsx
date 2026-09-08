@@ -379,7 +379,7 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
                       <div className="font-bold text-[#1B3022] text-sm">{item.name}</div>
                       <div className="text-xs opacity-60">{t.summary.quantity} {item.quantity}</div>
                     </div>
-                    <div className="font-bold text-[#1B3022]">{(displayPrice * item.quantity).toFixed(2).replace('.', ',')}&nbsp;€</div>
+                    <div className="font-bold text-[#1B3022]">{(displayPrice * item.quantity).toFixed(2).replace('.', ',')} €</div>
                   </div>
                 );
               })}
@@ -388,11 +388,11 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
             <div className="pt-6 border-t border-[#1B3022]/10 space-y-3">
               <div className="flex justify-between text-sm opacity-60">
                 <span>{cartT.summary.shipping} ({shippingMethod})</span>
-                <span className="font-bold text-[#1B3022]">{shipping === 0 ? t.summary.shipping_free : `${shipping.toFixed(2).replace('.', ',')}&nbsp;€`}</span>
+                <span className="font-bold text-[#1B3022]">{shipping === 0 ? t.summary.shipping_free : `${shipping.toFixed(2).replace('.', ',')} €`}</span>
               </div>
               <div className="flex justify-between items-center pt-2">
                 <span className="text-lg font-bold">{t.summary.total}</span>
-                <span className="text-2xl font-bold text-[#F97316]">{finalTotal.toFixed(2).replace('.', ',')}&nbsp;€</span>
+                <span className="text-2xl font-bold text-[#F97316]">{finalTotal.toFixed(2).replace('.', ',')} €</span>
               </div>
             </div>
           </div>

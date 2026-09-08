@@ -1,21 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- Core Pages -->
   <url>
     <loc>https://bloombybotanik.com/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/"/>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/assets/img/produit/bloomlab-face-1200x1200.jpg</image:loc>
+      <image:title>BloomLab® : extracteur botanique pour préparer vos extraits maison</image:title>
+      <image:caption>BloomLab, extracteur botanique domestique en acier inoxydable</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://bloombybotanik.com/bloomlab/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/assets/img/produit/bloomlab-extracteur-botanique-inox-face.jpg</image:loc>
+      <image:title>BloomLab® — Vue de face extracteur botanique inox</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/assets/img/produit/bloomlab-extracteur-botanique-inox-3quarts.jpg</image:loc>
+      <image:title>BloomLab® — Vue 3/4 bol et écran de commande</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/assets/img/produit/bloomlab-extracteur-botanique-cuisine.jpg</image:loc>
+      <image:title>BloomLab® — En situation en cuisine atelier botanique</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://bloombybotanik.com/abonnement/</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bloombybotanik.com/herbier/</loc>

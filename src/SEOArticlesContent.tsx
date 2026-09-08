@@ -203,7 +203,10 @@ export const TotumDefinition = ({ lang, t, onNavigate }: SEOArticleProps) => {
   return (
     <article className="bg-[#F9F9F7] text-[#0F261E] min-h-screen pb-28">
       {/* HEADER HERO */}
-      <header className="relative bg-[#0F261E] text-white pt-24 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <header 
+        className="relative text-white pt-24 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        style={{ backgroundColor: '#0F261E', color: '#ffffff' }}
+      >
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#D97706_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
         
         <div className="max-w-4xl mx-auto relative z-10 space-y-6 text-center sm:text-left">
@@ -629,7 +632,10 @@ export const TotumDefinition = ({ lang, t, onNavigate }: SEOArticleProps) => {
 
         {/* CTA VERS LA BOUTIQUE */}
         <section className="pt-6">
-          <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-[#0F261E] to-[#1C3F34] text-white text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-8 shadow-xl">
+          <div 
+            className="p-8 sm:p-12 rounded-3xl text-white text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-8 shadow-xl"
+            style={{ backgroundColor: '#0F261E', color: '#ffffff' }}
+          >
             <div className="space-y-3 max-w-xl">
               <span className="inline-block px-3 py-1 rounded-full bg-white/10 text-[#D97706] text-xs font-bold uppercase tracking-wider">
                 {isFR ? "Passer à la pratique" : "Take Action"}

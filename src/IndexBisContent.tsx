@@ -63,7 +63,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
   const [activeUniverse, setActiveUniverse] = useState<UniverseType>('culinaire');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [cartItem, setCartItem] = useState({ title: "Pack Signature Rentrée — BloomLab® + Duo Argiles", price: 289 });
+  const [cartItem, setCartItem] = useState({ title: "Pack Signature Rentrée — BloomLab® + Duo Argiles Bloom", price: 289 });
   const [selectedHeroImage, setSelectedHeroImage] = useState<string>(heroImg1);
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [newsletterEmail, setNewsletterEmail] = useState('');
@@ -91,7 +91,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
     setCartItem({
       title: type === 'solo' 
         ? (isFR ? "Coffret BloomLab® Solo — Rentrée 2026" : isDE ? "BloomLab® Solo Set — 2026" : "BloomLab® Solo Set — 2026 Edition") 
-        : (isFR ? "Pack Signature Rentrée — BloomLab® + Duo Argiles" : isDE ? "Signatur-Paket — BloomLab® + Ton-Duo" : "Signature Pack — BloomLab® + Clay Duo"),
+        : (isFR ? "Pack Signature Rentrée — BloomLab® + Duo Argiles Bloom" : isDE ? "Signatur-Paket — BloomLab® + Bloom Erden-Duo" : "Signature Pack — BloomLab® + Bloom Clay Duo"),
       price: price
     });
     setIsCartOpen(true);
@@ -1378,7 +1378,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   </li>
                   <li className="flex items-center gap-3 text-sm font-medium text-white/90">
                     <Check className="w-5 h-5 text-[#D97706] shrink-0" />
-                    <span>{isFR ? "Duo Argiles Minérales (Bentonite & Zéolite)" : "Mineral Clay Duo (Bentonite & Zeolite)"}</span>
+                    <span>{isFR ? "Duo Argiles Bloom — Purification Systémique Zeolithe-Bentonite" : "Bloom Clay Duo — Systemic Purification Zeolite-Bentonite"}</span>
                   </li>
                   <li className="flex items-center gap-3 text-sm font-medium text-white/90">
                     <Check className="w-5 h-5 text-[#D97706] shrink-0" />
@@ -1394,8 +1394,8 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 <div className="p-4 rounded-2xl bg-black/20 border border-white/10 text-xs text-white/70 leading-relaxed">
                   <p>
                     {isFR 
-                      ? "📌 Note : Le Duo Argiles est une matière première minérale documentée sélectionnée pour les synergies botaniques. Usage éducatif documenté dans le guide. Ne se substitue à aucun traitement médical." 
-                      : "📌 Note: Clay Duo is a documented mineral raw material. Educational use as detailed in guide. Not a substitute for medical advice."}
+                      ? "📌 Note : Le Duo Argiles Bloom (Purification Systémique Zeolithe-Bentonite) est une matière première minérale documentée sélectionnée pour les synergies botaniques. Usage éducatif documenté dans le guide. Ne se substitue à aucun traitement médical." 
+                      : "📌 Note: Bloom Clay Duo (Systemic Purification Zeolite-Bentonite) is a documented mineral raw material. Educational use as detailed in guide. Not a substitute for medical advice."}
                   </p>
                 </div>
               </div>

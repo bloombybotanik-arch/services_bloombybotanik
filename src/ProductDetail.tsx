@@ -83,10 +83,10 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
 
           <div className="bg-[#F9F9F7] p-6 md:p-8 rounded-[32px] border border-[#1B3022]/5 mb-8 md:mb-10">
             <div className="flex items-baseline gap-3 md:gap-4 mb-4 md:mb-6 flex-wrap">
-              <span className="text-3xl md:text-5xl font-bold text-[#1B3022]">{sheet.price.toFixed(2)}&nbsp;€</span>
+              <span className="text-3xl md:text-5xl font-bold text-[#1B3022]">{sheet.price.toFixed(2).replace('.', ',')} €</span>
               {sheet.originalPrice && (
                 <div className="flex items-center gap-2 flex-wrap">
-                  <span className="text-[#1B3022]/40 line-through text-lg md:text-xl">{sheet.originalPrice.toFixed(2)}&nbsp;€</span>
+                  <span className="text-[#1B3022]/40 line-through text-lg md:text-xl">{sheet.originalPrice.toFixed(2).replace('.', ',')} €</span>
                   <span className="text-xs font-bold uppercase tracking-wider bg-[#D97706]/10 text-[#D97706] border border-[#D97706]/20 px-2.5 py-1 rounded-full whitespace-nowrap">
                     code: Rentrée 2026
                   </span>
