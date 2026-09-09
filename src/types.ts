@@ -3,6 +3,7 @@ export type View = 'home' | 'machine' | 'phytotherapie-reset' | 'votre-pratique'
 
 export const VIEW_PATHS: Record<string, string> = {
   home: '/', 
+  indexbis: '/',
   machine: '/produit/bloomlab/', 
   'phytotherapie-reset': '/phytotherapie-reset/',
   'votre-pratique': '/phytotherapie-reset/',
@@ -60,7 +61,6 @@ export const VIEW_PATHS: Record<string, string> = {
   privacy: '/politique-de-confidentialite/',
   mentions: '/mentions-legales/',
   returns: '/retour-et-remboursement/',
-  indexbis: '/indexbis/',
   'newsletter-preferences': '/newsletter/preferences/',
   'admin-newsletter': '/admin/newsletter/',
   'recettes': '/recettes/',

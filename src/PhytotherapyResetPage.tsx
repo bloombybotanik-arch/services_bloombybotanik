@@ -180,7 +180,19 @@ const PhaseDetailModal: React.FC<{
   );
 };
 
-export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate: (view: any) => void, lang: Language }) {
+export default function PhytotherapyResetPage({ 
+  onNavigate, 
+  lang,
+  isPremium = false,
+  user = null,
+  onRequireAuth
+}: { 
+  onNavigate: (view: any) => void, 
+  lang: Language,
+  isPremium?: boolean,
+  user?: any,
+  onRequireAuth?: () => void
+}) {
   const t = translations[lang].phytotherapyReset;
   const almaT = translations[lang].alma_recommendation;
   const [activeTab, setActiveTab] = useState<'protocol' | 'supplements' | 'chronobiology'>('protocol');
@@ -200,41 +212,47 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
     highlight: phase.type === 'diagnostic'
   }));
 
+  // Mode freemium : les 3 premiers sont libres, à partir de Vitamine D3 + K2 (index 3) c'est réservé à l'abonnement
   const supplements = [
-    { name: "Oméga-3 EPA/DHA", dose: "2g / jour", role: "Soutien des membranes et régulation de l'inflammation lipidique." },
-    { name: "Magnésium Bisglycinate", dose: "300mg / soir", role: "Relâchement nerveux et activation de plus de 300 réactions enzymatiques." },
-    { name: "L-Glutamine", dose: "5g / matin", role: "Carburant des entérocytes et réparation de la barrière intestinale (T1)." },
-    { name: "Vitamine D3 + K2 (MK7)", dose: "2000 UI / 100µg", role: "Modulation immunitaire et fixation minérale osseuse et vasculaire." },
-    { name: "Sélénium", dose: "200µg / jour", role: "Cofacteur de la thyroïde et protection contre le stress oxydatif." },
-    { name: "Glycine", dose: "3g / soir", role: "Acide aminé fondamental pour la structure du fascia et le sommeil profond." },
-    { name: "Vitamines B (B-Complex)", dose: "1 gélule / matin", role: "Formes actives (B6, B9, B12) pour le métabolisme énergétique et mitochondrial." },
-    { name: "Vitamine C (Rhodiola)", dose: "500mg / matin", role: "Soutien des surrénales et protection antioxydante systémique." }
+    { name: "Oméga-3 EPA/DHA", dose: "2g / jour", role: "Soutien des membranes et régulation de l'inflammation lipidique.", isFree: true },
+    { name: "Magnésium Bisglycinate", dose: "300mg / soir", role: "Relâchement nerveux et activation de plus de 300 réactions enzymatiques.", isFree: true },
+    { name: "L-Glutamine", dose: "5g / matin", role: "Carburant des entérocytes et réparation de la barrière intestinale (T1).", isFree: true },
+    { name: "Vitamine D3 + K2 (MK7)", dose: "2000 UI / 100µg", role: "Modulation immunitaire et fixation minérale osseuse et vasculaire.", isFree: false },
+    { name: "Sélénium", dose: "200µg / jour", role: "Cofacteur de la thyroïde et protection contre le stress oxydatif.", isFree: false },
+    { name: "Glycine", dose: "3g / soir", role: "Acide aminé fondamental pour la structure du fascia et le sommeil profond.", isFree: false },
+    { name: "Vitamines B (B-Complex)", dose: "1 gélule / matin", role: "Formes actives (B6, B9, B12) pour le métabolisme énergétique et mitochondrial.", isFree: false },
+    { name: "Vitamine C (Rhodiola)", dose: "500mg / matin", role: "Soutien des surrénales et protection antioxydante systémique.", isFree: false }
   ];
 
+  // Chronobiologie : activation_matin est libre, à partir de métabolisme_midi (et phases suivantes) c'est réservé à l'abonnement
   const chronoSteps = [
     { 
       id: 'activation_matin',
       icon: Sun, 
       color: "text-orange-500", 
-      data: chronobiologyData.activation_matin
+      data: chronobiologyData.activation_matin,
+      isFree: true
     },
     { 
       id: 'metabolisme_midi',
       icon: Zap, 
       color: "text-yellow-500", 
-      data: chronobiologyData.metabolisme_midi
+      data: chronobiologyData.metabolisme_midi,
+      isFree: false
     },
     { 
       id: 'preparation_soir',
       icon: Moon, 
       color: "text-blue-500", 
-      data: chronobiologyData.preparation_soir
+      data: chronobiologyData.preparation_soir,
+      isFree: false
     },
     { 
       id: 'regeneration_nuit',
       icon: Sparkles, 
       color: "text-purple-500", 
-      data: chronobiologyData.regeneration_nuit
+      data: chronobiologyData.regeneration_nuit,
+      isFree: false
     }
   ];
 
@@ -566,39 +584,104 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
         )}
 
         {activeTab === 'supplements' && (
-          <div className="animate-in slide-in-from-bottom duration-700">
+          <div className="animate-in slide-in-from-bottom duration-700 max-w-4xl mx-auto">
             <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 bg-[#0F261E]/5 border border-[#0F261E]/10 px-3.5 py-1.5 rounded-full text-[11px] font-bold text-[#0F261E] mb-4">
+                <span>Mode Freemium : 3 compléments libres d'accès • 5 réservés aux abonnés</span>
+              </div>
               <h2 className="text-2xl md:text-4xl font-black text-[#0F261E] mb-4">Compléments Alimentaires</h2>
               <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto">
                 Le socle indispensable pour que le Totum végétal puisse s'exprimer pleinement dans vos cellules.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-5">
               {supplements.map((item, idx) => {
                 const theme = pastelThemes[idx % pastelThemes.length];
+                const isLocked = !item.isFree && !isPremium;
                 return (
-                  <div key={idx} className={`${theme.bg} p-6 sm:p-7 rounded-[32px] border ${theme.border} shadow-md flex gap-5 items-center`}>
-                    <div className="w-12 h-12 bg-white rounded-2xl border border-slate-200 flex items-center justify-center shrink-0 shadow-xs">
-                      <Beaker className="w-6 h-6 stroke-[1.5] text-[#2D3748]" />
+                  <div key={idx} className={`${theme.bg} p-6 sm:p-7 rounded-[32px] border ${theme.border} shadow-md flex gap-5 items-start relative overflow-hidden`}>
+                    <div className="w-12 h-12 bg-white rounded-2xl border border-slate-200 flex items-center justify-center shrink-0 shadow-xs mt-0.5">
+                      {isLocked ? (
+                        <Lock className="w-6 h-6 stroke-[1.5] text-[#92400E]" />
+                      ) : (
+                        <Beaker className="w-6 h-6 stroke-[1.5] text-[#2D3748]" />
+                      )}
                     </div>
-                    <div>
-                      <div className="flex items-center gap-2.5 mb-1.5 flex-wrap">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1.5 flex-wrap">
                         <h4 className="font-black text-[#0F261E] text-base">{item.name}</h4>
-                        <span className="text-[10px] bg-[#0F261E] text-white px-2.5 py-0.5 rounded-full font-black uppercase tracking-wider">{item.dose}</span>
+                        {isLocked ? (
+                          <span className="text-[10px] bg-[#92400E] text-white px-2.5 py-0.5 rounded-full font-black uppercase tracking-wider flex items-center gap-1">
+                            <Lock className="w-2.5 h-2.5" /> Abonnement
+                          </span>
+                        ) : (
+                          <span className="text-[10px] bg-[#0F261E] text-white px-2.5 py-0.5 rounded-full font-black uppercase tracking-wider">{item.dose}</span>
+                        )}
                       </div>
-                      <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">{item.role}</p>
+                      
+                      {isLocked ? (
+                        <div className="mt-2 space-y-2">
+                          <p className="text-xs text-slate-500 italic">
+                            Dosage et explications thérapeutiques réservés aux abonnés digitaux.
+                          </p>
+                          <button
+                            onClick={() => onNavigate('abonnement')}
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#D97706] hover:bg-[#B45309] text-white text-xs font-bold rounded-xl shadow-xs transition-colors cursor-pointer"
+                          >
+                            <Lock className="w-3.5 h-3.5" /> Débloquer (9 €/mois)
+                          </button>
+                        </div>
+                      ) : (
+                        <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">{item.role}</p>
+                      )}
                     </div>
                   </div>
                 );
               })}
             </div>
+
+            {/* Freemium Upgrade Box if not premium */}
+            {!isPremium && (
+              <div className="mt-12 bg-gradient-to-br from-[#0F261E] to-[#1C3F34] text-white p-8 md:p-12 rounded-[36px] border border-[#D97706]/30 shadow-2xl relative overflow-hidden">
+                <div className="max-w-3xl relative z-10">
+                  <div className="inline-flex items-center gap-2 bg-[#D97706]/20 text-[#D97706] px-3.5 py-1.5 rounded-full text-[11px] font-black uppercase tracking-widest mb-4 border border-[#D97706]/30">
+                    <Lock className="w-3.5 h-3.5" />
+                    Mode Freemium • Compléments Systémiques
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-black mb-3">
+                    Débloquez l'Intégralité des Fiches & Posologies de Terrain
+                  </h3>
+                  <p className="text-sm md:text-base text-slate-200 leading-relaxed mb-8">
+                    À partir de la Vitamine D3 + K2 (MK7), les posologies précises, cofacteurs d'assimilation et protocoles de micronutrition sont réservés aux abonnés. Profitez d'un abonnement digital sans engagement à 9 €/mois, résiliable chaque mois en 1 clic.
+                  </p>
+                  <div className="flex flex-col sm:flex-row items-center gap-4">
+                    <button
+                      onClick={() => onNavigate('abonnement')}
+                      className="w-full sm:w-auto px-8 py-4 bg-[#D97706] hover:bg-[#B45309] active:bg-[#92400E] text-white rounded-2xl font-black text-sm md:text-base shadow-lg transition-all flex items-center justify-center gap-3 cursor-pointer"
+                    >
+                      <span>S'abonner à l'Abonnement Digital (9 €/mois)</span>
+                      <ArrowRight className="w-5 h-5 stroke-[2]" />
+                    </button>
+                    <button
+                      onClick={() => onRequireAuth ? onRequireAuth() : onNavigate('account')}
+                      className="w-full sm:w-auto px-6 py-4 bg-white/10 hover:bg-white/20 text-white rounded-2xl font-bold text-sm transition-colors cursor-pointer text-center"
+                    >
+                      Déjà abonné ? Se connecter
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         )}
 
         {activeTab === 'chronobiology' && (
           <div className="animate-in slide-in-from-bottom duration-700">
             <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 bg-[#0F261E]/5 border border-[#0F261E]/10 px-3.5 py-1.5 rounded-full text-[11px] font-bold text-[#0F261E] mb-4">
+                <span>Mode Freemium : Matin en accès libre • Dès Métabolisme (11h) réservé aux abonnés</span>
+              </div>
               <h2 className="text-2xl md:text-4xl font-black text-[#0F261E] mb-4">Chronobiologie du Protocole</h2>
               <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto">
                 Respecter les rythmes circadiens pour une efficacité décuplée de votre pharmacie intérieure. Cliquez sur une phase pour découvrir son protocole.
@@ -609,6 +692,7 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
                {chronoSteps.map((step, idx) => {
                  const theme = pastelThemes[idx % pastelThemes.length];
                  const isSelected = selectedChrono === step.id;
+                 const isLocked = !step.isFree && !isPremium;
                  return (
                    <div key={idx} className="space-y-4">
                      <button 
@@ -622,7 +706,14 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
                           </div>
                         </div>
                         <div className="flex-1">
-                           <h4 className="text-xl font-black text-[#0F261E] mb-1.5">{step.data.title}</h4>
+                           <div className="flex items-center gap-3 mb-1.5 flex-wrap">
+                             <h4 className="text-xl font-black text-[#0F261E]">{step.data.title}</h4>
+                             {isLocked && (
+                               <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#92400E] text-white text-[10px] font-black uppercase tracking-wider">
+                                 <Lock className="w-2.5 h-2.5" /> Abonnement Digital
+                               </span>
+                             )}
+                           </div>
                            <p className="text-sm text-slate-700 leading-relaxed">{step.data.short_text}</p>
                         </div>
                         <div className="hidden md:block">
@@ -636,68 +727,104 @@ export default function PhytotherapyResetPage({ onNavigate, lang }: { onNavigate
                      </button>
                      
                      {isSelected && (
-                       <motion.div 
-                        initial={{ opacity: 0, y: -15 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="bg-white p-8 sm:p-10 rounded-[32px] border border-[#E7DFD3] mx-2 sm:mx-6 shadow-xl"
-                       >
-                         <div className="mb-10">
-                           <p className="text-slate-800 font-medium leading-relaxed italic mb-8 p-5 bg-[#FAF7F2] rounded-2xl border border-[#E7DFD3]">
-                             "{step.data.long_text}"
+                       isLocked ? (
+                         <motion.div 
+                          initial={{ opacity: 0, y: -15 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="bg-[#FAF7F2] p-8 md:p-10 rounded-[32px] border-2 border-[#D97706]/40 mx-2 sm:mx-6 shadow-xl text-center"
+                         >
+                           <div className="w-14 h-14 mx-auto rounded-2xl bg-[#0F261E] text-[#D97706] flex items-center justify-center mb-4 shadow-md">
+                             <Lock className="w-7 h-7 stroke-[1.75]" />
+                           </div>
+                           <div className="inline-block px-3 py-1 bg-[#D97706]/10 text-[#B45309] text-xs font-black uppercase tracking-widest rounded-full mb-3">
+                             Phase Réservée aux Abonnés
+                           </div>
+                           <h4 className="text-2xl md:text-3xl font-black text-[#0F261E] mb-3">
+                             {step.data.title} : Accès Verrouillé
+                           </h4>
+                           <p className="text-sm md:text-base text-slate-700 max-w-2xl mx-auto mb-6 leading-relaxed">
+                             À partir de la phase Métabolisme (11h-15h), les protocoles d'assimilation cellulaire, synergies de plantes et conseils circadiens approfondis sont réservés aux abonnés. Abonnement digital à 9 €/mois, sans engagement, résiliable chaque mois en 1 clic.
                            </p>
-                           
-                           <div className="grid md:grid-cols-2 gap-10">
-                             <div>
-                               <h5 className="text-xs font-black text-[#0F261E] uppercase tracking-widest mb-4 flex items-center gap-2">
-                                 <CheckCircle className="w-4 h-4 stroke-[1.5] text-[#2D3748]" /> Objectifs
-                               </h5>
-                               <ul className="space-y-3">
-                                 {step.data.objectives.map((obj, i) => (
-                                   <li key={i} className="flex gap-2.5 text-slate-700 text-sm leading-relaxed">
-                                     <span className="w-1.5 h-1.5 rounded-full bg-[#0F261E] shrink-0 mt-2" />
-                                     {obj}
-                                   </li>
-                                 ))}
-                                </ul>
-                             </div>
+                           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-md mx-auto">
+                             <button
+                               onClick={() => onNavigate('abonnement')}
+                               className="w-full sm:w-auto px-8 py-3.5 bg-[#D97706] hover:bg-[#B45309] text-white rounded-2xl font-black text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                             >
+                               <span>S'abonner (9 €/mois)</span>
+                               <ArrowRight className="w-4 h-4 stroke-[2]" />
+                             </button>
+                             <button
+                               onClick={() => onRequireAuth ? onRequireAuth() : onNavigate('account')}
+                               className="w-full sm:w-auto px-6 py-3.5 bg-white border border-[#E7DFD3] hover:bg-slate-50 text-slate-700 rounded-2xl font-bold text-sm transition-colors cursor-pointer"
+                             >
+                               Déjà membre ? Se connecter
+                             </button>
+                           </div>
+                         </motion.div>
+                       ) : (
+                         <motion.div 
+                          initial={{ opacity: 0, y: -15 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="bg-white p-8 sm:p-10 rounded-[32px] border border-[#E7DFD3] mx-2 sm:mx-6 shadow-xl"
+                         >
+                           <div className="mb-10">
+                             <p className="text-slate-800 font-medium leading-relaxed italic mb-8 p-5 bg-[#FAF7F2] rounded-2xl border border-[#E7DFD3]">
+                               "{step.data.long_text}"
+                             </p>
                              
-                             <div>
-                               <h5 className="text-xs font-black text-[#0F261E] uppercase tracking-widest mb-4 flex items-center gap-2">
-                                 <FlaskConical className="w-4 h-4 stroke-[1.5] text-[#2D3748]" /> Plantes Clés
-                               </h5>
-                               <div className="space-y-3">
-                                 {step.data.core_plants.map((plant, i) => (
-                                   <div key={i} className="p-3.5 bg-[#FAF7F2] rounded-xl border border-[#E7DFD3]">
-                                     <div className="font-bold text-[#0F261E] text-sm mb-0.5">{plant.nom}</div>
-                                     <p className="text-xs text-slate-600 leading-relaxed">{plant.role}</p>
-                                   </div>
-                                 ))}
-
-                                 {step.data.core_supplements && step.data.core_supplements.length > 0 && (
-                                   <div className="mt-6">
-                                     <h6 className="text-[10px] font-black text-[#92400E] uppercase tracking-widest mb-2">Compléments de terrain</h6>
-                                     <div className="space-y-2.5">
-                                       {step.data.core_supplements.map((supp, i) => (
-                                         <div key={i} className="p-3.5 bg-[#FAF2E6] rounded-xl border border-[#EEDFC6]">
-                                           <div className="font-bold text-[#92400E] text-sm mb-0.5">{supp.nom}</div>
-                                           <p className="text-xs text-slate-700 leading-relaxed">{supp.role}</p>
-                                           {supp.avertissement && (
-                                             <p className="mt-1 text-[10px] text-red-600 font-bold italic">⚠️ {supp.avertissement}</p>
-                                           )}
-                                         </div>
-                                       ))}
+                             <div className="grid md:grid-cols-2 gap-10">
+                               <div>
+                                 <h5 className="text-xs font-black text-[#0F261E] uppercase tracking-widest mb-4 flex items-center gap-2">
+                                   <CheckCircle className="w-4 h-4 stroke-[1.5] text-[#2D3748]" /> Objectifs
+                                 </h5>
+                                 <ul className="space-y-3">
+                                   {step.data.objectives.map((obj, i) => (
+                                     <li key={i} className="flex gap-2.5 text-slate-700 text-sm leading-relaxed">
+                                       <span className="w-1.5 h-1.5 rounded-full bg-[#0F261E] shrink-0 mt-2" />
+                                       {obj}
+                                     </li>
+                                   ))}
+                                  </ul>
+                               </div>
+                               
+                               <div>
+                                 <h5 className="text-xs font-black text-[#0F261E] uppercase tracking-widest mb-4 flex items-center gap-2">
+                                   <FlaskConical className="w-4 h-4 stroke-[1.5] text-[#2D3748]" /> Plantes Clés
+                                 </h5>
+                                 <div className="space-y-3">
+                                   {step.data.core_plants.map((plant, i) => (
+                                     <div key={i} className="p-3.5 bg-[#FAF7F2] rounded-xl border border-[#E7DFD3]">
+                                       <div className="font-bold text-[#0F261E] text-sm mb-0.5">{plant.nom}</div>
+                                       <p className="text-xs text-slate-600 leading-relaxed">{plant.role}</p>
                                      </div>
-                                   </div>
-                                 )}
+                                   ))}
+
+                                   {step.data.core_supplements && step.data.core_supplements.length > 0 && (
+                                     <div className="mt-6">
+                                       <h6 className="text-[10px] font-black text-[#92400E] uppercase tracking-widest mb-2">Compléments de terrain</h6>
+                                       <div className="space-y-2.5">
+                                         {step.data.core_supplements.map((supp, i) => (
+                                           <div key={i} className="p-3.5 bg-[#FAF2E6] rounded-xl border border-[#EEDFC6]">
+                                             <div className="font-bold text-[#92400E] text-sm mb-0.5">{supp.nom}</div>
+                                             <p className="text-xs text-slate-700 leading-relaxed">{supp.role}</p>
+                                             {supp.avertissement && (
+                                               <p className="mt-1 text-[10px] text-red-600 font-bold italic">⚠️ {supp.avertissement}</p>
+                                             )}
+                                           </div>
+                                         ))}
+                                       </div>
+                                     </div>
+                                   )}
+                                 </div>
                                </div>
                              </div>
                            </div>
-                         </div>
-                         
-                         <div className="p-5 bg-[#0F261E] text-white rounded-2xl text-center border border-[#1C3F34]">
-                           <p className="text-xs sm:text-sm font-medium italic">"{step.data.system_message}"</p>
-                         </div>
-                       </motion.div>
+                           
+                           <div className="p-5 bg-[#0F261E] text-white rounded-2xl text-center border border-[#1C3F34]">
+                             <p className="text-xs sm:text-sm font-medium italic">"{step.data.system_message}"</p>
+                           </div>
+                         </motion.div>
+                       )
                      )}
                    </div>
                  );

@@ -1,6 +1,6 @@
 {
-  "name": "Bloom by BotaniK - N°1 Infuseur Botanique & Extracteur de Précision",
-  "description": "Plateforme premium de phytothérapie de précision et d'extraction botanique. Découvrez la BloomLab®, l'extracteur du totum à basse température N°1 en France. Navigation systémique par Terrains, herbier scientifique complet et calculateur de dilution intelligent.",
+  "name": "Bloom by BotaniK - L'Art de l'Extraction Botanique de Précision",
+  "description": "Plateforme d'herboristerie de précision et d'extraction botanique. Découvrez la BloomLab®, l'extracteur du totum à basse température. Navigation systémique par Terrains, herbier scientifique complet et calculateur d'extraction.",
   "requestFramePermissions": [
     "camera"
   ],

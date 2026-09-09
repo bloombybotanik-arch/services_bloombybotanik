@@ -24,79 +24,111 @@ export default function ExtractionCalculator() {
   const results = calculate();
 
   return (
-    <div className="bg-white rounded-[32px] p-8 border border-botanik-green/5 shadow-xl">
+    <div 
+      className="rounded-[32px] p-8 md:p-10 border shadow-xl transition-all"
+      style={{ backgroundColor: '#FAF7F2', borderColor: '#E7DFD3' }}
+    >
       <div className="flex items-center gap-3 mb-8">
-        <div className="w-10 h-10 bg-botanik-orange/10 rounded-xl flex items-center justify-center">
-          <Calculator className="w-5 h-5 text-botanik-orange" />
+        <div className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-xs" style={{ backgroundColor: '#0F261E', color: '#D97706' }}>
+          <Calculator className="w-6 h-6 text-[#D97706]" />
         </div>
-        <h3 className="text-xl font-bold text-botanik-green">Calculateur de Dilution</h3>
+        <div>
+          <h3 className="text-xl md:text-2xl font-bold" style={{ color: '#0F261E' }}>Calculateur de Dilution</h3>
+          <p className="text-xs font-semibold" style={{ color: '#1C3F34', opacity: 0.75 }}>
+            Ajustez le volume et le degré cible pour obtenir les volumes précis d'alcool 96° et d'eau distillée.
+          </p>
+        </div>
       </div>
 
       <div className="space-y-8">
         {/* Volume Input */}
         <div>
-          <label className="block text-xs font-bold uppercase tracking-widest text-botanik-green/40 mb-3">
+          <label className="block text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#0F261E' }}>
             Volume Final Souhaité (ml)
           </label>
           <div className="relative">
             <input 
               type="number" 
               value={volume}
-              onChange={(e) => setVolume(Number(e.target.value))}
-              className="w-full bg-botanik-bg border-none rounded-2xl px-6 py-4 text-botanik-green font-bold focus:ring-2 focus:ring-botanik-orange/20 transition-all"
+              onChange={(e) => setVolume(Math.max(1, Number(e.target.value)))}
+              className="w-full rounded-2xl px-6 py-4 font-bold text-lg border focus:outline-none focus:ring-2 transition-all"
+              style={{ 
+                backgroundColor: '#FFFFFF', 
+                color: '#0F261E', 
+                borderColor: '#D8CFBF' 
+              }}
             />
-            <span className="absolute right-6 top-1/2 -translate-y-1/2 font-bold text-botanik-green/20">ml</span>
+            <span className="absolute right-6 top-1/2 -translate-y-1/2 font-bold text-sm" style={{ color: '#0F261E', opacity: 0.45 }}>ml</span>
           </div>
         </div>
 
         {/* Target Degree Selection */}
         <div>
-          <label className="block text-xs font-bold uppercase tracking-widest text-botanik-green/40 mb-3">
+          <label className="block text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#0F261E' }}>
             Degré Cible (Degré de Macération)
           </label>
           <div className="grid grid-cols-3 gap-3">
-            {[45, 55, 60].map((degree) => (
-              <button
-                key={degree}
-                onClick={() => setTargetDegree(degree as any)}
-                className={`py-3 rounded-xl font-bold text-sm transition-all ${
-                  targetDegree === degree 
-                    ? 'bg-botanik-green text-white shadow-lg shadow-botanik-green/20' 
-                    : 'bg-botanik-bg text-botanik-green/40 hover:bg-botanik-green/5'
-                }`}
-              >
-                {degree}°
-              </button>
-            ))}
+            {[45, 55, 60].map((degree) => {
+              const isSelected = targetDegree === degree;
+              return (
+                <button
+                  key={degree}
+                  type="button"
+                  onClick={() => setTargetDegree(degree as any)}
+                  className="py-3.5 rounded-xl font-bold text-sm md:text-base transition-all cursor-pointer border shadow-sm"
+                  style={{
+                    backgroundColor: isSelected ? '#0F261E' : '#FFFFFF',
+                    color: isSelected ? '#FFFFFF' : '#0F261E',
+                    borderColor: isSelected ? '#0F261E' : '#D8CFBF'
+                  }}
+                >
+                  {degree}°
+                </button>
+              );
+            })}
           </div>
         </div>
 
         {/* Results */}
-        <div className="bg-botanik-green rounded-2xl p-6 text-white">
-          <div className="flex items-center gap-2 mb-6 text-white/60">
-            <Info className="w-4 h-4" />
-            <span className="text-[10px] font-bold uppercase tracking-widest">Dosages Précis (Alcool 96°)</span>
+        <div 
+          className="rounded-2xl p-6 md:p-8 shadow-lg space-y-6"
+          style={{ backgroundColor: '#0F261E', color: '#ffffff' }}
+        >
+          <div className="flex items-center gap-2 text-white/90">
+            <Info className="w-5 h-5 text-[#D97706]" />
+            <span className="text-xs font-bold uppercase tracking-wider text-[#D97706]">
+              Dosages Précis (Alcool 96°)
+            </span>
           </div>
           
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-1">
-              <div className="text-2xl font-bold">{results.alcohol} ml</div>
-              <div className="text-[10px] font-bold uppercase tracking-widest text-white/40 flex items-center gap-1">
-                <Zap className="w-3 h-3 text-botanik-orange" /> Alcool 96°
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div 
+              className="p-5 rounded-2xl border transition-all"
+              style={{ backgroundColor: 'rgba(217, 119, 6, 0.15)', borderColor: 'rgba(217, 119, 6, 0.4)' }}
+            >
+              <div className="text-2xl sm:text-3xl font-black text-[#F59E0B]">{results.alcohol} ml</div>
+              <div className="text-xs font-bold uppercase tracking-wider text-amber-200 mt-1 flex items-center gap-1.5">
+                <Zap className="w-3.5 h-3.5 text-[#F59E0B]" /> Alcool 96°
               </div>
             </div>
-            <div className="space-y-1">
-              <div className="text-2xl font-bold">{results.water} ml</div>
-              <div className="text-[10px] font-bold uppercase tracking-widest text-white/40 flex items-center gap-1">
-                <Droplets className="w-3 h-3 text-blue-400" /> Eau Distillée
+            <div 
+              className="p-5 rounded-2xl border transition-all"
+              style={{ backgroundColor: 'rgba(14, 165, 233, 0.15)', borderColor: 'rgba(14, 165, 233, 0.4)' }}
+            >
+              <div className="text-2xl sm:text-3xl font-black text-[#38BDF8]">{results.water} ml</div>
+              <div className="text-xs font-bold uppercase tracking-wider text-sky-200 mt-1 flex items-center gap-1.5">
+                <Droplets className="w-3.5 h-3.5 text-[#38BDF8]" /> Eau Distillée
               </div>
             </div>
           </div>
         </div>
 
-        <div className="flex items-start gap-3 p-4 bg-botanik-orange/5 rounded-2xl border border-botanik-orange/10">
-          <CheckCircle2 className="w-5 h-5 text-botanik-orange shrink-0 mt-0.5" />
-          <p className="text-[10px] text-botanik-green/60 leading-relaxed italic">
+        <div 
+          className="flex items-start gap-3 p-4 rounded-2xl border"
+          style={{ backgroundColor: '#FFFFFF', borderColor: '#E7DFD3' }}
+        >
+          <CheckCircle2 className="w-5 h-5 text-[#D97706] shrink-0 mt-0.5" />
+          <p className="text-xs leading-relaxed italic" style={{ color: '#0F261E', opacity: 0.85 }}>
             Ce protocole est optimisé pour une extraction à basse température avec la <strong>BloomLab®</strong> afin de préserver l'intégralité du Totum végétal.
           </p>
         </div>

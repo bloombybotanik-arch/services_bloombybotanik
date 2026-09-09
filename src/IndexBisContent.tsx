@@ -206,13 +206,21 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   {isFR ? 'CULINAIRE · COSMÉTIQUE · SYSTÉMIQUE' : isDE ? 'KULINARISCH · KOSMETISCH · SYSTEMISCH' : 'CULINARY · COSMETIC · SYSTEMIC'}
                 </span>
               </div>
-              {/* Le SEUL H1 de la page */}
+              {/* Baseline de marque (non-H1) */}
+              <div className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#D97706]">
+                {isFR 
+                  ? "Bloom by BotaniK • L'ingénierie de l'extraction botanique de précision" 
+                  : isDE 
+                  ? "Bloom by BotaniK • Die Ingenieurskunst der botanischen Präzisionsextraktion"
+                  : "Bloom by BotaniK • Precision Botanical Extraction Engineering"}
+              </div>
+              {/* Le SEUL H1 de la page d'accueil */}
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.15] tracking-tight drop-shadow-md">
                 {isFR 
-                  ? "BloomLab : l'extracteur botanique de précision pour maîtriser vos préparations maison" 
+                  ? "BloomLab® : L'Extracteur botanique de précision pour maîtriser vos préparations maison" 
                   : isDE 
-                  ? "BloomLab: der botanische Präzisionsextraktor für die Beherrschung Ihrer hausgemachten Zubereitungen"
-                  : "BloomLab: the precision botanical extractor for mastering homemade preparations"}
+                  ? "BloomLab® : Der botanische Präzisionsextraktor für eigene Hauszubereitungen"
+                  : "BloomLab®: Precision botanical extractor for mastering homemade preparations"}
               </h1>
             </div>
           </div>

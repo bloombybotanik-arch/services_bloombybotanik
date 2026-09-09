@@ -217,6 +217,11 @@ function registerAppRoutes(app: express.Express) {
     immutable: true
   }));
 
+  app.use('/images', express.static(path.join(process.cwd(), 'public', 'images'), {
+    maxAge: '7d',
+    immutable: true
+  }));
+
   app.use(express.static(path.join(process.cwd(), 'public'), {
     maxAge: '1d',
     index: false
@@ -1143,7 +1148,7 @@ app.post("/api/chat", async (req: express.Request, res: express.Response) => {
 });
 
 // Activation endpoint
-app.post("/api/activate-bloomlab", upload.single('invoice'), async (req: express.Request, res: express.Response) => {
+app.post("/api/activate-bloomlab", upload.single('invoice') as any, async (req: express.Request, res: express.Response) => {
   try {
     const { userId } = req.body;
     const file = req.file;

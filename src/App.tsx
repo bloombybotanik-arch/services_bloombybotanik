@@ -120,8 +120,10 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
       seoKey = 'how_it_works';
     } else if (currentView === 'blog' || currentView === 'library-landing' || currentView === 'library' || currentView === 'guides') {
       seoKey = 'blog';
-    } else if (currentView === 'machine' || currentView === 'indexbis') {
+    } else if (currentView === 'machine') {
       seoKey = 'machine';
+    } else if (currentView === 'home' || currentView === 'indexbis') {
+      seoKey = 'home';
     } else if (currentView === 'manifeste') {
       seoKey = 'manifesto';
     } else if (currentView === 'infuseur-botanique') {
@@ -150,10 +152,8 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
       return;
     }
 
-    // Override with product-specific SEO when viewing a product detail page
-    let finalTitle = isFR && (currentView === 'home' || currentView === 'machine') 
-      ? "BloomLab® : L'Extracteur botanique de précision pour maîtriser vos préparations maison" 
-      : currentSeo.title;
+    // Product-specific SEO when viewing a product detail page
+    let finalTitle = currentSeo.title;
     let finalDescription = currentSeo.description;
     let productData: any = null;
 
@@ -340,7 +340,7 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
           "width": 1024,
           "height": 1024
         },
-        "description": isFR ? "L'ingénierie de la résilience biologique par l'extraction botanique de précision. Réalisez vos remèdes naturels aux plantes et soins naturels visages, corps et cheveux." : "Expertise in precision botanical infusion and extraction. BloomLab® gives you all the keys to create your own natural remedies.",
+        "description": isFR ? "L'ingénierie de la résilience biologique par l'extraction botanique de précision. Réalisez vos préparations botaniques maison et soins naturels visages, corps et cheveux." : "Expertise in precision botanical infusion and extraction. BloomLab® gives you all the keys to create your own natural botanical preparations.",
         "sameAs": [
           "https://www.instagram.com/bloombybotanik/",
           "https://www.youtube.com/@bloombybotanik",
@@ -588,7 +588,7 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
       graph.push({
         "@type": "VideoObject",
         "name": "Démonstration de l'extracteur botanique BloomLab",
-        "description": "Découvrez comment fonctionne la BloomLab, l'extracteur botanique N°1 en France pour l'extraction du totum à basse température.",
+        "description": "Découvrez comment fonctionne la BloomLab, l'extracteur botanique de précision pour l'extraction du totum à basse température.",
         "thumbnailUrl": [
           `https://bloombybotanik.com${bloomLabImg}`
         ],
@@ -653,7 +653,7 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
       });
     }
 
-    if (currentView === 'machine' || currentView === 'home' || productId === 'bloomlab') {
+    if (currentView === 'machine' || (currentView === 'product-detail' && productId === 'bloomlab')) {
       graph.push({
         "@type": "Product",
         "name": "BloomLab® - Extracteur Botanique de Précision",
@@ -841,7 +841,7 @@ const NavigationSidebar = ({ className = "", currentView, currentProductId, navi
 
   const NavGroup = ({ title, children }: { title: string, children: ReactNode }) => (
     <div className="space-y-1 mb-6">
-      <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.2em] text-[#F9F9F7]/30 mb-2 select-none">
+      <h3 className="px-4 text-[12px] font-bold uppercase tracking-[0.16em] text-[#D1D5DB] mb-2.5 select-none">
         {title}
       </h3>
       <div className="space-y-0.5">
@@ -912,6 +912,13 @@ const NavigationSidebar = ({ className = "", currentView, currentProductId, navi
             icon={Award} 
             isActive={currentView === 'product-detail' && currentProductId === 'bloomlab'}
             onClick={() => navigateTo('product-detail', 'bloomlab')}
+          />
+          <NavItem 
+            id="pillar-extraction" 
+            label={t.nav.methode_ab_sub?.guide_methodes || "Guide complet des méthodes"} 
+            icon={BookOpen} 
+            isActive={currentView === 'pillar-extraction' || currentView === 'extraction-botanique' || currentView === 'guide-complet'}
+            onClick={() => navigateTo('pillar-extraction')}
           />
           <NavItem 
             id="totum-definition" 
@@ -1714,7 +1721,15 @@ export default function App() {
       case 'machine': return <MachineLanding onNavigate={navigateTo} lang={lang} />;
       case 'votre-pratique':
       case 'parcours':
-      case 'phytotherapie-reset': return <PhytotherapyResetPage onNavigate={navigateTo} lang={lang} />;
+      case 'phytotherapie-reset': return (
+        <PhytotherapyResetPage 
+          onNavigate={navigateTo} 
+          lang={lang} 
+          isPremium={isPremium} 
+          user={user} 
+          onRequireAuth={() => setShowAuthModal(true)} 
+        />
+      );
       case 'library-landing': return <LibraryLanding onNavigate={navigateTo} lang={lang} />;
       case 'indexbis': return <IndexBisContent onNavigate={navigateTo} lang={lang} />;
       case 'guide':
@@ -2016,7 +2031,7 @@ export default function App() {
               <div className="space-y-10 text-[#F9F9F7]">
                 {/* 1. ACCUEIL */}
                 <div>
-                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">{t.nav.accueil}</h3>
+                  <h3 className="px-4 text-[12px] font-bold uppercase tracking-[0.16em] text-[#D1D5DB] mb-3">{t.nav.accueil}</h3>
                   <div className="space-y-3">
                     <a
                       href={VIEW_PATHS['home']}
@@ -2040,7 +2055,7 @@ export default function App() {
 
                 {/* 1. POURQUOI BLOOM */}
                 <div>
-                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-3">{t.nav.pourquoi_bloom || "POURQUOI BLOOM"}</h3>
+                  <h3 className="px-4 text-[12px] font-bold uppercase tracking-[0.16em] text-[#D1D5DB] mb-3">{t.nav.pourquoi_bloom || "POURQUOI BLOOM"}</h3>
                   <div className="grid grid-cols-1 gap-2">
                     {[
                       { id: 'manifeste', label: t.nav.pourquoi_bloom_sub?.manifeste || "Le Manifeste", icon: FileText },
@@ -2063,11 +2078,12 @@ export default function App() {
 
                 {/* 2. LA MÉTHODE A/B */}
                 <div>
-                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-3">{t.nav.methode_ab || "LA MÉTHODE A/B"}</h3>
+                  <h3 className="px-4 text-[12px] font-bold uppercase tracking-[0.16em] text-[#D1D5DB] mb-3">{t.nav.methode_ab || "LA MÉTHODE A/B"}</h3>
                   <div className="grid grid-cols-1 gap-2">
                     {[
                       { id: 'machine', label: t.nav.methode_ab_sub?.extraction || "Extraction de précision", icon: FlaskConical },
                       { id: 'product-detail', label: t.nav.methode_ab_sub?.bloomlab || "L'Extracteur BloomLab®", icon: Award, param: 'bloomlab' },
+                      { id: 'pillar-extraction', label: t.nav.methode_ab_sub?.guide_methodes || "Guide complet des méthodes", icon: BookOpen },
                       { id: 'totum-definition', label: t.nav.methode_ab_sub?.totum || "Le Totum Végétal", icon: Leaf },
                     ].map((item: any) => (
                       <a
@@ -2092,7 +2108,7 @@ export default function App() {
 
                 {/* 3. VOTRE PRATIQUE */}
                 <div>
-                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-3">{t.nav.votre_pratique || "VOTRE PRATIQUE"}</h3>
+                  <h3 className="px-4 text-[12px] font-bold uppercase tracking-[0.16em] text-[#D1D5DB] mb-3">{t.nav.votre_pratique || "VOTRE PRATIQUE"}</h3>
                   <div className="space-y-2">
                     {[
                       { id: 'culinaire', label: t.nav.votre_pratique_sub?.culinaire || "Atelier Culinaire", icon: Utensils },
@@ -2121,7 +2137,7 @@ export default function App() {
 
                 {/* 4. TRANSMISSION */}
                 <div>
-                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-3">{t.nav.transmission || "TRANSMISSION"}</h3>
+                  <h3 className="px-4 text-[12px] font-bold uppercase tracking-[0.16em] text-[#D1D5DB] mb-3">{t.nav.transmission || "TRANSMISSION"}</h3>
                   <div className="grid grid-cols-1 gap-2">
                     {[
                       { id: 'library-landing', label: t.nav.transmission_sub?.bibliotheque || "Bibliothèque Scientifique", icon: Microscope, onClick: () => navigateTo('library-landing') },
@@ -2150,7 +2166,7 @@ export default function App() {
 
                 {/* 5. BOUTIQUE */}
                 <div>
-                  <h3 className="px-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-3">{t.nav.boutique_nav}</h3>
+                  <h3 className="px-4 text-[12px] font-bold uppercase tracking-[0.16em] text-[#D1D5DB] mb-3">{t.nav.boutique_nav}</h3>
                   <div className="space-y-2">
                     <a
                       href={VIEW_PATHS['boutique']}

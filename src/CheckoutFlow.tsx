@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { ShieldCheck, Lock, CreditCard, ChevronRight, Truck, Building2, User, Mail, Phone, MapPin, CheckCircle2, Download, PackageCheck, AlertCircle } from 'lucide-react';
+import { ShieldCheck, Lock, CreditCard, ChevronRight, Truck, Building2, User, Mail, Phone, MapPin, CheckCircle2, Download, PackageCheck, AlertCircle, Sparkles } from 'lucide-react';
 import { translations, Language } from './translations';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-import { getShippingPrice, ShippingMethod } from './lib/shippingUtils';
+import { getShippingPrice, ShippingMethod, isDigitalProduct } from './lib/shippingUtils';
 
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY || "");
 
@@ -107,7 +107,8 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
   const [promoError, setPromoError] = useState('');
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('stripe');
   
-  const shipping = getShippingPrice(shippingMethod, cart);
+  const isAllDigital = cart.length > 0 && cart.every(item => isDigitalProduct(item));
+  const shipping = isAllDigital ? 0 : getShippingPrice(shippingMethod, cart);
   
   let adjustedTotal = total;
   if (isPromoApplied) {
@@ -151,8 +152,11 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
   };
 
   const handleNext = () => {
-    if (step === 'information') setStep('shipping');
-    else if (step === 'shipping') setStep('payment');
+    if (step === 'information') {
+      setStep(isAllDigital ? 'payment' : 'shipping');
+    } else if (step === 'shipping') {
+      setStep('payment');
+    }
   };
 
   const onPaymentSuccess = (id: string) => {
@@ -180,15 +184,27 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
               <p className="text-sm opacity-60">{t.confirmation.conf_desc} {formData.email}</p>
             </div>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm">
-              <Truck className="w-5 h-5 text-[#1B3022]" />
+          {isAllDigital ? (
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm">
+                <Sparkles className="w-5 h-5 text-[#1B3022]" />
+              </div>
+              <div>
+                <p className="font-bold">{lang === 'fr' ? "Accès Digital Immédiat" : "Instant Digital Access"}</p>
+                <p className="text-sm opacity-60">{lang === 'fr' ? "Vos accès, protocoles et fiches sont immédiatement disponibles sur votre compte." : "Your digital access is active now on your account."}</p>
+              </div>
             </div>
-            <div>
-              <p className="font-bold">{t.confirmation.logistics}</p>
-              <p className="text-sm opacity-60">{t.confirmation.logistics_desc}</p>
+          ) : (
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm">
+                <Truck className="w-5 h-5 text-[#1B3022]" />
+              </div>
+              <div>
+                <p className="font-bold">{t.confirmation.logistics}</p>
+                <p className="text-sm opacity-60">{t.confirmation.logistics_desc}</p>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -207,13 +223,21 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
     <article className="max-w-[1000px] mx-auto px-6 py-12 md:py-20 animate-in fade-in duration-700">
       <div className="flex items-center justify-between mb-12">
         <h1 className="text-3xl font-bold text-[#1B3022]">{t.header}</h1>
-        <div className="flex items-center gap-4">
-          <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${step === 'information' ? 'bg-[#F97316] text-white' : 'bg-[#1B3022]/10 text-[#1B3022]'}`}>1</div>
-          <div className="w-8 h-[2px] bg-[#1B3022]/10"></div>
-          <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${step === 'shipping' ? 'bg-[#F97316] text-white' : 'bg-[#1B3022]/10 text-[#1B3022]'}`}>2</div>
-          <div className="w-8 h-[2px] bg-[#1B3022]/10"></div>
-          <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${step === 'payment' ? 'bg-[#F97316] text-white' : 'bg-[#1B3022]/10 text-[#1B3022]'}`}>3</div>
-        </div>
+        {isAllDigital ? (
+          <div className="flex items-center gap-4">
+            <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${step === 'information' ? 'bg-[#F97316] text-white' : 'bg-[#1B3022]/10 text-[#1B3022]'}`}>1</div>
+            <div className="w-8 h-[2px] bg-[#1B3022]/10"></div>
+            <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${step === 'payment' ? 'bg-[#F97316] text-white' : 'bg-[#1B3022]/10 text-[#1B3022]'}`}>2</div>
+          </div>
+        ) : (
+          <div className="flex items-center gap-4">
+            <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${step === 'information' ? 'bg-[#F97316] text-white' : 'bg-[#1B3022]/10 text-[#1B3022]'}`}>1</div>
+            <div className="w-8 h-[2px] bg-[#1B3022]/10"></div>
+            <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${step === 'shipping' ? 'bg-[#F97316] text-white' : 'bg-[#1B3022]/10 text-[#1B3022]'}`}>2</div>
+            <div className="w-8 h-[2px] bg-[#1B3022]/10"></div>
+            <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${step === 'payment' ? 'bg-[#F97316] text-white' : 'bg-[#1B3022]/10 text-[#1B3022]'}`}>3</div>
+          </div>
+        )}
       </div>
 
       <div className="grid lg:grid-cols-2 gap-12">
@@ -387,8 +411,10 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
             
             <div className="pt-6 border-t border-[#1B3022]/10 space-y-3">
               <div className="flex justify-between text-sm opacity-60">
-                <span>{cartT.summary.shipping} ({shippingMethod})</span>
-                <span className="font-bold text-[#1B3022]">{shipping === 0 ? t.summary.shipping_free : `${shipping.toFixed(2).replace('.', ',')} €`}</span>
+                <span>{isAllDigital ? (lang === 'fr' ? 'Livraison (Produit digital)' : 'Delivery (Digital product)') : `${cartT.summary.shipping} (${shippingMethod})`}</span>
+                <span className="font-bold text-[#1B3022]">
+                  {isAllDigital ? (lang === 'fr' ? 'Gratuit / Inclus' : 'Free') : (shipping === 0 ? t.summary.shipping_free : `${shipping.toFixed(2).replace('.', ',')} €`)}
+                </span>
               </div>
               <div className="flex justify-between items-center pt-2">
                 <span className="text-lg font-bold">{t.summary.total}</span>

@@ -138,12 +138,12 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
             <span>{lang === 'fr' ? "La précision du geste botanique, à domicile" : lang === 'de' ? "Die Präzision der botanischen Geste, zu Hause" : "Precision botanical extraction at home"}</span>
           </div>
           
-          <div className="text-[10px] text-white/30 text-center md:text-right leading-relaxed max-w-sm">
+          <div className="text-[10px] text-white/40 text-center md:text-right leading-relaxed max-w-md">
             {lang === 'fr' 
-              ? "Dispositif d'extraction végétale à usage personnel. Ceci n'est pas un dispositif médical. Consultez toujours un professionnel de santé."
+              ? "BloomLab est un outil de préparation botanique domestique. Il ne remplace pas un avis médical, un diagnostic ou un traitement. Les informations fournies sont pédagogiques."
               : lang === 'de'
-              ? "Pflanzenextraktionsgerät für den persönlichen Gebrauch. Dies ist kein medizinisches Gerät. Konsultieren Sie immer eine medizinische Fachkraft."
-              : "Plant extraction device for personal use. This is not a medical device. Always consult a healthcare professional."
+              ? "BloomLab ist ein häusliches botanisches Zubereitungswerkzeug. Es ersetzt keine medizinische Beratung, Diagnose oder Behandlung. Die bereitgestellten Informationen dienen Bildungszwecken."
+              : "BloomLab is a domestic botanical preparation tool. It does not replace medical advice, diagnosis, or treatment. The information provided is educational."
             }
           </div>
         </div>

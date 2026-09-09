@@ -14,7 +14,22 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
 
   const handleSubscribe = (type: 'monthly' | 'annual' | 'complet') => {
     if (type === 'complet') {
-      onNavigate('boutique', 'complet');
+      const bloomCompletProduct = {
+        id: 'bloom-complet',
+        name: isFR ? "Bloom Complet — Protocole Intégral & Accompagnement" : "Bloom Complete — Protocol & Guidance",
+        subtitle: isFR ? "Abonnement digital mensuel sans engagement (59 €/mois)" : "Monthly digital subscription (59 €/month)",
+        price: 59,
+        image: "https://images.unsplash.com/photo-1546554137-f86b9593a222?auto=format&fit=crop&q=80&w=800",
+        description: isFR 
+          ? "Accès illimité à l'intégralité des 60+ protocoles experts Bloom, fiches posologies de terrain, reset homéostatique et accompagnement personnalisé."
+          : "Full unlimited access to 60+ Bloom expert protocols, terrain monographs, homeostatic reset and personalized guidance.",
+        isDigital: true,
+        quantity: 1
+      };
+      if (onAddToCart) {
+        onAddToCart(bloomCompletProduct);
+      }
+      onNavigate('cart');
       return;
     }
 
@@ -28,14 +43,15 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
       description: isFR 
         ? "Accès illimité à l'intégralité des 60+ protocoles experts Bloom, fiches plantes et mises à jour continues."
         : "Unlimited access to all Bloom expert protocols, plant monographs, and continuous updates.",
-      isDigital: true
+      isDigital: true,
+      quantity: 1
     };
 
     if (onAddToCart) {
       onAddToCart(premiumProduct);
       onNavigate('cart');
     } else {
-      onNavigate('product-detail', 'premium-access');
+      onNavigate('cart');
     }
   };
 

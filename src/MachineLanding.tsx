@@ -25,17 +25,23 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 import { translations, Language } from './translations';
 
-const heroImg1 = "/images/1.png";
-const heroImg2 = "/images/2.png";
-const heroImg3 = "/images/5.png";
+const heroViews = [
+  { id: 'v1', label: 'Vue 1', src: '/images/8.webp', fallbackSrc: '/images/8.png', subtitle: 'Plante' },
+  { id: 'v2', label: 'Vue 2', src: '/images/1.webp', fallbackSrc: '/images/1.png', subtitle: 'Infusion' },
+  { id: 'v3', label: 'Vue 3', src: '/images/2.webp', fallbackSrc: '/images/2.png', subtitle: 'Totum' },
+  { id: 'v4', label: 'Vue 4', src: '/images/5.webp', fallbackSrc: '/images/5.png', subtitle: 'Précision' },
+];
+const heroImg1 = heroViews[0].src;
 const bloomSoinsImg = "/assets/images/Bloom_Soins.jpg";
 const fourMmImg = "/assets/images/4MM.jpg";
 
 export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view: any, param?: string) => void, lang: Language }) {
   const t = translations[lang].machine;
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
-  const [selectedHeroImage, setSelectedHeroImage] = useState<string>(heroImg1);
+  const [selectedHeroImage, setSelectedHeroImage] = useState<string>(heroViews[0].src);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  const activeView = heroViews.find(v => v.src === selectedHeroImage || v.fallbackSrc === selectedHeroImage) || heroViews[0];
 
   const faqItems = (t as any).faq || [];
 
@@ -72,115 +78,99 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
       </AnimatePresence>
 
       {/* 1. HERO HEADER SECTION */}
-      <section className="relative overflow-hidden bg-[#0F261E] text-white pt-12 pb-20 md:pt-16 md:pb-28">
+      <section className="relative overflow-hidden bg-[#0F261E] text-white pt-8 pb-16 md:pt-12 md:pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(217,119,6,0.15),rgba(255,255,255,0))] pointer-events-none" />
         
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
-          {/* Header Texts: Badge & Title */}
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-10">
-            <div className="inline-flex items-center gap-2.5 bg-white/10 text-[#D97706] px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest border border-white/15 backdrop-blur-xs">
-              <Zap className="w-4 h-4 text-[#D97706]" /> 
-              <span>{(t.hero as any).badge || "Expertise France — Souveraineté Botanique"}</span>
-            </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
-              {lang === 'fr' ? (
-                <>
-                  BloomLab® : <br />
-                  <span className="text-[#D97706] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold">
-                    L'Extracteur botanique de précision pour maîtriser vos préparations maison
-                  </span>
-                </>
-              ) : (
-                <>
-                  {(t.hero as any)?.title || "BloomLab® :"} <br />
-                  <span className="text-[#D97706] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold">
-                    {(t.hero as any)?.title_accent || "Precision Botanical Extractor"}
-                  </span>
-                </>
-              )}
-            </h1>
-          </div>
-
-          {/* Images En Haut de la Page */}
+          {/* Hero Image with Overlay: Header Texts (Top) & Gallery Links (Bottom-Left) */}
           <div className="flex flex-col items-center mb-12">
             <div 
-              className="relative rounded-3xl overflow-hidden border border-white/15 bg-white/5 shadow-2xl w-full max-w-4xl min-h-[500px] sm:min-h-[600px] md:min-h-[720px] cursor-zoom-in group"
+              className="relative rounded-3xl overflow-hidden border border-white/15 bg-white/5 shadow-2xl w-full max-w-5xl min-h-[580px] sm:min-h-[660px] md:min-h-[740px] cursor-zoom-in group"
               onClick={() => setFullscreenImage(selectedHeroImage)}
             >
-              <img 
-                src={selectedHeroImage} 
-                alt="BloomLab® : L'Extracteur botanique de précision pour maîtriser vos préparations maison" 
-                loading="eager"
-                decoding="async"
-                className="w-full h-full min-h-[500px] sm:min-h-[600px] md:min-h-[720px] object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-700" 
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              <picture>
+                <source type="image/webp" srcSet={activeView.src} />
+                <img 
+                  src={activeView.fallbackSrc} 
+                  alt={`${activeView.label} - ${activeView.subtitle}`} 
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="w-full h-full min-h-[580px] sm:min-h-[660px] md:min-h-[740px] object-cover object-[center_35%] group-hover:scale-105 transition-transform duration-700" 
+                />
+              </picture>
+
+              {/* Dual Gradients for High Legibility */}
+              <div className="absolute inset-x-0 top-0 h-3/5 bg-gradient-to-b from-black/85 via-black/40 to-transparent pointer-events-none" />
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
               
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs font-semibold pointer-events-none">
-                <span className="bg-black/60 backdrop-blur-xs px-3 py-1.5 rounded-full border border-white/20">
-                  {selectedHeroImage === heroImg1 
-                    ? (lang === 'fr' ? "Vue 1 : Extracteur BloomLab Officiel" : "View 1: Official BloomLab Extractor") 
-                    : selectedHeroImage === heroImg2 
-                    ? (lang === 'fr' ? "Vue 2 : Détail ingénierie & accessoires" : "View 2: Engineering detail & accessories") 
-                    : (lang === 'fr' ? "Vue 3 : Extraction botanique de précision" : "View 3: Precision botanical extraction")}
-                </span>
-                <span className="flex items-center gap-1.5 opacity-80">
-                  <Maximize2 className="w-4 h-4" /> {lang === 'fr' ? "Agrandir" : "Zoom"}
-                </span>
+              {/* Header Texts placed directly ON the hero image */}
+              <div className="absolute top-6 left-6 right-6 sm:top-10 sm:left-10 sm:right-10 z-20 space-y-3 sm:space-y-4 max-w-3xl pointer-events-none">
+                <div className="inline-flex items-center gap-2 bg-black/60 backdrop-blur-md text-[#D97706] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest border border-white/20 shadow-lg">
+                  <Zap className="w-3.5 h-3.5 text-[#D97706]" /> 
+                  <span>Souveraineté Botanique — Méthode A/B</span>
+                </div>
+
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight drop-shadow-md">
+                  {lang === 'fr' ? (
+                    <>L'art de l'extraction botanique : libérer le potentiel de vos plantes</>
+                  ) : lang === 'de' ? (
+                    <>Die Kunst der botanischen Extraktion: Das Potenzial Ihrer Pflanzen freisetzen</>
+                  ) : (
+                    <>The art of botanical extraction: unlocking your plants' potential</>
+                  )}
+                </h1>
               </div>
-            </div>
 
-            {/* Triple image selector for header images: 1.png, 2.png, 5.png */}
-            <div className="flex flex-wrap items-center justify-center gap-4 mt-5">
-              <button
-                type="button"
-                onClick={() => setSelectedHeroImage(heroImg1)}
-                className={`flex items-center gap-3 p-1.5 pr-4 rounded-2xl border transition-all cursor-pointer ${
-                  selectedHeroImage === heroImg1 
-                    ? 'bg-white/20 border-[#D97706] shadow-lg text-white' 
-                    : 'bg-white/5 border-white/10 text-white/60 hover:text-white'
-                }`}
-              >
-                <img src={heroImg1} alt="Vue 1" className="w-12 h-12 rounded-xl object-cover" />
-                <div className="text-left text-xs">
-                  <p className="font-bold">Image 1</p>
-                  <p className="text-[10px] opacity-70">Extracteur</p>
-                </div>
-              </button>
+              {/* 4 Image Selector Links on bottom-left: Vue 1 (Plante), Vue 2 (Infusion), Vue 3 (Totum), Vue 4 (Précision) */}
+              <div className="absolute bottom-5 left-5 sm:bottom-6 sm:left-6 z-20 flex flex-wrap items-center gap-2 sm:gap-3 max-w-[calc(100%-110px)]">
+                {heroViews.map((view) => {
+                  const isSelected = selectedHeroImage === view.src || selectedHeroImage === view.fallbackSrc;
+                  return (
+                    <button
+                      key={view.id}
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedHeroImage(view.src);
+                      }}
+                      className={`flex items-center gap-2 sm:gap-2.5 p-1.5 pr-3 sm:pr-4 rounded-xl sm:rounded-2xl border transition-all cursor-pointer backdrop-blur-md ${
+                        isSelected 
+                          ? 'bg-black/80 border-[#D97706] shadow-xl text-white ring-2 ring-[#D97706]/70' 
+                          : 'bg-black/50 border-white/20 text-white/80 hover:text-white hover:bg-black/75 hover:border-white/40'
+                      }`}
+                    >
+                      <picture>
+                        <source type="image/webp" srcSet={view.src} />
+                        <img 
+                          src={view.fallbackSrc} 
+                          alt={view.label} 
+                          loading="lazy"
+                          decoding="async"
+                          className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl object-cover" 
+                        />
+                      </picture>
+                      <div className="text-left text-xs">
+                        <p className="font-bold text-[11px] sm:text-[13px] leading-tight text-white">{view.label}</p>
+                        <p className="text-[10px] sm:text-[11px] text-[#D97706] font-medium leading-tight">{view.subtitle}</p>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
 
-              <button
-                type="button"
-                onClick={() => setSelectedHeroImage(heroImg2)}
-                className={`flex items-center gap-3 p-1.5 pr-4 rounded-2xl border transition-all cursor-pointer ${
-                  selectedHeroImage === heroImg2 
-                    ? 'bg-white/20 border-[#D97706] shadow-lg text-white' 
-                    : 'bg-white/5 border-white/10 text-white/60 hover:text-white'
-                }`}
-              >
-                <img src={heroImg2} alt="Vue 2" className="w-12 h-12 rounded-xl object-cover" />
-                <div className="text-left text-xs">
-                  <p className="font-bold">Image 2</p>
-                  <p className="text-[10px] opacity-70">Accessoires</p>
-                </div>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setSelectedHeroImage(heroImg3)}
-                className={`flex items-center gap-3 p-1.5 pr-4 rounded-2xl border transition-all cursor-pointer ${
-                  selectedHeroImage === heroImg3 
-                    ? 'bg-white/20 border-[#D97706] shadow-lg text-white' 
-                    : 'bg-white/5 border-white/10 text-white/60 hover:text-white'
-                }`}
-              >
-                <img src={heroImg3} alt="Vue 3" className="w-12 h-12 rounded-xl object-cover" />
-                <div className="text-left text-xs">
-                  <p className="font-bold">Image 5</p>
-                  <p className="text-[10px] opacity-70">Précision</p>
-                </div>
-              </button>
+              {/* Bottom-Right Zoom Trigger */}
+              <div className="absolute bottom-5 right-5 sm:bottom-6 sm:right-6 z-20 flex items-center gap-2 text-white text-xs font-semibold">
+                <button
+                  type="button"
+                  onClick={() => setFullscreenImage(selectedHeroImage)}
+                  className="bg-black/60 hover:bg-black/80 backdrop-blur-md px-3.5 py-2 rounded-full border border-white/20 font-bold text-xs flex items-center gap-1.5 transition-colors cursor-pointer shadow-lg"
+                >
+                  <Maximize2 className="w-4 h-4 text-[#D97706]" /> 
+                  <span>{lang === 'fr' ? "Agrandir" : "Zoom"}</span>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -315,20 +305,22 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
       {/* 3. THE SYSTEMIC SOLUTION (L'INSTRUMENT DE SOUVERAINETÉ) */}
       <section id="details" className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
             
-            <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs font-black uppercase tracking-[0.25em] text-[#D97706] block">
-                Ingénierie de Précision
-              </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0F261E] leading-tight">
-                L'Extracteur Botanique Conçu pour Libérer le Totum Végétal
-              </h2>
-              <p className="text-base sm:text-lg text-[#0F261E]/75 leading-relaxed">
-                Le <strong>BloomLab®</strong> comble le fossé entre la tisane imprécise et la gélule industrielle inerte. En maintenant une stabilité thermique chirurgicale à <strong>±0,5°C</strong> associée à une cinétique de vortex doux, il extrait l'intégralité du profil moléculaire actif dans un environnement stérile et biocompatible.
-              </p>
+            <div className="lg:col-span-6 space-y-6 flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-black uppercase tracking-[0.25em] text-[#D97706] block mb-2">
+                  Ingénierie de Précision
+                </span>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0F261E] leading-tight mb-4">
+                  L'Extracteur Botanique Conçu pour Libérer le Totum Végétal
+                </h2>
+                <p className="text-base sm:text-lg text-[#0F261E]/75 leading-relaxed">
+                  Le <strong>BloomLab®</strong> comble le fossé entre la tisane imprécise et la gélule industrielle inerte. En maintenant une stabilité thermique chirurgicale à <strong>±0,5°C</strong> associée à une cinétique de vortex doux, il extrait l'intégralité du profil moléculaire actif dans un environnement stérile et biocompatible.
+                </p>
+              </div>
 
-              <div className="grid sm:grid-cols-2 gap-4 pt-4">
+              <div className="grid sm:grid-cols-2 gap-4 pt-2">
                 <div className="p-5 bg-[#FAF7F2] rounded-2xl border border-[#0F261E]/5">
                   <div className="flex items-center gap-3 mb-2 font-bold text-[#0F261E] text-base">
                     <ShieldCheck className="w-5 h-5 text-[#D97706]" />
@@ -371,9 +363,9 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               </div>
             </div>
 
-            {/* Video or Product Engineering Visual */}
-            <div className="lg:col-span-6 relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#0F261E]/10 bg-[#0F261E]">
+            {/* Video Column: vertically aligned with the left column and text cards */}
+            <div className="lg:col-span-6 relative flex flex-col">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#0F261E]/10 bg-[#0F261E] flex-1 w-full min-h-[460px] lg:min-h-full">
                 <video 
                   poster={heroImg1}
                   autoPlay 
@@ -381,7 +373,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                   muted 
                   playsInline
                   title="BloomLab - Démonstration d'extraction thermique contrôlée"
-                  className="w-full aspect-square object-cover" 
+                  className="w-full h-full object-cover min-h-[460px] lg:min-h-full" 
                 >
                   <source src="/videos/demo_bloomlab.mp4" type="video/mp4" />
                 </video>

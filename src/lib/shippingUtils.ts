@@ -1,13 +1,46 @@
 export type ShippingMethod = 'mondialrelay' | 'colissimo' | 'laposte' | 'express';
 
+export const isDigitalProduct = (item: any): boolean => {
+  if (!item) return false;
+  if (item.isDigital === true) return true;
+  if (item.type === 'digital' || item.category === 'digital') return true;
+  const id = (item.id || '').toLowerCase();
+  const name = (item.name || '').toLowerCase();
+  if (
+    id.includes('digital') || 
+    id.includes('abonnement') || 
+    id.includes('sub') || 
+    id.includes('premium') || 
+    id === 'bloom-complet' || 
+    id === 'bloom-digital' || 
+    id === 'essentiel'
+  ) return true;
+  if (
+    name.includes('abonnement') || 
+    name.includes('digital') || 
+    name.includes('numérique') || 
+    name.includes('e-book') || 
+    name.includes('guide pdf')
+  ) return true;
+  return false;
+};
+
 export const getShippingPrice = (
   method: ShippingMethod,
   cart: any[]
 ): number => {
-  const hasBloomLab = cart.some(item => item.id === 'bloomlab');
-  const sachetCount = cart
-    .filter(item => !item.isDigital && item.id !== 'bloomlab')
-    .reduce((sum, item) => sum + item.quantity, 0);
+  if (!cart || cart.length === 0) return 0;
+
+  // Si le panier ne contient QUE des produits digitaux (abonnements, guides...), AUCUN frais d'expédition
+  const physicalItems = cart.filter(item => !isDigitalProduct(item));
+  if (physicalItems.length === 0) {
+    return 0;
+  }
+
+  const hasBloomLab = physicalItems.some(item => item.id === 'bloomlab');
+  const sachetCount = physicalItems
+    .filter(item => item.id !== 'bloomlab')
+    .reduce((sum, item) => sum + (item.quantity || 1), 0);
 
   if (hasBloomLab) {
     switch (method) {

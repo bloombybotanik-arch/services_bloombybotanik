@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Trash2, Plus, Minus, ShieldCheck, Truck, CreditCard, Lock, ArrowLeft, ChevronRight, Info, Sparkles, FlaskConical, BookOpen } from 'lucide-react';
 import { translations, Language } from './translations';
-import { getShippingPrice, ShippingMethod } from './lib/shippingUtils';
+import { getShippingPrice, ShippingMethod, isDigitalProduct } from './lib/shippingUtils';
 
 interface CartItem {
   id: string;
@@ -43,12 +43,12 @@ export default function CartContent({
   const [isPromoApplied, setIsPromoApplied] = useState(false);
   
   const subtotal = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  const allDigital = items.every(item => (item as any).isDigital);
+  const allDigital = items.length > 0 && items.every(item => isDigitalProduct(item));
   
-  const shipping = getShippingPrice(shippingMethod, items);
+  const shipping = allDigital ? 0 : getShippingPrice(shippingMethod, items);
   const total = subtotal + shipping;
 
-  const sachetCount = items.filter(item => item.id !== 'bloomlab' && !(item as any).isDigital).reduce((acc, item) => acc + item.quantity, 0);
+  const sachetCount = items.filter(item => item.id !== 'bloomlab' && !isDigitalProduct(item)).reduce((acc, item) => acc + item.quantity, 0);
 
   const getMethodPriceLabel = (method: ShippingMethod) => {
     const price = getShippingPrice(method, items);
@@ -320,8 +320,10 @@ export default function CartContent({
                 </div>
               )}
               <div className="flex justify-between text-white/60 whitespace-nowrap">
-                <span>{t.summary.shipping}</span>
-                <span className="font-bold text-white">{shipping === 0 ? t.summary.free : `${shipping.toFixed(2).replace('.', ',')} €`}</span>
+                <span>{allDigital ? (lang === 'fr' ? 'Livraison (Produit digital)' : 'Delivery (Digital product)') : t.summary.shipping}</span>
+                <span className="font-bold text-white">
+                  {allDigital ? (lang === 'fr' ? 'Inclus / Gratuit' : t.summary.free) : (shipping === 0 ? t.summary.free : `${shipping.toFixed(2).replace('.', ',')} €`)}
+                </span>
               </div>
               <div className="pt-4 border-t border-white/10 flex justify-between items-center whitespace-nowrap">
                 <span className="text-lg font-bold">{t.summary.total}</span>
