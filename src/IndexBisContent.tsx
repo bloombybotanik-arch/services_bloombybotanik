@@ -197,7 +197,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             </div>
 
             {/* Titre H1 validé positionné sur l'image */}
-            <div className="absolute inset-x-0 top-0 p-6 sm:p-8 md:p-10 lg:p-12 z-10 space-y-3 sm:space-y-4 max-w-4xl">
+            <div className="absolute inset-x-0 top-0 p-5 sm:p-7 md:p-8 lg:p-10 z-10 space-y-2 sm:space-y-3 max-w-4xl">
               <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
                 <div className="inline-block px-3.5 py-1.5 bg-black/60 border border-white/25 text-white text-[10px] sm:text-xs font-black uppercase tracking-widest rounded-full backdrop-blur-xs">
                   {isFR ? 'SÉQUENÇAGE ACTIF A/B · ÉDITION 2026' : isDE ? 'SEQUENTIELLE A/B-EXTRAKTION · AUSGABE 2026' : 'SEQUENTIAL A/B EXTRACTION · 2026 EDITION'}
@@ -205,14 +205,6 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 <span className="text-[11px] sm:text-xs font-black tracking-widest text-[#D97706] uppercase">
                   {isFR ? 'CULINAIRE · COSMÉTIQUE · SYSTÉMIQUE' : isDE ? 'KULINARISCH · KOSMETISCH · SYSTEMISCH' : 'CULINARY · COSMETIC · SYSTEMIC'}
                 </span>
-              </div>
-              {/* Baseline de marque (non-H1) */}
-              <div className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#D97706]">
-                {isFR 
-                  ? "Bloom by BotaniK • L'ingénierie de l'extraction botanique de précision" 
-                  : isDE 
-                  ? "Bloom by BotaniK • Die Ingenieurskunst der botanischen Präzisionsextraktion"
-                  : "Bloom by BotaniK • Precision Botanical Extraction Engineering"}
               </div>
               {/* Le SEUL H1 de la page d'accueil */}
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.15] tracking-tight drop-shadow-md">

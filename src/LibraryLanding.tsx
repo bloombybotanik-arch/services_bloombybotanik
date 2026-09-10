@@ -1,8 +1,10 @@
 import React, { useState, useMemo } from 'react';
-import { Search, Leaf, BookOpen, FlaskConical, Target, Zap, ChevronRight, ArrowRight, ShieldCheck, Star, Utensils, Sparkles, Droplets, Flame, Moon, Wind } from 'lucide-react';
+import { Search, Leaf, BookOpen, FlaskConical, Target, Zap, ChevronRight, ArrowRight, ShieldCheck, Star, Utensils, Sparkles, Droplets, Flame, Moon, Wind, Heart, Activity, ShieldAlert } from 'lucide-react';
 import { wrapTitle } from './lib/textUtils';
 import { unifiedBotanicalDatabase } from './data/unifiedBotanicalData';
 import { translations, Language } from './translations';
+import { PUBLIC_TERRAINS, TERRAIN_EDITORIAL_NOTICE, TERRAIN_PAGE_INTRO } from './data/terrainMapping';
+import rosemaryImg from './assets/images/BloomLab_rosemary_infusion.png';
 
 export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view: any, id?: string) => void, lang: Language }) {
   const t = translations[lang].library;
@@ -54,94 +56,158 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
     }
   ];
 
-  const terrains = [
-    { id: 'T1', name: lang === 'fr' ? 'Microbiome' : 'Microbiome', icon: Droplets, color: 'bg-blue-500' },
-    { id: 'T2', name: lang === 'fr' ? 'Énergie' : 'Energy', icon: Zap, color: 'bg-yellow-500' },
-    { id: 'T3', name: lang === 'fr' ? 'Immunité' : 'Immunity', icon: ShieldCheck, color: 'bg-green-500' },
-    { id: 'T8', name: lang === 'fr' ? 'Inflammation' : 'Inflammation', icon: Flame, color: 'bg-red-500' },
-    { id: 'T7', name: lang === 'fr' ? 'Sérénité' : 'Serenity', icon: Wind, color: 'bg-indigo-500' },
-    { id: 'T9', name: lang === 'fr' ? 'Sommeil' : 'Sleep', icon: Moon, color: 'bg-slate-700' },
-  ];
-
   return (
     <div className="animate-in fade-in duration-700 bg-white">
-      {/* Hero Section */}
-      <section className="relative py-24 md:py-32 bg-[#F9F9F7] overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1541675154750-0444c7d51e8e?auto=format&fit=crop&q=80&w=1200" alt="Botanical detail" className="w-full h-full object-cover" />
-        </div>
+      {/* Hero Section with BloomLab Rosemary Infusion (Sans Opacité & Image alignée verticalement) */}
+      <section className="relative py-14 md:py-20 bg-[#FAF7F2] overflow-hidden border-b border-botanik-green/10">
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 bg-botanik-green/5 text-botanik-green px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-8">
-              {t.hero.badge}
-            </div>
-            <h1 className="text-4xl md:text-8xl font-bold text-botanik-green mb-8 leading-[0.9] tracking-tighter">
-              {t.hero.title}<br />
-              <span className="text-[#F97316]">{t.hero.title_accent}</span>
-            </h1>
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 lg:items-stretch items-center">
             
-            {/* Unified Search / Directory */}
-            <div className="relative max-w-2xl mt-8 md:mt-12">
-              <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 md:w-6 h-5 md:h-6 text-botanik-green/30" />
-              <input 
-                type="text" 
-                placeholder={t.hero.search_placeholder} 
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-14 md:pl-16 pr-6 py-4 md:py-6 bg-white rounded-[24px] md:rounded-[32px] border-none text-base md:text-xl text-botanik-green shadow-xl focus:ring-2 focus:ring-botanik-orange/20 transition-all"
-              />
-              
-              {searchQuery && filteredPlants.length > 0 && (
-                <div className="absolute top-full left-0 right-0 mt-4 bg-white rounded-3xl shadow-2xl border border-botanik-green/5 overflow-hidden z-50 animate-in slide-in-from-top-2 duration-300">
-                  {filteredPlants.map((plant) => (
-                    <div 
-                      key={plant.id}
-                      onClick={() => onNavigate(plant.source === 'therapeutic' ? 'library' : plant.source === 'culinary' ? 'culinaire' : 'cosmetiques', plant.id)}
-                      className="px-8 py-4 hover:bg-botanik-green/5 cursor-pointer flex items-center justify-between border-b border-botanik-green/5 last:border-0 group"
-                    >
-                      <div>
-                        <div className="font-bold text-botanik-green">{plant.name}</div>
-                        <div className="text-xs text-botanik-green/40 italic">{plant.latinName}</div>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <span className={`text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full ${
-                          plant.source === 'therapeutic' ? 'bg-botanik-green/10 text-botanik-green' : 
-                          plant.source === 'culinary' ? 'bg-botanik-orange/10 text-botanik-orange' : 
-                          'bg-botanik-green/10 text-botanik-green'
-                        }`}>
-                          {plant.source}
-                        </span>
-                        <ChevronRight className="w-4 h-4 text-botanik-green/20 group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </div>
-                  ))}
+            {/* Left: Texts & Search */}
+            <div className="lg:col-span-7 flex flex-col justify-between">
+              <div>
+                <div className="inline-flex items-center gap-2 bg-botanik-green/5 text-botanik-green px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-6 border border-botanik-green/10">
+                  {t.hero.badge}
                 </div>
-              )}
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-botanik-green mb-6 leading-[0.95] tracking-tight">
+                  {t.hero.title}<br />
+                  <span className="text-[#F97316]">{t.hero.title_accent}</span>
+                </h1>
+                <p className="text-botanik-green/75 text-base sm:text-lg mb-8 max-w-xl font-serif italic">
+                  {lang === 'fr' 
+                    ? "Explorez notre bibliothèque vivante de plantes médicinales, protocoles d'extraction et synergies actives pour restaurer votre terrain biologique."
+                    : lang === 'de'
+                    ? "Erkunden Sie unsere lebendige Bibliothek von Heilpflanzen, Extraktionsprotokollen und aktiven Synergien."
+                    : "Explore our living library of medicinal plants, extraction protocols, and active synergies."}
+                </p>
+              </div>
+              
+              {/* Unified Search / Directory */}
+              <div className="relative max-w-2xl">
+                <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 md:w-6 h-5 md:h-6 text-botanik-green/30" />
+                <input 
+                  type="text" 
+                  placeholder={t.hero.search_placeholder} 
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-14 md:pl-16 pr-6 py-4 md:py-5 bg-white rounded-[24px] md:rounded-[32px] border border-botanik-green/15 text-base md:text-lg text-botanik-green shadow-lg focus:ring-2 focus:ring-botanik-orange/20 transition-all"
+                />
+                
+                {searchQuery && filteredPlants.length > 0 && (
+                  <div className="absolute top-full left-0 right-0 mt-4 bg-white rounded-3xl shadow-2xl border border-botanik-green/5 overflow-hidden z-50 animate-in slide-in-from-top-2 duration-300">
+                    {filteredPlants.map((plant) => (
+                      <div 
+                        key={plant.id}
+                        onClick={() => onNavigate(plant.source === 'therapeutic' ? 'library' : plant.source === 'culinary' ? 'culinaire' : 'cosmetiques', plant.id)}
+                        className="px-8 py-4 hover:bg-botanik-green/5 cursor-pointer flex items-center justify-between border-b border-botanik-green/5 last:border-0 group"
+                      >
+                        <div>
+                          <div className="font-bold text-botanik-green">{plant.name}</div>
+                          <div className="text-xs text-botanik-green/40 italic">{plant.latinName}</div>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <span className={`text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full ${
+                            plant.source === 'therapeutic' ? 'bg-botanik-green/10 text-botanik-green' : 
+                            plant.source === 'culinary' ? 'bg-botanik-orange/10 text-botanik-orange' : 
+                            'bg-botanik-green/10 text-botanik-green'
+                          }`}>
+                            {plant.source}
+                          </span>
+                          <ChevronRight className="w-4 h-4 text-botanik-green/20 group-hover:translate-x-1 transition-transform" />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
+
+            {/* Right: BloomLab Rosemary Infusion Image Sans Opacité (Agrandie verticalement pour aligner le bas sur la barre de recherche) */}
+            <div className="lg:col-span-5 flex flex-col h-full justify-stretch">
+              <div className="relative w-full h-full min-h-[360px] lg:min-h-0 rounded-3xl overflow-hidden shadow-2xl border-2 border-white bg-white group flex flex-col">
+                <img 
+                  src={rosemaryImg} 
+                  alt="BloomLab - Infusion de romarin" 
+                  className="w-full h-full flex-1 object-cover opacity-100 group-hover:scale-105 transition-transform duration-700" 
+                />
+                <div className="absolute bottom-4 left-4 right-4 bg-[#0F261E]/85 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/20 shadow-lg flex items-center justify-between">
+                  <div className="text-xs font-bold text-white tracking-wide">
+                    BloomLab® • Infusion de Romarin
+                  </div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#D97706] bg-[#D97706]/20 px-2.5 py-0.5 rounded-full border border-[#D97706]/30">
+                    Totum Végétal
+                  </span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* Terrains Section */}
+      {/* Terrains Section — Normalisée T1 à T9 */}
       <section className="py-20 bg-white container mx-auto px-6 border-b border-botanik-green/5">
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-botanik-green mb-2">Navigation par Terrains</h2>
-          <p className="text-botanik-green/60">Ciblez les piliers systémiques de votre santé.</p>
+        <div className="max-w-4xl mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-botanik-green/5 rounded-full border border-botanik-green/10 text-botanik-green text-[10px] font-black uppercase tracking-[0.2em] mb-4">
+            <span>Navigation par terrain</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-botanik-green mb-3">
+            {lang === 'fr' 
+              ? "Explorer l'univers Bloom par terrain" 
+              : lang === 'de' 
+              ? "Das Bloom-Universum nach Terrain erkunden" 
+              : "Explore the Bloom Universe by Terrain"}
+          </h2>
+          <p className="text-botanik-green/70 text-base md:text-lg leading-relaxed">
+            {TERRAIN_PAGE_INTRO[lang]}
+          </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-          {terrains.map((terrain) => (
-            <div 
-              key={terrain.id}
-              onClick={() => onNavigate('terrain', terrain.id)}
-              className="flex flex-col items-center p-6 rounded-3xl bg-[#FAF7F2] hover:bg-white hover:shadow-xl transition-all cursor-pointer group border border-[#D8CBB7]/30 hover:border-[#1C3F34]/40"
-            >
-              <div className="w-14 h-14 bg-[#1C3F34] group-hover:bg-[#FAF7F2] text-white group-hover:text-[#1C3F34] border border-[#D8CBB7] group-hover:border-[#1C3F34] rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-300 shadow-sm">
-                <terrain.icon className="w-6 h-6 transition-colors duration-300" />
+
+        {/* 9 Terrains Grid (3x3 on desktop) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mb-8">
+          {PUBLIC_TERRAINS.map((terrain) => {
+            const Icon = terrain.icon;
+            return (
+              <div 
+                key={terrain.code}
+                onClick={() => onNavigate('terrain', terrain.code)}
+                className="group flex flex-col justify-between p-6 rounded-3xl bg-[#FAF7F2] hover:bg-white hover:shadow-xl transition-all duration-300 cursor-pointer border border-[#D8CBB7]/30 hover:border-botanik-green/30 relative overflow-hidden"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-12 h-12 bg-[#1C3F34] group-hover:bg-[#FAF7F2] text-white group-hover:text-[#1C3F34] border border-[#D8CBB7] group-hover:border-[#1C3F34] rounded-2xl flex items-center justify-center group-hover:scale-105 transition-all duration-300 shadow-sm">
+                      <Icon className="w-5 h-5 transition-colors duration-300" />
+                    </div>
+                    <span className="text-[11px] font-black uppercase tracking-widest text-[#1C3F34] bg-[#1C3F34]/10 px-3 py-1 rounded-full border border-[#1C3F34]/15">
+                      {terrain.code}
+                    </span>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-botanik-green mb-2 group-hover:text-[#1C3F34] transition-colors">
+                    {terrain.label[lang]}
+                  </h3>
+                  
+                  <p className="text-xs text-botanik-green/70 leading-relaxed line-clamp-3 mb-6">
+                    {terrain.publicDescription[lang]}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-botanik-green/5 flex items-center justify-between text-xs font-bold text-[#D97706] group-hover:text-[#1C3F34] transition-colors">
+                  <span>{lang === 'fr' ? 'Explorer les contenus' : lang === 'de' ? 'Inhalte entdecken' : 'Explore content'}</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
               </div>
-              <span className="text-sm font-bold text-botanik-green text-center group-hover:text-[#1C3F34] transition-colors">{terrain.name}</span>
-              <span className="text-[10px] font-black uppercase tracking-widest text-botanik-green/40 mt-1">{terrain.id}</span>
-            </div>
-          ))}
+            );
+          })}
+        </div>
+
+        {/* Note éditoriale de cadrage & non-diagnostic */}
+        <div className="p-4 md:p-5 rounded-2xl bg-botanik-green/5 border border-botanik-green/10 text-xs text-botanik-green/70 leading-relaxed flex items-start gap-3">
+          <ShieldAlert className="w-4 h-4 text-[#D97706] shrink-0 mt-0.5" />
+          <p>
+            <strong className="text-botanik-green font-semibold">Note éditoriale : </strong>
+            {TERRAIN_EDITORIAL_NOTICE[lang]}
+          </p>
         </div>
       </section>
 

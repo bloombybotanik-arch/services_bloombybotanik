@@ -33,7 +33,7 @@ import {
 import { translations as globalTranslations } from './translations';
 
 // import bloomImg from './assets/images/bloomlab_main_1784887530345.jpeg';
-// import labImg from './assets/images/Gemini_Generated_Image_r0bctrr0bctrr0bc.png';
+// import labImg from './assets/images/BloomLab_rosemary_infusion.png';
 // import herbsImg from './assets/images/herbs_close_up_cleaned_1786616800877.jpg';
 // import lifestyleImg from './assets/images/home_lab_vibe_cleaned_1786616854146.jpg';
 // import duoArgilesImg from './assets/images/product_duo_argiles.jpg';
@@ -44,10 +44,10 @@ const heroImg1 = "/images/bloomlab_main_1784887530345.png";
 const heroImg2 = "/images/2.png";
 const heroImg3 = "/images/9.png";
 const bloomImg = heroImg1;
-const labImg = "/assets/images/Gemini_Generated_Image_r0bctrr0bctrr0bc.png";
+const labImg = "/assets/images/BloomLab_rosemary_infusion.png";
 const shelvesImg = "/images/modern_herbalist_shelves_1786699793560.jpg";
 const herbsImg = "/assets/images/herbs_close_up_cleaned_1786616800877.jpg";
-const lifestyleImg = "/assets/images/Gemini_Generated_Image_r0bctrr0bctrr0bc.png";
+const lifestyleImg = "/assets/images/BloomLab_rosemary_infusion.png";
 const duoArgilesImg = "/assets/images/product_duo_argiles.jpg";
 const bloomSoinsImg = "/assets/images/Bloom_Soins.jpg";
 const cosmetiqueImg = "/assets/images/bloom_logo_final_1784886077159.png";

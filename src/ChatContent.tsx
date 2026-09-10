@@ -343,11 +343,11 @@ export default function ChatContent({
                    <button 
                     onClick={() => {
                       if (offer.id === 'bloom-complet') {
-                        onNavigate('product-detail', 'bloomlab');
+                        onNavigate('abonnement');
                       } else if (offer.id === 'essentiel') {
                         onNavigate('phytotherapie-reset');
                       } else {
-                        onNavigate('boutique');
+                        onNavigate('machine');
                       }
                     }}
                     className={`w-full py-4 rounded-2xl font-bold text-sm transition-all ${offer.featured ? 'bg-botanik-orange text-white shadow-lg shadow-botanik-orange/20' : 'bg-botanik-green/5 text-botanik-green hover:bg-botanik-green/10'}`}

@@ -1,7 +1,15 @@
 export type ShippingMethod = 'mondialrelay' | 'colissimo' | 'laposte' | 'express';
 
+export const isSubscriptionProduct = (item: any): boolean => {
+  if (!item) return false;
+  const id = (item.id || '').toLowerCase();
+  return id === 'bloom-complet' || id === 'premium-access' || item.isSubscription === true;
+};
+
 export const isDigitalProduct = (item: any): boolean => {
   if (!item) return false;
+  // bloom-complet includes physical monthly delivery of a 100ml botanical preparation
+  if (item.id === 'bloom-complet') return false;
   if (item.isDigital === true) return true;
   if (item.type === 'digital' || item.category === 'digital') return true;
   const id = (item.id || '').toLowerCase();
@@ -11,12 +19,10 @@ export const isDigitalProduct = (item: any): boolean => {
     id.includes('abonnement') || 
     id.includes('sub') || 
     id.includes('premium') || 
-    id === 'bloom-complet' || 
     id === 'bloom-digital' || 
     id === 'essentiel'
   ) return true;
   if (
-    name.includes('abonnement') || 
     name.includes('digital') || 
     name.includes('numérique') || 
     name.includes('e-book') || 
@@ -25,21 +31,33 @@ export const isDigitalProduct = (item: any): boolean => {
   return false;
 };
 
+export const requiresShipping = (cart: any[]): boolean => {
+  if (!cart || cart.length === 0) return false;
+  return cart.some(item => !isDigitalProduct(item));
+};
+
 export const getShippingPrice = (
   method: ShippingMethod,
   cart: any[]
 ): number => {
   if (!cart || cart.length === 0) return 0;
 
-  // Si le panier ne contient QUE des produits digitaux (abonnements, guides...), AUCUN frais d'expédition
+  // Si le panier ne contient QUE des produits digitaux
   const physicalItems = cart.filter(item => !isDigitalProduct(item));
   if (physicalItems.length === 0) {
     return 0;
   }
 
+  // Bloom Complet inclut la livraison standard à domicile chaque mois
+  const onlyBloomComplet = physicalItems.length === 1 && physicalItems[0].id === 'bloom-complet';
+  if (onlyBloomComplet) {
+    if (method === 'express') return 9.90;
+    return 0; // Inclus dans l'abonnement 59€/mois
+  }
+
   const hasBloomLab = physicalItems.some(item => item.id === 'bloomlab');
   const sachetCount = physicalItems
-    .filter(item => item.id !== 'bloomlab')
+    .filter(item => item.id !== 'bloomlab' && item.id !== 'bloom-complet')
     .reduce((sum, item) => sum + (item.quantity || 1), 0);
 
   if (hasBloomLab) {

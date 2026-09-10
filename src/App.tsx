@@ -16,8 +16,8 @@ import { onAuthStateChanged, User as FirebaseUser, signOut } from 'firebase/auth
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 // import bloomLabImg from './assets/images/bloomlab_main_1784887530345.jpeg';
 // import img05 from './assets/images/Img_05.jpeg';
-const bloomLabImg = "https://images.unsplash.com/photo-1611078767398-fcfe88fdb728?auto=format&fit=crop&w=800&q=80";
-const img05 = "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=800&q=80";
+const bloomLabImg = "/assets/images/bloomlab_main_1784887530345.jpeg";
+const img05 = "/assets/images/Img_05.jpeg";
 // import logoSidebar from './assets/images/logo_sidebar_1784886108085.png';
 const logoSidebar = "/assets/images/logo_sidebar_1784886108085.png";
 import { OptimizedImage } from './components/OptimizedImage';
@@ -590,10 +590,13 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
         "name": "Démonstration de l'extracteur botanique BloomLab",
         "description": "Découvrez comment fonctionne la BloomLab, l'extracteur botanique de précision pour l'extraction du totum à basse température.",
         "thumbnailUrl": [
-          `https://bloombybotanik.com${bloomLabImg}`
+          "https://bloombybotanik.com/assets/images/bloomlab_main_1784887530345.jpeg",
+          "https://bloombybotanik.com/images/1.png",
+          "https://bloombybotanik.com/images/8.png"
         ],
         "uploadDate": "2026-08-01T08:00:00Z",
         "contentUrl": "https://bloombybotanik.com/demo_bloomlab.mp4",
+        "embedUrl": "https://bloombybotanik.com/bloomlab",
         "duration": "PT1M30S"
       });
     }
@@ -831,10 +834,12 @@ const NavigationSidebar = ({ className = "", currentView, currentProductId, navi
       className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all text-left group ${
         isActive 
           ? 'bg-[#1C3F34] text-white shadow-sm ring-1 ring-white/20' 
-          : 'text-[#F9F9F7]/80 hover:text-white hover:bg-[#1C3F34]'
+          : Icon 
+            ? 'text-white hover:text-white hover:bg-[#1C3F34]' 
+            : 'text-[#D1D5DB] hover:text-white hover:bg-[#1C3F34]'
       } ${isSub ? 'pl-11 text-xs font-medium' : 'text-sm font-bold'}`}
     >
-      {Icon && <Icon className={`w-4 h-4 shrink-0 transition-colors ${isActive ? 'text-[#D4AF37]' : 'group-hover:text-[#D4AF37]'}`} />}
+      {Icon && <Icon className="w-4 h-4 shrink-0 text-white transition-colors" />}
       <span className="truncate">{label}</span>
     </a>
   );
@@ -891,21 +896,15 @@ const NavigationSidebar = ({ className = "", currentView, currentProductId, navi
             isActive={currentView === 'manifeste'}
           />
           <NavItem 
-            id="chat" 
-            label={t.nav.pourquoi_bloom_sub?.audit || "Je commence / Diagnostic"} 
-            icon={Sparkles} 
-            isActive={currentView === 'chat'}
+            id="machine" 
+            label={lang === 'fr' ? "L'extraction de Précision" : lang === 'de' ? "Präzisionsextraktion" : "Precision Extraction"} 
+            icon={FlaskConical} 
+            isActive={currentView === 'machine'}
           />
         </NavGroup>
 
         {/* 2. LA MÉTHODE A/B */}
         <NavGroup title={t.nav.methode_ab || "LA MÉTHODE A/B"}>
-          <NavItem 
-            id="machine" 
-            label={t.nav.methode_ab_sub?.extraction || "Extraction de précision"} 
-            icon={FlaskConical} 
-            isActive={currentView === 'machine'}
-          />
           <NavItem 
             id="product-detail" 
             label={t.nav.methode_ab_sub?.bloomlab || "L'Extracteur BloomLab®"} 
@@ -947,6 +946,12 @@ const NavigationSidebar = ({ className = "", currentView, currentProductId, navi
             label={t.nav.votre_pratique_sub?.systemique || "Protocoles Systémiques"} 
             icon={Wind} 
             isActive={currentView === 'phytotherapie-reset'}
+          />
+          <NavItem 
+            id="chat" 
+            label={lang === 'fr' ? "Je commence : Diagnostic" : lang === 'de' ? "Ich starte : Diagnose" : "Start Here : Diagnosis"} 
+            icon={Sparkles} 
+            isActive={currentView === 'chat'}
           />
           <NavItem 
             id="herbier" 
@@ -2043,12 +2048,12 @@ export default function App() {
                       }`}
                     >
                       <div className="flex items-center gap-4">
-                        <Home className={`w-6 h-6 ${(currentView === 'home') ? 'text-white' : 'text-botanik-orange'}`} />
+                        <Home className="w-6 h-6 text-white" />
                         <div className="flex flex-col">
-                          <span className="font-black text-lg tracking-tight leading-none">{t.nav.accueil.toUpperCase()}</span>
+                          <span className="font-black text-lg tracking-tight leading-none text-white">{t.nav.accueil.toUpperCase()}</span>
                         </div>
                       </div>
-                      <ArrowRight className="w-5 h-5 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                      <ArrowRight className="w-5 h-5 text-white opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                     </a>
                   </div>
                 </div>
@@ -2059,18 +2064,18 @@ export default function App() {
                   <div className="grid grid-cols-1 gap-2">
                     {[
                       { id: 'manifeste', label: t.nav.pourquoi_bloom_sub?.manifeste || "Le Manifeste", icon: FileText },
-                      { id: 'chat', label: t.nav.pourquoi_bloom_sub?.audit || "Je commence / Diagnostic", icon: Sparkles },
+                      { id: 'machine', label: lang === 'fr' ? "L'extraction de Précision" : lang === 'de' ? "Präzisionsextraktion" : "Precision Extraction", icon: FlaskConical },
                     ].map((item: any) => (
                       <a
                         key={item.id}
                         href={VIEW_PATHS[item.id]}
                         onClick={(e) => { e.preventDefault(); navigateTo(item.id); setIsMenuOpen(false); }}
                         className={`w-full flex items-center gap-4 px-6 py-3.5 rounded-2xl transition-all text-left group ${
-                          (currentView === item.id) ? 'bg-[#1C3F34] text-white shadow-md' : 'text-[#F9F9F7]/80 hover:bg-[#1C3F34] hover:text-white'
+                          (currentView === item.id) ? 'bg-[#1C3F34] text-white shadow-md' : 'text-white hover:bg-[#1C3F34] hover:text-white'
                         }`}
                       >
-                        <item.icon className="w-5 h-5 text-botanik-orange opacity-80" />
-                        <span className="font-bold text-base tracking-tight">{item.label}</span>
+                        <item.icon className="w-5 h-5 text-white" />
+                        <span className="font-bold text-base tracking-tight text-white">{item.label}</span>
                       </a>
                     ))}
                   </div>
@@ -2081,7 +2086,6 @@ export default function App() {
                   <h3 className="px-4 text-[12px] font-bold uppercase tracking-[0.16em] text-[#D1D5DB] mb-3">{t.nav.methode_ab || "LA MÉTHODE A/B"}</h3>
                   <div className="grid grid-cols-1 gap-2">
                     {[
-                      { id: 'machine', label: t.nav.methode_ab_sub?.extraction || "Extraction de précision", icon: FlaskConical },
                       { id: 'product-detail', label: t.nav.methode_ab_sub?.bloomlab || "L'Extracteur BloomLab®", icon: Award, param: 'bloomlab' },
                       { id: 'pillar-extraction', label: t.nav.methode_ab_sub?.guide_methodes || "Guide complet des méthodes", icon: BookOpen },
                       { id: 'totum-definition', label: t.nav.methode_ab_sub?.totum || "Le Totum Végétal", icon: Leaf },
@@ -2096,11 +2100,11 @@ export default function App() {
                           setIsMenuOpen(false); 
                         }}
                         className={`w-full flex items-center gap-4 px-6 py-3.5 rounded-2xl transition-all text-left group ${
-                          (currentView === item.id && (!item.param || currentProductId === item.param)) ? 'bg-[#1C3F34] text-white shadow-md' : 'text-[#F9F9F7]/80 hover:bg-[#1C3F34] hover:text-white'
+                          (currentView === item.id && (!item.param || currentProductId === item.param)) ? 'bg-[#1C3F34] text-white shadow-md' : 'text-white hover:bg-[#1C3F34] hover:text-white'
                         }`}
                       >
-                        <item.icon className="w-5 h-5 text-botanik-orange opacity-80" />
-                        <span className="font-bold text-base tracking-tight">{item.label}</span>
+                        <item.icon className="w-5 h-5 text-white" />
+                        <span className="font-bold text-base tracking-tight text-white">{item.label}</span>
                       </a>
                     ))}
                   </div>
@@ -2114,6 +2118,7 @@ export default function App() {
                       { id: 'culinaire', label: t.nav.votre_pratique_sub?.culinaire || "Atelier Culinaire", icon: Utensils },
                       { id: 'cosmetiques', label: t.nav.votre_pratique_sub?.cosmetique || "Cosmétique Botanique", icon: Droplets },
                       { id: 'phytotherapie-reset', label: t.nav.votre_pratique_sub?.systemique || "Protocoles Systémiques", icon: Wind },
+                      { id: 'chat', label: lang === 'fr' ? "Je commence : Diagnostic" : lang === 'de' ? "Ich starte : Diagnose" : "Start Here : Diagnosis", icon: Sparkles },
                       { id: 'herbier', label: t.nav.votre_pratique_sub?.herbier || "L'Herbier", icon: BookOpen },
                     ].map((item: any) => (
                       <a
@@ -2125,11 +2130,11 @@ export default function App() {
                           setIsMenuOpen(false); 
                         }}
                         className={`w-full flex items-center gap-4 px-6 py-3.5 rounded-2xl transition-all text-left group ${
-                          (currentView === item.id) ? 'bg-[#1C3F34] text-white shadow-md' : 'text-[#F9F9F7]/80 hover:bg-[#1C3F34] hover:text-white'
+                          (currentView === item.id) ? 'bg-[#1C3F34] text-white shadow-md' : 'text-white hover:bg-[#1C3F34] hover:text-white'
                         }`}
                       >
-                        <item.icon className="w-5 h-5 text-botanik-orange" />
-                        <span className="font-bold text-base tracking-tight">{item.label}</span>
+                        <item.icon className="w-5 h-5 text-white" />
+                        <span className="font-bold text-base tracking-tight text-white">{item.label}</span>
                       </a>
                     ))}
                   </div>
@@ -2154,11 +2159,11 @@ export default function App() {
                           setIsMenuOpen(false); 
                         }}
                         className={`w-full flex items-center gap-4 px-6 py-3.5 rounded-2xl transition-all text-left group ${
-                          (currentView === item.id) ? 'bg-[#1C3F34] text-white shadow-md' : 'text-[#F9F9F7]/80 hover:bg-[#1C3F34] hover:text-white'
+                          (currentView === item.id) ? 'bg-[#1C3F34] text-white shadow-md' : 'text-white hover:bg-[#1C3F34] hover:text-white'
                         }`}
                       >
-                        <item.icon className="w-5 h-5 text-botanik-orange opacity-80" />
-                        <span className="font-bold text-base tracking-tight">{item.label}</span>
+                        <item.icon className="w-5 h-5 text-white" />
+                        <span className="font-bold text-base tracking-tight text-white">{item.label}</span>
                       </a>
                     ))}
                   </div>
@@ -2172,21 +2177,21 @@ export default function App() {
                       href={VIEW_PATHS['boutique']}
                       onClick={(e) => { e.preventDefault(); navigateTo('boutique'); setIsMenuOpen(false); }}
                       className={`w-full flex items-center gap-4 px-6 py-3.5 rounded-2xl transition-all text-left group ${
-                        currentView === 'boutique' && !searchParams.get('category') ? 'bg-[#1C3F34] text-white shadow-md' : 'text-[#F9F9F7]/80 hover:bg-[#1C3F34] hover:text-white'
+                        currentView === 'boutique' && !searchParams.get('category') ? 'bg-[#1C3F34] text-white shadow-md' : 'text-white hover:bg-[#1C3F34] hover:text-white'
                       }`}
                     >
-                      <ShoppingBag className="w-5 h-5 text-botanik-orange" />
-                      <span className="font-bold text-base tracking-tight">{lang === 'fr' ? "Toute la Boutique" : "All Products"}</span>
+                      <ShoppingBag className="w-5 h-5 text-white" />
+                      <span className="font-bold text-base tracking-tight text-white">{lang === 'fr' ? "Toute la Boutique" : "All Products"}</span>
                     </a>
                     <a
                       href={VIEW_PATHS['boutique-kits'] || '/boutique/kits/'}
                       onClick={(e) => { e.preventDefault(); navigateTo('boutique', 'kits'); setIsMenuOpen(false); }}
                       className={`w-full flex items-center gap-4 px-6 py-3.5 rounded-2xl transition-all text-left group ${
-                        currentView === 'boutique' && searchParams.get('category') === 'kits' ? 'bg-[#1C3F34] text-white shadow-md' : 'text-[#F9F9F7]/80 hover:bg-[#1C3F34] hover:text-white'
+                        currentView === 'boutique' && searchParams.get('category') === 'kits' ? 'bg-[#1C3F34] text-white shadow-md' : 'text-white hover:bg-[#1C3F34] hover:text-white'
                       }`}
                     >
-                      <Package className="w-5 h-5 text-botanik-orange" />
-                      <span className="font-bold text-base tracking-tight">{t.nav.boutique_sub.kits}</span>
+                      <Package className="w-5 h-5 text-white" />
+                      <span className="font-bold text-base tracking-tight text-white">{t.nav.boutique_sub.kits}</span>
                     </a>
                     <a
                       href={VIEW_PATHS['abonnement'] || '/abonnement/'}

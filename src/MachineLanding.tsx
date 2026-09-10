@@ -86,7 +86,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
           {/* Hero Image with Overlay: Header Texts (Top) & Gallery Links (Bottom-Left) */}
           <div className="flex flex-col items-center mb-12">
             <div 
-              className="relative rounded-3xl overflow-hidden border border-white/15 bg-white/5 shadow-2xl w-full max-w-5xl min-h-[580px] sm:min-h-[660px] md:min-h-[740px] cursor-zoom-in group"
+              className="relative rounded-3xl overflow-hidden border border-white/15 bg-white/5 shadow-2xl w-full max-w-5xl h-[380px] sm:h-[440px] md:h-[480px] min-h-[380px] sm:min-h-[440px] md:min-h-[480px] cursor-zoom-in group"
               onClick={() => setFullscreenImage(selectedHeroImage)}
             >
               <picture>
@@ -97,7 +97,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
-                  className="w-full h-full min-h-[580px] sm:min-h-[660px] md:min-h-[740px] object-cover object-[center_35%] group-hover:scale-105 transition-transform duration-700" 
+                  className="w-full h-full object-cover object-[center_35%] group-hover:scale-105 transition-transform duration-700" 
                 />
               </picture>
 
@@ -106,13 +106,13 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
               
               {/* Header Texts placed directly ON the hero image */}
-              <div className="absolute top-6 left-6 right-6 sm:top-10 sm:left-10 sm:right-10 z-20 space-y-3 sm:space-y-4 max-w-3xl pointer-events-none">
-                <div className="inline-flex items-center gap-2 bg-black/60 backdrop-blur-md text-[#D97706] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest border border-white/20 shadow-lg">
+              <div className="absolute top-5 left-5 right-5 sm:top-8 sm:left-8 sm:right-8 z-20 space-y-2 sm:space-y-3 max-w-3xl pointer-events-none">
+                <div className="inline-flex items-center gap-2 bg-black/60 backdrop-blur-md text-[#D97706] px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-widest border border-white/20 shadow-lg">
                   <Zap className="w-3.5 h-3.5 text-[#D97706]" /> 
                   <span>Souveraineté Botanique — Méthode A/B</span>
                 </div>
 
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight drop-shadow-md">
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight drop-shadow-md">
                   {lang === 'fr' ? (
                     <>L'art de l'extraction botanique : libérer le potentiel de vos plantes</>
                   ) : lang === 'de' ? (
@@ -124,7 +124,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               </div>
 
               {/* 4 Image Selector Links on bottom-left: Vue 1 (Plante), Vue 2 (Infusion), Vue 3 (Totum), Vue 4 (Précision) */}
-              <div className="absolute bottom-5 left-5 sm:bottom-6 sm:left-6 z-20 flex flex-wrap items-center gap-2 sm:gap-3 max-w-[calc(100%-110px)]">
+              <div className="absolute bottom-3 left-3 sm:bottom-5 sm:left-5 z-20 flex flex-wrap items-center gap-1.5 sm:gap-2.5 max-w-[calc(100%-110px)]">
                 {heroViews.map((view) => {
                   const isSelected = selectedHeroImage === view.src || selectedHeroImage === view.fallbackSrc;
                   return (
@@ -135,7 +135,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                         e.stopPropagation();
                         setSelectedHeroImage(view.src);
                       }}
-                      className={`flex items-center gap-2 sm:gap-2.5 p-1.5 pr-3 sm:pr-4 rounded-xl sm:rounded-2xl border transition-all cursor-pointer backdrop-blur-md ${
+                      className={`flex items-center gap-1.5 sm:gap-2 p-1 sm:p-1.5 pr-2.5 sm:pr-3.5 rounded-xl border transition-all cursor-pointer backdrop-blur-md ${
                         isSelected 
                           ? 'bg-black/80 border-[#D97706] shadow-xl text-white ring-2 ring-[#D97706]/70' 
                           : 'bg-black/50 border-white/20 text-white/80 hover:text-white hover:bg-black/75 hover:border-white/40'
@@ -148,12 +148,12 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                           alt={view.label} 
                           loading="lazy"
                           decoding="async"
-                          className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl object-cover" 
+                          className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg object-cover" 
                         />
                       </picture>
                       <div className="text-left text-xs">
-                        <p className="font-bold text-[11px] sm:text-[13px] leading-tight text-white">{view.label}</p>
-                        <p className="text-[10px] sm:text-[11px] text-[#D97706] font-medium leading-tight">{view.subtitle}</p>
+                        <p className="font-bold text-[10px] sm:text-xs leading-tight text-white">{view.label}</p>
+                        <p className="text-[9px] sm:text-[10px] text-[#D97706] font-medium leading-tight">{view.subtitle}</p>
                       </div>
                     </button>
                   );
@@ -161,13 +161,13 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               </div>
 
               {/* Bottom-Right Zoom Trigger */}
-              <div className="absolute bottom-5 right-5 sm:bottom-6 sm:right-6 z-20 flex items-center gap-2 text-white text-xs font-semibold">
+              <div className="absolute bottom-3 right-3 sm:bottom-5 sm:right-5 z-20 flex items-center gap-2 text-white text-xs font-semibold">
                 <button
                   type="button"
                   onClick={() => setFullscreenImage(selectedHeroImage)}
-                  className="bg-black/60 hover:bg-black/80 backdrop-blur-md px-3.5 py-2 rounded-full border border-white/20 font-bold text-xs flex items-center gap-1.5 transition-colors cursor-pointer shadow-lg"
+                  className="bg-black/60 hover:bg-black/80 backdrop-blur-md px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full border border-white/20 font-bold text-xs flex items-center gap-1.5 transition-colors cursor-pointer shadow-lg"
                 >
-                  <Maximize2 className="w-4 h-4 text-[#D97706]" /> 
+                  <Maximize2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D97706]" /> 
                   <span>{lang === 'fr' ? "Agrandir" : "Zoom"}</span>
                 </button>
               </div>
@@ -777,7 +777,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 </ul>
               </div>
               <button 
-                onClick={() => onNavigate('boutique')}
+                onClick={() => onNavigate('abonnement')}
                 className="w-full py-4 bg-[#D97706] hover:bg-[#b45309] text-white rounded-xl font-bold transition-all text-sm cursor-pointer shadow-lg"
               >
                 Choisir Bloom Complet (59€/mois)

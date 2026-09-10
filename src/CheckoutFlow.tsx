@@ -108,6 +108,7 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('stripe');
   
   const isAllDigital = cart.length > 0 && cart.every(item => isDigitalProduct(item));
+  const hasBloomComplet = cart.some(item => item.id === 'bloom-complet');
   const shipping = isAllDigital ? 0 : getShippingPrice(shippingMethod, cart);
   
   let adjustedTotal = total;
@@ -184,7 +185,21 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
               <p className="text-sm opacity-60">{t.confirmation.conf_desc} {formData.email}</p>
             </div>
           </div>
-          {isAllDigital ? (
+          {hasBloomComplet ? (
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm">
+                <Sparkles className="w-5 h-5 text-[#D97706]" />
+              </div>
+              <div>
+                <p className="font-bold">{lang === 'fr' ? "Bienvenue dans Bloom Complet" : "Welcome to Bloom Complete"}</p>
+                <p className="text-sm opacity-60">
+                  {lang === 'fr' 
+                    ? "Votre formule mensuelle à 59 €/mois est validée. Vos accès aux recettes et méthodes sont ouverts immédiatement, et votre première préparation botanique (100 ml) vous sera expédiée avec son guide d'utilisation." 
+                    : "Your 59 €/month subscription is activated. Your digital resources are available and your first 100 ml preparation will ship with its discovery guide."}
+                </p>
+              </div>
+            </div>
+          ) : isAllDigital ? (
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm">
                 <Sparkles className="w-5 h-5 text-[#1B3022]" />
@@ -411,17 +426,45 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
             
             <div className="pt-6 border-t border-[#1B3022]/10 space-y-3">
               <div className="flex justify-between text-sm opacity-60">
-                <span>{isAllDigital ? (lang === 'fr' ? 'Livraison (Produit digital)' : 'Delivery (Digital product)') : `${cartT.summary.shipping} (${shippingMethod})`}</span>
+                <span>{hasBloomComplet ? (lang === 'fr' ? 'Livraison mensuelle' : 'Monthly shipping') : (isAllDigital ? (lang === 'fr' ? 'Livraison (Produit digital)' : 'Delivery (Digital product)') : `${cartT.summary.shipping} (${shippingMethod})`)}</span>
                 <span className="font-bold text-[#1B3022]">
-                  {isAllDigital ? (lang === 'fr' ? 'Gratuit / Inclus' : 'Free') : (shipping === 0 ? t.summary.shipping_free : `${shipping.toFixed(2).replace('.', ',')} €`)}
+                  {hasBloomComplet ? (lang === 'fr' ? 'Incluse' : 'Included') : (isAllDigital ? (lang === 'fr' ? 'Gratuit / Inclus' : 'Free') : (shipping === 0 ? t.summary.shipping_free : `${shipping.toFixed(2).replace('.', ',')} €`))}
                 </span>
               </div>
               <div className="flex justify-between items-center pt-2">
                 <span className="text-lg font-bold">{t.summary.total}</span>
-                <span className="text-2xl font-bold text-[#F97316]">{finalTotal.toFixed(2).replace('.', ',')} €</span>
+                <span className="text-2xl font-bold text-[#D97706]">
+                  {finalTotal.toFixed(2).replace('.', ',')} €
+                  {hasBloomComplet && <span className="text-xs font-normal text-[#1B3022]/60 ml-1">/mois</span>}
+                </span>
               </div>
             </div>
+
+            {hasBloomComplet && (
+              <div className="mt-6 p-4 bg-[#FFF8F0] rounded-2xl border border-[#D97706]/30 text-xs text-[#0F261E]/80 space-y-2">
+                <div className="font-bold text-[#D97706] uppercase tracking-wider text-[10px]">
+                  Abonnement Bloom Complet
+                </div>
+                <p>
+                  59 €/mois sans engagement. Vous pouvez suspendre ou résilier votre formule à tout moment depuis votre espace membre.
+                </p>
+                <p className="text-[11px] text-[#0F261E]/70 italic pt-1">
+                  Bloom Complet est un accompagnement de découverte et de préparation botanique. Il ne remplace pas un médicament, un diagnostic, une consultation médicale ni les conseils d'un pharmacien.
+                </p>
+              </div>
+            )}
           </div>
+        </div>
+      </div>
+
+      {/* Statutory Disclaimer */}
+      <div className="mt-12 p-6 bg-white rounded-3xl border border-[#1B3022]/10 shadow-sm flex items-start gap-4 text-xs text-[#1B3022]/80 leading-relaxed">
+        <AlertCircle className="w-5 h-5 text-[#D97706] shrink-0 mt-0.5" />
+        <div className="space-y-1">
+          <p className="font-bold text-[#0F261E]">Information importante et sécurité :</p>
+          <p>
+            Les produits et contenus Bloom by BotaniK ne sont pas des médicaments. Les informations proposées sont destinées à la découverte des plantes et des méthodes de préparation ; elles ne remplacent pas l'avis d'un professionnel de santé. En cas de traitement, de pathologie, de grossesse, d'allaitement, d'allergie, de chirurgie programmée ou de doute, demandez conseil à un professionnel de santé qualifié avant d'utiliser une nouvelle préparation.
+          </p>
         </div>
       </div>
     </article>
