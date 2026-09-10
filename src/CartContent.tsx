@@ -108,34 +108,34 @@ export default function CartContent({
   }
 
   return (
-    <article className="max-w-[1200px] mx-auto px-6 py-12 md:py-20 animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <div className="flex items-center gap-4 mb-8">
-        <button onClick={onBack} className="p-2 hover:bg-[#1B3022]/5 rounded-full transition-colors cursor-pointer">
+    <article className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-20 animate-in fade-in slide-in-from-bottom-4 duration-700">
+      <div className="flex items-center gap-4 mb-6 sm:mb-8">
+        <button onClick={onBack} className="p-2 hover:bg-[#1B3022]/5 rounded-full transition-colors cursor-pointer min-h-[44px] min-w-[44px] flex items-center justify-center">
           <ArrowLeft className="w-6 h-6 text-[#1B3022]" />
         </button>
         <div className="text-[10px] font-black uppercase tracking-[0.3em] text-[#D97706]">{t.header.badge}</div>
       </div>
       
-      <div className="mb-12">
-        <h1 className="text-3xl md:text-6xl font-bold text-[#1B3022] mb-4">{t.header.title}</h1>
-        <p className="text-base md:text-xl text-[#1B3022]/60 max-w-2xl font-light">
+      <div className="mb-8 sm:mb-12">
+        <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-[#1B3022] mb-3 sm:mb-4">{t.header.title}</h1>
+        <p className="text-sm sm:text-base md:text-xl text-[#1B3022]/60 max-w-2xl font-light">
           {t.header.subtitle}
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12">
         {/* Items List */}
-        <div className="lg:col-span-2 space-y-8">
-          <div className="space-y-6">
+        <div className="lg:col-span-2 space-y-6 sm:space-y-8">
+          <div className="space-y-4 sm:space-y-6">
             {items.map((item) => {
               const isComplet = item.id === 'bloom-complet';
 
               return (
                 <div 
                   key={item.id} 
-                  className={`bg-white p-6 rounded-[32px] border ${isComplet ? 'border-2 border-[#D97706] shadow-lg' : 'border-[#1B3022]/10'} flex flex-col sm:flex-row gap-8 items-center group hover:shadow-xl transition-all duration-500`}
+                  className={`bg-white p-4 sm:p-6 rounded-2xl sm:rounded-[32px] border ${isComplet ? 'border-2 border-[#D97706] shadow-lg' : 'border-[#1B3022]/10'} flex flex-col sm:flex-row gap-5 sm:gap-8 items-center group hover:shadow-xl transition-all duration-500`}
                 >
-                  <div className="w-full sm:w-48 aspect-square rounded-2xl overflow-hidden bg-[#F9F9F7] flex-shrink-0 relative border border-[#1B3022]/5">
+                  <div className="w-28 sm:w-48 h-28 sm:h-48 aspect-square rounded-2xl overflow-hidden bg-[#F9F9F7] flex-shrink-0 relative border border-[#1B3022]/5">
                     <div className="absolute inset-2 overflow-hidden rounded-xl">
                       <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                     </div>
@@ -151,8 +151,8 @@ export default function CartContent({
                         </span>
                       )}
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-[#1B3022] leading-tight">{item.name}</h3>
-                    <div className="text-xl font-bold text-[#1B3022] whitespace-nowrap">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#1B3022] leading-tight">{item.name}</h3>
+                    <div className="text-lg sm:text-xl font-bold text-[#1B3022] whitespace-nowrap">
                       {item.price.toFixed(2).replace('.', ',')} €
                       {isComplet && <span className="text-xs font-normal text-[#1B3022]/60 ml-1">/mois</span>}
                     </div>
@@ -164,24 +164,25 @@ export default function CartContent({
                       </p>
                     )}
                   </div>
-                  <div className="flex items-center gap-4 bg-[#F9F9F7] p-2 rounded-xl">
+                  <div className="flex items-center gap-3 sm:gap-4 bg-[#F9F9F7] p-2 rounded-xl">
                     <button 
                       onClick={() => onUpdateQuantity(item.id, -1)}
-                      className="w-8 h-8 flex items-center justify-center hover:bg-white rounded-lg transition-colors cursor-pointer"
+                      className="w-9 h-9 sm:w-8 sm:h-8 flex items-center justify-center hover:bg-white rounded-lg transition-colors cursor-pointer min-h-[36px] min-w-[36px]"
                     >
                       <Minus className="w-4 h-4" />
                     </button>
-                    <span className="font-bold w-4 text-center">{item.quantity}</span>
+                    <span className="font-bold w-6 text-center text-sm sm:text-base">{item.quantity}</span>
                     <button 
                       onClick={() => onUpdateQuantity(item.id, 1)}
-                      className="w-8 h-8 flex items-center justify-center hover:bg-white rounded-lg transition-colors cursor-pointer"
+                      className="w-9 h-9 sm:w-8 sm:h-8 flex items-center justify-center hover:bg-white rounded-lg transition-colors cursor-pointer min-h-[36px] min-w-[36px]"
                     >
                       <Plus className="w-4 h-4" />
                     </button>
                   </div>
                   <button 
                     onClick={() => onRemove(item.id)}
-                    className="p-3 text-red-500 hover:bg-red-50 rounded-xl transition-colors cursor-pointer"
+                    className="p-3 text-red-500 hover:bg-red-50 rounded-xl transition-colors cursor-pointer min-h-[44px] min-w-[44px] flex items-center justify-center"
+                    aria-label="Supprimer l'article"
                   >
                     <Trash2 className="w-5 h-5" />
                   </button>
@@ -192,7 +193,7 @@ export default function CartContent({
 
           {/* Dedicated Bloom Complet Reassurance Card */}
           {hasBloomComplet && (
-            <div className="bg-[#FFF8F0] border-2 border-[#D97706] rounded-[32px] p-8 relative overflow-hidden shadow-sm space-y-6">
+            <div className="bg-[#FFF8F0] border-2 border-[#D97706] rounded-2xl sm:rounded-[32px] p-5 sm:p-8 relative overflow-hidden shadow-sm space-y-6">
               <div className="flex items-center gap-2 text-[#D97706] text-xs font-black uppercase tracking-widest">
                 <Package className="w-4 h-4 text-[#D97706]" />
                 <span>{isFR ? "Votre formule Bloom Complet (59 €/mois)" : "Your Bloom Complete Plan (59 €/month)"}</span>
@@ -300,28 +301,28 @@ export default function CartContent({
           </div>
 
           {/* Cross-sell / Recommended */}
-          <div className="bg-white p-8 rounded-[40px] border border-[#1B3022]/10">
-            <h4 className="text-xs font-black uppercase tracking-[0.3em] text-[#1B3022]/40 mb-8 px-4">{t.recommended.title}</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-[40px] border border-[#1B3022]/10">
+            <h4 className="text-xs font-black uppercase tracking-[0.3em] text-[#1B3022]/40 mb-6 sm:mb-8 px-2 sm:px-4">{t.recommended.title}</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {!hasBloomLab && (
-                <div className="bg-[#F9F9F7] p-8 rounded-[32px] border border-[#D97706]/20 shadow-sm hover:shadow-xl transition-all group">
-                  <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
-                    <FlaskConical className="w-8 h-8 text-[#D97706]" />
+                <div className="bg-[#F9F9F7] p-5 sm:p-8 rounded-2xl sm:rounded-[32px] border border-[#D97706]/20 shadow-sm hover:shadow-xl transition-all group">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-sm">
+                    <FlaskConical className="w-6 h-6 sm:w-8 sm:h-8 text-[#D97706]" />
                   </div>
-                  <h5 className="text-lg font-bold text-[#1B3022] mb-3">{t.recommended.bloomlab_title}</h5>
-                  <p className="text-sm text-[#1B3022]/60 mb-8 leading-relaxed">{t.recommended.bloomlab_desc}</p>
-                  <button onClick={() => onBack()} className="text-sm font-bold text-[#D97706] flex items-center gap-2 group-hover:gap-3 transition-all cursor-pointer">
+                  <h5 className="text-base sm:text-lg font-bold text-[#1B3022] mb-2 sm:mb-3">{t.recommended.bloomlab_title}</h5>
+                  <p className="text-xs sm:text-sm text-[#1B3022]/60 mb-6 sm:mb-8 leading-relaxed">{t.recommended.bloomlab_desc}</p>
+                  <button onClick={() => onBack()} className="text-xs sm:text-sm font-bold text-[#D97706] flex items-center gap-2 group-hover:gap-3 transition-all cursor-pointer py-1">
                     {t.recommended.bloomlab_btn} <ChevronRight className="w-4 h-4" />
                   </button>
                 </div>
               )}
-              <div className="bg-[#F9F9F7] p-8 rounded-[32px] border border-[#1B3022]/10 shadow-sm hover:shadow-xl transition-all group">
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
-                  <BookOpen className="w-8 h-8 text-[#1B3022]" />
+              <div className="bg-[#F9F9F7] p-5 sm:p-8 rounded-2xl sm:rounded-[32px] border border-[#1B3022]/10 shadow-sm hover:shadow-xl transition-all group">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-sm">
+                  <BookOpen className="w-6 h-6 sm:w-8 sm:h-8 text-[#1B3022]" />
                 </div>
-                <h5 className="text-lg font-bold text-[#1B3022] mb-3">{t.recommended.premium_title}</h5>
-                <p className="text-sm text-[#1B3022]/60 mb-8 leading-relaxed">{t.recommended.premium_desc}</p>
-                <button onClick={() => onNavigate('abonnement')} className="text-sm font-bold text-[#1B3022] flex items-center gap-2 group-hover:gap-3 transition-all cursor-pointer">
+                <h5 className="text-base sm:text-lg font-bold text-[#1B3022] mb-2 sm:mb-3">{t.recommended.premium_title}</h5>
+                <p className="text-xs sm:text-sm text-[#1B3022]/60 mb-6 sm:mb-8 leading-relaxed">{t.recommended.premium_desc}</p>
+                <button onClick={() => onNavigate('abonnement')} className="text-xs sm:text-sm font-bold text-[#1B3022] flex items-center gap-2 group-hover:gap-3 transition-all cursor-pointer py-1">
                   {t.recommended.premium_btn} <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
@@ -330,11 +331,11 @@ export default function CartContent({
 
           {/* Delivery Options */}
           {!allDigital && (
-            <div className="bg-white p-8 rounded-[32px] border border-[#1B3022]/10">
-              <div className="flex items-center gap-3 mb-8">
+            <div className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-[32px] border border-[#1B3022]/10">
+              <div className="flex items-center gap-3 mb-6 sm:mb-8">
                 <Truck className="w-6 h-6 text-[#1B3022]" />
                 <div>
-                  <h2 className="text-2xl font-bold text-[#1B3022]">{t.shipping.title}</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold text-[#1B3022]">{t.shipping.title}</h2>
                   {hasBloomComplet && (
                     <p className="text-xs text-[#D97706] font-bold mt-1">
                       {isFR ? "Livraison mensuelle standard incluse avec l'abonnement Bloom Complet" : "Standard monthly shipping included with Bloom Complete"}
@@ -342,52 +343,52 @@ export default function CartContent({
                   )}
                 </div>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <button 
                   onClick={() => setShippingMethod('mondialrelay')}
-                  className={`p-6 rounded-3xl border-2 transition-all text-left flex flex-col justify-between h-full cursor-pointer ${shippingMethod === 'mondialrelay' ? 'border-[#D97706] bg-[#D97706]/5 shadow-inner' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30 bg-white'}`}
+                  className={`p-4 sm:p-6 rounded-2xl sm:rounded-3xl border-2 transition-all text-left flex flex-col justify-between h-full cursor-pointer min-h-[48px] ${shippingMethod === 'mondialrelay' ? 'border-[#D97706] bg-[#D97706]/5 shadow-inner' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30 bg-white'}`}
                 >
                   <div>
-                    <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.mondialrelay}</div>
+                    <div className="font-bold text-[#1B3022] mb-1 text-sm sm:text-base">{t.shipping.methods.mondialrelay}</div>
                     <div className="text-xs opacity-60 leading-relaxed">{t.shipping.methods.mondialrelay_desc}</div>
                   </div>
-                  <div className="mt-4 font-bold text-[#D97706] text-lg">
+                  <div className="mt-4 font-bold text-[#D97706] text-base sm:text-lg">
                     {getMethodPriceLabel('mondialrelay')}
                   </div>
                 </button>
                 <button 
                   onClick={() => setShippingMethod('colissimo')}
-                  className={`p-6 rounded-3xl border-2 transition-all text-left flex flex-col justify-between h-full cursor-pointer ${shippingMethod === 'colissimo' ? 'border-[#D97706] bg-[#D97706]/5 shadow-inner' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30 bg-white'}`}
+                  className={`p-4 sm:p-6 rounded-2xl sm:rounded-3xl border-2 transition-all text-left flex flex-col justify-between h-full cursor-pointer min-h-[48px] ${shippingMethod === 'colissimo' ? 'border-[#D97706] bg-[#D97706]/5 shadow-inner' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30 bg-white'}`}
                 >
                   <div>
-                    <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.colissimo}</div>
+                    <div className="font-bold text-[#1B3022] mb-1 text-sm sm:text-base">{t.shipping.methods.colissimo}</div>
                     <div className="text-xs opacity-60 leading-relaxed">{t.shipping.methods.colissimo_desc}</div>
                   </div>
-                  <div className="mt-4 font-bold text-[#D97706] text-lg">
+                  <div className="mt-4 font-bold text-[#D97706] text-base sm:text-lg">
                     {getMethodPriceLabel('colissimo')}
                   </div>
                 </button>
                 <button 
                   onClick={() => setShippingMethod('laposte')}
-                  className={`p-6 rounded-3xl border-2 transition-all text-left flex flex-col justify-between h-full cursor-pointer ${shippingMethod === 'laposte' ? 'border-[#D97706] bg-[#D97706]/5 shadow-inner' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30 bg-white'}`}
+                  className={`p-4 sm:p-6 rounded-2xl sm:rounded-3xl border-2 transition-all text-left flex flex-col justify-between h-full cursor-pointer min-h-[48px] ${shippingMethod === 'laposte' ? 'border-[#D97706] bg-[#D97706]/5 shadow-inner' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30 bg-white'}`}
                 >
                   <div>
-                    <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.laposte}</div>
+                    <div className="font-bold text-[#1B3022] mb-1 text-sm sm:text-base">{t.shipping.methods.laposte}</div>
                     <div className="text-xs opacity-60 leading-relaxed">{t.shipping.methods.laposte_desc}</div>
                   </div>
-                  <div className="mt-4 font-bold text-[#D97706] text-lg">
+                  <div className="mt-4 font-bold text-[#D97706] text-base sm:text-lg">
                     {getMethodPriceLabel('laposte')}
                   </div>
                 </button>
                 <button 
                   onClick={() => setShippingMethod('express')}
-                  className={`p-6 rounded-3xl border-2 transition-all text-left flex flex-col justify-between h-full cursor-pointer ${shippingMethod === 'express' ? 'border-[#D97706] bg-[#D97706]/5 shadow-inner' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30 bg-white'}`}
+                  className={`p-4 sm:p-6 rounded-2xl sm:rounded-3xl border-2 transition-all text-left flex flex-col justify-between h-full cursor-pointer min-h-[48px] ${shippingMethod === 'express' ? 'border-[#D97706] bg-[#D97706]/5 shadow-inner' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30 bg-white'}`}
                 >
                   <div>
-                    <div className="font-bold text-[#1B3022] mb-1">{t.shipping.methods.express}</div>
+                    <div className="font-bold text-[#1B3022] mb-1 text-sm sm:text-base">{t.shipping.methods.express}</div>
                     <div className="text-xs opacity-60 leading-relaxed">{t.shipping.methods.express_desc}</div>
                   </div>
-                  <div className="mt-4 font-bold text-[#D97706] text-lg">
+                  <div className="mt-4 font-bold text-[#D97706] text-base sm:text-lg">
                     {getMethodPriceLabel('express')}
                   </div>
                 </button>
@@ -398,7 +399,7 @@ export default function CartContent({
 
         {/* Summary Sidebar */}
         <div className="space-y-6">
-          <div className="bg-[#1B3022] text-white p-8 rounded-[40px] sticky top-24">
+          <div className="bg-[#1B3022] text-white p-5 sm:p-8 rounded-3xl sm:rounded-[40px] sticky top-24">
             <h2 className="text-2xl font-bold mb-6">{t.summary.title}</h2>
             
             {/* Promo Code Field */}

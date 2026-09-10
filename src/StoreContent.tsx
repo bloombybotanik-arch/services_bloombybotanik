@@ -307,27 +307,27 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
 
       {/* Featured Header: Split Hero Layout synchronized with Home */}
       {!searchQuery && (
-        <div className="px-6 mb-16">
+        <div className="px-4 sm:px-6 mb-12 sm:mb-16">
           <div className="relative group">
-            <div className="absolute -inset-4 bg-botanik-green/5 rounded-[56px] blur-3xl group-hover:bg-botanik-orange/5 transition-colors duration-1000" />
-            <div className="relative bg-white border border-botanik-green/5 rounded-[48px] overflow-hidden shadow-2xl">
+            <div className="absolute -inset-4 bg-botanik-green/5 rounded-3xl sm:rounded-[56px] blur-3xl group-hover:bg-botanik-orange/5 transition-colors duration-1000" />
+            <div className="relative bg-white border border-botanik-green/5 rounded-3xl sm:rounded-[48px] overflow-hidden shadow-2xl">
               <div className="flex flex-col lg:flex-row items-stretch">
                 {/* Left Side: Content */}
-                <div className="lg:w-1/2 p-6 md:p-16 flex flex-col justify-center order-2 lg:order-1">
-                  <div className="flex items-center gap-2 text-botanik-orange font-black uppercase tracking-[0.3em] text-[10px] mb-8">
+                <div className="lg:w-1/2 p-5 sm:p-8 md:p-16 flex flex-col justify-center order-2 lg:order-1">
+                  <div className="flex items-center gap-2 text-botanik-orange font-black uppercase tracking-[0.3em] text-[10px] mb-6 sm:mb-8">
                     <div className="w-1.5 h-1.5 rounded-full bg-botanik-orange animate-pulse" />
                     {t.hero.badge}
                   </div>
-                  <h2 className="text-2xl sm:text-3xl md:text-6xl font-bold text-botanik-green mb-6 md:mb-8 leading-[1.1] tracking-tight">
+                  <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-botanik-green mb-4 sm:mb-8 leading-[1.1] tracking-tight">
                     {t.hero.title.split(' ')[0]} <span className="text-botanik-orange md:whitespace-nowrap">{t.hero.title.split(' ').slice(1).join(' ')}</span>
                   </h2>
-                  <p className="text-base md:text-xl text-botanik-green/60 mb-8 md:mb-12 leading-relaxed max-w-md font-medium">
+                  <p className="text-sm sm:text-base md:text-xl text-botanik-green/60 mb-6 sm:mb-10 md:mb-12 leading-relaxed max-w-md font-medium">
                     {t.hero.description}
                   </p>
-                  <div className="flex flex-wrap gap-4 mt-4">
+                  <div className="flex flex-wrap gap-4 mt-2 sm:mt-4">
                     <button 
                       onClick={() => handleNavigateDetail('bloomlab')}
-                      className="px-10 py-5 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-2xl font-bold flex items-center gap-3 transition-all shadow-xl shadow-black/10 cursor-pointer"
+                      className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-2xl font-bold flex items-center justify-center gap-3 transition-all shadow-xl shadow-black/10 cursor-pointer min-h-[48px]"
                     >
                       {t.hero.cta} <ArrowRight className="w-5 h-5" />
                     </button>
@@ -335,7 +335,7 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
                 </div>
                 
                 {/* Right Side: Image */}
-                <div className="lg:w-1/2 relative order-1 lg:order-2 h-64 lg:h-auto min-h-[400px]">
+                <div className="lg:w-1/2 relative order-1 lg:order-2 h-56 sm:h-72 lg:h-auto min-h-[220px] sm:min-h-[340px]">
                   <img 
                     src={bloomLabImg} 
                     className="absolute inset-0 w-full h-full object-cover" 
@@ -352,8 +352,8 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
 
       {/* Bundles Section */}
       {!searchQuery && (
-        <div className="px-4 md:px-6 mb-16">
-          <div className="flex items-center justify-between mb-8">
+        <div className="px-4 md:px-6 mb-12 sm:mb-16">
+          <div className="flex items-center justify-between mb-6 sm:mb-8 flex-wrap gap-2">
             <h3 className="text-xl md:text-2xl font-bold text-botanik-green">
               {lang === 'fr' ? 'Nos Offres Groupées (Bundles)' : lang === 'en' ? 'Our Bundle Offers' : 'Unsere Bundle-Angebote'}
             </h3>
@@ -366,26 +366,26 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
               <div 
                 key={product.id} 
                 onClick={() => handleNavigateDetail(product.id)}
-                className="bg-white rounded-[40px] border-2 border-botanik-orange/20 overflow-hidden flex flex-col cursor-pointer hover:shadow-2xl transition-all group relative"
+                className="bg-white rounded-3xl sm:rounded-[40px] border-2 border-botanik-orange/20 overflow-hidden flex flex-col cursor-pointer hover:shadow-2xl transition-all group relative"
               >
                 <div className="absolute top-4 left-4 z-10 bg-botanik-orange text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg">
                   Bundle
                 </div>
-                <div className="relative h-64 overflow-hidden bg-[#F9F9F7]">
+                <div className="relative h-52 sm:h-64 overflow-hidden bg-[#F9F9F7]">
                   <OptimizedImage 
                     src={product.image} 
                     alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Machine à infusion botanique, tisanes et remèdes naturels`} 
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
-                <div className="p-6 flex flex-col flex-1">
+                <div className="p-5 sm:p-6 flex flex-col flex-1">
                   <div className="text-[10px] font-bold text-botanik-orange uppercase tracking-widest mb-2">
                     {product.subtitle}
                   </div>
-                  <h4 className="text-lg font-bold text-botanik-green mb-4 leading-tight">
+                  <h4 className="text-base sm:text-lg font-bold text-botanik-green mb-3 sm:mb-4 leading-tight">
                     {product.name}
                   </h4>
-                  <p className="text-sm text-botanik-green/60 mb-6 font-light line-clamp-2">
+                  <p className="text-xs sm:text-sm text-botanik-green/60 mb-6 font-light line-clamp-2">
                     {product.description}
                   </p>
                   <div className="flex items-center justify-between mt-auto">
@@ -405,7 +405,7 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
                           )}
                         </div>
                       )}
-                      <span className="text-2xl font-bold text-botanik-green">{formatPrice(product.price)}</span>
+                      <span className="text-xl sm:text-2xl font-bold text-botanik-green">{formatPrice(product.price)}</span>
                     </div>
                     <button 
                       onClick={(e) => { e.stopPropagation(); onAddToCart(product); }}
@@ -424,14 +424,14 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
 
       {/* Digital Universe Section */}
       {!searchQuery && (
-        <div className="px-4 md:px-6 mb-16">
-          <div className="bg-botanik-green/5 rounded-[48px] p-8 md:p-12 border border-botanik-green/5">
+        <div className="px-4 md:px-6 mb-12 sm:mb-16">
+          <div className="bg-botanik-green/5 rounded-3xl sm:rounded-[48px] p-6 sm:p-8 md:p-12 border border-botanik-green/5">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="max-w-md">
                 <h3 className="text-2xl md:text-3xl font-bold text-botanik-green mb-4">
                   {lang === 'fr' ? "L'Écosystème Digital" : lang === 'en' ? 'The Digital Ecosystem' : 'Das digitale Ökosystem'}
                 </h3>
-                <p className="text-botanik-green/60 leading-relaxed mb-6">
+                <p className="text-sm sm:text-base text-botanik-green/60 leading-relaxed mb-6">
                   {lang === 'fr' 
                     ? "Accédez à notre bibliothèque de savoirs et à nos protocoles experts pour transformer votre pratique de l'herboristerie."
                     : lang === 'en'
@@ -451,17 +451,17 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
                 {products.filter(p => (p as any).isSpecial).map((product) => (
                   <div 
                     key={product.id}
-                    className="bg-white rounded-[40px] shadow-sm hover:shadow-xl transition-all cursor-pointer group border border-botanik-green/5 overflow-hidden flex flex-col"
+                    className="bg-white rounded-3xl sm:rounded-[40px] shadow-sm hover:shadow-xl transition-all cursor-pointer group border border-botanik-green/5 overflow-hidden flex flex-col"
                     onClick={() => handleNavigateDetail(product.id)}
                   >
-                    <div className="relative aspect-square md:aspect-video overflow-hidden bg-[#F9F9F7]">
+                    <div className="relative aspect-video sm:aspect-square md:aspect-video overflow-hidden bg-[#F9F9F7]">
                       <img 
                         src={product.image} 
                         alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Machine à infusion botanique, tisanes et remèdes naturels`} 
                         className="w-full h-full object-cover transform scale-110 group-hover:scale-125 transition-transform duration-700"
                       />
                     </div>
-                    <div className="p-6 flex flex-col flex-1">
+                    <div className="p-5 sm:p-6 flex flex-col flex-1">
                       <div className="flex items-center gap-1 mb-2">
                         <div className="flex items-center text-botanik-orange">
                           <Star className="w-3 h-3 fill-current" />
@@ -470,9 +470,9 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
                         <span className="text-[10px] text-botanik-green/30">({product.reviews} {lang === 'fr' ? 'avis' : 'reviews'})</span>
                       </div>
                       <div className="text-[10px] font-bold text-botanik-orange uppercase tracking-widest mb-1">{product.subtitle}</div>
-                      <h4 className="text-lg font-bold text-botanik-green mb-4 leading-tight">{product.name}</h4>
+                      <h4 className="text-base sm:text-lg font-bold text-botanik-green mb-4 leading-tight">{product.name}</h4>
                       <div className="flex items-center justify-between gap-4 mt-auto">
-                        <span className="text-xl font-bold text-botanik-green">
+                        <span className="text-lg sm:text-xl font-bold text-botanik-green">
                           {product.price === 0 ? (lang === 'fr' ? 'Gratuit' : lang === 'en' ? 'Free' : 'Gratis') : formatPrice(product.price)}
                         </span>
                         <button 
@@ -502,9 +502,9 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
               <div 
                 key={product.id} 
                 onClick={() => handleNavigateDetail(product.id)}
-                className="bg-white rounded-[40px] border border-botanik-green/5 overflow-hidden flex flex-col cursor-pointer hover:shadow-2xl transition-all group"
+                className="bg-white rounded-2xl sm:rounded-[40px] border border-botanik-green/5 overflow-hidden flex flex-col cursor-pointer hover:shadow-2xl transition-all group"
               >
-                <div className="relative h-64 md:h-80 overflow-hidden bg-[#F9F9F7]">
+                <div className="relative h-44 sm:h-64 md:h-80 overflow-hidden bg-[#F9F9F7]">
                   <img 
                     src={product.image} 
                     alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Machine à infusion botanique, tisanes et remèdes naturels`} 
@@ -512,20 +512,20 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
                   />
                   <button 
                     onClick={(e) => { e.stopPropagation(); onAddToCart(product); }}
-                    className="absolute bottom-4 right-4 w-12 h-12 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-2xl flex items-center justify-center shadow-lg transition-colors cursor-pointer"
+                    className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 w-10 h-10 sm:w-12 sm:h-12 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg transition-colors cursor-pointer"
                   >
-                    <ShoppingBag className="w-5 h-5" />
+                    <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
                   </button>
                 </div>
-                <div className="p-4 md:p-6 flex flex-col flex-1">
+                <div className="p-3 sm:p-4 md:p-6 flex flex-col flex-1">
                   <div className="text-[8px] md:text-[10px] font-bold text-botanik-orange uppercase tracking-widest mb-1 md:mb-2 whitespace-nowrap overflow-hidden text-ellipsis">
                     {product.subtitle}
                   </div>
-                  <h4 className="text-sm md:text-lg font-bold text-botanik-green mb-2 md:mb-4 leading-tight flex-1">
+                  <h4 className="text-xs sm:text-sm md:text-lg font-bold text-botanik-green mb-2 md:mb-4 leading-tight flex-1 line-clamp-2">
                     {product.name}
                   </h4>
                   <div className="flex items-center justify-between mt-auto">
-                    <span className="text-base md:text-xl font-bold text-botanik-green">{formatPrice(product.price)}</span>
+                    <span className="text-sm sm:text-base md:text-xl font-bold text-botanik-green">{formatPrice(product.price)}</span>
                     <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-botanik-green/20 group-hover:text-botanik-green transition-colors" />
                   </div>
                 </div>

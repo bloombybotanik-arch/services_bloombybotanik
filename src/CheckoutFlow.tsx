@@ -235,30 +235,30 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
   }
 
   return (
-    <article className="max-w-[1000px] mx-auto px-6 py-12 md:py-20 animate-in fade-in duration-700">
-      <div className="flex items-center justify-between mb-12">
-        <h1 className="text-3xl font-bold text-[#1B3022]">{t.header}</h1>
+    <article className="w-full max-w-[1000px] mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-20 animate-in fade-in duration-700">
+      <div className="flex items-center justify-between mb-8 sm:mb-12">
+        <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3022]">{t.header}</h1>
         {isAllDigital ? (
-          <div className="flex items-center gap-4">
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${step === 'information' ? 'bg-[#F97316] text-white' : 'bg-[#1B3022]/10 text-[#1B3022]'}`}>1</div>
-            <div className="w-8 h-[2px] bg-[#1B3022]/10"></div>
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${step === 'payment' ? 'bg-[#F97316] text-white' : 'bg-[#1B3022]/10 text-[#1B3022]'}`}>2</div>
+          <div className="flex items-center gap-2 sm:gap-4">
+            <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-xs sm:text-sm ${step === 'information' ? 'bg-[#F97316] text-white' : 'bg-[#1B3022]/10 text-[#1B3022]'}`}>1</div>
+            <div className="w-4 sm:w-8 h-[2px] bg-[#1B3022]/10"></div>
+            <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-xs sm:text-sm ${step === 'payment' ? 'bg-[#F97316] text-white' : 'bg-[#1B3022]/10 text-[#1B3022]'}`}>2</div>
           </div>
         ) : (
-          <div className="flex items-center gap-4">
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${step === 'information' ? 'bg-[#F97316] text-white' : 'bg-[#1B3022]/10 text-[#1B3022]'}`}>1</div>
-            <div className="w-8 h-[2px] bg-[#1B3022]/10"></div>
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${step === 'shipping' ? 'bg-[#F97316] text-white' : 'bg-[#1B3022]/10 text-[#1B3022]'}`}>2</div>
-            <div className="w-8 h-[2px] bg-[#1B3022]/10"></div>
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${step === 'payment' ? 'bg-[#F97316] text-white' : 'bg-[#1B3022]/10 text-[#1B3022]'}`}>3</div>
+          <div className="flex items-center gap-2 sm:gap-4">
+            <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-xs sm:text-sm ${step === 'information' ? 'bg-[#F97316] text-white' : 'bg-[#1B3022]/10 text-[#1B3022]'}`}>1</div>
+            <div className="w-4 sm:w-8 h-[2px] bg-[#1B3022]/10"></div>
+            <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-xs sm:text-sm ${step === 'shipping' ? 'bg-[#F97316] text-white' : 'bg-[#1B3022]/10 text-[#1B3022]'}`}>2</div>
+            <div className="w-4 sm:w-8 h-[2px] bg-[#1B3022]/10"></div>
+            <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-xs sm:text-sm ${step === 'payment' ? 'bg-[#F97316] text-white' : 'bg-[#1B3022]/10 text-[#1B3022]'}`}>3</div>
           </div>
         )}
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-12">
-        <div className="space-y-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+        <div className="space-y-6 sm:space-y-8">
           {!user && step === 'information' && (
-            <div className="mb-8 p-6 bg-botanik-orange/10 border border-botanik-orange/20 rounded-2xl flex items-start gap-4">
+            <div className="mb-6 sm:mb-8 p-5 sm:p-6 bg-botanik-orange/10 border border-botanik-orange/20 rounded-2xl flex items-start gap-4">
               <AlertCircle className="w-6 h-6 text-botanik-orange flex-shrink-0 mt-1" />
               <div>
                 <p className="font-bold text-botanik-green mb-1">Authentification requise</p>
@@ -268,23 +268,23 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
           )}
 
           {step === 'information' && (
-            <section className="bg-white p-8 rounded-[32px] border border-[#1B3022]/10 shadow-sm animate-in slide-in-from-left-4 duration-500">
-              <h2 className="text-2xl font-bold text-[#1B3022] mb-8 flex items-center gap-3">
-                <User className="w-6 h-6" /> {t.client_info.title}
+            <section className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-[32px] border border-[#1B3022]/10 shadow-sm animate-in slide-in-from-left-4 duration-500">
+              <h2 className="text-xl sm:text-2xl font-bold text-[#1B3022] mb-6 sm:mb-8 flex items-center gap-3">
+                <User className="w-5 h-5 sm:w-6 sm:h-6" /> {t.client_info.title}
               </h2>
               
-              <div className="flex gap-4 mb-8">
+              <div className="flex gap-3 sm:gap-4 mb-6 sm:mb-8">
                 <button 
                   onClick={() => setFormData({...formData, type: 'individual'})}
-                  className={`flex-1 p-4 rounded-2xl border-2 flex items-center justify-center gap-3 transition-all ${formData.type === 'individual' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
+                  className={`flex-1 p-3 sm:p-4 rounded-2xl border-2 flex items-center justify-center gap-2 sm:gap-3 transition-all min-h-[44px] text-xs sm:text-sm ${formData.type === 'individual' ? 'border-[#F97316] bg-[#F97316]/5 font-bold' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
                 >
-                  <User className="w-5 h-5" /> {t.client_info.individual}
+                  <User className="w-4 h-4 sm:w-5 sm:h-5" /> {t.client_info.individual}
                 </button>
                 <button 
                   onClick={() => setFormData({...formData, type: 'professional'})}
-                  className={`flex-1 p-4 rounded-2xl border-2 flex items-center justify-center gap-3 transition-all ${formData.type === 'professional' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
+                  className={`flex-1 p-3 sm:p-4 rounded-2xl border-2 flex items-center justify-center gap-2 sm:gap-3 transition-all min-h-[44px] text-xs sm:text-sm ${formData.type === 'professional' ? 'border-[#F97316] bg-[#F97316]/5 font-bold' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
                 >
-                  <Building2 className="w-5 h-5" /> {t.client_info.professional}
+                  <Building2 className="w-4 h-4 sm:w-5 sm:h-5" /> {t.client_info.professional}
                 </button>
               </div>
 
@@ -297,7 +297,7 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
                     </div>
                   </>
                 )}
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input type="text" placeholder={t.client_info.first_name} value={formData.firstName} onChange={(e) => setFormData({...formData, firstName: e.target.value})} className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]" />
                   <input type="text" placeholder={t.client_info.last_name} value={formData.lastName} onChange={(e) => setFormData({...formData, lastName: e.target.value})} className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]" />
                 </div>
@@ -308,13 +308,13 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
           )}
 
           {step === 'shipping' && (
-            <section className="bg-white p-8 rounded-[32px] border border-[#1B3022]/10 shadow-sm animate-in slide-in-from-left-4 duration-500">
-              <h2 className="text-2xl font-bold text-[#1B3022] mb-8 flex items-center gap-3">
-                <Truck className="w-6 h-6" /> {t.shipping.title}
+            <section className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-[32px] border border-[#1B3022]/10 shadow-sm animate-in slide-in-from-left-4 duration-500">
+              <h2 className="text-xl sm:text-2xl font-bold text-[#1B3022] mb-6 sm:mb-8 flex items-center gap-3">
+                <Truck className="w-5 h-5 sm:w-6 sm:h-6" /> {t.shipping.title}
               </h2>
               <div className="space-y-4">
                 <input type="text" placeholder={t.shipping.address} value={formData.address} onChange={(e) => setFormData({...formData, address: e.target.value})} className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]" />
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input type="text" placeholder={t.shipping.zip} value={formData.zipCode} onChange={(e) => setFormData({...formData, zipCode: e.target.value})} className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]" />
                   <input type="text" placeholder={t.shipping.city} value={formData.city} onChange={(e) => setFormData({...formData, city: e.target.value})} className="w-full bg-[#F9F9F7] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#F97316]" />
                 </div>
@@ -323,35 +323,35 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
           )}
 
           {step === 'payment' && (
-            <section className="bg-white p-8 rounded-[32px] border border-[#1B3022]/10 shadow-sm animate-in slide-in-from-left-4 duration-500">
-              <h2 className="text-2xl font-bold text-[#1B3022] mb-8 flex items-center gap-3">
-                <CreditCard className="w-6 h-6" /> {t.payment.title}
+            <section className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-[32px] border border-[#1B3022]/10 shadow-sm animate-in slide-in-from-left-4 duration-500">
+              <h2 className="text-xl sm:text-2xl font-bold text-[#1B3022] mb-6 sm:mb-8 flex items-center gap-3">
+                <CreditCard className="w-5 h-5 sm:w-6 sm:h-6" /> {t.payment.title}
               </h2>
               
-              <div className="space-y-4 mb-8">
+              <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                 <button 
                   onClick={() => setPaymentMethod('stripe')}
-                  className={`w-full p-6 rounded-2xl border-2 flex items-center justify-between group transition-all ${paymentMethod === 'stripe' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
+                  className={`w-full p-4 sm:p-6 rounded-2xl border-2 flex items-center justify-between group transition-all min-h-[48px] ${paymentMethod === 'stripe' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
                 >
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-8 bg-white rounded flex items-center justify-center">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-4" />
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="w-10 sm:w-12 h-7 sm:h-8 bg-white rounded flex items-center justify-center shrink-0">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-3 sm:h-4" />
                     </div>
-                    <span className="font-bold">{t.payment.stripe}</span>
+                    <span className="font-bold text-sm sm:text-base">{t.payment.stripe}</span>
                   </div>
-                  <div className={`w-6 h-6 rounded-full border-2 ${paymentMethod === 'stripe' ? 'border-[#F97316] bg-[#F97316] bg-[url(\'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0yMCA2TDkgMTcgNCAxMiIvPjwvc3ZnPg==\')] bg-center bg-no-repeat bg-[length:14px]' : 'border-[#1B3022]/20'}`}></div>
+                  <div className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 shrink-0 ${paymentMethod === 'stripe' ? 'border-[#F97316] bg-[#F97316] bg-[url(\'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0yMCA2TDkgMTcgNCAxMiIvPjwvc3ZnPg==\')] bg-center bg-no-repeat bg-[length:14px]' : 'border-[#1B3022]/20'}`}></div>
                 </button>
                 <button 
                   onClick={() => setPaymentMethod('paypal')}
-                  className={`w-full p-6 rounded-2xl border-2 flex items-center justify-between group transition-all ${paymentMethod === 'paypal' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
+                  className={`w-full p-4 sm:p-6 rounded-2xl border-2 flex items-center justify-between group transition-all min-h-[48px] ${paymentMethod === 'paypal' ? 'border-[#F97316] bg-[#F97316]/5' : 'border-[#1B3022]/10 hover:border-[#1B3022]/30'}`}
                 >
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-8 bg-white rounded flex items-center justify-center">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" className="h-4" />
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="w-10 sm:w-12 h-7 sm:h-8 bg-white rounded flex items-center justify-center shrink-0">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" className="h-3 sm:h-4" />
                     </div>
-                    <span className="font-bold">{t.payment.paypal}</span>
+                    <span className="font-bold text-sm sm:text-base">{t.payment.paypal}</span>
                   </div>
-                  <div className={`w-6 h-6 rounded-full border-2 ${paymentMethod === 'paypal' ? 'border-[#F97316] bg-[#F97316] bg-[url(\'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0yMCA2TDkgMTcgNCAxMiIvPjwvc3ZnPg==\')] bg-center bg-no-repeat bg-[length:14px]' : 'border-[#1B3022]/20'}`}></div>
+                  <div className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 shrink-0 ${paymentMethod === 'paypal' ? 'border-[#F97316] bg-[#F97316] bg-[url(\'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0yMCA2TDkgMTcgNCAxMiIvPjwvc3ZnPg==\')] bg-center bg-no-repeat bg-[length:14px]' : 'border-[#1B3022]/20'}`}></div>
                 </button>
               </div>
 
@@ -381,20 +381,20 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
                 />
               )}
 
-              <div className="mt-8 flex items-center gap-3 text-xs text-[#1B3022]/60">
-                <Lock className="w-4 h-4 text-green-500" />
+              <div className="mt-6 sm:mt-8 flex items-center gap-3 text-xs text-[#1B3022]/60">
+                <Lock className="w-4 h-4 text-green-500 shrink-0" />
                 {t.payment.secure_note}
               </div>
             </section>
           )}
 
           {step !== 'payment' && (
-            <div className="flex justify-between items-center pt-8">
-              <button onClick={onCancel} className="text-[#1B3022]/60 font-bold hover:text-[#1B3022]">{t.actions.cancel}</button>
+            <div className="flex justify-between items-center pt-6 sm:pt-8 flex-wrap gap-4">
+              <button onClick={onCancel} className="text-[#1B3022]/60 font-bold hover:text-[#1B3022] py-2 px-3">{t.actions.cancel}</button>
               <button 
                 onClick={handleNext}
                 disabled={isProcessing}
-                className="bg-[#0F261E] text-white px-10 py-4 rounded-xl font-bold flex items-center gap-3 hover:bg-[#D97706] transition-all shadow-xl shadow-[#0F261E]/10 disabled:opacity-50"
+                className="bg-[#0F261E] text-white px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl font-bold flex items-center gap-3 hover:bg-[#D97706] transition-all shadow-xl shadow-[#0F261E]/10 disabled:opacity-50 min-h-[48px]"
               >
                 {t.actions.continue} <ChevronRight className="w-5 h-5" />
               </button>
@@ -403,7 +403,7 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
         </div>
 
         <div className="space-y-6">
-          <div className="bg-[#F9F9F7] p-8 rounded-[40px] border border-[#1B3022]/10">
+          <div className="bg-[#F9F9F7] p-5 sm:p-8 rounded-2xl sm:rounded-[40px] border border-[#1B3022]/10">
             <h2 className="text-xl font-bold text-[#1B3022] mb-8">{t.summary.title}</h2>
             <div className="space-y-6 mb-8">
               {cart.map((item) => {

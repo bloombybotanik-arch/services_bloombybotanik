@@ -918,7 +918,7 @@ export const plantsDatabase: PlantData[] = [
     nom_latin: "Zingiber officinale",
     partie_utilisee: "Rhizome séché en tranches ou poudre",
     famille_bloom: "Déclencheur (Activateur métabolique)",
-    terrains_cibles: ["T1 (Intestin)", "T5 (Mitochondrie)", "T8 (Inflammation)"],
+    terrains_cibles: ["T1 (Intestin)", "T5 (Métabolisme)", "T8 (Inflammation)"],
     actifs_cles: [
       { nom: "[6]-Gingérols", polarite: "Liposoluble/Thermolabile", translations: { en: { nom: "[6]-Gingerols", polarite: "Fat-soluble/Thermolabile" }, de: { nom: "[6]-Gingerole", polarite: "Fettlöslich/Thermolabil" } } },
       { nom: "Shogaols", polarite: "Liposoluble", translations: { en: { nom: "Shogaols", polarite: "Fat-soluble" }, de: { nom: "Shogaole", polarite: "Fettlöslich" } } },
@@ -2656,7 +2656,7 @@ export const plantsDatabase: PlantData[] = [
     partie_utilisee: "Graines séchées",
     famille_bloom: "Réparateur (Métabolique & Capillaire)",
     terrains_cibles: [
-        "T10_Hormonal",
+        "T5 (Métabolisme)",
         "T1_Intestin",
         "T9_Peau_Phaneres"
       ],
@@ -5045,7 +5045,7 @@ export const plantsDatabase: PlantData[] = [
     "nom_latin": "Berberis vulgaris",
     "partie_utilisee": "Écorce de racine ou de tige",
     "famille_bloom": "Verrou (Métabolisme & Glycémie)",
-    "terrains_cibles": ["T5_Mitochondrie", "T4_HPA", "T1_Intestin"],
+    "terrains_cibles": ["T5 (Métabolisme)", "T4 (Foie)", "T1 (Intestin)"],
     "actifs_cles": [
       {"nom": "Berbérine (Alcaloïde)", "polarite": "Peu hydrosoluble / Alcoolosoluble", "translations": { "en": { "nom": "Berberine (Alkaloid)", "polarite": "Slightly water-soluble / Alcohol-soluble" }, "de": { "nom": "Berberin (Alkaloid)", "polarite": "Gering wasserlöslich / Alkohollöslich" } } },
       {"nom": "Berbamine", "polarite": "Liposoluble", "translations": { "en": { "nom": "Berbamine", "polarite": "Fat-soluble" }, "de": { "nom": "Berbamin", "polarite": "Fettlöslich" } } }

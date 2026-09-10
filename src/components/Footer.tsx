@@ -39,7 +39,7 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
           e.preventDefault();
           onClick();
         }}
-        className="text-sm text-white/60 hover:text-botanik-orange transition-colors text-left"
+        className="text-sm text-white/60 hover:text-botanik-orange transition-colors text-left py-1 inline-flex items-center min-h-[36px] sm:min-h-0"
       >
         {label}
       </a>
@@ -47,13 +47,13 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
   );
 
   return (
-    <footer className="bg-[#0F261E] text-[#F9F9F7] border-t border-white/5 selection:bg-botanik-orange/30">
+    <footer className="bg-[#0F261E] text-[#F9F9F7] border-t border-white/5 selection:bg-botanik-orange/30 w-full">
       {/* Upper Footer: Main Content */}
-      <div className="max-w-[1440px] mx-auto px-8 md:px-12 lg:px-24 py-12 lg:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 md:px-12 lg:px-24 py-10 sm:py-12 lg:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-14 lg:gap-24">
           
           {/* Column 1: Brand & Mantra */}
-          <div className="lg:col-span-5 space-y-10">
+          <div className="lg:col-span-5 space-y-8 sm:space-y-10">
             <div
               className="flex items-center gap-4 cursor-pointer group/f-logo w-fit"
               onClick={() => onNavigate('home')}
@@ -61,11 +61,11 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
               <img 
                 src="/assets/images/logo_sidebar_1784886108085.png" 
                 alt="Bloom by BotaniK" 
-                className="h-12 w-auto"
+                className="h-10 sm:h-12 w-auto"
               />
-              <div className="ml-3 font-semibold tracking-wide flex flex-col leading-tight text-[#F9F9F7]">
-                <span className="text-lg">Bloom</span>
-                <span className="text-sm">by BotaniK</span>
+              <div className="ml-2 sm:ml-3 font-semibold tracking-wide flex flex-col leading-tight text-[#F9F9F7]">
+                <span className="text-base sm:text-lg">Bloom</span>
+                <span className="text-xs sm:text-sm">by BotaniK</span>
               </div>
             </div>
 
@@ -81,14 +81,14 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
                 }
               </p>
 
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/30 hover:text-white transition-colors"
+                  className="text-white/30 hover:text-white transition-colors p-2 rounded-lg -m-2 min-w-[40px] min-h-[40px] flex items-center justify-center"
                   aria-label={social.label}
                 >
                   {social.customIcon ? social.customIcon : <social.icon className="w-5 h-5" />}
@@ -98,7 +98,7 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
           </div>
 
           {/* Column 2: Navigation Groups */}
-          <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-8">
+          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 lg:gap-8">
             <FooterGroup title={t.nav.decouvrir}>
               <FooterLink id="machine" label={t.nav.decouvrir_sub.how_it_works} onClick={() => onNavigate('machine')} />
               <FooterLink id="herbier" label={t.nav.decouvrir_sub.herbier} onClick={() => onNavigate('herbier')} />
@@ -131,8 +131,8 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
 
       {/* Lower Footer: Copyright & Disclaimers */}
       <div className="border-t border-white/5 bg-black/5">
-        <div className="max-w-[1440px] mx-auto px-8 md:px-12 lg:px-24 py-8 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-[10px] uppercase tracking-[0.15em] text-white/20">
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 md:px-12 lg:px-24 py-6 sm:py-8 flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-3 md:gap-8 text-[10px] uppercase tracking-[0.15em] text-white/20 text-center md:text-left">
             <span>© 2026 Bloom by BotaniK</span>
             <span className="hidden md:inline">•</span>
             <span>{lang === 'fr' ? "La précision du geste botanique, à domicile" : lang === 'de' ? "Die Präzision der botanischen Geste, zu Hause" : "Precision botanical extraction at home"}</span>

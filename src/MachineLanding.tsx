@@ -81,12 +81,12 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
       <section className="relative overflow-hidden bg-[#0F261E] text-white pt-8 pb-16 md:pt-12 md:pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(217,119,6,0.15),rgba(255,255,255,0))] pointer-events-none" />
         
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
           {/* Hero Image with Overlay: Header Texts (Top) & Gallery Links (Bottom-Left) */}
-          <div className="flex flex-col items-center mb-12">
+          <div className="flex flex-col items-center mb-10">
             <div 
-              className="relative rounded-3xl overflow-hidden border border-white/15 bg-white/5 shadow-2xl w-full max-w-5xl h-[380px] sm:h-[440px] md:h-[480px] min-h-[380px] sm:min-h-[440px] md:min-h-[480px] cursor-zoom-in group"
+              className="relative rounded-3xl overflow-hidden border border-white/15 bg-white/5 shadow-2xl w-full max-w-4xl h-[240px] sm:h-[300px] md:h-[340px] min-h-[240px] sm:min-h-[300px] md:min-h-[340px] cursor-zoom-in group"
               onClick={() => setFullscreenImage(selectedHeroImage)}
             >
               <picture>
@@ -106,13 +106,13 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
               
               {/* Header Texts placed directly ON the hero image */}
-              <div className="absolute top-5 left-5 right-5 sm:top-8 sm:left-8 sm:right-8 z-20 space-y-2 sm:space-y-3 max-w-3xl pointer-events-none">
-                <div className="inline-flex items-center gap-2 bg-black/60 backdrop-blur-md text-[#D97706] px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-widest border border-white/20 shadow-lg">
-                  <Zap className="w-3.5 h-3.5 text-[#D97706]" /> 
+              <div className="absolute top-4 left-4 right-4 sm:top-6 sm:left-6 sm:right-6 z-20 space-y-1.5 sm:space-y-2.5 max-w-2xl pointer-events-none">
+                <div className="inline-flex items-center gap-1.5 bg-black/60 backdrop-blur-md text-[#D97706] px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest border border-white/20 shadow-lg">
+                  <Zap className="w-3 h-3 text-[#D97706]" /> 
                   <span>Souveraineté Botanique — Méthode A/B</span>
                 </div>
 
-                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight drop-shadow-md">
+                <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight tracking-tight drop-shadow-md">
                   {lang === 'fr' ? (
                     <>L'art de l'extraction botanique : libérer le potentiel de vos plantes</>
                   ) : lang === 'de' ? (
@@ -124,7 +124,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               </div>
 
               {/* 4 Image Selector Links on bottom-left: Vue 1 (Plante), Vue 2 (Infusion), Vue 3 (Totum), Vue 4 (Précision) */}
-              <div className="absolute bottom-3 left-3 sm:bottom-5 sm:left-5 z-20 flex flex-wrap items-center gap-1.5 sm:gap-2.5 max-w-[calc(100%-110px)]">
+              <div className="absolute bottom-2.5 left-2.5 sm:bottom-4 sm:left-4 z-20 flex flex-wrap items-center gap-1 sm:gap-2 max-w-[calc(100%-100px)]">
                 {heroViews.map((view) => {
                   const isSelected = selectedHeroImage === view.src || selectedHeroImage === view.fallbackSrc;
                   return (
@@ -135,7 +135,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                         e.stopPropagation();
                         setSelectedHeroImage(view.src);
                       }}
-                      className={`flex items-center gap-1.5 sm:gap-2 p-1 sm:p-1.5 pr-2.5 sm:pr-3.5 rounded-xl border transition-all cursor-pointer backdrop-blur-md ${
+                      className={`flex items-center gap-1 sm:gap-1.5 p-1 pr-2 sm:pr-3 rounded-lg sm:rounded-xl border transition-all cursor-pointer backdrop-blur-md ${
                         isSelected 
                           ? 'bg-black/80 border-[#D97706] shadow-xl text-white ring-2 ring-[#D97706]/70' 
                           : 'bg-black/50 border-white/20 text-white/80 hover:text-white hover:bg-black/75 hover:border-white/40'
@@ -148,12 +148,12 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                           alt={view.label} 
                           loading="lazy"
                           decoding="async"
-                          className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg object-cover" 
+                          className="w-6 h-6 sm:w-8 sm:h-8 rounded-md object-cover" 
                         />
                       </picture>
                       <div className="text-left text-xs">
-                        <p className="font-bold text-[10px] sm:text-xs leading-tight text-white">{view.label}</p>
-                        <p className="text-[9px] sm:text-[10px] text-[#D97706] font-medium leading-tight">{view.subtitle}</p>
+                        <p className="font-bold text-[9px] sm:text-[11px] leading-tight text-white">{view.label}</p>
+                        <p className="text-[8px] sm:text-[9px] text-[#D97706] font-medium leading-tight">{view.subtitle}</p>
                       </div>
                     </button>
                   );
@@ -161,13 +161,13 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               </div>
 
               {/* Bottom-Right Zoom Trigger */}
-              <div className="absolute bottom-3 right-3 sm:bottom-5 sm:right-5 z-20 flex items-center gap-2 text-white text-xs font-semibold">
+              <div className="absolute bottom-2.5 right-2.5 sm:bottom-4 sm:right-4 z-20 flex items-center gap-2 text-white text-xs font-semibold">
                 <button
                   type="button"
                   onClick={() => setFullscreenImage(selectedHeroImage)}
-                  className="bg-black/60 hover:bg-black/80 backdrop-blur-md px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full border border-white/20 font-bold text-xs flex items-center gap-1.5 transition-colors cursor-pointer shadow-lg"
+                  className="bg-black/60 hover:bg-black/80 backdrop-blur-md px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full border border-white/20 font-bold text-[11px] sm:text-xs flex items-center gap-1 transition-colors cursor-pointer shadow-lg"
                 >
-                  <Maximize2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D97706]" /> 
+                  <Maximize2 className="w-3 h-3 text-[#D97706]" /> 
                   <span>{lang === 'fr' ? "Agrandir" : "Zoom"}</span>
                 </button>
               </div>
@@ -246,7 +246,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
       {/* 2. THE PROBLEM (POURQUOI L'EXTRACTION MAISON ÉCHOUE) */}
       <section id="pourquoi-l-infusion-echoue" className="py-20 md:py-28 bg-[#FAF7F2]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-black uppercase tracking-[0.25em] text-[#D97706] mb-3 block">
               Constat Éducatif & Biologique
@@ -304,7 +304,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
       {/* 3. THE SYSTEMIC SOLUTION (L'INSTRUMENT DE SOUVERAINETÉ) */}
       <section id="details" className="py-20 md:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
             
             <div className="lg:col-span-6 space-y-6 flex flex-col justify-between">
@@ -390,7 +390,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
       {/* 4. COMPARISON TABLE: SCIENCE VS TRADITION */}
       <section className="py-20 md:py-28 bg-[#FAF7F2]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-xs font-black uppercase tracking-[0.25em] text-[#D97706] mb-3 block">
               Rigueur Comparée
@@ -451,7 +451,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
       {/* 4. BRAND HERITAGE & ASIAN ORIGINS STORY */}
       <section className="heritage-section py-20 md:py-28 bg-[#FAF7F2] border-t border-[#0F261E]/5 relative overflow-hidden">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1C3F34]/10 text-[#1C3F34] text-xs font-bold uppercase tracking-widest mb-4">
               <Sparkles className="w-3.5 h-3.5 text-[#D97706]" />
@@ -490,7 +490,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
       {/* 5. THE 3 DOMAINS OF APPLICATION */}
       <section id="niveaux" className="py-20 md:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-black uppercase tracking-[0.25em] text-[#D97706] mb-3 block">
               Applications Pratiques
@@ -683,7 +683,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
       {/* 7. PRICING & FORMULAS (BLOOM COMPLET 59€ & BLOOM LAB 239€) */}
       <section className="py-20 md:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-black uppercase tracking-[0.25em] text-[#D97706] mb-3 block">
               Formules & Accompagnement
@@ -827,7 +827,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
       {/* 8. FAQ SECTION (LEVÉE DES OBJECTIONS) */}
       <section className="py-20 md:py-28 bg-[#FAF7F2]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-xs font-black uppercase tracking-[0.25em] text-[#D97706] mb-3 block">
               Questions Fréquentes
@@ -869,7 +869,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
       {/* 9. FINAL CTA SECTION */}
       <section className="py-20 md:py-28 bg-[#0F261E] text-white text-center relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6 leading-tight">
             {t.final_cta?.title || "Reprenez le Contrôle de Votre Pharmacie Intérieure"}
           </h2>
@@ -900,7 +900,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         style={{ backgroundColor: '#0F261E', color: '#ffffff' }}
       >
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#D97706]/10 rounded-full blur-[120px] -mr-48 -mt-48 pointer-events-none" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h2 
             className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 leading-tight italic text-white"
             style={{ color: '#ffffff' }}

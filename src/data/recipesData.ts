@@ -245,6 +245,120 @@ export const discoveryRecipes: Recipe[] = [
     contraindications: ["Diabète non équilibré", "Nourrissons"],
     safetyMessage: "Ne pas faire bouillir le miel.",
     bloomNote: "La basse température préserve les anthocyanes antivirales."
+  },
+  {
+    id: '07',
+    title: "Décoction Détox & Soutien Hépatique",
+    description: "Une préparation traditionnelle de plantes amères pour accompagner le travail hépato-biliaire et la légèreté digestive (Terrain T4).",
+    ingredients: ["Artichaut (feuilles)", "Romarin (sommités)", "Radis Noir (racine)"],
+    instructions: [
+      "Placer les racines de radis noir et les feuilles d'artichaut en phase A.",
+      "Ajouter les sommités fleuries de romarin en phase B pour préserver les arômes volatils."
+    ],
+    benefits: ["Soutien du confort biliaire", "Amertume digestive tonifiante", "Accompagnement des changements de saison"],
+    image: "/src/assets/images/hepatic_balance_liver_1785755318947.jpg",
+    category: "Décoction",
+    sachetA: {
+      composition: ["5g de Feuilles d'Artichaut", "5g de Racine de Radis Noir séchée"],
+      solvant: "Eau purifiée (350ml)",
+      temp: "90°C",
+      duration: "15 min"
+    },
+    sachetB: {
+      composition: ["3g de Romarin sommités fleuries"],
+      solvant: "Eau (déjà présente)",
+      temp: "75°C",
+      duration: "10 min"
+    },
+    extractionOrder: "Décoction des amers coriaces puis infusion douce du romarin",
+    administration: {
+      mode: "Par voie orale, tiède avant ou après le repas principal.",
+      dailyDose: "1 tasse (250ml)",
+      maxDose: "2 tasses par jour",
+      frequency: "1 à 2 fois par jour",
+      timing: "Avant le déjeuner ou après un repas riche",
+      usageDuration: "En cure de 14 jours aux intersaisons."
+    },
+    precautions: ["Saveur très amère caractéristique.", "Bien s'hydrater tout au long de la journée."],
+    contraindications: ["Obstruction des voies biliaires", "Calculs biliaires avérés sans avis médical", "Grossesse"],
+    safetyMessage: "Respecter la durée de la cure.",
+    bloomNote: "Le romarin tempère la saveur amère de la cynarine tout en apportant l'acide rosmarinique protecteur."
+  },
+  {
+    id: '08',
+    title: "Élixir Régulateur Métabolique",
+    description: "Synergie végétale aux graines de fenugrec et écorce d'épine-vinette pour accompagner l'équilibre métabolique et le rythme du quotidien (Terrain T5).",
+    ingredients: ["Épine-vinette (écorce de racine)", "Fenugrec (graines)", "Gingembre frais"],
+    instructions: [
+      "Préparer la décoction douce des graines concassées de fenugrec.",
+      "Extraire les principes amers et les alcaloïdes d'épine-vinette à température contrôlée."
+    ],
+    benefits: ["Soutien du métabolisme glucidique", "Tonus digestif", "Régularité du rythme alimentaire"],
+    image: "/src/assets/images/blood_purity_lymphatic_1785755331143.jpg",
+    category: "Élixir",
+    sachetA: {
+      composition: ["4g de Graines de Fenugrec concassées", "3g d'Écorce d'Épine-vinette"],
+      solvant: "Eau purifiée (300ml)",
+      temp: "85°C",
+      duration: "20 min"
+    },
+    sachetB: {
+      composition: ["2g de Gingembre en fines lamelles"],
+      solvant: "Eau (déjà présente)",
+      temp: "70°C",
+      duration: "10 min"
+    },
+    extractionOrder: "Extraction chaude des principes denses puis dynamisation au gingembre",
+    administration: {
+      mode: "Par voie orale, 15 minutes avant le repas.",
+      dailyDose: "1 petite tasse (150ml)",
+      maxDose: "2 prises par jour",
+      frequency: "1 à 2 fois par jour",
+      timing: "Avant le déjeuner ou le dîner",
+      usageDuration: "Cure de 21 jours."
+    },
+    precautions: ["Ne dispense pas d'une alimentation équilibrée et d'activité physique réguliere."],
+    contraindications: ["Grossesse", "Traitement antidiabétique lourd sans concertation médicale"],
+    safetyMessage: "Ne pas dépasser la dose recommandée.",
+    bloomNote: "Les mucilages du fenugrec ralentissent l'absorption tandis que la berbérine soutient la sensibilité cellulaire."
+  },
+  {
+    id: '09',
+    title: "Infusion Drainage & Élimination",
+    description: "Formule drainante aux sommités de reine des prés et racines de pissenlit pour accompagner les fonctions d'élimination de l'eau et des émonctoires (Terrain T6).",
+    ingredients: ["Pissenlit (feuilles et racines)", "Reine des prés (sommités)", "Prêle des champs"],
+    instructions: [
+      "Extraction des racines de pissenlit et tiges de prêle en phase A.",
+      "Infusion courte de la reine des prés en phase B pour protéger les dérivés salicylés."
+    ],
+    benefits: ["Favorise l'élimination rénale de l'eau", "Reminéralisation douce grâce à la prêle", "Légèreté corporelle"],
+    image: "/src/assets/images/emonctoires_natural_drainage_1785755307026.jpg",
+    category: "Infusion",
+    sachetA: {
+      composition: ["4g de Pissenlit racines", "3g de Prêle des champs"],
+      solvant: "Eau purifiée (400ml)",
+      temp: "90°C",
+      duration: "15 min"
+    },
+    sachetB: {
+      composition: ["4g de Sommités de Reine des prés"],
+      solvant: "Eau (déjà présente)",
+      temp: "75°C",
+      duration: "8 min"
+    },
+    extractionOrder: "Décoction minérale puis infusion douce fleuri",
+    administration: {
+      mode: "À boire tout au long de la matinée.",
+      dailyDose: "1 grande tasse ou gourde (400ml)",
+      maxDose: "500ml par jour",
+      frequency: "Le matin et en début d'après-midi",
+      timing: "Entre les repas",
+      usageDuration: "Cure de 10 à 15 jours."
+    },
+    precautions: ["Veiller à boire suffisamment d'eau pure en complément."],
+    contraindications: ["Allergie aux dérivés salicylés (aspirine)", "Insuffisance rénale sévère", "Femmes enceintes"],
+    safetyMessage: "Ne pas consommer en soirée pour préserver le repos nocturne.",
+    bloomNote: "L'association de la prêle permet de compenser les pertes minérales naturelles dues à l'élimination hydrique."
   }
 ];
 

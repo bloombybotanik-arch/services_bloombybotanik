@@ -16,6 +16,8 @@ export interface PublicTerrainDefinition {
   publicKeywords: string[];
   productTags: string[];
   mustNotClaim: string[];
+  featuredPlants?: string[];
+  keyRecipes?: Record<Language, string[]>;
 }
 
 export const PUBLIC_TERRAINS: PublicTerrainDefinition[] = [
@@ -139,6 +141,12 @@ export const PUBLIC_TERRAINS: PublicTerrainDefinition[] = [
     navigationPriority: 4,
     publicKeywords: ['foie', 'détox', 'plantes amères', 'routines', 'hydratation', 'cuisine botanique', 'préparation de plantes'],
     productTags: ['Foie', 'Détox', 'Amères', 'Hydratation'],
+    featuredPlants: ['Artichaut', 'Radis Noir', 'Desmodium', 'Chardon-Marie', 'Romarin'],
+    keyRecipes: {
+      fr: ['Décoction Détox & Soutien Hépatique', 'Macérât Romarin & Artichaut'],
+      en: ['Hepatic Detox Decoction', 'Rosemary & Artichoke Macerate'],
+      de: ['Leber-Detox-Dekokt', 'Rosmarin-Artischocken-Mazerat']
+    },
     mustNotClaim: [
       'Détoxifie le foie.',
       'Nettoie le foie.',
@@ -173,6 +181,12 @@ export const PUBLIC_TERRAINS: PublicTerrainDefinition[] = [
     navigationPriority: 5,
     publicKeywords: ['métabolisme', 'routines alimentaires', 'rythme des repas', 'organisation', 'préparation maison', 'équilibre du quotidien'],
     productTags: ['Métabolisme', 'Équilibre', 'Routines', 'Digestion'],
+    featuredPlants: ['Fenugrec', 'Épine-vinette (Berbérine)', 'Gingembre', 'Cannelle de Ceylan'],
+    keyRecipes: {
+      fr: ['Élixir Régulateur Métabolique', 'Infusion Cannelle & Fenugrec'],
+      en: ['Metabolic Active Elixir', 'Cinnamon & Fenugreek Infusion'],
+      de: ['Stoffwechsel-Aktiv-Elixier', 'Zimt-Bockshornklee-Tee']
+    },
     mustNotClaim: [
       'Réduit la glycémie.',
       'Traite le diabète.',
@@ -206,6 +220,12 @@ export const PUBLIC_TERRAINS: PublicTerrainDefinition[] = [
     navigationPriority: 6,
     publicKeywords: ['élimination', 'hydratation', 'mouvement', 'transit', 'circulation', 'récupération'],
     productTags: ['Élimination', 'Hydratation', 'Mouvement', 'Transit', 'Circulation'],
+    featuredPlants: ['Pissenlit', 'Piloselle', 'Reine des prés', 'Prêle des champs', 'Orthosiphon'],
+    keyRecipes: {
+      fr: ['Infusion Drainage & Élimination', 'Teinture Dépurative Pissenlit & Prêle'],
+      en: ['Drainage & Elimination Infusion', 'Dandelion & Horsetail Tincture'],
+      de: ['Drainage- & Ausscheidungstee', 'Löwenzahn-Schachtelhalm-Tinktur']
+    },
     mustNotClaim: [
       'Draine les toxines.',
       'Nettoie les reins.',
@@ -393,11 +413,13 @@ export function resolveTerrainCode(rawTag: string): {
   // Bracket notation e.g. "T4 (Foie)", "T1 (Intestin)", "T10 (Métabolisme)"
   const lower = trimmed.toLowerCase();
   
-  if (lower.includes('foie')) return { code: 'T4', status: 'mapped' };
-  if (lower.includes('métabolisme') || lower.includes('metabolisme') || lower.includes('adipeux')) {
+  if (lower.includes('foie') || lower.includes('détox') || lower.includes('detox') || lower.includes('hépatique') || lower.includes('hepatique') || lower.includes('biliaire') || lower.includes('chardon')) {
+    return { code: 'T4', status: 'mapped' };
+  }
+  if (lower.includes('métabolisme') || lower.includes('metabolisme') || lower.includes('adipeux') || lower.includes('glycémie') || lower.includes('glycemie') || lower.includes('insul') || lower.includes('berbérine') || lower.includes('berberine') || lower.includes('fenugrec')) {
     return { code: 'T5', status: 'mapped' };
   }
-  if (lower.includes('émonctoire') || lower.includes('emonctoire') || lower.includes('circulation') || lower.includes('fascia')) {
+  if (lower.includes('émonctoire') || lower.includes('emonctoire') || lower.includes('circulation') || lower.includes('fascia') || lower.includes('élimination') || lower.includes('elimination') || lower.includes('drainage') || lower.includes('reins') || lower.includes('pissenlit') || lower.includes('piloselle') || lower.includes('prêle') || lower.includes('prele')) {
     return { code: 'T6', status: 'mapped' };
   }
   if (lower.includes('hpa') || lower.includes('psycho') || lower.includes('cognition') || lower.includes('nerveux') || lower.includes('sérénité') || lower.includes('serenite')) {
