@@ -169,7 +169,7 @@ export const translations = {
       methode_ab_sub: {
         extraction: "Extraction de précision",
         bloomlab: "L'Extracteur BloomLab®",
-        guide_methodes: "Guide complet des méthodes",
+        guide_methodes: "Guide de l'extraction botanique",
         totum: "Le Totum Végétal"
       },
       votre_pratique: "VOTRE PRATIQUE",
@@ -1801,7 +1801,7 @@ export const translations = {
       methode_ab_sub: {
         extraction: "Precision Extraction",
         bloomlab: "BloomLab® Extractor",
-        guide_methodes: "Complete Methods Guide",
+        guide_methodes: "Botanical Extraction Guide",
         totum: "The Plant Totum"
       },
       votre_pratique: "YOUR PRACTICE",
@@ -3315,7 +3315,7 @@ export const translations = {
       methode_ab_sub: {
         extraction: "Präzisionsextraktion",
         bloomlab: "BloomLab® Extraktor",
-        guide_methodes: "Kompletter Methodenguide",
+        guide_methodes: "Leitfaden für botanische Extraktion",
         totum: "Das Pflanzen-Totum"
       },
       votre_pratique: "IHRE PRAXIS",

@@ -14,9 +14,10 @@
   @keyframes loading-bar { 0% { left: -100%; width: 100%; } 50% { left: 0%; width: 100%; } 100% { left: 100%; width: 100%; } }
   @keyframes bounce-horizontal { 0%, 100% { transform: translateX(-25%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); } 50% { transform: translateX(0); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); } }
 }
-body { background-color: var(--color-botanik-bg); color: var(--color-botanik-green); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-html { scroll-behavior: smooth; }
-* { text-wrap: pretty; overflow-wrap: break-word; word-break: break-word; }
+*, *::before, *::after { box-sizing: border-box; text-wrap: pretty; overflow-wrap: break-word; word-break: break-word; }
+html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
+body { background-color: var(--color-botanik-bg); color: var(--color-botanik-green); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: hidden; width: 100%; min-width: 320px; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
 
 /* Explicit utility classes for dynamically injected HTML content */
 .bg-botanik-green { background-color: #0F261E !important; }

@@ -89,9 +89,10 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
             <div className="relative order-2 lg:order-1">
               <div className="rounded-[32px] overflow-hidden shadow-2xl">
                 <OptimizedImage 
-                  src={img9} 
+                  src="/img/produit/bloomlab-cuisine-1200x630.jpg" 
                   className="w-full aspect-[4/3] object-cover" 
-                  alt="Traditional infusion vs Precision" 
+                  alt="BloomLab en cuisine d'apothicaire" 
+                  priority={true}
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-white rounded-3xl shadow-xl flex items-center justify-center p-6 border border-botanik-orange/10">
@@ -173,13 +174,13 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
             <div className="relative">
               <div className="rounded-[40px] overflow-hidden shadow-2xl border-4 border-white/10">
                 <OptimizedImage 
-                  src={bloomImg} 
+                  src="/img/produit/bloomlab-face-1200x1200.jpg" 
                   className="w-full aspect-square object-cover" 
-                  alt="BloomLab Machine" 
+                  alt="Extracteur Botanique BloomLab" 
                 />
               </div>
               <div className="absolute -top-6 -left-6 bg-botanik-orange text-white px-6 py-3 rounded-2xl font-bold shadow-xl rotate-[-5deg]">
-                98% {isFR ? "d'actifs préservés" : "active principles preserved"}
+                Totum {isFR ? "végétal révélé" : "plant totum revealed"}
               </div>
             </div>
           </div>

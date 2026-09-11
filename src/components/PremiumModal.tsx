@@ -25,11 +25,11 @@ export function PremiumModal({ isOpen, onClose, onUpgrade }: PremiumModalProps) 
             <Star className="w-8 h-8 text-botanik-orange" />
           </div>
           
-          <h2 className="text-3xl font-bold text-botanik-green mb-4">
-            Débloquez le Totum
+          <h2 className="text-2xl sm:text-3xl font-black text-[#0F261E] mb-3">
+            Débloquez l'Intégralité du Totum Botanique
           </h2>
-          <p className="text-botanik-green/70 mb-8 leading-relaxed">
-            Vous avez atteint la limite de vos recettes gratuites. Rejoignez Bloom Premium pour accéder à l'intégralité du laboratoire.
+          <p className="text-slate-600 mb-8 leading-relaxed text-sm sm:text-base">
+            Vous avez atteint la limite de vos recettes d'initiation. Rejoignez Bloom Précision pour accéder à l'intégralité du laboratoire et des protocoles de terrain.
           </p>
 
           <div className="bg-white border border-botanik-green/10 rounded-2xl p-6 text-left mb-8">

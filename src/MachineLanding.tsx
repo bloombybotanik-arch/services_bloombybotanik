@@ -24,12 +24,13 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { translations, Language } from './translations';
+import { trackViewItem, trackFaqExpand } from './utils/analytics';
 
 const heroViews = [
-  { id: 'v1', label: 'Vue 1', src: '/images/8.webp', fallbackSrc: '/images/8.png', subtitle: 'Plante' },
-  { id: 'v2', label: 'Vue 2', src: '/images/1.webp', fallbackSrc: '/images/1.png', subtitle: 'Infusion' },
-  { id: 'v3', label: 'Vue 3', src: '/images/2.webp', fallbackSrc: '/images/2.png', subtitle: 'Totum' },
-  { id: 'v4', label: 'Vue 4', src: '/images/5.webp', fallbackSrc: '/images/5.png', subtitle: 'Précision' },
+  { id: 'v1', label: 'Vue 1', src: '/img/produit/bloomlab-face-1200x1200.jpg', fallbackSrc: '/img/produit/bloomlab-face-1200x1200.jpg', subtitle: 'Face Inox' },
+  { id: 'v2', label: 'Vue 2', src: '/img/produit/bloomlab-3quarts-1200x1200.jpg', fallbackSrc: '/img/produit/bloomlab-3quarts-1200x1200.jpg', subtitle: 'Précision' },
+  { id: 'v3', label: 'Vue 3', src: '/img/produit/bloomlab-cuisine-1200x630.jpg', fallbackSrc: '/img/produit/bloomlab-cuisine-1200x630.jpg', subtitle: 'Atelier Cuisine' },
+  { id: 'v4', label: 'Vue 4', src: '/images/5.webp', fallbackSrc: '/images/5.png', subtitle: 'Totum' },
 ];
 const heroImg1 = heroViews[0].src;
 const bloomSoinsImg = "/assets/images/Bloom_Soins.jpg";
@@ -40,6 +41,15 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
   const [selectedHeroImage, setSelectedHeroImage] = useState<string>(heroViews[0].src);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  React.useEffect(() => {
+    trackViewItem({
+      id: 'bloomlab',
+      name: 'BloomLab® — Extracteur Botanique de Précision',
+      price: 239.00,
+      category: 'hardware'
+    });
+  }, []);
 
   const activeView = heroViews.find(v => v.src === selectedHeroImage || v.fallbackSrc === selectedHeroImage) || heroViews[0];
 
@@ -109,16 +119,16 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               <div className="absolute top-4 left-4 right-4 sm:top-6 sm:left-6 sm:right-6 z-20 space-y-1.5 sm:space-y-2.5 max-w-2xl pointer-events-none">
                 <div className="inline-flex items-center gap-1.5 bg-black/60 backdrop-blur-md text-[#D97706] px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest border border-white/20 shadow-lg">
                   <Zap className="w-3 h-3 text-[#D97706]" /> 
-                  <span>Souveraineté Botanique — Méthode A/B</span>
+                  <span>Autonomie Botanique — Méthode A/B</span>
                 </div>
 
                 <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight tracking-tight drop-shadow-md">
                   {lang === 'fr' ? (
-                    <>L'art de l'extraction botanique : libérer le potentiel de vos plantes</>
+                    <>Extracteur Botanique BloomLab® : Technologie d'Extraction Séquentielle A/B</>
                   ) : lang === 'de' ? (
-                    <>Die Kunst der botanischen Extraktion: Das Potenzial Ihrer Pflanzen freisetzen</>
+                    <>Botanischer Präzisionsextraktor BloomLab®: Sequenzielle A/B-Extraktionstechnologie</>
                   ) : (
-                    <>The art of botanical extraction: unlocking your plants' potential</>
+                    <>BloomLab® Botanical Extractor: Sequential A/B Extraction Technology</>
                   )}
                 </h1>
               </div>
@@ -200,7 +210,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
             <div className="space-y-4 text-base sm:text-lg text-white/85 leading-relaxed font-light">
               <p>
-                Libérez jusqu'à 98% des actifs de vos plantes. Avec BloomLab, vous ne faites plus “chauffer une plante”, vous libérez réellement ses principes actifs dans des conditions proches d’un laboratoire. La température est maintenue au degré près : assez élevée pour optimiser l’extraction des phytocomposés (polyphénols, flavonoïdes, huiles essentielles…), mais jamais au‑delà des seuils qui les dégradent, ce qui est exactement ce que montrent les études sur l’impact de la température en extraction végétale.
+                Favorisez l'extraction des composés recherchés et respectez les fractions sensibles. Avec BloomLab, vous ne faites plus simplement chauffer une plante : vous optimisez le profil d'extraction de ses principes actifs dans des conditions rigoureuses. La température est maintenue au degré près : assez élevée pour optimiser l’extraction des phytocomposés (polyphénols, flavonoïdes, huiles essentielles…), mais jamais au‑delà des seuils qui les dégradent, ce qui est exactement ce que montrent les études sur l’impact de la température en extraction végétale.
               </p>
               <p className="text-white/75 text-sm sm:text-base">
                 Là où une casserole ou un bain‑marie improvisé chauffent trop fort ou de façon irrégulière (perte d’antioxydants, arômes brûlés, actifs détruits), BloomLab offre un profil thermique maîtrisé qui préserve les molécules sensibles à la chaleur et améliore la quantité d’actifs réellement présents dans vos huiles infusées et macérâts.
@@ -357,7 +367,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                     <span>Vortex Cinétique</span>
                   </div>
                   <p className="text-xs text-[#0F261E]/70 leading-relaxed">
-                    Permet jusqu'à 98% d'extraction des phytocomposés solubles sans broyage agressif des fibres.
+                    Favorise l'extraction optimale des phytocomposés solubles sans broyage agressif des fibres.
                   </p>
                 </div>
               </div>
@@ -599,7 +609,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                   </div>
                 </div>
                 <p className="text-base text-[#0F261E]/75 mb-6 leading-relaxed italic">
-                  {t.levels?.lvl3?.quote || "Libérez la pharmacie intérieure de votre corps par une biodisponibilité maximale."}
+                  {t.levels?.lvl3?.quote || "Soutenez l'équilibre homéostatique de votre corps par une biodisponibilité respectée."}
                 </p>
                 <p className="text-sm text-[#0F261E]/70 mb-6 leading-relaxed">
                   {t.levels?.lvl3?.description || "Préparations ciblées pour les émonctoires, l'équilibre digestif, l'apaisement nerveux et la vitalité articulaire."}
@@ -698,15 +708,15 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
             
-            {/* 1. Bloom Lab (Machine Seule ou Formule Équipée) */}
+            {/* 1. BloomLab Solo (239€ - Machine seule) */}
             <div className="bg-[#FAF7F2] rounded-3xl p-8 border border-[#0F261E]/10 flex flex-col justify-between">
               <div>
                 <span className="text-[10px] font-black uppercase tracking-widest text-[#0F261E]/60 block mb-2">
-                  Autonomie Totale
+                  Achat Matériel Seul
                 </span>
-                <h3 className="text-2xl font-bold text-[#0F261E] mb-2">Bloom Lab</h3>
+                <h3 className="text-2xl font-bold text-[#0F261E] mb-2">BloomLab® Solo</h3>
                 <p className="text-xs text-[#0F261E]/70 mb-6 leading-relaxed">
-                  L'extracteur botanique de laboratoire chez vous pour réaliser vos extractions de plantes en toute liberté.
+                  L'extracteur botanique de laboratoire chez vous pour réaliser vos extractions de plantes en toute autonomie.
                 </p>
                 <div className="flex items-baseline gap-2 mb-6">
                   <span className="text-4xl font-black text-[#0F261E]">239€</span>
@@ -724,7 +734,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#D97706] shrink-0 mt-0.5" />
-                    <span>Guide des protocoles thermiques inclus</span>
+                    <span>Guide complet des protocoles d'extraction</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#D97706] shrink-0 mt-0.5" />
@@ -736,22 +746,64 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 onClick={() => onNavigate('product-detail', 'bloomlab')}
                 className="w-full py-4 bg-[#0F261E] hover:bg-[#D97706] text-white rounded-xl font-bold transition-all text-sm cursor-pointer shadow-md"
               >
-                Commander l'extracteur BloomLab
+                Commander BloomLab Solo (239€)
               </button>
             </div>
 
-            {/* 2. Bloom Complet (Recommended Central Offer 59€/mois) */}
+            {/* 2. Pack Signature (289€ - Machine + Accessoires + 1ère Cure Totum) */}
             <div className="bg-[#FFF8F0] rounded-3xl p-8 border-2 border-[#D97706] shadow-xl flex flex-col justify-between relative transform lg:-translate-y-2">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#D97706] text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-md">
-                Formule Recommandée
+                Pack Recommandé
               </div>
               <div>
                 <span className="text-[10px] font-black uppercase tracking-widest text-[#D97706] block mb-2">
-                  Protocole Intégral
+                  Équipement + Cure Clé en Main
                 </span>
-                <h3 className="text-2xl font-bold text-[#0F261E] mb-2">Bloom Complet</h3>
+                <h3 className="text-2xl font-bold text-[#0F261E] mb-2">Pack Signature</h3>
                 <p className="text-xs text-[#0F261E]/70 mb-6 leading-relaxed">
-                  Le protocole complet sans contrainte technique : formulations prêtes à l'emploi et suivi de terrain systémique.
+                  L'extracteur BloomLab® accompagné de la panoplie complète d'apothicaire et d'une cure de plantes pour démarrer immédiatement.
+                </p>
+                <div className="flex items-baseline gap-2 mb-6">
+                  <span className="text-4xl font-black text-[#0F261E]">289€</span>
+                  <span className="text-sm line-through text-[#0F261E]/40 font-medium">389€</span>
+                  <span className="text-xs bg-[#D97706]/15 text-[#D97706] font-bold px-2.5 py-1 rounded-full">-100€</span>
+                </div>
+                <ul className="space-y-3 text-xs text-[#0F261E]/80 mb-8">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle className="w-4 h-4 text-[#D97706] shrink-0 mt-0.5" />
+                    <span className="font-bold text-[#0F261E]">Extracteur BloomLab® Inox 304 complet</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle className="w-4 h-4 text-[#D97706] shrink-0 mt-0.5" />
+                    <span>Kit accessoires apothicaire (flacons ambrés, entonnoir)</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle className="w-4 h-4 text-[#D97706] shrink-0 mt-0.5" />
+                    <span>1 mois de plantes brutes de grade herboristerie</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle className="w-4 h-4 text-[#D97706] shrink-0 mt-0.5" />
+                    <span>Accès complet à la Bibliothèque de protocoles</span>
+                  </li>
+                </ul>
+              </div>
+              <button 
+                onClick={() => onNavigate('product-detail', 'pack-signature')}
+                className="w-full py-4 bg-[#D97706] hover:bg-[#b45309] text-white rounded-xl font-bold transition-all text-sm cursor-pointer shadow-lg"
+              >
+                Choisir le Pack Signature (289€)
+              </button>
+            </div>
+
+            {/* 3. Abonnement Cures & Protocoles (59€/mois - Sans engagement) */}
+            <div className="bg-[#FAF7F2] rounded-3xl p-8 border border-[#0F261E]/10 flex flex-col justify-between">
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#0F261E]/60 block mb-2">
+                  Abonnement Plantes & Suivi
+                </span>
+                <h3 className="text-2xl font-bold text-[#0F261E] mb-2">Cures Systémiques</h3>
+                <p className="text-xs text-[#0F261E]/70 mb-6 leading-relaxed">
+                  Abonnement de plantes sélectionnées selon votre anamnèse, prêtes pour l'infusion ou le BloomLab.
                 </p>
                 <div className="flex items-baseline gap-2 mb-6">
                   <span className="text-4xl font-black text-[#0F261E]">59€</span>
@@ -760,64 +812,27 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 <ul className="space-y-3 text-xs text-[#0F261E]/80 mb-8">
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#D97706] shrink-0 mt-0.5" />
-                    <span>Protocole systémique personnalisé selon votre anamnèse</span>
+                    <span>Plantes brutes certifiées livrées chaque mois</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#D97706] shrink-0 mt-0.5" />
-                    <span>Préparations botaniques pures livrées chaque mois</span>
+                    <span>Fiches protocoles A/B et posologies sécurisées</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#D97706] shrink-0 mt-0.5" />
-                    <span>Accompagnement continu et ajustement du terrain</span>
+                    <span>Suivi d'évolution du terrain avec ALMA</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#D97706] shrink-0 mt-0.5" />
-                    <span>Accès illimité aux conseils de l'Architecte Bloom</span>
+                    <span>Sans engagement, pause ou arrêt en 1 clic</span>
                   </li>
                 </ul>
               </div>
               <button 
                 onClick={() => onNavigate('abonnement')}
-                className="w-full py-4 bg-[#D97706] hover:bg-[#b45309] text-white rounded-xl font-bold transition-all text-sm cursor-pointer shadow-lg"
-              >
-                Choisir Bloom Complet (59€/mois)
-              </button>
-            </div>
-
-            {/* 3. Essentiel (Budget ou Découverte Douce) */}
-            <div className="bg-[#FAF7F2] rounded-3xl p-8 border border-[#0F261E]/10 flex flex-col justify-between">
-              <div>
-                <span className="text-[10px] font-black uppercase tracking-widest text-[#0F261E]/60 block mb-2">
-                  Démarrage Progressif
-                </span>
-                <h3 className="text-2xl font-bold text-[#0F261E] mb-2">Essentiel</h3>
-                <p className="text-xs text-[#0F261E]/70 mb-6 leading-relaxed">
-                  Pour découvrir la démarche et sécuriser les premières habitudes botaniques à votre rythme.
-                </p>
-                <div className="flex items-baseline gap-2 mb-6">
-                  <span className="text-4xl font-black text-[#0F261E]">29€</span>
-                  <span className="text-[#0F261E]/60 font-medium text-sm">/mois</span>
-                </div>
-                <ul className="space-y-3 text-xs text-[#0F261E]/80 mb-8">
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle className="w-4 h-4 text-[#D97706] shrink-0 mt-0.5" />
-                    <span>Cure ciblée sur l'axe fondamental prioritaire</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle className="w-4 h-4 text-[#D97706] shrink-0 mt-0.5" />
-                    <span>Fiches pédagogiques de posologie et précautions</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle className="w-4 h-4 text-[#D97706] shrink-0 mt-0.5" />
-                    <span>Sans engagement, modifiable à tout moment</span>
-                  </li>
-                </ul>
-              </div>
-              <button 
-                onClick={() => onNavigate('boutique')}
                 className="w-full py-4 bg-[#0F261E] hover:bg-[#D97706] text-white rounded-xl font-bold transition-all text-sm cursor-pointer shadow-md"
               >
-                Démarrer avec Essentiel
+                Découvrir les Abonnements Cures
               </button>
             </div>
 
@@ -847,7 +862,12 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 >
                   <button
                     type="button"
-                    onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
+                    onClick={() => {
+                      if (!isOpen) {
+                        trackFaqExpand(item.q);
+                      }
+                      setOpenFaqIndex(isOpen ? null : idx);
+                    }}
                     className="w-full text-left p-6 flex items-center justify-between gap-4 font-bold text-[#0F261E] text-base sm:text-lg cursor-pointer hover:text-[#D97706] transition-colors"
                   >
                     <span>{item.q}</span>

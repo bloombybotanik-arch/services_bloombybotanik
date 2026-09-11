@@ -511,32 +511,18 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
       graph.push({
         "@type": "Product",
         "@id": "https://bloombybotanik.com/bloomlab/#product",
-        "name": "BloomLab® - Extracteur Botanique",
-        "description": "L'extracteur de précision qui libère jusqu'à 98% du totum végétal. Machine d'infusion de plantes pour réaliser vos remèdes naturels aux plantes, soins naturels visages, corps et cheveux à basse température.",
+        "name": "BloomLab® - Extracteur Botanique de Précision",
+        "description": "Extracteur botanique de précision pour infusions, macérâts huileux et élixirs à basse température contrôlée au degré près. Technologie séquentielle A/B.",
         "image": [
-          `https://bloombybotanik.com${bloomLabImg}`,
-          `https://bloombybotanik.com${img05}`,
-          "https://bloombybotanik.com/assets/images/lab_detail_cleaned_1786616788618.jpg"
+          "https://bloombybotanik.com/img/produit/bloomlab-face-1200x1200.jpg",
+          "https://bloombybotanik.com/img/produit/bloomlab-3quarts-1200x1200.jpg",
+          "https://bloombybotanik.com/img/produit/bloomlab-cuisine-1200x630.jpg"
         ],
         "brand": { "@type": "Brand", "name": "Bloom by BotaniK" },
         "sku": "BLOOM-LAB-2026",
         "mpn": "BL-2026",
         "gtin13": "3770000000001",
-        "keywords": "infuseur botanique, extracteur botanique, machine d'infusion de plantes, remèdes naturels aux plantes, soins naturels visages, soins naturels corps, soins naturels cheveux",
-        "reviewedBy": { "@id": "https://bloombybotanik.com/#rd-lead" },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "127",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
-        "review": [{
-          "@type": "Review",
-          "author": { "@type": "Person", "name": "Sophie M." },
-          "reviewBody": "Une révolution pour mes remèdes maison. La précision est incroyable.",
-          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
-        }],
+        "keywords": "infuseur botanique, extracteur botanique, machine d'infusion de plantes, herboristerie moderne, macérâts huileux, totum végétal",
         "offers": {
           "@type": "Offer",
           "price": "239.00",
@@ -914,7 +900,7 @@ const NavigationSidebar = ({ className = "", currentView, currentProductId, navi
           />
           <NavItem 
             id="pillar-extraction" 
-            label={t.nav.methode_ab_sub?.guide_methodes || "Guide complet des méthodes"} 
+            label={t.nav.methode_ab_sub?.guide_methodes || "Guide de l'extraction botanique"} 
             icon={BookOpen} 
             isActive={currentView === 'pillar-extraction' || currentView === 'extraction-botanique' || currentView === 'guide-complet'}
             onClick={() => navigateTo('pillar-extraction')}
@@ -2087,7 +2073,7 @@ export default function App() {
                   <div className="grid grid-cols-1 gap-2">
                     {[
                       { id: 'product-detail', label: t.nav.methode_ab_sub?.bloomlab || "L'Extracteur BloomLab®", icon: Award, param: 'bloomlab' },
-                      { id: 'pillar-extraction', label: t.nav.methode_ab_sub?.guide_methodes || "Guide complet des méthodes", icon: BookOpen },
+                      { id: 'pillar-extraction', label: t.nav.methode_ab_sub?.guide_methodes || "Guide de l'extraction botanique", icon: BookOpen },
                       { id: 'totum-definition', label: t.nav.methode_ab_sub?.totum || "Le Totum Végétal", icon: Leaf },
                     ].map((item: any) => (
                       <a

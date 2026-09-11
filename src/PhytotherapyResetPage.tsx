@@ -643,29 +643,32 @@ export default function PhytotherapyResetPage({
 
             {/* Freemium Upgrade Box if not premium */}
             {!isPremium && (
-              <div className="mt-12 bg-gradient-to-br from-[#0F261E] to-[#1C3F34] text-white p-8 md:p-12 rounded-[36px] border border-[#D97706]/30 shadow-2xl relative overflow-hidden">
+              <div 
+                className="mt-12 p-8 md:p-12 rounded-[36px] border border-[#1C3F34] shadow-2xl relative overflow-hidden"
+                style={{ backgroundColor: '#0F261E', color: '#FAF7F2' }}
+              >
                 <div className="max-w-3xl relative z-10">
-                  <div className="inline-flex items-center gap-2 bg-[#D97706]/20 text-[#D97706] px-3.5 py-1.5 rounded-full text-[11px] font-black uppercase tracking-widest mb-4 border border-[#D97706]/30">
+                  <div className="inline-flex items-center gap-2 bg-[#D97706]/20 text-[#D97706] px-3.5 py-1.5 rounded-full text-[11px] font-black uppercase tracking-widest mb-4 border border-[#D97706]/40">
                     <Lock className="w-3.5 h-3.5" />
                     Mode Freemium • Compléments Systémiques
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-black mb-3">
-                    Débloquez l'Intégralité des Fiches & Posologies de Terrain
+                  <h3 className="text-2xl md:text-3xl font-black text-[#FAF7F2] mb-3">
+                    Débloquez l'Intégralité du Totum Botanique & des Fiches de Terrain
                   </h3>
-                  <p className="text-sm md:text-base text-slate-200 leading-relaxed mb-8">
-                    À partir de la Vitamine D3 + K2 (MK7), les posologies précises, cofacteurs d'assimilation et protocoles de micronutrition sont réservés aux abonnés. Profitez d'un abonnement digital sans engagement à 9 €/mois, résiliable chaque mois en 1 clic.
+                  <p className="text-sm md:text-base text-[#FAF7F2]/90 leading-relaxed mb-8">
+                    À partir de la Vitamine D3 + K2 (MK7), les posologies précises, cofacteurs d'assimilation et protocoles de micronutrition sont réservés aux abonnés. Profitez d'un abonnement digital sans engagement à 7,90 €/mois, résiliable chaque mois en 1 clic.
                   </p>
                   <div className="flex flex-col sm:flex-row items-center gap-4">
                     <button
                       onClick={() => onNavigate('abonnement')}
                       className="w-full sm:w-auto px-8 py-4 bg-[#D97706] hover:bg-[#B45309] active:bg-[#92400E] text-white rounded-2xl font-black text-sm md:text-base shadow-lg transition-all flex items-center justify-center gap-3 cursor-pointer"
                     >
-                      <span>S'abonner à l'Abonnement Digital (9 €/mois)</span>
+                      <span>S'abonner à l'Abonnement Digital (7,90 €/mois)</span>
                       <ArrowRight className="w-5 h-5 stroke-[2]" />
                     </button>
                     <button
                       onClick={() => onRequireAuth ? onRequireAuth() : onNavigate('account')}
-                      className="w-full sm:w-auto px-6 py-4 bg-white/10 hover:bg-white/20 text-white rounded-2xl font-bold text-sm transition-colors cursor-pointer text-center"
+                      className="w-full sm:w-auto px-6 py-4 bg-white/10 hover:bg-white/20 text-[#FAF7F2] border border-white/20 rounded-2xl font-bold text-sm transition-colors cursor-pointer text-center"
                     >
                       Déjà abonné ? Se connecter
                     </button>

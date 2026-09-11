@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
   <url>
     <loc>https://bloombybotanik.com/</loc>
@@ -14,12 +15,24 @@
   </url>
 
   <url>
-    <loc>https://bloombybotanik.com/bloomlab</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/bloomlab"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/bloomlab"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/bloomlab"/>
+    <loc>https://bloombybotanik.com/bloomlab/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/bloomlab/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/bloomlab/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/bloomlab/"/>
     <lastmod>2026-08-23</lastmod>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/img/produit/bloomlab-face-1200x1200.jpg</image:loc>
+      <image:title>BloomLab® — Vue de face extracteur botanique inox</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/img/produit/bloomlab-3quarts-1200x1200.jpg</image:loc>
+      <image:title>BloomLab® — Vue 3/4 bol et écran de commande</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/img/produit/bloomlab-cuisine-1200x630.jpg</image:loc>
+      <image:title>BloomLab® — En situation en cuisine atelier botanique</image:title>
+    </image:image>
   </url>
 
   <url>
