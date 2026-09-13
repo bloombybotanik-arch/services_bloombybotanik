@@ -23,14 +23,14 @@ import { Thermometer, Timer, RefreshCw, FlaskConical, Leaf, ShieldCheck, Info, A
 // import img5_1 from '../assets/images/5-1.png';
 // import img6_1 from '../assets/images/6-1.png';
 
-const bloomLabImg = "/assets/images/bloomlab_main_1784887530345.jpeg";
-const duoArgilesImg = "/assets/images/product_duo_argiles.jpg";
-const trioPouchesImg = "/assets/images/product_trio_pouches.jpg";
-const feuArticulaireImg = "/assets/images/product_feu_articulaire.jpg";
-const nuitProfondeImg = "/assets/images/product_nuit_profonde.jpg";
-const seveFondamentaleImg = "/assets/images/product_seve_fondamentale.jpg";
-const digestionImg = "/assets/images/product_digestion.jpeg";
-const bouclierHiverImg = "/assets/images/product_bouclier_hiver.jpg";
+const bloomLabImg = "/img/produit/bloomlab-1200x1200.jpg";
+const duoArgilesImg = "/img/produit/duo-argiles-1200x1200.jpg";
+const trioPouchesImg = "/img/produit/trio-pouches-1200x1200.jpg";
+const feuArticulaireImg = "/img/produit/feu-articulaire-1200x1200.jpg";
+const nuitProfondeImg = "/img/produit/nuit-profonde-1200x1200.jpg";
+const seveFondamentaleImg = "/img/produit/seve-fondamentale-1200x1200.jpg";
+const digestionImg = "/img/produit/digestion-1200x1200.jpg";
+const bouclierHiverImg = "/img/produit/bouclier-hiver-1200x1200.jpg";
 const modernShelvesImg = "/assets/images/modern_herbalist_shelves_1786699793560.jpg";
 const img2 = "/assets/images/family_care_cleaned_1786616776823.jpg";
 const img3 = "/assets/images/lab_detail_cleaned_1786616788618.jpg";
@@ -426,7 +426,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
                 <div class="bg-white/10 p-6 rounded-3xl backdrop-blur-sm">
                   <svg class="w-6 h-6 mb-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
                   <h4 class="font-bold mb-2">Reset Homéostasique</h4>
-                  <p class="text-xs text-white/70">Guides de cures détox et maintenance du terrain profond.</p>
+                  <p class="text-xs text-white/70">Guides de rééquilibrage homéostatique et maintenance du terrain profond.</p>
                 </div>
               </div>
             </div>
@@ -1238,7 +1238,14 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
     }
   };
   
+  // SEO aliases for direct canonical URLs and alternate slugs
+  if (sheets['kit-reset']) sheets['duo-argiles'] = sheets['kit-reset'];
+  if (sheets['kit-starter']) sheets['seve-fondamentale'] = sheets['kit-starter'];
+  if (sheets['kit-nuit']) sheets['nuit-profonde'] = sheets['kit-nuit'];
+  if (sheets['kit-digestion']) sheets['digestion'] = sheets['kit-digestion'];
+  if (sheets['kit-articulaire']) sheets['feu-articulaire'] = sheets['kit-articulaire'];
   if (sheets['kit-bouclier-hiver']) {
+    sheets['bouclier-hiver'] = sheets['kit-bouclier-hiver'];
     sheets['kit-hiver'] = sheets['kit-bouclier-hiver'];
   }
 

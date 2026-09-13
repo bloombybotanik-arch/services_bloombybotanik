@@ -15,18 +15,18 @@ import { OptimizedImage } from './components/OptimizedImage';
 // import digestionImg from './assets/images/product_digestion.jpeg';
 // import modernShelvesImg from './assets/images/modern_herbalist_shelves_1786699793560.jpg';
 
-const bloomLabImg = "/assets/images/bloomlab_main_1784887530345.jpeg";
+const bloomLabImg = "/img/produit/bloomlab-1200x1200.jpg";
 const img05 = "/assets/images/lifestyle_botanik_cleaned_1786616810137.jpg";
 const labHeroImg = "/assets/images/lab_detail_cleaned_1786616788618.jpg";
 const remediesImg = "/assets/images/natural_remedies_cleaned_1786616831671.jpg";
 const herbsCloseUpImg = "/assets/images/herbs_close_up_cleaned_1786616800877.jpg";
-const duoArgilesImg = "/assets/images/product_duo_argiles.jpg";
-const trioPouchesImg = "/assets/images/product_trio_pouches.jpg";
-const feuArticulaireImg = "/assets/images/product_feu_articulaire.jpg";
-const bouclierHiverImg = "/assets/images/product_bouclier_hiver.jpg";
-const nuitProfondeImg = "/assets/images/product_nuit_profonde.jpg";
-const seveFondamentaleImg = "/assets/images/product_seve_fondamentale.jpg";
-const digestionImg = "/assets/images/product_digestion.jpeg";
+const duoArgilesImg = "/img/produit/duo-argiles-1200x1200.jpg";
+const trioPouchesImg = "/img/produit/trio-pouches-1200x1200.jpg";
+const feuArticulaireImg = "/img/produit/feu-articulaire-1200x1200.jpg";
+const bouclierHiverImg = "/img/produit/bouclier-hiver-1200x1200.jpg";
+const nuitProfondeImg = "/img/produit/nuit-profonde-1200x1200.jpg";
+const seveFondamentaleImg = "/img/produit/seve-fondamentale-1200x1200.jpg";
+const digestionImg = "/img/produit/digestion-1200x1200.jpg";
 const modernShelvesImg = "/assets/images/modern_herbalist_shelves_1786699793560.jpg";
 import { translations, Language } from './translations';
 
