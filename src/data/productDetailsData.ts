@@ -52,15 +52,13 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
 
   const sheets: Record<string, any> = {
     'bloomlab': (() => {
-      const now = new Date();
-      const isPromoActive = now >= new Date('2026-09-01') && now < new Date('2027-01-01');
-      const bloomLabPrice = isPromoActive ? 239 : 289;
+      const bloomLabPrice = 239.00;
       
       return {
         name: "BloomLab®",
         subtitle: isFR ? "SOUVERAINETÉ SANTÉ — ÉDITION 2026" : isDE ? "GESUNDHEITSSOUVERÄNITÄT — EDITION 2026" : "HEALTH SOVEREIGNTY — 2026 EDITION",
         price: bloomLabPrice,
-        originalPrice: isPromoActive ? 289 : null,
+        originalPrice: 289.00,
         images: [bloomLabImg, img2_1, img3_1, img4_1, img5_1, img6_1],
         description: isFR 
           ? "BloomLab® : L'extracteur botanique de précision N°1 en France. L'infuseur idéal pour extraire le Totum intégral des plantes médicinales avec une précision thermique absolue (±0,5°C)."
@@ -227,7 +225,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
     'bundle-apothicaire': {
       name: isFR ? "L'Herbier Complet — Pack Rentrée 2026" : isDE ? "Das vollständige Herbarium — Paket Rente 2026" : "Complete Herbarium — 2026 Back-to-School Pack",
       subtitle: isFR ? "TOUS LES REMÈDES + DUO ARGILES" : isDE ? "ALLE HEILMITTEL + ERDEN-DUO" : "ALL REMEDIES + CLAYS DUO",
-      price: 59,
+      price: 49.00,
       originalPrice: 87.50,
       images: [trioPouchesImg, duoArgilesImg, seveFondamentaleImg],
       description: isFR 
@@ -280,8 +278,8 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
     'pack-signature': {
       name: isFR ? "PACK SIGNATURE — BloomLab + Collection 2026" : "SIGNATURE PACK — BloomLab + 2026 Collection",
       subtitle: isFR ? "L'AUTONOMIE BOTANIQUE TOTALE" : "TOTAL BOTANICAL AUTONOMY",
-      price: 289.90,
-      originalPrice: 349.90,
+      price: 289.00,
+      originalPrice: 349.00,
       images: [bloomLabImg, seveFondamentaleImg, nuitProfondeImg, digestionImg, feuArticulaireImg, bouclierHiverImg, duoArgilesImg],
       description: isFR 
         ? "Le Pack Signature regroupe l'instrument BloomLab® et l'intégralité de la collection de kits remèdes 2026. Une solution clé en main pour votre souveraineté sanitaire."
@@ -1067,7 +1065,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
     'kit-reset': {
       name: isFR ? "Duo Argiles Bloom — Purification Systémique Zeolithe-Bentonite" : isDE ? "Bloom Erden-Duo — Systemische Reinigung Zeolith-Bentonit" : "Bloom Clays Duo — Systemic Purification Zeolite-Bentonite",
       subtitle: isFR ? "CHÉLATION NATURELLE & RÉÉQUILIBRAGE DE TERRAIN" : isDE ? "MINERALISCHE SYNERGIE & TERRAIN" : "MINERAL SYNERGY & TERRAIN",
-      price: 44.90,
+      price: 34.00,
       originalPrice: 49.00,
       images: [duoArgilesImg],
       description: isFR 
@@ -1202,39 +1200,77 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       specs: [{ label: "Type", value: "Digital", icon: Info }]
     },
     'premium-access': {
-      name: "Abonnement Mensuel Premium",
-      subtitle: "ACCÈS TOTAL",
-      price: 9,
+      name: "Abonnement Précision",
+      subtitle: "ACCÈS TOTAL ILLIMITÉ",
+      price: 7.90,
       images: [modernShelvesImg],
-      description: isFR ? "L'intégralité des savoirs Bloom en accès illimité : protocoles, vidéos et bibliothèque de recettes." : "Unlimited access to all Bloom knowledge.",
+      description: isFR ? "L'intégralité des protocoles et savoirs Bloom en accès illimité : protocoles, vidéos et bibliothèque de recettes." : "Unlimited access to all Bloom knowledge.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
-          <p class="text-lg mb-8">Rejoignez la communauté des experts Botanik et débloquez tout le potentiel de votre laboratoire maison.</p>
+          <p class="text-lg mb-8">Rejoignez les membres Bloom Précision et débloquez tout le potentiel de votre souveraineté botanique.</p>
           <div class="bg-botanik-orange/5 border border-botanik-orange/20 p-6 rounded-2xl mb-8">
             <h4 class="font-bold text-botanik-green mb-4">Conditions & Réglementations :</h4>
             <ul class="space-y-3 text-sm text-botanik-green/80">
               <li class="flex items-start gap-2">
                 <span class="text-botanik-orange font-bold">•</span>
-                <span><strong>Liberté Totale :</strong> Abonnement résiliable à tout moment sur simple demande depuis votre espace membre.</span>
+                <span><strong>Liberté Totale :</strong> Abonnement résiliable à tout moment en un clic depuis votre espace membre.</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-botanik-orange font-bold">•</span>
-                <span><strong>Gestion du terme :</strong> En cas de résiliation, l'accès reste actif jusqu'à la fin de la période mensuelle entamée. Le mois consommé reste dû.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-botanik-orange font-bold">•</span>
-                <span><strong>Produit Numérique :</strong> Conformément à la réglementation sur les contenus numériques, l'accès est immédiat après validation du paiement.</span>
+                <span><strong>Accès Immédiat :</strong> Bibliothèque complète des protocoles validés par chromatographie.</span>
               </li>
             </ul>
           </div>
-          <p class="text-sm italic text-botanik-green/40">Tarif : 9,00 € TTC par mois, sans engagement de durée.</p>
+          <p class="text-sm italic text-botanik-green/60">Tarif : 7,90 € TTC par an (soit moins de 0,66 € / mois).</p>
         </div>
       ` : `
         <div class="prose prose-botanik max-w-none">
-          <p>Premium access to all botanical protocols.</p>
+          <p>Precision access to all botanical protocols.</p>
         </div>
       `,
-      specs: [{ label: "Type", value: "Abonnement", icon: Info }]
+      specs: [{ label: "Type", value: "Abonnement Annuel", icon: Info }]
+    },
+    'abonnement-decouverte': {
+      name: "Abonnement Découverte",
+      subtitle: "L'ESSENTIEL BOTANIQUE",
+      price: 4.90,
+      images: [img4],
+      description: isFR ? "Accès aux 10 recettes fondamentales et guides d'initiation." : "Access to 10 fundamental recipes.",
+      fullDescription: isFR ? `
+        <div class="prose prose-botanik max-w-none">
+          <p class="text-lg mb-8">Formule idéale pour découvrir la puissance de l'extraction végétale domestique.</p>
+          <p class="text-sm italic text-botanik-green/60">Tarif : 4,90 € TTC par an.</p>
+        </div>
+      ` : `<p>Discovery subscription</p>`,
+      specs: [{ label: "Type", value: "Abonnement Annuel", icon: Info }]
+    },
+    'abonnement-precision': {
+      name: "Abonnement Précision",
+      subtitle: "ACCÈS TOTAL ILLIMITÉ",
+      price: 7.90,
+      images: [modernShelvesImg],
+      description: isFR ? "Protocoles complets, fiches botaniques et mises à jour mensuelles." : "Full access to botanical protocols.",
+      fullDescription: isFR ? `
+        <div class="prose prose-botanik max-w-none">
+          <p class="text-lg mb-8">Accès intégral à l'intelligence Bloom et aux protocoles interactifs.</p>
+          <p class="text-sm italic text-botanik-green/60">Tarif : 7,90 € TTC par an.</p>
+        </div>
+      ` : `<p>Precision subscription</p>`,
+      specs: [{ label: "Type", value: "Abonnement Annuel", icon: Info }]
+    },
+    'abonnement-integral': {
+      name: "Abonnement Intégral",
+      subtitle: "ACCOMPAGNEMENT & EXPERTISE",
+      price: 79.00,
+      images: [bloomLabImg],
+      description: isFR ? "Accès total à la bibliothèque, masterclasses exclusives et support d'experts herboristes." : "Comprehensive access with masterclasses and herbalist guidance.",
+      fullDescription: isFR ? `
+        <div class="prose prose-botanik max-w-none">
+          <p class="text-lg mb-8">L'expérience complète Bloom avec accompagnement personnalisé et masterclasses de pointe.</p>
+          <p class="text-sm italic text-botanik-green/60">Tarif : 79,00 € TTC par an.</p>
+        </div>
+      ` : `<p>Integral subscription</p>`,
+      specs: [{ label: "Type", value: "Abonnement Annuel", icon: Info }]
     }
   };
   
@@ -1242,11 +1278,17 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
   if (sheets['kit-reset']) sheets['duo-argiles'] = sheets['kit-reset'];
   if (sheets['kit-starter']) sheets['seve-fondamentale'] = sheets['kit-starter'];
   if (sheets['kit-nuit']) sheets['nuit-profonde'] = sheets['kit-nuit'];
-  if (sheets['kit-digestion']) sheets['digestion'] = sheets['kit-digestion'];
+  if (sheets['kit-digestion']) {
+    sheets['confort-digestif'] = sheets['kit-digestion'];
+    sheets['digestion'] = sheets['kit-digestion'];
+  }
   if (sheets['kit-articulaire']) sheets['feu-articulaire'] = sheets['kit-articulaire'];
   if (sheets['kit-bouclier-hiver']) {
     sheets['bouclier-hiver'] = sheets['kit-bouclier-hiver'];
     sheets['kit-hiver'] = sheets['kit-bouclier-hiver'];
+  }
+  if (sheets['bundle-apothicaire']) {
+    sheets['herbier-complet-rentree-2026'] = sheets['bundle-apothicaire'];
   }
 
   return sheets;

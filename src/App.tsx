@@ -87,6 +87,8 @@ const PATH_VIEWS: Record<string, string> = {
   '/totum-vegetal/': 'totum-vegetal',
   '/abonnement': 'abonnement',
   '/abonnement/': 'abonnement',
+  '/infusion-botanique-maison-comment-ca-marche': 'infusion-botanique',
+  '/infusion-botanique-maison-comment-ca-marche/': 'infusion-botanique',
 };
 
 // --- SEO & DATA UTILS ---
@@ -110,7 +112,7 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
       seoKey = 'shop';
     } else if (currentView === 'pillar-extraction' || currentView === 'extraction-botanique' || currentView === 'guide-complet') {
       seoKey = 'extraction';
-    } else if (currentView === 'infusion-botanique' || currentView === 'guide') {
+    } else if (currentView === 'infusion-botanique' || currentView === 'infusion-botanique-maison-comment-ca-marche' || currentView === 'guide') {
       seoKey = 'infusion';
     } else if (currentView === 'huile-infusee') {
       seoKey = 'oil';
@@ -161,8 +163,11 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
       const products = getProducts(lang);
       productData = products.find((p: any) => p.id === productId);
       if (productData) {
-        finalTitle = `${productData.name} | ${productData.subtitle} | Bloom by BotaniK`;
-        finalDescription = productData.description;
+        const baseTitle = `${productData.name} | Bloom by BotaniK`;
+        finalTitle = baseTitle.length <= 58 ? baseTitle : productData.name.slice(0, 58);
+        finalDescription = productData.description.length > 155 
+          ? productData.description.slice(0, 152) + '...'
+          : productData.description;
       }
     }
 
@@ -436,30 +441,21 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
     ];
 
     if (currentView === 'product-detail' && productData) {
+      const productImagePath = typeof productData.image === 'string' && productData.image.startsWith('/img/')
+        ? `https://bloombybotanik.com${productData.image}`
+        : `https://bloombybotanik.com/img/produit/${productData.id}-1200x1200.jpg`;
+
+      // 1. Clean Product schema with genuine pricing and no fake review markup
       graph.push({
         "@type": "Product",
         "@id": `${pageUrl}/#product`,
         "name": productData.name,
         "description": productData.description,
-        "image": typeof productData.image === 'string' ? `https://bloombybotanik.com${productData.image}` : (productData.image?.src ? `https://bloombybotanik.com${productData.image.src}` : undefined),
+        "image": [productImagePath],
         "brand": { "@type": "Brand", "name": "Bloom by BotaniK" },
         "sku": `BLOOM-${productData.id.toUpperCase()}`,
         "mpn": `BL-${productData.id.toUpperCase()}`,
-        "keywords": "tisanes, remèdes naturels, phytothérapie, extraction botanique",
-        "reviewedBy": { "@id": "https://bloombybotanik.com/#rd-lead" },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": (productData.rating || 4.8).toString(),
-          "reviewCount": (productData.reviews || 15).toString(),
-          "bestRating": "5",
-          "worstRating": "1"
-        },
-        "review": [{
-          "@type": "Review",
-          "author": { "@type": "Person", "name": "Client Bloom" },
-          "reviewBody": "Excellent produit, conforme à la démarche Bloom et à l'extraction de précision.",
-          "reviewRating": { "@type": "Rating", "ratingValue": (productData.rating || 4.8).toString() }
-        }],
+        "category": "Herboristerie / Phytothérapie",
         "offers": {
           "@type": "Offer",
           "price": productData.price.toFixed(2),
@@ -473,7 +469,7 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
             "@type": "OfferShippingDetails",
             "shippingRate": {
               "@type": "MonetaryAmount",
-              "value": "0",
+              "value": productData.price >= 49 ? "0.00" : "4.90",
               "currency": "EUR"
             },
             "shippingDestination": {
@@ -490,8 +486,8 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
               },
               "transitTime": {
                 "@type": "QuantitativeValue",
-                "minValue": 2,
-                "maxValue": 4,
+                "minValue": 1,
+                "maxValue": 2,
                 "unitCode": "d"
               }
             }
@@ -500,11 +496,37 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
             "@type": "MerchantReturnPolicy",
             "applicableCountry": "FR",
             "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-            "merchantReturnDays": 14,
+            "merchantReturnDays": 30,
             "returnMethod": "https://schema.org/ReturnByMail",
             "returnFees": "https://schema.org/FreeReturn"
           }
         }
+      });
+
+      // 2. BreadcrumbList schema
+      graph.push({
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}/#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": isFR ? "Accueil" : "Home",
+            "item": "https://bloombybotanik.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": isFR ? "Boutique" : "Store",
+            "item": "https://bloombybotanik.com/boutique/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": productData.name,
+            "item": pageUrl
+          }
+        ]
       });
     } else if (currentView === 'home' || currentView === 'machine' || currentView === 'indexbis' || currentView === 'how_it_works' || currentView === 'infuseur-botanique') {
       // Add BloomLab product on its dedicated landing or home page
@@ -553,8 +575,8 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
               },
               "transitTime": {
                 "@type": "QuantitativeValue",
-                "minValue": 2,
-                "maxValue": 4,
+                "minValue": 1,
+                "maxValue": 2,
                 "unitCode": "d"
               }
             }
@@ -563,7 +585,7 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
             "@type": "MerchantReturnPolicy",
             "applicableCountry": "FR",
             "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-            "merchantReturnDays": 14,
+            "merchantReturnDays": 30,
             "returnMethod": "https://schema.org/ReturnByMail",
             "returnFees": "https://schema.org/FreeReturn"
           }
@@ -599,6 +621,125 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
             "text": item.a
           }
         }))
+      });
+    }
+
+    if (currentView === 'infusion-botanique' || currentView === 'infusion-botanique-maison-comment-ca-marche') {
+      graph.push({
+        "@type": "Article",
+        "@id": `${pageUrl}/#article`,
+        "url": pageUrl,
+        "headline": "Infusion botanique maison : de la plante à la préparation",
+        "description": "Découvrez l’infusion botanique de précision avec BloomLab : plantes sélectionnées, recettes guidées, huiles infusées et préparations maison.",
+        "inLanguage": isFR ? "fr-FR" : lang === 'de' ? "de-DE" : "en-US",
+        "author": {
+          "@type": "Organization",
+          "name": "Bloom by BotaniK",
+          "url": "https://bloombybotanik.com/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Bloom by BotaniK",
+          "url": "https://bloombybotanik.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": logoUrl
+          }
+        },
+        "image": [
+          "https://bloombybotanik.com/img/produit/bloomlab-cuisine-1200x630.jpg",
+          "https://bloombybotanik.com/img/produit/bloomlab-face-1200x1200.jpg"
+        ],
+        "datePublished": "2025-01-15T08:00:00+01:00",
+        "dateModified": "2026-09-14T10:00:00+02:00",
+        "mainEntityOfPage": { "@id": pageUrl }
+      });
+
+      graph.push({
+        "@type": "FAQPage",
+        "@id": `${pageUrl}/#faq`,
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quelle différence entre une tisane et une infusion botanique ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La tisane traditionnelle est le plus souvent une boisson d'agrément préparée en versant une eau bouillante sur des plantes sans contrôle précis de la température ni du temps. L'infusion botanique adopte une démarche structurée : sélection de la partie végétale, adaptation de la température selon la fragilité des composés, calibrage de la durée et recherche d'une meilleure régularité dans la préparation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle différence entre infusion, décoction et macération ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "L'infusion consiste à immerger des parties végétales fragiles (fleurs, feuilles tendres) dans un liquide chauffé sans ébullition continue. La décoction maintient une ébullition douce pour extraire les principes de parties denses (écorces, racines, graines dures). La macération, quant à elle, s'effectue à température ambiante ou à froid pendant une durée prolongée dans de l'eau, de l'huile ou un autre solvant."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment choisir un solvant ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le choix du solvant dépend de la nature des constituants recherchés : l'eau convient aux molécules hydrosolubles (mucilages, tanins, certains polyphénols) ; l'huile végétale est adaptée aux molécules liposolubles (caroténoïdes, arômes, principes actifs pour soins cutanés) ; la glycérine végétale permet des préparations douces sans alcool."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "BloomLab remplace-t-elle un bain-marie ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "BloomLab remplit la fonction d'un bain-marie régulé avec une précision accrue : elle maintient une température stable au degré près, intègre une minuterie programmable et propose une agitation magnétique douce selon les programmes, évitant ainsi la surveillance manuelle et les risques de surchauffe locale."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelles plantes peut-on infuser ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La plupart des plantes aromatiques, médicinales et culinaires documentées peuvent être infusées : camomille, mélisse, menthe, romarin, thym, ortie, calendula ou verveine, dans le respect de l'usage documenté et des précautions associées."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Peut-on préparer des huiles infusées ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. L'infusion dans une huile végétale (olive, jojoba, amande douce, tournesol) permet de confectionner des huiles aromatiques culinaires ou des macérats huileux pour soins cutanés (ex. macérat de calendula) avec une température douce contrôlée."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Les kits de plantes sont-ils biologiques ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Les mélanges proposés par Bloom by BotaniK proviennent de filières rigoureusement sélectionnées, privilégiant les plantes issues de l'agriculture biologique et des récoltes respectueuses de la biodiversité."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Peut-on utiliser une préparation botanique comme un médicament ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. Les préparations présentées par Bloom by BotaniK ne remplacent ni un diagnostic, ni un avis médical, ni un traitement. En cas de grossesse, d’allaitement, d’allergie, de traitement ou de situation particulière, demandez conseil à un professionnel de santé."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment conserver une préparation ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Une infusion aqueuse fraîche doit être consommée dans les 24 à 48 heures et conservée au réfrigérateur. Une huile infusée filtrée avec soin se conserve plusieurs mois à l'abri de la lumière, de l'air et de la chaleur dans un flacon hermétique."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Où commencer lorsqu’on ne connaît pas encore les plantes ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le meilleur point de départ consiste à explorer notre Herbier pour comprendre les profils de quelques plantes simples (mélisse, camomille, ortie), puis de tester une première recette guidée gratuite avec de l'eau ou de l'huile avant d'envisager des méthodes plus avancées."
+            }
+          }
+        ]
       });
     }
 
@@ -639,26 +780,6 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
             "text": step
           }))
         });
-      });
-    }
-
-    if (currentView === 'machine' || (currentView === 'product-detail' && productId === 'bloomlab')) {
-      graph.push({
-        "@type": "Product",
-        "name": "BloomLab® - Extracteur Botanique de Précision",
-        "image": "https://bloombybotanik.com/assets/images/bloomlab_main_1784887530345.jpeg",
-        "description": lang === 'fr' ? "L'extracteur botanique qui révèle le totum de vos plantes. Thermorégulation de précision au degré près pour infusions, huiles et extraits." : "The botanical extractor that reveals the totum of your plants. Precision thermoregulation for infusions, oils, and botanical extracts.",
-        "brand": {
-          "@type": "Brand",
-          "name": "Bloom by BotaniK"
-        },
-        "offers": {
-          "@type": "Offer",
-          "url": "https://bloombybotanik.com/machine",
-          "priceCurrency": "EUR",
-          "price": "239.00",
-          "availability": "https://schema.org/InStock"
-        }
       });
     }
 
@@ -1261,11 +1382,13 @@ export default function App() {
       '/natural-herbal-infusion-face-skincare-recipes': '/cosmetique-botanique/',
       '/duo-argiles': '/cosmetique-botanique/',
       '/cosmetiques': '/cosmetique-botanique/',
-      '/qu-est-ce-que-l-infusion-botanique': '/infusion-botanique/',
+      '/qu-est-ce-que-l-infusion-botanique': '/infusion-botanique-maison-comment-ca-marche/',
+      '/infusion-botanique': '/infusion-botanique-maison-comment-ca-marche/',
+      '/atelier-culinaire': '/gastronomie-botanique/',
+      '/recettes-cosmetiques': '/cosmetique-botanique/',
       '/extraction-plantes-naturelles-bienfaits': '/extraction-botanique/',
       '/guide-extraction-botanique': '/extraction-botanique/',
       '/extraction-botanique-guide-complet': '/extraction-botanique/',
-      '/infusion-botanique-maison-comment-ca-marche': '/infusion-botanique/',
       '/herbier': '/herbier/',
       '/herbier/phytotherapie': '/phytotherapie-reset/',
       '/herbier/phytotherapie/': '/phytotherapie-reset/',
@@ -1375,14 +1498,15 @@ export default function App() {
     if (matchedView) {
       setCurrentView(matchedView as typeof currentView);
       
-      // Handle scrolling to specific section for legacy URL
-      if (normalizedPath === '/infusion-botanique-maison-comment-ca-marche/' || (matchedView === 'guide' && window.location.hash === '#comprendre-infusion-botanique')) {
+      // Handle scrolling to specific section for hash links
+      if (window.location.hash) {
         setTimeout(() => {
-          const element = document.getElementById('comprendre-infusion-botanique');
+          const hashId = window.location.hash.replace('#', '');
+          const element = document.getElementById(hashId);
           if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
           }
-        }, 1500);
+        }, 800);
       }
     }
   };
@@ -1876,7 +2000,8 @@ export default function App() {
       case 'extraction-botanique':
       case 'infuseur-botanique':
       case 'guide-complet': return <PillarExtraction onNavigate={navigateTo} lang={lang} />;
-      case 'infusion-botanique': return <PillarInfusion lang={lang} onNavigate={navigateTo} />;
+      case 'infusion-botanique':
+      case 'infusion-botanique-maison-comment-ca-marche': return <PillarInfusion lang={lang} onNavigate={navigateTo} />;
       case 'huile-infusee':
       case 'maceration-plantes': return <PillarOil lang={lang} onNavigate={navigateTo} />;
       case 'plantes-adaptogenes': return <PillarAdaptogens lang={lang} onNavigate={navigateTo} />;

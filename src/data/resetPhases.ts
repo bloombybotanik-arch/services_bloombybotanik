@@ -172,14 +172,14 @@ export const resetPhasesData: ResetPhaseDetail[] = [
       { "slug": "curcuma", "nom": "Curcuma", "partie": "rhizome", "role": "Curcuminoïdes, inhibition NF‑κB, terrain inflammatoire sanguin.", "depend_de_bilan": false }
     ],
     "optional_plants": [
-      { "slug": "cassis", "nom": "Cassis", "partie": "feuille/bourgeon", "role": "Anti‑inflammatoire, drainage, soutien terrain allergique.", "depend_de_bilan": true },
+      { "slug": "cassis", "nom": "Cassis", "partie": "feuille/bourgeon", "role": "Apaisant tissulaire, soutien des émonctoires, terrain sensible.", "depend_de_bilan": true },
       { "slug": "reglisse", "nom": "Réglisse", "partie": "racine", "role": "Modulation du cortisol, muqueuses, à utiliser selon axe HPA et tension.", "depend_de_bilan": true },
-      { "slug": "boswellia", "nom": "Boswellia", "partie": "résine", "role": "Inhibition NF‑κB, soutien articulations et terrain inflammatoire.", "depend_de_bilan": true }
+      { "slug": "boswellia", "nom": "Boswellia", "partie": "résine", "role": "Inhibition NF‑κB, confort articulaire et équilibre tissulaire.", "depend_de_bilan": true }
     ],
     "actions": [
       "Soutien du microbiote",
       "Réduction des sucres rapides",
-      "Alimentation anti-inflammatoire",
+      "Alimentation hypotoxique et apaisante",
       "Repos régulier"
     ],
     "cta": "Voir Kit 2",
@@ -192,7 +192,7 @@ export const resetPhasesData: ResetPhaseDetail[] = [
     "name": "Pause Intégrative",
     "subtitle": "7 jours — Repos",
     "short_text": "Deuxième phase de repos pour consolider les acquis de la purification avant la stabilisation finale.",
-    "long_text": "Cette pause permet au système sanguin et immunitaire d’intégrer les modifications (réduction de l’inflammation, meilleure fluidité, microbiome plus stable). On ne cherche pas une « cure express », mais une transformation durable du terrain ; les temps de repos font partie du traitement autant que les phases actives.",
+    "long_text": "Cette pause permet au système sanguin et immunitaire d’intégrer les modifications (apaisement tissulaire, meilleure fluidité, microbiome plus stable). On ne cherche pas une « cure express », mais une transformation durable du terrain ; les temps de repos font partie du protocole autant que les phases actives.",
     "summary": "Deuxième temps de repos pour consolider la purification avant la stabilisation finale.",
     "objectives": [
       "Intégrer les effets",

@@ -24,14 +24,50 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
 
   return (
     <article className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-20 animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <div className="flex items-center justify-between mb-6 sm:mb-8">
-        <button 
-          onClick={onBack}
-          className="flex items-center gap-2 text-[#1B3022]/60 hover:text-[#1B3022] transition-colors group py-2"
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8">
+        <nav aria-label="Fil d'Ariane" className="flex items-center gap-2 text-xs sm:text-sm text-[#1B3022]/60">
+          <a 
+            href="/" 
+            onClick={(e) => {
+              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                e.preventDefault();
+                onNavigate('home');
+              }
+            }}
+            className="hover:text-[#1B3022] hover:underline"
+          >
+            {lang === 'fr' ? 'Accueil' : lang === 'de' ? 'Startseite' : 'Home'}
+          </a>
+          <span>/</span>
+          <a 
+            href="/boutique/" 
+            onClick={(e) => {
+              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                e.preventDefault();
+                onNavigate('boutique');
+              }
+            }}
+            className="hover:text-[#1B3022] hover:underline"
+          >
+            {lang === 'fr' ? 'Boutique' : lang === 'de' ? 'Shop' : 'Store'}
+          </a>
+          <span>/</span>
+          <span className="text-[#1B3022] font-semibold truncate max-w-[200px] sm:max-w-none">{sheet.name}</span>
+        </nav>
+
+        <a 
+          href="/boutique/"
+          onClick={(e) => {
+            if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+              e.preventDefault();
+              onBack();
+            }
+          }}
+          className="inline-flex items-center gap-2 text-[#1B3022]/60 hover:text-[#1B3022] transition-colors group py-1 text-xs sm:text-sm font-medium"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           {t.back}
-        </button>
+        </a>
       </div>
 
       <div className="flex flex-col lg:flex-row items-stretch bg-white border border-[#1B3022]/5 rounded-3xl sm:rounded-[48px] overflow-hidden shadow-2xl mb-16 sm:mb-24 min-h-0 lg:min-h-[700px]">
@@ -129,13 +165,105 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
 
       <div className="max-w-4xl mx-auto">
         <div dangerouslySetInnerHTML={{ __html: sheet.fullDescription }} />
+
+        {/* SEO Linking: Guides & Recettes associés */}
+        <div className="mt-16 pt-10 border-t border-[#1B3022]/10">
+          <h3 className="text-xl font-bold text-[#1B3022] mb-6">
+            {lang === 'fr' ? 'Guides d’extraction & Protocoles associés' : 'Related Extraction Guides & Recipes'}
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <a 
+              href="/extraction-botanique-guide-complet/"
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('extraction-guide');
+                }
+              }}
+              className="p-4 rounded-2xl bg-[#F9F9F7] border border-[#1B3022]/5 hover:border-[#D97706]/30 transition-all group flex flex-col justify-between"
+            >
+              <div className="text-[10px] uppercase font-bold text-[#D97706] mb-1">Guide Pratique</div>
+              <div className="text-sm font-bold text-[#1B3022] group-hover:text-[#D97706] transition-colors mb-2">
+                {lang === 'fr' ? "L'Art de l'Extraction Botanique de Précision" : "Botanical Precision Extraction"}
+              </div>
+              <span className="text-xs text-[#1B3022]/50">Consulter le dossier &rarr;</span>
+            </a>
+
+            <a 
+              href="/recettes/"
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('recettes');
+                }
+              }}
+              className="p-4 rounded-2xl bg-[#F9F9F7] border border-[#1B3022]/5 hover:border-[#D97706]/30 transition-all group flex flex-col justify-between"
+            >
+              <div className="text-[10px] uppercase font-bold text-[#D97706] mb-1">Protocoles</div>
+              <div className="text-sm font-bold text-[#1B3022] group-hover:text-[#D97706] transition-colors mb-2">
+                {lang === 'fr' ? "Recettes & Formules d'Herboristerie" : "Herbal Recipes & Formulas"}
+              </div>
+              <span className="text-xs text-[#1B3022]/50">Explorer les recettes &rarr;</span>
+            </a>
+
+            <a 
+              href="/infuseur-botanique/"
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('infuseur-botanique');
+                }
+              }}
+              className="p-4 rounded-2xl bg-[#F9F9F7] border border-[#1B3022]/5 hover:border-[#D97706]/30 transition-all group flex flex-col justify-between"
+            >
+              <div className="text-[10px] uppercase font-bold text-[#D97706] mb-1">Technologie</div>
+              <div className="text-sm font-bold text-[#1B3022] group-hover:text-[#D97706] transition-colors mb-2">
+                {lang === 'fr' ? "Principe de l'Infusion Séquentielle A/B" : "Sequential A/B Infusion"}
+              </div>
+              <span className="text-xs text-[#1B3022]/50">Découvrir la méthode &rarr;</span>
+            </a>
+          </div>
+        </div>
       </div>
       
       <footer className="mt-20 border-t border-[#1B3022]/10 pt-10 text-center">
         <div className="flex flex-wrap justify-center gap-6 mb-8 text-xs font-bold uppercase tracking-widest text-[#1B3022]/40">
-          <button onClick={() => onNavigate('legal', undefined, 'mentions')} className="hover:text-botanik-orange transition-colors">Mentions Légales</button>
-          <button onClick={() => onNavigate('legal', undefined, 'cgv')} className="hover:text-botanik-orange transition-colors">CGV</button>
-          <button onClick={() => onNavigate('legal', undefined, 'cgu')} className="hover:text-botanik-orange transition-colors">CGU</button>
+          <a 
+            href="/mentions-legales/"
+            onClick={(e) => {
+              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                e.preventDefault();
+                onNavigate('legal', undefined, 'mentions');
+              }
+            }}
+            className="hover:text-botanik-orange transition-colors"
+          >
+            Mentions Légales
+          </a>
+          <a 
+            href="/conditions-generales-de-vente/"
+            onClick={(e) => {
+              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                e.preventDefault();
+                onNavigate('legal', undefined, 'cgv');
+              }
+            }}
+            className="hover:text-botanik-orange transition-colors"
+          >
+            CGV
+          </a>
+          <a 
+            href="/termes-et-conditions/"
+            onClick={(e) => {
+              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                e.preventDefault();
+                onNavigate('legal', undefined, 'cgu');
+              }
+            }}
+            className="hover:text-botanik-orange transition-colors"
+          >
+            CGU
+          </a>
         </div>
         <p className="text-sm text-[#1B3022]/40 italic max-w-2xl mx-auto">
           {sheet.name} {t.disclaimer}

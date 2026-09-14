@@ -89,11 +89,19 @@ const BASE_ROUTES = [
 
 async function routeToFilePath(route) {
   if (route === '/') {
-    return path.join(distDir, 'index.html');
+    return [path.join(distDir, 'index.html')];
   }
-  const dir = path.join(distDir, route.replace(/^\//, ''));
+  const cleanRoute = route.replace(/^\//, '').replace(/\/$/, '');
+  const dir = path.join(distDir, cleanRoute);
   await fs.mkdir(dir, { recursive: true });
-  return path.join(dir, 'index.html');
+  
+  const files = [path.join(dir, 'index.html')];
+  // Also create flat .html file (ex: /boutique/duo-argiles.html)
+  const parentDir = path.dirname(path.join(distDir, cleanRoute));
+  await fs.mkdir(parentDir, { recursive: true });
+  files.push(path.join(distDir, `${cleanRoute}.html`));
+
+  return files;
 }
 
 /**
@@ -190,9 +198,11 @@ async function main() {
             console.warn(`  [!] Attention: Canonical manquante ou incorrecte sur ${route}`);
           }
           
-          const outputPath = await routeToFilePath(route);
-          await fs.writeFile(outputPath, html, 'utf-8');
-          console.log(`  -> écrit : ${path.relative(distDir, outputPath)}`);
+          const outputPaths = await routeToFilePath(route);
+          for (const outputPath of outputPaths) {
+            await fs.writeFile(outputPath, html, 'utf-8');
+            console.log(`  -> écrit : ${path.relative(distDir, outputPath)}`);
+          }
         } catch (err) {
           console.error(`Erreur sur ${url}:`, err.message);
         } finally {

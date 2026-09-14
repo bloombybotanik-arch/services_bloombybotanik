@@ -33,12 +33,8 @@ import { translations, Language } from './translations';
 export const getProducts = (lang: Language) => {
   const t = translations[lang].store.products;
   
-  // Logic for Promotion (September 2026 -> January 1, 2027)
-  // Current date in metadata is 2026-08-13.
-  const now = new Date();
-  const isPromoActive = now >= new Date('2026-09-01') && now < new Date('2027-01-01');
-  const bloomLabPrice = isPromoActive ? 239.00 : 289.00;
-  const bloomLabOriginal = isPromoActive ? 289.00 : 329.00;
+  const bloomLabPrice = 239.00;
+  const bloomLabOriginal = 289.00;
 
   const seoTags = (translations[lang].seo.keywords || "").split(', ').slice(3, 8); // Take 5 keywords from the list
 
@@ -61,7 +57,7 @@ export const getProducts = (lang: Language) => {
       id: 'bundle-apothicaire',
       name: t.bundle_apothicaire.name,
       subtitle: t.bundle_apothicaire.subtitle,
-      price: 59.00,
+      price: 49.00,
       originalPrice: 87.50,
       image: trioPouchesImg,
       rating: 5.0,
@@ -75,7 +71,7 @@ export const getProducts = (lang: Language) => {
       name: t.pack_signature.name,
       subtitle: t.pack_signature.subtitle,
       price: 289.00,
-      oldPriceStrike: 389.00,
+      oldPriceStrike: 349.00,
       image: bloomLabImg,
       rating: 5.0,
       reviews: 42,
@@ -142,13 +138,13 @@ export const getProducts = (lang: Language) => {
       id: 'kit-reset',
       name: t.kit_reset.name,
       subtitle: t.kit_reset.subtitle,
-      price: 44.90,
+      price: 34.00,
       originalPrice: 49.00,
       image: duoArgilesImg,
       rating: 4.9,
       reviews: 31,
       description: t.kit_reset.description,
-      tags: ['Kit', 'Détox']
+      tags: ['Kit', 'Reset Homéostatique']
     },
     {
       id: 'freemium-access',
@@ -167,12 +163,12 @@ export const getProducts = (lang: Language) => {
       id: 'premium-access',
       name: t.premium_access.name,
       subtitle: t.premium_access.subtitle,
-      price: 9.00,
+      price: 7.90,
       image: modernShelvesImg,
       rating: 4.9,
       reviews: 128,
       description: t.premium_access.description,
-      tags: ['Abonnement', 'Digital', 'Complet'],
+      tags: ['Abonnement', 'Digital', 'Annuel'],
       isSpecial: true,
       isDigital: true
     }
@@ -325,12 +321,18 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
                     {t.hero.description}
                   </p>
                   <div className="flex flex-wrap gap-4 mt-2 sm:mt-4">
-                    <button 
-                      onClick={() => handleNavigateDetail('bloomlab')}
+                    <a 
+                      href="/boutique/bloomlab/"
+                      onClick={(e) => {
+                        if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                          e.preventDefault();
+                          handleNavigateDetail('bloomlab');
+                        }
+                      }}
                       className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-2xl font-bold flex items-center justify-center gap-3 transition-all shadow-xl shadow-black/10 cursor-pointer min-h-[48px]"
                     >
                       {t.hero.cta} <ArrowRight className="w-5 h-5" />
-                    </button>
+                    </a>
                   </div>
                 </div>
                 
@@ -363,9 +365,15 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {products.filter(p => (p as any).isBundle).map((product) => (
-              <div 
+              <a 
                 key={product.id} 
-                onClick={() => handleNavigateDetail(product.id)}
+                href={`/boutique/${product.id}/`}
+                onClick={(e) => {
+                  if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                    e.preventDefault();
+                    handleNavigateDetail(product.id);
+                  }
+                }}
                 className="bg-white rounded-3xl sm:rounded-[40px] border-2 border-botanik-orange/20 overflow-hidden flex flex-col cursor-pointer hover:shadow-2xl transition-all group relative"
               >
                 <div className="absolute top-4 left-4 z-10 bg-botanik-orange text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg">
@@ -408,7 +416,8 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
                       <span className="text-xl sm:text-2xl font-bold text-botanik-green">{formatPrice(product.price)}</span>
                     </div>
                     <button 
-                      onClick={(e) => { e.stopPropagation(); onAddToCart(product); }}
+                      type="button"
+                      onClick={(e) => { e.preventDefault(); e.stopPropagation(); onAddToCart(product); }}
                       className="w-12 h-12 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-2xl flex items-center justify-center shadow-lg transition-colors cursor-pointer"
                       aria-label={`${lang === 'fr' ? 'Ajouter au panier' : 'Add to cart'} ${product.name}`}
                     >
@@ -416,7 +425,7 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
                     </button>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -449,13 +458,19 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full md:w-auto">
                 {products.filter(p => (p as any).isSpecial).map((product) => (
-                  <div 
+                  <a 
                     key={product.id}
+                    href={`/boutique/${product.id}/`}
                     className="bg-white rounded-3xl sm:rounded-[40px] shadow-sm hover:shadow-xl transition-all cursor-pointer group border border-botanik-green/5 overflow-hidden flex flex-col"
-                    onClick={() => handleNavigateDetail(product.id)}
+                    onClick={(e) => {
+                      if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                        e.preventDefault();
+                        handleNavigateDetail(product.id);
+                      }
+                    }}
                   >
                     <div className="relative aspect-video sm:aspect-square md:aspect-video overflow-hidden bg-[#F9F9F7]">
-                      <img 
+                      <OptimizedImage 
                         src={product.image} 
                         alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Machine à infusion botanique, tisanes et remèdes naturels`} 
                         className="w-full h-full object-cover transform scale-110 group-hover:scale-125 transition-transform duration-700"
@@ -475,15 +490,15 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
                         <span className="text-lg sm:text-xl font-bold text-botanik-green">
                           {product.price === 0 ? (lang === 'fr' ? 'Gratuit' : lang === 'en' ? 'Free' : 'Gratis') : formatPrice(product.price)}
                         </span>
-                        <button 
+                        <div 
                           className="w-10 h-10 bg-[#0F261E] text-white rounded-xl flex items-center justify-center group-hover:bg-botanik-orange transition-colors"
                           aria-label={`${lang === 'fr' ? 'Découvrir' : 'Discover'} ${product.name}`}
                         >
                           <ArrowRight className="w-5 h-5" />
-                        </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
@@ -499,19 +514,26 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
           {filteredProducts.filter(p => (!p.featured && !(p as any).isBundle && !(p as any).isSpecial) || searchQuery).map((product) => {
             return (
-              <div 
+              <a 
                 key={product.id} 
-                onClick={() => handleNavigateDetail(product.id)}
+                href={`/boutique/${product.id}/`}
+                onClick={(e) => {
+                  if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                    e.preventDefault();
+                    handleNavigateDetail(product.id);
+                  }
+                }}
                 className="bg-white rounded-2xl sm:rounded-[40px] border border-botanik-green/5 overflow-hidden flex flex-col cursor-pointer hover:shadow-2xl transition-all group"
               >
                 <div className="relative h-44 sm:h-64 md:h-80 overflow-hidden bg-[#F9F9F7]">
-                  <img 
+                  <OptimizedImage 
                     src={product.image} 
                     alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Machine à infusion botanique, tisanes et remèdes naturels`} 
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
                   <button 
-                    onClick={(e) => { e.stopPropagation(); onAddToCart(product); }}
+                    type="button"
+                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); onAddToCart(product); }}
                     className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 w-10 h-10 sm:w-12 sm:h-12 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg transition-colors cursor-pointer"
                   >
                     <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -529,7 +551,7 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
                     <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-botanik-green/20 group-hover:text-botanik-green transition-colors" />
                   </div>
                 </div>
-              </div>
+              </a>
             );
           })}
         </div>

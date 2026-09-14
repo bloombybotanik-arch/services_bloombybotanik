@@ -28,9 +28,9 @@ import { trackViewItem, trackFaqExpand } from './utils/analytics';
 
 const heroViews = [
   { id: 'v1', label: 'Vue 1', src: '/img/produit/bloomlab-face-1200x1200.jpg', fallbackSrc: '/img/produit/bloomlab-face-1200x1200.jpg', subtitle: 'Face Inox' },
-  { id: 'v2', label: 'Vue 2', src: '/img/produit/bloomlab-3quarts-1200x1200.jpg', fallbackSrc: '/img/produit/bloomlab-3quarts-1200x1200.jpg', subtitle: 'Précision' },
-  { id: 'v3', label: 'Vue 3', src: '/img/produit/bloomlab-cuisine-1200x630.jpg', fallbackSrc: '/img/produit/bloomlab-cuisine-1200x630.jpg', subtitle: 'Atelier Cuisine' },
-  { id: 'v4', label: 'Vue 4', src: '/images/5.webp', fallbackSrc: '/images/5.png', subtitle: 'Totum' },
+  { id: 'v2', label: 'Vue 2', src: '/images/1.png', fallbackSrc: '/images/1.png', subtitle: 'Précision' },
+  { id: 'v3', label: 'Vue 3', src: '/images/2.png', fallbackSrc: '/images/2.png', subtitle: 'Extraction' },
+  { id: 'v4', label: 'Vue 4', src: '/images/8.png', fallbackSrc: '/images/8.png', subtitle: 'Totum' },
 ];
 const heroImg1 = heroViews[0].src;
 const bloomSoinsImg = "/assets/images/Bloom_Soins.jpg";

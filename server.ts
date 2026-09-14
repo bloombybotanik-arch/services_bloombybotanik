@@ -212,6 +212,17 @@ function registerAppRoutes(app: express.Express) {
     res.status(404).end();
   });
 
+  app.get(['/apple-touch-icon.png', '/favicon-48x48.png', '/favicon-96x96.png', '/favicon-192x192.png'], (req, res) => {
+    const file = path.basename(req.path);
+    const filePath = path.join(process.cwd(), 'public', file);
+    if (fs.existsSync(filePath)) {
+      res.setHeader('Content-Type', 'image/png');
+      res.setHeader('Cache-Control', 'public, max-age=86400, s-maxage=604800');
+      return res.sendFile(filePath);
+    }
+    res.status(404).end();
+  });
+
   app.use('/assets', express.static(path.join(process.cwd(), 'public', 'assets'), {
     maxAge: '7d',
     immutable: true
@@ -219,6 +230,16 @@ function registerAppRoutes(app: express.Express) {
 
   app.use('/images', express.static(path.join(process.cwd(), 'public', 'images'), {
     maxAge: '7d',
+    immutable: true
+  }));
+
+  app.use('/img', express.static(path.join(process.cwd(), 'public', 'img'), {
+    maxAge: '30d',
+    immutable: true
+  }));
+
+  app.use('/products', express.static(path.join(process.cwd(), 'public', 'products'), {
+    maxAge: '30d',
     immutable: true
   }));
 
@@ -308,7 +329,7 @@ app.use((req, res, next) => {
   const staticFiles = [
     '/favicon.ico', '/favicon-', '/robots.txt', 
     '/sitemap.xml', '/sitemap-fr.xml', '/sitemap-en.xml', '/sitemap-de.xml',
-    '/site.webmanifest', '/manifest.webmanifest', '/apple-touch-icon'
+    '/site.webmanifest', '/manifest.webmanifest', '/apple-touch-icon', '/feed/'
   ];
   if (staticFiles.some(file => lowercasePath.includes(file.toLowerCase()))) {
     return next();
@@ -373,6 +394,11 @@ app.get('/robots.txt', (req, res) => {
   res.header('Content-Type', 'text/plain');
   res.sendFile(path.join(process.cwd(), 'public', 'robots.txt'));
 });
+app.get('/feed/google-merchant.xml', (req, res) => {
+  res.header('Content-Type', 'application/xml; charset=utf-8');
+  res.header('Cache-Control', 'public, max-age=3600');
+  res.sendFile(path.join(process.cwd(), 'public', 'feed', 'google-merchant.xml'));
+});
 
 // Redirections 301 pour le SEO & correction d'erreurs 404
 const redirects301: Record<string, string> = {
@@ -381,7 +407,10 @@ const redirects301: Record<string, string> = {
   '/retours-et-remboursements': '/retour-et-remboursement/',
   '/tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes-spoiler-la-difference-est-de-1-a-98': '/blog/tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes-spoiler-la-difference-est-de-1-a-98/',
   '/chroniques': '/blog/',
-  '/infusion-botanique-maison-comment-ca-marche': '/infusion-botanique/',
+  '/infusion-botanique': '/infusion-botanique-maison-comment-ca-marche/',
+  '/qu-est-ce-que-l-infusion-botanique': '/infusion-botanique-maison-comment-ca-marche/',
+  '/atelier-culinaire': '/gastronomie-botanique/',
+  '/recettes-cosmetiques': '/cosmetique-botanique/',
   
   // URLs d'anciennes versions & alias
   '/indexbis': '/',
@@ -392,12 +421,19 @@ const redirects301: Record<string, string> = {
   '/natural-herbal-infusion-face-skincare-recipes': '/cosmetiques/',
   '/extraction-plantes-naturelles-bienfaits': '/extraction-botanique/',
   '/extraction-botanique-guide-complet': '/extraction-botanique/',
+  '/machine': '/bloomlab/',
   '/herbier': '/herbier/',
   '/bibliotheque': '/herbier/',
   '/bibliotheque-savoirs': '/herbier/',
-  '/boutique/confort-digestif': '/boutique/duo-argiles/',
-  '/boutique/feu-actualisateur': '/boutique/purete-sanguine/',
-  '/boutique/nutri-profonde': '/boutique/expert-peaux/',
+  '/boutique/kit-reset': '/boutique/duo-argiles/',
+  '/boutique/kit-starter': '/boutique/seve-fondamentale/',
+  '/boutique/kit-nuit': '/boutique/nuit-profonde/',
+  '/boutique/kit-digestion': '/boutique/confort-digestif/',
+  '/boutique/digestion': '/boutique/confort-digestif/',
+  '/boutique/kit-articulaire': '/boutique/feu-articulaire/',
+  '/boutique/kit-bouclier-hiver': '/boutique/bouclier-hiver/',
+  '/boutique/kit-hiver': '/boutique/bouclier-hiver/',
+  '/boutique/bundle-apothicaire': '/boutique/herbier-complet-rentree-2026/',
   '/shop': '/boutique/',
   '/products': '/boutique/',
   '/herboristerie': '/herbier/',
@@ -1265,6 +1301,16 @@ async function startServer() {
         // Skip API and files
         if (req.path.startsWith('/api') || /\.[a-z0-9]{2,5}$/i.test(req.path)) {
           return res.status(404).send("Not found");
+        }
+
+        const cleanPath = req.path.replace(/^\//, '').replace(/\/$/, '');
+        const specificHtml = path.join(distPath, cleanPath, "index.html");
+        const flatHtml = path.join(distPath, `${cleanPath}.html`);
+        if (cleanPath && fs.existsSync(specificHtml)) {
+          return res.send(fs.readFileSync(specificHtml, "utf-8"));
+        }
+        if (cleanPath && fs.existsSync(flatHtml)) {
+          return res.send(fs.readFileSync(flatHtml, "utf-8"));
         }
 
         const indexPath = path.join(distPath, "index.html");

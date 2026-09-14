@@ -23,10 +23,10 @@ export const translations = {
         intro: "Infusion, décoction, macération, extraction séquentielle : comparez les méthodes, choisissez le bon solvant et maîtrisez température et agitation pour libérer le Totum végétal.",
       },
       infusion: {
-        title: "Infuseur Basse Température : L'Art de l'Infusion Botanique",
-        description: "Optimisez votre homéostasie avec l'infusion botanique de précision. Guide expert sur l'infusion basse température pour une purification systémique.",
-        h1: "L'Infusion Botanique : Souveraineté Sanitaire et Précision",
-        intro: "Bien plus qu'une simple tisane, l'infusion botanique est un protocole de rééquilibrage de terrain. Maîtrisez vos extractions pour une assimilation optimale des actifs.",
+        title: "Infusion botanique maison : méthode et BloomLab | Bloom by BotaniK",
+        description: "Découvrez l’infusion botanique de précision avec BloomLab : plantes sélectionnées, recettes guidées, huiles infusées et préparations maison.",
+        h1: "Infusion botanique maison : de la plante à la préparation",
+        intro: "L’infusion botanique ne se limite pas à verser de l’eau chaude sur une plante. Elle repose sur un équilibre entre la plante choisie, le solvant utilisé, la température, la durée et le mouvement du mélange.",
       },
       infuseur: {
         title: "Infuseur Botanique BloomLab® | Machine d'infusion de plantes",
@@ -151,10 +151,10 @@ export const translations = {
         extracteur: "L'extracteur botanique BloomLab - Appareil de phytothérapie maison pour infusion et macération de précision en France",
         herbs: "Plantes médicinales pour infusion botanique et extraction du totum - Guide d'herboristerie moderne Bloom by BotaniK",
         lab: "Laboratoire botanique Bloom - Recherche en médecine des systèmes, protocoles systémiques et extraction de précision",
-        reset_hero: "Protocoles Systémiques Bloom by BotaniK - Protocole de phytothérapie pour soigner le terrain biologique",
+        reset_hero: "Protocoles Systémiques Bloom by BotaniK - Protocole de phytothérapie pour soutenir l'équilibre du terrain biologique",
         phase0: "Phase 0 : Reset Émonctoires - Extraction botanique et tisanes médicinales pour la souveraineté sanitaire",
         phase1: "Phase 1 : Reset Terrain Hépatique - Remèdes naturels de plantes médicinales extraits à basse température",
-        phase2: "Phase 2 : Pureté Sanguine - Infuseur botanique BloomLab pour extraction du totum anti-inflammatoire",
+        phase2: "Phase 2 : Pureté Sanguine - Infuseur botanique BloomLab pour extraction du totum apaisant et protecteur",
         phase3: "Phase 3 : Reset Immunitaire - Remèdes de grand mère et expertise en extraction botanique de précision",
       }
     },
@@ -1701,8 +1701,10 @@ export const translations = {
         intro: "Infusion, decoction, maceration, sequential extraction: compare methods, choose the right solvent and master temperature and agitation to unlock the botanical Totum.",
       },
       infusion: {
-        title: "Herbal Infusion & Maceration: The Home Botanical Extractor Guide",
-        description: "Master herbal infusions: temperature, solvents, and precision. Turn your kitchen into a natural remedy lab with the BloomLab® extractor.",
+        title: "Homemade Botanical Infusion: Method & BloomLab | Bloom by BotaniK",
+        description: "Discover precision botanical infusion with BloomLab: selected plants, guided recipes, infused oils, and homemade preparations.",
+        h1: "Homemade Botanical Infusion: From Plant to Preparation",
+        intro: "Botanical infusion is not merely pouring hot water on plants. It relies on a precise balance between the plant, the solvent, temperature, time, and gentle agitation.",
       },
       infuseur: {
         title: "BloomLab® Precision Botanical Extractor | Totum Extraction & Infusions",
@@ -3215,8 +3217,10 @@ export const translations = {
         intro: "Infusion, Dekokt, Mazeration, sequenzielle Extraktion: Methoden vergleichen, Lösungsmittel wählen, Temperatur und Bewegung meistern, um das botanische Totum freizusetzen.",
       },
       infusion: {
-        title: "Pflanzen-Infusion & Mazeration: Leitfaden für Extraktoren",
-        description: "Pflanzliche Infusionen meistern: Temperatur, Lösungsmittel und Präzision. Verwandeln Sie Ihre Küche in ein Labor für natürliche Heilmittel.",
+        title: "Botanische Haus-Infusion: Methode & BloomLab | Bloom by BotaniK",
+        description: "Entdecken Sie die botanische Präzisionsinfusion mit BloomLab: ausgewählte Pflanzen, geführte Rezepte, infundierte Öle und Zubereitungen.",
+        h1: "Botanische Haus-Infusion: Von der Pflanze zur Zubereitung",
+        intro: "Eine botanische Infusion bedeutet mehr als heißes Wasser über Pflanzen zu gießen. Sie basiert auf einem Gleichgewicht aus Pflanzenwahl, Lösungsmittel, Temperatur und Zeit.",
       },
       infuseur: {
         title: "BloomLab® Botanischer Präzisionsextraktor | Totum-Extraktion & Infusionen",

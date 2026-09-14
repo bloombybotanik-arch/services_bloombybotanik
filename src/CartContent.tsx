@@ -137,7 +137,24 @@ export default function CartContent({
                 >
                   <div className="w-28 sm:w-48 h-28 sm:h-48 aspect-square rounded-2xl overflow-hidden bg-[#F9F9F7] flex-shrink-0 relative border border-[#1B3022]/5">
                     <div className="absolute inset-2 overflow-hidden rounded-xl">
-                      <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <img 
+                        src={item.image || `/products/${item.id}.jpg`} 
+                        alt={item.name} 
+                        onError={(e) => {
+                          const target = e.currentTarget;
+                          if (!target.dataset.triedFallback) {
+                            target.dataset.triedFallback = "1";
+                            target.src = `/products/${item.id}.jpg`;
+                          } else if (target.dataset.triedFallback === "1") {
+                            target.dataset.triedFallback = "2";
+                            target.src = `/img/produit/${item.id}-1200x1200.jpg`;
+                          } else if (target.dataset.triedFallback === "2") {
+                            target.dataset.triedFallback = "3";
+                            target.src = '/products/bloomlab.jpg';
+                          }
+                        }}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                      />
                     </div>
                   </div>
                   <div className="flex-1 min-w-0 text-center sm:text-left space-y-2">

@@ -23,14 +23,33 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   height,
   priority = false,
   className = '',
+  onError,
   ...props
 }) => {
-  // Détection automatique du format WebP si l'extension est gérée par le CDN/Backend
-  // Note : Dans un environnement réel, on utiliserait <picture> avec plusieurs <source>
-  
+  const [currentSrc, setCurrentSrc] = React.useState(src);
+
+  React.useEffect(() => {
+    setCurrentSrc(src);
+  }, [src]);
+
+  const handleError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.currentTarget;
+    if (!target.dataset.triedFallback) {
+      target.dataset.triedFallback = '1';
+      if (currentSrc.includes('/img/produit/')) {
+        const fallback = currentSrc.replace('/img/produit/', '/products/').replace('-1200x1200', '');
+        setCurrentSrc(fallback);
+      } else if (currentSrc.includes('/products/')) {
+        const fallback = currentSrc.replace('/products/', '/img/produit/').replace('.jpg', '-1200x1200.jpg');
+        setCurrentSrc(fallback);
+      }
+    }
+    if (onError) onError(e);
+  };
+
   return (
     <img
-      src={src}
+      src={currentSrc}
       alt={alt}
       width={width}
       height={height}
@@ -39,6 +58,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
       decoding="async"
       className={`${className} transition-opacity duration-300`}
       referrerPolicy="no-referrer"
+      onError={handleError}
       {...props}
     />
   );

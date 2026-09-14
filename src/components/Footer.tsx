@@ -129,22 +129,57 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
         </div>
       </div>
 
-      {/* Lower Footer: Copyright & Disclaimers */}
-      <div className="border-t border-white/5 bg-black/5">
-        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 md:px-12 lg:px-24 py-6 sm:py-8 flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8">
-          <div className="flex flex-col md:flex-row items-center gap-3 md:gap-8 text-[10px] uppercase tracking-[0.15em] text-white/20 text-center md:text-left">
-            <span>© 2026 Bloom by BotaniK</span>
-            <span className="hidden md:inline">•</span>
-            <span>{lang === 'fr' ? "La précision du geste botanique, à domicile" : lang === 'de' ? "Die Präzision der botanischen Geste, zu Hause" : "Precision botanical extraction at home"}</span>
+      {/* Lower Footer: Regulatory Warning & Copyright */}
+      <div className="border-t border-white/5 bg-black/20">
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 md:px-12 lg:px-24 py-8 sm:py-10 space-y-6">
+          <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 text-xs sm:text-xs text-white/70 leading-relaxed text-center sm:text-left">
+            <strong className="text-white font-bold block mb-1.5 uppercase tracking-wider text-[11px] text-[#D97706]">
+              Avertissement réglementaire & Vocation éducative
+            </strong>
+            {lang === 'fr' ? (
+              <p>
+                Les informations, préparations et protocoles présentés sur ce site ont une vocation exclusivement éducative et d'autonomie personnelle. Ils ne constituent en aucun cas un avis médical, ne posent aucun diagnostic et ne remplacent en rien la consultation d'un professionnel de santé qualifié. En cas de pathologie avérée, de traitement en cours, de grossesse ou d'allaitement, demandez conseil à votre médecin avant toute utilisation de plantes médicinales.
+              </p>
+            ) : lang === 'de' ? (
+              <p>
+                Die auf dieser Website präsentierten Informationen, Zubereitungen und Protokolle dienen ausschließlich Bildungszwecken und der persönlichen Eigenverantwortung. Sie stellen in keiner Weise eine medizinische Beratung dar, stellen keine Diagnosen und ersetzen keinesfalls die Konsultation eines qualifizierten Arztes.
+              </p>
+            ) : (
+              <p>
+                The information, preparations and protocols presented on this website are exclusively for educational purposes and personal autonomy. They do not constitute medical advice, provide diagnoses, or replace professional healthcare consultations.
+              </p>
+            )}
           </div>
-          
-          <div className="text-[10px] text-white/40 text-center md:text-right leading-relaxed max-w-md">
-            {lang === 'fr' 
-              ? "BloomLab est un outil de préparation botanique domestique. Il ne remplace pas un avis médical, un diagnostic ou un traitement. Les informations fournies sont pédagogiques."
-              : lang === 'de'
-              ? "BloomLab ist ein häusliches botanisches Zubereitungswerkzeug. Es ersetzt keine medizinische Beratung, Diagnose oder Behandlung. Die bereitgestellten Informationen dienen Bildungszwecken."
-              : "BloomLab is a domestic botanical preparation tool. It does not replace medical advice, diagnosis, or treatment. The information provided is educational."
-            }
+
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-white/40">
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 uppercase tracking-[0.15em] text-center sm:text-left">
+              <span>© 2026 Bloom by BotaniK</span>
+              <span className="hidden sm:inline">•</span>
+              <span>Extraction Botanique de Précision & Santé du Terrain</span>
+            </div>
+            <div className="flex items-center gap-6">
+              <a 
+                href="/mentions-legales"
+                onClick={(e) => { e.preventDefault(); onNavigate('legal', undefined, 'mentions'); }}
+                className="hover:text-white transition-colors"
+              >
+                Mentions Légales
+              </a>
+              <a 
+                href="/cgu"
+                onClick={(e) => { e.preventDefault(); onNavigate('legal', undefined, 'cgu'); }}
+                className="hover:text-white transition-colors"
+              >
+                CGV & CGU
+              </a>
+              <a 
+                href="/politique-de-confidentialite"
+                onClick={(e) => { e.preventDefault(); onNavigate('legal', undefined, 'confidentialite'); }}
+                className="hover:text-white transition-colors"
+              >
+                Confidentialité
+              </a>
+            </div>
           </div>
         </div>
       </div>

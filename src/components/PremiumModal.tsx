@@ -77,7 +77,7 @@ export function PremiumModal({ isOpen, onClose, onUpgrade }: PremiumModalProps) 
               onUpgrade();
               onClose();
             }}
-            className="w-full py-4 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-xl font-bold transition-colors shadow-lg shadow-black/10 cursor-pointer"
+            className="w-full py-4 bg-[#D97706] hover:bg-[#B45309] active:bg-[#92400E] text-white rounded-xl font-bold transition-colors shadow-lg shadow-[#D97706]/20 cursor-pointer"
           >
             Essayer 7 jours gratuitement
           </button>

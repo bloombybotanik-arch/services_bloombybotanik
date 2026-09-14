@@ -173,7 +173,7 @@ export const blogPosts: BlogPost[] = [
 <p>Contrairement à l'inflammation aiguë (une réponse saine à une blessure), l'inflammation chronique est un feu à bas bruit qui consume les tissus et épuise les glandes surrénales. Elle est le dénominateur commun des maladies modernes, du syndrome métabolique aux troubles auto-immuns.</p>
 
 <h3>La plante comme "clé" de déverrouillage</h3>
-<p>Les plantes médicinales ne sont pas des médicaments "naturels" destinés à supprimer un symptôme. Ce sont des vecteurs d'information. En apportant le <strong>Totum</strong> d'une plante adaptogène comme l'Ashwagandha ou d'une plante anti-inflammatoire comme le Curcuma (extrait avec précision), on envoie au corps les codes biochimiques nécessaires pour :</p>
+<p>Les plantes médicinales ne sont pas des médicaments "naturels" destinés à supprimer un symptôme. Ce sont des vecteurs d'information. En apportant le <strong>Totum</strong> d'une plante adaptogène comme l'Ashwagandha ou d'une plante aux vertus apaisantes et protectrices comme le Curcuma (extrait avec précision), on envoie au corps les codes biochimiques nécessaires pour :</p>
 <ul>
   <li><strong>Réguler l'axe HPA :</strong> (Hypothalamus-Hypophyse-Surrénales) pour calmer la réponse au stress.</li>
   <li><strong>Saturer les récepteurs cellulaires :</strong> avec des molécules antioxydantes biodisponibles.</li>
@@ -264,10 +264,10 @@ export const blogPosts: BlogPost[] = [
       fr: `
 <p>Face aux baisses de remboursement et à la volonté de reprendre le contrôle de notre santé, la nature offre des solutions d'une puissance insoupçonnée. Saviez-vous que l'aspirine que l'on trouve en pharmacie est en réalité une copie synthétique d'une molécule présente naturellement dans une fleur sauvage : la Reine des Prés ?</p>
 
-<p>Cependant, consommer la molécule isolée de synthèse (l'acide acétylsalicylique) entraîne souvent des effets indésirables, notamment des brûlures d'estomac. En extrayant le Totum de la Reine des Prés – c'est-à-dire l'intégralité de ses principes actifs agissant en synergie – vous profitez de son action anti-inflammatoire puissante, tout en protégeant votre paroi gastrique. C'est toute la promesse de la souveraineté sanitaire.</p>
+<p>Cependant, consommer la molécule isolée de synthèse (l'acide acétylsalicylique) entraîne souvent des effets indésirables, notamment des brûlures d'estomac. En extrayant le Totum de la Reine des Prés – c'est-à-dire l'intégralité de ses principes actifs agissant en synergie – vous profitez de ses vertus apaisantes et de confort tissulaire profond, tout en respectant votre paroi gastrique. C'est toute la promesse de la souveraineté sanitaire.</p>
 
 <h3>Pourquoi la tisane ne suffit pas ?</h3>
-<p>Faire infuser la Reine des Prés dans de l'eau bouillante détruit une grande partie de ses principes actifs fragiles. Pour obtenir un véritable remède capable de rivaliser avec un anti-inflammatoire classique, il faut réaliser une extraction hydro-alcoolique très précise.</p>
+<p>Faire infuser la Reine des Prés dans de l'eau bouillante détruit une grande partie de ses principes actifs fragiles. Pour obtenir un extrait concentré offrant un soutien articulaire et tissulaire optimal, il faut réaliser une extraction hydro-alcoolique très précise.</p>
 
 <h3>La Recette : Élixir de Reine des Prés avec BloomLab</h3>
 <p>Les fleurs de la Reine des Prés sont particulièrement tendres et fragiles. L'extraction exige une dilution spécifique et une température parfaitement stable, impossibles à obtenir avec un bain-marie traditionnel.</p>
