@@ -147,6 +147,18 @@ export const getProducts = (lang: Language) => {
       tags: ['Kit', 'Reset Homéostatique']
     },
     {
+      id: 'duo-argiles',
+      name: t.kit_reset.name,
+      subtitle: t.kit_reset.subtitle,
+      price: 34.00,
+      originalPrice: 49.00,
+      image: duoArgilesImg,
+      rating: 4.9,
+      reviews: 31,
+      description: t.kit_reset.description,
+      tags: ['Duo Argiles', 'Purification Systémique', 'Reset Homéostatique']
+    },
+    {
       id: 'freemium-access',
       name: t.freemium_access.name,
       subtitle: t.freemium_access.subtitle,

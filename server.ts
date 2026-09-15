@@ -223,6 +223,14 @@ function registerAppRoutes(app: express.Express) {
     res.status(404).end();
   });
 
+  const distAssetsPath = path.join(process.cwd(), 'dist', 'assets');
+  if (fs.existsSync(distAssetsPath)) {
+    app.use('/assets', express.static(distAssetsPath, {
+      maxAge: '1y',
+      immutable: true
+    }));
+  }
+
   app.use('/assets', express.static(path.join(process.cwd(), 'public', 'assets'), {
     maxAge: '7d',
     immutable: true
@@ -1298,6 +1306,10 @@ async function startServer() {
 
     app.get("*", async (req, res) => {
       try {
+        if (process.env.NODE_ENV === 'production') {
+          console.log(`[ROUTE] ${req.method} ${req.path} | referer: ${req.get('referer') || 'direct'}`);
+        }
+
         // Skip API and files
         if (req.path.startsWith('/api') || /\.[a-z0-9]{2,5}$/i.test(req.path)) {
           return res.status(404).send("Not found");

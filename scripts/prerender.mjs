@@ -30,6 +30,10 @@ async function getDynamicRoutes() {
     for (const match of productMatches) {
       if (!products.includes(match[1])) products.push(match[1]);
     }
+    const keyProductSlugs = ['duo-argiles', 'seve-fondamentale', 'nuit-profonde', 'confort-digestif', 'feu-articulaire', 'bouclier-hiver'];
+    for (const p of keyProductSlugs) {
+      if (!products.includes(p)) products.push(p);
+    }
 
     // 2. Blog posts from blogPosts.ts
     const blogContent = await fs.readFile(path.join(rootDir, 'src/data/blogPosts.ts'), 'utf-8');
@@ -60,6 +64,7 @@ const BASE_ROUTES = [
   '/bloomlab/',
   '/phytotherapie-reset/',
   '/boutique/',
+  '/hormese/',
   '/gastronomie-botanique/',
   '/duo-argiles/',
   '/herbier/',
@@ -145,6 +150,12 @@ async function main() {
 
   for (const lang of LANGUAGES) {
     for (const base of BASE_ROUTES) {
+      if (base === '/hormese/') {
+        if (lang === '') ROUTES.push('/hormese/');
+        else if (lang === '/en') ROUTES.push('/en/hormesis/');
+        else if (lang === '/de') ROUTES.push('/de/hormese/');
+        continue;
+      }
       const route = lang === '' ? base : `${lang}${base === '/' ? '' : base}`;
       ROUTES.push(route);
     }
@@ -166,7 +177,9 @@ async function main() {
     res.sendFile(path.join(distDir, 'index.html'));
   });
   
-  const server = app.listen(PORT);
+  const server = app.listen(0);
+  const actualPort = server.address().port;
+  const BASE_URL = `http://localhost:${actualPort}`;
 
   const browser = await puppeteer.launch({
     headless: 'new',
@@ -182,14 +195,20 @@ async function main() {
   try {
     for (const chunk of chunks) {
       await Promise.all(chunk.map(async (route) => {
+        const outputPaths = await routeToFilePath(route);
+        try {
+          await fs.access(outputPaths[0]);
+          return; // déjà généré
+        } catch {}
+
         const page = await browser.newPage();
         // Force evaluation of SEOMetadata by passing prerender=true
         const url = `${BASE_URL}${route}${route.includes('?') ? '&' : '?'}prerender=true`;
         
         try {
-          await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
+          await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 20000 });
           // Wait for React to hydrate and SEO tags to be injected
-          await new Promise(r => setTimeout(r, 1000));
+          await new Promise(r => setTimeout(r, 500));
           
           const html = await page.content();
           
@@ -198,7 +217,6 @@ async function main() {
             console.warn(`  [!] Attention: Canonical manquante ou incorrecte sur ${route}`);
           }
           
-          const outputPaths = await routeToFilePath(route);
           for (const outputPath of outputPaths) {
             await fs.writeFile(outputPath, html, 'utf-8');
             console.log(`  -> écrit : ${path.relative(distDir, outputPath)}`);

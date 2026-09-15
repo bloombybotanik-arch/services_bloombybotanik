@@ -252,29 +252,59 @@ const SEOMetadata = ({ lang, currentView, t, productId, blogPostSlug }: { lang: 
 
     // Update hreflang tags
     const langs: Language[] = ['fr', 'en', 'de'];
-    langs.forEach(l => {
-      let hreflang = document.querySelector(`link[hreflang="${l}"]`);
-      if (!hreflang) {
-        hreflang = document.createElement('link');
-        hreflang.setAttribute('rel', 'alternate');
-        hreflang.setAttribute('hreflang', l);
-        document.head.appendChild(hreflang);
-      }
-      
-      const lPrefix = l === 'fr' ? '' : `/${l}`;
-      const href = `https://bloombybotanik.com${lPrefix}${viewPath === '/' ? '' : viewPath}`;
-      hreflang.setAttribute('href', href);
-    });
+    const isHormese = viewPath.includes('hormes') || currentView === ('hormese' as any);
+    if (isHormese) {
+      const hormeseUrls: Record<string, string> = {
+        fr: 'https://bloombybotanik.com/hormese/',
+        en: 'https://bloombybotanik.com/en/hormesis/',
+        de: 'https://bloombybotanik.com/de/hormese/',
+        'x-default': 'https://bloombybotanik.com/hormese/'
+      };
+      langs.forEach(l => {
+        let hreflang = document.querySelector(`link[hreflang="${l}"]`);
+        if (!hreflang) {
+          hreflang = document.createElement('link');
+          hreflang.setAttribute('rel', 'alternate');
+          hreflang.setAttribute('hreflang', l);
+          document.head.appendChild(hreflang);
+        }
+        hreflang.setAttribute('href', hormeseUrls[l]);
+      });
 
-    // x-default
-    let xDefault = document.querySelector('link[hreflang="x-default"]');
-    if (!xDefault) {
-      xDefault = document.createElement('link');
-      xDefault.setAttribute('rel', 'alternate');
-      xDefault.setAttribute('hreflang', 'x-default');
-      document.head.appendChild(xDefault);
+      let xDefault = document.querySelector('link[hreflang="x-default"]');
+      if (!xDefault) {
+        xDefault = document.createElement('link');
+        xDefault.setAttribute('rel', 'alternate');
+        xDefault.setAttribute('hreflang', 'x-default');
+        document.head.appendChild(xDefault);
+      }
+      xDefault.setAttribute('href', hormeseUrls['x-default']);
+      canonical.setAttribute('href', hormeseUrls[lang] || hormeseUrls.fr);
+    } else {
+      langs.forEach(l => {
+        let hreflang = document.querySelector(`link[hreflang="${l}"]`);
+        if (!hreflang) {
+          hreflang = document.createElement('link');
+          hreflang.setAttribute('rel', 'alternate');
+          hreflang.setAttribute('hreflang', l);
+          document.head.appendChild(hreflang);
+        }
+        
+        const lPrefix = l === 'fr' ? '' : `/${l}`;
+        const href = `https://bloombybotanik.com${lPrefix}${viewPath === '/' ? '' : viewPath}`;
+        hreflang.setAttribute('href', href);
+      });
+
+      // x-default
+      let xDefault = document.querySelector('link[hreflang="x-default"]');
+      if (!xDefault) {
+        xDefault = document.createElement('link');
+        xDefault.setAttribute('rel', 'alternate');
+        xDefault.setAttribute('hreflang', 'x-default');
+        document.head.appendChild(xDefault);
+      }
+      xDefault.setAttribute('href', `https://bloombybotanik.com${viewPath === '/' ? '' : viewPath}`);
     }
-    xDefault.setAttribute('href', `https://bloombybotanik.com${viewPath === '/' ? '' : viewPath}`);
 
     const breadcrumbs = [
       { name: "Bloom by BotaniK", url: "https://bloombybotanik.com" }
@@ -1273,6 +1303,7 @@ export default function App() {
     const rawPath = window.location.pathname;
     const langMatch = rawPath.match(/^\/(en|de)(\/.*)?$/);
     let restPath = langMatch ? (langMatch[2] || '/') : rawPath;
+    if (restPath !== '/' && restPath.endsWith('/')) restPath = restPath.slice(0, -1);
     
     const productMatch = restPath.match(/^\/boutique\/([a-z0-9-]+)$/);
     if (productMatch) return productMatch[1];
@@ -1299,6 +1330,7 @@ export default function App() {
     }
     const langMatch = rawPath.match(/^\/(en|de)(\/.*)?$/);
     let restPath = langMatch ? (langMatch[2] || '/') : rawPath;
+    if (restPath !== '/' && restPath.endsWith('/')) restPath = restPath.slice(0, -1);
     
     const blogMatch = restPath.match(/^\/blog\/([a-z0-9-]+)$/);
     if (blogMatch) return blogMatch[1];
@@ -1370,6 +1402,11 @@ export default function App() {
     if (restPath === '/mentions-legales') {
       setLegalType('mentions');
       setCurrentView('legal');
+      return;
+    }
+
+    if (restPath === '/hormese' || restPath === '/hormesis') {
+      setCurrentView('hormese');
       return;
     }
 
@@ -2004,7 +2041,8 @@ export default function App() {
       case 'infusion-botanique-maison-comment-ca-marche': return <PillarInfusion lang={lang} onNavigate={navigateTo} />;
       case 'huile-infusee':
       case 'maceration-plantes': return <PillarOil lang={lang} onNavigate={navigateTo} />;
-      case 'plantes-adaptogenes': return <PillarAdaptogens lang={lang} onNavigate={navigateTo} />;
+      case 'plantes-adaptogenes':
+      case 'hormese': return <PillarAdaptogens lang={lang} onNavigate={navigateTo} />;
       case 'activation': return (
         <ActivationPage 
           userId={user?.uid || null} 
