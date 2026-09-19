@@ -41,8 +41,15 @@ export default function CosmeticsContent({
     }
   }, [initialPlantId]);
 
-  const categories = [t.filters.all, ...new Set(cosmeticsRecipes.map(r => r.categorie))];
-  const peaux = [t.filters.all, ...new Set(cosmeticsRecipes.map(r => r.peau))];
+  const categories = useMemo(() => [
+    t.filters.all,
+    ...Array.from(new Set(cosmeticsRecipes.map(r => r.categorie))).filter(c => c !== t.filters.all)
+  ], [t.filters.all]);
+
+  const peaux = useMemo(() => [
+    t.filters.all,
+    ...Array.from(new Set(cosmeticsRecipes.map(r => r.peau))).filter(p => p !== t.filters.all)
+  ], [t.filters.all]);
 
   const filteredRecipes = useMemo(() => {
     return cosmeticsRecipes.filter(recipe => {

@@ -973,7 +973,7 @@ export const cosmeticsRecipesEN: CosmeticsRecipe[] = cosmeticsRecipesFR.map(r =>
     ...r,
     nom_commun: t ? t.name : r.nom_commun,
     categorie: r.categorie === 'Visage' ? 'Face' : r.categorie === 'Corps' ? 'Body' : 'Hair',
-    peau: r.peau === 'Sensible' ? 'Sensitive' : r.peau === 'Toutes' ? 'All' : r.peau === 'Grasse / Acnéique' ? 'Oily / Acne' : 'Dry / Sensitive',
+    peau: r.peau === 'Sensible' ? 'Sensitive' : r.peau === 'Toutes' ? 'All Skin Types' : r.peau === 'Grasse / Acnéique' ? 'Oily / Acne' : 'Dry / Sensitive',
     cible: t ? t.target : r.cible
   };
 });
@@ -1008,7 +1008,7 @@ export const cosmeticsRecipesDE: CosmeticsRecipe[] = cosmeticsRecipesFR.map(r =>
     ...r,
     nom_commun: t ? t.name : r.nom_commun,
     categorie: r.categorie === 'Visage' ? 'Gesicht' : r.categorie === 'Corps' ? 'Körper' : 'Haare',
-    peau: r.peau === 'Sensible' ? 'Empfindlich' : 'Alle',
+    peau: r.peau === 'Sensible' ? 'Empfindlich' : 'Alle Hauttypen',
     cible: t ? t.target : r.cible
   };
 });

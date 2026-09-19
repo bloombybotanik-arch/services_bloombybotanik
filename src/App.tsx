@@ -397,175 +397,207 @@ export default function App() {
           </div>
 
           {/* Mobile Navigation Drawer */}
-          {mobileMenuOpen && (
-            <div className="bg-[#0F261E] border-b border-white/10 px-6 py-5 animate-in slide-in-from-top-4 duration-300">
-              <div className="flex flex-col space-y-2">
-                <button
-                  onClick={() => { navigateTo('indexbis'); setMobileMenuOpen(false); }}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
-                >
-                  <Home className="w-4 h-4 text-[#FAF7F2]/70" /> Accueil
-                </button>
-                <button
-                  onClick={() => { navigateTo('manifeste'); setMobileMenuOpen(false); }}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
-                >
-                  <BookOpen className="w-4 h-4 text-[#FAF7F2]/70" /> Le Manifeste
-                </button>
-                <button
-                  onClick={() => { navigateTo('guide'); setMobileMenuOpen(false); }}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
-                >
-                  <FlaskConical className="w-4 h-4 text-[#FAF7F2]/70" /> L'Extraction de Précision
-                </button>
-                <a
-                  href="https://bloombybotanik.com/boutique/bloomlab/"
-                  onClick={(e) => {
-                    if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
-                      e.preventDefault();
-                      navigateTo('product-detail', 'bloomlab');
-                      setMobileMenuOpen(false);
-                    }
-                  }}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
-                >
-                  <Sparkles className="w-4 h-4 text-[#FAF7F2]/70" /> L'Extracteur BloomLab®
-                </a>
-                <button
-                  onClick={() => { navigateTo('guide-complet'); setMobileMenuOpen(false); }}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
-                >
-                  <BookOpen className="w-4 h-4 text-[#FAF7F2]/70" /> Guide de l'extraction
-                </button>
-                <button
-                  onClick={() => { navigateTo('totum-vegetal'); setMobileMenuOpen(false); }}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
-                >
-                  <Leaf className="w-4 h-4 text-[#FAF7F2]/70" /> Le Totum Végétal
-                </button>
-                <button
-                  onClick={() => { navigateTo('phytotherapie-reset'); setMobileMenuOpen(false); }}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
-                >
-                  <Leaf className="w-4 h-4 text-[#FAF7F2]/70" /> Phytothérapie
-                </button>
-                <button
-                  onClick={() => { navigateTo('boutique'); setMobileMenuOpen(false); }}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
-                >
-                  <ShoppingBag className="w-4 h-4 text-[#FAF7F2]/70" /> Toute la Boutique
-                </button>
-                <button
-                  onClick={() => { navigateTo('boutique-kits'); setMobileMenuOpen(false); }}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
-                >
-                  <Package className="w-4 h-4 text-[#FAF7F2]/70" /> Kits de plantes
-                </button>
-                <a
-                  href="https://bloombybotanik.com/abonnement/"
-                  onClick={(e) => {
-                    if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
-                      e.preventDefault();
-                      navigateTo('abonnement');
-                      setMobileMenuOpen(false);
-                    }
-                  }}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
-                >
-                  <Star className="w-4 h-4 text-[#D97706]" /> Abonnement Premium
-                </a>
-                <a
-                  href="https://bloombybotanik.com/herbier/"
-                  onClick={(e) => {
-                    if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
-                      e.preventDefault();
-                      navigateTo('herbier');
-                      setMobileMenuOpen(false);
-                    }
-                  }}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
-                >
-                  <BookOpen className="w-4 h-4 text-[#FAF7F2]/70" /> L'Herbier
-                </a>
-                <button
-                  onClick={() => { navigateTo('culinaire'); setMobileMenuOpen(false); }}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
-                >
-                  <Utensils className="w-4 h-4 text-[#FAF7F2]/70" /> Gastronomie Botanique
-                </button>
-                <button
-                  onClick={() => { navigateTo('cosmetiques'); setMobileMenuOpen(false); }}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
-                >
-                  <Droplets className="w-4 h-4 text-[#FAF7F2]/70" /> Cosmétique Systémique
-                </button>
-                <a
-                  href="https://bloombybotanik.com/bibliotheque/"
-                  onClick={(e) => {
-                    if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
-                      e.preventDefault();
-                      navigateTo('library-landing');
-                      setMobileMenuOpen(false);
-                    }
-                  }}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
-                >
-                  <Newspaper className="w-4 h-4 text-[#FAF7F2]/70" /> Bibliothèque Scientifique
-                </a>
-                <button
-                  onClick={() => { setIsCalculatorOpen(true); setMobileMenuOpen(false); }}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
-                >
-                  <Calculator className="w-4 h-4 text-[#D97706]" /> Calculatrice de Dilution
-                </button>
-                <button
-                  onClick={() => { navigateTo('account'); setMobileMenuOpen(false); }}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
-                >
-                  <User className="w-4 h-4 text-[#FAF7F2]/70" /> Espace membre
-                </button>
-                <button
-                  onClick={() => { navigateTo('faq'); setMobileMenuOpen(false); }}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
-                >
-                  <HelpCircle className="w-4 h-4 text-[#FAF7F2]/70" /> Questions Fréquentes
-                </button>
-                <button
-                  onClick={() => { navigateTo('contact'); setMobileMenuOpen(false); }}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
-                >
-                  <MessageCircle className="w-4 h-4 text-[#FAF7F2]/70" /> Contact
-                </button>
-
-                <div className="pt-3 border-t border-white/10 flex items-center justify-between">
-                  {user ? (
-                    <button
-                      onClick={() => { navigateTo('account'); setMobileMenuOpen(false); }}
-                      className="flex items-center gap-2 text-sm font-medium text-[#FAF7F2] hover:text-white"
-                    >
-                      <User className="w-4 h-4 text-[#FAF7F2]" /> Mon Compte
-                    </button>
-                  ) : (
-                    <button
-                      onClick={() => {
-                        setMobileMenuOpen(false);
-                        setIsAuthOpen(true);
-                      }}
-                      className="flex items-center gap-2 text-sm font-medium text-[#FAF7F2] hover:text-white"
-                    >
-                      <User className="w-4 h-4 text-[#FAF7F2]" /> Se connecter
-                    </button>
-                  )}
+          {mobileMenuOpen && (() => {
+            const m = {
+              accueil: selectedLanguage === 'fr' ? 'Accueil' : selectedLanguage === 'de' ? 'Startseite' : 'Home',
+              manifeste: selectedLanguage === 'fr' ? 'Le Manifeste' : selectedLanguage === 'de' ? 'Das Manifest' : 'The Manifesto',
+              infusion_botanique: selectedLanguage === 'fr' ? 'Infusion Botanique Maison' : selectedLanguage === 'de' ? 'Botanische Hausinfusion' : 'Home Botanical Infusion',
+              bloomlab: selectedLanguage === 'fr' ? "L'Extracteur BloomLab®" : selectedLanguage === 'de' ? 'BloomLab® Extraktor' : 'BloomLab® Extractor',
+              guide_extraction: selectedLanguage === 'fr' ? "Guide de l'extraction" : selectedLanguage === 'de' ? 'Extraktions-Leitfaden' : 'Extraction Guide',
+              totum_vegetal: selectedLanguage === 'fr' ? 'Le Totum Végétal' : selectedLanguage === 'de' ? 'Das Pflanzen-Totum' : 'The Plant Totum',
+              phytotherapie: selectedLanguage === 'fr' ? 'Protocoles Systémiques' : selectedLanguage === 'de' ? 'Systemische Protokolle' : 'Systemic Protocols',
+              boutique_toute: selectedLanguage === 'fr' ? 'Toute la Boutique' : selectedLanguage === 'de' ? 'Alle Produkte' : 'All Products',
+              kits_plantes: selectedLanguage === 'fr' ? 'Kits de plantes' : selectedLanguage === 'de' ? 'Pflanzen-Kits' : 'Plant Kits',
+              abonnement: selectedLanguage === 'fr' ? 'Abonnement Premium' : selectedLanguage === 'de' ? 'Premium-Abonnement' : 'Premium Subscription',
+              herbier: selectedLanguage === 'fr' ? "L'Herbier" : selectedLanguage === 'de' ? 'Das Herbarium' : 'The Herbarium',
+              culinaire: selectedLanguage === 'fr' ? 'Atelier Culinaire' : selectedLanguage === 'de' ? 'Kulinarische Werkstatt' : 'Culinary Workshop',
+              cosmetiques: selectedLanguage === 'fr' ? 'Cosmétique Botanique' : selectedLanguage === 'de' ? 'Botanische Kosmetik' : 'Botanical Cosmetics',
+              bibliotheque: selectedLanguage === 'fr' ? 'Bibliothèque Scientifique' : selectedLanguage === 'de' ? 'Wissenschaftliche Bibliothek' : 'Scientific Library',
+              calculatrice: selectedLanguage === 'fr' ? 'Calculatrice de Dilution' : selectedLanguage === 'de' ? 'Verdünnungsrechner' : 'Dilution Calculator',
+              espace_membre: selectedLanguage === 'fr' ? 'Espace membre' : selectedLanguage === 'de' ? 'Mitgliederbereich' : 'Member Area',
+              faq: selectedLanguage === 'fr' ? 'Questions Fréquentes' : selectedLanguage === 'de' ? 'Häufige Fragen' : 'FAQ',
+              contact: selectedLanguage === 'fr' ? 'Nous Contacter' : selectedLanguage === 'de' ? 'Kontakt' : 'Contact Us',
+              mon_compte: selectedLanguage === 'fr' ? 'Mon Compte' : selectedLanguage === 'de' ? 'Mein Konto' : 'My Account',
+              se_connecter: selectedLanguage === 'fr' ? 'Se connecter' : selectedLanguage === 'de' ? 'Anmelden' : 'Login',
+              panier: selectedLanguage === 'fr' ? 'Panier' : selectedLanguage === 'de' ? 'Warenkorb' : 'Cart',
+            };
+            return (
+              <div className="bg-[#0F261E] border-b border-white/10 px-6 py-5 animate-in slide-in-from-top-4 duration-300">
+                <div className="flex flex-col space-y-2">
                   <button
-                    onClick={() => { navigateTo('cart'); setMobileMenuOpen(false); }}
-                    className="flex items-center gap-2 text-sm font-medium text-[#FAF7F2] hover:text-white"
+                    onClick={() => { navigateTo('indexbis'); setMobileMenuOpen(false); }}
+                    className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <ShoppingBag className="w-4 h-4 text-[#FAF7F2]" /> Panier ({cartCount})
+                    <Home className="w-4 h-4 text-[#FAF7F2]/70" /> {m.accueil}
                   </button>
+                  <button
+                    onClick={() => { navigateTo('manifeste'); setMobileMenuOpen(false); }}
+                    className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
+                  >
+                    <BookOpen className="w-4 h-4 text-[#FAF7F2]/70" /> {m.manifeste}
+                  </button>
+                  <a
+                    href="https://bloombybotanik.com/infusion-botanique-maison-comment-ca-marche/"
+                    onClick={(e) => {
+                      if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                        e.preventDefault();
+                        navigateTo('infusion-botanique');
+                        setMobileMenuOpen(false);
+                      }
+                    }}
+                    className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
+                  >
+                    <FlaskConical className="w-4 h-4 text-[#FAF7F2]/70" /> {m.infusion_botanique}
+                  </a>
+                  <a
+                    href="https://bloombybotanik.com/boutique/bloomlab/"
+                    onClick={(e) => {
+                      if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                        e.preventDefault();
+                        navigateTo('product-detail', 'bloomlab');
+                        setMobileMenuOpen(false);
+                      }
+                    }}
+                    className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
+                  >
+                    <Sparkles className="w-4 h-4 text-[#FAF7F2]/70" /> {m.bloomlab}
+                  </a>
+                  <button
+                    onClick={() => { navigateTo('guide-complet'); setMobileMenuOpen(false); }}
+                    className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
+                  >
+                    <BookOpen className="w-4 h-4 text-[#FAF7F2]/70" /> {m.guide_extraction}
+                  </button>
+                  <button
+                    onClick={() => { navigateTo('totum-vegetal'); setMobileMenuOpen(false); }}
+                    className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
+                  >
+                    <Leaf className="w-4 h-4 text-[#FAF7F2]/70" /> {m.totum_vegetal}
+                  </button>
+                  <button
+                    onClick={() => { navigateTo('phytotherapie-reset'); setMobileMenuOpen(false); }}
+                    className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
+                  >
+                    <Leaf className="w-4 h-4 text-[#FAF7F2]/70" /> {m.phytotherapie}
+                  </button>
+                  <button
+                    onClick={() => { navigateTo('boutique'); setMobileMenuOpen(false); }}
+                    className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
+                  >
+                    <ShoppingBag className="w-4 h-4 text-[#FAF7F2]/70" /> {m.boutique_toute}
+                  </button>
+                  <button
+                    onClick={() => { navigateTo('boutique-kits'); setMobileMenuOpen(false); }}
+                    className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
+                  >
+                    <Package className="w-4 h-4 text-[#FAF7F2]/70" /> {m.kits_plantes}
+                  </button>
+                  <a
+                    href="https://bloombybotanik.com/abonnement/"
+                    onClick={(e) => {
+                      if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                        e.preventDefault();
+                        navigateTo('abonnement');
+                        setMobileMenuOpen(false);
+                      }
+                    }}
+                    className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
+                  >
+                    <Star className="w-4 h-4 text-[#D97706]" /> {m.abonnement}
+                  </a>
+                  <a
+                    href="https://bloombybotanik.com/herbier/"
+                    onClick={(e) => {
+                      if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                        e.preventDefault();
+                        navigateTo('herbier');
+                        setMobileMenuOpen(false);
+                      }
+                    }}
+                    className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
+                  >
+                    <BookOpen className="w-4 h-4 text-[#FAF7F2]/70" /> {m.herbier}
+                  </a>
+                  <button
+                    onClick={() => { navigateTo('culinaire'); setMobileMenuOpen(false); }}
+                    className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
+                  >
+                    <Utensils className="w-4 h-4 text-[#FAF7F2]/70" /> {m.culinaire}
+                  </button>
+                  <button
+                    onClick={() => { navigateTo('cosmetiques'); setMobileMenuOpen(false); }}
+                    className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
+                  >
+                    <Droplets className="w-4 h-4 text-[#FAF7F2]/70" /> {m.cosmetiques}
+                  </button>
+                  <a
+                    href="https://bloombybotanik.com/bibliotheque/"
+                    onClick={(e) => {
+                      if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                        e.preventDefault();
+                        navigateTo('library-landing');
+                        setMobileMenuOpen(false);
+                      }
+                    }}
+                    className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
+                  >
+                    <Newspaper className="w-4 h-4 text-[#FAF7F2]/70" /> {m.bibliotheque}
+                  </a>
+                  <button
+                    onClick={() => { setIsCalculatorOpen(true); setMobileMenuOpen(false); }}
+                    className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
+                  >
+                    <Calculator className="w-4 h-4 text-[#D97706]" /> {m.calculatrice}
+                  </button>
+                  <button
+                    onClick={() => { navigateTo('account'); setMobileMenuOpen(false); }}
+                    className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
+                  >
+                    <User className="w-4 h-4 text-[#FAF7F2]/70" /> {m.espace_membre}
+                  </button>
+                  <button
+                    onClick={() => { navigateTo('faq'); setMobileMenuOpen(false); }}
+                    className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
+                  >
+                    <HelpCircle className="w-4 h-4 text-[#FAF7F2]/70" /> {m.faq}
+                  </button>
+                  <button
+                    onClick={() => { navigateTo('contact'); setMobileMenuOpen(false); }}
+                    className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
+                  >
+                    <MessageCircle className="w-4 h-4 text-[#FAF7F2]/70" /> {m.contact}
+                  </button>
+
+                  <div className="pt-3 border-t border-white/10 flex items-center justify-between">
+                    {user ? (
+                      <button
+                        onClick={() => { navigateTo('account'); setMobileMenuOpen(false); }}
+                        className="flex items-center gap-2 text-sm font-medium text-[#FAF7F2] hover:text-white"
+                      >
+                        <User className="w-4 h-4 text-[#FAF7F2]" /> {m.mon_compte}
+                      </button>
+                    ) : (
+                      <button
+                        onClick={() => {
+                          setMobileMenuOpen(false);
+                          setIsAuthOpen(true);
+                        }}
+                        className="flex items-center gap-2 text-sm font-medium text-[#FAF7F2] hover:text-white"
+                      >
+                        <User className="w-4 h-4 text-[#FAF7F2]" /> {m.se_connecter}
+                      </button>
+                    )}
+                    <button
+                      onClick={() => { navigateTo('cart'); setMobileMenuOpen(false); }}
+                      className="flex items-center gap-2 text-sm font-medium text-[#FAF7F2] hover:text-white"
+                    >
+                      <ShoppingBag className="w-4 h-4 text-[#FAF7F2]" /> {m.panier} ({cartCount})
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
+            );
+          })()}
         </header>
 
       {/* 3. Main Content Router */}

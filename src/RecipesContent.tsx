@@ -15,7 +15,7 @@ export default function RecipesContent({ onBack, lang, t }: RecipesContentProps)
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
 
-  const categories = ['All', ...new Set(discoveryRecipes.map(r => r.category))];
+  const categories = ['All', ...Array.from(new Set(discoveryRecipes.map(r => r.category))).filter(c => c !== 'All')];
 
   const filteredRecipes = discoveryRecipes.filter(recipe => {
     const matchesSearch = recipe.title.toLowerCase().includes(searchQuery.toLowerCase()) || 

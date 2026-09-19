@@ -49,6 +49,29 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
   const t = translations[lang] || translations.fr;
   const navT = t.nav;
 
+  const menuLabels = {
+    accueil: lang === 'fr' ? 'Accueil' : lang === 'de' ? 'Startseite' : 'Home',
+    manifeste: lang === 'fr' ? 'Le Manifeste' : lang === 'de' ? 'Das Manifest' : 'The Manifesto',
+    infusion_botanique: lang === 'fr' ? 'Infusion Botanique Maison' : lang === 'de' ? 'Botanische Hausinfusion' : 'Home Botanical Infusion',
+    bloomlab: lang === 'fr' ? "L'Extracteur BloomLab®" : lang === 'de' ? 'BloomLab® Extraktor' : 'BloomLab® Extractor',
+    guide_extraction: lang === 'fr' ? "Guide de l'extraction" : lang === 'de' ? 'Extraktions-Leitfaden' : 'Extraction Guide',
+    totum_vegetal: lang === 'fr' ? 'Le Totum Végétal' : lang === 'de' ? 'Das Pflanzen-Totum' : 'The Plant Totum',
+    culinaire: lang === 'fr' ? 'Atelier Culinaire' : lang === 'de' ? 'Kulinarische Werkstatt' : 'Culinary Workshop',
+    cosmetiques: lang === 'fr' ? 'Cosmétique Botanique' : lang === 'de' ? 'Botanische Kosmetik' : 'Botanical Cosmetics',
+    systemique: lang === 'fr' ? 'Protocoles Systémiques' : lang === 'de' ? 'Systemische Protokolle' : 'Systemic Protocols',
+    diagnostic: lang === 'fr' ? 'Je commence : Diagnostic' : lang === 'de' ? 'Starten: Diagnose' : 'Start: Diagnosis',
+    herbier: lang === 'fr' ? "L'Herbier" : lang === 'de' ? 'Das Herbarium' : 'The Herbarium',
+    boutique_toute: lang === 'fr' ? 'Toute la Boutique' : lang === 'de' ? 'Alle Produkte' : 'All Products',
+    kits_plantes: lang === 'fr' ? 'Kits de plantes' : lang === 'de' ? 'Pflanzen-Kits' : 'Plant Kits',
+    abonnement: lang === 'fr' ? 'Abonnement premium' : lang === 'de' ? 'Premium-Abonnement' : 'Premium Subscription',
+    bibliotheque: lang === 'fr' ? 'Bibliothèque Scientifique' : lang === 'de' ? 'Wissenschaftliche Bibliothek' : 'Scientific Library',
+    faq: lang === 'fr' ? 'Questions Fréquentes' : lang === 'de' ? 'Häufige Fragen' : 'FAQ',
+    contact: lang === 'fr' ? 'Nous Contacter' : lang === 'de' ? 'Kontakt' : 'Contact Us',
+    mon_compte: lang === 'fr' ? 'Espace membre' : lang === 'de' ? 'Mitgliederbereich' : 'Member Area',
+    panier: lang === 'fr' ? 'Panier' : lang === 'de' ? 'Warenkorb' : 'Cart',
+    calculatrice: lang === 'fr' ? 'Calculatrice' : lang === 'de' ? 'Rechner' : 'Calculator',
+  };
+
   const isActive = (view: View) => currentView === view;
 
   const navItemClass = (active: boolean) =>
@@ -105,7 +128,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
           >
             <div className="flex items-center gap-3">
               <Home className={navIconClass(isActive('indexbis') || isActive('home'))} />
-              <span>Accueil</span>
+              <span>{menuLabels.accueil}</span>
             </div>
           </button>
         </div>
@@ -122,18 +145,24 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-3">
                 <FileText className={navIconClass(isActive('manifeste'))} />
-                <span>Le Manifeste</span>
+                <span>{menuLabels.manifeste}</span>
               </div>
             </button>
-            <button
-              onClick={() => onNavigate('guide')}
-              className={navItemClass(isActive('guide') || isActive('infuseur-botanique') || isActive('comment-ca-marche'))}
+            <a
+              href="https://bloombybotanik.com/infusion-botanique-maison-comment-ca-marche/"
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('infusion-botanique');
+                }
+              }}
+              className={navItemClass(isActive('infusion-botanique') || isActive('infusion-botanique-maison-comment-ca-marche'))}
             >
               <div className="flex items-center gap-3">
-                <FlaskConical className={navIconClass(isActive('guide') || isActive('infuseur-botanique') || isActive('comment-ca-marche'))} />
-                <span>L'Extraction de Précision</span>
+                <FlaskConical className={navIconClass(isActive('infusion-botanique') || isActive('infusion-botanique-maison-comment-ca-marche'))} />
+                <span>{menuLabels.infusion_botanique}</span>
               </div>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -155,7 +184,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-3">
                 <Sparkles className={navIconClass(isActive('product-detail') || isActive('machine'))} />
-                <span>L'Extracteur BloomLab®</span>
+                <span>{menuLabels.bloomlab}</span>
               </div>
             </a>
             <button
@@ -164,7 +193,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-3">
                 <BookOpen className={navIconClass(isActive('guide-complet') || isActive('pillar-extraction') || isActive('extraction-botanique'))} />
-                <span className="truncate">Guide de l'extraction</span>
+                <span className="truncate">{menuLabels.guide_extraction}</span>
               </div>
             </button>
             <button
@@ -173,7 +202,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-3">
                 <Leaf className={navIconClass(isActive('totum-vegetal'))} />
-                <span>Le Totum Végétal</span>
+                <span>{menuLabels.totum_vegetal}</span>
               </div>
             </button>
           </div>
@@ -191,7 +220,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-3">
                 <Utensils className={navIconClass(isActive('culinaire'))} />
-                <span>Atelier Culinaire</span>
+                <span>{menuLabels.culinaire}</span>
               </div>
             </button>
             <button
@@ -200,7 +229,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-3">
                 <Droplets className={navIconClass(isActive('cosmetiques'))} />
-                <span>Cosmétique Botanique</span>
+                <span>{menuLabels.cosmetiques}</span>
               </div>
             </button>
             <button
@@ -209,7 +238,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-3">
                 <Activity className={navIconClass(isActive('phytotherapie-reset'))} />
-                <span>Protocoles Systémiques</span>
+                <span>{menuLabels.systemique}</span>
               </div>
             </button>
             <button
@@ -218,7 +247,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-3">
                 <Sparkles className={navIconClass(isActive('chat'))} />
-                <span>Je commence : Diagnostic</span>
+                <span>{menuLabels.diagnostic}</span>
               </div>
             </button>
             <a
@@ -233,7 +262,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-3">
                 <BookOpen className={navIconClass(isActive('herbier'))} />
-                <span>L'Herbier</span>
+                <span>{menuLabels.herbier}</span>
               </div>
             </a>
           </div>
@@ -251,7 +280,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-3">
                 <ShoppingBag className={navIconClass(isActive('boutique'))} />
-                <span>Toute la Boutique</span>
+                <span>{menuLabels.boutique_toute}</span>
               </div>
             </button>
             <button
@@ -260,7 +289,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-3">
                 <Package className={navIconClass(isActive('boutique-kits'))} />
-                <span>Kits de plantes</span>
+                <span>{menuLabels.kits_plantes}</span>
               </div>
             </button>
             <a
@@ -275,7 +304,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-3">
                 <Star className={navIconClass(isActive('abonnement') || isActive('premium-info'))} />
-                <span>{navT.boutique_sub?.abonnement || 'Abonnement premium'}</span>
+                <span>{menuLabels.abonnement}</span>
               </div>
             </a>
           </div>
@@ -299,7 +328,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-3">
                 <Newspaper className={navIconClass(isActive('library-landing') || isActive('bibliotheque'))} />
-                <span>Bibliothèque Scientifique</span>
+                <span>{menuLabels.bibliotheque}</span>
               </div>
             </a>
             <button
@@ -308,7 +337,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-3">
                 <HelpCircle className={navIconClass(isActive('faq'))} />
-                <span>Questions Fréquentes</span>
+                <span>{menuLabels.faq}</span>
               </div>
             </button>
             <button
@@ -317,7 +346,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-3">
                 <MessageCircle className={navIconClass(isActive('contact'))} />
-                <span>Nous Contacter</span>
+                <span>{menuLabels.contact}</span>
               </div>
             </button>
           </div>
@@ -335,7 +364,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-3">
                 <User className={navIconClass(isActive('account'))} />
-                <span>{navT.compte_sub?.espace || 'Espace membre'}</span>
+                <span>{menuLabels.mon_compte}</span>
               </div>
             </button>
           </div>
@@ -355,7 +384,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
           >
             <div className="flex items-center gap-2">
               <ShoppingBag className="w-4 h-4 text-[#D97706]" />
-              <span>Panier</span>
+              <span>{menuLabels.panier}</span>
             </div>
             {cartCount > 0 ? (
               <span className="bg-[#D97706] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center">
@@ -370,7 +399,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             <button
               onClick={() => onNavigate('account')}
               className="p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 text-white/90 transition-colors cursor-pointer"
-              title="Mon Compte"
+              title={menuLabels.mon_compte}
               id="sidebar-account-btn"
             >
               <User className="w-4 h-4" />
@@ -379,7 +408,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             <button
               onClick={onOpenAuth}
               className="p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 text-white/90 transition-colors cursor-pointer"
-              title="Connexion"
+              title={lang === 'fr' ? 'Connexion' : lang === 'de' ? 'Anmelden' : 'Login'}
               id="sidebar-login-btn"
             >
               <User className="w-4 h-4" />
@@ -399,7 +428,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             title="Calculateur de Dilution Botanique"
           >
             <Calculator className="w-3.5 h-3.5 text-[#D97706]" />
-            <span>Calculatrice</span>
+            <span>{menuLabels.calculatrice}</span>
           </button>
         </div>
 
