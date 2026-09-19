@@ -1,3 +1,5 @@
+import ExtractionKineticsChart from './components/ExtractionKineticsChart';
+import AmazonSocialProof from './components/AmazonSocialProof';
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PaymentBadges } from './components/PaymentBadges';
@@ -28,7 +30,9 @@ import {
   Lock, 
   HelpCircle,
   Compass,
-  ArrowUpRight
+  ArrowUpRight,
+  Package,
+  Flame
 } from 'lucide-react';
 import { translations as globalTranslations } from './translations';
 
@@ -115,7 +119,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
     : ["🇫🇷 French Botanical Brand", "🚚 Priority Shipping in 24/48h", "🛡️ 30-Day Money Back Guarantee", "⚡ 1-Year Manufacturer Warranty"];
 
   return (
-    <div className="bg-[#FAF7F2] text-slate-800 font-sans antialiased selection:bg-[#1C3F34] selection:text-white">
+    <div className="bg-[#FAF7F2] text-slate-800 font-sans antialiased selection:bg-[#1C3F34] selection:text-white w-full max-w-full overflow-x-hidden">
 
       {/* ========================================================================= */}
       {/* BANDEAU ANNONCE DÉFILANT (Marquee Réassurance Réelle) */}
@@ -144,22 +148,23 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
       <section className="relative pt-6 pb-16 md:pt-10 md:pb-24 overflow-hidden bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Galerie Visuelle Produit Réel */}
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#E7DFD3] bg-[#FAF7F2] mb-10 sm:mb-12">
+          {/* Galerie Visuelle Produit Réel — Image agrandie verticalement pour révéler la totalité de la machine */}
+          <div className="relative max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-xl border border-[#E7DFD3] bg-[#FAF7F2] mb-10 sm:mb-12">
             <img 
               src={selectedHeroImage} 
               alt={t.seo.alt.extracteur} 
-              className="w-full h-[580px] sm:h-[700px] md:h-[820px] lg:h-[920px] object-cover object-[center_28%] brightness-105 contrast-105 filter transition-all duration-500" 
+              className="w-full h-[520px] sm:h-[620px] md:h-[720px] lg:h-[820px] xl:h-[880px] object-cover object-[center_60%] brightness-105 contrast-105 filter transition-all duration-500" 
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/25 via-40% to-transparent pointer-events-none" />
+            {/* Scrim ciblé sur le coin supérieur gauche pour la lisibilité du titre sans assombrir le visage de la femme à droite */}
+            <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/20 via-45% to-transparent pointer-events-none" />
             
             {/* Contrôles de vues produit & badge stock */}
-            <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 z-10 flex flex-wrap items-center justify-between gap-3">
-              <div className="flex items-center gap-2">
+            <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 z-10 flex flex-wrap items-center justify-between gap-2 sm:gap-3">
+              <div className="flex items-center gap-1.5 sm:gap-2">
                 <button
                   type="button"
                   onClick={() => setSelectedHeroImage(heroImg1)}
-                  className={`px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-bold transition-all backdrop-blur-xs border cursor-pointer ${
+                  className={`px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold transition-all backdrop-blur-xs border cursor-pointer ${
                     selectedHeroImage === heroImg1 
                       ? 'bg-[#D97706] text-white border-[#D97706] shadow-md' 
                       : 'bg-black/60 text-white/80 border-white/20 hover:text-white'
@@ -170,7 +175,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 <button
                   type="button"
                   onClick={() => setSelectedHeroImage(heroImg2)}
-                  className={`px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-bold transition-all backdrop-blur-xs border cursor-pointer ${
+                  className={`px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold transition-all backdrop-blur-xs border cursor-pointer ${
                     selectedHeroImage === heroImg2 
                       ? 'bg-[#D97706] text-white border-[#D97706] shadow-md' 
                       : 'bg-black/60 text-white/80 border-white/20 hover:text-white'
@@ -181,7 +186,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 <button
                   type="button"
                   onClick={() => setSelectedHeroImage(heroImg3)}
-                  className={`px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-bold transition-all backdrop-blur-xs border cursor-pointer ${
+                  className={`px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold transition-all backdrop-blur-xs border cursor-pointer ${
                     selectedHeroImage === heroImg3 
                       ? 'bg-[#D97706] text-white border-[#D97706] shadow-md' 
                       : 'bg-black/60 text-white/80 border-white/20 hover:text-white'
@@ -190,24 +195,25 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   {isFR ? 'Vue Totum' : isDE ? 'Totum-Ansicht' : 'Totum View'}
                 </button>
               </div>
-              <span className="bg-[#1C3F34]/90 backdrop-blur-xs border border-white/20 text-white text-[10px] sm:text-xs font-black px-3.5 py-1.5 rounded-full uppercase tracking-widest shadow-md flex items-center gap-1.5">
+              <span className="bg-[#1C3F34]/90 backdrop-blur-xs border border-white/20 text-white text-[9px] sm:text-xs font-black px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full uppercase tracking-widest shadow-md flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 {isFR ? 'En Stock · Expédition 24/48h' : isDE ? 'Auf Lager · 24/48h' : 'In Stock · 24/48h Shipping'}
               </span>
             </div>
 
-            {/* Titre H1 validé positionné sur l'image */}
-            <div className="absolute inset-x-0 top-0 p-5 sm:p-7 md:p-8 lg:p-10 z-10 space-y-2 sm:space-y-3 max-w-4xl">
-              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
-                <div className="inline-block px-3.5 py-1.5 bg-black/60 border border-white/25 text-white text-[10px] sm:text-xs font-black uppercase tracking-widest rounded-full backdrop-blur-xs">
-                  {isFR ? 'SÉQUENÇAGE ACTIF A/B · ÉDITION 2026' : isDE ? 'SEQUENTIELLE A/B-EXTRAKTION · AUSGABE 2026' : 'SEQUENTIAL A/B EXTRACTION · 2026 EDITION'}
+            {/* Instruction de cadrage & zone protégée : 
+                Le bloc titre est strictement ancré dans le cadran supérieur gauche (top-left) avec une largeur maximale contrainte (max-w-[270px] sm:max-w-sm md:max-w-md lg:max-w-lg), garantissant que le titre ne masque JAMAIS le visage de la femme situé dans le quadrant droit supérieur, ni la machine BloomLab située sur le plan de travail inférieur gauche, quelle que soit la taille de l'écran. */}
+            <div className="absolute top-3 left-3 sm:top-5 sm:left-5 md:top-8 md:left-8 z-10 p-3 sm:p-4 md:p-5 rounded-2xl bg-black/45 sm:bg-black/35 backdrop-blur-[2px] border border-white/15 space-y-1.5 sm:space-y-2 max-w-[270px] sm:max-w-sm md:max-w-md lg:max-w-lg shadow-lg">
+              <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                <div className="inline-block px-2.5 py-0.5 sm:px-3 sm:py-1 bg-black/60 border border-white/25 text-white text-[8px] sm:text-[10px] font-black uppercase tracking-widest rounded-full backdrop-blur-xs">
+                  {isFR ? 'SÉQUENÇAGE A/B · 2026' : isDE ? 'SEQUENTIELL A/B · 2026' : 'SEQUENTIAL A/B · 2026'}
                 </div>
-                <span className="text-[11px] sm:text-xs font-black tracking-widest text-[#D97706] uppercase">
-                  {isFR ? 'CULINAIRE · COSMÉTIQUE · SYSTÉMIQUE' : isDE ? 'KULINARISCH · KOSMETISCH · SYSTEMISCH' : 'CULINARY · COSMETIC · SYSTEMIC'}
+                <span className="text-[9px] sm:text-[11px] font-black tracking-widest text-[#D97706] uppercase">
+                  {isFR ? 'EXTRACTION DE PRÉCISION' : isDE ? 'PRÄZISIONSEXTRAKTION' : 'PRECISION EXTRACTION'}
                 </span>
               </div>
               {/* Le SEUL H1 de la page d'accueil */}
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.15] tracking-tight drop-shadow-md">
+              <h1 className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-white leading-[1.2] tracking-tight drop-shadow-md">
                 {isFR 
                   ? "BloomLab® : L'Extracteur botanique de précision pour maîtriser vos préparations maison" 
                   : isDE 
@@ -222,7 +228,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             <div className="space-y-3">
               <p className="text-base sm:text-lg md:text-xl text-slate-700 font-normal leading-relaxed">
                 {isFR 
-                  ? "La naturalité ne doit plus être approximative." 
+                  ? "« De la plante à la préparation, vous apprenez chaque étape.»" 
                   : isDE 
                   ? "Natürlichkeit darf nicht länger ungefähr sein." 
                   : "Natural care should no longer be approximate."}
@@ -262,6 +268,26 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               </button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* AMAZON ACTIVATION BANNER - STRATEGIC RETENTION HACK */}
+      <section className="bg-[#0F261E] border-y border-[#D97706]/30 py-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3 text-white">
+            <div className="w-10 h-10 rounded-full bg-[#D97706] flex items-center justify-center shrink-0">
+              <Package className="w-5 h-5 text-white" />
+            </div>
+            <p className="text-sm font-medium">
+              <span className="font-bold text-[#D97706]">Acheteur Amazon ?</span> Ne restez pas seul face à vos plantes. Uploadez votre facture pour débloquer gratuitement vos protocoles cliniques et l'accès Premium à la Bibliothèque Bloom.
+            </p>
+          </div>
+          <button 
+            onClick={() => onNavigate('activation')} 
+            className="px-6 py-2.5 bg-[#D97706] hover:bg-[#b45309] text-white text-xs font-black uppercase tracking-wider rounded-lg transition-all shadow-lg shadow-[#D97706]/20 whitespace-nowrap cursor-pointer"
+          >
+            Activer mon accès Premium
+          </button>
         </div>
       </section>
 
@@ -360,138 +386,61 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
       {/* BLOC 3 : MÉTHODE (Le Problème & Les 3 Barrières) */}
       {/* Rôle : Révéler les limites de l'improvisation artisanale */}
       {/* ========================================================================= */}
-      <section id="methode" className="py-16 md:py-24 bg-[#FAF7F2]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <div className="inline-block px-4 py-1.5 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-black uppercase tracking-widest rounded-md border border-[#D8CBB7]">
-              {isFR ? '2. Le Verrou Méthodologique' : isDE ? '2. Die methodische Hürde' : '2. The Methodological Barrier'}
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0F261E] tracking-tight">
-              {isFR 
-                ? "Le problème n'est pas la plante. C'est la méthode qui sous-exploite sa puissance." 
-                : isDE 
-                ? "Das Problem ist nicht die Pflanze. Es ist die Methode, die ihr Potenzial vergeudet." 
-                : "The problem isn't the plant. It's the method under-extracting its power."}
+      {/* 2. THE PROBLEM (BIOCHEMICAL REALITY) */}
+      <section id="pourquoi-l-infusion-echoue" className="py-20 md:py-28 bg-[#FAF7F2]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-black uppercase tracking-[0.25em] text-[#D97706] mb-3 block">
+              Constat Biochimique & Cinétique
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0F261E] mb-6 leading-tight">
+              Pourquoi le bain-marie détruit l'intelligence moléculaire de vos plantes
             </h2>
-            <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-              {isFR 
-                ? "L'extraction végétale domestique se heurte traditionnellement à 3 barrières physiques invisibles." 
-                : isDE 
-                ? "Die traditionelle Pflanzenextraktion stößt auf 3 unsichtbare physikalische Barrieren." 
-                : "Traditional domestic plant extraction encounters 3 invisible physical barriers."}
+            <p className="text-base sm:text-lg text-[#0F261E]/70 leading-relaxed font-normal">
+              L'extraction n'est pas de la cuisine. C'est un transfert de masse régi par la thermodynamique. Sans contrôle de la polarité et de la température, vous ne buvez que l'ombre de la plante.
             </p>
           </div>
 
-          {/* Les 3 Barrières Physiques */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-[32px] border border-amber-900/10 shadow-sm space-y-4 relative overflow-hidden">
-              <div className="w-10 h-10 rounded-xl bg-amber-50 text-[#D97706] flex items-center justify-center font-black">
-                <Thermometer className="w-5 h-5" />
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-3xl border border-[#0F261E]/10 shadow-xs flex flex-col">
+              <div className="w-12 h-12 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center mb-6">
+                <Flame className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-black text-[#0F261E]">
-                {isFR ? "1. Le Choc Thermique" : isDE ? "1. Thermischer Schock" : "1. Thermal Shock"}
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                {isFR 
-                  ? "L'eau bouillante ou un bain-marie incontrôlé dépasse les 60°C à 100°C : les terpènes volatils s'évaporent et les flavonoïdes thermolabiles sont dégradés avant usage." 
-                  : isDE 
-                  ? "Kochendes Wasser oder unkontrollierte Erhitzung zerstören hitzeempfindliche Terpene und Flavonoide." 
-                  : "Boiling water or uncontrolled heating destroys heat-sensitive terpenes and delicate flavonoids."}
+              <h3 className="text-xl font-bold text-[#0F261E] mb-3">Dénaturation Thermique</h3>
+              <p className="text-sm text-[#0F261E]/70 leading-relaxed flex-1">
+                Les flavonoïdes et terpènes volatils sont <strong>thermolabiles</strong>. Au-delà de 45-60°C (le seuil de l'eau frémissante), les liaisons moléculaires se brisent. L'activité anti-inflammatoire s'effondre, ne laissant qu'un goût amer.
               </p>
+              <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-rose-700 flex items-center gap-2">
+                <X className="w-4 h-4"/> Perte d'activité : jusqu'à 80%
+              </div>
             </div>
 
-            <div className="bg-white p-8 rounded-[32px] border border-amber-900/10 shadow-sm space-y-4 relative overflow-hidden">
-              <div className="w-10 h-10 rounded-xl bg-amber-50 text-[#D97706] flex items-center justify-center font-black">
-                <Layers className="w-5 h-5" />
+            <div className="bg-white p-8 rounded-3xl border border-[#0F261E]/10 shadow-xs flex flex-col">
+              <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-6">
+                <Layers className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-black text-[#0F261E]">
-                {isFR ? "2. La Barrière de Polarité" : isDE ? "2. Polaritätsbarriere" : "2. Polarity Barrier"}
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                {isFR 
-                  ? "Une plante contient à la fois des principes hydrosolubles et liposolubles. Une extraction unique à l'aveugle laisse la moitié des principes actifs captifs de la fibre végétale." 
-                  : isDE 
-                  ? "Eine Pflanze enthält sowohl wasser- als auch fettlösliche Verbindungen. Eine einfache Extraktion lässt die Hälfte ungenutzt zurück." 
-                  : "A plant contains both water and fat-soluble compounds. Single blind extraction leaves half captive in plant fibers."}
+              <h3 className="text-xl font-bold text-[#0F261E] mb-3">Loi de Fick & Couche Limite</h3>
+              <p className="text-sm text-[#0F261E]/70 leading-relaxed flex-1">
+                Sans agitation calibrée, une "couche limite" de solvant saturé se forme autour de la feuille, bloquant la diffusion (Loi de Fick). Remuer avec une cuillère est cinétiquement inefficace pour extraire le Totum.
               </p>
+              <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-amber-700 flex items-center gap-2">
+                <X className="w-4 h-4"/> Rendement d'extraction : &lt; 15%
+              </div>
             </div>
 
-            <div className="bg-white p-8 rounded-[32px] border border-amber-900/10 shadow-sm space-y-4 relative overflow-hidden">
-              <div className="w-10 h-10 rounded-xl bg-amber-50 text-[#D97706] flex items-center justify-center font-black">
-                <Wind className="w-5 h-5" />
+            <div className="bg-white p-8 rounded-3xl border border-[#0F261E]/10 shadow-xs flex flex-col">
+              <div className="w-12 h-12 rounded-2xl bg-slate-100 text-slate-600 flex items-center justify-center mb-6">
+                <FlaskConical className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-black text-[#0F261E]">
-                {isFR ? "3. L'Oxydation à l'Air Libre" : isDE ? "3. Oxidation an der Luft" : "3. Open-Air Oxidation"}
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                {isFR 
-                  ? "Les bocaux ouverts ou casseroles exposent les lipides et molécules actives à l'oxygène ambiant, accélérant le rancissement et la déperdition aromatique." 
-                  : isDE 
-                  ? "Offene Gefäße setzen Lipide und Wirkstoffe Sauerstoff aus, was Ranzigkeit und Aromaverlust beschleunigt." 
-                  : "Open containers expose lipids and active molecules to oxygen, accelerating rancidity and aroma loss."}
+              <h3 className="text-xl font-bold text-[#0F261E] mb-3">Ignorance de la Polarité</h3>
+              <p className="text-sm text-[#0F261E]/70 leading-relaxed flex-1">
+                L'eau (polaire) n'extrait pas les résines ni les alcaloïdes lipophiles. L'huile seule n'extrait pas les mucilages. Les méthodes traditionnelles ignorent le <strong>Séquençage A/B</strong> des solvants.
               </p>
+              <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-slate-600 flex items-center gap-2">
+                <X className="w-4 h-4"/> Spectre moléculaire : Incomplet
+              </div>
             </div>
           </div>
-
-          {/* Cartes Fusionnées : Gaspillage / Souveraineté / Précision */}
-          <div className="bg-white rounded-[40px] p-8 md:p-12 border border-[#E7DFD3] shadow-md">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-              <div className="space-y-3">
-                <h4 className="text-lg font-black text-[#1C3F34] flex items-center gap-2">
-                  <Check className="w-5 h-5 text-[#D97706]" />
-                  {isFR ? "Contre le Gaspillage" : isDE ? "Gegen Verschwendung" : "Against Waste"}
-                </h4>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  {isFR 
-                    ? "Ne jetez plus de matière végétale mal extraite. Chaque gramme de plante libère son profil complet sous conditions adaptées." 
-                    : isDE 
-                    ? "Werfen Sie kein schlecht extrahiertes Pflanzenmaterial mehr weg. Jedes Gramm entfaltet sein volles Profil." 
-                    : "No more discarded poorly extracted plant matter. Every gram releases its full profile under proper conditions."}
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                <h4 className="text-lg font-black text-[#1C3F34] flex items-center gap-2">
-                  <Check className="w-5 h-5 text-[#D97706]" />
-                  {isFR ? "Pour l'Autonomie Botanique" : isDE ? "Für botanische Autonomie" : "For Botanical Autonomy"}
-                </h4>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  {isFR 
-                    ? "Reprenez le contrôle complet sur vos préparations. Vous choisissez la plante, le solvant noble et la concentration exacte." 
-                    : isDE 
-                    ? "Übernehmen Sie wieder die Kontrolle. Sie wählen Pflanze, Lösungsmittel und genaue Konzentration." 
-                    : "Take full control of your preparations. You select the plant, noble solvent, and exact concentration."}
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                <h4 className="text-lg font-black text-[#1C3F34] flex items-center gap-2">
-                  <Check className="w-5 h-5 text-[#D97706]" />
-                  {isFR ? "Par la Précision" : isDE ? "Durch Präzision" : "Through Precision"}
-                </h4>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  {isFR 
-                    ? "Chaque extraction devient un protocole documenté, reproductible à volonté sans incertitude ni risque de brûler vos actifs." 
-                    : isDE 
-                    ? "Jede Extraktion wird zu einem dokumentierten, reproduzierbaren Protokoll ohne Unsicherheiten." 
-                    : "Every extraction becomes a documented, reproducible protocol without guesswork."}
-                </p>
-              </div>
-            </div>
-
-            {/* Pivot Sentence */}
-            <div className="mt-10 pt-8 border-t border-[#F3EEE6] text-center">
-              <p className="text-xl md:text-2xl font-black text-[#0F261E] italic">
-                {isFR 
-                  ? "« La fin de l'improvisation. Le début de la précision. »" 
-                  : isDE 
-                  ? "« Das Ende der Improvisation. Der Beginn der Präzision. »" 
-                  : "« The end of guesswork. The beginning of precision. »"}
-              </p>
-            </div>
-          </div>
-
         </div>
       </section>
 
@@ -604,6 +553,9 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
 
         </div>
       </section>
+
+      {/* BLOC 4.5 : PREUVE CINÉTIQUE — Loi de Fick (modèle illustratif) */}
+      <ExtractionKineticsChart lang={lang as 'fr' | 'en' | 'de'} />
 
       {/* ========================================================================= */}
       {/* BLOC 5 : DÉMONSTRATION (5 Étapes, Aucune Improvisation) */}
@@ -829,46 +781,26 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
 
               {activeUniverse === 'phytotherapie' && (
                 <>
-                  <div className="inline-block px-3 py-1 bg-[#D97706]/15 text-[#D97706] text-xs font-black uppercase tracking-wider rounded-full">
-                    {isFR ? "Niveau 3 · Soutien du Terrain" : "Level 3 · Terrain Support"}
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-[#D97706]/10 rounded-2xl flex items-center justify-center text-[#D97706]">
+                      <Activity className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-[#D97706] block">Niveau 3</span>
+                      <h3 className="text-xl md:text-2xl font-bold text-[#0F261E]">Herboristerie Systémique & Reset</h3>
+                    </div>
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-black text-[#0F261E]">
-                    {isFR ? "Protocoles Systémiques & Extraits de Totum" : "Systemic Protocols & Totum Extracts"}
-                  </h3>
-                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                    {isFR 
-                      ? "Capturez la richesse intégrale des racines, sommités et gommes-résines dans des solutions hydroalcooliques calibrées pour soutenir le terrain biologique." 
-                      : "Capture the full richness of roots and resins in calibrated solutions."}
+                  <p className="text-base text-[#0F261E]/75 mb-6 leading-relaxed italic">
+                    "Ne traitez pas le symptôme, réinitialisez le terrain. La phytothérapie clinique à domicile."
                   </p>
-
-                  <div className="bg-white p-6 rounded-2xl border border-[#E7DFD3] space-y-3">
-                    <div className="text-xs font-black text-[#D97706] uppercase tracking-wider">
-                      {isFR ? "Exemple de protocole systémique :" : "Sample protocol:"}
-                    </div>
-                    <div className="font-black text-lg text-[#0F261E]">
-                      {isFR ? "Extrait concentré Boswellia, Gingembre & Girofle" : "Boswellia, Ginger & Clove Concentrated Extract"}
-                    </div>
-                    <div className="grid grid-cols-3 gap-2 pt-2 border-t border-[#F3EEE6] text-center">
-                      <div className="p-2 bg-[#FAF7F2] rounded-xl text-xs">
-                        <span className="font-black text-[#1C3F34] block">45°C</span>
-                        <span className="text-[10px] text-slate-500">{isFR ? "Température" : "Temp"}</span>
-                      </div>
-                      <div className="p-2 bg-[#FAF7F2] rounded-xl text-xs">
-                        <span className="font-black text-[#1C3F34] block">3h 00m</span>
-                        <span className="text-[10px] text-slate-500">{isFR ? "Durée" : "Time"}</span>
-                      </div>
-                      <div className="p-2 bg-[#FAF7F2] rounded-xl text-xs">
-                        <span className="font-black text-[#1C3F34] block">{isFR ? "Alcool titré 60°" : "Food alcohol 60°"}</span>
-                        <span className="text-[10px] text-slate-500">{isFR ? "Solvant" : "Solvent"}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <button
-                    onClick={() => onNavigate('phytotherapie-reset')}
-                    className="inline-flex items-center gap-2 text-sm font-bold text-[#1C3F34] hover:text-[#D97706] transition-colors"
+                  <p className="text-sm text-[#0F261E]/70 mb-6 leading-relaxed">
+                    Accédez aux protocoles de <strong>Reset Homéostatique (84 jours)</strong>. Ciblez précisément vos terrains biologiques : T1 (Intestin/Leaky Gut), T4 (Axe HPA/Stress), ou T8 (Adipeux Viscéral) avec des extraits hyper-concentrés et biodisponibles.
+                  </p>
+                  <button 
+                    onClick={() => onNavigate('library')} 
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#0F261E] hover:bg-[#D97706] text-white rounded-xl text-sm font-bold transition-all cursor-pointer"
                   >
-                    <span>{isFR ? "Accéder aux protocoles systémiques" : "Access systemic protocols"}</span>
+                    <span>Explorer les Protocoles Cliniques</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </>
@@ -965,9 +897,8 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
       {/* BLOC 8 : PREUVE SOCIALE (Ils ont remisé leurs casseroles) */}
       {/* Règle : "Dr. Renaud P." devient "Renaud P., herbaliste" */}
       {/* ========================================================================= */}
-      <section id="avis" className="py-16 md:py-24 bg-white border-t border-[#F3EEE6]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
+      <section id="avis" className="py-20 md:py-24 bg-white border-t border-[#F3EEE6]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <div className="inline-block px-4 py-1.5 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-black uppercase tracking-widest rounded-md border border-[#D8CBB7]">
               {isFR ? '7. Retours de Pratique' : isDE ? '7. Erfahrungsberichte' : '7. Practice Feedback'}
@@ -1041,42 +972,50 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             </div>
           </div>
 
+      {/* Preuve sociale cross-canal : agrégat Amazon réel + flywheel activation */}
+      <AmazonSocialProof lang={lang as 'fr' | 'en' | 'de'} onNavigate={onNavigate} />
+
         </div>
+
       </section>
 
       {/* ========================================================================= */}
       {/* BLOC 9 : ORIGINES (Sagesse Ancienne & Instrument Moderne) */}
       {/* Rôle : Donner du sens et de la profondeur sans surcharge */}
       {/* ========================================================================= */}
-      <section id="origines" className="py-16 md:py-20 bg-[#FAF7F2] border-y border-[#F3EEE6]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#E8F1EE] text-[#1C3F34] text-[10px] font-bold uppercase tracking-widest rounded-md shadow-xs border border-[#D8CBB7]">
-            <Compass className="w-3.5 h-3.5 text-[#D97706]" />
-            <span>{isFR ? "Aux origines de la BloomLab®" : isDE ? "Ursprünge der BloomLab®" : "Origins of BloomLab®"}</span>
+      {/* 4. BRAND HERITAGE & ETHNOBOTANY */}
+      <section className="heritage-section py-20 md:py-28 bg-[#FAF7F2] border-t border-[#0F261E]/5 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1C3F34]/10 text-[#1C3F34] text-xs font-bold uppercase tracking-widest mb-4">
+              <Compass className="w-3.5 h-3.5 text-[#D97706]" />
+              <span>Ethnobotanique & Pharmacopée Ancestrale</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#0F261E] mb-4 tracking-tight">
+              L'ingénierie moderne au service des textes fondateurs
+            </h2>
           </div>
-          <blockquote className="text-lg sm:text-xl md:text-2xl font-serif text-[#0F261E] italic leading-relaxed max-w-3xl mx-auto">
-            {isFR 
-              ? "« La BloomLab® n'est pas une simple machine. Elle est née d'une quête millénaire : celle d'extraire l'essence parfaite des plantes sans la brûler ni la gaspiller. Une technologie de précision qui réconcilie la sagesse botanique asiatique avec la science moderne. »" 
-              : isDE 
-              ? "« Die BloomLab® ist nicht nur eine Maschine. Sie entstand aus einer jahrtausendealten Suche: die vollkommene Essenz der Pflanzen zu extrahieren, ohne sie zu verbrennen. Eine Präzisionstechnologie, die asiatische botanische Weisheit mit moderner Wissenschaft versöhnt. »" 
-              : "« The BloomLab® is not just a machine. It was born from a millennia-old quest: to extract the perfect essence of plants without burning or wasting it. A precision technology that reconciles Asian botanical wisdom with modern science. »"}
-          </blockquote>
-          <p className="text-base sm:text-lg font-black text-[#1C3F34] tracking-tight">
-            {isFR 
-              ? "Les sagesses anciennes avaient la connaissance. Nous leur apportons l'instrument." 
-              : isDE 
-              ? "Alte Weisheiten hatten das Wissen. Wir bringen ihnen das Präzisionsinstrument." 
-              : "Ancient wisdom held the knowledge. We bring them the instrument."}
-          </p>
-          <div className="pt-2">
-            <button
-              type="button"
-              onClick={() => onNavigate('product-detail', 'bloomlab')}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#1C3F34] hover:bg-[#D97706] active:bg-[#B45309] text-white font-bold text-sm sm:text-base shadow-md hover:shadow-lg transition-all cursor-pointer"
-            >
-              <span>{isFR ? "Découvrir la BloomLab" : isDE ? "Die BloomLab entdecken" : "Discover BloomLab"}</span>
-              <ArrowRight className="w-4 h-4 text-[#D97706]" />
-            </button>
+
+          <div className="bg-white rounded-3xl p-8 sm:p-12 md:p-14 border border-[#E7DFD3] shadow-xl relative overflow-hidden">
+            <div className="absolute top-6 right-8 text-[#D97706]/15 select-none pointer-events-none text-8xl font-serif">“</div>
+            
+            <div className="max-w-none text-[#0F261E]/80 space-y-6 text-base sm:text-lg leading-relaxed font-light">
+              <p className="first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:text-[#1C3F34] first-letter:mr-3 first-letter:float-left">
+                La BloomLab n'est pas une invention ex nihilo. Elle est la réponse technologique aux limites des textes fondateurs. Dans l'Ayurveda, la méthode du <em>Taila Paka</em> (cuisson lente des huiles médicinales) exigeait un contrôle visuel et tactile épuisant pour éviter que les plantes ne carbonisent. Dans la pharmacopée chinoise du <em>Shennong Ben Cao Jing</em>, on savait déjà que certaines racines exigeaient des décoctions longues, tandis que les fleurs nécessitaient des infusions flash.
+              </p>
+              <p>
+                Le drame de l'herboristerie occidentale moderne a été de tout réduire à l'eau bouillante, ignorant la <strong>polarité des solvants</strong> et la <strong>thermolabilité des enzymes</strong>. La BloomLab réconcilie la sagesse empirique de l'Orient avec la rigueur de la biochimie du XXIe siècle. Elle permet d'appliquer le <strong>Séquençage Actif A/B</strong> (extraction hydrophile puis lipophile) avec une précision de ±0,5°C que même les meilleurs laboratoires peinent à démocratiser.
+              </p>
+            </div>
+
+            <div className="mt-8 pt-8 border-t border-[#E7DFD3] flex items-center gap-4 bg-[#FAF7F2] -mx-8 -mb-8 sm:-mx-12 sm:-mb-12 md:-mx-14 md:-mb-14 p-6 sm:p-8 rounded-b-3xl">
+              <div className="w-12 h-12 rounded-2xl bg-[#1C3F34] text-white flex items-center justify-center shrink-0 shadow-md">
+                <Activity className="w-6 h-6 text-[#D97706]" />
+              </div>
+              <p className="text-sm sm:text-base font-serif italic text-[#1C3F34] leading-snug">
+                « Nous n'avons pas réinventé la plante. Nous avons domestiqué la cinétique d'extraction pour que le Totum arrive intact jusqu'à vos récepteurs cellulaires. »
+              </p>
+            </div>
           </div>
         </div>
       </section>

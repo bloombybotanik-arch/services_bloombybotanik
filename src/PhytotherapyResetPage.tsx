@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { resetPhasesData, ResetPhaseDetail } from './data/resetPhases';
 import { chronobiologyData, ChronoPhase } from './data/chronobiology';
 import { translations, Language } from './translations';
+import { TooltipLexique } from './components/TooltipLexique';
 
 // import natureHero from './assets/images/nature_biology_reset_hero_1785755295636.jpg';
 // import strengthPlant from './assets/images/strength_courage_plant_1786630685093.jpg';
@@ -348,7 +349,13 @@ export default function PhytotherapyResetPage({
                       </div>
                       <div>
                         <h4 className="text-lg font-black text-[#0F261E] mb-1.5">{step.title}</h4>
-                        <p className="text-sm text-slate-700 leading-relaxed">{step.desc}</p>
+                        {idx === 1 && lang === 'fr' ? (
+                          <p className="text-sm text-slate-700 leading-relaxed">
+                            Ouverture douce des <TooltipLexique terme="emonctoires">émonctoires</TooltipLexique> et voies d’élimination (reins, lymphe, intestin, peau) pour que le corps puisse drainer sans se fragiliser. C’est le socle sur lequel les phases suivantes peuvent agir en profondeur.
+                          </p>
+                        ) : (
+                          <p className="text-sm text-slate-700 leading-relaxed">{step.desc}</p>
+                        )}
                       </div>
                     </div>
                   );
@@ -746,7 +753,7 @@ export default function PhytotherapyResetPage({
                              {step.data.title} : Accès Verrouillé
                            </h4>
                            <p className="text-sm md:text-base text-slate-700 max-w-2xl mx-auto mb-6 leading-relaxed">
-                             À partir de la phase Métabolisme (11h-15h), les protocoles d'assimilation cellulaire, synergies de plantes et conseils circadiens approfondis sont réservés aux abonnés. Abonnement digital à 9 €/mois, sans engagement, résiliable chaque mois en 1 clic.
+                             À partir de la phase Métabolisme (11h-15h), les protocoles d'assimilation cellulaire, <TooltipLexique terme="synergie">synergies</TooltipLexique> de plantes et conseils circadiens approfondis sont réservés aux abonnés. Abonnement digital à 9 €/mois, sans engagement, résiliable chaque mois en 1 clic.
                            </p>
                            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-md mx-auto">
                              <button

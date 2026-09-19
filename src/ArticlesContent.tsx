@@ -287,6 +287,56 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
               </div>
             </article>
           ))}
+
+          {/* Dernière carte : Blog Officiel traitant l'ensemble des sujets */}
+          <a
+            href="https://blog.bloombybotanik.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gradient-to-br from-[#0F261E] via-[#1C3F34] to-[#0F261E] text-white rounded-3xl overflow-hidden border border-[#D97706]/40 shadow-sm hover:shadow-2xl hover:border-[#D97706] transition-all duration-300 cursor-pointer flex flex-col justify-between group"
+          >
+            <div className="aspect-[16/10] overflow-hidden relative bg-[#0F261E]">
+              <img 
+                src="/assets/images/modern_herbalist_shelves_1786699793560.jpg" 
+                alt="Blog Officiel Bloom by BotaniK - Tous les sujets traités" 
+                className="w-full h-full object-cover opacity-50 group-hover:scale-105 group-hover:opacity-60 transition-all duration-500" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0F261E] via-transparent to-black/30" />
+              <div className="absolute top-4 left-4">
+                <span className="inline-flex items-center gap-1.5 bg-[#D97706] text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest shadow-md">
+                  <Sparkles className="w-3 h-3" />
+                  <span>{isFR ? "Plateforme Complète" : isDE ? "Komplette Plattform" : "Full Platform"}</span>
+                </span>
+              </div>
+            </div>
+            <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-4">
+              <div className="space-y-2">
+                <div className="flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-[#D97706]">
+                  <span>blog.bloombybotanik.com</span>
+                  <span className="text-white/60 font-medium">{isFR ? "Tous les sujets" : isDE ? "Alle Themen" : "All topics"}</span>
+                </div>
+                <h2 className="text-lg sm:text-xl font-black text-white group-hover:text-[#D97706] transition-colors line-clamp-2">
+                  {isFR 
+                    ? "Explorez tous nos sujets & dossiers sur blog.bloombybotanik.com" 
+                    : isDE 
+                    ? "Entdecken Sie alle Themen & Dossiers auf blog.bloombybotanik.com" 
+                    : "Explore all topics & research on blog.bloombybotanik.com"}
+                </h2>
+                <p className="text-xs sm:text-sm text-white/80 leading-relaxed line-clamp-3">
+                  {isFR 
+                    ? "Santé intégrative, pharmacie du vivant, protocoles d'extraction approfondis, retours d'expérience et analyses cliniques : tous les sujets y sont traités sans compromis." 
+                    : isDE 
+                    ? "Integrative Gesundheit, lebendige Pharmazie, tiefgehende Extraktionsprotokolle und klinische Analysen: alle Themen werden ausführlich behandelt." 
+                    : "Integrative health, plant pharmacy, advanced extraction protocols and clinical analyses: all topics are thoroughly explored on our official blog."}
+                </p>
+              </div>
+              
+              <div className="pt-4 border-t border-white/15 flex items-center justify-between text-xs font-bold text-[#D97706] group-hover:text-white transition-colors">
+                <span>{isFR ? "Accéder à blog.bloombybotanik.com" : isDE ? "Zu blog.bloombybotanik.com" : "Visit blog.bloombybotanik.com"}</span>
+                <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" />
+              </div>
+            </div>
+          </a>
         </div>
 
       </div>

@@ -13,11 +13,49 @@
   --animate-bounce-horizontal: bounce-horizontal 1.5s infinite;
   @keyframes loading-bar { 0% { left: -100%; width: 100%; } 50% { left: 0%; width: 100%; } 100% { left: 100%; width: 100%; } }
   @keyframes bounce-horizontal { 0%, 100% { transform: translateX(-25%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); } 50% { transform: translateX(0); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); } }
+  @keyframes bloom-breath {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.03); opacity: 0.9; }
+}
+/* Cible le SVG de ton favicon si tu l'intègres en tant que widget, ou applique cette logique à ton logo principal dans le header */
 }
 *, *::before, *::after { box-sizing: border-box; text-wrap: pretty; overflow-wrap: break-word; word-break: break-word; }
-html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
-body { background-color: var(--color-botanik-bg); color: var(--color-botanik-green); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: hidden; width: 100%; min-width: 320px; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+body {
+  background-color: var(--color-botanik-bg);
+  color: var(--color-botanik-green);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  min-width: 320px;
+  position: relative;
+  touch-action: pan-y;
+}
+#root {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  position: relative;
+}
+@layer base {
 img, video, canvas, svg { max-width: 100%; height: auto; }
+}
+
+header img[alt="Bloom by BotaniK"] {
+width: 44px !important;
+height: 44px !important;
+object-fit: contain;
+}
 
 /* Explicit utility classes for dynamically injected HTML content */
 .bg-botanik-green { background-color: #0F261E !important; }

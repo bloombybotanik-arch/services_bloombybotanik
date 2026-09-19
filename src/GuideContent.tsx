@@ -36,12 +36,18 @@ export default function GuideContent({ onNavigate, lang }: GuideContentProps) {
             <span className="px-4 py-2 bg-[#E8F1EE] text-[#0F261E] rounded-full text-sm font-bold border border-[#D8CBB7]">Précision Thermique</span>
           </div>
           <div className="flex flex-wrap justify-center gap-4">
-            <button 
-              onClick={() => onNavigate('infuseur-botanique')}
+            <a 
+              href="https://bloombybotanik.com/produit/bloomlab/"
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('machine');
+                }
+              }}
               className="px-8 py-4 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-2xl font-bold transition-all shadow-xl flex items-center gap-2 group cursor-pointer"
             >
               {lang === 'fr' ? "Découvrir l'infuseur botanique" : "Discover the botanical infuser"} <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
             <button 
               onClick={() => onNavigate('home')}
               className="px-8 py-4 bg-white border border-botanik-green/10 text-botanik-green rounded-2xl font-bold hover:bg-[#F5F3EB] transition-all flex items-center gap-2"

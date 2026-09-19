@@ -1,6 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { Search, ShoppingCart, Info, Check, Filter, ChevronRight, ArrowRight, Star, ShieldCheck, Zap, Package, FlaskConical, Leaf, Heart, Wind, Flame, Droplets, User, FileText, Globe, ShoppingBag } from 'lucide-react';
 import { OptimizedImage } from './components/OptimizedImage';
+import { StoreSequencingSection } from './components/StoreSequencingSection';
+import packSignatureImg from './assets/images/BloomLab_pack_signature.png';
 // import bloomLabImg from './assets/images/bloomlab_main_1784887530345.jpeg';
 // import img05 from './assets/images/lifestyle_botanik_cleaned_1786616810137.jpg';
 // import labHeroImg from './assets/images/lab_detail_cleaned_1786616788618.jpg';
@@ -15,7 +17,7 @@ import { OptimizedImage } from './components/OptimizedImage';
 // import digestionImg from './assets/images/product_digestion.jpeg';
 // import modernShelvesImg from './assets/images/modern_herbalist_shelves_1786699793560.jpg';
 
-const bloomLabImg = "/img/produit/bloomlab-1200x1200.jpg";
+const bloomLabImg = "/assets/images/BloomLab_rosemary_infusion.png";
 const img05 = "/assets/images/lifestyle_botanik_cleaned_1786616810137.jpg";
 const labHeroImg = "/assets/images/lab_detail_cleaned_1786616788618.jpg";
 const remediesImg = "/assets/images/natural_remedies_cleaned_1786616831671.jpg";
@@ -72,7 +74,7 @@ export const getProducts = (lang: Language) => {
       subtitle: t.pack_signature.subtitle,
       price: 289.00,
       oldPriceStrike: 349.00,
-      image: bloomLabImg,
+      image: packSignatureImg,
       rating: 5.0,
       reviews: 42,
       description: t.pack_signature.description,
@@ -135,18 +137,6 @@ export const getProducts = (lang: Language) => {
       tags: ['Immunité', 'Hiver']
     },
     {
-      id: 'kit-reset',
-      name: t.kit_reset.name,
-      subtitle: t.kit_reset.subtitle,
-      price: 34.00,
-      originalPrice: 49.00,
-      image: duoArgilesImg,
-      rating: 4.9,
-      reviews: 31,
-      description: t.kit_reset.description,
-      tags: ['Kit', 'Reset Homéostatique']
-    },
-    {
       id: 'duo-argiles',
       name: t.kit_reset.name,
       subtitle: t.kit_reset.subtitle,
@@ -188,6 +178,7 @@ export const getProducts = (lang: Language) => {
 };
 
 interface StoreContentProps {
+  currentView?: string;
   onNavigate?: (view: any, productId?: string, type?: any) => void;
   onNavigatePending?: () => void;
   onNavigateDetail?: (id: string) => void;
@@ -195,7 +186,7 @@ interface StoreContentProps {
   lang: Language;
 }
 
-export default function StoreContent({ onNavigate, onNavigatePending, onNavigateDetail, onAddToCart, lang }: StoreContentProps) {
+export default function StoreContent({ currentView, onNavigate, onNavigatePending, onNavigateDetail, onAddToCart, lang }: StoreContentProps) {
   const handleNavigateDetail = (id: string) => {
     if (onNavigateDetail) onNavigateDetail(id);
     else if (onNavigate) onNavigate('product-detail', id);
@@ -209,6 +200,18 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
   const t = translations[lang].store;
   const isFR = lang === 'fr';
   const products = React.useMemo(() => getProducts(lang), [lang]);
+
+  React.useEffect(() => {
+    if (currentView === 'boutique-kits' || currentView === 'kits-botaniques') {
+      const timer = setTimeout(() => {
+        const el = document.getElementById('nos-kits');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 150);
+      return () => clearTimeout(timer);
+    }
+  }, [currentView]);
   
   const formatPrice = (price: number) => {
     return (
@@ -265,6 +268,37 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
     }
   };
 
+  const productsSchema = {
+    "@context": "https://schema.org",
+    "@graph": filteredProducts.map((p) => ({
+      "@type": "Product",
+      "@id": `https://bloombybotanik.com/boutique/${p.id}/#product`,
+      "name": p.name,
+      "description": p.description,
+      "image": `https://bloombybotanik.com${p.image}`,
+      "brand": {
+        "@type": "Brand",
+        "name": "Bloom by BotaniK"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": p.rating,
+        "reviewCount": p.reviews
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": `https://bloombybotanik.com/boutique/${p.id}/`,
+        "priceCurrency": "EUR",
+        "price": p.price.toFixed(2),
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "Bloom by BotaniK"
+        }
+      }
+    }))
+  };
+
   return (
     <div className="animate-in slide-in-from-right duration-500 pb-20">
       <script type="application/ld+json">
@@ -272,6 +306,9 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
       </script>
       <script type="application/ld+json">
         {JSON.stringify(collectionSchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(productsSchema)}
       </script>
 
       {/* Promotional Banner */}
@@ -518,10 +555,36 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
         </div>
       )}
 
+      {/* Synergies Multi-Plantes & Séquençage A/B Educational Section */}
+      {!searchQuery && (
+        <div className="px-4 md:px-6">
+          <StoreSequencingSection onNavigate={onNavigate} lang={lang} />
+        </div>
+      )}
+
       {/* Product Grid */}
-      <div className="px-4 md:px-6 mb-12">
+      <div id="nos-kits" className="px-4 md:px-6 mb-12 scroll-mt-24">
+        {(currentView === 'boutique-kits' || currentView === 'kits-botaniques') && (
+          <div className="mb-8 p-6 sm:p-8 bg-[#0F261E] rounded-3xl text-white border border-[#D97706]/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xl">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D97706]/20 text-[#D97706] text-xs font-bold uppercase tracking-wider mb-3">
+                <Package className="w-4 h-4" />
+                {isFR ? 'Herboristerie & Totum' : 'Botanical Totum'}
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-black text-white mb-2">
+                {isFR ? 'Kits de Plantes & Synergies Thérapeutiques' : 'Botanical Plant Kits & Therapeutic Synergies'}
+              </h2>
+              <p className="text-sm text-white/70 max-w-2xl leading-relaxed">
+                {isFR 
+                  ? 'Mélanges certifiés de plantes médicinales entières, coupées et calibrées pour l’extraction séquentielle A/B. Qualité herboristerie, principes actifs préservés.' 
+                  : 'Certified medicinal botanical blends calibrated for A/B sequential extraction.'}
+              </p>
+            </div>
+          </div>
+        )}
+
         <h3 className="text-xs md:text-sm font-bold uppercase tracking-widest text-botanik-green/40 mb-4 md:mb-6">
-          {searchQuery ? `${t.grid.results_for} "${searchQuery}"` : t.grid.title}
+          {searchQuery ? `${t.grid.results_for} "${searchQuery}"` : (currentView === 'boutique-kits' || currentView === 'kits-botaniques') ? (isFR ? 'Tous les kits de plantes' : 'All plant kits') : t.grid.title}
         </h3>
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
           {filteredProducts.filter(p => (!p.featured && !(p as any).isBundle && !(p as any).isSpecial) || searchQuery).map((product) => {
@@ -541,7 +604,11 @@ export default function StoreContent({ onNavigate, onNavigatePending, onNavigate
                   <OptimizedImage 
                     src={product.image} 
                     alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Machine à infusion botanique, tisanes et remèdes naturels`} 
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    className={`w-full h-full object-cover transform transition-transform duration-700 ${
+                      product.id === 'duo-argiles' 
+                        ? 'scale-125 sm:scale-130 group-hover:scale-140' 
+                        : 'group-hover:scale-110'
+                    }`}
                   />
                   <button 
                     type="button"

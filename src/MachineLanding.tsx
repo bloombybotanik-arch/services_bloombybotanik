@@ -20,17 +20,20 @@ import {
   Layers,
   HeartHandshake,
   Award,
-  Compass
+  Compass,
+  Thermometer,
+  Wind
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { TooltipLexique } from './components/TooltipLexique';
 import { translations, Language } from './translations';
 import { trackViewItem, trackFaqExpand } from './utils/analytics';
 
 const heroViews = [
-  { id: 'v1', label: 'Vue 1', src: '/img/produit/bloomlab-face-1200x1200.jpg', fallbackSrc: '/img/produit/bloomlab-face-1200x1200.jpg', subtitle: 'Face Inox' },
   { id: 'v2', label: 'Vue 2', src: '/images/1.png', fallbackSrc: '/images/1.png', subtitle: 'Précision' },
   { id: 'v3', label: 'Vue 3', src: '/images/2.png', fallbackSrc: '/images/2.png', subtitle: 'Extraction' },
   { id: 'v4', label: 'Vue 4', src: '/images/8.png', fallbackSrc: '/images/8.png', subtitle: 'Totum' },
+  { id: 'v1', label: 'Vue 1', src: '/img/produit/bloomlab-face-1200x1200.jpg', fallbackSrc: '/img/produit/bloomlab-face-1200x1200.jpg', subtitle: 'Face Inox' },
 ];
 const heroImg1 = heroViews[0].src;
 const bloomSoinsImg = "/assets/images/Bloom_Soins.jpg";
@@ -56,7 +59,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
   const faqItems = (t as any).faq || [];
 
   return (
-    <div className="animate-in fade-in duration-700 bg-[#FAF7F2] text-[#0F261E]">
+    <div className="animate-in fade-in duration-700 bg-[#FAF7F2] text-[#0F261E] w-full max-w-full overflow-x-hidden">
       {/* Fullscreen Image Overlay */}
       <AnimatePresence>
         {fullscreenImage && (
@@ -96,14 +99,14 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
           {/* Hero Image with Overlay: Header Texts (Top) & Gallery Links (Bottom-Left) */}
           <div className="flex flex-col items-center mb-10">
             <div 
-              className="relative rounded-3xl overflow-hidden border border-white/15 bg-white/5 shadow-2xl w-full max-w-4xl h-[240px] sm:h-[300px] md:h-[340px] min-h-[240px] sm:min-h-[300px] md:min-h-[340px] cursor-zoom-in group"
+              className="relative rounded-3xl overflow-hidden border border-white/15 bg-white/5 shadow-2xl w-full max-w-4xl h-[380px] sm:h-[480px] md:h-[560px] min-h-[380px] sm:min-h-[480px] md:min-h-[560px] cursor-zoom-in group"
               onClick={() => setFullscreenImage(selectedHeroImage)}
             >
               <picture>
                 <source type="image/webp" srcSet={activeView.src} />
                 <img 
                   src={activeView.fallbackSrc} 
-                  alt={`${activeView.label} - ${activeView.subtitle}`} 
+                  alt={activeView.subtitle || "BloomLab"} 
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
@@ -133,8 +136,8 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 </h1>
               </div>
 
-              {/* 4 Image Selector Links on bottom-left: Vue 1 (Plante), Vue 2 (Infusion), Vue 3 (Totum), Vue 4 (Précision) */}
-              <div className="absolute bottom-2.5 left-2.5 sm:bottom-4 sm:left-4 z-20 flex flex-wrap items-center gap-1 sm:gap-2 max-w-[calc(100%-100px)]">
+              {/* 4 Image Thumbnails on bottom-left: no text labels, just sleek image thumbnails */}
+              <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-20 flex items-center gap-2">
                 {heroViews.map((view) => {
                   const isSelected = selectedHeroImage === view.src || selectedHeroImage === view.fallbackSrc;
                   return (
@@ -145,72 +148,78 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                         e.stopPropagation();
                         setSelectedHeroImage(view.src);
                       }}
-                      className={`flex items-center gap-1 sm:gap-1.5 p-1 pr-2 sm:pr-3 rounded-lg sm:rounded-xl border transition-all cursor-pointer backdrop-blur-md ${
+                      className={`p-1 rounded-xl border transition-all cursor-pointer backdrop-blur-md ${
                         isSelected 
-                          ? 'bg-black/80 border-[#D97706] shadow-xl text-white ring-2 ring-[#D97706]/70' 
-                          : 'bg-black/50 border-white/20 text-white/80 hover:text-white hover:bg-black/75 hover:border-white/40'
+                          ? 'bg-black/80 border-[#D97706] shadow-xl ring-2 ring-[#D97706]' 
+                          : 'bg-black/50 border-white/25 hover:border-white/60 hover:bg-black/75'
                       }`}
+                      title={view.subtitle}
                     >
                       <picture>
                         <source type="image/webp" srcSet={view.src} />
                         <img 
                           src={view.fallbackSrc} 
-                          alt={view.label} 
+                          alt={view.subtitle} 
                           loading="lazy"
                           decoding="async"
-                          className="w-6 h-6 sm:w-8 sm:h-8 rounded-md object-cover" 
+                          className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover" 
                         />
                       </picture>
-                      <div className="text-left text-xs">
-                        <p className="font-bold text-[9px] sm:text-[11px] leading-tight text-white">{view.label}</p>
-                        <p className="text-[8px] sm:text-[9px] text-[#D97706] font-medium leading-tight">{view.subtitle}</p>
-                      </div>
                     </button>
                   );
                 })}
               </div>
+            </div>
+          </div>
 
-              {/* Bottom-Right Zoom Trigger */}
-              <div className="absolute bottom-2.5 right-2.5 sm:bottom-4 sm:right-4 z-20 flex items-center gap-2 text-white text-xs font-semibold">
-                <button
-                  type="button"
-                  onClick={() => setFullscreenImage(selectedHeroImage)}
-                  className="bg-black/60 hover:bg-black/80 backdrop-blur-md px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full border border-white/20 font-bold text-[11px] sm:text-xs flex items-center gap-1 transition-colors cursor-pointer shadow-lg"
-                >
-                  <Maximize2 className="w-3 h-3 text-[#D97706]" /> 
-                  <span>{lang === 'fr' ? "Agrandir" : "Zoom"}</span>
-                </button>
+          {/* AMAZON ACTIVATION BANNER */}
+          <div className="max-w-4xl mx-auto mb-10 bg-[#132B22] border border-[#D97706]/30 rounded-2xl p-4 shadow-lg">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-3 text-white">
+                <div className="w-10 h-10 rounded-xl bg-[#D97706] flex items-center justify-center shrink-0">
+                  <Package className="w-5 h-5 text-white" />
+                </div>
+                <p className="text-xs sm:text-sm font-medium">
+                  <span className="font-bold text-[#D97706]">Acheteur Amazon ?</span> Ne restez pas seul face à vos plantes. Uploadez votre facture pour débloquer gratuitement vos protocoles cliniques et l'accès Premium à la Bibliothèque Bloom.
+                </p>
               </div>
+              <button 
+                onClick={() => onNavigate('activation')} 
+                className="px-5 py-2 bg-[#D97706] hover:bg-[#b45309] text-white text-xs font-black uppercase tracking-wider rounded-xl transition-all shadow-lg shadow-[#D97706]/20 whitespace-nowrap cursor-pointer"
+              >
+                Activer mon accès Premium
+              </button>
             </div>
           </div>
 
           {/* Suivit du texte */}
           <div className="max-w-3xl mx-auto space-y-8 text-center sm:text-left">
             {/* Texte historique : Le naturel ne doit plus être approximatif */}
-            <div className="p-6 md:p-8 rounded-3xl bg-white/[0.07] border border-white/15 space-y-4 backdrop-blur-xs">
-              <div className="flex items-center gap-2 text-[#D97706] text-xs font-bold uppercase tracking-widest">
-                <Compass className="w-4 h-4" />
+            <div className="p-6 md:p-8 rounded-3xl bg-[#142D23] border-2 border-[#D97706]/40 space-y-4 shadow-2xl shadow-black/20 text-[#FAF7F2]">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D97706]/20 border border-[#D97706]/35 text-[#D97706] text-xs font-bold uppercase tracking-widest">
+                <Compass className="w-4 h-4 text-[#D97706]" />
                 <span>
                   {(t.hero as any).history_badge || "Héritage Millénaire & Rigueur Botanique"}
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#F3E8D8] leading-snug">
                 {(t.hero as any).history_title || "Le naturel ne doit plus être approximatif."}
               </h3>
-              <p className="text-base sm:text-lg text-white/95 leading-relaxed font-serif italic">
+              <p className="text-base sm:text-lg text-[#D97706] leading-relaxed font-serif italic">
                 {(t.hero as any).history_subtitle || "Il y a 5 000 ans, l'Asie savait déjà tout de l'extraction."}
               </p>
-              <p className="text-sm sm:text-base text-white/80 leading-relaxed font-light">
+              <p className="text-sm sm:text-base text-[#FAF7F2]/90 leading-relaxed font-light">
                 {(t.hero as any).history_p1 || "En Médecine Traditionnelle Chinoise comme en Ayurveda, l'extraction n'était ni un geste approximatif, ni une habitude de cuisine. C'était un art codifié, où le temps, le feu et la matière obéissaient à des règles précises. Décoctions longuement mijotées, macérations à feu doux, résines travaillées avec patience : les praticiens d'Orient savaient qu'une plante trahie par la chaleur est une plante qui perd son intelligence."}
               </p>
-              <p className="text-sm sm:text-base text-[#D97706] font-medium">
-                {(t.hero as any).history_p2 || "Ce savoir a fondé l'herboristerie du monde."}
+              <p className="text-sm sm:text-base text-[#D97706] font-semibold flex items-center gap-2">
+                <span>—</span>
+                <span>{(t.hero as any).history_p2 || "Ce savoir a fondé l'herboristerie du monde."}</span>
               </p>
             </div>
 
             <div className="space-y-4 text-base sm:text-lg text-white/85 leading-relaxed font-light">
               <p>
-                Favorisez l'extraction des composés recherchés et respectez les fractions sensibles. Avec BloomLab, vous ne faites plus simplement chauffer une plante : vous optimisez le profil d'extraction de ses principes actifs dans des conditions rigoureuses. La température est maintenue au degré près : assez élevée pour optimiser l’extraction des phytocomposés (polyphénols, flavonoïdes, huiles essentielles…), mais jamais au‑delà des seuils qui les dégradent, ce qui est exactement ce que montrent les études sur l’impact de la température en extraction végétale.
+                Favorisez l'extraction des composés recherchés et respectez les fractions sensibles. Avec BloomLab, vous ne faites plus simplement chauffer une plante : vous optimisez le profil d'extraction de ses principes actifs dans des conditions rigoureuses. La température est maintenue au degré près : assez élevée pour optimiser l’extraction des phytocomposés (<TooltipLexique terme="polyphenols" />, flavonoïdes, huiles essentielles…), mais jamais au‑delà des seuils qui les dégradent, ce qui est exactement ce que montrent les études sur l’impact de la température en extraction végétale.
               </p>
               <p className="text-white/75 text-sm sm:text-base">
                 Là où une casserole ou un bain‑marie improvisé chauffent trop fort ou de façon irrégulière (perte d’antioxydants, arômes brûlés, actifs détruits), BloomLab offre un profil thermique maîtrisé qui préserve les molécules sensibles à la chaleur et améliore la quantité d’actifs réellement présents dans vos huiles infusées et macérâts.
@@ -254,146 +263,95 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         </div>
       </section>
 
-      {/* 2. THE PROBLEM (POURQUOI L'EXTRACTION MAISON ÉCHOUE) */}
-      <section id="pourquoi-l-infusion-echoue" className="py-20 md:py-28 bg-[#FAF7F2]">
+      {/* 2. LE VERROU MÉTHODOLOGIQUE */}
+      <section id="verrou-methodologique" className="py-20 md:py-28 bg-[#FAF7F2]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-black uppercase tracking-[0.25em] text-[#D97706] mb-3 block">
-              Constat Éducatif & Biologique
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span className="inline-block px-3.5 py-1.5 rounded-full bg-[#D97706]/10 text-[#D97706] text-xs font-black uppercase tracking-[0.25em] border border-[#D97706]/20">
+              2. LE VERROU MÉTHODOLOGIQUE
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0F261E] mb-6 leading-tight">
-              Pourquoi l'infusion et le bain-marie artisanaux détruisent l'intelligence des plantes
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0F261E] leading-tight">
+              Le problème n'est pas la plante. C'est la méthode qui sous-exploite sa puissance.
             </h2>
             <p className="text-base sm:text-lg text-[#0F261E]/70 leading-relaxed font-normal">
-              La plupart des gestes traditionnels chauffent trop fort ou trop vite. Sans contrôle cinétique et thermique précis, jusqu'à 80% des molécules actives s'évaporent ou se dégradent avant même d'atteindre votre organisme.
+              L'extraction végétale domestique se heurte traditionnellement à 3 barrières physiques invisibles.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {/* Carte 1 : Choc Thermique */}
             <div className="bg-white p-8 rounded-3xl border border-[#0F261E]/10 shadow-xs flex flex-col">
-              <div className="w-12 h-12 rounded-2xl bg-[#D97706]/10 text-[#D97706] flex items-center justify-center mb-6">
-                <Flame className="w-6 h-6" />
+              <div className="w-12 h-12 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center mb-6">
+                <Thermometer className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold text-[#0F261E] mb-3">Choc Thermique Destructeur</h3>
-              <p className="text-sm text-[#0F261E]/70 leading-relaxed flex-1">
-                L'eau bouillante (100°C) dénature instantanément les polyphénols fragiles, dégrade les flavonoïdes et volatilise les terpènes légers, transformant votre préparation en eau aromatisée sans action de terrain.
+              <h3 className="text-xl font-bold text-[#0F261E] mb-3">1. Le Choc Thermique</h3>
+              <p className="text-sm text-[#0F261E]/75 leading-relaxed flex-1">
+                L'eau bouillante ou un bain-marie incontrôlé dépasse les 60°C à 100°C : les terpènes volatils s'évaporent et les flavonoïdes thermolabiles sont dégradés avant usage.
               </p>
-              <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-rose-700 flex items-center gap-2">
-                <span>Perte active : jusqu'à 75%</span>
-              </div>
             </div>
 
+            {/* Carte 2 : Barrière de Polarité */}
             <div className="bg-white p-8 rounded-3xl border border-[#0F261E]/10 shadow-xs flex flex-col">
-              <div className="w-12 h-12 rounded-2xl bg-[#D97706]/10 text-[#D97706] flex items-center justify-center mb-6">
-                <Clock className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-[#0F261E] mb-3">Macération Passive & Oxydation</h3>
-              <p className="text-sm text-[#0F261E]/70 leading-relaxed flex-1">
-                Les macérâts au soleil sur 4 à 6 semaines exposent les lipides à la lumière et à l'oxygène, risquant le rancissement des acides gras essentiels et le développement de moisissures indésirables.
-              </p>
-              <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-amber-700 flex items-center gap-2">
-                <span>Risque d'oxydation et instabilité</span>
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-3xl border border-[#0F261E]/10 shadow-xs flex flex-col">
-              <div className="w-12 h-12 rounded-2xl bg-[#D97706]/10 text-[#D97706] flex items-center justify-center mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-6">
                 <Layers className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold text-[#0F261E] mb-3">Paroi Cellulaire Imperméable</h3>
-              <p className="text-sm text-[#0F261E]/70 leading-relaxed flex-1">
-                Sans agitation calibrée ni micro-vortex, les principes actifs restent piégés à l'intérieur de la cellulose végétale. Une simple cuillère ne génère pas la force cinétique nécessaire à l'extraction du Totum.
+              <h3 className="text-xl font-bold text-[#0F261E] mb-3">2. La Barrière de Polarité</h3>
+              <p className="text-sm text-[#0F261E]/75 leading-relaxed flex-1">
+                Une plante contient à la fois des principes hydrosolubles et liposolubles. Une extraction unique à l'aveugle laisse la moitié des principes actifs captifs de la fibre végétale.
               </p>
-              <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-slate-600 flex items-center gap-2">
-                <span>Rendement insuffisant du végétal</span>
+            </div>
+
+            {/* Carte 3 : Oxydation à l'Air Libre */}
+            <div className="bg-white p-8 rounded-3xl border border-[#0F261E]/10 shadow-xs flex flex-col">
+              <div className="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center mb-6">
+                <Wind className="w-6 h-6" />
               </div>
+              <h3 className="text-xl font-bold text-[#0F261E] mb-3">3. L'Oxydation à l'Air Libre</h3>
+              <p className="text-sm text-[#0F261E]/75 leading-relaxed flex-1">
+                Les bocaux ouverts ou casseroles exposent les lipides et molécules actives à l'oxygène ambiant, accélérant le rancissement et la déperdition aromatique.
+              </p>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* 3. THE SYSTEMIC SOLUTION (L'INSTRUMENT DE SOUVERAINETÉ) */}
-      <section id="details" className="py-20 md:py-28 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
-            
-            <div className="lg:col-span-6 space-y-6 flex flex-col justify-between">
-              <div>
-                <span className="text-xs font-black uppercase tracking-[0.25em] text-[#D97706] block mb-2">
-                  Ingénierie de Précision
-                </span>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0F261E] leading-tight mb-4">
-                  L'Extracteur Botanique Conçu pour Libérer le Totum Végétal
-                </h2>
-                <p className="text-base sm:text-lg text-[#0F261E]/75 leading-relaxed">
-                  Le <strong>BloomLab®</strong> comble le fossé entre la tisane imprécise et la gélule industrielle inerte. En maintenant une stabilité thermique chirurgicale à <strong>±0,5°C</strong> associée à une cinétique de vortex doux, il extrait l'intégralité du profil moléculaire actif dans un environnement stérile et biocompatible.
+          {/* Carte blanche finale, 3 colonnes à coches */}
+          <div className="bg-white p-8 md:p-10 rounded-3xl border border-[#0F261E]/10 shadow-md">
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="space-y-2.5">
+                <div className="flex items-center gap-2 text-botanik-green font-bold text-base">
+                  <div className="w-6 h-6 rounded-full bg-[#0F261E]/10 flex items-center justify-center shrink-0">
+                    <Check className="w-3.5 h-3.5 text-[#0F261E]" />
+                  </div>
+                  <span>Contre le Gaspillage</span>
+                </div>
+                <p className="text-xs sm:text-sm text-[#0F261E]/75 leading-relaxed">
+                  Ne jetez plus de matière végétale mal extraite. Chaque gramme de plante libère son profil complet sous conditions adaptées.
                 </p>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-4 pt-2">
-                <div className="p-5 bg-[#FAF7F2] rounded-2xl border border-[#0F261E]/5">
-                  <div className="flex items-center gap-3 mb-2 font-bold text-[#0F261E] text-base">
-                    <ShieldCheck className="w-5 h-5 text-[#D97706]" />
-                    <span>Inox 304 Médical</span>
+              <div className="space-y-2.5">
+                <div className="flex items-center gap-2 text-botanik-green font-bold text-base">
+                  <div className="w-6 h-6 rounded-full bg-[#0F261E]/10 flex items-center justify-center shrink-0">
+                    <Check className="w-3.5 h-3.5 text-[#0F261E]" />
                   </div>
-                  <p className="text-xs text-[#0F261E]/70 leading-relaxed">
-                    Totalement inerte, sans bisphénol, sans transfert de métaux lourds ni perturbateurs endocriniens.
-                  </p>
+                  <span>Pour l'Autonomie Botanique</span>
                 </div>
+                <p className="text-xs sm:text-sm text-[#0F261E]/75 leading-relaxed">
+                  Reprenez le contrôle complet sur vos préparations. Vous choisissez la plante, le solvant noble et la concentration exacte.
+                </p>
+              </div>
 
-                <div className="p-5 bg-[#FAF7F2] rounded-2xl border border-[#0F261E]/5">
-                  <div className="flex items-center gap-3 mb-2 font-bold text-[#0F261E] text-base">
-                    <Activity className="w-5 h-5 text-[#D97706]" />
-                    <span>Régulation ±0,5°C</span>
+              <div className="space-y-2.5">
+                <div className="flex items-center gap-2 text-botanik-green font-bold text-base">
+                  <div className="w-6 h-6 rounded-full bg-[#0F261E]/10 flex items-center justify-center shrink-0">
+                    <Check className="w-3.5 h-3.5 text-[#0F261E]" />
                   </div>
-                  <p className="text-xs text-[#0F261E]/70 leading-relaxed">
-                    Conserve les molécules thermolabiles sensibles sans risque de surchauffe ou de dégradation.
-                  </p>
+                  <span>Par la Précision</span>
                 </div>
-
-                <div className="p-5 bg-[#FAF7F2] rounded-2xl border border-[#0F261E]/5">
-                  <div className="flex items-center gap-3 mb-2 font-bold text-[#0F261E] text-base">
-                    <FlaskConical className="w-5 h-5 text-[#D97706]" />
-                    <span>Multiphasique</span>
-                  </div>
-                  <p className="text-xs text-[#0F261E]/70 leading-relaxed">
-                    Compatible avec l'eau purifiée, les huiles végétales biologiques, la glycérine végétale et l'alcool.
-                  </p>
-                </div>
-
-                <div className="p-5 bg-[#FAF7F2] rounded-2xl border border-[#0F261E]/5">
-                  <div className="flex items-center gap-3 mb-2 font-bold text-[#0F261E] text-base">
-                    <Sparkles className="w-5 h-5 text-[#D97706]" />
-                    <span>Vortex Cinétique</span>
-                  </div>
-                  <p className="text-xs text-[#0F261E]/70 leading-relaxed">
-                    Favorise l'extraction optimale des phytocomposés solubles sans broyage agressif des fibres.
-                  </p>
-                </div>
+                <p className="text-xs sm:text-sm text-[#0F261E]/75 leading-relaxed">
+                  Chaque extraction devient un protocole documenté, reproductible à volonté sans incertitude ni risque de brûler vos actifs.
+                </p>
               </div>
             </div>
-
-            {/* Video Column: vertically aligned with the left column and text cards */}
-            <div className="lg:col-span-6 relative flex flex-col">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#0F261E]/10 bg-[#0F261E] flex-1 w-full min-h-[460px] lg:min-h-full">
-                <video 
-                  poster={heroImg1}
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline
-                  title="BloomLab - Démonstration d'extraction thermique contrôlée"
-                  className="w-full h-full object-cover min-h-[460px] lg:min-h-full" 
-                >
-                  <source src="/videos/demo_bloomlab.mp4" type="video/mp4" />
-                </video>
-                <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-xs text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-white/20 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  Cycle d'extraction séquentielle A/B en direct
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
@@ -459,44 +417,42 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         </div>
       </section>
 
-      {/* 4. BRAND HERITAGE & ASIAN ORIGINS STORY */}
-      <section className="heritage-section py-20 md:py-28 bg-[#FAF7F2] border-t border-[#0F261E]/5 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1C3F34]/10 text-[#1C3F34] text-xs font-bold uppercase tracking-widest mb-4">
-              <Sparkles className="w-3.5 h-3.5 text-[#D97706]" />
-              <span>{t.heritage?.badge || "Origines & Sagesse Botanique"}</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#0F261E] mb-4 tracking-tight">
-              {t.heritage?.title || "Un héritage de sagesse pour un monde moderne"}
-            </h2>
-            <p className="text-base sm:text-lg text-[#D97706] font-medium">
-              {t.heritage?.subtitle || "Aux origines asiatiques de l'extraction de précision"}
-            </p>
-          </div>
+      {/* 4. BRAND HERITAGE & ETHNOBOTANY */}
+<section className="heritage-section py-20 md:py-28 bg-[#FAF7F2] border-t border-[#0F261E]/5 relative overflow-hidden">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div className="text-center max-w-3xl mx-auto mb-12">
+      <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1C3F34]/10 text-[#1C3F34] text-xs font-bold uppercase tracking-widest mb-4">
+        <Compass className="w-3.5 h-3.5 text-[#D97706]" />
+        <span>Ethnobotanique & Pharmacopée Ancestrale</span>
+      </div>
+      <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#0F261E] mb-4 tracking-tight">
+        L'ingénierie moderne au service des textes fondateurs
+      </h2>
+    </div>
 
-          <div className="bg-white rounded-3xl p-8 sm:p-12 md:p-14 border border-[#E7DFD3] shadow-xl relative">
-            <div className="absolute top-6 right-8 text-[#D97706]/15 select-none pointer-events-none text-8xl font-serif">
-              “
-            </div>
-            
-            <div className="max-w-none text-[#0F261E]/80 space-y-6 text-base sm:text-lg leading-relaxed font-light">
-              <p className="first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:text-[#1C3F34] first-letter:mr-3 first-letter:float-left">
-                {t.heritage?.text || "BloomLab n'est pas une invention occidentale. C'est la réponse moderne à un besoin millénaire né au cœur des traditions botaniques asiatiques. Pendant des siècles, les maîtres herboristes d'Asie ont cherché un moyen d'extraire l'essence parfaite de leurs plantes, sans la brûler ni la gaspiller. La BloomLab est l'aboutissement de cette quête : un outil de précision qui réconcilie la sagesse ancestrale avec la technologie du XXIe siècle. Approuvée d'abord par les experts asiatiques, elle arrive aujourd'hui en Europe pour redonner à chacun le pouvoir de créer ses propres élixirs de soin."}
-              </p>
-            </div>
+    <div className="bg-white rounded-3xl p-8 sm:p-12 md:p-14 border border-[#E7DFD3] shadow-xl relative overflow-hidden">
+      <div className="absolute top-6 right-8 text-[#D97706]/15 select-none pointer-events-none text-8xl font-serif">“</div>
+      
+      <div className="max-w-none text-[#0F261E]/80 space-y-6 text-base sm:text-lg leading-relaxed font-light">
+        <p className="first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:text-[#1C3F34] first-letter:mr-3 first-letter:float-left">
+          La BloomLab n'est pas une invention ex nihilo. Elle est la réponse technologique aux limites des textes fondateurs. Dans l'Ayurveda, la méthode du <em>Taila Paka</em> (cuisson lente des huiles médicinales) exigeait un contrôle visuel et tactile épuisant pour éviter que les plantes ne carbonisent. Dans la pharmacopée chinoise du <em>Shennong Ben Cao Jing</em>, on savait déjà que certaines racines exigeaient des décoctions longues, tandis que les fleurs nécessitaient des infusions flash.
+        </p>
+        <p>
+          Le drame de l'herboristerie occidentale moderne a été de tout réduire à l'eau bouillante, ignorant la <strong>polarité des solvants</strong> et la <strong>thermolabilité des enzymes</strong>. La BloomLab réconcilie la sagesse empirique de l'Orient avec la rigueur de la biochimie du XXIe siècle. Elle permet d'appliquer le <strong>Séquençage Actif A/B</strong> (extraction hydrophile puis lipophile) avec une précision de ±0,5°C que même les meilleurs laboratoires peinent à démocratiser.
+        </p>
+      </div>
 
-            <div className="mt-8 pt-8 border-t border-[#E7DFD3] flex items-center gap-4 bg-[#FAF7F2] -mx-8 -mb-8 sm:-mx-12 sm:-mb-12 md:-mx-14 md:-mb-14 p-6 sm:p-8 rounded-b-3xl">
-              <div className="w-12 h-12 rounded-2xl bg-[#1C3F34] text-white flex items-center justify-center shrink-0 shadow-md">
-                <Compass className="w-6 h-6 text-[#D97706]" />
-              </div>
-              <p className="text-sm sm:text-base font-serif italic text-[#1C3F34] leading-snug">
-                {t.heritage?.quote || "« Extraire sans brûler, révéler sans dénaturer : l'alliance de la tradition herboriste asiatique et de la thermorégulation contemporaine. »"}
-              </p>
-            </div>
-          </div>
+      <div className="mt-8 pt-8 border-t border-[#E7DFD3] flex items-center gap-4 bg-[#FAF7F2] -mx-8 -mb-8 sm:-mx-12 sm:-mb-12 md:-mx-14 md:-mb-14 p-6 sm:p-8 rounded-b-3xl">
+        <div className="w-12 h-12 rounded-2xl bg-[#1C3F34] text-white flex items-center justify-center shrink-0 shadow-md">
+          <Activity className="w-6 h-6 text-[#D97706]" />
         </div>
-      </section>
+        <p className="text-sm sm:text-base font-serif italic text-[#1C3F34] leading-snug">
+          « Nous n'avons pas réinventé la plante. Nous avons domestiqué la cinétique d'extraction pour que le Totum arrive intact jusqu'à vos récepteurs cellulaires. »
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* 5. THE 3 DOMAINS OF APPLICATION */}
       <section id="niveaux" className="py-20 md:py-28 bg-white">
@@ -596,32 +552,33 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               </div>
             </div>
 
-            {/* Niveau 3: Phytothérapie de Terrain */}
-            <div className="grid lg:grid-cols-[1fr_420px] gap-10 items-center bg-[#FAF7F2] rounded-3xl p-8 md:p-12 border border-[#D97706]/20 shadow-sm">
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-[#D97706]/10 rounded-2xl flex items-center justify-center text-[#D97706]">
-                    <Activity className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[#D97706] block">Niveau 3</span>
-                    <h3 className="text-xl md:text-2xl font-bold text-[#0F261E]">{t.levels?.lvl3?.title || "Herboristerie Systémique de Terrain"}</h3>
-                  </div>
-                </div>
-                <p className="text-base text-[#0F261E]/75 mb-6 leading-relaxed italic">
-                  {t.levels?.lvl3?.quote || "Soutenez l'équilibre homéostatique de votre corps par une biodisponibilité respectée."}
-                </p>
-                <p className="text-sm text-[#0F261E]/70 mb-6 leading-relaxed">
-                  {t.levels?.lvl3?.description || "Préparations ciblées pour les émonctoires, l'équilibre digestif, l'apaisement nerveux et la vitalité articulaire."}
-                </p>
-                <button 
-                  onClick={() => onNavigate('library')} 
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#0F261E] hover:bg-[#D97706] text-white rounded-xl text-sm font-bold transition-all cursor-pointer"
-                >
-                  <span>{t.levels?.lvl3?.cta || "Explorer la bibliothèque de recettes"}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
+            {/* Niveau 3: Phytothérapie de Terrain (Optimized for Reset Protocol) */}
+<div className="grid lg:grid-cols-[1fr_420px] gap-10 items-center bg-[#FAF7F2] rounded-3xl p-8 md:p-12 border border-[#D97706]/20 shadow-sm">
+  <div>
+    <div className="flex items-center gap-3 mb-4">
+      <div className="w-12 h-12 bg-[#D97706]/10 rounded-2xl flex items-center justify-center text-[#D97706]">
+        <Activity className="w-6 h-6" />
+      </div>
+      <div>
+        <span className="text-[10px] font-black uppercase tracking-widest text-[#D97706] block">Niveau 3</span>
+        <h3 className="text-xl md:text-2xl font-bold text-[#0F261E]">Herboristerie Systémique & Reset</h3>
+      </div>
+    </div>
+    <p className="text-base text-[#0F261E]/75 mb-6 leading-relaxed italic">
+      "Ne traitez pas le symptôme, réinitialisez le terrain. La phytothérapie clinique à domicile."
+    </p>
+    <p className="text-sm text-[#0F261E]/70 mb-6 leading-relaxed">
+      Accédez aux protocoles de <strong>Reset Homéostatique (84 jours)</strong>. Ciblez précisément vos terrains biologiques : T1 (Intestin/Leaky Gut), T4 (Axe HPA/Stress), ou T8 (Adipeux Viscéral) avec des extraits hyper-concentrés et biodisponibles.
+    </p>
+    <button 
+      onClick={() => onNavigate('library')} 
+      className="inline-flex items-center gap-2 px-6 py-3 bg-[#0F261E] hover:bg-[#D97706] text-white rounded-xl text-sm font-bold transition-all cursor-pointer"
+    >
+      <span>Explorer les Protocoles Cliniques</span>
+      <ArrowRight className="w-4 h-4" />
+    </button>
+  </div>
+
               <div 
                 className="relative min-h-[360px] sm:min-h-[440px] h-[400px] sm:h-[460px] rounded-2xl overflow-hidden bg-slate-200 cursor-zoom-in group"
                 onClick={() => setFullscreenImage(fourMmImg)}

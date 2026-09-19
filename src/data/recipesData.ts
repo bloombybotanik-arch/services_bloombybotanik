@@ -359,11 +359,141 @@ export const discoveryRecipes: Recipe[] = [
     contraindications: ["Allergie aux dérivés salicylés (aspirine)", "Insuffisance rénale sévère", "Femmes enceintes"],
     safetyMessage: "Ne pas consommer en soirée pour préserver le repos nocturne.",
     bloomNote: "L'association de la prêle permet de compenser les pertes minérales naturelles dues à l'élimination hydrique."
+  },
+  {
+    id: '10',
+    title: "Remède Psoriasis — Émonctoires & Régulation Épidermique",
+    description: "Extraction séquentielle de Bardane, Pensée Sauvage et Mahonia ciblant la régulation kératinocytaire et le drainage hépato-cutané.",
+    ingredients: ["Racine de Bardane (30g)", "Pensée Sauvage (25g)", "Écorce de Mahonia (20g)"],
+    instructions: [
+      "Phase A : Extraction hydroglycérinée de la Bardane et de la Pensée Sauvage à 75°C pendant 2h00.",
+      "Vérification de la descente de température de la cuve sous 45°C.",
+      "Phase B : Ajout du Mahonia et de l'alcool bio 96° à 50°C pendant 2h30.",
+      "Filtration et pressage à l'étamine de lin pour recueillir la fraction de cœur riche en berbérine."
+    ],
+    benefits: ["Régulation du renouvellement des kératinocytes", "Soutien du drainage émonctoriel hépato-rénal", "Apaisement des plaques squameuses"],
+    image: "/src/assets/images/natural_remedies_cleaned_1786616831671.jpg",
+    category: "Extrait liquide",
+    plant: { name: "Bardane & Mahonia" },
+    goal: "Plaques squameuses, hyperprolifération kératinocytaire et surcharge hépato-cutanée",
+    sachetA: {
+      composition: ["30g Racine de Bardane", "25g Pensée Sauvage"],
+      solvant: "Eau distillée + Glycérine végétale (500ml, 70/30)",
+      temp: "75°C",
+      duration: "2h00"
+    },
+    sachetB: {
+      composition: ["20g Écorce de Mahonia concassée"],
+      solvant: "Alcool de grain bio 96° (250ml)",
+      temp: "50°C",
+      duration: "2h30"
+    },
+    extractionOrder: "Phase A hydroglycérinée (inuline et mucilages) puis Phase B hydroalcoolique tiède (berbérine)",
+    administration: {
+      mode: "Voie orale, dilué dans 100ml d'eau tiède.",
+      dailyDose: "10ml par jour (2 prises de 5ml)",
+      maxDose: "10ml par jour",
+      frequency: "2 fois par jour",
+      timing: "15 min avant le petit-déjeuner et 15 min avant le dîner",
+      usageDuration: "Cure de 60 jours avec pause de 10 jours."
+    },
+    precautions: ["Ne se substitue pas à un traitement dermatologique médical.", "Éviter les savons décapants."],
+    contraindications: ["Grossesse et allaitement", "Enfants de moins de 12 ans", "Lithiase biliaire symptomatique"],
+    safetyMessage: "Respecter scrupuleusement le refroidissement sous 45°C avant introduction de l'alcool.",
+    bloomNote: "Le Mahonia bloque la voie Th17 et la lipoxygénase tandis que la bardane soutient l'axe intestin-peau."
+  },
+  {
+    id: '11',
+    title: "Remède Eczéma — Désamorçage Histaminique & Barrière",
+    description: "Formule protectrice thermo-régulée combinant Plantain, Camomille Matricaire et Fumeterre pour calmer le prurit et restaurer la matrice cutanée.",
+    ingredients: ["Feuilles de Plantain lancéolé (25g)", "Capitules de Camomille Matricaire (25g)", "Fumeterre fleurie (25g)"],
+    instructions: [
+      "Phase A : Extraction douce de l'aucuboside du Plantain et de l'apigénine de Camomille à 68°C pendant 1h45.",
+      "Contrôle de refroidissement sous 40°C.",
+      "Phase B : Captation étanche des sesquiterpènes volatils (chamazulène) et protopine de Fumeterre à 48°C pendant 2h30.",
+      "Pressage doux sans broyer les tiges."
+    ],
+    benefits: ["Action anti-prurigineuse immédiate", "Stabilisation des mastocytes cutanés", "Réparation du film hydrolipidique"],
+    image: "/src/assets/images/herbs_close_up_cleaned_1786616800877.jpg",
+    category: "Extrait liquide",
+    plant: { name: "Plantain & Camomille" },
+    goal: "Dermatite atopique, réactivité cutanée, prurit intense et déficience de la barrière épidermique",
+    sachetA: {
+      composition: ["25g Plantain lancéolé", "15g Camomille matricaire"],
+      solvant: "Eau distillée + Glycérine végétale bio (500ml, 65/35)",
+      temp: "68°C",
+      duration: "1h45"
+    },
+    sachetB: {
+      composition: ["10g Camomille matricaire (terpènes)", "25g Fumeterre"],
+      solvant: "Alcool de grain bio 96° (250ml)",
+      temp: "48°C",
+      duration: "2h30"
+    },
+    extractionOrder: "Phase A hydroglycérinée sous 70°C puis Phase B hydroalcoolique en cuve étanche",
+    administration: {
+      mode: "Voie orale exclusive.",
+      dailyDose: "8ml par jour (2 prises de 4ml)",
+      maxDose: "8ml par jour",
+      frequency: "2 fois par jour",
+      timing: "Le matin à jeun et à 17h00 (chronobiologie de la chute du cortisol)",
+      usageDuration: "Cure de 45 jours continus."
+    },
+    precautions: ["Ne jamais appliquer l'extrait hydroalcoolique pur sur peau écorchée ou suintante."],
+    contraindications: ["Grossesse et allaitement", "Allergie connue aux Astéracées", "Calculs biliaires aigus"],
+    safetyMessage: "Privilégier des douches tièdes (<34°C) pour ne pas dissoudre le ciment céramidique épidermique.",
+    bloomNote: "La prise de 17h00 neutralise le pic circadien de libération d'histamine avant la crise de grattage du soir."
+  },
+  {
+    id: '12',
+    title: "Remède Alopécie — Anti-DHT & Matrice Folliculaire",
+    description: "Extraction lipophile et hydrosoluble de Palmier Nain, Racine d'Ortie et Ginkgo pour inhiber la 5-alpha-réductase et relancer la microcirculation capillaire.",
+    ingredients: ["Baies de Palmier Nain / Saw Palmetto (30g)", "Racine d'Ortie concassée (25g)", "Feuilles de Ginkgo Biloba (20g)"],
+    instructions: [
+      "Phase A : Extraction des lectines UDA et silice biodisponible d'ortie et polyphénols de Ginkgo à 72°C pendant 2h00.",
+      "Phase B : Extraction lipophile sous vortex des acides gras libres et phytostérols de Palmier Nain à 52°C pendant 3h00.",
+      "Conditionnement bimodal : flacon compte-gouttes (oral) et flacon spray (lotion cuir chevelu)."
+    ],
+    benefits: ["Inhibition ciblée de la 5-alpha-réductase", "Vasodilatation du plexus capillaire dermique", "Freinage de la miniaturisation du bulbe pileux"],
+    image: "/src/assets/images/lifestyle_botanik_cleaned_1786616810137.jpg",
+    category: "Extrait double action",
+    plant: { name: "Palmier Nain & Ortie" },
+    goal: "Alopécie androgénétique, excès de DHT, fibrose du bulbe et perte de densité capillaire",
+    sachetA: {
+      composition: ["25g Racine d'Ortie", "20g Feuilles de Ginkgo"],
+      solvant: "Eau distillée + Glycérine végétale (450ml, 70/30)",
+      temp: "72°C",
+      duration: "2h00"
+    },
+    sachetB: {
+      composition: ["30g Baies de Palmier Nain (Saw Palmetto) concassées"],
+      solvant: "Alcool de grain bio 96° (300ml)",
+      temp: "52°C",
+      duration: "3h00"
+    },
+    extractionOrder: "Phase A pour silice et flavonoïdes, puis Phase B alcoolique pour phytostérols lipophiles",
+    administration: {
+      mode: "Double voie : orale le matin (5ml) et topique en lotion cuir chevelu le soir (8 pulvérisations).",
+      dailyDose: "5ml par voie orale + 8 pulvérisations topiques 3x/semaine",
+      maxDose: "5ml par voie orale",
+      frequency: "Quotidien le matin (oral), 3 fois par semaine le soir (lotion)",
+      timing: "Matin au petit-déjeuner (oral) et soir avant le coucher (topique)",
+      usageDuration: "Cure de 90 jours continus (cycle anagène complet du cheveu)."
+    },
+    precautions: ["Consulter en cas de prise simultanée d'anticoagulants (Ginkgo Biloba)."],
+    contraindications: ["Grossesse et allaitement", "Femmes enceintes (foetus masculin)", "Moins de 18 ans", "Antécédents hormonodépendants"],
+    safetyMessage: "Le massage du cuir chevelu de 3 minutes le soir amplifie la pénétration folliculaire des actifs.",
+    bloomNote: "Le Palmier Nain mime l'action du finastéride de manière douce et naturelle sans blocage hormonal systémique agressif."
   }
+];
+
+export const pathologyRemediesJson = [
+  // Accessible from the dedicated database file /src/data/recettes_remedes_pathologies.json
 ];
 
 export const herbariumRecipes: Recipe[] = discoveryRecipes.map(r => ({
   ...r,
-  plant: { name: r.title.split(' ').pop() || 'Plante' },
-  goal: r.description
+  plant: { name: r.plant?.name || r.title.split(' ').pop() || 'Plante' },
+  goal: r.goal || r.description
 }));
+

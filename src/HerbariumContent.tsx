@@ -1,8 +1,9 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Search, ChevronDown, ChevronUp, Beaker, Leaf, AlertTriangle, Activity, ChefHat, Lock, Sparkles, Star, FlaskConical, ChevronRight, Filter, Info, ArrowLeft, ArrowRight, Droplets, Wind, Waves, Moon, Utensils, ShieldCheck } from 'lucide-react';
+import { Search, ChevronDown, ChevronUp, Beaker, Leaf, AlertTriangle, Activity, ChefHat, Lock, Sparkles, Star, FlaskConical, ChevronRight, Filter, Info, ArrowLeft, ArrowRight, Droplets, Wind, Waves, Moon, Utensils, ShieldCheck, BookOpen } from 'lucide-react';
 import { wrapTitle } from './lib/textUtils';
 import { plantsDatabase, PlantData } from './data/therapeuticData';
 import { unifiedBotanicalDatabase, UnifiedPlant } from './data/unifiedBotanicalData';
+import { herbariumRecipes } from './data/recipesData';
 import { translations, Language } from './translations';
 
 // --- DATA STRUCTURE (As requested for the CMS) ---
@@ -94,6 +95,7 @@ export default function HerbariumContent({
   lang: Language
 }) {
   const [selectedPlant, setSelectedPlant] = useState<PlantData | null>(null);
+  const [selectedRecipeId, setSelectedRecipeId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState<'all' | 'therapeutic' | 'culinary' | 'cosmetic'>('all');
 
@@ -118,6 +120,7 @@ export default function HerbariumContent({
       const plant = plantsDatabase.find(p => p.plant_id === initialPlantId);
       if (plant) {
         setSelectedPlant(plant);
+        setSelectedRecipeId(null);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
@@ -139,27 +142,109 @@ export default function HerbariumContent({
       );
     }
     
-    return results;
+    // Exact alphabetical sort as seen in the screenshots
+    return [...results].sort((a, b) => a.name.localeCompare(b.name, 'fr', { sensitivity: 'base' }));
   }, [searchQuery, activeFilter]);
 
   const handlePlantClick = (plant: UnifiedPlant) => {
     if (plant.source === 'therapeutic') {
-      let fullData;
+      let fullData: PlantData | undefined;
+      let targetRecipeId: string | null = null;
+
       if (plant.id.startsWith('therapeutic-recipe-')) {
-        const recipeId = plant.id.replace('therapeutic-recipe-', '');
-        fullData = plantsDatabase.find(p => (p.additional_recipes || []).some(r => r.id === recipeId));
+        targetRecipeId = plant.id.replace('therapeutic-recipe-', '');
+        fullData = plantsDatabase.find(p => (p.additional_recipes || []).some(r => r.id === targetRecipeId));
       } else if (plant.id.startsWith('extra-recipe-')) {
-        const recipeId = plant.id.replace('extra-recipe-', '');
-        // For extra recipes from recipesData, they might correspond to plants in the database
-        // Like Artichoke.
-        fullData = plantsDatabase.find(p => (p.additional_recipes || []).some(r => r.id === recipeId));
+        targetRecipeId = plant.id.replace('extra-recipe-', '');
+        fullData = plantsDatabase.find(p => (p.additional_recipes || []).some(r => r.id === targetRecipeId));
+        if (!fullData) {
+          // Check by name match
+          fullData = plantsDatabase.find(p => plant.latinName?.toLowerCase().includes(p.nom_commun.toLowerCase()) || plant.name.toLowerCase().includes(p.nom_commun.toLowerCase()));
+        }
       } else {
         const plantId = plant.id.replace('therapeutic-', '');
         fullData = plantsDatabase.find(p => p.plant_id === plantId);
       }
+
+      // If this is a recipe from herbariumRecipes not directly in plantsDatabase, build a full PlantData with its precise extraction protocol
+      if (!fullData && (plant.id.startsWith('extra-recipe-') || plant.id.startsWith('therapeutic-recipe-'))) {
+        const recipeId = targetRecipeId || plant.id.replace('extra-recipe-', '').replace('therapeutic-recipe-', '');
+        const recipe = herbariumRecipes.find(r => r.id === recipeId);
+        if (recipe) {
+          fullData = {
+            plant_id: `recipe-${recipe.id}`,
+            nom_commun: recipe.title,
+            nom_latin: recipe.plant?.name || recipe.title,
+            partie_utilisee: recipe.ingredients.join(', '),
+            famille_bloom: 'Protocole & Synergie Botanique',
+            terrains_cibles: ['Synergie Active', recipe.category],
+            actifs_cles: recipe.benefits.map((b, idx) => ({
+              nom: b,
+              polarite: idx % 2 === 0 ? 'Hydrosoluble (Polaire)' : 'Lipophile (Apolair)'
+            })),
+            preuve_scientifique: recipe.description,
+            pourquoi_bloomlab: {
+              probleme_traditionnel: recipe.bloomNote || "L'infusion classique à ébullition détruit les principes actifs fragiles et échoue à extraire les fractions denses.",
+              phase_A: {
+                temp: recipe.sachetA?.temp || "85°C",
+                temps: recipe.sachetA?.duration || "15 min",
+                solvant: recipe.sachetA?.solvant || "Eau purifiée",
+                cible: `Extraction Sachet A : ${recipe.sachetA?.composition?.join(', ') || 'Actifs hydrosolubles'}`
+              },
+              phase_B: {
+                temp: recipe.sachetB?.temp || "70°C",
+                temps: recipe.sachetB?.duration || "10 min",
+                solvant: recipe.sachetB?.solvant || "Eau purifiée",
+                cible: `Extraction Sachet B : ${recipe.sachetB?.composition?.join(', ') || 'Actifs thermosensibles'}`
+              },
+              resultat: recipe.benefits.join(' • ')
+            },
+            recette_pas_a_pas: {
+              batch_standard: `Batch Standard : ${recipe.administration?.dailyDose || '1 flacon'}`,
+              ingredients: {
+                phase_A: recipe.sachetA?.composition || [],
+                phase_B: recipe.sachetB?.composition || []
+              },
+              preparation: [
+                `Préparer le Sachet A : ${recipe.sachetA?.composition?.join(', ') || 'Plantes Phase A'}`,
+                `Préparer le Sachet B : ${recipe.sachetB?.composition?.join(', ') || 'Plantes Phase B'}`,
+                `Solvant : ${recipe.sachetA?.solvant || 'Eau distillée'}`
+              ],
+              phase_A_instructions: [
+                `Placer le Sachet A dans le panier d'extraction du BloomLab®.`,
+                `Régler la thermo-régulation sur ${recipe.sachetA?.temp || '85°C'} pendant ${recipe.sachetA?.duration || '15 min'}.`,
+                `Le flux continu extrait doucement les principes actifs denses.`
+              ],
+              transition: [
+                recipe.extractionOrder || "Refroidissement contrôlé pour préserver les molécules thermosensibles avant la Phase B."
+              ],
+              phase_B_instructions: [
+                `Ajouter le Sachet B dans la chambre d'extraction.`,
+                `Ajuster la température à ${recipe.sachetB?.temp || '70°C'} pendant ${recipe.sachetB?.duration || '10 min'}.`,
+                `Extraction douce sans dégradation enzymatique.`
+              ],
+              filtration_et_finition: recipe.instructions && recipe.instructions.length > 0 ? recipe.instructions : [
+                "Filtration automatique en fin de cycle.",
+                "Conserver au frais dans un flacon propre ambré."
+              ]
+            },
+            usage_standard: {
+              mode_administration: recipe.administration?.mode || "Par voie orale",
+              posologie_quotidienne: recipe.administration?.dailyDose || "1 tasse par jour",
+              dose_maximale: recipe.administration?.maxDose || "2 prises par jour",
+              duree_utilisation: recipe.administration?.usageDuration || "Cure de 21 jours",
+              contre_indications: recipe.contraindications && recipe.contraindications.length > 0 ? recipe.contraindications : ["Déconseillé sans avis médical chez la femme enceinte ou allaitante."]
+            },
+            convergence_ancestrale: recipe.bloomNote || "Alliance de traditions herboristes séculaires et de la précision d'extraction contemporaine.",
+            synergies_recommandees: recipe.ingredients || [],
+            precautions: recipe.safetyMessage || "Ne pas dépasser la dose recommandée."
+          };
+        }
+      }
       
       if (fullData) {
-        onNavigate('herbier', fullData.plant_id);
+        setSelectedPlant(fullData);
+        setSelectedRecipeId(targetRecipeId);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     } else if (plant.source === 'culinary') {
@@ -428,10 +513,25 @@ export default function HerbariumContent({
                   <Utensils className="w-4 h-4" /> {t.details.specific_protocols.title}
                 </h2>
                 <div className="space-y-6">
-                  {selectedPlant.additional_recipes.map((recipe, idx) => (
-                    <div key={idx} className="p-8 bg-[#F9F9F7] rounded-3xl border border-botanik-green/5 hover:border-botanik-orange/20 transition-all group">
+                  {selectedPlant.additional_recipes.map((recipe, idx) => {
+                    const isTarget = selectedRecipeId === recipe.id;
+                    return (
+                    <div 
+                      key={idx} 
+                      id={`recipe-${recipe.id}`}
+                      className={`p-8 rounded-3xl border transition-all group ${
+                        isTarget 
+                          ? 'bg-white border-[#D97706] shadow-lg ring-2 ring-[#D97706]/20' 
+                          : 'bg-[#F9F9F7] border-botanik-green/5 hover:border-botanik-orange/20'
+                      }`}
+                    >
                       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
                         <div>
+                          {isTarget && (
+                            <span className="inline-block px-2.5 py-0.5 mb-2 bg-[#D97706] text-white text-[9px] font-black uppercase tracking-wider rounded-md">
+                              Recette sélectionnée
+                            </span>
+                          )}
                           <h4 className="text-xl font-bold text-botanik-green mb-1">{recipe.title}</h4>
                           <p className="text-sm text-botanik-green/60">{recipe.goal}</p>
                         </div>
@@ -497,7 +597,8 @@ export default function HerbariumContent({
                         </button>
                       </div>
                     </div>
-                  ))}
+                  );
+                  })}
                 </div>
               </section>
             )}
@@ -582,58 +683,61 @@ export default function HerbariumContent({
   return (
     <div className="animate-in slide-in-from-right duration-500 pb-20">
       
-      {/* Search & Filter Header (App Style) */}
-      <div className="bg-white px-4 md:px-6 pt-6 md:pt-8 pb-4 border-b border-botanik-green/5">
+      {/* Search & Filter Header */}
+      <div className="bg-white px-4 md:px-6 pt-6 md:pt-8 pb-4 border-b border-[#0F261E]/5">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-2">
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold text-botanik-green mb-1">{t.header.title}</h1>
-            <p className="text-[10px] md:text-sm text-botanik-green/40 font-medium uppercase tracking-widest">{t.header.subtitle}</p>
+            <h1 className="text-2xl md:text-3xl font-bold text-[#0F261E] mb-1">Herbier botanique :</h1>
+            <p className="text-[10px] md:text-xs font-black uppercase tracking-widest text-[#0F261E]/70 mb-1">
+              COMPRENDRE LES PLANTES ET LEURS USAGES
+            </p>
+            <p className="text-sm text-[#0F261E]/60">
+              BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels.
+            </p>
           </div>
-          {/* Cocoon Internal Link: Herbier -> Extraction Botanique */}
           <button
             onClick={() => onNavigate('extraction-botanique')}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-botanik-green/5 hover:bg-botanik-green hover:text-white text-botanik-green rounded-xl text-xs font-bold transition-all border border-botanik-green/10 self-start md:self-auto cursor-pointer"
+            className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#0F261E]/5 hover:bg-[#0F261E] hover:text-white text-[#0F261E] rounded-xl text-xs font-bold transition-all border border-[#0F261E]/10 self-start md:self-auto cursor-pointer shadow-xs"
           >
-            <FlaskConical className="w-3.5 h-3.5 text-botanik-orange" />
+            <BookOpen className="w-4 h-4 text-[#D97706]" />
             <span>Guide : L'Extraction Botanique & le Totum →</span>
           </button>
         </div>
-        <p className="text-sm text-botanik-green/60 mb-4 md:mb-6">{t.header.description}</p>
-        
-        <div className="relative mb-4 md:mb-6 max-w-2xl">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 md:w-5 h-4 md:h-5 text-botanik-green/30" />
+
+        <div className="relative mt-4 mb-4 max-w-2xl">
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 md:w-5 h-4 md:h-5 text-[#0F261E]/40" />
           <input
             type="text"
-            placeholder={t.header.search_placeholder}
+            placeholder="Chercher une plante, un actif..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 md:pl-12 pr-4 py-2 md:py-3 bg-[#F9F9F7] rounded-xl md:rounded-2xl border-none text-sm md:text-base text-botanik-green focus:ring-2 focus:ring-botanik-orange/20"
+            className="w-full pl-11 md:pl-12 pr-4 py-2.5 md:py-3 bg-[#F9F9F7] rounded-xl md:rounded-2xl border border-[#0F261E]/10 text-sm md:text-base text-[#0F261E] placeholder-[#0F261E]/40 focus:ring-2 focus:ring-[#D97706]/20 focus:border-[#D97706]/30 outline-none transition-all"
           />
         </div>
       </div>
 
       {/* FILTERS with direct links to dedicated recipe pages */}
-      <div className="sticky top-0 z-30 bg-[#F9F9F7]/95 backdrop-blur-md py-3 md:py-4 px-4 md:px-6 mb-8 border-b border-botanik-green/5 overflow-x-auto whitespace-nowrap scrollbar-hide">
+      <div className="sticky top-0 z-30 bg-[#F9F9F7]/95 backdrop-blur-md py-3 md:py-4 px-4 md:px-6 mb-8 border-b border-[#0F261E]/5 overflow-x-auto whitespace-nowrap scrollbar-hide">
         <div className="flex flex-wrap gap-2 items-center justify-between">
           <div className="flex flex-wrap gap-2 items-center">
             {[
-              { id: 'all', label: t.filters.all, icon: Leaf, count: counts.all, onClick: () => { setActiveFilter('all'); setSearchQuery(''); } },
-              { id: 'therapeutic', label: "Recettes Phytothérapie", icon: Activity, count: 56, onClick: () => onNavigate('phytotherapie-reset') },
-              { id: 'cosmetic', label: "Soins Cosmétiques", icon: Sparkles, count: 48, onClick: () => onNavigate('cosmetiques') },
-              { id: 'culinary', label: "Gastronomie Botanique", icon: ChefHat, count: 32, onClick: () => onNavigate('culinaire') }
+              { id: 'all', label: "Tous", icon: Leaf, count: counts.all, onClick: () => { setActiveFilter('all'); setSearchQuery(''); } },
+              { id: 'therapeutic', label: "Recettes Phytothérapie", icon: Activity, count: counts.therapeutic, onClick: () => setActiveFilter(activeFilter === 'therapeutic' ? 'all' : 'therapeutic') },
+              { id: 'cosmetic', label: "Soins Cosmétiques", icon: Sparkles, count: counts.cosmetic, onClick: () => setActiveFilter(activeFilter === 'cosmetic' ? 'all' : 'cosmetic') },
+              { id: 'culinary', label: "Gastronomie Botanique", icon: ChefHat, count: counts.culinary, onClick: () => setActiveFilter(activeFilter === 'culinary' ? 'all' : 'culinary') }
             ].map((f) => (
               <button
                 key={f.id}
                 onClick={f.onClick}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-[10px] md:text-xs font-bold transition-all duration-200 cursor-pointer ${
-                  f.id === 'all' && activeFilter === 'all'
+                  activeFilter === f.id
                     ? 'bg-[#0F261E] text-white shadow-md' 
-                    : 'bg-white text-[#0F261E]/80 border border-[#0F261E]/15 hover:border-[#D97706] hover:text-[#D97706] hover:bg-[#FAF7F2] active:bg-[#D97706] active:text-white'
+                    : 'bg-white text-[#0F261E]/80 border border-[#0F261E]/15 hover:border-[#D97706] hover:text-[#D97706] hover:bg-[#FAF7F2]'
                 }`}
               >
-                <f.icon className={`w-3.5 h-3.5 md:w-4 md:h-4 ${f.id === 'all' && activeFilter === 'all' ? 'text-white' : 'text-[#D97706]'}`} />
+                <f.icon className={`w-3.5 h-3.5 md:w-4 md:h-4 ${activeFilter === f.id ? 'text-white' : 'text-[#D97706]'}`} />
                 <span>{f.label}</span>
-                <span className={`text-[8px] md:text-[10px] px-1.5 py-0.5 rounded-md font-bold ${f.id === 'all' && activeFilter === 'all' ? 'bg-white/20 text-white' : 'bg-[#0F261E]/5 text-[#0F261E]/60'}`}>
+                <span className={`text-[8px] md:text-[10px] px-1.5 py-0.5 rounded-md font-bold ${activeFilter === f.id ? 'bg-white/20 text-white' : 'bg-[#0F261E]/5 text-[#0F261E]/60'}`}>
                   {f.count}
                 </span>
               </button>
@@ -641,26 +745,28 @@ export default function HerbariumContent({
           </div>
 
           {/* Quick shortcuts to dedicated recipe portals */}
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-3 text-xs text-[#0F261E]/70">
             <button
               onClick={() => onNavigate('phytotherapie-reset')}
-              className="text-xs font-bold text-botanik-green hover:text-botanik-orange px-3 py-1.5 rounded-lg bg-botanik-green/5 hover:bg-botanik-green/10 transition-colors flex items-center gap-1.5 cursor-pointer"
+              className="hover:text-[#D97706] transition-colors flex items-center gap-1.5 cursor-pointer font-medium"
             >
-              <Activity className="w-3.5 h-3.5 text-botanik-orange" />
+              <Activity className="w-3.5 h-3.5 text-[#D97706]" />
               <span>56 Recettes Phytothérapie</span>
             </button>
+            <span className="text-[#0F261E]/20">•</span>
             <button
               onClick={() => onNavigate('cosmetiques')}
-              className="text-xs font-bold text-botanik-green hover:text-botanik-orange px-3 py-1.5 rounded-lg bg-botanik-green/5 hover:bg-botanik-green/10 transition-colors flex items-center gap-1.5 cursor-pointer"
+              className="hover:text-[#D97706] transition-colors flex items-center gap-1.5 cursor-pointer font-medium"
             >
-              <Sparkles className="w-3.5 h-3.5 text-botanik-orange" />
+              <Sparkles className="w-3.5 h-3.5 text-[#D97706]" />
               <span>Soins Cosmétiques</span>
             </button>
+            <span className="text-[#0F261E]/20">•</span>
             <button
               onClick={() => onNavigate('culinaire')}
-              className="text-xs font-bold text-botanik-green hover:text-botanik-orange px-3 py-1.5 rounded-lg bg-botanik-green/5 hover:bg-botanik-green/10 transition-colors flex items-center gap-1.5 cursor-pointer"
+              className="hover:text-[#D97706] transition-colors flex items-center gap-1.5 cursor-pointer font-medium"
             >
-              <ChefHat className="w-3.5 h-3.5 text-botanik-orange" />
+              <ChefHat className="w-3.5 h-3.5 text-[#D97706]" />
               <span>Gastronomie Botanique</span>
             </button>
           </div>
@@ -736,11 +842,9 @@ export default function HerbariumContent({
       {/* GRID VIEW */}
       <div className="px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredDirectory.map((plant) => {
-            // Locking logic: 4 free recipes per category based on global order
-            const categoryItems = unifiedBotanicalDatabase.filter(p => p.source === plant.source);
-            const itemIndexInCategory = categoryItems.findIndex(p => p.id === plant.id);
-            const isLocked = !isPremium && itemIndexInCategory >= 10;
+          {filteredDirectory.map((plant, index) => {
+            // Locking logic: first 9 items are free discovery, all subsequent items are locked without active subscription
+            const isLocked = !isPremium && index >= 9;
             
             const originalId = plant.id.split('-').slice(1).join('-');
             const therapeuticData = plant.source === 'therapeutic' ? plantsDatabase.find(p => p.plant_id === originalId) : null;
@@ -765,77 +869,79 @@ export default function HerbariumContent({
               <div 
                 key={plant.id} 
                 onClick={() => isLocked ? onRequirePremium?.() : handlePlantClick(plant)}
-                className="bg-white rounded-[40px] border border-botanik-green/5 p-8 hover:shadow-xl transition-all duration-500 group cursor-pointer flex flex-col h-full relative overflow-hidden"
+                className="bg-white rounded-[36px] md:rounded-[40px] border border-[#0F261E]/10 p-7 md:p-8 hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col h-full relative overflow-hidden"
               >
-                {isLocked && (
-                  <div className="absolute inset-0 bg-white/60 backdrop-blur-[2px] z-10 flex flex-col items-center justify-center p-6 text-center">
-                    <div className="w-12 h-12 bg-botanik-green rounded-2xl flex items-center justify-center mb-4 shadow-lg">
-                      <Lock className="w-6 h-6 text-white" />
+                {/* Content Container (Blurred if locked) */}
+                <div className={`flex flex-col h-full ${isLocked ? 'filter blur-[3px] opacity-40 select-none pointer-events-none' : ''}`}>
+                  {/* Category Badge & Actions */}
+                  <div className="flex items-center justify-between mb-6">
+                    <span 
+                      className="px-3.5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest text-white shadow-xs border border-white/10"
+                      style={{ backgroundColor: '#0F261E', color: '#ffffff' }}
+                    >
+                      {displayFamily}
+                    </span>
+                    <div className="flex items-center gap-2">
+                      {plant.source === 'therapeutic' && (
+                        <button 
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            const originalId = plant.id.split('-').slice(1).join('-');
+                            onToggleFavorite?.(originalId);
+                          }}
+                          className={`p-2 rounded-full transition-all duration-200 cursor-pointer ${
+                            favorites.includes(plant.id.split('-').slice(1).join('-')) 
+                              ? 'text-[#D97706] bg-[#D97706]/15 hover:bg-[#D97706]/25 active:bg-[#D97706] active:text-white' 
+                              : 'text-[#0F261E]/30 hover:text-[#D97706] hover:bg-[#D97706]/10 active:bg-[#D97706] active:text-white'
+                          }`}
+                        >
+                          <Star className={`w-4 h-4 ${favorites.includes(plant.id.split('-').slice(1).join('-')) ? 'fill-[#D97706]' : ''}`} />
+                        </button>
+                      )}
+                      <div className="w-8 h-8 rounded-full bg-[#0F261E]/5 flex items-center justify-center text-[#0F261E] group-hover:bg-[#D97706] group-hover:text-white active:bg-[#D97706] transition-all">
+                        <ChevronRight className="w-4 h-4" />
+                      </div>
                     </div>
-                    <p className="text-sm font-bold uppercase tracking-widest text-botanik-green mb-1">{t.card.premium_access}</p>
-                    <p className="text-[10px] text-botanik-green/60 font-medium">{t.card.subscribe}</p>
+                  </div>
+
+                  <div className="mb-4">
+                    <h3 className="text-xl md:text-2xl font-bold text-[#0F261E] group-hover:text-[#D97706] transition-colors duration-300">
+                      {displayName}
+                    </h3>
+                    {plant.latinName && (
+                      <p className="text-xs italic text-[#0F261E]/50 font-medium mt-1">{plant.latinName}</p>
+                    )}
+                  </div>
+
+                  <p className="text-sm text-[#0F261E]/70 leading-relaxed mb-8 flex-grow line-clamp-3">
+                    {displayDescription}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {displayTags.slice(0, 3).map(tag => (
+                      <span key={tag} className="text-[9px] font-bold px-2.5 py-1 bg-[#D97706]/10 rounded-md text-[#D97706] uppercase tracking-wider">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Lock Overlay when not subscribed */}
+                {isLocked && (
+                  <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px] z-10 flex flex-col items-center justify-center p-6 text-center select-none cursor-pointer">
+                    <div className="w-12 h-12 bg-white rounded-2xl border border-[#0F261E]/10 shadow-md flex items-center justify-center mb-3">
+                      <Lock className="w-5 h-5 text-[#0F261E]" />
+                    </div>
+                    <p className="text-xs md:text-sm font-black uppercase tracking-widest text-[#0F261E] mb-1">
+                      ACCÈS PREMIUM
+                    </p>
+                    <p className="text-[10px] md:text-xs text-[#0F261E]/60 font-medium">
+                      Abonnez-vous pour débloquer
+                    </p>
                   </div>
                 )}
-                {/* Category Badge */}
-                <div className="flex items-center justify-between mb-6">
-                  <span 
-                    className="px-3.5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest text-white shadow-xs border border-white/10"
-                    style={{ backgroundColor: '#0F261E', color: '#ffffff' }}
-                  >
-                    {displayFamily}
-                  </span>
-                  <div className="flex items-center gap-2">
-                    {plant.source === 'therapeutic' && (
-                      <button 
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          const originalId = plant.id.split('-').slice(1).join('-');
-                          onToggleFavorite?.(originalId);
-                        }}
-                        className={`p-2 rounded-full transition-all duration-200 cursor-pointer ${
-                          favorites.includes(plant.id.split('-').slice(1).join('-')) 
-                            ? 'text-[#D97706] bg-[#D97706]/15 hover:bg-[#D97706]/25 active:bg-[#D97706] active:text-white' 
-                            : 'text-[#0F261E]/30 hover:text-[#D97706] hover:bg-[#D97706]/10 active:bg-[#D97706] active:text-white'
-                        }`}
-                      >
-                        <Star className={`w-4 h-4 ${favorites.includes(plant.id.split('-').slice(1).join('-')) ? 'fill-[#D97706]' : ''}`} />
-                      </button>
-                    )}
-                    <div className="w-8 h-8 rounded-full bg-[#0F261E]/5 flex items-center justify-center text-[#0F261E] group-hover:bg-[#D97706] group-hover:text-white active:bg-[#D97706] transition-all">
-                      <ChevronRight className="w-4 h-4" />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mb-4">
-                  <h3 className="text-xl md:text-2xl font-bold text-botanik-green group-hover:text-botanik-orange transition-colors duration-300">
-                    {displayName}
-                  </h3>
-                  {plant.latinName && (
-                    <p className="text-xs italic text-botanik-green/40 mt-1">{plant.latinName}</p>
-                  )}
-                </div>
-
-                <p className="text-sm text-botanik-green/60 leading-relaxed mb-8 flex-grow line-clamp-3">
-                  {displayDescription}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {displayTags.slice(0, 3).map(tag => (
-                    <span key={tag} className="text-[9px] font-bold px-2 py-1 bg-botanik-orange/10 rounded-md text-botanik-orange uppercase tracking-wider">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Decorative background icon */}
-                <div className="absolute -bottom-2 -right-2 opacity-[0.03] group-hover:scale-110 group-hover:opacity-[0.05] transition-all duration-700">
-                  {plant.source === 'therapeutic' && <Activity className="w-3.5 h-3.5" />}
-                  {plant.source === 'culinary' && <ChefHat className="w-3.5 h-3.5" />}
-                  {plant.source === 'cosmetic' && <Sparkles className="w-3.5 h-3.5" />}
-                </div>
               </div>
-            )
+            );
           })}
         </div>
       </div>

@@ -83,3 +83,5 @@ export const PaymentBadges: React.FC<{ className?: string }> = ({ className = ""
     </div>
   );
 };
+
+export default PaymentBadges;

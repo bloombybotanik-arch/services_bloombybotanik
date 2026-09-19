@@ -18,6 +18,8 @@ const URLs = [
   { path: '/herbier/', expectedStatus: [200] },
   { path: '/recettes/', expectedStatus: [200] },
   { path: '/manifeste/', expectedStatus: [200] },
+  { path: '/lexique/', expectedStatus: [200] },
+  { path: '/lexique', expectedStatus: [200, 301] },
   { path: '/sitemap.xml', expectedStatus: [200] },
   { path: '/robots.txt', expectedStatus: [200] },
   { path: '/feed/google-merchant.xml', expectedStatus: [200] },

@@ -17,6 +17,7 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import { Language } from './translations';
+import { TooltipLexique } from './components/TooltipLexique';
 
 interface ManifesteContentProps {
   onBack: () => void;
@@ -142,7 +143,7 @@ export default function ManifesteContent({ onBack, onNavigate, lang }: Manifeste
                   Le premier problème n'est pas l'outil. C'est le manque de connaissance.
                 </p>
                 <p>
-                  C'est pourquoi Bloom by BotaniK a construit un <strong>Herbier Scientifique</strong> : chaque plante y est documentée avec ses parties utilisables, ses actifs clés, sa polarité (hydrosoluble ou liposoluble), ses synergies et ses précautions. Avant d'extraire, il faut comprendre.
+                  C'est pourquoi Bloom by BotaniK a construit un <strong>Herbier Scientifique</strong> : chaque plante y est documentée avec ses parties utilisables, ses actifs clés, sa polarité (<TooltipLexique terme="hydrosoluble">hydrosoluble</TooltipLexique> ou liposoluble), ses <TooltipLexique terme="synergie">synergies</TooltipLexique> et ses précautions. Avant d'extraire, il faut comprendre.
                 </p>
                 <div className="pt-2">
                   <button
@@ -229,10 +230,10 @@ export default function ManifesteContent({ onBack, onNavigate, lang }: Manifeste
                   </h2>
                 </div>
                 <p>
-                  L'héritage des sagesses anciennes — Médecine Traditionnelle Chinoise, Ayurveda, traditions chamaniques — a compris une vérité fondamentale : la plante n'est pas une molécule, c'est un écosystème. Les phytochimistes modernes l'ont redécouvert sous le nom de <strong>Totum végétal</strong> : la synergie complexe des actifs hydrosolubles et liposolubles.
+                  L'héritage des sagesses anciennes — Médecine Traditionnelle Chinoise, Ayurveda, traditions chamaniques — a compris une vérité fondamentale : la plante n'est pas une molécule, c'est un écosystème. Les phytochimistes modernes l'ont redécouvert sous le nom de <strong><TooltipLexique terme="totum">Totum végétal</TooltipLexique></strong> : la <TooltipLexique terme="synergie">synergie</TooltipLexique> complexe des actifs hydrosolubles et liposolubles.
                 </p>
                 <p>
-                  <strong>BloomLab</strong> a été conçu pour faire sauter les 3 verrous des méthodes traditionnelles. Notre extracteur de précision orchestre des cycles thermiques au demi-degré près et permet l'<strong>extraction séquentielle A/B</strong> :
+                  <strong>BloomLab</strong> a été conçu pour faire sauter les 3 verrous des méthodes traditionnelles. Notre extracteur de précision orchestre des cycles thermiques au demi-degré près et permet l'<strong><TooltipLexique terme="sequencage-ab">extraction séquentielle A/B</TooltipLexique></strong> :
                 </p>
 
                 {/* Tableau Séquentiel A/B */}

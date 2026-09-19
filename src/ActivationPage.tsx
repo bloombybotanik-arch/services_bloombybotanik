@@ -8,9 +8,10 @@ interface ActivationPageProps {
   userId: string | null;
   onSuccess: () => void;
   lang: Language;
+  onRequireAuth?: () => void;
 }
 
-export default function ActivationPage({ userId, onSuccess, lang }: ActivationPageProps) {
+export default function ActivationPage({ userId, onSuccess, lang, onRequireAuth }: ActivationPageProps) {
   const t = translations[lang].activation;
   const [file, setFile] = useState<File | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
@@ -32,7 +33,14 @@ export default function ActivationPage({ userId, onSuccess, lang }: ActivationPa
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!file || !userId) return;
+    if (!file) return;
+
+    if (!userId) {
+      if (onRequireAuth) {
+        onRequireAuth();
+      }
+      return;
+    }
 
     setLoading(true);
     setStatus('idle');
@@ -185,6 +193,11 @@ export default function ActivationPage({ userId, onSuccess, lang }: ActivationPa
                   <>
                     <Loader2 className="w-5 h-5 animate-spin" />
                     {t.form.loading}
+                  </>
+                ) : !userId ? (
+                  <>
+                    <span>{lang === 'fr' ? "Se connecter et activer mon accès" : "Log in and activate"}</span>
+                    <ChevronRight className="w-5 h-5" />
                   </>
                 ) : (
                   <>

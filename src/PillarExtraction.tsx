@@ -4,6 +4,7 @@ import { FlaskConical, Thermometer, Clock, Droplets, Leaf, ShieldCheck, ChevronR
 import { Language, translations } from './translations';
 import { OptimizedImage } from './components/OptimizedImage';
 import ExtractionCalculator from './components/ExtractionCalculator';
+import { TooltipLexique } from './components/TooltipLexique';
 
 const bloomLabImg = "https://images.unsplash.com/photo-1611078767398-fcfe88fdb728?auto=format&fit=crop&w=1200&q=80";
 
@@ -52,16 +53,16 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
               <>Botanical extraction: a complete guide to methods, solvents and parameters</>
             )}
           </motion.h1>
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="text-lg md:text-xl text-white/90 leading-relaxed mb-10 max-w-3xl mx-auto font-medium"
           >
             {isFR 
-              ? "Infusion, décoction, macération, extraction séquentielle : comparez les méthodes, choisissez le bon solvant et maîtrisez température et agitation pour libérer le Totum végétal."
+              ? <>Infusion, décoction, macération, <TooltipLexique terme="sequencage-ab">extraction séquentielle</TooltipLexique> : comparez les méthodes, choisissez le bon solvant et maîtrisez température et agitation pour libérer le <TooltipLexique terme="totum">Totum</TooltipLexique> végétal.</>
               : "Infusion, decoction, maceration, sequential extraction: compare methods, choose the right solvent and master temperature and agitation to unlock the botanical Totum."}
-          </motion.p>
+          </motion.div>
         </div>
       </section>
 
@@ -136,7 +137,7 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
             </h3>
             <p className="text-base leading-relaxed" style={{ color: '#1C3F34', opacity: 0.85 }}>
               {isFR 
-                ? "L'infusion classique consiste à verser de l'eau chaude sur une plante et à laisser reposer. Si elle est agréable et accessible, elle présente deux limites majeures : l'eau bouillante détruit les fractions thermolabiles fragiles, et l'absence d'agitation continue crée une couche de saturation autour des feuilles, limitant le rendement d'extraction."
+                ? <>L'infusion classique consiste à verser de l'eau chaude sur une plante et à laisser reposer. Si elle est agréable et accessible, elle présente deux limites majeures : l'eau bouillante détruit les fractions <TooltipLexique terme="thermolabile">thermolabiles</TooltipLexique> fragiles, et l'absence d'agitation continue crée une couche de saturation autour des feuilles, limitant le rendement d'extraction.</>
                 : "Classic infusion pours boiling water over a plant. While traditional, boiling water denatures fragile compounds, and the absence of agitation limits molecular transfer."}
             </p>
           </div>
@@ -169,7 +170,7 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
             </h3>
             <p className="text-base leading-relaxed" style={{ color: '#1C3F34', opacity: 0.85 }}>
               {isFR 
-                ? "Le totum désigne l'ensemble des substances actives et secondaires contenues dans le végétal vivant, agissant en synergie naturelle. Pour "
+                ? <>Le <TooltipLexique terme="totum">totum</TooltipLexique> désigne l'ensemble des substances actives et secondaires contenues dans le végétal vivant, agissant en <TooltipLexique terme="synergie">synergie</TooltipLexique> naturelle. Pour </>
                 : "The totum represents all active compounds acting in synergy. To "}
               <button 
                 onClick={() => onNavigate('totum-vegetal')}
@@ -201,7 +202,7 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
             </h3>
             <p className="text-base leading-relaxed" style={{ color: '#1C3F34', opacity: 0.85 }}>
               {isFR 
-                ? "La Phase A mobilise des solvants à polarité élevée. L'eau déminéralisée ou filtrée extrait les tanins, les polyphénols hydrosolubles et les mucilages. La glycérine végétale, solvant doux et émollient, capture les flavonoïdes tout en stabilisant la préparation dans le temps."
+                ? <>La Phase A mobilise des solvants à polarité élevée. L'eau déminéralisée ou filtrée extrait les tanins, les <TooltipLexique terme="polyphenols">polyphénols</TooltipLexique> <TooltipLexique terme="hydrosoluble">hydrosolubles</TooltipLexique> et les mucilages. La glycérine végétale, solvant doux et émollient, capture les flavonoïdes tout en stabilisant la préparation dans le temps.</>
                 : "Phase A uses high polarity solvents such as filtered water or vegetable glycerin."}
             </p>
           </div>

@@ -84,6 +84,7 @@ const BASE_ROUTES = [
   '/mentions-legales/',
   '/retour-et-remboursement/',
   '/questions-frequentes/',
+  '/lexique/',
   '/methode-infusion-botanique-precision/',
   '/totum-vegetal-definition/',
   '/solvants-extraction-botanique/',

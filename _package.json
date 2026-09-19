@@ -1,4 +1,15 @@
 {
+  "name": "Bloom by BotaniK",
+  "icons": [
+    { "src": "/fav/favicon-48.png",  "sizes": "48x48",  "type": "image/png" },
+    { "src": "/fav/favicon-96.png",  "sizes": "96x96",  "type": "image/png" },
+    { "src": "/fav/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/fav/favicon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/fav/favicon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "theme_color": "#0F261E",
+  "background_color": "#F6F2EA"
+ }
   "name": "react-example",
   "private": true,
   "version": "0.0.0",
@@ -8,33 +19,51 @@
     "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
     "start": "node dist/server.cjs",
     "clean": "rm -rf dist",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "prerender": "node scripts/prerender.mjs",
+    "smoke-test": "node scripts/smoke-test.mjs"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",
+    "@google/generative-ai": "^0.24.1",
+    "@paypal/react-paypal-js": "^10.4.0",
+    "@stripe/react-stripe-js": "^6.8.2",
+    "@stripe/stripe-js": "^9.14.0",
     "@tailwindcss/vite": "^4.1.14",
     "@types/multer": "^2.2.0",
     "@vitejs/plugin-react": "^5.0.4",
+    "chart.js": "^4.5.1",
     "cors": "^2.8.6",
     "dotenv": "^17.2.3",
     "esbuild": "^0.28.1",
     "express": "^4.21.2",
     "firebase": "^12.16.0",
     "firebase-admin": "^14.2.0",
+    "jspdf": "^4.2.1",
     "lucide-react": "^0.546.0",
     "motion": "^12.23.24",
     "multer": "^2.2.0",
+    "node-fetch": "2.7.0",
+    "nodemailer": "^9.0.5",
     "react": "^19.0.0",
+    "react-chartjs-2": "^5.3.1",
     "react-dom": "^19.0.0",
+    "stripe": "^22.5.0",
+    "uuid": "^11.1.1",
     "vite": "^6.2.0"
   },
   "devDependencies": {
+    "@types/express": "^4.17.21",
     "@types/node": "^22.14.0",
+    "@types/nodemailer": "^8.0.1",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
     "autoprefixer": "^10.4.21",
+    "http-server": "^14.1.1",
+    "puppeteer": "^23.9.0",
     "tailwindcss": "^4.1.14",
     "tsx": "^4.21.0",
     "typescript": "~5.8.2",
-    "vite": "^6.2.0",
-    "@types/express": "^4.17.21"
+    "vite": "^6.2.0"
   }
 }

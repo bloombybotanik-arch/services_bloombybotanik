@@ -1,186 +1,157 @@
 import React from 'react';
-import { Youtube, Instagram, Facebook, Pin as Pinterest, Music2 as TikTok } from 'lucide-react';
+import { Youtube, Instagram, Facebook } from 'lucide-react';
 import { Language, translations } from '../translations';
 import { VIEW_PATHS } from '../types';
+import { BloomLogo } from './ui/BloomLogo';
+
+/* Icônes marque auto-hébergées (paths Simple Icons) — zéro CDN externe */
+const PinterestIcon = ({ className = '' }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.623.024 12.017.024z" />
+  </svg>
+);
+const TikTokIcon = ({ className = '' }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+  </svg>
+);
 
 const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId?: string, type?: any) => void, lang?: Language }) => {
   const t = translations[lang];
-  
+  const [email, setEmail] = React.useState('');
+  const [subState, setSubState] = React.useState<'idle' | 'ok' | 'error'>('idle');
+
   const socialLinks = [
     { icon: Youtube, href: 'https://www.youtube.com/@BloomByBotanik', label: 'YouTube' },
-    {
-      customIcon: <img src="https://cdn.simpleicons.org/pinterest/white" className="w-5 h-5 opacity-40 group-hover:opacity-100 transition-all" alt="Pinterest" />,
-      href: 'https://fr.pinterest.com/bloombybotanik',
-      label: 'Pinterest'
-    },
+    { icon: PinterestIcon, href: 'https://fr.pinterest.com/bloombybotanik', label: 'Pinterest' },
     { icon: Instagram, href: 'https://www.instagram.com/bloombybotanik/', label: 'Instagram' },
     { icon: Facebook, href: 'https://www.facebook.com/profile.php?id=61577892110122', label: 'Facebook' },
-    {
-      customIcon: <img src="https://cdn.simpleicons.org/tiktok/white" className="w-5 h-5 opacity-40 group-hover:opacity-100 transition-all" alt="TikTok" />,
-      href: 'https://www.tiktok.com/@bloombybotanik',
-      label: 'TikTok'
-    },
+    { icon: TikTokIcon, href: 'https://www.tiktok.com/@bloombybotanik', label: 'TikTok' },
   ];
 
-  const FooterGroup = ({ title, children }: { title: string, children: React.ReactNode }) => (
-    <div className="flex flex-col gap-6">
-      <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40">{title}</h4>
-      <ul className="flex flex-col gap-3">
-        {children}
-      </ul>
-    </div>
+  /* Lien interne crawlable (SEO) + navigation SPA */
+  const NavLink = ({ view, param, children }: { view: string; param?: string; children: React.ReactNode }) => (
+    <a
+      href={(VIEW_PATHS as Record<string, string>)[view] ?? '#'}
+      onClick={(e) => { e.preventDefault(); onNavigate(view, param); }}
+      className="hover:text-white transition-colors"
+    >
+      {children}
+    </a>
   );
 
-  const FooterLink = ({ onClick, label, id }: { onClick: () => void, label: string, id?: string }) => (
-    <li>
-      <a 
-        href={id ? VIEW_PATHS[id as keyof typeof VIEW_PATHS] || '#' : '#'}
-        onClick={(e) => {
-          e.preventDefault();
-          onClick();
-        }}
-        className="text-sm text-white/60 hover:text-botanik-orange transition-colors text-left py-1 inline-flex items-center min-h-[36px] sm:min-h-0"
-      >
-        {label}
-      </a>
-    </li>
-  );
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const res = await fetch('/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, source: 'footer' }),
+      });
+      setSubState(res.ok ? 'ok' : 'error');
+      if (res.ok) setEmail('');
+    } catch {
+      setSubState('error');
+    }
+  };
 
   return (
-    <footer className="bg-[#0F261E] text-[#F9F9F7] border-t border-white/5 selection:bg-botanik-orange/30 w-full">
-      {/* Upper Footer: Main Content */}
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 md:px-12 lg:px-24 py-10 sm:py-12 lg:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-14 lg:gap-24">
-          
-          {/* Column 1: Brand & Mantra */}
-          <div className="lg:col-span-5 space-y-8 sm:space-y-10">
-            <div
-              className="flex items-center gap-4 cursor-pointer group/f-logo w-fit"
-              onClick={() => onNavigate('home')}
+    <footer className="bg-[#0F261E] text-white py-8 md:py-10 lg:py-16 px-4 sm:px-6 md:px-8 lg:px-12 mt-12 md:mt-16 lg:mt-24 border-t border-white/10">
+      <div className="max-w-[1200px] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-5 lg:gap-10 mb-8 md:mb-10">
+          {/* Brand & Mission */}
+          <div className="col-span-1 sm:col-span-2 md:col-span-2">
+            <a
+              href="/"
+              className="flex items-center gap-2.5 sm:gap-3 md:gap-4 mb-4 md:mb-4 lg:mb-6 cursor-pointer group/footer-logo w-fit notranslate text-white hover:text-[#D97706] transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate('indexbis');
+              }}
+              translate="no"
+              id="footer-brand-logo-link"
+              aria-label="Bloom by BotaniK - Accueil"
             >
-              <img 
-                src="/assets/images/logo_sidebar_1784886108085.png" 
-                alt="Bloom by BotaniK" 
-                className="h-10 sm:h-12 w-auto"
-              />
-              <div className="ml-2 sm:ml-3 font-semibold tracking-wide flex flex-col leading-tight text-[#F9F9F7]">
-                <span className="text-base sm:text-lg">Bloom</span>
-                <span className="text-xs sm:text-sm">by BotaniK</span>
+              <BloomLogo variant="footer" className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 flex-shrink-0" />
+              <div className="flex flex-col leading-tight uppercase text-white group-hover/footer-logo:text-[#D97706] transition-colors">
+                <span className="text-[9px] md:text-[10px] lg:text-[12px] font-bold tracking-[0.22em] opacity-80">Bloom by</span>
+                <span className="text-lg md:text-xl lg:text-2xl font-black tracking-widest">BotaniK</span>
               </div>
-            </div>
+            </a>
+            <p className="text-white/60 text-xs md:text-xs lg:text-sm leading-relaxed max-w-md mb-4 md:mb-4 lg:mb-6">
+              {t.footer.description}
+            </p>
 
-              <h2 className="text-base md:text-lg font-extrabold leading-snug text-white/90">
-                {lang === 'fr' ? "L'Ingénierie au service du vivant." : lang === 'de' ? "Ingenieurwesen für das Leben." : "Engineering for life."}
-              </h2>
-              <p className="text-sm text-white/50 leading-relaxed max-w-sm">
-                {lang === 'fr' 
-                  ? "Bloom by BotaniK réconcilie l'herboristerie ancestrale et l'ingénierie moléculaire de pointe pour libérer le plein potentiel végétal."
-                  : lang === 'de'
-                  ? "Bloom by BotaniK vereint traditionelle Kräuterkunde mit modernster Molekulartechnik, um das volle pflanzliche Potenzial freizusetzen."
-                  : "Bloom by BotaniK reconciles ancestral herbalism with cutting-edge molecular engineering to release full botanical potential."
-                }
-              </p>
+            {/* Capture email — branchée sur l'API existante */}
+            <form onSubmit={handleSubscribe} className="flex gap-2 max-w-md mb-4 md:mb-4 lg:mb-6">
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder={lang === 'fr' ? 'Votre email — protocole du dimanche' : 'Your email — Sunday protocol'}
+                className="flex-1 px-3 py-2 md:px-3.5 md:py-2 rounded-xl bg-white/10 border border-white/15 text-xs md:text-xs lg:text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-[#D97706]"
+              />
+              <button type="submit" className="px-3.5 py-2 md:px-4 md:py-2 rounded-xl bg-[#D97706] hover:bg-[#b45309] text-white text-xs md:text-xs lg:text-sm font-bold transition-colors cursor-pointer shrink-0">
+                {lang === 'fr' ? "S'inscrire" : 'Subscribe'}
+              </button>
+            </form>
+            {subState === 'ok' && <p className="text-emerald-300 text-xs mb-3">✓ Merci ! Confirme via l'email reçu (double opt-in).</p>}
+            {subState === 'error' && <p className="text-rose-300 text-xs mb-3">Une erreur est survenue. Réessayez.</p>}
 
-            <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
+            <div className="flex gap-4 md:gap-4 lg:gap-6">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/30 hover:text-white transition-colors p-2 rounded-lg -m-2 min-w-[40px] min-h-[40px] flex items-center justify-center"
+                  rel="me noopener noreferrer"
+                  className="text-white/40 hover:text-[#D97706] transition-colors"
                   aria-label={social.label}
                 >
-                  {social.customIcon ? social.customIcon : <social.icon className="w-5 h-5" />}
+                  <social.icon className="w-5 h-5 md:w-5 md:h-5 lg:w-6 lg:h-6" />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Column 2: Navigation Groups */}
-          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 lg:gap-8">
-            <FooterGroup title={t.nav.decouvrir}>
-              <FooterLink id="machine" label={t.nav.decouvrir_sub.how_it_works} onClick={() => onNavigate('machine')} />
-              <FooterLink id="herbier" label={t.nav.decouvrir_sub.herbier} onClick={() => onNavigate('herbier')} />
-              <FooterLink id="recettes" label={t.nav.decouvrir_sub.recettes} onClick={() => onNavigate('recettes')} />
-            </FooterGroup>
+          {/* Navigation (liens crawlables) */}
+          <div>
+            <h4 className="text-[11px] md:text-xs uppercase tracking-widest font-bold mb-3 md:mb-3 lg:mb-5 text-[#F5F3EB]">Navigation</h4>
+            <ul className="space-y-2 md:space-y-1.5 lg:space-y-3 text-xs md:text-xs lg:text-sm text-white/60">
+              <li><NavLink view="machine">La machine & niveaux</NavLink></li>
+              <li><NavLink view="boutique">{t.nav.shop}</NavLink></li>
+              <li><NavLink view="herbier">{t.nav.herbarium}</NavLink></li>
+              <li><NavLink view="culinaire">{t.nav.culinary}</NavLink></li>
+              <li><NavLink view="cosmetiques">Cosmétique</NavLink></li>
+              <li><NavLink view="phytotherapie-reset">{t.nav.guide}</NavLink></li>
+              <li><NavLink view="manifeste">Le Manifeste</NavLink></li>
+              <li><NavLink view="lexique">Lexique & preuves</NavLink></li>
+              <li><a href="https://blog.bloombybotanik.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{t.nav.blog}</a></li>
+            </ul>
+          </div>
 
-            <FooterGroup title={t.nav.apprendre}>
-              <FooterLink id="phytotherapie-reset" label={t.nav.apprendre_sub.preparations} onClick={() => onNavigate('phytotherapie-reset')} />
-              <FooterLink id="cosmetiques" label={t.nav.apprendre_sub.cosmetiques} onClick={() => onNavigate('cosmetiques')} />
-              <FooterLink id="library-landing" label={t.nav.apprendre_sub.bibliotheque} onClick={() => onNavigate('library-landing')} />
-              <FooterLink id="faq" label={t.nav.transmission_sub?.faq || "Questions Fréquentes"} onClick={() => onNavigate('faq')} />
-            </FooterGroup>
-
-            <FooterGroup title={t.nav.boutique_nav}>
-              <FooterLink id="boutique" label={lang === 'fr' ? "Toute la Boutique" : "All Products"} onClick={() => onNavigate('boutique')} />
-              <FooterLink id="machine" label={t.nav.boutique_sub.bloomlab} onClick={() => onNavigate('machine')} />
-              <FooterLink id="boutique-kits" label={t.nav.boutique_sub.kits} onClick={() => onNavigate('boutique', 'kits')} />
-              <FooterLink id="premium-info" label={t.nav.boutique_sub.abonnement} onClick={() => onNavigate('premium-info')} />
-            </FooterGroup>
-
-            <FooterGroup title={t.nav.marque}>
-              <FooterLink id="manifeste" label={t.nav.marque_sub.manifeste} onClick={() => onNavigate('manifeste')} />
-              <FooterLink id="contact" label={t.nav.marque_sub.contact} onClick={() => onNavigate('contact')} />
-              <FooterLink id="account" label={t.nav.compte_sub.espace} onClick={() => onNavigate('account')} />
-              <FooterLink id="legal" label={lang === 'fr' ? "Mentions Légales" : "Legal"} onClick={() => onNavigate('legal', undefined, 'mentions')} />
-            </FooterGroup>
+          {/* Légal */}
+          <div>
+            <h4 className="text-[11px] md:text-xs uppercase tracking-widest font-bold mb-3 md:mb-3 lg:mb-5 text-[#F5F3EB]">Informations Légales</h4>
+            <ul className="space-y-2 md:space-y-1.5 lg:space-y-3 text-xs md:text-xs lg:text-sm text-white/60">
+              <li><button onClick={() => onNavigate('legal', undefined, 'mentions')} className="hover:text-white transition-colors text-left">{t.footer.legal}</button></li>
+              <li><button onClick={() => onNavigate('legal', undefined, 'cgv')} className="hover:text-white transition-colors text-left">{t.footer.cgv}</button></li>
+              <li><button onClick={() => onNavigate('legal', undefined, 'cgu')} className="hover:text-white transition-colors text-left">CGU</button></li>
+              <li><button onClick={() => onNavigate('legal', undefined, 'privacy')} className="hover:text-white transition-colors text-left">{t.footer.privacy}</button></li>
+              <li><button onClick={() => onNavigate('legal', undefined, 'withdrawal')} className="hover:text-white transition-colors text-left">Droit de Rétractation</button></li>
+            </ul>
           </div>
         </div>
-      </div>
 
-      {/* Lower Footer: Regulatory Warning & Copyright */}
-      <div className="border-t border-white/5 bg-black/20">
-        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 md:px-12 lg:px-24 py-8 sm:py-10 space-y-6">
-          <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 text-xs sm:text-xs text-white/70 leading-relaxed text-center sm:text-left">
-            <strong className="text-white font-bold block mb-1.5 uppercase tracking-wider text-[11px] text-[#D97706]">
-              Avertissement réglementaire & Vocation éducative
-            </strong>
-            {lang === 'fr' ? (
-              <p>
-                Les informations, préparations et protocoles présentés sur ce site ont une vocation exclusivement éducative et d'autonomie personnelle. Ils ne constituent en aucun cas un avis médical, ne posent aucun diagnostic et ne remplacent en rien la consultation d'un professionnel de santé qualifié. En cas de pathologie avérée, de traitement en cours, de grossesse ou d'allaitement, demandez conseil à votre médecin avant toute utilisation de plantes médicinales.
-              </p>
-            ) : lang === 'de' ? (
-              <p>
-                Die auf dieser Website präsentierten Informationen, Zubereitungen und Protokolle dienen ausschließlich Bildungszwecken und der persönlichen Eigenverantwortung. Sie stellen in keiner Weise eine medizinische Beratung dar, stellen keine Diagnosen und ersetzen keinesfalls die Konsultation eines qualifizierten Arztes.
-              </p>
-            ) : (
-              <p>
-                The information, preparations and protocols presented on this website are exclusively for educational purposes and personal autonomy. They do not constitute medical advice, provide diagnoses, or replace professional healthcare consultations.
-              </p>
-            )}
-          </div>
-
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-white/40">
-            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 uppercase tracking-[0.15em] text-center sm:text-left">
-              <span>© 2026 Bloom by BotaniK</span>
-              <span className="hidden sm:inline">•</span>
-              <span>Extraction Botanique de Précision & Santé du Terrain</span>
-            </div>
-            <div className="flex items-center gap-6">
-              <a 
-                href="/mentions-legales"
-                onClick={(e) => { e.preventDefault(); onNavigate('legal', undefined, 'mentions'); }}
-                className="hover:text-white transition-colors"
-              >
-                Mentions Légales
-              </a>
-              <a 
-                href="/cgu"
-                onClick={(e) => { e.preventDefault(); onNavigate('legal', undefined, 'cgu'); }}
-                className="hover:text-white transition-colors"
-              >
-                CGV & CGU
-              </a>
-              <a 
-                href="/politique-de-confidentialite"
-                onClick={(e) => { e.preventDefault(); onNavigate('legal', undefined, 'confidentialite'); }}
-                className="hover:text-white transition-colors"
-              >
-                Confidentialité
-              </a>
-            </div>
-          </div>
+        <div className="pt-6 md:pt-6 lg:pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-4 lg:gap-6">
+          <p className="text-[9px] md:text-[10px] uppercase tracking-widest text-white/30 text-center md:text-left">
+            © {new Date().getFullYear()} Bloom by BotaniK — Tous droits réservés
+          </p>
+          <p className="text-[9px] md:text-[10px] uppercase tracking-widest text-white/30 text-center md:text-right">
+            Dispositif d'extraction végétale à usage personnel. Ceci n'est pas un dispositif médical.
+            Contenus éducatifs — ne remplace pas un avis médical.
+          </p>
         </div>
       </div>
     </footer>

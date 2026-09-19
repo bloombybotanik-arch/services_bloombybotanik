@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { FlaskConical, Thermometer, Clock, Droplets, Leaf, ShieldCheck, ChevronRight, BookOpen, Activity, ArrowRight, Check, Compass, Waves, Zap } from 'lucide-react';
 import { Language, translations } from './translations';
 import { OptimizedImage } from './components/OptimizedImage';
+import { TooltipLexique } from './components/TooltipLexique';
 
 const heroImg = "https://images.unsplash.com/photo-1512429234300-00810793630f?auto=format&fit=crop&w=1200&q=80";
 
@@ -58,7 +59,7 @@ export default function PillarAdaptogens({ lang, onNavigate }: { lang: Language,
             Qu'est-ce qu'une plante adaptogène ?
           </h2>
           <p className="text-lg leading-relaxed text-botanik-green/80">
-            Une plante adaptogène augmente la capacité du corps à s'adapter à des facteurs de stress et à favoriser la survie. Elle n'agit pas sur un symptôme précis, mais sur l'ensemble du système pour ramener l'équilibre (homéostasie).
+            Une plante <TooltipLexique terme="adaptogene">adaptogène</TooltipLexique> augmente la capacité du corps à s'adapter à des facteurs de stress et à favoriser la survie. Elle n'agit pas sur un symptôme précis, mais sur l'ensemble du système pour ramener l'équilibre (<TooltipLexique terme="homeostasie">homéostasie</TooltipLexique>).
           </p>
         </section>
 

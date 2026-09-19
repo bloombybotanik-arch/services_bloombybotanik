@@ -219,9 +219,11 @@ export default function CulinarySection({
             {wrapTitle(t.header.subtitle)}
           </span>
         </h1>
-        <p className="text-base md:text-xl text-botanik-green/80 max-w-2xl leading-relaxed">
-          {t.header.description}
-        </p>
+        <div className="text-base md:text-lg text-botanik-green/85 max-w-3xl leading-relaxed space-y-4">
+          {t.header.description.split('\n\n').map((paragraph, idx) => (
+            <p key={idx}>{paragraph}</p>
+          ))}
+        </div>
       </header>
 
       <form onSubmit={handleSearch} className="relative mb-8 md:mb-16">

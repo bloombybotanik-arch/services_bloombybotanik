@@ -29,6 +29,7 @@ import {
   Filler
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import { TooltipLexique } from './components/TooltipLexique';
 
 ChartJS.register(
   CategoryScale,
@@ -210,9 +211,23 @@ export const TotumDefinition = ({ lang, t, onNavigate }: SEOArticleProps) => {
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#D97706_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
         
         <div className="max-w-4xl mx-auto relative z-10 space-y-6 text-center sm:text-left">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-[#D97706] text-xs font-bold uppercase tracking-widest border border-white/15 backdrop-blur-xs">
-            <Compass className="w-3.5 h-3.5" />
-            <span>{isFR ? "Science du Vivant & Souveraineté Botanique" : isDE ? "Wissenschaft des Lebendigen" : "Living Systems & Botanical Sovereignty"}</span>
+          <div className="inline-flex items-start sm:items-center gap-2 px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-white/10 text-[#D97706] text-xs font-bold uppercase tracking-widest border border-white/15 backdrop-blur-xs text-left">
+            <Compass className="w-3.5 h-3.5 shrink-0 mt-0.5 sm:mt-0" />
+            <span className="leading-snug">
+              {isFR ? (
+                <>
+                  <span className="block sm:inline">Science du Vivant &</span>
+                  <span className="block sm:inline sm:ml-1 whitespace-nowrap">Souveraineté Botanique</span>
+                </>
+              ) : isDE ? (
+                <span>Wissenschaft des Lebendigen</span>
+              ) : (
+                <>
+                  <span className="block sm:inline">Living Systems &</span>
+                  <span className="block sm:inline sm:ml-1 whitespace-nowrap">Botanical Sovereignty</span>
+                </>
+              )}
+            </span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
@@ -248,7 +263,7 @@ export const TotumDefinition = ({ lang, t, onNavigate }: SEOArticleProps) => {
           <div className="space-y-4 text-base sm:text-lg text-slate-700 leading-relaxed font-light">
             <p>
               {isFR 
-                ? "Le totum désigne l'ensemble des constituants d'une plante, considérés dans leur globalité et dans leurs interactions possibles, plutôt que réduits à un seul composé isolé. Polyphénols, terpènes, alcaloïdes, fibres, minéraux, huiles essentielles : leur combinaison forme un profil cohérent, qu'aucune molécule seule ne reproduit."
+                ? <>Le <TooltipLexique terme="totum">totum</TooltipLexique> désigne l'ensemble des constituants d'une plante, considérés dans leur globalité et dans leurs interactions possibles, plutôt que réduits à un seul composé isolé. <TooltipLexique terme="polyphenols">Polyphénols</TooltipLexique>, terpènes, alcaloïdes, fibres, minéraux, huiles essentielles : leur combinaison forme un profil cohérent, qu'aucune molécule seule ne reproduit.</>
                 : isDE 
                 ? "Das Totum bezeichnet die Gesamtheit der Bestandteile einer Pflanze, betrachtet in ihrer Ganzheit und in ihren möglichen Wechselwirkungen, anstatt auf eine einzelne isolierte Verbindung reduziert zu werden. Polyphenole, Terpene, Alkaloide, Fasern, Mineralien, ätherische Öle: Ihre Kombination bildet ein kohärentes Profil, das kein Einzelmolekül reproduzieren kann."
                 : "The totum designates the set of all constituents of a plant, considered in their entirety and in their possible interactions, rather than reduced to a single isolated compound. Polyphenols, terpenes, alkaloids, fibers, minerals, essential oils: their combination forms a coherent profile that no single molecule can replicate."}

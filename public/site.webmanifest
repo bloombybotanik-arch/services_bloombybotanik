@@ -1,23 +1,60 @@
 {
-  "name": "Bloom by BotaniK",
+  "id": "/",
+  "name": "Bloom by BotaniK — Extraction botanique de précision",
   "short_name": "Bloom",
-  "description": "Infusion et Extraction Botanique de Précision",
-  "start_url": "/",
+  "description": "L'extracteur botanique BloomLab® : séquençage A/B, totum végétal et protocoles de précision pour vos préparations maison.",
+  "lang": "fr-FR",
+  "dir": "ltr",
+  "start_url": "/?source=pwa",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#0F261E",
-  "theme_color": "#0F261E",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "background_color": "#F9F9F7",
+  "theme_color": "#1C2D14",
+  "categories": ["health", "lifestyle", "shopping"],
   "icons": [
+    { "src": "/icons/icon-48x48.png", "sizes": "48x48", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-72x72.png", "sizes": "72x72", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-96x96.png", "sizes": "96x96", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-144x144.png", "sizes": "144x144", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-256x256.png", "sizes": "256x256", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-384x384.png", "sizes": "384x384", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/maskable-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icons/maskable-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icons/monochrome.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "monochrome" }
+  ],
+  "shortcuts": [
     {
-      "src": "/assets/favicon/favicon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "name": "Boutique",
+      "short_name": "Boutique",
+      "description": "Extracteur BloomLab®, kits et plantes",
+      "url": "/boutique/",
+      "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96", "type": "image/png" }]
     },
     {
-      "src": "/assets/favicon/favicon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "name": "Herbier scientifique",
+      "short_name": "Herbier",
+      "description": "Fiches plantes, polarité et protocoles",
+      "url": "/herbier/",
+      "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96", "type": "image/png" }]
+    },
+    {
+      "name": "Protocole Reset",
+      "short_name": "Reset",
+      "description": "Le parcours homéostasique Bloom",
+      "url": "/phytotherapie-reset/",
+      "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96", "type": "image/png" }]
     }
-  ]
+  ],
+  "screenshots": [
+    { "src": "/images/pwa/screenshot-desktop-1280x720.png", "sizes": "1280x720", "type": "image/png", "form_factor": "wide", "label": "Bloom by BotaniK sur desktop" },
+    { "src": "/images/pwa/screenshot-mobile-750x1334.png", "sizes": "750x1334", "type": "image/png", "form_factor": "narrow", "label": "Bloom by BotaniK sur mobile" }
+  ],
+  "launch_handler": { "client_mode": "navigate-existing" },
+  "prefer_related_applications": false,
+  "related_applications": []
 }

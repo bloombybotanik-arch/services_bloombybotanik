@@ -1,5 +1,5 @@
 
-export type View = 'home' | 'machine' | 'phytotherapie-reset' | 'votre-pratique' | 'parcours' | 'boutique' | 'product-detail' | 'culinaire' | 'cosmetiques' | 'cosmetique-botanique' | 'gastronomie-botanique' | 'library-landing' | 'manifeste' | 'activation' | 'account' | 'legal' | 'chat' | 'cart' | 'checkout' | 'guide' | 'how_it_works' | 'pending' | 'library' | 'herbier' | 'pillar-extraction' | 'guide-complet' | 'qu-est-ce-que-infusion' | 'admin' | 'blog' | 'withdrawal' | 'indexbis' | 'newsletter-preferences' | 'admin-newsletter' | 'terrain' | 'hormese' | 'infuseur-botanique' | 'cgv' | 'cgu' | 'privacy' | 'mentions' | 'returns' | 'recettes' | 'guides' | 'ateliers' | 'herbarium' | 'questions-frequentes' | 'faq' | 'infusion-precision' | 'totum-definition' | 'solvants-extraction' | 'premium-info' | 'decouvrir' | 'comment-ca-marche' | 'recettes-gratuites' | 'apprendre' | 'preparations-avancees' | 'recettes-cosmetiques' | 'bibliotheque' | 'boutique-kits' | 'abonnement' | 'la-marque' | 'contact' | 'extraction-botanique' | 'infusion-botanique' | 'infusion-botanique-maison-comment-ca-marche' | 'huile-infusee' | 'plantes-adaptogenes' | 'totum-vegetal' | 'maceration-plantes' | 'teinture-mere' | 'kits-botaniques' | 'articles';
+export type View = 'home' | 'machine' | 'phytotherapie-reset' | 'votre-pratique' | 'parcours' | 'boutique' | 'product-detail' | 'culinaire' | 'cosmetiques' | 'cosmetique-botanique' | 'gastronomie-botanique' | 'library-landing' | 'manifeste' | 'activation' | 'activate-bloomlab' | 'account' | 'legal' | 'chat' | 'cart' | 'checkout' | 'guide' | 'how_it_works' | 'pending' | 'library' | 'herbier' | 'pillar-extraction' | 'guide-complet' | 'qu-est-ce-que-infusion' | 'admin' | 'blog' | 'withdrawal' | 'indexbis' | 'newsletter-preferences' | 'admin-newsletter' | 'terrain' | 'hormese' | 'infuseur-botanique' | 'cgv' | 'cgu' | 'privacy' | 'mentions' | 'returns' | 'recettes' | 'guides' | 'ateliers' | 'herbarium' | 'questions-frequentes' | 'faq' | 'infusion-precision' | 'totum-definition' | 'solvants-extraction' | 'premium-info' | 'decouvrir' | 'comment-ca-marche' | 'recettes-gratuites' | 'apprendre' | 'preparations-avancees' | 'recettes-cosmetiques' | 'bibliotheque' | 'boutique-kits' | 'abonnement' | 'la-marque' | 'contact' | 'extraction-botanique' | 'infusion-botanique' | 'infusion-botanique-maison-comment-ca-marche' | 'huile-infusee' | 'plantes-adaptogenes' | 'totum-vegetal' | 'maceration-plantes' | 'teinture-mere' | 'kits-botaniques' | 'articles' | 'lexique';
 
 export const VIEW_PATHS: Record<string, string> = {
   home: '/', 
@@ -9,6 +9,7 @@ export const VIEW_PATHS: Record<string, string> = {
   'votre-pratique': '/phytotherapie-reset/',
   'parcours': '/phytotherapie-reset/',
   boutique: '/boutique/', 
+  'product-detail': '/boutique/bloomlab/',
   'boutique-kits': '/boutique/kits/',
   'kits-botaniques': '/kits-botaniques/',
   'abonnement': '/abonnement/',
@@ -17,12 +18,13 @@ export const VIEW_PATHS: Record<string, string> = {
   cosmetiques: '/cosmetique-botanique/',
   'cosmetique-botanique': '/cosmetique-botanique/',
   'gastronomie-botanique': '/gastronomie-botanique/',
-  'library-landing': '/herbier/', 
+  'library-landing': '/bibliotheque/', 
   manifeste: '/manifeste/',
   'la-marque': '/la-marque/',
   contact: '/contact/',
   faq: '/questions-frequentes/',
   activation: '/activation/', 
+  'activate-bloomlab': '/activation/',
   account: '/compte/', 
   legal: '/legal/', 
   chat: '/chat/',
@@ -72,7 +74,8 @@ export const VIEW_PATHS: Record<string, string> = {
   'questions-frequentes': '/questions-frequentes/',
   'infusion-precision': '/infusion-precision/',
   'totum-definition': '/totum-definition/',
-  'solvants-extraction': '/solvants-extraction/'
+  'solvants-extraction': '/solvants-extraction/',
+  'lexique': '/lexique/'
 };
 
 export type SchoolCalendarZone = 'A' | 'B' | 'C' | 'non_precise' | 'hors_france';

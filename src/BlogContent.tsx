@@ -1,6 +1,6 @@
 import React from 'react';
 import { translations, Language } from './translations';
-import { Calendar, User, Tag, ChevronRight, ArrowLeft, Clock } from 'lucide-react';
+import { Calendar, User, Tag, ChevronRight, ArrowLeft, Clock, ExternalLink, Sparkles } from 'lucide-react';
 import { blogPosts } from './data/blogPosts';
 
 export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: Language, onNavigate: (view: any, productId?: string) => void, initialSlug?: string }) {
@@ -223,6 +223,55 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
             </div>
           </article>
         ))}
+
+        {/* Dernière carte : Blog Officiel traitant l'ensemble des sujets */}
+        <a 
+          href="https://blog.bloombybotanik.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="group cursor-pointer bg-gradient-to-br from-[#0F261E] via-[#1C3F34] to-[#0F261E] text-white rounded-[40px] border border-[#D97706]/40 overflow-hidden shadow-sm hover:shadow-2xl hover:border-[#D97706] transition-all duration-500 flex flex-col justify-between"
+        >
+          <div className="aspect-[4/3] overflow-hidden relative bg-[#0F261E]">
+            <img 
+              src="/assets/images/modern_herbalist_shelves_1786699793560.jpg" 
+              alt="Blog Officiel Bloom by BotaniK - Tous les sujets traités" 
+              className="w-full h-full object-cover opacity-50 group-hover:scale-105 group-hover:opacity-60 transition-all duration-700" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0F261E] via-transparent to-black/30" />
+            <div className="absolute top-6 left-6">
+              <span className="inline-flex items-center gap-1.5 bg-[#D97706] text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest shadow-md">
+                <Sparkles className="w-3 h-3" />
+                <span>{lang === 'fr' ? "Plateforme Complète" : lang === 'de' ? "Komplette Plattform" : "Full Platform"}</span>
+              </span>
+            </div>
+          </div>
+          <div className="p-8 flex flex-col flex-1 justify-between">
+            <div>
+              <div className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-[#D97706] mb-4">
+                <Tag className="w-3 h-3" />
+                <span>blog.bloombybotanik.com</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-4 leading-tight group-hover:text-[#D97706] transition-colors">
+                {lang === 'fr' 
+                  ? "Explorez tous nos sujets & dossiers sur blog.bloombybotanik.com" 
+                  : lang === 'de' 
+                  ? "Entdecken Sie alle Themen & Dossiers auf blog.bloombybotanik.com" 
+                  : "Explore all topics & dossiers on blog.bloombybotanik.com"}
+              </h3>
+              <p className="text-sm text-white/80 mb-6 line-clamp-3 leading-relaxed">
+                {lang === 'fr' 
+                  ? "Santé intégrative, pharmacie du vivant, protocoles d'extraction approfondis, retours d'expérience et analyses cliniques : tous les sujets y sont traités sans compromis." 
+                  : lang === 'de' 
+                  ? "Integrative Gesundheit, lebendige Pharmazie, tiefgehende Extraktionsprotokolle und klinische Analysen: alle Themen werden ausführlich behandelt." 
+                  : "Integrative health, plant pharmacy, advanced extraction protocols and clinical analyses: all topics are thoroughly explored on our official blog."}
+              </p>
+            </div>
+            <div className="flex items-center justify-between mt-auto pt-6 border-t border-white/15 text-[#D97706] group-hover:text-white transition-colors">
+              <span className="text-xs font-bold">{lang === 'fr' ? "Accéder à blog.bloombybotanik.com" : lang === 'de' ? "Zu blog.bloombybotanik.com" : "Visit blog.bloombybotanik.com"}</span>
+              <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" />
+            </div>
+          </div>
+        </a>
       </div>
     </div>
   );

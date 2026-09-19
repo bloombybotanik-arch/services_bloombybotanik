@@ -845,7 +845,7 @@ export const translations = {
         badge_alt: "Beauté Totale & Systémique",
         title: "Soin Cosmétique DIY",
         subtitle: "Grade Laboratoire",
-        description: "Formulez vos soins topiques bio avec l'extracteur botanique BloomLab®. Créez vos sérums, baumes et élixirs avec des paramètres de précision ±0,5°C pour une beauté naturelle et souveraine."
+        description: "La frontière entre le soin et le remède était autrefois poreuse. Les femmes préparaient leurs onguents à base de cire d'abeille et d'huiles infusées au millepertuis ou à la calendula. Les cataplasmes d'argile et de plantes apaisaient les peaux irritées. Les baumes à la consoude réparaient les tissus, les sérums à l'ortie tonifiaient le teint. Ce savoir-faire, transmis de mère en fille, de génération en génération, constituait une véritable cosmétique médicinale avant l'heure. Il a été relégué au rang de « secrets de famille » folkloriques, puis progressivement oublié, alors qu'il alliait beauté et santé avec une efficacité que les laboratoires modernes redécouvrent aujourd'hui.\n\nAujourd'hui, Bloom by BotaniK vous invite à renouer avec cette sagesse oubliée. Maîtrisez la formulation de soins topiques bio avec l'extracteur botanique BloomLab®. Créez vos sérums, baumes et élixirs avec des paramètres de précision ±0,5°C, et réintroduisez les plantes médicinales dans votre rituel de beauté quotidien. Redonnez à votre peau les vertus thérapeutiques des plantes, tout en préservant l'intégrité de leurs principes actifs.\n\nFormulez vos soins avec la rigueur d'un laboratoire et la sagesse des anciens."
       },
       filters: {
         search_placeholder: "Rechercher une recette, un besoin, une plante...",
@@ -896,7 +896,7 @@ export const translations = {
         badge_alt: "Extraction de Terpènes Maison",
         title: "Gastronomie Botanique",
         subtitle: "L'Art de l'Infusion Culinaire",
-        description: "Maîtrisez l'infusion botanique et l'extraction de terpènes avec l'extracteur BloomLab®. Réalisez vos huiles, beurres et miel infusés avec une précision professionnelle ±0,5°C."
+        description: "La frontière entre l'aliment et le remède était autrefois poreuse. Les jeunes pousses d'ortie se préparaient en soupe ou en salade pour leurs vertus dépuratives. Le pissenlit se consommait en salade pour « purifier le sang ». Le topinambour, la bardane ou l'oseille faisaient partie de la pharmacopée quotidienne. Cette cuisine médicinale, qui alliait nutrition et prévention, a été reléguée au rang de « recettes de grand-mère » folkloriques, alors qu'elle constituait une véritable médecine nutritionnelle avant l'heure.\n\nAujourd'hui, Bloom by BotaniK vous invite à renouer avec cette sagesse oubliée. Maîtrisez l'infusion botanique et l'extraction de terpènes.\n\nAvec la BloomLab®, la cuisine redevient un acte de santé. La précision de l'extraction séquentielle vous permet de capturer l'intégralité du spectre aromatique et thérapeutique des plantes, sans dénaturer leurs principes actifs. Que vous prépariez une huile infusée au romarin pour vos grillades, un beurre d'ortie pour vos tartines ou un miel au thym pour apaiser les gorges, vous transformez chaque repas en une opportunité de prévention et de bien-être.\n\nRedonnez à votre cuisine ses lettres de noblesse médicinale. Bloom by BotaniK vous guide pas à pas."
       },
       search: {
         placeholder: "Ex: Romarin, Boisé, Miel...",

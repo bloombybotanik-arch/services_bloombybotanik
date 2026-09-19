@@ -21,6 +21,7 @@ import {
   Filter
 } from 'lucide-react';
 import { Language } from './translations';
+import { TooltipLexique } from './components/TooltipLexique';
 
 interface PillarInfusionProps {
   lang: Language;
@@ -188,7 +189,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
 
           <div className="prose prose-slate max-w-none text-[#1C3F34]/90 leading-relaxed space-y-4">
             <p>
-              L’infusion botanique consiste à immerger des matières végétales dans un solvant liquide maintenu à une température donnée pendant une durée précise. L'eau constitue historiquement le solvant le plus universel et accessible : elle dissout efficacement les composés hydrosolubles comme les sels minéraux, les mucilages, certains acides organiques et les tanins.
+              L’infusion botanique consiste à immerger des matières végétales dans un solvant liquide maintenu à une température donnée pendant une durée précise. L'eau constitue historiquement le solvant le plus universel et accessible : elle dissout efficacement les composés <TooltipLexique terme="hydrosoluble">hydrosolubles</TooltipLexique> comme les sels minéraux, les mucilages, certains acides organiques et les tanins.
             </p>
             <p>
               Il convient de distinguer clairement deux méthodes thermiques complémentaires :

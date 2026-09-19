@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { FlaskConical, Droplets, Zap, Info, Calculator, CheckCircle2 } from 'lucide-react';
+import { FlaskConical, Droplets, Zap, Info, Calculator, CheckCircle2, X } from 'lucide-react';
 
-export default function ExtractionCalculator() {
+interface ExtractionCalculatorProps {
+  onClose?: () => void;
+  isModal?: boolean;
+}
+
+export default function ExtractionCalculator({ onClose, isModal = false }: ExtractionCalculatorProps = {}) {
   const [volume, setVolume] = useState<number>(100);
   const [targetDegree, setTargetDegree] = useState<45 | 55 | 60>(45);
 
@@ -25,11 +30,22 @@ export default function ExtractionCalculator() {
 
   return (
     <div 
-      className="rounded-[32px] p-8 md:p-10 border shadow-xl transition-all"
+      className="relative rounded-[32px] p-6 sm:p-8 md:p-10 border shadow-2xl transition-all"
       style={{ backgroundColor: '#FAF7F2', borderColor: '#E7DFD3' }}
     >
-      <div className="flex items-center gap-3 mb-8">
-        <div className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-xs" style={{ backgroundColor: '#0F261E', color: '#D97706' }}>
+      {onClose && (
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute top-5 right-5 p-2 rounded-full bg-[#0F261E]/5 hover:bg-[#0F261E]/10 text-[#0F261E] transition-colors cursor-pointer"
+          aria-label="Fermer la calculatrice"
+        >
+          <X className="w-5 h-5" />
+        </button>
+      )}
+
+      <div className="flex items-center gap-3 mb-6 sm:mb-8 pr-8">
+        <div className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 shadow-xs" style={{ backgroundColor: '#0F261E', color: '#D97706' }}>
           <Calculator className="w-6 h-6 text-[#D97706]" />
         </div>
         <div>

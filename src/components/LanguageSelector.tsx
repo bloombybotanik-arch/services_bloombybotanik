@@ -42,22 +42,25 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ lang, setLan
       <div className="relative mb-10 px-2" ref={dropdownRef}>
         <button
           onClick={toggleDropdown}
-          className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#1C3F34] border border-white/10 hover:bg-[#0F261E] transition-all text-white"
+          className="flex items-center justify-center w-10 h-10 hover:scale-110 transition-transform text-white bg-transparent focus:outline-none"
+          title={currentLang.label}
+          aria-label="Choisir la langue"
         >
-          <span className="text-xl">{currentLang.flag}</span>
+          <span className="text-2xl select-none drop-shadow-xs">{currentLang.flag}</span>
         </button>
 
         {isOpen && (
-          <div className="absolute bottom-full left-0 mb-2 bg-[#293228] border border-white/10 rounded-xl overflow-hidden shadow-2xl z-50 animate-in fade-in slide-in-from-bottom-2 duration-200">
+          <div className="absolute bottom-full left-0 mb-2 bg-[#1C3F34] border border-white/15 rounded-xl overflow-hidden shadow-2xl z-50 p-1 min-w-[120px] animate-in fade-in slide-in-from-bottom-2 duration-200">
             {languages.map((l) => (
               <button
                 key={l.code}
                 onClick={() => handleSelect(l.code)}
-                className={`flex items-center justify-center w-12 h-12 text-xl transition-colors hover:bg-white/5 ${
-                  lang === l.code ? 'bg-botanik-orange/20 text-botanik-orange' : 'text-white/70'
+                className={`flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-sm transition-colors hover:bg-white/10 ${
+                  lang === l.code ? 'text-[#D97706] font-bold' : 'text-white/80'
                 }`}
               >
-                <span>{l.flag}</span>
+                <span className="text-xl select-none">{l.flag}</span>
+                <span className="text-xs font-semibold">{l.label}</span>
               </button>
             ))}
           </div>
@@ -71,22 +74,25 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ lang, setLan
       <div className="relative" ref={dropdownRef}>
         <button
           onClick={toggleDropdown}
-          className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#1C3F34] border border-white/10 text-white hover:bg-[#0F261E] transition-all"
+          className="flex items-center justify-center w-9 h-9 hover:scale-110 transition-transform text-white bg-transparent focus:outline-none"
+          title={currentLang.label}
+          aria-label="Choisir la langue"
         >
-          <span className="text-xl">{currentLang.flag}</span>
+          <span className="text-2xl select-none drop-shadow-xs">{currentLang.flag}</span>
         </button>
 
         {isOpen && (
-          <div className="absolute top-full right-0 mt-2 bg-botanik-green border border-white/10 rounded-xl overflow-hidden shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="absolute top-full right-0 mt-2 bg-[#0F261E] border border-white/15 rounded-xl overflow-hidden shadow-2xl z-50 p-1 min-w-[130px] animate-in fade-in slide-in-from-top-2 duration-200">
             {languages.map((l) => (
               <button
                 key={l.code}
                 onClick={() => handleSelect(l.code)}
-                className={`flex items-center justify-center w-12 h-12 text-xl transition-colors hover:bg-white/5 ${
-                  lang === l.code ? 'bg-botanik-orange/20 text-botanik-orange font-bold' : 'text-white/70'
+                className={`flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-sm transition-colors hover:bg-white/10 ${
+                  lang === l.code ? 'text-[#D97706] font-bold' : 'text-[#FAF7F2]'
                 }`}
               >
-                <span>{l.flag}</span>
+                <span className="text-xl select-none">{l.flag}</span>
+                <span className="text-xs font-semibold">{l.label}</span>
               </button>
             ))}
           </div>
@@ -100,22 +106,25 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ lang, setLan
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
-        className="flex items-center justify-center w-12 h-12 transition-all text-botanik-green/40"
+        className="flex items-center justify-center w-10 h-10 hover:scale-110 transition-transform bg-transparent focus:outline-none"
+        title={currentLang.label}
+        aria-label="Choisir la langue"
       >
-        <span className="text-2xl">{currentLang.flag}</span>
+        <span className="text-2xl select-none drop-shadow-xs">{currentLang.flag}</span>
       </button>
 
       {isOpen && (
-        <div className="absolute bottom-full right-0 mb-4 bg-white border border-botanik-green/10 rounded-xl overflow-hidden shadow-2xl z-50 animate-in fade-in slide-in-from-bottom-2 duration-200">
+        <div className="absolute bottom-full right-0 mb-4 bg-white border border-[#E7DFD3] rounded-xl overflow-hidden shadow-2xl z-50 p-1 min-w-[130px] animate-in fade-in slide-in-from-bottom-2 duration-200">
           {languages.map((l) => (
             <button
               key={l.code}
               onClick={() => handleSelect(l.code)}
-              className={`flex items-center justify-center w-12 h-12 text-xl transition-colors hover:bg-botanik-green/5 ${
-                lang === l.code ? 'bg-botanik-orange/10 text-botanik-orange font-bold' : 'text-botanik-green/60'
+              className={`flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-sm transition-colors hover:bg-black/5 ${
+                lang === l.code ? 'text-[#D97706] font-bold' : 'text-[#0F261E]'
               }`}
             >
-              <span>{l.flag}</span>
+              <span className="text-xl select-none">{l.flag}</span>
+              <span className="text-xs font-semibold">{l.label}</span>
             </button>
           ))}
         </div>
