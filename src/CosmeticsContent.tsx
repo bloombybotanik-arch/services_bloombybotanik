@@ -81,10 +81,14 @@ export default function CosmeticsContent({
           <span>{t.header.badge_alt}</span>
         </div>
         <h1 className="leading-[1.1] tracking-tight text-botanik-green mb-8">
-          <span className="block text-3xl md:text-7xl font-bold mb-2">
-            {wrapTitle(t.header.title)}
+          <span className="block text-3xl md:text-6xl font-bold mb-2">
+            {lang === 'fr' 
+              ? "Cosmétique Botanique — Macérats Huileux & Sérums Précieux" 
+              : lang === 'de'
+              ? "Botanische Kosmetik — Ölauszüge & Kostbare Seren"
+              : "Botanical Cosmetics — Oil Macerations & Precious Serums"}
           </span>
-          <span className="block text-2xl md:text-6xl text-botanik-green/80 font-bold">
+          <span className="block text-2xl md:text-4xl text-botanik-green/80 font-bold">
             {wrapTitle(t.header.subtitle)}
           </span>
         </h1>
@@ -92,6 +96,28 @@ export default function CosmeticsContent({
           {t.header.description.split('\n\n').map((paragraph, idx) => (
             <p key={idx}>{paragraph}</p>
           ))}
+        </div>
+
+        {/* SEO Pillars H2 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <div className="bg-white p-6 rounded-3xl border border-botanik-green/10 shadow-xs space-y-2">
+            <h2 className="text-lg md:text-xl font-bold text-botanik-green flex items-center gap-2">
+              <Leaf className="w-5 h-5 text-[#D97706]" />
+              {lang === 'fr' ? "Macération Huileuse Calendula" : "Calendula Oil Maceration"}
+            </h2>
+            <p className="text-xs sm:text-sm text-botanik-green/75 leading-relaxed">
+              Extraction douce des flavonoïdes et du faradiol des fleurs de souci officinal dans une huile de jojoba ou d'amande douce à 45°C. Répare la barrière lipidique cutanée sans rancissement.
+            </p>
+          </div>
+          <div className="bg-white p-6 rounded-3xl border border-botanik-green/10 shadow-xs space-y-2">
+            <h2 className="text-lg md:text-xl font-bold text-botanik-green flex items-center gap-2">
+              <Droplet className="w-5 h-5 text-[#D97706]" />
+              {lang === 'fr' ? "Huiles Infusées Précision" : "Precision Infused Oils"}
+            </h2>
+            <p className="text-xs sm:text-sm text-botanik-green/75 leading-relaxed">
+              Grâce au contrôle thermo-cinétique en milieu clos, capturez les principes actifs liposolubles des plantes fraîches ou sèches pour créer des sérums visage concentrés et purs.
+            </p>
+          </div>
         </div>
       </header>
 

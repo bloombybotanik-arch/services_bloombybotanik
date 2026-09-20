@@ -81,6 +81,7 @@ import PremiumInfoContent from './PremiumInfoContent';
 import LexiqueContent from './LexiqueContent';
 import TerrainPillar from './TerrainPillar';
 import ExtractionCalculator from './components/ExtractionCalculator';
+import { updateDocumentSEO } from './utils/seoManager';
 
 const PATH_VIEWS: Record<string, View> = {
   ...Object.fromEntries(
@@ -142,6 +143,12 @@ export default function App() {
   const [currentView, setCurrentView] = useState<View>(() => {
     if (typeof window !== 'undefined') {
       const path = window.location.pathname;
+      if (path.startsWith('/boutique/') && path !== '/boutique/' && path !== '/boutique') {
+        return 'product-detail';
+      }
+      if (path.startsWith('/produit/') && path !== '/produit/' && path !== '/produit') {
+        return 'product-detail';
+      }
       if (PATH_VIEWS[path]) {
         return PATH_VIEWS[path];
       }
@@ -155,7 +162,18 @@ export default function App() {
   });
 
   const [selectedLanguage, setSelectedLanguage] = useState<Language>('fr');
-  const [selectedProduct, setSelectedProduct] = useState<string>('bloomlab');
+  const [selectedProduct, setSelectedProduct] = useState<string>(() => {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname;
+      if (path.startsWith('/boutique/') && path !== '/boutique/' && path !== '/boutique') {
+        return path.replace(/^\/boutique\//, '').replace(/\/$/, '');
+      }
+      if (path.startsWith('/produit/') && path !== '/produit/' && path !== '/produit') {
+        return path.replace(/^\/produit\//, '').replace(/\/$/, '');
+      }
+    }
+    return 'bloomlab';
+  });
   const [selectedSlug, setSelectedSlug] = useState<string>('');
   const [selectedTerrain, setSelectedTerrain] = useState<string>('T1');
   const [isAuthOpen, setIsAuthOpen] = useState(false);
@@ -219,12 +237,29 @@ export default function App() {
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname;
+      if (path.startsWith('/boutique/') && path !== '/boutique/' && path !== '/boutique') {
+        const prod = path.replace(/^\/boutique\//, '').replace(/\/$/, '');
+        setSelectedProduct(prod);
+        setCurrentView('product-detail');
+        return;
+      }
+      if (path.startsWith('/produit/') && path !== '/produit/' && path !== '/produit') {
+        const prod = path.replace(/^\/produit\//, '').replace(/\/$/, '');
+        setSelectedProduct(prod);
+        setCurrentView('product-detail');
+        return;
+      }
       const view = PATH_VIEWS[path] || 'indexbis';
       setCurrentView(view);
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
+
+  // Synchronize document SEO, Meta, Canonical & Hreflang
+  useEffect(() => {
+    updateDocumentSEO(currentView, selectedLanguage, selectedProduct, selectedSlug);
+  }, [currentView, selectedLanguage, selectedProduct, selectedSlug]);
 
   // Scroll to top on view change
   const navigateTo = (view: View, param?: string) => {
@@ -236,7 +271,9 @@ export default function App() {
       if (view === 'terrain') setSelectedTerrain(param);
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    const targetPath = VIEW_PATHS[view] || '/';
+    const targetPath = view === 'product-detail' && param 
+      ? `/boutique/${param}/` 
+      : (VIEW_PATHS[view] || '/');
     if (window.location.pathname !== targetPath) {
       window.history.pushState({ view, param }, '', targetPath);
     }

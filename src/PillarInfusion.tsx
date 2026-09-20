@@ -42,7 +42,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
   return (
     <main className="bg-[#FAF7F2] text-[#0F261E] min-h-screen">
       {/* SECTION 0 — EN-TÊTE & INTRODUCTION */}
-      <header className="relative bg-[#1C3F34] text-white pt-12 pb-16 md:pt-16 md:pb-24 overflow-hidden border-b border-white/10">
+      <header className="relative bg-[#0F261E] text-white pt-12 pb-16 md:pt-16 md:pb-24 overflow-hidden border-b border-white/10">
         <div className="max-w-5xl mx-auto px-6">
           {/* Fil d'Ariane */}
           <nav aria-label="Fil d'Ariane" className="mb-6">
@@ -137,7 +137,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
             </h2>
           </div>
 
-          <div className="prose prose-slate max-w-none text-[#1C3F34]/90 leading-relaxed space-y-4">
+          <div className="prose prose-slate max-w-none text-[#0F261E]/90 leading-relaxed space-y-4">
             <p>{t.section1.p1}</p>
             <p>{t.section1.p2Intro}</p>
             <ul className="list-disc pl-5 space-y-2">
@@ -153,8 +153,8 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
             <p>{t.section1.p3}</p>
           </div>
 
-          <div className="bg-[#1C3F34]/5 border-l-4 border-[#1C3F34] p-5 rounded-r-2xl space-y-1 text-sm text-[#0F261E]">
-            <p className="font-semibold text-[#1C3F34]">{t.section1.calloutTitle}</p>
+          <div className="bg-[#0F261E]/5 border-l-4 border-[#0F261E] p-5 rounded-r-2xl space-y-1 text-sm text-[#0F261E]">
+            <p className="font-semibold text-[#0F261E]">{t.section1.calloutTitle}</p>
             <p className="italic leading-relaxed">{t.section1.calloutText}</p>
           </div>
         </section>
@@ -168,7 +168,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
             </h2>
           </div>
 
-          <p className="text-[#1C3F34]/90 leading-relaxed">{t.section2.intro}</p>
+          <p className="text-[#0F261E]/90 leading-relaxed">{t.section2.intro}</p>
 
           <div className="grid sm:grid-cols-2 gap-5">
             <div className="bg-white p-5 rounded-2xl border border-[#0F261E]/10 shadow-xs space-y-2">
@@ -176,7 +176,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
                 <Thermometer className="w-4 h-4" />
                 <span>{t.section2.tempTitle}</span>
               </div>
-              <p className="text-sm text-[#1C3F34]/85 leading-relaxed">{t.section2.tempText}</p>
+              <p className="text-sm text-[#0F261E]/85 leading-relaxed">{t.section2.tempText}</p>
             </div>
 
             <div className="bg-white p-5 rounded-2xl border border-[#0F261E]/10 shadow-xs space-y-2">
@@ -184,7 +184,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
                 <Clock className="w-4 h-4" />
                 <span>{t.section2.timeTitle}</span>
               </div>
-              <p className="text-sm text-[#1C3F34]/85 leading-relaxed">{t.section2.timeText}</p>
+              <p className="text-sm text-[#0F261E]/85 leading-relaxed">{t.section2.timeText}</p>
             </div>
 
             <div className="bg-white p-5 rounded-2xl border border-[#0F261E]/10 shadow-xs space-y-2">
@@ -192,7 +192,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
                 <Sparkles className="w-4 h-4" />
                 <span>{t.section2.agitationTitle}</span>
               </div>
-              <p className="text-sm text-[#1C3F34]/85 leading-relaxed">{t.section2.agitationText}</p>
+              <p className="text-sm text-[#0F261E]/85 leading-relaxed">{t.section2.agitationText}</p>
             </div>
 
             <div className="bg-white p-5 rounded-2xl border border-[#0F261E]/10 shadow-xs space-y-2">
@@ -200,11 +200,11 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
                 <Layers className="w-4 h-4" />
                 <span>{t.section2.ratioTitle}</span>
               </div>
-              <p className="text-sm text-[#1C3F34]/85 leading-relaxed">{t.section2.ratioText}</p>
+              <p className="text-sm text-[#0F261E]/85 leading-relaxed">{t.section2.ratioText}</p>
             </div>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-[#0F261E]/10 text-sm text-[#1C3F34]/90 italic">
+          <div className="bg-white p-5 rounded-2xl border border-[#0F261E]/10 text-sm text-[#0F261E]/90 italic">
             {t.section2.callout}
           </div>
         </section>
@@ -218,17 +218,17 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
             </h2>
           </div>
 
-          <p className="text-[#1C3F34]/90 leading-relaxed">{t.section3.intro}</p>
+          <p className="text-[#0F261E]/90 leading-relaxed">{t.section3.intro}</p>
 
           <div className="grid md:grid-cols-3 gap-5">
             {/* Infusion Card */}
             <div className="bg-white p-6 rounded-2xl border border-[#0F261E]/10 space-y-4 shadow-xs">
-              <h3 className="text-lg font-bold text-[#1C3F34] flex items-center gap-2">
+              <h3 className="text-lg font-bold text-[#0F261E] flex items-center gap-2">
                 <Leaf className="w-5 h-5 text-[#D97706]" />
                 <span>{t.section3.infusion.title}</span>
               </h3>
               <p className="text-xs text-[#0F261E]/80 leading-relaxed">{t.section3.infusion.desc}</p>
-              <ul className="text-xs space-y-2 border-t border-[#0F261E]/5 pt-3 text-[#1C3F34]/85">
+              <ul className="text-xs space-y-2 border-t border-[#0F261E]/5 pt-3 text-[#0F261E]/85">
                 <li><strong>{isFR ? 'Température :' : lang === 'de' ? 'Temperatur:' : 'Temperature:'}</strong> {t.section3.infusion.temp}</li>
                 <li><strong>{isFR ? 'Durée :' : lang === 'de' ? 'Dauer:' : 'Duration:'}</strong> {t.section3.infusion.duration}</li>
                 <li><strong>{isFR ? 'Parties :' : lang === 'de' ? 'Teile:' : 'Parts:'}</strong> {t.section3.infusion.parts}</li>
@@ -238,12 +238,12 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
 
             {/* Décoction Card */}
             <div className="bg-white p-6 rounded-2xl border border-[#0F261E]/10 space-y-4 shadow-xs">
-              <h3 className="text-lg font-bold text-[#1C3F34] flex items-center gap-2">
+              <h3 className="text-lg font-bold text-[#0F261E] flex items-center gap-2">
                 <FlaskConical className="w-5 h-5 text-[#D97706]" />
                 <span>{t.section3.decoction.title}</span>
               </h3>
               <p className="text-xs text-[#0F261E]/80 leading-relaxed">{t.section3.decoction.desc}</p>
-              <ul className="text-xs space-y-2 border-t border-[#0F261E]/5 pt-3 text-[#1C3F34]/85">
+              <ul className="text-xs space-y-2 border-t border-[#0F261E]/5 pt-3 text-[#0F261E]/85">
                 <li><strong>{isFR ? 'Température :' : lang === 'de' ? 'Temperatur:' : 'Temperature:'}</strong> {t.section3.decoction.temp}</li>
                 <li><strong>{isFR ? 'Durée :' : lang === 'de' ? 'Dauer:' : 'Duration:'}</strong> {t.section3.decoction.duration}</li>
                 <li><strong>{isFR ? 'Parties :' : lang === 'de' ? 'Teile:' : 'Parts:'}</strong> {t.section3.decoction.parts}</li>
@@ -253,12 +253,12 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
 
             {/* Macération Card */}
             <div className="bg-white p-6 rounded-2xl border border-[#0F261E]/10 space-y-4 shadow-xs">
-              <h3 className="text-lg font-bold text-[#1C3F34] flex items-center gap-2">
+              <h3 className="text-lg font-bold text-[#0F261E] flex items-center gap-2">
                 <Droplets className="w-5 h-5 text-[#D97706]" />
                 <span>{t.section3.maceration.title}</span>
               </h3>
               <p className="text-xs text-[#0F261E]/80 leading-relaxed">{t.section3.maceration.desc}</p>
-              <ul className="text-xs space-y-2 border-t border-[#0F261E]/5 pt-3 text-[#1C3F34]/85">
+              <ul className="text-xs space-y-2 border-t border-[#0F261E]/5 pt-3 text-[#0F261E]/85">
                 <li><strong>{isFR ? 'Température :' : lang === 'de' ? 'Temperatur:' : 'Temperature:'}</strong> {t.section3.maceration.temp}</li>
                 <li><strong>{isFR ? 'Durée :' : lang === 'de' ? 'Dauer:' : 'Duration:'}</strong> {t.section3.maceration.duration}</li>
                 <li><strong>{isFR ? 'Parties :' : lang === 'de' ? 'Teile:' : 'Parts:'}</strong> {t.section3.maceration.parts}</li>
@@ -267,8 +267,8 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
             </div>
           </div>
 
-          <div className="bg-[#1C3F34]/5 border-l-4 border-[#1C3F34] p-5 rounded-r-2xl space-y-1 text-sm text-[#0F261E]">
-            <p className="font-semibold text-[#1C3F34]">{t.section3.synthesisTitle}</p>
+          <div className="bg-[#0F261E]/5 border-l-4 border-[#0F261E] p-5 rounded-r-2xl space-y-1 text-sm text-[#0F261E]">
+            <p className="font-semibold text-[#0F261E]">{t.section3.synthesisTitle}</p>
             <p className="italic leading-relaxed">{t.section3.synthesisText}</p>
           </div>
         </section>
@@ -282,21 +282,21 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
             </h2>
           </div>
 
-          <p className="text-[#1C3F34]/90 leading-relaxed">{t.section4.intro}</p>
+          <p className="text-[#0F261E]/90 leading-relaxed">{t.section4.intro}</p>
 
           <div className="grid sm:grid-cols-3 gap-5">
             {t.section4.steps.map((step) => (
               <div key={step.num} className="bg-white p-5 rounded-2xl border border-[#0F261E]/10 space-y-2 shadow-xs">
-                <div className="w-8 h-8 rounded-full bg-[#1C3F34] text-white flex items-center justify-center font-bold text-sm">
+                <div className="w-8 h-8 rounded-full bg-[#0F261E] text-white flex items-center justify-center font-bold text-sm">
                   {step.num}
                 </div>
-                <h3 className="font-bold text-base text-[#1C3F34]">{step.title}</h3>
+                <h3 className="font-bold text-base text-[#0F261E]">{step.title}</h3>
                 <p className="text-xs text-[#0F261E]/80 leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
 
-          <p className="text-sm sm:text-base text-[#1C3F34]/90 leading-relaxed bg-[#FAF7F2] p-5 rounded-2xl border border-[#0F261E]/10 italic">
+          <p className="text-sm sm:text-base text-[#0F261E]/90 leading-relaxed bg-[#FAF7F2] p-5 rounded-2xl border border-[#0F261E]/10 italic">
             {t.section4.quote}
           </p>
 
@@ -308,7 +308,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
                 <a 
                   href={`/${lang === 'fr' ? '' : lang + '/'}${link.view}/`} 
                   onClick={(e) => handleLinkClick(e, link.view)}
-                  className="inline-flex items-center gap-1 text-[#1C3F34] underline hover:text-[#D97706]"
+                  className="inline-flex items-center gap-1 text-[#0F261E] underline hover:text-[#D97706]"
                 >
                   {link.label}
                 </a>
@@ -327,7 +327,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
           </div>
 
           <div className="grid md:grid-cols-12 gap-6 items-center">
-            <div className="md:col-span-7 space-y-4 text-sm text-[#1C3F34]/90 leading-relaxed">
+            <div className="md:col-span-7 space-y-4 text-sm text-[#0F261E]/90 leading-relaxed">
               <p>{t.section5.intro}</p>
               <ul className="space-y-2 list-disc pl-5">
                 {t.section5.features.map((feat, idx) => (
@@ -343,7 +343,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
               <div className="rounded-2xl overflow-hidden border border-[#0F261E]/10 shadow-sm aspect-square bg-[#FAF7F2]">
                 <img
                   src="/img/produit/bloomlab-face-1200x1200.jpg"
-                  alt="BloomLab"
+                  alt="BloomLab® — Extracteur et infuseur de plantes médicinales Totum"
                   width={600}
                   height={600}
                   loading="lazy"
@@ -355,7 +355,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
           </div>
 
           <div className="bg-[#FAF7F2] p-5 sm:p-6 rounded-2xl border border-[#0F261E]/10 space-y-3">
-            <h3 className="font-bold text-sm sm:text-base text-[#1C3F34] flex items-center gap-2">
+            <h3 className="font-bold text-sm sm:text-base text-[#0F261E] flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-[#D97706]" />
               <span>{t.section5.limitsTitle}</span>
             </h3>
@@ -370,7 +370,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
             <a
               href={lang === 'fr' ? '/bloomlab/' : `/${lang}/bloomlab/`}
               onClick={(e) => handleLinkClick(e, 'machine')}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1C3F34] text-white text-sm font-bold hover:bg-[#0F261E] transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0F261E] text-white text-sm font-bold hover:bg-[#0F261E] transition-all"
             >
               <span>{t.section5.cta}</span>
               <ArrowRight className="w-4 h-4 text-[#D97706]" />
@@ -387,12 +387,12 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
             </h2>
           </div>
 
-          <p className="text-[#1C3F34]/90 leading-relaxed">{t.section6.intro}</p>
+          <p className="text-[#0F261E]/90 leading-relaxed">{t.section6.intro}</p>
 
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse bg-white rounded-2xl overflow-hidden border border-[#0F261E]/10 shadow-xs">
               <thead>
-                <tr className="bg-[#1C3F34] text-white text-xs uppercase tracking-wider">
+                <tr className="bg-[#0F261E] text-white text-xs uppercase tracking-wider">
                   <th className="p-4 font-bold">{t.section6.table.headers.criterion}</th>
                   <th className="p-4 font-bold">{t.section6.table.headers.traditional}</th>
                   <th className="p-4 font-bold bg-[#D97706] text-white">{t.section6.table.headers.bloomlab}</th>
@@ -401,9 +401,9 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
               <tbody className="divide-y divide-[#0F261E]/10 text-xs sm:text-sm text-[#0F261E]/90">
                 {t.section6.table.rows.map((row, idx) => (
                   <tr key={idx} className="hover:bg-[#FAF7F2]/60 transition-colors">
-                    <td className="p-4 font-bold text-[#1C3F34]">{row.criterion}</td>
+                    <td className="p-4 font-bold text-[#0F261E]">{row.criterion}</td>
                     <td className="p-4 text-[#0F261E]/75">{row.traditional}</td>
-                    <td className="p-4 font-medium text-[#1C3F34] bg-[#D97706]/5">{row.bloomlab}</td>
+                    <td className="p-4 font-medium text-[#0F261E] bg-[#D97706]/5">{row.bloomlab}</td>
                   </tr>
                 ))}
               </tbody>
@@ -422,19 +422,19 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
             </h2>
           </div>
 
-          <p className="text-[#1C3F34]/90 leading-relaxed">{t.section7.intro}</p>
+          <p className="text-[#0F261E]/90 leading-relaxed">{t.section7.intro}</p>
 
           <div className="grid md:grid-cols-3 gap-5">
             {t.section7.solvents.map((solv, idx) => (
               <div key={idx} className="bg-white p-6 rounded-2xl border border-[#0F261E]/10 space-y-3 shadow-xs flex flex-col justify-between">
                 <div>
-                  <h3 className="font-bold text-base text-[#1C3F34]">{solv.title}</h3>
-                  <span className="inline-block text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-[#1C3F34]/5 text-[#1C3F34] mt-1 mb-2">
+                  <h3 className="font-bold text-base text-[#0F261E]">{solv.title}</h3>
+                  <span className="inline-block text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-[#0F261E]/5 text-[#0F261E] mt-1 mb-2">
                     {solv.polarity}
                   </span>
                   <p className="text-xs text-[#0F261E]/80 leading-relaxed">{solv.desc}</p>
                 </div>
-                <div className="border-t border-[#0F261E]/5 pt-3 text-xs space-y-1 text-[#1C3F34]/85">
+                <div className="border-t border-[#0F261E]/5 pt-3 text-xs space-y-1 text-[#0F261E]/85">
                   <p><strong>{isFR ? 'Affinité :' : lang === 'de' ? 'Affinität:' : 'Affinity:'}</strong> {solv.affinity}</p>
                   <p><strong>{isFR ? 'Exemples :' : lang === 'de' ? 'Beispiele:' : 'Examples:'}</strong> {solv.examples}</p>
                   <p><strong>{isFR ? 'Conservation :' : lang === 'de' ? 'Haltbarkeit:' : 'Shelf life:'}</strong> {solv.shelfLife}</p>
@@ -444,7 +444,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
           </div>
 
           <div className="bg-[#FAF7F2] p-4 rounded-xl border border-[#0F261E]/10 text-xs text-[#0F261E]/85">
-            <strong className="text-[#1C3F34]">{t.section7.precautionTitle}</strong> {t.section7.precautionText}
+            <strong className="text-[#0F261E]">{t.section7.precautionTitle}</strong> {t.section7.precautionText}
           </div>
         </section>
 
@@ -457,13 +457,13 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
             </h2>
           </div>
 
-          <p className="text-[#1C3F34]/90 leading-relaxed">{t.section8.intro}</p>
+          <p className="text-[#0F261E]/90 leading-relaxed">{t.section8.intro}</p>
 
           <div className="space-y-6">
             {t.section8.recipes.map((rec) => (
               <div key={rec.num} className="bg-white p-6 sm:p-8 rounded-3xl border border-[#0F261E]/10 shadow-xs space-y-4">
                 <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#0F261E]/5 pb-3">
-                  <h3 className="font-bold text-lg text-[#1C3F34] flex items-center gap-2">
+                  <h3 className="font-bold text-lg text-[#0F261E] flex items-center gap-2">
                     <span className="w-6 h-6 rounded-full bg-[#D97706] text-white flex items-center justify-center text-xs font-bold">{rec.num}</span>
                     <span>{rec.title}</span>
                   </h3>
@@ -474,17 +474,17 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
 
                 <div className="grid sm:grid-cols-2 gap-4 text-xs sm:text-sm">
                   <div>
-                    <span className="font-bold text-[#1C3F34]">{isFR ? 'Ingrédients :' : lang === 'de' ? 'Zutaten:' : 'Ingredients:'}</span>
+                    <span className="font-bold text-[#0F261E]">{isFR ? 'Ingrédients :' : lang === 'de' ? 'Zutaten:' : 'Ingredients:'}</span>
                     <p className="text-[#0F261E]/80 mt-1">{rec.ingredients}</p>
                   </div>
                   <div>
-                    <span className="font-bold text-[#1C3F34]">{isFR ? 'Paramètres :' : lang === 'de' ? 'Parameter:' : 'Parameters:'}</span>
+                    <span className="font-bold text-[#0F261E]">{isFR ? 'Paramètres :' : lang === 'de' ? 'Parameter:' : 'Parameters:'}</span>
                     <p className="text-[#0F261E]/80 mt-1">{rec.parameters}</p>
                   </div>
                 </div>
 
                 <div>
-                  <span className="font-bold text-xs sm:text-sm text-[#1C3F34]">{isFR ? 'Protocole pas à pas :' : lang === 'de' ? 'Schritt-für-Schritt:' : 'Step-by-step protocol:'}</span>
+                  <span className="font-bold text-xs sm:text-sm text-[#0F261E]">{isFR ? 'Protocole pas à pas :' : lang === 'de' ? 'Schritt-für-Schritt:' : 'Step-by-step protocol:'}</span>
                   <ol className="list-decimal pl-5 space-y-1 text-xs sm:text-sm text-[#0F261E]/80 mt-1">
                     {rec.steps.map((st, sidx) => (
                       <li key={sidx}>{st}</li>
@@ -510,12 +510,12 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
             </h2>
           </div>
 
-          <p className="text-[#1C3F34]/90 leading-relaxed">{t.section9.intro}</p>
+          <p className="text-[#0F261E]/90 leading-relaxed">{t.section9.intro}</p>
 
           <div className="grid sm:grid-cols-2 gap-4">
             {t.section9.rules.map((rule, idx) => (
               <div key={idx} className="bg-white p-5 rounded-2xl border border-[#0F261E]/10 space-y-1.5 shadow-xs">
-                <h3 className="font-bold text-sm text-[#1C3F34] flex items-center gap-2">
+                <h3 className="font-bold text-sm text-[#0F261E] flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#D97706]" />
                   <span>{rule.title}</span>
                 </h3>
@@ -524,7 +524,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
             ))}
           </div>
 
-          <div className="bg-[#1C3F34]/5 border border-[#1C3F34]/15 p-5 rounded-2xl text-xs text-[#0F261E]/85 italic text-center">
+          <div className="bg-[#0F261E]/5 border border-[#0F261E]/15 p-5 rounded-2xl text-xs text-[#0F261E]/85 italic text-center">
             {t.section9.disclaimer}
           </div>
         </section>
@@ -543,13 +543,13 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
               <div key={idx} className="bg-white p-5 rounded-2xl border border-[#0F261E]/10 space-y-3 flex flex-col justify-between shadow-xs">
                 <div>
                   <span className="text-xs font-bold text-[#D97706] uppercase tracking-wider">{prof.badge}</span>
-                  <h3 className="font-bold text-base text-[#1C3F34] mt-1">{prof.title}</h3>
+                  <h3 className="font-bold text-base text-[#0F261E] mt-1">{prof.title}</h3>
                   <p className="text-xs text-[#0F261E]/80 mt-1 leading-relaxed">{prof.desc}</p>
                 </div>
                 <a
                   href={`/${lang === 'fr' ? '' : lang + '/'}${prof.view}/`}
                   onClick={(e) => handleLinkClick(e, prof.view)}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1C3F34] hover:text-[#D97706]"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0F261E] hover:text-[#D97706]"
                 >
                   <span>{prof.cta}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -579,7 +579,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
                   <button
                     type="button"
                     onClick={() => toggleFaq(idx)}
-                    className="w-full flex items-center justify-between p-4 sm:p-5 text-left font-bold text-sm sm:text-base text-[#1C3F34] hover:text-[#D97706] transition-colors"
+                    className="w-full flex items-center justify-between p-4 sm:p-5 text-left font-bold text-sm sm:text-base text-[#0F261E] hover:text-[#D97706] transition-colors"
                     aria-expanded={isOpen}
                   >
                     <span>{idx + 1}. {item.q}</span>
@@ -597,7 +597,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
         </section>
 
         {/* SECTION 12 — CONVERSION FINALE */}
-        <section id="conversion-finale" className="bg-[#1C3F34] text-white rounded-3xl p-8 sm:p-10 md:p-12 text-center space-y-6 shadow-xl border border-white/10">
+        <section id="conversion-finale" className="bg-[#0F261E] text-white rounded-3xl p-8 sm:p-10 md:p-12 text-center space-y-6 shadow-xl border border-white/10">
           <div className="max-w-2xl mx-auto space-y-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
               {t.section12.title}

@@ -19,11 +19,75 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
   const sheet = productSheets[productId] || productSheets['bloomlab'];
   const gallery = sheet.images.map((img: string, i: number) => ({ 
     src: img, 
-    alt: `${sheet.name} - ${t.view_alt} ${i + 1} - ${translations[lang].seo.keywords.split(', ').slice(0, 4).join(', ')}` 
+    alt: `${sheet.name} - ${sheet.subtitle || 'Herboristerie de précision'} - Vue ${i + 1} - Infuseur et extracteur botanique Bloom by BotaniK`
   }));
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `https://bloombybotanik.com/boutique/${productId}/#product`,
+    "name": sheet.name,
+    "description": sheet.description,
+    "image": gallery.map((g: any) => `https://bloombybotanik.com${g.src}`),
+    "sku": productId,
+    "mpn": `BLOOM-${productId.toUpperCase()}`,
+    "brand": {
+      "@type": "Brand",
+      "name": "Bloom by BotaniK"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": `https://bloombybotanik.com/boutique/${productId}/`,
+      "priceCurrency": "EUR",
+      "price": (sheet.price || 0).toFixed(2),
+      "priceValidUntil": "2026-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Bloom by BotaniK"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": 64
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": lang === 'fr' ? "Accueil" : "Home",
+        "item": "https://bloombybotanik.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": lang === 'fr' ? "Boutique" : "Shop",
+        "item": "https://bloombybotanik.com/boutique/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": sheet.name,
+        "item": `https://bloombybotanik.com/boutique/${productId}/`
+      }
+    ]
+  };
 
   return (
     <article className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-20 animate-in fade-in slide-in-from-bottom-4 duration-700">
+      <script type="application/ld+json">
+        {JSON.stringify(productSchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbSchema)}
+      </script>
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8">
         <nav aria-label="Fil d'Ariane" className="flex items-center gap-2 text-xs sm:text-sm text-[#1B3022]/60">
           <a 

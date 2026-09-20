@@ -127,11 +127,11 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
                 <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight tracking-tight drop-shadow-md">
                   {lang === 'fr' ? (
-                    <>Extracteur Botanique BloomLab® : Technologie d'Extraction Séquentielle A/B</>
+                    <>BloomLab® — Extracteur Botanique de Précision pour Infusions Végétales</>
                   ) : lang === 'de' ? (
-                    <>Botanischer Präzisionsextraktor BloomLab®: Sequenzielle A/B-Extraktionstechnologie</>
+                    <>BloomLab® — Botanischer Präzisionsextraktor für Pflanzenaufgüsse</>
                   ) : (
-                    <>BloomLab® Botanical Extractor: Sequential A/B Extraction Technology</>
+                    <>BloomLab® — Precision Botanical Extractor for Herbal Infusions</>
                   )}
                 </h1>
               </div>
@@ -271,10 +271,14 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               2. LE VERROU MÉTHODOLOGIQUE
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0F261E] leading-tight">
-              Le problème n'est pas la plante. C'est la méthode qui sous-exploite sa puissance.
+              {lang === 'fr' 
+                ? "Technologie d'Extraction Botanique Séquentielle A/B : Libérer la Puissance de la Plante" 
+                : lang === 'de' 
+                ? "Sequenzielle botanische A/B-Extraktionstechnologie: Pflanzenkraft entfesseln" 
+                : "Sequential A/B Botanical Extraction Technology: Unlocking Plant Power"}
             </h2>
             <p className="text-base sm:text-lg text-[#0F261E]/70 leading-relaxed font-normal">
-              L'extraction végétale domestique se heurte traditionnellement à 3 barrières physiques invisibles.
+              L'extraction végétale domestique se heurte traditionnellement à 3 barrières physiques invisibles. BloomLab les résout par le contrôle strict de la cinétique, de la température et des solvants.
             </p>
           </div>
 
@@ -364,10 +368,14 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               Rigueur Comparée
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0F261E] mb-4">
-              BloomLab vs Méthodes Traditionnelles
+              {lang === 'fr' 
+                ? "Infusion Végétale de Grade Laboratoire : BloomLab vs Méthodes Traditionnelles" 
+                : lang === 'de' 
+                ? "Pflanzenaufguss in Laborqualität: BloomLab vs. traditionelle Methoden" 
+                : "Laboratory-Grade Herbal Infusion: BloomLab vs. Traditional Methods"}
             </h2>
             <p className="text-base text-[#0F261E]/70 max-w-2xl mx-auto">
-              Mesure concrète des paramètres physiques qui conditionnent la richesse et la biodisponibilité de vos extraits.
+              Mesure concrète des paramètres physiques qui conditionnent la richesse et la biodisponibilité de vos infusions végétales, macérations huileuses, décoctions et teintures de plantes médicinales.
             </p>
           </div>
 
@@ -462,10 +470,14 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               Applications Pratiques
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0F261E] mb-4">
-              3 Dimensions d'Autonomie pour Votre Quotidien
+              {lang === 'fr' 
+                ? "Préservez le Totum des Plantes Médicinales : Macération Huileuse, Teinture, Décoction & Infusion" 
+                : lang === 'de' 
+                ? "Das pflanzliche Totum von Heilpflanzen bewahren: Ölauszug, Tinktur, Dekokt & Aufguss" 
+                : "Preserve the Totum of Medicinal Plants: Oil Maceration, Tincture, Decoction & Infusion"}
             </h2>
             <p className="text-base text-[#0F261E]/70">
-              Un seul instrument polyvalent pour vos besoins de terrain, de santé préventive et d'art culinaire.
+              Un seul instrument polyvalent pour vos remèdes naturels maison, vos plantes adaptogènes de terrain, vos soins cosmétiques et vos préparations culinaires d'exception.
             </p>
           </div>
 

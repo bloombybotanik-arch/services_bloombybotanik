@@ -276,6 +276,8 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
       "name": p.name,
       "description": p.description,
       "image": `https://bloombybotanik.com${p.image}`,
+      "sku": p.id,
+      "mpn": `BLOOM-${p.id.toUpperCase()}`,
       "brand": {
         "@type": "Brand",
         "name": "Bloom by BotaniK"
@@ -290,6 +292,8 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
         "url": `https://bloombybotanik.com/boutique/${p.id}/`,
         "priceCurrency": "EUR",
         "price": p.price.toFixed(2),
+        "priceValidUntil": "2026-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
         "availability": "https://schema.org/InStock",
         "seller": {
           "@type": "Organization",

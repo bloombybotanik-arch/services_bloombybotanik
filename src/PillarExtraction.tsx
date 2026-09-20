@@ -46,11 +46,11 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-8 font-sans tracking-tight leading-tight"
           >
             {isFR ? (
-              <>Extraction botanique : guide complet des méthodes, solvants et paramètres</>
+              <>Guide Complet : Extraction Botanique à Domicile</>
             ) : lang === 'de' ? (
-              <>Botanische Extraktion: der komplette Guide zu Methoden, Lösungsmitteln und Parametern</>
+              <>Kompletter Guide: Botanische Extraktion für zu Hause</>
             ) : (
-              <>Botanical extraction: a complete guide to methods, solvents and parameters</>
+              <>Complete Guide: Botanical Extraction at Home</>
             )}
           </motion.h1>
           <motion.div
@@ -112,7 +112,7 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
         >
           <h2 className="text-2xl md:text-3xl font-bold flex items-center gap-3" style={{ color: '#0F261E' }}>
             <span className="w-8 h-8 rounded-full text-white flex items-center justify-center text-sm font-bold shrink-0" style={{ backgroundColor: '#0F261E', color: '#ffffff' }}>1</span>
-            {isFR ? "Qu'est-ce que l'extraction botanique ?" : "What is botanical extraction?"}
+            {isFR ? "Infusion Botanique vs Bain-Marie : Principes de l'Extraction" : "Botanical Infusion vs Water Bath: Extraction Principles"}
           </h2>
 
           <div className="space-y-4">
@@ -186,14 +186,14 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
           </div>
         </section>
 
-        {/* Section 3: Phase A : extraction des composés hydrosolubles */}
+        {/* Section 3: Phase A / Décoctions de Racines */}
         <section 
           className="rounded-3xl p-8 md:p-12 border shadow-sm space-y-6"
           style={{ backgroundColor: '#F2F8F6', borderColor: '#D4E5DC' }}
         >
           <h2 className="text-2xl md:text-3xl font-bold flex items-center gap-3" style={{ color: '#0F261E' }}>
             <span className="w-8 h-8 rounded-full text-white flex items-center justify-center text-sm font-bold shrink-0" style={{ backgroundColor: '#0F261E', color: '#ffffff' }}>3</span>
-            {isFR ? "Phase A : extraction des composés hydrosolubles" : "Phase A: extracting water-soluble compounds"}
+            {isFR ? "Décoctions de Racines & Phase A Hydrosoluble" : "Root Decoctions & Water-Soluble Phase A"}
           </h2>
 
           <div className="space-y-4">
@@ -236,14 +236,14 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
           </div>
         </section>
 
-        {/* Section 4: Phase B : extraction des composés liposolubles */}
+        {/* Section 4: Phase B / Macération Huileuse Précise */}
         <section 
           className="rounded-3xl p-8 md:p-12 border shadow-sm space-y-6"
           style={{ backgroundColor: '#FDF8EE', borderColor: '#EBDCBF' }}
         >
           <h2 className="text-2xl md:text-3xl font-bold flex items-center gap-3" style={{ color: '#0F261E' }}>
             <span className="w-8 h-8 rounded-full text-white flex items-center justify-center text-sm font-bold shrink-0" style={{ backgroundColor: '#0F261E', color: '#ffffff' }}>4</span>
-            {isFR ? "Phase B : extraction des composés liposolubles" : "Phase B: extracting lipid-soluble compounds"}
+            {isFR ? "Macération Huileuse Précise : Phase B Liposoluble" : "Precise Oil Maceration: Lipid-Soluble Phase B"}
           </h2>
 
           <div className="space-y-4">
@@ -287,14 +287,14 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
           </div>
         </section>
 
-        {/* Section 5: Les 3 paramètres critiques */}
+        {/* Section 5: Teintures & Teintures-Mères */}
         <section 
           className="rounded-3xl p-8 md:p-12 border shadow-sm space-y-6"
           style={{ backgroundColor: '#FAF7F2', borderColor: '#E7DFD3' }}
         >
           <h2 className="text-2xl md:text-3xl font-bold flex items-center gap-3" style={{ color: '#0F261E' }}>
             <span className="w-8 h-8 rounded-full text-white flex items-center justify-center text-sm font-bold shrink-0" style={{ backgroundColor: '#0F261E', color: '#ffffff' }}>5</span>
-            {isFR ? "Les 3 paramètres critiques : température, agitation, environnement clos" : "The 3 critical parameters: temperature, agitation, closed chamber"}
+            {isFR ? "Teintures & Teintures-Mères : Paramètres Critiques d'Extraction" : "Tinctures & Mother Tinctures: Critical Extraction Parameters"}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
@@ -343,7 +343,7 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
         >
           <h2 className="text-2xl md:text-3xl font-bold flex items-center gap-3" style={{ color: '#0F261E' }}>
             <span className="w-8 h-8 rounded-full text-white flex items-center justify-center text-sm font-bold shrink-0" style={{ backgroundColor: '#0F261E', color: '#ffffff' }}>6</span>
-            {isFR ? "Infusion, décoction, macération : comparaison des méthodes" : "Infusion, decoction, maceration: comparison of methods"}
+            {isFR ? "Tableau Comparatif : Tisane vs Macération vs Décoction vs BloomLab" : "Comparison Table: Herbal Tea vs Maceration vs Decoction vs BloomLab"}
           </h2>
 
           <p className="text-base leading-relaxed" style={{ color: '#1C3F34', opacity: 0.85 }}>

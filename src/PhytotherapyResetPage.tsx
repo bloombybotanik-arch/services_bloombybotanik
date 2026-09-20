@@ -281,8 +281,11 @@ export default function PhytotherapyResetPage({
             {t.badge}
           </div>
           <h1 className="text-3xl sm:text-5xl md:text-6xl font-black mb-6 leading-tight tracking-tight text-white">
-            {t.title} <br />
-            <span className="text-[#D97706] text-2xl sm:text-3xl md:text-4xl block mt-3 font-extrabold">{t.title_accent}</span>
+            {lang === 'fr' 
+              ? "Reset Homéostasique — Phytothérapie Systémique Bloom" 
+              : lang === 'de'
+              ? "Homöostatischer Reset — Systemische Phytotherapie Bloom"
+              : "Homeostatic Reset — Systemic Phytotherapy Bloom"}
           </h1>
           <p className="text-base sm:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed font-normal mb-8 italic">
             "{t.quote}"
@@ -327,9 +330,26 @@ export default function PhytotherapyResetPage({
             {/* New Journey Phases Block */}
             <div className="bg-[#FAF7F2] rounded-[48px] p-8 md:p-14 border border-[#E7DFD3] shadow-xl mb-16 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#EAF2ED] rounded-bl-full -z-10 opacity-70" />
-              <h2 className="text-2xl md:text-4xl font-black text-[#0F261E] mb-6">{t.journey.subtitle}</h2>
-              <p className="text-base text-slate-600 mb-10 leading-relaxed">{t.journey.text}</p>
+              <h2 className="text-2xl md:text-4xl font-black text-[#0F261E] mb-6">
+                {lang === 'fr' 
+                  ? "Terrain & Plantes Médicinales : Comprendre le Déverrouillage" 
+                  : "Terrain & Medicinal Plants: Understanding the Physiological Unlock"}
+              </h2>
+              <p className="text-base text-slate-600 mb-6 leading-relaxed">{t.journey.text}</p>
               
+              {/* Encadré HPA */}
+              <div className="p-6 bg-[#FAF2E6] rounded-3xl border border-[#EEDFC6] mb-8">
+                <h2 className="text-lg sm:text-xl font-bold text-[#92400E] mb-2 flex items-center gap-2">
+                  <Sparkles className="w-5 h-5 text-[#D97706]" />
+                  {lang === 'fr' ? "Plantes Adaptogènes pour l'Axe HPA : Régulation Neuro-Endocrinienne" : "Adaptogenic Plants for the HPA Axis: Neuro-Endocrine Regulation"}
+                </h2>
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                  {lang === 'fr'
+                    ? "Les plantes adaptogènes (Ashwagandha, Rhodiola rosea, Éleuthérocoque) agissent directement sur l'axe hypothalamo-hypophyso-surrénalien (HPA). Elles modulent la sécrétion de cortisol, augmentent la résistance au stress oxydatif et réveillent la pharmacie intérieure sans épuiser les surrénales."
+                    : "Adaptogenic plants target the HPA axis to regulate cortisol output and restore long-term vitality without adrenal depletion."}
+                </p>
+              </div>
+
               <div className="space-y-8 text-left">
                 {[
                   t.journey.step0,
@@ -370,9 +390,13 @@ export default function PhytotherapyResetPage({
             </div>
 
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-4xl font-black text-[#0F261E] mb-4">{lang === 'fr' ? 'Détail des Étapes' : 'Steps Detail'}</h2>
+              <h2 className="text-2xl md:text-4xl font-black text-[#0F261E] mb-4">
+                {lang === 'fr' 
+                  ? "Protocoles de Reset par le Totum Végétal : 6 Phases d'Action" 
+                  : "Reset Protocols through Plant Totum: 6 Action Phases"}
+              </h2>
               <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto">
-                Suivez les étapes clés pour déverrouiller votre terrain et stabiliser vos ressources vitales durablement.
+                Suivez les étapes clés de phytothérapie pour déverrouiller votre terrain, soutenir vos émonctoires et stabiliser votre pharmacie intérieure grâce au Totum végétal intégral.
               </p>
             </div>
 

@@ -215,10 +215,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               {/* Le SEUL H1 de la page d'accueil */}
               <h1 className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-white leading-[1.2] tracking-tight drop-shadow-md">
                 {isFR 
-                  ? "BloomLab® : L'Extracteur botanique de précision pour maîtriser vos préparations maison" 
+                  ? "Bloom by Botanik | Extracteur Botanique de Précision & Infusion Végétale Maîtrisée" 
                   : isDE 
-                  ? "BloomLab® : Der botanische Präzisionsextraktor für eigene Hauszubereitungen"
-                  : "BloomLab®: Precision botanical extractor for mastering homemade preparations"}
+                  ? "Bloom by Botanik | Botanischer Präzisionsextraktor & Meisterhafter Pflanzenaufguss"
+                  : "Bloom by Botanik | Precision Botanical Extractor & Mastered Herbal Infusion"}
               </h1>
             </div>
           </div>
@@ -228,26 +228,26 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             <div className="space-y-3">
               <p className="text-base sm:text-lg md:text-xl text-slate-700 font-normal leading-relaxed">
                 {isFR 
-                  ? "« De la plante à la préparation, vous apprenez chaque étape.»" 
+                  ? "De la plante à la préparation, apprenez chaque étape de votre pratique botanique." 
                   : isDE 
-                  ? "Natürlichkeit darf nicht länger ungefähr sein." 
-                  : "Natural care should no longer be approximate."}
+                  ? "Von der Pflanze bis zur Zubereitung: Meistern Sie jeden Schritt Ihrer botanischen Praxis." 
+                  : "From plant to preparation, master every step of your botanical practice."}
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#0F261E] leading-tight tracking-tight">
                 {isFR 
-                  ? "Reprenez le contrôle de votre extraction botanique." 
+                  ? "L'Extracteur Botanique qui Préserve le Totum Végétal" 
                   : isDE 
-                  ? "Übernehmen Sie wieder die Kontrolle über Ihre botanische Extraktion." 
-                  : "Take back control of your botanical extraction."}
+                  ? "Der botanische Extraktor, der das pflanzliche Totum bewahrt" 
+                  : "The Botanical Extractor Preserving the Whole Plant Totum"}
               </h2>
             </div>
 
             <p className="text-sm sm:text-base md:text-lg text-slate-700 font-normal leading-relaxed">
               {isFR 
-                ? "Depuis des décennies, la préparation des plantes est simplifiée à l'excès, affaiblissant leur potentiel. BloomLab réintroduit la rigueur d'un protocole chez vous : contrôle rigoureux du temps, de la température et de l'agitation pour révéler le Totum végétal de vos huiles infusées, macérats et extraits botaniques."
+                ? "Bloom by Botanik conçoit l'extracteur botanique et infuseur végétal de référence pour concevoir des remèdes naturels de haute précision à domicile. Grâce au séquençage actif A/B, notre technologie d'extraction botanique préserve l'intégrité du Totum végétal sans dénaturer les principes actifs thermolabiles. Que vous prépariez une infusion végétale concentrée, une macération huileuse de calendula ou un extrait de plantes adaptogènes pour stimuler votre reset homéostasique, BloomLab réconcilie l'herboristerie maison ancestrale et les exigences de la phytothérapie clinique moderne."
                 : isDE
-                ? "Über Jahrzehnte wurde die Zubereitung von Pflanzen übermäßig vereinfacht und ihr Potenzial geschwächt. BloomLab bringt die Strenge eines Laborprotokolls zu Ihnen nach Hause: präzise Kontrolle von Zeit, Temperatur und Rühren, um das pflanzliche Totum Ihrer Kräuteröle, Mazerate und botanischen Extrakte zu entfalten."
-                : "For decades, plant preparation has been oversimplified, depleting its potential. BloomLab restores protocol rigor to your home: precise control of time, temperature and stirring to reveal the vegetal Totum in your infused oils, macerates and botanical extracts."}
+                ? "Bloom by Botanik entwickelt den führenden botanischen Extraktor und Pflanzeninfusor für hochpräzise natürliche Heilmittel zu Hause. Dank der sequenziellen A/B-Extraktion bewahrt unsere Technologie das gesamte pflanzliche Totum. Ob konzentrierter Pflanzenaufguss, öliges Mazerat oder Adaptogen-Extrakt für den homöostatischen Reset – BloomLab vereint uralte Hauskräuterkunde mit moderner Phytotherapie."
+                : "Bloom by Botanik designs the reference botanical extractor and herbal infuser for crafting high-precision natural remedies at home. Powered by active A/B sequential extraction, our technology safeguards the full plant Totum without denaturing heat-sensitive active compounds. Whether creating concentrated herbal infusions, nourishing oil macerations, or adaptogenic plant extracts for homeostatic reset, BloomLab unites ancestral home herbalism with modern phytotherapy standards."}
             </p>
 
             {/* CTAs Héroïques (Aucun prix) */}
@@ -304,17 +304,17 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0F261E] tracking-tight">
               {isFR 
-                ? "Vous avez des plantes. Mais les connaissez-vous vraiment ?" 
+                ? "Remèdes Naturels de Précision à Domicile : Connaissez-vous vos plantes médicinales ?" 
                 : isDE 
-                ? "Sie haben Pflanzen. Aber kennen Sie sie wirklich?" 
-                : "You have plants. But do you truly know them?"}
+                ? "Präzise natürliche Hausmittel: Kennen Sie Ihre Heilpflanzen wirklich?" 
+                : "Precision Natural Home Remedies: Do you truly know your medicinal plants?"}
             </h2>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
               {isFR 
-                ? "Entre l'herboristerie empirique et les promesses marketing, la matière végétale exige une méthode claire. Chaque plante possède son propre code d'extraction."
+                ? "Entre l'herboristerie maison empirique et les promesses marketing, la matière végétale exige une méthode claire. Chaque plante médicinale possède son propre code d'extraction pour délivrer ses principes actifs sans altération."
                 : isDE 
-                ? "Zwischen empirischer Kräuterkunde und Marketingversprechen verlangt Pflanzenmaterial eine klare Methode."
-                : "Between empirical herbalism and marketing claims, botanical matter demands a clear method."}
+                ? "Zwischen traditioneller Kräuterkunde und Marketingversprechen verlangt Pflanzenmaterial eine wissenschaftliche Methode. Jede Heilpflanze besitzt ihren eigenen Extraktionscode."
+                : "Between empirical home herbalism and marketing hype, botanical matter demands methodical precision. Every medicinal plant holds its unique extraction code to release active compounds intact."}
             </p>
           </div>
 
@@ -457,17 +457,17 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0F261E] tracking-tight">
               {isFR 
-                ? "Le Séquençage Actif A/B : respecter le spectre biochimique complet" 
+                ? "Plantes Médicinales & Phytothérapie Moderne : Le Séquençage Actif A/B" 
                 : isDE 
-                ? "Sequentielle A/B-Extraktion: das vollständige biochemische Spektrum respektieren" 
-                : "Active A/B Sequencing: respecting the full biochemical spectrum"}
+                ? "Heilpflanzen & Moderne Phytotherapie: Sequenzielle A/B-Extraktion" 
+                : "Medicinal Plants & Modern Phytotherapy: Active A/B Extraction Sequencing"}
             </h2>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
               {isFR 
-                ? "La BloomLab orchestre la séparation et la capture des molécules selon leurs températures et solvants d'affinité." 
+                ? "La BloomLab orchestre la séparation et la capture des molécules selon leurs températures et solvants d'affinité pour révéler le Totum végétal complet de vos remèdes naturels." 
                 : isDE 
-                ? "BloomLab steuert die Trennung und Erfassung von Molekülen nach optimalen Temperaturen und Lösungsmitteln." 
-                : "BloomLab orchestrates the separation and capture of molecules according to optimal temperatures and solvents."}
+                ? "BloomLab steuert die Trennung und Erfassung von Molekülen nach optimalen Temperaturen und Lösungsmitteln, um das vollständige pflanzliche Totum zu entfalten." 
+                : "BloomLab orchestrates molecular separation and extraction based on optimal affinity temperatures and solvents to capture the whole plant Totum."}
             </p>
           </div>
 
@@ -811,7 +811,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             <div className="relative rounded-3xl overflow-hidden shadow-xl border border-[#E7DFD3] h-[340px] sm:h-[420px]">
               <img 
                 src={activeUniverse === 'culinaire' ? herbsImg : activeUniverse === 'cosmetique' ? bloomSoinsImg : shelvesImg} 
-                alt="Pratique BloomLab" 
+                alt={activeUniverse === 'culinaire' ? "Infuseur végétal et herbes aromatiques pour gastronomie botanique" : activeUniverse === 'cosmetique' ? "Extracteur de plantes maison pour macérâts et cosmétique botanique" : "Atelier d'herboristerie maison et extraction de principes actifs"} 
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
@@ -1407,7 +1407,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               <div className="h-52 overflow-hidden bg-slate-100">
                 <img 
                   src={shelvesImg} 
-                  alt="Journal Botanique" 
+                  alt="Extraction du Totum végétal et herboristerie maison" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                 />
               </div>
@@ -1429,13 +1429,13 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             </div>
 
             <div 
-              onClick={() => onNavigate('articles', 'macers-huileux-maison-les-5-erreurs-qui-detruisent-vos-actifs')}
+              onClick={() => onNavigate('articles', 'comment-fabriquer-huiles-infusees-teintures-maison')}
               className="bg-white rounded-3xl overflow-hidden border border-[#E7DFD3] shadow-sm hover:shadow-lg transition-all cursor-pointer flex flex-col group"
             >
               <div className="h-52 overflow-hidden bg-slate-100">
                 <img 
                   src={herbsImg} 
-                  alt="Herbier de précision" 
+                  alt="Plantes médicinales et infuseur botanique de précision" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                 />
               </div>

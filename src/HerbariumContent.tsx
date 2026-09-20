@@ -687,12 +687,14 @@ export default function HerbariumContent({
       <div className="bg-white px-4 md:px-6 pt-6 md:pt-8 pb-4 border-b border-[#0F261E]/5">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-2">
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold text-[#0F261E] mb-1">Herbier botanique :</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-[#0F261E] mb-1">
+              Herbier Bloom — Plantes Médicinales & Adaptogènes Documentés
+            </h1>
             <p className="text-[10px] md:text-xs font-black uppercase tracking-widest text-[#0F261E]/70 mb-1">
-              COMPRENDRE LES PLANTES ET LEURS USAGES
+              COMPRENDRE LES PLANTES, LEURS PRINCIPES ACTIFS ET LEURS EXTRACTIONS MAISON
             </p>
-            <p className="text-sm text-[#0F261E]/60">
-              BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels.
+            <p className="text-sm text-[#0F261E]/60 max-w-3xl">
+              Chaque fiche d'herboristerie recense le nom latin, les principes actifs du Totum végétal, les usages traditionnels ancestraux et les mécanismes d'action validés par la phytothérapie moderne.
             </p>
           </div>
           <button
@@ -702,6 +704,37 @@ export default function HerbariumContent({
             <BookOpen className="w-4 h-4 text-[#D97706]" />
             <span>Guide : L'Extraction Botanique & le Totum →</span>
           </button>
+        </div>
+
+        {/* Familles Botaniques Majeures - H2 Structure SEO */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 my-4 pt-2">
+          <div className="bg-[#FAF7F2] p-4 rounded-2xl border border-[#0F261E]/10">
+            <h2 className="text-xs sm:text-sm font-bold text-[#0F261E] uppercase tracking-wide flex items-center gap-1.5 mb-1">
+              <Sparkles className="w-3.5 h-3.5 text-[#D97706]" />
+              Plantes Adaptogènes (Ashwagandha, Rhodiola)
+            </h2>
+            <p className="text-[11px] text-[#0F261E]/70 leading-snug">
+              Withanolides & rosavines régulant l'axe HPA et le cortisol pour restaurer la vitalité sans excitation.
+            </p>
+          </div>
+          <div className="bg-[#FAF7F2] p-4 rounded-2xl border border-[#0F261E]/10">
+            <h2 className="text-xs sm:text-sm font-bold text-[#0F261E] uppercase tracking-wide flex items-center gap-1.5 mb-1">
+              <Activity className="w-3.5 h-3.5 text-[#D97706]" />
+              Plantes Hépatoprotectrices
+            </h2>
+            <p className="text-[11px] text-[#0F261E]/70 leading-snug">
+              Silybine du Chardon-Marie et desmodine pour soutenir l'épuration hépatique et le métabolisme de phase II.
+            </p>
+          </div>
+          <div className="bg-[#FAF7F2] p-4 rounded-2xl border border-[#0F261E]/10">
+            <h2 className="text-xs sm:text-sm font-bold text-[#0F261E] uppercase tracking-wide flex items-center gap-1.5 mb-1">
+              <Leaf className="w-3.5 h-3.5 text-[#D97706]" />
+              Plantes Anti-inflammatoires
+            </h2>
+            <p className="text-[11px] text-[#0F261E]/70 leading-snug">
+              Salicyline de la Reine-des-Prés, curcuminoïdes et flavonoïdes pour apaiser les terrains d'inflammation de bas grade.
+            </p>
+          </div>
         </div>
 
         <div className="relative mt-4 mb-4 max-w-2xl">

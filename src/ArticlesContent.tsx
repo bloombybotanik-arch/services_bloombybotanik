@@ -19,9 +19,11 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
 
   useEffect(() => {
     if (initialSlug) {
-      const match = blogPosts.find(p => p.slug === initialSlug || (initialSlug === 'saule-salicine-aspirine-histoire-totum' && p.slug === 'remplacer-aspirine-naturellement-guide-extraction-reine-des-pres'));
+      const match = blogPosts.find(p => p.slug === initialSlug || (p.slug.includes('theiere') && initialSlug.includes('tisane')) || (p.slug.includes('remedes-de-grand-mere') && initialSlug.includes('aspirine')));
       if (match) {
         setSelectedPost(match);
+      } else if (blogPosts.length > 0) {
+        setSelectedPost(blogPosts[0]);
       }
     }
   }, [initialSlug]);
@@ -40,6 +42,43 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
 
     return (
       <div className="bg-[#FAF7F2] min-h-screen">
+        {/* Article Schema.org JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": selectedPost.title[lang] || selectedPost.title.fr,
+              "description": selectedPost.excerpt[lang] || selectedPost.excerpt.fr,
+              "image": [
+                selectedPost.image || "https://bloombybotanik.com/images/og/article-infuseur-vs-theiere-tisane-1200x630.jpg",
+                selectedPost.imageSquare || "https://bloombybotanik.com/images/og/article-infuseur-vs-theiere-tisane-1080x1080.jpg"
+              ],
+              "datePublished": selectedPost.date,
+              "dateModified": selectedPost.date,
+              "author": {
+                "@type": "Organization",
+                "name": selectedPost.author || "L'équipe Bloom",
+                "url": "https://bloombybotanik.com"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Bloom by BotaniK",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://bloombybotanik.com/assets/img/logo-bloom-square-512.png",
+                  "width": 512,
+                  "height": 512
+                }
+              },
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": `https://bloombybotanik.com/articles/${selectedPost.slug}`
+              }
+            })
+          }}
+        />
         <div className="max-w-4xl mx-auto px-6 py-16">
           {/* Breadcrumbs */}
           <nav className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-[#1C3F34]/60 mb-8">
@@ -108,7 +147,9 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
             <div className="relative mb-12 rounded-3xl overflow-hidden shadow-lg border border-[#E7DFD3]">
               <img 
                 src={selectedPost.image} 
-                alt={selectedPost.title[lang]} 
+                alt={selectedPost.imageAlt || selectedPost.title[lang]} 
+                width="1200"
+                height="630"
                 className="w-full aspect-[16/9] object-cover" 
               />
             </div>

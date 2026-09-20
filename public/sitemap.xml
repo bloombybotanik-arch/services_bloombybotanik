@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
   <!-- Core Pages -->
   <url>
     <loc>https://bloombybotanik.com/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/"/>
@@ -12,191 +16,407 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/"/>
     <image:image>
       <image:loc>https://bloombybotanik.com/images/og-bloomlab-1200x630.jpg</image:loc>
-      <image:title>BloomLab® : extracteur botanique pour préparer vos extraits maison</image:title>
-      <image:caption>BloomLab, extracteur botanique domestique en acier inoxydable</image:caption>
+      <image:title>BloomLab® : extracteur botanique et infuseur de précision</image:title>
+      <image:caption>BloomLab, extracteur botanique domestique en acier inoxydable chirurgical 304</image:caption>
     </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://bloombybotanik.com/images/og-bloomlab-1200x630.jpg</video:thumbnail_loc>
+      <video:title>Démonstration de l'infuseur et extracteur botanique BloomLab®</video:title>
+      <video:description>Découvrez le séquençage actif A/B, la thermorégulation et le vortex cinétique de la machine BloomLab pour extraire le Totum végétal.</video:description>
+      <video:content_loc>https://bloombybotanik.com/demo_bloomlab.mp4</video:content_loc>
+      <video:publication_date>2026-08-15T08:00:00+02:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
+
+  <!-- Pôle 1 : Extraction & Infuseurs -->
   <url>
-    <loc>https://bloombybotanik.com/bloomlab/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://bloombybotanik.com/infuseur-botanique/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/infuseur-botanique/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/infuseur-botanique/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/infuseur-botanique/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/infuseur-botanique/"/>
     <image:image>
       <image:loc>https://bloombybotanik.com/images/og-bloomlab-1200x630.jpg</image:loc>
-      <image:title>BloomLab® — Vue de face extracteur botanique inox</image:title>
+      <image:title>Infuseur botanique de précision BloomLab</image:title>
     </image:image>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/extraction-botanique/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/extraction-botanique/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/extraction-botanique/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/extraction-botanique/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/extraction-botanique/"/>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/produit/bloomlab/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/produit/bloomlab/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/produit/bloomlab/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/produit/bloomlab/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/produit/bloomlab/"/>
     <image:image>
       <image:loc>https://bloombybotanik.com/img/produit/bloomlab-3quarts-1200x1200.jpg</image:loc>
       <image:title>BloomLab® — Vue 3/4 bol et écran de commande</image:title>
     </image:image>
     <image:image>
       <image:loc>https://bloombybotanik.com/img/produit/bloomlab-cuisine-1200x630.jpg</image:loc>
-      <image:title>BloomLab® — En situation en cuisine atelier botanique</image:title>
+      <image:title>BloomLab® — En situation atelier d'herboristerie maison</image:title>
     </image:image>
   </url>
-  <url>
-    <loc>https://bloombybotanik.com/boutique/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/manifeste/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/herbier/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/abonnement/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/blog/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/phytotherapie-reset/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/recettes/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
 
-  <!-- Pillar & Educational Pages -->
   <url>
     <loc>https://bloombybotanik.com/infusion-botanique-maison-comment-ca-marche/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://bloombybotanik.com/extraction-botanique/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/infusion-botanique/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+
   <url>
     <loc>https://bloombybotanik.com/huile-infusee/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
-    <loc>https://bloombybotanik.com/plantes-adaptogenes/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <loc>https://bloombybotanik.com/teinture-mere/</loc>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
+
+  <!-- Pôle 2 : Science & Terrain -->
+  <url>
+    <loc>https://bloombybotanik.com/phytotherapie-reset/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/phytotherapie-reset/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/phytotherapie-reset/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/phytotherapie-reset/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/phytotherapie-reset/"/>
+  </url>
+
   <url>
     <loc>https://bloombybotanik.com/totum-vegetal/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/plantes-adaptogenes/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/terrain/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/hormese/</loc>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://bloombybotanik.com/culinaire/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <loc>https://bloombybotanik.com/lexique/</loc>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Pôle 3 : Herboristerie & Usages -->
   <url>
-    <loc>https://bloombybotanik.com/cosmetiques/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <loc>https://bloombybotanik.com/herbier/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/herbier/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/herbier/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/herbier/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/herbier/"/>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/cosmetique-botanique/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/gastronomie-botanique/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/recettes/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/articles/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/comment-ca-marche/</loc>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Les 5 Articles Phares Optimisés SEO -->
   <url>
-    <loc>https://bloombybotanik.com/faq/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <loc>https://bloombybotanik.com/articles/infuseur-botanique-vs-theiere-classique-pourquoi-votre-tisane-ne-marche-pas</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/articles/infuseur-botanique-vs-theiere-classique-pourquoi-votre-tisane-ne-marche-pas"/>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/articles/extraction-a-froid-vs-extraction-a-chaud-guide-totum-vegetal</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/articles/extraction-a-froid-vs-extraction-a-chaud-guide-totum-vegetal"/>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/articles/remedes-de-grand-mere-revisites-par-la-science-5-plantes-a-redecouvrir</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/articles/remedes-de-grand-mere-revisites-par-la-science-5-plantes-a-redecouvrir"/>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/articles/comment-fabriquer-huiles-infusees-teintures-maison</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/articles/comment-fabriquer-huiles-infusees-teintures-maison"/>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/articles/plantes-adaptogenes-guide-complet-reequilibrer-systeme-nerveux</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/articles/plantes-adaptogenes-guide-complet-reequilibrer-systeme-nerveux"/>
+  </url>
+
+  <!-- Commercial & Boutique Products -->
+  <url>
+    <loc>https://bloombybotanik.com/boutique/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/boutique/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/boutique/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/boutique/"/>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/img/produit/bloomlab-1200x1200.jpg</image:loc>
+      <image:title>Boutique Bloom by BotaniK : Extracteur & Kits de Plantes</image:title>
+      <image:caption>L'herboristerie moderne à portée de main : machine BloomLab et kits botaniques</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/boutique/bloomlab/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/bloomlab/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/boutique/bloomlab/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/boutique/bloomlab/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/boutique/bloomlab/"/>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/img/produit/bloomlab-1200x1200.jpg</image:loc>
+      <image:title>BloomLab® : extracteur et infuseur botanique de précision</image:title>
+      <image:caption>BloomLab, extracteur et infuseur de plantes médicinales inox 304 avec thermorégulation ±0,5°C</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/boutique/bundle-apothicaire/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/bundle-apothicaire/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/boutique/bundle-apothicaire/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/boutique/bundle-apothicaire/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/boutique/bundle-apothicaire/"/>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/img/produit/trio-pouches-1200x1200.jpg</image:loc>
+      <image:title>Trio d'Apothicaire Botanique : 3 formules de plantes médicinales</image:title>
+      <image:caption>Sève Fondamentale, Nuit Profonde et Feu Digestif pour extractions botaniques domestiques</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/boutique/pack-signature/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/pack-signature/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/boutique/pack-signature/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/boutique/pack-signature/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/boutique/pack-signature/"/>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/img/produit/bloomlab-1200x1200.jpg</image:loc>
+      <image:title>Pack Signature BloomLab® + Trio d'Apothicaire</image:title>
+      <image:caption>Machine BloomLab, 3 formules de plantes complètes et accès aux protocoles d'extraction</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/boutique/kit-starter/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/kit-starter/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/boutique/kit-starter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/boutique/kit-starter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/boutique/kit-starter/"/>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/img/produit/seve-fondamentale-1200x1200.jpg</image:loc>
+      <image:title>Kit Sève Fondamentale : Plantes Médicinales pour Infusion Botanique</image:title>
+      <image:caption>Synergie tonique d'ortie, romarin et cynorrhodon pour soutenir la vitalité</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/boutique/kit-nuit/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/kit-nuit/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/boutique/kit-nuit/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/boutique/kit-nuit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/boutique/kit-nuit/"/>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/img/produit/nuit-profonde-1200x1200.jpg</image:loc>
+      <image:title>Kit Nuit Profonde : Plantes Médicinales Sommeil & Système Nerveux</image:title>
+      <image:caption>Passiflore, mélisse et camomille matricaire calibrées pour infusion de précision</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/boutique/kit-digestion/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/kit-digestion/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/boutique/kit-digestion/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/boutique/kit-digestion/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/boutique/kit-digestion/"/>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/img/produit/digestion-1200x1200.jpg</image:loc>
+      <image:title>Kit Feu Digestif : Plantes pour Confort Intestinal & Émonctoires</image:title>
+      <image:caption>Fenouil doux, menthe poivrée et gentiane pour stimuler les sucs digestifs</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/boutique/kit-articulaire/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/kit-articulaire/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/boutique/kit-articulaire/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/boutique/kit-articulaire/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/boutique/kit-articulaire/"/>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/img/produit/feu-articulaire-1200x1200.jpg</image:loc>
+      <image:title>Kit Feu Articulaire : Plantes Médicinales Mobilité & Souplesse</image:title>
+      <image:caption>Harpagophytum, reine-des-prés et cassis pour soulager les raideurs articulaires</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/boutique/kit-hiver/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/kit-hiver/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/boutique/kit-hiver/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/boutique/kit-hiver/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/boutique/kit-hiver/"/>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/img/produit/bouclier-hiver-1200x1200.jpg</image:loc>
+      <image:title>Kit Bouclier Hivernal : Plantes Médicinales Immunité Naturelle</image:title>
+      <image:caption>Échinacée pourpre, thym à linalol et baies de sureau pour l'immunité</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/boutique/duo-argiles/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/duo-argiles/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/boutique/duo-argiles/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/boutique/duo-argiles/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/boutique/duo-argiles/"/>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/img/produit/duo-argiles-1200x1200.jpg</image:loc>
+      <image:title>Duo Argiles & Terres Rares : Purification Systémique</image:title>
+      <image:caption>Argiles vertes et blanches ventilées pour cataplasmes et purification</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/abonnement/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/manifeste/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/questions-frequentes/</loc>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://bloombybotanik.com/contact/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-
-  <!-- Blog Posts -->
-  <url>
-    <loc>https://bloombybotanik.com/blog/tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/blog/macers-huileux-maison-les-5-erreurs-qui-detruisent-vos-actifs/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/blog/inflammation-chronique-le-role-des-plantes-dans-le-reset-homeostasique/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/blog/extraction-botanique-vs-huiles-essentielles-pourquoi-choisir-le-totum/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/blog/remplacer-aspirine-naturellement-guide-extraction-reine-des-pres/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- English Versions -->
-  <url>
-    <loc>https://bloombybotanik.com/en/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/en/bloomlab/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/en/herbier/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <priority>0.4</priority>
-  </url>
-
-  <!-- German Versions -->
-  <url>
-    <loc>https://bloombybotanik.com/de/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/de/bloomlab/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/de/herbier/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <priority>0.4</priority>
   </url>
 </urlset>

@@ -212,10 +212,14 @@ export default function CulinarySection({
           <span>{t.header.badge_alt}</span>
         </div>
         <h1 className="leading-[1.1] tracking-tight text-botanik-green mb-8">
-          <span className="block text-3xl md:text-[54px] font-bold mb-2">
-            {wrapTitle(t.header.title)}
+          <span className="block text-3xl md:text-5xl font-bold mb-2">
+            {lang === 'fr'
+              ? "Gastronomie Botanique — Extractions Culinaires & Bouillons"
+              : lang === 'de'
+              ? "Botanische Gastronomie — Kulinarische Auszüge & Brühen"
+              : "Botanical Gastronomy — Culinary Extractions & Broths"}
           </span>
-          <span className="block text-3xl md:text-[54px] text-botanik-green/80 font-bold">
+          <span className="block text-2xl md:text-4xl text-botanik-green/80 font-bold">
             {wrapTitle(t.header.subtitle)}
           </span>
         </h1>
@@ -223,6 +227,28 @@ export default function CulinarySection({
           {t.header.description.split('\n\n').map((paragraph, idx) => (
             <p key={idx}>{paragraph}</p>
           ))}
+        </div>
+
+        {/* SEO Pillars H2 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <div className="bg-white p-6 rounded-3xl border border-botanik-green/10 shadow-xs space-y-2">
+            <h2 className="text-lg md:text-xl font-bold text-botanik-green flex items-center gap-2">
+              <ChefHat className="w-5 h-5 text-[#D97706]" />
+              {lang === 'fr' ? "Bouillons de Plantes Médicinales" : "Medicinal Plant Broths"}
+            </h2>
+            <p className="text-xs sm:text-sm text-botanik-green/75 leading-relaxed">
+              Infusion longue et maîtrisée de racines (gingembre, curcuma, bardane) et de feuilles aromatiques pour extraire minéraux biodisponibles et molécules umami thérapeutiques sans ébullition destructrice.
+            </p>
+          </div>
+          <div className="bg-white p-6 rounded-3xl border border-botanik-green/10 shadow-xs space-y-2">
+            <h2 className="text-lg md:text-xl font-bold text-botanik-green flex items-center gap-2">
+              <Droplets className="w-5 h-5 text-[#D97706]" />
+              {lang === 'fr' ? "Huiles Aromatisées Maison" : "Homemade Aromatic Oils"}
+            </h2>
+            <p className="text-xs sm:text-sm text-botanik-green/75 leading-relaxed">
+              Extraction thermo-cinétique en milieu clos dans l'huile d'olive vierge ou le ghee. Les composés lipophiles (romarin, piment, ail sauvage, laurier) infusent en 45 minutes à 50°C sans friture.
+            </p>
+          </div>
         </div>
       </header>
 
