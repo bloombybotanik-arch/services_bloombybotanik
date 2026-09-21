@@ -46,12 +46,42 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
       "seller": {
         "@type": "Organization",
         "name": "Bloom by BotaniK"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": productId === 'bloomlab' ? "7.90" : "5.90",
+          "currency": "EUR"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "FR"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 2,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 4,
+            "unitCode": "DAY"
+          }
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "FR",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 14,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/ReturnShippingFees"
       }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": 64
     }
   };
 

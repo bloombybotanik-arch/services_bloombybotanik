@@ -282,11 +282,6 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
         "@type": "Brand",
         "name": "Bloom by BotaniK"
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": p.rating,
-        "reviewCount": p.reviews
-      },
       "offers": {
         "@type": "Offer",
         "url": `https://bloombybotanik.com/boutique/${p.id}/`,
@@ -298,6 +293,41 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
         "seller": {
           "@type": "Organization",
           "name": "Bloom by BotaniK"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": p.id === 'bloomlab' ? "7.90" : "5.90",
+            "currency": "EUR"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "FR"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 2,
+              "maxValue": 4,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "FR",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 14,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/ReturnShippingFees"
         }
       }
     }))

@@ -1454,6 +1454,41 @@ function injectServerSEO(html: string, reqPath: string): string {
           "seller": {
             "@type": "Organization",
             "name": "Bloom by BotaniK"
+          },
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "value": (route.sku && route.sku.includes("BLOOMLAB")) ? "7.90" : "5.90",
+              "currency": "EUR"
+            },
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "FR"
+            },
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "handlingTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 1,
+                "maxValue": 2,
+                "unitCode": "DAY"
+              },
+              "transitTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 2,
+                "maxValue": 4,
+                "unitCode": "DAY"
+              }
+            }
+          },
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": "FR",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 14,
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/ReturnShippingFees"
           }
         }
       });
