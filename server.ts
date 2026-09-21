@@ -303,7 +303,7 @@ if (IS_PROD) {
     ) return next();
     const staticFiles = [
       "/favicon.ico", "/favicon-", "/robots.txt",
-      "/sitemap.xml", "/sitemap-fr.xml", "/sitemap-en.xml", "/sitemap-de.xml",
+      "/sitemap.xml", "/sitemap-images.xml", "/sitemap-fr.xml", "/sitemap-en.xml", "/sitemap-de.xml",
       "/site.webmanifest", "/manifest.webmanifest", "/apple-touch-icon", "/feed/",
     ];
     if (staticFiles.some((f) => lower.includes(f))) return next();
@@ -600,6 +600,7 @@ function registerAppRoutes(app: express.Express) {
 
   /* --- Sitemaps & robots & feed --- */
   app.get("/sitemap.xml", (req, res) => { res.header("Content-Type", "application/xml"); res.sendFile(path.join(process.cwd(), "public", "sitemap.xml")); });
+  app.get("/sitemap-images.xml", (req, res) => { res.header("Content-Type", "application/xml"); res.sendFile(path.join(process.cwd(), "public", "sitemap-images.xml")); });
   app.get("/sitemap-fr.xml", (req, res) => { res.header("Content-Type", "application/xml"); res.sendFile(path.join(process.cwd(), "public", "sitemap-fr.xml")); });
   app.get("/sitemap-en.xml", (req, res) => { res.header("Content-Type", "application/xml"); res.sendFile(path.join(process.cwd(), "public", "sitemap-en.xml")); });
   app.get("/sitemap-de.xml", (req, res) => { res.header("Content-Type", "application/xml"); res.sendFile(path.join(process.cwd(), "public", "sitemap-de.xml")); });
