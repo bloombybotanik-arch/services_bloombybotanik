@@ -1372,6 +1372,94 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     isPaywalled: true,
     datePublished: "2026-09-22T08:00:00+02:00",
     dateModified: "2026-09-22T08:00:00+02:00"
+  },
+  "/abonnement/": {
+    title: "Abonnement & Protocoles Bloom : Accompagnement Systémique | Bloom",
+    description: "Rejoignez l'accompagnement Bloom Complet ou Bloom Lab. Protocoles personnalisés de phytothérapie, masterclasses et formulations exclusives chaque mois.",
+    image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
+    image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
+    alt: "Abonnement et protocoles d'accompagnement Bloom by BotaniK",
+    type: "website"
+  },
+  "/la-marque/": {
+    title: "La Marque Bloom by BotaniK : Vision, Science & Totum Végétal",
+    description: "Découvrez la genèse et la mission de Bloom by BotaniK : réconcilier les sagesses ancestrales de l'herboristerie et la rigueur de l'ingénierie biologique.",
+    image1200: "/images/og/manifeste-souverainete-sanitaire-botanique-1200x630.jpg",
+    image1080: "/images/og/manifeste-souverainete-sanitaire-botanique-1080x1080.jpg",
+    alt: "La marque Bloom by BotaniK et sa mission de phytothérapie intégrale",
+    type: "website"
+  },
+  "/bibliotheque/": {
+    title: "Bibliothèque Botanique : Protocoles, Guides & Formulations | Bloom",
+    description: "Accédez à l'ensemble de nos guides d'extraction, fiches recettes de phytothérapie et ateliers d'herboristerie moderne.",
+    image1200: "/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg",
+    image1080: "/images/og/articles-savoirs-herboristerie-botanique-1080x1080.jpg",
+    alt: "Bibliothèque de savoirs et protocoles botaniques Bloom by BotaniK",
+    type: "website"
+  },
+  "/recettes/": {
+    title: "Recettes & Formulations Botaniques : Tisanes, Huiles & Extraits | Bloom",
+    description: "Recettes précises d'extraction végétale : ratios, températures et solvants pour concevoir vos remèdes et soins botaniques à la maison.",
+    image1200: "/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg",
+    image1080: "/images/og/articles-savoirs-herboristerie-botanique-1080x1080.jpg",
+    alt: "Recettes et préparations de phytothérapie moderne",
+    type: "website"
+  },
+  "/blog/": {
+    title: "Le Blog Botanique : Articles, Dossiers Scientifiques & Pratiques | Bloom",
+    description: "Dossiers de fond sur l'inflammation chronique, le Totum végétal face aux huiles essentielles, les macérats huileux et les techniques d'infusion avancées.",
+    image1200: "/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg",
+    image1080: "/images/og/articles-savoirs-herboristerie-botanique-1080x1080.jpg",
+    alt: "Le Blog Botanique Bloom by BotaniK",
+    type: "website"
+  },
+  "/mentions-legales/": {
+    title: "Mentions Légales | Bloom by BotaniK",
+    description: "Informations légales, éditeur du site, hébergement et propriété intellectuelle de Bloom by BotaniK.",
+    image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
+    image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
+    alt: "Mentions légales Bloom by BotaniK",
+    type: "website"
+  },
+  "/politique-de-confidentialite/": {
+    title: "Politique de Confidentialité & RGPD | Bloom by BotaniK",
+    description: "Protection des données personnelles, conformité RGPD et respect de votre vie privée sur Bloom by BotaniK.",
+    image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
+    image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
+    alt: "Politique de confidentialité Bloom by BotaniK",
+    type: "website"
+  },
+  "/conditions-generales-de-vente/": {
+    title: "Conditions Générales de Vente (CGV) | Bloom by BotaniK",
+    description: "Conditions générales de vente des produits et services Bloom by BotaniK : commandes, livraison, garanties et retours.",
+    image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
+    image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
+    alt: "Conditions Générales de Vente Bloom by BotaniK",
+    type: "website"
+  },
+  "/termes-et-conditions/": {
+    title: "Termes et Conditions d'Utilisation (CGU) | Bloom by BotaniK",
+    description: "Conditions générales d'utilisation du site, de l'application et des services en ligne Bloom by BotaniK.",
+    image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
+    image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
+    alt: "Termes et conditions d'utilisation Bloom by BotaniK",
+    type: "website"
+  },
+  "/retour-et-remboursement/": {
+    title: "Politique de Retour & Remboursement | Bloom by BotaniK",
+    description: "Modalités de retour, droit de rétractation de 14 jours et conditions de remboursement pour vos achats Bloom by BotaniK.",
+    image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
+    image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
+    alt: "Retour et remboursement Bloom by BotaniK",
+    type: "website"
+  },
+  "/droit-de-retractation/": {
+    title: "Formulaire & Droit de Rétractation | Bloom by BotaniK",
+    description: "Conditions d'exercice du droit de rétractation légal et formulaire de retour de commande Bloom by BotaniK.",
+    image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
+    image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
+    alt: "Droit de rétractation Bloom by BotaniK",
+    type: "website"
   }
 };
 
