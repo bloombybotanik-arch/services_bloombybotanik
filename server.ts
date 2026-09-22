@@ -646,6 +646,7 @@ function registerAppRoutes(app: express.Express) {
     "/products": "/boutique/",
     "/herboristerie": "/herbier/",
     "/phytotherapie": "/phytotherapie-reset/",
+    "/phytotherapie-reset/protocole-psoriasis": "/phytotherapie-reset/protocole-psoriasis/",
     "/abonnement": "/abonnement/",
     "/herbier/phytotherapie": "/phytotherapie-reset/",
     "/herbier/phytotherapie/": "/phytotherapie-reset/",
@@ -1055,6 +1056,9 @@ interface ServerSEORoute {
   type: "website" | "article" | "product";
   price?: string;
   sku?: string;
+  isPaywalled?: boolean;
+  datePublished?: string;
+  dateModified?: string;
 }
 
 const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
@@ -1357,6 +1361,17 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     image1080: "/images/og/article-plantes-adaptogenes-systeme-nerveux-1080x1080.jpg",
     alt: "Plantes adaptogènes pour rééquilibrer le système nerveux",
     type: "article"
+  },
+  "/phytotherapie-reset/protocole-psoriasis/": {
+    title: "Protocole Psoriasis — Reset Homéostasique | Bloom by BotaniK",
+    description: "Protocole complet d'accompagnement du terrain psoriasique par la phytothérapie intégrale : 4 phases, 14 semaines, drainage émonctoriel et modulation de l'inflammation.",
+    image1200: "/images/og/protocole-psoriasis-reset-homeostatique-1200x630.jpg",
+    image1080: "/images/og/protocole-psoriasis-reset-homeostatique-1080x1080.jpg",
+    alt: "Protocole Psoriasis — Reset Homéostasique et phytothérapie intégrale Bloom by BotaniK",
+    type: "article",
+    isPaywalled: true,
+    datePublished: "2026-09-22T08:00:00+02:00",
+    dateModified: "2026-09-22T08:00:00+02:00"
   }
 };
 
@@ -1393,8 +1408,14 @@ function injectServerSEO(html: string, reqPath: string): string {
       );
     }
 
-    // 5. Update Canonical link
+    // 5. Update Canonical link & Hreflang
     updated = updated.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, `<link rel="canonical" href="${canonical}" />`);
+
+    if (normalized === "/phytotherapie-reset/protocole-psoriasis/") {
+      updated = updated.replace(/<link\s+rel=["']alternate["']\s+hreflang=["'].*?["']\s+href=["'].*?["']\s*\/?>/gi, "");
+      const customHreflang = `<link rel="alternate" hreflang="fr" href="${canonical}" />\n    <link rel="alternate" hreflang="x-default" href="${canonical}" />`;
+      updated = updated.replace("<head>", `<head>\n    ${customHreflang}`);
+    }
 
     // 6. Update Twitter Cards
     updated = updated.replace(/<meta\s+name=["']twitter:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:title" content="${route.title}">`);
@@ -1402,17 +1423,17 @@ function injectServerSEO(html: string, reqPath: string): string {
     updated = updated.replace(/<meta\s+name=["']twitter:image["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:image" content="${full1200}">`);
     updated = updated.replace(/<meta\s+name=["']twitter:image:alt["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:image:alt" content="${route.alt}">`);
 
-    // 6. Dynamic JSON-LD injection
+    // 7. Dynamic JSON-LD injection
     let schemaJson = "";
     if (route.type === "article") {
-      schemaJson = JSON.stringify({
+      const articleData: any = {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": route.title,
         "description": route.description,
         "image": [full1200, full1080],
-        "datePublished": "2026-09-01T08:00:00+02:00",
-        "dateModified": "2026-09-20T10:00:00+02:00",
+        "datePublished": (route as any).datePublished || "2026-09-01T08:00:00+02:00",
+        "dateModified": (route as any).dateModified || "2026-09-20T10:00:00+02:00",
         "author": {
           "@type": "Organization",
           "name": "Bloom by BotaniK",
@@ -1432,7 +1453,18 @@ function injectServerSEO(html: string, reqPath: string): string {
           "@type": "WebPage",
           "@id": canonical
         }
-      });
+      };
+
+      if ((route as any).isPaywalled) {
+        articleData.isAccessibleForFree = false;
+        articleData.hasPart = {
+          "@type": "WebPageElement",
+          "isAccessibleForFree": false,
+          "cssSelector": ".premium-paywall-content"
+        };
+      }
+
+      schemaJson = JSON.stringify(articleData);
     } else if (route.type === "product") {
       schemaJson = JSON.stringify({
         "@context": "https://schema.org",

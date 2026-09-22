@@ -611,6 +611,34 @@ export default function PhytotherapyResetPage({
                   </div>
                </div>
             </div>
+
+            {/* Protocole Spécifique : Psoriasis */}
+            <div className="bg-[#FAF2E6] rounded-[48px] p-8 md:p-12 border border-[#EEDFC6] shadow-xl mt-12 flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="max-w-xl">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#92400E] text-white text-[11px] font-black uppercase tracking-widest rounded-full mb-4">
+                  Protocole Systémique Ciblé
+                </div>
+                <h3 className="text-2xl md:text-3xl font-black text-[#0F261E] mb-3">
+                  Protocole Psoriasis — Reset Homéostasique
+                </h3>
+                <p className="text-sm md:text-base text-slate-700 leading-relaxed">
+                  14 semaines d'accompagnement du terrain psoriasique : drainage émonctoriel, modulation de l'inflammation et régénération cellulaire sans effet rebond.
+                </p>
+              </div>
+              <a
+                href="https://bloombybotanik.com/phytotherapie-reset/protocole-psoriasis/"
+                onClick={(e) => {
+                  if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                    e.preventDefault();
+                    onNavigate('protocole-psoriasis');
+                  }
+                }}
+                className="inline-flex items-center gap-3 bg-[#0F261E] hover:bg-[#D97706] text-white px-8 py-4 rounded-full font-bold text-sm transition-all shadow-lg shrink-0 cursor-pointer"
+              >
+                <span>Accéder au Protocole Psoriasis</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         )}
 

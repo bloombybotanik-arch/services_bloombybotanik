@@ -468,6 +468,22 @@ export const VIEW_METADATA: Record<string, MetaData> = {
     imageSquare: "/images/og/guide-utilisation-protocoles-bloomlab-1080x1080.jpg",
     imageAlt: "Guide d'utilisation de l'extracteur et infuseur BloomLab",
     type: "article"
+  },
+  'protocole-psoriasis': {
+    title: {
+      fr: "Protocole Psoriasis — Reset Homéostasique | Bloom by BotaniK",
+      en: "Protocole Psoriasis — Reset Homéostasique | Bloom by BotaniK",
+      de: "Protocole Psoriasis — Reset Homéostasique | Bloom by BotaniK"
+    },
+    description: {
+      fr: "Protocole complet d'accompagnement du terrain psoriasique par la phytothérapie intégrale : 4 phases, 14 semaines, drainage émonctoriel et modulation de l'inflammation.",
+      en: "Protocole complet d'accompagnement du terrain psoriasique par la phytothérapie intégrale : 4 phases, 14 semaines, drainage émonctoriel et modulation de l'inflammation.",
+      de: "Protocole complet d'accompagnement du terrain psoriasique par la phytothérapie intégrale : 4 phases, 14 semaines, drainage émonctoriel et modulation de l'inflammation."
+    },
+    image: "/images/og/protocole-psoriasis-reset-homeostatique-1200x630.jpg",
+    imageSquare: "/images/og/protocole-psoriasis-reset-homeostatique-1080x1080.jpg",
+    imageAlt: "Protocole Psoriasis — Reset Homéostasique et phytothérapie intégrale Bloom by BotaniK",
+    type: "article"
   }
 };
 
@@ -879,10 +895,17 @@ export function updateDocumentSEO(view: View, lang: Language, productParam?: str
   };
 
   const pathOnly = seo.canonicalUrl.replace('https://bloombybotanik.com', '');
-  setHreflang('fr', `https://bloombybotanik.com${pathOnly}`);
-  setHreflang('en', `https://bloombybotanik.com/en${pathOnly}`);
-  setHreflang('de', `https://bloombybotanik.com/de${pathOnly}`);
-  setHreflang('x-default', `https://bloombybotanik.com${pathOnly}`);
+  if (view === 'protocole-psoriasis' || pathOnly === '/phytotherapie-reset/protocole-psoriasis/') {
+    setHreflang('fr', 'https://bloombybotanik.com/phytotherapie-reset/protocole-psoriasis/');
+    setHreflang('x-default', 'https://bloombybotanik.com/phytotherapie-reset/protocole-psoriasis/');
+    document.querySelector('link[rel="alternate"][hreflang="en"]')?.remove();
+    document.querySelector('link[rel="alternate"][hreflang="de"]')?.remove();
+  } else {
+    setHreflang('fr', `https://bloombybotanik.com${pathOnly}`);
+    setHreflang('en', `https://bloombybotanik.com/en${pathOnly}`);
+    setHreflang('de', `https://bloombybotanik.com/de${pathOnly}`);
+    setHreflang('x-default', `https://bloombybotanik.com${pathOnly}`);
+  }
 
   // 5. Update or create Dynamic Schema.org JSON-LD
   let schemaEl = document.getElementById('bloom-dynamic-seo') as HTMLScriptElement | null;
@@ -901,8 +924,8 @@ export function updateDocumentSEO(view: View, lang: Language, productParam?: str
       "headline": seo.title,
       "description": seo.description,
       "image": [seo.image, seo.imageSquare],
-      "datePublished": "2026-09-01T08:00:00+02:00",
-      "dateModified": "2026-09-20T10:00:00+02:00",
+      "datePublished": view === 'protocole-psoriasis' ? "2026-09-22T08:00:00+02:00" : "2026-09-01T08:00:00+02:00",
+      "dateModified": view === 'protocole-psoriasis' ? "2026-09-22T08:00:00+02:00" : "2026-09-20T10:00:00+02:00",
       "author": {
         "@type": "Organization",
         "name": "Bloom by BotaniK",
@@ -923,6 +946,15 @@ export function updateDocumentSEO(view: View, lang: Language, productParam?: str
         "@id": seo.canonicalUrl
       }
     };
+
+    if (view === 'protocole-psoriasis') {
+      schemaData.isAccessibleForFree = false;
+      schemaData.hasPart = {
+        "@type": "WebPageElement",
+        "isAccessibleForFree": false,
+        "cssSelector": ".premium-paywall-content"
+      };
+    }
   } else if (seo.type === 'product') {
     schemaData = {
       "@context": "https://schema.org",

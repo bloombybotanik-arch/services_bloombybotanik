@@ -81,6 +81,7 @@ import PremiumInfoContent from './PremiumInfoContent';
 import LexiqueContent from './LexiqueContent';
 import TerrainPillar from './TerrainPillar';
 import ExtractionCalculator from './components/ExtractionCalculator';
+import ProtocolePsoriasisContent from './ProtocolePsoriasisContent';
 import { updateDocumentSEO } from './utils/seoManager';
 
 const PATH_VIEWS: Record<string, View> = {
@@ -107,6 +108,8 @@ const PATH_VIEWS: Record<string, View> = {
   '/lexique/': 'lexique',
   '/boutique/bloomlab': 'product-detail',
   '/boutique/bloomlab/': 'product-detail',
+  '/phytotherapie-reset/protocole-psoriasis': 'protocole-psoriasis',
+  '/phytotherapie-reset/protocole-psoriasis/': 'protocole-psoriasis',
 };
 
 const SEOArticles = ({ view, lang, t, onNavigate }: { view: string; lang: Language; t: any; onNavigate?: (view: any, param?: string) => void }) => {
@@ -643,6 +646,13 @@ export default function App() {
           <IndexBisContent onNavigate={navigateTo} lang={selectedLanguage} />
         ) : currentView === 'machine' ? (
           <MachineLanding onNavigate={navigateTo} lang={selectedLanguage} />
+        ) : currentView === 'protocole-psoriasis' ? (
+          <ProtocolePsoriasisContent
+            isPremium={isSubscribed}
+            onNavigate={navigateTo}
+            onRequireAuth={() => setIsAuthOpen(true)}
+            lang={selectedLanguage}
+          />
         ) : currentView === 'phytotherapie-reset' || currentView === 'votre-pratique' || currentView === 'parcours' ? (
           <PhytotherapyResetPage
             onNavigate={navigateTo}

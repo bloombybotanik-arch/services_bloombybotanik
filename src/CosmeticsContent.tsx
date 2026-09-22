@@ -92,7 +92,7 @@ export default function CosmeticsContent({
             {wrapTitle(t.header.subtitle)}
           </span>
         </h1>
-        <div className="text-base md:text-lg text-botanik-green/85 max-w-3xl leading-relaxed space-y-4">
+        <div className="text-base md:text-lg text-botanik-green/85 w-full leading-relaxed space-y-4">
           {t.header.description.split('\n\n').map((paragraph, idx) => (
             <p key={idx}>{paragraph}</p>
           ))}

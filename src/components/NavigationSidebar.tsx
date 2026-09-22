@@ -17,7 +17,8 @@ import {
   Calculator,
   User,
   Star,
-  ChevronRight
+  ChevronRight,
+  ShieldCheck
 } from 'lucide-react';
 import { BloomLogo } from './ui/BloomLogo';
 import { LanguageSelector } from './LanguageSelector';
@@ -241,6 +242,21 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                 <span>{menuLabels.systemique}</span>
               </div>
             </button>
+            <a
+              href="https://bloombybotanik.com/phytotherapie-reset/protocole-psoriasis/"
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('protocole-psoriasis');
+                }
+              }}
+              className={navItemClass(isActive('protocole-psoriasis'))}
+            >
+              <div className="flex items-center gap-3">
+                <ShieldCheck className={navIconClass(isActive('protocole-psoriasis'))} />
+                <span className="truncate">{lang === 'fr' ? 'Protocole Psoriasis' : lang === 'de' ? 'Psoriasis-Protokoll' : 'Psoriasis Protocol'}</span>
+              </div>
+            </a>
             <button
               onClick={() => onNavigate('chat')}
               className={navItemClass(isActive('chat'))}
