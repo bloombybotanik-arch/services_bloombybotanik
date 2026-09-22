@@ -27,6 +27,8 @@ import {
 } from 'lucide-react';
 import { View } from './types';
 import { Language } from './translations';
+import { TooltipLexique } from './components/TooltipLexique';
+import { GlossaryProvider } from './context/GlossaryContext';
 
 interface ProtocolePsoriasisContentProps {
   isPremium: boolean;
@@ -108,7 +110,8 @@ export default function ProtocolePsoriasisContent({
   };
 
   return (
-    <article className="min-h-screen bg-[#FAF7F2] text-[#0F261E] pb-24 selection:bg-[#D97706]/20 selection:text-[#0F261E]">
+    <GlossaryProvider pageKey="protocole-psoriasis">
+      <article className="min-h-screen bg-[#FAF7F2] text-[#0F261E] pb-24 selection:bg-[#D97706]/20 selection:text-[#0F261E]">
       {/* Print Stylesheet Hook */}
       <style>{`
         @media print {
@@ -184,7 +187,7 @@ export default function ProtocolePsoriasisContent({
           </h1>
 
           <p className="text-base sm:text-xl text-[#0F261E]/80 max-w-2xl mx-auto font-medium leading-relaxed mb-8">
-            Accompagner le terrain psoriasique, déverrouiller les émonctoires profonds et apaiser l'inflammation systémique par la phytothérapie intégrale de haute précision.
+            Accompagner le <TooltipLexique terme="terrain">terrain</TooltipLexique> psoriasique (profil de vulnérabilité génétique, épigénétique et allostatique), déverrouiller les <TooltipLexique terme="emonctoires">émonctoires</TooltipLexique> profonds et apaiser le spectre de <TooltipLexique terme="charge-allostatique">charges allostatiques accumulées</TooltipLexique> par la phytothérapie intégrale de haute précision.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-bold">
@@ -477,10 +480,10 @@ export default function ProtocolePsoriasisContent({
           <div className="p-7 rounded-3xl bg-[#FAF2E6] border border-[#EEDFC6] mb-8">
             <div className="flex items-center gap-2.5 text-[#92400E] font-black text-xs uppercase tracking-widest mb-3">
               <Info className="w-4 h-4" />
-              Pourquoi cette phase : La prévention de la réaction de Jarisch-Herxheimer
+              Pourquoi cette phase : La prévention de la <TooltipLexique terme="jarisch-herxheimer">réaction de Jarisch-Herxheimer</TooltipLexique>
             </div>
             <p className="text-sm text-[#0F261E]/80 leading-relaxed font-normal mb-3">
-              Tenter de drainer la peau dès le premier jour est l'erreur la plus fréquente. Si les émonctoires principaux ne sont pas grand ouverts, la mise en circulation brutale d'endotoxines (LPS) et de complexes antigéniques provoque un engorgement métabolique aigu, assimilable à une <em>réaction de Jarisch-Herxheimer</em>.
+              Tenter de mobiliser et libérer les charges de la peau dès le premier jour est l'erreur la plus fréquente. Si les <TooltipLexique terme="emonctoires">émonctoires</TooltipLexique> principaux ne sont pas grand ouverts, la mise en circulation brutale d'endotoxines (<TooltipLexique terme="lps-endotoxines">LPS</TooltipLexique>) et de complexes antigéniques provoque un engorgement métabolique aigu, assimilable à une <em>réaction de Jarisch-Herxheimer</em>.
             </p>
             <p className="text-sm text-[#0F261E]/80 leading-relaxed font-normal">
               Les conséquences immédiates : poussée squameuse fulgurante, prurit violent, céphalées et épuisement. La Phase 0 prépare le lit émonctoriel, fluidifie la bile et stimule l'élimination rénale en douceur avant toute mobilisation tissulaire profonde.
@@ -1129,5 +1132,6 @@ export default function ProtocolePsoriasisContent({
 
       </main>
     </article>
+    </GlossaryProvider>
   );
 }

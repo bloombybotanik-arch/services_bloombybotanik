@@ -3,6 +3,8 @@ import AmazonSocialProof from './components/AmazonSocialProof';
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PaymentBadges } from './components/PaymentBadges';
+import { TooltipLexique } from './components/TooltipLexique';
+import { GlossaryProvider } from './context/GlossaryContext';
 import { 
   ShieldCheck, 
   Star, 
@@ -119,6 +121,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
     : ["🇫🇷 French Botanical Brand", "🚚 Priority Shipping in 24/48h", "🛡️ 30-Day Money Back Guarantee", "⚡ 1-Year Manufacturer Warranty"];
 
   return (
+    <GlossaryProvider pageKey="home">
     <div className="bg-[#FAF7F2] text-slate-800 font-sans antialiased selection:bg-[#1C3F34] selection:text-white w-full max-w-full overflow-x-hidden">
 
       {/* ========================================================================= */}
@@ -243,11 +246,15 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             </div>
 
             <p className="text-sm sm:text-base md:text-lg text-slate-700 font-normal leading-relaxed">
-              {isFR 
-                ? "Bloom by Botanik conçoit l'extracteur botanique et infuseur végétal de référence pour concevoir des remèdes naturels de haute précision à domicile. Grâce au séquençage actif A/B, notre technologie d'extraction botanique préserve l'intégrité du Totum végétal sans dénaturer les principes actifs thermolabiles. Que vous prépariez une infusion végétale concentrée, une macération huileuse de calendula ou un extrait de plantes adaptogènes pour stimuler votre reset homéostasique, BloomLab réconcilie l'herboristerie maison ancestrale et les exigences de la phytothérapie clinique moderne."
-                : isDE
-                ? "Bloom by Botanik entwickelt den führenden botanischen Extraktor und Pflanzeninfusor für hochpräzise natürliche Heilmittel zu Hause. Dank der sequenziellen A/B-Extraktion bewahrt unsere Technologie das gesamte pflanzliche Totum. Ob konzentrierter Pflanzenaufguss, öliges Mazerat oder Adaptogen-Extrakt für den homöostatischen Reset – BloomLab vereint uralte Hauskräuterkunde mit moderner Phytotherapie."
-                : "Bloom by Botanik designs the reference botanical extractor and herbal infuser for crafting high-precision natural remedies at home. Powered by active A/B sequential extraction, our technology safeguards the full plant Totum without denaturing heat-sensitive active compounds. Whether creating concentrated herbal infusions, nourishing oil macerations, or adaptogenic plant extracts for homeostatic reset, BloomLab unites ancestral home herbalism with modern phytotherapy standards."}
+              {isFR ? (
+                <>
+                  Bloom by Botanik conçoit l'extracteur botanique et infuseur végétal de référence pour concevoir des remèdes naturels de haute précision à domicile. Grâce au <TooltipLexique terme="sequencage-ab">séquençage actif A/B</TooltipLexique>, notre technologie d'extraction préserve l'intégrité du <TooltipLexique terme="totum">Totum végétal</TooltipLexique> sans dénaturer les principes actifs thermolabiles. Que vous prépariez une infusion végétale concentrée, une macération huileuse de calendula ou un extrait de <TooltipLexique terme="adaptogenes">plantes adaptogènes</TooltipLexique> pour alléger votre <TooltipLexique terme="charge-allostatique">charge allostatique</TooltipLexique> et accompagner votre <TooltipLexique terme="homeostasie">reset homéostatique</TooltipLexique>, BloomLab réconcilie l'herboristerie maison ancestrale et les exigences d'un <TooltipLexique terme="terrain">terrain</TooltipLexique> biologique moderne (profil de vulnérabilité génétique, épigénétique et allostatique).
+                </>
+              ) : isDE ? (
+                "Bloom by Botanik entwickelt den führenden botanischen Extraktor und Pflanzeninfusor für hochpräzise natürliche Heilmittel zu Hause. Dank der sequenziellen A/B-Extraktion bewahrt unsere Technologie das gesamte pflanzliche Totum. Ob konzentrierter Pflanzenaufguss, öliges Mazerat oder Adaptogen-Extrakt für den homöostatischen Reset – BloomLab vereint uralte Hauskräuterkunde mit moderner Phytotherapie."
+              ) : (
+                "Bloom by Botanik designs the reference botanical extractor and herbal infuser for crafting high-precision natural remedies at home. Powered by active A/B sequential extraction, our technology safeguards the full plant Totum without denaturing heat-sensitive active compounds. Whether creating concentrated herbal infusions, nourishing oil macerations, or adaptogenic plant extracts for homeostatic reset, BloomLab unites ancestral home herbalism with modern phytotherapy standards."
+              )}
             </p>
 
             {/* CTAs Héroïques (Aucun prix) */}
@@ -1670,5 +1677,6 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
       </AnimatePresence>
 
     </div>
+    </GlossaryProvider>
   );
 }

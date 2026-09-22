@@ -5,6 +5,7 @@ import { resetPhasesData, ResetPhaseDetail } from './data/resetPhases';
 import { chronobiologyData, ChronoPhase } from './data/chronobiology';
 import { translations, Language } from './translations';
 import { TooltipLexique } from './components/TooltipLexique';
+import { GlossaryProvider } from './context/GlossaryContext';
 
 // import natureHero from './assets/images/nature_biology_reset_hero_1785755295636.jpg';
 // import strengthPlant from './assets/images/strength_courage_plant_1786630685093.jpg';
@@ -258,6 +259,7 @@ export default function PhytotherapyResetPage({
   ];
 
   return (
+    <GlossaryProvider pageKey="phytotherapie-reset">
     <div className="animate-in fade-in duration-700 bg-[#F9F9F7] min-h-screen pb-20">
       
       <AnimatePresence>
@@ -954,6 +956,7 @@ export default function PhytotherapyResetPage({
         </div>
       </section>
     </div>
+    </GlossaryProvider>
   );
 }
 

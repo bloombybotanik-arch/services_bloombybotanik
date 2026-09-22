@@ -9,7 +9,7 @@ interface FaqContentProps {
 
 interface FaqItem {
   id: string;
-  category: 'machine' | 'extraction' | 'usages' | 'commandes';
+  category: 'machine' | 'extraction' | 'usages' | 'commandes' | 'terrain';
   q: string;
   a: string;
 }
@@ -24,6 +24,7 @@ export default function FaqContent({ onNavigate, lang = 'fr' }: FaqContentProps)
 
   const categories = [
     { id: 'all', label: isFR ? 'Toutes les questions' : isDE ? 'Alle Fragen' : 'All questions' },
+    { id: 'terrain', label: isFR ? 'Terrain & Charge Allostatique' : isDE ? 'Terrain & Allostatische Last' : 'Terrain & Allostatic Load' },
     { id: 'machine', label: isFR ? 'L\'Extracteur BloomLab®' : isDE ? 'Der BloomLab® Extraktor' : 'BloomLab® Extractor' },
     { id: 'extraction', label: isFR ? 'Extraction & Totum Végétal' : isDE ? 'Extraktion & Totum' : 'Extraction & Totum' },
     { id: 'usages', label: isFR ? 'Usages : Soins, Cuisine & Santé' : isDE ? 'Anwendungen: Pflege, Küche & Gesundheit' : 'Uses: Skincare, Culinary & Health' },
@@ -31,6 +32,48 @@ export default function FaqContent({ onNavigate, lang = 'fr' }: FaqContentProps)
   ];
 
   const faqList: FaqItem[] = useMemo(() => [
+    {
+      id: 'q-allostatique-1',
+      category: 'terrain',
+      q: isFR 
+        ? "Qu'est-ce que la charge allostatique ?" 
+        : isDE 
+        ? "Was ist die allostatische Last?" 
+        : "What is allostatic load?",
+      a: isFR 
+        ? "La charge allostatique est l'usure biologique accumulée par le corps lorsqu'il doit s'adapter trop souvent, trop longtemps, à trop de stress à la fois (émotionnels, hormonaux, inflammatoires, toxiques, métaboliques). Quand cette charge dépasse sa capacité de récupération, le corps ne revient plus à l'équilibre : c'est là que les symptômes s'installent. Analogie : Le problème n'est pas la paille qui a fait plier le dos de l'âne, mais le fardeau déjà présent sur son dos." 
+        : isDE 
+        ? "Die allostatische Last ist die kumulierte biologische Abnutzung des Körpers durch anhaltende Anpassung an multiple Stressfaktoren über einen langen Zeitraum." 
+        : "Allostatic load represents the cumulative biological wear and tear on the body from adapting too often and too long to multisystemic stressors."
+    },
+    {
+      id: 'q-allostatique-2',
+      category: 'terrain',
+      q: isFR 
+        ? "Quelle différence entre stress et charge allostatique ?" 
+        : isDE 
+        ? "Was ist der Unterschied zwischen Stress und allostatischer Last?" 
+        : "What is the difference between stress and allostatic load?",
+      a: isFR 
+        ? "Le stress est la réaction ponctuelle d'adaptation d'un organisme face à un défi immédiat. La charge allostatique est le prix cumulatif et silencieux de cette adaptation répétée dans le temps, lorsque les périodes de repos font défaut et que les systèmes de régulation finissent par s'épuiser." 
+        : isDE 
+        ? "Stress ist die punktuelle Reaktion; allostatische Last ist der kumulative physiologische Preis für anhaltende Anpassung." 
+        : "Stress is the acute response; allostatic load is the cumulative physiological cost of sustained adaptation over time."
+    },
+    {
+      id: 'q-allostatique-3',
+      category: 'terrain',
+      q: isFR 
+        ? "Peut-on réduire sa charge allostatique ?" 
+        : isDE 
+        ? "Kann man die allostatische Last reduzieren?" 
+        : "Can you reduce allostatic load?",
+      a: isFR 
+        ? "Oui, en accompagnant le terrain biologique (profil de vulnérabilité génétique, épigénétique et allostatique) par des gestes de décharge ciblés : respecter le sommeil circadien, soutenir les voies d'élimination émonctorielles (foie, reins, intestins), apaiser les cascades inflammatoires de bas grade par des synergies végétales de haute précision et restaurer la variabilité du système nerveux autonome. Cette démarche ne remplace pas un avis médical." 
+        : isDE 
+        ? "Ja, durch gezielte Terrain-Unterstützung: zirkadianen Schlaf, Entlastung der Emunktorien und präzise Phyto-Synergien." 
+        : "Yes, by supporting the biological terrain: circadian sleep hygiene, emunctory support, and high-precision botanical synergies."
+    },
     {
       id: 'q1',
       category: 'machine',
