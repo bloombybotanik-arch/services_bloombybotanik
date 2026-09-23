@@ -634,14 +634,15 @@ function registerAppRoutes(app: express.Express) {
     "/bibliotheque": "/herbier/",
     "/bibliotheque-savoirs": "/herbier/",
     "/boutique/kit-reset": "/boutique/duo-argiles/",
-    "/boutique/kit-starter": "/boutique/seve-fondamentale/",
-    "/boutique/kit-nuit": "/boutique/nuit-profonde/",
-    "/boutique/kit-digestion": "/boutique/confort-digestif/",
-    "/boutique/digestion": "/boutique/confort-digestif/",
-    "/boutique/kit-articulaire": "/boutique/feu-articulaire/",
-    "/boutique/kit-bouclier-hiver": "/boutique/bouclier-hiver/",
-    "/boutique/kit-hiver": "/boutique/bouclier-hiver/",
-    "/boutique/bundle-apothicaire": "/boutique/herbier-complet-rentree-2026/",
+    "/boutique/seve-fondamentale": "/boutique/kit-starter/",
+    "/boutique/nuit-profonde": "/boutique/kit-nuit/",
+    "/boutique/confort-digestif": "/boutique/kit-digestion/",
+    "/boutique/digestion": "/boutique/kit-digestion/",
+    "/boutique/feu-articulaire": "/boutique/kit-articulaire/",
+    "/boutique/bouclier-hiver": "/boutique/kit-hiver/",
+    "/boutique/kit-bouclier-hiver": "/boutique/kit-hiver/",
+    "/boutique/herbier-complet-rentree-2026": "/boutique/bundle-apothicaire/",
+    "/produit/bloomlab": "/boutique/bloomlab/",
     "/shop": "/boutique/",
     "/products": "/boutique/",
     "/herboristerie": "/herbier/",
@@ -1063,168 +1064,194 @@ interface ServerSEORoute {
 
 const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
   "/": {
-    title: "BloomLab® : L'Extracteur & Infuseur Botanique de Précision | Bloom by BotaniK",
-    description: "Découvrez l'extracteur botanique et infuseur végétal BloomLab®. Séquençage actif A/B, thermorégulation et vortex pour révéler le Totum végétal de vos plantes médicinales.",
+    title: "Extracteur Botanique BloomLab® | Infusion Précision",
+    description: "Découvrez l'extracteur et infuseur botanique de précision BloomLab®. Vortex cinétique et thermorégulation ±0,5°C pour extraire le Totum actif de vos plantes.",
     image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
     image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
     alt: "BloomLab® — extracteur et infuseur botanique de précision Bloom by BotaniK en situation",
     type: "website"
   },
+  "/bloomlab/": {
+    title: "BloomLab® Extracteur Botanique | Totum Végétal Préservé — 239€",
+    description: "Extracteur et infuseur botanique BloomLab® : inox chirurgical 304, vortex cinétique, thermorégulation ±0,5°C pour extraire le Totum intégral de vos plantes à la maison.",
+    image1200: "/images/og/produit-bloomlab-1200x630.jpg",
+    image1080: "/images/og/produit-bloomlab-1080x1080.jpg",
+    alt: "Extracteur et infuseur botanique BloomLab® en acier inoxydable 304",
+    type: "product",
+    price: "239.00",
+    sku: "BLOOMLAB-V2"
+  },
   "/infuseur-botanique/": {
-    title: "Infuseur Botanique de Précision BloomLab® | Machine à Infusion Végétale",
-    description: "Pourquoi choisir un infuseur botanique plutôt qu'une théière ? Extraction douce en chambre close, préservation des huiles volatiles et biodisponibilité maximale.",
+    title: "Infuseur Botanique Précision | Tisanes Actives BloomLab®",
+    description: "Pourquoi choisir un infuseur de précision plutôt qu'une théière ? Extraction douce en chambre close, thermorégulation active et préservation du Totum végétal.",
     image1200: "/images/og/infuseur-botanique-precision-bloomlab-1200x630.jpg",
     image1080: "/images/og/infuseur-botanique-precision-bloomlab-1080x1080.jpg",
     alt: "Infuseur botanique de précision et préparation de tisanes actives",
     type: "article"
   },
   "/extraction-botanique/": {
-    title: "Guide de l'Extraction Botanique : Méthodes, Solvants et Totum Végétal",
-    description: "Découvrez les secrets de l'extraction végétale : solvants polaires et apolaires, courbes de température et vortex pour extraire le Totum sans dégradation.",
+    title: "Extraction Botanique Guide | Totum & Séquençage A/B",
+    description: "Guide complet de l'extraction végétale : extraction hydrothermique, solvants nobles, vortex cinétique et biodisponibilité sans dégradation moléculaire.",
     image1200: "/images/og/extraction-botanique-totum-solvants-1200x630.jpg",
     image1080: "/images/og/extraction-botanique-totum-solvants-1080x1080.jpg",
     alt: "Guide de l'extraction végétale, solvants et Totum botanique",
     type: "article"
   },
   "/infusion-botanique-maison-comment-ca-marche/": {
-    title: "Infusion Botanique Maison : Comment Extraire les Principes Actifs",
-    description: "Guide pratique de l'infusion botanique de précision : choix des plantes médicinales, températures adaptées et techniques pour des remèdes naturels puissants.",
+    title: "Infusion Botanique Maison | Principes Actifs & Méthode",
+    description: "Comprendre l'infusion végétale de précision : seuils thermiques, cinétique d'agitation et préservation des molécules actives thermosensibles.",
     image1200: "/images/og/infusion-botanique-maison-extraction-active-1200x630.jpg",
     image1080: "/images/og/infusion-botanique-maison-extraction-active-1080x1080.jpg",
     alt: "Infusion botanique maison et extraction de principes actifs",
     type: "article"
   },
   "/phytotherapie-reset/": {
-    title: "Phytothérapie Systémique & Reset Homéostasique : Les Protocoles Bloom",
-    description: "Votre corps n'est pas cassé, il est verrouillé. Découvrez nos protocoles de phytothérapie systémique pour rééquilibrer votre terrain et stimuler votre pharmacie intérieure.",
+    title: "Reset Homéostasique | Protocoles Phytothérapie",
+    description: "Phytothérapie intégrative et rééquilibrage du terrain : découvrez nos protocoles de reset homéostatique pour soutenir les capacités d'autorégulation.",
     image1200: "/images/og/phytotherapie-reset-homeostasie-terrain-1200x630.jpg",
     image1080: "/images/og/phytotherapie-reset-homeostasie-terrain-1080x1080.jpg",
     alt: "Phytothérapie systémique et protocoles de reset homéostasique",
     type: "article"
   },
   "/totum-vegetal/": {
-    title: "Le Totum Végétal en Phytothérapie : Définition, Synergie & Puissance",
-    description: "Pourquoi le Totum végétal surpasse les molécules isolées de synthèse ? Découvrez la synergie moléculaire protectrice et la biodisponibilité de la plante entière.",
+    title: "Totum Végétal vs Molécules Isolées | Synergie des Plantes",
+    description: "Pourquoi le Totum végétal surpasse les isolats : synergie biochimique, biodisponibilité accrue et effet tampon des principes actifs entiers.",
     image1200: "/images/og/totum-vegetal-synergie-plantes-medicinales-1200x630.jpg",
     image1080: "/images/og/totum-vegetal-synergie-plantes-medicinales-1080x1080.jpg",
     alt: "Le Totum végétal en phytothérapie et synergie moléculaire",
     type: "article"
   },
   "/plantes-adaptogenes/": {
-    title: "Plantes Adaptogènes : Réguler le Stress, le Cortisol & l'Axe HPA",
-    description: "Ashwagandha, Rhodiola, Éleuthérocoque : guide complet des plantes adaptogènes pour rééquilibrer le système nerveux sans accoutumance.",
+    title: "Plantes Adaptogènes | Axe HPA, Cortisol & Résilience",
+    description: "Ashwagandha, Rhodiola, Éleuthérocoque : guide pratique des plantes adaptogènes pour moduler le cortisol et soutenir l'axe neuro-endocrinien.",
     image1200: "/images/og/plantes-adaptogenes-axe-hpa-systeme-nerveux-1200x630.jpg",
     image1080: "/images/og/plantes-adaptogenes-axe-hpa-systeme-nerveux-1080x1080.jpg",
     alt: "Plantes adaptogènes pour réguler le stress et l'axe HPA",
     type: "article"
   },
   "/herbier/": {
-    title: "Herbier Botanique : Fiches des Plantes Médicinales & Propriétés",
-    description: "Explorez notre herbier interactif : profils phytochimiques, principes actifs, parties utilisées et modes d'extraction pour chaque plante médicinale.",
+    title: "Herbier Bloom | Plantes Médicinales & Adaptogènes",
+    description: "Herbier interactif Bloom : explorez les monographies botaniques, principes actifs, températures optimales d'extraction et précautions d'usage.",
     image1200: "/images/og/herbier-plantes-medicinales-botanique-1200x630.jpg",
     image1080: "/images/og/herbier-plantes-medicinales-botanique-1080x1080.jpg",
     alt: "Herbier botanique interactif et fiches des plantes médicinales",
     type: "article"
   },
   "/cosmetique-botanique/": {
-    title: "Cosmétique Botanique Maison : Macérats Huileux & Baumes de Précision",
-    description: "Apprenez à créer vos huiles de soin, sérums et macérats de calendula à 45°C sans rancissement grâce à l'extracteur BloomLab.",
+    title: "Cosmétique Botanique Maison | Macérats Huileux & Baumes",
+    description: "Créez vos soins botaniques sur mesure : macérats huileux stables à 45°C, baumes concentrés et sérums actifs sans conservateurs agressifs.",
     image1200: "/images/og/cosmetique-botanique-macerat-huileux-1200x630.jpg",
     image1080: "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     alt: "Cosmétique botanique maison, huiles de soin et macérats de précision",
     type: "article"
   },
   "/gastronomie-botanique/": {
-    title: "Gastronomie Botanique : Huiles Aromatisées & Bouillons de Plantes",
-    description: "Transformez vos herbes et épices en huiles infusées gastronomiques et bouillons actifs. Recettes de chefs et extraction sous vortex.",
+    title: "Gastronomie Botanique | Huiles Aromatisées & Bouillons",
+    description: "Gastronomie botanique de précision : créez des huiles infusées d'exception, vinaigres botaniques et bouillons actifs grâce au vortex cinétique BloomLab.",
     image1200: "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     image1080: "/images/og/gastronomie-botanique-huiles-aromatiques-1080x1080.jpg",
     alt: "Gastronomie botanique, huiles infusées culinaires et bouillons actifs",
     type: "article"
   },
   "/articles/": {
-    title: "Articles & Savoirs Botaniques : Phytothérapie et Herboristerie Maison",
-    description: "Dossiers d'experts sur l'infusion végétale, les remèdes de grand-mère revisités par la science, l'extraction du Totum et l'herboristerie maison.",
+    title: "Articles Savoirs Botaniques | Phytothérapie Maison",
+    description: "Explorez tous nos articles d'experts sur l'extraction botanique, la phytothérapie de terrain, les plantes adaptogènes et les macérations de précision.",
     image1200: "/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg",
     image1080: "/images/og/articles-savoirs-herboristerie-botanique-1080x1080.jpg",
     alt: "Articles et savoirs botaniques en phytothérapie et herboristerie",
     type: "website"
   },
   "/boutique/": {
-    title: "Boutique Officielle Bloom by BotaniK | BloomLab & Kits Botaniques",
-    description: "Commandez votre extracteur et infuseur botanique BloomLab® ainsi que nos kits de plantes sélectionnées pour vos préparations maison.",
+    title: "Kits Plantes Médicinales & Remèdes Naturels | Bloom",
+    description: "Découvrez notre gamme complète d'herboristerie : extracteur BloomLab, kits de plantes médicinales bio, accessoires d'extraction et abonnements.",
+    image1200: "/images/og/boutique-bloomlab-kits-plantes-1200x630.jpg",
+    image1080: "/images/og/boutique-bloomlab-kits-plantes-1080x1080.jpg",
+    alt: "Boutique officielle Bloom by BotaniK, BloomLab et kits de plantes",
+    type: "website"
+  },
+  "/boutique/kits/": {
+    title: "Kits Plantes Médicinales & Remèdes Naturels | Bloom",
+    description: "Découvrez notre gamme complète d'herboristerie : extracteur BloomLab, kits de plantes médicinales bio, accessoires d'extraction et abonnements.",
     image1200: "/images/og/boutique-bloomlab-kits-plantes-1200x630.jpg",
     image1080: "/images/og/boutique-bloomlab-kits-plantes-1080x1080.jpg",
     alt: "Boutique officielle Bloom by BotaniK, BloomLab et kits de plantes",
     type: "website"
   },
   "/manifeste/": {
-    title: "Manifeste Bloom by BotaniK : L'Ingénierie de la Résilience Biologique",
-    description: "Votre corps n'est pas cassé, il est verrouillé. Découvrez notre vision d'une herboristerie moderne et souveraine réconciliant sagesse ancestrale et rigueur scientifique.",
+    title: "Manifeste Bloom | Souveraineté Sanitaire & Plantes",
+    description: "Manifeste Bloom by BotaniK : souveraineté sanitaire, ingénierie biologique et réconciliation entre rigueur scientifique et sagesse végétale ancestrale.",
     image1200: "/images/og/manifeste-souverainete-sanitaire-botanique-1200x630.jpg",
     image1080: "/images/og/manifeste-souverainete-sanitaire-botanique-1080x1080.jpg",
     alt: "Manifeste Bloom by BotaniK pour la souveraineté botanique et le reset homéostasique",
     type: "article"
   },
   "/questions-frequentes/": {
-    title: "Questions Fréquentes | Extracteur BloomLab & Extraction Botanique",
-    description: "Toutes les réponses sur la machine BloomLab : garantie, entretien en inox 304, températures d'extraction, solvants autorisés et délais de livraison.",
+    title: "FAQ Extracteur Botanique | Questions Fréquentes",
+    description: "Foire aux questions BloomLab® : garanties, entretien de l'inox 304, protocoles d'extraction, solvants autorisés et délais d'expédition sous 24 à 48 heures.",
+    image1200: "/images/og/questions-frequentes-bloomlab-botanique-1200x630.jpg",
+    image1080: "/images/og/questions-frequentes-bloomlab-botanique-1080x1080.jpg",
+    alt: "Foire aux questions sur l'infuseur BloomLab et l'extraction végétale",
+    type: "website"
+  },
+  "/faq/": {
+    title: "FAQ Extracteur Botanique | Questions Fréquentes",
+    description: "Foire aux questions BloomLab® : garanties, entretien de l'inox 304, protocoles d'extraction, solvants autorisés et délais d'expédition sous 24 à 48 heures.",
     image1200: "/images/og/questions-frequentes-bloomlab-botanique-1200x630.jpg",
     image1080: "/images/og/questions-frequentes-bloomlab-botanique-1080x1080.jpg",
     alt: "Foire aux questions sur l'infuseur BloomLab et l'extraction végétale",
     type: "website"
   },
   "/lexique/": {
-    title: "Lexique de Phytothérapie & Extraction Botanique | Bloom by BotaniK",
-    description: "Définitions claires des concepts clés : Totum, macérat huileux, solvant amphiphile, principes thermolabiles, axe HPA et reset homéostasique.",
+    title: "Lexique Phytothérapie | Termes Extraction Botanique",
+    description: "Lexique de phytothérapie et d'extraction botanique : définitions du Totum, de la charge allostatique, des solvants nobles et du séquençage actif A/B.",
     image1200: "/images/og/lexique-phytotherapie-extraction-botanique-1200x630.jpg",
     image1080: "/images/og/lexique-phytotherapie-extraction-botanique-1080x1080.jpg",
     alt: "Lexique de phytothérapie et termes d'herboristerie",
     type: "article"
   },
   "/contact/": {
-    title: "Contactez l'Équipe Bloom by BotaniK | Support & Conseils",
-    description: "Une question sur BloomLab ou nos mélanges botaniques ? Contactez nos spécialistes de l'extraction végétale. Réponse sous 24 heures.",
+    title: "Contact & Assistance Botanique | Bloom by BotaniK",
+    description: "Une question sur BloomLab® ou nos kits botaniques ? Contactez nos conseillers en phytothérapie. Équipe basée en France, réponse sous 24 à 48 heures.",
     image1200: "/images/og/contact-bloom-by-botanik-1200x630.jpg",
     image1080: "/images/og/contact-bloom-by-botanik-1080x1080.jpg",
     alt: "Contactez l'équipe Bloom by BotaniK pour vos questions botaniques",
     type: "website"
   },
   "/huile-infusee/": {
-    title: "Huiles Infusées & Macération de Plantes : Le Guide Complet | Bloom",
-    description: "Comment fabriquer vos huiles infusées à 45°C sans rancissement. Extraction des principes liposolubles et synergie pour la peau et la cuisine.",
+    title: "Huiles Infusées Maison | Guide Macération Végétale",
+    description: "Guide pratique des huiles infusées : sélection des huiles végétales bio, température de macération à 45°C et extraction des principes actifs liposolubles.",
     image1200: "/images/og/huiles-infusees-maceration-plantes-1200x630.jpg",
     image1080: "/images/og/huiles-infusees-maceration-plantes-1080x1080.jpg",
     alt: "Huiles infusées et macération d'herboristerie maison de précision",
     type: "article"
   },
   "/teinture-mere/": {
-    title: "Teinture-Mère & Extraits Hydroalcooliques : Préparation Maison | Bloom",
-    description: "Maîtrisez les ratios 1:5, les titres alcooliques et l'extraction accélérée sous vortex pour des teintures mères concentrées sans perte d'actifs.",
+    title: "Teinture-Mère Maison | Guide Extraits Hydroalcooliques",
+    description: "Fabrication de teintures mères maison : ratios 1:5, choix des titres alcooliques et extraction dynamique par vortex cinétique pour un concentré d'actifs.",
     image1200: "/images/og/teinture-mere-extraits-hydroalcooliques-1200x630.jpg",
     image1080: "/images/og/teinture-mere-extraits-hydroalcooliques-1080x1080.jpg",
     alt: "Guide de la teinture-mère et extraits hydroalcooliques de plantes médicinales",
     type: "article"
   },
   "/terrain/": {
-    title: "Les 8 Terrains Biologiques : Comprendre son Équilibre | Bloom",
-    description: "Identifiez votre terrain dominant (nerveux, métabolique, inflammatoire) et appliquez les synergies de plantes adaptées à votre homéostasie.",
+    title: "Les 8 Terrains Biologiques | Équilibre & Homéostasie",
+    description: "Explorez les 8 terrains biologiques en phytothérapie systémique : cartographiez vos vulnérabilités et choisissez les synergies de plantes appropriées.",
     image1200: "/images/og/terrain-biologique-equilibre-homeostasie-1200x630.jpg",
     image1080: "/images/og/terrain-biologique-equilibre-homeostasie-1080x1080.jpg",
     alt: "Les 8 terrains biologiques en phytothérapie systémique",
     type: "article"
   },
   "/hormese/": {
-    title: "L'Hormèse Végétale : Comment les Principes Amers Renforcent l'Organisme",
-    description: "Le principe de l'hormèse appliqué aux plantes médicinales : comment les défenses végétales stimulent nos mécanismes endogènes de résilience.",
+    title: "Hormèse Végétale | Principes Amers & Résilience Bloom",
+    description: "Le principe d'hormèse végétale : comment les molécules de défense des plantes stimulent notre pharmacie intérieure et nos mécanismes de régénération.",
     image1200: "/images/og/hormese-vegetale-resilience-cellulaire-1200x630.jpg",
     image1080: "/images/og/hormese-vegetale-resilience-cellulaire-1080x1080.jpg",
     alt: "Hormèse et résilience biologique par les principes amers végétaux",
     type: "article"
   },
   "/produit/bloomlab/": {
-    title: "BloomLab® : L'Extracteur & Infuseur Botanique de Précision N°1 | Bloom by BotaniK",
-    description: "Commandez l'extracteur et infuseur botanique BloomLab®. Inox chirurgical 304, vortex cinétique, thermorégulation ±0,5°C pour extraire le Totum de vos plantes médicinales.",
+    title: "BloomLab® Extracteur Précision | Inox 304 ±0,5°C",
+    description: "Commandez l'extracteur et infuseur botanique BloomLab®. Inox chirurgical 304, vortex cinétique, thermorégulation ±0,5°C pour extraire le Totum de vos plantes.",
     image1200: "/images/og/produit-bloomlab-1200x630.jpg",
     image1080: "/images/og/produit-bloomlab-1080x1080.jpg",
     alt: "Extracteur et infuseur botanique de précision BloomLab® en situation",
@@ -1233,8 +1260,8 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     sku: "BLOOMLAB-V2"
   },
   "/boutique/bloomlab/": {
-    title: "BloomLab® : L'Extracteur & Infuseur Botanique de Précision N°1 | Bloom by BotaniK",
-    description: "Commandez l'extracteur et infuseur botanique BloomLab®. Inox chirurgical 304, vortex cinétique, thermorégulation ±0,5°C pour extraire le Totum de vos plantes médicinales.",
+    title: "BloomLab® Extracteur Précision | Inox 304 ±0,5°C",
+    description: "Commandez l'extracteur et infuseur botanique BloomLab®. Inox chirurgical 304, vortex cinétique, thermorégulation ±0,5°C pour extraire le Totum de vos plantes.",
     image1200: "/images/og/produit-bloomlab-1200x630.jpg",
     image1080: "/images/og/produit-bloomlab-1080x1080.jpg",
     alt: "Extracteur et infuseur botanique de précision BloomLab® en situation",
@@ -1243,7 +1270,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     sku: "BLOOMLAB-V2"
   },
   "/boutique/bundle-apothicaire/": {
-    title: "Trio Apothicaire : 3 Formules Botaniques pour Infuseur | Bloom by BotaniK",
+    title: "Trio Apothicaire | 3 Kits Plantes Médicinales",
     description: "Trio de formules médicinales calibrées pour infusion végétale et extraction maison : Sève Fondamentale, Nuit Profonde et Feu Digestif.",
     image1200: "/images/og/produit-bundle-apothicaire-1200x630.jpg",
     image1080: "/images/og/produit-bundle-apothicaire-1080x1080.jpg",
@@ -1253,17 +1280,17 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     sku: "BUNDLE-APOTHICAIRE"
   },
   "/boutique/pack-signature/": {
-    title: "Pack Signature BloomLab® + Trio de Plantes Médicinales | Bloom by BotaniK",
+    title: "Pack Signature BloomLab® + Trio Plantes — 289€",
     description: "Le pack complet pour démarrer l'herboristerie maison : la machine BloomLab®, les 3 mélanges de plantes signatures et l'accès aux protocoles d'extraction.",
     image1200: "/images/og/produit-pack-signature-1200x630.jpg",
     image1080: "/images/og/produit-pack-signature-1080x1080.jpg",
     alt: "Pack Signature BloomLab et ses trois formules botaniques",
     type: "product",
-    price: "299.00",
+    price: "289.00",
     sku: "PACK-SIGNATURE"
   },
   "/boutique/kit-starter/": {
-    title: "Kit Sève Fondamentale : Plantes Médicinales pour Infusion Botanique | Bloom",
+    title: "Kit Sève Fondamentale | Plantes Médicinales Énergie",
     description: "Mélange tonique et régulateur pour infusion végétale maison. Ortie, romarin et cynorrhodon pour soutenir le terrain et la vitalité quotidienne.",
     image1200: "/images/og/produit-kit-starter-1200x630.jpg",
     image1080: "/images/og/produit-kit-starter-1080x1080.jpg",
@@ -1273,7 +1300,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     sku: "KIT-SEVE"
   },
   "/boutique/kit-nuit/": {
-    title: "Kit Nuit Profonde : Plantes Médicinales Sommeil & Système Nerveux | Bloom",
+    title: "Kit Nuit Profonde | Sommeil Réparateur & Plantes Bio",
     description: "Synergie de passiflore, mélisse et camomille matricaire calibrée pour l'extraction douce en infuseur végétal. Sommeil réparateur sans somnolence.",
     image1200: "/images/og/produit-kit-nuit-1200x630.jpg",
     image1080: "/images/og/produit-kit-nuit-1080x1080.jpg",
@@ -1283,7 +1310,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     sku: "KIT-NUIT"
   },
   "/boutique/kit-digestion/": {
-    title: "Kit Feu Digestif : Plantes pour Confort Intestinal & Émonctoires | Bloom",
+    title: "Kit Feu Digestif | Confort Intestinal & Plantes Bio",
     description: "Fenouil doux, menthe poivrée et gentiane pour stimuler les sucs digestifs et apaiser le ballonnement après les repas grâce à l'extraction de précision.",
     image1200: "/images/og/produit-kit-digestion-1200x630.jpg",
     image1080: "/images/og/produit-kit-digestion-1080x1080.jpg",
@@ -1293,7 +1320,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     sku: "KIT-DIGESTION"
   },
   "/boutique/kit-articulaire/": {
-    title: "Kit Feu Articulaire : Plantes Médicinales pour Mobilité & Souplesse | Bloom",
+    title: "Kit Feu Articulaire | Mobilité & Souplesse Articulaire",
     description: "Harpagophytum, reine-des-prés et cassis pour soulager les articulations raides et réguler l'inflammation grâce à l'extraction du Totum.",
     image1200: "/images/og/produit-kit-articulaire-1200x630.jpg",
     image1080: "/images/og/produit-kit-articulaire-1080x1080.jpg",
@@ -1303,7 +1330,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     sku: "KIT-ARTICULAIRE"
   },
   "/boutique/kit-hiver/": {
-    title: "Kit Bouclier Hivernal : Plantes Médicinales Immunité Naturelle | Bloom",
+    title: "Kit Bouclier Hivernal | Défenses Immunitaires & Plantes",
     description: "Échinacée pourpre, thym à linalol et sureau noir. Synergie protectrice pour traverser l'hiver avec une infusion botanique riche en polyphénols.",
     image1200: "/images/og/produit-kit-hiver-1200x630.jpg",
     image1080: "/images/og/produit-kit-hiver-1080x1080.jpg",
@@ -1313,7 +1340,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     sku: "KIT-HIVER"
   },
   "/boutique/duo-argiles/": {
-    title: "Duo Argiles & Terres Rares : Purification Systémique & Remèdes Naturels",
+    title: "Duo Argiles & Terres Rares | Purification Botanique",
     description: "Argiles vertes et blanches surfines ventilées pour cataplasmes et purification du terrain. Remède ancestral d'herboristerie maison.",
     image1200: "/images/og/produit-duo-argiles-1200x630.jpg",
     image1080: "/images/og/produit-duo-argiles-1080x1080.jpg",
@@ -1323,7 +1350,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     sku: "DUO-ARGILES"
   },
   "/articles/infuseur-botanique-vs-theiere-classique-pourquoi-votre-tisane-ne-marche-pas/": {
-    title: "Infuseur Botanique vs Théière Classique | Pourquoi Votre Tisane Ne Marche Pas",
+    title: "Infuseur vs Théière | Pourquoi Votre Tisane Ne Marche Pas",
     description: "Pourquoi l'infuseur botanique surpasse la théière classique ? Découvrez les limites thermiques de l'eau bouillante et la puissance de l'extraction thermo-cinétique en milieu clos.",
     image1200: "/images/og/article-infuseur-vs-theiere-tisane-1200x630.jpg",
     image1080: "/images/og/article-infuseur-vs-theiere-tisane-1080x1080.jpg",
@@ -1331,7 +1358,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     type: "article"
   },
   "/articles/extraction-a-froid-vs-extraction-a-chaud-guide-totum-vegetal/": {
-    title: "Extraction à Froid vs à Chaud : Le Guide Ultime du Totum Végétal",
+    title: "Extraction Froid vs Chaud | Guide Totum Végétal",
     description: "Extraction à froid, décoction ou thermo-cinétique douce ? Découvrez quelle méthode préserve l'intégralité du Totum végétal sans altérer les molécules bioactives.",
     image1200: "/images/og/article-extraction-froid-chaud-totum-1200x630.jpg",
     image1080: "/images/og/article-extraction-froid-chaud-totum-1080x1080.jpg",
@@ -1339,7 +1366,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     type: "article"
   },
   "/articles/remedes-de-grand-mere-revisites-par-la-science-5-plantes-a-redecouvrir/": {
-    title: "Remèdes de Grand-Mère & Science : 5 Plantes Médicinales Revisités",
+    title: "Remèdes Grand-Mère & Science | 5 Plantes Revisités",
     description: "Reine des prés, thym, camomille, romarin, mauve : comment la science confirme l'efficacité des remèdes de grand-mère grâce à l'extraction de précision à la maison.",
     image1200: "/images/og/article-remedes-grand-mere-science-1200x630.jpg",
     image1080: "/images/og/article-remedes-grand-mere-science-1080x1080.jpg",
@@ -1347,7 +1374,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     type: "article"
   },
   "/articles/comment-fabriquer-huiles-infusees-teintures-maison/": {
-    title: "Guide Pratique : Huiles Infusées et Teintures Végétales Maison",
+    title: "Huiles Infusées & Teintures | Guide Fabrication Maison",
     description: "Comment réussir vos huiles infusées, macérats huileux et teintures mères à la maison ? Solvants, températures de 45°C, ratios et extraction fermée expliqués pas à pas.",
     image1200: "/images/og/article-fabriquer-huiles-infusees-teintures-1200x630.jpg",
     image1080: "/images/og/article-fabriquer-huiles-infusees-teintures-1080x1080.jpg",
@@ -1355,16 +1382,48 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     type: "article"
   },
   "/articles/plantes-adaptogenes-guide-complet-reequilibrer-systeme-nerveux/": {
-    title: "Plantes Adaptogènes : Rééquilibrer l'Axe HPA et le Système Nerveux",
+    title: "Plantes Adaptogènes | Rééquilibrer l'Axe HPA & Stress",
     description: "Guide complet des plantes adaptogènes : Ashwagandha, Rhodiola, Éleuthérocoque, Basilic sacré. Régulez le cortisol, restaurez l'énergie vitale et libérez votre terrain.",
     image1200: "/images/og/article-plantes-adaptogenes-systeme-nerveux-1200x630.jpg",
     image1080: "/images/og/article-plantes-adaptogenes-systeme-nerveux-1080x1080.jpg",
     alt: "Plantes adaptogènes pour rééquilibrer le système nerveux",
     type: "article"
   },
+  "/blog/science-extraction-botanique-biodisponibilite/": {
+    title: "Science Extraction Botanique | Journal Bloom",
+    description: "Comprendre les principes biophysiques de l'extraction végétale : biodisponibilité cellulaire, cinétique vortex et thermorégulation de précision.",
+    image1200: "/images/og/article-extraction-froid-chaud-totum-1200x630.jpg",
+    image1080: "/images/og/article-extraction-froid-chaud-totum-1080x1080.jpg",
+    alt: "Science de l'extraction botanique et biodisponibilité",
+    type: "article"
+  },
+  "/blog/phytotherapie-axe-intestin-cerveau-microbiote/": {
+    title: "Axe Intestin-Cerveau & Plantes | Journal Bloom",
+    description: "L'impact des principes amers et polyphénols sur l'axe intestin-cerveau, le microbiote intestinal et la régulation neuro-végétative.",
+    image1200: "/images/og/produit-kit-digestion-1200x630.jpg",
+    image1080: "/images/og/produit-kit-digestion-1080x1080.jpg",
+    alt: "Phytothérapie et axe intestin-cerveau",
+    type: "article"
+  },
+  "/blog/protocoles-sommeil-reparateur-extraction-douce/": {
+    title: "Protocoles Sommeil Réparateur | Journal Bloom",
+    description: "Comment concevoir des extractions végétales douces pour restaurer les cycles circadiens et favoriser un sommeil profond et réparateur.",
+    image1200: "/images/og/produit-kit-nuit-1200x630.jpg",
+    image1080: "/images/og/produit-kit-nuit-1080x1080.jpg",
+    alt: "Protocoles de sommeil réparateur par extraction douce",
+    type: "article"
+  },
+  "/blog/guide-solvants-naturels-huile-eau-alcool-vinaigre/": {
+    title: "Guide Solvants Naturels | Journal Bloom",
+    description: "Eau, alcool de grain, huiles végétales et vinaigre de cidre : quel solvant choisir pour extraire les principes actifs de vos plantes.",
+    image1200: "/images/og/huiles-infusees-maceration-plantes-1200x630.jpg",
+    image1080: "/images/og/huiles-infusees-maceration-plantes-1080x1080.jpg",
+    alt: "Guide des solvants naturels en phytothérapie",
+    type: "article"
+  },
   "/phytotherapie-reset/protocole-psoriasis/": {
-    title: "Protocole Psoriasis — Reset Homéostasique | Bloom by BotaniK",
-    description: "Protocole complet d'accompagnement du terrain psoriasique par la phytothérapie intégrale : 4 phases, 14 semaines, drainage émonctoriel et modulation de l'inflammation.",
+    title: "Protocole Psoriasis | Reset Terrain Cutané",
+    description: "Protocole complet d'accompagnement du terrain psoriasique par la phytothérapie intégrale : 4 phases, 14 semaines, soutien émonctoriel et régulation cutanée.",
     image1200: "/images/og/protocole-psoriasis-reset-homeostatique-1200x630.jpg",
     image1080: "/images/og/protocole-psoriasis-reset-homeostatique-1080x1080.jpg",
     alt: "Protocole Psoriasis — Reset Homéostasique et phytothérapie intégrale Bloom by BotaniK",
@@ -1374,16 +1433,24 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     dateModified: "2026-09-22T08:00:00+02:00"
   },
   "/abonnement/": {
-    title: "Abonnement & Protocoles Bloom : Accompagnement Systémique | Bloom",
-    description: "Rejoignez l'accompagnement Bloom Complet ou Bloom Lab. Protocoles personnalisés de phytothérapie, masterclasses et formulations exclusives chaque mois.",
+    title: "Abonnement Bloom | Protocoles & Accompagnement ALMA",
+    description: "Rejoignez Bloom : accédez aux protocoles saisonniers de reset homéostatique, au suivi d'anamnèse ALMA et à l'ensemble des formules botaniques guidées.",
     image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
     image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
     alt: "Abonnement et protocoles d'accompagnement Bloom by BotaniK",
     type: "website"
   },
+  "/activation/": {
+    title: "Activer Votre BloomLab® | Garantie & Mise en Service",
+    description: "Activez votre extracteur botanique BloomLab® : enregistrement de la garantie constructeur 1 an et déblocage de vos premiers protocoles d'extraction guidés.",
+    image1200: "/images/og/produit-bloomlab-1200x630.jpg",
+    image1080: "/images/og/produit-bloomlab-1080x1080.jpg",
+    alt: "Activation et enregistrement de garantie BloomLab",
+    type: "website"
+  },
   "/la-marque/": {
-    title: "La Marque Bloom by BotaniK : Vision, Science & Totum Végétal",
-    description: "Découvrez la genèse et la mission de Bloom by BotaniK : réconcilier les sagesses ancestrales de l'herboristerie et la rigueur de l'ingénierie biologique.",
+    title: "Manifeste Bloom | Souveraineté Sanitaire & Plantes",
+    description: "Manifeste Bloom by BotaniK : souveraineté sanitaire, ingénierie biologique et réconciliation entre rigueur scientifique et sagesse végétale ancestrale.",
     image1200: "/images/og/manifeste-souverainete-sanitaire-botanique-1200x630.jpg",
     image1080: "/images/og/manifeste-souverainete-sanitaire-botanique-1080x1080.jpg",
     alt: "La marque Bloom by BotaniK et sa mission de phytothérapie intégrale",
@@ -1406,8 +1473,8 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     type: "website"
   },
   "/blog/": {
-    title: "Le Blog Botanique : Articles, Dossiers Scientifiques & Pratiques | Bloom",
-    description: "Dossiers de fond sur l'inflammation chronique, le Totum végétal face aux huiles essentielles, les macérats huileux et les techniques d'infusion avancées.",
+    title: "Journal Botanique | Extraction & Remèdes Naturels",
+    description: "Le Journal Botanique Bloom : analyses scientifiques, dossiers d'herboristerie moderne, recettes d'extraction et guides pratiques pour vos remèdes maison.",
     image1200: "/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg",
     image1080: "/images/og/articles-savoirs-herboristerie-botanique-1080x1080.jpg",
     alt: "Le Blog Botanique Bloom by BotaniK",
@@ -1415,15 +1482,15 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
   },
   "/mentions-legales/": {
     title: "Mentions Légales | Bloom by BotaniK",
-    description: "Informations légales, éditeur du site, hébergement et propriété intellectuelle de Bloom by BotaniK.",
+    description: "Mentions légales du site bloombybotanik.com : éditeur, hébergement, propriété intellectuelle et informations réglementaires de la marque Bloom.",
     image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
     image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
     alt: "Mentions légales Bloom by BotaniK",
     type: "website"
   },
   "/politique-de-confidentialite/": {
-    title: "Politique de Confidentialité & RGPD | Bloom by BotaniK",
-    description: "Protection des données personnelles, conformité RGPD et respect de votre vie privée sur Bloom by BotaniK.",
+    title: "Politique de Confidentialité | Données Personnelles Bloom",
+    description: "Politique de confidentialité et protection des données personnelles (RGPD) sur bloombybotanik.com. Vos données de santé et de navigation sont sécurisées.",
     image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
     image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
     alt: "Politique de confidentialité Bloom by BotaniK",
@@ -1431,31 +1498,31 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
   },
   "/conditions-generales-de-vente/": {
     title: "Conditions Générales de Vente (CGV) | Bloom by BotaniK",
-    description: "Conditions générales de vente des produits et services Bloom by BotaniK : commandes, livraison, garanties et retours.",
+    description: "Consultez les conditions générales de vente de Bloom by BotaniK : commandes, tarifs, garanties, livraisons et droit de rétractation applicable.",
     image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
     image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
     alt: "Conditions Générales de Vente Bloom by BotaniK",
     type: "website"
   },
   "/termes-et-conditions/": {
-    title: "Termes et Conditions d'Utilisation (CGU) | Bloom by BotaniK",
-    description: "Conditions générales d'utilisation du site, de l'application et des services en ligne Bloom by BotaniK.",
+    title: "Conditions d'Utilisation (CGU) | Bloom by BotaniK",
+    description: "Conditions générales d'utilisation du site et des services Bloom by BotaniK. Modalités d'accès à l'application et aux contenus botaniques.",
     image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
     image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
     alt: "Termes et conditions d'utilisation Bloom by BotaniK",
     type: "website"
   },
   "/retour-et-remboursement/": {
-    title: "Politique de Retour & Remboursement | Bloom by BotaniK",
-    description: "Modalités de retour, droit de rétractation de 14 jours et conditions de remboursement pour vos achats Bloom by BotaniK.",
+    title: "Retours & Remboursements | Garantie 30 Jours Bloom",
+    description: "Politique de retour et de remboursement Bloom by BotaniK : garantie satisfait ou remboursé sous 30 jours et modalités de prise en charge SAV.",
     image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
     image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
     alt: "Retour et remboursement Bloom by BotaniK",
     type: "website"
   },
   "/droit-de-retractation/": {
-    title: "Formulaire & Droit de Rétractation | Bloom by BotaniK",
-    description: "Conditions d'exercice du droit de rétractation légal et formulaire de retour de commande Bloom by BotaniK.",
+    title: "Droit de Rétractation | Formulaire de Retour Bloom",
+    description: "Exercice de votre droit légal de rétractation sous 14 jours et formulaire de retour de commande pour vos achats sur bloombybotanik.com.",
     image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
     image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
     alt: "Droit de rétractation Bloom by BotaniK",

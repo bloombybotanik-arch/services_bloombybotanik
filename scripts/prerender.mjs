@@ -30,7 +30,8 @@ async function getDynamicRoutes() {
     for (const match of productMatches) {
       if (!products.includes(match[1])) products.push(match[1]);
     }
-    const keyProductSlugs = ['duo-argiles', 'seve-fondamentale', 'nuit-profonde', 'confort-digestif', 'feu-articulaire', 'bouclier-hiver'];
+    // Only keep canonical product slugs
+    const keyProductSlugs = ['duo-argiles'];
     for (const p of keyProductSlugs) {
       if (!products.includes(p)) products.push(p);
     }
@@ -63,19 +64,18 @@ const BASE_ROUTES = [
   '/',
   '/bloomlab/',
   '/phytotherapie-reset/',
+  '/phytotherapie-reset/protocole-psoriasis/',
   '/boutique/',
   '/hormese/',
   '/gastronomie-botanique/',
-  '/duo-argiles/',
+  '/cosmetique-botanique/',
   '/herbier/',
   '/manifeste/',
   '/activation/',
-  '/infusion-botanique/',
   '/infuseur-botanique/',
   '/infusion-botanique-maison-comment-ca-marche/',
   '/extraction-botanique/',
-  '/extraction-botanique-guide-complet/',
-  '/qu-est-ce-que-l-infusion-botanique/',
+  '/articles/',
   '/blog/',
   '/droit-de-retractation/',
   '/conditions-generales-de-vente/',
@@ -88,9 +88,7 @@ const BASE_ROUTES = [
   '/methode-infusion-botanique-precision/',
   '/totum-vegetal-definition/',
   '/solvants-extraction-botanique/',
-  '/panier/',
-  '/compte/',
-  '/legal/'
+  '/abonnement/'
 ];
 
 async function routeToFilePath(route) {
@@ -173,7 +171,8 @@ async function main() {
 
   console.log(`Démarrage du pré-rendu pour ${ROUTES.length} routes...`);
   const app = express();
-  app.use(express.static(distDir));
+  app.use('/assets', express.static(path.join(distDir, 'assets')));
+  app.use(express.static(path.join(rootDir, 'public')));
   app.get('*', (req, res) => {
     res.sendFile(path.join(distDir, 'index.html'));
   });
@@ -197,10 +196,12 @@ async function main() {
     for (const chunk of chunks) {
       await Promise.all(chunk.map(async (route) => {
         const outputPaths = await routeToFilePath(route);
-        try {
-          await fs.access(outputPaths[0]);
-          return; // déjà généré
-        } catch {}
+        if (!process.env.FORCE_PRERENDER) {
+          try {
+            await fs.access(outputPaths[0]);
+            return; // déjà généré
+          } catch {}
+        }
 
         const page = await browser.newPage();
         // Force evaluation of SEOMetadata by passing prerender=true

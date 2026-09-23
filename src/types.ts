@@ -1,10 +1,11 @@
 
-export type View = 'home' | 'machine' | 'phytotherapie-reset' | 'votre-pratique' | 'parcours' | 'boutique' | 'product-detail' | 'culinaire' | 'cosmetiques' | 'cosmetique-botanique' | 'gastronomie-botanique' | 'library-landing' | 'manifeste' | 'activation' | 'activate-bloomlab' | 'account' | 'legal' | 'chat' | 'cart' | 'checkout' | 'guide' | 'how_it_works' | 'pending' | 'library' | 'herbier' | 'pillar-extraction' | 'guide-complet' | 'qu-est-ce-que-infusion' | 'admin' | 'blog' | 'withdrawal' | 'indexbis' | 'newsletter-preferences' | 'admin-newsletter' | 'terrain' | 'hormese' | 'infuseur-botanique' | 'cgv' | 'cgu' | 'privacy' | 'mentions' | 'returns' | 'recettes' | 'guides' | 'ateliers' | 'herbarium' | 'questions-frequentes' | 'faq' | 'infusion-precision' | 'totum-definition' | 'solvants-extraction' | 'premium-info' | 'decouvrir' | 'comment-ca-marche' | 'recettes-gratuites' | 'apprendre' | 'preparations-avancees' | 'recettes-cosmetiques' | 'bibliotheque' | 'boutique-kits' | 'abonnement' | 'la-marque' | 'contact' | 'extraction-botanique' | 'infusion-botanique' | 'infusion-botanique-maison-comment-ca-marche' | 'huile-infusee' | 'plantes-adaptogenes' | 'totum-vegetal' | 'maceration-plantes' | 'teinture-mere' | 'kits-botaniques' | 'articles' | 'lexique' | 'protocole-psoriasis';
+export type View = 'home' | 'machine' | 'bloomlab' | 'phytotherapie-reset' | 'votre-pratique' | 'parcours' | 'boutique' | 'product-detail' | 'culinaire' | 'cosmetiques' | 'cosmetique-botanique' | 'gastronomie-botanique' | 'library-landing' | 'manifeste' | 'activation' | 'activate-bloomlab' | 'account' | 'legal' | 'chat' | 'cart' | 'checkout' | 'guide' | 'how_it_works' | 'pending' | 'library' | 'herbier' | 'pillar-extraction' | 'guide-complet' | 'qu-est-ce-que-infusion' | 'admin' | 'blog' | 'withdrawal' | 'indexbis' | 'newsletter-preferences' | 'admin-newsletter' | 'terrain' | 'hormese' | 'infuseur-botanique' | 'cgv' | 'cgu' | 'privacy' | 'mentions' | 'returns' | 'recettes' | 'guides' | 'ateliers' | 'herbarium' | 'questions-frequentes' | 'faq' | 'infusion-precision' | 'totum-definition' | 'solvants-extraction' | 'premium-info' | 'decouvrir' | 'comment-ca-marche' | 'recettes-gratuites' | 'apprendre' | 'preparations-avancees' | 'recettes-cosmetiques' | 'bibliotheque' | 'boutique-kits' | 'abonnement' | 'la-marque' | 'contact' | 'extraction-botanique' | 'infusion-botanique' | 'infusion-botanique-maison-comment-ca-marche' | 'huile-infusee' | 'plantes-adaptogenes' | 'totum-vegetal' | 'maceration-plantes' | 'teinture-mere' | 'kits-botaniques' | 'articles' | 'lexique' | 'protocole-psoriasis' | 'protocole-sibo';
 
 export const VIEW_PATHS: Record<string, string> = {
   home: '/', 
   indexbis: '/',
-  machine: '/produit/bloomlab/', 
+  bloomlab: '/bloomlab/',
+  machine: '/bloomlab/', 
   'phytotherapie-reset': '/phytotherapie-reset/',
   'votre-pratique': '/phytotherapie-reset/',
   'parcours': '/phytotherapie-reset/',
@@ -76,7 +77,8 @@ export const VIEW_PATHS: Record<string, string> = {
   'totum-definition': '/totum-definition/',
   'solvants-extraction': '/solvants-extraction/',
   'lexique': '/lexique/',
-  'protocole-psoriasis': '/phytotherapie-reset/protocole-psoriasis/'
+  'protocole-psoriasis': '/phytotherapie-reset/protocole-psoriasis/',
+  'protocole-sibo': '/phytotherapie-reset/protocole-sibo/'
 };
 
 export type SchoolCalendarZone = 'A' | 'B' | 'C' | 'non_precise' | 'hors_france';

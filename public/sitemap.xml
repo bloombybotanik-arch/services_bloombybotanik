@@ -57,25 +57,6 @@
   </url>
 
   <url>
-    <loc>https://bloombybotanik.com/produit/bloomlab/</loc>
-    <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/produit/bloomlab/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/produit/bloomlab/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/produit/bloomlab/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/produit/bloomlab/"/>
-    <image:image>
-      <image:loc>https://bloombybotanik.com/img/produit/bloomlab-3quarts-1200x1200.jpg</image:loc>
-      <image:title>BloomLab® — Vue 3/4 bol et écran de commande</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://bloombybotanik.com/img/produit/bloomlab-cuisine-1200x630.jpg</image:loc>
-      <image:title>BloomLab® — En situation atelier d'herboristerie maison</image:title>
-    </image:image>
-  </url>
-
-  <url>
     <loc>https://bloombybotanik.com/infusion-botanique-maison-comment-ca-marche/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>

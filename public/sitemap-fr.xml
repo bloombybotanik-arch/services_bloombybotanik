@@ -6,10 +6,10 @@
   <url>
     <loc>https://bloombybotanik.com/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/"/>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -19,19 +19,12 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/bloomlab/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/bloomlab/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/bloomlab/"/>
-    <lastmod>2026-08-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/bloomlab/"/>
+    <lastmod>2026-09-23</lastmod>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://bloombybotanik.com/img/produit/bloomlab-face-1200x1200.jpg</image:loc>
-      <image:title>BloomLab® — Vue de face extracteur botanique inox</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://bloombybotanik.com/img/produit/bloomlab-3quarts-1200x1200.jpg</image:loc>
-      <image:title>BloomLab® — Vue 3/4 bol et écran de commande</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://bloombybotanik.com/img/produit/bloomlab-cuisine-1200x630.jpg</image:loc>
-      <image:title>BloomLab® — En situation en cuisine atelier botanique</image:title>
+      <image:loc>https://bloombybotanik.com/img/produit/bloomlab-1200x1200.jpg</image:loc>
+      <image:title>BloomLab® — Extracteur et infuseur botanique de précision inox 304</image:title>
     </image:image>
   </url>
 
@@ -40,7 +33,8 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/boutique/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/boutique/"/>
-    <lastmod>2026-08-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/boutique/"/>
+    <lastmod>2026-09-23</lastmod>
     <priority>0.9</priority>
   </url>
 
@@ -49,7 +43,8 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/phytotherapie-reset/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/phytotherapie-reset/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/phytotherapie-reset/"/>
-    <lastmod>2026-08-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/phytotherapie-reset/"/>
+    <lastmod>2026-09-23</lastmod>
     <priority>0.9</priority>
   </url>
   
@@ -57,7 +52,7 @@
     <loc>https://bloombybotanik.com/phytotherapie-reset/protocole-psoriasis/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/phytotherapie-reset/protocole-psoriasis/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/phytotherapie-reset/protocole-psoriasis/"/>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <priority>0.9</priority>
   </url>
   
@@ -66,7 +61,8 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/infuseur-botanique/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/infuseur-botanique/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/infuseur-botanique/"/>
-    <lastmod>2026-08-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/infuseur-botanique/"/>
+    <lastmod>2026-09-23</lastmod>
     <priority>0.9</priority>
   </url>
 
@@ -75,7 +71,8 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/extraction-botanique/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/extraction-botanique/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/extraction-botanique/"/>
-    <lastmod>2026-08-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/extraction-botanique/"/>
+    <lastmod>2026-09-23</lastmod>
     <priority>0.9</priority>
   </url>
 
@@ -84,21 +81,204 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/infusion-botanique-maison-comment-ca-marche/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/infusion-botanique-maison-comment-ca-marche/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/infusion-botanique-maison-comment-ca-marche/"/>
-    <lastmod>2026-09-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/infusion-botanique-maison-comment-ca-marche/"/>
+    <lastmod>2026-09-23</lastmod>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://bloombybotanik.com/cosmetique-botanique/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/cosmetique-botanique/"/>
-    <lastmod>2026-08-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/cosmetique-botanique/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/cosmetique-botanique/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/cosmetique-botanique/"/>
+    <lastmod>2026-09-23</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://bloombybotanik.com/gastronomie-botanique/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/gastronomie-botanique/"/>
-    <lastmod>2026-08-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/gastronomie-botanique/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/gastronomie-botanique/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/gastronomie-botanique/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/manifeste/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/manifeste/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/manifeste/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/manifeste/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/manifeste/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/herbier/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/herbier/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/herbier/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/herbier/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/herbier/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/hormese/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/hormese/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/hormesis/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/hormese/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/hormese/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/terrain/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/terrain/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/terrain/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/terrain/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/terrain/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/totum-vegetal/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/totum-vegetal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/totum-vegetal/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/totum-vegetal/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/totum-vegetal/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/plantes-adaptogenes/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/plantes-adaptogenes/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/plantes-adaptogenes/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/plantes-adaptogenes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/plantes-adaptogenes/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/huile-infusee/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/huile-infusee/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/huile-infusee/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/huile-infusee/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/huile-infusee/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/teinture-mere/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/teinture-mere/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/teinture-mere/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/teinture-mere/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/teinture-mere/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/lexique/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/lexique/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/lexique/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/lexique/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/lexique/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/abonnement/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/abonnement/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/abonnement/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/abonnement/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/abonnement/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/activation/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/activation/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/activation/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/activation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/activation/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/questions-frequentes/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/questions-frequentes/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/questions-frequentes/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/questions-frequentes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/questions-frequentes/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/contact/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Articles & Blog -->
+  <url>
+    <loc>https://bloombybotanik.com/articles/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/articles/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/articles/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/articles/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/articles/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/articles/infuseur-botanique-vs-theiere-classique-pourquoi-votre-tisane-ne-marche-pas/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/articles/infuseur-botanique-vs-theiere-classique-pourquoi-votre-tisane-ne-marche-pas/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/articles/extraction-a-froid-vs-extraction-a-chaud-guide-totum-vegetal/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/articles/extraction-a-froid-vs-extraction-a-chaud-guide-totum-vegetal/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/articles/remedes-de-grand-mere-revisites-par-la-science-5-plantes-a-redecouvrir/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/articles/remedes-de-grand-mere-revisites-par-la-science-5-plantes-a-redecouvrir/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/articles/comment-fabriquer-huiles-infusees-teintures-maison/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/articles/comment-fabriquer-huiles-infusees-teintures-maison/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/articles/plantes-adaptogenes-guide-complet-reequilibrer-systeme-nerveux/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/articles/plantes-adaptogenes-guide-complet-reequilibrer-systeme-nerveux/"/>
+    <lastmod>2026-09-23</lastmod>
     <priority>0.8</priority>
   </url>
 
@@ -107,112 +287,116 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/blog/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/blog/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/blog/"/>
-    <lastmod>2026-08-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/blog/"/>
+    <lastmod>2026-09-23</lastmod>
     <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://bloombybotanik.com/blog/tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/blog/tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/blog/tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/blog/tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes"/>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://bloombybotanik.com/blog/macers-huileux-maison-les-5-erreurs-qui-detruisent-vos-actifs</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/blog/macers-huileux-maison-les-5-erreurs-qui-detruisent-vos-actifs"/>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://bloombybotanik.com/blog/inflammation-chronique-le-role-des-plantes-dans-le-reset-homeostasique</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/blog/inflammation-chronique-le-role-des-plantes-dans-le-reset-homeostasique"/>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://bloombybotanik.com/blog/extraction-botanique-vs-huiles-essentielles-pourquoi-choisir-le-totum</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/blog/extraction-botanique-vs-huiles-essentielles-pourquoi-choisir-le-totum"/>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://bloombybotanik.com/questions-frequentes/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/methode-infusion-botanique-precision</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/totum-vegetal-definition</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/solvants-extraction-botanique</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Legal Pages -->
-  <url>
-    <loc>https://bloombybotanik.com/mentions-legales/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/droit-de-retractation/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/retour-et-remboursement/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/termes-et-conditions/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/conditions-generales-de-vente/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/mentions-legales/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/politique-de-confidentialite/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.5</priority>
   </url>
 
   <!-- Product Pages -->
   <url>
     <loc>https://bloombybotanik.com/boutique/bloomlab/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/bloomlab/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://bloombybotanik.com/boutique/kit-reset</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://bloombybotanik.com/boutique/bundle-apothicaire/</loc>
-    <lastmod>2026-08-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/bundle-apothicaire/"/>
+    <lastmod>2026-09-23</lastmod>
     <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/boutique/pack-signature/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/pack-signature/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/boutique/kit-starter/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/kit-starter/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/boutique/kit-nuit/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/kit-nuit/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/boutique/kit-digestion/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/kit-digestion/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/boutique/kit-articulaire/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/kit-articulaire/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/boutique/kit-hiver/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/kit-hiver/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/boutique/duo-argiles/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/duo-argiles/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Legal Pages (Unique entries, proper trailing slashes) -->
+  <url>
+    <loc>https://bloombybotanik.com/mentions-legales/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/mentions-legales/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/droit-de-retractation/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/droit-de-retractation/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/retour-et-remboursement/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/retour-et-remboursement/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/termes-et-conditions/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/termes-et-conditions/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/conditions-generales-de-vente/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/conditions-generales-de-vente/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/politique-de-confidentialite/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/politique-de-confidentialite/"/>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>

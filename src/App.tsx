@@ -82,6 +82,7 @@ import LexiqueContent from './LexiqueContent';
 import TerrainPillar from './TerrainPillar';
 import ExtractionCalculator from './components/ExtractionCalculator';
 import ProtocolePsoriasisContent from './ProtocolePsoriasisContent';
+import ProtocoleSiboContent from './ProtocoleSiboContent';
 import { updateDocumentSEO } from './utils/seoManager';
 
 const PATH_VIEWS: Record<string, View> = {
@@ -90,6 +91,7 @@ const PATH_VIEWS: Record<string, View> = {
       const withSlash = path.endsWith('/') ? path : `${path}/`;
       const withoutSlash = path.endsWith('/') ? path.slice(0, -1) : path;
       return [
+        [path, view as View],
         [withSlash, view as View],
         [withoutSlash, view as View]
       ];
@@ -98,6 +100,8 @@ const PATH_VIEWS: Record<string, View> = {
   '/': 'indexbis',
   '/bloomlab': 'machine',
   '/bloomlab/': 'machine',
+  '/boutique/kits': 'boutique-kits',
+  '/boutique/kits/': 'boutique-kits',
   '/totum-vegetal': 'totum-vegetal',
   '/totum-vegetal/': 'totum-vegetal',
   '/abonnement': 'abonnement',
@@ -108,8 +112,28 @@ const PATH_VIEWS: Record<string, View> = {
   '/lexique/': 'lexique',
   '/boutique/bloomlab': 'product-detail',
   '/boutique/bloomlab/': 'product-detail',
+  '/boutique/bundle-apothicaire': 'product-detail',
+  '/boutique/bundle-apothicaire/': 'product-detail',
+  '/boutique/pack-signature': 'product-detail',
+  '/boutique/pack-signature/': 'product-detail',
+  '/boutique/kit-starter': 'product-detail',
+  '/boutique/kit-starter/': 'product-detail',
+  '/boutique/kit-nuit': 'product-detail',
+  '/boutique/kit-nuit/': 'product-detail',
+  '/boutique/kit-digestion': 'product-detail',
+  '/boutique/kit-digestion/': 'product-detail',
+  '/boutique/kit-articulaire': 'product-detail',
+  '/boutique/kit-articulaire/': 'product-detail',
+  '/boutique/kit-hiver': 'product-detail',
+  '/boutique/kit-hiver/': 'product-detail',
+  '/boutique/duo-argiles': 'product-detail',
+  '/boutique/duo-argiles/': 'product-detail',
   '/phytotherapie-reset/protocole-psoriasis': 'protocole-psoriasis',
   '/phytotherapie-reset/protocole-psoriasis/': 'protocole-psoriasis',
+  '/phytotherapie-reset/protocole-sibo': 'protocole-sibo',
+  '/phytotherapie-reset/protocole-sibo/': 'protocole-sibo',
+  '/protocoles-systemiques/protocole-sibo': 'protocole-sibo',
+  '/protocoles-systemiques/protocole-sibo/': 'protocole-sibo',
 };
 
 const SEOArticles = ({ view, lang, t, onNavigate }: { view: string; lang: Language; t: any; onNavigate?: (view: any, param?: string) => void }) => {
@@ -146,11 +170,23 @@ export default function App() {
   const [currentView, setCurrentView] = useState<View>(() => {
     if (typeof window !== 'undefined') {
       const path = window.location.pathname;
+      if (path === '/boutique/kits' || path === '/boutique/kits/') {
+        return 'boutique-kits';
+      }
+      if (path === '/bloomlab' || path === '/bloomlab/') {
+        return 'machine';
+      }
       if (path.startsWith('/boutique/') && path !== '/boutique/' && path !== '/boutique') {
         return 'product-detail';
       }
       if (path.startsWith('/produit/') && path !== '/produit/' && path !== '/produit') {
         return 'product-detail';
+      }
+      if (path.startsWith('/articles/') && path !== '/articles/' && path !== '/articles') {
+        return 'articles';
+      }
+      if (path.startsWith('/blog/') && path !== '/blog/' && path !== '/blog') {
+        return 'blog';
       }
       if (PATH_VIEWS[path]) {
         return PATH_VIEWS[path];
@@ -168,7 +204,7 @@ export default function App() {
   const [selectedProduct, setSelectedProduct] = useState<string>(() => {
     if (typeof window !== 'undefined') {
       const path = window.location.pathname;
-      if (path.startsWith('/boutique/') && path !== '/boutique/' && path !== '/boutique') {
+      if (path.startsWith('/boutique/') && path !== '/boutique/' && path !== '/boutique' && path !== '/boutique/kits/' && path !== '/boutique/kits') {
         return path.replace(/^\/boutique\//, '').replace(/\/$/, '');
       }
       if (path.startsWith('/produit/') && path !== '/produit/' && path !== '/produit') {
@@ -177,7 +213,18 @@ export default function App() {
     }
     return 'bloomlab';
   });
-  const [selectedSlug, setSelectedSlug] = useState<string>('');
+  const [selectedSlug, setSelectedSlug] = useState<string>(() => {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname;
+      if (path.startsWith('/articles/') && path !== '/articles/' && path !== '/articles') {
+        return path.replace(/^\/articles\//, '').replace(/\/$/, '');
+      }
+      if (path.startsWith('/blog/') && path !== '/blog/' && path !== '/blog') {
+        return path.replace(/^\/blog\//, '').replace(/\/$/, '');
+      }
+    }
+    return '';
+  });
   const [selectedTerrain, setSelectedTerrain] = useState<string>('T1');
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [isPremiumOpen, setIsPremiumOpen] = useState(false);
@@ -240,6 +287,14 @@ export default function App() {
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname;
+      if (path === '/boutique/kits' || path === '/boutique/kits/') {
+        setCurrentView('boutique-kits');
+        return;
+      }
+      if (path === '/bloomlab' || path === '/bloomlab/') {
+        setCurrentView('machine');
+        return;
+      }
       if (path.startsWith('/boutique/') && path !== '/boutique/' && path !== '/boutique') {
         const prod = path.replace(/^\/boutique\//, '').replace(/\/$/, '');
         setSelectedProduct(prod);
@@ -250,6 +305,18 @@ export default function App() {
         const prod = path.replace(/^\/produit\//, '').replace(/\/$/, '');
         setSelectedProduct(prod);
         setCurrentView('product-detail');
+        return;
+      }
+      if (path.startsWith('/articles/') && path !== '/articles/' && path !== '/articles') {
+        const slug = path.replace(/^\/articles\//, '').replace(/\/$/, '');
+        setSelectedSlug(slug);
+        setCurrentView('articles');
+        return;
+      }
+      if (path.startsWith('/blog/') && path !== '/blog/' && path !== '/blog') {
+        const slug = path.replace(/^\/blog\//, '').replace(/\/$/, '');
+        setSelectedSlug(slug);
+        setCurrentView('blog');
         return;
       }
       const view = PATH_VIEWS[path] || 'indexbis';
@@ -648,6 +715,13 @@ export default function App() {
           <MachineLanding onNavigate={navigateTo} lang={selectedLanguage} />
         ) : currentView === 'protocole-psoriasis' ? (
           <ProtocolePsoriasisContent
+            isPremium={isSubscribed}
+            onNavigate={navigateTo}
+            onRequireAuth={() => setIsAuthOpen(true)}
+            lang={selectedLanguage}
+          />
+        ) : currentView === 'protocole-sibo' ? (
+          <ProtocoleSiboContent
             isPremium={isSubscribed}
             onNavigate={navigateTo}
             onRequireAuth={() => setIsAuthOpen(true)}
