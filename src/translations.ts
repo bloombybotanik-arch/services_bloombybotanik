@@ -201,8 +201,9 @@ export const translations = {
       boutique_sub: {
         bloomlab: "L'extracteur BloomLab",
         kits: "Kits de plantes",
-        abonnement: "Abonnement premium"
+        abonnement: "Abonnements numériques"
       },
+      abonnement: "Abonnements numériques",
       marque: "LA MARQUE",
       marque_sub: {
         manifeste: "Notre manifeste",
@@ -1622,14 +1623,14 @@ export const translations = {
     },
     phytotherapyReset: {
       badge: "Souveraineté Biologique & Sanitaire",
-      title: "Phytothérapie & Protocoles Systémiques",
+      title: "Phytothérapie & Reset Homéostasique",
       title_accent: "\"L'Ingénierie au service du vivant.\"",
       subtitle: "Le protocole de régulation profonde par les plantes",
       quote: "Réinitialiser vos systèmes de régulation, pas “juste” détoxifier.",
-      intro_editorial: "Le Protocoles Systémiques Bloom est un voyage botanique de 90 jours pensé pour accompagner en douceur vos fonctions naturelles et installer une routine de mieux‑être durable. Phase après phase, il invite à prendre soin de vos voies d’élimination et de votre digestion, à retrouver des sensations de légèreté, de confort corporel et de vitalité, tout en respectant les rythmes propres à votre organisme.\n\nGuidé par notre ingénierie botanique et la chronobiologie des organes, vous traversez un parcours structuré : ouverture des émonctoires, phases de mobilisation, conjugaison et capture des charges circulantes et de soutien digestif, temps de purification intérieure au sens du ressenti (clarité, énergie, qualité du sommeil), puis stabilisation et renforcement des ressources, rythmé par des pauses intégratives où vous laissez votre corps intégrer les changements.\n\nCe protocole s’inscrit dans une démarche globale d’hygiène de vie et de bien‑être et ne se substitue pas à un avis ni à un traitement médical ; il propose un cadre botanique pour mieux écouter votre terrain (profil de vulnérabilité génétique, épigénétique et allostatique) et soutenir vos sensations de régulation face au spectre de charges allostatiques accumulées.",
+      intro_editorial: "Le Reset Homéostasique Bloom est un voyage botanique de 90 jours pensé pour accompagner en douceur vos fonctions naturelles et installer une routine de mieux‑être durable. Phase après phase, il invite à prendre soin de vos voies d’élimination et de votre digestion, à retrouver des sensations de légèreté, de confort corporel et de vitalité, tout en respectant les rythmes propres à votre organisme.\n\nGuidé par notre ingénierie botanique et la chronobiologie des organes, vous traversez un parcours structuré : ouverture des émonctoires, phases de mobilisation, conjugaison et capture des charges circulantes et de soutien digestif, temps de purification intérieure au sens du ressenti (clarité, énergie, qualité du sommeil), puis stabilisation et renforcement des ressources, rythmé par des pauses intégratives où vous laissez votre corps intégrer les changements.\n\nCe protocole s’inscrit dans une démarche globale d’hygiène de vie et de bien‑être et ne se substitue pas à un avis ni à un traitement médical ; il propose un cadre botanique pour mieux écouter votre terrain (profil de vulnérabilité génétique, épigénétique et allostatique) et soutenir vos sensations de régulation face au spectre de charges allostatiques accumulées.",
       journey: {
         subtitle: "Un voyage de 90 jours en 5 temps",
-        text: "Le Protocoles Systémiques se déploie en phases successives, chacune avec une intention précise et des plantes ciblées :",
+        text: "Le Reset Homéostasique se déploie en phases successives, chacune avec une intention précise et des plantes ciblées :",
         step0: { title: "Étape 0 – Anamnèse systémique", desc: "L’intelligence ALMA cartographie vos terrains biologiques (T1–T10) pour personnaliser le protocole : on ne lance pas un reset sans savoir où votre corps a besoin d’aide en priorité." },
         phase0: { title: "Phase 0 – Préparation des émonctoires", desc: "Ouverture douce des voies d’élimination (reins, lymphe, intestin, peau) pour que le corps puisse mobiliser, conjuguer et capturer les charges circulantes sans se fragiliser. C’est le socle sur lequel les phases suivantes peuvent agir en profondeur." },
         phase1: { title: "Phase 1 – Relance hépatique", desc: "Travail ciblé sur le foie et la bile pour mobiliser les toxines, relancer la filtration et fluidifier les sorties. Le terrain s'allège, les flux se réorganisent." },
@@ -1835,8 +1836,9 @@ export const translations = {
       boutique_sub: {
         bloomlab: "BloomLab Extractor",
         kits: "Plant Kits",
-        abonnement: "Premium Subscription"
+        abonnement: "Digital Subscriptions"
       },
+      abonnement: "Digital Subscriptions",
       marque: "THE BRAND",
       marque_sub: {
         manifeste: "Our Manifesto",
@@ -3351,8 +3353,9 @@ export const translations = {
       boutique_sub: {
         bloomlab: "BloomLab Extraktor",
         kits: "Pflanzen-Kits",
-        abonnement: "Premium-Abonnement"
+        abonnement: "Digitale Abonnements"
       },
+      abonnement: "Digitale Abonnements",
       marque: "DIE MARKE",
       marque_sub: {
         manifeste: "Unser Manifest",

@@ -24,6 +24,15 @@ export const TooltipLexique: React.FC<TooltipLexiqueProps> = ({
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const popoverId = useId();
 
+  const [coords, setCoords] = useState<{
+    left: number;
+    top?: number;
+    bottom?: number;
+    width: number;
+    arrowLeft: number;
+    placement: 'top' | 'bottom';
+  } | null>(null);
+
   const glossary = useGlossary();
   const entry: LexiqueEntry | undefined = findLexiqueEntry(terme);
 
@@ -32,6 +41,65 @@ export const TooltipLexique: React.FC<TooltipLexiqueProps> = ({
     if (force || !glossary || !entry) return true;
     return glossary.registerTerm(entry.slug);
   });
+
+  const updatePosition = () => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const viewportW = typeof window !== 'undefined' ? window.innerWidth : 1024;
+    const viewportH = typeof window !== 'undefined' ? window.innerHeight : 768;
+    const margin = 12; // minimum margin from screen edges
+    const maxAvailableWidth = Math.max(220, viewportW - margin * 2);
+    const width = Math.min(360, maxAvailableWidth);
+
+    const triggerCenterX = rect.left + rect.width / 2;
+    let left = triggerCenterX - width / 2;
+    if (left < margin) {
+      left = margin;
+    }
+    if (left + width > viewportW - margin) {
+      left = Math.max(margin, viewportW - width - margin);
+    }
+
+    const arrowLeft = Math.max(16, Math.min(width - 16, triggerCenterX - left));
+
+    const estimatedHeight = 220;
+    const spaceAbove = rect.top;
+    const spaceBelow = viewportH - rect.bottom;
+    const placeAbove = spaceAbove >= estimatedHeight || spaceAbove > spaceBelow;
+
+    if (placeAbove) {
+      setCoords({
+        left,
+        bottom: viewportH - rect.top + 8,
+        width,
+        arrowLeft,
+        placement: 'top'
+      });
+    } else {
+      setCoords({
+        left,
+        top: rect.bottom + 8,
+        width,
+        arrowLeft,
+        placement: 'bottom'
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      updatePosition();
+      const handleScrollOrResize = () => {
+        updatePosition();
+      };
+      window.addEventListener('resize', handleScrollOrResize);
+      window.addEventListener('scroll', handleScrollOrResize, true);
+      return () => {
+        window.removeEventListener('resize', handleScrollOrResize);
+        window.removeEventListener('scroll', handleScrollOrResize, true);
+      };
+    }
+  }, [isOpen]);
 
   if (!entry) {
     return <span className={className}>{children || terme}</span>;
@@ -47,9 +115,12 @@ export const TooltipLexique: React.FC<TooltipLexiqueProps> = ({
     if (!isOpen) return;
 
     const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      const target = event.target as Node;
       if (
         containerRef.current &&
-        !containerRef.current.contains(event.target as Node)
+        !containerRef.current.contains(target) &&
+        popoverRef.current &&
+        !popoverRef.current.contains(target)
       ) {
         setIsOpen(false);
       }
@@ -79,6 +150,7 @@ export const TooltipLexique: React.FC<TooltipLexiqueProps> = ({
       clearTimeout(closeTimeoutRef.current);
       closeTimeoutRef.current = null;
     }
+    updatePosition();
     setIsOpen(true);
   };
 
@@ -91,12 +163,14 @@ export const TooltipLexique: React.FC<TooltipLexiqueProps> = ({
   const handleToggleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    updatePosition();
     setIsOpen((prev) => !prev);
   };
 
   const handleKeyDownTrigger = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
+      updatePosition();
       setIsOpen((prev) => !prev);
     }
   };
@@ -120,7 +194,7 @@ export const TooltipLexique: React.FC<TooltipLexiqueProps> = ({
   return (
     <span
       ref={containerRef}
-      className={`relative inline-flex items-baseline group font-inherit ${className}`}
+      className={`relative inline-flex items-baseline group font-inherit max-w-full ${className}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -132,35 +206,57 @@ export const TooltipLexique: React.FC<TooltipLexiqueProps> = ({
         aria-expanded={isOpen}
         aria-haspopup="dialog"
         aria-label={`Comprendre le terme "${entry.terme}" dans le lexique Bloom`}
-        className="inline-flex items-baseline gap-0.5 text-left cursor-pointer p-0 bg-transparent border-0 font-inherit text-inherit focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D97706] focus-visible:ring-offset-1 rounded-xs transition-colors"
+        className="inline-flex items-baseline gap-0.5 text-left cursor-pointer p-0 bg-transparent border-0 font-inherit text-inherit focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D97706] focus-visible:ring-offset-1 rounded-xs transition-colors max-w-full"
       >
-        <span className="underline decoration-dotted decoration-[#D97706] underline-offset-4 font-inherit decoration-2 text-inherit group-hover:text-[#0F261E] group-hover:decoration-[#0F261E] transition-colors">
+        <span className="underline decoration-dotted decoration-[#D97706] underline-offset-4 font-inherit decoration-2 text-inherit group-hover:text-[#0F261E] group-hover:decoration-[#0F261E] transition-colors break-words">
           {children || entry.terme}
         </span>
         <span
-          className="inline-flex items-center justify-center w-3 h-3 text-[#D97706] group-hover:text-[#0F261E] transition-colors translate-y-0.5 opacity-80 ml-0.5"
+          className="inline-flex items-center justify-center w-3 h-3 text-[#D97706] group-hover:text-[#0F261E] transition-colors translate-y-0.5 opacity-80 ml-0.5 shrink-0"
           aria-hidden="true"
         >
           <Info className="w-3 h-3" />
         </span>
       </button>
 
-      {/* Accessible Popover */}
-      {isOpen && (
+      {/* Accessible Popover positioned with viewport-safe fixed positioning */}
+      {isOpen && coords && (
         <span
           id={popoverId}
           ref={popoverRef}
           role="dialog"
           aria-modal="false"
           aria-label={`Définition de ${entry.terme}`}
-          className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2.5 w-[300px] sm:w-[350px] max-w-[90vw] bg-[#FAF7F2] border border-[#E7DFD3] rounded-2xl shadow-xl p-4 text-[#0F261E] text-left animate-in fade-in zoom-in-95 duration-150 block cursor-default font-normal whitespace-normal select-text"
+          className="fixed z-[9999] bg-[#FAF7F2] opacity-100 border border-[#E7DFD3] rounded-2xl shadow-2xl p-4 text-[#0F261E] text-left animate-in fade-in zoom-in-95 duration-150 block cursor-default font-normal whitespace-normal select-text pointer-events-auto"
           style={{
-            filter: 'drop-shadow(0 12px 28px rgba(15, 38, 30, 0.16))'
+            left: `${coords.left}px`,
+            ...(coords.top !== undefined ? { top: `${coords.top}px` } : {}),
+            ...(coords.bottom !== undefined ? { bottom: `${coords.bottom}px` } : {}),
+            width: `${coords.width}px`,
+            maxWidth: 'calc(100vw - 24px)',
+            backgroundColor: '#FAF7F2',
+            opacity: 1,
+            backdropFilter: 'none',
+            WebkitBackdropFilter: 'none',
+            boxShadow: '0 20px 45px -10px rgba(15, 38, 30, 0.45), 0 0 0 1px #E7DFD3',
+            isolation: 'isolate'
           }}
+          onMouseEnter={() => {
+            if (closeTimeoutRef.current) {
+              clearTimeout(closeTimeoutRef.current);
+              closeTimeoutRef.current = null;
+            }
+          }}
+          onMouseLeave={handleMouseLeave}
         >
-          {/* Triangular arrow indicator */}
+          {/* Triangular arrow indicator aligned to trigger center */}
           <span
-            className="absolute top-full left-1/2 -translate-x-1/2 -mt-[1px] w-3 h-3 bg-[#FAF7F2] border-r border-b border-[#E7DFD3] rotate-45 block"
+            className={`absolute w-3 h-3 ${
+              coords.placement === 'top'
+                ? 'top-full -mt-[6px] border-r border-b border-[#E7DFD3] rotate-45'
+                : 'bottom-full -mb-[6px] border-l border-t border-[#E7DFD3] rotate-45'
+            } block`}
+            style={{ left: `${coords.arrowLeft}px`, backgroundColor: '#FAF7F2', opacity: 1 }}
             aria-hidden="true"
           />
 
@@ -186,14 +282,14 @@ export const TooltipLexique: React.FC<TooltipLexiqueProps> = ({
           </span>
 
           {/* Simple Definition */}
-          <span className="block text-xs sm:text-[13px] text-[#0F261E]/90 leading-relaxed mt-2.5 mb-2 font-normal">
+          <span className="block text-xs sm:text-[13px] text-[#0F261E] leading-relaxed mt-2.5 mb-2 font-medium">
             {entry.definitionSimple || entry.definitionNovice}
           </span>
 
           {/* Analogy / Metaphor */}
           {entry.analogie && (
-            <span className="block bg-white/80 rounded-xl p-2.5 border border-[#E7DFD3]/70 mb-3">
-              <span className="block text-xs italic text-[#1C3F34] leading-snug m-0">
+            <span className="block bg-white rounded-xl p-2.5 border border-[#E7DFD3] mb-3 opacity-100 shadow-xs">
+              <span className="block text-xs italic text-[#1C3F34] leading-snug m-0 font-medium">
                 <span className="font-serif not-italic mr-1 text-[#D97706]">“</span>
                 {entry.analogie}
                 <span className="font-serif not-italic ml-1 text-[#D97706]">”</span>

@@ -57,6 +57,13 @@ height: 44px !important;
 object-fit: contain;
 }
 
+/* Universal protection: Ensure all badges, pills, and popovers strictly respect viewport and container boundaries */
+.bloom-badge, [data-lexique], [role="dialog"], button[aria-haspopup="dialog"] {
+  max-width: 100% !important;
+  word-break: break-word !important;
+  box-sizing: border-box !important;
+}
+
 /* Explicit utility classes for dynamically injected HTML content */
 .bg-botanik-green { background-color: #0F261E !important; }
 .bg-botanik-sage { background-color: #1C3F34 !important; }
@@ -83,3 +90,21 @@ button { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.0
 .label-caps { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.75rem; }
 h1 span, h2 span, h3 span { font-family: inherit; font-weight: inherit; }
 .font-serif { font-family: var(--font-display) !important; }
+
+/* Bloom Académie — Règle stricte d'unification typographique H1, H2, H3, H4 */
+[data-bloom-academie="true"] h1,
+[data-bloom-academie="true"] h2,
+[data-bloom-academie="true"] h3,
+[data-bloom-academie="true"] h4,
+[data-bloom-academie] h1,
+[data-bloom-academie] h2,
+[data-bloom-academie] h3,
+[data-bloom-academie] h4,
+.bloom-academie h1,
+.bloom-academie h2,
+.bloom-academie h3,
+.bloom-academie h4 {
+  font-family: var(--font-display) !important;
+  letter-spacing: -0.02em;
+}
+

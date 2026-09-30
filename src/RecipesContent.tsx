@@ -14,14 +14,22 @@ export default function RecipesContent({ onBack, lang, t }: RecipesContentProps)
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
+  const [activeArchitecture, setActiveArchitecture] = useState<string>('All');
+  const [activeTerrain, setActiveTerrain] = useState<string>('All');
 
   const categories = ['All', ...Array.from(new Set(discoveryRecipes.map(r => r.category))).filter(c => c !== 'All')];
+  const architectures = ['All', 'SRA', 'HPA', 'Fascia', 'SEC'];
+  const terrainsList = ['All', 'T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
 
   const filteredRecipes = discoveryRecipes.filter(recipe => {
     const matchesSearch = recipe.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                         recipe.description.toLowerCase().includes(searchQuery.toLowerCase());
+                         recipe.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         (recipe.terrains && recipe.terrains.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()))) ||
+                         (recipe.axes && recipe.axes.some(a => a.toLowerCase().includes(searchQuery.toLowerCase())));
     const matchesCategory = activeCategory === 'All' || recipe.category === activeCategory;
-    return matchesSearch && matchesCategory;
+    const matchesArch = activeArchitecture === 'All' || (recipe.architectures && recipe.architectures.includes(activeArchitecture));
+    const matchesTerrain = activeTerrain === 'All' || (recipe.terrains && recipe.terrains.some(t => t.startsWith(activeTerrain)));
+    return matchesSearch && matchesCategory && matchesArch && matchesTerrain;
   });
 
   // Limit to 5 per category for freemium (mocking premium check)
@@ -67,16 +75,49 @@ export default function RecipesContent({ onBack, lang, t }: RecipesContentProps)
         </div>
       </div>
 
-      <div className="flex gap-2 overflow-x-auto pb-4 mb-12 no-scrollbar">
-        {categories.map(category => (
-          <button
-            key={category}
-            onClick={() => setActiveCategory(category)}
-            className={`px-6 py-2 rounded-full whitespace-nowrap transition-all font-medium ${activeCategory === category ? 'bg-botanik-green text-white shadow-lg' : 'bg-white text-botanik-green/60 hover:bg-botanik-green/5'}`}
-          >
-            {category}
-          </button>
-        ))}
+      {/* Filtres Catégories, Architectures et Terrains */}
+      <div className="space-y-4 mb-12">
+        {/* Catégories */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
+          <span className="text-xs font-bold text-botanik-green/50 uppercase tracking-wider shrink-0 mr-2">Catégorie:</span>
+          {categories.map(category => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-4 py-1.5 rounded-full whitespace-nowrap text-xs transition-all font-semibold cursor-pointer ${activeCategory === category ? 'bg-botanik-green text-white shadow-md' : 'bg-white text-botanik-green/70 hover:bg-botanik-green/5 border border-botanik-green/10'}`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        {/* 4 Architectures Filter */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
+          <span className="text-xs font-bold text-[#c9a84c] uppercase tracking-wider shrink-0 mr-2">Architecture:</span>
+          {architectures.map(arch => (
+            <button
+              key={arch}
+              onClick={() => setActiveArchitecture(arch)}
+              className={`px-3 py-1 rounded-lg whitespace-nowrap text-xs transition-all font-bold cursor-pointer ${activeArchitecture === arch ? 'bg-[#c9a84c] text-[#0d1117] shadow-sm font-black' : 'bg-white text-slate-600 hover:border-[#c9a84c] border border-slate-200'}`}
+            >
+              {arch === 'All' ? 'Toutes' : arch}
+            </button>
+          ))}
+        </div>
+
+        {/* 7 Terrains Filter */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
+          <span className="text-xs font-bold text-emerald-700 uppercase tracking-wider shrink-0 mr-2">Terrain (T1-T7):</span>
+          {terrainsList.map(tCode => (
+            <button
+              key={tCode}
+              onClick={() => setActiveTerrain(tCode)}
+              className={`px-3 py-1 rounded-lg whitespace-nowrap text-xs transition-all font-bold cursor-pointer ${activeTerrain === tCode ? 'bg-emerald-700 text-white shadow-sm font-black' : 'bg-white text-slate-600 hover:border-emerald-600 border border-slate-200'}`}
+            >
+              {tCode === 'All' ? 'Tous' : tCode}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -98,12 +139,32 @@ export default function RecipesContent({ onBack, lang, t }: RecipesContentProps)
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors" />
             </div>
             <div className="p-8 flex-1 flex flex-col">
-              <div className="flex justify-between items-start mb-4">
+              <div className="flex justify-between items-start mb-3">
                 <span className="px-3 py-1 bg-botanik-green/5 text-botanik-green text-[10px] font-bold uppercase tracking-widest rounded-full">
                   {recipe.category}
                 </span>
                 <span className="text-xs font-bold text-botanik-green/20">RECETTE #{recipe.id}</span>
               </div>
+
+              {/* Badges Architectures, Terrains, Axes */}
+              <div className="flex flex-wrap gap-1.5 mb-3">
+                {recipe.architectures && recipe.architectures.map((arch, aIdx) => (
+                  <span key={aIdx} className="text-[9px] font-black uppercase px-2 py-0.5 rounded bg-[#c9a84c]/15 text-[#92400e] border border-[#c9a84c]/30">
+                    {arch}
+                  </span>
+                ))}
+                {recipe.terrains && recipe.terrains.map((ter, tIdx) => (
+                  <span key={tIdx} className="text-[9px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">
+                    {ter.split(' ')[0]}
+                  </span>
+                ))}
+                {recipe.axes && recipe.axes.slice(0, 2).map((ax, xIdx) => (
+                  <span key={xIdx} className="text-[9px] font-bold px-2 py-0.5 rounded bg-sky-50 text-sky-800 border border-sky-200">
+                    {ax.split(' ')[0]}
+                  </span>
+                ))}
+              </div>
+
               <h3 className="text-2xl font-bold text-botanik-green mb-3 group-hover:text-botanik-orange transition-colors">
                 {recipe.title}
               </h3>
@@ -160,9 +221,62 @@ export default function RecipesContent({ onBack, lang, t }: RecipesContentProps)
                     <h2 className="text-4xl md:text-5xl font-bold text-botanik-green mb-6">
                       {selectedRecipe.title}
                     </h2>
-                    <p className="text-xl text-botanik-green/60 mb-12 font-light leading-relaxed">
+                    <p className="text-xl text-botanik-green/60 mb-8 font-light leading-relaxed">
                       {selectedRecipe.description}
                     </p>
+
+                    {/* Bloc Profil Systémique Bloom : 4 Architectures, 7 Terrains, 9 Axes */}
+                    <div className="mb-10 p-6 rounded-3xl bg-[#FAF7F2] border border-[#c9a84c]/30 space-y-4 shadow-sm">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#92400e]">
+                          Profil Systémique Bloom
+                        </span>
+                        <span className="text-[10px] font-mono bg-[#c9a84c]/20 text-[#92400e] px-2.5 py-0.5 rounded-full font-bold">
+                          Modèle 4-7-9
+                        </span>
+                      </div>
+
+                      <div className="space-y-2 text-xs">
+                        {selectedRecipe.architectures && (
+                          <div className="flex items-start gap-2">
+                            <strong className="text-[#0F261E] shrink-0 font-bold">4 Architectures :</strong>
+                            <div className="flex flex-wrap gap-1.5">
+                              {selectedRecipe.architectures.map((a, i) => (
+                                <span key={i} className="px-2 py-0.5 rounded bg-[#0F261E] text-white text-[10px] font-bold">
+                                  {a}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {selectedRecipe.terrains && (
+                          <div className="flex items-start gap-2">
+                            <strong className="text-[#0F261E] shrink-0 font-bold">7 Terrains :</strong>
+                            <div className="flex flex-wrap gap-1.5">
+                              {selectedRecipe.terrains.map((t, i) => (
+                                <span key={i} className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 text-[10px] font-semibold border border-emerald-300">
+                                  {t}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {selectedRecipe.axes && (
+                          <div className="flex items-start gap-2">
+                            <strong className="text-[#0F261E] shrink-0 font-bold">9 Axes :</strong>
+                            <div className="flex flex-wrap gap-1.5">
+                              {selectedRecipe.axes.map((x, i) => (
+                                <span key={i} className="px-2 py-0.5 rounded bg-sky-100 text-sky-900 text-[10px] font-semibold border border-sky-300">
+                                  {x}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
 
                     <div className="space-y-10">
                       <section>

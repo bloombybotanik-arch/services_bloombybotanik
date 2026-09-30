@@ -1,20 +1,34 @@
 
-export type View = 'home' | 'machine' | 'bloomlab' | 'phytotherapie-reset' | 'votre-pratique' | 'parcours' | 'boutique' | 'product-detail' | 'culinaire' | 'cosmetiques' | 'cosmetique-botanique' | 'gastronomie-botanique' | 'library-landing' | 'manifeste' | 'activation' | 'activate-bloomlab' | 'account' | 'legal' | 'chat' | 'cart' | 'checkout' | 'guide' | 'how_it_works' | 'pending' | 'library' | 'herbier' | 'pillar-extraction' | 'guide-complet' | 'qu-est-ce-que-infusion' | 'admin' | 'blog' | 'withdrawal' | 'indexbis' | 'newsletter-preferences' | 'admin-newsletter' | 'terrain' | 'hormese' | 'infuseur-botanique' | 'cgv' | 'cgu' | 'privacy' | 'mentions' | 'returns' | 'recettes' | 'guides' | 'ateliers' | 'herbarium' | 'questions-frequentes' | 'faq' | 'infusion-precision' | 'totum-definition' | 'solvants-extraction' | 'premium-info' | 'decouvrir' | 'comment-ca-marche' | 'recettes-gratuites' | 'apprendre' | 'preparations-avancees' | 'recettes-cosmetiques' | 'bibliotheque' | 'boutique-kits' | 'abonnement' | 'la-marque' | 'contact' | 'extraction-botanique' | 'infusion-botanique' | 'infusion-botanique-maison-comment-ca-marche' | 'huile-infusee' | 'plantes-adaptogenes' | 'totum-vegetal' | 'maceration-plantes' | 'teinture-mere' | 'kits-botaniques' | 'articles' | 'lexique' | 'protocole-psoriasis' | 'protocole-sibo';
+export type View = 'home' | 'machine' | 'bloomlab' | 'phytotherapie-reset' | 'votre-pratique' | 'parcours' | 'boutique' | 'product-detail' | 'culinaire' | 'cosmetiques' | 'cosmetique-botanique' | 'gastronomie-botanique' | 'library-landing' | 'manifeste' | 'activation' | 'activate-bloomlab' | 'account' | 'legal' | 'chat' | 'cart' | 'checkout' | 'guide' | 'how_it_works' | 'pending' | 'library' | 'herbier' | 'pillar-extraction' | 'guide-complet' | 'qu-est-ce-que-infusion' | 'admin' | 'blog' | 'withdrawal' | 'indexbis' | 'newsletter-preferences' | 'admin-newsletter' | 'terrain' | 'hormese' | 'infuseur-botanique' | 'cgv' | 'cgu' | 'privacy' | 'mentions' | 'returns' | 'recettes' | 'guides' | 'ateliers' | 'herbarium' | 'questions-frequentes' | 'faq' | 'infusion-precision' | 'totum-definition' | 'solvants-extraction' | 'premium-info' | 'decouvrir' | 'comment-ca-marche' | 'recettes-gratuites' | 'apprendre' | 'preparations-avancees' | 'recettes-cosmetiques' | 'bibliotheque' | 'boutique-kits' | 'abonnement' | 'abonnements-numeriques' | 'la-marque' | 'contact' | 'extraction-botanique' | 'infusion-botanique' | 'infusion-botanique-maison-comment-ca-marche' | 'huile-infusee' | 'plantes-adaptogenes' | 'totum-vegetal' | 'maceration-plantes' | 'teinture-mere' | 'kits-botaniques' | 'articles' | 'lexique' | 'protocole-psoriasis' | 'protocole-sibo' | 'protocole-myeline' | 'protocole-decalcification-pineale' | 'blog-vieillissement-myeline' | 'academie' | '4-architectures' | '7-terrains' | 'comment-lire-modele-bloom' | '9-axes' | 'neuf-axes-historiques' | 'charge-allostatique' | 'reset-homeostasique' | 'metabolisme-insuline' | 'protocoles' | 'module-0' | 'axe-a1' | 'axe-a2' | 'axe-a3' | 'axe-a4' | 'axe-a5' | 'axe-a6' | 'axe-a7' | 'axe-a8' | 'axe-a9';
 
 export const VIEW_PATHS: Record<string, string> = {
   home: '/', 
   indexbis: '/',
+  academie: '/academie/',
   bloomlab: '/bloomlab/',
   machine: '/bloomlab/', 
-  'phytotherapie-reset': '/phytotherapie-reset/',
-  'votre-pratique': '/phytotherapie-reset/',
-  'parcours': '/phytotherapie-reset/',
+  'phytotherapie-reset': '/academie/reset-homeostasique/',
+  'reset-homeostasique': '/academie/reset-homeostasique/',
+  'protocoles': '/protocoles/',
+  'module-0': '/academie/choc-de-paradigme/',
+  'axe-a1': '/academie/axes/a1/',
+  'axe-a2': '/academie/axes/a2/',
+  'axe-a3': '/academie/axes/a3/',
+  'axe-a4': '/academie/axes/a4/',
+  'axe-a5': '/academie/axes/a5/',
+  'axe-a6': '/academie/axes/a6/',
+  'axe-a7': '/academie/axes/a7/',
+  'axe-a8': '/academie/axes/a8/',
+  'axe-a9': '/academie/axes/a9/',
+  'votre-pratique': '/academie/protocoles/',
+  'parcours': '/academie/protocoles/',
   boutique: '/boutique/', 
   'product-detail': '/boutique/bloomlab/',
   'boutique-kits': '/boutique/kits/',
   'kits-botaniques': '/kits-botaniques/',
   'abonnement': '/abonnement/',
   'premium-info': '/abonnement/',
+  'abonnements-numeriques': '/boutique/abonnements-numeriques/',
   culinaire: '/gastronomie-botanique/', 
   cosmetiques: '/cosmetique-botanique/',
   'cosmetique-botanique': '/cosmetique-botanique/',
@@ -77,8 +91,18 @@ export const VIEW_PATHS: Record<string, string> = {
   'totum-definition': '/totum-definition/',
   'solvants-extraction': '/solvants-extraction/',
   'lexique': '/lexique/',
-  'protocole-psoriasis': '/phytotherapie-reset/protocole-psoriasis/',
-  'protocole-sibo': '/phytotherapie-reset/protocole-sibo/'
+  'protocole-psoriasis': '/academie/protocoles/psoriasis/',
+  'protocole-sibo': '/academie/protocoles/sibo/',
+  'protocole-myeline': '/academie/protocoles/clarte-mentale/',
+  'protocole-decalcification-pineale': '/academie/protocoles/decalcification-pineale/',
+  'blog-vieillissement-myeline': '/blog/vieillissement-myeline-fgf17-clarte-mentale/',
+  '4-architectures': '/academie/comprendre-le-corps/4-architectures/',
+  '7-terrains': '/academie/comprendre-le-corps/7-terrains/',
+  'comment-lire-modele-bloom': '/academie/comprendre-le-corps/comment-lire-le-modele-bloom/',
+  '9-axes': '/academie/comprendre-le-corps/9-axes-historiques/',
+  'neuf-axes-historiques': '/academie/comprendre-le-corps/9-axes-historiques/',
+  'charge-allostatique': '/academie/comprendre-le-corps/charge-allostatique/',
+  'metabolisme-insuline': '/academie/comprendre-le-corps/metabolisme-glucidique-insuline/'
 };
 
 export type SchoolCalendarZone = 'A' | 'B' | 'C' | 'non_precise' | 'hors_france';

@@ -91,7 +91,7 @@
 
   <url>
     <loc>https://bloombybotanik.com/phytotherapie-reset/protocole-psoriasis/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/phytotherapie-reset/protocole-psoriasis/"/>
@@ -100,6 +100,33 @@
       <image:loc>https://bloombybotanik.com/images/og/protocole-psoriasis-reset-homeostatique-1200x630.jpg</image:loc>
       <image:title>Protocole Psoriasis — Reset Homéostasique | Bloom by BotaniK</image:title>
     </image:image>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/phytotherapie-reset/protocole-sibo/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/phytotherapie-reset/protocole-sibo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/phytotherapie-reset/protocole-sibo/"/>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/protocoles/clarte-mentale/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/protocoles/clarte-mentale/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/protocoles/clarte-mentale/"/>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/blog/vieillissement-myeline-fgf17-clarte-mentale/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/blog/vieillissement-myeline-fgf17-clarte-mentale/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/blog/vieillissement-myeline-fgf17-clarte-mentale/"/>
   </url>
 
   <url>
@@ -562,6 +589,50 @@
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/academie/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/academie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/academie/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/academie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/academie/"/>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/comment-lire-modele-bloom/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/comment-lire-modele-bloom/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/comment-lire-modele-bloom/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/comment-lire-modele-bloom/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/comment-lire-modele-bloom/"/>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/abonnement/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/abonnement/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/abonnement/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/abonnement/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/abonnement/"/>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/boutique/abonnements-numeriques/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/abonnements-numeriques/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/boutique/abonnements-numeriques/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/boutique/abonnements-numeriques/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/boutique/abonnements-numeriques/"/>
   </url>
 
   <url>

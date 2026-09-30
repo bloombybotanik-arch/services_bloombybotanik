@@ -598,6 +598,13 @@ function registerAppRoutes(app: express.Express) {
   app.use("/products", express.static(path.join(process.cwd(), "public", "products"), { maxAge: "30d" }));
   app.use(express.static(path.join(process.cwd(), "public"), { maxAge: "1d", index: false }));
 
+  app.get(["/blog/vieillissement-myeline-fgf17-clarte-mentale", "/blog/vieillissement-myeline-fgf17-clarte-mentale/", "/blog/vieillissement-myeline-fgf17-clarte-mentale.html", "/blog/vieillissement-myeline-fgf17.html", "/blog/vieillissement-myeline-fgf17/index.html"], (req, res) => {
+    res.sendFile(path.join(process.cwd(), "public", "blog", "vieillissement-myeline-fgf17-clarte-mentale.html"));
+  });
+  app.get(["/protocoles/clarte-mentale", "/protocoles/clarte-mentale/", "/protocoles/clarte-mentale.html", "/protocoles/myeline.html", "/protocoles/myeline/index.html"], (req, res) => {
+    res.sendFile(path.join(process.cwd(), "public", "protocoles", "clarte-mentale.html"));
+  });
+
   /* --- Sitemaps & robots & feed --- */
   app.get("/sitemap.xml", (req, res) => { res.header("Content-Type", "application/xml"); res.sendFile(path.join(process.cwd(), "public", "sitemap.xml")); });
   app.get("/sitemap-images.xml", (req, res) => { res.header("Content-Type", "application/xml"); res.sendFile(path.join(process.cwd(), "public", "sitemap-images.xml")); });

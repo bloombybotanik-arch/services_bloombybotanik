@@ -17,6 +17,7 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
   const t = translations[lang].product_detail;
   const productSheets = useMemo(() => getProductSheets(lang), [lang]);
   const sheet = productSheets[productId] || productSheets['bloomlab'];
+  const isArgiles = productId === 'duo-argiles' || productId === 'kit-reset';
   const gallery = sheet.images.map((img: string, i: number) => ({ 
     src: img, 
     alt: `${sheet.name} - ${sheet.subtitle || 'Herboristerie de précision'} - Vue ${i + 1} - Infuseur et extracteur botanique Bloom by BotaniK`
@@ -164,17 +165,31 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
         </a>
       </div>
 
-      <div className="flex flex-col lg:flex-row items-stretch bg-white border border-[#1B3022]/5 rounded-3xl sm:rounded-[48px] overflow-hidden shadow-2xl mb-16 sm:mb-24 min-h-0 lg:min-h-[700px]">
-        {/* Left Side: Image (Occupies full space) */}
+      <div className="flex flex-col lg:flex-row items-stretch bg-white border border-[#1B3022]/5 rounded-3xl sm:rounded-[48px] overflow-hidden shadow-2xl mb-16 sm:mb-24 min-h-0 lg:min-h-[640px]">
+        {/* Left Side: Image */}
         <div 
-          className="lg:w-1/2 relative bg-[#F9F9F7] overflow-hidden min-h-[260px] sm:min-h-[400px] lg:min-h-[600px] cursor-zoom-in flex items-stretch"
+          className={`lg:w-1/2 relative overflow-hidden min-h-[300px] sm:min-h-[400px] lg:min-h-[560px] cursor-zoom-in flex items-center justify-center transition-all ${
+            isArgiles 
+              ? 'bg-gradient-to-b from-[#FAF8F5] via-[#F4F0EB] to-[#ECE5DB] p-6 sm:p-10 lg:p-14' 
+              : 'bg-[#F9F9F7] items-stretch'
+          }`}
           onClick={() => setIsZoomed(true)}
         >
           <img 
             src={gallery[activeImage].src} 
             alt={gallery[activeImage].alt} 
-            className="w-full h-full object-cover transition-all duration-500 scale-105 sm:scale-110 hover:scale-125"
+            className={
+              isArgiles
+                ? "max-h-[300px] sm:max-h-[360px] lg:max-h-[400px] max-w-[85%] sm:max-w-[75%] lg:max-w-[70%] w-auto h-auto object-contain rounded-2xl sm:rounded-3xl shadow-md border border-[#1B3022]/10 transition-transform duration-500 hover:scale-[1.03]"
+                : "w-full h-full object-cover transition-all duration-500 scale-105 sm:scale-110 hover:scale-125"
+            }
           />
+          {isArgiles && (
+            <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-[#0F261E] text-[#D97706] px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] border border-[#D97706]/30 shadow-lg z-20 whitespace-nowrap flex items-center gap-1.5">
+              <Leaf className="w-3.5 h-3.5 text-[#D97706]" />
+              <span>Argiles &amp; Matières Premières</span>
+            </div>
+          )}
           {productId === 'bloomlab' && (
             <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-[#D97706] text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] border border-white/20 shadow-xl z-20 whitespace-nowrap">
               {sheet.subtitle}
@@ -185,8 +200,8 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
               <div className="flex gap-2 p-2 sm:p-3 bg-white/20 backdrop-blur-md rounded-2xl border border-white/20 w-fit max-w-full overflow-x-auto">
                 {gallery.map((img: any, i: number) => (
                   <button 
-                    key={i}
-                    onClick={() => setActiveImage(i)}
+                    key={i} 
+                    onClick={(e) => { e.stopPropagation(); setActiveImage(i); }}
                     className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden border-2 transition-all shrink-0 ${activeImage === i ? 'border-[#F97316] scale-95 ring-2 ring-white/50' : 'border-transparent opacity-70 hover:opacity-100'}`}
                   >
                     <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
@@ -379,7 +394,7 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
           <img 
             src={gallery[activeImage].src} 
             alt={gallery[activeImage].alt} 
-            className="max-w-full max-h-full object-contain animate-in zoom-in-95 duration-300"
+            className={`max-w-full max-h-full object-contain ${isArgiles ? 'max-w-[700px] max-h-[700px] bg-white/95 p-6 rounded-3xl shadow-2xl' : ''} animate-in zoom-in-95 duration-300`}
           />
         </div>
       )}

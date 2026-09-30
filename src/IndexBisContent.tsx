@@ -229,13 +229,6 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
           {/* Textes du Manifeste & CTAs Hero (Sans aucun prix) */}
           <div className="space-y-8 max-w-5xl mx-auto">
             <div className="space-y-3">
-              <p className="text-base sm:text-lg md:text-xl text-slate-700 font-normal leading-relaxed">
-                {isFR 
-                  ? "De la plante à la préparation, apprenez chaque étape de votre pratique botanique." 
-                  : isDE 
-                  ? "Von der Pflanze bis zur Zubereitung: Meistern Sie jeden Schritt Ihrer botanischen Praxis." 
-                  : "From plant to preparation, master every step of your botanical practice."}
-              </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#0F261E] leading-tight tracking-tight">
                 {isFR 
                   ? "L'Extracteur Botanique qui Préserve le Totum Végétal" 
@@ -243,19 +236,55 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   ? "Der botanische Extraktor, der das pflanzliche Totum bewahrt" 
                   : "The Botanical Extractor Preserving the Whole Plant Totum"}
               </h2>
+              {/* Sous-titre Plain-language (nouveau, une ligne) */}
+              <p className="text-base sm:text-lg md:text-xl text-[#1C3F34] font-medium leading-relaxed">
+                {isFR 
+                  ? "Le Totum végétal : toute la plante et tous ses actifs qui travaillent ensemble — pas une molécule isolée." 
+                  : isDE 
+                  ? "Das pflanzliche Totum: die ganze Pflanze und all ihre Wirkstoffe im Verbund – kein isoliertes Molekül." 
+                  : "The whole plant Totum: the entire plant and all its actives working in synergy — never an isolated molecule."}
+              </p>
             </div>
 
-            <p className="text-sm sm:text-base md:text-lg text-slate-700 font-normal leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base md:text-lg text-slate-700 font-normal leading-relaxed">
               {isFR ? (
                 <>
-                  Bloom by Botanik conçoit l'extracteur botanique et infuseur végétal de référence pour concevoir des remèdes naturels de haute précision à domicile. Grâce au <TooltipLexique terme="sequencage-ab">séquençage actif A/B</TooltipLexique>, notre technologie d'extraction préserve l'intégrité du <TooltipLexique terme="totum">Totum végétal</TooltipLexique> sans dénaturer les principes actifs thermolabiles. Que vous prépariez une infusion végétale concentrée, une macération huileuse de calendula ou un extrait de <TooltipLexique terme="adaptogenes">plantes adaptogènes</TooltipLexique> pour alléger votre <TooltipLexique terme="charge-allostatique">charge allostatique</TooltipLexique> et accompagner votre <TooltipLexique terme="homeostasie">reset homéostatique</TooltipLexique>, BloomLab réconcilie l'herboristerie maison ancestrale et les exigences d'un <TooltipLexique terme="terrain">terrain</TooltipLexique> biologique moderne (profil de vulnérabilité génétique, épigénétique et allostatique).
+                  <p>
+                    Une tisane qui bout, c'est une plante qu'on abîme : trois minutes d'eau bouillante suffisent à évaporer les terpènes qui parfument et à dégrader les flavonoïdes antioxydants. Et six semaines de macération au soleil n'extraient qu'une partie de ce que la plante contient.
+                  </p>
+                  <p>
+                    BloomLab extrait autrement. Température tenue au demi-degré près, temps compté, brassage doux : chaque famille de molécules est recueillie quand elle est prête, dans le solvant qui lui convient — l'eau pour les unes, l'huile pour les autres. C'est le <TooltipLexique terme="sequencage-ab">séquençage actif A/B</TooltipLexique> : la méthode qui préserve le <TooltipLexique terme="totum">Totum végétal</TooltipLexique> au lieu d'en perdre la moitié.
+                  </p>
+                  <p>
+                    Infusions concentrées du soir, huiles de calendula pour la peau, extraits de <TooltipLexique terme="adaptogenes">plantes adaptogènes</TooltipLexique> pour les saisons chargées : vos préparations maison, avec la précision d'un laboratoire et la mémoire des gestes d'herboristerie. Et quand vous voulez aller plus loin, nos protocoles vous accompagnent pas à pas.
+                  </p>
                 </>
               ) : isDE ? (
-                "Bloom by Botanik entwickelt den führenden botanischen Extraktor und Pflanzeninfusor für hochpräzise natürliche Heilmittel zu Hause. Dank der sequenziellen A/B-Extraktion bewahrt unsere Technologie das gesamte pflanzliche Totum. Ob konzentrierter Pflanzenaufguss, öliges Mazerat oder Adaptogen-Extrakt für den homöostatischen Reset – BloomLab vereint uralte Hauskräuterkunde mit moderner Phytotherapie."
+                <>
+                  <p>
+                    Kochender Tee zerstört die Pflanze: Drei Minuten sprudelndes Wasser genügen, um duftende Terpene zu verdampfen und antioxidative Flavonoide zu zerstören. Und sechswöchiges Mazerieren in der Sonne extrahiert nur einen Bruchteil dessen, was die Pflanze birgt.
+                  </p>
+                  <p>
+                    BloomLab extrahiert grundlegend anders. Präzise Temperaturführung auf ein halbes Grad genau, exakt dosierte Zeit, sanftes Rühren: Jede Molekülfamilie wird im optimalen Lösungsmittel gebunden – Wasser für die einen, Öl für die anderen. Das ist die aktive A/B-Sequenzierung, die das vollständige pflanzliche Totum bewahrt.
+                  </p>
+                  <p>
+                    Konzentrierte Abendaufgüsse, Calendula-Hautöle oder Adaptogen-Extrakte: Ihre botanischen Hauszubereitungen mit Laborpräzision und traditionellem Wissen.
+                  </p>
+                </>
               ) : (
-                "Bloom by Botanik designs the reference botanical extractor and herbal infuser for crafting high-precision natural remedies at home. Powered by active A/B sequential extraction, our technology safeguards the full plant Totum without denaturing heat-sensitive active compounds. Whether creating concentrated herbal infusions, nourishing oil macerations, or adaptogenic plant extracts for homeostatic reset, BloomLab unites ancestral home herbalism with modern phytotherapy standards."
+                <>
+                  <p>
+                    Boiling herbal tea damages the plant: three minutes of rolling boil evaporate aromatic terpenes and degrade antioxidant flavonoids. And six weeks of sun maceration only extract a fraction of what the plant contains.
+                  </p>
+                  <p>
+                    BloomLab extracts differently. Temperature controlled to half a degree, calibrated extraction time, gentle agitation: each molecular family is captured in its ideal solvent — water for some, oil for others. This is active A/B sequential extraction: safeguarding the full plant Totum instead of losing half of it.
+                  </p>
+                  <p>
+                    Concentrated evening infusions, soothing calendula oils, adaptogenic plant extracts: your home botanical preparations with laboratory precision and the heritage of master herbalism. And when you want to dive deeper, our protocols guide you step by step.
+                  </p>
+                </>
               )}
-            </p>
+            </div>
 
             {/* CTAs Héroïques (Aucun prix) */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -273,6 +302,28 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 <span>{isFR ? "Découvrir la BloomLab" : isDE ? "Die BloomLab entdecken" : "Discover BloomLab"}</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
+            </div>
+
+            {/* Chips-tooltip sous les CTA (nouveau) */}
+            <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 text-xs text-slate-500">
+              <span className="font-semibold text-slate-600 flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-[#D97706]" />
+                {isFR ? "Un mot vous intrigue ? Touchez-le :" : isDE ? "Ein Begriff macht Sie neugierig? Antippen:" : "Curious about a term? Tap it:"}
+              </span>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#FAF7F2] border border-[#D8CBB7] hover:border-[#1C3F34] hover:bg-white transition-colors cursor-pointer text-xs font-semibold text-[#0F261E]">
+                  <TooltipLexique terme="totum" force={true}>Totum végétal</TooltipLexique>
+                </span>
+                <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#FAF7F2] border border-[#D8CBB7] hover:border-[#1C3F34] hover:bg-white transition-colors cursor-pointer text-xs font-semibold text-[#0F261E]">
+                  <TooltipLexique terme="sequencage-ab" force={true}>Séquençage actif A/B</TooltipLexique>
+                </span>
+                <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#FAF7F2] border border-[#D8CBB7] hover:border-[#1C3F34] hover:bg-white transition-colors cursor-pointer text-xs font-semibold text-[#0F261E]">
+                  <TooltipLexique terme="adaptogenes" force={true}>Plantes adaptogènes</TooltipLexique>
+                </span>
+                <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#FAF7F2] border border-[#D8CBB7] hover:border-[#1C3F34] hover:bg-white transition-colors cursor-pointer text-xs font-semibold text-[#0F261E]">
+                  <TooltipLexique terme="terrain" force={true}>Terrain biologique</TooltipLexique>
+                </span>
+              </div>
             </div>
           </div>
         </div>

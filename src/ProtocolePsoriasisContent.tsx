@@ -29,6 +29,7 @@ import { View } from './types';
 import { Language } from './translations';
 import { TooltipLexique } from './components/TooltipLexique';
 import { GlossaryProvider } from './context/GlossaryContext';
+import { psoriasisTranslations } from './data/translations/psoriasisTranslations';
 
 interface ProtocolePsoriasisContentProps {
   isPremium: boolean;
@@ -45,6 +46,7 @@ export default function ProtocolePsoriasisContent({
   onRequireAuth,
   lang
 }: ProtocolePsoriasisContentProps) {
+  const t = psoriasisTranslations[lang || 'fr'] || psoriasisTranslations.fr;
   const [activeTab, setActiveTab] = useState<'sommaire' | 'phase0' | 'phase1' | 'phase2' | 'phase3' | 'carnet'>('sommaire');
   const [copiedLink, setCopiedLink] = useState(false);
 
@@ -111,7 +113,10 @@ export default function ProtocolePsoriasisContent({
 
   return (
     <GlossaryProvider pageKey="protocole-psoriasis">
-      <article className="min-h-screen bg-[#FAF7F2] text-[#0F261E] pb-24 selection:bg-[#D97706]/20 selection:text-[#0F261E]">
+      <article 
+        className="min-h-screen bg-[#FAF7F2] text-[#0F261E] pb-24 selection:bg-[#D97706]/20 selection:text-[#0F261E]"
+        data-bloom-academie="true"
+      >
       {/* Print Stylesheet Hook */}
       <style>{`
         @media print {
@@ -141,10 +146,17 @@ export default function ProtocolePsoriasisContent({
             </button>
             <ChevronRight className="w-3.5 h-3.5 text-[#0F261E]/40 shrink-0" />
             <button 
+              onClick={() => onNavigate('academie')} 
+              className="hover:text-[#D97706] transition-colors cursor-pointer"
+            >
+              Bloom Académie
+            </button>
+            <ChevronRight className="w-3.5 h-3.5 text-[#0F261E]/40 shrink-0" />
+            <button 
               onClick={() => onNavigate('phytotherapie-reset')} 
               className="hover:text-[#D97706] transition-colors cursor-pointer"
             >
-              Phytothérapie Reset
+              Protocoles Systémiques
             </button>
             <ChevronRight className="w-3.5 h-3.5 text-[#0F261E]/40 shrink-0" />
             <span className="text-[#0F261E] font-bold truncate">Protocole Psoriasis</span>
@@ -154,20 +166,20 @@ export default function ProtocolePsoriasisContent({
             <button
               onClick={handleShare}
               className="px-3 py-1.5 rounded-xl border border-[#0F261E]/15 text-[#0F261E] hover:bg-[#0F261E]/5 text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer"
-              title="Partager le lien"
+              title={t.breadcrumb.share}
             >
               <Share2 className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">{copiedLink ? 'Lien copié !' : 'Partager'}</span>
+              <span className="hidden sm:inline">{copiedLink ? t.breadcrumb.copied : t.breadcrumb.share}</span>
             </button>
 
             {isPremium && (
               <button
                 onClick={handlePrint}
                 className="px-3.5 py-1.5 rounded-xl bg-[#0F261E] hover:bg-[#D97706] text-white text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shadow-sm"
-                title="Imprimer ou enregistrer en PDF"
+                title={t.breadcrumb.downloadPdf}
               >
                 <Printer className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">Télécharger le PDF</span>
+                <span className="hidden sm:inline">{t.breadcrumb.downloadPdf}</span>
               </button>
             )}
           </div>
@@ -175,31 +187,43 @@ export default function ProtocolePsoriasisContent({
       </div>
 
       {/* 2. Hero Header Section */}
-      <header className="pt-12 pb-14 px-4 sm:px-6 bg-gradient-to-b from-[#FAF7F2] via-[#F4EFE6] to-[#FAF7F2] border-b border-[#E7DFD3]">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1C3F34] text-white text-[11px] font-black uppercase tracking-[0.2em] mb-6 shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#D97706]" />
-            <span>Reset Homéostasique — Terrain Thérapeutique</span>
+      <header className="pt-8 pb-14 px-4 sm:px-6 bg-gradient-to-b from-[#FAF7F2] via-[#F4EFE6] to-[#FAF7F2] border-b border-[#E7DFD3]">
+        <div className="max-w-4xl mx-auto">
+          {/* Back link */}
+          <div className="mb-6">
+            <button
+              onClick={() => onNavigate('phytotherapie-reset')}
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0F261E]/70 hover:text-[#D97706] transition-colors cursor-pointer"
+            >
+              <span>← Retour aux Protocoles Systémiques</span>
+            </button>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-[#0F261E] tracking-tight leading-[1.1] mb-6">
-            Protocole Psoriasis
-          </h1>
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1C3F34] text-white text-[11px] font-black uppercase tracking-[0.2em] mb-6 shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-[#D97706]" />
+              <span>{t.hero.badge}</span>
+            </div>
 
-          <p className="text-base sm:text-xl text-[#0F261E]/80 max-w-2xl mx-auto font-medium leading-relaxed mb-8">
-            Accompagner le <TooltipLexique terme="terrain">terrain</TooltipLexique> psoriasique (profil de vulnérabilité génétique, épigénétique et allostatique), déverrouiller les <TooltipLexique terme="emonctoires">émonctoires</TooltipLexique> profonds et apaiser le spectre de <TooltipLexique terme="charge-allostatique">charges allostatiques accumulées</TooltipLexique> par la phytothérapie intégrale de haute précision.
-          </p>
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-[#0F261E] tracking-tight leading-[1.1] mb-6">
+              {t.hero.title}
+            </h1>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-bold">
-            <span className="px-3.5 py-1.5 rounded-xl bg-white border border-[#E7DFD3] text-[#0F261E] shadow-xs flex items-center gap-1.5">
-              <Calendar className="w-4 h-4 text-[#D97706]" /> 14 Semaines (Phases 0 à 3)
-            </span>
-            <span className="px-3.5 py-1.5 rounded-xl bg-white border border-[#E7DFD3] text-[#0F261E] shadow-xs flex items-center gap-1.5">
-              <Activity className="w-4 h-4 text-[#1C3F34]" /> Axe Intestin - Foie - Peau
-            </span>
-            <span className="px-3.5 py-1.5 rounded-xl bg-white border border-[#E7DFD3] text-[#0F261E] shadow-xs flex items-center gap-1.5">
-              <Shield className="w-4 h-4 text-[#B45309]" /> Sécurité & Binders Inclus
-            </span>
+            <p className="text-base sm:text-xl text-[#0F261E]/80 max-w-2xl mx-auto font-medium leading-relaxed mb-8">
+              {t.hero.subtitle}
+            </p>
+
+            <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-bold">
+              <span className="px-3.5 py-1.5 rounded-xl bg-white border border-[#E7DFD3] text-[#0F261E] shadow-xs flex items-center gap-1.5">
+                <Calendar className="w-4 h-4 text-[#D97706]" /> {t.hero.tagWeeks}
+              </span>
+              <span className="px-3.5 py-1.5 rounded-xl bg-white border border-[#E7DFD3] text-[#0F261E] shadow-xs flex items-center gap-1.5">
+                <Activity className="w-4 h-4 text-[#1C3F34]" /> {t.hero.tagAxis}
+              </span>
+              <span className="px-3.5 py-1.5 rounded-xl bg-white border border-[#E7DFD3] text-[#0F261E] shadow-xs flex items-center gap-1.5">
+                <Shield className="w-4 h-4 text-[#B45309]" /> {t.hero.tagSafety}
+              </span>
+            </div>
           </div>
         </div>
       </header>
@@ -211,10 +235,10 @@ export default function ProtocolePsoriasisContent({
             <AlertTriangle className="w-6 h-6 text-[#D97706] shrink-0 mt-0.5" />
             <div className="space-y-2">
               <h2 className="text-xs font-black uppercase tracking-widest text-[#92400E]">
-                Avertissement Médical et Légal
+                {t.disclaimer.title}
               </h2>
               <p className="text-xs sm:text-sm leading-relaxed text-[#78350F] font-normal">
-                {MEDICAL_DISCLAIMER}
+                {t.disclaimer.text}
               </p>
             </div>
           </div>
@@ -233,7 +257,7 @@ export default function ProtocolePsoriasisContent({
             onClick={(e) => scrollToSection(e, 'avant-propos')}
             className="px-3 py-1.5 rounded-xl hover:bg-[#FAF7F2] hover:text-[#D97706] whitespace-nowrap transition-colors"
           >
-            Avant-propos
+            {t.nav.foreword}
           </a>
           <span className="text-[#0F261E]/20">•</span>
           <a 
@@ -241,7 +265,7 @@ export default function ProtocolePsoriasisContent({
             onClick={(e) => scrollToSection(e, 'prerequis')}
             className="px-3 py-1.5 rounded-xl hover:bg-[#FAF7F2] hover:text-[#D97706] whitespace-nowrap transition-colors"
           >
-            4 Prérequis
+            {t.nav.prereqs}
           </a>
           <span className="text-[#0F261E]/20">•</span>
           <a 
@@ -249,7 +273,7 @@ export default function ProtocolePsoriasisContent({
             onClick={(e) => scrollToSection(e, 'securite-regles')}
             className="px-3 py-1.5 rounded-xl hover:bg-[#FAF7F2] hover:text-[#D97706] whitespace-nowrap transition-colors"
           >
-            Règles de Sécurité
+            {t.nav.rules}
           </a>
           <span className="text-[#0F261E]/20">•</span>
           <a 
@@ -257,7 +281,7 @@ export default function ProtocolePsoriasisContent({
             onClick={(e) => scrollToSection(e, 'phase-0')}
             className="px-3 py-1.5 rounded-xl hover:bg-[#FAF7F2] hover:text-[#D97706] whitespace-nowrap transition-colors"
           >
-            Phase 0
+            {t.phases.tabs.p0}
           </a>
           <span className="text-[#0F261E]/20">•</span>
           <a 
@@ -265,7 +289,7 @@ export default function ProtocolePsoriasisContent({
             onClick={(e) => scrollToSection(e, 'phase-1')}
             className="px-3 py-1.5 rounded-xl hover:bg-[#FAF7F2] hover:text-[#D97706] whitespace-nowrap transition-colors"
           >
-            Phase 1
+            {t.phases.tabs.p1}
           </a>
           <span className="text-[#0F261E]/20">•</span>
           <a 
@@ -273,7 +297,7 @@ export default function ProtocolePsoriasisContent({
             onClick={(e) => scrollToSection(e, 'phase-2')}
             className="px-3 py-1.5 rounded-xl hover:bg-[#FAF7F2] hover:text-[#D97706] whitespace-nowrap transition-colors"
           >
-            Phase 2
+            {t.phases.tabs.p2}
           </a>
           <span className="text-[#0F261E]/20">•</span>
           <a 
@@ -281,7 +305,7 @@ export default function ProtocolePsoriasisContent({
             onClick={(e) => scrollToSection(e, 'phase-3')}
             className="px-3 py-1.5 rounded-xl hover:bg-[#FAF7F2] hover:text-[#D97706] whitespace-nowrap transition-colors"
           >
-            Phase 3
+            {t.phases.tabs.p3}
           </a>
           <span className="text-[#0F261E]/20">•</span>
           <a 
@@ -289,7 +313,7 @@ export default function ProtocolePsoriasisContent({
             onClick={(e) => scrollToSection(e, 'regles-dor')}
             className="px-3 py-1.5 rounded-xl hover:bg-[#FAF7F2] hover:text-[#D97706] whitespace-nowrap transition-colors"
           >
-            Règles d'or
+            {t.rules.badge || "Règles d'or"}
           </a>
           <span className="text-[#0F261E]/20">•</span>
           <a 
@@ -297,7 +321,7 @@ export default function ProtocolePsoriasisContent({
             onClick={(e) => scrollToSection(e, 'observations')}
             className="px-3 py-1.5 rounded-xl hover:bg-[#FAF7F2] hover:text-[#D97706] whitespace-nowrap transition-colors"
           >
-            Observations
+            {t.observations.badge || "Observations"}
           </a>
           <span className="text-[#0F261E]/20">•</span>
           <a 
@@ -305,7 +329,7 @@ export default function ProtocolePsoriasisContent({
             onClick={(e) => scrollToSection(e, 'carnet-de-bord')}
             className="px-3 py-1.5 rounded-xl hover:bg-[#FAF7F2] hover:text-[#D97706] whitespace-nowrap transition-colors"
           >
-            Carnet de bord
+            {t.nav.logbook}
           </a>
         </div>
       </nav>
@@ -317,21 +341,18 @@ export default function ProtocolePsoriasisContent({
         <section id="avant-propos" className="scroll-mt-36">
           <div className="bg-white p-8 sm:p-10 rounded-[36px] border border-[#E7DFD3] shadow-xs">
             <div className="text-[10px] font-black uppercase tracking-[0.25em] text-[#D97706] mb-3">
-              I. Vision Systémique
+              I. {t.nav.foreword}
             </div>
             <h2 className="text-2xl sm:text-3xl font-black text-[#0F261E] mb-6">
-              Avant-propos : Votre corps n'est pas cassé. Il est verrouillé.
+              {t.foreword.title}
             </h2>
+            <div className="p-4 rounded-2xl bg-[#FAF7F2] border-l-4 border-[#D97706] mb-6 text-sm font-serif italic text-[#0F261E]">
+              "{t.foreword.quote}"
+            </div>
             <div className="space-y-4 text-sm sm:text-base text-[#0F261E]/80 leading-relaxed font-normal">
-              <p>
-                Le psoriasis n'est pas une anomalie cutanée fortuite ou isolée. La peau n'est pas le siège primaire de la problématique : elle n'est que l'écran d'affichage d'un emballement inflammatoire systémique et d'une congestion émonctorielle profonde.
-              </p>
-              <p>
-                Lorsque les voies normales d'élimination — le filtre hépatique, la barrière entérocytaire et la clairance rénale — se trouvent saturées par des complexes immuns et des métabolites pro-inflammatoires, l'organisme mobilise son filtre de dérivation de dernier recours : le derme. L'hyperprolifération kératinocytaire et les plaques épidermiques témoignent de cet effort adaptatif excessif mais logique.
-              </p>
-              <p>
-                Notre démarche de <strong>Reset Homéostasique</strong> ne cherche pas à réprimer le symptôme de manière belliqueuse. Elle vise à accompagner le terrain psoriasique en restaurant la perméabilité de la muqueuse intestinale, en réouvrant les filtres physiologiques et en régulant la pharmacie intérieure via la synergie intégrale du Totum végétal.
-              </p>
+              <p>{t.foreword.p1}</p>
+              <p>{t.foreword.p2}</p>
+              <p>{t.foreword.p3}</p>
             </div>
           </div>
         </section>
@@ -339,63 +360,36 @@ export default function ProtocolePsoriasisContent({
         {/* SECTION : Les 4 Prérequis Non Négociables */}
         <section id="prerequis" className="scroll-mt-36">
           <div className="text-[10px] font-black uppercase tracking-[0.25em] text-[#D97706] mb-3">
-            II. Fondations du Terrain
+            II. {t.prereqs.badge}
           </div>
           <h2 className="text-2xl sm:text-3xl font-black text-[#0F261E] mb-6">
-            Les 4 Prérequis Non Négociables
+            {t.prereqs.title}
           </h2>
           <p className="text-sm sm:text-base text-[#0F261E]/80 leading-relaxed mb-8">
-            Aucun protocole de reset homéostasique ne peut être initié sur un organisme verrouillé sans avoir préalablement validé ces 4 piliers indispensables.
+            {t.prereqs.subtitle}
           </p>
 
           <div className="grid sm:grid-cols-2 gap-5">
-            <div className="p-6 bg-white rounded-3xl border border-[#E7DFD3] shadow-xs hover:border-[#D97706]/40 transition-colors">
-              <div className="w-10 h-10 rounded-2xl bg-[#EAF2ED] text-[#1C3F34] flex items-center justify-center font-black text-sm mb-4">
-                1
+            {t.prereqs.items.map((item, index) => (
+              <div key={index} className="p-6 bg-white rounded-3xl border border-[#E7DFD3] shadow-xs hover:border-[#D97706]/40 transition-colors flex flex-col justify-between">
+                <div>
+                  <div className="w-10 h-10 rounded-2xl bg-[#EAF2ED] text-[#1C3F34] flex items-center justify-center font-black text-sm mb-4">
+                    {index + 1}
+                  </div>
+                  <h3 className="font-bold text-base text-[#0F261E] mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#0F261E]/70 leading-relaxed mb-4">
+                    {item.desc}
+                  </p>
+                </div>
+                {item.advice && (
+                  <div className="p-2.5 rounded-xl bg-[#FAF7F2] text-[11px] text-[#D97706] border-l-2 border-[#D97706]">
+                    {item.advice}
+                  </div>
+                )}
               </div>
-              <h3 className="font-bold text-base text-[#0F261E] mb-2">
-                Émonctoires ouverts & transit quotidien actif
-              </h3>
-              <p className="text-xs sm:text-sm text-[#0F261E]/70 leading-relaxed">
-                Une évacuation intestinale quotidienne (1 à 2 selles moulées par jour) est impérative. En cas de constipation, drainer la peau refoulerait les toxines dans le sang et amplifierait les manifestations cutanées.
-              </p>
-            </div>
-
-            <div className="p-6 bg-white rounded-3xl border border-[#E7DFD3] shadow-xs hover:border-[#D97706]/40 transition-colors">
-              <div className="w-10 h-10 rounded-2xl bg-[#EAF2ED] text-[#1C3F34] flex items-center justify-center font-black text-sm mb-4">
-                2
-              </div>
-              <h3 className="font-bold text-base text-[#0F261E] mb-2">
-                Hydratation de précision & charge minérale
-              </h3>
-              <p className="text-xs sm:text-sm text-[#0F261E]/70 leading-relaxed">
-                Consommer 1,5 à 2 litres d'eau peu minéralisée par jour, enrichie d'une pincée d'électrolytes ou d'un hydrolat végétal doux pour maintenir le débit de filtration glomérulaire sans surcharger les reins.
-              </p>
-            </div>
-
-            <div className="p-6 bg-white rounded-3xl border border-[#E7DFD3] shadow-xs hover:border-[#D97706]/40 transition-colors">
-              <div className="w-10 h-10 rounded-2xl bg-[#FAF2E6] text-[#92400E] flex items-center justify-center font-black text-sm mb-4">
-                3
-              </div>
-              <h3 className="font-bold text-base text-[#0F261E] mb-2">
-                Fenêtre thérapeutique & diète hypotoxique
-              </h3>
-              <p className="text-xs sm:text-sm text-[#0F261E]/70 leading-relaxed">
-                Éviction absolue de l'alcool, du tabac, des produits ultra-transformés et des huiles végétales riches en oméga-6 pro-oxydés. Réduire drastiquement le sucre blanc et les céréales raffinées.
-              </p>
-            </div>
-
-            <div className="p-6 bg-white rounded-3xl border border-[#E7DFD3] shadow-xs hover:border-[#D97706]/40 transition-colors">
-              <div className="w-10 h-10 rounded-2xl bg-[#FAF2E6] text-[#92400E] flex items-center justify-center font-black text-sm mb-4">
-                4
-              </div>
-              <h3 className="font-bold text-base text-[#0F261E] mb-2">
-                Suivi médical & absence de contre-indications
-              </h3>
-              <p className="text-xs sm:text-sm text-[#0F261E]/70 leading-relaxed">
-                Le protocole accompagne le terrain et ne remplace jamais les traitements dermatologiques. Contre-indiqué en cas de grossesse, d'allaitement, d'insuffisance rénale ou hépatique décompensée.
-              </p>
-            </div>
+            ))}
           </div>
         </section>
 
@@ -1111,6 +1105,31 @@ export default function ProtocolePsoriasisContent({
               Bloom by BotaniK — L'alliance de la science moderne et de la sagesse végétale
             </div>
           </div>
+        </section>
+
+        {/* CTA VERS LA BOUTIQUE */}
+        <section className="p-8 sm:p-10 rounded-[32px] bg-[#161b22] border border-[#30363d] text-center my-8 shadow-xl print-break-inside-avoid">
+          <h3 className="text-xl sm:text-2xl font-black text-white mb-3">
+            Pour appliquer ce protocole, découvrez la BloomLab®
+          </h3>
+          <p className="text-xs sm:text-sm text-[#b8b8b8] max-w-xl mx-auto mb-6 leading-relaxed">
+            L'extracteur et infuseur de précision à double solvant pour extraire le Totum végétal de la bardane, du curcuma et du fumeterre sans altérer les composés thermosensibles.
+          </p>
+          <button
+            onClick={() => {
+              if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+                (window as any).gtag('event', 'clic_vers_boutique', {
+                  product: 'bloomlab',
+                  origin: 'protocole_psoriasis'
+                });
+              }
+              onNavigate('product-detail', 'bloomlab');
+            }}
+            className="px-8 py-4 rounded-2xl bg-[#c9a84c] hover:bg-[#dfbf63] text-[#0d1117] font-black text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-xl cursor-pointer inline-flex items-center gap-2"
+          >
+            <span>Découvrir la BloomLab® — 239 €</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
         </section>
 
         {/* 6. Avertissement Médical Verbatim — Bas de page */}

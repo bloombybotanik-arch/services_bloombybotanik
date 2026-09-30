@@ -11,6 +11,9 @@ export interface Recipe {
   category: string;
   plant?: { name: string };
   goal?: string;
+  architectures?: string[];
+  terrains?: string[];
+  axes?: string[];
   sachetA: { composition: string[]; solvant: string; temp: string; duration: string };
   sachetB: { composition: string[]; solvant: string; temp: string; duration: string };
   extractionOrder: string;
@@ -42,6 +45,9 @@ export const discoveryRecipes: Recipe[] = [
     benefits: ["Réduction de l'anxiété", "Facilite l'endormissement", "Sommeil profond"],
     image: "/src/assets/images/infusion_sommeil_profond_1788380074862.jpg",
     category: "Infusion",
+    architectures: ["HPA", "SEC"],
+    terrains: ["T7 (Neuro-endocrinien & stress)", "T1 (Digestion & microbiome)"],
+    axes: ["A3 (Axe HPA & Neuro-surrénalien)", "A6 (Système nerveux autonome & Tonus vagal)", "A8 (Système EndoCannabinoïde)"],
     sachetA: {
       composition: ["5g de Valériane (racines)"],
       solvant: "Eau purifiée (300ml)",
@@ -80,6 +86,9 @@ export const discoveryRecipes: Recipe[] = [
     benefits: ["Anti-inflammatoire", "Décongestionnant", "Souplesse articulaire"],
     image: "/src/assets/images/huile_massage_articulaire_1788380088150.jpg",
     category: "Huile de soin",
+    architectures: ["Fascia", "SEC"],
+    terrains: ["T6 (Émonctoires & drainage)", "T7 (Neuro-endocrinien & stress)"],
+    axes: ["A4 (Cascade de l'inflammation & Résolution)", "A7 (Matrice extracellulaire & Fascia)", "A8 (Système EndoCannabinoïde)"],
     sachetA: {
       composition: ["Huile végétale d'Arnica (100ml)"],
       solvant: "Huile végétale d'Arnica",
@@ -115,6 +124,9 @@ export const discoveryRecipes: Recipe[] = [
     benefits: ["Régénérant", "Antioxydant", "Éclat du teint"],
     image: "/src/assets/images/serum_visage_eclat_1788380103773.jpg",
     category: "Sérum",
+    architectures: ["Fascia", "SRA"],
+    terrains: ["T6 (Émonctoires & peau)", "T2 (Énergie & vitalité)"],
+    axes: ["A1 (Émonctoires & Élimination)", "A7 (Matrice extracellulaire & Fascia)"],
     sachetA: {
       composition: ["Huile de Jojoba (50ml)"],
       solvant: "Huile de Jojoba",
@@ -150,6 +162,9 @@ export const discoveryRecipes: Recipe[] = [
     benefits: ["Réparateur", "Protecteur", "Apaisant"],
     image: "/src/assets/images/baume_levres_calendula_1788380119108.jpg",
     category: "Baume",
+    architectures: ["Fascia", "SRA"],
+    terrains: ["T6 (Émonctoires & barrière cutanée)", "T3 (Immunité innée)"],
+    axes: ["A2 (Barrière & Jonctions serrées)", "A4 (Cascade de l'inflammation)"],
     sachetA: {
       composition: ["20g de Cire d'abeille", "30g de Beurre de Karité"],
       solvant: "Fusion lipidique",
@@ -185,6 +200,9 @@ export const discoveryRecipes: Recipe[] = [
     benefits: ["Antibactérien", "Immunostimulant", "Antiseptique"],
     image: "/src/assets/images/teinture_propolis_1788380133082.jpg",
     category: "Teinture",
+    architectures: ["SRA", "HPA"],
+    terrains: ["T3 (Immunité innée)", "T1 (Digestion & microbiome)"],
+    axes: ["A2 (Barrière intestinale & muqueuses)", "A4 (Cascade de l'inflammation)"],
     sachetA: {
       composition: ["20g de Propolis brute broyée"],
       solvant: "Alcool à 70° (100ml)",
@@ -220,6 +238,9 @@ export const discoveryRecipes: Recipe[] = [
     benefits: ["Antiviral", "Riche en antioxydants", "Renforce l'immunité"],
     image: "/src/assets/images/sirop_sureau_immunite_1788380146573.jpg",
     category: "Sirop",
+    architectures: ["SRA"],
+    terrains: ["T3 (Immunité & protection)", "T2 (Énergie & vitalité)"],
+    axes: ["A4 (Cascade de l'inflammation & Résolution)", "A5 (Énergie cellulaire & Mitochondries)"],
     sachetA: {
       composition: ["30g de Baies de sureau", "10g de Gingembre"],
       solvant: "Eau (250ml)",
@@ -258,6 +279,9 @@ export const discoveryRecipes: Recipe[] = [
     benefits: ["Soutien du confort biliaire", "Amertume digestive tonifiante", "Accompagnement des changements de saison"],
     image: "/src/assets/images/hepatic_balance_liver_1785755318947.jpg",
     category: "Décoction",
+    architectures: ["SRA", "HPA"],
+    terrains: ["T4 (Détoxication hépatique)", "T6 (Émonctoires & drainage)", "T1 (Digestion & microbiome)"],
+    axes: ["A1 (Émonctoires & Élimination)", "A4 (Cascade de l'inflammation)"],
     sachetA: {
       composition: ["5g de Feuilles d'Artichaut", "5g de Racine de Radis Noir séchée"],
       solvant: "Eau purifiée (350ml)",
@@ -296,6 +320,9 @@ export const discoveryRecipes: Recipe[] = [
     benefits: ["Soutien du métabolisme glucidique", "Tonus digestif", "Régularité du rythme alimentaire"],
     image: "/src/assets/images/blood_purity_lymphatic_1785755331143.jpg",
     category: "Élixir",
+    architectures: ["SRA", "HPA"],
+    terrains: ["T5 (Métabolisme glucidique & insuline)", "T1 (Digestion & microbiome)"],
+    axes: ["A9 (Flexibilité métabolique & Insuline)", "A5 (Énergie cellulaire & Mitochondries)"],
     sachetA: {
       composition: ["4g de Graines de Fenugrec concassées", "3g d'Écorce d'Épine-vinette"],
       solvant: "Eau purifiée (300ml)",
@@ -334,6 +361,9 @@ export const discoveryRecipes: Recipe[] = [
     benefits: ["Favorise l'élimination rénale de l'eau", "Reminéralisation douce grâce à la prêle", "Légèreté corporelle"],
     image: "/src/assets/images/emonctoires_natural_drainage_1785755307026.jpg",
     category: "Infusion",
+    architectures: ["SRA", "Fascia"],
+    terrains: ["T6 (Émonctoires & drainage)", "T4 (Détoxication hépatique)"],
+    axes: ["A1 (Émonctoires & Élimination)", "A7 (Matrice extracellulaire & Fascia)"],
     sachetA: {
       composition: ["4g de Pissenlit racines", "3g de Prêle des champs"],
       solvant: "Eau purifiée (400ml)",
@@ -376,6 +406,9 @@ export const discoveryRecipes: Recipe[] = [
     category: "Extrait liquide",
     plant: { name: "Bardane & Mahonia" },
     goal: "Plaques squameuses, hyperprolifération kératinocytaire et surcharge hépato-cutanée",
+    architectures: ["SRA", "Fascia", "HPA"],
+    terrains: ["T6 (Émonctoires & élimination)", "T4 (Détoxication hépatique)", "T1 (Digestion & microbiome)"],
+    axes: ["A1 (Émonctoires & Élimination)", "A2 (Barrière intestinale & Jonctions serrées)", "A4 (Cascade de l'inflammation & Résolution)"],
     sachetA: {
       composition: ["30g Racine de Bardane", "25g Pensée Sauvage"],
       solvant: "Eau distillée + Glycérine végétale (500ml, 70/30)",
@@ -418,6 +451,9 @@ export const discoveryRecipes: Recipe[] = [
     category: "Extrait liquide",
     plant: { name: "Plantain & Camomille" },
     goal: "Dermatite atopique, réactivité cutanée, prurit intense et déficience de la barrière épidermique",
+    architectures: ["HPA", "SEC", "Fascia"],
+    terrains: ["T7 (Neuro-endocrinien & stress)", "T3 (Immunité innée)", "T6 (Émonctoires)"],
+    axes: ["A3 (Axe HPA & Neuro-surrénalien)", "A4 (Cascade de l'inflammation)", "A8 (Système EndoCannabinoïde)"],
     sachetA: {
       composition: ["25g Plantain lancéolé", "15g Camomille matricaire"],
       solvant: "Eau distillée + Glycérine végétale bio (500ml, 65/35)",
@@ -459,6 +495,9 @@ export const discoveryRecipes: Recipe[] = [
     category: "Extrait double action",
     plant: { name: "Palmier Nain & Ortie" },
     goal: "Alopécie androgénétique, excès de DHT, fibrose du bulbe et perte de densité capillaire",
+    architectures: ["SRA", "Fascia"],
+    terrains: ["T7 (Neuro-endocrinien)", "T6 (Émonctoires & microcirculation)", "T2 (Énergie & vitalité)"],
+    axes: ["A5 (Énergie cellulaire & Mitochondries)", "A7 (Matrice extracellulaire & Fascia)", "A9 (Flexibilité métabolique & Insuline)"],
     sachetA: {
       composition: ["25g Racine d'Ortie", "20g Feuilles de Ginkgo"],
       solvant: "Eau distillée + Glycérine végétale (450ml, 70/30)",

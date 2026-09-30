@@ -40,6 +40,93 @@ export interface CosmeticsRecipe {
 
 export const cosmeticsRecipesFR: CosmeticsRecipe[] = [
   {
+    plant_id: "serum_liftant_encens_myrrhe",
+    nom_commun: "Sérum Liftant Encens & Myrrhe — Fermeté & Élastase",
+    type_produit: "Sérum bi-phase fermeté & ovale du visage",
+    categorie: "Visage",
+    peau: "Matures / Relâchées",
+    age: "Peaux matures, perte de fermeté et d'élasticité",
+    cible: "Peaux matures, relâchées, en perte de fermeté et d'élasticité. Restaurer la fermeté, améliorer l'élasticité, lifter l'ovale du visage.",
+    solvants: {
+      phase_A: { 
+        type: "Eau distillée extra pure + Glycérine végétale (500 ml + 100 ml)", 
+        volume: "600ml", 
+        role: "Solvant polaire hydratant & humectant pour mucilages d'aloe et asiaticosides" 
+      },
+      phase_B: { 
+        type: "Alcool vinique bio à 60° (367 ml alcool 96% + 233 ml eau distillée)", 
+        volume: "600ml", 
+        role: "Solvant hydroalcoolique sélectif des acides boswelliques et terpènes de résines" 
+      }
+    },
+    plantes: {
+      phase_A: { 
+        nom: "Centella asiatica & Aloe vera 200:1", 
+        partie: "Feuilles séchées (30 g) + Poudre 200:1 (10 g)", 
+        grammage: "40g", 
+        actifs: "Asiaticoside, madécassoside, polysaccharides (stimulation fibroblastes, collagène I, III, IV)" 
+      },
+      phase_B: { 
+        nom: "Résine de Boswellia serrata & Résine de Myrrhe", 
+        partie: "Résines naturelles concassées (50 g Boswellia + 15 g Myrrhe)", 
+        grammage: "65g", 
+        actifs: "Acides boswelliques (inhibition de l'élastase — +37% d'élasticité en 4 sem.), comméphorine (astringent, fermeté)" 
+      }
+    },
+    parametres_bloomlab: {
+      phase_A: { temp: "42–45°C", temps: "2h00", agitation: "Cyclique douce" },
+      phase_B: { temp: "50°C", temps: "3h00", agitation: "Cyclique régulière" }
+    },
+    recette_pas_a_pas: {
+      batch_standard: "Version essentielle — Formule complète 800 ml (Rendement Phase A ~550ml, Phase B ~550ml)",
+      ingredients: {
+        phase_A: [
+          "Centella asiatica (feuilles séchées) : 30 g (Collagène, réparation)",
+          "Aloe vera (poudre 200:1) : 10 g (Hydratation, mucilages)",
+          "Eau distillée extra pure : 500 ml (Solvant)",
+          "Glycérine végétale : 100 ml (Humectant, conservateur naturel)"
+        ],
+        phase_B: [
+          "Résine de Boswellia serrata (concassée) : 50 g (Fermeté, élasticité)",
+          "Résine de Myrrhe (concassée) : 15 g (Astringent, raffermissant)",
+          "Alcool vinique bio à 60° : 600 ml (Préparation : 367 ml alcool 96% + 233 ml eau distillée)"
+        ]
+      },
+      phase_A_instructions: [
+        "1. Versez dans la cuve BloomLab : 500 ml d'eau distillée extra pure et 100 ml de glycérine végétale.",
+        "2. Ajoutez 30 g de Centella asiatica et 10 g d'Aloe vera poudre 200:1.",
+        "3. Sélectionnez TEMP 42–45°C, TEMPS 2 heures, AGITATION cyclique douce.",
+        "4. En fin de cycle, filtrez soigneusement pour obtenir ~550 ml d'extrait aqueux. Conservez au réfrigérateur en flacon ambré."
+      ],
+      transition: [
+        "1. Rincez parfaitement la cuve de l'extracteur BloomLab à l'eau chaude et séchez.",
+        "2. Préparez l'alcool à 60° : mélangez 367 ml d'alcool vinique bio à 96% et 233 ml d'eau distillée extra pure.",
+        "3. Concassez grossièrement les larmes de résine de Boswellia serrata (50 g) et de Myrrhe (15 g)."
+      ],
+      phase_B_instructions: [
+        "1. Versez les 600 ml d'alcool à 60° dans la cuve BloomLab.",
+        "2. Ajoutez les 50 g de Boswellia et 15 g de Myrrhe concassées.",
+        "3. Réglez TEMP 50°C, TEMPS 3 heures, AGITATION cyclique régulière.",
+        "4. En fin de cycle, filtrez soigneusement l'extrait hydroalcoolique obtenu (~550 ml) et réservez au frais en flacon ambré."
+      ],
+      filtration_et_finition: [
+        "1. PROTOCOLE D'ASSEMBLAGE DU SÉRUM BI-PHASE (800 ml) :",
+        "2. Au bain-marie à 70°C, faites fondre 20 g de cire d'abeille naturelle.",
+        "3. Ajoutez les huiles végétales : 100 ml d'huile de Rose musquée (vitamine A naturelle) et 60 ml d'huile de Jojoba (pénétration & séborégulation).",
+        "4. Versez délicatement 300 ml de Phase B (extrait hydroalcoolique) tiédie à 45°C dans la phase huileuse en fouettant.",
+        "5. Versez 300 ml de Phase A (extrait aqueux) à 45°C en filet continu tout en fouettant énergiquement.",
+        "6. Continuez de fouetter énergiquement jusqu'à refroidissement complet (~5 minutes).",
+        "7. Incorporez 40 gouttes d'huile essentielle d'Encens (anti-âge, liftant) et 2 g de Vitamine E naturelle (antioxydant). Mélangez doucement.",
+        "8. Conditionnez dans des flacons en verre ambré hermétiques. Rendement final : ~800 ml."
+      ]
+    },
+    conditionnement: "Flacons en verre ambré de 50 ml ou 100 ml avec pipette compte-gouttes. Conserver au réfrigérateur.",
+    mode_utilisation: "Le soir : quelques gouttes sur le visage et le cou parfaitement nettoyés. Massez du bas vers le haut en mouvements liftants. Fréquence : 1 à 2 fois par jour. Cure recommandée : 4 semaines minimum.",
+    synergies_kits_internes: "Kit Articulaire & Tissus Conjonctifs (matrice de collagène) + Kit Pureté Sanguine (microcirculation cutanée).",
+    conservation: "6 à 8 semaines au réfrigérateur dans un flacon en verre ambré hermétique.",
+    precautions: "Test de tolérance cutanée : appliquez une petite quantité dans le pli du coude, attendez 48h. Contre-indications : grossesse, allaitement, enfants de moins de 12 ans. Prudence : si vous prenez des anticoagulants, consultez un médecin."
+  },
+  {
     plant_id: "serum_reparateur_nuit",
     nom_commun: "Sérum Réparateur Nuit — Barrière Cutanée",
     type_produit: "Sérum visage huileux",
@@ -944,6 +1031,7 @@ export const cosmeticsRecipesFR: CosmeticsRecipe[] = [
 // To keep the file manageable, we use the same IDs and similar structures.
 export const cosmeticsRecipesEN: CosmeticsRecipe[] = cosmeticsRecipesFR.map(r => {
   const translations: Record<string, { name: string; target: string }> = {
+    "serum_liftant_encens_myrrhe": { name: "Frankincense & Myrrh Lifting Serum — Firmness & Elastase", target: "Mature, loose skin, loss of firmness and elasticity. Restore firmness, boost elasticity, lift facial contour." },
     "serum_reparateur_nuit": { name: "Night Repair Serum — Skin Barrier", target: "Sensitive skin, healing, skin microbiota repair" },
     "elixir_croissance_capillaire": { name: "Growth & Scalp Elixir — Active Follicle", target: "Hair loss, inflamed scalp, dandruff, hair shaft strengthening" },
     "huile_corps_drainante": { name: "Draining & Firming Body Oil — Silhouette", target: "Cellulite, water retention, skin firmness, lymphatic drainage" },
@@ -980,6 +1068,7 @@ export const cosmeticsRecipesEN: CosmeticsRecipe[] = cosmeticsRecipesFR.map(r =>
 
 export const cosmeticsRecipesDE: CosmeticsRecipe[] = cosmeticsRecipesFR.map(r => {
   const translations: Record<string, { name: string; target: string }> = {
+    "serum_liftant_encens_myrrhe": { name: "Weihrauch & Myrrhe Straffungs-Serum — Festigkeit & Elastase", target: "Reife, schlaffe Haut, Verlust von Festigkeit und Elastizität. Festigkeit wiederherstellen, Elastizität verbessern, Gesichtskontur liften." },
     "serum_reparateur_nuit": { name: "Nacht-Reparatur-Serum — Hautbarriere", target: "Empfindliche Haut, Heilung, Reparatur der Hautmikrobiota" },
     "elixir_croissance_capillaire": { name: "Haarwachstums- & Kopfhaut-Elixier — Aktiver Follikel", target: "Haarausfall, entzündete Kopfhaut, Schuppen, Stärkung des Haarschafts" },
     "huile_corps_drainante": { name: "Entwässerndes & Straffendes Körperöl — Silhouette", target: "Cellulite, Wassereinlagerungen, Hautfestigkeit, Lymphdrainage" },

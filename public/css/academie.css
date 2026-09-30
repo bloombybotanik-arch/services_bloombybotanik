@@ -1,0 +1,220 @@
+:root {
+  --fond-principal: #0d1117;
+  --fond-secondaire: #161b22;
+  --texte-principal: #f5f0e8;
+  --texte-secondaire: #b8b8b8;
+  --accent-or: #c9a84c;
+  --accent-vert: #2d5016;
+  --accent-rouge: #8b3a3a;
+  --bordure: #30363d;
+  --hover-fond: #1c2128;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--fond-principal);
+  color: var(--texte-principal);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--texte-principal);
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.3rem; }
+
+.carte {
+  background: var(--fond-secondaire);
+  border: 1px solid var(--bordure);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.carte:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-or);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--accent-or);
+  color: #0d1117;
+  font-weight: 700;
+  padding: 0.85rem 1.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background: #d8b85c;
+  transform: scale(1.02);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--fond-secondaire);
+  color: var(--texte-principal);
+  font-weight: 700;
+  padding: 0.85rem 1.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid var(--bordure);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--hover-fond);
+  border-color: var(--accent-or);
+  color: var(--accent-or);
+}
+
+.encadre {
+  background: var(--fond-secondaire);
+  border-left: 4px solid var(--accent-or);
+  border-top: 1px solid var(--bordure);
+  border-right: 1px solid var(--bordure);
+  border-bottom: 1px solid var(--bordure);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--texte-secondaire);
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumb a {
+  color: var(--texte-secondaire);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--accent-or);
+}
+
+.breadcrumb span {
+  color: var(--accent-or);
+  font-weight: 600;
+}
+
+/* MENU PRINCIPAL & SOUS-MENUS */
+.menu-principal {
+  background: var(--fond-principal);
+  padding: 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.menu-item, .menu-titre {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--texte-principal);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.menu-titre {
+  font-weight: 600;
+  color: var(--accent-or);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+.menu-titre-academie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: var(--fond-secondaire);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-or);
+  border: 1px solid var(--bordure);
+}
+
+.badge-hub {
+  background: var(--accent-or);
+  color: var(--fond-principal);
+  font-size: 0.625rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.sous-menu {
+  padding-left: 1rem;
+  display: none;
+}
+
+.menu-groupe:hover .sous-menu,
+.menu-groupe.ouvert .sous-menu {
+  display: block;
+}
+
+.sous-groupe {
+  margin: 0.75rem 0;
+}
+
+.sous-titre {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--accent-or);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sous-sous-menu {
+  padding-left: 1rem;
+}
+
+.sous-sous-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--texte-secondaire);
+  text-decoration: none;
+  font-size: 0.875rem;
+  border-left: 2px solid transparent;
+  transition: 0.3s ease;
+}
+
+.sous-sous-menu a:hover,
+.sous-sous-menu a.actif {
+  color: var(--texte-principal);
+  border-left-color: var(--accent-or);
+  background: var(--hover-fond);
+}
+
+.sous-sous-menu a.a-venir {
+  opacity: 0.5;
+  font-style: italic;
+}

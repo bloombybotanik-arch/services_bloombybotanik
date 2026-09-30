@@ -149,6 +149,32 @@ export const getProducts = (lang: Language) => {
       tags: ['Duo Argiles', 'Purification Systémique', 'Reset Homéostatique']
     },
     {
+      id: 'abonnements-numeriques',
+      name: lang === 'fr' 
+        ? "Abonnements Numériques Bloom" 
+        : lang === 'de' 
+        ? "Digitale Abonnements Bloom" 
+        : "Bloom Digital Subscriptions",
+      subtitle: lang === 'fr' 
+        ? "Académie & Protocoles Systémiques" 
+        : lang === 'de' 
+        ? "Akademie & Systemische Protokolle" 
+        : "Academy & Systemic Protocols",
+      price: 7.90,
+      originalPrice: 9.90,
+      image: modernShelvesImg,
+      rating: 4.9,
+      reviews: 128,
+      description: lang === 'fr'
+        ? "Accès illimité à l'ensemble des modules de la Bloom Academy, fiches détaillées, architectures cellulaires et protocoles systémiques complets."
+        : lang === 'de'
+        ? "Unbegrenzter Zugang zu allen Modulen der Bloom Academy, detaillierten Leitfäden, zellulären Architekturen und systemischen Protokollen."
+        : "Unlimited access to all Bloom Academy modules, detailed guides, cellular architectures, and complete systemic protocols.",
+      tags: ['Abonnement', 'Digital', 'Académie'],
+      isSpecial: false,
+      isDigital: true
+    },
+    {
       id: 'freemium-access',
       name: t.freemium_access.name,
       subtitle: t.freemium_access.subtitle,
@@ -188,6 +214,10 @@ interface StoreContentProps {
 
 export default function StoreContent({ currentView, onNavigate, onNavigatePending, onNavigateDetail, onAddToCart, lang }: StoreContentProps) {
   const handleNavigateDetail = (id: string) => {
+    if (id === 'abonnements-numeriques' || id === 'abonnement') {
+      if (onNavigate) onNavigate('abonnement');
+      return;
+    }
     if (onNavigateDetail) onNavigateDetail(id);
     else if (onNavigate) onNavigate('product-detail', id);
   };
@@ -638,18 +668,31 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                   <OptimizedImage 
                     src={product.image} 
                     alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Machine à infusion botanique, tisanes et remèdes naturels`} 
-                    className={`w-full h-full object-cover transform transition-transform duration-700 ${
-                      product.id === 'duo-argiles' 
-                        ? 'scale-125 sm:scale-130 group-hover:scale-140' 
-                        : 'group-hover:scale-110'
-                    }`}
+                    className={
+                      product.id === 'duo-argiles'
+                        ? 'w-full h-full object-contain p-4 transform transition-transform duration-500 group-hover:scale-105'
+                        : 'w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110'
+                    }
                   />
                   <button 
                     type="button"
-                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); onAddToCart(product); }}
+                    onClick={(e) => { 
+                      e.preventDefault(); 
+                      e.stopPropagation(); 
+                      if (product.id === 'abonnements-numeriques') {
+                        if (onNavigate) onNavigate('abonnement');
+                      } else {
+                        onAddToCart(product); 
+                      }
+                    }}
                     className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 w-10 h-10 sm:w-12 sm:h-12 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg transition-colors cursor-pointer"
+                    aria-label={product.id === 'abonnements-numeriques' ? (isFR ? 'Découvrir les abonnements' : 'Discover subscriptions') : `${lang === 'fr' ? 'Ajouter au panier' : 'Add to cart'} ${product.name}`}
                   >
-                    <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
+                    {product.id === 'abonnements-numeriques' ? (
+                      <Star className="w-4 h-4 sm:w-5 sm:h-5 text-[#D97706] fill-[#D97706]" />
+                    ) : (
+                      <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
+                    )}
                   </button>
                 </div>
                 <div className="p-3 sm:p-4 md:p-6 flex flex-col flex-1">

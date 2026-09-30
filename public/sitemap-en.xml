@@ -66,4 +66,39 @@
     <lastmod>2026-08-25</lastmod>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://bloombybotanik.com/en/academie</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/academie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/academie"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/academie"/>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/en/comment-lire-modele-bloom</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/comment-lire-modele-bloom/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/comment-lire-modele-bloom"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/comment-lire-modele-bloom"/>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/en/abonnement</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/abonnement/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/abonnement"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/abonnement"/>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/en/boutique/abonnements-numeriques</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/abonnements-numeriques/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/boutique/abonnements-numeriques"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/boutique/abonnements-numeriques"/>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.9</priority>
+  </url>
 </urlset>

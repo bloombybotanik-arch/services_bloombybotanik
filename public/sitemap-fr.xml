@@ -399,4 +399,52 @@
     <priority>0.5</priority>
   </url>
 
+  <url>
+    <loc>https://bloombybotanik.com/academie/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/academie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/academie/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/academie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/academie/"/>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/comment-lire-modele-bloom/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/comment-lire-modele-bloom/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/comment-lire-modele-bloom/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/comment-lire-modele-bloom/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/comment-lire-modele-bloom/"/>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/abonnement/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/abonnement/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/abonnement/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/abonnement/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/abonnement/"/>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/boutique/abonnements-numeriques/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/abonnements-numeriques/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/boutique/abonnements-numeriques/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/boutique/abonnements-numeriques/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/boutique/abonnements-numeriques/"/>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/academie/comprendre-le-corps/4-architectures/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/academie/comprendre-le-corps/4-architectures/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/academie/comprendre-le-corps/4-architectures/"/>
+    <lastmod>2026-09-25</lastmod>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>

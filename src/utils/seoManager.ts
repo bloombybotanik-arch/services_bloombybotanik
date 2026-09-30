@@ -245,6 +245,22 @@ export const VIEW_METADATA: Record<string, MetaData> = {
     imageAlt: "Phytothérapie systémique et protocoles de reset homéostasique",
     type: "article"
   },
+  'academie': {
+    title: {
+      fr: "Bloom Académie | Savoirs & Protocoles Systémiques Vivants",
+      en: "Bloom Academy | Living Knowledge & Systemic Protocols",
+      de: "Bloom Akademie | Lebendiges Wissen & Systemische Protokolle"
+    },
+    description: {
+      fr: "Comprendre le corps, maîtriser l'extraction botanique de précision et explorer nos protocoles systémiques complets (Psoriasis, SIBO, Clarté Mentale).",
+      en: "Understand the body, master precision botanical extraction, and explore complete systemic protocols (Psoriasis, SIBO, Mental Clarity).",
+      de: "Den Körper verstehen, botanische Präzisionsextraktion meistern und ganzheitliche systemische Protokolle entdecken."
+    },
+    image: "/images/og/protocole-psoriasis-reset-homeostatique-1200x630.jpg",
+    imageSquare: "/images/og/protocole-psoriasis-reset-homeostatique-1080x1080.jpg",
+    imageAlt: "Bloom Académie — Comprendre le corps, maîtriser l'extraction, transmettre le vivant",
+    type: "website"
+  },
   'totum-vegetal': {
     title: {
       fr: "Totum Végétal | Synergie Plantes Médicinales",
@@ -599,34 +615,34 @@ export const VIEW_METADATA: Record<string, MetaData> = {
   },
   'solvants-extraction': {
     title: {
-      fr: "Teinture-Mère Maison | Guide Extraits Hydroalcooliques",
-      en: "Homemade Mother Tincture | Hydroalcoholic Extracts Guide",
-      de: "Hausgemachte Urtinktur | Hydroalkoholische Extrakte"
+      fr: "Eau, Huile ou Alcool : Choisir le Bon Vecteur d'Actifs | Bloom by Botanik",
+      en: "Water, Oil or Alcohol: Choosing the Right Active Vector | Bloom by Botanik",
+      de: "Wasser, Öl oder Alkohol: Den richtigen Wirkstoffträger wählen | Bloom by Botanik"
     },
     description: {
-      fr: "Fabrication de teintures mères maison : ratios 1:5, choix des titres alcooliques et extraction dynamique par vortex cinétique pour un concentré d'actifs.",
-      en: "Craft homemade mother tinctures: 1:5 ratios, alcohol titres selection, and dynamic vortex extraction for concentrated actives.",
-      de: "Herstellung von Urtinkturen zu Hause: 1:5 Verhältnisse und dynamische Vortex-Extraktion für maximale Wirkstoffkonzentration."
+      fr: "Guide complet des solvants d'extraction : polarité, pureté de l'eau, pénétration transdermique des huiles, alcool de précision et solvants alternatifs pour libérer le Totum végétal.",
+      en: "Complete guide to botanical extraction solvents: polarity, water purity, transdermal oil penetration, precision alcohol, and alternative solvents.",
+      de: "Umfassender Leitfaden zu Extraktionslösungsmitteln: Polarität, Wasserreinheit, transdermale Penetration von Ölen und Präzisionsalkohol."
     },
     image: "/images/og/teinture-mere-extraits-hydroalcooliques-1200x630.jpg",
     imageSquare: "/images/og/teinture-mere-extraits-hydroalcooliques-1080x1080.jpg",
-    imageAlt: "Guide de la teinture-mère et extraits hydroalcooliques de plantes médicinales",
+    imageAlt: "Eau, Huile ou Alcool : Choisir le Bon Vecteur d'Actifs",
     type: "article"
   },
   terrain: {
     title: {
-      fr: "Les 8 Terrains Biologiques | Équilibre & Homéostasie",
-      en: "The 8 Biological Terrains | Balance & Homeostasis",
-      de: "Die 8 Biologischen Terrains | Gleichgewicht & Homöostase"
+      fr: "Les 7 Terrains | Comprendre le corps | Bloom Académie",
+      en: "The 7 Terrains | Understanding the Body | Bloom Academy",
+      de: "Die 7 Terrains | Den Körper verstehen | Bloom Akademie"
     },
     description: {
-      fr: "Explorez les 8 terrains biologiques en phytothérapie systémique : cartographiez vos vulnérabilités et choisissez les synergies de plantes appropriées.",
-      en: "Explore the 8 biological terrains in systemic phytotherapy: map your vulnerabilities and choose adapted plant synergies.",
-      de: "Erkunden Sie die 8 biologischen Terrains in der systemischen Phytotherapie und wählen Sie abgestimmte Pflanzensynergien."
+      fr: "Découvrez les 7 Terrains Bloom : une grille pédagogique pour comprendre les liens entre digestion, énergie, stress, sommeil, habitudes de vie et préparation botanique.",
+      en: "Discover the 7 Bloom Terrains: an educational framework to understand the links between digestion, energy, stress, sleep, lifestyle habits and botanical preparation.",
+      de: "Entdecken Sie die 7 Bloom-Terrains: ein pädagogischer Leitfaden zum Verständnis der Wechselwirkungen zwischen Verdauung, Energie, Stress und botanischer Zubereitung."
     },
-    image: "/images/og/terrain-biologique-equilibre-homeostasie-1200x630.jpg",
-    imageSquare: "/images/og/terrain-biologique-equilibre-homeostasie-1080x1080.jpg",
-    imageAlt: "Les 8 terrains biologiques en phytothérapie systémique",
+    image: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
+    imageSquare: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
+    imageAlt: "Les 7 Terrains — Bloom Académie",
     type: "article"
   },
   hormese: {
@@ -725,6 +741,102 @@ export const VIEW_METADATA: Record<string, MetaData> = {
     imageAlt: "Protocole Psoriasis — Reset Homéostasique et phytothérapie intégrale Bloom by BotaniK",
     type: "article"
   },
+  'protocole-sibo': {
+    title: {
+      fr: "Protocole SIBO | Reset Homéostasique & Motilité",
+      en: "SIBO Protocol | Homeostatic Reset & Motility",
+      de: "SIBO-Protokoll | Homöostatischer Reset & Motilität"
+    },
+    description: {
+      fr: "Guide pratique et chronobiologique pour accompagner le terrain de la pullulation bactérienne de l'intestin grêle, relancer le complexe moteur migrant et restaurer la motilité.",
+      en: "Practical chronobiological guide for small intestinal bacterial overgrowth terrain, migrating motor complex support, and digestive motility restoration.",
+      de: "Praktischer chronobiologischer Leitfaden zur Begleitung des SIBO-Terrains, Anregung des wandernden motorischen Komplexes und Wiederherstellung der Motilität."
+    },
+    image: "/images/og/protocole-psoriasis-reset-homeostatique-1200x630.jpg",
+    imageSquare: "/images/og/protocole-psoriasis-reset-homeostatique-1080x1080.jpg",
+    imageAlt: "Protocole SIBO — Reset Homéostasique de l'intestin grêle Bloom by BotaniK",
+    type: "article"
+  },
+  'protocole-myeline': {
+    title: {
+      fr: "Protocole Clarté Mentale — Soutien Neuronal & Myéline | Recette BloomLab | Bloom by BotaniK",
+      en: "Mental Clarity Protocol — Neuronal Support & Myelin | BloomLab Recipe | Bloom by BotaniK",
+      de: "Mentale Klarheit Protokoll — Neuronale Unterstützung & Myelin | BloomLab Rezept | Bloom by BotaniK"
+    },
+    description: {
+      fr: "Protocole complet d'extraction BloomLab pour soutenir la myéline, activer les voies du FGF17 et protéger votre clarté mentale. Recette détaillée, posologies, contre-indications.",
+      en: "Complete BloomLab extraction protocol to support myelin, activate FGF17 pathways and protect mental clarity. Detailed recipe, dosages, contraindications.",
+      de: "Vollständiges BloomLab-Extraktionsprotokoll zur Unterstützung von Myelin, FGF17-Aktivierung und mentaler Klarheit. Detailliertes Rezept, Dosierung, Kontraindikationen."
+    },
+    image: "/images/og/protocole-psoriasis-reset-homeostatique-1200x630.jpg",
+    imageSquare: "/images/og/protocole-psoriasis-reset-homeostatique-1080x1080.jpg",
+    imageAlt: "Protocole Clarté Mentale — Soutien Neuronal & Myéline Bloom by BotaniK",
+    type: "article"
+  },
+  'blog-vieillissement-myeline': {
+    title: {
+      fr: "Vieillissement Cérébral : Myéline et FGF17 — Ce que la Science Découvre en 2026 | Bloom by BotaniK",
+      en: "Brain Aging: Myelin and FGF17 — What Science Discovers in 2026 | Bloom by BotaniK",
+      de: "Gehirnalterung: Myelin und FGF17 — Was die Wissenschaft 2026 entdeckt | Bloom by BotaniK"
+    },
+    description: {
+      fr: "Découvrez comment la myéline et le FGF17 révolutionnent notre compréhension du vieillissement cérébral. Plantes documentées, mécanismes scientifiques et protocole naturel pour protéger votre clarté mentale.",
+      en: "Discover how myelin and FGF17 revolutionize our understanding of brain aging. Documented plants, scientific mechanisms and natural protocol to protect mental clarity.",
+      de: "Entdecken Sie, wie Myelin und FGF17 unser Verständnis der Gehirnalterung revolutionieren. Dokumentierte Pflanzen, Mechanismen und natürliches Protokoll."
+    },
+    image: "/images/og/protocole-psoriasis-reset-homeostatique-1200x630.jpg",
+    imageSquare: "/images/og/protocole-psoriasis-reset-homeostatique-1080x1080.jpg",
+    imageAlt: "Vieillissement Cérébral : Myéline et FGF17 — Bloom by BotaniK",
+    type: "article"
+  },
+  '4-architectures': {
+    title: {
+      fr: "Les 4 Architectures du Corps Vivant — SRA, HPA, Fascia, SEC | Bloom Académie",
+      en: "The 4 Architectures of the Living Body — RAS, HPA, Fascia, ECS | Bloom Academy",
+      de: "Die 4 Architekturen des lebendigen Körpers — RAS, HPA, Faszie, EKS | Bloom Akademie"
+    },
+    description: {
+      fr: "Découvrez les 4 architectures fondamentales qui régulent votre corps : le SRA, l'axe HPA, le Fascia et le Système EndoCannabinoïde. Comprendre le corps pour restaurer le terrain.",
+      en: "Discover the 4 fundamental architectures regulating your biology: RAS, HPA axis, Fascia, and the Endocannabinoid System. Understand the body to reset the terrain.",
+      de: "Entdecken Sie die 4 grundlegenden Architekturen, die Ihren Körper regulieren: RAS, HPA-Achse, Faszie und das Endocannabinoid-System."
+    },
+    image: "/images/4-architectures-og.jpg",
+    imageSquare: "/images/og/protocole-psoriasis-reset-homeostatique-1080x1080.jpg",
+    imageAlt: "Les 4 Architectures du Corps Vivant — SRA, Axe HPA, Fascia, Système EndoCannabinoïde",
+    type: "article"
+  },
+  '7-terrains': {
+    title: {
+      fr: "Les 7 Terrains | Comprendre le corps | Bloom Académie",
+      en: "The 7 Terrains | Understanding the Body | Bloom Academy",
+      de: "Die 7 Terrains | Den Körper verstehen | Bloom Akademie"
+    },
+    description: {
+      fr: "Découvrez les 7 Terrains Bloom : une grille pédagogique pour comprendre les liens entre digestion, énergie, stress, sommeil, habitudes de vie et préparation botanique.",
+      en: "Discover the 7 Bloom Terrains: an educational framework to understand the links between digestion, energy, stress, sleep, lifestyle habits and botanical preparation.",
+      de: "Entdecken Sie die 7 Bloom-Terrains: ein pädagogischer Leitfaden zum Verständnis der Wechselwirkungen zwischen Verdauung, Energie, Stress und botanischer Zubereitung."
+    },
+    image: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
+    imageSquare: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
+    imageAlt: "Les 7 Terrains — Bloom Académie",
+    type: "article"
+  },
+  'comment-lire-modele-bloom': {
+    title: {
+      fr: "Comment lire le modèle Bloom | Bloom Académie",
+      en: "How to Read the Bloom Model | Bloom Academy",
+      de: "Wie man das Bloom-Modell liest | Bloom Akademie"
+    },
+    description: {
+      fr: "Découvrez comment lire les architectures, terrains, axes et fiches plantes de Bloom Académie, avec une distinction claire entre recherche, usage traditionnel et preuve clinique.",
+      en: "Discover how to read architectures, terrains, axes and botanical monographs in Bloom Academy, distinguishing research, traditional use and clinical evidence.",
+      de: "Erfahren Sie, wie Sie Architekturen, Terrains, Achsen und Pflanzenmonographien der Bloom Akademie interpretieren."
+    },
+    image: "/images/4-architectures-og.jpg",
+    imageSquare: "/images/og/protocole-psoriasis-reset-homeostatique-1080x1080.jpg",
+    imageAlt: "Comment lire le modèle Bloom — Guide méthodologique Bloom Académie",
+    type: "article"
+  },
   mentions: {
     title: {
       fr: "Mentions Légales | Bloom by BotaniK",
@@ -819,6 +931,22 @@ export const VIEW_METADATA: Record<string, MetaData> = {
     image: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
     imageSquare: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
     imageAlt: "Droit de rétractation et formulaire de retour Bloom by BotaniK",
+    type: "website"
+  },
+  'abonnements-numeriques': {
+    title: {
+      fr: "Abonnements Numériques Bloom | Accès Intégral Bloom Academy & Protocoles",
+      en: "Bloom Digital Subscriptions | Full Bloom Academy & Protocols Access",
+      de: "Bloom Digitale Abonnements | Vollzugang Bloom Academy & Protokolle"
+    },
+    description: {
+      fr: "Découvrez nos formules d'abonnement numérique : accès complet à l'Académie Bloom, fiches physiologiques détaillées, protocoles systémiques et accompagnement ALMA.",
+      en: "Discover our digital subscription plans: full access to Bloom Academy, detailed physiological dossiers, systemic protocols, and ALMA guidance.",
+      de: "Entdecken Sie unsere digitalen Abonnements: Vollzugang zur Bloom Academy, physiologische Dossiers, systemische Protokolle und ALMA-Begleitung."
+    },
+    image: "/images/og/guide-utilisation-protocoles-bloomlab-1200x630.jpg",
+    imageSquare: "/images/og/guide-utilisation-protocoles-bloomlab-1080x1080.jpg",
+    imageAlt: "Abonnements numériques Bloom Academy",
     type: "website"
   }
 };
@@ -1010,6 +1138,23 @@ export const PRODUCT_METADATA: Record<string, ProductMetaData> = {
     imageAlt: "Abonnement annuel aux protocoles experts d'herboristerie et phytothérapie",
     price: "59.00",
     sku: "ACCESS-PREMIUM"
+  },
+  'abonnements-numeriques': {
+    title: {
+      fr: "Abonnements Numériques Bloom Academy | Formules & Accompagnement",
+      en: "Bloom Academy Digital Subscriptions | Plans & Guidance",
+      de: "Bloom Academy Digitale Abonnements | Tarife & Begleitung"
+    },
+    description: {
+      fr: "Formules d'abonnements numériques pour accéder à tous les modules de l'Académie Bloom, fiches physiologiques et protocoles thérapeutiques documentés.",
+      en: "Digital subscription plans to access all Bloom Academy modules, physiological files, and documented therapeutic protocols.",
+      de: "Digitale Abonnements für den Zugang zu allen Modulen der Bloom Academy, physiologischen Dossiers und therapeutischen Protokollen."
+    },
+    image: "/images/og/guide-utilisation-protocoles-bloomlab-1200x630.jpg",
+    imageSquare: "/images/og/guide-utilisation-protocoles-bloomlab-1080x1080.jpg",
+    imageAlt: "Abonnements numériques Bloom Academy",
+    price: "7.90",
+    sku: "BLOOM-DIGITAL-SUB"
   }
 };
 
@@ -1313,7 +1458,7 @@ export function updateDocumentSEO(view: View, lang: Language, productParam?: str
       }
     };
 
-    if (view === 'protocole-psoriasis') {
+    if (view === 'protocole-psoriasis' || view === 'protocole-sibo' || view === 'protocole-myeline') {
       schemaData.isAccessibleForFree = false;
       schemaData.hasPart = {
         "@type": "WebPageElement",

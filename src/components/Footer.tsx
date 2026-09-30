@@ -1,7 +1,7 @@
 import React from 'react';
-import { Youtube, Instagram, Facebook } from 'lucide-react';
+import { Youtube, Instagram, Facebook, GraduationCap, Sparkles } from 'lucide-react';
 import { Language, translations } from '../translations';
-import { VIEW_PATHS } from '../types';
+import { VIEW_PATHS, View } from '../types';
 import { BloomLogo } from './ui/BloomLogo';
 
 /* Icônes marque auto-hébergées (paths Simple Icons) — zéro CDN externe */
@@ -16,8 +16,13 @@ const TikTokIcon = ({ className = '' }: { className?: string }) => (
   </svg>
 );
 
-const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId?: string, type?: any) => void, lang?: Language }) => {
-  const t = translations[lang];
+interface FooterProps {
+  onNavigate: (view: View, productId?: string, type?: any) => void;
+  lang?: Language;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
+  const t = translations[lang] || translations.fr;
   const [email, setEmail] = React.useState('');
   const [subState, setSubState] = React.useState<'idle' | 'ok' | 'error'>('idle');
 
@@ -30,11 +35,16 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
   ];
 
   /* Lien interne crawlable (SEO) + navigation SPA */
-  const NavLink = ({ view, param, children }: { view: string; param?: string; children: React.ReactNode }) => (
+  const NavLink = ({ view, param, children }: { view: View; param?: string; children: React.ReactNode }) => (
     <a
       href={(VIEW_PATHS as Record<string, string>)[view] ?? '#'}
-      onClick={(e) => { e.preventDefault(); onNavigate(view, param); }}
-      className="hover:text-white transition-colors"
+      onClick={(e) => { 
+        if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+          e.preventDefault(); 
+          onNavigate(view, param); 
+        }
+      }}
+      className="hover:text-white hover:underline transition-colors"
     >
       {children}
     </a>
@@ -42,11 +52,12 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!email) return;
     try {
       const res = await fetch('/api/newsletter/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, source: 'footer' }),
+        body: JSON.stringify({ email, source: 'footer_new_structure' }),
       });
       setSubState(res.ok ? 'ok' : 'error');
       if (res.ok) setEmail('');
@@ -56,132 +67,148 @@ const Footer = ({ onNavigate, lang = 'fr' }: { onNavigate: (view: any, productId
   };
 
   return (
-    <footer className="bg-[#0F261E] text-white py-8 md:py-10 lg:py-16 px-4 sm:px-6 md:px-8 lg:px-12 mt-12 md:mt-16 lg:mt-24 border-t border-white/10">
+    <footer className="bg-[#0F261E] text-white py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-12 border-t border-white/10">
       <div className="max-w-[1200px] mx-auto">
-        {/* Brand & Mission */}
-        <div className="max-w-2xl mb-12">
-          <a
-            href="/"
-            className="flex items-center gap-2.5 sm:gap-3 md:gap-4 mb-4 md:mb-4 lg:mb-6 cursor-pointer group/footer-logo w-fit notranslate text-white hover:text-[#D97706] transition-colors"
-            onClick={(e) => {
-              e.preventDefault();
-              onNavigate('indexbis');
-            }}
-            translate="no"
-            id="footer-brand-logo-link"
-            aria-label="Bloom by BotaniK - Accueil"
-          >
-            <BloomLogo variant="footer" className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 flex-shrink-0" />
-            <div className="flex flex-col leading-tight uppercase text-white group-hover/footer-logo:text-[#D97706] transition-colors">
-              <span className="text-[9px] md:text-[10px] lg:text-[12px] font-bold tracking-[0.22em] opacity-80">Bloom by</span>
-              <span className="text-lg md:text-xl lg:text-2xl font-black tracking-widest">BotaniK</span>
+        
+        {/* Brand & Mission + Newsletter Inscription */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-14 pb-12 border-b border-white/10">
+          <div className="lg:col-span-6">
+            <a
+              href="/"
+              className="flex items-center gap-3.5 mb-4 cursor-pointer group/footer-logo w-fit notranslate text-white hover:text-[#D97706] transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate('indexbis');
+              }}
+              translate="no"
+              id="footer-brand-logo-link"
+              aria-label="Bloom by BotaniK - Accueil"
+            >
+              <BloomLogo variant="footer" className="w-12 h-12 flex-shrink-0" />
+              <div className="flex flex-col leading-tight uppercase text-white group-hover/footer-logo:text-[#D97706] transition-colors">
+                <span className="text-[10px] font-bold tracking-[0.22em] opacity-80">Bloom by</span>
+                <span className="text-xl font-black tracking-widest">BotaniK</span>
+              </div>
+            </a>
+            <p className="text-white/70 text-xs sm:text-sm leading-relaxed max-w-md mb-6">
+              L'alliance des sagesses ancestrales et de la phytothérapie de haute précision. Votre corps n'est pas cassé, il est verrouillé.
+            </p>
+
+            <div className="flex gap-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="me noopener noreferrer"
+                  className="text-white/50 hover:text-[#D97706] transition-colors"
+                  aria-label={social.label}
+                >
+                  <social.icon className="w-5 h-5" />
+                </a>
+              ))}
             </div>
-          </a>
-          <p className="text-white/60 text-xs md:text-xs lg:text-sm leading-relaxed max-w-md mb-4 md:mb-4 lg:mb-6">
-            {t.footer.description}
-          </p>
+          </div>
 
-          {/* Capture email — branchée sur l'API existante */}
-          <form onSubmit={handleSubscribe} className="flex gap-2 max-w-md mb-4 md:mb-4 lg:mb-6">
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder={lang === 'fr' ? 'Votre email — protocole du dimanche' : 'Your email — Sunday protocol'}
-              className="flex-1 px-3 py-2 md:px-3.5 md:py-2 rounded-xl bg-white/10 border border-white/15 text-xs md:text-xs lg:text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-[#D97706]"
-            />
-            <button type="submit" className="px-3.5 py-2 md:px-4 md:py-2 rounded-xl bg-[#D97706] hover:bg-[#b45309] text-white text-xs md:text-xs lg:text-sm font-bold transition-colors cursor-pointer shrink-0">
-              {lang === 'fr' ? "S'inscrire" : 'Subscribe'}
-            </button>
-          </form>
-          {subState === 'ok' && <p className="text-emerald-300 text-xs mb-3">✓ Merci ! Confirme via l'email reçu (double opt-in).</p>}
-          {subState === 'error' && <p className="text-rose-300 text-xs mb-3">Une erreur est survenue. Réessayez.</p>}
-
-          <div className="flex gap-4 md:gap-4 lg:gap-6">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="me noopener noreferrer"
-                className="text-white/40 hover:text-[#D97706] transition-colors"
-                aria-label={social.label}
+          {/* Formulaire Newsletter Pôle dédié */}
+          <div className="lg:col-span-6 flex flex-col justify-center bg-white/5 rounded-3xl p-6 border border-white/10">
+            <div className="flex items-center gap-2 mb-2 text-[#D97706] text-xs font-bold uppercase tracking-wider">
+              <Sparkles className="w-4 h-4" />
+              <span>LE PROTOCOLE DU DIMANCHE &amp; BILLET DE L'ACADÉMIE</span>
+            </div>
+            <p className="text-xs text-white/80 mb-4">
+              Recevez nos synthèses exclusives de phytochimie clinique, protocoles saisonniers et monographies du Totum végétal.
+            </p>
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2">
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Votre adresse email..."
+                className="flex-1 px-4 py-2.5 rounded-xl bg-white/10 border border-white/15 text-xs sm:text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-[#D97706]"
+              />
+              <button 
+                type="submit" 
+                className="px-5 py-2.5 rounded-xl bg-[#D97706] hover:bg-[#b45309] text-white text-xs sm:text-sm font-bold transition-colors cursor-pointer shrink-0"
               >
-                <social.icon className="w-5 h-5 md:w-5 md:h-5 lg:w-6 lg:h-6" />
-              </a>
-            ))}
+                S'inscrire
+              </button>
+            </form>
+            {subState === 'ok' && <p className="text-emerald-300 text-xs mt-2.5">✓ Merci ! Un lien de confirmation vous a été envoyé.</p>}
+            {subState === 'error' && <p className="text-rose-300 text-xs mt-2.5">Une erreur est survenue. Veuillez réessayer.</p>}
           </div>
         </div>
 
-        {/* 3 Silos Sémantiques & Maillage Interne */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 pb-10 mb-10 border-b border-white/10 text-xs text-white/70">
+        {/* NOUVELLE STRUCTURE FOOTER EN 4 COLONNES */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pb-10 mb-10 border-b border-white/10 text-xs text-white/70">
+          
+          {/* COLONNE 1: BLOOM BY BOTANIK */}
           <div>
-            <h4 className="text-[11px] md:text-xs uppercase tracking-widest font-bold mb-4 text-[#D97706]">
-              Silo 1 · Extraction & Infuseurs
+            <h4 className="text-xs uppercase tracking-widest font-black mb-4 text-[#D97706]">
+              BLOOM BY BOTANIK
             </h4>
-            <ul className="space-y-2">
-              <li><NavLink view="infuseur-botanique">Infuseur Botanique de Précision</NavLink></li>
-              <li><NavLink view="pillar-extraction">Guide de l'Extraction Botanique</NavLink></li>
-              <li><NavLink view="machine">Machine BloomLab® & Spécifications</NavLink></li>
-              <li><NavLink view="infusion-botanique">Infusion Végétale Maison</NavLink></li>
-              <li><NavLink view="huile-infusee">Huiles Infusées & Macérats Huileux</NavLink></li>
-              <li><NavLink view="teinture-mere">Teintures-Mères & Solvants</NavLink></li>
+            <ul className="space-y-2.5">
+              <li><NavLink view="la-marque">Histoire &amp; Philosophie</NavLink></li>
+              <li><NavLink view="contact">Contact</NavLink></li>
             </ul>
           </div>
 
+          {/* COLONNE 2: BLOOM ACADÉMIE */}
           <div>
-            <h4 className="text-[11px] md:text-xs uppercase tracking-widest font-bold mb-4 text-[#D97706]">
-              Silo 2 · Science & Terrain
+            <h4 className="text-xs uppercase tracking-widest font-black mb-4 text-[#c9a84c] flex items-center gap-1.5">
+              <GraduationCap className="w-4 h-4 text-[#c9a84c]" />
+              <span>BLOOM ACADÉMIE</span>
             </h4>
-            <ul className="space-y-2">
-              <li><NavLink view="phytotherapie-reset">Phytothérapie & Reset Homéostasique</NavLink></li>
-              <li><NavLink view="totum-vegetal">Science du Totum Végétal</NavLink></li>
-              <li><NavLink view="plantes-adaptogenes">Plantes Adaptogènes & Système Nerveux</NavLink></li>
-              <li><NavLink view="terrain">Les 8 Terrains Biologiques</NavLink></li>
-              <li><NavLink view="hormese">Hormèse Botanique & Vitalité</NavLink></li>
-              <li><NavLink view="lexique">Lexique Phytochimique & Études</NavLink></li>
+            <ul className="space-y-2.5">
+              <li><NavLink view="academie">Hub Bloom Académie</NavLink></li>
+              <li><NavLink view="protocoles">Protocoles Systémiques</NavLink></li>
+              <li><NavLink view="phytotherapie-reset">Reset Homéostasique</NavLink></li>
+              <li><NavLink view="4-architectures">Comprendre le Corps</NavLink></li>
+              <li><NavLink view="pillar-extraction">Extraction &amp; Totum</NavLink></li>
+              <li><NavLink view="library-landing">Bibliothèque Scientifique</NavLink></li>
             </ul>
           </div>
 
+          {/* COLONNE 3: BOUTIQUE */}
           <div>
-            <h4 className="text-[11px] md:text-xs uppercase tracking-widest font-bold mb-4 text-[#D97706]">
-              Silo 3 · Herboristerie & Usages
+            <h4 className="text-xs uppercase tracking-widest font-black mb-4 text-[#D97706]">
+              BOUTIQUE
             </h4>
-            <ul className="space-y-2">
-              <li><NavLink view="herbier">Herbier des Plantes Médicinales</NavLink></li>
-              <li><NavLink view="cosmetiques">Cosmétique Botanique DIY</NavLink></li>
-              <li><NavLink view="culinaire">Gastronomie Botanique & Émulsions</NavLink></li>
-              <li><NavLink view="recettes">Recettes & Protocoles Pas à Pas</NavLink></li>
-              <li><NavLink view="articles">Articles & Savoirs Ancestraux</NavLink></li>
-              <li><NavLink view="how_it_works">Mode d'Emploi & Pratique</NavLink></li>
+            <ul className="space-y-2.5">
+              <li><NavLink view="product-detail" param="bloomlab">BloomLab®</NavLink></li>
+              <li><NavLink view="boutique-kits">Packs</NavLink></li>
+              <li><NavLink view="boutique">Accessoires</NavLink></li>
+              <li><button onClick={() => onNavigate('legal', undefined, 'cgv')} className="hover:text-white hover:underline transition-colors text-left cursor-pointer">CGV</button></li>
             </ul>
           </div>
 
+          {/* COLONNE 4: RESSOURCES */}
           <div>
-            <h4 className="text-[11px] md:text-xs uppercase tracking-widest font-bold mb-4 text-[#F5F3EB]">
-              Informations & Légal
+            <h4 className="text-xs uppercase tracking-widest font-black mb-4 text-white/90">
+              RESSOURCES
             </h4>
-            <ul className="space-y-2">
-              <li><NavLink view="boutique">Boutique Officielle</NavLink></li>
-              <li><NavLink view="manifeste">Notre Vision & Souveraineté</NavLink></li>
-              <li><NavLink view="faq">Questions Fréquentes (FAQ)</NavLink></li>
-              <li><button onClick={() => onNavigate('legal', undefined, 'mentions')} className="hover:text-white transition-colors text-left">Mentions Légales</button></li>
-              <li><button onClick={() => onNavigate('legal', undefined, 'cgv')} className="hover:text-white transition-colors text-left">Conditions Générales de Vente</button></li>
-              <li><button onClick={() => onNavigate('legal', undefined, 'privacy')} className="hover:text-white transition-colors text-left">Politique de Confidentialité</button></li>
+            <ul className="space-y-2.5">
+              <li><NavLink view="faq">FAQ</NavLink></li>
+              <li><NavLink view="returns">Livraison &amp; Retours</NavLink></li>
+              <li><button onClick={() => onNavigate('legal', undefined, 'mentions')} className="hover:text-white hover:underline transition-colors text-left cursor-pointer">Mentions Légales</button></li>
+              <li><button onClick={() => onNavigate('legal', undefined, 'privacy')} className="hover:text-white hover:underline transition-colors text-left cursor-pointer">Politique de Confidentialité</button></li>
             </ul>
           </div>
+
         </div>
 
-        <div className="pt-6 md:pt-6 lg:pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-4 lg:gap-6">
-          <p className="text-[9px] md:text-[10px] uppercase tracking-widest text-white/30 text-center md:text-left">
+        {/* Mentions légales de bas de page */}
+        <div className="pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-[10px] uppercase tracking-widest text-white/40 text-center md:text-left">
             © {new Date().getFullYear()} Bloom by BotaniK — Tous droits réservés
           </p>
-          <p className="text-[9px] md:text-[10px] uppercase tracking-widest text-white/30 text-center md:text-right">
-            Dispositif d'extraction végétale à usage personnel. Ceci n'est pas un dispositif médical.
-            Contenus éducatifs — ne remplace pas un avis médical.
+          <p className="text-[10px] uppercase tracking-widest text-white/40 text-center md:text-right max-w-xl">
+            Dispositif d'extraction botanique à usage personnel. Ceci n'est pas un dispositif médical.
+            Contenus éducatifs et d'accompagnement de terrain — ne remplace pas une consultation médicale.
           </p>
         </div>
+
       </div>
     </footer>
   );

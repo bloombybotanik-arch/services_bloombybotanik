@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protocole Myéline & FGF17 — Recette d'Extraction BloomLab® | Bloom by BotaniK</title>
+  <meta name="description" content="Guide pratique et protocole d'extraction botanique BloomLab pour la remyélinisation neuronale, l'activation du facteur FGF17 et la plasticité cognitive.">
+  <link rel="canonical" href="https://bloombybotanik.com/protocoles/myeline">
+  
+  <style>
+    :root {
+      --fond-principal: #0d1117;
+      --fond-secondaire: #161b22;
+      --fond-carte: #1c2128;
+      --texte-principal: #f5f0e8;
+      --texte-secondaire: #b8b8b8;
+      --accent-or: #c9a84c;
+      --accent-vert: #2d5016;
+      --accent-rouge: #8b3a3a;
+      --bordure: #30363d;
+      --police-titres: Georgia, 'Times New Roman', serif;
+      --police-corps: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      overflow-wrap: break-word;
+    }
+
+    body {
+      background-color: var(--fond-principal);
+      color: var(--texte-principal);
+      font-family: var(--police-corps);
+      font-size: 1rem;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent-or);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #dfbf63;
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* En-tête */
+    .site-header {
+      background-color: rgba(13, 17, 23, 0.95);
+      border-bottom: 1px solid var(--bordure);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--police-titres);
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--texte-principal);
+      text-decoration: none;
+    }
+
+    .brand span {
+      color: var(--accent-or);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+    }
+
+    .nav-links a {
+      color: var(--texte-secondaire);
+    }
+
+    .nav-links a:hover {
+      color: var(--texte-principal);
+      text-decoration: none;
+    }
+
+    /* Fil d'Ariane */
+    .breadcrumb {
+      padding: 1.25rem 0;
+      font-size: 0.8rem;
+      color: var(--texte-secondaire);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .breadcrumb a {
+      color: var(--texte-secondaire);
+    }
+
+    .breadcrumb span.current {
+      color: var(--accent-or);
+    }
+
+    /* Header du Protocole */
+    .protocol-header {
+      padding: 2.5rem 0 3rem;
+      border-bottom: 1px solid var(--bordure);
+      text-align: center;
+    }
+
+    .badge-pill {
+      display: inline-block;
+      background: rgba(201, 168, 76, 0.12);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      color: var(--accent-or);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 700;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 {
+      font-family: var(--police-titres);
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      line-height: 1.25;
+      color: var(--texte-principal);
+      margin-bottom: 1.25rem;
+      font-weight: normal;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--texte-secondaire);
+      max-width: 680px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    .protocol-meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      font-size: 0.85rem;
+    }
+
+    .meta-tag {
+      background: var(--fond-secondaire);
+      border: 1px solid var(--bordure);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      color: var(--texte-principal);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Avertissement Médical */
+    .disclaimer-box {
+      background: rgba(139, 58, 58, 0.12);
+      border: 1px solid rgba(139, 58, 58, 0.35);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: #e5a5a5;
+      margin: 2rem 0;
+      line-height: 1.6;
+    }
+
+    .disclaimer-box strong {
+      color: #ffc9c9;
+    }
+
+    /* Sections */
+    section {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--bordure);
+    }
+
+    h2 {
+      font-family: var(--police-titres);
+      font-size: 1.75rem;
+      color: var(--accent-or);
+      margin-bottom: 1.25rem;
+      font-weight: normal;
+    }
+
+    h3 {
+      font-family: var(--police-titres);
+      font-size: 1.25rem;
+      color: var(--texte-principal);
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+      color: #e6edf3;
+    }
+
+    /* Cartes des 4 Prérequis (Freemium) */
+    .prereq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+
+    .prereq-card {
+      background: var(--fond-secondaire);
+      border: 1px solid var(--bordure);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .prereq-card:hover {
+      border-color: rgba(201, 168, 76, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .prereq-icon {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .prereq-card h4 {
+      font-size: 1.05rem;
+      color: var(--texte-principal);
+      margin-bottom: 0.5rem;
+      font-family: var(--police-titres);
+    }
+
+    .prereq-card p {
+      font-size: 0.875rem;
+      color: var(--texte-secondaire);
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .prereq-advice {
+      background: rgba(0,0,0,0.3);
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.35rem;
+      font-size: 0.8rem;
+      color: var(--accent-or);
+      border-left: 2px solid var(--accent-or);
+    }
+
+    /* Cartes de Contre-indications (Freemium) */
+    .contraindications-card {
+      background: rgba(139, 58, 58, 0.08);
+      border: 1px solid rgba(139, 58, 58, 0.3);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .contraindications-card h3 {
+      color: #ff9e9e;
+      margin-top: 0;
+    }
+
+    .contraindications-list {
+      margin-left: 1.25rem;
+      font-size: 0.9rem;
+      color: #e6edf3;
+    }
+
+    .contraindications-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Section Freemium Gate / Formulaire */
+    .premium-lock-overlay {
+      background: linear-gradient(180deg, rgba(22, 27, 34, 0.95), #0d1117);
+      border: 2px dashed rgba(201, 168, 76, 0.5);
+      border-radius: 1rem;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin: 2.5rem 0;
+    }
+
+    .premium-lock-overlay h3 {
+      font-size: 1.75rem;
+      color: var(--texte-principal);
+      margin-bottom: 0.75rem;
+    }
+
+    .premium-lock-overlay p {
+      max-width: 580px;
+      margin: 0 auto 2rem;
+      color: var(--texte-secondaire);
+      font-size: 0.95rem;
+    }
+
+    .unlock-form {
+      max-width: 440px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-input {
+      background: #0d1117;
+      border: 1px solid var(--bordure);
+      color: var(--texte-principal);
+      padding: 0.85rem 1.25rem;
+      border-radius: 0.5rem;
+      font-size: 0.95rem;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-input:focus {
+      border-color: var(--accent-or);
+    }
+
+    .btn-submit {
+      background-color: var(--accent-or);
+      color: #0d1117;
+      font-weight: bold;
+      border: none;
+      padding: 0.9rem 1.5rem;
+      border-radius: 9999px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-submit:hover {
+      background-color: #dfbf63;
+      transform: translateY(-2px);
+    }
+
+    .form-privacy {
+      font-size: 0.75rem;
+      color: #8b949e;
+      margin-top: 0.5rem;
+    }
+
+    /* Contenu Protocole Débloqué (Tableaux, Posologies, Chronobiologie) */
+    .locked-content {
+      display: none; /* Débloqué dynamiquement par JS si localStorage présent */
+    }
+
+    .recipe-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0 2.5rem;
+      background: var(--fond-secondaire);
+      border-radius: 0.75rem;
+      overflow: hidden;
+      border: 1px solid var(--bordure);
+      font-size: 0.9rem;
+    }
+
+    .recipe-table th, .recipe-table td {
+      padding: 1rem 1.25rem;
+      text-align: left;
+      border-bottom: 1px solid var(--bordure);
+    }
+
+    .recipe-table th {
+      background: #21262d;
+      color: var(--accent-or);
+      font-family: var(--police-titres);
+      font-size: 0.95rem;
+      font-weight: normal;
+    }
+
+    .recipe-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .extract-highlight {
+      background: rgba(45, 80, 22, 0.25);
+      border: 1px solid var(--accent-vert);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin: 1.25rem 0;
+      font-size: 0.9rem;
+    }
+
+    /* Chronobiologie Card */
+    .chrono-card {
+      background: var(--fond-secondaire);
+      border: 1px solid var(--bordure);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .chrono-card h4 {
+      color: var(--accent-or);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* 5 Marqueurs Carnet de Bord */
+    .markers-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .marker-item {
+      background: var(--fond-secondaire);
+      border: 1px solid var(--bordure);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.875rem;
+    }
+
+    .marker-item strong {
+      color: var(--accent-or);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Footer & CTA */
+    .cta-card {
+      background: linear-gradient(180deg, #161b22, #0f261e);
+      border: 1px solid rgba(201, 168, 76, 0.4);
+      border-radius: 1rem;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin: 3.5rem 0 2rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--accent-or);
+      color: #0d1117;
+      font-weight: 700;
+      padding: 0.85rem 2rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #dfbf63;
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    footer {
+      border-top: 1px solid var(--bordure);
+      padding: 3rem 0;
+      color: var(--texte-secondaire);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- En-tête -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand">
+        Bloom <span>by BotaniK</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/">Accueil</a>
+        <a href="/phytotherapie-reset/">Protocoles Systémiques</a>
+        <a href="/blog/vieillissement-myeline-fgf17">Article de Fond</a>
+        <a href="/boutique">Boutique</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Fil d'Ariane -->
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/">Accueil</a>
+      <span>&gt;</span>
+      <a href="/phytotherapie-reset/">Protocoles Systémiques</a>
+      <span>&gt;</span>
+      <span class="current">Protocole Myéline & FGF17</span>
+    </nav>
+
+    <!-- Header du Protocole -->
+    <header class="protocol-header">
+      <span class="badge-pill">Protocole Systémique n°3 • Neuro-Longévité</span>
+      <h1>PROTOCOLE MYÉLINE &amp; FGF17 — RECETTE D'EXTRACTION BLOOMLAB®</h1>
+      <p class="subtitle">
+        Accompagner la régénération de la gaine de myéline, réactiver les oligodendrocytes quiescents et stimuler les voies du facteur FGF17 par phytothérapie intégrale à température régulée.
+      </p>
+
+      <div class="protocol-meta-bar">
+        <div class="meta-tag">⏳ Durée : 8 à 12 semaines</div>
+        <div class="meta-tag">🎯 Cible : Axones &amp; Gaine de Myéline</div>
+        <div class="meta-tag">⚗️ Extraction : Double Sachet A/B BloomLab®</div>
+        <div class="meta-tag">🔒 Format : Freemium (Formule Protégée)</div>
+      </div>
+    </header>
+
+    <!-- Avertissement Médical -->
+    <div class="disclaimer-box">
+      <strong>Avertissement Médical & Légal :</strong> Ce protocole relève de la phytothérapie d'extraction et de l'hygiène vitale. Il ne constitue pas un diagnostic médical ni une ordonnance. Il ne se substitue pas aux consultations auprès de votre médecin traitant ou neurologue. En cas de traitement en cours, ne modifiez jamais vos prises sans avis médical.
+    </div>
+
+    <!-- SECTION 1 : PRÉREQUIS QUOTIDIENS (FREEMIUM - ACCÈS LIBRE) -->
+    <section id="prerequis">
+      <span class="badge-pill" style="background: rgba(45, 80, 22, 0.2); border-color: var(--accent-vert); color: #86efac;">
+        Accès Libre • Fondations Biologiques
+      </span>
+      <h2>Les 4 Prérequis Non Négociables de la Neuro-Régénération</h2>
+      <p>
+        Aucun actif botanique ne peut forcer la synthèse de myéline si les conditions cellulaires d'anabolisme ne sont pas réunies. Avant toute extraction, ces 4 leviers doivent être activés :
+      </p>
+
+      <div class="prereq-grid">
+        <div class="prereq-card">
+          <div class="prereq-icon">🌙</div>
+          <h4>1. Sommeil Profond à Ondes Lentes</h4>
+          <p>
+            C'est pendant les phases 3 et 4 du sommeil profond (entre 23h et 3h) que l'expression des gènes myéliniques et la réplication des cellules souches cérébrales culminent.
+          </p>
+          <div class="prereq-advice">
+            Chambre à 18°C, obscurité complète, dîner léger 3h avant le coucher.
+          </div>
+        </div>
+
+        <div class="prereq-card">
+          <div class="prereq-icon">⏳</div>
+          <h4>2. Jeûne Intermittent 14h-16h</h4>
+          <p>
+            La clairance des débris de myéline oxydée nécessite l'activation de l'autophagie cellulaire. Un jeûne nocturne régulier relance ce nettoyage indispensable.
+          </p>
+          <div class="prereq-advice">
+            Dîner à 19h30, petit-déjeuner ou première prise à 11h30 (16h de repos digestif).
+          </div>
+        </div>
+
+        <div class="prereq-card">
+          <div class="prereq-icon">⚡</div>
+          <h4>3. Mouvement &amp; Libération de BDNF</h4>
+          <p>
+            Le facteur neurotrophique BDNF est sécrété en réponse à la contraction musculaire brève et intense (marche rapide en côte, renforcement musculaire).
+          </p>
+          <div class="prereq-advice">
+            30 minutes de marche rapide quotidienne et 2 séances de résistance légère par semaine.
+          </div>
+        </div>
+
+        <div class="prereq-card">
+          <div class="prereq-icon">💨</div>
+          <h4>4. Oxygénation &amp; Respiration Nasale</h4>
+          <p>
+            Les oligodendrocytes consomment une quantité prodigieuse d'oxygène pour synthétiser les lipides complexes. L'apnée et l'hypoxie tissulaire bloquent la remyélinisation.
+          </p>
+          <div class="prereq-advice">
+            Respiration exclusivement nasale en journée et 5 minutes de cohérence cardiaque 2x/jour.
+          </div>
+        </div>
+      </div>
+
+      <!-- Contre-indications & Précautions (Freemium) -->
+      <div class="contraindications-card">
+        <h3>⚠️ Contre-indications &amp; Précautions d'Emploi (À Lire Absolument)</h3>
+        <ul class="contraindications-list">
+          <li><strong>Traitements anticoagulants ou antiagrégants plaquettaires :</strong> En raison de la présence de <em>Ginkgo biloba</em> (action fluidifiante), demandez impérativement l'avis de votre cardiologue.</li>
+          <li><strong>Grossesse et allaitement :</strong> Protocole déconseillé par mesure de précaution en l'absence de données d'innocuité chez la femme enceinte.</li>
+          <li><strong>Épilepsie non stabilisée :</strong> Éviter les stimulants nerveux centraux sans supervision neurologique.</li>
+          <li><strong>Intervention chirurgicale programmée :</strong> Interrompre la prise de Ginkgo au moins 10 jours avant toute chirurgie.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 2 : FORMULAIRE FREEMIUM GATE (Si non débloqué) -->
+    <div id="premiumGate" class="premium-lock-overlay">
+      <span class="badge-pill">Contenu Réservé aux Membres</span>
+      <h3>Débloquez la Recette d'Extraction BloomLab® Complète</h3>
+      <p>
+        Accédez immédiatement aux paramètres précis (températures au 0,5°C, solvants, ratios Sachet A/B), aux posologies chronobiologiques et au calendrier de 12 semaines.
+      </p>
+
+      <form id="unlockForm" class="unlock-form" onsubmit="handleUnlock(event)">
+        <input 
+          type="text" 
+          id="userName" 
+          class="form-input" 
+          placeholder="Votre prénom" 
+          required 
+        />
+        <input 
+          type="email" 
+          id="userEmail" 
+          class="form-input" 
+          placeholder="Votre adresse email" 
+          required 
+        />
+        <button type="submit" class="btn-submit">
+          Débloquer la Recette Immédiatement &rarr;
+        </button>
+        <div class="form-privacy">
+          🔒 Accès 100% gratuit et immédiat. Vos données sont protégées. Aucun spam.
+        </div>
+      </form>
+    </div>
+
+    <!-- SECTION 3 : RECETTE D'EXTRACTION COMPLÈTE (DÉBLOQUÉE APRÈS INSCRIPTION) -->
+    <div id="unlockedContent" class="locked-content">
+      
+      <section id="recette-bloomlab">
+        <span class="badge-pill" style="background: rgba(201, 168, 76, 0.15);">
+          Formule Validée BloomLab®
+        </span>
+        <h2>Formulation et Paramètres d'Extraction de Haute Précision</h2>
+        <p>
+          Pour régénérer la gaine de myéline, deux classes chimiques complémentaires doivent être extraites sans dénaturation thermique : les <strong>héricinones &amp; bacosides</strong> (hydrosolubles) et les <strong>antioxydants lipophiles &amp; acides gras précurseurs</strong> (liposolubles).
+        </p>
+
+        <!-- Sachet A : Hydrosoluble -->
+        <h3>1. Sachet A (Hydrosoluble — Neuro-Stimulation &amp; Voies FGF17)</h3>
+        <table class="recipe-table">
+          <thead>
+            <tr>
+              <th>Plante / Actif</th>
+              <th>Partie utilisée</th>
+              <th>Ratio / Quantité</th>
+              <th>Substance Active Clé</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Hericium erinaceus</strong> (Lion's Mane)</td>
+              <td>Sporophore bio concentré</td>
+              <td>1500 mg</td>
+              <td>Héricinones C, D, E &amp; Érinacines</td>
+            </tr>
+            <tr>
+              <td><strong>Bacopa monnieri</strong></td>
+              <td>Parties aériennes</td>
+              <td>350 mg (std. 20%)</td>
+              <td>Bacosides A &amp; B (protection dendritique)</td>
+            </tr>
+            <tr>
+              <td><strong>Centella asiatica</strong> (Gotu Kola)</td>
+              <td>Feuilles titrées</td>
+              <td>250 mg</td>
+              <td>Asiaticosides (microcirculation cérébrale)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="extract-highlight">
+          <strong>Cycle d'Extraction BloomLab® Sachet A :</strong><br>
+          • <strong>Solvant :</strong> 250 ml d'eau purifiée peu minéralisée (résidu à sec &lt; 50 mg/L).<br>
+          • <strong>Température de consigne :</strong> 72,0°C (régulation PID BloomLab).<br>
+          • <strong>Durée :</strong> 35 minutes sous agitation douce.<br>
+          • <em>Résultat :</em> Extraction intégrale des polysaccharides et diterpènes sans caramélisation.
+        </div>
+
+        <!-- Sachet B : Liposoluble -->
+        <h3>2. Sachet B (Liposoluble — Substrats de Rematérialisation de la Myéline)</h3>
+        <table class="recipe-table">
+          <thead>
+            <tr>
+              <th>Composant</th>
+              <th>Type / Qualité</th>
+              <th>Quantité</th>
+              <th>Bénéfice Myélinique</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Romarin officinal</strong></td>
+              <td>Feuilles fraîches séchées</td>
+              <td>2,5 g</td>
+              <td>Acide carnosique &amp; carnosol (antioxydant membranaire)</td>
+            </tr>
+            <tr>
+              <td><strong>Ginkgo biloba</strong></td>
+              <td>Feuilles sélectionnées</td>
+              <td>1,5 g</td>
+              <td>Ginkgolides &amp; bilobalides (flux capillaire)</td>
+            </tr>
+            <tr>
+              <td><strong>Huile de Cameline bio + Huile TCM</strong></td>
+              <td>Vierge 1ère pression à froid</td>
+              <td>50 ml</td>
+              <td>Oméga-3 ALA, acide nervonique et corps cétoniques C8/C10</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="extract-highlight" style="background: rgba(201, 168, 76, 0.1); border-color: var(--accent-or);">
+          <strong>Cycle d'Extraction BloomLab® Sachet B :</strong><br>
+          • <strong>Solvant :</strong> Bain lipidique (Cameline + TCM C8).<br>
+          • <strong>Température de consigne :</strong> 58,0°C.<br>
+          • <strong>Durée :</strong> 45 minutes.<br>
+          • <em>Résultat :</em> Dispersion micellaire des flavonoïdes lipophiles et stabilisation contre l'oxydation.
+        </div>
+      </section>
+
+      <!-- Chronobiologie des Prises -->
+      <section id="chronobiologie">
+        <h2>Chronobiologie Quotidienne des Prises</h2>
+        <p>
+          L'incorporation des lipides dans les axones suit un rythme biologique précis. Ne mélangez pas les prises au hasard :
+        </p>
+
+        <div class="chrono-card">
+          <h4>🌅 Matin au Réveil (8h00) : Sachet A Hydrosoluble</h4>
+          <p>
+            Boire l'infusion Sachet A à jeun ou 20 minutes avant le premier repas. Les héricinones et bacosides traversent la barrière hémato-encéphalique sans compétition avec les acides aminés alimentaires.
+          </p>
+        </div>
+
+        <div class="chrono-card">
+          <h4>🍽 Midi (avec le repas) : 2 Cuillères de Sachet B</h4>
+          <p>
+            Consommer l'huile infusée du Sachet B directement sur vos légumes tièdes ou avec 2 œufs bio (riches en choline). L'assimilation des lipides complexes est maximale en présence de bile active.
+          </p>
+        </div>
+
+        <div class="chrono-card">
+          <h4>🌙 Soir (19h30) : Seconde demi-dose Sachet B</h4>
+          <p>
+            1 cuillère à café d'huile infusée au dîner pour alimenter les oligodendrocytes pendant la grande phase d'anabolisme nocturne.
+          </p>
+        </div>
+      </section>
+
+      <!-- Protocole sur 12 Semaines -->
+      <section id="phases">
+        <h2>Planification Clinique sur 12 Semaines</h2>
+        <table class="recipe-table">
+          <thead>
+            <tr>
+              <th>Période</th>
+              <th>Objectif Physiologique</th>
+              <th>Action Principale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Semaines 1 à 3</strong><br>Phase d'Induction</td>
+              <td>Désactivation de la neuro-inflammation et priming des récepteurs</td>
+              <td>Sachet A à demi-dose (150 ml) + 1 cuillère Sachet B le midi.</td>
+            </tr>
+            <tr>
+              <td><strong>Semaines 4 à 8</strong><br>Phase de Prolifération</td>
+              <td>Stimulation du facteur FGF17 et multiplication des oligodendrocytes (OPC)</td>
+              <td>Pleine dose Sachet A (250 ml) + 2 cuillères Sachet B réparties midi et soir.</td>
+            </tr>
+            <tr>
+              <td><strong>Semaines 9 à 12</strong><br>Phase de Consolidation</td>
+              <td>Épaississement de la gaine et accélération de la vitesse de conduction</td>
+              <td>Rythme de croisière 5 jours sur 7 (2 jours de repos hebdomadaire).</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Carnet de Bord des 5 Marqueurs -->
+      <section id="carnet-bord">
+        <h2>Carnet de Bord : Les 5 Marqueurs à Évaluer Chaque Dimanche</h2>
+        <p>
+          Notez chaque semaine votre ressenti sur une échelle de 1 à 10 pour mesurer objectivement vos gains cognitifs :
+        </p>
+        <div class="markers-list">
+          <div class="marker-item">
+            <strong>1. Vitesse de traitement :</strong>
+            Rapidité à prendre des décisions et à réagir sans hésitation.
+          </div>
+          <div class="marker-item">
+            <strong>2. Clarté mentale :</strong>
+            Disparition de la sensation d'esprit embrumé ou cotonneux le matin.
+          </div>
+          <div class="marker-item">
+            <strong>3. Fluidité verbale :</strong>
+            Facilité à retrouver immédiatement les mots et concepts précis.
+          </div>
+          <div class="marker-item">
+            <strong>4. Mémoire de travail :</strong>
+            Capacité à jongler avec plusieurs informations sans décrocher.
+          </div>
+          <div class="marker-item">
+            <strong>5. Endurance cognitive :</strong>
+            Capacité à travailler intensément en fin d'après-midi sans fatigue nerveuse.
+          </div>
+        </div>
+      </section>
+
+      <!-- Conclusion & CTA -->
+      <div class="cta-card">
+        <div style="font-family: var(--police-titres); font-size: 1.3rem; color: var(--accent-or); margin-bottom: 0.5rem; font-style: italic;">
+          "Votre corps n'est pas cassé. Il est verrouillé par une surcharge qu'il n'a plus les moyens d'évacuer seul."
+        </div>
+        <p style="margin-bottom: 1.5rem;">
+          Pour réaliser cette recette avec la précision thermodynamique requise au demi-degré près, utilisez l'extracteur BloomLab®.
+        </p>
+        <a href="/boutique/bloomlab/" class="cta-button">
+          Découvrir la Machine BloomLab® &rarr;
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div style="font-family: var(--police-titres); font-size: 1.1rem; color: var(--texte-principal); margin-bottom: 0.5rem;">
+        Bloom by BotaniK
+      </div>
+      <p style="margin-bottom: 0.5rem;">L'ingénierie au service du vivant • Phytothérapie de haute précision</p>
+      <p style="font-size: 0.75rem; color: #6e7681;">&copy; 2026 Bloom by BotaniK. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- Script de déblocage Freemium instantané -->
+  <script>
+    function checkUnlockState() {
+      try {
+        var isUnlocked = localStorage.getItem('bloom_myeline_unlocked') === 'true';
+        if (isUnlocked) {
+          var gate = document.getElementById('premiumGate');
+          var content = document.getElementById('unlockedContent');
+          if (gate) gate.style.display = 'none';
+          if (content) content.style.display = 'block';
+        }
+      } catch (e) {}
+    }
+
+    function handleUnlock(e) {
+      e.preventDefault();
+      var name = document.getElementById('userName').value;
+      var email = document.getElementById('userEmail').value;
+      if (!email) return;
+
+      try {
+        localStorage.setItem('bloom_myeline_unlocked', 'true');
+        localStorage.setItem('bloom_user_email', email);
+        if (name) localStorage.setItem('bloom_user_name', name);
+      } catch (err) {}
+
+      // Masquer le formulaire et afficher le contenu
+      var gate = document.getElementById('premiumGate');
+      var content = document.getElementById('unlockedContent');
+      if (gate) gate.style.display = 'none';
+      if (content) {
+        content.style.display = 'block';
+        content.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', checkUnlockState);
+    checkUnlockState();
+  </script>
+
+</body>
+</html>
