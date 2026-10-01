@@ -329,27 +329,6 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 </span>
               </div>
             </div>
-
-            {/* 2ème Image Réelle Préparation Totum indexable (RÈGLE V1) */}
-            <div className="pt-6">
-              <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-[#D8CBB7]/60 bg-white shadow-md">
-                <div className="relative aspect-[16/9] sm:aspect-[21/9] overflow-hidden bg-[#FAF7F2]">
-                  <img
-                    src="/assets/images/extraction_precision_cleaned_1786616821723.jpg"
-                    alt={isFR ? "Exemple de préparation maison : extraction de précision du Totum végétal avec BloomLab" : lang === 'de' ? "Beispiel einer Hauszubereitung: Präzisionsextraktion des pflanzlichen Totums mit BloomLab" : "Home preparation example: precision botanical Totum extraction with BloomLab"}
-                    width={1200}
-                    height={675}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-3.5 bg-[#FAF7F2] border-t border-[#D8CBB7]/40 flex items-center justify-between text-xs text-[#0F261E]/80">
-                  <span className="font-semibold">{isFR ? "Exemple de préparation maison : extraction active du Totum végétal" : "Home preparation example: active plant Totum extraction"}</span>
-                  <span className="text-[10px] text-[#D97706] font-bold uppercase tracking-wider">Laboratoire Maison</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

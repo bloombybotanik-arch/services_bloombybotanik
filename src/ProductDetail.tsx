@@ -170,37 +170,27 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
         <div 
           className={`lg:w-1/2 flex flex-col justify-between transition-all ${
             isArgiles 
-              ? 'bg-gradient-to-b from-[#FAF8F5] via-[#F5F1EB] to-[#ECE5DB] p-6 sm:p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-[#1B3022]/5' 
+              ? 'bg-[#FAF8F5] relative overflow-hidden min-h-[380px] sm:min-h-[480px] lg:min-h-full border-b lg:border-b-0 lg:border-r border-[#1B3022]/10' 
               : 'bg-[#F9F9F7] relative overflow-hidden min-h-[300px] sm:min-h-[400px] lg:min-h-[560px] items-stretch'
           }`}
         >
           {/* Main Visual Display */}
           <div 
-            className={`relative flex-1 flex items-center justify-center cursor-zoom-in ${
-              isArgiles 
-                ? 'min-h-[260px] sm:min-h-[300px] lg:min-h-[360px] p-2' 
-                : 'w-full h-full'
-            }`}
+            className="relative flex-1 w-full h-full min-h-[380px] sm:min-h-[480px] lg:min-h-full flex items-center justify-center cursor-zoom-in overflow-hidden"
             onClick={() => setIsZoomed(true)}
           >
             {isArgiles ? (
-              <div className="relative flex flex-col items-center justify-center p-6 sm:p-8 bg-white/95 backdrop-blur-sm rounded-2xl sm:rounded-3xl border border-[#1B3022]/10 shadow-lg shadow-black/5 max-w-[340px] sm:max-w-[380px] w-full transition-transform duration-300 hover:scale-[1.01]">
-                <img 
-                  src={gallery[activeImage].src} 
-                  alt={gallery[activeImage].alt} 
-                  width={1200}
-                  height={1200}
-                  loading="eager"
-                  fetchPriority="high"
-                  srcSet={`${gallery[activeImage].src} 600w, ${gallery[activeImage].src} 1200w`}
-                  sizes="(max-width: 768px) 320px, 480px"
-                  className="max-h-[220px] sm:max-h-[260px] lg:max-h-[290px] w-auto max-w-full object-contain drop-shadow-md transition-all duration-300"
-                  style={{ imageRendering: 'auto' }}
-                />
-                <span className="mt-3 text-[10px] uppercase font-bold tracking-widest text-[#1B3022]/55">
-                  Synergie Zéolithe &amp; Bentonite (6μm)
-                </span>
-              </div>
+              <img 
+                src={gallery[activeImage].src} 
+                alt={gallery[activeImage].alt} 
+                width={1200}
+                height={1200}
+                loading="eager"
+                fetchPriority="high"
+                srcSet={`${gallery[activeImage].src} 600w, ${gallery[activeImage].src} 1200w`}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="w-full h-full min-h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+              />
             ) : (
               <img 
                 src={gallery[activeImage].src} 
@@ -215,7 +205,7 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
               />
             )}
             {isArgiles && (
-              <div className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-[#0F261E] text-[#D97706] px-3 sm:px-4 py-1.5 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] border border-[#D97706]/30 shadow-md z-20 whitespace-nowrap flex items-center gap-1.5">
+              <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-[#0F261E]/90 backdrop-blur-md text-[#D97706] px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] border border-[#D97706]/30 shadow-lg z-20 whitespace-nowrap flex items-center gap-1.5">
                 <Leaf className="w-3.5 h-3.5 text-[#D97706]" />
                 <span>Argiles &amp; Matières Premières</span>
               </div>

@@ -1067,7 +1067,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       subtitle: isFR ? "CHÉLATION NATURELLE & RÉÉQUILIBRAGE DE TERRAIN" : isDE ? "MINERALISCHE SYNERGIE & TERRAIN" : "MINERAL SYNERGY & TERRAIN",
       price: 34.00,
       originalPrice: 49.00,
-      images: [duoArgilesImg, "/assets/images/product_duo_argiles.jpg", "/assets/images/modern_herbalist_shelves_1786699793560.jpg", "/assets/images/home_lab_vibe_cleaned_1786616854146.jpg"],
+      images: [duoArgilesImg],
       description: isFR 
         ? "Une association de zéolithes et bentonites naturelles sélectionnées pour leurs propriétés d'adsorption et leur structure microporeuse unique."
         : isDE
