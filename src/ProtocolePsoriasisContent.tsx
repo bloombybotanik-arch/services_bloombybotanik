@@ -346,7 +346,7 @@ export default function ProtocolePsoriasisContent({
             <h2 className="text-2xl sm:text-3xl font-black text-[#0F261E] mb-6">
               {t.foreword.title}
             </h2>
-            <div className="p-4 rounded-2xl bg-[#FAF7F2] border-l-4 border-[#D97706] mb-6 text-sm font-serif italic text-[#0F261E]">
+            <div className="p-4 rounded-2xl bg-[#FAF7F2] border-l-4 border-[#D97706] mb-6 text-sm italic text-[#0F261E]">
               "{t.foreword.quote}"
             </div>
             <div className="space-y-4 text-sm sm:text-base text-[#0F261E]/80 leading-relaxed font-normal">

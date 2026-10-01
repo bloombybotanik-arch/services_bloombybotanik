@@ -78,20 +78,55 @@ object-fit: contain;
 .prose .bg-botanik-green, .prose [class*="bg-botanik-green"] { background-color: #0F261E !important; }
 .prose .bg-botanik-orange, .prose [class*="bg-botanik-orange"] { background-color: #D97706 !important; }
 
-h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); text-wrap: balance; letter-spacing: -0.02em; }
+/* Unification typographique absolue : site complet & fiches produits */
+*, *::before, *::after {
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--font-sans) !important;
+  text-wrap: balance;
+  letter-spacing: -0.02em;
+}
 h1 { font-weight: 800; line-height: 1.05; letter-spacing: -0.04em; font-size: clamp(2.1rem, 9vw, 3rem); }
 @media (min-width: 1024px) { h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); letter-spacing: -0.03em; } }
 h2 { font-weight: 800; line-height: 1.12; letter-spacing: -0.02em; font-size: clamp(1.6rem, 7vw, 2.2rem); }
 @media (min-width: 1024px) { h2 { font-size: clamp(1.75rem, 3vw, 3rem); letter-spacing: -0.015em; } }
 h3 { font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; font-size: clamp(1.25rem, 4vw, 1.6rem); }
-p, li { font-family: var(--font-body); font-size: 1rem; line-height: 1.65; max-width: 75ch; }
-.intro-text { font-size: clamp(1rem, 2vw, 1.2rem); line-height: 1.55; font-weight: 500; color: rgba(15, 38, 30, 0.7); }
-button { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.01em; }
-.label-caps { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.75rem; }
-h1 span, h2 span, h3 span { font-family: inherit; font-weight: inherit; }
-.font-serif { font-family: var(--font-display) !important; }
+h4 { font-weight: 700; line-height: 1.3; font-size: clamp(1.1rem, 3vw, 1.35rem); }
+h5, h6 { font-weight: 600; line-height: 1.4; font-size: clamp(0.95rem, 2.5vw, 1.15rem); }
 
-/* Bloom Académie — Règle stricte d'unification typographique H1, H2, H3, H4 */
+p, li, span, a, label, button, blockquote, dt, dd, th, td {
+  font-family: var(--font-sans) !important;
+}
+p, li { font-size: 1rem; line-height: 1.65; max-width: 75ch; }
+.intro-text { font-size: clamp(1rem, 2vw, 1.2rem); line-height: 1.55; font-weight: 500; color: rgba(15, 38, 30, 0.7); }
+button { font-weight: 700; letter-spacing: 0.01em; }
+.label-caps { font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.75rem; }
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; font-weight: inherit; }
+
+/* Règle impérative Pages Produits : H1-H6, paragraphes, Prix & Euros dans la même police */
+.product-detail,
+[data-product-page="true"],
+.product-sheet,
+.product-card {
+  font-family: var(--font-sans) !important;
+}
+
+.product-detail h1, .product-detail h2, .product-detail h3, .product-detail h4, .product-detail h5, .product-detail h6,
+.product-detail p, .product-detail span, .product-detail div, .product-detail button,
+.product-detail [class*="price"], .product-detail .price,
+[data-price], .price, .price-currency, .currency {
+  font-family: var(--font-sans) !important;
+}
+
+/* Neutralisation totale des polices divergentes pour une harmonie parfaite sur tout le site */
+.font-serif, [class*="font-serif"] {
+  font-family: var(--font-sans) !important;
+}
+
+/* Bloom Académie & Documentation — Règle stricte d'unification typographique */
 [data-bloom-academie="true"] h1,
 [data-bloom-academie="true"] h2,
 [data-bloom-academie="true"] h3,
@@ -104,7 +139,7 @@ h1 span, h2 span, h3 span { font-family: inherit; font-weight: inherit; }
 .bloom-academie h2,
 .bloom-academie h3,
 .bloom-academie h4 {
-  font-family: var(--font-display) !important;
+  font-family: var(--font-sans) !important;
   letter-spacing: -0.02em;
 }
 

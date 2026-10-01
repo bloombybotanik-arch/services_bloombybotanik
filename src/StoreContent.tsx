@@ -364,7 +364,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
   };
 
   return (
-    <div className="animate-in slide-in-from-right duration-500 pb-20">
+    <div data-product-page="true" className="product-detail animate-in slide-in-from-right duration-500 pb-20">
       <script type="application/ld+json">
         {JSON.stringify(breadcrumbSchema)}
       </script>
@@ -670,7 +670,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                     alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Machine à infusion botanique, tisanes et remèdes naturels`} 
                     className={
                       product.id === 'duo-argiles'
-                        ? 'w-full h-full object-contain p-4 transform transition-transform duration-500 group-hover:scale-105'
+                        ? 'w-full h-full object-contain p-6 sm:p-8 transform transition-transform duration-500 group-hover:scale-102'
                         : 'w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110'
                     }
                   />

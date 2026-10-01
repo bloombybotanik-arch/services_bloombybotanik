@@ -156,6 +156,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             <img 
               src={selectedHeroImage} 
               alt={t.seo.alt.extracteur} 
+              width={1200}
+              height={880}
+              loading="eager"
+              fetchPriority="high"
               className="w-full h-[520px] sm:h-[620px] md:h-[720px] lg:h-[820px] xl:h-[880px] object-cover object-[center_60%] brightness-105 contrast-105 filter transition-all duration-500" 
             />
             {/* Scrim ciblé sur le coin supérieur gauche pour la lisibilité du titre sans assombrir le visage de la femme à droite */}
@@ -323,6 +327,27 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#FAF7F2] border border-[#D8CBB7] hover:border-[#1C3F34] hover:bg-white transition-colors cursor-pointer text-xs font-semibold text-[#0F261E]">
                   <TooltipLexique terme="terrain" force={true}>Terrain biologique</TooltipLexique>
                 </span>
+              </div>
+            </div>
+
+            {/* 2ème Image Réelle Préparation Totum indexable (RÈGLE V1) */}
+            <div className="pt-6">
+              <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-[#D8CBB7]/60 bg-white shadow-md">
+                <div className="relative aspect-[16/9] sm:aspect-[21/9] overflow-hidden bg-[#FAF7F2]">
+                  <img
+                    src="/assets/images/extraction_precision_cleaned_1786616821723.jpg"
+                    alt={isFR ? "Exemple de préparation maison : extraction de précision du Totum végétal avec BloomLab" : lang === 'de' ? "Beispiel einer Hauszubereitung: Präzisionsextraktion des pflanzlichen Totums mit BloomLab" : "Home preparation example: precision botanical Totum extraction with BloomLab"}
+                    width={1200}
+                    height={675}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-3.5 bg-[#FAF7F2] border-t border-[#D8CBB7]/40 flex items-center justify-between text-xs text-[#0F261E]/80">
+                  <span className="font-semibold">{isFR ? "Exemple de préparation maison : extraction active du Totum végétal" : "Home preparation example: active plant Totum extraction"}</span>
+                  <span className="text-[10px] text-[#D97706] font-bold uppercase tracking-wider">Laboratoire Maison</span>
+                </div>
               </div>
             </div>
           </div>
@@ -1055,10 +1080,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
           </div>
 
           <div className="bg-white rounded-3xl p-8 sm:p-12 md:p-14 border border-[#E7DFD3] shadow-xl relative overflow-hidden">
-            <div className="absolute top-6 right-8 text-[#D97706]/15 select-none pointer-events-none text-8xl font-serif">“</div>
+            <div className="absolute top-6 right-8 text-[#D97706]/15 select-none pointer-events-none text-8xl ">“</div>
             
             <div className="max-w-none text-[#0F261E]/80 space-y-6 text-base sm:text-lg leading-relaxed font-light">
-              <p className="first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:text-[#1C3F34] first-letter:mr-3 first-letter:float-left">
+              <p className="first-letter:text-5xl first-letter:first-letter:font-bold first-letter:text-[#1C3F34] first-letter:mr-3 first-letter:float-left">
                 La BloomLab n'est pas une invention ex nihilo. Elle est la réponse technologique aux limites des textes fondateurs. Dans l'Ayurveda, la méthode du <em>Taila Paka</em> (cuisson lente des huiles médicinales) exigeait un contrôle visuel et tactile épuisant pour éviter que les plantes ne carbonisent. Dans la pharmacopée chinoise du <em>Shennong Ben Cao Jing</em>, on savait déjà que certaines racines exigeaient des décoctions longues, tandis que les fleurs nécessitaient des infusions flash.
               </p>
               <p>
@@ -1070,7 +1095,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               <div className="w-12 h-12 rounded-2xl bg-[#1C3F34] text-white flex items-center justify-center shrink-0 shadow-md">
                 <Activity className="w-6 h-6 text-[#D97706]" />
               </div>
-              <p className="text-sm sm:text-base font-serif italic text-[#1C3F34] leading-snug">
+              <p className="text-sm sm:text-base italic text-[#1C3F34] leading-snug">
                 « Nous n'avons pas réinventé la plante. Nous avons domestiqué la cinétique d'extraction pour que le Totum arrive intact jusqu'à vos récepteurs cellulaires. »
               </p>
             </div>

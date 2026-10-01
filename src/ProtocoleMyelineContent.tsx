@@ -1027,7 +1027,7 @@ export default function ProtocoleMyelineContent({
 
               {/* CTA BOUTIQUE BLOOMLAB */}
               <section className="p-8 sm:p-10 rounded-[32px] bg-[#1C3F34] text-white text-center max-w-4xl mx-auto shadow-xl no-print">
-                <div className="font-serif text-xl sm:text-2xl text-[#E7DFD3] mb-3 italic">
+                <div className="text-xl sm:text-2xl text-[#E7DFD3] mb-3 italic">
                   "Votre corps n'est pas cassé. Il est verrouillé."
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-black text-white mb-3">
@@ -1060,7 +1060,7 @@ export default function ProtocoleMyelineContent({
 
         {/* Footer */}
         <footer className="mt-20 border-t border-[#E7DFD3] pt-12 text-center text-xs text-[#0F261E]/60">
-          <div className="font-serif text-base text-[#0F261E] mb-2 font-bold">Bloom by BotaniK</div>
+          <div className="text-base text-[#0F261E] mb-2 font-bold">Bloom by BotaniK</div>
           <p className="mb-2">L'ingénierie au service du vivant • Phytothérapie de haute précision</p>
           <p>&copy; 2026 Bloom by BotaniK. Tous droits réservés.</p>
         </footer>

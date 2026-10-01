@@ -73,7 +73,7 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
                   {t.hero.title}<br />
                   <span className="text-[#F97316]">{t.hero.title_accent}</span>
                 </h1>
-                <p className="text-botanik-green/75 text-base sm:text-lg mb-8 max-w-xl font-serif italic">
+                <p className="text-botanik-green/75 text-base sm:text-lg mb-8 max-w-xl italic">
                   {lang === 'fr' 
                     ? "Explorez notre bibliothèque vivante de plantes médicinales, protocoles d'extraction et synergies actives pour restaurer votre terrain biologique."
                     : lang === 'de'

@@ -290,9 +290,9 @@ export const TooltipLexique: React.FC<TooltipLexiqueProps> = ({
           {entry.analogie && (
             <span className="block bg-white rounded-xl p-2.5 border border-[#E7DFD3] mb-3 opacity-100 shadow-xs">
               <span className="block text-xs italic text-[#1C3F34] leading-snug m-0 font-medium">
-                <span className="font-serif not-italic mr-1 text-[#D97706]">“</span>
+                <span className="not-italic mr-1 text-[#D97706]">“</span>
                 {entry.analogie}
-                <span className="font-serif not-italic ml-1 text-[#D97706]">”</span>
+                <span className="not-italic ml-1 text-[#D97706]">”</span>
               </span>
             </span>
           )}

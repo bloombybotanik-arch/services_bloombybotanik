@@ -48,7 +48,7 @@ export class ErrorBoundary extends Component<Props, State> {
               </svg>
             </div>
 
-            <h1 className="text-2xl md:text-3xl font-serif font-bold text-white mb-3">
+            <h1 className="text-2xl md:text-3xl font-bold text-white mb-3">
               Une interruption momentanée est survenue
             </h1>
 

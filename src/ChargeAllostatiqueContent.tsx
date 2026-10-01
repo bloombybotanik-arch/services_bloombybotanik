@@ -586,7 +586,7 @@ export const ChargeAllostatiqueContent: React.FC<ChargeAllostatiqueContentProps>
 
           <div className="p-6 rounded-2xl bg-[#0d1117]/80 border border-[#c9a84c]/30 text-center space-y-3">
             <div className="text-xs font-mono uppercase tracking-widest text-[#c9a84c]">Principe Fondateur</div>
-            <p className="text-xl sm:text-2xl font-serif italic text-white leading-relaxed">
+            <p className="text-xl sm:text-2xl italic text-white leading-relaxed">
               « Votre corps n’est pas cassé. Il est verrouillé par une charge adaptative devenue trop lourde. »
             </p>
           </div>

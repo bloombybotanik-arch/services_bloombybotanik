@@ -194,7 +194,7 @@ export default function Module0ChocParadigmeContent({
                 <BookOpen className="w-4 h-4" />
                 <span>Le manuscrit de Ge Hong — <em>Zhouhou Beiji Fang</em> (340 ap. J.-C.)</span>
               </div>
-              <p className="text-xs italic text-[#e5d7b7] font-serif">
+              <p className="text-xs italic text-[#e5d7b7] ">
                 « Prenez une poignée d'armoise, trempez-la dans deux litres d'eau fraîche, exprimez le jus et buvez-le tout entier. »
               </p>
               <p className="text-xs text-[#b8b8b8]">
@@ -292,7 +292,7 @@ export default function Module0ChocParadigmeContent({
 
           {/* Mandatory Closing Phrase */}
           <div className="mt-8 pt-6 border-t border-[#30363d] text-center">
-            <p className="text-sm sm:text-base font-serif italic text-[#f5f0e8] leading-relaxed">
+            <p className="text-sm sm:text-base italic text-[#f5f0e8] leading-relaxed">
               « Bloom by BotaniK, 2026. Pas comme une tradition. Comme une rigueur. Dans la continuité de 6 000 ans d'observation — et de 150 ans de biochimie. »
             </p>
           </div>

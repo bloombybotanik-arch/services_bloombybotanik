@@ -250,6 +250,45 @@ export default function CulinarySection({
             </p>
           </div>
         </div>
+
+        {/* Deux images réelles produit & préparation indexables (RÈGLE V1) */}
+        <div className="grid sm:grid-cols-2 gap-6 mt-8">
+          <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-botanik-green/10 bg-white shadow-sm flex flex-col">
+            <div className="relative aspect-[16/10] overflow-hidden bg-[#FAF7F2]">
+              <img
+                src="/img/produit/bloomlab-cuisine-1200x630.jpg"
+                alt={lang === 'fr' ? "Extraction culinaire et infusion d'huiles aromatiques avec BloomLab® en cuisine" : lang === 'de' ? "Kulinarische Extraktion und aromatisierte Öle mit BloomLab® in der Küche" : "Culinary extraction and aromatic oil infusion with BloomLab® in kitchen"}
+                width={1200}
+                height={630}
+                loading="eager"
+                fetchPriority="high"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-3 bg-[#FAF7F2] border-t border-botanik-green/5 flex items-center justify-between text-xs text-botanik-green/80">
+              <span className="font-semibold">{lang === 'fr' ? "BloomLab® en atelier culinaire" : "BloomLab® in culinary workshop"}</span>
+              <span className="text-[10px] text-[#D97706] font-bold uppercase">Extraction Douce</span>
+            </div>
+          </div>
+
+          <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-botanik-green/10 bg-white shadow-sm flex flex-col">
+            <div className="relative aspect-[16/10] overflow-hidden bg-[#FAF7F2]">
+              <img
+                src="/assets/images/BloomLab_rosemary_infusion.png"
+                alt={lang === 'fr' ? "Exemple de préparation culinaire : huile gastronomique infusée au romarin avec BloomLab" : lang === 'de' ? "Beispiel kulinarischer Zubereitung: Rosmarin-Öl-Infusion mit BloomLab" : "Culinary preparation example: rosemary infused gastronomic oil with BloomLab"}
+                width={1200}
+                height={750}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-3 bg-[#FAF7F2] border-t border-botanik-green/5 flex items-center justify-between text-xs text-botanik-green/80">
+              <span className="font-semibold">{lang === 'fr' ? "Exemple : Huile infusée au romarin" : "Example: Rosemary infused oil"}</span>
+              <span className="text-[10px] text-botanik-green font-bold uppercase">Préparation Maison</span>
+            </div>
+          </div>
+        </div>
       </header>
 
       <form onSubmit={handleSearch} className="relative mb-8 md:mb-16">

@@ -99,7 +99,7 @@ export default function BlogVieillissementMyelineContent({
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 leading-relaxed text-[#e6edf3]">
         
         {/* Lead Quote */}
-        <div className="p-6 rounded-2xl bg-[#161b22] border-l-4 border-[#c9a84c] border-[#30363d] mb-10 text-lg font-serif italic text-[#f5f0e8]">
+        <div className="p-6 rounded-2xl bg-[#161b22] border-l-4 border-[#c9a84c] border-[#30363d] mb-10 text-lg italic text-[#f5f0e8]">
           "Votre cerveau ne s'use pas parce qu'il vieillit. Il ralentit parce que les signaux de maintenance de sa gaine protectrice se sont éteints sous l'effet de l'inflammation silencieuse et des carences lipidiques."
         </div>
 

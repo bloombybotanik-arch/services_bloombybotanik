@@ -119,6 +119,45 @@ export default function CosmeticsContent({
             </p>
           </div>
         </div>
+
+        {/* Deux images réelles produit & préparation indexables (RÈGLE V1) */}
+        <div className="grid sm:grid-cols-2 gap-6 mt-8">
+          <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-botanik-green/10 bg-white shadow-sm flex flex-col">
+            <div className="relative aspect-[16/10] overflow-hidden bg-[#FAF7F2]">
+              <img
+                src="/assets/images/Bloom_Soins.jpg"
+                alt={lang === 'fr' ? "BloomLab® et les soins cosmétiques botaniques naturels faits maison" : lang === 'de' ? "BloomLab® und selbstgemachte natürliche botanische Kosmetik" : "BloomLab® and homemade natural botanical cosmetics"}
+                width={1200}
+                height={630}
+                loading="eager"
+                fetchPriority="high"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-3 bg-[#FAF7F2] border-t border-botanik-green/5 flex items-center justify-between text-xs text-botanik-green/80">
+              <span className="font-semibold">{lang === 'fr' ? "Sérums botaniques & rituels Bloom" : "Botanical serums & Bloom rituals"}</span>
+              <span className="text-[10px] text-[#D97706] font-bold uppercase">Cosmétique Maison</span>
+            </div>
+          </div>
+
+          <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-botanik-green/10 bg-white shadow-sm flex flex-col">
+            <div className="relative aspect-[16/10] overflow-hidden bg-[#FAF7F2]">
+              <img
+                src="/assets/images/extraction_precision_cleaned_1786616821723.jpg"
+                alt={lang === 'fr' ? "Exemple de préparation maison : macérat huileux végétal et sérum concentré en actifs" : lang === 'de' ? "Beispiel einer Hauszubereitung: pflanzlicher Ölauszug und wirkstoffreiches Serum" : "Home preparation example: botanical oil macerate and active-rich concentrated serum"}
+                width={1200}
+                height={800}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-3 bg-[#FAF7F2] border-t border-botanik-green/5 flex items-center justify-between text-xs text-botanik-green/80">
+              <span className="font-semibold">{lang === 'fr' ? "Exemple : Macérat huileux au laboratoire" : "Example: Botanical oil maceration"}</span>
+              <span className="text-[10px] text-botanik-green font-bold uppercase">Extraction Douce</span>
+            </div>
+          </div>
+        </div>
       </header>
 
       {/* Filters Bar */}

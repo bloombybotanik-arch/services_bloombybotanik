@@ -641,4 +641,104 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+
+  <!-- 5 Pages Piliers Stratégiques SEO -->
+  <url>
+    <loc>https://bloombybotanik.com/guide-complet-extraction-botanique-maison/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/guide-complet-extraction-botanique-maison/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/guide-complet-extraction-botanique-maison/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/guide-complet-extraction-botanique-maison/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/guide-complet-extraction-botanique-maison/"/>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/remedes-naturels-maison-guide/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/remedes-naturels-maison-guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/remedes-naturels-maison-guide/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/remedes-naturels-maison-guide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/remedes-naturels-maison-guide/"/>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/totum-vegetal-comprendre/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/totum-vegetal-comprendre/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/totum-vegetal-comprendre/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/totum-vegetal-comprendre/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/totum-vegetal-comprendre/"/>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/cosmetiques-naturels-diy/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/cosmetiques-naturels-diy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/cosmetiques-naturels-diy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/cosmetiques-naturels-diy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/cosmetiques-naturels-diy/"/>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/phytotherapie-moderne-scientifique/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/phytotherapie-moderne-scientifique/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/phytotherapie-moderne-scientifique/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/phytotherapie-moderne-scientifique/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/phytotherapie-moderne-scientifique/"/>
+  </url>
+
+  <!-- 7 Articles de Cluster Blog -->
+  <url>
+    <loc>https://bloombybotanik.com/blog/plantes-adaptogenes-stress/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://bloombybotanik.com/blog/rhodiola-fatigue-chronique/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://bloombybotanik.com/blog/ashwagandha-cortisol/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://bloombybotanik.com/blog/plantes-dormir-profondement/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://bloombybotanik.com/blog/melisse-valeriane-synergie/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://bloombybotanik.com/blog/plantes-anti-inflammatoires-naturelles/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://bloombybotanik.com/blog/curcuma-piperine-biodisponibilite/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
 </urlset>

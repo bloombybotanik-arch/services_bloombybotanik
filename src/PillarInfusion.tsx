@@ -109,10 +109,11 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-white/5 aspect-[16/10]">
                 <img
                   src="/img/produit/bloomlab-cuisine-1200x630.jpg"
-                  alt={t.meta.h1}
+                  alt={isFR ? "BloomLab® — Extracteur et infuseur botanique de précision en cuisine" : lang === 'de' ? "BloomLab® — Botanischer Präzisionsextraktor in der Küche" : "BloomLab® — Precision botanical extractor in kitchen environment"}
                   width={1200}
                   height={630}
-                  decoding="async"
+                  loading="eager"
+                  fetchPriority="high"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
@@ -156,6 +157,31 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
           <div className="bg-[#0F261E]/5 border-l-4 border-[#0F261E] p-5 rounded-r-2xl space-y-1 text-sm text-[#0F261E]">
             <p className="font-semibold text-[#0F261E]">{t.section1.calloutTitle}</p>
             <p className="italic leading-relaxed">{t.section1.calloutText}</p>
+          </div>
+
+          {/* 2ème Image Réelle Produit / Préparation indexable */}
+          <div className="my-8 rounded-2xl sm:rounded-3xl overflow-hidden border border-[#0F261E]/10 bg-white shadow-md">
+            <div className="relative aspect-[16/10] sm:aspect-[2/1] overflow-hidden">
+              <img
+                src="/assets/images/BloomLab_rosemary_infusion.png"
+                alt={isFR ? "Exemple de préparation maison : infusion active de romarin en chambre close avec BloomLab" : lang === 'de' ? "Beispiel einer Hauszubereitung: aktive Rosmarin-Infusion in geschlossener Kammer mit BloomLab" : "Home preparation example: active rosemary infusion in closed chamber with BloomLab"}
+                width={1200}
+                height={750}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4 bg-[#FAF7F2] border-t border-[#0F261E]/5 flex items-center justify-between text-xs text-[#0F261E]/80">
+              <span className="font-medium">
+                {isFR 
+                  ? "Exemple de préparation maison : extraction active en chambre close avec BloomLab®" 
+                  : lang === 'de'
+                  ? "Beispiel einer Hauszubereitung: aktive Extraktion in geschlossener Kammer mit BloomLab®"
+                  : "Home preparation example: active extraction in a closed chamber with BloomLab®"}
+              </span>
+              <span className="text-[#D97706] font-semibold">BloomLab®</span>
+            </div>
           </div>
         </section>
 

@@ -948,6 +948,86 @@ export const VIEW_METADATA: Record<string, MetaData> = {
     imageSquare: "/images/og/guide-utilisation-protocoles-bloomlab-1080x1080.jpg",
     imageAlt: "Abonnements numériques Bloom Academy",
     type: "website"
+  },
+  'guide-complet-extraction-botanique-maison': {
+    title: {
+      fr: "Guide Complet : Extraction Botanique à Domicile — Totum, Solvants & Températures",
+      en: "Complete Guide: Home Botanical Extraction — Totum, Solvents & Temperatures",
+      de: "Kompletter Guide: Botanische Extraktion zu Hause — Totum, Lösungsmittel & Temperaturen"
+    },
+    description: {
+      fr: "Guide expert de l'extraction des plantes médicinales à domicile : comparaison des 4 méthodes, solvants polaires/lipophiles, thermorégulation et préservation du Totum végétal.",
+      en: "Expert guide to home botanical extraction: 4 methods compared, solvents, thermoregulation, and totum preservation.",
+      de: "Expertenleitfaden für die botanische Extraktion zu Hause: 4 Methoden im Vergleich, Lösungsmittel und Thermoregulation."
+    },
+    image: "/images/og/guide-utilisation-protocoles-bloomlab-1200x630.jpg",
+    imageSquare: "/images/og/guide-utilisation-protocoles-bloomlab-1080x1080.jpg",
+    imageAlt: "Guide complet extraction botanique à domicile Totum et solvants",
+    type: "article"
+  },
+  'remedes-naturels-maison-guide': {
+    title: {
+      fr: "Remèdes Naturels Maison : Guide Pratique pour Débutants — Bloom by BotaniK",
+      en: "Home Natural Remedies: Practical Beginner Guide — Bloom by BotaniK",
+      de: "Natürliche Hausmittel: Praktischer Leitfaden für Anfänger — Bloom by BotaniK"
+    },
+    description: {
+      fr: "Comment fabriquer ses remèdes naturels maison en toute sécurité. Les 10 plantes indispensables, synergies pour le stress, le sommeil, l'inflammation et la digestion.",
+      en: "How to make safe home natural remedies. 10 essential herbs, synergies for stress, sleep, inflammation and digestion.",
+      de: "Wie man sichere natürliche Hausmittel herstellt. Die 10 wichtigsten Heilpflanzen für Stress, Schlaf und Entzündungen."
+    },
+    image: "/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg",
+    imageSquare: "/images/og/articles-savoirs-herboristerie-botanique-1080x1080.jpg",
+    imageAlt: "Guide pratique des remèdes naturels maison pour débutants",
+    type: "article"
+  },
+  'totum-vegetal-comprendre': {
+    title: {
+      fr: "Le Totum Végétal Expliqué : Pourquoi la Plante Entière est Plus Puissante",
+      en: "The Plant Totum Explained: Why the Whole Plant is More Powerful",
+      de: "Das Pflanzen-Totum erklärt: Warum die ganze Pflanze wirksamer ist"
+    },
+    description: {
+      fr: "De Paracelse à la network pharmacology : découvrez pourquoi le Totum végétal surpasse les molécules isolées de synthèse, études comparatives et préservation.",
+      en: "From Paracelsus to network pharmacology: why the plant totum outperforms isolated molecules.",
+      de: "Von Paracelsus zur Netzwerk-Pharmakologie: Warum das Pflanzen-Totum isolierte Moleküle übertrifft."
+    },
+    image: "/images/og/article-extraction-froid-chaud-totum-1200x630.jpg",
+    imageSquare: "/images/og/article-extraction-froid-chaud-totum-1080x1080.jpg",
+    imageAlt: "Le totum végétal et la synergie de la plante entière",
+    type: "article"
+  },
+  'cosmetiques-naturels-diy': {
+    title: {
+      fr: "Cosmétiques Naturels DIY : Créez vos Soins Visage & Corps avec BloomLab",
+      en: "DIY Natural Cosmetics: Create Face & Body Skincare with BloomLab",
+      de: "DIY Naturkosmetik: Gesichts- und Körperpflege mit BloomLab kreieren"
+    },
+    description: {
+      fr: "Fabriquez vos cosmétiques naturels maison : sérum anti-âge à la rose, baume réparateur au calendula, macérats précieux. Zéro conservateur chimique nocif.",
+      en: "Make your own natural skincare: anti-aging rose serum, calendula healing balm, pure botanical macerates.",
+      de: "Stellen Sie Ihre eigene Naturkosmetik her: Anti-Aging-Rosenserum, Calendula-Balsam und reine Ölauszüge."
+    },
+    image: "/images/og/article-fabriquer-huiles-infusees-teintures-1200x630.jpg",
+    imageSquare: "/images/og/article-fabriquer-huiles-infusees-teintures-1080x1080.jpg",
+    imageAlt: "Cosmétiques naturels maison DIY sérums et baumes végétaux",
+    type: "article"
+  },
+  'phytotherapie-moderne-scientifique': {
+    title: {
+      fr: "Phytothérapie Moderne : Quand la Science Valide les Plantes Médicinales",
+      en: "Modern Phytotherapy: When Science Validates Medicinal Plants",
+      de: "Moderne Phytotherapie: Wenn die Wissenschaft Heilpflanzen validiert"
+    },
+    description: {
+      fr: "La révolution de la network pharmacology (2020-2026), études cliniques sur les adaptogènes et validations pharmacologiques des remèdes traditionnels.",
+      en: "The network pharmacology revolution (2020-2026), clinical trials on adaptogens, and pharmacological validation of herbs.",
+      de: "Die Revolution der Netzwerk-Pharmakologie, klinische Studien zu Adaptogenen und pharmakologische Validierungen."
+    },
+    image: "/images/og/article-remedes-grand-mere-science-1200x630.jpg",
+    imageSquare: "/images/og/article-remedes-grand-mere-science-1080x1080.jpg",
+    imageAlt: "Phytothérapie moderne et validation scientifique des plantes médicinales",
+    type: "article"
   }
 };
 
@@ -1259,6 +1339,55 @@ export function getSEOMetadataForPath(rawPath: string, lang: Language = 'fr'): {
         imageAlt: "Guide des solvants naturels en phytothérapie",
         title: "Guide Solvants Naturels | Journal Bloom",
         desc: "Eau, alcool de grain, huiles végétales et vinaigre de cidre : quel solvant choisir pour extraire les principes actifs de vos plantes."
+      },
+      'plantes-adaptogenes-stress': {
+        image: '/images/og/article-plantes-adaptogenes-systeme-nerveux-1200x630.jpg',
+        imageSquare: '/images/og/article-plantes-adaptogenes-systeme-nerveux-1080x1080.jpg',
+        imageAlt: "Plantes adaptogènes pour le stress chronique",
+        title: "Plantes Adaptogènes pour le Stress : Le Guide Scientifique Complet",
+        desc: "Comment soulager le stress et l'épuisement nerveux avec les plantes adaptogènes ? Analyse clinique de l'Ashwagandha, Rhodiola et Tulsi sur l'axe HPA."
+      },
+      'rhodiola-fatigue-chronique': {
+        image: '/images/og/article-plantes-adaptogenes-systeme-nerveux-1200x630.jpg',
+        imageSquare: '/images/og/article-plantes-adaptogenes-systeme-nerveux-1080x1080.jpg',
+        imageAlt: "Rhodiola rosea contre la fatigue chronique et le surmenage",
+        title: "Rhodiola : L'Adaptogène Anti-Fatigue par Excellence | Bloom",
+        desc: "Fatigue chronique, burn-out, baisse de concentration ? Découvrez les mécanismes d'action de la Rhodiola Rosea (rosavines, salidrosides)."
+      },
+      'ashwagandha-cortisol': {
+        image: '/images/og/article-plantes-adaptogenes-systeme-nerveux-1200x630.jpg',
+        imageSquare: '/images/og/article-plantes-adaptogenes-systeme-nerveux-1080x1080.jpg',
+        imageAlt: "Ashwagandha pour réduire le cortisol naturellement",
+        title: "Ashwagandha : Réduire le Cortisol Naturellement | Bloom",
+        desc: "Comment l'Ashwagandha abaisse le taux de cortisol sérique de 27% et répare le système nerveux. Études cliniques et mode d'extraction."
+      },
+      'plantes-dormir-profondement': {
+        image: '/images/og/produit-kit-nuit-1200x630.jpg',
+        imageSquare: '/images/og/produit-kit-nuit-1080x1080.jpg',
+        imageAlt: "5 plantes médicinales pour dormir profondément",
+        title: "5 Plantes pour Dormir Profondément (Preuves Scientifiques) | Bloom",
+        desc: "Retrouvez un sommeil profond et réparateur sans somnifère : les 5 plantes médicinales validées par la science (Valériane, Passiflore, Mélisse)."
+      },
+      'melisse-valeriane-synergie': {
+        image: '/images/og/produit-kit-nuit-1200x630.jpg',
+        imageSquare: '/images/og/produit-kit-nuit-1080x1080.jpg',
+        imageAlt: "Synergie mélisse et valériane pour l insomnie",
+        title: "Mélisse + Valériane : La Synergie pour l'Insomnie | Bloom",
+        desc: "Pourquoi l'association Mélisse et Valériane surpasse chacune des deux plantes isolées ? Décryptage de la synergie GABAergique."
+      },
+      'plantes-anti-inflammatoires-naturelles': {
+        image: '/images/og/produit-kit-articulaire-1200x630.jpg',
+        imageSquare: '/images/og/produit-kit-articulaire-1080x1080.jpg',
+        imageAlt: "Plantes anti-inflammatoires naturelles et silencieuses",
+        title: "Plantes Anti-Inflammatoires : Le Guide Basé sur la Science | Bloom",
+        desc: "Comment calmer l'inflammation silencieuse avec les plantes : Curcuma, Reine des Prés, Boswellia, Gingembre. Mécanismes d'inhibition des cytokines."
+      },
+      'curcuma-piperine-biodisponibilite': {
+        image: '/images/og/produit-kit-articulaire-1200x630.jpg',
+        imageSquare: '/images/og/produit-kit-articulaire-1080x1080.jpg',
+        imageAlt: "Curcuma et pipérine synergie de biodisponibilité par 20",
+        title: "Curcuma + Poivre Noir : Multiplier la Biodisponibilité ×20 | Bloom",
+        desc: "Pourquoi le curcuma seul n'est presque pas absorbé par l'intestin ? Comment la pipérine et les corps gras multiplient son passage systémique par 20."
       }
     };
 

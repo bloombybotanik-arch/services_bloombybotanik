@@ -100,6 +100,7 @@ import MetabolismeInsulineContent from './MetabolismeInsulineContent';
 import ProtocolesSystemiquesContent from './ProtocolesSystemiquesContent';
 import Module0ChocParadigmeContent from './academie/Module0ChocParadigmeContent';
 import AxeA1EmonctoiresContent from './academie/AxeA1EmonctoiresContent';
+import PillarPagesContent from './PillarPagesContent';
 import { updateDocumentSEO } from './utils/seoManager';
 
 const PATH_VIEWS: Record<string, View> = {
@@ -781,32 +782,44 @@ export default function App() {
 
                   {/* SECTION: BLOOM ACADEMY (MENU DÉROULANT MOBILE) */}
                   <div className="pt-2 pb-1">
-                    <button
-                      type="button"
-                      onClick={() => setMobileBloomAcademyOpen(!mobileBloomAcademyOpen)}
-                      className="flex items-center justify-between w-full px-3 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-[0.22em] text-white hover:bg-white/5 transition-colors cursor-pointer group"
-                      aria-expanded={mobileBloomAcademyOpen}
-                    >
-                      <span className="flex items-center gap-2 text-white">
-                        <GraduationCap className="w-4 h-4 text-white" />
-                        <span className="text-white font-bold tracking-[0.22em]">BLOOM ACADEMY</span>
-                      </span>
-                      <div className="flex items-center gap-1.5">
-                        <span className="text-[8px] uppercase px-1.5 py-0.5 rounded-full bg-[#c9a84c]/20 text-[#c9a84c] font-bold">
+                    <div className="flex items-center justify-between gap-1 mb-1">
+                      <a
+                        href="/academie/"
+                        onClick={(e) => {
+                          if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                            e.preventDefault();
+                            navigateTo('academie');
+                            setMobileMenuOpen(false);
+                          }
+                        }}
+                        className="flex-1 flex items-center justify-between px-3 py-2 rounded-xl bg-[#FACC15]/10 hover:bg-[#FACC15]/15 border border-[#FACC15]/30 text-[#FACC15] transition-colors"
+                      >
+                        <span className="flex items-center gap-2 text-[#FACC15]">
+                          <GraduationCap className="w-4 h-4 text-[#FACC15]" />
+                          <span className="text-[#FACC15] font-bold text-xs tracking-wide">Bloom Academy</span>
+                        </span>
+                        <span className="text-[8px] uppercase px-1.5 py-0.5 rounded-full bg-[#FACC15]/20 text-[#FACC15] font-bold border border-[#FACC15]/30">
                           {selectedLanguage === 'fr' ? 'Pédagogie' : selectedLanguage === 'de' ? 'Pädagogik' : 'Pedagogy'}
                         </span>
+                      </a>
+                      <button
+                        type="button"
+                        onClick={() => setMobileBloomAcademyOpen(!mobileBloomAcademyOpen)}
+                        className="p-2 rounded-xl text-[#FACC15] hover:bg-[#FACC15]/15 border border-[#FACC15]/30 transition-colors"
+                        title="Ouvrir le menu Bloom Academy"
+                      >
                         {mobileBloomAcademyOpen ? (
-                          <ChevronDown className="w-3.5 h-3.5 text-white/80 group-hover:text-white" />
+                          <ChevronDown className="w-4 h-4 text-[#FACC15]" />
                         ) : (
-                          <ChevronRight className="w-3.5 h-3.5 text-white/80 group-hover:text-white" />
+                          <ChevronRight className="w-4 h-4 text-[#FACC15]" />
                         )}
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                   </div>
 
                   {mobileBloomAcademyOpen && (
                     <div className="space-y-1 mb-2">
-                      {/* Lien Bloom Academy - Accueil (EN BLANC) */}
+                      {/* Lien Accueil */}
                       <a
                         href="/academie/"
                         onClick={(e) => {
@@ -819,8 +832,8 @@ export default function App() {
                         className="flex items-center justify-between w-full px-3 py-2 rounded-xl bg-white/10 text-white font-bold text-xs uppercase tracking-wider hover:bg-white/20 transition-colors mb-1"
                       >
                         <span className="flex items-center gap-2.5">
-                          <GraduationCap className="w-4 h-4 text-white" />
-                          <span className="text-white font-bold">{selectedLanguage === 'fr' ? 'Bloom Academy — Accueil' : selectedLanguage === 'de' ? 'Bloom Academy — Startseite' : 'Bloom Academy — Home'}</span>
+                          <Home className="w-4 h-4 text-[#FAF7F2]/80" />
+                          <span className="text-white font-bold">{selectedLanguage === 'fr' ? 'Accueil' : selectedLanguage === 'de' ? 'Startseite' : 'Home'}</span>
                         </span>
                         <ArrowRight className="w-3.5 h-3.5 text-white/80" />
                       </a>
@@ -1300,6 +1313,8 @@ export default function App() {
             onBack={() => navigateTo('indexbis')}
             lang={selectedLanguage}
           />
+        ) : currentView === 'guide-complet-extraction-botanique-maison' || currentView === 'remedes-naturels-maison-guide' || currentView === 'totum-vegetal-comprendre' || currentView === 'cosmetiques-naturels-diy' || currentView === 'phytotherapie-moderne-scientifique' ? (
+          <PillarPagesContent pillar={currentView} lang={selectedLanguage} onNavigate={navigateTo} />
         ) : (
           <SEOArticles view={currentView} lang={selectedLanguage} t={t} onNavigate={navigateTo} isPremium={isSubscribed} onRequireAuth={() => setIsAuthOpen(true)} />
         )}

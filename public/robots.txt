@@ -10,6 +10,13 @@ Disallow: /panier/
 Disallow: /checkout/
 Disallow: /compte/
 
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /img/
+Allow: /products/
+Allow: /assets/
+Allow: /
+
 Sitemap: https://bloombybotanik.com/sitemap.xml
 Sitemap: https://bloombybotanik.com/sitemap-images.xml
 Sitemap: https://bloombybotanik.com/sitemap-fr.xml

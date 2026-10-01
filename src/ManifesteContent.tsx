@@ -153,6 +153,45 @@ export default function ManifesteContent({ onBack, onNavigate, lang }: Manifeste
             </div>
           </motion.header>
 
+          {/* Deux images réelles produit & préparation indexables (RÈGLE V1) */}
+          <div className="grid sm:grid-cols-2 gap-6 mb-12">
+            <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E7DFD3] bg-white shadow-sm flex flex-col">
+              <div className="relative aspect-[4/3] overflow-hidden bg-[#FAF7F2]">
+                <img
+                  src="/img/produit/bloomlab-face-1200x1200.jpg"
+                  alt={isFR ? "L'instrument BloomLab® — Rigueur d'extraction et souveraineté du terrain" : isDE ? "Das BloomLab®-Instrument — Extraktionspräzision und Terrainsouveränität" : "The BloomLab® instrument — Extraction rigor and terrain sovereignty"}
+                  width={1200}
+                  height={1200}
+                  loading="eager"
+                  fetchPriority="high"
+                  className="w-full h-full object-contain p-4"
+                />
+              </div>
+              <div className="p-3 bg-[#FAF7F2] border-t border-[#E7DFD3] flex items-center justify-between text-xs text-[#0F261E]/80">
+                <span className="font-semibold">{isFR ? "BloomLab® — Instrument d'autonomie" : "BloomLab® — Autonomy instrument"}</span>
+                <span className="text-[10px] text-[#D97706] font-bold uppercase">Souveraineté</span>
+              </div>
+            </div>
+
+            <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E7DFD3] bg-white shadow-sm flex flex-col">
+              <div className="relative aspect-[4/3] overflow-hidden bg-[#FAF7F2]">
+                <img
+                  src="/assets/images/home_lab_vibe_cleaned_1786616854146.jpg"
+                  alt={isFR ? "Exemple d'atelier botanique maison : rigueur scientifique et sagesses végétales" : isDE ? "Beispiel einer botanischen Heimwerkstatt" : "Example of home botanical workshop"}
+                  width={1200}
+                  height={800}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-3 bg-[#FAF7F2] border-t border-[#E7DFD3] flex items-center justify-between text-xs text-[#0F261E]/80">
+                <span className="font-semibold">{isFR ? "Atelier & laboratoire d'herboristerie" : "Botanical herbal laboratory"}</span>
+                <span className="text-[10px] text-[#0F261E] font-bold uppercase">Pratique Vivante</span>
+              </div>
+            </div>
+          </div>
+
           {/* Content Body */}
           <div className="space-y-10 text-slate-800 text-base sm:text-lg leading-relaxed font-normal">
             {isFR ? (
@@ -205,9 +244,9 @@ export default function ManifesteContent({ onBack, onNavigate, lang }: Manifeste
                       La <strong className="text-[#0F261E]">charge allostatique</strong> est l'usure accumulée par le corps lorsqu'il doit s'adapter trop souvent, trop longtemps, à trop de stress à la fois (émotionnels, hormonaux, inflammatoires, toxiques, métaboliques). Quand cette charge dépasse sa capacité de récupération, le corps ne revient plus à l'équilibre : c'est là que les symptômes s'installent.
                     </p>
                     <div className="p-4 rounded-xl bg-white border border-[#E7DFD3] text-[#1C3F34] italic text-sm">
-                      <span className="font-serif not-italic mr-1 text-[#D97706]">“</span>
+                      <span className="not-italic mr-1 text-[#D97706]">“</span>
                       Le problème n'est pas la paille qui a fait plier le dos de l'âne, mais le fardeau déjà présent sur son dos.
-                      <span className="font-serif not-italic ml-1 text-[#D97706]">”</span>
+                      <span className="not-italic ml-1 text-[#D97706]">”</span>
                     </div>
                   </div>
 

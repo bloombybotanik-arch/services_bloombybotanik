@@ -277,6 +277,31 @@
   <url>
     <loc>https://bloombybotanik.com/boutique/bloomlab/</loc>
     <image:image>
+      <image:loc>https://bloombybotanik.com/img/produit/bloomlab-1200x1200.jpg</image:loc>
+      <image:title>BloomLab® Extracteur Botanique de Précision — Vue Principale</image:title>
+      <image:caption>L'extracteur botanique et infuseur de précision BloomLab® pour extraire le Totum intégral des plantes médicinales.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/img/produit/bloomlab-face-1200x1200.jpg</image:loc>
+      <image:title>BloomLab® Extracteur Botanique — Face Fond Clair</image:title>
+      <image:caption>Design épuré en inox 304, chambre close et commandes thermiques au demi-degré près.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/img/produit/bloomlab-3quarts-1200x1200.jpg</image:loc>
+      <image:title>BloomLab® Extracteur Botanique — Vue 3/4 Inox Brossé</image:title>
+      <image:caption>Matériaux inertes et robustes pour préparations botaniques maison sans altération.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/img/produit/bloomlab-cuisine-1200x630.jpg</image:loc>
+      <image:title>BloomLab® en Situation Cuisine &amp; Apothicaire</image:title>
+      <image:caption>Exemple d'extraction botanique maison dans un environnement culinaire et laboratoire moderne.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/assets/images/BloomLab_rosemary_infusion.png</image:loc>
+      <image:title>Exemple de Préparation Maison : Infusion Active au Romarin BloomLab®</image:title>
+      <image:caption>Extraction active en chambre close avec capture des principes volatils et thermolabiles.</image:caption>
+    </image:image>
+    <image:image>
       <image:loc>https://bloombybotanik.com/images/og/produit-bloomlab-1200x630.jpg</image:loc>
       <image:title>BloomLab® : L'Extracteur &amp; Infuseur Botanique de Précision N°1 | Bloom by BotaniK</image:title>
       <image:caption>Commandez l'extracteur et infuseur botanique BloomLab®. Inox chirurgical 304, vortex cinétique, thermorégulation ±0,5°C pour extraire le Totum de vos plantes médicinales.</image:caption>
@@ -454,6 +479,52 @@
       <image:loc>https://bloombybotanik.com/images/og/article-plantes-adaptogenes-systeme-nerveux-1080x1080.jpg</image:loc>
       <image:title>Plantes Adaptogènes : Rééquilibrer l'Axe HPA et le Système Nerveux</image:title>
       <image:caption>Guide complet des plantes adaptogènes : Ashwagandha, Rhodiola, Éleuthérocoque, Basilic sacré. Régulez le cortisol, restaurez l'énergie vitale et libérez votre terrain.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 5 Pages Piliers Stratégiques -->
+  <url>
+    <loc>https://bloombybotanik.com/guide-complet-extraction-botanique-maison/</loc>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/images/og/guide-utilisation-protocoles-bloomlab-1200x630.jpg</image:loc>
+      <image:title>BloomLab vue complète et extraction du Totum végétal</image:title>
+      <image:caption>Schéma de séquençage A/B et thermorégulation de précision pour l'extraction botanique à domicile</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/remedes-naturels-maison-guide/</loc>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg</image:loc>
+      <image:title>Kits de plantes médicinales et remèdes naturels maison</image:title>
+      <image:caption>Synergies thérapeutiques pour le stress, le sommeil et l'inflammation avec BloomLab</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/totum-vegetal-comprendre/</loc>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/images/og/article-extraction-froid-chaud-totum-1200x630.jpg</image:loc>
+      <image:title>Schéma pédagogique du Totum Végétal et synergie pharmacologique</image:title>
+      <image:caption>Comparatif entre molécule de synthèse isolée et complexe moléculaire végétal complet</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/cosmetiques-naturels-diy/</loc>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/images/og/article-fabriquer-huiles-infusees-teintures-1200x630.jpg</image:loc>
+      <image:title>Extraits finis couleur et texture pour cosmétiques naturels DIY</image:title>
+      <image:caption>Sérum antioxydant à l'huile de rose et baume réparateur au calendula réalisés au BloomLab</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bloombybotanik.com/phytotherapie-moderne-scientifique/</loc>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/images/og/article-remedes-grand-mere-science-1200x630.jpg</image:loc>
+      <image:title>BloomLab en action et validation clinique de la phytothérapie</image:title>
+      <image:caption>Recherches de pointe en pharmacologie de réseau et biomimétisme végétal</image:caption>
     </image:image>
   </url>
 </urlset>

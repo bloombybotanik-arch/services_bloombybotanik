@@ -437,7 +437,7 @@ export default function TerrainPillar({ terrainId, lang, onNavigate }: TerrainPi
             <span>COMPRENDRE LE CORPS</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-serif font-black text-[#0F261E] tracking-tight leading-[1.1]">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-[#0F261E] tracking-tight leading-[1.1]">
             Les 7 Terrains
           </h1>
 
@@ -454,6 +454,45 @@ export default function TerrainPillar({ terrainId, lang, onNavigate }: TerrainPi
             <p className="text-sm sm:text-base text-[#0F261E] font-medium leading-relaxed">
               Les 7 Terrains Bloom sont 7 portes d’entrée pour apprendre. Vous n’avez pas besoin de tout maîtriser. Choisissez le sujet qui vous parle le plus aujourd’hui.
             </p>
+          </div>
+
+          {/* Deux images réelles produit & préparation indexables (RÈGLE V1) */}
+          <div className="grid sm:grid-cols-2 gap-6 my-6">
+            <div className="rounded-2xl overflow-hidden border border-[#D8CBB7] bg-white shadow-sm flex flex-col">
+              <div className="relative aspect-[16/10] overflow-hidden bg-[#FAF7F2]">
+                <img
+                  src="/img/produit/bloomlab-cuisine-1200x630.jpg"
+                  alt={lang === 'fr' ? "Extracteur botanique BloomLab® en situation de cuisine pour l'équilibre des terrains" : lang === 'de' ? "Botanischer Extraktor BloomLab® in der Küche für das Gleichgewicht der Terrains" : "BloomLab® botanical extractor in kitchen setting for terrain balance"}
+                  width={1200}
+                  height={630}
+                  loading="eager"
+                  fetchPriority="high"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-3 bg-[#FAF7F2] border-t border-[#D8CBB7]/40 flex items-center justify-between text-xs text-[#0F261E]/80">
+                <span className="font-semibold">{lang === 'fr' ? "BloomLab® — Extraction de précision" : lang === 'de' ? "BloomLab® — Präzisionsextraktion" : "BloomLab® — Precision extraction"}</span>
+                <span className="text-[10px] text-[#D97706] font-bold uppercase">Totum Végétal</span>
+              </div>
+            </div>
+
+            <div className="rounded-2xl overflow-hidden border border-[#D8CBB7] bg-white shadow-sm flex flex-col">
+              <div className="relative aspect-[16/10] overflow-hidden bg-[#FAF7F2]">
+                <img
+                  src="/assets/images/modern_herbalist_shelves_1786699793560.jpg"
+                  alt={lang === 'fr' ? "Exemple de préparation maison : flacons d'extraits botaniques et herboristerie moderne" : lang === 'de' ? "Beispiel einer Hauszubereitung: Flaschen mit botanischen Extrakten und moderner Kräuterkunde" : "Home preparation example: botanical extract bottles and modern herbalism"}
+                  width={1200}
+                  height={800}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-3 bg-[#FAF7F2] border-t border-[#D8CBB7]/40 flex items-center justify-between text-xs text-[#0F261E]/80">
+                <span className="font-semibold">{lang === 'fr' ? "Exemple de préparations et extraits maison" : lang === 'de' ? "Beispiel für Hauszubereitungen" : "Example of home botanical preparations"}</span>
+                <span className="text-[10px] text-[#1C3F34] font-bold uppercase">Herboristerie</span>
+              </div>
+            </div>
           </div>
 
           {/* Mini-repères horizontaux des 7 terrains */}
@@ -501,7 +540,7 @@ export default function TerrainPillar({ terrainId, lang, onNavigate }: TerrainPi
             <div className="text-[10px] font-mono text-[#D97706] uppercase tracking-widest font-bold">
               Vision Systémique
             </div>
-            <h2 className="text-2xl sm:text-3xl font-serif font-black text-[#0F261E]">
+            <h2 className="text-2xl sm:text-3xl font-black text-[#0F261E]">
               Comprendre le corps comme un ensemble
             </h2>
             <div className="space-y-4 text-base sm:text-lg text-slate-700 leading-relaxed font-light">
@@ -519,7 +558,7 @@ export default function TerrainPillar({ terrainId, lang, onNavigate }: TerrainPi
                   Ce sont des repères pour mieux observer le quotidien, comprendre les liens entre différentes fonctions du corps et choisir une approche plus cohérente : alimentation, sommeil, activité physique, gestion du stress, environnement et, lorsque cela est adapté, préparation botanique.
                 </p>
               </div>
-              <p className="font-serif italic text-lg text-[#1C3F34] pt-1">
+              <p className="italic text-lg text-[#1C3F34] pt-1">
                 « Un terrain n’explique jamais tout. Il aide à poser de meilleures questions. »
               </p>
             </div>
@@ -532,7 +571,7 @@ export default function TerrainPillar({ terrainId, lang, onNavigate }: TerrainPi
             <div className="text-[10px] font-mono text-[#D97706] uppercase tracking-widest font-bold">
               Origines &amp; Biologie Moderne
             </div>
-            <h2 className="text-2xl sm:text-3xl font-serif font-black text-[#0F261E]">
+            <h2 className="text-2xl sm:text-3xl font-black text-[#0F261E]">
               Pourquoi parler de terrains ?
             </h2>
           </div>
@@ -597,7 +636,7 @@ export default function TerrainPillar({ terrainId, lang, onNavigate }: TerrainPi
             <div className="text-[10px] font-mono text-[#D97706] uppercase tracking-widest font-bold">
               Grille d’Observation
             </div>
-            <h2 className="text-2xl sm:text-3xl font-serif font-black text-[#0F261E]">
+            <h2 className="text-2xl sm:text-3xl font-black text-[#0F261E]">
               Les 7 Terrains Bloom en Détail
             </h2>
             <p className="text-slate-600 text-sm">
@@ -629,7 +668,7 @@ export default function TerrainPillar({ terrainId, lang, onNavigate }: TerrainPi
                           </span>
                           <span className="text-[10px] font-medium text-slate-400">• {terrain.internalReference}</span>
                         </div>
-                        <h3 className="text-2xl sm:text-3xl font-serif font-black text-[#0F261E]">
+                        <h3 className="text-2xl sm:text-3xl font-black text-[#0F261E]">
                           {terrain.title}
                         </h3>
                         <p className="text-sm font-medium text-[#1C3F34]">{terrain.subtitle}</p>
@@ -717,7 +756,7 @@ export default function TerrainPillar({ terrainId, lang, onNavigate }: TerrainPi
               <div className="text-[10px] font-mono text-[#D97706] uppercase tracking-widest font-bold">
                 Interconnexions Vivantes
               </div>
-              <h2 className="text-2xl sm:text-3xl font-serif font-black text-[#0F261E]">
+              <h2 className="text-2xl sm:text-3xl font-black text-[#0F261E]">
                 Les terrains ne fonctionnent pas séparément
               </h2>
             </div>
@@ -774,7 +813,7 @@ export default function TerrainPillar({ terrainId, lang, onNavigate }: TerrainPi
               <div className="text-[10px] font-mono text-[#D97706] uppercase tracking-widest font-bold">
                 Parcours d'Apprentissage
               </div>
-              <h2 className="text-2xl sm:text-3xl font-serif font-black text-[#0F261E]">
+              <h2 className="text-2xl sm:text-3xl font-black text-[#0F261E]">
                 Comment utiliser cette grille
               </h2>
               <p className="text-slate-600 text-sm sm:text-base">
@@ -896,7 +935,7 @@ export default function TerrainPillar({ terrainId, lang, onNavigate }: TerrainPi
             <div className="text-[10px] font-mono text-[#D97706] uppercase tracking-widest font-bold">
               Modules Recommandés
             </div>
-            <h2 className="text-2xl sm:text-3xl font-serif font-black text-[#0F261E]">
+            <h2 className="text-2xl sm:text-3xl font-black text-[#0F261E]">
               Poursuivre dans l’Académie
             </h2>
             <p className="text-slate-600 text-sm">

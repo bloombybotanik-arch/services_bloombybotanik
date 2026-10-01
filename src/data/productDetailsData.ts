@@ -280,7 +280,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       subtitle: isFR ? "L'AUTONOMIE BOTANIQUE TOTALE" : "TOTAL BOTANICAL AUTONOMY",
       price: 289.00,
       originalPrice: 349.00,
-      images: [bloomLabImg, seveFondamentaleImg, nuitProfondeImg, digestionImg, feuArticulaireImg, bouclierHiverImg, duoArgilesImg],
+      images: ["/img/produit/pack-signature-1200x1200.jpg", bloomLabImg, trioPouchesImg, duoArgilesImg, seveFondamentaleImg, nuitProfondeImg],
       description: isFR 
         ? "Le Pack Signature regroupe l'instrument BloomLab® et l'intégralité de la collection de kits remèdes 2026. Une solution clé en main pour votre souveraineté sanitaire."
         : "The Signature Pack includes the BloomLab® instrument and the entire 2026 remedy kit collection.",
@@ -448,7 +448,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       name: isFR ? "SÈVE FONDAMENTALE" : isDE ? "GRUNDLEGENDER SAFT" : "FUNDAMENTAL SAP",
       subtitle: isFR ? "VITALITÉ & STRUCTURE" : isDE ? "VITALITÄT & STRUKTUR" : "VITALITY & STRUCTURE",
       price: 12.90,
-      images: [seveFondamentaleImg],
+      images: [seveFondamentaleImg, trioPouchesImg, "/assets/images/herbs_close_up_cleaned_1786616800877.jpg", "/assets/images/home_lab_vibe_cleaned_1786616854146.jpg"],
       description: isFR 
         ? "La SÈVE FONDAMENTALE est un protocole de restauration profonde pour consolider l'architecture de votre organisme."
         : "The FUNDAMENTAL SAP is a deep restoration protocol to consolidate the architecture of your organism.",
@@ -578,7 +578,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       name: isFR ? "NUIT PROFONDE" : isDE ? "TIEFE NACHT" : "DEEP NIGHT",
       subtitle: isFR ? "SOMMEIL & ANCRAGE" : isDE ? "SCHLAF & ERDUNG" : "SLEEP & GROUNDING",
       price: 9.90,
-      images: [nuitProfondeImg],
+      images: [nuitProfondeImg, trioPouchesImg, "/assets/images/herbs_close_up_cleaned_1786616800877.jpg", "/assets/images/modern_herbalist_shelves_1786699793560.jpg"],
       description: isFR 
         ? "Le CONCENTRÉ NUIT PROFONDE est une réponse structurelle à la charge mentale et à l'agitation nocturne."
         : "The DEEP NIGHT CONCENTRATE is a structural response to mental load and nocturnal agitation.",
@@ -699,7 +699,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       name: isFR ? "ÉQUILIBRE & FLUX" : isDE ? "GLEICHGEWICHT & FLUSS" : "BALANCE & FLOW",
       subtitle: isFR ? "ÉQUILIBRE INTESTINAL" : isDE ? "DARMGLEICHGEWICHT" : "INTESTINAL BALANCE",
       price: 9.90,
-      images: [digestionImg],
+      images: [digestionImg, trioPouchesImg, "/assets/images/herbs_close_up_cleaned_1786616800877.jpg", "/assets/images/natural_remedies_cleaned_1786616831671.jpg"],
       description: isFR 
         ? "Le CONCENTRÉ ÉQUILIBRE & FLUX est un protocole de gestion des fluides et de maintenance des réseaux internes à base de <a href=\"/boutique\" class=\"text-botanik-orange font-bold hover:underline\">Gingembre</a> et Romarin."
         : "The BALANCE & FLOW CONCENTRATE is a fluid management and internal network maintenance protocol.",
@@ -820,7 +820,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       name: isFR ? "MOUVEMENT LIBRE" : isDE ? "GELENKFEUER" : "JOINT FIRE",
       subtitle: isFR ? "SOUPLESSE & MAINTENANCE ARTICULAIRE" : isDE ? "FLEXIBILITÄT & MOBILITÄT" : "FLEXIBILITY & MOBILITY",
       price: 9.90,
-      images: [feuArticulaireImg],
+      images: [feuArticulaireImg, trioPouchesImg, "/assets/images/herbs_close_up_cleaned_1786616800877.jpg", "/assets/images/extraction_precision_cleaned_1786616821723.jpg"],
       description: isFR 
         ? "Le CONCENTRÉ MOUVEMENT LIBRE est une réponse technique aux besoins de flexibilité de votre édifice biologique grâce au <a href=\"/boutique/kit-articulaire/\" class=\"text-botanik-orange font-bold hover:underline\">Boswellia Serrata</a>."
         : "The JOINT FIRE CONCENTRATE is a technical response to the flexibility needs of your biological building.",
@@ -945,7 +945,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       name: isFR ? "BOUCLIER HIVER" : isDE ? "WINTERSCHUTZ" : "WINTER SHIELD",
       subtitle: isFR ? "RÉSILIENCE SAISONNIÈRE" : isDE ? "SAISONALE RESILIENZ" : "SEASONAL RESILIENCE",
       price: 9.90,
-      images: [bouclierHiverImg],
+      images: [bouclierHiverImg, trioPouchesImg, "/assets/images/herbs_close_up_cleaned_1786616800877.jpg", "/assets/images/natural_remedies_cleaned_1786616831671.jpg"],
       description: isFR 
         ? "L’élixir BOUCLIER TOTAL est un concentré de défense structurelle conçu selon une architecture moléculaire précise."
         : "The WINTER SHIELD elixir is a structural defense concentrate designed according to precise molecular architecture.",
@@ -1067,71 +1067,107 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       subtitle: isFR ? "CHÉLATION NATURELLE & RÉÉQUILIBRAGE DE TERRAIN" : isDE ? "MINERALISCHE SYNERGIE & TERRAIN" : "MINERAL SYNERGY & TERRAIN",
       price: 34.00,
       originalPrice: 49.00,
-      images: [duoArgilesImg],
+      images: [duoArgilesImg, "/assets/images/product_duo_argiles.jpg", "/assets/images/modern_herbalist_shelves_1786699793560.jpg", "/assets/images/home_lab_vibe_cleaned_1786616854146.jpg"],
       description: isFR 
         ? "Une association de zéolithes et bentonites naturelles sélectionnées pour leurs propriétés d'adsorption et leur structure microporeuse unique."
         : isDE
         ? "Eine Kombination aus natürlichen Zeolithen und Bentoniten, ausgewählt aufgrund ihrer Adsorptionseigenschaften und ihrer einzigartigen mikroporösen Struktur."
         : "An association of natural zeolites and bentonites selected for their adsorption properties and unique microporous structure.",
       fullDescription: isFR ? `
-        <div class="prose prose-botanik max-w-none">
-          <div class="bg-[#1B3022]/5 p-10 rounded-[40px] mb-12 border-2 border-botanik-orange">
-            <h3 class="text-3xl font-bold text-botanik-green mb-6 text-center">L'Ingénierie Minérale de Précision</h3>
-            <p class="text-xl leading-relaxed text-botanik-green text-center">
-              Le Duo Argiles repose sur l'affinité physico-chimique de minéraux volcaniques rares. Une approche scientifique du <strong>rééquilibrage du terrain</strong> par la maîtrise des polarités minérales.
+        <div class="prose prose-botanik max-w-none space-y-8">
+          <div class="bg-[#FAF8F5] p-6 sm:p-8 rounded-3xl border border-[#1B3022]/10 text-center">
+            <h3 class="text-xl sm:text-2xl font-bold text-[#0F261E] mb-2.5">L'Ingénierie Minérale de Précision</h3>
+            <p class="text-xs sm:text-sm leading-relaxed text-[#1B3022]/75 max-w-xl mx-auto">
+              Le Duo Argiles repose sur l'affinité physico-chimique de minéraux volcaniques purs. Une approche rigoureuse du <strong>rééquilibrage du terrain</strong> par la maîtrise des polarités minérales.
             </p>
           </div>
 
-          <h3 class="text-2xl font-bold text-botanik-green mb-6">Propriétés Physico-Chimiques & Granulométrie</h3>
-          <p class="mb-12">Grâce à une activation tribomécanique, ces minéraux atteignent une finesse de <strong>6 microns</strong>. Cette réduction granulométrique démultiplie la surface d'échange active, permettant une interaction optimale au sein du cadre digestif.</p>
-
-          <div class="grid md:grid-cols-2 gap-8 mb-12">
-            <div class="bg-white border border-botanik-green/10 p-8 rounded-3xl shadow-sm">
-              <h4 class="font-bold text-botanik-green mb-4">Zéolithe Clinoptilolite (6μm)</h4>
-              <p class="text-sm">Un minéral à structure cristalline microporeuse (cage moléculaire) agissant par échange cationique sélectif, sans interaction avec la circulation systémique.</p>
-            </div>
-            <div class="bg-white border border-botanik-green/10 p-8 rounded-3xl shadow-sm">
-              <h4 class="font-bold text-botanik-green mb-4">Bentonite / Montmorillonite</h4>
-              <p class="text-sm">Une argile smectite de haute pureté, reconnue pour son pouvoir couvrant et ses capacités d'adsorption au sein de la barrière intestinale.</p>
-            </div>
-          </div>
-
-          <h3 class="text-2xl font-bold text-botanik-green mb-6">Protocole d'Usage Conseillé</h3>
-          <div class="space-y-8 mb-12">
-            <div class="flex gap-6">
-              <div class="w-12 h-12 bg-[#D97706] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #D97706; color: #ffffff;">1</div>
-              <div>
-                <h4 class="font-bold text-botanik-green">Mise en Suspension</h4>
-                <p class="text-sm text-botanik-green/70">Mélangez une dose dans un grand verre d'eau filtrée. Utilisez de préférence des ustensiles non métalliques pour préserver la charge électrique des minéraux.</p>
-              </div>
-            </div>
-            <div class="flex gap-6">
-              <div class="w-12 h-12 bg-[#D97706] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #D97706; color: #ffffff;">2</div>
-              <div>
-                <h4 class="font-bold text-botanik-green">Rythme de Croisière</h4>
-                <p class="text-sm text-botanik-green/70">À consommer à distance des repas et de toute prise de compléments ou médicaments (intervalle de 2h minimum).</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-[#0F261E] text-white p-10 rounded-[40px] mb-12 shadow-lg" style="background-color: #0F261E; color: #ffffff;">
-            <h4 class="font-bold mb-6 text-white text-xl text-center">Qualité & Certification</h4>
-            <p class="text-center text-sm text-white/80 mb-0">
-              Grade Pharmacopée Européenne. 100% pur, sans additif, sans nanoparticules. Une intégrité minérale totale pour un respect absolu de votre physiologie.
+          <div>
+            <h3 class="text-lg sm:text-xl font-bold text-[#0F261E] mb-2.5">Propriétés Physico-Chimiques & Granulométrie</h3>
+            <p class="text-xs sm:text-sm text-[#1B3022]/75 leading-relaxed mb-6">
+              Grâce à une activation tribomécanique, ces minéraux atteignent une finesse optimale de <strong>6 microns</strong>. Cette réduction granulométrique démultiplie la surface d'échange active, permettant une dispersion homogène et une capture douce au sein du tractus digestif.
             </p>
           </div>
 
-          <div class="bg-red-50 p-6 rounded-2xl mt-8 text-xs text-red-900 italic">
-            <strong>⚠️ Précautions :</strong> Ne constitue pas un avis médical. Consultez un professionnel de santé en cas de traitement en cours. Ne pas inhaler. Tenir hors de portée des enfants.
+          <div class="grid sm:grid-cols-2 gap-4 sm:gap-6">
+            <div class="bg-white border border-[#1B3022]/10 p-5 sm:p-6 rounded-2xl shadow-xs">
+              <h4 class="font-bold text-[#0F261E] text-sm sm:text-base mb-2">Zéolithe Clinoptilolite (6μm)</h4>
+              <p class="text-xs sm:text-sm text-[#1B3022]/70 leading-relaxed">
+                Minéral à structure cristalline microporeuse agissant par échange cationique sélectif, piégeant les molécules indésirables sans franchir la barrière intestinale.
+              </p>
+            </div>
+            <div class="bg-white border border-[#1B3022]/10 p-5 sm:p-6 rounded-2xl shadow-xs">
+              <h4 class="font-bold text-[#0F261E] text-sm sm:text-base mb-2">Bentonite Montmorillonite</h4>
+              <p class="text-xs sm:text-sm text-[#1B3022]/70 leading-relaxed">
+                Argile smectite de haute pureté reconnue pour son pouvoir tapissant et sa capacité d'adsorption protectrice au niveau du film muqueux digestif.
+              </p>
+            </div>
           </div>
 
-          <p class="text-center italic text-botanik-green/40 mt-12">
-            "L'Ingénierie au service du vivant. Le Duo Argiles est l'outil minéral de votre souveraineté." — L'Architecte Bloom
+          <div>
+            <h3 class="text-lg sm:text-xl font-bold text-[#0F261E] mb-4">Protocole d'Usage Recommandé</h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="flex items-start gap-3.5 bg-white border border-[#1B3022]/8 p-4 rounded-xl">
+                <div class="w-7 h-7 bg-[#0F261E] text-[#D97706] rounded-full flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</div>
+                <div>
+                  <h4 class="font-bold text-xs sm:text-sm text-[#0F261E] mb-1">Mise en Suspension</h4>
+                  <p class="text-xs text-[#1B3022]/70 leading-relaxed">Diluez une dosette rase dans un grand verre d'eau tempérée. Privilégiez une cuillère en bois ou en verre pour respecter les polarités ioniques.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3.5 bg-white border border-[#1B3022]/8 p-4 rounded-xl">
+                <div class="w-7 h-7 bg-[#0F261E] text-[#D97706] rounded-full flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</div>
+                <div>
+                  <h4 class="font-bold text-xs sm:text-sm text-[#0F261E] mb-1">Rythme & Espacement</h4>
+                  <p class="text-xs text-[#1B3022]/70 leading-relaxed">À consommer à jeun le matin ou au coucher, en respectant un intervalle minimum de 2 heures avec tout repas, complément ou traitement.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#0F261E] text-white p-6 sm:p-7 rounded-2xl sm:rounded-3xl shadow-sm text-center">
+            <h4 class="font-semibold text-white text-base sm:text-lg mb-2">Pureté Certifiée Pharmacopée Européenne</h4>
+            <p class="text-xs sm:text-sm text-white/75 max-w-lg mx-auto leading-relaxed mb-0">
+              100% minéraux purs de grade pharmaceutique. Sans conservateur, sans irradiation, sans nanoparticules. Une formulation transparente respectant l'intégrité biologique de votre organisme.
+            </p>
+          </div>
+
+          <div class="bg-amber-50/70 border border-amber-200/50 p-4 rounded-xl text-xs text-amber-900/80 leading-relaxed">
+            <strong>Recommandations d'usage :</strong> Ce produit s'inscrit dans une démarche de bien-être et ne constitue pas un médicament ni un diagnostic médical. Femmes enceintes, allaitantes ou personnes sous traitement médical : demander conseil à un professionnel de santé.
+          </div>
+
+          <p class="text-center italic text-[11px] text-[#1B3022]/40 pt-2">
+            "L'Ingénierie minérale au service de l'équilibre homéostasique." — L'Architecte Bloom
           </p>
         </div>
       ` : `
-        <div class="prose prose-botanik max-w-none">
-          <p class="text-lg mb-6">${isDE ? "Dieses Duo ist ein wissenschaftlicher Ansatz zur Neuausrichtung des Terrains..." : "This duo is a scientific approach to rebalancing the terrain..."}</p>
+        <div class="prose prose-botanik max-w-none space-y-8">
+          <div class="bg-[#FAF8F5] p-6 sm:p-8 rounded-3xl border border-[#1B3022]/10 text-center">
+            <h3 class="text-xl sm:text-2xl font-bold text-[#0F261E] mb-2.5">
+              ${isDE ? "Präzise Mineralstoff-Ingenieurkunst" : "Precision Mineral Engineering"}
+            </h3>
+            <p class="text-xs sm:text-sm leading-relaxed text-[#1B3022]/75 max-w-xl mx-auto">
+              ${isDE ? "Das Duo basiert auf reinen vulkanischen Mineralien für die gezielte Neuausrichtung des biologischen Terrains." : "The Duo relies on pure volcanic minerals for the deliberate rebalancing of the biological terrain."}
+            </p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4 sm:gap-6">
+            <div class="bg-white border border-[#1B3022]/10 p-5 rounded-2xl shadow-xs">
+              <h4 class="font-bold text-[#0F261E] text-sm sm:text-base mb-2">
+                ${isDE ? "Klinoptilolith-Zeolith (6μm)" : "Clinoptilolite Zeolite (6μm)"}
+              </h4>
+              <p class="text-xs sm:text-sm text-[#1B3022]/70 leading-relaxed">
+                ${isDE ? "Mikroporöse Struktur für selektiven Kationenaustausch ohne systemische Aufnahme." : "Microporous crystalline structure acting through selective cation exchange without systemic absorption."}
+              </p>
+            </div>
+            <div class="bg-white border border-[#1B3022]/10 p-5 rounded-2xl shadow-xs">
+              <h4 class="font-bold text-[#0F261E] text-sm sm:text-base mb-2">
+                ${isDE ? "Montmorillonit-Bentonit" : "Montmorillonite Bentonite"}
+              </h4>
+              <p class="text-xs sm:text-sm text-[#1B3022]/70 leading-relaxed">
+                ${isDE ? "Hohe Bindekraft und schützende Abdeckung der Schleimhautbarriere." : "High purity smectite clay renowned for mucosal soothing and protective barrier adsorption."}
+              </p>
+            </div>
+          </div>
         </div>
       `,
       specs: [

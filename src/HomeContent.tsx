@@ -88,11 +88,14 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative order-2 lg:order-1">
               <div className="rounded-[32px] overflow-hidden shadow-2xl">
-                <OptimizedImage 
+                <img 
                   src="/img/produit/bloomlab-cuisine-1200x630.jpg" 
                   className="w-full aspect-[4/3] object-cover" 
-                  alt="BloomLab en cuisine d'apothicaire" 
-                  priority={true}
+                  alt={isFR ? "BloomLab® en situation de cuisine d'apothicaire" : "BloomLab® in kitchen herbal setting"} 
+                  width={1200}
+                  height={900}
+                  loading="eager"
+                  fetchPriority="high"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-white rounded-3xl shadow-xl flex items-center justify-center p-6 border border-botanik-orange/10">
@@ -173,10 +176,14 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
             </div>
             <div className="relative">
               <div className="rounded-[40px] overflow-hidden shadow-2xl border-4 border-white/10">
-                <OptimizedImage 
+                <img 
                   src="/img/produit/bloomlab-face-1200x1200.jpg" 
                   className="w-full aspect-square object-cover" 
-                  alt="Extracteur Botanique BloomLab" 
+                  alt={isFR ? "Extracteur Botanique BloomLab® face fond clair" : "BloomLab® botanical extractor front view"} 
+                  width={1200}
+                  height={1200}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="absolute -top-6 -left-6 bg-botanik-orange text-white px-6 py-3 rounded-2xl font-bold shadow-xl rotate-[-5deg]">

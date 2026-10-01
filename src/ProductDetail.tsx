@@ -112,7 +112,7 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
   };
 
   return (
-    <article className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-20 animate-in fade-in slide-in-from-bottom-4 duration-700">
+    <article data-product-page="true" className="product-detail w-full max-w-[1200px] mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-20 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <script type="application/ld+json">
         {JSON.stringify(productSchema)}
       </script>
@@ -165,46 +165,95 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
         </a>
       </div>
 
-      <div className="flex flex-col lg:flex-row items-stretch bg-white border border-[#1B3022]/5 rounded-3xl sm:rounded-[48px] overflow-hidden shadow-2xl mb-16 sm:mb-24 min-h-0 lg:min-h-[640px]">
-        {/* Left Side: Image */}
+      <div className="flex flex-col lg:flex-row items-stretch bg-white border border-[#1B3022]/5 rounded-3xl sm:rounded-[48px] overflow-hidden shadow-2xl mb-16 sm:mb-24 min-h-0 lg:min-h-[580px]">
+        {/* Left Side: Visual Showcase & Gallery */}
         <div 
-          className={`lg:w-1/2 relative overflow-hidden min-h-[300px] sm:min-h-[400px] lg:min-h-[560px] cursor-zoom-in flex items-center justify-center transition-all ${
+          className={`lg:w-1/2 flex flex-col justify-between transition-all ${
             isArgiles 
-              ? 'bg-gradient-to-b from-[#FAF8F5] via-[#F4F0EB] to-[#ECE5DB] p-6 sm:p-10 lg:p-14' 
-              : 'bg-[#F9F9F7] items-stretch'
+              ? 'bg-gradient-to-b from-[#FAF8F5] via-[#F5F1EB] to-[#ECE5DB] p-6 sm:p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-[#1B3022]/5' 
+              : 'bg-[#F9F9F7] relative overflow-hidden min-h-[300px] sm:min-h-[400px] lg:min-h-[560px] items-stretch'
           }`}
-          onClick={() => setIsZoomed(true)}
         >
-          <img 
-            src={gallery[activeImage].src} 
-            alt={gallery[activeImage].alt} 
-            className={
-              isArgiles
-                ? "max-h-[300px] sm:max-h-[360px] lg:max-h-[400px] max-w-[85%] sm:max-w-[75%] lg:max-w-[70%] w-auto h-auto object-contain rounded-2xl sm:rounded-3xl shadow-md border border-[#1B3022]/10 transition-transform duration-500 hover:scale-[1.03]"
-                : "w-full h-full object-cover transition-all duration-500 scale-105 sm:scale-110 hover:scale-125"
-            }
-          />
-          {isArgiles && (
-            <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-[#0F261E] text-[#D97706] px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] border border-[#D97706]/30 shadow-lg z-20 whitespace-nowrap flex items-center gap-1.5">
-              <Leaf className="w-3.5 h-3.5 text-[#D97706]" />
-              <span>Argiles &amp; Matières Premières</span>
-            </div>
-          )}
-          {productId === 'bloomlab' && (
-            <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-[#D97706] text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] border border-white/20 shadow-xl z-20 whitespace-nowrap">
-              {sheet.subtitle}
-            </div>
-          )}
+          {/* Main Visual Display */}
+          <div 
+            className={`relative flex-1 flex items-center justify-center cursor-zoom-in ${
+              isArgiles 
+                ? 'min-h-[260px] sm:min-h-[300px] lg:min-h-[360px] p-2' 
+                : 'w-full h-full'
+            }`}
+            onClick={() => setIsZoomed(true)}
+          >
+            {isArgiles ? (
+              <div className="relative flex flex-col items-center justify-center p-6 sm:p-8 bg-white/95 backdrop-blur-sm rounded-2xl sm:rounded-3xl border border-[#1B3022]/10 shadow-lg shadow-black/5 max-w-[340px] sm:max-w-[380px] w-full transition-transform duration-300 hover:scale-[1.01]">
+                <img 
+                  src={gallery[activeImage].src} 
+                  alt={gallery[activeImage].alt} 
+                  width={1200}
+                  height={1200}
+                  loading="eager"
+                  fetchPriority="high"
+                  srcSet={`${gallery[activeImage].src} 600w, ${gallery[activeImage].src} 1200w`}
+                  sizes="(max-width: 768px) 320px, 480px"
+                  className="max-h-[220px] sm:max-h-[260px] lg:max-h-[290px] w-auto max-w-full object-contain drop-shadow-md transition-all duration-300"
+                  style={{ imageRendering: 'auto' }}
+                />
+                <span className="mt-3 text-[10px] uppercase font-bold tracking-widest text-[#1B3022]/55">
+                  Synergie Zéolithe &amp; Bentonite (6μm)
+                </span>
+              </div>
+            ) : (
+              <img 
+                src={gallery[activeImage].src} 
+                alt={gallery[activeImage].alt} 
+                width={1200}
+                height={1200}
+                loading="eager"
+                fetchPriority="high"
+                srcSet={`${gallery[activeImage].src} 600w, ${gallery[activeImage].src} 1200w`}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="w-full h-full object-cover transition-all duration-500 scale-105 sm:scale-110 hover:scale-125"
+              />
+            )}
+            {isArgiles && (
+              <div className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-[#0F261E] text-[#D97706] px-3 sm:px-4 py-1.5 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] border border-[#D97706]/30 shadow-md z-20 whitespace-nowrap flex items-center gap-1.5">
+                <Leaf className="w-3.5 h-3.5 text-[#D97706]" />
+                <span>Argiles &amp; Matières Premières</span>
+              </div>
+            )}
+            {productId === 'bloomlab' && (
+              <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-[#D97706] text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] border border-white/20 shadow-xl z-20 whitespace-nowrap">
+                {sheet.subtitle}
+              </div>
+            )}
+          </div>
+
+          {/* Vignettes photos bien proportionnées & élégantes (pas trop petites) */}
           {gallery.length > 1 && (
-            <div className="absolute bottom-4 left-4 right-4 sm:bottom-8 sm:left-8 sm:right-8 z-20">
-              <div className="flex gap-2 p-2 sm:p-3 bg-white/20 backdrop-blur-md rounded-2xl border border-white/20 w-fit max-w-full overflow-x-auto">
+            <div className={`${isArgiles ? 'mt-6 pt-4 border-t border-[#1B3022]/10' : 'absolute bottom-4 left-4 right-4 sm:bottom-8 sm:left-8 sm:right-8 z-20'}`}>
+              <div className={`flex items-center gap-3 sm:gap-4 overflow-x-auto p-1.5 ${isArgiles ? 'justify-center flex-wrap' : 'bg-white/20 backdrop-blur-md rounded-2xl border border-white/20 w-fit max-w-full'}`}>
                 {gallery.map((img: any, i: number) => (
                   <button 
                     key={i} 
+                    type="button"
                     onClick={(e) => { e.stopPropagation(); setActiveImage(i); }}
-                    className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden border-2 transition-all shrink-0 ${activeImage === i ? 'border-[#F97316] scale-95 ring-2 ring-white/50' : 'border-transparent opacity-70 hover:opacity-100'}`}
+                    className={`relative rounded-2xl overflow-hidden border-2 transition-all p-1.5 bg-white cursor-pointer shadow-sm ${
+                      isArgiles ? 'w-20 h-20 sm:w-24 sm:h-24 md:w-26 md:h-26' : 'w-12 h-12 sm:w-14 sm:h-14'
+                    } ${
+                      activeImage === i 
+                        ? 'border-[#D97706] ring-2 ring-[#D97706]/40 shadow-md scale-105' 
+                        : 'border-[#1B3022]/15 hover:border-[#D97706]/50 opacity-80 hover:opacity-100 hover:scale-102'
+                    }`}
+                    title={img.alt}
                   >
-                    <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
+                    <img 
+                      src={img.src} 
+                      alt={img.alt} 
+                      width={120} 
+                      height={120} 
+                      loading="lazy" 
+                      decoding="async" 
+                      className="w-full h-full object-contain rounded-xl" 
+                    />
                   </button>
                 ))}
               </div>
@@ -213,27 +262,57 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
         </div>
 
         {/* Right Side: Info & Buy */}
-        <div className="lg:w-1/2 p-5 sm:p-8 md:p-16 lg:p-20 flex flex-col justify-center">
-          <div className="flex items-center gap-2 text-[#1C3F34] font-bold uppercase tracking-widest text-[10px] mb-3 sm:mb-4">
-            <ShieldCheck className="w-4 h-4" /> 
-            <span>{lang === 'fr' ? 'Conception Botanique de Précision' : lang === 'de' ? 'Botanische Präzisionsentwicklung' : 'Precision Botanical Design'}</span>
+        <div className={`lg:w-1/2 flex flex-col justify-center ${
+          isArgiles ? 'p-6 sm:p-8 lg:p-10' : 'p-5 sm:p-8 md:p-16 lg:p-20'
+        }`}>
+          <div className="flex items-center gap-2 text-[#1C3F34] font-bold uppercase tracking-widest text-[9px] sm:text-[10px] mb-2 sm:mb-2.5">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#D97706]" /> 
+            <span>{lang === 'fr' ? 'Conception Botanique & Minérale de Précision' : lang === 'de' ? 'Botanische Präzisionsentwicklung' : 'Precision Botanical Design'}</span>
           </div>
           
-          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#1B3022] mb-3 sm:mb-4 md:mb-6 tracking-tight leading-tight">{sheet.name}</h1>
-          <div className="text-[#F97316] text-[10px] md:text-sm font-bold uppercase tracking-widest mb-4 md:mb-6">{sheet.subtitle}</div>
+          {isArgiles ? (
+            <div className="mb-3">
+              <div className="text-[#C9922B] text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] mb-1.5">
+                {sheet.subtitle}
+              </div>
+              <h1 className="text-xl sm:text-2xl font-bold text-[#0F261E] tracking-tight leading-snug">
+                Duo Argiles Bloom
+              </h1>
+              <p className="text-xs sm:text-sm font-medium text-[#1B3022]/70 mt-1">
+                Purification Systémique Zéolithe-Bentonite (6μm)
+              </p>
+            </div>
+          ) : (
+            <>
+              <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#1B3022] mb-3 sm:mb-4 md:mb-6 tracking-tight leading-tight">
+                {sheet.name}
+              </h1>
+              <div className="text-[#D97706] text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] mb-4">
+                {sheet.subtitle}
+              </div>
+            </>
+          )}
           
-          <p className="text-sm sm:text-base md:text-xl text-[#1B3022]/80 font-medium mb-6 md:mb-8 leading-relaxed">
+          <p className={`${
+            isArgiles
+              ? 'text-xs sm:text-sm text-[#1B3022]/75 font-normal mb-4 leading-relaxed max-w-xl'
+              : 'text-sm sm:text-base md:text-xl text-[#1B3022]/80 font-medium mb-6 md:mb-8 leading-relaxed'
+          }`}>
             {sheet.description}
           </p>
 
-          <div className="bg-[#F9F9F7] p-5 sm:p-8 rounded-2xl sm:rounded-[32px] border border-[#1B3022]/5 mb-8 md:mb-10">
-            <div className="flex items-baseline gap-3 md:gap-4 mb-4 md:mb-6 flex-wrap">
-              <span className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#1B3022]">{sheet.price.toFixed(2).replace('.', ',')} €</span>
+          <div className={`rounded-2xl sm:rounded-3xl border border-[#1B3022]/8 ${
+            isArgiles ? 'bg-[#FAF8F5] p-4 sm:p-5 mb-5 shadow-xs' : 'bg-[#F9F9F7] p-5 sm:p-8 mb-8 md:mb-10'
+          }`}>
+            <div className="flex items-baseline gap-3 mb-3 flex-wrap">
+              <span className={`${
+                isArgiles ? 'text-2xl sm:text-3xl font-bold text-[#0F261E]' : 'text-2xl sm:text-3xl md:text-5xl font-bold text-[#1B3022]'
+              }`}>{sheet.price.toFixed(2).replace('.', ',')} €</span>
               {sheet.originalPrice && (
                 <div className="flex items-center gap-2 flex-wrap">
-                  <span className="text-[#1B3022]/40 line-through text-base sm:text-lg md:text-xl">{sheet.originalPrice.toFixed(2).replace('.', ',')} €</span>
-                  <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider bg-[#D97706]/10 text-[#D97706] border border-[#D97706]/20 px-2.5 py-1 rounded-full whitespace-nowrap">
-                    code: Rentrée 2026
+                  <span className="text-[#1B3022]/40 line-through text-xs sm:text-sm">{sheet.originalPrice.toFixed(2).replace('.', ',')} €</span>
+                  <span className="text-[9px] font-bold uppercase tracking-wider bg-[#D97706]/10 text-[#D97706] border border-[#D97706]/20 px-2 py-0.5 rounded-full whitespace-nowrap">
+                    Édition Rentrée 2026
                   </span>
                 </div>
               )}
@@ -247,24 +326,26 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
                 price: sheet.price,
                 image: sheet.images[0]
               })}
-              className="w-full bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white px-6 py-4 md:py-5 rounded-2xl font-bold text-base sm:text-lg md:text-xl tracking-wide transition-all flex items-center justify-center gap-3 shadow-xl shadow-black/10 transform hover:-translate-y-1 cursor-pointer min-h-[48px]"
+              className={`w-full bg-[#0F261E] hover:bg-[#D97706] active:bg-[#B45309] text-white rounded-xl font-bold tracking-wide transition-all flex items-center justify-center gap-2.5 shadow-md shadow-black/5 transform hover:-translate-y-0.5 cursor-pointer ${
+                isArgiles ? 'px-4 py-3 text-sm min-h-[44px]' : 'px-6 py-4 md:py-5 text-base sm:text-lg md:text-xl min-h-[48px]'
+              }`}
             >
-              <ShoppingBag className="w-5 h-5 md:w-6 md:h-6" /> {t.add_to_cart}
+              <ShoppingBag className="w-4 h-4" /> {t.add_to_cart}
             </button>
-            <p className="text-center text-xs sm:text-sm text-[#1B3022]/50 mt-4 flex items-center justify-center gap-2">
-              <ShieldCheck className="w-4 h-4 shrink-0" /> {t.shipping_info}
+            <p className="text-center text-[11px] text-[#1B3022]/55 mt-2.5 flex items-center justify-center gap-1.5">
+              <ShieldCheck className="w-3.5 h-3.5 shrink-0 text-[#1B3022]/50" /> {t.shipping_info}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
             {sheet.specs.map((spec: any, i: number) => (
-              <div key={i} className="bg-[#1B3022]/5 p-4 sm:p-5 rounded-2xl flex items-center gap-3 sm:gap-4 group hover:bg-[#1B3022]/10 transition-colors">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 bg-white rounded-xl flex items-center justify-center shadow-sm shrink-0">
-                  <spec.icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#1B3022]" />
+              <div key={i} className="bg-[#FAF8F5] border border-[#1B3022]/5 p-2.5 sm:p-3 rounded-xl flex items-center gap-2.5 group hover:bg-white hover:border-[#1B3022]/10 transition-colors">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white border border-[#1B3022]/10 rounded-lg flex items-center justify-center shadow-2xs shrink-0">
+                  <spec.icon className="w-3.5 h-3.5 text-[#1B3022]" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-[9px] sm:text-[10px] uppercase font-bold text-[#1B3022]/40 tracking-wider truncate">{spec.label}</div>
-                  <div className="text-xs sm:text-sm font-bold text-[#1B3022] truncate sm:whitespace-normal">{spec.value}</div>
+                  <div className="text-[9px] uppercase font-bold text-[#1B3022]/45 tracking-wider truncate">{spec.label}</div>
+                  <div className="text-xs font-semibold text-[#0F261E] truncate sm:whitespace-normal">{spec.value}</div>
                 </div>
               </div>
             ))}
@@ -394,7 +475,7 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
           <img 
             src={gallery[activeImage].src} 
             alt={gallery[activeImage].alt} 
-            className={`max-w-full max-h-full object-contain ${isArgiles ? 'max-w-[700px] max-h-[700px] bg-white/95 p-6 rounded-3xl shadow-2xl' : ''} animate-in zoom-in-95 duration-300`}
+            className={`max-w-full max-h-full object-contain ${isArgiles ? 'max-w-[420px] max-h-[420px] bg-white p-6 rounded-3xl shadow-2xl' : ''} animate-in zoom-in-95 duration-300`}
           />
         </div>
       )}

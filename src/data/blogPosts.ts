@@ -362,5 +362,317 @@ export const blogPosts: BlogPost[] = [
 <p>Adaptogene Heilpflanzen (Ashwagandha, Rhodiola, Eleutherococcus) regulieren die HPA-Achse und bringen das Nervensystem wieder ins Gleichgewicht. Entdecken Sie unser <a href="/phytotherapie-reset">Reset-Protokoll</a>.</p>
       `
     }
+  },
+  {
+    slug: 'plantes-adaptogenes-stress',
+    date: '2026-09-10',
+    category: 'Stress & Anxiété',
+    author: 'Collège Scientifique Bloom',
+    readTime: '9 min',
+    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80',
+    imageSquare: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Plantes adaptogènes pour soulager le stress chronique naturellement',
+    tags: ['plantes adaptogènes stress', 'cortisol', 'ashwagandha', 'rhodiola', 'système nerveux'],
+    metaTitle: {
+      fr: "Plantes Adaptogènes pour le Stress : Le Guide Scientifique Complet",
+      en: "Adaptogenic Plants for Stress: Complete Scientific Guide",
+      de: "Adaptogene Pflanzen gegen Stress: Wissenschaftlicher Leitfaden"
+    },
+    metaDescription: {
+      fr: "Comment soulager le stress et l'épuisement nerveux avec les plantes adaptogènes ? Analyse clinique de l'Ashwagandha, Rhodiola et Tulsi sur l'axe HPA et le cortisol.",
+      en: "How to relieve stress and exhaustion with adaptogens. Clinical review of Ashwagandha, Rhodiola and Tulsi on the HPA axis.",
+      de: "Wie man Stress mit Adaptogenen natürlich lindert. Klinische Analyse von Ashwagandha, Rhodiola und Tulsi auf die HPA-Achse."
+    },
+    title: {
+      fr: "Plantes Adaptogènes pour le Stress : Le Guide Scientifique Complet",
+      en: "Adaptogenic Plants for Stress: The Complete Scientific Guide",
+      de: "Adaptogene Pflanzen gegen Stress: Der vollständige wissenschaftliche Leitfaden"
+    },
+    excerpt: {
+      fr: "Découvrez comment les plantes adaptogènes réinitialisent l'axe du stress (axe HPA) et diminuent le cortisol sans créer d'accoutumance ni de somnolence.",
+      en: "Discover how adaptogenic plants reset the HPA axis and reduce cortisol naturally without addiction or drowsiness.",
+      de: "Entdecken Sie, wie Adaptogene die HPA-Achse regulieren und Cortisol ohne Gewöhnungseffekte senken."
+    },
+    content: {
+      fr: `
+<p>Le stress chronique n'est pas une simple émotion passagère : c'est un état de <strong>surcharge allostatique</strong> où l'organisme épuise ses réserves biochimiques. Face à cette usure du système nerveux autonome, les <strong>plantes adaptogènes</strong> constituent l'une des découvertes les plus validées de la phytothérapie contemporaine.</p>
+
+<h3>1. L'Axe HPA : quand la cascade du stress s'emballe</h3>
+<p>Sous tension continue, l'hypothalamus stimule l'hypophyse qui ordonne aux glandes surrénales de sécréter du cortisol et de l'adrénaline. À court terme, ce mécanisme sauve la vie. À long terme, l'hypercortisolémie chronique dérègle le sommeil, favorise la résistance à l'insuline et bloque l'homéostasie cellulaire.</p>
+
+<h3>2. Les 3 adaptogènes majeurs face au stress</h3>
+<ul>
+  <li><strong>Ashwagandha (Withania somnifera) :</strong> L'adaptogène de fond. Les withanolides calment le système nerveux central en se liant doucement aux récepteurs GABA, réduisant le cortisol de près de 28% dans les essais cliniques à double insu.</li>
+  <li><strong>Rhodiola rosea :</strong> L'adaptogène anti-fatigue mentale. Grâce aux rosavines et au salidroside, elle optimise la neurotransmission sérotoninergique et dopaminergique, protégeant contre l'épuisement cognitif.</li>
+  <li><strong>Basilic Sacré (Tulsi) :</strong> Régulateur neuro-émotionnel puissant et protecteur mitochondrial face aux dérivés réactifs de l'oxygène.</li>
+</ul>
+
+<h3>3. Comment extraire les principes adaptogènes à domicile</h3>
+<p>Les withanolides et les rosavines sont des molécules complexes, sensibles aux excès thermiques. Pour extraire le Totum sans dégradation, l'utilisation d'une <a href="/guide-complet-extraction-botanique-maison">extraction botanique à 55°C sous vortex doux</a> permet de préserver l'ensemble des cofacteurs régulateurs.</p>
+
+<p>Pour en savoir plus, consultez notre <a href="/remedes-naturels-maison-guide">guide complet des remèdes naturels maison</a> et découvrez le kit de plantes <a href="/boutique/kit-starter">Starter Renaissance Bloom</a>.</p>
+      `,
+      en: `<p>Chronic stress leads to allostatic overload. Adaptogens modulate the HPA axis and normalize cortisol levels naturally.</p>`,
+      de: `<p>Chronischer Stress überlastet das Nervensystem. Adaptogene modulieren die HPA-Achse und normalisieren das Cortisol.</p>`
+    }
+  },
+  {
+    slug: 'rhodiola-fatigue-chronique',
+    date: '2026-09-12',
+    category: 'Stress & Anxiété',
+    author: 'Collège Scientifique Bloom',
+    readTime: '7 min',
+    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80',
+    imageSquare: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Rhodiola Rosea plante adaptogène anti-fatigue chronique',
+    tags: ['rhodiola fatigue', 'énergie cellulaire', 'salidroside', 'concentration'],
+    metaTitle: {
+      fr: "Rhodiola Rosea : L'Adaptogène Anti-Fatigue par Excellence | Bloom",
+      en: "Rhodiola Rosea: The Ultimate Anti-Fatigue Adaptogen | Bloom",
+      de: "Rhodiola Rosea: Das ultimative Anti-Müdigkeits-Adaptogen | Bloom"
+    },
+    metaDescription: {
+      fr: "Fatigue chronique, burn-out, baisse de concentration ? Découvrez les mécanismes d'action de la Rhodiola Rosea (rosavines, salidrosides) et son dosage optimal.",
+      en: "Chronic fatigue and brain fog? Discover the scientifically proven mechanisms of Rhodiola Rosea.",
+      de: "Chronische Müdigkeit? Entdecken Sie die wissenschaftlich belegten Mechanismen von Rhodiola Rosea."
+    },
+    title: {
+      fr: "Rhodiola : L'Adaptogène Anti-Fatigue par Excellence",
+      en: "Rhodiola: The Ultimate Anti-Fatigue Adaptogen",
+      de: "Rhodiola: Das ultimative Anti-Müdigkeits-Adaptogen"
+    },
+    excerpt: {
+      fr: "La racine d'or des climats froids stimule l'ATP cellulaire, restaure la clarté mentale et combat la fatigue d'usure sans nervosité.",
+      en: "The golden root from cold climates boosts cellular ATP, restores mental clarity and counters exhaustion.",
+      de: "Die goldene Wurzel kurbelt das zelluläre ATP an und stellt geistige Klarheit wieder her."
+    },
+    content: {
+      fr: `
+<p>La <strong>Rhodiola rosea</strong>, surnommée « racine d'or », est l'une des plantes les plus étudiées pour restaurer la vitalité en cas d'épuisement physique et psychique. Contrairement aux stimulants comme la caféine qui empruntent de l'énergie à crédit, la Rhodiola optimise la production endogène d'ATP au sein des mitochondries.</p>
+
+<h3>1. Salidrosides et Rosavines : les molécules clés</h3>
+<p>Les études phytochimiques montrent que l'efficacité de la Rhodiola dépend du ratio équilibré entre ses rosavines et son salidroside. Elle agit en inhibant la dégradation des monoamines (sérotonine, dopamine, noradrénaline), ce qui procure un regain de vivacité mentale immédiat.</p>
+
+<h3>2. Quand et comment la consommer ?</h3>
+<p>La Rhodiola se prend le matin à jeun ou en tout début d'après-midi, idéalement extraite en infusion tiède thermo-régulée. Découvrez notre <a href="/phytotherapie-moderne-scientifique">dossier sur la phytothérapie moderne validée</a> pour approfondir les données cliniques.</p>
+      `,
+      en: `<p>Rhodiola boosts cellular ATP and mental focus without caffeine jitters.</p>`,
+      de: `<p>Rhodiola steigert das zelluläre ATP und den mentalen Fokus ohne Koffein-Zittern.</p>`
+    }
+  },
+  {
+    slug: 'ashwagandha-cortisol',
+    date: '2026-09-14',
+    category: 'Stress & Anxiété',
+    author: 'Collège Scientifique Bloom',
+    readTime: '8 min',
+    image: 'https://images.unsplash.com/photo-1512290900672-1f4864c39121?auto=format&fit=crop&w=1200&q=80',
+    imageSquare: 'https://images.unsplash.com/photo-1512290900672-1f4864c39121?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Ashwagandha Withania somnifera pour réguler le cortisol et apaiser le système nerveux',
+    tags: ['ashwagandha cortisol', 'sommeil réparateur', 'withanolides', 'gaba'],
+    metaTitle: {
+      fr: "Ashwagandha et Cortisol : Réduire le Stress Naturellement | Bloom",
+      en: "Ashwagandha and Cortisol: Lower Stress Naturally | Bloom",
+      de: "Ashwagandha und Cortisol: Stress natürlich senken | Bloom"
+    },
+    metaDescription: {
+      fr: "Comment l'Ashwagandha abaisse le taux de cortisol sérique de 27% et répare le système nerveux. Études cliniques, posologie et mode d'extraction du Totum.",
+      en: "How Ashwagandha lowers serum cortisol by 27% and restores the nervous system. Clinical studies and totum extraction.",
+      de: "Wie Ashwagandha Serum-Cortisol senkt und das Nervensystem regeneriert."
+    },
+    title: {
+      fr: "Ashwagandha : Réduire le Cortisol Naturellement",
+      en: "Ashwagandha: Lowering Cortisol Naturally",
+      de: "Ashwagandha: Cortisol natürlich senken"
+    },
+    excerpt: {
+      fr: "Études cliniques à l'appui : comment la Withania somnifera apaise le système nerveux hyperréactif et favorise la régénération surrénalienne.",
+      en: "Clinical evidence: how Withania somnifera calms an overreactive nervous system and aids adrenal recovery.",
+      de: "Klinische Beweise: Wie Withania somnifera ein überreaktives Nervensystem beruhigt."
+    },
+    content: {
+      fr: `
+<p>L'<strong>Ashwagandha (Withania somnifera)</strong> est le pilier de la pharmacopée ayurvédique pour rétablir la paix intérieure. Les essais cliniques contemporains confirment sa capacité unique à abaisser le cortisol circulatoire de 25% à 30% après 60 jours de cure régulière.</p>
+
+<h3>1. Le mode d'action sur les récepteurs GABA</h3>
+<p>Les withanolides agissent comme des modulateurs allostériques positifs des récepteurs GABA-A. Cela signifie qu'ils renforcent le frein naturel du cerveau sans causer l'anesthésie chimique des somnifères conventionnels.</p>
+
+<h3>2. Synergie idéale avec le Totum végétal</h3>
+<p>Dans notre guide sur <a href="/totum-vegetal-comprendre">le Totum végétal expliqué</a>, nous montrons que les racines entières d'Ashwagandha contiennent des composés protecteurs éliminant tout risque de toxicité hépatique lorsqu'elles sont extraites à température contrôlée.</p>
+      `,
+      en: `<p>Ashwagandha lowers cortisol and supports deep restorative sleep naturally.</p>`,
+      de: `<p>Ashwagandha senkt das Cortisol und fördert tiefen, erholsamen Schlaf.</p>`
+    }
+  },
+  {
+    slug: 'plantes-dormir-profondement',
+    date: '2026-09-16',
+    category: 'Sommeil',
+    author: 'Collège Scientifique Bloom',
+    readTime: '8 min',
+    image: 'https://images.unsplash.com/photo-1511295742362-92c96b124e52?auto=format&fit=crop&w=1200&q=80',
+    imageSquare: 'https://images.unsplash.com/photo-1511295742362-92c96b124e52?auto=format&fit=crop&w=800&q=80',
+    imageAlt: '5 plantes médicinales pour dormir profondément et réparer le cycle circadien',
+    tags: ['plantes pour dormir', 'sommeil profond', 'valériane', 'passiflore', 'mélisse'],
+    metaTitle: {
+      fr: "5 Plantes pour Dormir Profondément (Preuves Scientifiques) | Bloom",
+      en: "5 Plants for Deep Sleep (Scientific Evidence) | Bloom",
+      de: "5 Pflanzen für tiefen Schlaf (Wissenschaftliche Beweise) | Bloom"
+    },
+    metaDescription: {
+      fr: "Retrouvez un sommeil profond et réparateur sans somnifère : les 5 plantes médicinales validées par la science (Valériane, Passiflore, Mélisse, Eschscholtzia, Camomille).",
+      en: "Restore deep, restorative sleep without sleeping pills: 5 science-backed medicinal plants.",
+      de: "Tiefen und erholsamen Schlaf ohne Schlaftabletten wiederfinden: 5 wissenschaftlich geprüfte Pflanzen."
+    },
+    title: {
+      fr: "5 Plantes pour Dormir Profondément (Preuves Scientifiques)",
+      en: "5 Plants for Deep Sleep (Scientific Evidence)",
+      de: "5 Pflanzen für tiefen Schlaf (Wissenschaftliche Beweise)"
+    },
+    excerpt: {
+      fr: "Quelles plantes permettent réellement d'allonger la phase de sommeil lent profond ? Méta-analyses et protocoles d'infusion du soir.",
+      en: "Which plants actually prolong deep slow-wave sleep? Meta-analyses and evening brewing protocols.",
+      de: "Welche Pflanzen verlängern tatsächlich den Tiefschlaf? Meta-Analysen und Abendprotokolle."
+    },
+    content: {
+      fr: `
+<p>L'insomnie et les réveils nocturnes traduisent un déficit de désactivation corticale. Les 5 plantes fondamentales pour restaurer le sommeil lent profond sont :</p>
+<ol>
+  <li><strong>La Valériane (Valeriana officinalis) :</strong> Augmente la disponibilité cérébrale du GABA et prolonge les phases de sommeil réparateur.</li>
+  <li><strong>La Passiflore (Passiflora incarnata) :</strong> Réduit l'activité cognitive incessante et les ruminations pré-sommeil.</li>
+  <li><strong>La Mélisse (Melissa officinalis) :</strong> Apaise les tensions viscérales et l'éréthisme cardiaque nocturne.</li>
+  <li><strong>L'Eschscholtzia (Pavot de Californie) :</strong> Antispasmodique neuromusculaire doux, parfait en cas de réveils entre 2h et 4h du matin.</li>
+  <li><strong>La Camomille Matricaire :</strong> L'apigénine traverse la barrière hémato-encéphalique pour préparer l'endormissement en douceur.</li>
+</ol>
+<p>Découvrez notre synergie complète dans le <a href="/boutique/kit-nuit">Kit Nuit Profonde Bloom</a> et lisez notre <a href="/remedes-naturels-maison-guide">guide des remèdes naturels pour le sommeil</a>.</p>
+      `,
+      en: `<p>5 science-backed plants to restore deep slow-wave sleep naturally.</p>`,
+      de: `<p>5 wissenschaftlich belegte Pflanzen zur natürlichen Wiederherstellung des Tiefschlafs.</p>`
+    }
+  },
+  {
+    slug: 'melisse-valeriane-synergie',
+    date: '2026-09-18',
+    category: 'Sommeil',
+    author: 'Collège Scientifique Bloom',
+    readTime: '6 min',
+    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=80',
+    imageSquare: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Mélisse et valériane synergie contre l insomnie et les réveils nocturnes',
+    tags: ['mélisse valériane sommeil', 'synergie plantes', 'insomnie', 'phytothérapie'],
+    metaTitle: {
+      fr: "Mélisse + Valériane : La Synergie Recommandée contre l'Insomnie | Bloom",
+      en: "Lemon Balm + Valerian: The Proven Synergy for Insomnia | Bloom",
+      de: "Melisse + Baldrian: Die bewährte Synergie bei Schlaflosigkeit | Bloom"
+    },
+    metaDescription: {
+      fr: "Pourquoi l'association Mélisse et Valériane surpasse chacune des deux plantes isolées ? Décryptage de la synergie GABAergique et protocole d'infusion.",
+      en: "Why the combination of Lemon Balm and Valerian outperforms either plant alone. GABAergic synergy decrypted.",
+      de: "Warum die Kombination aus Melisse und Baldrian beide Pflanzen einzeln übertrifft."
+    },
+    title: {
+      fr: "Mélisse + Valériane : La Synergie pour l'Insomnie",
+      en: "Lemon Balm + Valerian: The Synergy for Insomnia",
+      de: "Melisse + Baldrian: Die Synergie bei Schlaflosigkeit"
+    },
+    excerpt: {
+      fr: "L'acide rosmarinique de la mélisse freine la dégradation du GABA tandis que les acides valéréniques stimulent sa libération. Une synergie d'école.",
+      en: "Lemon balm slows GABA breakdown while valerenic acids stimulate its release. A textbook botanical synergy.",
+      de: "Zitronenmelisse verlangsamt den GABA-Abbau, während Baldriansäuren seine Freisetzung stimulieren."
+    },
+    content: {
+      fr: `
+<p>L'association de la <strong>Mélisse</strong> et de la <strong>Valériane</strong> est l'exemple le plus éclatant de <em>synergie pharmacodynamique</em> en phytothérapie. La valériane stimule directement la libération du neurotransmetteur GABA, tandis que l'acide rosmarinique de la mélisse bloque l'enzyme responsable de sa destruction (la GABA-transaminase). Résultat : un taux de GABA protecteur maintenu tout au long de la nuit, éliminant les réveils précoces.</p>
+<p>Apprenez à calibrer cette infusion dans notre <a href="/guide-complet-extraction-botanique-maison">guide d'extraction à domicile</a>.</p>
+      `,
+      en: `<p>Lemon balm and valerian create a powerful GABAergic synergy that maintains deep restorative sleep.</p>`,
+      de: `<p>Melisse und Baldrian schaffen eine kraftvolle GABA-Synergie für durchgehenden Tiefschlaf.</p>`
+    }
+  },
+  {
+    slug: 'plantes-anti-inflammatoires-naturelles',
+    date: '2026-09-20',
+    category: 'Inflammation',
+    author: 'Collège Scientifique Bloom',
+    readTime: '9 min',
+    image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=1200&q=80',
+    imageSquare: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Plantes anti-inflammatoires naturelles fondées sur la science',
+    tags: ['plantes anti-inflammatoires', 'inflammation silencieuse', 'curcuma', 'reine des prés', 'harpagophytum'],
+    metaTitle: {
+      fr: "Plantes Anti-Inflammatoires : Le Guide Fondé sur la Science | Bloom",
+      en: "Anti-Inflammatory Plants: Science-Backed Guide | Bloom",
+      de: "Entzündungshemmende Pflanzen: Wissenschaftlich fundierter Leitfaden | Bloom"
+    },
+    metaDescription: {
+      fr: "Comment calmer l'inflammation silencieuse avec les plantes : Curcuma, Reine des Prés, Boswellia, Gingembre. Mécanismes d'inhibition des cytokines NF-kB.",
+      en: "How to soothe chronic low-grade inflammation naturally: Curcumin, Meadowsweet, Boswellia and Ginger.",
+      de: "Wie man chronische Entzündungen natürlich lindert: Kurkuma, Mädesüß, Boswellia und Ingwer."
+    },
+    title: {
+      fr: "Plantes Anti-Inflammatoires : Le Guide Basé sur la Science",
+      en: "Anti-Inflammatory Plants: The Science-Based Guide",
+      de: "Entzündungshemmende Pflanzen: Der wissenschaftlich fundierte Leitfaden"
+    },
+    excerpt: {
+      fr: "Les plantes ne masquent pas le signal douloureux : elles modulent les cascades pro-inflammatoires (COX-2, 5-LOX, NF-kB) sans détruire la paroi digestive.",
+      en: "Medicinal plants modulate pro-inflammatory pathways without harming gut mucosal lining.",
+      de: "Heilpflanzen modulieren entzündliche Kaskaden, ohne die Magen-Darm-Schleimhaut zu schädigen."
+    },
+    content: {
+      fr: `
+<p>L'inflammation de bas grade (silent inflammation) est le dénominateur commun de l'usure articulaire, de la résistance à l'insuline et du vieillissement prématuré. Les solutions chimiques anti-inflammatoires (AINS) présentent de lourds effets secondaires sur les reins et l'estomac. Les plantes médicinales apportent une modulation physiologique respectueuse du terrain.</p>
+
+<h3>1. Curcuma, Gingembre et Boswellia : le trio d'or</h3>
+<p>Le curcuma régule le facteur de transcription NF-kB, tandis que le gingembre inhibe la synthèse des prostaglandines inflammatoires et la boswellia bloque spécifiquement la 5-LOX (lipoxygénase). L'association de ces trois totums procure un soulagement profond des articulations raides.</p>
+
+<p>Découvrez notre <a href="/phytotherapie-moderne-scientifique">dossier sur la phytothérapie moderne</a> et nos solutions minérales avec le <a href="/boutique/duo-argiles">Duo Argiles Bloom</a> pour les cataplasmes locaux.</p>
+      `,
+      en: `<p>Natural anti-inflammatory herbs modulate cytokine pathways safely without NSAID side effects.</p>`,
+      de: `<p>Natürliche entzündungshemmende Kräuter modulieren Zytokine ohne NSAR-Nebenwirkungen.</p>`
+    }
+  },
+  {
+    slug: 'curcuma-piperine-biodisponibilite',
+    date: '2026-09-22',
+    category: 'Inflammation',
+    author: 'Collège Scientifique Bloom',
+    readTime: '7 min',
+    image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=1200&q=80',
+    imageSquare: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Curcuma et pipérine synergie de biodisponibilité par 20',
+    tags: ['curcuma biodisponibilité', 'pipérine', 'poivre noir', 'absorption', 'totum'],
+    metaTitle: {
+      fr: "Curcuma + Poivre Noir : Multiplier la Biodisponibilité ×20 | Bloom",
+      en: "Turmeric + Black Pepper: Multiply Bioavailability ×20 | Bloom",
+      de: "Kurkuma + Schwarzer Pfeffer: Bioverfügbarkeit ×20 multiplizieren | Bloom"
+    },
+    metaDescription: {
+      fr: "Pourquoi le curcuma seul n'est presque pas absorbé par l'intestin ? Comment la pipérine et les corps gras multiplient son passage systémique par 20.",
+      en: "Why is curcumin poorly absorbed alone? How piperine and healthy lipids multiply systemic uptake by 20x.",
+      de: "Warum wird Kurkuma alleine kaum absorbiert? Wie Piperin die Bioverfügbarkeit verzwanzigfacht."
+    },
+    title: {
+      fr: "Curcuma + Poivre Noir : Multiplier la Biodisponibilité ×20",
+      en: "Turmeric + Black Pepper: Multiply Bioavailability ×20",
+      de: "Kurkuma + Schwarzer Pfeffer: Bioverfügbarkeit ×20 multiplizieren"
+    },
+    excerpt: {
+      fr: "Le foie élimine rapidement la curcumine libre par glucuronidation. La pipérine du poivre noir inhibe temporairement ce processus pour une efficacité maximale.",
+      en: "The liver rapidly clears free curcumin. Piperine temporarily inhibits glucuronidation, boosting uptake 20-fold.",
+      de: "Die Leber baut Curcumin rasch ab. Piperin hemmt diesen Prozess vorübergehend für maximale Wirksamkeit."
+    },
+    content: {
+      fr: `
+<p>La curcumine pure est célèbre pour ses bienfaits anti-oxydants, mais sa biodisponibilité orale est inférieure à 1% car elle est instantanément neutralisée dans l'intestin et le foie par <em>glucuronidation</em>. Pour libérer son plein potentiel, deux adjuvants naturels sont indispensables :</p>
+<ul>
+  <li><strong>La Pipérine du Poivre Noir :</strong> Inhibe temporairement la glucuronidation hépatique, augmentant la biodisponibilité de la curcumine de 2 000% (facteur 20 dans les études cliniques de Shoba et al.).</li>
+  <li><strong>Un Solvant Lipidique :</strong> La curcumine est lipophile. L'extraction dans une huile vierge ou un milieu tiède lipidique assure son passage trans-muqueux optimal.</li>
+</ul>
+<p>Pour maîtriser ces ratios, consultez notre <a href="/guide-complet-extraction-botanique-maison">guide complet de l'extraction botanique à domicile</a>.</p>
+      `,
+      en: `<p>Piperine increases curcumin bioavailability by 2,000% by temporarily slowing hepatic glucuronidation.</p>`,
+      de: `<p>Piperin erhöht die Bioverfügbarkeit von Curcumin um 2.000%, indem es die hepatische Glukuronidierung verlangsamt.</p>`
+    }
   }
 ];

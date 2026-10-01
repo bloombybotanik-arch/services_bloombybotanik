@@ -59,7 +59,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
   const faqItems = (t as any).faq || [];
 
   return (
-    <div className="animate-in fade-in duration-700 bg-[#FAF7F2] text-[#0F261E] w-full max-w-full overflow-x-hidden">
+    <div data-product-page="true" className="product-detail animate-in fade-in duration-700 bg-[#FAF7F2] text-[#0F261E] w-full max-w-full overflow-x-hidden">
       {/* Fullscreen Image Overlay */}
       <AnimatePresence>
         {fullscreenImage && (
@@ -205,7 +205,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#F3E8D8] leading-snug">
                 {(t.hero as any).history_title || "Le naturel ne doit plus être approximatif."}
               </h3>
-              <p className="text-base sm:text-lg text-[#D97706] leading-relaxed font-serif italic">
+              <p className="text-base sm:text-lg text-[#D97706] leading-relaxed italic">
                 {(t.hero as any).history_subtitle || "Il y a 5 000 ans, l'Asie savait déjà tout de l'extraction."}
               </p>
               <p className="text-sm sm:text-base text-[#FAF7F2]/90 leading-relaxed font-light">
@@ -439,10 +439,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
     </div>
 
     <div className="bg-white rounded-3xl p-8 sm:p-12 md:p-14 border border-[#E7DFD3] shadow-xl relative overflow-hidden">
-      <div className="absolute top-6 right-8 text-[#D97706]/15 select-none pointer-events-none text-8xl font-serif">“</div>
+      <div className="absolute top-6 right-8 text-[#D97706]/15 select-none pointer-events-none text-8xl">“</div>
       
       <div className="max-w-none text-[#0F261E]/80 space-y-6 text-base sm:text-lg leading-relaxed font-light">
-        <p className="first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:text-[#1C3F34] first-letter:mr-3 first-letter:float-left">
+        <p className="first-letter:text-5xl first-letter:font-bold first-letter:text-[#1C3F34] first-letter:mr-3 first-letter:float-left">
           La BloomLab n'est pas une invention ex nihilo. Elle est la réponse technologique aux limites des textes fondateurs. Dans l'Ayurveda, la méthode du <em>Taila Paka</em> (cuisson lente des huiles médicinales) exigeait un contrôle visuel et tactile épuisant pour éviter que les plantes ne carbonisent. Dans la pharmacopée chinoise du <em>Shennong Ben Cao Jing</em>, on savait déjà que certaines racines exigeaient des décoctions longues, tandis que les fleurs nécessitaient des infusions flash.
         </p>
         <p>
@@ -450,11 +450,11 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         </p>
       </div>
 
-      <div className="mt-8 pt-8 border-t border-[#E7DFD3] flex items-center gap-4 bg-[#FAF7F2] -mx-8 -mb-8 sm:-mx-12 sm:-mb-12 md:-mx-14 md:-mb-14 p-6 sm:p-8 rounded-b-3xl">
+      <div className="mt-8 pt-8 border-t border-[#E7DFD3] flex items-center gap-4 bg-[#FAF8F5] -mx-8 -mb-8 sm:-mx-12 sm:-mb-12 md:-mx-14 md:-mb-14 p-6 sm:p-8 rounded-b-3xl">
         <div className="w-12 h-12 rounded-2xl bg-[#1C3F34] text-white flex items-center justify-center shrink-0 shadow-md">
           <Activity className="w-6 h-6 text-[#D97706]" />
         </div>
-        <p className="text-sm sm:text-base font-serif italic text-[#1C3F34] leading-snug">
+        <p className="text-sm sm:text-base italic text-[#1C3F34] leading-snug">
           « Nous n'avons pas réinventé la plante. Nous avons domestiqué la cinétique d'extraction pour que le Totum arrive intact jusqu'à vos récepteurs cellulaires. »
         </p>
       </div>

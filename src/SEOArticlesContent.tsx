@@ -481,7 +481,7 @@ export const InfusionPrecision = ({ lang, t, onNavigate }: SEOArticleProps) => {
             <h3 className="text-xs font-bold uppercase tracking-widest text-[#D97706]">
               Ce que la science dit (en une phrase que tout le monde comprend)
             </h3>
-            <blockquote className="text-xl sm:text-2xl font-serif italic text-white/95 max-w-2xl mx-auto leading-relaxed">
+            <blockquote className="text-xl sm:text-2xl italic text-white/95 max-w-2xl mx-auto leading-relaxed">
               « La température, le temps et l'agitation déterminent si vous capturez le potentiel thérapeutique d'une plante ou si vous le détruisez. »
             </blockquote>
             <p className="text-xs sm:text-sm text-white/80 font-mono font-medium">
@@ -1062,7 +1062,7 @@ export const TotumDefinition = ({ lang, t, onNavigate }: SEOArticleProps) => {
                 ? "Das Totum ist weder ein Heilversprechen noch ein Versprechen vollständiger Extraktion oder die Abwesenheit von Risiken. Pflanzen können Kontraindikationen aufweisen und mit Medikamenten interagieren. Unsere Inhalte sind rein pädagogisch."
                 : "The totum is neither a promise of healing, nor a claim of total extraction, nor an absence of risk. Plants carry contraindications and may interact with prescription medications. Our educational contents never replace medical advice."}
             </p>
-            <div className="pt-2 border-t border-[#E7DFD3] text-[#1C3F34] font-serif italic text-base sm:text-lg">
+            <div className="pt-2 border-t border-[#E7DFD3] text-[#1C3F34] italic text-base sm:text-lg">
               {isFR 
                 ? "« Une place pour chaque plante, et chaque plante à sa place. »" 
                 : "« A place for every plant, and every plant in its place. »"}
@@ -1734,19 +1734,19 @@ export const SolvantsExtraction = ({ lang, t, onNavigate, isPremium, onRequireAu
                         <td className="p-3.5 sm:p-4 font-mono font-bold text-[#D97706]">Alcool 40°–45°</td>
                         <td className="p-3.5 sm:p-4 font-medium text-[#0F261E]">Fleurs délicates, feuilles fraîches, aromates</td>
                         <td className="p-3.5 sm:p-4 text-slate-600">Flavonoïdes, acides phénoliques, composés aromatiques volatils</td>
-                        <td className="p-3.5 sm:p-4 font-serif italic">Mélisse, Menthe poivrée, Passiflore</td>
+                        <td className="p-3.5 sm:p-4 italic">Mélisse, Menthe poivrée, Passiflore</td>
                       </tr>
                       <tr className="hover:bg-[#FAF7F2]/60 transition-colors">
                         <td className="p-3.5 sm:p-4 font-mono font-bold text-[#D97706]">Alcool 55°–60°</td>
                         <td className="p-3.5 sm:p-4 font-medium text-[#0F261E]">Racines, écorces, sommités denses</td>
                         <td className="p-3.5 sm:p-4 text-slate-600">Alcaloïdes, hétérosides amers, tanins complexes</td>
-                        <td className="p-3.5 sm:p-4 font-serif italic">Gentiane, Salsepareille, Angélique</td>
+                        <td className="p-3.5 sm:p-4 italic">Gentiane, Salsepareille, Angélique</td>
                       </tr>
                       <tr className="hover:bg-[#FAF7F2]/60 transition-colors">
                         <td className="p-3.5 sm:p-4 font-mono font-bold text-[#D97706]">Alcool 70°–85°</td>
                         <td className="p-3.5 sm:p-4 font-medium text-[#0F261E]">Résines dures, gommes, graines dures, propolis</td>
                         <td className="p-3.5 sm:p-4 text-slate-600">Résines triterpéniques, acides boswelliques, huiles essentielles denses</td>
-                        <td className="p-3.5 sm:p-4 font-serif italic">Boswellia (Encens), Myrrhe, Clou de girofle</td>
+                        <td className="p-3.5 sm:p-4 italic">Boswellia (Encens), Myrrhe, Clou de girofle</td>
                       </tr>
                     </tbody>
                   </table>

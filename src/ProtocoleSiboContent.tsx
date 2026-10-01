@@ -283,7 +283,7 @@ export default function ProtocoleSiboContent({
                 <p>{t.foreword.p2}</p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-[#FAF7F2] border-l-4 border-[#D97706] mb-6 text-sm font-serif italic text-[#0F261E]">
+              <div className="p-4 rounded-2xl bg-[#FAF7F2] border-l-4 border-[#D97706] mb-6 text-sm italic text-[#0F261E]">
                 "{t.foreword.quote}"
               </div>
 
@@ -1113,7 +1113,7 @@ export default function ProtocoleSiboContent({
 
         {/* 11. SECTION 10 : CONCLUSION & SIGNATURE BLOOM */}
         <section className="text-center py-12">
-          <blockquote className="font-serif text-2xl sm:text-3xl text-[#0F261E] leading-snug mb-6 italic">
+          <blockquote className="text-2xl sm:text-3xl text-[#0F261E] leading-snug mb-6 italic">
             "Votre corps n'est pas cassé. <span className="text-[#D97706] font-bold">Il est verrouillé.</span><br />
             Bloom ne guérit pas. Bloom rouvre la porte."
           </blockquote>

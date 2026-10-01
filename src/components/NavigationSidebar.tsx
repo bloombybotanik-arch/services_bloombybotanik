@@ -307,34 +307,50 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
           </div>
         </div>
 
-        {/* GROUP 7: BLOOM ACADEMY (MENU DÉROULANT - TITRE EN JAUNE POUR DISTINCTION) */}
+        {/* GROUP 7: BLOOM ACADEMY (LIEN AVEC ICÔNE EN JAUNE + SOUS-MENU DÉROULANT) */}
         <div>
-          <button
-            type="button"
-            onClick={() => setIsBloomAcademyOpen(!isBloomAcademyOpen)}
-            className="w-full text-[10px] font-black uppercase tracking-[0.22em] text-[#FACC15] px-3 py-1.5 mb-1 flex items-center justify-between rounded-lg bg-[#FACC15]/5 hover:bg-[#FACC15]/10 border border-[#FACC15]/20 transition-colors cursor-pointer group"
-            aria-expanded={isBloomAcademyOpen}
-            title={lang === 'fr' ? 'Déplier/Replier Bloom Academy' : lang === 'de' ? 'Bloom Academy ein-/ausblenden' : 'Toggle Bloom Academy'}
-          >
-            <span className="flex items-center gap-1.5 text-[#FACC15]">
-              <GraduationCap className="w-3.5 h-3.5 text-[#FACC15]" />
-              <span className="text-[#FACC15] font-black tracking-[0.22em]">BLOOM ACADEMY</span>
-            </span>
-            <div className="flex items-center gap-1.5">
-              <span className="text-[9px] uppercase px-1.5 py-0.5 rounded-full bg-[#FACC15]/20 text-[#FACC15] font-bold border border-[#FACC15]/30">
+          <div className="flex items-center justify-between gap-1 mb-1">
+            <a
+              href="/academie/"
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('academie');
+                }
+              }}
+              className={`flex-1 flex items-center justify-between px-3 py-2 rounded-xl border transition-all text-xs font-bold cursor-pointer group ${
+                isActive('academie') 
+                  ? 'bg-[#FACC15]/20 text-[#FACC15] border-[#FACC15]/50 shadow-xs' 
+                  : 'bg-[#FACC15]/10 hover:bg-[#FACC15]/15 text-[#FACC15] border-[#FACC15]/25 hover:border-[#FACC15]/40'
+              }`}
+              title={lang === 'fr' ? 'Accéder à Bloom Academy' : lang === 'de' ? 'Zur Bloom Academy' : 'Go to Bloom Academy'}
+            >
+              <span className="flex items-center gap-2">
+                <GraduationCap className="w-4 h-4 text-[#FACC15] shrink-0" />
+                <span className="font-bold text-[#FACC15] tracking-wide">Bloom Academy</span>
+              </span>
+              <span className="text-[8px] uppercase px-1.5 py-0.5 rounded-full bg-[#FACC15]/20 text-[#FACC15] font-bold border border-[#FACC15]/30">
                 {lang === 'fr' ? 'Pédagogie' : lang === 'de' ? 'Pädagogik' : 'Pedagogy'}
               </span>
+            </a>
+            <button
+              type="button"
+              onClick={() => setIsBloomAcademyOpen(!isBloomAcademyOpen)}
+              className="p-2 rounded-xl text-[#FACC15] hover:bg-[#FACC15]/15 border border-[#FACC15]/25 transition-colors cursor-pointer shrink-0"
+              title={lang === 'fr' ? 'Déplier/Replier Bloom Academy' : lang === 'de' ? 'Bloom Academy ein-/ausblenden' : 'Toggle Bloom Academy'}
+              aria-expanded={isBloomAcademyOpen}
+            >
               {isBloomAcademyOpen ? (
-                <ChevronDown className="w-3.5 h-3.5 text-[#FACC15] group-hover:text-[#FDE047]" />
+                <ChevronDown className="w-4 h-4 text-[#FACC15]" />
               ) : (
-                <ChevronRight className="w-3.5 h-3.5 text-[#FACC15] group-hover:text-[#FDE047]" />
+                <ChevronRight className="w-4 h-4 text-[#FACC15]" />
               )}
-            </div>
-          </button>
+            </button>
+          </div>
 
           {isBloomAcademyOpen && (
             <div className="space-y-0.5">
-              {/* Lien Bloom Academy - Accueil (DOIT ÊTRE EN BLANC) */}
+              {/* Lien Accueil */}
               <a
                 href="/academie/"
                 onClick={(e) => {
@@ -346,9 +362,9 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                 className={navItemClass(isActive('academie'))}
               >
                 <div className="flex items-center gap-2.5">
-                  <GraduationCap className={navIconClass(isActive('academie'))} />
-                  <span className="text-white font-bold">
-                    {lang === 'fr' ? 'Bloom Academy — Accueil' : lang === 'de' ? 'Bloom Academy — Startseite' : 'Bloom Academy — Home'}
+                  <Home className="w-3.5 h-3.5 shrink-0 text-[#FAF7F2]/70" />
+                  <span className={isActive('academie') ? 'text-white font-bold' : 'text-[#FAF7F2]/90 font-medium'}>
+                    {lang === 'fr' ? 'Accueil' : lang === 'de' ? 'Startseite' : 'Home'}
                   </span>
                 </div>
               </a>

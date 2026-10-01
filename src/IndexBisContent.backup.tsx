@@ -923,7 +923,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             <Compass className="w-3.5 h-3.5 text-[#D97706]" />
             <span>{currentT.heritageTeaser?.badge || (lang === 'fr' ? "Aux origines de la BloomLab®" : "Origins of BloomLab®")}</span>
           </div>
-          <blockquote className="text-lg sm:text-xl md:text-2xl font-serif text-[#0F261E] italic leading-relaxed max-w-3xl mx-auto">
+          <blockquote className="text-lg sm:text-xl md:text-2xl text-[#0F261E] italic leading-relaxed max-w-3xl mx-auto">
             “{currentT.heritageTeaser?.text || (lang === 'fr' ? "La BloomLab® n'est pas une simple machine. Elle est née d'une quête millénaire : celle d'extraire l'essence parfaite des plantes sans la brûler ni la gaspiller. Une technologie de précision qui réconcilie la sagesse botanique asiatique avec la science moderne." : "The BloomLab® is not just a machine. It was born from a millennia-old quest: to extract the perfect essence of plants without burning or wasting it. A precision technology that reconciles Asian botanical wisdom with modern science.")}”
           </blockquote>
           <div className="pt-2">

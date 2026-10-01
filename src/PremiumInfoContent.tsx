@@ -84,7 +84,7 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
   };
 
   return (
-    <div className="flex-1 bg-[#F9F9F7] min-h-screen">
+    <div data-product-page="true" className="product-detail flex-1 bg-[#F9F9F7] min-h-screen">
       {/* 1. Hero: Fond vert sombre #0F261E garanti, texte blanc et accents ambrés */}
       <section 
         className="relative py-20 md:py-28 px-6 overflow-hidden text-white"

@@ -59,7 +59,7 @@ export const StoreSequencingSection: React.FC<StoreSequencingSectionProps> = ({ 
             <h3 className="text-lg sm:text-xl font-bold text-[#0F261E]">
               La santé est un réseau vivant, pas une cible isolée
             </h3>
-            <p className="text-sm sm:text-base text-[#0F261E]/80 leading-relaxed font-serif italic">
+            <p className="text-sm sm:text-base text-[#0F261E]/80 leading-relaxed italic">
               « Votre corps n'est pas une machine composée de pièces isolées. C'est un réseau vivant où chaque organe communique avec les autres. Une douleur articulaire peut venir d'un foie engorgé. Un psoriasis peut naître d'un intestin perméable. Une fatigue chronique peut être liée à un axe HPA dérégulé. »
             </p>
           </div>
