@@ -1303,7 +1303,7 @@ export const translations = {
         subtitle: "Débloquez l'Herbier complet, les 56 kits de précision et le suivi de progression.",
         monthly: {
           name: "Abonnement Mensuel",
-          price: "7,90€",
+          price: "9€",
           period: "/mois",
           features: ["Accès illimité à l'Herbier", "56 Kits de Précision", "Bibliothèque Premium", "Sans engagement"],
           button: "Choisir Mensuel"
@@ -1416,7 +1416,7 @@ export const translations = {
         },
         method: {
           name: "Bloom Méthode",
-          price: "7,90€",
+          price: "9€",
           period: "/mois",
           tagline: "Pour suivre la méthode Bloom, pas seulement consulter des recettes.",
           bullets: [
@@ -2820,7 +2820,7 @@ export const translations = {
         subtitle: "Unlock the full Herbarium, the 56 precision kits and progress tracking.",
         monthly: {
           name: "Monthly Subscription",
-          price: "7.90€",
+          price: "9€",
           period: "/month",
           features: ["Unlimited Herbarium access", "56 Precision Kits", "Premium Library", "No commitment"],
           button: "Choose Monthly"
@@ -2933,7 +2933,7 @@ export const translations = {
         },
         method: {
           name: "Bloom Method",
-          price: "7.90€",
+          price: "9€",
           period: "/month",
           tagline: "To follow the Bloom method, not just consult recipes.",
           bullets: [
@@ -4337,7 +4337,7 @@ export const translations = {
         subtitle: "Schalten Sie das vollständige Herbarium, die 56 Präzisionskits und die Fortschrittsverfolgung frei.",
         monthly: {
           name: "Monatliches Abonnement",
-          price: "7,90€",
+          price: "9€",
           period: "/Monat",
           features: ["Unbegrenzter Herbariumszugriff", "56 Präzisionskits", "Premium-Bibliothek", "Keine Bindung"],
           button: "Monatlich wählen"
@@ -4450,7 +4450,7 @@ export const translations = {
         },
         method: {
           name: "Bloom Methode",
-          price: "7,90€",
+          price: "9€",
           period: "/Monat",
           tagline: "Um der Bloom-Methode zu folgen, nicht nur Rezepte zu konsultieren.",
           bullets: [

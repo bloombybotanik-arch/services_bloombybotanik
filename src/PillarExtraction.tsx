@@ -104,45 +104,6 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
 
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-6 pb-24 space-y-16">
-        
-        {/* Deux images réelles produit & préparation indexables (RÈGLE V1) */}
-        <div className="grid sm:grid-cols-2 gap-6 -mt-8 mb-4">
-          <div className="rounded-2xl overflow-hidden border border-[#E7DFD3] bg-white shadow-sm flex flex-col">
-            <div className="relative aspect-[4/3] overflow-hidden bg-[#FAF7F2]">
-              <img
-                src="/img/produit/bloomlab-1200x1200.jpg"
-                alt={isFR ? "L'extracteur botanique de précision BloomLab® pour extraire le Totum végétal à domicile" : lang === 'de' ? "Der botanische Präzisionsextraktor BloomLab® zur Extraktion des Totums zu Hause" : "The BloomLab® precision botanical extractor for home Totum extraction"}
-                width={1200}
-                height={1200}
-                loading="eager"
-                fetchPriority="high"
-                className="w-full h-full object-contain p-4"
-              />
-            </div>
-            <div className="p-3 bg-[#FAF7F2] border-t border-[#E7DFD3] flex items-center justify-between text-xs text-[#0F261E]/80">
-              <span className="font-semibold">{isFR ? "BloomLab® — Instrument d'extraction" : "BloomLab® — Extraction instrument"}</span>
-              <span className="text-[10px] text-[#D97706] font-bold uppercase">Totum Intégral</span>
-            </div>
-          </div>
-
-          <div className="rounded-2xl overflow-hidden border border-[#E7DFD3] bg-white shadow-sm flex flex-col">
-            <div className="relative aspect-[4/3] overflow-hidden bg-[#FAF7F2]">
-              <img
-                src="/assets/images/extraction_precision_cleaned_1786616821723.jpg"
-                alt={isFR ? "Exemple de préparation maison : extraction de précision et préservation des principes actifs" : lang === 'de' ? "Beispiel einer Hauszubereitung: Präzisionsextraktion und Erhaltung der Wirkstoffe" : "Home preparation example: precision extraction and active compound preservation"}
-                width={1200}
-                height={800}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-3 bg-[#FAF7F2] border-t border-[#E7DFD3] flex items-center justify-between text-xs text-[#0F261E]/80">
-              <span className="font-semibold">{isFR ? "Exemple d'extraction active en cours" : "Example of active extraction in progress"}</span>
-              <span className="text-[10px] text-[#166534] font-bold uppercase">Laboratoire Maison</span>
-            </div>
-          </div>
-        </div>
 
         {/* Section 1: Qu'est-ce que l'extraction botanique ? */}
         <section 

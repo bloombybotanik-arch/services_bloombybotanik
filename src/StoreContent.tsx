@@ -160,8 +160,8 @@ export const getProducts = (lang: Language) => {
         : lang === 'de' 
         ? "Akademie & Systemische Protokolle" 
         : "Academy & Systemic Protocols",
-      price: 7.90,
-      originalPrice: 9.90,
+      price: 9.00,
+      originalPrice: 12.00,
       image: modernShelvesImg,
       rating: 4.9,
       reviews: 128,
@@ -191,7 +191,7 @@ export const getProducts = (lang: Language) => {
       id: 'premium-access',
       name: t.premium_access.name,
       subtitle: t.premium_access.subtitle,
-      price: 7.90,
+      price: 9.00,
       image: modernShelvesImg,
       rating: 4.9,
       reviews: 128,
