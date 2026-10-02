@@ -256,11 +256,11 @@ export default function CommentLireModeleBloomContent({ onNavigate, lang = 'fr' 
 
           <div className="flex flex-wrap items-center justify-center gap-3">
             <a
-              href="/boutique/bloomlab/"
+              href="/bloomlab/"
               onClick={(e) => {
                 if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                   e.preventDefault();
-                  onNavigate('product-detail', 'bloomlab');
+                  onNavigate('machine');
                 }
               }}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#D97706] hover:bg-[#b45309] text-white text-xs font-bold transition-all shadow-md hover:shadow-lg cursor-pointer"

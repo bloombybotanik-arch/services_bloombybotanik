@@ -435,11 +435,15 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                   </p>
                   <div className="flex flex-wrap gap-4 mt-2 sm:mt-4">
                     <a 
-                      href="/boutique/bloomlab/"
+                      href="/bloomlab/"
                       onClick={(e) => {
                         if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                           e.preventDefault();
-                          handleNavigateDetail('bloomlab');
+                          if (onNavigate) {
+                            onNavigate('machine');
+                          } else {
+                            handleNavigateDetail('bloomlab');
+                          }
                         }
                       }}
                       className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-[#0F261E] hover:bg-[#D97706] active:bg-[#D97706] text-white rounded-2xl font-bold flex items-center justify-center gap-3 transition-all shadow-xl shadow-black/10 cursor-pointer min-h-[48px]"

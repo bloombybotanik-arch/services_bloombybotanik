@@ -171,7 +171,7 @@ export default function BloomAcademiePage({ onNavigate, lang }: BloomAcademiePag
             </button>
 
             <a
-              href="/boutique/bloomlab/"
+              href="/bloomlab/"
               onClick={(e) => {
                 if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                   e.preventDefault();

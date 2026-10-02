@@ -187,11 +187,11 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
         {/* Right: Commercial Return Link & Mobile Toggle */}
         <div className="flex items-center gap-2 shrink-0">
           <a
-            href="/boutique/bloomlab/"
+            href="/bloomlab/"
             onClick={(e) => {
               if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                 e.preventDefault();
-                onNavigate('product-detail', 'bloomlab');
+                onNavigate('machine');
               }
             }}
             className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/10 hover:bg-[#D97706] text-white text-xs font-bold transition-all shadow-xs hover:shadow-md cursor-pointer border border-white/10 hover:border-[#D97706]"
@@ -371,10 +371,10 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
 
           <div className="pt-2 border-t border-white/10 flex flex-col gap-2">
             <a
-              href="/boutique/bloomlab/"
+              href="/bloomlab/"
               onClick={(e) => {
                 e.preventDefault();
-                onNavigate('product-detail', 'bloomlab');
+                onNavigate('machine');
                 setMobileMenuOpen(false);
               }}
               className="w-full py-2.5 rounded-xl bg-[#D97706] hover:bg-[#b45309] text-white text-xs font-bold text-center flex items-center justify-center gap-2"

@@ -83,11 +83,11 @@ export default function Module0ChocParadigmeContent({
               <ArrowRight className="w-4 h-4" />
             </button>
             <a
-              href="/boutique/bloomlab/"
+              href="/bloomlab/"
               onClick={(e) => {
                 if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                   e.preventDefault();
-                  onNavigate('product-detail', 'bloomlab');
+                  onNavigate('machine');
                 }
               }}
               className="px-6 py-3.5 rounded-xl bg-[#161b22] hover:bg-[#21262d] text-white border border-[#30363d] hover:border-[#c9a84c] text-xs font-bold transition-all flex items-center gap-2 cursor-pointer"

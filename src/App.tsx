@@ -116,8 +116,22 @@ const PATH_VIEWS: Record<string, View> = {
     })
   ),
   '/': 'indexbis',
-  '/academie': 'academie',
-  '/academie/': 'academie',
+  '/academie': 'comment-lire-modele-bloom',
+  '/academie/': 'comment-lire-modele-bloom',
+  '/academie/herbier': 'herbier',
+  '/academie/herbier/': 'herbier',
+  '/academie/bibliotheque': 'bibliotheque',
+  '/academie/bibliotheque/': 'bibliotheque',
+  '/remedes-naturels': 'remedes-naturels-maison-guide',
+  '/remedes-naturels/': 'remedes-naturels-maison-guide',
+  '/extraction-botanique': 'pillar-extraction',
+  '/extraction-botanique/': 'pillar-extraction',
+  '/totum-vegetal': 'totum-vegetal',
+  '/totum-vegetal/': 'totum-vegetal',
+  '/cosmetiques-naturels-diy': 'cosmetiques',
+  '/cosmetiques-naturels-diy/': 'cosmetiques',
+  '/academie/comprendre-le-corps': '4-architectures',
+  '/academie/comprendre-le-corps/': '4-architectures',
   '/academie/comprendre-le-modele-bloom': 'comment-lire-modele-bloom',
   '/academie/comprendre-le-modele-bloom/': 'comment-lire-modele-bloom',
   '/comprendre-le-modele-bloom': 'comment-lire-modele-bloom',
@@ -176,8 +190,6 @@ const PATH_VIEWS: Record<string, View> = {
   '/bloomlab/': 'machine',
   '/boutique/kits': 'boutique-kits',
   '/boutique/kits/': 'boutique-kits',
-  '/totum-vegetal': 'totum-vegetal',
-  '/totum-vegetal/': 'totum-vegetal',
   '/abonnement': 'abonnement',
   '/abonnement/': 'abonnement',
   '/boutique/abonnements-numeriques': 'abonnement',
@@ -188,8 +200,8 @@ const PATH_VIEWS: Record<string, View> = {
   '/infusion-botanique-maison-comment-ca-marche/': 'infusion-botanique',
   '/lexique': 'lexique',
   '/lexique/': 'lexique',
-  '/boutique/bloomlab': 'product-detail',
-  '/boutique/bloomlab/': 'product-detail',
+  '/boutique/bloomlab': 'machine',
+  '/boutique/bloomlab/': 'machine',
   '/boutique/bundle-apothicaire': 'product-detail',
   '/boutique/bundle-apothicaire/': 'product-detail',
   '/boutique/pack-signature': 'product-detail',
@@ -697,7 +709,7 @@ export default function App() {
                   {/* SECTION: BOUTIQUE */}
                   {sectionTitle(selectedLanguage === 'fr' ? 'BOUTIQUE' : selectedLanguage === 'de' ? 'SHOP' : 'STORE')}
                   <button
-                    onClick={() => { navigateTo('product-detail', 'bloomlab'); setMobileMenuOpen(false); }}
+                    onClick={() => { navigateTo('machine'); setMobileMenuOpen(false); }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-[#FAF7F2] font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <Sparkles className="w-4 h-4 text-[#D97706]" /> BloomLab®
@@ -1082,12 +1094,7 @@ export default function App() {
             onNavigate={navigateTo}
             lang={selectedLanguage}
           />
-        ) : currentView === 'academie' ? (
-          <BloomAcademiePage
-            onNavigate={navigateTo}
-            lang={selectedLanguage}
-          />
-        ) : currentView === 'comment-lire-modele-bloom' ? (
+        ) : currentView === 'academie' || currentView === 'comment-lire-modele-bloom' ? (
           <CommentLireModeleBloomContent
             onNavigate={navigateTo}
             lang={selectedLanguage}
@@ -1313,8 +1320,8 @@ export default function App() {
             onBack={() => navigateTo('indexbis')}
             lang={selectedLanguage}
           />
-        ) : currentView === 'guide-complet-extraction-botanique-maison' || currentView === 'remedes-naturels-maison-guide' || currentView === 'totum-vegetal-comprendre' || currentView === 'cosmetiques-naturels-diy' || currentView === 'phytotherapie-moderne-scientifique' ? (
-          <PillarPagesContent pillar={currentView} lang={selectedLanguage} onNavigate={navigateTo} />
+        ) : currentView === 'guide-complet-extraction-botanique-maison' || currentView === 'remedes-naturels-maison-guide' || currentView === 'remedes-naturels' || currentView === 'totum-vegetal-comprendre' || currentView === 'cosmetiques-naturels-diy' || currentView === 'phytotherapie-moderne-scientifique' ? (
+          <PillarPagesContent pillar={currentView === 'remedes-naturels' ? 'remedes-naturels-maison-guide' : currentView} lang={selectedLanguage} onNavigate={navigateTo} />
         ) : (
           <SEOArticles view={currentView} lang={selectedLanguage} t={t} onNavigate={navigateTo} isPremium={isSubscribed} onRequireAuth={() => setIsAuthOpen(true)} />
         )}

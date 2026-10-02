@@ -208,17 +208,17 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
           </div>
           <div className="space-y-0.5">
             <a
-              href="/boutique/bloomlab/"
+              href="/bloomlab/"
               onClick={(e) => {
                 if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                   e.preventDefault();
-                  onNavigate('product-detail', 'bloomlab');
+                  onNavigate('machine');
                 }
               }}
-              className={navItemClass(isActive('product-detail'))}
+              className={navItemClass(isActive('machine') || isActive('bloomlab'))}
             >
               <div className="flex items-center gap-2.5">
-                <Sparkles className={navIconClass(isActive('product-detail'))} />
+                <Sparkles className={navIconClass(isActive('machine') || isActive('bloomlab'))} />
                 <span>BloomLab®</span>
               </div>
             </a>

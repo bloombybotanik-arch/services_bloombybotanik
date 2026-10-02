@@ -247,19 +247,19 @@ export const VIEW_METADATA: Record<string, MetaData> = {
   },
   'academie': {
     title: {
-      fr: "Bloom Académie | Savoirs & Protocoles Systémiques Vivants",
-      en: "Bloom Academy | Living Knowledge & Systemic Protocols",
-      de: "Bloom Akademie | Lebendiges Wissen & Systemische Protokolle"
+      fr: "Guide : Comment lire le modèle Bloom | Bloom Académie",
+      en: "Guide: How to Read the Bloom Model | Bloom Academy",
+      de: "Leitfaden: Wie man das Bloom-Modell liest | Bloom Akademie"
     },
     description: {
-      fr: "Comprendre le corps, maîtriser l'extraction botanique de précision et explorer nos protocoles systémiques complets (Psoriasis, SIBO, Clarté Mentale).",
-      en: "Understand the body, master precision botanical extraction, and explore complete systemic protocols (Psoriasis, SIBO, Mental Clarity).",
-      de: "Den Körper verstehen, botanische Präzisionsextraktion meistern und ganzheitliche systemische Protokolle entdecken."
+      fr: "Guide officiel d'orientation Bloom Académie : architectures, terrains, axes et fiches plantes. Repères méthodologiques et niveaux de preuve scientifique.",
+      en: "Official Bloom Academy reading guide: architectures, terrains, axes and plant monographs. Methodological benchmarks and scientific evidence levels.",
+      de: "Offizieller Orientierungsleitfaden der Bloom Akademie: Architekturen, Terrains, Achsen und Pflanzenmonographien."
     },
-    image: "/images/og/protocole-psoriasis-reset-homeostatique-1200x630.jpg",
+    image: "/images/4-architectures-og.jpg",
     imageSquare: "/images/og/protocole-psoriasis-reset-homeostatique-1080x1080.jpg",
-    imageAlt: "Bloom Académie — Comprendre le corps, maîtriser l'extraction, transmettre le vivant",
-    type: "website"
+    imageAlt: "Comment lire le modèle Bloom — Guide méthodologique Bloom Académie",
+    type: "article"
   },
   'totum-vegetal': {
     title: {
@@ -963,6 +963,22 @@ export const VIEW_METADATA: Record<string, MetaData> = {
     image: "/images/og/guide-utilisation-protocoles-bloomlab-1200x630.jpg",
     imageSquare: "/images/og/guide-utilisation-protocoles-bloomlab-1080x1080.jpg",
     imageAlt: "Guide complet extraction botanique à domicile Totum et solvants",
+    type: "article"
+  },
+  'remedes-naturels': {
+    title: {
+      fr: "Remèdes Naturels Maison : Guide Pratique pour Débutants — Bloom by BotaniK",
+      en: "Home Natural Remedies: Practical Beginner Guide — Bloom by BotaniK",
+      de: "Natürliche Hausmittel: Praktischer Leitfaden für Anfänger — Bloom by BotaniK"
+    },
+    description: {
+      fr: "Comment fabriquer ses remèdes naturels maison en toute sécurité. Les 10 plantes indispensables, synergies pour le stress, le sommeil, l'inflammation et la digestion.",
+      en: "How to make safe home natural remedies. 10 essential herbs, synergies for stress, sleep, inflammation and digestion.",
+      de: "Wie man sichere natürliche Hausmittel herstellt. Die 10 wichtigsten Heilpflanzen für Stress, Schlaf und Entzündungen."
+    },
+    image: "/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg",
+    imageSquare: "/images/og/articles-savoirs-herboristerie-botanique-1080x1080.jpg",
+    imageAlt: "Guide pratique des remèdes naturels maison pour débutants",
     type: "article"
   },
   'remedes-naturels-maison-guide': {

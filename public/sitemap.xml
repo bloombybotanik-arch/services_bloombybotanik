@@ -29,20 +29,16 @@
     </video:video>
   </url>
 
-  <!-- Pôle 1 : Extraction et Infuseurs -->
+  <!-- Pôle 1 : Remèdes & Extraction -->
   <url>
-    <loc>https://bloombybotanik.com/infuseur-botanique/</loc>
-    <lastmod>2026-09-20</lastmod>
+    <loc>https://bloombybotanik.com/remedes-naturels/</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/infuseur-botanique/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/infuseur-botanique/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/infuseur-botanique/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/infuseur-botanique/"/>
-    <image:image>
-      <image:loc>https://bloombybotanik.com/images/og-bloomlab-1200x630.jpg</image:loc>
-      <image:title>Infuseur botanique de précision BloomLab</image:title>
-    </image:image>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/remedes-naturels/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/remedes-naturels/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/remedes-naturels/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/remedes-naturels/"/>
   </url>
 
   <url>
@@ -270,14 +266,14 @@
   </url>
 
   <url>
-    <loc>https://bloombybotanik.com/boutique/bloomlab/</loc>
-    <lastmod>2026-09-20</lastmod>
+    <loc>https://bloombybotanik.com/bloomlab/</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/boutique/bloomlab/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/boutique/bloomlab/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/boutique/bloomlab/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/boutique/bloomlab/"/>
+    <priority>0.98</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/bloomlab/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/bloomlab/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/bloomlab/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/bloomlab/"/>
     <image:image>
       <image:loc>https://bloombybotanik.com/img/produit/bloomlab-1200x1200.jpg</image:loc>
       <image:title>BloomLab® : extracteur et infuseur botanique de précision</image:title>
@@ -603,17 +599,6 @@
   </url>
 
   <url>
-    <loc>https://bloombybotanik.com/comment-lire-modele-bloom/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/comment-lire-modele-bloom/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/comment-lire-modele-bloom/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/comment-lire-modele-bloom/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/comment-lire-modele-bloom/"/>
-  </url>
-
-  <url>
     <loc>https://bloombybotanik.com/abonnement/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -642,27 +627,27 @@
     <priority>0.5</priority>
   </url>
 
-  <!-- 5 Pages Piliers Stratégiques SEO -->
+  <!-- 4 Pages Piliers Stratégiques SEO Racine -->
   <url>
-    <loc>https://bloombybotanik.com/guide-complet-extraction-botanique-maison/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <loc>https://bloombybotanik.com/totum-vegetal/</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/guide-complet-extraction-botanique-maison/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/guide-complet-extraction-botanique-maison/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/guide-complet-extraction-botanique-maison/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/guide-complet-extraction-botanique-maison/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/totum-vegetal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/totum-vegetal/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/totum-vegetal/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/totum-vegetal/"/>
   </url>
 
   <url>
-    <loc>https://bloombybotanik.com/remedes-naturels-maison-guide/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <loc>https://bloombybotanik.com/cosmetiques-naturels-diy/</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/remedes-naturels-maison-guide/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/remedes-naturels-maison-guide/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/remedes-naturels-maison-guide/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/remedes-naturels-maison-guide/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bloombybotanik.com/cosmetiques-naturels-diy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bloombybotanik.com/en/cosmetiques-naturels-diy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bloombybotanik.com/de/cosmetiques-naturels-diy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bloombybotanik.com/cosmetiques-naturels-diy/"/>
   </url>
 
   <url>
