@@ -15,7 +15,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://bloombybotanik.com/infuseur-botanique/</loc>
+    <loc>https://bloombybotanik.com/bloomlab/</loc>
     <image:image>
       <image:loc>https://bloombybotanik.com/images/og/infuseur-botanique-precision-bloomlab-1200x630.jpg</image:loc>
       <image:title>Infuseur Botanique de Précision BloomLab® | Machine à Infusion Végétale</image:title>
@@ -54,7 +54,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://bloombybotanik.com/phytotherapie-reset/</loc>
+    <loc>https://bloombybotanik.com/academie/reset-homeostasique/</loc>
     <image:image>
       <image:loc>https://bloombybotanik.com/images/og/phytotherapie-reset-homeostasie-terrain-1200x630.jpg</image:loc>
       <image:title>Phytothérapie Systémique &amp; Reset Homéostasique : Les Protocoles Bloom</image:title>
@@ -93,7 +93,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://bloombybotanik.com/herbier/</loc>
+    <loc>https://bloombybotanik.com/academie/herbier/</loc>
     <image:image>
       <image:loc>https://bloombybotanik.com/images/og/herbier-plantes-medicinales-botanique-1200x630.jpg</image:loc>
       <image:title>Herbier Botanique : Fiches des Plantes Médicinales &amp; Propriétés</image:title>
@@ -106,7 +106,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://bloombybotanik.com/cosmetique-botanique/</loc>
+    <loc>https://bloombybotanik.com/cosmetiques-naturels-diy/</loc>
     <image:image>
       <image:loc>https://bloombybotanik.com/images/og/cosmetique-botanique-macerat-huileux-1200x630.jpg</image:loc>
       <image:title>Cosmétique Botanique Maison : Macérats Huileux &amp; Baumes de Précision</image:title>
@@ -262,20 +262,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://bloombybotanik.com/produit/bloomlab/</loc>
-    <image:image>
-      <image:loc>https://bloombybotanik.com/images/og/produit-bloomlab-1200x630.jpg</image:loc>
-      <image:title>BloomLab® : L'Extracteur &amp; Infuseur Botanique de Précision N°1 | Bloom by BotaniK</image:title>
-      <image:caption>Commandez l'extracteur et infuseur botanique BloomLab®. Inox chirurgical 304, vortex cinétique, thermorégulation ±0,5°C pour extraire le Totum de vos plantes médicinales.</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://bloombybotanik.com/images/og/produit-bloomlab-1080x1080.jpg</image:loc>
-      <image:title>BloomLab® : L'Extracteur &amp; Infuseur Botanique de Précision N°1 | Bloom by BotaniK</image:title>
-      <image:caption>Commandez l'extracteur et infuseur botanique BloomLab®. Inox chirurgical 304, vortex cinétique, thermorégulation ±0,5°C pour extraire le Totum de vos plantes médicinales.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://bloombybotanik.com/boutique/bloomlab/</loc>
+    <loc>https://bloombybotanik.com/bloomlab/</loc>
     <image:image>
       <image:loc>https://bloombybotanik.com/img/produit/bloomlab-1200x1200.jpg</image:loc>
       <image:title>BloomLab® Extracteur Botanique de Précision — Vue Principale</image:title>

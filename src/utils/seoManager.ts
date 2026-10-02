@@ -1551,9 +1551,9 @@ export function updateDocumentSEO(view: View, lang: Language, productParam?: str
   };
 
   const pathOnly = seo.canonicalUrl.replace('https://bloombybotanik.com', '');
-  if (view === 'protocole-psoriasis' || pathOnly === '/phytotherapie-reset/protocole-psoriasis/') {
-    setHreflang('fr', 'https://bloombybotanik.com/phytotherapie-reset/protocole-psoriasis/');
-    setHreflang('x-default', 'https://bloombybotanik.com/phytotherapie-reset/protocole-psoriasis/');
+  if (view === 'protocole-psoriasis' || pathOnly.includes('protocole-psoriasis')) {
+    setHreflang('fr', 'https://bloombybotanik.com/academie/protocoles/psoriasis/');
+    setHreflang('x-default', 'https://bloombybotanik.com/academie/protocoles/psoriasis/');
     document.querySelector('link[rel="alternate"][hreflang="en"]')?.remove();
     document.querySelector('link[rel="alternate"][hreflang="de"]')?.remove();
   } else {
@@ -1628,6 +1628,8 @@ export function updateDocumentSEO(view: View, lang: Language, productParam?: str
         "url": seo.canonicalUrl,
         "priceCurrency": "EUR",
         "price": seo.price || "29.00",
+        "priceValidUntil": "2026-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
         "availability": "https://schema.org/InStock",
         "seller": {
           "@type": "Organization",

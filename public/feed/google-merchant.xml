@@ -5,17 +5,20 @@
     <link>https://bloombybotanik.com</link>
     <description>Instruments d'extraction de précision, herboristerie moderne et santé du terrain.</description>
 
-    <!-- 1. BloomLab Solo -->
+    <!-- 1. BloomLab Solo (Canonical Product) -->
     <item>
       <g:id>bloomlab</g:id>
       <g:title>BloomLab® - L'Extracteur Botanique de Précision</g:title>
-      <g:description>L'infuseur et extracteur botanique de précision pour extraire le Totum intégral des plantes médicinales à domicile avec contrôle thermique absolu (±0,5°C).</g:description>
-      <g:link>https://bloombybotanik.com/bloomlab</g:link>
+      <g:description>L'infuseur et extracteur botanique de précision pour extraire le Totum intégral des plantes médicinales à domicile avec contrôle thermique absolu (±0,5°C) et vortex cinétique.</g:description>
+      <g:link>https://bloombybotanik.com/bloomlab/</g:link>
       <g:image_link>https://bloombybotanik.com/products/bloomlab.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:price>239.00 EUR</g:price>
       <g:brand>Bloom by BotaniK</g:brand>
       <g:condition>new</g:condition>
+      <g:identifier_exists>yes</g:identifier_exists>
+      <g:gtin>3770000000001</g:gtin>
+      <g:mpn>BLOOMLAB-V2</g:mpn>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Alternative Medicine</g:google_product_category>
       <g:shipping>
         <g:country>FR</g:country>
@@ -29,12 +32,13 @@
       <g:id>pack-signature</g:id>
       <g:title>Pack Signature BloomLab® + Collection 2026</g:title>
       <g:description>L'autonomie botanique totale : BloomLab® accompagné de la collection intégrale des kits remèdes et du Duo Argiles.</g:description>
-      <g:link>https://bloombybotanik.com/boutique/pack-signature</g:link>
-      <g:image_link>https://bloombybotanik.com/products/bloomlab.jpg</g:image_link>
+      <g:link>https://bloombybotanik.com/boutique/pack-signature/</g:link>
+      <g:image_link>https://bloombybotanik.com/products/pack-signature.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:price>289.00 EUR</g:price>
       <g:brand>Bloom by BotaniK</g:brand>
       <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Alternative Medicine</g:google_product_category>
       <g:shipping>
         <g:country>FR</g:country>
@@ -43,17 +47,18 @@
       </g:shipping>
     </item>
 
-    <!-- 3. Herbier Complet Rentrée 2026 -->
+    <!-- 3. Bundle Apothicaire -->
     <item>
-      <g:id>herbier-complet-rentree-2026</g:id>
-      <g:title>L'Herbier Complet — Pack Rentrée 2026</g:title>
+      <g:id>bundle-apothicaire</g:id>
+      <g:title>Bundle Apothicaire — Collection Intégrale Plantes Médicinales</g:title>
       <g:description>Coffret complet réunissant tous les mélanges de plantes médicinales Bloom et le Duo Argiles pour un reset complet du terrain.</g:description>
-      <g:link>https://bloombybotanik.com/boutique/herbier-complet-rentree-2026</g:link>
-      <g:image_link>https://bloombybotanik.com/products/trio-pouches.jpg</g:image_link>
+      <g:link>https://bloombybotanik.com/boutique/bundle-apothicaire/</g:link>
+      <g:image_link>https://bloombybotanik.com/products/bundle-apothicaire.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:price>49.00 EUR</g:price>
       <g:brand>Bloom by BotaniK</g:brand>
       <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Alternative Medicine</g:google_product_category>
       <g:shipping>
         <g:country>FR</g:country>
@@ -67,12 +72,13 @@
       <g:id>duo-argiles</g:id>
       <g:title>Duo Argiles Bloom — Zéolithe &amp; Bentonite</g:title>
       <g:description>Synergie minérale d'adsorption microporeuse à 6 microns pour le soutien et l'équilibre du terrain biologique.</g:description>
-      <g:link>https://bloombybotanik.com/boutique/duo-argiles</g:link>
+      <g:link>https://bloombybotanik.com/boutique/duo-argiles/</g:link>
       <g:image_link>https://bloombybotanik.com/products/duo-argiles.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:price>34.00 EUR</g:price>
       <g:brand>Bloom by BotaniK</g:brand>
       <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Alternative Medicine</g:google_product_category>
       <g:shipping>
         <g:country>FR</g:country>
@@ -81,17 +87,18 @@
       </g:shipping>
     </item>
 
-    <!-- 5. Sève Fondamentale -->
+    <!-- 5. Kit Starter Sève Fondamentale -->
     <item>
-      <g:id>seve-fondamentale</g:id>
-      <g:title>Kit Sève Fondamentale — Vitalité &amp; Reminéralisation</g:title>
+      <g:id>kit-starter</g:id>
+      <g:title>Kit Starter Sève Fondamentale — Vitalité &amp; Reminéralisation</g:title>
       <g:description>Mélange botanique de plantes médicinales sélectionnées pour leur richesse minérale et leur action sur l'axe d'adaptation.</g:description>
-      <g:link>https://bloombybotanik.com/boutique/seve-fondamentale</g:link>
-      <g:image_link>https://bloombybotanik.com/products/seve-fondamentale.jpg</g:image_link>
+      <g:link>https://bloombybotanik.com/boutique/kit-starter/</g:link>
+      <g:image_link>https://bloombybotanik.com/products/kit-starter.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:price>12.90 EUR</g:price>
       <g:brand>Bloom by BotaniK</g:brand>
       <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Alternative Medicine</g:google_product_category>
       <g:shipping>
         <g:country>FR</g:country>
@@ -100,17 +107,18 @@
       </g:shipping>
     </item>
 
-    <!-- 6. Nuit Profonde -->
+    <!-- 6. Kit Nuit Profonde -->
     <item>
-      <g:id>nuit-profonde</g:id>
+      <g:id>kit-nuit</g:id>
       <g:title>Kit Nuit Profonde — Sommeil Réparateur &amp; Ancrage</g:title>
       <g:description>Plantes médicinales pour infusion et extraction du Totum favorisant l'endormissement et un sommeil profond sans accoutumance.</g:description>
-      <g:link>https://bloombybotanik.com/boutique/nuit-profonde</g:link>
-      <g:image_link>https://bloombybotanik.com/products/nuit-profonde.jpg</g:image_link>
+      <g:link>https://bloombybotanik.com/boutique/kit-nuit/</g:link>
+      <g:image_link>https://bloombybotanik.com/products/kit-nuit.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:price>9.90 EUR</g:price>
       <g:brand>Bloom by BotaniK</g:brand>
       <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Alternative Medicine</g:google_product_category>
       <g:shipping>
         <g:country>FR</g:country>
@@ -119,17 +127,18 @@
       </g:shipping>
     </item>
 
-    <!-- 7. Confort Digestif -->
+    <!-- 7. Kit Digestion -->
     <item>
-      <g:id>confort-digestif</g:id>
+      <g:id>kit-digestion</g:id>
       <g:title>Kit Confort Digestif — Assimilation &amp; Légèreté</g:title>
       <g:description>Plantes carminatives et digestives pour soutenir les fonctions biliaires et intestinales par extraction de précision.</g:description>
-      <g:link>https://bloombybotanik.com/boutique/confort-digestif</g:link>
-      <g:image_link>https://bloombybotanik.com/products/digestion.jpg</g:image_link>
+      <g:link>https://bloombybotanik.com/boutique/kit-digestion/</g:link>
+      <g:image_link>https://bloombybotanik.com/products/kit-digestion.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:price>9.90 EUR</g:price>
       <g:brand>Bloom by BotaniK</g:brand>
       <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Alternative Medicine</g:google_product_category>
       <g:shipping>
         <g:country>FR</g:country>
@@ -138,17 +147,18 @@
       </g:shipping>
     </item>
 
-    <!-- 8. Feu Articulaire -->
+    <!-- 8. Kit Feu Articulaire -->
     <item>
-      <g:id>feu-articulaire</g:id>
+      <g:id>kit-articulaire</g:id>
       <g:title>Kit Feu Articulaire — Confort Articulaire &amp; Tissulaire</g:title>
       <g:description>Synergie botanique apaisante pour le confort articulaire et la souplesse tissulaire quotidienne.</g:description>
-      <g:link>https://bloombybotanik.com/boutique/feu-articulaire</g:link>
-      <g:image_link>https://bloombybotanik.com/products/feu-articulaire.jpg</g:image_link>
+      <g:link>https://bloombybotanik.com/boutique/kit-articulaire/</g:link>
+      <g:image_link>https://bloombybotanik.com/products/kit-articulaire.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:price>9.90 EUR</g:price>
       <g:brand>Bloom by BotaniK</g:brand>
       <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Alternative Medicine</g:google_product_category>
       <g:shipping>
         <g:country>FR</g:country>
@@ -157,17 +167,18 @@
       </g:shipping>
     </item>
 
-    <!-- 9. Bouclier Hiver -->
+    <!-- 9. Kit Bouclier Hiver -->
     <item>
-      <g:id>bouclier-hiver</g:id>
+      <g:id>kit-hiver</g:id>
       <g:title>Kit Bouclier Hiver — Vitalité Hivernale &amp; Défenses Naturelles</g:title>
       <g:description>Plantes aromatiques et toniques pour fortifier les défenses naturelles face aux rigueurs hivernales.</g:description>
-      <g:link>https://bloombybotanik.com/boutique/bouclier-hiver</g:link>
-      <g:image_link>https://bloombybotanik.com/products/bouclier-hiver.jpg</g:image_link>
+      <g:link>https://bloombybotanik.com/boutique/kit-hiver/</g:link>
+      <g:image_link>https://bloombybotanik.com/products/kit-bouclier-hiver.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:price>9.90 EUR</g:price>
       <g:brand>Bloom by BotaniK</g:brand>
       <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Alternative Medicine</g:google_product_category>
       <g:shipping>
         <g:country>FR</g:country>
