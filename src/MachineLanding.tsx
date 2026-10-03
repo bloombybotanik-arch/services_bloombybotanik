@@ -28,6 +28,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { TooltipLexique } from './components/TooltipLexique';
 import { translations, Language } from './translations';
 import { trackViewItem, trackFaqExpand } from './utils/analytics';
+import { AmazonRatingBadge } from './components/AmazonSocialProof';
 
 const heroViews = [
   { id: 'v2', label: 'Vue 2', src: '/images/1.png', fallbackSrc: '/images/1.png', subtitle: 'Précision' },
@@ -58,8 +59,25 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
   const faqItems = (t as any).faq || [];
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': 'https://bloombybotanik.com/bloomlab/#faq',
+    mainEntity: faqItems.map((item: any) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
+  };
+
   return (
     <div data-product-page="true" className="product-detail animate-in fade-in duration-700 bg-[#FAF7F2] text-[#0F261E] w-full max-w-full overflow-x-hidden">
+      <script type="application/ld+json">
+        {JSON.stringify(faqSchema)}
+      </script>
       {/* Fullscreen Image Overlay */}
       <AnimatePresence>
         {fullscreenImage && (
@@ -134,6 +152,9 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                     <>BloomLab® — Precision Botanical Extractor for Herbal Infusions</>
                   )}
                 </h1>
+                <div className="pt-2 pointer-events-auto">
+                  <AmazonRatingBadge lang={lang} variant="minimal" className="text-white/90 hover:text-white" />
+                </div>
               </div>
 
               {/* 4 Image Thumbnails on bottom-left: no text labels, just sleek image thumbnails */}
@@ -684,9 +705,12 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                   Achat Matériel Seul
                 </span>
                 <h3 className="text-2xl font-bold text-[#0F261E] mb-2">BloomLab® Solo</h3>
-                <p className="text-xs text-[#0F261E]/70 mb-6 leading-relaxed">
+                <p className="text-xs text-[#0F261E]/70 mb-4 leading-relaxed">
                   L'extracteur botanique de laboratoire chez vous pour réaliser vos extractions de plantes en toute autonomie.
                 </p>
+                <div className="mb-4">
+                  <AmazonRatingBadge lang={lang} />
+                </div>
                 <div className="flex items-baseline gap-2 mb-6">
                   <span className="text-4xl font-black text-[#0F261E]">239€</span>
                   <span className="text-sm line-through text-[#0F261E]/40 font-medium">289€</span>

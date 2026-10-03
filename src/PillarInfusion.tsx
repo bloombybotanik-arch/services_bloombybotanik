@@ -105,11 +105,11 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
             </div>
 
             {/* Image principale LCP */}
-            <div className="lg:col-span-5">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-white/5 aspect-[16/10]">
+            <div className="lg:col-span-5 flex justify-center">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-white/5 aspect-[16/10] w-full max-w-md max-h-[280px]">
                 <img
-                  src="/img/produit/bloomlab-cuisine-1200x630.jpg"
-                  alt={isFR ? "BloomLab® — Extracteur et infuseur botanique de précision en cuisine" : lang === 'de' ? "BloomLab® — Botanischer Präzisionsextraktor in der Küche" : "BloomLab® — Precision botanical extractor in kitchen environment"}
+                  src="/images/2.png"
+                  alt={isFR ? "BloomLab® — Extracteur et infuseur botanique de précision" : lang === 'de' ? "BloomLab® — Botanischer Präzisionsextraktor" : "BloomLab® — Precision botanical extractor"}
                   width={1200}
                   height={630}
                   loading="eager"
@@ -117,7 +117,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-3 left-3 right-3 text-xs text-white/90 bg-black/50 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-white/10">
+                <div className="absolute bottom-2.5 left-2.5 right-2.5 text-[11px] text-white/90 bg-black/60 backdrop-blur-xs px-2.5 py-1 rounded-lg border border-white/10 text-center">
                   {t.meta.imgLegend}
                 </div>
               </div>

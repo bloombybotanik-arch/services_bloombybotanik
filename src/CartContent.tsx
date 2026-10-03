@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { translations, Language } from './translations';
 import { getShippingPrice, ShippingMethod, isDigitalProduct } from './lib/shippingUtils';
+import { AmazonRatingBadge } from './components/AmazonSocialProof';
 
 interface CartItem {
   id: string;
@@ -525,6 +526,9 @@ export default function CartContent({
 
               {/* Garanties */}
               <div className="pt-6 border-t border-white/10 space-y-4">
+                <div className="flex items-center justify-center pb-1">
+                  <AmazonRatingBadge lang={lang as any} variant="reassurance" />
+                </div>
                 <div className="flex items-start gap-3">
                   <ShieldCheck className="w-5 h-5 text-green-400 shrink-0 mt-0.5" />
                   <div>

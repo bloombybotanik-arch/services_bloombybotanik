@@ -1,5 +1,5 @@
 import ExtractionKineticsChart from './components/ExtractionKineticsChart';
-import AmazonSocialProof from './components/AmazonSocialProof';
+import AmazonSocialProof, { AmazonRatingBadge } from './components/AmazonSocialProof';
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PaymentBadges } from './components/PaymentBadges';
@@ -1413,6 +1413,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
 
           {/* Réassurance & Logos de Paiement (ICI UNIQUEMENT) */}
           <div className="pt-10 border-t border-[#F3EEE6] space-y-6 text-center">
+            <div className="flex justify-center">
+              <AmazonRatingBadge lang={isDE ? 'de' : isFR ? 'fr' : 'en'} variant="reassurance" />
+            </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto text-xs text-slate-600 font-bold">
               <div className="flex items-center justify-center gap-2">
                 <Truck className="w-4 h-4 text-[#D97706]" />
@@ -1709,6 +1713,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   <div className="text-emerald-700/80">
                     {isFR ? "Garantie constructeur 1 an & Satisfait ou remboursé 30 jours." : "1-year warranty & 30-day money-back guarantee."}
                   </div>
+                </div>
+
+                <div className="flex justify-center pt-1">
+                  <AmazonRatingBadge lang={isDE ? 'de' : isFR ? 'fr' : 'en'} variant="reassurance" />
                 </div>
               </div>
 

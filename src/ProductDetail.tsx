@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { ArrowLeft, Check, ShieldCheck, Thermometer, Timer, RefreshCw, ShoppingBag, FlaskConical, Beaker, Leaf, ChefHat, X, Star, Heart, Share2, Info, Award } from 'lucide-react';
 import { translations, Language } from './translations';
 import { getProductSheets } from './data/productDetailsData';
+import { AmazonRatingBadge } from './components/AmazonSocialProof';
 
 interface ProductDetailProps {
   onBack: () => void;
@@ -280,6 +281,11 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
               <div className="text-[#D97706] text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] mb-4">
                 {sheet.subtitle}
               </div>
+              {(productId === 'bloomlab' || productId === 'pack-signature') && (
+                <div className="mb-4">
+                  <AmazonRatingBadge lang={lang} />
+                </div>
+              )}
             </>
           )}
           
@@ -294,6 +300,11 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
           <div className={`rounded-2xl sm:rounded-3xl border border-[#1B3022]/8 ${
             isArgiles ? 'bg-[#FAF8F5] p-4 sm:p-5 mb-5 shadow-xs' : 'bg-[#F9F9F7] p-5 sm:p-8 mb-8 md:mb-10'
           }`}>
+            {(productId === 'bloomlab' || productId === 'pack-signature') && (
+              <div className="mb-3">
+                <AmazonRatingBadge lang={lang} variant="minimal" />
+              </div>
+            )}
             <div className="flex items-baseline gap-3 mb-3 flex-wrap">
               <span className={`${
                 isArgiles ? 'text-2xl sm:text-3xl font-bold text-[#0F261E]' : 'text-2xl sm:text-3xl md:text-5xl font-bold text-[#1B3022]'

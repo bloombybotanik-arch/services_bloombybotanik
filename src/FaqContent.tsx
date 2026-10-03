@@ -117,6 +117,34 @@ export default function FaqContent({ onNavigate, lang = 'fr' }: FaqContentProps)
         : "The food-grade 304 stainless steel chamber and filter basket clean in under two minutes with warm water and mild soap."
     },
     {
+      id: 'q-voc-presse-huile',
+      category: 'machine',
+      q: isFR 
+        ? "La BloomLab presse-t-elle les graines pour extraire de l'huile ?" 
+        : isDE 
+        ? "Presst der BloomLab Samen, um Öl zu gewinnen?" 
+        : "Does the BloomLab press seeds to extract oil?",
+      a: isFR 
+        ? "Non — c'est un infuseur/extracteur basse température qui aromatise et extrait par macération contrôlée ; elle ne remplace pas une presse à huile." 
+        : isDE 
+        ? "Nein — es ist ein Niedrigtemperatur-Infuser/Extraktor, der durch kontrollierte Mazeration aromatisiert und extrahiert; er ersetzt keine Ölpresse." 
+        : "No — it is a low-temperature infuser/extractor that flavors and extracts through controlled maceration; it does not replace an oil press."
+    },
+    {
+      id: 'q-voc-temps-adaptation',
+      category: 'machine',
+      q: isFR 
+        ? "Faut-il un temps d'adaptation pour maîtriser les réglages ?" 
+        : isDE 
+        ? "Benötigt man eine Eingewöhnungszeit, um die Einstellungen zu beherrschen?" 
+        : "Is there a learning curve to master the settings?",
+      a: isFR 
+        ? "Oui, compter quelques préparations ; le guide 100 recettes, le démarrage rapide et les vidéos accompagnent les premiers cycles." 
+        : isDE 
+        ? "Ja, rechnen Sie mit einigen Zubereitungen; der 100-Rezepte-Leitfaden, die Schnellanleitung und Videos begleiten Sie bei den ersten Zyklen." 
+        : "Yes, allow for a few preparations; the 100-recipe guide, quick start guide, and videos assist you through the first cycles."
+    },
+    {
       id: 'q4',
       category: 'extraction',
       q: isFR 
@@ -261,8 +289,25 @@ export default function FaqContent({ onNavigate, lang = 'fr' }: FaqContentProps)
     });
   }, [faqList, activeCategory, searchQuery]);
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': 'https://bloombybotanik.com/questions-frequentes/#faq',
+    mainEntity: faqList.map(item => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
+  };
+
   return (
     <div className="animate-in fade-in duration-500 bg-[#F9F9F7] min-h-screen">
+      <script type="application/ld+json">
+        {JSON.stringify(faqSchema)}
+      </script>
       {/* Hero Header */}
       <section className="relative py-16 md:py-24 bg-[#0F261E] text-white overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none" />

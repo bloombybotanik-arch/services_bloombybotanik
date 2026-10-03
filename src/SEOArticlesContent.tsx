@@ -662,46 +662,69 @@ export const TotumDefinition = ({ lang, t, onNavigate }: SEOArticleProps) => {
     <article className="bg-[#F9F9F7] text-[#0F261E] min-h-screen pb-28">
       {/* HEADER HERO */}
       <header 
-        className="relative text-white pt-24 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        className="relative text-white pt-16 pb-16 md:pt-20 md:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-white/10"
         style={{ backgroundColor: '#0F261E', color: '#ffffff' }}
       >
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#D97706_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
         
-        <div className="max-w-4xl mx-auto relative z-10 space-y-6 text-center sm:text-left">
-          <div className="inline-flex items-start sm:items-center gap-2 px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-white/10 text-[#D97706] text-xs font-bold uppercase tracking-widest border border-white/15 backdrop-blur-xs text-left">
-            <Compass className="w-3.5 h-3.5 shrink-0 mt-0.5 sm:mt-0" />
-            <span className="leading-snug">
-              {isFR ? (
-                <>
-                  <span className="block sm:inline">Science du Vivant &</span>
-                  <span className="block sm:inline sm:ml-1 whitespace-nowrap">Souveraineté Botanique</span>
-                </>
-              ) : isDE ? (
-                <span>Wissenschaft des Lebendigen</span>
-              ) : (
-                <>
-                  <span className="block sm:inline">Living Systems &</span>
-                  <span className="block sm:inline sm:ml-1 whitespace-nowrap">Botanical Sovereignty</span>
-                </>
-              )}
-            </span>
+        <div className="max-w-5xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7 space-y-6 text-center sm:text-left">
+              <div className="inline-flex items-start sm:items-center gap-2 px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-white/10 text-[#D97706] text-xs font-bold uppercase tracking-widest border border-white/15 backdrop-blur-xs text-left">
+                <Compass className="w-3.5 h-3.5 shrink-0 mt-0.5 sm:mt-0" />
+                <span className="leading-snug">
+                  {isFR ? (
+                    <>
+                      <span className="block sm:inline">Science du Vivant &</span>
+                      <span className="block sm:inline sm:ml-1 whitespace-nowrap">Souveraineté Botanique</span>
+                    </>
+                  ) : isDE ? (
+                    <span>Wissenschaft des Lebendigen</span>
+                  ) : (
+                    <>
+                      <span className="block sm:inline">Living Systems &</span>
+                      <span className="block sm:inline sm:ml-1 whitespace-nowrap">Botanical Sovereignty</span>
+                    </>
+                  )}
+                </span>
+              </div>
+
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                {isFR 
+                  ? "Le Totum Végétal : L'Intelligence Collective de la Plante" 
+                  : isDE 
+                  ? "Das Pflanzen-Totum: Die kollektive Intelligenz der Pflanze" 
+                  : "The Plant Totum: The Collective Intelligence of the Plant"}
+              </h1>
+
+              <p className="text-base sm:text-lg text-white/85 leading-relaxed font-light max-w-2xl">
+                {isFR 
+                  ? "Bien avant d'isoler des molécules, les grandes traditions médicales utilisaient déjà la plante entière. Bloom by BotaniK explore cette intuition ancestrale — le totum — et la lumière que la science moderne apporte à sa compréhension." 
+                  : isDE 
+                  ? "Lange vor der Isolierung von Molekülen nutzten die großen Medizintraditionen bereits die ganze Pflanze. Bloom by BotaniK erforscht diese uralte Intuition – das Totum – und das Licht, das die moderne Wissenschaft auf sein Verständnis wirft." 
+                  : "Long before isolating molecules, great medical traditions were already using the whole plant. Bloom by BotaniK explores this ancestral intuition — the totum — and the light that modern science sheds on its understanding."}
+              </p>
+            </div>
+
+            {/* Header Image - échelle équilibrée pas trop grande */}
+            <div className="lg:col-span-5 flex justify-center">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-white/5 aspect-[16/10] w-full max-w-md max-h-[280px]">
+                <img
+                  src="/images/8.png"
+                  alt={isFR ? "Le Totum Végétal — Synergie intégrale de la plante et extraction BloomLab" : "The Plant Totum — Whole botanical synergy"}
+                  width={1200}
+                  height={630}
+                  loading="eager"
+                  fetchPriority="high"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-2.5 left-2.5 right-2.5 text-[11px] text-white/90 bg-black/60 backdrop-blur-xs px-2.5 py-1 rounded-lg border border-white/10 text-center">
+                  {isFR ? "Totum végétal : préservation de l'intégrité moléculaire" : "Plant Totum: molecular integrity"}
+                </div>
+              </div>
+            </div>
           </div>
-
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            {isFR 
-              ? "Le Totum Végétal : L'Intelligence Collective de la Plante" 
-              : isDE 
-              ? "Das Pflanzen-Totum: Die kollektive Intelligenz der Pflanze" 
-              : "The Plant Totum: The Collective Intelligence of the Plant"}
-          </h1>
-
-          <p className="text-lg sm:text-xl text-white/85 leading-relaxed font-light max-w-3xl">
-            {isFR 
-              ? "Bien avant d'isoler des molécules, les grandes traditions médicales utilisaient déjà la plante entière. Bloom by BotaniK explore cette intuition ancestrale — le totum — et la lumière que la science moderne apporte à sa compréhension." 
-              : isDE 
-              ? "Lange vor der Isolierung von Molekülen nutzten die großen Medizintraditionen bereits die ganze Pflanze. Bloom by BotaniK erforscht diese uralte Intuition – das Totum – und das Licht, das die moderne Wissenschaft auf sein Verständnis wirft." 
-              : "Long before isolating molecules, great medical traditions were already using the whole plant. Bloom by BotaniK explores this ancestral intuition — the totum — and the light that modern science sheds on its understanding."}
-          </p>
         </div>
       </header>
 

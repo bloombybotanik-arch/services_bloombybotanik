@@ -639,31 +639,54 @@ function PillarTotumVegetal({ onNavigate, isFR }: { onNavigate: (v: View, p?: st
     <article className="min-h-screen bg-[#FAF7F2] text-[#1B3022] font-sans pb-24">
       <script type="application/ld+json">{JSON.stringify(definedTermSchema)}</script>
 
-      <header className="relative bg-[#0F261E] text-white py-20 px-6 overflow-hidden">
-        <div className="max-w-4xl mx-auto relative z-10">
-          <nav aria-label="Fil d'Ariane" className="flex items-center gap-2 text-xs text-[#E5D7B7] mb-6">
-            <button onClick={() => onNavigate('home')} className="hover:underline">Accueil</button>
-            <span>/</span>
-            <button onClick={() => onNavigate('guides')} className="hover:underline">Guides</button>
-            <span>/</span>
-            <span className="text-[#D97706] font-medium">Totum Végétal</span>
-          </nav>
+      <header className="relative bg-[#0F261E] text-white py-16 px-6 overflow-hidden border-b border-white/10">
+        <div className="max-w-5xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7">
+              <nav aria-label="Fil d'Ariane" className="flex items-center gap-2 text-xs text-[#E5D7B7] mb-6">
+                <button onClick={() => onNavigate('home')} className="hover:underline">Accueil</button>
+                <span>/</span>
+                <button onClick={() => onNavigate('guides')} className="hover:underline">Guides</button>
+                <span>/</span>
+                <span className="text-[#D97706] font-medium">Totum Végétal</span>
+              </nav>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D97706]/20 border border-[#D97706]/40 text-[#D97706] text-xs font-bold uppercase tracking-widest mb-6">
-            <Sparkles className="w-4 h-4" />
-            <span>Fondement Scientifique • Synergie Moléculaire</span>
-          </div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D97706]/20 border border-[#D97706]/40 text-[#D97706] text-xs font-bold uppercase tracking-widest mb-6">
+                <Sparkles className="w-4 h-4" />
+                <span>Fondement Scientifique • Synergie Moléculaire</span>
+              </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-6">
-            Le Totum Végétal Expliqué : Pourquoi la Plante Entière est Plus Puissante
-          </h1>
-          <p className="text-lg sm:text-xl text-[#FAF7F2]/90 leading-relaxed max-w-3xl">
-            De Paracelse à la <em>network pharmacology</em> moderne : découvrez pourquoi l'extrait de totum végétal surpasse les molécules isolées synthétiques, les preuves cliniques de la synergie et comment préserver cette intelligence vivante.
-          </p>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-tight mb-6">
+                Le Totum Végétal Expliqué : Pourquoi la Plante Entière est Plus Puissante
+              </h1>
+              <p className="text-base sm:text-lg text-[#FAF7F2]/90 leading-relaxed max-w-2xl">
+                De Paracelse à la <em>network pharmacology</em> moderne : découvrez pourquoi l'extrait de totum végétal surpasse les molécules isolées synthétiques, les preuves cliniques de la synergie et comment préserver cette intelligence vivante.
+              </p>
 
-          <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center gap-6 text-xs text-[#E5D7B7]">
-            <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-[#D97706]" /> 2 300 mots • 12 min</span>
-            <span className="flex items-center gap-2"><BookOpen className="w-4 h-4 text-[#D97706]" /> Références PubMed &amp; Pharmacognosie</span>
+              <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center gap-6 text-xs text-[#E5D7B7]">
+                <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-[#D97706]" /> 2 300 mots • 12 min</span>
+                <span className="flex items-center gap-2"><BookOpen className="w-4 h-4 text-[#D97706]" /> Références PubMed &amp; Pharmacognosie</span>
+              </div>
+            </div>
+
+            {/* Header Image - échelle équilibrée pas trop grande */}
+            <div className="lg:col-span-5 flex justify-center">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-white/5 aspect-[16/10] w-full max-w-md max-h-[280px]">
+                <img
+                  src="/images/8.png"
+                  alt="Le Totum Végétal — Extraction et synergie intégrale de la plante"
+                  width={1200}
+                  height={630}
+                  loading="eager"
+                  fetchPriority="high"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-2.5 left-2.5 right-2.5 text-[11px] text-white/90 bg-black/60 backdrop-blur-xs px-2.5 py-1 rounded-lg border border-white/10 text-center">
+                  Totum végétal : préservation de l'intégrité moléculaire
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </header>

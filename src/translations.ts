@@ -1465,6 +1465,14 @@ export const translations = {
         {
           q: "Quelle est la garantie de l'extracteur BloomLab ?",
           a: "L'appareil bénéficie d'une garantie constructeur de 1 an complète (pièces et main-d'œuvre), avec un support client et technique réactif basé en Europe."
+        },
+        {
+          q: "La BloomLab presse-t-elle les graines pour extraire de l'huile ?",
+          a: "Non — c'est un infuseur/extracteur basse température qui aromatise et extrait par macération contrôlée ; elle ne remplace pas une presse à huile."
+        },
+        {
+          q: "Faut-il un temps d'adaptation pour maîtriser les réglages ?",
+          a: "Oui, compter quelques préparations ; le guide 100 recettes, le démarrage rapide et les vidéos accompagnent les premiers cycles."
         }
       ]
     },
@@ -2982,6 +2990,14 @@ export const translations = {
         {
           q: "What is the warranty on the BloomLab extractor?",
           a: "The device includes a full 1-year manufacturer warranty (parts and labor) with responsive European technical support."
+        },
+        {
+          q: "Does the BloomLab press seeds to extract oil?",
+          a: "No — it is a low-temperature infuser/extractor that flavors and extracts through controlled maceration; it does not replace an oil press."
+        },
+        {
+          q: "Is there a learning curve to master the settings?",
+          a: "Yes, allow for a few preparations; the 100-recipe guide, quick start guide, and videos assist you through the first cycles."
         }
       ]
     },
@@ -4499,6 +4515,14 @@ export const translations = {
         {
           q: "Wie lange gilt die Garantie für den BloomLab?",
           a: "Das Gerät verfügt über eine 1-jährige Herstellergarantie (Teile und Arbeitsleistung) mit europäischem Kundenservice."
+        },
+        {
+          q: "Presst der BloomLab Samen, um Öl zu gewinnen?",
+          a: "Nein — es ist ein Niedrigtemperatur-Infuser/Extraktor, der durch kontrollierte Mazeration aromatisiert und extrahiert; er ersetzt keine Ölpresse."
+        },
+        {
+          q: "Benötigt man eine Eingewöhnungszeit, um die Einstellungen zu beherrschen?",
+          a: "Ja, rechnen Sie mit einigen Zubereitungen; der 100-Rezepte-Leitfaden, die Schnellanleitung und Videos begleiten Sie bei den ersten Zyklen."
         }
       ]
     },

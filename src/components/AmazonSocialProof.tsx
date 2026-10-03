@@ -18,38 +18,142 @@ type Lang = 'fr' | 'en' | 'de';
 export const AMAZON_PROOF = {
   asin: 'B0F7GGTMNR',
   url: 'https://www.amazon.fr/dp/B0F7GGTMNR',
-  rating: 0,                    // TODO Seller Central : ex. 4.6
-  count: 0,                     // TODO Seller Central : ex. 279
-  histogram: [0, 0, 0, 0, 0] as [number, number, number, number, number], // 5★ → 1★
-  updatedAt: '',                // TODO : '2026-09-01'
+  rating: 4.3,
+  count: 7,
+  histogram: [4, 2, 1, 0, 0] as [number, number, number, number, number], // 5★:4, 4★:2, 3★:1, 2★:0, 1★:0
+  updatedAt: '2026-10-02',
 };
 
 const STR = {
   fr: {
-    title: 'Avis vérifiés Amazon.fr',
-    subtitle: 'Notes collectées et hébergées par Amazon sur des commandes vérifiées.',
-    reviews: 'avis vérifiés',
-    cta: 'Lire les avis sur Amazon.fr',
+    title: 'Notes & Évaluations Amazon.fr',
+    subtitle: 'Notes collectées et hébergées par Amazon.fr',
+    reviews: 'notes',
+    cta: 'Voir les avis sur Amazon.fr',
     activation: 'Acheté sur Amazon ? Activez vos protocoles Premium',
     updated: 'Mise à jour',
+    microCopy: 'Note Amazon.fr au 02/10/2026 — voir les avis sur la fiche produit',
+    badgeLabel: 'sur Amazon.fr',
   },
   en: {
-    title: 'Verified reviews on Amazon.fr',
-    subtitle: 'Ratings collected and hosted by Amazon on verified orders.',
-    reviews: 'verified reviews',
-    cta: 'Read reviews on Amazon.fr',
+    title: 'Ratings & Reviews Amazon.fr',
+    subtitle: 'Ratings collected and hosted by Amazon.fr',
+    reviews: 'ratings',
+    cta: 'View reviews on Amazon.fr',
     activation: 'Bought on Amazon? Activate your Premium protocols',
     updated: 'Updated',
+    microCopy: 'Amazon.fr rating as of 02/10/2026 — see reviews on product page',
+    badgeLabel: 'on Amazon.fr',
   },
   de: {
-    title: 'Verifizierte Bewertungen auf Amazon.fr',
-    subtitle: 'Bewertungen von Amazon über verifizierte Bestellungen erfasst.',
-    reviews: 'verifizierte Bewertungen',
-    cta: 'Bewertungen auf Amazon.fr lesen',
+    title: 'Bewertungen Amazon.fr',
+    subtitle: 'Bewertungen erfasst und gehostet von Amazon.fr',
+    reviews: 'Bewertungen',
+    cta: 'Bewertungen auf Amazon.fr ansehen',
     activation: 'Auf Amazon gekauft? Premium-Protokolle aktivieren',
     updated: 'Stand',
+    microCopy: 'Amazon.fr Bewertung Stand 02.10.2026 — Rezensionen auf Produktseite ansehen',
+    badgeLabel: 'auf Amazon.fr',
   },
 } as const;
+
+export const CompactStars = ({ value, size = 'sm' }: { value: number; size?: 'sm' | 'md' }) => {
+  const dim = size === 'sm' ? 'w-3.5 h-3.5' : 'w-4 h-4';
+  return (
+    <div className="relative inline-flex" aria-hidden="true">
+      <div className="flex gap-0.5 text-slate-300">
+        {[...Array(5)].map((_, i) => <Star key={i} className={dim} strokeWidth={1.5} />)}
+      </div>
+      <div className="absolute inset-0 overflow-hidden" style={{ width: `${(value / 5) * 100}%` }}>
+        <div className="flex gap-0.5 text-[#D97706]">
+          {[...Array(5)].map((_, i) => <Star key={i} className={`${dim} fill-current`} strokeWidth={1.5} />)}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export function AmazonRatingBadge({
+  lang = 'fr',
+  className = '',
+  variant = 'default',
+}: {
+  lang?: Lang;
+  className?: string;
+  variant?: 'default' | 'card' | 'minimal' | 'reassurance';
+}) {
+  const { rating, count, url } = AMAZON_PROOF;
+
+  // Garde-fou anti-fabrication : aucune note réelle = aucun rendu
+  if (!rating || !count) return null;
+
+  const s = STR[lang];
+
+  if (variant === 'reassurance') {
+    return (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`group inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FAF7F2] border border-[#E7DFD3] hover:border-[#D97706]/40 hover:bg-[#F5EFE6] transition-all text-[#0F261E] ${className}`}
+        title={s.microCopy}
+      >
+        <span className="font-bold text-xs text-[#0F261E]">{rating.toFixed(1).replace('.', ',')}/5</span>
+        <CompactStars value={rating} size="sm" />
+        <span className="text-[11px] font-medium text-slate-600 group-hover:text-[#0F261E] transition-colors">
+          ({count} {s.reviews} {s.badgeLabel})
+        </span>
+        <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-[#D97706] transition-colors" />
+      </a>
+    );
+  }
+
+  if (variant === 'minimal') {
+    return (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`group inline-flex items-center gap-2 text-xs text-slate-600 hover:text-[#0F261E] transition-colors ${className}`}
+        title={s.microCopy}
+      >
+        <span className="font-bold text-[#0F261E]">{rating.toFixed(1).replace('.', ',')}/5</span>
+        <CompactStars value={rating} size="sm" />
+        <span className="underline underline-offset-2 decoration-slate-300 group-hover:decoration-[#D97706]">
+          {count} {s.reviews} {s.badgeLabel}
+        </span>
+        <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-[#D97706]" />
+      </a>
+    );
+  }
+
+  // Variant default / card : note + étoiles + count + lien avec micro-copy discret
+  return (
+    <div className={`inline-flex flex-col gap-1 ${className}`}>
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-xl bg-[#FAF7F2] border border-[#E7DFD3] hover:border-[#D97706]/50 hover:bg-white transition-all text-[#0F261E]"
+      >
+        <span className="text-sm font-black text-[#0F261E]">{rating.toFixed(1).replace('.', ',')}/5</span>
+        <CompactStars value={rating} size="sm" />
+        <span className="text-xs font-semibold text-slate-600 group-hover:text-[#0F261E] transition-colors">
+          ({count} {s.reviews} {s.badgeLabel})
+        </span>
+        <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#D97706] transition-colors" />
+      </a>
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-[10px] text-slate-500 hover:text-[#0F261E] transition-colors pl-1 tracking-tight flex items-center gap-1 underline underline-offset-2"
+      >
+        <span>{s.microCopy}</span>
+      </a>
+    </div>
+  );
+}
 
 const Stars = ({ value }: { value: number }) => (
   <div className="relative inline-flex" aria-hidden="true">
@@ -98,6 +202,15 @@ export default function AmazonSocialProof({
                 </span>
               </div>
             </div>
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-[11px] text-slate-500 hover:text-[#0F261E] underline underline-offset-2 transition-colors pt-1"
+            >
+              <span>{s.microCopy}</span>
+              <ExternalLink className="w-3 h-3 text-slate-400" />
+            </a>
             {updatedAt && (
               <span className="block text-[10px] text-slate-400 font-medium">{s.updated} : {updatedAt}</span>
             )}
