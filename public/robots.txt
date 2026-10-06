@@ -18,6 +18,7 @@ Allow: /assets/
 Allow: /
 
 Sitemap: https://bloombybotanik.com/sitemap.xml
+Sitemap: https://bloombybotanik.com/sitemap-recettes.xml
 Sitemap: https://bloombybotanik.com/sitemap-images.xml
 Sitemap: https://bloombybotanik.com/sitemap-fr.xml
 Sitemap: https://bloombybotanik.com/sitemap-en.xml

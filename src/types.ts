@@ -1,5 +1,5 @@
 
-export type View = 'home' | 'machine' | 'bloomlab' | 'phytotherapie-reset' | 'votre-pratique' | 'parcours' | 'boutique' | 'product-detail' | 'culinaire' | 'cosmetiques' | 'cosmetique-botanique' | 'gastronomie-botanique' | 'library-landing' | 'manifeste' | 'activation' | 'activate-bloomlab' | 'account' | 'legal' | 'chat' | 'cart' | 'checkout' | 'guide' | 'how_it_works' | 'pending' | 'library' | 'herbier' | 'pillar-extraction' | 'guide-complet' | 'qu-est-ce-que-infusion' | 'admin' | 'blog' | 'withdrawal' | 'indexbis' | 'newsletter-preferences' | 'admin-newsletter' | 'terrain' | 'hormese' | 'infuseur-botanique' | 'cgv' | 'cgu' | 'privacy' | 'mentions' | 'returns' | 'recettes' | 'guides' | 'ateliers' | 'herbarium' | 'questions-frequentes' | 'faq' | 'infusion-precision' | 'totum-definition' | 'solvants-extraction' | 'premium-info' | 'decouvrir' | 'comment-ca-marche' | 'recettes-gratuites' | 'apprendre' | 'preparations-avancees' | 'recettes-cosmetiques' | 'bibliotheque' | 'boutique-kits' | 'abonnement' | 'abonnements-numeriques' | 'la-marque' | 'contact' | 'extraction-botanique' | 'remedes-naturels' | 'infusion-botanique' | 'infusion-botanique-maison-comment-ca-marche' | 'huile-infusee' | 'plantes-adaptogenes' | 'totum-vegetal' | 'maceration-plantes' | 'teinture-mere' | 'kits-botaniques' | 'articles' | 'lexique' | 'protocole-psoriasis' | 'protocole-sibo' | 'protocole-myeline' | 'protocole-decalcification-pineale' | 'blog-vieillissement-myeline' | 'academie' | '4-architectures' | '7-terrains' | 'comment-lire-modele-bloom' | '9-axes' | 'neuf-axes-historiques' | 'charge-allostatique' | 'reset-homeostasique' | 'metabolisme-insuline' | 'protocoles' | 'module-0' | 'axe-a1' | 'axe-a2' | 'axe-a3' | 'axe-a4' | 'axe-a5' | 'axe-a6' | 'axe-a7' | 'axe-a8' | 'axe-a9' | 'guide-complet-extraction-botanique-maison' | 'remedes-naturels-maison-guide' | 'totum-vegetal-comprendre' | 'cosmetiques-naturels-diy' | 'phytotherapie-moderne-scientifique' | 'nutrition-et-micronutrition' | 'micronutrition-guide-achat' | 'micronutrition-precautions';
+export type View = 'home' | 'machine' | 'bloomlab' | 'phytotherapie-reset' | 'votre-pratique' | 'parcours' | 'boutique' | 'product-detail' | 'culinaire' | 'cosmetiques' | 'cosmetique-botanique' | 'gastronomie-botanique' | 'library-landing' | 'manifeste' | 'activation' | 'activate-bloomlab' | 'account' | 'legal' | 'chat' | 'cart' | 'checkout' | 'guide' | 'how_it_works' | 'pending' | 'library' | 'herbier' | 'pillar-extraction' | 'guide-complet' | 'qu-est-ce-que-infusion' | 'admin' | 'blog' | 'withdrawal' | 'indexbis' | 'newsletter-preferences' | 'admin-newsletter' | 'terrain' | 'hormese' | 'infuseur-botanique' | 'cgv' | 'cgu' | 'privacy' | 'mentions' | 'returns' | 'recettes' | 'guides' | 'ateliers' | 'herbarium' | 'questions-frequentes' | 'faq' | 'infusion-precision' | 'totum-definition' | 'solvants-extraction' | 'premium-info' | 'decouvrir' | 'comment-ca-marche' | 'recettes-gratuites' | 'apprendre' | 'preparations-avancees' | 'recettes-cosmetiques' | 'bibliotheque' | 'boutique-kits' | 'abonnement' | 'abonnements-numeriques' | 'la-marque' | 'contact' | 'extraction-botanique' | 'remedes-naturels' | 'infusion-botanique' | 'infusion-botanique-maison-comment-ca-marche' | 'huile-infusee' | 'plantes-adaptogenes' | 'totum-vegetal' | 'maceration-plantes' | 'teinture-mere' | 'kits-botaniques' | 'articles' | 'lexique' | 'protocole-psoriasis' | 'protocole-sibo' | 'protocole-myeline' | 'protocole-decalcification-pineale' | 'blog-vieillissement-myeline' | 'academie' | '4-architectures' | '7-terrains' | 'comment-lire-modele-bloom' | '9-axes' | 'neuf-axes-historiques' | 'charge-allostatique' | 'reset-homeostasique' | 'metabolisme-insuline' | 'protocoles' | 'module-0' | 'axe-a1' | 'axe-a2' | 'axe-a3' | 'axe-a4' | 'axe-a5' | 'axe-a6' | 'axe-a7' | 'axe-a8' | 'axe-a9' | 'guide-complet-extraction-botanique-maison' | 'remedes-naturels-maison-guide' | 'totum-vegetal-comprendre' | 'cosmetiques-naturels-diy' | 'phytotherapie-moderne-scientifique' | 'nutrition-et-micronutrition' | 'micronutrition-guide-achat' | 'micronutrition-precautions' | 'recettes-hub' | 'recettes-culinaires' | 'recettes-cosmetiques' | 'recettes-parcours' | 'recette-detail';
 
 export const VIEW_PATHS: Record<string, string> = {
   home: '/', 
@@ -54,7 +54,6 @@ export const VIEW_PATHS: Record<string, string> = {
   'recettes-gratuites': '/recettes-gratuites/',
   'apprendre': '/apprendre/',
   'preparations-avancees': '/preparations-avancees/',
-  'recettes-cosmetiques': '/cosmetiques-naturels-diy/',
   'bibliotheque': '/academie/bibliotheque/',
   pending: '/en-attente/',
   library: '/academie/herbier/', 
@@ -90,6 +89,11 @@ export const VIEW_PATHS: Record<string, string> = {
   'newsletter-preferences': '/newsletter/preferences/',
   'admin-newsletter': '/admin/newsletter/',
   'recettes': '/recettes/',
+  'recettes-hub': '/recettes/',
+  'recettes-culinaires': '/recettes/culinaires/',
+  'recettes-cosmetiques': '/recettes/cosmetiques/',
+  'recettes-parcours': '/recettes/parcours-botaniques/',
+  'recette-detail': '/recettes/',
   'guides': '/guides/',
   'ateliers': '/ateliers/',
   'questions-frequentes': '/questions-frequentes/',

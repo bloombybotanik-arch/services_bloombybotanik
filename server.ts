@@ -29,6 +29,12 @@ import { getFirestore, Firestore } from "firebase-admin/firestore";
 import { getAuth } from "firebase-admin/auth";
 import dotenv from "dotenv";
 import { NewsletterOrchestrator } from "./server/newsletter-orchestrator";
+import { 
+  renderRecipePageHtml, 
+  renderCategoryPageHtml, 
+  renderHubPageHtml 
+} from "./src/server/recipeSsrRenderer";
+import { getRecipeByPath } from "./src/data/canonicalRecipesRegistry";
 
 dotenv.config();
 
@@ -42,7 +48,25 @@ const compression: any = optionalRequire("compression");
 /* ----------------------------------------------------------------------------
  * CONFIG
  * -------------------------------------------------------------------------- */
-const PORT = Number(process.env.PORT) || 3000;
+const getAppPort = (): number => {
+  const portArgIndex = process.argv.indexOf("--port");
+  if (portArgIndex !== -1 && process.argv[portArgIndex + 1]) {
+    const parsed = Number(process.argv[portArgIndex + 1]);
+    if (!isNaN(parsed) && parsed > 0) return parsed;
+  }
+  const envPort = Number(process.env.PORT);
+  // Port 8080 is reserved for Nginx reverse proxy in this container environment.
+  // The Node Express/Vite app must bind to 3000 so Nginx can proxy to it.
+  if (envPort && !isNaN(envPort) && envPort !== 8080) {
+    return envPort;
+  }
+  const defaultPort = Number(process.env.DEFAULT_APP_PORT);
+  if (defaultPort && !isNaN(defaultPort) && defaultPort !== 8080) {
+    return defaultPort;
+  }
+  return 3000;
+};
+const PORT = getAppPort();
 const CANONICAL_HOST = "bloombybotanik.com";
 const ADMIN_EMAIL = "bloombybotanik@gmail.com";
 const HAS_BUILD = fs.existsSync(path.join(process.cwd(), "dist", "index.html"));
@@ -303,7 +327,7 @@ if (IS_PROD) {
     ) return next();
     const staticFiles = [
       "/favicon.ico", "/favicon-", "/robots.txt",
-      "/sitemap.xml", "/sitemap-images.xml", "/sitemap-fr.xml", "/sitemap-en.xml", "/sitemap-de.xml",
+      "/sitemap.xml", "/sitemap-recettes.xml", "/sitemap-images.xml", "/sitemap-fr.xml", "/sitemap-en.xml", "/sitemap-de.xml",
       "/site.webmanifest", "/manifest.webmanifest", "/apple-touch-icon", "/feed/",
     ];
     if (staticFiles.some((f) => lower.includes(f))) return next();
@@ -607,6 +631,7 @@ function registerAppRoutes(app: express.Express) {
 
   /* --- Sitemaps & robots & feed --- */
   app.get("/sitemap.xml", (req, res) => { res.header("Content-Type", "application/xml"); res.sendFile(path.join(process.cwd(), "public", "sitemap.xml")); });
+  app.get("/sitemap-recettes.xml", (req, res) => { res.header("Content-Type", "application/xml"); res.sendFile(path.join(process.cwd(), "public", "sitemap-recettes.xml")); });
   app.get("/sitemap-images.xml", (req, res) => { res.header("Content-Type", "application/xml"); res.sendFile(path.join(process.cwd(), "public", "sitemap-images.xml")); });
   app.get("/sitemap-fr.xml", (req, res) => { res.header("Content-Type", "application/xml"); res.sendFile(path.join(process.cwd(), "public", "sitemap-fr.xml")); });
   app.get("/sitemap-en.xml", (req, res) => { res.header("Content-Type", "application/xml"); res.sendFile(path.join(process.cwd(), "public", "sitemap-en.xml")); });
@@ -632,7 +657,21 @@ function registerAppRoutes(app: express.Express) {
     "/infusion-botanique": "/infusion-botanique-maison-comment-ca-marche/",
     "/qu-est-ce-que-l-infusion-botanique": "/infusion-botanique-maison-comment-ca-marche/",
     "/atelier-culinaire": "/gastronomie-botanique/",
-    "/recettes-cosmetiques": "/cosmetiques-naturels-diy/",
+    "/recettes-culinaires": "/recettes/culinaires/",
+    "/recettes-cosmetiques": "/recettes/cosmetiques/",
+    "/recettes-parcours": "/recettes/parcours-botaniques/",
+    "/recettes/01": "/recettes/culinaires/infusion-sommeil-profond/",
+    "/recettes/02": "/recettes/cosmetiques/huile-massage-articulaire/",
+    "/recettes/03": "/recettes/cosmetiques/serum-visage-eclat-botanique/",
+    "/recettes/04": "/recettes/cosmetiques/baume-levres-calendula/",
+    "/recettes/05": "/recettes/parcours-botaniques/teinture-propolis-maison/",
+    "/recettes/06": "/recettes/culinaires/sirop-sureau-immunite/",
+    "/recettes/07": "/recettes/parcours-botaniques/decoction-detox-soutien-hepatique/",
+    "/recettes/08": "/recettes/parcours-botaniques/elixir-regulateur-metabolique/",
+    "/recettes/09": "/recettes/culinaires/infusion-drainage-elimination/",
+    "/recettes/10": "/recettes/parcours-botaniques/remede-psoriasis-emonctoires-regulation/",
+    "/recettes/11": "/recettes/parcours-botaniques/remede-eczema-desamorcage-histaminique/",
+    "/recettes/12": "/recettes/cosmetiques/soin-alopecie-anti-dht-matrice-folliculaire/",
     "/cosmetique-botanique": "/cosmetiques-naturels-diy/",
     "/indexbis": "/",
     "/about": "/manifeste/",
@@ -1059,7 +1098,7 @@ let viteDevServer: any = null;
 async function setupVite(app: express.Express) {
   const { createServer: createViteServer } = await import("vite");
   const vite = await createViteServer({
-    server: { middlewareMode: true, hmr: false, host: "0.0.0.0", cors: true },
+    server: { middlewareMode: true, hmr: false, ws: false, host: "0.0.0.0", cors: true },
     appType: "custom",
     base: "/",
   });
@@ -1555,6 +1594,94 @@ function injectServerSEO(html: string, reqPath: string): string {
   try {
     const clean = reqPath.replace(/\/$/, "") + "/";
     const normalized = clean === "//" ? "/" : clean;
+
+    // 0. Recettes publiques crawlables (Hub, Catégories, Pagination & Fiches individuelles)
+    if (reqPath.startsWith("/recettes") || reqPath.startsWith("/recettes/")) {
+      const cleanRecipePath = reqPath.endsWith("/") ? reqPath : reqPath + "/";
+      const recipe = getRecipeByPath(cleanRecipePath);
+      if (recipe) {
+        const rendered = renderRecipePageHtml(recipe);
+        let updated = html.replace(/<title>.*?<\/title>/i, `<title>${rendered.title}</title>`);
+        updated = updated.replace(/<meta\s+name=["']description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="description" content="${rendered.metaDescription}" />`);
+        updated = updated.replace(/<meta\s+property=["']og:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:title" content="${rendered.title}">`);
+        updated = updated.replace(/<meta\s+property=["']og:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:description" content="${rendered.metaDescription}">`);
+        updated = updated.replace(/<meta\s+property=["']og:url["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:url" content="${rendered.canonical}">`);
+        updated = updated.replace(/<meta\s+property=["']og:type["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:type" content="${recipe.schemaType === 'Recipe' ? 'website' : 'article'}">`);
+        updated = updated.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, `<link rel="canonical" href="${rendered.canonical}" />`);
+        updated = updated.replace(/<meta\s+name=["']twitter:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:title" content="${rendered.title}">`);
+        updated = updated.replace(/<meta\s+name=["']twitter:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:description" content="${rendered.metaDescription}">`);
+        updated = updated.replace("</head>", `  ${rendered.jsonLd}\n  </head>`);
+        updated = updated.replace(/<div id=["']root["']>[\s\S]*?<\/div>/i, `<div id="root">${rendered.bodyHtml}</div>`);
+        return updated;
+      }
+
+      if (cleanRecipePath.startsWith("/recettes/culinaires")) {
+        const matchPage = cleanRecipePath.match(/\/page\/(\d+)\/?$/);
+        const pageNum = matchPage ? parseInt(matchPage[1], 10) : 1;
+        const rendered = renderCategoryPageHtml('culinaires', pageNum);
+        let updated = html.replace(/<title>.*?<\/title>/i, `<title>${rendered.title}</title>`);
+        updated = updated.replace(/<meta\s+name=["']description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="description" content="${rendered.metaDescription}" />`);
+        updated = updated.replace(/<meta\s+property=["']og:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:title" content="${rendered.title}">`);
+        updated = updated.replace(/<meta\s+property=["']og:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:description" content="${rendered.metaDescription}">`);
+        updated = updated.replace(/<meta\s+property=["']og:url["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:url" content="${rendered.canonical}">`);
+        updated = updated.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, `<link rel="canonical" href="${rendered.canonical}" />`);
+        updated = updated.replace(/<meta\s+name=["']twitter:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:title" content="${rendered.title}">`);
+        updated = updated.replace(/<meta\s+name=["']twitter:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:description" content="${rendered.metaDescription}">`);
+        updated = updated.replace("</head>", `  ${rendered.jsonLd}\n  </head>`);
+        updated = updated.replace(/<div id=["']root["']>[\s\S]*?<\/div>/i, `<div id="root">${rendered.bodyHtml}</div>`);
+        return updated;
+      }
+
+      if (cleanRecipePath.startsWith("/recettes/cosmetiques")) {
+        const matchPage = cleanRecipePath.match(/\/page\/(\d+)\/?$/);
+        const pageNum = matchPage ? parseInt(matchPage[1], 10) : 1;
+        const rendered = renderCategoryPageHtml('cosmetiques', pageNum);
+        let updated = html.replace(/<title>.*?<\/title>/i, `<title>${rendered.title}</title>`);
+        updated = updated.replace(/<meta\s+name=["']description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="description" content="${rendered.metaDescription}" />`);
+        updated = updated.replace(/<meta\s+property=["']og:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:title" content="${rendered.title}">`);
+        updated = updated.replace(/<meta\s+property=["']og:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:description" content="${rendered.metaDescription}">`);
+        updated = updated.replace(/<meta\s+property=["']og:url["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:url" content="${rendered.canonical}">`);
+        updated = updated.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, `<link rel="canonical" href="${rendered.canonical}" />`);
+        updated = updated.replace(/<meta\s+name=["']twitter:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:title" content="${rendered.title}">`);
+        updated = updated.replace(/<meta\s+name=["']twitter:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:description" content="${rendered.metaDescription}">`);
+        updated = updated.replace("</head>", `  ${rendered.jsonLd}\n  </head>`);
+        updated = updated.replace(/<div id=["']root["']>[\s\S]*?<\/div>/i, `<div id="root">${rendered.bodyHtml}</div>`);
+        return updated;
+      }
+
+      if (cleanRecipePath.startsWith("/recettes/parcours-botaniques")) {
+        const matchPage = cleanRecipePath.match(/\/page\/(\d+)\/?$/);
+        const pageNum = matchPage ? parseInt(matchPage[1], 10) : 1;
+        const rendered = renderCategoryPageHtml('parcours-botaniques', pageNum);
+        let updated = html.replace(/<title>.*?<\/title>/i, `<title>${rendered.title}</title>`);
+        updated = updated.replace(/<meta\s+name=["']description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="description" content="${rendered.metaDescription}" />`);
+        updated = updated.replace(/<meta\s+property=["']og:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:title" content="${rendered.title}">`);
+        updated = updated.replace(/<meta\s+property=["']og:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:description" content="${rendered.metaDescription}">`);
+        updated = updated.replace(/<meta\s+property=["']og:url["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:url" content="${rendered.canonical}">`);
+        updated = updated.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, `<link rel="canonical" href="${rendered.canonical}" />`);
+        updated = updated.replace(/<meta\s+name=["']twitter:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:title" content="${rendered.title}">`);
+        updated = updated.replace(/<meta\s+name=["']twitter:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:description" content="${rendered.metaDescription}">`);
+        updated = updated.replace("</head>", `  ${rendered.jsonLd}\n  </head>`);
+        updated = updated.replace(/<div id=["']root["']>[\s\S]*?<\/div>/i, `<div id="root">${rendered.bodyHtml}</div>`);
+        return updated;
+      }
+
+      if (cleanRecipePath === "/recettes/" || cleanRecipePath === "/recettes") {
+        const rendered = renderHubPageHtml();
+        let updated = html.replace(/<title>.*?<\/title>/i, `<title>${rendered.title}</title>`);
+        updated = updated.replace(/<meta\s+name=["']description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="description" content="${rendered.metaDescription}" />`);
+        updated = updated.replace(/<meta\s+property=["']og:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:title" content="${rendered.title}">`);
+        updated = updated.replace(/<meta\s+property=["']og:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:description" content="${rendered.metaDescription}">`);
+        updated = updated.replace(/<meta\s+property=["']og:url["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:url" content="${rendered.canonical}">`);
+        updated = updated.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, `<link rel="canonical" href="${rendered.canonical}" />`);
+        updated = updated.replace(/<meta\s+name=["']twitter:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:title" content="${rendered.title}">`);
+        updated = updated.replace(/<meta\s+name=["']twitter:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:description" content="${rendered.metaDescription}">`);
+        updated = updated.replace("</head>", `  ${rendered.jsonLd}\n  </head>`);
+        updated = updated.replace(/<div id=["']root["']>[\s\S]*?<\/div>/i, `<div id="root">${rendered.bodyHtml}</div>`);
+        return updated;
+      }
+    }
+
     const route = SERVER_SEO_ROUTES[normalized] || SERVER_SEO_ROUTES[reqPath] || SERVER_SEO_ROUTES["/"];
 
     const full1200 = `https://bloombybotanik.com${route.image1200}`;

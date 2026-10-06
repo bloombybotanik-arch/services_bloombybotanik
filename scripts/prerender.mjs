@@ -50,12 +50,24 @@ async function getDynamicRoutes() {
       if (!plants.includes(match[1])) plants.push(match[1]);
     }
 
-    console.log(`Routes découvertes : ${products.length} produits, ${blogPosts.length} articles, ${plants.length} plantes.`);
+    // 4. Recipes from canonicalRecipesRegistry
+    const recipes = [];
+    try {
+      const recipesFile = await fs.readFile(path.join(rootDir, 'src/data/canonicalRecipesRegistry.ts'), 'utf-8');
+      const recipeUrlMatches = recipesFile.matchAll(/canonicalUrl:\s*['"]([^'"]+)['"]/g);
+      for (const match of recipeUrlMatches) {
+        if (!recipes.includes(match[1])) recipes.push(match[1]);
+      }
+    } catch (e) {
+      console.warn("Could not read canonicalRecipesRegistry:", e);
+    }
+
+    console.log(`Routes découvertes : ${products.length} produits, ${blogPosts.length} articles, ${plants.length} plantes, ${recipes.length} recettes.`);
+    return { products, blogPosts, plants, recipes };
   } catch (err) {
     console.error('Erreur lors de la découverte des routes :', err);
+    return { products, blogPosts, plants, recipes: [] };
   }
-
-  return { products, blogPosts, plants };
 }
 
 const LANGUAGES = ['', '/en', '/de'];
@@ -88,7 +100,13 @@ const BASE_ROUTES = [
   '/methode-infusion-botanique-precision/',
   '/totum-vegetal-definition/',
   '/solvants-extraction-botanique/',
-  '/abonnement/'
+  '/abonnement/',
+  '/recettes/',
+  '/recettes/culinaires/',
+  '/recettes/culinaires/page/2/',
+  '/recettes/cosmetiques/',
+  '/recettes/cosmetiques/page/2/',
+  '/recettes/parcours-botaniques/'
 ];
 
 async function routeToFilePath(route) {
@@ -166,6 +184,13 @@ async function main() {
     }
     for (const id of plants) {
       ROUTES.push(lang === '' ? `/herbier/${id}/` : `${lang}/herbier/${id}/`);
+    }
+  }
+
+  // Add all canonical recipe routes (French primary canonicals)
+  for (const rUrl of recipes) {
+    if (!ROUTES.includes(rUrl)) {
+      ROUTES.push(rUrl);
     }
   }
 

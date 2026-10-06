@@ -5,6 +5,7 @@ import { plantsDatabase, PlantData } from './data/therapeuticData';
 import { unifiedBotanicalDatabase, UnifiedPlant } from './data/unifiedBotanicalData';
 import { herbariumRecipes } from './data/recipesData';
 import { translations, Language } from './translations';
+import { DifficultyBadge } from './components/DifficultyBadge';
 
 // --- DATA STRUCTURE (As requested for the CMS) ---
 // (Interface and array moved to therapeuticData.ts)
@@ -533,7 +534,12 @@ export default function HerbariumContent({
                             </span>
                           )}
                           <h4 className="text-xl font-bold text-botanik-green mb-1">{recipe.title}</h4>
-                          <p className="text-sm text-botanik-green/60">{recipe.goal}</p>
+                          <p className="text-sm text-botanik-green/60 mb-2">{recipe.goal}</p>
+                          <DifficultyBadge 
+                            recipeId={recipe.id}
+                            variant="compact"
+                            fallback={{ category: 'culinaire', title: recipe.title }}
+                          />
                         </div>
                         <span className="px-4 py-1 bg-botanik-green/10 text-botanik-green text-[10px] font-bold uppercase tracking-widest rounded-full border border-botanik-green/10">
                           {recipe.process.method.replace(/_/g, ' ')}

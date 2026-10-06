@@ -3,9 +3,12 @@ import { Search, ChevronDown, ChevronUp, ChefHat, Droplets, Flame, Hexagon, Beak
 import { wrapTitle } from './lib/textUtils';
 import { getCulinaryDatabase, CulinaryPlantData, ExtractionParams } from "./data/culinaryData";
 import { translations, Language } from './translations';
+import { DifficultyBadge } from './components/DifficultyBadge';
+import { BeforeYouStartBlock } from './components/BeforeYouStartBlock';
+import { getRecipeDifficulty } from './data/recipeDifficulty';
 
 
-const renderExtractionParam = (key: string, param: ExtractionParams, t: any) => {
+const renderExtractionParam = (plantId: string, key: string, param: ExtractionParams, t: any) => {
   const getIconAndTitle = () => {
     switch(key) {
       case 'huile_finition': return { icon: <Droplets className="w-4 h-4" />, title: t.params.oil };
@@ -20,15 +23,24 @@ const renderExtractionParam = (key: string, param: ExtractionParams, t: any) => 
   const { icon, title } = getIconAndTitle();
 
   return (
-    <div key={key} className="bg-[#F9F9F7] p-4 rounded-xl border border-botanik-green/10">
-      <h5 className="font-bold text-[#1B3022] mb-3 flex items-center gap-2">
-        <span className="text-botanik-green">{icon}</span> {title}
-      </h5>
-      <div className="grid grid-cols-2 gap-y-2 text-sm text-[#1B3022]/80 mb-3">
-        <div><span className="font-semibold text-botanik-green">{t.params.temp}</span> {param.temp}</div>
-        <div><span className="font-semibold text-botanik-green">{t.params.time}</span> {param.temps}</div>
-        <div className="col-span-2"><span className="font-semibold text-botanik-green">{t.params.ratio}</span> {param.ratio}</div>
-        <div className="col-span-2"><span className="font-semibold text-botanik-green">{t.params.solvent}</span> {param.solvant}</div>
+    <div key={key} className="bg-[#F9F9F7] p-4 rounded-xl border border-botanik-green/10 flex flex-col justify-between">
+      <div>
+        <div className="flex items-center justify-between gap-2 mb-3">
+          <h5 className="font-bold text-[#1B3022] flex items-center gap-2">
+            <span className="text-botanik-green">{icon}</span> {title}
+          </h5>
+          <DifficultyBadge 
+            recipeId={`culinaire-${plantId}-${key}`}
+            variant="compact"
+            fallback={{ category: 'culinaire', ingredientCount: 2, stepsCount: 2 }}
+          />
+        </div>
+        <div className="grid grid-cols-2 gap-y-2 text-sm text-[#1B3022]/80 mb-3">
+          <div><span className="font-semibold text-botanik-green">{t.params.temp}</span> {param.temp}</div>
+          <div><span className="font-semibold text-botanik-green">{t.params.time}</span> {param.temps}</div>
+          <div className="col-span-2"><span className="font-semibold text-botanik-green">{t.params.ratio}</span> {param.ratio}</div>
+          <div className="col-span-2"><span className="font-semibold text-botanik-green">{t.params.solvent}</span> {param.solvant}</div>
+        </div>
       </div>
       <div className="text-sm border-t border-botanik-green/10 pt-2 mt-2">
         <span className="font-semibold text-[#1B3022]">{t.params.usage}</span> {param.usage}
@@ -76,9 +88,16 @@ const CulinaryAccordion: React.FC<{
           <div className="flex-1">
             <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-3 mb-2">
               <h3 className="text-xl md:text-2xl font-extrabold text-botanik-green group-hover:text-botanik-orange transition-colors leading-tight">{wrapTitle(plant.nom_commun)}</h3>
-              <span className="inline-block w-fit px-2 py-0.5 md:px-3 md:py-1 bg-botanik-green/5 text-botanik-green group-hover:bg-botanik-orange/10 group-hover:text-botanik-orange text-[9px] md:text-xs font-bold uppercase tracking-wider rounded-full border border-botanik-green/10 group-hover:border-botanik-orange/20 transition-colors">
-                {t.profile_label}
-              </span>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-block w-fit px-2 py-0.5 md:px-3 md:py-1 bg-botanik-green/5 text-botanik-green group-hover:bg-botanik-orange/10 group-hover:text-botanik-orange text-[9px] md:text-xs font-bold uppercase tracking-wider rounded-full border border-botanik-green/10 group-hover:border-botanik-orange/20 transition-colors">
+                  {t.profile_label}
+                </span>
+                <DifficultyBadge 
+                  recipeId={`culinaire-${plant.plant_id}-huile_finition`}
+                  variant="compact"
+                  fallback={{ category: 'culinaire', ingredientCount: 2, stepsCount: 2 }}
+                />
+              </div>
             </div>
             <p className="text-[#1B3022]/70 text-sm font-medium leading-normal w-full">{plant.profil_aromatique}</p>
           </div>
@@ -101,15 +120,65 @@ const CulinaryAccordion: React.FC<{
 
       {/* Expanded Content */}
       {isOpen && (
-        <div className="px-6 md:px-8 pb-8 pt-4 border-t border-botanik-green/10 bg-white">
+        <div className="px-6 md:px-8 pb-8 pt-4 border-t border-botanik-green/10 bg-white space-y-8">
+          {/* Bloc Avant de commencer (Pré-requis techniques culinaires) */}
+          <BeforeYouStartBlock 
+            recipeId={`culinaire-${plant.plant_id}-huile_finition`}
+            fallback={{
+              category: 'culinaire',
+              title: `${plant.nom_commun} — Préparation Culinaire`,
+              ingredientCount: 2,
+              stepsCount: 2,
+              durationMinutes: 60
+            }}
+          />
+
+          {/* Données structurées Schema.org Recipe (Strictement réservées aux recettes culinaires) */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Recipe",
+                "name": `${plant.nom_commun} — Extraction Botanique Culinaire BloomLab`,
+                "description": `Extraction culinaire de précision de ${plant.nom_commun} : ${plant.profil_aromatique}`,
+                "recipeCategory": "Culinaire",
+                "recipeCuisine": "Botanique / Française",
+                "recipeIngredient": [
+                  `${plant.nom_commun} (frais ou séché)`,
+                  "Huile d'olive extra-vierge, beurre clarifié ou solvant gastronomique"
+                ],
+                "recipeInstructions": [
+                  {
+                    "@type": "HowToStep",
+                    "text": `Peser les matières végétales de ${plant.nom_commun} et les placer dans la cuve.`
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "text": "Ajouter le solvant gastronomique sélectionné et lancer le cycle BloomLab."
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "text": "Filtrer à chaud avec le filtre tamis fin et conditionner en bouteille propre."
+                  }
+                ],
+                "totalTime": "PT1H10M",
+                "additionalProperty": {
+                  "@type": "PropertyValue",
+                  "name": "Niveau de difficulté",
+                  "value": "Très facile"
+                }
+              })
+            }}
+          />
           
-          <div className="mb-8">
+          <div>
             <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-green mb-4 flex items-center gap-2">
               <ChefHat className="w-4 h-4" /> {t.extraction_title}
             </h4>
             <div className="grid md:grid-cols-2 gap-4">
               {Object.entries(plant.parametres_bloomlab).map(([key, param]) => 
-                param ? renderExtractionParam(key, param as ExtractionParams, t) : null
+                param ? renderExtractionParam(plant.plant_id, key, param as ExtractionParams, t) : null
               )}
             </div>
           </div>

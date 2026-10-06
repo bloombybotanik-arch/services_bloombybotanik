@@ -3,6 +3,9 @@ import { Star, Leaf, Droplet, Wind, ArrowRight, ShieldCheck, Check, Search, Filt
 import { wrapTitle } from './lib/textUtils';
 import { getCosmeticsRecipes } from './cosmeticsData';
 import { translations, Language } from './translations';
+import { DifficultyBadge } from './components/DifficultyBadge';
+import { BeforeYouStartBlock } from './components/BeforeYouStartBlock';
+import { getRecipeDifficulty } from './data/recipeDifficulty';
 
 export default function CosmeticsContent({ 
   isPremium = false, 
@@ -28,6 +31,7 @@ export default function CosmeticsContent({
   const [searchTerm, setSearchTerm] = useState('');
   const [filterCategorie, setFilterCategorie] = useState(t.filters.all);
   const [filterPeau, setFilterPeau] = useState(t.filters.all);
+  const [filterDifficulty, setFilterDifficulty] = useState('All');
   const [selectedRecipe, setSelectedRecipe] = useState(cosmeticsRecipes[0]);
 
   const detailRef = React.useRef<HTMLDivElement>(null);
@@ -65,10 +69,12 @@ export default function CosmeticsContent({
                            recipe.cible.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategorie = filterCategorie === t.filters.all || recipe.categorie === filterCategorie;
       const matchesPeau = filterPeau === t.filters.all || recipe.peau === filterPeau;
+      const meta = getRecipeDifficulty(recipe.plant_id);
+      const matchesDifficulty = filterDifficulty === 'All' || meta.difficultyLevel.toString() === filterDifficulty;
       
-      return matchesSearch && matchesCategorie && matchesPeau;
+      return matchesSearch && matchesCategorie && matchesPeau && matchesDifficulty;
     });
-  }, [searchTerm, filterCategorie, filterPeau, t.filters.all, cosmeticsRecipes]);
+  }, [searchTerm, filterCategorie, filterPeau, filterDifficulty, t.filters.all, cosmeticsRecipes]);
 
   return (
     <div className="max-w-[1200px] mx-auto px-6 md:px-12 py-12 md:py-20 lg:py-24 animate-in fade-in duration-700">
@@ -155,13 +161,13 @@ export default function CosmeticsContent({
           />
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
             <label className="block text-xs font-bold uppercase text-botanik-green/40 mb-2 ml-2">{t.filters.body_zone}</label>
             <select 
               value={filterCategorie}
               onChange={(e) => setFilterCategorie(e.target.value)}
-              className="w-full bg-[#F5F3EB] border-none rounded-xl px-4 py-3 text-sm text-botanik-green focus:ring-2 focus:ring-botanik-magenta/20"
+              className="w-full bg-[#F5F3EB] border-none rounded-xl px-4 py-3 text-sm text-botanik-green focus:ring-2 focus:ring-botanik-magenta/20 cursor-pointer"
             >
               {categories.map(c => <option key={c} value={c}>{c}</option>)}
             </select>
@@ -171,9 +177,24 @@ export default function CosmeticsContent({
             <select 
               value={filterPeau}
               onChange={(e) => setFilterPeau(e.target.value)}
-              className="w-full bg-[#F5F3EB] border-none rounded-xl px-4 py-3 text-sm text-botanik-green focus:ring-2 focus:ring-botanik-magenta/20"
+              className="w-full bg-[#F5F3EB] border-none rounded-xl px-4 py-3 text-sm text-botanik-green focus:ring-2 focus:ring-botanik-magenta/20 cursor-pointer"
             >
               {peaux.map(p => <option key={p} value={p}>{p}</option>)}
+            </select>
+          </div>
+          <div>
+            <label className="block text-xs font-bold uppercase text-botanik-green/40 mb-2 ml-2">Difficulté technique</label>
+            <select 
+              value={filterDifficulty}
+              onChange={(e) => setFilterDifficulty(e.target.value)}
+              className="w-full bg-[#F5F3EB] border-none rounded-xl px-4 py-3 text-sm text-botanik-green focus:ring-2 focus:ring-botanik-magenta/20 cursor-pointer font-medium"
+            >
+              <option value="All">Toutes les difficultés</option>
+              <option value="1">●○○○○ Très facile (1)</option>
+              <option value="2">●●○○○ Facile (2)</option>
+              <option value="3">●●●○○ Intermédiaire (3)</option>
+              <option value="4">●●●●○ Avancé (4)</option>
+              <option value="5">●●●●● Expert (5)</option>
             </select>
           </div>
         </div>
@@ -222,20 +243,26 @@ export default function CosmeticsContent({
                             {recipe.nom_commun.split('—')[0].trim()}
                           </h4>
                         </div>
-                        <div className="flex flex-wrap gap-2 items-center">
+                        <div className="flex flex-wrap gap-1.5 items-center mb-1.5">
                           <span className={`text-[10px] font-bold uppercase px-1.5 py-0.5 rounded ${
                             selectedRecipe.plant_id === recipe.plant_id ? 'bg-white/20 text-white' : 'bg-botanik-green/5 text-botanik-green/40'
                           }`}>
                             {recipe.categorie}
                           </span>
-                          <p className={`text-xs ${
-                            selectedRecipe.plant_id === recipe.plant_id 
-                              ? 'text-white/80' 
-                              : isLocked ? 'text-botanik-green/40' : 'text-botanik-green/60'
-                          }`}>
-                            {recipe.nom_commun.split('—')[1]?.trim() || recipe.type_produit}
-                          </p>
+                          <DifficultyBadge 
+                            recipeId={recipe.plant_id}
+                            variant="compact"
+                            fallback={{ isCosmetic: true, category: 'cosmetique' }}
+                            className={selectedRecipe.plant_id === recipe.plant_id ? '!bg-white/20 !text-white !border-white/30' : ''}
+                          />
                         </div>
+                        <p className={`text-xs ${
+                          selectedRecipe.plant_id === recipe.plant_id 
+                            ? 'text-white/80' 
+                            : isLocked ? 'text-botanik-green/40' : 'text-botanik-green/60'
+                        }`}>
+                          {recipe.nom_commun.split('—')[1]?.trim() || recipe.type_produit}
+                        </p>
                       </div>
                       <div className="flex flex-col items-end gap-2">
                         <button
@@ -322,6 +349,16 @@ export default function CosmeticsContent({
               {t.details.intro}
             </p>
           </div>
+
+          {/* Bloc Avant de commencer (Indicateur de difficulté & Pré-requis techniques cosmétiques) */}
+          <BeforeYouStartBlock 
+            recipeId={selectedRecipe.plant_id} 
+            fallback={{
+              isCosmetic: true,
+              category: 'cosmetique',
+              title: selectedRecipe.nom_commun
+            }}
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
             {/* Ingredients Phase A */}

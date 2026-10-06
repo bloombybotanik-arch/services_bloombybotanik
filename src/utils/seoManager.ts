@@ -1,5 +1,6 @@
 import { Language } from '../translations';
 import { View, VIEW_PATHS } from '../types';
+import { getRecipeByPath } from '../data/canonicalRecipesRegistry';
 
 export interface MetaData {
   title: Record<Language, string>;
@@ -1417,6 +1418,71 @@ export function getSEOMetadataForPath(rawPath: string, lang: Language = 'fr'): {
         imageSquare: `https://bloombybotanik.com${art.imageSquare}`,
         imageAlt: art.imageAlt,
         type: 'article'
+      };
+    }
+  }
+
+  // 2b. Recettes publiques crawlables
+  if (clean.startsWith('/recettes')) {
+    const cleanSlash = clean.endsWith('/') ? clean : clean + '/';
+    const recipe = getRecipeByPath(cleanSlash);
+    if (recipe) {
+      return {
+        title: `${recipe.title} | Recette Botanique Bloom`,
+        description: `${recipe.summary.slice(0, 150)}... Formule d'extraction botanique BloomLab®, niveau ${recipe.difficultyLabel}.`,
+        canonicalUrl: `https://bloombybotanik.com${recipe.canonicalUrl}`,
+        image: `https://bloombybotanik.com${recipe.image}`,
+        imageSquare: `https://bloombybotanik.com/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg`,
+        imageAlt: recipe.imageAlt,
+        type: recipe.schemaType === 'Recipe' ? 'website' : 'article'
+      };
+    }
+    if (clean === '/recettes/culinaires' || clean.startsWith('/recettes/culinaires/page')) {
+      const pageMatch = clean.match(/\/page\/(\d+)/);
+      const pNum = pageMatch ? pageMatch[1] : '';
+      return {
+        title: `Recettes culinaires botaniques | Extraction gastronomique Bloom${pNum ? ` — Page ${pNum}` : ''}`,
+        description: "Découvrez nos recettes culinaires d'extraction végétale : huiles aromatiques, vinaigres botaniques, miels infusés et beurres gastronomiques à réaliser avec BloomLab®.",
+        canonicalUrl: `https://bloombybotanik.com${cleanSlash}`,
+        image: `https://bloombybotanik.com/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg`,
+        imageSquare: `https://bloombybotanik.com/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg`,
+        imageAlt: "Recettes culinaires botaniques Bloom",
+        type: 'website'
+      };
+    }
+    if (clean === '/recettes/cosmetiques' || clean.startsWith('/recettes/cosmetiques/page')) {
+      const pageMatch = clean.match(/\/page\/(\d+)/);
+      const pNum = pageMatch ? pageMatch[1] : '';
+      return {
+        title: `Recettes cosmétiques botaniques (Usage externe) | Soins maison Bloom${pNum ? ` — Page ${pNum}` : ''}`,
+        description: "Formulations cosmétiques botaniques pour usage externe : sérums, huiles de soin, baumes et macérats actifs réalisés à froid ou basse température avec BloomLab®.",
+        canonicalUrl: `https://bloombybotanik.com${cleanSlash}`,
+        image: `https://bloombybotanik.com/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg`,
+        imageSquare: `https://bloombybotanik.com/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg`,
+        imageAlt: "Recettes cosmétiques botaniques Bloom",
+        type: 'website'
+      };
+    }
+    if (clean === '/recettes/parcours-botaniques' || clean.startsWith('/recettes/parcours-botaniques/page')) {
+      return {
+        title: "Parcours botaniques guidés | Ateliers & apprentissage Bloom",
+        description: "Ateliers et séquences d'apprentissage technique pour maîtriser l'herboristerie moderne et l'extraction du totum végétal à domicile avec BloomLab®.",
+        canonicalUrl: `https://bloombybotanik.com${cleanSlash}`,
+        image: `https://bloombybotanik.com/images/og/extraction-botanique-totum-solvants-1200x630.jpg`,
+        imageSquare: `https://bloombybotanik.com/images/og/extraction-botanique-totum-solvants-1200x630.jpg`,
+        imageAlt: "Parcours botaniques guidés Bloom",
+        type: 'website'
+      };
+    }
+    if (clean === '/recettes') {
+      return {
+        title: "Recettes botaniques : cuisine et cosmétique maison | Bloom",
+        description: "Catalogue public des recettes et formulations botaniques BloomLab® : extractions gastronomiques, soins cosmétiques externes et ateliers d'herboristerie.",
+        canonicalUrl: `https://bloombybotanik.com/recettes/`,
+        image: `https://bloombybotanik.com/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg`,
+        imageSquare: `https://bloombybotanik.com/images/og/articles-savoirs-herboristerie-botanique-1080x1080.jpg`,
+        imageAlt: "Catalogue des recettes botaniques Bloom",
+        type: 'website'
       };
     }
   }

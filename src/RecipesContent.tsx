@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
-import { ArrowLeft, BookOpen, Clock, Heart, Share2, Search, Filter, PlayCircle, Download, ShieldCheck } from 'lucide-react';
+import React, { useState, useMemo } from 'react';
+import { ArrowLeft, BookOpen, Clock, Heart, Share2, Search, Filter, PlayCircle, Download, ShieldCheck, ArrowUpDown } from 'lucide-react';
 import { discoveryRecipes, Recipe } from './data/recipesData';
 import { translations, Language } from './translations';
 import { motion, AnimatePresence } from 'motion/react';
+import { DifficultyBadge } from './components/DifficultyBadge';
+import { BeforeYouStartBlock } from './components/BeforeYouStartBlock';
+import { getRecipeDifficulty, RecipeCategory, DifficultyLevel } from './data/recipeDifficulty';
 
 interface RecipesContentProps {
   onBack: () => void;
@@ -13,34 +16,67 @@ interface RecipesContentProps {
 export default function RecipesContent({ onBack, lang, t }: RecipesContentProps) {
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeCategory, setActiveCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [selectedDifficulty, setSelectedDifficulty] = useState<string>('All');
+  const [sortBy, setSortBy] = useState<string>('default');
   const [activeArchitecture, setActiveArchitecture] = useState<string>('All');
   const [activeTerrain, setActiveTerrain] = useState<string>('All');
 
-  const categories = ['All', ...Array.from(new Set(discoveryRecipes.map(r => r.category))).filter(c => c !== 'All')];
   const architectures = ['All', 'SRA', 'HPA', 'Fascia', 'SEC'];
   const terrainsList = ['All', 'T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
 
-  const filteredRecipes = discoveryRecipes.filter(recipe => {
-    const matchesSearch = recipe.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                         recipe.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         (recipe.terrains && recipe.terrains.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()))) ||
-                         (recipe.axes && recipe.axes.some(a => a.toLowerCase().includes(searchQuery.toLowerCase())));
-    const matchesCategory = activeCategory === 'All' || recipe.category === activeCategory;
-    const matchesArch = activeArchitecture === 'All' || (recipe.architectures && recipe.architectures.includes(activeArchitecture));
-    const matchesTerrain = activeTerrain === 'All' || (recipe.terrains && recipe.terrains.some(t => t.startsWith(activeTerrain)));
-    return matchesSearch && matchesCategory && matchesArch && matchesTerrain;
-  });
+  const categoryOptions = [
+    { id: 'All', label: 'Toutes les catégories' },
+    { id: 'culinaire', label: 'Culinaire' },
+    { id: 'cosmetique', label: 'Cosmétique' },
+    { id: 'parcours-guide', label: 'Parcours botanique guidé' }
+  ];
 
-  // Limit to 5 per category for freemium (mocking premium check)
-  const isPremium = false; // This should be dynamic in a real app
-  const visibleRecipes = isPremium ? filteredRecipes : filteredRecipes.reduce((acc: Recipe[], recipe) => {
-    const categoryCount = acc.filter(r => r.category === recipe.category).length;
-    if (categoryCount < 5) {
-      acc.push(recipe);
-    }
-    return acc;
-  }, []);
+  const difficultyOptions = [
+    { id: 'All', label: 'Toutes les difficultés' },
+    { id: '1', label: '●○○○○ Très facile (1)' },
+    { id: '2', label: '●●○○○ Facile (2)' },
+    { id: '3', label: '●●●○○ Intermédiaire (3)' },
+    { id: '4', label: '●●●●○ Avancé (4)' },
+    { id: '5', label: '●●●●● Expert (5)' }
+  ];
+
+  const filteredAndSortedRecipes = useMemo(() => {
+    return discoveryRecipes
+      .filter(recipe => {
+        const meta = getRecipeDifficulty(recipe.id);
+        const matchesSearch = recipe.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                             recipe.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                             (recipe.terrains && recipe.terrains.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()))) ||
+                             (recipe.axes && recipe.axes.some(a => a.toLowerCase().includes(searchQuery.toLowerCase())));
+        
+        const matchesCategory = selectedCategory === 'All' || meta.category === selectedCategory;
+        const matchesDifficulty = selectedDifficulty === 'All' || meta.difficultyLevel.toString() === selectedDifficulty;
+        const matchesArch = activeArchitecture === 'All' || (recipe.architectures && recipe.architectures.includes(activeArchitecture));
+        const matchesTerrain = activeTerrain === 'All' || (recipe.terrains && recipe.terrains.some(t => t.startsWith(activeTerrain)));
+        
+        return matchesSearch && matchesCategory && matchesDifficulty && matchesArch && matchesTerrain;
+      })
+      .sort((a, b) => {
+        const metaA = getRecipeDifficulty(a.id);
+        const metaB = getRecipeDifficulty(b.id);
+        if (sortBy === 'difficulty-asc') {
+          return metaA.difficultyFinalScore - metaB.difficultyFinalScore;
+        }
+        if (sortBy === 'difficulty-desc') {
+          return metaB.difficultyFinalScore - metaA.difficultyFinalScore;
+        }
+        if (sortBy === 'time-asc') {
+          return metaA.totalTimeMinutes - metaB.totalTimeMinutes;
+        }
+        if (sortBy === 'category') {
+          return metaA.category.localeCompare(metaB.category);
+        }
+        return 0;
+      });
+  }, [searchQuery, selectedCategory, selectedDifficulty, activeArchitecture, activeTerrain, sortBy]);
+
+  const visibleRecipes = filteredAndSortedRecipes;
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-12 md:py-24 animate-in fade-in duration-700">
@@ -75,48 +111,57 @@ export default function RecipesContent({ onBack, lang, t }: RecipesContentProps)
         </div>
       </div>
 
-      {/* Filtres Catégories, Architectures et Terrains */}
+      {/* Filtres Catégories, Difficulté et Tri */}
       <div className="space-y-4 mb-12">
-        {/* Catégories */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
-          <span className="text-xs font-bold text-botanik-green/50 uppercase tracking-wider shrink-0 mr-2">Catégorie:</span>
-          {categories.map(category => (
+        {/* Catégories principales */}
+        <div className="flex flex-wrap items-center gap-2 pb-1">
+          <span className="text-xs font-bold text-botanik-green/60 uppercase tracking-wider shrink-0 mr-2">Catégorie :</span>
+          {categoryOptions.map(cat => (
             <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-4 py-1.5 rounded-full whitespace-nowrap text-xs transition-all font-semibold cursor-pointer ${activeCategory === category ? 'bg-botanik-green text-white shadow-md' : 'bg-white text-botanik-green/70 hover:bg-botanik-green/5 border border-botanik-green/10'}`}
+              key={cat.id}
+              onClick={() => setSelectedCategory(cat.id)}
+              className={`px-4 py-1.5 rounded-full whitespace-nowrap text-xs transition-all font-semibold cursor-pointer ${selectedCategory === cat.id ? 'bg-botanik-green text-white shadow-md' : 'bg-white text-botanik-green/70 hover:bg-botanik-green/5 border border-botanik-green/10'}`}
             >
-              {category}
+              {cat.label}
             </button>
           ))}
         </div>
 
-        {/* 4 Architectures Filter */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
-          <span className="text-xs font-bold text-[#c9a84c] uppercase tracking-wider shrink-0 mr-2">Architecture:</span>
-          {architectures.map(arch => (
+        {/* Niveaux de Difficulté */}
+        <div className="flex flex-wrap items-center gap-2 pb-1">
+          <span className="text-xs font-bold text-[#D97706] uppercase tracking-wider shrink-0 mr-2">Difficulté :</span>
+          {difficultyOptions.map(diff => (
             <button
-              key={arch}
-              onClick={() => setActiveArchitecture(arch)}
-              className={`px-3 py-1 rounded-lg whitespace-nowrap text-xs transition-all font-bold cursor-pointer ${activeArchitecture === arch ? 'bg-[#c9a84c] text-[#0d1117] shadow-sm font-black' : 'bg-white text-slate-600 hover:border-[#c9a84c] border border-slate-200'}`}
+              key={diff.id}
+              onClick={() => setSelectedDifficulty(diff.id)}
+              className={`px-3 py-1.5 rounded-xl whitespace-nowrap text-xs transition-all font-bold cursor-pointer ${selectedDifficulty === diff.id ? 'bg-[#D97706] text-white shadow-sm' : 'bg-white text-slate-700 hover:border-[#D97706]/40 border border-slate-200'}`}
             >
-              {arch === 'All' ? 'Toutes' : arch}
+              {diff.label}
             </button>
           ))}
         </div>
 
-        {/* 7 Terrains Filter */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
-          <span className="text-xs font-bold text-emerald-700 uppercase tracking-wider shrink-0 mr-2">Terrain (T1-T7):</span>
-          {terrainsList.map(tCode => (
-            <button
-              key={tCode}
-              onClick={() => setActiveTerrain(tCode)}
-              className={`px-3 py-1 rounded-lg whitespace-nowrap text-xs transition-all font-bold cursor-pointer ${activeTerrain === tCode ? 'bg-emerald-700 text-white shadow-sm font-black' : 'bg-white text-slate-600 hover:border-emerald-600 border border-slate-200'}`}
+        {/* Tri et options secondaires */}
+        <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-botanik-green/10">
+          <div className="flex items-center gap-2">
+            <ArrowUpDown className="w-4 h-4 text-botanik-green/50" />
+            <span className="text-xs font-bold text-botanik-green/60 uppercase tracking-wider">Trier par :</span>
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="bg-white border border-botanik-green/15 text-xs font-semibold text-botanik-green rounded-xl px-3 py-1.5 outline-none cursor-pointer focus:ring-2 focus:ring-[#D97706]"
             >
-              {tCode === 'All' ? 'Tous' : tCode}
-            </button>
-          ))}
+              <option value="default">Ordre recommandé</option>
+              <option value="difficulty-asc">Difficulté croissante (Très facile → Expert)</option>
+              <option value="difficulty-desc">Difficulté décroissante (Expert → Très facile)</option>
+              <option value="time-asc">Temps total le plus court</option>
+              <option value="category">Catégorie</option>
+            </select>
+          </div>
+
+          <div className="text-xs text-botanik-green/60 font-medium">
+            <strong>{visibleRecipes.length}</strong> recette{visibleRecipes.length > 1 ? 's' : ''} trouvée{visibleRecipes.length > 1 ? 's' : ''}
+          </div>
         </div>
       </div>
 
@@ -126,57 +171,43 @@ export default function RecipesContent({ onBack, lang, t }: RecipesContentProps)
             key={recipe.id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
+            transition={{ delay: index * 0.05 }}
             onClick={() => setSelectedRecipe(recipe)}
-            className="group bg-white rounded-[32px] border border-botanik-green/5 overflow-hidden shadow-sm hover:shadow-xl transition-all cursor-pointer relative flex flex-col"
+            className="group bg-white rounded-[32px] border border-botanik-green/10 overflow-hidden shadow-xs hover:shadow-xl transition-all cursor-pointer relative flex flex-col"
           >
             <div className="aspect-[4/3] overflow-hidden relative">
               <img 
                 src={recipe.image} 
                 alt={recipe.title} 
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
               />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors" />
+              <div className="absolute inset-0 bg-black/15 group-hover:bg-black/0 transition-colors" />
             </div>
-            <div className="p-8 flex-1 flex flex-col">
-              <div className="flex justify-between items-start mb-3">
-                <span className="px-3 py-1 bg-botanik-green/5 text-botanik-green text-[10px] font-bold uppercase tracking-widest rounded-full">
-                  {recipe.category}
+            <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-4">
+              <div className="space-y-3">
+                {/* Badges Normalisés : Catégorie, Difficulté & Métriques */}
+                <DifficultyBadge 
+                  recipeId={recipe.id} 
+                  fallback={{ title: recipe.title, ingredientCount: recipe.ingredients.length }}
+                  showCategory={true}
+                  showTimes={true}
+                  showIngredients={true}
+                />
+
+                <h3 className="text-xl sm:text-2xl font-bold text-botanik-green group-hover:text-botanik-orange transition-colors pt-1">
+                  {recipe.title}
+                </h3>
+                <p className="text-botanik-green/70 text-xs sm:text-sm leading-relaxed line-clamp-2">
+                  {recipe.description}
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-botanik-green/10 flex items-center justify-between">
+                <span className="text-[11px] font-mono text-botanik-green/40 font-bold uppercase">
+                  #{recipe.id} • {recipe.category}
                 </span>
-                <span className="text-xs font-bold text-botanik-green/20">RECETTE #{recipe.id}</span>
-              </div>
-
-              {/* Badges Architectures, Terrains, Axes */}
-              <div className="flex flex-wrap gap-1.5 mb-3">
-                {recipe.architectures && recipe.architectures.map((arch, aIdx) => (
-                  <span key={aIdx} className="text-[9px] font-black uppercase px-2 py-0.5 rounded bg-[#c9a84c]/15 text-[#92400e] border border-[#c9a84c]/30">
-                    {arch}
-                  </span>
-                ))}
-                {recipe.terrains && recipe.terrains.map((ter, tIdx) => (
-                  <span key={tIdx} className="text-[9px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">
-                    {ter.split(' ')[0]}
-                  </span>
-                ))}
-                {recipe.axes && recipe.axes.slice(0, 2).map((ax, xIdx) => (
-                  <span key={xIdx} className="text-[9px] font-bold px-2 py-0.5 rounded bg-sky-50 text-sky-800 border border-sky-200">
-                    {ax.split(' ')[0]}
-                  </span>
-                ))}
-              </div>
-
-              <h3 className="text-2xl font-bold text-botanik-green mb-3 group-hover:text-botanik-orange transition-colors">
-                {recipe.title}
-              </h3>
-              <p className="text-botanik-green/60 text-sm leading-relaxed line-clamp-2">
-                {recipe.description}
-              </p>
-              <div className="mt-auto pt-6 border-t border-botanik-green/5 flex items-center justify-between">
-                <div className="flex items-center gap-2 text-xs font-bold text-botanik-green/40">
-                  <Clock className="w-4 h-4" /> 15-45 MIN
-                </div>
-                <div className="flex items-center gap-2 text-botanik-orange font-bold text-sm">
-                  Voir le détail <ArrowLeft className="w-4 h-4 rotate-180" />
+                <div className="flex items-center gap-1.5 text-botanik-orange font-bold text-xs sm:text-sm">
+                  Voir la fiche <ArrowLeft className="w-4 h-4 rotate-180" />
                 </div>
               </div>
             </div>
@@ -224,6 +255,16 @@ export default function RecipesContent({ onBack, lang, t }: RecipesContentProps)
                     <p className="text-xl text-botanik-green/60 mb-8 font-light leading-relaxed">
                       {selectedRecipe.description}
                     </p>
+
+                    {/* Bloc Avant de commencer (Indicateur de difficulté & Pré-requis techniques) */}
+                    <BeforeYouStartBlock 
+                      recipeId={selectedRecipe.id} 
+                      fallback={{
+                        title: selectedRecipe.title,
+                        ingredientCount: selectedRecipe.ingredients.length,
+                        stepsCount: selectedRecipe.instructions.length
+                      }}
+                    />
 
                     {/* Bloc Profil Systémique Bloom : 4 Architectures, 7 Terrains, 9 Axes */}
                     <div className="mb-10 p-6 rounded-3xl bg-[#FAF7F2] border border-[#c9a84c]/30 space-y-4 shadow-sm">

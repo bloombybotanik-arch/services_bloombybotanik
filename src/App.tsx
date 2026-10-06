@@ -65,6 +65,7 @@ import LegalPages from './LegalPages';
 import ChatContent from './ChatContent';
 import AccountContent from './AccountContent';
 import RecipesContent from './RecipesContent';
+import PublicRecipeCatalog from './components/recipes/PublicRecipeCatalog';
 import AdminDashboard from './components/AdminDashboard';
 import ManifesteContent from './ManifesteContent';
 import MachineLanding from './MachineLanding';
@@ -290,6 +291,22 @@ export default function App() {
       if (path.startsWith('/blog/') && path !== '/blog/' && path !== '/blog') {
         return 'blog';
       }
+      if (path.startsWith('/recettes')) {
+        if (path === '/recettes' || path === '/recettes/') return 'recettes-hub';
+        if (path.startsWith('/recettes/culinaires')) {
+          if (path === '/recettes/culinaires' || path === '/recettes/culinaires/' || path.startsWith('/recettes/culinaires/page/')) return 'recettes-culinaires';
+          return 'recette-detail';
+        }
+        if (path.startsWith('/recettes/cosmetiques')) {
+          if (path === '/recettes/cosmetiques' || path === '/recettes/cosmetiques/' || path.startsWith('/recettes/cosmetiques/page/')) return 'recettes-cosmetiques';
+          return 'recette-detail';
+        }
+        if (path.startsWith('/recettes/parcours-botaniques')) {
+          if (path === '/recettes/parcours-botaniques' || path === '/recettes/parcours-botaniques/' || path.startsWith('/recettes/parcours-botaniques/page/')) return 'recettes-parcours';
+          return 'recette-detail';
+        }
+        return 'recette-detail';
+      }
       if (PATH_VIEWS[path]) {
         return PATH_VIEWS[path];
       }
@@ -421,6 +438,38 @@ export default function App() {
         const slug = path.replace(/^\/blog\//, '').replace(/\/$/, '');
         setSelectedSlug(slug);
         setCurrentView('blog');
+        return;
+      }
+      if (path.startsWith('/recettes')) {
+        if (path === '/recettes' || path === '/recettes/') {
+          setCurrentView('recettes-hub');
+          return;
+        }
+        if (path.startsWith('/recettes/culinaires')) {
+          if (path === '/recettes/culinaires' || path === '/recettes/culinaires/' || path.startsWith('/recettes/culinaires/page/')) {
+            setCurrentView('recettes-culinaires');
+          } else {
+            setCurrentView('recette-detail');
+          }
+          return;
+        }
+        if (path.startsWith('/recettes/cosmetiques')) {
+          if (path === '/recettes/cosmetiques' || path === '/recettes/cosmetiques/' || path.startsWith('/recettes/cosmetiques/page/')) {
+            setCurrentView('recettes-cosmetiques');
+          } else {
+            setCurrentView('recette-detail');
+          }
+          return;
+        }
+        if (path.startsWith('/recettes/parcours-botaniques')) {
+          if (path === '/recettes/parcours-botaniques' || path === '/recettes/parcours-botaniques/' || path.startsWith('/recettes/parcours-botaniques/page/')) {
+            setCurrentView('recettes-parcours');
+          } else {
+            setCurrentView('recette-detail');
+          }
+          return;
+        }
+        setCurrentView('recette-detail');
         return;
       }
       const view = PATH_VIEWS[path] || 'indexbis';
@@ -1188,11 +1237,30 @@ export default function App() {
           />
         ) : currentView === 'library-landing' ? (
           <LibraryLanding onNavigate={navigateTo} lang={selectedLanguage} />
-        ) : currentView === 'recettes' || currentView === 'recettes-gratuites' ? (
-          <RecipesContent
-            onBack={() => navigateTo('indexbis')}
+        ) : currentView === 'recettes' || currentView === 'recettes-gratuites' || currentView === 'recettes-hub' || currentView === 'recettes-culinaires' || currentView === 'recettes-cosmetiques' || currentView === 'recettes-parcours' || currentView === 'recette-detail' ? (
+          <PublicRecipeCatalog
+            initialPath={typeof window !== 'undefined' ? window.location.pathname : '/recettes/'}
+            onNavigate={(targetPath) => {
+              if (targetPath.startsWith('/recettes/')) {
+                if (targetPath === '/recettes/' || targetPath === '/recettes') setCurrentView('recettes-hub');
+                else if (targetPath.startsWith('/recettes/culinaires')) {
+                  if (targetPath === '/recettes/culinaires/' || targetPath.startsWith('/recettes/culinaires/page/')) setCurrentView('recettes-culinaires');
+                  else setCurrentView('recette-detail');
+                } else if (targetPath.startsWith('/recettes/cosmetiques')) {
+                  if (targetPath === '/recettes/cosmetiques/' || targetPath.startsWith('/recettes/cosmetiques/page/')) setCurrentView('recettes-cosmetiques');
+                  else setCurrentView('recette-detail');
+                } else if (targetPath.startsWith('/recettes/parcours-botaniques')) {
+                  if (targetPath === '/recettes/parcours-botaniques/' || targetPath.startsWith('/recettes/parcours-botaniques/page/')) setCurrentView('recettes-parcours');
+                  else setCurrentView('recette-detail');
+                }
+              } else if (targetPath === '/') {
+                navigateTo('indexbis');
+              } else {
+                const targetView = (PATH_VIEWS[targetPath] || 'indexbis') as View;
+                navigateTo(targetView);
+              }
+            }}
             lang={selectedLanguage}
-            t={t}
           />
         ) : currentView === 'cart' ? (
           <CartContent
