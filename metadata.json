@@ -1,0 +1,11 @@
+{
+  "id": "1e04d90f-3878-4981-8138-5c8a14f59353",
+  "name": "Bloom by BotaniK - L'Art de l'Extraction Botanique de Précision",
+  "description": "Plateforme d'herboristerie de précision et d'extraction botanique. Découvrez la BloomLab®, l'extracteur du totum à basse température. Navigation systémique par Terrains, herbier scientifique complet et calculateur d'extraction.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,159 @@
+
+export type View = 'home' | 'machine' | 'bloomlab' | 'phytotherapie-reset' | 'votre-pratique' | 'parcours' | 'boutique' | 'product-detail' | 'culinaire' | 'cosmetiques' | 'cosmetique-botanique' | 'gastronomie-botanique' | 'library-landing' | 'manifeste' | 'activation' | 'activate-bloomlab' | 'account' | 'legal' | 'chat' | 'cart' | 'checkout' | 'guide' | 'how_it_works' | 'pending' | 'library' | 'herbier' | 'pillar-extraction' | 'guide-complet' | 'qu-est-ce-que-infusion' | 'admin' | 'blog' | 'withdrawal' | 'indexbis' | 'newsletter-preferences' | 'admin-newsletter' | 'terrain' | 'hormese' | 'infuseur-botanique' | 'cgv' | 'cgu' | 'privacy' | 'mentions' | 'returns' | 'recettes' | 'guides' | 'ateliers' | 'herbarium' | 'questions-frequentes' | 'faq' | 'infusion-precision' | 'totum-definition' | 'solvants-extraction' | 'premium-info' | 'decouvrir' | 'comment-ca-marche' | 'recettes-gratuites' | 'apprendre' | 'preparations-avancees' | 'recettes-cosmetiques' | 'bibliotheque' | 'boutique-kits' | 'abonnement' | 'abonnements-numeriques' | 'la-marque' | 'contact' | 'extraction-botanique' | 'remedes-naturels' | 'infusion-botanique' | 'infusion-botanique-maison-comment-ca-marche' | 'huile-infusee' | 'plantes-adaptogenes' | 'totum-vegetal' | 'maceration-plantes' | 'teinture-mere' | 'kits-botaniques' | 'articles' | 'lexique' | 'protocole-psoriasis' | 'protocole-sibo' | 'protocole-myeline' | 'protocole-decalcification-pineale' | 'blog-vieillissement-myeline' | 'academie' | '4-architectures' | '7-terrains' | 'comment-lire-modele-bloom' | '9-axes' | 'neuf-axes-historiques' | 'charge-allostatique' | 'reset-homeostasique' | 'metabolisme-insuline' | 'protocoles' | 'module-0' | 'axe-a1' | 'axe-a2' | 'axe-a3' | 'axe-a4' | 'axe-a5' | 'axe-a6' | 'axe-a7' | 'axe-a8' | 'axe-a9' | 'guide-complet-extraction-botanique-maison' | 'remedes-naturels-maison-guide' | 'totum-vegetal-comprendre' | 'cosmetiques-naturels-diy' | 'phytotherapie-moderne-scientifique' | 'nutrition-et-micronutrition' | 'micronutrition-guide-achat' | 'micronutrition-precautions' | 'recettes-hub' | 'recettes-culinaires' | 'recettes-cosmetiques' | 'recettes-parcours' | 'recettes-phytotherapie' | 'recettes-gastronomie' | 'recette-detail';
+
+export const VIEW_PATHS: Record<string, string> = {
+  home: '/', 
+  indexbis: '/',
+  'recettes-phytotherapie': '/recettes/phytotherapie/',
+  'recettes-gastronomie': '/recettes/gastronomie/',
+  academie: '/academie/',
+  'comment-lire-modele-bloom': '/academie/comprendre-le-modele-bloom/',
+  bloomlab: '/bloomlab/',
+  machine: '/bloomlab/', 
+  'phytotherapie-reset': '/academie/reset-homeostasique/',
+  'reset-homeostasique': '/academie/reset-homeostasique/',
+  'protocoles': '/academie/protocoles/',
+  'module-0': '/academie/choc-de-paradigme/',
+  'axe-a1': '/academie/axes/a1-emonctoires/',
+  'axe-a2': '/academie/axes/a2/',
+  'axe-a3': '/academie/axes/a3/',
+  'axe-a4': '/academie/axes/a4/',
+  'axe-a5': '/academie/axes/a5/',
+  'axe-a6': '/academie/axes/a6/',
+  'axe-a7': '/academie/axes/a7/',
+  'axe-a8': '/academie/axes/a8/',
+  'axe-a9': '/academie/axes/a9/',
+  'votre-pratique': '/academie/protocoles/',
+  'parcours': '/academie/protocoles/',
+  boutique: '/boutique/', 
+  'product-detail': '/bloomlab/',
+  'boutique-kits': '/boutique/kits/',
+  'kits-botaniques': '/boutique/kits/',
+  'abonnement': '/abonnement/',
+  'premium-info': '/abonnement/',
+  'abonnements-numeriques': '/boutique/abonnements-numeriques/',
+  culinaire: '/gastronomie-botanique/', 
+  cosmetiques: '/cosmetiques-naturels-diy/',
+  'cosmetique-botanique': '/cosmetiques-naturels-diy/',
+  'cosmetiques-naturels-diy': '/cosmetiques-naturels-diy/',
+  'gastronomie-botanique': '/gastronomie-botanique/',
+  'library-landing': '/academie/bibliotheque/', 
+  manifeste: '/manifeste/',
+  'la-marque': '/la-marque/',
+  contact: '/contact/',
+  faq: '/questions-frequentes/',
+  activation: '/activation/', 
+  'activate-bloomlab': '/activation/',
+  account: '/compte/', 
+  legal: '/legal/', 
+  chat: '/chat/',
+  cart: '/panier/', 
+  checkout: '/checkout/', 
+  guide: '/infusion-botanique/',
+  how_it_works: '/comment-ca-marche/', 
+  'comment-ca-marche': '/comment-ca-marche/',
+  'decouvrir': '/decouvrir/',
+  'recettes-gratuites': '/recettes-gratuites/',
+  'apprendre': '/apprendre/',
+  'preparations-avancees': '/preparations-avancees/',
+  'bibliotheque': '/academie/bibliotheque/',
+  pending: '/en-attente/',
+  library: '/academie/herbier/', 
+  herbier: '/academie/herbier/', 
+  'herbarium': '/academie/herbier/', 
+  'pillar-extraction': '/extraction-botanique/',
+  'extraction-botanique': '/extraction-botanique/',
+  'remedes-naturels': '/remedes-naturels/',
+  'remedes-naturels-maison-guide': '/remedes-naturels/',
+  'infusion-botanique': '/infusion-botanique-maison-comment-ca-marche/',
+  'infusion-botanique-maison-comment-ca-marche': '/infusion-botanique-maison-comment-ca-marche/',
+  'huile-infusee': '/huile-infusee/',
+  'maceration-plantes': '/maceration-plantes/',
+  'teinture-mere': '/teinture-mere/',
+  'totum-vegetal': '/totum-vegetal/',
+  'totum-vegetal-comprendre': '/totum-vegetal/',
+  'plantes-adaptogenes': '/plantes-adaptogenes/',
+  'guide-complet': '/extraction-botanique/',
+  'guide-complet-extraction-botanique-maison': '/extraction-botanique/',
+  'articles': '/articles/',
+  'qu-est-ce-que-infusion': '/qu-est-ce-que-l-infusion-botanique/',
+  admin: '/admin/', 
+  blog: '/blog/', 
+  withdrawal: '/droit-de-retractation/', 
+  'infuseur-botanique': '/bloomlab/',
+  'terrain': '/academie/comprendre-le-corps/7-terrains/',
+  'hormese': '/hormese/',
+  cgv: '/conditions-generales-de-vente/',
+  cgu: '/termes-et-conditions/',
+  privacy: '/politique-de-confidentialite/',
+  mentions: '/mentions-legales/',
+  returns: '/retour-et-remboursement/',
+  'newsletter-preferences': '/newsletter/preferences/',
+  'admin-newsletter': '/admin/newsletter/',
+  'recettes': '/recettes/',
+  'recettes-hub': '/recettes/',
+  'recettes-culinaires': '/recettes/culinaires/',
+  'recettes-cosmetiques': '/recettes/cosmetiques/',
+  'recettes-parcours': '/recettes/parcours-botaniques/',
+  'recette-detail': '/recettes/',
+  'guides': '/guides/',
+  'ateliers': '/ateliers/',
+  'questions-frequentes': '/questions-frequentes/',
+  'infusion-precision': '/infusion-precision/',
+  'totum-definition': '/totum-definition/',
+  'solvants-extraction': '/solvants-extraction/',
+  'lexique': '/lexique/',
+  'protocole-psoriasis': '/academie/protocoles/psoriasis/',
+  'protocole-sibo': '/academie/protocoles/sibo/',
+  'protocole-myeline': '/academie/protocoles/clarte-mentale/',
+  'protocole-decalcification-pineale': '/academie/protocoles/decalcification-pineale/',
+  'blog-vieillissement-myeline': '/blog/vieillissement-myeline-fgf17-clarte-mentale/',
+  '4-architectures': '/academie/comprendre-le-corps/4-architectures/',
+  '7-terrains': '/academie/comprendre-le-corps/7-terrains/',
+  '9-axes': '/academie/comprendre-le-corps/9-axes-historiques/',
+  'neuf-axes-historiques': '/academie/comprendre-le-corps/9-axes-historiques/',
+  'charge-allostatique': '/academie/comprendre-le-corps/charge-allostatique/',
+  'metabolisme-insuline': '/academie/comprendre-le-corps/metabolisme-glucidique-insuline/',
+  'phytotherapie-moderne-scientifique': '/phytotherapie-moderne-scientifique/',
+  'nutrition-et-micronutrition': '/academie/nutrition-et-micronutrition/',
+  'micronutrition-guide-achat': '/academie/nutrition-et-micronutrition/guide-achat/',
+  'micronutrition-precautions': '/academie/nutrition-et-micronutrition/precautions-et-interactions/'
+};
+
+export type SchoolCalendarZone = 'A' | 'B' | 'C' | 'non_precise' | 'hors_france';
+
+export interface SubscriberPreferences {
+  family_rhythm: boolean;
+  school_calendar_zone: SchoolCalendarZone;
+  content_context: string[];
+}
+
+export interface Subscriber {
+  id: string;
+  email: string;
+  first_name: string;
+  marketing_consent: boolean;
+  email_status: 'active' | 'unsubscribed';
+  preferences: SubscriberPreferences;
+  created_at: any;
+  updated_at: any;
+}
+
+export interface NewsletterCampaign {
+  id: string;
+  title: string;
+  subject: string;
+  content: string;
+  status: 'draft' | 'scheduled' | 'sent' | 'archived' | 'approved';
+  theme?: string;
+  created_at?: any;
+  sent_at?: any;
+  recipient_count?: number;
+}
+
+export interface NewsletterGenerationSession {
+  id: string;
+  status: 'pending' | 'processing' | 'completed' | 'failed';
+  result?: any;
+  error?: string;
+}

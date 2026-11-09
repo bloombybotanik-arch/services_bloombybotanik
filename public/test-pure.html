@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Pur JavaScript</title>
+  <style>
+    body { font-family: monospace; padding: 2rem; background: #3E4A3D; color: #FAF7F2; }
+    .success { background: #2d5016; padding: 1rem; margin: 1rem 0; border-radius: 8px; }
+    .error { background: #8b3a3a; padding: 1rem; margin: 1rem 0; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h1>🧪 Test Pur JavaScript (sans React/Vite)</h1>
+  
+  <script>
+    console.log('=== TEST PUR DÉMARRÉ ===');
+    
+    try {
+      document.body.innerHTML += '<div class="success">✅ JavaScript inline fonctionne</div>';
+      document.body.innerHTML += '<div class="success">✅ Date : ' + new Date().toLocaleString() + '</div>';
+      document.body.innerHTML += '<div class="success">✅ Navigateur : ' + navigator.userAgent.substr(0, 50) + '</div>';
+      console.log('=== TEST PUR RÉUSSI ===');
+    } catch (err) {
+      document.body.innerHTML += '<div class="error">❌ ERREUR : ' + err.message + '</div>';
+      console.error('=== ERREUR TEST PUR ===', err);
+    }
+  </script>
+</body>
+</html>

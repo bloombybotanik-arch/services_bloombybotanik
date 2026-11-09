@@ -1,0 +1,21 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import ErrorBoundary from './components/ErrorBoundary';
+
+const rootElement = document.getElementById('root')!;
+
+function DebugLoader() {
+  const [Comp, setComp] = React.useState<React.ComponentType | null>(null);
+  const [err, setErr] = React.useState<string | null>(null);
+  React.useEffect(() => {
+    import('./DebugIsolation')
+      .then(m => setComp(() => m.default))
+      .catch(e => setErr(e.message));
+  }, []);
+  if (err) return <pre style={{ padding: '2rem', color: '#8b3a3a' }}>ERREUR IMPORT DEBUG : {err}</pre>;
+  return Comp ? <Comp /> : <div style={{ padding: '2rem', fontFamily: 'monospace' }}>⏳ Chargement du module de diagnostic…</div>;
+}
+
+ReactDOM.createRoot(rootElement).render(
+  <ErrorBoundary><DebugLoader /></ErrorBoundary>
+);

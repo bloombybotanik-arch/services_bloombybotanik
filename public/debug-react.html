@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Debug React Isolé</title>
+  <style>
+    body { font-family: monospace; padding: 2rem; background: #3E4A3D; color: #FAF7F2; }
+    .success { color: #2d5016; background: #f0f0f0; padding: 1rem; margin: 1rem 0; }
+    .error { color: #8b3a3a; background: #ffe0e0; padding: 1rem; margin: 1rem 0; }
+  </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "/node_modules/.vite/deps/react.js",
+      "react-dom/client": "/node_modules/.vite/deps/react-dom_client.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <h1>🔬 Test React Isolé</h1>
+  <div id="test-root"></div>
+  
+  <script type="module">
+    console.log('=== DÉBUT TEST REACT ISOLÉ ===');
+    
+    // Importer React directement depuis node_modules
+    import('react').then(ReactModule => {
+      const React = ReactModule.default || ReactModule;
+      console.log('✓ React chargé');
+      return import('react-dom/client').then(ReactDOMModule => {
+        const ReactDOM = ReactDOMModule.default || ReactDOMModule;
+        console.log('✓ ReactDOM chargé');
+        
+        // Composant de test ultra-simple
+        function TestComponent() {
+          return React.createElement('div', {className: 'success'}, 
+            '✅ React fonctionne ! Rendu à ' + new Date().toLocaleTimeString()
+          );
+        }
+        
+        // Monter React
+        try {
+          const root = ReactDOM.createRoot(document.getElementById('test-root'));
+          root.render(React.createElement(TestComponent));
+          console.log('✓ React monté avec succès');
+        } catch (err) {
+          console.error('✗ Erreur montage React:', err);
+          document.body.innerHTML += '<div class="error">Erreur: ' + err.message + '</div>';
+        }
+      });
+    }).catch(err => {
+      console.error('✗ Erreur import local, tentative CDN:', err);
+      // Fallback automatique via CDN si les dépendances locales ne sont pas directement accessibles
+      import('https://esm.sh/react@18').then(React => {
+        return import('https://esm.sh/react-dom@18/client').then(ReactDOM => {
+          function TestComponent() {
+            return React.createElement('div', {className: 'success'}, 
+              '✅ React fonctionne (via CDN) ! Rendu à ' + new Date().toLocaleTimeString()
+            );
+          }
+          const root = ReactDOM.createRoot(document.getElementById('test-root'));
+          root.render(React.createElement(TestComponent));
+        });
+      }).catch(cdnErr => {
+        document.body.innerHTML += '<div class="error">Erreur import: ' + err.message + '<br>' + cdnErr.message + '</div>';
+      });
+    });
+  </script>
+</body>
+</html>

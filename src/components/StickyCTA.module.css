@@ -1,0 +1,164 @@
+/* Desktop Floating Pill */
+.desktopFloating {
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 40;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 768px) {
+  .desktopFloating {
+    display: block;
+  }
+}
+
+.desktopPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.65rem 1.25rem 0.65rem 0.85rem;
+  background: #3E4A3D;
+  border: 1.5px solid #C8AB8A;
+  border-radius: 9999px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.desktopPill:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 16px 35px rgba(200, 171, 138, 0.35);
+  background: #143329;
+}
+
+.pillIconWrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  background: #C8AB8A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+.pillTextGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.pillTitle {
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.pillMeta {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #FBBF24;
+}
+
+.pillActionBtn {
+  margin-left: 0.5rem;
+  padding: 0.45rem 0.95rem;
+  border-radius: 9999px;
+  background: #C8AB8A;
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile Fixed Bottom Bar */
+.mobileStickyBar {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 45;
+  background: rgba(62, 74, 61, 0.97);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(200, 171, 138, 0.4);
+  padding: 0.75rem 1rem env(safe-area-inset-bottom, 0.75rem) 1rem;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .mobileStickyBar {
+    display: none;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.mobileInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileTitle {
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #FFFFFF;
+}
+
+.mobilePricing {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+}
+
+.mobilePrice {
+  color: #FBBF24;
+  font-weight: 900;
+  font-size: 0.9rem;
+}
+
+.mobileStock {
+  color: #34D399;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.mobileButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.35rem;
+  background: #C8AB8A;
+  color: #FFFFFF;
+  font-weight: 900;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(200, 171, 138, 0.4);
+  white-space: nowrap;
+}
+
+.mobileButton:active {
+  background: #B45309;
+  transform: scale(0.97);
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://bloombybotanik.com/bloomlab</loc>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/images/product_bloomlab.jpg</image:loc>
+      <image:title>BloomLab - Extracteur et Infuseur Botanique</image:title>
+      <image:caption>Extracteur botanique à basse température pour infusions, macérâts et extraits végétaux purs.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://bloombybotanik.com/boutique</loc>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/images/product_bouclier_hiver.jpg</image:loc>
+      <image:title>Bouclier Hivernal</image:title>
+      <image:caption>Synergie botanique de plantes médicinales pour les défenses immunitaires.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/images/product_nuit_profonde.jpg</image:loc>
+      <image:title>Nuit Profonde</image:title>
+      <image:caption>Formule de plantes relaxantes pour le sommeil réparateur.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/images/product_seve_fondamentale.jpg</image:loc>
+      <image:title>Sève Fondamentale</image:title>
+      <image:caption>Élixir végétal revitalisant.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bloombybotanik.com/images/product_duo_argiles.jpg</image:loc>
+      <image:title>Duo Argiles &amp; Plantes</image:title>
+      <image:caption>Soin détoxifiant pour peau et cuir chevelu.</image:caption>
+    </image:image>
+  </url>
+</urlset>

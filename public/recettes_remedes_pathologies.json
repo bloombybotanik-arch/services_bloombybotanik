@@ -1,0 +1,666 @@
+[
+  {
+    "recette_id": "psoriasis_remede",
+    "nom_commun": "Remède Psoriasis — Émonctoires & Barrière Kératinocytaire",
+    "type_produit": "Extrait liquide multi-plantes à double extraction séquentielle",
+    "cible": "Psoriasis (plaques squameuses, hyperprolifération kératinocytaire, emballement Th17/IL-23 et surcharge hépato-cutanée)",
+    "description": "Formule phytothérapeutique d'exception ciblant la régulation de la prolifération des kératinocytes, le drainage du terrain hépato-rénal et la modulation de l'axe intestin-peau par extraction séquentielle sous vide partiel.",
+    "solvants": {
+      "phase_A": {
+        "type": "Eau purifiée distillée + Glycérine végétale bio (70/30)",
+        "volume": "500ml",
+        "role": "Extraction des polysaccharides immunitaires (inuline), mucilages apaisants, tanins doux et glycosides phénoliques hydrosolubles sans dégradation thermique."
+      },
+      "phase_B": {
+        "type": "Alcool éthylique de grain bio 96°",
+        "volume": "250ml",
+        "role": "Extraction douce des alcaloïdes isoquinoléiques (berbérine), polyacétylènes et principes amers lipophiles à température modérée stabilisée."
+      }
+    },
+    "plantes": [
+      {
+        "nom_commun": "Bardane",
+        "nom_latin": "Arctium lappa",
+        "partie_utilisee": "Racines séchées concassées",
+        "grammage": "30g",
+        "phase": "A",
+        "actifs_cles": [
+          { "nom": "Inuline (FOS prébiotique)", "polarite": "Hydrosoluble" },
+          { "nom": "Acide chlorogénique et caféique", "polarite": "Hydrosoluble" },
+          { "nom": "Polyacétylènes (arctinone)", "polarite": "Liposoluble" }
+        ],
+        "preuve_scientifique": "Draineur cutané et hépato-biliaire majeur. L'inuline nourrit le microbiote intestinal régulateur de l'axe intestin-peau. Les acides phénoliques inhibent la peroxydation lipidique et neutralisent les médiateurs pro-inflammatoires dans les kératinocytes.",
+        "pourquoi_bloomlab": {
+          "probleme_traditionnel": "La racine de bardane est très dense et fibreuse. L'ébullition en décoction classique dégrade les acides phénoliques thermosensibles et caramélise l'inuline, tandis qu'une macération à froid ne parvient pas à fracturer la cuticule de la racine.",
+          "phase_A": {
+            "temp": "75°C",
+            "temps": "2h00",
+            "solvant": "Eau purifiée + Glycérine végétale (70/30)",
+            "cible": "Inuline, acide chlorogénique, mucilages"
+          },
+          "phase_B": {
+            "temp": "50°C",
+            "temps": "2h30",
+            "solvant": "Alcool bio 96°",
+            "cible": "Polyacétylènes et lignanes"
+          }
+        }
+      },
+      {
+        "nom_commun": "Pensée Sauvage",
+        "nom_latin": "Viola tricolor",
+        "partie_utilisee": "Parties aériennes fleuries séchées",
+        "grammage": "25g",
+        "phase": "A",
+        "actifs_cles": [
+          { "nom": "Mucilages protecteurs", "polarite": "Hydrosoluble" },
+          { "nom": "Flavonoïdes (Rutine, violanthine)", "polarite": "Hydrosoluble" },
+          { "nom": "Dérivés salicylés naturels (Salicylate de méthyle lié)", "polarite": "Hydrosoluble" }
+        ],
+        "preuve_scientifique": "Action kératolytique douce et antiallergique cutanée reconnue par la Commission E et l'EMA. Les flavonoïdes et mucilages réduisent l'œdème squameux et inhibent la synthèse des prostaglandines pro-inflammatoires.",
+        "pourquoi_bloomlab": {
+          "probleme_traditionnel": "L'infusion classique perd rapidement les dérivés salicylés volatils et n'extrait que très partiellement la rutine protectrice des capillaires dermiques.",
+          "phase_A": {
+            "temp": "75°C",
+            "temps": "2h00",
+            "solvant": "Eau purifiée + Glycérine végétale (70/30)",
+            "cible": "Mucilages, rutine, dérivés salicylés"
+          },
+          "phase_B": {
+            "temp": "50°C",
+            "temps": "2h30",
+            "solvant": "Alcool bio 96°",
+            "cible": "Caroténoïdes et flavones apolaires"
+          }
+        }
+      },
+      {
+        "nom_commun": "Mahonia à feuilles de houx",
+        "nom_latin": "Mahonia aquifolium (Berberis aquifolium)",
+        "partie_utilisee": "Écorce de racine et de tige séchée",
+        "grammage": "20g",
+        "phase": "B",
+        "actifs_cles": [
+          { "nom": "Berbérine", "polarite": "Alcoolosoluble / Hydrosoluble" },
+          { "nom": "Oxyacanthine", "polarite": "Liposoluble" },
+          { "nom": "Jatrorrhizine", "polarite": "Alcoolosoluble" }
+        ],
+        "preuve_scientifique": "Inhibition cliniquement documentée de l'enzyme 5-lipoxygénase et réduction significative de la prolifération excessive des kératinocytes épidermiques. Diminution de l'expression des cytokines de la voie Th17 (IL-17, IL-23).",
+        "pourquoi_bloomlab": {
+          "probleme_traditionnel": "Les alcaloïdes isoquinoléiques sont emprisonnés dans des parois ligneuses très résistantes. Une tisane n'extrait que des traces infimes d'alcaloïdes insolubles dans l'eau pure.",
+          "phase_A": {
+            "temp": "75°C",
+            "temps": "2h00",
+            "solvant": "Eau purifiée + Glycérine végétale (70/30)",
+            "cible": "Glycosides et acides organiques précurseurs"
+          },
+          "phase_B": {
+            "temp": "50°C",
+            "temps": "2h30",
+            "solvant": "Alcool bio 96°",
+            "cible": "Berbérine, oxyacanthine, jatrorrhizine"
+          }
+        }
+      }
+    ],
+    "parametres_bloomlab": {
+      "phase_A": {
+        "temp": "75°C",
+        "temps": "2h00",
+        "agitation": "Modérée continue (Programme OIL / DECOCTION)"
+      },
+      "phase_B": {
+        "temp": "50°C",
+        "temps": "2h30",
+        "agitation": "Douce séquentielle (30s ON / 30s OFF)"
+      }
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cuve BloomLab 1000ml — Volume solvant total : 750ml, poids plantes : 75g (Rendement final net extrait : ~620ml après pressage)",
+      "ingredients": {
+        "phase_A": [
+          "30g de Racine de Bardane (copeaux séchés)",
+          "25g de Pensée Sauvage (sommités fleuries)",
+          "350ml d'Eau purifiée distillée",
+          "150ml de Glycérine végétale bio"
+        ],
+        "phase_B": [
+          "20g d'Écorce de Mahonia (poudre grossière / concassée)",
+          "250ml d'Alcool de grain bio à 96°"
+        ]
+      },
+      "preparation": [
+        "1. Pesez précisément les 30g de racine de bardane et concassez-les au pilon pour maximiser la surface d'échange.",
+        "2. Tassez légèrement la pensée sauvage avec la bardane dans le filtre panier inox 304.",
+        "3. Préparez le mélange eau purifiée (350ml) et glycérine (150ml)."
+      ],
+      "phase_A_instructions": [
+        "1. Versez le mélange eau-glycérine dans la cuve du BloomLab.",
+        "2. Insérez le panier contenant la bardane et la pensée sauvage.",
+        "3. Verrouillez hermétiquement le couvercle de l'extracteur.",
+        "4. Sélectionnez le mode manuel 'OIL/EXTRACTION' : Réglez la TEMPÉRATURE à 75°C et la DURÉE à 2h00. Appuyez sur START."
+      ],
+      "transition": [
+        "1. Au bip de fin du cycle A, éteignez l'appareil et laissez reposer 25 minutes sans ouvrir.",
+        "2. CONTRÔLE DE SÉCURITÉ OBLIGATOIRE : Posez la paume de la main sur la paroi extérieure de la cuve. La température doit être redescendue en dessous de 45°C (tiède au toucher) avant toute introduction d'alcool.",
+        "3. Ouvrez délicatement le couvercle en évitant les éclaboussures de condensation."
+      ],
+      "phase_B_instructions": [
+        "1. Ajoutez les 20g d'écorce de Mahonia directement dans le panier ou la cuve.",
+        "2. Versez les 250ml d'alcool bio 96° délicatement sur le marc de plantes.",
+        "3. Refermez immédiatement le couvercle hermétique pour bloquer toute évaporation d'alcool.",
+        "4. Lancez le cycle Phase B : TEMPÉRATURE 50°C, DURÉE 2h30. START."
+      ],
+      "filtration_et_finition": [
+        "1. Laissez tiédir 30 minutes après l'arrêt.",
+        "2. Filtrez le liquide à travers l'étamine de pressage en lin bio Bloom.",
+        "3. Pressez vigoureusement le marc pour récupérer la totalité de la 'fraction de cœur' riche en berbérine et polyacétylènes.",
+        "4. Conditionnez immédiatement dans 3 flacons en verre ambré de 200ml munis de pipettes compte-gouttes graduées. Étiquetez avec la date et le nom du remède."
+      ]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {
+          "nom": "Vitamine D3 + K2 (MK-7)",
+          "dose": "3000 à 4000 UI/jour de D3 + 75µg de K2",
+          "role": "Modulation de la différenciation des kératinocytes épidermiques et régulation de l'axe immunitaire Th1/Th17. À prendre impérativement au cours d'un repas contenant des lipides."
+        },
+        {
+          "nom": "Zinc Bisglycinate",
+          "dose": "15mg à 20mg de zinc élément/jour",
+          "role": "Cofacteur de la synthèse protéique cutanée et de la cicatrisation épithéliale, inhibiteur de la cascade TNF-alpha."
+        },
+        {
+          "nom": "Oméga-3 EPA hautement purifié",
+          "dose": "1200mg d'EPA purifié/jour",
+          "role": "Précurseur des résolvines et protectines anti-inflammatoires, fluidifiant membranaire réduisant la sécheresse squameuse."
+        }
+      ],
+      "leviers_du_vivant": [
+        {
+          "nom": "Éviction des lectines et prolamines (Gluten & Laitages de vache)",
+          "frequence": "Quotidien durant les 60 jours de cure",
+          "role": "Fermeture de la perméabilité intestinale (zonuline), limitant le passage d'endotoxines bactériennes LPS déclenchant les poussées psoriasiques."
+        },
+        {
+          "nom": "Héliothérapie matinale douce",
+          "frequence": "15 à 20 minutes/jour sans crème solaire avant 11h",
+          "role": "Synthèse endogène de vitamine D et immunosuppression locale contrôlée des lymphocytes T cutanés hyperactifs."
+        }
+      ]
+    },
+    "posologie": {
+      "dose_quotidienne": "10ml par jour (divisés en 2 prises de 5ml, soit 1 cuillère à café diluée)",
+      "moments": [
+        {
+          "moment": "Matin à jeun (15 minutes avant le petit-déjeuner)",
+          "dose": "5ml dilués dans 100ml d'eau tiède",
+          "justification": "Déclenchement du réflexe cholérétique hépatique et captation optimale de l'inuline par le microbiote à jeun."
+        },
+        {
+          "moment": "Soir avant le dîner (15 minutes avant)",
+          "dose": "5ml dilués dans 100ml d'eau tiède",
+          "justification": "Action nocturne de régulation cellulaire et drainage émonctoriel durant la phase de régénération hépatique du sommeil."
+        }
+      ],
+      "duree_cure": "60 jours consécutifs, suivis d'une fenêtre thérapeutique de 10 jours. Renouvelable 2 fois par an.",
+      "chronobiologie": "Le pic de prolifération kératinocytaire se produit en début de nuit ; la prise du soir assure une concentration plasmatique optimale des alcaloïdes au moment de l'anomalie mitotique."
+    },
+    "contre_indications": [
+      "Grossesse et allaitement (présence d'alcaloïdes de mahonia stimulant les contractions utérines).",
+      "Enfants de moins de 12 ans.",
+      "Obstruction avérée des voies biliaires ou lithiase biliaire symptomatique (effet cholagogue puissant de la bardane et du mahonia).",
+      "Allergie connue aux plantes de la famille des Astéracées (composées) ou aux dérivés salicylés."
+    ],
+    "convergence_ancestrale": "La Pensée Sauvage et la Bardane forment le pilier de la 'grande tisane dépurative' de la tradition herboriste française des XVIe et XVIIIe siècles, utilisée pour 'nettoyer le sang des humeurs âcres'. Le Mahonia (racine d'or d'Oregon) est utilisé depuis des siècles par les peuples autochtones d'Amérique du Nord pour apaiser les éruptions rouges et squameuses de la peau.",
+    "synergies_recommandees": [
+      "Duo Argiles Bloom (cataplasme externe décongestionnant et reminéralisant sur les plaques)",
+      "Kit Remède Détox Foie & Émonctoires Bloom",
+      "Hydrolat pur d'Hélichryse Italienne en pulvérisation apaisante locale"
+    ],
+    "precautions": "Ce remède s'inscrit dans une approche d'hygiène de vie et de soutien du terrain naturel. Il ne se substitue pas à un traitement médical dermatologique ni au suivi régulier par un médecin ou dermatologue. En cas de réaction cutanée inhabituelle, espacer les prises ou interrompre la cure."
+  },
+  {
+    "recette_id": "eczema_remede",
+    "nom_commun": "Remède Eczéma — Apaisement Histaminique & Réparation Barrière",
+    "type_produit": "Extrait liquide hydroglycériné et hydroalcoolique concentré",
+    "cible": "Eczéma atopique et de contact (prurit intense, dermatite réactive, rupture de barrière lipidique, hyperréactivité mastocytaire)",
+    "description": "Synergie botanique protectrice combinant des antihistaminiques naturels, des flavonoïdes anti-prurigineux et des stabilisateurs de membranes mastocytaires par extraction thermo-régulée sous atmosphère close.",
+    "solvants": {
+      "phase_A": {
+        "type": "Eau purifiée distillée + Glycérine végétale bio (65/35)",
+        "volume": "500ml",
+        "role": "Extraction des iridoïdes (aucuboside), mucilages émollients et flavones hydrosolubles (apigénine sous forme glucosée)."
+      },
+      "phase_B": {
+        "type": "Alcool de grain bio 96°",
+        "volume": "250ml",
+        "role": "Extraction des sesquiterpènes volatils (chamazulène, alpha-bisabolol) et des alcaloïdes stabilisateurs hépato-cutanés (protopine)."
+      }
+    },
+    "plantes": [
+      {
+        "nom_commun": "Plantain Lancéolé",
+        "nom_latin": "Plantago lanceolata",
+        "partie_utilisee": "Feuilles séchées entières broyées",
+        "grammage": "25g",
+        "phase": "A",
+        "actifs_cles": [
+          { "nom": "Aucuboside (Iridoïde)", "polarite": "Hydrosoluble" },
+          { "nom": "Actéoside (Phénylpropanoïde)", "polarite": "Hydrosoluble" },
+          { "nom": "Mucilages hydrosolubles", "polarite": "Hydrosoluble" }
+        ],
+        "preuve_scientifique": "Inhibition démontrée de la dégranulation mastocytaire et de la libération d'histamine. L'aucuboside et l'actéoside exercent une puissante activité anti-inflammatoire et antiprurigineuse tout en stimulant la réépithélisation des tissus fissurés.",
+        "pourquoi_bloomlab": {
+          "probleme_traditionnel": "L'aucuboside est extrêmement fragile face à l'oxydation thermique prolongée : une décoction à 100°C le noircit et l'inactive complètement. Une macération à froid ne libère pas les mucilages profonds.",
+          "phase_A": {
+            "temp": "68°C",
+            "temps": "1h45",
+            "solvant": "Eau purifiée + Glycérine végétale (65/35)",
+            "cible": "Aucuboside, actéoside, mucilages"
+          },
+          "phase_B": {
+            "temp": "48°C",
+            "temps": "2h30",
+            "solvant": "Alcool bio 96°",
+            "cible": "Composés phénoliques apolaires résiduels"
+          }
+        }
+      },
+      {
+        "nom_commun": "Camomille Matricaire",
+        "nom_latin": "Matricaria chamomilla (Matricaria recutita)",
+        "partie_utilisee": "Capitules floraux séchés entiers",
+        "grammage": "25g",
+        "phase": "A & B",
+        "actifs_cles": [
+          { "nom": "Apigénine-7-glucoside", "polarite": "Hydrosoluble" },
+          { "nom": "Chamazulène", "polarite": "Liposoluble / Volatile" },
+          { "nom": "Alpha-bisabolol", "polarite": "Liposoluble" }
+        ],
+        "preuve_scientifique": "L'apigénine module la voie NF-kB et bloque la cyclooxygénase-2 (COX-2). Le chamazulène et le bisabolol inhibent la synthèse des leucotriènes B4 et accélèrent la régénération de la membrane épidermique lésée.",
+        "pourquoi_bloomlab": {
+          "probleme_traditionnel": "Les principes majeurs sont doublement polarisés : l'apigénine est hydrosoluble alors que le chamazulène et le bisabolol sont des huiles volatiles liposolubles s'échappant en vapeur libre.",
+          "phase_A": {
+            "temp": "68°C",
+            "temps": "1h45",
+            "solvant": "Eau purifiée + Glycérine végétale (65/35)",
+            "cible": "Apigénine-7-glucoside et flavones"
+          },
+          "phase_B": {
+            "temp": "48°C",
+            "temps": "2h30",
+            "solvant": "Alcool bio 96°",
+            "cible": "Chamazulène, alpha-bisabolol, spiroéthers"
+          }
+        }
+      },
+      {
+        "nom_commun": "Fumeterre",
+        "nom_latin": "Fumaria officinalis",
+        "partie_utilisee": "Parties aériennes fleuries séchées",
+        "grammage": "25g",
+        "phase": "B",
+        "actifs_cles": [
+          { "nom": "Protopine (Fumarine)", "polarite": "Alcoolosoluble" },
+          { "nom": "Acide fumarique et fumarates", "polarite": "Hydrosoluble / Alcoolosoluble" },
+          { "nom": "Flavonoïdes isoquercitrine", "polarite": "Hydrosoluble" }
+        ],
+        "preuve_scientifique": "Action amphocholérétique régulatrice du flux biliaire réduisant la charge toxique cutanée. La protopine possède des propriétés antihistaminiques, antispasmodiques et sédatives légères sur le système neuro-cutané.",
+        "pourquoi_bloomlab": {
+          "probleme_traditionnel": "La protopine exige un titrage alcoolique précis à chaud modéré pour être isolée sans précipitation ni hydrolyse acide.",
+          "phase_A": {
+            "temp": "68°C",
+            "temps": "1h45",
+            "solvant": "Eau purifiée + Glycérine végétale (65/35)",
+            "cible": "Acide fumarique, flavonoïdes"
+          },
+          "phase_B": {
+            "temp": "48°C",
+            "temps": "2h30",
+            "solvant": "Alcool bio 96°",
+            "cible": "Protopine et alcaloïdes isoquinoléiques"
+          }
+        }
+      }
+    ],
+    "parametres_bloomlab": {
+      "phase_A": {
+        "temp": "68°C",
+        "temps": "1h45",
+        "agitation": "Douce intermittente (20s ON / 40s OFF)"
+      },
+      "phase_B": {
+        "temp": "48°C",
+        "temps": "2h30",
+        "agitation": "Lente continue pour préserver les sesquiterpènes"
+      }
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cuve BloomLab 1000ml — Solvant total : 750ml, Plantes totales : 75g (Rendement net : ~630ml)",
+      "ingredients": {
+        "phase_A": [
+          "25g de Feuilles de Plantain Lancéolé séchées",
+          "15g de Capitules de Camomille Matricaire",
+          "325ml d'Eau purifiée distillée",
+          "175ml de Glycérine végétale bio"
+        ],
+        "phase_B": [
+          "10g de Capitules de Camomille Matricaire (fraction terpénique)",
+          "25g de Fumeterre fleurie séchée",
+          "250ml d'Alcool de grain bio 96°"
+        ]
+      },
+      "preparation": [
+        "1. Concassez grossièrement le plantain à la main sans le broyer en poudre pour ne pas altérer les mucilages.",
+        "2. Divisez la camomille en deux lots : 15g pour la Phase A (extraction flavonoïque) et 10g pour la Phase B (terpènes).",
+        "3. Préparez le mélange solvant eau distillée (325ml) et glycérine bio (175ml)."
+      ],
+      "phase_A_instructions": [
+        "1. Versez le solvant hydroglycériné dans la cuve inox.",
+        "2. Placez le panier avec le plantain et les 15g de camomille.",
+        "3. Fermez hermétiquement le couvercle sécurisé.",
+        "4. Lancez le programme : TEMPÉRATURE 68°C, TEMPS 1h45. START."
+      ],
+      "transition": [
+        "1. Laissez reposer 20 minutes après le cycle A.",
+        "2. Vérifiez le refroidissement de la cuve (inférieure à 40°C au toucher).",
+        "3. Ouvrez délicatement."
+      ],
+      "phase_B_instructions": [
+        "1. Ajoutez les 25g de fumeterre et les 10g restants de camomille.",
+        "2. Versez immédiatement les 250ml d'alcool bio 96°.",
+        "3. Verrouillez instantanément le couvercle pour condenser les fractions volatiles.",
+        "4. Lancez le programme : TEMPÉRATURE 48°C, TEMPS 2h30. START."
+      ],
+      "filtration_et_finition": [
+        "1. À la fin du cycle, laissez descendre à température ambiante.",
+        "2. Filtrez avec le tamis fin doublé d'une étamine non traitée.",
+        "3. Pressez doucement le résidu végétal sans écraser les tiges pour éviter les particules astringentes amères.",
+        "4. Embouteillez en flacons ambrés opaques étanches."
+      ]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {
+          "nom": "Huile d'Onagre ou de Bourrache vierge première pression",
+          "dose": "1000mg à 1500mg/jour apportant 100 à 150mg d'Acide Gamma-Linolénique (GLA)",
+          "role": "Comble le déficit constitutionnel en delta-6-désaturase propre au terrain atopique, rétablissant la cimentation céramidique épidermique."
+        },
+        {
+          "nom": "Quercétine anhydre + Bromélaïne",
+          "dose": "500mg de quercétine 2 fois par jour en dehors des repas",
+          "role": "Stabilisateur naturel majeur des mastocytes, freinant la dégranulation de l'histamine et des prostaglandines D2."
+        },
+        {
+          "nom": "Probiotiques souches documentées (L. rhamnosus GG + B. lactis)",
+          "dose": "10 milliards UFC/jour le matin à jeun",
+          "role": "Régulation du ratio Th1/Th2 et renforcement de l'étanchéité de la barrière muqueuse digestive."
+        }
+      ],
+      "leviers_du_vivant": [
+        {
+          "nom": "Thermorégulation de l'eau d'hygiène (Douches tièdes < 34°C)",
+          "frequence": "Quotidien",
+          "role": "L'eau chaude détruit le film hydrolipidique de surface et déclenche instantanément la vasodilatation et le prurit."
+        },
+        {
+          "nom": "Éviction stricte des adoucissants chimiques et textiles synthétiques",
+          "frequence": "Permanent",
+          "role": "Suppression des allergènes de contact réactivant les lymphocytes T mémoires cutanés."
+        }
+      ]
+    },
+    "posologie": {
+      "dose_quotidienne": "8ml par jour (divisés en 2 prises de 4ml)",
+      "moments": [
+        {
+          "moment": "Matin à jeun",
+          "dose": "4ml dans un demi-verre d'eau de source",
+          "justification": "Modulation immunitaire matinale et soutien du drainage biliaire doux."
+        },
+        {
+          "moment": "Fin d'après-midi (17h - 18h)",
+          "dose": "4ml dans un demi-verre d'eau",
+          "justification": "Anticipation du pic circadien de libération d'histamine et de prurit nocturne qui s'intensifie classiquement au coucher."
+        }
+      ],
+      "duree_cure": "45 jours continus. Pause de 7 jours, puis reprise si terrain atopique chronique en période de changement de saison.",
+      "chronobiologie": "Le taux de cortisol endogène chute en fin d'après-midi, créant un créneau de vulnérabilité inflammatoire : la prise à 17h prévient la crise de grattage du début de soirée."
+    },
+    "contre_indications": [
+      "Grossesse et allaitement.",
+      "Allergie avérée aux plantes de la famille des Astéracées (camomille).",
+      "Calculs biliaires aigus (en raison de l'action de la fumeterre)."
+    ],
+    "convergence_ancestrale": "Le Plantain est surnommé par Dioscoride et Pline l'Ancien 'l'herbe aux coupures et aux brûlures', souveraine pour apaiser le feu des démangeaisons. La Camomille Matricaire était préconisée par Sainte Hildegarde de Bingen pour 'adoucir la peau écorchée et dissiper les rougeurs amères'.",
+    "synergies_recommandees": [
+      "Macérat huileux de Calendula bio Bloom en application locale externe sur plaques sèches",
+      "Hydrolat pur de Camomille Romaine ou Lavande Vraie en brumisation apaisante",
+      "Infusion Sommeil Profond Bloom (en cas d'insomnie de grattage)"
+    ],
+    "precautions": "Usage réservé à l'adulte et à l'adolescent de plus de 12 ans. Ne jamais appliquer l'extrait hydroalcoolique directement pur sur des lésions suintantes ou écorchées (voie orale exclusive). En cas de surinfection cutanée (croûtes dorées, impétigo), consulter un médecin sans délai."
+  },
+  {
+    "recette_id": "alopecie_andro_remede",
+    "nom_commun": "Remède Alopécie — Anti-DHT & Micro-Nutrition Folliculaire",
+    "type_produit": "Extrait liquide synergique à double voie (orale et lotion topique cuir chevelu)",
+    "cible": "Alopécie androgénétique (miniaturisation du follicule pileux, sensibilité accrue à la DHT, inflammation périfolliculaire et perte de densité capillaire)",
+    "description": "Formule phytomoléculaire de pointe combinant des inhibiteurs naturels de la 5-alpha-réductase, des relanceurs de la microcirculation dermique de la papille pilaire et des minéralisants renforçant la kératine.",
+    "solvants": {
+      "phase_A": {
+        "type": "Eau purifiée distillée + Glycérine végétale bio (70/30)",
+        "volume": "450ml",
+        "role": "Solubilisation des acides phénoliques, flavonoïdes vasodilatateurs, lectines UDA et silice biodisponible hydrosoluble."
+      },
+      "phase_B": {
+        "type": "Alcool éthylique bio 96°",
+        "volume": "300ml",
+        "role": "Extraction lipophile poussée des acides gras libres actifs (laurique, myristique), phytostérols (bêta-sitostérol), ginkgolides et lignanes apolaires."
+      }
+    },
+    "plantes": [
+      {
+        "nom_commun": "Palmier Nain (Saw Palmetto)",
+        "nom_latin": "Serenoa repens",
+        "partie_utilisee": "Baies mûres séchées concassées",
+        "grammage": "30g",
+        "phase": "B",
+        "actifs_cles": [
+          { "nom": "Acides gras libres (Laurique, Myristique, Oléique)", "polarite": "Liposoluble" },
+          { "nom": "Bêta-sitostérol et stérols végétaux", "polarite": "Liposoluble" },
+          { "nom": "Flavonoïdes apolaires", "polarite": "Liposoluble / Alcoolosoluble" }
+        ],
+        "preuve_scientifique": "Inhibition compétitive prouvée des isoenzymes I et II de la 5-alpha-réductase, enzyme clé convertissant la testostérone en dihydrotestostérone (DHT). Réduction de la fixation de la DHT sur les récepteurs androgéniques du bulbe pileux.",
+        "pourquoi_bloomlab": {
+          "probleme_traditionnel": "Les principes actifs majeurs du palmier nain sont 100% lipidiques et insolubles dans l'eau. Une tisane de palmier nain est totalement inefficace. Une macération à froid standard n'extrait pas la fraction stérolique dense enfermée dans la graine.",
+          "phase_A": {
+            "temp": "72°C",
+            "temps": "2h00",
+            "solvant": "Eau purifiée + Glycérine végétale (70/30)",
+            "cible": "Composés hydrosolubles d'amorçage"
+          },
+          "phase_B": {
+            "temp": "52°C",
+            "temps": "3h00",
+            "solvant": "Alcool bio 96°",
+            "cible": "Acides gras libres, bêta-sitostérol, phytostérols"
+          }
+        }
+      },
+      {
+        "nom_commun": "Ortie Piquante (Racine)",
+        "nom_latin": "Urtica dioica",
+        "partie_utilisee": "Racines séchées coupées fin",
+        "grammage": "25g",
+        "phase": "A & B",
+        "actifs_cles": [
+          { "nom": "Lectines (UDA - Urtica Dioica Agglutinin)", "polarite": "Hydrosoluble" },
+          { "nom": "Lignanes (Secoisolariciresinol)", "polarite": "Alcoolosoluble" },
+          { "nom": "Silice organique hydrosoluble", "polarite": "Hydrosoluble" }
+        ],
+        "preuve_scientifique": "Inhibition de l'aromatase et de la 5-alpha-réductase. Affinité compétitive pour la SHBG (protéine de transport des stéroïdes sexuels), augmentant la disponibilité des facteurs protecteurs et freinant la fibrose périfolliculaire.",
+        "pourquoi_bloomlab": {
+          "probleme_traditionnel": "La racine d'ortie est extrêmement dure et fibreuse. Elle nécessite une phase hydrosoluble chaude pour les polysaccharides et la silice, suivie d'une phase alcoolique chaude pour libérer les lignanes.",
+          "phase_A": {
+            "temp": "72°C",
+            "temps": "2h00",
+            "solvant": "Eau purifiée + Glycérine végétale (70/30)",
+            "cible": "Lectines UDA, silice, polysaccharides"
+          },
+          "phase_B": {
+            "temp": "52°C",
+            "temps": "3h00",
+            "solvant": "Alcool bio 96°",
+            "cible": "Lignanes et stérols de racine"
+          }
+        }
+      },
+      {
+        "nom_commun": "Ginkgo Biloba",
+        "nom_latin": "Ginkgo biloba",
+        "partie_utilisee": "Feuilles séchées de qualité pharmacopée",
+        "grammage": "20g",
+        "phase": "A",
+        "actifs_cles": [
+          { "nom": "Flavonol-glycosides (Quercétine, Kaempférol)", "polarite": "Hydrosoluble" },
+          { "nom": "Ginkgolides (A, B, C) et Bilobalide", "polarite": "Liposoluble / Hydroalcoolique" },
+          { "nom": "Proanthocyanidols", "polarite": "Hydrosoluble" }
+        ],
+        "preuve_scientifique": "Augmentation substantielle du débit sanguin microcirculatoire au niveau du plexus capillaire dermique de la papille folliculaire. Oxygénation cellulaire accrue et stimulation de la phase anagène de croissance du cheveu.",
+        "pourquoi_bloomlab": {
+          "probleme_traditionnel": "L'infusion classique n'extrait pas les ginkgolides terpéniques vasculaires, tandis qu'une teinture alcoolique pure passe à côté d'une fraction importante des glycosides polyphénoliques.",
+          "phase_A": {
+            "temp": "72°C",
+            "temps": "2h00",
+            "solvant": "Eau purifiée + Glycérine végétale (70/30)",
+            "cible": "Flavonol-glycosides, proanthocyanidols"
+          },
+          "phase_B": {
+            "temp": "52°C",
+            "temps": "3h00",
+            "solvant": "Alcool bio 96°",
+            "cible": "Ginkgolides A, B, C et bilobalide"
+          }
+        }
+      }
+    ],
+    "parametres_bloomlab": {
+      "phase_A": {
+        "temp": "72°C",
+        "temps": "2h00",
+        "agitation": "Modérée régulière (Programme OIL / STANDARD)"
+      },
+      "phase_B": {
+        "temp": "52°C",
+        "temps": "3h00",
+        "agitation": "Soutenue avec micro-vortex pour émulsionner les stérols"
+      }
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cuve BloomLab 1000ml — Solvant total : 750ml, Plantes totales : 75g (Rendement final estimé : ~610ml d'extrait riche concentré)",
+      "ingredients": {
+        "phase_A": [
+          "25g de Racine d'Ortie concassée",
+          "20g de Feuilles de Ginkgo Biloba",
+          "315ml d'Eau distillée purifiée",
+          "135ml de Glycérine végétale bio"
+        ],
+        "phase_B": [
+          "30g de Baies de Palmier Nain (Saw Palmetto) concassées",
+          "300ml d'Alcool de grain bio à 96°"
+        ]
+      },
+      "preparation": [
+        "1. Concassez vigoureusement les baies de palmier nain au mortier afin de fissurer la coque cireuse externe contenant les lipides actifs.",
+        "2. Placez la racine d'ortie et les feuilles de ginkgo dans le filtre panier inox.",
+        "3. Mesurez 315ml d'eau distillée et 135ml de glycérine végétale, homogénéisez."
+      ],
+      "phase_A_instructions": [
+        "1. Versez la base eau-glycérine dans la cuve du BloomLab.",
+        "2. Insérez le panier contenant ortie et ginkgo.",
+        "3. Fermez le couvercle de sécurité.",
+        "4. Lancez le cycle Phase A : TEMPÉRATURE 72°C, TEMPS 2h00. START."
+      ],
+      "transition": [
+        "1. Laissez reposer 20 minutes à l'arrêt.",
+        "2. Effectuez le test tactile obligatoire de température extérieure de cuve (< 42°C).",
+        "3. Retirez le couvercle avec précaution."
+      ],
+      "phase_B_instructions": [
+        "1. Ajoutez les 30g de baies de palmier nain concassées dans la cuve.",
+        "2. Versez les 300ml d'alcool bio 96° sur l'ensemble.",
+        "3. Refermez immédiatement le couvercle étanche pour retenir les composés volatils.",
+        "4. Lancez le cycle Phase B : TEMPÉRATURE 52°C, TEMPS 3h00. START."
+      ],
+      "filtration_et_finition": [
+        "1. Laissez tiédir 45 minutes.",
+        "2. Filtrez sous presse manuelle en utilisant l'étamine fine Bloom.",
+        "3. Le liquide obtenu présente une belle robe ambrée-verdâtre avec des reflets dorés dus aux phytostérols en suspension.",
+        "4. Versez dans deux flacons de 200ml pour la cure orale, et réservez 200ml dans un flacon spray avec nébuliseur pour l'application topique."
+      ]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {
+          "nom": "Zinc Bisglycinate + Vitamine B6 (Pyridoxal-5-Phosphate)",
+          "dose": "15mg de zinc élément + 2mg de B6/jour",
+          "role": "Synergie enzymatique puissante inhibant la 5-alpha-réductase et régulant la lipogenèse sébacée du cuir chevelu."
+        },
+        {
+          "nom": "Silicium Organique (Acide orthosilicique)",
+          "dose": "15ml par jour le matin à jeun",
+          "role": "Réticulation du collagène entourant le follicule pileux, luttant contre la rigidification fibreuse de la gaine dermique."
+        },
+        {
+          "nom": "L-Méthionine & L-Cystine (Acides aminés soufrés)",
+          "dose": "500mg de chaque par jour",
+          "role": "Briques fondamentales pour la polymérisation de la kératine pilaire, augmentant le diamètre de la tige du cheveu."
+        }
+      ],
+      "leviers_du_vivant": [
+        {
+          "nom": "Massage décollant du cuir chevelu (Gymnastique capillaire)",
+          "frequence": "4 minutes par jour le soir, tête inclinée vers l'avant",
+          "role": "Levée de la tension de la galéa aponévrotique, réactivation immédiate du flux microvasculaire vers les zones vertex et golfes temporaux."
+        },
+        {
+          "nom": "Brossage doux aux poils de sanglier naturels",
+          "frequence": "Matin et soir (1 minute)",
+          "role": "Répartition naturelle du sébum protecteur et stimulation mécanique des cellules souches folliculaires."
+        }
+      ]
+    },
+    "posologie": {
+      "dose_quotidienne": "En interne : 5ml par jour le matin. En externe : 8 à 10 pulvérisations 3 fois par semaine.",
+      "moments": [
+        {
+          "moment": "Matin au petit-déjeuner (Voie interne)",
+          "dose": "5ml dilués dans 1 verre d'eau ou un jus de légumes",
+          "justification": "Absorption optimale des stérols et inhibition systémique de l'enzyme 5-AR dès le démarrage de la journée hormonale."
+        },
+        {
+          "moment": "Soir avant le coucher (Voie externe topique)",
+          "dose": "8 à 10 pulvérisations sur cuir chevelu propre et sec, suivi d'un massage circulaire de 3 minutes sans rincer",
+          "justification": "Pénétration directe transfolliculaire des actifs durant le pic de régénération nocturne des cellules de la matrice pilaire."
+        }
+      ],
+      "duree_cure": "90 jours consécutifs (correspondant à la durée physiologique minimale d'un cycle anagène du follicule). À renouveler 2 fois par an (au printemps et en automne).",
+      "chronobiologie": "Le renouvellement cellulaire folliculaire et l'activité mitotique de la matrice pilaire atteignent leur acmé entre 23h et 4h du matin."
+    },
+    "contre_indications": [
+      "Grossesse et allaitement (effet anti-androgénique contre-indiqué chez les femmes enceintes portant un fœtus masculin).",
+      "Femmes en âge de procréer sans contraception efficace.",
+      "Enfants et adolescents de moins de 18 ans.",
+      "Personnes sous traitement anticoagulant ou antiagrégant plaquettaire (présence de Ginkgo Biloba).",
+      "Cancers hormonodépendants ou antécédents de cancers hormono-dépendants."
+    ],
+    "convergence_ancestrale": "L'Ortie est vénérée depuis l'Antiquité grecque (Dioscoride) comme tonique régénérant de la chevelure et fortifiant du sang. Les tribus séminoles de Floride utilisaient traditionnellement les baies de palmier nain pour la vigueur mâle et la force vitale. Le Ginkgo, arbre millénaire de longévité en médecine traditionnelle chinoise, est le symbole suprême de la résistance vasculaire et de la circulation des extrémités.",
+    "synergies_recommandees": [
+      "Hydrolat pur de Romarin à Cinéole Bloom (en base de dilution 50/50 pour la lotion externe)",
+      "Huile de Nigelle d'Égypte première pression à froid en bain d'huile hebdomadaire",
+      "Pack Signature BloomLab avec extraction séquentielle A/B"
+    ],
+    "precautions": "Prendre conseil auprès d'un professionnel de santé en cas de prise concomitante de médicaments anticoagulants ou fluidifiants sanguins en raison de la présence de Ginkgo. Ne pas dépasser la dose journalière recommandée."
+  }
+]

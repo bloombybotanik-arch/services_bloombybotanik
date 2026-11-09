@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /panier
+Disallow: /commande
+Disallow: /compte
+
+Sitemap: https://bloombybotanik.com/sitemap.xml
+Sitemap: https://bloombybotanik.com/sitemap-recettes.xml

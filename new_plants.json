@@ -1,0 +1,430 @@
+[
+  {
+    "plant_id": "gentiana_lutea",
+    "nom_commun": "Gentiane Jaune",
+    "nom_latin": "Gentiana lutea",
+    "partie_utilisee": "Racine séchée",
+    "famille_bloom": "Déclencheur (Amère majeur)",
+    "terrains_cibles": ["T1_Intestin", "T2_Foie", "T4_HPA"],
+    "actifs_cles": [
+      {"nom": "Gentiopicroside", "polarite": "Hydrosoluble"},
+      {"nom": "Amarogentine", "polarite": "Hydrosoluble"},
+      {"nom": "Xanthones", "polarite": "Liposoluble"}
+    ],
+    "preuve_scientifique": "Stimulation puissante des récepteurs du goût amer (TAS2R), entraînant une augmentation réflexe de la sécrétion de bile, d'acide gastrique et d'enzymes pancréatiques. Régulation du SRA (Système Rénine-Angiotensine) via l'amélioration de la digestion et la réduction de l'inflammation intestinale.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les principes amers sont hydrosolubles mais nécessitent une chaleur soutenue pour être extraits de la racine dense. Les xanthones hépatoprotectrices nécessitent un solvant organique.",
+      "phase_A": {"temp": "75°C", "temps": "2h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Gentiopicroside, amarogentine"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Xanthones"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Racine de Gentiane (copeaux)", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Racine de Gentiane (poudre)", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["Concassez vigoureusement les 50g de racine pour la Phase A.", "Mixez les 25g restants en poudre fine pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de copeaux.", "Fermez, mode manuel 'OIL', TEMP 75°C, TEMPS 2h00. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de poudre.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez fermement le marc de racine.", "Le liquide sera d'un brun-rouge profond, extrêmement amer. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Zinc", "dose": "15mg/jour", "role": "Cofacteur essentiel des enzymes digestives stimulées par l'amertume."},
+        {"nom": "Magnésium Bisglycinate", "dose": "300mg", "role": "Relaxe le sphincter d'Oddi, facilitant l'évacuation de la bile stimulée par la gentiane."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Mastication prolongée", "frequence": "30 fois par bouchée", "role": "Active la phase céphalique de la digestion, potentialisant l'effet de la gentiane."}
+      ]
+    },
+    "convergence_ancestrale": "Utilisée depuis l'Antiquité européenne comme tonique amer majeur pour 'réveiller le feu digestif' et purifier le sang.",
+    "synergies_recommandees": ["raphanus_sativus_niger", "chrysanthellum_indicum", "artichaut"],
+    "precautions": "Contre-indiquée en cas d'ulcère gastrique ou duodénal actif, et d'obstruction des voies biliaires."
+  },
+  {
+    "plant_id": "raphanus_sativus_niger",
+    "nom_commun": "Radis Noir",
+    "nom_latin": "Raphanus sativus niger",
+    "partie_utilisee": "Racine séchée",
+    "famille_bloom": "Déclencheur (Drainage hépato-biliaire)",
+    "terrains_cibles": ["T2_Foie", "T6_Émonctoires", "T1_Intestin"],
+    "actifs_cles": [
+      {"nom": "Glucosinolates", "polarite": "Hydrosoluble"},
+      {"nom": "Isothiocyanates", "polarite": "Liposoluble/Volatile"},
+      {"nom": "Raphanines", "polarite": "Hydrosoluble"}
+    ],
+    "preuve_scientifique": "Stimulation cholérétique (production de bile) et cholagogue (évacuation de la bile). Soutien des enzymes de détoxification de Phase II du foie (conjugaison).",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les glucosinolates sont hydrosolubles, mais les isothiocyanates (actifs détoxifiants majeurs) sont volatils et se perdent à l'ébullition.",
+      "phase_A": {"temp": "70°C", "temps": "2h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Glucosinolates, raphanines"},
+      "phase_B": {"temp": "45°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Isothiocyanates"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Racine de Radis Noir (morceaux)", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Racine de Radis Noir (poudre)", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["Concassez les 50g de racine pour la Phase A.", "Mixez les 25g restants en poudre pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de morceaux.", "Fermez, mode manuel 'OIL', TEMP 70°C, TEMPS 2h00. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de poudre.", "Fermez, mode manuel 'OIL', TEMP 45°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. L'odeur sera soufrée et caractéristique.", "Pressez le marc. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "NAC (N-Acétyl Cystéine)", "dose": "600mg/jour", "role": "Fournit le glutathion nécessaire au foie pour conjuguer les toxines mobilisées par le radis noir."},
+        {"nom": "Vitamines B (B2, B6, B9, B12)", "dose": "Complexe B", "role": "Cofacteurs indispensables des voies de méthylation hépatique (Phase II)."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Hydratation abondante", "frequence": "2L d'eau/jour", "role": "Assure l'évacuation rénale des toxines conjuguées par le foie."}
+      ]
+    },
+    "convergence_ancestrale": "Remède traditionnel européen de printemps pour 'nettoyer le foie' après les excès de l'hiver.",
+    "synergies_recommandees": ["chardon_marie", "artichaut", "fumeterre"],
+    "precautions": "Contre-indiqué en cas de calculs biliaires obstructifs ou d'obstruction des voies biliaires. Peut irriter les muqueuses gastriques sensibles."
+  },
+  {
+    "plant_id": "chrysanthellum_indicum",
+    "nom_commun": "Chrysanthellum",
+    "nom_latin": "Chrysanthellum indicum",
+    "partie_utilisee": "Parties aériennes séchées",
+    "famille_bloom": "Réparateur (Hépatoprotecteur & Veineux)",
+    "terrains_cibles": ["T2_Foie", "T8_Inflammation", "T6_Émonctoires"],
+    "actifs_cles": [
+      {"nom": "Flavonoïdes (lutéoline)", "polarite": "Hydrosoluble"},
+      {"nom": "Saponines stéroïdiques", "polarite": "Liposoluble"},
+      {"nom": "Acides phénoliques", "polarite": "Hydrosoluble"}
+    ],
+    "preuve_scientifique": "Action hépatoprotectrice puissante, réduction de la stéatose hépatique, et amélioration de la microcirculation veineuse et lymphatique.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les flavonoïdes nécessitent une extraction aqueuse chaude, tandis que les saponines (cruciales pour l'action veineuse et hépatique) sont liposolubles.",
+      "phase_A": {"temp": "70°C", "temps": "2h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Flavonoïdes, acides phénoliques"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Saponines stéroïdiques"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Chrysanthellum séché", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Chrysanthellum séché", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["La plante est légère et volumineuse. Tassez les 50g dans la cuve.", "Mixez les 25g restants pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de plante tassée.", "Fermez, mode manuel 'OIL', TEMP 70°C, TEMPS 2h00. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de plante mixée.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez le marc.", "Le liquide sera vert-brun. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Chardon-Marie", "dose": "Selon protocole", "role": "Synergie hépatique totale : le chardon régénère, le chrysanthellum draine et protège."},
+        {"nom": "Vitamine C", "dose": "500mg/jour", "role": "Renforce l'action des flavonoïdes sur la microcirculation."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Marche quotidienne", "frequence": "30 min/jour", "role": "Active la pompe veineuse et le drainage lymphatique, potentialisant l'effet du chrysanthellum."}
+      ]
+    },
+    "convergence_ancestrale": "Utilisé en Amérique du Sud et en médecine traditionnelle pour les troubles hépatiques et la circulation.",
+    "synergies_recommandees": ["gentiana_lutea", "vitis_vinifera", "hamamelis_virginiana"],
+    "precautions": "Allergie aux Astéracées. Déconseillé en cas d'obstruction des voies biliaires."
+  },
+  {
+    "plant_id": "desmodium_adscendens",
+    "nom_commun": "Desmodium",
+    "nom_latin": "Desmodium adscendens",
+    "partie_utilisee": "Parties aériennes séchées",
+    "famille_bloom": "Réparateur (Régénération hépatique)",
+    "terrains_cibles": ["T2_Foie", "T3_Immunité", "T8_Inflammation"],
+    "actifs_cles": [
+      {"nom": "Saponosides triterpéniques", "polarite": "Liposoluble"},
+      {"nom": "Flavonoïdes", "polarite": "Hydrosoluble"},
+      {"nom": "Alcaloïdes", "polarite": "Mixte"}
+    ],
+    "preuve_scientifique": "Protection spécifique des membranes des hépatocytes contre les toxines (médicaments, alcool, virus). Action anti-allergique et anti-inflammatoire puissante.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les saponosides (actifs régénérateurs clés) sont liposolubles et nécessitent un solvant organique, tandis que les flavonoïdes sont hydrosolubles.",
+      "phase_A": {"temp": "70°C", "temps": "2h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Flavonoïdes, alcaloïdes hydrosolubles"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Saponosides triterpéniques"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Desmodium séché", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Desmodium séché", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["La plante est très légère. Tassez fermement les 50g dans la cuve.", "Mixez les 25g restants pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de plante tassée.", "Fermez, mode manuel 'OIL', TEMP 70°C, TEMPS 2h00. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de plante mixée.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez le marc.", "Le liquide sera vert foncé. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "NAC", "dose": "600mg/jour", "role": "Soutient la production de glutathion, travaillant en synergie avec le desmodium pour protéger le foie."},
+        {"nom": "Vitamine E", "dose": "400 UI/jour", "role": "Protège les membranes lipidiques des hépatocytes que le desmodium vise à réparer."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Éviction stricte de l'alcool et du paracétamol", "frequence": "Pendant la cure", "role": "Permet au foie de se régénérer sans nouvelle agression chimique."}
+      ]
+    },
+    "convergence_ancestrale": "Utilisé en médecine traditionnelle africaine et amazonienne pour les troubles hépatiques et les réactions allergiques.",
+    "synergies_recommandees": ["chardon_marie", "artichaut", "curcuma_longa"],
+    "precautions": "Peut avoir un effet légèrement sédatif à haute dose. Déconseillé en cas d'obstruction des voies biliaires."
+  },
+  {
+    "plant_id": "arctium_lappa",
+    "nom_commun": "Bardane",
+    "nom_latin": "Arctium lappa",
+    "partie_utilisee": "Racine séchée",
+    "famille_bloom": "Réparateur (Dépuratif sanguin & cutané)",
+    "terrains_cibles": ["T9_Peau_Phaneres", "T1_Intestin", "T2_Foie"],
+    "actifs_cles": [
+      {"nom": "Inuline", "polarite": "Hydrosoluble"},
+      {"nom": "Polyacétylènes", "polarite": "Liposoluble"},
+      {"nom": "Tanins", "polarite": "Hydrosoluble"}
+    ],
+    "preuve_scientifique": "Action dépurative, prébiotique (inuline), et modulation du microbiote cutané et intestinal. Efficace dans les dermatoses chroniques (acné, eczéma, psoriasis).",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "L'inuline (prébiotique majeur) nécessite une extraction aqueuse chaude, tandis que les polyacétylènes (actifs cutanés) sont liposolubles.",
+      "phase_A": {"temp": "75°C", "temps": "2h30", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Inuline, tanins"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Polyacétylènes"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Racine de Bardane (copeaux)", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Racine de Bardane (poudre)", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["Concassez les 50g de racine pour la Phase A.", "Mixez les 25g restants en poudre pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de copeaux.", "Fermez, mode manuel 'OIL', TEMP 75°C, TEMPS 2h30. START."],
+      "transition": ["1. Éteignez. Laissez reposer 25 minutes (la racine dense retient la chaleur).", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de poudre.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez fermement le marc de racine.", "Le liquide sera brun-jaune. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Zinc", "dose": "15mg/jour", "role": "Cofacteur essentiel de la régénération cutanée et de la régulation du sébum."},
+        {"nom": "Probiotiques (Lactobacillus)", "dose": "Selon protocole", "role": "L'inuline de la bardane nourrit spécifiquement ces souches bénéfiques."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Éviction des produits laitiers industriels", "frequence": "Pendant la cure", "role": "Réduit la charge inflammatoire et l'IGF-1, potentialisant l'action dépurative de la bardane sur la peau."}
+      ]
+    },
+    "convergence_ancestrale": "Plante majeure de la médecine traditionnelle chinoise (Niu Bang Zi) et européenne pour 'purifier le sang' et traiter les affections cutanées.",
+    "synergies_recommandees": ["smilax_glabra", "taraxacum_officinale", "urtica_dioica"],
+    "precautions": "Effet diurétique. Bien s'hydrater. Déconseillé en cas d'allergie aux Astéracées."
+  },
+  {
+    "plant_id": "astragalus_membranaceus",
+    "nom_commun": "Astragale",
+    "nom_latin": "Astragalus membranaceus",
+    "partie_utilisee": "Racine séchée",
+    "famille_bloom": "Chef d'Orchestre (Immunité & Longévité)",
+    "terrains_cibles": ["T3_Immunité", "T5_Mitochondrie", "T4_HPA"],
+    "actifs_cles": [
+      {"nom": "Astragaloside IV", "polarite": "Liposoluble"},
+      {"nom": "Polysaccharides", "polarite": "Hydrosoluble"},
+      {"nom": "Flavonoïdes", "polarite": "Hydrosoluble"}
+    ],
+    "preuve_scientifique": "Modulation immunitaire (activation des macrophages et des cellules NK), protection des télomères (action sur la télomérase), et soutien de la fonction mitochondriale.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les polysaccharides immuno-modulateurs nécessitent une extraction aqueuse chaude, tandis que l'astragaloside IV (actif anti-âge clé) est liposoluble.",
+      "phase_A": {"temp": "75°C", "temps": "2h30", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Polysaccharides, flavonoïdes"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Astragaloside IV"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Racine d'Astragale (copeaux)", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Racine d'Astragale (poudre)", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["Concassez les 50g de racine pour la Phase A.", "Mixez les 25g restants en poudre pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de copeaux.", "Fermez, mode manuel 'OIL', TEMP 75°C, TEMPS 2h30. START."],
+      "transition": ["1. Éteignez. Laissez reposer 25 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de poudre.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez fermement le marc.", "Le liquide sera jaune pâle. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Vitamine D3", "dose": "2000-4000 UI/jour", "role": "Indispensable à la maturation des cellules immunitaires que l'astragale active."},
+        {"nom": "NAD+ (ou précurseurs)", "dose": "Selon protocole", "role": "Synergie avec l'astragaloside IV pour la protection mitochondriale et la longévité cellulaire."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Sommeil avant 23h", "frequence": "Quotidienne", "role": "Le système immunitaire et la réparation de l'ADN (télomères) se régénèrent principalement durant le sommeil profond."}
+      ]
+    },
+    "convergence_ancestrale": "Huang Qi en MTC. Utilisé depuis 2000 ans comme tonique majeur du 'Qi' et de l'immunité.",
+    "synergies_recommandees": ["ganoderma_lucidum", "echinacea_purpurea", "panax_ginseng"],
+    "precautions": "À éviter en cas de maladie auto-immune active (lupus, polyarthrite) ou de fièvre aiguë, car il stimule l'immunité."
+  },
+  {
+    "plant_id": "eleutherococcus_senticosus",
+    "nom_commun": "Eleuthérocoque",
+    "nom_latin": "Eleutherococcus senticosus",
+    "partie_utilisee": "Racine séchée",
+    "famille_bloom": "Chef d'Orchestre (Adaptogène)",
+    "terrains_cibles": ["T4_HPA", "T5_Mitochondrie", "T3_Immunité"],
+    "actifs_cles": [
+      {"nom": "Éleuthérosides", "polarite": "Hydrosoluble/Liposoluble"},
+      {"nom": "Polysaccharides", "polarite": "Hydrosoluble"}
+    ],
+    "preuve_scientifique": "Augmentation de la résistance non-spécifique au stress, amélioration de l'endurance physique et mentale, modulation de l'axe HPA sans effet stimulant direct (contrairement au café).",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les éleuthérosides (B et E) ont des polarités mixtes et nécessitent une extraction séquentielle pour être capturés intégralement sans dégradation thermique.",
+      "phase_A": {"temp": "75°C", "temps": "2h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Polysaccharides, éleuthérosides hydrosolubles"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Éleuthérosides liposolubles"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Racine d'Eleuthérocoque (copeaux)", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Racine d'Eleuthérocoque (poudre)", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["Concassez les 50g de racine pour la Phase A.", "Mixez les 25g restants en poudre pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de copeaux.", "Fermez, mode manuel 'OIL', TEMP 75°C, TEMPS 2h00. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de poudre.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez le marc.", "Le liquide sera brun clair. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Magnésium", "dose": "300mg/jour", "role": "Cofacteur essentiel de la production d'ATP, potentialisant l'effet anti-fatigue de l'eleuthérocoque."},
+        {"nom": "Vitamines B", "dose": "Complexe B", "role": "Soutien du métabolisme énergétique activé par la plante."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Exposition à la lumière matinale", "frequence": "15 min au réveil", "role": "Synchronise le rythme circadien, optimisant l'effet adaptogène sur l'axe HPA."}
+      ]
+    },
+    "convergence_ancestrale": "Utilisé en Russie soviétique pour les cosmonautes et les athlètes. En MTC, il tonifie le Qi et renforce la rate.",
+    "synergies_recommandees": ["rhodiola_rosea", "panax_ginseng", "schisandra_chinensis"],
+    "precautions": "À éviter en cas d'hypertension sévère non contrôlée. À prendre le matin ou midi."
+  },
+  {
+    "plant_id": "bacopa_monnieri",
+    "nom_commun": "Bacopa",
+    "nom_latin": "Bacopa monnieri",
+    "partie_utilisee": "Parties aériennes séchées",
+    "famille_bloom": "Réparateur (Neuroplasticité)",
+    "terrains_cibles": ["T7_Psycho_émotionnel", "T5_Mitochondrie", "T4_HPA"],
+    "actifs_cles": [
+      {"nom": "Bacosides", "polarite": "Liposoluble"},
+      {"nom": "Alcaloïdes", "polarite": "Mixte"},
+      {"nom": "Flavonoïdes", "polarite": "Hydrosoluble"}
+    ],
+    "preuve_scientifique": "Amélioration de la mémoire et de la vitesse de traitement de l'information. Réduction de l'anxiété via la modulation des récepteurs GABAergiques et la protection des neurones contre le stress oxydatif.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les bacosides (actifs nootropiques majeurs) sont lipophiles. Une extraction aqueuse seule est inefficace.",
+      "phase_A": {"temp": "65°C", "temps": "2h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Flavonoïdes, alcaloïdes hydrosolubles"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Bacosides"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Bacopa séché", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Bacopa séché", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["La plante est légère. Tassez les 50g dans la cuve.", "Mixez les 25g restants pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de plante tassée.", "Fermez, mode manuel 'OIL', TEMP 65°C, TEMPS 2h00. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de plante mixée.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez le marc.", "Le liquide sera vert-brun. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Oméga-3 (DHA)", "dose": "1000mg/jour", "role": "Les bacosides améliorent la communication neuronale, mais le DHA est la brique structurelle des membranes neuronales."},
+        {"nom": "Magnésium L-Thréonate", "dose": "Selon protocole", "role": "Seule forme de magnésium traversant efficacement la barrière hémato-encéphalique pour soutenir la neuroplasticité."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Apprentissage continu", "frequence": "Quotidienne", "role": "La neuroplasticité induite par le bacopa nécessite une stimulation cognitive pour créer de nouvelles connexions synaptiques."}
+      ]
+    },
+    "convergence_ancestrale": "Brahmi en Ayurveda. Utilisé depuis des millénaires par les érudits pour améliorer la mémoire et la concentration.",
+    "synergies_recommandees": ["rhodiola_rosea", "ginkgo_biloba", "melissa_officinalis"],
+    "precautions": "Peut causer des troubles digestifs légers au début. À prendre au milieu d'un repas. Déconseillé en cas de bradycardie."
+  },
+  {
+    "plant_id": "ganoderma_lucidum",
+    "nom_commun": "Reishi",
+    "nom_latin": "Ganoderma lucidum",
+    "partie_utilisee": "Fruit (champignon) séché",
+    "famille_bloom": "Chef d'Orchestre (Immunité & Calme)",
+    "terrains_cibles": ["T3_Immunité", "T7_Psycho_émotionnel", "T2_Foie"],
+    "actifs_cles": [
+      {"nom": "Polysaccharides (Bêta-glucanes)", "polarite": "Hydrosoluble"},
+      {"nom": "Triterpènes", "polarite": "Liposoluble"}
+    ],
+    "preuve_scientifique": "Modulation immunitaire (équilibre Th1/Th2, augmentation des cellules NK), action hépatoprotectrice, et effet calmant sur le système nerveux central via les triterpènes.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "La paroi de chitine du champignon nécessite une chaleur prolongée pour libérer les bêta-glucanes. Les triterpènes (amers et calmants) nécessitent un solvant organique.",
+      "phase_A": {"temp": "80°C", "temps": "3h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Polysaccharides (Bêta-glucanes)"},
+      "phase_B": {"temp": "50°C", "temps": "3h00", "solvant": "Alcool bio 96°", "cible": "Triterpènes"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Reishi en poudre grossière", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Reishi en poudre fine", "250ml d'Alcool bio 96°"]
+      },
+      "preparation": ["Utilisez du Reishi déjà broyé ou broyez-le finement. La texture est très dure.", "Séparez en 50g pour la Phase A et 25g pour la Phase B."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de poudre.", "Fermez, mode manuel 'OIL', TEMP 80°C, TEMPS 3h00. START."],
+      "transition": ["1. Éteignez. Laissez reposer 30 minutes (la poudre de champignon retient la chaleur).", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'alcool et les 25g de poudre fine.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine double épaisseur. Pressez très fermement.", "Le liquide sera brun foncé et amer. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Vitamine C", "dose": "500mg/jour", "role": "Potentialise l'absorption et l'activité immunitaire des bêta-glucanes."},
+        {"nom": "Zinc", "dose": "15mg/jour", "role": "Cofacteur essentiel de la fonction des cellules NK activées par le Reishi."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Cohérence cardiaque", "frequence": "2x 5min/jour", "role": "Synergie parfaite avec l'effet calmant du Reishi sur le système nerveux."}
+      ]
+    },
+    "convergence_ancestrale": "Ling Zhi en MTC, le 'champignon de l'immortalité'. Utilisé pour calmer l'esprit (Shen) et tonifier le Qi.",
+    "synergies_recommandees": ["astragalus_membranaceus", "cordyceps_sinensis", "passiflora_incarnata"],
+    "precautions": "Peut fluidifier le sang. À utiliser avec prudence en cas de traitement anticoagulant ou avant une intervention chirurgicale."
+  },
+  {
+    "plant_id": "cannabis_sativa_fleurs",
+    "nom_commun": "Chanvre Industriel (Fleurs)",
+    "nom_latin": "Cannabis sativa L. (<0.3% THC)",
+    "partie_utilisee": "Fleurs séchées",
+    "famille_bloom": "Réparateur (Système Endocannabinoïde)",
+    "terrains_cibles": ["T1_Intestin", "T8_Inflammation", "T7_Psycho_émotionnel"],
+    "actifs_cles": [
+      {"nom": "Cannabidiol (CBD)", "polarite": "Liposoluble"},
+      {"nom": "Cannabigérol (CBG)", "polarite": "Liposoluble"},
+      {"nom": "Terpènes (Myrcène, Pinène)", "polarite": "Volatile/Liposoluble"}
+    ],
+    "preuve_scientifique": "Modulation du système endocannabinoïde (récepteurs CB1 et CB2). Réduction de l'inflammation intestinale (leaky gut), action anxiolytique sans effet psychotrope, et modulation de la douleur.",
+    "pourquoi_bloomlab": {
+      "probleme_traditionnel": "Les cannabinoïdes et les terpènes sont strictement liposolubles et très thermolabiles. Une extraction aqueuse est inutile. Une chaleur >60°C dégrade les terpènes et décarboxyle le CBD de manière incontrôlée.",
+      "phase_A": {"temp": "50°C", "temps": "1h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Flavonoïdes mineurs (cannaflavines)"},
+      "phase_B": {"temp": "45°C", "temps": "4h00", "solvant": "Huile de Jojoba ou Huile de Coco MCT", "cible": "CBD, CBG, Terpènes"}
+    },
+    "recette_pas_a_pas": {
+      "batch_standard": "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
+      "ingredients": {
+        "phase_A": ["50g de Fleurs de Chanvre (légèrement concassées)", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
+        "phase_B": ["25g de Fleurs de Chanvre (légèrement concassées)", "250ml d'Huile de Jojoba ou Coco MCT"]
+      },
+      "preparation": ["Ne mixez pas les fleurs en poudre fine pour éviter une extraction trop agressive des chlorophylles.", "Concassez grossièrement à la main."],
+      "phase_A_instructions": ["Versez eau et glycérine. Ajoutez les 50g de fleurs.", "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 1h00. START."],
+      "transition": ["1. Éteignez. Laissez reposer 20 minutes.", "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.", "3. ⚠️ SÉCURITÉ : N'ajoutez l'huile que lorsque ce test est validé."],
+      "phase_B_instructions": ["Ajoutez l'huile et les 25g de fleurs restantes.", "Fermez, mode manuel 'OIL', TEMP 45°C, TEMPS 4h00. START."],
+      "filtration_et_finition": ["Filtrez à l'étamine. Pressez doucement pour éviter de troubler l'huile.", "Le liquide sera une huile verte/dorée aromatique. Mettez en flacon ambré."]
+    },
+    "socle_synergique": {
+      "cofacteurs_complements": [
+        {"nom": "Oméga-3", "dose": "2g/jour", "role": "Les acides gras oméga-3 sont les précurseurs des endocannabinoïdes naturels du corps, créant une synergie parfaite avec le CBD."},
+        {"nom": "Magnésium", "dose": "300mg/jour", "role": "Potentialise l'effet relaxant musculaire et nerveux du chanvre."}
+      ],
+      "leviers_du_vivant": [
+        {"nom": "Réduction du stress oxydatif", "frequence": "Quotidienne", "role": "Le système endocannabinoïde fonctionne mieux lorsque la charge inflammatoire globale est réduite (via l'alimentation et le sommeil)."}
+      ]
+    },
+    "convergence_ancestrale": "Utilisé en médecine traditionnelle chinoise et ayurvédique pour calmer l'esprit, réduire la douleur et harmoniser le corps.",
+    "synergies_recommandees": ["curcuma_longa", "boswellia_serrata", "melissa_officinalis"],
+    "precautions": "Vérifiez la législation locale sur le CBD. Déconseillé en cas de grossesse, d'allaitement ou de traitement par inhibiteurs du cytochrome P450 (demandez l'avis d'un professionnel de santé)."
+  }
+]

@@ -1,0 +1,17 @@
+import React from 'react';
+import { BloomLogo } from './components/ui/BloomLogo';
+import { NavigationSidebar } from './components/NavigationSidebar';
+import Footer from './components/Footer';
+
+export default function App() {
+  return (
+    <div>
+      <div style={{padding: '1rem', background: '#C5A059', color: '#0F261E', textAlign: 'center', fontWeight: 'bold'}}>
+        ✅ GROUPE 1 MINIMAL OK
+      </div>
+      <BloomLogo />
+      <NavigationSidebar currentView="indexbis" onViewChange={() => {}} isOpen={false} onClose={() => {}} onNavigate={() => {}} />
+      <Footer onNavigate={() => {}} lang="fr" />
+    </div>
+  );
+}

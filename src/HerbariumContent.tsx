@@ -1,0 +1,1185 @@
+import React, { useState, useMemo, useEffect } from 'react';
+import { Search, ChevronDown, ChevronUp, Beaker, Leaf, AlertTriangle, Activity, ChefHat, Lock, Sparkles, Star, FlaskConical, ChevronRight, Filter, Info, ArrowLeft, ArrowRight, Droplets, Wind, Waves, Moon, Utensils, ShieldCheck, BookOpen } from 'lucide-react';
+import { wrapTitle } from './lib/textUtils';
+import { plantsDatabase, PlantData } from './data/therapeuticData';
+import { unifiedBotanicalDatabase, UnifiedPlant } from './data/unifiedBotanicalData';
+import { herbariumRecipes } from './data/recipesData';
+import { HERBIER_RECIPES } from './data/herbierRecipesRegistry';
+import { translations, Language } from './translations';
+import { DifficultyBadge } from './components/DifficultyBadge';
+import { PageIntroHeader } from './components/ui/PageIntroHeader';
+import { HerbierRecipeCard } from './components/recipes/HerbierRecipeCard';
+import { FriseTerrains } from './components/FriseTerrains';
+
+// --- DATA STRUCTURE (As requested for the CMS) ---
+// (Interface and array moved to therapeuticData.ts)
+
+const PlantAccordion: React.FC<{ 
+  plant: PlantData, 
+  onSelect: () => void,
+  isFavorite?: boolean,
+  onToggleFavorite?: () => void,
+  lang: Language
+}> = ({ plant, onSelect, isFavorite, onToggleFavorite, lang }) => {
+  const t = translations[lang].herbarium;
+  
+  const getTranslated = (field: keyof PlantData) => {
+    return (plant as any).translations?.[lang]?.[field] || plant[field];
+  };
+
+  const family = t.details.families[plant.famille_bloom] || plant.famille_bloom;
+  const terrains = plant.terrains_cibles.map(ter => t.details.terrains[ter] || ter);
+
+  return (
+    <div 
+      onClick={onSelect}
+      className="bg-white rounded-[40px] border border-botanik-green/5 p-8 hover:shadow-xl transition-all duration-500 group cursor-pointer flex flex-col h-full relative overflow-hidden"
+    >
+      <div className="flex items-center justify-between mb-6">
+        <span 
+          className="px-3.5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest text-white shadow-xs border border-white/10"
+          style={{ backgroundColor: '#3E4A3D', color: '#ffffff' }}
+        >
+          {family}
+        </span>
+        <div className="flex items-center gap-2">
+          <button 
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggleFavorite?.();
+            }}
+            className={`p-2 rounded-full transition-colors ${isFavorite ? 'text-botanik-orange bg-botanik-orange/10' : 'text-botanik-green/20 hover:text-botanik-orange hover:bg-botanik-orange/5'}`}
+          >
+            <Star className={`w-4 h-4 ${isFavorite ? 'fill-botanik-orange' : ''}`} />
+          </button>
+          <div className="w-8 h-8 rounded-full bg-botanik-green/5 flex items-center justify-center text-botanik-green group-hover:bg-botanik-orange group-hover:text-white transition-all">
+            <ChevronRight className="w-4 h-4" />
+          </div>
+        </div>
+      </div>
+
+      <div className="mb-4">
+        <h3 className="text-2xl font-bold text-botanik-green group-hover:text-botanik-orange transition-colors duration-300">
+          {getTranslated('nom_commun')}
+        </h3>
+        <p className="text-xs italic text-botanik-green/40 mt-1">{plant.nom_latin}</p>
+      </div>
+
+      <p className="text-sm text-botanik-green/60 leading-relaxed mb-8 flex-grow line-clamp-3">
+        {getTranslated('preuve_scientifique').slice(0, 150)}...
+      </p>
+
+      <div className="flex flex-wrap gap-2 mt-auto">
+        {terrains.map(tag => (
+          <span key={tag} className="text-[9px] font-bold px-2 py-1 bg-botanik-orange/10 rounded-md text-botanik-orange uppercase tracking-wider">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// Recettes "Aimant" stratégiquement libérées pour attirer et convaincre les visiteurs (Sommeil, Digestion, Immunité, Peau)
+const STRATEGIC_FREE_SLUGS = [
+  'infusion-sommeil-profond',
+  'artichaut',
+  'artichaut-classique',
+  'artichaut-classique-750-ml',
+  'decoction-detox-soutien-hepatique',
+  'thym-culinaire-miel',
+  'thym-commun-huile',
+  'thym-commun-miel',
+  'sirop-sureau-immunite',
+  'sirop-de-sureau-immunite',
+  'remede-psoriasis-emonctoires-regulation',
+  'remede-psoriasis-emonctoires-regulation-epidermique'
+];
+
+function getPrimaryPlantKey(plant: UnifiedPlant): string {
+  const rawId = (plant.id || '').toLowerCase();
+  const rawName = (plant.name || '').toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+  const keywords = [
+    'artichaut', 'alchemille', 'ail', 'armoise', 'astragale', 'aubepine',
+    'bacopa', 'badiane', 'bardane', 'basilic', 'bouillon blanc', 'bouleau', 'boswellia',
+    'cassis', 'cannelle', 'camomille', 'carotte', 'chardon', 'chaga', 'chrysanthellum',
+    'citron', 'cordyceps', 'coriandre', 'curcuma', 'desmodium', 'eleutherocoque',
+    'epine-vinette', 'eschscholtzia', 'estragon', 'eucalyptus', 'euphraise',
+    'fenugrec', 'fenouil', 'figue', 'framboisier', 'fumeterre', 'gattilier', 'gentiane',
+    'gingembre', 'ginkgo', 'ginseng', 'goji', 'griffonia', 'hamamelis', 'hericium',
+    'hibiscus', 'houblon', 'hydne', 'hysope', 'jujube', 'laurier', 'lavande',
+    'lion', 'maca', 'marjolaine', 'mauve', 'melisse', 'menthe', 'millepertuis',
+    'moringa', 'myrtille', 'nigelle', 'olivier', 'origan', 'ortie', 'passiflore',
+    'persil', 'piloselle', 'pissenlit', 'plantain', 'prele', 'quassia', 'quinquina',
+    'radis noir', 'reglisse', 'reishi', 'renouee', 'rhodiola', 'romarin', 'rose',
+    'safran', 'sauge', 'saule', 'schisandra', 'scutellaire', 'senne', 'shatavari',
+    'sureau', 'thym', 'tilleul', 'valeriane', 'vigne rouge'
+  ];
+
+  for (const kw of keywords) {
+    if (rawName.includes(kw) || rawId.includes(kw.replace(/ /g, '_')) || rawId.includes(kw.replace(/ /g, '-'))) {
+      return kw;
+    }
+  }
+  return rawName.split(/[\s—\(\)\+]+/)[0] || plant.id;
+}
+
+export default function HerbariumContent({ 
+  onNavigate, 
+  onNavigatePending,
+  initialPlantId,
+  isPremium = false,
+  onRequirePremium,
+  favorites = [],
+  onToggleFavorite,
+  lang
+}: { 
+  onNavigate: (view: any, productId?: string) => void, 
+  onNavigatePending?: () => void,
+  initialPlantId?: string,
+  isPremium?: boolean,
+  onRequirePremium?: () => void,
+  favorites?: string[],
+  onToggleFavorite?: (id: string) => void,
+  lang: Language
+}) {
+  const [selectedPlant, setSelectedPlant] = useState<PlantData | null>(null);
+  const [selectedRecipeId, setSelectedRecipeId] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [activeFilter, setActiveFilter] = useState<'all' | 'therapeutic' | 'culinary' | 'cosmetic'>('all');
+  const [selectedTerrain, setSelectedTerrain] = useState<string | null>(null);
+
+  const t = translations[lang].herbarium;
+
+  // Handle initial plant selection from navigation
+  useEffect(() => {
+    if (initialPlantId) {
+      // Guard: if navigation passed a category name instead of a plant ID, redirect to dedicated recipe pages
+      if (initialPlantId === 'phytotherapie' || initialPlantId === 'phytotherapie-reset' || initialPlantId === 'therapeutic') {
+        onNavigate('phytotherapie-reset');
+        return;
+      }
+      if (initialPlantId === 'cosmetique' || initialPlantId === 'cosmetiques' || initialPlantId === 'cosmetic' || initialPlantId === 'recettes-cosmetiques') {
+        onNavigate('cosmetiques');
+        return;
+      }
+      if (initialPlantId === 'culinaire' || initialPlantId === 'culinary' || initialPlantId === 'gastronomie') {
+        onNavigate('culinaire');
+        return;
+      }
+      const plant = plantsDatabase.find(p => p.plant_id === initialPlantId);
+      if (plant) {
+        setSelectedPlant(plant);
+        setSelectedRecipeId(null);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  }, [initialPlantId, onNavigate]);
+
+  const filteredDirectory = useMemo(() => {
+    let results = unifiedBotanicalDatabase;
+    
+    if (activeFilter !== 'all') {
+      results = results.filter(p => p.source === activeFilter);
+    }
+
+    if (selectedTerrain) {
+      const terrainUpper = selectedTerrain.toUpperCase();
+      results = results.filter(p => {
+        const inTerrains = (p.terrains || []).some(t => 
+          t.toUpperCase() === terrainUpper || 
+          t.toUpperCase().includes(terrainUpper)
+        );
+        const inTags = (p.tags || []).some(t => 
+          t.toUpperCase() === terrainUpper || 
+          t.toUpperCase().includes(terrainUpper)
+        );
+        return inTerrains || inTags;
+      });
+    }
+    
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      results = results.filter(p => 
+        p.name.toLowerCase().includes(query) || 
+        p.latinName?.toLowerCase().includes(query) ||
+        p.tags.some(t => t.toLowerCase().includes(query))
+      );
+    }
+    
+    // Exact alphabetical sort by common French name
+    const sorted = [...results].sort((a, b) => (a?.name || '').localeCompare(b?.name || '', 'fr', { sensitivity: 'base' }));
+
+    // Étape 1 : Dédupliquer pour n'afficher qu'UNE SEULE recette par plante principale (Ail, Alchémille, Armoise, Artichaut, etc.)
+    const seenPlants = new Set<string>();
+    return sorted.filter(plant => {
+      const key = getPrimaryPlantKey(plant);
+      if (seenPlants.has(key)) return false;
+      seenPlants.add(key);
+      return true;
+    });
+  }, [searchQuery, activeFilter, selectedTerrain]);
+
+  const handlePlantClick = (plant: UnifiedPlant) => {
+    if (plant.source === 'therapeutic') {
+      let fullData: PlantData | undefined;
+      let targetRecipeId: string | null = null;
+
+      if (plant.id.startsWith('therapeutic-recipe-')) {
+        targetRecipeId = plant.id.replace('therapeutic-recipe-', '');
+        fullData = plantsDatabase.find(p => (p.additional_recipes || []).some(r => r.id === targetRecipeId));
+      } else if (plant.id.startsWith('extra-recipe-')) {
+        targetRecipeId = plant.id.replace('extra-recipe-', '');
+        fullData = plantsDatabase.find(p => (p.additional_recipes || []).some(r => r.id === targetRecipeId));
+        if (!fullData) {
+          // Check by name match
+          fullData = plantsDatabase.find(p => plant.latinName?.toLowerCase().includes(p.nom_commun.toLowerCase()) || plant.name.toLowerCase().includes(p.nom_commun.toLowerCase()));
+        }
+      } else {
+        const plantId = plant.id.replace('therapeutic-', '');
+        fullData = plantsDatabase.find(p => p.plant_id === plantId || p.plant_id === plant.id || (p.nom_commun && plant.name && p.nom_commun.toLowerCase() === plant.name.toLowerCase()));
+      }
+
+      // If this is a recipe from herbariumRecipes not directly in plantsDatabase, build a full PlantData with its precise extraction protocol
+      if (!fullData && (plant.id.startsWith('extra-recipe-') || plant.id.startsWith('therapeutic-recipe-'))) {
+        const recipeId = targetRecipeId || plant.id.replace('extra-recipe-', '').replace('therapeutic-recipe-', '');
+        const recipe = herbariumRecipes.find(r => r.id === recipeId);
+        if (recipe) {
+          fullData = {
+            plant_id: `recipe-${recipe.id}`,
+            nom_commun: recipe.title,
+            nom_latin: recipe.plant?.name || recipe.title,
+            partie_utilisee: recipe.ingredients.join(', '),
+            famille_bloom: 'Protocole & Synergie Botanique',
+            terrains_cibles: ['Synergie Active', recipe.category],
+            actifs_cles: recipe.benefits.map((b, idx) => ({
+              nom: b,
+              polarite: idx % 2 === 0 ? 'Hydrosoluble (Polaire)' : 'Lipophile (Apolair)'
+            })),
+            preuve_scientifique: recipe.description,
+            pourquoi_bloomlab: {
+              probleme_traditionnel: recipe.bloomNote || "L'infusion classique à ébullition détruit les principes actifs fragiles et échoue à extraire les fractions denses.",
+              phase_A: {
+                temp: recipe.sachetA?.temp || "85°C",
+                temps: recipe.sachetA?.duration || "15 min",
+                solvant: recipe.sachetA?.solvant || "Eau purifiée",
+                cible: `Extraction Sachet A : ${recipe.sachetA?.composition?.join(', ') || 'Actifs hydrosolubles'}`
+              },
+              phase_B: {
+                temp: recipe.sachetB?.temp || "70°C",
+                temps: recipe.sachetB?.duration || "10 min",
+                solvant: recipe.sachetB?.solvant || "Eau purifiée",
+                cible: `Extraction Sachet B : ${recipe.sachetB?.composition?.join(', ') || 'Actifs thermosensibles'}`
+              },
+              resultat: recipe.benefits.join(' • ')
+            },
+            recette_pas_a_pas: {
+              batch_standard: `Batch Standard : ${recipe.administration?.dailyDose || '1 flacon'}`,
+              ingredients: {
+                phase_A: recipe.sachetA?.composition || [],
+                phase_B: recipe.sachetB?.composition || []
+              },
+              preparation: [
+                `Préparer le Sachet A : ${recipe.sachetA?.composition?.join(', ') || 'Plantes Phase A'}`,
+                `Préparer le Sachet B : ${recipe.sachetB?.composition?.join(', ') || 'Plantes Phase B'}`,
+                `Solvant : ${recipe.sachetA?.solvant || 'Eau distillée'}`
+              ],
+              phase_A_instructions: [
+                `Placer le Sachet A dans le panier d'extraction du BloomLab®.`,
+                `Régler la thermo-régulation sur ${recipe.sachetA?.temp || '85°C'} pendant ${recipe.sachetA?.duration || '15 min'}.`,
+                `Le flux continu extrait doucement les principes actifs denses.`
+              ],
+              transition: [
+                recipe.extractionOrder || "Refroidissement contrôlé pour préserver les molécules thermosensibles avant la Phase B."
+              ],
+              phase_B_instructions: [
+                `Ajouter le Sachet B dans la chambre d'extraction.`,
+                `Ajuster la température à ${recipe.sachetB?.temp || '70°C'} pendant ${recipe.sachetB?.duration || '10 min'}.`,
+                `Extraction douce sans dégradation enzymatique.`
+              ],
+              filtration_et_finition: recipe.instructions && recipe.instructions.length > 0 ? recipe.instructions : [
+                "Filtration automatique en fin de cycle.",
+                "Conserver au frais dans un flacon propre ambré."
+              ]
+            },
+            usage_standard: {
+              mode_administration: recipe.administration?.mode || "Par voie orale",
+              posologie_quotidienne: recipe.administration?.dailyDose || "1 tasse par jour",
+              dose_maximale: recipe.administration?.maxDose || "2 prises par jour",
+              duree_utilisation: recipe.administration?.usageDuration || "Cure de 21 jours",
+              contre_indications: recipe.contraindications && recipe.contraindications.length > 0 ? recipe.contraindications : ["Déconseillé sans avis médical chez la femme enceinte ou allaitante."]
+            },
+            convergence_ancestrale: recipe.bloomNote || "Alliance de traditions herboristes séculaires et de la précision d'extraction contemporaine.",
+            synergies_recommandees: recipe.ingredients || [],
+            precautions: recipe.safetyMessage || "Ne pas dépasser la dose recommandée."
+          };
+        }
+      }
+      if (!fullData) {
+        const hr = HERBIER_RECIPES.find(r => r.id === plant.id || (r.title && plant.name && r.title.toLowerCase() === plant.name.toLowerCase()));
+        if (hr) {
+          fullData = {
+            plant_id: hr.id,
+            nom_commun: hr.title,
+            nom_latin: hr.subtitle || hr.title,
+            partie_utilisee: hr.ingredients?.join(', ') || 'Totum végétal',
+            famille_bloom: hr.categoryLabel || 'Phytothérapie',
+            terrains_cibles: hr.terrains || ['T1'],
+            actifs_cles: (hr.molecularSignature || []).map((m: any) => ({
+              nom: m.molecule || m.nom || 'Principes actifs',
+              polarite: m.mechanism || 'Fraction active'
+            })),
+            preuve_scientifique: hr.subtitle || hr.observationsExpected || '',
+            pourquoi_bloomlab: {
+              probleme_traditionnel: hr.traditionalWisdom || "L'infusion classique dégrade les principes actifs fragiles.",
+              phase_A: {
+                temp: hr.tempSachetA || "85°C",
+                temps: hr.sachetA?.duration || "15 min",
+                solvant: hr.sachetA?.solvent || "Eau purifiée",
+                cible: `Extraction Sachet A : ${hr.sachetA?.composition?.join(', ') || 'Actifs hydrosolubles'}`
+              },
+              phase_B: {
+                temp: hr.tempSachetB || "50°C",
+                temps: hr.sachetB?.duration || "10 min",
+                solvant: hr.sachetB?.solvent || "Eau purifiée",
+                cible: `Extraction Sachet B : ${hr.sachetB?.composition?.join(', ') || 'Actifs thermosensibles'}`
+              },
+              resultat: hr.observationsExpected || 'Extraction intégrale du totum végétal'
+            },
+            recette_pas_a_pas: {
+              batch_standard: `Batch Standard : ${hr.yieldMl || 500} ml`,
+              ingredients: {
+                phase_A: hr.sachetA?.composition || hr.ingredients?.slice(0, 1) || [],
+                phase_B: hr.sachetB?.composition || hr.ingredients?.slice(1) || []
+              },
+              preparation: [
+                `Préparation du Sachet A : ${hr.sachetA?.composition?.join(', ') || 'Phase A'}`,
+                `Préparation du Sachet B : ${hr.sachetB?.composition?.join(', ') || 'Phase B'}`
+              ],
+              phase_A_instructions: [
+                `Placer le Sachet A dans le panier inox du BloomLab®.`,
+                `Programmer l'extraction à ${hr.tempSachetA || '85°C'}.`
+              ],
+              transition: [
+                "Descente thermique contrôlée pour préserver les molécules thermosensibles avant la Phase B."
+              ],
+              phase_B_instructions: [
+                `Ajouter le Sachet B dans la chambre d'extraction.`,
+                `Programmer l'extraction à ${hr.tempSachetB || '50°C'}.`
+              ],
+              filtration_et_finition: hr.instructions || [
+                "Filtration sur tamis inox 304.",
+                "Conserver au frais dans un flacon propre ambré."
+              ]
+            },
+            usage_standard: {
+              mode_administration: "Par voie orale",
+              posologie_quotidienne: "1 à 2 tasses par jour",
+              dose_maximale: "3 prises par jour",
+              duree_utilisation: hr.shelfLife || "Cure de 21 jours",
+              contre_indications: hr.contraindications || ["Demander conseil à un professionnel de santé en cas de doute."]
+            },
+            convergence_ancestrale: hr.heritage?.quote || hr.traditionalWisdom || "Alliance de tradition herboriste et de précision moderne.",
+            synergies_recommandees: hr.ingredients || [],
+            precautions: hr.precautions?.[0] || hr.safetyWarning || "Ne pas dépasser la dose conseillée."
+          };
+        }
+      }
+      
+      if (fullData) {
+        setSelectedPlant(fullData);
+        setSelectedRecipeId(targetRecipeId);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } else if (plant.source === 'culinary') {
+      const parts = plant.id.split('-');
+      const plantId = parts[1];
+      onNavigate('culinaire', plantId);
+    } else if (plant.source === 'cosmetic') {
+      const plantId = plant.id.replace('cosmetic-', '');
+      onNavigate('cosmetiques', plantId);
+    }
+  };
+
+  const getTranslated = (plant: PlantData, field: string) => {
+    return (plant as any).translations?.[lang]?.[field] || (plant as any)[field];
+  };
+
+  const counts = useMemo(() => {
+    return {
+      all: unifiedBotanicalDatabase.length,
+      therapeutic: unifiedBotanicalDatabase.filter(p => p.source === 'therapeutic').length,
+      culinary: unifiedBotanicalDatabase.filter(p => p.source === 'culinary').length,
+      cosmetic: unifiedBotanicalDatabase.filter(p => p.source === 'cosmetic').length
+    };
+  }, []);
+
+  if (selectedPlant) {
+    const family = t.details.families[selectedPlant.famille_bloom] || selectedPlant.famille_bloom;
+    const terrains = selectedPlant.terrains_cibles.map(ter => t.details.terrains[ter] || ter);
+
+    return (
+      <div className="max-w-[1200px] mx-auto px-6 py-12">
+        <button 
+          onClick={() => setSelectedPlant(null)}
+          className="flex items-center gap-2 text-[#3E4A3D]/70 hover:text-[#C8AB8A] active:text-[#C8AB8A] font-bold mb-12 group transition-colors cursor-pointer"
+        >
+          <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" /> {t.details.back}
+        </button>
+
+        <header className="mb-16">
+          <div className="flex gap-4 text-sm font-medium text-botanik-green/60 mb-6 uppercase tracking-widest flex-wrap">
+            <span>{family}</span>
+            <span>•</span>
+            <span>{selectedPlant.nom_latin}</span>
+          </div>
+          <h1 className="text-3xl md:text-8xl font-bold text-botanik-green mb-6 md:mb-8 leading-[0.9] tracking-tighter">
+            {wrapTitle(getTranslated(selectedPlant, 'nom_commun'))}
+          </h1>
+          <div className="flex flex-wrap gap-3">
+            {terrains.map(t => (
+              <span key={t} className="px-4 py-2 bg-botanik-orange/10 text-botanik-orange rounded-full text-xs font-bold border border-botanik-orange/20">
+                {t}
+              </span>
+            ))}
+          </div>
+        </header>
+        
+        <div className="grid lg:grid-cols-[1fr_400px] gap-16">
+          <div className="space-y-16">
+            {/* 1. SCIENCE DU TOTUM */}
+            <section className="bg-white p-10 rounded-[40px] border border-botanik-green/5 shadow-sm">
+              <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-botanik-green/40 mb-8 flex items-center gap-2">
+                <Beaker className="w-4 h-4" /> {t.details.science.title}
+              </h2>
+              <div className="grid md:grid-cols-2 gap-10">
+                <div>
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-green mb-4">{t.details.science.actives_title}</h4>
+                  <div className="space-y-4">
+                    {selectedPlant.actifs_cles.map(a => (
+                      <div key={a.nom} className="flex justify-between items-center py-2 border-b border-botanik-green/5">
+                        <span className="text-sm font-medium text-botanik-green">{(a as any).translations?.[lang]?.nom || a.nom}</span>
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-botanik-green/40">{(a as any).translations?.[lang]?.polarite || a.polarite}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="bg-botanik-green/5 p-8 rounded-3xl">
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-green mb-4">{t.details.science.evidence_title}</h4>
+                  <p className="text-sm text-botanik-green/70 leading-relaxed italic">
+                    "{getTranslated(selectedPlant, 'preuve_scientifique')}"
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* 2. INGÉNIERIE BLOOMLAB */}
+            <section className="bg-[#3E4A3D] text-white p-10 md:p-16 rounded-[60px] relative overflow-hidden shadow-xl" style={{ backgroundColor: '#3E4A3D', color: '#ffffff' }}>
+              <div className="absolute top-0 right-0 p-12 opacity-5">
+                <FlaskConical className="w-64 h-64" />
+              </div>
+              <div className="relative z-10">
+                <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-white/50 mb-10 flex items-center gap-2">
+                  <FlaskConical className="w-4 h-4" /> {t.details.engineering.title}
+                </h2>
+                <div className="mb-12 max-w-2xl">
+                  <h3 className="text-3xl font-bold mb-4">{t.details.engineering.why_extraction}</h3>
+                  <p className="text-white/80 leading-relaxed">{selectedPlant.pourquoi_bloomlab.translations?.[lang]?.probleme_traditionnel || selectedPlant.pourquoi_bloomlab.probleme_traditionnel}</p>
+                </div>
+                
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/15">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-8 h-8 bg-[#C8AB8A] text-[#0F261E] rounded-lg flex items-center justify-center text-xs font-bold shadow-md" style={{ backgroundColor: '#C8AB8A', color: '#ffffff' }}>A</div>
+                      <span className="font-bold uppercase tracking-widest text-xs">{t.details.engineering.phase_a}</span>
+                    </div>
+                    <div className="space-y-4">
+                      <div className="flex justify-between text-sm">
+                        <span className="opacity-60">{t.details.engineering.temperature}</span>
+                        <span className="font-bold">{selectedPlant.pourquoi_bloomlab.phase_A.temp}</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="opacity-60">{t.details.engineering.time}</span>
+                        <span className="font-bold">{selectedPlant.pourquoi_bloomlab.phase_A.temps || t.details.engineering.variable}</span>
+                      </div>
+                      <div className="pt-4 border-t border-white/10">
+                        <p className="text-xs italic text-white/80">{selectedPlant.pourquoi_bloomlab.phase_A.translations?.[lang]?.cible || selectedPlant.pourquoi_bloomlab.phase_A.cible}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/15">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-8 h-8 bg-[#C8AB8A] text-[#0F261E] rounded-lg flex items-center justify-center text-xs font-bold shadow-md" style={{ backgroundColor: '#C8AB8A', color: '#ffffff' }}>B</div>
+                      <span className="font-bold uppercase tracking-widest text-xs">{t.details.engineering.phase_b}</span>
+                    </div>
+                    <div className="space-y-4">
+                      <div className="flex justify-between text-sm">
+                        <span className="opacity-60">{t.details.engineering.temperature}</span>
+                        <span className="font-bold">{selectedPlant.pourquoi_bloomlab.phase_B.temp}</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="opacity-60">{t.details.engineering.time}</span>
+                        <span className="font-bold">{selectedPlant.pourquoi_bloomlab.phase_B.temps || t.details.engineering.variable}</span>
+                      </div>
+                      <div className="pt-4 border-t border-white/10">
+                        <p className="text-xs italic text-white/80">{selectedPlant.pourquoi_bloomlab.phase_B.translations?.[lang]?.cible || selectedPlant.pourquoi_bloomlab.phase_B.cible}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* 3. RECETTE PAS À PAS (If available) */}
+            {selectedPlant.recette_pas_a_pas && (
+              <section className="bg-white p-10 rounded-[40px] border border-botanik-green/5 shadow-sm">
+                <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-botanik-green/40 mb-10 flex items-center gap-2">
+                  <ChefHat className="w-4 h-4" /> {t.details.protocol.title}
+                </h2>
+                <div className="mb-12 p-6 bg-[#F9F9F7] rounded-3xl border border-botanik-green/5">
+                  <h4 className="font-bold text-botanik-green mb-2">{selectedPlant.recette_pas_a_pas.translations?.[lang]?.batch_standard || selectedPlant.recette_pas_a_pas.batch_standard}</h4>
+                </div>
+                
+                <div className="space-y-12">
+                  {/* Preparation */}
+                  <div>
+                    <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-orange mb-6 flex items-center gap-2">
+                      <Leaf className="w-4 h-4" /> {t.details.protocol.preparation}
+                    </h4>
+                    <div className="space-y-4">
+                      {(selectedPlant.recette_pas_a_pas.translations?.[lang]?.preparation || selectedPlant.recette_pas_a_pas.preparation).map((step: string, i: number) => (
+                        <div key={i} className="flex gap-4">
+                          <span className="text-botanik-green/20 font-bold">{i+1}.</span>
+                          <p className="text-sm text-botanik-green/80">{step}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Phase A */}
+                  <div className="pl-6 border-l-2 border-botanik-orange/20">
+                    <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-orange mb-6">{t.details.protocol.phase_a}</h4>
+                    <div className="space-y-4">
+                      {(selectedPlant.recette_pas_a_pas.translations?.[lang]?.phase_A_instructions || selectedPlant.recette_pas_a_pas.phase_A_instructions).map((step: string, i: number) => (
+                        <div key={i} className="flex gap-4">
+                          <span className="text-botanik-orange/40 font-bold">•</span>
+                          <p className="text-sm text-botanik-green/80">{step}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Transition */}
+                  <div className="p-8 bg-botanik-orange/5 rounded-3xl border border-botanik-orange/10">
+                    <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-orange mb-4 flex items-center gap-2">
+                      <AlertTriangle className="w-4 h-4" /> {t.details.protocol.transition}
+                    </h4>
+                    <div className="space-y-3">
+                      {(selectedPlant.recette_pas_a_pas.translations?.[lang]?.transition || selectedPlant.recette_pas_a_pas.transition).map((step: string, i: number) => (
+                        <p key={i} className="text-xs font-medium text-botanik-orange/80 leading-relaxed">{step}</p>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Phase B */}
+                  <div className="pl-6 border-l-2 border-botanik-orange/20">
+                    <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-orange mb-6">{t.details.protocol.phase_b}</h4>
+                    <div className="space-y-4">
+                      {(selectedPlant.recette_pas_a_pas.translations?.[lang]?.phase_B_instructions || selectedPlant.recette_pas_a_pas.phase_B_instructions).map((step: string, i: number) => (
+                        <div key={i} className="flex gap-4">
+                          <span className="text-botanik-orange/40 font-bold">•</span>
+                          <p className="text-sm text-botanik-green/80">{step}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Filtration */}
+                  <div>
+                    <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-orange mb-6">{t.details.protocol.filtration}</h4>
+                    <div className="space-y-4">
+                      {(selectedPlant.recette_pas_a_pas.translations?.[lang]?.filtration_et_finition || selectedPlant.recette_pas_a_pas.filtration_et_finition).map((step: string, i: number) => (
+                        <div key={i} className="flex gap-4">
+                          <span className="text-botanik-green/20 font-bold">{i+1}.</span>
+                          <p className="text-sm text-botanik-green/80">{step}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* USAGE STANDARD & SÉCURITÉ */}
+            {selectedPlant.usage_standard && (
+              <section className="bg-white p-10 rounded-[40px] border border-botanik-green/5 shadow-sm">
+                <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-botanik-green/40 mb-10 flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4" /> {t.details.usage.title}
+                </h2>
+                <div className="grid md:grid-cols-2 gap-10">
+                  <div className="space-y-6">
+                    <h4 className="text-sm font-bold uppercase tracking-widest text-botanik-green">Dosage & Administration</h4>
+                    <div className="space-y-4 text-sm text-botanik-green/80">
+                      <p><strong>{t.details.usage.mode}</strong> {selectedPlant.usage_standard.translations?.[lang]?.mode_administration || selectedPlant.usage_standard.mode_administration}</p>
+                      <p><strong>{t.details.usage.dosage}</strong> {selectedPlant.usage_standard.translations?.[lang]?.posologie_quotidienne || selectedPlant.usage_standard.posologie_quotidienne}</p>
+                      <p><strong>{t.details.usage.max_dose}</strong> {selectedPlant.usage_standard.translations?.[lang]?.dose_maximale || selectedPlant.usage_standard.dose_maximale}</p>
+                      <p><strong>{t.details.usage.duration}</strong> {selectedPlant.usage_standard.translations?.[lang]?.duree_utilisation || selectedPlant.usage_standard.duree_utilisation}</p>
+                    </div>
+                  </div>
+                  <div className="space-y-6">
+                    <h4 className="text-sm font-bold uppercase tracking-widest text-red-700">{t.details.usage.contraindications}</h4>
+                    <ul className="space-y-2 text-sm text-red-900/70">
+                      {(selectedPlant.usage_standard.translations?.[lang]?.contre_indications || selectedPlant.usage_standard.contre_indications).map((ci: string, i: number) => (
+                        <li key={i} className="flex gap-2">
+                          <span className="text-red-300">•</span> {ci}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-10 p-8 bg-botanik-orange/5 border border-botanik-orange/20 rounded-3xl">
+                  <p className="text-xs font-bold text-botanik-orange uppercase tracking-widest mb-2 flex items-center gap-2">
+                    <AlertTriangle className="w-4 h-4" /> Rappel de sécurité
+                  </p>
+                  <p className="text-sm text-botanik-green/80 italic leading-relaxed">
+                    "{getTranslated(selectedPlant, 'precautions') || 'Usage responsable recommandé.'}"
+                  </p>
+                </div>
+              </section>
+            )}
+
+            {/* 3.5 ADDITIONAL RECIPES (If available) */}
+            {selectedPlant.additional_recipes && selectedPlant.additional_recipes.length > 0 && (
+              <section className="bg-white p-10 rounded-[40px] border border-botanik-green/5 shadow-sm">
+                <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-botanik-green/40 mb-10 flex items-center gap-2">
+                  <Utensils className="w-4 h-4" /> {t.details.specific_protocols.title}
+                </h2>
+                <div className="space-y-6">
+                  {selectedPlant.additional_recipes.map((recipe, idx) => {
+                    const isTarget = selectedRecipeId === recipe.id;
+                    return (
+                    <div 
+                      key={idx} 
+                      id={`recipe-${recipe.id}`}
+                      className={`p-8 rounded-3xl border transition-all group ${
+                        isTarget 
+                          ? 'bg-white border-[#C8AB8A] shadow-lg ring-2 ring-[#C8AB8A]/20' 
+                          : 'bg-[#F9F9F7] border-botanik-green/5 hover:border-botanik-orange/20'
+                      }`}
+                    >
+                      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                        <div>
+                          {isTarget && (
+                            <span className="inline-block px-2.5 py-0.5 mb-2 bg-[#C8AB8A] text-[#0F261E] text-[9px] font-black uppercase tracking-wider rounded-md">
+                              Recette sélectionnée
+                            </span>
+                          )}
+                          <h4 className="text-xl font-bold text-botanik-green mb-1">{recipe.title}</h4>
+                          <p className="text-sm text-botanik-green/60 mb-2">{recipe.goal}</p>
+                          <DifficultyBadge 
+                            recipeId={recipe.id}
+                            variant="compact"
+                            fallback={{ category: 'culinaire', title: recipe.title }}
+                          />
+                        </div>
+                        <span className="px-4 py-1 bg-botanik-green/10 text-botanik-green text-[10px] font-bold uppercase tracking-widest rounded-full border border-botanik-green/10">
+                          {recipe.process.method.replace(/_/g, ' ')}
+                        </span>
+                      </div>
+
+                      <div className="grid md:grid-cols-3 gap-8 mb-8">
+                        <div className="space-y-3">
+                          <h5 className="text-[10px] font-bold uppercase tracking-widest text-botanik-green/40">{t.details.specific_protocols.params}</h5>
+                          <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-botanik-orange shadow-sm">
+                              <Droplets className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <p className="text-xs font-bold text-botanik-green">
+                                {recipe.solvent.volume_ml || (recipe.solvent.water_volume_ml! + recipe.solvent.ethanol_volume_ml!)} ml
+                              </p>
+                              <p className="text-[10px] text-botanik-green/40 uppercase">{recipe.solvent.type}</p>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-botanik-orange shadow-sm">
+                              <Wind className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <p className="text-xs font-bold text-botanik-green">{recipe.process.temperature_c}°C</p>
+                              <p className="text-[10px] text-botanik-green/40 uppercase">{recipe.process.time_min} min</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="space-y-3">
+                          <h5 className="text-[10px] font-bold uppercase tracking-widest text-botanik-green/40">{t.details.specific_protocols.plants}</h5>
+                          <p className="text-xs font-medium text-botanik-green">
+                            {recipe.plant.sachet_count} sachets ({recipe.plant.total_plant_mass_g}g)
+                          </p>
+                          <p className="text-[10px] text-botanik-green/60 italic">{recipe.plant.part}</p>
+                        </div>
+
+                        <div className="space-y-3">
+                          <h5 className="text-[10px] font-bold uppercase tracking-widest text-botanik-green/40">{t.details.specific_protocols.usage}</h5>
+                          <p className="text-xs font-medium text-botanik-green">
+                            {recipe.use.servings.length} prises / jour
+                          </p>
+                          <p className="text-[10px] text-botanik-green/60 line-clamp-2">{recipe.use.notes}</p>
+                        </div>
+                      </div>
+
+                      <div className="pt-6 border-t border-botanik-green/5 flex justify-between items-center">
+                        <div className="flex items-center gap-2 text-[10px] font-bold text-botanik-green/40 uppercase tracking-wider">
+                           <Info className="w-3 h-3" /> {recipe.storage.max_hours}h {t.details.specific_protocols.max_hours}
+                        </div>
+                        <button 
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            onNavigate('pending');
+                          }}
+                          className="flex items-center gap-2 text-xs font-bold text-botanik-orange hover:gap-3 transition-all"
+                        >
+                          {recipe.cta.label} <ChevronRight className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                  );
+                  })}
+                </div>
+              </section>
+            )}
+
+            {/* 4. SOCLE SYNERGIQUE */}
+            {selectedPlant.socle_synergique && (
+              <section className="bg-[#F9F9F7] p-10 rounded-[40px] border border-botanik-green/5">
+                <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-botanik-green/40 mb-10 flex items-center gap-2">
+                  <Activity className="w-4 h-4" /> {t.details.synergy.title}
+                </h2>
+                <div className="grid md:grid-cols-2 gap-10">
+                  <div className="space-y-8">
+                    <h4 className="text-xs font-bold uppercase tracking-widest text-botanik-green">{t.details.synergy.cofactors}</h4>
+                    {selectedPlant.socle_synergique.cofacteurs_complements.map(c => (
+                      <div key={c.nom} className="bg-white p-6 rounded-2xl border border-botanik-green/5">
+                        <div className="flex justify-between items-start mb-2">
+                          <span className="font-bold text-sm text-botanik-green">{(c as any).translations?.[lang]?.nom || c.nom}</span>
+                          <span className="text-[10px] font-bold text-botanik-orange">{(c as any).translations?.[lang]?.dose || c.dose}</span>
+                        </div>
+                        <p className="text-xs text-botanik-green/60 leading-relaxed">{(c as any).translations?.[lang]?.role || c.role}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="space-y-8">
+                    <h4 className="text-xs font-bold uppercase tracking-widest text-botanik-green">{t.details.synergy.levers}</h4>
+                    {selectedPlant.socle_synergique.leviers_du_vivant.map(l => (
+                      <div key={l.nom} className="bg-white p-6 rounded-2xl border border-botanik-green/5">
+                        <div className="flex justify-between items-start mb-2">
+                          <span className="font-bold text-sm text-botanik-green">{(l as any).translations?.[lang]?.nom || l.nom}</span>
+                          <span className="text-[10px] font-bold text-botanik-orange">{(l as any).translations?.[lang]?.frequence || l.frequence}</span>
+                        </div>
+                        <p className="text-xs text-botanik-green/60 leading-relaxed">{(l as any).translations?.[lang]?.role || l.role}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            )}
+          </div>
+
+          <aside className="space-y-8">
+            <div className="bg-white p-8 rounded-[40px] border border-botanik-green/5 sticky top-24">
+              <div className="mb-10">
+                <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-botanik-green/30 mb-4">{t.details.expert.title}</h4>
+                <p className="text-sm font-medium text-botanik-green/80 leading-relaxed italic">
+                  "{getTranslated(selectedPlant, 'note_expert') || t.details.expert.default_note}"
+                </p>
+              </div>
+
+              <div className="space-y-10">
+                <div>
+                  <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-botanik-green/30 mb-4">{t.details.expert.convergence}</h4>
+                  <p className="text-xs text-botanik-green/70 leading-relaxed">{getTranslated(selectedPlant, 'convergence_ancestrale')}</p>
+                </div>
+                
+                <div>
+                  <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-botanik-green/30 mb-4">{t.details.expert.synergies}</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedPlant.synergies_recommandees.map(s => (
+                      <span key={s} className="text-[10px] font-bold px-3 py-1 bg-botanik-green/5 rounded-full text-botanik-green/60 uppercase tracking-wider">{s}</span>
+                    ))}
+                  </div>
+                </div>
+
+                {selectedPlant.precautions && (
+                  <div className="pt-8 border-t border-botanik-green/5">
+                    <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-botanik-magenta/60 mb-3 flex items-center gap-2">
+                      <AlertTriangle className="w-3 h-3" /> {t.details.expert.precautions}
+                    </h4>
+                    <p className="text-[10px] text-botanik-magenta/80 leading-relaxed">{getTranslated(selectedPlant, 'precautions')}</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    );
+  }
+
+  // DIRECTORY VIEW (Landing Page)
+  return (
+    <div className="pb-20">
+      
+      {/* En-tête contextuel PageIntroHeader */}
+      <PageIntroHeader
+        badge={lang === 'fr' ? "RESSOURCES • PHYTOTHÉRAPIE & TOTUM" : "RESOURCES • HERBARIUM & TOTUM"}
+        title={lang === 'fr' ? "L'Herbier Médicinal Bloom" : "The Bloom Medicinal Herbarium"}
+        subtitle={lang === 'fr' ? "La pharmacopée vivante et la science des principes actifs" : "Living Pharmacopoeia and Active Botanical Principles"}
+        context={lang === 'fr'
+          ? "Vous êtes dans le répertoire botanique de référence de Bloom by BotaniK. Chaque fiche détaille les composés actifs du Totum, la polarité d'extraction (eau, alcool, huile), les synergies ancestrales et les dosages sécurisés pour composer vos remèdes en toute souveraineté."
+          : "You are in the reference botanical directory of Bloom by BotaniK. Each entry details Totum active compounds, extraction polarities, ancestral synergies, and safe dosages."}
+        actions={
+          <button
+            onClick={() => onNavigate('extraction-botanique')}
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#C8AB8A] hover:bg-[#b86505] text-[#3E4A3D] font-black rounded-xl text-xs uppercase tracking-wider transition-all shadow-md cursor-pointer"
+          >
+            <BookOpen className="w-4 h-4 text-[#3E4A3D]" />
+            <span>{lang === 'fr' ? "Guide : L'Extraction Botanique & le Totum →" : "Botanical Extraction Guide →"}</span>
+          </button>
+        }
+      />
+
+      {/* FRISE DES TERRAINS PHYSIOLOGIQUES BLOOM (T1 À T9) */}
+      <FriseTerrains
+        selectedTerrain={selectedTerrain}
+        onSelectTerrain={setSelectedTerrain}
+        lang={lang}
+        onNavigateToAlma={() => onNavigate('chat')}
+      />
+
+      {/* Search & Filter Header */}
+      <div className="bg-white px-4 md:px-6 pt-6 md:pt-8 pb-4 border-b border-[#3E4A3D]/5">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-2">
+          <div>
+            <h1 className="text-2xl md:text-3xl font-bold text-[#3E4A3D] mb-1">
+              Herbier Bloom — Plantes Médicinales & Adaptogènes Documentés
+            </h1>
+            <p className="text-[10px] md:text-xs font-black uppercase tracking-widest text-[#3E4A3D]/70 mb-1">
+              COMPRENDRE LES PLANTES, LEURS PRINCIPES ACTIFS ET LEURS EXTRACTIONS MAISON
+            </p>
+            <p className="text-sm text-[#3E4A3D]/60 max-w-3xl">
+              Chaque fiche d'herboristerie recense le nom latin, les principes actifs du Totum végétal, les usages traditionnels ancestraux et les mécanismes d'action validés par la phytothérapie moderne.
+            </p>
+          </div>
+          <button
+            onClick={() => onNavigate('extraction-botanique')}
+            className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#3E4A3D]/5 hover:bg-[#3E4A3D] hover:text-white text-[#3E4A3D] rounded-xl text-xs font-bold transition-all border border-[#3E4A3D]/10 self-start md:self-auto cursor-pointer shadow-xs"
+          >
+            <BookOpen className="w-4 h-4 text-[#C8AB8A]" />
+            <span>Guide : L'Extraction Botanique & le Totum →</span>
+          </button>
+        </div>
+
+        {/* Familles Botaniques Majeures - H2 Structure SEO */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 my-4 pt-2">
+          <div className="bg-[#FAF7F2] p-4 rounded-2xl border border-[#3E4A3D]/10">
+            <h2 className="text-xs sm:text-sm font-bold text-[#3E4A3D] uppercase tracking-wide flex items-center gap-1.5 mb-1">
+              <Sparkles className="w-3.5 h-3.5 text-[#C8AB8A]" />
+              Plantes Adaptogènes (Ashwagandha, Rhodiola)
+            </h2>
+            <p className="text-[11px] text-[#3E4A3D]/70 leading-snug">
+              Withanolides & rosavines régulant l'axe HPA et le cortisol pour restaurer la vitalité sans excitation.
+            </p>
+          </div>
+          <div className="bg-[#FAF7F2] p-4 rounded-2xl border border-[#3E4A3D]/10">
+            <h2 className="text-xs sm:text-sm font-bold text-[#3E4A3D] uppercase tracking-wide flex items-center gap-1.5 mb-1">
+              <Activity className="w-3.5 h-3.5 text-[#C8AB8A]" />
+              Plantes Hépatoprotectrices
+            </h2>
+            <p className="text-[11px] text-[#3E4A3D]/70 leading-snug">
+              Silybine du Chardon-Marie et desmodine pour soutenir l'épuration hépatique et le métabolisme de phase II.
+            </p>
+          </div>
+          <div className="bg-[#FAF7F2] p-4 rounded-2xl border border-[#3E4A3D]/10">
+            <h2 className="text-xs sm:text-sm font-bold text-[#3E4A3D] uppercase tracking-wide flex items-center gap-1.5 mb-1">
+              <Leaf className="w-3.5 h-3.5 text-[#C8AB8A]" />
+              Plantes Anti-inflammatoires
+            </h2>
+            <p className="text-[11px] text-[#3E4A3D]/70 leading-snug">
+              Salicyline de la Reine-des-Prés, curcuminoïdes et flavonoïdes pour apaiser les terrains d'inflammation de bas grade.
+            </p>
+          </div>
+        </div>
+
+        <div className="relative mt-4 mb-4 max-w-2xl">
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 md:w-5 h-4 md:h-5 text-[#3E4A3D]/40" />
+          <input
+            type="text"
+            placeholder="Chercher une plante, un actif..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full pl-11 md:pl-12 pr-4 py-2.5 md:py-3 bg-[#F9F9F7] rounded-xl md:rounded-2xl border border-[#3E4A3D]/10 text-sm md:text-base text-[#3E4A3D] placeholder-[#3E4A3D]/40 focus:ring-2 focus:ring-[#C8AB8A]/20 focus:border-[#C8AB8A]/30 outline-none transition-all"
+          />
+        </div>
+      </div>
+
+      {/* FILTERS with direct links to dedicated recipe pages */}
+      <div className="sticky top-0 z-30 bg-[#F9F9F7]/95 backdrop-blur-md py-3 md:py-4 px-4 md:px-6 mb-8 border-b border-[#3E4A3D]/5 overflow-x-auto whitespace-nowrap scrollbar-hide">
+        <div className="flex flex-wrap gap-2 items-center justify-between">
+          <div className="flex flex-wrap gap-2 items-center">
+            {[
+              { id: 'all', label: "Tous", icon: Leaf, count: counts.all, onClick: () => { setActiveFilter('all'); setSearchQuery(''); } },
+              { id: 'therapeutic', label: "Recettes Phytothérapie", icon: Activity, count: counts.therapeutic, onClick: () => setActiveFilter(activeFilter === 'therapeutic' ? 'all' : 'therapeutic') },
+              { id: 'cosmetic', label: "Soins Cosmétiques", icon: Sparkles, count: counts.cosmetic, onClick: () => setActiveFilter(activeFilter === 'cosmetic' ? 'all' : 'cosmetic') },
+              { id: 'culinary', label: "Gastronomie Botanique", icon: ChefHat, count: counts.culinary, onClick: () => setActiveFilter(activeFilter === 'culinary' ? 'all' : 'culinary') }
+            ].map((f) => (
+              <button
+                key={f.id}
+                onClick={f.onClick}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-[10px] md:text-xs font-bold transition-all duration-200 cursor-pointer ${
+                  activeFilter === f.id
+                    ? 'bg-[#3E4A3D] text-white shadow-md' 
+                    : 'bg-white text-[#3E4A3D]/80 border border-[#3E4A3D]/15 hover:border-[#C8AB8A] hover:text-[#C8AB8A] hover:bg-[#FAF7F2]'
+                }`}
+              >
+                <f.icon className={`w-3.5 h-3.5 md:w-4 md:h-4 ${activeFilter === f.id ? 'text-white' : 'text-[#C8AB8A]'}`} />
+                <span>{f.label}</span>
+                <span className={`text-[8px] md:text-[10px] px-1.5 py-0.5 rounded-md font-bold ${activeFilter === f.id ? 'bg-white/20 text-white' : 'bg-[#3E4A3D]/5 text-[#3E4A3D]/60'}`}>
+                  {f.count}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          {/* Quick shortcuts to dedicated recipe portals */}
+          <div className="hidden lg:flex items-center gap-3 text-xs text-[#3E4A3D]/70">
+            <button
+              onClick={() => onNavigate('phytotherapie-reset')}
+              className="hover:text-[#C8AB8A] transition-colors flex items-center gap-1.5 cursor-pointer font-medium"
+            >
+              <Activity className="w-3.5 h-3.5 text-[#C8AB8A]" />
+              <span>{counts.therapeutic} Recettes Phytothérapie</span>
+            </button>
+            <span className="text-[#3E4A3D]/20">•</span>
+            <button
+              onClick={() => onNavigate('cosmetiques')}
+              className="hover:text-[#C8AB8A] transition-colors flex items-center gap-1.5 cursor-pointer font-medium"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-[#C8AB8A]" />
+              <span>Soins Cosmétiques</span>
+            </button>
+            <span className="text-[#3E4A3D]/20">•</span>
+            <button
+              onClick={() => onNavigate('culinaire')}
+              className="hover:text-[#C8AB8A] transition-colors flex items-center gap-1.5 cursor-pointer font-medium"
+            >
+              <ChefHat className="w-3.5 h-3.5 text-[#C8AB8A]" />
+              <span>Gastronomie Botanique</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Contextual Banners for dedicated recipe collections */}
+      <div className="px-4 md:px-6 mb-6">
+        {activeFilter === 'therapeutic' && (
+          <div className="p-4 sm:p-5 bg-[#3E4A3D]/5 border border-[#3E4A3D]/15 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl bg-[#3E4A3D] text-white flex items-center justify-center flex-shrink-0">
+                <Activity className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-bold text-[#3E4A3D] text-sm">Protocoles & Recettes de Phytothérapie</h4>
+                <p className="text-xs text-[#3E4A3D]/70">Accédez aux fiches recettes détaillées avec sachet A/B, solvants et modes de prise.</p>
+              </div>
+            </div>
+            <button
+              onClick={() => onNavigate('phytotherapie-reset')}
+              className="w-full sm:w-auto px-4 py-2 bg-[#3E4A3D] hover:bg-[#2D372C] text-white rounded-xl text-xs font-bold transition-colors cursor-pointer flex items-center justify-center gap-2 whitespace-nowrap shadow-sm"
+            >
+              <span>Accéder aux {counts.therapeutic} Recettes Dédiées</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        )}
+
+        {activeFilter === 'cosmetic' && (
+          <div className="p-4 sm:p-5 bg-botanik-orange/5 border border-botanik-orange/20 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl bg-botanik-orange text-[#0F261E] flex items-center justify-center flex-shrink-0">
+                <Sparkles className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-bold text-[#3E4A3D] text-sm">Atelier des Recettes Cosmétiques</h4>
+                <p className="text-xs text-[#3E4A3D]/70">Explorez nos sérums, baumes botaniques et rituels d'infusion cutanée.</p>
+              </div>
+            </div>
+            <button
+              onClick={() => onNavigate('cosmetiques')}
+              className="w-full sm:w-auto px-4 py-2 bg-[#3E4A3D] hover:bg-[#2D372C] text-white rounded-xl text-xs font-bold transition-colors cursor-pointer flex items-center justify-center gap-2 whitespace-nowrap shadow-sm"
+            >
+              <span>Accéder aux Recettes Dédiées</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        )}
+
+        {activeFilter === 'culinary' && (
+          <div className="p-4 sm:p-5 bg-botanik-green/5 border border-botanik-green/15 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl bg-botanik-green text-white flex items-center justify-center flex-shrink-0">
+                <ChefHat className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-bold text-[#3E4A3D] text-sm">Atelier Gastronomique & Recettes Culinaires</h4>
+                <p className="text-xs text-[#3E4A3D]/70">Huiles aromatisées, beurres d'herbes et infusions culinaires de précision.</p>
+              </div>
+            </div>
+            <button
+              onClick={() => onNavigate('culinaire')}
+              className="w-full sm:w-auto px-4 py-2 bg-[#3E4A3D] hover:bg-[#2D372C] text-white rounded-xl text-xs font-bold transition-colors cursor-pointer flex items-center justify-center gap-2 whitespace-nowrap shadow-sm"
+            >
+              <span>Accéder aux Recettes Culinaires</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* GRID VIEW */}
+      <div className="px-4 md:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredDirectory.map((plant, index) => {
+            // Étape 3 : Libérer les recettes "Aimant" (Sommeil, Digestion, Immunité, Peau) pour attirer les visiteurs
+            const isStrategicFree = STRATEGIC_FREE_SLUGS.some(slug => 
+              (plant.slug && plant.slug.includes(slug)) ||
+              (plant.id && plant.id.includes(slug)) ||
+              ((plant as any).canonicalUrl && (plant as any).canonicalUrl.includes(slug)) ||
+              plant.name.toLowerCase().includes(slug)
+            );
+
+            // Verrouillage : Accessible sans flou si Premium, si recette Aimant gratuite, ou parmi les 9 premiers éléments
+            const isLocked = !isPremium && !isStrategicFree && index >= 9;
+            
+            const originalId = plant.id.replace(/^therapeutic-(recipe-)?/, '').replace(/^culinary-/, '').replace(/^cosmetic-/, '').replace(/^extra-recipe-/, '');
+            const therapeuticData = plant.source === 'therapeutic' 
+              ? plantsDatabase.find(p => (p.plant_id || (p as any).id) === originalId || (p.plant_id || (p as any).id) === plant.id)
+              : null;
+            
+            const displayName = (therapeuticData && ((therapeuticData as any).translations?.[lang]?.nom_commun || therapeuticData.nom_commun))
+              || plant.name 
+              || (plant as any).title 
+              || (plant as any).nom_commun 
+              || plant.latinName 
+              || plant.id;
+            
+            const displayDescription = (therapeuticData && ((therapeuticData as any).translations?.[lang]?.preuve_scientifique || therapeuticData.preuve_scientifique))
+              || plant.description 
+              || (plant as any).subtitle 
+              || (plant as any).summary 
+              || '';
+
+            const displayFamily = therapeuticData
+              ? t.details.families[therapeuticData.famille_bloom] || therapeuticData.famille_bloom
+              : plant.category;
+
+            const displayTags = therapeuticData
+              ? (therapeuticData.terrains_cibles || []).map(ter => t.details.terrains[ter] || ter)
+              : (plant.tags || []);
+
+            const displayImage = plant.image || (therapeuticData as any)?.image || '/src/assets/images/herbs_close_up_cleaned_1786616800877.jpg';
+
+            const recipeCardData = {
+              id: plant.id,
+              title: displayName,
+              name: displayName,
+              subtitle: displayDescription,
+              description: displayDescription,
+              image: displayImage,
+              imageUrl: displayImage,
+              imageAlt: displayName,
+              category: (plant.source === 'therapeutic' ? 'phytotherapie' : plant.source === 'cosmetic' ? 'cosmetique' : 'gastronomie') as any,
+              categoryLabel: displayFamily || 'Phytothérapie',
+              categorySlug: (plant.source === 'therapeutic' ? 'phytotherapie' : plant.source === 'cosmetic' ? 'cosmetiques' : 'gastronomie') as any,
+              difficultyLevel: ((plant as any).difficultyLevel || (therapeuticData as any)?.niveau || 2) as any,
+              difficultyLabel: ((plant as any).difficultyLabel || 'Facile') as any,
+              totalTimeMinutes: (plant as any).totalTimeMinutes || (therapeuticData as any)?.temps_total || 20,
+              tempSachetA: therapeuticData?.pourquoi_bloomlab?.phase_A?.temp || (plant as any).tempSachetA || '70°C',
+              tempSachetB: therapeuticData?.pourquoi_bloomlab?.phase_B?.temp || (plant as any).tempSachetB || '50°C',
+              terrains: displayTags,
+              axes: (plant as any).axes || [],
+              canonicalUrl: `#${plant.id}`,
+              batchNumber: index + 1
+            };
+
+            console.log("Herbarium card recipe:", recipeCardData);
+
+            return (
+              <div key={plant.id} className="relative h-full flex flex-col">
+                <div className={`h-full flex flex-col ${isLocked ? 'filter blur-[3px] opacity-40 select-none pointer-events-none' : ''}`}>
+                  <HerbierRecipeCard
+                    recipe={recipeCardData as any}
+                    onSelect={() => isLocked ? onRequirePremium?.() : handlePlantClick(plant)}
+                    showHeritageTeaser={false}
+                  />
+                </div>
+
+                {/* Lock Overlay when not subscribed */}
+                {isLocked && (
+                  <div 
+                    onClick={() => onRequirePremium?.()}
+                    className="absolute inset-0 bg-white/70 backdrop-blur-[2px] z-10 flex flex-col items-center justify-center p-6 text-center select-none cursor-pointer rounded-3xl"
+                  >
+                    <div className="w-12 h-12 bg-white rounded-2xl border border-[#3E4A3D]/10 shadow-md flex items-center justify-center mb-3">
+                      <Lock className="w-5 h-5 text-[#3E4A3D]" />
+                    </div>
+                    <p className="text-xs md:text-sm font-black uppercase tracking-widest text-[#3E4A3D] mb-1">
+                      ACCÈS PREMIUM
+                    </p>
+                    <p className="text-[10px] md:text-xs text-[#3E4A3D]/60 font-medium">
+                      Abonnez-vous pour débloquer
+                    </p>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {filteredDirectory.length === 0 && (
+        <div className="text-center py-20 bg-white rounded-[40px] border border-dashed border-botanik-green/15 max-w-2xl mx-auto p-8 shadow-sm">
+          <Leaf className="w-16 h-16 text-botanik-green/20 mx-auto mb-6" />
+          <h3 className="text-2xl font-bold text-botanik-green mb-2">{t.empty.title}</h3>
+          <p className="text-botanik-green/70 mb-8 max-w-md mx-auto text-sm">{t.empty.description}</p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <button
+              onClick={() => { setSearchQuery(''); setActiveFilter('all'); }}
+              className="px-5 py-2.5 bg-botanik-green/10 text-botanik-green rounded-xl text-xs font-bold hover:bg-botanik-green hover:text-white transition-all cursor-pointer"
+            >
+              Réinitialiser les filtres
+            </button>
+            <button
+              onClick={() => onNavigate('phytotherapie-reset')}
+              className="px-5 py-2.5 bg-[#3E4A3D] text-white rounded-xl text-xs font-bold hover:bg-[#C8AB8A] transition-all cursor-pointer flex items-center gap-2"
+            >
+              <Activity className="w-3.5 h-3.5 text-botanik-orange" />
+              <span>{counts.therapeutic} Recettes Phytothérapie →</span>
+            </button>
+            <button
+              onClick={() => onNavigate('cosmetiques')}
+              className="px-5 py-2.5 bg-[#3E4A3D] text-white rounded-xl text-xs font-bold hover:bg-[#2D372C] transition-all cursor-pointer flex items-center gap-2"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-white" />
+              <span>Recettes Cosmétiques →</span>
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

@@ -1,0 +1,242 @@
+{
+  "entities": {
+    "Subscriber": {
+      "title": "Subscriber",
+      "description": "A person subscribed to the newsletter or a customer with marketing preferences.",
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Unique email address of the subscriber."
+        },
+        "first_name": {
+          "type": "string",
+          "description": "First name of the subscriber."
+        },
+        "locale": {
+          "type": "string",
+          "description": "Language and region (e.g., fr-FR)."
+        },
+        "marketing_consent": {
+          "type": "boolean",
+          "description": "Whether the user has consented to marketing emails."
+        },
+        "consent_source": {
+          "type": "string",
+          "description": "Where the consent was obtained (e.g., footer_form, checkout)."
+        },
+        "consent_timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the consent was obtained."
+        },
+        "consent_version": {
+          "type": "string",
+          "description": "Version of the terms accepted."
+        },
+        "email_status": {
+          "type": "string",
+          "enum": ["active", "unsubscribed", "bounced", "suppressed"],
+          "description": "Status of the email delivery."
+        },
+        "preferences": {
+          "type": "object",
+          "description": "User preferences including family rhythm and zones.",
+          "properties": {
+            "family_rhythm": { "type": "boolean" },
+            "school_calendar_zone": { "type": "string", "enum": ["A", "B", "C", "hors_france", "non_precise"] },
+            "content_context": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["email", "marketing_consent", "email_status", "created_at", "updated_at"]
+    },
+    "Customer": {
+      "title": "Customer",
+      "description": "Detailed purchase history linked to a subscriber.",
+      "type": "object",
+      "properties": {
+        "subscriber_id": {
+          "type": "string",
+          "description": "Reference to the subscriber document ID."
+        },
+        "bloomlab_purchase_verified": {
+          "type": "boolean",
+          "description": "Verified owner of a BloomLab instrument."
+        },
+        "bloomlab_purchase_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "kit_purchase_verified": {
+          "type": "boolean",
+          "description": "Verified owner of one or more botanical kits."
+        },
+        "last_purchase_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "purchase_source": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["subscriber_id", "bloomlab_purchase_verified", "created_at", "updated_at"]
+    },
+    "NewsletterCampaign": {
+      "title": "Newsletter Campaign",
+      "description": "A scheduled or sent newsletter edition.",
+      "type": "object",
+      "properties": {
+        "edition_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "theme": {
+          "type": "string"
+        },
+        "target_segments": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "subject": {
+          "type": "string"
+        },
+        "preheader": {
+          "type": "string"
+        },
+        "html_content": {
+          "type": "string"
+        },
+        "text_content": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["draft", "review", "approved", "scheduled", "sent", "blocked", "cancelled"]
+        },
+        "quality_report": {
+          "type": "object"
+        },
+        "created_by": {
+          "type": "string",
+          "enum": ["agent", "human"]
+        },
+        "approved_by": {
+          "type": "string"
+        },
+        "scheduled_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "sent_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["theme", "status", "created_at", "updated_at"]
+    },
+    "CampaignEvent": {
+      "title": "Campaign Event",
+      "description": "Tracking event for a newsletter (open, click, etc.).",
+      "type": "object",
+      "properties": {
+        "campaign_id": {
+          "type": "string"
+        },
+        "subscriber_id": {
+          "type": "string"
+        },
+        "event_type": {
+          "type": "string",
+          "enum": ["delivered", "opened", "clicked", "unsubscribed", "bounced", "complained", "converted"]
+        },
+        "link_id": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "metadata": {
+          "type": "object"
+        }
+      },
+      "required": ["campaign_id", "subscriber_id", "event_type", "timestamp"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "A purchase record for products in the store.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "customerName": { "type": "string" },
+        "address": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "type": "string" },
+              "price": { "type": "number" },
+              "quantity": { "type": "number" }
+            }
+          }
+        },
+        "total": { "type": "number" },
+        "status": { "type": "string", "enum": ["pending", "paid", "shipped", "canceled"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "email", "items", "total", "status", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/subscribers/{subscriberId}": {
+      "schema": "Subscriber",
+      "description": "Collection of newsletter subscribers."
+    },
+    "/customers/{customerId}": {
+      "schema": "Customer",
+      "description": "Collection of customer purchase data."
+    },
+    "/newsletter_campaigns/{campaignId}": {
+      "schema": "NewsletterCampaign",
+      "description": "Collection of newsletter campaigns."
+    },
+    "/campaign_events/{eventId}": {
+      "schema": "CampaignEvent",
+      "description": "Collection of engagement events."
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Collection of store orders."
+    }
+  }
+}

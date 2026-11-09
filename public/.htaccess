@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # Si le fichier ou répertoire existe physiquement, on le sert directement
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Sinon, on renvoie vers index.html pour laisser le SPA React gérer le routage
+  RewriteRule ^ index.html [L]
+</IfModule>

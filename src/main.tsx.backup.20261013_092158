@@ -1,0 +1,37 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import ErrorBoundary from './components/ErrorBoundary';
+import './index.css';
+
+// CAPTURE TOUTE ERREUR, même hors React
+window.addEventListener('error', (e) => {
+  console.error('[GLOBAL ERROR]', e.message, e.filename, e.lineno, e.colno, e.error?.stack);
+  document.body.innerHTML = `<div style="padding:2rem;background:#300;color:#fff;font-family:monospace;min-height:100vh;">
+    <h1>ERREUR GLOBALE DÉTECTÉE</h1>
+    <pre>${e.message}\n${e.filename}:${e.lineno}:${e.colno}\n${e.error?.stack || ''}</pre>
+  </div>`;
+});
+
+window.addEventListener('unhandledrejection', (e) => {
+  console.error('[UNHANDLED REJECTION]', e.reason?.message || e.reason, e.reason?.stack);
+  document.body.innerHTML = `<div style="padding:2rem;background:#300;color:#fff;font-family:monospace;min-height:100vh;">
+    <h1>PROMISE NON GÉRÉE</h1>
+    <pre>${e.reason?.message || e.reason}\n${e.reason?.stack || ''}</pre>
+  </div>`;
+});
+
+const rootElement = document.getElementById('root');
+
+console.log('=== [REACT INITIALIZATION - GROUP 1 APP] ===');
+console.log('Root element:', rootElement);
+
+if (rootElement) {
+  ReactDOM.createRoot(rootElement).render(
+    <React.StrictMode>
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
+    </React.StrictMode>
+  );
+}

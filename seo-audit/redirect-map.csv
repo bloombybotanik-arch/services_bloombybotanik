@@ -1,0 +1,10 @@
+source_url,target_url,status_code,reason
+/herbier,/bibliotheque-savoirs,301,Unification Herbier -> Bibliothèque
+/bibliotheque,/bibliotheque-savoirs,301,Unification Herbier -> Bibliothèque
+/shop,/boutique,301,Standardisation URL Française
+/products,/boutique,301,Standardisation URL Française
+/herboristerie,/bibliotheque-savoirs,301,Standardisation Terme Botanique
+/phytotherapie,/phytotherapie-reset,301,Standardisation Protocole Bloom
+/boutique/confort-digestif,/boutique/duo-argiles,301,Migration Produit
+/boutique/feu-actualisateur,/boutique/purete-sanguine,301,Migration Produit
+/boutique/nutri-profonde,/boutique/expert-peaux,301,Migration Produit

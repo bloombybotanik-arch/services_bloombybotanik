@@ -1,0 +1,190 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // -------------------------------------------------------------------------
+    // HELPERS
+    // -------------------------------------------------------------------------
+    
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.token.email == 'bloombybotanik@gmail.com' ||
+        request.auth.token.email == 'bloombybotanique@gmail.com' ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // -------------------------------------------------------------------------
+    // ENTITY VALIDATIONS
+    // -------------------------------------------------------------------------
+
+    function isValidUser(data) {
+      return data.keys().hasAll(['uid', 'email', 'status', 'createdAt']) &&
+             data.uid == request.auth.uid &&
+             data.email is string &&
+             data.status in ['gratuit', 'freemium', 'premium', 'owner'] &&
+             data.createdAt == request.time;
+    }
+
+    function isValidOrder(data) {
+      return data.keys().hasAll(['userId', 'items', 'totalCents', 'status', 'createdAt']) &&
+             data.userId == request.auth.uid &&
+             data.items is list &&
+             data.totalCents is int &&
+             data.status in ['pending', 'paid', 'shipped', 'canceled'] &&
+             data.createdAt == request.time;
+    }
+
+    function isValidSubscription(data) {
+      return data.keys().hasAll(['userId', 'stripeSubscriptionId', 'status']) &&
+             data.userId == request.auth.uid &&
+             data.status in ['active', 'past_due', 'trialing', 'canceled'];
+    }
+
+    function isValidInteraction(data) {
+      return data.keys().hasAll(['userId', 'type', 'createdAt']) &&
+             data.userId == request.auth.uid &&
+             data.type is string &&
+             data.createdAt == request.time;
+    }
+
+    // --- Newsletter & Customer Validations ---
+
+    function isValidSubscriber(data) {
+      return data.keys().hasAll(['email', 'marketing_consent', 'email_status', 'created_at', 'updated_at']) &&
+             data.email is string && data.email.size() <= 256 &&
+             data.marketing_consent is bool &&
+             data.email_status in ['active', 'unsubscribed', 'bounced', 'suppressed'] &&
+             data.created_at <= request.time &&
+             data.updated_at == request.time;
+    }
+
+    function isValidCustomer(data) {
+      return data.keys().hasAll(['subscriber_id', 'bloomlab_purchase_verified', 'created_at', 'updated_at']) &&
+             isValidId(data.subscriber_id) &&
+             data.bloomlab_purchase_verified is bool &&
+             data.created_at <= request.time &&
+             data.updated_at == request.time;
+    }
+
+    function isValidCampaign(data) {
+      return data.keys().hasAll(['theme', 'status', 'created_at', 'updated_at']) &&
+             data.theme is string && data.theme.size() <= 512 &&
+             data.status in ['draft', 'review', 'approved', 'scheduled', 'sent', 'blocked', 'cancelled'] &&
+             data.created_at <= request.time &&
+             data.updated_at == request.time;
+    }
+
+    function isValidCampaignEvent(data) {
+      return data.keys().hasAll(['campaign_id', 'subscriber_id', 'event_type', 'timestamp']) &&
+             isValidId(data.campaign_id) &&
+             isValidId(data.subscriber_id) &&
+             data.event_type in ['delivered', 'opened', 'clicked', 'unsubscribed', 'bounced', 'complained', 'converted'] &&
+             data.timestamp <= request.time;
+    }
+
+    // -------------------------------------------------------------------------
+    // RULES
+    // -------------------------------------------------------------------------
+
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Users collection
+    match /users/{userId} {
+      allow get: if isOwner(userId) || isAdmin();
+      allow list: if isAdmin();
+      allow create: if isSignedIn() && isValidUser(incoming());
+      allow update: if (isOwner(userId) || isAdmin()) && (
+        // Action: Update profile
+        incoming().diff(existing()).affectedKeys().hasOnly(['displayName', 'optInNewsletter', 'optInNurturing', 'lastActivityAt', 'updatedAt']) ||
+        // Action: Admin update status
+        (isAdmin() && incoming().diff(existing()).affectedKeys().hasAny(['status', 'isPremiumUntil', 'machineOwned', 'machineSerialNumber']))
+      );
+    }
+
+    // Subscribers collection
+    match /subscribers/{subId} {
+      allow get: if isAdmin() || (isSignedIn() && (resource.data.email == request.auth.token.email || subId == request.auth.uid));
+      allow list: if isAdmin();
+      allow create: if true; // Allow anyone to subscribe via footer
+      allow update: if isAdmin() || (isSignedIn() && (existing().email == request.auth.token.email || subId == request.auth.uid) && 
+        incoming().diff(existing()).affectedKeys().hasOnly(['first_name', 'preferences', 'marketing_consent', 'updated_at']));
+    }
+
+    // Customers collection (linked to subscribers)
+    match /customers/{custId} {
+      allow get: if isAdmin();
+      allow list: if isAdmin();
+      allow create, update: if isAdmin();
+    }
+
+    // Newsletter Campaigns
+    match /newsletter_campaigns/{campId} {
+      allow read: if isAdmin();
+      allow write: if isAdmin();
+    }
+
+    // Campaign Events
+    match /campaign_events/{eventId} {
+      allow read: if isAdmin();
+      allow create: if true; // Tracking pixels/links can create events
+    }
+
+    // Products collection (Statique)
+    match /products/{productId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Orders collection
+    match /orders/{orderId} {
+      allow get: if isOwner(existing().userId) || isAdmin();
+      allow list: if (isSignedIn() && resource.data.userId == request.auth.uid) || isAdmin();
+      allow create: if isSignedIn() && isValidOrder(incoming());
+      allow update: if isAdmin(); // Only admins can update order status (paid, shipped)
+    }
+
+    // Subscriptions collection
+    match /subscriptions/{subId} {
+      allow get: if isOwner(existing().userId) || isAdmin();
+      allow list: if (isSignedIn() && resource.data.userId == request.auth.uid) || isAdmin();
+      allow create: if isAdmin(); // Usually created via webhook
+      allow update: if isAdmin();
+    }
+
+    // Interactions collection
+    match /interactions/{interactionId} {
+      allow read: if isOwner(resource.data.userId) || isAdmin();
+      allow create: if isSignedIn() && isValidInteraction(incoming());
+      allow update, delete: if false; // Interactions are immutable records
+    }
+
+    // Admin lookup
+    match /admins/{adminId} {
+      allow read: if isSignedIn();
+      allow write: if false; // Provisioned manually
+    }
+  }
+}

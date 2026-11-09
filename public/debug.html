@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Debug Test Vanilla</title>
+</head>
+<body style="font-family: sans-serif; padding: 2rem; background: #3E4A3D; color: #FAF7F2;">
+  <h1 style="color: #C5A059;">Test Vanilla JavaScript</h1>
+  <div id="output" style="font-size: 1.5rem; margin-top: 1rem; padding: 1rem; background: #1A3329; border-radius: 8px;">
+    Initialisation...
+  </div>
+  <script>
+    console.log('[DEBUG.HTML] Script executing');
+    var el = document.getElementById('output');
+    if (el) {
+      el.innerText = 'JavaScript fonctionne';
+      el.style.color = '#74c0fc';
+    }
+    console.log('[DEBUG.HTML] JavaScript fonctionne confirmé');
+  </script>
+</body>
+</html>

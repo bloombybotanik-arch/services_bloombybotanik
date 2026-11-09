@@ -1,0 +1,453 @@
+.sectionContainer {
+  padding: 5rem 1rem;
+  background-color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .sectionContainer {
+    padding: 6.5rem 2rem;
+  }
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3rem auto;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1rem;
+  background: rgba(232, 119, 46, 0.15);
+  color: #E8772E;
+  border: 1px solid rgba(232, 119, 46, 0.3);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.title {
+  color: #1E2E25;
+  font-size: 2.25rem;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+.subtitle {
+  color: #4A5D4A;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Trustpilot / Avis vérifiés score bar */
+.verifiedWidget {
+  background: #FAF7F2;
+  border: 1px solid #E7DFD3;
+  border-radius: 1.5rem;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .verifiedWidget {
+    flex-direction: row;
+  }
+}
+
+.scoreBlock {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bigScore {
+  font-size: 2.5rem;
+  font-weight: 950;
+  color: #1E2E25;
+  line-height: 1;
+}
+
+.starGroup {
+  display: flex;
+  gap: 0.25rem;
+  color: #E8772E;
+}
+
+.starIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: #E8772E;
+  color: #E8772E;
+}
+
+.scoreMeta {
+  font-size: 0.85rem;
+  color: #4A5D4A;
+  font-weight: 600;
+}
+
+.verifiedLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #E6F4EA;
+  color: #137333;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+/* Carousel layout */
+.carouselWrapper {
+  position: relative;
+  margin-bottom: 4.5rem;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cardsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.testimonialCard {
+  background-color: #FFFFFF;
+  border: 1px solid #E7DFD3;
+  border-radius: 1.75rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(30, 46, 37, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(30, 46, 37, 0.08);
+  border-color: #E8772E;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.clientInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 2px solid #E8772E;
+  background: #1E2E25;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.clientName {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #1E2E25;
+}
+
+.clientRole {
+  font-size: 0.75rem;
+  color: #4A5D4A;
+  font-weight: 500;
+}
+
+.verifiedTag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #10B981;
+  background: #D1FAE5;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.quote {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #1E2E25;
+  font-style: italic;
+  position: relative;
+}
+
+.videoTrigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  background: #E8772E;
+  color: #FFFFFF;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.videoTrigger:hover {
+  background: #D4651F;
+}
+
+/* Nav Controls */
+.carouselControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.navButton {
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  border: 1px solid #D8CBB7;
+  background: #FFFFFF;
+  color: #3E4A3D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navButton:hover {
+  background: #3E4A3D;
+  color: #FFFFFF;
+  border-color: #3E4A3D;
+}
+
+/* Avant / Après Section */
+.beforeAfterSection {
+  background: #FAF7F2;
+  border-radius: 2.25rem;
+  border: 1px solid #E7DFD3;
+  padding: 2.5rem 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .beforeAfterSection {
+    padding: 3.5rem 3rem;
+  }
+}
+
+.beforeAfterHeader {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.beforeAfterTitle {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #3E4A3D;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .beforeAfterTitle {
+    font-size: 2.25rem;
+  }
+}
+
+.tabButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.tabBtn {
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.825rem;
+  font-weight: 800;
+  cursor: pointer;
+  border: 1px solid #D8CBB7;
+  background: #FFFFFF;
+  color: #A8B8A0;
+  transition: all 0.2s ease;
+}
+
+.tabBtnActive {
+  background: #A8B8A0;
+  color: #FFFFFF;
+  border-color: #A8B8A0;
+}
+
+.comparisonBox {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .comparisonBox {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.comparisonPanel {
+  background: #FFFFFF;
+  border-radius: 1.5rem;
+  padding: 1.75rem;
+  border: 1px solid #E7DFD3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.comparisonPanelBefore {
+  border-left: 5px solid #EF4444;
+}
+
+.comparisonPanelAfter {
+  border-left: 5px solid #10B981;
+}
+
+.panelLabel {
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.labelBefore {
+  color: #DC2626;
+}
+
+.labelAfter {
+  color: #059669;
+}
+
+.panelMedia {
+  width: 100%;
+  height: 200px;
+  border-radius: 1rem;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  background: #E2E8F0;
+}
+
+.panelTitle {
+  font-weight: 900;
+  font-size: 1.15rem;
+  color: #3E4A3D;
+  margin-bottom: 0.5rem;
+}
+
+.panelText {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+.panelResultMetric {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #F1F5F9;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Modal video viewer */
+.videoModalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.videoModalBox {
+  background: #3E4A3D;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  max-width: 680px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(200, 171, 138, 0.4);
+}
+
+.closeModalBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}

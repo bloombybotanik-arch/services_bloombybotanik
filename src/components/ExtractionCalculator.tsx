@@ -1,0 +1,154 @@
+import React, { useState } from 'react';
+import { motion } from 'motion/react';
+import { FlaskConical, Droplets, Zap, Info, Calculator, CheckCircle2, X } from 'lucide-react';
+
+interface ExtractionCalculatorProps {
+  onClose?: () => void;
+  isModal?: boolean;
+}
+
+export default function ExtractionCalculator({ onClose, isModal = false }: ExtractionCalculatorProps = {}) {
+  const [volume, setVolume] = useState<number>(100);
+  const [targetDegree, setTargetDegree] = useState<45 | 55 | 60>(45);
+
+  const calculate = () => {
+    // Ratios for Alcohol 96°
+    const ratios = {
+      45: { alcohol: 0.469, water: 0.531 },
+      55: { alcohol: 0.573, water: 0.427 },
+      60: { alcohol: 0.625, water: 0.375 }
+    };
+
+    const ratio = ratios[targetDegree];
+    return {
+      alcohol: (volume * ratio.alcohol).toFixed(1),
+      water: (volume * ratio.water).toFixed(1)
+    };
+  };
+
+  const results = calculate();
+
+  return (
+    <div 
+      className="relative rounded-[32px] p-6 sm:p-8 md:p-10 border shadow-2xl transition-all"
+      style={{ backgroundColor: '#FAF7F2', borderColor: '#E7DFD3' }}
+    >
+      {onClose && (
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute top-5 right-5 p-2 rounded-full bg-[#3E4A3D]/5 hover:bg-[#3E4A3D]/10 text-[#3E4A3D] transition-colors cursor-pointer"
+          aria-label="Fermer la calculatrice"
+        >
+          <X className="w-5 h-5" />
+        </button>
+      )}
+
+      <div className="flex items-center gap-3 mb-6 sm:mb-8 pr-8">
+        <div className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 shadow-xs" style={{ backgroundColor: '#3E4A3D', color: '#C8AB8A' }}>
+          <Calculator className="w-6 h-6 text-[#C8AB8A]" />
+        </div>
+        <div>
+          <h3 className="text-xl md:text-2xl font-bold" style={{ color: '#3E4A3D' }}>Calculateur de Dilution</h3>
+          <p className="text-xs font-semibold" style={{ color: '#A8B8A0', opacity: 0.75 }}>
+            Ajustez le volume et le degré cible pour obtenir les volumes précis d'alcool 96° et d'eau distillée.
+          </p>
+        </div>
+      </div>
+
+      <div className="space-y-8">
+        {/* Volume Input */}
+        <div>
+          <label className="block text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#3E4A3D' }}>
+            Volume Final Souhaité (ml)
+          </label>
+          <div className="relative">
+            <input 
+              type="number" 
+              value={volume}
+              onChange={(e) => setVolume(Math.max(1, Number(e.target.value)))}
+              className="w-full rounded-2xl px-6 py-4 font-bold text-lg border focus:outline-none focus:ring-2 transition-all"
+              style={{ 
+                backgroundColor: '#FFFFFF', 
+                color: '#3E4A3D', 
+                borderColor: '#D8CFBF' 
+              }}
+            />
+            <span className="absolute right-6 top-1/2 -translate-y-1/2 font-bold text-sm" style={{ color: '#3E4A3D', opacity: 0.45 }}>ml</span>
+          </div>
+        </div>
+
+        {/* Target Degree Selection */}
+        <div>
+          <label className="block text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#3E4A3D' }}>
+            Degré Cible (Degré de Macération)
+          </label>
+          <div className="grid grid-cols-3 gap-3">
+            {[45, 55, 60].map((degree) => {
+              const isSelected = targetDegree === degree;
+              return (
+                <button
+                  key={degree}
+                  type="button"
+                  onClick={() => setTargetDegree(degree as any)}
+                  className="py-3.5 rounded-xl font-bold text-sm md:text-base transition-all cursor-pointer border shadow-sm"
+                  style={{
+                    backgroundColor: isSelected ? '#3E4A3D' : '#FFFFFF',
+                    color: isSelected ? '#FFFFFF' : '#3E4A3D',
+                    borderColor: isSelected ? '#3E4A3D' : '#D8CFBF'
+                  }}
+                >
+                  {degree}°
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Results */}
+        <div 
+          className="rounded-2xl p-6 md:p-8 shadow-lg space-y-6"
+          style={{ backgroundColor: '#3E4A3D', color: '#ffffff' }}
+        >
+          <div className="flex items-center gap-2 text-white/90">
+            <Info className="w-5 h-5 text-[#C8AB8A]" />
+            <span className="text-xs font-bold uppercase tracking-wider text-[#C8AB8A]">
+              Dosages Précis (Alcool 96°)
+            </span>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div 
+              className="p-5 rounded-2xl border transition-all"
+              style={{ backgroundColor: 'rgba(200, 171, 138, 0.15)', borderColor: 'rgba(200, 171, 138, 0.4)' }}
+            >
+              <div className="text-2xl sm:text-3xl font-black text-[#F59E0B]">{results.alcohol} ml</div>
+              <div className="text-xs font-bold uppercase tracking-wider text-amber-200 mt-1 flex items-center gap-1.5">
+                <Zap className="w-3.5 h-3.5 text-[#F59E0B]" /> Alcool 96°
+              </div>
+            </div>
+            <div 
+              className="p-5 rounded-2xl border transition-all"
+              style={{ backgroundColor: 'rgba(14, 165, 233, 0.15)', borderColor: 'rgba(14, 165, 233, 0.4)' }}
+            >
+              <div className="text-2xl sm:text-3xl font-black text-[#38BDF8]">{results.water} ml</div>
+              <div className="text-xs font-bold uppercase tracking-wider text-sky-200 mt-1 flex items-center gap-1.5">
+                <Droplets className="w-3.5 h-3.5 text-[#38BDF8]" /> Eau Distillée
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div 
+          className="flex items-start gap-3 p-4 rounded-2xl border"
+          style={{ backgroundColor: '#FFFFFF', borderColor: '#E7DFD3' }}
+        >
+          <CheckCircle2 className="w-5 h-5 text-[#C8AB8A] shrink-0 mt-0.5" />
+          <p className="text-xs leading-relaxed italic" style={{ color: '#3E4A3D', opacity: 0.85 }}>
+            Ce protocole est optimisé pour une extraction à basse température avec la <strong>BloomLab®</strong> afin de préserver l'intégralité du Totum végétal.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}

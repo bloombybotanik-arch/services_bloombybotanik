@@ -1,0 +1,76 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+// import TestMinimal from './TestMinimal'; // En réserve pour diagnostic isolé
+import ErrorBoundary from './components/ErrorBoundary';
+import './index.css';
+
+// CAPTURE TOUTE ERREUR, même hors React
+window.addEventListener('error', (e) => {
+  console.error('[GLOBAL ERROR]', e.message, e.filename, e.lineno, e.colno, e.error?.stack);
+  document.body.innerHTML = `<div style="padding:2rem;background:#300;color:#fff;font-family:monospace;min-height:100vh;">
+    <h1>ERREUR GLOBALE DÉTECTÉE</h1>
+    <pre>${e.message}\n${e.filename}:${e.lineno}:${e.colno}\n${e.error?.stack || ''}</pre>
+  </div>`;
+});
+
+window.addEventListener('unhandledrejection', (e) => {
+  console.error('[UNHANDLED REJECTION]', e.reason?.message || e.reason, e.reason?.stack);
+  document.body.innerHTML = `<div style="padding:2rem;background:#300;color:#fff;font-family:monospace;min-height:100vh;">
+    <h1>PROMISE NON GÉRÉE</h1>
+    <pre>${e.reason?.message || e.reason}\n${e.reason?.stack || ''}</pre>
+  </div>`;
+});
+
+// Détecter les erreurs d'hydratation spécifiquement
+const originalError = console.error;
+console.error = (...args) => {
+  const msg = args.join(' ');
+  if (msg.includes('Hydration') || msg.includes('hydrat') || msg.includes('Text content does not match') || msg.includes('Expected server HTML')) {
+    document.body.innerHTML = `<div style="padding:2rem;background:#330;color:#ff0;font-family:monospace;min-height:100vh;">
+      <h1>ERREUR D'HYDRATATION</h1>
+      <pre>${msg}</pre>
+    </div>`;
+  }
+  originalError.apply(console, args);
+};
+
+const rootElement = document.getElementById('root');
+
+console.log('=== [REACT INITIALIZATION] ===');
+console.log('Root element:', rootElement);
+
+if (rootElement) {
+  const isSsrPresent = rootElement.hasChildNodes() && rootElement.innerHTML.trim().length > 0;
+
+  if (isSsrPresent) {
+    try {
+      ReactDOM.hydrateRoot(
+        rootElement,
+        <React.StrictMode>
+          <ErrorBoundary>
+            <App />
+          </ErrorBoundary>
+        </React.StrictMode>
+      );
+    } catch (err) {
+      console.warn('[Hydration mismatch, fallback to createRoot]:', err);
+      rootElement.innerHTML = '';
+      ReactDOM.createRoot(rootElement).render(
+        <React.StrictMode>
+          <ErrorBoundary>
+            <App />
+          </ErrorBoundary>
+        </React.StrictMode>
+      );
+    }
+  } else {
+    ReactDOM.createRoot(rootElement).render(
+      <React.StrictMode>
+        <ErrorBoundary>
+          <App />
+        </ErrorBoundary>
+      </React.StrictMode>
+    );
+  }
+}

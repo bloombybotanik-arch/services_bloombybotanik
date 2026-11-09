@@ -1,0 +1,5 @@
+sitemap_url,total_urls,status,anomalies
+/sitemap.xml,15,VALID,Index sitemap correct
+/sitemap-fr.xml,12,VALID,Contient les routes prioritaires FR
+/sitemap-en.xml,8,VALID,Contient les routes prioritaires EN
+/sitemap-de.xml,8,VALID,Contient les routes prioritaires DE

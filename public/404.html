@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bloom by Botanik</title>
+    <script>
+      // GitHub Pages SPA redirect trick: preserve the requested path
+      // and hand it back to index.html via sessionStorage so App.tsx
+      // can restore the correct view on load.
+      sessionStorage.setItem('spa-redirect-path', location.pathname + location.search + location.hash);
+      location.replace('/');
+    </script>
+  </head>
+  <body>
+    Redirection...
+  </body>
+</html>
