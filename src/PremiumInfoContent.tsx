@@ -85,10 +85,39 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
 
   return (
     <div data-product-page="true" className="product-detail flex-1 bg-[#F9F9F7] min-h-screen">
-      {/* 1. Hero: Fond vert sombre #3E4A3D garanti, texte blanc et accents ambrés */}
+      {/* Promotional Banner Black Friday */}
+      <div className="bg-[#D97706]/10 text-[#B45309] border-b border-[#D97706]/30 text-center py-2.5 px-4 text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
+        {isFR 
+          ? "Black Friday 2026 : Soins Botaniques pour toute la Famille - Pack Complet à 59 €" 
+          : "Black Friday 2026: Botanical Care for the Whole Family - Complete Pack at 59 €"}
+      </div>
+
+      {/* 1. Bandeau d'arborescence Boutique : Vert Profond du Menu #0F261E */}
+      <div className="w-full bg-[#0F261E] border-b border-white/10 px-4 md:px-8 py-3.5 text-left">
+        <nav aria-label="Fil d'Ariane" className="max-w-7xl mx-auto flex items-center space-x-2 text-sm text-white">
+          <button 
+            onClick={() => onNavigate('home')}
+            className="text-white/80 hover:text-[#F5F0E6] transition-colors cursor-pointer"
+          >
+            {isFR ? "Accueil" : "Home"}
+          </button>
+          <span className="text-white/40">/</span>
+          <button 
+            onClick={() => onNavigate('boutique')}
+            className="text-white/80 hover:text-[#F5F0E6] transition-colors cursor-pointer"
+          >
+            {isFR ? "Boutique" : "Shop"}
+          </button>
+          <span className="text-white/40">/</span>
+          <span className="text-white font-bold" aria-current="page">
+            {isFR ? "Abonnement Numérique" : "Digital Subscription"}
+          </span>
+        </nav>
+      </div>
+
+      {/* 2. Hero: Section Vert Sauge Foncé #1E2E25 */}
       <section 
-        className="relative py-20 md:py-28 px-6 overflow-hidden text-white"
-        style={{ backgroundColor: '#3E4A3D', color: '#ffffff' }}
+        className="relative py-16 md:py-24 px-6 overflow-hidden text-white bg-[#1E2E25] border-b border-white/10"
       >
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div

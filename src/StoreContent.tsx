@@ -664,7 +664,11 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                   <OptimizedImage 
                     src={product.image} 
                     alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Machine à infusion botanique, tisanes et remèdes naturels`} 
-                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
+                    className={`w-full h-full object-cover transform transition-transform duration-700 ${
+                      product.id === 'duo-argiles' 
+                        ? 'scale-125 sm:scale-130 group-hover:scale-135' 
+                        : 'group-hover:scale-110'
+                    }`}
                   />
                   <button 
                     type="button"

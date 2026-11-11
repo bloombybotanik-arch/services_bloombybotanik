@@ -81,9 +81,9 @@ export default function CosmeticsContent({
 
   return (
     <div className="w-full min-h-screen bg-[#FAF7F2] pb-20">
-      {/* En-tête contextuel PageIntroHeader */}
+      {/* En-tête contextuel PageIntroHeader harmonisé Vert Forêt */}
       <PageIntroHeader
-        theme="sage"
+        breadcrumb="Accueil / Votre Pratique / Cosmétique Botanique"
         badge="VOTRE PRATIQUE • SOINS TOPIQUES"
         title="La Cosmétique Botanique Vivante"
         subtitle="Nourrir la peau et la barrière cutanée par le Totum médicinal"
@@ -245,7 +245,7 @@ export default function CosmeticsContent({
                     }}
                     className={`w-full text-left p-4 rounded-xl transition-all duration-300 relative cursor-pointer ${
                       selectedRecipe.plant_id === recipe.plant_id 
-                        ? 'bg-[#A8B8A0] text-[#0F261E] font-bold shadow-md border border-[#0F261E]/20' 
+                        ? 'bg-[#1E2E25] text-white font-bold shadow-md border border-[#1E2E25]' 
                         : 'bg-white text-botanik-green hover:bg-[#F5F3EB] border border-botanik-green/10'
                     }`}
                   >
@@ -254,7 +254,7 @@ export default function CosmeticsContent({
                         <div className="flex items-center gap-2 mb-1">
                           <h4 className={`font-bold ${
                             selectedRecipe.plant_id === recipe.plant_id 
-                              ? 'text-[#0F261E]' 
+                              ? 'text-white' 
                               : isLocked ? 'text-botanik-green/60' : 'text-botanik-green'
                           }`}>
                             {recipe.nom_commun.split('—')[0].trim()}
@@ -262,7 +262,7 @@ export default function CosmeticsContent({
                         </div>
                         <div className="flex flex-wrap gap-1.5 items-center mb-1.5">
                           <span className={`text-[10px] font-bold uppercase px-1.5 py-0.5 rounded ${
-                            selectedRecipe.plant_id === recipe.plant_id ? 'bg-white/40 text-[#0F261E]' : 'bg-botanik-green/5 text-botanik-green/40'
+                            selectedRecipe.plant_id === recipe.plant_id ? 'bg-white/20 text-white border border-white/20' : 'bg-botanik-green/5 text-botanik-green/40'
                           }`}>
                             {recipe.categorie}
                           </span>
@@ -270,12 +270,12 @@ export default function CosmeticsContent({
                             recipeId={recipe.plant_id}
                             variant="compact"
                             fallback={{ isCosmetic: true, category: 'cosmetique' }}
-                            className={selectedRecipe.plant_id === recipe.plant_id ? '!bg-white/40 !text-[#0F261E] !border-[#0F261E]/20 !font-bold' : ''}
+                            className={selectedRecipe.plant_id === recipe.plant_id ? '!bg-white/20 !text-white !border-white/20 !font-bold' : ''}
                           />
                         </div>
                         <p className={`text-xs ${
                           selectedRecipe.plant_id === recipe.plant_id 
-                            ? 'text-[#0F261E]/80 font-medium' 
+                            ? 'text-white/90 font-medium' 
                             : isLocked ? 'text-botanik-green/40' : 'text-botanik-green/60'
                         }`}>
                           {recipe.nom_commun.split('—')[1]?.trim() || recipe.type_produit}

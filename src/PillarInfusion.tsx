@@ -33,7 +33,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, view: string, param?: string) => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLElement>, view: string, param?: string) => {
     e.preventDefault();
     onNavigate(view, param);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -41,20 +41,26 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
 
   return (
     <main className="bg-[#FAF7F2] text-[#3E4A3D] min-h-screen">
-      {/* SECTION 0 — EN-TÊTE & INTRODUCTION */}
-      <header className="relative bg-[#0F261E] text-white pt-12 pb-16 md:pt-16 md:pb-24 overflow-hidden border-b border-white/10">
-        <div className="max-w-5xl mx-auto px-6">
-          {/* Fil d'Ariane */}
-          <nav aria-label="Fil d'Ariane" className="mb-6">
-            <ol className="flex items-center space-x-2 text-xs text-white/75">
+      {/* SECTION 0 — EN-TÊTE & INTRODUCTION VERT SAUGE FONCÉ #1E2E25 */}
+      <header className="w-full bg-[#1E2E25] text-white border-b border-white/10">
+        {/* Barre de fil d'Ariane tout en haut : Vert Profond du Menu #0F261E */}
+        <div className="w-full bg-[#0F261E] border-b border-white/10 px-4 md:px-8 py-3.5">
+          <nav aria-label="Fil d'Ariane" className="max-w-7xl mx-auto">
+            <ol className="flex items-center space-x-2 text-sm text-white">
               <li>
                 <a 
                   href={lang === 'fr' ? '/' : `/${lang}/`} 
                   onClick={(e) => handleLinkClick(e, 'home')}
-                  className="hover:text-white transition-colors"
+                  className="text-white/80 hover:text-[#F5F0E6] transition-colors"
                 >
                   {t.meta.breadcrumbHome}
                 </a>
+              </li>
+              <li><span className="text-white/40">/</span></li>
+              <li>
+                <span className="text-white/80 hover:text-[#F5F0E6] transition-colors cursor-pointer" onClick={(e) => handleLinkClick(e, 'home')}>
+                  {lang === 'fr' ? 'La Méthode A/B' : 'The A/B Method'}
+                </span>
               </li>
               <li><span className="text-white/40">/</span></li>
               <li className="text-white font-bold" aria-current="page">
@@ -62,6 +68,9 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
               </li>
             </ol>
           </nav>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20">
 
           <div className="grid lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-6">

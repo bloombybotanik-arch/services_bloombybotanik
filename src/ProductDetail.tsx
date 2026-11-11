@@ -113,10 +113,18 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
   };
 
   return (
-    <article data-product-page="true" className="product-detail w-full max-w-[1200px] mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-20 animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <script type="application/ld+json">
-        {JSON.stringify(productSchema)}
-      </script>
+    <>
+      {/* Promotional Banner Black Friday */}
+      <div className="bg-[#D97706]/10 text-[#B45309] border-b border-[#D97706]/30 text-center py-2.5 px-4 text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
+        {lang === 'fr' 
+          ? "Black Friday 2026 : Soins Botaniques pour toute la Famille - Pack Complet à 59 €" 
+          : "Black Friday 2026: Botanical Care for the Whole Family - Complete Pack at 59 €"}
+      </div>
+
+      <article data-product-page="true" className="product-detail w-full max-w-[1200px] mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-20 animate-in fade-in slide-in-from-bottom-4 duration-700">
+        <script type="application/ld+json">
+          {JSON.stringify(productSchema)}
+        </script>
       <script type="application/ld+json">
         {JSON.stringify(breadcrumbSchema)}
       </script>
@@ -190,7 +198,7 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
                 fetchPriority="high"
                 srcSet={`${gallery[activeImage].src} 600w, ${gallery[activeImage].src} 1200w`}
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="w-full h-full min-h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                className="w-full h-full min-h-full object-cover object-center transition-transform duration-700 scale-120 sm:scale-125 hover:scale-130"
               />
             ) : (
               <img 
@@ -481,5 +489,6 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
         </div>
       )}
     </article>
-  );
+  </>
+);
 }

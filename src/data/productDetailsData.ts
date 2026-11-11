@@ -223,19 +223,19 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       };
     })(),
     'bundle-apothicaire': {
-      name: isFR ? "L'Herbier Complet — Pack Rentrée 2026" : isDE ? "Das vollständige Herbarium — Paket Rente 2026" : "Complete Herbarium — 2026 Back-to-School Pack",
+      name: isFR ? "L'Herbier Complet — Pack Black Friday 2026" : isDE ? "Das vollständige Herbarium — Black Friday Paket 2026" : "Complete Herbarium — Black Friday 2026 Pack",
       subtitle: isFR ? "TOUS LES REMÈDES + DUO ARGILES" : isDE ? "ALLE HEILMITTEL + ERDEN-DUO" : "ALL REMEDIES + CLAYS DUO",
       price: 49.00,
       originalPrice: 87.50,
       images: [trioPouchesImg, duoArgilesImg, seveFondamentaleImg],
       description: isFR 
-        ? "L'offre la plus irrésistible de la rentrée. Regroupe l'intégralité de nos mélanges de plantes et le Duo Argiles Renaissance."
+        ? "L'offre la plus irrésistible du Black Friday. Regroupe l'intégralité de nos mélanges de plantes et le Duo Argiles Renaissance."
         : isDE
-        ? "Das unwiderstehlichste Angebot der Saison. Enthält alle unsere Pflanzenmischungen und das Renaissance-Ton-Duo."
-        : "The most irresistible offer of the season. Includes all our plant blends and the Renaissance Clays Duo.",
+        ? "Das unwiderstehlichste Angebot zum Black Friday. Enthält alle unsere Pflanzenmischungen und das Renaissance-Ton-Duo."
+        : "The most irresistible offer of Black Friday. Includes all our plant blends and the Renaissance Clays Duo.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
-          <p class="text-lg mb-8">Ce pack exclusif regroupe l'expertise botanique de Bloom dans une offre unique pour la rentrée 2026.</p>
+          <p class="text-lg mb-8">Ce pack exclusif regroupe l'expertise botanique de Bloom dans une offre unique pour le Black Friday 2026.</p>
           <h3 class="text-xl font-bold mb-4">Contenu de l'offre :</h3>
           <ul class="space-y-2 mb-8">
             <li>• <strong>Duo Renaissance :</strong> Zéolithe & Plantes drainantes</li>

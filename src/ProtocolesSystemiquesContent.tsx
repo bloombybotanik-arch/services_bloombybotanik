@@ -107,8 +107,8 @@ export default function ProtocolesSystemiquesContent({
         lang={lang}
       />
 
-      {/* 2. Hero Section */}
-      <header className="relative border-b border-white/10 bg-gradient-to-b from-[#3E4A3D] via-[#16352B] to-[#3E4A3D] pt-14 pb-16 px-4 sm:px-6">
+      {/* 2. Hero Section : Harmonisé Vert Sauge Foncé #1E2E25 */}
+      <header className="relative border-b border-white/10 bg-[#1E2E25] text-white pt-14 pb-16 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto text-center space-y-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#c9a84c]/10 border border-[#c9a84c]/30 text-[#c9a84c] text-xs font-bold uppercase tracking-widest shadow-sm">
             <ShieldCheck className="w-4 h-4 text-[#c9a84c]" />

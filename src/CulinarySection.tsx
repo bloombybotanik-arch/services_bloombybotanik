@@ -273,9 +273,9 @@ export default function CulinarySection({
 
   return (
     <div className="w-full pb-20">
-      {/* En-tête contextuel PageIntroHeader harmonisé avec Cosmétique Botanique */}
+      {/* En-tête contextuel PageIntroHeader harmonisé Vert Forêt */}
       <PageIntroHeader
-        theme="sage"
+        breadcrumb="Accueil / Votre Pratique / Atelier Culinaire"
         badge="VOTRE PRATIQUE • EXTRACTION CULINAIRE"
         title="La Gastronomie Botanique Vivante"
         subtitle="Révéler les arômes et les bienfaits par le Totum culinaire"

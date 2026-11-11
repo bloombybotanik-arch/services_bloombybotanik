@@ -201,7 +201,7 @@ export default function PhytotherapyResetPage({
   return (
     <GlossaryProvider pageKey="phytotherapie-reset">
       <div 
-        className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 min-h-screen bg-[#3E4A3D] text-[#FAF7F2] font-sans selection:bg-[#c9a84c]/30 selection:text-white pb-24"
+        className="w-full min-h-screen bg-[#FAF7F2] text-[#3E4A3D] font-sans selection:bg-[#c9a84c]/30 selection:text-white pb-24"
         data-bloom-academie="true"
       >
         {/* 1. Header & Secondary Navigation */}
@@ -213,15 +213,16 @@ export default function PhytotherapyResetPage({
           lang={lang}
         />
 
-        {/* 2. Hero Section : Vert Forêt #0F261E & Blanc */}
-        <header className="relative border border-white/10 bg-[#0F261E] pt-14 pb-16 px-4 sm:px-6 rounded-3xl mb-12 shadow-xl text-white">
-          <div className="max-w-5xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/30 border border-white/10 text-[#E8772E] text-xs font-bold uppercase tracking-widest shadow-xs">
+        {/* 2. HERO TEMPLATE : Vert Sauge Foncé #1E2E25 (Navigation assurée par AcademyNavigation au-dessus) */}
+        <header className="w-full bg-[#1E2E25] text-white border-b border-white/10 mb-12">
+          {/* Section contenu */}
+          <div className="px-4 md:px-8 py-12 md:py-20 max-w-7xl mx-auto flex flex-col items-center text-center">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#E8772E] text-xs font-bold uppercase tracking-widest shadow-xs mb-6">
               <Sparkles className="w-4 h-4 text-[#E8772E]" />
               <span>Phytothérapie Systémique • Reset Homéostasique</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sans font-black text-white tracking-tight leading-[1.1]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] mb-6">
               {lang === 'fr' 
                 ? "Le Reset Homéostasique : relancer la pharmacie intérieure" 
                 : lang === 'de'
@@ -229,21 +230,31 @@ export default function PhytotherapyResetPage({
                 : "The Homeostatic Reset: Reactivating the Inner Pharmacy"}
             </h1>
 
-            <p className="text-lg sm:text-xl text-[#FAF7F2]/90 max-w-3xl mx-auto font-normal leading-relaxed italic border-l-2 sm:border-l-0 border-white/30 pl-4 sm:pl-0">
+            <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto font-normal leading-relaxed italic mb-4">
               « Votre corps n’est pas cassé. Il est verrouillé par une charge adaptative devenue trop lourde. »
             </p>
 
-            <p className="text-sm sm:text-base text-[#FAF7F2]/80 max-w-3xl mx-auto font-normal leading-relaxed">
+            <p className="text-sm sm:text-base text-white/80 max-w-3xl mx-auto font-normal leading-relaxed mb-6">
               Une démarche biologique en 6 phases séquentielles qui libère les émonctoires, allège la charge allostatique et réveille les mécanismes naturels d'auto-régulation grâce au Totum des plantes médicinales.
             </p>
 
-            <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+            {/* Encadré sombre Où suis-je ? */}
+            <div className="bg-white/5 border border-white/10 text-white/80 p-6 rounded-2xl max-w-2xl mx-auto text-sm leading-relaxed text-left space-y-1.5 mb-8 shadow-xs">
+              <div className="text-[10px] sm:text-[11px] uppercase tracking-wider font-bold font-mono text-[#E8772E]">
+                Où suis-je ?
+              </div>
+              <p className="text-xs sm:text-sm text-white/80">
+                Vous êtes dans l'Académie Bloom, dans le module d'ingénierie biologique. Ce protocole vous guide pour restaurer la réceptivité cellulaire avant toute supplémentation lourde.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-4">
               <button
                 onClick={() => {
                   const el = document.getElementById('planches-racines');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="px-6 py-3.5 rounded-xl bg-[#E8772E] hover:bg-[#D4651F] text-white font-black text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-xl flex items-center gap-2 cursor-pointer border border-[#E8772E]/30"
+                className="px-6 py-3.5 rounded-xl bg-[#E8772E] hover:bg-[#D4651F] text-white font-black text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-xl flex items-center gap-2 cursor-pointer"
               >
                 <Leaf className="w-4 h-4 text-white" />
                 <span>Découvrir les Planches Botaniques</span>
@@ -283,14 +294,14 @@ export default function PhytotherapyResetPage({
                 <FlaskConical className="w-3.5 h-3.5 text-[#C8AB8A]" />
                 <span>Histoire & Physiologie Fondatrice</span>
               </div>
-              <h2 className="text-2xl sm:text-4xl font-black text-[#f5f0e8] tracking-tight">
+              <h2 className="text-2xl sm:text-4xl font-black text-[#0F261E] tracking-tight">
                 {lang === 'fr' 
                   ? "Du « Milieu Intérieur » à l'Homéostasie : La Sagesse du Vivant" 
                   : lang === 'de'
                   ? "Vom « Milieu Intérieur » zur Homöostase : Die Weisheit des Lebens"
                   : "From the « Milieu Intérieur » to Homeostasis: The Wisdom of Living Systems"}
               </h2>
-              <p className="text-xs sm:text-sm text-[#b8b8b8] leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#0F261E]/80 leading-relaxed font-medium">
                 {lang === 'fr'
                   ? "Comprendre le corps humain commence par reconnaître qu'il ne dysfonctionne jamais sans raison. La fatigue chronique, les tensions et les désordres métaboliques ne sont pas des pannes arbitraires : ce sont des signaux d'adaptation d'un organisme qui cherche désespérément à préserver son équilibre vital."
                   : lang === 'de'
@@ -381,14 +392,14 @@ export default function PhytotherapyResetPage({
                 <Compass className="w-3.5 h-3.5 text-[#C8AB8A]" />
                 <span>Responsabilisation & Éducation Systémique</span>
               </div>
-              <h2 className="text-2xl sm:text-4xl font-black text-[#f5f0e8] tracking-tight">
+              <h2 className="text-2xl sm:text-4xl font-black text-[#0F261E] tracking-tight">
                 {lang === 'fr' 
                   ? "Les 4 Dimensions de la Responsabilité" 
                   : lang === 'de'
                   ? "Die 4 Dimensionen der Selbstverantwortung"
                   : "The 4 Dimensions of Responsibility"}
               </h2>
-              <p className="text-xs sm:text-sm text-[#b8b8b8] leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#0F261E]/80 leading-relaxed font-medium">
                 {lang === 'fr'
                   ? "Les plantes médicinales ne sont pas des béquilles passives. Elles agissent comme de puissants catalyseurs biochimiques, mais leur pleine efficacité dépend des 4 piliers fondamentaux de votre hygiène de vie."
                   : lang === 'de'
@@ -526,7 +537,7 @@ export default function PhytotherapyResetPage({
           {/* ========================================================================= */}
           {/* BLOC 3 : COMMENT LE RESET BLOOM VOUS ACCOMPAGNE (TRANSITION DOUCE)        */}
           {/* ========================================================================= */}
-          <section className="bg-gradient-to-br from-[#A8B8A0] via-[#16352B] to-[#3E4A3D] rounded-[36px] border border-[#c9a84c]/40 p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+          <section className="bg-gradient-to-br from-[#1E2E25] via-[#16352B] to-[#3E4A3D] rounded-[36px] border border-[#c9a84c]/40 p-8 sm:p-12 shadow-2xl relative overflow-hidden">
             <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#c9a84c]/20 border border-[#c9a84c]/40 text-[#c9a84c] text-xs font-bold uppercase tracking-widest shadow-sm">
                 <Sparkles className="w-4 h-4 text-[#C8AB8A]" />
@@ -587,10 +598,10 @@ export default function PhytotherapyResetPage({
               <div className="text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-[#c9a84c]">
                 Herbier Scientifique Bloom • Anatomie Souterraine
               </div>
-              <h2 className="text-2xl sm:text-4xl font-black text-[#f5f0e8] tracking-tight">
+              <h2 className="text-2xl sm:text-4xl font-black text-[#0F261E] tracking-tight">
                 Les Racines du Vivant : la profondeur du Totum
               </h2>
-              <p className="text-xs sm:text-sm text-[#b8b8b8] leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#0F261E]/80 leading-relaxed font-medium">
                 Les principes amers, les polysaccharides immunitaires et les adaptogènes majeurs sont concentrés au cœur des racines et des rhizomes. Dessinées à l'encre noire selon la tradition des planches naturalistes, ces illustrations révèlent l'architecture invisible qui ancre le pouvoir régénérant des plantes.
               </p>
             </div>
@@ -889,7 +900,7 @@ export default function PhytotherapyResetPage({
           </section>
 
           {/* SECTION C : RECOMMANDATION ALMA & LIENS VERS LA BOUTIQUE */}
-          <section className="p-8 sm:p-12 rounded-[32px] bg-gradient-to-br from-[#A8B8A0] to-[#3E4A3D] border border-[#c9a84c]/40 shadow-2xl relative overflow-hidden">
+          <section className="p-8 sm:p-12 rounded-[32px] bg-gradient-to-br from-[#1E2E25] to-[#3E4A3D] border border-[#c9a84c]/40 shadow-2xl relative overflow-hidden">
             <div className="max-w-3xl space-y-4">
               <span className="inline-block px-3 py-1 bg-[#c9a84c]/20 text-[#c9a84c] text-[10px] font-bold uppercase tracking-widest rounded-full border border-[#c9a84c]/30 font-mono">
                 {almaT.badge || "Conseil Systémique d’ALMA"}
@@ -910,7 +921,7 @@ export default function PhytotherapyResetPage({
                 </button>
                 <button 
                   onClick={() => onNavigate('product-detail', 'bloomlab')}
-                  className="px-6 py-3 bg-[#3E4A3D] hover:bg-[#A8B8A0] text-[#FAF7F2] border border-white/10 hover:border-[#c9a84c] rounded-xl font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer"
+                  className="px-6 py-3 bg-[#3E4A3D] hover:bg-[#1E2E25] text-[#FAF7F2] border border-white/10 hover:border-[#c9a84c] rounded-xl font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer"
                 >
                   <span>Découvrir l'Extracteur BloomLab®</span>
                 </button>

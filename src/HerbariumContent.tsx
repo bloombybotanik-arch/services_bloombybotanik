@@ -834,8 +834,9 @@ export default function HerbariumContent({
   return (
     <div className="pb-20">
       
-      {/* En-tête contextuel PageIntroHeader */}
+      {/* En-tête contextuel PageIntroHeader harmonisé Vert Forêt */}
       <PageIntroHeader
+        breadcrumb={lang === 'fr' ? "Accueil / Ressources / L'Herbier" : "Home / Resources / Herbarium"}
         badge={lang === 'fr' ? "RESSOURCES • PHYTOTHÉRAPIE & TOTUM" : "RESOURCES • HERBARIUM & TOTUM"}
         title={lang === 'fr' ? "L'Herbier Médicinal Bloom" : "The Bloom Medicinal Herbarium"}
         subtitle={lang === 'fr' ? "La pharmacopée vivante et la science des principes actifs" : "Living Pharmacopoeia and Active Botanical Principles"}
@@ -845,9 +846,9 @@ export default function HerbariumContent({
         actions={
           <button
             onClick={() => onNavigate('extraction-botanique')}
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#C8AB8A] hover:bg-[#b86505] text-[#3E4A3D] font-black rounded-xl text-xs uppercase tracking-wider transition-all shadow-md cursor-pointer"
+            className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#E8772E] hover:bg-[#D4651F] text-white font-bold rounded-xl text-sm uppercase tracking-wider transition-all shadow-md cursor-pointer"
           >
-            <BookOpen className="w-4 h-4 text-[#3E4A3D]" />
+            <BookOpen className="w-4 h-4 text-white" />
             <span>{lang === 'fr' ? "Guide : L'Extraction Botanique & le Totum →" : "Botanical Extraction Guide →"}</span>
           </button>
         }

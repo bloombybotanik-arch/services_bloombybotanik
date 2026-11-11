@@ -89,29 +89,68 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF7F2] text-[#3E4A3D] pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#FAF7F2] text-[#3E4A3D] pb-20">
       {/* Inject Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSetSchema) }}
       />
 
-      <div className="max-w-6xl mx-auto">
-        {/* Breadcrumb / Top label */}
-        <div className="mb-6 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#C8AB8A]">
-          <BookOpen className="w-4 h-4" />
-          <span>Corpus Scientifique & Phytochimique</span>
+      {/* SECTION HERO VERT SAUGE FONCÉ #1E2E25 AVEC FIL D'ARIANE VERT PROFOND #0F261E */}
+      <header className="w-full bg-[#1E2E25] text-white border-b border-white/10 mb-12">
+        {/* Barre de fil d'Ariane tout en haut : Vert Profond du Menu #0F261E */}
+        <div className="w-full bg-[#0F261E] border-b border-white/10 px-4 md:px-8 py-3.5">
+          <nav aria-label="Fil d'Ariane" className="max-w-7xl mx-auto">
+            <ol className="flex items-center space-x-2 text-sm text-white">
+              <li>
+                <button 
+                  onClick={() => { onNavigate?.('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                  className="text-white/80 hover:text-[#F5F0E6] transition-colors cursor-pointer"
+                >
+                  Accueil
+                </button>
+              </li>
+              <li><span className="text-white/40">/</span></li>
+              <li>
+                <span className="text-white/80">
+                  Ressources
+                </span>
+              </li>
+              <li><span className="text-white/40">/</span></li>
+              <li className="text-white font-bold" aria-current="page">
+                Lexique Botanik
+              </li>
+            </ol>
+          </nav>
         </div>
 
-        {/* Hero Header */}
-        <header className="mb-10 border-b border-[#E7DFD3] pb-8">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#3E4A3D] tracking-tight mb-4 leading-tight">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20 flex flex-col items-center text-center">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-white text-xs font-bold tracking-wider uppercase border border-white/20 mb-6 shadow-xs">
+            <BookOpen className="w-3.5 h-3.5 text-[#E8772E]" />
+            <span>Corpus Scientifique & Phytochimique</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4 leading-tight">
             Lexique Fondateur Bloom — Le Vocabulaire du Vivant
           </h1>
-          <p className="text-base sm:text-lg text-slate-700 font-normal leading-relaxed max-w-3xl">
-            Rendre la complexité biologique limpide sans jamais en appauvrir la rigueur. Retrouvez ici les définitions canoniques, analogies concrètes et fondements physiologiques qui éclairent notre démarche : de la <strong className="text-[#3E4A3D]">charge allostatique</strong> au <strong className="text-[#3E4A3D]">Totum végétal</strong>.
+
+          <p className="text-base sm:text-lg text-white/80 font-normal leading-relaxed max-w-3xl">
+            Rendre la complexité biologique limpide sans jamais en appauvrir la rigueur. Retrouvez ici les définitions canoniques, analogies concrètes et fondements physiologiques qui éclairent notre démarche : de la <strong className="text-white font-semibold">charge allostatique</strong> au <strong className="text-white font-semibold">Totum végétal</strong>.
           </p>
-        </header>
+
+          <div className="bg-white/5 border border-white/10 text-white/80 p-6 rounded-2xl mt-6 max-w-3xl text-sm leading-relaxed text-left">
+            <p className="text-white font-semibold mb-1 flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-[#E8772E]" />
+              <span>Où suis-je ?</span>
+            </p>
+            <p className="text-white text-xs sm:text-sm leading-relaxed font-normal">
+              Vous êtes dans le glossaire canonique de Bloom by BotaniK. Ce répertoire clarifie les concepts clés de notre méthodologie (Totum végétal, extraction thermo-cinétique, homéostasie, pharmacie intérieure) pour une compréhension rigoureuse et accessible du vivant.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Controls: Search & Category Filter */}
         <div className="mb-8 space-y-4">
@@ -159,7 +198,7 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
                 onClick={() => setSelectedLevel('N2')}
                 className={`px-3 py-1.5 rounded-lg border transition-all cursor-pointer ${
                   selectedLevel === 'N2'
-                    ? 'bg-[#A8B8A0] text-[#0F261E] border-[#A8B8A0]'
+                    ? 'bg-[#1E2E25] text-white border-[#1E2E25]'
                     : 'bg-white text-slate-700 border-[#E7DFD3] hover:bg-[#FAF7F2]'
                 }`}
               >
@@ -265,7 +304,7 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
 
                   {/* Simple Definition */}
                   <div className="space-y-1">
-                    <h3 className="text-xs font-black uppercase tracking-wider text-[#A8B8A0]">
+                    <h3 className="text-xs font-black uppercase tracking-wider text-[#1E2E25]">
                       En langage simple :
                     </h3>
                     <p className="text-sm text-slate-800 leading-relaxed font-normal">
@@ -280,7 +319,7 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
                         <Sparkles className="w-3.5 h-3.5" />
                         <span>L'analogie concrète :</span>
                       </div>
-                      <p className="text-xs sm:text-sm italic text-[#A8B8A0] leading-relaxed m-0 font-medium">
+                      <p className="text-xs sm:text-sm italic text-[#1E2E25] leading-relaxed m-0 font-medium">
                         « {item.analogie} »
                       </p>
                     </div>
@@ -310,7 +349,7 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
                 {/* Internal Mesh Linking */}
                 {item.linkedPages && item.linkedPages.length > 0 && (
                   <div className="pt-4 mt-4 border-t border-[#E7DFD3]">
-                    <span className="text-[11px] font-black uppercase tracking-wider text-[#A8B8A0] block mb-2">
+                    <span className="text-[11px] font-black uppercase tracking-wider text-[#1E2E25] block mb-2">
                       Approfondir sur le site :
                     </span>
                     <div className="flex flex-col gap-1.5">
@@ -339,24 +378,24 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
         </div>
 
         {/* Bottom Banner */}
-        <div className="mt-16 bg-[#3E4A3D] text-white rounded-3xl p-8 sm:p-12 border border-[#A8B8A0] text-center max-w-3xl mx-auto shadow-xl space-y-4">
+        <div className="mt-16 bg-[#1E2E25] text-white rounded-3xl p-8 sm:p-12 border border-white/10 text-center max-w-3xl mx-auto shadow-xl space-y-4">
           <ShieldCheck className="w-10 h-10 text-[#C8AB8A] mx-auto" />
-          <h2 className="text-2xl sm:text-3xl font-black text-[#E8772E] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
             La rigueur de votre extraction détermine la réponse de votre terrain
           </h2>
-          <p className="text-sm sm:text-base text-[#FAF7F2]/80 leading-relaxed max-w-xl mx-auto">
+          <p className="text-sm sm:text-base text-white/80 leading-relaxed max-w-xl mx-auto">
             Votre corps n'est pas cassé. Il est verrouillé par un spectre de charges allostatiques accumulées. Découvrez comment l'extraction séquentielle A/B redonne à vos cellules leurs pleines capacités d'autorégulation.
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-2">
             <button
               onClick={() => onNavigate?.('phytotherapie-reset')}
-              className="px-6 py-3.5 rounded-full bg-[#3E4A3D] hover:bg-[#2D372C] text-white font-bold text-xs sm:text-sm transition-all shadow-md cursor-pointer"
+              className="px-6 py-3.5 rounded-xl bg-[#E8772E] hover:bg-[#D4651F] text-white font-bold text-xs sm:text-sm transition-all shadow-md cursor-pointer"
             >
               Découvrir le Protocole Reset
             </button>
             <button
               onClick={() => onNavigate?.('manifeste')}
-              className="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold text-xs sm:text-sm transition-all cursor-pointer"
+              className="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-[#1E2E25] font-bold text-xs sm:text-sm transition-all cursor-pointer shadow-xs"
             >
               Lire le Manifeste
             </button>

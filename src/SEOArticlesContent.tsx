@@ -660,10 +660,39 @@ export const TotumDefinition = ({ lang, t, onNavigate }: SEOArticleProps) => {
 
   return (
     <article className="bg-[#F9F9F7] text-[#3E4A3D] min-h-screen pb-28">
+      {/* 1. Barre de fil d'Ariane tout en haut : Vert Profond du Menu #0F261E */}
+      <div className="w-full bg-[#0F261E] border-b border-white/10 px-4 md:px-8 py-3.5 text-left">
+        <nav aria-label="Fil d'Ariane" className="max-w-7xl mx-auto">
+          <ol className="flex items-center space-x-2 text-sm text-white">
+            <li>
+              <button 
+                onClick={() => { onNavigate?.('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                className="text-white/80 hover:text-[#F5F0E6] transition-colors cursor-pointer"
+              >
+                {isFR ? "Accueil" : isDE ? "Startseite" : "Home"}
+              </button>
+            </li>
+            <li><span className="text-white/40">/</span></li>
+            <li>
+              <button 
+                onClick={() => { onNavigate?.('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                className="text-white/80 hover:text-[#F5F0E6] transition-colors cursor-pointer"
+              >
+                {isFR ? "La Méthode A/B" : isDE ? "Die A/B-Methode" : "The A/B Method"}
+              </button>
+            </li>
+            <li><span className="text-white/40">/</span></li>
+            <li className="text-white font-bold" aria-current="page">
+              {isFR ? "le Totum végétal" : isDE ? "Das Pflanzen-Totum" : "Plant Totum"}
+            </li>
+          </ol>
+        </nav>
+      </div>
+
       {/* HEADER HERO */}
       <header 
-        className="relative text-white pt-16 pb-16 md:pt-20 md:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-white/10 bg-[#0F261E]"
-        style={{ backgroundColor: '#0F261E', color: '#ffffff' }}
+        className="relative text-white pt-16 pb-16 md:pt-20 md:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-white/10 bg-[#1E2E25]"
+        style={{ backgroundColor: '#1E2E25', color: '#ffffff' }}
       >
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#C8AB8A_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
         

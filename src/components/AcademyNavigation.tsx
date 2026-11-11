@@ -53,7 +53,7 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-[#3E4A3D]/95 backdrop-blur-md border-b border-[#A8B8A0] select-none text-[#c9d1d9]">
+    <header className="sticky top-0 z-40 bg-[#0F261E]/95 backdrop-blur-md border-b border-white/10 select-none text-white">
       {/* 1. Medical Boundary Notice (Mandatory by specification) */}
       <div className="bg-[#c9a84c]/10 border-b border-[#c9a84c]/20 py-1.5 px-4 text-center">
         <p className="text-[11px] sm:text-xs text-[#c9a84c] font-medium flex items-center justify-center gap-1.5">
@@ -68,32 +68,32 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
         <div className="flex flex-nowrap overflow-x-auto whitespace-nowrap hide-scrollbar gap-2 items-center min-w-0">
           <button
             onClick={() => onNavigate('indexbis')}
-            className="flex items-center gap-1.5 text-xs text-[#8b949e] hover:text-[#f5f0e8] transition-colors py-1 shrink-0 cursor-pointer"
+            className="flex items-center gap-1.5 text-xs text-white/80 hover:text-[#F5F0E6] transition-colors py-1 shrink-0 cursor-pointer"
             title="Retour au site principal"
           >
             <ArrowLeft className="w-3.5 h-3.5 shrink-0" />
             <span className="shrink-0">{texts.home}</span>
           </button>
 
-          <span className="text-[#484f58] shrink-0">/</span>
+          <span className="text-white/40 shrink-0">/</span>
 
           <button
             onClick={() => onNavigate('academie')}
-            className="flex items-center gap-2 px-2.5 py-1 rounded-lg bg-[#c9a84c]/15 text-[#c9a84c] border border-[#c9a84c]/30 text-xs font-bold shrink-0 hover:bg-[#c9a84c]/25 transition-colors cursor-pointer"
+            className="flex items-center gap-2 px-2.5 py-1 rounded-lg bg-white/10 text-[#c9a84c] border border-[#c9a84c]/30 text-xs font-bold shrink-0 hover:bg-white/20 hover:text-white transition-colors cursor-pointer"
           >
             <Compass className="w-3.5 h-3.5 shrink-0" />
             <span className="tracking-wide uppercase font-mono text-[11px] shrink-0">Bloom Academy</span>
           </button>
 
-          <span className="text-[#484f58] shrink-0">/</span>
+          <span className="text-white/40 shrink-0">/</span>
 
-          <span className="text-xs text-[#8b949e] shrink-0">
+          <span className="text-xs text-white/80 shrink-0">
             {sectionName}
           </span>
 
-          <span className="text-[#484f58] shrink-0">/</span>
+          <span className="text-white/40 shrink-0">/</span>
 
-          <span className="text-xs text-[#f5f0e8] font-semibold shrink-0">
+          <span className="text-xs text-white font-semibold shrink-0">
             {currentPageTitle}
           </span>
         </div>
@@ -105,7 +105,7 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
             className={`px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer font-medium ${
               currentView === 'academie'
                 ? 'bg-white/10 text-[#c9a84c] font-bold'
-                : 'text-[#8b949e] hover:text-[#f5f0e8] hover:bg-white/5'
+                : 'text-white/80 hover:text-[#F5F0E6] hover:bg-white/10'
             }`}
           >
             {lang === 'fr' ? 'Accueil Académie' : lang === 'de' ? 'Übersicht' : 'Academy Home'}
@@ -115,7 +115,7 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
             className={`px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer font-medium ${
               currentView === 'comment-lire-modele-bloom'
                 ? 'bg-white/10 text-[#c9a84c] font-bold'
-                : 'text-[#8b949e] hover:text-[#f5f0e8] hover:bg-white/5'
+                : 'text-white/80 hover:text-[#F5F0E6] hover:bg-white/10'
             }`}
           >
             {texts.guide}
@@ -125,7 +125,7 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
             className={`px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer font-medium ${
               currentView === '4-architectures'
                 ? 'bg-white/10 text-[#c9a84c] font-bold'
-                : 'text-[#8b949e] hover:text-[#f5f0e8] hover:bg-white/5'
+                : 'text-white/80 hover:text-[#F5F0E6] hover:bg-white/10'
             }`}
           >
             {texts.arch}
@@ -135,7 +135,7 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
             className={`px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer font-medium ${
               currentView === 'terrain' || currentView === '7-terrains'
                 ? 'bg-white/10 text-[#c9a84c] font-bold'
-                : 'text-[#8b949e] hover:text-[#f5f0e8] hover:bg-white/5'
+                : 'text-white/80 hover:text-[#F5F0E6] hover:bg-white/10'
             }`}
           >
             {texts.terrains}
@@ -145,7 +145,7 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
             className={`px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer font-medium ${
               currentView === '9-axes' || currentView === 'neuf-axes-historiques'
                 ? 'bg-white/10 text-[#c9a84c] font-bold'
-                : 'text-[#8b949e] hover:text-[#f5f0e8] hover:bg-white/5'
+                : 'text-white/80 hover:text-[#F5F0E6] hover:bg-white/10'
             }`}
           >
             {texts.axes}
@@ -155,7 +155,7 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
             className={`px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer font-medium ${
               currentView === 'charge-allostatique'
                 ? 'bg-white/10 text-[#c9a84c] font-bold'
-                : 'text-[#8b949e] hover:text-[#f5f0e8] hover:bg-white/5'
+                : 'text-white/80 hover:text-[#F5F0E6] hover:bg-white/10'
             }`}
           >
             {texts.charge}
@@ -165,14 +165,14 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
             className={`px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer font-medium ${
               currentView === 'phytotherapie-reset' || currentView === 'reset-homeostasique'
                 ? 'bg-white/10 text-[#c9a84c] font-bold'
-                : 'text-[#8b949e] hover:text-[#f5f0e8] hover:bg-white/5'
+                : 'text-white/80 hover:text-[#F5F0E6] hover:bg-white/10'
             }`}
           >
             {texts.reset}
           </button>
           <button
             onClick={() => onNavigate('phytotherapie-reset')}
-            className="px-2.5 py-1.5 rounded-lg text-[#8b949e] hover:text-[#f5f0e8] hover:bg-white/5 transition-colors cursor-pointer font-medium"
+            className="px-2.5 py-1.5 rounded-lg text-white/80 hover:text-[#F5F0E6] hover:bg-white/10 transition-colors cursor-pointer font-medium"
           >
             {texts.protocoles}
           </button>
@@ -188,7 +188,7 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
           </button>
           <button
             onClick={() => onNavigate('herbier')}
-            className="px-2.5 py-1.5 rounded-lg text-[#8b949e] hover:text-[#f5f0e8] hover:bg-white/5 transition-colors cursor-pointer font-medium"
+            className="px-2.5 py-1.5 rounded-lg text-white/80 hover:text-[#F5F0E6] hover:bg-white/10 transition-colors cursor-pointer font-medium"
           >
             {texts.herbier}
           </button>

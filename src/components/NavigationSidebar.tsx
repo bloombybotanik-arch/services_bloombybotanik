@@ -56,7 +56,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
   const isActive = (view: View) => currentView === view;
 
   const navItemClass = (active: boolean) =>
-    `flex items-center justify-between w-full px-3 py-1.5 rounded-xl text-xs font-semibold transition-all group cursor-pointer ${
+    `flex items-center justify-between w-full px-3 py-1.5 rounded-xl text-xs font-semibold transition-all group cursor-pointer whitespace-nowrap overflow-hidden ${
       active
         ? 'bg-white/10 text-white font-bold border border-white/20 shadow-xs'
         : 'text-white/80 hover:text-white hover:bg-white/10'
@@ -69,11 +69,11 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
 
   return (
     <aside 
-      className="hidden md:flex flex-col fixed top-0 left-0 bottom-0 w-[280px] bg-[#0F261E] text-[#F9F6F0] z-40 border-r border-white/10 select-none shadow-2xl"
+      className="hidden md:flex flex-col fixed top-0 left-0 bottom-0 w-[280px] min-w-[280px] h-screen overflow-y-auto z-40 bg-[#0F261E] text-[#F9F6F0] border-r border-white/10 select-none shadow-2xl"
       aria-label="Navigation principale"
     >
       {/* 1. Header Lockup: Papillon + Bloom by BotaniK */}
-      <div className="p-4 border-b border-white/10">
+      <div className="p-4 border-b border-white/10 shrink-0">
         <a
           href="/"
           onClick={(e) => {
@@ -104,9 +104,9 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             onClick={() => onNavigate('indexbis')}
             className={navItemClass(isActive('indexbis') || isActive('home'))}
           >
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
               <Home className={navIconClass(isActive('indexbis') || isActive('home'))} />
-              <span className="font-semibold text-xs">{lang === 'fr' ? 'Accueil' : lang === 'de' ? 'Startseite' : 'Home'}</span>
+              <span className="font-semibold text-xs truncate whitespace-nowrap">{lang === 'fr' ? 'Accueil' : lang === 'de' ? 'Startseite' : 'Home'}</span>
             </div>
           </button>
         </div>
@@ -114,16 +114,16 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
         {/* GROUP 2: POURQUOI BLOOM */}
         <div>
           <div className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E8772E] px-3 mb-1.5 flex items-center justify-between">
-            <span>POURQUOI BLOOM</span>
+            <span className="truncate whitespace-nowrap">POURQUOI BLOOM</span>
           </div>
           <div className="space-y-0.5">
             <button
               onClick={() => onNavigate('la-marque')}
               className={navItemClass(isActive('la-marque') || isActive('manifeste'))}
             >
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <HeartHandshake className={navIconClass(isActive('la-marque') || isActive('manifeste'))} />
-                <span>Histoire &amp; Philosophie</span>
+                <span className="truncate whitespace-nowrap">Histoire &amp; Philosophie</span>
               </div>
             </button>
           </div>
@@ -132,34 +132,34 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
         {/* GROUP 3: LA MÉTHODE A/B */}
         <div>
           <div className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E8772E] px-3 mb-1.5">
-            LA MÉTHODE A/B
+            <span className="truncate whitespace-nowrap">LA MÉTHODE A/B</span>
           </div>
           <div className="space-y-0.5">
             <button
               onClick={() => onNavigate('infusion-botanique')}
               className={navItemClass(isActive('infusion-botanique') || isActive('infusion-botanique-maison-comment-ca-marche'))}
             >
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <FlaskConical className={navIconClass(isActive('infusion-botanique'))} />
-                <span>L'infusion botanique ?</span>
+                <span className="truncate whitespace-nowrap">L'infusion botanique ?</span>
               </div>
             </button>
             <button
               onClick={() => onNavigate('totum-vegetal')}
               className={navItemClass(isActive('totum-vegetal'))}
             >
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Leaf className={navIconClass(isActive('totum-vegetal'))} />
-                <span>Le Totum Végétal</span>
+                <span className="truncate whitespace-nowrap">Le Totum Végétal</span>
               </div>
             </button>
             <button
               onClick={() => onNavigate('guide-complet')}
               className={navItemClass(isActive('guide-complet') || isActive('pillar-extraction') || isActive('extraction-botanique'))}
             >
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <BookOpen className={navIconClass(isActive('guide-complet'))} />
-                <span>Guide de l'extraction</span>
+                <span className="truncate whitespace-nowrap">Guide de l'extraction</span>
               </div>
             </button>
           </div>
@@ -168,34 +168,34 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
         {/* GROUP 4: VOTRE PRATIQUE */}
         <div>
           <div className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E8772E] px-3 mb-1.5">
-            VOTRE PRATIQUE
+            <span className="truncate whitespace-nowrap">VOTRE PRATIQUE</span>
           </div>
           <div className="space-y-0.5">
             <button
               onClick={() => onNavigate('culinaire')}
               className={navItemClass(isActive('culinaire'))}
             >
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Utensils className={navIconClass(isActive('culinaire'))} />
-                <span>Atelier Culinaire</span>
+                <span className="truncate whitespace-nowrap">Atelier Culinaire</span>
               </div>
             </button>
             <button
               onClick={() => onNavigate('cosmetiques')}
               className={navItemClass(isActive('cosmetiques'))}
             >
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Droplets className={navIconClass(isActive('cosmetiques'))} />
-                <span>Cosmétique Botanique</span>
+                <span className="truncate whitespace-nowrap">Cosmétique Botanique</span>
               </div>
             </button>
             <button
               onClick={() => onNavigate('phytotherapie-reset')}
               className={navItemClass(isActive('phytotherapie-reset') || isActive('votre-pratique') || isActive('parcours'))}
             >
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Activity className={navIconClass(isActive('phytotherapie-reset') || isActive('votre-pratique') || isActive('parcours'))} />
-                <span>Reset Homéostasique</span>
+                <span className="truncate whitespace-nowrap">Reset Homéostasique</span>
               </div>
             </button>
           </div>
@@ -204,7 +204,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
         {/* GROUP 5: BOUTIQUE */}
         <div>
           <div className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E8772E] px-3 mb-1.5">
-            BOUTIQUE
+            <span className="truncate whitespace-nowrap">BOUTIQUE</span>
           </div>
           <div className="space-y-0.5">
             <a
@@ -217,27 +217,27 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
               }}
               className={navItemClass(isActive('machine') || isActive('bloomlab'))}
             >
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Sparkles className={navIconClass(isActive('machine') || isActive('bloomlab'))} />
-                <span>BloomLab®</span>
+                <span className="truncate whitespace-nowrap">BloomLab®</span>
               </div>
             </a>
             <button
               onClick={() => onNavigate('boutique-kits')}
               className={navItemClass(isActive('boutique-kits'))}
             >
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Package className={navIconClass(isActive('boutique-kits'))} />
-                <span>Packs</span>
+                <span className="truncate whitespace-nowrap">Packs</span>
               </div>
             </button>
             <button
               onClick={() => onNavigate('boutique')}
               className={navItemClass(isActive('boutique'))}
             >
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <ShoppingBag className={navIconClass(isActive('boutique'))} />
-                <span>Accessoires</span>
+                <span className="truncate whitespace-nowrap">Accessoires</span>
               </div>
             </button>
             <a
@@ -250,12 +250,12 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
               }}
               className={navItemClass(isActive('product-detail'))}
             >
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Leaf className={navIconClass(false)} />
-                <span>Argiles &amp; Matières Premières</span>
+                <span className="truncate whitespace-nowrap">Argiles &amp; Matières Premières</span>
               </div>
             </a>
-            {/* Abonnements numériques (placé dans Boutique après Argiles & Matières Premières) */}
+            {/* Abonnements numériques */}
             <a
               href="/boutique/abonnements-numeriques/"
               onClick={(e) => {
@@ -267,9 +267,9 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
               className={navItemClass(isActive('abonnement') || isActive('premium-info') || isActive('abonnements-numeriques'))}
               title={lang === 'fr' ? 'Abonnements numériques' : lang === 'de' ? 'Digitale Abonnements' : 'Digital Subscriptions'}
             >
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Star className={navIconClass(isActive('abonnement') || isActive('premium-info') || isActive('abonnements-numeriques'))} />
-                <span className="font-semibold text-white">
+                <span className="font-semibold text-white truncate whitespace-nowrap">
                   {lang === 'fr' ? 'Abonnements numériques' : lang === 'de' ? 'Digitale Abonnements' : 'Digital Subscriptions'}
                 </span>
               </div>
@@ -283,25 +283,25 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
         {/* GROUP 6: RESSOURCES */}
         <div>
           <div className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E8772E] px-3 mb-1.5 flex items-center justify-between">
-            <span>{lang === 'fr' ? 'RESSOURCES' : lang === 'de' ? 'RESSOURCEN' : 'RESOURCES'}</span>
+            <span className="truncate whitespace-nowrap">{lang === 'fr' ? 'RESSOURCES' : lang === 'de' ? 'RESSOURCEN' : 'RESOURCES'}</span>
           </div>
           <div className="space-y-0.5">
             <button
               onClick={() => onNavigate('herbier')}
               className={navItemClass(isActive('herbier') || isActive('library') || isActive('herbarium'))}
             >
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <BookOpen className={navIconClass(isActive('herbier') || isActive('library') || isActive('herbarium'))} />
-                <span>{lang === 'fr' ? "L'Herbier" : lang === 'de' ? 'Das Herbarium' : 'The Herbarium'}</span>
+                <span className="truncate whitespace-nowrap">{lang === 'fr' ? "L'Herbier" : lang === 'de' ? 'Das Herbarium' : 'The Herbarium'}</span>
               </div>
             </button>
             <button
               onClick={() => onNavigate('lexique')}
               className={navItemClass(isActive('lexique'))}
             >
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <BookOpen className={navIconClass(isActive('lexique'))} />
-                <span>{lang === 'fr' ? 'Lexique Botanik' : lang === 'de' ? 'Botanik-Glossar' : 'Botanik Glossary'}</span>
+                <span className="truncate whitespace-nowrap">{lang === 'fr' ? 'Lexique Botanik' : lang === 'de' ? 'Botanik-Glossar' : 'Botanik Glossary'}</span>
               </div>
             </button>
           </div>

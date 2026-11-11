@@ -14,11 +14,40 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
 
   return (
     <div className="flex-1 bg-[#FAF7F2]">
-      {/* Hero Section - Single H1 on page */}
+      {/* Hero Section Vert Forêt avec Fil d'Ariane */}
       <section 
-        className="relative py-24 px-6 overflow-hidden shadow-lg bg-[#0F261E] text-white border-b border-white/10"
+        className="w-full bg-[#1E2E25] text-white border-b border-white/10 relative overflow-hidden"
       >
-        <div className="absolute inset-0">
+        {/* Barre de fil d'Ariane tout en haut : Vert Profond du Menu #0F261E */}
+        <div className="w-full bg-[#0F261E] border-b border-white/10 px-4 md:px-8 py-3.5 relative z-20">
+          <nav aria-label="Fil d'Ariane" className="max-w-7xl mx-auto">
+            <ol className="flex items-center space-x-2 text-sm text-white">
+              <li>
+                <button 
+                  onClick={() => { onNavigate('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                  className="text-white/80 hover:text-[#F5F0E6] transition-colors cursor-pointer"
+                >
+                  {isFR ? "Accueil" : "Home"}
+                </button>
+              </li>
+              <li><span className="text-white/40">/</span></li>
+              <li>
+                <button 
+                  onClick={() => { onNavigate('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                  className="text-white/80 hover:text-[#F5F0E6] transition-colors cursor-pointer"
+                >
+                  {isFR ? "La Méthode A/B" : "The A/B Method"}
+                </button>
+              </li>
+              <li><span className="text-white/40">/</span></li>
+              <li className="text-white font-bold" aria-current="page">
+                {isFR ? "Guide de l'extraction" : "Extraction Guide"}
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <div className="absolute inset-0 pointer-events-none">
           <div className="w-full h-full relative">
             <OptimizedImage 
               src={bloomLabImg} 
@@ -30,7 +59,7 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
           </div>
         </div>
         
-        <div className="max-w-4xl mx-auto relative z-10 text-center">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20 relative z-10 flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

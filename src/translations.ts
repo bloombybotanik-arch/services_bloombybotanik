@@ -789,14 +789,14 @@ export const translations = {
           ]
         },
         pack_signature: {
-          name: "Pack Signature Rentrée — BloomLab® + Herbier Complet + 3 Mois Premium",
-          subtitle: "OFFRE RENTRÉE SCOLAIRE 2026",
+          name: "Pack Signature Black Friday — BloomLab® + Herbier Complet + 3 Mois Premium",
+          subtitle: "OFFRE BLACK FRIDAY 2026",
           description: "L'offre ultime pour l'autonomie santé : BloomLab®, l'intégralité de nos mélanges de plantes et 3 mois d'accès illimité à l'abonnement Premium."
         },
         bundle_apothicaire: {
-          name: "L'Herbier Complet — Pack Rentrée 2026",
+          name: "L'Herbier Complet — Pack Black Friday 2026",
           subtitle: "TOUS LES REMÈDES + DUO ARGILES",
-          description: "L'offre la plus irrésistible de la rentrée. Regroupe l'intégralité de nos mélanges de plantes (Sève, Nuit, Digestion, Articulaire) et le Duo Argiles Renaissance pour un reset total."
+          description: "L'offre la plus irrésistible du Black Friday. Regroupe l'intégralité de nos mélanges de plantes (Sève, Nuit, Digestion, Articulaire) et le Duo Argiles Renaissance pour un reset total."
         },
         kit_starter: {
           name: "Kit Sève Fondamentale",
@@ -2428,14 +2428,14 @@ export const translations = {
           ]
         },
         pack_signature: {
-          name: "Back-to-School Signature Pack — BloomLab® + Full Herbarium + 3 Months Premium",
-          subtitle: "2026 BACK-TO-SCHOOL OFFER",
+          name: "Black Friday Signature Pack — BloomLab® + Full Herbarium + 3 Months Premium",
+          subtitle: "2026 BLACK FRIDAY OFFER",
           description: "The ultimate health autonomy offer: BloomLab®, all our plant blends, and 3 months of unlimited Premium access."
         },
         bundle_apothicaire: {
-          name: "Complete Herbarium — 2026 Back-to-School Pack",
+          name: "Complete Herbarium — Black Friday 2026 Pack",
           subtitle: "ALL REMEDIES + CLAYS DUO",
-          description: "The most irresistible offer of the season. Includes all our plant blends (Sap, Night, Digestion, Joint) and the Renaissance Clays Duo for a total reset."
+          description: "The most irresistible offer of Black Friday. Includes all our plant blends (Sap, Night, Digestion, Joint) and the Renaissance Clays Duo for a total reset."
         },
         kit_starter: {
           name: "Fundamental Sap Kit",
@@ -3953,14 +3953,14 @@ export const translations = {
           ]
         },
         pack_signature: {
-          name: "Schulstart Signatur-Paket — BloomLab® + Vollständiges Herbarium + 3 Monate Premium",
-          subtitle: "SCHULSTART-ANGEBOT 2026",
+          name: "Black Friday Signatur-Paket — BloomLab® + Vollständiges Herbarium + 3 Monate Premium",
+          subtitle: "BLACK FRIDAY ANGEBOT 2026",
           description: "Das ultimative Angebot für Gesundheitsautonomie: BloomLab®, alle unsere Pflanzenmischungen und 3 Monate unbegrenzter Premium-Zugang."
         },
         bundle_apothicaire: {
-          name: "Das vollständige Herbarium — Paket Rente 2026",
+          name: "Das vollständige Herbarium — Black Friday Paket 2026",
           subtitle: "ALLE HEILMITTEL + ERDEN-DUO",
-          description: "Das unwiderstehlichste Angebot der Saison. Enthält alle unsere Pflanzenmischungen (Saft, Nacht, Verdauung, Gelenke) und das Renaissance-Erden-Duo für einen totalen Reset."
+          description: "Das unwiderstehlichste Angebot zum Black Friday. Enthält alle unsere Pflanzenmischungen (Saft, Nacht, Verdauung, Gelenke) und das Renaissance-Erden-Duo für einen totalen Reset."
         },
         kit_starter: {
           name: "Set Fundamentaler Saft",

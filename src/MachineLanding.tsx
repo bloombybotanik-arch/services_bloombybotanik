@@ -108,6 +108,13 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         )}
       </AnimatePresence>
 
+      {/* Promotional Banner Black Friday */}
+      <div className="bg-[#D97706]/10 text-[#B45309] border-b border-[#D97706]/30 text-center py-2.5 px-4 text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
+        {lang === 'fr' 
+          ? "Black Friday 2026 : Soins Botaniques pour toute la Famille - Pack Complet à 59 €" 
+          : "Black Friday 2026: Botanical Care for the Whole Family - Complete Pack at 59 €"}
+      </div>
+
       {/* 1. HERO HEADER SECTION */}
       <section className="relative overflow-hidden bg-[#3E4A3D] text-white pt-8 pb-16 md:pt-12 md:pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(200, 171, 138,0.15),rgba(255,255,255,0))] pointer-events-none" />
