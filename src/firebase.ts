@@ -1,23 +1,61 @@
 import { initializeApp, getApps, getApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
-import rawConfig from '../firebase-applet-config.json';
 
 export const firebaseConfig = {
-  id: rawConfig.id || "1e04d90f-3878-4981-8138-5c8a14f59353",
-  name: rawConfig.name || "bloom-by-botanik",
-  apiKey: rawConfig.apiKey || "AIzaSyBTYEyKqE3pL8FElyt_UkjaaphYjp9-r6Q",
-  authDomain: rawConfig.authDomain || "gen-lang-client-0781708429.firebaseapp.com",
-  projectId: rawConfig.projectId || "gen-lang-client-0781708429",
-  storageBucket: rawConfig.storageBucket || "gen-lang-client-0781708429.firebasestorage.app",
-  messagingSenderId: rawConfig.messagingSenderId || "224466673114",
-  appId: rawConfig.appId || "1:224466673114:web:8c843edae8205a6ae034e3",
-  measurementId: rawConfig.measurementId || undefined,
-  firestoreDatabaseId: rawConfig.firestoreDatabaseId || "ai-studio-bloombybotaniksi-1e04d90f-3878-4981-8138-5c8a14f59353"
+  apiKey: "AIzaSyBTYEyKqE3pL8FElyt_UkjaaphYjp9-r6Q",
+  authDomain: "gen-lang-client-0781708429.firebaseapp.com",
+  projectId: "gen-lang-client-0781708429",
+  storageBucket: "gen-lang-client-0781708429.firebasestorage.app",
+  messagingSenderId: "224466673114",
+  appId: "1:224466673114:web:8c843edae8205a6ae034e3",
+  firestoreDatabaseId: "ai-studio-bloombybotaniksi-1e04d90f-3878-4981-8138-5c8a14f59353"
 };
 
-export const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
-export const auth = getAuth(app);
-export const db = getFirestore(app, firebaseConfig.firestoreDatabaseId);
+let appInstance: any;
+if (!getApps().length) {
+  try {
+    appInstance = initializeApp(firebaseConfig);
+  } catch (e) {
+    console.warn("[Firebase] Init fallback activated:", e);
+    appInstance = initializeApp({
+      apiKey: "AIzaSyFakeKeyForTestingOnly",
+      authDomain: "fake-project.firebaseapp.com",
+      projectId: "fake-project",
+      storageBucket: "fake-project.appspot.com",
+      messagingSenderId: "123456789",
+      appId: "1:123456789:web:abcdef"
+    });
+  }
+} else {
+  appInstance = getApp();
+}
+
+export const app = appInstance;
+
+let authInstance: any;
+try {
+  authInstance = getAuth(app);
+} catch (e) {
+  console.warn("[Firebase] getAuth fallback:", e);
+  authInstance = {
+    onAuthStateChanged: (cb: any) => { cb(null); return () => {}; },
+    currentUser: null
+  } as any;
+}
+export const auth = authInstance;
+
+let dbInstance: any;
+try {
+  dbInstance = getFirestore(app, firebaseConfig.firestoreDatabaseId);
+} catch (e) {
+  try {
+    dbInstance = getFirestore(app);
+  } catch (err) {
+    console.warn("[Firebase] getFirestore fallback:", err);
+    dbInstance = {} as any;
+  }
+}
+export const db = dbInstance;
 
 export default app;

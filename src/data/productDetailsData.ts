@@ -1238,7 +1238,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
     'premium-access': {
       name: "Abonnement Précision",
       subtitle: "ACCÈS TOTAL ILLIMITÉ",
-      price: 7.90,
+      price: 9.00,
       images: [modernShelvesImg],
       description: isFR ? "L'intégralité des protocoles et savoirs Bloom en accès illimité : protocoles, vidéos et bibliothèque de recettes." : "Unlimited access to all Bloom knowledge.",
       fullDescription: isFR ? `
@@ -1257,7 +1257,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
               </li>
             </ul>
           </div>
-          <p class="text-sm italic text-botanik-green/60">Tarif : 7,90 € TTC par an (soit moins de 0,66 € / mois).</p>
+          <p class="text-sm italic text-botanik-green/60">Tarif : 9 € TTC par mois.</p>
         </div>
       ` : `
         <div class="prose prose-botanik max-w-none">
@@ -1283,13 +1283,13 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
     'abonnement-precision': {
       name: "Abonnement Précision",
       subtitle: "ACCÈS TOTAL ILLIMITÉ",
-      price: 7.90,
+      price: 9.00,
       images: [modernShelvesImg],
       description: isFR ? "Protocoles complets, fiches botaniques et mises à jour mensuelles." : "Full access to botanical protocols.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <p class="text-lg mb-8">Accès intégral à l'intelligence Bloom et aux protocoles interactifs.</p>
-          <p class="text-sm italic text-botanik-green/60">Tarif : 7,90 € TTC par an.</p>
+          <p class="text-sm italic text-botanik-green/60">Tarif : 9 € TTC par mois.</p>
         </div>
       ` : `<p>Precision subscription</p>`,
       specs: [{ label: "Type", value: "Abonnement Annuel", icon: Info }]

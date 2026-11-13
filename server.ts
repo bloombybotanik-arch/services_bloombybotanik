@@ -2103,11 +2103,8 @@ function registerCatchAll(app: express.Express, isProd: boolean) {
         return res.sendFile(distIndex);
       } else if (fs.existsSync(rootIndex)) {
         let rawHtml = fs.readFileSync(rootIndex, "utf-8");
-        if (viteDevServer) {
-          rawHtml = await viteDevServer.transformIndexHtml(req.originalUrl, rawHtml);
-          rawHtml = rawHtml.replace(/<script type="module" src="\/@vite\/client"><\/script>/g, '');
-          rawHtml = rawHtml.replace(/<script\b[^>]*src=["']\/@vite\/client["'][^>]*><\/script>/gi, '');
-        }
+        rawHtml = rawHtml.replace(/<script type="module" src="\/@vite\/client"><\/script>/g, '');
+        rawHtml = rawHtml.replace(/<script\b[^>]*src=["']\/@vite\/client["'][^>]*><\/script>/gi, '');
         return res.status(200).set({ "Content-Type": "text/html; charset=utf-8" }).end(rawHtml);
       }
       return res.status(404).send("Index not found");
@@ -2155,8 +2152,8 @@ async function startServer() {
         return res.send('export default {};');
       });
 
-      app.use(viteDevServer.middlewares);
-      console.log("Vite middleware attached in dev");
+      // app.use(viteDevServer.middlewares);
+      console.log("Vite middleware disabled (serving compiled dist/ bundle)");
     }
   }
 

@@ -373,37 +373,48 @@ export default function App() {
   // Auth and Subscription observer
   useEffect(() => {
     let unsubscribeDoc: (() => void) | null = null;
+    let unsubscribeAuth: (() => void) | null = null;
 
-    const unsubscribeAuth = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-      if (unsubscribeDoc) {
-        unsubscribeDoc();
-        unsubscribeDoc = null;
-      }
-      if (currentUser) {
-        const userRef = doc(db, 'users', currentUser.uid);
-        unsubscribeDoc = onSnapshot(
-          userRef,
-          (snap) => {
-            if (snap.exists()) {
-              const data = snap.data();
-              const hasPaid = Boolean(data?.isPremium) && (!data?.isPremiumUntil || new Date(data.isPremiumUntil).getTime() > Date.now());
-              setIsSubscribed(hasPaid);
-            } else {
-              setIsSubscribed(false);
-            }
-          },
-          () => {
+    try {
+      unsubscribeAuth = onAuthStateChanged(auth, (currentUser) => {
+        setUser(currentUser);
+        if (unsubscribeDoc) {
+          unsubscribeDoc();
+          unsubscribeDoc = null;
+        }
+        if (currentUser) {
+          try {
+            const userRef = doc(db, 'users', currentUser.uid);
+            unsubscribeDoc = onSnapshot(
+              userRef,
+              (snap) => {
+                if (snap.exists()) {
+                  const data = snap.data();
+                  const hasPaid = Boolean(data?.isPremium) && (!data?.isPremiumUntil || new Date(data.isPremiumUntil).getTime() > Date.now());
+                  setIsSubscribed(hasPaid);
+                } else {
+                  setIsSubscribed(false);
+                }
+              },
+              () => {
+                setIsSubscribed(false);
+              }
+            );
+          } catch (err) {
+            console.warn('[Firestore user listener error]', err);
             setIsSubscribed(false);
           }
-        );
-      } else {
-        setIsSubscribed(false);
-      }
-    });
+        } else {
+          setIsSubscribed(false);
+        }
+      });
+    } catch (err) {
+      console.warn('[Firebase Auth listener error]', err);
+      setIsSubscribed(false);
+    }
 
     return () => {
-      unsubscribeAuth();
+      if (unsubscribeAuth) unsubscribeAuth();
       if (unsubscribeDoc) unsubscribeDoc();
     };
   }, []);

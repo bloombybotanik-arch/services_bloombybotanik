@@ -191,7 +191,7 @@ export default function ProtocolesSystemiquesContent({
                   className="px-6 py-3.5 rounded-xl bg-[#3E4A3D] hover:bg-[#2D372C] text-white font-black text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Star className="w-4 h-4 fill-current" />
-                  <span>{lang === 'fr' ? 'Découvrir les Abonnements (dès 7,90 €)' : lang === 'de' ? 'Abonnements ansehen' : 'View Subscriptions'}</span>
+                  <span>{lang === 'fr' ? 'Découvrir les Abonnements (dès 9 €)' : lang === 'de' ? 'Abonnements ansehen (ab 9 €)' : 'View Subscriptions (from €9)'}</span>
                 </button>
                 <button
                   type="button"

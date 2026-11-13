@@ -179,7 +179,7 @@ export const FreemiumPaywallGate: React.FC<FreemiumPaywallGateProps> = ({
               className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#E8772E] hover:bg-[#D4651F] text-white font-black text-xs uppercase tracking-wider transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-2 cursor-pointer"
             >
               <Sparkles className="w-4 h-4 fill-current" />
-              <span>{lang === 'fr' ? 'Découvrir les Abonnements (dès 7,90 €)' : lang === 'de' ? 'Abonnements ansehen (ab 7,90 €)' : 'View Subscriptions (from €7.90)'}</span>
+              <span>{lang === 'fr' ? 'Découvrir les Abonnements (dès 9 €)' : lang === 'de' ? 'Abonnements ansehen (ab 9 €)' : 'View Subscriptions (from €9)'}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
 

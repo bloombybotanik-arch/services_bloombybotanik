@@ -23,6 +23,7 @@ export default defineConfig({
     host: '0.0.0.0',
     strictPort: true,
     hmr: false, // Désactive le HMR
+    ws: false,
     allowedHosts: true,
     cors: true
   }

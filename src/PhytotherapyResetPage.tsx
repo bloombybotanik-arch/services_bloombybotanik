@@ -13,23 +13,18 @@ import {
   Sun, 
   Moon, 
   Clock, 
-  Waves, 
   X,
   Compass,
   Layers,
   Leaf,
   Radio,
   Sliders,
-  HelpCircle,
   Repeat,
-  HeartHandshake,
   Check
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { resetPhasesData, ResetPhaseDetail } from './data/resetPhases';
-import { chronobiologyData } from './data/chronobiology';
-import { translations, Language } from './translations';
-import { TooltipLexique } from './components/TooltipLexique';
+import { Language } from './translations';
 import { GlossaryProvider } from './context/GlossaryContext';
 import AcademyNavigation from './components/AcademyNavigation';
 import FreemiumPaywallGate from './components/FreemiumPaywallGate';
@@ -109,14 +104,14 @@ const PhaseDetailModal: React.FC<{
 
         <div className="p-8 md:p-12">
           <div className="mb-8">
-            <div className="text-[10px] font-mono font-bold text-[#C8AB8A] tracking-[0.25em] mb-2 uppercase">
+            <div className="text-[10px] font-mono font-bold !text-white tracking-[0.25em] mb-2 uppercase">
               {phase.subtitle}
             </div>
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-black !text-white mb-4 leading-tight">
               {phase.title} : {phase.name}
             </h2>
             <div className="p-5 bg-[#3E4A3D] rounded-2xl border border-[#E7DFD3]/20">
-              <p className="text-[#F9F6F0] text-sm md:text-base font-normal leading-relaxed italic">
+              <p className="!text-white text-sm md:text-base font-normal leading-relaxed italic">
                 {phase.long_text}
               </p>
             </div>
@@ -124,26 +119,26 @@ const PhaseDetailModal: React.FC<{
 
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-base font-bold text-white mb-4 flex items-center gap-2">
+              <h3 className="text-base font-bold !text-white mb-4 flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-[#C8AB8A]" />
-                <span>Objectifs de la Phase</span>
+                <span className="text-white">Objectifs de la Phase</span>
               </h3>
               <ul className="space-y-3">
-                {phase.objectives.map((obj, idx) => (
-                  <li key={idx} className="flex gap-2.5 text-xs sm:text-sm text-[#F9F6F0]/80 leading-relaxed">
+                {phase.objectives?.map((obj, idx) => (
+                  <li key={idx} className="flex gap-2.5 text-xs sm:text-sm !text-white leading-relaxed">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#C8AB8A] shrink-0 mt-2" />
-                    <span>{obj}</span>
+                    <span className="text-white">{obj}</span>
                   </li>
                 ))}
               </ul>
 
-              <h3 className="text-base font-bold text-white mt-8 mb-4 flex items-center gap-2">
+              <h3 className="text-base font-bold !text-white mt-8 mb-4 flex items-center gap-2">
                 <Activity className="w-4 h-4 text-[#C8AB8A]" />
-                <span>Systèmes Biologiques Clés</span>
+                <span className="text-white">Systèmes Biologiques Clés</span>
               </h3>
               <div className="flex flex-wrap gap-2">
-                {phase.focus_systems.map((sys, idx) => (
-                  <span key={idx} className="px-3 py-1.5 bg-[#3E4A3D] text-[#C8AB8A] border border-[#C8AB8A]/30 rounded-xl text-[11px] font-mono font-bold uppercase">
+                {phase.focus_systems?.map((sys, idx) => (
+                  <span key={idx} className="px-3 py-1.5 bg-[#3E4A3D] !text-white border border-white/25 rounded-xl text-[11px] font-mono font-bold uppercase">
                     {sys}
                   </span>
                 ))}
@@ -153,20 +148,20 @@ const PhaseDetailModal: React.FC<{
             <div>
               {phase.core_plants && (
                 <>
-                  <h3 className="text-base font-bold text-white mb-4 flex items-center gap-2">
+                  <h3 className="text-base font-bold !text-white mb-4 flex items-center gap-2">
                     <FlaskConical className="w-4 h-4 text-[#C8AB8A]" />
-                    <span>Plantes Clés du Totum</span>
+                    <span className="text-white">Plantes Clés du Totum</span>
                   </h3>
                   <div className="space-y-3 mb-6">
-                    {phase.core_plants.map((plant, idx) => (
+                    {phase.core_plants?.map((plant, idx) => (
                       <div key={idx} className="p-3.5 bg-[#3E4A3D] rounded-xl border border-white/10">
                         <div className="flex justify-between items-start mb-1">
-                          <span className="font-bold text-white text-xs sm:text-sm">{plant.nom}</span>
-                          <span className="text-[9px] bg-[#C8AB8A]/20 text-[#C8AB8A] px-2 py-0.5 rounded-full uppercase tracking-wider font-mono">
+                          <span className="font-bold !text-white text-xs sm:text-sm">{plant.nom}</span>
+                          <span className="text-[9px] bg-white/15 !text-white px-2 py-0.5 rounded-full uppercase tracking-wider font-mono">
                             {plant.partie}
                           </span>
                         </div>
-                        <p className="text-xs text-[#F9F6F0]/80 leading-relaxed italic">{plant.role}</p>
+                        <p className="text-xs !text-white leading-relaxed italic">{plant.role}</p>
                       </div>
                     ))}
                   </div>
@@ -175,15 +170,15 @@ const PhaseDetailModal: React.FC<{
 
               {phase.actions && (
                 <div>
-                  <h3 className="text-base font-bold text-white mb-3 flex items-center gap-2">
+                  <h3 className="text-base font-bold !text-white mb-3 flex items-center gap-2">
                     <Zap className="w-4 h-4 text-[#C8AB8A]" />
-                    <span>Leviers d’Action</span>
+                    <span className="text-white">Leviers d’Action</span>
                   </h3>
-                  <ul className="space-y-2 text-xs text-[#F9F6F0]/80">
-                    {phase.actions.map((act, i) => (
-                      <li key={i} className="flex gap-2">
-                        <span className="text-[#C8AB8A]">•</span>
-                        <span>{act}</span>
+                  <ul className="space-y-2 text-xs !text-white">
+                    {phase.actions?.map((act, i) => (
+                      <li key={i} className="flex gap-2 !text-white">
+                        <span className="text-white">•</span>
+                        <span className="text-white">{act}</span>
                       </li>
                     ))}
                   </ul>
@@ -357,20 +352,20 @@ export default function PhytotherapyResetPage({
                     <span>1 Molécule → 1 Récepteur Isolé</span>
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-white/90 leading-relaxed mb-4">
+                  <p className="text-xs sm:text-sm !text-white/90 leading-relaxed mb-4">
                     La pharmacologie classique isole un principe actif pur pour forcer ou inhiber un récepteur cellulaire unique. Le corps réagit de manière unilatérale.
                   </p>
 
                   <ul className="space-y-2.5 text-xs text-white mb-6">
-                    <li className="flex items-start gap-2 text-white">
+                    <li className="flex items-start gap-2 !text-white">
                       <span className="text-[#C8AB8A] font-bold text-sm leading-none">•</span>
                       <span className="text-white font-medium">Tolérance rapide et accoutumance cellulaire</span>
                     </li>
-                    <li className="flex items-start gap-2 text-white">
+                    <li className="flex items-start gap-2 !text-white">
                       <span className="text-[#C8AB8A] font-bold text-sm leading-none">•</span>
                       <span className="text-white font-medium">Surcharge des émonctoires hépatiques et rénaux</span>
                     </li>
-                    <li className="flex items-start gap-2 text-white">
+                    <li className="flex items-start gap-2 !text-white">
                       <span className="text-[#C8AB8A] font-bold text-sm leading-none">•</span>
                       <span className="text-white font-medium">Masquage du symptôme sans lever le verrou d'origine</span>
                     </li>
@@ -396,25 +391,25 @@ export default function PhytotherapyResetPage({
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                  <h3 className="text-lg font-bold !text-white mb-2 flex items-center gap-2">
                     <Sparkles className="w-4 h-4 text-[#C8AB8A] shrink-0" />
-                    <span>Le Totum Végétal → Réseau d'Organes</span>
+                    <span className="text-white">Le Totum Végétal → Réseau d'Organes</span>
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-white/95 leading-relaxed mb-4">
+                  <p className="text-xs sm:text-sm !text-white/95 leading-relaxed mb-4">
                     Le Totum apporte une matrice vivante de centaines de principes actifs synergiques (amers, flavonoïdes, polyphénols, minéraux) dialoguant simultanément avec l'ensemble des systèmes.
                   </p>
 
                   <ul className="space-y-2.5 text-xs text-white mb-6">
-                    <li className="flex items-start gap-2 text-white">
+                    <li className="flex items-start gap-2 !text-white">
                       <Check className="w-3.5 h-3.5 text-[#C8AB8A] shrink-0 mt-0.5" />
                       <span className="text-white font-medium">Réveil des récepteurs endormis (amers TAS2R)</span>
                     </li>
-                    <li className="flex items-start gap-2 text-white">
+                    <li className="flex items-start gap-2 !text-white">
                       <Check className="w-3.5 h-3.5 text-[#C8AB8A] shrink-0 mt-0.5" />
                       <span className="text-white font-medium">Ouverture des 5 émonctoires avant toute relance</span>
                     </li>
-                    <li className="flex items-start gap-2 text-white">
+                    <li className="flex items-start gap-2 !text-white">
                       <Check className="w-3.5 h-3.5 text-[#C8AB8A] shrink-0 mt-0.5" />
                       <span className="text-white font-medium">Restauration autonome des boucles d'auto-régulation</span>
                     </li>
@@ -888,16 +883,16 @@ export default function PhytotherapyResetPage({
                 ]}
                 teaserContent={
                   <div className="p-6 rounded-2xl bg-[#0F261E] text-white border border-[#C8AB8A]/30 space-y-4">
-                    <div className="flex items-center gap-2 text-xs font-bold text-[#C8AB8A] uppercase tracking-wider font-mono">
+                    <div className="flex items-center gap-2 text-xs font-bold !text-white uppercase tracking-wider font-mono">
                       <Sliders className="w-4 h-4 text-[#C8AB8A]" />
-                      <span>Cadence de l'Accordage Biologique • Vue Synthétique</span>
+                      <span className="text-white">Cadence de l'Accordage Biologique • Vue Synthétique</span>
                     </div>
                     <div className="grid sm:grid-cols-3 lg:grid-cols-6 gap-3 text-center text-xs">
                       {tuningPhases.map((phase, idx) => (
                         <div key={idx} className="p-3 rounded-xl bg-[#3E4A3D] border border-white/10 space-y-1">
-                          <span className="font-mono text-[#C8AB8A] font-black text-xs block">{phase.id}</span>
-                          <strong className="text-white block truncate text-[11px]">{phase.title}</strong>
-                          <span className="text-[10px] text-white/60 block">{phase.duration}</span>
+                          <span className="font-mono !text-white font-black text-xs block">{phase.id}</span>
+                          <strong className="!text-white block truncate text-[11px]">{phase.title}</strong>
+                          <span className="text-[10px] !text-white block">{phase.duration}</span>
                         </div>
                       ))}
                     </div>
