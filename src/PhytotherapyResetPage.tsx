@@ -20,7 +20,8 @@ import {
   Radio,
   Sliders,
   Repeat,
-  Check
+  Check,
+  AlertTriangle
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { resetPhasesData, ResetPhaseDetail } from './data/resetPhases';
@@ -466,6 +467,65 @@ export default function PhytotherapyResetPage({
         {/* CORPS PRINCIPAL DE LA PAGE                                                */}
         {/* ========================================================================= */}
         <main className="max-w-6xl mx-auto px-4 sm:px-6 space-y-24">
+
+          {/* ========================================================================= */}
+          {/* 1.2. SECTION "L'INTELLIGENCE OUBLIÉE" (ÉDUCATION SUR L'HOMÉOSTASIE)        */}
+          {/* ========================================================================= */}
+          <section className="space-y-10 py-8 scroll-mt-24">
+            <div className="text-center max-w-4xl mx-auto space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-[#3E4A3D] border border-[#E7DFD3] text-[11px] font-bold uppercase tracking-wider shadow-sm">
+                <Activity className="w-3.5 h-3.5 text-[#C8AB8A]" />
+                <span>Le Paradigme de la Vitalité</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#0F261E] tracking-tight">
+                L'Intelligence Oubliée : Comprendre l'Homéostasie et Votre Pharmacie Intérieure
+              </h2>
+              <p className="text-sm sm:text-base text-[#8A8177] leading-relaxed font-medium max-w-3xl mx-auto">
+                Vous n'avez pas besoin d'apprendre à votre corps à guérir. Vous avez besoin de lui redonner les conditions pour le faire.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Bloc 1 */}
+              <div className="bg-white p-6 sm:p-8 rounded-2xl border border-[#E7DFD3] shadow-sm space-y-4">
+                <div className="w-10 h-10 rounded-xl bg-[#F9F6F0] text-[#C8AB8A] flex items-center justify-center">
+                  <Sparkles className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-[#0F261E]">Le Miracle Silencieux</h3>
+                <p className="text-sm text-[#8A8177] leading-relaxed">
+                  Chaque seconde, votre corps régule sa température, son pH et des milliers de paramètres. C'est l'<strong>homéostasie</strong> : votre pharmacie intérieure, capable de réparer les tissus et d'éliminer les toxines, à condition qu'on ne la surcharge pas.
+                </p>
+              </div>
+
+              {/* Bloc 2 */}
+              <div className="bg-white p-6 sm:p-8 rounded-2xl border border-[#E7DFD3] shadow-sm space-y-4">
+                <div className="w-10 h-10 rounded-xl bg-[#F9F6F0] text-[#C8AB8A] flex items-center justify-center">
+                  <AlertTriangle className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-[#0F261E]">Le Verrou de la Vie Moderne</h3>
+                <p className="text-sm text-[#8A8177] leading-relaxed">
+                  Face au stress chronique et aux toxines, l'organisme compense en "surrégime". C'est la <strong>charge allostatique</strong>. Les émonctoires saturent, et le corps verrouille des systèmes (digestion, sommeil, immunité) pour survivre, générant fatigue et inflammation.
+                </p>
+              </div>
+
+              {/* Bloc 3 */}
+              <div className="bg-white p-6 sm:p-8 rounded-2xl border border-[#E7DFD3] shadow-sm space-y-4">
+                <div className="w-10 h-10 rounded-xl bg-[#F9F6F0] text-[#C8AB8A] flex items-center justify-center">
+                  <FlaskConical className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-[#0F261E]">L'Approche Bloom</h3>
+                <p className="text-sm text-[#8A8177] leading-relaxed">
+                  Nous ne forçons pas un récepteur. Nous utilisons la synergie du <strong>Totum végétal</strong> (extrait avec précision par la BloomLab) pour rouvrir les portes d'évacuation, relancer les boucles d'auto-régulation et lever le verrou pour que la guérison opère.
+                </p>
+              </div>
+            </div>
+
+            <div className="text-center max-w-3xl mx-auto pt-4">
+              <p className="text-sm sm:text-base text-[#0F261E] font-medium leading-relaxed bg-[#F9F6F0] p-6 rounded-2xl border border-[#E7DFD3]">
+                Ce n'est ni un régime, ni une contrainte de plus. C'est un <strong>Accordage Biologique</strong> en 6 phases pour passer d'un état de survie (verrouillé) à un état de vitalité (déverrouillé). Découvrez la méthode ci-dessous.
+              </p>
+            </div>
+          </section>
 
           {/* ========================================================================= */}
           {/* 1.5. SECTION "HÉRITAGE SCIENTIFIQUE" (CRÉDIBILITÉ - REMONTÉE ICI)          */}
