@@ -1300,7 +1300,7 @@ interface ServerSEORoute {
 
 const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
   "/": {
-    title: "Extracteur Botanique BloomLab® | Infusion Précision",
+    title: "Bloom by BotaniK | Extracteur Botanique de Précision & Infusion Végétale Maîtrisée",
     description: "Découvrez l'extracteur et infuseur botanique de précision BloomLab®. Vortex cinétique et thermorégulation ±0,5°C pour extraire le Totum actif de vos plantes.",
     image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
     image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
@@ -2183,19 +2183,19 @@ function registerCatchAll(app: express.Express, isProd: boolean) {
 
       if (fs.existsSync(distIndex)) {
         let rawHtml = fs.readFileSync(distIndex, "utf-8");
-        rawHtml = injectServerSEO(rawHtml, req.path);
+        const finalHtml = injectServerSEO(rawHtml, req.path);
         return res.status(200)
           .set({
             "Content-Type": "text/html; charset=utf-8",
             "Cache-Control": "no-cache, must-revalidate",
           })
-          .end(rawHtml);
+          .end(finalHtml);
       } else if (fs.existsSync(rootIndex)) {
         let rawHtml = fs.readFileSync(rootIndex, "utf-8");
         rawHtml = rawHtml.replace(/<script type="module" src="\/@vite\/client"><\/script>/g, '');
         rawHtml = rawHtml.replace(/<script\b[^>]*src=["']\/@vite\/client["'][^>]*><\/script>/gi, '');
-        rawHtml = injectServerSEO(rawHtml, req.path);
-        return res.status(200).set({ "Content-Type": "text/html; charset=utf-8" }).end(rawHtml);
+        const finalHtml = injectServerSEO(rawHtml, req.path);
+        return res.status(200).set({ "Content-Type": "text/html; charset=utf-8" }).end(finalHtml);
       }
       return res.status(404).send("Index not found");
     } catch (err: any) {

@@ -6,15 +6,18 @@ interface SEOEntry {
   path?: string;
 }
 
+const HOME_TITLE = "Bloom by BotaniK | Extracteur Botanique de Précision & Infusion Végétale Maîtrisée";
+const HOME_DESCRIPTION = "Découvrez l'extracteur et infuseur botanique de précision BloomLab®. Vortex cinétique et thermorégulation ±0,5°C pour extraire le Totum actif de vos plantes.";
+
 const VIEW_SEO_MAP: Record<string, SEOEntry> = {
   home: {
-    title: "Extracteur Botanique BloomLab® | Infusion Précision",
-    description: "Découvrez l'extracteur et infuseur botanique de précision BloomLab®. Vortex cinétique et thermorégulation ±0,5°C pour extraire le Totum actif de vos plantes.",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
     path: "/"
   },
   indexbis: {
-    title: "Extracteur Botanique BloomLab® | Infusion Précision",
-    description: "Découvrez l'extracteur et infuseur botanique de précision BloomLab®. Vortex cinétique et thermorégulation ±0,5°C pour extraire le Totum actif de vos plantes.",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
     path: "/"
   },
   machine: {
@@ -223,6 +226,13 @@ export function updateDocumentSEO(config?: any, ..._rest: any[]) {
   if (typeof document === 'undefined' || !config) return;
 
   if (typeof config === 'string') {
+    if (config === 'indexbis' || config === 'home') {
+      document.title = HOME_TITLE;
+      setMetaDescription(HOME_DESCRIPTION);
+      setCanonicalLink('https://bloombybotanik.com/');
+      return;
+    }
+
     const currentPathRaw = typeof window !== 'undefined' ? window.location.pathname : '/';
     const normalizedCurrent = currentPathRaw.endsWith('/') ? currentPathRaw : `${currentPathRaw}/`;
 
@@ -245,7 +255,7 @@ export function updateDocumentSEO(config?: any, ..._rest: any[]) {
       return;
     }
 
-    // Ne jamais écraser le <title> serveur avec un nom de vue interne brut (ex: "axe-a1")
+    // Ne jamais écraser le <title> avec le nom brut de la variable view
     if (VIEW_PATHS[config]) {
       const targetPath = VIEW_PATHS[config];
       const cleanPath = targetPath.endsWith('/') ? targetPath : `${targetPath}/`;
@@ -253,7 +263,9 @@ export function updateDocumentSEO(config?: any, ..._rest: any[]) {
       return;
     }
 
-    document.title = config;
+    if (!document.title || document.title === 'indexbis') {
+      document.title = HOME_TITLE;
+    }
     return;
   }
 
