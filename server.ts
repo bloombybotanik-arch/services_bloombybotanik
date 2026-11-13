@@ -1308,8 +1308,8 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     type: "website"
   },
   "/bloomlab/": {
-    title: "BloomLab® Extracteur Botanique | Totum Végétal Préservé — 239€",
-    description: "Extracteur et infuseur botanique BloomLab® : inox chirurgical 304, vortex cinétique, thermorégulation ±0,5°C pour extraire le Totum intégral de vos plantes à la maison.",
+    title: "BloomLab® : Extracteur de Plantes de Précision | Bloom",
+    description: "La BloomLab® est l'extracteur de plantes qui préserve le Totum végétal. Thermorégulation ±0,5°C et vortex cinétique pour des huiles et teintures d'exception.",
     image1200: "/images/og/produit-bloomlab-1200x630.jpg",
     image1080: "/images/og/produit-bloomlab-1080x1080.jpg",
     alt: "Extracteur et infuseur botanique BloomLab® en acier inoxydable 304",
@@ -1326,19 +1326,75 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     type: "article"
   },
   "/extraction-botanique/": {
-    title: "Extraction Botanique Guide | Totum & Séquençage A/B",
-    description: "Guide complet de l'extraction végétale : extraction hydrothermique, solvants nobles, vortex cinétique et biodisponibilité sans dégradation moléculaire.",
+    title: "Extraction Botanique : Méthodes & Séquençage A/B | Bloom",
+    description: "Maîtrisez l'extraction végétale : macération, infusion, séquençage A/B. Découvrez comment la BloomLab préserve les principes actifs.",
     image1200: "/images/og/extraction-botanique-totum-solvants-1200x630.jpg",
     image1080: "/images/og/extraction-botanique-totum-solvants-1080x1080.jpg",
     alt: "Guide de l'extraction végétale, solvants et Totum botanique",
     type: "article"
   },
+  "/infusion-botanique/": {
+    title: "Infusion Botanique Maison : Guide Complet & Bienfaits | Bloom",
+    description: "Découvrez l'art de l'infusion botanique de précision. Températures, solvants et recettes pour préserver le Totum végétal et booster vos bienfaits.",
+    image1200: "/images/og/infusion-botanique-maison-extraction-active-1200x630.jpg",
+    image1080: "/images/og/infusion-botanique-maison-extraction-active-1080x1080.jpg",
+    alt: "Guide complet de l'infusion botanique maison et de ses bienfaits",
+    type: "article"
+  },
   "/infusion-botanique-maison-comment-ca-marche/": {
     title: "Infusion Botanique Maison | Principes Actifs & Méthode",
-    description: "Comprendre l'infusion végétale de précision : seuils thermiques, cinétique d'agitation et préservation des molécules actives thermosensibles.",
+    description: "Comprendre la dynamique d'infusion en chambre close : seuils thermiques maîtrisés, agitation douce et protection des flavonoïdes thermosensibles.",
     image1200: "/images/og/infusion-botanique-maison-extraction-active-1200x630.jpg",
     image1080: "/images/og/infusion-botanique-maison-extraction-active-1080x1080.jpg",
     alt: "Infusion botanique maison et extraction de principes actifs",
+    type: "article"
+  },
+  "/academie/": {
+    title: "Académie Bloom | Comprendre le Terrain & la Physiologie",
+    description: "Explorez l'Académie Bloom : architectures du vivant, terrains biologiques, axe neuro-endocrinien et méthodologie d'accordage saisonnier.",
+    image1200: "/images/og/phytotherapie-reset-homeostasie-terrain-1200x630.jpg",
+    image1080: "/images/og/phytotherapie-reset-homeostasie-terrain-1080x1080.jpg",
+    alt: "Académie Bloom : physiologie du terrain et phytothérapie systémique",
+    type: "website"
+  },
+  "/academie/reset-homeostasique/": {
+    title: "Reset Homéostasique : Protocoles de Drainage & Terrain | Bloom",
+    description: "Libérez vos émonctoires et réactivez votre pharmacie intérieure. Découvrez nos protocoles de phytothérapie de précision pour un drainage profond.",
+    image1200: "/images/og/phytotherapie-reset-homeostasie-terrain-1200x630.jpg",
+    image1080: "/images/og/phytotherapie-reset-homeostasie-terrain-1080x1080.jpg",
+    alt: "Protocole de Reset Homéostasique en 6 phases Bloom by BotaniK",
+    type: "article"
+  },
+  "/reset-homeostasique/": {
+    title: "Reset Homéostasique : Accordage Systémique en 6 Phases | Bloom",
+    description: "Comprenez la charge allostatique et explorez l'accordage biologique en 6 phases pour soutenir les boucles d'autorégulation du terrain.",
+    image1200: "/images/og/phytotherapie-reset-homeostasie-terrain-1200x630.jpg",
+    image1080: "/images/og/phytotherapie-reset-homeostasie-terrain-1080x1080.jpg",
+    alt: "Protocole de Reset Homéostasique en 6 phases Bloom by BotaniK",
+    type: "article"
+  },
+  "/academie/herbier/": {
+    title: "Herbier Médicinal Interactif | Monographies & Dosages",
+    description: "Consultez les fiches détaillées de nos plantes médicinales : principes actifs majeurs, parties utilisées, températures d'extraction et précautions d'emploi.",
+    image1200: "/images/og/herbier-plantes-medicinales-botanique-1200x630.jpg",
+    image1080: "/images/og/herbier-plantes-medicinales-botanique-1080x1080.jpg",
+    alt: "Herbier médicinal interactif Bloom by BotaniK",
+    type: "website"
+  },
+  "/academie/bibliotheque/": {
+    title: "Bibliothèque de Savoirs & Protocoles | Académie Bloom",
+    description: "Retrouvez l'ensemble des ressources pédagogiques de l'Académie : dossiers de physiologie, fiches d'extraction et guides de terrain.",
+    image1200: "/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg",
+    image1080: "/images/og/articles-savoirs-herboristerie-botanique-1080x1080.jpg",
+    alt: "Bibliothèque des savoirs botaniques Bloom",
+    type: "website"
+  },
+  "/academie/protocoles/": {
+    title: "Protocoles Systémiques Ciblés | Académie Bloom",
+    description: "Parcourez nos protocoles d'accompagnement par terrain : digestion, immunité, axe nerveux, sommeil et récupération cellulaire.",
+    image1200: "/images/og/phytotherapie-reset-homeostasie-terrain-1200x630.jpg",
+    image1080: "/images/og/phytotherapie-reset-homeostasie-terrain-1080x1080.jpg",
+    alt: "Protocoles systémiques Bloom by BotaniK",
     type: "article"
   },
   "/phytotherapie-reset/": {
@@ -1398,19 +1454,19 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     type: "website"
   },
   "/boutique/": {
-    title: "Kits Plantes Médicinales & Remèdes Naturels | Bloom",
-    description: "Découvrez notre gamme complète d'herboristerie : extracteur BloomLab, kits de plantes médicinales bio, accessoires d'extraction et abonnements.",
+    title: "Boutique Bloom | BloomLab®, Plantes Bio & Accessoires",
+    description: "Commandez l'appareil BloomLab®, nos formules de plantes médicinales bio, filtres et accessoires pour vos préparations botaniques à domicile.",
     image1200: "/images/og/boutique-bloomlab-kits-plantes-1200x630.jpg",
     image1080: "/images/og/boutique-bloomlab-kits-plantes-1080x1080.jpg",
     alt: "Boutique officielle Bloom by BotaniK, BloomLab et kits de plantes",
     type: "website"
   },
   "/boutique/kits/": {
-    title: "Kits Plantes Médicinales & Remèdes Naturels | Bloom",
-    description: "Découvrez notre gamme complète d'herboristerie : extracteur BloomLab, kits de plantes médicinales bio, accessoires d'extraction et abonnements.",
+    title: "Kits de Plantes Médicinales Bio & Remèdes | Bloom",
+    description: "Des formules de plantes bio rigoureusement sélectionnées pour le sommeil, la digestion ou l'immunité. Prêtes à être extraites avec la BloomLab.",
     image1200: "/images/og/boutique-bloomlab-kits-plantes-1200x630.jpg",
     image1080: "/images/og/boutique-bloomlab-kits-plantes-1080x1080.jpg",
-    alt: "Boutique officielle Bloom by BotaniK, BloomLab et kits de plantes",
+    alt: "Kits de plantes médicinales et synergies botaniques Bloom by BotaniK",
     type: "website"
   },
   "/manifeste/": {
@@ -1430,11 +1486,11 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     type: "website"
   },
   "/faq/": {
-    title: "FAQ Extracteur Botanique | Questions Fréquentes",
-    description: "Foire aux questions BloomLab® : garanties, entretien de l'inox 304, protocoles d'extraction, solvants autorisés et délais d'expédition sous 24 à 48 heures.",
+    title: "Centre d'Aide & Réponses Pratiques | Bloom by BotaniK",
+    description: "Réponses rapides sur l'utilisation quotidienne de nos appareils, le nettoyage, le choix des plantes sèches, la livraison et le suivi de votre commande.",
     image1200: "/images/og/questions-frequentes-bloomlab-botanique-1200x630.jpg",
     image1080: "/images/og/questions-frequentes-bloomlab-botanique-1080x1080.jpg",
-    alt: "Foire aux questions sur l'infuseur BloomLab et l'extraction végétale",
+    alt: "Centre d'aide et réponses pratiques Bloom by BotaniK",
     type: "website"
   },
   "/lexique/": {
@@ -1496,11 +1552,11 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     sku: "BLOOMLAB-V2"
   },
   "/boutique/bloomlab/": {
-    title: "BloomLab® Extracteur Précision | Inox 304 ±0,5°C",
-    description: "Commandez l'extracteur et infuseur botanique BloomLab®. Inox chirurgical 304, vortex cinétique, thermorégulation ±0,5°C pour extraire le Totum de vos plantes.",
+    title: "Acheter BloomLab® en Ligne | Garantie 1 An & Livraison Rapide",
+    description: "Ajoutez BloomLab® à votre routine d'herboristerie : cuve étanche en inox 304, séquençage thermique guidé et expédition depuis la France sous 24 à 48 heures.",
     image1200: "/images/og/produit-bloomlab-1200x630.jpg",
     image1080: "/images/og/produit-bloomlab-1080x1080.jpg",
-    alt: "Extracteur et infuseur botanique de précision BloomLab® en situation",
+    alt: "Acheter l'extracteur BloomLab® dans la boutique officielle",
     type: "product",
     price: "239.00",
     sku: "BLOOMLAB-V2"
@@ -1685,11 +1741,35 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     type: "website"
   },
   "/la-marque/": {
-    title: "Manifeste Bloom | Souveraineté Sanitaire & Plantes",
-    description: "Manifeste Bloom by BotaniK : souveraineté sanitaire, ingénierie biologique et réconciliation entre rigueur scientifique et sagesse végétale ancestrale.",
+    title: "La Marque Bloom by BotaniK | Terroirs & Exigence",
+    description: "Découvrez l'histoire de Bloom by BotaniK : sélection rigoureuse des plantes brutes, conception française des protocoles et transparence scientifique.",
     image1200: "/images/og/manifeste-souverainete-sanitaire-botanique-1200x630.jpg",
     image1080: "/images/og/manifeste-souverainete-sanitaire-botanique-1080x1080.jpg",
     alt: "La marque Bloom by BotaniK et sa mission de phytothérapie intégrale",
+    type: "website"
+  },
+  "/cosmetiques-naturels-diy/": {
+    title: "Cosmétique Botanique & Macérats Huileux | Bloom",
+    description: "Créez des soins d'exception avec la précision BloomLab. Macérats huileux, sérums et baumes enrichis en principes actifs préservés.",
+    image1200: "/images/og/cosmetique-botanique-macerat-huileux-1200x630.jpg",
+    image1080: "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
+    alt: "Cosmétiques naturels faits maison et macérats botaniques",
+    type: "article"
+  },
+  "/remedes-naturels/": {
+    title: "Remèdes Naturels Maison | Guide d'Herboristerie Moderne",
+    description: "Guide structuré pour concevoir vos préparations végétales familiales : tisanes concentrées, sirops botaniques, baumes et extraits hydroalcooliques.",
+    image1200: "/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg",
+    image1080: "/images/og/articles-savoirs-herboristerie-botanique-1080x1080.jpg",
+    alt: "Guide pratique des remèdes naturels maison Bloom",
+    type: "article"
+  },
+  "/comment-ca-marche/": {
+    title: "Comment Ça Marche | Le Séquençage Actif BloomLab®",
+    description: "Comprenez en 3 étapes le fonctionnement de la méthode Bloom : pesée des plantes, cycle thermique régulé et filtration prête à l'emploi.",
+    image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
+    image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
+    alt: "Fonctionnement étape par étape de l'extracteur BloomLab",
     type: "website"
   },
   "/bibliotheque/": {
@@ -1944,7 +2024,11 @@ function injectServerSEO(html: string, reqPath: string): string {
     }
 
     // 5. Update Canonical link & Hreflang
-    updated = updated.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, `<link rel="canonical" href="${canonical}" />`);
+    if (/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i.test(updated)) {
+      updated = updated.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, `<link rel="canonical" href="${canonical}" />`);
+    } else {
+      updated = updated.replace("</head>", `  <link rel="canonical" href="${canonical}" />\n  </head>`);
+    }
 
     if (normalized === "/phytotherapie-reset/protocole-psoriasis/") {
       updated = updated.replace(/<link\s+rel=["']alternate["']\s+hreflang=["'].*?["']\s+href=["'].*?["']\s*\/?>/gi, "");
@@ -2098,13 +2182,19 @@ function registerCatchAll(app: express.Express, isProd: boolean) {
       }
 
       if (fs.existsSync(distIndex)) {
-        res.setHeader("Content-Type", "text/html; charset=utf-8");
-        res.setHeader("Cache-Control", "no-cache, must-revalidate");
-        return res.sendFile(distIndex);
+        let rawHtml = fs.readFileSync(distIndex, "utf-8");
+        rawHtml = injectServerSEO(rawHtml, req.path);
+        return res.status(200)
+          .set({
+            "Content-Type": "text/html; charset=utf-8",
+            "Cache-Control": "no-cache, must-revalidate",
+          })
+          .end(rawHtml);
       } else if (fs.existsSync(rootIndex)) {
         let rawHtml = fs.readFileSync(rootIndex, "utf-8");
         rawHtml = rawHtml.replace(/<script type="module" src="\/@vite\/client"><\/script>/g, '');
         rawHtml = rawHtml.replace(/<script\b[^>]*src=["']\/@vite\/client["'][^>]*><\/script>/gi, '');
+        rawHtml = injectServerSEO(rawHtml, req.path);
         return res.status(200).set({ "Content-Type": "text/html; charset=utf-8" }).end(rawHtml);
       }
       return res.status(404).send("Index not found");
