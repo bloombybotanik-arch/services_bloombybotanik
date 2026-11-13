@@ -585,7 +585,7 @@ export default function App() {
   return (
     <div 
       style={{ fontFamily: "'Manrope', sans-serif" }}
-      className="flex min-h-screen w-full bg-[#FAF8F5] text-[#1B3022] font-sans selection:bg-botanik-green selection:text-white max-w-full overflow-x-hidden relative"
+      className="flex min-h-screen w-full bg-[#F9F6F0] text-[#1B3022] font-sans selection:bg-botanik-green selection:text-white relative"
     >
       {/* 1. Left Persistent Sidebar (Desktop + Tablet >= 768px) */}
       <NavigationSidebar
@@ -600,7 +600,7 @@ export default function App() {
       />
 
       {/* 2. Main Content Wrapper offset by 280px on md+ */}
-      <div className="flex-1 w-full min-w-0 md:ml-[280px] flex flex-col max-w-full overflow-x-hidden">
+      <div className="flex-1 min-w-0 md:ml-[280px] flex flex-col transition-all">
         {/* Top Navigation Bar: Mobile Only (< 768px) */}
         <header className="md:hidden sticky top-0 z-30 bg-[#0F261E] border-b border-white/10 transition-colors shadow-md">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
@@ -1134,7 +1134,7 @@ export default function App() {
         </header>
 
       {/* 3. Main Content Router */}
-      <main className="flex-1 w-full">
+      <main className="flex-1 w-full min-w-0 transition-all">
         {currentView === 'home' || currentView === 'indexbis' ? (
           <IndexBisContent onNavigate={navigateTo} lang={selectedLanguage} />
         ) : currentView === 'machine' ? (

@@ -40,7 +40,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
   };
 
   return (
-    <main className="bg-[#FAF7F2] text-[#3E4A3D] min-h-screen">
+    <main className="bg-[#FAF7F2] text-[#3E4A3D] min-h-screen w-full">
       {/* SECTION 0 — EN-TÊTE & INTRODUCTION VERT SAUGE FONCÉ #1E2E25 */}
       <header className="w-full bg-[#1E2E25] text-white border-b border-white/10">
         {/* Barre de fil d'Ariane tout en haut : Vert Profond du Menu #0F261E */}
@@ -137,7 +137,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
       </header>
 
       {/* CONTENU PRINCIPAL ÉDITORIAL */}
-      <div className="max-w-4xl mx-auto px-6 py-12 md:py-16 space-y-16 sm:space-y-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 md:py-16 space-y-16 sm:space-y-20">
 
         {/* SECTION 1 — COMPRENDRE L’INFUSION BOTANIQUE */}
         <section id="comprendre-infusion-botanique" className="space-y-6">

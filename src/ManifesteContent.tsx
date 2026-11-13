@@ -92,7 +92,7 @@ export default function ManifesteContent({ onBack, onNavigate, lang }: Manifeste
 
   return (
     <GlossaryProvider pageKey="manifeste">
-      <div className="min-h-screen bg-[#FAF7F2] text-[#3E4A3D]">
+      <div className="min-h-screen w-full bg-[#FAF7F2] text-[#3E4A3D]">
         {/* Inject FAQ Schema */}
         <script
           type="application/ld+json"
@@ -101,7 +101,7 @@ export default function ManifesteContent({ onBack, onNavigate, lang }: Manifeste
 
         {/* Navigation Sticky */}
         <div className="sticky top-0 z-30 bg-[#FAF7F2]/90 backdrop-blur-md border-b border-[#E7DFD3]">
-          <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-16 flex items-center justify-between">
             <button 
               onClick={onBack}
               className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#3E4A3D]/60 hover:text-[#3E4A3D] transition-colors group cursor-pointer"
@@ -115,7 +115,7 @@ export default function ManifesteContent({ onBack, onNavigate, lang }: Manifeste
           </div>
         </div>
 
-        <article className="max-w-4xl mx-auto px-6 py-12 md:py-20">
+        <article className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 md:py-20">
           {/* Header */}
           <motion.header 
             initial={{ opacity: 0, y: 16 }}

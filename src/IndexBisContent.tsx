@@ -122,7 +122,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
 
   return (
     <GlossaryProvider pageKey="home">
-    <div className="bg-[#FAF7F2] text-slate-800 font-sans antialiased selection:bg-[#E8772E] selection:text-white w-full max-w-full overflow-x-hidden">
+    <div className="bg-[#FAF7F2] text-slate-800 font-sans antialiased selection:bg-[#E8772E] selection:text-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
       {/* ========================================================================= */}
       {/* BANDEAU ANNONCE DÉFILANT (Marquee Réassurance Réelle) */}
@@ -160,7 +160,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               height={880}
               loading="eager"
               fetchPriority="high"
-              className="w-full h-[520px] sm:h-[620px] md:h-[720px] lg:h-[820px] xl:h-[880px] object-cover object-[center_60%] brightness-105 contrast-105 filter transition-all duration-500" 
+              className="w-full h-auto max-h-[80vh] object-cover object-[center_60%] brightness-105 contrast-105 filter transition-all duration-500" 
             />
             {/* Scrim ciblé sur le coin supérieur gauche pour la lisibilité du titre sans assombrir le visage de la femme à droite */}
             <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/20 via-45% to-transparent pointer-events-none" />
