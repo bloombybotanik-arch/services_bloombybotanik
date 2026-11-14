@@ -21,10 +21,13 @@ let auth: Auth;
 let db: Firestore;
 
 try {
-  app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
+  const existingApps = getApps();
+  app = existingApps.length === 0 ? initializeApp(firebaseConfig) : existingApps[0];
 } catch (error) {
-  console.error("[Firebase Init Fallback]", error);
+  console.warn("[Firebase Init Fallback]", error);
   const fallbackConfig = {
+    id: "fallback-id",
+    name: "fallback-app",
     apiKey: "AIzaSyDummyFallbackKeyForDev00000000000000",
     authDomain: "demo-fallback.firebaseapp.com",
     projectId: "demo-fallback",
@@ -32,13 +35,19 @@ try {
     messagingSenderId: "000000000000",
     appId: "1:000000000000:web:0000000000000000000000"
   };
-  app = getApps().length === 0 ? initializeApp(fallbackConfig, "fallback") : getApp();
+  try {
+    const existingApps = getApps();
+    app = existingApps.length === 0 ? initializeApp(fallbackConfig, "fallback") : existingApps[0];
+  } catch (fallbackError) {
+    console.warn("[Firebase Fallback App Disabled]", fallbackError);
+    app = {} as FirebaseApp;
+  }
 }
 
 try {
   auth = getAuth(app);
 } catch (error) {
-  console.error("[Firebase Auth Fallback]", error);
+  console.warn("[Firebase Auth Fallback]", error);
   auth = {
     onAuthStateChanged: (cb: any) => {
       if (typeof cb === 'function') cb(null);
@@ -54,7 +63,7 @@ try {
   try {
     db = getFirestore(app);
   } catch (err) {
-    console.error("[Firebase Firestore Fallback]", err);
+    console.warn("[Firebase Firestore Fallback]", err);
     db = {} as Firestore;
   }
 }

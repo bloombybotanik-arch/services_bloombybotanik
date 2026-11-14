@@ -122,23 +122,23 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
 
   return (
     <GlossaryProvider pageKey="home">
-    <div className="bg-[#FAF7F2] text-slate-800 font-sans antialiased selection:bg-[#E8772E] selection:text-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div className="w-full overflow-x-hidden bg-[#FAF7F2] text-slate-800 font-sans antialiased selection:bg-[#E8772E] selection:text-white">
 
       {/* ========================================================================= */}
       {/* BANDEAU ANNONCE DÉFILANT (Marquee Réassurance Réelle) */}
       {/* ========================================================================= */}
-      <div className="bg-[#1E2E25] text-[#FAF7F2] py-2 overflow-hidden border-b border-white/10 shadow-sm relative z-30">
+      <div className="w-full bg-[#1E2E25] text-[#FAF7F2] py-2 sm:py-2.5 overflow-hidden border-b border-white/10 shadow-sm relative z-30">
         <motion.div 
-          className="flex whitespace-nowrap items-center"
+          className="flex w-max whitespace-nowrap items-center"
           animate={{ x: ["0%", "-50%"] }}
           transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
         >
           {[...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, i) => (
-            <div key={i} className="flex items-center gap-12 px-8 shrink-0">
-              <span className="text-[11px] md:text-xs font-black uppercase tracking-[0.25em] whitespace-nowrap">
+            <div key={i} className="flex items-center gap-6 sm:gap-10 md:gap-12 px-4 sm:px-6 md:px-8 shrink-0">
+              <span className="text-[10px] sm:text-[11px] md:text-xs font-black uppercase tracking-[0.16em] sm:tracking-[0.22em] md:tracking-[0.25em] whitespace-nowrap">
                 {item}
               </span>
-              <span className="opacity-30 text-lg font-light select-none shrink-0">•</span>
+              <span className="opacity-30 text-base sm:text-lg font-light select-none shrink-0">•</span>
             </div>
           ))}
         </motion.div>

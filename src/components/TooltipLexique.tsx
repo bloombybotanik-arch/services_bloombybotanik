@@ -101,16 +101,7 @@ export const TooltipLexique: React.FC<TooltipLexiqueProps> = ({
     }
   }, [isOpen]);
 
-  if (!entry) {
-    return <span className={className}>{children || terme}</span>;
-  }
-
-  // If not first occurrence, render clean plain text without visual clutter
-  if (!isFirstOccurrence && !force) {
-    return <span className={`text-inherit ${className}`}>{children || entry.terme}</span>;
-  }
-
-  // Handle clicking outside & Escape key
+  // Handle clicking outside & Escape key (always before early returns to obey Rules of Hooks)
   useEffect(() => {
     if (!isOpen) return;
 
@@ -144,6 +135,15 @@ export const TooltipLexique: React.FC<TooltipLexiqueProps> = ({
       document.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen]);
+
+  if (!entry) {
+    return <span className={className}>{children || terme}</span>;
+  }
+
+  // If not first occurrence, render clean plain text without visual clutter
+  if (!isFirstOccurrence && !force) {
+    return <span className={`text-inherit ${className}`}>{children || entry.terme}</span>;
+  }
 
   const handleMouseEnter = () => {
     if (closeTimeoutRef.current) {

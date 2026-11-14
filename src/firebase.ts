@@ -13,22 +13,26 @@ export const firebaseConfig = {
 };
 
 let appInstance: any;
-if (!getApps().length) {
+try {
+  const existingApps = getApps();
+  appInstance = existingApps.length === 0 ? initializeApp(firebaseConfig) : existingApps[0];
+} catch (e) {
+  console.warn("[Firebase] Init fallback activated:", e);
   try {
-    appInstance = initializeApp(firebaseConfig);
-  } catch (e) {
-    console.warn("[Firebase] Init fallback activated:", e);
-    appInstance = initializeApp({
+    const existingApps = getApps();
+    appInstance = existingApps.length === 0 ? initializeApp({
+      id: "fallback-id",
+      name: "fallback-app",
       apiKey: "AIzaSyFakeKeyForTestingOnly",
       authDomain: "fake-project.firebaseapp.com",
       projectId: "fake-project",
       storageBucket: "fake-project.appspot.com",
       messagingSenderId: "123456789",
       appId: "1:123456789:web:abcdef"
-    });
+    } as any, "fallback") : existingApps[0];
+  } catch {
+    appInstance = {};
   }
-} else {
-  appInstance = getApp();
 }
 
 export const app = appInstance;

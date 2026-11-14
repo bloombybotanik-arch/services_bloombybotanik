@@ -727,27 +727,27 @@ export const Les4ArchitecturesContent: React.FC<Les4ArchitecturesContentProps> =
             <span className="text-3xl">🔗</span>
             <div>
               <div className="text-[10px] font-mono text-[#c9a84c] uppercase tracking-widest font-bold">Dynamique Systémique</div>
-              <h2 className="text-2xl sm:text-3xl font-black text-[#FAF7F2] tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-black text-white !text-white tracking-tight">
                 Comment les 4 Architectures s'effondrent ensemble
               </h2>
             </div>
           </div>
 
-          <div className="space-y-4 text-base sm:text-lg text-[#FAF7F2]/90 leading-relaxed font-light">
-            <p>
+          <div className="space-y-4 text-base sm:text-lg text-white leading-relaxed font-light">
+            <p className="text-white !text-white">
               Un stress chronique active l'axe HPA → le cortisol chronique <strong className="text-[#f87171] font-semibold">dégrade la production d'anandamide</strong> → le SEC s'appauvrit → les synapses perdent leur régulation fine → l'inflammation, la douleur et l'anxiété s'installent.
             </p>
-            <p>
+            <p className="text-white !text-white">
               Simultanément, le cortisol chronique <strong className="text-[#f87171] font-semibold">rigidifie le fascia</strong> → les tensions fasciales compriment mécaniquement le nerf vague → la signalisation SEC est perturbée dans ses canaux de transmission.
             </p>
-            <p>
+            <p className="text-white !text-white">
               Et le SRA, dérèglé par le stress et les carences, <strong className="text-[#c9a84c] font-semibold">amplifie l'ensemble de la réaction</strong>.
             </p>
           </div>
 
           {/* Encadré d'or */}
           <div className="p-6 sm:p-8 rounded-xl bg-[#3E4A3D] border-l-4 border-[#c9a84c] border border-white/10 space-y-3">
-            <p className="text-base sm:text-lg font-bold text-[#FAF7F2]">
+            <p className="text-base sm:text-lg font-bold text-white !text-white">
               Un axe HPA chroniquement activé épuise le SEC et rigidifie le fascia. Et un SEC déficient laisse l'axe HPA en hyperactivité permanente faute de régulateur.
             </p>
             <p className="text-sm text-[#c9a84c] font-medium italic">
