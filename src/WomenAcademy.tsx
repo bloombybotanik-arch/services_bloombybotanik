@@ -475,8 +475,8 @@ export default function WomenAcademy({
               </div>
 
               {/* Métaphore de l'hiver biologique */}
-              <div className="p-5 sm:p-6 rounded-2xl bg-[#1E2E25] text-[#F9F6F0]">
-                <p className="text-sm sm:text-base font-medium leading-relaxed">
+              <div className="p-5 sm:p-6 rounded-2xl bg-[#1E2E25] !text-white">
+                <p className="text-sm sm:text-base font-medium leading-relaxed !text-white">
                   {copy.m3WinterMetaphor}
                 </p>
               </div>
@@ -797,13 +797,13 @@ export default function WomenAcademy({
                 <span>Synthèse · Bloom Academy</span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight text-balance">
+              <h2 className="text-2xl sm:text-3xl font-bold !text-white leading-tight text-balance">
                 {copy.concTitle}
               </h2>
 
-              <div className="space-y-4 text-sm sm:text-base text-[#F9F6F0]/90 leading-relaxed">
-                <p>{copy.concP1}</p>
-                <p>{copy.concP2}</p>
+              <div className="space-y-4 text-sm sm:text-base !text-white leading-relaxed">
+                <p className="!text-white">{copy.concP1}</p>
+                <p className="!text-white">{copy.concP2}</p>
               </div>
 
               <div className="flex flex-wrap items-center gap-3 pt-2">
