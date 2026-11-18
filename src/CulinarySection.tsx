@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Search, ChevronDown, ChevronUp, ChefHat, Droplets, Flame, Hexagon, Beaker, Sprout, Star, ChevronRight, Lock } from 'lucide-react';
+import { Search, ChevronDown, ChevronUp, ChefHat, Droplets, Flame, Hexagon, Beaker, Sprout, Star, ChevronRight, Lock, ArrowRight } from 'lucide-react';
 import { wrapTitle } from './lib/textUtils';
 import { getCulinaryDatabase, CulinaryPlantData, ExtractionParams } from "./data/culinaryData";
 import { translations, Language } from './translations';
@@ -7,6 +7,7 @@ import { DifficultyBadge } from './components/DifficultyBadge';
 import { BeforeYouStartBlock } from './components/BeforeYouStartBlock';
 import { getRecipeDifficulty } from './data/recipeDifficulty';
 import { PageIntroHeader } from './components/ui/PageIntroHeader';
+import tremellaSoupImg from './assets/images/soupe_beaute_tremella_1794992328062.jpg';
 
 
 const renderExtractionParam = (plantId: string, key: string, param: ExtractionParams, t: any) => {
@@ -366,6 +367,50 @@ export default function CulinarySection({
             <div className="p-3 bg-[#FAF7F2] border-t border-[#3E4A3D]/15 flex items-center justify-between text-xs text-[#3E4A3D]">
               <span className="font-bold text-[#3E4A3D]">{lang === 'fr' ? "Exemple : Huile infusée au romarin" : "Example: Rosemary infused oil"}</span>
               <span className="text-[10px] text-[#3E4A3D] font-bold uppercase">Préparation Maison</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Recette Vedette MTC : Soupe de Beauté au Champignon des Neiges (Tremella) */}
+        <div className="mt-10 rounded-3xl overflow-hidden border border-[#E7DFD3] bg-white shadow-sm grid grid-cols-1 lg:grid-cols-12">
+          <div className="lg:col-span-5 relative aspect-[16/10] lg:aspect-auto bg-[#FAF7F2] overflow-hidden">
+            <img
+              src={tremellaSoupImg}
+              alt="Soupe de Beauté au Champignon des Neiges (Tremella), perles de pêche, jujube, longan et goji à la BloomLab"
+              loading="lazy"
+              referrerPolicy="no-referrer"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+            <div className="space-y-3">
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#E8772E]">
+                Recette Vedette MTC · Nouvel Atelier BloomLab®
+              </p>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1E2E25] leading-tight">
+                Soupe de Beauté au Champignon des Neiges (Tremella)
+              </h2>
+              <p className="text-sm sm:text-base text-[#3E4A3D] leading-relaxed">
+                Découvrez notre protocole séquencé en 2 paliers thermiques (80 °C puis 70 °C) pour extraire les polysaccharides du Tremella, les perles de pêche, les dattes de jujube, le longan et préserver la zéaxanthine des baies de Goji.
+              </p>
+              <p className="text-xs font-semibold text-[#3E4A3D]/80 tabular-nums">
+                800 ml · Réhydratation 4 h · Extraction 45 min à 80 °C + 15 min à 70 °C
+              </p>
+            </div>
+            <div className="pt-2">
+              <a
+                href="/recettes/culinaires/soupe-beaute-tremella/"
+                onClick={(e) => {
+                  if (!e.ctrlKey && !e.metaKey && !e.shiftKey && onNavigate) {
+                    e.preventDefault();
+                    onNavigate('recette-soupe-tremella');
+                  }
+                }}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#1E2E25] hover:bg-[#E8772E] !text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors"
+              >
+                <span>Découvrir la fiche recette complète</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </div>

@@ -1934,6 +1934,16 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     alt: "Retour et remboursement Bloom by BotaniK",
     type: "website"
   },
+  "/recettes/culinaires/soupe-beaute-tremella/": {
+    title: "Soupe de Beauté au Champignon des Neiges (Tremella) | BloomLab",
+    description: "Recette authentique de Soupe de Beauté MTC au Tremella adaptée à la BloomLab : hydratation profonde, éclat de la peau et vitalité.",
+    image1200: "/images/og/recette-soupe-beaute-tremella.jpg",
+    image1080: "/images/og/recette-soupe-beaute-tremella.jpg",
+    alt: "Soupe de Beauté MTC au Champignon des Neiges (Tremella) préparée à la BloomLab",
+    type: "article",
+    datePublished: "2026-11-18T08:00:00+01:00",
+    dateModified: "2026-11-18T09:00:00+01:00"
+  },
   "/droit-de-retractation/": {
     title: "Droit de Rétractation | Formulaire de Retour Bloom",
     description: "Exercice de votre droit légal de rétractation sous 14 jours et formulaire de retour de commande pour vos achats sur bloombybotanik.com.",
@@ -1950,7 +1960,10 @@ function injectServerSEO(html: string, reqPath: string): string {
     const normalized = clean === "//" ? "/" : clean;
 
     // 0. Recettes publiques crawlables (Hub, Catégories, Pagination & Fiches individuelles)
-    if (reqPath.startsWith("/recettes") || reqPath.startsWith("/recettes/")) {
+    if (
+      (reqPath.startsWith("/recettes") || reqPath.startsWith("/recettes/")) &&
+      normalized !== "/recettes/culinaires/soupe-beaute-tremella/"
+    ) {
       const cleanRecipePath = reqPath.endsWith("/") ? reqPath : reqPath + "/";
 
       // 0.1 Fiche Recette Herbier Migrée
@@ -2153,7 +2166,33 @@ function injectServerSEO(html: string, reqPath: string): string {
 
     // 7. Dynamic JSON-LD injection
     let schemaJson = "";
-    if (route.type === "article") {
+    if (normalized === "/recettes/culinaires/soupe-beaute-tremella/") {
+      const recipeData = {
+        "@context": "https://schema.org",
+        "@type": "Recipe",
+        "name": "L'Élixir de Beauté : La Soupe au Champignon des Neiges (Tremella) à la BloomLab",
+        "description": route.description,
+        "image": [full1200],
+        "datePublished": "2026-11-18",
+        "prepTime": "PT4H15M",
+        "cookTime": "PT1H",
+        "totalTime": "PT5H15M",
+        "recipeYield": "800 ml (3 à 4 tasses)",
+        "recipeCategory": "Atelier Culinaire · Recette MTC",
+        "recipeCuisine": "Médecine Traditionnelle Chinoise",
+        "keywords": "soupe tremella beauté, recette soupe champignon blanc MTC, extraire polysaccharides tremella, tisane yin sang beauté, recette BloomLab, soupe aux perles de pêche, bienfaits goji jujube longan, collagène végétal",
+        "author": {
+          "@type": "Organization",
+          "name": "Bloom by BotaniK",
+          "url": "https://bloombybotanik.com"
+        }
+      };
+      schemaJson = `<script type="application/ld+json">${JSON.stringify(recipeData)}</script>`;
+      updated = updated.replace(
+        /<div id=["']root["']>[\s\S]*?<\/div>/i,
+        `<div id="root"><h1>L’Élixir de Beauté : La Soupe au Champignon des Neiges (Tremella) à la BloomLab</h1><p>${route.description}</p></div>`
+      );
+    } else if (route.type === "article") {
       const articleData: any = {
         "@context": "https://schema.org",
         "@type": "Article",

@@ -58,6 +58,7 @@ import CartContent from './CartContent';
 import CheckoutFlow from './CheckoutFlow';
 import ProductDetail from './ProductDetail';
 import CulinarySection from './CulinarySection';
+import TremellaBeautySoupRecipe from './TremellaBeautySoupRecipe';
 import CosmeticsContent from './CosmeticsContent';
 import LibraryLanding from './LibraryLanding';
 import ActivationPage from './ActivationPage';
@@ -298,6 +299,9 @@ export default function App() {
       }
       if (path.startsWith('/recettes')) {
         if (path === '/recettes' || path === '/recettes/') return 'recettes-hub';
+        if (path === '/recettes/culinaires/soupe-beaute-tremella' || path === '/recettes/culinaires/soupe-beaute-tremella/') {
+          return 'recette-soupe-tremella';
+        }
         if (path.startsWith('/recettes/culinaires')) {
           if (path === '/recettes/culinaires' || path === '/recettes/culinaires/' || path.startsWith('/recettes/culinaires/page/')) return 'recettes-culinaires';
           return 'recette-detail';
@@ -467,6 +471,10 @@ export default function App() {
       if (path.startsWith('/recettes')) {
         if (path === '/recettes' || path === '/recettes/') {
           setCurrentView('recettes-hub');
+          return;
+        }
+        if (path === '/recettes/culinaires/soupe-beaute-tremella' || path === '/recettes/culinaires/soupe-beaute-tremella/') {
+          setCurrentView('recette-soupe-tremella');
           return;
         }
         if (path.startsWith('/recettes/culinaires')) {
@@ -777,6 +785,12 @@ export default function App() {
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <Utensils className="w-4 h-4 text-white/70" /> {m.culinaire}
+                  </button>
+                  <button
+                    onClick={() => { navigateTo('recette-soupe-tremella'); setMobileMenuOpen(false); }}
+                    className="flex items-center gap-3 px-6 py-2 rounded-xl text-white/90 font-medium hover:bg-white/10 text-left text-sm"
+                  >
+                    <Sparkles className="w-4 h-4 text-[#E8772E]" /> Soupe Beauté Tremella (MTC)
                   </button>
                   <button
                     onClick={() => { navigateTo('cosmetiques'); setMobileMenuOpen(false); }}
@@ -1264,6 +1278,11 @@ export default function App() {
             onNavigate={navigateTo}
             lang={selectedLanguage}
             onRequirePremium={() => setIsPremiumOpen(true)}
+          />
+        ) : currentView === 'recette-soupe-tremella' ? (
+          <TremellaBeautySoupRecipe
+            lang={selectedLanguage}
+            onNavigate={navigateTo}
           />
         ) : currentView === 'cosmetiques' || currentView === 'cosmetique-botanique' ? (
           <CosmeticsContent

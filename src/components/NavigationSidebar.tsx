@@ -189,6 +189,21 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                 <span className="truncate whitespace-nowrap">Atelier Culinaire</span>
               </div>
             </button>
+            <a
+              href="/recettes/culinaires/soupe-beaute-tremella/"
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('recette-soupe-tremella');
+                }
+              }}
+              className={navItemClass(isActive('recette-soupe-tremella'))}
+            >
+              <div className="flex items-center gap-2.5 min-w-0 overflow-hidden pl-3">
+                <Sparkles className={navIconClass(isActive('recette-soupe-tremella'))} />
+                <span className="truncate whitespace-nowrap">Soupe Beauté Tremella</span>
+              </div>
+            </a>
             <button
               onClick={() => onNavigate('cosmetiques')}
               className={navItemClass(isActive('cosmetiques'))}

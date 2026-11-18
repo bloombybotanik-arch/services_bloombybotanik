@@ -358,6 +358,11 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
     description: "Recettes précises d'extraction végétale : ratios, températures et solvants pour concevoir vos remèdes et soins botaniques à la maison.",
     path: "/recettes/"
   },
+  'recette-soupe-tremella': {
+    title: "Soupe de Beauté au Champignon des Neiges (Tremella) | BloomLab",
+    description: "Recette authentique de Soupe de Beauté MTC au Tremella adaptée à la BloomLab : hydratation profonde, éclat de la peau et vitalité.",
+    path: "/recettes/culinaires/soupe-beaute-tremella/"
+  },
   contact: {
     title: "Contact & Assistance Botanique | Bloom by BotaniK",
     description: "Une question sur BloomLab® ou nos kits botaniques ? Contactez nos conseillers en phytothérapie. Équipe basée en France, réponse sous 24 à 48 heures.",
