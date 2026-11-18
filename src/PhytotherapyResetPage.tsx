@@ -29,6 +29,7 @@ import { Language } from './translations';
 import { GlossaryProvider } from './context/GlossaryContext';
 import AcademyNavigation from './components/AcademyNavigation';
 import FreemiumPaywallGate from './components/FreemiumPaywallGate';
+import phycocyanineImg from './assets/images/phycocyanine_spiruline_extract_1795020366000.jpg';
 
 // Illustrations naturalistes des racines au style herbier scientifique du XIXe siècle (encre noire sur fond crème chaud)
 const botanicalHeroImg = "/images/botanical_roots_hero_1790693840047.jpg";
@@ -904,6 +905,78 @@ export default function PhytotherapyResetPage({
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Encart Stratégique : Intégration de la Phycocyanine (Phases 2 & 3) */}
+            <div className="rounded-3xl overflow-hidden border border-[#C8AB8A] bg-white shadow-sm grid grid-cols-1 lg:grid-cols-12">
+              <div className="lg:col-span-5 relative aspect-[16/10] lg:aspect-auto bg-[#FAF7F2] overflow-hidden">
+                <img
+                  src={phycocyanineImg}
+                  alt={
+                    lang === 'en'
+                      ? 'Phycocyanin liquid extract at 40 °C for Homeostatic Reset Phases 2 and 3'
+                      : lang === 'de'
+                      ? 'Flüssiger Phycocyanin-Extrakt bei 40 °C für Phase 2 & 3 des Homöostatischen Resets'
+                      : 'Extraction liquide de phycocyanine de spiruline à 40 °C pour les Phases 2 et 3 du Reset Homéostasique'
+                  }
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+                <div className="space-y-2.5">
+                  <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#E8772E]">
+                    {lang === 'en'
+                      ? 'Strategic Synergy · Phases 2 & 3'
+                      : lang === 'de'
+                      ? 'Strategische Synergie · Phase 2 & 3'
+                      : 'Synergie Stratégique · Phases 2 & 3 du Reset'}
+                  </p>
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-[#0F261E] leading-tight">
+                    {lang === 'en'
+                      ? 'Phycocyanin Extraction at 40 °C: Cellular Cleansing & Mitochondrial Support'
+                      : lang === 'de'
+                      ? 'Phycocyanin-Extraktion bei 40 °C: Zellschutz & Mitochondrien-Balance'
+                      : 'Recette Phycocyanine à 40 °C : Le Bleu qui Potentialise vos Phases 2 & 3'}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#3E4A3D] leading-relaxed">
+                    {lang === 'en'
+                      ? 'Extracted gently at 40 °C with BloomLab, water-soluble spirulina phycocyanin protects mitochondria, modulates NF-κB / Nrf2 pathways, and helps lower allostatic load during Phase 2 and Phase 3.'
+                      : lang === 'de'
+                      ? 'Schonend bei 40 °C mit der BloomLab extrahiert, schützt Phycocyanin Mitochondrien, moduliert NF-κB / Nrf2 und entlastet die allostatische Last in Phase 2 & 3.'
+                      : 'Extraite en douceur à 40 °C avec la BloomLab®, la phycocyanine de spiruline protège les mitochondries, module les voies NF-κB / Nrf2 et accompagne le Drainage Profond (Phase 2) ainsi que la Régénération de l’Axe HPA (Phase 3).'}
+                  </p>
+                  <p className="text-xs font-semibold text-[#3E4A3D]/80 tabular-nums">
+                    {lang === 'en'
+                      ? '40–50 g organic spirulina · 800 ml water (pH 7) · 1 h at 40 °C (< 45 °C)'
+                      : lang === 'de'
+                      ? '40–50 g Bio-Spirulina · 800 ml Wasser (pH 7) · 1 Std. bei 40 °C (< 45 °C)'
+                      : '40–50 g de spiruline bio · 800 ml d’eau (pH 7) · 1 h à 40 °C (< 45 °C)'}
+                  </p>
+                </div>
+                <div className="pt-1">
+                  <a
+                    href="/academie/reset-homeostasique/phycocyanine/"
+                    onClick={(e) => {
+                      if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                        e.preventDefault();
+                        onNavigate('recette-phycocyanine');
+                      }
+                    }}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#1E2E25] hover:bg-[#E8772E] !text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors"
+                  >
+                    <span>
+                      {lang === 'en'
+                        ? 'Open Phycocyanin Protocol'
+                        : lang === 'de'
+                        ? 'Zum Phycocyanin-Protokoll'
+                        : 'Consulter la fiche Phycocyanine complète'}
+                    </span>
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
             </div>
 
             {/* Navigation Tabs (Protocoles, Compléments, Chronobiologie) avec Freemium Gate */}

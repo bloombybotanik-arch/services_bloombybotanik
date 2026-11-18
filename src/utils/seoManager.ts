@@ -363,6 +363,11 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
     description: "Recette authentique de Soupe de Beauté MTC au Tremella adaptée à la BloomLab : hydratation profonde, éclat de la peau et vitalité.",
     path: "/recettes/culinaires/soupe-beaute-tremella/"
   },
+  'recette-phycocyanine': {
+    title: "Phycocyanine & Reset Homéostasique | Extraction BloomLab",
+    description: "Extrayez la phycocyanine de spiruline à 40°C avec la BloomLab pour soutenir vos mitochondries et optimiser les Phases 2 et 3 du Reset Homéostasique.",
+    path: "/academie/reset-homeostasique/phycocyanine/"
+  },
   contact: {
     title: "Contact & Assistance Botanique | Bloom by BotaniK",
     description: "Une question sur BloomLab® ou nos kits botaniques ? Contactez nos conseillers en phytothérapie. Équipe basée en France, réponse sous 24 à 48 heures.",
@@ -456,6 +461,50 @@ export function updateDocumentSEO(config?: any, _lang?: any, productId?: string,
       const entry = VIEW_SEO_MAP.guide;
       applySEOMetadata(entry.title, entry.description, 'https://bloombybotanik.com/infusion-botanique/', false);
       return;
+    }
+
+    if (config === 'recette-soupe-tremella') {
+      const canonical = 'https://bloombybotanik.com/recettes/culinaires/soupe-beaute-tremella/';
+      if (_lang === 'en') {
+        applySEOMetadata(
+          'Snow Fungus (Tremella) Beauty Soup | BloomLab TCM Recipe',
+          'Authentic TCM Tremella Beauty Soup adapted for BloomLab: deep Yin hydration, radiant skin, Longan & Lotus Seed serenity variants.',
+          canonical,
+          false
+        );
+        return;
+      }
+      if (_lang === 'de') {
+        applySEOMetadata(
+          'Schneepilz-Schönheitssuppe (Tremella) | BloomLab TCM-Rezept',
+          'Authentische TCM-Schönheitssuppe mit Tremella für die BloomLab: tiefe Yin-Hydratation, strahlende Haut, Longan- & Lotussamen-Varianten.',
+          canonical,
+          false
+        );
+        return;
+      }
+    }
+
+    if (config === 'recette-phycocyanine') {
+      const canonical = 'https://bloombybotanik.com/academie/reset-homeostasique/phycocyanine/';
+      if (_lang === 'en') {
+        applySEOMetadata(
+          'Phycocyanin & Homeostatic Reset | BloomLab 40°C Extraction',
+          'Extract spirulina phycocyanin at 40°C with BloomLab to support mitochondria, modulate NF-κB/Nrf2 and enhance Phases 2 & 3 of Homeostatic Reset.',
+          canonical,
+          false
+        );
+        return;
+      }
+      if (_lang === 'de') {
+        applySEOMetadata(
+          'Phycocyanin & Homöostatischer Reset | BloomLab 40°C Extraktion',
+          'Extrahieren Sie Spirulina-Phycocyanin bei 40°C mit der BloomLab zur Unterstützung der Mitochondrien in Phase 2 & 3 des Homöostatischen Resets.',
+          canonical,
+          false
+        );
+        return;
+      }
     }
 
     const mapped = VIEW_SEO_MAP[config];

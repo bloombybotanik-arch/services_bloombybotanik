@@ -201,7 +201,13 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden pl-3">
                 <Sparkles className={navIconClass(isActive('recette-soupe-tremella'))} />
-                <span className="truncate whitespace-nowrap">Soupe Beauté Tremella</span>
+                <span className="truncate whitespace-nowrap">
+                  {lang === 'en'
+                    ? 'Tremella Beauty Soup'
+                    : lang === 'de'
+                    ? 'Tremella Schönheitssuppe'
+                    : 'Soupe Beauté Tremella'}
+                </span>
               </div>
             </a>
             <button
@@ -222,6 +228,27 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                 <span className="truncate whitespace-nowrap">Reset Homéostasique</span>
               </div>
             </button>
+            <a
+              href="/academie/reset-homeostasique/phycocyanine/"
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('recette-phycocyanine');
+                }
+              }}
+              className={navItemClass(isActive('recette-phycocyanine'))}
+            >
+              <div className="flex items-center gap-2.5 min-w-0 overflow-hidden pl-3">
+                <FlaskConical className={navIconClass(isActive('recette-phycocyanine'))} />
+                <span className="truncate whitespace-nowrap">
+                  {lang === 'en'
+                    ? 'Phycocyanin (40 °C)'
+                    : lang === 'de'
+                    ? 'Phycocyanin (40 °C)'
+                    : 'Phycocyanine (40 °C)'}
+                </span>
+              </div>
+            </a>
           </div>
         </div>
 

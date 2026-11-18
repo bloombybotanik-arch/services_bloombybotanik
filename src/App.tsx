@@ -71,6 +71,7 @@ import AdminDashboard from './components/AdminDashboard';
 import ManifesteContent from './ManifesteContent';
 import MachineLanding from './MachineLanding';
 import PhytotherapyResetPage from './PhytotherapyResetPage';
+import PhycocyanineResetRecipe from './PhycocyanineResetRecipe';
 import PillarExtraction from './PillarExtraction';
 import PillarInfusion from './PillarInfusion';
 import PillarOil from './PillarOil';
@@ -790,7 +791,12 @@ export default function App() {
                     onClick={() => { navigateTo('recette-soupe-tremella'); setMobileMenuOpen(false); }}
                     className="flex items-center gap-3 px-6 py-2 rounded-xl text-white/90 font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <Sparkles className="w-4 h-4 text-[#E8772E]" /> Soupe Beauté Tremella (MTC)
+                    <Sparkles className="w-4 h-4 text-[#E8772E]" />{' '}
+                    {selectedLanguage === 'en'
+                      ? 'Tremella Beauty Soup (TCM)'
+                      : selectedLanguage === 'de'
+                      ? 'Tremella Schönheitssuppe (TCM)'
+                      : 'Soupe Beauté Tremella (MTC)'}
                   </button>
                   <button
                     onClick={() => { navigateTo('cosmetiques'); setMobileMenuOpen(false); }}
@@ -803,6 +809,12 @@ export default function App() {
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <Activity className="w-4 h-4 text-white/70" /> Reset Homéostasique
+                  </button>
+                  <button
+                    onClick={() => { navigateTo('recette-phycocyanine'); setMobileMenuOpen(false); }}
+                    className="flex items-center gap-3 px-6 py-2 rounded-xl text-white/90 font-medium hover:bg-white/10 text-left text-sm"
+                  >
+                    <FlaskConical className="w-4 h-4 text-[#E8772E]" /> Phycocyanine (40 °C · Phases 2 &amp; 3)
                   </button>
 
                   {/* SECTION: BOUTIQUE */}
@@ -1257,6 +1269,11 @@ export default function App() {
             isPremium={false}
             user={user}
             onRequireAuth={() => setIsAuthOpen(true)}
+          />
+        ) : currentView === 'recette-phycocyanine' ? (
+          <PhycocyanineResetRecipe
+            lang={selectedLanguage}
+            onNavigate={navigateTo}
           />
         ) : currentView === 'boutique' || currentView === 'boutique-kits' || currentView === 'kits-botaniques' ? (
           <StoreContent

@@ -376,7 +376,13 @@ export default function CulinarySection({
           <div className="lg:col-span-5 relative aspect-[16/10] lg:aspect-auto bg-[#FAF7F2] overflow-hidden">
             <img
               src={tremellaSoupImg}
-              alt="Soupe de Beauté au Champignon des Neiges (Tremella), perles de pêche, jujube, longan et goji à la BloomLab"
+              alt={
+                lang === 'en'
+                  ? "TCM Tremella Snow Fungus Beauty Soup with peach gum, jujube, longan and goji prepared in BloomLab"
+                  : lang === 'de'
+                  ? "TCM Tremella Schneepilz Schönheitssuppe mit Pfirsichharz, Jujube, Longan und Goji aus der BloomLab"
+                  : "Soupe de Beauté au Champignon des Neiges (Tremella), perles de pêche, jujube, longan et goji à la BloomLab"
+              }
               loading="lazy"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover"
@@ -385,16 +391,32 @@ export default function CulinarySection({
           <div className="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
             <div className="space-y-3">
               <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#E8772E]">
-                Recette Vedette MTC · Nouvel Atelier BloomLab®
+                {lang === 'en'
+                  ? "Featured TCM Recipe · New BloomLab® Guide"
+                  : lang === 'de'
+                  ? "TCM-Empfehlung · Neuer BloomLab® Leitfaden"
+                  : "Recette Vedette MTC · Nouvel Atelier BloomLab®"}
               </p>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1E2E25] leading-tight">
-                Soupe de Beauté au Champignon des Neiges (Tremella)
+                {lang === 'en'
+                  ? "Snow Fungus (Tremella) Beauty Soup"
+                  : lang === 'de'
+                  ? "Schneepilz-Schönheitssuppe (Tremella)"
+                  : "Soupe de Beauté au Champignon des Neiges (Tremella)"}
               </h2>
               <p className="text-sm sm:text-base text-[#3E4A3D] leading-relaxed">
-                Découvrez notre protocole séquencé en 2 paliers thermiques (80 °C puis 70 °C) pour extraire les polysaccharides du Tremella, les perles de pêche, les dattes de jujube, le longan et préserver la zéaxanthine des baies de Goji.
+                {lang === 'en'
+                  ? "Discover our sequenced two-stage protocol (80 °C then 70 °C) to extract Tremella polysaccharides, choose between Pear (Yin) or Apple (Digestion), and customize with Longan or Lotus Seeds."
+                  : lang === 'de'
+                  ? "Entdecken Sie unser zweistufiges Extraktionsprotokoll (80 °C, danach 70 °C) für Tremella-Polysaccharide – inklusive Birne vs. Apfel sowie Longan- und Lotussamen-Varianten."
+                  : "Découvrez notre protocole séquencé en 2 paliers thermiques (80 °C puis 70 °C) pour extraire les polysaccharides du Tremella, choisir entre Poire (Yin) ou Pomme (Digestion) et explorer les options Longan et Graines de Lotus."}
               </p>
               <p className="text-xs font-semibold text-[#3E4A3D]/80 tabular-nums">
-                800 ml · Réhydratation 4 h · Extraction 45 min à 80 °C + 15 min à 70 °C
+                {lang === 'en'
+                  ? "800 ml · 4 h soaking · 45 min at 80 °C + 15 min at 70 °C"
+                  : lang === 'de'
+                  ? "800 ml · 4 Std. Einweichen · 45 Min. bei 80 °C + 15 Min. bei 70 °C"
+                  : "800 ml · Réhydratation 4 h · Extraction 45 min à 80 °C + 15 min à 70 °C"}
               </p>
             </div>
             <div className="pt-2">
@@ -408,7 +430,13 @@ export default function CulinarySection({
                 }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#1E2E25] hover:bg-[#E8772E] !text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors"
               >
-                <span>Découvrir la fiche recette complète</span>
+                <span>
+                  {lang === 'en'
+                    ? "Read full recipe guide"
+                    : lang === 'de'
+                    ? "Zum vollständigen Rezept"
+                    : "Découvrir la fiche recette complète"}
+                </span>
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>

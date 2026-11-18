@@ -1944,6 +1944,16 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     datePublished: "2026-11-18T08:00:00+01:00",
     dateModified: "2026-11-18T09:00:00+01:00"
   },
+  "/academie/reset-homeostasique/phycocyanine/": {
+    title: "Phycocyanine & Reset Homéostasique | Extraction BloomLab",
+    description: "Extrayez la phycocyanine de spiruline à 40°C avec la BloomLab pour soutenir vos mitochondries et optimiser les Phases 2 et 3 du Reset Homéostasique.",
+    image1200: "/images/og/recette-phycocyanine-reset.jpg",
+    image1080: "/images/og/recette-phycocyanine-reset.jpg",
+    alt: "Extrait liquide bleu de phycocyanine de spiruline préparé à 40°C avec BloomLab pour le Reset Homéostasique",
+    type: "article",
+    datePublished: "2026-11-18T08:00:00+01:00",
+    dateModified: "2026-11-18T09:00:00+01:00"
+  },
   "/droit-de-retractation/": {
     title: "Droit de Rétractation | Formulaire de Retour Bloom",
     description: "Exercice de votre droit légal de rétractation sous 14 jours et formulaire de retour de commande pour vos achats sur bloombybotanik.com.",
@@ -2180,7 +2190,7 @@ function injectServerSEO(html: string, reqPath: string): string {
         "recipeYield": "800 ml (3 à 4 tasses)",
         "recipeCategory": "Atelier Culinaire · Recette MTC",
         "recipeCuisine": "Médecine Traditionnelle Chinoise",
-        "keywords": "soupe tremella beauté, recette soupe champignon blanc MTC, extraire polysaccharides tremella, tisane yin sang beauté, recette BloomLab, soupe aux perles de pêche, bienfaits goji jujube longan, collagène végétal",
+        "keywords": "soupe tremella beauté, recette soupe champignon blanc MTC, bienfaits longan MTC, soupe tremella sommeil, poire ou pomme tisane, graines de lotus bienfaits, recette yin beauté, recette BloomLab, collagène végétal",
         "author": {
           "@type": "Organization",
           "name": "Bloom by BotaniK",
@@ -2191,6 +2201,31 @@ function injectServerSEO(html: string, reqPath: string): string {
       updated = updated.replace(
         /<div id=["']root["']>[\s\S]*?<\/div>/i,
         `<div id="root"><h1>L’Élixir de Beauté : La Soupe au Champignon des Neiges (Tremella) à la BloomLab</h1><p>${route.description}</p></div>`
+      );
+    } else if (normalized === "/academie/reset-homeostasique/phycocyanine/") {
+      const phycoRecipeData = {
+        "@context": "https://schema.org",
+        "@type": "Recipe",
+        "name": "Phycocyanine & Reset Homéostasique : Le Bleu qui Réinitialise votre Biologie",
+        "description": route.description,
+        "image": [full1200],
+        "datePublished": "2026-11-18",
+        "prepTime": "PT10M",
+        "cookTime": "PT1H",
+        "totalTime": "PT1H10M",
+        "recipeYield": "800 ml d'extrait liquide concentré",
+        "recipeCategory": "Reset Homéostasique · Extraction Botanique",
+        "keywords": "phycocyanine Reset Homéostasique, extraction phycocyanine BloomLab, recette spiruline MTC, bienfaits phycocyanine, protocole détox spiruline",
+        "author": {
+          "@type": "Organization",
+          "name": "Bloom by BotaniK",
+          "url": "https://bloombybotanik.com"
+        }
+      };
+      schemaJson = `<script type="application/ld+json">${JSON.stringify(phycoRecipeData)}</script>`;
+      updated = updated.replace(
+        /<div id=["']root["']>[\s\S]*?<\/div>/i,
+        `<div id="root"><h1>Phycocyanine &amp; Reset Homéostasique : Le Bleu qui Réinitialise votre Biologie</h1><p>${route.description}</p></div>`
       );
     } else if (route.type === "article") {
       const articleData: any = {
