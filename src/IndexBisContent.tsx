@@ -222,10 +222,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               {/* Le SEUL H1 de la page d'accueil */}
               <h1 className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-[#FAF7F2] text-white !text-white leading-[1.2] tracking-tight drop-shadow-md">
                 {isFR 
-                  ? "Bloom by Botanik | Extracteur Botanique de Précision & Infusion Végétale Maîtrisée" 
+                  ? "Bloom by BotaniK | BloomLab®, Extracteur Botanique de Précision & Infusion Végétale Maîtrisée" 
                   : isDE 
-                  ? "Bloom by Botanik | Botanischer Präzisionsextraktor & Meisterhafter Pflanzenaufguss"
-                  : "Bloom by Botanik | Precision Botanical Extractor & Mastered Herbal Infusion"}
+                  ? "Bloom by BotaniK | BloomLab®, Botanischer Präzisionsextraktor & Meisterhafter Pflanzenaufguss"
+                  : "Bloom by BotaniK | BloomLab® Precision Botanical Extractor & Mastered Herbal Infusion"}
               </h1>
             </div>
           </div>
@@ -254,10 +254,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               {isFR ? (
                 <>
                   <p>
-                    Une tisane qui bout, c'est une plante qu'on abîme : trois minutes d'eau bouillante suffisent à évaporer les terpènes qui parfument et à dégrader les flavonoïdes antioxydants. Et six semaines de macération au soleil n'extraient qu'une partie de ce que la plante contient.
+                    Chez <strong>Bloom by BotaniK</strong>, nous partons d'un constat simple : une tisane qui bout est une plante qu'on abîme. Trois minutes d'eau bouillante suffisent à évaporer les terpènes qui parfument et à dégrader les flavonoïdes antioxydants. Et six semaines de macération au soleil n'extraient qu'une partie de ce que la plante contient.
                   </p>
                   <p>
-                    BloomLab extrait autrement. Température tenue au demi-degré près, temps compté, brassage doux : chaque famille de molécules est recueillie quand elle est prête, dans le solvant qui lui convient — l'eau pour les unes, l'huile pour les autres. C'est le <TooltipLexique terme="sequencage-ab">séquençage actif A/B</TooltipLexique> : la méthode qui préserve le <TooltipLexique terme="totum">Totum végétal</TooltipLexique> au lieu d'en perdre la moitié.
+                    L'extracteur <strong>BloomLab®</strong> de Bloom by BotaniK agit autrement. Température tenue au demi-degré près, temps compté, brassage doux : chaque famille de molécules est recueillie quand elle est prête, dans le solvant qui lui convient — l'eau pour les unes, l'huile pour les autres. C'est le <TooltipLexique terme="sequencage-ab">séquençage actif A/B</TooltipLexique> : la méthode qui préserve le <TooltipLexique terme="totum">Totum végétal</TooltipLexique> au lieu d'en perdre la moitié.
                   </p>
                   <p>
                     Infusions concentrées du soir, huiles de calendula pour la peau, extraits de <TooltipLexique terme="adaptogenes">plantes adaptogènes</TooltipLexique> pour les saisons chargées : vos préparations maison, avec la précision d'un laboratoire et la mémoire des gestes d'herboristerie. Et quand vous voulez aller plus loin, nos protocoles vous accompagnent pas à pas.
@@ -266,10 +266,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               ) : isDE ? (
                 <>
                   <p>
-                    Kochender Tee zerstört die Pflanze: Drei Minuten sprudelndes Wasser genügen, um duftende Terpene zu verdampfen und antioxidative Flavonoide zu zerstören. Und sechswöchiges Mazerieren in der Sonne extrahiert nur einen Bruchteil dessen, was die Pflanze birgt.
+                    Bei <strong>Bloom by BotaniK</strong> gilt ein klares Prinzip: Kochender Tee zerstört die Pflanze. Drei Minuten sprudelndes Wasser genügen, um duftende Terpene zu verdampfen und antioxidative Flavonoide zu zerstören. Und sechswöchiges Mazerieren in der Sonne extrahiert nur einen Bruchteil dessen, was die Pflanze birgt.
                   </p>
                   <p>
-                    BloomLab extrahiert grundlegend anders. Präzise Temperaturführung auf ein halbes Grad genau, exakt dosierte Zeit, sanftes Rühren: Jede Molekülfamilie wird im optimalen Lösungsmittel gebunden – Wasser für die einen, Öl für die anderen. Das ist die aktive A/B-Sequenzierung, die das vollständige pflanzliche Totum bewahrt.
+                    Der <strong>BloomLab®</strong>-Extraktor von Bloom by BotaniK arbeitet grundlegend anders. Präzise Temperaturführung auf ein halbes Grad genau, exakt dosierte Zeit, sanftes Rühren: Jede Molekülfamilie wird im optimalen Lösungsmittel gebunden – Wasser für die einen, Öl für die anderen. Das ist die aktive A/B-Sequenzierung, die das vollständige pflanzliche Totum bewahrt.
                   </p>
                   <p>
                     Konzentrierte Abendaufgüsse, Calendula-Hautöle oder Adaptogen-Extrakte: Ihre botanischen Hauszubereitungen mit Laborpräzision und traditionellem Wissen.
@@ -278,10 +278,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               ) : (
                 <>
                   <p>
-                    Boiling herbal tea damages the plant: three minutes of rolling boil evaporate aromatic terpenes and degrade antioxidant flavonoids. And six weeks of sun maceration only extract a fraction of what the plant contains.
+                    At <strong>Bloom by BotaniK</strong>, we start from a simple truth: boiling herbal tea damages the plant. Three minutes of rolling boil evaporate aromatic terpenes and degrade antioxidant flavonoids, while six weeks of sun maceration only extract a fraction of what the plant contains.
                   </p>
                   <p>
-                    BloomLab extracts differently. Temperature controlled to half a degree, calibrated extraction time, gentle agitation: each molecular family is captured in its ideal solvent — water for some, oil for others. This is active A/B sequential extraction: safeguarding the full plant Totum instead of losing half of it.
+                    <strong>BloomLab®</strong> by Bloom by BotaniK extracts differently. Temperature controlled to half a degree, calibrated extraction time, gentle agitation: each molecular family is captured in its ideal solvent — water for some, oil for others. This is active A/B sequential extraction: safeguarding the full plant Totum instead of losing half of it.
                   </p>
                   <p>
                     Concentrated evening infusions, soothing calendula oils, adaptogenic plant extracts: your home botanical preparations with laboratory precision and the heritage of master herbalism. And when you want to dive deeper, our protocols guide you step by step.
@@ -306,6 +306,19 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 <span>{isFR ? "Découvrir la BloomLab" : isDE ? "Die BloomLab entdecken" : "Discover BloomLab"}</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
+              <a
+                href="/la-marque/"
+                onClick={(e) => {
+                  if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                    e.preventDefault();
+                    onNavigate('la-marque');
+                  }
+                }}
+                className="px-6 py-4 bg-[#FAF7F2] hover:bg-[#F3EEE6] border border-[#D8CBB7] text-[#1E2E25] rounded-2xl font-bold text-sm sm:text-base inline-flex items-center gap-2 transition-all cursor-pointer"
+              >
+                <span>{isFR ? "Découvrir la marque Bloom by BotaniK" : isDE ? "Die Marke Bloom by BotaniK entdecken" : "Discover Bloom by BotaniK"}</span>
+                <ArrowRight className="w-4 h-4 text-[#E8772E]" />
+              </a>
             </div>
 
             {/* Chips-tooltip sous les CTA (nouveau) */}

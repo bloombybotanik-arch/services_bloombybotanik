@@ -162,6 +162,15 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                 <span className="truncate whitespace-nowrap">Guide de l'extraction</span>
               </div>
             </button>
+            <button
+              onClick={() => onNavigate('guide-solvants')}
+              className={navItemClass(isActive('guide-solvants'))}
+            >
+              <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
+                <Droplets className={navIconClass(isActive('guide-solvants'))} />
+                <span className="truncate whitespace-nowrap">Guide des Solvants</span>
+              </div>
+            </button>
           </div>
         </div>
 

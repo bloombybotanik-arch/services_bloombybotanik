@@ -275,7 +275,7 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
                 {sheet.subtitle}
               </div>
               <h1 className="text-xl sm:text-2xl font-bold text-[#3E4A3D] tracking-tight leading-snug">
-                Duo Argiles Bloom
+                Duo Argiles Bloom by BotaniK
               </h1>
               <p className="text-xs sm:text-sm font-medium text-[#1B3022]/70 mt-1">
                 Purification Systémique Zéolithe-Bentonite (6μm)

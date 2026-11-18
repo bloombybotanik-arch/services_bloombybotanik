@@ -120,6 +120,53 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(200, 171, 138,0.15),rgba(255,255,255,0))] pointer-events-none" />
         
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <nav aria-label="Fil d'Ariane" className="flex flex-wrap items-center justify-between gap-3 mb-6 text-xs sm:text-sm text-white/80">
+            <ol className="flex items-center gap-2">
+              <li>
+                <a
+                  href="/"
+                  onClick={(e) => {
+                    if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                      e.preventDefault();
+                      onNavigate('home');
+                    }
+                  }}
+                  className="hover:text-white underline-offset-4 hover:underline transition-colors"
+                >
+                  {lang === 'fr' ? 'Accueil Bloom by BotaniK' : lang === 'de' ? 'Startseite Bloom by BotaniK' : 'Bloom by BotaniK Home'}
+                </a>
+              </li>
+              <li className="text-white/40">/</li>
+              <li>
+                <a
+                  href="/boutique/"
+                  onClick={(e) => {
+                    if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                      e.preventDefault();
+                      onNavigate('boutique');
+                    }
+                  }}
+                  className="hover:text-white underline-offset-4 hover:underline transition-colors"
+                >
+                  {lang === 'fr' ? 'Boutique' : lang === 'de' ? 'Shop' : 'Shop'}
+                </a>
+              </li>
+              <li className="text-white/40">/</li>
+              <li className="text-white font-semibold" aria-current="page">BloomLab®</li>
+            </ol>
+            <a
+              href="/boutique/"
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('boutique');
+                }
+              }}
+              className="text-white/80 hover:text-[#C8AB8A] transition-colors font-medium"
+            >
+              {lang === 'fr' ? '← Retour à la boutique' : lang === 'de' ? '← Zurück zum Shop' : '← Back to Shop'}
+            </a>
+          </nav>
 
           {/* Hero Image with Overlay: Header Texts (Top) & Gallery Links (Bottom-Left) */}
           <div className="flex flex-col items-center mb-10">
@@ -152,11 +199,11 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
                 <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight tracking-tight drop-shadow-md">
                   {lang === 'fr' ? (
-                    <>BloomLab® — Extracteur Botanique de Précision pour Infusions Végétales</>
+                    <>BloomLab® — Extracteur Botanique de Précision | Bloom by BotaniK</>
                   ) : lang === 'de' ? (
-                    <>BloomLab® — Botanischer Präzisionsextraktor für Pflanzenaufgüsse</>
+                    <>BloomLab® — Botanischer Präzisionsextraktor | Bloom by BotaniK</>
                   ) : (
-                    <>BloomLab® — Precision Botanical Extractor for Herbal Infusions</>
+                    <>BloomLab® — Precision Botanical Extractor | Bloom by BotaniK</>
                   )}
                 </h1>
                 <div className="pt-2 pointer-events-auto">
@@ -910,6 +957,18 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
             >
               {t.final_cta?.guide || "Consulter le Guide Botanique"}
             </button>
+            <a
+              href="/boutique/"
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('boutique');
+                }
+              }}
+              className="w-full sm:w-auto px-8 py-5 bg-transparent hover:bg-white/10 text-white/90 rounded-2xl font-semibold text-base transition-all border border-white/20 inline-flex items-center justify-center"
+            >
+              {lang === 'fr' ? "Voir toute la Boutique Bloom by BotaniK" : lang === 'de' ? "Zum Bloom by BotaniK Shop" : "Browse Bloom by BotaniK Shop"}
+            </a>
           </div>
         </div>
       </section>

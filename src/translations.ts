@@ -757,7 +757,7 @@ export const translations = {
     },
     store: {
       header: {
-        title: "Boutique botanique :",
+        title: "Boutique Bloom by BotaniK : BloomLab® & Plantes Bio",
         subtitle: "BloomLab, kits et préparations maison",
         search_placeholder: "Chercher un kit, une plante..."
       },
@@ -2396,7 +2396,7 @@ export const translations = {
     },
     store: {
       header: {
-        title: "Shop",
+        title: "Bloom by BotaniK Shop: BloomLab® & Organic Herbs",
         subtitle: "The Modern Apothecary",
         search_placeholder: "Search for a kit, a plant..."
       },
@@ -3921,7 +3921,7 @@ export const translations = {
     },
     store: {
       header: {
-        title: "Shop",
+        title: "Bloom by BotaniK Shop: BloomLab® & Bio-Kräuter",
         subtitle: "Die moderne Apotheke",
         search_placeholder: "Suchen Sie nach einem Set, einer Pflanze..."
       },

@@ -75,11 +75,11 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-8 font-sans tracking-tight leading-tight text-white"
           >
             {isFR ? (
-              <>Guide Complet : Extraction Botanique à Domicile</>
+              <>Guide Complet : Extraction Botanique à Domicile | Bloom by BotaniK &amp; BloomLab®</>
             ) : lang === 'de' ? (
-              <>Kompletter Guide: Botanische Extraktion für zu Hause</>
+              <>Kompletter Guide: Botanische Extraktion | Bloom by BotaniK &amp; BloomLab®</>
             ) : (
-              <>Complete Guide: Botanical Extraction at Home</>
+              <>Complete Guide: Botanical Extraction at Home | Bloom by BotaniK &amp; BloomLab®</>
             )}
           </motion.h1>
           <motion.div
@@ -89,8 +89,8 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
             className="text-lg md:text-xl text-[#FAF7F2]/80 leading-relaxed mb-8 max-w-3xl mx-auto font-light"
           >
             {isFR 
-              ? <>Infusion, décoction, macération, <TooltipLexique terme="sequencage-ab">extraction séquentielle</TooltipLexique> : comparez les méthodes, choisissez le bon solvant et maîtrisez température et agitation pour libérer le <TooltipLexique terme="totum">Totum</TooltipLexique> végétal.</>
-              : "Infusion, decoction, maceration, sequential extraction: compare methods, choose the right solvent and master temperature and agitation to unlock the botanical Totum."}
+              ? <>Infusion, décoction, macération, <TooltipLexique terme="sequencage-ab">extraction séquentielle</TooltipLexique> avec BloomLab® de Bloom by BotaniK : comparez les méthodes, choisissez le bon solvant et maîtrisez température et agitation pour libérer le <TooltipLexique terme="totum">Totum</TooltipLexique> végétal.</>
+              : "Infusion, decoction, maceration, sequential extraction with BloomLab® by Bloom by BotaniK: compare methods, choose the right solvent and master temperature and agitation to unlock the botanical Totum."}
           </motion.div>
 
           {/* Boutons d'action harmonisés */}

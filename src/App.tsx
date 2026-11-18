@@ -74,6 +74,7 @@ import PillarExtraction from './PillarExtraction';
 import PillarInfusion from './PillarInfusion';
 import PillarOil from './PillarOil';
 import PillarAdaptogens from './PillarAdaptogens';
+import SolventsGuide from './SolventsGuide';
 import PendingContent from './PendingContent';
 import IndexBisContent from './IndexBisContent';
 import * as SEOArticlesExports from './SEOArticlesContent';
@@ -323,7 +324,15 @@ export default function App() {
     return 'indexbis';
   });
 
-  const [selectedLanguage, setSelectedLanguage] = useState<Language>('fr');
+  const [selectedLanguage, setSelectedLanguage] = useState<Language>(() => {
+    if (typeof window !== 'undefined') {
+      const langParam = new URLSearchParams(window.location.search).get('lang');
+      if (langParam === 'en' || langParam === 'de' || langParam === 'fr') {
+        return langParam;
+      }
+    }
+    return 'fr';
+  });
   const [selectedProduct, setSelectedProduct] = useState<string>(() => {
     if (typeof window !== 'undefined') {
       const path = window.location.pathname;
@@ -753,6 +762,12 @@ export default function App() {
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <BookOpen className="w-4 h-4 text-white/70" /> Guide de l'extraction
+                  </button>
+                  <button
+                    onClick={() => { navigateTo('guide-solvants'); setMobileMenuOpen(false); }}
+                    className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
+                  >
+                    <Droplets className="w-4 h-4 text-white/70" /> Guide des Solvants
                   </button>
 
                   {/* SECTION: VOTRE PRATIQUE */}
@@ -1379,6 +1394,8 @@ export default function App() {
           />
         ) : currentView === 'totum-vegetal' || currentView === 'totum-definition' ? (
           <SEOArticlesExports.TotumDefinition lang={selectedLanguage} t={t} onNavigate={navigateTo} />
+        ) : currentView === 'guide-solvants' ? (
+          <SolventsGuide lang={selectedLanguage} onNavigate={navigateTo} />
         ) : currentView === 'pillar-extraction' || currentView === 'extraction-botanique' || currentView === 'guide-complet' || currentView === 'guide' || currentView === 'how_it_works' || currentView === 'comment-ca-marche' || currentView === 'infuseur-botanique' ? (
           <PillarExtraction lang={selectedLanguage} onNavigate={navigateTo} />
         ) : currentView === 'terrain' || currentView === '7-terrains' ? (

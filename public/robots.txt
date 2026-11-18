@@ -3,7 +3,14 @@ Allow: /
 Disallow: /admin
 Disallow: /panier
 Disallow: /commande
+Disallow: /checkout
 Disallow: /compte
+Disallow: /activation
+Disallow: /en-attente
+Disallow: /newsletter/
+Disallow: /api/
 
 Sitemap: https://bloombybotanik.com/sitemap.xml
+Sitemap: https://bloombybotanik.com/sitemap-fr.xml
 Sitemap: https://bloombybotanik.com/sitemap-recettes.xml
+Sitemap: https://bloombybotanik.com/sitemap-images.xml

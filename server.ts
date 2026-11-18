@@ -670,7 +670,6 @@ function registerAppRoutes(app: express.Express) {
     "/cosmetique-botanique": "/cosmetiques-naturels-diy/",
     "/indexbis": "/",
     "/about": "/manifeste/",
-    "/contact": "/manifeste/",
     "/how-it-works-diy-natural-recipes": "/boutique/",
     "/natural-herbal-infusion-body-care-oils-": "/cosmetiques-naturels-diy/",
     "/natural-herbal-infusion-face-skincare-recipes": "/cosmetiques-naturels-diy/",
@@ -700,9 +699,7 @@ function registerAppRoutes(app: express.Express) {
     "/protocoles/psoriasis": "/academie/protocoles/psoriasis/",
     "/protocoles/sibo": "/academie/protocoles/sibo/",
     "/protocoles/clarte-mentale": "/academie/protocoles/clarte-mentale/",
-    "/comprendre-le-modele-bloom": "/academie/",
-    "/academie/comprendre-le-modele-bloom": "/academie/",
-    "/academie/comprendre-le-corps/comment-lire-le-modele-bloom": "/academie/",
+    "/academie/comprendre-le-corps/comment-lire-le-modele-bloom": "/academie/comprendre-le-modele-bloom/",
     "/abonnement": "/abonnement/",
     "/herbier/phytotherapie": "/academie/reset-homeostasique/",
     "/herbier/phytotherapie/": "/academie/reset-homeostasique/",
@@ -1301,18 +1298,18 @@ interface ServerSEORoute {
 const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
   "/": {
     title: "Bloom by BotaniK | Extracteur Botanique de Précision & Infusion Végétale Maîtrisée",
-    description: "Découvrez l'extracteur et infuseur botanique de précision BloomLab®. Vortex cinétique et thermorégulation ±0,5°C pour extraire le Totum actif de vos plantes.",
+    description: "Bloom by BotaniK conçoit BloomLab®, l'extracteur et infuseur botanique de précision. Vortex cinétique et thermorégulation ±0,5°C pour extraire le Totum actif.",
     image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
     image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
     alt: "BloomLab® — extracteur et infuseur botanique de précision Bloom by BotaniK en situation",
     type: "website"
   },
   "/bloomlab/": {
-    title: "BloomLab® : Extracteur de Plantes de Précision | Bloom",
-    description: "La BloomLab® est l'extracteur de plantes qui préserve le Totum végétal. Thermorégulation ±0,5°C et vortex cinétique pour des huiles et teintures d'exception.",
+    title: "BloomLab® Extracteur Botanique de Précision | Bloom by BotaniK",
+    description: "La BloomLab® de Bloom by BotaniK est l'extracteur de plantes qui préserve le Totum végétal : thermorégulation ±0,5°C et vortex cinétique.",
     image1200: "/images/og/produit-bloomlab-1200x630.jpg",
     image1080: "/images/og/produit-bloomlab-1080x1080.jpg",
-    alt: "Extracteur et infuseur botanique BloomLab® en acier inoxydable 304",
+    alt: "Extracteur et infuseur botanique BloomLab® Bloom by BotaniK en acier inoxydable 304",
     type: "product",
     price: "239.00",
     sku: "BLOOMLAB-V2"
@@ -1331,6 +1328,14 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     image1200: "/images/og/extraction-botanique-totum-solvants-1200x630.jpg",
     image1080: "/images/og/extraction-botanique-totum-solvants-1080x1080.jpg",
     alt: "Guide de l'extraction végétale, solvants et Totum botanique",
+    type: "article"
+  },
+  "/guide-solvants/": {
+    title: "Guide des Solvants d'Extraction : Eau, Huile, Alcool | Bloom",
+    description: "Eau, huile végétale, alcool, glycérine : comprenez la polarité et les affinités de chaque solvant pour libérer le Totum Végétal et maîtriser vos extractions botaniques.",
+    image1200: "/images/og/extraction-botanique-totum-solvants-1200x630.jpg",
+    image1080: "/images/og/extraction-botanique-totum-solvants-1080x1080.jpg",
+    alt: "Guide des solvants d'extraction botanique : eau, huile, alcool et glycérine",
     type: "article"
   },
   "/infusion-botanique/": {
@@ -1356,6 +1361,99 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     image1080: "/images/og/phytotherapie-reset-homeostasie-terrain-1080x1080.jpg",
     alt: "Académie Bloom : physiologie du terrain et phytothérapie systémique",
     type: "website"
+  },
+  "/academie/comprendre-le-modele-bloom/": {
+    title: "Comprendre le Modèle Bloom | Lecture Systémique du Terrain",
+    description: "Découvrez la méthodologie Bloom by BotaniK : comment lire les 4 architectures, les 7 terrains et les 9 axes pour soutenir l'homéostasie.",
+    image1200: "/images/og/phytotherapie-reset-homeostasie-terrain-1200x630.jpg",
+    image1080: "/images/og/phytotherapie-reset-homeostasie-terrain-1080x1080.jpg",
+    alt: "Comprendre le modèle systémique Bloom by BotaniK",
+    type: "article"
+  },
+  "/academie/comprendre-le-corps/4-architectures/": {
+    title: "Les 4 Architectures du Vivant | Académie Bloom",
+    description: "Comprendre les 4 architectures fonctionnelles du corps humain et leur équilibre dynamique au sein de l'Académie Bloom by BotaniK.",
+    image1200: "/images/og/terrain-biologique-equilibre-homeostasie-1200x630.jpg",
+    image1080: "/images/og/terrain-biologique-equilibre-homeostasie-1080x1080.jpg",
+    alt: "Les 4 Architectures du vivant — Académie Bloom by BotaniK",
+    type: "article"
+  },
+  "/academie/comprendre-le-corps/7-terrains/": {
+    title: "Les 7 Terrains Biologiques | Cartographie Bloom by BotaniK",
+    description: "Explorez les 7 terrains biologiques en phytothérapie systémique : identifiez vos fragilités fonctionnelles et adaptez votre accompagnement végétal.",
+    image1200: "/images/og/terrain-biologique-equilibre-homeostasie-1200x630.jpg",
+    image1080: "/images/og/terrain-biologique-equilibre-homeostasie-1080x1080.jpg",
+    alt: "Les 7 terrains biologiques Bloom by BotaniK",
+    type: "article"
+  },
+  "/academie/comprendre-le-corps/9-axes-historiques/": {
+    title: "Les 9 Axes Systémiques (A1 à A9) | Académie Bloom",
+    description: "Analyse des 9 axes de régulation du terrain (émonctoires, énergie mitochondriale, neuro-endocrinien, glymphatique) dans l'approche Bloom.",
+    image1200: "/images/og/phytotherapie-reset-homeostasie-terrain-1200x630.jpg",
+    image1080: "/images/og/phytotherapie-reset-homeostasie-terrain-1080x1080.jpg",
+    alt: "Les 9 axes systémiques A1 à A9 Bloom by BotaniK",
+    type: "article"
+  },
+  "/academie/comprendre-le-corps/charge-allostatique/": {
+    title: "Charge Allostatique & Exposome | Académie Bloom by BotaniK",
+    description: "Comprendre la charge allostatique et l'exposome : comment les facteurs cumulatifs verrouillent le terrain et comment soutenir le retour à l'équilibre.",
+    image1200: "/images/og/terrain-biologique-equilibre-homeostasie-1200x630.jpg",
+    image1080: "/images/og/terrain-biologique-equilibre-homeostasie-1080x1080.jpg",
+    alt: "Charge allostatique et exposome — Académie Bloom",
+    type: "article"
+  },
+  "/academie/comprendre-le-corps/metabolisme-glucidique-insuline/": {
+    title: "Métabolisme Glucidique & Insuline | Académie Bloom",
+    description: "Sensibilité à l'insuline, glycation et flexibilité métabolique : comprendre le levier glucidique et les plantes d'accompagnement.",
+    image1200: "/images/og/phytotherapie-reset-homeostasie-terrain-1200x630.jpg",
+    image1080: "/images/og/phytotherapie-reset-homeostasie-terrain-1080x1080.jpg",
+    alt: "Métabolisme glucidique et sensibilité à l'insuline Bloom",
+    type: "article"
+  },
+  "/academie/choc-de-paradigme/": {
+    title: "Module 0 : Le Choc de Paradigme | Académie Bloom",
+    description: "Passer de l'approche symptomatique à l'ingénierie du terrain et au reset homéostatique avec la méthode Bloom by BotaniK.",
+    image1200: "/images/og/manifeste-souverainete-sanitaire-botanique-1200x630.jpg",
+    image1080: "/images/og/manifeste-souverainete-sanitaire-botanique-1080x1080.jpg",
+    alt: "Module 0 Choc de Paradigme Bloom by BotaniK",
+    type: "article",
+    isPaywalled: true
+  },
+  "/academie/axes/a1-emonctoires/": {
+    title: "Axe A1 : Émonctoires & Élimination | Académie Bloom",
+    description: "Soutenir les voies d'élimination (foie, reins, intestin, peau, poumons) en amont de toute stratégie botanique de fond.",
+    image1200: "/images/og/phytotherapie-reset-homeostasie-terrain-1200x630.jpg",
+    image1080: "/images/og/phytotherapie-reset-homeostasie-terrain-1080x1080.jpg",
+    alt: "Axe A1 Émonctoires et drainage du terrain Bloom",
+    type: "article",
+    isPaywalled: true
+  },
+  "/academie/protocoles/sibo/": {
+    title: "Protocole SIBO & Équilibre Intestinal | Bloom by BotaniK",
+    description: "Approche systémique du terrain digestif et de la motilité intestinale par extraction botanique de précision et séquençage A/B.",
+    image1200: "/images/og/produit-kit-digestion-1200x630.jpg",
+    image1080: "/images/og/produit-kit-digestion-1080x1080.jpg",
+    alt: "Protocole SIBO et confort digestif Bloom by BotaniK",
+    type: "article",
+    isPaywalled: true
+  },
+  "/academie/protocoles/clarte-mentale/": {
+    title: "Protocole Clarté Mentale & Myéline | Bloom by BotaniK",
+    description: "Soutenir le système glymphatique, la neuroprotection et la clarté cognitive grâce aux synergies végétales extraites sur BloomLab®.",
+    image1200: "/images/og/plantes-adaptogenes-axe-hpa-systeme-nerveux-1200x630.jpg",
+    image1080: "/images/og/plantes-adaptogenes-axe-hpa-systeme-nerveux-1080x1080.jpg",
+    alt: "Protocole Clarté Mentale et système nerveux Bloom",
+    type: "article",
+    isPaywalled: true
+  },
+  "/academie/protocoles/decalcification-pineale/": {
+    title: "Protocole Glande Pinéale & Rythme Circadien | Bloom",
+    description: "Accompagner la vitalité neuro-endocrinienne et le cycle mélatonine/sommeil profond par l'extraction botanique maîtrisée.",
+    image1200: "/images/og/produit-kit-nuit-1200x630.jpg",
+    image1080: "/images/og/produit-kit-nuit-1080x1080.jpg",
+    alt: "Protocole Glande Pinéale et sommeil Bloom by BotaniK",
+    type: "article",
+    isPaywalled: true
   },
   "/academie/reset-homeostasique/": {
     title: "Reset Homéostasique : Protocoles de Drainage & Terrain | Bloom",
@@ -1454,16 +1552,16 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     type: "website"
   },
   "/boutique/": {
-    title: "Boutique Bloom | BloomLab®, Plantes Bio & Accessoires",
-    description: "Commandez l'appareil BloomLab®, nos formules de plantes médicinales bio, filtres et accessoires pour vos préparations botaniques à domicile.",
+    title: "Boutique Bloom by BotaniK | BloomLab® & Plantes Bio",
+    description: "Boutique officielle Bloom by BotaniK : commandez l'extracteur BloomLab®, nos formules de plantes médicinales bio, filtres et accessoires maison.",
     image1200: "/images/og/boutique-bloomlab-kits-plantes-1200x630.jpg",
     image1080: "/images/og/boutique-bloomlab-kits-plantes-1080x1080.jpg",
     alt: "Boutique officielle Bloom by BotaniK, BloomLab et kits de plantes",
     type: "website"
   },
   "/boutique/kits/": {
-    title: "Kits de Plantes Médicinales Bio & Remèdes | Bloom",
-    description: "Des formules de plantes bio rigoureusement sélectionnées pour le sommeil, la digestion ou l'immunité. Prêtes à être extraites avec la BloomLab.",
+    title: "Kits Plantes Médicinales Bio | Bloom by BotaniK",
+    description: "Kits de plantes bio Bloom by BotaniK sélectionnés pour le sommeil, la digestion ou l'immunité. Prêts à être extraits avec l'appareil BloomLab®.",
     image1200: "/images/og/boutique-bloomlab-kits-plantes-1200x630.jpg",
     image1080: "/images/og/boutique-bloomlab-kits-plantes-1080x1080.jpg",
     alt: "Kits de plantes médicinales et synergies botaniques Bloom by BotaniK",
@@ -1542,28 +1640,28 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     type: "article"
   },
   "/produit/bloomlab/": {
-    title: "BloomLab® Extracteur Précision | Inox 304 ±0,5°C",
-    description: "Commandez l'extracteur et infuseur botanique BloomLab®. Inox chirurgical 304, vortex cinétique, thermorégulation ±0,5°C pour extraire le Totum de vos plantes.",
+    title: "BloomLab® Extracteur Inox 304 ±0,5°C | Bloom by BotaniK",
+    description: "Commandez l'extracteur botanique BloomLab® de Bloom by BotaniK. Inox chirurgical 304, vortex cinétique et thermorégulation ±0,5°C.",
     image1200: "/images/og/produit-bloomlab-1200x630.jpg",
     image1080: "/images/og/produit-bloomlab-1080x1080.jpg",
-    alt: "Extracteur et infuseur botanique de précision BloomLab® en situation",
+    alt: "Extracteur et infuseur botanique de précision BloomLab® Bloom by BotaniK",
     type: "product",
     price: "239.00",
     sku: "BLOOMLAB-V2"
   },
   "/boutique/bloomlab/": {
-    title: "Acheter BloomLab® en Ligne | Garantie 1 An & Livraison Rapide",
-    description: "Ajoutez BloomLab® à votre routine d'herboristerie : cuve étanche en inox 304, séquençage thermique guidé et expédition depuis la France sous 24 à 48 heures.",
+    title: "Acheter BloomLab® Officiel | Garantie 1 An — Bloom by BotaniK",
+    description: "Achetez l'extracteur botanique BloomLab® sur la boutique Bloom by BotaniK : cuve inox 304, séquençage A/B et expédition France 24-48h.",
     image1200: "/images/og/produit-bloomlab-1200x630.jpg",
     image1080: "/images/og/produit-bloomlab-1080x1080.jpg",
-    alt: "Acheter l'extracteur BloomLab® dans la boutique officielle",
+    alt: "Acheter l'extracteur BloomLab® dans la boutique officielle Bloom by BotaniK",
     type: "product",
     price: "239.00",
     sku: "BLOOMLAB-V2"
   },
   "/boutique/bundle-apothicaire/": {
-    title: "Trio Apothicaire | 3 Kits Plantes Médicinales",
-    description: "Trio de formules médicinales calibrées pour infusion végétale et extraction maison : Sève Fondamentale, Nuit Profonde et Feu Digestif.",
+    title: "Trio Apothicaire | 3 Kits Plantes Bio | Bloom by BotaniK",
+    description: "Trio Apothicaire par Bloom by BotaniK : formules botaniques calibrées pour BloomLab® (Sève Fondamentale, Nuit Profonde et Feu Digestif).",
     image1200: "/images/og/produit-bundle-apothicaire-1200x630.jpg",
     image1080: "/images/og/produit-bundle-apothicaire-1080x1080.jpg",
     alt: "Trio de formules médicinales Apothicaire Bloom by BotaniK",
@@ -1572,18 +1670,18 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     sku: "BUNDLE-APOTHICAIRE"
   },
   "/boutique/pack-signature/": {
-    title: "Pack Signature BloomLab® + Trio Plantes — 289€",
-    description: "Le pack complet pour démarrer l'herboristerie maison : la machine BloomLab®, les 3 mélanges de plantes signatures et l'accès aux protocoles d'extraction.",
+    title: "Pack Signature BloomLab® + Trio Plantes | Bloom by BotaniK",
+    description: "Pack Signature Bloom by BotaniK : l'extracteur BloomLab®, nos sélections de plantes médicinales bio et les protocoles d'extraction guidés.",
     image1200: "/images/og/produit-pack-signature-1200x630.jpg",
     image1080: "/images/og/produit-pack-signature-1080x1080.jpg",
-    alt: "Pack Signature BloomLab et ses trois formules botaniques",
+    alt: "Pack Signature BloomLab Bloom by BotaniK et ses formules botaniques",
     type: "product",
     price: "289.00",
     sku: "PACK-SIGNATURE"
   },
   "/boutique/kit-starter/": {
-    title: "Kit Sève Fondamentale | Plantes Médicinales Énergie",
-    description: "Mélange tonique et régulateur pour infusion végétale maison. Ortie, romarin et cynorrhodon pour soutenir le terrain et la vitalité quotidienne.",
+    title: "Kit Sève Fondamentale | Plantes Bio | Bloom by BotaniK",
+    description: "Kit Sève Fondamentale Bloom by BotaniK : ortie, romarin et cynorrhodon bio sélectionnés pour l'extraction végétale de précision sur BloomLab®.",
     image1200: "/images/og/produit-kit-starter-1200x630.jpg",
     image1080: "/images/og/produit-kit-starter-1080x1080.jpg",
     alt: "Kit de plantes médicinales Sève Fondamentale Bloom by BotaniK",
@@ -1592,51 +1690,51 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     sku: "KIT-SEVE"
   },
   "/boutique/kit-nuit/": {
-    title: "Kit Nuit Profonde | Sommeil Réparateur & Plantes Bio",
-    description: "Synergie de passiflore, mélisse et camomille matricaire calibrée pour l'extraction douce en infuseur végétal. Sommeil réparateur sans somnolence.",
+    title: "Kit Nuit Profonde | Sommeil & Plantes Bio | Bloom by BotaniK",
+    description: "Kit Nuit Profonde par Bloom by BotaniK : synergie de passiflore, mélisse et camomille matricaire bio calibrée pour l'extraction douce sur BloomLab®.",
     image1200: "/images/og/produit-kit-nuit-1200x630.jpg",
     image1080: "/images/og/produit-kit-nuit-1080x1080.jpg",
-    alt: "Kit Nuit Profonde pour le sommeil et l'apaisement nerveux",
+    alt: "Kit Nuit Profonde Bloom by BotaniK pour le sommeil et l'apaisement nerveux",
     type: "product",
     price: "29.00",
     sku: "KIT-NUIT"
   },
   "/boutique/kit-digestion/": {
-    title: "Kit Feu Digestif | Confort Intestinal & Plantes Bio",
-    description: "Fenouil doux, menthe poivrée et gentiane pour stimuler les sucs digestifs et apaiser le ballonnement après les repas grâce à l'extraction de précision.",
+    title: "Kit Feu Digestif | Confort & Plantes Bio | Bloom by BotaniK",
+    description: "Kit Feu Digestif Bloom by BotaniK : fenouil doux, menthe poivrée et gentiane bio calibrés pour une extraction botanique de précision.",
     image1200: "/images/og/produit-kit-digestion-1200x630.jpg",
     image1080: "/images/og/produit-kit-digestion-1080x1080.jpg",
-    alt: "Kit Feu Digestif pour le confort intestinal et gastrique",
+    alt: "Kit Feu Digestif Bloom by BotaniK pour le confort intestinal",
     type: "product",
     price: "29.00",
     sku: "KIT-DIGESTION"
   },
   "/boutique/kit-articulaire/": {
-    title: "Kit Feu Articulaire | Mobilité & Souplesse Articulaire",
-    description: "Harpagophytum, reine-des-prés et cassis pour soulager les articulations raides et réguler l'inflammation grâce à l'extraction du Totum.",
+    title: "Kit Feu Articulaire | Mobilité & Plantes Bio | Bloom by BotaniK",
+    description: "Kit Feu Articulaire par Bloom by BotaniK : harpagophytum, reine-des-prés et cassis bio sélectionnés pour préserver le Totum végétal.",
     image1200: "/images/og/produit-kit-articulaire-1200x630.jpg",
     image1080: "/images/og/produit-kit-articulaire-1080x1080.jpg",
-    alt: "Kit Feu Articulaire pour la souplesse et le confort des articulations",
+    alt: "Kit Feu Articulaire Bloom by BotaniK pour la souplesse articulaire",
     type: "product",
     price: "32.00",
     sku: "KIT-ARTICULAIRE"
   },
   "/boutique/kit-hiver/": {
-    title: "Kit Bouclier Hivernal | Défenses Immunitaires & Plantes",
-    description: "Échinacée pourpre, thym à linalol et sureau noir. Synergie protectrice pour traverser l'hiver avec une infusion botanique riche en polyphénols.",
+    title: "Kit Bouclier Hivernal | Plantes Bio | Bloom by BotaniK",
+    description: "Kit Bouclier Hivernal Bloom by BotaniK : échinacée pourpre, thym à linalol et sureau noir bio pour des infusions riches en polyphénols.",
     image1200: "/images/og/produit-kit-hiver-1200x630.jpg",
     image1080: "/images/og/produit-kit-hiver-1080x1080.jpg",
-    alt: "Kit Bouclier Hivernal pour l'immunité et la protection des voies respiratoires",
+    alt: "Kit Bouclier Hivernal Bloom by BotaniK pour les défenses saisonnières",
     type: "product",
     price: "32.00",
     sku: "KIT-HIVER"
   },
   "/boutique/duo-argiles/": {
-    title: "Duo Argiles & Terres Rares | Purification Botanique",
-    description: "Argiles vertes et blanches surfines ventilées pour cataplasmes et purification du terrain. Remède ancestral d'herboristerie maison.",
+    title: "Duo Argiles & Terres Rares | Purification | Bloom by BotaniK",
+    description: "Duo Argiles Zéolithe-Bentonite Bloom by BotaniK : argiles surfines ventilées pour vos préparations d'herboristerie et soins du terrain.",
     image1200: "/images/og/produit-duo-argiles-1200x630.jpg",
     image1080: "/images/og/produit-duo-argiles-1080x1080.jpg",
-    alt: "Duo Argiles & Terres Rares pour la purification systémique",
+    alt: "Duo Argiles & Terres Rares Bloom by BotaniK pour la purification systémique",
     type: "product",
     price: "24.00",
     sku: "DUO-ARGILES"
@@ -1725,8 +1823,8 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     dateModified: "2026-09-22T08:00:00+02:00"
   },
   "/abonnement/": {
-    title: "Abonnement Bloom | Protocoles & Accompagnement ALMA",
-    description: "Rejoignez Bloom : accédez aux protocoles saisonniers de reset homéostatique, au suivi d'anamnèse ALMA et à l'ensemble des formules botaniques guidées.",
+    title: "Abonnement Bloom by BotaniK | Protocoles & Suivi ALMA",
+    description: "Abonnement Bloom by BotaniK : accédez aux protocoles de reset homéostatique, au suivi d'anamnèse ALMA et aux formules d'extraction BloomLab®.",
     image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
     image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
     alt: "Abonnement et protocoles d'accompagnement Bloom by BotaniK",
@@ -2023,18 +2121,29 @@ function injectServerSEO(html: string, reqPath: string): string {
       );
     }
 
-    // 5. Update Canonical link & Hreflang
+    // 5. Update Canonical link, Robots & Self-Referencing Hreflang
+    const isNoindexRoute = [
+      "/admin/", "/panier/", "/checkout/", "/commande/", "/compte/", "/activation/", "/en-attente/"
+    ].some((prefix) => normalized.startsWith(prefix)) || normalized.startsWith("/newsletter/");
+
+    const robotsValue = isNoindexRoute
+      ? "noindex, nofollow"
+      : "index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1";
+    if (/<meta\s+name=["']robots["'][^>]*>/i.test(updated)) {
+      updated = updated.replace(/<meta\s+name=["']robots["'][^>]*>/i, `<meta name="robots" content="${robotsValue}" />`);
+    } else {
+      updated = updated.replace("</head>", `  <meta name="robots" content="${robotsValue}" />\n  </head>`);
+    }
+
     if (/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i.test(updated)) {
       updated = updated.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, `<link rel="canonical" href="${canonical}" />`);
     } else {
       updated = updated.replace("</head>", `  <link rel="canonical" href="${canonical}" />\n  </head>`);
     }
 
-    if (normalized === "/phytotherapie-reset/protocole-psoriasis/") {
-      updated = updated.replace(/<link\s+rel=["']alternate["']\s+hreflang=["'].*?["']\s+href=["'].*?["']\s*\/?>/gi, "");
-      const customHreflang = `<link rel="alternate" hreflang="fr" href="${canonical}" />\n    <link rel="alternate" hreflang="x-default" href="${canonical}" />`;
-      updated = updated.replace("<head>", `<head>\n    ${customHreflang}`);
-    }
+    updated = updated.replace(/<link\s+rel=["']alternate["']\s+hreflang=["'].*?["']\s+href=["'].*?["']\s*\/?>\s*/gi, "");
+    const selfHreflang = `<link rel="alternate" hreflang="fr" href="${canonical}" />\n    <link rel="alternate" hreflang="x-default" href="${canonical}" />`;
+    updated = updated.replace("</head>", `  ${selfHreflang}\n  </head>`);
 
     // 6. Update Twitter Cards
     updated = updated.replace(/<meta\s+name=["']twitter:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:title" content="${route.title}">`);
@@ -2052,7 +2161,7 @@ function injectServerSEO(html: string, reqPath: string): string {
         "description": route.description,
         "image": [full1200, full1080],
         "datePublished": (route as any).datePublished || "2026-09-01T08:00:00+02:00",
-        "dateModified": (route as any).dateModified || "2026-09-20T10:00:00+02:00",
+        "dateModified": (route as any).dateModified || "2026-11-18T10:00:00+01:00",
         "author": {
           "@type": "Organization",
           "name": "Bloom by BotaniK",
@@ -2150,6 +2259,44 @@ function injectServerSEO(html: string, reqPath: string): string {
       updated = updated.replace("</head>", `    ${scriptTag}\n  </head>`);
     }
 
+    // 8. Semantic SSR Fallback inside #root for Googlebot & crawlers (cleanly replaced by React createRoot on hydration)
+    if (!isNoindexRoute && /<div id=["']root["']><\/div>/i.test(updated)) {
+      const escapeHtml = (val: string) =>
+        val
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      const productSnippet = route.type === "product" && route.price
+        ? `<p><strong>Marque :</strong> Bloom by BotaniK · <strong>Prix :</strong> ${escapeHtml(route.price)} EUR · <strong>Disponibilité :</strong> En stock (expédition 24-48h depuis la France)</p>`
+        : "";
+      const ssrFallback = `<div id="root">
+      <div class="bloom-ssr-fallback" style="max-width:960px;margin:0 auto;padding:32px 20px;font-family:Inter,system-ui,sans-serif;color:#1E2E25;background:#F9F6F0;">
+        <header style="border-bottom:1px solid #E7DFD3;padding-bottom:16px;margin-bottom:24px;">
+          <a href="/" style="font-weight:800;font-size:18px;color:#1E2E25;text-decoration:none;">Bloom by BotaniK</a>
+          <nav aria-label="Navigation principale" style="margin-top:12px;display:flex;flex-wrap:wrap;gap:14px;font-size:14px;">
+            <a href="/bloomlab/">Extracteur BloomLab®</a>
+            <a href="/boutique/">Boutique</a>
+            <a href="/boutique/kits/">Kits Plantes Bio</a>
+            <a href="/extraction-botanique/">Méthode A/B &amp; Extraction</a>
+            <a href="/guide-solvants/">Guide des Solvants</a>
+            <a href="/recettes/">Recettes Botaniques</a>
+            <a href="/academie/">Académie Bloom</a>
+            <a href="/la-marque/">La Marque</a>
+            <a href="/contact/">Contact</a>
+          </nav>
+        </header>
+        <main>
+          <h1 style="font-size:28px;font-weight:800;line-height:1.25;margin-bottom:12px;">${escapeHtml(route.title)}</h1>
+          <p style="font-size:16px;line-height:1.6;margin-bottom:16px;">${escapeHtml(route.description)}</p>
+          ${productSnippet}
+          <p style="font-size:14px;color:#3E4A3D;">Bloom by BotaniK conçoit l&apos;extracteur et infuseur botanique de précision BloomLab® (inox 304, thermorégulation ±0,5°C, vortex cinétique) ainsi que des protocoles pédagogiques d&apos;extraction végétale pour préserver le Totum des plantes.</p>
+        </main>
+      </div>
+    </div>`;
+      updated = updated.replace(/<div id=["']root["']><\/div>/i, ssrFallback);
+    }
+
     return updated;
   } catch (err) {
     console.error("[injectServerSEO error]", err);
@@ -2224,26 +2371,15 @@ async function startServer() {
   if (!IS_PROD) {
     viteDevServer = await setupVite(app);
     if (viteDevServer) {
-      app.use((req, res, next) => {
-        if (req.path.startsWith('/upload/') || req.path.includes('/upload/')) {
-          const fallback = path.join(process.cwd(), 'public', 'images', 'logo_sidebar_1784886108085.png');
-          if (fs.existsSync(fallback)) {
-            res.setHeader('Content-Type', 'image/png');
-            return res.sendFile(fallback);
-          }
-          return res.status(204).end();
-        }
-        next();
-      });
-
-      // ANTI-LOOP VITE (AI STUDIO)
+      // INTERCEPTION ANTI-BOUCLE (Ne pas supprimer)
       app.get('/@vite/client', (req, res) => {
         res.setHeader('Content-Type', 'application/javascript');
         return res.send('export default {};');
       });
 
-      // app.use(viteDevServer.middlewares);
-      console.log("Vite middleware disabled (serving compiled dist/ bundle)");
+      // RÉACTIVATION DE VITE (C'est ce qui manquait)
+      app.use(viteDevServer.middlewares);
+      console.log("Vite middleware attached in dev");
     }
   }
 

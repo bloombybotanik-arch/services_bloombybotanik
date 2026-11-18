@@ -318,12 +318,12 @@ export default function PhytotherapyResetPage({
 
             {/* Titre Principal imposé */}
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15] mb-6 max-w-4xl">
-              Le Reset Homéostasique : Comment les plantes rééquilibrent vos systèmes, pas seulement vos cellules.
+              Le Reset Homéostasique Bloom by BotaniK : Comment les plantes et BloomLab® rééquilibrent vos systèmes.
             </h1>
 
             {/* Sous-titre imposé */}
             <p className="text-base sm:text-lg md:text-xl text-[#F9F6F0]/90 max-w-3xl mx-auto font-normal leading-relaxed mb-10">
-              Une démarche d'ingénierie biologique en 6 phases pour libérer vos{' '}
+              Une démarche d'ingénierie biologique Bloom by BotaniK en 6 phases pour libérer vos{' '}
               <TermTooltip 
                 term="Émonctoires" 
                 definition="Les 5 organes filtres naturels de l'organisme (foie, reins, intestins, poumons, peau) chargés d'évacuer les déchets métaboliques et toxiques."
