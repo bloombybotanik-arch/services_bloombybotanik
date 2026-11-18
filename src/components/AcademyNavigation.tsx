@@ -54,156 +54,50 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-[#0F261E]/95 backdrop-blur-md border-b border-white/10 select-none text-white">
+    <header className="sticky top-0 z-40 w-full max-w-full bg-[#0F261E]/95 backdrop-blur-md border-b border-white/10 select-none text-white">
       {/* 1. Medical Boundary Notice (Mandatory by specification) */}
-      <div className="bg-[#c9a84c]/10 border-b border-[#c9a84c]/20 py-1.5 px-4 text-center">
+      <div className="bg-[#c9a84c]/10 border-b border-[#c9a84c]/20 py-1.5 px-4 text-center w-full">
         <p className="text-[11px] sm:text-xs text-[#c9a84c] font-medium flex items-center justify-center gap-1.5">
           <ShieldAlert className="w-3.5 h-3.5 shrink-0 text-[#c9a84c]" />
           <span>{texts.medical}</span>
         </p>
       </div>
 
-      {/* 2. Main Navigation Bar */}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-4">
+      {/* 2. Top Breadcrumb + Brand Row */}
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
         {/* Left: Breadcrumb & Academy Brand */}
-        <div className="flex flex-nowrap overflow-x-auto whitespace-nowrap hide-scrollbar gap-2 items-center min-w-0">
+        <div className="flex items-center gap-2 overflow-x-auto w-full py-1 whitespace-nowrap hide-scrollbar min-w-0">
           <button
             onClick={() => onNavigate('indexbis')}
-            className="flex items-center gap-1.5 text-xs text-white/80 hover:text-[#F5F0E6] transition-colors py-1 shrink-0 cursor-pointer"
+            className="flex items-center gap-1.5 text-xs text-white/80 hover:text-[#F5F0E6] transition-colors py-1 shrink-0 whitespace-nowrap cursor-pointer"
             title="Retour au site principal"
           >
             <ArrowLeft className="w-3.5 h-3.5 shrink-0" />
-            <span className="shrink-0">{texts.home}</span>
+            <span className="shrink-0 whitespace-nowrap">{texts.home}</span>
           </button>
 
-          <span className="text-white/40 shrink-0">/</span>
+          <span className="text-white/40 shrink-0 whitespace-nowrap">/</span>
 
           <button
             onClick={() => onNavigate('academie')}
-            className="flex items-center gap-2 px-2.5 py-1 rounded-lg bg-white/10 text-[#c9a84c] border border-[#c9a84c]/30 text-xs font-bold shrink-0 hover:bg-white/20 hover:text-white transition-colors cursor-pointer"
+            className="flex items-center gap-2 px-2.5 py-1 rounded-lg bg-white/10 text-[#c9a84c] border border-[#c9a84c]/30 text-xs font-bold shrink-0 whitespace-nowrap hover:bg-white/20 hover:text-white transition-colors cursor-pointer"
           >
             <Compass className="w-3.5 h-3.5 shrink-0" />
-            <span className="tracking-wide uppercase font-mono text-[11px] shrink-0">Bloom Academy</span>
+            <span className="tracking-wide uppercase font-mono text-[11px] shrink-0 whitespace-nowrap">Bloom Academy</span>
           </button>
 
-          <span className="text-white/40 shrink-0">/</span>
+          <span className="text-white/40 shrink-0 whitespace-nowrap">/</span>
 
-          <span className="text-xs text-white/80 shrink-0">
+          <span className="text-xs text-white/80 shrink-0 whitespace-nowrap">
             {sectionName}
           </span>
 
-          <span className="text-white/40 shrink-0">/</span>
+          <span className="text-white/40 shrink-0 whitespace-nowrap">/</span>
 
-          <span className="text-xs text-white font-semibold shrink-0">
+          <span className="text-xs text-white font-semibold shrink-0 whitespace-nowrap">
             {currentPageTitle}
           </span>
         </div>
-
-        {/* Center / Desktop Links */}
-        <nav className="hidden xl:flex items-center gap-1 text-xs">
-          <button
-            onClick={() => onNavigate('academie')}
-            className={`px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer font-medium ${
-              currentView === 'academie'
-                ? 'bg-white/10 text-[#c9a84c] font-bold'
-                : 'text-white/80 hover:text-[#F5F0E6] hover:bg-white/10'
-            }`}
-          >
-            {lang === 'fr' ? 'Accueil Académie' : lang === 'de' ? 'Übersicht' : 'Academy Home'}
-          </button>
-          <button
-            onClick={() => onNavigate('comment-lire-modele-bloom')}
-            className={`px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer font-medium ${
-              currentView === 'comment-lire-modele-bloom'
-                ? 'bg-white/10 text-[#c9a84c] font-bold'
-                : 'text-white/80 hover:text-[#F5F0E6] hover:bg-white/10'
-            }`}
-          >
-            {texts.guide}
-          </button>
-          <button
-            onClick={() => onNavigate('women-academy')}
-            className={`px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer font-medium ${
-              currentView === 'women-academy'
-                ? 'bg-white/10 text-[#c9a84c] font-bold'
-                : 'text-white/80 hover:text-[#F5F0E6] hover:bg-white/10'
-            }`}
-          >
-            {texts.women}
-          </button>
-          <button
-            onClick={() => onNavigate('4-architectures')}
-            className={`px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer font-medium ${
-              currentView === '4-architectures'
-                ? 'bg-white/10 text-[#c9a84c] font-bold'
-                : 'text-white/80 hover:text-[#F5F0E6] hover:bg-white/10'
-            }`}
-          >
-            {texts.arch}
-          </button>
-          <button
-            onClick={() => onNavigate('terrain')}
-            className={`px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer font-medium ${
-              currentView === 'terrain' || currentView === '7-terrains'
-                ? 'bg-white/10 text-[#c9a84c] font-bold'
-                : 'text-white/80 hover:text-[#F5F0E6] hover:bg-white/10'
-            }`}
-          >
-            {texts.terrains}
-          </button>
-          <button
-            onClick={() => onNavigate('9-axes')}
-            className={`px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer font-medium ${
-              currentView === '9-axes' || currentView === 'neuf-axes-historiques'
-                ? 'bg-white/10 text-[#c9a84c] font-bold'
-                : 'text-white/80 hover:text-[#F5F0E6] hover:bg-white/10'
-            }`}
-          >
-            {texts.axes}
-          </button>
-          <button
-            onClick={() => onNavigate('charge-allostatique')}
-            className={`px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer font-medium ${
-              currentView === 'charge-allostatique'
-                ? 'bg-white/10 text-[#c9a84c] font-bold'
-                : 'text-white/80 hover:text-[#F5F0E6] hover:bg-white/10'
-            }`}
-          >
-            {texts.charge}
-          </button>
-          <button
-            onClick={() => onNavigate('phytotherapie-reset')}
-            className={`px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer font-medium ${
-              currentView === 'phytotherapie-reset' || currentView === 'reset-homeostasique'
-                ? 'bg-white/10 text-[#c9a84c] font-bold'
-                : 'text-white/80 hover:text-[#F5F0E6] hover:bg-white/10'
-            }`}
-          >
-            {texts.reset}
-          </button>
-          <button
-            onClick={() => onNavigate('phytotherapie-reset')}
-            className="px-2.5 py-1.5 rounded-lg text-white/80 hover:text-[#F5F0E6] hover:bg-white/10 transition-colors cursor-pointer font-medium"
-          >
-            {texts.protocoles}
-          </button>
-          <button
-            onClick={() => onNavigate('metabolisme-insuline')}
-            className={`px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer font-bold ${
-              currentView === 'metabolisme-insuline'
-                ? 'bg-[#F59E0B]/20 text-[#F59E0B]'
-                : 'text-[#F59E0B] hover:text-white hover:bg-[#F59E0B]/10'
-            }`}
-          >
-            {texts.meta}
-          </button>
-          <button
-            onClick={() => onNavigate('herbier')}
-            className="px-2.5 py-1.5 rounded-lg text-white/80 hover:text-[#F5F0E6] hover:bg-white/10 transition-colors cursor-pointer font-medium"
-          >
-            {texts.herbier}
-          </button>
-        </nav>
 
         {/* Right: Commercial Return Link & Mobile Toggle */}
         <div className="flex items-center gap-2 shrink-0">
@@ -215,22 +109,139 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
                 onNavigate('machine');
               }
             }}
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/10 hover:bg-[#2D372C] text-white text-xs font-bold transition-all shadow-xs hover:shadow-md cursor-pointer border border-white/10 hover:border-[#C8AB8A]"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/10 hover:bg-[#2D372C] text-white text-xs font-bold transition-all shadow-xs hover:shadow-md cursor-pointer border border-white/10 hover:border-[#C8AB8A] whitespace-nowrap shrink-0"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#C8AB8A] group-hover:text-white" />
-            <span>{texts.bloomlab}</span>
-            <ArrowRight className="w-3 h-3 ml-0.5" />
+            <Sparkles className="w-3.5 h-3.5 text-[#C8AB8A] shrink-0" />
+            <span className="whitespace-nowrap">{texts.bloomlab}</span>
+            <ArrowRight className="w-3 h-3 ml-0.5 shrink-0" />
           </a>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg bg-white/5 border border-white/10 text-white/80 hover:text-white"
+            className="lg:hidden p-2 rounded-lg bg-white/5 border border-white/10 text-white/80 hover:text-white shrink-0 whitespace-nowrap"
             aria-label="Menu Académie"
           >
             {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
           </button>
         </div>
+      </div>
+
+      {/* 3. Horizontally Scrollable Academy Navigation Bar */}
+      <div className="w-full max-w-full border-t border-white/5 bg-[#0C1E18]/60">
+        <nav
+          aria-label="Navigation Bloom Academy"
+          className="flex items-center gap-2 overflow-x-auto w-full max-w-7xl mx-auto py-2 px-4 sm:px-6 lg:px-8 hide-scrollbar text-xs"
+        >
+          <button
+            onClick={() => onNavigate('academie')}
+            className={`px-3 py-1.5 rounded-lg transition-colors cursor-pointer font-medium whitespace-nowrap shrink-0 ${
+              currentView === 'academie'
+                ? 'bg-white/15 text-[#c9a84c] font-bold'
+                : 'text-white/85 hover:text-[#F5F0E6] hover:bg-white/10'
+            }`}
+          >
+            <span className="whitespace-nowrap">
+              {lang === 'fr' ? 'Accueil Académie' : lang === 'de' ? 'Übersicht' : 'Academy Home'}
+            </span>
+          </button>
+          <button
+            onClick={() => onNavigate('comment-lire-modele-bloom')}
+            className={`px-3 py-1.5 rounded-lg transition-colors cursor-pointer font-medium whitespace-nowrap shrink-0 ${
+              currentView === 'comment-lire-modele-bloom'
+                ? 'bg-white/15 text-[#c9a84c] font-bold'
+                : 'text-white/85 hover:text-[#F5F0E6] hover:bg-white/10'
+            }`}
+          >
+            <span className="whitespace-nowrap">{texts.guide}</span>
+          </button>
+          <button
+            onClick={() => onNavigate('women-academy')}
+            className={`px-3 py-1.5 rounded-lg transition-colors cursor-pointer font-medium whitespace-nowrap shrink-0 ${
+              currentView === 'women-academy'
+                ? 'bg-white/15 text-[#c9a84c] font-bold'
+                : 'text-white/85 hover:text-[#F5F0E6] hover:bg-white/10'
+            }`}
+          >
+            <span className="whitespace-nowrap">{texts.women}</span>
+          </button>
+          <button
+            onClick={() => onNavigate('4-architectures')}
+            className={`px-3 py-1.5 rounded-lg transition-colors cursor-pointer font-medium whitespace-nowrap shrink-0 ${
+              currentView === '4-architectures'
+                ? 'bg-white/15 text-[#c9a84c] font-bold'
+                : 'text-white/85 hover:text-[#F5F0E6] hover:bg-white/10'
+            }`}
+          >
+            <span className="whitespace-nowrap">{texts.arch}</span>
+          </button>
+          <button
+            onClick={() => onNavigate('terrain')}
+            className={`px-3 py-1.5 rounded-lg transition-colors cursor-pointer font-medium whitespace-nowrap shrink-0 ${
+              currentView === 'terrain' || currentView === '7-terrains'
+                ? 'bg-white/15 text-[#c9a84c] font-bold'
+                : 'text-white/85 hover:text-[#F5F0E6] hover:bg-white/10'
+            }`}
+          >
+            <span className="whitespace-nowrap">{texts.terrains}</span>
+          </button>
+          <button
+            onClick={() => onNavigate('9-axes')}
+            className={`px-3 py-1.5 rounded-lg transition-colors cursor-pointer font-medium whitespace-nowrap shrink-0 ${
+              currentView === '9-axes' || currentView === 'neuf-axes-historiques'
+                ? 'bg-white/15 text-[#c9a84c] font-bold'
+                : 'text-white/85 hover:text-[#F5F0E6] hover:bg-white/10'
+            }`}
+          >
+            <span className="whitespace-nowrap">{texts.axes}</span>
+          </button>
+          <button
+            onClick={() => onNavigate('charge-allostatique')}
+            className={`px-3 py-1.5 rounded-lg transition-colors cursor-pointer font-medium whitespace-nowrap shrink-0 ${
+              currentView === 'charge-allostatique'
+                ? 'bg-white/15 text-[#c9a84c] font-bold'
+                : 'text-white/85 hover:text-[#F5F0E6] hover:bg-white/10'
+            }`}
+          >
+            <span className="whitespace-nowrap">{texts.charge}</span>
+          </button>
+          <button
+            onClick={() => onNavigate('phytotherapie-reset')}
+            className={`px-3 py-1.5 rounded-lg transition-colors cursor-pointer font-medium whitespace-nowrap shrink-0 ${
+              currentView === 'phytotherapie-reset' || currentView === 'reset-homeostasique'
+                ? 'bg-white/15 text-[#c9a84c] font-bold'
+                : 'text-white/85 hover:text-[#F5F0E6] hover:bg-white/10'
+            }`}
+          >
+            <span className="whitespace-nowrap">{texts.reset}</span>
+          </button>
+          <button
+            onClick={() => onNavigate('protocoles')}
+            className={`px-3 py-1.5 rounded-lg transition-colors cursor-pointer font-medium whitespace-nowrap shrink-0 ${
+              currentView === 'protocoles'
+                ? 'bg-white/15 text-[#c9a84c] font-bold'
+                : 'text-white/85 hover:text-[#F5F0E6] hover:bg-white/10'
+            }`}
+          >
+            <span className="whitespace-nowrap">{texts.protocoles}</span>
+          </button>
+          <button
+            onClick={() => onNavigate('metabolisme-insuline')}
+            className={`px-3 py-1.5 rounded-lg transition-colors cursor-pointer font-bold whitespace-nowrap shrink-0 ${
+              currentView === 'metabolisme-insuline'
+                ? 'bg-[#F59E0B]/20 text-[#F59E0B]'
+                : 'text-[#F59E0B] hover:text-white hover:bg-[#F59E0B]/10'
+            }`}
+          >
+            <span className="whitespace-nowrap">{texts.meta}</span>
+          </button>
+          <button
+            onClick={() => onNavigate('herbier')}
+            className="px-3 py-1.5 rounded-lg text-white/85 hover:text-[#F5F0E6] hover:bg-white/10 transition-colors cursor-pointer font-medium whitespace-nowrap shrink-0"
+          >
+            <span className="whitespace-nowrap">{texts.herbier}</span>
+          </button>
+        </nav>
       </div>
 
       {/* Mobile Drawer Dropdown */}

@@ -475,7 +475,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
               {lang === 'fr' ? 'Économie Garantie' : lang === 'en' ? 'Guaranteed Savings' : 'Garantierte Ersparnis'}
             </span>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             {products.filter(p => (p as any).isBundle).map((product) => (
               <a 
                 key={product.id} 
@@ -486,29 +486,31 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                     handleNavigateDetail(product.id);
                   }
                 }}
-                className="bg-white rounded-3xl sm:rounded-[40px] border-2 border-botanik-orange/20 overflow-hidden flex flex-col cursor-pointer hover:shadow-2xl transition-all group relative"
+                className="bg-white rounded-2xl border border-[#E7DFD3] shadow-sm flex flex-col justify-between overflow-hidden cursor-pointer hover:shadow-xl transition-all group relative"
               >
                 <div className="absolute top-4 left-4 z-10 bg-botanik-orange text-[#0F261E] px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">
                   Bundle
                 </div>
-                <div className="relative h-52 sm:h-64 overflow-hidden bg-[#F9F9F7]">
+                <div className="relative w-full aspect-square bg-[#F9F6F0] flex items-center justify-center overflow-hidden rounded-t-2xl">
                   <OptimizedImage 
                     src={product.image} 
                     alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Machine à infusion botanique, tisanes et remèdes naturels`} 
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-contain p-4 transform group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-5 sm:p-6 flex flex-col flex-1">
-                  <div className="text-[10px] font-bold text-botanik-orange uppercase tracking-widest mb-2">
-                    {product.subtitle}
+                <div className="p-5 flex flex-col flex-1 justify-between">
+                  <div>
+                    <div className="text-[10px] font-bold text-botanik-orange uppercase tracking-widest mb-2">
+                      {product.subtitle}
+                    </div>
+                    <h4 className="text-base sm:text-lg font-bold text-botanik-green mb-3 leading-tight">
+                      {product.name}
+                    </h4>
+                    <p className="text-xs sm:text-sm text-botanik-green/60 mb-5 font-light line-clamp-2">
+                      {product.description}
+                    </p>
                   </div>
-                  <h4 className="text-base sm:text-lg font-bold text-botanik-green mb-3 sm:mb-4 leading-tight">
-                    {product.name}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-botanik-green/60 mb-6 font-light line-clamp-2">
-                    {product.description}
-                  </p>
-                  <div className="flex items-center justify-between mt-auto">
+                  <div className="flex items-center justify-between mt-auto pt-2">
                     <div className="flex flex-col">
                       {(product.originalPrice || (product as any).oldPriceStrike) && (
                         <div className="flex items-center gap-2 flex-wrap">
@@ -530,7 +532,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                     <button 
                       type="button"
                       onClick={(e) => { e.preventDefault(); e.stopPropagation(); onAddToCart(product); }}
-                      className="w-12 h-12 bg-[#D97706] hover:bg-[#B45309] text-white rounded-2xl flex items-center justify-center shadow-lg shadow-orange-900/20 transition-all cursor-pointer"
+                      className="w-12 h-12 bg-[#D97706] hover:bg-[#B45309] text-white rounded-2xl flex items-center justify-center shadow-lg shadow-orange-900/20 transition-all cursor-pointer shrink-0"
                       aria-label={`${lang === 'fr' ? 'Ajouter au panier' : 'Add to cart'} ${product.name}`}
                     >
                       <ShoppingBag className="w-5 h-5" />
@@ -649,7 +651,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
         <h3 className="text-xs md:text-sm font-bold uppercase tracking-widest text-botanik-green/40 mb-4 md:mb-6">
           {searchQuery ? `${t.grid.results_for} "${searchQuery}"` : (currentView === 'boutique-kits' || currentView === 'kits-botaniques') ? (isFR ? 'Tous les kits de plantes' : 'All plant kits') : t.grid.title}
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
           {filteredProducts.filter(p => (!p.featured && !(p as any).isBundle && !(p as any).isSpecial) || searchQuery).map((product) => {
             return (
               <a 
@@ -661,17 +663,13 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                     handleNavigateDetail(product.id);
                   }
                 }}
-                className="bg-white rounded-2xl sm:rounded-[40px] border border-botanik-green/5 overflow-hidden flex flex-col cursor-pointer hover:shadow-2xl transition-all group"
+                className="bg-white rounded-2xl border border-[#E7DFD3] shadow-sm flex flex-col justify-between overflow-hidden cursor-pointer hover:shadow-xl transition-all group"
               >
-                <div className="relative h-44 sm:h-64 md:h-80 overflow-hidden bg-[#F9F9F7]">
+                <div className="relative w-full aspect-square bg-[#F9F6F0] flex items-center justify-center overflow-hidden rounded-t-2xl">
                   <OptimizedImage 
                     src={product.image} 
                     alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Machine à infusion botanique, tisanes et remèdes naturels`} 
-                    className={`w-full h-full object-cover transform transition-transform duration-700 ${
-                      product.id === 'duo-argiles' 
-                        ? 'scale-125 sm:scale-130 group-hover:scale-135' 
-                        : 'group-hover:scale-110'
-                    }`}
+                    className="w-full h-full object-contain p-4 transform group-hover:scale-105 transition-transform duration-500"
                   />
                   <button 
                     type="button"
@@ -684,7 +682,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                         onAddToCart(product); 
                       }
                     }}
-                    className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 w-10 h-10 sm:w-12 sm:h-12 bg-[#D97706] hover:bg-[#B45309] text-white rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg shadow-orange-900/20 transition-all cursor-pointer"
+                    className="absolute bottom-3 right-3 w-10 h-10 sm:w-11 sm:h-11 bg-[#D97706] hover:bg-[#B45309] text-white rounded-xl flex items-center justify-center shadow-lg shadow-orange-900/20 transition-all cursor-pointer"
                     aria-label={product.id === 'abonnements-numeriques' ? (isFR ? 'Découvrir les abonnements' : 'Discover subscriptions') : `${lang === 'fr' ? 'Ajouter au panier' : 'Add to cart'} ${product.name}`}
                   >
                     {product.id === 'abonnements-numeriques' ? (
@@ -694,16 +692,18 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                     )}
                   </button>
                 </div>
-                <div className="p-3 sm:p-4 md:p-6 flex flex-col flex-1">
-                  <div className="text-[8px] md:text-[10px] font-bold text-botanik-orange uppercase tracking-widest mb-1 md:mb-2 whitespace-nowrap overflow-hidden text-ellipsis">
-                    {product.subtitle}
+                <div className="p-5 flex flex-col flex-1 justify-between">
+                  <div>
+                    <div className="text-[10px] font-bold text-botanik-orange uppercase tracking-widest mb-1.5">
+                      {product.subtitle}
+                    </div>
+                    <h4 className="text-sm sm:text-base font-bold text-botanik-green mb-3 leading-snug line-clamp-2">
+                      {product.name}
+                    </h4>
                   </div>
-                  <h4 className="text-xs sm:text-sm md:text-lg font-bold text-botanik-green mb-2 md:mb-4 leading-tight flex-1 line-clamp-2">
-                    {product.name}
-                  </h4>
-                  <div className="flex items-center justify-between mt-auto">
-                    <span className="text-sm sm:text-base md:text-xl font-bold text-botanik-green">{formatPrice(product.price)}</span>
-                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-botanik-green/20 group-hover:text-botanik-green transition-colors" />
+                  <div className="flex items-center justify-between mt-auto pt-2">
+                    <span className="text-base sm:text-lg font-bold text-botanik-green">{formatPrice(product.price)}</span>
+                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-botanik-green/30 group-hover:text-botanik-green transition-colors" />
                   </div>
                 </div>
               </a>
