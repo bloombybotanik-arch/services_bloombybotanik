@@ -77,16 +77,28 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
 
   // Sticky bar visible UNIQUEMENT après 60% de scroll
   useEffect(() => {
+    const scrollContainer = document.getElementById('main-scroll-container');
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (docHeight > 0) {
-        const scrollPercent = scrollY / docHeight;
-        setShowStickyBar(scrollPercent >= 0.6);
+      if (scrollContainer) {
+        const docHeight = scrollContainer.scrollHeight - scrollContainer.clientHeight;
+        if (docHeight > 0) {
+          setShowStickyBar(scrollContainer.scrollTop / docHeight >= 0.6);
+        }
+      } else {
+        const scrollY = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight > 0) {
+          setShowStickyBar(scrollY / docHeight >= 0.6);
+        }
       }
     };
+    const target: EventTarget = scrollContainer || window;
+    target.addEventListener('scroll', handleScroll, { passive: true } as AddEventListenerOptions);
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      target.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const t = globalTranslations[lang as keyof typeof globalTranslations] || globalTranslations.fr;
@@ -122,7 +134,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
 
   return (
     <GlossaryProvider pageKey="home">
-    <div className="w-full overflow-x-hidden bg-[#FAF7F2] text-slate-800 font-sans antialiased selection:bg-[#E8772E] selection:text-white">
+    <div className="w-full overflow-x-clip bg-[#FAF7F2] text-slate-800 font-sans antialiased selection:bg-[#E8772E] selection:text-white">
 
       {/* ========================================================================= */}
       {/* BANDEAU ANNONCE DÉFILANT (Marquee Réassurance Réelle) */}
@@ -668,7 +680,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
           </div>
 
           {/* Les 5 Étapes Détaillées */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {[
               {
                 num: "01",

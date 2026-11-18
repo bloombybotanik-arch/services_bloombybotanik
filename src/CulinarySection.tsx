@@ -283,7 +283,7 @@ export default function CulinarySection({
         context="Vous êtes dans l'espace culinaire de Bloom by BotaniK. De la simple infusion d'herbes aux bouillons médicinaux complexes, apprenez à utiliser la BloomLab pour extraire le meilleur des plantes, en respectant la progression logique de nos protocoles : du plus accessible au plus technique."
       />
 
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12 py-12 md:py-20 lg:py-24 animate-in fade-in duration-700">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16 animate-in fade-in duration-700">
       
       {/* Header */}
       <header className="mb-16">

@@ -61,7 +61,7 @@ export default function LibraryContent({ isPremium, onRequirePremium, onNavigate
   ];
 
   return (
-    <div className="max-w-[1200px] mx-auto px-6 py-12 animate-in fade-in duration-500">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-in fade-in duration-500">
       <div className="mb-12">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 border-b border-botanik-green/5 pb-8">
           <div className="flex gap-4 text-[10px] font-black text-botanik-green/40 uppercase tracking-[0.3em] items-center">

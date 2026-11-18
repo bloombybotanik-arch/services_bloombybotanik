@@ -64,7 +64,7 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
       </div>
 
       {/* 2. Main Navigation Bar */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-4">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-4">
         {/* Left: Breadcrumb & Academy Brand */}
         <div className="flex flex-nowrap overflow-x-auto whitespace-nowrap hide-scrollbar gap-2 items-center min-w-0">
           <button

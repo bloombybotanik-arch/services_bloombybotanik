@@ -234,10 +234,10 @@ export default function AmazonSocialProof({
   return (
     <section className="py-10 md:py-14 bg-white border-t border-[#F3EEE6]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#FAF7F2] rounded-[32px] border border-[#E7DFD3] p-6 md:p-10 grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-8 items-center">
+        <div className="bg-[#FAF7F2] rounded-[32px] border border-[#E7DFD3] p-6 md:p-10 grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] gap-8 items-center">
           {/* Agrégat */}
-          <div className="text-center md:text-left space-y-2">
-            <div className="flex items-center justify-center md:justify-start gap-2 text-xs font-black uppercase tracking-widest text-slate-500">
+          <div className="text-center lg:text-left space-y-2">
+            <div className="flex items-center justify-center lg:justify-start gap-2 text-xs font-black uppercase tracking-widest text-slate-500">
               <ShieldCheck className="w-4 h-4 text-[#C8AB8A]" />
               {s.title}
             </div>

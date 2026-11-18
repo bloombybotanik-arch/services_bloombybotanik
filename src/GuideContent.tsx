@@ -20,7 +20,7 @@ export default function GuideContent({ onNavigate, lang }: GuideContentProps) {
   ].filter(Boolean);
 
   return (
-    <div id="comprendre-infusion-botanique" className="max-w-[1200px] mx-auto px-6 py-12 lg:py-24 animate-in fade-in duration-1000">
+    <div id="comprendre-infusion-botanique" className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 animate-in fade-in duration-1000">
       
       {/* Header: Mode d'Emploi */}
       <header className="mb-24 text-center">

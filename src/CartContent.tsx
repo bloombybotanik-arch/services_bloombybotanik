@@ -92,7 +92,7 @@ export default function CartContent({
 
   if (items.length === 0) {
     return (
-      <div className="max-w-[1200px] mx-auto px-6 py-32 text-center">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
         <div className="w-24 h-24 bg-[#1B3022]/5 rounded-full flex items-center justify-center mx-auto mb-8">
           <Truck className="w-10 h-10 text-[#1B3022]/20" />
         </div>
@@ -109,7 +109,7 @@ export default function CartContent({
   }
 
   return (
-    <article className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-20 animate-in fade-in slide-in-from-bottom-4 duration-700">
+    <article className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <div className="flex items-center gap-4 mb-6 sm:mb-8">
         <button onClick={onBack} className="p-2 hover:bg-[#1B3022]/5 rounded-full transition-colors cursor-pointer min-h-[44px] min-w-[44px] flex items-center justify-center">
           <ArrowLeft className="w-6 h-6 text-[#1B3022]" />

@@ -375,7 +375,8 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
       </div>
       
       {/* Search & Filter Header (App Style) */}
-      <div className="bg-white px-4 md:px-6 pt-6 md:pt-8 pb-4">
+      <div className="bg-white pt-6 md:pt-8 pb-4 border-b border-botanik-green/5">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-botanik-green/40 mb-4">
           <button onClick={() => window.location.href='/'} className="hover:text-botanik-orange transition-colors">
             {isFR ? "Accueil" : "Home"}
@@ -404,11 +405,13 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
             className="w-full pl-10 md:pl-12 pr-4 py-2 md:py-3 bg-[#F9F9F7] rounded-xl md:rounded-2xl border-none text-sm md:text-base text-botanik-green focus:ring-2 focus:ring-botanik-orange/20"
           />
         </div>
+        </div>
       </div>
 
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 md:pt-8">
       {/* Featured Header: Split Hero Layout synchronized with Home */}
       {!searchQuery && currentView !== 'boutique-kits' && currentView !== 'kits-botaniques' && (
-        <div className="px-4 sm:px-6 mb-12 sm:mb-16">
+        <div className="mb-12 sm:mb-16">
           <div className="relative group">
             <div className="absolute -inset-4 bg-botanik-green/5 rounded-3xl sm:rounded-[56px] blur-3xl group-hover:bg-botanik-orange/5 transition-colors duration-1000" />
             <div className="relative bg-white border border-botanik-green/5 rounded-3xl sm:rounded-[48px] overflow-hidden shadow-2xl">
@@ -463,7 +466,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
 
       {/* Bundles Section */}
       {!searchQuery && (
-        <div className="px-4 md:px-6 mb-12 sm:mb-16">
+        <div className="mb-12 sm:mb-16">
           <div className="flex items-center justify-between mb-6 sm:mb-8 flex-wrap gap-2">
             <h3 className="text-xl md:text-2xl font-bold text-botanik-green">
               {lang === 'fr' ? 'Nos Offres Groupées (Bundles)' : lang === 'en' ? 'Our Bundle Offers' : 'Unsere Bundle-Angebote'}
@@ -472,7 +475,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
               {lang === 'fr' ? 'Économie Garantie' : lang === 'en' ? 'Guaranteed Savings' : 'Garantierte Ersparnis'}
             </span>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.filter(p => (p as any).isBundle).map((product) => (
               <a 
                 key={product.id} 
@@ -542,7 +545,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
 
       {/* Digital Universe Section */}
       {!searchQuery && (
-        <div className="px-4 md:px-6 mb-12 sm:mb-16">
+        <div className="mb-12 sm:mb-16">
           <div className="bg-botanik-green/5 rounded-3xl sm:rounded-[48px] p-6 sm:p-8 md:p-12 border border-botanik-green/5">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="max-w-md">
@@ -617,13 +620,13 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
 
       {/* Synergies Multi-Plantes & Séquençage A/B Educational Section */}
       {!searchQuery && currentView !== 'boutique-kits' && currentView !== 'kits-botaniques' && (
-        <div className="px-4 md:px-6">
+        <div>
           <StoreSequencingSection onNavigate={onNavigate} lang={lang} />
         </div>
       )}
 
       {/* Product Grid */}
-      <div id="nos-kits" className="px-4 md:px-6 mb-12 scroll-mt-24">
+      <div id="nos-kits" className="mb-12 scroll-mt-24">
         {(currentView === 'boutique-kits' || currentView === 'kits-botaniques') && (
           <div className="mb-8 p-6 sm:p-8 bg-[#3E4A3D] rounded-3xl text-white border border-[#C8AB8A]/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xl">
             <div>
@@ -646,7 +649,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
         <h3 className="text-xs md:text-sm font-bold uppercase tracking-widest text-botanik-green/40 mb-4 md:mb-6">
           {searchQuery ? `${t.grid.results_for} "${searchQuery}"` : (currentView === 'boutique-kits' || currentView === 'kits-botaniques') ? (isFR ? 'Tous les kits de plantes' : 'All plant kits') : t.grid.title}
         </h3>
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {filteredProducts.filter(p => (!p.featured && !(p as any).isBundle && !(p as any).isSpecial) || searchQuery).map((product) => {
             return (
               <a 
@@ -710,7 +713,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
       </div>
 
       {/* Trust Section */}
-      <div className="px-4 md:px-6 grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mb-12">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mb-12">
         <div className="bg-white border border-botanik-green/5 p-4 md:p-5 rounded-2xl flex items-center gap-3 md:gap-4 shadow-sm">
           <div className="w-8 h-8 md:w-10 md:h-10 bg-botanik-green/5 rounded-full flex items-center justify-center shrink-0">
             <ShieldCheck className="w-4 h-4 md:w-5 md:h-5 text-botanik-green" />
@@ -729,6 +732,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
           </div>
           <span className="text-[10px] md:text-xs font-bold text-botanik-green uppercase tracking-wider leading-tight">{t.trust.guarantee}</span>
         </div>
+      </div>
       </div>
     </div>
   );

@@ -421,7 +421,7 @@ export default function HerbariumContent({
     const terrains = selectedPlant.terrains_cibles.map(ter => t.details.terrains[ter] || ter);
 
     return (
-      <div className="max-w-[1200px] mx-auto px-6 py-12">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <button 
           onClick={() => setSelectedPlant(null)}
           className="flex items-center gap-2 text-[#3E4A3D]/70 hover:text-[#C8AB8A] active:text-[#C8AB8A] font-bold mb-12 group transition-colors cursor-pointer"
@@ -447,7 +447,7 @@ export default function HerbariumContent({
           </div>
         </header>
         
-        <div className="grid lg:grid-cols-[1fr_400px] gap-16">
+        <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_360px] gap-10 xl:gap-14">
           <div className="space-y-16">
             {/* 1. SCIENCE DU TOTUM */}
             <section className="bg-white p-10 rounded-[40px] border border-botanik-green/5 shadow-sm">
@@ -863,7 +863,8 @@ export default function HerbariumContent({
       />
 
       {/* Search & Filter Header */}
-      <div className="bg-white px-4 md:px-6 pt-6 md:pt-8 pb-4 border-b border-[#3E4A3D]/5">
+      <div className="bg-white pt-6 md:pt-8 pb-4 border-b border-[#3E4A3D]/5">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-2">
           <div>
             <h1 className="text-2xl md:text-3xl font-bold text-[#3E4A3D] mb-1">
@@ -927,10 +928,11 @@ export default function HerbariumContent({
           />
         </div>
       </div>
+      </div>
 
       {/* FILTERS with direct links to dedicated recipe pages */}
-      <div className="sticky top-0 z-30 bg-[#F9F9F7]/95 backdrop-blur-md py-3 md:py-4 px-4 md:px-6 mb-8 border-b border-[#3E4A3D]/5 overflow-x-auto whitespace-nowrap scrollbar-hide">
-        <div className="flex flex-wrap gap-2 items-center justify-between">
+      <div className="sticky top-0 z-30 bg-[#F9F9F7]/95 backdrop-blur-md py-3 md:py-4 px-4 sm:px-6 lg:px-8 mb-8 border-b border-[#3E4A3D]/5 overflow-x-auto whitespace-nowrap scrollbar-hide">
+        <div className="w-full max-w-7xl mx-auto flex flex-wrap gap-2 items-center justify-between">
           <div className="flex flex-wrap gap-2 items-center">
             {[
               { id: 'all', label: "Tous", icon: Leaf, count: counts.all, onClick: () => { setActiveFilter('all'); setSearchQuery(''); } },
@@ -985,8 +987,9 @@ export default function HerbariumContent({
         </div>
       </div>
 
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Contextual Banners for dedicated recipe collections */}
-      <div className="px-4 md:px-6 mb-6">
+      <div className="mb-6">
         {activeFilter === 'therapeutic' && (
           <div className="p-4 sm:p-5 bg-[#3E4A3D]/5 border border-[#3E4A3D]/15 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-center gap-3">
@@ -1052,7 +1055,7 @@ export default function HerbariumContent({
       </div>
 
       {/* GRID VIEW */}
-      <div className="px-4 md:px-6">
+      <div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredDirectory.map((plant, index) => {
             // Étape 3 : Libérer les recettes "Aimant" (Sommeil, Digestion, Immunité, Peau) pour attirer les visiteurs
@@ -1181,6 +1184,7 @@ export default function HerbariumContent({
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }

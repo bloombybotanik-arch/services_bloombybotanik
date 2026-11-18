@@ -261,7 +261,7 @@ export default function BloomAcademiePage({ onNavigate, lang }: BloomAcademiePag
       </header>
 
       {/* 3. MAIN BODY CONTAINER */}
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 pt-16 space-y-24">
+      <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 space-y-24">
 
         {/* SECTION 1: COMPRENDRE LE CORPS */}
         <section id="comprendre-le-corps" className="scroll-mt-24">

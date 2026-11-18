@@ -20,8 +20,9 @@ export const StickyCTA: React.FC<StickyCTAProps> = ({
   const isFR = lang === 'fr';
 
   useEffect(() => {
+    const scrollContainer = document.getElementById('main-scroll-container');
     const handleScroll = () => {
-      const scrollY = window.scrollY;
+      const scrollY = scrollContainer ? scrollContainer.scrollTop : window.scrollY;
       setIsVisible(scrollY > 380);
 
       // Check if user is already inside the offers section
@@ -33,8 +34,13 @@ export const StickyCTA: React.FC<StickyCTAProps> = ({
       }
     };
 
+    const target: EventTarget = scrollContainer || window;
+    target.addEventListener('scroll', handleScroll, { passive: true } as AddEventListenerOptions);
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      target.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [targetSectionId]);
 
   const handleClick = (e: React.MouseEvent) => {

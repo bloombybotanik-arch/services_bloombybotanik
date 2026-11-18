@@ -74,7 +74,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
   };
 
   return (
-    <div data-product-page="true" className="product-detail animate-in fade-in duration-700 bg-[#FAF7F2] text-[#3E4A3D] w-full max-w-full overflow-x-hidden">
+    <div data-product-page="true" className="product-detail animate-in fade-in duration-700 bg-[#FAF7F2] text-[#3E4A3D] w-full max-w-full overflow-x-clip">
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </script>
@@ -119,7 +119,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
       <section className="relative overflow-hidden bg-[#3E4A3D] text-white pt-8 pb-16 md:pt-12 md:pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(200, 171, 138,0.15),rgba(255,255,255,0))] pointer-events-none" />
         
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <nav aria-label="Fil d'Ariane" className="flex flex-wrap items-center justify-between gap-3 mb-6 text-xs sm:text-sm text-white/80">
             <ol className="flex items-center gap-2">
               <li>
@@ -340,7 +340,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
       {/* 2. LE VERROU MÉTHODOLOGIQUE */}
       <section id="verrou-methodologique" className="py-20 md:py-28 bg-[#FAF7F2]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="inline-block px-3.5 py-1.5 rounded-full bg-[#C8AB8A]/10 text-[#C8AB8A] text-xs font-black uppercase tracking-[0.25em] border border-[#C8AB8A]/20">
               2. LE VERROU MÉTHODOLOGIQUE
@@ -437,7 +437,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
       {/* 4. COMPARISON TABLE: SCIENCE VS TRADITION */}
       <section className="py-20 md:py-28 bg-[#FAF7F2]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-xs font-black uppercase tracking-[0.25em] text-[#C8AB8A] mb-3 block">
               Rigueur Comparée
@@ -502,7 +502,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
       {/* 4. BRAND HERITAGE & ETHNOBOTANY */}
 <section className="heritage-section py-20 md:py-28 bg-[#FAF7F2] border-t border-[#3E4A3D]/5 relative overflow-hidden">
-  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div className="text-center max-w-3xl mx-auto mb-12">
       <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#A8B8A0]/10 text-[#A8B8A0] text-xs font-bold uppercase tracking-widest mb-4">
         <Compass className="w-3.5 h-3.5 text-[#C8AB8A]" />
@@ -539,7 +539,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
       {/* 5. THE 3 DOMAINS OF APPLICATION */}
       <section id="niveaux" className="py-20 md:py-28 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-black uppercase tracking-[0.25em] text-[#C8AB8A] mb-3 block">
               Applications Pratiques
@@ -558,7 +558,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
           <div className="space-y-12">
             {/* Niveau 1: Culinaire */}
-            <div className="grid lg:grid-cols-[1fr_420px] gap-10 items-center bg-[#FAF7F2] rounded-3xl p-8 md:p-12 border border-[#3E4A3D]/5 shadow-xs">
+            <div className="grid xl:grid-cols-[minmax(0,1fr)_400px] gap-10 items-center bg-[#FAF7F2] rounded-3xl p-8 md:p-12 border border-[#3E4A3D]/5 shadow-xs">
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 bg-[#C8AB8A]/10 rounded-2xl flex items-center justify-center text-[#C8AB8A]">
@@ -599,9 +599,9 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
             </div>
 
             {/* Niveau 2: Cosmétique */}
-            <div className="grid lg:grid-cols-[420px_1fr] gap-10 items-center bg-[#FAF7F2] rounded-3xl p-8 md:p-12 border border-[#3E4A3D]/5 shadow-xs">
+            <div className="grid xl:grid-cols-[400px_minmax(0,1fr)] gap-10 items-center bg-[#FAF7F2] rounded-3xl p-8 md:p-12 border border-[#3E4A3D]/5 shadow-xs">
               <div 
-                className="relative min-h-[360px] sm:min-h-[440px] h-[400px] sm:h-[460px] rounded-2xl overflow-hidden bg-slate-200 cursor-zoom-in group order-2 lg:order-1"
+                className="relative min-h-[360px] sm:min-h-[440px] h-[400px] sm:h-[460px] rounded-2xl overflow-hidden bg-slate-200 cursor-zoom-in group order-2 xl:order-1"
                 onClick={() => setFullscreenImage(bloomSoinsImg)}
               >
                 <img 
@@ -613,7 +613,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                   <Maximize2 className="w-6 h-6 text-white" />
                 </div>
               </div>
-              <div className="order-1 lg:order-2">
+              <div className="order-1 xl:order-2">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 bg-[#C8AB8A]/10 rounded-2xl flex items-center justify-center text-[#C8AB8A]">
                     <FlaskConical className="w-6 h-6" />
@@ -640,7 +640,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
             </div>
 
             {/* Niveau 3: Phytothérapie de Terrain (Optimized for Reset Protocol) */}
-<div className="grid lg:grid-cols-[1fr_420px] gap-10 items-center bg-[#FAF7F2] rounded-3xl p-8 md:p-12 border border-[#C8AB8A]/20 shadow-sm">
+<div className="grid xl:grid-cols-[minmax(0,1fr)_400px] gap-10 items-center bg-[#FAF7F2] rounded-3xl p-8 md:p-12 border border-[#C8AB8A]/20 shadow-sm">
   <div>
     <div className="flex items-center gap-3 mb-4">
       <div className="w-12 h-12 bg-[#C8AB8A]/10 rounded-2xl flex items-center justify-center text-[#C8AB8A]">
@@ -686,7 +686,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
       {/* 6. WHAT'S IN THE BOX & 1-YEAR WARRANTY */}
       <section className="py-20 md:py-28 bg-[#FAF7F2]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-xs font-black uppercase tracking-[0.25em] text-[#C8AB8A] mb-3 block">
               Équipement Complet
@@ -737,7 +737,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
       {/* 7. PRICING & FORMULAS (BLOOM COMPLET 59€ & BLOOM LAB 239€) */}
       <section className="py-20 md:py-28 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-black uppercase tracking-[0.25em] text-[#C8AB8A] mb-3 block">
               Formules & Accompagnement
@@ -889,7 +889,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
       {/* 8. FAQ SECTION (LEVÉE DES OBJECTIONS) */}
       <section className="py-20 md:py-28 bg-[#FAF7F2]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-xs font-black uppercase tracking-[0.25em] text-[#C8AB8A] mb-3 block">
               Questions Fréquentes
@@ -936,7 +936,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
       {/* 9. FINAL CTA SECTION */}
       <section className="py-20 md:py-28 bg-[#3E4A3D] text-white text-center relative overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6 leading-tight">
             {t.final_cta?.title || "Reprenez le Contrôle de Votre Pharmacie Intérieure"}
           </h2>
@@ -979,7 +979,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         style={{ backgroundColor: '#3E4A3D', color: '#ffffff' }}
       >
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#C8AB8A]/10 rounded-full blur-[120px] -mr-48 -mt-48 pointer-events-none" />
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h2 
             className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 leading-tight italic text-white"
             style={{ color: '#ffffff' }}

@@ -24,7 +24,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
   const isFR = lang === 'fr';
 
   return (
-    <div className="max-w-[1200px] mx-auto px-6 py-12 lg:py-24 animate-in fade-in slide-in-from-bottom-4 duration-1000 overflow-x-hidden">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 animate-in fade-in slide-in-from-bottom-4 duration-1000 overflow-x-clip">
       
       {/* 1. HERO - BENEFIT ORIENTED */}
       <section className="mb-24 md:mb-32 text-center max-w-4xl mx-auto px-4 relative">

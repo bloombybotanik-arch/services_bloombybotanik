@@ -513,10 +513,18 @@ export default function App() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
+  const mainScrollRef = React.useRef<HTMLDivElement | null>(null);
+
   // Synchronize document SEO, Meta, Canonical & Hreflang
   useEffect(() => {
     updateDocumentSEO(currentView, selectedLanguage, selectedProduct, selectedSlug);
   }, [currentView, selectedLanguage, selectedProduct, selectedSlug]);
+
+  // Ensure main Flexbox scroll container resets to top on view/route change
+  useEffect(() => {
+    mainScrollRef.current?.scrollTo({ top: 0, behavior: 'auto' });
+    window.scrollTo(0, 0);
+  }, [currentView, selectedProduct, selectedSlug]);
 
   // Scroll to top on view change
   const navigateTo = (view: View, param?: string) => {
@@ -530,6 +538,7 @@ export default function App() {
     if (view === 'chat' && (param === 'start' || param === 'new' || !param)) {
       setSavedAssessment(null);
     }
+    mainScrollRef.current?.scrollTo({ top: 0, behavior: 'auto' });
     window.scrollTo(0, 0);
     const targetPath = view === 'product-detail' && param 
       ? `/boutique/${param}/` 
@@ -604,7 +613,7 @@ export default function App() {
   return (
     <div 
       style={{ fontFamily: "'Manrope', sans-serif" }}
-      className="flex min-h-screen w-full bg-[#F9F6F0] text-[#1B3022] font-sans selection:bg-botanik-green selection:text-white relative"
+      className="flex h-screen w-full overflow-hidden bg-[#F9F6F0] text-[#1B3022] font-sans selection:bg-botanik-green selection:text-white relative"
     >
       {/* 1. Left Persistent Sidebar (Desktop + Tablet >= 768px) */}
       <NavigationSidebar
@@ -618,10 +627,14 @@ export default function App() {
         onOpenCalculator={() => setIsCalculatorOpen(true)}
       />
 
-      {/* 2. Main Content Wrapper offset by 280px on md+ */}
-      <div className="flex-1 min-w-0 md:ml-[280px] flex flex-col transition-all">
+      {/* 2. Fluid Main Content Column inside Flexbox Shell */}
+      <div
+        ref={mainScrollRef}
+        id="main-scroll-container"
+        className="flex-1 min-w-0 w-full h-full overflow-y-auto overflow-x-hidden flex flex-col transition-all"
+      >
         {/* Top Navigation Bar: Mobile Only (< 768px) */}
-        <header className="md:hidden sticky top-0 z-30 bg-[#0F261E] border-b border-white/10 transition-colors shadow-md">
+        <header className="md:hidden sticky top-0 z-30 shrink-0 bg-[#0F261E] border-b border-white/10 transition-colors shadow-md">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
             {/* Left side: Brand Logo */}
             <a
@@ -839,7 +852,7 @@ export default function App() {
                     onClick={() => {
                       navigateTo('boutique');
                       setMobileMenuOpen(false);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                      mainScrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >

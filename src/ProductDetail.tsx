@@ -121,7 +121,7 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
           : "Black Friday 2026: Botanical Care for the Whole Family - Complete Pack at 59 €"}
       </div>
 
-      <article data-product-page="true" className="product-detail w-full max-w-[1200px] mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-20 animate-in fade-in slide-in-from-bottom-4 duration-700">
+      <article data-product-page="true" className="product-detail w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
         <script type="application/ld+json">
           {JSON.stringify(productSchema)}
         </script>

@@ -67,8 +67,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
   };
 
   return (
-    <footer className="bg-[#0F261E] text-[#F9F6F0] py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-12 border-t border-white/10">
-      <div className="max-w-[1200px] mx-auto">
+    <footer className="bg-[#0F261E] text-[#F9F6F0] py-12 md:py-16 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+      <div className="w-full max-w-7xl mx-auto">
         
         {/* Brand & Mission + Newsletter Inscription */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-14 pb-12 border-b border-white/10">

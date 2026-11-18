@@ -69,7 +69,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
 
   return (
     <aside 
-      className="hidden md:flex flex-col fixed top-0 left-0 bottom-0 w-[280px] min-w-[280px] h-screen overflow-y-auto z-40 bg-[#0F261E] text-[#F9F6F0] border-r border-white/10 select-none shadow-2xl"
+      className="hidden md:flex flex-col w-[280px] lg:w-[320px] flex-shrink-0 h-full overflow-y-auto overflow-x-hidden z-40 bg-[#0F261E] text-[#F9F6F0] border-r border-white/10 select-none shadow-2xl"
       aria-label="Navigation principale"
     >
       {/* 1. Header Lockup: Papillon + Bloom by BotaniK */}

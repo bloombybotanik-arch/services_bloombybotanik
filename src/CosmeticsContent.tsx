@@ -90,7 +90,7 @@ export default function CosmeticsContent({
         context="Vous êtes dans l'espace formulatoire cosmétique de Bloom by BotaniK. Apprenez à réaliser des baumes, sérums huileux, huiles précieuses et soins d'argiles pures sans perturbateurs endocriniens ni conservateurs chimiques de synthèse."
       />
 
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-12 py-8 md:py-16 animate-in fade-in duration-700">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 animate-in fade-in duration-700">
         
         {/* Header */}
         <header className="mb-16">
@@ -213,7 +213,7 @@ export default function CosmeticsContent({
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-12">
+      <div className="grid grid-cols-1 xl:grid-cols-[320px_minmax(0,1fr)] gap-8 xl:gap-12">
         {/* Sidebar: Recipe Selection */}
         <div className="space-y-4">
           <div className="flex items-center justify-between mb-6 border-b border-botanik-green/10 pb-4">

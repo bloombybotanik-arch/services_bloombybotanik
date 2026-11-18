@@ -45,7 +45,7 @@ export default function AdminDashboard({ lang = 'fr' }: AdminDashboardProps) {
   }
 
   return (
-    <div className="max-w-[1200px] mx-auto px-6 py-12">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
         <div>
           <h1 className="text-4xl font-bold text-botanik-green mb-2">Tableau de Bord Alma</h1>

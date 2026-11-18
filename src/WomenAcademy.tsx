@@ -105,7 +105,7 @@ export default function WomenAcademy({
       />
 
       {/* Main Dossier Wrapper */}
-      <article className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 space-y-14">
+      <article className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 space-y-14">
         {/* HERO HEADER */}
         <header className="space-y-8 border-b border-[#E7DFD3] pb-12">
           <div className="max-w-4xl space-y-5">
@@ -207,7 +207,7 @@ export default function WomenAcademy({
         {/* MOBILE / TABLET CHAPTER NAVIGATION STRIP */}
         <nav
           aria-label={copy.tocTitle}
-          className="lg:hidden flex items-center gap-2 overflow-x-auto pb-2"
+          className="xl:hidden flex items-center gap-2 overflow-x-auto pb-2"
         >
           {copy.tocItems.map((item) => (
             <button
@@ -225,8 +225,8 @@ export default function WomenAcademy({
           ))}
         </nav>
 
-        {/* ASYMMETRIC EDITORIAL CANVAS: 70% Reading Column + 30% Sticky TOC Sidebar */}
-        <div className="grid lg:grid-cols-[minmax(0,1fr)_270px] gap-10 lg:gap-12 items-start">
+        {/* ASYMMETRIC EDITORIAL CANVAS: Reading Column + Sticky TOC Sidebar */}
+        <div className="grid xl:grid-cols-[minmax(0,1fr)_260px] gap-8 xl:gap-12 items-start">
           {/* MAIN READING COLUMN */}
           <div className="space-y-16 min-w-0">
             {/* ============================================================== */}
@@ -838,7 +838,7 @@ export default function WomenAcademy({
           </div>
 
           {/* RIGHT STICKY LATERAL MODULE INDEX (Desktop lg+) */}
-          <aside className="hidden lg:block sticky top-28 space-y-6">
+          <aside className="hidden xl:block sticky top-28 space-y-6">
             <div className="p-5 rounded-2xl bg-white border border-[#E7DFD3] space-y-4">
               <p className="text-xs font-bold uppercase tracking-widest text-[#9E6B64]">
                 {copy.tocTitle}

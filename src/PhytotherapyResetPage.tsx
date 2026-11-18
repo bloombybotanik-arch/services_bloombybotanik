@@ -309,7 +309,7 @@ export default function PhytotherapyResetPage({
         {/* 1. HERO SECTION (LE "POURQUOI")                                           */}
         {/* ========================================================================= */}
         <header className="w-full bg-[#1E2E25] text-white border-b border-white/10 mb-14 relative overflow-hidden">
-          <div className="px-4 md:px-8 py-14 md:py-24 max-w-6xl mx-auto flex flex-col items-center text-center relative z-10">
+          <div className="px-4 sm:px-6 lg:px-8 py-14 md:py-24 max-w-7xl mx-auto flex flex-col items-center text-center relative z-10">
             
             {/* Badge de positionnement */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#C8AB8A] text-xs font-bold uppercase tracking-widest shadow-xs mb-6">
@@ -467,7 +467,7 @@ export default function PhytotherapyResetPage({
         {/* ========================================================================= */}
         {/* CORPS PRINCIPAL DE LA PAGE                                                */}
         {/* ========================================================================= */}
-        <main className="max-w-6xl mx-auto px-4 sm:px-6 space-y-24">
+        <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
 
           {/* ========================================================================= */}
           {/* 1.2. SECTION "L'INTELLIGENCE OUBLIÉE" (ÉDUCATION SUR L'HOMÉOSTASIE)        */}
@@ -1020,7 +1020,7 @@ export default function PhytotherapyResetPage({
                       <Sliders className="w-4 h-4 text-[#C8AB8A]" />
                       <span className="text-white">Cadence de l'Accordage Biologique • Vue Synthétique</span>
                     </div>
-                    <div className="grid sm:grid-cols-3 lg:grid-cols-6 gap-3 text-center text-xs">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-3 text-center text-xs">
                       {tuningPhases.map((phase, idx) => (
                         <div key={idx} className="p-3 rounded-xl bg-[#3E4A3D] border border-white/10 space-y-1">
                           <span className="font-mono !text-white font-black text-xs block">{phase.id}</span>
