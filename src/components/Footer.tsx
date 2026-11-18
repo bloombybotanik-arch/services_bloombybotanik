@@ -150,6 +150,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
             </h4>
             <ul className="space-y-2.5">
               <li><NavLink view="la-marque">Histoire &amp; Philosophie</NavLink></li>
+              <li><NavLink view="manifeste">Le Manifeste Bloom</NavLink></li>
+              <li><NavLink view="blog">Journal Botanique</NavLink></li>
+              <li><NavLink view="articles">Articles &amp; Savoirs</NavLink></li>
               <li><NavLink view="contact">Contact</NavLink></li>
             </ul>
           </div>
@@ -162,10 +165,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
             </h4>
             <ul className="space-y-2.5">
               <li><NavLink view="academie">Hub Bloom Académie</NavLink></li>
+              <li><NavLink view="women-academy">Pouvoir Cyclique Femme</NavLink></li>
               <li><NavLink view="protocoles">Protocoles Systémiques</NavLink></li>
               <li><NavLink view="phytotherapie-reset">Reset Homéostasique</NavLink></li>
               <li><NavLink view="4-architectures">Comprendre le Corps</NavLink></li>
               <li><NavLink view="pillar-extraction">Extraction &amp; Totum</NavLink></li>
+              <li><NavLink view="guide-solvants">Guide des Solvants</NavLink></li>
+              <li><NavLink view="recettes">Recettes Botaniques</NavLink></li>
               <li><NavLink view="library-landing">Bibliothèque Scientifique</NavLink></li>
             </ul>
           </div>
@@ -176,10 +182,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
               BOUTIQUE
             </h4>
             <ul className="space-y-2.5">
-              <li><NavLink view="product-detail" param="bloomlab">BloomLab®</NavLink></li>
-              <li><NavLink view="boutique-kits">Packs</NavLink></li>
-              <li><NavLink view="boutique">Accessoires</NavLink></li>
-              <li><button onClick={() => onNavigate('legal', undefined, 'cgv')} className="text-white/80 hover:text-white hover:underline font-medium transition-colors text-left cursor-pointer">CGV</button></li>
+              <li><NavLink view="machine">BloomLab®</NavLink></li>
+              <li><NavLink view="boutique-kits">Packs &amp; Kits Plantes</NavLink></li>
+              <li><NavLink view="boutique">Accessoires &amp; Boutique</NavLink></li>
+              <li><NavLink view="abonnement">Abonnements Numériques</NavLink></li>
+              <li><NavLink view="cgv">CGV</NavLink></li>
             </ul>
           </div>
 
@@ -189,10 +196,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
               RESSOURCES
             </h4>
             <ul className="space-y-2.5">
+              <li><NavLink view="herbier">L'Herbier Médicinal</NavLink></li>
+              <li><NavLink view="lexique">Lexique Botanik</NavLink></li>
               <li><NavLink view="faq">FAQ</NavLink></li>
               <li><NavLink view="returns">Livraison &amp; Retours</NavLink></li>
-              <li><button onClick={() => onNavigate('legal', undefined, 'mentions')} className="text-white/80 hover:text-white hover:underline font-medium transition-colors text-left cursor-pointer">Mentions Légales</button></li>
-              <li><button onClick={() => onNavigate('legal', undefined, 'privacy')} className="text-white/80 hover:text-white hover:underline font-medium transition-colors text-left cursor-pointer">Politique de Confidentialité</button></li>
+              <li><NavLink view="mentions">Mentions Légales</NavLink></li>
+              <li><NavLink view="privacy">Politique de Confidentialité</NavLink></li>
             </ul>
           </div>
 

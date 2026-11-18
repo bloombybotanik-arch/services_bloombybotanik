@@ -40,6 +40,7 @@ import {
 } from "./src/server/herbierRecipeSsrRenderer";
 import { getRecipeByPath } from "./src/data/canonicalRecipesRegistry";
 import { getHerbierRecipeByPath } from "./src/data/herbierRecipesRegistry";
+import { blogPosts } from "./src/data/blogPosts";
 
 dotenv.config();
 
@@ -601,6 +602,15 @@ function registerAppRoutes(app: express.Express) {
   app.use("/images", express.static(path.join(process.cwd(), "public", "images"), { maxAge: "7d" }));
   app.use("/img", express.static(path.join(process.cwd(), "public", "img"), { maxAge: "30d" }));
   app.use("/products", express.static(path.join(process.cwd(), "public", "products"), { maxAge: "30d" }));
+  app.get(["/blog/vieillissement-myeline-fgf17.html", "/blog/vieillissement-myeline-fgf17/index.html", "/blog/vieillissement-myeline-fgf17-clarte-mentale.html"], (req, res) => {
+    res.set("Cache-Control", "no-store");
+    res.redirect(301, "/blog/vieillissement-myeline-fgf17-clarte-mentale/");
+  });
+  app.get(["/protocoles/clarte-mentale.html", "/protocoles/myeline.html", "/protocoles/myeline/index.html"], (req, res) => {
+    res.set("Cache-Control", "no-store");
+    res.redirect(301, "/academie/protocoles/clarte-mentale/");
+  });
+
   app.use(express.static(path.join(process.cwd(), "public"), { maxAge: "1d", index: false }));
 
   // [AI STUDIO FIX] Intercepter les requêtes upload d'assets pour éviter les erreurs 404 en console
@@ -615,13 +625,6 @@ function registerAppRoutes(app: express.Express) {
       return res.status(204).end();
     }
     next();
-  });
-
-  app.get(["/blog/vieillissement-myeline-fgf17-clarte-mentale", "/blog/vieillissement-myeline-fgf17-clarte-mentale/", "/blog/vieillissement-myeline-fgf17-clarte-mentale.html", "/blog/vieillissement-myeline-fgf17.html", "/blog/vieillissement-myeline-fgf17/index.html"], (req, res) => {
-    res.sendFile(path.join(process.cwd(), "public", "blog", "vieillissement-myeline-fgf17-clarte-mentale.html"));
-  });
-  app.get(["/protocoles/clarte-mentale", "/protocoles/clarte-mentale/", "/protocoles/clarte-mentale.html", "/protocoles/myeline.html", "/protocoles/myeline/index.html"], (req, res) => {
-    res.sendFile(path.join(process.cwd(), "public", "protocoles", "clarte-mentale.html"));
   });
 
   /* --- Sitemaps & robots & feed --- */
@@ -693,12 +696,15 @@ function registerAppRoutes(app: express.Express) {
     "/herboristerie": "/academie/herbier/",
     "/phytotherapie": "/academie/reset-homeostasique/",
     "/phytotherapie-reset": "/academie/reset-homeostasique/",
+    "/reset-homeostasique": "/academie/reset-homeostasique/",
+    "/reset-homeostasique/": "/academie/reset-homeostasique/",
     "/phytotherapie-reset/protocole-psoriasis": "/academie/protocoles/psoriasis/",
     "/phytotherapie-reset/protocole-sibo": "/academie/protocoles/sibo/",
     "/phytotherapie-reset/protocole-myeline": "/academie/protocoles/clarte-mentale/",
     "/protocoles/psoriasis": "/academie/protocoles/psoriasis/",
     "/protocoles/sibo": "/academie/protocoles/sibo/",
     "/protocoles/clarte-mentale": "/academie/protocoles/clarte-mentale/",
+    "/protocoles/clarte-mentale/": "/academie/protocoles/clarte-mentale/",
     "/academie/comprendre-le-corps/comment-lire-le-modele-bloom": "/academie/comprendre-le-modele-bloom/",
     "/abonnement": "/abonnement/",
     "/herbier/phytotherapie": "/academie/reset-homeostasique/",
@@ -1971,8 +1977,231 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
     alt: "Droit de rétractation Bloom by BotaniK",
     type: "website"
+  },
+  "/academie/protocoles/psoriasis/": {
+    title: "Protocole Psoriasis | Reset Terrain Cutané | Bloom by BotaniK",
+    description: "Protocole complet d'accompagnement du terrain psoriasique par la phytothérapie intégrale : 4 phases, soutien émonctoriel et régulation cutanée.",
+    image1200: "/images/og/protocole-psoriasis-reset-homeostatique-1200x630.jpg",
+    image1080: "/images/og/protocole-psoriasis-reset-homeostatique-1080x1080.jpg",
+    alt: "Protocole Psoriasis — Reset Homéostasique Bloom by BotaniK",
+    type: "article",
+    isPaywalled: true
+  },
+  "/academie/axes/a2/": {
+    title: "Axe A2 : Barrière Intestinale & Microbiote | Académie Bloom",
+    description: "Comprendre la perméabilité intestinale, les jonctions serrées et le rôle des mucilages végétaux extraits sur BloomLab®.",
+    image1200: "/images/og/produit-kit-digestion-1200x630.jpg",
+    image1080: "/images/og/produit-kit-digestion-1080x1080.jpg",
+    alt: "Axe A2 Barrière Intestinale Bloom",
+    type: "article",
+    isPaywalled: true
+  },
+  "/academie/axes/a3/": {
+    title: "Axe A3 : Axe HPA & Stress Adaptatif | Académie Bloom",
+    description: "Régulation du cortisol, rythme circadien et soutien neuro-endocrinien par les plantes adaptogènes en phytothérapie systémique.",
+    image1200: "/images/og/plantes-adaptogenes-axe-hpa-systeme-nerveux-1200x630.jpg",
+    image1080: "/images/og/plantes-adaptogenes-axe-hpa-systeme-nerveux-1080x1080.jpg",
+    alt: "Axe A3 Axe HPA et Stress Bloom",
+    type: "article",
+    isPaywalled: true
+  },
+  "/academie/axes/a4/": {
+    title: "Axe A4 : Inflammation Bas Bruit & Résolution | Académie Bloom",
+    description: "Comprendre les médiateurs pro-résolutifs et la modulation naturelle des voies NF-κB et Nrf2 par le Totum végétal.",
+    image1200: "/images/og/phytotherapie-reset-homeostasie-terrain-1200x630.jpg",
+    image1080: "/images/og/phytotherapie-reset-homeostasie-terrain-1080x1080.jpg",
+    alt: "Axe A4 Inflammation et Résolution Bloom",
+    type: "article",
+    isPaywalled: true
+  },
+  "/academie/axes/a5/": {
+    title: "Axe A5 : Mitochondries & Biogenèse ATP | Académie Bloom",
+    description: "Soutenir le rendement énergétique mitochondrial et réduire le stress oxydatif grâce aux polyphénols et pigments bioactifs.",
+    image1200: "/images/og/phytotherapie-reset-homeostasie-terrain-1200x630.jpg",
+    image1080: "/images/og/phytotherapie-reset-homeostasie-terrain-1080x1080.jpg",
+    alt: "Axe A5 Mitochondries et ATP Bloom",
+    type: "article",
+    isPaywalled: true
+  },
+  "/academie/axes/a6/": {
+    title: "Axe A6 : Tonus Vagal & Système Parasympathique | Académie Bloom",
+    description: "Variabilité de la fréquence cardiaque, nerf vague et apaisement du système nerveux autonome par l'extraction botanique douce.",
+    image1200: "/images/og/produit-kit-nuit-1200x630.jpg",
+    image1080: "/images/og/produit-kit-nuit-1080x1080.jpg",
+    alt: "Axe A6 Tonus Vagal Bloom",
+    type: "article",
+    isPaywalled: true
+  },
+  "/academie/axes/a7/": {
+    title: "Axe A7 : Matrice Extracellulaire & Fascia | Académie Bloom",
+    description: "Hydratation tissulaire, collagène végétal, silice de prêle et drainage de l'espace interstitiel dans le modèle Bloom.",
+    image1200: "/images/og/terrain-biologique-equilibre-homeostasie-1200x630.jpg",
+    image1080: "/images/og/terrain-biologique-equilibre-homeostasie-1080x1080.jpg",
+    alt: "Axe A7 Matrice et Fascia Bloom",
+    type: "article",
+    isPaywalled: true
+  },
+  "/academie/axes/a8/": {
+    title: "Axe A8 : Écologie Microbienne & Butyrate | Académie Bloom",
+    description: "Prébiotiques végétaux, fibres solubles et production d'acides gras à chaîne courte pour équilibrer le microbiote.",
+    image1200: "/images/og/produit-kit-digestion-1200x630.jpg",
+    image1080: "/images/og/produit-kit-digestion-1080x1080.jpg",
+    alt: "Axe A8 Microbiote et Butyrate Bloom",
+    type: "article",
+    isPaywalled: true
+  },
+  "/academie/axes/a9/": {
+    title: "Axe A9 : Système Endocannabinoïde (SEC) | Académie Bloom",
+    description: "Le chef d'orchestre rétrograde de l'homéostasie : phytocannabinoïdes, terpènes et extraction liposoluble de précision.",
+    image1200: "/images/og/huiles-infusees-maceration-plantes-1200x630.jpg",
+    image1080: "/images/og/huiles-infusees-maceration-plantes-1080x1080.jpg",
+    alt: "Axe A9 Système Endocannabinoïde Bloom",
+    type: "article",
+    isPaywalled: true
+  },
+  "/blog/vieillissement-myeline-fgf17-clarte-mentale/": {
+    title: "Vieillissement, Myéline & FGF17 : Restaurer la Clarté Mentale | Bloom",
+    description: "Analyse neurobiologique de la démyélinisation liée à l'âge, du facteur FGF17 et des leviers botaniques pour soutenir les oligodendrocytes.",
+    image1200: "/images/og/plantes-adaptogenes-axe-hpa-systeme-nerveux-1200x630.jpg",
+    image1080: "/images/og/plantes-adaptogenes-axe-hpa-systeme-nerveux-1080x1080.jpg",
+    alt: "Vieillissement myéline FGF17 et clarté mentale Bloom by BotaniK",
+    type: "article"
+  },
+  "/infusion-precision/": {
+    title: "Infusion de Précision : Température, Vortex & Principes Actifs | Bloom",
+    description: "Pourquoi la température au degré près et l'agitation dynamique transforment radicalement la richesse moléculaire de vos tisanes médicinales.",
+    image1200: "/images/og/infuseur-botanique-precision-bloomlab-1200x630.jpg",
+    image1080: "/images/og/infuseur-botanique-precision-bloomlab-1080x1080.jpg",
+    alt: "Infusion botanique de précision BloomLab",
+    type: "article"
+  },
+  "/totum-definition/": {
+    title: "Définition du Totum Végétal en Phytothérapie | Bloom by BotaniK",
+    description: "Comprendre la notion scientifique de Totum végétal : synergie d'actifs, co-facteurs enzymatiques et supériorité face aux molécules isolées.",
+    image1200: "/images/og/totum-vegetal-synergie-plantes-medicinales-1200x630.jpg",
+    image1080: "/images/og/totum-vegetal-synergie-plantes-medicinales-1080x1080.jpg",
+    alt: "Définition du Totum végétal Bloom by BotaniK",
+    type: "article"
+  },
+  "/solvants-extraction/": {
+    title: "Solvants d'Extraction Botanique : Polarité & Rendements | Bloom",
+    description: "Tableau complet des solvants naturels (eau, éthanol, huiles, glycérine, vinaigre) et températures optimales par famille phytochimique.",
+    image1200: "/images/og/extraction-botanique-totum-solvants-1200x630.jpg",
+    image1080: "/images/og/extraction-botanique-totum-solvants-1080x1080.jpg",
+    alt: "Solvants d'extraction botanique Bloom",
+    type: "article"
+  },
+  "/maceration-plantes/": {
+    title: "Macération de Plantes à Chaud & Froid : Protocoles Maison | Bloom",
+    description: "Maîtrisez la macération végétale (huileuse, alcoolique, glycérinée) à domicile sans oxydation grâce à l'extraction en cuve close.",
+    image1200: "/images/og/huiles-infusees-maceration-plantes-1200x630.jpg",
+    image1080: "/images/og/huiles-infusees-maceration-plantes-1080x1080.jpg",
+    alt: "Macération de plantes médicinales maison Bloom",
+    type: "article"
+  },
+  "/qu-est-ce-que-l-infusion-botanique/": {
+    title: "Qu'est-ce que l'Infusion Botanique ? Science & Pratique | Bloom",
+    description: "Découvrez les différences entre tisane simple, décoction et extraction botanique contrôlée pour préserver flavonoïdes et huiles essentielles.",
+    image1200: "/images/og/infusion-botanique-maison-extraction-active-1200x630.jpg",
+    image1080: "/images/og/infusion-botanique-maison-extraction-active-1080x1080.jpg",
+    alt: "Qu'est-ce que l'infusion botanique Bloom by BotaniK",
+    type: "article"
+  },
+  "/phytotherapie-moderne-scientifique/": {
+    title: "Phytothérapie Moderne & Scientifique | Extraction & Biodisponibilité",
+    description: "Comment l'ingénierie thermique et l'évidence phytochimique réconcilient herboristerie traditionnelle et rigueur clinique moderne.",
+    image1200: "/images/og/phytotherapie-reset-homeostasie-terrain-1200x630.jpg",
+    image1080: "/images/og/phytotherapie-reset-homeostasie-terrain-1080x1080.jpg",
+    alt: "Phytothérapie moderne et scientifique Bloom by BotaniK",
+    type: "article"
+  },
+  "/boutique/abonnements-numeriques/": {
+    title: "Abonnements Numériques Bloom Académie & ALMA | Bloom by BotaniK",
+    description: "Accédez aux protocoles systémiques complets, fiches d'extraction avancées et suivi personnalisé ALMA.",
+    image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
+    image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
+    alt: "Abonnements numériques Bloom by BotaniK",
+    type: "website"
   }
 };
+
+function stripHomepageSpecificSchemas(html: string, canonical: string, title: string): string {
+  const minimalGraph = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://bloombybotanik.com/#organization",
+        "name": "Bloom by BotaniK",
+        "url": "https://bloombybotanik.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bloombybotanik.com/assets/img/logo-bloom-square-512.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://bloombybotanik.com/#website",
+        "url": "https://bloombybotanik.com",
+        "name": "Bloom by BotaniK",
+        "publisher": { "@id": "https://bloombybotanik.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://bloombybotanik.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": title,
+            "item": canonical
+          }
+        ]
+      }
+    ]
+  };
+  return html.replace(
+    /<script\b[^>]*id=["']bloom-root-schema["'][^>]*>[\s\S]*?<\/script>/i,
+    `<script type="application/ld+json" id="bloom-root-schema">${JSON.stringify(minimalGraph)}</script>`
+  );
+}
+
+function finalizeRecipeSsrHtml(
+  html: string,
+  rendered: { title: string; metaDescription: string; canonical: string; jsonLd: string; bodyHtml: string },
+  ogType: string = 'website'
+): string {
+  let updated = stripHomepageSpecificSchemas(html, rendered.canonical, rendered.title);
+  updated = updated.replace(/<title>.*?<\/title>/i, `<title>${rendered.title}</title>`);
+  updated = updated.replace(/<meta\s+name=["']description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="description" content="${rendered.metaDescription}" />`);
+  updated = updated.replace(/<meta\s+property=["']og:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:title" content="${rendered.title}">`);
+  updated = updated.replace(/<meta\s+property=["']og:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:description" content="${rendered.metaDescription}">`);
+  updated = updated.replace(/<meta\s+property=["']og:url["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:url" content="${rendered.canonical}">`);
+  updated = updated.replace(/<meta\s+property=["']og:type["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:type" content="${ogType}">`);
+  updated = updated.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, `<link rel="canonical" href="${rendered.canonical}" />`);
+  updated = updated.replace(/<meta\s+name=["']twitter:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:title" content="${rendered.title}">`);
+  updated = updated.replace(/<meta\s+name=["']twitter:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:description" content="${rendered.metaDescription}">`);
+  const robotsVal = "index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1";
+  if (/<meta\s+name=["']robots["'][^>]*>/i.test(updated)) {
+    updated = updated.replace(/<meta\s+name=["']robots["'][^>]*>/i, `<meta name="robots" content="${robotsVal}" />`);
+  } else {
+    updated = updated.replace("</head>", `  <meta name="robots" content="${robotsVal}" />\n  </head>`);
+  }
+  updated = updated.replace(/<link\s+rel=["']alternate["']\s+hreflang=["'].*?["']\s+href=["'].*?["']\s*\/?>\s*/gi, "");
+  updated = updated.replace(
+    "</head>",
+    `  <link rel="alternate" hreflang="fr" href="${rendered.canonical}" />\n  <link rel="alternate" hreflang="x-default" href="${rendered.canonical}" />\n  ${rendered.jsonLd}\n  </head>`
+  );
+  updated = updated.replace(/<div id=["']root["']>[\s\S]*?<\/div>/i, `<div id="root">${rendered.bodyHtml}</div>`);
+  return updated;
+}
 
 function injectServerSEO(html: string, reqPath: string): string {
   try {
@@ -1990,148 +2219,100 @@ function injectServerSEO(html: string, reqPath: string): string {
       const herbierRecipe = getHerbierRecipeByPath(cleanRecipePath);
       if (herbierRecipe) {
         const rendered = renderHerbierRecipePageHtml(herbierRecipe);
-        let updated = html.replace(/<title>.*?<\/title>/i, `<title>${rendered.title}</title>`);
-        updated = updated.replace(/<meta\s+name=["']description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="description" content="${rendered.metaDescription}" />`);
-        updated = updated.replace(/<meta\s+property=["']og:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:title" content="${rendered.title}">`);
-        updated = updated.replace(/<meta\s+property=["']og:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:description" content="${rendered.metaDescription}">`);
-        updated = updated.replace(/<meta\s+property=["']og:url["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:url" content="${rendered.canonical}">`);
-        updated = updated.replace(/<meta\s+property=["']og:type["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:type" content="${herbierRecipe.schemaType === 'Recipe' ? 'website' : 'article'}">`);
-        updated = updated.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, `<link rel="canonical" href="${rendered.canonical}" />`);
-        updated = updated.replace(/<meta\s+name=["']twitter:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:title" content="${rendered.title}">`);
-        updated = updated.replace(/<meta\s+name=["']twitter:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:description" content="${rendered.metaDescription}">`);
-        updated = updated.replace("</head>", `  ${rendered.jsonLd}\n  </head>`);
-        updated = updated.replace(/<div id=["']root["']>[\s\S]*?<\/div>/i, `<div id="root">${rendered.bodyHtml}</div>`);
-        return updated;
+        return finalizeRecipeSsrHtml(html, rendered, herbierRecipe.schemaType === 'Recipe' ? 'website' : 'article');
       }
 
       // 0.2 Fiche Recette Canonique
       const recipe = getRecipeByPath(cleanRecipePath);
       if (recipe) {
         const rendered = renderRecipePageHtml(recipe);
-        let updated = html.replace(/<title>.*?<\/title>/i, `<title>${rendered.title}</title>`);
-        updated = updated.replace(/<meta\s+name=["']description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="description" content="${rendered.metaDescription}" />`);
-        updated = updated.replace(/<meta\s+property=["']og:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:title" content="${rendered.title}">`);
-        updated = updated.replace(/<meta\s+property=["']og:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:description" content="${rendered.metaDescription}">`);
-        updated = updated.replace(/<meta\s+property=["']og:url["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:url" content="${rendered.canonical}">`);
-        updated = updated.replace(/<meta\s+property=["']og:type["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:type" content="${recipe.schemaType === 'Recipe' ? 'website' : 'article'}">`);
-        updated = updated.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, `<link rel="canonical" href="${rendered.canonical}" />`);
-        updated = updated.replace(/<meta\s+name=["']twitter:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:title" content="${rendered.title}">`);
-        updated = updated.replace(/<meta\s+name=["']twitter:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:description" content="${rendered.metaDescription}">`);
-        updated = updated.replace("</head>", `  ${rendered.jsonLd}\n  </head>`);
-        updated = updated.replace(/<div id=["']root["']>[\s\S]*?<\/div>/i, `<div id="root">${rendered.bodyHtml}</div>`);
-        return updated;
+        return finalizeRecipeSsrHtml(html, rendered, recipe.schemaType === 'Recipe' ? 'website' : 'article');
       }
 
       // 0.3 Catégorie Phytothérapie
       if (cleanRecipePath.startsWith("/recettes/phytotherapie")) {
         const matchPage = cleanRecipePath.match(/\/page\/(\d+)\/?$/);
         const pageNum = matchPage ? parseInt(matchPage[1], 10) : 1;
-        const rendered = renderHerbierCategoryPageHtml('phytotherapie', pageNum);
-        let updated = html.replace(/<title>.*?<\/title>/i, `<title>${rendered.title}</title>`);
-        updated = updated.replace(/<meta\s+name=["']description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="description" content="${rendered.metaDescription}" />`);
-        updated = updated.replace(/<meta\s+property=["']og:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:title" content="${rendered.title}">`);
-        updated = updated.replace(/<meta\s+property=["']og:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:description" content="${rendered.metaDescription}">`);
-        updated = updated.replace(/<meta\s+property=["']og:url["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:url" content="${rendered.canonical}">`);
-        updated = updated.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, `<link rel="canonical" href="${rendered.canonical}" />`);
-        updated = updated.replace(/<meta\s+name=["']twitter:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:title" content="${rendered.title}">`);
-        updated = updated.replace(/<meta\s+name=["']twitter:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:description" content="${rendered.metaDescription}">`);
-        updated = updated.replace("</head>", `  ${rendered.jsonLd}\n  </head>`);
-        updated = updated.replace(/<div id=["']root["']>[\s\S]*?<\/div>/i, `<div id="root">${rendered.bodyHtml}</div>`);
-        return updated;
+        return finalizeRecipeSsrHtml(html, renderHerbierCategoryPageHtml('phytotherapie', pageNum), 'website');
       }
 
       // 0.4 Catégorie Gastronomie
       if (cleanRecipePath.startsWith("/recettes/gastronomie")) {
         const matchPage = cleanRecipePath.match(/\/page\/(\d+)\/?$/);
         const pageNum = matchPage ? parseInt(matchPage[1], 10) : 1;
-        const rendered = renderHerbierCategoryPageHtml('gastronomie', pageNum);
-        let updated = html.replace(/<title>.*?<\/title>/i, `<title>${rendered.title}</title>`);
-        updated = updated.replace(/<meta\s+name=["']description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="description" content="${rendered.metaDescription}" />`);
-        updated = updated.replace(/<meta\s+property=["']og:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:title" content="${rendered.title}">`);
-        updated = updated.replace(/<meta\s+property=["']og:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:description" content="${rendered.metaDescription}">`);
-        updated = updated.replace(/<meta\s+property=["']og:url["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:url" content="${rendered.canonical}">`);
-        updated = updated.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, `<link rel="canonical" href="${rendered.canonical}" />`);
-        updated = updated.replace(/<meta\s+name=["']twitter:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:title" content="${rendered.title}">`);
-        updated = updated.replace(/<meta\s+name=["']twitter:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:description" content="${rendered.metaDescription}">`);
-        updated = updated.replace("</head>", `  ${rendered.jsonLd}\n  </head>`);
-        updated = updated.replace(/<div id=["']root["']>[\s\S]*?<\/div>/i, `<div id="root">${rendered.bodyHtml}</div>`);
-        return updated;
+        return finalizeRecipeSsrHtml(html, renderHerbierCategoryPageHtml('gastronomie', pageNum), 'website');
       }
 
       if (cleanRecipePath.startsWith("/recettes/culinaires")) {
         const matchPage = cleanRecipePath.match(/\/page\/(\d+)\/?$/);
         const pageNum = matchPage ? parseInt(matchPage[1], 10) : 1;
-        const rendered = renderCategoryPageHtml('culinaires', pageNum);
-        let updated = html.replace(/<title>.*?<\/title>/i, `<title>${rendered.title}</title>`);
-        updated = updated.replace(/<meta\s+name=["']description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="description" content="${rendered.metaDescription}" />`);
-        updated = updated.replace(/<meta\s+property=["']og:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:title" content="${rendered.title}">`);
-        updated = updated.replace(/<meta\s+property=["']og:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:description" content="${rendered.metaDescription}">`);
-        updated = updated.replace(/<meta\s+property=["']og:url["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:url" content="${rendered.canonical}">`);
-        updated = updated.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, `<link rel="canonical" href="${rendered.canonical}" />`);
-        updated = updated.replace(/<meta\s+name=["']twitter:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:title" content="${rendered.title}">`);
-        updated = updated.replace(/<meta\s+name=["']twitter:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:description" content="${rendered.metaDescription}">`);
-        updated = updated.replace("</head>", `  ${rendered.jsonLd}\n  </head>`);
-        updated = updated.replace(/<div id=["']root["']>[\s\S]*?<\/div>/i, `<div id="root">${rendered.bodyHtml}</div>`);
-        return updated;
+        return finalizeRecipeSsrHtml(html, renderCategoryPageHtml('culinaires', pageNum), 'website');
       }
 
       if (cleanRecipePath.startsWith("/recettes/cosmetiques")) {
         const matchPage = cleanRecipePath.match(/\/page\/(\d+)\/?$/);
         const pageNum = matchPage ? parseInt(matchPage[1], 10) : 1;
-        const rendered = renderCategoryPageHtml('cosmetiques', pageNum);
-        let updated = html.replace(/<title>.*?<\/title>/i, `<title>${rendered.title}</title>`);
-        updated = updated.replace(/<meta\s+name=["']description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="description" content="${rendered.metaDescription}" />`);
-        updated = updated.replace(/<meta\s+property=["']og:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:title" content="${rendered.title}">`);
-        updated = updated.replace(/<meta\s+property=["']og:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:description" content="${rendered.metaDescription}">`);
-        updated = updated.replace(/<meta\s+property=["']og:url["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:url" content="${rendered.canonical}">`);
-        updated = updated.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, `<link rel="canonical" href="${rendered.canonical}" />`);
-        updated = updated.replace(/<meta\s+name=["']twitter:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:title" content="${rendered.title}">`);
-        updated = updated.replace(/<meta\s+name=["']twitter:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:description" content="${rendered.metaDescription}">`);
-        updated = updated.replace("</head>", `  ${rendered.jsonLd}\n  </head>`);
-        updated = updated.replace(/<div id=["']root["']>[\s\S]*?<\/div>/i, `<div id="root">${rendered.bodyHtml}</div>`);
-        return updated;
+        return finalizeRecipeSsrHtml(html, renderCategoryPageHtml('cosmetiques', pageNum), 'website');
       }
 
       if (cleanRecipePath.startsWith("/recettes/parcours-botaniques")) {
         const matchPage = cleanRecipePath.match(/\/page\/(\d+)\/?$/);
         const pageNum = matchPage ? parseInt(matchPage[1], 10) : 1;
-        const rendered = renderCategoryPageHtml('parcours-botaniques', pageNum);
-        let updated = html.replace(/<title>.*?<\/title>/i, `<title>${rendered.title}</title>`);
-        updated = updated.replace(/<meta\s+name=["']description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="description" content="${rendered.metaDescription}" />`);
-        updated = updated.replace(/<meta\s+property=["']og:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:title" content="${rendered.title}">`);
-        updated = updated.replace(/<meta\s+property=["']og:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:description" content="${rendered.metaDescription}">`);
-        updated = updated.replace(/<meta\s+property=["']og:url["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:url" content="${rendered.canonical}">`);
-        updated = updated.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, `<link rel="canonical" href="${rendered.canonical}" />`);
-        updated = updated.replace(/<meta\s+name=["']twitter:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:title" content="${rendered.title}">`);
-        updated = updated.replace(/<meta\s+name=["']twitter:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:description" content="${rendered.metaDescription}">`);
-        updated = updated.replace("</head>", `  ${rendered.jsonLd}\n  </head>`);
-        updated = updated.replace(/<div id=["']root["']>[\s\S]*?<\/div>/i, `<div id="root">${rendered.bodyHtml}</div>`);
-        return updated;
+        return finalizeRecipeSsrHtml(html, renderCategoryPageHtml('parcours-botaniques', pageNum), 'website');
       }
 
       if (cleanRecipePath === "/recettes/" || cleanRecipePath === "/recettes") {
-        const rendered = renderHubPageHtml();
-        let updated = html.replace(/<title>.*?<\/title>/i, `<title>${rendered.title}</title>`);
-        updated = updated.replace(/<meta\s+name=["']description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="description" content="${rendered.metaDescription}" />`);
-        updated = updated.replace(/<meta\s+property=["']og:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:title" content="${rendered.title}">`);
-        updated = updated.replace(/<meta\s+property=["']og:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:description" content="${rendered.metaDescription}">`);
-        updated = updated.replace(/<meta\s+property=["']og:url["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:url" content="${rendered.canonical}">`);
-        updated = updated.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, `<link rel="canonical" href="${rendered.canonical}" />`);
-        updated = updated.replace(/<meta\s+name=["']twitter:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:title" content="${rendered.title}">`);
-        updated = updated.replace(/<meta\s+name=["']twitter:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:description" content="${rendered.metaDescription}">`);
-        updated = updated.replace("</head>", `  ${rendered.jsonLd}\n  </head>`);
-        updated = updated.replace(/<div id=["']root["']>[\s\S]*?<\/div>/i, `<div id="root">${rendered.bodyHtml}</div>`);
-        return updated;
+        return finalizeRecipeSsrHtml(html, renderHubPageHtml(), 'website');
       }
     }
 
-    const route = SERVER_SEO_ROUTES[normalized] || SERVER_SEO_ROUTES[reqPath] || SERVER_SEO_ROUTES["/"];
+    let route: ServerSEORoute | undefined = SERVER_SEO_ROUTES[normalized] || SERVER_SEO_ROUTES[reqPath];
+    let matchedPostSlug: string | null = null;
+
+    // Résolution dynamique des articles & billets de blog depuis blogPosts.ts
+    if (!route && (normalized.startsWith("/articles/") || normalized.startsWith("/blog/"))) {
+      const slug = normalized.replace(/^\/(?:articles|blog)\//, "").replace(/\/$/, "");
+      const matchedPost = blogPosts.find((p) => p.slug === slug);
+      if (matchedPost) {
+        matchedPostSlug = matchedPost.slug;
+        const postTitle = matchedPost.metaTitle?.fr || `${matchedPost.title?.fr || "Article Botanique"} | Bloom by BotaniK`;
+        const postDesc = (matchedPost.metaDescription?.fr || matchedPost.excerpt?.fr || postTitle).slice(0, 158);
+        const postImg = matchedPost.image?.startsWith("http")
+          ? matchedPost.image.replace("https://bloombybotanik.com", "")
+          : matchedPost.image?.startsWith("/")
+            ? matchedPost.image
+            : "/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg";
+        const postImgSq = matchedPost.imageSquare?.startsWith("http")
+          ? matchedPost.imageSquare.replace("https://bloombybotanik.com", "")
+          : matchedPost.imageSquare?.startsWith("/")
+            ? matchedPost.imageSquare
+            : postImg;
+        route = {
+          title: postTitle,
+          description: postDesc,
+          image1200: postImg,
+          image1080: postImgSq,
+          alt: matchedPost.imageAlt || matchedPost.title?.fr || "Article Botanique Bloom",
+          type: "article",
+          datePublished: matchedPost.date ? `${matchedPost.date}T08:00:00+01:00` : "2026-10-01T08:00:00+01:00",
+          dateModified: matchedPost.date ? `${matchedPost.date}T08:00:00+01:00` : "2026-11-18T10:00:00+01:00",
+        };
+      }
+    }
+
+    if (!route) {
+      route = SERVER_SEO_ROUTES["/"];
+    }
 
     const full1200 = `https://bloombybotanik.com${route.image1200}`;
     const full1080 = `https://bloombybotanik.com${route.image1080}`;
-    const canonical = `https://bloombybotanik.com${normalized}`;
+    const canonicalPath = matchedPostSlug ? `/articles/${matchedPostSlug}/` : normalized;
+    const canonical = `https://bloombybotanik.com${canonicalPath}`;
 
     let updated = html;
+    if (normalized !== "/") {
+      updated = stripHomepageSpecificSchemas(updated, canonical, route.title);
+    }
 
     // 1. Update Title
     updated = updated.replace(/<title>.*?<\/title>/i, `<title>${route.title}</title>`);
@@ -2207,11 +2388,7 @@ function injectServerSEO(html: string, reqPath: string): string {
           "url": "https://bloombybotanik.com"
         }
       };
-      schemaJson = `<script type="application/ld+json">${JSON.stringify(recipeData)}</script>`;
-      updated = updated.replace(
-        /<div id=["']root["']>[\s\S]*?<\/div>/i,
-        `<div id="root"><h1>L’Élixir de Beauté : La Soupe au Champignon des Neiges (Tremella) à la BloomLab</h1><p>${route.description}</p></div>`
-      );
+      schemaJson = JSON.stringify(recipeData);
     } else if (normalized === "/academie/reset-homeostasique/phycocyanine/") {
       const phycoRecipeData = {
         "@context": "https://schema.org",
@@ -2232,11 +2409,7 @@ function injectServerSEO(html: string, reqPath: string): string {
           "url": "https://bloombybotanik.com"
         }
       };
-      schemaJson = `<script type="application/ld+json">${JSON.stringify(phycoRecipeData)}</script>`;
-      updated = updated.replace(
-        /<div id=["']root["']>[\s\S]*?<\/div>/i,
-        `<div id="root"><h1>Phycocyanine &amp; Reset Homéostasique : Le Bleu qui Réinitialise votre Biologie</h1><p>${route.description}</p></div>`
-      );
+      schemaJson = JSON.stringify(phycoRecipeData);
     } else if (normalized === "/academie/pouvoir-cyclique-femme/") {
       const womenArticleData = {
         "@context": "https://schema.org",
@@ -2259,11 +2432,7 @@ function injectServerSEO(html: string, reqPath: string): string {
           "url": "https://bloombybotanik.com"
         }
       };
-      schemaJson = `<script type="application/ld+json">${JSON.stringify(womenArticleData)}</script>`;
-      updated = updated.replace(
-        /<div id=["']root["']>[\s\S]*?<\/div>/i,
-        `<div id="root"><h1>Le Pouvoir Cyclique et Sacré de la Femme</h1><p>${route.description}</p></div>`
-      );
+      schemaJson = JSON.stringify(womenArticleData);
     } else if (route.type === "article") {
       const articleData: any = {
         "@context": "https://schema.org",
@@ -2392,7 +2561,14 @@ function injectServerSEO(html: string, reqPath: string): string {
             <a href="/extraction-botanique/">Méthode A/B &amp; Extraction</a>
             <a href="/guide-solvants/">Guide des Solvants</a>
             <a href="/recettes/">Recettes Botaniques</a>
+            <a href="/recettes/culinaires/soupe-beaute-tremella/">Soupe Beauté Tremella</a>
             <a href="/academie/">Académie Bloom</a>
+            <a href="/academie/pouvoir-cyclique-femme/">Pouvoir Cyclique Femme</a>
+            <a href="/academie/reset-homeostasique/">Reset Homéostasique</a>
+            <a href="/academie/reset-homeostasique/phycocyanine/">Phycocyanine 40°C</a>
+            <a href="/academie/herbier/">Herbier Médicinal</a>
+            <a href="/blog/">Journal Botanique</a>
+            <a href="/articles/">Articles &amp; Savoirs</a>
             <a href="/la-marque/">La Marque</a>
             <a href="/contact/">Contact</a>
           </nav>
@@ -2401,7 +2577,7 @@ function injectServerSEO(html: string, reqPath: string): string {
           <h1 style="font-size:28px;font-weight:800;line-height:1.25;margin-bottom:12px;">${escapeHtml(route.title)}</h1>
           <p style="font-size:16px;line-height:1.6;margin-bottom:16px;">${escapeHtml(route.description)}</p>
           ${productSnippet}
-          <p style="font-size:14px;color:#3E4A3D;">Bloom by BotaniK conçoit l&apos;extracteur et infuseur botanique de précision BloomLab® (inox 304, thermorégulation ±0,5°C, vortex cinétique) ainsi que des protocoles pédagogiques d&apos;extraction végétale pour préserver le Totum des plantes.</p>
+          <p style="font-size:14px;color:#3E4A3D;">Bloom by BotaniK conçoit l&apos;extracteur et infuseur botanique de précision BloomLab® (inox 304, thermorégulation ±0,5°C, vortex cinétique) ainsi que des protocoles pédagogiques d&apos;extraction végétale et de phytothérapie systémique pour préserver le Totum des plantes.</p>
         </main>
       </div>
     </div>`;
@@ -2439,6 +2615,14 @@ function registerCatchAll(app: express.Express, isProd: boolean) {
         return next();
       }
 
+      const normCatch = req.path.replace(/\/$/, "") + "/";
+      const isPrivateRoute = [
+        "/admin/", "/panier/", "/checkout/", "/commande/", "/compte/", "/activation/", "/en-attente/", "/newsletter/"
+      ].some((prefix) => normCatch.startsWith(prefix));
+      const xRobotsTag = isPrivateRoute
+        ? "noindex, nofollow"
+        : "index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1";
+
       if (fs.existsSync(distIndex)) {
         let rawHtml = fs.readFileSync(distIndex, "utf-8");
         const finalHtml = injectServerSEO(rawHtml, req.path);
@@ -2446,6 +2630,7 @@ function registerCatchAll(app: express.Express, isProd: boolean) {
           .set({
             "Content-Type": "text/html; charset=utf-8",
             "Cache-Control": "no-cache, must-revalidate",
+            "X-Robots-Tag": xRobotsTag,
           })
           .end(finalHtml);
       } else if (fs.existsSync(rootIndex)) {
@@ -2453,7 +2638,13 @@ function registerCatchAll(app: express.Express, isProd: boolean) {
         rawHtml = rawHtml.replace(/<script type="module" src="\/@vite\/client"><\/script>/g, '');
         rawHtml = rawHtml.replace(/<script\b[^>]*src=["']\/@vite\/client["'][^>]*><\/script>/gi, '');
         const finalHtml = injectServerSEO(rawHtml, req.path);
-        return res.status(200).set({ "Content-Type": "text/html; charset=utf-8" }).end(finalHtml);
+        return res.status(200)
+          .set({
+            "Content-Type": "text/html; charset=utf-8",
+            "Cache-Control": "no-cache, must-revalidate",
+            "X-Robots-Tag": xRobotsTag,
+          })
+          .end(finalHtml);
       }
       return res.status(404).send("Index not found");
     } catch (err: any) {

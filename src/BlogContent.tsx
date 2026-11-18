@@ -11,7 +11,11 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
       const match = blogPosts.find(p => p.slug === initialSlug);
       if (match) {
         setSelectedPost(match);
+      } else {
+        setSelectedPost(null);
       }
+    } else {
+      setSelectedPost(null);
     }
   }, [initialSlug]);
 
@@ -29,10 +33,22 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
 
         <div className="max-w-4xl mx-auto px-6 py-24 animate-in fade-in slide-in-from-bottom-4 duration-700">
           {/* Breadcrumbs */}
-          <nav className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-botanik-green/40 mb-12">
-            <button onClick={() => onNavigate('home')} className="hover:text-botanik-green transition-colors uppercase">Accueil</button>
+          <nav aria-label="Fil d'Ariane" className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-botanik-green/40 mb-12">
+            <a
+              href="/"
+              onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); onNavigate('home'); } }}
+              className="hover:text-botanik-green transition-colors uppercase"
+            >
+              Accueil
+            </a>
             <ChevronRight className="w-3 h-3" />
-            <button onClick={() => { setSelectedPost(null); onNavigate('blog'); }} className="hover:text-botanik-green transition-colors uppercase">{lang === 'fr' ? 'Journal' : 'Journal'}</button>
+            <a
+              href="/blog/"
+              onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); setSelectedPost(null); onNavigate('blog'); } }}
+              className="hover:text-botanik-green transition-colors uppercase"
+            >
+              Journal
+            </a>
             <ChevronRight className="w-3 h-3" />
             <span className="text-botanik-orange truncate max-w-[200px]">{selectedPost.title[lang]}</span>
           </nav>
@@ -150,14 +166,18 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
             </h3>
             <div className="grid md:grid-cols-2 gap-8">
               {relatedPosts.map((post) => (
-                <div 
+                <a
                   key={post.slug}
-                  onClick={() => {
-                    setSelectedPost(post);
-                    onNavigate('blog', post.slug);
-                    window.scrollTo(0, 0);
+                  href={`/articles/${post.slug}/`}
+                  onClick={(e) => {
+                    if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                      e.preventDefault();
+                      setSelectedPost(post);
+                      onNavigate('articles', post.slug);
+                      window.scrollTo(0, 0);
+                    }
                   }}
-                  className="group cursor-pointer bg-white p-6 rounded-[32px] border border-botanik-green/5 shadow-sm hover:shadow-xl transition-all duration-500"
+                  className="group cursor-pointer bg-white p-6 rounded-[32px] border border-botanik-green/5 shadow-sm hover:shadow-xl transition-all duration-500 block"
                 >
                   <div className="text-[10px] font-black uppercase tracking-widest text-botanik-orange mb-3">{post.category}</div>
                   <h4 className="text-xl font-bold text-botanik-green mb-4 group-hover:text-botanik-orange transition-colors leading-tight">{post.title[lang]}</h4>
@@ -167,7 +187,7 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
                       Lire la suite <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
@@ -189,12 +209,16 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
         {blogPosts.map((post) => (
-          <article 
+          <a
             key={post.slug}
+            href={`/articles/${post.slug}/`}
             className="group cursor-pointer bg-white rounded-[40px] border border-botanik-green/5 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col"
-            onClick={() => {
-              onNavigate('blog', post.slug);
-              window.scrollTo(0, 0);
+            onClick={(e) => {
+              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                e.preventDefault();
+                onNavigate('articles', post.slug);
+                window.scrollTo(0, 0);
+              }
             }}
           >
             {post.image && (
@@ -221,7 +245,7 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
                 <ChevronRight className="w-5 h-5 text-botanik-orange group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
-          </article>
+          </a>
         ))}
 
         {/* Dernière carte : Blog Officiel traitant l'ensemble des sujets */}

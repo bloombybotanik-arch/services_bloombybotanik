@@ -316,6 +316,12 @@ export default function App() {
           if (path === '/recettes/parcours-botaniques' || path === '/recettes/parcours-botaniques/' || path.startsWith('/recettes/parcours-botaniques/page/')) return 'recettes-parcours';
           return 'recette-detail';
         }
+        if (path === '/recettes/phytotherapie' || path === '/recettes/phytotherapie/' || path.startsWith('/recettes/phytotherapie/page/')) {
+          return 'recettes-phytotherapie';
+        }
+        if (path === '/recettes/gastronomie' || path === '/recettes/gastronomie/' || path.startsWith('/recettes/gastronomie/page/')) {
+          return 'recettes-gastronomie';
+        }
         return 'recette-detail';
       }
       if (PATH_VIEWS[path]) {
@@ -458,13 +464,23 @@ export default function App() {
         setCurrentView('product-detail');
         return;
       }
-      if (path.startsWith('/articles/') && path !== '/articles/' && path !== '/articles') {
+      if (path === '/articles' || path === '/articles/') {
+        setSelectedSlug('');
+        setCurrentView('articles');
+        return;
+      }
+      if (path.startsWith('/articles/')) {
         const slug = path.replace(/^\/articles\//, '').replace(/\/$/, '');
         setSelectedSlug(slug);
         setCurrentView('articles');
         return;
       }
-      if (path.startsWith('/blog/') && path !== '/blog/' && path !== '/blog') {
+      if (path === '/blog' || path === '/blog/') {
+        setSelectedSlug('');
+        setCurrentView('blog');
+        return;
+      }
+      if (path.startsWith('/blog/') && path !== '/blog/vieillissement-myeline-fgf17-clarte-mentale' && path !== '/blog/vieillissement-myeline-fgf17-clarte-mentale/') {
         const slug = path.replace(/^\/blog\//, '').replace(/\/$/, '');
         setSelectedSlug(slug);
         setCurrentView('blog');
@@ -503,6 +519,22 @@ export default function App() {
           }
           return;
         }
+        if (path.startsWith('/recettes/phytotherapie')) {
+          if (path === '/recettes/phytotherapie' || path === '/recettes/phytotherapie/' || path.startsWith('/recettes/phytotherapie/page/')) {
+            setCurrentView('recettes-phytotherapie');
+          } else {
+            setCurrentView('recette-detail');
+          }
+          return;
+        }
+        if (path.startsWith('/recettes/gastronomie')) {
+          if (path === '/recettes/gastronomie' || path === '/recettes/gastronomie/' || path.startsWith('/recettes/gastronomie/page/')) {
+            setCurrentView('recettes-gastronomie');
+          } else {
+            setCurrentView('recette-detail');
+          }
+          return;
+        }
         setCurrentView('recette-detail');
         return;
       }
@@ -530,9 +562,10 @@ export default function App() {
   const navigateTo = (view: View, param?: string) => {
     setCurrentView(view);
     setMobileMenuOpen(false);
-    if (param) {
+    if (view === 'blog' || view === 'articles') {
+      setSelectedSlug(param || '');
+    } else if (param) {
       if (view === 'product-detail') setSelectedProduct(param);
-      if (view === 'blog' || view === 'articles') setSelectedSlug(param);
       if (view === 'terrain') setSelectedTerrain(param);
     }
     if (view === 'chat' && (param === 'start' || param === 'new' || !param)) {
@@ -540,9 +573,14 @@ export default function App() {
     }
     mainScrollRef.current?.scrollTo({ top: 0, behavior: 'auto' });
     window.scrollTo(0, 0);
-    const targetPath = view === 'product-detail' && param 
-      ? `/boutique/${param}/` 
-      : (VIEW_PATHS[view] || '/');
+    const targetPath =
+      view === 'product-detail' && param
+        ? `/boutique/${param}/`
+        : view === 'blog' && param
+        ? `/blog/${param}/`
+        : view === 'articles' && param
+        ? `/articles/${param}/`
+        : (VIEW_PATHS[view] || '/');
     if (window.location.pathname !== targetPath) {
       window.history.pushState({ view, param }, '', targetPath);
     }
@@ -750,59 +788,67 @@ export default function App() {
                 <div className="flex flex-col space-y-1">
                   
                   {/* SECTION: ACCUEIL */}
-                  <button
-                    onClick={() => { navigateTo('indexbis'); setMobileMenuOpen(false); }}
+                  <a
+                    href={VIEW_PATHS['indexbis']}
+                    onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('indexbis'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-semibold hover:bg-white/10 text-left text-sm"
                   >
                     <Home className="w-4 h-4 text-[#E8772E]" /> {m.accueil}
-                  </button>
+                  </a>
 
                   {/* SECTION: POURQUOI BLOOM */}
                   {sectionTitle(selectedLanguage === 'fr' ? 'POURQUOI BLOOM' : selectedLanguage === 'de' ? 'WARUM BLOOM' : 'WHY BLOOM')}
-                  <button
-                    onClick={() => { navigateTo('la-marque'); setMobileMenuOpen(false); }}
+                  <a
+                    href={VIEW_PATHS['la-marque']}
+                    onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('la-marque'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <HeartHandshake className="w-4 h-4 text-white/70" /> Histoire &amp; Philosophie
-                  </button>
+                  </a>
 
                   {/* SECTION: LA MÉTHODE A/B */}
                   {sectionTitle(selectedLanguage === 'fr' ? 'LA MÉTHODE A/B' : selectedLanguage === 'de' ? 'DIE A/B METHODE' : 'THE A/B METHOD')}
-                  <button
-                    onClick={() => { navigateTo('infusion-botanique'); setMobileMenuOpen(false); }}
+                  <a
+                    href={VIEW_PATHS['infusion-botanique']}
+                    onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('infusion-botanique'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <FlaskConical className="w-4 h-4 text-white/70" /> L'infusion botanique ?
-                  </button>
-                  <button
-                    onClick={() => { navigateTo('totum-vegetal'); setMobileMenuOpen(false); }}
+                  </a>
+                  <a
+                    href={VIEW_PATHS['totum-vegetal']}
+                    onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('totum-vegetal'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <Leaf className="w-4 h-4 text-white/70" /> Le Totum Végétal
-                  </button>
-                  <button
-                    onClick={() => { navigateTo('guide-complet'); setMobileMenuOpen(false); }}
+                  </a>
+                  <a
+                    href={VIEW_PATHS['guide-complet']}
+                    onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('guide-complet'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <BookOpen className="w-4 h-4 text-white/70" /> Guide de l'extraction
-                  </button>
-                  <button
-                    onClick={() => { navigateTo('guide-solvants'); setMobileMenuOpen(false); }}
+                  </a>
+                  <a
+                    href={VIEW_PATHS['guide-solvants']}
+                    onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('guide-solvants'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <Droplets className="w-4 h-4 text-white/70" /> Guide des Solvants
-                  </button>
+                  </a>
 
                   {/* SECTION: VOTRE PRATIQUE */}
                   {sectionTitle(selectedLanguage === 'fr' ? 'VOTRE PRATIQUE' : selectedLanguage === 'de' ? 'IHRE PRAXIS' : 'YOUR PRACTICE')}
-                  <button
-                    onClick={() => { navigateTo('culinaire'); setMobileMenuOpen(false); }}
+                  <a
+                    href={VIEW_PATHS['culinaire']}
+                    onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('culinaire'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <Utensils className="w-4 h-4 text-white/70" /> {m.culinaire}
-                  </button>
-                  <button
-                    onClick={() => { navigateTo('recette-soupe-tremella'); setMobileMenuOpen(false); }}
+                  </a>
+                  <a
+                    href={VIEW_PATHS['recette-soupe-tremella']}
+                    onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('recette-soupe-tremella'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-6 py-2 rounded-xl text-white/90 font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <Sparkles className="w-4 h-4 text-[#E8772E]" />{' '}
@@ -811,61 +857,74 @@ export default function App() {
                       : selectedLanguage === 'de'
                       ? 'Tremella Schönheitssuppe (TCM)'
                       : 'Soupe Beauté Tremella (MTC)'}
-                  </button>
-                  <button
-                    onClick={() => { navigateTo('cosmetiques'); setMobileMenuOpen(false); }}
+                  </a>
+                  <a
+                    href={VIEW_PATHS['cosmetiques']}
+                    onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('cosmetiques'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <Droplets className="w-4 h-4 text-white/70" /> {m.cosmetiques}
-                  </button>
-                  <button
-                    onClick={() => { navigateTo('phytotherapie-reset'); setMobileMenuOpen(false); }}
+                  </a>
+                  <a
+                    href={VIEW_PATHS['phytotherapie-reset']}
+                    onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('phytotherapie-reset'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <Activity className="w-4 h-4 text-white/70" /> Reset Homéostasique
-                  </button>
-                  <button
-                    onClick={() => { navigateTo('recette-phycocyanine'); setMobileMenuOpen(false); }}
+                  </a>
+                  <a
+                    href={VIEW_PATHS['recette-phycocyanine']}
+                    onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('recette-phycocyanine'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-6 py-2 rounded-xl text-white/90 font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <FlaskConical className="w-4 h-4 text-[#E8772E]" /> Phycocyanine (40 °C · Phases 2 &amp; 3)
-                  </button>
+                  </a>
 
                   {/* SECTION: BOUTIQUE */}
                   {sectionTitle(selectedLanguage === 'fr' ? 'BOUTIQUE' : selectedLanguage === 'de' ? 'SHOP' : 'STORE')}
-                  <button
-                    onClick={() => { navigateTo('machine'); setMobileMenuOpen(false); }}
+                  <a
+                    href={VIEW_PATHS['machine']}
+                    onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('machine'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <Sparkles className="w-4 h-4 text-[#E8772E]" /> BloomLab®
-                  </button>
-                  <button
-                    onClick={() => {
-                      navigateTo('boutique-kits');
-                      setMobileMenuOpen(false);
+                  </a>
+                  <a
+                    href={VIEW_PATHS['boutique-kits']}
+                    onClick={(e) => {
+                      if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                        e.preventDefault();
+                        navigateTo('boutique-kits');
+                        setMobileMenuOpen(false);
+                      }
                     }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <Package className="w-4 h-4 text-white/70" /> Packs
-                  </button>
-                  <button
-                    onClick={() => {
-                      navigateTo('boutique');
-                      setMobileMenuOpen(false);
-                      mainScrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+                  </a>
+                  <a
+                    href={VIEW_PATHS['boutique']}
+                    onClick={(e) => {
+                      if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                        e.preventDefault();
+                        navigateTo('boutique');
+                        setMobileMenuOpen(false);
+                        mainScrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+                      }
                     }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <ShoppingBag className="w-4 h-4 text-white/70" /> Accessoires
-                  </button>
-                  <button
-                    onClick={() => { navigateTo('product-detail', 'duo-argiles'); setMobileMenuOpen(false); }}
+                  </a>
+                  <a
+                    href="/boutique/duo-argiles/"
+                    onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('product-detail', 'duo-argiles'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <Leaf className="w-4 h-4 text-white/70" /> Argiles &amp; Matières Premières
-                  </button>
+                  </a>
                   <a
-                    href="https://bloombybotanik.com/abonnement/"
+                    href="/abonnement/"
                     onClick={(e) => {
                       if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                         e.preventDefault();
@@ -880,20 +939,22 @@ export default function App() {
 
                   {/* SECTION: RESSOURCES */}
                   {sectionTitle(selectedLanguage === 'fr' ? 'RESSOURCES' : selectedLanguage === 'de' ? 'RESSOURCEN' : 'RESOURCES')}
-                  <button
-                    onClick={() => { navigateTo('herbier'); setMobileMenuOpen(false); }}
+                  <a
+                    href={VIEW_PATHS['herbier']}
+                    onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('herbier'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <BookOpen className="w-4 h-4 text-white/70" /> {m.herbier}
-                  </button>
-                  <button
-                    onClick={() => { navigateTo('lexique'); setMobileMenuOpen(false); }}
+                  </a>
+                  <a
+                    href={VIEW_PATHS['lexique']}
+                    onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('lexique'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <BookOpen className="w-4 h-4 text-white/70" /> {selectedLanguage === 'fr' ? 'Lexique Botanik' : selectedLanguage === 'de' ? 'Botanik-Glossar' : 'Botanik Glossary'}
-                  </button>
+                  </a>
                   <a
-                    href="https://bloombybotanik.com/bibliotheque/"
+                    href={VIEW_PATHS['library-landing']}
                     onClick={(e) => {
                       if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                         e.preventDefault();
@@ -906,23 +967,26 @@ export default function App() {
                     <Newspaper className="w-4 h-4 text-white/70" /> {m.bibliotheque}
                   </a>
                   <button
+                    type="button"
                     onClick={() => { setIsCalculatorOpen(true); setMobileMenuOpen(false); }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <Calculator className="w-4 h-4 text-[#E8772E]" /> {m.calculatrice}
                   </button>
-                  <button
-                    onClick={() => { navigateTo('faq'); setMobileMenuOpen(false); }}
+                  <a
+                    href={VIEW_PATHS['faq']}
+                    onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('faq'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <HelpCircle className="w-4 h-4 text-white/70" /> {m.faq}
-                  </button>
-                  <button
-                    onClick={() => { navigateTo('contact'); setMobileMenuOpen(false); }}
+                  </a>
+                  <a
+                    href={VIEW_PATHS['contact']}
+                    onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('contact'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <MessageCircle className="w-4 h-4 text-white/70" /> {m.contact}
-                  </button>
+                  </a>
 
                   {/* SECTION: BLOOM ACADEMY (MENU DÉROULANT MOBILE) */}
                   <div className="pt-2 pb-1">
@@ -1004,8 +1068,9 @@ export default function App() {
                       {mobileComprendreCorpsOpen && (
                         <div className="space-y-0.5">
                           {/* 1. Comment lire le modèle Bloom (MODULE GRATUIT) */}
-                          <button
-                            onClick={() => { navigateTo('comment-lire-modele-bloom'); setMobileMenuOpen(false); }}
+                          <a
+                            href={VIEW_PATHS['comment-lire-modele-bloom']}
+                            onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('comment-lire-modele-bloom'); setMobileMenuOpen(false); } }}
                             className="flex items-center justify-between w-full px-3 py-1.5 rounded-xl text-white font-medium hover:bg-white/10 text-left text-xs"
                           >
                             <span className="flex items-center gap-2">
@@ -1015,12 +1080,12 @@ export default function App() {
                             <span className="text-[8px] uppercase px-1 py-0.2 rounded bg-emerald-500/20 text-emerald-400 font-bold shrink-0 border border-emerald-500/30">
                               {selectedLanguage === 'fr' ? 'Gratuit' : selectedLanguage === 'de' ? 'Gratis' : 'Free'}
                             </span>
-                          </button>
+                          </a>
 
                           {/* 1b. Le Pouvoir Cyclique et Sacré de la Femme (MODULE GRATUIT) */}
                           <a
                             href="/academie/pouvoir-cyclique-femme/"
-                            onClick={(e) => { e.preventDefault(); navigateTo('women-academy'); setMobileMenuOpen(false); }}
+                            onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('women-academy'); setMobileMenuOpen(false); } }}
                             className="flex items-center justify-between w-full px-3 py-1.5 rounded-xl text-white font-medium hover:bg-white/10 text-left text-xs"
                           >
                             <span className="flex items-center gap-2">
@@ -1033,8 +1098,9 @@ export default function App() {
                           </a>
 
                           {/* Module 0 : Le Choc de Paradigme */}
-                          <button
-                            onClick={() => { navigateTo('module-0'); setMobileMenuOpen(false); }}
+                          <a
+                            href={VIEW_PATHS['module-0']}
+                            onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('module-0'); setMobileMenuOpen(false); } }}
                             className="flex items-center justify-between w-full px-3 py-1.5 rounded-xl text-white font-medium hover:bg-white/10 text-left text-xs"
                           >
                             <span className="flex items-center gap-2">
@@ -1042,12 +1108,12 @@ export default function App() {
                               <span className="text-white">{selectedLanguage === 'fr' ? 'Module 0 : Choc de Paradigme' : selectedLanguage === 'de' ? 'Modul 0 : Paradigmenwechsel' : 'Module 0 : Paradigm Shift'}</span>
                             </span>
                             <Lock className="w-3 h-3 text-[#E8772E] shrink-0" />
-                          </button>
+                          </a>
 
                           {/* Axe A1 : Émonctoires & Élimination */}
                           <a
                             href="/academie/axes/a1-emonctoires/"
-                            onClick={(e) => { e.preventDefault(); navigateTo('axe-a1'); setMobileMenuOpen(false); }}
+                            onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('axe-a1'); setMobileMenuOpen(false); } }}
                             className="flex items-center justify-between w-full px-3 py-1.5 rounded-xl text-white font-medium hover:bg-white/10 text-left text-xs"
                           >
                             <span className="flex items-center gap-2">
@@ -1058,8 +1124,9 @@ export default function App() {
                           </a>
 
                           {/* 2. Les 4 Architectures (Payant / Abonnement) */}
-                          <button
-                            onClick={() => { navigateTo('4-architectures'); setMobileMenuOpen(false); }}
+                          <a
+                            href={VIEW_PATHS['4-architectures']}
+                            onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('4-architectures'); setMobileMenuOpen(false); } }}
                             className="flex items-center justify-between w-full px-3 py-1.5 rounded-xl text-white font-medium hover:bg-white/10 text-left text-xs"
                           >
                             <span className="flex items-center gap-2">
@@ -1067,11 +1134,12 @@ export default function App() {
                               <span className="text-white">{selectedLanguage === 'fr' ? 'Les 4 Architectures' : selectedLanguage === 'de' ? 'Die 4 Architekturen' : 'The 4 Architectures'}</span>
                             </span>
                             <Lock className="w-3 h-3 text-white/50 shrink-0" />
-                          </button>
+                          </a>
 
                           {/* 3. Les 7 Terrains (Payant / Abonnement) */}
-                          <button
-                            onClick={() => { navigateTo('terrain'); setMobileMenuOpen(false); }}
+                          <a
+                            href={VIEW_PATHS['terrain']}
+                            onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('terrain'); setMobileMenuOpen(false); } }}
                             className="flex items-center justify-between w-full px-3 py-1.5 rounded-xl text-white font-medium hover:bg-white/10 text-left text-xs"
                           >
                             <span className="flex items-center gap-2">
@@ -1079,11 +1147,12 @@ export default function App() {
                               <span className="text-white">{selectedLanguage === 'fr' ? 'Les 7 Terrains' : selectedLanguage === 'de' ? 'Die 7 Terrains' : 'The 7 Terrains'}</span>
                             </span>
                             <Lock className="w-3 h-3 text-white/50 shrink-0" />
-                          </button>
+                          </a>
 
                           {/* 4. Les 9 Axes historiques (Payant / Abonnement) */}
-                          <button
-                            onClick={() => { navigateTo('9-axes'); setMobileMenuOpen(false); }}
+                          <a
+                            href={VIEW_PATHS['9-axes']}
+                            onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('9-axes'); setMobileMenuOpen(false); } }}
                             className="flex items-center justify-between w-full px-3 py-1.5 rounded-xl text-white font-medium hover:bg-white/10 text-left text-xs"
                           >
                             <span className="flex items-center gap-2">
@@ -1091,11 +1160,12 @@ export default function App() {
                               <span className="text-white">{selectedLanguage === 'fr' ? 'Les 9 Axes historiques' : selectedLanguage === 'de' ? 'Die 9 Historischen Achsen' : 'The 9 Historical Axes'}</span>
                             </span>
                             <Lock className="w-3 h-3 text-white/50 shrink-0" />
-                          </button>
+                          </a>
 
                           {/* 5. La Charge Allostatique (Payant / Abonnement) */}
-                          <button
-                            onClick={() => { navigateTo('charge-allostatique'); setMobileMenuOpen(false); }}
+                          <a
+                            href={VIEW_PATHS['charge-allostatique']}
+                            onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('charge-allostatique'); setMobileMenuOpen(false); } }}
                             className="flex items-center justify-between w-full px-3 py-1.5 rounded-xl text-white font-medium hover:bg-white/10 text-left text-xs"
                           >
                             <span className="flex items-center gap-2">
@@ -1103,11 +1173,12 @@ export default function App() {
                               <span className="text-white">{selectedLanguage === 'fr' ? 'La Charge Allostatique' : selectedLanguage === 'de' ? 'Die Allostatische Last' : 'The Allostatic Load'}</span>
                             </span>
                             <Lock className="w-3 h-3 text-white/50 shrink-0" />
-                          </button>
+                          </a>
 
                           {/* 6. Le Reset Homéostasique (Payant / Abonnement) */}
-                          <button
-                            onClick={() => { navigateTo('phytotherapie-reset'); setMobileMenuOpen(false); }}
+                          <a
+                            href={VIEW_PATHS['phytotherapie-reset']}
+                            onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('phytotherapie-reset'); setMobileMenuOpen(false); } }}
                             className="flex items-center justify-between w-full px-3 py-1.5 rounded-xl text-white font-medium hover:bg-white/10 text-left text-xs"
                           >
                             <span className="flex items-center gap-2">
@@ -1115,11 +1186,12 @@ export default function App() {
                               <span className="text-white">{selectedLanguage === 'fr' ? 'Le Reset Homéostasique' : selectedLanguage === 'de' ? 'Der Homöostatische Reset' : 'The Homeostatic Reset'}</span>
                             </span>
                             <Lock className="w-3 h-3 text-white/50 shrink-0" />
-                          </button>
+                          </a>
 
                           {/* 7. Protocoles Systémiques (remis après Reset Homeostasique) (Payant / Abonnement) */}
-                          <button
-                            onClick={() => { navigateTo('protocoles'); setMobileMenuOpen(false); }}
+                          <a
+                            href={VIEW_PATHS['protocoles']}
+                            onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('protocoles'); setMobileMenuOpen(false); } }}
                             className="flex items-center justify-between w-full px-3 py-1.5 rounded-xl text-white font-medium hover:bg-white/10 text-left text-xs"
                           >
                             <span className="flex items-center gap-2">
@@ -1127,11 +1199,12 @@ export default function App() {
                               <span className="text-white">{selectedLanguage === 'fr' ? 'Protocoles Systémiques' : selectedLanguage === 'de' ? 'Systemische Protokolle' : 'Systemic Protocols'}</span>
                             </span>
                             <Lock className="w-3 h-3 text-white/50 shrink-0" />
-                          </button>
+                          </a>
 
                           {/* 8. Métabolisme et insuline */}
-                          <button
-                            onClick={() => { navigateTo('metabolisme-insuline'); setMobileMenuOpen(false); }}
+                          <a
+                            href={VIEW_PATHS['metabolisme-insuline']}
+                            onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('metabolisme-insuline'); setMobileMenuOpen(false); } }}
                             className="flex items-center justify-between px-3 py-1.5 rounded-xl text-white font-bold hover:bg-white/10 text-left text-xs"
                           >
                             <span className="flex items-center gap-2">
@@ -1144,11 +1217,12 @@ export default function App() {
                               </span>
                               <Lock className="w-3 h-3 text-white/50 shrink-0" />
                             </div>
-                          </button>
+                          </a>
 
                           {/* 9. Autres modules prévus */}
-                          <button
-                            onClick={() => { navigateTo('academie'); setMobileMenuOpen(false); }}
+                          <a
+                            href={VIEW_PATHS['academie']}
+                            onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('academie'); setMobileMenuOpen(false); } }}
                             className="flex items-center justify-between w-full px-3 py-1.5 rounded-xl text-white/70 hover:bg-white/10 text-left text-xs italic"
                           >
                             <span className="flex items-center gap-2">
@@ -1156,7 +1230,7 @@ export default function App() {
                               <span className="text-white/80">{selectedLanguage === 'fr' ? 'Autres modules prévus' : selectedLanguage === 'de' ? 'Weitere geplante Module' : 'Other planned modules'}</span>
                             </span>
                             <Lock className="w-3 h-3 text-white/40 shrink-0" />
-                          </button>
+                          </a>
                         </div>
                       )}
                     </div>
@@ -1281,7 +1355,7 @@ export default function App() {
             isPremium={isSubscribed}
             onRequireAuth={() => setIsAuthOpen(true)}
           />
-        ) : currentView === '9-axes' || currentView === 'neuf-axes-historiques' ? (
+        ) : currentView === '9-axes' || currentView === 'neuf-axes-historiques' || currentView === 'axe-a2' || currentView === 'axe-a3' || currentView === 'axe-a4' || currentView === 'axe-a5' || currentView === 'axe-a6' || currentView === 'axe-a7' || currentView === 'axe-a8' || currentView === 'axe-a9' ? (
           <NeufAxesHistoriquesContent
             onNavigate={navigateTo}
             lang={selectedLanguage}
@@ -1370,6 +1444,12 @@ export default function App() {
                   else setCurrentView('recette-detail');
                 } else if (targetPath.startsWith('/recettes/parcours-botaniques')) {
                   if (targetPath === '/recettes/parcours-botaniques/' || targetPath.startsWith('/recettes/parcours-botaniques/page/')) setCurrentView('recettes-parcours');
+                  else setCurrentView('recette-detail');
+                } else if (targetPath.startsWith('/recettes/phytotherapie')) {
+                  if (targetPath === '/recettes/phytotherapie/' || targetPath.startsWith('/recettes/phytotherapie/page/')) setCurrentView('recettes-phytotherapie');
+                  else setCurrentView('recette-detail');
+                } else if (targetPath.startsWith('/recettes/gastronomie')) {
+                  if (targetPath === '/recettes/gastronomie/' || targetPath.startsWith('/recettes/gastronomie/page/')) setCurrentView('recettes-gastronomie');
                   else setCurrentView('recette-detail');
                 }
               } else if (targetPath === '/') {
@@ -1474,9 +1554,9 @@ export default function App() {
             lang={selectedLanguage}
             onNavigate={navigateTo}
           />
-        ) : currentView === 'hormese' || currentView === 'infusion-botanique' || currentView === 'infusion-botanique-maison-comment-ca-marche' ? (
+        ) : currentView === 'hormese' || currentView === 'infusion-botanique' || currentView === 'infusion-botanique-maison-comment-ca-marche' || currentView === 'qu-est-ce-que-infusion' ? (
           <PillarInfusion lang={selectedLanguage} onNavigate={navigateTo} />
-        ) : currentView === 'huile-infusee' ? (
+        ) : currentView === 'huile-infusee' || currentView === 'maceration-plantes' ? (
           <PillarOil lang={selectedLanguage} onNavigate={navigateTo} />
         ) : currentView === 'plantes-adaptogenes' ? (
           <PillarAdaptogens lang={selectedLanguage} onNavigate={navigateTo} />

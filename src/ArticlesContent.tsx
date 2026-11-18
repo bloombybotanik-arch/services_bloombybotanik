@@ -25,6 +25,8 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
       } else if (blogPosts.length > 0) {
         setSelectedPost(blogPosts[0]);
       }
+    } else {
+      setSelectedPost(null);
     }
   }, [initialSlug]);
 
@@ -74,28 +76,47 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
               },
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": `https://bloombybotanik.com/articles/${selectedPost.slug}`
+                "@id": `https://bloombybotanik.com/articles/${selectedPost.slug}/`
               }
             })
           }}
         />
         <div className="max-w-4xl mx-auto px-6 py-16">
           {/* Breadcrumbs */}
-          <nav className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-[#A8B8A0]/60 mb-8">
-            <button onClick={() => onNavigate('home')} className="hover:text-[#A8B8A0] uppercase cursor-pointer">Accueil</button>
+          <nav aria-label="Fil d'Ariane" className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-[#A8B8A0]/60 mb-8">
+            <a
+              href="/"
+              onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); onNavigate('home'); } }}
+              className="hover:text-[#A8B8A0] uppercase cursor-pointer"
+            >
+              Accueil
+            </a>
             <ChevronRight className="w-3 h-3" />
-            <button onClick={() => setSelectedPost(null)} className="hover:text-[#A8B8A0] uppercase cursor-pointer">Articles</button>
+            <a
+              href="/articles/"
+              onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); setSelectedPost(null); onNavigate('articles'); } }}
+              className="hover:text-[#A8B8A0] uppercase cursor-pointer"
+            >
+              Articles
+            </a>
             <ChevronRight className="w-3 h-3" />
             <span className="text-[#C8AB8A] truncate max-w-[240px]">{selectedPost.title[lang]}</span>
           </nav>
 
-          <button 
-            onClick={() => setSelectedPost(null)}
-            className="flex items-center gap-2 text-[#A8B8A0]/70 hover:text-[#A8B8A0] mb-8 font-bold text-sm transition-colors cursor-pointer"
+          <a
+            href="/articles/"
+            onClick={(e) => {
+              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                e.preventDefault();
+                setSelectedPost(null);
+                onNavigate('articles');
+              }
+            }}
+            className="inline-flex items-center gap-2 text-[#A8B8A0]/70 hover:text-[#A8B8A0] mb-8 font-bold text-sm transition-colors cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" /> 
             {isFR ? 'Retour aux Articles' : isDE ? 'Zurück zu den Artikeln' : 'Back to Articles'}
-          </button>
+          </a>
 
           {/* Banner Blog Officiel */}
           <div className="mb-10 p-5 bg-[#E8F1EE] rounded-2xl border border-[#D8CBB7] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
@@ -173,11 +194,16 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {relatedPosts.map(post => (
-                  <div 
+                  <a
                     key={post.slug}
-                    onClick={() => {
-                      setSelectedPost(post);
-                      window.scrollTo(0, 0);
+                    href={`/articles/${post.slug}/`}
+                    onClick={(e) => {
+                      if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                        e.preventDefault();
+                        setSelectedPost(post);
+                        onNavigate('articles', post.slug);
+                        window.scrollTo(0, 0);
+                      }
                     }}
                     className="p-6 bg-white rounded-2xl border border-[#E7DFD3] hover:border-[#A8B8A0] transition-all cursor-pointer flex flex-col justify-between"
                   >
@@ -190,7 +216,7 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
                       <span>Lire l'article</span>
                       <ChevronRight className="w-3.5 h-3.5" />
                     </div>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
@@ -290,11 +316,16 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
         {/* Grille des Articles */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredPosts.map(post => (
-            <article 
+            <a
               key={post.slug}
-              onClick={() => {
-                setSelectedPost(post);
-                window.scrollTo(0, 0);
+              href={`/articles/${post.slug}/`}
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  setSelectedPost(post);
+                  onNavigate('articles', post.slug);
+                  window.scrollTo(0, 0);
+                }
               }}
               className="bg-white rounded-3xl overflow-hidden border border-[#E7DFD3] shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col group"
             >
@@ -326,7 +357,7 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
-            </article>
+            </a>
           ))}
 
           {/* Dernière carte : Blog Officiel traitant l'ensemble des sujets */}

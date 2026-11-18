@@ -1,4 +1,5 @@
 import { VIEW_PATHS } from '../types';
+import { blogPosts } from '../data/blogPosts';
 
 interface SEOEntry {
   title: string;
@@ -54,6 +55,11 @@ const PRODUCT_SEO_MAP: Record<string, SEOEntry> = {
     title: "Duo Argiles & Terres Rares | Purification | Bloom by BotaniK",
     description: "Duo Argiles Zéolithe-Bentonite Bloom by BotaniK : argiles surfines ventilées pour vos préparations d'herboristerie et soins du terrain.",
     path: "/boutique/duo-argiles/"
+  },
+  "abonnements-numeriques": {
+    title: "Abonnements Numériques Bloom Académie & ALMA | Bloom by BotaniK",
+    description: "Accédez aux protocoles systémiques complets, fiches d'extraction avancées et suivi personnalisé ALMA.",
+    path: "/boutique/abonnements-numeriques/"
   }
 };
 
@@ -377,6 +383,146 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
     title: "Contact & Assistance Botanique | Bloom by BotaniK",
     description: "Une question sur BloomLab® ou nos kits botaniques ? Contactez nos conseillers en phytothérapie. Équipe basée en France, réponse sous 24 à 48 heures.",
     path: "/contact/"
+  },
+  'recettes-phytotherapie': {
+    title: "Recettes Phytothérapie de Précision | Herbier Bloom",
+    description: "Formulations d'extraction botanique de précision par terrain et principe actif pour votre extracteur BloomLab®.",
+    path: "/recettes/phytotherapie/"
+  },
+  'recettes-gastronomie': {
+    title: "Recettes Gastronomie Botanique | Huiles & Bouillons Bloom",
+    description: "Créations culinaires botaniques : huiles infusées, vinaigres actifs et miels de précision préparés avec BloomLab®.",
+    path: "/recettes/gastronomie/"
+  },
+  'recettes-culinaires': {
+    title: "Recettes Culinaires Botaniques | Tisanes, Sirops & Bouillons",
+    description: "Explorez nos recettes culinaires d'extraction végétale à basse température pour préserver arômes et actifs.",
+    path: "/recettes/culinaires/"
+  },
+  'recettes-cosmetiques': {
+    title: "Recettes Cosmétiques Naturelles | Macérats & Baumes Bloom",
+    description: "Formules maison de macérats huileux, sérums et soins dermo-botaniques stables préparés à 45°C.",
+    path: "/recettes/cosmetiques/"
+  },
+  'recettes-parcours': {
+    title: "Parcours Botaniques Guidés | Protocoles & Remèdes",
+    description: "Parcours botaniques multi-phases associant drainage émonctoriel et formulations ciblées.",
+    path: "/recettes/parcours-botaniques/"
+  },
+  'axe-a2': {
+    title: "Axe A2 : Barrière Intestinale & Microbiote | Académie Bloom",
+    description: "Comprendre la perméabilité intestinale, les jonctions serrées et le rôle des mucilages végétaux extraits sur BloomLab®.",
+    path: "/academie/axes/a2/"
+  },
+  'axe-a3': {
+    title: "Axe A3 : Axe HPA & Stress Adaptatif | Académie Bloom",
+    description: "Régulation du cortisol, rythme circadien et soutien neuro-endocrinien par les plantes adaptogènes en phytothérapie systémique.",
+    path: "/academie/axes/a3/"
+  },
+  'axe-a4': {
+    title: "Axe A4 : Inflammation Bas Bruit & Résolution | Académie Bloom",
+    description: "Comprendre les médiateurs pro-résolutifs et la modulation naturelle des voies NF-κB et Nrf2 par le Totum végétal.",
+    path: "/academie/axes/a4/"
+  },
+  'axe-a5': {
+    title: "Axe A5 : Mitochondries & Biogenèse ATP | Académie Bloom",
+    description: "Soutenir le rendement énergétique mitochondrial et réduire le stress oxydatif grâce aux polyphénols et pigments bioactifs.",
+    path: "/academie/axes/a5/"
+  },
+  'axe-a6': {
+    title: "Axe A6 : Tonus Vagal & Système Parasympathique | Académie Bloom",
+    description: "Variabilité de la fréquence cardiaque, nerf vague et apaisement du système nerveux autonome par l'extraction botanique douce.",
+    path: "/academie/axes/a6/"
+  },
+  'axe-a7': {
+    title: "Axe A7 : Matrice Extracellulaire & Fascia | Académie Bloom",
+    description: "Hydratation tissulaire, collagène végétal, silice de prêle et drainage de l'espace interstitiel dans le modèle Bloom.",
+    path: "/academie/axes/a7/"
+  },
+  'axe-a8': {
+    title: "Axe A8 : Écologie Microbienne & Butyrate | Académie Bloom",
+    description: "Prébiotiques végétaux, fibres solubles et production d'acides gras à chaîne courte pour équilibrer le microbiote.",
+    path: "/academie/axes/a8/"
+  },
+  'axe-a9': {
+    title: "Axe A9 : Système Endocannabinoïde (SEC) | Académie Bloom",
+    description: "Le chef d'orchestre rétrograde de l'homéostasie : phytocannabinoïdes, terpènes et extraction liposoluble de précision.",
+    path: "/academie/axes/a9/"
+  },
+  'blog-vieillissement-myeline': {
+    title: "Vieillissement, Myéline & FGF17 : Restaurer la Clarté Mentale | Bloom",
+    description: "Analyse neurobiologique de la démyélinisation liée à l'âge, du facteur FGF17 et des leviers botaniques pour soutenir les oligodendrocytes.",
+    path: "/blog/vieillissement-myeline-fgf17-clarte-mentale/"
+  },
+  'infusion-precision': {
+    title: "Infusion de Précision : Température, Vortex & Principes Actifs | Bloom",
+    description: "Pourquoi la température au degré près et l'agitation dynamique transforment radicalement la richesse moléculaire de vos tisanes médicinales.",
+    path: "/infusion-precision/"
+  },
+  'totum-definition': {
+    title: "Définition du Totum Végétal en Phytothérapie | Bloom by BotaniK",
+    description: "Comprendre la notion scientifique de Totum végétal : synergie d'actifs, co-facteurs enzymatiques et supériorité face aux molécules isolées.",
+    path: "/totum-definition/"
+  },
+  'solvants-extraction': {
+    title: "Solvants d'Extraction Botanique : Polarité & Rendements | Bloom",
+    description: "Tableau complet des solvants naturels (eau, éthanol, huiles, glycérine, vinaigre) et températures optimales par famille phytochimique.",
+    path: "/solvants-extraction/"
+  },
+  'maceration-plantes': {
+    title: "Macération de Plantes à Chaud & Froid : Protocoles Maison | Bloom",
+    description: "Maîtrisez la macération végétale (huileuse, alcoolique, glycérinée) à domicile sans oxydation grâce à l'extraction en cuve close.",
+    path: "/maceration-plantes/"
+  },
+  'qu-est-ce-que-infusion': {
+    title: "Qu'est-ce que l'Infusion Botanique ? Science & Pratique | Bloom",
+    description: "Découvrez les différences entre tisane simple, décoction et extraction botanique contrôlée pour préserver flavonoïdes et huiles essentielles.",
+    path: "/qu-est-ce-que-l-infusion-botanique/"
+  },
+  hormese: {
+    title: "Hormèse Végétale | Principes Amers & Résilience Bloom",
+    description: "Le principe d'hormèse végétale : comment les molécules de défense des plantes stimulent notre pharmacie intérieure et nos mécanismes de régénération.",
+    path: "/hormese/"
+  },
+  'phytotherapie-moderne-scientifique': {
+    title: "Phytothérapie Moderne & Scientifique | Extraction & Biodisponibilité",
+    description: "Comment l'ingénierie thermique et l'évidence phytochimique réconcilient herboristerie traditionnelle et rigueur clinique moderne.",
+    path: "/phytotherapie-moderne-scientifique/"
+  },
+  'abonnements-numeriques': {
+    title: "Abonnements Numériques Bloom Académie & ALMA | Bloom by BotaniK",
+    description: "Accédez aux protocoles systémiques complets, fiches d'extraction avancées et suivi personnalisé ALMA.",
+    path: "/boutique/abonnements-numeriques/"
+  },
+  cgv: {
+    title: "Conditions Générales de Vente (CGV) | Bloom by BotaniK",
+    description: "Consultez les conditions générales de vente de Bloom by BotaniK : commandes, tarifs, garanties, livraisons et droit de rétractation.",
+    path: "/conditions-generales-de-vente/"
+  },
+  cgu: {
+    title: "Conditions d'Utilisation (CGU) | Bloom by BotaniK",
+    description: "Conditions générales d'utilisation du site et des services Bloom by BotaniK.",
+    path: "/termes-et-conditions/"
+  },
+  privacy: {
+    title: "Politique de Confidentialité | Données Personnelles Bloom",
+    description: "Politique de confidentialité et protection des données personnelles (RGPD) sur bloombybotanik.com.",
+    path: "/politique-de-confidentialite/"
+  },
+  mentions: {
+    title: "Mentions Légales | Bloom by BotaniK",
+    description: "Mentions légales du site bloombybotanik.com : éditeur, hébergement et propriété intellectuelle.",
+    path: "/mentions-legales/"
+  },
+  returns: {
+    title: "Retours & Remboursements | Garantie 30 Jours Bloom",
+    description: "Politique de retour et de remboursement Bloom by BotaniK : garantie 30 jours et modalités SAV.",
+    path: "/retour-et-remboursement/"
+  },
+  withdrawal: {
+    title: "Droit de Rétractation | Formulaire de Retour Bloom",
+    description: "Exercice de votre droit légal de rétractation sous 14 jours pour vos achats sur bloombybotanik.com.",
+    path: "/droit-de-retractation/"
   }
 };
 
@@ -452,6 +598,12 @@ export function updateDocumentSEO(config?: any, _lang?: any, productId?: string,
       return;
     }
 
+    // Sur toute navigation client hors accueil, éviter de conserver le schéma Product/FAQ/HowTo de la home
+    const rootSchemaEl = document.getElementById('bloom-root-schema');
+    if (rootSchemaEl && rootSchemaEl.textContent?.includes('FAQPage')) {
+      rootSchemaEl.remove();
+    }
+
     if (config === 'product-detail' && productId && PRODUCT_SEO_MAP[productId]) {
       const prod = PRODUCT_SEO_MAP[productId];
       const cleanPath = (prod.path || `/boutique/${productId}/`).replace(/\/?$/, '/');
@@ -461,6 +613,33 @@ export function updateDocumentSEO(config?: any, _lang?: any, productId?: string,
 
     const currentPathRaw = typeof window !== 'undefined' ? window.location.pathname : '/';
     const normalizedCurrent = currentPathRaw.endsWith('/') ? currentPathRaw : `${currentPathRaw}/`;
+
+    // Résolution dynamique articles / blog avec slug : préserver titre, description et canonical propre !
+    if ((config === 'articles' || config === 'blog') && (_slug || normalizedCurrent.startsWith('/articles/') || normalizedCurrent.startsWith('/blog/'))) {
+      const resolvedSlug = _slug || normalizedCurrent.replace(/^\/(?:articles|blog)\//, '').replace(/\/$/, '');
+      if (resolvedSlug) {
+        const matchedPost = blogPosts.find((p) => p.slug === resolvedSlug);
+        if (matchedPost) {
+          const langKey = _lang === 'en' || _lang === 'de' ? _lang : 'fr';
+          const title = matchedPost.metaTitle?.[langKey] || matchedPost.metaTitle?.fr || `${matchedPost.title?.[langKey] || matchedPost.title?.fr} | Bloom by BotaniK`;
+          const desc = (matchedPost.metaDescription?.[langKey] || matchedPost.metaDescription?.fr || matchedPost.excerpt?.[langKey] || matchedPost.excerpt?.fr || title).slice(0, 158);
+          const postCanonical = `https://bloombybotanik.com/articles/${resolvedSlug}/`;
+          applySEOMetadata(title, desc, postCanonical, false);
+          return;
+        }
+      }
+    }
+
+    // Préserver le canonical exact des fiches recettes individuelles & paginations (/recettes/...)
+    if (
+      (config === 'recette-detail' || normalizedCurrent.startsWith('/recettes/')) &&
+      normalizedCurrent !== '/recettes/' &&
+      normalizedCurrent !== '/recettes/culinaires/soupe-beaute-tremella/'
+    ) {
+      setCanonicalLink(`https://bloombybotanik.com${normalizedCurrent}`);
+      setMetaTag('name', 'robots', 'index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1');
+      return;
+    }
 
     if (normalizedCurrent === '/infusion-botanique/') {
       const entry = VIEW_SEO_MAP.guide;

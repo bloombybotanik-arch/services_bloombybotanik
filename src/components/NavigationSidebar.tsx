@@ -24,7 +24,7 @@ import {
 import { BloomLogo } from './ui/BloomLogo';
 import { LanguageSelector } from './LanguageSelector';
 import { Language, translations } from '../translations';
-import { View } from '../types';
+import { View, VIEW_PATHS } from '../types';
 import { User as FirebaseUser } from 'firebase/auth';
 
 interface NavigationSidebarProps {
@@ -100,15 +100,21 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
         
         {/* GROUP 1: ACCUEIL */}
         <div>
-          <button
-            onClick={() => onNavigate('indexbis')}
+          <a
+            href="/"
+            onClick={(e) => {
+              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                e.preventDefault();
+                onNavigate('indexbis');
+              }
+            }}
             className={navItemClass(isActive('indexbis') || isActive('home'))}
           >
             <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
               <Home className={navIconClass(isActive('indexbis') || isActive('home'))} />
               <span className="font-semibold text-xs truncate whitespace-nowrap">{lang === 'fr' ? 'Accueil' : lang === 'de' ? 'Startseite' : 'Home'}</span>
             </div>
-          </button>
+          </a>
         </div>
 
         {/* GROUP 2: POURQUOI BLOOM */}
@@ -117,15 +123,21 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             <span className="truncate whitespace-nowrap">POURQUOI BLOOM</span>
           </div>
           <div className="space-y-0.5">
-            <button
-              onClick={() => onNavigate('la-marque')}
+            <a
+              href={VIEW_PATHS['la-marque']}
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('la-marque');
+                }
+              }}
               className={navItemClass(isActive('la-marque') || isActive('manifeste'))}
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <HeartHandshake className={navIconClass(isActive('la-marque') || isActive('manifeste'))} />
                 <span className="truncate whitespace-nowrap">Histoire &amp; Philosophie</span>
               </div>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -135,42 +147,66 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             <span className="truncate whitespace-nowrap">LA MÉTHODE A/B</span>
           </div>
           <div className="space-y-0.5">
-            <button
-              onClick={() => onNavigate('infusion-botanique')}
+            <a
+              href={VIEW_PATHS['infusion-botanique']}
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('infusion-botanique');
+                }
+              }}
               className={navItemClass(isActive('infusion-botanique') || isActive('infusion-botanique-maison-comment-ca-marche'))}
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <FlaskConical className={navIconClass(isActive('infusion-botanique'))} />
                 <span className="truncate whitespace-nowrap">L'infusion botanique ?</span>
               </div>
-            </button>
-            <button
-              onClick={() => onNavigate('totum-vegetal')}
+            </a>
+            <a
+              href={VIEW_PATHS['totum-vegetal']}
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('totum-vegetal');
+                }
+              }}
               className={navItemClass(isActive('totum-vegetal'))}
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Leaf className={navIconClass(isActive('totum-vegetal'))} />
                 <span className="truncate whitespace-nowrap">Le Totum Végétal</span>
               </div>
-            </button>
-            <button
-              onClick={() => onNavigate('guide-complet')}
+            </a>
+            <a
+              href={VIEW_PATHS['guide-complet']}
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('guide-complet');
+                }
+              }}
               className={navItemClass(isActive('guide-complet') || isActive('pillar-extraction') || isActive('extraction-botanique'))}
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <BookOpen className={navIconClass(isActive('guide-complet'))} />
                 <span className="truncate whitespace-nowrap">Guide de l'extraction</span>
               </div>
-            </button>
-            <button
-              onClick={() => onNavigate('guide-solvants')}
+            </a>
+            <a
+              href={VIEW_PATHS['guide-solvants']}
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('guide-solvants');
+                }
+              }}
               className={navItemClass(isActive('guide-solvants'))}
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Droplets className={navIconClass(isActive('guide-solvants'))} />
                 <span className="truncate whitespace-nowrap">Guide des Solvants</span>
               </div>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -180,15 +216,21 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             <span className="truncate whitespace-nowrap">VOTRE PRATIQUE</span>
           </div>
           <div className="space-y-0.5">
-            <button
-              onClick={() => onNavigate('culinaire')}
+            <a
+              href={VIEW_PATHS['culinaire']}
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('culinaire');
+                }
+              }}
               className={navItemClass(isActive('culinaire'))}
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Utensils className={navIconClass(isActive('culinaire'))} />
                 <span className="truncate whitespace-nowrap">Atelier Culinaire</span>
               </div>
-            </button>
+            </a>
             <a
               href="/recettes/culinaires/soupe-beaute-tremella/"
               onClick={(e) => {
@@ -210,24 +252,36 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                 </span>
               </div>
             </a>
-            <button
-              onClick={() => onNavigate('cosmetiques')}
+            <a
+              href={VIEW_PATHS['cosmetiques']}
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('cosmetiques');
+                }
+              }}
               className={navItemClass(isActive('cosmetiques'))}
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Droplets className={navIconClass(isActive('cosmetiques'))} />
                 <span className="truncate whitespace-nowrap">Cosmétique Botanique</span>
               </div>
-            </button>
-            <button
-              onClick={() => onNavigate('phytotherapie-reset')}
+            </a>
+            <a
+              href={VIEW_PATHS['phytotherapie-reset']}
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('phytotherapie-reset');
+                }
+              }}
               className={navItemClass(isActive('phytotherapie-reset') || isActive('votre-pratique') || isActive('parcours'))}
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Activity className={navIconClass(isActive('phytotherapie-reset') || isActive('votre-pratique') || isActive('parcours'))} />
                 <span className="truncate whitespace-nowrap">Reset Homéostasique</span>
               </div>
-            </button>
+            </a>
             <a
               href="/academie/reset-homeostasique/phycocyanine/"
               onClick={(e) => {
@@ -273,24 +327,36 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                 <span className="truncate whitespace-nowrap">BloomLab®</span>
               </div>
             </a>
-            <button
-              onClick={() => onNavigate('boutique-kits')}
+            <a
+              href={VIEW_PATHS['boutique-kits']}
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('boutique-kits');
+                }
+              }}
               className={navItemClass(isActive('boutique-kits'))}
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Package className={navIconClass(isActive('boutique-kits'))} />
                 <span className="truncate whitespace-nowrap">Packs</span>
               </div>
-            </button>
-            <button
-              onClick={() => onNavigate('boutique')}
+            </a>
+            <a
+              href={VIEW_PATHS['boutique']}
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('boutique');
+                }
+              }}
               className={navItemClass(isActive('boutique'))}
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <ShoppingBag className={navIconClass(isActive('boutique'))} />
                 <span className="truncate whitespace-nowrap">Accessoires</span>
               </div>
-            </button>
+            </a>
             <a
               href="/boutique/duo-argiles/"
               onClick={(e) => {
@@ -337,24 +403,36 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             <span className="truncate whitespace-nowrap">{lang === 'fr' ? 'RESSOURCES' : lang === 'de' ? 'RESSOURCEN' : 'RESOURCES'}</span>
           </div>
           <div className="space-y-0.5">
-            <button
-              onClick={() => onNavigate('herbier')}
+            <a
+              href={VIEW_PATHS['herbier']}
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('herbier');
+                }
+              }}
               className={navItemClass(isActive('herbier') || isActive('library') || isActive('herbarium'))}
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <BookOpen className={navIconClass(isActive('herbier') || isActive('library') || isActive('herbarium'))} />
                 <span className="truncate whitespace-nowrap">{lang === 'fr' ? "L'Herbier" : lang === 'de' ? 'Das Herbarium' : 'The Herbarium'}</span>
               </div>
-            </button>
-            <button
-              onClick={() => onNavigate('lexique')}
+            </a>
+            <a
+              href={VIEW_PATHS['lexique']}
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('lexique');
+                }
+              }}
               className={navItemClass(isActive('lexique'))}
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <BookOpen className={navIconClass(isActive('lexique'))} />
                 <span className="truncate whitespace-nowrap">{lang === 'fr' ? 'Lexique Botanik' : lang === 'de' ? 'Botanik-Glossar' : 'Botanik Glossary'}</span>
               </div>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -443,8 +521,14 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                 {isComprendreCorpsOpen && (
                   <div className="space-y-0.5 mt-0.5">
                     {/* 1. Comment lire le modèle Bloom (MODULE GRATUIT) */}
-                    <button
-                      onClick={() => onNavigate('comment-lire-modele-bloom')}
+                    <a
+                      href={VIEW_PATHS['comment-lire-modele-bloom']}
+                      onClick={(e) => {
+                        if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                          e.preventDefault();
+                          onNavigate('comment-lire-modele-bloom');
+                        }
+                      }}
                       className={navItemClass(isActive('comment-lire-modele-bloom'))}
                       title={lang === 'fr' ? 'Comment lire le modèle Bloom (Accès Libre & Gratuit)' : lang === 'de' ? 'Wie man das Bloom-Modell liest (Kostenlos)' : 'How to read the Bloom model (Free)'}
                     >
@@ -457,7 +541,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                       <span className="text-[8px] uppercase px-1 py-0.2 rounded bg-emerald-500/20 text-emerald-400 font-bold shrink-0 border border-emerald-500/30">
                         {lang === 'fr' ? 'Gratuit' : lang === 'de' ? 'Gratis' : 'Free'}
                       </span>
-                    </button>
+                    </a>
 
                     {/* 1b. Le Pouvoir Cyclique & Sacré de la Femme (MODULE GRATUIT) */}
                     <a
@@ -483,8 +567,14 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                     </a>
 
                     {/* 2. Les 4 Architectures (Payant / Abonnement) */}
-                    <button
-                      onClick={() => onNavigate('4-architectures')}
+                    <a
+                      href={VIEW_PATHS['4-architectures']}
+                      onClick={(e) => {
+                        if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                          e.preventDefault();
+                          onNavigate('4-architectures');
+                        }
+                      }}
                       className={navItemClass(isActive('4-architectures'))}
                       title={lang === 'fr' ? 'Les 4 Architectures (Abonnement)' : lang === 'de' ? 'Die 4 Architekturen (Abonnement)' : 'The 4 Architectures (Subscription)'}
                     >
@@ -495,11 +585,17 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                         </span>
                       </div>
                       <Lock className="w-3 h-3 text-[#c9a84c]/80 shrink-0" />
-                    </button>
+                    </a>
 
                     {/* 3. Les 7 Terrains (Payant / Abonnement) */}
-                    <button
-                      onClick={() => onNavigate('terrain')}
+                    <a
+                      href={VIEW_PATHS['7-terrains']}
+                      onClick={(e) => {
+                        if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                          e.preventDefault();
+                          onNavigate('terrain');
+                        }
+                      }}
                       className={navItemClass(isActive('terrain') || isActive('7-terrains'))}
                       title={lang === 'fr' ? 'Les 7 Terrains (Abonnement)' : lang === 'de' ? 'Die 7 Terrains (Abonnement)' : 'The 7 Terrains (Subscription)'}
                     >
@@ -510,7 +606,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                         </span>
                       </div>
                       <Lock className="w-3 h-3 text-[#c9a84c]/80 shrink-0" />
-                    </button>
+                    </a>
 
                     {/* 4. Les 9 Axes historiques (Menu Déroulant) */}
                     <div>
@@ -553,8 +649,14 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                       {isNeufAxesOpen && (
                         <div className="space-y-0.5 mt-0.5 pl-3 border-l-2 border-[#c9a84c]/30 ml-3">
                           {/* Vue d'ensemble */}
-                          <button
-                            onClick={() => onNavigate('9-axes')}
+                          <a
+                            href={VIEW_PATHS['9-axes']}
+                            onClick={(e) => {
+                              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                                e.preventDefault();
+                                onNavigate('9-axes');
+                              }
+                            }}
                             className={navItemClass(isActive('9-axes') || isActive('neuf-axes-historiques'))}
                           >
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
@@ -563,11 +665,17 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                                 {lang === 'fr' ? "Vue d'ensemble (9 axes)" : "9 Axes Overview"}
                               </span>
                             </div>
-                          </button>
+                          </a>
 
                           {/* Module 0 */}
-                          <button
-                            onClick={() => onNavigate('module-0')}
+                          <a
+                            href={VIEW_PATHS['module-0']}
+                            onClick={(e) => {
+                              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                                e.preventDefault();
+                                onNavigate('module-0');
+                              }
+                            }}
                             className={navItemClass(isActive('module-0'))}
                           >
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
@@ -577,14 +685,16 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                               </span>
                             </div>
                             <Lock className="w-2.5 h-2.5 text-[#c9a84c]/80 shrink-0" />
-                          </button>
+                          </a>
 
                           {/* Axe A1 */}
                           <a
                             href="/academie/axes/a1-emonctoires/"
                             onClick={(e) => {
-                              e.preventDefault();
-                              onNavigate('axe-a1');
+                              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                                e.preventDefault();
+                                onNavigate('axe-a1');
+                              }
                             }}
                             className={navItemClass(isActive('axe-a1'))}
                           >
@@ -598,8 +708,14 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                           </a>
 
                           {/* Axe A2 */}
-                          <button
-                            onClick={() => onNavigate('axe-a2')}
+                          <a
+                            href={VIEW_PATHS['axe-a2']}
+                            onClick={(e) => {
+                              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                                e.preventDefault();
+                                onNavigate('axe-a2');
+                              }
+                            }}
                             className={navItemClass(isActive('axe-a2'))}
                           >
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
@@ -609,11 +725,17 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                               </span>
                             </div>
                             <Lock className="w-2.5 h-2.5 text-[#c9a84c]/80 shrink-0" />
-                          </button>
+                          </a>
 
                           {/* Axe A3 */}
-                          <button
-                            onClick={() => onNavigate('axe-a3')}
+                          <a
+                            href={VIEW_PATHS['axe-a3']}
+                            onClick={(e) => {
+                              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                                e.preventDefault();
+                                onNavigate('axe-a3');
+                              }
+                            }}
                             className={navItemClass(isActive('axe-a3'))}
                           >
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
@@ -623,11 +745,17 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                               </span>
                             </div>
                             <Lock className="w-2.5 h-2.5 text-[#c9a84c]/80 shrink-0" />
-                          </button>
+                          </a>
 
                           {/* Axe A4 */}
-                          <button
-                            onClick={() => onNavigate('axe-a4')}
+                          <a
+                            href={VIEW_PATHS['axe-a4']}
+                            onClick={(e) => {
+                              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                                e.preventDefault();
+                                onNavigate('axe-a4');
+                              }
+                            }}
                             className={navItemClass(isActive('axe-a4'))}
                           >
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
@@ -637,11 +765,17 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                               </span>
                             </div>
                             <Lock className="w-2.5 h-2.5 text-[#c9a84c]/80 shrink-0" />
-                          </button>
+                          </a>
 
                           {/* Axe A5 */}
-                          <button
-                            onClick={() => onNavigate('axe-a5')}
+                          <a
+                            href={VIEW_PATHS['axe-a5']}
+                            onClick={(e) => {
+                              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                                e.preventDefault();
+                                onNavigate('axe-a5');
+                              }
+                            }}
                             className={navItemClass(isActive('axe-a5'))}
                           >
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
@@ -651,11 +785,17 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                               </span>
                             </div>
                             <Lock className="w-2.5 h-2.5 text-[#c9a84c]/80 shrink-0" />
-                          </button>
+                          </a>
 
                           {/* Axe A6 */}
-                          <button
-                            onClick={() => onNavigate('axe-a6')}
+                          <a
+                            href={VIEW_PATHS['axe-a6']}
+                            onClick={(e) => {
+                              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                                e.preventDefault();
+                                onNavigate('axe-a6');
+                              }
+                            }}
                             className={navItemClass(isActive('axe-a6'))}
                           >
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
@@ -665,11 +805,17 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                               </span>
                             </div>
                             <Lock className="w-2.5 h-2.5 text-[#c9a84c]/80 shrink-0" />
-                          </button>
+                          </a>
 
                           {/* Axe A7 */}
-                          <button
-                            onClick={() => onNavigate('axe-a7')}
+                          <a
+                            href={VIEW_PATHS['axe-a7']}
+                            onClick={(e) => {
+                              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                                e.preventDefault();
+                                onNavigate('axe-a7');
+                              }
+                            }}
                             className={navItemClass(isActive('axe-a7'))}
                           >
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
@@ -679,11 +825,17 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                               </span>
                             </div>
                             <Lock className="w-2.5 h-2.5 text-[#c9a84c]/80 shrink-0" />
-                          </button>
+                          </a>
 
                           {/* Axe A8 */}
-                          <button
-                            onClick={() => onNavigate('axe-a8')}
+                          <a
+                            href={VIEW_PATHS['axe-a8']}
+                            onClick={(e) => {
+                              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                                e.preventDefault();
+                                onNavigate('axe-a8');
+                              }
+                            }}
                             className={navItemClass(isActive('axe-a8'))}
                           >
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
@@ -693,11 +845,17 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                               </span>
                             </div>
                             <Lock className="w-2.5 h-2.5 text-[#c9a84c]/80 shrink-0" />
-                          </button>
+                          </a>
 
                           {/* Axe A9 */}
-                          <button
-                            onClick={() => onNavigate('axe-a9')}
+                          <a
+                            href={VIEW_PATHS['axe-a9']}
+                            onClick={(e) => {
+                              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                                e.preventDefault();
+                                onNavigate('axe-a9');
+                              }
+                            }}
                             className={navItemClass(isActive('axe-a9'))}
                           >
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
@@ -707,14 +865,20 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                               </span>
                             </div>
                             <Lock className="w-2.5 h-2.5 text-[#c9a84c]/80 shrink-0" />
-                          </button>
+                          </a>
                         </div>
                       )}
                     </div>
 
                     {/* 5. La Charge Allostatique (Payant / Abonnement) */}
-                    <button
-                      onClick={() => onNavigate('charge-allostatique')}
+                    <a
+                      href={VIEW_PATHS['charge-allostatique']}
+                      onClick={(e) => {
+                        if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                          e.preventDefault();
+                          onNavigate('charge-allostatique');
+                        }
+                      }}
                       className={navItemClass(isActive('charge-allostatique'))}
                       title={lang === 'fr' ? 'La Charge Allostatique (Abonnement)' : lang === 'de' ? 'Die Allostatische Last (Abonnement)' : 'The Allostatic Load (Subscription)'}
                     >
@@ -725,11 +889,17 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                         </span>
                       </div>
                       <Lock className="w-3 h-3 text-[#c9a84c]/80 shrink-0" />
-                    </button>
+                    </a>
 
                     {/* 6. Le Reset Homéostasique (Payant / Abonnement) */}
-                    <button
-                      onClick={() => onNavigate('phytotherapie-reset')}
+                    <a
+                      href={VIEW_PATHS['phytotherapie-reset']}
+                      onClick={(e) => {
+                        if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                          e.preventDefault();
+                          onNavigate('phytotherapie-reset');
+                        }
+                      }}
                       className={navItemClass(isActive('phytotherapie-reset') || isActive('reset-homeostasique'))}
                       title={lang === 'fr' ? 'Le Reset Homéostasique (Abonnement)' : lang === 'de' ? 'Der Homöostatische Reset (Abonnement)' : 'The Homeostatic Reset (Subscription)'}
                     >
@@ -740,11 +910,17 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                         </span>
                       </div>
                       <Lock className="w-3 h-3 text-[#c9a84c]/80 shrink-0" />
-                    </button>
+                    </a>
 
                     {/* 7. Protocoles Systémiques (remis après Reset Homeostasique - Payant / Abonnement) */}
-                    <button
-                      onClick={() => onNavigate('protocoles')}
+                    <a
+                      href={VIEW_PATHS['protocoles']}
+                      onClick={(e) => {
+                        if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                          e.preventDefault();
+                          onNavigate('protocoles');
+                        }
+                      }}
                       className={navItemClass(isActive('protocoles'))}
                       title={lang === 'fr' ? 'Protocoles Systémiques (Abonnement)' : lang === 'de' ? 'Systemische Protokolle (Abonnement)' : 'Systemic Protocols (Subscription)'}
                     >
@@ -755,11 +931,17 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                         </span>
                       </div>
                       <Lock className="w-3 h-3 text-[#c9a84c]/80 shrink-0" />
-                    </button>
+                    </a>
 
                     {/* 8. Métabolisme et insuline (placé après Protocoles Systémiques, écrit en jaune doré, Payant) */}
-                    <button
-                      onClick={() => onNavigate('metabolisme-insuline')}
+                    <a
+                      href={VIEW_PATHS['metabolisme-insuline']}
+                      onClick={(e) => {
+                        if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                          e.preventDefault();
+                          onNavigate('metabolisme-insuline');
+                        }
+                      }}
                       className={`${navItemClass(isActive('metabolisme-insuline'))} hover:bg-[#F59E0B]/10`}
                       title={lang === 'fr' ? 'Métabolisme glucidique & insuline (Abonnement)' : lang === 'de' ? 'Stoffwechsel & Insulin (Abonnement)' : 'Metabolism & Insulin (Subscription)'}
                     >
@@ -775,7 +957,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                         </span>
                         <Lock className="w-3 h-3 text-[#F59E0B] shrink-0" />
                       </div>
-                    </button>
+                    </a>
 
                     {/* 9. Autres modules prévus */}
                     <a
