@@ -1954,6 +1954,16 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     datePublished: "2026-11-18T08:00:00+01:00",
     dateModified: "2026-11-18T09:00:00+01:00"
   },
+  "/academie/pouvoir-cyclique-femme/": {
+    title: "Le Pouvoir Cyclique et Sacré de la Femme | Bloom Academy",
+    description: "Dossier en accès libre : manuscrit de Voynich, Trotula, biologie de la fécondation, chute hormonale du post-partum, ménopause et plantes d'extraction BloomLab.",
+    image1200: "/images/og/academie-pouvoir-cyclique-femme.jpg",
+    image1080: "/images/og/academie-pouvoir-cyclique-femme.jpg",
+    alt: "Manuscrit botanique des cycles féminins, alchémille, sauge et safran pour le dossier Bloom Academy",
+    type: "article",
+    datePublished: "2026-11-18T09:30:00+01:00",
+    dateModified: "2026-11-18T09:55:00+01:00"
+  },
   "/droit-de-retractation/": {
     title: "Droit de Rétractation | Formulaire de Retour Bloom",
     description: "Exercice de votre droit légal de rétractation sous 14 jours et formulaire de retour de commande pour vos achats sur bloombybotanik.com.",
@@ -2226,6 +2236,33 @@ function injectServerSEO(html: string, reqPath: string): string {
       updated = updated.replace(
         /<div id=["']root["']>[\s\S]*?<\/div>/i,
         `<div id="root"><h1>Phycocyanine &amp; Reset Homéostasique : Le Bleu qui Réinitialise votre Biologie</h1><p>${route.description}</p></div>`
+      );
+    } else if (normalized === "/academie/pouvoir-cyclique-femme/") {
+      const womenArticleData = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Le Pouvoir Cyclique et Sacré de la Femme",
+        "description": route.description,
+        "image": [full1200],
+        "datePublished": "2026-11-18",
+        "dateModified": "2026-11-18",
+        "isAccessibleForFree": true,
+        "keywords": "manuscrit de Voynich femme, post-partum dépression naturelle, ménopause chute hormonale symptômes, sagesse féminine manuscrits hérétiques, biologie de la fécondation, plantes ménopause",
+        "author": {
+          "@type": "Organization",
+          "name": "Bloom by BotaniK",
+          "url": "https://bloombybotanik.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Bloom by BotaniK",
+          "url": "https://bloombybotanik.com"
+        }
+      };
+      schemaJson = `<script type="application/ld+json">${JSON.stringify(womenArticleData)}</script>`;
+      updated = updated.replace(
+        /<div id=["']root["']>[\s\S]*?<\/div>/i,
+        `<div id="root"><h1>Le Pouvoir Cyclique et Sacré de la Femme</h1><p>${route.description}</p></div>`
       );
     } else if (route.type === "article") {
       const articleData: any = {

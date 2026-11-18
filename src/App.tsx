@@ -98,6 +98,7 @@ import BlogVieillissementMyelineContent from './BlogVieillissementMyelineContent
 import BloomAcademiePage from './BloomAcademiePage';
 import Les4ArchitecturesContent from './Les4ArchitecturesContent';
 import CommentLireModeleBloomContent from './CommentLireModeleBloomContent';
+import WomenAcademy from './WomenAcademy';
 import NeufAxesHistoriquesContent from './NeufAxesHistoriquesContent';
 import ChargeAllostatiqueContent from './ChargeAllostatiqueContent';
 import MetabolismeInsulineContent from './MetabolismeInsulineContent';
@@ -989,7 +990,7 @@ export default function App() {
 
                       {mobileComprendreCorpsOpen && (
                         <div className="space-y-0.5">
-                          {/* 1. Comment lire le modèle Bloom (SEUL MODULE GRATUIT) */}
+                          {/* 1. Comment lire le modèle Bloom (MODULE GRATUIT) */}
                           <button
                             onClick={() => { navigateTo('comment-lire-modele-bloom'); setMobileMenuOpen(false); }}
                             className="flex items-center justify-between w-full px-3 py-1.5 rounded-xl text-white font-medium hover:bg-white/10 text-left text-xs"
@@ -1002,6 +1003,21 @@ export default function App() {
                               {selectedLanguage === 'fr' ? 'Gratuit' : selectedLanguage === 'de' ? 'Gratis' : 'Free'}
                             </span>
                           </button>
+
+                          {/* 1b. Le Pouvoir Cyclique et Sacré de la Femme (MODULE GRATUIT) */}
+                          <a
+                            href="/academie/pouvoir-cyclique-femme/"
+                            onClick={(e) => { e.preventDefault(); navigateTo('women-academy'); setMobileMenuOpen(false); }}
+                            className="flex items-center justify-between w-full px-3 py-1.5 rounded-xl text-white font-medium hover:bg-white/10 text-left text-xs"
+                          >
+                            <span className="flex items-center gap-2">
+                              <span className="text-[#C8AB8A] font-mono text-[11px]">├──</span>
+                              <span className="text-white">{selectedLanguage === 'fr' ? 'Pouvoir Cyclique Femme' : selectedLanguage === 'de' ? 'Zyklische Kraft der Frau' : 'Women Cyclical Power'}</span>
+                            </span>
+                            <span className="text-[8px] uppercase px-1 py-0.2 rounded bg-emerald-500/20 text-emerald-400 font-bold shrink-0 border border-emerald-500/30">
+                              {selectedLanguage === 'fr' ? 'Gratuit' : selectedLanguage === 'de' ? 'Gratis' : 'Free'}
+                            </span>
+                          </a>
 
                           {/* Module 0 : Le Choc de Paradigme */}
                           <button
@@ -1220,6 +1236,11 @@ export default function App() {
           />
         ) : currentView === 'comment-lire-modele-bloom' ? (
           <CommentLireModeleBloomContent
+            onNavigate={navigateTo}
+            lang={selectedLanguage}
+          />
+        ) : currentView === 'women-academy' ? (
+          <WomenAcademy
             onNavigate={navigateTo}
             lang={selectedLanguage}
           />

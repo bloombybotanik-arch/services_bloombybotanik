@@ -442,7 +442,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
 
                 {isComprendreCorpsOpen && (
                   <div className="space-y-0.5 mt-0.5">
-                    {/* 1. Comment lire le modèle Bloom (SEUL MODULE GRATUIT) */}
+                    {/* 1. Comment lire le modèle Bloom (MODULE GRATUIT) */}
                     <button
                       onClick={() => onNavigate('comment-lire-modele-bloom')}
                       className={navItemClass(isActive('comment-lire-modele-bloom'))}
@@ -458,6 +458,29 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                         {lang === 'fr' ? 'Gratuit' : lang === 'de' ? 'Gratis' : 'Free'}
                       </span>
                     </button>
+
+                    {/* 1b. Le Pouvoir Cyclique & Sacré de la Femme (MODULE GRATUIT) */}
+                    <a
+                      href="/academie/pouvoir-cyclique-femme/"
+                      onClick={(e) => {
+                        if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                          e.preventDefault();
+                          onNavigate('women-academy');
+                        }
+                      }}
+                      className={navItemClass(isActive('women-academy'))}
+                      title={lang === 'fr' ? 'Le Pouvoir Cyclique et Sacré de la Femme (Accès Libre)' : lang === 'de' ? 'Die Zyklische Kraft der Frau (Kostenlos)' : 'The Cyclical Power of Women (Free)'}
+                    >
+                      <div className="flex items-center gap-2 pl-2 overflow-hidden text-left">
+                        <span className="text-[#C8AB8A] font-mono text-[11px] shrink-0">├──</span>
+                        <span className="truncate text-[11px]">
+                          {lang === 'fr' ? 'Pouvoir Cyclique Femme' : lang === 'de' ? 'Zyklische Kraft der Frau' : 'Women Cyclical Power'}
+                        </span>
+                      </div>
+                      <span className="text-[8px] uppercase px-1 py-0.2 rounded bg-emerald-500/20 text-emerald-400 font-bold shrink-0 border border-emerald-500/30">
+                        {lang === 'fr' ? 'Gratuit' : lang === 'de' ? 'Gratis' : 'Free'}
+                      </span>
+                    </a>
 
                     {/* 2. Les 4 Architectures (Payant / Abonnement) */}
                     <button

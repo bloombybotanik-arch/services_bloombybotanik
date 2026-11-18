@@ -148,6 +148,11 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
     description: "Découvrez la méthodologie Bloom by BotaniK : comment lire les 4 architectures, les 7 terrains et les 9 axes pour soutenir l'homéostasie.",
     path: "/academie/comprendre-le-modele-bloom/"
   },
+  'women-academy': {
+    title: "Le Pouvoir Cyclique et Sacré de la Femme | Bloom Academy",
+    description: "Dossier en accès libre : manuscrit de Voynich, Trotula, biologie de la fécondation, chute hormonale du post-partum, ménopause et plantes d'extraction BloomLab.",
+    path: "/academie/pouvoir-cyclique-femme/"
+  },
   '4-architectures': {
     title: "Les 4 Architectures du Vivant | Académie Bloom",
     description: "Comprendre les 4 architectures fonctionnelles du corps humain et leur équilibre dynamique au sein de l'Académie Bloom by BotaniK.",
@@ -500,6 +505,28 @@ export function updateDocumentSEO(config?: any, _lang?: any, productId?: string,
         applySEOMetadata(
           'Phycocyanin & Homöostatischer Reset | BloomLab 40°C Extraktion',
           'Extrahieren Sie Spirulina-Phycocyanin bei 40°C mit der BloomLab zur Unterstützung der Mitochondrien in Phase 2 & 3 des Homöostatischen Resets.',
+          canonical,
+          false
+        );
+        return;
+      }
+    }
+
+    if (config === 'women-academy') {
+      const canonical = 'https://bloombybotanik.com/academie/pouvoir-cyclique-femme/';
+      if (_lang === 'en') {
+        applySEOMetadata(
+          'The Cyclical and Sacred Power of Women | Bloom Academy',
+          'Open-access Bloom Academy dossier: Voynich manuscript, Trotula, fertilization biology, postpartum hormonal drop, menopause neurobiology & BloomLab botanical extracts.',
+          canonical,
+          false
+        );
+        return;
+      }
+      if (_lang === 'de') {
+        applySEOMetadata(
+          'Die Zyklische und Heilige Kraft der Frau | Bloom Academy',
+          'Freies Bloom Academy Dossier: Voynich-Manuskript, Trotula, Befruchtungsbiologie, postpartaler Hormonabfall, Menopause und präzise BloomLab-Pflanzenextrakte.',
           canonical,
           false
         );

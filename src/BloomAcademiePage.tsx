@@ -394,6 +394,15 @@ export default function BloomAcademiePage({ onNavigate, lang }: BloomAcademiePag
                   {lang === 'fr' ? "Accès Libre & Gratuit" : lang === 'de' ? 'Kostenlos & Frei' : 'Free & Open Access'}
                 </span>
               </div>
+              <div className="flex items-center gap-2 hover:text-[#C8AB8A] transition-colors cursor-pointer" onClick={() => onNavigate('women-academy')}>
+                <span className="text-[#C8AB8A] font-black">├──</span>
+                <span className="font-bold text-[#3E4A3D]">
+                  {lang === 'fr' ? 'Le Pouvoir Cyclique et Sacré de la Femme' : lang === 'de' ? 'Die Zyklische Kraft der Frau' : 'The Cyclical Power of Women'}
+                </span>
+                <span className="text-[10px] text-[#3E4A3D] bg-[#FAF7F2] border border-[#C8AB8A] px-2 py-0.5 rounded-full font-bold">
+                  {lang === 'fr' ? 'Accès Libre & Nouveau' : lang === 'de' ? 'Kostenlos & Neu' : 'Open Access & New'}
+                </span>
+              </div>
               <div className="flex items-center gap-2 hover:text-[#C8AB8A] transition-colors cursor-pointer" onClick={() => handleRestrictedClick('4-architectures')}>
                 <span className="text-slate-400">├──</span>
                 <span className="font-bold text-[#3E4A3D]">
@@ -543,6 +552,40 @@ export default function BloomAcademiePage({ onNavigate, lang }: BloomAcademiePag
               </div>
               <span className="text-xs font-bold text-[#C8AB8A] group-hover:text-[#3E4A3D] flex items-center gap-1 pt-3 border-t border-[#E7DFD3] transition-colors">
                 Consulter le guide &rarr;
+              </span>
+            </div>
+
+            {/* 1b. Le Pouvoir Cyclique et Sacré de la Femme (Accès Libre) */}
+            <div
+              onClick={() => onNavigate('women-academy')}
+              className="bg-white rounded-3xl border-2 border-[#C8AB8A] hover:border-[#3E4A3D] p-6 sm:p-7 cursor-pointer transition-all duration-300 hover:-translate-y-1 shadow-xs hover:shadow-md group relative overflow-hidden flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-10 h-10 rounded-2xl bg-[#FAF7F2] border border-[#E7DFD3] text-[#3E4A3D] group-hover:text-[#C8AB8A] flex items-center justify-center group-hover:scale-105 transition-all">
+                    <BookOpen className="w-5 h-5 text-[#9E6B64]" />
+                  </div>
+                  <span className="text-[10px] uppercase font-bold text-[#0F261E] bg-[#C8AB8A]/35 px-2.5 py-1 rounded-full border border-[#C8AB8A] tracking-wider font-mono">
+                    {lang === 'fr' ? 'Accès Libre' : lang === 'de' ? 'Freier Zugang' : 'Open Access'}
+                  </span>
+                </div>
+                <h3 className="font-black text-lg text-[#3E4A3D] group-hover:text-[#C8AB8A] transition-colors mb-2">
+                  {lang === 'fr'
+                    ? 'Le Pouvoir Cyclique et Sacré de la Femme'
+                    : lang === 'de'
+                    ? 'Die Zyklische Kraft der Frau'
+                    : 'The Cyclical Power of Women'}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                  {lang === 'fr'
+                    ? 'Manuscrit de Voynich, Trotula, biologie de la fécondation, chute hormonale du post-partum, ménopause et protocoles d’extraction BloomLab.'
+                    : lang === 'de'
+                    ? 'Voynich-Manuskript, Trotula, Empfängnisbiologie, Wochenbett, Menopause und präzise Pflanzenextrakte.'
+                    : 'Voynich manuscript, Trotula, fertilization biology, postpartum hormonal cliff, menopause, and BloomLab herbal extracts.'}
+                </p>
+              </div>
+              <span className="text-xs font-bold text-[#C8AB8A] group-hover:text-[#3E4A3D] flex items-center gap-1 pt-3 border-t border-[#E7DFD3] transition-colors">
+                {lang === 'fr' ? 'Lire le dossier complet →' : lang === 'de' ? 'Dossier lesen →' : 'Read full dossier →'}
               </span>
             </div>
 

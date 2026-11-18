@@ -47,6 +47,7 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
     reset: lang === 'fr' ? 'Reset' : lang === 'de' ? 'Reset' : 'Reset',
     protocoles: lang === 'fr' ? 'Protocoles' : lang === 'de' ? 'Protokolle' : 'Protocols',
     meta: lang === 'fr' ? 'Métabolisme & Insuline' : lang === 'de' ? 'Stoffwechsel & Insulin' : 'Metabolism & Insulin',
+    women: lang === 'fr' ? 'Cycles Féminins' : lang === 'de' ? 'Weibliche Zyklen' : 'Women Cycles',
     herbier: lang === 'fr' ? 'Herbier' : lang === 'de' ? 'Herbarium' : 'Herbarium',
     bloomlab: lang === 'fr' ? 'Découvrir BloomLab®' : lang === 'de' ? 'BloomLab® entdecken' : 'Discover BloomLab®',
     back: lang === 'fr' ? '← Retour à l\'accueil' : lang === 'de' ? '← Zurück zur Startseite' : '← Back to home'
@@ -119,6 +120,16 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
             }`}
           >
             {texts.guide}
+          </button>
+          <button
+            onClick={() => onNavigate('women-academy')}
+            className={`px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer font-medium ${
+              currentView === 'women-academy'
+                ? 'bg-white/10 text-[#c9a84c] font-bold'
+                : 'text-white/80 hover:text-[#F5F0E6] hover:bg-white/10'
+            }`}
+          >
+            {texts.women}
           </button>
           <button
             onClick={() => onNavigate('4-architectures')}
@@ -263,6 +274,26 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
                 <span>{texts.guide}</span>
               </span>
               <span className="text-[9px] uppercase px-1.5 py-0.5 rounded bg-[#c9a84c]/20 text-[#c9a84c]">Guide</span>
+            </button>
+
+            <button
+              onClick={() => {
+                onNavigate('women-academy');
+                setMobileMenuOpen(false);
+              }}
+              className={`w-full text-left px-3 py-2 rounded-lg text-xs font-semibold flex items-center justify-between ${
+                currentView === 'women-academy'
+                  ? 'bg-[#c9a84c]/20 text-[#c9a84c]'
+                  : 'text-white/80 hover:bg-white/5'
+              }`}
+            >
+              <span className="flex items-center gap-2">
+                <Sparkles className="w-3.5 h-3.5 text-[#C8AB8A]" />
+                <span>{texts.women}</span>
+              </span>
+              <span className="text-[9px] uppercase px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300">
+                {lang === 'fr' ? 'Gratuit' : lang === 'de' ? 'Gratis' : 'Free'}
+              </span>
             </button>
 
             <button
