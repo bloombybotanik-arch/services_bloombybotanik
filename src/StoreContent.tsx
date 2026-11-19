@@ -35,7 +35,7 @@ import { translations, Language } from './translations';
 export const getProducts = (lang: Language) => {
   const t = translations[lang].store.products;
   
-  const bloomLabPrice = 239.00;
+  const bloomLabPrice = 229.00;
   const bloomLabOriginal = 289.00;
 
   const seoTags = (translations[lang].seo.keywords || "").split(', ').slice(3, 8); // Take 5 keywords from the list

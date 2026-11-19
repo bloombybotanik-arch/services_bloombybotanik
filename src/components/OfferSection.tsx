@@ -96,12 +96,12 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
               </p>
 
               <div className={styles.pricingBlock}>
-                <span className={styles.currentPrice}>239€</span>
+                <span className={styles.currentPrice}>229€</span>
                 <span className={styles.originalPrice}>289€</span>
-                <span className={styles.discountBadge}>-50€</span>
+                <span className={styles.discountBadge}>-60€</span>
               </div>
               <div className={styles.installment}>
-                {isFR ? "ou 3x 79,66€ sans frais" : isDE ? "oder 3x 79,66€ zinsfrei" : "or 3x 79.66€ fee-free"}
+                {isFR ? "ou 3x 76,33€ sans frais" : isDE ? "oder 3x 76,33€ zinsfrei" : "or 3x 76.33€ fee-free"}
               </div>
 
               <ul className={styles.featureList}>
@@ -134,14 +134,14 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
                 onClick={() => onSelectOffer({
                   id: 'bloomlab-solo',
                   name: isFR ? "BloomLab® Solo — Édition 2026" : "BloomLab® Solo — 2026 Edition",
-                  price: 239,
+                  price: 229,
                   originalPrice: 289
                 })}
                 className={`${styles.orderButton} ${styles.orderButtonDefault}`}
-                aria-label="Commander BloomLab Solo à 239€"
+                aria-label="Commander BloomLab Solo à 229€"
               >
                 <ShoppingBag className="w-5 h-5" />
-                <span>{isFR ? "Je commande ma BloomLab — 239€" : "Order BloomLab Solo — 239€"}</span>
+                <span>{isFR ? "Je commande ma BloomLab — 229€" : "Order BloomLab Solo — 229€"}</span>
               </button>
               <p className={styles.microCopy}>{microCopyText}</p>
             </div>

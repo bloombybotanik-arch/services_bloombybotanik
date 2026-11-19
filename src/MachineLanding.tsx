@@ -50,7 +50,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
     trackViewItem({
       id: 'bloomlab',
       name: 'BloomLab® — Extracteur Botanique de Précision',
-      price: 239.00,
+      price: 229.00,
       category: 'hardware'
     });
   }, []);
@@ -766,9 +766,9 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                   <AmazonRatingBadge lang={lang} />
                 </div>
                 <div className="flex items-baseline gap-2 mb-6">
-                  <span className="text-4xl font-black text-[#3E4A3D]">239€</span>
+                  <span className="text-4xl font-black text-[#3E4A3D]">229€</span>
                   <span className="text-sm line-through text-[#3E4A3D]/40 font-medium">289€</span>
-                  <span className="text-xs bg-[#C8AB8A]/15 text-[#C8AB8A] font-bold px-2.5 py-1 rounded-full">-50€</span>
+                  <span className="text-xs bg-[#C8AB8A]/15 text-[#C8AB8A] font-bold px-2.5 py-1 rounded-full">-60€</span>
                 </div>
                 <ul className="space-y-3 text-xs text-[#3E4A3D]/80 mb-8">
                   <li className="flex items-start gap-2.5">
@@ -793,7 +793,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 onClick={() => onNavigate('product-detail', 'bloomlab')}
                 className="w-full py-4 bg-[#3E4A3D] hover:bg-[#2D372C] text-white rounded-xl font-bold transition-all text-sm cursor-pointer shadow-md"
               >
-                Commander BloomLab Solo (239€)
+                Commander BloomLab Solo (229€)
               </button>
             </div>
 

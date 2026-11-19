@@ -1127,7 +1127,7 @@ export default function ProtocolePsoriasisContent({
             }}
             className="px-8 py-4 rounded-2xl bg-[#c9a84c] hover:bg-[#dfbf63] text-[#0d1117] font-black text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-xl cursor-pointer inline-flex items-center gap-2"
           >
-            <span>Découvrir la BloomLab® — 239 €</span>
+            <span>Découvrir la BloomLab® — 229 €</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </section>

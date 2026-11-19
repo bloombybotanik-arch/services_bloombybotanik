@@ -1048,7 +1048,7 @@ export default function ProtocoleMyelineContent({
                   }}
                   className="px-8 py-4 rounded-2xl bg-[#3E4A3D] hover:bg-[#2D372C] text-white font-black text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-xl cursor-pointer inline-flex items-center gap-2"
                 >
-                  <span>Découvrir la BloomLab® — 239 €</span>
+                  <span>Découvrir la BloomLab® — 229 €</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </section>

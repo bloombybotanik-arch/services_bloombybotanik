@@ -418,7 +418,7 @@ Tu dois impérativement répondre au format JSON :
  * PRIX & LIVRAISON
  * -------------------------------------------------------------------------- */
 const PRODUCT_PRICES: Record<string, number> = {
-  "bloomlab": 239.00,
+  "bloomlab": 229.00,
   "bundle-apothicaire": 59.00,
   "pack-signature": 289.00,
   "kit-starter": 12.90,
@@ -1320,7 +1320,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     image1080: "/images/og/produit-bloomlab-1080x1080.jpg",
     alt: "Extracteur et infuseur botanique BloomLab® Bloom by BotaniK en acier inoxydable 304",
     type: "product",
-    price: "239.00",
+    price: "229.00",
     sku: "BLOOMLAB-V2"
   },
   "/infuseur-botanique/": {
@@ -1658,7 +1658,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     image1080: "/images/og/produit-bloomlab-1080x1080.jpg",
     alt: "Extracteur et infuseur botanique de précision BloomLab® Bloom by BotaniK",
     type: "product",
-    price: "239.00",
+    price: "229.00",
     sku: "BLOOMLAB-V2"
   },
   "/boutique/bloomlab/": {
@@ -1668,7 +1668,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     image1080: "/images/og/produit-bloomlab-1080x1080.jpg",
     alt: "Acheter l'extracteur BloomLab® dans la boutique officielle Bloom by BotaniK",
     type: "product",
-    price: "239.00",
+    price: "229.00",
     sku: "BLOOMLAB-V2"
   },
   "/boutique/bundle-apothicaire/": {

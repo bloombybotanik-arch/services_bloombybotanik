@@ -61,10 +61,10 @@ export const StickyCTA: React.FC<StickyCTAProps> = ({
 
   const text = {
     desktopTitle: "BloomLab® v2",
-    desktopPrice: isFR ? "Dès 239€ • En stock 24/48h" : isDE ? "Ab 239€ • Auf Lager 24/48h" : "From 239€ • In Stock 24/48h",
+    desktopPrice: isFR ? "Dès 229€ • En stock 24/48h" : isDE ? "Ab 229€ • Auf Lager 24/48h" : "From 229€ • In Stock 24/48h",
     cta: isFR ? "Acheter" : isDE ? "Kaufen" : "Order Now",
     mobileTitle: "BloomLab®",
-    mobileStarting: isFR ? "Dès 239€" : "From 239€",
+    mobileStarting: isFR ? "Dès 229€" : "From 229€",
     stock: isFR ? "• Expédition 24/48h" : "• 24/48h Shipping"
   };
 

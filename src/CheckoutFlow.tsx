@@ -115,8 +115,8 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
   if (isPromoApplied) {
     adjustedTotal = cart.reduce((sum, item) => {
       let p = item.price;
-      if (isPromoApplied && (item.id === 'bloomlab' || item.id === 'pack-signature' || item.name.includes('BloomLab')) && p > 239) {
-        p = 239;
+      if (isPromoApplied && (item.id === 'bloomlab' || item.id === 'pack-signature' || item.name.includes('BloomLab')) && p > 229) {
+        p = 229;
       }
       return sum + (p * item.quantity);
     }, 0);
@@ -408,7 +408,7 @@ function CheckoutFlowContent({ cart, total, shippingMethod, user, onSuccess, onC
             <div className="space-y-6 mb-8">
               {cart.map((item) => {
                 let displayPrice = item.price;
-                if (isPromoApplied && (item.id === 'bloomlab' || item.id === 'pack-signature' || item.name.includes('BloomLab')) && displayPrice > 239) displayPrice = 239;
+                if (isPromoApplied && (item.id === 'bloomlab' || item.id === 'pack-signature' || item.name.includes('BloomLab')) && displayPrice > 229) displayPrice = 229;
                 return (
                   <div key={item.id} className="flex gap-4">
                     <div className="w-16 h-16 rounded-xl overflow-hidden bg-white flex-shrink-0">

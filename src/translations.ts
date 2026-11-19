@@ -284,7 +284,7 @@ export const translations = {
         title: "Choisissez votre configuration.",
         solo: {
           title: "BloomLab Solo",
-          price: "239 €",
+          price: "229 €",
           tag: "Offre rentrée",
           desc: "Machine BloomLab v2 + Guide digital 100 recettes",
           cta: "Ajouter au panier"
@@ -1927,7 +1927,7 @@ export const translations = {
         title: "Choose your configuration.",
         solo: {
           title: "BloomLab Solo",
-          price: "239 €",
+          price: "229 €",
           tag: "Back-to-school offer",
           desc: "BloomLab v2 machine + Digital guide 100 recipes",
           cta: "Add to cart"
@@ -3452,7 +3452,7 @@ export const translations = {
         title: "Wählen Sie Ihre Konfiguration.",
         solo: {
           title: "BloomLab Solo",
-          price: "239 €",
+          price: "229 €",
           tag: "Herbstangebot",
           desc: "BloomLab v2 Maschine + Digitaler Leitfaden 100 Rezepte",
           cta: "In den Warenkorb"

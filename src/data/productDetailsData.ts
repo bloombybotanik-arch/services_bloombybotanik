@@ -52,7 +52,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
 
   const sheets: Record<string, any> = {
     'bloomlab': (() => {
-      const bloomLabPrice = 239.00;
+      const bloomLabPrice = 229.00;
       
       return {
         name: "BloomLab®",

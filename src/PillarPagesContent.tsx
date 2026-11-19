@@ -373,7 +373,7 @@ function PillarGuideExtraction({ onNavigate, isFR }: { onNavigate: (v: View, p?:
               onClick={() => onNavigate('bloomlab')} 
               className="px-6 py-3.5 rounded-xl bg-[#3E4A3D] hover:bg-[#2D372C] text-white font-bold text-xs uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2"
             >
-              Découvrir la machine BloomLab® (239€) &rarr;
+              Découvrir la machine BloomLab® (229€) &rarr;
             </button>
             <button 
               onClick={() => onNavigate('boutique-kits')} 

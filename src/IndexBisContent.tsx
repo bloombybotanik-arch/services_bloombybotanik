@@ -1359,7 +1359,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 </div>
 
                 <div className="flex flex-wrap items-baseline gap-3">
-                  <div className="text-4xl font-black text-[#1E2E25]">239€</div>
+                  <div className="text-4xl font-black text-[#1E2E25]">229€</div>
                   <div className="text-xl text-slate-400 line-through">289€</div>
                   <span className="text-xs font-bold uppercase tracking-wider bg-[#F5E6D8] text-[#B45309] border border-[#E8772E]/30 px-2.5 py-0.5 rounded-full">
                     code: Black Friday 2026
@@ -1405,10 +1405,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               </div>
 
               <button 
-                onClick={() => selectPackage('solo', 239)} 
+                onClick={() => selectPackage('solo', 229)} 
                 className="w-full py-5 rounded-full bg-[#1E2E25] text-white font-black text-lg hover:bg-[#2D372C] transition-colors cursor-pointer"
               >
-                {isFR ? "Ajouter au panier — 239€" : "Add to Cart — 239€"}
+                {isFR ? "Ajouter au panier — 229€" : "Add to Cart — 229€"}
               </button>
             </div>
 
@@ -1709,7 +1709,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 </div>
                 <div>
                   <div className="text-sm sm:text-base font-black tracking-tight flex items-center gap-2">
-                    <span>BloomLab® — 239€</span>
+                    <span>BloomLab® — 229€</span>
                     <span className="text-[10px] uppercase font-bold bg-[#E8772E] text-white px-2 py-0.5 rounded-full hidden sm:inline-block">
                       Black Friday 2026
                     </span>

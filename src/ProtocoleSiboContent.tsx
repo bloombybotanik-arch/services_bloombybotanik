@@ -1158,7 +1158,7 @@ export default function ProtocoleSiboContent({
                 }}
                 className="px-8 py-4 rounded-2xl bg-[#3E4A3D] hover:bg-[#2D372C] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg flex items-center gap-2 cursor-pointer"
               >
-                <span>Découvrir la BloomLab® — 239 €</span>
+                <span>Découvrir la BloomLab® — 229 €</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
