@@ -199,7 +199,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
                 <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight tracking-tight drop-shadow-md">
                   {lang === 'fr' ? (
-                    <>BloomLab® — Extracteur Botanique de Précision | Bloom by BotaniK</>
+                    <>La BloomLab®, extracteur botanique de précision pour vos soins maison</>
                   ) : lang === 'de' ? (
                     <>BloomLab® — Botanischer Präzisionsextraktor | Bloom by BotaniK</>
                   ) : (

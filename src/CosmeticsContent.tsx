@@ -83,9 +83,9 @@ export default function CosmeticsContent({
     <div className="w-full min-h-screen bg-[#FAF7F2] pb-20">
       {/* En-tête contextuel PageIntroHeader harmonisé Vert Forêt */}
       <PageIntroHeader
-        breadcrumb="Accueil / Votre Pratique / Cosmétique Botanique"
+        breadcrumb="Accueil / Votre Pratique / Cosmétique Maison"
         badge="VOTRE PRATIQUE • SOINS TOPIQUES"
-        title="La Cosmétique Botanique Vivante"
+        title={lang === 'fr' ? "Créez votre cosmétique maison à base de plantes" : lang === 'de' ? "Die lebendige botanische Kosmetik" : "Living Botanical Cosmetics"}
         subtitle="Nourrir la peau et la barrière cutanée par le Totum médicinal"
         context="Vous êtes dans l'espace formulatoire cosmétique de Bloom by BotaniK. Apprenez à réaliser des baumes, sérums huileux, huiles précieuses et soins d'argiles pures sans perturbateurs endocriniens ni conservateurs chimiques de synthèse."
       />
@@ -99,7 +99,7 @@ export default function CosmeticsContent({
           <span>•</span>
           <span>{t.header.badge_alt}</span>
         </div>
-        <h1 className="leading-[1.1] tracking-tight mb-8 font-black" style={{ color: '#3E4A3D' }}>
+        <h2 className="leading-[1.1] tracking-tight mb-8 font-black" style={{ color: '#3E4A3D' }}>
           <span className="block text-3xl md:text-6xl font-black mb-2" style={{ color: '#3E4A3D' }}>
             {lang === 'fr' 
               ? "Cosmétique Botanique — Macérats Huileux & Sérums Précieux" 
@@ -110,7 +110,7 @@ export default function CosmeticsContent({
           <span className="block text-2xl md:text-4xl font-medium" style={{ color: '#4A5D53' }}>
             {wrapTitle(t.header.subtitle)}
           </span>
-        </h1>
+        </h2>
         <div className="leading-relaxed text-lg w-full space-y-4" style={{ color: '#2D3E35' }}>
           {t.header.description.split('\n\n').map((paragraph, idx) => (
             <p key={idx} className="leading-relaxed text-lg" style={{ color: '#2D3E35' }}>{paragraph}</p>

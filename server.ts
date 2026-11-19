@@ -1289,6 +1289,7 @@ async function setupVite(app: express.Express) {
  * -------------------------------------------------------------------------- */
 interface ServerSEORoute {
   title: string;
+  h1?: string;
   description: string;
   image1200: string;
   image1080: string;
@@ -1303,16 +1304,18 @@ interface ServerSEORoute {
 
 const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
   "/": {
-    title: "Bloom by BotaniK | Extracteur Botanique de Précision & Infusion Végétale Maîtrisée",
-    description: "Bloom by BotaniK conçoit BloomLab®, l'extracteur et infuseur botanique de précision. Vortex cinétique et thermorégulation ±0,5°C pour extraire le Totum actif.",
+    title: "Bloom by BotaniK | Autonomie Botanique & Extraction Précise",
+    h1: "Bloom by BotaniK - L'Extracteur Botanique qui Préserve le Totum Végétal",
+    description: "Bloom by BotaniK conçoit la BloomLab®, extracteur de précision pour fabriquer vos soins naturels maison dans le respect du totum végétal.",
     image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
     image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
     alt: "BloomLab® — extracteur et infuseur botanique de précision Bloom by BotaniK en situation",
     type: "website"
   },
   "/bloomlab/": {
-    title: "BloomLab® Extracteur Botanique de Précision | Bloom by BotaniK",
-    description: "La BloomLab® de Bloom by BotaniK est l'extracteur de plantes qui préserve le Totum végétal : thermorégulation ±0,5°C et vortex cinétique.",
+    title: "BloomLab® | Extracteur Botanique de Précision pour Soins Maison",
+    h1: "La BloomLab®, extracteur botanique de précision pour vos soins maison",
+    description: "Réglez temps (30 min–12 h) et température (0–121 °C) pour extraire le totum végétal de vos plantes. Fabrication de soins cosmétiques et botaniques maison.",
     image1200: "/images/og/produit-bloomlab-1200x630.jpg",
     image1080: "/images/og/produit-bloomlab-1080x1080.jpg",
     alt: "Extracteur et infuseur botanique BloomLab® Bloom by BotaniK en acier inoxydable 304",
@@ -1361,8 +1364,9 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     type: "article"
   },
   "/academie/": {
-    title: "Académie Bloom | Comprendre le Terrain & la Physiologie",
-    description: "Explorez l'Académie Bloom : architectures du vivant, terrains biologiques, axe neuro-endocrinien et méthodologie d'accordage saisonnier.",
+    title: "Académie Bloom — Méthode A/B, Totum & Protocoles",
+    h1: "La méthode Bloom : comprendre le vivant, maîtriser l'extraction",
+    description: "Guides pédagogiques sur le totum végétal, la méthode A/B et les protocoles botaniques. Contenu éducatif, sans promesse thérapeutique.",
     image1200: "/images/og/phytotherapie-reset-homeostasie-terrain-1200x630.jpg",
     image1080: "/images/og/phytotherapie-reset-homeostasie-terrain-1080x1080.jpg",
     alt: "Académie Bloom : physiologie du terrain et phytothérapie systémique",
@@ -1534,8 +1538,9 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     type: "article"
   },
   "/cosmetique-botanique/": {
-    title: "Cosmétique Botanique Maison | Macérats Huileux & Baumes",
-    description: "Créez vos soins botaniques sur mesure : macérats huileux stables à 45°C, baumes concentrés et sérums actifs sans conservateurs agressifs.",
+    title: "Cosmétique Maison au Botanique | Recettes & Protocoles",
+    h1: "Créez votre cosmétique maison à base de plantes",
+    description: "Sérums, huiles et soins capillaires à base de romarin, gingembre et fenugrec, préparés avec votre BloomLab®.",
     image1200: "/images/og/cosmetique-botanique-macerat-huileux-1200x630.jpg",
     image1080: "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     alt: "Cosmétique botanique maison, huiles de soin et macérats de précision",
@@ -1558,7 +1563,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     type: "website"
   },
   "/boutique/": {
-    title: "Boutique Bloom by BotaniK | BloomLab® & Plantes Bio",
+    title: "Kits Plantes & Soins Botaniques Maison | Bloom by BotaniK",
     description: "Boutique officielle Bloom by BotaniK : commandez l'extracteur BloomLab®, nos formules de plantes médicinales bio, filtres et accessoires maison.",
     image1200: "/images/og/boutique-bloomlab-kits-plantes-1200x630.jpg",
     image1080: "/images/og/boutique-bloomlab-kits-plantes-1080x1080.jpg",
@@ -1566,8 +1571,9 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     type: "website"
   },
   "/boutique/kits/": {
-    title: "Kits Plantes Médicinales Bio | Bloom by BotaniK",
-    description: "Kits de plantes bio Bloom by BotaniK sélectionnés pour le sommeil, la digestion ou l'immunité. Prêts à être extraits avec l'appareil BloomLab®.",
+    title: "Kits & Soins Botaniques Maison | Bloom by BotaniK",
+    h1: "Composez vos soins botaniques maison",
+    description: "Kits d'ingrédients et protocoles pour préparer vos sérums, infusions et soins à la BloomLab®. Traçabilité et qualité botanique.",
     image1200: "/images/og/boutique-bloomlab-kits-plantes-1200x630.jpg",
     image1080: "/images/og/boutique-bloomlab-kits-plantes-1080x1080.jpg",
     alt: "Kits de plantes médicinales et synergies botaniques Bloom by BotaniK",
@@ -1853,8 +1859,9 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     type: "website"
   },
   "/cosmetiques-naturels-diy/": {
-    title: "Cosmétique Botanique & Macérats Huileux | Bloom",
-    description: "Créez des soins d'exception avec la précision BloomLab. Macérats huileux, sérums et baumes enrichis en principes actifs préservés.",
+    title: "Cosmétique Maison au Botanique | Recettes & Protocoles",
+    h1: "Créez votre cosmétique maison à base de plantes",
+    description: "Sérums, huiles et soins capillaires à base de romarin, gingembre et fenugrec, préparés avec votre BloomLab®.",
     image1200: "/images/og/cosmetique-botanique-macerat-huileux-1200x630.jpg",
     image1080: "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     alt: "Cosmétiques naturels faits maison et macérats botaniques",
@@ -2574,7 +2581,7 @@ function injectServerSEO(html: string, reqPath: string): string {
           </nav>
         </header>
         <main>
-          <h1 style="font-size:28px;font-weight:800;line-height:1.25;margin-bottom:12px;">${escapeHtml(route.title)}</h1>
+          <h1 style="font-size:28px;font-weight:800;line-height:1.25;margin-bottom:12px;">${escapeHtml(route.h1 || route.title)}</h1>
           <p style="font-size:16px;line-height:1.6;margin-bottom:16px;">${escapeHtml(route.description)}</p>
           ${productSnippet}
           <p style="font-size:14px;color:#3E4A3D;">Bloom by BotaniK conçoit l&apos;extracteur et infuseur botanique de précision BloomLab® (inox 304, thermorégulation ±0,5°C, vortex cinétique) ainsi que des protocoles pédagogiques d&apos;extraction végétale et de phytothérapie systémique pour préserver le Totum des plantes.</p>

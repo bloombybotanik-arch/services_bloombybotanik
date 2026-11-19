@@ -234,7 +234,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               {/* Le SEUL H1 de la page d'accueil */}
               <h1 className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-[#FAF7F2] text-white !text-white leading-[1.2] tracking-tight drop-shadow-md">
                 {isFR 
-                  ? "Bloom by BotaniK | BloomLab®, Extracteur Botanique de Précision & Infusion Végétale Maîtrisée" 
+                  ? "Bloom by BotaniK - L'Extracteur Botanique qui Préserve le Totum Végétal" 
                   : isDE 
                   ? "Bloom by BotaniK | BloomLab®, Botanischer Präzisionsextraktor & Meisterhafter Pflanzenaufguss"
                   : "Bloom by BotaniK | BloomLab® Precision Botanical Extractor & Mastered Herbal Infusion"}
@@ -255,7 +255,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               {/* Sous-titre Plain-language (nouveau, une ligne) */}
               <p className="text-base sm:text-lg md:text-xl text-[#1E2E25]/90 font-medium leading-relaxed">
                 {isFR 
-                  ? "Le Totum végétal : toute la plante et tous ses actifs qui travaillent ensemble — pas une molécule isolée." 
+                  ? "Fabriquez vos soins maison avec la précision d'un laboratoire — température, temps et solvant maîtrisés pour chaque plante. Le totum végétal intact, pas une molécule isolée." 
                   : isDE 
                   ? "Das pflanzliche Totum: die ganze Pflanze und all ihre Wirkstoffe im Verbund – kein isoliertes Molekül." 
                   : "The whole plant Totum: the entire plant and all its actives working in synergy — never an isolated molecule."}
@@ -308,7 +308,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 onClick={() => onNavigate('chat', 'start')}
                 className="px-8 py-4 bg-[#E8772E] hover:bg-[#D4651F] active:bg-[#D4651F] text-white rounded-2xl font-bold text-sm sm:text-base flex items-center gap-3 transition-all shadow-lg shadow-orange-900/20 cursor-pointer"
               >
-                <span>{isFR ? "Je commence" : isDE ? "Ich starte" : "Start Here"}</span>
+                <span>{isFR ? "Commencer mon 1er protocole" : isDE ? "Ich starte" : "Start Here"}</span>
                 <Sparkles className="w-4 h-4 text-white/90" />
               </button>
               <button
@@ -391,7 +391,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1E2E25] tracking-tight">
               {isFR 
-                ? "Remèdes Naturels de Précision à Domicile : Connaissez-vous vos plantes médicinales ?" 
+                ? "Soins Botaniques de Précision à Domicile : Connaissez-vous vos plantes ?" 
                 : isDE 
                 ? "Präzise natürliche Hausmittel: Kennen Sie Ihre Heilpflanzen wirklich?" 
                 : "Precision Natural Home Remedies: Do you truly know your medicinal plants?"}
@@ -754,8 +754,8 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
           {/* Sélecteur d'Univers Interactif */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { id: 'culinaire', label: isFR ? "1. Atelier Culinaire" : "1. Culinary Workshop", icon: ChefHat, desc: isFR ? "Huiles parfumées, beurres infusés, nectars" : "Infused oils, compound butters, botanical vinegars" },
-              { id: 'cosmetique', label: isFR ? "2. Cosmétique Botanique" : "2. Botanical Cosmetics", icon: Droplets, desc: isFR ? "Sérums précieux, macérats ciblés, baumes purs" : "Precious face serums, targeted macerates, pure balms" },
+              { id: 'culinaire', label: isFR ? "1. Cuisine Botanique" : "1. Culinary Workshop", icon: ChefHat, desc: isFR ? "Huiles parfumées, beurres infusés, nectars" : "Infused oils, compound butters, botanical vinegars" },
+              { id: 'cosmetique', label: isFR ? "2. Cosmétique Maison" : "2. Botanical Cosmetics", icon: Droplets, desc: isFR ? "Sérums précieux, macérats ciblés, baumes purs" : "Precious face serums, targeted macerates, pure balms" },
               { id: 'phytotherapie', label: isFR ? "3. Protocoles Systémiques" : "3. Systemic Protocols", icon: Activity, desc: isFR ? "Teintures végétales, extraits concentrés de résines" : "Botanical tinctures, concentrated resin extracts" },
             ].map((u) => (
               <button

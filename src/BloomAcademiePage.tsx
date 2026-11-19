@@ -157,7 +157,7 @@ export default function BloomAcademiePage({ onNavigate, lang }: BloomAcademiePag
 
           <h1 className="text-3xl sm:text-5xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
             {lang === 'fr' 
-              ? "Bloom Academy : Renouer le Lien Primordial avec la Nature" 
+              ? "La méthode Bloom : comprendre le vivant, maîtriser l'extraction" 
               : lang === 'de' 
               ? "Bloom Academy : Die ursprüngliche Verbindung zur Natur erneuern" 
               : "Bloom Academy: Reconnecting with the Primordial Wisdom of Nature"}

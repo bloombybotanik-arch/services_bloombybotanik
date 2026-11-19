@@ -385,7 +385,11 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
           <span className="text-botanik-green/60">{isFR ? "Boutique" : "Shop"}</span>
         </div>
 
-        <h1 className="text-2xl md:text-4xl font-bold text-botanik-green mb-2">{t.header.title}</h1>
+        <h1 className="text-2xl md:text-4xl font-bold text-botanik-green mb-2">
+          {(currentView === 'boutique-kits' || currentView === 'kits-botaniques') && isFR
+            ? 'Composez vos soins botaniques maison'
+            : t.header.title}
+        </h1>
         <div className="max-w-2xl mb-6">
           <p className="text-sm md:text-base text-botanik-green/60 font-light leading-relaxed">
             {isFR 
