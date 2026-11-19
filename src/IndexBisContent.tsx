@@ -1379,6 +1379,24 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                     <Check className="w-5 h-5 text-emerald-600 shrink-0" />
                     <span>{isFR ? "Garantie constructeur 1 an" : "1-Year Manufacturer Warranty"}</span>
                   </li>
+                  <li className="flex items-start gap-3 text-sm font-medium text-[#1E2E25]/90">
+                    <Check className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>
+                      {isFR
+                        ? "5 Accessoires Offerts pour bien débuter : 1 flacon pipette 100ml en verre opaque capuchon en bambou, 1 pot crème 50gr verre opaque couvercle en bambou, 1 distributeur de sérum pour cuir chevelu, 1 sac de filtration 90 microns, 1 gant silicon anti-brûlure"
+                        : "5 Free Starter Accessories: 100ml opaque glass dropper bottle with bamboo cap, 50g opaque glass cream jar with bamboo lid, scalp serum dispenser, 90-micron filtration bag, heat-resistant silicone glove"}
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3 text-sm font-medium text-[#1E2E25]/90">
+                    <Check className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>
+                      {isFR ? (
+                        <><strong>Entretien :</strong> Programme auto-nettoyage en 5 minutes : Cuve en inox 304.</>
+                      ) : (
+                        <><strong>Maintenance:</strong> 5-minute self-cleaning program: 304 stainless steel chamber.</>
+                      )}
+                    </span>
+                  </li>
                   <li className="flex items-center gap-3 text-sm font-medium text-[#1E2E25]/90">
                     <Check className="w-5 h-5 text-emerald-600 shrink-0" />
                     <span>{isFR ? "Paiement en 3x sans frais disponible" : "3x fee-free installment payment"}</span>
@@ -1434,13 +1452,17 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   </li>
                   <li className="flex items-center gap-3 text-sm font-medium text-white/90">
                     <Check className="w-5 h-5 text-[#C8AB8A] shrink-0" />
+                    <span>{isFR ? "Accès complet Bloom Academy (1 mois)" : "Full Bloom Academy Access (1 month)"}</span>
+                  </li>
+                  <li className="flex items-center gap-3 text-sm font-medium text-white/90">
+                    <Check className="w-5 h-5 text-[#C8AB8A] shrink-0" />
                     <span>{isFR ? "Garantie constructeur 1 an & support prioritaire" : "1-Year Warranty & Priority Support"}</span>
                   </li>
                 </ul>
 
                 {/* Cadre Éducatif & Disclaimer Duo Argiles */}
-                <div className="p-4 rounded-2xl bg-black/20 border border-white/10 text-xs text-white/70 leading-relaxed">
-                  <p>
+                <div className="p-4 rounded-2xl bg-black/20 border border-white/10 text-xs text-white leading-relaxed">
+                  <p className="text-white !text-white text-xs leading-relaxed">
                     {isFR 
                       ? "📌 Note : Le Duo Argiles Bloom (Purification Systémique Zeolithe-Bentonite) est une matière première minérale documentée sélectionnée pour les synergies botaniques. Usage éducatif documenté dans le guide. Ne se substitue à aucun traitement médical." 
                       : "📌 Note: Bloom Clay Duo (Systemic Purification Zeolite-Bentonite) is a documented mineral raw material. Educational use as detailed in guide. Not a substitute for medical advice."}
