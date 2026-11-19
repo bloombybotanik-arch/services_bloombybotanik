@@ -234,11 +234,18 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               {/* Le SEUL H1 de la page d'accueil */}
               <h1 className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-[#FAF7F2] text-white !text-white leading-[1.2] tracking-tight drop-shadow-md">
                 {isFR 
-                  ? "Bloom by BotaniK - L'Extracteur Botanique qui Préserve le Totum Végétal" 
+                  ? "L'Extracteur Botanique qui Préserve le Totum Végétal" 
                   : isDE 
                   ? "Bloom by BotaniK | BloomLab®, Botanischer Präzisionsextraktor & Meisterhafter Pflanzenaufguss"
                   : "Bloom by BotaniK | BloomLab® Precision Botanical Extractor & Mastered Herbal Infusion"}
               </h1>
+              <p className="text-[11px] sm:text-xs md:text-sm font-medium text-white/95 leading-snug drop-shadow">
+                {isFR
+                  ? "La BloomLab® reproduit les protocoles des laboratoires : température contrôlée, temps d'extraction optimal, totum végétal préservé."
+                  : isDE
+                  ? "Die BloomLab® reproduziert Laborprotokolle: kontrollierte Temperatur, optimale Extraktionszeit und bewahrtes pflanzliches Totum."
+                  : "BloomLab® replicates laboratory protocols: controlled temperature, optimal extraction time, preserved whole-plant totum."}
+              </p>
             </div>
           </div>
 

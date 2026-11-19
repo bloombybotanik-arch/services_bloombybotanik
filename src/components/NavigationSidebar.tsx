@@ -204,7 +204,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Droplets className={navIconClass(isActive('guide-solvants'))} />
-                <span className="truncate whitespace-nowrap">Solvants &amp; Véhicules</span>
+                <span className="truncate whitespace-nowrap">Teintures &amp; Solvants</span>
               </div>
             </a>
           </div>

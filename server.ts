@@ -1305,7 +1305,7 @@ interface ServerSEORoute {
 const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
   "/": {
     title: "Bloom by BotaniK | Autonomie Botanique & Extraction Précise",
-    h1: "Bloom by BotaniK - L'Extracteur Botanique qui Préserve le Totum Végétal",
+    h1: "L'Extracteur Botanique qui Préserve le Totum Végétal",
     description: "Bloom by BotaniK conçoit la BloomLab®, extracteur de précision pour fabriquer vos soins naturels maison dans le respect du totum végétal.",
     image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
     image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
@@ -2129,6 +2129,33 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
     alt: "Abonnements numériques Bloom by BotaniK",
     type: "website"
+  },
+  "/academie/nutrition-et-micronutrition/": {
+    title: "Micronutrition & Compléments Alimentaires | Académie Bloom",
+    h1: "Comprendre les compléments alimentaires avec discernement",
+    description: "Guide pédagogique pour comprendre vitamines, minéraux et oméga-3 : allégations autorisées, critères de choix, précautions et interactions.",
+    image1200: "/images/og/phytotherapie-reset-homeostasie-terrain-1200x630.jpg",
+    image1080: "/images/og/phytotherapie-reset-homeostasie-terrain-1080x1080.jpg",
+    alt: "Guide pédagogique micronutrition et compléments alimentaires Bloom by BotaniK",
+    type: "article"
+  },
+  "/academie/nutrition-et-micronutrition/guide-achat/": {
+    title: "Choisir un Complément Alimentaire : Guide | Académie Bloom",
+    h1: "Comment lire l'étiquette d'un complément alimentaire ?",
+    description: "Apprenez à lire les étiquettes et comparer les compléments alimentaires : quantité active, forme, traçabilité, conservation et précautions.",
+    image1200: "/images/og/phytotherapie-reset-homeostasie-terrain-1200x630.jpg",
+    image1080: "/images/og/phytotherapie-reset-homeostasie-terrain-1080x1080.jpg",
+    alt: "Guide d'achat et lecture d'étiquettes de compléments alimentaires Bloom by BotaniK",
+    type: "article"
+  },
+  "/academie/nutrition-et-micronutrition/precautions-et-interactions/": {
+    title: "Compléments Alimentaires : Précautions | Académie Bloom",
+    h1: "Compléments alimentaires : précautions, interactions et situations à risque",
+    description: "Anticoagulants, grossesse, traitements, chirurgie ou troubles rénaux : situations où demander conseil avant de prendre un complément.",
+    image1200: "/images/og/phytotherapie-reset-homeostasie-terrain-1200x630.jpg",
+    image1080: "/images/og/phytotherapie-reset-homeostasie-terrain-1080x1080.jpg",
+    alt: "Précautions et interactions des compléments alimentaires Bloom by BotaniK",
+    type: "article"
   }
 };
 
@@ -2689,13 +2716,7 @@ async function startServer() {
 
     viteDevServer = await setupVite(app);
     if (viteDevServer) {
-      // INTERCEPTION ANTI-BOUCLE (Ne pas supprimer)
-      app.get('/@vite/client', (req, res) => {
-        res.setHeader('Content-Type', 'application/javascript');
-        return res.send('export default {};');
-      });
-
-      // RÉACTIVATION DE VITE (C'est ce qui manquait)
+      // RÉACTIVATION DE VITE
       app.use(viteDevServer.middlewares);
       console.log("Vite middleware attached in dev");
     }

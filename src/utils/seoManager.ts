@@ -528,6 +528,21 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
     title: "Droit de Rétractation | Formulaire de Retour Bloom",
     description: "Exercice de votre droit légal de rétractation sous 14 jours pour vos achats sur bloombybotanik.com.",
     path: "/droit-de-retractation/"
+  },
+  'nutrition-et-micronutrition': {
+    title: "Micronutrition & Compléments Alimentaires | Académie Bloom",
+    description: "Guide pédagogique pour comprendre vitamines, minéraux et oméga-3 : allégations autorisées, critères de choix, précautions et interactions.",
+    path: "/academie/nutrition-et-micronutrition/"
+  },
+  'micronutrition-guide-achat': {
+    title: "Choisir un Complément Alimentaire : Guide | Académie Bloom",
+    description: "Apprenez à lire les étiquettes et comparer les compléments alimentaires : quantité active, forme, traçabilité, conservation et précautions.",
+    path: "/academie/nutrition-et-micronutrition/guide-achat/"
+  },
+  'micronutrition-precautions': {
+    title: "Compléments Alimentaires : Précautions | Académie Bloom",
+    description: "Anticoagulants, grossesse, traitements, chirurgie ou troubles rénaux : situations où demander conseil avant de prendre un complément.",
+    path: "/academie/nutrition-et-micronutrition/precautions-et-interactions/"
   }
 };
 

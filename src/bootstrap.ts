@@ -12,7 +12,6 @@ async function runResourceCheck() {
   const paths = [
     '/early-diag.js',
     '/src/bootstrap.ts',
-    '/@vite/client',
     '/node_modules/vite/dist/client/env.mjs',
     '/src/main.tsx',
     '/src/App.tsx',

@@ -834,7 +834,7 @@ export default function App() {
                     onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('guide-solvants'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <Droplets className="w-4 h-4 text-white/70" /> Solvants &amp; Véhicules
+                    <Droplets className="w-4 h-4 text-white/70" /> Teintures &amp; Solvants
                   </a>
 
                   {/* SECTION: VOTRE PRATIQUE */}
