@@ -754,8 +754,8 @@ export default function App() {
               manifeste: selectedLanguage === 'fr' ? 'Le Manifeste' : selectedLanguage === 'de' ? 'Das Manifest' : 'The Manifesto',
               infusion_botanique: selectedLanguage === 'fr' ? 'Infusion Botanique Maison' : selectedLanguage === 'de' ? 'Botanische Hausinfusion' : 'Home Botanical Infusion',
               bloomlab: selectedLanguage === 'fr' ? "L'Extracteur BloomLab®" : selectedLanguage === 'de' ? 'BloomLab® Extraktor' : 'BloomLab® Extractor',
-              guide_extraction: selectedLanguage === 'fr' ? "Guide de l'extraction" : selectedLanguage === 'de' ? 'Extraktions-Leitfaden' : 'Extraction Guide',
-              totum_vegetal: selectedLanguage === 'fr' ? 'Le Totum Végétal' : selectedLanguage === 'de' ? 'Das Pflanzen-Totum' : 'The Plant Totum',
+              guide_extraction: selectedLanguage === 'fr' ? 'Extraction Végétale' : selectedLanguage === 'de' ? 'Extraktions-Leitfaden' : 'Extraction Guide',
+              totum_vegetal: selectedLanguage === 'fr' ? 'Totum Végétal' : selectedLanguage === 'de' ? 'Das Pflanzen-Totum' : 'The Plant Totum',
               phytotherapie: selectedLanguage === 'fr' ? 'Protocoles Systémiques' : selectedLanguage === 'de' ? 'Systemische Protokolle' : 'Systemic Protocols',
               protocole_psoriasis: selectedLanguage === 'fr' ? 'Protocole Psoriasis' : selectedLanguage === 'de' ? 'Psoriasis-Protokoll' : 'Psoriasis Protocol',
               protocole_sibo: selectedLanguage === 'fr' ? 'Protocole SIBO' : selectedLanguage === 'de' ? 'SIBO-Protokoll' : 'SIBO Protocol',
@@ -763,10 +763,10 @@ export default function App() {
               diagnostic: selectedLanguage === 'fr' ? 'Bilan & Diagnostic ALMA' : selectedLanguage === 'de' ? 'ALMA Diagnose' : 'ALMA Assessment',
               boutique_toute: selectedLanguage === 'fr' ? 'Toute la Boutique' : selectedLanguage === 'de' ? 'Alle Produkte' : 'All Products',
               kits_plantes: selectedLanguage === 'fr' ? 'Kits de plantes' : selectedLanguage === 'de' ? 'Pflanzen-Kits' : 'Plant Kits',
-              abonnement: selectedLanguage === 'fr' ? 'Abonnement Premium' : selectedLanguage === 'de' ? 'Premium-Abonnement' : 'Premium Subscription',
-              herbier: selectedLanguage === 'fr' ? "L'Herbier" : selectedLanguage === 'de' ? 'Das Herbarium' : 'The Herbarium',
-              culinaire: selectedLanguage === 'fr' ? 'Atelier Culinaire' : selectedLanguage === 'de' ? 'Kulinarische Werkstatt' : 'Culinary Workshop',
-              cosmetiques: selectedLanguage === 'fr' ? 'Cosmétique Botanique' : selectedLanguage === 'de' ? 'Botanische Kosmetik' : 'Botanical Cosmetics',
+              abonnement: selectedLanguage === 'fr' ? 'Abonnements' : selectedLanguage === 'de' ? 'Premium-Abonnement' : 'Premium Subscription',
+              herbier: selectedLanguage === 'fr' ? 'Herbier' : selectedLanguage === 'de' ? 'Das Herbarium' : 'The Herbarium',
+              culinaire: selectedLanguage === 'fr' ? 'Cuisine Botanique' : selectedLanguage === 'de' ? 'Kulinarische Werkstatt' : 'Culinary Workshop',
+              cosmetiques: selectedLanguage === 'fr' ? 'Cosmétique Maison' : selectedLanguage === 'de' ? 'Botanische Kosmetik' : 'Botanical Cosmetics',
               bibliotheque: selectedLanguage === 'fr' ? 'Bibliothèque Scientifique' : selectedLanguage === 'de' ? 'Wissenschaftliche Bibliothek' : 'Scientific Library',
               calculatrice: selectedLanguage === 'fr' ? 'Calculatrice de Dilution' : selectedLanguage === 'de' ? 'Verdünnungsrechner' : 'Dilution Calculator',
               espace_membre: selectedLanguage === 'fr' ? 'Espace membre' : selectedLanguage === 'de' ? 'Mitgliederbereich' : 'Member Area',
@@ -813,28 +813,28 @@ export default function App() {
                     onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('infusion-botanique'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <FlaskConical className="w-4 h-4 text-white/70" /> L'infusion botanique ?
+                    <FlaskConical className="w-4 h-4 text-white/70" /> Infusion Botanique
                   </a>
                   <a
                     href={VIEW_PATHS['totum-vegetal']}
                     onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('totum-vegetal'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <Leaf className="w-4 h-4 text-white/70" /> Le Totum Végétal
+                    <Leaf className="w-4 h-4 text-white/70" /> Totum Végétal
                   </a>
                   <a
                     href={VIEW_PATHS['guide-complet']}
                     onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('guide-complet'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <BookOpen className="w-4 h-4 text-white/70" /> Guide de l'extraction
+                    <BookOpen className="w-4 h-4 text-white/70" /> Extraction Végétale
                   </a>
                   <a
                     href={VIEW_PATHS['guide-solvants']}
                     onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('guide-solvants'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <Droplets className="w-4 h-4 text-white/70" /> Guide des Solvants
+                    <Droplets className="w-4 h-4 text-white/70" /> Solvants &amp; Véhicules
                   </a>
 
                   {/* SECTION: VOTRE PRATIQUE */}
@@ -870,14 +870,14 @@ export default function App() {
                     onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('phytotherapie-reset'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <Activity className="w-4 h-4 text-white/70" /> Reset Homéostasique
+                    <Activity className="w-4 h-4 text-white/70" /> Rituel Reset
                   </a>
                   <a
                     href={VIEW_PATHS['recette-phycocyanine']}
                     onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('recette-phycocyanine'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-6 py-2 rounded-xl text-white/90 font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <FlaskConical className="w-4 h-4 text-[#E8772E]" /> Phycocyanine (40 °C · Phases 2 &amp; 3)
+                    <FlaskConical className="w-4 h-4 text-[#E8772E]" /> Phycocyanine
                   </a>
 
                   {/* SECTION: BOUTIQUE */}
@@ -900,7 +900,7 @@ export default function App() {
                     }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <Package className="w-4 h-4 text-white/70" /> Packs
+                    <Package className="w-4 h-4 text-white/70" /> Soins Botaniques
                   </a>
                   <a
                     href={VIEW_PATHS['boutique']}
@@ -921,7 +921,7 @@ export default function App() {
                     onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('product-detail', 'duo-argiles'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <Leaf className="w-4 h-4 text-white/70" /> Argiles &amp; Matières Premières
+                    <Leaf className="w-4 h-4 text-white/70" /> Argiles &amp; Liants
                   </a>
                   <a
                     href="/abonnement/"
@@ -951,7 +951,7 @@ export default function App() {
                     onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('lexique'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <BookOpen className="w-4 h-4 text-white/70" /> {selectedLanguage === 'fr' ? 'Lexique Botanik' : selectedLanguage === 'de' ? 'Botanik-Glossar' : 'Botanik Glossary'}
+                    <BookOpen className="w-4 h-4 text-white/70" /> {selectedLanguage === 'fr' ? 'Lexique' : selectedLanguage === 'de' ? 'Botanik-Glossar' : 'Botanik Glossary'}
                   </a>
                   <a
                     href={VIEW_PATHS['library-landing']}
@@ -1004,7 +1004,7 @@ export default function App() {
                       >
                         <span className="flex items-center gap-2 text-[#E8772E]">
                           <GraduationCap className="w-4 h-4 text-[#E8772E]" />
-                          <span className="text-[#E8772E] font-bold text-xs tracking-wide">Bloom Academy</span>
+                          <span className="text-[#E8772E] font-bold text-xs tracking-wide">Académie</span>
                         </span>
                         <span className="text-[8px] uppercase px-1.5 py-0.5 rounded-full bg-[#E8772E]/20 text-[#FAF7F2] font-black tracking-wider border border-[#E8772E]/30">
                           {selectedLanguage === 'fr' ? 'Pédagogie' : selectedLanguage === 'de' ? 'Pädagogik' : 'Pedagogy'}
@@ -1090,7 +1090,7 @@ export default function App() {
                           >
                             <span className="flex items-center gap-2">
                               <span className="text-[#C8AB8A] font-mono text-[11px]">├──</span>
-                              <span className="text-white">{selectedLanguage === 'fr' ? 'Pouvoir Cyclique Femme' : selectedLanguage === 'de' ? 'Zyklische Kraft der Frau' : 'Women Cyclical Power'}</span>
+                              <span className="text-white">{selectedLanguage === 'fr' ? 'Cycle Féminin' : selectedLanguage === 'de' ? 'Zyklische Kraft der Frau' : 'Women Cyclical Power'}</span>
                             </span>
                             <span className="text-[8px] uppercase px-1 py-0.2 rounded bg-emerald-500/20 text-emerald-400 font-bold shrink-0 border border-emerald-500/30">
                               {selectedLanguage === 'fr' ? 'Gratuit' : selectedLanguage === 'de' ? 'Gratis' : 'Free'}

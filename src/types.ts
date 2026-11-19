@@ -52,7 +52,7 @@ export const VIEW_PATHS: Record<string, string> = {
   chat: '/chat/',
   cart: '/panier/', 
   checkout: '/checkout/', 
-  guide: '/infusion-botanique/',
+  guide: '/infusion-botanique-maison-comment-ca-marche/',
   how_it_works: '/comment-ca-marche/', 
   'comment-ca-marche': '/comment-ca-marche/',
   'decouvrir': '/decouvrir/',

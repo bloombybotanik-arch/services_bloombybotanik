@@ -97,7 +97,7 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
   guide: {
     title: "Infusion Botanique Maison : Guide Complet & Bienfaits | Bloom",
     description: "Découvrez l'art de l'infusion botanique de précision. Températures, solvants et recettes pour préserver le Totum végétal et booster vos bienfaits.",
-    path: "/infusion-botanique/"
+    path: "/infusion-botanique-maison-comment-ca-marche/"
   },
   'infusion-botanique': {
     title: "Infusion Botanique Maison | Principes Actifs & Méthode",
@@ -643,7 +643,7 @@ export function updateDocumentSEO(config?: any, _lang?: any, productId?: string,
 
     if (normalizedCurrent === '/infusion-botanique/') {
       const entry = VIEW_SEO_MAP.guide;
-      applySEOMetadata(entry.title, entry.description, 'https://bloombybotanik.com/infusion-botanique/', false);
+      applySEOMetadata(entry.title, entry.description, 'https://bloombybotanik.com/infusion-botanique-maison-comment-ca-marche/', false);
       return;
     }
 

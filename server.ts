@@ -2671,6 +2671,15 @@ function errorHandler(err: any, req: express.Request, res: express.Response, nex
  * -------------------------------------------------------------------------- */
 async function startServer() {
   if (!IS_PROD) {
+    app.get(["/blog/vieillissement-myeline-fgf17.html", "/blog/vieillissement-myeline-fgf17/index.html", "/blog/vieillissement-myeline-fgf17-clarte-mentale.html"], (req, res) => {
+      res.set("Cache-Control", "no-store");
+      res.redirect(301, "/blog/vieillissement-myeline-fgf17-clarte-mentale/");
+    });
+    app.get(["/protocoles/clarte-mentale.html", "/protocoles/myeline.html", "/protocoles/myeline/index.html"], (req, res) => {
+      res.set("Cache-Control", "no-store");
+      res.redirect(301, "/academie/protocoles/clarte-mentale/");
+    });
+
     viteDevServer = await setupVite(app);
     if (viteDevServer) {
       // INTERCEPTION ANTI-BOUCLE (Ne pas supprimer)
