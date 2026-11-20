@@ -7,7 +7,7 @@ interface SEOEntry {
   path?: string;
 }
 
-const HOME_TITLE = "Bloom by BotaniK | Autonomie Botanique & Extraction Précise";
+const HOME_TITLE = "Bloom by BotaniK | Extracteur Botanique de Précision & Infusion Végétale Maîtrisée";
 const HOME_DESCRIPTION = "Bloom by BotaniK conçoit la BloomLab®, extracteur de précision pour fabriquer vos soins naturels maison dans le respect du totum végétal.";
 
 const PRODUCT_SEO_MAP: Record<string, SEOEntry> = {
@@ -58,7 +58,7 @@ const PRODUCT_SEO_MAP: Record<string, SEOEntry> = {
   },
   "abonnements-numeriques": {
     title: "Abonnements Numériques Bloom Académie & ALMA | Bloom by BotaniK",
-    description: "Accédez aux protocoles systémiques complets, fiches d'extraction avancées et suivi personnalisé ALMA.",
+    description: "Accédez aux protocoles systémiques Bloom by BotaniK, fiches d'extraction BloomLab® avancées et suivi personnalisé ALMA.",
     path: "/boutique/abonnements-numeriques/"
   }
 };
@@ -120,8 +120,8 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
     path: "/extraction-botanique/"
   },
   'guide-solvants': {
-    title: "Guide des Solvants d'Extraction : Eau, Huile, Alcool | Bloom",
-    description: "Eau, huile végétale, alcool, glycérine : comprenez la polarité et les affinités de chaque solvant pour libérer le Totum Végétal et maîtriser vos extractions botaniques.",
+    title: "Guide des Solvants d'Extraction : Eau, Huile, Alcool | Bloom by BotaniK",
+    description: "Eau, huile végétale, alcool, glycérine : choisissez le solvant adapté avec Bloom by BotaniK et BloomLab® pour libérer le Totum Végétal.",
     path: "/guide-solvants/"
   },
   'guide-complet': {
@@ -663,7 +663,17 @@ export function updateDocumentSEO(config?: any, _lang?: any, productId?: string,
 
     if (normalizedCurrent === '/infusion-botanique/') {
       const entry = VIEW_SEO_MAP.guide;
-      applySEOMetadata(entry.title, entry.description, 'https://bloombybotanik.com/infusion-botanique-maison-comment-ca-marche/', false);
+      applySEOMetadata(entry.title, entry.description, 'https://bloombybotanik.com/infusion-botanique/', false);
+      return;
+    }
+
+    if (normalizedCurrent === '/reset-homeostasique/') {
+      applySEOMetadata(
+        "Reset Homéostasique : Accordage Systémique en 6 Phases | Bloom by BotaniK",
+        "Comprenez la charge allostatique avec Bloom by BotaniK et explorez l'accordage biologique en 6 phases avec BloomLab® pour soutenir l'homéostasie.",
+        'https://bloombybotanik.com/reset-homeostasique/',
+        false
+      );
       return;
     }
 

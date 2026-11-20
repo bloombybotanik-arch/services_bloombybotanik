@@ -648,10 +648,18 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
               href={lang === 'fr' ? '/bloomlab/' : `/${lang}/bloomlab/`}
               onClick={(e) => handleLinkClick(e, 'machine')}
               id="footer-cta-bloomlab"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#3E4A3D] hover:bg-[#2D372C] text-white font-bold text-sm shadow-md transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#E8772E] hover:bg-[#D4651F] text-white font-bold text-sm shadow-md transition-all"
             >
               <span>{t.section12.ctaMachine}</span>
               <ArrowRight className="w-4 h-4" />
+            </a>
+            <a
+              href="/extraction-botanique/"
+              onClick={(e) => handleLinkClick(e, 'pillar-extraction')}
+              id="footer-cta-extraction"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-all"
+            >
+              <span>{lang === 'fr' ? "Méthode d'Extraction A/B" : "Extraction Method A/B"}</span>
             </a>
             <a
               href={lang === 'fr' ? '/boutique/' : `/${lang}/boutique/`}

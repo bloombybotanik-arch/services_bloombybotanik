@@ -469,12 +469,16 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
       title: "Questions fréquentes sur l’infusion botanique",
       faq: [
         {
-          q: "Quelle différence entre une tisane et une infusion botanique ?",
-          a: "La tisane traditionnelle est le plus souvent une boisson d'agrément préparée en versant une eau bouillante sur des plantes sans contrôle précis de la température ni du temps. L'infusion botanique adopte une démarche structurée : sélection de la partie végétale, adaptation de la température selon la fragilité des composés, calibrage de la durée et recherche d'une meilleure régularité dans la préparation."
+          q: "Quelle est la différence entre une infusion et une décoction ?",
+          a: "L'infusion consiste à immerger des parties végétales tendres (fleurs, feuilles) dans de l'eau chauffée entre 45°C et 80°C sans ébullition continue, préservant les huiles essentielles et flavonoïdes. La décoction maintient une ébullition douce pour extraire les principes de parties denses et ligneuses (écorces, racines, graines dures)."
         },
         {
-          q: "Quelle différence entre infusion, décoction et macération ?",
-          a: "L'infusion consiste à immerger des parties végétales fragiles (fleurs, feuilles tendres) dans un liquide chauffé sans ébullition continue. La décoction maintient une ébullition douce pour extraire les principes de parties denses (écorces, racines, graines dures). La macération, quant à elle, s'effectue à température ambiante ou à froid pendant une durée prolongée dans de l'eau, de l'huile ou un autre solvant."
+          q: "Pourquoi la température de l'eau est-elle importante ?",
+          a: "Une eau bouillante à 100°C dégrade rapidement les composés thermolabiles (enzymes, vitamines, flavonoïdes) et évapore les molécules aromatiques volatiles. À l'inverse, une eau trop froide ralentit la diffusion cellulaire. Maîtriser la température entre 45°C et 85°C selon l'organe végétal optimise l'extraction du Totum."
+        },
+        {
+          q: "Comment faire une infusion avec un extracteur ?",
+          a: "Avec l'extracteur BloomLab® de Bloom by BotaniK, placez vos plantes sèches dans la cuve en acier inoxydable 304, ajoutez votre solvant (eau, huile végétale ou glycérine), puis réglez le programme thermique et la durée. Le vortex doux en milieu clos maintient la température au degré près et préserve les principes actifs."
         },
         {
           q: "Comment choisir un solvant ?",

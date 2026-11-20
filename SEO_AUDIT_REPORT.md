@@ -1,128 +1,89 @@
-# Rapport d'Audit SEO / SEA — Bloom by BotaniK (`bloombybotanik.com`)
+# Rapport d'Audit SEO & Déblocage d'Indexation — Bloom by BotaniK (`bloombybotanik.com`)
 
-**Date de l'audit :** 18 novembre 2026  
-**Périmètre :** Indexabilité technique, balisage On-Page (`server.ts`, `index.html`, `src/utils/seoManager.ts`), pertinence sémantique de marque (`Bloom by BotaniK` / `BloomLab®`), maillage interne et validation serveur SSR/CSR.
-
----
-
-## 1. Statut Global & Résolution du Problème d'Indexation
-
-L'audit complet a identifié et corrigé les causes structurelles pouvant bloquer ou diluer l'indexation de `bloombybotanik.com` sur les requêtes de marque (**« Bloom by BotaniK »**, **« BloomLab »**) :
-
-1. **Rendu HTML Serveur (`#root`) pour les robots d'indexation** : `registerCatchAll` + `injectServerSEO` dans `server.ts` injectaient auparavant les balises `<head>` mais laissaient `<div id="root"></div>` vide avant hydratation JS. Un fallback HTML sémantique (navigation `<nav>` avec liens internes, `<h1>`, paragraphe descriptif et fiche produit) est désormais injecté dans `#root` pour toutes les pages indexables, puis remplacé proprement par React au montage.
-2. **Cohérence `robots`, `canonical` et `hreflang`** :
-   - Suppression des liens `hreflang="en"` et `hreflang="de"` pointant vers `/en` et `/de` non servis côté SSR ; mise en place de `hreflang="fr"` et `hreflang="x-default"` auto-référençants vers l'URL canonique exacte.
-   - Conservation stricte de `index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1` sur toutes les pages publiques, et bascule `noindex, nofollow` uniquement sur les routes privées/transactionnelles (`/admin/`, `/panier/`, `/checkout/`, `/commande/`, `/compte/`, `/activation/`, `/en-attente/`, `/newsletter/`).
-3. **Suppression des redirections 301 conflictuelles** : suppression des anciennes redirections sur `/contact` et `/academie/comprendre-le-modele-bloom` afin que chaque page cible réponde directement en `HTTP 200` avec sa propre canonique.
-4. **Uniformisation Marque & Produit (`Bloom by BotaniK` + `BloomLab®`)** : renforcement systématique de la co-occurrence marque/produit dans les `<title>`, `<meta name="description">`, `<h1>` et les 100 premiers mots de la page d'accueil.
+**Date de l'audit :** 20 novembre 2026  
+**Périmètre :** Indexabilité SSR (`server.ts`, `index.html`), directives `robots` / `canonical` / `sitemap.xml`, pertinence sémantique de marque (`Bloom by BotaniK` + `BloomLab®`), stratégie longue traîne (H1, H2/H3, FAQ 3–5 Q/R, maillage interne) et validation HTTP en direct.
 
 ---
 
-## 2. Vérification `robots.txt` & `sitemap.xml`
+## 1. Résolution des Blocages Techniques d'Indexation (Étapes 1 à 3)
 
-### `public/robots.txt` (Statut : Conforme — HTTP 200)
-```txt
-User-agent: *
-Allow: /
-Disallow: /admin
-Disallow: /panier
-Disallow: /commande
-Disallow: /checkout
-Disallow: /compte
-Disallow: /activation
-Disallow: /en-attente
-Disallow: /newsletter/
-Disallow: /api/
-
-Sitemap: https://bloombybotanik.com/sitemap.xml
-Sitemap: https://bloombybotanik.com/sitemap-fr.xml
-Sitemap: https://bloombybotanik.com/sitemap-recettes.xml
-Sitemap: https://bloombybotanik.com/sitemap-images.xml
-```
-
-### `public/sitemap.xml` & `public/sitemap-fr.xml` (Statut : Conforme — HTTP 200)
-- `public/sitemap.xml` agit comme `<sitemapindex>` et référence `sitemap-fr.xml` (mis à jour au `2026-11-18`), `sitemap-en.xml`, `sitemap-de.xml`, `sitemap-recettes.xml`, et `sitemap-images.xml`.
-- `public/sitemap-fr.xml` contient **42 URLs canoniques françaises**, incluant explicitement toutes les URLs stratégiques vérifiées :
-  - `https://bloombybotanik.com/`
-  - `https://bloombybotanik.com/bloomlab/`
-  - `https://bloombybotanik.com/infusion-botanique/` *(ajouté lors de l'audit)*
-  - `https://bloombybotanik.com/extraction-botanique/`
-  - `https://bloombybotanik.com/reset-homeostasique/` *(ajouté lors de l'audit)*
-  - `https://bloombybotanik.com/boutique/`
-  - `https://bloombybotanik.com/boutique/kits/`
-  - `https://bloombybotanik.com/guide-solvants/`
+1. **Absence totale de `noindex` sur les pages publiques** :
+   - `index.html` porte `<meta name="robots" content="index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1" />`.
+   - `registerCatchAll` dans `server.ts` injecte systématiquement `X-Robots-Tag: index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1` sur toutes les routes publiques (réservant `noindex, nofollow` aux seules routes privées/transactionnelles : `/admin/`, `/panier/`, `/checkout/`, `/commande/`, `/compte/`, `/activation/`, `/en-attente/`, `/newsletter/`).
+2. **Injection SSR HTML complète (`injectServerSEO`)** :
+   - Chaque requête HTTP sur une route publique reçoit côté serveur son `<title>`, sa `<meta name="description">`, sa `<link rel="canonical">` unique, ses balises OpenGraph/Twitter, son JSON-LD structuré et un fallback HTML sémantique dans `#root` (`<header>`, `<nav>` avec liens internes, `<h1>`, paragraphes descriptifs).
+3. **`robots.txt` et `sitemap.xml` conformes (`HTTP 200`)** :
+   - `public/robots.txt` autorise `Allow: /` (en bloquant `/admin`, `/panier`, `/commande`, `/checkout`, `/compte`, `/activation`, `/en-attente`, `/newsletter/`, `/api/`) et déclare `Sitemap: https://bloombybotanik.com/sitemap.xml`.
+   - `public/sitemap.xml` référence `sitemap-fr.xml`, `sitemap-en.xml`, `sitemap-de.xml`, `sitemap-recettes.xml` et `sitemap-images.xml`.
+   - `public/sitemap-fr.xml` inclut explicitement l'ensemble des URLs stratégiques vérifiées :
+     - `https://bloombybotanik.com/`
+     - `https://bloombybotanik.com/bloomlab/`
+     - `https://bloombybotanik.com/infusion-botanique/` *(ajouté dans `sitemap-fr.xml`)*
+     - `https://bloombybotanik.com/extraction-botanique/`
+     - `https://bloombybotanik.com/reset-homeostasique/` *(ajouté dans `sitemap-fr.xml`)*
+     - `https://bloombybotanik.com/boutique/`
+     - `https://bloombybotanik.com/boutique/kits/`
+     - `https://bloombybotanik.com/guide-solvants/`
+     - `https://bloombybotanik.com/la-marque/`
+4. **Correction critique de la canonique auto-référençante (`/infusion-botanique/` & `/reset-homeostasique/`)** :
+   - Avant correction, `/infusion-botanique/` et `/reset-homeostasique/` n'étaient pas enregistrées dans `PATH_VIEWS` (`src/App.tsx`), provoquant côté client un repli vers la vue d'accueil (`indexbis`) et un écrasement de la canonique vers `/`, tandis que `redirects301` dans `server.ts` redirigeait `/infusion-botanique` et `/reset-homeostasique/` vers d'autres URLs.
+   - Après correction dans `server.ts`, `src/App.tsx` et `src/utils/seoManager.ts`, `/infusion-botanique/` et `/reset-homeostasique/` répondent en `HTTP 200` avec leur propre `<link rel="canonical">` auto-référençant (`https://bloombybotanik.com/infusion-botanique/` et `https://bloombybotanik.com/reset-homeostasique/`), sans aucune balise `<link rel="canonical">` en double.
 
 ---
 
-## 3. Inventaire des Balises `<title>` et `<meta name="description">` par Route
+## 2. Inventaire des Balises `<title>`, `<meta name="description">` & `<link rel="canonical">` Vérifiées
 
-Toutes les routes ci-dessous sont servies côté serveur (`SERVER_SEO_ROUTES` dans `server.ts`) et synchronisées côté client (`src/utils/seoManager.ts`), sans aucune occurrence de valeur par défaut `"indexbis"` ou `"home"`.
-
-### Accueil & Pages Piliers
-| Route | `<title>` | `<meta name="description">` |
-| :--- | :--- | :--- |
-| `/` | `Bloom by BotaniK \| Extracteur Botanique de Précision & Infusion Végétale Maîtrisée` | `Bloom by BotaniK conçoit BloomLab®, l'extracteur et infuseur botanique de précision. Vortex cinétique et thermorégulation ±0,5°C pour extraire le Totum actif.` |
-| `/infusion-botanique/` | `Infusion Botanique Maison : Guide Complet & Bienfaits \| Bloom` | `Découvrez l'art de l'infusion botanique de précision. Températures, solvants et recettes pour préserver le Totum végétal et booster vos bienfaits.` |
-| `/extraction-botanique/` | `Extraction Botanique : Méthodes & Séquençage A/B \| Bloom` | `Maîtrisez l'extraction végétale : macération, infusion, séquençage A/B. Découvrez comment la BloomLab préserve les principes actifs.` |
-| `/guide-solvants/` | `Guide des Solvants d'Extraction : Eau, Huile, Alcool \| Bloom` | `Eau, huile végétale, alcool, glycérine : comprenez la polarité et les affinités de chaque solvant pour libérer le Totum Végétal et maîtriser vos extractions botaniques.` |
-| `/reset-homeostasique/` | `Reset Homéostasique : Accordage Systémique en 6 Phases \| Bloom` | `Comprenez la charge allostatique et explorez l'accordage biologique en 6 phases pour soutenir les boucles d'autorégulation du terrain.` |
-| `/academie/reset-homeostasique/` | `Reset Homéostasique : Protocoles de Drainage & Terrain \| Bloom` | `Libérez vos émonctoires et réactivez votre pharmacie intérieure. Découvrez nos protocoles de phytothérapie de précision pour un drainage profond.` |
-| `/la-marque/` | `La Marque Bloom by BotaniK \| Terroirs & Exigence` | `Découvrez l'histoire de Bloom by BotaniK : sélection rigoureuse des plantes brutes, conception française des protocoles et transparence scientifique.` |
-| `/manifeste/` | `Manifeste Bloom \| Souveraineté Sanitaire & Plantes` | `Manifeste Bloom by BotaniK : souveraineté sanitaire, ingénierie biologique et réconciliation entre rigueur scientifique et sagesse végétale ancestrale.` |
-| `/contact/` | `Contact & Assistance Botanique \| Bloom by BotaniK` | `Une question sur BloomLab® ou nos kits botaniques ? Contactez nos conseillers en phytothérapie. Équipe basée en France, réponse sous 24 à 48 heures.` |
-
-### Produits, Boutique & Abonnement (Co-occurrence Marque + Produit vérifiée)
-| Route | `<title>` | `<meta name="description">` |
-| :--- | :--- | :--- |
-| `/bloomlab/` | `BloomLab® Extracteur Botanique de Précision \| Bloom by BotaniK` | `La BloomLab® de Bloom by BotaniK est l'extracteur de plantes qui préserve le Totum végétal : thermorégulation ±0,5°C et vortex cinétique.` |
-| `/produit/bloomlab/` | `BloomLab® Extracteur Inox 304 ±0,5°C \| Bloom by BotaniK` | `Commandez l'extracteur botanique BloomLab® de Bloom by BotaniK. Inox chirurgical 304, vortex cinétique et thermorégulation ±0,5°C.` |
-| `/boutique/bloomlab/` | `Acheter BloomLab® Officiel \| Garantie 1 An — Bloom by BotaniK` | `Achetez l'extracteur botanique BloomLab® sur la boutique Bloom by BotaniK : cuve inox 304, séquençage A/B et expédition France 24-48h.` |
-| `/boutique/` | `Boutique Bloom by BotaniK \| BloomLab® & Plantes Bio` | `Boutique officielle Bloom by BotaniK : commandez l'extracteur BloomLab®, nos formules de plantes médicinales bio, filtres et accessoires maison.` |
-| `/boutique/kits/` | `Kits Plantes Médicinales Bio \| Bloom by BotaniK` | `Kits de plantes bio Bloom by BotaniK sélectionnés pour le sommeil, la digestion ou l'immunité. Prêts à être extraits avec l'appareil BloomLab®.` |
-| `/boutique/pack-signature/` | `Pack Signature BloomLab® + Trio Plantes \| Bloom by BotaniK` | `Pack Signature Bloom by BotaniK : l'extracteur BloomLab®, nos sélections de plantes médicinales bio et les protocoles d'extraction guidés.` |
-| `/boutique/bundle-apothicaire/` | `Trio Apothicaire \| 3 Kits Plantes Bio \| Bloom by BotaniK` | `Trio Apothicaire par Bloom by BotaniK : formules botaniques calibrées pour BloomLab® (Sève Fondamentale, Nuit Profonde et Feu Digestif).` |
-| `/boutique/kit-starter/` | `Kit Sève Fondamentale \| Plantes Bio \| Bloom by BotaniK` | `Kit Sève Fondamentale Bloom by BotaniK : ortie, romarin et cynorrhodon bio sélectionnés pour l'extraction végétale de précision sur BloomLab®.` |
-| `/boutique/kit-nuit/` | `Kit Nuit Profonde \| Sommeil & Plantes Bio \| Bloom by BotaniK` | `Kit Nuit Profonde par Bloom by BotaniK : synergie de passiflore, mélisse et camomille matricaire bio calibrée pour l'extraction douce sur BloomLab®.` |
-| `/boutique/kit-digestion/` | `Kit Feu Digestif \| Confort & Plantes Bio \| Bloom by BotaniK` | `Kit Feu Digestif Bloom by BotaniK : fenouil doux, menthe poivrée et gentiane bio calibrés pour une extraction botanique de précision.` |
-| `/boutique/kit-articulaire/` | `Kit Feu Articulaire \| Mobilité & Plantes Bio \| Bloom by BotaniK` | `Kit Feu Articulaire par Bloom by BotaniK : harpagophytum, reine-des-prés et cassis bio sélectionnés pour préserver le Totum végétal.` |
-| `/boutique/kit-hiver/` | `Kit Bouclier Hivernal \| Plantes Bio \| Bloom by BotaniK` | `Kit Bouclier Hivernal Bloom by BotaniK : échinacée pourpre, thym à linalol et sureau noir bio pour des infusions riches en polyphénols.` |
-| `/boutique/duo-argiles/` | `Duo Argiles & Terres Rares \| Purification \| Bloom by BotaniK` | `Duo Argiles Zéolithe-Bentonite Bloom by BotaniK : argiles surfines ventilées pour vos préparations d'herboristerie et soins du terrain.` |
-| `/abonnement/` | `Abonnement Bloom by BotaniK \| Protocoles & Suivi ALMA` | `Abonnement Bloom by BotaniK : accédez aux protocoles de reset homéostatique, au suivi d'anamnèse ALMA et aux formules d'extraction BloomLab®.` |
-
-### Académie & Pages Éditoriales Complémentaires
-- `/academie/`, `/academie/comprendre-le-modele-bloom/`, `/academie/comprendre-le-corps/4-architectures/`, `/academie/comprendre-le-corps/7-terrains/`, `/academie/comprendre-le-corps/9-axes-historiques/`, `/academie/comprendre-le-corps/charge-allostatique/`, `/academie/comprendre-le-corps/metabolisme-glucidique-insuline/`, `/academie/choc-de-paradigme/`, `/academie/axes/a1-emonctoires/`, `/academie/herbier/`, `/academie/bibliotheque/`, `/academie/protocoles/`, `/academie/protocoles/sibo/`, `/academie/protocoles/clarte-mentale/`, `/academie/protocoles/decalcification-pineale/` : tous couverts dans `SERVER_SEO_ROUTES` et `VIEW_SEO_MAP` avec balises uniques et JSON-LD `Article` / `WebSite`.
+| Route | Statut | `<title>` | `<meta name="description">` | Canonical |
+| :--- | :--- | :--- | :--- | :--- |
+| `/` | 200 | `Bloom by BotaniK \| Extracteur Botanique de Précision & Infusion Végétale Maîtrisée` | `Bloom by BotaniK conçoit la BloomLab®, extracteur de précision pour fabriquer vos soins naturels maison dans le respect du totum végétal.` | `https://bloombybotanik.com/` |
+| `/bloomlab/` | 200 | `BloomLab® \| Extracteur Botanique de Précision pour Soins Maison` | `Réglez temps (30 min–12 h) et température (0–121 °C) pour extraire le totum végétal de vos plantes. Fabrication de soins cosmétiques et botaniques maison.` | `https://bloombybotanik.com/bloomlab/` |
+| `/infusion-botanique/` | 200 | `Infusion Botanique Maison : Guide Complet & Bienfaits \| Bloom` | `Découvrez l'art de l'infusion botanique de précision. Températures, solvants et recettes pour préserver le Totum végétal et booster vos bienfaits.` | `https://bloombybotanik.com/infusion-botanique/` |
+| `/extraction-botanique/` | 200 | `Extraction Botanique : Méthodes & Séquençage A/B \| Bloom` | `Maîtrisez l'extraction végétale : macération, infusion, séquençage A/B. Découvrez comment la BloomLab préserve les principes actifs.` | `https://bloombybotanik.com/extraction-botanique/` |
+| `/reset-homeostasique/` | 200 | `Reset Homéostasique : Accordage Systémique en 6 Phases \| Bloom` | `Comprenez la charge allostatique et explorez l'accordage biologique en 6 phases pour soutenir les boucles d'autorégulation du terrain.` | `https://bloombybotanik.com/reset-homeostasique/` |
+| `/academie/reset-homeostasique/` | 200 | `Reset Homéostasique : Protocoles de Drainage & Terrain \| Bloom` | `Libérez vos émonctoires et réactivez votre pharmacie intérieure. Découvrez nos protocoles de phytothérapie de précision pour un drainage profond.` | `https://bloombybotanik.com/academie/reset-homeostasique/` |
+| `/boutique/` | 200 | `Kits Plantes & Soins Botaniques Maison \| Bloom by BotaniK` | `Boutique officielle Bloom by BotaniK : commandez l'extracteur BloomLab®, nos formules de plantes médicinales bio, filtres et accessoires maison.` | `https://bloombybotanik.com/boutique/` |
+| `/boutique/kits/` | 200 | `Kits & Soins Botaniques Maison \| Bloom by BotaniK` | `Kits d'ingrédients et protocoles pour préparer vos sérums, infusions et soins à la BloomLab®. Traçabilité et qualité botanique.` | `https://bloombybotanik.com/boutique/kits/` |
+| `/boutique/abonnements-numeriques/` | 200 | `Abonnements Numériques Bloom Académie & ALMA \| Bloom by BotaniK` | `Accédez aux protocoles systémiques Bloom by BotaniK, fiches d'extraction BloomLab® avancées et suivi personnalisé ALMA.` | `https://bloombybotanik.com/boutique/abonnements-numeriques/` |
+| `/guide-solvants/` | 200 | `Guide des Solvants d'Extraction : Eau, Huile, Alcool \| Bloom by BotaniK` | `Eau, huile végétale, alcool, glycérine : choisissez le solvant adapté avec Bloom by BotaniK et BloomLab® pour libérer le Totum Végétal.` | `https://bloombybotanik.com/guide-solvants/` |
+| `/la-marque/` | 200 | `La Marque Bloom by BotaniK \| Terroirs & Exigence` | `Découvrez l'histoire de Bloom by BotaniK : sélection rigoureuse des plantes brutes, conception française des protocoles et transparence scientifique.` | `https://bloombybotanik.com/la-marque/` |
 
 ---
 
-## 4. Audit de Pertinence On-Page (H1 & 100 premiers mots) & Maillage Interne
+## 3. Pertinence Sémantique, Stratégie Longue Traîne (H1/H2/FAQ) & Maillage Interne (Étapes 4 à 6)
 
-### Balises `<h1>` & Densité de Marque
-- **Page d'accueil (`src/IndexBisContent.tsx`)** :
-  - `<h1>` : `Bloom by BotaniK | BloomLab®, Extracteur Botanique de Précision & Infusion Végétale Maîtrisée` (contient `Bloom by BotaniK` et `BloomLab®`).
-  - **100 premiers mots** : `Bloom by BotaniK` apparaît désormais **3 fois** dans le bloc d'ouverture (H1 + paragraphe 1 + paragraphe 2), accompagné de `BloomLab®`.
-- **Page Produit BloomLab (`src/MachineLanding.tsx`)** : `<h1>` inclut `BloomLab®` et `Bloom by BotaniK`.
-- **Page Infusion Botanique (`src/PillarInfusion.tsx` & `src/data/pillarInfusionTranslations.ts`)** : `<h1>` inclut `BloomLab®` et `Bloom by BotaniK` (FR, EN, DE) et le paragraphe d'introduction mentionne les deux entités.
-- **Page Extraction Botanique (`src/PillarExtraction.tsx`)** : `<h1>` et le paragraphe d'introduction mentionnent `Bloom by BotaniK` et `BloomLab®`.
-- **Page Reset Homéostasique (`src/PhytotherapyResetPage.tsx`)** : `<h1>` et le sous-titre mentionnent `Bloom by BotaniK` et `BloomLab®`.
-- **Boutique (`src/StoreContent.tsx` & `src/translations.ts`)** : `<h1>` inclut `Bloom by BotaniK` et `BloomLab®` (FR, EN, DE) avec description dédiée à l'univers Bloom by BotaniK.
-- **Fiches Produits (`src/ProductDetail.tsx`)** : tous les produits affichent leur `<h1>` dédié (y compris `Duo Argiles Bloom by BotaniK`) ainsi que le schéma structuré `Product` + `BreadcrumbList` attribuant la marque `Bloom by BotaniK`.
+### Page d'accueil (`/` — `src/IndexBisContent.tsx`)
+- **`<h1>` unique** : `Bloom by BotaniK — BloomLab® : L'Extracteur Botanique qui Préserve le Totum Végétal` (inclut explicitement `Bloom by BotaniK` et `BloomLab®`).
+- **100 premiers mots** : `Bloom by BotaniK` et `BloomLab®` apparaissent à 3 reprises dès le bloc Hero et les premiers paragraphes d'introduction.
+- **Maillage de marque** : lien `<a href="/la-marque/">Découvrir la marque Bloom by BotaniK</a>` dans la zone d'action principale.
 
-### Maillage Interne de Marque
-- **Depuis la page d'accueil (`/`)** :
-  - Ajout d'un lien interne direct `<a href="/la-marque/">Découvrir la marque Bloom by BotaniK</a>` dans la zone d'actions du Hero de `IndexBisContent.tsx` (en plus du lien `<a href="/la-marque/">La Marque</a>` présent dans la barre de navigation SSR).
-- **Depuis les fiches produits (`/bloomlab/`, `/boutique/*`)** :
-  - `ProductDetail.tsx` : fil d'Ariane HTML (`<a href="/">Accueil</a>`, `<a href="/boutique/">Boutique</a>`) + lien retour `<a href="/boutique/">`.
-  - `MachineLanding.tsx` : ajout d'un fil d'Ariane HTML (`<a href="/">Accueil Bloom by BotaniK</a>`, `<a href="/boutique/">Boutique</a>`), d'un lien `← Retour à la boutique` et d'un bouton lien `<a href="/boutique/">Voir toute la Boutique Bloom by BotaniK</a>` en bas de page.
+### Pages Clés (H1, Enrichissement Sémantique, FAQ 3–5 Q/R & Liens `<a href>`)
+1. **BloomLab (`/bloomlab/` — `src/MachineLanding.tsx`)** :
+   - Mention explicite de `Bloom by BotaniK` et `BloomLab®` dès l'introduction et dans le `<h1>`.
+   - FAQ de 5 questions-réponses conservée et maillage interne enrichi avec liens `<a href="/guide-solvants/">`, `<a href="/boutique/">` et `<a href="/">`.
+2. **Infusion Botanique (`/infusion-botanique/` — `src/PillarInfusion.tsx` & `src/data/pillarInfusionTranslations.ts`)** :
+   - `<h1>` et introduction mentionnant `BloomLab®` et `Bloom by BotaniK`.
+   - FAQ enrichie avec les requêtes exactes *« Quelle est la différence entre une infusion et une décoction ? »*, *« Pourquoi la température de l'eau est-elle importante ? »* et *« Comment faire une infusion avec un extracteur ? »*.
+   - Maillage interne `<a href="/bloomlab/">`, `<a href="/extraction-botanique/">`, `<a href="/boutique/">` et `<a href="/recettes-gratuites/">`.
+3. **Extraction Botanique (`/extraction-botanique/` — `src/PillarExtraction.tsx`)** :
+   - Ajout d'une section **FAQ de 4 questions-réponses** sur la différence infusion/décoction/macération, le séquençage actif A/B, la régulation thermique ±0,5°C et les solvants.
+   - Remplacement des boutons par de véritables liens HTML `<a href>` vers `/bloomlab/`, `/infusion-botanique/`, `/guide-solvants/` et `/boutique/kits/`.
+4. **Guide des Solvants (`/guide-solvants/` — `src/SolventsGuide.tsx`)** :
+   - Intégration explicite de `Bloom by BotaniK` et `BloomLab®` dans le paragraphe d'introduction.
+   - Ajout d'une section **FAQ de 4 questions-réponses** sur la polarité des solvants, la température des macérats huileux (45°C), le séquençage A/B et la conservation.
+   - Maillage interne HTML `<a href>` vers `/extraction-botanique/`, `/bloomlab/` et `/boutique/`.
+5. **Reset Homéostasique (`/reset-homeostasique/` — `src/PhytotherapyResetPage.tsx`)** :
+   - `<h1>` et sous-titre intégrant `Bloom by BotaniK` et `BloomLab®`.
+   - Ajout d'une section **FAQ de 4 questions-réponses** sur le reset homéostasique, les 5 émonctoires, le Totum végétal et l'usage éducatif sans allégation thérapeutique.
+   - Maillage interne HTML `<a href>` vers `/bloomlab/`, `/extraction-botanique/` et `/boutique/`.
+6. **Boutique & Fiches Produits (`/boutique/`, `/boutique/*` — `src/StoreContent.tsx`, `src/ProductDetail.tsx`)** :
+   - Ajout d'un bandeau de maillage interne (`<a href="/bloomlab/">`, `<a href="/guide-solvants/">`, `<a href="/extraction-botanique/">`, `<a href="/">`) et d'une **FAQ Boutique de 4 questions-réponses** dans `StoreContent.tsx`.
+   - Conservation des fils d'Ariane HTML vers `/` et `/boutique/` sur `ProductDetail.tsx`, avec lien canonique corrigé vers `/extraction-botanique/`.
 
 ---
 
-## 5. Validation Technique & Recommandations Google Search Console
+## 4. Validation Build, Lint & Contrôle Serveur (Étape 7)
 
-- **Build & TypeScript** : `npm run build` (`vite build`) et `npm run lint` (`tsc --noEmit`) exécutés avec succès sans erreur ni avertissement bloquant.
-- **Tests HTTP SSR en direct (`http://localhost:3000/`)** :
-  - `/` retourne `<title>Bloom by BotaniK | Extracteur Botanique de Précision & Infusion Végétale Maîtrisée</title>`, `<meta name="robots" content="index, follow, ..." />`, `<link rel="canonical" href="https://bloombybotanik.com/" />` et `<a href="/la-marque/">`.
-  - `/robots.txt` et `/sitemap.xml` retournent `200 OK` avec les directives valides.
-  - Toutes les routes produit et piliers testées (`/bloomlab/`, `/infusion-botanique/`, `/extraction-botanique/`, `/reset-homeostasique/`, `/boutique/`, `/boutique/kits/`, `/guide-solvants/`, `/boutique/kit-nuit/`, `/abonnement/`) injectent leurs titres, descriptions et canoniques uniques côté serveur ; `/panier/` injecte bien `noindex, nofollow`.
-- **Actions recommandées côté Google Search Console (hors code)** :
-  1. Soumettre `https://bloombybotanik.com/sitemap.xml` dans Search Console.
-  2. Utiliser l'outil *Inspection de l'URL* sur `/`, `/bloomlab/`, `/boutique/` et `/la-marque/` puis demander l'indexation après déploiement en production.
+- **Compilation Vite & TypeScript (`npm run build` + `tsc --noEmit`)** : réussie sans erreur ni avertissement bloquant.
+- **Vérification HTTP locale après redémarrage serveur** :
+  - `GET /`, `/bloomlab/`, `/infusion-botanique/`, `/extraction-botanique/`, `/reset-homeostasique/`, `/academie/reset-homeostasique/`, `/boutique/`, `/boutique/kits/`, `/boutique/abonnements-numeriques/`, `/guide-solvants/`, `/la-marque/` → tous en `HTTP 200`, balise `<link rel="canonical">` unique et auto-référençante, `robots = index, follow...`.
+  - `GET /robots.txt`, `GET /sitemap.xml`, `GET /sitemap-fr.xml` → `HTTP 200` et structure XML valide incluant toutes les URLs clés.

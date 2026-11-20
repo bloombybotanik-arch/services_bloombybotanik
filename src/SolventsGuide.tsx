@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   ArrowRight,
   BookOpen,
@@ -89,6 +89,26 @@ interface OrganSolventRow {
 export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuideProps) {
   const isDE = lang === 'de';
   const isEN = lang === 'en';
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+  const solventFaqs = [
+    {
+      q: "Quel solvant choisir entre l'eau, l'huile végétale et l'alcool ?",
+      a: "L'eau extrait les composés hydrosolubles (mucilages, tanins, flavonoïdes polaires). L'huile végétale capte les actifs liposolubles (caroténoïdes, phytostérols, huiles essentielles). L'alcool ou la glycérine permettent des extractions mixtes et une conservation longue durée."
+    },
+    {
+      q: "À quelle température préparer un macérat huileux avec BloomLab® ?",
+      a: "La plage optimale se situe autour de 45°C pendant 90 à 180 minutes en cuve close inox 304 : suffisamment tiède pour fluidifier l'huile et accélérer la diffusion, tout en protégeant les acides gras polyinsaturés de l'oxydation."
+    },
+    {
+      q: "Pourquoi associer plusieurs solvants dans la méthode Bloom by BotaniK ?",
+      a: "Le séquençage A/B permet de recueillir d'abord les fractions hydrosolubles, puis les fractions liposolubles d'une même plante ou synergie afin de se rapprocher au plus près du Totum végétal."
+    },
+    {
+      q: "Comment conserver ses extraits aqueux, huileux ou hydroalcooliques ?",
+      a: "Les infusions aqueuses se consomment fraîches sous 24 à 48 h au réfrigérateur. Les huiles infusées filtrées et flacons hydroalcooliques se conservent à l'abri de la lumière dans un flacon ambré hermétique."
+    }
+  ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLElement>, view: View, param?: string) => {
     e.preventDefault();
@@ -397,7 +417,9 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
               </h1>
 
               <p className="text-lg sm:text-xl text-white/90 !text-white leading-relaxed font-normal max-w-3xl">
-                Eau, Huile, Alcool, Glycérine : apprenez à choisir le bon solvant pour libérer le{' '}
+                Eau, Huile, Alcool, Glycérine : apprenez à choisir le bon solvant avec la méthode{' '}
+                <strong className="text-white">Bloom by BotaniK</strong> et l&apos;extracteur{' '}
+                <strong className="text-white">BloomLab®</strong> pour libérer le{' '}
                 <TooltipLexique terme="totum" force={true}>
                   <span className="text-white underline decoration-[#E8772E] decoration-dotted underline-offset-4">
                     Totum Végétal
@@ -885,6 +907,45 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
             </FreemiumPaywallGate>
           </section>
 
+          {/* FAQ SOLVANTS */}
+          <section id="faq-solvants" className="space-y-6">
+            <div className="space-y-2">
+              <span className="text-xs font-black uppercase tracking-widest text-[#C8AB8A]">
+                Questions Fréquentes · Polarité &amp; Solvants
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-[#1E2E25] tracking-tight">
+                Questions fréquentes sur les solvants d&apos;extraction
+              </h2>
+            </div>
+
+            <div className="space-y-3">
+              {solventFaqs.map((item, idx) => {
+                const isOpen = openFaq === idx;
+                return (
+                  <div
+                    key={idx}
+                    className="bg-white rounded-2xl border border-[#E7DFD3] overflow-hidden shadow-2xs"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setOpenFaq(isOpen ? null : idx)}
+                      className="w-full flex items-center justify-between gap-4 p-5 text-left font-bold text-sm sm:text-base text-[#1E2E25] hover:text-[#E8772E] transition-colors cursor-pointer"
+                      aria-expanded={isOpen}
+                    >
+                      <span>{item.q}</span>
+                      <span className="text-xs font-mono text-[#E8772E] shrink-0">{isOpen ? '−' : '+'}</span>
+                    </button>
+                    {isOpen && (
+                      <div className="px-5 pb-5 text-xs sm:text-sm text-[#3E4A3D] leading-relaxed border-t border-[#E7DFD3]/60 pt-3">
+                        {item.a}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+
           {/* CTA DE NAVIGATION COMPLÉMENTAIRE */}
           <section className="bg-[#1E2E25] text-white rounded-3xl p-8 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="space-y-2 max-w-2xl">
@@ -896,26 +957,34 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                 Passez de la théorie des solvants au Séquençage Actif A/B
               </h3>
               <p className="text-sm text-white/85 !text-white leading-relaxed">
-                Explorez notre guide complet d&apos;extraction ou consultez l&apos;Herbier Scientifique pour connaître la polarité exacte de chaque plante.
+                Explorez notre guide complet d&apos;extraction, découvrez l&apos;extracteur BloomLab® ou parcourez nos kits sur la Boutique Bloom by BotaniK.
               </p>
             </div>
             <div className="flex flex-wrap gap-3 shrink-0">
-              <button
-                type="button"
-                onClick={() => onNavigate('guide-complet')}
+              <a
+                href="/extraction-botanique/"
+                onClick={(e) => handleNavClick(e, 'guide-complet')}
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition-all cursor-pointer"
               >
                 <span>Guide de l&apos;extraction</span>
                 <ArrowRight className="w-4 h-4" />
-              </button>
-              <button
-                type="button"
-                onClick={() => onNavigate('herbier')}
+              </a>
+              <a
+                href="/bloomlab/"
+                onClick={(e) => handleNavClick(e, 'machine')}
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#E8772E] hover:bg-[#D4651F] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md cursor-pointer"
               >
-                <span>Consulter l&apos;Herbier</span>
+                <span>Découvrir BloomLab®</span>
+                <Sparkles className="w-4 h-4" />
+              </a>
+              <a
+                href="/boutique/"
+                onClick={(e) => handleNavClick(e, 'boutique')}
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition-all cursor-pointer"
+              >
+                <span>Boutique Plantes</span>
                 <CheckCircle2 className="w-4 h-4" />
-              </button>
+              </a>
             </div>
           </section>
         </main>

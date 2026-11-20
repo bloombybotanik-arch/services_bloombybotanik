@@ -372,11 +372,11 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <a 
-              href="/extraction-botanique-guide-complet/"
+              href="/extraction-botanique/"
               onClick={(e) => {
                 if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                   e.preventDefault();
-                  onNavigate('extraction-guide');
+                  onNavigate('pillar-extraction');
                 }
               }}
               className="p-4 rounded-2xl bg-[#F9F9F7] border border-[#1B3022]/5 hover:border-[#C8AB8A]/30 transition-all group flex flex-col justify-between"

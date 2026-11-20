@@ -290,6 +290,26 @@ export default function PhytotherapyResetPage({
     { id: 'nuit', title: '22h00 - 04h00 • Régénération & Autophagie', icon: Sparkles, color: '#C8AB8A', desc: "Nettoyage glymphatique cérébral, réparation tissulaire et recyclage cellulaire profond." }
   ];
 
+  const [openResetFaq, setOpenResetFaq] = useState<number | null>(0);
+  const resetFaqs = [
+    {
+      q: "Qu'est-ce que le Reset Homéostasique selon Bloom by BotaniK ?",
+      a: "C'est une démarche éducative d'hygiène du terrain en 6 phases visant à soutenir les capacités naturelles d'autorégulation de l'organisme (homéostasie), en accompagnant d'abord les émonctoires et les cycles de récupération avant toute relance."
+    },
+    {
+      q: "Pourquoi libérer les 5 émonctoires dès la première phase ?",
+      a: "Le foie, les reins, l'intestin, les poumons et la peau assurent l'évacuation métabolique quotidienne. Accompagner en douceur ces voies d'élimination évite d'encombrer un terrain déjà saturé par la charge allostatique."
+    },
+    {
+      q: "Pourquoi privilégier le Totum végétal plutôt qu'une molécule isolée ?",
+      a: "Les plantes contiennent un spectre complexe de principes actifs, polyphénols et cofacteurs agissant en synergie. Cette matrice naturelle dialogue avec plusieurs boucles physiologiques tout en conservant un meilleur profil de tolérance."
+    },
+    {
+      q: "Comment préparer les protocoles botaniques avec BloomLab® ?",
+      a: "L'extracteur BloomLab® reproduit des températures précises (40°C à 85°C) et une agitation douce en cuve inox 304 pour préserver les composés fragiles (amers, flavonoïdes, phycocyanine). Ce contenu éducatif ne se substitue à aucun traitement ou avis médical."
+    }
+  ];
+
   return (
     <GlossaryProvider pageKey="phytotherapie-reset">
       <div 
@@ -1266,6 +1286,47 @@ export default function PhytotherapyResetPage({
           </section>
 
           {/* ========================================================================= */}
+          {/* 5.5 QUESTIONS FRÉQUENTES SUR LE RESET HOMÉOSTASIQUE                       */}
+          {/* ========================================================================= */}
+          <section id="faq-reset-homeostasique" className="space-y-6">
+            <div className="space-y-2 text-center max-w-3xl mx-auto">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-[#C8AB8A] font-bold">
+                Questions Fréquentes · Terrain &amp; Homéostasie
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-[#0F261E] tracking-tight">
+                Comprendre l&apos;accordage systémique en pratique
+              </h2>
+            </div>
+
+            <div className="max-w-4xl mx-auto space-y-3">
+              {resetFaqs.map((item, idx) => {
+                const isOpen = openResetFaq === idx;
+                return (
+                  <div
+                    key={idx}
+                    className="bg-white rounded-2xl border border-[#E7DFD3] overflow-hidden shadow-xs"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setOpenResetFaq(isOpen ? null : idx)}
+                      className="w-full flex items-center justify-between gap-4 p-5 text-left font-bold text-sm sm:text-base text-[#0F261E] hover:text-[#C8AB8A] transition-colors cursor-pointer"
+                      aria-expanded={isOpen}
+                    >
+                      <span>{item.q}</span>
+                      <span className="text-xs font-mono text-[#C8AB8A] shrink-0">{isOpen ? '−' : '+'}</span>
+                    </button>
+                    {isOpen && (
+                      <div className="px-5 pb-5 text-xs sm:text-sm text-[#3E4A3D] leading-relaxed border-t border-[#E7DFD3]/60 pt-3">
+                        {item.a}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+
+          {/* ========================================================================= */}
           {/* 6. SECTION "ALMA" (LE CTA)                                                */}
           {/* ========================================================================= */}
           <section className="p-8 sm:p-14 rounded-2xl bg-[#0F261E] text-white border border-[#C8AB8A]/40 shadow-xl relative overflow-hidden text-center">
@@ -1280,8 +1341,8 @@ export default function PhytotherapyResetPage({
                 Quel système biologique est actuellement le plus verrouillé chez vous ?
               </h2>
 
-              <p className="text-xs sm:text-sm md:text-base text-[#F9F6F0]/85 leading-relaxed max-w-2xl mx-auto">
-                Le Reset Homéostasique n'est pas une recette universelle : il s'ajuste à votre terrain dominant et au niveau d'engorgement de vos émonctoires. Dialoguez avec ALMA pour identifier vos priorités physiologiques.
+              <p className="text-xs sm:text-sm md:text-base text-[#F9F6F0]/85 !text-[#F9F6F0]/90 leading-relaxed max-w-2xl mx-auto">
+                Le Reset Homéostasique n&apos;est pas une recette universelle : il s&apos;ajuste à votre terrain dominant et au niveau d&apos;engorgement de vos émonctoires. Dialoguez avec ALMA pour identifier vos priorités physiologiques.
               </p>
 
               {/* Bouton CTA et Micro-texte imposé */}
@@ -1296,12 +1357,36 @@ export default function PhytotherapyResetPage({
                 </button>
 
                 {/* Micro-texte imposé sous le bouton */}
-                <p className="text-xs text-[#C8AB8A] font-medium font-sans">
+                <p className="text-xs text-[#C8AB8A] !text-[#C8AB8A] font-medium font-sans">
                   Test personnalisé de 3 minutes pour identifier le système le plus verrouillé chez vous.
                 </p>
               </div>
 
-              <div className="pt-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs text-[#F9F6F0]/60">
+              <div className="pt-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-4 text-xs text-[#F9F6F0]/80">
+                <a
+                  href="/bloomlab/"
+                  onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); onNavigate('machine'); } }}
+                  className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold transition-colors"
+                >
+                  Découvrir BloomLab®
+                </a>
+                <a
+                  href="/extraction-botanique/"
+                  onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); onNavigate('pillar-extraction'); } }}
+                  className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold transition-colors"
+                >
+                  Guide de l&apos;Extraction A/B
+                </a>
+                <a
+                  href="/boutique/"
+                  onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); onNavigate('boutique'); } }}
+                  className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold transition-colors"
+                >
+                  Boutique Bloom by BotaniK
+                </a>
+              </div>
+
+              <div className="pt-4 flex flex-wrap items-center justify-center gap-6 text-xs text-[#F9F6F0]/60">
                 <span className="flex items-center gap-1.5">
                   <Check className="w-3.5 h-3.5 text-[#C8AB8A]" /> 15 questions guidées
                 </span>

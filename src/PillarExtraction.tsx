@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { FlaskConical, Thermometer, Clock, Droplets, Leaf, ShieldCheck, ChevronRight, BookOpen, Activity, ArrowRight, Check, Compass, Sparkles, AlertCircle } from 'lucide-react';
 import { Language, translations } from './translations';
@@ -11,6 +11,45 @@ const bloomLabImg = "/img/produit/bloomlab-1200x1200.jpg";
 export default function PillarExtraction({ lang, onNavigate }: { lang: Language, onNavigate: (v: any, productId?: string) => void }) {
   const t = translations[lang];
   const isFR = lang === 'fr';
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+  const extractionFaqs = isFR
+    ? [
+        {
+          q: "Quelle est la différence entre infusion, décoction et macération botanique ?",
+          a: "L'infusion extrait les parties tendres (fleurs, feuilles) entre 45°C et 80°C sans ébullition continue. La décoction concerne les parties ligneuses (racines, écorces) à frémissement prolongé. La macération s'effectue à froid ou à basse température (45°C dans la BloomLab®) dans de l'huile, de la glycérine ou de l'alcool pour capter les molécules liposolubles ou thermosensibles."
+        },
+        {
+          q: "Pourquoi le séquençage actif A/B préserve-t-il le Totum végétal ?",
+          a: "Une plante contient à la fois des actifs hydrosolubles (Phase A) et liposolubles ou amphiphiles (Phase B). Un seul solvant n'extrait qu'une fraction partielle. En adaptant solvant, température et durée avec Bloom by BotaniK et BloomLab®, vous capturez un spectre complet sans dégrader les composés fragiles."
+        },
+        {
+          q: "Comment contrôler efficacement la température et l'agitation lors de l'extraction ?",
+          a: "Une eau bouillante à 100°C évapore les huiles essentielles volatiles et détruit certains flavonoïdes. L'extracteur BloomLab® maintient la consigne thermique à ±0,5°C en cuve close inox 304 avec un vortex doux qui renouvelle le solvant au contact de la plante."
+        },
+        {
+          q: "Quels solvants utiliser pour une extraction botanique maison ?",
+          a: "L'eau filtrée convient aux extraits aqueux consommables sous 24–48 h, les huiles végétales vierges (jojoba, olive, sésame) aux macérats cutanés et culinaires à 45°C, et la glycérine ou l'alcool alimentaire aux extraits longue conservation."
+        }
+      ]
+    : [
+        {
+          q: "What is the difference between infusion, decoction, and maceration?",
+          a: "Infusion extracts delicate leaves and flowers between 45°C and 80°C without boiling. Decoction targets dense roots and barks via gentle simmering. Maceration extracts lipophilic or heat-sensitive compounds at low temperature (45°C in BloomLab®) using oil, glycerin, or alcohol."
+        },
+        {
+          q: "Why does A/B sequential extraction preserve the plant Totum?",
+          a: "Plants hold both water-soluble (Phase A) and fat-soluble (Phase B) compounds. Pairing solvent polarity, controlled temperature, and time with Bloom by BotaniK's BloomLab® captures the full synergistic spectrum."
+        },
+        {
+          q: "How do temperature and agitation improve botanical extraction?",
+          a: "Boiling water destroys fragile polyphenols and evaporates volatile aromatics. BloomLab® holds temperature within ±0.5°C in a closed 304 stainless steel chamber while gentle vortex motion prevents saturation layers."
+        },
+        {
+          q: "Which natural solvents can be used at home?",
+          a: "Filtered water suits fresh aqueous infusions, virgin plant oils suit 45°C skin or culinary macerates, and vegetable glycerin or food-grade alcohol support stable multi-month extracts."
+        }
+      ];
 
   return (
     <div className="flex-1 bg-[#FAF7F2]">
@@ -592,6 +631,45 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
           </div>
         </section>
 
+        {/* Section 8.5: FAQ Extraction Botanique */}
+        <section id="faq-extraction" className="space-y-6">
+          <div className="space-y-2">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#E8772E]">
+              {isFR ? "Questions Fréquentes" : "Frequently Asked Questions"}
+            </span>
+            <h2 className="text-2xl md:text-3xl font-black text-[#1E2E25] tracking-tight">
+              {isFR ? "Comprendre l'extraction botanique en pratique" : "Botanical extraction FAQ"}
+            </h2>
+          </div>
+
+          <div className="space-y-3">
+            {extractionFaqs.map((item, idx) => {
+              const isOpen = openFaq === idx;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white rounded-2xl border border-[#E7DFD3] overflow-hidden shadow-2xs"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaq(isOpen ? null : idx)}
+                    className="w-full flex items-center justify-between gap-4 p-5 text-left font-bold text-sm sm:text-base text-[#1E2E25] hover:text-[#E8772E] transition-colors cursor-pointer"
+                    aria-expanded={isOpen}
+                  >
+                    <span>{item.q}</span>
+                    <span className="text-xs font-mono text-[#E8772E] shrink-0">{isOpen ? '−' : '+'}</span>
+                  </button>
+                  {isOpen && (
+                    <div className="px-5 pb-5 text-xs sm:text-sm text-[#3E4A3D] leading-relaxed border-t border-[#E7DFD3]/60 pt-3">
+                      {item.a}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
         {/* Section 9: CTA Final & Maillage */}
         <section 
           className="text-center rounded-3xl p-10 md:p-16 border shadow-md space-y-6"
@@ -611,28 +689,39 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
               : "Discover the BloomLab® extractor, our curated botanical kits, and step-by-step guides."}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
-            <button 
-              onClick={() => onNavigate('machine')}
-              className="px-8 py-4 rounded-2xl font-black text-sm transition-all shadow-lg shadow-orange-900/20 hover:shadow-xl hover:bg-[#D4651F] cursor-pointer inline-flex items-center justify-center gap-2 bg-[#E8772E] text-white"
+          <div className="flex flex-wrap gap-3 justify-center pt-2">
+            <a
+              href="/bloomlab/"
+              onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); onNavigate('machine'); } }}
+              className="px-7 py-4 rounded-2xl font-black text-sm transition-all shadow-lg shadow-orange-900/20 hover:shadow-xl hover:bg-[#D4651F] cursor-pointer inline-flex items-center justify-center gap-2 bg-[#E8772E] text-white"
             >
               {isFR ? "Découvrir la BloomLab®" : "Discover BloomLab®"}
               <ArrowRight className="w-4 h-4" />
-            </button>
-            <button 
-              onClick={() => onNavigate('boutique-kits')}
-              className="px-8 py-4 rounded-2xl font-bold text-sm transition-all shadow-sm hover:shadow-md cursor-pointer border"
+            </a>
+            <a
+              href="/infusion-botanique/"
+              onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); onNavigate('infusion-botanique'); } }}
+              className="px-7 py-4 rounded-2xl font-bold text-sm transition-all shadow-sm hover:shadow-md cursor-pointer border inline-flex items-center justify-center"
+              style={{ backgroundColor: '#FFFFFF', color: '#1E2E25', borderColor: '#D8CFBF' }}
+            >
+              {isFR ? "Guide Infusion Botanique" : "Botanical Infusion Guide"}
+            </a>
+            <a
+              href="/guide-solvants/"
+              onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); onNavigate('guide-solvants'); } }}
+              className="px-7 py-4 rounded-2xl font-bold text-sm transition-all shadow-sm hover:shadow-md cursor-pointer border inline-flex items-center justify-center"
+              style={{ backgroundColor: '#FFFFFF', color: '#1E2E25', borderColor: '#D8CFBF' }}
+            >
+              {isFR ? "Guide des Solvants" : "Solvents Guide"}
+            </a>
+            <a
+              href="/boutique/kits/"
+              onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); onNavigate('boutique-kits'); } }}
+              className="px-7 py-4 rounded-2xl font-bold text-sm transition-all shadow-sm hover:shadow-md cursor-pointer border inline-flex items-center justify-center"
               style={{ backgroundColor: '#FFFFFF', color: '#1E2E25', borderColor: '#D8CFBF' }}
             >
               {isFR ? "Découvrir nos Kits Botaniques" : "Explore Botanical Kits"}
-            </button>
-            <button 
-              onClick={() => onNavigate('library-landing')}
-              className="px-8 py-4 rounded-2xl font-bold text-sm transition-all shadow-sm hover:shadow-md cursor-pointer border"
-              style={{ backgroundColor: '#FFFFFF', color: '#1E2E25', borderColor: '#D8CFBF' }}
-            >
-              {isFR ? "Explorer l'Herbier" : "Explore Herbarium"}
-            </button>
+            </a>
           </div>
 
           {/* Bloc Pour aller plus loin */}

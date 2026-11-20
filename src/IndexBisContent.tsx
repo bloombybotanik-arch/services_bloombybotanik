@@ -234,7 +234,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               {/* Le SEUL H1 de la page d'accueil */}
               <h1 className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-[#FAF7F2] text-white !text-white leading-[1.2] tracking-tight drop-shadow-md">
                 {isFR 
-                  ? "L'Extracteur Botanique qui Préserve le Totum Végétal" 
+                  ? "Bloom by BotaniK — BloomLab® : L'Extracteur Botanique qui Préserve le Totum Végétal" 
                   : isDE 
                   ? "Bloom by BotaniK | BloomLab®, Botanischer Präzisionsextraktor & Meisterhafter Pflanzenaufguss"
                   : "Bloom by BotaniK | BloomLab® Precision Botanical Extractor & Mastered Herbal Infusion"}
@@ -1685,6 +1685,41 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               </p>
             </div>
           </div>
+
+          {/* Explorer Bloom : Maillage Interne Structuré pour Sitelinks */}
+          <nav aria-label={isFR ? "Explorer Bloom" : "Explore Bloom"} className="pt-8 border-t border-[#E7DFD3]">
+            <div className="text-center mb-5">
+              <h3 className="text-sm font-black uppercase tracking-[0.2em] text-[#1E2E25]">
+                {isFR ? "Explorer Bloom" : isDE ? "Bloom Entdecken" : "Explore Bloom"}
+              </h3>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+              {[
+                { label: isFR ? "Découvrir la BloomLab" : "Discover BloomLab", view: "machine", href: "/bloomlab/" },
+                { label: isFR ? "Guide d'extraction" : "Extraction Guide", view: "pillar-extraction", href: "/extraction-botanique/" },
+                { label: isFR ? "Infusion Botanique" : "Botanical Infusion", view: "infusion-botanique", href: "/infusion-botanique/" },
+                { label: isFR ? "Remèdes Naturels" : "Natural Care", view: "remedes-naturels", href: "/remedes-naturels/" },
+                { label: isFR ? "Reset Corps" : "Homeostatic Reset", view: "reset-homeostasique", href: "/reset-homeostasique/" },
+                { label: isFR ? "Guide des Solvants" : "Solvents Guide", view: "guide-solvants", href: "/guide-solvants/" },
+                { label: isFR ? "Académie" : "Academy", view: "academie", href: "/academie/" },
+                { label: isFR ? "Boutique" : "Shop", view: "boutique", href: "/boutique/" },
+              ].map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => {
+                    if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                      e.preventDefault();
+                      onNavigate(item.view);
+                    }
+                  }}
+                  className="px-4 py-2 rounded-full bg-white border border-[#E7DFD3] hover:border-[#E8772E] text-xs sm:text-sm font-bold text-[#1E2E25] hover:text-[#E8772E] transition-colors shadow-2xs"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </nav>
 
         </div>
       </section>

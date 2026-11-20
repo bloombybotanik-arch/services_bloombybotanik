@@ -737,6 +737,99 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
           <span className="text-[10px] md:text-xs font-bold text-botanik-green uppercase tracking-wider leading-tight">{t.trust.guarantee}</span>
         </div>
       </div>
+
+      {/* Boutique Internal Linking Strip */}
+      <div className="bg-[#F9F6F0] border border-[#E7DFD3] rounded-2xl p-6 mb-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div>
+          <h3 className="text-sm font-bold text-botanik-green">
+            {isFR ? "Guides & Ressources Bloom by BotaniK" : "Bloom by BotaniK Guides & Resources"}
+          </h3>
+          <p className="text-xs text-botanik-green/70 mt-1">
+            {isFR
+              ? "Maîtrisez la BloomLab® et le choix de vos solvants avant de composer vos kits de plantes."
+              : "Explore BloomLab®, our solvents guide, and extraction protocols."}
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2.5 text-xs font-bold">
+          <a
+            href="/bloomlab/"
+            onClick={(e) => { if (onNavigate && !e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); onNavigate('machine'); } }}
+            className="px-3.5 py-2 rounded-xl bg-white border border-[#E7DFD3] text-botanik-green hover:border-botanik-orange transition-colors"
+          >
+            BloomLab®
+          </a>
+          <a
+            href="/guide-solvants/"
+            onClick={(e) => { if (onNavigate && !e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); onNavigate('guide-solvants'); } }}
+            className="px-3.5 py-2 rounded-xl bg-white border border-[#E7DFD3] text-botanik-green hover:border-botanik-orange transition-colors"
+          >
+            {isFR ? "Guide des Solvants" : "Solvents Guide"}
+          </a>
+          <a
+            href="/extraction-botanique/"
+            onClick={(e) => { if (onNavigate && !e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); onNavigate('pillar-extraction'); } }}
+            className="px-3.5 py-2 rounded-xl bg-white border border-[#E7DFD3] text-botanik-green hover:border-botanik-orange transition-colors"
+          >
+            {isFR ? "Extraction A/B" : "A/B Extraction"}
+          </a>
+          <a
+            href="/"
+            onClick={(e) => { if (onNavigate && !e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); onNavigate('indexbis'); } }}
+            className="px-3.5 py-2 rounded-xl bg-white border border-[#E7DFD3] text-botanik-green hover:border-botanik-orange transition-colors"
+          >
+            {isFR ? "Accueil Bloom" : "Home"}
+          </a>
+        </div>
+      </div>
+
+      {/* Questions Fréquentes Boutique */}
+      <section aria-label="FAQ Boutique Bloom by BotaniK" className="bg-white border border-[#E7DFD3] rounded-2xl p-6 md:p-8 shadow-sm space-y-4">
+        <h2 className="text-xl md:text-2xl font-bold text-botanik-green">
+          {isFR ? "Questions fréquentes — Boutique & Kits Bloom by BotaniK" : "Frequently Asked Questions — Bloom by BotaniK Shop"}
+        </h2>
+        <div className="space-y-3 text-sm text-botanik-green/85">
+          <details className="rounded-xl border border-[#E7DFD3] p-4 bg-[#FAF8F5]" open>
+            <summary className="font-bold text-botanik-green cursor-pointer">
+              {isFR ? "Que contient l'offre Black Friday BloomLab® Solo à 229 € ?" : "What is included in the BloomLab® Solo offer at 229 €?"}
+            </summary>
+            <p className="mt-2 text-xs sm:text-sm leading-relaxed">
+              {isFR
+                ? "La BloomLab® Solo inclut l'extracteur en acier inoxydable 304 à thermorégulation précise, le programme auto-nettoyant 5 minutes ainsi que 5 accessoires offerts (flacon pipette verre opaque 100 ml, pot crème 50 g, distributeur cuir chevelu, sac de filtration 90 microns et gant silicone)."
+                : "BloomLab® Solo includes the precision 304 stainless steel extractor, 5-minute self-clean program, and 5 complimentary accessories."}
+            </p>
+          </details>
+          <details className="rounded-xl border border-[#E7DFD3] p-4 bg-[#FAF8F5]">
+            <summary className="font-bold text-botanik-green cursor-pointer">
+              {isFR ? "Quelle différence entre BloomLab® Solo et le Pack Signature ?" : "What is the difference between BloomLab® Solo and Pack Signature?"}
+            </summary>
+            <p className="mt-2 text-xs sm:text-sm leading-relaxed">
+              {isFR
+                ? "Le Pack Signature associe l'extracteur BloomLab® au Trio Apothicaire de plantes médicinales bio, au Duo Argiles Zéolithe-Bentonite et à 1 mois d'accès complet à la Bloom Academy."
+                : "The Pack Signature pairs BloomLab® with three organic herbal kits, the Clay Duo, and 1 month of full Bloom Academy access."}
+            </p>
+          </details>
+          <details className="rounded-xl border border-[#E7DFD3] p-4 bg-[#FAF8F5]">
+            <summary className="font-bold text-botanik-green cursor-pointer">
+              {isFR ? "Les kits de plantes sont-ils utilisables sans matériel supplémentaire ?" : "Are plant kits ready to use with BloomLab®?"}
+            </summary>
+            <p className="mt-2 text-xs sm:text-sm leading-relaxed">
+              {isFR
+                ? "Oui, nos kits de plantes sèches tracées sont calibrés en granulométrie pour l'extracteur BloomLab® et s'adaptent aux extractions aqueuses, huileuses ou glycérinées selon les fiches protocoles."
+                : "Yes, every botanical pouch is calibrated for BloomLab® aqueous, oil, or glycerin extractions."}
+            </p>
+          </details>
+          <details className="rounded-xl border border-[#E7DFD3] p-4 bg-[#FAF8F5]">
+            <summary className="font-bold text-botanik-green cursor-pointer">
+              {isFR ? "Quels sont les délais d'expédition et garanties Bloom by BotaniK ?" : "What are the shipping times and warranties?"}
+            </summary>
+            <p className="mt-2 text-xs sm:text-sm leading-relaxed">
+              {isFR
+                ? "Expédition depuis la France sous 24 à 48 heures ouvrées avec suivi Colissimo ou Point Relais, et droit de rétractation légal de 14 jours."
+                : "Dispatched from France within 24–48 business hours with tracked delivery."}
+            </p>
+          </details>
+        </div>
+      </section>
       </div>
     </div>
   );

@@ -294,7 +294,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
             <div className="space-y-4 text-base sm:text-lg text-white leading-relaxed font-normal">
               <p className="text-white">
-                Favorisez l'extraction des composés recherchés et respectez les fractions sensibles. Avec BloomLab, vous ne faites plus simplement chauffer une plante : vous optimisez le profil d'extraction de ses principes actifs dans des conditions rigoureuses. La température est maintenue au degré près : assez élevée pour optimiser l’extraction des phytocomposés (<TooltipLexique terme="polyphenols" />, flavonoïdes, huiles essentielles…), mais jamais au‑delà des seuils qui les dégradent, ce qui est exactement ce que montrent les études sur l’impact de la température en extraction végétale.
+                Conçue par <strong>Bloom by BotaniK</strong>, la <strong>BloomLab®</strong> favorise l&apos;extraction des composés recherchés tout en respectant les fractions sensibles. Vous ne faites plus simplement chauffer une plante : vous optimisez le profil d&apos;extraction de ses principes actifs dans des conditions rigoureuses. La température est maintenue au degré près : assez élevée pour optimiser l’extraction des phytocomposés (<TooltipLexique terme="polyphenols" />, flavonoïdes, huiles essentielles…), mais jamais au‑delà des seuils qui les dégradent, ce qui est exactement ce que montrent les études sur l’impact de la température en extraction végétale.
               </p>
               <p className="text-white/90 text-sm sm:text-base font-light">
                 Là où une casserole ou un bain‑marie improvisé chauffent trop fort ou de façon irrégulière (perte d’antioxydants, arômes brûlés, actifs détruits), BloomLab offre un profil thermique maîtrisé qui préserve les molécules sensibles à la chaleur et améliore la quantité d’actifs réellement présents dans vos huiles infusées et macérâts.
@@ -958,6 +958,18 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               {t.final_cta?.guide || "Consulter le Guide Botanique"}
             </button>
             <a
+              href="/guide-solvants/"
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('guide-solvants');
+                }
+              }}
+              className="w-full sm:w-auto px-8 py-5 bg-white/10 hover:bg-white/15 text-white rounded-2xl font-semibold text-base transition-all border border-white/20 inline-flex items-center justify-center"
+            >
+              {lang === 'fr' ? "Guide des Solvants" : lang === 'de' ? "Lösungsmittel-Guide" : "Solvents Guide"}
+            </a>
+            <a
               href="/boutique/"
               onClick={(e) => {
                 if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
@@ -968,6 +980,18 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               className="w-full sm:w-auto px-8 py-5 bg-transparent hover:bg-white/10 text-white/90 rounded-2xl font-semibold text-base transition-all border border-white/20 inline-flex items-center justify-center"
             >
               {lang === 'fr' ? "Voir toute la Boutique Bloom by BotaniK" : lang === 'de' ? "Zum Bloom by BotaniK Shop" : "Browse Bloom by BotaniK Shop"}
+            </a>
+            <a
+              href="/"
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('home');
+                }
+              }}
+              className="w-full sm:w-auto px-6 py-5 bg-transparent hover:bg-white/10 text-white/80 rounded-2xl font-medium text-sm transition-all border border-white/15 inline-flex items-center justify-center"
+            >
+              {lang === 'fr' ? "Accueil Bloom by BotaniK" : "Bloom by BotaniK Home"}
             </a>
           </div>
         </div>

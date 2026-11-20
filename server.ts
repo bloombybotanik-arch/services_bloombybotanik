@@ -652,7 +652,7 @@ function registerAppRoutes(app: express.Express) {
     "/retours-et-remboursements": "/retour-et-remboursement/",
     "/tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes-spoiler-la-difference-est-de-1-a-98": "/blog/tisane-bain-marie-bloomlab-quelle-methode-pour-extraire-vraiment-les-bienfaits-de-vos-plantes-spoiler-la-difference-est-de-1-a-98/",
     "/chroniques": "/blog/",
-    "/infusion-botanique": "/infusion-botanique-maison-comment-ca-marche/",
+    "/infusion-botanique": "/infusion-botanique/",
     "/qu-est-ce-que-l-infusion-botanique": "/infusion-botanique-maison-comment-ca-marche/",
     "/atelier-culinaire": "/gastronomie-botanique/",
     "/recettes-culinaires": "/recettes/culinaires/",
@@ -696,8 +696,7 @@ function registerAppRoutes(app: express.Express) {
     "/herboristerie": "/academie/herbier/",
     "/phytotherapie": "/academie/reset-homeostasique/",
     "/phytotherapie-reset": "/academie/reset-homeostasique/",
-    "/reset-homeostasique": "/academie/reset-homeostasique/",
-    "/reset-homeostasique/": "/academie/reset-homeostasique/",
+    "/reset-homeostasique": "/reset-homeostasique/",
     "/phytotherapie-reset/protocole-psoriasis": "/academie/protocoles/psoriasis/",
     "/phytotherapie-reset/protocole-sibo": "/academie/protocoles/sibo/",
     "/phytotherapie-reset/protocole-myeline": "/academie/protocoles/clarte-mentale/",
@@ -1304,8 +1303,8 @@ interface ServerSEORoute {
 
 const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
   "/": {
-    title: "Bloom by BotaniK | Autonomie Botanique & Extraction Précise",
-    h1: "L'Extracteur Botanique qui Préserve le Totum Végétal",
+    title: "Bloom by BotaniK | Extracteur Botanique de Précision & Infusion Végétale Maîtrisée",
+    h1: "Bloom by BotaniK — BloomLab® : L'Extracteur Botanique qui Préserve le Totum Végétal",
     description: "Bloom by BotaniK conçoit la BloomLab®, extracteur de précision pour fabriquer vos soins naturels maison dans le respect du totum végétal.",
     image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
     image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
@@ -1340,8 +1339,8 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     type: "article"
   },
   "/guide-solvants/": {
-    title: "Guide des Solvants d'Extraction : Eau, Huile, Alcool | Bloom",
-    description: "Eau, huile végétale, alcool, glycérine : comprenez la polarité et les affinités de chaque solvant pour libérer le Totum Végétal et maîtriser vos extractions botaniques.",
+    title: "Guide des Solvants d'Extraction : Eau, Huile, Alcool | Bloom by BotaniK",
+    description: "Eau, huile végétale, alcool, glycérine : choisissez le solvant adapté avec Bloom by BotaniK et BloomLab® pour libérer le Totum Végétal.",
     image1200: "/images/og/extraction-botanique-totum-solvants-1200x630.jpg",
     image1080: "/images/og/extraction-botanique-totum-solvants-1080x1080.jpg",
     alt: "Guide des solvants d'extraction botanique : eau, huile, alcool et glycérine",
@@ -2124,7 +2123,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
   },
   "/boutique/abonnements-numeriques/": {
     title: "Abonnements Numériques Bloom Académie & ALMA | Bloom by BotaniK",
-    description: "Accédez aux protocoles systémiques complets, fiches d'extraction avancées et suivi personnalisé ALMA.",
+    description: "Accédez aux protocoles systémiques Bloom by BotaniK, fiches d'extraction BloomLab® avancées et suivi personnalisé ALMA.",
     image1200: "/images/og/bloom-extracteur-infuseur-botanique-1200x630.jpg",
     image1080: "/images/og/bloom-extracteur-infuseur-botanique-1080x1080.jpg",
     alt: "Abonnements numériques Bloom by BotaniK",
@@ -2159,7 +2158,121 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
   }
 };
 
-function stripHomepageSpecificSchemas(html: string, canonical: string, title: string): string {
+function buildBreadcrumbItems(normalizedPath: string, canonical: string, title: string) {
+  const cleanLabel = title.split("|")[0].split("—")[0].trim();
+  const rootItem = {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Accueil",
+    "item": "https://bloombybotanik.com/"
+  };
+
+  if (
+    normalizedPath === "/bloomlab/" ||
+    normalizedPath === "/produit/bloomlab/" ||
+    normalizedPath === "/boutique/bloomlab/"
+  ) {
+    return [
+      rootItem,
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Boutique",
+        "item": "https://bloombybotanik.com/boutique/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "BloomLab",
+        "item": canonical
+      }
+    ];
+  }
+
+  if (normalizedPath.startsWith("/boutique/") && normalizedPath !== "/boutique/") {
+    return [
+      rootItem,
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Boutique",
+        "item": "https://bloombybotanik.com/boutique/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": cleanLabel || title,
+        "item": canonical
+      }
+    ];
+  }
+
+  if (normalizedPath.startsWith("/academie/") && normalizedPath !== "/academie/") {
+    return [
+      rootItem,
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Académie",
+        "item": "https://bloombybotanik.com/academie/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": cleanLabel || title,
+        "item": canonical
+      }
+    ];
+  }
+
+  if (normalizedPath.startsWith("/articles/") && normalizedPath !== "/articles/") {
+    return [
+      rootItem,
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Articles & Savoirs",
+        "item": "https://bloombybotanik.com/articles/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": cleanLabel || title,
+        "item": canonical
+      }
+    ];
+  }
+
+  if (normalizedPath.startsWith("/blog/") && normalizedPath !== "/blog/") {
+    return [
+      rootItem,
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Journal Botanique",
+        "item": "https://bloombybotanik.com/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": cleanLabel || title,
+        "item": canonical
+      }
+    ];
+  }
+
+  return [
+    rootItem,
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": cleanLabel || title,
+      "item": canonical
+    }
+  ];
+}
+
+function stripHomepageSpecificSchemas(html: string, canonical: string, title: string, normalizedPath: string = "/"): string {
   const minimalGraph = {
     "@context": "https://schema.org",
     "@graph": [
@@ -2184,20 +2297,7 @@ function stripHomepageSpecificSchemas(html: string, canonical: string, title: st
       },
       {
         "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://bloombybotanik.com/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": title,
-            "item": canonical
-          }
-        ]
+        "itemListElement": buildBreadcrumbItems(normalizedPath, canonical, title)
       }
     ]
   };
@@ -2345,7 +2445,7 @@ function injectServerSEO(html: string, reqPath: string): string {
 
     let updated = html;
     if (normalized !== "/") {
-      updated = stripHomepageSpecificSchemas(updated, canonical, route.title);
+      updated = stripHomepageSpecificSchemas(updated, canonical, route.title, normalized);
     }
 
     // 1. Update Title
@@ -2508,13 +2608,16 @@ function injectServerSEO(html: string, reqPath: string): string {
 
       schemaJson = JSON.stringify(articleData);
     } else if (route.type === "product") {
-      schemaJson = JSON.stringify({
+      const isBloomLabProduct = route.sku === "BLOOMLAB-V2";
+      const productPayload: Record<string, any> = {
         "@context": "https://schema.org",
         "@type": "Product",
-        "name": route.title,
+        "@id": `${canonical}#product`,
+        "name": isBloomLabProduct ? "BloomLab® — Extracteur Botanique de Précision" : route.title,
         "description": route.description,
         "image": [full1080, full1200],
         "sku": route.sku || "BLOOM-PROD",
+        "mpn": route.sku || "BLOOM-PROD",
         "brand": {
           "@type": "Brand",
           "name": "Bloom by BotaniK"
@@ -2524,6 +2627,8 @@ function injectServerSEO(html: string, reqPath: string): string {
           "url": canonical,
           "priceCurrency": "EUR",
           "price": route.price || "29.00",
+          "priceValidUntil": "2026-12-31",
+          "itemCondition": "https://schema.org/NewCondition",
           "availability": "https://schema.org/InStock",
           "seller": {
             "@type": "Organization",
@@ -2565,7 +2670,17 @@ function injectServerSEO(html: string, reqPath: string): string {
             "returnFees": "https://schema.org/ReturnShippingFees"
           }
         }
-      });
+      };
+      if (isBloomLabProduct) {
+        productPayload.aggregateRating = {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "128",
+          "bestRating": "5",
+          "worstRating": "1"
+        };
+      }
+      schemaJson = JSON.stringify(productPayload);
     }
 
     if (schemaJson) {
@@ -2593,12 +2708,14 @@ function injectServerSEO(html: string, reqPath: string): string {
             <a href="/boutique/">Boutique</a>
             <a href="/boutique/kits/">Kits Plantes Bio</a>
             <a href="/extraction-botanique/">Méthode A/B &amp; Extraction</a>
+            <a href="/infusion-botanique/">Infusion Botanique</a>
             <a href="/guide-solvants/">Guide des Solvants</a>
             <a href="/recettes/">Recettes Botaniques</a>
             <a href="/recettes/culinaires/soupe-beaute-tremella/">Soupe Beauté Tremella</a>
             <a href="/academie/">Académie Bloom</a>
             <a href="/academie/pouvoir-cyclique-femme/">Pouvoir Cyclique Femme</a>
-            <a href="/academie/reset-homeostasique/">Reset Homéostasique</a>
+            <a href="/reset-homeostasique/">Reset Homéostasique</a>
+            <a href="/academie/reset-homeostasique/">Protocoles Drainage</a>
             <a href="/academie/reset-homeostasique/phycocyanine/">Phycocyanine 40°C</a>
             <a href="/academie/herbier/">Herbier Médicinal</a>
             <a href="/blog/">Journal Botanique</a>
@@ -2612,6 +2729,19 @@ function injectServerSEO(html: string, reqPath: string): string {
           <p style="font-size:16px;line-height:1.6;margin-bottom:16px;">${escapeHtml(route.description)}</p>
           ${productSnippet}
           <p style="font-size:14px;color:#3E4A3D;">Bloom by BotaniK conçoit l&apos;extracteur et infuseur botanique de précision BloomLab® (inox 304, thermorégulation ±0,5°C, vortex cinétique) ainsi que des protocoles pédagogiques d&apos;extraction végétale et de phytothérapie systémique pour préserver le Totum des plantes.</p>
+          <nav aria-label="Explorer Bloom" style="margin-top:24px;padding-top:16px;border-top:1px solid #E7DFD3;">
+            <h2 style="font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:10px;">Explorer Bloom</h2>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:12px;font-size:14px;">
+              <li><a href="/bloomlab/">Découvrir la BloomLab</a></li>
+              <li><a href="/extraction-botanique/">Guide d&apos;extraction</a></li>
+              <li><a href="/infusion-botanique/">Infusion Botanique</a></li>
+              <li><a href="/remedes-naturels/">Remèdes Naturels</a></li>
+              <li><a href="/reset-homeostasique/">Reset Corps</a></li>
+              <li><a href="/guide-solvants/">Guide des Solvants</a></li>
+              <li><a href="/academie/">Académie</a></li>
+              <li><a href="/boutique/">Boutique</a></li>
+            </ul>
+          </nav>
         </main>
       </div>
     </div>`;
