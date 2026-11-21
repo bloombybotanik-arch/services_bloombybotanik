@@ -605,37 +605,62 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
 
             {/* Section 2 : Deux exemples de ce que vous pouvez créer dès ce soir */}
             <section className="bg-[#1B3022]/5 border border-[#1B3022]/10 rounded-3xl p-6 sm:p-10 space-y-6">
-              <h2 className="text-2xl sm:text-3xl font-black text-[#1B3022] tracking-tight">
-                {lang === 'fr'
-                  ? "🌿 Deux exemples de ce que vous pouvez créer dès ce soir :"
-                  : lang === 'de'
-                  ? "🌿 Zwei Beispiele, die Sie heute Abend zubereiten können:"
-                  : "🌿 Two creations you can make tonight:"}
-              </h2>
+              <div className="space-y-2">
+                <h2 className="text-2xl sm:text-3xl font-black text-[#1B3022] tracking-tight">
+                  {lang === 'fr'
+                    ? "🌿 Deux exemples de ce que vous pouvez créer dès ce soir :"
+                    : lang === 'de'
+                    ? "🌿 Zwei Beispiele, die Sie heute Abend zubereiten können:"
+                    : "🌿 Two creations you can make tonight:"}
+                </h2>
+                <p className="text-xs sm:text-sm font-semibold text-[#1B3022]/70">
+                  {lang === 'fr'
+                    ? "Repère des phases : Phase A = Hydrosoluble (eau & infusions) • Phase B = Liposoluble (huiles végétales & macérats)"
+                    : lang === 'de'
+                    ? "Phasen-Hinweis: Phase A = Wasserlöslich (Wasser & Aufgüsse) • Phase B = Fettlöslich (Pflanzenöle & Mazerate)"
+                    : "Phase guide: Phase A = Water-soluble (water & infusions) • Phase B = Fat-soluble (plant oils & macerates)"}
+                </p>
+              </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white rounded-2xl p-6 border border-[#1B3022]/10 shadow-xs space-y-2">
+                <div className="bg-white rounded-2xl p-6 border border-[#1B3022]/10 shadow-xs space-y-3">
                   <h3 className="text-lg font-extrabold text-[#1B3022]">
                     {lang === 'fr' ? "Sérum Capillaire Fortifiant" : lang === 'de' ? "Kräftigendes Haarserum" : "Fortifying Hair Serum"}
                   </h3>
+                  <div className="flex flex-wrap gap-2 text-xs font-bold">
+                    <span className="px-2.5 py-1 rounded-md bg-amber-50 text-[#B45309] border border-amber-200">
+                      {lang === 'fr' ? "Phase : Phase B (Liposoluble)" : lang === 'de' ? "Phase: Phase B (Fettlöslich)" : "Phase: Phase B (Fat-soluble)"}
+                    </span>
+                    <span className="px-2.5 py-1 rounded-md bg-[#1B3022]/5 text-[#1B3022] border border-[#1B3022]/10">
+                      {lang === 'fr' ? "Paramètres : 45°C / 2h" : lang === 'de' ? "Parameter: 45°C / 2 Std." : "Parameters: 45°C / 2h"}
+                    </span>
+                  </div>
                   <p className="text-sm text-[#1B3022]/85 leading-relaxed">
                     {lang === 'fr'
-                      ? "Romarin + Gingembre + Huile de Jojoba → Réglage Phase B (50°C / 2h). Résultat : une huile dorée, limpide, qui nourrit le cuir chevelu sans résidus brûlés."
+                      ? "Extraction des actifs du romarin et du gingembre dans l'huile de jojoba. Une synergie qui fortifie le cuir chevelu tout en préservant la légèreté de l'huile, sans résidus brûlés."
                       : lang === 'de'
-                      ? "Rosmarin + Ingwer + Jojobaöl → Phase B (50°C / 2 Std.). Ergebnis: ein klares, goldenes Öl, das die Kopfhaut ohne verbrannte Rückstände pflegt."
-                      : "Rosemary + Ginger + Jojoba Oil → Phase B setting (50°C / 2h). Result: a clear golden oil that nourishes the scalp with zero burnt residue."}
+                      ? "Extraktion der Wirkstoffe von Rosmarin und Ingwer in Jojobaöl. Eine Synergie, die die Kopfhaut stärkt und gleichzeitig die Leichtigkeit des Öls ohne verbrannte Rückstände bewahrt."
+                      : "Extraction of rosemary and ginger actives in jojoba oil. A synergy that strengthens the scalp while preserving the lightness of the oil, with zero burnt residue."}
                   </p>
                 </div>
 
-                <div className="bg-white rounded-2xl p-6 border border-[#1B3022]/10 shadow-xs space-y-2">
+                <div className="bg-white rounded-2xl p-6 border border-[#1B3022]/10 shadow-xs space-y-3">
                   <h3 className="text-lg font-extrabold text-[#1B3022]">
                     {lang === 'fr' ? "Baume Apaisant au Calendula" : lang === 'de' ? "Beruhigender Calendula-Balsam" : "Soothing Calendula Balm"}
                   </h3>
+                  <div className="flex flex-wrap gap-2 text-xs font-bold">
+                    <span className="px-2.5 py-1 rounded-md bg-amber-50 text-[#B45309] border border-amber-200">
+                      {lang === 'fr' ? "Phase : Phase B (Liposoluble)" : lang === 'de' ? "Phase: Phase B (Fettlöslich)" : "Phase: Phase B (Fat-soluble)"}
+                    </span>
+                    <span className="px-2.5 py-1 rounded-md bg-[#1B3022]/5 text-[#1B3022] border border-[#1B3022]/10">
+                      {lang === 'fr' ? "Paramètres : 40°C / 3h" : lang === 'de' ? "Parameter: 40°C / 3 Std." : "Parameters: 40°C / 3h"}
+                    </span>
+                  </div>
                   <p className="text-sm text-[#1B3022]/85 leading-relaxed">
                     {lang === 'fr'
-                      ? "Fleurs séchées + Huile d'olive → Réglage Phase A (60°C / 3h). Résultat : un macérat riche en principes apaisants, reproductible à l'identique."
+                      ? "Macérat de fleurs de calendula dans l'huile d'olive. Une extraction douce qui capture tous les principes apaisants et les pigments de la fleur, pour un baume riche et réparateur."
                       : lang === 'de'
-                      ? "Getrocknete Blüten + Olivenöl → Phase A (60°C / 3 Std.). Ergebnis: ein reichhaltiges, wohltuendes Mazerat in reproduzierbarer Qualität."
-                      : "Dried blossoms + Olive oil → Phase A setting (60°C / 3h). Result: a rich soothing macerate, repeatable every single time."}
+                      ? "Mazerat aus Ringelblumenblüten in Olivenöl. Eine sanfte Extraktion, die alle beruhigenden Wirkstoffe und Pigmente der Blüte für einen reichhaltigen, regenerierenden Balsam einfängt."
+                      : "Maceration of calendula flowers in olive oil. A gentle extraction that captures all soothing actives and floral pigments for a rich, restorative balm."}
                   </p>
                 </div>
               </div>
