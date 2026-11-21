@@ -1269,10 +1269,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 </h3>
                 <p className="text-xs text-[#3E4A3D]/70 mb-6 leading-relaxed">
                   {lang === 'fr'
-                    ? "Machine BloomLab® Inox 304, Kit accessoires apothicaire, L'Herbier Complet (4 mélanges), Duo Argiles KlinoMont® et 3 mois d'accès Premium Académie."
+                    ? "Machine BloomLab® Inox 304, Kit accessoires apothicaire, L'Herbier Complet (4 mélanges), Duo Argiles et 3 mois d'accès Premium Académie."
                     : lang === 'de'
-                    ? "BloomLab® 304-Edelstahl, Apotheker-Zubehör, Vollständiges Herbarium (4 Mischungen), KlinoMont® Tonerde-Duo und 3 Monate Premium-Akademie."
-                    : "BloomLab® 304 Steel Machine, Apothecary Kit, Complete Herbarium (4 blends), KlinoMont® Clay Duo, and 3 months Premium Academy access."}
+                    ? "BloomLab® 304-Edelstahl, Apotheker-Zubehör, Vollständiges Herbarium (4 Mischungen), Tonerde-Duo und 3 Monate Premium-Akademie."
+                    : "BloomLab® 304 Steel Machine, Apothecary Kit, Complete Herbarium (4 blends), Clay Duo, and 3 months Premium Academy access."}
                 </p>
                 <div className="flex items-baseline gap-2 mb-6">
                   <span className="text-4xl font-black text-[#3E4A3D]">289€</span>
@@ -1290,7 +1290,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
-                    <span>{lang === 'fr' ? "L'Herbier Complet (4 mélanges) + Duo Argiles KlinoMont® (Zéolithe-Bentonite)" : lang === 'de' ? "Vollständiges Herbarium (4 Mischungen) + KlinoMont® Erden-Duo (Zeolith-Bentonit)" : "Complete Herbarium (4 blends) + KlinoMont® Clay Duo (Zeolite-Bentonite)"}</span>
+                    <span>{lang === 'fr' ? "L'Herbier Complet (4 mélanges) + Duo Argiles (Zéolithe-Bentonite)" : lang === 'de' ? "Vollständiges Herbarium (4 Mischungen) + Erden-Duo (Zeolith-Bentonit)" : "Complete Herbarium (4 blends) + Clay Duo (Zeolite-Bentonite)"}</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />

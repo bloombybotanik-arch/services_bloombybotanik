@@ -268,22 +268,22 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       };
     })(),
     'bundle-apothicaire': {
-      name: isFR ? "Pack Herbier Complet — 4 Mélanges + Duo Argiles KlinoMont®" : isDE ? "Vollständiges Herbarium — 4 Mischungen + KlinoMont® Duo" : "Complete Herbarium Pack — 4 Blends + KlinoMont® Clay Duo",
-      subtitle: isFR ? "TOUS LES KITS BOTANIQUES + DUO ARGILES KLINOMONT®" : isDE ? "ALLE PFLANZEN-SETS + KLINOMONT® ERDEN-DUO" : "ALL BOTANICAL KITS + KLINOMONT® CLAY DUO",
+      name: isFR ? "Pack Herbier Complet — 4 Mélanges + Duo Argiles" : isDE ? "Vollständiges Herbarium — 4 Mischungen + Erden-Duo" : "Complete Herbarium Pack — 4 Blends + Clay Duo",
+      subtitle: isFR ? "TOUS LES KITS BOTANIQUES + DUO ARGILES" : isDE ? "ALLE PFLANZEN-SETS + ERDEN-DUO" : "ALL BOTANICAL KITS + CLAY DUO",
       price: 49.00,
       originalPrice: 87.50,
       images: [trioPouchesImg, duoArgilesImg, seveFondamentaleImg],
       description: isFR 
-        ? "Le coffret complet réunissant l'intégralité de nos 4 mélanges de plantes (Sève, Nuit, Digestion, Articulaire) et le Duo Argiles KlinoMont®."
+        ? "Le coffret complet réunissant l'intégralité de nos 4 mélanges de plantes (Sève, Nuit, Digestion, Articulaire) et le Duo Argiles."
         : isDE
-        ? "Das Komplett-Set mit allen 4 Bio-Pflanzenmischungen (Saft, Nacht, Verdauung, Gelenke) und dem KlinoMont® Erden-Duo."
-        : "Our complete botanical bundle bringing together all 4 organic plant blends (Sap, Night, Digestion, Joint) and the KlinoMont® Clay Duo.",
+        ? "Das Komplett-Set mit allen 4 Bio-Pflanzenmischungen (Saft, Nacht, Verdauung, Gelenke) und dem Erden-Duo."
+        : "Our complete botanical bundle bringing together all 4 organic plant blends (Sap, Night, Digestion, Joint) and the Clay Duo.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <p class="text-lg mb-8">Ce pack complet regroupe l'expertise botanique et minérale de Bloom dans un coffret prêt à extraire.</p>
           <h3 class="text-xl font-bold mb-4">Contenu de l'offre :</h3>
           <ul class="space-y-2 mb-8">
-            <li>• <strong>Duo Argiles KlinoMont® :</strong> Zéolithe & Bentonite micronisées (6µm)</li>
+            <li>• <strong>Duo Argiles :</strong> Zéolithe & Bentonite micronisées (6µm)</li>
             <li>• <strong>Kit Sève Fondamentale :</strong> Vitalité et Structure</li>
             <li>• <strong>Kit Nuit Profonde :</strong> Détente nocturne et Ancrage</li>
             <li>• <strong>Kit Équilibre & Flux :</strong> Confort digestif</li>
@@ -295,7 +295,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <p class="text-lg mb-8">Dieses Komplettpaket vereint die botanische und mineralische Expertise von Bloom in einem sofort einsetzbaren Set.</p>
           <h3 class="text-xl font-bold mb-4">Inhalt des Angebots:</h3>
           <ul class="space-y-2 mb-8">
-            <li>• <strong>KlinoMont® Erden-Duo:</strong> Zeolith & Bentonit (6µm)</li>
+            <li>• <strong>Erden-Duo:</strong> Zeolith & Bentonit (6µm)</li>
             <li>• <strong>Set Fundamentaler Saft:</strong> Vitalität und Struktur</li>
             <li>• <strong>Set Tiefe Nacht:</strong> Entspannung und Erdung</li>
             <li>• <strong>Set Verdauungskomfort:</strong> Darmgleichgewicht</li>
@@ -307,7 +307,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <p class="text-lg mb-8">This complete bundle brings together Bloom's botanical and mineral expertise in one ready-to-extract kit.</p>
           <h3 class="text-xl font-bold mb-4">Offer Content:</h3>
           <ul class="space-y-2 mb-8">
-            <li>• <strong>KlinoMont® Clay Duo:</strong> Micronized Zeolite & Bentonite (6µm)</li>
+            <li>• <strong>Clay Duo:</strong> Micronized Zeolite & Bentonite (6µm)</li>
             <li>• <strong>Fundamental Sap Kit:</strong> Vitality and Structure</li>
             <li>• <strong>Deep Night Kit:</strong> Evening calm and Grounding</li>
             <li>• <strong>Balance & Flow Kit:</strong> Digestive Comfort</li>
@@ -327,10 +327,10 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       originalPrice: 349.00,
       images: ["/img/produit/pack-signature-1200x1200.jpg", bloomLabImg, trioPouchesImg, duoArgilesImg, seveFondamentaleImg, nuitProfondeImg],
       description: isFR 
-        ? "Machine BloomLab® Inox 304, Kit accessoires apothicaire, L'Herbier Complet (4 mélanges), Duo Argiles KlinoMont® (Zéolithe-Bentonite) et 3 mois d'accès Premium Académie."
+        ? "Machine BloomLab® Inox 304, Kit accessoires apothicaire, L'Herbier Complet (4 mélanges), Duo Argiles (Zéolithe-Bentonite) et 3 mois d'accès Premium Académie."
         : isDE
-        ? "BloomLab® 304-Edelstahl, Apotheker-Zubehörset, Vollständiges Herbarium (4 Mischungen), KlinoMont® Erden-Duo (Zeolith-Bentonit) und 3 Monate Premium-Zugang zur Akademie."
-        : "BloomLab® 304 Steel Machine, Apothecary Kit, Complete Herbarium (4 blends), KlinoMont® Clay Duo (Zeolite-Bentonite), and 3 months Premium Academy access.",
+        ? "BloomLab® 304-Edelstahl, Apotheker-Zubehörset, Vollständiges Herbarium (4 Mischungen), Erden-Duo (Zeolith-Bentonit) und 3 Monate Premium-Zugang zur Akademie."
+        : "BloomLab® 304 Steel Machine, Apothecary Kit, Complete Herbarium (4 blends), Clay Duo (Zeolite-Bentonite), and 3 months Premium Academy access.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <div class="bg-[#3E4A3D] text-white p-8 rounded-[40px] mb-12 shadow-lg" style="background-color: #3E4A3D; color: #ffffff;">
@@ -484,9 +484,9 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
         <div class="prose prose-botanik max-w-none space-y-6">
           <div class="bg-[#3E4A3D] text-white p-8 rounded-[32px] shadow-lg" style="background-color: #3E4A3D; color: #ffffff;">
             <h2 class="text-2xl font-bold text-white mb-2 text-center">${isDE ? "SIGNATURE-PAKET 2026" : "2026 SIGNATURE PACK"}</h2>
-            <p class="text-base text-white/90 text-center">${isDE ? "BloomLab® + Vollständiges Herbarium + KlinoMont® + 3 Monate Premium Akademie" : "BloomLab® + Complete Herbarium + KlinoMont® + 3 Months Premium Academy"}</p>
+            <p class="text-base text-white/90 text-center">${isDE ? "BloomLab® + Vollständiges Herbarium + Erden-Duo + 3 Monate Premium Akademie" : "BloomLab® + Complete Herbarium + Clay Duo + 3 Months Premium Academy"}</p>
           </div>
-          <p class="text-lg">${isDE ? "Das umfassende Komplettpaket: Extrahieren Sie das volle pflanzliche Totum zu Hause mit präziser A/B-Temperatursteuerung, dem KlinoMont® Zeolith-Bentonit-Erden-Duo und 4 Bio-Pflanzenmischungen." : "The complete autonomy pack including the BloomLab® 304 steel extractor, apothecary kit, Complete Herbarium (4 blends), KlinoMont® Clay Duo, and 3 months Premium Academy access."}</p>
+          <p class="text-lg">${isDE ? "Das umfassende Komplettpaket: Extrahieren Sie das volle pflanzliche Totum zu Hause mit präziser A/B-Temperatursteuerung, dem Zeolith-Bentonit-Erden-Duo und 4 Bio-Pflanzenmischungen." : "The complete autonomy pack including the BloomLab® 304 steel extractor, apothecary kit, Complete Herbarium (4 blends), Clay Duo, and 3 months Premium Academy access."}</p>
         </div>
       `,
       specs: [
@@ -1127,7 +1127,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       specs: [{ label: isFR ? "Format" : isDE ? "Inhalt" : "Size", value: "50g", icon: Leaf }]
     },
     'kit-reset': {
-      name: isFR ? "Duo Argiles KlinoMont® — Purification Systémique Zeolithe-Bentonite" : isDE ? "KlinoMont® Erden-Duo — Systemische Reinigung Zeolith-Bentonit" : "KlinoMont® Clays Duo — Systemic Purification Zeolite-Bentonite",
+      name: isFR ? "Duo Argiles — Purification Systémique Zeolithe-Bentonite" : isDE ? "Erden-Duo — Systemische Reinigung Zeolith-Bentonit" : "Clays Duo — Systemic Purification Zeolite-Bentonite",
       subtitle: isFR ? "CHÉLATION NATURELLE & RÉÉQUILIBRAGE DE TERRAIN" : isDE ? "MINERALISCHE SYNERGIE & TERRAIN" : "MINERAL SYNERGY & TERRAIN",
       price: 34.00,
       originalPrice: 49.00,

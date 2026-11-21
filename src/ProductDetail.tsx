@@ -333,7 +333,7 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
                 {sheet.subtitle}
               </div>
               <h1 className="text-xl sm:text-2xl font-bold text-[#3E4A3D] tracking-tight leading-snug">
-                {lang === 'fr' ? 'Duo Argiles KlinoMont®' : lang === 'de' ? 'KlinoMont® Erden-Duo' : 'KlinoMont® Clay Duo'}
+                {lang === 'fr' ? 'Duo Argiles' : lang === 'de' ? 'Erden-Duo' : 'Clay Duo'}
               </h1>
               <p className="text-xs sm:text-sm font-medium text-[#1B3022]/70 mt-1">
                 {lang === 'fr' ? 'Purification Systémique Zéolithe-Bentonite (6μm)' : lang === 'de' ? 'Systemische Reinigung Zeolith-Bentonit (6μm)' : 'Systemic Zeolite-Bentonite Purification (6μm)'}

@@ -70,7 +70,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
   const [activeUniverse, setActiveUniverse] = useState<UniverseType>('cosmetique');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [cartItem, setCartItem] = useState({ title: "Pack Signature — BloomLab® + Herbier Complet + Duo Argiles KlinoMont®", price: 289 });
+  const [cartItem, setCartItem] = useState({ title: "Pack Signature — BloomLab® + Herbier Complet + Duo Argiles", price: 289 });
   const heroSlides = [heroImg1, heroImg2, heroImg3];
   const extendedHeroSlides = [...heroSlides, heroImg1];
   const [heroSlideIndex, setHeroSlideIndex] = useState(0);
@@ -122,7 +122,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
     setCartItem({
       title: type === 'solo' 
         ? (isFR ? "BloomLab® Solo — Inox 304 + Panier micrométrique + Guide 100 recettes" : isDE ? "BloomLab® Solo — Edelstahl 304 + Korb + 100-Rezepte-Leitfaden" : "BloomLab® Solo — 304 Steel + Filter Basket + 100-Recipe Guide") 
-        : (isFR ? "Pack Signature — BloomLab® + Kit apothicaire + Herbier Complet + KlinoMont® + 3 mois Académie" : isDE ? "Signature-Paket — BloomLab® + Apotheker-Set + Herbarium + KlinoMont® + 3 Mon. Akademie" : "Signature Pack — BloomLab® + Apothecary Kit + Full Herbarium + KlinoMont® + 3 Mo Academy"),
+        : (isFR ? "Pack Signature — BloomLab® + Kit apothicaire + Herbier Complet + Duo Argiles + 3 mois Académie" : isDE ? "Signature-Paket — BloomLab® + Apotheker-Set + Herbarium + Tonerde-Duo + 3 Mon. Akademie" : "Signature Pack — BloomLab® + Apothecary Kit + Full Herbarium + Clay Duo + 3 Mo Academy"),
       price: price
     });
     setIsCartOpen(true);
@@ -1931,7 +1931,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               <div className="space-y-1.5">
                 <div className="text-sm font-black text-[#E8772E]">34,00 €</div>
                 <div className="font-black text-base text-[#1E2E25]">
-                  {isFR ? "Duo Argiles KlinoMont®" : isDE ? "KlinoMont® Tonerde-Duo" : "KlinoMont® Clay Duo"}
+                  {isFR ? "Duo Argiles" : isDE ? "Tonerde-Duo" : "Clay Duo"}
                 </div>
                 <p className="text-xs text-[#1E2E25]/75">
                   {isFR ? "Zéolithe-Bentonite 70:30 — Purification minérale externe/soin." : isDE ? "Zeolith-Bentonit 70:30 — Mineralische Reinigung/Pflege." : "Zeolite-Bentonite 70:30 — External/care mineral purification."}
@@ -1956,7 +1956,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   {isFR ? "L'Herbier Complet (Les 4 mélanges + Duo Argiles)" : isDE ? "Das vollständige Herbarium (4 Mischungen + Tonerde-Duo)" : "The Complete Herbarium (4 Blends + Clay Duo)"}
                 </div>
                 <p className="text-xs sm:text-sm text-[#1E2E25]/80">
-                  {isFR ? "Le coffret complet de démarrage avec toutes nos plantes phares et les argiles KlinoMont®." : isDE ? "Das komplette Pflanzen-Starterpaket mit allen vier Mischungen und KlinoMont®." : "Complete discovery set with all 4 flagship herbal blends and KlinoMont® clay duo."}
+                  {isFR ? "Le coffret complet de démarrage avec toutes nos plantes phares et le Duo Argiles." : isDE ? "Das komplette Pflanzen-Starterpaket mit allen vier Mischungen und dem Tonerde-Duo." : "Complete discovery set with all 4 flagship herbal blends and the Clay Duo."}
                 </p>
               </div>
               <span className="text-xs font-black text-[#1E2E25] inline-flex items-center gap-1">
@@ -2118,7 +2118,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   </li>
                   <li className="flex items-start gap-3 text-sm font-medium text-white/90">
                     <Check className="w-5 h-5 text-[#C8AB8A] shrink-0 mt-0.5" />
-                    <span>{isFR ? "Duo Argiles KlinoMont® (Zéolithe-Bentonite 70:30)*" : isDE ? "KlinoMont® Tonerde-Duo (Zeolith-Bentonit 70:30)*" : "KlinoMont® Clay Duo (Zeolite-Bentonite 70:30)*"}</span>
+                    <span>{isFR ? "Duo Argiles (Zéolithe-Bentonite 70:30)*" : isDE ? "Tonerde-Duo (Zeolith-Bentonit 70:30)*" : "Clay Duo (Zeolite-Bentonite 70:30)*"}</span>
                   </li>
                   <li className="flex items-start gap-3 text-sm font-medium text-white/90">
                     <Check className="w-5 h-5 text-[#C8AB8A] shrink-0 mt-0.5" />
@@ -2130,10 +2130,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 <div className="p-4 rounded-2xl bg-black/25 border border-white/15 text-xs text-white leading-relaxed">
                   <p className="text-white !text-white text-xs leading-relaxed">
                     {isFR 
-                      ? "*Le Duo Argiles KlinoMont® est une matière première minérale documentée sélectionnée pour les synergies botaniques. Usage éducatif. Ne se substitue à aucun traitement médical." 
+                      ? "*Le Duo Argiles est une matière première minérale documentée sélectionnée pour les synergies botaniques. Usage éducatif. Ne se substitue à aucun traitement médical." 
                       : isDE
-                      ? "*Das KlinoMont® Tonerde-Duo ist ein dokumentierter mineralischer Rohstoff für botanische Synergien. Bildungsverwendung. Ersetzt keine medizinische Behandlung."
-                      : "*KlinoMont® Clay Duo is a documented mineral raw material selected for botanical synergies. Educational use. Not a substitute for medical treatment."}
+                      ? "*Das Tonerde-Duo ist ein dokumentierter mineralischer Rohstoff für botanische Synergien. Bildungsverwendung. Ersetzt keine medizinische Behandlung."
+                      : "*The Clay Duo is a documented mineral raw material selected for botanical synergies. Educational use. Not a substitute for medical treatment."}
                   </p>
                 </div>
               </div>

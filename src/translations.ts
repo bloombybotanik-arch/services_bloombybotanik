@@ -48,7 +48,7 @@ export const translations = {
       },
       shop: {
         title: "Boutique BloomLab : Extracteur Botanique & Machine d'infusion de plantes",
-        description: "Équipez-vous du meilleur infuseur botanique de précision pour vos infusions aux plantes médicinales. Retrouvez aussi le Duo Argiles KlinoMont® pour une purification systémique.",
+        description: "Équipez-vous du meilleur infuseur botanique de précision pour vos infusions aux plantes médicinales. Retrouvez aussi le Duo Argiles pour une purification systémique.",
         h1: "La Boutique BloomLab : Ingénierie de la Vitalité et Souveraineté",
         intro: "Nos équipes vous accompagnent dans votre projet de soins sur mesure. Du BloomLab® aux infusions arômatiques, reprenez le contrôle de votre souveraineté sanitaire.",
       },
@@ -292,7 +292,7 @@ export const translations = {
           title: "Pack Signature",
           price: "289 €",
           tag: "Le plus populaire",
-          desc: "Machine BloomLab® + Kit apothicaire + L'Herbier Complet + Duo Argiles KlinoMont® + 3 mois Premium Académie",
+          desc: "Machine BloomLab® + Kit apothicaire + L'Herbier Complet + Duo Argiles + 3 mois Premium Académie",
           cta: "Commander le Pack"
         },
         mention: "Paiement en 3x sans frais. Expédition sous 24/48h."
@@ -790,12 +790,12 @@ export const translations = {
         pack_signature: {
           name: "Pack Signature — BloomLab® + Herbier Complet + 3 Mois Premium Académie",
           subtitle: "LE PLUS POPULAIRE",
-          description: "Machine BloomLab® Inox 304, Kit accessoires apothicaire, L'Herbier Complet (4 mélanges), Duo Argiles KlinoMont® et 3 mois d'accès Premium Académie."
+          description: "Machine BloomLab® Inox 304, Kit accessoires apothicaire, L'Herbier Complet (4 mélanges), Duo Argiles et 3 mois d'accès Premium Académie."
         },
         bundle_apothicaire: {
-          name: "Pack Herbier Complet — 4 Mélanges + Duo Argiles KlinoMont®",
-          subtitle: "4 MÉLANGES DE PLANTES + DUO ARGILES KLINOMONT®",
-          description: "Le coffret complet regroupant nos 4 mélanges de plantes (Sève, Nuit, Digestion, Articulaire) et le Duo Argiles KlinoMont® (Zéolithe-Bentonite)."
+          name: "Pack Herbier Complet — 4 Mélanges + Duo Argiles",
+          subtitle: "4 MÉLANGES DE PLANTES + DUO ARGILES",
+          description: "Le coffret complet regroupant nos 4 mélanges de plantes (Sève, Nuit, Digestion, Articulaire) et le Duo Argiles (Zéolithe-Bentonite)."
         },
         kit_starter: {
           name: "Kit Sève Fondamentale",
@@ -823,9 +823,9 @@ export const translations = {
           description: "Synergie végétale de saison conçue pour accompagner la vitalité et le tonus naturel durant les mois froids."
         },
         kit_reset: {
-          name: "Duo Argiles KlinoMont® — Purification Systémique Zeolithe-Bentonite",
+          name: "Duo Argiles — Purification Systémique Zeolithe-Bentonite",
           subtitle: "CHÉLATION NATURELLE & RÉÉQUILIBRAGE DE TERRAIN",
-          description: "Le Duo Argiles KlinoMont® associe Zéolithe et Bentonite (ratio 70:30) micronisées à 6µm, matière première minérale documentée de grade Pharmacopée."
+          description: "Le Duo Argiles associe Zéolithe et Bentonite (ratio 70:30) micronisées à 6µm, matière première minérale documentée de grade Pharmacopée."
         },
         freemium_access: {
           name: "Accès Découverte — 10 Recettes Gratuites",
@@ -1931,7 +1931,7 @@ export const translations = {
           title: "Signature Pack",
           price: "289 €",
           tag: "Most Popular",
-          desc: "BloomLab® + Apothecary kit + Complete Herbarium + KlinoMont® Clay Duo + 3 months Premium Academy",
+          desc: "BloomLab® + Apothecary kit + Complete Herbarium + Clay Duo + 3 months Premium Academy",
           cta: "Order the Pack"
         },
         mention: "Payment in 3 installments without fees. Shipping within 24/48h."
@@ -2425,12 +2425,12 @@ export const translations = {
         pack_signature: {
           name: "Signature Pack — BloomLab® + Complete Herbarium + 3 Months Premium Academy",
           subtitle: "MOST POPULAR",
-          description: "BloomLab® 304 steel machine, Apothecary accessory kit, Complete Herbarium (4 blends), KlinoMont® Clay Duo, and 3 months Premium Academy access."
+          description: "BloomLab® 304 steel machine, Apothecary accessory kit, Complete Herbarium (4 blends), Clay Duo, and 3 months Premium Academy access."
         },
         bundle_apothicaire: {
-          name: "Complete Herbarium Pack — 4 Blends + KlinoMont® Clay Duo",
-          subtitle: "4 ORGANIC PLANT BLENDS + KLINOMONT® CLAYS DUO",
-          description: "Complete bundle bringing together all 4 organic plant blends (Sap, Night, Digestion, Joint) and the KlinoMont® Zeolite-Bentonite Clay Duo."
+          name: "Complete Herbarium Pack — 4 Blends + Clay Duo",
+          subtitle: "4 ORGANIC PLANT BLENDS + CLAYS DUO",
+          description: "Complete bundle bringing together all 4 organic plant blends (Sap, Night, Digestion, Joint) and the Zeolite-Bentonite Clay Duo."
         },
         kit_starter: {
           name: "Fundamental Sap Kit",
@@ -2458,7 +2458,7 @@ export const translations = {
           description: "Seasonal botanical synergy designed to support the body's natural resilience during colder months."
         },
         kit_reset: {
-          name: "KlinoMont® Clays Duo — Systemic Purification Zeolite-Bentonite",
+          name: "Clays Duo — Systemic Purification Zeolite-Bentonite",
           subtitle: "MINERAL SYNERGY & TERRAIN",
           description: "Association of natural zeolites and bentonites (European Pharmacopoeia grade, 6µm) for documented botanical-mineral synergies."
         },
@@ -3452,7 +3452,7 @@ export const translations = {
           title: "Signatur-Paket",
           price: "289 €",
           tag: "Am beliebtesten",
-          desc: "BloomLab® + Apotheker-Set + Vollständiges Herbarium + KlinoMont® Tonerde-Duo + 3 Monate Premium",
+          desc: "BloomLab® + Apotheker-Set + Vollständiges Herbarium + Tonerde-Duo + 3 Monate Premium",
           cta: "Paket bestellen"
         },
         mention: "Zahlung in 3 Raten ohne Gebühren. Versand innerhalb von 24/48 Std."
@@ -3946,12 +3946,12 @@ export const translations = {
         pack_signature: {
           name: "Signatur-Paket — BloomLab® + Vollständiges Herbarium + 3 Monate Premium Akademie",
           subtitle: "AM BELIEBTESTEN",
-          description: "BloomLab® 304-Edelstahl, Apotheker-Zubehör, Vollständiges Herbarium (4 Mischungen), KlinoMont® Tonerde-Duo und 3 Monate Premium-Zugang."
+          description: "BloomLab® 304-Edelstahl, Apotheker-Zubehör, Vollständiges Herbarium (4 Mischungen), Tonerde-Duo und 3 Monate Premium-Zugang."
         },
         bundle_apothicaire: {
-          name: "Vollständiges Herbarium — 4 Mischungen + KlinoMont® Tonerde-Duo",
-          subtitle: "4 BIO-PFLANZENMISCHUNGEN + KLINOMONT® TONERDEN-DUO",
-          description: "Das komplette Set mit unseren 4 Pflanzenmischungen (Saft, Nacht, Verdauung, Gelenke) und dem KlinoMont® Zeolith-Bentonit-Duo."
+          name: "Vollständiges Herbarium — 4 Mischungen + Tonerde-Duo",
+          subtitle: "4 BIO-PFLANZENMISCHUNGEN + TONERDEN-DUO",
+          description: "Das komplette Set mit unseren 4 Pflanzenmischungen (Saft, Nacht, Verdauung, Gelenke) und dem Zeolith-Bentonit-Duo."
         },
         kit_starter: {
           name: "Set Fundamentaler Saft",
@@ -3979,7 +3979,7 @@ export const translations = {
           description: "Saisonale botanische Synergie zur Unterstützung der natürlichen Widerstandskraft in den kälteren Monaten."
         },
         kit_reset: {
-          name: "KlinoMont® Erden-Duo — Systemische Reinigung Zeolith-Bentonit",
+          name: "Erden-Duo — Systemische Reinigung Zeolith-Bentonit",
           subtitle: "MINERALISCHE SYNERGIE & TERRAIN",
           description: "Kombination aus natürlichen Zeolithen und Bentoniten (europäischer Arzneibuchgrad, 6µm) für dokumentierte botanisch-mineralische Synergien."
         },

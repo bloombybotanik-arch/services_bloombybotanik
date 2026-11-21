@@ -337,7 +337,7 @@ export default function CulinarySection({
           <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-[#3E4A3D]/20 bg-white shadow-sm flex flex-col">
             <div className="relative aspect-[16/10] overflow-hidden bg-[#FAF7F2]">
               <img
-                src="/img/produit/bloomlab-cuisine-1200x630.jpg"
+                src="/images/BloomLab_Labo.jpeg"
                 alt={lang === 'fr' ? "Extraction culinaire et infusion d'huiles aromatiques avec BloomLab® en cuisine" : lang === 'de' ? "Kulinarische Extraktion und aromatisierte Öle mit BloomLab® in der Küche" : "Culinary extraction and aromatic oil infusion with BloomLab® in kitchen"}
                 width={1200}
                 height={630}

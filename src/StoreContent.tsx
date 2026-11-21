@@ -577,12 +577,12 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                   </div>
                 </div>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full md:w-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full md:flex-1 md:max-w-xl items-start sm:items-stretch">
                 {products.filter(p => (p as any).isSpecial).map((product) => (
                   <a 
                     key={product.id}
                     href={`/boutique/${product.id}/`}
-                    className="bg-white rounded-3xl sm:rounded-[40px] shadow-sm hover:shadow-xl transition-all cursor-pointer group border border-botanik-green/5 overflow-hidden flex flex-col"
+                    className="bg-white rounded-3xl sm:rounded-[32px] shadow-sm hover:shadow-xl transition-all cursor-pointer group border border-botanik-green/5 overflow-hidden flex flex-col justify-between"
                     onClick={(e) => {
                       if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                         e.preventDefault();
@@ -590,29 +590,31 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                       }
                     }}
                   >
-                    <div className="relative aspect-video sm:aspect-square md:aspect-video overflow-hidden bg-[#F9F9F7]">
+                    <div className="relative w-full aspect-video overflow-hidden bg-[#F9F9F7] shrink-0">
                       <OptimizedImage 
                         src={product.image} 
                         alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Extracteur botanique et soins végétaux`} 
-                        className="w-full h-full object-cover transform scale-110 group-hover:scale-125 transition-transform duration-700"
+                        className="absolute inset-0 w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-700"
                       />
                     </div>
-                    <div className="p-5 sm:p-6 flex flex-col flex-1">
-                      <div className="flex items-center gap-1 mb-2">
-                        <div className="flex items-center text-botanik-orange">
-                          <Star className="w-3 h-3 fill-current" />
-                          <span className="text-[10px] font-bold ml-1">{product.rating}/5</span>
+                    <div className="p-5 sm:p-6 flex flex-col justify-between gap-4 grow">
+                      <div>
+                        <div className="flex items-center gap-1 mb-2">
+                          <div className="flex items-center text-botanik-orange">
+                            <Star className="w-3 h-3 fill-current" />
+                            <span className="text-[10px] font-bold ml-1">{product.rating}/5</span>
+                          </div>
+                          <span className="text-[10px] text-botanik-green/30">({product.reviews} {isFR ? 'avis' : isDE ? 'Bewertungen' : 'reviews'})</span>
                         </div>
-                        <span className="text-[10px] text-botanik-green/30">({product.reviews} {isFR ? 'avis' : isDE ? 'Bewertungen' : 'reviews'})</span>
+                        <div className="text-[10px] font-bold text-botanik-orange uppercase tracking-widest mb-1">{product.subtitle}</div>
+                        <h4 className="text-base sm:text-lg font-bold text-botanik-green leading-tight">{product.name}</h4>
                       </div>
-                      <div className="text-[10px] font-bold text-botanik-orange uppercase tracking-widest mb-1">{product.subtitle}</div>
-                      <h4 className="text-base sm:text-lg font-bold text-botanik-green mb-4 leading-tight">{product.name}</h4>
-                      <div className="flex items-center justify-between gap-4 mt-auto">
+                      <div className="flex items-center justify-between gap-4 pt-1">
                         <span className="text-lg sm:text-xl font-bold text-botanik-green">
                           {product.price === 0 ? (lang === 'fr' ? 'Gratuit' : lang === 'en' ? 'Free' : 'Gratis') : formatPrice(product.price)}
                         </span>
                         <div 
-                          className="w-10 h-10 bg-[#3E4A3D] text-white rounded-xl flex items-center justify-center group-hover:bg-botanik-orange transition-colors"
+                          className="w-10 h-10 bg-[#3E4A3D] text-white rounded-xl flex items-center justify-center group-hover:bg-botanik-orange transition-colors shrink-0"
                           aria-label={`${isFR ? 'Découvrir' : isDE ? 'Entdecken' : 'Discover'} ${product.name}`}
                         >
                           <ArrowRight className="w-5 h-5" />
@@ -690,7 +692,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                 className="p-4 rounded-2xl bg-white border border-[#E7DFD3] hover:border-botanik-orange text-left transition-all cursor-pointer space-y-1 shadow-2xs"
               >
                 <div className="text-xs font-black text-botanik-orange">34,00 €</div>
-                <div className="font-bold text-sm text-botanik-green">Duo Argiles KlinoMont®</div>
+                <div className="font-bold text-sm text-botanik-green">{isFR ? "Duo Argiles" : isDE ? "Tonerde-Duo" : "Clay Duo"}</div>
                 <div className="text-[11px] text-botanik-green/60">{isFR ? "Zéolithe-Bentonite micronisée 6µm" : isDE ? "Mikronisiertes Zeolith-Bentonit 6µm" : "Micronized Zeolite-Bentonite 6µm"}</div>
               </button>
               <button
@@ -700,7 +702,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
               >
                 <div className="text-xs font-black text-botanik-orange">49,00 €</div>
                 <div className="font-bold text-sm text-botanik-green">{isFR ? "Pack Herbier Complet" : isDE ? "Vollständiges Herbarium" : "Complete Herbarium Pack"}</div>
-                <div className="text-[11px] text-botanik-green/60">{isFR ? "4 mélanges + Duo Argiles KlinoMont®" : isDE ? "4 Mischungen + KlinoMont® Duo" : "4 blends + KlinoMont® Clay Duo"}</div>
+                <div className="text-[11px] text-botanik-green/60">{isFR ? "4 mélanges + Duo Argiles" : isDE ? "4 Mischungen + Tonerde-Duo" : "4 blends + Clay Duo"}</div>
               </button>
               <button
                 type="button"
@@ -875,10 +877,10 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
             </summary>
             <p className="mt-2 text-xs sm:text-sm leading-relaxed">
               {isFR
-                ? "Le Pack Signature (289 € au lieu de 349 €) associe la machine BloomLab® Inox 304 au Kit accessoires apothicaire, à L'Herbier Complet (4 mélanges de plantes), au Duo Argiles KlinoMont® (Zéolithe-Bentonite) et à 3 mois d'accès Premium à l'Académie."
+                ? "Le Pack Signature (289 € au lieu de 349 €) associe la machine BloomLab® Inox 304 au Kit accessoires apothicaire, à L'Herbier Complet (4 mélanges de plantes), au Duo Argiles (Zéolithe-Bentonite) et à 3 mois d'accès Premium à l'Académie."
                 : isDE
-                ? "Das Pack Signature (289 € statt 349 €) kombiniert die BloomLab® 304-Edelstahl-Maschine mit dem Apotheker-Zubehörset, dem Vollständigen Herbarium (4 Mischungen), dem KlinoMont® Tonerde-Duo (Zeolith-Bentonit) und 3 Monaten Premium-Zugang zur Akademie."
-                : "Pack Signature (289 € instead of 349 €) pairs the BloomLab® 304 stainless steel machine with the apothecary kit, Complete Herbarium (4 plant blends), KlinoMont® Clay Duo (Zeolite-Bentonite), and 3 months Premium Academy access."}
+                ? "Das Pack Signature (289 € statt 349 €) kombiniert die BloomLab® 304-Edelstahl-Maschine mit dem Apotheker-Zubehörset, dem Vollständigen Herbarium (4 Mischungen), dem Tonerde-Duo (Zeolith-Bentonit) und 3 Monaten Premium-Zugang zur Akademie."
+                : "Pack Signature (289 € instead of 349 €) pairs the BloomLab® 304 stainless steel machine with the apothecary kit, Complete Herbarium (4 plant blends), Clay Duo (Zeolite-Bentonite), and 3 months Premium Academy access."}
             </p>
           </details>
           <details className="rounded-xl border border-[#E7DFD3] p-4 bg-[#FAF8F5]">
