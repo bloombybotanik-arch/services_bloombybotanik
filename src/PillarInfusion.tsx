@@ -44,9 +44,9 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
       {/* SECTION 0 — EN-TÊTE & INTRODUCTION VERT SAUGE FONCÉ #1E2E25 */}
       <header className="w-full bg-[#1E2E25] text-white border-b border-white/10">
         {/* Barre de fil d'Ariane tout en haut : Vert Profond du Menu #0F261E */}
-        <div className="w-full bg-[#0F261E] border-b border-white/10 px-4 md:px-8 py-3.5">
+        <div className="w-full bg-[#0F261E] border-b border-white/10 px-3 sm:px-4 md:px-8 py-2.5 sm:py-3">
           <nav aria-label="Fil d'Ariane" className="max-w-7xl mx-auto">
-            <ol className="flex items-center space-x-2 text-sm text-white">
+            <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[11px] sm:text-xs text-white">
               <li>
                 <a 
                   href={lang === 'fr' ? '/' : `/${lang}/`} 
@@ -114,21 +114,29 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
               </div>
             </div>
 
-            {/* Image principale LCP */}
+            {/* Image principale LCP : Exemple de préparation maison agrandie verticalement pour voir la machine entièrement */}
             <div className="lg:col-span-5 flex justify-center">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-white/5 aspect-[16/10] w-full max-w-md max-h-[280px]">
-                <img
-                  src="/images/2.png"
-                  alt={isFR ? "BloomLab® — Extracteur et infuseur botanique de précision" : lang === 'de' ? "BloomLab® — Botanischer Präzisionsextraktor" : "BloomLab® — Precision botanical extractor"}
-                  width={1200}
-                  height={630}
-                  loading="eager"
-                  fetchPriority="high"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-2.5 left-2.5 right-2.5 text-[11px] text-white/90 bg-black/60 backdrop-blur-xs px-2.5 py-1 rounded-lg border border-white/10 text-center">
-                  {t.meta.imgLegend}
+              <div className="w-full max-w-sm lg:max-w-md rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/20 bg-white">
+                <div className="relative w-full aspect-[2/3] max-h-[540px] bg-[#FAF7F2] overflow-hidden flex items-center justify-center">
+                  <img
+                    src="/assets/images/BloomLab_rosemary_infusion.png"
+                    alt={isFR ? "Exemple de préparation maison : infusion active de romarin en chambre close avec BloomLab" : lang === 'de' ? "Beispiel einer Hauszubereitung: aktive Rosmarin-Infusion in geschlossener Kammer mit BloomLab" : "Home preparation example: active rosemary infusion in closed chamber with BloomLab"}
+                    width={1686}
+                    height={2528}
+                    loading="eager"
+                    fetchPriority="high"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="p-3.5 bg-[#FAF7F2] border-t border-[#3E4A3D]/10 flex items-center justify-between gap-3 text-xs text-[#3E4A3D]/85">
+                  <span className="font-medium">
+                    {isFR 
+                      ? "Exemple de préparation maison : extraction active en chambre close avec BloomLab®" 
+                      : lang === 'de'
+                      ? "Beispiel einer Hauszubereitung: aktive Extraktion in geschlossener Kammer mit BloomLab®"
+                      : "Home preparation example: active extraction in a closed chamber with BloomLab®"}
+                  </span>
+                  <span className="text-[#C8AB8A] font-semibold shrink-0">BloomLab®</span>
                 </div>
               </div>
             </div>
@@ -167,31 +175,6 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
           <div className="bg-[#3E4A3D]/5 border-l-4 border-[#3E4A3D] p-5 rounded-r-2xl space-y-1 text-sm text-[#3E4A3D]">
             <p className="font-semibold text-[#3E4A3D]">{t.section1.calloutTitle}</p>
             <p className="italic leading-relaxed">{t.section1.calloutText}</p>
-          </div>
-
-          {/* 2ème Image Réelle Produit / Préparation indexable */}
-          <div className="my-8 rounded-2xl sm:rounded-3xl overflow-hidden border border-[#3E4A3D]/10 bg-white shadow-md">
-            <div className="relative aspect-[16/10] sm:aspect-[2/1] overflow-hidden">
-              <img
-                src="/assets/images/BloomLab_rosemary_infusion.png"
-                alt={isFR ? "Exemple de préparation maison : infusion active de romarin en chambre close avec BloomLab" : lang === 'de' ? "Beispiel einer Hauszubereitung: aktive Rosmarin-Infusion in geschlossener Kammer mit BloomLab" : "Home preparation example: active rosemary infusion in closed chamber with BloomLab"}
-                width={1200}
-                height={750}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-4 bg-[#FAF7F2] border-t border-[#3E4A3D]/5 flex items-center justify-between text-xs text-[#3E4A3D]/80">
-              <span className="font-medium">
-                {isFR 
-                  ? "Exemple de préparation maison : extraction active en chambre close avec BloomLab®" 
-                  : lang === 'de'
-                  ? "Beispiel einer Hauszubereitung: aktive Extraktion in geschlossener Kammer mit BloomLab®"
-                  : "Home preparation example: active extraction in a closed chamber with BloomLab®"}
-              </span>
-              <span className="text-[#C8AB8A] font-semibold">BloomLab®</span>
-            </div>
           </div>
         </section>
 
@@ -378,10 +361,10 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
             <div className="md:col-span-5">
               <div className="rounded-2xl overflow-hidden border border-[#3E4A3D]/10 shadow-sm aspect-square bg-[#FAF7F2]">
                 <img
-                  src="/img/produit/bloomlab-face-1200x1200.jpg"
+                  src="/images/3-1.png"
                   alt={isFR ? "BloomLab® — Extracteur et infuseur de plantes médicinales Totum" : lang === 'de' ? "BloomLab® — Präzisionsextraktor für Heilpflanzen-Totum" : "BloomLab® — Precision Botanical Totum Extractor"}
-                  width={600}
-                  height={600}
+                  width={1080}
+                  height={1080}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover"
@@ -428,18 +411,18 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse bg-white rounded-2xl overflow-hidden border border-[#3E4A3D]/10 shadow-xs">
               <thead>
-                <tr className="bg-[#3E4A3D] text-white text-xs uppercase tracking-wider">
-                  <th className="p-4 font-bold">{t.section6.table.headers.criterion}</th>
-                  <th className="p-4 font-bold">{t.section6.table.headers.traditional}</th>
-                  <th className="p-4 font-bold bg-[#C8AB8A] text-[#0F261E]">{t.section6.table.headers.bloomlab}</th>
+                <tr className="bg-[#3E4A3D] text-white text-[10px] sm:text-xs uppercase tracking-normal sm:tracking-wider">
+                  <th className="px-2.5 py-3 sm:p-4 font-bold break-normal hyphens-none">{t.section6.table.headers.criterion}</th>
+                  <th className="px-2.5 py-3 sm:p-4 font-bold break-normal hyphens-none">{t.section6.table.headers.traditional}</th>
+                  <th className="px-2.5 py-3 sm:p-4 font-bold bg-[#C8AB8A] text-[#0F261E] break-normal hyphens-none">{t.section6.table.headers.bloomlab}</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#3E4A3D]/10 text-xs sm:text-sm text-[#3E4A3D]/90">
+              <tbody className="divide-y divide-[#3E4A3D]/10 text-[11px] sm:text-sm text-[#3E4A3D]/90">
                 {t.section6.table.rows.map((row, idx) => (
                   <tr key={idx} className="hover:bg-[#FAF7F2]/60 transition-colors">
-                    <td className="p-4 font-bold text-[#3E4A3D]">{row.criterion}</td>
-                    <td className="p-4 text-[#3E4A3D]/75">{row.traditional}</td>
-                    <td className="p-4 font-medium text-[#3E4A3D] bg-[#C8AB8A]/5">{row.bloomlab}</td>
+                    <td className="px-2.5 py-3 sm:p-4 font-bold text-[#3E4A3D] break-normal">{row.criterion}</td>
+                    <td className="px-2.5 py-3 sm:p-4 text-[#3E4A3D]/75 break-normal">{row.traditional}</td>
+                    <td className="px-2.5 py-3 sm:p-4 font-medium text-[#3E4A3D] bg-[#C8AB8A]/5 break-normal">{row.bloomlab}</td>
                   </tr>
                 ))}
               </tbody>

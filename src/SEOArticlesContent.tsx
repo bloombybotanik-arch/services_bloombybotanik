@@ -869,9 +869,9 @@ export const TotumDefinition = ({ lang, t, onNavigate }: SEOArticleProps) => {
   return (
     <article className="bg-[#F9F9F7] text-[#3E4A3D] min-h-screen pb-28">
       {/* 1. Barre de fil d'Ariane tout en haut : Vert Profond du Menu #0F261E */}
-      <div className="w-full bg-[#0F261E] border-b border-white/10 px-4 md:px-8 py-3.5 text-left">
+      <div className="w-full bg-[#0F261E] border-b border-white/10 px-3 sm:px-4 md:px-8 py-2.5 sm:py-3 text-left">
         <nav aria-label="Fil d'Ariane" className="max-w-7xl mx-auto">
-          <ol className="flex items-center space-x-2 text-sm text-white">
+          <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[11px] sm:text-xs text-white">
             <li>
               <button 
                 onClick={() => { onNavigate?.('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
@@ -1228,48 +1228,99 @@ export const TotumDefinition = ({ lang, t, onNavigate }: SEOArticleProps) => {
           </div>
 
           {/* TABLEAU SÉQUENÇAGE A/B */}
-          <div className="overflow-x-auto rounded-3xl border border-[#E7DFD3] bg-white shadow-xs">
-            <table className="w-full text-left border-collapse">
-              <thead>
+          <div className="md:overflow-x-auto md:rounded-3xl md:border md:border-[#E7DFD3] md:bg-white md:shadow-xs">
+            <table className="totum-table block md:table w-full text-left border-collapse">
+              <thead className="hidden md:table-header-group">
                 <tr className="bg-[#FAF7F2] border-b border-[#E7DFD3] text-xs font-bold uppercase tracking-wider text-[#3E4A3D]">
                   <th className="p-4 sm:p-5">{isFR ? 'Phase' : isDE ? 'Phase' : 'Phase'}</th>
                   <th className="p-4 sm:p-5">{isFR ? 'Température' : isDE ? 'Temperatur' : 'Temperature'}</th>
                   <th className="p-4 sm:p-5">{isFR ? 'Cible & Molécules' : isDE ? 'Ziel & Moleküle' : 'Target & Molecules'}</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#E7DFD3] text-sm sm:text-base text-slate-700">
-                <tr className="hover:bg-[#FAF7F2]/60 transition-colors">
-                  <td className="p-4 sm:p-5 font-bold text-[#3E4A3D] flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0" />
-                    {isFR ? 'Phase A — Hydrosoluble' : isDE ? 'Phase A — Wasserlöslich' : 'Phase A — Water-Soluble'}
+              <tbody className="block md:table-row-group md:divide-y md:divide-[#E7DFD3] text-sm sm:text-base text-slate-700">
+                <tr className="block md:table-row mb-4 last:mb-0 md:mb-0 border border-[#E0E0E0] md:border-0 rounded-lg md:rounded-none p-3 md:p-0 bg-[#FAFAFA] md:bg-transparent hover:bg-[#FAF7F2]/60 transition-colors">
+                  <td
+                    data-label={isFR ? 'Phase' : isDE ? 'Phase' : 'Phase'}
+                    className="flex md:table-cell justify-between items-center gap-3 py-2 md:p-5 border-b border-[#EEEEEE] md:border-b-0 text-sm md:text-base font-semibold md:font-bold text-[#3E4A3D] text-left whitespace-nowrap break-keep before:content-[attr(data-label)] before:font-semibold before:text-[#666666] before:mr-3 before:shrink-0 md:before:content-none"
+                  >
+                    <span className="inline-flex items-center gap-2 whitespace-nowrap break-keep">
+                      <span className="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0" />
+                      <span className="whitespace-nowrap break-keep">
+                        {isFR ? 'Phase A — Hydrosoluble' : isDE ? 'Phase A — Wasserlöslich' : 'Phase A — Water-Soluble'}
+                      </span>
+                    </span>
                   </td>
-                  <td className="p-4 sm:p-5 font-mono text-xs sm:text-sm font-semibold text-[#C8AB8A]">
-                    {isFR ? '70–75°C selon la matrice' : isDE ? '70–75°C je nach Rohstoff' : '70–75°C by matrix'}
+                  <td
+                    data-label={isFR ? 'Température' : isDE ? 'Temperatur' : 'Temperature'}
+                    className="flex md:table-cell justify-between items-start gap-3 py-2 md:p-5 border-b border-[#EEEEEE] md:border-b-0 font-mono text-sm font-semibold text-[#C8AB8A] text-left before:content-[attr(data-label)] before:font-sans before:font-semibold before:text-[#666666] before:mr-3 before:shrink-0 md:before:content-none"
+                  >
+                    <span className="text-right md:text-left">
+                      {isFR ? '70–75°C selon la matrice' : isDE ? '70–75°C je nach Rohstoff' : '70–75°C by matrix'}
+                    </span>
                   </td>
-                  <td className="p-4 sm:p-5 text-sm text-slate-600">
-                    {isFR ? 'Minéraux, polysaccharides, composés hydrosolubles' : isDE ? 'Mineralien, Polysaccharide, wasserlösliche Verbindungen' : 'Minerals, polysaccharides, water-soluble compounds'}
+                  <td
+                    data-label={isFR ? 'Cible & Molécules' : isDE ? 'Ziel & Moleküle' : 'Target & Molecules'}
+                    className="flex md:table-cell justify-between items-start gap-3 pt-2 pb-0 md:p-5 text-sm text-slate-600 text-left before:content-[attr(data-label)] before:font-semibold before:text-[#666666] before:mr-3 before:shrink-0 md:before:content-none"
+                  >
+                    <span className="text-right md:text-left break-normal">
+                      {isFR ? 'Minéraux, polysaccharides, composés hydrosolubles' : isDE ? 'Mineralien, Polysaccharide, wasserlösliche Verbindungen' : 'Minerals, polysaccharides, water-soluble compounds'}
+                    </span>
                   </td>
                 </tr>
-                <tr className="hover:bg-[#FAF7F2]/60 transition-colors">
-                  <td className="p-4 sm:p-5 font-bold text-[#3E4A3D] flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500 shrink-0" />
-                    {isFR ? 'Phase B — Liposoluble' : isDE ? 'Phase B — Fettlöslich' : 'Phase B — Fat-Soluble'}
+                <tr className="block md:table-row mb-4 last:mb-0 md:mb-0 border border-[#E0E0E0] md:border-0 rounded-lg md:rounded-none p-3 md:p-0 bg-[#FAFAFA] md:bg-transparent hover:bg-[#FAF7F2]/60 transition-colors">
+                  <td
+                    data-label={isFR ? 'Phase' : isDE ? 'Phase' : 'Phase'}
+                    className="flex md:table-cell justify-between items-center gap-3 py-2 md:p-5 border-b border-[#EEEEEE] md:border-b-0 text-sm md:text-base font-semibold md:font-bold text-[#3E4A3D] text-left whitespace-nowrap break-keep before:content-[attr(data-label)] before:font-semibold before:text-[#666666] before:mr-3 before:shrink-0 md:before:content-none"
+                  >
+                    <span className="inline-flex items-center gap-2 whitespace-nowrap break-keep">
+                      <span className="w-2.5 h-2.5 rounded-full bg-amber-500 shrink-0" />
+                      <span className="whitespace-nowrap break-keep">
+                        {isFR ? 'Phase B — Liposoluble' : isDE ? 'Phase B — Fettlöslich' : 'Phase B — Fat-Soluble'}
+                      </span>
+                    </span>
                   </td>
-                  <td className="p-4 sm:p-5 font-mono text-xs sm:text-sm font-semibold text-[#C8AB8A]">45–55°C</td>
-                  <td className="p-4 sm:p-5 text-sm text-slate-600">
-                    {isFR ? 'Résines, huiles essentielles, composés lipophiles' : isDE ? 'Harze, ätherische Öle, lipophile Verbindungen' : 'Resins, essential oils, lipophilic compounds'}
+                  <td
+                    data-label={isFR ? 'Température' : isDE ? 'Temperatur' : 'Temperature'}
+                    className="flex md:table-cell justify-between items-start gap-3 py-2 md:p-5 border-b border-[#EEEEEE] md:border-b-0 font-mono text-sm font-semibold text-[#C8AB8A] text-left before:content-[attr(data-label)] before:font-sans before:font-semibold before:text-[#666666] before:mr-3 before:shrink-0 md:before:content-none"
+                  >
+                    <span className="text-right md:text-left">45–55°C</span>
+                  </td>
+                  <td
+                    data-label={isFR ? 'Cible & Molécules' : isDE ? 'Ziel & Moleküle' : 'Target & Molecules'}
+                    className="flex md:table-cell justify-between items-start gap-3 pt-2 pb-0 md:p-5 text-sm text-slate-600 text-left before:content-[attr(data-label)] before:font-semibold before:text-[#666666] before:mr-3 before:shrink-0 md:before:content-none"
+                  >
+                    <span className="text-right md:text-left break-normal">
+                      {isFR ? 'Résines, huiles essentielles, composés lipophiles' : isDE ? 'Harze, ätherische Öle, lipophile Verbindungen' : 'Resins, essential oils, lipophilic compounds'}
+                    </span>
                   </td>
                 </tr>
-                <tr className="hover:bg-[#FAF7F2]/60 transition-colors">
-                  <td className="p-4 sm:p-5 font-bold text-[#3E4A3D] flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
-                    {isFR ? 'Activation thermique' : isDE ? 'Thermische Aktivierung' : 'Thermal activation'}
+                <tr className="block md:table-row mb-4 last:mb-0 md:mb-0 border border-[#E0E0E0] md:border-0 rounded-lg md:rounded-none p-3 md:p-0 bg-[#FAFAFA] md:bg-transparent hover:bg-[#FAF7F2]/60 transition-colors">
+                  <td
+                    data-label={isFR ? 'Phase' : isDE ? 'Phase' : 'Phase'}
+                    className="flex md:table-cell justify-between items-center gap-3 py-2 md:p-5 border-b border-[#EEEEEE] md:border-b-0 text-sm md:text-base font-semibold md:font-bold text-[#3E4A3D] text-left whitespace-nowrap break-keep before:content-[attr(data-label)] before:font-semibold before:text-[#666666] before:mr-3 before:shrink-0 md:before:content-none"
+                  >
+                    <span className="inline-flex items-center gap-2 whitespace-nowrap break-keep">
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
+                      <span className="whitespace-nowrap break-keep">
+                        {isFR ? 'Activation thermique' : isDE ? 'Thermische Aktivierung' : 'Thermal activation'}
+                      </span>
+                    </span>
                   </td>
-                  <td className="p-4 sm:p-5 font-mono text-xs sm:text-sm font-semibold text-[#C8AB8A]">
-                    {isFR ? "Jusqu'à 121°C" : isDE ? 'Bis zu 121°C' : 'Up to 121°C'}
+                  <td
+                    data-label={isFR ? 'Température' : isDE ? 'Temperatur' : 'Temperature'}
+                    className="flex md:table-cell justify-between items-start gap-3 py-2 md:p-5 border-b border-[#EEEEEE] md:border-b-0 font-mono text-sm font-semibold text-[#C8AB8A] text-left before:content-[attr(data-label)] before:font-sans before:font-semibold before:text-[#666666] before:mr-3 before:shrink-0 md:before:content-none"
+                  >
+                    <span className="text-right md:text-left">
+                      {isFR ? "Jusqu'à 121°C" : isDE ? 'Bis zu 121°C' : 'Up to 121°C'}
+                    </span>
                   </td>
-                  <td className="p-4 sm:p-5 text-sm text-slate-600">
-                    {isFR ? 'Transformations spécifiques (décarboxylation selon protocole)' : isDE ? 'Gezielte Umwandlungen (Decarboxylierung nach Protokoll)' : 'Specific transformations (decarboxylation per protocol)'}
+                  <td
+                    data-label={isFR ? 'Cible & Molécules' : isDE ? 'Ziel & Moleküle' : 'Target & Molecules'}
+                    className="flex md:table-cell justify-between items-start gap-3 pt-2 pb-0 md:p-5 text-sm text-slate-600 text-left before:content-[attr(data-label)] before:font-semibold before:text-[#666666] before:mr-3 before:shrink-0 md:before:content-none"
+                  >
+                    <span className="text-right md:text-left break-normal">
+                      {isFR ? 'Transformations spécifiques (décarboxylation selon protocole)' : isDE ? 'Gezielte Umwandlungen (Decarboxylierung nach Protokoll)' : 'Specific transformations (decarboxylation per protocol)'}
+                    </span>
                   </td>
                 </tr>
               </tbody>

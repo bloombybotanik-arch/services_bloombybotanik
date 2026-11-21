@@ -373,10 +373,10 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                 <Package className={navIconClass(isActive('boutique-kits'))} />
                 <span className="truncate whitespace-nowrap">
                   {lang === 'fr'
-                    ? 'Plantes Médicinales Bio'
+                    ? 'Soins Botaniques'
                     : lang === 'de'
-                    ? 'Bio-Heilpflanzen'
-                    : 'Organic Medicinal Plants'}
+                    ? 'Botanische Pflege'
+                    : 'Botanical Care'}
                 </span>
               </div>
             </a>

@@ -183,7 +183,7 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
 
       <article data-product-page="true" className="product-detail w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8">
-        <nav aria-label="Fil d'Ariane" className="flex items-center gap-2 text-xs sm:text-sm text-[#1B3022]/60">
+        <nav aria-label="Fil d'Ariane" className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[11px] sm:text-xs text-[#1B3022]/60">
           <a 
             href="/" 
             onClick={(e) => {
@@ -213,19 +213,21 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
           <span className="text-[#1B3022] font-semibold truncate max-w-[200px] sm:max-w-none">{sheet.name}</span>
         </nav>
 
-        <a 
-          href="/boutique/"
-          onClick={(e) => {
-            if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
-              e.preventDefault();
-              onBack();
-            }
-          }}
-          className="inline-flex items-center gap-2 text-[#1B3022]/60 hover:text-[#1B3022] transition-colors group py-1 text-xs sm:text-sm font-medium"
-        >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          {t.back}
-        </a>
+        {!isBloomLab && (
+          <a 
+            href="/boutique/"
+            onClick={(e) => {
+              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                e.preventDefault();
+                onBack();
+              }
+            }}
+            className="inline-flex items-center gap-2 text-[#1B3022]/60 hover:text-[#1B3022] transition-colors group py-1 text-xs sm:text-sm font-medium"
+          >
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            {t.back}
+          </a>
+        )}
       </div>
 
       <div className="flex flex-col lg:flex-row items-stretch bg-white border border-[#1B3022]/5 rounded-3xl sm:rounded-[48px] overflow-hidden shadow-2xl mb-16 sm:mb-24 min-h-0 lg:min-h-[580px]">

@@ -347,8 +347,8 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
       </div>
 
       {/* 1. Breadcrumb */}
-      <div className="w-full bg-[#0F261E] border-b border-white/10 px-4 md:px-8 py-3.5 text-left">
-        <nav aria-label="Fil d'Ariane" className="max-w-7xl mx-auto flex items-center space-x-2 text-sm text-white">
+      <div className="w-full bg-[#0F261E] border-b border-white/10 px-3 sm:px-4 md:px-8 py-2.5 sm:py-3 text-left">
+        <nav aria-label="Fil d'Ariane" className="max-w-7xl mx-auto flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[11px] sm:text-xs text-white">
           <button
             onClick={() => onNavigate('home')}
             className="text-white/80 hover:text-[#F5F0E6] transition-colors cursor-pointer"

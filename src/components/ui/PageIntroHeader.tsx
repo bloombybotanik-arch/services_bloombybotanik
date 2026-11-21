@@ -24,9 +24,9 @@ export const PageIntroHeader: React.FC<PageIntroHeaderProps> = ({
     <header className={`w-full bg-[#1E2E25] text-white relative overflow-hidden border-b border-white/10 ${className}`}>
       {/* 1. Barre de fil d'Ariane tout en haut : Vert Profond du Menu #0F261E */}
       {breadcrumb && (
-        <div className="w-full bg-[#0F261E] border-b border-white/10 px-4 md:px-8 py-3.5 text-left">
+        <div className="w-full bg-[#0F261E] border-b border-white/10 px-3 sm:px-4 md:px-8 py-2.5 sm:py-3 text-left">
           <nav aria-label="Fil d'Ariane" className="max-w-7xl mx-auto">
-            <ol className="flex flex-wrap items-center gap-2 text-sm">
+            <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[11px] sm:text-xs">
               {breadcrumb.split(/\s*\/\s*/).map((part, index, arr) => {
                 const isLast = index === arr.length - 1;
                 return (

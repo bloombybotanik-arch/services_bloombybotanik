@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { 
-  ChevronLeft, 
   ShieldCheck, 
   Sparkles, 
   Compass, 
@@ -99,22 +98,6 @@ export default function ManifesteContent({ onBack, onNavigate, lang }: Manifeste
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
 
-        {/* Navigation Sticky */}
-        <div className="sticky top-0 z-30 bg-[#FAF7F2]/90 backdrop-blur-md border-b border-[#E7DFD3]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-16 flex items-center justify-between">
-            <button 
-              onClick={onBack}
-              className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#3E4A3D]/60 hover:text-[#3E4A3D] transition-colors group cursor-pointer"
-            >
-              <ChevronLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-              {isFR ? 'Retour' : isDE ? 'Zurück' : 'Back'}
-            </button>
-            <div className="text-[11px] font-black uppercase tracking-[0.25em] text-[#C8AB8A]">
-              {isFR ? 'Manifeste Fondateur' : isDE ? 'Gründungsmanifest' : 'Founding Manifesto'}
-            </div>
-          </div>
-        </div>
-
         <article className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 md:py-20">
           {/* Header */}
           <motion.header 
@@ -176,10 +159,10 @@ export default function ManifesteContent({ onBack, onNavigate, lang }: Manifeste
             <div className="flex flex-col gap-2">
               <div className="relative w-full aspect-[4/3] overflow-hidden rounded-[24px] border border-[#E7DFD3] bg-[#FAF7F2] shadow-sm">
                 <img
-                  src="/assets/images/home_lab_vibe_cleaned_1786616854146.jpg"
+                  src="/images/BloomLab_Labo.jpeg"
                   alt={isFR ? "Exemple d'atelier botanique maison : rigueur scientifique et sagesses végétales" : isDE ? "Beispiel einer botanischen Heimwerkstatt" : "Example of home botanical workshop"}
-                  width={1200}
-                  height={800}
+                  width={2048}
+                  height={2048}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover"
@@ -243,10 +226,10 @@ export default function ManifesteContent({ onBack, onNavigate, lang }: Manifeste
                     <p className="text-slate-800 leading-relaxed font-medium">
                       La <strong className="text-[#3E4A3D]">charge allostatique</strong> est l'usure accumulée par le corps lorsqu'il doit s'adapter trop souvent, trop longtemps, à trop de stress à la fois (émotionnels, hormonaux, inflammatoires, toxiques, métaboliques). Quand cette charge dépasse sa capacité de récupération, le corps ne revient plus à l'équilibre : c'est là que les symptômes s'installent.
                     </p>
-                    <div className="p-4 rounded-xl bg-white border border-[#E7DFD3] text-[#A8B8A0] italic text-sm">
-                      <span className="not-italic mr-1 text-[#C8AB8A]">“</span>
+                    <div className="p-4 rounded-xl bg-white border border-[#E7DFD3] text-[#1B3022] font-medium italic text-sm">
+                      <span className="not-italic mr-1 text-[#1B3022]">“</span>
                       Le problème n'est pas la paille qui a fait plier le dos de l'âne, mais le fardeau déjà présent sur son dos.
-                      <span className="not-italic ml-1 text-[#C8AB8A]">”</span>
+                      <span className="not-italic ml-1 text-[#1B3022]">”</span>
                     </div>
                   </div>
 
@@ -281,47 +264,92 @@ export default function ManifesteContent({ onBack, onNavigate, lang }: Manifeste
                     <div className="text-xs font-black uppercase tracking-wider text-[#3E4A3D]">
                       Comprendre la dynamique du vivant :
                     </div>
-                    <div className="w-full overflow-x-auto my-6 rounded-2xl border border-[#E7DFD3]">
-                      <table className="w-full min-w-[600px] text-left border-collapse text-xs sm:text-sm">
-                        <thead>
-                          <tr className="bg-[#FAF7F2] border-b border-[#E7DFD3] text-[#3E4A3D]">
-                            <th className="px-4 py-3 font-black uppercase tracking-wider whitespace-nowrap">Concept</th>
-                            <th className="px-4 py-3 font-black uppercase tracking-wider whitespace-nowrap">Définition canonique</th>
-                            <th className="px-4 py-3 font-black uppercase tracking-wider whitespace-nowrap">Analogie concrète</th>
+                    <div className="my-6 md:overflow-x-auto md:rounded-3xl md:border md:border-[#E7DFD3] md:bg-white md:shadow-xs">
+                      <table className="totum-table block md:table w-full text-left border-collapse">
+                        <thead className="hidden md:table-header-group">
+                          <tr className="bg-[#FAF7F2] border-b border-[#E7DFD3] text-xs font-bold uppercase tracking-wider text-[#3E4A3D]">
+                            <th className="p-4 sm:p-5 md:w-[18%]">Concept</th>
+                            <th className="p-4 sm:p-5 md:w-[54%]">Définition canonique</th>
+                            <th className="p-4 sm:p-5 md:w-[28%]">Analogie concrète</th>
                           </tr>
                         </thead>
-                        <tbody className="divide-y divide-[#E7DFD3]">
-                          <tr className="hover:bg-[#FAF7F2]/50">
-                            <td className="px-4 py-3 font-bold text-[#A8B8A0] whitespace-nowrap">
-                              <TooltipLexique terme="homeostasie">Homéostasie</TooltipLexique>
+                        <tbody className="block md:table-row-group md:divide-y md:divide-[#E7DFD3] text-sm sm:text-base text-slate-700">
+                          <tr className="block md:table-row mb-4 last:mb-0 md:mb-0 border border-[#E0E0E0] md:border-0 rounded-lg md:rounded-none p-3 md:p-0 bg-[#FAFAFA] md:bg-transparent hover:bg-[#FAF7F2]/50">
+                            <td
+                              data-label="Concept"
+                              className="flex md:table-cell justify-between items-center gap-3 py-2 md:px-4 md:py-3 border-b border-[#EEEEEE] md:border-b-0 text-sm font-semibold md:font-bold text-left whitespace-nowrap break-keep before:content-[attr(data-label)] before:w-1/3 before:shrink-0 before:font-semibold before:text-[#666666] md:before:content-none"
+                            >
+                              <span className="w-2/3 md:w-auto font-bold text-[#3E4A3D] md:text-[#A8B8A0] whitespace-nowrap break-keep text-left">
+                                <TooltipLexique terme="homeostasie">Homéostasie</TooltipLexique>
+                              </span>
                             </td>
-                            <td className="px-4 py-3 text-slate-700 leading-relaxed min-w-[280px]">
-                              Capacité du corps à revenir à son point d'équilibre d'origine après une perturbation.
+                            <td
+                              data-label="Définition canonique"
+                              className="flex md:table-cell justify-between items-start gap-3 py-2 md:px-4 md:py-3 border-b border-[#EEEEEE] md:border-b-0 text-sm text-slate-700 leading-relaxed text-left before:content-[attr(data-label)] before:w-1/3 before:shrink-0 before:font-semibold before:text-[#666666] before:whitespace-normal md:before:content-none"
+                            >
+                              <span className="w-2/3 md:w-auto text-left break-normal">
+                                Capacité du corps à revenir à son point d'équilibre d'origine après une perturbation.
+                              </span>
                             </td>
-                            <td className="px-4 py-3 text-slate-600 italic whitespace-nowrap">
-                              Le pilotage gyroscopique rectifiant son cap.
+                            <td
+                              data-label="Analogie concrète"
+                              className="flex md:table-cell justify-between items-start gap-3 pt-2 pb-0 md:px-4 md:py-3 text-sm text-slate-600 text-left before:content-[attr(data-label)] before:w-1/3 before:shrink-0 before:not-italic before:font-semibold before:text-[#666666] before:whitespace-normal md:before:content-none"
+                            >
+                              <span className="w-2/3 md:w-auto italic text-left break-normal">
+                                Le pilotage gyroscopique rectifiant son cap.
+                              </span>
                             </td>
                           </tr>
-                          <tr className="hover:bg-[#FAF7F2]/50">
-                            <td className="px-4 py-3 font-bold text-[#C8AB8A] whitespace-nowrap">
-                              <TooltipLexique terme="allostasie">Allostasie</TooltipLexique>
+                          <tr className="block md:table-row mb-4 last:mb-0 md:mb-0 border border-[#E0E0E0] md:border-0 rounded-lg md:rounded-none p-3 md:p-0 bg-[#FAFAFA] md:bg-transparent hover:bg-[#FAF7F2]/50">
+                            <td
+                              data-label="Concept"
+                              className="flex md:table-cell justify-between items-center gap-3 py-2 md:px-4 md:py-3 border-b border-[#EEEEEE] md:border-b-0 text-sm font-semibold md:font-bold text-left whitespace-nowrap break-keep before:content-[attr(data-label)] before:w-1/3 before:shrink-0 before:font-semibold before:text-[#666666] md:before:content-none"
+                            >
+                              <span className="w-2/3 md:w-auto font-bold text-[#C8AB8A] whitespace-nowrap break-keep text-left">
+                                <TooltipLexique terme="allostasie">Allostasie</TooltipLexique>
+                              </span>
                             </td>
-                            <td className="px-4 py-3 text-slate-700 leading-relaxed min-w-[280px]">
-                              Capacité du corps à s'adapter en déplaçant temporairement son point d'équilibre.
+                            <td
+                              data-label="Définition canonique"
+                              className="flex md:table-cell justify-between items-start gap-3 py-2 md:px-4 md:py-3 border-b border-[#EEEEEE] md:border-b-0 text-sm text-slate-700 leading-relaxed text-left before:content-[attr(data-label)] before:w-1/3 before:shrink-0 before:font-semibold before:text-[#666666] before:whitespace-normal md:before:content-none"
+                            >
+                              <span className="w-2/3 md:w-auto text-left break-normal">
+                                Capacité du corps à s'adapter en déplaçant temporairement son point d'équilibre.
+                              </span>
                             </td>
-                            <td className="px-4 py-3 text-slate-600 italic whitespace-nowrap">
-                              Le thermostat qui adapte sa consigne en tempête.
+                            <td
+                              data-label="Analogie concrète"
+                              className="flex md:table-cell justify-between items-start gap-3 pt-2 pb-0 md:px-4 md:py-3 text-sm text-slate-600 text-left before:content-[attr(data-label)] before:w-1/3 before:shrink-0 before:not-italic before:font-semibold before:text-[#666666] before:whitespace-normal md:before:content-none"
+                            >
+                              <span className="w-2/3 md:w-auto italic text-left break-normal">
+                                Le thermostat qui adapte sa consigne en tempête.
+                              </span>
                             </td>
                           </tr>
-                          <tr className="hover:bg-[#FAF7F2]/50">
-                            <td className="px-4 py-3 font-bold text-rose-700 whitespace-nowrap">
-                              <TooltipLexique terme="charge-allostatique">Charge allostatique</TooltipLexique>
+                          <tr className="block md:table-row mb-4 last:mb-0 md:mb-0 border border-[#E0E0E0] md:border-0 rounded-lg md:rounded-none p-3 md:p-0 bg-[#FAFAFA] md:bg-transparent hover:bg-[#FAF7F2]/50">
+                            <td
+                              data-label="Concept"
+                              className="flex md:table-cell justify-between items-center gap-3 py-2 md:px-4 md:py-3 border-b border-[#EEEEEE] md:border-b-0 text-sm font-semibold md:font-bold text-left whitespace-nowrap break-keep before:content-[attr(data-label)] before:w-1/3 before:shrink-0 before:font-semibold before:text-[#666666] md:before:content-none"
+                            >
+                              <span className="w-2/3 md:w-auto font-bold text-rose-700 whitespace-nowrap break-keep text-left">
+                                <TooltipLexique terme="charge-allostatique">Charge allostatique</TooltipLexique>
+                              </span>
                             </td>
-                            <td className="px-4 py-3 text-slate-700 leading-relaxed min-w-[280px]">
-                              Usure accumulée lorsque l'adaptation est continue et dépasse les réserves physiologiques.
+                            <td
+                              data-label="Définition canonique"
+                              className="flex md:table-cell justify-between items-start gap-3 py-2 md:px-4 md:py-3 border-b border-[#EEEEEE] md:border-b-0 text-sm text-slate-700 leading-relaxed text-left before:content-[attr(data-label)] before:w-1/3 before:shrink-0 before:font-semibold before:text-[#666666] before:whitespace-normal md:before:content-none"
+                            >
+                              <span className="w-2/3 md:w-auto text-left break-normal">
+                                Usure accumulée lorsque l'adaptation est continue et dépasse les réserves physiologiques.
+                              </span>
                             </td>
-                            <td className="px-4 py-3 text-slate-600 italic whitespace-nowrap">
-                              Le fardeau accumulé sur le dos de l'âne.
+                            <td
+                              data-label="Analogie concrète"
+                              className="flex md:table-cell justify-between items-start gap-3 pt-2 pb-0 md:px-4 md:py-3 text-sm text-slate-600 text-left before:content-[attr(data-label)] before:w-1/3 before:shrink-0 before:not-italic before:font-semibold before:text-[#666666] before:whitespace-normal md:before:content-none"
+                            >
+                              <span className="w-2/3 md:w-auto italic text-left break-normal">
+                                Le fardeau accumulé sur le dos de l'âne.
+                              </span>
                             </td>
                           </tr>
                         </tbody>

@@ -408,9 +408,9 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
       <div className="flex-1 bg-[#FAF7F2] text-[#3E4A3D] min-h-screen w-full">
         {/* SECTION 0 — HERO SECTION VERT FORÊT AVEC FIL D'ARIANE */}
         <header className="w-full bg-[#1E2E25] text-white border-b border-white/10 relative overflow-hidden">
-          <div className="w-full bg-[#0F261E] border-b border-white/10 px-4 md:px-8 py-3.5 relative z-20">
+          <div className="w-full bg-[#0F261E] border-b border-white/10 px-3 sm:px-4 md:px-8 py-2.5 sm:py-3 relative z-20">
             <nav aria-label="Fil d'Ariane" className="max-w-7xl mx-auto">
-              <ol className="flex flex-wrap items-center space-x-2 text-sm text-white">
+              <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[11px] sm:text-xs text-white">
                 <li>
                   <a
                     href="/"
@@ -1133,7 +1133,7 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                 onClick={(e) => handleNavClick(e, 'boutique')}
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition-all cursor-pointer"
               >
-                <span>{tr('Plantes Médicinales Bio', 'Organic Medicinal Plants', 'Bio-Heilpflanzen')}</span>
+                <span>{tr('Soins Botaniques', 'Botanical Care', 'Botanische Pflege')}</span>
                 <CheckCircle2 className="w-4 h-4" />
               </a>
             </div>

@@ -332,23 +332,46 @@ export const StoreSequencingSection: React.FC<StoreSequencingSectionProps> = ({ 
           <p className="text-xs sm:text-sm text-[#3E4A3D]/70">{t.matrixSub}</p>
         </div>
 
-        <div className="overflow-x-auto rounded-2xl border border-[#2D5A27]/15 bg-white shadow-sm">
-          <table className="w-full text-left text-xs sm:text-sm">
-            <thead className="bg-[#2D5A27] text-white uppercase text-[10px] sm:text-xs tracking-wider">
+        <div className="md:overflow-x-auto md:rounded-3xl md:border md:border-[#2D5A27]/15 md:bg-white md:shadow-sm">
+          <table className="totum-table block md:table w-full text-left border-collapse text-sm">
+            <thead className="hidden md:table-header-group bg-[#2D5A27] text-white uppercase text-xs tracking-wider">
               <tr>
-                <th className="py-3.5 px-4 font-bold">{t.th1}</th>
-                <th className="py-3.5 px-4 font-bold">{t.th2}</th>
-                <th className="py-3.5 px-4 font-bold">{t.th3}</th>
-                <th className="py-3.5 px-4 font-bold">{t.th4}</th>
+                <th className="p-4 sm:p-5 font-bold">{t.th1}</th>
+                <th className="p-4 sm:p-5 font-bold">{t.th2}</th>
+                <th className="p-4 sm:p-5 font-bold">{t.th3}</th>
+                <th className="p-4 sm:p-5 font-bold">{t.th4}</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#E8DFD1]/60">
+            <tbody className="block md:table-row-group md:divide-y md:divide-[#E8DFD1]/60">
               {t.rows.map((row) => (
-                <tr key={row.fn} className="hover:bg-[#FAF7F2]/50 transition-colors">
-                  <td className="py-3.5 px-4 font-black text-[#2D5A27] whitespace-nowrap">{row.fn}</td>
-                  <td className="py-3.5 px-4 text-[#3E4A3D]/80">{row.role}</td>
-                  <td className="py-3.5 px-4 font-medium text-[#3E4A3D]">{row.plants}</td>
-                  <td className="py-3.5 px-4 text-[#3E4A3D]/80 font-medium">{row.benefit}</td>
+                <tr
+                  key={row.fn}
+                  className="block md:table-row mb-4 last:mb-0 md:mb-0 border border-[#E0E0E0] md:border-0 rounded-lg md:rounded-none p-3 md:p-0 bg-[#FAFAFA] md:bg-transparent hover:bg-[#FAF7F2]/50 transition-colors"
+                >
+                  <td
+                    data-label={t.th1}
+                    className="flex md:table-cell justify-between items-center gap-3 py-2 md:p-5 border-b border-[#EEEEEE] md:border-b-0 text-sm font-black text-[#2D5A27] text-left whitespace-nowrap break-keep before:content-[attr(data-label)] before:font-semibold before:text-[#666666] before:mr-3 before:shrink-0 md:before:content-none"
+                  >
+                    <span className="whitespace-nowrap break-keep">{row.fn}</span>
+                  </td>
+                  <td
+                    data-label={t.th2}
+                    className="flex md:table-cell justify-between items-start gap-3 py-2 md:p-5 border-b border-[#EEEEEE] md:border-b-0 text-sm text-[#3E4A3D]/80 text-left before:content-[attr(data-label)] before:font-semibold before:text-[#666666] before:mr-3 before:shrink-0 md:before:content-none"
+                  >
+                    <span className="text-right md:text-left break-normal">{row.role}</span>
+                  </td>
+                  <td
+                    data-label={t.th3}
+                    className="flex md:table-cell justify-between items-start gap-3 py-2 md:p-5 border-b border-[#EEEEEE] md:border-b-0 text-sm font-medium text-[#3E4A3D] text-left before:content-[attr(data-label)] before:font-semibold before:text-[#666666] before:mr-3 before:shrink-0 md:before:content-none"
+                  >
+                    <span className="text-right md:text-left break-normal">{row.plants}</span>
+                  </td>
+                  <td
+                    data-label={t.th4}
+                    className="flex md:table-cell justify-between items-start gap-3 pt-2 pb-0 md:p-5 text-sm text-[#3E4A3D]/80 font-medium text-left before:content-[attr(data-label)] before:font-semibold before:text-[#666666] before:mr-3 before:shrink-0 md:before:content-none"
+                  >
+                    <span className="text-right md:text-left break-normal">{row.benefit}</span>
+                  </td>
                 </tr>
               ))}
             </tbody>

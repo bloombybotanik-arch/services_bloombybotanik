@@ -764,7 +764,7 @@ export default function App() {
               cosmetiques: selectedLanguage === 'fr' ? 'Cosmétique Maison' : selectedLanguage === 'de' ? 'Naturkosmetik DIY' : 'Homemade Cosmetics',
               rituel_reset: selectedLanguage === 'fr' ? 'Rituel Reset' : selectedLanguage === 'de' ? 'Reset-Ritual' : 'Reset Ritual',
               phycocyanine: selectedLanguage === 'fr' ? 'Phycocyanine' : 'Phycocyanin',
-              plantes_bio: selectedLanguage === 'fr' ? 'Plantes Médicinales Bio' : selectedLanguage === 'de' ? 'Bio-Heilpflanzen' : 'Organic Medicinal Plants',
+              plantes_bio: selectedLanguage === 'fr' ? 'Soins Botaniques' : selectedLanguage === 'de' ? 'Botanische Pflege' : 'Botanical Care',
               accessoires: selectedLanguage === 'fr' ? 'Accessoires' : selectedLanguage === 'de' ? 'Zubehör' : 'Accessories',
               argiles: selectedLanguage === 'fr' ? 'Argiles & Liants' : selectedLanguage === 'de' ? 'Tonerden & Bindemittel' : 'Clays & Binders',
               abonnement: selectedLanguage === 'fr' ? 'Abonnements' : selectedLanguage === 'de' ? 'Digitale Abonnements' : 'Digital Subscriptions',

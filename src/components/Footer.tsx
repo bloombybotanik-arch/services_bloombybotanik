@@ -172,8 +172,26 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
           </div>
         </div>
 
-        {/* NOUVELLE STRUCTURE FOOTER EN 4 COLONNES */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pb-10 mb-10 border-b border-white/10 text-xs text-white/70">
+        {/* VERSION MOBILE (< 768px) : BLOC COMPACT 6 LIENS */}
+        <div className="md:hidden pb-6 mb-6 border-b border-white/10 text-xs text-white/70">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-2.5">
+            <div><NavLink view="machine">BloomLab®</NavLink></div>
+            <div><NavLink view="boutique-kits">{isFR ? "Soins Botaniques" : isDE ? "Botanische Pflege" : "Botanical Care"}</NavLink></div>
+            <div><NavLink view="contact">{isFR ? "Contact" : isDE ? "Kontakt" : "Contact"}</NavLink></div>
+            <div><NavLink view="faq">FAQ</NavLink></div>
+            <div className="col-span-2"><NavLink view="returns">{isFR ? "Livraison & Retours" : isDE ? "Versand & Rückgabe" : "Shipping & Returns"}</NavLink></div>
+          </div>
+          <div className="mt-3 pt-3 border-t border-white/10 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px]">
+            <NavLink view="mentions">{isFR ? "Mentions Légales" : isDE ? "Impressum" : "Legal Notice"}</NavLink>
+            <span className="text-white/40" aria-hidden="true">&amp;</span>
+            <NavLink view="cgv">{isFR ? "CGV" : isDE ? "AGB" : "Terms of Sale"}</NavLink>
+            <span className="text-white/40" aria-hidden="true">•</span>
+            <NavLink view="privacy">{isFR ? "Politique de Confidentialité" : isDE ? "Datenschutz" : "Privacy Policy"}</NavLink>
+          </div>
+        </div>
+
+        {/* VERSION DESKTOP (>= 768px) : STRUCTURE FOOTER EN 4 COLONNES */}
+        <div className="hidden md:grid md:grid-cols-4 gap-8 pb-10 mb-10 border-b border-white/10 text-xs text-white/70">
           
           {/* COLONNE 1: BLOOM BY BOTANIK */}
           <div>
@@ -182,9 +200,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
             </h4>
             <ul className="space-y-2.5">
               <li><NavLink view="la-marque">{isFR ? "Histoire & Philosophie" : isDE ? "Geschichte & Philosophie" : "Story & Philosophy"}</NavLink></li>
-              <li><NavLink view="manifeste">{isFR ? "Le Manifeste Bloom" : isDE ? "Das Bloom Manifest" : "The Bloom Manifesto"}</NavLink></li>
-              <li><NavLink view="blog">{isFR ? "Journal Botanique" : isDE ? "Botanisches Journal" : "Botanical Journal"}</NavLink></li>
-              <li><NavLink view="articles">{isFR ? "Articles & Savoirs" : isDE ? "Artikel & Wissen" : "Articles & Knowledge"}</NavLink></li>
+              <li><NavLink view="manifeste">{isFR ? "Manifeste Bloom" : isDE ? "Bloom Manifest" : "Bloom Manifesto"}</NavLink></li>
               <li><NavLink view="contact">{isFR ? "Contact" : isDE ? "Kontakt" : "Contact"}</NavLink></li>
             </ul>
           </div>
@@ -196,15 +212,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
               <span>{isFR ? "BLOOM ACADÉMIE" : isDE ? "BLOOM AKADEMIE" : "BLOOM ACADEMY"}</span>
             </h4>
             <ul className="space-y-2.5">
-              <li><NavLink view="academie">{isFR ? "Hub Bloom Académie" : isDE ? "Bloom Akademie Hub" : "Bloom Academy Hub"}</NavLink></li>
-              <li><NavLink view="women-academy">{isFR ? "Pouvoir Cyclique Femme" : isDE ? "Zyklische Kraft der Frau" : "Women's Cyclical Power"}</NavLink></li>
-              <li><NavLink view="protocoles">{isFR ? "Protocoles Systémiques" : isDE ? "Systemische Protokolle" : "Systemic Protocols"}</NavLink></li>
-              <li><NavLink view="phytotherapie-reset">{isFR ? "Reset Homéostasique" : isDE ? "Homöostatischer Reset" : "Homeostatic Reset"}</NavLink></li>
-              <li><NavLink view="4-architectures">{isFR ? "Comprendre le Corps" : isDE ? "Den Körper verstehen" : "Understanding the Body"}</NavLink></li>
+              <li><NavLink view="academie">{isFR ? "Hub Académie" : isDE ? "Akademie Hub" : "Academy Hub"}</NavLink></li>
               <li><NavLink view="pillar-extraction">{isFR ? "Extraction & Totum" : isDE ? "Extraktion & Totum" : "Extraction & Totum"}</NavLink></li>
-              <li><NavLink view="guide-solvants">{isFR ? "Guide des Solvants" : isDE ? "Lösungsmittel-Leitfaden" : "Solvents Guide"}</NavLink></li>
-              <li><NavLink view="recettes">{isFR ? "Recettes Botaniques" : isDE ? "Botanische Rezepte" : "Botanical Recipes"}</NavLink></li>
-              <li><NavLink view="library-landing">{isFR ? "Bibliothèque Scientifique" : isDE ? "Wissenschaftliche Bibliothek" : "Scientific Library"}</NavLink></li>
+              <li><NavLink view="herbier">{isFR ? "Herbier" : isDE ? "Herbarium" : "Herbarium"}</NavLink></li>
+              <li><NavLink view="blog">{isFR ? "Journal Botanique" : isDE ? "Botanisches Journal" : "Botanical Journal"}</NavLink></li>
             </ul>
           </div>
 
@@ -215,24 +226,25 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
             </h4>
             <ul className="space-y-2.5">
               <li><NavLink view="machine">BloomLab®</NavLink></li>
-              <li><NavLink view="boutique-kits">{isFR ? "Plantes Médicinales Bio" : isDE ? "Bio-Heilpflanzen" : "Organic Medicinal Plants"}</NavLink></li>
-              <li><NavLink view="boutique">{isFR ? "Accessoires & Boutique" : isDE ? "Zubehör & Shop" : "Accessories & Store"}</NavLink></li>
-              <li><NavLink view="abonnement">{isFR ? "Abonnements Numériques" : isDE ? "Digitale Abonnements" : "Digital Subscriptions"}</NavLink></li>
-              <li><NavLink view="cgv">{isFR ? "CGV" : isDE ? "AGB" : "Terms of Sale"}</NavLink></li>
+              <li><NavLink view="boutique-kits">{isFR ? "Soins Botaniques" : isDE ? "Botanische Pflege" : "Botanical Care"}</NavLink></li>
+              <li><NavLink view="boutique">{isFR ? "Accessoires" : isDE ? "Zubehör" : "Accessories"}</NavLink></li>
+              <li><NavLink view="abonnement">{isFR ? "Abonnements" : isDE ? "Abonnements" : "Subscriptions"}</NavLink></li>
             </ul>
           </div>
 
-          {/* COLONNE 4: RESSOURCES */}
+          {/* COLONNE 4: AIDE & LÉGAL */}
           <div>
             <h4 className="text-xs uppercase tracking-widest font-black mb-4 text-[#F9F6F0]">
-              {isFR ? "RESSOURCES" : isDE ? "RESSOURCEN" : "RESOURCES"}
+              {isFR ? "AIDE & LÉGAL" : isDE ? "HILFE & RECHTLICHES" : "HELP & LEGAL"}
             </h4>
             <ul className="space-y-2.5">
-              <li><NavLink view="herbier">{isFR ? "L'Herbier Médicinal" : isDE ? "Das Heilpflanzen-Herbarium" : "The Medicinal Herbarium"}</NavLink></li>
-              <li><NavLink view="lexique">{isFR ? "Lexique Botanik" : isDE ? "Botanik-Glossar" : "Botanik Glossary"}</NavLink></li>
               <li><NavLink view="faq">FAQ</NavLink></li>
               <li><NavLink view="returns">{isFR ? "Livraison & Retours" : isDE ? "Versand & Rückgabe" : "Shipping & Returns"}</NavLink></li>
-              <li><NavLink view="mentions">{isFR ? "Mentions Légales" : isDE ? "Impressum" : "Legal Notice"}</NavLink></li>
+              <li className="flex flex-wrap items-center gap-x-1.5">
+                <NavLink view="mentions">{isFR ? "Mentions Légales" : isDE ? "Impressum" : "Legal Notice"}</NavLink>
+                <span className="text-white/40" aria-hidden="true">·</span>
+                <NavLink view="cgv">{isFR ? "CGV" : isDE ? "AGB" : "Terms of Sale"}</NavLink>
+              </li>
               <li><NavLink view="privacy">{isFR ? "Politique de Confidentialité" : isDE ? "Datenschutzrichtlinie" : "Privacy Policy"}</NavLink></li>
             </ul>
           </div>

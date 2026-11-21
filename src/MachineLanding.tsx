@@ -185,8 +185,8 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(200, 171, 138,0.15),rgba(255,255,255,0))] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <nav aria-label="Fil d'Ariane" className="flex flex-wrap items-center justify-between gap-3 mb-6 text-xs sm:text-sm text-white/80">
-            <ol className="flex items-center gap-2">
+          <nav aria-label="Fil d'Ariane" className="flex flex-wrap items-center justify-between gap-3 mb-6 text-[11px] sm:text-xs text-white/80">
+            <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
               <li>
                 <a
                   href="/"
@@ -219,18 +219,6 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               <li className="text-white/40">/</li>
               <li className="text-white font-semibold" aria-current="page">BloomLab®</li>
             </ol>
-            <a
-              href="/boutique/"
-              onClick={(e) => {
-                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
-                  e.preventDefault();
-                  onNavigate('boutique');
-                }
-              }}
-              className="text-white/80 hover:text-[#C8AB8A] transition-colors font-medium"
-            >
-              {lang === 'fr' ? '← Retour à la boutique' : lang === 'de' ? '← Zurück zum Shop' : '← Back to Shop'}
-            </a>
           </nav>
 
           {/* Hero E-Commerce 2 Colonnes : Galerie Produit (Gauche) + Fiche & Buy-Box (Droite) */}

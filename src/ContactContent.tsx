@@ -186,10 +186,10 @@ export default function ContactContent({ onNavigate, lang = 'fr' }: ContactConte
                   <span className="flex items-center gap-2">
                     <Sparkles className="w-4 h-4 text-[#C8AB8A]" />
                     {isFR
-                      ? "Plantes Médicinales Bio & Boutique"
+                      ? "Soins Botaniques & Boutique"
                       : isDE
-                      ? "Bio-Heilpflanzen & Shop"
-                      : "Organic Medicinal Plants & Shop"}
+                      ? "Botanische Pflege & Shop"
+                      : "Botanical Care & Shop"}
                   </span>
                   <ArrowRight className="w-4 h-4" />
                 </button>

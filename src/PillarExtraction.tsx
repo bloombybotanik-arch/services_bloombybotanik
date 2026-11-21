@@ -79,9 +79,9 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
         className="w-full bg-[#1E2E25] text-white border-b border-white/10 relative overflow-hidden"
       >
         {/* Barre de fil d'Ariane tout en haut : Vert Profond du Menu #0F261E */}
-        <div className="w-full bg-[#0F261E] border-b border-white/10 px-4 md:px-8 py-3.5 relative z-20">
+        <div className="w-full bg-[#0F261E] border-b border-white/10 px-3 sm:px-4 md:px-8 py-2.5 sm:py-3 relative z-20">
           <nav aria-label={tr("Fil d'Ariane", "Breadcrumb", "Brotkrumennavigation")} className="max-w-7xl mx-auto">
-            <ol className="flex items-center space-x-2 text-sm text-white">
+            <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[11px] sm:text-xs text-white">
               <li>
                 <button 
                   onClick={() => { onNavigate('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}

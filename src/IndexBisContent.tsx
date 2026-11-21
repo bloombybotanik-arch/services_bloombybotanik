@@ -291,19 +291,20 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               </div>
               {/* Le SEUL H1 de la page d'accueil */}
               <h1 className="text-sm sm:text-lg md:text-2xl lg:text-[28px] xl:text-[32px] font-black text-[#FAF7F2] text-white !text-white leading-[1.18] tracking-tight drop-shadow-md">
-                {isFR 
-                  ? "BloomLab® : L'Extracteur Botanique de Précision qui Préserve le Totum Végétal" 
-                  : isDE 
-                  ? "BloomLab®: Der botanische Präzisionsextraktor für das volle Pflanzen-Totum"
-                  : "BloomLab®: The Precision Botanical Extractor Preserving the Whole-Plant Totum"}
+                {isFR ? (
+                  <>
+                    BloomLab®
+                    <br />
+                    L'Extracteur Botanique de Précision
+                    <br />
+                    qui Préserve le Totum Végétal
+                  </>
+                ) : isDE ? (
+                  "BloomLab®: Der botanische Präzisionsextraktor für das volle Pflanzen-Totum"
+                ) : (
+                  "BloomLab®: The Precision Botanical Extractor Preserving the Whole-Plant Totum"
+                )}
               </h1>
-              <p className="text-[10px] sm:text-xs md:text-[13px] font-medium text-white/95 leading-snug drop-shadow">
-                {isFR
-                  ? "La BloomLab® reproduit les paramètres des laboratoires (température contrôlée, durée et agitation douce) pour extraire le meilleur des plantes sans jamais les brûler."
-                  : isDE
-                  ? "Die BloomLab® bildet Laborparameter (kontrollierte Temperatur, Dauer und sanftes Rühren) exakt nach, um das Beste aus Pflanzen zu gewinnen, ohne sie zu verbrennen."
-                  : "BloomLab® reproduces laboratory parameters (controlled temperature, duration, and gentle stirring) to extract the best from plants without ever burning them."}
-              </p>
             </div>
           </div>
 
@@ -338,7 +339,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             <div className="space-y-3 pt-1">
               <div className="flex flex-wrap items-center gap-4">
                 <button
-                  onClick={() => onNavigate('machine')}
+                  onClick={() => onNavigate('product-detail', 'bloomlab')}
                   className="px-8 py-4 bg-[#E8772E] hover:bg-[#D4651F] active:bg-[#D4651F] text-white rounded-2xl font-bold text-sm sm:text-base flex items-center gap-3 transition-all shadow-lg shadow-orange-900/20 cursor-pointer"
                 >
                   <span>{isFR ? "Découvrir la BloomLab® (229 €)" : isDE ? "BloomLab® entdecken (229 €)" : "Discover BloomLab® (€229)"}</span>
@@ -2086,7 +2087,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   <span className="text-xs font-bold uppercase tracking-wider bg-white/10 text-white/90 px-3 py-1 rounded-full">
                     {isFR ? "Le coffret complet prêt à extraire" : isDE ? "Das komplette Extraktions-Set" : "Complete ready-to-extract kit"}
                   </span>
-                  <h3 className="text-2xl font-black pt-2">Pack Signature</h3>
+                  <h3 className="text-2xl font-black pt-2 text-white !text-white">Pack Signature</h3>
                 </div>
 
                 <div className="space-y-1">
@@ -2386,10 +2387,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             </div>
             <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
               {[
-                { label: isFR ? "Découvrir la BloomLab" : isDE ? "BloomLab entdecken" : "Discover BloomLab", view: "machine", href: "/bloomlab/" },
+                { label: isFR ? "Découvrir la BloomLab" : isDE ? "BloomLab entdecken" : "Discover BloomLab", view: "product-detail", param: "bloomlab", href: "/boutique/bloomlab/" },
                 { label: isFR ? "Guide d'extraction" : isDE ? "Extraktions-Leitfaden" : "Extraction Guide", view: "pillar-extraction", href: "/extraction-botanique/" },
                 { label: isFR ? "Infusion Botanique" : isDE ? "Botanische Infusion" : "Botanical Infusion", view: "infusion-botanique", href: "/infusion-botanique/" },
-                { label: isFR ? "Plantes Médicinales Bio" : isDE ? "Bio-Heilpflanzen" : "Organic Medicinal Plants", view: "remedes-naturels", href: "/remedes-naturels/" },
+                { label: isFR ? "Soins Botaniques" : isDE ? "Botanische Pflege" : "Botanical Care", view: "remedes-naturels", href: "/remedes-naturels/" },
                 { label: isFR ? "Reset Corps" : isDE ? "Homöostatischer Reset" : "Homeostatic Reset", view: "reset-homeostasique", href: "/reset-homeostasique/" },
                 { label: isFR ? "Guide des Solvants" : isDE ? "Lösungsmittel-Leitfaden" : "Solvents Guide", view: "guide-solvants", href: "/guide-solvants/" },
                 { label: isFR ? "Académie" : isDE ? "Akademie" : "Academy", view: "academie", href: "/academie/" },
@@ -2401,7 +2402,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   onClick={(e) => {
                     if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                       e.preventDefault();
-                      onNavigate(item.view);
+                      onNavigate(item.view, (item as { param?: string }).param);
                     }
                   }}
                   className="px-4 py-2 rounded-full bg-white border border-[#E7DFD3] hover:border-[#E8772E] text-xs sm:text-sm font-bold text-[#1E2E25] hover:text-[#E8772E] transition-colors shadow-2xs"
