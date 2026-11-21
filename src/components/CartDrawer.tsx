@@ -49,7 +49,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               type="button"
               onClick={onClose}
               className="p-2 text-slate-400 hover:text-slate-800 transition-colors cursor-pointer rounded-full hover:bg-slate-100"
-              aria-label="Fermer le panier"
+              aria-label={isFR ? "Fermer le panier" : isDE ? "Warenkorb schließen" : "Close cart"}
             >
               <X className="w-5 h-5" />
             </button>
@@ -58,7 +58,9 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
           <div className="bg-[#FAF7F2] p-6 rounded-3xl border border-[#E7DFD3] flex justify-between items-center">
             <div className="space-y-1 pr-4">
               <div className="font-bold text-sm text-[#3E4A3D]">{cartItem.title}</div>
-              <div className="text-xs text-slate-500">BloomLab® Precision Extractor</div>
+              <div className="text-xs text-slate-500">
+                {isFR ? "Extracteur de Précision BloomLab®" : isDE ? "BloomLab® Präzisionsextraktor" : "BloomLab® Precision Extractor"}
+              </div>
             </div>
             <div className="font-black text-2xl text-[#C8AB8A] shrink-0">{cartItem.price}€</div>
           </div>
@@ -66,11 +68,19 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
           <div className="p-4 bg-emerald-50 rounded-2xl border border-emerald-100 text-xs text-emerald-800 space-y-1">
             <div className="font-bold flex items-center gap-1.5">
               <Check className="w-4 h-4 text-emerald-600" />
-              <span>{isFR ? "Expédition prioritaire sous 24/48h incluse" : "Priority 24/48h shipping included"}</span>
+              <span>
+                {isFR
+                  ? "Expédition prioritaire sous 24/48h incluse"
+                  : isDE
+                  ? "Bevorzugter Versand innerhalb von 24/48h inklusive"
+                  : "Priority 24/48h shipping included"}
+              </span>
             </div>
             <div className="text-emerald-700/80">
               {isFR 
                 ? "Garantie constructeur 1 an & Satisfait ou remboursé 30 jours." 
+                : isDE
+                ? "1 Jahr Herstellergarantie & 30 Tage Geld-zurück-Garantie."
                 : "1-year warranty & 30-day money-back guarantee."}
             </div>
           </div>
@@ -87,7 +97,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             className="w-full bg-[#D97706] hover:bg-[#B45309] active:bg-[#B45309] text-white py-4 sm:py-5 rounded-full font-black text-base sm:text-lg transition-all cursor-pointer shadow-lg shadow-orange-900/20 flex items-center justify-center gap-3"
           >
             <ShoppingBag className="w-5 h-5" />
-            <span>{isFR ? "Commander maintenant" : "Proceed to Checkout"}</span>
+            <span>{isFR ? "Commander maintenant" : isDE ? "Jetzt bestellen" : "Proceed to Checkout"}</span>
           </button>
           <div className="flex justify-center">
             <PaymentBadges />

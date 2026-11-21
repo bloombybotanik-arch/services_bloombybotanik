@@ -22,6 +22,8 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
   const t = translations[lang];
   const h = t.home2026;
   const isFR = lang === 'fr';
+  const isDE = lang === 'de';
+  const tr = (fr: string, en: string, de: string) => (isFR ? fr : isDE ? de : en);
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 animate-in fade-in slide-in-from-bottom-4 duration-1000 overflow-x-clip">
@@ -39,7 +41,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
         >
           <Sparkles className="w-4 h-4 text-botanik-orange" />
           <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-botanik-green/60">
-            {isFR ? "L'Expertise de l'Extraction 2026" : "2026 Extraction Expertise"}
+            {tr("L'Expertise de l'Extraction 2026", "2026 Extraction Expertise", "Extraktionsexpertise 2026")}
           </span>
         </motion.div>
         
@@ -91,7 +93,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
                 <img 
                   src="/img/produit/bloomlab-cuisine-1200x630.jpg" 
                   className="w-full aspect-[4/3] object-cover" 
-                  alt={isFR ? "BloomLab® en situation de cuisine d'apothicaire" : "BloomLab® in kitchen herbal setting"} 
+                  alt={tr("BloomLab® en situation de cuisine d'apothicaire", "BloomLab® in botanical kitchen setting", "BloomLab® in der botanischen Küche")} 
                   width={1200}
                   height={900}
                   loading="eager"
@@ -146,25 +148,25 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
                   <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
                     <Check className="w-4 h-4 text-botanik-orange" />
                   </div>
-                  <span className="text-sm font-medium text-white/90">{isFR ? "Inox 304 Certifié" : "Certified 304 Stainless"}</span>
+                  <span className="text-sm font-medium text-white/90">{tr("Inox 304 Certifié", "Certified 304 Stainless", "Zertifizierter Edelstahl 304")}</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
                     <Check className="w-4 h-4 text-botanik-orange" />
                   </div>
-                  <span className="text-sm font-medium text-white/90">{isFR ? "Précision ±0,5°C" : "±0.5°C Precision"}</span>
+                  <span className="text-sm font-medium text-white/90">{tr("Précision ±0,5°C", "±0.5°C Precision", "±0,5°C Präzision")}</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
                     <Check className="w-4 h-4 text-botanik-orange" />
                   </div>
-                  <span className="text-sm font-medium text-white/90">{isFR ? "Programmes Guidés" : "Guided Programs"}</span>
+                  <span className="text-sm font-medium text-white/90">{tr("Programmes Guidés", "Guided Programs", "Geführte Programme")}</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
                     <Check className="w-4 h-4 text-botanik-orange" />
                   </div>
-                  <span className="text-sm font-medium text-white/90">{isFR ? "Auto-Nettoyage" : "Self-Cleaning"}</span>
+                  <span className="text-sm font-medium text-white/90">{tr("Auto-Nettoyage", "Self-Cleaning", "Selbstreinigung")}</span>
                 </div>
               </div>
               <button 
@@ -179,7 +181,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
                 <img 
                   src="/img/produit/bloomlab-face-1200x1200.jpg" 
                   className="w-full aspect-square object-cover" 
-                  alt={isFR ? "Extracteur Botanique BloomLab® face fond clair" : "BloomLab® botanical extractor front view"} 
+                  alt={tr("Extracteur Botanique BloomLab® face fond clair", "BloomLab® botanical extractor front view", "Botanischer Extraktor BloomLab® Frontalansicht")} 
                   width={1200}
                   height={1200}
                   loading="lazy"
@@ -187,7 +189,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
                 />
               </div>
               <div className="absolute -top-6 -left-6 bg-botanik-orange text-[#0F261E] px-6 py-3 rounded-2xl font-bold shadow-xl rotate-[-5deg]">
-                Totum {isFR ? "végétal révélé" : "plant totum revealed"}
+                {tr("Totum végétal révélé", "Plant Totum revealed", "Pflanzen-Totum bewahrt")}
               </div>
             </div>
           </div>
@@ -368,7 +370,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
           {/* Offer 2: Signature */}
           <div className="bg-white rounded-[40px] p-10 border-2 border-[#D97706] flex flex-col relative group hover:shadow-2xl transition-all duration-500">
             <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#D97706] text-white px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest shadow-lg shadow-orange-900/20">
-              {isFR ? "Recommandé" : "Recommended"}
+              {tr("Recommandé", "Recommended", "Empfohlen")}
             </div>
             <div className="flex justify-between items-start mb-8">
               <div>
@@ -447,7 +449,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
             <form className="flex flex-col sm:flex-row gap-4" onSubmit={(e) => e.preventDefault()}>
               <input 
                 type="email" 
-                placeholder={isFR ? "Votre email..." : "Your email..."} 
+                placeholder={tr("Votre email...", "Your email...", "Ihre E-Mail...")} 
                 className="flex-grow px-8 py-5 bg-white/10 border border-white/20 rounded-2xl text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-botanik-orange transition-all"
                 required
               />
@@ -456,7 +458,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
               </button>
             </form>
             <p className="mt-6 text-[10px] text-white/40 uppercase tracking-[0.2em] font-medium">
-              {isFR ? "Pas de spam. Désinscription en un clic." : "No spam. One-click unsubscribe."}
+              {tr("Pas de spam. Désinscription en un clic.", "No spam. One-click unsubscribe.", "Kein Spam. Abmeldung mit einem Klick.")}
             </p>
           </div>
         </div>

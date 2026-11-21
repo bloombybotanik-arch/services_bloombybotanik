@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, ChevronLeft, ChevronRight, Play, X, ShieldCheck, CheckCircle2, Sparkles, AlertCircle, ArrowRight } from 'lucide-react';
+import { Star, ChevronLeft, ChevronRight, Play, X, CheckCircle2, Sparkles, AlertCircle } from 'lucide-react';
 import styles from './TestimonialsCarousel.module.css';
 
 interface Testimonial {
@@ -21,6 +21,7 @@ interface TestimonialsCarouselProps {
 export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang = 'fr' }) => {
   const isDE = lang === 'de';
   const isFR = lang === 'fr';
+  const tr = (fr: string, en: string, de: string) => (isFR ? fr : isDE ? de : en);
 
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeVideoModal, setActiveVideoModal] = useState<string | null>(null);
@@ -30,37 +31,43 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
     {
       id: '1',
       name: 'Renaud P.',
-      role: isFR ? 'Herbaliste & formateur en botanique' : isDE ? 'Kräuterkundler & Ausbilder' : 'Master Herbalist & Botanical Instructor',
+      role: tr('Herbaliste & formateur en botanique', 'Master Herbalist & Botanical Instructor', 'Kräuterkundler & Ausbilder'),
       rating: 5,
-      quote: isFR 
-        ? "« En herboristerie, la maîtrise de la température au degré près change absolument tout. La capture des terpènes volatils est incomparable par rapport à une macération artisanale classique au bain-marie. »"
-        : "« In herbal practice, exact temperature control changes everything. Volatile terpene retention is incomparable to double boilers. »",
+      quote: tr(
+        "« En herboristerie, la maîtrise de la température au degré près change absolument tout. La capture des terpènes volatils est incomparable par rapport à une macération artisanale classique au bain-marie. »",
+        "« In herbal practice, exact temperature control changes everything. Volatile terpene retention is incomparable to traditional double boilers. »",
+        "« In der Kräuterpraxis verändert die gradgenaue Temperaturkontrolle alles. Der Erhalt flüchtiger Terpene ist mit keinem klassischen Wasserbad vergleichbar. »"
+      ),
       initials: 'RP',
       avatarUrl: '/images/8.png',
       hasVideo: true,
-      videoTitle: isFR ? "Démonstration d'extraction par Renaud" : "Renaud's extraction demo"
+      videoTitle: tr("Démonstration d'extraction par Renaud", "Renaud's extraction demo", "Extraktionsdemo von Renaud")
     },
     {
       id: '2',
       name: 'Claire M.',
-      role: isFR ? 'Naturopathe & conseillère de terrain' : isDE ? 'Heilpraktikerin' : 'Certified Naturopath',
+      role: tr('Naturopathe & conseillère de terrain', 'Certified Naturopath & Consultant', 'Heilpraktikerin & Beraterin'),
       rating: 5,
-      quote: isFR 
-        ? "« Je prépare mes huiles de soin pour mes consultants. Zéro amertume, arômes intacts, et surtout une régularité parfaite d'un flacon à l'autre. La cuve inox 304 inerte est un gage absolu de pureté. »"
-        : "« I craft care oils for my clients. Zero bitterness, intact aromas, and flawless reproducibility. The inert 304 stainless steel ensures pure extracts. »",
+      quote: tr(
+        "« Je prépare mes huiles de soin pour mes consultants. Zéro amertume, arômes intacts, et surtout une régularité parfaite d'un flacon à l'autre. La cuve inox 304 inerte est un gage absolu de pureté. »",
+        "« I craft care oils for my clients. Zero bitterness, intact aromas, and flawless reproducibility from batch to batch. The inert 304 stainless steel tank ensures total purity. »",
+        "« Ich stelle meine Pflegeöle selbst her. Keine Bitterkeit, intakte Aromen und eine perfekte Gleichmäßigkeit von Charge zu Charge. Der Edelstahlbehälter 304 garantiert höchste Reinheit. »"
+      ),
       initials: 'CM',
       avatarUrl: '/images/2.png',
       hasVideo: true,
-      videoTitle: isFR ? "Témoignage de Claire M. en cabinet" : "Claire M. Naturopath Review"
+      videoTitle: tr("Témoignage de Claire M.", "Claire M. Review", "Erfahrungsbericht von Claire M.")
     },
     {
       id: '3',
       name: 'Thomas D.',
-      role: isFR ? "Passionné d'herboristerie & cuisine saine" : isDE ? "Botanischer Koch-Enthusiast" : "Home Herbalist & Chef",
+      role: tr("Passionné d'herboristerie & cuisine saine", "Home Herbalist & Chef", "Botanischer Koch-Enthusiast"),
       rating: 5,
-      quote: isFR 
-        ? "« J'ai remisé toutes mes casseroles. En 2h chrono, mon huile de romarin, piment doux et ail est prête, parfumée comme jamais sans brûler. Le Kit Souveraineté a transformé ma façon de consommer les plantes. »"
-        : "« I put away all my saucepans. In 2 hours, my infused oils are aromatic and clean. The Sovereignty Kit transformed how I use medicinal plants. »",
+      quote: tr(
+        "« J'ai remisé toutes mes casseroles. En 2h chrono, mon huile de romarin, piment doux et ail est prête, parfumée comme jamais sans brûler. Le Kit Souveraineté a transformé ma façon d'utiliser les plantes. »",
+        "« I put away all my saucepans. In 2 hours, my infused oils are rich and aromatic without ever scorching. BloomLab transformed how I work with botanicals at home. »",
+        "« Ich habe alle Kochtöpfe weggeräumt. In 2 Stunden ist mein Rosmarinöl fertig – aromatisch wie nie, ohne anzubrennen. Das hat meine Arbeit mit Pflanzen grundlegend verändert. »"
+      ),
       initials: 'TD',
       avatarUrl: '/images/1.png',
       hasVideo: false
@@ -68,24 +75,28 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
     {
       id: '4',
       name: 'Dr. Éléonore M.',
-      role: isFR ? 'Pharmacienne & phytothérapeute' : isDE ? 'Apothekerin' : 'Doctor of Pharmacy',
+      role: tr('Pharmacienne & phyto-conseillère', 'Doctor of Pharmacy & Botanical Advisor', 'Apothekerin & Botanik-Beraterin'),
       rating: 5,
-      quote: isFR
-        ? "« Le protocole de séquençage A/B respecte rigoureusement la biochimie végétale. C'est l'équivalent d'un équipement de laboratoire semi-industriel adapté au comptoir de la maison. »"
-        : "« The A/B extraction sequence respects plant biochemistry. It delivers pharmaceutical-grade extraction at home. »",
+      quote: tr(
+        "« Le protocole de séquençage A/B respecte rigoureusement la biochimie végétale. C'est l'équivalent d'un équipement de laboratoire semi-industriel adapté au comptoir de la maison. »",
+        "« The A/B extraction sequence strictly respects plant biochemistry. It brings precision laboratory extraction right onto your kitchen countertop. »",
+        "« Die sequenzierte A/B-Extraktion respektiert konsequent die Pflanzenbiochemie. Es ist Laborpräzision für die eigene Küche. »"
+      ),
       initials: 'EM',
       avatarUrl: '/images/3.png',
       hasVideo: true,
-      videoTitle: isFR ? "Analyse biochimique de l'extraction BloomLab" : "Biochimical analysis of BloomLab"
+      videoTitle: tr("Analyse biochimique de l'extraction BloomLab", "Biochemical analysis of BloomLab", "Biochemische Analyse von BloomLab")
     },
     {
       id: '5',
       name: 'Sophie B.',
-      role: isFR ? 'Formatrice en cosmétique naturelle DIY' : isDE ? 'DIY-Kosmetikexpertin' : 'Natural DIY Cosmetics Formulator',
+      role: tr('Formatrice en cosmétique naturelle DIY', 'Natural DIY Cosmetics Formulator', 'DIY-Naturkosmetik-Expertin'),
       rating: 5,
-      quote: isFR
-        ? "« Fini les macérats solaires qui rancissent au bout de 4 semaines. En 2h à 42°C dans BloomLab, j'obtiens des huiles de calendula et millepertuis d'une pureté et d'une couleur éclatantes. »"
-        : "« No more rancid 6-week macerations. In 2 hours at 42°C, I extract pristine calendula care oils with vibrant color. »",
+      quote: tr(
+        "« Fini les macérats solaires qui rancissent au bout de 4 semaines. En 2h à 42°C dans BloomLab, j'obtiens des huiles de calendula d'une pureté et d'une couleur éclatantes. »",
+        "« No more rancid 6-week solar macerations. In 2 hours at 42°C, I extract vibrant, crystal-clear calendula care oils. »",
+        "« Schluss mit ranzigen 4-Wochen-Ölen. In 2 Stunden bei 42°C erhalte ich mit BloomLab leuchtende Calendula-Pflegeöle in höchster Reinheit. »"
+      ),
       initials: 'SB',
       avatarUrl: '/images/4.png',
       hasVideo: false
@@ -103,28 +114,24 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
   };
 
   return (
-    <section id="preuve-sociale" className={styles.sectionContainer} aria-label="Avis clients et preuve sociale">
+    <section id="preuve-sociale" className={styles.sectionContainer} aria-label={tr("Avis clients et preuve sociale", "Customer reviews and social proof", "Kundenbewertungen und Erfahrungsberichte")}>
       <div className={styles.inner}>
         
         {/* Section Header */}
         <div className={styles.header}>
           <div className={styles.badge}>
             <Sparkles className="w-3.5 h-3.5 text-[#C8AB8A]" />
-            <span>{isFR ? 'Preuve Sociale & Retours de Pratique' : isDE ? 'Erfahrungsberichte & Praxis' : 'Practice Feedback & Social Proof'}</span>
+            <span>{tr('Preuve Sociale & Retours de Pratique', 'Practice Feedback & Social Proof', 'Erfahrungsberichte & Praxis')}</span>
           </div>
           <h2 className={styles.title}>
-            {isFR 
-              ? "Ils ont remisé leurs casseroles" 
-              : isDE 
-              ? "Sie haben ihre Kochtöpfe weggeräumt" 
-              : "They put away their saucepans"}
+            {tr("Ils ont remisé leurs casseroles", "They put away their saucepans", "Sie haben ihre Kochtöpfe weggeräumt")}
           </h2>
           <p className={styles.subtitle}>
-            {isFR
-              ? "Découvrez les retours d'herbalistes, naturopathes et passionnés qui préparent leurs extraits purs au quotidien avec la BloomLab®."
-              : isDE
-              ? "Erfahren Sie, wie Kräuterkundler und Privatanwender täglich mit BloomLab® reine Pflanzenextrakte herstellen."
-              : "See how herbalists, practitioners, and home enthusiasts extract pure botanical Totum daily with BloomLab®."}
+            {tr(
+              "Découvrez les retours d'herbalistes, naturopathes et passionnés qui préparent leurs extraits purs au quotidien avec la BloomLab®.",
+              "See how herbalists, practitioners, and home enthusiasts extract pure botanical Totum daily with BloomLab®.",
+              "Erfahren Sie, wie Kräuterkundler und Privatanwender täglich mit BloomLab® reine Pflanzenextrakte herstellen."
+            )}
           </p>
         </div>
 
@@ -139,7 +146,7 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
                 ))}
               </div>
               <div className={styles.scoreMeta}>
-                {isFR ? "Basé sur 342+ avis clients vérifiés" : isDE ? "Basierend auf 342+ verifizierten Bewertungen" : "Based on 342+ verified customer reviews"}
+                {tr("Basé sur 342+ avis clients vérifiés", "Based on 342+ verified customer reviews", "Basierend auf 342+ verifizierten Bewertungen")}
               </div>
             </div>
           </div>
@@ -147,10 +154,10 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
           <div className="flex flex-wrap items-center gap-4">
             <div className={styles.verifiedLabel}>
               <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-              <span>{isFR ? "100% Avis d'acheteurs vérifiés" : isDE ? "100% verifizierte Käufer" : "100% Verified Purchases"}</span>
+              <span>{tr("100% Avis d'acheteurs vérifiés", "100% Verified Purchases", "100% verifizierte Käufer")}</span>
             </div>
             <div className="text-xs font-semibold text-slate-500">
-              {isFR ? "Plateforme certifiée NF / Trustpilot standard" : "Verified Customer Standard"}
+              {tr("Plateforme certifiée NF / Trustpilot standard", "Verified Customer Standard", "Zertifizierter Kundenbewertungs-Standard")}
             </div>
           </div>
         </div>
@@ -173,7 +180,7 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
                         <div className={styles.clientRole}>{item.role}</div>
                       </div>
                     </div>
-                    <span className={styles.verifiedTag}>{isFR ? "Vérifié" : "Verified"}</span>
+                    <span className={styles.verifiedTag}>{tr("Vérifié", "Verified", "Verifiziert")}</span>
                   </div>
 
                   <div className="flex text-[#D97706] gap-1">
@@ -188,11 +195,11 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
                 {item.hasVideo && (
                   <button
                     type="button"
-                    onClick={() => setActiveVideoModal(item.videoTitle || "Témoignage vidéo")}
+                    onClick={() => setActiveVideoModal(item.videoTitle || tr("Témoignage vidéo", "Video review", "Videobewertung"))}
                     className={styles.videoTrigger}
                   >
                     <Play className="w-3.5 h-3.5 fill-current" />
-                    <span>{isFR ? "Voir le retour vidéo (45s)" : "Watch video review (45s)"}</span>
+                    <span>{tr("Voir le retour vidéo (45s)", "Watch video review (45s)", "Video-Feedback ansehen (45s)")}</span>
                   </button>
                 )}
               </div>
@@ -205,7 +212,7 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
               type="button"
               onClick={handlePrev}
               className={styles.navButton}
-              aria-label="Témoignage précédent"
+              aria-label={tr("Témoignage précédent", "Previous review", "Vorherige Bewertung")}
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -216,26 +223,28 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
               type="button"
               onClick={handleNext}
               className={styles.navButton}
-              aria-label="Témoignage suivant"
+              aria-label={tr("Témoignage suivant", "Next review", "Nächste Bewertung")}
             >
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>
         </div>
 
-        {/* Section Avant / Après (Demande explicite de l'utilisateur) */}
+        {/* Section Avant / Après */}
         <div className={styles.beforeAfterSection}>
           <div className={styles.beforeAfterHeader}>
             <span className="text-xs font-black uppercase tracking-widest text-[#C8AB8A] mb-2 block">
-              {isFR ? "Preuve Tangible par l'Image" : isDE ? "Sichtbare Ergebnisse" : "Tangible Visual Evidence"}
+              {tr("Preuve Tangible par l'Image", "Tangible Visual Evidence", "Sichtbare Ergebnisse")}
             </span>
             <h3 className={styles.beforeAfterTitle}>
-              {isFR ? "Avant / Après : La différence BloomLab®" : isDE ? "Vorher / Nachher: Der BloomLab®-Unterschied" : "Before & After: The BloomLab® Difference"}
+              {tr("Avant / Après : La différence BloomLab®", "Before & After: The BloomLab® Difference", "Vorher / Nachher: Der BloomLab®-Unterschied")}
             </h3>
             <p className="text-sm text-slate-600">
-              {isFR 
-                ? "Constatez l'écart immédiat entre l'artisanat approximatif et l'extraction de précision thermorégulée." 
-                : "Compare traditional improvised kitchen methods with degree-precise botanical extraction."}
+              {tr(
+                "Constatez l'écart immédiat entre l'artisanat approximatif et l'extraction de précision thermorégulée.",
+                "Compare traditional improvised kitchen methods with degree-precise botanical extraction.",
+                "Vergleichen Sie traditionelle Haushaltsmethoden mit temperaturgeregelter Präzisionsextraktion."
+              )}
             </p>
           </div>
 
@@ -246,21 +255,21 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
               onClick={() => setActiveBeforeAfterTab('extraction')}
               className={`${styles.tabBtn} ${activeBeforeAfterTab === 'extraction' ? styles.tabBtnActive : ''}`}
             >
-              {isFR ? "1. Macérat de Romarin & Calendula" : "1. Rosemary & Calendula Macerate"}
+              {tr("1. Macérat de Romarin & Calendula", "1. Rosemary & Calendula Macerate", "1. Rosmarin- & Calendula-Mazerat")}
             </button>
             <button
               type="button"
               onClick={() => setActiveBeforeAfterTab('skin')}
               className={`${styles.tabBtn} ${activeBeforeAfterTab === 'skin' ? styles.tabBtnActive : ''}`}
             >
-              {isFR ? "2. Soin Cutané Éclat (21 jours)" : "2. Skin Radiance Serum (21 days)"}
+              {tr("2. Soin Cutané Éclat (21 jours)", "2. Skin Radiance Oil (21 days)", "2. Hautpflege-Öl (21 Tage)")}
             </button>
             <button
               type="button"
               onClick={() => setActiveBeforeAfterTab('vitality')}
               className={`${styles.tabBtn} ${activeBeforeAfterTab === 'vitality' ? styles.tabBtnActive : ''}`}
             >
-              {isFR ? "3. Infusion Adaptogène du Soir" : "3. Evening Adaptogenic Infusion"}
+              {tr("3. Infusion Adaptogène du Soir", "3. Evening Adaptogenic Infusion", "3. Beruhigender Abendaufguss")}
             </button>
           </div>
 
@@ -271,24 +280,26 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
                 <div>
                   <div className={`${styles.panelLabel} ${styles.labelBefore}`}>
                     <AlertCircle className="w-4 h-4" />
-                    <span>{isFR ? "AVANT · Bain-marie / Casserole traditionnelle" : "BEFORE · Traditional Bain-Marie"}</span>
+                    <span>{tr("AVANT · Bain-marie / Casserole traditionnelle", "BEFORE · Traditional Bain-Marie", "VORHER · Wasserbad / Kochtopf")}</span>
                   </div>
                   <img
                     src="/images/botanical_roots_vitality_1790693881999.jpg"
-                    alt="Huile surchauffée au bain-marie"
+                    alt={tr("Huile surchauffée au bain-marie", "Overheated double-boiler oil", "Überhitztes Öl aus dem Wasserbad")}
                     className={styles.panelMedia}
                   />
                   <h4 className={styles.panelTitle}>
-                    {isFR ? "Extrait trouble, oxydé & dégradé" : "Cloudy, oxidized, degraded extract"}
+                    {tr("Extrait trouble, oxydé & dégradé", "Cloudy, oxidized, degraded extract", "Trüber, oxidierter & abgebauter Extrakt")}
                   </h4>
                   <p className={styles.panelText}>
-                    {isFR 
-                      ? "Température fluctuant jusqu'à 85-95°C au contact du fond de casserole. Les terpènes volatils sont détruits par évaporation et les précieux flavonoïdes sont dénaturés."
-                      : "Uncontrolled heat destroys volatile aromatic terpenes and denatures flavonoids."}
+                    {tr(
+                      "Température fluctuant jusqu'à 85-95°C au contact du fond de casserole. Les terpènes volatils sont détruits par évaporation et les précieux flavonoïdes sont dénaturés.",
+                      "Uncontrolled heat fluctuating up to 85–95°C evaporates aromatic terpenes and denatures delicate flavonoids.",
+                      "Unkontrollierte Hitze bis 85–95°C verdampft flüchtige Terpene und zerstört empfindliche Flavonoide."
+                    )}
                   </p>
                 </div>
                 <div className={`${styles.panelResultMetric} text-red-700`}>
-                  <span>❌ Rendement d'actifs préservés : &lt; 20% · Goût amer de brûlé</span>
+                  <span>❌ {tr("Rendement d'actifs préservés faible · Goût amer de brûlé", "Low preserved active yield · Bitter burnt taste", "Geringe Wirkstoffausbeute · Bitterer Geschmack")}</span>
                 </div>
               </div>
 
@@ -296,24 +307,26 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
                 <div>
                   <div className={`${styles.panelLabel} ${styles.labelAfter}`}>
                     <CheckCircle2 className="w-4 h-4" />
-                    <span>{isFR ? "APRÈS · Extraction BloomLab® v2 (45°C constant)" : "AFTER · BloomLab® Precision Extraction"}</span>
+                    <span>{tr("APRÈS · Extraction BloomLab® v2 (45°C constant)", "AFTER · BloomLab® Precision Extraction (45°C)", "NACHHER · BloomLab® Präzisionsextraktion (45°C)")}</span>
                   </div>
                   <img
                     src="/images/herbs_close_up_cleaned_1786616800877.jpg"
-                    alt="Extrait pur doré BloomLab"
+                    alt={tr("Extrait pur doré BloomLab", "Pure golden BloomLab extract", "Reiner goldener BloomLab-Extrakt")}
                     className={styles.panelMedia}
                   />
                   <h4 className={styles.panelTitle}>
-                    {isFR ? "Or liquide limpide, Totum 100% préservé" : "Pure golden elixir, 100% preserved Totum"}
+                    {tr("Or liquide limpide, Totum préservé", "Pure golden elixir, preserved Totum", "Klares flüssiges Gold, geschütztes Totum")}
                   </h4>
                   <p className={styles.panelText}>
-                    {isFR 
-                      ? "Thermorégulation à ±0,5°C en chambre étanche close avec vortex doux. Couleur ambrée lumineuse, arômes floraux intacts et concentration maximale en molécules actives."
-                      : "Controlled heat in an airtight chamber preserves 100% of aromas and bio-active molecules."}
+                    {tr(
+                      "Thermorégulation à ±0,5°C en chambre étanche close avec vortex doux. Couleur ambrée lumineuse, arômes floraux intacts et préservation optimale des molécules sensibles.",
+                      "±0.5°C control inside an airtight chamber with gentle vortex agitation preserves luminous color, floral aromas, and delicate actives.",
+                      "±0,5°C Steuerung in geschlossener Kammer mit sanftem Vortex bewahrt leuchtende Farbe, Aromen und empfindliche Inhaltsstoffe."
+                    )}
                   </p>
                 </div>
                 <div className={`${styles.panelResultMetric} text-emerald-700`}>
-                  <span>✅ Rendement d'actifs mesuré : &gt; 92% · Zéro amertume</span>
+                  <span>✅ {tr("Extraction homogène maîtrisée · Zéro amertume", "Consistent precision extraction · Zero bitterness", "Gleichmäßige Extraktion · Keine Bitterkeit")}</span>
                 </div>
               </div>
             </div>
@@ -325,24 +338,26 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
                 <div>
                   <div className={`${styles.panelLabel} ${styles.labelBefore}`}>
                     <AlertCircle className="w-4 h-4" />
-                    <span>{isFR ? "AVANT · Soins industriels avec conservateurs" : "BEFORE · Industrial Skincare"}</span>
+                    <span>{tr("AVANT · Soins industriels avec conservateurs", "BEFORE · Industrial Skincare", "VORHER · Industrielle Kosmetik")}</span>
                   </div>
                   <img
                     src="/images/family_care_cleaned_1786616776823.jpg"
-                    alt="Peau tiraillée avant protocole"
+                    alt={tr("Soin industriel standard", "Standard commercial emulsion", "Standard-Kosmetik")}
                     className={styles.panelMedia}
                   />
                   <h4 className={styles.panelTitle}>
-                    {isFR ? "Tiraillements, rougeurs & barrière altérée" : "Redness, irritation, altered barrier"}
+                    {tr("Formules diluées & additifs synthétiques", "Diluted formulas & synthetic additives", "Verdünnte Formeln & synthetische Zusätze")}
                   </h4>
                   <p className={styles.panelText}>
-                    {isFR 
-                      ? "Émulsions surchargées en solvants pétrochimiques et parfums synthétiques irritant la couche cornée sans cibler le terrain biologique de la peau."
-                      : "Synthetic additives and stabilizers compromising delicate epidermal barrier."}
+                    {tr(
+                      "Émulsions surchargées en solvants pétrochimiques et parfums synthétiques souvent peu adaptées aux peaux sensibles.",
+                      "Emulsions loaded with petrochemical stabilizers and synthetic fragrances unsuitable for sensitive skin.",
+                      "Emulsionen mit petrochemischen Stabilisatoren und synthetischen Duftstoffen für empfindliche Haut."
+                    )}
                   </p>
                 </div>
                 <div className={`${styles.panelResultMetric} text-red-700`}>
-                  <span>❌ Réactivité cutanée persistante</span>
+                  <span>❌ {tr("Inconfort et tiraillements fréquents", "Frequent dryness & tightness", "Häufiges Spannungsgefühl")}</span>
                 </div>
               </div>
 
@@ -350,24 +365,26 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
                 <div>
                   <div className={`${styles.panelLabel} ${styles.labelAfter}`}>
                     <CheckCircle2 className="w-4 h-4" />
-                    <span>{isFR ? "APRÈS 21 JOURS · Sérum frais BloomLab (Rose & Jojoba)" : "AFTER 21 DAYS · Fresh BloomLab Botanical Serum"}</span>
+                    <span>{tr("APRÈS · Sérum frais BloomLab (Rose & Jojoba)", "AFTER · Fresh BloomLab Botanical Serum (Rose & Jojoba)", "NACHHER · Frisches BloomLab Serum (Rose & Jojoba)")}</span>
                   </div>
                   <img
                     src="/images/Bloom_Soins.jpg"
-                    alt="Peau apaisée et lumineuse"
+                    alt={tr("Soin cutané botanique pur", "Pure botanical skin oil", "Reines botanisches Hautöl")}
                     className={styles.panelMedia}
                   />
                   <h4 className={styles.panelTitle}>
-                    {isFR ? "Épiderme apaisé, grain affiné & éclat naturel" : "Calm epidermis, refined skin texture"}
+                    {tr("Soin pur sans conservateur & toucher soyeux", "Preservative-free care & silky finish", "Reine Pflege ohne Konservierungsstoffe")}
                   </h4>
                   <p className={styles.panelText}>
-                    {isFR 
-                      ? "Huile de soin vivante formulée chez soi à 42°C : acides gras omégas intacts et antioxydants naturels immédiatement biodisponibles pour les kératinocytes."
-                      : "Living botanicals formulated at home: intact omega fatty acids and natural antioxidants."}
+                    {tr(
+                      "Huile de soin formulée chez soi à 42°C : acides gras omégas préservés et antioxydants botaniques doux dans une base vierge bio.",
+                      "Botanical oil crafted at 42°C at home: preserved omega fatty acids and natural antioxidants in an organic carrier base.",
+                      "Bei 42°C selbst hergestelltes Pflegeöl: erhaltene Omega-Fettsäuren und pflanzliche Antioxidantien in Bio-Trägeröl."
+                    )}
                   </p>
                 </div>
                 <div className={`${styles.panelResultMetric} text-emerald-700`}>
-                  <span>✅ 96% d'amélioration du confort cutané ressenti</span>
+                  <span>✅ {tr("Confort cutané et douceur au quotidien", "Daily skin comfort & softness", "Täglicher Hautkomfort & Geschmeidigkeit")}</span>
                 </div>
               </div>
             </div>
@@ -379,24 +396,26 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
                 <div>
                   <div className={`${styles.panelLabel} ${styles.labelBefore}`}>
                     <AlertCircle className="w-4 h-4" />
-                    <span>{isFR ? "AVANT · Tisane à l'eau bouillante 100°C" : "BEFORE · Boiling 100°C Herbal Tea"}</span>
+                    <span>{tr("AVANT · Tisane à l'eau bouillante 100°C", "BEFORE · Boiling 100°C Herbal Tea", "VORHER · Kochender 100°C Aufguss")}</span>
                   </div>
                   <img
                     src="/images/natural_remedies_cleaned_1786616831671.jpg"
-                    alt="Infusion classique brûlée"
+                    alt={tr("Infusion classique brûlée", "Overheated herbal tea", "Überbrühter Kräutertee")}
                     className={styles.panelMedia}
                   />
                   <h4 className={styles.panelTitle}>
-                    {isFR ? "Actifs anéantis & réveils nocturnes" : "Degraded actives & nighttime awakenings"}
+                    {tr("Arômes volatils évaporés & tanins amers", "Evaporated volatile notes & bitter tannins", "Verdampfte Aromen & bittere Gerbstoffe")}
                   </h4>
                   <p className={styles.panelText}>
-                    {isFR 
-                      ? "Verser de l'eau à 100°C vaporise les principes calmants de la mélisse en quelques secondes. On boit de l'eau tiède aromatisée aux tanins amers."
-                      : "Boiling water evaporates relaxing actives within seconds, yielding bitter water."}
+                    {tr(
+                      "Verser de l'eau à 100°C vaporise les fractions aromatiques délicates de la mélisse en quelques secondes et libère des tanins astringents.",
+                      "Pouring boiling 100°C water vaporizes delicate lemon balm aromatics within seconds and draws out bitter tannins.",
+                      "Kochendes Wasser bei 100°C verflüchtigt die empfindlichen Aromen der Melisse und löst bittere Gerbstoffe."
+                    )}
                   </p>
                 </div>
                 <div className={`${styles.panelResultMetric} text-red-700`}>
-                  <span>❌ Temps d'endormissement supérieur à 45 minutes</span>
+                  <span>❌ {tr("Infusion plate et astringente", "Flat, astringent infusion", "Flacher, herber Aufguss")}</span>
                 </div>
               </div>
 
@@ -404,24 +423,26 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
                 <div>
                   <div className={`${styles.panelLabel} ${styles.labelAfter}`}>
                     <CheckCircle2 className="w-4 h-4" />
-                    <span>{isFR ? "APRÈS · Infusion basse température BloomLab (68°C)" : "AFTER · Low-Temp BloomLab Infusion"}</span>
+                    <span>{tr("APRÈS · Infusion basse température BloomLab (68°C)", "AFTER · Low-Temp BloomLab Infusion (68°C)", "NACHHER · Niedrigtemperatur-Aufguss BloomLab (68°C)")}</span>
                   </div>
                   <img
                     src="/images/home_lab_vibe_cleaned_1786616854146.jpg"
-                    alt="Élixir concentré du soir BloomLab"
+                    alt={tr("Infusion aromatique du soir BloomLab", "Evening aromatic BloomLab infusion", "Aromatischer Abendaufguss BloomLab")}
                     className={styles.panelMedia}
                   />
                   <h4 className={styles.panelTitle}>
-                    {isFR ? "Totum biodisponible & nuit profonde réparatrice" : "Biodisponible Totum & deep restorative sleep"}
+                    {tr("Totum aromatique intact & rituel du soir doux", "Intact aromatic Totum & gentle evening ritual", "Intaktes Aroma-Totum & sanftes Abendritual")}
                   </h4>
                   <p className={styles.panelText}>
-                    {isFR 
-                      ? "Brassage doux à 68°C pendant 45 minutes : capture intégrale de l'acide rosmarinique et des flavonoïdes GABAergiques. Sommeil lourd dès le premier soir."
-                      : "Gentle stirring at 68°C captures 100% of GABAergic flavonoids for restful nights."}
+                    {tr(
+                      "Brassage doux à 68°C en chambre close : capture fidèle des composés aromatiques et flavonoïdes doux pour une pause apaisante avant le coucher.",
+                      "Gentle stirring at 68°C in a closed chamber captures delicate aromatics and flavonoids for a soothing evening ritual.",
+                      "Sanftes Rühren bei 68°C in geschlossener Kammer bewahrt feine Aromen und Flavonoide für ein ruhiges Abendritual."
+                    )}
                   </p>
                 </div>
                 <div className={`${styles.panelResultMetric} text-emerald-700`}>
-                  <span>✅ Endormissement en moins de 15 minutes</span>
+                  <span>✅ {tr("Riche en arômes intacts et agréable à boire", "Rich intact aroma and smooth taste", "Vollmundiges Aroma und milder Geschmack")}</span>
                 </div>
               </div>
             </div>
@@ -436,7 +457,7 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
                 type="button"
                 onClick={() => setActiveVideoModal(null)}
                 className={styles.closeModalBtn}
-                aria-label="Fermer la vidéo"
+                aria-label={tr("Fermer la vidéo", "Close video", "Video schließen")}
               >
                 <X className="w-5 h-5" />
               </button>
@@ -457,8 +478,8 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
                 </video>
               </div>
               <div className="p-4 bg-[#0B1C16] text-xs text-white/80 flex items-center justify-between">
-                <span>Bloom by BotaniK • Témoignage praticien certifié</span>
-                <span className="text-amber-400 font-bold">100% Non rémunéré</span>
+                <span>{tr("Bloom by BotaniK • Témoignage praticien certifié", "Bloom by BotaniK • Verified practitioner review", "Bloom by BotaniK • Verifizierter Erfahrungsbericht")}</span>
+                <span className="text-amber-400 font-bold">{tr("100% Non rémunéré", "100% Unsponsored", "100% Unbezahlt")}</span>
               </div>
             </div>
           </div>

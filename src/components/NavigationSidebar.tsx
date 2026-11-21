@@ -120,7 +120,9 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
         {/* GROUP 2: POURQUOI BLOOM */}
         <div>
           <div className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E8772E] px-3 mb-1.5 flex items-center justify-between">
-            <span className="truncate whitespace-nowrap">POURQUOI BLOOM</span>
+            <span className="truncate whitespace-nowrap">
+              {lang === 'fr' ? 'POURQUOI BLOOM' : lang === 'de' ? 'WARUM BLOOM' : 'WHY BLOOM'}
+            </span>
           </div>
           <div className="space-y-0.5">
             <a
@@ -135,7 +137,9 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <HeartHandshake className={navIconClass(isActive('la-marque') || isActive('manifeste'))} />
-                <span className="truncate whitespace-nowrap">Histoire &amp; Philosophie</span>
+                <span className="truncate whitespace-nowrap">
+                  {lang === 'fr' ? 'Histoire & Philosophie' : lang === 'de' ? 'Geschichte & Philosophie' : 'Story & Philosophy'}
+                </span>
               </div>
             </a>
           </div>
@@ -144,7 +148,9 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
         {/* GROUP 3: LA MÉTHODE A/B */}
         <div>
           <div className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E8772E] px-3 mb-1.5">
-            <span className="truncate whitespace-nowrap">LA MÉTHODE A/B</span>
+            <span className="truncate whitespace-nowrap">
+              {lang === 'fr' ? 'LA MÉTHODE A/B' : lang === 'de' ? 'DIE A/B-METHODE' : 'THE A/B METHOD'}
+            </span>
           </div>
           <div className="space-y-0.5">
             <a
@@ -159,7 +165,9 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <FlaskConical className={navIconClass(isActive('infusion-botanique'))} />
-                <span className="truncate whitespace-nowrap">Infusion Botanique</span>
+                <span className="truncate whitespace-nowrap">
+                  {lang === 'fr' ? 'Infusion Botanique' : lang === 'de' ? 'Botanische Infusion' : 'Botanical Infusion'}
+                </span>
               </div>
             </a>
             <a
@@ -174,7 +182,9 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Leaf className={navIconClass(isActive('totum-vegetal'))} />
-                <span className="truncate whitespace-nowrap">Totum Végétal</span>
+                <span className="truncate whitespace-nowrap">
+                  {lang === 'fr' ? 'Totum Végétal' : lang === 'de' ? 'Pflanzen-Totum' : 'Plant Totum'}
+                </span>
               </div>
             </a>
             <a
@@ -189,7 +199,9 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <BookOpen className={navIconClass(isActive('guide-complet'))} />
-                <span className="truncate whitespace-nowrap">Extraction Végétale</span>
+                <span className="truncate whitespace-nowrap">
+                  {lang === 'fr' ? 'Extraction Végétale' : lang === 'de' ? 'Pflanzenextraktion' : 'Plant Extraction'}
+                </span>
               </div>
             </a>
             <a
@@ -204,7 +216,9 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Droplets className={navIconClass(isActive('guide-solvants'))} />
-                <span className="truncate whitespace-nowrap">Teintures &amp; Solvants</span>
+                <span className="truncate whitespace-nowrap">
+                  {lang === 'fr' ? 'Teintures & Solvants' : lang === 'de' ? 'Tinkturen & Lösungsmittel' : 'Tinctures & Solvents'}
+                </span>
               </div>
             </a>
           </div>
@@ -213,7 +227,9 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
         {/* GROUP 4: VOTRE PRATIQUE */}
         <div>
           <div className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E8772E] px-3 mb-1.5">
-            <span className="truncate whitespace-nowrap">VOTRE PRATIQUE</span>
+            <span className="truncate whitespace-nowrap">
+              {lang === 'fr' ? 'VOTRE PRATIQUE' : lang === 'de' ? 'IHRE PRAXIS' : 'YOUR PRACTICE'}
+            </span>
           </div>
           <div className="space-y-0.5">
             <a
@@ -228,7 +244,9 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Utensils className={navIconClass(isActive('culinaire'))} />
-                <span className="truncate whitespace-nowrap">Cuisine Botanique</span>
+                <span className="truncate whitespace-nowrap">
+                  {lang === 'fr' ? 'Cuisine Botanique' : lang === 'de' ? 'Botanische Küche' : 'Botanical Cuisine'}
+                </span>
               </div>
             </a>
             <a
@@ -264,7 +282,9 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Droplets className={navIconClass(isActive('cosmetiques'))} />
-                <span className="truncate whitespace-nowrap">Cosmétique Maison</span>
+                <span className="truncate whitespace-nowrap">
+                  {lang === 'fr' ? 'Cosmétique Maison' : lang === 'de' ? 'Naturkosmetik DIY' : 'Homemade Cosmetics'}
+                </span>
               </div>
             </a>
             <a
@@ -279,7 +299,9 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Activity className={navIconClass(isActive('phytotherapie-reset') || isActive('votre-pratique') || isActive('parcours'))} />
-                <span className="truncate whitespace-nowrap">Rituel Reset</span>
+                <span className="truncate whitespace-nowrap">
+                  {lang === 'fr' ? 'Rituel Reset' : lang === 'de' ? 'Reset-Ritual' : 'Reset Ritual'}
+                </span>
               </div>
             </a>
             <a
@@ -309,21 +331,31 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
         {/* GROUP 5: BOUTIQUE */}
         <div>
           <div className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E8772E] px-3 mb-1.5">
-            <span className="truncate whitespace-nowrap">BOUTIQUE</span>
+            <span className="truncate whitespace-nowrap">
+              {lang === 'fr' ? 'BOUTIQUE' : lang === 'de' ? 'SHOP' : 'STORE'}
+            </span>
           </div>
           <div className="space-y-0.5">
             <a
-              href="/bloomlab/"
+              href="/boutique/bloomlab/"
               onClick={(e) => {
                 if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                   e.preventDefault();
-                  onNavigate('machine');
+                  onNavigate('product-detail', 'bloomlab');
                 }
               }}
-              className={navItemClass(isActive('machine') || isActive('bloomlab'))}
+              className={navItemClass(
+                isActive('machine') ||
+                isActive('bloomlab') ||
+                (isActive('product-detail') && typeof window !== 'undefined' && window.location.pathname.startsWith('/boutique/bloomlab'))
+              )}
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
-                <Sparkles className={navIconClass(isActive('machine') || isActive('bloomlab'))} />
+                <Sparkles className={navIconClass(
+                  isActive('machine') ||
+                  isActive('bloomlab') ||
+                  (isActive('product-detail') && typeof window !== 'undefined' && window.location.pathname.startsWith('/boutique/bloomlab'))
+                )} />
                 <span className="truncate whitespace-nowrap">BloomLab®</span>
               </div>
             </a>
@@ -339,7 +371,13 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Package className={navIconClass(isActive('boutique-kits'))} />
-                <span className="truncate whitespace-nowrap">Soins Botaniques</span>
+                <span className="truncate whitespace-nowrap">
+                  {lang === 'fr'
+                    ? 'Plantes Médicinales Bio'
+                    : lang === 'de'
+                    ? 'Bio-Heilpflanzen'
+                    : 'Organic Medicinal Plants'}
+                </span>
               </div>
             </a>
             <a
@@ -354,7 +392,9 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <ShoppingBag className={navIconClass(isActive('boutique'))} />
-                <span className="truncate whitespace-nowrap">Accessoires</span>
+                <span className="truncate whitespace-nowrap">
+                  {lang === 'fr' ? 'Accessoires' : lang === 'de' ? 'Zubehör' : 'Accessories'}
+                </span>
               </div>
             </a>
             <a
@@ -365,11 +405,15 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                   onNavigate('product-detail', 'duo-argiles');
                 }
               }}
-              className={navItemClass(isActive('product-detail'))}
+              className={navItemClass(
+                isActive('product-detail') && typeof window !== 'undefined' && window.location.pathname.startsWith('/boutique/duo-argiles')
+              )}
             >
               <div className="flex items-center gap-2.5 min-w-0 overflow-hidden">
                 <Leaf className={navIconClass(false)} />
-                <span className="truncate whitespace-nowrap">Argiles &amp; Liants</span>
+                <span className="truncate whitespace-nowrap">
+                  {lang === 'fr' ? 'Argiles & Liants' : lang === 'de' ? 'Tonerden & Bindemittel' : 'Clays & Binders'}
+                </span>
               </div>
             </a>
             {/* Abonnements numériques */}
@@ -456,7 +500,9 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             >
               <span className="flex items-center gap-2">
                 <GraduationCap className="w-4 h-4 text-[#E8772E] shrink-0" />
-                <span className="font-bold text-[#E8772E] tracking-wide">Académie</span>
+                <span className="font-bold text-[#E8772E] tracking-wide">
+                  {lang === 'fr' ? 'Académie' : lang === 'de' ? 'Akademie' : 'Academy'}
+                </span>
               </span>
               <span className="text-[8px] uppercase px-2 py-0.5 rounded-full bg-[#FAF7F2] text-[#0F261E] font-black tracking-wider shadow-xs">
                 {lang === 'fr' ? 'Pédagogie' : lang === 'de' ? 'Pädagogik' : 'Pedagogy'}
@@ -628,7 +674,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                           isActive('axe-a9')
                         )}
                         aria-expanded={isNeufAxesOpen}
-                        title={lang === 'fr' ? 'Déplier/Replier les 9 Axes historiques' : 'Toggle 9 Historical Axes'}
+                        title={lang === 'fr' ? 'Déplier/Replier les 9 Axes historiques' : lang === 'de' ? 'Die 9 Historischen Achsen ein-/ausblenden' : 'Toggle 9 Historical Axes'}
                       >
                         <div className="flex items-center gap-2 pl-2 overflow-hidden text-left">
                           <span className="text-[#8b949e] font-mono text-[11px] shrink-0">├──</span>
@@ -662,7 +708,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
                               <span className="text-[#c9a84c] font-mono text-[10px] shrink-0">├─</span>
                               <span className="truncate text-[10.5px] text-white/90">
-                                {lang === 'fr' ? "Vue d'ensemble (9 axes)" : "9 Axes Overview"}
+                                {lang === 'fr' ? "Vue d'ensemble (9 axes)" : lang === 'de' ? 'Überblick (9 Achsen)' : '9 Axes Overview'}
                               </span>
                             </div>
                           </a>
@@ -681,7 +727,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
                               <span className="text-[#c9a84c] font-mono text-[10px] shrink-0">├─</span>
                               <span className="truncate text-[10.5px] text-white font-medium">
-                                {lang === 'fr' ? 'Module 0 : Paradigme' : 'Module 0 : Paradigm'}
+                                {lang === 'fr' ? 'Module 0 : Paradigme' : lang === 'de' ? 'Modul 0 : Paradigma' : 'Module 0 : Paradigm'}
                               </span>
                             </div>
                             <Lock className="w-2.5 h-2.5 text-[#c9a84c]/80 shrink-0" />
@@ -701,7 +747,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
                               <span className="text-[#c9a84c] font-mono text-[10px] shrink-0">├─</span>
                               <span className="truncate text-[10.5px] text-white">
-                                {lang === 'fr' ? 'A1 : Émonctoires' : 'A1 : Emunctories'}
+                                {lang === 'fr' ? 'A1 : Émonctoires' : lang === 'de' ? 'A1 : Ausscheidung' : 'A1 : Emunctories'}
                               </span>
                             </div>
                             <Lock className="w-2.5 h-2.5 text-[#c9a84c]/80 shrink-0" />
@@ -721,7 +767,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
                               <span className="text-[#c9a84c] font-mono text-[10px] shrink-0">├─</span>
                               <span className="truncate text-[10.5px] text-white">
-                                {lang === 'fr' ? 'A2 : Barrière Intestinale' : 'A2 : Gut Barrier'}
+                                {lang === 'fr' ? 'A2 : Barrière Intestinale' : lang === 'de' ? 'A2 : Darmbarriere' : 'A2 : Gut Barrier'}
                               </span>
                             </div>
                             <Lock className="w-2.5 h-2.5 text-[#c9a84c]/80 shrink-0" />
@@ -741,7 +787,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
                               <span className="text-[#c9a84c] font-mono text-[10px] shrink-0">├─</span>
                               <span className="truncate text-[10.5px] text-white">
-                                {lang === 'fr' ? 'A3 : Axe HPA & Stress' : 'A3 : HPA Axis'}
+                                {lang === 'fr' ? 'A3 : Axe HPA & Stress' : lang === 'de' ? 'A3 : HPA-Achse' : 'A3 : HPA Axis'}
                               </span>
                             </div>
                             <Lock className="w-2.5 h-2.5 text-[#c9a84c]/80 shrink-0" />
@@ -761,7 +807,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
                               <span className="text-[#c9a84c] font-mono text-[10px] shrink-0">├─</span>
                               <span className="truncate text-[10.5px] text-white">
-                                {lang === 'fr' ? 'A4 : Inflammation & SPMs' : 'A4 : Inflammation'}
+                                {lang === 'fr' ? 'A4 : Inflammation & SPMs' : lang === 'de' ? 'A4 : Entzündungsbalance' : 'A4 : Inflammation'}
                               </span>
                             </div>
                             <Lock className="w-2.5 h-2.5 text-[#c9a84c]/80 shrink-0" />
@@ -781,7 +827,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
                               <span className="text-[#c9a84c] font-mono text-[10px] shrink-0">├─</span>
                               <span className="truncate text-[10.5px] text-white">
-                                {lang === 'fr' ? 'A5 : Mitochondries & ATP' : 'A5 : Mitochondria'}
+                                {lang === 'fr' ? 'A5 : Mitochondries & ATP' : lang === 'de' ? 'A5 : Mitochondrien' : 'A5 : Mitochondria'}
                               </span>
                             </div>
                             <Lock className="w-2.5 h-2.5 text-[#c9a84c]/80 shrink-0" />
@@ -801,7 +847,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
                               <span className="text-[#c9a84c] font-mono text-[10px] shrink-0">├─</span>
                               <span className="truncate text-[10.5px] text-white">
-                                {lang === 'fr' ? 'A6 : Tonus Vagal (SNA)' : 'A6 : Vagal Tone'}
+                                {lang === 'fr' ? 'A6 : Tonus Vagal (SNA)' : lang === 'de' ? 'A6 : Vagustonus' : 'A6 : Vagal Tone'}
                               </span>
                             </div>
                             <Lock className="w-2.5 h-2.5 text-[#c9a84c]/80 shrink-0" />
@@ -821,7 +867,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
                               <span className="text-[#c9a84c] font-mono text-[10px] shrink-0">├─</span>
                               <span className="truncate text-[10.5px] text-white">
-                                {lang === 'fr' ? 'A7 : Matrice & Fascia' : 'A7 : Fascial Matrix'}
+                                {lang === 'fr' ? 'A7 : Matrice & Fascia' : lang === 'de' ? 'A7 : Faszienmatrix' : 'A7 : Fascial Matrix'}
                               </span>
                             </div>
                             <Lock className="w-2.5 h-2.5 text-[#c9a84c]/80 shrink-0" />
@@ -841,7 +887,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
                               <span className="text-[#c9a84c] font-mono text-[10px] shrink-0">├─</span>
                               <span className="truncate text-[10.5px] text-white">
-                                {lang === 'fr' ? 'A8 : Microbiote & Butyrate' : 'A8 : Microbiome'}
+                                {lang === 'fr' ? 'A8 : Microbiote & Butyrate' : lang === 'de' ? 'A8 : Mikrobiom' : 'A8 : Microbiome'}
                               </span>
                             </div>
                             <Lock className="w-2.5 h-2.5 text-[#c9a84c]/80 shrink-0" />
@@ -861,7 +907,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
                             <div className="flex items-center gap-2 pl-1 overflow-hidden text-left">
                               <span className="text-[#c9a84c] font-mono text-[10px] shrink-0">└─</span>
                               <span className="truncate text-[10.5px] text-white">
-                                {lang === 'fr' ? 'A9 : Système EndoCannabinoïde' : 'A9 : Endocannabinoid'}
+                                {lang === 'fr' ? 'A9 : Système EndoCannabinoïde' : lang === 'de' ? 'A9 : Endocannabinoid' : 'A9 : Endocannabinoid'}
                               </span>
                             </div>
                             <Lock className="w-2.5 h-2.5 text-[#c9a84c]/80 shrink-0" />
@@ -1002,7 +1048,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
           >
             <div className="flex items-center gap-2">
               <ShoppingBag className="w-4 h-4 text-[#C8AB8A]" />
-              <span>Panier</span>
+              <span>{lang === 'fr' ? 'Panier' : lang === 'de' ? 'Warenkorb' : 'Cart'}</span>
             </div>
             {cartCount > 0 ? (
               <span className="bg-[#E8772E] text-white text-[10px] font-black px-1.5 py-0.5 rounded-full min-w-[18px] text-center">
@@ -1017,7 +1063,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             <button
               onClick={() => onNavigate('account')}
               className="p-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 text-white/90 transition-colors cursor-pointer"
-              title="Mon Compte"
+              title={lang === 'fr' ? 'Mon Compte' : lang === 'de' ? 'Mein Konto' : 'My Account'}
               id="sidebar-account-btn"
             >
               <User className="w-4 h-4" />
@@ -1026,7 +1072,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             <button
               onClick={onOpenAuth}
               className="p-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 text-white/90 transition-colors cursor-pointer"
-              title="Connexion"
+              title={lang === 'fr' ? 'Connexion' : lang === 'de' ? 'Anmelden' : 'Login'}
               id="sidebar-login-btn"
             >
               <User className="w-4 h-4" />
@@ -1043,10 +1089,10 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
             onClick={onOpenCalculator}
             className="flex-1 flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-xl bg-[#E8772E] hover:bg-[#D4651F] text-[11px] font-bold text-white transition-all cursor-pointer shadow-md shadow-orange-900/20"
             id="sidebar-calculator-btn"
-            title="Calculateur de Dilution Botanique"
+            title={lang === 'fr' ? 'Calculateur de Dilution Botanique' : lang === 'de' ? 'Botanischer Verdünnungsrechner' : 'Botanical Dilution Calculator'}
           >
             <Calculator className="w-3.5 h-3.5 text-white" />
-            <span>Calculatrice</span>
+            <span>{lang === 'fr' ? 'Calculatrice' : lang === 'de' ? 'Rechner' : 'Calculator'}</span>
           </button>
         </div>
 

@@ -7,14 +7,25 @@ interface SEOEntry {
   path?: string;
 }
 
-const HOME_TITLE = "Bloom by BotaniK | Extracteur Botanique de Précision & Infusion Végétale Maîtrisée";
-const HOME_DESCRIPTION = "Bloom by BotaniK conçoit la BloomLab®, extracteur de précision pour fabriquer vos soins naturels maison dans le respect du totum végétal.";
+const HOME_TITLE = "BloomLab® — Extracteur Botanique de Précision & Totum Végétal | Bloom by BotaniK";
+const HOME_DESCRIPTION = "Créez vos huiles de soin, sérums visage, baumes et huiles parfumées maison en 2h. Cuve Inox 304, contrôle thermique précis et guide de 100 recettes en français.";
+
+const HOME_SEO_I18N: Record<'en' | 'de', SEOEntry> = {
+  en: {
+    title: "BloomLab® — Precision Botanical Extractor & Whole-Plant Totum | Bloom by BotaniK",
+    description: "Create homemade skincare oils, face serums, balms, and scented oils in 2h. 304 stainless steel chamber, precise thermal control, and 100-recipe guide."
+  },
+  de: {
+    title: "BloomLab® — Botanischer Präzisionsextraktor & Pflanzen-Totum | Bloom by BotaniK",
+    description: "Kreieren Sie Pflegeöle, Gesichtsseren, Balsame und Duftöle in 2 Std. selbst. 304-Edelstahlbehälter, präzise Temperatursteuerung und 100-Rezepte-Leitfaden."
+  }
+};
 
 const PRODUCT_SEO_MAP: Record<string, SEOEntry> = {
   bloomlab: {
-    title: "BloomLab® | Extracteur Botanique de Précision pour Soins Maison",
-    description: "Réglez temps (30 min–12 h) et température (0–121 °C) pour extraire le totum végétal de vos plantes. Fabrication de soins cosmétiques et botaniques maison.",
-    path: "/bloomlab/"
+    title: "BloomLab® — Extracteur Botanique Inox 304 pour Cosmétique & Cuisine Maison",
+    description: "Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie 1 an, manuel complet en français et 100 recettes incluses.",
+    path: "/bloomlab"
   },
   "pack-signature": {
     title: "Pack Signature BloomLab® + Trio Plantes | Bloom by BotaniK",
@@ -75,14 +86,14 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
     path: "/"
   },
   machine: {
-    title: "BloomLab® | Extracteur Botanique de Précision pour Soins Maison",
-    description: "Réglez temps (30 min–12 h) et température (0–121 °C) pour extraire le totum végétal de vos plantes. Fabrication de soins cosmétiques et botaniques maison.",
-    path: "/bloomlab/"
+    title: "BloomLab® — Extracteur Botanique Inox 304 pour Cosmétique & Cuisine Maison",
+    description: "Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie 1 an, manuel complet en français et 100 recettes incluses.",
+    path: "/bloomlab"
   },
   bloomlab: {
-    title: "BloomLab® | Extracteur Botanique de Précision pour Soins Maison",
-    description: "Réglez temps (30 min–12 h) et température (0–121 °C) pour extraire le totum végétal de vos plantes. Fabrication de soins cosmétiques et botaniques maison.",
-    path: "/bloomlab/"
+    title: "BloomLab® — Extracteur Botanique Inox 304 pour Cosmétique & Cuisine Maison",
+    description: "Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie 1 an, manuel complet en français et 100 recettes incluses.",
+    path: "/bloomlab"
   },
   'comment-ca-marche': {
     title: "Comment Ça Marche | Le Séquençage Actif BloomLab®",
@@ -607,14 +618,489 @@ function applySEOMetadata(title: string, description: string, canonical: string,
   setCanonicalLink(canonical);
 }
 
+const PRODUCT_SEO_I18N: Record<'en' | 'de', Record<string, { title: string; description: string }>> = {
+  en: {
+    bloomlab: {
+      title: "BloomLab® | Precision Botanical Extractor for Home Formulations",
+      description: "Set time (30 min–12 h) and temperature (0–121°C) to preserve the botanical totum. Craft homemade infusions, infused oils, and natural cosmetics."
+    },
+    "pack-signature": {
+      title: "BloomLab® Signature Pack + Organic Medicinal Plants Trio | Bloom by BotaniK",
+      description: "Bloom by BotaniK Signature Pack: BloomLab® extractor, organic medicinal plant blends, and guided extraction protocols."
+    },
+    "bundle-apothicaire": {
+      title: "Apothecary Trio | 3 Organic Medicinal Plant Kits | Bloom by BotaniK",
+      description: "Apothecary Trio by Bloom by BotaniK: three organic botanical blends calibrated for BloomLab® (Vital Sap, Deep Night, and Digestive Fire)."
+    },
+    "kit-starter": {
+      title: "Vital Sap Kit | Organic Medicinal Plants | Bloom by BotaniK",
+      description: "Vital Sap Kit by Bloom by BotaniK: organic nettle, rosemary, and rosehip calibrated for precision extraction on BloomLab®."
+    },
+    "kit-nuit": {
+      title: "Deep Night Kit | Relaxation & Organic Plants | Bloom by BotaniK",
+      description: "Deep Night Kit by Bloom by BotaniK: organic passionflower, lemon balm, and chamomile blend calibrated for gentle BloomLab® extraction."
+    },
+    "kit-digestion": {
+      title: "Digestive Fire Kit | Comfort & Organic Plants | Bloom by BotaniK",
+      description: "Digestive Fire Kit by Bloom by BotaniK: organic sweet fennel, peppermint, and gentian calibrated for precision botanical infusion."
+    },
+    "kit-articulaire": {
+      title: "Joint Fire Kit | Mobility & Organic Plants | Bloom by BotaniK",
+      description: "Joint Fire Kit by Bloom by BotaniK: organic devil's claw, meadowsweet, and blackcurrant selected to preserve the plant totum."
+    },
+    "kit-hiver": {
+      title: "Winter Shield Kit | Seasonal Organic Plants | Bloom by BotaniK",
+      description: "Winter Shield Kit by Bloom by BotaniK: organic echinacea, linalool thyme, and elderberry for polyphenol-rich botanical infusions."
+    },
+    "duo-argiles": {
+      title: "Clays & Rare Earths Duo | Zeolite & Bentonite | Bloom by BotaniK",
+      description: "Bloom by BotaniK Zeolite-Bentonite Duo: ultra-fine ventilated mineral clays documented for botanical preparations and external care."
+    },
+    "abonnements-numeriques": {
+      title: "Digital Subscriptions Bloom Academy & ALMA | Bloom by BotaniK",
+      description: "Access Bloom by BotaniK educational protocols, advanced BloomLab® extraction sheets, and personalized ALMA guidance."
+    }
+  },
+  de: {
+    bloomlab: {
+      title: "BloomLab® | Präzisions-Pflanzenextraktor für Hausgemachte Pflege",
+      description: "Steuern Sie Zeit (30 Min.–12 Std.) und Temperatur (0–121°C), um das Pflanzentotum für Öle, Aufgüsse und Naturkosmetik zu bewahren."
+    },
+    "pack-signature": {
+      title: "Signature-Pack BloomLab® + 3 Bio-Heilpflanzen-Kits | Bloom by BotaniK",
+      description: "Signature-Pack von Bloom by BotaniK: BloomLab®-Extraktor, ausgewählte Bio-Heilpflanzen und geführte Extraktionsprotokolle."
+    },
+    "bundle-apothicaire": {
+      title: "Apotheker-Trio | 3 Bio-Heilpflanzen-Kits | Bloom by BotaniK",
+      description: "Apotheker-Trio von Bloom by BotaniK: drei auf BloomLab® abgestimmte Bio-Pflanzenmischungen (Ur-Saft, Tiefe Nacht und Verdauungsfeuer)."
+    },
+    "kit-starter": {
+      title: "Kit Ur-Saft | Bio-Heilpflanzen | Bloom by BotaniK",
+      description: "Kit Ur-Saft von Bloom by BotaniK: Bio-Brennnessel, Rosmarin und Hagebutte für präzise Pflanzenextraktionen mit der BloomLab®."
+    },
+    "kit-nuit": {
+      title: "Kit Tiefe Nacht | Entspannung & Bio-Pflanzen | Bloom by BotaniK",
+      description: "Kit Tiefe Nacht von Bloom by BotaniK: Bio-Passionsblume, Melisse und Kamille für sanfte Extraktionen mit der BloomLab®."
+    },
+    "kit-digestion": {
+      title: "Kit Verdauungsfeuer | Bekömmlichkeit & Bio-Pflanzen | Bloom by BotaniK",
+      description: "Kit Verdauungsfeuer von Bloom by BotaniK: Bio-Fenchel, Pfefferminze und Enzian für präzise botanische Aufgüsse."
+    },
+    "kit-articulaire": {
+      title: "Kit Gelenkfeuer | Beweglichkeit & Bio-Pflanzen | Bloom by BotaniK",
+      description: "Kit Gelenkfeuer von Bloom by BotaniK: Bio-Teufelskralle, Mädesüß und Schwarze Johannisbeere für den Erhalt des Pflanzentotums."
+    },
+    "kit-hiver": {
+      title: "Kit Winterschild | Saisonale Bio-Pflanzen | Bloom by BotaniK",
+      description: "Kit Winterschild von Bloom by BotaniK: Bio-Echinacea, Thymian und Holunder für polyphenolreiche Aufgüsse."
+    },
+    "duo-argiles": {
+      title: "Duo Tonerde & Seltene Erden | Zeolith & Bentonit | Bloom by BotaniK",
+      description: "Zeolith-Bentonit-Duo von Bloom by BotaniK: ultrafeine Mineralerden für botanische Anwendungen und äußere Pflege."
+    },
+    "abonnements-numeriques": {
+      title: "Digitale Abos Bloom Academy & ALMA | Bloom by BotaniK",
+      description: "Zugang zu edukativen Bloom-Protokollen, detaillierten BloomLab®-Extraktionsbögen und dem ALMA-Assistenten."
+    }
+  }
+};
+
+const VIEW_SEO_I18N: Record<'en' | 'de', Record<string, { title: string; description: string }>> = {
+  en: {
+    machine: {
+      title: "BloomLab® | Precision Botanical Extractor for Home Formulations",
+      description: "Set time (30 min–12 h) and temperature (0–121°C) to preserve the plant totum. Craft home infusions, oil macerates, and botanical care."
+    },
+    bloomlab: {
+      title: "BloomLab® | Precision Botanical Extractor for Home Formulations",
+      description: "Set time (30 min–12 h) and temperature (0–121°C) to preserve the plant totum. Craft home infusions, oil macerates, and botanical care."
+    },
+    'comment-ca-marche': {
+      title: "How It Works | BloomLab® Active Botanical Sequencing",
+      description: "Understand the 3-step Bloom by BotaniK method: weigh your organic herbs, run the regulated cycle, and filter ready-to-use extracts."
+    },
+    how_it_works: {
+      title: "How It Works | BloomLab® Active Botanical Sequencing",
+      description: "Understand the 3-step Bloom by BotaniK method: weigh your organic herbs, run the regulated cycle, and filter ready-to-use extracts."
+    },
+    guide: {
+      title: "Homemade Botanical Infusion: Complete Method & Precision Guide | Bloom",
+      description: "Master precision botanical infusion: temperatures, solvents, and herbal recipes designed to preserve the plant totum."
+    },
+    'infusion-botanique': {
+      title: "Homemade Botanical Infusion | Active Compounds & Method",
+      description: "Understand closed-chamber herbal infusion dynamics: regulated thermal thresholds, gentle agitation, and flavonoid protection."
+    },
+    'infusion-botanique-maison-comment-ca-marche': {
+      title: "Homemade Botanical Infusion | Active Compounds & Method",
+      description: "Understand closed-chamber herbal infusion dynamics: regulated thermal thresholds, gentle agitation, and flavonoid protection."
+    },
+    'pillar-extraction': {
+      title: "Botanical Extraction: Maceration, Infusion & A/B Sequencing | Bloom",
+      description: "Master botanical extraction at home: maceration, controlled infusion, and A/B sequencing to preserve delicate active compounds."
+    },
+    'extraction-botanique': {
+      title: "Botanical Extraction: Maceration, Infusion & A/B Sequencing | Bloom",
+      description: "Master botanical extraction at home: maceration, controlled infusion, and A/B sequencing to preserve delicate active compounds."
+    },
+    'guide-solvants': {
+      title: "Extraction Solvents Guide: Water, Oil, Alcohol | Bloom by BotaniK",
+      description: "Water, carrier oils, organic alcohol, glycerin: choose the ideal solvent with BloomLab® to capture the full botanical totum."
+    },
+    'guide-complet': {
+      title: "Botanical Extraction: Maceration, Infusion & A/B Sequencing | Bloom",
+      description: "Master botanical extraction at home: maceration, controlled infusion, and A/B sequencing to preserve delicate active compounds."
+    },
+    'guide-complet-extraction-botanique-maison': {
+      title: "Botanical Extraction: Maceration, Infusion & A/B Sequencing | Bloom",
+      description: "Master botanical extraction at home: maceration, controlled infusion, and A/B sequencing to preserve delicate active compounds."
+    },
+    'huile-infusee': {
+      title: "Homemade Infused Oils | Precision Maceration Guide | Bloom",
+      description: "Practical guide to herbal infused oils: selecting virgin carrier oils, gentle 45°C maceration, and preserving lipophilic fractions."
+    },
+    'teinture-mere': {
+      title: "Homemade Mother Tinctures | Hydroalcoholic Extracts | Bloom",
+      description: "Crafting herbal tinctures at home: 1:5 botanical ratios, alcohol strengths, and kinetic extraction on BloomLab®."
+    },
+    academie: {
+      title: "Bloom Academy — A/B Method, Totum & Educational Guides",
+      description: "Educational guides on the plant totum, A/B sequencing, and botanical protocols. Informative content without medical claims."
+    },
+    'phytotherapie-reset': {
+      title: "Homeostatic Reset: 6-Phase Terrain & Botanical Framework | Bloom",
+      description: "Educational 6-phase terrain hygiene framework exploring elimination pathways, homeostasis, and precision BloomLab® extractions."
+    },
+    'reset-homeostasique': {
+      title: "Homeostatic Reset: 6-Phase Terrain & Botanical Framework | Bloom",
+      description: "Educational 6-phase terrain hygiene framework exploring elimination pathways, homeostasis, and precision BloomLab® extractions."
+    },
+    herbier: {
+      title: "Interactive Medicinal Herbarium | Botanical Monographs | Bloom",
+      description: "Explore our medicinal plant monographs: key active families, plant parts, extraction temperatures, and safety precautions."
+    },
+    library: {
+      title: "Interactive Medicinal Herbarium | Botanical Monographs | Bloom",
+      description: "Explore our medicinal plant monographs: key active families, plant parts, extraction temperatures, and safety precautions."
+    },
+    herbarium: {
+      title: "Interactive Medicinal Herbarium | Botanical Monographs | Bloom",
+      description: "Explore our medicinal plant monographs: key active families, plant parts, extraction temperatures, and safety precautions."
+    },
+    bibliotheque: {
+      title: "Knowledge Library & Protocols | Bloom Academy",
+      description: "Browse Bloom Academy educational resources: physiology dossiers, extraction sheets, and botanical monographs."
+    },
+    'library-landing': {
+      title: "Knowledge Library & Protocols | Bloom Academy",
+      description: "Browse Bloom Academy educational resources: physiology dossiers, extraction sheets, and botanical monographs."
+    },
+    boutique: {
+      title: "Organic Medicinal Plants & Home Botanical Kits | Bloom by BotaniK",
+      description: "Official Bloom by BotaniK shop: BloomLab® precision extractor, organic medicinal plant blends, filters, and accessories."
+    },
+    'boutique-kits': {
+      title: "Organic Medicinal Plants & Home Botanical Kits | Bloom by BotaniK",
+      description: "Pre-measured organic plant blends and protocols for crafting infusions, infused oils, and natural care with BloomLab®."
+    },
+    'kits-botaniques': {
+      title: "Organic Medicinal Plants & Home Botanical Kits | Bloom by BotaniK",
+      description: "Pre-measured organic plant blends and protocols for crafting infusions, infused oils, and natural care with BloomLab®."
+    },
+    abonnement: {
+      title: "Bloom by BotaniK Subscription | Educational Protocols & ALMA",
+      description: "Subscribe for €59/month to unlock the full Bloom Academy library, A/B extraction sheets, and guided ALMA orientation."
+    },
+    manifeste: {
+      title: "Bloom Manifesto | Botanical Precision & Living Wisdom",
+      description: "The Bloom by BotaniK manifesto: uniting modern thermal precision with traditional botanical knowledge."
+    },
+    'la-marque': {
+      title: "About Bloom by BotaniK | Organic Terroirs & Precision",
+      description: "Discover Bloom by BotaniK: rigorous organic herb sourcing, French-designed protocols, and scientific transparency."
+    },
+    'questions-frequentes': {
+      title: "FAQ Botanical Extractor | BloomLab® Support & Shipping | Bloom",
+      description: "Frequently asked questions about BloomLab®: 304 stainless steel care, authorized solvents, warranty, and 24–48h dispatch."
+    },
+    faq: {
+      title: "Help Center & Practical Answers | Bloom by BotaniK",
+      description: "Quick answers on daily BloomLab® use, cleaning cycle, dry herb selection, delivery, and order tracking."
+    },
+    'totum-vegetal': {
+      title: "The Botanical Totum vs Isolated Molecules | Whole-Plant Synergy",
+      description: "Why the whole-plant totum outperforms single isolates: biochemical synergy, natural buffering, and broader bioavailability."
+    },
+    'plantes-adaptogenes': {
+      title: "Adaptogenic Plants | HPA Axis, Cortisol & Resilience | Bloom",
+      description: "Ashwagandha, Rhodiola, Eleuthero: practical educational guide to adaptogenic roots and controlled extraction."
+    },
+    cosmetiques: {
+      title: "Homemade Botanical Cosmetics | Serums & Macerates | Bloom",
+      description: "Botanical hair oils, soothing balms, and facial serums crafted gently with rosemary, calendula, and BloomLab®."
+    },
+    'cosmetique-botanique': {
+      title: "Homemade Botanical Cosmetics | Serums & Macerates | Bloom",
+      description: "Botanical hair oils, soothing balms, and facial serums crafted gently with rosemary, calendula, and BloomLab®."
+    },
+    'cosmetiques-naturels-diy': {
+      title: "Homemade Botanical Cosmetics | Serums & Macerates | Bloom",
+      description: "Botanical hair oils, soothing balms, and facial serums crafted gently with rosemary, calendula, and BloomLab®."
+    },
+    culinaire: {
+      title: "Botanical Gastronomy | Infused Oils & Herbal Broths | Bloom",
+      description: "Precision botanical cooking: craft aromatic infused oils, herbal vinegars, and concentrated broths with BloomLab®."
+    },
+    'gastronomie-botanique': {
+      title: "Botanical Gastronomy | Infused Oils & Herbal Broths | Bloom",
+      description: "Precision botanical cooking: craft aromatic infused oils, herbal vinegars, and concentrated broths with BloomLab®."
+    },
+    lexique: {
+      title: "Botanical Glossary | Extraction & Phytochemistry Terms | Bloom",
+      description: "Clear definitions of key botanical terms: plant totum, allostatic load, solvent polarity, and active A/B sequencing."
+    },
+    blog: {
+      title: "Botanical Journal | Extraction Science & Home Care | Bloom",
+      description: "Bloom Botanical Journal: scientific insights, herbal monographs, extraction guides, and homemade care ideas."
+    },
+    articles: {
+      title: "Botanical Knowledge Articles | Precision Extraction | Bloom",
+      description: "Explore expert educational articles on botanical extraction, solvent science, adaptogens, and precision maceration."
+    },
+    recettes: {
+      title: "Botanical Recipes & Formulations: Infusions, Oils & Care | Bloom",
+      description: "Calibrated herbal extraction recipes: ratios, temperatures, and solvents for homemade botanical care with BloomLab®."
+    },
+    'recettes-hub': {
+      title: "Botanical Recipes & Formulations: Infusions, Oils & Care | Bloom",
+      description: "Calibrated herbal extraction recipes: ratios, temperatures, and solvents for homemade botanical care with BloomLab®."
+    },
+    contact: {
+      title: "Contact & Botanical Support | Bloom by BotaniK",
+      description: "Questions about BloomLab® or our organic medicinal plant kits? Contact our France-based team for a reply within 24–48 hours."
+    },
+    'infusion-precision': {
+      title: "Precision Infusion: Temperature, Vortex & Active Compounds | Bloom",
+      description: "How 1°C thermal accuracy and gentle agitation transform the phytochemical richness of homemade herbal infusions."
+    },
+    'totum-definition': {
+      title: "What Is the Botanical Totum? Whole-Plant Synergy | Bloom",
+      description: "Understand the scientific concept of the botanical totum: cofactor synergy, absorption, and preservation of delicate compounds."
+    },
+    'solvants-extraction': {
+      title: "Botanical Extraction Solvents: Polarity & Carrier Oils | Bloom",
+      description: "Complete matrix of natural solvents (water, carrier oils, ethanol, glycerin, cider vinegar) and ideal extraction temperatures."
+    }
+  },
+  de: {
+    machine: {
+      title: "BloomLab® | Präzisions-Pflanzenextraktor für Hausgemachte Pflege",
+      description: "Steuern Sie Zeit (30 Min.–12 Std.) und Temperatur (0–121°C), um das Pflanzentotum für Öle, Aufgüsse und Naturkosmetik zu bewahren."
+    },
+    bloomlab: {
+      title: "BloomLab® | Präzisions-Pflanzenextraktor für Hausgemachte Pflege",
+      description: "Steuern Sie Zeit (30 Min.–12 Std.) und Temperatur (0–121°C), um das Pflanzentotum für Öle, Aufgüsse und Naturkosmetik zu bewahren."
+    },
+    'comment-ca-marche': {
+      title: "So funktioniert's | BloomLab® Aktive Pflanzen-Sequenzierung",
+      description: "Verstehen Sie die 3 Schritte von Bloom by BotaniK: Bio-Kräuter abwiegen, geregelten Zyklus starten und fertigen Extrakt filtern."
+    },
+    how_it_works: {
+      title: "So funktioniert's | BloomLab® Aktive Pflanzen-Sequenzierung",
+      description: "Verstehen Sie die 3 Schritte von Bloom by BotaniK: Bio-Kräuter abwiegen, geregelten Zyklus starten und fertigen Extrakt filtern."
+    },
+    guide: {
+      title: "Botanische Infusion für Zuhause: Leitfaden & Methode | Bloom",
+      description: "Meistern Sie präzise Kräuterinfusionen: Temperaturen, Lösungsmittel und Rezepte zum Erhalt des vollständigen Pflanzentotums."
+    },
+    'infusion-botanique': {
+      title: "Botanische Infusion für Zuhause | Wirkstoffe & Methode",
+      description: "Verstehen Sie geschlossene Kräuterinfusion: kontrollierte Temperaturstufen, sanfte Bewegung und Schutz empfindlicher Flavonoide."
+    },
+    'infusion-botanique-maison-comment-ca-marche': {
+      title: "Botanische Infusion für Zuhause | Wirkstoffe & Methode",
+      description: "Verstehen Sie geschlossene Kräuterinfusion: kontrollierte Temperaturstufen, sanfte Bewegung und Schutz empfindlicher Flavonoide."
+    },
+    'pillar-extraction': {
+      title: "Pflanzenextraktion: Mazeration, Infusion & A/B-Sequenzierung | Bloom",
+      description: "Beherrschen Sie Pflanzenextraktion zuhause: Mazeration, präziser Aufguss und A/B-Sequenzierung für empfindliche Pflanzenstoffe."
+    },
+    'extraction-botanique': {
+      title: "Pflanzenextraktion: Mazeration, Infusion & A/B-Sequenzierung | Bloom",
+      description: "Beherrschen Sie Pflanzenextraktion zuhause: Mazeration, präziser Aufguss und A/B-Sequenzierung für empfindliche Pflanzenstoffe."
+    },
+    'guide-solvants': {
+      title: "Lösungsmittel-Leitfaden: Wasser, Öl, Alkohol | Bloom by BotaniK",
+      description: "Wasser, Pflanzenöl, Bio-Alkohol, Glycerin: Wählen Sie mit der BloomLab® das passende Lösungsmittel für das volle Totum."
+    },
+    'guide-complet': {
+      title: "Pflanzenextraktion: Mazeration, Infusion & A/B-Sequenzierung | Bloom",
+      description: "Beherrschen Sie Pflanzenextraktion zuhause: Mazeration, präziser Aufguss und A/B-Sequenzierung für empfindliche Pflanzenstoffe."
+    },
+    'guide-complet-extraction-botanique-maison': {
+      title: "Pflanzenextraktion: Mazeration, Infusion & A/B-Sequenzierung | Bloom",
+      description: "Beherrschen Sie Pflanzenextraktion zuhause: Mazeration, präziser Aufguss und A/B-Sequenzierung für empfindliche Pflanzenstoffe."
+    },
+    'huile-infusee': {
+      title: "Ölmazerate Selbstgemacht | Präzisions-Anleitung | Bloom",
+      description: "Praxis-Leitfaden für Kräuteröle: Auswahl nativer Trägeröle, sanfte Mazeration bei 45°C und Schutz fettlöslicher Pflanzenstoffe."
+    },
+    'teinture-mere': {
+      title: "Urtinkturen Selbstgemacht | Hydroalkoholische Auszüge | Bloom",
+      description: "Pflanzentinkturen zuhause herstellen: 1:5-Verhältnisse, Alkoholstärken und dynamische Extraktion mit der BloomLab®."
+    },
+    academie: {
+      title: "Bloom Academy — A/B-Methode, Totum & Wissensleitfäden",
+      description: "Edukative Leitfäden über Pflanzentotum, A/B-Sequenzierung und botanische Protokolle — ohne medizinische Heilversprechen."
+    },
+    'phytotherapie-reset': {
+      title: "Homöostatischer Reset: 6-Phasen-Terrain-Konzept | Bloom",
+      description: "Edukatives 6-Phasen-Konzept rund um Ausscheidungswege, Homöostase und präzise Extraktionen mit der BloomLab®."
+    },
+    'reset-homeostasique': {
+      title: "Homöostatischer Reset: 6-Phasen-Terrain-Konzept | Bloom",
+      description: "Edukatives 6-Phasen-Konzept rund um Ausscheidungswege, Homöostase und präzise Extraktionen mit der BloomLab®."
+    },
+    herbier: {
+      title: "Interaktives Heilpflanzen-Herbarium | Monographien | Bloom",
+      description: "Entdecken Sie unsere Pflanzenmonographien: Leitsubstanzen, verwendete Pflanzenteile, Extraktionstemperaturen und Hinweise."
+    },
+    library: {
+      title: "Interaktives Heilpflanzen-Herbarium | Monographien | Bloom",
+      description: "Entdecken Sie unsere Pflanzenmonographien: Leitsubstanzen, verwendete Pflanzenteile, Extraktionstemperaturen und Hinweise."
+    },
+    herbarium: {
+      title: "Interaktives Heilpflanzen-Herbarium | Monographien | Bloom",
+      description: "Entdecken Sie unsere Pflanzenmonographien: Leitsubstanzen, verwendete Pflanzenteile, Extraktionstemperaturen und Hinweise."
+    },
+    bibliotheque: {
+      title: "Wissensbibliothek & Protokolle | Bloom Academy",
+      description: "Alle Lernressourcen der Bloom Academy: Physiologie-Dossiers, Extraktionsbögen und botanische Monographien."
+    },
+    'library-landing': {
+      title: "Wissensbibliothek & Protokolle | Bloom Academy",
+      description: "Alle Lernressourcen der Bloom Academy: Physiologie-Dossiers, Extraktionsbögen und botanische Monographien."
+    },
+    boutique: {
+      title: "Bio-Heilpflanzen & Botanische Kits für Zuhause | Bloom by BotaniK",
+      description: "Offizieller Bloom by BotaniK Shop: BloomLab®-Extraktor, Bio-Heilpflanzen-Mischungen, Filter und Zubehör."
+    },
+    'boutique-kits': {
+      title: "Bio-Heilpflanzen & Botanische Kits für Zuhause | Bloom by BotaniK",
+      description: "Abgestimmte Bio-Pflanzenmischungen und Anleitungen für Aufgüsse, Öle und Naturpflege mit der BloomLab®."
+    },
+    'kits-botaniques': {
+      title: "Bio-Heilpflanzen & Botanische Kits für Zuhause | Bloom by BotaniK",
+      description: "Abgestimmte Bio-Pflanzenmischungen und Anleitungen für Aufgüsse, Öle und Naturpflege mit der BloomLab®."
+    },
+    abonnement: {
+      title: "Bloom by BotaniK Abo | Edukative Protokolle & ALMA",
+      description: "Abonnement für 59 €/Monat: Vollzugriff auf die Bloom Academy, A/B-Extraktionsbögen und geführten ALMA-Check."
+    },
+    manifeste: {
+      title: "Bloom Manifest | Botanische Präzision & Naturwissen",
+      description: "Das Bloom by BotaniK Manifest: moderne Temperaturpräzision vereint mit traditioneller Pflanzenkunde."
+    },
+    'la-marque': {
+      title: "Über Bloom by BotaniK | Bio-Anbaugebiete & Präzision",
+      description: "Lernen Sie Bloom by BotaniK kennen: sorgfältig ausgewählte Bio-Heilpflanzen, französische Protokolle und Transparenz."
+    },
+    'questions-frequentes': {
+      title: "FAQ Pflanzenextraktor | BloomLab® Support & Versand | Bloom",
+      description: "Häufige Fragen zur BloomLab®: 304-Edelstahl-Pflege, zugelassene Lösungsmittel, Garantie und Versand innerhalb von 24–48 Std."
+    },
+    faq: {
+      title: "Hilfe-Center & Praktische Antworten | Bloom by BotaniK",
+      description: "Schnelle Antworten zum Alltag mit der BloomLab®, Auto-Reinigung, Kräuterauswahl, Lieferung und Bestellung."
+    },
+    'totum-vegetal': {
+      title: "Pflanzentotum vs. Einzelmoleküle | Synergie Ganzer Pflanzen",
+      description: "Warum das gesamte Pflanzentotum isolierten Stoffen überlegen ist: Kofaktor-Synergie, Verträglichkeit und Bioverfügbarkeit."
+    },
+    'plantes-adaptogenes': {
+      title: "Adaptogene Pflanzen | HPA-Achse, Cortisol & Resilienz | Bloom",
+      description: "Ashwagandha, Rosenwurz, Taigawurzel: edukativer Praxisguide zu adaptogenen Wurzeln und schonender Extraktion."
+    },
+    cosmetiques: {
+      title: "Naturkosmetik Selbstgemacht | Seren & Mazerate | Bloom",
+      description: "Pflanzen-Haaröle, Balsame und Gesichtsseren mit Rosmarin, Ringelblume und BloomLab® selbst herstellen."
+    },
+    'cosmetique-botanique': {
+      title: "Naturkosmetik Selbstgemacht | Seren & Mazerate | Bloom",
+      description: "Pflanzen-Haaröle, Balsame und Gesichtsseren mit Rosmarin, Ringelblume und BloomLab® selbst herstellen."
+    },
+    'cosmetiques-naturels-diy': {
+      title: "Naturkosmetik Selbstgemacht | Seren & Mazerate | Bloom",
+      description: "Pflanzen-Haaröle, Balsame und Gesichtsseren mit Rosmarin, Ringelblume und BloomLab® selbst herstellen."
+    },
+    culinaire: {
+      title: "Botanische Küche | Aromatisierte Öle & Kraftbrühen | Bloom",
+      description: "Präzise botanische Küche: Kräuteröle, aromatische Essige und Pflanzenbrühen mit der BloomLab® verfeinern."
+    },
+    'gastronomie-botanique': {
+      title: "Botanische Küche | Aromatisierte Öle & Kraftbrühen | Bloom",
+      description: "Präzise botanische Küche: Kräuteröle, aromatische Essige und Pflanzenbrühen mit der BloomLab® verfeinern."
+    },
+    lexique: {
+      title: "Botanisches Glossar | Begriffe der Extraktion | Bloom",
+      description: "Klare Definitionen botanischer Fachbegriffe: Pflanzentotum, allostatische Last, Polarität und A/B-Sequenzierung."
+    },
+    blog: {
+      title: "Botanisches Journal | Extraktionswissenschaft & Pflege | Bloom",
+      description: "Das Bloom Journal: wissenschaftliche Einordnungen, Pflanzenporträts, Extraktions-Guides und Ideen für zuhause."
+    },
+    articles: {
+      title: "Wissensartikel | Präzise Pflanzenextraktion | Bloom",
+      description: "Fachartikel über Pflanzenextraktion, Lösungsmittel-Kunde, Adaptogene und kontrollierte Mazeration."
+    },
+    recettes: {
+      title: "Botanische Rezepte & Formeln: Aufgüsse, Öle & Pflege | Bloom",
+      description: "Kalibrierte Extraktionsrezepte: Verhältnisse, Temperaturen und Lösungsmittel für eigene Pflege mit der BloomLab®."
+    },
+    'recettes-hub': {
+      title: "Botanische Rezepte & Formeln: Aufgüsse, Öle & Pflege | Bloom",
+      description: "Kalibrierte Extraktionsrezepte: Verhältnisse, Temperaturen und Lösungsmittel für eigene Pflege mit der BloomLab®."
+    },
+    contact: {
+      title: "Kontakt & Botanischer Support | Bloom by BotaniK",
+      description: "Fragen zur BloomLab® oder unseren Bio-Heilpflanzen-Kits? Kontaktieren Sie unser Team in Frankreich (Antwort in 24–48 Std.)."
+    },
+    'infusion-precision': {
+      title: "Präzisions-Infusion: Temperatur, Bewegung & Wirkstoffe | Bloom",
+      description: "Wie gradgenaue Steuerung und sanfte Zirkulation die Wirkstoffdichte hausgemachter Kräuteraufgüsse verändern."
+    },
+    'totum-definition': {
+      title: "Definition des Pflanzentotums | Synergie Ganzer Pflanzen | Bloom",
+      description: "Was das Pflanzentotum ausmacht: Zusammenspiel von Kofaktoren, Bioverfügbarkeit und Schutz empfindlicher Stoffe."
+    },
+    'solvants-extraction': {
+      title: "Lösungsmittel der Pflanzenextraktion: Polarität & Öle | Bloom",
+      description: "Übersicht natürlicher Lösungsmittel (Wasser, Trägeröle, Ethanol, Glycerin, Apfelessig) samt optimalen Temperaturen."
+    }
+  }
+};
+
 export function updateDocumentSEO(config?: any, _lang?: any, productId?: string, _slug?: string) {
   if (typeof document === 'undefined' || !config) return;
 
+  const langKey: 'fr' | 'en' | 'de' = _lang === 'en' ? 'en' : _lang === 'de' ? 'de' : 'fr';
+
   if (typeof config === 'string') {
     const isNoindex = NOINDEX_VIEWS.has(config);
+    const hasActiveSeoHead = Boolean(
+      document.head.querySelector('meta[name="seo-head-active"][content="true"]')
+    );
+
+    if (
+      hasActiveSeoHead &&
+      (config === 'indexbis' || config === 'home' || config === 'machine' || config === 'bloomlab' || config === 'product-detail')
+    ) {
+      return;
+    }
 
     if (config === 'indexbis' || config === 'home') {
-      applySEOMetadata(HOME_TITLE, HOME_DESCRIPTION, 'https://bloombybotanik.com/', false);
+      const homeSeo = langKey === 'fr' ? { title: HOME_TITLE, description: HOME_DESCRIPTION } : HOME_SEO_I18N[langKey];
+      applySEOMetadata(homeSeo.title, homeSeo.description, 'https://bloombybotanik.com/', false);
       return;
     }
 
@@ -626,8 +1112,9 @@ export function updateDocumentSEO(config?: any, _lang?: any, productId?: string,
 
     if (config === 'product-detail' && productId && PRODUCT_SEO_MAP[productId]) {
       const prod = PRODUCT_SEO_MAP[productId];
+      const localizedProd = langKey !== 'fr' ? PRODUCT_SEO_I18N[langKey][productId] : undefined;
       const cleanPath = (prod.path || `/boutique/${productId}/`).replace(/\/?$/, '/');
-      applySEOMetadata(prod.title, prod.description, `https://bloombybotanik.com${cleanPath}`, false);
+      applySEOMetadata(localizedProd?.title || prod.title, localizedProd?.description || prod.description, `https://bloombybotanik.com${cleanPath}`, false);
       return;
     }
 
@@ -640,7 +1127,6 @@ export function updateDocumentSEO(config?: any, _lang?: any, productId?: string,
       if (resolvedSlug) {
         const matchedPost = blogPosts.find((p) => p.slug === resolvedSlug);
         if (matchedPost) {
-          const langKey = _lang === 'en' || _lang === 'de' ? _lang : 'fr';
           const title = matchedPost.metaTitle?.[langKey] || matchedPost.metaTitle?.fr || `${matchedPost.title?.[langKey] || matchedPost.title?.fr} | Bloom by BotaniK`;
           const desc = (matchedPost.metaDescription?.[langKey] || matchedPost.metaDescription?.fr || matchedPost.excerpt?.[langKey] || matchedPost.excerpt?.fr || title).slice(0, 158);
           const postCanonical = `https://bloombybotanik.com/articles/${resolvedSlug}/`;
@@ -663,14 +1149,30 @@ export function updateDocumentSEO(config?: any, _lang?: any, productId?: string,
 
     if (normalizedCurrent === '/infusion-botanique/') {
       const entry = VIEW_SEO_MAP.guide;
-      applySEOMetadata(entry.title, entry.description, 'https://bloombybotanik.com/infusion-botanique/', false);
+      const localizedEntry = langKey !== 'fr' ? VIEW_SEO_I18N[langKey].guide : undefined;
+      applySEOMetadata(localizedEntry?.title || entry.title, localizedEntry?.description || entry.description, 'https://bloombybotanik.com/infusion-botanique/', false);
       return;
     }
 
     if (normalizedCurrent === '/reset-homeostasique/') {
+      const resetSeo =
+        langKey === 'en'
+          ? {
+              title: "Homeostatic Reset: 6-Phase Systemic Tuning | Bloom by BotaniK",
+              description: "Understand allostatic load with Bloom by BotaniK and explore the 6-phase educational framework with BloomLab® to support homeostasis."
+            }
+          : langKey === 'de'
+          ? {
+              title: "Homöostatischer Reset: Systemische 6-Phasen-Abstimmung | Bloom by BotaniK",
+              description: "Verstehen Sie allostatische Belastung mit Bloom by BotaniK und entdecken Sie das 6-Phasen-Konzept mit der BloomLab® für mehr Balance."
+            }
+          : {
+              title: "Reset Homéostasique : Accordage Systémique en 6 Phases | Bloom by BotaniK",
+              description: "Comprenez la charge allostatique avec Bloom by BotaniK et explorez l'accordage biologique en 6 phases avec BloomLab® pour soutenir l'homéostasie."
+            };
       applySEOMetadata(
-        "Reset Homéostasique : Accordage Systémique en 6 Phases | Bloom by BotaniK",
-        "Comprenez la charge allostatique avec Bloom by BotaniK et explorez l'accordage biologique en 6 phases avec BloomLab® pour soutenir l'homéostasie.",
+        resetSeo.title,
+        resetSeo.description,
         'https://bloombybotanik.com/reset-homeostasique/',
         false
       );
@@ -745,10 +1247,11 @@ export function updateDocumentSEO(config?: any, _lang?: any, productId?: string,
 
     const mapped = VIEW_SEO_MAP[config];
     if (mapped) {
+      const localizedMapped = langKey !== 'fr' ? VIEW_SEO_I18N[langKey][config] : undefined;
       const targetPath = mapped.path || VIEW_PATHS[config] || normalizedCurrent || '/';
       const cleanPath = targetPath.endsWith('/') ? targetPath : `${targetPath}/`;
       const canonical = `https://bloombybotanik.com${cleanPath === '//' ? '/' : cleanPath}`;
-      applySEOMetadata(mapped.title, mapped.description, canonical, isNoindex);
+      applySEOMetadata(localizedMapped?.title || mapped.title, localizedMapped?.description || mapped.description, canonical, isNoindex);
       return;
     }
 

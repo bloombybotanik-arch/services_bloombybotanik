@@ -33,13 +33,13 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
 
         <div className="max-w-4xl mx-auto px-6 py-24 animate-in fade-in slide-in-from-bottom-4 duration-700">
           {/* Breadcrumbs */}
-          <nav aria-label="Fil d'Ariane" className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-botanik-green/40 mb-12">
+          <nav aria-label={lang === 'fr' ? "Fil d'Ariane" : lang === 'de' ? "Brotkrumennavigation" : "Breadcrumb"} className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-botanik-green/40 mb-12">
             <a
               href="/"
               onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); onNavigate('home'); } }}
               className="hover:text-botanik-green transition-colors uppercase"
             >
-              Accueil
+              {lang === 'fr' ? 'Accueil' : lang === 'de' ? 'Startseite' : 'Home'}
             </a>
             <ChevronRight className="w-3 h-3" />
             <a
@@ -47,7 +47,7 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
               onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); setSelectedPost(null); onNavigate('blog'); } }}
               className="hover:text-botanik-green transition-colors uppercase"
             >
-              Journal
+              {lang === 'fr' ? 'Journal' : lang === 'de' ? 'Journal' : 'Journal'}
             </a>
             <ChevronRight className="w-3 h-3" />
             <span className="text-botanik-orange truncate max-w-[200px]">{selectedPost.title[lang]}</span>
@@ -80,7 +80,9 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
                 <User className="w-6 h-6 text-botanik-green" />
               </div>
               <div>
-                <div className="text-[10px] font-black uppercase tracking-widest text-botanik-green/40 mb-0.5">Rédigé par</div>
+                <div className="text-[10px] font-black uppercase tracking-widest text-botanik-green/40 mb-0.5">
+                  {lang === 'fr' ? 'Rédigé par' : lang === 'de' ? 'Verfasst von' : 'Written by'}
+                </div>
                 <div className="font-bold text-botanik-green text-base">{selectedPost.author}</div>
               </div>
             </div>
@@ -116,15 +118,21 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
           {/* Internal linking pillar banner */}
           <div className="mt-12 p-8 bg-white rounded-3xl border border-botanik-green/10 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div className="space-y-1">
-              <span className="text-[10px] font-black uppercase tracking-widest text-[#D97706]">Pilier Central du Cocoon</span>
-              <h4 className="text-xl font-bold text-botanik-green">{lang === 'fr' ? "Extraction Botanique : Le Guide Pilier Fondateur" : "Botanical Extraction: Foundational Guide"}</h4>
-              <p className="text-sm text-botanik-green/70">{lang === 'fr' ? "Approfondissez les méthodes, la thermodynamique et les solvants de la méthode A/B séquentielle." : "Explore methods, thermodynamics, and solvents of the sequential A/B method."}</p>
+              <span className="text-[10px] font-black uppercase tracking-widest text-[#D97706]">
+                {lang === 'fr' ? 'Pilier Central du Cocoon' : lang === 'de' ? 'Zentraler Leitfaden' : 'Core Pillar Guide'}
+              </span>
+              <h4 className="text-xl font-bold text-botanik-green">
+                {lang === 'fr' ? "Extraction Botanique : Le Guide Pilier Fondateur" : lang === 'de' ? "Botanische Extraktion: Der Grundlagen-Leitfaden" : "Botanical Extraction: Foundational Guide"}
+              </h4>
+              <p className="text-sm text-botanik-green/70">
+                {lang === 'fr' ? "Approfondissez les méthodes, la thermodynamique et les solvants de la méthode A/B séquentielle." : lang === 'de' ? "Vertiefen Sie Ihr Wissen über Methoden, Thermodynamik und Lösungsmittel der sequentiellen A/B-Methode." : "Explore methods, thermodynamics, and solvents of the sequential A/B method."}
+              </p>
             </div>
             <button
               onClick={() => onNavigate('extraction-botanique')}
               className="px-6 py-3 bg-botanik-green text-white text-xs font-bold rounded-xl hover:bg-[#D97706] transition-colors cursor-pointer flex-shrink-0"
             >
-              {lang === 'fr' ? "Consulter le Guide" : "Explore Guide"}
+              {lang === 'fr' ? "Consulter le Guide" : lang === 'de' ? "Leitfaden ansehen" : "Explore Guide"}
             </button>
           </div>
 
@@ -132,13 +140,17 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
           <div className="mt-24 p-12 bg-botanik-green rounded-[48px] text-center relative overflow-hidden shadow-2xl group">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl group-hover:bg-white/10 transition-colors" />
             <div className="relative z-10">
-              <span className="inline-block px-4 py-1.5 bg-white/10 text-white text-[10px] font-black uppercase tracking-widest rounded-full mb-8">Souveraineté Sanitaire</span>
+              <span className="inline-block px-4 py-1.5 bg-white/10 text-white text-[10px] font-black uppercase tracking-widest rounded-full mb-8">
+                {lang === 'fr' ? 'Autonomie Botanique' : lang === 'de' ? 'Botanische Autonomie' : 'Botanical Autonomy'}
+              </span>
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-                {lang === 'fr' ? "Passez de la tisane à l'extraction de précision." : "Switch from tea to precision extraction."}
+                {lang === 'fr' ? "Passez de la tisane à l'extraction de précision." : lang === 'de' ? "Wechseln Sie vom Kräutertee zur Präzisionsextraktion." : "Switch from tea to precision extraction."}
               </h2>
               <p className="text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
                 {lang === 'fr' 
                   ? "Rejoignez les milliers de passionnés qui utilisent BloomLab® pour libérer le plein potentiel de leurs plantes médicinales." 
+                  : lang === 'de'
+                  ? "Schließen Sie sich Tausenden von Begeisterten an, die BloomLab® nutzen, um das volle Potenzial ihrer Heilpflanzen zu entfalten."
                   : "Join thousands of enthusiasts using BloomLab® to unlock the full potential of their medicinal plants."}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -146,13 +158,13 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
                   onClick={() => onNavigate('machine')}
                   className="px-10 py-5 bg-botanik-orange text-white rounded-2xl font-bold hover:bg-botanik-orange/90 transition-all shadow-xl hover:scale-105 active:scale-95"
                 >
-                  {lang === 'fr' ? 'Découvrir BloomLab®' : 'Discover BloomLab®'}
+                  {lang === 'fr' ? 'Découvrir BloomLab®' : lang === 'de' ? 'BloomLab® entdecken' : 'Discover BloomLab®'}
                 </button>
                 <button 
                   onClick={() => onNavigate('boutique')}
                   className="px-10 py-5 bg-[#0F261E] text-white rounded-2xl font-bold hover:bg-[#1C3F34] transition-all border border-white/20"
                 >
-                  {lang === 'fr' ? 'Voir la Boutique' : 'Visit Shop'}
+                  {lang === 'fr' ? 'Voir la Boutique' : lang === 'de' ? 'Zum Shop' : 'Visit Shop'}
                 </button>
               </div>
             </div>
@@ -162,7 +174,7 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
           <div className="mt-32 border-t border-botanik-green/10 pt-24">
             <h3 className="text-2xl font-bold text-botanik-green mb-12 flex items-center gap-3">
               <Tag className="w-6 h-6 text-botanik-orange" />
-              {lang === 'fr' ? 'Articles Similaires' : 'Related Articles'}
+              {lang === 'fr' ? 'Articles Similaires' : lang === 'de' ? 'Ähnliche Artikel' : 'Related Articles'}
             </h3>
             <div className="grid md:grid-cols-2 gap-8">
               {relatedPosts.map((post) => (
@@ -184,7 +196,7 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
                   <div className="flex items-center justify-between text-xs font-bold text-botanik-green/40">
                     <span>{new Date(post.date).toLocaleDateString(lang)}</span>
                     <div className="flex items-center gap-1 group-hover:text-botanik-orange transition-colors">
-                      Lire la suite <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                      {lang === 'fr' ? 'Lire la suite' : lang === 'de' ? 'Weiterlesen' : 'Read more'} <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
                 </a>

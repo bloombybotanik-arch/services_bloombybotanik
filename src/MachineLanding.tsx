@@ -29,6 +29,7 @@ import { TooltipLexique } from './components/TooltipLexique';
 import { translations, Language } from './translations';
 import { trackViewItem, trackFaqExpand } from './utils/analytics';
 import { AmazonRatingBadge } from './components/AmazonSocialProof';
+import SeoHead from './components/SeoHead';
 
 const heroViews = [
   { id: 'v2', label: 'Vue 2', src: '/images/1.png', fallbackSrc: '/images/1.png', subtitle: 'Précision' },
@@ -45,6 +46,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
   const [selectedHeroImage, setSelectedHeroImage] = useState<string>(heroViews[0].src);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const [selectedOption, setSelectedOption] = useState<'solo' | 'signature'>('solo');
 
   React.useEffect(() => {
     trackViewItem({
@@ -59,10 +61,52 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
   const faqItems = (t as any).faq || [];
 
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    '@id': 'https://bloombybotanik.com/bloomlab#product',
+    name: 'BloomLab®',
+    description:
+      lang === 'fr'
+        ? "Extracteur botanique de précision en acier inoxydable 304 pour cosmétique et cuisine maison. Cuve 100 % Inox 304 alimentaire, 6 programmes automatisés (0 à 121 °C), brassage doux sans broyage, manuel complet et 100 recettes exclusives en français. Garantie 1 an."
+        : lang === 'de'
+        ? 'Botanischer Präzisionsextraktor aus Edelstahl 304 für Naturkosmetik und Küche. 6 automatische Programme (0–121 °C), sanftes Rühren, Handbuch und 100 Rezepte. 1 Jahr Garantie.'
+        : '304 stainless steel precision botanical extractor for homemade cosmetics and culinary creations. 6 automated programs (0–121°C), gentle stirring, complete manual and 100 recipes. 1-year warranty.',
+    image: [
+      'https://bloombybotanik.com/img/produit/bloomlab-face-1200x1200.jpg',
+      'https://bloombybotanik.com/img/produit/bloomlab-3quarts-1200x1200.jpg',
+    ],
+    sku: 'BLOOMLAB-V2',
+    brand: {
+      '@type': 'Brand',
+      name: 'Bloom by BotaniK',
+    },
+    offers: {
+      '@type': 'Offer',
+      url: 'https://bloombybotanik.com/bloomlab',
+      priceCurrency: 'EUR',
+      price: '229.00',
+      priceValidUntil: '2026-12-31',
+      itemCondition: 'https://schema.org/NewCondition',
+      availability: 'https://schema.org/InStock',
+      seller: {
+        '@type': 'Organization',
+        name: 'Bloom by BotaniK',
+      },
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.3',
+      reviewCount: '7',
+      bestRating: '5',
+      worstRating: '1',
+    },
+  };
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    '@id': 'https://bloombybotanik.com/bloomlab/#faq',
+    '@id': 'https://bloombybotanik.com/bloomlab#faq',
     mainEntity: faqItems.map((item: any) => ({
       '@type': 'Question',
       name: item.q,
@@ -73,11 +117,30 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
     })),
   };
 
+  const bloomlabSeoTitle =
+    lang === 'fr'
+      ? 'BloomLab® — Extracteur Botanique Inox 304 pour Cosmétique & Cuisine Maison'
+      : lang === 'de'
+      ? 'BloomLab® — Botanischer Extraktor Edelstahl 304 für Kosmetik & Küche'
+      : 'BloomLab® — 304 Stainless Botanical Extractor for Homemade Cosmetics & Kitchen';
+
+  const bloomlabSeoDescription =
+    lang === 'fr'
+      ? 'Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie 1 an, manuel complet en français et 100 recettes incluses.'
+      : lang === 'de'
+      ? 'Bereiten Sie Ölmazerate, Balsame und Kräuterauszüge ohne Bitterkeit zu. 1 Jahr Garantie, Handbuch und 100 Rezepte inklusive.'
+      : 'Prepare oil macerates, balms, and botanical infusions without bitterness. 1-year warranty, complete manual, and 100 recipes included.';
+
   return (
     <div data-product-page="true" className="product-detail animate-in fade-in duration-700 bg-[#FAF7F2] text-[#3E4A3D] w-full max-w-full overflow-x-clip">
-      <script type="application/ld+json">
-        {JSON.stringify(faqSchema)}
-      </script>
+      <SeoHead
+        title={bloomlabSeoTitle}
+        description={bloomlabSeoDescription}
+        canonical="https://bloombybotanik.com/bloomlab"
+        ogType="product"
+        lang={lang}
+        schemas={[productSchema, faqSchema]}
+      />
       {/* Fullscreen Image Overlay */}
       <AnimatePresence>
         {fullscreenImage && (
@@ -108,11 +171,13 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         )}
       </AnimatePresence>
 
-      {/* Promotional Banner Black Friday */}
+      {/* Promotional Banner */}
       <div className="bg-[#D97706]/10 text-[#B45309] border-b border-[#D97706]/30 text-center py-2.5 px-4 text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
         {lang === 'fr' 
-          ? "Black Friday 2026 : Soins Botaniques pour toute la Famille - Pack Complet à 59 €" 
-          : "Black Friday 2026: Botanical Care for the Whole Family - Complete Pack at 59 €"}
+          ? "🇫🇷 Marque française • Conception des protocoles & kits botaniques en France • Expédition 24/48h • Garantie 1 an • 3x sans frais" 
+          : lang === 'de'
+          ? "🇫🇷 Französische Marke • Protokolle & Botanik-Kits aus Frankreich • Versand 24/48h • 1 Jahr Garantie • 3x zinsfrei"
+          : "🇫🇷 French Brand • Protocols & botanical kits crafted in France • 24/48h Shipping • 1-Year Warranty • 3x Fee-Free"}
       </div>
 
       {/* 1. HERO HEADER SECTION */}
@@ -168,82 +233,204 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
             </a>
           </nav>
 
-          {/* Hero Image with Overlay: Header Texts (Top) & Gallery Links (Bottom-Left) */}
-          <div className="flex flex-col items-center mb-10">
-            <div 
-              className="relative rounded-3xl overflow-hidden border border-white/15 bg-white/5 shadow-2xl w-full max-w-4xl h-[380px] sm:h-[480px] md:h-[560px] min-h-[380px] sm:min-h-[480px] md:min-h-[560px] cursor-zoom-in group"
-              onClick={() => setFullscreenImage(selectedHeroImage)}
-            >
-              <picture>
-                <source type="image/webp" srcSet={activeView.src} />
-                <img 
-                  src={activeView.fallbackSrc} 
-                  alt={activeView.subtitle || "BloomLab"} 
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="async"
-                  className="w-full h-full object-cover object-[center_35%] group-hover:scale-105 transition-transform duration-700" 
-                />
-              </picture>
-
-              {/* Dual Gradients for High Legibility */}
-              <div className="absolute inset-x-0 top-0 h-3/5 bg-gradient-to-b from-black/85 via-black/40 to-transparent pointer-events-none" />
-              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
-              
-              {/* Header Texts placed directly ON the hero image */}
-              <div className="absolute top-4 left-4 right-4 sm:top-6 sm:left-6 sm:right-6 z-20 space-y-1.5 sm:space-y-2.5 max-w-2xl pointer-events-none">
-                <div className="inline-flex items-center gap-1.5 bg-black/60 backdrop-blur-md text-[#C8AB8A] px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest border border-white/20 shadow-lg">
-                  <Zap className="w-3 h-3 text-[#C8AB8A]" /> 
-                  <span>Autonomie Botanique — Méthode A/B</span>
+          {/* Hero E-Commerce 2 Colonnes : Galerie Produit (Gauche) + Fiche & Buy-Box (Droite) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start mb-12">
+            {/* Colonne Gauche : Galerie interactive */}
+            <div className="lg:col-span-6 space-y-4">
+              <div 
+                className="relative rounded-3xl overflow-hidden border border-white/15 bg-white/5 shadow-2xl w-full h-[360px] sm:h-[460px] lg:h-[520px] cursor-zoom-in group"
+                onClick={() => setFullscreenImage(selectedHeroImage)}
+              >
+                <picture>
+                  <source type="image/webp" srcSet={activeView.src} />
+                  <img 
+                    src={activeView.fallbackSrc} 
+                    alt={activeView.subtitle || "BloomLab"} 
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    className="w-full h-full object-cover object-[center_35%] group-hover:scale-105 transition-transform duration-700" 
+                  />
+                </picture>
+                <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/75 via-black/30 to-transparent pointer-events-none" />
+                <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-20 flex items-center gap-2">
+                  {heroViews.map((view) => {
+                    const isSelected = selectedHeroImage === view.src || selectedHeroImage === view.fallbackSrc;
+                    return (
+                      <button
+                        key={view.id}
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedHeroImage(view.src);
+                        }}
+                        className={`p-1 rounded-xl border transition-all cursor-pointer backdrop-blur-md ${
+                          isSelected 
+                            ? 'bg-black/80 border-[#C8AB8A] shadow-xl ring-2 ring-[#C8AB8A]' 
+                            : 'bg-black/50 border-white/25 hover:border-white/60 hover:bg-black/75'
+                        }`}
+                        title={view.subtitle}
+                      >
+                        <picture>
+                          <source type="image/webp" srcSet={view.src} />
+                          <img 
+                            src={view.fallbackSrc} 
+                            alt={view.subtitle} 
+                            loading="lazy"
+                            decoding="async"
+                            className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg object-cover" 
+                          />
+                        </picture>
+                      </button>
+                    );
+                  })}
                 </div>
+              </div>
+            </div>
 
-                <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight tracking-tight drop-shadow-md">
-                  {lang === 'fr' ? (
-                    <>La BloomLab®, extracteur botanique de précision pour vos soins maison</>
-                  ) : lang === 'de' ? (
-                    <>BloomLab® — Botanischer Präzisionsextraktor | Bloom by BotaniK</>
-                  ) : (
-                    <>BloomLab® — Precision Botanical Extractor | Bloom by BotaniK</>
-                  )}
+            {/* Colonne Droite : En-tête Produit & Sélecteur de configuration */}
+            <div className="lg:col-span-6 space-y-5 bg-white/5 border border-white/15 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xs">
+              <div className="space-y-2.5">
+                <h1 className="text-2xl sm:text-3xl font-black text-white leading-tight tracking-tight">
+                  {lang === 'fr'
+                    ? "BloomLab® — Extracteur Botanique de Précision Inox 304 pour Cosmétique & Cuisine Maison"
+                    : lang === 'de'
+                    ? "BloomLab® — Botanischer Präzisionsextraktor Edelstahl 304 für Kosmetik & Küche"
+                    : "BloomLab® — 304 Stainless Precision Botanical Extractor for Cosmetics & Kitchen"}
                 </h1>
-                <div className="pt-2 pointer-events-auto">
-                  <AmazonRatingBadge lang={lang} variant="minimal" className="text-white/90 hover:text-white" />
+                <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm font-bold text-[#C8AB8A]">
+                  <span>
+                    {lang === 'fr'
+                      ? "⭐⭐⭐⭐☆ 4,3/5 (Avis clients vérifiés sur Amazon.fr)"
+                      : lang === 'de'
+                      ? "⭐⭐⭐⭐☆ 4,3/5 (Verifizierte Kundenbewertungen auf Amazon.fr)"
+                      : "⭐⭐⭐⭐☆ 4.3/5 (Verified reviews on Amazon.fr)"}
+                  </span>
                 </div>
               </div>
 
-              {/* 4 Image Thumbnails on bottom-left: no text labels, just sleek image thumbnails */}
-              <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-20 flex items-center gap-2">
-                {heroViews.map((view) => {
-                  const isSelected = selectedHeroImage === view.src || selectedHeroImage === view.fallbackSrc;
-                  return (
-                    <button
-                      key={view.id}
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setSelectedHeroImage(view.src);
-                      }}
-                      className={`p-1 rounded-xl border transition-all cursor-pointer backdrop-blur-md ${
-                        isSelected 
-                          ? 'bg-black/80 border-[#C8AB8A] shadow-xl ring-2 ring-[#C8AB8A]' 
-                          : 'bg-black/50 border-white/25 hover:border-white/60 hover:bg-black/75'
-                      }`}
-                      title={view.subtitle}
-                    >
-                      <picture>
-                        <source type="image/webp" srcSet={view.src} />
-                        <img 
-                          src={view.fallbackSrc} 
-                          alt={view.subtitle} 
-                          loading="lazy"
-                          decoding="async"
-                          className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover" 
-                        />
-                      </picture>
-                    </button>
-                  );
-                })}
+              <p className="text-sm sm:text-base text-white/90 leading-relaxed">
+                {lang === 'fr'
+                  ? "Le laboratoire domestique de cosmétique botanique et cuisine maison : créez vos sérums visage, huiles de soin, baumes et infusions concentrées en 2 heures, sans amertume ni 6 semaines d'attente."
+                  : lang === 'de'
+                  ? "Das kompakte Labor für Naturkosmetik und botanische Küche: Seren, Pflegeöle, Balsame und konzentrierte Aufgüsse in 2 Stunden ohne Bitterkeit und ohne 6 Wochen Wartezeit."
+                  : "The compact home lab for botanical cosmetics and kitchen infusions: craft face serums, skincare oils, balms, and concentrated herbal preparations in 2 hours without bitterness or waiting 6 weeks."}
+              </p>
+
+              {/* 3 Bénéfices Clés Immédiats */}
+              <ul className="space-y-2.5 text-xs sm:text-sm text-white/95">
+                <li className="flex items-start gap-2.5">
+                  <span className="shrink-0">✅</span>
+                  <span>
+                    {lang === 'fr'
+                      ? "6 programmes automatisés (0 à 121 °C) à ±0,5 °C : aucun actif brûlé, activation thermique douce des résines et aromates"
+                      : lang === 'de'
+                      ? "6 automatische Programme (0–121 °C) mit ±0,5 °C Präzision: keine verbrannten Wirkstoffe, sanfte thermische Aktivierung von Harzen und Aromaten"
+                      : "6 automated programs (0–121°C) accurate to ±0.5°C: zero scorched actives, gentle thermal activation of resins and aromatics"}
+                  </span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="shrink-0">✅</span>
+                  <span>
+                    {lang === 'fr'
+                      ? "Brassage doux sans broyage : préserve la plante sans amertume (contrairement aux mixeurs à lames)"
+                      : lang === 'de'
+                      ? "Sanftes Rühren ohne Zerkleinern: bewahrt die Pflanze ohne Bitterkeit (anders als Mixmesser)"
+                      : "Gentle stirring without shredding: preserves herbs with zero bitterness (unlike bladed blenders)"}
+                  </span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="shrink-0">✅</span>
+                  <span>
+                    {lang === 'fr'
+                      ? "Cuve 100 % Inox 304 alimentaire sans plastique + manuel complet et 100 recettes exclusives en français"
+                      : lang === 'de'
+                      ? "100 % lebensmittelechter Edelstahl 304 ohne Kunststoff + vollständiges Handbuch & 100 exklusive Rezepte"
+                      : "100% food-grade 304 stainless steel chamber without plastic + complete manual and 100 exclusive recipes"}
+                  </span>
+                </li>
+              </ul>
+
+              {/* Sélecteur de configuration */}
+              <div className="space-y-2.5 pt-2">
+                <div className="text-xs font-black uppercase tracking-wider text-[#C8AB8A]">
+                  {lang === 'fr' ? "Sélecteur de configuration" : lang === 'de' ? "Konfiguration wählen" : "Configuration selector"}
+                </div>
+                <div className="grid grid-cols-1 gap-2.5">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedOption('solo')}
+                    className={`w-full p-4 rounded-2xl border text-left transition-all cursor-pointer flex items-center justify-between gap-3 ${
+                      selectedOption === 'solo'
+                        ? 'bg-[#0F261E] border-[#E8772E] ring-2 ring-[#E8772E]/50 text-white'
+                        : 'bg-white/5 border-white/15 text-white/80 hover:bg-white/10'
+                    }`}
+                  >
+                    <div>
+                      <div className="font-black text-sm">
+                        {lang === 'fr' ? "Option 1 : BloomLab® Solo" : lang === 'de' ? "Option 1: BloomLab® Solo" : "Option 1: BloomLab® Solo"}
+                      </div>
+                      <div className="text-[11px] text-white/70">
+                        {lang === 'fr' ? "Infuseur Inox 304 + Panier 90 µm + 5 accessoires + Manuel & 100 recettes" : lang === 'de' ? "Edelstahl-Infuser + 90-µm-Korb + 5 Zubehörteile + Handbuch & 100 Rezepte" : "304 Steel Infuser + 90µm basket + 5 accessories + Manual & 100 recipes"}
+                      </div>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <div className="text-lg font-black text-white">229 €</div>
+                      <div className="text-[11px] line-through text-white/45">289 €</div>
+                    </div>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setSelectedOption('signature')}
+                    className={`w-full p-4 rounded-2xl border text-left transition-all cursor-pointer flex items-center justify-between gap-3 relative ${
+                      selectedOption === 'signature'
+                        ? 'bg-[#0F261E] border-[#E8772E] ring-2 ring-[#E8772E]/50 text-white'
+                        : 'bg-white/5 border-white/15 text-white/80 hover:bg-white/10'
+                    }`}
+                  >
+                    <div>
+                      <div className="font-black text-sm flex flex-wrap items-center gap-2">
+                        <span>{lang === 'fr' ? "Option 2 : Pack Signature" : lang === 'de' ? "Option 2: Signature-Paket" : "Option 2: Signature Pack"}</span>
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#E8772E] text-white font-black uppercase">
+                          {lang === 'fr' ? "Économisez 60 €" : lang === 'de' ? "60 € sparen" : "Save €60"}
+                        </span>
+                      </div>
+                      <div className="text-[11px] text-white/70">
+                        {lang === 'fr' ? "Machine + Kit apothicaire + Herbier Complet + Duo Argiles + 3 mois Académie" : lang === 'de' ? "Maschine + Apotheker-Set + Herbarium + Tonerde-Duo + 3 Mon. Akademie" : "Machine + Apothecary Kit + Complete Herbarium + Clay Duo + 3 Mo Academy"}
+                      </div>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <div className="text-lg font-black text-white">289 €</div>
+                      <div className="text-[11px] line-through text-white/45">349 €</div>
+                    </div>
+                  </button>
+                </div>
               </div>
+
+              {/* Bouton d'achat principal */}
+              <button
+                type="button"
+                onClick={() => onNavigate('product-detail', selectedOption === 'solo' ? 'bloomlab' : 'pack-signature')}
+                className="w-full py-4 px-6 bg-[#E8772E] hover:bg-[#D4651F] text-white rounded-2xl font-black text-sm sm:text-base transition-all shadow-xl flex items-center justify-center gap-3 cursor-pointer"
+              >
+                <span>
+                  {lang === 'fr'
+                    ? "Ajouter au panier — Expédition sous 24/48h"
+                    : lang === 'de'
+                    ? "In den Warenkorb — Versand in 24/48h"
+                    : "Add to cart — Ships in 24/48h"}
+                </span>
+                <ChevronRight className="w-5 h-5" />
+              </button>
+
+              <p className="text-[11px] sm:text-xs text-white/80 text-center leading-relaxed">
+                {lang === 'fr'
+                  ? "🛡️ 30 jours pour tester chez vous • ⚡ Garantie 1 an • 💳 Paiement 3x sans frais via Klarna / PayPal."
+                  : lang === 'de'
+                  ? "🛡️ 30 Tage zu Hause testen • ⚡ 1 Jahr Garantie • 💳 3x zinsfrei via Klarna / PayPal."
+                  : "🛡️ 30-day home trial • ⚡ 1-Year Warranty • 💳 3x fee-free via Klarna / PayPal."}
+              </p>
             </div>
           </div>
 
@@ -255,14 +442,23 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                   <Package className="w-5 h-5 text-white" />
                 </div>
                 <p className="text-xs sm:text-sm font-medium text-white">
-                  <span className="font-bold text-white">Acheteur Amazon ?</span> <span className="text-white">Ne restez pas seul face à vos plantes. Uploadez votre facture pour débloquer gratuitement vos protocoles cliniques et l'accès Premium à la Bibliothèque Bloom.</span>
+                  <span className="font-bold text-white">
+                    {lang === 'fr' ? "Acheteur Amazon ?" : lang === 'de' ? "Amazon-Kunde?" : "Amazon Customer?"}
+                  </span>{' '}
+                  <span className="text-white">
+                    {lang === 'fr'
+                      ? "Ne restez pas seul face à vos plantes. Uploadez votre facture pour débloquer gratuitement vos protocoles et l'accès Premium à la Bibliothèque Bloom."
+                      : lang === 'de'
+                      ? "Laden Sie Ihre Rechnung hoch, um Ihre Protokolle und den Premium-Zugang zur Bloom-Bibliothek kostenlos freizuschalten."
+                      : "Upload your invoice to unlock your extraction protocols and free Premium Bloom Library access."}
+                  </span>
                 </p>
               </div>
               <button 
                 onClick={() => onNavigate('activation')} 
                 className="px-5 py-2.5 bg-[#3E4A3D] hover:bg-[#2D372C] text-white text-xs font-black uppercase tracking-wider rounded-xl transition-all shadow-lg shadow-[#C8AB8A]/20 whitespace-nowrap cursor-pointer border border-white/20"
               >
-                Activer mon accès Premium
+                {lang === 'fr' ? "Activer mon accès Premium" : lang === 'de' ? "Premium-Zugang aktivieren" : "Activate Premium Access"}
               </button>
             </div>
           </div>
@@ -294,10 +490,20 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
             <div className="space-y-4 text-base sm:text-lg text-white leading-relaxed font-normal">
               <p className="text-white">
-                Conçue par <strong>Bloom by BotaniK</strong>, la <strong>BloomLab®</strong> favorise l&apos;extraction des composés recherchés tout en respectant les fractions sensibles. Vous ne faites plus simplement chauffer une plante : vous optimisez le profil d&apos;extraction de ses principes actifs dans des conditions rigoureuses. La température est maintenue au degré près : assez élevée pour optimiser l’extraction des phytocomposés (<TooltipLexique terme="polyphenols" />, flavonoïdes, huiles essentielles…), mais jamais au‑delà des seuils qui les dégradent, ce qui est exactement ce que montrent les études sur l’impact de la température en extraction végétale.
+                {lang === 'fr' ? (
+                  <>Conçue par <strong>Bloom by BotaniK</strong>, la <strong>BloomLab®</strong> favorise l&apos;extraction des composés recherchés tout en respectant les fractions sensibles. Vous ne faites plus simplement chauffer une plante : vous optimisez le profil d&apos;extraction de ses principes actifs dans des conditions rigoureuses. La température est maintenue au degré près : assez élevée pour optimiser l’extraction des phytocomposés (<TooltipLexique terme="polyphenols" />, flavonoïdes, huiles essentielles…), mais jamais au‑delà des seuils qui les dégradent, ce qui est exactement ce que montrent les études sur l’impact de la température en extraction végétale.</>
+                ) : lang === 'de' ? (
+                  <>Entwickelt von <strong>Bloom by BotaniK</strong>, ermöglicht die <strong>BloomLab®</strong> die gezielte Extraktion pflanzlicher Wirkstoffe bei gleichzeitigem Schutz empfindlicher Molekülfraktionen. Statt Kräuter unkontrolliert zu erhitzen, steuern Sie Temperatur, Zeit und Lösungsmittel präzise – hoch genug für maximale Ausbeute an Polyphenolen, Flavonoiden und ätherischen Ölen, aber stets unterhalb der thermischen Abbauschwellen.</>
+                ) : (
+                  <>Engineered by <strong>Bloom by BotaniK</strong>, the <strong>BloomLab®</strong> extracts desired botanical compounds while safeguarding heat-sensitive fractions. Instead of guessing on a stovetop, you regulate temperature, timing, and solvent conditions—high enough to release polyphenols, flavonoids, and aromatic oils, yet strictly below thermal degradation thresholds.</>
+                )}
               </p>
               <p className="text-white/90 text-sm sm:text-base font-light">
-                Là où une casserole ou un bain‑marie improvisé chauffent trop fort ou de façon irrégulière (perte d’antioxydants, arômes brûlés, actifs détruits), BloomLab offre un profil thermique maîtrisé qui préserve les molécules sensibles à la chaleur et améliore la quantité d’actifs réellement présents dans vos huiles infusées et macérâts.
+                {lang === 'fr'
+                  ? "Là où une casserole ou un bain‑marie improvisé chauffent trop fort ou de façon irrégulière (perte d’antioxydants, arômes brûlés, actifs détruits), BloomLab offre un profil thermique maîtrisé qui préserve les molécules sensibles à la chaleur et améliore la quantité d’actifs réellement présents dans vos huiles infusées et macérâts."
+                  : lang === 'de'
+                  ? "Wo ein Kochtopf oder ein improvisiertes Wasserbad ungleichmäßig und zu stark erhitzt (Verlust von Antioxidantien, verbrannte Aromen), bietet BloomLab ein stabiles Temperaturprofil, das wärmeempfindliche Moleküle schützt und die Wirkstoffkonzentration in Ihren Ölauszügen und Tinkturen deutlich steigert."
+                  : "Where a saucepan or improvised double boiler heats unevenly and too hot (oxidizing antioxidants and scorching aromatics), BloomLab maintains a controlled thermal profile that protects delicate compounds and maximizes active yield in your infused oils and macerates."}
               </p>
             </div>
 
@@ -305,15 +511,15 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
               <div className="flex items-center justify-center sm:justify-start gap-2 text-xs font-semibold text-white/90 bg-white/5 border border-white/10 px-4 py-3 rounded-xl">
                 <ShieldCheck className="w-4 h-4 text-[#C8AB8A] shrink-0" />
-                <span>Inox 304 alimentaire</span>
+                <span>{lang === 'fr' ? "Inox 304 alimentaire" : lang === 'de' ? "304-Edelstahl (Lebensmittelqualität)" : "Food-grade 304 Steel"}</span>
               </div>
               <div className="flex items-center justify-center sm:justify-start gap-2 text-xs font-semibold text-white/90 bg-white/5 border border-white/10 px-4 py-3 rounded-xl">
                 <Activity className="w-4 h-4 text-[#C8AB8A] shrink-0" />
-                <span>Précision ±0,5°C</span>
+                <span>{lang === 'fr' ? "Précision ±0,5°C" : lang === 'de' ? "Präzision ±0,5°C" : "±0.5°C Precision"}</span>
               </div>
               <div className="flex items-center justify-center sm:justify-start gap-2 text-xs font-semibold text-white/90 bg-white/5 border border-white/10 px-4 py-3 rounded-xl">
                 <Award className="w-4 h-4 text-[#C8AB8A] shrink-0" />
-                <span>Garantie 1 an</span>
+                <span>{lang === 'fr' ? "Garantie 1 an" : lang === 'de' ? "1 Jahr Garantie" : "1-Year Warranty"}</span>
               </div>
             </div>
 
@@ -343,18 +549,47 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="inline-block px-3.5 py-1.5 rounded-full bg-[#C8AB8A]/10 text-[#C8AB8A] text-xs font-black uppercase tracking-[0.25em] border border-[#C8AB8A]/20">
-              2. LE VERROU MÉTHODOLOGIQUE
+              {lang === 'fr' ? "2. LE VERROU MÉTHODOLOGIQUE" : lang === 'de' ? "2. DIE METHODISCHE HÜRDE" : "2. THE METHODOLOGICAL BARRIER"}
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3E4A3D] leading-tight">
               {lang === 'fr' 
-                ? "Technologie d'Extraction Botanique Séquentielle A/B : Libérer la Puissance de la Plante" 
+                ? "Double Extraction Intelligente (Eau + Huile/Alcool) : préservez 100 % des actifs de vos plantes" 
                 : lang === 'de' 
-                ? "Sequenzielle botanische A/B-Extraktionstechnologie: Pflanzenkraft entfesseln" 
-                : "Sequential A/B Botanical Extraction Technology: Unlocking Plant Power"}
+                ? "Intelligente Doppelextraktion (Wasser + Öl/Alkohol): 100 % Pflanzenwirkstoffe bewahren" 
+                : "Smart Dual Extraction (Water + Oil/Alcohol): Preserve 100% of Plant Actives"}
             </h2>
             <p className="text-base sm:text-lg text-[#3E4A3D]/70 leading-relaxed font-normal">
-              L'extraction végétale domestique se heurte traditionnellement à 3 barrières physiques invisibles. BloomLab les résout par le contrôle strict de la cinétique, de la température et des solvants.
+              {lang === 'fr'
+                ? "Préparez vos huiles de soin, sérums et infusions concentrées en 2 heures au lieu de 6 semaines. BloomLab résout les 3 barrières physiques qui affaiblissent les préparations maison grâce au contrôle du temps, de la température et des solvants."
+                : lang === 'de'
+                ? "Stellen Sie Pflegeöle, Seren und konzentrierte Auszüge in 2 Stunden statt 6 Wochen her. BloomLab überwindet die 3 physikalischen Barrieren häuslicher Extraktion."
+                : "Craft care oils, serums, and concentrated infusions in 2 hours instead of 6 weeks. BloomLab overcomes the 3 physical barriers that weaken homemade preparations."}
             </p>
+            <details className="text-left max-w-2xl mx-auto rounded-2xl border border-[#3E4A3D]/15 bg-white p-4 shadow-xs">
+              <summary className="cursor-pointer font-bold text-sm text-[#3E4A3D] select-none">
+                {lang === 'fr'
+                  ? "🔬 Pour les experts & praticiens : voir le protocole biochimique complet"
+                  : lang === 'de'
+                  ? "🔬 Für Experten & Praktiker: vollständiges biochemisches Protokoll ansehen"
+                  : "🔬 For experts & practitioners: view full biochemical protocol"}
+              </summary>
+              <div className="mt-3 pt-3 border-t border-[#3E4A3D]/10 text-xs sm:text-sm text-[#3E4A3D]/80 space-y-2 leading-relaxed">
+                <p>
+                  {lang === 'fr'
+                    ? "L'extraction obéit à la loi de diffusion de Fick et à la sélectivité de polarité des solvants : la phase hydrophile (eau ou glycérine, 75–90 °C sur racines et fibres denses) solubilise tanins, polyphénols et minéraux, tandis que la phase lipophile ou hydro-alcoolique (huiles végétales ou éthanol, 45–58 °C sur feuilles et sommités fleuries) préserve les terpènes volatils et flavonoïdes thermolabiles."
+                    : lang === 'de'
+                    ? "Die Extraktion folgt dem Fickschen Diffusionsgesetz und der Lösungsmittelpolarität: Die hydrophile Phase (Wasser/Glycerin, 75–90 °C) löst Tannine und Mineralstoffe aus festen Wurzeln, während die lipophile/hydroalkoholische Phase (45–58 °C) flüchtige Terpene und hitzeempfindliche Flavonoide schützt."
+                    : "Extraction follows Fick's diffusion law and solvent polarity selectivity: the hydrophilic stage (75–90°C) solubilizes tannins and minerals from dense roots, while the lipophilic or ethanolic stage (45–58°C) safeguards volatile terpenes and heat-sensitive flavonoids."}
+                </p>
+                <p>
+                  {lang === 'fr'
+                    ? "Le vortex laminaire réduit l'épaisseur de couche limite autour des fibres végétales sans broyer la plante ni libérer de chlorophylle amère, pour une reproductibilité constante."
+                    : lang === 'de'
+                    ? "Der laminare Vortex reduziert die Grenzschicht um die Pflanzenfasern ohne Zerkleinern und ohne Freisetzung bitteren Chlorophylls."
+                    : "Continuous laminar vortex agitation reduces the boundary layer around plant fibers without shredding or releasing bitter chlorophyll."}
+                </p>
+              </div>
+            </details>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -363,9 +598,15 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               <div className="w-12 h-12 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center mb-6">
                 <Thermometer className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold text-[#3E4A3D] mb-3">1. Le Choc Thermique</h3>
+              <h3 className="text-xl font-bold text-[#3E4A3D] mb-3">
+                {lang === 'fr' ? "1. Le Choc Thermique" : lang === 'de' ? "1. Der Thermoschock" : "1. Thermal Shock"}
+              </h3>
               <p className="text-sm text-[#3E4A3D]/75 leading-relaxed flex-1">
-                L'eau bouillante ou un bain-marie incontrôlé dépasse les 60°C à 100°C : les terpènes volatils s'évaporent et les flavonoïdes thermolabiles sont dégradés avant usage.
+                {lang === 'fr'
+                  ? "L'eau bouillante ou un bain-marie incontrôlé dépasse les 60°C à 100°C : les terpènes volatils s'évaporent et les flavonoïdes thermolabiles sont dégradés avant usage."
+                  : lang === 'de'
+                  ? "Kochendes Wasser oder ein unkontrolliertes Wasserbad übersteigt 60°C bis 100°C: flüchtige Terpene verdampfen und hitzeempfindliche Flavonoide werden zerstört."
+                  : "Boiling water or an uncontrolled double boiler exceeds 60°C to 100°C: volatile terpenes evaporate and heat-labile flavonoids degrade before use."}
               </p>
             </div>
 
@@ -374,9 +615,15 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-6">
                 <Layers className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold text-[#3E4A3D] mb-3">2. La Barrière de Polarité</h3>
+              <h3 className="text-xl font-bold text-[#3E4A3D] mb-3">
+                {lang === 'fr' ? "2. La Barrière de Polarité" : lang === 'de' ? "2. Die Polaritätsbarriere" : "2. Polarity Barrier"}
+              </h3>
               <p className="text-sm text-[#3E4A3D]/75 leading-relaxed flex-1">
-                Une plante contient à la fois des principes hydrosolubles et liposolubles. Une extraction unique à l'aveugle laisse la moitié des principes actifs captifs de la fibre végétale.
+                {lang === 'fr'
+                  ? "Une plante contient à la fois des principes hydrosolubles et liposolubles. Une extraction unique à l'aveugle laisse la moitié des principes actifs captifs de la fibre végétale."
+                  : lang === 'de'
+                  ? "Jede Pflanze enthält sowohl wasser- als auch fettlösliche Stoffe. Eine einfache Einzelextraktion lässt die Hälfte der Aktivstoffe in der Pflanzenfaser gefangen."
+                  : "Every plant contains both water-soluble and fat-soluble compounds. A single uncalibrated extraction leaves half the active spectrum trapped in plant fiber."}
               </p>
             </div>
 
@@ -385,9 +632,15 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               <div className="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center mb-6">
                 <Wind className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold text-[#3E4A3D] mb-3">3. L'Oxydation à l'Air Libre</h3>
+              <h3 className="text-xl font-bold text-[#3E4A3D] mb-3">
+                {lang === 'fr' ? "3. L'Oxydation à l'Air Libre" : lang === 'de' ? "3. Oxidation an der Luft" : "3. Open-Air Oxidation"}
+              </h3>
               <p className="text-sm text-[#3E4A3D]/75 leading-relaxed flex-1">
-                Les bocaux ouverts ou casseroles exposent les lipides et molécules actives à l'oxygène ambiant, accélérant le rancissement et la déperdition aromatique.
+                {lang === 'fr'
+                  ? "Les bocaux ouverts ou casseroles exposent les lipides et molécules actives à l'oxygène ambiant, accélérant le rancissement et la déperdition aromatique."
+                  : lang === 'de'
+                  ? "Offene Gläser oder Töpfe setzen Lipide und empfindliche Moleküle dem Luftsauerstoff aus, was Ranzigkeit und Aromaverlust beschleunigt."
+                  : "Open jars or pots expose lipids and active molecules to ambient oxygen, accelerating rancidity and aromatic loss."}
               </p>
             </div>
           </div>
@@ -400,10 +653,14 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                   <div className="w-6 h-6 rounded-full bg-[#3E4A3D]/10 flex items-center justify-center shrink-0">
                     <Check className="w-3.5 h-3.5 text-[#3E4A3D]" />
                   </div>
-                  <span>Contre le Gaspillage</span>
+                  <span>{lang === 'fr' ? "Contre le Gaspillage" : lang === 'de' ? "Gegen Verschwendung" : "Zero Waste"}</span>
                 </div>
                 <p className="text-xs sm:text-sm text-[#3E4A3D]/75 leading-relaxed">
-                  Ne jetez plus de matière végétale mal extraite. Chaque gramme de plante libère son profil complet sous conditions adaptées.
+                  {lang === 'fr'
+                    ? "Ne jetez plus de matière végétale mal extraite. Chaque gramme de plante libère son profil complet sous conditions adaptées."
+                    : lang === 'de'
+                    ? "Werfen Sie keine unvollständig extrahierten Kräuter mehr weg. Jedes Gramm gibt sein volles Profil unter optimalen Bedingungen frei."
+                    : "Stop discarding poorly extracted botanicals. Every gram releases its complete profile under tailored conditions."}
                 </p>
               </div>
 
@@ -412,10 +669,14 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                   <div className="w-6 h-6 rounded-full bg-[#3E4A3D]/10 flex items-center justify-center shrink-0">
                     <Check className="w-3.5 h-3.5 text-[#3E4A3D]" />
                   </div>
-                  <span>Pour l'Autonomie Botanique</span>
+                  <span>{lang === 'fr' ? "Pour l'Autonomie Botanique" : lang === 'de' ? "Für botanische Autonomie" : "For Botanical Autonomy"}</span>
                 </div>
                 <p className="text-xs sm:text-sm text-[#3E4A3D]/75 leading-relaxed">
-                  Reprenez le contrôle complet sur vos préparations. Vous choisissez la plante, le solvant noble et la concentration exacte.
+                  {lang === 'fr'
+                    ? "Reprenez le contrôle complet sur vos préparations. Vous choisissez la plante, le solvant noble et la concentration exacte."
+                    : lang === 'de'
+                    ? "Übernehmen Sie die volle Kontrolle über Ihre Zubereitungen. Sie wählen Pflanze, Lösungsmittel und exakte Konzentration."
+                    : "Reclaim complete control over your preparations. You choose the botanical, the clean solvent, and the exact concentration."}
                 </p>
               </div>
 
@@ -424,10 +685,14 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                   <div className="w-6 h-6 rounded-full bg-[#3E4A3D]/10 flex items-center justify-center shrink-0">
                     <Check className="w-3.5 h-3.5 text-[#3E4A3D]" />
                   </div>
-                  <span>Par la Précision</span>
+                  <span>{lang === 'fr' ? "Par la Précision" : lang === 'de' ? "Durch Präzision" : "By Precision"}</span>
                 </div>
                 <p className="text-xs sm:text-sm text-[#3E4A3D]/75 leading-relaxed">
-                  Chaque extraction devient un protocole documenté, reproductible à volonté sans incertitude ni risque de brûler vos actifs.
+                  {lang === 'fr'
+                    ? "Chaque extraction devient un protocole documenté, reproductible à volonté sans incertitude ni risque de brûler vos actifs."
+                    : lang === 'de'
+                    ? "Jede Extraktion wird zu einem dokumentierten, jederzeit reproduzierbaren Protokoll ohne Risiko, Wirkstoffe zu verbrennen."
+                    : "Every extraction becomes a documented, repeatable protocol without guesswork or scorching delicate actives."}
                 </p>
               </div>
             </div>
@@ -440,7 +705,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-xs font-black uppercase tracking-[0.25em] text-[#C8AB8A] mb-3 block">
-              Rigueur Comparée
+              {lang === 'fr' ? "Rigueur Comparée" : lang === 'de' ? "Vergleichsrigorosität" : "Comparative Precision"}
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3E4A3D] mb-4">
               {lang === 'fr' 
@@ -450,7 +715,11 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 : "Laboratory-Grade Herbal Infusion: BloomLab vs. Traditional Methods"}
             </h2>
             <p className="text-base text-[#3E4A3D]/70 max-w-2xl mx-auto">
-              Mesure concrète des paramètres physiques qui conditionnent la richesse et la biodisponibilité de vos infusions végétales, macérations huileuses, décoctions et teintures de plantes médicinales.
+              {lang === 'fr'
+                ? "Mesure concrète des paramètres physiques qui conditionnent la richesse et la biodisponibilité de vos infusions végétales, macérations huileuses, décoctions et teintures de plantes médicinales."
+                : lang === 'de'
+                ? "Konkreter Vergleich der physikalischen Parameter, die Wirkstoffdichte und Bioverfügbarkeit Ihrer Kräuterauszüge, Ölmazerate, Dekokte und Tinkturen bestimmen."
+                : "Side-by-side comparison of physical parameters governing the potency and bioavailability of your herbal infusions, oil macerates, decoctions, and tinctures."}
             </p>
           </div>
 
@@ -458,41 +727,41 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
             <table className="w-full text-left border-collapse bg-white rounded-3xl overflow-hidden shadow-xs border border-[#3E4A3D]/10">
               <thead>
                 <tr className="bg-[#3E4A3D] text-white text-xs sm:text-sm">
-                  <th className="p-5 font-bold">Critère d'Extraction</th>
-                  <th className="p-5 font-bold text-center text-white/70">Infusion / Bain-Marie</th>
-                  <th className="p-5 font-bold text-center text-[#C8AB8A]">BloomLab® Officiel</th>
+                  <th className="p-5 font-bold">{lang === 'fr' ? "Critère d'Extraction" : lang === 'de' ? "Extraktionskriterium" : "Extraction Criterion"}</th>
+                  <th className="p-5 font-bold text-center text-white/70">{lang === 'fr' ? "Casserole / Bain-Marie / Mixeur" : lang === 'de' ? "Kochtopf / Wasserbad / Mixer" : "Saucepan / Double Boiler / Blender"}</th>
+                  <th className="p-5 font-bold text-center text-[#C8AB8A]">{lang === 'fr' ? "BloomLab® Officiel" : lang === 'de' ? "Offizielles BloomLab®" : "Official BloomLab®"}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 text-xs sm:text-sm">
                 <tr>
-                  <td className="p-5 font-semibold text-[#3E4A3D]">Précision de la température</td>
-                  <td className="p-5 text-center text-rose-700 font-medium">± 5°C à 15°C (pics incontrôlés)</td>
-                  <td className="p-5 text-center font-bold text-emerald-700 bg-emerald-50/50">± 0,5°C asservie</td>
+                  <td className="p-5 font-semibold text-[#3E4A3D]">{lang === 'fr' ? "Précision de la température" : lang === 'de' ? "Temperaturpräzision" : "Temperature precision"}</td>
+                  <td className="p-5 text-center text-rose-700 font-medium">{lang === 'fr' ? "± 5°C à 15°C (pics incontrôlés, actifs brûlés)" : lang === 'de' ? "± 5°C bis 15°C (unkontrollierte Spitzen)" : "± 5°C to 15°C (uncontrolled spikes)"}</td>
+                  <td className="p-5 text-center font-bold text-emerald-700 bg-emerald-50/50">{lang === 'fr' ? "± 0,5°C asservie (chambre fermée, 0 évaporation)" : lang === 'de' ? "± 0,5°C geregelt (geschlossen, 0 Verdampfung)" : "± 0.5°C closed-loop (zero evaporation)"}</td>
                 </tr>
                 <tr>
-                  <td className="p-5 font-semibold text-[#3E4A3D]">Préservation des principes thermolabiles</td>
-                  <td className="p-5 text-center text-rose-700 font-medium">Dégradation rapide &gt; 80°C</td>
-                  <td className="p-5 text-center font-bold text-emerald-700 bg-emerald-50/50">Totum préservé intact</td>
+                  <td className="p-5 font-semibold text-[#3E4A3D]">{lang === 'fr' ? "Préservation des plantes & arômes" : lang === 'de' ? "Schutz von Pflanzen & Aromen" : "Herb & aroma preservation"}</td>
+                  <td className="p-5 text-center text-rose-700 font-medium">{lang === 'fr' ? "Lames de mixeur qui broient (chlorophylle amère) ou dégradation > 80°C" : lang === 'de' ? "Mixmesser zerkleinern (bitteres Chlorophyll) oder Abbau > 80°C" : "Blender blades shred herbs (bitter chlorophyll) or degrade > 80°C"}</td>
+                  <td className="p-5 text-center font-bold text-emerald-700 bg-emerald-50/50">{lang === 'fr' ? "Brassage doux sans broyer la plante — Totum intact" : lang === 'de' ? "Sanftes Rühren ohne Zerkleinern — Totum intakt" : "Gentle stirring without shredding — intact Totum"}</td>
                 </tr>
                 <tr>
-                  <td className="p-5 font-semibold text-[#3E4A3D]">Matériau en contact avec les solvants</td>
-                  <td className="p-5 text-center text-slate-500">Aluminium réactif / Plastique</td>
-                  <td className="p-5 text-center font-bold text-emerald-700 bg-emerald-50/50">Inox 304 biocompatible certifié</td>
+                  <td className="p-5 font-semibold text-[#3E4A3D]">{lang === 'fr' ? "Matériau en contact avec les solvants" : lang === 'de' ? "Material im Kontakt mit Lösungsmitteln" : "Solvent-contact material"}</td>
+                  <td className="p-5 text-center text-slate-500">{lang === 'fr' ? "Revêtements antiadhésifs chimiques / Aluminium / Plastique" : lang === 'de' ? "Chemische Beschichtungen / Aluminium / Kunststoff" : "Chemical non-stick coatings / Aluminum / Plastic"}</td>
+                  <td className="p-5 text-center font-bold text-emerald-700 bg-emerald-50/50">{lang === 'fr' ? "Cuve 100 % Inox 304 sans revêtement chimique" : lang === 'de' ? "100 % Edelstahl 304 ohne chemische Beschichtung" : "100% 304 Steel tank with zero chemical coating"}</td>
                 </tr>
                 <tr>
-                  <td className="p-5 font-semibold text-[#3E4A3D]">Extraction cinétique vortex</td>
-                  <td className="p-5 text-center text-slate-500">Néant (stagnation passive)</td>
-                  <td className="p-5 text-center font-bold text-emerald-700 bg-emerald-50/50">Vortex laminaire continu</td>
+                  <td className="p-5 font-semibold text-[#3E4A3D]">{lang === 'fr' ? "Extraction cinétique vortex" : lang === 'de' ? "Kinetische Vortex-Extraktion" : "Kinetic vortex extraction"}</td>
+                  <td className="p-5 text-center text-slate-500">{lang === 'fr' ? "Néant (stagnation passive ou émulsion forcée)" : lang === 'de' ? "Keine (passive Stagnation)" : "None (passive stagnation or harsh blending)"}</td>
+                  <td className="p-5 text-center font-bold text-emerald-700 bg-emerald-50/50">{lang === 'fr' ? "Vortex laminaire continu sans écraser les fibres" : lang === 'de' ? "Kontinuierlicher laminarer Vortex" : "Continuous laminar vortex"}</td>
                 </tr>
                 <tr>
-                  <td className="p-5 font-semibold text-[#3E4A3D]">Temps d'obtention d'un macérât huileux</td>
-                  <td className="p-5 text-center text-slate-500">4 à 6 semaines au soleil</td>
-                  <td className="p-5 text-center font-bold text-emerald-700 bg-emerald-50/50">2 à 4 heures sous vide contrôlé</td>
+                  <td className="p-5 font-semibold text-[#3E4A3D]">{lang === 'fr' ? "Temps d'obtention d'un macérât huileux" : lang === 'de' ? "Dauer für einen Ölauszug" : "Oil maceration duration"}</td>
+                  <td className="p-5 text-center text-slate-500">{lang === 'fr' ? "6 semaines au soleil (risque d'oxydation et de rancissement)" : lang === 'de' ? "6 Wochen in der Sonne (Oxidationsrisiko)" : "6 weeks in sunlight (rancidity & oxidation risk)"}</td>
+                  <td className="p-5 text-center font-bold text-emerald-700 bg-emerald-50/50">{lang === 'fr' ? "2h à 4h à l'abri de la lumière, zéro rancissement" : lang === 'de' ? "2 bis 4 Std. lichtgeschützt, null Ranzigkeit" : "2h to 4h protected from light, zero rancidity"}</td>
                 </tr>
                 <tr>
-                  <td className="p-5 font-semibold text-[#3E4A3D]">Garantie constructeur</td>
-                  <td className="p-5 text-center text-slate-500">Variable</td>
-                  <td className="p-5 text-center font-bold text-emerald-700 bg-emerald-50/50">Garantie 1 an complète</td>
+                  <td className="p-5 font-semibold text-[#3E4A3D]">{lang === 'fr' ? "Garantie constructeur" : lang === 'de' ? "Herstellergarantie" : "Manufacturer warranty"}</td>
+                  <td className="p-5 text-center text-slate-500">{lang === 'fr' ? "Variable" : lang === 'de' ? "Variabel" : "Variable"}</td>
+                  <td className="p-5 text-center font-bold text-emerald-700 bg-emerald-50/50">{lang === 'fr' ? "Garantie 1 an" : lang === 'de' ? "1 Jahr Garantie" : "1-Year Warranty"}</td>
                 </tr>
               </tbody>
             </table>
@@ -506,10 +775,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
     <div className="text-center max-w-3xl mx-auto mb-12">
       <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#A8B8A0]/10 text-[#A8B8A0] text-xs font-bold uppercase tracking-widest mb-4">
         <Compass className="w-3.5 h-3.5 text-[#C8AB8A]" />
-        <span>Ethnobotanique & Pharmacopée Ancestrale</span>
+        <span>{lang === 'fr' ? "Ethnobotanique & Pharmacopée Ancestrale" : lang === 'de' ? "Ethnobotanik & traditionelle Pharmakopöe" : "Ethnobotany & Ancestral Pharmacopoeia"}</span>
       </div>
       <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#3E4A3D] mb-4 tracking-tight">
-        L'ingénierie moderne au service des textes fondateurs
+        {lang === 'fr' ? "L'ingénierie moderne au service des textes fondateurs" : lang === 'de' ? "Moderne Ingenieurskunst im Dienst traditioneller Kräuterkunst" : "Modern engineering at the service of foundational botanical texts"}
       </h2>
     </div>
 
@@ -518,10 +787,22 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
       
       <div className="max-w-none text-[#3E4A3D]/80 space-y-6 text-base sm:text-lg leading-relaxed font-light">
         <p className="first-letter:text-5xl first-letter:font-bold first-letter:text-[#A8B8A0] first-letter:mr-3 first-letter:float-left">
-          La BloomLab n'est pas une invention ex nihilo. Elle est la réponse technologique aux limites des textes fondateurs. Dans l'Ayurveda, la méthode du <em>Taila Paka</em> (cuisson lente des huiles médicinales) exigeait un contrôle visuel et tactile épuisant pour éviter que les plantes ne carbonisent. Dans la pharmacopée chinoise du <em>Shennong Ben Cao Jing</em>, on savait déjà que certaines racines exigeaient des décoctions longues, tandis que les fleurs nécessitaient des infusions flash.
+          {lang === 'fr' ? (
+            <>La BloomLab n'est pas une invention ex nihilo. Elle est la réponse technologique aux limites des textes fondateurs. Dans l'Ayurveda, la méthode du <em>Taila Paka</em> (cuisson lente des huiles végétales) exigeait un contrôle visuel et tactile épuisant pour éviter que les plantes ne carbonisent. Dans la pharmacopée chinoise du <em>Shennong Ben Cao Jing</em>, on savait déjà que certaines racines exigeaient des décoctions longues, tandis que les fleurs nécessitaient des infusions flash.</>
+          ) : lang === 'de' ? (
+            <>BloomLab entstand nicht aus dem Nichts, sondern als technologische Antwort auf jahrtausendealte Kräuterkunst. Im Ayurveda verlangte die Methode des <em>Taila Paka</em> (langsames Einkochen pflanzlicher Öle) höchste Wachsamkeit, um ein Verbrennen zu verhindern. Auch das chinesische <em>Shennong Ben Cao Jing</em> wusste bereits, dass harte Wurzeln lange Dekokte und zarte Blüten kurze Auszüge erfordern.</>
+          ) : (
+            <>BloomLab was not invented in a vacuum—it is the technological answer to classical botanical treatises. In Ayurveda, the <em>Taila Paka</em> method required constant manual supervision so herbs would never scorch. In Chinese tradition (<em>Shennong Ben Cao Jing</em>), practitioners knew dense roots required sustained decoctions while delicate blossoms demanded gentle infusions.</>
+          )}
         </p>
         <p>
-          Le drame de l'herboristerie occidentale moderne a été de tout réduire à l'eau bouillante, ignorant la <strong>polarité des solvants</strong> et la <strong>thermolabilité des enzymes</strong>. La BloomLab réconcilie la sagesse empirique de l'Orient avec la rigueur de la biochimie du XXIe siècle. Elle permet d'appliquer le <strong>Séquençage Actif A/B</strong> (extraction hydrophile puis lipophile) avec une précision de ±0,5°C que même les meilleurs laboratoires peinent à démocratiser.
+          {lang === 'fr' ? (
+            <>Le drame de l'herboristerie occidentale moderne a été de tout réduire à l'eau bouillante, ignorant la <strong>polarité des solvants</strong> et la <strong>thermolabilité des enzymes</strong>. La BloomLab réconcilie la sagesse empirique de l'Orient avec la rigueur de la biochimie du XXIe siècle. Elle permet d'appliquer la <strong>Double Extraction Intelligente A/B</strong> (extraction hydrophile puis lipophile) avec une précision de ±0,5°C que même les meilleurs laboratoires peinent à démocratiser.</>
+          ) : lang === 'de' ? (
+            <>Die moderne westliche Praxis reduzierte alles oft auf kochendes Wasser und ignorierte die <strong>Polarität der Lösungsmittel</strong> sowie die <strong>Hitzeempfindlichkeit pflanzlicher Enzyme</strong>. BloomLab verbindet jahrtausendealtes Erfahrungswissen mit moderner Biochemie und ermöglicht die <strong>Intelligente Doppelextraktion A/B</strong> (hydrophile und lipophile Extraktion) mit einer Genauigkeit von ±0,5°C direkt bei Ihnen zu Hause.</>
+          ) : (
+            <>Modern domestic herbalism often reduced everything to boiling water, overlooking <strong>solvent polarity</strong> and <strong>heat sensitivity</strong>. BloomLab bridges ancestral Eastern wisdom with 21st-century biochemistry, bringing <strong>Smart Dual Extraction A/B</strong> (hydrophilic then lipophilic extraction) with ±0.5°C precision straight to your kitchen.</>
+          )}
         </p>
       </div>
 
@@ -530,7 +811,11 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
           <Activity className="w-6 h-6 text-[#E8772E]" />
         </div>
         <p className="text-sm sm:text-base italic text-[#1E2E25] font-medium leading-snug">
-          « Nous n'avons pas réinventé la plante. Nous avons domestiqué la cinétique d'extraction pour que le Totum arrive intact jusqu'à vos récepteurs cellulaires. »
+          {lang === 'fr'
+            ? "« Nous n'avons pas réinventé la plante. Nous avons domestiqué la cinétique d'extraction pour que le Totum reste intact dans vos préparations. »"
+            : lang === 'de'
+            ? "„Wir haben die Pflanze nicht neu erfunden. Wir haben die Extraktionskinetik gebändigt, damit das volle pflanzliche Totum in Ihren Zubereitungen erhalten bleibt.“"
+            : "“We did not reinvent the plant. We mastered extraction kinetics so the full-spectrum Totum stays intact in every preparation.”"}
         </p>
       </div>
     </div>
@@ -542,7 +827,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-black uppercase tracking-[0.25em] text-[#C8AB8A] mb-3 block">
-              Applications Pratiques
+              {lang === 'fr' ? "Applications Pratiques" : lang === 'de' ? "Praktische Anwendungen" : "Practical Applications"}
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3E4A3D] mb-4">
               {lang === 'fr' 
@@ -552,12 +837,61 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 : "Preserve the Totum of Medicinal Plants: Oil Maceration, Tincture, Decoction & Infusion"}
             </h2>
             <p className="text-base text-[#3E4A3D]/70">
-              Un seul instrument polyvalent pour vos remèdes naturels maison, vos plantes adaptogènes de terrain, vos soins cosmétiques et vos préparations culinaires d'exception.
+              {lang === 'fr'
+                ? "Un seul instrument polyvalent pour vos préparations botaniques maison, vos plantes adaptogènes, vos soins cosmétiques et vos huiles culinaires d'exception."
+                : lang === 'de'
+                ? "Ein einziges vielseitiges Gerät für Ihre pflanzlichen Hausrezepturen, Adaptogene, Naturkosmetik und aromatischen Küchenöle."
+                : "One versatile instrument for home botanical preparations, adaptogenic infusions, natural skincare, and gourmet culinary oils."}
             </p>
           </div>
 
           <div className="space-y-12">
-            {/* Niveau 1: Culinaire */}
+            {/* Niveau 1: Cosmétique Botanique Maison (Pilier N°1) */}
+            <div className="grid xl:grid-cols-[400px_minmax(0,1fr)] gap-10 items-center bg-[#FAF7F2] rounded-3xl p-8 md:p-12 border border-[#3E4A3D]/5 shadow-xs">
+              <div 
+                className="relative min-h-[360px] sm:min-h-[440px] h-[400px] sm:h-[460px] rounded-2xl overflow-hidden bg-slate-200 cursor-zoom-in group order-2 xl:order-1"
+                onClick={() => setFullscreenImage(bloomSoinsImg)}
+              >
+                <img 
+                  src={bloomSoinsImg} 
+                  alt="Cosmétique Botanique Maison — Sérums, Huiles et Baumes" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                  <Maximize2 className="w-6 h-6 text-white" />
+                </div>
+              </div>
+              <div className="order-1 xl:order-2">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-[#C8AB8A]/10 rounded-2xl flex items-center justify-center text-[#C8AB8A]">
+                    <FlaskConical className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-[#C8AB8A] block">
+                      {lang === 'fr' ? "Pilier 1 • Laboratoire Cosmétique Maison" : lang === 'de' ? "Säule 1 • Naturkosmetik-Labor Zuhause" : "Pillar 1 • Home Cosmetic Lab"}
+                    </span>
+                    <h3 className="text-xl md:text-2xl font-bold text-[#3E4A3D]">
+                      {lang === 'fr' ? "Cosmétique Botanique Maison & Macérâts de Soin" : lang === 'de' ? "Naturkosmetik DIY & Pflegemazerate" : "Homemade Botanical Cosmetics & Care Macerates"}
+                    </h3>
+                  </div>
+                </div>
+                <p className="text-base text-[#3E4A3D]/75 mb-6 leading-relaxed italic">
+                  {t.levels?.lvl2?.quote || "Créez vos sérums, baumes et huiles de soin purs sans conservateurs ni additifs pétrochimiques."}
+                </p>
+                <p className="text-sm text-[#3E4A3D]/70 mb-6 leading-relaxed">
+                  {t.levels?.lvl2?.description || "Macérâts de calendula, de pâquerette ou de millepertuis préparés en 2 heures avec une fraîcheur absolue."}
+                </p>
+                <button 
+                  onClick={() => onNavigate('cosmetiques')} 
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#3E4A3D] hover:bg-[#2D372C] text-white rounded-xl text-sm font-bold transition-all cursor-pointer"
+                >
+                  <span>{t.levels?.lvl2?.cta || "Découvrir les cosmétiques"}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+
+            {/* Niveau 2: Gastronomie Botanique */}
             <div className="grid xl:grid-cols-[minmax(0,1fr)_400px] gap-10 items-center bg-[#FAF7F2] rounded-3xl p-8 md:p-12 border border-[#3E4A3D]/5 shadow-xs">
               <div>
                 <div className="flex items-center gap-3 mb-4">
@@ -565,7 +899,9 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                     <Utensils className="w-6 h-6" />
                   </div>
                   <div>
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[#C8AB8A] block">Niveau 1</span>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-[#C8AB8A] block">
+                      {lang === 'fr' ? "Pilier 2 • Gastronomie Botanique" : lang === 'de' ? "Säule 2 • Botanische Küche" : "Pillar 2 • Botanical Gastronomy"}
+                    </span>
                     <h3 className="text-xl md:text-2xl font-bold text-[#3E4A3D]">{t.levels?.lvl1?.title || "Gastronomie & Huiles Vivantes"}</h3>
                   </div>
                 </div>
@@ -598,73 +934,56 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               </div>
             </div>
 
-            {/* Niveau 2: Cosmétique */}
-            <div className="grid xl:grid-cols-[400px_minmax(0,1fr)] gap-10 items-center bg-[#FAF7F2] rounded-3xl p-8 md:p-12 border border-[#3E4A3D]/5 shadow-xs">
-              <div 
-                className="relative min-h-[360px] sm:min-h-[440px] h-[400px] sm:h-[460px] rounded-2xl overflow-hidden bg-slate-200 cursor-zoom-in group order-2 xl:order-1"
-                onClick={() => setFullscreenImage(bloomSoinsImg)}
-              >
-                <img 
-                  src={bloomSoinsImg} 
-                  alt="Soins et Dermo-Cosmétique" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <Maximize2 className="w-6 h-6 text-white" />
-                </div>
-              </div>
-              <div className="order-1 xl:order-2">
+            {/* Niveau 3: Phytothérapie de Terrain */}
+            <div className="grid xl:grid-cols-[minmax(0,1fr)_400px] gap-10 items-center bg-[#FAF7F2] rounded-3xl p-8 md:p-12 border border-[#C8AB8A]/20 shadow-sm">
+              <div>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 bg-[#C8AB8A]/10 rounded-2xl flex items-center justify-center text-[#C8AB8A]">
-                    <FlaskConical className="w-6 h-6" />
+                    <Activity className="w-6 h-6" />
                   </div>
                   <div>
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[#C8AB8A] block">Niveau 2</span>
-                    <h3 className="text-xl md:text-2xl font-bold text-[#3E4A3D]">{t.levels?.lvl2?.title || "Dermo-Cosmétique & Macérâts Actifs"}</h3>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-[#C8AB8A] block">
+                      {lang === 'fr' ? "Niveau 3" : lang === 'de' ? "Stufe 3" : "Level 3"}
+                    </span>
+                    <h3 className="text-xl md:text-2xl font-bold text-[#3E4A3D]">
+                      {lang === 'fr'
+                        ? "Herboristerie Systémique & Reset"
+                        : lang === 'de'
+                        ? "Systemische Pflanzenkunde & Reset"
+                        : "Systemic Herbalism & Terrain Reset"}
+                    </h3>
                   </div>
                 </div>
                 <p className="text-base text-[#3E4A3D]/75 mb-6 leading-relaxed italic">
-                  {t.levels?.lvl2?.quote || "Créez vos sérums, baumes et huiles de soin purs sans conservateurs ni additifs pétrochimiques."}
+                  {lang === 'fr'
+                    ? "« Rééquilibrez le terrain en profondeur grâce à la précision de l'extraction végétale à domicile. »"
+                    : lang === 'de'
+                    ? "„Bringen Sie Ihr biologisches Terrain mit präziser häuslicher Pflanzenextraktion wieder ins Gleichgewicht.“"
+                    : "“Rebalance your biological terrain from within through precision botanical extraction at home.”"}
                 </p>
                 <p className="text-sm text-[#3E4A3D]/70 mb-6 leading-relaxed">
-                  {t.levels?.lvl2?.description || "Macérâts de calendula, de pâquerette ou de millepertuis préparés en quelques heures avec une fraîcheur absolue."}
+                  {lang === 'fr' ? (
+                    <>Accédez aux protocoles de <strong>Reset Homéostatique (84 jours)</strong>. Accompagnez vos terrains prioritaires : sphère digestive, axe de réponse au stress ou vitalité métabolique avec des extraits concentrés et biodisponibles.</>
+                  ) : lang === 'de' ? (
+                    <>Entdecken Sie unsere <strong>84-Tage-Protokolle zum homöostatischen Reset</strong>. Unterstützen Sie gezielt Verdauung, Stressachse und Stoffwechselbalance mit bioverfügbaren Vollspektrum-Extrakten.</>
+                  ) : (
+                    <>Access structured <strong>84-day Homeostatic Reset protocols</strong> targeting digestive balance, stress-axis resilience, and metabolic vitality with bioavailable full-spectrum extracts.</>
+                  )}
                 </p>
                 <button 
-                  onClick={() => onNavigate('cosmetiques')} 
+                  onClick={() => onNavigate('library')} 
                   className="inline-flex items-center gap-2 px-6 py-3 bg-[#3E4A3D] hover:bg-[#2D372C] text-white rounded-xl text-sm font-bold transition-all cursor-pointer"
                 >
-                  <span>{t.levels?.lvl2?.cta || "Découvrir les cosmétiques"}</span>
+                  <span>
+                    {lang === 'fr'
+                      ? "Explorer les Protocoles & Recettes"
+                      : lang === 'de'
+                      ? "Protokolle & Rezepte entdecken"
+                      : "Explore Protocols & Recipes"}
+                  </span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
-            </div>
-
-            {/* Niveau 3: Phytothérapie de Terrain (Optimized for Reset Protocol) */}
-<div className="grid xl:grid-cols-[minmax(0,1fr)_400px] gap-10 items-center bg-[#FAF7F2] rounded-3xl p-8 md:p-12 border border-[#C8AB8A]/20 shadow-sm">
-  <div>
-    <div className="flex items-center gap-3 mb-4">
-      <div className="w-12 h-12 bg-[#C8AB8A]/10 rounded-2xl flex items-center justify-center text-[#C8AB8A]">
-        <Activity className="w-6 h-6" />
-      </div>
-      <div>
-        <span className="text-[10px] font-black uppercase tracking-widest text-[#C8AB8A] block">Niveau 3</span>
-        <h3 className="text-xl md:text-2xl font-bold text-[#3E4A3D]">Herboristerie Systémique & Reset</h3>
-      </div>
-    </div>
-    <p className="text-base text-[#3E4A3D]/75 mb-6 leading-relaxed italic">
-      "Ne traitez pas le symptôme, réinitialisez le terrain. La phytothérapie clinique à domicile."
-    </p>
-    <p className="text-sm text-[#3E4A3D]/70 mb-6 leading-relaxed">
-      Accédez aux protocoles de <strong>Reset Homéostatique (84 jours)</strong>. Ciblez précisément vos terrains biologiques : T1 (Intestin/Leaky Gut), T4 (Axe HPA/Stress), ou T8 (Adipeux Viscéral) avec des extraits hyper-concentrés et biodisponibles.
-    </p>
-    <button 
-      onClick={() => onNavigate('library')} 
-      className="inline-flex items-center gap-2 px-6 py-3 bg-[#3E4A3D] hover:bg-[#2D372C] text-white rounded-xl text-sm font-bold transition-all cursor-pointer"
-    >
-      <span>Explorer les Protocoles Cliniques</span>
-      <ArrowRight className="w-4 h-4" />
-    </button>
-  </div>
 
               <div 
                 className="relative min-h-[360px] sm:min-h-[440px] h-[400px] sm:h-[460px] rounded-2xl overflow-hidden bg-slate-200 cursor-zoom-in group"
@@ -684,63 +1003,210 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         </div>
       </section>
 
-      {/* 6. WHAT'S IN THE BOX & 1-YEAR WARRANTY */}
-      <section className="py-20 md:py-28 bg-[#FAF7F2]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-black uppercase tracking-[0.25em] text-[#C8AB8A] mb-3 block">
-              Équipement Complet
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3E4A3D] mb-4">
-              Ce que contient votre coffret BloomLab®
-            </h2>
-            <p className="text-base text-[#3E4A3D]/70">
-              Tout le nécessaire pour démarrer vos extractions immédiatement dans des conditions professionnelles.
-            </p>
+      {/* 5.5 BLOC RENTABILITÉ & MODE D'EMPLOI VISUEL */}
+      <section className="py-16 md:py-24 bg-[#FAF7F2] border-t border-[#E7DFD3]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+          {/* Bloc Rentabilité */}
+          <div className="space-y-10">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <span className="text-xs font-black uppercase tracking-[0.25em] text-[#C8AB8A] block">
+                {lang === 'fr' ? "Rentabilité" : lang === 'de' ? "Wirtschaftlichkeit" : "Value & ROI"}
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3E4A3D]">
+                {lang === 'fr' ? "Un investissement rapidement rentabilisé" : lang === 'de' ? "Eine Investition, die sich schnell bezahlt macht" : "An investment that quickly pays for itself"}
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white p-7 rounded-3xl border border-[#E7DFD3] shadow-xs space-y-2.5">
+                <div className="text-xs font-black uppercase tracking-wider text-[#E8772E]">
+                  {lang === 'fr' ? "Cosmétique maison" : lang === 'de' ? "Naturkosmetik DIY" : "Homemade skincare"}
+                </div>
+                <p className="text-sm text-[#3E4A3D]/85 leading-relaxed">
+                  {lang === 'fr'
+                    ? "Un sérum visage naturel coûte en moyenne 45 à 70 € pour 30 ml en boutique. Fait maison avec BloomLab® : moins de 4 € le flacon."
+                    : lang === 'de'
+                    ? "Ein natürliches Gesichtsserum kostet im Handel 45 bis 70 € für 30 ml. Hausgemacht mit BloomLab®: unter 4 € pro Fläschchen."
+                    : "A natural face serum costs €45–€70 per 30ml retail. Homemade with BloomLab®: under €4 per bottle."}
+                </p>
+              </div>
+              <div className="bg-white p-7 rounded-3xl border border-[#E7DFD3] shadow-xs space-y-2.5">
+                <div className="text-xs font-black uppercase tracking-wider text-[#E8772E]">
+                  {lang === 'fr' ? "Herboristerie & soins" : lang === 'de' ? "Kräuterkunde & Pflege" : "Herbalism & care"}
+                </div>
+                <p className="text-sm text-[#3E4A3D]/85 leading-relaxed">
+                  {lang === 'fr'
+                    ? "Un flacon de macérât huileux concentré (calendula, millepertuis, arnica) coûte 18 à 25 €. Une seule extraction vous donne l'équivalent de 10 flacons."
+                    : lang === 'de'
+                    ? "Eine Flasche konzentriertes Ölmazerat (Calendula, Johanniskraut, Arnika) kostet 18 bis 25 €. Eine einzige Extraktion ergibt das Äquivalent von 10 Fläschchen."
+                    : "A bottle of concentrated oil macerate (calendula, St. John's wort, arnica) costs €18–€25. A single extraction yields the equivalent of 10 bottles."}
+                </p>
+              </div>
+              <div className="bg-[#3E4A3D] text-white p-7 rounded-3xl shadow-md flex flex-col justify-center space-y-2">
+                <div className="text-xs font-black uppercase tracking-wider text-[#C8AB8A]">
+                  {lang === 'fr' ? "Verdict" : lang === 'de' ? "Fazit" : "Bottom line"}
+                </div>
+                <p className="text-lg font-black leading-snug text-white">
+                  {lang === 'fr'
+                    ? "Rentabilisée dès vos 4 premières préparations maison."
+                    : lang === 'de'
+                    ? "Bereits ab Ihren ersten 4 hausgemachten Zubereitungen amortisiert."
+                    : "Pays for itself within your first 4 homemade batches."}
+                </p>
+              </div>
+            </div>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-2xl border border-[#3E4A3D]/5 shadow-xs flex flex-col items-center text-center">
-              <div className="w-12 h-12 rounded-xl bg-[#3E4A3D]/5 flex items-center justify-center text-[#3E4A3D] mb-4">
-                <Package className="w-6 h-6 text-[#C8AB8A]" />
-              </div>
-              <h4 className="font-bold text-[#3E4A3D] mb-1">Unité BloomLab®</h4>
-              <p className="text-xs text-[#3E4A3D]/70">Cuve Inox 304 biocompatible avec régulation numérique ±0,5°C.</p>
+          {/* Mode d'emploi visuel (5 étapes simples) */}
+          <div className="space-y-10">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <span className="text-xs font-black uppercase tracking-[0.25em] text-[#C8AB8A] block">
+                {lang === 'fr' ? "Mode d'emploi visuel" : lang === 'de' ? "Schritt-für-Schritt-Anleitung" : "Visual Guide"}
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3E4A3D]">
+                {lang === 'fr' ? "Comment réussir votre première extraction en 5 gestes ?" : lang === 'de' ? "Wie gelingt Ihre erste Extraktion in 5 Schritten?" : "How to succeed on your first extraction in 5 steps?"}
+              </h2>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl border border-[#3E4A3D]/5 shadow-xs flex flex-col items-center text-center">
-              <div className="w-12 h-12 rounded-xl bg-[#3E4A3D]/5 flex items-center justify-center text-[#3E4A3D] mb-4">
-                <Layers className="w-6 h-6 text-[#C8AB8A]" />
-              </div>
-              <h4 className="font-bold text-[#3E4A3D] mb-1">Panier Filtrant Inox</h4>
-              <p className="text-xs text-[#3E4A3D]/70">Filtration micrométrique pour séparer le marc végétal avec netteté.</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-[#3E4A3D]/5 shadow-xs flex flex-col items-center text-center">
-              <div className="w-12 h-12 rounded-xl bg-[#3E4A3D]/5 flex items-center justify-center text-[#3E4A3D] mb-4">
-                <FlaskConical className="w-6 h-6 text-[#C8AB8A]" />
-              </div>
-              <h4 className="font-bold text-[#3E4A3D] mb-1">Guide des Protocoles</h4>
-              <p className="text-xs text-[#3E4A3D]/70">Manuel pas-à-pas avec températures et durées pour plus de 50 plantes.</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-[#3E4A3D]/5 shadow-xs flex flex-col items-center text-center">
-              <div className="w-12 h-12 rounded-xl bg-[#3E4A3D]/5 flex items-center justify-center text-[#3E4A3D] mb-4">
-                <ShieldCheck className="w-6 h-6 text-[#C8AB8A]" />
-              </div>
-              <h4 className="font-bold text-[#3E4A3D] mb-1">Garantie 1 An</h4>
-              <p className="text-xs text-[#3E4A3D]/70">Garantie constructeur pièces et main-d'œuvre avec support technique dédié.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+              {[
+                {
+                  step: "01",
+                  text: lang === 'fr'
+                    ? "Choisissez votre recette dans le guide digital (100 recettes fournies) ou la Bloom Academy."
+                    : lang === 'de'
+                    ? "Wählen Sie ein Rezept im digitalen Leitfaden (100 Rezepte) oder in der Bloom Academy."
+                    : "Choose your recipe from the 100-recipe digital guide or Bloom Academy."
+                },
+                {
+                  step: "02",
+                  text: lang === 'fr'
+                    ? "Placez vos plantes (sèches ou fraîches) dans le panier filtrant en inox."
+                    : lang === 'de'
+                    ? "Geben Sie getrocknete oder frische Pflanzen in den Edelstahl-Filterkorb."
+                    : "Place dried or fresh botanicals inside the stainless mesh basket."
+                },
+                {
+                  step: "03",
+                  text: lang === 'fr'
+                    ? "Ajoutez votre solvant (eau filtrée, huile végétale vierge ou alcool alimentaire)."
+                    : lang === 'de'
+                    ? "Fügen Sie Ihr Lösungsmittel hinzu (gefiltertes Wasser, kaltgepresstes Öl oder Speisealkohol)."
+                    : "Add your solvent (filtered water, virgin carrier oil, or food-grade alcohol)."
+                },
+                {
+                  step: "04",
+                  text: lang === 'fr'
+                    ? "Sélectionnez le programme (température & durée) : la machine s'occupe du reste en silence."
+                    : lang === 'de'
+                    ? "Wählen Sie Programm (Temperatur & Dauer): Das Gerät übernimmt den Rest leise."
+                    : "Select program (temperature & time): the machine quietly handles the rest."
+                },
+                {
+                  step: "05",
+                  text: lang === 'fr'
+                    ? "Filtrez avec le sac 90 microns fourni et versez dans votre flacon en verre opaque."
+                    : lang === 'de'
+                    ? "Mit dem beiliegenden 90-Mikron-Beutel filtern und in Ihre Braunglasflasche abfüllen."
+                    : "Filter through the included 90-micron bag and pour into your opaque glass bottle."
+                }
+              ].map((s, idx) => (
+                <div key={idx} className="bg-white p-6 rounded-2xl border border-[#3E4A3D]/10 shadow-xs space-y-3">
+                  <div className="text-2xl font-black text-[#E8772E]">{s.step}</div>
+                  <p className="text-xs sm:text-sm text-[#3E4A3D]/85 leading-relaxed font-medium">{s.text}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* 7. PRICING & FORMULAS (BLOOM COMPLET 59€ & BLOOM LAB 239€) */}
+      {/* 6. CARACTÉRISTIQUES TECHNIQUES & CONTENU DU COFFRET */}
+      <section className="py-20 md:py-28 bg-white border-t border-[#E7DFD3]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="text-center max-w-2xl mx-auto">
+            <span className="text-xs font-black uppercase tracking-[0.25em] text-[#C8AB8A] mb-3 block">
+              {lang === 'fr' ? "Spécifications & Coffret" : lang === 'de' ? "Technische Daten & Lieferumfang" : "Specs & Box Contents"}
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3E4A3D] mb-4">
+              {lang === 'fr' ? "Caractéristiques techniques & contenu du coffret" : lang === 'de' ? "Technische Daten & Lieferumfang Ihres BloomLab®" : "Technical specifications & what's in the box"}
+            </h2>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-[#FAF7F2] p-6 rounded-2xl border border-[#3E4A3D]/10 shadow-xs flex flex-col items-center text-center">
+              <div className="w-12 h-12 rounded-xl bg-[#3E4A3D]/5 flex items-center justify-center text-[#3E4A3D] mb-4">
+                <Package className="w-6 h-6 text-[#C8AB8A]" />
+              </div>
+              <h4 className="font-bold text-[#3E4A3D] mb-1">
+                {lang === 'fr' ? "Matériau de la cuve" : lang === 'de' ? "Behältermaterial" : "Chamber material"}
+              </h4>
+              <p className="text-xs text-[#3E4A3D]/80 leading-relaxed">
+                {lang === 'fr'
+                  ? "Acier inoxydable 304 qualité alimentaire (sans BPA, sans revêtement antiadhésif chimique)"
+                  : lang === 'de'
+                  ? "Edelstahl 304 in Lebensmittelqualität (BPA-frei, ohne Antihaftbeschichtung)"
+                  : "Food-grade 304 stainless steel (BPA-free, zero chemical non-stick coating)"}
+              </p>
+            </div>
+
+            <div className="bg-[#FAF7F2] p-6 rounded-2xl border border-[#3E4A3D]/10 shadow-xs flex flex-col items-center text-center">
+              <div className="w-12 h-12 rounded-xl bg-[#3E4A3D]/5 flex items-center justify-center text-[#3E4A3D] mb-4">
+                <Thermometer className="w-6 h-6 text-[#C8AB8A]" />
+              </div>
+              <h4 className="font-bold text-[#3E4A3D] mb-1">
+                {lang === 'fr' ? "Plage de température" : lang === 'de' ? "Temperaturbereich" : "Temperature range"}
+              </h4>
+              <p className="text-xs text-[#3E4A3D]/80 leading-relaxed">
+                {lang === 'fr'
+                  ? "35 °C à 121 °C (précision ±0,5 °C)"
+                  : lang === 'de'
+                  ? "35 °C bis 121 °C (Präzision ±0,5 °C)"
+                  : "35°C to 121°C (±0.5°C precision)"}
+              </p>
+            </div>
+
+            <div className="bg-[#FAF7F2] p-6 rounded-2xl border border-[#3E4A3D]/10 shadow-xs flex flex-col items-center text-center">
+              <div className="w-12 h-12 rounded-xl bg-[#3E4A3D]/5 flex items-center justify-center text-[#3E4A3D] mb-4">
+                <FlaskConical className="w-6 h-6 text-[#C8AB8A]" />
+              </div>
+              <h4 className="font-bold text-[#3E4A3D] mb-1">
+                {lang === 'fr' ? "Capacité utile" : lang === 'de' ? "Nutzvolumen" : "Working capacity"}
+              </h4>
+              <p className="text-xs text-[#3E4A3D]/80 leading-relaxed">
+                {lang === 'fr'
+                  ? "150 ml à 500 ml (parfait pour ne pas gaspiller d'huiles précieuses type jojoba ou argan)"
+                  : lang === 'de'
+                  ? "150 ml bis 500 ml (ideal, um kostbare Öle wie Jojoba oder Argan nicht zu verschwenden)"
+                  : "150 ml to 500 ml (ideal to avoid wasting precious oils like jojoba or argan)"}
+              </p>
+            </div>
+
+            <div className="bg-[#FAF7F2] p-6 rounded-2xl border border-[#3E4A3D]/10 shadow-xs flex flex-col items-center text-center">
+              <div className="w-12 h-12 rounded-xl bg-[#3E4A3D]/5 flex items-center justify-center text-[#3E4A3D] mb-4">
+                <ShieldCheck className="w-6 h-6 text-[#C8AB8A]" />
+              </div>
+              <h4 className="font-bold text-[#3E4A3D] mb-1">
+                {lang === 'fr' ? "Nettoyage & Garantie 1 an" : lang === 'de' ? "Reinigung & 1 Jahr Garantie" : "Cleaning & 1-Year Warranty"}
+              </h4>
+              <p className="text-xs text-[#3E4A3D]/80 leading-relaxed">
+                {lang === 'fr'
+                  ? "Cycle de rinçage rapide à l'eau chaude avec une goutte de savon doux • Panier 90 µm + 5 accessoires offerts."
+                  : lang === 'de'
+                  ? "Schnellspülzyklus mit warmem Wasser & einem Tropfen milder Seife • 90-µm-Korb + 5 Gratis-Zubehörteile."
+                  : "Quick warm-water rinse cycle with mild soap • 90 µm basket + 5 free starter accessories."}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. PRICING & FORMULAS (BLOOM COMPLET 59€ & BLOOM LAB 229€) */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-black uppercase tracking-[0.25em] text-[#C8AB8A] mb-3 block">
-              Formules & Accompagnement
+              {lang === 'fr' ? "Formules & Accompagnement" : lang === 'de' ? "Optionen & Begleitung" : "Packages & Guidance"}
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3E4A3D] mb-4">
               {t.pricing?.title || "Choisissez Votre Niveau d'Autonomie"}
@@ -752,15 +1218,19 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
             
-            {/* 1. BloomLab Solo (239€ - Machine seule) */}
+            {/* 1. BloomLab Solo (229€ - Machine seule) */}
             <div className="bg-[#FAF7F2] rounded-3xl p-8 border border-[#3E4A3D]/10 flex flex-col justify-between">
               <div>
                 <span className="text-[10px] font-black uppercase tracking-widest text-[#3E4A3D]/60 block mb-2">
-                  Achat Matériel Seul
+                  {lang === 'fr' ? "Achat Matériel Seul" : lang === 'de' ? "Einzelgerät" : "Hardware Only"}
                 </span>
                 <h3 className="text-2xl font-bold text-[#3E4A3D] mb-2">BloomLab® Solo</h3>
                 <p className="text-xs text-[#3E4A3D]/70 mb-4 leading-relaxed">
-                  L'extracteur botanique de laboratoire chez vous pour réaliser vos extractions de plantes en toute autonomie.
+                  {lang === 'fr'
+                    ? "L'infuseur botanique de précision chez vous pour réaliser vos soins cosmétiques et culinaires en toute autonomie."
+                    : lang === 'de'
+                    ? "Der botanische Präzisions-Infuser für Zuhause – für unabhängige Naturkosmetik und Kräuterauszüge."
+                    : "The precision botanical infuser at home for autonomous cosmetic and culinary preparations."}
                 </p>
                 <div className="mb-4">
                   <AmazonRatingBadge lang={lang} />
@@ -773,19 +1243,19 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 <ul className="space-y-3 text-xs text-[#3E4A3D]/80 mb-8">
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
-                    <span>Extracteur BloomLab® complet Inox 304</span>
+                    <span>{lang === 'fr' ? "Infuseur BloomLab® Inox 304 • 6 programmes (0 à 121 °C)" : lang === 'de' ? "BloomLab® 304-Edelstahl-Infuser • 6 Programme (0–121 °C)" : "BloomLab® 304 Steel Infuser • 6 programs (0–121°C)"}</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
-                    <span>Panier de filtration micrométrique</span>
+                    <span>{lang === 'fr' ? "Panier filtrant micrométrique (90 µm) + 5 Accessoires Offerts" : lang === 'de' ? "Mikrometrischer Filterkorb (90 µm) + 5 Gratis-Zubehörteile" : "Micrometric filter basket (90 µm) + 5 Free Accessories"}</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
-                    <span>Guide complet des protocoles d'extraction</span>
+                    <span>{lang === 'fr' ? "Manuel complet et 100 recettes exclusives en français" : lang === 'de' ? "Vollständiges Handbuch & 100 exklusive Rezepte" : "Complete manual and 100 exclusive recipes"}</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
-                    <span className="font-bold text-[#3E4A3D]">Garantie constructeur 1 an</span>
+                    <span className="font-bold text-[#3E4A3D]">{lang === 'fr' ? "Garantie 1 an • Paiement 3x sans frais" : lang === 'de' ? "1 Jahr Garantie • 3x zinsfrei" : "1-Year Warranty • 3x fee-free"}</span>
                   </li>
                 </ul>
               </div>
@@ -793,44 +1263,50 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 onClick={() => onNavigate('product-detail', 'bloomlab')}
                 className="w-full py-4 bg-[#3E4A3D] hover:bg-[#2D372C] text-white rounded-xl font-bold transition-all text-sm cursor-pointer shadow-md"
               >
-                Commander BloomLab Solo (229€)
+                {lang === 'fr' ? "Commander BloomLab Solo (229€)" : lang === 'de' ? "BloomLab Solo bestellen (229€)" : "Order BloomLab Solo (229€)"}
               </button>
             </div>
 
-            {/* 2. Pack Signature (289€ - Machine + Accessoires + 1ère Cure Totum) */}
+            {/* 2. Pack Signature (289€ au lieu de 349€ - Le plus populaire) */}
             <div className="bg-[#FFF8F0] rounded-3xl p-8 border-2 border-[#C8AB8A] shadow-xl flex flex-col justify-between relative transform lg:-translate-y-2">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#C8AB8A] text-[#0F261E] px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-md">
-                Pack Recommandé
+                {lang === 'fr' ? "Le plus populaire" : lang === 'de' ? "Am beliebtesten" : "Most Popular"}
               </div>
               <div>
                 <span className="text-[10px] font-black uppercase tracking-widest text-[#C8AB8A] block mb-2">
-                  Équipement + Cure Clé en Main
+                  {lang === 'fr' ? "Équipement + Kit Clé en Main" : lang === 'de' ? "Gerät + Komplett-Set" : "Hardware + Complete Kit"}
                 </span>
-                <h3 className="text-2xl font-bold text-[#3E4A3D] mb-2">Pack Signature</h3>
+                <h3 className="text-2xl font-bold text-[#3E4A3D] mb-2">
+                  {lang === 'fr' ? "Pack Signature" : lang === 'de' ? "Signature-Paket" : "Signature Pack"}
+                </h3>
                 <p className="text-xs text-[#3E4A3D]/70 mb-6 leading-relaxed">
-                  L'extracteur BloomLab® accompagné de la panoplie complète d'apothicaire et d'une cure de plantes pour démarrer immédiatement.
+                  {lang === 'fr'
+                    ? "Machine BloomLab® Inox 304, Kit accessoires apothicaire, L'Herbier Complet (4 mélanges), Duo Argiles KlinoMont® et 3 mois d'accès Premium Académie."
+                    : lang === 'de'
+                    ? "BloomLab® 304-Edelstahl, Apotheker-Zubehör, Vollständiges Herbarium (4 Mischungen), KlinoMont® Tonerde-Duo und 3 Monate Premium-Akademie."
+                    : "BloomLab® 304 Steel Machine, Apothecary Kit, Complete Herbarium (4 blends), KlinoMont® Clay Duo, and 3 months Premium Academy access."}
                 </p>
                 <div className="flex items-baseline gap-2 mb-6">
                   <span className="text-4xl font-black text-[#3E4A3D]">289€</span>
-                  <span className="text-sm line-through text-[#3E4A3D]/40 font-medium">389€</span>
-                  <span className="text-xs bg-[#C8AB8A]/15 text-[#C8AB8A] font-bold px-2.5 py-1 rounded-full">-100€</span>
+                  <span className="text-sm line-through text-[#3E4A3D]/40 font-medium">349€</span>
+                  <span className="text-xs bg-[#C8AB8A]/15 text-[#C8AB8A] font-bold px-2.5 py-1 rounded-full">-60€</span>
                 </div>
                 <ul className="space-y-3 text-xs text-[#3E4A3D]/80 mb-8">
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
-                    <span className="font-bold text-[#3E4A3D]">Extracteur BloomLab® Inox 304 complet</span>
+                    <span className="font-bold text-[#3E4A3D]">{lang === 'fr' ? "Machine BloomLab® Inox 304 complète" : lang === 'de' ? "Vollständige BloomLab® 304-Edelstahl-Maschine" : "Complete BloomLab® 304 Steel Machine"}</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
-                    <span>Kit accessoires apothicaire (flacons ambrés, entonnoir)</span>
+                    <span>{lang === 'fr' ? "Kit accessoires apothicaire (flacons ambrés, entonnoir)" : lang === 'de' ? "Apotheker-Zubehörset (Braunglasflaschen, Trichter)" : "Apothecary accessory kit (amber bottles, funnel)"}</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
-                    <span>1 mois de plantes brutes de grade herboristerie</span>
+                    <span>{lang === 'fr' ? "L'Herbier Complet (4 mélanges) + Duo Argiles KlinoMont® (Zéolithe-Bentonite)" : lang === 'de' ? "Vollständiges Herbarium (4 Mischungen) + KlinoMont® Erden-Duo (Zeolith-Bentonit)" : "Complete Herbarium (4 blends) + KlinoMont® Clay Duo (Zeolite-Bentonite)"}</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
-                    <span>Accès complet à la Bibliothèque de protocoles</span>
+                    <span>{lang === 'fr' ? "3 mois d'accès Premium Académie inclus" : lang === 'de' ? "3 Monate Premium-Zugang zur Akademie inklusive" : "3 months Premium Academy access included"}</span>
                   </li>
                 </ul>
               </div>
@@ -838,40 +1314,48 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 onClick={() => onNavigate('product-detail', 'pack-signature')}
                 className="w-full py-4 bg-[#3E4A3D] hover:bg-[#2D372C] text-white rounded-xl font-bold transition-all text-sm cursor-pointer shadow-lg"
               >
-                Choisir le Pack Signature (289€)
+                {lang === 'fr' ? "Choisir le Pack Signature (289€)" : lang === 'de' ? "Signature-Paket wählen (289€)" : "Choose Signature Pack (289€)"}
               </button>
             </div>
 
-            {/* 3. Abonnement Cures & Protocoles (59€/mois - Sans engagement) */}
+            {/* 3. Bloom Complet (59€/mois - Sans engagement) */}
             <div className="bg-[#FAF7F2] rounded-3xl p-8 border border-[#3E4A3D]/10 flex flex-col justify-between">
               <div>
                 <span className="text-[10px] font-black uppercase tracking-widest text-[#3E4A3D]/60 block mb-2">
-                  Abonnement Plantes & Suivi
+                  {lang === 'fr' ? "Abonnement Plantes & Suivi" : lang === 'de' ? "Pflanzen-Abo & Begleitung" : "Botanical Subscription"}
                 </span>
-                <h3 className="text-2xl font-bold text-[#3E4A3D] mb-2">Cures Systémiques</h3>
+                <h3 className="text-2xl font-bold text-[#3E4A3D] mb-2">
+                  {lang === 'fr' ? "Bloom Complet" : lang === 'de' ? "Bloom Komplett" : "Bloom Complete"}
+                </h3>
                 <p className="text-xs text-[#3E4A3D]/70 mb-6 leading-relaxed">
-                  Abonnement de plantes sélectionnées selon votre anamnèse, prêtes pour l'infusion ou le BloomLab.
+                  {lang === 'fr'
+                    ? "Abonnement mensuel de préparations et plantes sélectionnées, livrées avec guide et ressources."
+                    : lang === 'de'
+                    ? "Monatliche botanische Zubereitungen und Pflanzenauswahl, geliefert mit Leitfaden und Ressourcenzugang."
+                    : "Monthly curated botanical preparations delivered with discovery guide and library access."}
                 </p>
                 <div className="flex items-baseline gap-2 mb-6">
                   <span className="text-4xl font-black text-[#3E4A3D]">59€</span>
-                  <span className="text-[#3E4A3D]/60 font-medium text-sm">/mois</span>
+                  <span className="text-[#3E4A3D]/60 font-medium text-sm">
+                    {lang === 'fr' ? "/mois" : lang === 'de' ? "/Monat" : "/month"}
+                  </span>
                 </div>
                 <ul className="space-y-3 text-xs text-[#3E4A3D]/80 mb-8">
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
-                    <span>Plantes brutes certifiées livrées chaque mois</span>
+                    <span>{lang === 'fr' ? "Préparations & plantes bio livrées chaque mois" : lang === 'de' ? "Monatliche Lieferung geprüfter Pflanzenzubereitungen" : "Certified botanical preparations delivered monthly"}</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
-                    <span>Fiches protocoles A/B et posologies sécurisées</span>
+                    <span>{lang === 'fr' ? "Fiches protocoles A/B et précautions détaillées" : lang === 'de' ? "A/B-Protokolle und klare Anwendungshinweise" : "A/B protocol sheets & clear usage precautions"}</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
-                    <span>Suivi d'évolution du terrain avec ALMA</span>
+                    <span>{lang === 'fr' ? "Orientation pédagogique avec ALMA" : lang === 'de' ? "Orientierung im Bloom-Universum mit ALMA" : "Educational orientation with ALMA"}</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
-                    <span>Sans engagement, pause ou arrêt en 1 clic</span>
+                    <span>{lang === 'fr' ? "Sans engagement, pause ou arrêt en 1 clic" : lang === 'de' ? "Ohne Bindung, mit 1 Klick pausier- oder kündbar" : "No commitment, pause or cancel in 1 click"}</span>
                   </li>
                 </ul>
               </div>
@@ -879,7 +1363,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 onClick={() => onNavigate('abonnement')}
                 className="w-full py-4 bg-[#3E4A3D] hover:bg-[#2D372C] text-white rounded-xl font-bold transition-all text-sm cursor-pointer shadow-md"
               >
-                Découvrir les Abonnements Cures
+                {lang === 'fr' ? "Découvrir Bloom Complet" : lang === 'de' ? "Bloom Komplett entdecken" : "Explore Bloom Complete"}
               </button>
             </div>
 
@@ -892,10 +1376,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-xs font-black uppercase tracking-[0.25em] text-[#C8AB8A] mb-3 block">
-              Questions Fréquentes
+              {lang === 'fr' ? "Questions Fréquentes" : lang === 'de' ? "Häufige Fragen" : "Frequently Asked Questions"}
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3E4A3D]">
-              Tout ce que vous devez savoir sur BloomLab®
+              {lang === 'fr' ? "Tout ce que vous devez savoir sur BloomLab®" : lang === 'de' ? "Alles, was Sie über BloomLab® wissen müssen" : "Everything you need to know about BloomLab®"}
             </h2>
           </div>
 
@@ -991,7 +1475,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               }}
               className="w-full sm:w-auto px-6 py-5 bg-transparent hover:bg-white/10 text-white/80 rounded-2xl font-medium text-sm transition-all border border-white/15 inline-flex items-center justify-center"
             >
-              {lang === 'fr' ? "Accueil Bloom by BotaniK" : "Bloom by BotaniK Home"}
+              {lang === 'fr' ? "Accueil Bloom by BotaniK" : lang === 'de' ? "Bloom by BotaniK Startseite" : "Bloom by BotaniK Home"}
             </a>
           </div>
         </div>
@@ -1041,10 +1525,23 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               <p 
                 className="text-base sm:text-lg text-white/90"
                 style={{ color: '#ffffff' }}
-                dangerouslySetInnerHTML={{ __html: t.vision?.check2 || "<strong>Souveraineté thérapeutique et préventive</strong> : la maîtrise de vos préparations à domicile." }}
+                dangerouslySetInnerHTML={{ __html: t.vision?.check2 || "<strong>Autonomie cosmétique et bien-être naturel</strong> : la maîtrise de vos préparations à domicile." }}
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* MENTION RÉGLEMENTAIRE DE PIED DE FICHE */}
+      <section className="py-8 bg-[#0F261E] text-white/80 border-t border-white/10">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xs sm:text-sm leading-relaxed">
+            {lang === 'fr'
+              ? "Dispositif domestique de préparation culinaire, cosmétique et botanique à usage personnel. Ceci n'est pas un dispositif médical. Les informations et recettes fournies ont un but éducatif et ne remplacent pas l'avis d'un professionnel de santé."
+              : lang === 'de'
+              ? "Haushaltsgerät zur kulinarischen, kosmetischen und botanischen Zubereitung für den persönlichen Gebrauch. Dies ist kein Medizinprodukt. Die bereitgestellten Informationen und Rezepte dienen Bildungszwecken und ersetzen keinen ärztlichen Rat."
+              : "Domestic appliance for culinary, cosmetic, and botanical preparation for personal use. This is not a medical device. Information and recipes provided are for educational purposes and do not replace professional medical advice."}
+          </p>
         </div>
       </section>
 

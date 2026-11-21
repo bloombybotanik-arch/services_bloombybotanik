@@ -59,7 +59,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
               <li><span className="text-white/40">/</span></li>
               <li>
                 <span className="text-white/80 hover:text-[#F5F0E6] transition-colors cursor-pointer" onClick={(e) => handleLinkClick(e, 'home')}>
-                  {lang === 'fr' ? 'La Méthode A/B' : 'The A/B Method'}
+                  {lang === 'fr' ? 'La Méthode A/B' : lang === 'de' ? 'Die A/B-Methode' : 'The A/B Method'}
                 </span>
               </li>
               <li><span className="text-white/40">/</span></li>
@@ -379,7 +379,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
               <div className="rounded-2xl overflow-hidden border border-[#3E4A3D]/10 shadow-sm aspect-square bg-[#FAF7F2]">
                 <img
                   src="/img/produit/bloomlab-face-1200x1200.jpg"
-                  alt="BloomLab® — Extracteur et infuseur de plantes médicinales Totum"
+                  alt={isFR ? "BloomLab® — Extracteur et infuseur de plantes médicinales Totum" : lang === 'de' ? "BloomLab® — Präzisionsextraktor für Heilpflanzen-Totum" : "BloomLab® — Precision Botanical Totum Extractor"}
                   width={600}
                   height={600}
                   loading="lazy"
@@ -659,7 +659,7 @@ export default function PillarInfusion({ lang, onNavigate }: PillarInfusionProps
               id="footer-cta-extraction"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-all"
             >
-              <span>{lang === 'fr' ? "Méthode d'Extraction A/B" : "Extraction Method A/B"}</span>
+              <span>{lang === 'fr' ? "Méthode d'Extraction A/B" : lang === 'de' ? "A/B-Extraktionsmethode" : "Extraction Method A/B"}</span>
             </a>
             <a
               href={lang === 'fr' ? '/boutique/' : `/${lang}/boutique/`}

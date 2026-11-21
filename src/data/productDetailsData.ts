@@ -56,20 +56,20 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       
       return {
         name: "BloomLab®",
-        subtitle: isFR ? "SOUVERAINETÉ SANTÉ — ÉDITION 2026" : isDE ? "GESUNDHEITSSOUVERÄNITÄT — EDITION 2026" : "HEALTH SOVEREIGNTY — 2026 EDITION",
+        subtitle: isFR ? "EXTRACTION BOTANIQUE DE PRÉCISION — ÉDITION 2026" : isDE ? "BOTANISCHE PRÄZISIONSEXTRAKTION — EDITION 2026" : "PRECISION BOTANICAL EXTRACTION — 2026 EDITION",
         price: bloomLabPrice,
         originalPrice: 289.00,
         images: [bloomLabImg, img2_1, img3_1, img4_1, img5_1, img6_1],
         description: isFR 
-          ? "BloomLab® : L'extracteur botanique de précision N°1 en France. L'infuseur idéal pour extraire le Totum intégral des plantes médicinales avec une précision thermique absolue (±0,5°C)."
+          ? "Transformez vos plantes brutes en sérums capillaires, huiles de soin et infusions concentrées en quelques heures. La BloomLab® remplace l'improvisation du bain-marie par la rigueur d'un laboratoire, en préservant l'intégralité du Totum végétal."
           : isDE 
-          ? "BloomLab®: Der botanische Präzisionsextraktor Nr. 1 in Frankreich. Der ideale Infuser zur Extraktion des integralen Totums von Heilpflanzen mit absoluter thermischer Präzision (±0,5°C)."
-          : "BloomLab®: The #1 precision botanical extractor. The ideal infuser for extracting the integral Totum of medicinal plants with absolute thermal precision (±0.5°C).",
+          ? "Verwandeln Sie Rohpflanzen in wenigen Stunden in Haarseren, Pflegeöle und konzentrierte Aufgüsse. Die BloomLab® ersetzt das Wasserbad durch Laborpräzision und bewahrt das gesamte Pflanzen-Totum."
+          : "Transform raw botanicals into hair serums, skincare oils, and concentrated infusions in hours. BloomLab® replaces stovetop guesswork with laboratory rigor, preserving the full plant Totum.",
         fullDescription: isFR ? `
           <div class="prose prose-botanik max-w-none">
             <div class="bg-[#1B3022]/5 p-8 rounded-[32px] mb-12">
               <p class="text-xl leading-relaxed text-botanik-green/80">
-                La BloomLab® est l'<strong>infuseur botanique</strong> de référence, une machine 6-en-1 capable de réaliser à domicile des <strong>remèdes de plantes</strong> complexes — huiles infusées, sérums, teintures, macérats — avec une <strong>extraction botanique de précision</strong> (temps, température, séquençage) habituellement réservée aux laboratoires.
+                La BloomLab® est l'<strong>infuseur botanique</strong> de référence, une machine 6-en-1 capable de réaliser à domicile des <strong>préparations botaniques</strong> complexes — huiles infusées, sérums, teintures, macérats — avec une <strong>extraction botanique de précision</strong> (temps, température, séquençage) habituellement réservée aux laboratoires.
               </p>
             </div>
 
@@ -212,78 +212,125 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </div>
         ` : `
           <div class="prose prose-botanik max-w-none">
-            <p class="text-lg mb-8">${isDE ? "BloomLab ist das erste 6-in-1-Gerät..." : "BloomLab is the first 6-in-1 device..."}</p>
+            <div class="bg-[#1B3022]/5 p-8 rounded-[32px] mb-12">
+              <p class="text-xl leading-relaxed text-botanik-green/80">
+                ${isDE
+                  ? "Die <strong>BloomLab®</strong> ist der Referenz-Kräuterextraktor für zu Hause: ein 6-in-1-Gerät für botanische Ölauszüge, Seren, Tinkturen und Mazerate mit präziser Steuerung von Zeit, Temperatur und A/B-Sequenzierung auf Laborniveau."
+                  : "The <strong>BloomLab®</strong> is the benchmark 6-in-1 botanical extractor built for crafting complex home preparations—infused oils, serums, tinctures, and macerates—with laboratory-grade control over temperature, timing, and A/B sequencing."}
+              </p>
+            </div>
+
+            <h3 class="text-2xl font-bold text-botanik-green mb-6">
+              ${isDE ? "Extraktion des pflanzlichen Totums" : "Totum Extraction: Unlocking Living Plant Synergy"}
+            </h3>
+            <p class="mb-6">
+              ${isDE
+                ? "Bisher fehlte es der häuslichen Extraktion an Präzision. BloomLab® ermöglicht die schonende Gewinnung des vollständigen Pflanzenspektrums (Totum) ohne thermische Zerstörung."
+                : "Until now, home extraction lacked repeatability. BloomLab® preserves the full-spectrum Totum of your herbs without thermal degradation."}
+            </p>
+
+            <h3 class="text-2xl font-bold text-botanik-green mb-6">
+              ${isDE ? "Im Lieferumfang enthalten" : "Everything Included to Start"}
+            </h3>
+            <div class="bg-white border border-botanik-green/5 p-4 md:p-8 rounded-[32px] mb-12">
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 list-none p-0 m-0">
+                <li class="flex items-center gap-3 text-botanik-green"><span class="w-2 h-2 rounded-full bg-botanik-orange shrink-0"></span><span class="font-medium text-sm md:text-base">${isDE ? "90-Mikron-Filterbeutel" : "90-micron filter bag"}</span></li>
+                <li class="flex items-center gap-3 text-botanik-green"><span class="w-2 h-2 rounded-full bg-botanik-orange shrink-0"></span><span class="font-medium text-sm md:text-base">${isDE ? "Hitzeschutz-Silikonhandschuh" : "Heat-resistant silicone glove"}</span></li>
+                <li class="flex items-center gap-3 text-botanik-green"><span class="w-2 h-2 rounded-full bg-botanik-orange shrink-0"></span><span class="font-medium text-sm md:text-base">${isDE ? "100-ml-Pipettenflasche (Bambusverschluss)" : "100ml opaque glass dropper bottle"}</span></li>
+                <li class="flex items-center gap-3 text-botanik-green"><span class="w-2 h-2 rounded-full bg-botanik-orange shrink-0"></span><span class="font-medium text-sm md:text-base">${isDE ? "Kopfhaut-Serum-Spender" : "Scalp serum dispenser"}</span></li>
+                <li class="flex items-center gap-3 text-botanik-green"><span class="w-2 h-2 rounded-full bg-botanik-orange shrink-0"></span><span class="font-medium text-sm md:text-base">${isDE ? "50-g-Cremetiegel mit Bambusdeckel" : "50g bamboo-lid cream jar"}</span></li>
+                <li class="flex items-center gap-3 text-botanik-green"><span class="w-2 h-2 rounded-full bg-botanik-orange shrink-0"></span><span class="font-medium text-sm md:text-base">${isDE ? "Rezeptbuch & Bloom Academy Zugang" : "Recipe guide & Bloom Academy access"}</span></li>
+              </ul>
+            </div>
+
+            <div class="bg-[#3E4A3D] text-white p-6 md:p-10 rounded-[32px] shadow-lg" style="background-color: #3E4A3D; color: #ffffff;">
+              <h3 class="text-xl font-bold mb-6 text-white">${isDE ? "Technische Spezifikationen" : "Technical Specifications"}</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-white/85 text-sm">
+                <div class="p-3.5 bg-white/5 rounded-2xl border border-white/10">${isDE ? "Edelstahlkammer SU304 (1,2 L)" : "Food-grade SU304 steel tank (1.2 L)"}</div>
+                <div class="p-3.5 bg-white/5 rounded-2xl border border-white/10">${isDE ? "0 °C bis 121 °C (±0,5 °C Präzision)" : "0 °C to 121 °C (±0.5 °C accuracy)"}</div>
+                <div class="p-3.5 bg-white/5 rounded-2xl border border-white/10">${isDE ? "6 Automatikprogramme + Selbstreinigung (5 Min.)" : "6 automatic modes + 5-min self-cleaning"}</div>
+                <div class="p-3.5 bg-white/5 rounded-2xl border border-white/10">${isDE ? "1 Jahr Bloom Herstellergarantie" : "1-year Bloom manufacturer warranty"}</div>
+              </div>
+            </div>
+
+            <p class="mt-8 text-sm italic text-botanik-green/50">
+              ${isDE
+                ? "BloomLab ist ein Gerät zur botanischen Haushaltszubereitung und kein Medizinprodukt."
+                : "BloomLab is a home botanical preparation appliance and is not a medical device."}
+            </p>
           </div>
         `,
         specs: [
-          { label: isFR ? "Contrôle" : "Control", value: "0 °C à 121 °C", icon: Thermometer },
-          { label: isFR ? "Matériau" : "Material", value: "Inox 304 Certifié", icon: FlaskConical },
-          { label: isFR ? "Garantie" : "Guarantee", value: "1 An Bloom", icon: ShieldCheck }
+          { label: isFR ? "Contrôle" : isDE ? "Steuerung" : "Control", value: isFR ? "0 °C à 121 °C (±0,5 °C)" : isDE ? "0 °C bis 121 °C (±0,5 °C)" : "0 °C to 121 °C (±0.5 °C)", icon: Thermometer },
+          { label: isFR ? "Matériau" : isDE ? "Material" : "Material", value: isFR ? "Inox 304 Alimentaire" : isDE ? "Lebensmittel-Edelstahl 304" : "Food-Grade 304 Steel", icon: FlaskConical },
+          { label: isFR ? "Garantie" : isDE ? "Garantie" : "Warranty", value: isFR ? "1 An Bloom" : isDE ? "1 Jahr Bloom" : "1-Year Warranty", icon: ShieldCheck }
         ]
       };
     })(),
     'bundle-apothicaire': {
-      name: isFR ? "L'Herbier Complet — Pack Black Friday 2026" : isDE ? "Das vollständige Herbarium — Black Friday Paket 2026" : "Complete Herbarium — Black Friday 2026 Pack",
-      subtitle: isFR ? "TOUS LES REMÈDES + DUO ARGILES" : isDE ? "ALLE HEILMITTEL + ERDEN-DUO" : "ALL REMEDIES + CLAYS DUO",
+      name: isFR ? "Pack Herbier Complet — 4 Mélanges + Duo Argiles KlinoMont®" : isDE ? "Vollständiges Herbarium — 4 Mischungen + KlinoMont® Duo" : "Complete Herbarium Pack — 4 Blends + KlinoMont® Clay Duo",
+      subtitle: isFR ? "TOUS LES KITS BOTANIQUES + DUO ARGILES KLINOMONT®" : isDE ? "ALLE PFLANZEN-SETS + KLINOMONT® ERDEN-DUO" : "ALL BOTANICAL KITS + KLINOMONT® CLAY DUO",
       price: 49.00,
       originalPrice: 87.50,
       images: [trioPouchesImg, duoArgilesImg, seveFondamentaleImg],
       description: isFR 
-        ? "L'offre la plus irrésistible du Black Friday. Regroupe l'intégralité de nos mélanges de plantes et le Duo Argiles Renaissance."
+        ? "Le coffret complet réunissant l'intégralité de nos 4 mélanges de plantes (Sève, Nuit, Digestion, Articulaire) et le Duo Argiles KlinoMont®."
         : isDE
-        ? "Das unwiderstehlichste Angebot zum Black Friday. Enthält alle unsere Pflanzenmischungen und das Renaissance-Ton-Duo."
-        : "The most irresistible offer of Black Friday. Includes all our plant blends and the Renaissance Clays Duo.",
+        ? "Das Komplett-Set mit allen 4 Bio-Pflanzenmischungen (Saft, Nacht, Verdauung, Gelenke) und dem KlinoMont® Erden-Duo."
+        : "Our complete botanical bundle bringing together all 4 organic plant blends (Sap, Night, Digestion, Joint) and the KlinoMont® Clay Duo.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
-          <p class="text-lg mb-8">Ce pack exclusif regroupe l'expertise botanique de Bloom dans une offre unique pour le Black Friday 2026.</p>
+          <p class="text-lg mb-8">Ce pack complet regroupe l'expertise botanique et minérale de Bloom dans un coffret prêt à extraire.</p>
           <h3 class="text-xl font-bold mb-4">Contenu de l'offre :</h3>
           <ul class="space-y-2 mb-8">
-            <li>• <strong>Duo Renaissance :</strong> Zéolithe & Plantes drainantes</li>
+            <li>• <strong>Duo Argiles KlinoMont® :</strong> Zéolithe & Bentonite micronisées (6µm)</li>
             <li>• <strong>Kit Sève Fondamentale :</strong> Vitalité et Structure</li>
-            <li>• <strong>Kit Nuit Profonde :</strong> Sommeil et Ancrage</li>
-            <li>• <strong>Kit Confort Digestif :</strong> Équilibre intestinal</li>
-            <li>• <strong>Kit Feu Articulaire :</strong> Souplesse et Mobilité</li>
+            <li>• <strong>Kit Nuit Profonde :</strong> Détente nocturne et Ancrage</li>
+            <li>• <strong>Kit Équilibre & Flux :</strong> Confort digestif</li>
+            <li>• <strong>Kit Mouvement Libre :</strong> Souplesse et Mobilité</li>
           </ul>
         </div>
       ` : isDE ? `
         <div class="prose prose-botanik max-w-none">
-          <p class="text-lg mb-8">Dieses exklusive Paket vereint die botanische Expertise von Bloom in einem einzigartigen Angebot für den Schulanfang 2026.</p>
+          <p class="text-lg mb-8">Dieses Komplettpaket vereint die botanische und mineralische Expertise von Bloom in einem sofort einsetzbaren Set.</p>
           <h3 class="text-xl font-bold mb-4">Inhalt des Angebots:</h3>
           <ul class="space-y-2 mb-8">
-            <li>• <strong>Renaissance-Duo:</strong> Zeolith & entwässernde Pflanzen</li>
+            <li>• <strong>KlinoMont® Erden-Duo:</strong> Zeolith & Bentonit (6µm)</li>
             <li>• <strong>Set Fundamentaler Saft:</strong> Vitalität und Struktur</li>
-            <li>• <strong>Heilmittel Tiefe Nacht:</strong> Schlaf und Erdung</li>
-            <li>• <strong>Heilmittel Verdauungskomfort:</strong> Darmgleichgewicht</li>
-            <li>• <strong>Heilmittel Gelenkfeuer:</strong> Flexibilität und Mobilität</li>
+            <li>• <strong>Set Tiefe Nacht:</strong> Entspannung und Erdung</li>
+            <li>• <strong>Set Verdauungskomfort:</strong> Darmgleichgewicht</li>
+            <li>• <strong>Set Freie Bewegung:</strong> Flexibilität und Mobilität</li>
           </ul>
         </div>
       ` : `
         <div class="prose prose-botanik max-w-none">
-          <p class="text-lg mb-8">This exclusive pack brings together Bloom's botanical expertise in a unique offer for the 2026 back-to-school season.</p>
+          <p class="text-lg mb-8">This complete bundle brings together Bloom's botanical and mineral expertise in one ready-to-extract kit.</p>
           <h3 class="text-xl font-bold mb-4">Offer Content:</h3>
           <ul class="space-y-2 mb-8">
-            <li>• <strong>Renaissance Duo:</strong> Zeolite & Draining Plants</li>
+            <li>• <strong>KlinoMont® Clay Duo:</strong> Micronized Zeolite & Bentonite (6µm)</li>
             <li>• <strong>Fundamental Sap Kit:</strong> Vitality and Structure</li>
-            <li>• <strong>Deep Night Remedy:</strong> Sleep and Grounding</li>
-            <li>• <strong>Digestive Comfort Remedy:</strong> Intestinal Balance</li>
-            <li>• <strong>Joint Fire Remedy:</strong> Flexibility and Mobility</li>
+            <li>• <strong>Deep Night Kit:</strong> Evening calm and Grounding</li>
+            <li>• <strong>Balance & Flow Kit:</strong> Digestive Comfort</li>
+            <li>• <strong>Free Movement Kit:</strong> Flexibility and Mobility</li>
           </ul>
         </div>
       `,
       specs: [
-        { label: isFR ? "Économie" : isDE ? "Ersparnis" : "Savings", value: "28,50€", icon: Award },
+        { label: isFR ? "Économie" : isDE ? "Ersparnis" : "Savings", value: "38,50€", icon: Award },
         { label: isFR ? "Contenu" : isDE ? "Inhalt" : "Content", value: "5 Kits", icon: Leaf }
       ]
     },
     'pack-signature': {
-      name: isFR ? "PACK SIGNATURE — BloomLab + Collection 2026" : "SIGNATURE PACK — BloomLab + 2026 Collection",
-      subtitle: isFR ? "L'AUTONOMIE BOTANIQUE TOTALE" : "TOTAL BOTANICAL AUTONOMY",
+      name: isFR ? "PACK SIGNATURE — BloomLab® + Herbier Complet + 3 Mois Premium Académie" : isDE ? "SIGNATURE-PAKET — BloomLab® + Vollständiges Herbarium + 3 Monate Premium" : "SIGNATURE PACK — BloomLab® + Complete Herbarium + 3 Months Premium Academy",
+      subtitle: isFR ? "LE PLUS POPULAIRE — L'AUTONOMIE BOTANIQUE TOTALE" : isDE ? "AM BELIEBTESTEN — VOLLE BOTANISCHE AUTONOMIE" : "MOST POPULAR — TOTAL BOTANICAL AUTONOMY",
       price: 289.00,
       originalPrice: 349.00,
       images: ["/img/produit/pack-signature-1200x1200.jpg", bloomLabImg, trioPouchesImg, duoArgilesImg, seveFondamentaleImg, nuitProfondeImg],
       description: isFR 
-        ? "Le Pack Signature regroupe l'instrument BloomLab® et l'intégralité de la collection de kits remèdes 2026. Une solution clé en main pour votre souveraineté sanitaire."
-        : "The Signature Pack includes the BloomLab® instrument and the entire 2026 remedy kit collection.",
+        ? "Machine BloomLab® Inox 304, Kit accessoires apothicaire, L'Herbier Complet (4 mélanges), Duo Argiles KlinoMont® (Zéolithe-Bentonite) et 3 mois d'accès Premium Académie."
+        : isDE
+        ? "BloomLab® 304-Edelstahl, Apotheker-Zubehörset, Vollständiges Herbarium (4 Mischungen), KlinoMont® Erden-Duo (Zeolith-Bentonit) und 3 Monate Premium-Zugang zur Akademie."
+        : "BloomLab® 304 Steel Machine, Apothecary Kit, Complete Herbarium (4 blends), KlinoMont® Clay Duo (Zeolite-Bentonite), and 3 months Premium Academy access.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <div class="bg-[#3E4A3D] text-white p-8 rounded-[40px] mb-12 shadow-lg" style="background-color: #3E4A3D; color: #ffffff;">
@@ -433,15 +480,19 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
 
           <p class="text-center italic text-botanik-green/60">"Faites fleurir toutes vos envies de bien-être végétal. Une place pour chaque plante et chaque plante à sa place."</p>
         </div>
-      ` : `
-        <div class="prose prose-botanik max-w-none">
-          <p>The ultimate autonomy pack including BloomLab and all 2026 remedy kits.</p>
+        ` : `
+        <div class="prose prose-botanik max-w-none space-y-6">
+          <div class="bg-[#3E4A3D] text-white p-8 rounded-[32px] shadow-lg" style="background-color: #3E4A3D; color: #ffffff;">
+            <h2 class="text-2xl font-bold text-white mb-2 text-center">${isDE ? "SIGNATURE-PAKET 2026" : "2026 SIGNATURE PACK"}</h2>
+            <p class="text-base text-white/90 text-center">${isDE ? "BloomLab® + Vollständiges Herbarium + KlinoMont® + 3 Monate Premium Akademie" : "BloomLab® + Complete Herbarium + KlinoMont® + 3 Months Premium Academy"}</p>
+          </div>
+          <p class="text-lg">${isDE ? "Das umfassende Komplettpaket: Extrahieren Sie das volle pflanzliche Totum zu Hause mit präziser A/B-Temperatursteuerung, dem KlinoMont® Zeolith-Bentonit-Erden-Duo und 4 Bio-Pflanzenmischungen." : "The complete autonomy pack including the BloomLab® 304 steel extractor, apothecary kit, Complete Herbarium (4 blends), KlinoMont® Clay Duo, and 3 months Premium Academy access."}</p>
         </div>
       `,
       specs: [
-        { label: isFR ? "Économie" : "Savings", value: "60€", icon: Award },
-        { label: isFR ? "Plantes" : "Plants", value: "Collection Totale", icon: Leaf },
-        { label: isFR ? "Accès" : "Access", value: "Illimité Premium", icon: ShieldCheck }
+        { label: isFR ? "Économie" : isDE ? "Ersparnis" : "Savings", value: "60€", icon: Award },
+        { label: isFR ? "Plantes" : isDE ? "Pflanzen" : "Botanicals", value: isFR ? "L'Herbier Complet" : isDE ? "Vollständiges Herbarium" : "Complete Herbarium", icon: Leaf },
+        { label: isFR ? "Accès" : isDE ? "Zugang" : "Access", value: isFR ? "3 mois Premium Académie" : isDE ? "3 Monate Premium" : "3 Months Premium Academy", icon: ShieldCheck }
       ]
     },
     'kit-starter': {
@@ -451,7 +502,9 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       images: [seveFondamentaleImg, trioPouchesImg, "/assets/images/herbs_close_up_cleaned_1786616800877.jpg", "/assets/images/home_lab_vibe_cleaned_1786616854146.jpg"],
       description: isFR 
         ? "La SÈVE FONDAMENTALE est un protocole de restauration profonde pour consolider l'architecture de votre organisme."
-        : "The FUNDAMENTAL SAP is a deep restoration protocol to consolidate the architecture of your organism.",
+        : isDE
+        ? "GRUNDLEGENDER SAFT ist ein sequenzielles Kräuterset (Ackerschachtelhalm, Brennnessel, Rosmarin, Ginkgo) zur Remineralisierung und strukturellen Vitalität."
+        : "FUNDAMENTAL SAP is a sequential botanical formulation (Horsetail, Nettle Root, Rosemary, Ginkgo) designed for structural vitality and remineralization.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <div class="bg-[#1B3022]/5 p-10 rounded-[40px] mb-12">
@@ -568,11 +621,14 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </p>
         </div>
       ` : `
-        <div class="prose prose-botanik max-w-none">
-          <p>Deep mineralization protocol using sequential extraction.</p>
+        <div class="prose prose-botanik max-w-none space-y-6">
+          <p class="text-lg">${isDE ? "Sequenzielles Remineralisierungs-Set in zwei Beuteln: Beutel A (Ackerschachtelhalm & Brennnesselwurzel, 90°C / 2h) für Kieselsäure und Mineralstoffe, gefolgt von Beutel B (Rosmarin & Ginkgo Biloba, 55°C / 4h) für empfindliche Flavonoide." : "Dual-pouch sequential mineralizing botanical kit: Pouch A (Field Horsetail & Nettle Root, 90°C / 2h) extracts structural silica, followed by Pouch B (Rosemary & Ginkgo Biloba, 55°C / 4h) to safeguard delicate flavonoids."}</p>
+          <div class="bg-red-50 p-4 rounded-2xl text-xs text-red-900 italic">
+            <strong>⚠️ ${isDE ? "Vorsichtshinweise:" : "Precautions:"}</strong> ${isDE ? "Nur für Erwachsene. Nicht empfohlen bei gleichzeitiger Einnahme von Blutverdünnern (Ginkgo) sowie während Schwangerschaft oder Stillzeit." : "Adults only. Not recommended alongside anticoagulants/antiplatelets (Ginkgo) or during pregnancy/nursing."}
+          </div>
         </div>
       `,
-      specs: [{ label: "Format", value: "50g", icon: Leaf }]
+      specs: [{ label: isFR ? "Format" : isDE ? "Inhalt" : "Size", value: "50g", icon: Leaf }]
     },
     'kit-nuit': {
       name: isFR ? "NUIT PROFONDE" : isDE ? "TIEFE NACHT" : "DEEP NIGHT",
@@ -581,7 +637,9 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       images: [nuitProfondeImg, trioPouchesImg, "/assets/images/herbs_close_up_cleaned_1786616800877.jpg", "/assets/images/modern_herbalist_shelves_1786699793560.jpg"],
       description: isFR 
         ? "Le CONCENTRÉ NUIT PROFONDE est une réponse structurelle à la charge mentale et à l'agitation nocturne."
-        : "The DEEP NIGHT CONCENTRATE is a structural response to mental load and nocturnal agitation.",
+        : isDE
+        ? "TIEFE NACHT kombiniert Baldrianwurzeln (Beutel A) und Passionsblume (Beutel B) in einer zweiphasigen Extraktion für abendliche Ruhe."
+        : "DEEP NIGHT pairs dense Valerian root (Pouch A) and delicate Passionflower aerial parts (Pouch B) for serene evening relaxation.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <div class="bg-[#1B3022]/5 p-10 rounded-[40px] mb-12">
@@ -689,11 +747,11 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </p>
         </div>
       ` : `
-        <div class="prose prose-botanik max-w-none">
-          <p>Sleep regulation protocol using valerian and passionflower.</p>
+        <div class="prose prose-botanik max-w-none space-y-6">
+          <p class="text-lg">${isDE ? "Zweistufiges Extraktionsprotokoll: Beutel A mit Baldrianwurzel (80°C / 2h) löst wertvolle Wurzelstoffe, während Beutel B mit Passionsblume (55°C / 4h) flüchtige Flavonoide bewahrt." : "Dual-stage extraction protocol: Pouch A Valerian roots (80°C / 2h) unlock dense grounding fractions, while Pouch B Passionflower (55°C / 4h) preserves fragile calming flavonoids."}</p>
         </div>
       `,
-      specs: [{ label: "Format", value: "50g", icon: Leaf }]
+      specs: [{ label: isFR ? "Format" : isDE ? "Inhalt" : "Size", value: "50g", icon: Leaf }]
     },
     'kit-digestion': {
       name: isFR ? "ÉQUILIBRE & FLUX" : isDE ? "GLEICHGEWICHT & FLUSS" : "BALANCE & FLOW",
@@ -701,8 +759,10 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       price: 9.90,
       images: [digestionImg, trioPouchesImg, "/assets/images/herbs_close_up_cleaned_1786616800877.jpg", "/assets/images/natural_remedies_cleaned_1786616831671.jpg"],
       description: isFR 
-        ? "Le CONCENTRÉ ÉQUILIBRE & FLUX est un protocole de gestion des fluides et de maintenance des réseaux internes à base de <a href=\"/boutique\" class=\"text-botanik-orange font-bold hover:underline\">Gingembre</a> et Romarin."
-        : "The BALANCE & FLOW CONCENTRATE is a fluid management and internal network maintenance protocol.",
+        ? "Le CONCENTRÉ ÉQUILIBRE & FLUX est un protocole de gestion des fluides et de maintenance des réseaux internes à base de Gingembre et Romarin."
+        : isDE
+        ? "GLEICHGEWICHT & FLUSS kombiniert Walnussschale, Ingwer, Rosmarin und Ginkgo zur Unterstützung der Verdauungsbalance."
+        : "BALANCE & FLOW pairs Walnut Hull, Ginger, Rosemary, and Ginkgo via sequential extraction to support digestive comfort.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <div class="bg-[#1B3022]/5 p-10 rounded-[40px] mb-12">
@@ -806,24 +866,26 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </div>
 
           <p class="text-center italic text-botanik-green/40 mt-12">
-            "Le système digestif est la chaudière de votre bâtiment biologique. Équilibre & Flux n'est pas un simple remède de confort, c'est un agent de maintenance." — L'Architecte Bloom
+            "Le système digestif est la chaudière de votre bâtiment biologique. Équilibre & Flux n'est pas un simple élixir de confort, c'est un agent de maintenance." — L'Architecte Bloom
           </p>
         </div>
       ` : `
-        <div class="prose prose-botanik max-w-none">
-          <p>Digestive maintenance protocol using sequential extraction.</p>
+        <div class="prose prose-botanik max-w-none space-y-6">
+          <p class="text-lg">${isDE ? "Beutel A (Walnussschale & Ingwer, 90°C / 2h) gefolgt von Beutel B (Rosmarin & Ginkgo Biloba, 55°C / 4h) für ausgewogenen Verdauungskomfort." : "Pouch A (Black Walnut Hull & Ginger, 90°C / 2h) followed by Pouch B (Rosemary & Ginkgo Biloba, 55°C / 4h) for balanced digestive comfort."}</p>
         </div>
       `,
-      specs: [{ label: "Format", value: "50g", icon: Leaf }]
+      specs: [{ label: isFR ? "Format" : isDE ? "Inhalt" : "Size", value: "50g", icon: Leaf }]
     },
     'kit-articulaire': {
-      name: isFR ? "MOUVEMENT LIBRE" : isDE ? "GELENKFEUER" : "JOINT FIRE",
+      name: isFR ? "MOUVEMENT LIBRE" : isDE ? "FREIE BEWEGUNG" : "FREE MOVEMENT",
       subtitle: isFR ? "SOUPLESSE & MAINTENANCE ARTICULAIRE" : isDE ? "FLEXIBILITÄT & MOBILITÄT" : "FLEXIBILITY & MOBILITY",
       price: 9.90,
       images: [feuArticulaireImg, trioPouchesImg, "/assets/images/herbs_close_up_cleaned_1786616800877.jpg", "/assets/images/extraction_precision_cleaned_1786616821723.jpg"],
       description: isFR 
-        ? "Le CONCENTRÉ MOUVEMENT LIBRE est une réponse technique aux besoins de flexibilité de votre édifice biologique grâce au <a href=\"/boutique/kit-articulaire/\" class=\"text-botanik-orange font-bold hover:underline\">Boswellia Serrata</a>."
-        : "The JOINT FIRE CONCENTRATE is a technical response to the flexibility needs of your biological building.",
+        ? "Le CONCENTRÉ MOUVEMENT LIBRE est une réponse technique aux besoins de flexibilité de votre édifice biologique grâce au Boswellia Serrata."
+        : isDE
+        ? "FREIE BEWEGUNG kombiniert Mädesüß, Ingwer und Boswellia Serrata Harz in sequenzieller Extraktion für geschmeidige Mobilität."
+        : "FREE MOVEMENT combines Meadowsweet, Ginger, and Boswellia Serrata resin in sequential extraction to support everyday joint flexibility.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <div class="bg-[#1B3022]/5 p-10 rounded-[40px] mb-12">
@@ -935,11 +997,11 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </p>
         </div>
       ` : `
-        <div class="prose prose-botanik max-w-none">
-          <p>Joint and mobility maintenance protocol using sequential extraction of Boswellia and Meadowsweet.</p>
+        <div class="prose prose-botanik max-w-none space-y-6">
+          <p class="text-lg">${isDE ? "Zweiphasiges Protokoll: Beutel A mit Mädesüß & Ingwer (80°C / 2h) und Beutel B mit Boswellia Serrata Harz (55°C / 4h). Nicht geeignet bei Salicylat-Unverträglichkeit oder Einnahme von Blutverdünnern." : "Dual-stage protocol: Pouch A with Meadowsweet & Ginger (80°C / 2h) and Pouch B with Boswellia Serrata resin (55°C / 4h). Avoid if allergic to salicylates or taking anticoagulants."}</p>
         </div>
       `,
-      specs: [{ label: "Format", value: "50g", icon: Leaf }]
+      specs: [{ label: isFR ? "Format" : isDE ? "Inhalt" : "Size", value: "50g", icon: Leaf }]
     },
     'kit-bouclier-hiver': {
       name: isFR ? "BOUCLIER HIVER" : isDE ? "WINTERSCHUTZ" : "WINTER SHIELD",
@@ -948,7 +1010,9 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       images: [bouclierHiverImg, trioPouchesImg, "/assets/images/herbs_close_up_cleaned_1786616800877.jpg", "/assets/images/natural_remedies_cleaned_1786616831671.jpg"],
       description: isFR 
         ? "L’élixir BOUCLIER TOTAL est un concentré de défense structurelle conçu selon une architecture moléculaire précise."
-        : "The WINTER SHIELD elixir is a structural defense concentrate designed according to precise molecular architecture.",
+        : isDE
+        ? "WINTERSCHUTZ kombiniert Ingwer, Nelken, Holunderbeeren, Thymian und Rosmarin für saisonale Vitalität."
+        : "WINTER SHIELD pairs Ginger, Clove, Elderberry, Thyme, and Rosemary in sequential extraction for seasonal resilience.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <div class="bg-[#1B3022]/5 p-10 rounded-[40px] mb-12">
@@ -1056,14 +1120,14 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </p>
         </div>
       ` : `
-        <div class="prose prose-botanik max-w-none">
-          <p>Seasonal resilience protocol using sequential extraction of ginger, clove and thyme.</p>
+        <div class="prose prose-botanik max-w-none space-y-6">
+          <p class="text-lg">${isDE ? "Beutel A (Ingwer, Nelke & Holunderbeere, 90°C / 2h) gefolgt von Beutel B (Thymian & Rosmarin, 55°C / 4h) zum Schutz flüchtiger ätherischer Öle." : "Pouch A (Ginger, Clove & Elderberry, 90°C / 2h) followed by Pouch B (Thyme & Rosemary, 55°C / 4h) to preserve volatile aromatic compounds."}</p>
         </div>
       `,
-      specs: [{ label: "Format", value: "50g", icon: Leaf }]
+      specs: [{ label: isFR ? "Format" : isDE ? "Inhalt" : "Size", value: "50g", icon: Leaf }]
     },
     'kit-reset': {
-      name: isFR ? "Duo Argiles Bloom — Purification Systémique Zeolithe-Bentonite" : isDE ? "Bloom Erden-Duo — Systemische Reinigung Zeolith-Bentonit" : "Bloom Clays Duo — Systemic Purification Zeolite-Bentonite",
+      name: isFR ? "Duo Argiles KlinoMont® — Purification Systémique Zeolithe-Bentonite" : isDE ? "KlinoMont® Erden-Duo — Systemische Reinigung Zeolith-Bentonit" : "KlinoMont® Clays Duo — Systemic Purification Zeolite-Bentonite",
       subtitle: isFR ? "CHÉLATION NATURELLE & RÉÉQUILIBRAGE DE TERRAIN" : isDE ? "MINERALISCHE SYNERGIE & TERRAIN" : "MINERAL SYNERGY & TERRAIN",
       price: 34.00,
       originalPrice: 49.00,
@@ -1171,16 +1235,20 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
         </div>
       `,
       specs: [
-        { label: "Grade", value: "Pharma / Médical", icon: ShieldCheck },
-        { label: "Finesse", value: "6μm (Micron)", icon: RefreshCw }
+        { label: isFR ? "Grade" : isDE ? "Qualität" : "Grade", value: isFR ? "Pharma / Européen" : isDE ? "Pharma-Qualität" : "European Pharma Grade", icon: ShieldCheck },
+        { label: isFR ? "Finesse" : isDE ? "Feinheit" : "Fineness", value: "6μm (Micron)", icon: RefreshCw }
       ]
     },
     'freemium-access': {
-      name: "Accès Découverte",
-      subtitle: "OFFERT",
+      name: isFR ? "Accès Découverte" : isDE ? "Entdecker-Zugang" : "Discovery Access",
+      subtitle: isFR ? "OFFERT" : isDE ? "KOSTENLOS" : "FREE",
       price: 0,
       images: [img4],
-      description: isFR ? "Commencez votre voyage avec nos 10 recettes fondamentales en accès libre." : "Start your journey with our 10 fundamental free recipes.",
+      description: isFR
+        ? "Commencez votre voyage avec nos 10 recettes fondamentales en accès libre."
+        : isDE
+        ? "Starten Sie mit unseren 10 kostenlosen Basisrezepten in die botanische Extraktion."
+        : "Start your journey with our 10 foundational free recipes.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <p class="text-lg mb-8">Découvrez la puissance de l'extraction maison avec ces 10 recettes cultes, spécialement sélectionnées pour débuter avec votre BloomLab.</p>
@@ -1230,17 +1298,21 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
         </div>
       ` : `
         <div class="prose prose-botanik max-w-none">
-          <p>Discover home extraction with these 10 core recipes.</p>
+          <p class="text-lg mb-4">${isDE ? "Entdecken Sie die botanische Extraktion mit 10 ausgewählten Basisrezepten (Schlafaufguss, Gelenk-Massageöl, Gesichtsserum, Calendula-Lippenbalsam, Ingwer-Aufguss u. v. m.)." : "Discover home botanical extraction with 10 curated starter recipes (Evening Infusion, Joint Massage Oil, Radiance Serum, Calendula Lip Balm, Ginger Digestive Infusion, and more)."}</p>
         </div>
       `,
-      specs: [{ label: "Type", value: "Digital", icon: Info }]
+      specs: [{ label: isFR ? "Type" : isDE ? "Typ" : "Type", value: "Digital", icon: Info }]
     },
     'premium-access': {
-      name: "Abonnement Précision",
-      subtitle: "ACCÈS TOTAL ILLIMITÉ",
+      name: isFR ? "Abonnement Précision" : isDE ? "Präzisions-Abo" : "Precision Subscription",
+      subtitle: isFR ? "ACCÈS TOTAL ILLIMITÉ" : isDE ? "UNBEGRENZTER VOLLZUGANG" : "UNLIMITED FULL ACCESS",
       price: 9.00,
       images: [modernShelvesImg],
-      description: isFR ? "L'intégralité des protocoles et savoirs Bloom en accès illimité : protocoles, vidéos et bibliothèque de recettes." : "Unlimited access to all Bloom knowledge.",
+      description: isFR
+        ? "L'intégralité des protocoles et savoirs Bloom en accès illimité : protocoles, vidéos et bibliothèque de recettes."
+        : isDE
+        ? "Unbegrenzter Zugriff auf alle Bloom-Protokolle, Anleitungen und die komplette Rezeptbibliothek."
+        : "Unlimited access to all Bloom protocols, guides, and the complete recipe library.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <p class="text-lg mb-8">Rejoignez les membres Bloom Précision et débloquez tout le potentiel de votre souveraineté botanique.</p>
@@ -1253,7 +1325,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-botanik-orange font-bold">•</span>
-                <span><strong>Accès Immédiat :</strong> Bibliothèque complète des protocoles validés par chromatographie.</span>
+                <span><strong>Accès Immédiat :</strong> Bibliothèque complète des protocoles validés.</span>
               </li>
             </ul>
           </div>
@@ -1261,52 +1333,52 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
         </div>
       ` : `
         <div class="prose prose-botanik max-w-none">
-          <p>Precision access to all botanical protocols.</p>
+          <p class="text-lg mb-6">${isDE ? "Erhalten Sie unbegrenzten Zugriff auf alle 60+ Extraktionsprotokolle, Temperaturkurven und monatlichen Updates – jederzeit mit 1 Klick kündbar (9 € / Monat)." : "Unlock unlimited access to 60+ botanical extraction protocols, temperature curves, and monthly updates—cancelable anytime in 1 click (9 € / month)."}</p>
         </div>
       `,
-      specs: [{ label: "Type", value: "Abonnement Annuel", icon: Info }]
+      specs: [{ label: isFR ? "Type" : isDE ? "Typ" : "Type", value: isFR ? "Abonnement Mensuel" : isDE ? "Monats-Abo" : "Monthly Plan", icon: Info }]
     },
     'abonnement-decouverte': {
-      name: "Abonnement Découverte",
-      subtitle: "L'ESSENTIEL BOTANIQUE",
+      name: isFR ? "Abonnement Découverte" : isDE ? "Entdecker-Abo" : "Discovery Plan",
+      subtitle: isFR ? "L'ESSENTIEL BOTANIQUE" : isDE ? "BOTANISCHE GRUNDLAGEN" : "BOTANICAL ESSENTIALS",
       price: 4.90,
       images: [img4],
-      description: isFR ? "Accès aux 10 recettes fondamentales et guides d'initiation." : "Access to 10 fundamental recipes.",
+      description: isFR ? "Accès aux 10 recettes fondamentales et guides d'initiation." : isDE ? "Zugriff auf die 10 Basisrezepte und Einführungsleitfäden." : "Access to 10 fundamental recipes and beginner guides.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <p class="text-lg mb-8">Formule idéale pour découvrir la puissance de l'extraction végétale domestique.</p>
           <p class="text-sm italic text-botanik-green/60">Tarif : 4,90 € TTC par an.</p>
         </div>
-      ` : `<p>Discovery subscription</p>`,
-      specs: [{ label: "Type", value: "Abonnement Annuel", icon: Info }]
+      ` : `<p>${isDE ? "Idealer Einstieg in die Welt der präzisen Pflanzenextraktion zu Hause (4,90 € / Jahr)." : "Ideal entry plan to explore home botanical extraction (4.90 € / year)."}</p>`,
+      specs: [{ label: isFR ? "Type" : isDE ? "Typ" : "Type", value: isFR ? "Abonnement Annuel" : isDE ? "Jahres-Abo" : "Annual Plan", icon: Info }]
     },
     'abonnement-precision': {
-      name: "Abonnement Précision",
-      subtitle: "ACCÈS TOTAL ILLIMITÉ",
+      name: isFR ? "Abonnement Précision" : isDE ? "Präzisions-Abo" : "Precision Plan",
+      subtitle: isFR ? "ACCÈS TOTAL ILLIMITÉ" : isDE ? "UNBEGRENZTER VOLLZUGANG" : "UNLIMITED FULL ACCESS",
       price: 9.00,
       images: [modernShelvesImg],
-      description: isFR ? "Protocoles complets, fiches botaniques et mises à jour mensuelles." : "Full access to botanical protocols.",
+      description: isFR ? "Protocoles complets, fiches botaniques et mises à jour mensuelles." : isDE ? "Alle Protokolle, Pflanzenmonografien und monatliche Updates." : "Full access to botanical protocols, monographs, and monthly updates.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <p class="text-lg mb-8">Accès intégral à l'intelligence Bloom et aux protocoles interactifs.</p>
           <p class="text-sm italic text-botanik-green/60">Tarif : 9 € TTC par mois.</p>
         </div>
-      ` : `<p>Precision subscription</p>`,
-      specs: [{ label: "Type", value: "Abonnement Annuel", icon: Info }]
+      ` : `<p>${isDE ? "Vollzugriff auf alle Bloom-Protokolle und Monografien (9 € / Monat)." : "Full access to all Bloom protocols and botanical monographs (9 € / month)."}</p>`,
+      specs: [{ label: isFR ? "Type" : isDE ? "Typ" : "Type", value: isFR ? "Abonnement Mensuel" : isDE ? "Monats-Abo" : "Monthly Plan", icon: Info }]
     },
     'abonnement-integral': {
-      name: "Abonnement Intégral",
-      subtitle: "ACCOMPAGNEMENT & EXPERTISE",
+      name: isFR ? "Abonnement Intégral" : isDE ? "Integral-Abo" : "Integral Plan",
+      subtitle: isFR ? "ACCOMPAGNEMENT & EXPERTISE" : isDE ? "BEGLEITUNG & EXPERTISE" : "GUIDANCE & EXPERTISE",
       price: 79.00,
       images: [bloomLabImg],
-      description: isFR ? "Accès total à la bibliothèque, masterclasses exclusives et support d'experts herboristes." : "Comprehensive access with masterclasses and herbalist guidance.",
+      description: isFR ? "Accès total à la bibliothèque, masterclasses exclusives et ressources complètes." : isDE ? "Vollzugriff auf Bibliothek, exklusive Masterclasses und alle Fachressourcen." : "Comprehensive annual access including exclusive masterclasses and full library.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
-          <p class="text-lg mb-8">L'expérience complète Bloom avec accompagnement personnalisé et masterclasses de pointe.</p>
+          <p class="text-lg mb-8">L'expérience annuelle complète Bloom avec masterclasses et bibliothèque intégrale.</p>
           <p class="text-sm italic text-botanik-green/60">Tarif : 79,00 € TTC par an.</p>
         </div>
-      ` : `<p>Integral subscription</p>`,
-      specs: [{ label: "Type", value: "Abonnement Annuel", icon: Info }]
+      ` : `<p>${isDE ? "Das vollständige Jahreserlebnis inklusive Bibliothek und exklusiver Masterclasses (79,00 € / Jahr)." : "The complete annual Bloom experience with full library and exclusive masterclasses (79.00 € / year)."}</p>`,
+      specs: [{ label: isFR ? "Type" : isDE ? "Typ" : "Type", value: isFR ? "Abonnement Annuel" : isDE ? "Jahres-Abo" : "Annual Plan", icon: Info }]
     }
   };
   

@@ -708,7 +708,7 @@ export default function App() {
                 <button
                   onClick={() => navigateTo('account')}
                   className="p-2 text-[#FAF7F2]/85 hover:text-white hover:bg-white/10 rounded-full transition-colors relative"
-                  title="Mon Compte"
+                  title={selectedLanguage === 'fr' ? 'Mon Compte' : selectedLanguage === 'de' ? 'Mein Konto' : 'My Account'}
                   id="mobile-account-btn"
                 >
                   <User className="w-4 h-4" />
@@ -717,7 +717,7 @@ export default function App() {
                 <button
                   onClick={() => setIsAuthOpen(true)}
                   className="p-2 text-[#FAF7F2]/85 hover:text-white hover:bg-white/10 rounded-full transition-colors relative"
-                  title="Connexion"
+                  title={selectedLanguage === 'fr' ? 'Connexion' : selectedLanguage === 'de' ? 'Anmelden' : 'Login'}
                   id="mobile-login-btn"
                 >
                   <User className="w-4 h-4 text-[#FAF7F2]" />
@@ -728,7 +728,7 @@ export default function App() {
               <button
                 onClick={() => navigateTo('cart')}
                 className="relative p-2 bg-white/10 text-[#FAF7F2] hover:bg-white/20 border border-white/15 rounded-full transition-colors flex items-center justify-center shadow-xs"
-                title="Panier"
+                title={selectedLanguage === 'fr' ? 'Panier' : selectedLanguage === 'de' ? 'Warenkorb' : 'Cart'}
                 id="mobile-cart-btn"
               >
                 <ShoppingBag className="w-4 h-4 text-[#FAF7F2]" />
@@ -755,22 +755,21 @@ export default function App() {
           {mobileMenuOpen && (() => {
             const m = {
               accueil: selectedLanguage === 'fr' ? 'Accueil' : selectedLanguage === 'de' ? 'Startseite' : 'Home',
-              manifeste: selectedLanguage === 'fr' ? 'Le Manifeste' : selectedLanguage === 'de' ? 'Das Manifest' : 'The Manifesto',
-              infusion_botanique: selectedLanguage === 'fr' ? 'Infusion Botanique Maison' : selectedLanguage === 'de' ? 'Botanische Hausinfusion' : 'Home Botanical Infusion',
-              bloomlab: selectedLanguage === 'fr' ? "L'Extracteur BloomLab®" : selectedLanguage === 'de' ? 'BloomLab® Extraktor' : 'BloomLab® Extractor',
-              guide_extraction: selectedLanguage === 'fr' ? 'Extraction Végétale' : selectedLanguage === 'de' ? 'Extraktions-Leitfaden' : 'Extraction Guide',
-              totum_vegetal: selectedLanguage === 'fr' ? 'Totum Végétal' : selectedLanguage === 'de' ? 'Das Pflanzen-Totum' : 'The Plant Totum',
-              phytotherapie: selectedLanguage === 'fr' ? 'Protocoles Systémiques' : selectedLanguage === 'de' ? 'Systemische Protokolle' : 'Systemic Protocols',
-              protocole_psoriasis: selectedLanguage === 'fr' ? 'Protocole Psoriasis' : selectedLanguage === 'de' ? 'Psoriasis-Protokoll' : 'Psoriasis Protocol',
-              protocole_sibo: selectedLanguage === 'fr' ? 'Protocole SIBO' : selectedLanguage === 'de' ? 'SIBO-Protokoll' : 'SIBO Protocol',
-              protocole_myeline: selectedLanguage === 'fr' ? 'Protocole Clarté Mentale' : selectedLanguage === 'de' ? 'Mentale Klarheit Protokoll' : 'Mental Clarity Protocol',
-              diagnostic: selectedLanguage === 'fr' ? 'Bilan & Diagnostic ALMA' : selectedLanguage === 'de' ? 'ALMA Diagnose' : 'ALMA Assessment',
-              boutique_toute: selectedLanguage === 'fr' ? 'Toute la Boutique' : selectedLanguage === 'de' ? 'Alle Produkte' : 'All Products',
-              kits_plantes: selectedLanguage === 'fr' ? 'Kits de plantes' : selectedLanguage === 'de' ? 'Pflanzen-Kits' : 'Plant Kits',
-              abonnement: selectedLanguage === 'fr' ? 'Abonnements' : selectedLanguage === 'de' ? 'Premium-Abonnement' : 'Premium Subscription',
+              histoire: selectedLanguage === 'fr' ? 'Histoire & Philosophie' : selectedLanguage === 'de' ? 'Geschichte & Philosophie' : 'Story & Philosophy',
+              infusion_menu: selectedLanguage === 'fr' ? 'Infusion Botanique' : selectedLanguage === 'de' ? 'Botanische Infusion' : 'Botanical Infusion',
+              totum_vegetal: selectedLanguage === 'fr' ? 'Totum Végétal' : selectedLanguage === 'de' ? 'Pflanzen-Totum' : 'Plant Totum',
+              guide_extraction: selectedLanguage === 'fr' ? 'Extraction Végétale' : selectedLanguage === 'de' ? 'Pflanzenextraktion' : 'Plant Extraction',
+              solvants: selectedLanguage === 'fr' ? 'Teintures & Solvants' : selectedLanguage === 'de' ? 'Tinkturen & Lösungsmittel' : 'Tinctures & Solvents',
+              culinaire: selectedLanguage === 'fr' ? 'Cuisine Botanique' : selectedLanguage === 'de' ? 'Botanische Küche' : 'Botanical Cuisine',
+              cosmetiques: selectedLanguage === 'fr' ? 'Cosmétique Maison' : selectedLanguage === 'de' ? 'Naturkosmetik DIY' : 'Homemade Cosmetics',
+              rituel_reset: selectedLanguage === 'fr' ? 'Rituel Reset' : selectedLanguage === 'de' ? 'Reset-Ritual' : 'Reset Ritual',
+              phycocyanine: selectedLanguage === 'fr' ? 'Phycocyanine' : 'Phycocyanin',
+              plantes_bio: selectedLanguage === 'fr' ? 'Plantes Médicinales Bio' : selectedLanguage === 'de' ? 'Bio-Heilpflanzen' : 'Organic Medicinal Plants',
+              accessoires: selectedLanguage === 'fr' ? 'Accessoires' : selectedLanguage === 'de' ? 'Zubehör' : 'Accessories',
+              argiles: selectedLanguage === 'fr' ? 'Argiles & Liants' : selectedLanguage === 'de' ? 'Tonerden & Bindemittel' : 'Clays & Binders',
+              abonnement: selectedLanguage === 'fr' ? 'Abonnements' : selectedLanguage === 'de' ? 'Digitale Abonnements' : 'Digital Subscriptions',
+              academie: selectedLanguage === 'fr' ? 'Académie' : selectedLanguage === 'de' ? 'Akademie' : 'Academy',
               herbier: selectedLanguage === 'fr' ? 'Herbier' : selectedLanguage === 'de' ? 'Das Herbarium' : 'The Herbarium',
-              culinaire: selectedLanguage === 'fr' ? 'Cuisine Botanique' : selectedLanguage === 'de' ? 'Kulinarische Werkstatt' : 'Culinary Workshop',
-              cosmetiques: selectedLanguage === 'fr' ? 'Cosmétique Maison' : selectedLanguage === 'de' ? 'Botanische Kosmetik' : 'Botanical Cosmetics',
               bibliotheque: selectedLanguage === 'fr' ? 'Bibliothèque Scientifique' : selectedLanguage === 'de' ? 'Wissenschaftliche Bibliothek' : 'Scientific Library',
               calculatrice: selectedLanguage === 'fr' ? 'Calculatrice de Dilution' : selectedLanguage === 'de' ? 'Verdünnungsrechner' : 'Dilution Calculator',
               espace_membre: selectedLanguage === 'fr' ? 'Espace membre' : selectedLanguage === 'de' ? 'Mitgliederbereich' : 'Member Area',
@@ -807,38 +806,38 @@ export default function App() {
                     onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('la-marque'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <HeartHandshake className="w-4 h-4 text-white/70" /> Histoire &amp; Philosophie
+                    <HeartHandshake className="w-4 h-4 text-white/70" /> {m.histoire}
                   </a>
 
                   {/* SECTION: LA MÉTHODE A/B */}
-                  {sectionTitle(selectedLanguage === 'fr' ? 'LA MÉTHODE A/B' : selectedLanguage === 'de' ? 'DIE A/B METHODE' : 'THE A/B METHOD')}
+                  {sectionTitle(selectedLanguage === 'fr' ? 'LA MÉTHODE A/B' : selectedLanguage === 'de' ? 'DIE A/B-METHODE' : 'THE A/B METHOD')}
                   <a
                     href={VIEW_PATHS['infusion-botanique']}
                     onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('infusion-botanique'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <FlaskConical className="w-4 h-4 text-white/70" /> Infusion Botanique
+                    <FlaskConical className="w-4 h-4 text-white/70" /> {m.infusion_menu}
                   </a>
                   <a
                     href={VIEW_PATHS['totum-vegetal']}
                     onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('totum-vegetal'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <Leaf className="w-4 h-4 text-white/70" /> Totum Végétal
+                    <Leaf className="w-4 h-4 text-white/70" /> {m.totum_vegetal}
                   </a>
                   <a
                     href={VIEW_PATHS['guide-complet']}
                     onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('guide-complet'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <BookOpen className="w-4 h-4 text-white/70" /> Extraction Végétale
+                    <BookOpen className="w-4 h-4 text-white/70" /> {m.guide_extraction}
                   </a>
                   <a
                     href={VIEW_PATHS['guide-solvants']}
                     onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('guide-solvants'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <Droplets className="w-4 h-4 text-white/70" /> Teintures &amp; Solvants
+                    <Droplets className="w-4 h-4 text-white/70" /> {m.solvants}
                   </a>
 
                   {/* SECTION: VOTRE PRATIQUE */}
@@ -874,21 +873,21 @@ export default function App() {
                     onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('phytotherapie-reset'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <Activity className="w-4 h-4 text-white/70" /> Rituel Reset
+                    <Activity className="w-4 h-4 text-white/70" /> {m.rituel_reset}
                   </a>
                   <a
                     href={VIEW_PATHS['recette-phycocyanine']}
                     onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('recette-phycocyanine'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-6 py-2 rounded-xl text-white/90 font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <FlaskConical className="w-4 h-4 text-[#E8772E]" /> Phycocyanine
+                    <FlaskConical className="w-4 h-4 text-[#E8772E]" /> {m.phycocyanine}
                   </a>
 
                   {/* SECTION: BOUTIQUE */}
                   {sectionTitle(selectedLanguage === 'fr' ? 'BOUTIQUE' : selectedLanguage === 'de' ? 'SHOP' : 'STORE')}
                   <a
-                    href={VIEW_PATHS['machine']}
-                    onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('machine'); setMobileMenuOpen(false); } }}
+                    href="/boutique/bloomlab/"
+                    onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('product-detail', 'bloomlab'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
                     <Sparkles className="w-4 h-4 text-[#E8772E]" /> BloomLab®
@@ -904,7 +903,7 @@ export default function App() {
                     }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <Package className="w-4 h-4 text-white/70" /> Soins Botaniques
+                    <Package className="w-4 h-4 text-white/70" /> {m.plantes_bio}
                   </a>
                   <a
                     href={VIEW_PATHS['boutique']}
@@ -918,14 +917,14 @@ export default function App() {
                     }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <ShoppingBag className="w-4 h-4 text-white/70" /> Accessoires
+                    <ShoppingBag className="w-4 h-4 text-white/70" /> {m.accessoires}
                   </a>
                   <a
                     href="/boutique/duo-argiles/"
                     onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); navigateTo('product-detail', 'duo-argiles'); setMobileMenuOpen(false); } }}
                     className="flex items-center gap-3 px-3 py-2 rounded-xl text-white font-medium hover:bg-white/10 text-left text-sm"
                   >
-                    <Leaf className="w-4 h-4 text-white/70" /> Argiles &amp; Liants
+                    <Leaf className="w-4 h-4 text-white/70" /> {m.argiles}
                   </a>
                   <a
                     href="/abonnement/"
@@ -1008,7 +1007,7 @@ export default function App() {
                       >
                         <span className="flex items-center gap-2 text-[#E8772E]">
                           <GraduationCap className="w-4 h-4 text-[#E8772E]" />
-                          <span className="text-[#E8772E] font-bold text-xs tracking-wide">Académie</span>
+                          <span className="text-[#E8772E] font-bold text-xs tracking-wide">{m.academie}</span>
                         </span>
                         <span className="text-[8px] uppercase px-1.5 py-0.5 rounded-full bg-[#E8772E]/20 text-[#FAF7F2] font-black tracking-wider border border-[#E8772E]/30">
                           {selectedLanguage === 'fr' ? 'Pédagogie' : selectedLanguage === 'de' ? 'Pädagogik' : 'Pedagogy'}
@@ -1018,7 +1017,7 @@ export default function App() {
                         type="button"
                         onClick={() => setMobileBloomAcademyOpen(!mobileBloomAcademyOpen)}
                         className="p-2 rounded-xl text-[#E8772E] hover:bg-[#E8772E]/15 border border-[#E8772E]/30 transition-colors cursor-pointer"
-                        title="Ouvrir le menu Bloom Academy"
+                        title={selectedLanguage === 'fr' ? 'Ouvrir le menu Bloom Academy' : selectedLanguage === 'de' ? 'Bloom Academy Menü öffnen' : 'Toggle Bloom Academy menu'}
                       >
                         {mobileBloomAcademyOpen ? (
                           <ChevronDown className="w-4 h-4 text-[#E8772E]" />

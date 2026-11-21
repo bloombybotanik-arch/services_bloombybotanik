@@ -18,6 +18,9 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedLevel, setSelectedLevel] = useState<string>('all');
+  const isFR = lang === 'fr';
+  const isDE = lang === 'de';
+  const tr = (fr: string, en: string, de: string) => (isFR ? fr : isDE ? de : en);
 
   useEffect(() => {
     // Check window.location.hash
@@ -100,25 +103,25 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
       <header className="w-full bg-[#1E2E25] text-white border-b border-white/10 mb-12">
         {/* Barre de fil d'Ariane tout en haut : Vert Profond du Menu #0F261E */}
         <div className="w-full bg-[#0F261E] border-b border-white/10 px-4 md:px-8 py-3.5">
-          <nav aria-label="Fil d'Ariane" className="max-w-7xl mx-auto">
+          <nav aria-label={tr("Fil d'Ariane", "Breadcrumb", "Brotkrumennavigation")} className="max-w-7xl mx-auto">
             <ol className="flex items-center space-x-2 text-sm text-white">
               <li>
                 <button 
                   onClick={() => { onNavigate?.('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                   className="text-white/80 hover:text-[#F5F0E6] transition-colors cursor-pointer"
                 >
-                  Accueil
+                  {tr("Accueil", "Home", "Startseite")}
                 </button>
               </li>
               <li><span className="text-white/40">/</span></li>
               <li>
                 <span className="text-white/80">
-                  Ressources
+                  {tr("Ressources", "Resources", "Ressourcen")}
                 </span>
               </li>
               <li><span className="text-white/40">/</span></li>
               <li className="text-white font-bold" aria-current="page">
-                Lexique Botanik
+                {tr("Lexique Botanik", "Botanical Glossary", "Botanisches Lexikon")}
               </li>
             </ol>
           </nav>
@@ -127,24 +130,34 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20 flex flex-col items-center text-center">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-white text-xs font-bold tracking-wider uppercase border border-white/20 mb-6 shadow-xs">
             <BookOpen className="w-3.5 h-3.5 text-[#E8772E]" />
-            <span>Corpus Scientifique & Phytochimique</span>
+            <span>{tr("Corpus Scientifique & Phytochimique", "Scientific & Phytochemical Corpus", "Wissenschaftlicher & Phytochemischer Korpus")}</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4 leading-tight">
-            Lexique Fondateur Bloom — Le Vocabulaire du Vivant
+            {tr("Lexique Fondateur Bloom — Le Vocabulaire du Vivant", "Bloom Foundational Glossary — The Vocabulary of Living Systems", "Bloom-Grundlagenlexikon — Das Vokabular des Lebendigen")}
           </h1>
 
           <p className="text-base sm:text-lg text-white/80 font-normal leading-relaxed max-w-3xl">
-            Rendre la complexité biologique limpide sans jamais en appauvrir la rigueur. Retrouvez ici les définitions canoniques, analogies concrètes et fondements physiologiques qui éclairent notre démarche : de la <strong className="text-white font-semibold">charge allostatique</strong> au <strong className="text-white font-semibold">Totum végétal</strong>.
+            {isFR ? (
+              <>Rendre la complexité biologique limpide sans jamais en appauvrir la rigueur. Retrouvez ici les définitions canoniques, analogies concrètes et fondements physiologiques qui éclairent notre démarche : de la <strong className="text-white font-semibold">charge allostatique</strong> au <strong className="text-white font-semibold">Totum végétal</strong>.</>
+            ) : isDE ? (
+              <>Biologische Komplexität verständlich machen, ohne an Präzision zu verlieren. Hier finden Sie kanonische Definitionen, konkrete Analogien und physiologische Grundlagen: von der <strong className="text-white font-semibold">allostatischen Last</strong> bis zum <strong className="text-white font-semibold">pflanzlichen Totum</strong>.</>
+            ) : (
+              <>Making biological complexity crystal clear without sacrificing scientific rigor. Find canonical definitions, concrete analogies, and physiological foundations here: from <strong className="text-white font-semibold">allostatic load</strong> to the <strong className="text-white font-semibold">plant Totum</strong>.</>
+            )}
           </p>
 
           <div className="bg-white/5 border border-white/10 text-white/80 p-6 rounded-2xl mt-6 max-w-3xl text-sm leading-relaxed text-left">
             <p className="text-white font-semibold mb-1 flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-[#E8772E]" />
-              <span>Où suis-je ?</span>
+              <span>{tr("Où suis-je ?", "Where am I?", "Wo bin ich?")}</span>
             </p>
             <p className="text-white text-xs sm:text-sm leading-relaxed font-normal">
-              Vous êtes dans le glossaire canonique de Bloom by BotaniK. Ce répertoire clarifie les concepts clés de notre méthodologie (Totum végétal, extraction thermo-cinétique, homéostasie, pharmacie intérieure) pour une compréhension rigoureuse et accessible du vivant.
+              {tr(
+                "Vous êtes dans le glossaire canonique de Bloom by BotaniK. Ce répertoire clarifie les concepts clés de notre méthodologie (Totum végétal, extraction thermo-cinétique, homéostasie, pharmacie intérieure) pour une compréhension rigoureuse et accessible du vivant.",
+                "You are in the canonical glossary of Bloom by BotaniK. This directory clarifies key concepts of our methodology (plant Totum, thermo-kinetic extraction, homeostasis, internal pharmacy) for a rigorous, accessible understanding.",
+                "Sie befinden sich im kanonischen Glossar von Bloom by BotaniK. Dieses Verzeichnis erläutert die Schlüsselkonzepte unserer Methodik (pflanzliches Totum, thermokinetische Extraktion, Homöostase, innere Apotheke)."
+              )}
             </p>
           </div>
         </div>
@@ -160,17 +173,17 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
               <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
-                placeholder="Rechercher un concept (ex : charge allostatique, nerf vague, LPS, totum...)"
+                placeholder={tr("Rechercher un concept (ex : charge allostatique, nerf vague, LPS, totum...)", "Search a concept (e.g., allostatic load, vagus nerve, LPS, totum...)", "Begriff suchen (z. B. allostatische Last, Vagusnerv, LPS, Totum...)")}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                aria-label="Rechercher un terme dans le lexique"
+                aria-label={tr("Rechercher un terme dans le lexique", "Search a glossary term", "Einen Begriff im Lexikon suchen")}
                 className="w-full pl-10 pr-4 py-2.5 text-sm bg-white border border-[#E7DFD3] rounded-xl text-[#3E4A3D] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#C8AB8A] focus:border-transparent transition-all shadow-xs"
               />
             </div>
 
             {/* Level Selector */}
             <div className="flex items-center gap-2 text-xs font-semibold">
-              <span className="text-slate-500">Niveau :</span>
+              <span className="text-slate-500">{tr("Niveau :", "Level:", "Niveau:")}</span>
               <button
                 type="button"
                 onClick={() => setSelectedLevel('all')}
@@ -180,7 +193,7 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
                     : 'bg-white text-slate-700 border-[#E7DFD3] hover:bg-[#FAF7F2]'
                 }`}
               >
-                Tous
+                {tr("Tous", "All", "Alle")}
               </button>
               <button
                 type="button"
@@ -191,7 +204,7 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
                     : 'bg-white text-slate-700 border-[#E7DFD3] hover:bg-[#FAF7F2]'
                 }`}
               >
-                N1 Fondamental
+                {tr("N1 Fondamental", "N1 Foundational", "N1 Grundlagen")}
               </button>
               <button
                 type="button"
@@ -202,7 +215,7 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
                     : 'bg-white text-slate-700 border-[#E7DFD3] hover:bg-[#FAF7F2]'
                 }`}
               >
-                N2 Approfondi
+                {tr("N2 Approfondi", "N2 Advanced", "N2 Vertieft")}
               </button>
             </div>
           </div>
@@ -218,7 +231,7 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
                   : 'bg-white/80 text-slate-700 border-[#E7DFD3] hover:border-[#C8AB8A] hover:bg-white'
               }`}
             >
-              Toutes les notions ({lexiqueEntriesList.length})
+              {tr(`Toutes les notions (${lexiqueEntriesList.length})`, `All concepts (${lexiqueEntriesList.length})`, `Alle Begriffe (${lexiqueEntriesList.length})`)}
             </button>
 
             {Object.entries(CATEGORIES_LABELS).map(([catKey, catInfo]) => {
@@ -244,7 +257,11 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
 
         {/* Counter readout */}
         <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-6">
-          {filteredEntries.length} {filteredEntries.length > 1 ? 'notions correspondent' : 'notion correspond'} à votre sélection
+          {isFR
+            ? `${filteredEntries.length} ${filteredEntries.length > 1 ? 'notions correspondent' : 'notion correspond'} à votre sélection`
+            : isDE
+            ? `${filteredEntries.length} ${filteredEntries.length > 1 ? 'Begriffe entsprechen' : 'Begriff entspricht'} Ihrer Auswahl`
+            : `${filteredEntries.length} ${filteredEntries.length > 1 ? 'concepts match' : 'concept matches'} your selection`}
         </div>
 
         {/* Lexique Cards Grid */}
@@ -280,10 +297,10 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
                     {/* Scientific Proof Stars */}
                     <div
                       className="flex items-center gap-1 bg-[#FAF7F2] px-2 py-0.5 rounded-md border border-[#E7DFD3]"
-                      title={`Niveau de preuve scientifique : ${item.niveauPreuve}/5`}
-                      aria-label={`Niveau de preuve scientifique : ${item.niveauPreuve} sur 5`}
+                      title={tr(`Niveau de preuve scientifique : ${item.niveauPreuve}/5`, `Scientific evidence level: ${item.niveauPreuve}/5`, `Wissenschaftliches Evidenzniveau: ${item.niveauPreuve}/5`)}
+                      aria-label={tr(`Niveau de preuve scientifique : ${item.niveauPreuve} sur 5`, `Scientific evidence level: ${item.niveauPreuve} out of 5`, `Wissenschaftliches Evidenzniveau: ${item.niveauPreuve} von 5`)}
                     >
-                      <span className="text-[10px] font-bold text-slate-600 mr-0.5">Preuve :</span>
+                      <span className="text-[10px] font-bold text-slate-600 mr-0.5">{tr("Preuve :", "Evidence:", "Evidenz:")}</span>
                       {[1, 2, 3, 4, 5].map((star) => (
                         <Star
                           key={star}
@@ -305,7 +322,7 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
                   {/* Simple Definition */}
                   <div className="space-y-1">
                     <h3 className="text-xs font-black uppercase tracking-wider text-[#1E2E25]">
-                      En langage simple :
+                      {tr("En langage simple :", "In plain language:", "Einfach erklärt:")}
                     </h3>
                     <p className="text-sm text-slate-800 leading-relaxed font-normal">
                       {item.definitionSimple || item.definitionNovice}
@@ -317,7 +334,7 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
                     <div className="bg-[#FAF7F2] rounded-2xl p-4 border border-[#E7DFD3] space-y-1">
                       <div className="flex items-center gap-1.5 text-xs font-black text-[#C8AB8A]">
                         <Sparkles className="w-3.5 h-3.5" />
-                        <span>L'analogie concrète :</span>
+                        <span>{tr("L'analogie concrète :", "Concrete analogy:", "Konkrete Analogie:")}</span>
                       </div>
                       <p className="text-xs sm:text-sm italic text-[#1E2E25] leading-relaxed m-0 font-medium">
                         « {item.analogie} »
@@ -329,7 +346,7 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
                   {item.definitionExperte && (
                     <div className="space-y-1 pt-1">
                       <h3 className="text-xs font-black uppercase tracking-wider text-slate-500">
-                        Précision physiologique & biochimique :
+                        {tr("Précision physiologique & biochimique :", "Physiological & biochemical precision:", "Physiologische & biochemische Präzision:")}
                       </h3>
                       <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed">
                         {item.definitionExperte}
@@ -340,7 +357,7 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
                   {/* Scientific References */}
                   {item.references && (
                     <div className="text-[11px] text-slate-500 pt-3 border-t border-[#E7DFD3]/60 leading-relaxed">
-                      <strong className="text-slate-700">Références scientifiques : </strong>
+                      <strong className="text-slate-700">{tr("Références scientifiques : ", "Scientific references: ", "Wissenschaftliche Referenzen: ")}</strong>
                       {item.references}
                     </div>
                   )}
@@ -350,7 +367,7 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
                 {item.linkedPages && item.linkedPages.length > 0 && (
                   <div className="pt-4 mt-4 border-t border-[#E7DFD3]">
                     <span className="text-[11px] font-black uppercase tracking-wider text-[#1E2E25] block mb-2">
-                      Approfondir sur le site :
+                      {tr("Approfondir sur le site :", "Explore further:", "Auf der Website vertiefen:")}
                     </span>
                     <div className="flex flex-col gap-1.5">
                       {item.linkedPages.map((page, idx) => (
@@ -381,23 +398,31 @@ export const LexiqueContent: React.FC<LexiqueContentProps> = ({
         <div className="mt-16 bg-[#1E2E25] text-white rounded-3xl p-8 sm:p-12 border border-white/10 text-center max-w-3xl mx-auto shadow-xl space-y-4">
           <ShieldCheck className="w-10 h-10 text-[#C8AB8A] mx-auto" />
           <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-            La rigueur de votre extraction détermine la réponse de votre terrain
+            {tr(
+              "La rigueur de votre extraction détermine la réponse de votre terrain",
+              "The rigor of your extraction determines your terrain's response",
+              "Die Präzision Ihrer Extraktion bestimmt die Antwort Ihres Terrains"
+            )}
           </h2>
           <p className="text-sm sm:text-base text-white/80 leading-relaxed max-w-xl mx-auto">
-            Votre corps n'est pas cassé. Il est verrouillé par un spectre de charges allostatiques accumulées. Découvrez comment l'extraction séquentielle A/B redonne à vos cellules leurs pleines capacités d'autorégulation.
+            {tr(
+              "Votre corps n'est pas cassé. Il est verrouillé par un spectre de charges allostatiques accumulées. Découvrez comment l'extraction séquentielle A/B redonne à vos cellules leurs pleines capacités d'autorégulation.",
+              "Your body is not broken. It is locked by accumulated allostatic loads. Discover how sequential A/B extraction restores your cells' self-regulation capacities.",
+              "Ihr Körper ist nicht kaputt. Er ist durch angesammelte allostatische Lasten blockiert. Entdecken Sie, wie die sequentielle A/B-Extraktion die Selbstregulation unterstützt."
+            )}
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-2">
             <button
               onClick={() => onNavigate?.('phytotherapie-reset')}
               className="px-6 py-3.5 rounded-xl bg-[#E8772E] hover:bg-[#D4651F] text-white font-bold text-xs sm:text-sm transition-all shadow-md cursor-pointer"
             >
-              Découvrir le Protocole Reset
+              {tr("Découvrir le Protocole Reset", "Discover the Reset Protocol", "Reset-Protokoll entdecken")}
             </button>
             <button
               onClick={() => onNavigate?.('manifeste')}
               className="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-[#1E2E25] font-bold text-xs sm:text-sm transition-all cursor-pointer shadow-xs"
             >
-              Lire le Manifeste
+              {tr("Lire le Manifeste", "Read the Manifesto", "Manifest lesen")}
             </button>
           </div>
         </div>

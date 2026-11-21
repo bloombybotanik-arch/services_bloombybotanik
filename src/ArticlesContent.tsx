@@ -83,13 +83,13 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
         />
         <div className="max-w-4xl mx-auto px-6 py-16">
           {/* Breadcrumbs */}
-          <nav aria-label="Fil d'Ariane" className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-[#A8B8A0]/60 mb-8">
+          <nav aria-label={isFR ? "Fil d'Ariane" : isDE ? "Brotkrumennavigation" : "Breadcrumb"} className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-[#A8B8A0]/60 mb-8">
             <a
               href="/"
               onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); onNavigate('home'); } }}
               className="hover:text-[#A8B8A0] uppercase cursor-pointer"
             >
-              Accueil
+              {isFR ? 'Accueil' : isDE ? 'Startseite' : 'Home'}
             </a>
             <ChevronRight className="w-3 h-3" />
             <a
@@ -97,7 +97,7 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
               onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); setSelectedPost(null); onNavigate('articles'); } }}
               className="hover:text-[#A8B8A0] uppercase cursor-pointer"
             >
-              Articles
+              {isFR ? 'Articles' : isDE ? 'Artikel' : 'Articles'}
             </a>
             <ChevronRight className="w-3 h-3" />
             <span className="text-[#C8AB8A] truncate max-w-[240px]">{selectedPost.title[lang]}</span>
@@ -125,7 +125,9 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
                 <BookOpen className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-xs font-bold text-[#A8B8A0]">Retrouvez nos dossiers complets sur le blog officiel</div>
+                <div className="text-xs font-bold text-[#A8B8A0]">
+                  {isFR ? 'Retrouvez nos dossiers complets sur le blog officiel' : isDE ? 'Entdecken Sie unsere Dossiers auf dem offiziellen Blog' : 'Explore our complete dossiers on the official blog'}
+                </div>
                 <div className="text-[11px] text-[#A8B8A0]/70">blog.bloombybotanik.com</div>
               </div>
             </div>
@@ -135,7 +137,7 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#3E4A3D] hover:bg-[#2D372C] text-white rounded-xl text-xs font-bold transition-colors shrink-0"
             >
-              <span>Visiter le blog officiel</span>
+              <span>{isFR ? 'Visiter le blog officiel' : isDE ? 'Offiziellen Blog besuchen' : 'Visit official blog'}</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </div>
@@ -158,7 +160,9 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
                 <User className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-[10px] font-black uppercase tracking-widest text-[#A8B8A0]/50">Rédigé par</div>
+                <div className="text-[10px] font-black uppercase tracking-widest text-[#A8B8A0]/50">
+                  {isFR ? 'Rédigé par' : isDE ? 'Verfasst von' : 'Written by'}
+                </div>
                 <div className="font-bold text-[#A8B8A0] text-sm">{selectedPost.author}</div>
               </div>
             </div>
@@ -190,7 +194,7 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
           {relatedPosts.length > 0 && (
             <div className="mt-20 pt-12 border-t border-[#E7DFD3]">
               <h3 className="text-2xl font-black text-[#3E4A3D] mb-8">
-                {isFR ? "Articles similaires" : "Related Articles"}
+                {isFR ? "Articles similaires" : isDE ? "Ähnliche Artikel" : "Related Articles"}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {relatedPosts.map(post => (
@@ -213,7 +217,7 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
                       <p className="text-xs text-[#3E4A3D]/70 line-clamp-2 mb-4">{post.excerpt[lang]}</p>
                     </div>
                     <div className="flex items-center gap-1 text-xs font-bold text-[#A8B8A0]">
-                      <span>Lire l'article</span>
+                      <span>{isFR ? "Lire l'article" : isDE ? "Artikel lesen" : "Read article"}</span>
                       <ChevronRight className="w-3.5 h-3.5" />
                     </div>
                   </a>
@@ -234,16 +238,18 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#E8F1EE] text-[#A8B8A0] text-[10px] font-bold uppercase tracking-widest rounded-md border border-[#D8CBB7]">
             <Compass className="w-3.5 h-3.5 text-[#C8AB8A]" />
-            <span>{isFR ? "Le Journal Botanique" : "Botanical Journal"}</span>
+            <span>{isFR ? "Le Journal Botanique" : isDE ? "Das Botanische Journal" : "Botanical Journal"}</span>
           </div>
           
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#3E4A3D] tracking-tight">
-            {isFR ? "Articles, Guides & Protocoles d'Extraction" : "Articles, Guides & Botanical Protocols"}
+            {isFR ? "Articles, Guides & Protocoles d'Extraction" : isDE ? "Artikel, Guides & Extraktionsprotokolle" : "Articles, Guides & Botanical Protocols"}
           </h1>
           
           <p className="text-base sm:text-lg text-[#3E4A3D]/70 leading-relaxed">
             {isFR 
               ? "Approfondissez vos connaissances en phytothérapie moderne, extraction du Totum et recettes de terrain." 
+              : isDE
+              ? "Vertiefen Sie Ihr Wissen über moderne Phytotherapie, Totum-Extraktion und bewährte Rezepturen."
               : "Deepen your knowledge of botanical science, Totum extraction and daily recipes."}
           </p>
         </div>
@@ -253,18 +259,22 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
           <div className="relative z-10 max-w-2xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#C8AB8A] text-[#0F261E] text-[10px] font-black uppercase tracking-widest rounded-full">
               <Sparkles className="w-3 h-3" />
-              <span>{isFR ? "Blog Officiel Bloom by BotaniK" : "Official Blog"}</span>
+              <span>{isFR ? "Blog Officiel Bloom by BotaniK" : isDE ? "Offizieller Blog von Bloom by BotaniK" : "Official Blog"}</span>
             </div>
             
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black leading-tight">
               {isFR 
                 ? "Dossiers exclusifs & actualités sur blog.bloombybotanik.com" 
+                : isDE
+                ? "Exklusive Dossiers & Neuigkeiten auf blog.bloombybotanik.com"
                 : "Exclusive research & articles on blog.bloombybotanik.com"}
             </h2>
             
             <p className="text-sm sm:text-base text-white/80 leading-relaxed">
               {isFR 
                 ? "Retrouvez l'intégralité de nos publications, les retours d'expérience de la communauté et les décryptages scientifiques sur notre plateforme de blog officielle."
+                : isDE
+                ? "Entdecken Sie alle unsere Publikationen, Erfahrungsberichte der Community und wissenschaftliche Analysen auf unserer offiziellen Blog-Plattform."
                 : "Explore our full publications, community feedback, and scientific deep dives on our official blog platform."}
             </p>
             
@@ -275,7 +285,7 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-white text-[#A8B8A0] hover:bg-[#3E4A3D] hover:text-white rounded-2xl font-black text-sm transition-all shadow-lg cursor-pointer"
               >
-                <span>{isFR ? "Accéder au blog officiel (blog.bloombybotanik.com)" : "Visit official blog"}</span>
+                <span>{isFR ? "Accéder au blog officiel (blog.bloombybotanik.com)" : isDE ? "Zum offiziellen Blog (blog.bloombybotanik.com)" : "Visit official blog"}</span>
                 <ExternalLink className="w-4 h-4" />
               </a>
             </div>
@@ -296,7 +306,7 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
                     : 'bg-white text-[#3E4A3D]/70 border border-[#E7DFD3] hover:border-[#A8B8A0]'
                 }`}
               >
-                {cat === 'all' ? (isFR ? 'Tous les articles' : 'All articles') : cat}
+                {cat === 'all' ? (isFR ? 'Tous les articles' : isDE ? 'Alle Artikel' : 'All articles') : cat}
               </button>
             ))}
           </div>
@@ -307,7 +317,7 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder={isFR ? "Rechercher un article..." : "Search articles..."}
+              placeholder={isFR ? "Rechercher un article..." : isDE ? "Artikel suchen..." : "Search articles..."}
               className="w-full pl-10 pr-4 py-2.5 bg-white rounded-full border border-[#E7DFD3] text-sm focus:outline-none focus:border-[#A8B8A0]"
             />
           </div>
@@ -353,7 +363,7 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
                 </div>
                 
                 <div className="pt-4 border-t border-[#F3EEE6] flex items-center justify-between text-xs font-bold text-[#A8B8A0]">
-                  <span>{isFR ? "Lire l'article complet" : "Read full article"}</span>
+                  <span>{isFR ? "Lire l'article complet" : isDE ? "Vollständigen Artikel lesen" : "Read full article"}</span>
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>

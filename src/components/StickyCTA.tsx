@@ -64,8 +64,8 @@ export const StickyCTA: React.FC<StickyCTAProps> = ({
     desktopPrice: isFR ? "Dès 229€ • En stock 24/48h" : isDE ? "Ab 229€ • Auf Lager 24/48h" : "From 229€ • In Stock 24/48h",
     cta: isFR ? "Acheter" : isDE ? "Kaufen" : "Order Now",
     mobileTitle: "BloomLab®",
-    mobileStarting: isFR ? "Dès 229€" : "From 229€",
-    stock: isFR ? "• Expédition 24/48h" : "• 24/48h Shipping"
+    mobileStarting: isFR ? "Dès 229€" : isDE ? "Ab 229€" : "From 229€",
+    stock: isFR ? "• Expédition 24/48h" : isDE ? "• Versand 24/48h" : "• 24/48h Shipping"
   };
 
   return (
@@ -76,7 +76,7 @@ export const StickyCTA: React.FC<StickyCTAProps> = ({
           type="button"
           onClick={handleClick}
           className={styles.desktopPill}
-          aria-label="Accéder aux offres BloomLab"
+          aria-label={isFR ? "Accéder aux offres BloomLab" : isDE ? "Zu den BloomLab-Angeboten" : "View BloomLab offers"}
         >
           <div className={styles.pillIconWrapper}>
             <ShoppingBag className="w-4 h-4" />
@@ -104,7 +104,7 @@ export const StickyCTA: React.FC<StickyCTAProps> = ({
           type="button"
           onClick={handleClick}
           className={styles.mobileButton}
-          aria-label="Commander BloomLab"
+          aria-label={isFR ? "Commander BloomLab" : isDE ? "BloomLab bestellen" : "Order BloomLab"}
         >
           <ShoppingBag className="w-4 h-4" />
           <span>{isFR ? "Je commande" : text.cta}</span>

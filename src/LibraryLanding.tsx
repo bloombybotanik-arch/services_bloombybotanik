@@ -29,7 +29,7 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
   const categories = [
     { 
       id: 'culinary', 
-      name: 'Culinaire', 
+      name: lang === 'fr' ? 'Culinaire' : lang === 'de' ? 'Kulinarik' : 'Culinary', 
       view: 'culinaire', 
       icon: Utensils, 
       count: counts.culinary,
@@ -38,7 +38,7 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
     },
     { 
       id: 'cosmetic', 
-      name: 'Cosmétique', 
+      name: lang === 'fr' ? 'Cosmétique' : lang === 'de' ? 'Kosmetik' : 'Cosmetics', 
       view: 'cosmetiques', 
       icon: Sparkles, 
       count: counts.cosmetic,
@@ -47,7 +47,7 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
     },
     { 
       id: 'therapeutic', 
-      name: 'Thérapeutique', 
+      name: lang === 'fr' ? 'Plantes Médicinales' : lang === 'de' ? 'Heilpflanzen' : 'Medicinal Plants', 
       view: 'library', 
       icon: Leaf, 
       count: counts.therapeutic,
@@ -127,15 +127,15 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
               <div className="relative w-full h-full min-h-[360px] lg:min-h-0 rounded-3xl overflow-hidden shadow-2xl border-2 border-white bg-white group flex flex-col">
                 <img 
                   src={rosemaryImg} 
-                  alt="BloomLab - Infusion de romarin" 
+                  alt={lang === 'fr' ? "BloomLab - Infusion de romarin" : lang === 'de' ? "BloomLab - Rosmarin-Infusion" : "BloomLab - Rosemary Infusion"} 
                   className="w-full h-full flex-1 object-cover opacity-100 group-hover:scale-105 transition-transform duration-700" 
                 />
                 <div className="absolute bottom-4 left-4 right-4 bg-[#3E4A3D]/85 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/20 shadow-lg flex items-center justify-between">
                   <div className="text-xs font-bold text-white tracking-wide">
-                    BloomLab® • Infusion de Romarin
+                    {lang === 'fr' ? "BloomLab® • Infusion de Romarin" : lang === 'de' ? "BloomLab® • Rosmarin-Aufguss" : "BloomLab® • Rosemary Infusion"}
                   </div>
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#C8AB8A] bg-[#C8AB8A]/20 px-2.5 py-0.5 rounded-full border border-[#C8AB8A]/30">
-                    Totum Végétal
+                    {lang === 'fr' ? "Totum Végétal" : lang === 'de' ? "Pflanzen-Totum" : "Plant Totum"}
                   </span>
                 </div>
               </div>
@@ -149,7 +149,7 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
       <section className="py-20 bg-white container mx-auto px-6 border-b border-botanik-green/5">
         <div className="max-w-4xl mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-botanik-green/5 rounded-full border border-botanik-green/10 text-botanik-green text-[10px] font-black uppercase tracking-[0.2em] mb-4">
-            <span>Navigation par terrain</span>
+            <span>{lang === 'fr' ? "Navigation par terrain" : lang === 'de' ? "Navigation nach Terrain" : "Browse by terrain"}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-botanik-green mb-3">
             {lang === 'fr' 
@@ -205,7 +205,9 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
         <div className="p-4 md:p-5 rounded-2xl bg-botanik-green/5 border border-botanik-green/10 text-xs text-botanik-green/70 leading-relaxed flex items-start gap-3">
           <ShieldAlert className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
           <p>
-            <strong className="text-botanik-green font-semibold">Note éditoriale : </strong>
+            <strong className="text-botanik-green font-semibold">
+              {lang === 'fr' ? "Note éditoriale : " : lang === 'de' ? "Redaktioneller Hinweis: " : "Editorial Note: "}
+            </strong>
             {TERRAIN_EDITORIAL_NOTICE[lang]}
           </p>
         </div>

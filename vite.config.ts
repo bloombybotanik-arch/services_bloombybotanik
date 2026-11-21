@@ -15,6 +15,9 @@ export default defineConfig({
       }
     }
   ],
+  optimizeDeps: {
+    entries: ['index.html'],
+  },
   build: {
     emptyOutDir: false,
   },
@@ -25,6 +28,9 @@ export default defineConfig({
     hmr: false, // Désactive le HMR
     ws: false,
     allowedHosts: true,
-    cors: true
+    cors: true,
+    watch: {
+      ignored: ['**/backups/**', '**/seo-audit/**', '**/app/**', '**/dist/**'],
+    },
   }
 });

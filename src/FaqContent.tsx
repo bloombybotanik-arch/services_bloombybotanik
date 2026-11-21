@@ -315,7 +315,7 @@ export default function FaqContent({ onNavigate, lang = 'fr' }: FaqContentProps)
         <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#A8B8A0] border border-[#D8CBB7]/30 text-[#C8AB8A] text-xs font-bold uppercase tracking-[0.2em] mb-6">
             <HelpCircle className="w-4 h-4" />
-            <span>{isFR ? 'Support & Transmission' : 'Support & Knowledge'}</span>
+            <span>{isFR ? 'Support & Transmission' : isDE ? 'Support & Wissen' : 'Support & Knowledge'}</span>
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-white">
@@ -334,7 +334,7 @@ export default function FaqContent({ onNavigate, lang = 'fr' }: FaqContentProps)
             <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-white/40" />
             <input 
               type="text" 
-              placeholder={isFR ? "Rechercher une réponse (température, solvant, garantie...)" : "Search a question..."}
+              placeholder={isFR ? "Rechercher une réponse (température, solvant, garantie...)" : isDE ? "Antwort suchen (Temperatur, Lösungsmittel, Garantie...)" : "Search a question..."}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-14 pr-6 py-4 bg-white/10 hover:bg-white/15 focus:bg-white text-white focus:text-[#3E4A3D] placeholder-white/50 focus:placeholder-slate-400 rounded-2xl border border-white/20 focus:border-[#C8AB8A] focus:outline-hidden transition-all shadow-xl backdrop-blur-md text-base"
@@ -367,11 +367,13 @@ export default function FaqContent({ onNavigate, lang = 'fr' }: FaqContentProps)
           <div className="text-center py-16 bg-white rounded-3xl border border-[#D8CBB7]/40 p-8">
             <HelpCircle className="w-12 h-12 text-[#A8B8A0]/30 mx-auto mb-4" />
             <h3 className="text-xl font-bold text-[#3E4A3D] mb-2">
-              {isFR ? "Aucune réponse trouvée pour cette recherche" : "No answer found"}
+              {isFR ? "Aucune réponse trouvée pour cette recherche" : isDE ? "Keine Antwort für diese Suche gefunden" : "No answer found"}
             </h3>
             <p className="text-sm text-slate-500 mb-6">
               {isFR 
                 ? "Vous avez une question spécifique sur vos protocoles ou votre matériel ?" 
+                : isDE
+                ? "Haben Sie eine spezifische Frage zu Ihren Protokollen oder Ihrem Gerät?"
                 : "Do you have a specific question about your machine or protocols?"}
             </p>
             <button
@@ -379,7 +381,7 @@ export default function FaqContent({ onNavigate, lang = 'fr' }: FaqContentProps)
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#A8B8A0] text-[#0F261E] font-bold text-sm hover:bg-[#C8AB8A] transition-colors"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>{isFR ? "Contacter notre équipe" : "Contact our team"}</span>
+              <span>{isFR ? "Contacter notre équipe" : isDE ? "Unser Team kontaktieren" : "Contact our team"}</span>
             </button>
           </div>
         ) : (
@@ -421,14 +423,16 @@ export default function FaqContent({ onNavigate, lang = 'fr' }: FaqContentProps)
           <div className="space-y-2 text-center md:text-left">
             <div className="inline-flex items-center gap-2 text-[#C8AB8A] text-xs font-bold uppercase tracking-widest">
               <Sparkles className="w-4 h-4" />
-              <span>{isFR ? "Besoin d'un accompagnement personnalisé ?" : "Need personal guidance?"}</span>
+              <span>{isFR ? "Besoin d'un accompagnement personnalisé ?" : isDE ? "Benötigen Sie persönliche Begleitung?" : "Need personal guidance?"}</span>
             </div>
             <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
-              {isFR ? "Une question précise sur votre protocole ?" : "A specific question about your protocol?"}
+              {isFR ? "Une question précise sur votre protocole ?" : isDE ? "Eine konkrete Frage zu Ihrem Protokoll?" : "A specific question about your protocol?"}
             </h3>
             <p className="text-sm text-[#E8F1EE]/80 max-w-xl">
               {isFR 
                 ? "Nos experts en extraction botanique et notre support technique sont disponibles du lundi au vendredi de 9h à 18h."
+                : isDE
+                ? "Unsere Experten für botanische Extraktion und unser technischer Support stehen Ihnen Montag bis Freitag von 9 bis 18 Uhr zur Verfügung."
                 : "Our botanical extraction experts and technical support are available Monday to Friday from 9am to 6pm."}
             </p>
           </div>
@@ -438,13 +442,13 @@ export default function FaqContent({ onNavigate, lang = 'fr' }: FaqContentProps)
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#C8AB8A] hover:bg-[#d8bca0] text-[#0F261E] font-bold text-sm transition-all shadow-lg hover:scale-105 cursor-pointer"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>{isFR ? "Nous Contacter" : "Contact Us"}</span>
+              <span>{isFR ? "Nous Contacter" : isDE ? "Kontakt aufnehmen" : "Contact Us"}</span>
             </button>
             <button
               onClick={() => onNavigate('boutique')}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 transition-all cursor-pointer"
             >
-              <span>{isFR ? "Voir la Boutique" : "Browse Store"}</span>
+              <span>{isFR ? "Voir la Boutique" : isDE ? "Zum Shop" : "Browse Store"}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>

@@ -107,23 +107,23 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
               <ul className={styles.featureList}>
                 <li className={styles.featureItem}>
                   <Check className={styles.checkIcon} />
-                  <span>{isFR ? "Machine BloomLab® v2 (Cuve Inox 304 Alimentaire)" : "BloomLab® v2 Machine (Food-grade 304 Steel)"}</span>
+                  <span>{isFR ? "Machine BloomLab® v2 (Cuve Inox 304 Alimentaire)" : isDE ? "BloomLab® v2 Gerät (304-Edelstahlkammer)" : "BloomLab® v2 Machine (Food-grade 304 Steel)"}</span>
                 </li>
                 <li className={styles.featureItem}>
                   <Check className={styles.checkIcon} />
-                  <span>{isFR ? "Panier d'extraction fine & joint d'étanchéité hermétique" : "Fine extraction basket & airtight seal"}</span>
+                  <span>{isFR ? "Panier d'extraction fine & joint d'étanchéité hermétique" : isDE ? "Feiner Extraktionskorb & hermetische Dichtung" : "Fine extraction basket & airtight seal"}</span>
                 </li>
                 <li className={styles.featureItem}>
                   <Check className={styles.checkIcon} />
-                  <span>{isFR ? "Guide Digital 100 recettes pas-à-pas (PDF & Web)" : "Digital 100-recipe practical guide"}</span>
+                  <span>{isFR ? "Guide Digital 100 recettes pas-à-pas (PDF & Web)" : isDE ? "Digitaler 100-Rezepte-Leitfaden (PDF & Web)" : "Digital 100-recipe practical guide (PDF & Web)"}</span>
                 </li>
                 <li className={styles.featureItem}>
                   <Check className={styles.checkIcon} />
-                  <span>{isFR ? "Garantie constructeur 1 an pièces et main d'œuvre" : "1-Year Manufacturer Warranty"}</span>
+                  <span>{isFR ? "Garantie constructeur 1 an pièces et main d'œuvre" : isDE ? "1 Jahr Herstellergarantie (Teile & Arbeit)" : "1-Year Manufacturer Warranty"}</span>
                 </li>
                 <li className={styles.featureItem}>
                   <Check className={styles.checkIcon} />
-                  <span>{isFR ? "Support client réactif basé en France" : "French customer support"}</span>
+                  <span>{isFR ? "Support client réactif basé en France" : isDE ? "Reaktiver Kundenservice aus Frankreich" : "Responsive French customer support"}</span>
                 </li>
               </ul>
             </div>
@@ -133,15 +133,15 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
                 type="button"
                 onClick={() => onSelectOffer({
                   id: 'bloomlab-solo',
-                  name: isFR ? "BloomLab® Solo — Édition 2026" : "BloomLab® Solo — 2026 Edition",
+                  name: isFR ? "BloomLab® Solo — Édition 2026" : isDE ? "BloomLab® Solo — Edition 2026" : "BloomLab® Solo — 2026 Edition",
                   price: 229,
                   originalPrice: 289
                 })}
                 className={`${styles.orderButton} ${styles.orderButtonDefault}`}
-                aria-label="Commander BloomLab Solo à 229€"
+                aria-label={isFR ? "Commander BloomLab Solo à 229€" : isDE ? "BloomLab Solo für 229€ bestellen" : "Order BloomLab Solo for 229€"}
               >
                 <ShoppingBag className="w-5 h-5" />
-                <span>{isFR ? "Je commande ma BloomLab — 229€" : "Order BloomLab Solo — 229€"}</span>
+                <span>{isFR ? "Je commande ma BloomLab — 229€" : isDE ? "BloomLab Solo bestellen — 229€" : "Order BloomLab Solo — 229€"}</span>
               </button>
               <p className={styles.microCopy}>{microCopyText}</p>
             </div>
@@ -171,7 +171,9 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
               <div className={styles.pricingBlock}>
                 <span className={`${styles.currentPrice} ${styles.currentPriceFeatured}`}>299€</span>
                 <span className={`${styles.originalPrice} ${styles.originalPriceFeatured}`}>350€</span>
-                <span className={`${styles.discountBadge} ${styles.discountBadgeFeatured}`}>Économisez 51€</span>
+                <span className={`${styles.discountBadge} ${styles.discountBadgeFeatured}`}>
+                  {isFR ? "Économisez 51€" : isDE ? "51€ sparen" : "Save 51€"}
+                </span>
               </div>
               <div className={`${styles.installment} ${styles.installmentFeatured}`}>
                 {isFR ? "ou 3x 99,66€ sans frais" : isDE ? "oder 3x 99,66€ zinsfrei" : "or 3x 99.66€ fee-free"}
@@ -181,7 +183,13 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
               <div className={styles.plantSelector}>
                 <div className={styles.plantSelectorTitle}>
                   <Flame className="w-3.5 h-3.5" />
-                  <span>{isFR ? "Votre sachet de plantes inclus (au choix) :" : "Included herbal blend of choice:"}</span>
+                  <span>
+                    {isFR
+                      ? "Votre sachet de plantes inclus (au choix) :"
+                      : isDE
+                      ? "Ihr enthaltenes Kräuter-Set (zur Wahl):"
+                      : "Included herbal blend of choice:"}
+                  </span>
                 </div>
                 <div className={styles.plantChips}>
                   {plantOptions.map((opt) => (
@@ -201,25 +209,25 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
               <ul className={styles.featureList}>
                 <li className={`${styles.featureItem} ${styles.featureItemFeatured}`}>
                   <Check className={`${styles.checkIcon} ${styles.checkIconFeatured}`} />
-                  <span className="font-bold">{isFR ? "Machine BloomLab® v2 complète" : "BloomLab® v2 full machine"}</span>
+                  <span className="font-bold">{isFR ? "Machine BloomLab® v2 complète" : isDE ? "Komplettes BloomLab® v2 Gerät" : "BloomLab® v2 full machine"}</span>
                 </li>
                 <li className={`${styles.featureItem} ${styles.featureItemFeatured}`}>
                   <Check className={`${styles.checkIcon} ${styles.checkIconFeatured}`} />
                   <span className="font-bold text-amber-300">
-                    {isFR ? "1 Kit Plantes Médicinales Bio Sélectionnées" : "1 Organic Herbal Blend pouch"}
+                    {isFR ? "1 Kit Plantes Médicinales Bio Sélectionnées" : isDE ? "1 Bio-Heilpflanzen-Set nach Wahl" : "1 Selected Organic Medicinal Plants Kit"}
                   </span>
                 </li>
                 <li className={`${styles.featureItem} ${styles.featureItemFeatured}`}>
                   <Check className={`${styles.checkIcon} ${styles.checkIconFeatured}`} />
-                  <span>{isFR ? "Guide Digital 100 recettes pas-à-pas" : "100-recipe Digital Guide"}</span>
+                  <span>{isFR ? "Guide Digital 100 recettes pas-à-pas" : isDE ? "Digitaler 100-Rezepte-Leitfaden" : "100-recipe Digital Guide"}</span>
                 </li>
                 <li className={`${styles.featureItem} ${styles.featureItemFeatured}`}>
                   <Check className={`${styles.checkIcon} ${styles.checkIconFeatured}`} />
-                  <span>{isFR ? "Accès prioritaire à l'Académie Bloom (1 mois)" : "Bloom Academy VIP access (1 month)"}</span>
+                  <span>{isFR ? "Accès prioritaire à l'Académie Bloom (1 mois)" : isDE ? "VIP-Zugang zur Bloom Academy (1 Monat)" : "Bloom Academy VIP access (1 month)"}</span>
                 </li>
                 <li className={`${styles.featureItem} ${styles.featureItemFeatured}`}>
                   <Check className={`${styles.checkIcon} ${styles.checkIconFeatured}`} />
-                  <span>{isFR ? "Garantie 1 an constructeur + Expédition prioritaire 24h" : "1-Year Warranty & Priority 24h shipping"}</span>
+                  <span>{isFR ? "Garantie 1 an constructeur + Expédition prioritaire 24h" : isDE ? "1 Jahr Garantie & 24h Prioritätsversand" : "1-Year Warranty & Priority 24h shipping"}</span>
                 </li>
               </ul>
             </div>
@@ -229,16 +237,16 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
                 type="button"
                 onClick={() => onSelectOffer({
                   id: 'kit-souverainete',
-                  name: isFR ? "Kit de Démarrage Souveraineté — BloomLab® + 1 Kit Plantes" : "Sovereignty Starter Kit — BloomLab® + 1 Herbal Blend",
+                  name: isFR ? "Kit de Démarrage Souveraineté — BloomLab® + 1 Kit Plantes" : isDE ? "Souveränitäts-Starterset — BloomLab® + 1 Pflanzen-Set" : "Sovereignty Starter Kit — BloomLab® + 1 Herbal Blend",
                   price: 299,
                   originalPrice: 350,
                   selectedKitOption: selectedPlantOption
                 })}
                 className={`${styles.orderButton} ${styles.orderButtonFeatured}`}
-                aria-label="Commander le Kit Souveraineté à 299€"
+                aria-label={isFR ? "Commander le Kit Souveraineté à 299€" : isDE ? "Souveränitäts-Starterset für 299€ bestellen" : "Order Sovereignty Starter Kit for 299€"}
               >
                 <ShoppingBag className="w-5 h-5 text-white" />
-                <span>{isFR ? "Choisir ce kit — 299€" : "Choose this kit — 299€"}</span>
+                <span>{isFR ? "Choisir ce kit — 299€" : isDE ? "Dieses Set wählen — 299€" : "Choose this kit — 299€"}</span>
                 <ArrowRight className="w-5 h-5 text-white" />
               </button>
               <p className={`${styles.microCopy} ${styles.microCopyFeatured}`}>{microCopyText}</p>
@@ -251,7 +259,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
               <span className={styles.tag}>
                 {isFR ? "Purification & Synergie" : isDE ? "Reinigung & Synergie" : "Purification & Synergy"}
               </span>
-              <h3 className={styles.offerTitle}>Pack Signature</h3>
+              <h3 className={styles.offerTitle}>{isFR ? "Pack Signature" : isDE ? "Signature-Paket" : "Signature Pack"}</h3>
               <p className={styles.offerDescription}>
                 {isFR 
                   ? "BloomLab® v2 + Duo Argiles Minérales Bloom (Zéolithe & Bentonite) pour un reset systémique profond." 
@@ -272,25 +280,25 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
               <ul className={styles.featureList}>
                 <li className={styles.featureItem}>
                   <Check className={styles.checkIcon} />
-                  <span>{isFR ? "Machine BloomLab® v2 (Cuve Inox 304)" : "BloomLab® v2 Machine"}</span>
+                  <span>{isFR ? "Machine BloomLab® v2 (Cuve Inox 304)" : isDE ? "BloomLab® v2 Gerät (304-Edelstahl)" : "BloomLab® v2 Machine (304 Steel)"}</span>
                 </li>
                 <li className={styles.featureItem}>
                   <Check className={styles.checkIcon} />
                   <span className="font-semibold text-[#A8B8A0]">
-                    {isFR ? "Duo Argiles Bloom — Purification Systémique" : "Bloom Clay Duo — Systemic Purification"}
+                    {isFR ? "Duo Argiles Bloom — Purification Systémique" : isDE ? "Bloom Erden-Duo — Systemische Reinigung" : "Bloom Clay Duo — Systemic Purification"}
                   </span>
                 </li>
                 <li className={styles.featureItem}>
                   <Check className={styles.checkIcon} />
-                  <span>{isFR ? "Guide Digital 100 recettes pas-à-pas" : "100-recipe Digital Guide"}</span>
+                  <span>{isFR ? "Guide Digital 100 recettes pas-à-pas" : isDE ? "Digitaler 100-Rezepte-Leitfaden" : "100-recipe Digital Guide"}</span>
                 </li>
                 <li className={styles.featureItem}>
                   <Check className={styles.checkIcon} />
-                  <span>{isFR ? "Protocole d'accompagnement terrain 84 jours" : "84-day systemic terrain protocol"}</span>
+                  <span>{isFR ? "Protocole d'accompagnement terrain 84 jours" : isDE ? "84-Tage-Terrain-Begleitprotokoll" : "84-day systemic terrain protocol"}</span>
                 </li>
                 <li className={styles.featureItem}>
                   <Check className={styles.checkIcon} />
-                  <span>{isFR ? "Garantie constructeur 1 an" : "1-Year Manufacturer Warranty"}</span>
+                  <span>{isFR ? "Garantie constructeur 1 an" : isDE ? "1 Jahr Herstellergarantie" : "1-Year Manufacturer Warranty"}</span>
                 </li>
               </ul>
             </div>
@@ -300,15 +308,15 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
                 type="button"
                 onClick={() => onSelectOffer({
                   id: 'pack-signature',
-                  name: isFR ? "Pack Signature — BloomLab® + Duo Argiles Bloom" : "Signature Pack — BloomLab® + Clay Duo",
+                  name: isFR ? "Pack Signature — BloomLab® + Duo Argiles Bloom" : isDE ? "Signature-Paket — BloomLab® + Erden-Duo" : "Signature Pack — BloomLab® + Clay Duo",
                   price: 289,
                   originalPrice: 349
                 })}
                 className={`${styles.orderButton} ${styles.orderButtonSecondary}`}
-                aria-label="Commander le Pack Signature à 289€"
+                aria-label={isFR ? "Commander le Pack Signature à 289€" : isDE ? "Signature-Paket für 289€ bestellen" : "Order Signature Pack for 289€"}
               >
                 <ShoppingBag className="w-5 h-5" />
-                <span>{isFR ? "Commander le Pack Signature — 289€" : "Order Signature Pack — 289€"}</span>
+                <span>{isFR ? "Commander le Pack Signature — 289€" : isDE ? "Signature-Paket bestellen — 289€" : "Order Signature Pack — 289€"}</span>
               </button>
               <p className={styles.microCopy}>{microCopyText}</p>
             </div>
@@ -321,21 +329,21 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
           <div className={styles.guaranteeBadges}>
             <div className={styles.guaranteeItem}>
               <Truck className="w-5 h-5 text-[#C8AB8A]" />
-              <span>{isFR ? "Expédition prioritaire 24/48h avec suivi" : "Priority 24/48h tracked shipping"}</span>
+              <span>{isFR ? "Expédition prioritaire 24/48h avec suivi" : isDE ? "24/48h Prioritätsversand mit Sendungsverfolgung" : "Priority 24/48h tracked shipping"}</span>
             </div>
             <div className={styles.guaranteeItem}>
               <ShieldCheck className="w-5 h-5 text-[#C8AB8A]" />
-              <span>{isFR ? "Garantie 30 jours satisfait ou remboursé" : "30-day money back guarantee"}</span>
+              <span>{isFR ? "Garantie 30 jours satisfait ou remboursé" : isDE ? "30 Tage Geld-zurück-Garantie" : "30-day money back guarantee"}</span>
             </div>
             <div className={styles.guaranteeItem}>
               <Sparkles className="w-5 h-5 text-[#C8AB8A]" />
-              <span>{isFR ? "Facilité de paiement en 3x sans frais" : "3x fee-free installment payment"}</span>
+              <span>{isFR ? "Facilité de paiement en 3x sans frais" : isDE ? "Bequeme 3x zinsfreie Ratenzahlung" : "3x fee-free installment payment"}</span>
             </div>
           </div>
 
           <div className="flex flex-col items-center gap-2 pt-2">
             <span className="text-xs uppercase tracking-widest font-bold text-slate-500">
-              {isFR ? "Paiement 100% Chiffré & Sécurisé SSL" : "100% SSL Encrypted & Secure Payment"}
+              {isFR ? "Paiement 100% Chiffré & Sécurisé SSL" : isDE ? "100% SSL-verschlüsselte & sichere Zahlung" : "100% SSL Encrypted & Secure Payment"}
             </span>
             <PaymentBadges />
           </div>

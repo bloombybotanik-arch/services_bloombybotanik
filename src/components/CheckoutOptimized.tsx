@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShieldCheck, Lock, Truck, CreditCard, ChevronRight, CheckCircle2, ArrowLeft, Tag, X, Sparkles, Clock, AlertCircle } from 'lucide-react';
+import { ShieldCheck, Lock, Truck, CreditCard, ArrowLeft, Tag, X, CheckCircle2 } from 'lucide-react';
 import { PaymentBadges } from './PaymentBadges';
 import styles from './CheckoutOptimized.module.css';
 
@@ -30,8 +30,8 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
 }) => {
   const isDE = lang === 'de';
   const isFR = lang === 'fr';
+  const tr = (fr: string, en: string, de: string) => (isFR ? fr : isDE ? de : en);
 
-  // Customer form fields prefilled from user or localStorage
   const [formData, setFormData] = useState(() => {
     try {
       const saved = localStorage.getItem('bloom_checkout_info');
@@ -45,7 +45,7 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
       city: '',
       postalCode: '',
       phone: '',
-      country: 'France',
+      country: isDE ? 'Deutschland' : isFR ? 'France' : 'United Kingdom',
     };
   });
 
@@ -53,19 +53,18 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
   const [promoCode, setPromoCode] = useState('');
   const [discountPercent, setDiscountPercent] = useState<number>(0);
   const [discountMessage, setDiscountMessage] = useState<string | null>(null);
+  const [validationError, setValidationError] = useState<string | null>(null);
   const [showExitModal, setShowExitModal] = useState(false);
   const [recoveryEmail, setRecoveryEmail] = useState('');
   const [recoverySent, setRecoverySent] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
 
-  // Save form data on change
   useEffect(() => {
     try {
       localStorage.setItem('bloom_checkout_info', JSON.stringify(formData));
     } catch {}
   }, [formData]);
 
-  // Exit intent detection (cursor leaving top)
   useEffect(() => {
     const handleMouseLeave = (e: MouseEvent) => {
       if (e.clientY <= 10 && !discountPercent && cart.length > 0) {
@@ -85,22 +84,28 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
     const clean = code.trim().toUpperCase();
     if (clean === 'BIENVENUE5' || clean === 'SOLEIL5' || clean === 'BLOOM5') {
       setDiscountPercent(5);
-      setDiscountMessage(isFR ? "Code de 5% appliqué avec succès !" : "5% discount applied!");
+      setDiscountMessage(tr("Code de 5% appliqué avec succès !", "5% discount applied!", "5 % Rabatt erfolgreich angewendet!"));
       setShowExitModal(false);
     } else {
-      setDiscountMessage(isFR ? "Code non valide." : "Invalid discount code.");
+      setDiscountMessage(tr("Code non valide.", "Invalid discount code.", "Ungültiger Gutscheincode."));
     }
   };
 
   const handleInputChange = (field: string, value: string) => {
+    if (validationError) setValidationError(null);
     setFormData((prev: any) => ({ ...prev, [field]: value }));
   };
 
   const handleCompleteOrder = () => {
     if (!formData.email || !formData.firstName || !formData.address) {
-      alert(isFR ? "Veuillez remplir vos coordonnées de livraison." : "Please fill in shipping details.");
+      setValidationError(tr(
+        "Veuillez remplir vos coordonnées de livraison (e-mail, prénom et adresse).",
+        "Please fill in your shipping details (email, first name, and address).",
+        "Bitte füllen Sie Ihre Lieferdaten aus (E-Mail, Vorname und Adresse)."
+      ));
       return;
     }
+    setValidationError(null);
 
     setIsProcessing(true);
     setTimeout(() => {
@@ -118,7 +123,6 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
     e.preventDefault();
     if (recoveryEmail) {
       setRecoverySent(true);
-      // Save abandoned cart recovery sequence in localStorage for simulation
       try {
         const recoveryData = {
           email: recoveryEmail,
@@ -149,13 +153,13 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
             className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-[#3E4A3D] mb-2 cursor-pointer w-fit"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>{isFR ? "Retourner à la boutique" : "Back to store"}</span>
+            <span>{tr("Retourner à la boutique", "Back to store", "Zurück zum Shop")}</span>
           </button>
 
           {/* Express Checkout Options */}
           <div className={styles.expressSection}>
             <div className={styles.expressTitle}>
-              {isFR ? "Paiement Express en 1 Clic" : "Express 1-Click Checkout"}
+              {tr("Paiement Express en 1 Clic", "Express 1-Click Checkout", "1-Klick-Expresszahlung")}
             </div>
             <div className={styles.expressButtons}>
               <button
@@ -194,7 +198,7 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
           </div>
 
           <div className={styles.divider}>
-            <span>{isFR ? "Ou coordonnées standard" : "Or standard details"}</span>
+            <span>{tr("Ou coordonnées standard", "Or standard details", "Oder Standardangaben")}</span>
           </div>
 
           {/* Step 1: Customer Contact & Shipping */}
@@ -202,94 +206,96 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
             <div className={styles.stepTitle}>
               <div className="flex items-center">
                 <span className={styles.stepNumber}>1</span>
-                <span>{isFR ? "Coordonnées & Livraison" : "Contact & Delivery"}</span>
+                <span>{tr("Coordonnées & Livraison", "Contact & Delivery", "Kontaktdaten & Lieferung")}</span>
               </div>
               <span className="text-xs text-emerald-600 font-bold flex items-center gap-1">
                 <Truck className="w-3.5 h-3.5" />
-                <span>{isFR ? "Expédié sous 24/48h" : "Ships in 24/48h"}</span>
+                <span>{tr("Expédié sous 24/48h", "Ships in 24/48h", "Versand in 24/48 Std.")}</span>
               </span>
             </div>
 
             <div className={styles.formGrid}>
               <div className={`${styles.inputGroup} ${styles.fullWidth}`}>
-                <label className={styles.label}>{isFR ? "Adresse email (pour le suivi de commande)" : "Email address"}</label>
+                <label className={styles.label}>
+                  {tr("Adresse email (pour le suivi de commande)", "Email address (for order tracking)", "E-Mail-Adresse (für Sendungsverfolgung)")}
+                </label>
                 <input
                   type="email"
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
-                  placeholder="votre.email@exemple.com"
+                  placeholder={tr("votre.email@exemple.com", "your.email@example.com", "ihre.email@beispiel.de")}
                   className={styles.input}
                   required
                 />
               </div>
 
               <div className={styles.inputGroup}>
-                <label className={styles.label}>{isFR ? "Prénom" : "First Name"}</label>
+                <label className={styles.label}>{tr("Prénom", "First Name", "Vorname")}</label>
                 <input
                   type="text"
                   value={formData.firstName}
                   onChange={(e) => handleInputChange('firstName', e.target.value)}
-                  placeholder="Éléonore"
+                  placeholder={tr("Éléonore", "Eleanor", "Helena")}
                   className={styles.input}
                   required
                 />
               </div>
 
               <div className={styles.inputGroup}>
-                <label className={styles.label}>{isFR ? "Nom" : "Last Name"}</label>
+                <label className={styles.label}>{tr("Nom", "Last Name", "Nachname")}</label>
                 <input
                   type="text"
                   value={formData.lastName}
                   onChange={(e) => handleInputChange('lastName', e.target.value)}
-                  placeholder="Moreau"
+                  placeholder={tr("Moreau", "Miller", "Weber")}
                   className={styles.input}
                   required
                 />
               </div>
 
               <div className={`${styles.inputGroup} ${styles.fullWidth}`}>
-                <label className={styles.label}>{isFR ? "Adresse de livraison" : "Shipping address"}</label>
+                <label className={styles.label}>{tr("Adresse de livraison", "Shipping address", "Lieferadresse")}</label>
                 <input
                   type="text"
                   value={formData.address}
                   onChange={(e) => handleInputChange('address', e.target.value)}
-                  placeholder="12 rue des Plantes"
+                  placeholder={tr("12 rue des Plantes", "12 Botanical Street", "Kräuterstraße 12")}
                   className={styles.input}
                   required
                 />
               </div>
 
               <div className={styles.inputGroup}>
-                <label className={styles.label}>{isFR ? "Code Postal" : "Postal Code"}</label>
+                <label className={styles.label}>{tr("Code Postal", "Postal Code", "Postleitzahl")}</label>
                 <input
                   type="text"
                   value={formData.postalCode}
                   onChange={(e) => handleInputChange('postalCode', e.target.value)}
-                  placeholder="75001"
+                  placeholder={tr("75001", "SW1A 1AA", "10115")}
                   className={styles.input}
                   required
                 />
               </div>
 
               <div className={styles.inputGroup}>
-                <label className={styles.label}>{isFR ? "Ville" : "City"}</label>
+                <label className={styles.label}>{tr("Ville", "City", "Stadt")}</label>
                 <input
                   type="text"
                   value={formData.city}
                   onChange={(e) => handleInputChange('city', e.target.value)}
-                  placeholder="Paris"
+                  placeholder={tr("Paris", "London", "Berlin")}
                   className={styles.input}
                   required
                 />
               </div>
 
               <div className={`${styles.inputGroup} ${styles.fullWidth}`}>
-                <label className={styles.label}>{isFR ? "Téléphone (pour le livreur)" : "Phone number"}</label>
+                <label className={styles.label}>{tr("Téléphone (pour le livreur)", "Phone number (for carrier)", "Telefonnummer (für Zusteller)")}</label>
                 <input
                   type="tel"
                   value={formData.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
-                  placeholder="06 12 34 56 78"
+                  placeholder={tr("06 12 34 56 78", "+44 7700 900077", "+49 151 23456789")}
                   className={styles.input}
                 />
               </div>
@@ -298,7 +304,7 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
             {/* Shipping Mode Selector */}
             <div className="mt-6 pt-6 border-t border-slate-100">
               <label className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3 block">
-                {isFR ? "Mode d'expédition prioritaire :" : "Shipping speed:"}
+                {tr("Mode d'expédition prioritaire :", "Shipping speed:", "Versandart:")}
               </label>
 
               <div
@@ -315,16 +321,16 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
                   />
                   <div>
                     <div className="font-bold text-sm text-[#3E4A3D]">
-                      {isFR ? "Colissimo Suivi Domicile (24-48h)" : "Colissimo Tracked (24-48h)"}
+                      {tr("Colissimo Suivi Domicile (24-48h)", "Tracked Standard Delivery (48-72h)", "Standardversand mit Sendungsverfolgung (48-72 Std.)")}
                     </div>
                     <div className="text-xs text-slate-500">
-                      {isFR ? "Remise en boîte aux lettres avec numéro de suivi" : "Tracked home delivery"}
+                      {tr("Remise en boîte aux lettres avec numéro de suivi", "Tracked home delivery", "Haustürlieferung mit Sendungsnummer")}
                     </div>
                   </div>
                 </div>
                 <div className="font-bold text-sm text-[#3E4A3D]">
                   {total >= 200 ? (
-                    <span className="text-emerald-600 uppercase font-black text-xs">{isFR ? "Gratuit" : "Free"}</span>
+                    <span className="text-emerald-600 uppercase font-black text-xs">{tr("Gratuit", "Free", "Kostenlos")}</span>
                   ) : (
                     "7,90 €"
                   )}
@@ -345,10 +351,10 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
                   />
                   <div>
                     <div className="font-bold text-sm text-[#3E4A3D]">
-                      {isFR ? "Chronopost Express 24h Garanti" : "Chronopost Express 24h"}
+                      {tr("Chronopost Express 24h Garanti", "Express 24h Delivery", "Expressversand 24 Std.")}
                     </div>
                     <div className="text-xs text-slate-500">
-                      {isFR ? "Livraison le lendemain avant 13h" : "Next-day delivery before 1pm"}
+                      {tr("Livraison le lendemain avant 13h", "Priority next-day delivery", "Prioritätslieferung am nächsten Werktag")}
                     </div>
                   </div>
                 </div>
@@ -362,7 +368,7 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
             <div className={styles.stepTitle}>
               <div className="flex items-center">
                 <span className={styles.stepNumber}>2</span>
-                <span>{isFR ? "Paiement 100% Sécurisé SSL" : "Secure Payment"}</span>
+                <span>{tr("Paiement 100% Sécurisé SSL", "100% SSL Secure Payment", "100% SSL-verschlüsselte Zahlung")}</span>
               </div>
               <ShieldCheck className="w-5 h-5 text-emerald-600" />
             </div>
@@ -372,7 +378,7 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-bold text-[#3E4A3D] flex items-center gap-2">
                     <CreditCard className="w-4 h-4 text-[#C8AB8A]" />
-                    <span>{isFR ? "Carte Bancaire / Visa / Mastercard" : "Credit Card"}</span>
+                    <span>{tr("Carte Bancaire / Visa / Mastercard", "Credit Card / Visa / Mastercard", "Kreditkarte / Visa / Mastercard")}</span>
                   </span>
                   <span className="text-[10px] uppercase font-black bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">
                     3D Secure 2.0
@@ -382,12 +388,12 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
                 <div className="grid grid-cols-2 gap-3 pt-2">
                   <input
                     type="text"
-                    placeholder="Numéro de carte (4242 •••• •••• ••••)"
+                    placeholder={tr("Numéro de carte (4242 •••• •••• ••••)", "Card number (4242 •••• •••• ••••)", "Kartennummer (4242 •••• •••• ••••)")}
                     className={`${styles.input} col-span-2`}
                   />
                   <input
                     type="text"
-                    placeholder="MM / AA"
+                    placeholder={tr("MM / AA", "MM / YY", "MM / JJ")}
                     className={styles.input}
                   />
                   <input
@@ -401,9 +407,11 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
               <div className="text-xs text-slate-500 flex items-center gap-2">
                 <Lock className="w-3.5 h-3.5 text-emerald-600" />
                 <span>
-                  {isFR 
-                    ? "Chiffrement AES-256. Vos données bancaires ne transitent jamais sur nos serveurs." 
-                    : "AES-256 bank-level encryption."}
+                  {tr(
+                    "Chiffrement AES-256. Vos données bancaires ne transitent jamais sur nos serveurs.",
+                    "AES-256 bank-level encryption. Your card details are never stored on our servers.",
+                    "AES-256-Verschlüsselung. Ihre Zahlungsdaten werden niemals auf unseren Servern gespeichert."
+                  )}
                 </span>
               </div>
             </div>
@@ -415,7 +423,7 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
         <div className={styles.sideColumn}>
           <div className={styles.orderSummary}>
             <h3 className={styles.summaryTitle}>
-              {isFR ? "Récapitulatif de commande" : "Order Summary"}
+              {tr("Récapitulatif de commande", "Order Summary", "Bestellübersicht")}
             </h3>
 
             {/* Cart Items */}
@@ -429,7 +437,7 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
                         + {item.selectedKitOption}
                       </span>
                     )}
-                    <span className={styles.itemSub}>Qté : {item.quantity || 1}</span>
+                    <span className={styles.itemSub}>{tr("Qté :", "Qty:", "Menge:")} {item.quantity || 1}</span>
                   </div>
                   <span className={styles.itemPrice}>
                     {item.price * (item.quantity || 1)} €
@@ -442,7 +450,7 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
             <div className={styles.promoBox}>
               <input
                 type="text"
-                placeholder={isFR ? "Code promo (ex: BIENVENUE5)" : "Promo code"}
+                placeholder={tr("Code promo (ex: BIENVENUE5)", "Promo code (e.g. BIENVENUE5)", "Gutscheincode (z. B. BIENVENUE5)")}
                 value={promoCode}
                 onChange={(e) => setPromoCode(e.target.value)}
                 className={styles.promoInput}
@@ -452,7 +460,7 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
                 onClick={() => applyPromo(promoCode)}
                 className={styles.promoBtn}
               >
-                {isFR ? "Appliquer" : "Apply"}
+                {tr("Appliquer", "Apply", "Einlösen")}
               </button>
             </div>
 
@@ -465,31 +473,37 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
             {/* Financial calculation */}
             <div className="space-y-2 text-sm text-slate-600 pt-2 border-t border-slate-100">
               <div className="flex justify-between">
-                <span>{isFR ? "Sous-total articles" : "Items subtotal"}</span>
+                <span>{tr("Sous-total articles", "Items subtotal", "Zwischensumme")}</span>
                 <span className="font-semibold text-slate-800">{rawSubtotal} €</span>
               </div>
 
               {discountPercent > 0 && (
                 <div className="flex justify-between text-emerald-600 font-bold">
-                  <span>{isFR ? `Remise privilège (-${discountPercent}%)` : `Discount (-${discountPercent}%)`}</span>
+                  <span>{tr(`Remise privilège (-${discountPercent}%)`, `Discount (-${discountPercent}%)`, `Rabatt (-${discountPercent}%)`)}</span>
                   <span>- {discountAmount.toFixed(2)} €</span>
                 </div>
               )}
 
               <div className="flex justify-between">
-                <span>{isFR ? "Frais de livraison" : "Shipping"}</span>
+                <span>{tr("Frais de livraison", "Shipping", "Versandkosten")}</span>
                 <span className="font-semibold text-slate-800">
-                  {shippingPrice === 0 ? (isFR ? "Offerts" : "Free") : `${shippingPrice.toFixed(2)} €`}
+                  {shippingPrice === 0 ? tr("Offerts", "Free", "Kostenlos") : `${shippingPrice.toFixed(2)} €`}
                 </span>
               </div>
             </div>
 
             <div className={styles.totalRow}>
-              <span>{isFR ? "Total à régler" : "Total"}</span>
+              <span>{tr("Total à régler", "Total", "Gesamtbetrag")}</span>
               <span className="text-2xl font-black text-[#C8AB8A]">
                 {finalTotal.toFixed(2)} €
               </span>
             </div>
+
+            {validationError && (
+              <div className="mb-3 text-xs font-semibold text-rose-700 bg-rose-50 p-3 rounded-xl border border-rose-200">
+                {validationError}
+              </div>
+            )}
 
             <button
               type="button"
@@ -498,15 +512,19 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
               className={styles.submitBtn}
             >
               <Lock className="w-4 h-4" />
-              <span>{isProcessing ? (isFR ? "Validation en cours..." : "Processing...") : (isFR ? "Confirmer et Payer" : "Confirm and Pay")}</span>
+              <span>
+                {isProcessing
+                  ? tr("Validation en cours...", "Processing...", "Wird bearbeitet...")
+                  : tr("Confirmer et Payer", "Confirm and Pay", "Bestätigen & Bezahlen")}
+              </span>
             </button>
 
             <div className="mt-6 pt-6 border-t border-slate-100 flex flex-col items-center gap-3">
               <PaymentBadges />
               <div className="text-[11px] text-slate-400 text-center space-y-1">
-                <p>✓ Expédition garantie sous 24/48h</p>
-                <p>✓ Garantie 30 jours satisfait ou remboursé</p>
-                <p>✓ Support client français réactif par email et téléphone</p>
+                <p>✓ {tr("Expédition garantie sous 24/48h", "Guaranteed dispatch within 24/48h", "Garantierter Versand in 24/48 Std.")}</p>
+                <p>✓ {tr("Garantie 30 jours satisfait ou remboursé", "30-day money-back guarantee", "30 Tage Geld-zurück-Garantie")}</p>
+                <p>✓ {tr("Support client réactif par email", "Responsive customer support via email", "Reaktiver Kundensupport per E-Mail")}</p>
               </div>
             </div>
           </div>
@@ -531,13 +549,15 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
             </div>
 
             <h3 className="text-xl sm:text-2xl font-black mb-2">
-              {isFR ? "Attendez ! Ne partez pas les mains vides" : "Wait! Exclusive Gift"}
+              {tr("Attendez ! Ne partez pas les mains vides", "Wait! Exclusive Offer", "Warten Sie! Exklusives Angebot")}
             </h3>
 
             <p className="text-sm text-white/80 mb-6 leading-relaxed">
-              {isFR
-                ? "Vos plantes méritent le meilleur. Profitez de 5% de réduction immédiate sur votre BloomLab® avec le code privilège :"
-                : "Save 5% immediately on your BloomLab® with your private code:"}
+              {tr(
+                "Vos plantes méritent le meilleur. Profitez de 5% de réduction immédiate sur votre BloomLab® avec le code privilège :",
+                "Save 5% immediately on your BloomLab® with your private code:",
+                "Sichern Sie sich sofort 5 % Rabatt auf Ihr BloomLab® mit diesem Gutscheincode:"
+              )}
             </p>
 
             <div className="p-3 bg-white/10 rounded-xl border border-[#C8AB8A] mb-6 flex items-center justify-center gap-3">
@@ -547,23 +567,25 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
                 onClick={() => applyPromo('BIENVENUE5')}
                 className="px-3 py-1 bg-[#3E4A3D] hover:bg-[#2D372C] text-white text-xs font-bold rounded-lg cursor-pointer"
               >
-                {isFR ? "Appliquer immédiatement" : "Apply now"}
+                {tr("Appliquer immédiatement", "Apply now", "Sofort einlösen")}
               </button>
             </div>
 
             {!recoverySent ? (
               <form onSubmit={handleSendRecoveryEmail} className="space-y-3">
                 <p className="text-xs text-white/70">
-                  {isFR 
-                    ? "Ou recevez votre panier réservé et votre réduction par email :" 
-                    : "Or receive your reserved cart and code via email:"}
+                  {tr(
+                    "Ou recevez votre panier réservé et votre réduction par email :",
+                    "Or receive your reserved cart and code via email:",
+                    "Oder erhalten Sie Ihren Warenkorb & Rabattcode per E-Mail:"
+                  )}
                 </p>
                 <div className="flex gap-2">
                   <input
                     type="email"
                     value={recoveryEmail}
                     onChange={(e) => setRecoveryEmail(e.target.value)}
-                    placeholder="votre.email@exemple.com"
+                    placeholder={tr("votre.email@exemple.com", "your.email@example.com", "ihre.email@beispiel.de")}
                     className="flex-1 px-3 py-2 rounded-lg bg-black/40 border border-white/20 text-white text-xs"
                     required
                   />
@@ -571,14 +593,14 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
                     type="submit"
                     className="px-4 py-2 bg-[#3E4A3D] hover:bg-[#2D372C] text-white font-bold text-xs rounded-lg whitespace-nowrap cursor-pointer"
                   >
-                    {isFR ? "Sauvegarder" : "Save cart"}
+                    {tr("Sauvegarder", "Save cart", "Speichern")}
                   </button>
                 </div>
               </form>
             ) : (
               <div className="p-3 bg-emerald-900/60 border border-emerald-500 rounded-xl text-xs text-emerald-200 flex items-center justify-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                <span>{isFR ? "Votre panier et votre code ont été envoyés !" : "Cart and code saved!"}</span>
+                <span>{tr("Votre panier et votre code ont été envoyés !", "Cart and code saved!", "Warenkorb & Code gesichert!")}</span>
               </div>
             )}
           </div>

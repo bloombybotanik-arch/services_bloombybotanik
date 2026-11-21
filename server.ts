@@ -2844,12 +2844,27 @@ async function startServer() {
       res.redirect(301, "/academie/protocoles/clarte-mentale/");
     });
 
-    viteDevServer = await setupVite(app);
-    if (viteDevServer) {
-      // RÉACTIVATION DE VITE
-      app.use(viteDevServer.middlewares);
-      console.log("Vite middleware attached in dev");
-    }
+    const vitePromise = setupVite(app)
+      .then((vite) => {
+        viteDevServer = vite;
+        console.log("Vite middleware attached in dev");
+        return vite;
+      })
+      .catch((err) => {
+        console.error("[Vite setup error]", err);
+        return null;
+      });
+
+    app.use(async (req, res, next) => {
+      if (req.path.startsWith("/api/") || req.path === "/health") {
+        return next();
+      }
+      const vite = viteDevServer || (await vitePromise);
+      if (vite) {
+        return vite.middlewares(req, res, next);
+      }
+      next();
+    });
   }
 
   registerAppRoutes(app);

@@ -56,6 +56,8 @@ export default function CartContent({
   const t = translations[lang].cart;
   const common = translations[lang].common;
   const isFR = lang === 'fr';
+  const isDE = lang === 'de';
+  const tr = (fr: string, en: string, de: string) => (isFR ? fr : isDE ? de : en);
   
   const hasBloomLab = items.some(item => item.id === 'bloomlab');
   const hasBloomComplet = items.some(item => item.id === 'bloom-complet');
@@ -165,20 +167,22 @@ export default function CartContent({
                       </span>
                       {isComplet && (
                         <span className="text-[9px] font-black uppercase tracking-wider bg-[#C8AB8A] text-[#0F261E] px-2.5 py-0.5 rounded-full">
-                          {isFR ? "Abonnement Mensuel" : "Monthly Subscription"}
+                          {tr("Abonnement Mensuel", "Monthly Subscription", "Monatsabo")}
                         </span>
                       )}
                     </div>
                     <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#1B3022] leading-tight">{item.name}</h3>
                     <div className="text-lg sm:text-xl font-bold text-[#1B3022] whitespace-nowrap">
                       {item.price.toFixed(2).replace('.', ',')} €
-                      {isComplet && <span className="text-xs font-normal text-[#1B3022]/60 ml-1">/mois</span>}
+                      {isComplet && <span className="text-xs font-normal text-[#1B3022]/60 ml-1">{tr("/mois", "/mo", "/Monat")}</span>}
                     </div>
                     {isComplet && (
                       <p className="text-xs text-[#1B3022]/70 italic pt-1">
-                        {isFR 
-                          ? "1 préparation de 100 ml livrée chaque mois + guide + accès recettes et méthodes inclus."
-                          : "100 ml preparation delivered monthly + guide + included recipe & method access."}
+                        {tr(
+                          "1 préparation de 100 ml livrée chaque mois + guide + accès recettes et méthodes inclus.",
+                          "100 ml preparation delivered monthly + guide + included recipe & method access.",
+                          "100 ml Zubereitung monatlich geliefert + Guide + Zugang zu Rezepten & Methoden inklusive."
+                        )}
                       </p>
                     )}
                   </div>
@@ -200,7 +204,7 @@ export default function CartContent({
                   <button 
                     onClick={() => onRemove(item.id)}
                     className="p-3 text-red-500 hover:bg-red-50 rounded-xl transition-colors cursor-pointer min-h-[44px] min-w-[44px] flex items-center justify-center"
-                    aria-label="Supprimer l'article"
+                    aria-label={tr("Supprimer l'article", "Remove item", "Artikel entfernen")}
                   >
                     <Trash2 className="w-5 h-5" />
                   </button>
@@ -214,17 +218,19 @@ export default function CartContent({
             <div className="bg-[#FFF8F0] border-2 border-[#C8AB8A] rounded-2xl sm:rounded-[32px] p-5 sm:p-8 relative overflow-hidden shadow-sm space-y-6">
               <div className="flex items-center gap-2 text-[#C8AB8A] text-xs font-black uppercase tracking-widest">
                 <Package className="w-4 h-4 text-[#C8AB8A]" />
-                <span>{isFR ? "Votre formule Bloom Complet (59 €/mois)" : "Your Bloom Complete Plan (59 €/month)"}</span>
+                <span>{tr("Votre formule Bloom Complet (59 €/mois)", "Your Bloom Complete Plan (59 €/month)", "Ihr Bloom Complet Abo (59 €/Monat)")}</span>
               </div>
               
               <div>
                 <h3 className="text-2xl font-bold text-[#3E4A3D] mb-2">
-                  {isFR ? "L'accompagnement botanique mensuel guidé" : "Guided Monthly Botanical Journey"}
+                  {tr("L'accompagnement botanique mensuel guidé", "Guided Monthly Botanical Journey", "Die geführte monatliche Pflanzenbegleitung")}
                 </h3>
                 <p className="text-sm text-[#3E4A3D]/80 leading-relaxed">
-                  {isFR 
-                    ? "Bloom Complet réunit une préparation botanique mensuelle préparée par Bloom, les informations pour la découvrir et l'accès à nos ressources, sans obligation d'équipement."
-                    : "Bloom Complete brings together a monthly preparation created by Bloom, information to discover it, and access to resources."}
+                  {tr(
+                    "Bloom Complet réunit une préparation botanique mensuelle préparée par Bloom, les informations pour la découvrir et l'accès à nos ressources, sans obligation d'équipement.",
+                    "Bloom Complete brings together a monthly preparation created by Bloom, information to discover it, and access to resources, with no equipment required.",
+                    "Bloom Complet vereint eine monatliche botanische Zubereitung von Bloom, Anwendungsinformationen und Zugang zu unseren Ressourcen – ohne eigene Geräte."
+                  )}
                 </p>
               </div>
 
@@ -232,62 +238,66 @@ export default function CartContent({
                 <div className="p-4 bg-white rounded-2xl border border-[#C8AB8A]/20 space-y-1">
                   <div className="font-bold text-xs text-[#3E4A3D] flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#C8AB8A]" />
-                    <span>{isFR ? "Préparation mensuelle (100 ml)" : "Monthly preparation (100 ml)"}</span>
+                    <span>{tr("Préparation mensuelle (100 ml)", "Monthly preparation (100 ml)", "Monatliche Zubereitung (100 ml)")}</span>
                   </div>
                   <p className="text-xs text-[#3E4A3D]/70 pl-5">
-                    {isFR ? "Sélection botanique préparée par Bloom et livrée à domicile." : "Botanical blend prepared by Bloom and delivered to your door."}
+                    {tr("Sélection botanique préparée par Bloom et livrée à domicile.", "Botanical blend prepared by Bloom and delivered to your door.", "Von Bloom zubereitete Pflanzenmischung direkt zu Ihnen nach Hause.")}
                   </p>
                 </div>
 
                 <div className="p-4 bg-white rounded-2xl border border-[#C8AB8A]/20 space-y-1">
                   <div className="font-bold text-xs text-[#3E4A3D] flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#C8AB8A]" />
-                    <span>{isFR ? "Guide clair de découverte" : "Discovery Guide"}</span>
+                    <span>{tr("Guide clair de découverte", "Discovery Guide", "Klarer Entdeckungs-Guide")}</span>
                   </div>
                   <p className="text-xs text-[#3E4A3D]/70 pl-5">
-                    {isFR ? "Ingrédients, contexte d'usage prévu, conservation et précautions." : "Ingredients, context of use, storage advice, and precautions."}
+                    {tr("Ingrédients, contexte d'usage prévu, conservation et précautions.", "Ingredients, context of use, storage advice, and precautions.", "Zutaten, Anwendungshinweise, Aufbewahrung und Vorsichtsmaßnahmen.")}
                   </p>
                 </div>
 
                 <div className="p-4 bg-white rounded-2xl border border-[#C8AB8A]/20 space-y-1">
                   <div className="font-bold text-xs text-[#3E4A3D] flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#C8AB8A]" />
-                    <span>{isFR ? "Accès recettes et méthodes" : "Recipe & method access"}</span>
+                    <span>{tr("Accès recettes et méthodes", "Recipe & method access", "Zugang zu Rezepten & Methoden")}</span>
                   </div>
                   <p className="text-xs text-[#3E4A3D]/70 pl-5">
-                    {isFR ? "Bibliothèque complète de fiches botaniques et techniques d'extraction." : "Complete library of monographs and extraction techniques."}
+                    {tr("Bibliothèque complète de fiches botaniques et techniques d'extraction.", "Complete library of monographs and extraction techniques.", "Komplette Bibliothek botanischer Datenblätter und Extraktionstechniken.")}
                   </p>
                 </div>
 
                 <div className="p-4 bg-white rounded-2xl border border-[#C8AB8A]/20 space-y-1">
                   <div className="font-bold text-xs text-[#3E4A3D] flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#C8AB8A]" />
-                    <span>{isFR ? "Alma, assistant d'orientation" : "Alma Orientation Assistant"}</span>
+                    <span>{tr("Alma, assistant d'orientation", "Alma Orientation Assistant", "Alma, Ihr Orientierungsassistent")}</span>
                   </div>
                   <p className="text-xs text-[#3E4A3D]/70 pl-5">
-                    {isFR ? "Pour vous orienter vers les contenus, recettes et précautions publiées." : "Guides you to published recipes, methods, and precautions."}
+                    {tr("Pour vous orienter vers les contenus, recettes et précautions publiées.", "Guides you to published recipes, methods, and precautions.", "Führt Sie zu veröffentlichten Rezepten, Methoden und Hinweisen.")}
                   </p>
                 </div>
               </div>
 
               <div className="p-4 bg-white/80 rounded-2xl border border-[#C8AB8A]/20 text-xs text-[#3E4A3D]/80 space-y-1">
                 <span className="font-bold text-[#3E4A3D] block">
-                  {isFR ? "Facturation et résiliation sans engagement :" : "Billing & Commitment-free Terms:"}
+                  {tr("Facturation et résiliation sans engagement :", "Billing & Commitment-free Terms:", "Abrechnung & flexible Kündigung:")}
                 </span>
                 <p>
-                  {isFR 
-                    ? "59 €/mois. La livraison standard mensuelle de votre préparation est incluse. Vous pouvez suspendre ou résilier votre abonnement à tout moment depuis votre compte client."
-                    : "59 €/month. Monthly standard shipping is included. You can pause or cancel anytime from your account."}
+                  {tr(
+                    "59 €/mois. La livraison standard mensuelle de votre préparation est incluse. Vous pouvez suspendre ou résilier votre abonnement à tout moment depuis votre compte client.",
+                    "59 €/month. Monthly standard shipping is included. You can pause or cancel anytime from your account.",
+                    "59 €/Monat. Der monatliche Standardversand ist inklusive. Sie können Ihr Abo jederzeit im Kundenkonto pausieren oder kündigen."
+                  )}
                 </p>
               </div>
 
               <div className="p-3 bg-white rounded-xl border border-amber-300 text-[11px] text-amber-950 flex items-start gap-2.5">
                 <AlertCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
                 <span>
-                  <strong>{isFR ? "Rappel de sécurité : " : "Safety Notice: "}</strong>
-                  {isFR 
-                    ? "Bloom Complet est un accompagnement de découverte et de préparation botanique. Il ne remplace pas un médicament, un diagnostic, une consultation médicale ni les conseils d'un pharmacien."
-                    : "Bloom Complete is an educational botanical journey. It does not replace medication, medical consultation, diagnosis, or pharmacist advice."}
+                  <strong>{tr("Rappel de sécurité : ", "Safety Notice: ", "Sicherheitshinweis: ")}</strong>
+                  {tr(
+                    "Bloom Complet est un accompagnement de découverte et de préparation botanique. Il ne remplace pas un médicament, un diagnostic, une consultation médicale ni les conseils d'un pharmacien.",
+                    "Bloom Complete is an educational botanical journey. It does not replace medication, medical consultation, diagnosis, or pharmacist advice.",
+                    "Bloom Complet ist ein pädagogisches Pflanzenprogramm. Es ersetzt keine Medikamente, ärztliche Diagnose oder Apothekerberatung."
+                  )}
                 </span>
               </div>
             </div>
@@ -356,7 +366,7 @@ export default function CartContent({
                   <h2 className="text-xl sm:text-2xl font-bold text-[#1B3022]">{t.shipping.title}</h2>
                   {hasBloomComplet && (
                     <p className="text-xs text-[#C8AB8A] font-bold mt-1">
-                      {isFR ? "Livraison mensuelle standard incluse avec l'abonnement Bloom Complet" : "Standard monthly shipping included with Bloom Complete"}
+                      {tr("Livraison mensuelle standard incluse avec l'abonnement Bloom Complet", "Standard monthly shipping included with Bloom Complete", "Monatlicher Standardversand im Bloom Complet Abo enthalten")}
                     </p>
                   )}
                 </div>
@@ -427,47 +437,47 @@ export default function CartContent({
                   type="text" 
                   value={promoCode}
                   onChange={(e) => setPromoCode(e.target.value.toUpperCase())}
-                  placeholder="CODE PROMO"
+                  placeholder={tr("CODE PROMO", "PROMO CODE", "GUTSCHEINCODE")}
                   className="flex-1 bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm focus:border-[#C8AB8A] outline-none transition-all placeholder:text-white/20"
                 />
                 <button 
                   onClick={() => setIsPromoApplied(true)}
                   className="bg-[#D97706] text-white hover:bg-[#B45309] px-4 rounded-xl text-xs font-bold transition-all shadow-md shadow-orange-900/20 cursor-pointer"
                 >
-                  Appliquer
+                  {tr("Appliquer", "Apply", "Einlösen")}
                 </button>
               </div>
               {isPromoApplied && (
                 <div className="mt-2 text-[10px] text-[#C8AB8A] flex items-center gap-2">
-                  <Sparkles className="w-3 h-3" /> Code activé avec succès
+                  <Sparkles className="w-3 h-3" /> {tr("Code activé avec succès", "Code applied successfully", "Code erfolgreich aktiviert")}
                 </div>
               )}
             </div>
 
             <div className="space-y-4 mb-6">
               <div className="flex justify-between text-white/60 whitespace-nowrap">
-                <span>{hasBloomComplet ? (isFR ? "Abonnement mensuel" : "Monthly plan") : t.summary.subtotal}</span>
+                <span>{hasBloomComplet ? tr("Abonnement mensuel", "Monthly plan", "Monatsabo") : t.summary.subtotal}</span>
                 <span className="font-bold text-white">{subtotal.toFixed(2).replace('.', ',')} €</span>
               </div>
               {isPromoApplied && (
                 <div className="flex justify-between text-[#C8AB8A] whitespace-nowrap">
-                  <span>Remise (Code Promo)</span>
+                  <span>{tr("Remise (Code Promo)", "Discount (Promo Code)", "Rabatt (Gutscheincode)")}</span>
                   <span className="font-bold">-{ (subtotal * 0.1).toFixed(2).replace('.', ',') } €</span>
                 </div>
               )}
               <div className="flex justify-between text-white/60 whitespace-nowrap">
-                <span>{hasBloomComplet ? (isFR ? "Livraison mensuelle" : "Monthly shipping") : (allDigital ? (isFR ? 'Livraison' : 'Delivery') : t.summary.shipping)}</span>
+                <span>{hasBloomComplet ? tr("Livraison mensuelle", "Monthly shipping", "Monatlicher Versand") : (allDigital ? tr('Livraison', 'Delivery', 'Lieferung') : t.summary.shipping)}</span>
                 <span className="font-bold text-white">
                   {hasBloomComplet 
-                    ? (isFR ? "Incluse (Offerte)" : "Included") 
-                    : (allDigital ? (isFR ? 'Inclus / Gratuit' : t.summary.free) : (shipping === 0 ? t.summary.free : `${shipping.toFixed(2).replace('.', ',')} €`))}
+                    ? tr("Incluse (Offerte)", "Included (Free)", "Inklusive (Kostenlos)") 
+                    : (allDigital ? tr('Inclus / Gratuit', t.summary.free, t.summary.free) : (shipping === 0 ? t.summary.free : `${shipping.toFixed(2).replace('.', ',')} €`))}
                 </span>
               </div>
               <div className="pt-4 border-t border-white/10 flex justify-between items-center whitespace-nowrap">
                 <span className="text-lg font-bold">{t.summary.total}</span>
                 <span className="text-3xl font-bold text-[#C8AB8A]">
                   {(isPromoApplied ? total * 0.9 : total).toFixed(2).replace('.', ',')} €
-                  {hasBloomComplet && <span className="text-xs font-normal text-white/70 ml-1">/mois</span>}
+                  {hasBloomComplet && <span className="text-xs font-normal text-white/70 ml-1">{tr("/mois", "/mo", "/Monat")}</span>}
                 </span>
               </div>
             </div>
@@ -486,15 +496,17 @@ export default function CartContent({
                     className="w-4 h-4 rounded mt-0.5 text-[#C8AB8A] focus:ring-0 cursor-pointer accent-[#C8AB8A]"
                   />
                   <span>
-                    {isFR 
-                      ? "J'ai pris connaissance du contenu de l'abonnement Bloom Complet (59 €/mois), de la livraison mensuelle incluse, des conditions de résiliation sans engagement et des précautions associées."
-                      : "I acknowledge the contents of Bloom Complete (59 €/month), monthly shipping included, commitment-free cancellation, and associated precautions."}
+                    {tr(
+                      "J'ai pris connaissance du contenu de l'abonnement Bloom Complet (59 €/mois), de la livraison mensuelle incluse, des conditions de résiliation sans engagement et des précautions associées.",
+                      "I acknowledge the contents of Bloom Complete (59 €/month), monthly shipping included, commitment-free cancellation, and associated precautions.",
+                      "Ich habe den Inhalt des Abonnements Bloom Complet (59 €/Monat), den monatlichen Versand inklusive, die monatliche Kündbarkeit und die Hinweise zur Kenntnis genommen."
+                    )}
                   </span>
                 </label>
                 {showConsentWarning && !completConsent && (
                   <p className="mt-2 text-[11px] text-amber-300 font-semibold flex items-center gap-1.5">
                     <AlertCircle className="w-3.5 h-3.5 shrink-0" />
-                    <span>Veuillez cocher cette case pour valider votre commande.</span>
+                    <span>{tr("Veuillez cocher cette case pour valider votre commande.", "Please check this box to continue.", "Bitte aktivieren Sie dieses Feld, um fortzufahren.")}</span>
                   </p>
                 )}
               </div>
@@ -509,7 +521,14 @@ export default function CartContent({
 
             <div className="text-center mb-6">
               <p className="text-[10px] text-white/50 leading-relaxed">
-                En validant votre commande, vous acceptez nos <button onClick={() => onNavigate('legal', undefined, 'cgv')} className="underline hover:text-[#C8AB8A] transition-colors cursor-pointer">CGV</button> et nos <button onClick={() => onNavigate('legal', undefined, 'mentions')} className="underline hover:text-[#C8AB8A] transition-colors cursor-pointer">Mentions Légales</button>.
+                {tr("En validant votre commande, vous acceptez nos", "By confirming your order, you accept our", "Mit Ihrer Bestellung akzeptieren Sie unsere")}{' '}
+                <button onClick={() => onNavigate('legal', undefined, 'cgv')} className="underline hover:text-[#C8AB8A] transition-colors cursor-pointer">
+                  {tr("CGV", "Terms of Sale", "AGB")}
+                </button>{' '}
+                {tr("et nos", "and", "und unser")}{' '}
+                <button onClick={() => onNavigate('legal', undefined, 'mentions')} className="underline hover:text-[#C8AB8A] transition-colors cursor-pointer">
+                  {tr("Mentions Légales", "Legal Notice", "Impressum")}
+                </button>.
               </p>
             </div>
 
@@ -540,11 +559,11 @@ export default function CartContent({
                   <Truck className="w-5 h-5 text-[#C8AB8A] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-xs font-bold mb-0.5">
-                      {hasBloomComplet ? "Livraison mensuelle suivie" : t.summary.shipping_24h}
+                      {hasBloomComplet ? tr("Livraison mensuelle suivie", "Tracked monthly delivery", "Monatlicher Versand mit Tracking") : t.summary.shipping_24h}
                     </h4>
                     <p className="text-[11px] text-white/50 leading-relaxed">
                       {hasBloomComplet 
-                        ? "Votre préparation botanique mensuelle est expédiée chaque mois avec suivi."
+                        ? tr("Votre préparation botanique mensuelle est expédiée chaque mois avec suivi.", "Your monthly botanical preparation is shipped every month with tracking.", "Ihre monatliche Zubereitung wird jeden Monat mit Sendungsverfolgung verschickt.")
                         : t.summary.shipping_desc}
                     </p>
                   </div>
@@ -576,12 +595,14 @@ export default function CartContent({
         <AlertCircle className="w-5 h-5 text-[#C8AB8A] shrink-0 mt-0.5" />
         <div className="space-y-1">
           <p className="font-bold text-[#3E4A3D]">
-            {isFR ? "Information importante et sécurité :" : "Important Safety Information:"}
+            {tr("Information importante et sécurité :", "Important Safety Information:", "Wichtiger Sicherheitshinweis:")}
           </p>
           <p>
-            {isFR 
-              ? "Les produits et contenus Bloom by BotaniK ne sont pas des médicaments. Les informations proposées sont destinées à la découverte des plantes et des méthodes de préparation ; elles ne remplacent pas l'avis d'un professionnel de santé. En cas de traitement, de pathologie, de grossesse, d'allaitement, d'allergie, de chirurgie programmée ou de doute, demandez conseil à un professionnel de santé qualifié avant d'utiliser une nouvelle préparation."
-              : "Bloom by BotaniK products and content are not medicines. Information provided is for educational discovery of plants and preparation techniques; it does not replace the advice of a qualified healthcare professional."}
+            {tr(
+              "Les produits et contenus Bloom by BotaniK ne sont pas des médicaments. Les informations proposées sont destinées à la découverte des plantes et des méthodes de préparation ; elles ne remplacent pas l'avis d'un professionnel de santé. En cas de traitement, de pathologie, de grossesse, d'allaitement, d'allergie, de chirurgie programmée ou de doute, demandez conseil à un professionnel de santé qualifié avant d'utiliser une nouvelle préparation.",
+              "Bloom by BotaniK products and content are not medicines. Information provided is for educational discovery of plants and preparation techniques; it does not replace the advice of a qualified healthcare professional. In case of medical treatment, pregnancy, breastfeeding, allergy, or doubt, consult a healthcare professional first.",
+              "Produkte und Inhalte von Bloom by BotaniK sind keine Arzneimittel. Sie dienen der Information über Pflanzen und Zubereitungsmethoden und ersetzen keinen ärztlichen Rat. Bei Schwangerschaft, Stillzeit, Allergien oder Medikamenteneinnahme wenden Sie sich bitte vorab an eine Fachperson."
+            )}
           </p>
         </div>
       </div>

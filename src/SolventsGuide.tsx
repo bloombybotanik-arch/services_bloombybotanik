@@ -89,24 +89,57 @@ interface OrganSolventRow {
 export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuideProps) {
   const isDE = lang === 'de';
   const isEN = lang === 'en';
+  const tr = (fr: string, en: string, de: string) => (isDE ? de : isEN ? en : fr);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const solventFaqs = [
     {
-      q: "Quel solvant choisir entre l'eau, l'huile végétale et l'alcool ?",
-      a: "L'eau extrait les composés hydrosolubles (mucilages, tanins, flavonoïdes polaires). L'huile végétale capte les actifs liposolubles (caroténoïdes, phytostérols, huiles essentielles). L'alcool ou la glycérine permettent des extractions mixtes et une conservation longue durée."
+      q: tr(
+        "Quel solvant choisir entre l'eau, l'huile végétale et l'alcool ?",
+        "Which solvent should I choose between water, vegetable oil, and alcohol?",
+        "Welches Lösungsmittel soll ich wählen: Wasser, Pflanzenöl oder Alkohol?"
+      ),
+      a: tr(
+        "L'eau extrait les composés hydrosolubles (mucilages, tanins, flavonoïdes polaires). L'huile végétale capte les actifs liposolubles (caroténoïdes, phytostérols, huiles essentielles). L'alcool ou la glycérine permettent des extractions mixtes et une conservation longue durée.",
+        "Water extracts water-soluble compounds (mucilage, tannins, polar flavonoids). Vegetable oil captures fat-soluble actives (carotenoids, phytosterols, volatile oils). Alcohol or glycerin enables dual-affinity extractions and extended shelf life.",
+        "Wasser extrahiert wasserlösliche Stoffe (Schleimstoffe, Gerbstoffe, polare Flavonoide). Pflanzenöl bindet fettlösliche Wirkstoffe (Carotinoide, Phytosterole, ätherische Öle). Alkohol oder Glycerin ermöglichen gemischte Extraktionen und lange Haltbarkeit."
+      )
     },
     {
-      q: "À quelle température préparer un macérat huileux avec BloomLab® ?",
-      a: "La plage optimale se situe autour de 45°C pendant 90 à 180 minutes en cuve close inox 304 : suffisamment tiède pour fluidifier l'huile et accélérer la diffusion, tout en protégeant les acides gras polyinsaturés de l'oxydation."
+      q: tr(
+        "À quelle température préparer un macérat huileux avec BloomLab® ?",
+        "At what temperature should an oil infusion be prepared with BloomLab®?",
+        "Bei welcher Temperatur bereitet man ein Ölmazerat mit der BloomLab® zu?"
+      ),
+      a: tr(
+        "La plage optimale se situe autour de 45°C pendant 90 à 180 minutes en cuve close inox 304 : suffisamment tiède pour fluidifier l'huile et accélérer la diffusion, tout en protégeant les acides gras polyinsaturés de l'oxydation.",
+        "The optimal range is around 45°C for 90 to 180 minutes in the sealed 304 stainless-steel vessel: warm enough to lower viscosity and accelerate diffusion while protecting polyunsaturated fatty acids from oxidation.",
+        "Der optimale Bereich liegt bei etwa 45°C für 90 bis 180 Minuten im geschlossenen 304-Edelstahlbehälter: warm genug für eine schnelle Diffusion bei vollem Oxidationsschutz der Fettsäuren."
+      )
     },
     {
-      q: "Pourquoi associer plusieurs solvants dans la méthode Bloom by BotaniK ?",
-      a: "Le séquençage A/B permet de recueillir d'abord les fractions hydrosolubles, puis les fractions liposolubles d'une même plante ou synergie afin de se rapprocher au plus près du Totum végétal."
+      q: tr(
+        "Pourquoi associer plusieurs solvants dans la méthode Bloom by BotaniK ?",
+        "Why combine multiple solvents in the Bloom by BotaniK method?",
+        "Warum kombiniert die Methode Bloom by BotaniK mehrere Lösungsmittel?"
+      ),
+      a: tr(
+        "Le séquençage A/B permet de recueillir d'abord les fractions hydrosolubles, puis les fractions liposolubles d'une même plante ou synergie afin de se rapprocher au plus près du Totum végétal.",
+        "Sequential A/B extraction first captures water-soluble fractions and then fat-soluble fractions from the same plant or synergy, getting as close as possible to the whole Plant Totum.",
+        "Die sequentielle A/B-Extraktion erfasst zuerst die wasserlöslichen und anschließend die fettlöslichen Fraktionen einer Pflanze, um dem gesamten Pflanzen-Totum nahezukommen."
+      )
     },
     {
-      q: "Comment conserver ses extraits aqueux, huileux ou hydroalcooliques ?",
-      a: "Les infusions aqueuses se consomment fraîches sous 24 à 48 h au réfrigérateur. Les huiles infusées filtrées et flacons hydroalcooliques se conservent à l'abri de la lumière dans un flacon ambré hermétique."
+      q: tr(
+        "Comment conserver ses extraits aqueux, huileux ou hydroalcooliques ?",
+        "How should aqueous, oil-based, or hydroalcoholic extracts be stored?",
+        "Wie lagert man wässrige, ölige oder hydroalkoholische Extrakte?"
+      ),
+      a: tr(
+        "Les infusions aqueuses se consomment fraîches sous 24 à 48 h au réfrigérateur. Les huiles infusées filtrées et flacons hydroalcooliques se conservent à l'abri de la lumière dans un flacon ambré hermétique.",
+        "Aqueous infusions should be consumed fresh within 24–48 hours refrigerated. Filtered infused oils and hydroalcoholic extracts keep best away from light in airtight amber glass bottles.",
+        "Wässrige Auszüge innerhalb von 24–48 Stunden gekühlt verbrauchen. Gefilterte Ölmazerate und Tinkturen lichtgeschützt in dicht verschlossenen Braunglasflaschen aufbewahren."
+      )
     }
   ];
 
@@ -125,248 +158,248 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
 
   const comparisonRows: SolventComparisonRow[] = [
     {
-      name: 'Eau purifiée (H₂O)',
-      polarity: 'Très polaire',
-      affinity: 'Hydrosoluble',
-      targets: 'Mucilages, minéraux, tanins doux, flavonoïdes solubles, polysaccharides',
-      temperature: '55 – 80 °C (jamais bouillante)',
-      conservation: '24 à 72 h au réfrigérateur',
-      limit: 'N’extrait ni les résines ni les terpènes lipophiles ; oxydation rapide'
+      name: tr('Eau purifiée (H₂O)', 'Purified Water (H₂O)', 'Gereinigtes Wasser (H₂O)'),
+      polarity: tr('Très polaire', 'Highly polar', 'Stark polar'),
+      affinity: tr('Hydrosoluble', 'Water-soluble', 'Wasserlöslich'),
+      targets: tr('Mucilages, minéraux, tanins doux, flavonoïdes solubles, polysaccharides', 'Mucilage, minerals, gentle tannins, soluble flavonoids, polysaccharides', 'Schleimstoffe, Mineralien, milde Gerbstoffe, lösliche Flavonoide, Polysaccharide'),
+      temperature: tr('55 – 80 °C (jamais bouillante)', '55 – 80 °C (never boiling)', '55 – 80 °C (niemals kochend)'),
+      conservation: tr('24 à 72 h au réfrigérateur', '24–72 h refrigerated', '24–72 Std. im Kühlschrank'),
+      limit: tr('N’extrait ni les résines ni les terpènes lipophiles ; oxydation rapide', 'Does not extract resins or lipophilic terpenes; short shelf life', 'Extrahiert weder Harze noch lipophile Terpene; schnelle Oxidation')
     },
     {
-      name: 'Huile végétale vierge',
-      polarity: 'Apolaire (Lipophile)',
-      affinity: 'Liposoluble',
-      targets: 'Terpènes, caroténoïdes, vitamines liposolubles (A, D, E, K), phytostérols',
-      temperature: '40 – 52 °C en milieu clos',
-      conservation: '6 à 12 mois en flacon ambré',
-      limit: 'Laisse de côté les polysaccharides et minéraux hydrosolubles'
+      name: tr('Huile végétale vierge', 'Virgin Vegetable Oil', 'Natives Pflanzenöl'),
+      polarity: tr('Apolaire (Lipophile)', 'Non-polar (Lipophilic)', 'Unpolar (Lipophil)'),
+      affinity: tr('Liposoluble', 'Fat-soluble', 'Fettlöslich'),
+      targets: tr('Terpènes, caroténoïdes, vitamines liposolubles (A, D, E, K), phytostérols', 'Terpenes, carotenoids, fat-soluble vitamins (A, D, E, K), phytosterols', 'Terpene, Carotinoide, fettlösliche Vitamine (A, D, E, K), Phytosterole'),
+      temperature: tr('40 – 52 °C en milieu clos', '40 – 52 °C sealed vessel', '40 – 52 °C im geschlossenen System'),
+      conservation: tr('6 à 12 mois en flacon ambré', '6–12 months in amber glass', '6–12 Monate in Braunglas'),
+      limit: tr('Laisse de côté les polysaccharides et minéraux hydrosolubles', 'Leaves behind water-soluble polysaccharides and minerals', 'Erfasst keine wasserlöslichen Polysaccharide und Mineralien')
     },
     {
-      name: 'Alcool alimentaire titré',
-      polarity: 'Amphiphile (Bipolaire)',
-      affinity: 'Hydro-alcoolique (Mixte)',
-      targets: 'Alcaloïdes, résines denses, lactones sesquiterpéniques, polyphénols',
-      temperature: '38 – 48 °C en chambre étanche',
-      conservation: '24 à 36 mois à l’abri de la lumière',
-      limit: 'Nécessite une filtration fine et une vigilance selon le terrain individuel'
+      name: tr('Alcool alimentaire titré', 'Food-Grade Tincturing Alcohol', 'Reiner Ansatzalkohol'),
+      polarity: tr('Amphiphile (Bipolaire)', 'Amphiphilic (Dual polarity)', 'Amphiphil (Bipolar)'),
+      affinity: tr('Hydro-alcoolique (Mixte)', 'Hydroalcoholic (Dual)', 'Hydroalkoholisch (Gemischt)'),
+      targets: tr('Alcaloïdes, résines denses, lactones sesquiterpéniques, polyphénols', 'Alkaloids, dense resins, sesquiterpene lactones, polyphenols', 'Alkaloide, dichte Harze, Sesquiterpenlactone, Polyphenole'),
+      temperature: tr('38 – 48 °C en chambre étanche', '38 – 48 °C sealed chamber', '38 – 48 °C in dichter Kammer'),
+      conservation: tr('24 à 36 mois à l’abri de la lumière', '24–36 months away from light', '24–36 Monate lichtgeschützt'),
+      limit: tr('Nécessite une filtration fine et une vigilance selon le terrain individuel', 'Requires fine filtration and attention to individual contraindications', 'Erfordert feine Filtration und Berücksichtigung individueller Gegenanzeigen')
     },
     {
-      name: 'Glycérine végétale bio',
-      polarity: 'Polaire douce (Triol)',
-      affinity: 'Hydro-polaire sans éthanol',
-      targets: 'Polyphénols, anthocyanes, composés aromatiques doux, flavonoïdes',
-      temperature: '45 – 60 °C sous agitation continue',
-      conservation: '12 à 18 mois (ratio glycérine ≥ 65 %)',
-      limit: 'Viscosité élevée demandant un brassage vortex continu pour vaincre la couche limite'
+      name: tr('Glycérine végétale bio', 'Organic Vegetable Glycerin', 'Bio-Pflanzenglycerin'),
+      polarity: tr('Polaire douce (Triol)', 'Mild polar (Triol)', 'Mild polar (Triol)'),
+      affinity: tr('Hydro-polaire sans éthanol', 'Ethanol-free hydro-polar', 'Alkoholfrei hydro-polar'),
+      targets: tr('Polyphénols, anthocyanes, composés aromatiques doux, flavonoïdes', 'Polyphenols, anthocyanins, mild aromatics, flavonoids', 'Polyphenole, Anthocyane, milde Aromastoffe, Flavonoide'),
+      temperature: tr('45 – 60 °C sous agitation continue', '45 – 60 °C continuous stirring', '45 – 60 °C bei kontinuierlichem Rühren'),
+      conservation: tr('12 à 18 mois (ratio glycérine ≥ 65 %)', '12–18 months (glycerin ratio ≥ 65%)', '12–18 Monate (Glycerinanteil ≥ 65 %)'),
+      limit: tr('Viscosité élevée demandant un brassage vortex continu pour vaincre la couche limite', 'Higher viscosity requiring continuous vortex agitation to overcome the boundary layer', 'Höhere Viskosität erfordert kontinuierlichen Vortex zum Überwinden der Grenzschicht')
     }
   ];
 
   const practicalSheets: SolventPracticalSheet[] = [
     {
       id: 'eau',
-      name: "L'Eau (Le Solvant de la Vie)",
-      polarityTag: 'Affinité Hydrosoluble (Polaire)',
-      tempRange: '55°C à 80°C',
-      ratio: '1:15 à 1:20 (eau faiblement minéralisée)',
-      duration: '20 à 45 min en chambre close',
-      agitation: 'Cyclique douce (jamais d’ébullition)',
-      shelfLife: '24 à 72h au réfrigérateur',
-      idealFor: 'Mucilages, minéraux, tanins doux, flavonoïdes, polysaccharides.',
-      notes: 'Ne jamais faire bouillir, car l’ébullition détruit les flavonoïdes et rend l’infusion amère. Prolifération bactérienne rapide au-delà de 72h ; n’extrait ni les résines ni les huiles essentielles.'
+      name: tr("L'Eau (Le Solvant de la Vie)", 'Water (The Solvent of Life)', 'Wasser (Das Lösungsmittel des Lebens)'),
+      polarityTag: tr('Affinité Hydrosoluble (Polaire)', 'Water-Soluble Affinity (Polar)', 'Wasserlösliche Affinität (Polar)'),
+      tempRange: tr('55°C à 80°C', '55°C to 80°C', '55°C bis 80°C'),
+      ratio: tr('1:15 à 1:20 (eau faiblement minéralisée)', '1:15 to 1:20 (low-mineral water)', '1:15 bis 1:20 (mineralarmes Wasser)'),
+      duration: tr('20 à 45 min en chambre close', '20 to 45 min sealed', '20 bis 45 Min. geschlossen'),
+      agitation: tr('Cyclique douce (jamais d’ébullition)', 'Gentle cyclic (never boiling)', 'Sanft zyklisch (niemals kochend)'),
+      shelfLife: tr('24 à 72h au réfrigérateur', '24–72 h refrigerated', '24–72 Std. gekühlt'),
+      idealFor: tr('Mucilages, minéraux, tanins doux, flavonoïdes, polysaccharides.', 'Mucilage, minerals, mild tannins, flavonoids, polysaccharides.', 'Schleimstoffe, Mineralien, milde Gerbstoffe, Flavonoide, Polysaccharide.'),
+      notes: tr('Ne jamais faire bouillir, car l’ébullition détruit les flavonoïdes et rend l’infusion amère. Prolifération bactérienne rapide au-delà de 72h ; n’extrait ni les résines ni les huiles essentielles.', 'Never boil, as boiling degrades delicate flavonoids and draws bitter tannins. Refrigerate up to 72h; does not extract resins or essential oils.', 'Niemals aufkochen, da Siedehitze Flavonoide zerstört und Bitterstoffe löst. Maximal 72 Std. kühl lagern; löst keine Harze oder ätherischen Öle.')
     },
     {
       id: 'alcool',
-      name: "L'Alcool (Le Solvant de Précision)",
-      polarityTag: 'Affinité Hydro-alcoolique (Mixte)',
-      tempRange: '38°C à 48°C',
-      ratio: '1:5 (teinture classique) à 1:3 (résines)',
-      duration: '120 à 180 min en chambre étanche',
-      agitation: 'Vortex régulier évitant l’évaporation',
-      shelfLife: '24 à 36 mois à l’abri de la lumière',
-      idealFor: 'Alcaloïdes, résines denses, lactones, polyphénols.',
-      notes: 'Nécessite une filtration fine et une vigilance selon le terrain (contre-indiqué pour les femmes enceintes ou les enfants).'
+      name: tr("L'Alcool (Le Solvant de Précision)", 'Alcohol (The Precision Solvent)', 'Alkohol (Das Präzisionslösungsmittel)'),
+      polarityTag: tr('Affinité Hydro-alcoolique (Mixte)', 'Hydroalcoholic Affinity (Dual)', 'Hydroalkoholische Affinität (Gemischt)'),
+      tempRange: tr('38°C à 48°C', '38°C to 48°C', '38°C bis 48°C'),
+      ratio: tr('1:5 (teinture classique) à 1:3 (résines)', '1:5 (standard tincture) to 1:3 (resins)', '1:5 (klassische Tinktur) bis 1:3 (Harze)'),
+      duration: tr('120 à 180 min en chambre étanche', '120 to 180 min sealed chamber', '120 bis 180 Min. in dichter Kammer'),
+      agitation: tr('Vortex régulier évitant l’évaporation', 'Steady vortex preventing evaporation', 'Gleichmäßiger Vortex ohne Verdunstung'),
+      shelfLife: tr('24 à 36 mois à l’abri de la lumière', '24–36 months away from light', '24–36 Monate lichtgeschützt'),
+      idealFor: tr('Alcaloïdes, résines denses, lactones, polyphénols.', 'Alkaloids, dense resins, lactones, polyphenols.', 'Alkaloide, dichte Harze, Lactone, Polyphenole.'),
+      notes: tr('Nécessite une filtration fine et une vigilance selon le terrain (contre-indiqué pour les femmes enceintes ou les enfants).', 'Requires fine filtration and caution according to individual profile (not suitable during pregnancy or for children).', 'Erfordert feine Filtration und Vorsicht je nach Konstitution (nicht geeignet in Schwangerschaft oder für Kinder).')
     },
     {
       id: 'glycerine',
-      name: 'La Glycérine (Le Solvant Doux)',
-      polarityTag: 'Affinité Hydro-polaire sans éthanol',
-      tempRange: '45°C à 60°C',
-      ratio: 'Ratio glycérine ≥ 65 % (ex. 60-70 % / 30-40 % eau)',
-      duration: '90 à 150 min sous agitation continue',
-      agitation: 'Brassage vortex continu (viscosité élevée)',
-      shelfLife: '12 à 18 mois à l’abri des UV',
-      idealFor: 'Polyphénols, anthocyanes, composés aromatiques doux, flavonoïdes.',
-      notes: 'Sa viscosité élevée demande un brassage vortex continu afin d’optimiser l’extraction sans recourir à l’éthanol.'
+      name: tr('La Glycérine (Le Solvant Doux)', 'Vegetable Glycerin (The Gentle Solvent)', 'Glycerin (Das sanfte Lösungsmittel)'),
+      polarityTag: tr('Affinité Hydro-polaire sans éthanol', 'Ethanol-Free Hydro-Polar Affinity', 'Alkoholfreie hydro-polare Affinität'),
+      tempRange: tr('45°C à 60°C', '45°C to 60°C', '45°C bis 60°C'),
+      ratio: tr('Ratio glycérine ≥ 65 % (ex. 60-70 % / 30-40 % eau)', 'Glycerin ratio ≥ 65% (e.g. 60–70% / 30–40% water)', 'Glycerinanteil ≥ 65 % (z. B. 60–70 % / 30–40 % Wasser)'),
+      duration: tr('90 à 150 min sous agitation continue', '90 to 150 min continuous stirring', '90 bis 150 Min. bei Dauerrühren'),
+      agitation: tr('Brassage vortex continu (viscosité élevée)', 'Continuous vortex stirring (high viscosity)', 'Kontinuierlicher Vortex (hohe Viskosität)'),
+      shelfLife: tr('12 à 18 mois à l’abri des UV', '12–18 months away from UV', '12–18 Monate UV-geschützt'),
+      idealFor: tr('Polyphénols, anthocyanes, composés aromatiques doux, flavonoïdes.', 'Polyphenols, anthocyanins, mild aromatics, flavonoids.', 'Polyphenole, Anthocyane, milde Aromastoffe, Flavonoide.'),
+      notes: tr('Sa viscosité élevée demande un brassage vortex continu afin d’optimiser l’extraction sans recourir à l’éthanol.', 'Its higher viscosity calls for continuous vortex stirring to optimize extraction without ethanol.', 'Seine hohe Viskosität erfordert kontinuierliches Rühren für eine optimale Extraktion ohne Ethanol.')
     },
     {
       id: 'huile',
-      name: 'Les Huiles Végétales (Les Solvants Lipophiles)',
-      polarityTag: 'Affinité Liposoluble (Apolaire)',
-      tempRange: '40°C à 50°C max',
-      ratio: '1:5 à 1:8 (plantes sèches < 8 % d’humidité)',
-      duration: '90 à 180 min',
-      agitation: 'Vortex doux en milieu clos',
-      shelfLife: '6 à 12 mois en flacon ambré',
-      idealFor: 'Terpènes, vitamines liposolubles (A, D, E, K), caroténoïdes, phytostérols.',
-      notes: 'Température maximale : 40-50°C — ne jamais dépasser pour éviter l’oxydation et préserver les acides gras essentiels (Oméga 3, 6, 9) de l’huile de support.'
+      name: tr('Les Huiles Végétales (Les Solvants Lipophiles)', 'Vegetable Oils (Lipophilic Solvents)', 'Pflanzenöle (Lipophile Lösungsmittel)'),
+      polarityTag: tr('Affinité Liposoluble (Apolaire)', 'Fat-Soluble Affinity (Non-Polar)', 'Fettlösliche Affinität (Unpolar)'),
+      tempRange: tr('40°C à 50°C max', '40°C to 50°C max', '40°C bis max. 50°C'),
+      ratio: tr('1:5 à 1:8 (plantes sèches < 8 % d’humidité)', '1:5 to 1:8 (dry plants < 8% moisture)', '1:5 bis 1:8 (Trockenpflanzen < 8 % Feuchte)'),
+      duration: tr('90 à 180 min', '90 to 180 min', '90 bis 180 Min.'),
+      agitation: tr('Vortex doux en milieu clos', 'Gentle vortex in sealed vessel', 'Sanfter Vortex im geschlossenen System'),
+      shelfLife: tr('6 à 12 mois en flacon ambré', '6–12 months in amber glass', '6–12 Monate im Braunglas'),
+      idealFor: tr('Terpènes, vitamines liposolubles (A, D, E, K), caroténoïdes, phytostérols.', 'Terpenes, fat-soluble vitamins (A, D, E, K), carotenoids, phytosterols.', 'Terpene, fettlösliche Vitamine (A, D, E, K), Carotinoide, Phytosterole.'),
+      notes: tr('Température maximale : 40-50°C — ne jamais dépasser pour éviter l’oxydation et préserver les acides gras essentiels (Oméga 3, 6, 9) de l’huile de support.', 'Max temperature: 40–50°C — never exceed to prevent oxidation and preserve essential fatty acids (Omega 3, 6, 9) of the carrier oil.', 'Maximaltemperatur: 40–50°C — niemals überschreiten, um Oxidation zu vermeiden und Omega-3, 6, 9-Fettsäuren zu schützen.')
     }
   ];
 
   const carrierOils: CarrierOilGuide[] = [
     {
-      name: "Huile d'Olive",
-      profile: 'Très stable, riche en polyphénols',
+      name: tr("Huile d'Olive", 'Olive Oil', 'Olivenöl'),
+      profile: tr('Très stable, riche en polyphénols', 'Highly stable, polyphenol-rich', 'Sehr stabil, reich an Polyphenolen'),
       temp: '40°C - 45°C',
-      usage: 'Idéale pour les macérats de romarin ou de calendula.'
+      usage: tr('Idéale pour les macérats de romarin ou de calendula.', 'Ideal for rosemary or calendula oil macerates.', 'Ideal für Rosmarin- oder Calendula-Mazerate.')
     },
     {
-      name: 'Huile de Nigelle',
-      profile: 'Très sensible, riche en thymoquinone',
-      temp: '40°C max',
-      usage: 'Préserve la thymoquinone, son actif majeur, qu’une chaleur trop élevée détruit.'
+      name: tr('Huile de Nigelle', 'Black Seed (Nigella) Oil', 'Schwarzkümmelöl'),
+      profile: tr('Très sensible, riche en thymoquinone', 'Heat-sensitive, rich in thymoquinone', 'Empfindlich, reich an Thymochinon'),
+      temp: tr('40°C max', '40°C max', 'Max. 40°C'),
+      usage: tr('Préserve la thymoquinone, son actif majeur, qu’une chaleur trop élevée détruit.', 'Preserves delicate thymoquinone that excessive heat degrades.', 'Schützt empfindliches Thymochinon vor Hitzeabbau.')
     },
     {
-      name: "Huile d'Avocat",
-      profile: 'Riche en insaponifiables et vitamines',
+      name: tr("Huile d'Avocat", 'Avocado Oil', 'Avocadoöl'),
+      profile: tr('Riche en insaponifiables et vitamines', 'Rich in unsaponifiables and vitamins', 'Reich an Unverseifbarem und Vitaminen'),
       temp: '45°C',
-      usage: 'Très pénétrante, parfaite pour les soins articulaires.'
+      usage: tr('Très pénétrante, parfaite pour les soins corporels et articulaires.', 'Deeply penetrating, ideal for body and joint comfort massages.', 'Sehr gut einziehend, ideal für Körper- und Gelenkpflege.')
     },
     {
-      name: 'Huile de Macadamia',
-      profile: 'Riche en acide palmitoléique',
+      name: tr('Huile de Macadamia', 'Macadamia Oil', 'Macadamiaöl'),
+      profile: tr('Riche en acide palmitoléique', 'Rich in palmitoleic acid', 'Reich an Palmitoleinsäure'),
       temp: '45°C',
-      usage: 'Très fluide, idéale pour les soins du visage.'
+      usage: tr('Très fluide, idéale pour les soins du visage.', 'Silky fluid texture, ideal for facial serums.', 'Sehr flüssig, ideal für die Gesichtspflege.')
     },
     {
-      name: 'Huile de Jojoba',
-      profile: 'Cire liquide, très stable',
+      name: tr('Huile de Jojoba', 'Jojoba Oil', 'Jojobaöl'),
+      profile: tr('Cire liquide, très stable', 'Liquid wax ester, ultra stable', 'Flüssiges Wachs, extrem stabil'),
       temp: '45°C - 50°C',
-      usage: 'Ne rancit pas, idéale pour le cuir chevelu.'
+      usage: tr('Ne rancit pas, idéale pour le cuir chevelu.', 'Oxidation-resistant, ideal for scalp and hair care.', 'Wird nicht ranzig, ideal für Kopfhaut und Haar.')
     },
     {
-      name: 'Huile de Coco',
-      profile: 'Solide en dessous de 24°C',
+      name: tr('Huile de Coco', 'Coconut Oil', 'Kokosöl'),
+      profile: tr('Solide en dessous de 24°C', 'Solid below 24°C', 'Fest unter 24°C'),
       temp: '40°C - 45°C',
-      usage: 'Idéale pour la peau, mais peut boucher les pores si elle est trop concentrée.'
+      usage: tr('Idéale pour les baumes cutanés, à doser selon la tolérance des pores.', 'Ideal for nourishing body balms; adjust for facial pore tolerance.', 'Ideal für Körperbalsame; bei Gesichtspflege sparsam dosieren.')
     },
     {
-      name: 'Huile de Sésame',
-      profile: 'Très stable, antioxydante',
+      name: tr('Huile de Sésame', 'Sesame Oil', 'Sesamöl'),
+      profile: tr('Très stable, antioxydante', 'Very stable and antioxidant', 'Sehr stabil und antioxidativ'),
       temp: '45°C',
-      usage: 'Parfaite pour les massages et les articulations.'
+      usage: tr('Parfaite pour les massages traditionnels et la souplesse articulaire.', 'Traditional choice for warming massages and joint suppleness.', 'Perfekt für Massagen und geschmeidige Gelenke.')
     },
     {
-      name: 'Huile de Moutarde',
-      profile: 'Très piquante, riche en soufre',
-      temp: '40°C max',
-      usage: 'Utilisée traditionnellement pour stimuler la circulation locale (usage externe avec précaution).'
+      name: tr('Huile de Moutarde', 'Mustard Seed Oil', 'Senfsamenöl'),
+      profile: tr('Très piquante, riche en soufre', 'Warming, sulfur-rich profile', 'Wärmend, reich an Schwefelverbindungen'),
+      temp: tr('40°C max', '40°C max', 'Max. 40°C'),
+      usage: tr('Utilisée traditionnellement pour stimuler la microcirculation locale (usage externe avec précaution).', 'Traditionally used externally to stimulate local warmth and circulation (use with caution).', 'Traditionell äußerlich zur Förderung der lokalen Durchblutung (vorsichtig anwenden).')
     }
   ];
 
   const signatureRecipes: SignatureRecipe[] = [
     {
       id: 'serum-polyphenols',
-      name: 'Sérum Polyphénols à la Glycérine (Sans Alcool)',
-      objective: "Extraire un maximum d'antioxydants pour un soin cutané anti-âge.",
-      description: 'Une macération glycéro-hydrolatée douce sans éthanol, conçue pour capter les polyphénols et acides phénoliques du romarin sans dénaturation thermique.',
-      phaseLabel: 'Sachet A · Polarité Douce Sans Alcool',
-      composition: '20 g de romarin séché',
-      solvent: "60 % Glycérine végétale + 40 % Eau florale de rose",
+      name: tr('Sérum Polyphénols à la Glycérine (Sans Alcool)', 'Alcohol-Free Polyphenol Glycerin Serum', 'Alkoholfreies Polyphenol-Glycerin-Serum'),
+      objective: tr("Extraire un maximum d'antioxydants pour un soin cutané anti-âge.", 'Extract maximal antioxidants for an anti-aging skin care elixir.', 'Maximale Antioxidantien für eine regenerierende Hautpflege extrahieren.'),
+      description: tr('Une macération glycéro-hydrolatée douce sans éthanol, conçue pour capter les polyphénols et acides phénoliques du romarin sans dénaturation thermique.', 'An ethanol-free glycerin-hydrosol extraction crafted to capture rosemary polyphenols and phenolic acids without thermal damage.', 'Eine ethanolfreie Glycerin-Hydrolat-Extraktion für Rosmarin-Polyphenole ohne Hitzeschädigung.'),
+      phaseLabel: tr('Sachet A · Polarité Douce Sans Alcool', 'Phase A · Gentle Alcohol-Free Polarity', 'Phase A · Sanfte alkoholfreie Polarität'),
+      composition: tr('20 g de romarin séché', '20 g dried rosemary leaves', '20 g getrockneter Rosmarin'),
+      solvent: tr("60 % Glycérine végétale + 40 % Eau florale de rose", '60% Vegetable glycerin + 40% Rose hydrosol', '60 % Pflanzenglycerin + 40 % Rosenhydrolat'),
       temperature: '45°C',
-      duration: '2h, mode agitation continu',
-      administration: 'Usage externe cutané : appliquer quelques gouttes sur peau propre ou incorporer dans une crème neutre après filtration sur filtre à mailles très fines.',
-      dosage: 'Usage général externe : 2 à 4 gouttes matin et soir sur le visage et le cou ; maximum 8 gouttes/jour.',
-      precautions: 'Filtrer impérativement sur un filtre à mailles très fines pour retirer toute microparticule végétale. Conserver en flacon ambré à l’abri de la lumière.',
-      contraindications: 'Réaliser un test cutané préalable au pli du coude 24h avant application. Éviter le contact direct avec les yeux ; demander un avis professionnel en cas de peau réactive.'
+      duration: tr('2h, mode agitation continu', '2h, continuous stirring mode', '2 Std., Dauerrührmodus'),
+      administration: tr('Usage externe cutané : appliquer quelques gouttes sur peau propre ou incorporer dans une crème neutre après filtration sur filtre à mailles très fines.', 'External topical use: apply a few drops on clean skin or blend into a neutral cream base after fine mesh filtration.', 'Äußerliche Anwendung: nach feiner Filtration einige Tropfen auf die gereinigte Haut auftragen oder in eine neutrale Creme mischen.'),
+      dosage: tr('Usage général externe : 2 à 4 gouttes matin et soir sur le visage et le cou ; maximum 8 gouttes/jour.', 'General external use: 2–4 drops morning and evening on face and neck; max 8 drops/day.', 'Äußerliche Anwendung: morgens und abends 2–4 Tropfen auf Gesicht und Hals; max. 8 Tropfen/Tag.'),
+      precautions: tr('Filtrer impérativement sur un filtre à mailles très fines pour retirer toute microparticule végétale. Conserver en flacon ambré à l’abri de la lumière.', 'Always filter through ultra-fine mesh to remove microparticles. Store in an amber glass bottle away from light.', 'Unbedingt fein filtrieren, um Pflanzenpartikel zu entfernen. Im Braunglas lichtgeschützt lagern.'),
+      contraindications: tr('Réaliser un test cutané préalable au pli du coude 24h avant application. Éviter le contact direct avec les yeux ; demander un avis professionnel en cas de peau réactive.', 'Perform an inner-elbow patch test 24h before use. Avoid eye contact; consult a specialist if skin is reactive.', '24 Stunden vorab einen Verträglichkeitstest in der Armbeuge durchführen. Augenkontakt vermeiden.')
     },
     {
       id: 'teinture-propolis',
-      name: 'Teinture Mère de Propolis',
-      objective: 'Extraire les flavonoïdes et les résines de la propolis pour soutenir le terrain immunitaire.',
-      description: 'Les résines cireuses de la propolis exigent un solvant hydro-alcoolique concentré. La chambre étanche BloomLab® maintient 45°C sans évaporation d’éthanol.',
-      phaseLabel: 'Sachet B · Extraction Résineuse Amphiphile',
-      composition: '30 g de propolis brute finement fragmentée',
-      solvent: '200 ml d’alcool à 70°',
+      name: tr('Teinture Mère de Propolis', 'Propolis Mother Tincture', 'Propolis-Urtinktur'),
+      objective: tr('Extraire les flavonoïdes et les résines de la propolis pour soutenir le terrain immunitaire.', 'Extract propolis flavonoids and resins to support seasonal terrain resilience.', 'Propolis-Flavonoide und -Harze zur Unterstützung der saisonalen Widerstandskraft extrahieren.'),
+      description: tr('Les résines cireuses de la propolis exigent un solvant hydro-alcoolique concentré. La chambre étanche BloomLab® maintient 45°C sans évaporation d’éthanol.', 'Waxy propolis resins require a concentrated hydroalcoholic solvent. BloomLab® sealed chamber holds 45°C without ethanol evaporation.', 'Wachsartige Propolisharze benötigen ein konzentriertes Ethanol-Gemisch. Die dichte BloomLab®-Kammer hält 45°C ohne Verdunstung.'),
+      phaseLabel: tr('Sachet B · Extraction Résineuse Amphiphile', 'Phase B · Amphiphilic Resin Extraction', 'Phase B · Amphiphile Harzextraktion'),
+      composition: tr('30 g de propolis brute finement fragmentée', '30 g finely crushed raw propolis', '30 g fein zerkleinertes Rohpropolis'),
+      solvent: tr('200 ml d’alcool à 70°', '200 ml 70% food-grade alcohol', '200 ml 70%iger Ansatzalkohol'),
       temperature: '45°C',
-      duration: '3h en chambre close',
-      administration: 'Usage oral dilué dans une cuillère de miel ou un verre d’eau tiède après décantation et filtration soigneuse. Conservation : flacon ambré, 3 ans.',
-      dosage: 'Usage général adulte : 10 à 15 gouttes diluées, 1 à 2 fois par jour ; dose maximale indicative : 30 gouttes/jour.',
-      precautions: 'Ne jamais consommer pur ni approcher d’une source de flamme lors de la préparation. Filtrer après refroidissement complet.',
-      contraindications: 'Contre-indiqué chez les femmes enceintes ou allaitantes, chez les enfants, en cas d’allergie aux produits de la ruche, d’asthme allergique ou de contre-indication à l’alcool.'
+      duration: tr('3h en chambre close', '3h in sealed chamber', '3 Std. in geschlossener Kammer'),
+      administration: tr('Usage oral dilué dans une cuillère de miel ou un verre d’eau tiède après décantation et filtration soigneuse. Conservation : flacon ambré, 3 ans.', 'Diluted oral use in a spoon of honey or lukewarm water after settling and fine filtration. Keeps 3 years in amber glass.', 'Verdünnt in etwas Honig oder lauwarmem Wasser nach sorgfältiger Filtration einnehmen. Im Braunglas 3 Jahre haltbar.'),
+      dosage: tr('Usage général adulte : 10 à 15 gouttes diluées, 1 à 2 fois par jour ; dose maximale indicative : 30 gouttes/jour.', 'General adult guidance: 10–15 diluted drops, 1–2 times daily; indicative max: 30 drops/day.', 'Erwachsene: 10–15 verdünnte Tropfen 1–2x täglich; Richtwert max. 30 Tropfen/Tag.'),
+      precautions: tr('Ne jamais consommer pur ni approcher d’une source de flamme lors de la préparation. Filtrer après refroidissement complet.', 'Never use undiluted; keep away from open flames during preparation. Filter once fully cooled.', 'Niemals unverdünnt anwenden und von offenen Flammen fernhalten. Erst nach vollständigem Abkühlen filtrieren.'),
+      contraindications: tr('Contre-indiqué chez les femmes enceintes ou allaitantes, chez les enfants, en cas d’allergie aux produits de la ruche, d’asthme allergique ou de contre-indication à l’alcool.', 'Contraindicated during pregnancy, breastfeeding, in children, and in case of bee-product allergy, allergic asthma, or alcohol restriction.', 'Nicht geeignet in Schwangerschaft, Stillzeit, für Kinder sowie bei Bienenprodukt-Allergie, allergischem Asthma oder Alkoholunverträglichkeit.')
     },
     {
       id: 'macerat-calendula',
-      name: 'Macérat Huileux Intégral de Calendula',
-      objective: 'Préserver les caroténoïdes et triterpènes apaisants des capitules entiers sans altération lipidique.',
-      description: 'À 45°C en milieu clos, l’huile d’olive ou de jojoba capture les composés liposolubles du calendula en 2h tout en protégeant les acides gras de l’oxydation.',
-      phaseLabel: 'Sachet B · Fraction Liposoluble',
-      composition: '25 g de capitules entiers de Calendula officinalis séchés (< 8 % humidité)',
-      solvent: "200 ml d'huile végétale vierge d'Olive ou de Jojoba (ratio 1:8)",
+      name: tr('Macérat Huileux Intégral de Calendula', 'Whole-Flower Calendula Infused Oil', 'Ganzblüten-Calendula-Ölmazerat'),
+      objective: tr('Préserver les caroténoïdes et triterpènes apaisants des capitules entiers sans altération lipidique.', 'Preserve soothing carotenoids and triterpenes from whole calendula heads without lipid oxidation.', 'Beruhigende Carotinoide und Triterpene ganzer Ringelblumenblüten ohne Lipidoxidation bewahren.'),
+      description: tr('À 45°C en milieu clos, l’huile d’olive ou de jojoba capture les composés liposolubles du calendula en 2h tout en protégeant les acides gras de l’oxydation.', 'At 45°C in a sealed chamber, olive or jojoba oil captures calendula fat-soluble compounds in 2h while safeguarding fatty acids.', 'Bei 45°C im geschlossenen Gefäß bindet Oliven- oder Jojobaöl die fettlöslichen Stoffe der Ringelblume in 2 Stunden schonend.'),
+      phaseLabel: tr('Sachet B · Fraction Liposoluble', 'Phase B · Lipophilic Fraction', 'Phase B · Fettlösliche Fraktion'),
+      composition: tr('25 g de capitules entiers de Calendula officinalis séchés (< 8 % humidité)', '25 g dried whole Calendula officinalis flowers (< 8% moisture)', '25 g getrocknete ganze Calendula-Blüten (< 8 % Restfeuchte)'),
+      solvent: tr("200 ml d'huile végétale vierge d'Olive ou de Jojoba (ratio 1:8)", '200 ml virgin Olive or Jojoba oil (1:8 ratio)', '200 ml natives Oliven- oder Jojobaöl (Verhältnis 1:8)'),
       temperature: '45°C',
-      duration: '2h sous agitation douce continue',
-      administration: 'Application cutanée pure ou en base de baume sur les zones sèches.',
-      dosage: 'Usage strictement externe : quelques gouttes en massage doux 1 à 2 fois par jour.',
-      precautions: 'Vérifier que les fleurs sont parfaitement sèches avant extraction pour éviter toute eau résiduelle.',
-      contraindications: 'Allergie connue aux plantes de la famille des Astéracées. Réaliser un test cutané au pli du coude 24h avant usage.'
+      duration: tr('2h sous agitation douce continue', '2h under continuous gentle stirring', '2 Std. unter sanftem Dauerrühren'),
+      administration: tr('Application cutanée pure ou en base de baume sur les zones sèches.', 'Topical application neat or as a balm base on dry areas.', 'Pur auf trockene Hautpartien auftragen oder als Balsambasis verwenden.'),
+      dosage: tr('Usage strictement externe : quelques gouttes en massage doux 1 à 2 fois par jour.', 'External use only: a few drops massaged gently 1–2 times daily.', 'Nur zur äußeren Anwendung: 1–2x täglich einige Tropfen sanft einmassieren.'),
+      precautions: tr('Vérifier que les fleurs sont parfaitement sèches avant extraction pour éviter toute eau résiduelle.', 'Ensure flowers are thoroughly dried prior to extraction to prevent residual moisture.', 'Sicherstellen, dass die Blüten vollständig getrocknet sind, um Restwasser zu vermeiden.'),
+      contraindications: tr('Allergie connue aux plantes de la famille des Astéracées. Réaliser un test cutané au pli du coude 24h avant usage.', 'Known allergy to Asteraceae family plants. Perform an inner-elbow patch test 24h before use.', 'Bekannte Allergie gegen Korbblütler (Asteraceae). Vorab Verträglichkeitstest durchführen.')
     }
   ];
 
   const organSolventMatrix: OrganSolventRow[] = [
     {
-      organ: 'Foie',
-      polarity: 'Amphiphile',
-      idealSolvent: 'Alcool + Glycérine',
-      plants: 'Chardon-Marie, Pissenlit'
+      organ: tr('Foie', 'Liver', 'Leber'),
+      polarity: tr('Amphiphile', 'Amphiphilic', 'Amphiphil'),
+      idealSolvent: tr('Alcool + Glycérine', 'Alcohol + Glycerin', 'Alkohol + Glycerin'),
+      plants: tr('Chardon-Marie, Pissenlit', 'Milk Thistle, Dandelion', 'Mariendistel, Löwenzahn')
     },
     {
-      organ: 'Reins',
-      polarity: 'Polaire',
-      idealSolvent: 'Eau',
-      plants: 'Prêle, Orthosiphon'
+      organ: tr('Reins', 'Kidneys', 'Nieren'),
+      polarity: tr('Polaire', 'Polar', 'Polar'),
+      idealSolvent: tr('Eau', 'Water', 'Wasser'),
+      plants: tr('Prêle, Orthosiphon', 'Horsetail, Orthosiphon', 'Ackerschachtelhalm, Orthosiphon')
     },
     {
-      organ: 'Cuir Chevelu',
-      polarity: 'Apolaire',
-      idealSolvent: 'Huile (Jojoba, Nigelle)',
-      plants: 'Romarin, Gingembre'
+      organ: tr('Cuir Chevelu', 'Scalp', 'Kopfhaut'),
+      polarity: tr('Apolaire', 'Non-Polar', 'Unpolar'),
+      idealSolvent: tr('Huile (Jojoba, Nigelle)', 'Oil (Jojoba, Black Seed)', 'Öl (Jojoba, Schwarzkümmel)'),
+      plants: tr('Romarin, Gingembre', 'Rosemary, Ginger', 'Rosmarin, Ingwer')
     },
     {
-      organ: 'Système Nerveux',
-      polarity: 'Mixte',
-      idealSolvent: 'Alcool (Teinture)',
-      plants: 'Passiflore, Valériane'
+      organ: tr('Système Nerveux', 'Nervous System', 'Nervensystem'),
+      polarity: tr('Mixte', 'Dual', 'Gemischt'),
+      idealSolvent: tr('Alcool (Teinture)', 'Alcohol (Tincture)', 'Alkohol (Tinktur)'),
+      plants: tr('Passiflore, Valériane', 'Passionflower, Valerian', 'Passionsblume, Baldrian')
     }
   ];
 
   const plantMappings: PlantSolventMapping[] = [
     {
-      plantCategory: 'Fleurs aromatiques & Sommités tendres',
-      examples: 'Camomille matricaire, Lavande, Mélisse, Tilleul',
-      dominantPolarity: 'Mixte (Terpènes volatils + Flavonoïdes polaires)',
-      recommendedSolvent: 'Eau à 60 °C (Phase A) ou Huile à 42 °C (Phase B)',
-      sequenceTip: 'Éviter l’ébullition pour sauvegarder les huiles essentielles thermolabiles.'
+      plantCategory: tr('Fleurs aromatiques & Sommités tendres', 'Aromatic Flowers & Tender Tops', 'Aromatische Blüten & zarte Spitzen'),
+      examples: tr('Camomille matricaire, Lavande, Mélisse, Tilleul', 'German Chamomile, Lavender, Lemon Balm, Linden', 'Echte Kamille, Lavendel, Zitronenmelisse, Linde'),
+      dominantPolarity: tr('Mixte (Terpènes volatils + Flavonoïdes polaires)', 'Dual (Volatile terpenes + Polar flavonoids)', 'Gemischt (Flüchtige Terpene + Polare Flavonoide)'),
+      recommendedSolvent: tr('Eau à 60 °C (Phase A) ou Huile à 42 °C (Phase B)', 'Water at 60 °C (Phase A) or Oil at 42 °C (Phase B)', 'Wasser bei 60 °C (Phase A) oder Öl bei 42 °C (Phase B)'),
+      sequenceTip: tr('Éviter l’ébullition pour sauvegarder les huiles essentielles thermolabiles.', 'Avoid boiling to protect heat-sensitive essential oils.', 'Kochen vermeiden, um hitzeempfindliche ätherische Öle zu schützen.')
     },
     {
-      plantCategory: 'Résines, Écorces & Bourgeons cireux',
-      examples: 'Propolis, Encens (Boswellia), Cannelle, Bourgeon de Peuplier',
-      dominantPolarity: 'Lipophile / Amphiphile dense',
-      recommendedSolvent: 'Alcool titré 60–70° ou Huile chaude 48 °C',
-      sequenceTip: 'L’eau seule est inefficace : seule la phase B libère les acides résiniques.'
+      plantCategory: tr('Résines, Écorces & Bourgeons cireux', 'Resins, Barks & Waxy Buds', 'Harze, Rinden & wachsartige Knospen'),
+      examples: tr('Propolis, Encens (Boswellia), Cannelle, Bourgeon de Peuplier', 'Propolis, Frankincense (Boswellia), Cinnamon, Poplar Bud', 'Propolis, Weihrauch (Boswellia), Zimt, Pappelknospe'),
+      dominantPolarity: tr('Lipophile / Amphiphile dense', 'Dense Lipophilic / Amphiphilic', 'Dicht lipophil / amphiphil'),
+      recommendedSolvent: tr('Alcool titré 60–70° ou Huile chaude 48 °C', '60–70% alcohol or Warm Oil at 48 °C', '60–70 % Alkohol oder warmes Öl bei 48 °C'),
+      sequenceTip: tr('L’eau seule est inefficace : seule la phase B libère les acides résiniques.', 'Water alone fails: only Phase B releases resinic acids.', 'Wasser allein reicht nicht: Nur Phase B löst Harzsäuren.')
     },
     {
-      plantCategory: 'Racines fibreuses & Champignons adaptogènes',
-      examples: 'Reishi, Astragale, Ashwagandha, Curcuma',
-      dominantPolarity: 'Double polarité (Bêta-glucanes polaires + Triterpènes lipophiles)',
-      recommendedSolvent: 'Séquençage A/B complet (Eau 75 °C puis Alcool/Huile 45 °C)',
-      sequenceTip: 'Associer les deux phases restitue le Totum complet de la matrice ligneuse.'
+      plantCategory: tr('Racines fibreuses & Champignons adaptogènes', 'Fibrous Roots & Adaptogenic Mushrooms', 'Faserige Wurzeln & adaptogene Vitalpilze'),
+      examples: tr('Reishi, Astragale, Ashwagandha, Curcuma', 'Reishi, Astragalus, Ashwagandha, Turmeric', 'Reishi, Astragalus, Ashwagandha, Kurkuma'),
+      dominantPolarity: tr('Double polarité (Bêta-glucanes polaires + Triterpènes lipophiles)', 'Dual polarity (Polar beta-glucans + Lipophilic triterpenes)', 'Doppelpolarität (Polare Beta-Glucane + Lipophile Triterpene)'),
+      recommendedSolvent: tr('Séquençage A/B complet (Eau 75 °C puis Alcool/Huile 45 °C)', 'Full A/B Sequencing (Water 75 °C then Alcohol/Oil 45 °C)', 'Volle A/B-Sequenzierung (Wasser 75 °C, dann Alkohol/Öl 45 °C)'),
+      sequenceTip: tr('Associer les deux phases restitue le Totum complet de la matrice ligneuse.', 'Combining both phases restores the full woody Totum.', 'Die Kombination beider Phasen erfasst das vollständige Totum.')
     },
     {
-      plantCategory: 'Baies & Feuilles riches en polyphénols',
-      examples: 'Myrtille, Hibiscus, Vigne rouge, Romarin',
-      dominantPolarity: 'Polaire à modérément polaire',
-      recommendedSolvent: 'Glycérine végétale (70/30) ou Eau tempérée 65 °C',
-      sequenceTip: 'La glycérine stabilise durablement les anthocyanes fragiles sans éthanol.'
+      plantCategory: tr('Baies & Feuilles riches en polyphénols', 'Polyphenol-Rich Berries & Leaves', 'Polyphenolreiche Beeren & Blätter'),
+      examples: tr('Myrtille, Hibiscus, Vigne rouge, Romarin', 'Bilberry, Hibiscus, Red Vine, Rosemary', 'Heidelbeere, Hibiskus, Rotes Weinlaub, Rosmarin'),
+      dominantPolarity: tr('Polaire à modérément polaire', 'Polar to moderately polar', 'Polar bis mäßig polar'),
+      recommendedSolvent: tr('Glycérine végétale (70/30) ou Eau tempérée 65 °C', 'Vegetable glycerin (70/30) or Water at 65 °C', 'Pflanzenglycerin (70/30) oder Wasser bei 65 °C'),
+      sequenceTip: tr('La glycérine stabilise durablement les anthocyanes fragiles sans éthanol.', 'Glycerin stabilizes delicate anthocyanins without ethanol.', 'Glycerin stabilisiert empfindliche Anthocyane ohne Ethanol.')
     }
   ];
 
@@ -399,7 +432,7 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                 </li>
                 <li><span className="text-white/40">/</span></li>
                 <li className="text-white font-bold" aria-current="page">
-                  Guide des Solvants
+                  {tr('Guide des Solvants', 'Solvents Guide', 'Lösungsmittel-Leitfaden')}
                 </li>
               </ol>
             </nav>
@@ -409,26 +442,37 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
             <div className="max-w-4xl space-y-6">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-white text-xs font-bold tracking-wider uppercase border border-white/20">
                 <FlaskConical className="w-3.5 h-3.5 text-[#E8772E]" />
-                <span>Polarité &amp; Ingénierie d&apos;Extraction</span>
+                <span>{tr("Polarité & Ingénierie d'Extraction", 'Polarity & Extraction Engineering', 'Polarität & Extraktionstechnik')}</span>
               </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white !text-white leading-tight font-sans">
-                Le Guide des Solvants : La Clé de l&apos;Extraction
+                {tr("Le Guide des Solvants : La Clé de l'Extraction", 'The Solvents Guide: The Key to Extraction', 'Der Lösungsmittel-Leitfaden: Der Schlüssel zur Extraktion')}
               </h1>
 
               <p className="text-lg sm:text-xl text-white/90 !text-white leading-relaxed font-normal max-w-3xl">
-                Eau, Huile, Alcool, Glycérine : apprenez à choisir le bon solvant avec la méthode{' '}
-                <strong className="text-white">Bloom by BotaniK</strong> et l&apos;extracteur{' '}
-                <strong className="text-white">BloomLab®</strong> pour libérer le{' '}
+                {tr(
+                  'Eau, Huile, Alcool, Glycérine : apprenez à choisir le bon solvant avec la méthode ',
+                  'Water, Oil, Alcohol, Glycerin: learn to select the right solvent with the ',
+                  'Wasser, Öl, Alkohol, Glyzerin: lernen Sie, das richtige Lösungsmittel mit der Methode '
+                )}
+                <strong className="text-white">Bloom by BotaniK</strong>
+                {tr(" et l'extracteur ", ' method and the ', ' und dem Extraktor ')}
+                <strong className="text-white">BloomLab®</strong>
+                {tr(' pour libérer le ', ' extractor to release the ', ' zu wählen, um das ')}
                 <TooltipLexique terme="totum" force={true}>
                   <span className="text-white underline decoration-[#E8772E] decoration-dotted underline-offset-4">
-                    Totum Végétal
+                    {tr('Totum Végétal', 'Plant Totum', 'Pflanzen-Totum')}
                   </span>
                 </TooltipLexique>
+                {lang === 'de' ? ' freizusetzen' : ''}
               </p>
 
               <p className="text-xs sm:text-sm text-white/85 !text-white bg-white/10 p-3.5 rounded-xl border border-white/15 max-w-2xl leading-relaxed">
-                Ressource éducative dédiée à la chimie douce de l&apos;extraction botanique. Ces informations générales accompagnent la compréhension du végétal et ne remplacent jamais un avis médical ni un traitement prescrit.
+                {tr(
+                  "Ressource éducative dédiée à la chimie douce de l'extraction botanique. Ces informations générales accompagnent la compréhension du végétal et ne remplacent jamais un avis médical ni un traitement prescrit.",
+                  'Educational resource dedicated to the gentle chemistry of botanical extraction. This general information supports understanding of plant science and never replaces medical advice or prescribed treatment.',
+                  'Bildungsressource zur sanften Chemie der botanischen Extraktion. Diese allgemeinen Informationen dienen dem Verständnis der Pflanzenkunde und ersetzen niemals ärztlichen Rat oder eine verordnete Behandlung.'
+                )}
               </p>
 
               <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -437,7 +481,7 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                   onClick={() => scrollToSection('comparatif-solvants')}
                   className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#E8772E] hover:bg-[#D4651F] text-white font-bold text-sm shadow-md transition-all cursor-pointer"
                 >
-                  <span>Comparer les 4 solvants</span>
+                  <span>{tr('Comparer les 4 solvants', 'Compare the 4 solvents', 'Die 4 Lösungsmittel vergleichen')}</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <button
@@ -445,7 +489,7 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                   onClick={() => onNavigate('machine')}
                   className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-white hover:bg-[#FAF7F2] text-[#1E2E25] font-bold text-sm border border-white/20 transition-all shadow-xs cursor-pointer"
                 >
-                  <span>Découvrir la BloomLab®</span>
+                  <span>{tr('Découvrir la BloomLab®', 'Discover BloomLab®', 'BloomLab® entdecken')}</span>
                   <Sparkles className="w-4 h-4 text-[#E8772E]" />
                 </button>
               </div>
@@ -462,13 +506,21 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
             <div className="max-w-3xl space-y-3">
               <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#C8AB8A]">
                 <Droplets className="w-4 h-4 text-[#E8772E]" />
-                <span>Accès Libre · Fondamentaux de Polarité</span>
+                <span>{tr('Accès Libre · Fondamentaux de Polarité', 'Open Access · Polarity Fundamentals', 'Freier Zugang · Grundlagen der Polarität')}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-[#1E2E25] tracking-tight">
-                Pourquoi un seul solvant ne capture jamais toute la plante
+                {tr(
+                  'Pourquoi un seul solvant ne capture jamais toute la plante',
+                  'Why a single solvent never captures the whole plant',
+                  'Warum ein einziges Lösungsmittel niemals die gesamte Pflanze erfasst'
+                )}
               </h2>
               <p className="text-sm sm:text-base text-[#3E4A3D]/85 leading-relaxed">
-                En phytochimie, « qui se ressemble s&apos;assemble » : les molécules polaires migrent vers les solvants polaires, tandis que les composés lipophiles exigent des corps gras ou amphiphiles. Comprendre cette affinité évite de gaspiller jusqu&apos;à la moitié des principes actifs d&apos;une plante dans votre tasse.
+                {tr(
+                  "En phytochimie, « qui se ressemble s'assemble » : les molécules polaires migrent vers les solvants polaires, tandis que les composés lipophiles exigent des corps gras ou amphiphiles. Comprendre cette affinité évite de gaspiller jusqu'à la moitié des principes actifs d'une plante dans votre tasse.",
+                  'In phytochemistry, "like dissolves like": polar molecules migrate into polar solvents, while lipophilic compounds require oils or amphiphilic media. Understanding this affinity prevents leaving up to half of a plant’s active compounds behind.',
+                  'In der Phytochemie gilt „Ähnliches löst Ähnliches“: Polare Moleküle wandern in polare Lösungsmittel, während lipophile Verbindungen Fette oder amphiphile Medien erfordern. Wer diese Affinität versteht, nutzt das gesamte Spektrum der Pflanze.'
+                )}
               </p>
             </div>
 
@@ -477,12 +529,12 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                 <table className="w-full min-w-[900px] table-auto text-left border-collapse text-xs sm:text-sm">
                   <thead>
                     <tr className="bg-[#1E2E25] text-white uppercase tracking-wider text-[11px]">
-                      <th className="p-4 font-bold whitespace-nowrap break-normal w-[15%] min-w-[130px]">Solvant</th>
-                      <th className="p-4 font-bold whitespace-nowrap break-normal w-[15%] min-w-[120px]">Affinité</th>
-                      <th className="p-4 font-bold whitespace-nowrap break-normal w-[25%] min-w-[200px]">Molécules Extraites</th>
-                      <th className="p-4 font-bold whitespace-nowrap break-normal w-[15%] min-w-[150px]">Plage Thermique</th>
-                      <th className="p-4 font-bold whitespace-nowrap break-normal w-[15%] min-w-[120px]">Conservation</th>
-                      <th className="p-4 font-bold whitespace-nowrap break-normal w-[15%] min-w-[150px]">Limite Principale</th>
+                      <th className="p-4 font-bold whitespace-nowrap break-normal w-[15%] min-w-[130px]">{tr('Solvant', 'Solvent', 'Lösungsmittel')}</th>
+                      <th className="p-4 font-bold whitespace-nowrap break-normal w-[15%] min-w-[120px]">{tr('Affinité', 'Affinity', 'Affinität')}</th>
+                      <th className="p-4 font-bold whitespace-nowrap break-normal w-[25%] min-w-[200px]">{tr('Molécules Extraites', 'Extracted Molecules', 'Extrahierte Moleküle')}</th>
+                      <th className="p-4 font-bold whitespace-nowrap break-normal w-[15%] min-w-[150px]">{tr('Plage Thermique', 'Temperature Range', 'Temperaturbereich')}</th>
+                      <th className="p-4 font-bold whitespace-nowrap break-normal w-[15%] min-w-[120px]">{tr('Conservation', 'Shelf Life', 'Haltbarkeit')}</th>
+                      <th className="p-4 font-bold whitespace-nowrap break-normal w-[15%] min-w-[150px]">{tr('Limite Principale', 'Main Limitation', 'Hauptgrenze')}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-[#E7DFD3]">
@@ -513,46 +565,86 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
               <div className="space-y-1.5">
                 <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#E8772E]">
                   <Microscope className="w-4 h-4" />
-                  <span>Histoire Scientifique · Leçon de Polarité</span>
+                  <span>{tr('Histoire Scientifique · Leçon de Polarité', 'Scientific History · A Lesson in Polarity', 'Wissenschaftsgeschichte · Lektion in Polarität')}</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-black text-[#1E2E25] tracking-tight">
-                  Le cas Tu Youyou : comment le choix du solvant à 60 °C a préservé l&apos;artémisinine
+                  {tr(
+                    "Le cas Tu Youyou : comment le choix du solvant à 60 °C a préservé l'artémisinine",
+                    'The Tu Youyou case: how choosing the right solvent at 60 °C preserved artemisinin',
+                    'Der Fall Tu Youyou: Wie die Lösungsmittelwahl bei 60 °C das Artemisinin schützte'
+                  )}
                 </h2>
               </div>
               <span className="text-xs font-mono uppercase tracking-wider px-3 py-1 rounded-lg bg-[#FAF7F2] border border-[#E7DFD3] text-[#1E2E25] font-bold">
-                Prix Nobel 2015
+                {tr('Prix Nobel 2015', 'Nobel Prize 2015', 'Nobelpreis 2015')}
               </span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               <div className="lg:col-span-8 space-y-4 text-sm sm:text-base text-[#3E4A3D]/90 leading-relaxed">
                 <p>
-                  À la fin des années 1960, la chercheuse Tu Youyou et son équipe testent plus de 2 000 préparations issues de la pharmacopée traditionnelle chinoise. L&apos;armoise annuelle (<em>Artemisia annua</em>) montre d&apos;abord des résultats prometteurs, puis déçoit : les extraits obtenus par décoction classique dans l&apos;eau bouillante s&apos;avèrent irréguliers et presque inactifs.
+                  {tr(
+                    "À la fin des années 1960, la chercheuse Tu Youyou et son équipe testent plus de 2 000 préparations issues de la pharmacopée traditionnelle chinoise. L'armoise annuelle (",
+                    'In the late 1960s, researcher Tu Youyou and her team tested over 2,000 preparations from traditional Chinese pharmacopoeia. Sweet wormwood (',
+                    'Ende der 1960er-Jahre testete die Forscherin Tu Youyou mit ihrem Team über 2.000 Zubereitungen der traditionellen chinesischen Pharmakopöe. Der Einjährige Beifuß ('
+                  )}
+                  <em>Artemisia annua</em>
+                  {tr(
+                    ") montre d'abord des résultats prometteurs, puis déçoit : les extraits obtenus par décoction classique dans l'eau bouillante s'avèrent irréguliers et presque inactifs.",
+                    ') initially looked promising, then disappointed: extracts obtained through classic decoction in boiling water proved inconsistent and nearly inactive.',
+                    ') zeigte zunächst vielversprechende Hinweise, enttäuschte jedoch bei der klassischen Abkochung in kochendem Wasser mit uneinheitlichen und kaum aktiven Ergebnissen.'
+                  )}
                 </p>
                 <p>
-                  En relisant attentivement le traité du IV<sup>e</sup> siècle de Ge Hong (<em>Zhouhou Beiji Fang</em>), Tu Youyou relève un détail décisif : l&apos;auteur recommande de presser le suc frais à froid plutôt que de faire bouillir la plante. Elle comprend immédiatement que la chaleur excessive détruit la molécule fragile, tandis que l&apos;eau seule ne l&apos;entraîne qu&apos;imparfaitement.
+                  {tr(
+                    "En relisant attentivement le traité du IVᵉ siècle de Ge Hong (",
+                    'Upon carefully re-reading Ge Hong’s 4th-century treatise (',
+                    'Bei der erneuten Lektüre von Ge Hongs Abhandlung aus dem 4. Jahrhundert ('
+                  )}
+                  <em>Zhouhou Beiji Fang</em>
+                  {tr(
+                    "), Tu Youyou relève un détail décisif : l'auteur recommande de presser le suc frais à froid plutôt que de faire bouillir la plante. Elle comprend immédiatement que la chaleur excessive détruit la molécule fragile, tandis que l'eau seule ne l'entraîne qu'imparfaitement.",
+                    '), Tu Youyou spotted a decisive clue: the author recommended pressing fresh cold juice rather than boiling the plant. She immediately realized excessive heat destroyed the fragile molecule while water alone barely carried it.',
+                    ') entdeckte Tu Youyou ein entscheidendes Detail: Der Autor empfahl das kalte Auspressen statt des Kochens. Sie erkannte sofort, dass übermäßige Hitze das empfindliche Molekül zerstört und Wasser es kaum löst.'
+                  )}
                 </p>
                 <p>
-                  En remplaçant l&apos;ébullition aqueuse par une <strong>extraction à l&apos;éther diéthylique à basse température (autour de 60 °C maximum selon les cycles de séparation)</strong>, la structure moléculaire sensible de l&apos;artémisinine — notamment son pont endoperoxyde — reste intacte. Le rendement bondit et révèle toute la puissance de la plante.
+                  {tr("En remplaçant l'ébullition aqueuse par une ", 'By replacing aqueous boiling with ', 'Indem sie das Auskochen durch eine ')}
+                  <strong>
+                    {tr(
+                      "extraction à l'éther diéthylique à basse température (autour de 60 °C maximum selon les cycles de séparation)",
+                      'low-temperature diethyl ether extraction (around 60 °C maximum across separation cycles)',
+                      'Niedrigtemperatur-Extraktion mit Diethylether (maximal rund 60 °C je nach Trennzyklus)'
+                    )}
+                  </strong>
+                  {tr(
+                    ", la structure moléculaire sensible de l'artémisinine — notamment son pont endoperoxyde — reste intacte. Le rendement bondit et révèle toute la puissance de la plante.",
+                    ', artemisinin’s sensitive molecular structure — notably its endoperoxide bridge — remained intact. Yields surged and revealed the full potential of the plant.',
+                    ' ersetzte, blieb die empfindliche Molekülstruktur des Artemisinins — insbesondere die Endoperoxidbrücke — unversehrt. Die Ausbeute stieg sprunghaft an.'
+                  )}
                 </p>
               </div>
 
               <div className="lg:col-span-4 bg-[#1E2E25] text-white rounded-2xl p-6 space-y-4">
                 <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#E8772E]">
                   <Thermometer className="w-4 h-4" />
-                  <span className="text-[#E8772E]">Ce que cela enseigne</span>
+                  <span className="text-[#E8772E]">{tr('Ce que cela enseigne', 'What this teaches us', 'Was uns das lehrt')}</span>
                 </div>
                 <p className="text-sm text-white/90 !text-white leading-relaxed">
-                  Une plante « inefficace » en tisane bouillante n&apos;est souvent qu&apos;une plante extraite avec le mauvais solvant ou à une température trop élevée.
+                  {tr(
+                    "Une plante « inefficace » en tisane bouillante n'est souvent qu'une plante extraite avec le mauvais solvant ou à une température trop élevée.",
+                    'A plant that seems "ineffective" in boiling tea is often simply extracted with the wrong solvent or at too high a temperature.',
+                    'Eine Pflanze, die im kochenden Aufguss „schwach“ wirkt, wurde oft schlicht mit dem falschen Lösungsmittel oder bei zu hoher Temperatur extrahiert.'
+                  )}
                 </p>
                 <div className="pt-3 border-t border-white/15 space-y-2 text-xs text-white/85">
                   <div className="flex items-center gap-2">
                     <Flame className="w-4 h-4 text-[#E8772E] shrink-0" />
-                    <span>100 °C eau = rupture des ponts fragiles</span>
+                    <span>{tr('100 °C eau = rupture des ponts fragiles', '100 °C water = rupture of fragile bonds', '100 °C Wasser = Zerstörung empfindlicher Bindungen')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <FlaskConical className="w-4 h-4 text-[#C8AB8A] shrink-0" />
-                    <span>Solvant adapté + 40–60 °C = intégrité du Totum</span>
+                    <span>{tr('Solvant adapté + 40–60 °C = intégrité du Totum', 'Matched solvent + 40–60 °C = Totum integrity', 'Passendes Lösungsmittel + 40–60 °C = intaktes Totum')}</span>
                   </div>
                 </div>
               </div>
@@ -566,45 +658,65 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
             <div className="max-w-3xl space-y-2">
               <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#E8772E]">
                 <BookOpen className="w-4 h-4" />
-                <span>Laboratoire Pratique · Protocoles &amp; Formulations</span>
+                <span>{tr('Laboratoire Pratique · Protocoles & Formulations', 'Practical Laboratory · Protocols & Formulations', 'Praxislabor · Protokolle & Formulierungen')}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-[#1E2E25] tracking-tight">
-                Fiches Paramètres, Recettes Signatures &amp; Matrice Plantes/Solvants
+                {tr(
+                  'Fiches Paramètres, Recettes Signatures & Matrice Plantes/Solvants',
+                  'Parameter Sheets, Signature Recipes & Plant/Solvent Matrix',
+                  'Parameterblätter, Signatur-Rezepte & Pflanzen/Lösungsmittel-Matrix'
+                )}
               </h2>
             </div>
 
             <FreemiumPaywallGate
               onNavigate={onNavigate}
               lang={lang}
-              title="Débloquez les Protocoles & Formulations Solvants"
-              subtitle="Accédez aux paramètres exacts (températures au demi-degré, ratios, durées), aux recettes signatures commentées et au guide complet des associations plantes/solvants pour votre BloomLab®."
+              title={tr('Débloquez les Protocoles & Formulations Solvants', 'Unlock Solvent Protocols & Formulations', 'Lösungsmittel-Protokolle & Formulierungen freischalten')}
+              subtitle={tr(
+                'Accédez aux paramètres exacts (températures au demi-degré, ratios, durées), aux recettes signatures commentées et au guide complet des associations plantes/solvants pour votre BloomLab®.',
+                'Access exact parameters (half-degree temperatures, ratios, durations), annotated signature recipes and the complete plant/solvent pairing guide for your BloomLab®.',
+                'Erhalten Sie exakte Parameter (halbe Gradzahlen, Verhältnisse, Zeiten), kommentierte Signatur-Rezepte und den vollständigen Pflanzen/Lösungsmittel-Leitfaden für Ihre BloomLab®.'
+              )}
               bulletPoints={[
-                'Fiches techniques des 4 solvants (Températures, Ratios, Durées, Conservation)',
-                'Recette Signature : Sérum Polyphénols à la Glycérine (sans alcool)',
-                'Recette Signature : Teinture Mère de Propolis en milieu clos',
-                'Matrice complète des associations organes végétaux / polarité / solvants'
+                tr('Fiches techniques des 4 solvants (Températures, Ratios, Durées, Conservation)', 'Technical sheets for all 4 solvents (Temperatures, Ratios, Durations, Shelf Life)', 'Datenblätter aller 4 Lösungsmittel (Temperaturen, Verhältnisse, Dauer, Haltbarkeit)'),
+                tr('Recette Signature : Sérum Polyphénols à la Glycérine (sans alcool)', 'Signature Recipe: Alcohol-Free Glycerin Polyphenol Serum', 'Signatur-Rezept: Alkoholfreies Glyzerin-Polyphenol-Serum'),
+                tr('Recette Signature : Teinture Mère de Propolis en milieu clos', 'Signature Recipe: Closed-Vessel Propolis Mother Tincture', 'Signatur-Rezept: Propolis-Urtinktur im geschlossenen Gefäß'),
+                tr('Matrice complète des associations organes végétaux / polarité / solvants', 'Complete plant organs / polarity / solvent pairing matrix', 'Vollständige Zuordnungsmatrix: Pflanzenorgane / Polarität / Lösungsmittel')
               ]}
               teaserContent={
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 opacity-90">
                   <div className="bg-white p-5 rounded-2xl border border-[#E7DFD3] space-y-2">
-                    <div className="text-xs font-black uppercase tracking-wider text-[#E8772E]">Aperçu Fiches</div>
-                    <div className="font-bold text-[#1E2E25]">Paramètres Calibrés ±0,5 °C</div>
+                    <div className="text-xs font-black uppercase tracking-wider text-[#E8772E]">{tr('Aperçu Fiches', 'Sheet Preview', 'Blatt-Vorschau')}</div>
+                    <div className="font-bold text-[#1E2E25]">{tr('Paramètres Calibrés ±0,5 °C', 'Calibrated Parameters ±0.5 °C', 'Kalibrierte Parameter ±0,5 °C')}</div>
                     <p className="text-xs text-[#3E4A3D]/75 leading-relaxed">
-                      Ratios exacts plante sèche / solvant et paliers thermiques pour éviter la dénaturation.
+                      {tr(
+                        'Ratios exacts plante sèche / solvant et paliers thermiques pour éviter la dénaturation.',
+                        'Exact dry plant / solvent ratios and thermal ramps to prevent thermal degradation.',
+                        'Exakte Trockenpflanzen/Lösungsmittel-Verhältnisse und Temperaturstufen gegen Denaturierung.'
+                      )}
                     </p>
                   </div>
                   <div className="bg-white p-5 rounded-2xl border border-[#E7DFD3] space-y-2">
-                    <div className="text-xs font-black uppercase tracking-wider text-[#E8772E]">Aperçu Recettes</div>
-                    <div className="font-bold text-[#1E2E25]">Sérum Polyphénols &amp; Propolis</div>
+                    <div className="text-xs font-black uppercase tracking-wider text-[#E8772E]">{tr('Aperçu Recettes', 'Recipe Preview', 'Rezept-Vorschau')}</div>
+                    <div className="font-bold text-[#1E2E25]">{tr('Sérum Polyphénols & Propolis', 'Polyphenol Serum & Propolis', 'Polyphenol-Serum & Propolis')}</div>
                     <p className="text-xs text-[#3E4A3D]/75 leading-relaxed">
-                      Protocoles pas à pas avec dosages, précautions d&apos;emploi et contre-indications claires.
+                      {tr(
+                        "Protocoles pas à pas avec dosages, précautions d'emploi et contre-indications claires.",
+                        'Step-by-step protocols with clear dosages, usage precautions and contraindications.',
+                        'Schritt-für-Schritt-Protokolle mit klaren Dosierungen, Vorsichtshinweisen und Gegenanzeigen.'
+                      )}
                     </p>
                   </div>
                   <div className="bg-white p-5 rounded-2xl border border-[#E7DFD3] space-y-2">
-                    <div className="text-xs font-black uppercase tracking-wider text-[#E8772E]">Aperçu Associations</div>
-                    <div className="font-bold text-[#1E2E25]">Matrice Plantes &amp; Polarités</div>
+                    <div className="text-xs font-black uppercase tracking-wider text-[#E8772E]">{tr('Aperçu Associations', 'Pairing Preview', 'Matrix-Vorschau')}</div>
+                    <div className="font-bold text-[#1E2E25]">{tr('Matrice Plantes & Polarités', 'Plants & Polarity Matrix', 'Pflanzen- & Polaritätsmatrix')}</div>
                     <p className="text-xs text-[#3E4A3D]/75 leading-relaxed">
-                      Associez instantanément fleurs, racines, résines et baies au solvant optimal.
+                      {tr(
+                        'Associez instantanément fleurs, racines, résines et baies au solvant optimal.',
+                        'Instantly match flowers, roots, resins and berries with the optimal solvent.',
+                        'Ordnen Sie Blüten, Wurzeln, Harze und Beeren sofort dem optimalen Lösungsmittel zu.'
+                      )}
                     </p>
                   </div>
                 </div>
@@ -615,37 +727,58 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                 <div className="bg-white p-6 sm:p-8 rounded-2xl border border-[#E7DFD3] text-[#1E2E25] space-y-5 shadow-xs">
                   <div className="space-y-1">
                     <span className="text-xs font-black uppercase tracking-widest text-[#E8772E]">
-                      Introduction du Cours · Fondamentaux BloomLab®
+                      {tr('Introduction du Cours · Fondamentaux BloomLab®', 'Course Introduction · BloomLab® Fundamentals', 'Kurseinführung · BloomLab®-Grundlagen')}
                     </span>
                     <h3 className="text-2xl font-black text-[#1E2E25]">
-                      Pourquoi le Solvant est la Clé de Tout
+                      {tr('Pourquoi le Solvant est la Clé de Tout', 'Why the Solvent Is the Key to Everything', 'Warum das Lösungsmittel der Schlüssel zu allem ist')}
                     </h3>
                   </div>
                   <p className="text-sm sm:text-base text-[#3E4A3D]/90 leading-relaxed">
-                    Le solvant est le véhicule qui permet d&apos;extraire les principes actifs d&apos;une plante. Chaque solvant possède une « polarité » différente :
+                    {tr(
+                      "Le solvant est le véhicule qui permet d'extraire les principes actifs d'une plante. Chaque solvant possède une « polarité » différente :",
+                      'The solvent is the carrier that extracts active compounds from a plant. Every solvent has a different "polarity":',
+                      'Das Lösungsmittel ist das Trägermedium, mit dem pflanzliche Wirkstoffe gelöst werden. Jedes Lösungsmittel hat eine eigene „Polarität“:'
+                    )}
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="bg-[#F9F6F0] p-4 rounded-xl border border-[#E7DFD3] space-y-1">
-                      <div className="font-black text-sm text-[#1E2E25]">L&apos;eau est polaire</div>
+                      <div className="font-black text-sm text-[#1E2E25]">{tr("L'eau est polaire", 'Water is polar', 'Wasser ist polar')}</div>
                       <p className="text-xs sm:text-sm text-[#3E4A3D]/85 leading-relaxed">
-                        Elle attire les molécules polaires (sucres, tanins, mucilages).
+                        {tr(
+                          'Elle attire les molécules polaires (sucres, tanins, mucilages).',
+                          'It attracts polar molecules (sugars, tannins, mucilage).',
+                          'Es zieht polare Moleküle an (Zucker, Gerbstoffe, Schleimstoffe).'
+                        )}
                       </p>
                     </div>
                     <div className="bg-[#F9F6F0] p-4 rounded-xl border border-[#E7DFD3] space-y-1">
-                      <div className="font-black text-sm text-[#1E2E25]">L&apos;huile est apolaire</div>
+                      <div className="font-black text-sm text-[#1E2E25]">{tr("L'huile est apolaire", 'Oil is non-polar', 'Öl ist unpolar')}</div>
                       <p className="text-xs sm:text-sm text-[#3E4A3D]/85 leading-relaxed">
-                        Elle attire les molécules grasses (terpènes, résines, vitamines liposolubles).
+                        {tr(
+                          'Elle attire les molécules grasses (terpènes, résines, vitamines liposolubles).',
+                          'It draws fat-soluble molecules (terpenes, resins, fat-soluble vitamins).',
+                          'Es löst fettliebende Stoffe (Terpene, Harze, fettlösliche Vitamine).'
+                        )}
                       </p>
                     </div>
                     <div className="bg-[#F9F6F0] p-4 rounded-xl border border-[#E7DFD3] space-y-1">
-                      <div className="font-black text-sm text-[#1E2E25]">L&apos;alcool est amphiphile</div>
+                      <div className="font-black text-sm text-[#1E2E25]">{tr("L'alcool est amphiphile", 'Alcohol is amphiphilic', 'Alkohol ist amphiphil')}</div>
                       <p className="text-xs sm:text-sm text-[#3E4A3D]/85 leading-relaxed">
-                        Il peut attirer à la fois des fractions polaires et lipophiles.
+                        {tr(
+                          'Il peut attirer à la fois des fractions polaires et lipophiles.',
+                          'It can bridge both polar and lipophilic fractions.',
+                          'Er kann sowohl polare als auch lipophile Anteile binden.'
+                        )}
                       </p>
                     </div>
                   </div>
                   <div className="p-4 rounded-xl bg-[#1E2E25] text-white text-xs sm:text-sm leading-relaxed">
-                    <strong className="text-[#E8772E]">Le secret de la BloomLab® :</strong> Comprendre que forcer un solvant à extraire ce qu&apos;il ne peut pas extraire détruit la plante. Le séquençage A/B consiste à utiliser le bon solvant pour la bonne molécule.
+                    <strong className="text-[#E8772E]">{tr('Le secret de la BloomLab® :', 'The BloomLab® secret:', 'Das BloomLab®-Prinzip:')}</strong>{' '}
+                    {tr(
+                      "Comprendre que forcer un solvant à extraire ce qu'il ne peut pas extraire détruit la plante. Le séquençage A/B consiste à utiliser le bon solvant pour la bonne molécule.",
+                      'Forcing a solvent to extract what it cannot hold degrades the plant. A/B sequencing uses the right solvent for the right molecule.',
+                      'Zu erzwingen, dass ein Lösungsmittel unpassende Stoffe löst, schadet der Pflanze. Die A/B-Sequenzierung nutzt gezielt das passende Lösungsmittel pro Molekül.'
+                    )}
                   </div>
                 </div>
 
@@ -653,10 +786,14 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                 <div className="space-y-6">
                   <div className="space-y-1">
                     <span className="text-xs font-black uppercase tracking-widest text-[#C8AB8A]">
-                      Module 1 · Fiches Techniques
+                      {tr('Module 1 · Fiches Techniques', 'Module 1 · Technical Sheets', 'Modul 1 · Datenblätter')}
                     </span>
                     <h3 className="text-2xl font-black text-[#1E2E25]">
-                      Les 4 Solvants : Affinités, Molécules &amp; Plages Thermiques BloomLab®
+                      {tr(
+                        'Les 4 Solvants : Affinités, Molécules & Plages Thermiques BloomLab®',
+                        'The 4 Solvents: Affinities, Molecules & BloomLab® Thermal Ranges',
+                        'Die 4 Lösungsmittel: Affinitäten, Moleküle & BloomLab®-Temperaturfenster'
+                      )}
                     </h3>
                   </div>
 
@@ -682,7 +819,7 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                           <div className="p-3 rounded-xl bg-[#F9F6F0] border border-[#E7DFD3]">
                             <div className="flex items-center justify-center gap-1 text-[10px] font-bold uppercase text-[#3E4A3D]/70 mb-1">
                               <Thermometer className="w-3.5 h-3.5 text-[#E8772E]" />
-                              <span>Température</span>
+                              <span>{tr('Température', 'Temperature', 'Temperatur')}</span>
                             </div>
                             <div className="font-mono tabular-nums font-black text-xs sm:text-sm text-[#1E2E25]">
                               {sheet.tempRange}
@@ -691,16 +828,16 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                           <div className="p-3 rounded-xl bg-[#F9F6F0] border border-[#E7DFD3]">
                             <div className="flex items-center justify-center gap-1 text-[10px] font-bold uppercase text-[#3E4A3D]/70 mb-1">
                               <Clock className="w-3.5 h-3.5 text-[#E8772E]" />
-                              <span>Durée</span>
+                              <span>{tr('Durée', 'Duration', 'Dauer')}</span>
                             </div>
                             <div className="font-mono tabular-nums font-black text-xs sm:text-sm text-[#1E2E25]">
-                              {sheet.duration.split(' ')[0]} {sheet.duration.split(' ')[1]} {sheet.duration.split(' ')[2]}
+                              {sheet.duration.split(' ').slice(0, 4).join(' ')}
                             </div>
                           </div>
                           <div className="p-3 rounded-xl bg-[#F9F6F0] border border-[#E7DFD3]">
                             <div className="flex items-center justify-center gap-1 text-[10px] font-bold uppercase text-[#3E4A3D]/70 mb-1">
                               <ShieldCheck className="w-3.5 h-3.5 text-[#E8772E]" />
-                              <span>Conservation</span>
+                              <span>{tr('Conservation', 'Shelf Life', 'Haltbarkeit')}</span>
                             </div>
                             <div className="font-mono tabular-nums font-black text-xs sm:text-sm text-[#1E2E25]">
                               {sheet.shelfLife.split(' ').slice(0, 4).join(' ')}
@@ -710,16 +847,16 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
 
                         <div className="space-y-2 text-xs sm:text-sm text-[#3E4A3D]/90">
                           <p>
-                            <strong className="text-[#1E2E25]">Molécules extraites :</strong> {sheet.idealFor}
+                            <strong className="text-[#1E2E25]">{tr('Molécules extraites :', 'Extracted molecules:', 'Extrahierte Moleküle:')}</strong> {sheet.idealFor}
                           </p>
                           <p>
-                            <strong className="text-[#1E2E25]">Ratio &amp; Conservation :</strong> {sheet.ratio} · {sheet.shelfLife}
+                            <strong className="text-[#1E2E25]">{tr('Ratio & Conservation :', 'Ratio & Shelf Life:', 'Verhältnis & Haltbarkeit:')}</strong> {sheet.ratio} · {sheet.shelfLife}
                           </p>
                           <p>
-                            <strong className="text-[#1E2E25]">Agitation :</strong> {sheet.agitation}
+                            <strong className="text-[#1E2E25]">{tr('Agitation :', 'Stirring:', 'Rühren:')}</strong> {sheet.agitation}
                           </p>
                           <p className="text-xs text-[#3E4A3D]/80 bg-[#F9F6F0] p-3 rounded-xl border border-[#E7DFD3]">
-                            <strong className="text-[#1E2E25]">Limite &amp; Précaution :</strong> {sheet.notes}
+                            <strong className="text-[#1E2E25]">{tr('Limite & Précaution :', 'Limits & Precautions:', 'Grenzen & Vorsicht:')}</strong> {sheet.notes}
                           </p>
                         </div>
                       </article>
@@ -731,13 +868,19 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                 <div className="bg-white p-6 sm:p-8 rounded-2xl border border-[#E7DFD3] text-[#1E2E25] space-y-6 shadow-xs">
                   <div className="space-y-2">
                     <span className="text-xs font-black uppercase tracking-widest text-[#E8772E]">
-                      Module 2 · Le Rôle Crucial des Huiles Végétales
+                      {tr('Module 2 · Le Rôle Crucial des Huiles Végétales', 'Module 2 · The Key Role of Carrier Oils', 'Modul 2 · Die Rolle von Trägerölen')}
                     </span>
                     <h3 className="text-2xl font-black text-[#1E2E25]">
-                      Les Huiles de Support et leurs Températures
+                      {tr('Les Huiles de Support et leurs Températures', 'Carrier Oils and Their Ideal Temperatures', 'Trägeröle und ihre optimalen Temperaturen')}
                     </h3>
                     <p className="text-sm sm:text-base text-[#3E4A3D]/90 leading-relaxed">
-                      Les huiles végétales ne sont pas seulement des « vecteurs » : ce sont des actifs à part entière. Pour extraire les principes actifs des plantes (macération huileuse) sans détruire les précieux acides gras (Oméga 3, 6, 9) de l&apos;huile de support, la température de la BloomLab® ne doit jamais dépasser <strong>45°C à 50°C</strong>. Au-delà, l&apos;huile s&apos;oxyde, rancit et perd ses propriétés.
+                      {tr(
+                        "Les huiles végétales ne sont pas seulement des « vecteurs » : ce sont des actifs à part entière. Pour extraire les principes actifs des plantes (macération huileuse) sans détruire les précieux acides gras (Oméga 3, 6, 9) de l'huile de support, la température de la BloomLab® ne doit jamais dépasser ",
+                        'Vegetable oils are not merely neutral carriers: they bring their own active compounds. To macerate botanicals in oil without degrading essential fatty acids (Omega 3, 6, 9), BloomLab® keeps oil maceration below ',
+                        'Pflanzenöle sind weit mehr als bloße Träger: Sie liefern eigene Wirkstoffe. Um Pflanzenölauszüge herzustellen, ohne wertvolle Fettsäuren (Omega 3, 6, 9) zu schädigen, darf die Temperatur in der BloomLab® niemals über '
+                      )}
+                      <strong>{tr('45°C à 50°C', '45°C to 50°C', '45°C bis 50°C')}</strong>
+                      {tr(". Au-delà, l'huile s'oxyde, rancit et perd ses propriétés.", '. Above that threshold, the oil oxidizes, turns rancid, and loses quality.', ' steigen. Darüber oxidiert das Öl und verliert seine Qualität.')}
                     </p>
                   </div>
 
@@ -769,10 +912,10 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                 <div className="space-y-6">
                   <div className="space-y-1">
                     <span className="text-xs font-black uppercase tracking-widest text-[#C8AB8A]">
-                      Module 3 · Fiches Recettes
+                      {tr('Module 3 · Fiches Recettes', 'Module 3 · Recipe Sheets', 'Modul 3 · Rezeptblätter')}
                     </span>
                     <h3 className="text-2xl font-black text-[#1E2E25]">
-                      Recettes Signatures sur BloomLab®
+                      {tr('Recettes Signatures sur BloomLab®', 'Signature Recipes on BloomLab®', 'Signatur-Rezepte auf der BloomLab®')}
                     </h3>
                   </div>
 
@@ -796,7 +939,7 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
 
                         <div className="space-y-2 text-sm text-[#3E4A3D]/90">
                           <p>
-                            <strong className="text-[#1E2E25]">Objectif :</strong> {recipe.objective}
+                            <strong className="text-[#1E2E25]">{tr('Objectif :', 'Objective:', 'Ziel:')}</strong> {recipe.objective}
                           </p>
                           <p>{recipe.description}</p>
                         </div>
@@ -804,18 +947,18 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white p-4 rounded-xl border border-[#E7DFD3] text-xs sm:text-sm">
                           <div className="space-y-1.5">
                             <div>
-                              <strong className="text-[#1E2E25]">Ingrédients / Plante :</strong> {recipe.composition}
+                              <strong className="text-[#1E2E25]">{tr('Ingrédients / Plante :', 'Ingredients / Plant:', 'Zutaten / Pflanze:')}</strong> {recipe.composition}
                             </div>
                             <div>
-                              <strong className="text-[#1E2E25]">Solvant :</strong> {recipe.solvent}
+                              <strong className="text-[#1E2E25]">{tr('Solvant :', 'Solvent:', 'Lösungsmittel:')}</strong> {recipe.solvent}
                             </div>
                           </div>
                           <div className="space-y-1.5">
                             <div>
-                              <strong className="text-[#1E2E25]">Mode d&apos;administration :</strong> {recipe.administration}
+                              <strong className="text-[#1E2E25]">{tr("Mode d'administration :", 'Use & Application:', 'Anwendung:')}</strong> {recipe.administration}
                             </div>
                             <div>
-                              <strong className="text-[#1E2E25]">Dosage indicatif :</strong> {recipe.dosage}
+                              <strong className="text-[#1E2E25]">{tr('Dosage indicatif :', 'Indicative dosage:', 'Richtdosierung:')}</strong> {recipe.dosage}
                             </div>
                           </div>
                         </div>
@@ -824,13 +967,13 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                           <div className="p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 flex items-start gap-2.5">
                             <ShieldAlert className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                             <div>
-                              <strong>Précautions &amp; Filtration :</strong> {recipe.precautions}
+                              <strong>{tr('Précautions & Filtration :', 'Precautions & Filtration:', 'Vorsicht & Filtration:')}</strong> {recipe.precautions}
                             </div>
                           </div>
                           <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-900 flex items-start gap-2.5">
                             <ShieldCheck className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
                             <div>
-                              <strong>Contre-indications :</strong> {recipe.contraindications}
+                              <strong>{tr('Contre-indications :', 'Contraindications:', 'Gegenanzeigen:')}</strong> {recipe.contraindications}
                             </div>
                           </div>
                         </div>
@@ -843,10 +986,14 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                 <div className="space-y-6">
                   <div className="space-y-1">
                     <span className="text-xs font-black uppercase tracking-widest text-[#C8AB8A]">
-                      Module 4 · Matrice d&apos;Association
+                      {tr("Module 4 · Matrice d'Association", 'Module 4 · Pairing Matrix', 'Modul 4 · Zuordnungsmatrix')}
                     </span>
                     <h3 className="text-2xl font-black text-[#1E2E25]">
-                      Matrice d&apos;Association : Organes, Polarité, Solvants &amp; Plantes
+                      {tr(
+                        "Matrice d'Association : Organes, Polarité, Solvants & Plantes",
+                        'Pairing Matrix: Organs, Polarity, Solvents & Plants',
+                        'Zuordnungsmatrix: Organe, Polarität, Lösungsmittel & Pflanzen'
+                      )}
                     </h3>
                   </div>
 
@@ -855,10 +1002,10 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                       <table className="w-full min-w-[720px] table-auto text-left border-collapse text-xs sm:text-sm">
                         <thead>
                           <tr className="bg-[#1E2E25] text-white uppercase tracking-wider text-[11px]">
-                            <th className="p-4 font-bold whitespace-nowrap break-normal min-w-[150px]">Organe Cible</th>
-                            <th className="p-4 font-bold whitespace-nowrap break-normal min-w-[130px]">Polarité</th>
-                            <th className="p-4 font-bold whitespace-nowrap break-normal min-w-[180px]">Solvant Idéal</th>
-                            <th className="p-4 font-bold whitespace-nowrap break-normal min-w-[200px]">Plantes Types</th>
+                            <th className="p-4 font-bold whitespace-nowrap break-normal min-w-[150px]">{tr('Organe Cible', 'Target Focus', 'Zielbereich')}</th>
+                            <th className="p-4 font-bold whitespace-nowrap break-normal min-w-[130px]">{tr('Polarité', 'Polarity', 'Polarität')}</th>
+                            <th className="p-4 font-bold whitespace-nowrap break-normal min-w-[180px]">{tr('Solvant Idéal', 'Ideal Solvent', 'Ideales Lösungsmittel')}</th>
+                            <th className="p-4 font-bold whitespace-nowrap break-normal min-w-[200px]">{tr('Plantes Types', 'Key Plants', 'Typische Pflanzen')}</th>
                           </tr>
                         </thead>
                         <tbody className="divide-y divide-[#E7DFD3]">
@@ -881,11 +1028,11 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                       <table className="w-full min-w-[900px] table-auto text-left border-collapse text-xs sm:text-sm">
                         <thead>
                           <tr className="bg-[#F9F6F0] border-b border-[#E7DFD3] text-[#1E2E25] uppercase tracking-wider text-[11px]">
-                            <th className="p-4 font-black whitespace-nowrap break-normal w-[20%] min-w-[180px]">Famille / Organe Végétal</th>
-                            <th className="p-4 font-black whitespace-nowrap break-normal w-[20%] min-w-[160px]">Exemples</th>
-                            <th className="p-4 font-black whitespace-nowrap break-normal w-[20%] min-w-[160px]">Polarité Dominante</th>
-                            <th className="p-4 font-black whitespace-nowrap break-normal w-[20%] min-w-[180px]">Solvant Recommandé</th>
-                            <th className="p-4 font-black whitespace-nowrap break-normal w-[20%] min-w-[200px]">Conseil Séquençage</th>
+                            <th className="p-4 font-black whitespace-nowrap break-normal w-[20%] min-w-[180px]">{tr('Famille / Organe Végétal', 'Plant Part / Family', 'Pflanzenteil / Familie')}</th>
+                            <th className="p-4 font-black whitespace-nowrap break-normal w-[20%] min-w-[160px]">{tr('Exemples', 'Examples', 'Beispiele')}</th>
+                            <th className="p-4 font-black whitespace-nowrap break-normal w-[20%] min-w-[160px]">{tr('Polarité Dominante', 'Dominant Polarity', 'Dominante Polarität')}</th>
+                            <th className="p-4 font-black whitespace-nowrap break-normal w-[20%] min-w-[180px]">{tr('Solvant Recommandé', 'Recommended Solvent', 'Empfohlenes Lösungsmittel')}</th>
+                            <th className="p-4 font-black whitespace-nowrap break-normal w-[20%] min-w-[200px]">{tr('Conseil Séquençage', 'Sequencing Tip', 'Sequenzierungs-Tipp')}</th>
                           </tr>
                         </thead>
                         <tbody className="divide-y divide-[#E7DFD3]">
@@ -911,10 +1058,10 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
           <section id="faq-solvants" className="space-y-6">
             <div className="space-y-2">
               <span className="text-xs font-black uppercase tracking-widest text-[#C8AB8A]">
-                Questions Fréquentes · Polarité &amp; Solvants
+                {tr('Questions Fréquentes · Polarité & Solvants', 'FAQ · Polarity & Solvents', 'Häufige Fragen · Polarität & Lösungsmittel')}
               </span>
               <h2 className="text-2xl sm:text-3xl font-black text-[#1E2E25] tracking-tight">
-                Questions fréquentes sur les solvants d&apos;extraction
+                {tr("Questions fréquentes sur les solvants d'extraction", 'Frequently asked questions about extraction solvents', 'Häufige Fragen zu Extraktionslösungsmitteln')}
               </h2>
             </div>
 
@@ -951,13 +1098,17 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
             <div className="space-y-2 max-w-2xl">
               <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#C8AB8A]">
                 <Leaf className="w-4 h-4 text-[#E8772E]" />
-                <span>Poursuivre votre pratique</span>
+                <span>{tr('Poursuivre votre pratique', 'Continue your practice', 'Praxis vertiefen')}</span>
               </div>
               <h3 className="text-2xl font-black text-white !text-white">
-                Passez de la théorie des solvants au Séquençage Actif A/B
+                {tr('Passez de la théorie des solvants au Séquençage Actif A/B', 'Move from solvent theory to Active A/B Sequencing', 'Von der Lösungsmitteltheorie zur aktiven A/B-Sequenzierung')}
               </h3>
               <p className="text-sm text-white/85 !text-white leading-relaxed">
-                Explorez notre guide complet d&apos;extraction, découvrez l&apos;extracteur BloomLab® ou parcourez nos kits sur la Boutique Bloom by BotaniK.
+                {tr(
+                  "Explorez notre guide complet d'extraction, découvrez l'extracteur BloomLab® ou parcourez nos kits sur la Boutique Bloom by BotaniK.",
+                  'Explore our complete extraction guide, discover the BloomLab® extractor or browse our kits in the Bloom by BotaniK Store.',
+                  'Entdecken Sie unseren vollständigen Extraktions-Leitfaden, den BloomLab®-Extraktor oder unsere Kits im Bloom by BotaniK Shop.'
+                )}
               </p>
             </div>
             <div className="flex flex-wrap gap-3 shrink-0">
@@ -966,7 +1117,7 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                 onClick={(e) => handleNavClick(e, 'guide-complet')}
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition-all cursor-pointer"
               >
-                <span>Guide de l&apos;extraction</span>
+                <span>{tr("Guide de l'extraction", 'Extraction guide', 'Extraktions-Leitfaden')}</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
@@ -974,7 +1125,7 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                 onClick={(e) => handleNavClick(e, 'machine')}
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#E8772E] hover:bg-[#D4651F] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md cursor-pointer"
               >
-                <span>Découvrir BloomLab®</span>
+                <span>{tr('Découvrir BloomLab®', 'Discover BloomLab®', 'BloomLab® entdecken')}</span>
                 <Sparkles className="w-4 h-4" />
               </a>
               <a
@@ -982,7 +1133,7 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                 onClick={(e) => handleNavClick(e, 'boutique')}
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition-all cursor-pointer"
               >
-                <span>Boutique Plantes</span>
+                <span>{tr('Plantes Médicinales Bio', 'Organic Medicinal Plants', 'Bio-Heilpflanzen')}</span>
                 <CheckCircle2 className="w-4 h-4" />
               </a>
             </div>

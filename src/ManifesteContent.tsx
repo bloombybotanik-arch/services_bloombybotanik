@@ -168,8 +168,8 @@ export default function ManifesteContent({ onBack, onNavigate, lang }: Manifeste
                 />
               </div>
               <div className="p-3 bg-white rounded-xl border border-[#E7DFD3] flex items-center justify-between text-xs text-[#3E4A3D]/80 shadow-xs">
-                <span className="font-semibold">{isFR ? "BloomLab® — Instrument d'autonomie" : "BloomLab® — Autonomy instrument"}</span>
-                <span className="text-[10px] text-[#C8AB8A] font-bold uppercase tracking-wider">Souveraineté</span>
+                <span className="font-semibold">{isFR ? "BloomLab® — Instrument d'autonomie" : isDE ? "BloomLab® — Instrument der Autonomie" : "BloomLab® — Autonomy instrument"}</span>
+                <span className="text-[10px] text-[#C8AB8A] font-bold uppercase tracking-wider">{isFR ? "Souveraineté" : isDE ? "Souveränität" : "Sovereignty"}</span>
               </div>
             </div>
 
@@ -186,8 +186,8 @@ export default function ManifesteContent({ onBack, onNavigate, lang }: Manifeste
                 />
               </div>
               <div className="p-3 bg-white rounded-xl border border-[#E7DFD3] flex items-center justify-between text-xs text-[#3E4A3D]/80 shadow-xs">
-                <span className="font-semibold">{isFR ? "Atelier & laboratoire d'herboristerie" : "Botanical herbal laboratory"}</span>
-                <span className="text-[10px] text-[#3E4A3D] font-bold uppercase tracking-wider">Pratique Vivante</span>
+                <span className="font-semibold">{isFR ? "Atelier & laboratoire d'herboristerie" : isDE ? "Botanische Werkstatt & Kräuterlabor" : "Botanical herbal laboratory"}</span>
+                <span className="text-[10px] text-[#3E4A3D] font-bold uppercase tracking-wider">{isFR ? "Pratique Vivante" : isDE ? "Lebendige Praxis" : "Living Practice"}</span>
               </div>
             </div>
           </div>

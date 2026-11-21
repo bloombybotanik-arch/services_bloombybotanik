@@ -22,7 +22,9 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
-  const t = translations[lang] || translations.fr;
+  const _t = translations[lang] || translations.fr;
+  const isFR = lang === 'fr';
+  const isDE = lang === 'de';
   const [email, setEmail] = React.useState('');
   const [subState, setSubState] = React.useState<'idle' | 'ok' | 'error'>('idle');
 
@@ -82,7 +84,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
               }}
               translate="no"
               id="footer-brand-logo-link"
-              aria-label="Bloom by BotaniK - Accueil"
+              aria-label={isFR ? "Bloom by BotaniK - Accueil" : isDE ? "Bloom by BotaniK - Startseite" : "Bloom by BotaniK - Home"}
             >
               <BloomLogo variant="footer" className="w-12 h-12 flex-shrink-0" />
               <div className="flex flex-col leading-tight uppercase text-[#F9F6F0]">
@@ -91,7 +93,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
               </div>
             </a>
             <p className="text-white/70 text-xs sm:text-sm leading-relaxed max-w-md mb-6 font-medium">
-              L'alliance des sagesses ancestrales et de la phytothérapie de haute précision. Votre corps n'est pas cassé, il est verrouillé.
+              {isFR
+                ? "L'alliance des sagesses ancestrales et de la phytothérapie de haute précision. Votre corps n'est pas cassé, il est verrouillé."
+                : isDE
+                ? "Die Verbindung aus überliefertem Pflanzenwissen und hochpräziser Pflanzenextraktion. Ihr Körper ist nicht kaputt, er ist nur blockiert."
+                : "The alliance of ancestral botanical wisdom and high-precision plant extraction. Your body isn't broken, it's locked."}
             </p>
 
             <div className="flex gap-4">
@@ -114,10 +120,20 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
           <div className="lg:col-span-6 flex flex-col justify-center bg-white/5 rounded-3xl p-6 border border-white/10 shadow-xs">
             <div className="flex items-center gap-2 mb-2 text-[#E8772E] text-xs font-black uppercase tracking-wider">
               <Sparkles className="w-4 h-4 text-[#E8772E]" />
-              <span>LE PROTOCOLE DU DIMANCHE &amp; BILLET DE L'ACADÉMIE</span>
+              <span>
+                {isFR
+                  ? "LE PROTOCOLE DU DIMANCHE & BILLET DE L'ACADÉMIE"
+                  : isDE
+                  ? "DAS SONNTAGS-PROTOKOLL & AKADEMIE-BRIEF"
+                  : "THE SUNDAY PROTOCOL & ACADEMY LETTER"}
+              </span>
             </div>
             <p className="text-xs text-white/70 mb-4 font-medium">
-              Recevez nos synthèses exclusives de phytochimie clinique, protocoles saisonniers et monographies du Totum végétal.
+              {isFR
+                ? "Recevez nos synthèses exclusives de phytochimie clinique, protocoles saisonniers et monographies du Totum végétal."
+                : isDE
+                ? "Erhalten Sie unsere exklusiven Zusammenfassungen zur Phytochemie, saisonale Protokolle und Monographien des Pflanzen-Totums."
+                : "Receive our exclusive phytochemistry syntheses, seasonal protocols, and Plant Totum monographs."}
             </p>
             <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2">
               <input
@@ -125,18 +141,34 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Votre adresse email..."
+                placeholder={isFR ? "Votre adresse email..." : isDE ? "Ihre E-Mail-Adresse..." : "Your email address..."}
                 className="flex-1 px-4 py-2.5 rounded-xl bg-white/10 border border-white/15 text-xs sm:text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-[#E8772E]"
               />
               <button 
                 type="submit" 
                 className="px-5 py-2.5 rounded-xl bg-[#E8772E] hover:bg-[#D4651F] text-white text-xs sm:text-sm font-bold transition-all shadow-md cursor-pointer shrink-0"
               >
-                S'inscrire
+                {isFR ? "S'inscrire" : isDE ? "Abonnieren" : "Subscribe"}
               </button>
             </form>
-            {subState === 'ok' && <p className="text-emerald-400 text-xs mt-2.5 font-bold">✓ Merci ! Un lien de confirmation vous a été envoyé.</p>}
-            {subState === 'error' && <p className="text-rose-400 text-xs mt-2.5 font-bold">Une erreur est survenue. Veuillez réessayer.</p>}
+            {subState === 'ok' && (
+              <p className="text-emerald-400 text-xs mt-2.5 font-bold">
+                {isFR
+                  ? "✓ Merci ! Un lien de confirmation vous a été envoyé."
+                  : isDE
+                  ? "✓ Danke! Ein Bestätigungslink wurde an Sie gesendet."
+                  : "✓ Thank you! A confirmation link has been sent to you."}
+              </p>
+            )}
+            {subState === 'error' && (
+              <p className="text-rose-400 text-xs mt-2.5 font-bold">
+                {isFR
+                  ? "Une erreur est survenue. Veuillez réessayer."
+                  : isDE
+                  ? "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+                  : "An error occurred. Please try again."}
+              </p>
+            )}
           </div>
         </div>
 
@@ -149,11 +181,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
               BLOOM BY BOTANIK
             </h4>
             <ul className="space-y-2.5">
-              <li><NavLink view="la-marque">Histoire &amp; Philosophie</NavLink></li>
-              <li><NavLink view="manifeste">Le Manifeste Bloom</NavLink></li>
-              <li><NavLink view="blog">Journal Botanique</NavLink></li>
-              <li><NavLink view="articles">Articles &amp; Savoirs</NavLink></li>
-              <li><NavLink view="contact">Contact</NavLink></li>
+              <li><NavLink view="la-marque">{isFR ? "Histoire & Philosophie" : isDE ? "Geschichte & Philosophie" : "Story & Philosophy"}</NavLink></li>
+              <li><NavLink view="manifeste">{isFR ? "Le Manifeste Bloom" : isDE ? "Das Bloom Manifest" : "The Bloom Manifesto"}</NavLink></li>
+              <li><NavLink view="blog">{isFR ? "Journal Botanique" : isDE ? "Botanisches Journal" : "Botanical Journal"}</NavLink></li>
+              <li><NavLink view="articles">{isFR ? "Articles & Savoirs" : isDE ? "Artikel & Wissen" : "Articles & Knowledge"}</NavLink></li>
+              <li><NavLink view="contact">{isFR ? "Contact" : isDE ? "Kontakt" : "Contact"}</NavLink></li>
             </ul>
           </div>
 
@@ -161,47 +193,47 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
           <div>
             <h4 className="text-xs uppercase tracking-widest font-black mb-4 text-[#F9F6F0] flex items-center gap-1.5">
               <GraduationCap className="w-4 h-4 text-[#E8772E]" />
-              <span>BLOOM ACADÉMIE</span>
+              <span>{isFR ? "BLOOM ACADÉMIE" : isDE ? "BLOOM AKADEMIE" : "BLOOM ACADEMY"}</span>
             </h4>
             <ul className="space-y-2.5">
-              <li><NavLink view="academie">Hub Bloom Académie</NavLink></li>
-              <li><NavLink view="women-academy">Pouvoir Cyclique Femme</NavLink></li>
-              <li><NavLink view="protocoles">Protocoles Systémiques</NavLink></li>
-              <li><NavLink view="phytotherapie-reset">Reset Homéostasique</NavLink></li>
-              <li><NavLink view="4-architectures">Comprendre le Corps</NavLink></li>
-              <li><NavLink view="pillar-extraction">Extraction &amp; Totum</NavLink></li>
-              <li><NavLink view="guide-solvants">Guide des Solvants</NavLink></li>
-              <li><NavLink view="recettes">Recettes Botaniques</NavLink></li>
-              <li><NavLink view="library-landing">Bibliothèque Scientifique</NavLink></li>
+              <li><NavLink view="academie">{isFR ? "Hub Bloom Académie" : isDE ? "Bloom Akademie Hub" : "Bloom Academy Hub"}</NavLink></li>
+              <li><NavLink view="women-academy">{isFR ? "Pouvoir Cyclique Femme" : isDE ? "Zyklische Kraft der Frau" : "Women's Cyclical Power"}</NavLink></li>
+              <li><NavLink view="protocoles">{isFR ? "Protocoles Systémiques" : isDE ? "Systemische Protokolle" : "Systemic Protocols"}</NavLink></li>
+              <li><NavLink view="phytotherapie-reset">{isFR ? "Reset Homéostasique" : isDE ? "Homöostatischer Reset" : "Homeostatic Reset"}</NavLink></li>
+              <li><NavLink view="4-architectures">{isFR ? "Comprendre le Corps" : isDE ? "Den Körper verstehen" : "Understanding the Body"}</NavLink></li>
+              <li><NavLink view="pillar-extraction">{isFR ? "Extraction & Totum" : isDE ? "Extraktion & Totum" : "Extraction & Totum"}</NavLink></li>
+              <li><NavLink view="guide-solvants">{isFR ? "Guide des Solvants" : isDE ? "Lösungsmittel-Leitfaden" : "Solvents Guide"}</NavLink></li>
+              <li><NavLink view="recettes">{isFR ? "Recettes Botaniques" : isDE ? "Botanische Rezepte" : "Botanical Recipes"}</NavLink></li>
+              <li><NavLink view="library-landing">{isFR ? "Bibliothèque Scientifique" : isDE ? "Wissenschaftliche Bibliothek" : "Scientific Library"}</NavLink></li>
             </ul>
           </div>
 
           {/* COLONNE 3: BOUTIQUE */}
           <div>
             <h4 className="text-xs uppercase tracking-widest font-black mb-4 text-[#F9F6F0]">
-              BOUTIQUE
+              {isFR ? "BOUTIQUE" : isDE ? "SHOP" : "STORE"}
             </h4>
             <ul className="space-y-2.5">
               <li><NavLink view="machine">BloomLab®</NavLink></li>
-              <li><NavLink view="boutique-kits">Packs &amp; Kits Plantes</NavLink></li>
-              <li><NavLink view="boutique">Accessoires &amp; Boutique</NavLink></li>
-              <li><NavLink view="abonnement">Abonnements Numériques</NavLink></li>
-              <li><NavLink view="cgv">CGV</NavLink></li>
+              <li><NavLink view="boutique-kits">{isFR ? "Plantes Médicinales Bio" : isDE ? "Bio-Heilpflanzen" : "Organic Medicinal Plants"}</NavLink></li>
+              <li><NavLink view="boutique">{isFR ? "Accessoires & Boutique" : isDE ? "Zubehör & Shop" : "Accessories & Store"}</NavLink></li>
+              <li><NavLink view="abonnement">{isFR ? "Abonnements Numériques" : isDE ? "Digitale Abonnements" : "Digital Subscriptions"}</NavLink></li>
+              <li><NavLink view="cgv">{isFR ? "CGV" : isDE ? "AGB" : "Terms of Sale"}</NavLink></li>
             </ul>
           </div>
 
           {/* COLONNE 4: RESSOURCES */}
           <div>
             <h4 className="text-xs uppercase tracking-widest font-black mb-4 text-[#F9F6F0]">
-              RESSOURCES
+              {isFR ? "RESSOURCES" : isDE ? "RESSOURCEN" : "RESOURCES"}
             </h4>
             <ul className="space-y-2.5">
-              <li><NavLink view="herbier">L'Herbier Médicinal</NavLink></li>
-              <li><NavLink view="lexique">Lexique Botanik</NavLink></li>
+              <li><NavLink view="herbier">{isFR ? "L'Herbier Médicinal" : isDE ? "Das Heilpflanzen-Herbarium" : "The Medicinal Herbarium"}</NavLink></li>
+              <li><NavLink view="lexique">{isFR ? "Lexique Botanik" : isDE ? "Botanik-Glossar" : "Botanik Glossary"}</NavLink></li>
               <li><NavLink view="faq">FAQ</NavLink></li>
-              <li><NavLink view="returns">Livraison &amp; Retours</NavLink></li>
-              <li><NavLink view="mentions">Mentions Légales</NavLink></li>
-              <li><NavLink view="privacy">Politique de Confidentialité</NavLink></li>
+              <li><NavLink view="returns">{isFR ? "Livraison & Retours" : isDE ? "Versand & Rückgabe" : "Shipping & Returns"}</NavLink></li>
+              <li><NavLink view="mentions">{isFR ? "Mentions Légales" : isDE ? "Impressum" : "Legal Notice"}</NavLink></li>
+              <li><NavLink view="privacy">{isFR ? "Politique de Confidentialité" : isDE ? "Datenschutzrichtlinie" : "Privacy Policy"}</NavLink></li>
             </ul>
           </div>
 
@@ -210,11 +242,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
         {/* Mentions légales de bas de page */}
         <div className="pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[10px] uppercase tracking-widest text-white/50 text-center md:text-left font-medium">
-            © {new Date().getFullYear()} Bloom by BotaniK — Tous droits réservés
+            © {new Date().getFullYear()} Bloom by BotaniK — {isFR ? "Tous droits réservés" : isDE ? "Alle Rechte vorbehalten" : "All rights reserved"}
           </p>
           <p className="text-[10px] uppercase tracking-widest text-white/50 text-center md:text-right max-w-xl font-medium">
-            Dispositif d'extraction botanique à usage personnel. Ceci n'est pas un dispositif médical.
-            Contenus éducatifs et d'accompagnement de terrain — ne remplace pas une consultation médicale.
+            {isFR
+              ? "Dispositif d'extraction botanique à usage personnel. Ceci n'est pas un dispositif médical. Contenus éducatifs et d'accompagnement de terrain — ne remplace pas une consultation médicale."
+              : isDE
+              ? "Botanisches Extraktionsgerät für den persönlichen Gebrauch. Dies ist kein Medizinprodukt. Bildungsinhalte zur Pflanzenkunde — ersetzt keine ärztliche Beratung."
+              : "Botanical extraction device for personal use. This is not a medical device. Educational content for botanical practice — does not replace medical consultation."}
           </p>
         </div>
 

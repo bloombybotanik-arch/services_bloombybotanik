@@ -248,3 +248,186 @@ export const resetPhasesData: ResetPhaseDetail[] = [
   }
 ];
 
+export function getResetPhasesData(lang: 'fr' | 'en' | 'de' = 'fr'): ResetPhaseDetail[] {
+  if (lang === 'fr') return resetPhasesData;
+  const isDE = lang === 'de';
+  const loc: Record<string, Partial<ResetPhaseDetail>> = {
+    step_0: {
+      title: isDE ? "Schritt 0" : "Step 0",
+      name: isDE ? "Systemische Anamnese" : "Systemic Anamnesis",
+      subtitle: isDE ? "Bestandsaufnahme" : "Assessment",
+      short_text: isDE
+        ? "ALMA hilft Ihnen, Ihre biologischen Blockaden (T1–T10) einzuordnen – die Basis für Ihre individuelle Extraktion."
+        : "ALMA helps identify your biological bottlenecks (T1–T10) — the essential starting point for tailoring your extraction routine.",
+      long_text: isDE
+        ? "Ziel ist es nicht, ein Symptom zu bekämpfen, sondern das gesamte aus dem Gleichgewicht geratene Terrain (Darm, Leber, Immunsystem, HPA-Achse, Mitochondrien) zu kartieren."
+        : "The goal is not to label a single symptom, but to map the interconnected terrain (gut, liver, immunity, HPA axis, mitochondria) for a coherent Reset sequence.",
+      summary: isDE
+        ? "Kartierung des biologischen Terrains vor Beginn der Pflanzenphasen."
+        : "Mapping the biological terrain before starting botanical extraction phases.",
+      objectives: isDE
+        ? ["Biologische Blockaden erkennen", "Das gesamte Terrain kartieren", "Pflanzenauswahl pädagogisch abstimmen"]
+        : ["Identify biological bottlenecks", "Map interconnected terrain systems", "Tailor botanical phase priorities"],
+      focus_systems: isDE
+        ? ["Darm", "Leber", "Immunsystem", "HPA-Achse", "Mitochondrien"]
+        : ["Gut", "Liver", "Immunity", "HPA Axis", "Mitochondria"],
+      actions: isDE
+        ? ["ALMA-Fragebogen ausfüllen", "Systemische Ergebnisse analysieren", "Starter-Kit auswählen"]
+        : ["Complete the ALMA questionnaire", "Review systemic priorities", "Select starter botanical kit"],
+      cta: isDE ? "Bilanz starten" : "Start assessment",
+      system_message: isDE
+        ? "Bloom unterdrückt kein Symptom, sondern unterstützt das gesamte System in der richtigen Reihenfolge."
+        : "Bloom does not aim to silence a symptom, but to rebalance an entire system in the proper sequence."
+    },
+    phase_0: {
+      title: "Phase 0",
+      name: isDE ? "Öffnung der Ausscheidungsorgane" : "Opening the Emunctories",
+      subtitle: isDE ? "7 Tage — Vorbereitung" : "7 days — Preparation",
+      short_text: isDE
+        ? "Leberentlastung gelingt erst, wenn die Ausscheidungswege (Nieren, Haut, Darm) frei sind. Löwenzahn und Klette bereiten die Filter vor."
+        : "Gentle hepatic support begins only once elimination pathways (kidneys, skin, gut) are open. Dandelion and burdock prepare the filters.",
+      long_text: isDE
+        ? "Diese Phase bereitet alle fünf Ausscheidungsorgane (Nieren, Lymphe, Lunge, Haut, Darm) vor, damit nachfolgende Phasen gut vertragen werden."
+        : "This phase prepares all five emunctories (kidneys, lymph, lungs, skin, gut) so subsequent phases are cleanly processed.",
+      summary: isDE
+        ? "Vorbereitung der Ausscheidungswege vor der Leberphase."
+        : "Preparing elimination pathways prior to the hepatic phase.",
+      objectives: isDE
+        ? ["Ausscheidungswege sanft öffnen", "Grundstau reduzieren", "Auf die Leberphase vorbereiten"]
+        : ["Open elimination pathways gently", "Ease baseline congestion", "Prepare the body for the liver phase"],
+      focus_systems: isDE ? ["Nieren", "Lymphe", "Lunge", "Haut", "Darm"] : ["Kidneys", "Lymph", "Lungs", "Skin", "Gut"],
+      actions: isDE
+        ? ["Regelmäßig trinken", "Tief atmen", "Leichte Ernährung", "Darmpassage unterstützen"]
+        : ["Steady hydration", "Deep diaphragmatic breathing", "Lighter evening meals", "Support gut transit"],
+      cta: isDE ? "Details Phase 0" : "Phase 0 Details",
+      system_message: isDE
+        ? "Bloom unterdrückt kein Symptom, sondern unterstützt das gesamte System in der richtigen Reihenfolge."
+        : "Bloom does not aim to silence a symptom, but to rebalance an entire system in the proper sequence."
+    },
+    phase_1: {
+      title: "Phase 1",
+      name: isDE ? "Leber- & Gallenimpuls" : "Hepatic & Biliary Reset",
+      subtitle: isDE ? "21 Tage — Drainage" : "21 days — Drainage",
+      short_text: isDE
+        ? "Sanfte Unterstützung der Leberphasen I & II und des Gallenflusses mit Schwarzem Rettich, Artischocke und Chrysanthellum."
+        : "Supporting Phase I & II hepatic enzymes and bile fluidity with black radish, artichoke, and chrysanthellum.",
+      long_text: isDE
+        ? "Die Leber filtert rund 1,7 Liter Blut pro Minute. Nach Öffnung der Ausscheidungsorgane unterstützt diese Phase die Gallenzirkulation und entlastet die innere Filterarbeit."
+        : "The liver filters 1.7 liters of blood per minute. Following emunctory preparation, this phase supports bile flow and reduces silent toxin recirculation.",
+      summary: isDE
+        ? "Unterstützung von Leber und Gallenfluss nach Phase 0."
+        : "Supporting hepatic filtration and bile flow after Phase 0.",
+      objectives: isDE
+        ? ["Leberphase I & II begleiten", "Gallenfluss verflüssigen", "Rückresorption verringern"]
+        : ["Support Phase I & II liver pathways", "Promote healthy bile flow", "Reduce recirculating metabolic load"],
+      focus_systems: isDE ? ["Leber", "Galle", "Darm", "Kreislauf"] : ["Liver", "Bile", "Gut", "Circulation"],
+      actions: isDE
+        ? ["Morgens nüchtern bei guter Verträglichkeit", "Abends leicht essen", "Ausreichend hydrieren", "Alkohol meiden"]
+        : ["Morning intake if well tolerated", "Lighter evening meals", "Reinforced hydration", "Avoid alcohol and heavy fats"],
+      cta: isDE ? "Kit 1 ansehen" : "View Kit 1",
+      system_message: isDE
+        ? "Bloom unterdrückt kein Symptom, sondern unterstützt das gesamte System in der richtigen Reihenfolge."
+        : "Bloom does not aim to silence a symptom, but to rebalance an entire system in the proper sequence."
+    },
+    pause_1: {
+      title: isDE ? "Pause 1" : "Pause 1",
+      name: isDE ? "Integrative Ruhepause" : "Integrative Pause",
+      subtitle: isDE ? "7 Tage — Erholung" : "7 days — Rest",
+      short_text: isDE
+        ? "Wichtige enzymatische Ruhephase, damit sich Leber und Ausscheidung vor der nächsten Stufe stabilisieren."
+        : "Essential enzymatic rest allowing liver and filters to stabilize before deeper systemic balancing.",
+      long_text: isDE
+        ? "Während dieser Pause kalibriert sich das System neu, anstatt weitere Reize hinzuzufügen."
+        : "During this planned pause, the system recalibrates and integrates gains before resuming active phases.",
+      summary: isDE ? "Enzymatische Erholung zur Stabilisierung." : "Enzymatic rest to consolidate drainage gains.",
+      objectives: isDE
+        ? ["Überlastung vermeiden", "Drainage festigen", "System ausgleichen"]
+        : ["Prevent overload", "Consolidate drainage", "Allow systemic recalibration"],
+      focus_systems: isDE ? ["Ruhe", "Regulation", "Aufnahme"] : ["Rest", "Regulation", "Assimilation"],
+      actions: isDE
+        ? ["Weiter hydrieren", "Reize reduzieren", "Essensrhythmus halten"]
+        : ["Maintain hydration", "Lower stimulation", "Keep steady meal timing"],
+      cta: isDE ? "Pausen-Tipps" : "Pause Tips",
+      system_message: isDE
+        ? "Bloom unterdrückt kein Symptom, sondern unterstützt das gesamte System in der richtigen Reihenfolge."
+        : "Bloom does not aim to silence a symptom, but to rebalance an entire system in the proper sequence."
+    },
+    phase_2: {
+      title: "Phase 2",
+      name: isDE ? "Blut- & Gewebereinheit" : "Blood & Terrain Purity",
+      subtitle: isDE ? "21 Tage — Klärung" : "21 days — Purification",
+      short_text: isDE
+        ? "Begleitung des zirkulierenden Terrains und der Haut-Blut-Achse mit Klette, Sarsaparilla und Kurkuma."
+        : "Deep terrain cleansing and modulation of circulating inflammatory tone with burdock, sarsaparilla, and turmeric.",
+      long_text: isDE
+        ? "Das Blut verbindet alle Organe. Diese Phase begleitet das zirkulierende Milieu, die Haut und die Immunbalance."
+        : "Blood links every organ system. This phase supports circulating clarity, skin balance, and immune equilibrium.",
+      summary: isDE
+        ? "Begleitung von Blutterrain, Haut und Immunbalance."
+        : "Supporting circulating terrain, skin clarity, and immune calm.",
+      objectives: isDE
+        ? ["Entzündungsneigung entlasten", "Innere Filtration stärken", "Hautbild beruhigen"]
+        : ["Ease inflammatory load", "Support internal filtration", "Calm skin and circulatory reactivity"],
+      focus_systems: isDE ? ["Blut", "Haut", "Immunsystem", "Kreislauf"] : ["Blood", "Skin", "Immunity", "Circulation"],
+      actions: isDE
+        ? ["Mikrobiom unterstützen", "Schnelle Zucker reduzieren", "Reizarme Kost", "Ausreichend schlafen"]
+        : ["Support microbiome", "Reduce refined sugars", "Soothing whole-food diet", "Consistent sleep"],
+      cta: isDE ? "Kit 2 ansehen" : "View Kit 2",
+      system_message: isDE
+        ? "Bloom unterdrückt kein Symptom, sondern unterstützt das gesamte System in der richtigen Reihenfolge."
+        : "Bloom does not aim to silence a symptom, but to rebalance an entire system in the proper sequence."
+    },
+    pause_2: {
+      title: isDE ? "Pause 2" : "Pause 2",
+      name: isDE ? "Integrative Ruhepause" : "Integrative Pause",
+      subtitle: isDE ? "7 Tage — Erholung" : "7 days — Rest",
+      short_text: isDE
+        ? "Zweite Erholungsphase zur Festigung der Ergebnisse vor der abschließenden Konsolidierung."
+        : "Second rest window to consolidate purification gains prior to final stabilization.",
+      long_text: isDE
+        ? "Ruhezeiten sind ein fester Bestandteil des Reset-Ansatzes für nachhaltige Ergebnisse ohne Überforderung."
+        : "Structured rest phases are as essential as active phases for durable terrain resilience.",
+      summary: isDE ? "Zweite Ruhephase vor der Stabilisierung." : "Second rest window before consolidation.",
+      objectives: isDE
+        ? ["Ergebnisse integrieren", "Sättigung vorbeugen", "Stärkungsphase vorbereiten"]
+        : ["Integrate progress", "Prevent saturation", "Prepare strengthening phase"],
+      focus_systems: isDE ? ["Ruhe", "Konsolidierung", "Balance"] : ["Rest", "Consolidation", "Balance"],
+      actions: isDE ? ["Einfache Kost", "Hydratation", "Schlaf priorisieren"] : ["Simple nutrition", "Steady hydration", "Prioritize deep sleep"],
+      cta: isDE ? "Pausen-Tipps" : "Pause Tips",
+      system_message: isDE
+        ? "Bloom unterdrückt kein Symptom, sondern unterstützt das gesamte System in der richtigen Reihenfolge."
+        : "Bloom does not aim to silence a symptom, but to rebalance an entire system in the proper sequence."
+    },
+    phase_3: {
+      title: "Phase 3",
+      name: isDE ? "Stabilisierung & Stärkung" : "Stabilization & Strengthening",
+      subtitle: isDE ? "21 Tage — Festigung" : "21 days — Consolidation",
+      short_text: isDE
+        ? "Verankerung der Ergebnisse und Unterstützung von Darmbarriere, Faszien und Haut mit Astragalus, Centella und Schachtelhalm."
+        : "Anchoring results and reinforcing gut barrier, fascia, and skin vitality with astragalus, centella, and horsetail.",
+      long_text: isDE
+        ? "Hier wird die neue Systembalance in Darmepithel, Mitochondrien, Faszien und Haut gefestigt, sodass der Körper eigenständig reguliert."
+        : "This phase consolidates systemic harmony across enterocytes, mitochondria, fascia, and skin for lasting autonomous regulation.",
+      summary: isDE
+        ? "Festigung von Darmbarriere, Haut und Zellenergie."
+        : "Consolidating intestinal barrier, skin vitality, and cellular resilience.",
+      objectives: isDE
+        ? ["Ergebnisse stabilisieren", "Haut und Gewebe stärken", "Zellregeneration begleiten"]
+        : ["Stabilize gains", "Strengthen skin and connective tissues", "Support cellular renewal"],
+      focus_systems: isDE ? ["Darmbarriere", "Haut", "Zellen", "Grundterrain"] : ["Gut Barrier", "Skin", "Cells", "Core Terrain"],
+      actions: isDE
+        ? ["Schrittweise Stärkung", "Stabile Routine", "Langfristige Pflege", "Körpersignale beobachten"]
+        : ["Gradual strengthening", "Steady daily routine", "Long-term care", "Observe body signals"],
+      cta: isDE ? "Kit 3 ansehen" : "View Kit 3",
+      system_message: isDE
+        ? "Bloom unterdrückt kein Symptom, sondern unterstützt das gesamte System in der richtigen Reihenfolge."
+        : "Bloom does not aim to silence a symptom, but to rebalance an entire system in the proper sequence."
+    }
+  };
+
+  return resetPhasesData.map((p) => {
+    const patch = loc[p.key];
+    return patch ? { ...p, ...patch } : p;
+  });
+}
+

@@ -118,7 +118,7 @@ export default function GuideContent({ onNavigate, lang }: GuideContentProps) {
                   onClick={() => onNavigate('machine')}
                   className="w-full md:w-auto px-10 py-6 bg-[#3E4A3D] hover:bg-[#C8AB8A] active:bg-[#C8AB8A] text-[#0F261E] rounded-2xl font-bold transition-all shadow-xl flex items-center justify-center gap-3 group cursor-pointer"
                 >
-                  <span className="uppercase tracking-widest">{lang === 'fr' ? 'Découvrir la BloomLab' : 'Discover the BloomLab'}</span>
+                  <span className="uppercase tracking-widest">{lang === 'fr' ? 'Découvrir la BloomLab' : lang === 'de' ? 'BloomLab entdecken' : 'Discover the BloomLab'}</span>
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>

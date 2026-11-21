@@ -65,7 +65,7 @@ export const getProducts = (lang: Language) => {
       rating: 5.0,
       reviews: 64,
       description: t.bundle_apothicaire.description,
-      tags: ['Offre Limitée', 'Black Friday 2026', 'Best-Value'],
+      tags: ['Offre Limitée', 'Best-Value'],
       isBundle: true
     },
     {
@@ -78,7 +78,7 @@ export const getProducts = (lang: Language) => {
       rating: 5.0,
       reviews: 42,
       description: t.pack_signature.description,
-      tags: ['Offre Black Friday 2026', 'Complet', 'Best-Seller'],
+      tags: ['Le plus populaire', 'Complet', 'Best-Seller'],
       isBundle: true
     },
     {
@@ -229,6 +229,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
   const [searchQuery, setSearchQuery] = React.useState('');
   const t = translations[lang].store;
   const isFR = lang === 'fr';
+  const isDE = lang === 'de';
   const products = React.useMemo(() => getProducts(lang), [lang]);
 
   React.useEffect(() => {
@@ -260,7 +261,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
       {
         "@type": "ListItem",
         "position": 1,
-        "name": isFR ? "Accueil" : "Home",
+        "name": isFR ? "Accueil" : isDE ? "Startseite" : "Home",
         "item": "https://bloombybotanik.com/"
       },
       {
@@ -370,8 +371,10 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
       {/* Promotional Banner */}
       <div className="bg-[#D97706]/10 text-[#B45309] border-y border-[#D97706]/30 text-center py-2.5 px-4 text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
         {isFR 
-          ? "Black Friday 2026 : Soins Botaniques pour toute la Famille - Pack Complet à 59 €" 
-          : "Black Friday 2026: Botanical Care for the Whole Family - Complete Pack at 59 €"}
+          ? "🇫🇷 Ingénierie Botanique Française • Expédition 24/48h • Garantie 1 an • Paiement en 3x sans frais" 
+          : isDE
+          ? "🇫🇷 Französische Botanik-Ingenieurskunst • Versand 24/48h • 1 Jahr Garantie • 3x zinsfrei"
+          : "🇫🇷 French Botanical Engineering • 24/48h Shipping • 1-Year Warranty • 3x Fee-Free"}
       </div>
       
       {/* Search & Filter Header (App Style) */}
@@ -379,23 +382,28 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-botanik-green/40 mb-4">
           <button onClick={() => window.location.href='/'} className="hover:text-botanik-orange transition-colors">
-            {isFR ? "Accueil" : "Home"}
+            {isFR ? "Accueil" : isDE ? "Startseite" : "Home"}
           </button>
           <span>/</span>
           <span className="text-botanik-green/60">{isFR ? "Boutique" : "Shop"}</span>
         </div>
 
         <h1 className="text-2xl md:text-4xl font-bold text-botanik-green mb-2">
-          {(currentView === 'boutique-kits' || currentView === 'kits-botaniques') && isFR
-            ? 'Composez vos soins botaniques maison'
+          {(currentView === 'boutique-kits' || currentView === 'kits-botaniques')
+            ? (isFR
+                ? 'Plantes Médicinales Bio & Soins Botaniques Maison'
+                : isDE
+                ? 'Bio-Heilpflanzen & Botanische Hauspflege'
+                : 'Organic Medicinal Plants & Home Botanical Care')
             : t.header.title}
         </h1>
         <div className="max-w-2xl mb-6">
           <p className="text-sm md:text-base text-botanik-green/60 font-light leading-relaxed">
             {isFR 
-              ? "Découvrez l'univers Bloom by BotaniK : de l'extracteur botanique BloomLab aux mélanges de plantes médicinales rigoureusement sélectionnés. Notre boutique vous offre toutes les clés pour réaliser vos propres remèdes naturels, huiles infusées et rituels de soin avec une précision laboratoire. Chaque produit est conçu pour soutenir votre souveraineté sanitaire et libérer le plein potentiel du Totum végétal."
-              : "Discover the Bloom by BotaniK universe: from the BloomLab botanical extractor to rigorously selected medicinal plant blends. Our shop offers all the keys to create your own natural remedies, infused oils, and care rituals with laboratory precision."
-            }
+              ? "Découvrez l'univers Bloom by BotaniK : de l'extracteur botanique BloomLab aux mélanges de plantes médicinales bio rigoureusement sélectionnés. Notre boutique vous offre toutes les clés pour réaliser vos propres préparations botaniques, huiles infusées et rituels de soin avec une précision laboratoire."
+              : isDE
+              ? "Entdecken Sie die Welt von Bloom by BotaniK: vom botanischen Extraktor BloomLab bis hin zu sorgfältig ausgewählten Bio-Heilpflanzenmischungen. Unser Shop bietet alles, um eigene pflanzliche Zubereitungen, infundierte Öle und Pflegerituale mit Laborpräzision herzustellen."
+              : "Discover the Bloom by BotaniK universe: from the BloomLab botanical extractor to rigorously selected organic medicinal plant blends. Our shop provides everything you need to craft your own botanical preparations, infused oils, and care rituals with laboratory precision."}
           </p>
         </div>
         
@@ -457,7 +465,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                   <img 
                     src={bloomLabImg} 
                     className="absolute inset-0 w-full h-full object-cover" 
-                    alt="BloomLab - Votre Laboratoire de Phytothérapie Maison - Infusion Botanique, Tisanes et Remèdes Naturels" 
+                    alt="BloomLab - Votre Laboratoire Botanique Maison - Infusion Végétale, Tisanes et Soins Naturels" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent hidden lg:block" />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent lg:hidden" />
@@ -498,7 +506,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                 <div className="relative w-full aspect-square bg-[#F9F6F0] flex items-center justify-center overflow-hidden rounded-t-2xl">
                   <OptimizedImage 
                     src={product.image} 
-                    alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Machine à infusion botanique, tisanes et remèdes naturels`} 
+                    alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Extracteur botanique et soins végétaux`} 
                     className="w-full h-full object-contain p-4 transform group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -524,11 +532,6 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                           {(product as any).oldPriceStrike && (
                             <span className="text-xs text-botanik-green/30 line-through">{formatPrice((product as any).oldPriceStrike)}</span>
                           )}
-                          {product.id === 'bloomlab' && (
-                            <span className="text-[10px] font-bold uppercase tracking-wider text-[#B45309] bg-[#D97706]/10 border border-[#D97706]/30 px-2.5 py-0.5 rounded-full whitespace-nowrap">
-                              code: Black Friday 2026
-                            </span>
-                          )}
                         </div>
                       )}
                       <span className="text-xl sm:text-2xl font-bold text-botanik-green">{formatPrice(product.price)}</span>
@@ -537,7 +540,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                       type="button"
                       onClick={(e) => { e.preventDefault(); e.stopPropagation(); onAddToCart(product); }}
                       className="w-12 h-12 bg-[#D97706] hover:bg-[#B45309] text-white rounded-2xl flex items-center justify-center shadow-lg shadow-orange-900/20 transition-all cursor-pointer shrink-0"
-                      aria-label={`${lang === 'fr' ? 'Ajouter au panier' : 'Add to cart'} ${product.name}`}
+                      aria-label={`${isFR ? 'Ajouter au panier' : isDE ? 'In den Warenkorb' : 'Add to cart'} ${product.name}`}
                     >
                       <ShoppingBag className="w-5 h-5" />
                     </button>
@@ -567,10 +570,10 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <div className="flex items-center gap-2 text-[10px] font-bold text-botanik-orange uppercase tracking-widest">
-                    <Check className="w-4 h-4" /> 10 recettes gratuites
+                    <Check className="w-4 h-4" /> {isFR ? "10 recettes gratuites" : isDE ? "10 kostenlose Rezepte" : "10 free recipes"}
                   </div>
                   <div className="flex items-center gap-2 text-[10px] font-bold text-botanik-orange uppercase tracking-widest">
-                    <Check className="w-4 h-4" /> Protocoles experts
+                    <Check className="w-4 h-4" /> {isFR ? "Protocoles experts" : isDE ? "Expertenprotokolle" : "Expert protocols"}
                   </div>
                 </div>
               </div>
@@ -590,7 +593,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                     <div className="relative aspect-video sm:aspect-square md:aspect-video overflow-hidden bg-[#F9F9F7]">
                       <OptimizedImage 
                         src={product.image} 
-                        alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Machine à infusion botanique, tisanes et remèdes naturels`} 
+                        alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Extracteur botanique et soins végétaux`} 
                         className="w-full h-full object-cover transform scale-110 group-hover:scale-125 transition-transform duration-700"
                       />
                     </div>
@@ -600,7 +603,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                           <Star className="w-3 h-3 fill-current" />
                           <span className="text-[10px] font-bold ml-1">{product.rating}/5</span>
                         </div>
-                        <span className="text-[10px] text-botanik-green/30">({product.reviews} {lang === 'fr' ? 'avis' : 'reviews'})</span>
+                        <span className="text-[10px] text-botanik-green/30">({product.reviews} {isFR ? 'avis' : isDE ? 'Bewertungen' : 'reviews'})</span>
                       </div>
                       <div className="text-[10px] font-bold text-botanik-orange uppercase tracking-widest mb-1">{product.subtitle}</div>
                       <h4 className="text-base sm:text-lg font-bold text-botanik-green mb-4 leading-tight">{product.name}</h4>
@@ -610,7 +613,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                         </span>
                         <div 
                           className="w-10 h-10 bg-[#3E4A3D] text-white rounded-xl flex items-center justify-center group-hover:bg-botanik-orange transition-colors"
-                          aria-label={`${lang === 'fr' ? 'Découvrir' : 'Discover'} ${product.name}`}
+                          aria-label={`${isFR ? 'Découvrir' : isDE ? 'Entdecken' : 'Discover'} ${product.name}`}
                         >
                           <ArrowRight className="w-5 h-5" />
                         </div>
@@ -638,22 +641,86 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C8AB8A]/20 text-[#C8AB8A] text-xs font-bold uppercase tracking-wider mb-3">
                 <Package className="w-4 h-4" />
-                {isFR ? 'Herboristerie & Totum' : 'Botanical Totum'}
+                {isFR ? 'Herboristerie & Totum' : isDE ? 'Bio-Kräuter & Totum' : 'Herbalism & Botanical Totum'}
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-white mb-2">
-                {isFR ? 'Kits de Plantes & Synergies Thérapeutiques' : 'Botanical Plant Kits & Therapeutic Synergies'}
+                {isFR
+                  ? 'Plantes Médicinales Bio & Synergies Botaniques'
+                  : isDE
+                  ? 'Bio-Heilpflanzen & Botanische Synergien'
+                  : 'Organic Medicinal Plants & Botanical Synergies'}
               </h2>
               <p className="text-sm text-white/70 max-w-2xl leading-relaxed">
                 {isFR 
-                  ? 'Mélanges certifiés de plantes médicinales entières, coupées et calibrées pour l’extraction séquentielle A/B. Qualité herboristerie, principes actifs préservés.' 
-                  : 'Certified medicinal botanical blends calibrated for A/B sequential extraction.'}
+                  ? 'Mélanges certifiés de plantes médicinales bio entières, coupées et calibrées pour l’extraction séquentielle A/B. Qualité herboristerie, principes actifs préservés.' 
+                  : isDE
+                  ? 'Zertifizierte Mischungen aus ganzen Bio-Heilpflanzen, speziell kalibriert für die sequentielle A/B-Extraktion. Kräuterfachqualität mit erhaltenem Wirkstoffspektrum.'
+                  : 'Certified organic medicinal plant blends cut and calibrated for A/B sequential extraction. Herbalist grade with active compounds preserved.'}
               </p>
             </div>
           </div>
         )}
 
+        {/* Produits d'appel — Démarrer dès 9,90 € */}
+        {!searchQuery && (
+          <div className="mb-10 bg-[#FAF8F5] border border-[#E7DFD3] rounded-3xl p-5 sm:p-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+              <div>
+                <div className="text-[10px] font-black uppercase tracking-widest text-botanik-orange">
+                  {isFR ? "Produits d'appel" : isDE ? "Einstiegsprodukte" : "Starter Essentials"}
+                </div>
+                <h3 className="text-base sm:text-lg font-bold text-botanik-green">
+                  {isFR ? "Commencez l'expérience Bloom dès 9,90 €" : isDE ? "Starten Sie mit Bloom ab 9,90 €" : "Start your Bloom experience from 9.90 €"}
+                </h3>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              <button
+                type="button"
+                onClick={() => handleNavigateDetail('kit-starter')}
+                className="p-4 rounded-2xl bg-white border border-[#E7DFD3] hover:border-botanik-orange text-left transition-all cursor-pointer space-y-1 shadow-2xs"
+              >
+                <div className="text-xs font-black text-botanik-orange">9,90 € / 12,90 €</div>
+                <div className="font-bold text-sm text-botanik-green">{isFR ? "Kits Plantes Bio" : isDE ? "Bio-Pflanzen-Kits" : "Organic Plant Kits"}</div>
+                <div className="text-[11px] text-botanik-green/60">{isFR ? "Sève, Nuit, Digestion, Articulaire, Hiver" : isDE ? "Saft, Nacht, Verdauung, Gelenke, Winter" : "Sap, Night, Digestion, Joint, Winter"}</div>
+              </button>
+              <button
+                type="button"
+                onClick={() => handleNavigateDetail('duo-argiles')}
+                className="p-4 rounded-2xl bg-white border border-[#E7DFD3] hover:border-botanik-orange text-left transition-all cursor-pointer space-y-1 shadow-2xs"
+              >
+                <div className="text-xs font-black text-botanik-orange">34,00 €</div>
+                <div className="font-bold text-sm text-botanik-green">Duo Argiles KlinoMont®</div>
+                <div className="text-[11px] text-botanik-green/60">{isFR ? "Zéolithe-Bentonite micronisée 6µm" : isDE ? "Mikronisiertes Zeolith-Bentonit 6µm" : "Micronized Zeolite-Bentonite 6µm"}</div>
+              </button>
+              <button
+                type="button"
+                onClick={() => handleNavigateDetail('bundle-apothicaire')}
+                className="p-4 rounded-2xl bg-white border border-[#E7DFD3] hover:border-botanik-orange text-left transition-all cursor-pointer space-y-1 shadow-2xs"
+              >
+                <div className="text-xs font-black text-botanik-orange">49,00 €</div>
+                <div className="font-bold text-sm text-botanik-green">{isFR ? "Pack Herbier Complet" : isDE ? "Vollständiges Herbarium" : "Complete Herbarium Pack"}</div>
+                <div className="text-[11px] text-botanik-green/60">{isFR ? "4 mélanges + Duo Argiles KlinoMont®" : isDE ? "4 Mischungen + KlinoMont® Duo" : "4 blends + KlinoMont® Clay Duo"}</div>
+              </button>
+              <button
+                type="button"
+                onClick={() => handleNavigateDetail('abonnements-numeriques')}
+                className="p-4 rounded-2xl bg-white border border-[#E7DFD3] hover:border-botanik-orange text-left transition-all cursor-pointer space-y-1 shadow-2xs"
+              >
+                <div className="text-xs font-black text-botanik-orange">9,00 €/mois</div>
+                <div className="font-bold text-sm text-botanik-green">{isFR ? "Abonnement Numérique Académie" : isDE ? "Akademie Digital-Abo" : "Academy Digital Membership"}</div>
+                <div className="text-[11px] text-botanik-green/60">{isFR ? "+100 recettes & protocoles guidés" : isDE ? "+100 Rezepte & Protokolle" : "+100 recipes & guided protocols"}</div>
+              </button>
+            </div>
+          </div>
+        )}
+
         <h3 className="text-xs md:text-sm font-bold uppercase tracking-widest text-botanik-green/40 mb-4 md:mb-6">
-          {searchQuery ? `${t.grid.results_for} "${searchQuery}"` : (currentView === 'boutique-kits' || currentView === 'kits-botaniques') ? (isFR ? 'Tous les kits de plantes' : 'All plant kits') : t.grid.title}
+          {searchQuery
+            ? `${t.grid.results_for} "${searchQuery}"`
+            : (currentView === 'boutique-kits' || currentView === 'kits-botaniques')
+            ? (isFR ? 'Toutes nos plantes médicinales bio' : isDE ? 'Alle Bio-Heilpflanzen-Kits' : 'All organic medicinal plant kits')
+            : t.grid.title}
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
           {filteredProducts.filter(p => (!p.featured && !(p as any).isBundle && !(p as any).isSpecial) || searchQuery).map((product) => {
@@ -672,7 +739,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                 <div className="relative w-full aspect-square bg-[#F9F6F0] flex items-center justify-center overflow-hidden rounded-t-2xl">
                   <OptimizedImage 
                     src={product.image} 
-                    alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Machine à infusion botanique, tisanes et remèdes naturels`} 
+                    alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Extracteur botanique et soins végétaux`} 
                     className="w-full h-full object-contain p-4 transform group-hover:scale-105 transition-transform duration-500"
                   />
                   <button 
@@ -687,7 +754,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                       }
                     }}
                     className="absolute bottom-3 right-3 w-10 h-10 sm:w-11 sm:h-11 bg-[#D97706] hover:bg-[#B45309] text-white rounded-xl flex items-center justify-center shadow-lg shadow-orange-900/20 transition-all cursor-pointer"
-                    aria-label={product.id === 'abonnements-numeriques' ? (isFR ? 'Découvrir les abonnements' : 'Discover subscriptions') : `${lang === 'fr' ? 'Ajouter au panier' : 'Add to cart'} ${product.name}`}
+                    aria-label={product.id === 'abonnements-numeriques' ? (isFR ? 'Découvrir les abonnements' : isDE ? 'Abonnements entdecken' : 'Discover subscriptions') : `${isFR ? 'Ajouter au panier' : isDE ? 'In den Warenkorb' : 'Add to cart'} ${product.name}`}
                   >
                     {product.id === 'abonnements-numeriques' ? (
                       <Star className="w-4 h-4 sm:w-5 sm:h-5 text-white fill-white" />
@@ -742,12 +809,14 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
       <div className="bg-[#F9F6F0] border border-[#E7DFD3] rounded-2xl p-6 mb-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <h3 className="text-sm font-bold text-botanik-green">
-            {isFR ? "Guides & Ressources Bloom by BotaniK" : "Bloom by BotaniK Guides & Resources"}
+            {isFR ? "Guides & Ressources Bloom by BotaniK" : isDE ? "Leitfäden & Ressourcen Bloom by BotaniK" : "Bloom by BotaniK Guides & Resources"}
           </h3>
           <p className="text-xs text-botanik-green/70 mt-1">
             {isFR
               ? "Maîtrisez la BloomLab® et le choix de vos solvants avant de composer vos kits de plantes."
-              : "Explore BloomLab®, our solvents guide, and extraction protocols."}
+              : isDE
+              ? "Meistern Sie die BloomLab® und die Wahl der Lösungsmittel, bevor Sie Ihre Pflanzenkits zusammenstellen."
+              : "Explore BloomLab®, our solvents guide, and extraction protocols before choosing your plant kits."}
           </p>
         </div>
         <div className="flex flex-wrap gap-2.5 text-xs font-bold">
@@ -763,21 +832,21 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
             onClick={(e) => { if (onNavigate && !e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); onNavigate('guide-solvants'); } }}
             className="px-3.5 py-2 rounded-xl bg-white border border-[#E7DFD3] text-botanik-green hover:border-botanik-orange transition-colors"
           >
-            {isFR ? "Guide des Solvants" : "Solvents Guide"}
+            {isFR ? "Guide des Solvants" : isDE ? "Lösungsmittel-Leitfaden" : "Solvents Guide"}
           </a>
           <a
             href="/extraction-botanique/"
             onClick={(e) => { if (onNavigate && !e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); onNavigate('pillar-extraction'); } }}
             className="px-3.5 py-2 rounded-xl bg-white border border-[#E7DFD3] text-botanik-green hover:border-botanik-orange transition-colors"
           >
-            {isFR ? "Extraction A/B" : "A/B Extraction"}
+            {isFR ? "Extraction A/B" : isDE ? "A/B-Extraktion" : "A/B Extraction"}
           </a>
           <a
             href="/"
             onClick={(e) => { if (onNavigate && !e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); onNavigate('indexbis'); } }}
             className="px-3.5 py-2 rounded-xl bg-white border border-[#E7DFD3] text-botanik-green hover:border-botanik-orange transition-colors"
           >
-            {isFR ? "Accueil Bloom" : "Home"}
+            {isFR ? "Accueil Bloom" : isDE ? "Bloom Startseite" : "Home"}
           </a>
         </div>
       </div>
@@ -785,47 +854,55 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
       {/* Questions Fréquentes Boutique */}
       <section aria-label="FAQ Boutique Bloom by BotaniK" className="bg-white border border-[#E7DFD3] rounded-2xl p-6 md:p-8 shadow-sm space-y-4">
         <h2 className="text-xl md:text-2xl font-bold text-botanik-green">
-          {isFR ? "Questions fréquentes — Boutique & Kits Bloom by BotaniK" : "Frequently Asked Questions — Bloom by BotaniK Shop"}
+          {isFR ? "Questions fréquentes — Boutique & Kits Bloom by BotaniK" : isDE ? "Häufige Fragen — Bloom by BotaniK Shop & Kits" : "Frequently Asked Questions — Bloom by BotaniK Shop"}
         </h2>
         <div className="space-y-3 text-sm text-botanik-green/85">
           <details className="rounded-xl border border-[#E7DFD3] p-4 bg-[#FAF8F5]" open>
             <summary className="font-bold text-botanik-green cursor-pointer">
-              {isFR ? "Que contient l'offre Black Friday BloomLab® Solo à 229 € ?" : "What is included in the BloomLab® Solo offer at 229 €?"}
+              {isFR ? "Que contient l'offre BloomLab® Solo à 229 € ?" : isDE ? "Was enthält das Angebot BloomLab® Solo für 229 €?" : "What is included in the BloomLab® Solo offer at 229 €?"}
             </summary>
             <p className="mt-2 text-xs sm:text-sm leading-relaxed">
               {isFR
-                ? "La BloomLab® Solo inclut l'extracteur en acier inoxydable 304 à thermorégulation précise, le programme auto-nettoyant 5 minutes ainsi que 5 accessoires offerts (flacon pipette verre opaque 100 ml, pot crème 50 g, distributeur cuir chevelu, sac de filtration 90 microns et gant silicone)."
-                : "BloomLab® Solo includes the precision 304 stainless steel extractor, 5-minute self-clean program, and 5 complimentary accessories."}
+                ? "La BloomLab® Solo inclut la machine BloomLab® Inox 304, le panier filtrant micrométrique, le guide digital de 100 recettes, la garantie 1 an, le programme auto-nettoyant 5 minutes ainsi que 5 accessoires offerts."
+                : isDE
+                ? "Die BloomLab® Solo umfasst die BloomLab® 304-Edelstahl-Maschine, den mikrometrischen Filterkorb, den digitalen 100-Rezepte-Leitfaden, 1 Jahr Garantie, die 5-Minuten-Selbstreinigung sowie 5 Gratis-Zubehörteile."
+                : "BloomLab® Solo includes the BloomLab® 304 stainless steel machine, micrometric filter basket, 100-recipe digital guide, 1-year warranty, 5-minute self-clean program, and 5 complimentary accessories."}
             </p>
           </details>
           <details className="rounded-xl border border-[#E7DFD3] p-4 bg-[#FAF8F5]">
             <summary className="font-bold text-botanik-green cursor-pointer">
-              {isFR ? "Quelle différence entre BloomLab® Solo et le Pack Signature ?" : "What is the difference between BloomLab® Solo and Pack Signature?"}
+              {isFR ? "Quelle différence entre BloomLab® Solo et le Pack Signature ?" : isDE ? "Worin liegt der Unterschied zwischen BloomLab® Solo und dem Pack Signature?" : "What is the difference between BloomLab® Solo and Pack Signature?"}
             </summary>
             <p className="mt-2 text-xs sm:text-sm leading-relaxed">
               {isFR
-                ? "Le Pack Signature associe l'extracteur BloomLab® au Trio Apothicaire de plantes médicinales bio, au Duo Argiles Zéolithe-Bentonite et à 1 mois d'accès complet à la Bloom Academy."
-                : "The Pack Signature pairs BloomLab® with three organic herbal kits, the Clay Duo, and 1 month of full Bloom Academy access."}
+                ? "Le Pack Signature (289 € au lieu de 349 €) associe la machine BloomLab® Inox 304 au Kit accessoires apothicaire, à L'Herbier Complet (4 mélanges de plantes), au Duo Argiles KlinoMont® (Zéolithe-Bentonite) et à 3 mois d'accès Premium à l'Académie."
+                : isDE
+                ? "Das Pack Signature (289 € statt 349 €) kombiniert die BloomLab® 304-Edelstahl-Maschine mit dem Apotheker-Zubehörset, dem Vollständigen Herbarium (4 Mischungen), dem KlinoMont® Tonerde-Duo (Zeolith-Bentonit) und 3 Monaten Premium-Zugang zur Akademie."
+                : "Pack Signature (289 € instead of 349 €) pairs the BloomLab® 304 stainless steel machine with the apothecary kit, Complete Herbarium (4 plant blends), KlinoMont® Clay Duo (Zeolite-Bentonite), and 3 months Premium Academy access."}
             </p>
           </details>
           <details className="rounded-xl border border-[#E7DFD3] p-4 bg-[#FAF8F5]">
             <summary className="font-bold text-botanik-green cursor-pointer">
-              {isFR ? "Les kits de plantes sont-ils utilisables sans matériel supplémentaire ?" : "Are plant kits ready to use with BloomLab®?"}
+              {isFR ? "Les kits de plantes sont-ils utilisables sans matériel supplémentaire ?" : isDE ? "Sind die Pflanzenkits ohne weiteres Zubehör verwendbar?" : "Are the plant kits ready to use with BloomLab®?"}
             </summary>
             <p className="mt-2 text-xs sm:text-sm leading-relaxed">
               {isFR
                 ? "Oui, nos kits de plantes sèches tracées sont calibrés en granulométrie pour l'extracteur BloomLab® et s'adaptent aux extractions aqueuses, huileuses ou glycérinées selon les fiches protocoles."
-                : "Yes, every botanical pouch is calibrated for BloomLab® aqueous, oil, or glycerin extractions."}
+                : isDE
+                ? "Ja, unsere rückverfolgbaren Trockenpflanzen-Kits sind in ihrer Körnung exakt auf die BloomLab® abgestimmt und eignen sich je nach Protokoll für wässrige, ölige oder glyzerinbasierte Extraktionen."
+                : "Yes, every traceable dried botanical blend is calibrated in particle size for BloomLab® and adapts to aqueous, oil, or glycerin extractions according to protocol sheets."}
             </p>
           </details>
           <details className="rounded-xl border border-[#E7DFD3] p-4 bg-[#FAF8F5]">
             <summary className="font-bold text-botanik-green cursor-pointer">
-              {isFR ? "Quels sont les délais d'expédition et garanties Bloom by BotaniK ?" : "What are the shipping times and warranties?"}
+              {isFR ? "Quels sont les délais d'expédition et garanties Bloom by BotaniK ?" : isDE ? "Wie sind Lieferzeiten und Garantien bei Bloom by BotaniK?" : "What are the shipping times and warranties?"}
             </summary>
             <p className="mt-2 text-xs sm:text-sm leading-relaxed">
               {isFR
                 ? "Expédition depuis la France sous 24 à 48 heures ouvrées avec suivi Colissimo ou Point Relais, et droit de rétractation légal de 14 jours."
-                : "Dispatched from France within 24–48 business hours with tracked delivery."}
+                : isDE
+                ? "Versand aus Frankreich innerhalb von 24 bis 48 Werktagsstunden mit Sendungsverfolgung sowie gesetzliches 14-tägiges Widerrufsrecht."
+                : "Dispatched from France within 24–48 business hours with tracked delivery and a 14-day statutory return window."}
             </p>
           </details>
         </div>
