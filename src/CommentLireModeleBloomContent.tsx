@@ -97,6 +97,15 @@ export default function CommentLireModeleBloomContent({ onNavigate, lang = 'fr' 
       sec5Intro: "Commencez par ce guide, puis choisissez un cours selon la question que vous souhaitez comprendre. Les 7 Terrains présentent une grille d'apprentissage du corps. Les 9 Axes décrivent une version historique des processus étudiés par Bloom. Le dossier sur l'insuline complète cette réflexion.",
       sec6Title: "Ce que ce modèle ne permet pas",
       sec6Desc: "Cette grille ne permet pas d'identifier à distance une maladie, d'interpréter un bilan biologique personnel, de choisir une dose ou de remplacer un suivi médical. Si une question concerne vos symptômes, un traitement, une grossesse, une maladie ou un examen biologique, demandez conseil à un professionnel de santé qualifié.",
+      charteBadge: "Charte de Recherche Bloom",
+      charteTitle: "Charte de recherche Bloom : distinguer histoire, hypothèse et preuve",
+      charteIntro: "Bloom étudie les savoirs des plantes depuis les sources anciennes jusqu'aux publications contemporaines (traditions orales, pharmacopées, histoire des métiers, chimie analytique, biologie, pharmacologie et essais cliniques) sans confondre ces registres.",
+      charteRules: [
+        "Aucun sujet n'est écarté du seul fait qu'il est ancien, controversé ou minoritaire ; à l'inverse, aucune hypothèse ni aucun usage traditionnel n'est présenté comme une preuve clinique.",
+        "Chaque fiche distingue explicitement : (1) le savoir traditionnel ou historique, (2) la composition phytochimique documentée, (3) les essais précliniques in vitro / animaux, (4) les études chez l'humain et leurs limites de dose ou d'extrait, (5) les paramètres de préparation domestique.",
+        "Une corrélation biologique ou une étude sur extrait standardisé ne prouve ni l'équivalence d'une préparation maison ni un bénéfice médical garanti. Bloom s'interdit tout diagnostic, toute promesse de guérison et toute incitation à modifier un traitement.",
+        "Les données de sécurité (allergies, interactions, grossesse, allaitement, enfants, pathologies, limites d'appareillage) priment sur toute hypothèse exploratoire."
+      ],
       footerQuote: "L'objectif de Bloom Académie est de vous aider à comprendre les questions que nous étudions, la méthode utilisée et ce qui reste à démontrer. Apprendre à lire une fiche, c'est aussi apprendre à reconnaître ses limites.",
       btnExploreCourses: "Explorer les cours publiés",
       btnDiscoverHerbarium: "Découvrir l'Herbier"
@@ -154,6 +163,15 @@ export default function CommentLireModeleBloomContent({ onNavigate, lang = 'fr' 
       sec5Intro: "Start with this guide, then pick a course aligned with the physiological question you wish to explore. The 7 Terrains outline our learning framework. The 9 Historical Axes trace our original systems map. The Insulin Dossier deepens cellular bioenergetics.",
       sec6Title: "What this framework cannot do",
       sec6Desc: "This framework cannot diagnose illness remotely, evaluate personal lab results, calculate medical dosages, or substitute for licensed medical supervision. Botanicals possess active constituents and potential interactions with prescription drugs. Always consult a qualified physician for symptoms or medical concerns.",
+      charteBadge: "Bloom Research Charter",
+      charteTitle: "Bloom Research Charter: distinguishing history, hypothesis, and clinical proof",
+      charteIntro: "Bloom examines botanical knowledge from ancient pharmacopeias to contemporary research (oral traditions, historical practices, phytochemistry, biology, pharmacology, and clinical trials) without conflating these distinct levels of evidence.",
+      charteRules: [
+        "No topic is dismissed merely because it is ancient, debated, or minority; conversely, no hypothesis or traditional use is ever presented as clinical proof or commercial guarantee.",
+        "Every dossier distinguishes: (1) historical or traditional usage, (2) documented phytochemistry, (3) preclinical in vitro or animal models, (4) human studies with their exact extract and dosage boundaries, and (5) domestic preparation parameters.",
+        "A mechanistic pathway or trial on a standardized extract does not prove equivalence for a homemade preparation or guarantee a clinical outcome. Bloom never diagnoses, promises cures, or advises altering prescribed treatments.",
+        "Safety boundaries (allergies, drug interactions, pregnancy, breastfeeding, children, medical conditions, and hardware limits) always take precedence over exploratory hypotheses."
+      ],
       footerQuote: "The purpose of Bloom Academy is to help you comprehend the biological questions we explore, our extraction methodology, and what remains to be proven. Learning to read a monograph is learning to respect its boundaries.",
       btnExploreCourses: "Explore published courses",
       btnDiscoverHerbarium: "Discover the Herbarium"
@@ -211,6 +229,15 @@ export default function CommentLireModeleBloomContent({ onNavigate, lang = 'fr' 
       sec5Intro: "Beginnen Sie mit diesem Leitfaden und wählen Sie dann ein Modul nach Ihren Fragen. Die 7 Terrains bieten ein integratives Modell. Die 9 historischen Achsen beschreiben unsere ursprüngliche Matrix. Das Insulin-Dossier vertieft den Energiestoffwechsel.",
       sec6Title: "Was dieses Modell nicht leisten kann",
       sec6Desc: "Dieses Modell ersetzt keine ärztliche Diagnose, bewertet keine persönlichen Laborwerte und bestimmt keine individuellen Therapien. Pflanzenextrakte besitzen wirksame Inhaltsstoffe und mögliche Wechselwirkungen mit Medikamenten. Konsultieren Sie bei Beschwerden stets einen qualifizierten Arzt.",
+      charteBadge: "Bloom Forschungscharta",
+      charteTitle: "Bloom Forschungscharta: Geschichte, Hypothese und klinischen Nachweis trennen",
+      charteIntro: "Bloom untersucht Pflanzenwissen von historischen Quellen bis zur aktuellen Forschung (Überlieferungen, Arzneibücher, Phytochemie, Biologie, Pharmakologie und Humanstudien), ohne diese Evidenzstufen zu vermischen.",
+      charteRules: [
+        "Kein Thema wird allein deshalb ausgeschlossen, weil es alt, umstritten oder wenig beachtet ist; umgekehrt wird keine Hypothese oder traditionelle Anwendung als klinischer Beweis oder Wirkversprechen dargestellt.",
+        "Jedes Dossier trennt klar: (1) historische/traditionelle Nutzung, (2) dokumentierte Phytochemie, (3) präklinische In-vitro-/Tiermodelle, (4) Humanstudien samt Extrakt- und Dosisgrenzen sowie (5) häusliche Zubereitungsparameter.",
+        "Ein Mechanismus oder eine Studie mit standardisiertem Extrakt beweist weder Gleichwertigkeit für Hauszubereitungen noch einen garantierten Nutzen. Bloom stellt keine Diagnosen und rät niemals vom Absetzen ärztlicher Therapien ab.",
+        "Sicherheitsgrenzen (Allergien, Wechselwirkungen, Schwangerschaft, Stillzeit, Kinder, Gerätegrenzen) haben stets Vorrang vor explorativen Hypothesen."
+      ],
       footerQuote: "Das Ziel der Bloom Akademie ist es, biologische Fragen, Extraktionsmethoden und das noch zu Beweisende verständlich zu machen. Ein Profil zu verstehen heißt auch, seine Grenzen zu respektieren.",
       btnExploreCourses: "Veröffentlichte Kurse erkunden",
       btnDiscoverHerbarium: "Das Herbarium entdecken"
@@ -676,6 +703,28 @@ export default function CommentLireModeleBloomContent({ onNavigate, lang = 'fr' 
               </p>
             </button>
           </div>
+        </section>
+
+        {/* CHARTE DE RECHERCHE BLOOM */}
+        <section id="charte-recherche-bloom" aria-labelledby="section-charte" className="scroll-mt-24 p-6 sm:p-8 rounded-3xl bg-[#0F261E] text-white border border-[#C8AB8A]/40 shadow-sm space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#C8AB8A] text-[10px] font-black uppercase tracking-widest">
+            <FileCheck className="w-3.5 h-3.5" />
+            <span>{cur.charteBadge}</span>
+          </div>
+          <h2 id="section-charte" className="text-xl sm:text-2xl font-black tracking-tight text-white">
+            {cur.charteTitle}
+          </h2>
+          <p className="text-xs sm:text-sm text-[#FAF7F2]/85 leading-relaxed">
+            {cur.charteIntro}
+          </p>
+          <ul className="space-y-2.5 text-xs sm:text-sm text-[#FAF7F2]/85 leading-relaxed">
+            {cur.charteRules.map((rule: string, idx: number) => (
+              <li key={idx} className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
+                <span>{rule}</span>
+              </li>
+            ))}
+          </ul>
         </section>
 
         {/* SECTION 6: CE QUE CE MODÈLE NE PERMET PAS */}

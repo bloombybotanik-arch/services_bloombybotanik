@@ -44,8 +44,8 @@ export const blogPosts: BlogPost[] = [
       de: "Botanischer Infuser vs. klassische Teekanne: Warum Ihr Kräutertee nicht funktioniert"
     },
     excerpt: {
-      fr: "Découvrez pourquoi verser de l'eau bouillante dans une théière détruit jusqu'à 80% des principes actifs de vos plantes, et comment un infuseur botanique réinvente l'efficacité de l'infusion végétale.",
-      en: "Discover why pouring boiling water into a teapot destroys up to 80% of active plant molecules, and how a botanical infuser reinvents extraction efficiency.",
+      fr: "Découvrez pourquoi verser de l'eau bouillante dans une théière dégrade une part importante des composés volatils et thermolabiles de vos plantes, et comment un infuseur botanique réinvente l'efficacité de l'infusion végétale.",
+      en: "Discover why pouring boiling water into a teapot degrades a substantial share of volatile and heat-sensitive plant compounds, and how a botanical infuser reinvents extraction efficiency.",
       de: "Erfahren Sie, warum kochendes Wasser bis zu 80% der Wirkstoffe zerstört und wie ein botanischer Infuser die Wirksamkeit revolutioniert."
     },
     content: {
@@ -68,7 +68,7 @@ export const blogPosts: BlogPost[] = [
 <ul>
   <li><strong>Thermorégulation stable au degré près :</strong> L'appareil maintient la température idéale selon la matrice végétale (45°C pour les fleurs tendres, 55°C pour les feuilles riches en huiles essentielles, 60°C pour les écorces), évitant tout choc thermique.</li>
   <li><strong>Cinétique vortex continue :</strong> Le brassage magnétique génère un vortex doux qui renouvelle en continu le solvant contre les parois végétales et accélère le transfert moléculaire sans broyer la plante.</li>
-  <li><strong>Chambre close en acier inoxydable chirurgical 304 :</strong> Les vapeurs aromatiques condensent sur le couvercle étanche et retombent dans la préparation. Zéro perte de principes volatils, zéro oxydation.</li>
+  <li><strong>Chambre close en acier inoxydable 304 alimentaire :</strong> Les vapeurs aromatiques condensent sur le couvercle étanche et retombent dans la préparation. Zéro perte de principes volatils, zéro oxydation.</li>
 </ul>
 
 <h3>4. Bilan comparatif : rendement thérapeutique</h3>
@@ -77,11 +77,11 @@ export const blogPosts: BlogPost[] = [
 <p>Pour explorer les détails techniques des solvants et des courbes de chauffe, consultez notre <a href="/infuseur-botanique">page dédiée à l'infuseur botanique</a> et notre <a href="/extraction-botanique">guide complet de l'extraction botanique</a>.</p>
       `,
       en: `
-<p>Every day, millions of people brew tea by pouring boiling water over plants. Yet, boiling water destroys up to 80% of volatile and thermolabile active compounds. Discover how a precision botanical infuser optimizes thermal stability, vortex kinetics, and closed-chamber retention to unleash the plant's true healing potential.</p>
+<p>Every day, millions of people brew tea by pouring boiling water over plants. Yet, boiling water degrades a substantial share of volatile and heat-sensitive active compounds. Discover how a precision botanical infuser optimizes thermal stability, vortex kinetics, and closed-chamber retention to unleash the plant's true healing potential.</p>
 <p>Read our full guide on <a href="/infuseur-botanique">botanical infusers</a> and <a href="/extraction-botanique">botanical extraction methods</a>.</p>
       `,
       de: `
-<p>Täglich gießen Millionen Menschen kochendes Wasser über Kräutertees. Kochendes Wasser zerstört jedoch bis zu 80% der empfindlichen Wirkstoffe. Entdecken Sie, wie ein Präzisions-Infuser mit geschlossener Kammer und kontrollierter Temperatur das volle Potenzial der Heilpflanzen freisetzt.</p>
+<p>Täglich gießen Millionen Menschen kochendes Wasser über Kräutertees. Kochendes Wasser baut jedoch einen großen Teil der empfindlichen Wirkstoffe ab. Entdecken Sie, wie ein Präzisions-Infuser mit geschlossener Kammer und kontrollierter Temperatur das volle Potenzial der Heilpflanzen freisetzt.</p>
 <p>Erfahren Sie mehr auf unserer Seite über den <a href="/infuseur-botanique">botanischen Infuser</a>.</p>
       `
     }
@@ -137,7 +137,7 @@ export const blogPosts: BlogPost[] = [
 </ul>
 
 <h3>3. Le massacre de l'ébullition : pourquoi 100°C détruit le totum</h3>
-<p>À l'opposé, la décoction prolongée à 100°C fracture certes les tissus durs (racines, écorces), mais elle détruit de 60% à 95% des principes thermolabiles. Le totum est décapité : vous n'obtenez que les tanins les plus lourds et les molécules les plus résistantes, souvent dégradées en sous-produits d'oxydation.</p>
+<p>À l'opposé, la décoction prolongée à 100°C fracture certes les tissus durs (racines, écorces), mais elle altère significativement de nombreux constituants thermolabiles. Le totum est décapité : vous n'obtenez que les tanins les plus lourds et les molécules les plus résistantes, souvent dégradées en sous-produits d'oxydation.</p>
 
 <h3>4. La voie du milieu : l'extraction thermo-cinétique contrôlée</h3>
 <p>Pour extraire l'intégralité du totum végétal sans dénaturation, la science moderne a validé une fenêtre thérapeutique idéale : <strong>entre 45°C et 60°C sous agitation vortex continue</strong>.</p>
@@ -203,7 +203,7 @@ export const blogPosts: BlogPost[] = [
 <p>Le remède de grand-mère par excellence pour les maux de ventre et le sommeil agité des enfants. La science a identifié l'<em>apigénine</em>, un flavonoïde qui se lie aux mêmes récepteurs GABA que les anxiolytiques, ainsi que le <em>chamazulène</em> anti-inflammatoire. Pour préserver ces composés fragiles, l'extraction ne doit jamais dépasser 45°C.</p>
 
 <h3>4. Le Romarin (Salvia rosmarinus) : le protecteur hépatique et cérébral</h3>
-<p>Le dicton "le romarin guérit de tout mal de foie" est validé par la découverte de l'<em>acide rosmarinique</em> et du <em>carnosol</em>. Ces molécules stimulent la régénération des hépatocytes, activent la sécrétion biliaire et protègent les neurones contre le stress oxydatif. C'est le pilier d'une cure de soutien saisonnier.</p>
+<p>L'usage traditionnel ancien du romarin sur la sphère hépatobiliaire est aujourd'hui éclairé par l'étude de l'<em>acide rosmarinique</em> et du <em>carnosol</em> (sans valoir promesse de guérison hépatique). Ces composés sont étudiés pour leur rôle dans le soutien des hépatocytes, activent la sécrétion biliaire et protègent les neurones contre le stress oxydatif. C'est le pilier d'une cure de soutien saisonnier.</p>
 
 <h3>5. La Mauve sylvestre (Malva sylvestris) : le pansement végétal doux</h3>
 <p>Recommandée pour calmer la toux sèche et les irritations cutanées, la mauve contient des polysaccharides mucilagineux capables de former un film protecteur hydratant. Une extraction à chaleur très douce (40°C à 45°C) permet de libérer ces mucilages sans les coaguler.</p>
@@ -248,7 +248,7 @@ export const blogPosts: BlogPost[] = [
       de: "Wie man Kräuteröle und Tinkturen zu Hause selbst herstellt"
     },
     excerpt: {
-      fr: "Ne ratez plus jamais un macérat huileux ou une teinture hydroalcoolique. Découvrez les règles d'or des solvants, des températures et de la cinétique pour créer vos remèdes maison.",
+      fr: "Maîtrisez la préparation d'un macérat huileux ou glycériné (protocoles à l'alcool chauffé suspendus en cuve électrique). Découvrez les règles d'or des solvants, des températures et de la cinétique pour créer vos remèdes maison.",
       en: "Never ruin an infused oil or tincture again. Master solvent polarity, 45°C temperature control, and closed kinetic extraction for pristine home herbal preparations.",
       de: "Meistern Sie die Kunst der Ölauszüge und Tinkturen: Lösungsmittel, 45°C Temperaturkontrolle und anaerobe Gefäße."
     },
@@ -263,7 +263,7 @@ export const blogPosts: BlogPost[] = [
   <li><strong>La méthode de précision BloomLab (45°C - 50°C) :</strong> En plaçant les plantes sèches dans une huile stable sous vortex fermé à 45°C pendant 90 minutes, on extrait l'intégralité des principes liposolubles sans aucune oxydation.</li>
 </ul>
 
-<h3>2. Les teintures-mères et extraits hydroalcooliques : le solvant universel</h3>
+<h3>2. Les teintures-mères (macération froide hors appareil électrique uniquement)</h3>
 <p>L'alcool éthylique mélangé à l'eau purifiée forme le solvant amphiphile par excellence : l'eau extrait les sucres, tanins et flavonoïdes hydrosolubles, tandis que l'alcool extrait les alcaloïdes, flavones et principes amers.</p>
 <ol>
   <li><strong>Le titre alcoolique adapté :</strong> 
@@ -278,9 +278,9 @@ export const blogPosts: BlogPost[] = [
 
 <h3>3. Règles d'hygiène et conservation</h3>
 <ul>
-  <li><strong>Matériel inerte :</strong> Utilisez exclusivement de l'acier inoxydable de qualité chirurgicale 304 ou du verre borosilicate ambré. Évitez absolument les plastiques qui relarguent des phtalates dans l'alcool ou l'huile chaude.</li>
+  <li><strong>Matériel inerte :</strong> Utilisez exclusivement de l'acier inoxydable 304 de qualité alimentaire ou du verre borosilicate ambré. Évitez absolument les plastiques qui relarguent des phtalates dans l'alcool ou l'huile chaude.</li>
   <li><strong>Plantes parfaitement déshydratées :</strong> L'eau résiduelle est la première cause de fermentation indésirable dans les huiles. Utilisez des plantes à moins de 8% d'humidité.</li>
-  <li><strong>Flaconnage ambré :</strong> Conservez vos teintures jusqu'à 3 ans et vos huiles 12 à 18 mois, à l'abri de la lumière et de la chaleur.</li>
+  <li><strong>Flaconnage ambré :</strong> Conservez vos extraits dans des flacons ambrés propres à l'abri de la lumière et de la chaleur (les préparations maison sans analyse ne garantissent pas une durée fixe chiffrée), à l'abri de la lumière et de la chaleur.</li>
 </ul>
 
 <p>Retrouvez toutes les recettes pas à pas dans notre section <a href="/cosmetique-botanique">cosmétique botanique</a> et notre dossier sur les <a href="/huile-infusee">huiles infusées de précision</a>.</p>
@@ -492,7 +492,7 @@ export const blogPosts: BlogPost[] = [
     },
     content: {
       fr: `
-<p>L'<strong>Ashwagandha (Withania somnifera)</strong> est le pilier de la pharmacopée ayurvédique pour rétablir la paix intérieure. Les essais cliniques contemporains confirment sa capacité unique à abaisser le cortisol circulatoire de 25% à 30% après 60 jours de cure régulière.</p>
+<p>L'<strong>Ashwagandha (Withania somnifera)</strong> est le pilier de la pharmacopée ayurvédique pour rétablir la paix intérieure. Plusieurs études contemporaines explorent sa capacité unique à abaisser le cortisol circulatoire de 25% à 30% après 60 jours de cure régulière.</p>
 
 <h3>1. Le mode d'action sur les récepteurs GABA</h3>
 <p>Les withanolides agissent comme des modulateurs allostériques positifs des récepteurs GABA-A. Cela signifie qu'ils renforcent le frein naturel du cerveau sans causer l'anesthésie chimique des somnifères conventionnels.</p>
@@ -520,7 +520,7 @@ export const blogPosts: BlogPost[] = [
       de: "5 Pflanzen für tiefen Schlaf (Wissenschaftliche Beweise) | Bloom"
     },
     metaDescription: {
-      fr: "Retrouvez un sommeil profond et réparateur sans somnifère : les 5 plantes médicinales validées par la science (Valériane, Passiflore, Mélisse, Eschscholtzia, Camomille).",
+      fr: "Retrouvez un sommeil profond et réparateur sans somnifère : les 5 plantes médicinales documentées en phytothérapie (Valériane, Passiflore, Mélisse, Eschscholtzia, Camomille).",
       en: "Restore deep, restorative sleep without sleeping pills: 5 science-backed medicinal plants.",
       de: "Tiefen und erholsamen Schlaf ohne Schlaftabletten wiederfinden: 5 wissenschaftlich geprüfte Pflanzen."
     },

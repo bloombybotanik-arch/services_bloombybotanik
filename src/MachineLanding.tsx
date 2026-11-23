@@ -68,10 +68,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
     name: 'BloomLab®',
     description:
       lang === 'fr'
-        ? "Extracteur botanique de précision en acier inoxydable 304 pour cosmétique et cuisine maison. Cuve 100 % Inox 304 alimentaire, 6 programmes automatisés (0 à 121 °C), brassage doux sans broyage, manuel complet et 100 recettes exclusives en français. Garantie 1 an."
+        ? "Extracteur botanique en acier inoxydable 304 pour cosmétique et cuisine maison. Cuve Inox 304 alimentaire, 6 programmes automatisés (0 à 121 °C, spécification nominale ±0,5 °C), brassage doux sans broyage, manuel complet et 100 recettes en français. Garantie légale 2 ans (UE) + commerciale 1 an."
         : lang === 'de'
-        ? 'Botanischer Präzisionsextraktor aus Edelstahl 304 für Naturkosmetik und Küche. 6 automatische Programme (0–121 °C), sanftes Rühren, Handbuch und 100 Rezepte. 1 Jahr Garantie.'
-        : '304 stainless steel precision botanical extractor for homemade cosmetics and culinary creations. 6 automated programs (0–121°C), gentle stirring, complete manual and 100 recipes. 1-year warranty.',
+        ? 'Botanischer Extraktor aus Edelstahl 304 für Naturkosmetik und Küche. 6 automatische Programme (0–121 °C, Nennwert ±0,5 °C), sanftes Rühren, Handbuch und 100 Rezepte. 2 Jahre gesetzl. Gewährleistung (EU) + 1 Jahr Garantie.'
+        : '304 stainless steel botanical extractor for homemade cosmetics and culinary creations. 6 automated programs (0–121°C, nominal ±0.5°C), gentle stirring, complete manual and 100 recipes. 2-year EU legal warranty + 1-year commercial warranty.',
     image: [
       'https://bloombybotanik.com/img/produit/bloomlab-face-1200x1200.jpg',
       'https://bloombybotanik.com/img/produit/bloomlab-3quarts-1200x1200.jpg',
@@ -94,13 +94,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         name: 'Bloom by BotaniK',
       },
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.3',
-      reviewCount: '7',
-      bestRating: '5',
-      worstRating: '1',
-    },
+    /* schema.org AggregateRating omis : avis externes hébergés sur Amazon.fr */
   };
 
   const faqSchema = {
@@ -126,10 +120,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
   const bloomlabSeoDescription =
     lang === 'fr'
-      ? 'Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie 1 an, manuel complet en français et 100 recettes incluses.'
+      ? 'Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie légale 2 ans (UE) + commerciale 1 an, manuel complet en français et 100 recettes.'
       : lang === 'de'
-      ? 'Bereiten Sie Ölmazerate, Balsame und Kräuterauszüge ohne Bitterkeit zu. 1 Jahr Garantie, Handbuch und 100 Rezepte inklusive.'
-      : 'Prepare oil macerates, balms, and botanical infusions without bitterness. 1-year warranty, complete manual, and 100 recipes included.';
+      ? 'Bereiten Sie Ölmazerate, Balsame und Kräuterauszüge ohne Bitterkeit zu. 2 Jahre gesetzl. Gewährleistung (EU) + 1 Jahr Garantie, Handbuch und 100 Rezepte.'
+      : 'Prepare oil macerates, balms, and botanical infusions without bitterness. 2-year EU legal + 1-year commercial warranty, complete manual, and 100 recipes included.';
 
   return (
     <div data-product-page="true" className="product-detail animate-in fade-in duration-700 bg-[#FAF7F2] text-[#3E4A3D] w-full max-w-full overflow-x-clip">
@@ -174,10 +168,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
       {/* Promotional Banner */}
       <div className="bg-[#D97706]/10 text-[#B45309] border-b border-[#D97706]/30 text-center py-2.5 px-4 text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
         {lang === 'fr' 
-          ? "🇫🇷 Marque française • Conception des protocoles & kits botaniques en France • Expédition 24/48h • Garantie 1 an • 3x sans frais" 
+          ? "🇫🇷 Conception française des protocoles • Expédition 24/48h • Garantie légale 2 ans (UE) + commerciale 1 an" 
           : lang === 'de'
-          ? "🇫🇷 Französische Marke • Protokolle & Botanik-Kits aus Frankreich • Versand 24/48h • 1 Jahr Garantie • 3x zinsfrei"
-          : "🇫🇷 French Brand • Protocols & botanical kits crafted in France • 24/48h Shipping • 1-Year Warranty • 3x Fee-Free"}
+          ? "🇫🇷 Französische Protokoll-Entwicklung • Versand 24/48h • 2 Jahre gesetzl. Gewährleistung (EU) + 1 Jahr Garantie"
+          : "🇫🇷 Protocols crafted in France • 24/48h Shipping • 2-Year EU Legal Warranty + 1-Year Commercial"}
       </div>
 
       {/* 1. HERO HEADER SECTION */}
@@ -286,14 +280,8 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                     ? "BloomLab® — Botanischer Präzisionsextraktor Edelstahl 304 für Kosmetik & Küche"
                     : "BloomLab® — 304 Stainless Precision Botanical Extractor for Cosmetics & Kitchen"}
                 </h1>
-                <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm font-bold text-[#C8AB8A]">
-                  <span>
-                    {lang === 'fr'
-                      ? "⭐⭐⭐⭐☆ 4,3/5 (Avis clients vérifiés sur Amazon.fr)"
-                      : lang === 'de'
-                      ? "⭐⭐⭐⭐☆ 4,3/5 (Verifizierte Kundenbewertungen auf Amazon.fr)"
-                      : "⭐⭐⭐⭐☆ 4.3/5 (Verified reviews on Amazon.fr)"}
-                  </span>
+                <div className="pt-1">
+                  <AmazonRatingBadge lang={lang} />
                 </div>
               </div>
 
@@ -311,10 +299,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                   <span className="shrink-0">✅</span>
                   <span>
                     {lang === 'fr'
-                      ? "6 programmes automatisés (0 à 121 °C) à ±0,5 °C : aucun actif brûlé, activation thermique douce des résines et aromates"
+                      ? "6 programmes automatisés (0 à 121 °C, régulation nominale annoncée ±0,5 °C) : limite les pics de chaleur sur les résines et aromates"
                       : lang === 'de'
-                      ? "6 automatische Programme (0–121 °C) mit ±0,5 °C Präzision: keine verbrannten Wirkstoffe, sanfte thermische Aktivierung von Harzen und Aromaten"
-                      : "6 automated programs (0–121°C) accurate to ±0.5°C: zero scorched actives, gentle thermal activation of resins and aromatics"}
+                      ? "6 automatische Programme (0–121 °C, Hersteller-Nennwert ±0,5 °C): begrenzt Hitzespitzen für Harze und Aromaten"
+                      : "6 automated programs (0–121°C, nominal mfr. spec ±0.5°C): avoids heat spikes on resins and aromatics"}
                   </span>
                 </li>
                 <li className="flex items-start gap-2.5">
@@ -359,7 +347,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                         {lang === 'fr' ? "Option 1 : BloomLab® Solo" : lang === 'de' ? "Option 1: BloomLab® Solo" : "Option 1: BloomLab® Solo"}
                       </div>
                       <div className="text-[11px] text-white/70">
-                        {lang === 'fr' ? "Infuseur Inox 304 + Panier 90 µm + 5 accessoires + Manuel & 100 recettes" : lang === 'de' ? "Edelstahl-Infuser + 90-µm-Korb + 5 Zubehörteile + Handbuch & 100 Rezepte" : "304 Steel Infuser + 90µm basket + 5 accessories + Manual & 100 recipes"}
+                        {lang === 'fr' ? "Infuseur Inox 304 + Panier 90 µm + 5 accessoires offerts + Accès 3 mois (+160 recettes)" : lang === 'de' ? "Edelstahl-Infuser + 90-µm-Korb + 5 Gratis-Zubehörteile + 3 Mon. Zugang (+160 Rezepte)" : "304 Steel Infuser + 90µm basket + 5 free accessories + 3-mo access (160+ recipes)"}
                       </div>
                     </div>
                     <div className="text-right shrink-0">
@@ -414,10 +402,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
               <p className="text-[11px] sm:text-xs text-white/80 text-center leading-relaxed">
                 {lang === 'fr'
-                  ? "🛡️ 30 jours pour tester chez vous • ⚡ Garantie 1 an • 💳 Paiement 3x sans frais via Klarna / PayPal."
+                  ? "🛡️ Rétractation légale 14 j • Essai commercial 30 j • ⚡ Garantie légale 2 ans (UE) + commerciale 1 an • 💳 Stripe & PayPal."
                   : lang === 'de'
-                  ? "🛡️ 30 Tage zu Hause testen • ⚡ 1 Jahr Garantie • 💳 3x zinsfrei via Klarna / PayPal."
-                  : "🛡️ 30-day home trial • ⚡ 1-Year Warranty • 💳 3x fee-free via Klarna / PayPal."}
+                  ? "🛡️ 14 Tage gesetzl. Widerruf • 30 Tage Test • ⚡ 2 Jahre gesetzl. Gewährleistung (EU) + 1 Jahr Garantie • 💳 Stripe & PayPal."
+                  : "🛡️ 14-day legal withdrawal • 30-day trial • ⚡ 2-Year EU Legal + 1-Year Commercial Warranty • 💳 Stripe & PayPal."}
               </p>
             </div>
           </div>
@@ -479,19 +467,19 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
             <div className="space-y-4 text-base sm:text-lg text-white leading-relaxed font-normal">
               <p className="text-white">
                 {lang === 'fr' ? (
-                  <>Conçue par <strong>Bloom by BotaniK</strong>, la <strong>BloomLab®</strong> favorise l&apos;extraction des composés recherchés tout en respectant les fractions sensibles. Vous ne faites plus simplement chauffer une plante : vous optimisez le profil d&apos;extraction de ses principes actifs dans des conditions rigoureuses. La température est maintenue au degré près : assez élevée pour optimiser l’extraction des phytocomposés (<TooltipLexique terme="polyphenols" />, flavonoïdes, huiles essentielles…), mais jamais au‑delà des seuils qui les dégradent, ce qui est exactement ce que montrent les études sur l’impact de la température en extraction végétale.</>
+                  <>Conçue par <strong>Bloom by BotaniK</strong>, la <strong>BloomLab®</strong> favorise l&apos;extraction des composés recherchés tout en respectant les fractions sensibles. Vous ne faites plus simplement chauffer une plante : vous régulez la température et la durée de vos infusions (<TooltipLexique terme="polyphenols" />, flavonoïdes, notes aromatiques…) sous des seuils thermiques modérés afin de limiter leur altération par la chaleur.</>
                 ) : lang === 'de' ? (
-                  <>Entwickelt von <strong>Bloom by BotaniK</strong>, ermöglicht die <strong>BloomLab®</strong> die gezielte Extraktion pflanzlicher Wirkstoffe bei gleichzeitigem Schutz empfindlicher Molekülfraktionen. Statt Kräuter unkontrolliert zu erhitzen, steuern Sie Temperatur, Zeit und Lösungsmittel präzise – hoch genug für maximale Ausbeute an Polyphenolen, Flavonoiden und ätherischen Ölen, aber stets unterhalb der thermischen Abbauschwellen.</>
+                  <>Entwickelt von <strong>Bloom by BotaniK</strong>, unterstützt die <strong>BloomLab®</strong> die gezielte Extraktion pflanzlicher Inhaltsstoffe bei gleichzeitigem Schutz empfindlicher Molekülfraktionen. Statt Kräuter unkontrolliert zu erhitzen, steuern Sie Temperatur, Zeit und Lösungsmittel innerhalb moderater Schwellenwerte.</>
                 ) : (
-                  <>Engineered by <strong>Bloom by BotaniK</strong>, the <strong>BloomLab®</strong> extracts desired botanical compounds while safeguarding heat-sensitive fractions. Instead of guessing on a stovetop, you regulate temperature, timing, and solvent conditions—high enough to release polyphenols, flavonoids, and aromatic oils, yet strictly below thermal degradation thresholds.</>
+                  <>Engineered by <strong>Bloom by BotaniK</strong>, the <strong>BloomLab®</strong> supports extraction of desired botanical compounds while safeguarding heat-sensitive fractions. Instead of guessing on a stovetop, you regulate temperature, timing, and solvent conditions under moderate thermal thresholds.</>
                 )}
               </p>
               <p className="text-white/90 text-sm sm:text-base font-light">
                 {lang === 'fr'
-                  ? "Là où une casserole ou un bain‑marie improvisé chauffent trop fort ou de façon irrégulière (perte d’antioxydants, arômes brûlés, actifs détruits), BloomLab offre un profil thermique maîtrisé qui préserve les molécules sensibles à la chaleur et améliore la quantité d’actifs réellement présents dans vos huiles infusées et macérâts."
+                  ? "Là où une casserole ou un bain‑marie improvisé chauffent de façon irrégulière, BloomLab offre un profil thermique régulé qui ménage les molécules sensibles à la chaleur dans vos huiles infusées, macérâts glycérinés et décoctions aqueuses."
                   : lang === 'de'
-                  ? "Wo ein Kochtopf oder ein improvisiertes Wasserbad ungleichmäßig und zu stark erhitzt (Verlust von Antioxidantien, verbrannte Aromen), bietet BloomLab ein stabiles Temperaturprofil, das wärmeempfindliche Moleküle schützt und die Wirkstoffkonzentration in Ihren Ölauszügen und Tinkturen deutlich steigert."
-                  : "Where a saucepan or improvised double boiler heats unevenly and too hot (oxidizing antioxidants and scorching aromatics), BloomLab maintains a controlled thermal profile that protects delicate compounds and maximizes active yield in your infused oils and macerates."}
+                  ? "Wo ein Kochtopf oder ein improvisiertes Wasserbad ungleichmäßig erhitzt, bietet BloomLab ein geregeltes Temperaturprofil, das wärmeempfindliche Moleküle in Ihren Ölauszügen, Glycerinauszügen und Dekokten schont."
+                  : "Where a saucepan or improvised double boiler heats unevenly, BloomLab maintains a regulated thermal profile that protects heat-sensitive compounds in your infused oils, glycerin extracts, and aqueous decoctions."}
               </p>
             </div>
 
@@ -503,11 +491,11 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               </div>
               <div className="flex items-center justify-center sm:justify-start gap-2 text-xs font-semibold text-white/90 bg-white/5 border border-white/10 px-4 py-3 rounded-xl">
                 <Activity className="w-4 h-4 text-[#C8AB8A] shrink-0" />
-                <span>{lang === 'fr' ? "Précision ±0,5°C" : lang === 'de' ? "Präzision ±0,5°C" : "±0.5°C Precision"}</span>
+                <span>{lang === 'fr' ? "Régulation ±0,5°C (spéc. fabricant)" : lang === 'de' ? "Regelung ±0,5°C (Herstellerangabe)" : "±0.5°C Regulation (mfr. spec)"}</span>
               </div>
               <div className="flex items-center justify-center sm:justify-start gap-2 text-xs font-semibold text-white/90 bg-white/5 border border-white/10 px-4 py-3 rounded-xl">
                 <Award className="w-4 h-4 text-[#C8AB8A] shrink-0" />
-                <span>{lang === 'fr' ? "Garantie 1 an" : lang === 'de' ? "1 Jahr Garantie" : "1-Year Warranty"}</span>
+                <span>{lang === 'fr' ? "Garantie 2 ans UE + 1 an" : lang === 'de' ? "2 J. EU-Gewährl. + 1 J. Gar." : "2-Yr EU + 1-Yr Warranty"}</span>
               </div>
             </div>
 
@@ -541,33 +529,33 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3E4A3D] leading-tight">
               {lang === 'fr' 
-                ? "Double Extraction Intelligente (Eau + Huile/Alcool) : préservez 100 % des actifs de vos plantes" 
+                ? "Double Extraction Séquentielle (Eau + Huile / Glycérine) : préservez l'équilibre du Totum" 
                 : lang === 'de' 
-                ? "Intelligente Doppelextraktion (Wasser + Öl/Alkohol): 100 % Pflanzenwirkstoffe bewahren" 
-                : "Smart Dual Extraction (Water + Oil/Alcohol): Preserve 100% of Plant Actives"}
+                ? "Sequenzielle Doppelextraktion (Wasser + Öl / Glycerin): das Pflanzen-Totum bewahren" 
+                : "Sequential Dual Extraction (Water + Oil / Glycerin): Preserve the Plant Totum"}
             </h2>
             <p className="text-base sm:text-lg text-[#3E4A3D]/70 leading-relaxed font-normal">
               {lang === 'fr'
-                ? "Préparez vos huiles de soin, sérums et infusions concentrées en 2 heures au lieu de 6 semaines. BloomLab résout les 3 barrières physiques qui affaiblissent les préparations maison grâce au contrôle du temps, de la température et des solvants."
+                ? "Préparez vos huiles de soin, sérums et infusions concentrées en 2 heures au lieu de 6 semaines. BloomLab adresse les 3 barrières physiques qui affaiblissent les préparations maison grâce au contrôle du temps, de la température et des solvants non inflammables (eau, huile, glycérine — alcool chauffé en cuve suspendu par sécurité)."
                 : lang === 'de'
-                ? "Stellen Sie Pflegeöle, Seren und konzentrierte Auszüge in 2 Stunden statt 6 Wochen her. BloomLab überwindet die 3 physikalischen Barrieren häuslicher Extraktion."
-                : "Craft care oils, serums, and concentrated infusions in 2 hours instead of 6 weeks. BloomLab overcomes the 3 physical barriers that weaken homemade preparations."}
+                ? "Stellen Sie Pflegeöle, Seren und konzentrierte Auszüge in 2 Stunden statt 6 Wochen her. BloomLab arbeitet mit nicht brennbaren Lösungsmitteln (Wasser, Öl, Glycerin — erhitzter Alkohol im Gerät ist aus Sicherheitsgründen ausgesetzt)."
+                : "Craft care oils, serums, and concentrated infusions in 2 hours instead of 6 weeks using non-flammable solvents (water, oil, glycerin — heated alcohol inside the chamber is suspended for safety)."}
             </p>
             <details className="text-left max-w-2xl mx-auto rounded-2xl border border-[#3E4A3D]/15 bg-white p-4 shadow-xs">
               <summary className="cursor-pointer font-bold text-sm text-[#3E4A3D] select-none">
                 {lang === 'fr'
-                  ? "🔬 Pour les experts & praticiens : voir le protocole biochimique complet"
+                  ? "🔬 Pour les experts & praticiens : voir le principe biochimique"
                   : lang === 'de'
-                  ? "🔬 Für Experten & Praktiker: vollständiges biochemisches Protokoll ansehen"
-                  : "🔬 For experts & practitioners: view full biochemical protocol"}
+                  ? "🔬 Für Experten & Praktiker: biochemisches Prinzip ansehen"
+                  : "🔬 For experts & practitioners: view biochemical principle"}
               </summary>
               <div className="mt-3 pt-3 border-t border-[#3E4A3D]/10 text-xs sm:text-sm text-[#3E4A3D]/80 space-y-2 leading-relaxed">
                 <p>
                   {lang === 'fr'
-                    ? "L'extraction obéit à la loi de diffusion de Fick et à la sélectivité de polarité des solvants : la phase hydrophile (eau ou glycérine, 75–90 °C sur racines et fibres denses) solubilise tanins, polyphénols et minéraux, tandis que la phase lipophile ou hydro-alcoolique (huiles végétales ou éthanol, 45–58 °C sur feuilles et sommités fleuries) préserve les terpènes volatils et flavonoïdes thermolabiles."
+                    ? "L'extraction obéit à la loi de diffusion de Fick et à la sélectivité de polarité des solvants : la phase hydrophile (eau ou glycérine, 75–90 °C sur racines et fibres denses) solubilise tanins, polyphénols et minéraux, tandis que la phase lipophile (huiles végétales ou beurres, 40–58 °C sur feuilles et sommités fleuries) capture les terpènes volatils et composés liposolubles. Par précaution technique, aucune extraction à l'alcool chauffé n'est conduite dans la cuve BloomLab®."
                     : lang === 'de'
-                    ? "Die Extraktion folgt dem Fickschen Diffusionsgesetz und der Lösungsmittelpolarität: Die hydrophile Phase (Wasser/Glycerin, 75–90 °C) löst Tannine und Mineralstoffe aus festen Wurzeln, während die lipophile/hydroalkoholische Phase (45–58 °C) flüchtige Terpene und hitzeempfindliche Flavonoide schützt."
-                    : "Extraction follows Fick's diffusion law and solvent polarity selectivity: the hydrophilic stage (75–90°C) solubilizes tannins and minerals from dense roots, while the lipophilic or ethanolic stage (45–58°C) safeguards volatile terpenes and heat-sensitive flavonoids."}
+                    ? "Die Extraktion folgt dem Fickschen Diffusionsgesetz und der Lösungsmittelpolarität: Die hydrophile Phase (Wasser/Glycerin, 75–90 °C) löst Tannine und Mineralstoffe aus festen Wurzeln, während die lipophile Phase (Pflanzenöle, 40–58 °C) flüchtige Terpene und fettlösliche Moleküle aufnimmt. Aus Sicherheitsgründen erfolgt keine erhitzte Alkoholextraktion im BloomLab®."
+                    : "Extraction follows Fick's diffusion law and solvent polarity selectivity: the hydrophilic stage (water/glycerin, 75–90°C) solubilizes tannins and minerals from dense roots, while the lipophilic stage (carrier oils, 40–58°C) captures volatile terpenes and fat-soluble compounds. For safety, no heated alcohol extraction is performed inside BloomLab®."}
                 </p>
                 <p>
                   {lang === 'fr'
@@ -697,17 +685,17 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3E4A3D] mb-4">
               {lang === 'fr' 
-                ? "Infusion Végétale de Grade Laboratoire : BloomLab vs Méthodes Traditionnelles" 
+                ? "Infusion Végétale Régulée : BloomLab vs Méthodes Traditionnelles" 
                 : lang === 'de' 
-                ? "Pflanzenaufguss in Laborqualität: BloomLab vs. traditionelle Methoden" 
-                : "Laboratory-Grade Herbal Infusion: BloomLab vs. Traditional Methods"}
+                ? "Kontrollierte Pflanzenextraktion: BloomLab vs. traditionelle Methoden" 
+                : "Regulated Herbal Extraction: BloomLab vs. Traditional Methods"}
             </h2>
             <p className="text-base text-[#3E4A3D]/70 max-w-2xl mx-auto">
               {lang === 'fr'
-                ? "Mesure concrète des paramètres physiques qui conditionnent la richesse et la biodisponibilité de vos infusions végétales, macérations huileuses, décoctions et teintures de plantes médicinales."
+                ? "Comparaison indicative des paramètres physiques d'extraction pour vos infusions végétales, macérations huileuses, macérâts glycérinés et décoctions."
                 : lang === 'de'
-                ? "Konkreter Vergleich der physikalischen Parameter, die Wirkstoffdichte und Bioverfügbarkeit Ihrer Kräuterauszüge, Ölmazerate, Dekokte und Tinkturen bestimmen."
-                : "Side-by-side comparison of physical parameters governing the potency and bioavailability of your herbal infusions, oil macerates, decoctions, and tinctures."}
+                ? "Orientierender Vergleich der physikalischen Extraktionsparameter für Kräuteraufgüsse, Ölmazerate, Glycerinextrakte und Dekokte."
+                : "Indicative comparison of physical parameters governing herbal infusions, oil macerates, glycerin extracts, and decoctions."}
             </p>
           </div>
 
@@ -722,9 +710,9 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               </thead>
               <tbody className="divide-y divide-slate-100 text-xs sm:text-sm">
                 <tr>
-                  <td className="p-5 font-semibold text-[#3E4A3D]">{lang === 'fr' ? "Précision de la température" : lang === 'de' ? "Temperaturpräzision" : "Temperature precision"}</td>
+                  <td className="p-5 font-semibold text-[#3E4A3D]">{lang === 'fr' ? "Régulation de la température" : lang === 'de' ? "Temperaturregelung" : "Temperature regulation"}</td>
                   <td className="p-5 text-center text-rose-700 font-medium">{lang === 'fr' ? "± 5°C à 15°C (pics incontrôlés, actifs brûlés)" : lang === 'de' ? "± 5°C bis 15°C (unkontrollierte Spitzen)" : "± 5°C to 15°C (uncontrolled spikes)"}</td>
-                  <td className="p-5 text-center font-bold text-emerald-700 bg-emerald-50/50">{lang === 'fr' ? "± 0,5°C asservie (chambre fermée, 0 évaporation)" : lang === 'de' ? "± 0,5°C geregelt (geschlossen, 0 Verdampfung)" : "± 0.5°C closed-loop (zero evaporation)"}</td>
+                  <td className="p-5 text-center font-bold text-emerald-700 bg-emerald-50/50">{lang === 'fr' ? "± 0,5°C nominale fabricant (chambre fermée, limitation de l'évaporation)" : lang === 'de' ? "± 0,5°C Hersteller-Nennwert (geschlossene Kammer)" : "± 0.5°C nominal mfr. spec (closed chamber)"}</td>
                 </tr>
                 <tr>
                   <td className="p-5 font-semibold text-[#3E4A3D]">{lang === 'fr' ? "Préservation des plantes & arômes" : lang === 'de' ? "Schutz von Pflanzen & Aromen" : "Herb & aroma preservation"}</td>
@@ -744,12 +732,12 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 <tr>
                   <td className="p-5 font-semibold text-[#3E4A3D]">{lang === 'fr' ? "Temps d'obtention d'un macérât huileux" : lang === 'de' ? "Dauer für einen Ölauszug" : "Oil maceration duration"}</td>
                   <td className="p-5 text-center text-slate-500">{lang === 'fr' ? "6 semaines au soleil (risque d'oxydation et de rancissement)" : lang === 'de' ? "6 Wochen in der Sonne (Oxidationsrisiko)" : "6 weeks in sunlight (rancidity & oxidation risk)"}</td>
-                  <td className="p-5 text-center font-bold text-emerald-700 bg-emerald-50/50">{lang === 'fr' ? "2h à 4h à l'abri de la lumière, zéro rancissement" : lang === 'de' ? "2 bis 4 Std. lichtgeschützt, null Ranzigkeit" : "2h to 4h protected from light, zero rancidity"}</td>
+                  <td className="p-5 text-center font-bold text-emerald-700 bg-emerald-50/50">{lang === 'fr' ? "2h à 4h à l'abri de la lumière, limite l'oxydation" : lang === 'de' ? "2 bis 4 Std. lichtgeschützt, reduziert Oxidation" : "2h to 4h protected from light, limits oxidation"}</td>
                 </tr>
                 <tr>
-                  <td className="p-5 font-semibold text-[#3E4A3D]">{lang === 'fr' ? "Garantie constructeur" : lang === 'de' ? "Herstellergarantie" : "Manufacturer warranty"}</td>
+                  <td className="p-5 font-semibold text-[#3E4A3D]">{lang === 'fr' ? "Garanties" : lang === 'de' ? "Garantien" : "Warranties"}</td>
                   <td className="p-5 text-center text-slate-500">{lang === 'fr' ? "Variable" : lang === 'de' ? "Variabel" : "Variable"}</td>
-                  <td className="p-5 text-center font-bold text-emerald-700 bg-emerald-50/50">{lang === 'fr' ? "Garantie 1 an" : lang === 'de' ? "1 Jahr Garantie" : "1-Year Warranty"}</td>
+                  <td className="p-5 text-center font-bold text-emerald-700 bg-emerald-50/50">{lang === 'fr' ? "2 ans légale UE + 1 an commerciale" : lang === 'de' ? "2 Jahre gesetzl. (EU) + 1 Jahr Garantie" : "2-Year EU Legal + 1-Year Commercial"}</td>
                 </tr>
               </tbody>
             </table>
@@ -785,11 +773,11 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         </p>
         <p>
           {lang === 'fr' ? (
-            <>Le drame de l'herboristerie occidentale moderne a été de tout réduire à l'eau bouillante, ignorant la <strong>polarité des solvants</strong> et la <strong>thermolabilité des enzymes</strong>. La BloomLab réconcilie la sagesse empirique de l'Orient avec la rigueur de la biochimie du XXIe siècle. Elle permet d'appliquer la <strong>Double Extraction Intelligente A/B</strong> (extraction hydrophile puis lipophile) avec une précision de ±0,5°C que même les meilleurs laboratoires peinent à démocratiser.</>
+            <>Le drame de l'herboristerie occidentale moderne a été de tout réduire à l'eau bouillante, ignorant la <strong>polarité des solvants</strong> et la <strong>thermolabilité des composés fragiles</strong>. La BloomLab rapproche la sagesse empirique de la rigueur moderne via la <strong>Double Extraction Séquentielle A/B</strong> (hydrophile puis lipophile) avec une régulation annoncée à ±0,5°C à domicile.</>
           ) : lang === 'de' ? (
-            <>Die moderne westliche Praxis reduzierte alles oft auf kochendes Wasser und ignorierte die <strong>Polarität der Lösungsmittel</strong> sowie die <strong>Hitzeempfindlichkeit pflanzlicher Enzyme</strong>. BloomLab verbindet jahrtausendealtes Erfahrungswissen mit moderner Biochemie und ermöglicht die <strong>Intelligente Doppelextraktion A/B</strong> (hydrophile und lipophile Extraktion) mit einer Genauigkeit von ±0,5°C direkt bei Ihnen zu Hause.</>
+            <>Die moderne westliche Praxis reduzierte alles oft auf kochendes Wasser und ignorierte die <strong>Polarität der Lösungsmittel</strong> sowie die <strong>Hitzeempfindlichkeit empfindlicher Stoffe</strong>. BloomLab verbindet traditionelles Erfahrungswissen mit moderner Technik und ermöglicht die <strong>sequenzielle Doppelextraktion A/B</strong> (hydrophil und lipophil) mit geregelter Temperatur (Hersteller-Nennwert ±0,5°C).</>
           ) : (
-            <>Modern domestic herbalism often reduced everything to boiling water, overlooking <strong>solvent polarity</strong> and <strong>heat sensitivity</strong>. BloomLab bridges ancestral Eastern wisdom with 21st-century biochemistry, bringing <strong>Smart Dual Extraction A/B</strong> (hydrophilic then lipophilic extraction) with ±0.5°C precision straight to your kitchen.</>
+            <>Modern domestic herbalism often reduced everything to boiling water, overlooking <strong>solvent polarity</strong> and <strong>heat sensitivity</strong>. BloomLab bridges ancestral botanical wisdom with modern thermal control, enabling <strong>Sequential Dual Extraction A/B</strong> (hydrophilic then lipophilic) with a nominal ±0.5°C regulation rating at home.</>
           )}
         </p>
       </div>
@@ -819,10 +807,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3E4A3D] mb-4">
               {lang === 'fr' 
-                ? "Préservez le Totum des Plantes Médicinales : Macération Huileuse, Teinture, Décoction & Infusion" 
+                ? "Préservez le Totum Végétal : Macération Huileuse, Glycériné, Décoction & Infusion" 
                 : lang === 'de' 
-                ? "Das pflanzliche Totum von Heilpflanzen bewahren: Ölauszug, Tinktur, Dekokt & Aufguss" 
-                : "Preserve the Totum of Medicinal Plants: Oil Maceration, Tincture, Decoction & Infusion"}
+                ? "Das pflanzliche Totum bewahren: Ölauszug, Glycerinextrakt, Dekokt & Aufguss" 
+                : "Preserve the Plant Totum: Oil Maceration, Glycerin Extract, Decoction & Infusion"}
             </h2>
             <p className="text-base text-[#3E4A3D]/70">
               {lang === 'fr'
@@ -1077,10 +1065,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 {
                   step: "03",
                   text: lang === 'fr'
-                    ? "Ajoutez votre solvant (eau filtrée, huile végétale vierge ou alcool alimentaire)."
+                    ? "Ajoutez votre solvant non inflammable (eau filtrée, huile végétale vierge ou glycérine végétale — alcool chauffé suspendu)."
                     : lang === 'de'
-                    ? "Fügen Sie Ihr Lösungsmittel hinzu (gefiltertes Wasser, kaltgepresstes Öl oder Speisealkohol)."
-                    : "Add your solvent (filtered water, virgin carrier oil, or food-grade alcohol)."
+                    ? "Fügen Sie Ihr nicht brennbares Lösungsmittel hinzu (gefiltertes Wasser, kaltgepresstes Öl oder pflanzliches Glycerin)."
+                    : "Add your non-flammable solvent (filtered water, virgin carrier oil, or vegetable glycerin — heated alcohol suspended)."
                 },
                 {
                   step: "04",
@@ -1147,10 +1135,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               </h4>
               <p className="text-xs text-[#3E4A3D]/80 leading-relaxed">
                 {lang === 'fr'
-                  ? "35 °C à 121 °C (précision ±0,5 °C)"
+                  ? "35 °C à 121 °C (régulation nominale fabricant ±0,5 °C, non certifiée par laboratoire tiers)"
                   : lang === 'de'
-                  ? "35 °C bis 121 °C (Präzision ±0,5 °C)"
-                  : "35°C to 121°C (±0.5°C precision)"}
+                  ? "35 °C bis 121 °C (Hersteller-Nennwert ±0,5 °C)"
+                  : "35°C to 121°C (nominal mfr. spec ±0.5°C)"}
               </p>
             </div>
 
@@ -1175,7 +1163,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 <ShieldCheck className="w-6 h-6 text-[#C8AB8A]" />
               </div>
               <h4 className="font-bold text-[#3E4A3D] mb-1">
-                {lang === 'fr' ? "Nettoyage & Garantie 1 an" : lang === 'de' ? "Reinigung & 1 Jahr Garantie" : "Cleaning & 1-Year Warranty"}
+                {lang === 'fr' ? "Garantie 2 ans UE + 1 an" : lang === 'de' ? "2 Jahre EU + 1 Jahr Garantie" : "2-Yr EU + 1-Yr Warranty"}
               </h4>
               <p className="text-xs text-[#3E4A3D]/80 leading-relaxed">
                 {lang === 'fr'
@@ -1235,15 +1223,31 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
-                    <span>{lang === 'fr' ? "Panier filtrant micrométrique (90 µm) + 5 Accessoires Offerts" : lang === 'de' ? "Mikrometrischer Filterkorb (90 µm) + 5 Gratis-Zubehörteile" : "Micrometric filter basket (90 µm) + 5 Free Accessories"}</span>
+                    <span>{lang === 'fr' ? "Panier filtrant micrométrique (90 µm)" : lang === 'de' ? "Mikrometrischer Filterkorb (90 µm)" : "Micrometric filter basket (90 µm)"}</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
-                    <span>{lang === 'fr' ? "Manuel complet et 100 recettes exclusives en français" : lang === 'de' ? "Vollständiges Handbuch & 100 exklusive Rezepte" : "Complete manual and 100 exclusive recipes"}</span>
+                    <span>
+                      {lang === 'fr'
+                        ? "5 Accessoires Offerts pour bien débuter : 1 flacon pipette 100 ml en verre opaque capuchon en bambou, 1 pot crème 50 g verre opaque couvercle en bambou, 1 distributeur de sérum pour cuir chevelu, 1 sac de filtration 90 microns, 1 gant silicone anti-brûlure"
+                        : lang === 'de'
+                        ? "5 Gratis-Zubehörteile für den Start: 1 Pipettenflasche 100 ml aus blickdichtem Glas mit Bambusverschluss, 1 Cremetiegel 50 g aus blickdichtem Glas mit Bambusdeckel, 1 Kopfhaut-Serumspender, 1 Filterbeutel 90 Mikron, 1 Hitzeschutz-Silikonhandschuh"
+                        : "5 Free Starter Accessories: 1× 100ml opaque glass dropper bottle with bamboo cap, 1× 50g opaque glass cream jar with bamboo lid, 1× scalp serum dispenser, 1× 90-micron filtration bag, 1× heat-resistant silicone glove"}
+                    </span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
-                    <span className="font-bold text-[#3E4A3D]">{lang === 'fr' ? "Garantie 1 an • Paiement 3x sans frais" : lang === 'de' ? "1 Jahr Garantie • 3x zinsfrei" : "1-Year Warranty • 3x fee-free"}</span>
+                    <span>
+                      {lang === 'fr'
+                        ? "Accès 3 mois à plus de 160 recettes (culinaire, cosmétique, plantes médicinales) + Manuel complet et 100 recettes exclusives en français"
+                        : lang === 'de'
+                        ? "3 Monate Zugang zu über 160 Rezepten (Kulinarik, Kosmetik, Heilpflanzen) + Vollständiges Handbuch & 100 exklusive Rezepte"
+                        : "3-month access to 160+ recipes (culinary, cosmetics, medicinal plants) + Complete manual & 100 exclusive recipes"}
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
+                    <span className="font-bold text-[#3E4A3D]">{lang === 'fr' ? "Garantie légale 2 ans (UE) + commerciale 1 an" : lang === 'de' ? "2 Jahre gesetzl. Gewährl. (EU) + 1 Jahr Garantie" : "2-Year EU Legal + 1-Year Commercial Warranty"}</span>
                   </li>
                 </ul>
               </div>

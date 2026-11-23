@@ -73,7 +73,13 @@ export const CookieBanner = ({ lang }: { lang: Language }) => {
                 <ShieldCheck className="w-6 h-6 text-botanik-green" />
               </div>
               <div>
-                <h4 className="text-botanik-green font-bold">Cookies & Confidentialité</h4>
+                <h4 className="text-botanik-green font-bold">
+                  {lang === 'fr'
+                    ? 'Cookies & Confidentialité'
+                    : lang === 'en'
+                    ? 'Cookies & Privacy'
+                    : 'Cookies & Datenschutz'}
+                </h4>
                 <p className="text-sm text-botanik-green/60 leading-relaxed mt-1">
                   {lang === 'fr' 
                     ? "Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic." 
@@ -86,15 +92,15 @@ export const CookieBanner = ({ lang }: { lang: Language }) => {
             <div className="flex gap-3">
               <button
                 onClick={handleAccept}
-                className="flex-1 bg-[#3E4A3D] hover:bg-[#C8AB8A] active:bg-[#C8AB8A] text-[#0F261E] py-3 rounded-xl font-bold transition-all cursor-pointer"
+                className="flex-1 bg-[#3E4A3D] hover:bg-[#C8AB8A] hover:text-[#0F261E] active:bg-[#C8AB8A] text-white py-3 rounded-xl font-bold transition-all cursor-pointer"
               >
-                Accepter
+                {lang === 'fr' ? 'Accepter' : lang === 'en' ? 'Accept' : 'Akzeptieren'}
               </button>
               <button
                 onClick={handleDecline}
-                className="px-6 py-3 bg-botanik-green/5 text-botanik-green/60 rounded-xl font-bold hover:bg-botanik-green/10 transition-all"
+                className="px-6 py-3 bg-botanik-green/5 text-botanik-green/80 rounded-xl font-bold hover:bg-botanik-green/10 transition-all cursor-pointer"
               >
-                Refuser
+                {lang === 'fr' ? 'Refuser' : lang === 'en' ? 'Decline' : 'Ablehnen'}
               </button>
             </div>
           </div>

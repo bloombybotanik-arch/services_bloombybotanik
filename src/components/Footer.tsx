@@ -154,10 +154,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
             {subState === 'ok' && (
               <p className="text-emerald-400 text-xs mt-2.5 font-bold">
                 {isFR
-                  ? "✓ Merci ! Un lien de confirmation vous a été envoyé."
+                  ? "✓ Inscription enregistrée localement sur le serveur (aucun e-mail automatique envoyé sans passerelle SMTP configurée)."
                   : isDE
-                  ? "✓ Danke! Ein Bestätigungslink wurde an Sie gesendet."
-                  : "✓ Thank you! A confirmation link has been sent to you."}
+                  ? "✓ Anmeldung auf dem Server gespeichert (kein automatischer E-Mail-Versand ohne SMTP-Konfiguration)."
+                  : "✓ Subscription saved on the server (no automated confirmation email sent without configured SMTP)."}
               </p>
             )}
             {subState === 'error' && (

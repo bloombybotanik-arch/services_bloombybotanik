@@ -1,18 +1,7 @@
 import React, { useState } from 'react';
-import { Star, ChevronLeft, ChevronRight, Play, X, CheckCircle2, Sparkles, AlertCircle } from 'lucide-react';
+import { CheckCircle2, Sparkles, AlertCircle } from 'lucide-react';
+import AmazonSocialProof from './AmazonSocialProof';
 import styles from './TestimonialsCarousel.module.css';
-
-interface Testimonial {
-  id: string;
-  name: string;
-  role: string;
-  rating: number;
-  quote: string;
-  initials: string;
-  avatarUrl?: string;
-  hasVideo?: boolean;
-  videoTitle?: string;
-}
 
 interface TestimonialsCarouselProps {
   lang?: string;
@@ -23,95 +12,7 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
   const isFR = lang === 'fr';
   const tr = (fr: string, en: string, de: string) => (isFR ? fr : isDE ? de : en);
 
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [activeVideoModal, setActiveVideoModal] = useState<string | null>(null);
   const [activeBeforeAfterTab, setActiveBeforeAfterTab] = useState<'extraction' | 'skin' | 'vitality'>('extraction');
-
-  const testimonials: Testimonial[] = [
-    {
-      id: '1',
-      name: 'Renaud P.',
-      role: tr('Herbaliste & formateur en botanique', 'Master Herbalist & Botanical Instructor', 'Kräuterkundler & Ausbilder'),
-      rating: 5,
-      quote: tr(
-        "« En herboristerie, la maîtrise de la température au degré près change absolument tout. La capture des terpènes volatils est incomparable par rapport à une macération artisanale classique au bain-marie. »",
-        "« In herbal practice, exact temperature control changes everything. Volatile terpene retention is incomparable to traditional double boilers. »",
-        "« In der Kräuterpraxis verändert die gradgenaue Temperaturkontrolle alles. Der Erhalt flüchtiger Terpene ist mit keinem klassischen Wasserbad vergleichbar. »"
-      ),
-      initials: 'RP',
-      avatarUrl: '/images/8.png',
-      hasVideo: true,
-      videoTitle: tr("Démonstration d'extraction par Renaud", "Renaud's extraction demo", "Extraktionsdemo von Renaud")
-    },
-    {
-      id: '2',
-      name: 'Claire M.',
-      role: tr('Naturopathe & conseillère de terrain', 'Certified Naturopath & Consultant', 'Heilpraktikerin & Beraterin'),
-      rating: 5,
-      quote: tr(
-        "« Je prépare mes huiles de soin pour mes consultants. Zéro amertume, arômes intacts, et surtout une régularité parfaite d'un flacon à l'autre. La cuve inox 304 inerte est un gage absolu de pureté. »",
-        "« I craft care oils for my clients. Zero bitterness, intact aromas, and flawless reproducibility from batch to batch. The inert 304 stainless steel tank ensures total purity. »",
-        "« Ich stelle meine Pflegeöle selbst her. Keine Bitterkeit, intakte Aromen und eine perfekte Gleichmäßigkeit von Charge zu Charge. Der Edelstahlbehälter 304 garantiert höchste Reinheit. »"
-      ),
-      initials: 'CM',
-      avatarUrl: '/images/2.png',
-      hasVideo: true,
-      videoTitle: tr("Témoignage de Claire M.", "Claire M. Review", "Erfahrungsbericht von Claire M.")
-    },
-    {
-      id: '3',
-      name: 'Thomas D.',
-      role: tr("Passionné d'herboristerie & cuisine saine", "Home Herbalist & Chef", "Botanischer Koch-Enthusiast"),
-      rating: 5,
-      quote: tr(
-        "« J'ai remisé toutes mes casseroles. En 2h chrono, mon huile de romarin, piment doux et ail est prête, parfumée comme jamais sans brûler. Le Kit Souveraineté a transformé ma façon d'utiliser les plantes. »",
-        "« I put away all my saucepans. In 2 hours, my infused oils are rich and aromatic without ever scorching. BloomLab transformed how I work with botanicals at home. »",
-        "« Ich habe alle Kochtöpfe weggeräumt. In 2 Stunden ist mein Rosmarinöl fertig – aromatisch wie nie, ohne anzubrennen. Das hat meine Arbeit mit Pflanzen grundlegend verändert. »"
-      ),
-      initials: 'TD',
-      avatarUrl: '/images/1.png',
-      hasVideo: false
-    },
-    {
-      id: '4',
-      name: 'Dr. Éléonore M.',
-      role: tr('Pharmacienne & phyto-conseillère', 'Doctor of Pharmacy & Botanical Advisor', 'Apothekerin & Botanik-Beraterin'),
-      rating: 5,
-      quote: tr(
-        "« Le protocole de séquençage A/B respecte rigoureusement la biochimie végétale. C'est l'équivalent d'un équipement de laboratoire semi-industriel adapté au comptoir de la maison. »",
-        "« The A/B extraction sequence strictly respects plant biochemistry. It brings precision laboratory extraction right onto your kitchen countertop. »",
-        "« Die sequenzierte A/B-Extraktion respektiert konsequent die Pflanzenbiochemie. Es ist Laborpräzision für die eigene Küche. »"
-      ),
-      initials: 'EM',
-      avatarUrl: '/images/3.png',
-      hasVideo: true,
-      videoTitle: tr("Analyse biochimique de l'extraction BloomLab", "Biochemical analysis of BloomLab", "Biochemische Analyse von BloomLab")
-    },
-    {
-      id: '5',
-      name: 'Sophie B.',
-      role: tr('Formatrice en cosmétique naturelle DIY', 'Natural DIY Cosmetics Formulator', 'DIY-Naturkosmetik-Expertin'),
-      rating: 5,
-      quote: tr(
-        "« Fini les macérats solaires qui rancissent au bout de 4 semaines. En 2h à 42°C dans BloomLab, j'obtiens des huiles de calendula d'une pureté et d'une couleur éclatantes. »",
-        "« No more rancid 6-week solar macerations. In 2 hours at 42°C, I extract vibrant, crystal-clear calendula care oils. »",
-        "« Schluss mit ranzigen 4-Wochen-Ölen. In 2 Stunden bei 42°C erhalte ich mit BloomLab leuchtende Calendula-Pflegeöle in höchster Reinheit. »"
-      ),
-      initials: 'SB',
-      avatarUrl: '/images/4.png',
-      hasVideo: false
-    }
-  ];
-
-  const visibleTestimonials = testimonials.slice(activeSlide, activeSlide + 3);
-
-  const handleNext = () => {
-    setActiveSlide((prev) => (prev + 1 >= testimonials.length - 2 ? 0 : prev + 1));
-  };
-
-  const handlePrev = () => {
-    setActiveSlide((prev) => (prev - 1 < 0 ? testimonials.length - 3 : prev - 1));
-  };
 
   return (
     <section id="preuve-sociale" className={styles.sectionContainer} aria-label={tr("Avis clients et preuve sociale", "Customer reviews and social proof", "Kundenbewertungen und Erfahrungsberichte")}>
@@ -121,129 +22,39 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
         <div className={styles.header}>
           <div className={styles.badge}>
             <Sparkles className="w-3.5 h-3.5 text-[#C8AB8A]" />
-            <span>{tr('Preuve Sociale & Retours de Pratique', 'Practice Feedback & Social Proof', 'Erfahrungsberichte & Praxis')}</span>
+            <span>{tr('Évaluations Externes & Pédagogie', 'External Ratings & Practice', 'Externe Bewertungen & Praxis')}</span>
           </div>
           <h2 className={styles.title}>
-            {tr("Ils ont remisé leurs casseroles", "They put away their saucepans", "Sie haben ihre Kochtöpfe weggeräumt")}
+            {tr("Évaluations vérifiées & repères comparatifs", "Verified ratings & comparative benchmarks", "Verifizierte Bewertungen & Vergleichsrahmen")}
           </h2>
           <p className={styles.subtitle}>
             {tr(
-              "Découvrez les retours d'herbalistes, naturopathes et passionnés qui préparent leurs extraits purs au quotidien avec la BloomLab®.",
-              "See how herbalists, practitioners, and home enthusiasts extract pure botanical Totum daily with BloomLab®.",
-              "Erfahren Sie, wie Kräuterkundler und Privatanwender täglich mit BloomLab® reine Pflanzenextrakte herstellen."
+              "Consultez les évaluations publiques collectées par Amazon.fr et comparez les paramètres techniques d'extraction à domicile.",
+              "Review public ratings collected by Amazon.fr and compare technical parameters for home extraction.",
+              "Sehen Sie sich die öffentlichen Bewertungen auf Amazon.fr an und vergleichen Sie die technischen Extraktionsparameter."
             )}
           </p>
         </div>
 
-        {/* Verified Reviews Header Bar */}
-        <div className={styles.verifiedWidget}>
-          <div className={styles.scoreBlock}>
-            <div className={styles.bigScore}>4.9/5</div>
-            <div>
-              <div className={styles.starGroup}>
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className={styles.starIcon} />
-                ))}
-              </div>
-              <div className={styles.scoreMeta}>
-                {tr("Basé sur 342+ avis clients vérifiés", "Based on 342+ verified customer reviews", "Basierend auf 342+ verifizierten Bewertungen")}
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-4">
-            <div className={styles.verifiedLabel}>
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-              <span>{tr("100% Avis d'acheteurs vérifiés", "100% Verified Purchases", "100% verifizierte Käufer")}</span>
-            </div>
-            <div className="text-xs font-semibold text-slate-500">
-              {tr("Plateforme certifiée NF / Trustpilot standard", "Verified Customer Standard", "Zertifizierter Kundenbewertungs-Standard")}
-            </div>
-          </div>
-        </div>
-
-        {/* Testimonials Carousel */}
-        <div className={styles.carouselWrapper}>
-          <div className={styles.cardsGrid}>
-            {visibleTestimonials.map((item) => (
-              <div key={item.id} className={styles.testimonialCard}>
-                <div className="space-y-4">
-                  <div className={styles.cardTop}>
-                    <div className={styles.clientInfo}>
-                      {item.avatarUrl ? (
-                        <img src={item.avatarUrl} alt={item.name} className={styles.avatar} />
-                      ) : (
-                        <div className={styles.avatar}>{item.initials}</div>
-                      )}
-                      <div>
-                        <div className={styles.clientName}>{item.name}</div>
-                        <div className={styles.clientRole}>{item.role}</div>
-                      </div>
-                    </div>
-                    <span className={styles.verifiedTag}>{tr("Vérifié", "Verified", "Verifiziert")}</span>
-                  </div>
-
-                  <div className="flex text-[#D97706] gap-1">
-                    {[...Array(item.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#D97706] text-[#D97706]" />
-                    ))}
-                  </div>
-
-                  <p className={styles.quote}>{item.quote}</p>
-                </div>
-
-                {item.hasVideo && (
-                  <button
-                    type="button"
-                    onClick={() => setActiveVideoModal(item.videoTitle || tr("Témoignage vidéo", "Video review", "Videobewertung"))}
-                    className={styles.videoTrigger}
-                  >
-                    <Play className="w-3.5 h-3.5 fill-current" />
-                    <span>{tr("Voir le retour vidéo (45s)", "Watch video review (45s)", "Video-Feedback ansehen (45s)")}</span>
-                  </button>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Nav Controls */}
-          <div className={styles.carouselControls}>
-            <button
-              type="button"
-              onClick={handlePrev}
-              className={styles.navButton}
-              aria-label={tr("Témoignage précédent", "Previous review", "Vorherige Bewertung")}
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <span className="text-xs font-bold text-slate-500 tracking-wider">
-              {activeSlide + 1} — {Math.min(activeSlide + 3, testimonials.length)} / {testimonials.length}
-            </span>
-            <button
-              type="button"
-              onClick={handleNext}
-              className={styles.navButton}
-              aria-label={tr("Témoignage suivant", "Next review", "Nächste Bewertung")}
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
+        {/* Authentic Amazon Social Proof (no fabricated reviews or ratings) */}
+        <div className="mb-12">
+          <AmazonSocialProof lang={isFR ? 'fr' : isDE ? 'de' : 'en'} />
         </div>
 
         {/* Section Avant / Après */}
         <div className={styles.beforeAfterSection}>
           <div className={styles.beforeAfterHeader}>
             <span className="text-xs font-black uppercase tracking-widest text-[#C8AB8A] mb-2 block">
-              {tr("Preuve Tangible par l'Image", "Tangible Visual Evidence", "Sichtbare Ergebnisse")}
+              {tr("Comparaison Pédagogique", "Educational Comparison", "Pädagogischer Vergleich")}
             </span>
             <h3 className={styles.beforeAfterTitle}>
-              {tr("Avant / Après : La différence BloomLab®", "Before & After: The BloomLab® Difference", "Vorher / Nachher: Der BloomLab®-Unterschied")}
+              {tr("Bain-marie classique vs enceinte close BloomLab®", "Traditional double-boiler vs closed-chamber BloomLab®", "Klassisches Wasserbad vs. geschlossene BloomLab®-Kammer")}
             </h3>
             <p className="text-sm text-slate-600">
               {tr(
-                "Constatez l'écart immédiat entre l'artisanat approximatif et l'extraction de précision thermorégulée.",
-                "Compare traditional improvised kitchen methods with degree-precise botanical extraction.",
-                "Vergleichen Sie traditionelle Haushaltsmethoden mit temperaturgeregelter Präzisionsextraktion."
+                "Repères indicatifs comparant un chauffage ouvert non régulé à une chauffe douce thermorégulée (selon les paramètres nominaux du fabricant).",
+                "Indicative comparison between unregulated open-pot heating and thermoregulated gentle heating (per nominal manufacturer specs).",
+                "Orientierender Vergleich zwischen offenem Erhitzen und temperaturgeregelter Erwärmung (gemäß Herstellerangaben)."
               )}
             </p>
           </div>
@@ -319,9 +130,9 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
                   </h4>
                   <p className={styles.panelText}>
                     {tr(
-                      "Thermorégulation à ±0,5°C en chambre étanche close avec vortex doux. Couleur ambrée lumineuse, arômes floraux intacts et préservation optimale des molécules sensibles.",
-                      "±0.5°C control inside an airtight chamber with gentle vortex agitation preserves luminous color, floral aromas, and delicate actives.",
-                      "±0,5°C Steuerung in geschlossener Kammer mit sanftem Vortex bewahrt leuchtende Farbe, Aromen und empfindliche Inhaltsstoffe."
+                      "Chauffe thermorégulée (consigne nominale fabricant ±0,5°C non certifiée par laboratoire tiers) en enceinte close avec agitation douce. Limite l'évaporation des notes volatiles et l'échauffement local.",
+                      "Thermoregulated heating (nominal manufacturer spec ±0.5°C, not third-party lab calibrated) in a closed chamber with gentle stirring, limiting volatile loss and localized scorching.",
+                      "Temperaturgeregelte Erwärmung (Hersteller-Nennwert ±0,5 °C, ohne externe Laborkalibrierung) in geschlossener Kammer mit sanftem Rühren."
                     )}
                   </p>
                 </div>
@@ -449,41 +260,7 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
           )}
         </div>
 
-        {/* Video Testimonial Modal */}
-        {activeVideoModal && (
-          <div className={styles.videoModalBackdrop} onClick={() => setActiveVideoModal(null)}>
-            <div className={styles.videoModalBox} onClick={(e) => e.stopPropagation()}>
-              <button
-                type="button"
-                onClick={() => setActiveVideoModal(null)}
-                className={styles.closeModalBtn}
-                aria-label={tr("Fermer la vidéo", "Close video", "Video schließen")}
-              >
-                <X className="w-5 h-5" />
-              </button>
-              <div className="p-4 border-b border-white/10 text-white font-bold text-sm flex items-center gap-2">
-                <Play className="w-4 h-4 text-amber-400 fill-amber-400" />
-                <span>{activeVideoModal}</span>
-              </div>
-              <div className="relative aspect-video bg-black flex items-center justify-center">
-                <video
-                  controls
-                  autoPlay
-                  playsInline
-                  className="w-full h-full object-cover"
-                  poster="/images/bloomlab_main_1784887530345.png"
-                >
-                  <source src="/bloomlab_demo.mp4" type="video/mp4" />
-                  <source src="/videos/demo_bloomlab.mp4" type="video/mp4" />
-                </video>
-              </div>
-              <div className="p-4 bg-[#0B1C16] text-xs text-white/80 flex items-center justify-between">
-                <span>{tr("Bloom by BotaniK • Témoignage praticien certifié", "Bloom by BotaniK • Verified practitioner review", "Bloom by BotaniK • Verifizierter Erfahrungsbericht")}</span>
-                <span className="text-amber-400 font-bold">{tr("100% Non rémunéré", "100% Unsponsored", "100% Unbezahlt")}</span>
-              </div>
-            </div>
-          </div>
-        )}
+        {/* Video modal removed along with fabricated practitioner video claims */}
 
       </div>
     </section>

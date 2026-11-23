@@ -123,7 +123,7 @@ export default function Module0ChocParadigmeContent({
           subtitle="L'introduction et l'axiome fondateur sont en accès libre. Débloquez l'investigation historique intégrale (Rapport Flexner 1910, les 4 ruptures épistémiques et les solutions Bloom) avec votre abonnement."
           bulletPoints={[
             "Rapport Flexner (1910) et bascule de l'enseignement médical",
-            "La perte du Totum : pourquoi la molécule isolée ne guérit pas le terrain",
+            "La perte du Totum : pourquoi la molécule isolée n'explique pas à elle seule l'équilibre du terrain",
             "Biochimie de pointe vs tradition empirique : la 3e voie Bloom",
             "Accès illimité à l'Axe A1 et l'ensemble des 9 axes historiques"
           ]}
@@ -198,7 +198,7 @@ export default function Module0ChocParadigmeContent({
                     « Prenez une poignée d'armoise, trempez-la dans deux litres d'eau fraîche, exprimez le jus et buvez-le tout entier. »
                   </p>
                   <p className="text-xs text-[#FAF7F2]/75">
-                    En comprenant que l'ébullition détruisait la molécule active (l'artémisinine, thermolabile au-delà de 60°C), Tu Youyou met au point une extraction à l'éther à basse température (35°C). L'efficacité contre le plasmodium passe instantanément à 100 %.
+                    En comprenant que l'ébullition détruisait la molécule active (l'artémisinine, thermolabile), Tu Youyou et son équipe mettent au point une extraction à l'éther à basse température permettant de préserver l'activité antiparasitaire recherchée sur les modèles d'étude de l'époque.
                   </p>
                 </div>
                 <p>
@@ -284,7 +284,7 @@ export default function Module0ChocParadigmeContent({
                   <li className="flex items-start gap-2">
                     <span className="text-emerald-400 font-bold">✓</span>
                     <span className="text-[#FAF7F2] font-semibold">
-                      Nous incarnons la troisième voie : doter l'individu des outils de laboratoire (thermorégulation ±0,5°C, vortex cinétique, double solvant) pour extraire avec une exactitude absolue ce que des millénaires d'observation humaine ont validé.
+                      Nous incarnons la troisième voie : doter l'individu d'un appareil domestique à chauffe douce régulée (spécification nominale fabricant non certifiée comme métrologie de laboratoire) pour conduire ses extractions aqueuses et huileuses avec davantage de constance.
                     </span>
                   </li>
                 </ul>

@@ -392,18 +392,18 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
                 {tr("réussir une huile infusée maison", "succeed in making homemade infused oil", "ein selbstgemachtes infundiertes Öl herzustellen")}
               </button>
               {tr(
-                ". En milieu hydroalcoolique dosé avec rigueur, l'alcool éthylique permet de ",
-                ". With accurate hydroalcoholic dilution, alcohol allows you to ",
-                ". In präziser hydroalkoholischer Dosierung ermöglicht Alkohol es, "
+                ". Quant aux préparations hydroalcooliques (teintures mères), leur réalisation à chaud dans BloomLab® est suspendue par mesure de sécurité ; hors appareil, seule la macération à froid documentée reste de mise pour ",
+                ". For hydroalcoholic preparations (mother tinctures), heated protocols inside BloomLab® are suspended as a safety measure; outside the appliance, traditional ambient cold maceration applies to ",
+                ". Für hydroalkoholische Urtinkturen sind erhitzte Zyklen in der BloomLab® aus Sicherheitsgründen ausgesetzt; außerhalb des Geräts erfolgt eine klassische Kaltmazeration für "
               )}
               <button 
                 onClick={() => onNavigate('teinture-mere')}
                 className="font-bold underline hover:text-[#E8772E] transition-colors cursor-pointer"
                 style={{ color: '#1E2E25' }}
               >
-                {tr("préparer une teinture mère hydroalcoolique", "prepare a hydroalcoholic mother tincture", "eine hydroalkoholische Urtinktur zuzubereiten")}
+                {tr("comprendre la teinture mère hydroalcoolique", "understand hydroalcoholic mother tinctures", "hydroalkoholische Urtinkturen zu verstehen")}
               </button>
-              {tr(" capable de capter les résines et principes amers.", " capable of capturing dense resins.", " um Harze und Bitterstoffe aufzunehmen.")}
+              {tr(" et le comportement des résines.", " and how dense resins behave.", " und das Lösen von Harzen.")}
             </p>
           </div>
 
@@ -555,9 +555,9 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
 
           <p className="text-base text-white/90 leading-relaxed font-medium">
             {tr(
-              "La machine BloomLab® intègre un système breveté combinant cuve en acier inoxydable 304, inerte et facile à nettoyer, contrôle thermique au degré près et cinétique vortex brevetée. Elle permet de conduire successivement la Phase A hydrosoluble et la Phase B liposoluble pour obtenir des préparations botaniques de haute pureté directement dans votre cuisine.",
-              "The BloomLab® instrument brings laboratory precision into your kitchen with 304 stainless steel, degree-level thermal regulation and continuous agitation.",
-              "Das Gerät BloomLab® bringt Laborpräzision in Ihre Küche: 304-Edelstahl, gradgenaue Thermoregulation und kontinuierliche Vortex-Bewegung für Phase A und B."
+              "La machine BloomLab® combine cuve en acier inoxydable 304 inerte et facile à nettoyer, régulation thermique suivie (spécification nominale annoncée par le fabricant, non certifiée indépendamment) et agitation vortex. Elle permet de conduire successivement la Phase A hydrosoluble (eau, glycérine) et la Phase B liposoluble (huiles végétales) directement dans votre cuisine (tout usage d'alcool chauffé en cuve est suspendu).",
+              "The BloomLab® appliance combines a food-grade 304 stainless steel vessel, regulated heating (manufacturer nominal specification, not independently certified), and vortex agitation. It enables sequential Phase A aqueous/glycerin extraction and Phase B oil extraction in your kitchen (heated alcohol protocols suspended).",
+              "Die BloomLab® kombiniert einen lebensmittelechten 304-Edelstahlbehälter, geregelte Erwärmung (Herstellerangabe, nicht unabhängig zertifiziert) und Vortex-Rührung für sequentielle Phase A (Wasser/Glycerin) und Phase B (Öle) zu Hause (erhitzter Alkohol ausgesetzt)."
             )}
           </p>
 
@@ -589,9 +589,9 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
               </h3>
               <p className="text-sm leading-relaxed" style={{ color: '#1E2E25', opacity: 0.85 }}>
                 {tr(
-                  "L'infusion est une forme particulière d'extraction n'utilisant que l'eau. L'extraction au sens large utilise divers solvants (eau, glycérine, huile, alcool) avec un contrôle strict du temps, de la température et de l'agitation pour mobiliser l'ensemble du Totum végétal.",
-                  "Infusion uses only water. Broad extraction utilizes various solvents under tight control of temperature and agitation.",
-                  "Die Infusion nutzt nur Wasser. Extraktion im weiteren Sinne verwendet verschiedene Lösungsmittel mit genauer Temperatur- und Zeitkontrolle."
+                  "L'infusion est une forme particulière d'extraction n'utilisant que l'eau. L'extraction au sens large mobilise divers solvants (eau, glycérine, huile ; alcool hors appareil à froid uniquement) avec maîtrise du temps, de la température et de l'agitation pour approcher le Totum végétal.",
+                  "Infusion uses only water. Broad extraction utilizes various solvents (water, glycerin, carrier oil; cold alcohol outside electric vessels only) with controlled time, temperature, and agitation.",
+                  "Die Infusion nutzt nur Wasser. Extraktion im weiteren Sinne verwendet verschiedene Lösungsmittel (Wasser, Glycerin, Öl; kalten Alkohol nur außerhalb elektrischer Geräte)."
                 )}
               </p>
             </div>
@@ -602,9 +602,9 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
               </h3>
               <p className="text-sm leading-relaxed" style={{ color: '#1E2E25', opacity: 0.85 }}>
                 {tr(
-                  "C'est un procédé en deux étapes distinctes : la Phase A capture les principes hydrosolubles (eau, glycérine) à température douce, puis la Phase B capture les composés liposolubles (huiles végétales, alcool) sans altérer les molécules fragiles.",
-                  "It is a two-phase protocol: Phase A captures water-soluble compounds, and Phase B extracts lipophilic fractions.",
-                  "Ein zweistufiges Protokoll: Phase A gewinnt wasserlösliche Stoffe, Phase B extrahiert lipophile Fraktionen."
+                  "C'est un procédé en deux étapes distinctes : la Phase A capture les principes hydrosolubles (eau, glycérine) à température douce, puis la Phase B capture les composés liposolubles dans une huile végétale adaptée sans chauffer l'alcool en cuve.",
+                  "It is a two-phase protocol: Phase A captures water-soluble compounds (water, glycerin), and Phase B extracts lipophilic fractions into carrier oils (heated alcohol suspended).",
+                  "Ein zweistufiges Protokoll: Phase A gewinnt wasserlösliche Stoffe (Wasser, Glycerin), Phase B extrahiert lipophile Fraktionen in Pflanzenöl (erhitzter Alkohol ausgesetzt)."
                 )}
               </p>
             </div>
@@ -615,9 +615,9 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
               </h3>
               <p className="text-sm leading-relaxed" style={{ color: '#1E2E25', opacity: 0.85 }}>
                 {tr(
-                  "Une infusion aqueuse se consomme dans les 24 heures. Un macérat huileux stabilisé et conservé à l'abri de la lumière se conserve environ 6 mois, et une préparation hydroalcoolique peut durer plusieurs années.",
-                  "Water infusions should be consumed within 24 hours. Oil macerates last about 6 months, and hydroalcoholic tinctures keep for years.",
-                  "Wässrige Auszüge sollten innerhalb von 24 Stunden verbraucht werden. Ölmazerate halten etwa 6 Monate, Tinkturen mehrere Jahre."
+                  "Une infusion aqueuse fraîche est destinée à une consommation rapide au réfrigérateur (en vérifiant odeur et aspect). Un macérat huileux filtré se conserve à l'abri de la lumière et de la chaleur dans un flacon ambré hermétique, selon l'huile porteuse et l'hygiène de préparation.",
+                  "Fresh water infusions are meant for prompt refrigerated use. Filtered oil macerates keep away from light and heat in airtight amber glass bottles, depending on oil stability and preparation hygiene.",
+                  "Frische wässrige Auszüge sind für den raschen gekühlten Verbrauch bestimmt. Gefilterte Ölmazerate kühl und lichtgeschützt im Braunglas aufbewahren; die Haltbarkeit hängt vom Basisöl ab."
                 )}
               </p>
             </div>

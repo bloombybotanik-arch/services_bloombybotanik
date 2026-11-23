@@ -233,7 +233,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
         temp: "15°C à 25°C (ou tiédie 40°C)",
         duration: "Plusieurs heures à plusieurs semaines",
         parts: "Toutes parties végétales selon le solvant",
-        target: "Mucilages délicats, huiles infusées, macérats alcooliques"
+        target: "Mucilages délicats, huiles infusées, macérats glycérinés (alcool chauffé suspendu)"
       },
       synthesisTitle: "Synthèse :",
       synthesisText: "Le choix entre infusion, décoction et macération s'appuie sur la densité des tissus végétaux et la sensibilité thermique des molécules recherchées."
@@ -301,7 +301,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
           {
             criterion: "Contrôle de la température",
             traditional: "Inertie forte, surveillance visuelle continue de l'eau",
-            bloomlab: "Consigne thermique électronique au degré près"
+            bloomlab: "Régulation thermique électronique (spécification fabricant indicative)"
           },
           {
             criterion: "Agitation du mélange",
@@ -333,7 +333,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
           desc: "Convient aux mucilages, sels minéraux, acides organiques et tanins. Idéale pour les infusions légères à boire immédiatement.",
           affinity: "Molécules hydrosolubles",
           examples: "Camomille, mélisse, menthe, thym",
-          shelfLife: "24 à 48 heures au réfrigérateur"
+          shelfLife: "Au réfrigérateur ; consommation fraîche rapide recommandée (stabilité non testée)"
         },
         {
           title: "L'huile végétale",
@@ -341,7 +341,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
           desc: "Idéale pour confectionner des macérats huileux pour le corps ou la cuisine. Elle capte les caroténoïdes et composés aromatiques.",
           affinity: "Molécules lipophiles",
           examples: "Calendula, millepertuis, arnica, romarin",
-          shelfLife: "6 à 12 mois à l'abri de la lumière"
+          shelfLife: "Flacon ambré sec à l'abri de la lumière ; surveiller odeur et aspect (durée variable)"
         },
         {
           title: "La glycérine végétale",
@@ -349,7 +349,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
           desc: "Parfaite pour des extractions sans alcool destinées aux soins cosmétiques ou aux préparations buccales douces.",
           affinity: "Composés polaires et semi-polaires",
           examples: "Mauve, guimauve, lavande",
-          shelfLife: "Plusieurs mois au frais"
+          shelfLife: "Au frais et à l'abri de la lumière (durée non certifiée sur extrait maison)"
         }
       ],
       precautionTitle: "Précautions relatives aux solvants :",
@@ -387,7 +387,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
             "Régler BloomLab à 45°C pendant 1 heure.",
             "Presser et filtrer sur gaze fine, mettre en flacon ambré."
           ],
-          shelfLife: "6 mois à température tempérée.",
+          shelfLife: "Flacon propre à l'abri de la chaleur et de la lumière ; surveiller l'aspect.",
           safety: "Faire un test de pli du coude 24 h avant application."
         },
         {
@@ -401,7 +401,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
             "Maintenir la chaleur douce sans ébullition.",
             "Filtrer et déguster chaud ou tiède après le repas."
           ],
-          shelfLife: "24 heures au frais.",
+          shelfLife: "Consommation fraîche recommandée au réfrigérateur.",
           safety: "Déconseillé aux enfants de moins de 6 ans."
         }
       ]
@@ -506,7 +506,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
         },
         {
           q: "Comment conserver une préparation ?",
-          a: "Une infusion aqueuse fraîche doit être consommée dans les 24 à 48 heures et conservée au réfrigérateur. Une huile infusée filtrée avec soin se conserve plusieurs mois à l'abri de la lumière, de l'air et de la chaleur, idéalement dans un flacon en verre ambré hermétiquement fermé."
+          a: "Une infusion aqueuse fraîche doit être conservée au réfrigérateur et consommée rapidement (sans durée chiffrée garantie en l'absence de test microbiologique). Une huile filtrée proprement se garde à l'abri de la lumière et de l'air en surveillant son odeur, de l'air et de la chaleur, idéalement dans un flacon en verre ambré hermétiquement fermé."
         },
         {
           q: "Où commencer lorsqu’on ne connaît pas encore les plantes ?",
@@ -588,7 +588,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
         temp: "15°C to 25°C (or warmed 40°C)",
         duration: "Several hours to several weeks",
         parts: "All plant parts depending on solvent",
-        target: "Delicate mucilages, infused carrier oils, alcohol tinctures"
+        target: "Delicate mucilages, infused carrier oils, glycerin macerates (heated alcohol suspended)"
       },
       synthesisTitle: "Summary:",
       synthesisText: "Choosing between infusion, decoction, and maceration depends on the density of plant tissues and the thermal sensitivity of desired actives."
@@ -656,7 +656,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
           {
             criterion: "Temperature Control",
             traditional: "High thermal drift, erratic hot spots from boiling steam",
-            bloomlab: "Precise digital PID regulation within ±0.5°C"
+            bloomlab: "Digital thermal regulation (manufacturer nominal spec)"
           },
           {
             criterion: "Batch Agitation",
@@ -688,7 +688,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
           desc: "Extracts mucilages, mineral salts, organic acids, and tannins. Ideal for immediate restorative teas.",
           affinity: "Water-soluble molecules",
           examples: "Chamomile, lemon balm, mint, thyme",
-          shelfLife: "24 to 48 hours refrigerated"
+          shelfLife: "Refrigerated; prompt fresh consumption recommended (shelf life not lab-tested)"
         },
         {
           title: "Vegetable Carrier Oil",
@@ -756,7 +756,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
             "Maintain gentle heat without bringing to a rolling boil.",
             "Filter and sip warm or room temperature after meals."
           ],
-          shelfLife: "Consume within 24 hours refrigerated.",
+          shelfLife: "Refrigerate and consume promptly while fresh.",
           safety: "Not advised for young children under 6 years."
         }
       ]
@@ -857,7 +857,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
         },
         {
           q: "How should I store finished botanical preparations?",
-          a: "Fresh aqueous infusions must be consumed within 24 to 48 hours and stored in the refrigerator. Infused oils filtered thoroughly will keep for several months in amber glass bottles away from light and heat."
+          a: "Fresh aqueous infusions should be refrigerated and consumed promptly (no validated fixed shelf-life study for home batches). Filtered oil macerates keep best in dark glass away from light and oxygen bottles away from light and heat."
         },
         {
           q: "Where should beginners start?",
@@ -1007,7 +1007,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
           {
             criterion: "Temperaturstabilität",
             traditional: "Starke Hitzespitzen über 90°C durch kochenden Wasserdampf",
-            bloomlab: "Konstante PID-Temperaturregelung auf ±0,5°C genau"
+            bloomlab: "Digitale Temperaturregelung (Herstellerangabe)"
           },
           {
             criterion: "Durchmischung",
@@ -1039,7 +1039,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
           desc: "Löst Schleimstoffe, Mineralsalze, organische Säuren und Tannine. Perfekt für frische Tees.",
           affinity: "Wasserlösliche Moleküle",
           examples: "Kamille, Melisse, Pfefferminze, Thymian",
-          shelfLife: "24 bis 48 Stunden im Kühlschrank"
+          shelfLife: "Im Kühlschrank gekühlt; zügiger frischer Verbrauch empfohlen"
         },
         {
           title: "Pflanzliche Trägeröle",
@@ -1107,7 +1107,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
             "Wärme schonend ohne Sieden halten.",
             "Abseihen und nach dem Essen warm oder lauwarm trinken."
           ],
-          shelfLife: "Innerhalb von 24 Stunden verbrauchen.",
+          shelfLife: "Gekühlt aufbewahren und zeitnah frisch verbrauchen.",
           safety: "Nicht für Kleinkinder unter 6 Jahren geeignet."
         }
       ]

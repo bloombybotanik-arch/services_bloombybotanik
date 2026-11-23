@@ -106,7 +106,7 @@ function PillarGuideExtraction({ onNavigate, lang }: { onNavigate: (v: View, p?:
         "name": "Quelle est la différence entre une tisane et une extraction thermo-cinétique ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "La tisane est une infusion statique avec saturation immédiate de la couche limite. L'extraction thermo-cinétique maintient un vortex permanent qui renouvelle le solvant et extrait plus de 90% des actifs."
+          "text": "La tisane est une infusion statique exposée à l'air libre. L'extraction thermo-cinétique en chambre close maintient une agitation régulière et une température régulée pour favoriser le transfert des actifs sans ébullition prolongée (rendement variable selon la plante et le solvant, sans mesure chiffrée universelle)."
         }
       }
     ]
@@ -143,16 +143,16 @@ function PillarGuideExtraction({ onNavigate, lang }: { onNavigate: (v: View, p?:
           </h1>
           <p className="text-lg sm:text-xl text-[#FAF7F2]/90 leading-relaxed max-w-3xl">
             {tr(
-              "Maîtrisez la science de l'extraction des plantes médicinales chez vous : comparez les 4 méthodes d'extraction, choisissez le solvant idéal, contrôlez la température au degré près et découvrez comment libérer le Totum végétal sans dégradation.",
-              "Master home botanical extraction science: compare the 4 extraction methods, choose the ideal solvent, regulate temperature to the degree, and unlock the plant Totum without thermal degradation.",
+              "Maîtrisez la science de l'extraction des plantes médicinales chez vous : comparez les 4 méthodes d'extraction, choisissez le solvant idéal, régulez la température et découvrez comment préserver le Totum végétal sans dégradation.",
+              "Master home botanical extraction science: compare the 4 extraction methods, choose the ideal solvent, regulate temperature, and preserve the plant Totum without thermal degradation.",
               "Meistern Sie die Wissenschaft der häuslichen Pflanzenextraktion: Vergleichen Sie die 4 Methoden, wählen Sie das passende Lösungsmittel und bewahren Sie das pflanzliche Totum ohne Hitzeschäden."
             )}
           </p>
 
           <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center gap-6 text-xs text-[#E5D7B7]">
             <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-[#C8AB8A]" /> {tr("Lecture : 18 min • 3 400 mots", "Reading: 18 min • 3,400 words", "Lesezeit: 18 Min. • 3.400 Wörter")}</span>
-            <span className="flex items-center gap-2"><Award className="w-4 h-4 text-[#C8AB8A]" /> {tr("Rédigé par le Collège Scientifique Bloom", "Authored by the Bloom Scientific Board", "Verfasst vom Bloom Wissenschaftskollegium")}</span>
-            <span className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-[#C8AB8A]" /> {tr("Conforme Pharmacopée & Sécurité", "Pharmacopoeia & Safety Standards", "Arzneibuch- & Sicherheitskonform")}</span>
+            <span className="flex items-center gap-2"><Award className="w-4 h-4 text-[#C8AB8A]" /> {tr("Rédaction éditoriale Bloom by BotaniK", "Bloom by BotaniK Editorial Team", "Redaktion Bloom by BotaniK")}</span>
+            <span className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-[#C8AB8A]" /> {tr("Précautions & Sécurité d'usage", "Usage Precautions & Safety", "Vorsichts- & Sicherheitshinweise")}</span>
           </div>
         </div>
       </header>
@@ -234,26 +234,26 @@ function PillarGuideExtraction({ onNavigate, lang }: { onNavigate: (v: View, p?:
                 <tr>
                   <td className="py-3.5 px-4 font-bold text-[#3E4A3D]">{tr("Infusion classique (Théière)", "Classic infusion (Teapot)", "Klassische Infusion (Kanne)")}</td>
                   <td className="py-3.5 px-4">{tr("Eau à 100°C", "100°C Water", "Wasser bei 100 °C")}</td>
-                  <td className="py-3.5 px-4 text-rose-600 font-semibold">5% – 15%</td>
+                  <td className="py-3.5 px-4 text-rose-600 font-semibold">{tr("Partiel (non régulé)", "Partial (unregulated)", "Teilweise (ungeregelt)")}</td>
                   <td className="py-3.5 px-4">{tr("Destruction des composés thermolabiles et perte des arômes volatils.", "Degrades heat-sensitive compounds and loses volatile aromatics.", "Zerstört hitzeempfindliche Stoffe und flüchtige Aromen.")}</td>
                 </tr>
                 <tr>
                   <td className="py-3.5 px-4 font-bold text-[#3E4A3D]">{tr("Macération à froid (Bocal)", "Cold maceration (Jar)", "Kaltmazeration (Glas)")}</td>
-                  <td className="py-3.5 px-4">{tr("Huile ou Alcool", "Oil or Alcohol", "Öl oder Alkohol")}</td>
-                  <td className="py-3.5 px-4 text-amber-600 font-semibold">25% – 40%</td>
+                  <td className="py-3.5 px-4">{tr("Huile (ou alcool à froid)", "Oil (or cold alcohol)", "Öl (oder kalter Alkohol)")}</td>
+                  <td className="py-3.5 px-4 text-amber-600 font-semibold">{tr("Lent et hétérogène", "Slow & uneven", "Langsam & ungleichmäßig")}</td>
                   <td className="py-3.5 px-4">{tr("Durée excessive (3 à 6 semaines), risque d'oxydation et de rancissement.", "Excessive duration (3–6 weeks), higher risk of oxidation.", "Lange Dauer (3–6 Wochen), Risiko von Oxidation.")}</td>
                 </tr>
                 <tr>
                   <td className="py-3.5 px-4 font-bold text-[#3E4A3D]">{tr("Décoction traditionnelle", "Traditional decoction", "Traditionelle Dekoktion")}</td>
                   <td className="py-3.5 px-4">{tr("Eau bouillante", "Boiling water", "Kochendes Wasser")}</td>
-                  <td className="py-3.5 px-4 text-amber-600 font-semibold">30% – 45%</td>
+                  <td className="py-3.5 px-4 text-amber-600 font-semibold">{tr("Ciblé fibres dures", "Targets tough fibers", "Für harte Fasern")}</td>
                   <td className="py-3.5 px-4">{tr("Réservée aux racines coriaces ; détruit irrémédiablement les vitamines et terpènes.", "Limited to tough roots; damages delicate vitamins and terpenes.", "Nur für harte Wurzeln; schädigt empfindliche Vitamine und Terpene.")}</td>
                 </tr>
                 <tr className="bg-emerald-50/60 font-medium">
                   <td className="py-3.5 px-4 font-black text-[#3E4A3D]">{tr("Extraction Thermo-Cinétique A/B (BloomLab)", "Thermo-Kinetic A/B Extraction (BloomLab)", "Thermokinetische A/B-Extraktion (BloomLab)")}</td>
                   <td className="py-3.5 px-4">{tr("Eau, Huile ou Glycérine", "Water, Oil, or Glycerin", "Wasser, Öl oder Glycerin")}</td>
-                  <td className="py-3.5 px-4 text-emerald-700 font-black text-sm">85% – 95%</td>
-                  <td className="py-3.5 px-4 text-emerald-800">{tr("Nécessite un matériel de régulation thermique précis en milieu clos.", "Requires sealed temperature-controlled instrumentation.", "Erfordert geschlossene präzise Temperaturregelung.")}</td>
+                  <td className="py-3.5 px-4 text-emerald-700 font-black text-sm">{tr("Optimisé par conception (sans dosage labo certifié)", "Optimized by design (no lab assay claimed)", "Konzeptoptimiert (ohne Labormesswert)")}</td>
+                  <td className="py-3.5 px-4 text-emerald-800">{tr("Nécessite un matériel de régulation thermique en milieu clos (usage alcool chauffé suspendu).", "Requires sealed temperature-controlled instrumentation (heated alcohol suspended).", "Erfordert geschlossene Temperaturregelung (erhitzter Alkohol ausgesetzt).")}</td>
                 </tr>
               </tbody>
             </table>
@@ -277,8 +277,8 @@ function PillarGuideExtraction({ onNavigate, lang }: { onNavigate: (v: View, p?:
               <p className="text-xs text-[#1B3022]/80 leading-relaxed">{tr("Solvant amphiphile doux, sans alcool, qui capte les flavonoïdes tout en assurant une excellente conservation.", "Gentle alcohol-free solvent capturing water-soluble polyphenols while extending shelf stability.", "Sanftes, alkoholfreies Lösungsmittel für empfindliche Routinen mit langer Haltbarkeit.")}</p>
             </div>
             <div className="p-6 rounded-2xl bg-[#FAF7F2] border border-[#D8CBB7]/60 space-y-2">
-              <h3 className="font-bold text-[#3E4A3D] flex items-center gap-2"><Activity className="w-4 h-4 text-rose-600" /> {tr("L'Alcool Éthylique (Teintures)", "Food-Grade Alcohol (Tinctures)", "Speisealkohol (Tinkturen)")}</h3>
-              <p className="text-xs text-[#1B3022]/80 leading-relaxed">{tr("Solvant puissant pour les résines coriaces nécessitant un titrage rigoureux (40° à 70°).", "High-efficiency solvent for dense resins using controlled hydroalcoholic ratios (40–70°).", "Effizientes Lösungsmittel für feste Harze mit kontrolliertem Alkoholgehalt (40–70°).")} </p>
+              <h3 className="font-bold text-[#3E4A3D] flex items-center gap-2"><Activity className="w-4 h-4 text-rose-600" /> {tr("L'Alcool Éthylique (Hors appareil à froid)", "Food-Grade Alcohol (Cold outside appliance)", "Speisealkohol (Kalt außerhalb des Geräts)")}</h3>
+              <p className="text-xs text-[#1B3022]/80 leading-relaxed">{tr("Solvant historique pour les résines, utilisé uniquement par macération à froid hors appareil électrique (l'extraction alcoolique chauffée en cuve BloomLab® est suspendue).", "Traditional resin solvent used strictly by ambient cold maceration outside electric appliances (heated alcohol inside BloomLab® is suspended).", "Traditionelles Harzlösungsmittel nur zur Kaltmazeration außerhalb elektrischer Geräte (erhitzter Alkohol im BloomLab® ausgesetzt).")} </p>
             </div>
           </div>
         </section>
@@ -313,10 +313,10 @@ function PillarGuideExtraction({ onNavigate, lang }: { onNavigate: (v: View, p?:
 
         <section id="materiel" className="bg-[#3E4A3D] text-white p-8 sm:p-12 rounded-3xl shadow-xl space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C8AB8A]/20 text-[#C8AB8A] text-xs font-bold uppercase tracking-wider">
-            <Award className="w-3.5 h-3.5" /> {tr("Innovation Brevetée", "Patented Innovation", "Patentierte Innovation")}
+            <Award className="w-3.5 h-3.5" /> {tr("Ingénierie Domestique Bloom", "Bloom Home Engineering", "Bloom Haushaltstechnik")}
           </div>
-          <h2 className="text-2xl sm:text-4xl font-black text-white">{tr("6. L'Extracteur Botanique BloomLab® v2", "6. The BloomLab® v2 Botanical Extractor", "6. Der Botanische Extraktor BloomLab® v2")}</h2>
-          <p className="text-sm sm:text-base text-[#FAF7F2]/85 leading-relaxed">{tr("Pour automatiser ces principes de laboratoire dans une cuisine sans risque d'erreur, BotaniK a conçu le BloomLab® : cuve en acier inoxydable chirurgical 304 inerte, thermorégulation numérique au degré près, vortex magnétique cinétique et couvercle hermétique.", "To bring laboratory precision into your kitchen effortlessly, BloomLab® combines an inert 304 stainless steel chamber, degree-level thermoregulation, kinetic vortex agitation, and a sealed lid.", "Um Laborpräzision mühelos in die Küche zu bringen, vereint BloomLab® eine inerte 304-Edelstahlkammer, gradgenaue Steuerung, magnetische Vortex-Bewegung und einen dichten Deckel.")}</p>
+          <h2 className="text-2xl sm:text-4xl font-black text-white">{tr("6. L'Extracteur Botanique BloomLab®", "6. The BloomLab® Botanical Extractor", "6. Der Botanische Extraktor BloomLab®")}</h2>
+          <p className="text-sm sm:text-base text-[#FAF7F2]/85 leading-relaxed">{tr("Pour faciliter ces préparations aqueuses et huileuses dans une cuisine, BloomLab® associe une cuve en acier inoxydable 304 alimentaire, une régulation thermique suivie (spécification nominale fabricant), un brassage cinétique et un couvercle hermétique.", "To simplify aqueous and oil preparations at home, BloomLab® combines a food-grade 304 stainless steel chamber, regulated heating (manufacturer nominal specification), kinetic agitation, and a sealed lid.", "Für wässrige und ölige Hauszubereitungen kombiniert BloomLab® eine lebensmittelechte 304-Edelstahlkammer, geregelte Erwärmung (Herstellerangabe), Vortex-Rührung und einen dichten Deckel.")}</p>
           <div className="pt-2 flex flex-wrap gap-4">
             <button onClick={() => onNavigate('bloomlab')} className="px-6 py-3.5 rounded-xl bg-[#E8772E] hover:bg-[#D4651F] text-white font-bold text-xs uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2">
               {tr("Découvrir la machine BloomLab® (229€) →", "Discover BloomLab® Machine (229€) →", "BloomLab® entdecken (229 €) →")}
@@ -340,9 +340,9 @@ function PillarGuideExtraction({ onNavigate, lang }: { onNavigate: (v: View, p?:
         <section id="conservation" className="bg-white p-8 sm:p-12 rounded-3xl border border-[#D8CBB7]/60 shadow-sm space-y-6">
           <h2 className="text-2xl sm:text-3xl font-black text-[#3E4A3D]">{tr("8. Conservation et Durée de Vie des Extraits", "8. Storage and Shelf Life of Extracts", "8. Aufbewahrung und Haltbarkeit der Extrakte")}</h2>
           <div className="grid sm:grid-cols-3 gap-4 text-xs">
-            <div className="p-4 rounded-2xl bg-[#FAF7F2] border border-[#D8CBB7]/40"><h3 className="font-bold text-[#3E4A3D] mb-1">{tr("Extraits Aqueux Frais", "Fresh Aqueous Extracts", "Frische wässrige Extrakte")}</h3><p className="text-[#1B3022]/70">{tr("À consommer dans les 48h au réfrigérateur (4°C).", "Use within 48 hours refrigerated at 4°C.", "Innerhalb von 48 Stunden bei 4 °C genießen.")}</p></div>
-            <div className="p-4 rounded-2xl bg-[#FAF7F2] border border-[#D8CBB7]/40"><h3 className="font-bold text-[#3E4A3D] mb-1">{tr("Huiles Infusées", "Infused Oils", "Infundierte Öle")}</h3><p className="text-[#1B3022]/70">{tr("6 à 12 mois en flacon verre teinté avec 0,2% de vitamine E.", "6 to 12 months in an amber glass bottle with 0.2% vitamin E.", "6 bis 12 Monate in Braunglas mit 0,2 % Vitamin E.")}</p></div>
-            <div className="p-4 rounded-2xl bg-[#FAF7F2] border border-[#D8CBB7]/40"><h3 className="font-bold text-[#3E4A3D] mb-1">{tr("Glycérés & Teintures", "Glycerites & Tinctures", "Glyzerite & Tinkturen")}</h3><p className="text-[#1B3022]/70">{tr("1 à 3 ans à l'abri de la lumière directe.", "1 to 3 years away from direct UV light.", "1 bis 3 Jahre geschützt vor direktem UV-Licht.")}</p></div>
+            <div className="p-4 rounded-2xl bg-[#FAF7F2] border border-[#D8CBB7]/40"><h3 className="font-bold text-[#3E4A3D] mb-1">{tr("Extraits Aqueux Frais", "Fresh Aqueous Extracts", "Frische wässrige Extrakte")}</h3><p className="text-[#1B3022]/70">{tr("Préparer à la demande et consommer rapidement au réfrigérateur (vérifier odeur et aspect).", "Prepare fresh and consume promptly refrigerated (check odor and clarity).", "Frisch zubereiten und rasch gekühlt verbrauchen (Geruch und Aussehen prüfen).")}</p></div>
+            <div className="p-4 rounded-2xl bg-[#FAF7F2] border border-[#D8CBB7]/40"><h3 className="font-bold text-[#3E4A3D] mb-1">{tr("Huiles Infusées", "Infused Oils", "Infundierte Öle")}</h3><p className="text-[#1B3022]/70">{tr("En flacon verre ambré hermétique, à l'abri de la lumière et de la chaleur (selon l'huile support).", "In an airtight amber glass bottle away from light and heat (depends on carrier oil).", "In luftdichter Braunglasflasche licht- und wärmegeschützt (abhängig vom Basisöl).")}</p></div>
+            <div className="p-4 rounded-2xl bg-[#FAF7F2] border border-[#D8CBB7]/40"><h3 className="font-bold text-[#3E4A3D] mb-1">{tr("Macérats Glycérinés", "Glycerin Macerates", "Glyzerin-Mazerate")}</h3><p className="text-[#1B3022]/70">{tr("Flacon ambré à l'abri de la lumière directe et des sources de chaleur.", "Amber glass away from direct light and heat sources.", "Braunglas geschützt vor direktem Licht und Wärmequellen.")}</p></div>
           </div>
         </section>
 
@@ -758,9 +758,9 @@ function PillarTotumVegetal({ onNavigate, lang }: { onNavigate: (v: View, p?: st
           </h2>
           <p className="text-base text-[#1B3022]/85 leading-relaxed">
             {tr(
-              "La majorité des plantes abritent des composés hydrophiles (solubles dans l'eau) et lipophiles (solubles dans l'huile ou l'alcool). Pour capturer l'intégralité du Totum sans compromis, BloomLab utilise le protocole d'extraction séquentielle A/B :",
-              "Most plants contain both hydrophilic (water-soluble) and lipophilic (oil- or alcohol-soluble) compounds. To capture the full Totum without compromise, BloomLab uses sequential A/B extraction:",
-              "Die meisten Pflanzen enthalten sowohl hydrophile (wasserlösliche) als auch lipophile (öl- oder alkohollösliche) Stoffe. Um das gesamte Totum zu erfassen, nutzt BloomLab die sequentielle A/B-Extraktion:"
+              "La majorité des plantes abritent des composés hydrophiles (solubles dans l'eau ou la glycérine) et lipophiles (solubles dans l'huile végétale). Pour approcher l'intégralité du Totum sans solvant inflammable chauffé en cuve, BloomLab utilise le protocole d'extraction séquentielle A/B :",
+              "Most plants contain both hydrophilic (water- or glycerin-soluble) and lipophilic (oil-soluble) compounds. To approach the full Totum without heated flammable solvents, BloomLab uses sequential A/B extraction:",
+              "Die meisten Pflanzen enthalten sowohl hydrophile (wasser- oder glycerinlöslich) als auch lipophile (öllöslich) Stoffe. Für das vollständige Totum ohne erhitzte brennbare Lösungsmittel nutzt BloomLab die sequentielle A/B-Extraktion:"
             )}
           </p>
           <div className="p-6 rounded-2xl bg-[#3E4A3D] text-white space-y-3">
@@ -875,9 +875,9 @@ function PillarCosmetiquesDIY({ onNavigate, lang }: { onNavigate: (v: View, p?: 
           </h1>
           <p className="text-lg sm:text-xl text-[#FAF7F2]/90 leading-relaxed max-w-3xl">
             {tr(
-              "Émulsions végétales, sérums antioxydants, baumes réparateurs cutanés : apprenez à transformer les plantes fraîches et sèches en cosmétiques d'une pureté laboratoire absolue.",
-              "Botanical emulsions, antioxidant serums, and nourishing skin balms: learn how to transform fresh and dried plants into lab-grade clean skincare at home.",
-              "Pflanzliche Emulsionen, antioxidative Seren, pflegende Hautbalsame: Lernen Sie, frische und getrocknete Pflanzen in reine Naturkosmetik zu verwandeln."
+              "Émulsions végétales, sérums et baumes cutanés : apprenez à préparer vos propres soins botaniques à domicile en choisissant des plantes et huiles végétales de qualité.",
+              "Botanical emulsions, serums, and nourishing skin balms: learn how to craft clean home skincare using quality dried botanicals and virgin carrier oils.",
+              "Pflanzliche Emulsionen, Seren und Pflegebalsame: Lernen Sie, frische und getrocknete Pflanzen mit hochwertigen Ölen zu Hauskosmetik zu verarbeiten."
             )}
           </p>
 
@@ -975,7 +975,7 @@ function PillarPhytotherapieScientifique({ onNavigate, lang }: { onNavigate: (v:
     ),
     "author": {
       "@type": "Organization",
-      "name": tr("Collège Scientifique Bloom by BotaniK", "Bloom by BotaniK Scientific Board", "Wissenschaftlicher Beirat Bloom by BotaniK")
+      "name": tr("Rédaction Bloom by BotaniK", "Bloom by BotaniK Editorial Team", "Redaktion Bloom by BotaniK")
     }
   };
 

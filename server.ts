@@ -27,26 +27,15 @@ import { GoogleGenAI } from "@google/genai";
 import { initializeApp, getApps, cert, applicationDefault } from "firebase-admin/app";
 import { getFirestore, Firestore } from "firebase-admin/firestore";
 import { getAuth } from "firebase-admin/auth";
+import { createRequire } from "module";
 import dotenv from "dotenv";
-import { NewsletterOrchestrator } from "./server/newsletter-orchestrator";
-import { 
-  renderRecipePageHtml, 
-  renderCategoryPageHtml, 
-  renderHubPageHtml 
-} from "./src/server/recipeSsrRenderer";
-import { 
-  renderHerbierRecipePageHtml, 
-  renderHerbierCategoryPageHtml 
-} from "./src/server/herbierRecipeSsrRenderer";
-import { getRecipeByPath } from "./src/data/canonicalRecipesRegistry";
-import { getHerbierRecipeByPath } from "./src/data/herbierRecipesRegistry";
-import { blogPosts } from "./src/data/blogPosts";
 
 dotenv.config();
 
 /* Dépendances optionnelles (dégradation gracieuse) */
+const requireFromMeta = createRequire(import.meta.url);
 const optionalRequire = (id: string): any => {
-  try { return require(id); } catch { return null; }
+  try { return requireFromMeta(id); } catch { return null; }
 };
 const helmet: any = optionalRequire("helmet");
 const compression: any = optionalRequire("compression");
@@ -190,10 +179,60 @@ const transporter = nodemailer.createTransport({
 });
 
 const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-1.5-flash";
-const ai = new GoogleGenAI({
-  apiKey: process.env.GEMINI_API_KEY || "",
-  httpOptions: { headers: { "User-Agent": "aistudio-build" } },
-});
+let aiInstance: GoogleGenAI | null = null;
+const getAi = (): GoogleGenAI => {
+  if (!aiInstance) {
+    const apiKey = process.env.GEMINI_API_KEY || "";
+    if (!apiKey) throw new Error("GEMINI_API_KEY is missing");
+    aiInstance = new GoogleGenAI({
+      apiKey,
+      httpOptions: { headers: { "User-Agent": "aistudio-build" } },
+    });
+  }
+  return aiInstance;
+};
+
+let ssrModulesCache: {
+  renderRecipePageHtml: any;
+  renderCategoryPageHtml: any;
+  renderHubPageHtml: any;
+  renderHerbierRecipePageHtml: any;
+  renderHerbierCategoryPageHtml: any;
+  getRecipeByPath: any;
+  getHerbierRecipeByPath: any;
+  blogPosts: any[];
+} | null = null;
+let ssrModulesPromise: Promise<typeof ssrModulesCache> | null = null;
+
+function ensureSsrModules() {
+  if (ssrModulesCache) return Promise.resolve(ssrModulesCache);
+  if (!ssrModulesPromise) {
+    ssrModulesPromise = Promise.all([
+      import("./src/server/recipeSsrRenderer"),
+      import("./src/server/herbierRecipeSsrRenderer"),
+      import("./src/data/canonicalRecipesRegistry"),
+      import("./src/data/herbierRecipesRegistry"),
+      import("./src/data/blogPosts"),
+    ]).then(([recipeSsr, herbierSsr, canonicalReg, herbierReg, blogMod]) => {
+      ssrModulesCache = {
+        renderRecipePageHtml: recipeSsr.renderRecipePageHtml,
+        renderCategoryPageHtml: recipeSsr.renderCategoryPageHtml,
+        renderHubPageHtml: recipeSsr.renderHubPageHtml,
+        renderHerbierRecipePageHtml: herbierSsr.renderHerbierRecipePageHtml,
+        renderHerbierCategoryPageHtml: herbierSsr.renderHerbierCategoryPageHtml,
+        getRecipeByPath: canonicalReg.getRecipeByPath,
+        getHerbierRecipeByPath: herbierReg.getHerbierRecipeByPath,
+        blogPosts: blogMod.blogPosts || [],
+      };
+      return ssrModulesCache;
+    }).catch((err) => {
+      console.error("[SSR Modules] load error:", err);
+      ssrModulesPromise = null;
+      return null;
+    });
+  }
+  return ssrModulesPromise;
+}
 
 const upload = multer({
   storage: multer.memoryStorage(),
@@ -998,10 +1037,20 @@ function registerAppRoutes(app: express.Express) {
   });
 
   /* --- NEWSLETTER ADMIN --- */
-  const orchestrator = new NewsletterOrchestrator(process.env.GEMINI_API_KEY!);
+  let orchestratorInstance: any = null;
+  const getOrchestrator = async () => {
+    if (!orchestratorInstance) {
+      const apiKey = process.env.GEMINI_API_KEY;
+      if (!apiKey) throw new Error("GEMINI_API_KEY is missing");
+      const { NewsletterOrchestrator } = await import("./server/newsletter-orchestrator");
+      orchestratorInstance = new NewsletterOrchestrator(apiKey);
+    }
+    return orchestratorInstance;
+  };
   app.post("/api/admin/newsletter/generate", requireAdmin, async (req, res) => {
     try {
       const { season, context_data } = req.body || {};
+      const orchestrator = await getOrchestrator();
       const sharedMemory: any = await orchestrator.generateNewsletter({ season, ...(context_data || {}) });
       const firestore = getDb();
       const campaign = await firestore.collection("newsletter_campaigns").add({
@@ -1055,7 +1104,7 @@ function registerAppRoutes(app: express.Express) {
         ...(history || []).map((h: any) => ({ role: h.role === "user" ? "user" : "model", parts: [{ text: h.text }] })),
         { role: "user", parts: [{ text: message }] },
       ];
-      const result = await ai.models.generateContent({
+      const result = await getAi().models.generateContent({
         model: GEMINI_MODEL,
         contents,
         config: { systemInstruction: BOT_SYSTEM_INSTRUCTION, responseMimeType: "application/json" },
@@ -1104,7 +1153,7 @@ RÈGLES DE VÉRIFICATION STRICTES :
 - "est_bloomlab" est FALSE si c'est un kit de plantes, un binder ou un accessoire seul.
 - Si la date est supérieure à 30 jours par rapport à aujourd'hui, ajoute un champ "offre_expiree": true.
 - Ne retourne AUCUN texte explicatif, uniquement le JSON valide.`;
-      const result = await ai.models.generateContent({
+      const result = await getAi().models.generateContent({
         model: GEMINI_MODEL,
         contents: [{ parts: [imagePart, { text: prompt }] }],
         config: { responseMimeType: "application/json" },
@@ -2342,24 +2391,26 @@ function injectServerSEO(html: string, reqPath: string): string {
     const clean = reqPath.replace(/\/$/, "") + "/";
     const normalized = clean === "//" ? "/" : clean;
 
+    const ssrMods = ssrModulesCache;
     // 0. Recettes publiques crawlables (Hub, Catégories, Pagination & Fiches individuelles)
     if (
+      ssrMods &&
       (reqPath.startsWith("/recettes") || reqPath.startsWith("/recettes/")) &&
       normalized !== "/recettes/culinaires/soupe-beaute-tremella/"
     ) {
       const cleanRecipePath = reqPath.endsWith("/") ? reqPath : reqPath + "/";
 
       // 0.1 Fiche Recette Herbier Migrée
-      const herbierRecipe = getHerbierRecipeByPath(cleanRecipePath);
+      const herbierRecipe = ssrMods.getHerbierRecipeByPath(cleanRecipePath);
       if (herbierRecipe) {
-        const rendered = renderHerbierRecipePageHtml(herbierRecipe);
+        const rendered = ssrMods.renderHerbierRecipePageHtml(herbierRecipe);
         return finalizeRecipeSsrHtml(html, rendered, herbierRecipe.schemaType === 'Recipe' ? 'website' : 'article');
       }
 
       // 0.2 Fiche Recette Canonique
-      const recipe = getRecipeByPath(cleanRecipePath);
+      const recipe = ssrMods.getRecipeByPath(cleanRecipePath);
       if (recipe) {
-        const rendered = renderRecipePageHtml(recipe);
+        const rendered = ssrMods.renderRecipePageHtml(recipe);
         return finalizeRecipeSsrHtml(html, rendered, recipe.schemaType === 'Recipe' ? 'website' : 'article');
       }
 
@@ -2367,36 +2418,36 @@ function injectServerSEO(html: string, reqPath: string): string {
       if (cleanRecipePath.startsWith("/recettes/phytotherapie")) {
         const matchPage = cleanRecipePath.match(/\/page\/(\d+)\/?$/);
         const pageNum = matchPage ? parseInt(matchPage[1], 10) : 1;
-        return finalizeRecipeSsrHtml(html, renderHerbierCategoryPageHtml('phytotherapie', pageNum), 'website');
+        return finalizeRecipeSsrHtml(html, ssrMods.renderHerbierCategoryPageHtml('phytotherapie', pageNum), 'website');
       }
 
       // 0.4 Catégorie Gastronomie
       if (cleanRecipePath.startsWith("/recettes/gastronomie")) {
         const matchPage = cleanRecipePath.match(/\/page\/(\d+)\/?$/);
         const pageNum = matchPage ? parseInt(matchPage[1], 10) : 1;
-        return finalizeRecipeSsrHtml(html, renderHerbierCategoryPageHtml('gastronomie', pageNum), 'website');
+        return finalizeRecipeSsrHtml(html, ssrMods.renderHerbierCategoryPageHtml('gastronomie', pageNum), 'website');
       }
 
       if (cleanRecipePath.startsWith("/recettes/culinaires")) {
         const matchPage = cleanRecipePath.match(/\/page\/(\d+)\/?$/);
         const pageNum = matchPage ? parseInt(matchPage[1], 10) : 1;
-        return finalizeRecipeSsrHtml(html, renderCategoryPageHtml('culinaires', pageNum), 'website');
+        return finalizeRecipeSsrHtml(html, ssrMods.renderCategoryPageHtml('culinaires', pageNum), 'website');
       }
 
       if (cleanRecipePath.startsWith("/recettes/cosmetiques")) {
         const matchPage = cleanRecipePath.match(/\/page\/(\d+)\/?$/);
         const pageNum = matchPage ? parseInt(matchPage[1], 10) : 1;
-        return finalizeRecipeSsrHtml(html, renderCategoryPageHtml('cosmetiques', pageNum), 'website');
+        return finalizeRecipeSsrHtml(html, ssrMods.renderCategoryPageHtml('cosmetiques', pageNum), 'website');
       }
 
       if (cleanRecipePath.startsWith("/recettes/parcours-botaniques")) {
         const matchPage = cleanRecipePath.match(/\/page\/(\d+)\/?$/);
         const pageNum = matchPage ? parseInt(matchPage[1], 10) : 1;
-        return finalizeRecipeSsrHtml(html, renderCategoryPageHtml('parcours-botaniques', pageNum), 'website');
+        return finalizeRecipeSsrHtml(html, ssrMods.renderCategoryPageHtml('parcours-botaniques', pageNum), 'website');
       }
 
       if (cleanRecipePath === "/recettes/" || cleanRecipePath === "/recettes") {
-        return finalizeRecipeSsrHtml(html, renderHubPageHtml(), 'website');
+        return finalizeRecipeSsrHtml(html, ssrMods.renderHubPageHtml(), 'website');
       }
     }
 
@@ -2404,9 +2455,9 @@ function injectServerSEO(html: string, reqPath: string): string {
     let matchedPostSlug: string | null = null;
 
     // Résolution dynamique des articles & billets de blog depuis blogPosts.ts
-    if (!route && (normalized.startsWith("/articles/") || normalized.startsWith("/blog/"))) {
+    if (ssrMods && !route && (normalized.startsWith("/articles/") || normalized.startsWith("/blog/"))) {
       const slug = normalized.replace(/^\/(?:articles|blog)\//, "").replace(/\/$/, "");
-      const matchedPost = blogPosts.find((p) => p.slug === slug);
+      const matchedPost = ssrMods.blogPosts.find((p: any) => p.slug === slug);
       if (matchedPost) {
         matchedPostSlug = matchedPost.slug;
         const postTitle = matchedPost.metaTitle?.fr || `${matchedPost.title?.fr || "Article Botanique"} | Bloom by BotaniK`;
@@ -2787,7 +2838,11 @@ function registerCatchAll(app: express.Express, isProd: boolean) {
         ? "noindex, nofollow"
         : "index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1";
 
-      if (fs.existsSync(distIndex)) {
+      if (req.path.startsWith("/recettes") || req.path.startsWith("/articles/") || req.path.startsWith("/blog/")) {
+        await ensureSsrModules();
+      }
+
+      if (isProd && fs.existsSync(distIndex)) {
         let rawHtml = fs.readFileSync(distIndex, "utf-8");
         const finalHtml = injectServerSEO(rawHtml, req.path);
         return res.status(200)
@@ -2874,6 +2929,7 @@ async function startServer() {
 
   const server = app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server listening on http://0.0.0.0:${PORT} (${IS_PROD ? "production" : "development"})`);
+    setImmediate(() => { ensureSsrModules(); });
   });
 
   const shutdown = (signal: string) => {

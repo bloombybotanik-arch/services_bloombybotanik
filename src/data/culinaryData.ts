@@ -87,7 +87,7 @@ export const culinaryDatabaseFR: CulinaryPlantData[] = [
       miel: {temp: "35°C", temps: "45min", solvant: "Miel d'acacia", ratio: "15g/250ml", usage: "Thé, yaourts, fruits rouges"}
     },
     synergies_aliments: ["Agneau", "Taboulé", "Chocolat", "Fraises", "Thé vert"],
-    astuce_chef_bloom: "La menthe perd 80% de son menthol à l'air libre. L'extraction en milieu fermé (BloomLab) à 40°C capture 100% de la fraîcheur."
+    astuce_chef_bloom: "Les composés aromatiques volatils de la menthe s'évaporent rapidement à l'air libre ; une enceinte fermée à 40°C aide à limiter cette perte aromatique."
   },
   {
     plant_id: "estragon_culinaire", nom_commun: "Estragon", profil_aromatique: "Anisé, réglissé, délicat",
@@ -114,7 +114,7 @@ export const culinaryDatabaseFR: CulinaryPlantData[] = [
       beurre_ghee: {temp: "50°C", temps: "1h30", solvant: "Ghee", ratio: "25g/250g", usage: "Beurre doré indien, naan, dahl"}
     },
     synergies_aliments: ["Coco", "Gingembre", "Cumin", "Légumineuses", "Riz basmati"],
-    astuce_chef_bloom: "Règle d'or Bloom : Curcuma + Poivre + Gras. L'extraction dans le ghee à 50°C avec une pincée de poivre garantit une biodisponibilité maximale de la curcumine."
+    astuce_chef_bloom: "Règle d'or Bloom : Curcuma + Poivre + Gras. L'extraction dans le ghee à 50°C avec une pincée de poivre favorise la solubilisation lipophile traditionnelle des curcuminoïdes."
   },
   {
     plant_id: "cannelle_culinaire", nom_commun: "Cannelle de Ceylan", profil_aromatique: "Doux, épicé, boisé, sucré",
@@ -272,7 +272,7 @@ export const culinaryDatabaseEN: CulinaryPlantData[] = [
       miel: {temp: "35°C", temps: "45min", solvant: "Acacia honey", ratio: "15g/250ml", usage: "Tea, yogurts, red fruits"}
     },
     synergies_aliments: ["Lamb", "Tabbouleh", "Chocolate", "Strawberries", "Green tea"],
-    astuce_chef_bloom: "Mint loses 80% of its menthol in the open air. Extraction in a closed environment (BloomLab) at 40°C captures 100% of the freshness."
+    astuce_chef_bloom: "Volatile aromatics in mint dissipate rapidly in open air; a closed extraction chamber at 40°C helps limit aromatic evaporation."
   },
   {
     plant_id: "estragon_culinaire", nom_commun: "Tarragon", profil_aromatique: "Aniseed, licorice, delicate",
@@ -299,7 +299,7 @@ export const culinaryDatabaseEN: CulinaryPlantData[] = [
       beurre_ghee: {temp: "50°C", temps: "1h30", solvant: "Ghee", ratio: "25g/250g", usage: "Indian golden butter, naan, dahl"}
     },
     synergies_aliments: ["Coconut", "Ginger", "Cumin", "Legumes", "Basmati rice"],
-    astuce_chef_bloom: "Bloom golden rule: Turmeric + Pepper + Fat. Extraction in ghee at 50°C with a pinch of pepper guarantees maximum bioavailability of curcumin."
+    astuce_chef_bloom: "Bloom golden rule: Turmeric + Pepper + Fat. Extraction in ghee at 50°C with a pinch of pepper supports traditional lipid solubilization of curcuminoids."
   },
   {
     plant_id: "cannelle_culinaire", nom_commun: "Ceylon Cinnamon", profil_aromatique: "Sweet, spicy, woody",

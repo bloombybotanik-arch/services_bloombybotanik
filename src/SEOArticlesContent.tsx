@@ -607,9 +607,9 @@ export const InfusionPrecision = ({ lang, t, onNavigate }: SEOArticleProps) => {
           <div className="space-y-4 text-base sm:text-lg text-slate-700 leading-relaxed font-light">
             <p>
               {tr(
-                'BloomLab® vous offre toutes les clés pour réaliser vos propres remèdes naturels. En transformant votre cuisine en laboratoire de précision, vous accédez à une souveraineté sanitaire réelle.',
-                'BloomLab® gives you laboratory control to craft botanical home preparations in your kitchen with full autonomy and clear dosing.',
-                'Die BloomLab® verwandelt Ihre Küche in ein Präzisionslabor für hausgemachte Pflanzenauszüge mit voller Kontrolle und klarer Dosierung.'
+                'BloomLab® vous accompagne pour réaliser vos propres préparations botaniques maison avec une chauffe douce régulée et une méthodologie reproductible.',
+                'BloomLab® helps you craft homemade botanical preparations in your kitchen with gentle regulated heating and clear, repeatable steps.',
+                'Die BloomLab® unterstützt Sie dabei, pflanzliche Zubereitungen zu Hause mit sanfter Wärmeregelung und klaren Schritten herzustellen.'
               )}
             </p>
           </div>
@@ -623,36 +623,36 @@ export const InfusionPrecision = ({ lang, t, onNavigate }: SEOArticleProps) => {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-[#3E4A3D]">{tr('Des extraits plus concentrés :', 'More concentrated extracts:', 'Konzentriertere Auszüge:')}</strong>{' '}
-                  {tr("jusqu'à 5 fois plus d'actifs préservés qu'une tisane classique en casserole.", 'up to 5x more preserved compounds than an open stovetop steep.', 'bis zu 5-mal mehr bewahrte Stoffe als in einem klassischen Topfaufguss.')}
+                  <strong className="text-[#3E4A3D]">{tr('Une chauffe douce mieux maîtrisée :', 'More controlled gentle heating:', 'Besser gesteuerte sanfte Wärme:')}</strong>{' '}
+                  {tr("pour limiter la surchauffe et l'évaporation des arômes par rapport à une casserole bouillante ouverte.", 'helping limit overheating and aromatic evaporation compared with an open boiling pot.', 'um Überhitzung und das Verdampfen empfindlicher Aromen im offenen Kochtopf zu begrenzen.')}
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-[#3E4A3D]">{tr('Des remèdes plus efficaces :', 'Cleaner, purer botanicals:', 'Reineres Wirkstoffprofil:')}</strong>{' '}
-                  {tr("parce que les molécules actives ne sont pas détruites avant d'atteindre vos cellules.", 'because sensitive aromatic and phenolic compounds remain intact.', 'weil empfindliche Aromastoffe und Polyphenole unversehrt bleiben.')}
+                  <strong className="text-[#3E4A3D]">{tr('Des préparations plus soignées :', 'Cleaner botanical preparations:', 'Sorgfältigere Pflanzenauszüge:')}</strong>{' '}
+                  {tr('parce que les molécules aromatiques et polyphénols sensibles ne sont pas soumis à une ébullition prolongée.', 'because sensitive aromatic and phenolic compounds avoid prolonged boiling.', 'weil empfindliche Aromastoffe und Polyphenole nicht dauerhaft aufgekocht werden.')}
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-[#3E4A3D]">{tr('Une reproductibilité parfaite :', 'Exact repeatability:', 'Perfekte Reproduzierbarkeit:')}</strong>{' '}
-                  {tr('exactement la même concentration et le même profil à chaque cycle.', 'the same profile and strength on every single extraction cycle.', 'exakt dieselbe Konzentration und Zusammensetzung in jedem Zyklus.')}
+                  <strong className="text-[#3E4A3D]">{tr('Des cycles reproductibles :', 'Repeatable cycles:', 'Wiederholbare Abläufe:')}</strong>{' '}
+                  {tr('les mêmes réglages nominaux de temps et de température à chaque préparation.', 'the same nominal time and temperature settings on each preparation cycle.', 'dieselben nominalen Zeit- und Temperaturvorgaben in jedem Zubereitungszyklus.')}
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-[#3E4A3D]">{tr('La capacité de décarboxyler :', 'Calibrated decarboxylation:', 'Gezielte Decarboxylierung:')}</strong>{' '}
-                  {tr('activer les plantes exigeantes qui demandent une chauffe étalonnée (chanvre, écorces, résines).', 'convert demanding matrices that require exact thermal control (hemp, barks, resins).', 'Aktivierung anspruchsvoller Rohstoffe mit präziser Temperaturkurve (Hanf, Rinden, Harze).')}
+                  <strong className="text-[#3E4A3D]">{tr('Activation thermique douce :', 'Calibrated thermal activation:', 'Gezielte Wärmeführung:')}</strong>{' '}
+                  {tr('adapter le palier thermique selon la matière végétale (décarboxylation spécifique des fleurs résineuses selon la réglementation locale, ou macération douce).', 'adapt thermal steps to dense botanicals (or specific decarboxylation protocols where legally applicable).', 'Anpassung der Wärmestufe an anspruchsvolle Pflanzenteile oder spezielle Protokolle im jeweiligen Rechtsrahmen.')}
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-[#3E4A3D]">{tr('Une économie réelle :', 'Real savings on raw herbs:', 'Spürbare Ersparnis:')}</strong>{' '}
-                  {tr("vous rentabilisez enfin le coût de vos plantes au lieu d'en jeter 80% dans l'évier.", 'get full value from organic medicinal plants instead of pouring 80% down the drain.', 'Sie nutzen Ihre Bio-Heilpflanzen voll aus, statt 80 % in den Ausguss zu schütten.')}
+                  <strong className="text-[#3E4A3D]">{tr('Une meilleure valorisation des plantes :', 'Better use of botanical raw material:', 'Bessere Nutzung Ihrer Pflanzen:')}</strong>{' '}
+                  {tr("vous adaptez le solvant (eau, huile, glycérine) et la température à la plante utilisée, sans surchauffe inutile.", 'match solvent (water, oil, glycerin) and temperature to the plant without unnecessary boiling.', 'Sie stimmen Lösungsmittel (Wasser, Öl, Glycerin) und Temperatur gezielt auf die Pflanze ab.')}
                 </div>
               </div>
             </div>
@@ -735,9 +735,9 @@ export const InfusionPrecision = ({ lang, t, onNavigate }: SEOArticleProps) => {
               </h3>
               <p className="text-sm sm:text-base text-white/80 font-light">
                 {tr(
-                  "Contrôlez l'extraction de vos plantes au degré près dans le confort de votre maison grâce au BloomLab®.",
-                  'Control your botanical extractions to the degree at home with BloomLab®.',
-                  'Steuern Sie Ihre Pflanzenextraktionen aufs Grad genau zu Hause mit der BloomLab®.'
+                  "Contrôlez la température de préparation de vos plantes à domicile grâce à la régulation thermique de la BloomLab®.",
+                  'Control your botanical preparation temperatures at home with BloomLab® thermal regulation.',
+                  'Steuern Sie die Zubereitungstemperatur Ihrer Pflanzen zu Hause mit der Wärmeregelung der BloomLab®.'
                 )}
               </p>
             </div>
@@ -797,10 +797,10 @@ export const TotumDefinition = ({ lang, t, onNavigate }: SEOArticleProps) => {
     datasets: [
       {
         label: isFR 
-          ? 'BloomLab® (Thermorégulation 40°C)' 
+          ? 'Modèle pédagogique à 40°C (courbe illustrative)' 
           : isDE 
-          ? 'BloomLab® (Thermoregulation 40°C)' 
-          : 'BloomLab® (Thermoregulation 40°C)',
+          ? 'Pädagogisches Modell bei 40°C (illustrativ)' 
+          : 'Educational model at 40°C (illustrative)',
         data: [45, 78, 92, 98, 99],
         borderColor: '#A8B8A0',
         backgroundColor: 'rgba(168, 184, 160, 0.1)',
@@ -810,10 +810,10 @@ export const TotumDefinition = ({ lang, t, onNavigate }: SEOArticleProps) => {
       },
       {
         label: isFR 
-          ? 'Bain-Marie Classique (70°C - 100°C)' 
+          ? 'Chauffe non régulée 70–100°C (courbe illustrative)' 
           : isDE 
-          ? 'Klassisches Wasserbad (70°C - 100°C)' 
-          : 'Classic Bain-Marie (70°C - 100°C)',
+          ? 'Ungeregelte Hitze 70–100°C (illustrativ)' 
+          : 'Unregulated heat 70–100°C (illustrative)',
         data: [40, 55, 30, 15, 5],
         borderColor: '#DC2626',
         backgroundColor: 'transparent',
@@ -1359,19 +1359,19 @@ export const TotumDefinition = ({ lang, t, onNavigate }: SEOArticleProps) => {
                   icon: "🧪", 
                   title: isFR ? "Résines & Graines Dures" : isDE ? "Harze & harte Samen" : "Resins & Hard Seeds", 
                   sub: isFR ? "(Boswellia, Girofle)" : isDE ? "(Boswellia, Nelken)" : "(Boswellia, Clove)", 
-                  desc: isFR ? "Extraction ciblée à 60° d'alcool • Protocole 45°C" : isDE ? "Gezielte Extraktion bei 60 % Alkohol • 45°C-Protokoll" : "Targeted extraction at 60° alcohol • 45°C Protocol" 
+                  desc: isFR ? "Phase B huileuse en BloomLab® (45°C) ; alcool à froid hors appareil uniquement" : isDE ? "Ölige Phase B in BloomLab® (45°C); Alkohol nur kalt außerhalb des Geräts" : "Oil Phase B in BloomLab® (45°C); cold alcohol outside appliance only" 
                 },
                 { 
                   icon: "🌿", 
                   title: isFR ? "Racines & Écorces" : isDE ? "Wurzeln & Rinden" : "Roots & Barks", 
                   sub: isFR ? "(Salsepareille, Gentiane)" : isDE ? "(Sarsaparilla, Enzian)" : "(Sarsaparilla, Gentian)", 
-                  desc: isFR ? "Extraction ciblée à 55° d'alcool • Protocole 40°C" : isDE ? "Gezielte Extraktion bei 55 % Alkohol • 40°C-Protokoll" : "Targeted extraction at 55° alcohol • 40°C Protocol" 
+                  desc: isFR ? "Phase A aqueuse ou glycérine en BloomLab® (65–85°C / 40°C)" : isDE ? "Wässrige oder Glycerin-Phase in BloomLab® (65–85°C / 40°C)" : "Aqueous or glycerin extraction in BloomLab® (65–85°C / 40°C)" 
                 },
                 { 
                   icon: "🌸", 
                   title: isFR ? "Fleurs & Feuilles Fragiles" : isDE ? "Blüten & empfindliche Blätter" : "Flowers & Fragile Leaves", 
                   sub: isFR ? "(Passiflore, Pensée)" : isDE ? "(Passionsblume, Stiefmütterchen)" : "(Passionflower, Pansy)", 
-                  desc: isFR ? "Extraction douce à 45° d'alcool / Huile • Protocole 35°C" : isDE ? "Sanfte Extraktion bei 45 % Alkohol / Öl • 35°C-Protokoll" : "Gentle extraction at 45° alcohol / Oil • 35°C Protocol" 
+                  desc: isFR ? "Phase A douce ou macérat huileux en BloomLab® (40–45°C)" : isDE ? "Sanfte Phase A oder Ölmazerat in BloomLab® (40–45°C)" : "Gentle Phase A or oil macerate in BloomLab® (40–45°C)" 
                 }
               ].map((item, i) => (
                 <div key={i} className="p-5 rounded-2xl bg-white border border-[#E7DFD3] shadow-xs space-y-2">
@@ -1388,10 +1388,10 @@ export const TotumDefinition = ({ lang, t, onNavigate }: SEOArticleProps) => {
               <ShieldCheck className="w-5 h-5 text-emerald-700 shrink-0" />
               <span>
                 {isFR 
-                  ? "SÉCURITÉ GARANTIE : Nos protocoles excluent à 100% l'usage de plantes toxiques." 
+                  ? "PRUDENCE BOTANIQUE : Nos fiches privilégient les plantes usuelles documentées ; vérifiez toujours l'identification botanique et vos contre-indications individuelles." 
                   : isDE
-                  ? "GARANTIERTE SICHERHEIT: Unsere Protokolle schließen giftige Pflanzenarten zu 100 % aus."
-                  : "GUARANTEED SAFETY: Our protocols 100% exclude toxic or hazardous botanical species."}
+                  ? "BOTANISCHE SORGFALT: Unsere Leitfäden konzentrieren sich auf dokumentierte traditionelle Pflanzen; prüfen Sie stets botanische Identität und individuelle Gegenanzeigen."
+                  : "BOTANICAL CAUTION: Our guides focus on documented everyday herbs; always verify botanical identity, contraindications, and individual tolerance."}
               </span>
             </div>
           </div>
@@ -1434,21 +1434,21 @@ export const TotumDefinition = ({ lang, t, onNavigate }: SEOArticleProps) => {
               <div>
                 <h3 className="text-lg sm:text-xl font-bold text-[#3E4A3D]">
                   {isFR 
-                    ? 'Rendement de Préservation des Principes Actifs' 
+                    ? 'Simulation pédagogique — paramètres illustratifs (thermique vs ébullition)' 
                     : isDE 
-                    ? 'Erhaltungsertrag der Wirkstoffe' 
-                    : 'Active Principles Preservation Yield'}
+                    ? 'Pädagogische Simulation — illustrative Parameter (Temperatur vs. Kochen)' 
+                    : 'Educational simulation — illustrative parameters (temperature vs. boiling)'}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-500">
                   {isFR 
-                    ? 'Comparatif de la concentration en molécules d\'intérêt au fil du temps (BloomLab 40°C vs Bain-Marie classique (70°C - 100°C))' 
+                    ? 'Simulation pédagogique — paramètres illustratifs, non issus de mesures de performance BloomLab (courbe conceptuelle 40°C vs 70–100°C).' 
                     : isDE
-                    ? 'Vergleich der Wirkstoffkonzentration über die Zeit (BloomLab 40°C vs. klassisches Wasserbad (70°C - 100°C))'
-                    : 'Comparison of concentration of active molecules over time (BloomLab 40°C vs Classic Bain-Marie (70°C - 100°C))'}
+                    ? 'Pädagogische Simulation — illustrative Parameter, nicht aus BloomLab-Leistungsmessungen (konzeptionelle Kurve 40°C vs. 70–100°C).'
+                    : 'Educational simulation — illustrative parameters, not derived from BloomLab performance measurements (conceptual 40°C vs. 70–100°C curve).'}
                 </p>
               </div>
               <span className="text-xs font-mono font-bold bg-[#A8B8A0] text-[#0F261E] px-3 py-1.5 rounded-full shrink-0">
-                R&D BloomLab
+                {isFR ? 'Simulation pédagogique' : isDE ? 'Pädagogische Simulation' : 'Illustrative Simulation'}
               </span>
             </div>
 
@@ -1477,10 +1477,10 @@ export const TotumDefinition = ({ lang, t, onNavigate }: SEOArticleProps) => {
               </h3>
               <p className="text-sm sm:text-base text-white/80 font-light">
                 {isFR 
-                  ? "La BloomLab® vous permet de maîtriser l'extraction de vos plantes au degré près dans le confort de votre maison." 
+                  ? "La BloomLab® vous aide à conduire vos préparations aqueuses et huileuses à température régulée dans le confort de votre maison." 
                   : isDE
-                  ? "Mit der BloomLab® steuern Sie die Extraktion Ihrer Pflanzen aufs Grad genau bequem von zu Hause aus."
-                  : "BloomLab® allows you to master botanical extraction degree by degree in the comfort of your home."}
+                  ? "Mit der BloomLab® steuern Sie wässrige und ölige Auszüge mit geregelter Wärme bequem von zu Hause aus."
+                  : "BloomLab® helps you run regulated aqueous and oil preparations in the comfort of your home."}
               </p>
             </div>
 
@@ -2150,7 +2150,7 @@ export const SolvantsExtraction = ({ lang, t, onNavigate, isPremium, onRequireAu
                   </div>
 
                   <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15 text-xs sm:text-sm text-white/95 mt-4">
-                    <strong className="text-[#C8AB8A]">{tr("La leçon Bloom pour l'extraction moderne :", 'The Bloom takeaway for modern extraction:', 'Die Bloom-Erkenntnis für moderne Extraktion:')}</strong> {tr('la température est tout aussi déterminante que le solvant. Le BloomLab® permet de réguler l\'extraction à 35–45°C avec des solvants nobles et biocompatibles (eau purifiée, huile vierge, alcool bio), évitant la dégradation thermique sans recourir à des solvants chimiques toxiques.', 'temperature matters just as much as solvent polarity. BloomLab® controls extraction between 35–45°C using food-grade biocompatible solvents (purified water, virgin oil, organic alcohol), avoiding thermal damage without harsh laboratory chemicals.', 'Die Temperatur ist ebenso entscheidend wie das Lösungsmittel. BloomLab® steuert Extraktionen bei 35–45°C mit biokompatiblen Lösungsmitteln (gereinigtes Wasser, natives Öl, Bio-Alkohol) ganz ohne aggressive Laborchemikalien.')}
+                    <strong className="text-[#C8AB8A]">{tr("La leçon Bloom pour la pratique domestique :", 'The Bloom takeaway for home practice:', 'Die Bloom-Erkenntnis für zu Hause:')}</strong> {tr("la température est tout aussi déterminante que le solvant. Dans BloomLab®, on travaille exclusivement à l'eau purifiée, à l'huile vierge ou à la glycérine/vinaigre sans chauffage d'alcool : par sécurité électrique domestique, toute extraction alcoolique (45–85°) reste suspendue dans la cuve chauffante et se réalise uniquement à froid en bocal fermé.", 'temperature matters just as much as solvent polarity. In BloomLab®, heated extractions use water, virgin oil, glycerin, or cider vinegar only — never heated alcohol inside the electrical chamber.', 'Die Temperatur ist ebenso entscheidend wie das Lösungsmittel. In der BloomLab® werden ausschließlich Wasser, Öl, Glycerin oder Essig erwärmt — Alkohol wird aus Sicherheitsgründen nie im beheizten Gerät verwendet.')}
                   </div>
                 </div>
               </div>
@@ -2293,7 +2293,7 @@ export const SolvantsExtraction = ({ lang, t, onNavigate, isPremium, onRequireAu
                       <td className="p-4 sm:p-5 text-slate-600">{tr('Minéraux, mucilages, tanins, polysaccharides', 'Minerals, mucilage, tannins, polysaccharides', 'Mineralstoffe, Schleimstoffe, Gerbstoffe, Polysaccharide')}</td>
                       <td className="p-4 sm:p-5 font-mono font-semibold text-[#C8AB8A]">{tr('42–45°C à 70–75°C', '42–45°C to 70–75°C', '42–45°C bis 70–75°C')}</td>
                       <td className="p-4 sm:p-5 text-slate-600">{tr('Voie orale immédiate, hydratation cellulaire', 'Immediate oral infusion, daily hydration', 'Sofortiger Aufguss, tägliche Hydration')}</td>
-                      <td className="p-4 sm:p-5 text-slate-500">{tr('24–48h au frais', '24–48h refrigerated', '24–48 Std. gekühlt')}</td>
+                      <td className="p-4 sm:p-5 text-slate-500">{tr('Préparation fraîche au réfrigérateur (usage rapide)', 'Fresh refrigerated use (short-term)', 'Frisch gekühlt rasch verbrauchen')}</td>
                     </tr>
 
                     <tr className="hover:bg-[#FAF7F2]/60 transition-colors">
@@ -2305,19 +2305,19 @@ export const SolvantsExtraction = ({ lang, t, onNavigate, isPremium, onRequireAu
                       <td className="p-4 sm:p-5 text-slate-600">{tr('Huiles essentielles, caroténoïdes, résines', 'Essential oils, carotenoids, resins', 'Ätherische Öle, Carotinoide, Harze')}</td>
                       <td className="p-4 sm:p-5 font-mono font-semibold text-[#C8AB8A]">45–50°C</td>
                       <td className="p-4 sm:p-5 text-slate-600">{tr('Vecteur cutané (derme profond), baumes', 'Topical carrier, serums & balms', 'Hautträgeröl für Seren & Balsame')}</td>
-                      <td className="p-4 sm:p-5 text-slate-500">{tr("6–12 mois à l'abri de l'air", '6–12 months sealed', '6–12 Monate luftdicht')}</td>
+                      <td className="p-4 sm:p-5 text-slate-500">{tr("Flacon ambré à l'abri de la lumière (jusqu'à rancissement)", 'Amber bottle away from heat/light', 'Lichtgeschützt bis zu Geruchsveränderung')}</td>
                     </tr>
 
                     <tr className="hover:bg-[#FAF7F2]/60 transition-colors">
                       <td className="p-4 sm:p-5 font-bold text-[#3E4A3D] flex items-center gap-2">
                         <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 shrink-0" />
-                        {tr('Alcool bio (45–70°)', 'Organic alcohol (45–70%)', 'Bio-Alkohol (45–70 %)')}
+                        {tr('Alcool bio (macération à froid uniquement)', 'Organic alcohol (cold maceration only)', 'Bio-Alkohol (nur Kaltmazeration)')}
                       </td>
                       <td className="p-4 sm:p-5 font-mono text-xs">{tr('Intermédiaire (bipolaire)', 'Intermediate (bipolar)', 'Intermediär (bipolar)')}</td>
                       <td className="p-4 sm:p-5 text-slate-600">{tr('Alcaloïdes, résines, principes amers', 'Alkaloids, resins, bitter principles', 'Alkaloide, Harze, Bitterstoffe')}</td>
-                      <td className="p-4 sm:p-5 font-mono font-semibold text-[#C8AB8A]">38–42°C</td>
-                      <td className="p-4 sm:p-5 text-slate-600">{tr('Extraits concentrés, teintures mères', 'Concentrated drops & tincture blends', 'Konzentrierte Tropfen & Urtinkturen')}</td>
-                      <td className="p-4 sm:p-5 text-slate-500">{tr('Plusieurs années', 'Several years', 'Mehrere Jahre')}</td>
+                      <td className="p-4 sm:p-5 font-mono font-semibold text-[#C8AB8A]">{tr('Ambiante (hors appareil)', 'Ambient only (no device heating)', 'Raumtemperatur (ohne Gerät)')}</td>
+                      <td className="p-4 sm:p-5 text-slate-600">{tr('Macération traditionnelle en bocal fermé (suspendu dans BloomLab®)', 'Traditional jar maceration (suspended in BloomLab®)', 'Klassische Glasmazeration (in BloomLab® ausgesetzt)')}</td>
+                      <td className="p-4 sm:p-5 text-slate-500">{tr("Flacon opaque fermé, à l'abri de la chaleur", 'Sealed opaque bottle away from heat', 'Licht- und wärmegeschützt lagern')}</td>
                     </tr>
 
                     <tr className="hover:bg-[#FAF7F2]/60 transition-colors">
@@ -2329,7 +2329,7 @@ export const SolvantsExtraction = ({ lang, t, onNavigate, isPremium, onRequireAu
                       <td className="p-4 sm:p-5 text-slate-600">{tr('Flavonoïdes, bourgeons, tanins', 'Flavonoids, buds, gentle tannins', 'Flavonoide, Knospen, milde Gerbstoffe')}</td>
                       <td className="p-4 sm:p-5 font-mono font-semibold text-[#C8AB8A]">40°C</td>
                       <td className="p-4 sm:p-5 text-slate-600">{tr('Alternative sans alcool, gemmothérapie', 'Alcohol-free extracts & gemmotherapy', 'Alkoholfreie Auszüge & Gemmotherapie')}</td>
-                      <td className="p-4 sm:p-5 text-slate-500">{tr('1 à 2 ans', '1 to 2 years', '1 bis 2 Jahre')}</td>
+                      <td className="p-4 sm:p-5 text-slate-500">{tr("Au frais à l'abri de la lumière (vérifier aspect)", 'Cool dark storage (inspect before use)', 'Kühl & dunkel lagern')}</td>
                     </tr>
 
                     <tr className="hover:bg-[#FAF7F2]/60 transition-colors">
@@ -2341,7 +2341,7 @@ export const SolvantsExtraction = ({ lang, t, onNavigate, isPremium, onRequireAu
                       <td className="p-4 sm:p-5 text-slate-600">{tr("Minéraux, oligo-éléments, acétates d'alcaloïdes", 'Minerals, trace elements, botanical acetates', 'Mineralstoffe, Spurenelemente, Pflanzenacetate')}</td>
                       <td className="p-4 sm:p-5 font-mono font-semibold text-[#C8AB8A]">35–40°C</td>
                       <td className="p-4 sm:p-5 text-slate-600">{tr('Cuisine botanique, toniques, oxymels', 'Botanical vinegar tonics & oxymels', 'Kräuteressig-Tonika & Oxymels')}</td>
-                      <td className="p-4 sm:p-5 text-slate-500">{tr('1 an', '1 year', '1 Jahr')}</td>
+                      <td className="p-4 sm:p-5 text-slate-500">{tr('Flacon verre fermé au frais (vérifier odeur/aspect)', 'Sealed glass bottle in cool place', 'Kühl in verschlossener Glasflasche')}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -2396,9 +2396,9 @@ export const SolvantsExtraction = ({ lang, t, onNavigate, isPremium, onRequireAu
                   <h4 className="font-bold text-[#3E4A3D] text-base">{tr('Extraction du complexe lipophile', 'Lipophilic Complex Extraction', 'Extraktion des lipophilen Komplexes')}</h4>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {tr(
-                      'Capture douce des terpènes aromatiques, résines, cires et pigments dans une huile vierge protectrice ou un alcool doux.',
-                      'Gently gathers aromatic terpenes, resins, waxes, and pigments in cold-pressed virgin oil or organic alcohol.',
-                      'Nimmt aromatische Terpene, Harze, Wachse und Pigmente schonend in nativem Öl oder mildem Bio-Alkohol auf.'
+                      'Capture douce des terpènes aromatiques, résines, cires et pigments dans une huile vierge protectrice (en BloomLab®) ; macération alcoolique à froid hors appareil uniquement.',
+                      'Gently gathers aromatic terpenes, resins, waxes, and pigments in cold-pressed virgin oil (in BloomLab®); cold alcohol maceration outside the heated device only.',
+                      'Nimmt aromatische Terpene, Harze, Wachse und Pigmente schonend in nativem Öl auf (in der BloomLab®); Alkoholauszüge nur kalt außerhalb des Geräts.'
                     )}
                   </p>
                 </div>
@@ -2489,9 +2489,9 @@ export const SolvantsExtraction = ({ lang, t, onNavigate, isPremium, onRequireAu
                   </h3>
                   <p className="text-sm sm:text-base text-white/80 font-light">
                     {tr(
-                      "Le BloomLab® vous permet d'extraire à 35°C, 45°C ou 70°C avec une précision absolue de ±1°C en cuve inox 304 et verrerie dédiée.",
-                      'BloomLab® lets you extract at 35°C, 45°C, or 70°C with ±1°C precision in a hygienic 304 stainless-steel chamber.',
-                      'BloomLab® extrahiert bei 35°C, 45°C oder 70°C mit ±1°C Präzision in einer hygienischen 304-Edelstahlkammer.'
+                      "Le BloomLab® permet de programmer des paliers de chauffe doux (35°C, 45°C, 70°C ; précision nominale fabricant non certifiée indépendamment) en cuve inox 304 alimentaire et verrerie dédiée.",
+                      'BloomLab® lets you run gentle heating steps (35°C, 45°C, 70°C; nominal manufacturer rating not independently certified) in a 304 food-grade stainless-steel chamber.',
+                      'BloomLab® ermöglicht sanfte Heizstufen (35°C, 45°C, 70°C; herstellerseitige Nennangabe ohne unabhängige Zertifizierung) in einer 304-Edelstahlkammer.'
                     )}
                   </p>
                 </div>

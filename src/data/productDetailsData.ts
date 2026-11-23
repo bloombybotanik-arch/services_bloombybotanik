@@ -61,15 +61,15 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
         originalPrice: 289.00,
         images: [bloomLabImg, img2_1, img3_1, img4_1, img5_1, img6_1],
         description: isFR 
-          ? "Transformez vos plantes brutes en sérums capillaires, huiles de soin et infusions concentrées en quelques heures. La BloomLab® remplace l'improvisation du bain-marie par la rigueur d'un laboratoire, en préservant l'intégralité du Totum végétal."
+          ? "Transformez vos plantes brutes en sérums capillaires, huiles de soin et infusions concentrées en quelques heures. La BloomLab® remplace l'improvisation du bain-marie par une régulation thermique automatisée, en préservant l'intégralité du Totum végétal."
           : isDE 
-          ? "Verwandeln Sie Rohpflanzen in wenigen Stunden in Haarseren, Pflegeöle und konzentrierte Aufgüsse. Die BloomLab® ersetzt das Wasserbad durch Laborpräzision und bewahrt das gesamte Pflanzen-Totum."
-          : "Transform raw botanicals into hair serums, skincare oils, and concentrated infusions in hours. BloomLab® replaces stovetop guesswork with laboratory rigor, preserving the full plant Totum.",
+          ? "Verwandeln Sie Rohpflanzen in wenigen Stunden in Haarseren, Pflegeöle und konzentrierte Aufgüsse. Die BloomLab® ersetzt das Wasserbad durch kontrollierte Temperaturführung und bewahrt das gesamte Pflanzen-Totum."
+          : "Transform raw botanicals into hair serums, skincare oils, and concentrated infusions in hours. BloomLab® replaces stovetop guesswork with controlled thermal regulation, preserving the full plant Totum.",
         fullDescription: isFR ? `
           <div class="prose prose-botanik max-w-none">
             <div class="bg-[#1B3022]/5 p-8 rounded-[32px] mb-12">
               <p class="text-xl leading-relaxed text-botanik-green/80">
-                La BloomLab® est l'<strong>infuseur botanique</strong> de référence, une machine 6-en-1 capable de réaliser à domicile des <strong>préparations botaniques</strong> complexes — huiles infusées, sérums, teintures, macérats — avec une <strong>extraction botanique de précision</strong> (temps, température, séquençage) habituellement réservée aux laboratoires.
+                La BloomLab® est l'<strong>infuseur botanique</strong> de référence, une machine 6-en-1 capable de réaliser à domicile des <strong>préparations botaniques</strong> complexes — huiles infusées, sérums, macérats glycérinés ou huileux — avec une <strong>extraction botanique séquencée</strong> (temps, température et brassage doux) sans recourir à l'alcool chauffé (protocole alcool suspendu).
               </p>
             </div>
 
@@ -126,7 +126,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
               </div>
               <div class="flex items-center gap-4 p-4 bg-[#1B3022]/5 rounded-xl">
                 <span class="w-8 h-8 bg-[#3E4A3D] text-white rounded-full flex items-center justify-center font-bold shadow-sm" style="background-color: #3E4A3D; color: #ffffff;">3</span>
-                <span>Contrôle thermique précis (±1 °C)</span>
+                <span>Régulation thermique contrôlée (spécification fabricant)</span>
               </div>
               <div class="flex items-center gap-4 p-4 bg-[#1B3022]/5 rounded-xl">
                 <span class="w-8 h-8 bg-[#3E4A3D] text-white rounded-full flex items-center justify-center font-bold shadow-sm" style="background-color: #3E4A3D; color: #ffffff;">4</span>
@@ -189,7 +189,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
                 </div>
                 <div class="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/10">
                   <div class="w-1.5 h-1.5 rounded-full bg-botanik-orange shrink-0"></div>
-                  <span class="text-sm font-medium">0 °C à 121 °C (Précision ±0,5°C)</span>
+                  <span class="text-sm font-medium">0 °C à 121 °C (plage fabricant indicative, non certifiée tiers)</span>
                 </div>
                 <div class="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/10">
                   <div class="w-1.5 h-1.5 rounded-full bg-botanik-orange shrink-0"></div>
@@ -201,7 +201,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
                 </div>
                 <div class="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/10">
                   <div class="w-1.5 h-1.5 rounded-full bg-botanik-orange shrink-0"></div>
-                  <span class="text-sm font-medium">Garantie 1 an Bloom</span>
+                  <span class="text-sm font-medium">Garantie commerciale 1 an (+ garantie légale de conformité 2 ans UE)</span>
                 </div>
               </div>
             </div>
@@ -215,8 +215,8 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             <div class="bg-[#1B3022]/5 p-8 rounded-[32px] mb-12">
               <p class="text-xl leading-relaxed text-botanik-green/80">
                 ${isDE
-                  ? "Die <strong>BloomLab®</strong> ist der Referenz-Kräuterextraktor für zu Hause: ein 6-in-1-Gerät für botanische Ölauszüge, Seren, Tinkturen und Mazerate mit präziser Steuerung von Zeit, Temperatur und A/B-Sequenzierung auf Laborniveau."
-                  : "The <strong>BloomLab®</strong> is the benchmark 6-in-1 botanical extractor built for crafting complex home preparations—infused oils, serums, tinctures, and macerates—with laboratory-grade control over temperature, timing, and A/B sequencing."}
+                  ? "Die <strong>BloomLab®</strong> ist der Referenz-Kräuterextraktor für zu Hause: ein 6-in-1-Gerät für botanische Ölauszüge, Seren, wässrige Aufgüsse und Pflanzenmazerate mit geführter A/B-Temperatursteuerung (erhitzte Alkoholextraktionen derzeit ausgesetzt)."
+                  : "The <strong>BloomLab®</strong> is the benchmark 6-in-1 botanical extractor built for crafting complex home preparations—infused oils, serums, aqueous infusions, and oil or glycerin macerates—with guided control over temperature, timing, and A/B sequencing (heated alcohol extractions currently suspended)."}
               </p>
             </div>
 
@@ -247,9 +247,9 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
               <h3 class="text-xl font-bold mb-6 text-white">${isDE ? "Technische Spezifikationen" : "Technical Specifications"}</h3>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-white/85 text-sm">
                 <div class="p-3.5 bg-white/5 rounded-2xl border border-white/10">${isDE ? "Edelstahlkammer SU304 (1,2 L)" : "Food-grade SU304 steel tank (1.2 L)"}</div>
-                <div class="p-3.5 bg-white/5 rounded-2xl border border-white/10">${isDE ? "0 °C bis 121 °C (±0,5 °C Präzision)" : "0 °C to 121 °C (±0.5 °C accuracy)"}</div>
+                <div class="p-3.5 bg-white/5 rounded-2xl border border-white/10">${isDE ? "0 °C bis 121 °C (Herstellerangabe, nicht extern zertifiziert)" : "0 °C to 121 °C (nominal manufacturer spec, uncertified)"}</div>
                 <div class="p-3.5 bg-white/5 rounded-2xl border border-white/10">${isDE ? "6 Automatikprogramme + Selbstreinigung (5 Min.)" : "6 automatic modes + 5-min self-cleaning"}</div>
-                <div class="p-3.5 bg-white/5 rounded-2xl border border-white/10">${isDE ? "1 Jahr Bloom Herstellergarantie" : "1-year Bloom manufacturer warranty"}</div>
+                <div class="p-3.5 bg-white/5 rounded-2xl border border-white/10">${isDE ? "1 J. + 2 J. gesetzlich-Garantie (zzgl. 2 Jahre gesetzliche Gewährleistung)" : "1-year commercial warranty (+ 2-year EU legal conformity warranty)"}</div>
               </div>
             </div>
 
@@ -261,9 +261,9 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </div>
         `,
         specs: [
-          { label: isFR ? "Contrôle" : isDE ? "Steuerung" : "Control", value: isFR ? "0 °C à 121 °C (±0,5 °C)" : isDE ? "0 °C bis 121 °C (±0,5 °C)" : "0 °C to 121 °C (±0.5 °C)", icon: Thermometer },
+          { label: isFR ? "Contrôle" : isDE ? "Steuerung" : "Control", value: isFR ? "0 °C à 121 °C (spécification fabricant)" : isDE ? "0 °C bis 121 °C (Herstellerangabe)" : "0 °C to 121 °C (manufacturer spec)", icon: Thermometer },
           { label: isFR ? "Matériau" : isDE ? "Material" : "Material", value: isFR ? "Inox 304 Alimentaire" : isDE ? "Lebensmittel-Edelstahl 304" : "Food-Grade 304 Steel", icon: FlaskConical },
-          { label: isFR ? "Garantie" : isDE ? "Garantie" : "Warranty", value: isFR ? "1 An Bloom" : isDE ? "1 Jahr Bloom" : "1-Year Warranty", icon: ShieldCheck }
+          { label: isFR ? "Garantie" : isDE ? "Garantie" : "Warranty", value: isFR ? "1 an commerciale + 2 ans légale" : isDE ? "1 J. + 2 J. gesetzlich" : "1-Yr Commercial + 2-Yr Legal", icon: ShieldCheck }
         ]
       };
     })(),
@@ -361,19 +361,19 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             <div class="bg-[#1B3022]/5 p-8 rounded-3xl">
               <h4 class="font-bold text-botanik-green mb-4">Pourquoi choisir nos mélanges ?</h4>
               <ul class="space-y-4 text-sm">
-                <li><strong>Efficacité Maximale :</strong> Des coupes de plantes optimisées pour libérer l'intégralité de leurs actifs sous l'action des lames et de la chaleur Bloom.</li>
-                <li><strong>Pureté Absolue :</strong> 0% conservateurs, 0% additifs, 0% chimie industrielle. Juste la plante, dans sa forme la plus noble.</li>
-                <li><strong>Économie & Autonomie :</strong> Un sachet de 50g vous permet de créer jusqu'à 700ml d'élixir ultra-concentré (l'équivalent de 7 flacons du commerce).</li>
+                <li><strong>Découpe Adaptée :</strong> Des coupes de plantes calibrées pour le panier filtrant et l'extraction séquencée douce.</li>
+                <li><strong>Formule Simple :</strong> 0% conservateurs, 0% additifs, 0% chimie industrielle. Juste la plante, dans sa forme la plus noble.</li>
+                <li><strong>Autonomie Pratique :</strong> Chaque sachet de 50g permet de préparer un batch d'extraction domestique jusqu'à 700ml de solvant.</li>
                 <li><strong>Polyvalence Totale :</strong> Une seule préparation pour deux usages. Transformez votre mélange en huile de massage ou en gouttes à boire selon le solvant choisi.</li>
               </ul>
             </div>
             <div class="bg-[#1B3022]/5 p-8 rounded-3xl">
-              <h4 class="font-bold text-botanik-green mb-4">La Qualité Bloom : Grade Laboratoire</h4>
+              <h4 class="font-bold text-botanik-green mb-4">Critères de Sélection Bloom</h4>
               <p class="text-sm mb-4">Chaque kit est le résultat d'un sourcing sans compromis :</p>
               <ul class="space-y-4 text-xs">
                 <li class="flex items-start gap-3 w-full">
                   <svg class="w-5 h-5 text-botanik-orange mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                  <span class="flex-1">Plantes certifiées BIO et Grade Pharmacopée.</span>
+                  <span class="flex-1">Plantes issues de l'agriculture biologique (sans garantie analytique publiée sur le site).</span>
                 </li>
                 <li class="flex items-start gap-3 w-full">
                   <svg class="w-5 h-5 text-botanik-orange mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
@@ -465,7 +465,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
                 </div>
                 <div class="bg-white/10 p-6 rounded-3xl backdrop-blur-sm">
                   <svg class="w-6 h-6 mb-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.618.309a6 6 0 01-3.86.517l-2.387-.477a2 2 0 00-1.022.547l-1.162 1.162a2 2 0 00.517 3.323l.035.011a2 2 0 001.447 0l.035-.011a2 2 0 011.447 0l.035.011a2 2 0 001.447 0l.035-.011a2 2 0 011.447 0l.035.011a2 2 0 001.447 0l.035-.011a2 2 0 011.447 0l.035.011a2 2 0 001.52.148l1.162-1.162a2 2 0 00.517-3.323z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11V6a2 2 0 012-2h0a2 2 0 012 2v5m-6 0V6a2 2 0 00-2-2h0a2 2 0 00-2 2v5"></path></svg>
-                  <h4 class="font-bold mb-2">Cosmétique Pro</h4>
+                  <h4 class="font-bold mb-2">Cosmétique Botanique Maison</h4>
                   <p class="text-xs text-white/70">Protocoles de formulation pour sérums, baumes et soins du corps.</p>
                 </div>
                 <div class="bg-white/10 p-6 rounded-3xl backdrop-blur-sm">
@@ -501,7 +501,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       price: 12.90,
       images: [seveFondamentaleImg, trioPouchesImg, "/assets/images/herbs_close_up_cleaned_1786616800877.jpg", "/assets/images/home_lab_vibe_cleaned_1786616854146.jpg"],
       description: isFR 
-        ? "La SÈVE FONDAMENTALE est un protocole de restauration profonde pour consolider l'architecture de votre organisme."
+        ? "La SÈVE FONDAMENTALE est un mélange séquentiel (Prêle, Ortie, Romarin, Ginkgo) pensé pour préparer des extraits minéraux et aromatiques dans une démarche éducative non médicale."
         : isDE
         ? "GRUNDLEGENDER SAFT ist ein sequenzielles Kräuterset (Ackerschachtelhalm, Brennnessel, Rosmarin, Ginkgo) zur Remineralisierung und strukturellen Vitalität."
         : "FUNDAMENTAL SAP is a sequential botanical formulation (Horsetail, Nettle Root, Rosemary, Ginkgo) designed for structural vitality and remineralization.",
@@ -509,7 +509,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
         <div class="prose prose-botanik max-w-none">
           <div class="bg-[#1B3022]/5 p-10 rounded-[40px] mb-12">
             <p class="text-xl leading-relaxed text-botanik-green">
-              La SÈVE FONDAMENTALE est un protocole de restauration profonde. Ce mélange n'est pas une simple boisson, mais un apport de briques élémentaires conçu pour consolider l'architecture de votre organisme (peau, cheveux, tissus conjonctifs). En utilisant la technologie BloomLab, nous extrayons la silice et les minéraux là où une infusion classique échoue.
+              La SÈVE FONDAMENTALE est un mélange botanique séquentiel de Prêle des champs, Ortie racine, Romarin et Ginkgo destiné aux préparations domestiques dans un cadre éducatif et bien-être (non médical). En utilisant la technologie BloomLab, nous extrayons la silice et les minéraux là où une infusion classique échoue.
             </p>
           </div>
 
@@ -591,7 +591,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
               <div class="space-y-2">
                 <div class="font-bold text-botanik-orange text-sm">100% Bio</div>
-                <p class="text-[10px] leading-tight text-botanik-green/70">Plantes certifiées BIO et Grade Pharmacopée Européenne.</p>
+                <p class="text-[10px] leading-tight text-botanik-green/70">Plantes issues de l'agriculture biologique.</p>
               </div>
               <div class="space-y-2">
                 <div class="font-bold text-botanik-orange text-sm">Récolte Manuelle</div>
@@ -606,8 +606,8 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
                 <p class="text-[10px] leading-tight text-botanik-green/70">Achat en circuit court et emballages 100% compostables.</p>
               </div>
               <div class="space-y-2">
-                <div class="font-bold text-botanik-orange text-sm">Grade Laboratoire</div>
-                <p class="text-[10px] leading-tight text-botanik-green/70">Pureté absolue garantie, sans aucun additif ni conservateur chimique.</p>
+                <div class="font-bold text-botanik-orange text-sm">Sélection Botanique</div>
+                <p class="text-[10px] leading-tight text-botanik-green/70">Plantes brutes sélectionnées sans additif ni conservateur ajouté.</p>
               </div>
             </div>
           </div>
@@ -717,7 +717,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
               <div class="space-y-2">
                 <div class="font-bold text-botanik-orange text-sm">100% Bio</div>
-                <p class="text-[10px] leading-tight text-botanik-green/70">Plantes certifiées BIO et Grade Pharmacopée Européenne.</p>
+                <p class="text-[10px] leading-tight text-botanik-green/70">Plantes issues de l'agriculture biologique.</p>
               </div>
               <div class="space-y-2">
                 <div class="font-bold text-botanik-orange text-sm">Récolte Manuelle</div>
@@ -732,8 +732,8 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
                 <p class="text-[10px] leading-tight text-botanik-green/70">Achat en circuit court et emballages 100% compostables.</p>
               </div>
               <div class="space-y-2">
-                <div class="font-bold text-botanik-orange text-sm">Grade Laboratoire</div>
-                <p class="text-[10px] leading-tight text-botanik-green/70">Pureté absolue garantie, sans aucun additif ni conservateur chimique.</p>
+                <div class="font-bold text-botanik-orange text-sm">Sélection Botanique</div>
+                <p class="text-[10px] leading-tight text-botanik-green/70">Plantes brutes sélectionnées sans additif ni conservateur ajouté.</p>
               </div>
             </div>
           </div>
@@ -840,7 +840,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
               <div class="space-y-2">
                 <div class="font-bold text-botanik-orange text-sm">100% Bio</div>
-                <p class="text-[10px] leading-tight text-botanik-green/70">Plantes certifiées BIO et Grade Pharmacopée Européenne.</p>
+                <p class="text-[10px] leading-tight text-botanik-green/70">Plantes issues de l'agriculture biologique.</p>
               </div>
               <div class="space-y-2">
                 <div class="font-bold text-botanik-orange text-sm">Récolte Manuelle</div>
@@ -855,8 +855,8 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
                 <p class="text-[10px] leading-tight text-botanik-green/70">Achat en circuit court et emballages 100% compostables.</p>
               </div>
               <div class="space-y-2">
-                <div class="font-bold text-botanik-orange text-sm">Grade Laboratoire</div>
-                <p class="text-[10px] leading-tight text-botanik-green/70">Pureté absolue garantie, sans aucun additif ni conservateur chimique.</p>
+                <div class="font-bold text-botanik-orange text-sm">Sélection Botanique</div>
+                <p class="text-[10px] leading-tight text-botanik-green/70">Plantes brutes sélectionnées sans additif ni conservateur ajouté.</p>
               </div>
             </div>
           </div>
@@ -967,7 +967,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
               </li>
               <li class="flex items-start gap-3 w-full">
                 <svg class="w-5 h-5 text-botanik-orange mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                <span class="flex-1"><strong>Boswellia Serrata :</strong> Certifié titré en acides boswelliques pour une efficacité garantie.</span>
+                <span class="flex-1"><strong>Boswellia Serrata :</strong> Certifié titré en acides boswelliques sélectionnée pour sa richesse naturelle en acides boswelliques.</span>
               </li>
               <li class="flex items-start gap-3 w-full">
                 <svg class="w-5 h-5 text-botanik-orange mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
@@ -979,7 +979,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <div class="bg-botanik-orange/5 p-8 rounded-[32px] border border-botanik-orange/10 mb-12">
             <h3 class="text-xl font-bold text-botanik-green mb-4">L'avis de l'Architecte Bloom</h3>
             <p class="italic text-botanik-green/80 leading-relaxed">
-              "Une structure rigide est une structure fragile. Le Mouvement Libre agit comme un lubrifiant et un consolidateur de votre charpente. Sans l'agitation constante et le contrôle thermique de la BloomLab, la résine de Boswellia resterait inerte. Notre technologie permet d'intégrer cette résine au cœur de l'extrait, garantissant une efficacité de mouvement que la nature ne livre pas sans ingénierie."
+              "Une structure rigide est une structure fragile. Le Mouvement Libre agit comme un lubrifiant et un consolidateur de votre charpente. Sans l'agitation constante et le contrôle thermique de la BloomLab, la résine de Boswellia resterait inerte. Notre technologie permet d'intégrer cette résine au cœur de l'extrait, facilitant une mise en suspension homogène de la résine avec la fraction aqueuse."
             </p>
           </div>
 
@@ -1017,7 +1017,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
         <div class="prose prose-botanik max-w-none">
           <div class="bg-[#1B3022]/5 p-10 rounded-[40px] mb-12">
             <p class="text-xl leading-relaxed text-botanik-green">
-              L’élixir BOUCLIER TOTAL n’est pas une simple infusion. C'est un concentré de défense structurelle conçu selon une architecture moléculaire précise. Pour la première fois, nous séparons les actifs par leur résistance thermique pour garantir une extraction de grade professionnel à domicile.
+              L’élixir BOUCLIER TOTAL n’est pas une simple infusion. C'est un concentré de défense structurelle conçu selon une architecture moléculaire précise. Pour la première fois, nous séparons les actifs par leur résistance thermique pour garantir une extraction séquencée à domicile.
             </p>
           </div>
 
@@ -1090,7 +1090,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
               <div class="space-y-2">
                 <div class="font-bold text-botanik-orange text-sm">100% Bio</div>
-                <p class="text-[10px] leading-tight text-botanik-green/70">Plantes certifiées BIO et Grade Pharmacopée Européenne.</p>
+                <p class="text-[10px] leading-tight text-botanik-green/70">Plantes issues de l'agriculture biologique.</p>
               </div>
               <div class="space-y-2">
                 <div class="font-bold text-botanik-orange text-sm">Récolte Manuelle</div>
@@ -1105,8 +1105,8 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
                 <p class="text-[10px] leading-tight text-botanik-green/70">Achat en circuit court et emballages 100% compostables.</p>
               </div>
               <div class="space-y-2">
-                <div class="font-bold text-botanik-orange text-sm">Grade Laboratoire</div>
-                <p class="text-[10px] leading-tight text-botanik-green/70">Pureté absolue garantie, sans aucun additif ni conservateur chimique.</p>
+                <div class="font-bold text-botanik-orange text-sm">Sélection Botanique</div>
+                <p class="text-[10px] leading-tight text-botanik-green/70">Plantes brutes sélectionnées sans additif ni conservateur ajouté.</p>
               </div>
             </div>
           </div>
@@ -1116,7 +1116,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </div>
 
           <p class="text-center italic text-botanik-green/40 mt-12">
-            "Ce kit est révolutionnaire car il ne traite pas le froid comme un ennemi, mais comme un signal pour renforcer votre propre structure." — L'Architecte Bloom
+            "Ce kit est révolutionnaire car il s'inscrit en routine hivernale sans prétendre traiter une affection, mais comme un signal pour renforcer votre propre structure." — L'Architecte Bloom
           </p>
         </div>
       ` : `
@@ -1189,9 +1189,9 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </div>
 
           <div class="bg-[#3E4A3D] text-white p-6 sm:p-7 rounded-2xl sm:rounded-3xl shadow-sm text-center">
-            <h4 class="font-semibold text-white text-base sm:text-lg mb-2">Pureté Certifiée Pharmacopée Européenne</h4>
+            <h4 class="font-semibold text-white text-base sm:text-lg mb-2">Sélection Minérale Rigoureuse</h4>
             <p class="text-xs sm:text-sm text-white/75 max-w-lg mx-auto leading-relaxed mb-0">
-              100% minéraux purs de grade pharmaceutique. Sans conservateur, sans irradiation, sans nanoparticules. Une formulation transparente respectant l'intégrité biologique de votre organisme.
+              Minéraux volcaniques naturels sans conservateur ni irradiation. Sans conservateur, sans irradiation, sans nanoparticules. Une formulation transparente respectant l'intégrité biologique de votre organisme.
             </p>
           </div>
 
@@ -1272,7 +1272,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             </div>
             <div class="flex items-center gap-3 p-4 bg-[#1B3022]/5 rounded-xl">
               <span class="w-8 h-8 bg-[#3E4A3D] text-white rounded-full flex items-center justify-center font-bold text-xs shadow-sm" style="background-color: #3E4A3D; color: #ffffff;">05</span>
-              <span class="font-medium text-botanik-green">Teinture de Propolis Maison</span>
+              <span class="font-medium text-botanik-green">Teinture de Propolis (Protocole machine suspendu)</span>
             </div>
             <div class="flex items-center gap-3 p-4 bg-[#1B3022]/5 rounded-xl">
               <span class="w-8 h-8 bg-[#3E4A3D] text-white rounded-full flex items-center justify-center font-bold text-xs shadow-sm" style="background-color: #3E4A3D; color: #ffffff;">06</span>

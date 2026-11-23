@@ -21,13 +21,28 @@ export default function ContactContent({ onNavigate, lang = 'fr' }: ContactConte
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const [mailtoHref, setMailtoHref] = useState('');
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subjectMap: Record<string, string> = {
+      question_bloomlab: isFR ? 'Question BloomLab' : isDE ? 'Frage zu BloomLab' : 'BloomLab Question',
+      recettes_protocoles: isFR ? 'Conseil recette / protocole' : isDE ? 'Rezept / Protokoll' : 'Recipe / Protocol Inquiry',
+      commande_livraison: isFR ? 'Commande / livraison' : isDE ? 'Bestellung / Versand' : 'Order / Delivery',
+      sav_garantie: isFR ? 'SAV & Garantie' : isDE ? 'Kundenservice & Garantie' : 'Support & Warranty',
+      partenariat_presse: isFR ? 'Partenariat / Presse' : isDE ? 'Partnerschaft / Presse' : 'Partnership / Press',
+      autre: isFR ? 'Demande générale' : isDE ? 'Allgemeine Anfrage' : 'General Inquiry',
+    };
+    const subject = encodeURIComponent(`[Bloom Contact] ${subjectMap[formData.subject] || formData.subject} - ${formData.name}`);
+    const body = encodeURIComponent(
+      `Nom : ${formData.name}\nEmail : ${formData.email}\nTéléphone : ${formData.phone || 'Non renseigné'}\n\nMessage :\n${formData.message}`
+    );
+    const href = `mailto:contact@bloombybotanik.com?subject=${subject}&body=${body}`;
+    setMailtoHref(href);
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-    }, 600);
+    window.location.href = href;
+    setLoading(false);
+    setSubmitted(true);
   };
 
   return (
@@ -204,16 +219,27 @@ export default function ContactContent({ onNavigate, lang = 'fr' }: ContactConte
                   <CheckCircle2 className="w-10 h-10 text-[#A8B8A0]" />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-[#3E4A3D]">
-                  {isFR ? "Message bien reçu !" : isDE ? "Nachricht erhalten!" : "Message received!"}
+                  {isFR ? "E-mail prêt dans votre messagerie" : isDE ? "E-Mail-Entwurf vorbereitet" : "Email draft prepared"}
                 </h3>
                 <p className="text-slate-600 max-w-md mx-auto text-sm md:text-base leading-relaxed">
                   {isFR
-                    ? "Merci pour votre message. Notre équipe botanique ou notre service support l'étudiera avec attention et vous répondra sous 24 à 48 heures ouvrées à l'adresse indiquée."
+                    ? "Ce formulaire ne transmet pas encore automatiquement via un serveur : votre client e-mail a été sollicité pour envoyer votre message directement à contact@bloombybotanik.com."
                     : isDE
-                    ? "Vielen Dank für Ihre Nachricht. Unser botanisches Team oder der Kundendienst meldet sich innerhalb von 24 bis 48 Geschäftsstunden an die angegebene Adresse."
-                    : "Thank you for reaching out. Our botanical team will reply within 24 to 48 business hours to your email address."}
+                    ? "Dieses Formular sendet noch nicht automatisch über einen Server: Ihr E-Mail-Programm wurde vorbereitet, um Ihre Nachricht direkt an contact@bloombybotanik.com zu senden."
+                    : "This form does not send automatically via a server yet: your email client has been prepared to send your message directly to contact@bloombybotanik.com."}
                 </p>
-                <div className="pt-6">
+                {mailtoHref && (
+                  <div>
+                    <a
+                      href={mailtoHref}
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#3E4A3D] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#2D372C] transition-colors"
+                    >
+                      <Mail className="w-4 h-4" />
+                      <span>{isFR ? "Ouvrir le message dans mon client e-mail" : isDE ? "Im E-Mail-Programm öffnen" : "Open in email client"}</span>
+                    </a>
+                  </div>
+                )}
+                <div className="pt-2">
                   <button
                     onClick={() => {
                       setSubmitted(false);
@@ -225,9 +251,9 @@ export default function ContactContent({ onNavigate, lang = 'fr' }: ContactConte
                         message: ''
                       });
                     }}
-                    className="px-6 py-3 rounded-full bg-[#A8B8A0] text-[#0F261E] font-bold text-xs uppercase tracking-wider hover:bg-[#C8AB8A] transition-colors"
+                    className="px-6 py-3 rounded-full bg-[#A8B8A0] text-[#0F261E] font-bold text-xs uppercase tracking-wider hover:bg-[#C8AB8A] transition-colors cursor-pointer"
                   >
-                    {isFR ? "Envoyer un autre message" : isDE ? "Weitere Nachricht senden" : "Send another message"}
+                    {isFR ? "Préparer un autre message" : isDE ? "Weitere Nachricht vorbereiten" : "Prepare another message"}
                   </button>
                 </div>
               </div>
@@ -239,10 +265,10 @@ export default function ContactContent({ onNavigate, lang = 'fr' }: ContactConte
                   </h3>
                   <p className="text-sm text-slate-500">
                     {isFR
-                      ? "Remplissez ce formulaire et notre équipe vous apportera une réponse personnalisée."
+                      ? "Remplissez ces champs pour préparer un e-mail pré-rempli vers contact@bloombybotanik.com via votre messagerie."
                       : isDE
-                      ? "Füllen Sie dieses Formular aus, und unser Team antwortet Ihnen zeitnah."
-                      : "Fill in this form and we'll get back to you promptly."}
+                      ? "Füllen Sie diese Felder aus, um eine vorausgefüllte E-Mail an contact@bloombybotanik.com vorzubereiten."
+                      : "Fill in these fields to prepare a pre-filled email to contact@bloombybotanik.com in your mail app."}
                   </p>
                 </div>
 
@@ -358,11 +384,11 @@ export default function ContactContent({ onNavigate, lang = 'fr' }: ContactConte
                   className="w-full py-4 rounded-2xl bg-[#3E4A3D] hover:bg-[#2D372C] text-white font-bold text-sm tracking-wide uppercase transition-all shadow-md flex items-center justify-center gap-3 cursor-pointer disabled:opacity-50"
                 >
                   {loading ? (
-                    <span>{isFR ? "Envoi en cours..." : isDE ? "Wird gesendet..." : "Sending..."}</span>
+                    <span>{isFR ? "Préparation..." : isDE ? "Vorbereitung..." : "Preparing..."}</span>
                   ) : (
                     <>
                       <Send className="w-4 h-4" />
-                      <span>{isFR ? "Envoyer mon message" : isDE ? "Nachricht senden" : "Send message"}</span>
+                      <span>{isFR ? "Préparer l'e-mail vers le support" : isDE ? "E-Mail an Support vorbereiten" : "Prepare email to support"}</span>
                     </>
                   )}
                 </button>

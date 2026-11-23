@@ -193,9 +193,9 @@ export const discoveryRecipes: Recipe[] = [
   },
   {
     id: '05',
-    title: "Teinture de Propolis Maison",
-    description: "Un concentré protecteur issu d'une extraction hydro-alcoolique assistée par vortex.",
-    ingredients: ["Propolis brute", "Alcool à 70°"],
+    title: "Teinture de Propolis (Protocole machine suspendu)",
+    description: "⚠️ Extraction à l'alcool suspendue dans la cuve BloomLab® en attente de validation fabricant (réserver l'éthanol à la macération froide externe).",
+    ingredients: ["Propolis brute", "Alcool à 70° (macération froide externe uniquement — suspendu en cuve BloomLab®)"],
     instructions: ["Extraction vortex phase A"],
     benefits: ["Antibactérien", "Immunostimulant", "Antiseptique"],
     image: "/images/recettes/teinture-propolis-maison.jpg",
@@ -205,7 +205,7 @@ export const discoveryRecipes: Recipe[] = [
     axes: ["A2 (Barrière intestinale & muqueuses)", "A4 (Cascade de l'inflammation)"],
     sachetA: {
       composition: ["20g de Propolis brute broyée"],
-      solvant: "Alcool à 70° (100ml)",
+      solvant: "Protocole suspendu en cuve chauffante (réservé à la macération froide en bocal hors appareil)",
       temp: "Température ambiante",
       duration: "14 jours"
     },
@@ -227,7 +227,7 @@ export const discoveryRecipes: Recipe[] = [
     precautions: ["Contient de l'alcool.", "Tache les vêtements."],
     contraindications: ["Grossesse et allaitement", "Allergie aux produits de la ruche"],
     safetyMessage: "La propolis est un produit très actif, respectez les doses.",
-    bloomNote: "L'agitation vortex du BloomLab divise par 3 le temps d'extraction traditionnel."
+    bloomNote: "Protocole de teinture alcoolique suspendu sur appareil chauffant BloomLab® en attente de validation fabricant."
   },
   {
     id: '06',
@@ -398,7 +398,7 @@ export const discoveryRecipes: Recipe[] = [
     instructions: [
       "Phase A : Extraction hydroglycérinée de la Bardane et de la Pensée Sauvage à 75°C pendant 2h00.",
       "Vérification de la descente de température de la cuve sous 45°C.",
-      "Phase B : Ajout du Mahonia et de l'alcool bio 96° à 50°C pendant 2h30.",
+      "Phase B : ⚠️ Alcool chauffé suspendu — utiliser 250ml de glycérine végétale bio à 45°C pendant 2h00.",
       "Filtration et pressage à l'étamine de lin pour recueillir la fraction de cœur riche en berbérine."
     ],
     benefits: ["Régulation du renouvellement des kératinocytes", "Soutien du drainage émonctoriel hépato-rénal", "Apaisement des plaques squameuses"],
@@ -417,11 +417,11 @@ export const discoveryRecipes: Recipe[] = [
     },
     sachetB: {
       composition: ["20g Écorce de Mahonia concassée"],
-      solvant: "Alcool de grain bio 96° (250ml)",
+      solvant: "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       temp: "50°C",
       duration: "2h30"
     },
-    extractionOrder: "Phase A hydroglycérinée (inuline et mucilages) puis Phase B hydroalcoolique tiède (berbérine)",
+    extractionOrder: "Phase A hydroglycérinée (inuline et mucilages) puis Phase B sans alcool chauffé (glycérine végétale bio — protocole alcool chauffé suspendu)",
     administration: {
       mode: "Voie orale, dilué dans 100ml d'eau tiède.",
       dailyDose: "10ml par jour (2 prises de 5ml)",
@@ -432,7 +432,7 @@ export const discoveryRecipes: Recipe[] = [
     },
     precautions: ["Ne se substitue pas à un traitement dermatologique médical.", "Éviter les savons décapants."],
     contraindications: ["Grossesse et allaitement", "Enfants de moins de 12 ans", "Lithiase biliaire symptomatique"],
-    safetyMessage: "Respecter scrupuleusement le refroidissement sous 45°C avant introduction de l'alcool.",
+    safetyMessage: "⚠️ Ne pas introduire ni chauffer d'alcool dans la cuve électrique BloomLab® (protocole suspendu).",
     bloomNote: "Le Mahonia bloque la voie Th17 et la lipoxygénase tandis que la bardane soutient l'axe intestin-peau."
   },
   {
@@ -462,11 +462,11 @@ export const discoveryRecipes: Recipe[] = [
     },
     sachetB: {
       composition: ["10g Camomille matricaire (terpènes)", "25g Fumeterre"],
-      solvant: "Alcool de grain bio 96° (250ml)",
+      solvant: "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       temp: "48°C",
       duration: "2h30"
     },
-    extractionOrder: "Phase A hydroglycérinée sous 70°C puis Phase B hydroalcoolique en cuve étanche",
+    extractionOrder: "Phase A hydroglycérinée sous 70°C puis Phase B sans alcool chauffé (glycérine végétale bio — protocole alcool chauffé suspendu)",
     administration: {
       mode: "Voie orale exclusive.",
       dailyDose: "8ml par jour (2 prises de 4ml)",
@@ -475,7 +475,7 @@ export const discoveryRecipes: Recipe[] = [
       timing: "Le matin à jeun et à 17h00 (chronobiologie de la chute du cortisol)",
       usageDuration: "Cure de 45 jours continus."
     },
-    precautions: ["Ne jamais appliquer l'extrait hydroalcoolique pur sur peau écorchée ou suintante."],
+    precautions: ["⚠️ Protocole alcool chauffé suspendu : privilégier des phases aqueuses/huileuses douces et demander un avis dermatologique en cas de lésion."],
     contraindications: ["Grossesse et allaitement", "Allergie connue aux Astéracées", "Calculs biliaires aigus"],
     safetyMessage: "Privilégier des douches tièdes (<34°C) pour ne pas dissoudre le ciment céramidique épidermique.",
     bloomNote: "La prise de 17h00 neutralise le pic circadien de libération d'histamine avant la crise de grattage du soir."
@@ -506,7 +506,7 @@ export const discoveryRecipes: Recipe[] = [
     },
     sachetB: {
       composition: ["30g Baies de Palmier Nain (Saw Palmetto) concassées"],
-      solvant: "Alcool de grain bio 96° (300ml)",
+      solvant: "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       temp: "52°C",
       duration: "3h00"
     },

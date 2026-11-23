@@ -24,7 +24,7 @@ const HOME_SEO_I18N: Record<'en' | 'de', SEOEntry> = {
 const PRODUCT_SEO_MAP: Record<string, SEOEntry> = {
   bloomlab: {
     title: "BloomLab® — Extracteur Botanique Inox 304 pour Cosmétique & Cuisine Maison",
-    description: "Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie 1 an, manuel complet en français et 100 recettes incluses.",
+    description: "Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie légale 2 ans (UE) + garantie commerciale 1 an, manuel FR et 100 recettes.",
     path: "/bloomlab"
   },
   "pack-signature": {
@@ -87,12 +87,12 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
   },
   machine: {
     title: "BloomLab® — Extracteur Botanique Inox 304 pour Cosmétique & Cuisine Maison",
-    description: "Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie 1 an, manuel complet en français et 100 recettes incluses.",
+    description: "Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie légale 2 ans (UE) + garantie commerciale 1 an, manuel FR et 100 recettes.",
     path: "/bloomlab"
   },
   bloomlab: {
     title: "BloomLab® — Extracteur Botanique Inox 304 pour Cosmétique & Cuisine Maison",
-    description: "Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie 1 an, manuel complet en français et 100 recettes incluses.",
+    description: "Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie légale 2 ans (UE) + garantie commerciale 1 an, manuel FR et 100 recettes.",
     path: "/bloomlab"
   },
   'comment-ca-marche': {
@@ -131,8 +131,8 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
     path: "/extraction-botanique/"
   },
   'guide-solvants': {
-    title: "Guide des Solvants d'Extraction : Eau, Huile, Alcool | Bloom by BotaniK",
-    description: "Eau, huile végétale, alcool, glycérine : choisissez le solvant adapté avec Bloom by BotaniK et BloomLab® pour libérer le Totum Végétal.",
+    title: "Guide des Solvants d'Extraction : Eau, Huile, Glycérine | Bloom by BotaniK",
+    description: "Eau, huile végétale, glycérine, vinaigre : choisissez le solvant autorisé sur BloomLab® (extraction à l'alcool chauffé suspendue dans l'appareil).",
     path: "/guide-solvants/"
   },
   'guide-complet': {
@@ -151,8 +151,8 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
     path: "/huile-infusee/"
   },
   'teinture-mere': {
-    title: "Teinture-Mère Maison | Guide Extraits Hydroalcooliques | Bloom",
-    description: "Fabrication de teintures mères maison : ratios 1:5, choix des titres alcooliques et extraction dynamique par vortex cinétique.",
+    title: "Teinture-Mère Maison | Information & Suspension Alcool Chauffé | Bloom",
+    description: "Repères sur la macération hydroalcoolique à froid hors BloomLab® : l'extraction à l'alcool chauffé dans la cuve électrique est actuellement suspendue.",
     path: "/teinture-mere/"
   },
   academie: {
@@ -352,12 +352,12 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
   },
   'remedes-naturels': {
     title: "Remèdes Naturels Maison | Guide d'Herboristerie Moderne",
-    description: "Guide structuré pour concevoir vos préparations végétales familiales : tisanes concentrées, sirops botaniques, baumes et extraits hydroalcooliques.",
+    description: "Guide structuré pour concevoir vos préparations végétales familiales : tisanes concentrées, sirops botaniques, baumes et macérats aqueux ou huileux.",
     path: "/remedes-naturels/"
   },
   'remedes-naturels-maison-guide': {
     title: "Remèdes Naturels Maison | Guide d'Herboristerie Moderne",
-    description: "Guide structuré pour concevoir vos préparations végétales familiales : tisanes concentrées, sirops botaniques, baumes et extraits hydroalcooliques.",
+    description: "Guide structuré pour concevoir vos préparations végétales familiales : tisanes concentrées, sirops botaniques, baumes et macérats aqueux ou huileux.",
     path: "/remedes-naturels/"
   },
   lexique: {
@@ -472,22 +472,22 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
   },
   'infusion-precision': {
     title: "Infusion de Précision : Température, Vortex & Principes Actifs | Bloom",
-    description: "Pourquoi la température au degré près et l'agitation dynamique transforment radicalement la richesse moléculaire de vos tisanes médicinales.",
+    description: "Pourquoi la thermorégulation suivie (spécification nominale fabricant) et l'agitation douce transforment la richesse aromatique de vos tisanes.",
     path: "/infusion-precision/"
   },
   'totum-definition': {
     title: "Définition du Totum Végétal en Phytothérapie | Bloom by BotaniK",
-    description: "Comprendre la notion scientifique de Totum végétal : synergie d'actifs, co-facteurs enzymatiques et supériorité face aux molécules isolées.",
+    description: "Comprendre la notion de Totum végétal : synergie d'actifs, co-facteurs enzymatiques et comparaison avec les molécules isolées.",
     path: "/totum-definition/"
   },
   'solvants-extraction': {
-    title: "Solvants d'Extraction Botanique : Polarité & Rendements | Bloom",
-    description: "Tableau complet des solvants naturels (eau, éthanol, huiles, glycérine, vinaigre) et températures optimales par famille phytochimique.",
+    title: "Solvants d'Extraction Botanique : Polarité & Usages | Bloom",
+    description: "Tableau des solvants naturels (eau, huiles, glycérine, vinaigre ; alcool chauffé suspendu sur BloomLab®) et températures d'extraction.",
     path: "/solvants-extraction/"
   },
   'maceration-plantes': {
-    title: "Macération de Plantes à Chaud & Froid : Protocoles Maison | Bloom",
-    description: "Maîtrisez la macération végétale (huileuse, alcoolique, glycérinée) à domicile sans oxydation grâce à l'extraction en cuve close.",
+    title: "Macération de Plantes | Huileuse, Aqueuse & Glycérinée | Bloom",
+    description: "Maîtrisez la macération végétale (huileuse, glycérinée, aqueuse) en cuve close sur BloomLab® ; extraction à l'alcool chauffé suspendue.",
     path: "/maceration-plantes/"
   },
   'qu-est-ce-que-infusion': {
@@ -502,7 +502,7 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
   },
   'phytotherapie-moderne-scientifique': {
     title: "Phytothérapie Moderne & Scientifique | Extraction & Biodisponibilité",
-    description: "Comment l'ingénierie thermique et l'évidence phytochimique réconcilient herboristerie traditionnelle et rigueur clinique moderne.",
+    description: "Comment l'ingénierie thermique et l'évidence phytochimique réconcilient herboristerie traditionnelle et rigueur documentaire moderne.",
     path: "/phytotherapie-moderne-scientifique/"
   },
   'abonnements-numeriques': {
@@ -531,8 +531,8 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
     path: "/mentions-legales/"
   },
   returns: {
-    title: "Retours & Remboursements | Garantie 30 Jours Bloom",
-    description: "Politique de retour et de remboursement Bloom by BotaniK : garantie 30 jours et modalités SAV.",
+    title: "Retours & Remboursements | Rétractation 14 j & Retour 30 j Bloom",
+    description: "Politique de retour Bloom by BotaniK : droit légal de rétractation 14 jours, extension commerciale de retour 30 jours et garanties applicables.",
     path: "/retour-et-remboursement/"
   },
   withdrawal: {
@@ -744,8 +744,8 @@ const VIEW_SEO_I18N: Record<'en' | 'de', Record<string, { title: string; descrip
       description: "Master botanical extraction at home: maceration, controlled infusion, and A/B sequencing to preserve delicate active compounds."
     },
     'guide-solvants': {
-      title: "Extraction Solvents Guide: Water, Oil, Alcohol | Bloom by BotaniK",
-      description: "Water, carrier oils, organic alcohol, glycerin: choose the ideal solvent with BloomLab® to capture the full botanical totum."
+      title: "Extraction Solvents Guide: Water, Oil, Glycerin | Bloom by BotaniK",
+      description: "Water, carrier oils, glycerin, vinegar: choose an authorized solvent for BloomLab® (heated alcohol extraction inside the unit is suspended)."
     },
     'guide-complet': {
       title: "Botanical Extraction: Maceration, Infusion & A/B Sequencing | Bloom",
@@ -760,8 +760,8 @@ const VIEW_SEO_I18N: Record<'en' | 'de', Record<string, { title: string; descrip
       description: "Practical guide to herbal infused oils: selecting virgin carrier oils, gentle 45°C maceration, and preserving lipophilic fractions."
     },
     'teinture-mere': {
-      title: "Homemade Mother Tinctures | Hydroalcoholic Extracts | Bloom",
-      description: "Crafting herbal tinctures at home: 1:5 botanical ratios, alcohol strengths, and kinetic extraction on BloomLab®."
+      title: "Mother Tinctures | Cold Maceration & Suspension Notice | Bloom",
+      description: "Information on ambient hydroalcoholic maceration outside BloomLab®: heated alcohol extraction inside the electrical unit is currently suspended."
     },
     academie: {
       title: "Bloom Academy — A/B Method, Totum & Educational Guides",
@@ -881,15 +881,15 @@ const VIEW_SEO_I18N: Record<'en' | 'de', Record<string, { title: string; descrip
     },
     'infusion-precision': {
       title: "Precision Infusion: Temperature, Vortex & Active Compounds | Bloom",
-      description: "How 1°C thermal accuracy and gentle agitation transform the phytochemical richness of homemade herbal infusions."
+      description: "How nominal thermal regulation and gentle agitation help preserve delicate aromatic fractions in homemade herbal infusions."
     },
     'totum-definition': {
       title: "What Is the Botanical Totum? Whole-Plant Synergy | Bloom",
-      description: "Understand the scientific concept of the botanical totum: cofactor synergy, absorption, and preservation of delicate compounds."
+      description: "Understand the concept of the botanical totum: cofactor synergy, traditional framing, and preservation of delicate compounds."
     },
     'solvants-extraction': {
       title: "Botanical Extraction Solvents: Polarity & Carrier Oils | Bloom",
-      description: "Complete matrix of natural solvents (water, carrier oils, ethanol, glycerin, cider vinegar) and ideal extraction temperatures."
+      description: "Matrix of natural solvents (water, carrier oils, glycerin, cider vinegar; heated ethanol suspended on BloomLab®) and extraction temperatures."
     }
   },
   de: {
@@ -930,8 +930,8 @@ const VIEW_SEO_I18N: Record<'en' | 'de', Record<string, { title: string; descrip
       description: "Beherrschen Sie Pflanzenextraktion zuhause: Mazeration, präziser Aufguss und A/B-Sequenzierung für empfindliche Pflanzenstoffe."
     },
     'guide-solvants': {
-      title: "Lösungsmittel-Leitfaden: Wasser, Öl, Alkohol | Bloom by BotaniK",
-      description: "Wasser, Pflanzenöl, Bio-Alkohol, Glycerin: Wählen Sie mit der BloomLab® das passende Lösungsmittel für das volle Totum."
+      title: "Lösungsmittel-Leitfaden: Wasser, Öl, Glycerin | Bloom by BotaniK",
+      description: "Wasser, Pflanzenöl, Glycerin, Essig: Wählen Sie für die BloomLab® zugelassene Lösungsmittel (erhitzter Alkohol im Gerät ausgesetzt)."
     },
     'guide-complet': {
       title: "Pflanzenextraktion: Mazeration, Infusion & A/B-Sequenzierung | Bloom",
@@ -946,8 +946,8 @@ const VIEW_SEO_I18N: Record<'en' | 'de', Record<string, { title: string; descrip
       description: "Praxis-Leitfaden für Kräuteröle: Auswahl nativer Trägeröle, sanfte Mazeration bei 45°C und Schutz fettlöslicher Pflanzenstoffe."
     },
     'teinture-mere': {
-      title: "Urtinkturen Selbstgemacht | Hydroalkoholische Auszüge | Bloom",
-      description: "Pflanzentinkturen zuhause herstellen: 1:5-Verhältnisse, Alkoholstärken und dynamische Extraktion mit der BloomLab®."
+      title: "Urtinkturen | Hinweise zur Kalten Mazeration & Aussetzung | Bloom",
+      description: "Hinweise zur kalten Mazeration außerhalb der BloomLab®: Die erhitzte Alkoholextraktion im elektrischen Gerät ist derzeit ausgesetzt."
     },
     academie: {
       title: "Bloom Academy — A/B-Methode, Totum & Wissensleitfäden",
@@ -1067,15 +1067,15 @@ const VIEW_SEO_I18N: Record<'en' | 'de', Record<string, { title: string; descrip
     },
     'infusion-precision': {
       title: "Präzisions-Infusion: Temperatur, Bewegung & Wirkstoffe | Bloom",
-      description: "Wie gradgenaue Steuerung und sanfte Zirkulation die Wirkstoffdichte hausgemachter Kräuteraufgüsse verändern."
+      description: "Wie nominelle Temperaturregelung und sanfte Zirkulation dabei helfen, empfindliche Aromastoffe in Aufgüssen zu schützen."
     },
     'totum-definition': {
       title: "Definition des Pflanzentotums | Synergie Ganzer Pflanzen | Bloom",
-      description: "Was das Pflanzentotum ausmacht: Zusammenspiel von Kofaktoren, Bioverfügbarkeit und Schutz empfindlicher Stoffe."
+      description: "Was das Pflanzentotum ausmacht: Zusammenspiel von Kofaktoren, traditionelle Einordnung und Schutz empfindlicher Stoffe."
     },
     'solvants-extraction': {
       title: "Lösungsmittel der Pflanzenextraktion: Polarität & Öle | Bloom",
-      description: "Übersicht natürlicher Lösungsmittel (Wasser, Trägeröle, Ethanol, Glycerin, Apfelessig) samt optimalen Temperaturen."
+      description: "Übersicht natürlicher Lösungsmittel (Wasser, Trägeröle, Glycerin, Apfelessig; erhitztes Ethanol in der BloomLab® ausgesetzt)."
     }
   }
 };

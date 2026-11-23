@@ -378,7 +378,7 @@ export default function ProtocoleDecalcificationPinealeContent({
                   <ul className="text-xs text-[#FAF7F2]/70 space-y-1.5 pl-11">
                     <li className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#86efac]" />
-                      <span><strong className="text-[#FAF7F2]">Tamarin (Tamarindus indica)</strong> : Démontré cliniquement pour augmenter l'excrétion urinaire du fluorure.</span>
+                      <span><strong className="text-[#FAF7F2]">Tamarin (Tamarindus indica)</strong> : Documenté dans certaines études exploratoires pour son association avec une augmentation de l'excrétion urinaire du fluorure (données limitées, non équivalentes à une indication médicale).</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#86efac]" />
@@ -628,22 +628,22 @@ export default function ProtocoleDecalcificationPinealeContent({
                 <div className="bg-[#3E4A3D] rounded-2xl border border-white/10 p-5 space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold text-[#c9a84c] uppercase tracking-wider">
-                      Phase B — Extraction Hydroalcoolique
+                      Phase B — Extraction Lipophile (Huile) ou Glycérine
                     </span>
                     <span className="text-[10px] bg-[#c9a84c]/10 text-[#c9a84c] px-2 py-0.5 rounded font-mono">
-                      600 ml
+                      500 ml
                     </span>
                   </div>
                   <ul className="text-xs text-[#FAF7F2]/70 space-y-1">
                     <li>• Rhizome de Curcuma bio concassé : <strong>30 g</strong></li>
                     <li>• Rhizome de Gingembre frais haché : <strong>15 g</strong></li>
-                    <li>• Alcool de grain ou vinique bio à 50° : <strong>600 ml</strong></li>
-                    <li><em>(Préparation 50° : 312 ml alcool 96% + 288 ml eau pure)</em></li>
+                    <li>• Huile végétale vierge alimentaire (ou glycérine végétale sans alcool) : <strong>500 ml</strong></li>
+                    <li><em>(Note de sécurité : l'extraction à l'alcool chauffé dans la cuve BloomLab® est suspendue)</em></li>
                   </ul>
                   <div className="pt-2 border-t border-white/5 text-[11px] text-[#FAF7F2]/80 space-y-0.5">
-                    <p><strong>Température BloomLab :</strong> 50°C</p>
-                    <p><strong>Durée :</strong> 3 heures (Agitation régulière continue)</p>
-                    <p className="text-[#c9a84c]">Rendement : ~540 ml d'extrait concentré doré.</p>
+                    <p><strong>Température BloomLab :</strong> 45°C (huile) / 40°C (glycérine)</p>
+                    <p><strong>Durée :</strong> 2 heures (Agitation régulière continue)</p>
+                    <p className="text-[#c9a84c]">Une macération hydroalcoolique traditionnelle s'effectue uniquement à froid, en bocal verre hors appareil électrique.</p>
                   </div>
                 </div>
               </div>
@@ -651,13 +651,13 @@ export default function ProtocoleDecalcificationPinealeContent({
               {/* Instructions pas à pas */}
               <div className="bg-[#3E4A3D] rounded-2xl border border-white/10 p-5 mb-8 space-y-3">
                 <h3 className="text-xs font-bold uppercase tracking-widest text-[#FAF7F2] mb-2">
-                  Assemblage &amp; Posologie Pratique
+                  Assemblage &amp; Précautions d'emploi
                 </h3>
                 <ol className="text-xs text-[#FAF7F2]/80 space-y-2 list-decimal list-inside leading-relaxed">
-                  <li>Filtrez séparément les phases A et B avec le filtre micronique BloomLab.</li>
-                  <li>Mélangez 300 ml de Phase A et 300 ml de Phase B dans un flacon en verre ambré de 600 ml ou 1 L.</li>
-                  <li>Laissez reposer 24h au frais avant la première prise. Le titre alcoolique final est d'environ 25°, assurant une conservation parfaite de 6 mois à température ambiante.</li>
-                  <li><strong>Posologie de la cure :</strong> 1 cuillère à café (5 ml) diluée dans un petit verre d'eau tiède le matin à jeun, et 1 cuillère à café le soir 1h avant le coucher.</li>
+                  <li>Filtrez séparément les phases A et B avec le filtre BloomLab.</li>
+                  <li>Conservez la Phase A aqueuse séparément au réfrigérateur (usage rapide sur quelques jours ; ne pas conserver de préparation aqueuse non stabilisée à température ambiante).</li>
+                  <li>La Phase B huileuse se conserve en flacon verre ambré fermé à l'abri de la chaleur et de la lumière, en vérifiant systématiquement odeur et aspect avant usage.</li>
+                  <li><strong>Rythme indicatif :</strong> 1 cuillère à café (5 ml) de phase B avec un repas + 1 tasse de phase A tiède le matin et en fin de journée, sur avis professionnel en cas de traitement ou grossesse.</li>
                 </ol>
               </div>
 
@@ -736,7 +736,7 @@ export default function ProtocoleDecalcificationPinealeContent({
                   Le Reset de la Glande Pinéale par l'Obscurité
                 </h3>
                 <p className="text-xs sm:text-sm text-[#FAF7F2]/90 leading-relaxed font-light">
-                  La lumière bleue bloque la mélatonine et la production de DMT endogène. L'obscurité totale et les plantes sédatives (passiflore, valériane) restaurent la fonction endocrine et la connexion intuitive.
+                  L'exposition nocturne à la lumière bleue inhibe la sécrétion de mélatonine par l'épiphyse ; l'hypothèse d'un lien avec d'autres indolamines endogènes comme la DMT chez l'humain reste non établie et spéculative. L'obscurité nocturne et une hygiène du soir apaisée soutiennent avant tout la régularité du rythme mélatoninergique.
                 </p>
               </div>
 

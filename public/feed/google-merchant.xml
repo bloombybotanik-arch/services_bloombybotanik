@@ -9,15 +9,14 @@
     <item>
       <g:id>bloomlab</g:id>
       <g:title>BloomLab® - L'Extracteur Botanique de Précision</g:title>
-      <g:description>L'infuseur et extracteur botanique de précision pour extraire le Totum intégral des plantes médicinales à domicile avec contrôle thermique absolu (±0,5°C) et vortex cinétique.</g:description>
+      <g:description>L'infuseur et extracteur botanique de précision pour extraire le Totum intégral des plantes médicinales à domicile avec thermorégulation suivie (spécification nominale fabricant ±0,5°C) et agitation douce.</g:description>
       <g:link>https://bloombybotanik.com/bloomlab/</g:link>
       <g:image_link>https://bloombybotanik.com/products/bloomlab.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:price>229.00 EUR</g:price>
       <g:brand>Bloom by BotaniK</g:brand>
       <g:condition>new</g:condition>
-      <g:identifier_exists>yes</g:identifier_exists>
-      <g:gtin>3770000000001</g:gtin>
+      <g:identifier_exists>no</g:identifier_exists>
       <g:mpn>BLOOMLAB-V2</g:mpn>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Alternative Medicine</g:google_product_category>
       <g:shipping>

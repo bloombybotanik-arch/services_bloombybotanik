@@ -12,6 +12,7 @@ import img9 from './assets/images/home_lab_vibe_cleaned_1786616854146.jpg';
 
 import { translations, Language } from './translations';
 import { OptimizedImage } from './components/OptimizedImage';
+import AmazonSocialProof from './components/AmazonSocialProof';
 
 interface HomeContentProps {
   onNavigate: (view: any, id?: string) => void;
@@ -24,6 +25,24 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
   const isFR = lang === 'fr';
   const isDE = lang === 'de';
   const tr = (fr: string, en: string, de: string) => (isFR ? fr : isDE ? de : en);
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterStatus, setNewsletterStatus] = useState<'idle' | 'ok' | 'error'>('idle');
+
+  const handleHomeNewsletter = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newsletterEmail) return;
+    try {
+      const res = await fetch('/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: newsletterEmail, source: 'home_content' }),
+      });
+      setNewsletterStatus(res.ok ? 'ok' : 'error');
+      if (res.ok) setNewsletterEmail('');
+    } catch {
+      setNewsletterStatus('error');
+    }
+  };
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 animate-in fade-in slide-in-from-bottom-4 duration-1000 overflow-x-clip">
@@ -154,7 +173,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
                   <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
                     <Check className="w-4 h-4 text-botanik-orange" />
                   </div>
-                  <span className="text-sm font-medium text-white/90">{tr("Précision ±0,5°C", "±0.5°C Precision", "±0,5°C Präzision")}</span>
+                  <span className="text-sm font-medium text-white/90">{tr("Chauffe régulée (spéc. fabricant)", "Regulated heating (mfr. spec)", "Geregelte Heizung (Herstellerangabe)")}</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
@@ -302,37 +321,9 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
         </div>
       </section>
 
-      {/* 6. TESTIMONIALS - SOCIAL PROOF */}
+      {/* 6. TESTIMONIALS - VERIFIED AMAZON SOCIAL PROOF */}
       <section className="mb-24 md:mb-32">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-botanik-green">
-            {h.testimonials.title}
-          </h2>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {h.testimonials.list.map((tst: any, idx: number) => (
-            <div key={idx} className="bg-white p-10 rounded-[40px] border border-botanik-green/5 shadow-sm relative group hover:shadow-xl transition-all duration-500">
-              <div className="flex gap-1 mb-6">
-                {[1, 2, 3, 4, 5].map((s) => (
-                  <Star key={s} className="w-4 h-4 fill-botanik-orange text-botanik-orange" />
-                ))}
-              </div>
-              <p className="text-lg text-botanik-green/80 italic mb-8 leading-relaxed">
-                "{tst.text}"
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-botanik-green/5 rounded-full flex items-center justify-center">
-                  <User className="w-6 h-6 text-botanik-green/40" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-botanik-green">{tst.name}</h4>
-                  <p className="text-xs text-botanik-orange font-bold uppercase tracking-widest">{tst.role}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <AmazonSocialProof lang={lang} onNavigate={onNavigate} />
       </section>
 
       {/* 7. OFFERS - THE PRICING */}
@@ -402,7 +393,7 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
               <p className="text-xl text-botanik-green font-medium mb-6">{h.guarantee_faq.guarantee}</p>
               <div className="flex items-center gap-4 text-botanik-green/60">
                 <ShieldCheck className="w-6 h-6 text-botanik-orange" />
-                <span>{isFR ? "Garantie constructeur 1 an incluse" : (lang === 'de' ? "1 Jahr Herstellergarantie inklusive" : "1-year manufacturer warranty included")}</span>
+                <span>{isFR ? "Garantie légale de conformité 2 ans (UE) + garantie commerciale 1 an" : (lang === 'de' ? "2 Jahre gesetzliche Gewährleistung (EU) + 1 Jahr Herstellergarantie" : "2-year EU legal conformity warranty + 1-year commercial warranty")}</span>
               </div>
             </div>
             
@@ -446,17 +437,33 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
             <p className="text-lg text-white/70 mb-10 font-light leading-relaxed">
               {h.newsletter.desc}
             </p>
-            <form className="flex flex-col sm:flex-row gap-4" onSubmit={(e) => e.preventDefault()}>
+            <form className="flex flex-col sm:flex-row gap-4" onSubmit={handleHomeNewsletter}>
               <input 
                 type="email" 
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
                 placeholder={tr("Votre email...", "Your email...", "Ihre E-Mail...")} 
                 className="flex-grow px-8 py-5 bg-white/10 border border-white/20 rounded-2xl text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-botanik-orange transition-all"
                 required
               />
-              <button className="px-10 py-5 bg-white text-[#0F261E] rounded-2xl font-bold hover:bg-[#F9F6F0] transition-all shadow-xl shadow-black/20 cursor-pointer">
+              <button type="submit" className="px-10 py-5 bg-white text-[#0F261E] rounded-2xl font-bold hover:bg-[#F9F6F0] transition-all shadow-xl shadow-black/20 cursor-pointer">
                 {h.newsletter.cta}
               </button>
             </form>
+            {newsletterStatus === 'ok' && (
+              <p className="mt-4 text-xs text-emerald-300 font-semibold">
+                {tr(
+                  "✓ Inscription enregistrée sur le serveur (aucun e-mail automatique envoyé sans passerelle SMTP configurée).",
+                  "✓ Registration saved on the server (no automated email sent without configured SMTP).",
+                  "✓ Anmeldung auf dem Server gespeichert (kein automatischer E-Mail-Versand ohne SMTP-Konfiguration)."
+                )}
+              </p>
+            )}
+            {newsletterStatus === 'error' && (
+              <p className="mt-4 text-xs text-rose-300 font-semibold">
+                {tr("Erreur d'enregistrement. Veuillez réessayer.", "Registration failed. Please try again.", "Fehler bei der Speicherung. Bitte erneut versuchen.")}
+              </p>
+            )}
             <p className="mt-6 text-[10px] text-white/40 uppercase tracking-[0.2em] font-medium">
               {tr("Pas de spam. Désinscription en un clic.", "No spam. One-click unsubscribe.", "Kein Spam. Abmeldung mit einem Klick.")}
             </p>

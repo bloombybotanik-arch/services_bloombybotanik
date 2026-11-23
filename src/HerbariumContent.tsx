@@ -841,8 +841,8 @@ export default function HerbariumContent({
         title={lang === 'fr' ? "L'Herbier Médicinal Bloom" : "The Bloom Medicinal Herbarium"}
         subtitle={lang === 'fr' ? "La pharmacopée vivante et la science des principes actifs" : "Living Pharmacopoeia and Active Botanical Principles"}
         context={lang === 'fr'
-          ? "Vous êtes dans le répertoire botanique de référence de Bloom by BotaniK. Chaque fiche détaille les composés actifs du Totum, la polarité d'extraction (eau, alcool, huile), les synergies ancestrales et les dosages sécurisés pour composer vos remèdes en toute souveraineté."
-          : "You are in the reference botanical directory of Bloom by BotaniK. Each entry details Totum active compounds, extraction polarities, ancestral synergies, and safe dosages."}
+          ? "Vous êtes dans le répertoire botanique de référence de Bloom by BotaniK. Chaque fiche détaille les composés décrits dans la littérature, les polarités d'extraction (eau, huile végétale, glycérine ; alcool hors appareil à froid), les repères historiques et les précautions d'emploi."
+          : "You are in the reference botanical directory of Bloom by BotaniK. Each entry details documented compounds, extraction polarities (water, carrier oil, glycerin; cold alcohol outside electric appliances), historical notes, and safety precautions."}
         actions={
           <button
             onClick={() => onNavigate('extraction-botanique')}

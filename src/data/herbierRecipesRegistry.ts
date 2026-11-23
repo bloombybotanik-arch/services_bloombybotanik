@@ -115,7 +115,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "55°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Égypte Antique (Papyrus Ebers, ~1550 av. J.-C.)",
@@ -154,22 +154,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Chaga (Diamant de la Forêt) (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "55°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Sclérote (corps stérile) réduit en poudre fine afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau purifiée. Activer le cycle thermo-cinétique à 80°C pendant 4h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 55°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Bêta-glucanes (1-3, 1-6)",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Acide bétulinique",
@@ -253,7 +253,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Grèce Classique (Hippocrate & Dioscoride, De Materia Medica, ~60 ap. J.-C.)",
@@ -292,22 +292,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Cordyceps (L'Or de l'Himalaya) (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "45°C",
       "duration": "2h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Mycélium et corps de fructification en poudre afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 65°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 2h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Cordycépine (3'-désoxyadénosine)",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Adénosine",
@@ -391,7 +391,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
     "tempSachetB": "55°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
@@ -430,22 +430,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Hericium (Crinière de Lion) (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "55°C",
       "duration": "2h30"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Corps de fructification séché et réduit en poudre afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine. Activer le cycle thermo-cinétique à 75°C pendant 3h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 55°C pendant 2h30.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Héricénones",
         "mechanism": "Fraction Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Érinacines",
@@ -524,7 +524,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "85°C",
     "tempSachetB": "60°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Europe Médiévale (Hildegarde de Bingen, Physica, XIIe siècle)",
@@ -563,22 +563,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Reishi (Champignon de l'Immortalité) (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "60°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Corps de fructification tranché ou poudre afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau pure. Activer le cycle thermo-cinétique à 85°C pendant 4h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 60°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Acides ganodériques (Tritérpènes)",
         "mechanism": "Fraction Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Polysaccharides complexes",
@@ -657,7 +657,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Médecine Traditionnelle Chinoise (Shennong Ben Cao Jing & Shanghan Lun)",
@@ -696,22 +696,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Curcuma et Poivre Noir (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Rhizome séché en poudre ou tranches / Baies séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Curcuminoïdes",
         "mechanism": "Fraction Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Huiles essentielles (Turmérone)",
@@ -795,7 +795,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Ayurveda Védique (Charaka Samhita & Sushruta Samhita, Inde)",
@@ -834,22 +834,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Boswellia (Encens) (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "45°C",
       "duration": "4h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Résine (gomme oléorésineuse) afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 60°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 4h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Acides boswelliques (AKBA)",
         "mechanism": "Fraction Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Résines et huiles essentielles",
@@ -928,7 +928,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "50°C",
     "tempSachetB": "40°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Traditions Berbères & Tamazight (Atlas & Oasis)",
@@ -967,22 +967,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Safran (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "40°C",
       "duration": "2h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Stigmates séchés (fils rouges) afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 50°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 40°C pendant 2h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Safranal",
         "mechanism": "Fraction Volatile/Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Crocine",
@@ -1061,7 +1061,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
@@ -1100,22 +1100,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Ortie (Feuille et Racine) (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles séchées / Racines séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Silice organique",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Polyphénols et Flavonoïdes",
@@ -1199,7 +1199,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Kabbale & Hermétisme Spagyrique (Renaissance & Paracelse)",
@@ -1238,22 +1238,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Prêle des champs (15g)"
       ],
-      "solvent": "Alcool bio 70°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "2h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Tiges stériles séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 80°C pendant 2h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 70° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 2h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Silice organique biodisponible",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Flavonoïdes",
@@ -1332,7 +1332,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Biochimie & Totum Moderne (Pharmacopée Européenne & Recherche Contemporaine)",
@@ -1371,22 +1371,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Gingembre (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "45°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Rhizome séché en tranches ou poudre afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "[6]-Gingérols",
         "mechanism": "Fraction Liposoluble/Thermolabile ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Shogaols",
@@ -1470,7 +1470,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Égypte Antique (Papyrus Ebers, ~1550 av. J.-C.)",
@@ -1509,22 +1509,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Scutellaire de Baïkal (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Baicaline",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Wogonine",
@@ -1603,7 +1603,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Grèce Classique (Hippocrate & Dioscoride, De Materia Medica, ~60 ap. J.-C.)",
@@ -1642,22 +1642,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Rhodiola Rosea (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "45°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Rhizome et racine séchés afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Rosavines",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Salidroside",
@@ -1736,7 +1736,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
@@ -1775,22 +1775,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Griffonia (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Graines séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "5-HTP (5-Hydroxytryptophane)",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Alcaloïdes indoliques",
@@ -1864,7 +1864,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Europe Médiévale (Hildegarde de Bingen, Physica, XIIe siècle)",
@@ -1903,22 +1903,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Gentiane Jaune (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Gentiopicroside",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Amarogentine",
@@ -1997,7 +1997,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Médecine Traditionnelle Chinoise (Shennong Ben Cao Jing & Shanghan Lun)",
@@ -2036,22 +2036,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Radis Noir (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "45°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Glucosinolates",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Isothiocyanates",
@@ -2130,7 +2130,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Ayurveda Védique (Charaka Samhita & Sushruta Samhita, Inde)",
@@ -2169,22 +2169,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Chrysanthellum (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Flavonoïdes (lutéoline)",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Saponines stéroïdiques",
@@ -2263,7 +2263,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Traditions Berbères & Tamazight (Atlas & Oasis)",
@@ -2302,22 +2302,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Desmodium (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Saponosides triterpéniques",
         "mechanism": "Fraction Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Flavonoïdes",
@@ -2396,7 +2396,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
@@ -2435,22 +2435,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Bardane (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Inuline",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Polyacétylènes",
@@ -2529,7 +2529,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Kabbale & Hermétisme Spagyrique (Renaissance & Paracelse)",
@@ -2568,22 +2568,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Astragale (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Astragaloside IV",
         "mechanism": "Fraction Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Polysaccharides",
@@ -2662,7 +2662,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Biochimie & Totum Moderne (Pharmacopée Européenne & Recherche Contemporaine)",
@@ -2701,22 +2701,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Eleuthérocoque (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Éleuthérosides",
         "mechanism": "Fraction Hydrosoluble/Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Polysaccharides",
@@ -2790,7 +2790,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Égypte Antique (Papyrus Ebers, ~1550 av. J.-C.)",
@@ -2827,22 +2827,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Bacopa (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Bacosides",
         "mechanism": "Fraction Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Alcaloïdes",
@@ -2921,7 +2921,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Grèce Classique (Hippocrate & Dioscoride, De Materia Medica, ~60 ap. J.-C.)",
@@ -2960,22 +2960,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Reishi (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Fruit (champignon) séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 80°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Polysaccharides (Bêta-glucanes)",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Triterpènes",
@@ -3049,7 +3049,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "50°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
@@ -3094,13 +3094,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 50°C pendant 1h00.",
       "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Huile de Jojoba ou Huile de Coco MCT pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 4h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Cannabidiol (CBD)",
         "mechanism": "Fraction Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Cannabigérol (CBG)",
@@ -3179,7 +3179,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Europe Médiévale (Hildegarde de Bingen, Physica, XIIe siècle)",
@@ -3215,22 +3215,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Ginkgo (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Ginkgolides (A, B, C)",
         "mechanism": "Fraction Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Flavones glycosides",
@@ -3309,7 +3309,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Médecine Traditionnelle Chinoise (Shennong Ben Cao Jing & Shanghan Lun)",
@@ -3345,22 +3345,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Fenugrec (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Graines séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Saponines stéroïdiques",
         "mechanism": "Fraction Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Mucilages",
@@ -3439,7 +3439,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Ayurveda Védique (Charaka Samhita & Sushruta Samhita, Inde)",
@@ -3475,22 +3475,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Plantain majeur (15g)"
       ],
-      "solvent": "Alcool bio 70°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "45°C",
       "duration": "2h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 70° pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 2h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Mucilages",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Iridoïdes (Aucuboside)",
@@ -3569,7 +3569,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Traditions Berbères & Tamazight (Atlas & Oasis)",
@@ -3605,22 +3605,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Renouée du Japon (Racine) (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine et rhizome séchés afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Resvératrol",
         "mechanism": "Fraction Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Émodine",
@@ -3699,7 +3699,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
@@ -3736,22 +3736,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Quassia amer (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Bois séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Quassinoïdes",
         "mechanism": "Fraction Hydrosoluble/Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Tanins",
@@ -3825,7 +3825,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Kabbale & Hermétisme Spagyrique (Renaissance & Paracelse)",
@@ -3861,22 +3861,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Euphraise (15g)"
       ],
-      "solvent": "Alcool bio 70°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "45°C",
       "duration": "2h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 70° pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 2h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Iridoïdes (Euphrosine)",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Tanins",
@@ -3955,7 +3955,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Biochimie & Totum Moderne (Pharmacopée Européenne & Recherche Contemporaine)",
@@ -3991,22 +3991,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Myrtille (15g)"
       ],
-      "solvent": "Alcool bio 70°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "45°C",
       "duration": "2h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Fruits séchés (ou feuilles pour usage spécifique) afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 70° pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 2h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Anthocyanes",
         "mechanism": "Fraction Hydrosoluble/Thermolabile ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Myrtilline",
@@ -4085,7 +4085,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Égypte Antique (Papyrus Ebers, ~1550 av. J.-C.)",
@@ -4121,22 +4121,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Maca (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine (hypocotyle) séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Macamides et Macaènes",
         "mechanism": "Fraction Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Glucosinolates",
@@ -4215,7 +4215,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Grèce Classique (Hippocrate & Dioscoride, De Materia Medica, ~60 ap. J.-C.)",
@@ -4251,22 +4251,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Alchémille (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Tanins ellagiques",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Flavonoïdes",
@@ -4345,7 +4345,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
@@ -4381,22 +4381,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Armoise annuelle (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "45°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Artémisinine",
         "mechanism": "Fraction Liposoluble/Thermolabile ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Flavonoïdes",
@@ -4475,7 +4475,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Europe Médiévale (Hildegarde de Bingen, Physica, XIIe siècle)",
@@ -4512,22 +4512,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Gattilier (Vitex) (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Fruits séchés afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Diterpènes cycliques",
         "mechanism": "Fraction Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Flavonoïdes (Casticine)",
@@ -4606,7 +4606,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Médecine Traditionnelle Chinoise (Shennong Ben Cao Jing & Shanghan Lun)",
@@ -4642,22 +4642,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Nigelle (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "45°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Graines séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Thymoquinone",
         "mechanism": "Fraction Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Nigellone",
@@ -4736,7 +4736,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Ayurveda Védique (Charaka Samhita & Sushruta Samhita, Inde)",
@@ -4775,22 +4775,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Cordyceps (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Fruit (champignon) séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 80°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Cordycépine",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Adénosine",
@@ -4869,7 +4869,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Traditions Berbères & Tamazight (Atlas & Oasis)",
@@ -4905,22 +4905,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Piloselle (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Plante entière séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Flavonoïdes",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Acide chlorogénique",
@@ -4999,7 +4999,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "50°C",
     "tempSachetB": "40°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
@@ -5035,22 +5035,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Mauve (15g)"
       ],
-      "solvent": "Alcool bio 70°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "40°C",
       "duration": "2h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles et fleurs séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 50°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 70° pour extraire la fraction lipophile et les principes actifs thermosensibles à 40°C pendant 2h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Mucilages",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Anthocyanes",
@@ -5129,7 +5129,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Kabbale & Hermétisme Spagyrique (Renaissance & Paracelse)",
@@ -5165,22 +5165,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Shatavari (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Shatavarines (Saponines stéroïdiques)",
         "mechanism": "Fraction Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Mucilages",
@@ -5259,7 +5259,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Biochimie & Totum Moderne (Pharmacopée Européenne & Recherche Contemporaine)",
@@ -5298,22 +5298,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Lion's Mane (Hydne hérisson) (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Fruit (champignon) séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 80°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Héricénones",
         "mechanism": "Fraction Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Érinacines",
@@ -5392,7 +5392,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Égypte Antique (Papyrus Ebers, ~1550 av. J.-C.)",
@@ -5431,22 +5431,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Chaga (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Sclérote (champignon) séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Mélanine",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Acide bétulinique",
@@ -5525,7 +5525,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Grèce Classique (Hippocrate & Dioscoride, De Materia Medica, ~60 ap. J.-C.)",
@@ -5561,22 +5561,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Hamamélis (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles et écorce séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Tanins galliques",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Hamamélitane",
@@ -5655,7 +5655,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
@@ -5691,22 +5691,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Moringa (15g)"
       ],
-      "solvent": "Alcool bio 70°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "45°C",
       "duration": "2h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 70° pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 2h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Isothiocyanates",
         "mechanism": "Fraction Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Vitamines (A, C, E)",
@@ -5772,8 +5772,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/allium_sativum/",
       "/herbier/allium_sativum"
     ],
-    "title": "Ail (Vieilli ou Noir)",
-    "subtitle": "Pharmacie Intérieure (Cardiovasculaire & Antimicrobien) — L'ail vieilli contient de la SAC, stable et hydrosoluble, qui inhibe l'Enzyme de Conversion de l'Angiotensine (ECA). L'a...",
+    "title": "Ail (Frais vs Noir vieilli — Protocole sans alcool)",
+    "subtitle": "Ail noir vieilli (S-allyl-cystéine) vs ail frais écrasé (allicine enzymatique) — protocole doux sans alcool chauffé.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -5785,7 +5785,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "35°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Europe Médiévale (Hildegarde de Bingen, Physica, XIIe siècle)",
@@ -5821,22 +5821,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Ail (Vieilli ou Noir) (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "45°C",
       "duration": "2h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Gousses séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 35°C pendant 4h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 2h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "S-allyl-cystéine (SAC)",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Ajoène",
@@ -5915,7 +5915,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Médecine Traditionnelle Chinoise (Shennong Ben Cao Jing & Shanghan Lun)",
@@ -5951,22 +5951,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Saule Blanc (15g)"
       ],
-      "solvent": "Alcool bio 70°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "2h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Écorce interne (Liber) afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine. Activer le cycle thermo-cinétique à 80°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 70° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 2h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Salicine (Hétéroside phénolique)",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Flavonoïdes & Tanins",
@@ -6040,7 +6040,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
     "tempSachetB": "60°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Ayurveda Védique (Charaka Samhita & Sushruta Samhita, Inde)",
@@ -6076,22 +6076,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Épine-vinette (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "60°C",
       "duration": "4h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Écorce de racine ou de tige afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine. Activer le cycle thermo-cinétique à 75°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 60°C pendant 4h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Berbérine (Alcaloïde)",
         "mechanism": "Fraction Peu hydrosoluble / Alcoolosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Berbamine",
@@ -6165,7 +6165,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Traditions Berbères & Tamazight (Atlas & Oasis)",
@@ -6201,22 +6201,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Aubépine (15g)"
       ],
-      "solvent": "Alcool bio 45°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "45°C",
       "duration": "2h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Sommités fleuries et fruits afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine. Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 45° pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 2h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Vitexine / Hypéroside",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Proanthocyanidines (OPC)",
@@ -6290,7 +6290,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "85°C",
     "tempSachetB": "60°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
@@ -6327,22 +6327,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Quinquina Rouge (15g)"
       ],
-      "solvent": "Alcool bio 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "60°C",
       "duration": "4h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Écorce séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau + Acide Citrique (léger). Activer le cycle thermo-cinétique à 85°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 60°C pendant 4h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Quinine / Quinidine (Alcaloïdes)",
         "mechanism": "Fraction Peu hydrosoluble / Très soluble dans l'alcool ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Tanins cinchoniques",
@@ -6416,7 +6416,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Kabbale & Hermétisme Spagyrique (Renaissance & Paracelse)",
@@ -6462,13 +6462,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau purifiée. Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
       "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Eau / Glycérine pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 1h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Principes amers (Lactones)",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Flavonoïdes",
@@ -6547,7 +6547,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "55°C",
     "tempSachetB": "40°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Biochimie & Totum Moderne (Pharmacopée Européenne & Recherche Contemporaine)",
@@ -6593,13 +6593,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 55°C pendant 2h00.",
       "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Glycérine pour extraire la fraction lipophile et les principes actifs thermosensibles à 40°C pendant 1h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Anthocyanes",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Flavonoïdes (Quercétine)",
@@ -6678,7 +6678,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "35°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Égypte Antique (Papyrus Ebers, ~1550 av. J.-C.)",
@@ -6724,13 +6724,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau / Glycérine. Activer le cycle thermo-cinétique à 45°C pendant 2h00.",
       "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Eau pour extraire la fraction lipophile et les principes actifs thermosensibles à 35°C pendant 1h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Acide Rosmarinique",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Huiles essentielles (Citral)",
@@ -6804,7 +6804,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Grèce Classique (Hippocrate & Dioscoride, De Materia Medica, ~60 ap. J.-C.)",
@@ -6840,22 +6840,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Passiflore (15g)"
       ],
-      "solvent": "Alcool bio 45°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "45°C",
       "duration": "2h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau. Activer le cycle thermo-cinétique à 60°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 45° pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 2h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Flavonoïdes (Vitexine)",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Alcaloïdes (Harmala)",
@@ -6929,7 +6929,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "50°C",
     "tempSachetB": "40°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
@@ -6965,22 +6965,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Valériane (15g)"
       ],
-      "solvent": "Alcool",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "40°C",
       "duration": "1h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racines et Rhizomes afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau / Alcool 70°. Activer le cycle thermo-cinétique à 50°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool pour extraire la fraction lipophile et les principes actifs thermosensibles à 40°C pendant 1h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Acide valérénique",
         "mechanism": "Fraction Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Valépotriates",
@@ -7054,7 +7054,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "55°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Europe Médiévale (Hildegarde de Bingen, Physica, XIIe siècle)",
@@ -7090,22 +7090,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Eschscholtzia (15g)"
       ],
-      "solvent": "Alcool bio 45°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "45°C",
       "duration": "2h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes fleuries afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau / Glycérine. Activer le cycle thermo-cinétique à 55°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 45° pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 2h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Alcaloïdes (Pavine)",
         "mechanism": "Fraction Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Flavonoïdes",
@@ -7179,7 +7179,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Médecine Traditionnelle Chinoise (Shennong Ben Cao Jing & Shanghan Lun)",
@@ -7224,13 +7224,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 65°C pendant 1h30.",
       "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Eau / Alcool pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 1h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Acide Rosmarinique",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Diterpènes (Carnosol)",
@@ -7309,7 +7309,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "35°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Ayurveda Védique (Charaka Samhita & Sushruta Samhita, Inde)",
@@ -7354,13 +7354,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau / Glycérine. Activer le cycle thermo-cinétique à 45°C pendant 1h00.",
       "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Eau pour extraire la fraction lipophile et les principes actifs thermosensibles à 35°C pendant 1h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Linalol",
         "mechanism": "Fraction Volatile ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Acétate de linalyle",
@@ -7439,7 +7439,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Traditions Berbères & Tamazight (Atlas & Oasis)",
@@ -7484,13 +7484,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau purifiée. Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
       "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Glycérine / Eau pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 1h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Cynarine",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Acides phénoliques",
@@ -7574,7 +7574,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
@@ -7612,22 +7612,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Saule Blanc (15g)"
       ],
-      "solvent": "Alcool 70°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "45°C",
       "duration": "2h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Écorce afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau/Glycérine. Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool 70° pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 2h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Salicine",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Tannins",
@@ -7701,7 +7701,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Kabbale & Hermétisme Spagyrique (Renaissance & Paracelse)",
@@ -7739,22 +7739,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Valériane (15g)"
       ],
-      "solvent": "Alcool 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "45°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau/Glycérine. Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Acide valérénique",
         "mechanism": "Fraction Liposoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Valépotriates",
@@ -7828,7 +7828,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Biochimie & Totum Moderne (Pharmacopée Européenne & Recherche Contemporaine)",
@@ -7866,22 +7866,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Artichaut (15g)"
       ],
-      "solvent": "Alcool 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau/Glycérine. Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Cynarine",
         "mechanism": "Fraction Thermolabile ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Inuline",
@@ -7955,7 +7955,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Égypte Antique (Papyrus Ebers, ~1550 av. J.-C.)",
@@ -7991,22 +7991,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Millepertuis (15g)"
       ],
-      "solvent": "Alcool 96°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "45°C",
       "duration": "2h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau/Glycérine. Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool 96° pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 2h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Hyperforine",
         "mechanism": "Fraction Liposoluble/Photosensible ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Hypericine",
@@ -8080,7 +8080,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Grèce Classique (Hippocrate & Dioscoride, De Materia Medica, ~60 ap. J.-C.)",
@@ -8120,22 +8120,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Shi Quan Da Bu Tang — La Grande Formule de Reconstruction (15g)"
       ],
-      "solvent": "Alcool bio 70°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Formule composée (racines, écorces, rhizomes) afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + glycérine légère. Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 70° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Polysaccharides toniques",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Saponines",
@@ -8214,7 +8214,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "72°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
@@ -8263,13 +8263,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 72°C pendant 2h00.",
       "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Huile végétale légère ou alcool doux pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 3h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Polysaccharides de Lycium (LBP)",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Caroténoïdes (zéaxanthine)",
@@ -8348,7 +8348,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "72°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Europe Médiévale (Hildegarde de Bingen, Physica, XIIe siècle)",
@@ -8397,13 +8397,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 72°C pendant 2h00.",
       "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Glycérine renforcée ou alcool doux pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 2h30.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Polysaccharides et mucilages",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Saponines douces",
@@ -8482,7 +8482,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
     "tempSachetB": "45°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Médecine Traditionnelle Chinoise (Shennong Ben Cao Jing & Shanghan Lun)",
@@ -8522,22 +8522,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Ziziphus jujuba — Le Jujube, Harmonisateur des Muqueuses (15g)"
       ],
-      "solvent": "Alcool doux ou glycérine végétale renforcée",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "45°C",
       "duration": "2h30"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Fruit séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 70°C pendant 1h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool doux ou glycérine végétale renforcée pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 2h30.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Polysaccharides, flavonoïdes",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Saponines",
@@ -8616,7 +8616,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Ayurveda Védique (Charaka Samhita & Sushruta Samhita, Inde)",
@@ -8656,22 +8656,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Schisandra chinensis — La Baie des Cinq Saveurs (15g)"
       ],
-      "solvent": "Alcool bio 70°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Baies séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 70°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 70° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Lignanes de schisandra",
         "mechanism": "Fraction Liposoluble/Alcoolosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Acides organiques",
@@ -8750,7 +8750,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Traditions Berbères & Tamazight (Atlas & Oasis)",
@@ -8790,22 +8790,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Arctium lappa — La Bardane, Grand Dépuratif (15g)"
       ],
-      "solvent": "Alcool bio 70°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 70° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Inuline",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Arctiine/arctigénine",
@@ -8889,7 +8889,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
@@ -8929,22 +8929,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Astragalus membranaceus — L’Astragale, Protecteur du Qi (15g)"
       ],
-      "solvent": "Alcool bio 70°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + glycérine légère. Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 70° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Polysaccharides d’astragale",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Astragalosides",
@@ -9023,7 +9023,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Kabbale & Hermétisme Spagyrique (Renaissance & Paracelse)",
@@ -9063,22 +9063,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Ganoderma lucidum — Le Reishi, Champignon de Longévité (15g)"
       ],
-      "solvent": "Alcool bio 70°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "3h00"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Champignon séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + glycérine légère. Activer le cycle thermo-cinétique à 80°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 70° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 3h00.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Bêta-glucanes",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Triterpènes",
@@ -9157,7 +9157,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "72°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Biochimie & Totum Moderne (Pharmacopée Européenne & Recherche Contemporaine)",
@@ -9196,22 +9196,22 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Glycyrrhiza glabra — La Réglisse, Catalyseur et Protecteur (15g)"
       ],
-      "solvent": "Alcool bio 70°",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "2h30"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 72°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Alcool bio 70° pour extraire la fraction lipophile et les principes actifs thermosensibles à 50°C pendant 2h30.",
+      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Glycyrrhizine",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Flavonoïdes",
@@ -9290,7 +9290,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "85°C",
     "tempSachetB": "—",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Égypte Antique (Papyrus Ebers, ~1550 av. J.-C.)",
@@ -9339,13 +9339,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 85°C pendant 3h00.",
       "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter — pour extraire la fraction lipophile et les principes actifs thermosensibles à — pendant 2h30.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
-      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Utiliser dans les jours jours."
+      "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
       {
         "molecule": "Fibres solubles et insolubles",
         "mechanism": "Fraction Hydrosoluble ciblant la régulation du terrain cellulaire et la protection tissulaire contre le stress oxydatif.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés en double aveugle)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Polyphénols",
@@ -9424,7 +9424,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Grèce Classique (Hippocrate & Dioscoride, De Materia Medica, ~60 ap. J.-C.)",
@@ -9463,7 +9463,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "10g de sommités florales et feuilles de soutien synergie"
       ],
-      "solvent": "Alcool de grain bio 96° ou glycérine végétale (150ml)",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "2h00"
     },
@@ -9543,7 +9543,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
@@ -9582,7 +9582,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "10g de sommités florales et feuilles de soutien synergie"
       ],
-      "solvent": "Alcool de grain bio 96° ou glycérine végétale (150ml)",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "2h00"
     },
@@ -9662,7 +9662,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Europe Médiévale (Hildegarde de Bingen, Physica, XIIe siècle)",
@@ -9701,7 +9701,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "10g de sommités florales et feuilles de soutien synergie"
       ],
-      "solvent": "Alcool de grain bio 96° ou glycérine végétale (150ml)",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "2h00"
     },
@@ -9781,7 +9781,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Médecine Traditionnelle Chinoise (Shennong Ben Cao Jing & Shanghan Lun)",
@@ -9820,7 +9820,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "10g de sommités florales et feuilles de soutien synergie"
       ],
-      "solvent": "Alcool de grain bio 96° ou glycérine végétale (150ml)",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "2h00"
     },
@@ -9900,7 +9900,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Ayurveda Védique (Charaka Samhita & Sushruta Samhita, Inde)",
@@ -9936,7 +9936,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "10g de sommités florales et feuilles de soutien synergie"
       ],
-      "solvent": "Alcool de grain bio 96° ou glycérine végétale (150ml)",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "2h00"
     },
@@ -10017,7 +10017,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Traditions Berbères & Tamazight (Atlas & Oasis)",
@@ -10053,7 +10053,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "10g de sommités florales et feuilles de soutien synergie"
       ],
-      "solvent": "Alcool de grain bio 96° ou glycérine végétale (150ml)",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "2h00"
     },
@@ -10134,7 +10134,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
@@ -10170,7 +10170,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "10g de sommités florales et feuilles de soutien synergie"
       ],
-      "solvent": "Alcool de grain bio 96° ou glycérine végétale (150ml)",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "2h00"
     },
@@ -10251,7 +10251,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Kabbale & Hermétisme Spagyrique (Renaissance & Paracelse)",
@@ -10287,7 +10287,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "10g de sommités florales et feuilles de soutien synergie"
       ],
-      "solvent": "Alcool de grain bio 96° ou glycérine végétale (150ml)",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "2h00"
     },
@@ -10355,7 +10355,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-05/",
       "/herbier/extra-recipe-05"
     ],
-    "title": "Teinture de Propolis Maison",
+    "title": "Teinture de Propolis — Protocole alcool chauffé suspendu",
     "subtitle": "Protocole Spécifique — Un concentré protecteur issu d'une extraction hydro-alcoolique assistée par vortex....",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
@@ -10368,7 +10368,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Biochimie & Totum Moderne (Pharmacopée Européenne & Recherche Contemporaine)",
@@ -10404,7 +10404,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "10g de sommités florales et feuilles de soutien synergie"
       ],
-      "solvent": "Alcool de grain bio 96° ou glycérine végétale (150ml)",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "2h00"
     },
@@ -10485,7 +10485,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Égypte Antique (Papyrus Ebers, ~1550 av. J.-C.)",
@@ -10521,7 +10521,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "10g de sommités florales et feuilles de soutien synergie"
       ],
-      "solvent": "Alcool de grain bio 96° ou glycérine végétale (150ml)",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "2h00"
     },
@@ -10602,7 +10602,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Grèce Classique (Hippocrate & Dioscoride, De Materia Medica, ~60 ap. J.-C.)",
@@ -10639,7 +10639,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "10g de sommités florales et feuilles de soutien synergie"
       ],
-      "solvent": "Alcool de grain bio 96° ou glycérine végétale (150ml)",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "2h00"
     },
@@ -10720,7 +10720,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
@@ -10756,7 +10756,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "10g de sommités florales et feuilles de soutien synergie"
       ],
-      "solvent": "Alcool de grain bio 96° ou glycérine végétale (150ml)",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "2h00"
     },
@@ -10837,7 +10837,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Europe Médiévale (Hildegarde de Bingen, Physica, XIIe siècle)",
@@ -10874,7 +10874,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "10g de sommités florales et feuilles de soutien synergie"
       ],
-      "solvent": "Alcool de grain bio 96° ou glycérine végétale (150ml)",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "2h00"
     },
@@ -10955,7 +10955,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Médecine Traditionnelle Chinoise (Shennong Ben Cao Jing & Shanghan Lun)",
@@ -10992,7 +10992,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "10g de sommités florales et feuilles de soutien synergie"
       ],
-      "solvent": "Alcool de grain bio 96° ou glycérine végétale (150ml)",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "2h00"
     },
@@ -11073,7 +11073,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Ayurveda Védique (Charaka Samhita & Sushruta Samhita, Inde)",
@@ -11110,7 +11110,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "10g de sommités florales et feuilles de soutien synergie"
       ],
-      "solvent": "Alcool de grain bio 96° ou glycérine végétale (150ml)",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "2h00"
     },
@@ -11191,7 +11191,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
     "tempSachetB": "50°C",
-    "shelfLife": "30 jours au réfrigérateur dans un flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Traditions Berbères & Tamazight (Atlas & Oasis)",
@@ -11227,7 +11227,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "10g de sommités florales et feuilles de soutien synergie"
       ],
-      "solvent": "Alcool de grain bio 96° ou glycérine végétale (150ml)",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "50°C",
       "duration": "2h00"
     },
@@ -11308,7 +11308,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
@@ -11435,7 +11435,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Kabbale & Hermétisme Spagyrique (Renaissance & Paracelse)",
@@ -11562,7 +11562,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Biochimie & Totum Moderne (Pharmacopée Européenne & Recherche Contemporaine)",
@@ -11689,7 +11689,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Égypte Antique (Papyrus Ebers, ~1550 av. J.-C.)",
@@ -11816,7 +11816,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Grèce Classique (Hippocrate & Dioscoride, De Materia Medica, ~60 ap. J.-C.)",
@@ -11943,7 +11943,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
@@ -12070,7 +12070,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Europe Médiévale (Hildegarde de Bingen, Physica, XIIe siècle)",
@@ -12197,7 +12197,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Médecine Traditionnelle Chinoise (Shennong Ben Cao Jing & Shanghan Lun)",
@@ -12324,7 +12324,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Ayurveda Védique (Charaka Samhita & Sushruta Samhita, Inde)",
@@ -12451,7 +12451,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Traditions Berbères & Tamazight (Atlas & Oasis)",
@@ -12578,7 +12578,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
@@ -12705,7 +12705,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Kabbale & Hermétisme Spagyrique (Renaissance & Paracelse)",
@@ -12832,7 +12832,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Biochimie & Totum Moderne (Pharmacopée Européenne & Recherche Contemporaine)",
@@ -12959,7 +12959,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Égypte Antique (Papyrus Ebers, ~1550 av. J.-C.)",
@@ -13086,7 +13086,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Grèce Classique (Hippocrate & Dioscoride, De Materia Medica, ~60 ap. J.-C.)",
@@ -13214,7 +13214,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
@@ -13342,7 +13342,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Europe Médiévale (Hildegarde de Bingen, Physica, XIIe siècle)",
@@ -13469,7 +13469,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Médecine Traditionnelle Chinoise (Shennong Ben Cao Jing & Shanghan Lun)",
@@ -13596,7 +13596,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Ayurveda Védique (Charaka Samhita & Sushruta Samhita, Inde)",
@@ -13723,7 +13723,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Traditions Berbères & Tamazight (Atlas & Oasis)",
@@ -13850,7 +13850,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
@@ -13977,7 +13977,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Kabbale & Hermétisme Spagyrique (Renaissance & Paracelse)",
@@ -14104,7 +14104,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Biochimie & Totum Moderne (Pharmacopée Européenne & Recherche Contemporaine)",
@@ -14231,7 +14231,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Égypte Antique (Papyrus Ebers, ~1550 av. J.-C.)",
@@ -14358,7 +14358,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Grèce Classique (Hippocrate & Dioscoride, De Materia Medica, ~60 ap. J.-C.)",
@@ -14485,7 +14485,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
@@ -14612,7 +14612,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Europe Médiévale (Hildegarde de Bingen, Physica, XIIe siècle)",
@@ -14739,7 +14739,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Médecine Traditionnelle Chinoise (Shennong Ben Cao Jing & Shanghan Lun)",
@@ -14866,7 +14866,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Ayurveda Védique (Charaka Samhita & Sushruta Samhita, Inde)",
@@ -14993,7 +14993,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Traditions Berbères & Tamazight (Atlas & Oasis)",
@@ -15120,7 +15120,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
@@ -15247,7 +15247,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Kabbale & Hermétisme Spagyrique (Renaissance & Paracelse)",
@@ -15374,7 +15374,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Biochimie & Totum Moderne (Pharmacopée Européenne & Recherche Contemporaine)",
@@ -15501,7 +15501,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Égypte Antique (Papyrus Ebers, ~1550 av. J.-C.)",
@@ -15628,7 +15628,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Grèce Classique (Hippocrate & Dioscoride, De Materia Medica, ~60 ap. J.-C.)",
@@ -15755,7 +15755,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
@@ -15882,7 +15882,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Europe Médiévale (Hildegarde de Bingen, Physica, XIIe siècle)",
@@ -16009,7 +16009,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Médecine Traditionnelle Chinoise (Shennong Ben Cao Jing & Shanghan Lun)",
@@ -16136,7 +16136,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Ayurveda Védique (Charaka Samhita & Sushruta Samhita, Inde)",
@@ -16263,7 +16263,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Traditions Berbères & Tamazight (Atlas & Oasis)",
@@ -16390,7 +16390,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
@@ -16517,7 +16517,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "45°C",
     "tempSachetB": "Ambiante",
-    "shelfLife": "3 mois au frais et à l’obscurité",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 350,
     "heritage": {
       "register": "Kabbale & Hermétisme Spagyrique (Renaissance & Paracelse)",
@@ -16644,7 +16644,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Biochimie & Totum Moderne (Pharmacopée Européenne & Recherche Contemporaine)",
@@ -16680,7 +16680,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Résine de Boswellia serrata & Résine de Myrrhe (65g)"
       ],
-      "solvent": "Alcool vinique bio à 60° (367 ml alcool 96% + 233 ml eau distillée)",
+      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
       "temp": "40°C",
       "duration": "2h00"
     },
@@ -16766,7 +16766,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Égypte Antique (Papyrus Ebers, ~1550 av. J.-C.)",
@@ -16888,7 +16888,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Grèce Classique (Hippocrate & Dioscoride, De Materia Medica, ~60 ap. J.-C.)",
@@ -17010,7 +17010,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
@@ -17132,7 +17132,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Europe Médiévale (Hildegarde de Bingen, Physica, XIIe siècle)",
@@ -17254,7 +17254,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Médecine Traditionnelle Chinoise (Shennong Ben Cao Jing & Shanghan Lun)",
@@ -17376,7 +17376,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Ayurveda Védique (Charaka Samhita & Sushruta Samhita, Inde)",
@@ -17498,7 +17498,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Traditions Berbères & Tamazight (Atlas & Oasis)",
@@ -17620,7 +17620,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
@@ -17742,7 +17742,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Kabbale & Hermétisme Spagyrique (Renaissance & Paracelse)",
@@ -17864,7 +17864,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Biochimie & Totum Moderne (Pharmacopée Européenne & Recherche Contemporaine)",
@@ -17986,7 +17986,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Égypte Antique (Papyrus Ebers, ~1550 av. J.-C.)",
@@ -18108,7 +18108,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Grèce Classique (Hippocrate & Dioscoride, De Materia Medica, ~60 ap. J.-C.)",
@@ -18230,7 +18230,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
@@ -18352,7 +18352,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Europe Médiévale (Hildegarde de Bingen, Physica, XIIe siècle)",
@@ -18474,7 +18474,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Médecine Traditionnelle Chinoise (Shennong Ben Cao Jing & Shanghan Lun)",
@@ -18596,7 +18596,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Ayurveda Védique (Charaka Samhita & Sushruta Samhita, Inde)",
@@ -18718,7 +18718,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Traditions Berbères & Tamazight (Atlas & Oasis)",
@@ -18840,7 +18840,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
@@ -18962,7 +18962,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Kabbale & Hermétisme Spagyrique (Renaissance & Paracelse)",
@@ -19084,7 +19084,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Biochimie & Totum Moderne (Pharmacopée Européenne & Recherche Contemporaine)",
@@ -19206,7 +19206,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Égypte Antique (Papyrus Ebers, ~1550 av. J.-C.)",
@@ -19328,7 +19328,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Grèce Classique (Hippocrate & Dioscoride, De Materia Medica, ~60 ap. J.-C.)",
@@ -19450,7 +19450,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
     "tempSachetB": "40°C",
-    "shelfLife": "6 mois à température ambiante dans un flacon pipette ambré",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
@@ -19566,7 +19566,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 320,
     "tempSachetA": "70°C",
     "tempSachetB": "45°C",
-    "shelfLife": "12 mois en flacon ambré hermétique à l'abri de la lumière",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
       "register": "Phytothérapie Nord-Amérindienne & MTC",
@@ -19618,8 +19618,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Phase A (Hydro-glycérinée) — Déposer l'échinacée et le gingembre dans le panier inox BloomLab®. Verser eau distillée et glycérine. Lancer à 70°C pendant 2h00.",
-      "Étape 2 : Transition & Test Sensoriel — Arrêter la cuve et observer un repos de 20 minutes. TEST SENSORIEL OBLIGATOIRE : Poser la main sur la paroi extérieure de la cuve, qui doit être tiède (~40°C max) avant toute manipulation d'alcool inflammable.",
-      "Étape 3 : Phase B (Alcoolique) — Ajouter les matières Phase B et verser délicatement les 250 ml d'alcool bio 96°. Refermer hermétiquement.",
+      "Étape 2 : Pause thermique sécurisée — Laisser refroidir naturellement cuve éteinte avant ouverture (protocole alcool chauffé suspendu ; ne pas tester la température à la main sur la paroi).",
+      "Étape 3 : Phase B (sans alcool chauffé) — ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : substituer par 250 ml de glycérine végétale bio ou huile végétale vierge à 45°C pendant 2h00.",
       "Étape 4 : Extraction Phase B — Lancer à 45°C pendant 3h00 sous thermorégulation active.",
       "Étape 5 : Filtration et Flaconnage — Filtrer à travers l'étamine fine BloomLab, presser doucement et conditionner en flacon verre ambré stérile."
     ],
@@ -19632,7 +19632,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       {
         "molecule": "Alkylamides & Isobutylamides",
         "mechanism": "Fraction lipophile modulant la réponse tissulaire et les récepteurs CB2.",
-        "evidenceLevel": "Niveau de preuve Bloom A+"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Gingérols & Shogaols",
@@ -19702,7 +19702,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 350,
     "tempSachetA": "75°C",
     "tempSachetB": "50°C",
-    "shelfLife": "18 mois en flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
       "register": "Médecine Traditionnelle Chinoise (Huangdi Neijing)",
@@ -19754,7 +19754,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Phase A — Insérer l'échinacée et l'astragale dans le panier inox. Verser eau et glycérine. Chauffer à 75°C pendant 2h30.",
-      "Étape 2 : Pause sécuritaire — Repos 25 min cuve arrêtée. TEST SENSORIEL OBLIGATOIRE : Paroi extérieure tiède (~40°C).",
+      "Étape 2 : Pause thermique sécurisée — Laisser refroidir naturellement cuve éteinte avant ouverture (protocole alcool chauffé suspendu ; ne pas tester la température à la main sur la paroi).",
       "Étape 3 : Phase B — Ajouter les plantes Phase B et verser l'alcool 96°.",
       "Étape 4 : Extraction Phase B — Lancer à 50°C pendant 3h00.",
       "Étape 5 : Filtration — Passer sur étamine fine et embouteiller en flacon ambré."
@@ -19763,7 +19763,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       {
         "molecule": "Astragalosides (I à IV)",
         "mechanism": "Saponines triterpéniques soutenant la régulation immunitaire et cellulaire.",
-        "evidenceLevel": "Niveau de preuve Bloom A+"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Bêta-glucanes & Polysaccharides d'astragale",
@@ -19824,7 +19824,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 315,
     "tempSachetA": "60°C",
     "tempSachetB": "50°C",
-    "shelfLife": "12 mois en flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
       "register": "Herboristerie Européenne & Salerne",
@@ -19876,7 +19876,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Phase A — Mettre réglisse et mauve dans le panier inox. Verser eau et glycérine. Chauffer à 60°C pendant 2h00.",
-      "Étape 2 : Pause sécuritaire — Repos 20 min cuve coupée. TEST SENSORIEL OBLIGATOIRE : Paroi extérieure tiède (~40°C).",
+      "Étape 2 : Pause thermique sécurisée — Laisser refroidir naturellement cuve éteinte avant ouverture (protocole alcool chauffé suspendu ; ne pas tester la température à la main sur la paroi).",
       "Étape 3 : Phase B — Ajouter mauve et réglisse Phase B puis l'alcool 96°.",
       "Étape 4 : Extraction Phase B — Lancer à 50°C pendant 3h00.",
       "Étape 5 : Filtration douce — Filtrer sur étamine fine et mettre en flacon ambré."
@@ -19946,7 +19946,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 290,
     "tempSachetA": "60°C",
     "tempSachetB": "45°C",
-    "shelfLife": "12 mois en flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
       "register": "Médecine Arabe & Tradition d'Ibn Sina (Avicenne)",
@@ -19997,7 +19997,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Phase A — Concasser les graines de nigelle, placer avec le plantain dans le panier inox. Verser eau et glycérine. Chauffer à 60°C pendant 1h30.",
-      "Étape 2 : Pause sécuritaire — Repos 20 min cuve arrêtée. TEST SENSORIEL OBLIGATOIRE : Paroi extérieure tiède (~40°C).",
+      "Étape 2 : Pause thermique sécurisée — Laisser refroidir naturellement cuve éteinte avant ouverture (protocole alcool chauffé suspendu ; ne pas tester la température à la main sur la paroi).",
       "Étape 3 : Phase B — Ajouter nigelle et plantain Phase B et verser l'alcool 96°.",
       "Étape 4 : Extraction Phase B — Lancer à 45°C pendant 3h00.",
       "Étape 5 : Filtration — Passer sur étamine fine et embouteiller en flacon ambré."
@@ -20011,7 +20011,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       {
         "molecule": "Thymoquinone",
         "mechanism": "Fraction volatile de la nigelle favorisant la fluidité des voies respiratoires.",
-        "evidenceLevel": "Niveau de preuve Bloom A+"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       }
     ],
     "traditionalWisdom": "Remède éprouvé pour soulager les poitrines chargées et libérer l'amplitude respiratoire.",
@@ -20068,7 +20068,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 225,
     "tempSachetA": "55°C",
     "tempSachetB": "45°C",
-    "shelfLife": "12 mois en flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
       "register": "Phytothérapie Méditerranéenne & Sainte Hildegarde",
@@ -20119,7 +20119,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Phase A — Placer mauve et plantain dans le panier inox. Verser eau et glycérine. Chauffer à 55°C pendant 1h30.",
-      "Étape 2 : Pause sécuritaire — Repos 20 min cuve coupée. TEST SENSORIEL OBLIGATOIRE : Paroi extérieure tiède (~40°C).",
+      "Étape 2 : Pause thermique sécurisée — Laisser refroidir naturellement cuve éteinte avant ouverture (protocole alcool chauffé suspendu ; ne pas tester la température à la main sur la paroi).",
       "Étape 3 : Phase B — Ajouter mauve et plantain Phase B puis l'alcool 70° adouci.",
       "Étape 4 : Extraction Phase B — Lancer à 45°C pendant 2h00.",
       "Étape 5 : Filtration délicate — Filtrer sur étamine sans écraser excessivement la matière végétale."
@@ -20133,7 +20133,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       {
         "molecule": "Actéoside & Aucuboside",
         "mechanism": "Antioxydants et apaisants tissulaires protégeant l'épithélium respiratoire.",
-        "evidenceLevel": "Niveau de preuve Bloom A"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       }
     ],
     "traditionalWisdom": "Infusion douce et onctueuse calmant les accès de chatouillements nocturnes.",
@@ -20187,7 +20187,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 320,
     "tempSachetA": "65°C",
     "tempSachetB": "45°C",
-    "shelfLife": "12 mois en flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
       "register": "Médecine Traditionnelle d'Orient & Ayurveda",
@@ -20239,7 +20239,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Phase A — Mettre nigelle concassée et gingembre dans le panier inox. Verser eau et glycérine. Chauffer à 65°C pendant 2h00.",
-      "Étape 2 : Pause sécuritaire — Repos 20 min. TEST SENSORIEL OBLIGATOIRE : Paroi extérieure tiède (~40°C max) avant l'adjonction d'alcool inflammable.",
+      "Étape 2 : Pause thermique sécurisée — Laisser refroidir naturellement cuve éteinte avant ouverture (protocole alcool chauffé suspendu ; ne pas tester la température à la main sur la paroi).",
       "Étape 3 : Phase B — Ajouter nigelle et gingembre Phase B puis verser l'alcool 96°.",
       "Étape 4 : Extraction Phase B — Lancer à 45°C pendant 3h00.",
       "Étape 5 : Filtration fine — Passer sur étamine et conserver en flacon ambré."
@@ -20248,7 +20248,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       {
         "molecule": "Thymoquinone & Dithymoquinone",
         "mechanism": "Fraction bioactive de la nigelle apaisant les cascades congestives.",
-        "evidenceLevel": "Niveau de preuve Bloom A+"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Gingérols & Zingibérène",
@@ -20310,7 +20310,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 315,
     "tempSachetA": "60°C",
     "tempSachetB": "45°C",
-    "shelfLife": "18 mois en flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
       "register": "Herboristerie Provençale & Dioscoride",
@@ -20361,7 +20361,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Phase A — Déposer fleurs de lavande et souci dans le panier inox. Verser eau et glycérine. Chauffer à 60°C pendant 2h00.",
-      "Étape 2 : Pause sécuritaire — Repos 20 min cuve éteinte. TEST SENSORIEL OBLIGATOIRE : Paroi extérieure tiède (~40°C).",
+      "Étape 2 : Pause thermique sécurisée — Laisser refroidir naturellement cuve éteinte avant ouverture (protocole alcool chauffé suspendu ; ne pas tester la température à la main sur la paroi).",
       "Étape 3 : Phase B — Ajouter lavande et souci Phase B puis l'alcool 96°.",
       "Étape 4 : Extraction Phase B — Lancer à 45°C pendant 3h00.",
       "Étape 5 : Filtration et Flaconnage — Filtrer sur étamine fine et transférer en flacon ambré."
@@ -20432,7 +20432,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 315,
     "tempSachetA": "65°C",
     "tempSachetB": "50°C",
-    "shelfLife": "12 mois en flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
       "register": "Médecine Classique Gréco-Romaine & Théâtre Antique",
@@ -20483,7 +20483,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Phase A — Disposer plantain et réglisse dans le panier inox. Verser eau et glycérine. Chauffer à 65°C pendant 2h00.",
-      "Étape 2 : Pause sécuritaire — Laisser refroidir 20 min. TEST SENSORIEL OBLIGATOIRE : Paroi extérieure tiède (~40°C).",
+      "Étape 2 : Pause thermique sécurisée — Laisser refroidir naturellement cuve éteinte avant ouverture (protocole alcool chauffé suspendu ; ne pas tester la température à la main sur la paroi).",
       "Étape 3 : Phase B — Ajouter plantain et réglisse Phase B puis verser l'alcool 96°.",
       "Étape 4 : Extraction Phase B — Lancer à 50°C pendant 3h00.",
       "Étape 5 : Filtration — Passer sur étamine et conserver en flacon ambré."
@@ -20554,7 +20554,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 320,
     "tempSachetA": "75°C",
     "tempSachetB": "50°C",
-    "shelfLife": "12 mois en flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
       "register": "Herboristerie Celtique & Tradition Alchimique",
@@ -20606,7 +20606,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Phase A — Mettre échinacée et ortie dans le panier inox. Verser eau et glycérine. Chauffer à 75°C pendant 2h00.",
-      "Étape 2 : Pause sécuritaire — Repos 20 min cuve coupée. TEST SENSORIEL OBLIGATOIRE : Paroi extérieure tiède (~40°C).",
+      "Étape 2 : Pause thermique sécurisée — Laisser refroidir naturellement cuve éteinte avant ouverture (protocole alcool chauffé suspendu ; ne pas tester la température à la main sur la paroi).",
       "Étape 3 : Phase B — Ajouter échinacée et ortie Phase B et verser l'alcool 96°.",
       "Étape 4 : Extraction Phase B — Lancer à 50°C pendant 3h00.",
       "Étape 5 : Filtration et embouteillage — Filtrer sur étamine fine et conserver en flacon ambré."
@@ -20620,7 +20620,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       {
         "molecule": "Alkylamides & Cichorique",
         "mechanism": "Fraction immunomodulatrice accompagnant la mobilisation naturelle des cellules immunitaires.",
-        "evidenceLevel": "Niveau de preuve Bloom A+"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       }
     ],
     "traditionalWisdom": "Synergie rafraîchissante pour éviter l'épuisement minéral au cours des épisodes de surchauffe métabolique.",
@@ -20677,7 +20677,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "totalTimeMinutes": 320,
     "tempSachetA": "75°C",
     "tempSachetB": "50°C",
-    "shelfLife": "18 mois en flacon ambré hermétique",
+    "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
       "register": "Pharmacopée Sibérienne & Scandinave",
@@ -20729,7 +20729,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Phase A — Déposer rhodiola et éleuthérocoque dans le panier inox. Verser eau et glycérine. Chauffer à 75°C pendant 2h00.",
-      "Étape 2 : Pause sécuritaire — Repos 20 min cuve arrêtée. TEST SENSORIEL OBLIGATOIRE : Paroi extérieure tiède (~40°C).",
+      "Étape 2 : Pause thermique sécurisée — Laisser refroidir naturellement cuve éteinte avant ouverture (protocole alcool chauffé suspendu ; ne pas tester la température à la main sur la paroi).",
       "Étape 3 : Phase B — Ajouter rhodiola et éleuthérocoque Phase B puis verser l'alcool 96°.",
       "Étape 4 : Extraction Phase B — Lancer à 50°C pendant 3h00.",
       "Étape 5 : Filtration et embouteillage — Filtrer sur étamine fine et conserver en flacon ambré anti-UV."
@@ -20738,7 +20738,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       {
         "molecule": "Salidrosides & Rosavines (1-3%)",
         "mechanism": "Adaptogènes clés régulant les monoamines cérébrales et le cortisol sans épuisement surrénalien.",
-        "evidenceLevel": "Niveau de preuve Bloom A+ (Essais cliniques randomisés)"
+        "evidenceLevel": "Piste mécanistique issue de la littérature phytochimique (non validée cliniquement sur préparation maison)"
       },
       {
         "molecule": "Éleuthérosides B & E",

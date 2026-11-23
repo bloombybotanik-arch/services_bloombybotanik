@@ -217,7 +217,7 @@ export default function BloomAcademiePage({ onNavigate, lang }: BloomAcademiePag
               className="px-6 py-3.5 rounded-xl bg-[#E8772E] hover:bg-[#D4651F] text-white font-black uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer shadow-lg shadow-orange-900/30"
             >
               <Compass className="w-4 h-4" />
-              <span>Comment lire le modèle Bloom</span>
+              <span>{lang === 'fr' ? 'Charte de recherche & modèle Bloom' : lang === 'de' ? 'Forschungscharta & Bloom-Modell' : 'Research Charter & Bloom Model'}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
 
@@ -1337,15 +1337,15 @@ export default function BloomAcademiePage({ onNavigate, lang }: BloomAcademiePag
             </h2>
 
             <p className="text-sm sm:text-base text-white/80 mb-8 leading-relaxed">
-              Inscrivez-vous gratuitement pour débloquer les guides d'initiation, les paramètres thermiques des protocoles et recevoir nos analyses cliniques chaque dimanche.
+              Inscrivez-vous gratuitement pour débloquer les guides d'initiation, les paramètres pédagogiques d'extraction et recevoir nos synthèses botaniques chaque dimanche.
             </p>
 
             {subscribeSuccess ? (
               <div className="p-6 rounded-2xl bg-emerald-950/40 border border-emerald-500/50 text-emerald-200">
                 <CheckCircle2 className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
-                <h3 className="font-bold text-base mb-1">Bienvenue dans l'Académie Bloom !</h3>
+                <h3 className="font-bold text-base mb-1">Demande enregistrée pour l'Académie Bloom</h3>
                 <p className="text-xs text-emerald-300">
-                  Un email de confirmation vous a été envoyé. Consultez votre boîte de réception pour valider votre accès.
+                  Votre inscription a bien été enregistrée localement. L'envoi automatique d'e-mail de confirmation est en cours de déploiement technique.
                 </p>
               </div>
             ) : (
@@ -1407,7 +1407,7 @@ export default function BloomAcademiePage({ onNavigate, lang }: BloomAcademiePag
               L'Extracteur Botanique BloomLab®
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Pour appliquer les protocoles de l'Académie avec la régulation thermique au 0,5°C près indispensable à la bioactivité du Totum, découvrez la machine BloomLab et ses accessoires.
+              Pour appliquer les protocoles aqueux et huileux de l'Académie avec une régulation thermique suivie (précision nominale annoncée par le fabricant, non certifiée en métrologie indépendante), découvrez BloomLab® et ses accessoires.
             </p>
           </div>
 

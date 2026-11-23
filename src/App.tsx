@@ -261,8 +261,8 @@ const SEOArticles = ({ view, lang, t, onNavigate, isPremium, onRequireAuth }: { 
 const CertificationCarousel = () => {
   const items = [
     { title: "Verre Borosilicate 3.3 Neutre", desc: "Zéro lixiviation, inertie totale aux solvants polaires" },
-    { title: "Inox 316L Chirurgical", desc: "Grade pharmaceutique, résistant aux acides et alcools" },
-    { title: "Thermo-Régulation 40-100°C", desc: "Précision ±1°C, préservation des composés thermolabiles" },
+    { title: "Cuve Inox 304 Alimentaire", desc: "Inertie alimentaire (eau, huiles, glycérine — alcool chauffé suspendu)" },
+    { title: "Régulation Thermique 40–100°C", desc: "Spécification nominale fabricant, chauffe douce des composés sensibles" },
     { title: "Circulation Dynamique Active", desc: "Flux vortex continu, gradient d'extraction optimal" },
     { title: "Standard Totum BOTANIK", desc: "Spectre moléculaire complet non dénaturé" },
   ];

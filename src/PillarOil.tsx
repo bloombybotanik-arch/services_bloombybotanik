@@ -79,10 +79,10 @@ export default function PillarOil({ lang, onNavigate }: { lang: Language, onNavi
           </h2>
           <p className="text-lg leading-relaxed text-botanik-green/80">
             {isFR
-              ? "Oubliez la bouteille laissée au soleil pendant 40 jours (qui fait souvent rancir l'huile). Avec le BloomLab, vous réalisez un macérât de qualité professionnelle en quelques heures, grâce à une chaleur douce et constante qui accélère le transfert moléculaire sans oxyder les lipides."
+              ? "Oubliez la bouteille laissée au soleil pendant 40 jours (qui fait souvent rancir l'huile). Avec la BloomLab, vous réalisez un macérât huileux maison en quelques heures, grâce à une chaleur douce et régulée."
               : isDE
-              ? "Vergessen Sie das wochenlange Ziehenlassen in der Sonne, bei dem Öle oft ranzig werden. Mit BloomLab stellen Sie in wenigen Stunden ein professionelles Mazerat her – dank sanfter, konstanter Wärme, die den Stoffaustausch beschleunigt, ohne empfindliche Fettsäuren zu oxidieren."
-              : "Forget leaving jars in the sun for 40 days where carrier oils often go rancid. With BloomLab®, you craft laboratory-grade oil macerates in just a few hours thanks to gentle, regulated warmth that accelerates transfer without oxidizing delicate lipids."}
+              ? "Vergessen Sie das wochenlange Ziehenlassen in der Sonne, bei dem Öle oft ranzig werden. Mit BloomLab stellen Sie in wenigen Stunden ein hausgemachtes Ölmazerat bei sanfter, geregelter Wärme her."
+              : "Forget leaving jars in the sun for 40 days where carrier oils often go rancid. With BloomLab®, you craft homemade oil macerates in just a few hours thanks to gentle, regulated warmth."}
           </p>
         </section>
 

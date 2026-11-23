@@ -376,22 +376,22 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "id": "discovery-05",
     "slug": "teinture-propolis-maison",
     "canonicalUrl": "/recettes/parcours-botaniques/teinture-propolis-maison/",
-    "title": "Teinture de Propolis Maison",
+    "title": "Teinture de Propolis (Protocole machine suspendu)",
     "category": "parcours-guide",
     "categorySlug": "parcours-botaniques",
     "categoryLabel": "Parcours botanique guidé",
     "subcategory": "Teinture",
-    "summary": "Un concentré protecteur issu d'une extraction hydro-alcoolique assistée par vortex.",
+    "summary": "⚠️ Protocole à l'alcool suspendu sur BloomLab® en attente de validation sécurité fabricant. Préparation alcoolique à réserver uniquement à une macération à froid hors appareil électrique.",
     "image": "/images/recettes/teinture-propolis-maison.jpg",
     "imageAlt": "Teinture de Propolis Maison — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Propolis brute",
-      "Alcool à 70°"
+      "Alcool à 70° — usage suspendu en cuve BloomLab® (macération froide externe uniquement)"
     ],
     "activeStepCount": 1,
     "instructions": [
-      "Extraction vortex phase A"
+      "⚠️ Protocole suspendu sur appareil électrique BloomLab® : ne pas chauffer d'alcool en cuve fermée."
     ],
     "extractionPhaseCount": 2,
     "temperatures": "Température ambiante / N/A",
@@ -741,7 +741,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "instructions": [
       "Phase A : Extraction hydroglycérinée de la Bardane et de la Pensée Sauvage à 75°C pendant 2h00.",
       "Vérification de la descente de température de la cuve sous 45°C.",
-      "Phase B : Ajout du Mahonia et de l'alcool bio 96° à 50°C pendant 2h30.",
+      "Phase B : ⚠️ Extraction à l'alcool chauffé suspendue — substituer par glycérine végétale bio à 45°C pendant 2h00.",
       "Filtration et pressage à l'étamine de lin pour recueillir la fraction de cœur riche en berbérine."
     ],
     "extractionPhaseCount": 2,
@@ -1048,7 +1048,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "6. Appuyez sur START.",
       "1. À la fin du bip, éteignez la machine.",
       "2. Laissez reposer 20 minutes.",
-      "3. TEST SENSORIEL OBLIGATOIRE : Posez votre main à plat sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
+      "3. Attendre le refroidissement complet du cycle cuve éteinte avant ouverture.",
       "4. ⚠️ SÉCURITÉ : Ne procédez à la Phase B que lorsque ce test est validé pour préserver les actifs thermolabiles du Rosehip.",
       "1. Ouvrez la cuve. Versez délicatement les 250ml d'huile de Rosehip.",
       "2. Ajoutez les 25g de fleurs de Calendula.",
@@ -1131,7 +1131,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "3. Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00.",
       "4. START.",
       "1. Éteignez. Laissez reposer 20 minutes.",
-      "2. TEST SENSORIEL OBLIGATOIRE : La cuve doit être tiède au toucher (~40°C).",
+      "2. Pause thermique : Laisser refroidir naturellement cuve éteinte avant ouverture.",
       "3. ⚠️ SÉCURITÉ : Attendez que la température soit correcte avant d'ajouter l'huile de Ricin.",
       "1. Ouvrez, versez les 250ml d'huile de Ricin.",
       "2. Ajoutez les 25g de racine d'Ortie concassée.",
@@ -5606,7 +5606,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "instructions": [
       "Préparer les plantes et séparer les phases hydrosolubles et lipophiles selon les directives du panier.",
       "Phase A : Extraction aqueuse / glycérinée à 500ml (Eau purifiée distillée + Glycérine végétale bio (70/30)).",
-      "Phase B : Extraction hydroalcoolique stabilisée à 250ml (Alcool éthylique de grain bio 96°).",
+      "Phase B : ⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® — utiliser 250ml de glycérine végétale bio ou huile végétale vierge à 45°C.",
       "Filtration sous vide partiel et mise en flacon ambré hermétique à l'abri de la lumière."
     ],
     "extractionPhaseCount": 2,
@@ -5616,7 +5616,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "totalTimeMinutes": 270,
     "filtrationRequired": true,
     "assemblyRequired": true,
-    "conservationRequirement": "Flacon ambré hermétique, 6 semaines au réfrigérateur.",
+    "conservationRequirement": "Flacon ambré hermétique au réfrigérateur ; consommation rapide recommandée (durée non testée).",
     "allergensOrPrecautions": [
       "Contenu purement éducatif ne remplaçant pas un avis médical ou un traitement.",
       "Demander conseil à un professionnel de santé en cas de pathologie ou traitement en cours."
@@ -5675,7 +5675,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "instructions": [
       "Préparer les plantes et séparer les phases hydrosolubles et lipophiles selon les directives du panier.",
       "Phase A : Extraction aqueuse / glycérinée à 500ml (Eau purifiée distillée + Glycérine végétale bio (65/35)).",
-      "Phase B : Extraction hydroalcoolique stabilisée à 250ml (Alcool de grain bio 96°).",
+      "Phase B : ⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® — utiliser 250ml de glycérine végétale bio ou huile végétale vierge à 45°C.",
       "Filtration sous vide partiel et mise en flacon ambré hermétique à l'abri de la lumière."
     ],
     "extractionPhaseCount": 2,
@@ -5685,7 +5685,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "totalTimeMinutes": 270,
     "filtrationRequired": true,
     "assemblyRequired": true,
-    "conservationRequirement": "Flacon ambré hermétique, 6 semaines au réfrigérateur.",
+    "conservationRequirement": "Flacon ambré hermétique au réfrigérateur ; consommation rapide recommandée (durée non testée).",
     "allergensOrPrecautions": [
       "Contenu purement éducatif ne remplaçant pas un avis médical ou un traitement.",
       "Demander conseil à un professionnel de santé en cas de pathologie ou traitement en cours."
@@ -5744,7 +5744,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "instructions": [
       "Préparer les plantes et séparer les phases hydrosolubles et lipophiles selon les directives du panier.",
       "Phase A : Extraction aqueuse / glycérinée à 450ml (Eau purifiée distillée + Glycérine végétale bio (70/30)).",
-      "Phase B : Extraction hydroalcoolique stabilisée à 300ml (Alcool éthylique bio 96°).",
+      "Phase B : ⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® — utiliser 250ml de glycérine végétale bio ou huile végétale vierge à 45°C.",
       "Filtration sous vide partiel et mise en flacon ambré hermétique à l'abri de la lumière."
     ],
     "extractionPhaseCount": 2,
@@ -5754,7 +5754,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "totalTimeMinutes": 270,
     "filtrationRequired": true,
     "assemblyRequired": true,
-    "conservationRequirement": "Flacon ambré hermétique, 6 semaines au réfrigérateur.",
+    "conservationRequirement": "Flacon ambré hermétique au réfrigérateur ; consommation rapide recommandée (durée non testée).",
     "allergensOrPrecautions": [
       "Contenu purement éducatif ne remplaçant pas un avis médical ou un traitement.",
       "Demander conseil à un professionnel de santé en cas de pathologie ou traitement en cours."

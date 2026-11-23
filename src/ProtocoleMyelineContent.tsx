@@ -243,7 +243,7 @@ export default function ProtocoleMyelineContent({
                 </span>
                 <span className="px-3.5 py-1.5 rounded-xl bg-white border border-[#E7DFD3] text-[#3E4A3D] shadow-xs flex items-center gap-1.5">
                   <Brain className="w-4 h-4 text-[#A8B8A0]" />
-                  <span>Cible : Oligodendrocytes &amp; FGF17</span>
+                  <span>Piste étudiée : Oligodendrocytes &amp; FGF17 (préclinique)</span>
                 </span>
                 <span className="px-3.5 py-1.5 rounded-xl bg-white border border-[#E7DFD3] text-[#3E4A3D] shadow-xs flex items-center gap-1.5">
                   <Leaf className="w-4 h-4 text-[#A8B8A0]" />
@@ -348,7 +348,7 @@ export default function ProtocoleMyelineContent({
                 Informations Générales
               </h2>
               <p className="text-sm sm:text-base text-[#3E4A3D]/80 leading-relaxed max-w-3xl mb-8 font-normal">
-                Le terme grand public <strong>"Clarté Mentale"</strong> correspond au bénéfice ressenti : vivacité cognitive, mémoire nette et apaisement nerveux. Le terme technique <strong>"Soutien Neuronal &amp; Myéline"</strong> désigne l'action biologique : préservation de l'isolant lipidique des neurones et activation des récepteurs sensibles au FGF17.
+                Le terme grand public <strong>"Clarté Mentale"</strong> renvoie à une démarche d'hygiène cognitive quotidienne. Le terme technique <strong>"Soutien Neuronal &amp; Myéline"</strong> désigne les pistes étudiées dans la littérature scientifique (préservation lipidique des gaines de myéline et recherches précliniques sur le FGF17, sans preuve clinique de restauration chez l'humain).
               </p>
 
               <div className="overflow-x-auto rounded-2xl border border-[#E7DFD3] bg-white mb-4 shadow-xs">
@@ -366,7 +366,7 @@ export default function ProtocoleMyelineContent({
                     </tr>
                     <tr className="hover:bg-[#FAF7F2]">
                       <td className="py-3.5 px-4 font-bold text-[#3E4A3D]">Objectif</td>
-                      <td className="py-3.5 px-4 text-[#3E4A3D]/80">Protéger la myéline, soutenir les voies du FGF17, réduire la neuro-inflammation</td>
+                      <td className="py-3.5 px-4 text-[#3E4A3D]/80">Accompagner le confort cognitif et explorer les pistes polyphénoliques liées au vieillissement cérébral (hypothèses précliniques FGF17)</td>
                     </tr>
                     <tr className="hover:bg-[#FAF7F2]">
                       <td className="py-3.5 px-4 font-bold text-[#3E4A3D]">Public visé</td>
@@ -733,7 +733,7 @@ export default function ProtocoleMyelineContent({
                         <tbody className="divide-y divide-[#E7DFD3] text-[#3E4A3D]">
                           <tr className="hover:bg-[#FAF7F2]">
                             <td className="py-3 px-3 font-bold text-[#3E4A3D]">Quercétine anhydre</td>
-                            <td className="py-3 px-3 text-[#3E4A3D]/80">Pureté &gt; 98%</td>
+                            <td className="py-3 px-3 text-[#3E4A3D]/80">Extrait végétal purifié (selon fiche fournisseur)</td>
                             <td className="py-3 px-3 text-[#C8AB8A] font-mono font-bold">800 mg</td>
                             <td className="py-3 px-3 text-[#3E4A3D]/80">Inhibe la mort cellulaire par surcharge de fer (ferroptose) dans la glie</td>
                           </tr>
@@ -819,16 +819,16 @@ export default function ProtocoleMyelineContent({
                     VI. PROGRESSION THÉRAPEUTIQUE
                   </div>
                   <h2 className="text-2xl sm:text-3xl font-black text-[#3E4A3D] mb-6">
-                    Planification Clinique sur 12 Semaines
+                    Progression Pédagogique sur 12 Semaines
                   </h2>
                   <div className="rounded-2xl border border-[#E7DFD3] bg-white overflow-x-auto shadow-xs">
                     <table className="w-full text-left text-xs sm:text-sm border-collapse">
                       <thead className="bg-[#A8B8A0] text-[#0F261E] border-b border-[#E7DFD3]">
                         <tr className="uppercase tracking-wider text-[11px]">
                           <th className="py-3.5 px-4 font-bold">Période</th>
-                          <th className="py-3.5 px-4 font-bold">Objectif Physiologique</th>
-                          <th className="py-3.5 px-4 font-bold">Posologie Ajustée</th>
-                          <th className="py-3.5 px-4 font-bold">Signes Cliniques Attendus</th>
+                          <th className="py-3.5 px-4 font-bold">Axe d'accompagnement</th>
+                          <th className="py-3.5 px-4 font-bold">Rythme indicatif</th>
+                          <th className="py-3.5 px-4 font-bold">Repères d'auto-observation</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-[#E7DFD3] text-[#3E4A3D]">
@@ -837,18 +837,18 @@ export default function ProtocoleMyelineContent({
                             Semaines 1 à 3<br/>
                             <span className="text-[11px] text-[#3E4A3D]/60 font-normal">Phase d'Induction</span>
                           </td>
-                          <td className="py-3.5 px-4 text-[#3E4A3D]/80">Désactivation de la neuro-inflammation et priming des récepteurs</td>
+                          <td className="py-3.5 px-4 text-[#3E4A3D]/80">Introduction progressive et observation de la tolérance digestive</td>
                           <td className="py-3.5 px-4 font-bold text-[#3E4A3D]">Demi-dose Sachet A (150 ml) + 1 cuillère Sachet B le midi</td>
-                          <td className="py-3.5 px-4 text-[#3E4A3D]/80">Moins de somnolence post-prandiale, sommeil plus profond</td>
+                          <td className="py-3.5 px-4 text-[#3E4A3D]/80">Confort digestif et régularité de la routine du soir</td>
                         </tr>
                         <tr className="hover:bg-[#FAF7F2]">
                           <td className="py-3.5 px-4 font-bold text-[#C8AB8A]">
                             Semaines 4 à 8<br/>
-                            <span className="text-[11px] text-[#3E4A3D]/60 font-normal">Phase de Prolifération</span>
+                            <span className="text-[11px] text-[#3E4A3D]/60 font-normal">Phase de Poursuite</span>
                           </td>
-                          <td className="py-3.5 px-4 text-[#3E4A3D]/80">Activation du facteur FGF17 et multiplication des progéniteurs OPC</td>
+                          <td className="py-3.5 px-4 text-[#3E4A3D]/80">Piste exploratoire autour des polyphénols et du vieillissement glial (modèles précliniques FGF17)</td>
                           <td className="py-3.5 px-4 font-bold text-[#3E4A3D]">Pleine dose Sachet A (250 ml) + 2 cuillères Sachet B réparties</td>
-                          <td className="py-3.5 px-4 text-[#3E4A3D]/80">Disparition du brouillard mental, rapidité d'évocation des mots</td>
+                          <td className="py-3.5 px-4 text-[#3E4A3D]/80">Suivi personnel de la concentration et du tonus quotidien</td>
                         </tr>
                         <tr className="hover:bg-[#FAF7F2]">
                           <td className="py-3.5 px-4 font-bold text-[#C8AB8A]">
@@ -951,7 +951,7 @@ export default function ProtocoleMyelineContent({
                         Qu'est-ce que le FGF17 ?
                       </h3>
                       <p className="text-xs sm:text-sm text-[#3E4A3D]/80 leading-relaxed font-normal">
-                        Le FGF17 est une protéine de signalisation qui active la prolifération des cellules progénitrices des oligodendrocytes (OPC) et restaure la myéline. Elle décline avec l'âge.
+                        Le FGF17 est une protéine de signalisation identifiée dans des travaux expérimentaux (chez le rongeur, notamment l'équipe de Stanford/Nature 2022) comme capable de stimuler les cellules progénitrices d'oligodendrocytes. Son application et son activation par des plantes chez l'humain restent aujourd'hui une hypothèse de recherche exploratoire, sans démonstration clinique établie.
                       </p>
                     </div>
 
@@ -1034,7 +1034,7 @@ export default function ProtocoleMyelineContent({
                   Pour appliquer ce protocole, découvrez la BloomLab®
                 </h3>
                 <p className="text-xs sm:text-sm text-white/80 max-w-xl mx-auto mb-6 leading-relaxed">
-                  L'extracteur et infuseur de précision pour extraire le Totum végétal, activer le FGF17 et soutenir la myéline avec une stabilité thermique au 0,5°C près sans dégrader les flavones délicates.
+                  L'extracteur et infuseur domestique pour réaliser vos préparations aqueuses et huileuses à température douce régulée (spécification nominale fabricant), sans faire bouillir les flavones et polyphénols fragiles.
                 </p>
                 <button
                   onClick={() => {

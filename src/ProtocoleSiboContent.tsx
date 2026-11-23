@@ -360,7 +360,7 @@ export default function ProtocoleSiboContent({
                 </h2>
 
                 <p className="text-sm sm:text-base text-[#3E4A3D]/80 max-w-xl mx-auto mb-6 font-normal leading-relaxed">
-                  Inscrivez-vous gratuitement pour débloquer l'accès immédiat à l'intégralité du protocole SIBO : la détection des signes cliniques (langue, pouls, abdomen), les 4 phases séquentielles, les posologies au milligramme, la chronobiologie d'administration et les règles de sécurité.
+                  Inscrivez-vous gratuitement pour débloquer l'accès pédagogique aux repères d'observation du terrain (langue, pouls, confort abdominal), aux 4 phases séquentielles documentées, à la chronobiologie d'usage et aux règles de prudence.
                 </p>
 
                 {/* Repères des modules inclus dans le contenu privilège */}
@@ -429,7 +429,7 @@ export default function ProtocoleSiboContent({
                 <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-300 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="flex items-center gap-3 text-sm text-emerald-900 font-medium">
                     <CheckCircle2 className="w-5 h-5 shrink-0 text-emerald-600" />
-                    <span><strong>Protocole complet débloqué :</strong> Accès illimité à la détection clinique et aux 4 phases séquentielles.</span>
+                    <span><strong>Protocole complet débloqué :</strong> Accès au guide pédagogique d'observation du terrain et aux 4 phases séquentielles.</span>
                   </div>
                   <button
                     onClick={handlePrint}
@@ -454,7 +454,7 @@ export default function ProtocoleSiboContent({
                     DÉTECTION — LIRE LES SIGNES DU SIBO
                   </h3>
                   <p className="text-sm sm:text-base text-[#3E4A3D]/80 max-w-2xl mb-8 font-normal leading-relaxed">
-                    Le corps exprime la dysbiose haute à travers des signatures corporelles précises documentées par les traditions et validées par la clinique. Identifiez vos marqueurs avant d'entamer le protocole séquentiel.
+                    Ces repères croisent des grilles d'observation issues des traditions herboristes et des pistes décrites dans la littérature digestive. Ils servent de support pédagogique et ne constituent jamais un diagnostic clinique du SIBO.
                   </p>
 
                   <div className="space-y-6">
@@ -623,7 +623,7 @@ export default function ProtocoleSiboContent({
                         <tr className="hover:bg-[#FAF7F2]">
                           <td className="p-3.5 sm:p-4 font-bold text-[#3E4A3D]">Soir (avant repas)</td>
                           <td className="p-3.5 sm:p-4">Chardon-Marie <em>(Silybum marianum)</em></td>
-                          <td className="p-3.5 sm:p-4">Extrait titré à 80% silymarine (150 mg)</td>
+                          <td className="p-3.5 sm:p-4">Extrait commercial standardisé (référence 80 % silymarine selon fabricant, ~150 mg)</td>
                           <td className="p-3.5 sm:p-4 text-[#3E4A3D]/80">Régénération membranaire hépatique face aux endotoxines.</td>
                         </tr>
                         <tr className="hover:bg-[#FAF7F2]">
@@ -1142,7 +1142,7 @@ export default function ProtocoleSiboContent({
               Pour appliquer ce protocole, découvrez la BloomLab®
             </h2>
             <p className="text-sm sm:text-base text-white/80 max-w-xl mx-auto mb-8 leading-relaxed font-normal">
-              L'extracteur et infuseur de précision pour extraire les principes actifs antibactériens et procinétiques (gingembre, berberis, origan) à régulation thermique au 0,5°C près sans dégrader les terpènes volatils.
+              L'extracteur et infuseur domestique pour préparer vos extraits aqueux et huileux (gingembre, berberis, origan) sous régulation thermique douce, sans porter les aromates à ébullition prolongée.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-3">

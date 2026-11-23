@@ -48,8 +48,6 @@ export const getProducts = (lang: Language) => {
       price: bloomLabPrice,
       originalPrice: bloomLabOriginal,
       image: bloomLabImg,
-      rating: 4.9,
-      reviews: 128,
       description: t.bloomlab.description,
       bullets: t.bloomlab.bullets,
       tags: ['Best-Seller', 'Inox 304', 'Souveraineté'],
@@ -62,8 +60,6 @@ export const getProducts = (lang: Language) => {
       price: 49.00,
       originalPrice: 87.50,
       image: trioPouchesImg,
-      rating: 5.0,
-      reviews: 64,
       description: t.bundle_apothicaire.description,
       tags: ['Offre Limitée', 'Best-Value'],
       isBundle: true
@@ -75,8 +71,6 @@ export const getProducts = (lang: Language) => {
       price: 289.00,
       oldPriceStrike: 349.00,
       image: packSignatureImg,
-      rating: 5.0,
-      reviews: 42,
       description: t.pack_signature.description,
       tags: ['Le plus populaire', 'Complet', 'Best-Seller'],
       isBundle: true
@@ -87,8 +81,6 @@ export const getProducts = (lang: Language) => {
       subtitle: t.kit_starter.subtitle,
       price: 12.90,
       image: seveFondamentaleImg,
-      rating: 4.8,
-      reviews: 56,
       description: t.kit_starter.description,
       tags: ['Kit', 'Plantes']
     },
@@ -98,8 +90,6 @@ export const getProducts = (lang: Language) => {
       subtitle: t.kit_nuit.subtitle,
       price: 9.90,
       image: nuitProfondeImg,
-      rating: 4.9,
-      reviews: 42,
       description: t.kit_nuit.description,
       tags: ['Sommeil']
     },
@@ -109,8 +99,6 @@ export const getProducts = (lang: Language) => {
       subtitle: t.kit_digestion.subtitle,
       price: 9.90,
       image: digestionImg,
-      rating: 4.7,
-      reviews: 35,
       description: t.kit_digestion.description,
       tags: ['Digestion']
     },
@@ -120,8 +108,6 @@ export const getProducts = (lang: Language) => {
       subtitle: t.kit_articulaire.subtitle,
       price: 9.90,
       image: feuArticulaireImg,
-      rating: 4.8,
-      reviews: 28,
       description: t.kit_articulaire.description,
       tags: ['Mobilité']
     },
@@ -131,8 +117,6 @@ export const getProducts = (lang: Language) => {
       subtitle: t.kit_hiver.subtitle,
       price: 9.90,
       image: bouclierHiverImg,
-      rating: 4.8,
-      reviews: 32,
       description: t.kit_hiver.description,
       tags: ['Immunité', 'Hiver']
     },
@@ -143,8 +127,6 @@ export const getProducts = (lang: Language) => {
       price: 34.00,
       originalPrice: 49.00,
       image: duoArgilesImg,
-      rating: 4.9,
-      reviews: 31,
       description: t.kit_reset.description,
       tags: ['Duo Argiles', 'Purification Systémique', 'Reset Homéostatique']
     },
@@ -163,8 +145,6 @@ export const getProducts = (lang: Language) => {
       price: 9.00,
       originalPrice: 12.00,
       image: modernShelvesImg,
-      rating: 4.9,
-      reviews: 128,
       description: lang === 'fr'
         ? "Accès illimité à l'ensemble des modules de la Bloom Academy, fiches détaillées, architectures cellulaires et protocoles systémiques complets."
         : lang === 'de'
@@ -180,8 +160,6 @@ export const getProducts = (lang: Language) => {
       subtitle: t.freemium_access.subtitle,
       price: 0.00,
       image: herbsCloseUpImg,
-      rating: 4.7,
-      reviews: 156,
       description: t.freemium_access.description,
       tags: ['Gratuit', 'Digital', 'Découverte'],
       isSpecial: true,
@@ -193,8 +171,6 @@ export const getProducts = (lang: Language) => {
       subtitle: t.premium_access.subtitle,
       price: 9.00,
       image: modernShelvesImg,
-      rating: 4.9,
-      reviews: 128,
       description: t.premium_access.description,
       tags: ['Abonnement', 'Digital', 'Annuel'],
       isSpecial: true,
@@ -371,10 +347,10 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
       {/* Promotional Banner */}
       <div className="bg-[#D97706]/10 text-[#B45309] border-y border-[#D97706]/30 text-center py-2.5 px-4 text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
         {isFR 
-          ? "🇫🇷 Ingénierie Botanique Française • Expédition 24/48h • Garantie 1 an • Paiement en 3x sans frais" 
+          ? "🇫🇷 Conception Bloom by BotaniK • Expédition 24/48h • Garantie légale 2 ans (UE) + commerciale 1 an" 
           : isDE
-          ? "🇫🇷 Französische Botanik-Ingenieurskunst • Versand 24/48h • 1 Jahr Garantie • 3x zinsfrei"
-          : "🇫🇷 French Botanical Engineering • 24/48h Shipping • 1-Year Warranty • 3x Fee-Free"}
+          ? "🇫🇷 Entwicklung Bloom by BotaniK • Versand 24/48h • 2 Jahre gesetzl. Gewährleistung (EU) + 1 Jahr Garantie"
+          : "🇫🇷 Engineered by Bloom by BotaniK • 24/48h Shipping • 2-Year EU Legal Warranty + 1-Year Commercial"}
       </div>
       
       {/* Search & Filter Header (App Style) */}
@@ -400,10 +376,10 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
         <div className="max-w-2xl mb-6">
           <p className="text-sm md:text-base text-botanik-green/60 font-light leading-relaxed">
             {isFR 
-              ? "Découvrez l'univers Bloom by BotaniK : de l'extracteur botanique BloomLab aux mélanges de plantes médicinales bio rigoureusement sélectionnés. Notre boutique vous offre toutes les clés pour réaliser vos propres préparations botaniques, huiles infusées et rituels de soin avec une précision laboratoire."
+              ? "Découvrez l'univers Bloom by BotaniK : de l'extracteur botanique BloomLab aux mélanges de plantes biologiques sélectionnés. Notre boutique vous donne les bases pour réaliser vos propres préparations botaniques, huiles infusées et rituels de soin avec une régulation thermique guidée."
               : isDE
-              ? "Entdecken Sie die Welt von Bloom by BotaniK: vom botanischen Extraktor BloomLab bis hin zu sorgfältig ausgewählten Bio-Heilpflanzenmischungen. Unser Shop bietet alles, um eigene pflanzliche Zubereitungen, infundierte Öle und Pflegerituale mit Laborpräzision herzustellen."
-              : "Discover the Bloom by BotaniK universe: from the BloomLab botanical extractor to rigorously selected organic medicinal plant blends. Our shop provides everything you need to craft your own botanical preparations, infused oils, and care rituals with laboratory precision."}
+              ? "Entdecken Sie die Welt von Bloom by BotaniK: vom botanischen Extraktor BloomLab bis hin zu ausgewählten Bio-Pflanzenmischungen für Ihre eigenen Zubereitungen, infundierten Öle und Pflegerituale mit geführter Temperaturregelung."
+              : "Discover the Bloom by BotaniK universe: from the BloomLab botanical extractor to selected organic plant blends for crafting your own botanical preparations, infused oils, and care rituals with guided thermal control."}
           </p>
         </div>
         
@@ -484,7 +460,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
               {lang === 'fr' ? 'Nos Offres Groupées (Bundles)' : lang === 'en' ? 'Our Bundle Offers' : 'Unsere Bundle-Angebote'}
             </h3>
             <span className="px-3 py-1 bg-botanik-orange/10 text-botanik-orange text-[10px] font-bold uppercase tracking-widest rounded-full">
-              {lang === 'fr' ? 'Économie Garantie' : lang === 'en' ? 'Guaranteed Savings' : 'Garantierte Ersparnis'}
+              {lang === 'fr' ? 'Offre Bundle' : lang === 'en' ? 'Bundle Offer' : 'Bundle-Angebot'}
             </span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
@@ -582,7 +558,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                   <a 
                     key={product.id}
                     href={`/boutique/${product.id}/`}
-                    className="bg-white rounded-3xl sm:rounded-[32px] shadow-sm hover:shadow-xl transition-all cursor-pointer group border border-botanik-green/5 overflow-hidden flex flex-col justify-between"
+                    className="block sm:flex sm:flex-col bg-white rounded-3xl sm:rounded-[32px] shadow-sm hover:shadow-xl transition-all cursor-pointer group border border-botanik-green/5 overflow-hidden"
                     onClick={(e) => {
                       if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                         e.preventDefault();
@@ -590,26 +566,19 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                       }
                     }}
                   >
-                    <div className="relative w-full aspect-video overflow-hidden bg-[#F9F9F7] shrink-0">
+                    <div className="relative w-full aspect-video overflow-hidden bg-[#F9F9F7] sm:shrink-0">
                       <OptimizedImage 
                         src={product.image} 
                         alt={`${product.name} - ${product.subtitle} - Bloom by BotaniK - Extracteur botanique et soins végétaux`} 
                         className="absolute inset-0 w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-700"
                       />
                     </div>
-                    <div className="p-5 sm:p-6 flex flex-col justify-between gap-4 grow">
+                    <div className="p-5 sm:p-6 flex flex-col gap-4 sm:flex-1">
                       <div>
-                        <div className="flex items-center gap-1 mb-2">
-                          <div className="flex items-center text-botanik-orange">
-                            <Star className="w-3 h-3 fill-current" />
-                            <span className="text-[10px] font-bold ml-1">{product.rating}/5</span>
-                          </div>
-                          <span className="text-[10px] text-botanik-green/30">({product.reviews} {isFR ? 'avis' : isDE ? 'Bewertungen' : 'reviews'})</span>
-                        </div>
                         <div className="text-[10px] font-bold text-botanik-orange uppercase tracking-widest mb-1">{product.subtitle}</div>
                         <h4 className="text-base sm:text-lg font-bold text-botanik-green leading-tight">{product.name}</h4>
                       </div>
-                      <div className="flex items-center justify-between gap-4 pt-1">
+                      <div className="flex items-center justify-between gap-4 pt-1 sm:mt-auto">
                         <span className="text-lg sm:text-xl font-bold text-botanik-green">
                           {product.price === 0 ? (lang === 'fr' ? 'Gratuit' : lang === 'en' ? 'Free' : 'Gratis') : formatPrice(product.price)}
                         </span>

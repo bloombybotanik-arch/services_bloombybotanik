@@ -83,24 +83,24 @@ export default function FaqContent({ onNavigate, lang = 'fr' }: FaqContentProps)
         ? "Benötigt man besondere Kenntnisse in Kräuterkunde für den BloomLab®?" 
         : "Do you need special herbalism skills to use BloomLab®?",
       a: isFR 
-        ? "Absolument pas. BloomLab® a été conçu pour guider chaque étape avec une ergonomie intuitive. Nos protocoles documentés et notre bibliothèque de recettes indiquent précisément la température, le solvant adapté (eau, huile végétale, glycérine ou solvant hydroalcoolique) et la durée optimale pour chaque plante." 
+        ? "Absolument pas. BloomLab® a été conçu pour guider chaque étape avec une ergonomie intuitive. Nos protocoles documentés et notre bibliothèque de recettes indiquent la température, le solvant adapté (eau, huile végétale ou glycérine végétale) et la durée indicative pour chaque plante." 
         : isDE 
-        ? "Absolut nicht. BloomLab® führt Sie Schritt für Schritt durch jedes Protokoll mit exakten Temperatur- und Lösungsmittelangaben." 
-        : "Not at all. BloomLab® is designed to guide each step with precision recipes indicating temperature, solvent, and duration."
+        ? "Absolut nicht. BloomLab® führt Sie Schritt für Schritt durch jedes Protokoll mit Temperatur-, Zeit- und Lösungsmittelangaben (Wasser, Pflanzenöl oder pflanzliches Glycerin)." 
+        : "Not at all. BloomLab® is designed to guide each step with recipes indicating temperature, suitable solvent (water, carrier oil, or vegetable glycerin), and duration."
     },
     {
       id: 'q2',
       category: 'machine',
       q: isFR 
-        ? "Pourquoi une précision thermique à ±0,5°C est-elle indispensable ?" 
+        ? "Pourquoi une régulation thermique douce est-elle importante ?" 
         : isDE 
-        ? "Warum ist eine Temperaturgenauigkeit von ±0,5°C unverzichtbar?" 
-        : "Why is ±0.5°C thermal precision indispensable?",
+        ? "Warum ist eine sanfte Temperaturregelung wichtig?" 
+        : "Why is gentle thermal regulation important?",
       a: isFR 
-        ? "Les principes actifs végétaux (flavonoïdes, terpènes, polyphénols) sont thermolabiles : au-delà de 75°C à 85°C selon les espèces végétales, ils se dénaturent et perdent leur vitalité. Une régulation millimétrique protège l'intégrité moléculaire du Totum sans brûler les principes précieux." 
+        ? "Certains principes végétaux (flavonoïdes, terpènes, polyphénols) sont sensibles à la chaleur excessive : au-delà de seuils variables selon les espèces, ils se dénaturent ou s'évaporent. La BloomLab® utilise une régulation thermique dont la valeur nominale annoncée par le fabricant est de ±0,5°C (sans certification métrologique par laboratoire tiers)." 
         : isDE 
-        ? "Pflanzliche Wirkstoffe sind hitzeempfindlich. Eine exakte thermische Kontrolle schützt das Totum vor Hitzeschäden." 
-        : "Botanical active ingredients are thermosensitive. Millimetric thermal control protects molecular integrity without overheating."
+        ? "Pflanzliche Inhaltsstoffe sind hitzeempfindlich. BloomLab® nutzt eine sanfte Temperaturregelung (Hersteller-Nennwert ±0,5°C, ohne externe Laborkalibrierung)." 
+        : "Many botanical compounds are heat-sensitive. BloomLab® provides gentle thermal regulation (nominal manufacturer rating ±0.5°C, not externally lab-certified)."
     },
     {
       id: 'q3',
@@ -153,10 +153,10 @@ export default function FaqContent({ onNavigate, lang = 'fr' }: FaqContentProps)
         ? "Was ist der Unterschied zwischen einem Tee, einem Wasserbad und dem BloomLab®?" 
         : "What is the difference between classic herbal tea, a bain-marie, and BloomLab®?",
       a: isFR 
-        ? "L'eau bouillante d'une tisane classique dégrade souvent les principes fragiles tout en laissant prisonniers les actifs liposolubles. Le bain-marie traditionnel souffre d'à-coups thermiques incontrôlés. BloomLab® régule en continu la température, la durée et l'agitation vortex pour libérer jusqu'à 98% du Totum végétal sans altération." 
+        ? "L'eau bouillante d'une tisane classique fragilise certains arômes volatils tout en laissant peu extraits les composés liposolubles. Le bain-marie traditionnel est difficile à stabiliser à basse température. BloomLab® régule en continu la température, la durée et l'agitation douce en chambre fermée sans ébullition." 
         : isDE 
-        ? "Herkömmliche Methoden verbrennen oder verpassen fettlösliche Wirkstoffe. BloomLab kontrolliert Temperatur und Agitation für maximale Ausbeute." 
-        : "Boiling water degrades thermosensitive actives while traditional bain-marie suffers from uneven heat. BloomLab stabilizes continuous extraction to capture up to 98% of the Totum."
+        ? "Kochendes Wasser belastet empfindliche Aromen, während ein klassisches Wasserbad schwer stabil zu halten ist. BloomLab® regelt Temperatur, Dauer und sanftes Rühren in geschlossener Kammer." 
+        : "Boiling water stresses delicate aromatics and leaves lipid-soluble fractions unextracted, while a bain-marie is hard to stabilize. BloomLab® regulates temperature, duration, and gentle stirring in a closed chamber."
     },
     {
       id: 'q5',
@@ -167,10 +167,10 @@ export default function FaqContent({ onNavigate, lang = 'fr' }: FaqContentProps)
         ? "Welche Lösungsmittel können im Extraktionsbehälter verwendet werden?" 
         : "What solvents can be used in the extraction chamber?",
       a: isFR 
-        ? "BloomLab® accepte l'ensemble des solvants nobles de l'herboristerie moderne : eau pure osmosée ou minérale, huiles végétales biologiques de première pression à froid (jojoba, sésame, olive, argan...), glycérine végétale, beurres végétaux, ainsi que les solutions hydroalcooliques douces." 
+        ? "Dans la cuve chauffante BloomLab®, utilisez uniquement des solvants non inflammables : eau pure osmosée ou minérale, huiles végétales biologiques de première pression à froid (jojoba, sésame, olive, argan...), glycérine végétale ou beurres végétaux. Par mesure de sécurité, les extractions à l'alcool chauffé à l'intérieur de la machine sont suspendues (les teintures alcooliques traditionnelles relèvent exclusivement de la macération à froid hors appareil)." 
         : isDE 
-        ? "Wasser, Pflanzenöle (Jojoba, Sesam, Olive...), pflanzliches Glycerin und milde hydroalkoholische Lösungen." 
-        : "Purified water, cold-pressed organic carrier oils (jojoba, sesame, olive, argan), vegetable glycerin, and mild hydroalcoholic solutions."
+        ? "Verwenden Sie im beheizten Behälter nur nicht brennbare Lösungsmittel: reines Wasser, kaltgepresste Bio-Pflanzenöle (Jojoba, Sesam, Olive, Argan...), pflanzliches Glycerin oder Pflanzenbutter. Aus Sicherheitsgründen sind erhitzte Alkoholextraktionen im Gerät ausgesetzt (alkoholische Tinkturen erfolgen ausschließlich kalt außerhalb des Geräts)." 
+        : "Inside the heated BloomLab® chamber, use only non-flammable solvents: purified water, cold-pressed organic carrier oils (jojoba, sesame, olive, argan), vegetable glycerin, or plant butters. For safety, heated alcohol extractions inside the device are suspended (traditional tinctures use cold maceration outside the unit)."
     },
     {
       id: 'q6',
@@ -237,38 +237,38 @@ export default function FaqContent({ onNavigate, lang = 'fr' }: FaqContentProps)
         ? "Welche Garantie gilt für den BloomLab®?" 
         : "What is the warranty on BloomLab®?",
       a: isFR 
-        ? "L'extracteur BloomLab® bénéficie d'une garantie constructeur de 1 an pièces et main d'œuvre. Nous disposons d'un service après-vente basé en France et tenons les pièces détachées à disposition pour assurer la longévité de votre appareil." 
+        ? "L'extracteur BloomLab® bénéficie de la garantie légale de conformité de 2 ans (UE) complétée par la garantie commerciale constructeur d'1 an, avec support et SAV basés en France." 
         : isDE 
-        ? "1 Jahr Herstellergarantie (Teile und Arbeitsleistung) mit Kundenservice in Frankreich." 
-        : "1-year comprehensive manufacturer warranty (parts & labor) with customer support based in France."
+        ? "Für den BloomLab® gelten die 2-jährige gesetzliche Gewährleistung (EU) sowie 1 Jahr Herstellergarantie mit Kundenservice in Frankreich." 
+        : "BloomLab® is covered by the mandatory 2-year EU legal conformity warranty alongside a 1-year commercial manufacturer warranty with support based in France."
     },
     {
       id: 'q11',
       category: 'commandes',
       q: isFR 
-        ? "Proposez-vous le paiement en plusieurs fois ?" 
+        ? "Quels modes de paiement sont proposés ?" 
         : isDE 
-        ? "Bieten Sie Ratenzahlung an?" 
-        : "Do you offer split payments?",
+        ? "Welche Zahlungsmethoden werden angeboten?" 
+        : "What payment methods are accepted?",
       a: isFR 
-        ? "Oui. Grâce à notre partenaire sécurisé Klarna, vous pouvez régler votre BloomLab® en 3 fois sans frais par carte bancaire lors du passage de votre commande." 
+        ? "Le règlement est traité par carte bancaire via Stripe et via PayPal selon les options affichées lors du passage en caisse (le paiement fractionné dépend de l'éligibilité PayPal proposée au checkout)." 
         : isDE 
-        ? "Ja, 3 zinslose Raten mit Klarna sind im Checkout verfügbar." 
-        : "Yes, 3-installment interest-free payment is available at checkout via Klarna."
+        ? "Die Zahlung erfolgt per Kreditkarte über Stripe sowie über PayPal entsprechend den beim Checkout angezeigten Optionen." 
+        : "Payment is processed by card via Stripe and via PayPal according to the options displayed at checkout."
     },
     {
       id: 'q12',
       category: 'commandes',
       q: isFR 
-        ? "Existe-t-il une période d'essai 'Satisfait ou Remboursé' ?" 
+        ? "Quelles sont les conditions de rétractation et de retour ?" 
         : isDE 
-        ? "Gibt es eine 30-Tage-Geld-zurück-Garantie?" 
-        : "Is there a 30-day money-back guarantee?",
+        ? "Welche Widerrufs- und Rückgabebedingungen gelten?" 
+        : "What are the withdrawal and return conditions?",
       a: isFR 
-        ? "Oui. Vous disposez de 30 jours à compter de la réception de votre machine pour tester la précision de vos extractions à domicile en toute sérénité." 
+        ? "Vous bénéficiez du droit légal de rétractation de 14 jours à compter de la réception, ainsi que d'une fenêtre commerciale d'essai de 30 jours selon les conditions détaillées sur la page Livraison & Retours." 
         : isDE 
-        ? "Ja, Sie können das Gerät 30 Tage lang risikofrei zu Hause testen." 
-        : "Yes, you have a 30-day trial period from delivery to test your machine in complete confidence."
+        ? "Sie haben ein gesetzliches 14-tägiges Widerrufsrecht ab Erhalt sowie ein 30-tägiges kommerzielles Rückgabefenster gemäß unserer Seite Versand & Rückgabe." 
+        : "You benefit from the statutory 14-day EU withdrawal right from delivery as well as our 30-day commercial return policy detailed on the Shipping & Returns page."
     }
   ], [isFR, isDE]);
 

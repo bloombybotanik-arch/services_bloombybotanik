@@ -769,10 +769,10 @@ export default function ProtocolePsoriasisContent({
                       <td className="py-3 px-3">Résine de Boswellia (15g) + Curcuma longa (10g)</td>
                       <td className="py-3 px-3">
                         <span className="inline-block px-2 py-0.5 rounded bg-[#FAF2E6] text-[#92400E] text-[11px] font-bold">
-                          Phase B : Alcool 60° • 45°C • 2h (Résines)
+                          Phase B : Macérât huileux en BloomLab (45°C • 2h) — alcool chauffé suspendu
                         </span>
                       </td>
-                      <td className="py-3 px-3">30 gouttes dans un fond d'eau tiède</td>
+                      <td className="py-3 px-3">Usage selon fiche / macérat huileux (hors alcool chauffé en cuve)</td>
                       <td className="py-3 px-3 text-[#A8B8A0] font-semibold">Au cours du petit-déjeuner</td>
                     </tr>
                     <tr>

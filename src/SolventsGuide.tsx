@@ -100,9 +100,9 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
         "Welches Lösungsmittel soll ich wählen: Wasser, Pflanzenöl oder Alkohol?"
       ),
       a: tr(
-        "L'eau extrait les composés hydrosolubles (mucilages, tanins, flavonoïdes polaires). L'huile végétale capte les actifs liposolubles (caroténoïdes, phytostérols, huiles essentielles). L'alcool ou la glycérine permettent des extractions mixtes et une conservation longue durée.",
-        "Water extracts water-soluble compounds (mucilage, tannins, polar flavonoids). Vegetable oil captures fat-soluble actives (carotenoids, phytosterols, volatile oils). Alcohol or glycerin enables dual-affinity extractions and extended shelf life.",
-        "Wasser extrahiert wasserlösliche Stoffe (Schleimstoffe, Gerbstoffe, polare Flavonoide). Pflanzenöl bindet fettlösliche Wirkstoffe (Carotinoide, Phytosterole, ätherische Öle). Alkohol oder Glycerin ermöglichen gemischte Extraktionen und lange Haltbarkeit."
+        "L'eau extrait les composés hydrosolubles (mucilages, tanins, flavonoïdes polaires). L'huile végétale capte les actifs liposolubles (caroténoïdes, phytostérols, composés aromatiques). La glycérine végétale offre une alternative sans alcool pour extraire de nombreux polyphénols. L'usage d'alcool chauffé en cuve BloomLab® est actuellement suspendu.",
+        "Water extracts water-soluble compounds (mucilage, tannins, polar flavonoids). Vegetable oil captures fat-soluble actives (carotenoids, phytosterols, aromatic compounds). Vegetable glycerin offers an alcohol-free carrier for polyphenols. Heated alcohol extraction inside BloomLab® is currently suspended.",
+        "Wasser extrahiert wasserlösliche Stoffe (Schleimstoffe, Gerbstoffe, polare Flavonoide). Pflanzenöl bindet fettlösliche Wirkstoffe (Carotinoide, Phytosterole, Aromastoffe). Pflanzenglycerin bietet eine alkoholfreie Alternative für Polyphenole. Erhitzte Alkoholextraktionen in der BloomLab® sind derzeit ausgesetzt."
       )
     },
     {
@@ -131,14 +131,14 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
     },
     {
       q: tr(
-        "Comment conserver ses extraits aqueux, huileux ou hydroalcooliques ?",
-        "How should aqueous, oil-based, or hydroalcoholic extracts be stored?",
-        "Wie lagert man wässrige, ölige oder hydroalkoholische Extrakte?"
+        "Comment conserver ses extraits aqueux ou huileux ?",
+        "How should aqueous or oil-based extracts be stored?",
+        "Wie lagert man wässrige oder ölige Extrakte?"
       ),
       a: tr(
-        "Les infusions aqueuses se consomment fraîches sous 24 à 48 h au réfrigérateur. Les huiles infusées filtrées et flacons hydroalcooliques se conservent à l'abri de la lumière dans un flacon ambré hermétique.",
-        "Aqueous infusions should be consumed fresh within 24–48 hours refrigerated. Filtered infused oils and hydroalcoholic extracts keep best away from light in airtight amber glass bottles.",
-        "Wässrige Auszüge innerhalb von 24–48 Stunden gekühlt verbrauchen. Gefilterte Ölmazerate und Tinkturen lichtgeschützt in dicht verschlossenen Braunglasflaschen aufbewahren."
+        "Les infusions aqueuses se préparent à la demande et se consomment rapidement au frais en surveillant odeur et aspect. Les huiles infusées filtrées et extraits glycérinés se conservent à l'abri de la lumière et de la chaleur dans un flacon ambré hermétique, selon l'huile ou le ratio utilisé.",
+        "Aqueous infusions are best prepared fresh and consumed promptly when refrigerated, monitoring smell and clarity. Filtered infused oils and glycerin extracts keep away from light and heat in airtight amber glass bottles, depending on oil stability and preparation hygiene.",
+        "Wässrige Auszüge am besten frisch zubereiten und gekühlt rasch verbrauchen (Geruch und Klarheit prüfen). Gefilterte Ölmazerate und Glyzerin-Auszüge licht- und wärmegeschützt in dicht verschlossenen Braunglasflaschen aufbewahren."
       )
     }
   ];
@@ -163,7 +163,7 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
       affinity: tr('Hydrosoluble', 'Water-soluble', 'Wasserlöslich'),
       targets: tr('Mucilages, minéraux, tanins doux, flavonoïdes solubles, polysaccharides', 'Mucilage, minerals, gentle tannins, soluble flavonoids, polysaccharides', 'Schleimstoffe, Mineralien, milde Gerbstoffe, lösliche Flavonoide, Polysaccharide'),
       temperature: tr('55 – 80 °C (jamais bouillante)', '55 – 80 °C (never boiling)', '55 – 80 °C (niemals kochend)'),
-      conservation: tr('24 à 72 h au réfrigérateur', '24–72 h refrigerated', '24–72 Std. im Kühlschrank'),
+      conservation: tr('Consommation rapide au réfrigérateur', 'Prompt refrigerated use', 'Rasch gekühlt verbrauchen'),
       limit: tr('N’extrait ni les résines ni les terpènes lipophiles ; oxydation rapide', 'Does not extract resins or lipophilic terpenes; short shelf life', 'Extrahiert weder Harze noch lipophile Terpene; schnelle Oxidation')
     },
     {
@@ -172,17 +172,17 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
       affinity: tr('Liposoluble', 'Fat-soluble', 'Fettlöslich'),
       targets: tr('Terpènes, caroténoïdes, vitamines liposolubles (A, D, E, K), phytostérols', 'Terpenes, carotenoids, fat-soluble vitamins (A, D, E, K), phytosterols', 'Terpene, Carotinoide, fettlösliche Vitamine (A, D, E, K), Phytosterole'),
       temperature: tr('40 – 52 °C en milieu clos', '40 – 52 °C sealed vessel', '40 – 52 °C im geschlossenen System'),
-      conservation: tr('6 à 12 mois en flacon ambré', '6–12 months in amber glass', '6–12 Monate in Braunglas'),
+      conservation: tr('Flacon ambré, à l’abri de la lumière et chaleur', 'Amber glass away from light & heat', 'Braunglas, licht- und wärmegeschützt'),
       limit: tr('Laisse de côté les polysaccharides et minéraux hydrosolubles', 'Leaves behind water-soluble polysaccharides and minerals', 'Erfasst keine wasserlöslichen Polysaccharide und Mineralien')
     },
     {
-      name: tr('Alcool alimentaire titré', 'Food-Grade Tincturing Alcohol', 'Reiner Ansatzalkohol'),
+      name: tr('Alcool alimentaire (hors BloomLab® chauffé)', 'Food-Grade Alcohol (outside heated BloomLab®)', 'Ansatzalkohol (außerhalb erhitzter BloomLab®)'),
       polarity: tr('Amphiphile (Bipolaire)', 'Amphiphilic (Dual polarity)', 'Amphiphil (Bipolar)'),
-      affinity: tr('Hydro-alcoolique (Mixte)', 'Hydroalcoholic (Dual)', 'Hydroalkoholisch (Gemischt)'),
+      affinity: tr('Hydro-alcoolique (macération à froid hors appareil)', 'Hydroalcoholic (ambient maceration outside appliance)', 'Hydroalkoholisch (Kaltmazeration außerhalb des Geräts)'),
       targets: tr('Alcaloïdes, résines denses, lactones sesquiterpéniques, polyphénols', 'Alkaloids, dense resins, sesquiterpene lactones, polyphenols', 'Alkaloide, dichte Harze, Sesquiterpenlactone, Polyphenole'),
-      temperature: tr('38 – 48 °C en chambre étanche', '38 – 48 °C sealed chamber', '38 – 48 °C in dichter Kammer'),
-      conservation: tr('24 à 36 mois à l’abri de la lumière', '24–36 months away from light', '24–36 Monate lichtgeschützt'),
-      limit: tr('Nécessite une filtration fine et une vigilance selon le terrain individuel', 'Requires fine filtration and attention to individual contraindications', 'Erfordert feine Filtration und Berücksichtigung individueller Gegenanzeigen')
+      temperature: tr('Température ambiante uniquement (chauffage en cuve suspendu)', 'Ambient temperature only (heated vessel protocol suspended)', 'Nur Raumtemperatur (Erhitzung im Gerät ausgesetzt)'),
+      conservation: tr('Flacon ambré hermétique à l’abri de la lumière', 'Airtight amber glass away from light', 'Luftdicht im Braunglas lichtgeschützt'),
+      limit: tr('Ne pas chauffer en cuve électrique sans validation ATEX/fabricant ; vigilance selon le terrain individuel', 'Do not heat in electric vessels; attention to individual contraindications', 'Nicht in elektrischen Gefäßen erhitzen; individuelle Gegenanzeigen beachten')
     },
     {
       name: tr('Glycérine végétale bio', 'Organic Vegetable Glycerin', 'Bio-Pflanzenglycerin'),
@@ -190,7 +190,7 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
       affinity: tr('Hydro-polaire sans éthanol', 'Ethanol-free hydro-polar', 'Alkoholfrei hydro-polar'),
       targets: tr('Polyphénols, anthocyanes, composés aromatiques doux, flavonoïdes', 'Polyphenols, anthocyanins, mild aromatics, flavonoids', 'Polyphenole, Anthocyane, milde Aromastoffe, Flavonoide'),
       temperature: tr('45 – 60 °C sous agitation continue', '45 – 60 °C continuous stirring', '45 – 60 °C bei kontinuierlichem Rühren'),
-      conservation: tr('12 à 18 mois (ratio glycérine ≥ 65 %)', '12–18 months (glycerin ratio ≥ 65%)', '12–18 Monate (Glycerinanteil ≥ 65 %)'),
+      conservation: tr('Flacon ambré à l’abri des UV (ratio glycérine ≥ 65 %)', 'Amber glass away from UV (glycerin ratio ≥ 65%)', 'Braunglas vor UV geschützt (Glycerinanteil ≥ 65 %)'),
       limit: tr('Viscosité élevée demandant un brassage vortex continu pour vaincre la couche limite', 'Higher viscosity requiring continuous vortex agitation to overcome the boundary layer', 'Höhere Viskosität erfordert kontinuierlichen Vortex zum Überwinden der Grenzschicht')
     }
   ];
@@ -204,21 +204,21 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
       ratio: tr('1:15 à 1:20 (eau faiblement minéralisée)', '1:15 to 1:20 (low-mineral water)', '1:15 bis 1:20 (mineralarmes Wasser)'),
       duration: tr('20 à 45 min en chambre close', '20 to 45 min sealed', '20 bis 45 Min. geschlossen'),
       agitation: tr('Cyclique douce (jamais d’ébullition)', 'Gentle cyclic (never boiling)', 'Sanft zyklisch (niemals kochend)'),
-      shelfLife: tr('24 à 72h au réfrigérateur', '24–72 h refrigerated', '24–72 Std. gekühlt'),
+      shelfLife: tr('À consommer rapidement au réfrigérateur', 'Prompt refrigerated consumption', 'Rasch gekühlt verbrauchen'),
       idealFor: tr('Mucilages, minéraux, tanins doux, flavonoïdes, polysaccharides.', 'Mucilage, minerals, mild tannins, flavonoids, polysaccharides.', 'Schleimstoffe, Mineralien, milde Gerbstoffe, Flavonoide, Polysaccharide.'),
-      notes: tr('Ne jamais faire bouillir, car l’ébullition détruit les flavonoïdes et rend l’infusion amère. Prolifération bactérienne rapide au-delà de 72h ; n’extrait ni les résines ni les huiles essentielles.', 'Never boil, as boiling degrades delicate flavonoids and draws bitter tannins. Refrigerate up to 72h; does not extract resins or essential oils.', 'Niemals aufkochen, da Siedehitze Flavonoide zerstört und Bitterstoffe löst. Maximal 72 Std. kühl lagern; löst keine Harze oder ätherischen Öle.')
+      notes: tr('Ne jamais faire bouillir, car l’ébullition détruit les flavonoïdes et rend l’infusion amère. Prolifération bactérienne possible dès température tiède ; préparer frais à la demande.', 'Never boil, as boiling degrades delicate flavonoids and draws bitter tannins. Prepare fresh and store cold for prompt use; does not extract resins or essential oils.', 'Niemals aufkochen, da Siedehitze Flavonoide zerstört und Bitterstoffe löst. Frisch zubereiten und kühl lagern; löst keine Harze oder ätherischen Öle.')
     },
     {
       id: 'alcool',
-      name: tr("L'Alcool (Le Solvant de Précision)", 'Alcohol (The Precision Solvent)', 'Alkohol (Das Präzisionslösungsmittel)'),
-      polarityTag: tr('Affinité Hydro-alcoolique (Mixte)', 'Hydroalcoholic Affinity (Dual)', 'Hydroalkoholische Affinität (Gemischt)'),
-      tempRange: tr('38°C à 48°C', '38°C to 48°C', '38°C bis 48°C'),
-      ratio: tr('1:5 (teinture classique) à 1:3 (résines)', '1:5 (standard tincture) to 1:3 (resins)', '1:5 (klassische Tinktur) bis 1:3 (Harze)'),
-      duration: tr('120 à 180 min en chambre étanche', '120 to 180 min sealed chamber', '120 bis 180 Min. in dichter Kammer'),
-      agitation: tr('Vortex régulier évitant l’évaporation', 'Steady vortex preventing evaporation', 'Gleichmäßiger Vortex ohne Verdunstung'),
-      shelfLife: tr('24 à 36 mois à l’abri de la lumière', '24–36 months away from light', '24–36 Monate lichtgeschützt'),
-      idealFor: tr('Alcaloïdes, résines denses, lactones, polyphénols.', 'Alkaloids, dense resins, lactones, polyphenols.', 'Alkaloide, dichte Harze, Lactone, Polyphenole.'),
-      notes: tr('Nécessite une filtration fine et une vigilance selon le terrain (contre-indiqué pour les femmes enceintes ou les enfants).', 'Requires fine filtration and caution according to individual profile (not suitable during pregnancy or for children).', 'Erfordert feine Filtration und Vorsicht je nach Konstitution (nicht geeignet in Schwangerschaft oder für Kinder).')
+      name: tr("L'Alcool (Protocole chauffé en cuve suspendu)", 'Alcohol (Heated vessel protocol suspended)', 'Alkohol (Erhitzung im Gerät ausgesetzt)'),
+      polarityTag: tr('Affinité Hydro-alcoolique (Macération à froid hors appareil)', 'Hydroalcoholic Affinity (Cold maceration outside appliance)', 'Hydroalkoholische Affinität (Kaltmazeration außerhalb des Geräts)'),
+      tempRange: tr('Température ambiante uniquement (pas de chauffe BloomLab®)', 'Ambient temperature only (no BloomLab® heating)', 'Nur Raumtemperatur (keine BloomLab®-Erhitzung)'),
+      ratio: tr('1:5 à 1:3 en bocal verre hermétique hors appareil', '1:5 to 1:3 in sealed glass jar outside appliance', '1:5 bis 1:3 im dichten Glas außerhalb des Geräts'),
+      duration: tr('Macération passive à froid hors BloomLab®', 'Ambient passive maceration outside BloomLab®', 'Passive Kaltmazeration außerhalb der BloomLab®'),
+      agitation: tr('Agitation manuelle en bocal fermé à température ambiante', 'Manual shaking in closed glass jar at room temp', 'Manuelles Schütteln im geschlossenen Glas bei Raumtemperatur'),
+      shelfLife: tr('Flacon ambré à l’abri de la lumière et chaleur', 'Amber glass away from light and heat', 'Braunglas licht- und wärmegeschützt'),
+      idealFor: tr('Usage documentaire sur les résines et alcaloïdes — en attente de validation matériel pour tout cycle chauffé.', 'Documentary reference for resins and alkaloids — awaiting hardware validation for heated cycles.', 'Dokumentarische Referenz für Harze und Alkaloide — Gerätevalidierung für erhitzte Zyklen ausstehend.'),
+      notes: tr('⚠️ Mesure de sécurité Bloom : ne pas introduire ni chauffer de solvant inflammable dans une cuve électrique tant qu’une validation fabricant explicite n’est pas délivrée.', '⚠️ Bloom safety measure: do not introduce or heat flammable alcohol inside electric appliances without explicit manufacturer certification.', '⚠️ Bloom-Sicherheitsmaßnahme: Keinen entzündlichen Alkohol in elektrischen Geräten erhitzen.')
     },
     {
       id: 'glycerine',
@@ -228,7 +228,7 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
       ratio: tr('Ratio glycérine ≥ 65 % (ex. 60-70 % / 30-40 % eau)', 'Glycerin ratio ≥ 65% (e.g. 60–70% / 30–40% water)', 'Glycerinanteil ≥ 65 % (z. B. 60–70 % / 30–40 % Wasser)'),
       duration: tr('90 à 150 min sous agitation continue', '90 to 150 min continuous stirring', '90 bis 150 Min. bei Dauerrühren'),
       agitation: tr('Brassage vortex continu (viscosité élevée)', 'Continuous vortex stirring (high viscosity)', 'Kontinuierlicher Vortex (hohe Viskosität)'),
-      shelfLife: tr('12 à 18 mois à l’abri des UV', '12–18 months away from UV', '12–18 Monate UV-geschützt'),
+      shelfLife: tr('Flacon ambré à l’abri des UV (selon teneur en eau)', 'Amber glass away from UV (depends on water ratio)', 'Braunglas UV-geschützt (abhängig vom Wasseranteil)'),
       idealFor: tr('Polyphénols, anthocyanes, composés aromatiques doux, flavonoïdes.', 'Polyphenols, anthocyanins, mild aromatics, flavonoids.', 'Polyphenole, Anthocyane, milde Aromastoffe, Flavonoide.'),
       notes: tr('Sa viscosité élevée demande un brassage vortex continu afin d’optimiser l’extraction sans recourir à l’éthanol.', 'Its higher viscosity calls for continuous vortex stirring to optimize extraction without ethanol.', 'Seine hohe Viskosität erfordert kontinuierliches Rühren für eine optimale Extraktion ohne Ethanol.')
     },
@@ -240,7 +240,7 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
       ratio: tr('1:5 à 1:8 (plantes sèches < 8 % d’humidité)', '1:5 to 1:8 (dry plants < 8% moisture)', '1:5 bis 1:8 (Trockenpflanzen < 8 % Feuchte)'),
       duration: tr('90 à 180 min', '90 to 180 min', '90 bis 180 Min.'),
       agitation: tr('Vortex doux en milieu clos', 'Gentle vortex in sealed vessel', 'Sanfter Vortex im geschlossenen System'),
-      shelfLife: tr('6 à 12 mois en flacon ambré', '6–12 months in amber glass', '6–12 Monate im Braunglas'),
+      shelfLife: tr('Flacon ambré à l’abri de l’air et de la lumière (surveiller l’odeur)', 'Amber glass away from air & light (monitor freshness)', 'Braunglas luft- und lichtgeschützt (Frische prüfen)'),
       idealFor: tr('Terpènes, vitamines liposolubles (A, D, E, K), caroténoïdes, phytostérols.', 'Terpenes, fat-soluble vitamins (A, D, E, K), carotenoids, phytosterols.', 'Terpene, fettlösliche Vitamine (A, D, E, K), Carotinoide, Phytosterole.'),
       notes: tr('Température maximale : 40-50°C — ne jamais dépasser pour éviter l’oxydation et préserver les acides gras essentiels (Oméga 3, 6, 9) de l’huile de support.', 'Max temperature: 40–50°C — never exceed to prevent oxidation and preserve essential fatty acids (Omega 3, 6, 9) of the carrier oil.', 'Maximaltemperatur: 40–50°C — niemals überschreiten, um Oxidation zu vermeiden und Omega-3, 6, 9-Fettsäuren zu schützen.')
     }
@@ -315,17 +315,17 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
     },
     {
       id: 'teinture-propolis',
-      name: tr('Teinture Mère de Propolis', 'Propolis Mother Tincture', 'Propolis-Urtinktur'),
-      objective: tr('Extraire les flavonoïdes et les résines de la propolis pour soutenir le terrain immunitaire.', 'Extract propolis flavonoids and resins to support seasonal terrain resilience.', 'Propolis-Flavonoide und -Harze zur Unterstützung der saisonalen Widerstandskraft extrahieren.'),
-      description: tr('Les résines cireuses de la propolis exigent un solvant hydro-alcoolique concentré. La chambre étanche BloomLab® maintient 45°C sans évaporation d’éthanol.', 'Waxy propolis resins require a concentrated hydroalcoholic solvent. BloomLab® sealed chamber holds 45°C without ethanol evaporation.', 'Wachsartige Propolisharze benötigen ein konzentriertes Ethanol-Gemisch. Die dichte BloomLab®-Kammer hält 45°C ohne Verdunstung.'),
-      phaseLabel: tr('Sachet B · Extraction Résineuse Amphiphile', 'Phase B · Amphiphilic Resin Extraction', 'Phase B · Amphiphile Harzextraktion'),
+      name: tr('Préparation de Propolis (Protocole alcool chauffé suspendu)', 'Propolis Preparation (Heated alcohol protocol suspended)', 'Propolis-Zubereitung (Erhitzter Alkohol ausgesetzt)'),
+      objective: tr('Documenter les flavonoïdes et résines de la propolis — hors cycle alcool chauffé en cuve BloomLab®.', 'Document propolis flavonoids and resins — outside heated BloomLab® alcohol cycles.', 'Propolis-Flavonoide und -Harze dokumentieren — ohne erhitzten Alkohol in der BloomLab®.'),
+      description: tr('⚠️ Protocole suspendu sur BloomLab® : le chauffage d’éthanol en appareil électrique est suspendu dans l’attente d’une validation sécurité fabricant. Privilégier une macération huileuse/glycérinée douce ou une macération alcoolique à froid en bocal verre hors appareil.', '⚠️ Suspended on BloomLab®: heating ethanol in electric vessels is suspended pending manufacturer safety validation. Use ambient glass maceration outside the appliance or an alcohol-free carrier.', '⚠️ Auf BloomLab® ausgesetzt: Das Erhitzen von Ethanol im Gerät ist bis zur Herstellerfreigabe ausgesetzt.'),
+      phaseLabel: tr('Protocole Suspendu (Alcool chauffé)', 'Suspended Protocol (Heated alcohol)', 'Ausgesetztes Protokoll (Erhitzter Alkohol)'),
       composition: tr('30 g de propolis brute finement fragmentée', '30 g finely crushed raw propolis', '30 g fein zerkleinertes Rohpropolis'),
-      solvent: tr('200 ml d’alcool à 70°', '200 ml 70% food-grade alcohol', '200 ml 70%iger Ansatzalkohol'),
-      temperature: '45°C',
-      duration: tr('3h en chambre close', '3h in sealed chamber', '3 Std. in geschlossener Kammer'),
-      administration: tr('Usage oral dilué dans une cuillère de miel ou un verre d’eau tiède après décantation et filtration soigneuse. Conservation : flacon ambré, 3 ans.', 'Diluted oral use in a spoon of honey or lukewarm water after settling and fine filtration. Keeps 3 years in amber glass.', 'Verdünnt in etwas Honig oder lauwarmem Wasser nach sorgfältiger Filtration einnehmen. Im Braunglas 3 Jahre haltbar.'),
-      dosage: tr('Usage général adulte : 10 à 15 gouttes diluées, 1 à 2 fois par jour ; dose maximale indicative : 30 gouttes/jour.', 'General adult guidance: 10–15 diluted drops, 1–2 times daily; indicative max: 30 drops/day.', 'Erwachsene: 10–15 verdünnte Tropfen 1–2x täglich; Richtwert max. 30 Tropfen/Tag.'),
-      precautions: tr('Ne jamais consommer pur ni approcher d’une source de flamme lors de la préparation. Filtrer après refroidissement complet.', 'Never use undiluted; keep away from open flames during preparation. Filter once fully cooled.', 'Niemals unverdünnt anwenden und von offenen Flammen fernhalten. Erst nach vollständigem Abkühlen filtrieren.'),
+      solvent: tr('Macération en bocal verre à température ambiante hors appareil (ne pas chauffer d’alcool en cuve)', 'Ambient sealed glass jar maceration outside appliance (do not heat alcohol in tank)', 'Kaltmazeration im geschlossenen Glas außerhalb des Geräts (keinen Alkohol erhitzen)'),
+      temperature: tr('Ambiante (hors BloomLab®)', 'Ambient (outside BloomLab®)', 'Raumtemperatur (außerhalb BloomLab®)'),
+      duration: tr('Macération passive à froid hors appareil', 'Ambient cold maceration outside appliance', 'Kaltmazeration außerhalb des Geräts'),
+      administration: tr('Usage documentaire uniquement ; vérifier l’absence d’allergie aux produits de la ruche et demander conseil à un professionnel de santé.', 'Educational reference only; verify absence of bee-product allergy and consult a healthcare professional.', 'Nur zu Bildungszwecken; Bienenprodukt-Allergien ausschließen und ärztlichen Rat einholen.'),
+      dosage: tr('Selon avis professionnel (préparation à l’éthanol suspendue sur appareil BloomLab®).', 'Per professional guidance (heated ethanol protocol suspended on BloomLab®).', 'Nach fachlicher Empfehlung (erhitztes Ethanol-Protokoll in BloomLab® ausgesetzt).'),
+      precautions: tr('Ne jamais chauffer d’éthanol ou de solvant inflammable dans une cuve électrique.', 'Never heat ethanol or flammable solvents inside an electric appliance.', 'Niemals Ethanol oder entzündliche Lösungsmittel im elektrischen Gerät erhitzen.'),
       contraindications: tr('Contre-indiqué chez les femmes enceintes ou allaitantes, chez les enfants, en cas d’allergie aux produits de la ruche, d’asthme allergique ou de contre-indication à l’alcool.', 'Contraindicated during pregnancy, breastfeeding, in children, and in case of bee-product allergy, allergic asthma, or alcohol restriction.', 'Nicht geeignet in Schwangerschaft, Stillzeit, für Kinder sowie bei Bienenprodukt-Allergie, allergischem Asthma oder Alkoholunverträglichkeit.')
     },
     {
@@ -349,7 +349,7 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
     {
       organ: tr('Foie', 'Liver', 'Leber'),
       polarity: tr('Amphiphile', 'Amphiphilic', 'Amphiphil'),
-      idealSolvent: tr('Alcool + Glycérine', 'Alcohol + Glycerin', 'Alkohol + Glycerin'),
+      idealSolvent: tr('Glycérine ou Eau / Huile (hors alcool chauffé)', 'Glycerin or Water / Oil (no heated alcohol)', 'Glycerin oder Wasser / Öl (kein erhitzter Alkohol)'),
       plants: tr('Chardon-Marie, Pissenlit', 'Milk Thistle, Dandelion', 'Mariendistel, Löwenzahn')
     },
     {
@@ -367,7 +367,7 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
     {
       organ: tr('Système Nerveux', 'Nervous System', 'Nervensystem'),
       polarity: tr('Mixte', 'Dual', 'Gemischt'),
-      idealSolvent: tr('Alcool (Teinture)', 'Alcohol (Tincture)', 'Alkohol (Tinktur)'),
+      idealSolvent: tr('Eau ou Glycérine (sans alcool)', 'Water or Glycerin (alcohol-free)', 'Wasser oder Glycerin (alkoholfrei)'),
       plants: tr('Passiflore, Valériane', 'Passionflower, Valerian', 'Passionsblume, Baldrian')
     }
   ];
@@ -384,14 +384,14 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
       plantCategory: tr('Résines, Écorces & Bourgeons cireux', 'Resins, Barks & Waxy Buds', 'Harze, Rinden & wachsartige Knospen'),
       examples: tr('Propolis, Encens (Boswellia), Cannelle, Bourgeon de Peuplier', 'Propolis, Frankincense (Boswellia), Cinnamon, Poplar Bud', 'Propolis, Weihrauch (Boswellia), Zimt, Pappelknospe'),
       dominantPolarity: tr('Lipophile / Amphiphile dense', 'Dense Lipophilic / Amphiphilic', 'Dicht lipophil / amphiphil'),
-      recommendedSolvent: tr('Alcool titré 60–70° ou Huile chaude 48 °C', '60–70% alcohol or Warm Oil at 48 °C', '60–70 % Alkohol oder warmes Öl bei 48 °C'),
-      sequenceTip: tr('L’eau seule est inefficace : seule la phase B libère les acides résiniques.', 'Water alone fails: only Phase B releases resinic acids.', 'Wasser allein reicht nicht: Nur Phase B löst Harzsäuren.')
+      recommendedSolvent: tr('Huile chaude 48 °C en BloomLab® (alcool chauffé suspendu)', 'Warm Oil at 48 °C in BloomLab® (heated alcohol suspended)', 'Warmes Öl bei 48 °C in BloomLab® (erhitzter Alkohol ausgesetzt)'),
+      sequenceTip: tr('L’eau seule est inefficace : seule la phase B huileuse (ou une macération alcoolique à froid hors appareil) capte les acides résiniques.', 'Water alone fails: only oil Phase B (or cold alcohol maceration outside the appliance) captures resinic acids.', 'Wasser allein reicht nicht: Nur Öl-Phase B oder Kaltmazeration außerhalb des Geräts löst Harzsäuren.')
     },
     {
       plantCategory: tr('Racines fibreuses & Champignons adaptogènes', 'Fibrous Roots & Adaptogenic Mushrooms', 'Faserige Wurzeln & adaptogene Vitalpilze'),
       examples: tr('Reishi, Astragale, Ashwagandha, Curcuma', 'Reishi, Astragalus, Ashwagandha, Turmeric', 'Reishi, Astragalus, Ashwagandha, Kurkuma'),
       dominantPolarity: tr('Double polarité (Bêta-glucanes polaires + Triterpènes lipophiles)', 'Dual polarity (Polar beta-glucans + Lipophilic triterpenes)', 'Doppelpolarität (Polare Beta-Glucane + Lipophile Triterpene)'),
-      recommendedSolvent: tr('Séquençage A/B complet (Eau 75 °C puis Alcool/Huile 45 °C)', 'Full A/B Sequencing (Water 75 °C then Alcohol/Oil 45 °C)', 'Volle A/B-Sequenzierung (Wasser 75 °C, dann Alkohol/Öl 45 °C)'),
+      recommendedSolvent: tr('Séquençage A/B complet (Eau 75 °C puis Huile 45 °C)', 'Full A/B Sequencing (Water 75 °C then Oil 45 °C)', 'Volle A/B-Sequenzierung (Wasser 75 °C, dann Öl 45 °C)'),
       sequenceTip: tr('Associer les deux phases restitue le Totum complet de la matrice ligneuse.', 'Combining both phases restores the full woody Totum.', 'Die Kombination beider Phasen erfasst das vollständige Totum.')
     },
     {
@@ -681,14 +681,14 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
               bulletPoints={[
                 tr('Fiches techniques des 4 solvants (Températures, Ratios, Durées, Conservation)', 'Technical sheets for all 4 solvents (Temperatures, Ratios, Durations, Shelf Life)', 'Datenblätter aller 4 Lösungsmittel (Temperaturen, Verhältnisse, Dauer, Haltbarkeit)'),
                 tr('Recette Signature : Sérum Polyphénols à la Glycérine (sans alcool)', 'Signature Recipe: Alcohol-Free Glycerin Polyphenol Serum', 'Signatur-Rezept: Alkoholfreies Glyzerin-Polyphenol-Serum'),
-                tr('Recette Signature : Teinture Mère de Propolis en milieu clos', 'Signature Recipe: Closed-Vessel Propolis Mother Tincture', 'Signatur-Rezept: Propolis-Urtinktur im geschlossenen Gefäß'),
+                tr('Note sécurité propolis & solvants (alcool chauffé en cuve suspendu)', 'Propolis & solvent safety note (heated alcohol in vessel suspended)', 'Sicherheitshinweis Propolis & Lösungsmittel (erhitzter Alkohol ausgesetzt)'),
                 tr('Matrice complète des associations organes végétaux / polarité / solvants', 'Complete plant organs / polarity / solvent pairing matrix', 'Vollständige Zuordnungsmatrix: Pflanzenorgane / Polarität / Lösungsmittel')
               ]}
               teaserContent={
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 opacity-90">
                   <div className="bg-white p-5 rounded-2xl border border-[#E7DFD3] space-y-2">
                     <div className="text-xs font-black uppercase tracking-wider text-[#E8772E]">{tr('Aperçu Fiches', 'Sheet Preview', 'Blatt-Vorschau')}</div>
-                    <div className="font-bold text-[#1E2E25]">{tr('Paramètres Calibrés ±0,5 °C', 'Calibrated Parameters ±0.5 °C', 'Kalibrierte Parameter ±0,5 °C')}</div>
+                    <div className="font-bold text-[#1E2E25]">{tr('Paramètres Pédagogiques Régulés', 'Regulated Educational Parameters', 'Geregelte pädagogische Parameter')}</div>
                     <p className="text-xs text-[#3E4A3D]/75 leading-relaxed">
                       {tr(
                         'Ratios exacts plante sèche / solvant et paliers thermiques pour éviter la dénaturation.',

@@ -38,10 +38,10 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
 
   const seoDescription = isBloomLab
     ? (lang === 'fr'
-        ? "Transformez vos plantes brutes en sérums capillaires, huiles de soin et infusions concentrées en quelques heures avec la BloomLab® (cuve Inox 304, ±0,5 °C)."
+        ? "Préparez sérums capillaires, huiles de soin et infusions maison en quelques heures avec la BloomLab® (cuve Inox 304, consigne nominale ±0,5 °C)."
         : lang === 'de'
-        ? "Verwandeln Sie Rohpflanzen in wenigen Stunden in Haarseren, Pflegeöle und konzentrierte Aufgüsse mit der BloomLab® (304-Edelstahl, ±0,5 °C)."
-        : "Transform raw plants into hair serums, care oils, and concentrated infusions in hours with BloomLab® (304 stainless steel, ±0.5°C).")
+        ? "Bereiten Sie Haarseren, Pflegeöle und Aufgüsse in wenigen Stunden mit der BloomLab® zu (304-Edelstahl, Nennwert ±0,5 °C)."
+        : "Craft homemade hair serums, care oils, and infusions in hours with BloomLab® (304 stainless steel, nominal ±0.5°C setting).")
     : (sheet.description || '');
 
   const productSchema: Record<string, any> = {
@@ -107,15 +107,7 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
     }
   };
 
-  if (isBloomLab || productId === 'pack-signature') {
-    productSchema.aggregateRating = {
-      "@type": "AggregateRating",
-      "ratingValue": "4.3",
-      "reviewCount": "7",
-      "bestRating": "5",
-      "worstRating": "1"
-    };
-  }
+  /* schema.org AggregateRating volontairement omis pour les évaluations externes hébergées sur Amazon.fr (voir AmazonSocialProof.tsx) */
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -175,10 +167,10 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
       {/* Promotional Banner */}
       <div className="bg-[#D97706]/10 text-[#B45309] border-b border-[#D97706]/30 text-center py-2.5 px-4 text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
         {lang === 'fr' 
-          ? "🇫🇷 Marque française • Conception des protocoles & kits botaniques en France • Expédition 24/48h • Garantie 1 an • Paiement 3x sans frais" 
+          ? "🇫🇷 Conception française des protocoles • Expédition 24/48h • Garantie légale 2 ans (UE) + commerciale 1 an" 
           : lang === 'de'
-          ? "🇫🇷 Französische Marke • Protokolle & Botanik-Kits aus Frankreich • Versand 24/48h • 1 Jahr Garantie • 3x zinsfrei"
-          : "🇫🇷 French Brand • Protocols & botanical kits crafted in France • 24/48h Shipping • 1-Year Warranty • 3x Fee-Free"}
+          ? "🇫🇷 Französische Protokoll-Entwicklung • Versand 24/48h • 2 Jahre gesetzl. Gewährleistung (EU) + 1 Jahr Garantie"
+          : "🇫🇷 Protocols crafted in France • 24/48h Shipping • 2-Year EU Legal Warranty + 1-Year Commercial"}
       </div>
 
       <article data-product-page="true" className="product-detail w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
@@ -348,28 +340,22 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
                   ? "BloomLab® — Der Botanische Präzisionsextraktor für Ihre Hauspflege"
                   : "BloomLab® — The Precision Botanical Extractor for Your Home Care"}
               </h1>
-              <div className="mb-4 text-xs sm:text-sm font-bold text-[#B45309] flex flex-wrap items-center gap-2">
-                <span>
-                  {lang === 'fr'
-                    ? "⭐⭐⭐⭐☆ 4,3/5 (Basé sur les avis vérifiés de nos premiers utilisateurs)"
-                    : lang === 'de'
-                    ? "⭐⭐⭐⭐☆ 4,3/5 (Basierend auf verifizierten Bewertungen unserer ersten Nutzer)"
-                    : "⭐⭐⭐⭐☆ 4.3/5 (Based on verified reviews from our early users)"}
-                </span>
+              <div className="mb-4">
+                <AmazonRatingBadge lang={lang} />
               </div>
               <div className="text-base sm:text-lg font-extrabold text-[#1B3022] mb-2">
                 {lang === 'fr'
-                  ? "Ne devinez plus. Extrayez avec précision."
+                  ? "Ne devinez plus. Extrayez avec régularité."
                   : lang === 'de'
-                  ? "Schluss mit Raten. Präzise extrahieren."
-                  : "Stop guessing. Extract with precision."}
+                  ? "Schluss mit Raten. Gleichmäßig extrahieren."
+                  : "Stop guessing. Extract with consistency."}
               </div>
               <p className="text-sm sm:text-base text-[#1B3022]/80 font-medium mb-6 leading-relaxed">
                 {lang === 'fr'
-                  ? "Transformez vos plantes brutes en sérums capillaires, huiles de soin et infusions concentrées en quelques heures. La BloomLab® remplace l'improvisation du bain-marie par la rigueur d'un laboratoire, en préservant l'intégralité du Totum végétal (l'ensemble des actifs synergiques de la plante)."
+                  ? "Préparez vos sérums capillaires, huiles de soin et infusions maison en quelques heures. La BloomLab® remplace l'approximation du bain-marie par une régulation thermique guidée pour préserver les fractions délicates du Totum végétal."
                   : lang === 'de'
-                  ? "Verwandeln Sie Rohpflanzen in wenigen Stunden in Haarseren, Pflegeöle und konzentrierte Aufgüsse. Die BloomLab® ersetzt das improvisierte Wasserbad durch Laborpräzision und bewahrt das vollständige Pflanzen-Totum."
-                  : "Transform raw botanicals into hair serums, skincare oils, and concentrated infusions in hours. BloomLab® replaces stovetop guesswork with laboratory rigor, preserving the complete plant Totum."}
+                  ? "Bereiten Sie Haarseren, Pflegeöle und Aufgüsse in wenigen Stunden zu. Die BloomLab® ersetzt das improvisierte Wasserbad durch eine geführte Temperaturregelung zum Schutz des Pflanzen-Totums."
+                  : "Craft hair serums, skincare oils, and infusions in hours. BloomLab® replaces stovetop guesswork with guided thermal regulation to protect delicate fractions of the plant Totum."}
               </p>
             </>
           ) : (
@@ -417,7 +403,11 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
                         {lang === 'fr' ? "OPTION 1 : BloomLab® Solo" : lang === 'de' ? "OPTION 1: BloomLab® Solo" : "OPTION 1: BloomLab® Solo"}
                       </div>
                       <div className="text-[11px] text-[#1B3022]/65">
-                        {lang === 'fr' ? "L'essentiel pour débuter • Prix Black Friday" : lang === 'de' ? "Das Wesentliche für den Start • Black-Friday-Preis" : "Essentials to start • Black Friday Price"}
+                        {lang === 'fr'
+                          ? "5 accessoires offerts + Accès 3 mois (+160 recettes) • Prix Black Friday"
+                          : lang === 'de'
+                          ? "5 Gratis-Zubehörteile + 3 Mon. Zugang (+160 Rezepte) • Black-Friday-Preis"
+                          : "5 free accessories + 3-mo access (160+ recipes) • Black Friday Price"}
                       </div>
                     </div>
                     <div className="text-right shrink-0">
@@ -469,10 +459,10 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
                   <ShieldCheck className="w-3.5 h-3.5 shrink-0 text-[#1B3022]/60" />
                   <span>
                     {lang === 'fr'
-                      ? "Satisfait ou remboursé 30 jours • Garantie 1 an • 3x ou 4x sans frais Klarna / PayPal"
+                      ? "Rétractation légale 14 j • Essai commercial 30 j • Garantie légale 2 ans (UE) + commerciale 1 an • Stripe & PayPal"
                       : lang === 'de'
-                      ? "30 Tage Geld-zurück • 1 Jahr Garantie • 3x/4x zinsfrei via Klarna / PayPal"
-                      : "30-day money-back trial • 1-year warranty • 3x/4x fee-free via Klarna / PayPal"}
+                      ? "14 Tage gesetzl. Widerruf • 30 Tage Test • 2 Jahre gesetzl. Gewährleistung (EU) + 1 Jahr Garantie • Stripe & PayPal"
+                      : "14-day legal withdrawal • 30-day trial • 2-year EU legal + 1-year commercial warranty • Stripe & PayPal"}
                   </span>
                 </p>
               </div>
@@ -559,21 +549,21 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="bg-white border border-[#1B3022]/10 rounded-3xl p-6 shadow-xs space-y-3">
                   <h3 className="text-lg font-bold text-[#1B3022]">
-                    {lang === 'fr' ? "🌡️ Thermorégulation de Précision (±0,5 °C)" : lang === 'de' ? "🌡️ Präzise Thermoregulation (±0,5 °C)" : "🌡️ Precision Thermoregulation (±0.5°C)"}
+                    {lang === 'fr' ? "🌡️ Thermorégulation guidée (spéc. nominale ±0,5 °C)" : lang === 'de' ? "🌡️ Geführte Thermoregulation (Nennwert ±0,5 °C)" : "🌡️ Guided Thermoregulation (nominal ±0.5°C)"}
                   </h3>
                   <p className="text-sm text-[#1B3022]/80 leading-relaxed">
                     {lang === 'fr'
-                      ? "Fini les actifs brûlés. Que ce soit pour une extraction douce à 50 °C (préservation des terpènes et huiles essentielles) ou une activation à 121 °C (découplage des résines denses), la température reste stable."
+                      ? "Limite les pics de chaleur : qu'il s'agisse d'une extraction douce à 50 °C (notes volatiles et huiles essentielles) ou d'un cycle jusqu'à 121 °C (résines denses), la consigne reste encadrée (spécification nominale fabricant non certifiée par laboratoire tiers)."
                       : lang === 'de'
-                      ? "Keine verbrannten Wirkstoffe mehr. Ob sanfte Extraktion bei 50 °C (Schutz von Terpenen und ätherischen Ölen) oder Aktivierung bei 121 °C (Aufschluss dichter Harze) – die Temperatur bleibt stabil."
-                      : "No more scorched actives. Whether extracting gently at 50°C (preserving terpenes and essential oils) or activating dense resins at 121°C, temperature remains locked."}
+                      ? "Begrenzt Hitzespitzen: Ob sanfte Extraktion bei 50 °C oder Zyklus bis 121 °C für dichte Harze – die Zieltemperatur bleibt geregelt (Hersteller-Nennwert ohne externe Laborkalibrierung)."
+                      : "Limits heat spikes: whether extracting gently at 50°C or running cycles up to 121°C for dense resins, the setpoint stays regulated (nominal manufacturer rating, not externally lab-certified)."}
                   </p>
                   <div className="pt-1 text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2">
                     {lang === 'fr'
-                      ? "✅ Vérifié : préserve les molécules thermolabiles."
+                      ? "Repère fabricant : conçue pour protéger les fractions thermosensibles."
                       : lang === 'de'
-                      ? "✅ Geprüft: schützt hitzeempfindliche Moleküle."
-                      : "✅ Verified: preserves heat-labile molecules."}
+                      ? "Herstellerangabe: konzipiert zum Schutz hitzeempfindlicher Fraktionen."
+                      : "Manufacturer spec: designed to help protect heat-sensitive fractions."}
                   </div>
                 </div>
 
@@ -713,6 +703,26 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
                       </li>
                       <li className="flex items-start gap-2.5">
                         <Check className="w-4 h-4 text-[#D97706] shrink-0 mt-0.5" />
+                        <span>
+                          {lang === 'fr'
+                            ? "5 Accessoires Offerts pour bien débuter : 1 flacon pipette 100 ml en verre opaque capuchon en bambou, 1 pot crème 50 g verre opaque couvercle en bambou, 1 distributeur de sérum pour cuir chevelu, 1 sac de filtration 90 microns, 1 gant silicone anti-brûlure"
+                            : lang === 'de'
+                            ? "5 Gratis-Zubehörteile für den Start: 1 Pipettenflasche 100 ml aus blickdichtem Glas mit Bambusverschluss, 1 Cremetiegel 50 g aus blickdichtem Glas mit Bambusdeckel, 1 Kopfhaut-Serumspender, 1 Filterbeutel 90 Mikron, 1 Hitzeschutz-Silikonhandschuh"
+                            : "5 Free Starter Accessories: 1× 100ml opaque glass dropper bottle with bamboo cap, 1× 50g opaque glass cream jar with bamboo lid, 1× scalp serum dispenser, 1× 90-micron filtration bag, 1× heat-resistant silicone glove"}
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2.5">
+                        <Check className="w-4 h-4 text-[#D97706] shrink-0 mt-0.5" />
+                        <span>
+                          {lang === 'fr'
+                            ? "Accès 3 mois à plus de 160 recettes (culinaire, cosmétique, plantes médicinales)"
+                            : lang === 'de'
+                            ? "3 Monate Zugang zu über 160 Rezepten (Kulinarik, Kosmetik, Heilpflanzen)"
+                            : "3-month access to 160+ recipes (culinary, cosmetics, medicinal plants)"}
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2.5">
+                        <Check className="w-4 h-4 text-[#D97706] shrink-0 mt-0.5" />
                         <span>{lang === 'fr' ? "Manuel d'utilisation & Accès au Guide Digital \"100 Recettes Pas-à-Pas\"" : lang === 'de' ? "Bedienungsanleitung & Zugang zum digitalen Rezeptbuch \"100 Schritt-für-Schritt-Rezepte\"" : "User manual & access to the \"100 Step-by-Step Recipes\" Digital Guide"}</span>
                       </li>
                     </ul>
@@ -835,38 +845,38 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
                 </div>
                 <div className="bg-white rounded-2xl p-5 border border-[#1B3022]/10 space-y-1">
                   <div className="font-bold text-[#1B3022]">
-                    {lang === 'fr' ? "🔄 Satisfait ou Remboursé" : lang === 'de' ? "🔄 Zufriedenheitsgarantie" : "🔄 Money-Back Guarantee"}
+                    {lang === 'fr' ? "🔄 Rétractation & Essai" : lang === 'de' ? "🔄 Widerruf & Testphase" : "🔄 Withdrawal & Trial"}
                   </div>
                   <p className="text-sm text-[#1B3022]/75">
                     {lang === 'fr'
-                      ? "30 jours pour tester la machine chez vous. Si elle ne révolutionne pas vos préparations, nous la reprenons."
+                      ? "Droit légal de rétractation de 14 jours + fenêtre d'essai commerciale de 30 jours selon les conditions de la page Livraison & Retours."
                       : lang === 'de'
-                      ? "30 Tage zu Hause testen. Wenn sie Ihre Zubereitungen nicht revolutioniert, nehmen wir sie zurück."
-                      : "30 days to test the appliance at home. If it doesn't transform your preparations, we take it back."}
+                      ? "14 Tage gesetzliches Widerrufsrecht + 30 Tage kommerzielles Rückgabefenster gemäß unserer Versand- & Rückgabeseite."
+                      : "14-day statutory EU withdrawal right + 30-day commercial return window per our Shipping & Returns policy."}
                   </p>
                 </div>
                 <div className="bg-white rounded-2xl p-5 border border-[#1B3022]/10 space-y-1">
                   <div className="font-bold text-[#1B3022]">
-                    {lang === 'fr' ? "⚡ Garantie Constructeur" : lang === 'de' ? "⚡ Herstellergarantie" : "⚡ Manufacturer Warranty"}
+                    {lang === 'fr' ? "⚡ Garanties Légale & Commerciale" : lang === 'de' ? "⚡ Gewährleistung & Garantie" : "⚡ Legal & Commercial Warranty"}
                   </div>
                   <p className="text-sm text-[#1B3022]/75">
                     {lang === 'fr'
-                      ? "1 an de garantie constructeur sur l'électronique et la cuve."
+                      ? "Garantie légale de conformité de 2 ans (UE) complétée par la garantie commerciale constructeur d'1 an sur l'électronique et la cuve."
                       : lang === 'de'
-                      ? "1 Jahr Herstellergarantie auf Elektronik und Edelstahlbehälter."
-                      : "1-year manufacturer warranty on electronics and stainless steel tank."}
+                      ? "2 Jahre gesetzliche Gewährleistung (EU) plus 1 Jahr kommerzielle Herstellergarantie auf Elektronik und Behälter."
+                      : "Mandatory 2-year EU legal conformity warranty plus 1-year commercial manufacturer warranty on electronics and tank."}
                   </p>
                 </div>
                 <div className="bg-white rounded-2xl p-5 border border-[#1B3022]/10 space-y-1">
                   <div className="font-bold text-[#1B3022]">
-                    {lang === 'fr' ? "💳 Paiement Flexible" : lang === 'de' ? "💳 Flexible Zahlung" : "💳 Flexible Payment"}
+                    {lang === 'fr' ? "💳 Paiement Sécurisé" : lang === 'de' ? "💳 Sichere Zahlung" : "💳 Secure Payment"}
                   </div>
                   <p className="text-sm text-[#1B3022]/75">
                     {lang === 'fr'
-                      ? "3x ou 4x sans frais via Klarna ou PayPal."
+                      ? "Carte bancaire (Stripe) ou PayPal selon les options affichées lors du passage en caisse."
                       : lang === 'de'
-                      ? "3x oder 4x zinsfrei über Klarna oder PayPal."
-                      : "3x or 4x interest-free via Klarna or PayPal."}
+                      ? "Kreditkarte (Stripe) oder PayPal gemäß den im Checkout angezeigten Optionen."
+                      : "Card payment (Stripe) or PayPal depending on the options displayed at checkout."}
                   </p>
                 </div>
               </div>

@@ -128,14 +128,34 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
     setIsCartOpen(true);
   };
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
+  const [newsletterError, setNewsletterError] = useState<string | null>(null);
+  const [newsletterLoading, setNewsletterLoading] = useState(false);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (newsletterEmail.trim()) {
+    const email = newsletterEmail.trim();
+    if (!email) return;
+    setNewsletterLoading(true);
+    setNewsletterError(null);
+    try {
+      const res = await fetch('/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) throw new Error('Request failed');
       setNewsletterSent(true);
-      setTimeout(() => {
-        setNewsletterSent(false);
-        setNewsletterEmail('');
-      }, 4000);
+      setNewsletterEmail('');
+    } catch {
+      setNewsletterError(
+        isFR
+          ? "L'enregistrement serveur n'a pas abouti pour le moment. Contactez contact@bloombybotanik.com."
+          : isDE
+          ? "Die Server-Registrierung konnte derzeit nicht abgeschlossen werden. Kontakt: contact@bloombybotanik.com."
+          : "Server registration could not be completed right now. Please contact contact@bloombybotanik.com."
+      );
+    } finally {
+      setNewsletterLoading(false);
     }
   };
 
@@ -143,20 +163,20 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
     ? [
         "🇫🇷 Marque française • Conception des protocoles & kits botaniques en France",
         "Expédition sous 24/48h",
-        "Garantie 1 an",
+        "Garantie légale 2 ans (UE) + commerciale 1 an",
         "Paiement en 3x sans frais"
       ]
     : isDE
     ? [
         "🇫🇷 Französische Marke • Protokolle & Botanik-Kits aus Frankreich",
         "Versand in 24/48h",
-        "1 Jahr Garantie",
+        "2 J. gesetzl. Gewährleistung (EU) + 1 J. Garantie",
         "3x zinsfreie Ratenzahlung"
       ]
     : [
         "🇫🇷 French Brand • Protocols & botanical kits crafted in France",
         "24/48h Shipping",
-        "1-Year Warranty",
+        "2-Yr EU Legal + 1-Yr Commercial Warranty",
         "3x Fee-Free Payment"
       ];
 
@@ -328,10 +348,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               {/* Sous-titre Plain-language (Niveau 1 immédiat) */}
               <p className="text-base sm:text-lg md:text-xl text-[#1E2E25]/90 font-medium leading-relaxed">
                 {isFR 
-                  ? "La BloomLab® reproduit les paramètres des laboratoires (température contrôlée, durée et agitation douce) pour extraire le meilleur des plantes sans jamais les brûler. Préparez chez vous vos huiles de soin, sérums, teintures et infusions concentrées d'une qualité exceptionnelle." 
+                  ? "La BloomLab® s'appuie sur des paramètres reproductibles (température guidée, durée et agitation douce) pour extraire les plantes sans les brûler. Préparez chez vous vos huiles de soin, sérums, macérats glycérinés et infusions concentrées (tout usage d'alcool chauffé en cuve est suspendu par précaution)." 
                   : isDE 
-                  ? "Die BloomLab® bildet Laborparameter (kontrollierte Temperatur, Dauer und sanftes Rühren) exakt nach, um das Beste aus Pflanzen zu gewinnen, ohne sie zu verbrennen. Bereiten Sie Pflegeöle, Seren, Tinkturen und konzentrierte Aufgüsse in außergewöhnlicher Qualität zu Hause zu." 
-                  : "BloomLab® reproduces laboratory parameters (controlled temperature, duration, and gentle stirring) to extract the best from plants without ever burning them. Prepare skincare oils, serums, tinctures, and concentrated infusions of exceptional quality at home."}
+                  ? "Die BloomLab® arbeitet mit reproduzierbaren Parametern (geführte Temperatur, Dauer und sanftes Rühren), um Pflanzen ohne Verbrennen zu extrahieren. Bereiten Sie Pflegeöle, Seren, Glycerin-Mazerate und konzentrierte Aufgüsse zu Hause zu (erhitzter Alkohol im Behälter ausgesetzt)." 
+                  : "BloomLab® relies on repeatable parameters (guided temperature, duration, and gentle stirring) to extract herbs without scorching them. Prepare skincare oils, serums, glycerin macerates, and concentrated infusions at home (heated alcohol inside the chamber is suspended)."}
               </p>
             </div>
 
@@ -370,10 +390,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               <div className="inline-flex flex-wrap items-center gap-2 px-4 py-2 rounded-xl bg-white border border-[#E7DFD3] text-xs sm:text-sm font-bold text-[#1E2E25] shadow-2xs">
                 <span>
                   {isFR
-                    ? "⭐⭐⭐⭐⭐ 4,3/5 sur Amazon.fr • Cuve 100 % Inox 304 sans plastique • Satisfait ou remboursé 30 jours"
+                    ? "Note Amazon.fr : 4,3/5 (7 avis vérifiés) • Cuve Inox 304 sans plastique • Rétractation 14 j + essai 30 j"
                     : isDE
-                    ? "⭐⭐⭐⭐⭐ 4,3/5 auf Amazon.fr • 100 % Edelstahl 304 ohne Kunststoff • 30 Tage Geld-zurück-Garantie"
-                    : "⭐⭐⭐⭐⭐ 4.3/5 on Amazon.fr • 100% plastic-free 304 Stainless Tank • 30-day money-back guarantee"}
+                    ? "Amazon.fr: 4,3/5 (7 Bewertungen) • Edelstahl 304 ohne Kunststoff • 14 T. Widerruf + 30 T. Testphase"
+                    : "Amazon.fr: 4.3/5 (7 verified reviews) • Plastic-free 304 Steel Tank • 14-day withdrawal + 30-day trial"}
                 </span>
               </div>
             </div>
@@ -423,10 +443,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   </h3>
                   <p className="text-xs sm:text-sm text-white/85 leading-relaxed">
                     {isFR
-                      ? "Pas besoin d'être herboriste ou chimiste. Mettez vos plantes séchées ou fraîches dans le panier en inox, versez votre huile végétale, votre eau ou votre alcool titré, choisissez la température et laissez BloomLab® travailler en silence."
+                      ? "Pas besoin d'être herboriste ou chimiste. Mettez vos plantes séchées ou fraîches dans le panier en inox, versez votre huile végétale, votre eau ou votre glycérine végétale, choisissez la température et laissez BloomLab® travailler en silence."
                       : isDE
-                      ? "Sie müssen weder Kräuterkundler noch Chemiker sein. Geben Sie trockene oder frische Pflanzen in den Edelstahlkorb, fügen Sie Pflanzenöl, Wasser oder Alkohol hinzu, wählen Sie die Temperatur und lassen Sie BloomLab® leise arbeiten."
-                      : "No need to be an herbalist or chemist. Place your dried or fresh herbs in the stainless steel basket, pour your carrier oil, water, or alcohol, pick the temperature, and let BloomLab® work silently."}
+                      ? "Sie müssen weder Kräuterkundler noch Chemiker sein. Geben Sie trockene oder frische Pflanzen in den Edelstahlkorb, fügen Sie Pflanzenöl, Wasser oder Glycerin hinzu, wählen Sie die Temperatur und lassen Sie BloomLab® leise arbeiten."
+                      : "No need to be an herbalist or chemist. Place your dried or fresh herbs in the stainless steel basket, pour your carrier oil, water, or vegetable glycerin, pick the temperature, and let BloomLab® work silently."}
                   </p>
                   {showVideoPreview && (
                     <div className="p-3 rounded-xl bg-black/30 border border-white/15 text-xs text-[#C8AB8A] font-medium">
@@ -574,45 +594,45 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               <h3 className="text-xl font-black text-[#1E2E25]">
                 {isFR ? "Comment l'extraire ?" : isDE ? "Wie extrahieren?" : "How to extract?"}
               </h3>
-              <p className="text-[#1E2E25]/80 text-sm leading-relaxed">
-                {isFR 
-                  ? "Hydrosoluble, liposoluble ou hydroalcoolique : la température ciblée, la durée et le brassage continu déterminent si vous capturez le Totum ou détruisez les actifs."
-                  : isDE 
-                  ? "Wasserlöslich, fettlöslich oder hydroalkoholisch: Gezielte Temperatur und Rühren entscheiden über den Erfolg."
-                  : "Water-soluble, fat-soluble or hydroalcoholic: targeted temperature and continuous stirring determine success."}
-              </p>
+                  <p className="text-[#1E2E25]/80 text-sm leading-relaxed">
+                    {isFR 
+                      ? "Hydrosoluble (eau, glycérine) ou liposoluble (huiles végétales) : la température ciblée, la durée et le brassage continu orientent la capture des fractions aromatiques et végétales (l'alcool chauffé en cuve est suspendu)."
+                      : isDE 
+                      ? "Wasserlöslich oder fettlöslich: Gezielte Temperatur und Rühren bestimmen den Auszug (erhitzter Alkohol im Behälter ausgesetzt)."
+                      : "Water-soluble (water, glycerin) or fat-soluble (plant oils): targeted temperature and continuous stirring guide botanical extraction (heated alcohol inside chamber suspended)."}
+                  </p>
+                </div>
+              </div>
+
+              <div className="text-center pt-4">
+                <button
+                  onClick={() => onNavigate('herbier')}
+                  className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#1E2E25] hover:bg-[#2D372C] text-white font-bold text-sm sm:text-base shadow-md hover:shadow-lg transition-all cursor-pointer"
+                >
+                  <span>{isFR ? "Explorer l'Herbier" : isDE ? "Das Herbarium erkunden" : "Explore the Herbarium"}</span>
+                  <ArrowRight className="w-4 h-4 text-[#E8772E]" />
+                </button>
+              </div>
+
             </div>
-          </div>
+          </section>
 
-          <div className="text-center pt-4">
-            <button
-              onClick={() => onNavigate('herbier')}
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#1E2E25] hover:bg-[#2D372C] text-white font-bold text-sm sm:text-base shadow-md hover:shadow-lg transition-all cursor-pointer"
-            >
-              <span>{isFR ? "Explorer l'Herbier" : isDE ? "Das Herbarium erkunden" : "Explore the Herbarium"}</span>
-              <ArrowRight className="w-4 h-4 text-[#E8772E]" />
-            </button>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ========================================================================= */}
-      {/* BLOC 3 : LE PROBLÈME & LA SOLUTION (Vulgarisation sans jargon) */}
-      {/* ========================================================================= */}
-      <section id="pourquoi-l-infusion-echoue" className="py-20 md:py-24 bg-[#FAF7F2]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <div className="inline-block px-4 py-1.5 bg-[#F5E6D8] text-[#1E2E25] text-[10px] font-bold uppercase tracking-widest rounded-md border border-[#E8772E]/20">
-              {isFR ? '2. Le Problème & La Solution' : isDE ? '2. Problem & Lösung' : '2. Problem & Solution'}
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#1E2E25] leading-tight">
-              {isFR
-                ? "Pourquoi vos infusions et macérâts maison perdent jusqu'à 80 % de leur efficacité ?"
-                : isDE
-                ? "Warum Ihre hausgemachten Aufgüsse und Mazerate bis zu 80 % ihrer Wirksamkeit verlieren?"
-                : "Why do homemade infusions and macerates lose up to 80% of their potency?"}
-            </h2>
+          {/* ========================================================================= */}
+          {/* BLOC 3 : LE PROBLÈME & LA SOLUTION (Vulgarisation sans jargon) */}
+          {/* ========================================================================= */}
+          <section id="pourquoi-l-infusion-echoue" className="py-20 md:py-24 bg-[#FAF7F2]">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+              <div className="text-center max-w-3xl mx-auto space-y-4">
+                <div className="inline-block px-4 py-1.5 bg-[#F5E6D8] text-[#1E2E25] text-[10px] font-bold uppercase tracking-widest rounded-md border border-[#E8772E]/20">
+                  {isFR ? '2. Le Problème & La Solution' : isDE ? '2. Problem & Lösung' : '2. Problem & Solution'}
+                </div>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#1E2E25] leading-tight">
+                  {isFR
+                    ? "Pourquoi vos infusions et macérâts maison peinent-ils à préserver les composés fragiles ?"
+                    : isDE
+                    ? "Warum verlieren hausgemachte Aufgüsse und Mazerate oft empfindliche Pflanzenstoffe?"
+                    : "Why do homemade infusions and macerates often lose delicate botanical compounds?"}
+                </h2>
             <p className="text-base sm:text-lg text-[#1E2E25]/80 leading-relaxed font-normal">
               {isFR
                 ? "Quand on prépare ses plantes à la maison, on se heurte toujours aux mêmes obstacles :"
@@ -658,10 +678,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                     <Thermometer className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
                     <span>
                       {isFR
-                        ? "Régulation au demi-degré près (±0,5 °C)"
+                        ? "Régulation thermique suivie (consigne nominale ±0,5 °C)"
                         : isDE
-                        ? "Regelung aufs halbe Grad genau (±0,5 °C)"
-                        : "Half-degree regulation (±0.5°C)"}
+                        ? "Geführte Temperaturregelung (Nennwert ±0,5 °C)"
+                        : "Guided thermal regulation (nominal ±0.5°C spec)"}
                     </span>
                   </div>
                   <p className="text-xs sm:text-sm text-[#1E2E25]/85 leading-relaxed font-medium">
@@ -748,10 +768,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   </div>
                   <p className="text-xs sm:text-sm text-[#1E2E25]/85 leading-relaxed font-medium">
                     {isFR
-                      ? "BloomLab® enchaîne ou adapte l'extraction à l'eau puis à l'huile ou à l'alcool pour capturer 100 % du potentiel de la plante."
+                      ? "BloomLab® enchaîne ou adapte l'extraction à l'eau ou à la glycérine puis à l'huile végétale pour élargir le spectre extrait (extraction à l'alcool chauffé en cuve suspendue)."
                       : isDE
-                      ? "BloomLab® kombiniert die Extraktion in Wasser sowie anschließend in Öl oder Alkohol, um 100 % des Pflanzenpotenzials zu gewinnen."
-                      : "BloomLab® sequences or adapts water extraction followed by oil or alcohol to capture 100% of the plant's potential."}
+                      ? "BloomLab® kombiniert die Extraktion in Wasser oder Glycerin sowie anschließend in Pflanzenöl für ein breiteres Spektrum (erhitzter Alkohol im Behälter ausgesetzt)."
+                      : "BloomLab® sequences or adapts water or glycerin extraction followed by carrier oil to broaden extracted fractions (heated alcohol inside chamber suspended)."}
                   </p>
                 </div>
               </div>
@@ -773,17 +793,17 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1E2E25] tracking-tight">
               {isFR 
-                ? "Double Extraction Intelligente (Eau + Huile/Alcool)" 
+                ? "Double Extraction Intelligente (Eau/Glycérine + Huile)" 
                 : isDE 
-                ? "Intelligente Doppelextraktion (Wasser + Öl/Alkohol)" 
-                : "Smart Dual Extraction (Water + Oil/Alcohol)"}
+                ? "Intelligente Doppelextraktion (Wasser/Glycerin + Öl)" 
+                : "Smart Dual Extraction (Water/Glycerin + Oil)"}
             </h2>
             <p className="text-[#4A5D4A] text-base sm:text-lg leading-relaxed font-medium">
               {isFR 
-                ? "La BloomLab adapte automatiquement la température et le solvant à chaque plante : l'eau capture les principes apaisants, l'huile et l'alcool captent les huiles nourrissantes et les arômes, pour vos soins botaniques maison complets." 
+                ? "La BloomLab adapte automatiquement la température et le solvant non inflammable à chaque plante : l'eau et la glycérine captent les composés hydrosolubles, l'huile végétale capte les lipides et arômes (alcool chauffé en cuve suspendu)." 
                 : isDE 
-                ? "BloomLab passt Temperatur und Lösungsmittel automatisch an jede Pflanze an: Wasser löst beruhigende Stoffe, Öl und Alkohol binden pflegende Lipide und Aromen für Ihre komplette Hauspflege." 
-                : "BloomLab automatically adapts temperature and solvent to each plant: water extracts soothing compounds while oil and alcohol capture nourishing lipids and aromas for complete home botanical care."}
+                ? "BloomLab passt Temperatur und Lösungsmittel an jede Pflanze an: Wasser und Glycerin lösen wasserlösliche Stoffe, Pflanzenöl bindet Lipide und Aromen (erhitzter Alkohol im Behälter ausgesetzt)." 
+                : "BloomLab adapts temperature and non-flammable solvent to each plant: water and glycerin capture water-soluble compounds while carrier oil captures lipids and aromas (heated alcohol suspended)."}
             </p>
           </div>
 
@@ -810,10 +830,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               <div className="text-3xl font-black text-[#1E2E25]">45 - 55°C</div>
               <p className="text-slate-600 text-sm leading-relaxed">
                 {isFR 
-                  ? "Préservation intégrale des acides gras nobles, huiles essentielles et terpènes volatils dans les solvants huileux et alcooliques." 
+                  ? "Préservation des acides gras nobles, huiles essentielles et terpènes volatils dans les huiles végétales et beurres (usage d'alcool chauffé en cuve suspendu)." 
                   : isDE 
-                  ? "Vollständige Erhaltung wertvoller Fettsäuren, ätherischer Öle und flüchtiger Terpene." 
-                  : "Integral preservation of noble fatty acids, essential oils, and volatile terpenes in oil and alcohol."}
+                  ? "Erhalt wertvoller Fettsäuren, ätherischer Öle und flüchtiger Terpene in Pflanzenölen und Buttern (erhitzter Alkohol ausgesetzt)." 
+                  : "Preservation of noble fatty acids, essential oils, and volatile terpenes in plant oils and butters (heated alcohol suspended)."}
               </p>
             </div>
 
@@ -824,10 +844,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               <div className="text-3xl font-black text-[#1E2E25]">121°C</div>
               <p className="text-slate-600 text-sm leading-relaxed">
                 {isFR 
-                  ? "Activation thermique douce des résines et aromates grâce aux 6 programmes automatisés (0 à 121 °C) à ±0,5 °C." 
+                  ? "Activation thermique douce des résines et aromates grâce aux 6 programmes automatisés (0 à 121 °C, spéc. nominale ±0,5 °C)." 
                   : isDE 
-                  ? "Sanfte thermische Aktivierung von Harzen und Aromastoffen dank 6 automatischer Programme (0 bis 121 °C) auf ±0,5 °C genau." 
-                  : "Gentle thermal activation of resins and aromatics via 6 automated programs (0–121°C) accurate to ±0.5°C."}
+                  ? "Sanfte thermische Aktivierung von Harzen und Aromastoffen dank 6 automatischer Programme (0 bis 121 °C, Nennwert ±0,5 °C)." 
+                  : "Gentle thermal activation of resins and aromatics via 6 automated programs (0–121°C, nominal ±0.5°C spec)."}
               </p>
             </div>
           </div>
@@ -851,14 +871,14 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             <div className="bg-white p-6 rounded-2xl border border-[#E7DFD3] shadow-sm space-y-2">
               <Thermometer className="w-6 h-6 text-[#E8772E]" />
               <div className="text-sm font-black text-[#1E2E25]">
-                {isFR ? "Précision ±0,5°C" : isDE ? "Präzision ±0,5 °C" : "±0.5°C Precision"}
+                {isFR ? "Consigne nominale ±0,5°C" : isDE ? "Nennwert ±0,5 °C" : "Nominal ±0.5°C Spec"}
               </div>
               <div className="text-xs text-[#1E2E25]/75 leading-relaxed">
                 {isFR
-                  ? "Sonde numérique continue prévenant toute dégradation thermique des molécules."
+                  ? "Sonde numérique continue (spécification nominale fabricant non certifiée indépendamment) limitant les pics thermiques."
                   : isDE
-                  ? "Kontinuierlicher Digitalsensor zur Vermeidung thermischer Zersetzung."
-                  : "Continuous digital sensor preventing thermal degradation of actives."}
+                  ? "Kontinuierlicher Digitalsensor (Hersteller-Nennwert, nicht unabhängig zertifiziert) gegen Hitzespitzen."
+                  : "Continuous digital sensor (manufacturer nominal spec, not third-party certified) limiting heat spikes."}
               </div>
             </div>
 
@@ -883,10 +903,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               </div>
               <div className="text-xs text-[#1E2E25]/75 leading-relaxed">
                 {isFR
-                  ? "Chambre étanche piégeant 100% des arômes et terpènes volatils."
+                  ? "Chambre fermée limitant l'évaporation des arômes et terpènes volatils."
                   : isDE
-                  ? "Dicht verschlossene Kammer bewahrt 100 % der Aromen und flüchtigen Terpene."
-                  : "Airtight chamber trapping 100% of volatile terpenes and aromas."}
+                  ? "Dicht verschlossene Kammer reduziert das Verdampfen flüchtiger Aromen und Terpene."
+                  : "Sealed chamber reducing evaporation of volatile terpenes and aromas."}
               </div>
             </div>
           </div>
@@ -968,10 +988,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 num: "03",
                 title: isFR ? "Régler les paramètres" : isDE ? "Parameter einstellen" : "Set parameters",
                 desc: isFR
-                  ? "Associez temps, température et solvant (eau, huile végétale ou alcool titré) selon la fiche."
+                  ? "Associez temps, température et solvant non inflammable (eau, huile végétale ou glycérine végétale — alcool chauffé suspendu) selon la fiche."
                   : isDE
-                  ? "Kombinieren Sie Zeit, Temperatur und Lösungsmittel (Wasser, Pflanzenöl oder Alkohol) laut Anleitung."
-                  : "Match time, temperature, and noble solvent (water, plant oil, or alcohol) per the protocol sheet."
+                  ? "Kombinieren Sie Zeit, Temperatur und nicht brennbares Lösungsmittel (Wasser, Pflanzenöl oder Glycerin — erhitzter Alkohol ausgesetzt) laut Anleitung."
+                  : "Match time, temperature, and non-flammable solvent (water, plant oil, or vegetable glycerin — heated alcohol suspended) per the protocol sheet."
               },
               {
                 num: "04",
@@ -1418,7 +1438,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   <td className="p-5 sm:p-6 font-black text-[#1E2E25]">{isFR ? "Précision thermique" : isDE ? "Temperaturpräzision" : "Thermal precision"}</td>
                   <td className="p-5 sm:p-6 text-slate-600">{isFR ? "Aléatoire (±10 à 15 °C)" : isDE ? "Zufällig (±10 bis 15 °C)" : "Unpredictable (±10 to 15°C)"}</td>
                   <td className="p-5 sm:p-6 text-slate-600">{isFR ? "Paliers fixes approximatifs" : isDE ? "Grobe feste Stufen" : "Approximate fixed presets"}</td>
-                  <td className="p-5 sm:p-6 font-bold text-emerald-800 bg-emerald-50/40">{isFR ? "Régulation numérique au demi-degré près (±0,5 °C)" : isDE ? "Digitale Regelung aufs halbe Grad (±0,5 °C)" : "Digital regulation to half a degree (±0.5°C)"}</td>
+                  <td className="p-5 sm:p-6 font-bold text-emerald-800 bg-emerald-50/40">{isFR ? "Régulation numérique guidée (spéc. nominale ±0,5 °C)" : isDE ? "Geführte Digitalregelung (Nennwert ±0,5 °C)" : "Guided digital regulation (nominal ±0.5°C spec)"}</td>
                 </tr>
                 <tr className="bg-[#FAF7F2]/40">
                   <td className="p-5 sm:p-6 font-black text-[#1E2E25]">{isFR ? "Accompagnement" : isDE ? "Begleitung" : "Guidance"}</td>
@@ -1444,100 +1464,28 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
       </section>
 
       {/* ========================================================================= */}
-      {/* BLOC 8 : PREUVE SOCIALE (Ils ont remisé leurs casseroles) */}
-      {/* Règle : "Dr. Renaud P." devient "Renaud P., herbaliste" */}
+      {/* BLOC 8 : PREUVE SOCIALE EXTERNE VÉRIFIABLE (Amazon.fr) */}
       {/* ========================================================================= */}
       <section id="avis" className="py-20 md:py-24 bg-white border-t border-[#F3EEE6]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <div className="inline-block px-4 py-1.5 bg-[#F5E6D8] text-[#1E2E25] text-[10px] font-bold uppercase tracking-widest rounded-md border border-[#E8772E]/20">
-              {isFR ? '7. Retours de Pratique' : isDE ? '7. Erfahrungsberichte' : '7. Practice Feedback'}
+              {isFR ? '7. Évaluations Clients Vérifiées' : isDE ? '7. Verifizierte Kundenbewertungen' : '7. Verified Customer Reviews'}
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1E2E25] tracking-tight">
-              {isFR ? "Ils ont remisé leurs casseroles" : isDE ? "Sie haben ihre Kochtöpfe weggeräumt" : "They put away their saucepans"}
+              {isFR ? "Retours vérifiés sur Amazon.fr" : isDE ? "Verifizierte Bewertungen auf Amazon.fr" : "Verified feedback on Amazon.fr"}
             </h2>
             <p className="text-[#1E2E25]/80 text-base sm:text-lg">
               {isFR 
-                ? "Découvrez l'expérience de praticiens et de passionnés de botanique qui préparent leurs extraits au quotidien." 
+                ? "Les seuls avis clients agrégés que nous affichons proviennent de la fiche produit publique Amazon.fr, consultable librement." 
                 : isDE
-                ? "Erfahren Sie, wie Praktiker und Botanik-Begeisterte ihre Extrakte täglich zubereiten."
-                : "Discover the experience of practitioners and botanical enthusiasts preparing their extracts daily."}
+                ? "Wir zeigen ausschließlich die öffentlich einsehbaren Kundenbewertungen der Produktseite auf Amazon.fr an."
+                : "We only display publicly verifiable customer ratings published on the Amazon.fr product listing."}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-[#FAF7F2] p-8 rounded-[32px] border border-[#E7DFD3] space-y-4 flex flex-col justify-between">
-              <div className="space-y-3">
-                <div className="flex text-[#E8772E] gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-[#E8772E] text-[#E8772E]" />
-                  ))}
-                </div>
-                <p className="text-[#1E2E25]/85 text-sm italic leading-relaxed">
-                  {isFR 
-                    ? "« En herboristerie, la maîtrise de la température au degré près change tout. La préservation des terpènes volatils est incomparable par rapport à une macération artisanale classique. »"
-                    : isDE
-                    ? "« In der Pflanzenkunde verändert eine gradgenaue Temperaturkontrolle alles. Der Erhalt flüchtiger Terpene ist im Vergleich zur herkömmlichen Mazeration unvergleichlich. »"
-                    : "« In herbal practice, exact degree-by-degree temperature control changes everything. Preservation of volatile terpenes is unmatched compared to traditional maceration. »"}
-                </p>
-              </div>
-              <div className="pt-4 border-t border-[#E7DFD3]">
-                <div className="font-black text-sm text-[#1E2E25]">Renaud P.</div>
-                <div className="text-xs text-[#1E2E25]/70 font-medium">
-                  {isFR ? "Herbaliste & formateur en botanique" : isDE ? "Kräuterkundler & Botanik-Ausbilder" : "Herbalist & botanical educator"}
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-[#FAF7F2] p-8 rounded-[32px] border border-[#E7DFD3] space-y-4 flex flex-col justify-between">
-              <div className="space-y-3">
-                <div className="flex text-[#E8772E] gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-[#E8772E] text-[#E8772E]" />
-                  ))}
-                </div>
-                <p className="text-[#1E2E25]/85 text-sm italic leading-relaxed">
-                  {isFR 
-                    ? "« Je prépare mes huiles de soin pour mes consultants. Zéro amertume, arômes intacts, et surtout une régularité parfaite d'un flacon à l'autre. »"
-                    : isDE
-                    ? "« Ich stelle meine Pflegeöle für Klienten selbst her. Keine Bitterkeit, intakte Aromen und vor allem perfekte Gleichmäßigkeit von Flasche zu Flasche. »"
-                    : "« I prepare botanical care oils for my clients. Zero bitterness, intact aromas, and flawless consistency from bottle to bottle. »"}
-                </p>
-              </div>
-              <div className="pt-4 border-t border-[#E7DFD3]">
-                <div className="font-black text-sm text-[#1E2E25]">Claire M.</div>
-                <div className="text-xs text-[#1E2E25]/70 font-medium">
-                  {isFR ? "Naturopathe & conseillère de terrain" : isDE ? "Heilpraktikerin & Terrain-Beraterin" : "Naturopath & terrain advisor"}
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-[#FAF7F2] p-8 rounded-[32px] border border-[#E7DFD3] space-y-4 flex flex-col justify-between">
-              <div className="space-y-3">
-                <div className="flex text-[#E8772E] gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-[#E8772E] text-[#E8772E]" />
-                  ))}
-                </div>
-                <p className="text-[#1E2E25]/85 text-sm italic leading-relaxed">
-                  {isFR 
-                    ? "« J'ai enfin arrêté de brûler mes macérats au bain-marie. En 2h, mon huile de romarin et piment pour la cuisine est prête et parfumée comme jamais. »"
-                    : isDE
-                    ? "« Ich verbrenne meine Mazerate endlich nicht mehr im Wasserbad. In 2 Stunden ist mein Rosmarin-Chili-Öl für die Küche fertig und aromatisch wie nie. »"
-                    : "« I finally stopped scorching my macerates in double-boilers. In 2 hours, my culinary rosemary and chili oil is ready and more aromatic than ever. »"}
-                </p>
-              </div>
-              <div className="pt-4 border-t border-[#E7DFD3]">
-                <div className="font-black text-sm text-[#1E2E25]">Thomas D.</div>
-                <div className="text-xs text-[#1E2E25]/70 font-medium">
-                  {isFR ? "Passionné d'herboristerie maison" : isDE ? "Begeisterter Haus-Kräuterkundler" : "Home herbalism enthusiast"}
-                </div>
-              </div>
-            </div>
-          </div>
-
-      {/* Preuve sociale cross-canal : agrégat Amazon réel + flywheel activation */}
-      <AmazonSocialProof lang={lang as 'fr' | 'en' | 'de'} onNavigate={onNavigate} />
+          {/* Preuve sociale cross-canal : agrégat Amazon réel + flywheel activation */}
+          <AmazonSocialProof lang={lang as 'fr' | 'en' | 'de'} onNavigate={onNavigate} />
 
         </div>
 
@@ -1585,15 +1533,15 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               <p>
                 {isFR ? (
                   <>
-                    Le drame de l'herboristerie occidentale moderne a été de tout réduire à l'eau bouillante, ignorant la <strong>polarité des solvants</strong> et la <strong>thermolabilité des enzymes</strong>. La BloomLab réconcilie la sagesse empirique de l'Orient avec la rigueur de la biochimie du XXIe siècle. Elle permet d'appliquer la <strong>Double Extraction Intelligente A/B</strong> (extraction hydrophile puis lipophile) avec une précision de ±0,5°C que même les meilleurs laboratoires peinent à démocratiser.
+                    Le drame de l'herboristerie occidentale moderne a été de tout réduire à l'eau bouillante, ignorant la <strong>polarité des solvants</strong> et la <strong>thermolabilité des enzymes</strong>. La BloomLab rapproche la sagesse empirique de l'Orient avec les méthodes de la biochimie moderne via la <strong>Double Extraction Intelligente A/B</strong> (extraction hydrophile puis lipophile, spécification nominale fabricant annoncée à ±0,5 °C).
                   </>
                 ) : isDE ? (
                   <>
-                    Das Versäumnis der modernen westlichen Kräuterkunde lag darin, alles auf kochendes Wasser zu reduzieren und die <strong>Polarität der Lösungsmittel</strong> sowie die <strong>Wärmeempfindlichkeit der Enzyme</strong> zu ignorieren. Die BloomLab verbindet östliche Erfahrungskunde mit der Präzision moderner Biochemie und ermöglicht <strong>Aktive A/B-Sequenzierung</strong> (hydrophile und lipophile Extraktion) auf ±0,5 °C genau.
+                    Das Versäumnis der modernen westlichen Kräuterkunde lag darin, alles auf kochendes Wasser zu reduzieren und die <strong>Polarität der Lösungsmittel</strong> sowie die <strong>Wärmeempfindlichkeit der Enzyme</strong> zu ignorieren. Die BloomLab verbindet östliche Erfahrungskunde mit moderner Biochemie und ermöglicht <strong>Aktive A/B-Sequenzierung</strong> (hydrophile und lipophile Extraktion, Hersteller-Nennwert ±0,5 °C).
                   </>
                 ) : (
                   <>
-                    The shortcoming of modern Western herbalism has been reducing everything to boiling water, ignoring <strong>solvent polarity</strong> and <strong>thermal sensitivity of enzymes</strong>. BloomLab bridges empirical Eastern wisdom with 21st-century biochemistry, enabling <strong>Active A/B Sequencing</strong> (hydrophilic then lipophilic extraction) with ±0.5°C precision once reserved for dedicated laboratories.
+                    The shortcoming of modern Western herbalism has been reducing everything to boiling water, ignoring <strong>solvent polarity</strong> and <strong>thermal sensitivity of enzymes</strong>. BloomLab bridges empirical Eastern wisdom with 21st-century biochemistry, enabling <strong>Active A/B Sequencing</strong> (hydrophilic then lipophilic extraction, manufacturer nominal ±0.5°C rating).
                   </>
                 )}
               </p>
@@ -1644,10 +1592,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   ? "Wie unterscheidet sich die BloomLab® von einem einfachen Wasserbad?"
                   : "How is BloomLab® different from a simple double-boiler?",
                 a: isFR
-                  ? "Le bain-marie traditionnel ne permet aucun réglage fin : l'eau atteint rapidement des températures fluctuantes détruisant les molécules thermosensibles. La BloomLab® intègre un capteur de température au degré près (±0,5°C) combiné à un brassage cyclique doux en milieu hermétique clos, empêchant tout contact dégradant avec l'oxygène."
+                  ? "Le bain-marie traditionnel ne permet aucun réglage fin : l'eau atteint rapidement des températures fluctuantes dégradant les molécules thermosensibles. La BloomLab® intègre une sonde thermique régulée (spécification nominale fabricant ±0,5 °C, non certifiée indépendamment) combinée à un brassage cyclique doux en milieu clos."
                   : isDE
-                  ? "Ein herkömmliches Wasserbad erlaubt keine Feinregelung: Schwankende Temperaturen zerstören hitzeempfindliche Moleküle. Die BloomLab® bietet eine Sensorsteuerung auf ±0,5 °C genau mit sanftem zyklischem Rühren in einer hermetisch geschlossenen Kammer ohne Sauerstoffoxidation."
-                  : "A traditional double-boiler lacks fine thermal control: fluctuating heat degrades heat-sensitive compounds. BloomLab® integrates a ±0.5°C temperature sensor with gentle cyclic stirring in an airtight closed chamber, preventing oxygen degradation."
+                  ? "Ein herkömmliches Wasserbad erlaubt keine Feinregelung: Schwankende Temperaturen schädigen hitzeempfindliche Moleküle. Die BloomLab® bietet eine Sensorsteuerung (Hersteller-Nennwert ±0,5 °C) mit sanftem zyklischem Rühren in geschlossener Kammer."
+                  : "A traditional double-boiler lacks fine thermal control: fluctuating heat degrades heat-sensitive compounds. BloomLab® integrates a nominal ±0.5°C temperature sensor (manufacturer rating) with gentle cyclic stirring in a closed chamber."
               },
               {
                 q: isFR
@@ -1668,10 +1616,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   ? "Welche Lösungsmittel kann ich sicher verwenden?"
                   : "Which solvents can I use safely?",
                 a: isFR
-                  ? "La cuve en Inox 304 de grade alimentaire est conçue pour fonctionner avec l'eau purifiée, toutes les huiles végétales nobles (jojoba, olive, amande douce, argan) et les alcools alimentaires titrés jusqu'à 60°. Sa conception hermétique prévient tout risque d'évaporation volatile."
+                  ? "La cuve en Inox 304 de grade alimentaire fonctionne avec l'eau filtrée, les huiles végétales (jojoba, olive, amande douce, argan) et la glycérine végétale. Par mesure de sécurité, l'utilisation d'alcool chauffé dans la cuve BloomLab® est suspendue (toute macération alcoolique se réalise uniquement à froid, en bocal verre hors appareil)."
                   : isDE
-                  ? "Der lebensmittelechte Behälter aus Edelstahl 304 eignet sich für gereinigtes Wasser, hochwertige Pflanzenöle (Jojoba, Olive, Süßmandel, Argan) sowie Speisealkohol bis 60 %. Das hermetische Design verhindert flüchtige Verdunstung."
-                  : "The food-grade 304 stainless steel chamber is engineered for purified water, noble botanical oils (jojoba, olive, sweet almond, argan), and food-grade alcohols up to 60°. Its airtight seal prevents volatile evaporation."
+                  ? "Der lebensmittelechte Behälter aus Edelstahl 304 eignet sich für gereinigtes Wasser, Pflanzenöle (Jojoba, Olive, Süßmandel, Argan) und pflanzliches Glycerin. Aus Sicherheitsgründen ist das Erhitzen von Alkohol im BloomLab®-Behälter ausgesetzt (alkoholische Mazerationen erfolgen ausschließlich kalt im Glas außerhalb des Geräts)."
+                  : "The food-grade 304 stainless steel chamber operates with purified water, botanical oils (jojoba, olive, sweet almond, argan), and vegetable glycerin. As a precaution, heated alcohol extraction inside the BloomLab® chamber is suspended (any alcohol maceration must be done cold in a glass jar outside the appliance)."
               },
               {
                 q: isFR
@@ -1815,10 +1763,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 </h3>
                 <p className="text-xs text-[#F9F6F0]/80 font-medium leading-relaxed">
                   {isFR
-                    ? "Commandez votre BloomLab® Inox 304 (expédition 24/48h, garantie 1 an) et démarrez dès cette semaine."
+                    ? "Commandez votre BloomLab® Inox 304 (expédition 24/48h, garantie légale 2 ans UE + commerciale 1 an) et démarrez dès cette semaine."
                     : isDE
-                    ? "Bestellen Sie Ihre BloomLab® (Versand in 24/48h, 1 Jahr Garantie) und starten Sie diese Woche."
-                    : "Order your BloomLab® (24/48h shipping, 1-year warranty) and get started this week."}
+                    ? "Bestellen Sie Ihre BloomLab® (Versand in 24/48h, 2 J. gesetzl. Gewährleistung EU + 1 J. Garantie) und starten Sie diese Woche."
+                    : "Order your BloomLab® (24/48h shipping, 2-year EU legal + 1-year commercial warranty) and get started this week."}
                 </p>
               </div>
               <button
@@ -2006,10 +1954,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             </h2>
             <p className="text-[#1E2E25]/80 text-base sm:text-lg">
               {isFR 
-                ? "Expédition sous 24/48h • Garantie 1 an • Paiement en 3x sans frais." 
+                ? "Expédition sous 24/48h • Garantie légale 2 ans (UE) + commerciale 1 an • Paiement en 3x sans frais." 
                 : isDE
-                ? "Versand in 24/48h • 1 Jahr Garantie • 3x zinsfreie Ratenzahlung."
-                : "24/48h Shipping • 1-Year Warranty • 3x fee-free payment."}
+                ? "Versand in 24/48h • 2 J. gesetzl. Gewährleistung (EU) + 1 J. Garantie • 3x zinsfreie Ratenzahlung."
+                : "24/48h Shipping • 2-Yr EU Legal + 1-Yr Commercial Warranty • 3x fee-free payment."}
             </p>
           </div>
 
@@ -2063,7 +2011,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   </li>
                   <li className="flex items-start gap-3 text-sm font-medium text-[#1E2E25]/90">
                     <Check className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>{isFR ? "Garantie 1 an" : isDE ? "1 Jahr Garantie" : "1-Year Warranty"}</span>
+                    <span>{isFR ? "Garantie légale 2 ans (UE) + commerciale 1 an" : isDE ? "2 J. gesetzl. Gewährleistung (EU) + 1 J. Garantie" : "2-Yr EU Legal + 1-Yr Commercial Warranty"}</span>
                   </li>
                 </ul>
               </div>
@@ -2161,7 +2109,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               </div>
               <div className="flex items-center justify-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-[#C8AB8A]" />
-                <span>{isFR ? "Garantie 1 an" : isDE ? "1 Jahr Garantie" : "1-Year Warranty"}</span>
+                <span>{isFR ? "Garantie légale 2 ans (UE) + 1 an" : isDE ? "2 J. Gewährleistung (EU) + 1 J." : "2-Yr EU Legal + 1-Yr Warranty"}</span>
               </div>
               <div className="flex items-center justify-center gap-2">
                 <Sparkles className="w-4 h-4 text-[#C8AB8A]" />
@@ -2196,7 +2144,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             </h2>
             <p className="text-slate-600 text-base sm:text-lg">
               {isFR 
-                ? "Découvrez les analyses et protocoles de fond publiés chaque semaine par notre équipe scientifique." 
+                ? "Découvrez les synthèses documentaires et protocoles publiés chaque semaine par notre équipe éditoriale et de recherche botanique." 
                 : isDE
                 ? "Entdecken Sie fundierte Analysen und Protokolle, die wöchentlich von unserem Botanik-Team veröffentlicht werden."
                 : "Explore in-depth articles and weekly protocols published by our botanical team."}
@@ -2261,10 +2209,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   </span>
                   <h3 className="text-xl font-black text-[#1E2E25] group-hover:text-[#E8772E] transition-colors">
                     {isFR
-                      ? "Le choix des solvants nobles : quand utiliser l'eau, l'huile ou l'alcool titré ?"
+                      ? "Le choix des solvants : eau, huile ou glycérine (alcool chauffé en cuve suspendu)"
                       : isDE
-                      ? "Die Wahl edler Lösungsmittel: Wann Wasser, Öl oder hochreinen Alkohol verwenden?"
-                      : "Choosing noble solvents: when to use water, oil, or food-grade alcohol?"}
+                      ? "Die Wahl der Lösungsmittel: Wasser, Öl oder Glycerin (erhitzter Alkohol ausgesetzt)"
+                      : "Choosing solvents: water, oil, or glycerin (heated alcohol suspended)"}
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed">
                     {isFR
@@ -2328,25 +2276,37 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
 
             {newsletterSent ? (
               <div className="p-4 bg-emerald-900/60 border border-emerald-400/40 rounded-2xl text-emerald-200 text-sm font-bold flex items-center justify-center gap-2">
-                <Check className="w-5 h-5 text-emerald-400" />
-                <span>{isFR ? "Merci ! Vous recevrez le prochain protocole ce dimanche." : isDE ? "Vielen Dank! Sie erhalten das nächste Protokoll diesen Sonntag." : "Thank you! You will receive the next protocol this Sunday."}</span>
+                <Check className="w-5 h-5 text-emerald-400 shrink-0" />
+                <span>
+                  {isFR
+                    ? "Inscription enregistrée sur le serveur local (un envoi SMTP automatique n'est pas encore activé sur cette instance)."
+                    : isDE
+                    ? "Anmeldung auf dem lokalen Server gespeichert (automatischer SMTP-Versand ist auf dieser Instanz noch nicht aktiviert)."
+                    : "Subscription recorded on the local server (automated SMTP email delivery is not yet enabled on this instance)."}
+                </span>
               </div>
             ) : (
-              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <input
-                  type="email"
-                  required
-                  value={newsletterEmail}
-                  onChange={(e) => setNewsletterEmail(e.target.value)}
-                  placeholder={isFR ? "Votre adresse email..." : isDE ? "Ihre E-Mail-Adresse..." : "Your email address..."}
-                  className="px-5 py-3.5 rounded-full bg-white/10 border border-white/20 text-white placeholder-white/60 text-sm focus:outline-none focus:border-[#E8772E] flex-1"
-                />
-                <button
-                  type="submit"
-                  className="px-6 py-3.5 rounded-full bg-[#E8772E] hover:bg-[#D4651F] text-white text-sm font-black transition-all shadow-md shadow-orange-900/20 cursor-pointer shrink-0"
-                >
-                  {isFR ? "S'inscrire" : isDE ? "Abonnieren" : "Subscribe"}
-                </button>
+              <form onSubmit={handleNewsletterSubmit} className="space-y-3 max-w-md mx-auto">
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <input
+                    type="email"
+                    required
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    placeholder={isFR ? "Votre adresse email..." : isDE ? "Ihre E-Mail-Adresse..." : "Your email address..."}
+                    className="px-5 py-3.5 rounded-full bg-white/10 border border-white/20 text-white placeholder-white/60 text-sm focus:outline-none focus:border-[#E8772E] flex-1"
+                  />
+                  <button
+                    type="submit"
+                    disabled={newsletterLoading}
+                    className="px-6 py-3.5 rounded-full bg-[#E8772E] hover:bg-[#D4651F] disabled:opacity-60 text-white text-sm font-black transition-all shadow-md shadow-orange-900/20 cursor-pointer shrink-0"
+                  >
+                    {newsletterLoading ? "..." : (isFR ? "S'inscrire" : isDE ? "Abonnieren" : "Subscribe")}
+                  </button>
+                </div>
+                {newsletterError && (
+                  <p className="text-xs text-amber-300 font-medium">{newsletterError}</p>
+                )}
               </form>
             )}
 
@@ -2441,7 +2401,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                     </span>
                   </div>
                   <div className="text-[10px] sm:text-xs text-white/60 hidden sm:block">
-                    {isFR ? 'Garantie 1 an • Paiement en 3x sans frais' : isDE ? '1 Jahr Garantie • 3x zinsfrei' : '1-Year Warranty • 3x fee-free'}
+                    {isFR ? 'Garantie légale 2 ans (UE) + 1 an • Paiement en 3x sans frais' : isDE ? '2 J. Gewährleistung (EU) + 1 J. • 3x zinsfrei' : '2-Yr EU Legal + 1-Yr Warranty • 3x fee-free'}
                   </div>
                 </div>
               </div>
@@ -2509,10 +2469,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   </div>
                   <div className="text-emerald-700/80">
                     {isFR
-                      ? "Garantie 1 an & Satisfait ou remboursé 30 jours."
+                      ? "Garantie légale 2 ans (UE) + 1 an • Rétractation 14 j + essai 30 j."
                       : isDE
-                      ? "1 Jahr Garantie & 30 Tage Geld-zurück-Garantie."
-                      : "1-year warranty & 30-day money-back guarantee."}
+                      ? "2 J. gesetzl. Gewährleistung (EU) + 1 J. • 14 T. Widerruf + 30 T. Testphase."
+                      : "2-yr EU legal + 1-yr warranty • 14-day withdrawal + 30-day trial."}
                   </div>
                 </div>
 

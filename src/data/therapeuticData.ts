@@ -130,7 +130,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les bêta-glucanes sont piégés dans une matrice de chitine ultra-résistante. Une simple tisane n'extrait que 15% des actifs. L'acide bétulinique, lui, ne sort qu'en phase alcoolique à température contrôlée.",
       phase_A: { temp: "80°C", temps: "4h00", solvant: "Eau purifiée", cible: "Déstructuration de la chitine et libération des polysaccharides", translations: { en: { cible: "Chitin destructuring and release of polysaccharides" }, de: { cible: "Chitindestrukturierung und Freisetzung von Polysacchariden" } } },
-      phase_B: { temp: "55°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Extraction de l'acide bétulinique et des triterpènes", translations: { en: { cible: "Extraction of betulinic acid and triterpenes" }, de: { cible: "Extraktion von Betulinsäure und Triterpenen" } } },
+      phase_B: { temp: "55°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Extraction de l'acide bétulinique et des triterpènes", translations: { en: { cible: "Extraction of betulinic acid and triterpenes" }, de: { cible: "Extraktion von Betulinsäure und Triterpenen" } } },
       resultat: "Un Totum 'Dual-Extract' concentré, biodisponible immédiatement, capturant la fraction hydrosoluble et liposoluble du champignon.",
       translations: { 
         en: { 
@@ -203,7 +203,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "La cordycépine est fragile. Une extraction à l'eau bouillante peut dégrader une partie des nucléosides. Le ratio eau/alcool doit être précis pour maintenir la stabilité de l'adénosine.",
       phase_A: { temp: "65°C", temps: "3h00", solvant: "Eau distillée", cible: "Libération douce des nucléosides et cordycépine", translations: { en: { cible: "Gentle release of nucleosides and cordycepin" }, de: { cible: "Sanfte Freisetzung von Nukleosiden und Cordycepin" } } },
-      phase_B: { temp: "45°C", temps: "2h00", solvant: "Alcool bio 96°", cible: "Extraction des stérols et stabilisation du mélange", translations: { en: { cible: "Extraction of sterols and stabilization of the mixture" }, de: { cible: "Extraktion von Sterolen und Stabilisierung der Mischung" } } },
+      phase_B: { temp: "45°C", temps: "2h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Extraction des stérols et stabilisation du mélange", translations: { en: { cible: "Extraction of sterols and stabilization of the mixture" }, de: { cible: "Extraktion von Sterolen und Stabilisierung der Mischung" } } },
       resultat: "Une puissance énergétique décuplée, idéale pour la récupération sportive et la fatigue chronique.",
       translations: {
         en: {
@@ -252,7 +252,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les héricénones (cerveau) sont lipophiles, alors que les polysaccharides (estomac) sont hydrophiles. Une simple poudre ingérée n'offre pas une concentration suffisante pour traverser la barrière hémato-encéphalique.",
       phase_A: { temp: "75°C", temps: "3h30", solvant: "Eau distillée + Glycérine", cible: "Extraction des polysaccharides et protection muqueuse", translations: { en: { cible: "Extraction of polysaccharides and mucosal protection" }, de: { cible: "Extraktion von Polysacchariden und Schleimhautschutz" } } },
-      phase_B: { temp: "55°C", temps: "2h30", solvant: "Alcool bio 96°", cible: "Concentration des héricénones pour l'effet neurotrophique", translations: { en: { cible: "Concentration of hericenones for neurotrophic effect" }, de: { cible: "Konzentration von Hericenonen für neurotrophen Effekt" } } },
+      phase_B: { temp: "55°C", temps: "2h30", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Concentration des héricénones pour l'effet neurotrophique", translations: { en: { cible: "Concentration of hericenones for neurotrophic effect" }, de: { cible: "Konzentration von Hericenonen für neurotrophen Effekt" } } },
       resultat: "Un élixir de clarté mentale agissant à la fois sur l'axe intestin-cerveau et la régénération neuronale.",
       translations: {
         en: {
@@ -301,7 +301,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Le Reishi est incroyablement dur et amer. Sa saveur amère vient des tritérpènes qui ne s'extraient que difficilement à l'eau. Une ébullition prolongée détruit les polysaccharides fragiles.",
       phase_A: { temp: "85°C", temps: "4h00", solvant: "Eau pure", cible: "Extraction lente des sucres complexes et modulation immunitaire", translations: { en: { cible: "Slow extraction of complex sugars and immune modulation" }, de: { cible: "Langsame Extraktion komplexer Zucker und Immunmodulation" } } },
-      phase_B: { temp: "60°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Extraction des acides ganodériques (amertume médicinale, effet foie/stress)", translations: { en: { cible: "Extraction of ganoderic acids (medicinal bitterness, liver/stress effect)" }, de: { cible: "Extraktion von Ganodersäuren (medizinische Bitterkeit, Leber-/Stresseffekt)" } } },
+      phase_B: { temp: "60°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Extraction des acides ganodériques (amertume médicinale, effet foie/stress)", translations: { en: { cible: "Extraction of ganoderic acids (medicinal bitterness, liver/stress effect)" }, de: { cible: "Extraktion von Ganodersäuren (medizinische Bitterkeit, Leber-/Stresseffekt)" } } },
       resultat: "Une extraction biphasique équilibrée offrant un apaisement profond du système nerveux et une immunité résiliente.",
       translations: {
         en: {
@@ -351,12 +351,12 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "La curcumine est quasi-insoluble dans l'eau et thermolabile. Une infusion est inutile. Une cuisson à 100°C dans l'huile oxyde les curcuminoïdes et évapore la turmérone.",
       phase_A: { temp: "70°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Polysaccharides prébiotiques et composés hydrosolubles", translations: { en: { cible: "Prebiotic polysaccharides and water-soluble compounds" }, de: { cible: "Präbiotische Polysaccharide und wasserlösliche Verbindungen" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Curcuminoïdes, pipérine et huiles essentielles", translations: { en: { cible: "Curcuminoids, piperine and essential oils" }, de: { cible: "Curcuminoide, Piperin und ätherische Öle" } } },
-      resultat: "Extraction complète du spectre anti-inflammatoire sans oxydation thermique, with un taux d'alcool final idéal pour la conservation et l'absorption.",
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Curcuminoïdes, pipérine et huiles essentielles", translations: { en: { cible: "Curcuminoids, piperine and essential oils" }, de: { cible: "Curcuminoide, Piperin und ätherische Öle" } } },
+      resultat: "Extraction complète du spectre anti-inflammatoire sans oxydation thermique, en solution sans alcool chauffé.",
       translations: {
         en: {
           probleme_traditionnel: "Curcumin is almost insoluble in water and thermolabile. An infusion is useless. Cooking at 100°C in oil oxidizes curcuminoids and evaporates turmerone.",
-          resultat: "Complete extraction of the anti-inflammatory spectrum without thermal oxidation, with an ideal final alcohol rate for preservation and absorption."
+          resultat: "Complete extraction of the anti-inflammatory spectrum without thermal oxidation, prepared without heated alcohol."
         },
         de: {
           probleme_traditionnel: "Curcumin ist fast unlöslich in Wasser und thermolabil. Ein Aufguss ist nutzlos. Kochen bei 100°C in Öl oxidiert Curcuminoide und lässt Turmeron verdampfen.",
@@ -368,7 +368,7 @@ export const plantsDatabase: PlantData[] = [
       batch_standard: "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
       ingredients: {
         phase_A: ["50g de poudre de Curcuma (ou tranches fines)", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
-        phase_B: ["15g de poudre de Curcuma", "10g de Poivre noir concassé", "250ml d'Alcool bio 96°"]
+        phase_B: ["15g de poudre de Curcuma", "10g de Poivre noir concassé", "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"]
       },
       preparation: [
         "1. Pesez précisément les ingrédients à l'aide d'une balance de précision (0,1g).",
@@ -386,17 +386,10 @@ export const plantsDatabase: PlantData[] = [
       transition: [
         "1. À la fin du bip, éteignez la machine.",
         "2. Laissez reposer 15 à 20 minutes. La température doit descendre naturellement en dessous de 45°C.",
-        "3. TEST SENSORIEL OBLIGATOIRE : Posez votre main à plat sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C, comme l'eau d'un bain confortable), et non brûlante.",
-        "4. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé pour éviter toute vaporisation brutale ou risque inflammatoire."
+        "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+        "4. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
       ],
-      phase_B_instructions: [
-        "1. Ouvrez la cuve. Versez délicatement les 250ml d'alcool.",
-        "2. Ajoutez le mélange de 15g de curcuma et 10g de poivre concassé.",
-        "3. Refermez hermétiquement.",
-        "4. Sélectionnez à nouveau le mode manuel 'OIL'.",
-        "5. Réglez la TEMPÉRATURE sur 50°C et le TEMPS sur 3h00.",
-        "6. Appuyez sur START."
-      ],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: [
         "1. À la fin du cycle, laissez reposer 10 min pour que les particules tombent au fond.",
         "2. Placez une étamine (tissu en coton fin) sur un grand saladier en verre.",
@@ -483,7 +476,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "La résine est insoluble dans l'eau. Une tisane ne donne qu'un liquide amer sans actifs. Chauffer la résine à 90°C dans l'alcool détruit les acides boswelliques thermolabiles.",
       phase_A: { temp: "60°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Polysaccharides apaisants pour les muqueuses", translations: { en: { cible: "Soothing polysaccharides for mucous membranes" }, de: { cible: "Beruhigende Polysaccharide für Schleimhäute" } } },
-      phase_B: { temp: "45°C", temps: "4h00", solvant: "Alcool bio 96°", cible: "Acides boswelliques (AKBA) et résines", translations: { en: { cible: "Boswellic acids (AKBA) and resins" }, de: { cible: "Boswelliasäuren (AKBA) und Harze" } } },
+      phase_B: { temp: "45°C", temps: "4h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Acides boswelliques (AKBA) et résines", translations: { en: { cible: "Boswellic acids (AKBA) and resins" }, de: { cible: "Boswelliasäuren (AKBA) und Harze" } } },
       resultat: "Capture totale des propriétés cicatrisantes (eau) et anti-leucotriènes (alcool) sans dénaturer la structure fragile de la résine.",
       translations: {
         en: {
@@ -500,7 +493,7 @@ export const plantsDatabase: PlantData[] = [
       batch_standard: "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
       ingredients: {
         phase_A: ["50g de Résine de Boswellia en larmes", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
-        phase_B: ["25g de Résine de Boswellia concassée", "250ml d'Alcool bio 96°"]
+        phase_B: ["25g de Résine de Boswellia concassée", "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"]
       },
       preparation: [
         "1. Placez les larmes de résine au congélateur 30 minutes avant de les peser (cela évite qu'elles ne collent à la balance).",
@@ -514,13 +507,10 @@ export const plantsDatabase: PlantData[] = [
       transition: [
         "1. Éteignez la machine à la fin du cycle.",
         "2. Laissez reposer 20 minutes. La température doit descendre naturellement en dessous de 45°C.",
-        "3. TEST SENSORIEL OBLIGATOIRE : Posez votre main à plat sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-        "4. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+        "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+        "4. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
       ],
-      phase_B_instructions: [
-        "1. Ouvrez, versez les 250ml d'alcool, ajoutez les 25g de résine restante.",
-        "2. Fermez, mode manuel 'OIL', TEMP 45°C, TEMPS 4h00. START. (Le temps long est nécessaire pour solubiliser la résine)."
-      ],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: [
         "1. Le filtrage de la résine peut être collant. Utilisez une étamine fine et rincez le marc avec un tout petit peu d'alcool pur pour récupérer les derniers actifs.",
         "2. Pressez fermement. Mettez en flacon ambré."
@@ -595,7 +585,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Le safranal est extrêmement volatil. Une infusion à l'eau bouillante le fait s'évaporer instantanément. Le séchage à l'air libre l'oxyde.",
       phase_A: { temp: "50°C", temps: "1h30", solvant: "Eau distillée + Glycérine (70/30)", cible: "Crocine et Picrocrocine", translations: { en: { cible: "Crocin and Picrocrocin" }, de: { cible: "Crocin und Picrocrocin" } } },
-      phase_B: { temp: "40°C", temps: "2h00", solvant: "Alcool bio 96°", cible: "Safranal et composés volatils", translations: { en: { cible: "Safranal and volatile compounds" }, de: { cible: "Safranal und flüchtige Verbindungen" } } },
+      phase_B: { temp: "40°C", temps: "2h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Safranal et composés volatils", translations: { en: { cible: "Safranal and volatile compounds" }, de: { cible: "Safranal und flüchtige Verbindungen" } } },
       resultat: "Préservation totale de l'arôme et des actifs neurologiques volatils grâce à une extraction à très basse température.",
       translations: {
         en: {
@@ -612,7 +602,7 @@ export const plantsDatabase: PlantData[] = [
       batch_standard: "Cible BloomLab : 750ml de solvant + 3g de Safran (Rendement final estimé : ~700ml). Note : Le safran est dosé à l'effet, pas au poids végétal standard.",
       ingredients: {
         phase_A: ["2g de Stigmates de Safran", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
-        phase_B: ["1g de Stigmates de Safran", "250ml d'Alcool bio 96°"]
+        phase_B: ["1g de Stigmates de Safran", "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"]
       },
       preparation: [
         "1. Pesez le safran with une balance de précision (0,01g si possible). 3g au total suffisent pour un effet thérapeutique puissant sur ce volume.",
@@ -624,13 +614,10 @@ export const plantsDatabase: PlantData[] = [
       ],
       transition: [
         "1. Éteignez. Laissez reposer 20 minutes.",
-        "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-        "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+        "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+        "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
       ],
-      phase_B_instructions: [
-        "1. Ajoutez l'alcool et le 1g de safran restant.",
-        "2. Fermez, mode manuel 'OIL', TEMP 40°C, TEMPS 2h00. START."
-      ],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: [
         "1. Filtrez TRÈS finement avec le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc.",
         "2. Le liquide final aura une couleur rouge rubis profond. Conservez impérativement dans du verre violet (Miron) ou ambré, au réfrigérateur après ouverture."
@@ -724,7 +711,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "La silice et les minéraux nécessitent une chaleur soutenue pour être extraits des parois cellulaires. Les phytostérols de la racine nécessitent un solvant organique. Une simple tisane rate la racine et l'huile rate la feuille.",
       phase_A: { temp: "75°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Silice, minéraux, polyphénols de la feuille", translations: { en: { cible: "Silica, minerals, leaf polyphenols" }, de: { cible: "Silizium, Mineralien, Blattpolyphenole" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Phytostérols de la racine, chlorophylle", translations: { en: { cible: "Root phytosterols, chlorophyll" }, de: { cible: "Wurzelphytosterine, Chlorophyll" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Phytostérols de la racine, chlorophylle", translations: { en: { cible: "Root phytosterols, chlorophyll" }, de: { cible: "Wurzelphytosterine, Chlorophyll" } } },
       resultat: "Un élixir complet qui agit à la fois sur la structure du cheveu (silice) et sur le blocage hormonal du follicule (phytostérols).",
       translations: {
         en: {
@@ -741,7 +728,7 @@ export const plantsDatabase: PlantData[] = [
       batch_standard: "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
       ingredients: {
         phase_A: ["50g de Feuilles d'Ortie séchées", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
-        phase_B: ["25g de Racines d'Ortie séchées (concassées)", "250ml d'Alcool bio 96°"]
+        phase_B: ["25g de Racines d'Ortie séchées (concassées)", "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"]
       },
       preparation: [
         "1. Les racines d'ortie sont très dures. Concassez-les vigoureusement au mortier ou hachez-les finement.",
@@ -753,13 +740,10 @@ export const plantsDatabase: PlantData[] = [
       ],
       transition: [
         "1. Éteignez. Laissez reposer 20 minutes.",
-        "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-        "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+        "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+        "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
       ],
-      phase_B_instructions: [
-        "1. Ajoutez l'alcool et les 25g de racines.",
-        "2. Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-      ],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: [
         "1. Filtrez TRÈS finement with le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc. Pressez bien le marc de racines, c'est là que se concentrent les phytostérols.",
         "2. Le liquide aura une belle couleur vert-brun foncé. Mettez en flacon."
@@ -818,7 +802,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "La silice est piégée dans des parois cellulaires très lignifiées. Elle nécessite une température proche de l'ébullition pour être extraite, mais une ébullition prolongée dégrade les flavonoïdes associés.",
       phase_A: { temp: "80°C", temps: "2h30", solvant: "Eau distillée + Glycérine (70/30)", cible: "Silice, minéraux, saponines", translations: { en: { cible: "Silica, minerals, saponins" }, de: { cible: "Silizium, Mineralien, Saponine" } } },
-      phase_B: { temp: "50°C", temps: "2h00", solvant: "Alcool bio 70°", cible: "Flavonoïdes et stabilisation", translations: { en: { cible: "Flavonoids and stabilization" }, de: { cible: "Flavonoide und Stabilisierung" } } },
+      phase_B: { temp: "50°C", temps: "2h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Flavonoïdes et stabilisation", translations: { en: { cible: "Flavonoids and stabilization" }, de: { cible: "Flavonoide und Stabilisierung" } } },
       resultat: "Extraction maximale de la silice grâce à la chaleur prolongée à 80°C, tout en préservant les flavonoïdes lors d'une Phase B douce.",
       translations: {
         en: {
@@ -835,7 +819,7 @@ export const plantsDatabase: PlantData[] = [
       batch_standard: "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
       ingredients: {
         phase_A: ["50g de Tiges de Prêle séchées", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
-        phase_B: ["25g de Tiges de Prêle séchées", "250ml d'Alcool bio 70°"]
+        phase_B: ["25g de Tiges de Prêle séchées", "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"]
       },
       preparation: [
         "1. La prêle est très abrasive et coupante. Portez des gants si vous la manipulez à mains nues.",
@@ -847,13 +831,10 @@ export const plantsDatabase: PlantData[] = [
       ],
       transition: [
         "1. Éteignez. Laissez reposer 25 minutes. La prêle retient beaucoup de chaleur, soyez patient.",
-        "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-        "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+        "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+        "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
       ],
-      phase_B_instructions: [
-        "1. Ajoutez l'alcool et les 25g de prêle restants.",
-        "2. Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 2h00. START."
-      ],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: [
         "1. Filtrez TRÈS finement with le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc. La prêle laisse beaucoup de résidus siliceux (une fine poudre au fond).",
         "2. Laissez décanter le filtrat 2h au réfrigérateur, puis soutirez le liquide clair pour éviter les dépôts dans le flacon final."
@@ -929,7 +910,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Le [6]-gingérol se transforme en shogaol (moins actif pour certaines cibles) au-delà de 60°C. L'huile essentielle (zingibérène) s'évapore à l'air libre ou à l'ébullition.",
       phase_A: { temp: "70°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Polysaccharides prébiotiques et amidons", translations: { en: { cible: "Prebiotic polysaccharides and starches" }, de: { cible: "Präbiotische Polysaccharide und Stärken" } } },
-      phase_B: { temp: "45°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Gingérols, shogaols et huiles essentielles", translations: { en: { cible: "Gingerols, shogaols and essential oils" }, de: { cible: "Gingerole, Shogaole und ätherische Öle" } } },
+      phase_B: { temp: "45°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Gingérols, shogaols et huiles essentielles", translations: { en: { cible: "Gingerols, shogaols and essential oils" }, de: { cible: "Gingerole, Shogaole und ätherische Öle" } } },
       resultat: "Capture totale de la puissance digestive et circulatoire sans dénaturer les molécules thermosensibles.",
       translations: {
         en: {
@@ -946,7 +927,7 @@ export const plantsDatabase: PlantData[] = [
       batch_standard: "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
       ingredients: {
         phase_A: ["50g de Rhizome de Gingembre séché (tranches)", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
-        phase_B: ["25g de Rhizome de Gingembre séché (poudre grossière)", "250ml d'Alcool bio 96°"]
+        phase_B: ["25g de Rhizome de Gingembre séché (poudre grossière)", "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"]
       },
       preparation: [
         "1. Pesez 50g de tranches pour la Phase A et mixez les 25g restants en poudre grossière pour la Phase B (augmente la surface de contact).",
@@ -960,15 +941,10 @@ export const plantsDatabase: PlantData[] = [
       transition: [
         "1. À la fin du bip, éteignez la machine.",
         "2. Laissez reposer 15 à 20 minutes. La température doit descendre naturellement en dessous de 45°C.",
-        "3. TEST SENSORIEL OBLIGATOIRE : Posez votre main à plat sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C, comme l'eau d'un bain confortable), et non brûlante.",
-        "4. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé pour éviter toute vaporisation brutale ou risque inflammatoire."
+        "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+        "4. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
       ],
-      phase_B_instructions: [
-        "1. Ouvrez la cuve. Versez délicatement les 250ml d'alcool.",
-        "2. Ajoutez les 25g de poudre de gingembre.",
-        "3. Refermez hermétiquement.",
-        "4. Mode manuel 'OIL', TEMP 45°C, TEMPS 3h00. START."
-      ],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: [
         "1. Filtrez TRÈS finement with le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc.",
         "2. Pressez fermement le marc. Le liquide aura une couleur ambrée dorée et une odeur épicée puissante. Mettez en flacon ambré."
@@ -1044,7 +1020,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les flavonoïdes de la scutellaire ont des polarités différentes. La baicaline s'extrait à l'eau chaude, mais la wogonine (cruciale pour le cerveau) nécessite un solvant organique et une chaleur douce.",
       phase_A: { temp: "75°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Baicaline et glycosides hydrosolubles", translations: { en: { cible: "Baicalin and water-soluble glycosides" }, de: { cible: "Baicalin und wasserlösliche Glykoside" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Wogonine, baicaléine et fractions lipophiles", translations: { en: { cible: "Wogonin, baicalein and lipophilic fractions" }, de: { cible: "Wogonin, Baicalein und lipophile Fraktionen" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Wogonine, baicaléine et fractions lipophiles", translations: { en: { cible: "Wogonin, baicalein and lipophilic fractions" }, de: { cible: "Wogonin, Baicalein und lipophile Fraktionen" } } },
       resultat: "Spectre complet pour apaiser le 'feu' neuro-inflammatoire sans sédation chimique.",
       translations: {
         en: {
@@ -1061,7 +1037,7 @@ export const plantsDatabase: PlantData[] = [
       batch_standard: "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
       ingredients: {
         phase_A: ["50g de Racine de Scutellaire (morceaux)", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
-        phase_B: ["25g de Racine de Scutellaire (poudre)", "250ml d'Alcool bio 96°"]
+        phase_B: ["25g de Racine de Scutellaire (poudre)", "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"]
       },
       preparation: [
         "1. La racine est très dure et fibreuse. Concassez les 50g en petits copeaux.",
@@ -1073,13 +1049,10 @@ export const plantsDatabase: PlantData[] = [
       ],
       transition: [
         "1. Éteignez. Laissez reposer 20 minutes.",
-        "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-        "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+        "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+        "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
       ],
-      phase_B_instructions: [
-        "1. Ajoutez l'alcool et les 25g de poudre.",
-        "2. Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-      ],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: [
         "1. Filtrez TRÈS finement with le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc. La racine de scutellaire laisse un dépôt jaune caractéristique (la baicaline).",
         "2. Pressez bien. Le liquide final est d'un jaune intense. Mettez en flacon ambré."
@@ -1155,7 +1128,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "L'arôme de rose (signe de qualité) et les composés volatils s'évaporent à la chaleur. Les rosavines nécessitent une extraction aqueuse chaude, le salidroside un solvant mixte.",
       phase_A: { temp: "75°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Rosavines et polysaccharides", translations: { en: { cible: "Rosavins and polysaccharides" }, de: { cible: "Rosavine und Polysaccharide" } } },
-      phase_B: { temp: "45°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Salidroside, tyrosol et volatils", translations: { en: { cible: "Salidroside, tyrosol and volatiles" }, de: { cible: "Salidrosid, Tyrosol und flüchtige Stoffe" } } },
+      phase_B: { temp: "45°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Salidroside, tyrosol et volatils", translations: { en: { cible: "Salidroside, tyrosol and volatiles" }, de: { cible: "Salidrosid, Tyrosol und flüchtige Stoffe" } } },
       resultat: "Un adaptogène complet qui tonifie sans épuiser les surrénales, with son profil aromatique intact.",
       translations: {
         en: {
@@ -1172,7 +1145,7 @@ export const plantsDatabase: PlantData[] = [
       batch_standard: "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
       ingredients: {
         phase_A: ["50g de Rhizome de Rhodiola (morceaux)", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
-        phase_B: ["25g de Rhizome de Rhodiola (poudre)", "250ml d'Alcool bio 96°"]
+        phase_B: ["25g de Rhizome de Rhodiola (poudre)", "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"]
       },
       preparation: [
         "1. Le rhizome est très dense. Concassez les 50g en copeaux.",
@@ -1184,13 +1157,10 @@ export const plantsDatabase: PlantData[] = [
       ],
       transition: [
         "1. Éteignez. Laissez reposer 20 minutes.",
-        "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-        "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+        "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+        "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
       ],
-      phase_B_instructions: [
-        "1. Ajoutez l'alcool et les 25g de poudre.",
-        "2. Fermez, mode manuel 'OIL', TEMP 45°C, TEMPS 3h00. START."
-      ],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: [
         "1. Filtrez TRÈS finement with le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc. Pressez le marc.",
         "2. L'élixir aura une couleur brun-rouge et une odeur subtile de rose et de terre. Mettez en flacon."
@@ -1265,7 +1235,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Le 5-HTP s'extrait bien à l'eau, mais les graines contiennent d'autres alcaloïdes lipophiles qui modulent l'effet. Une extraction unique rate une partie du totum.",
       phase_A: { temp: "70°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "5-HTP et composés hydrosolubles", translations: { en: { cible: "5-HTP and water-soluble compounds" }, de: { cible: "5-HTP und wasserlösliche Verbindungen" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Alcaloïdes lipophiles et fractions secondaires", translations: { en: { cible: "Lipophilic alkaloids and secondary fractions" }, de: { cible: "Lipophile Alkaloide und sekundäre Fraktionen" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Alcaloïdes lipophiles et fractions secondaires", translations: { en: { cible: "Lipophilic alkaloids and secondary fractions" }, de: { cible: "Lipophile Alkaloide und sekundäre Fraktionen" } } },
       resultat: "Un précurseur de sérotonine naturel, mieux toléré et plus complet que le 5-HTP isolé en gélule.",
       translations: {
         en: {
@@ -1282,7 +1252,7 @@ export const plantsDatabase: PlantData[] = [
       batch_standard: "Cible BloomLab : 750ml de solvant + 75g de plantes (Rendement final estimé : ~600-650ml)",
       ingredients: {
         phase_A: ["50g de Graines de Griffonia (entières ou concassées)", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
-        phase_B: ["25g de Graines de Griffonia (poudre)", "250ml d'Alcool bio 96°"]
+        phase_B: ["25g de Graines de Griffonia (poudre)", "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"]
       },
       preparation: [
         "1. Les graines sont dures. Concassez les 50g au moulin à café ou au mortier.",
@@ -1294,13 +1264,10 @@ export const plantsDatabase: PlantData[] = [
       ],
       transition: [
         "1. Éteignez. Laissez reposer 20 minutes.",
-        "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-        "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+        "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+        "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
       ],
-      phase_B_instructions: [
-        "1. Ajoutez l'alcool et les 25g de poudre.",
-        "2. Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-      ],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: [
         "1. Filtrez TRÈS finement with le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc.",
         "2. Mettez en flacon ambré. À conserver à l'obscurité."
@@ -1340,7 +1307,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les principes amers sont hydrosolubles mais nécessitent une chaleur soutenue pour être extraits de la racine dense. Les xanthones hépatoprotectrices nécessitent un solvant organique.",
       phase_A: { temp: "75°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Gentiopicroside, amarogentine", translations: { en: { cible: "Gentiopicroside, amarogentin" }, de: { cible: "Gentiopicrosid, Amarogentin" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Xanthones", translations: { en: { cible: "Xanthones" }, de: { cible: "Xanthone" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Xanthones", translations: { en: { cible: "Xanthones" }, de: { cible: "Xanthone" } } },
       resultat: "Spectre complet pour stimuler les sécrétions digestives tout en protégeant le foie.",
       translations: {
         en: {
@@ -1363,7 +1330,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Racine de Gentiane (poudre)",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -1376,13 +1343,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de poudre.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez fermement le marc de racine.",
           "Le liquide sera d'un brun-rouge profond, extrêmement amer. Mettez en flacon ambré."
@@ -1461,7 +1425,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les glucosinolates sont hydrosolubles, mais les isothiocyanates (actifs détoxifiants majeurs) sont volatils et se perdent à l'ébullition.",
       phase_A: { temp: "70°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Glucosinolates, raphanines", translations: { en: { cible: "Glucosinolates, raphanins" }, de: { cible: "Glucosinolate, Raphanine" } } },
-      phase_B: { temp: "45°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Isothiocyanates", translations: { en: { cible: "Isothiocyanates" }, de: { cible: "Isothiocyanate" } } },
+      phase_B: { temp: "45°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Isothiocyanates", translations: { en: { cible: "Isothiocyanates" }, de: { cible: "Isothiocyanate" } } },
       resultat: "Un drainage hépato-biliaire puissant respectant la fragilité des actifs soufrés.",
       translations: {
         en: {
@@ -1484,7 +1448,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Racine de Radis Noir (poudre)",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -1497,13 +1461,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de poudre.",
-          "Fermez, mode manuel 'OIL', TEMP 45°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. L'odeur sera soufrée et caractéristique.",
           "Pressez le marc. Mettez en flacon ambré."
@@ -1582,7 +1543,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les flavonoïdes nécessitent une extraction aqueuse chaude, tandis que les saponines (cruciales pour l'action veineuse et hépatique) sont liposolubles.",
       phase_A: { temp: "70°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Flavonoïdes, acides phénoliques", translations: { en: { cible: "Flavonoids, phenolic acids" }, de: { cible: "Flavonoide, Phenolsäuren" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Saponines stéroïdiques", translations: { en: { cible: "Steroidal saponins" }, de: { cible: "Steroidsaponine" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Saponines stéroïdiques", translations: { en: { cible: "Steroidal saponins" }, de: { cible: "Steroidsaponine" } } },
       resultat: "Double action de protection hépatique et de tonification veineuse dans un seul élixir.",
       translations: {
         en: {
@@ -1605,7 +1566,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Chrysanthellum séché",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -1618,13 +1579,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de plante mixée.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez le marc.",
           "Le liquide sera vert-brun. Mettez en flacon ambré."
@@ -1703,7 +1661,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les saponosides (actifs régénérateurs clés) sont liposolubles et nécessitent un solvant organique, tandis que les flavonoïdes sont hydrosolubles.",
       phase_A: { temp: "70°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Flavonoïdes, alcaloïdes hydrosolubles", translations: { en: { cible: "Flavonoids, water-soluble alkaloids" }, de: { cible: "Flavonoide, wasserlösliche Alkaloide" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Saponosides triterpéniques", translations: { en: { cible: "Triterpenoid saponosides" }, de: { cible: "Triterpen-Saponoside" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Saponosides triterpéniques", translations: { en: { cible: "Triterpenoid saponosides" }, de: { cible: "Triterpen-Saponoside" } } },
       resultat: "Une protection hépatique et pulmonaire complète capturant l'ensemble du totum de la plante.",
       translations: {
         en: {
@@ -1726,7 +1684,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Desmodium séché",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -1739,13 +1697,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de plante mixée.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez le marc.",
           "Le liquide sera vert foncé. Mettez en flacon ambré."
@@ -1824,7 +1779,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "L'inuline (prébiotique majeur) nécessite une extraction aqueuse chaude, tandis que les polyacétylènes (actifs cutanés) sont liposolubles.",
       phase_A: { temp: "75°C", temps: "2h30", solvant: "Eau distillée + Glycérine (70/30)", cible: "Inuline, tanins", translations: { en: { cible: "Inulin, tannins" }, de: { cible: "Inulin, Tannine" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Polyacétylènes", translations: { en: { cible: "Polyacetylenes" }, de: { cible: "Polyacetylene" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Polyacétylènes", translations: { en: { cible: "Polyacetylenes" }, de: { cible: "Polyacetylene" } } },
       resultat: "Une extraction purifiante complète pour assainir le terrain cutané et intestinal.",
       translations: {
         en: {
@@ -1847,7 +1802,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Racine de Bardane (poudre)",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -1860,13 +1815,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 25 minutes (la racine dense retient la chaleur).",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de poudre.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez fermement le marc de racine.",
           "Le liquide sera brun-jaune. Mettez en flacon ambré."
@@ -1945,7 +1897,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les polysaccharides immuno-modulateurs nécessitent une extraction aqueuse chaude, tandis que l'astragaloside IV (actif anti-âge clé) est liposoluble.",
       phase_A: { temp: "75°C", temps: "2h30", solvant: "Eau distillée + Glycérine (70/30)", cible: "Polysaccharides, flavonoïdes", translations: { en: { cible: "Polysaccharides, flavonoids" }, de: { cible: "Polysaccharide, Flavonoide" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Astragaloside IV", translations: { en: { cible: "Astragaloside IV" }, de: { cible: "Astragalosid IV" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Astragaloside IV", translations: { en: { cible: "Astragaloside IV" }, de: { cible: "Astragalosid IV" } } },
       resultat: "Un élixir de longévité capturant à la fois les modulateurs de l'immunité et les protecteurs cellulaires.",
       translations: {
         en: {
@@ -1968,7 +1920,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Racine d'Astragale (poudre)",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -1981,13 +1933,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 25 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de poudre.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez fermement le marc.",
           "Le liquide sera jaune pâle. Mettez en flacon ambré."
@@ -2065,7 +2014,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les éleuthérosides (B et E) ont des polarités mixtes et nécessitent une extraction séquentielle pour être capturés intégralement sans dégradation thermique.",
       phase_A: { temp: "75°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Polysaccharides, éleuthérosides hydrosolubles", translations: { en: { cible: "Polysaccharides, water-soluble eleutherosides" }, de: { cible: "Polysaccharide, wasserlösliche Eleutheroside" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Éleuthérosides liposolubles", translations: { en: { cible: "Fat-soluble eleutherosides" }, de: { cible: "Fettlösliche Eleutheroside" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Éleuthérosides liposolubles", translations: { en: { cible: "Fat-soluble eleutherosides" }, de: { cible: "Fettlösliche Eleutheroside" } } },
       resultat: "Une extraction adaptogène complète pour renforcer la résilience face aux agressions environnementales.",
       translations: {
         en: {
@@ -2088,7 +2037,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Racine d'Eleuthérocoque (poudre)",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -2101,13 +2050,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de poudre.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez le marc.",
           "Le liquide sera brun clair. Mettez en flacon ambré."
@@ -2186,7 +2132,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les bacosides (actifs nootropiques majeurs) sont lipophiles. Une extraction aqueuse seule est inefficace.",
       phase_A: { temp: "65°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Flavonoïdes, alcaloïdes hydrosolubles", translations: { en: { cible: "Flavonoids, water-soluble alkaloids" }, de: { cible: "Flavonoide, wasserlösliche Alkaloide" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Bacosides", translations: { en: { cible: "Bacosides" }, de: { cible: "Bacoside" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Bacosides", translations: { en: { cible: "Bacosides" }, de: { cible: "Bacoside" } } },
       resultat: "Un extrait nootropique puissant optimisant la conduction synaptique et la résilience neuronale.",
       translations: {
         en: {
@@ -2209,7 +2155,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Bacopa séché",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -2222,13 +2168,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de plante mixée.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez le marc.",
           "Le liquide sera vert-brun. Mettez en flacon ambré."
@@ -2306,7 +2249,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "La paroi de chitine du champignon nécessite une chaleur prolongée pour libérer les bêta-glucanes. Les triterpènes (amers et calmants) nécessitent un solvant organique.",
       phase_A: { temp: "80°C", temps: "3h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Polysaccharides (Bêta-glucanes)", translations: { en: { cible: "Polysaccharides (Beta-glucans)" }, de: { cible: "Polysaccharide (Beta-Glucane)" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Triterpènes", translations: { en: { cible: "Triterpenes" }, de: { cible: "Triterpene" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Triterpènes", translations: { en: { cible: "Triterpenes" }, de: { cible: "Triterpene" } } },
       resultat: "Une double extraction fongique complète libérant l'intégralité du potentiel immuno-modulateur et calmant du Reishi.",
       translations: {
         en: {
@@ -2329,7 +2272,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Reishi en poudre fine",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -2342,13 +2285,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 30 minutes (la poudre de champignon retient la chaleur).",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de poudre fine.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine double épaisseur. Pressez très fermement.",
           "Le liquide sera brun foncé et amer. Mettez en flacon ambré."
@@ -2463,7 +2403,7 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
           "3. ⚠️ SÉCURITÉ : N'ajoutez l'huile que lorsque ce test est validé."
         ],
         phase_B_instructions: [
@@ -2548,7 +2488,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les ginkgolides (actifs vasculaires majeurs) sont liposolubles, tandis que les flavones sont hydrosolubles. Une infusion rate les ginkgolides, une macération alcoolique seule rate les flavones.",
       phase_A: { temp: "70°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Flavones glycosides", translations: { en: { cible: "Flavone glycosides" }, de: { cible: "Flavonglykoside" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Ginkgolides, acide ginkgolique", translations: { en: { cible: "Ginkgolides, ginkgolic acid" }, de: { cible: "Ginkgolide, Ginkgolsäure" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Ginkgolides, acide ginkgolique", translations: { en: { cible: "Ginkgolides, ginkgolic acid" }, de: { cible: "Ginkgolide, Ginkgolsäure" } } },
       resultat: "Une extraction neuro-vasculaire complète pour optimiser la microcirculation et la protection cérébrale.",
       translations: {
         en: {
@@ -2571,7 +2511,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Feuilles de Ginkgo",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -2584,13 +2524,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de feuilles mixées.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez le marc.",
           "Le liquide sera jaune-vert. Mettez en flacon ambré."
@@ -2669,7 +2606,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les mucilages (apaisants intestinaux) nécessitent de l'eau tiède, tandis que les saponines stéroïdiques (régulatrices) nécessitent un solvant organique et une chaleur modérée.",
       phase_A: { temp: "65°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Mucilages, 4-hydroxyisoleucine", translations: { en: { cible: "Mucilages, 4-hydroxyisoleucine" }, de: { cible: "Schleimstoffe, 4-Hydroxyisoleucin" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Saponines stéroïdiques", translations: { en: { cible: "Steroidal saponins" }, de: { cible: "Steroidsaponine" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Saponines stéroïdiques", translations: { en: { cible: "Steroidal saponins" }, de: { cible: "Steroidsaponine" } } },
       resultat: "Une extraction anabolique naturelle complète pour le soutien métabolisme et hormonal.",
       translations: {
         en: {
@@ -2692,7 +2629,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Graines de Fenugrec (poudre)",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -2705,13 +2642,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de poudre.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Le mélange sera légèrement visqueux (mucilages). Pressez fermement.",
           "Mettez en flacon ambré."
@@ -2790,7 +2724,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les mucilages sont très sensibles à la chaleur excessive (qui les dégrade en sucres simples) et aux solvants organiques forts.",
       phase_A: { temp: "60°C", temps: "1h30", solvant: "Eau distillée + Glycérine (70/30)", cible: "Mucilages, iridoïdes, tanins", translations: { en: { cible: "Mucilages, iridoids, tannins" }, de: { cible: "Schleimstoffe, Iridoide, Tannine" } } },
-      phase_B: { temp: "45°C", temps: "2h00", solvant: "Alcool bio 70°", cible: "Stabilisation et extraction douce des composés secondaires", translations: { en: { cible: "Stabilization and gentle extraction of secondary compounds" }, de: { cible: "Stabilisierung und sanfte Extraktion von Sekundärverbindungen" } } },
+      phase_B: { temp: "45°C", temps: "2h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Stabilisation et extraction douce des composés secondaires", translations: { en: { cible: "Stabilization and gentle extraction of secondary compounds" }, de: { cible: "Stabilisierung und sanfte Extraktion von Sekundärverbindungen" } } },
       resultat: "Une extraction douce préservant l'intégrité des mucilages pour une réparation profonde des muqueuses.",
       translations: {
         en: {
@@ -2813,7 +2747,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Feuilles de Plantain",
-            "250ml d'Alcool bio 70°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -2826,13 +2760,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de feuilles mixées.",
-          "Fermez, mode manuel 'OIL', TEMP 45°C, TEMPS 2h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez doucement pour éviter de troubler l'extrait avec trop de particules.",
           "Mettez en flacon ambré."
@@ -2911,7 +2842,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "La racine est très dure et lignifiée. Le resvératrol est strictement liposoluble et sensible à l'oxydation.",
       phase_A: { temp: "75°C", temps: "2h30", solvant: "Eau distillée + Glycérine (70/30)", cible: "Polyphénols hydrosolubles", translations: { en: { cible: "Water-soluble polyphenols" }, de: { cible: "Wasserlösliche Polyphenole" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Resvératrol, émodine", translations: { en: { cible: "Resveratrol, emodin" }, de: { cible: "Resveratrol, Emodin" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Resvératrol, émodine", translations: { en: { cible: "Resveratrol, emodin" }, de: { cible: "Resveratrol, Emodin" } } },
       resultat: "Une extraction de resvératrol hautement biodisponible pour un soutien systémique anti-inflammatoire.",
       translations: {
         en: {
@@ -2934,7 +2865,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Racine de Renouée (poudre)",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -2947,13 +2878,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 25 minutes (la racine dense retient la chaleur).",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de poudre.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez fermement le marc de racine.",
           "Le liquide sera brun-rouge. Mettez en flacon ambré."
@@ -3031,7 +2959,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Le bois est très dur. Les quassinoïdes nécessitent une extraction séquentielle pour être pleinement capturés sans sur-extraction des tanins astringents.",
       phase_A: { temp: "70°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Quassinoïdes hydrosolubles, tanins", translations: { en: { cible: "Water-soluble quassinoids, tannins" }, de: { cible: "Wasserlösliche Quassinoide, Tannine" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Quassinoïdes liposolubles", translations: { en: { cible: "Fat-soluble quassinoids" }, de: { cible: "Fettlösliche Quassinoide" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Quassinoïdes liposolubles", translations: { en: { cible: "Fat-soluble quassinoids" }, de: { cible: "Fettlösliche Quassinoide" } } },
       resultat: "Une extraction amère ultra-puissante pour relancer la digestion et assainir l'écosystème intestinal.",
       translations: {
         en: {
@@ -3054,7 +2982,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Quassia (poudre)",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -3067,13 +2995,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de poudre.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez fermement.",
           "Le liquide sera jaune pâle, d'une amertume extrême. Mettez en flacon ambré."
@@ -3152,7 +3077,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les iridoïdes sont sensibles à la chaleur prolongée. Une extraction douce et séquencée préserve leur activité sur les muqueuses.",
       phase_A: { temp: "65°C", temps: "1h30", solvant: "Eau distillée + Glycérine (70/30)", cible: "Iridoïdes, tanins, flavonoïdes", translations: { en: { cible: "Iridoids, tannins, flavonoids" }, de: { cible: "Iridoide, Tannine, Flavonoide" } } },
-      phase_B: { temp: "45°C", temps: "2h00", solvant: "Alcool bio 70°", cible: "Stabilisation des composés", translations: { en: { cible: "Stabilization of compounds" }, de: { cible: "Stabilisierung der Verbindungen" } } },
+      phase_B: { temp: "45°C", temps: "2h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Stabilisation des composés", translations: { en: { cible: "Stabilization of compounds" }, de: { cible: "Stabilisierung der Verbindungen" } } },
       resultat: "Une extraction douce et complète pour une décongestion profonde des muqueuses irritées.",
       translations: {
         en: {
@@ -3175,7 +3100,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g d'Euphraise séchée",
-            "250ml d'Alcool bio 70°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -3188,13 +3113,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de plante mixée.",
-          "Fermez, mode manuel 'OIL', TEMP 45°C, TEMPS 2h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine fine. Pressez le marc.",
           "Le liquide sera brun-vert. Mettez en flacon ambré."
@@ -3273,7 +3195,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les anthocyanes sont extrêmement thermolabiles. Une cuisson >70°C les détruit presque entièrement, annulant le bénéfice microcirculatoire.",
       phase_A: { temp: "60°C", temps: "1h30", solvant: "Eau distillée + Glycérine (70/30)", cible: "Anthocyanes, myrtilline", translations: { en: { cible: "Anthocyanins, myrtillin" }, de: { cible: "Anthocyane, Myrtillin" } } },
-      phase_B: { temp: "45°C", temps: "2h00", solvant: "Alcool bio 70°", cible: "Stabilisation des polyphénols", translations: { en: { cible: "Stabilization of polyphenols" }, de: { cible: "Stabilisierung der Polyphenole" } } },
+      phase_B: { temp: "45°C", temps: "2h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Stabilisation des polyphénols", translations: { en: { cible: "Stabilization of polyphenols" }, de: { cible: "Stabilisierung der Polyphenole" } } },
       resultat: "Une extraction douce préservant l'intégrité des anthocyanes pour un soutien vasculaire et oculaire maximal.",
       translations: {
         en: {
@@ -3296,7 +3218,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Myrtilles séchées",
-            "250ml d'Alcool bio 70°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -3309,13 +3231,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de myrtilles mixées.",
-          "Fermez, mode manuel 'OIL', TEMP 45°C, TEMPS 2h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez doucement.",
           "Le liquide sera rouge-violet profond. Mettez en flacon ambré ou violet (Miron)."
@@ -3394,7 +3313,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "La racine de maca est très dense. Les macamides (actifs endocriniens) sont liposolubles, tandis que les glucosinolates sont hydrosolubles.",
       phase_A: { temp: "70°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Glucosinolates, polysaccharides", translations: { en: { cible: "Glucosinolates, polysaccharides" }, de: { cible: "Glucosinolate, Polysaccharide" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Macamides, macaènes", translations: { en: { cible: "Macamides, macaenes" }, de: { cible: "Macamide, Macaene" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Macamides, macaènes", translations: { en: { cible: "Macamides, macaenes" }, de: { cible: "Macamide, Macaene" } } },
       resultat: "Une extraction adaptogène complète pour le soutien de l'énergie et de l'équilibre hormonal.",
       translations: {
         en: {
@@ -3417,7 +3336,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Racine de Maca (poudre fine)",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -3430,13 +3349,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de poudre fine.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez fermement (la poudre de maca absorbe beaucoup de liquide).",
           "Le liquide sera beige-brun, avec un goût de caramel/malt. Mettez en flacon ambré."
@@ -3515,7 +3431,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les tanins s'extraient bien à l'eau, mais l'acide salicylique (anti-inflammatoire doux) nécessite un solvant organique et une chaleur modérée.",
       phase_A: { temp: "65°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Tanins, flavonoïdes", translations: { en: { cible: "Tannins, flavonoids" }, de: { cible: "Tannine, Flavonoide" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Acide salicylique, composés lipophiles", translations: { en: { cible: "Salicylic acid, lipophilic compounds" }, de: { cible: "Salicylsäure, lipophile Verbindungen" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Acide salicylique, composés lipophiles", translations: { en: { cible: "Salicylic acid, lipophilic compounds" }, de: { cible: "Salicylsäure, lipophile Verbindungen" } } },
       resultat: "Une extraction gynécologique et digestive complète pour le soutien des muqueuses et la régulation du cycle.",
       translations: {
         en: {
@@ -3538,7 +3454,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g d'Alchémille séchée",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -3551,13 +3467,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de plante mixée.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez le marc.",
           "Le liquide sera vert-brun, légèrement astringent. Mettez en flacon ambré."
@@ -3636,7 +3549,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "L'artémisinine est très thermolabile et liposoluble. Une infusion à l'eau bouillante la détruit presque totalement.",
       phase_A: { temp: "60°C", temps: "1h30", solvant: "Eau distillée + Glycérine (70/30)", cible: "Flavonoïdes, composés hydrosolubles", translations: { en: { cible: "Flavonoids, water-soluble compounds" }, de: { cible: "Flavonoide, wasserlösliche Verbindungen" } } },
-      phase_B: { temp: "45°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Artémisinine, huiles essentielles", translations: { en: { cible: "Artemisinin, essential oils" }, de: { cible: "Artemisinin, ätherische Öle" } } },
+      phase_B: { temp: "45°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Artémisinine, huiles essentielles", translations: { en: { cible: "Artemisinin, essential oils" }, de: { cible: "Artemisinin, ätherische Öle" } } },
       resultat: "Une extraction à froid préservant l'artémisinine pour une modulation immunitaire et anti-parasitaire maximale.",
       translations: {
         en: {
@@ -3659,7 +3572,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g d'Armoise annuelle",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -3672,13 +3585,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de plante mixée.",
-          "Fermez, mode manuel 'OIL', TEMP 45°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez le marc.",
           "Le liquide sera vert foncé, très aromatique. Mettez en flacon ambré."
@@ -3757,7 +3667,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les diterpènes (actifs endocriniens majeurs) sont strictement liposolubles. Une infusion aqueuse rate totalement l'action sur la progestérone.",
       phase_A: { temp: "70°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Iridoïdes (Agnuside)", translations: { en: { cible: "Iridoids (Agnuside)" }, de: { cible: "Iridoide (Agnusid)" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Diterpènes, Casticine", translations: { en: { cible: "Diterpenes, Casticin" }, de: { cible: "Diterpene, Casticin" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Diterpènes, Casticine", translations: { en: { cible: "Diterpenes, Casticin" }, de: { cible: "Diterpene, Casticin" } } },
       resultat: "Une extraction hormonale complète pour la régulation du cycle et le soutien de la progestérone.",
       translations: {
         en: {
@@ -3780,7 +3690,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Fruits de Vitex (poudre)",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -3793,13 +3703,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de poudre.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez fermement le marc.",
           "Le liquide sera brun foncé. Mettez en flacon ambré."
@@ -3878,7 +3785,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "La thymoquinone est strictement lipophile et volatile. Une extraction aqueuse est inutile. Une chaleur >60°C oxyde les acides gras précieux de la graine.",
       phase_A: { temp: "60°C", temps: "1h30", solvant: "Eau distillée + Glycérine (70/30)", cible: "Saponines, protéines hydrosolubles", translations: { en: { cible: "Saponins, water-soluble proteins" }, de: { cible: "Saponine, wasserlösliche Proteine" } } },
-      phase_B: { temp: "45°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Thymoquinone, Nigellone", translations: { en: { cible: "Thymoquinone, Nigellone" }, de: { cible: "Thymoquinon, Nigellon" } } },
+      phase_B: { temp: "45°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Thymoquinone, Nigellone", translations: { en: { cible: "Thymoquinone, Nigellone" }, de: { cible: "Thymoquinon, Nigellon" } } },
       resultat: "Une extraction immunitaire et anti-inflammatoire préservant la thymoquinone pour une efficacité maximale.",
       translations: {
         en: {
@@ -3901,7 +3808,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Graines de Nigelle (poudre)",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -3914,13 +3821,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de poudre.",
-          "Fermez, mode manuel 'OIL', TEMP 45°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez fermement.",
           "Le liquide sera noir/brun très foncé, avec une odeur épicée. Mettez en flacon ambré."
@@ -3999,7 +3903,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "La paroi de chitine du champignon nécessite une chaleur prolongée (80°C) pour libérer les polysaccharides. Les stérols nécessitent un solvant organique.",
       phase_A: { temp: "80°C", temps: "3h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Polysaccharides, Cordycépine", translations: { en: { cible: "Polysaccharides, Cordycepin" }, de: { cible: "Polysaccharide, Cordycepin" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Stérols, composés lipophiles", translations: { en: { cible: "Sterols, lipophilic compounds" }, de: { cible: "Sterine, lipophile Verbindungen" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Stérols, composés lipophiles", translations: { en: { cible: "Sterols, lipophilic compounds" }, de: { cible: "Sterine, lipophile Verbindungen" } } },
       resultat: "Une extraction mitochondriale et immunitaire complète pour le soutien de l'énergie et de la vitalité.",
       translations: {
         en: {
@@ -4022,7 +3926,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Cordyceps en poudre fine",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -4034,13 +3938,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 30 minutes (la poudre retient la chaleur).",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de poudre fine.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine double épaisseur. Pressez très fermement.",
           "Le liquide sera brun doré. Mettez en flacon ambré."
@@ -4119,7 +4020,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les flavonoïdes diurétiques s'extraient à l'eau, mais l'ombelliférone (antibactérien urinaire) nécessite un solvant organique.",
       phase_A: { temp: "65°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Flavonoïdes, acide chlorogénique", translations: { en: { cible: "Flavonoids, chlorogenic acid" }, de: { cible: "Flavonoide, Chlorogensäure" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Ombelliférone", translations: { en: { cible: "Umbelliferone" }, de: { cible: "Umbelliferon" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Ombelliférone", translations: { en: { cible: "Umbelliferone" }, de: { cible: "Umbelliferon" } } },
       resultat: "Une extraction rénale complète pour le drainage des fluides et le soutien des voies urinaires.",
       translations: {
         en: {
@@ -4142,7 +4043,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Piloselle séchée",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -4155,13 +4056,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de plante mixée.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez le marc.",
           "Le liquide sera vert-brun. Mettez en flacon ambré."
@@ -4240,7 +4138,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les mucilages sont extrêmement thermolabiles. Une température >60°C les dégrade en sucres simples, annulant l'effet protecteur.",
       phase_A: { temp: "50°C", temps: "1h30", solvant: "Eau distillée + Glycérine (70/30)", cible: "Mucilages, anthocyanes", translations: { en: { cible: "Mucilages, anthocyanins" }, de: { cible: "Schleimstoffe, Anthocyane" } } },
-      phase_B: { temp: "40°C", temps: "2h00", solvant: "Alcool bio 70°", cible: "Stabilisation douce", translations: { en: { cible: "Gentle stabilization" }, de: { cible: "Sanfte Stabilisierung" } } },
+      phase_B: { temp: "40°C", temps: "2h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Stabilisation douce", translations: { en: { cible: "Gentle stabilization" }, de: { cible: "Sanfte Stabilisierung" } } },
       resultat: "Une extraction douce préservant les mucilages pour une protection maximale des muqueuses enflammées.",
       translations: {
         en: {
@@ -4263,7 +4161,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Mauve",
-            "250ml d'Alcool bio 70°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -4276,13 +4174,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de plante mixée.",
-          "Fermez, mode manuel 'OIL', TEMP 40°C, TEMPS 2h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez doucement (le liquide sera visqueux).",
           "Mettez en flacon ambré."
@@ -4361,7 +4256,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les shatavarines (actifs hormonaux) sont liposolubles, tandis que les mucilages (hydratation) sont hydrosolubles et thermolabiles.",
       phase_A: { temp: "65°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Mucilages, alcaloïdes hydrosolubles", translations: { en: { cible: "Mucilages, water-soluble alkaloids" }, de: { cible: "Schleimstoffe, wasserlösliche Alkaloide" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Shatavarines", translations: { en: { cible: "Shatavarins" }, de: { cible: "Shatavarine" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Shatavarines", translations: { en: { cible: "Shatavarins" }, de: { cible: "Shatavarine" } } },
       resultat: "Une extraction hormonale et hydratante complète pour le soutien du Yin féminin.",
       translations: {
         en: {
@@ -4384,7 +4279,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Racine de Shatavari (poudre)",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -4397,13 +4292,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de poudre.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez fermement le marc.",
           "Le liquide sera brun clair, légèrement visqueux. Mettez en flacon ambré."
@@ -4482,7 +4374,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les héricénones (NGF) sont liposolubles. La paroi de chitine nécessite une chaleur prolongée pour libérer les bêta-glucanes.",
       phase_A: { temp: "80°C", temps: "3h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Bêta-glucanes, polysaccharides", translations: { en: { cible: "Beta-glucans, polysaccharides" }, de: { cible: "Beta-Glucane, Polysaccharide" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Héricénones, Érinacines", translations: { en: { cible: "Hericenones, Erinacines" }, de: { cible: "Hericenone, Erinacine" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Héricénones, Érinacines", translations: { en: { cible: "Hericenones, Erinacines" }, de: { cible: "Hericenone, Erinacine" } } },
       resultat: "Une extraction neurologique et immunitaire complète pour le soutien de la neuroplasticité.",
       translations: {
         en: {
@@ -4505,7 +4397,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Lion's Mane en poudre fine",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -4517,13 +4409,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 30 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de poudre fine.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine double épaisseur. Pressez très fermement.",
           "Le liquide sera brun ambré. Mettez en flacon ambré."
@@ -4578,7 +4467,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Le Chaga est dur comme de la pierre. La mélanine et la SOD nécessitent une extraction aqueuse chaude mais contrôlée. L'acide bétulinique (anti-tumoral) nécessite un solvant organique.",
       phase_A: { temp: "75°C", temps: "3h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Mélanine, SOD, bêta-glucanes", translations: { en: { cible: "Melanin, SOD, beta-glucans" }, de: { cible: "Melanin, SOD, Beta-Glucane" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Acide bétulinique, triterpènes", translations: { en: { cible: "Betulinic acid, triterpenes" }, de: { cible: "Betulinsäure, Triterpene" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Acide bétulinique, triterpènes", translations: { en: { cible: "Betulinic acid, triterpenes" }, de: { cible: "Betulinsäure, Triterpene" } } },
       resultat: "Une extraction antioxydante et immunitaire totale, capturant l'acide bétulinique rare du Chaga.",
       translations: {
         en: {
@@ -4601,7 +4490,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Chaga en poudre fine",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -4613,13 +4502,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 30 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de poudre fine.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine double épaisseur. Pressez très fermement.",
           "Le liquide sera noir profond (mélanine). Mettez en flacon ambré ou violet (Miron)."
@@ -4698,7 +4584,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les tanins s'extraient bien à l'eau, mais une chaleur excessive (>70°C) les rend trop astringents et irritants pour les muqueuses.",
       phase_A: { temp: "65°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Hamamélitane, flavonoïdes", translations: { en: { cible: "Hamamelitannin, flavonoids" }, de: { cible: "Hamamelitannin, Flavonoide" } } },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 96°", cible: "Tanins contrôlés, composés lipophiles", translations: { en: { cible: "Controlled tannins, lipophilic compounds" }, de: { cible: "Kontrollierte Gerbstoffe, lipophile Verbindungen" } } },
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Tanins contrôlés, composés lipophiles", translations: { en: { cible: "Controlled tannins, lipophilic compounds" }, de: { cible: "Kontrollierte Gerbstoffe, lipophile Verbindungen" } } },
       resultat: "Une extraction veinotonique complète sans astringence excessive, idéale pour la circulation.",
       translations: {
         en: {
@@ -4721,7 +4607,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g d'Hamamélis",
-            "250ml d'Alcool bio 96°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -4734,13 +4620,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de plante mixée.",
-          "Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez le marc.",
           "Le liquide sera brun-rouge. Mettez en flacon ambré."
@@ -4817,17 +4700,17 @@ export const plantsDatabase: PlantData[] = [
     ],
     preuve_scientifique: "Densité nutritionnelle exceptionnelle. Action anti-inflammatoire via les isothiocyanates (similaires au sulforaphane). Soutien de l'énergie cellulaire et de l'immunité.",
     pourquoi_bloomlab: {
-      probleme_traditionnel: "Les vitamines et les isothiocyanates sont extrêmement thermolabiles. Une chaleur >65°C détruit 80% de la valeur nutritionnelle.",
+      probleme_traditionnel: "Les vitamines et les isothiocyanates sont extrêmement thermolabiles. Une chaleur >65°C dégrade fortement les composés thermolabiles.",
       phase_A: { temp: "60°C", temps: "1h30", solvant: "Eau distillée + Glycérine (70/30)", cible: "Minéraux, vitamines hydrosolubles", translations: { en: { cible: "Minerals, water-soluble vitamins" }, de: { cible: "Mineralstoffe, wasserlösliche Vitamine" } } },
-      phase_B: { temp: "45°C", temps: "2h00", solvant: "Alcool bio 70°", cible: "Isothiocyanates, vitamines liposolubles", translations: { en: { cible: "Isothiocyanates, fat-soluble vitamins" }, de: { cible: "Isothiocyanate, fettlösliche Vitamine" } } },
+      phase_B: { temp: "45°C", temps: "2h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Isothiocyanates, vitamines liposolubles", translations: { en: { cible: "Isothiocyanates, fat-soluble vitamins" }, de: { cible: "Isothiocyanate, fettlösliche Vitamine" } } },
       resultat: "Une extraction nutritive à froid préservant l'intégrité des vitamines et des composés soufrés.",
       translations: {
         en: {
-          probleme_traditionnel: "Vitamins and isothiocyanates are extremely heat-sensitive. Heat >65°C destroys 80% of the nutritional value.",
+          probleme_traditionnel: "Vitamins and isothiocyanates are extremely heat-sensitive. Heat >65°C substantially degrades heat-sensitive compounds.",
           resultat: "A nutrient-rich cold extraction preserving the integrity of vitamins and sulfur compounds."
         },
         de: {
-          probleme_traditionnel: "Vitamine und Isothiocyanate sind extrem hitzeempfindlich. Temperaturen >65°C zerstören 80% des Nährwerts.",
+          probleme_traditionnel: "Vitamine und Isothiocyanate sind extrem hitzeempfindlich. Temperaturen >65°C bauen hitzeempfindliche Stoffe deutlich ab.",
           resultat: "Eine nährstoffreiche Kaltextraktion, die die Integrität von Vitaminen und Schwefelverbindungen bewahrt."
         }
       }
@@ -4842,7 +4725,7 @@ export const plantsDatabase: PlantData[] = [
           ],
           phase_B: [
             "25g de Feuilles de Moringa",
-            "250ml d'Alcool bio 70°"
+            "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"
           ]
         },
         preparation: [
@@ -4855,13 +4738,10 @@ export const plantsDatabase: PlantData[] = [
         ],
         transition: [
           "1. Éteignez. Laissez reposer 20 minutes.",
-          "2. TEST SENSORIEL OBLIGATOIRE : Posez votre main sur la paroi extérieure de la cuve. Elle doit être 'tiède au toucher' (environ 40°C), et non brûlante.",
-          "3. ⚠️ SÉCURITÉ : N'ajoutez l'alcool que lorsque ce test est validé."
+          "Attendre le refroidissement complet du cycle avant ouverture sécurisée (ne pas toucher la paroi chaude ni introduire d'alcool).",
+          "3. ⚠️ SÉCURITÉ : ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : ne pas chauffer d'alcool en cuve électrique."
         ],
-        phase_B_instructions: [
-          "Ajoutez l'alcool et les 25g de feuilles mixées.",
-          "Fermez, mode manuel 'OIL', TEMP 45°C, TEMPS 2h00. START."
-        ],
+        phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez le marc.",
           "Le liquide sera vert foncé. Mettez en flacon ambré."
@@ -4922,72 +4802,72 @@ export const plantsDatabase: PlantData[] = [
   },
   {
     "plant_id": "allium_sativum",
-    "nom_commun": "Ail (Vieilli ou Noir)",
+    "nom_commun": "Ail (Frais vs Noir vieilli — Protocole sans alcool)",
     "nom_latin": "Allium sativum",
-    "partie_utilisee": "Gousses séchées",
-    "famille_bloom": "Pharmacie Intérieure (Cardiovasculaire & Antimicrobien)",
+    "partie_utilisee": "Gousses fraîches écrasées ou gousses fermentées (ail noir)",
+    "famille_bloom": "Pharmacie Intérieure (Vitalité Cardiovasculaire)",
     "terrains_cibles": ["T8_Inflammation", "T1_Intestin", "T3_Immunité"],
     "actifs_cles": [
-      {"nom": "S-allyl-cystéine (SAC)", "polarite": "Hydrosoluble", "translations": { "en": { "nom": "S-allyl-cysteine (SAC)", "polarite": "Water-soluble" }, "de": { "nom": "S-Allylcystein (SAC)", "polarite": "Wasserlöslich" } } },
-      {"nom": "Ajoène", "polarite": "Liposoluble", "translations": { "en": { "nom": "Ajoene", "polarite": "Fat-soluble" }, "de": { "nom": "Ajoen", "polarite": "Fettlöslich" } } },
-      {"nom": "Allicine", "polarite": "Volatile/Enzymatique", "translations": { "en": { "nom": "Allicin", "polarite": "Volatile/Enzymatic" }, "de": { "nom": "Allicin", "polarite": "Flüchtig/Enzymatisch" } } }
+      {"nom": "S-allyl-cystéine (SAC — ail noir/vieilli)", "polarite": "Hydrosoluble", "translations": { "en": { "nom": "S-allyl-cysteine (SAC — aged/black garlic)", "polarite": "Water-soluble" }, "de": { "nom": "S-Allylcystein (SAC — gealtert/schwarz)", "polarite": "Wasserlöslich" } } },
+      {"nom": "Composés soufrés lipophiles", "polarite": "Liposoluble", "translations": { "en": { "nom": "Lipophilic sulfur compounds", "polarite": "Fat-soluble" }, "de": { "nom": "Fettlösliche Schwefelverbindungen", "polarite": "Fettlöslich" } } },
+      {"nom": "Allicine (ail frais écrasé uniquement)", "polarite": "Volatile/Enzymatique", "translations": { "en": { "nom": "Allicin (fresh crushed garlic only)", "polarite": "Volatile/Enzymatic" }, "de": { "nom": "Allicin (nur frischer zerdrückter Knoblauch)", "polarite": "Flüchtig/Enzymatisch" } } }
     ],
-    "preuve_scientifique": "L'ail vieilli contient de la SAC, stable et hydrosoluble, qui inhibe l'Enzyme de Conversion de l'Angiotensine (ECA). L'ajoène possède une action antiplaquettaire. L'allicine (issue de la transformation enzymatique de l'alliine par l'alliinase) est un puissant antimicrobien à large spectre.",
+    "preuve_scientifique": "L'ail vieilli/noir (fermenté) contient de la S-allyl-cystéine (SAC), stable et hydrosoluble, mais ne contient plus d'allicine active. À l'inverse, l'ail frais écrasé libère de l'allicine par action enzymatique de l'alliinase avant toute chauffe. Ces deux formes ne doivent pas être confondues.",
     "pourquoi_bloomlab": {
-      "probleme_traditionnel": "L'allicine est détruite par la chaleur (>40°C) et les sucs gastriques. L'ail cru peut être irritant pour les muqueuses. L'extraction traditionnelle ne capture pas le ratio SAC/Allicine optimal.",
-      "phase_A": {"temp": "35°C", "temps": "4h00", "solvant": "Eau distillée + Glycérine (70/30)", "cible": "Conversion enzymatique alliine -> allicine et stabilisation de la SAC", "translations": { "en": { "cible": "Enzymatic conversion alliine -> allicin and SAC stabilization" }, "de": { "cible": "Enzymatische Umwandlung Alliin -> Allicin und SAC-Stabilisierung" } } },
-      "phase_B": {"temp": "45°C", "temps": "2h00", "solvant": "Alcool bio 96°", "cible": "Extraction de l'ajoène et des composés organosoufrés liposolubles", "translations": { "en": { "cible": "Extraction of ajoene and fat-soluble organosulfur compounds" }, "de": { "cible": "Extraktion von Ajoen und fettlöslichen organischen Schwefelverbindungen" } } },
-      "resultat": "Un concentré antimicrobien et cardio-protecteur non irritant, sans les inconvénients de l'ail cru.",
+      "probleme_traditionnel": "L'allicine de l'ail frais est sensible à la chaleur (>40°C). Le protocole à l'alcool chauffé est suspendu en cuve BloomLab® par mesure de sécurité.",
+      "phase_A": {"temp": "35°C", "temps": "2h00", "solvant": "Eau filtrée + Glycérine végétale (70/30)", "cible": "Extraction douce de la SAC (si ail noir/vieilli) ou fraction enzymatique tiède (si ail frais reposé 15 min)", "translations": { "en": { "cible": "Gentle extraction of SAC (aged/black garlic) or mild enzymatic fraction (fresh crushed garlic rested 15 min)" }, "de": { "cible": "Sanfte Extraktion von SAC (schwarzer Knoblauch) oder milde Fraktion (frischer Knoblauch nach 15 Min. Ruhezeit)" } } },
+      "phase_B": {"temp": "42°C (hors alcool)", "temps": "2h00", "solvant": "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", "cible": "Macération lipidique douce des composés organosoufrés lipophiles sans solvant inflammable", "translations": { "en": { "cible": "Gentle oil maceration of lipophilic sulfur compounds without heated alcohol" }, "de": { "cible": "Sanfte Ölmazeration fettlöslicher Schwefelverbindungen ohne erhitzten Alkohol" } } },
+      "resultat": "Préparation douce sans alcool chauffé, distinguant clairement l'usage de l'ail frais écrasé et celui de l'ail noir vieilli.",
       "translations": {
         "en": {
-          "probleme_traditionnel": "Allicin is destroyed by heat (>40°C) and gastric juices. Raw garlic can be irritating to mucous membranes. Traditional extraction does not capture the optimal SAC/Allicin ratio.",
-          "resultat": "A non-irritating antimicrobial and cardio-protective concentrate, without the drawbacks of raw garlic."
+          "probleme_traditionnel": "Allicin in fresh garlic is heat-sensitive (>40°C). Heated alcohol extraction inside BloomLab® is suspended pending safety validation.",
+          "resultat": "Gentle alcohol-free preparation clearly distinguishing fresh crushed garlic from fermented black/aged garlic."
         },
         "de": {
-          "probleme_traditionnel": "Allicin wird durch Hitze (>40°C) und Magensäfte zerstört. Roher Knoblauch kann die Schleimhäute reizen. Die traditionelle Extraktion erfasst nicht das optimale SAC/Allicin-Verhältnis.",
-          "resultat": "Ein nicht reizendes antimikrobielles und herzschützendes Konzentrat ohne die Nachteile von rohem Knoblauch."
+          "probleme_traditionnel": "Allicin aus frischem Knoblauch ist hitzeempfindlich (>40°C). Erhitzte Alkoholextraktionen im BloomLab® sind vorsorglich ausgesetzt.",
+          "resultat": "Sanfte alkoholfreie Zubereitung mit klarer Trennung zwischen frischem und schwarzem gealtertem Knoblauch."
         }
       }
     },
     "recette_pas_a_pas": {
-      "batch_standard": "750ml de solvant + 150g de gousses d'ail",
+      "batch_standard": "500ml de solvant + 60g d'ail (choisir soit ail frais écrasé, soit ail noir vieilli — ne pas chauffer d'alcool)",
       "ingredients": {
-        "phase_A": ["100g de gousses d'ail frais (écrasées)", "350ml d'Eau distillée", "150ml de Glycérine végétale"],
-        "phase_B": ["50g de gousses d'ail (tranchées)", "250ml d'Alcool bio 96°"]
+        "phase_A": ["40g d'ail noir vieilli (pour SAC) OU d'ail frais écrasé reposé 15 min (pour allicine)", "350ml d'Eau filtrée", "150ml de Glycérine végétale bio"],
+        "phase_B": ["⚠️ Phase alcool chauffé suspendue — option alternative : 20g d'ail séché en macération huileuse douce (250ml d'huile d'olive à 42°C)"]
       },
       "preparation": [
-        "1. Écrasez les 100g d'ail de la Phase A et laissez reposer 15 minutes à l'air libre (crucial pour l'activation de l'alliinase).",
-        "2. Tranchez finement les 50g d'ail de la Phase B."
+        "1. Choisir une seule forme : ail frais écrasé laissé 15 min à l'air libre (formation d'allicine) OU ail noir vieilli coupé finement (riche en SAC).",
+        "2. Ne pas introduire d'alcool dans la cuve électrique chauffante."
       ],
       "phase_A_instructions": [
-        "1. Versez eau et glycérine dans la cuve.",
-        "2. Ajoutez l'ail écrasé.",
-        "3. TEMP: 35°C, TEMPS: 4h00. START."
+        "1. Verser l'eau filtrée et la glycérine dans la cuve.",
+        "2. Ajouter l'ail préparé.",
+        "3. TEMP: 35°C, TEMPS: 2h00. START."
       ],
-      "transition": ["Vérifiez que la température est redescendue sous 35°C."],
+      "transition": ["Laisser refroidir naturellement cuve éteinte avant toute manipulation sans test tactile direct sur la paroi."],
       "phase_B_instructions": [
-        "1. Ajoutez l'alcool et l'ail tranché.",
-        "2. TEMP: 45°C, TEMPS: 2h00. START."
+        "1. ⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab®.",
+        "2. Option lipidique sans alcool : placer le marc avec 250ml d'huile végétale vierge à 42°C pendant 2h00, puis filtrer et réfrigérer."
       ],
-      "filtration_et_finition": ["Filtration à l'étamine fine. Mise en flacon ambré. Conservation au frais recommandée."]
+      "filtration_et_finition": ["Filtration fine sur tamis inox. Mise en flacon ambré propre au réfrigérateur et consommation rapide recommandée."]
     },
-    "convergence_ancestrale": "Pungent de la médecine égyptienne et grecque, utilisé pour 'nettoyer les artères' et combattre les infections.",
-    "synergies_recommandees": ["Aubépine (Cardio)", "Gingembre (Immunité)"],
-    "precautions": "Interactions possibles avec les anticoagulants.",
+    "convergence_ancestrale": "Usage alimentaire et traditionnel documenté dans l'Antiquité méditerranéenne pour la vitalité générale.",
+    "synergies_recommandees": ["Aubépine", "Gingembre"],
+    "precautions": "Interactions possibles avec les traitements anticoagulants ou antiplaquettaires : avis médical requis. Conserver le macérat huileux à l'ail exclusivement au réfrigérateur et consommer rapidement (risque botulique sur l'ail frais non acidifié à température ambiante).",
     "translations": {
       "en": {
-        "nom_commun": "Aged or Black Garlic",
-        "partie_utilisee": "Dried cloves",
-        "preuve_scientifique": "Aged garlic contains SAC, stable and water-soluble, which inhibits ACE. Ajoene has antiplatelet action. Allicin is a powerful broad-spectrum antimicrobial.",
-        "convergence_ancestrale": "Pungent of Egyptian and Greek medicine, used to 'clean the arteries' and fight infections.",
-        "precautions": "Possible interactions with anticoagulants."
+        "nom_commun": "Garlic (Fresh vs Aged Black — Alcohol-Free)",
+        "partie_utilisee": "Fresh crushed cloves or fermented black cloves",
+        "preuve_scientifique": "Aged black garlic supplies water-soluble SAC but lacks active allicin, whereas fresh crushed garlic generates enzymatic allicin before heating.",
+        "convergence_ancestrale": "Traditional culinary and herbal ingredient documented in ancient Mediterranean sources.",
+        "precautions": "Potential interactions with anticoagulants/antiplatelets. Always refrigerate fresh garlic oil preparations and use promptly."
       },
       "de": {
-        "nom_commun": "Knoblauch (Gealtert oder Schwarz)",
-        "partie_utilisee": "Getrocknete Zehen",
-        "preuve_scientifique": "Gealterter Knoblauch enthält SAC, das ACE hemmt. Ajoene hat eine thrombozytenaggregationshemmende Wirkung. Allicin ist ein starkes antimikrobielles Breitbandmittel.",
-        "convergence_ancestrale": "Scharfer Stoff der ägyptischen und griechischen Medizin, verwendet zur 'Reinigung der Arterien' und zur Infektionsbekämpfung.",
-        "precautions": "Mögliche Wechselwirkungen mit Antikoagulanzien."
+        "nom_commun": "Knoblauch (Frisch vs. Schwarz gealtert — Alkoholfrei)",
+        "partie_utilisee": "Frische zerdrückte Zehen oder fermentierter schwarzer Knoblauch",
+        "preuve_scientifique": "Gealterter schwarzer Knoblauch liefert wasserlösliches SAC (ohne aktives Allicin), während frischer zerdrückter Knoblauch enzymatisch Allicin bildet.",
+        "convergence_ancestrale": "Traditionelles Gewürz- und Heilkraut der Mittelmeerantike.",
+        "precautions": "Mögliche Wechselwirkungen mit Blutverdünnern. Knoblauchöl stets gekühlt aufbewahren und zügig verbrauchen."
       }
     }
   },
@@ -5006,8 +4886,8 @@ export const plantsDatabase: PlantData[] = [
     "pourquoi_bloomlab": {
       "probleme_traditionnel": "L'écorce est très ligneuse. Une simple infusion ne libère que 20% de la salicine. Une ébullition dégrade les flavonoïdes protecteurs.",
       "phase_A": {"temp": "80°C", "temps": "3h00", "solvant": "Eau distillée + Glycérine", "cible": "Extraction forcée de la salicine par déstructuration de la lignine", "translations": { "en": { "cible": "Forced extraction of salicin by lignin destructuration" }, "de": { "cible": "Forcierte Extraktion von Salicin durch Lignin-Destrukturierung" } } },
-      "phase_B": {"temp": "50°C", "temps": "2h00", "solvant": "Alcool bio 70°", "cible": "Fractions flavonoïques et tanins astringents", "translations": { "en": { "cible": "Flavonoid fractions and astringent tannins" }, "de": { "cible": "Flavonoidfraktionen und adstringierende Gerbstoffe" } } },
-      "resultat": "Une 'Aspirine Végétale' à spectre complet, hautement dosée en salicine biodisponible.",
+      "phase_B": {"temp": "50°C", "temps": "2h00", "solvant": "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", "cible": "Fractions flavonoïques et tanins astringents", "translations": { "en": { "cible": "Flavonoid fractions and astringent tannins" }, "de": { "cible": "Flavonoidfraktionen und adstringierende Gerbstoffe" } } },
+      "resultat": "Extrait aqueux traditionnel riche en dérivés salicylés végétaux (usage éducatif non médical).",
       "translations": {
         "en": {
           "probleme_traditionnel": "The bark is very woody. A simple infusion releases only 20% of the salicin. Boiling degrades protective flavonoids.",
@@ -5054,7 +4934,7 @@ export const plantsDatabase: PlantData[] = [
     "pourquoi_bloomlab": {
       "probleme_traditionnel": "La berbérine est très amère et difficile à extraire à l'eau seule. Son absorption est naturellement faible.",
       "phase_A": {"temp": "75°C", "temps": "3h00", "solvant": "Eau distillée + Glycérine", "cible": "Glycosides et fraction aqueuse", "translations": { "en": { "cible": "Glycosides and aqueous fraction" }, "de": { "cible": "Glykoside und wässrige Fraktion" } } },
-      "phase_B": {"temp": "60°C", "temps": "4h00", "solvant": "Alcool bio 96°", "cible": "Concentration maximale de Berbérine et Berbamine", "translations": { "en": { "cible": "Maximum concentration of Berberine and Berbamine" }, "de": { "cible": "Maximale Konzentration von Berberin und Berbamin" } } },
+      "phase_B": {"temp": "60°C", "temps": "4h00", "solvant": "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", "cible": "Concentration maximale de Berbérine et Berbamine", "translations": { "en": { "cible": "Maximum concentration of Berberine and Berbamine" }, "de": { "cible": "Maximale Konzentration von Berberin und Berbamin" } } },
       "resultat": "Un régulateur métabolique majeur, optimisant la sensibilité à l'insuline et la santé hépatique.",
       "translations": {
         "en": {
@@ -5102,7 +4982,7 @@ export const plantsDatabase: PlantData[] = [
     "pourquoi_bloomlab": {
       "probleme_traditionnel": "Les OPC sont sensibles à l'oxydation. Les flavonoïdes nécessitent une chaleur douce mais constante pour être totalement libérés de la matrice végétale.",
       "phase_A": {"temp": "65°C", "temps": "2h00", "solvant": "Eau distillée + Glycérine", "cible": "Extraction des flavonoïdes et OPC", "translations": { "en": { "cible": "Extraction of flavonoids and OPC" }, "de": { "cible": "Extraktion von Flavonoiden und OPC" } } },
-      "phase_B": {"temp": "45°C", "temps": "2h00", "solvant": "Alcool bio 45°", "cible": "Stabilisation et extraction des composés aromatiques", "translations": { "en": { "cible": "Stabilization and extraction of aromatic compounds" }, "de": { "cible": "Stabilisierung und Extraktion aromatischer Verbindungen" } } },
+      "phase_B": {"temp": "45°C", "temps": "2h00", "solvant": "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", "cible": "Stabilisation et extraction des composés aromatiques", "translations": { "en": { "cible": "Stabilization and extraction of aromatic compounds" }, "de": { "cible": "Stabilisierung und Extraktion aromatischer Verbindungen" } } },
       "resultat": "Le 'Lait du Cœur', un tonique cardiaque et nerveux d'une grande douceur et d'une efficacité profonde.",
       "translations": {
         "en": {
@@ -5150,7 +5030,7 @@ export const plantsDatabase: PlantData[] = [
     "pourquoi_bloomlab": {
       "probleme_traditionnel": "L'écorce est extrêmement dure. La quinine nécessite un milieu acide ou fortement alcoolisé pour être extraite efficacement. L'eau seule ne capture que les tanins.",
       "phase_A": {"temp": "85°C", "temps": "3h00", "solvant": "Eau + Acide Citrique (léger)", "cible": "Relargage des tanins et préparation de l'écorce", "translations": { "en": { "cible": "Release of tannins and preparation of the bark" }, "de": { "cible": "Freisetzung von Gerbstoffen und Vorbereitung der Rinde" } } },
-      "phase_B": {"temp": "60°C", "temps": "4h00", "solvant": "Alcool bio 96°", "cible": "Extraction massive des alcaloïdes (Quinine)", "translations": { "en": { "cible": "Massive extraction of alkaloids (Quinine)" }, "de": { "cible": "Massive Extraktion von Alkaloiden (Chinin)" } } },
+      "phase_B": {"temp": "60°C", "temps": "4h00", "solvant": "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", "cible": "Extraction massive des alcaloïdes (Quinine)", "translations": { "en": { "cible": "Massive extraction of alkaloids (Quinine)" }, "de": { "cible": "Massive Extraktion von Alkaloiden (Chinin)" } } },
       "resultat": "Un élixir de vitalité 'Feu', idéal pour les convalescences et les états de fatigue profonde.",
       "translations": {
         "en": {
@@ -5302,19 +5182,19 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Le Totum nécessite à la fois une phase aqueuse et une phase alcoolique légère pour capturer les alcaloïdes.",
       phase_A: { temp: "60°C", temps: "2h00", solvant: "Eau", cible: "Flavonoïdes" },
-      phase_B: { temp: "45°C", temps: "2h00", solvant: "Alcool bio 45°", cible: "Alcaloïdes" },
+      phase_B: { temp: "45°C", temps: "2h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Alcaloïdes" },
       resultat: "Un extrait complet pour un sommeil réparateur."
     },
     recette_pas_a_pas: {
       batch_standard: "750ml + 50g de plante",
       ingredients: {
         phase_A: ["35g de Passiflore", "500ml d'Eau"],
-        phase_B: ["15g de Passiflore", "250ml d'Alcool 45°"]
+        phase_B: ["15g de Passiflore", "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"]
       },
       preparation: ["Tasser la plante dans la cuve."],
       phase_A_instructions: ["Extraire à 60°C."],
       transition: ["Laisser tiédir."],
-      phase_B_instructions: ["Ajouter l'alcool et extraire à 45°C."],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: ["Filtre fin requis."]
     },
     convergence_ancestrale: "Découverte par les missionnaires en Amérique, associée à la Passion pour sa structure florale unique.",
@@ -5335,20 +5215,20 @@ export const plantsDatabase: PlantData[] = [
     preuve_scientifique: "Réduit le temps d'endormissement et améliore la qualité du sommeil profond. Action sur les récepteurs GABA.",
     pourquoi_bloomlab: {
       probleme_traditionnel: "L'odeur est forte et les actifs sont principalement lipophiles. L'extraction doit être hermétique.",
-      phase_A: { temp: "50°C", temps: "3h00", solvant: "Eau / Alcool 70°", cible: "Acide valérénique" },
-      phase_B: { temp: "40°C", temps: "1h00", solvant: "Alcool", cible: "Stabilisation" },
+      phase_A: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Acide valérénique" },
+      phase_B: { temp: "40°C", temps: "1h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Stabilisation" },
       resultat: "Une teinture mère puissante et normalisée."
     },
     recette_pas_a_pas: {
       batch_standard: "750ml + 75g de racines",
       ingredients: {
         phase_A: ["50g de Valériane", "500ml de mélange"],
-        phase_B: ["25g de Valériane", "250ml d'Alcool"]
+        phase_B: ["25g de Valériane", "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"]
       },
       preparation: ["Concasser les racines dures."],
       phase_A_instructions: ["Extraire à 50°C longuement."],
       transition: ["Maintenir l'étanchéité."],
-      phase_B_instructions: ["Ajouter le reste d'alcool."],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: ["Filtrer et flaconner rapidement."]
     },
     convergence_ancestrale: "Le 'Phu' des Grecs anciens, utilisé pour calmer les nerfs et les spasmes.",
@@ -5370,19 +5250,19 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les alcaloïdes sont sensibles et nécessitent une extraction à température modérée pour ne pas être dénaturés.",
       phase_A: { temp: "55°C", temps: "2h00", solvant: "Eau / Glycérine", cible: "Flavonoïdes" },
-      phase_B: { temp: "45°C", temps: "2h00", solvant: "Alcool bio 45°", cible: "Alcaloïdes" },
+      phase_B: { temp: "45°C", temps: "2h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Alcaloïdes" },
       resultat: "Un extrait relaxant idéal pour la fin de journée."
     },
     recette_pas_a_pas: {
       batch_standard: "750ml + 50g de plante",
       ingredients: {
         phase_A: ["35g d'Eschscholtzia", "500ml d'Eau/Gly"],
-        phase_B: ["15g d'Eschscholtzia", "250ml d'Alcool 45°"]
+        phase_B: ["15g d'Eschscholtzia", "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"]
       },
       preparation: ["Plante séchée concassée."],
       phase_A_instructions: ["Extraire à 55°C."],
       transition: ["Laisser reposer."],
-      phase_B_instructions: ["Ajouter l'alcool et finir à 45°C."],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: ["Filtre étamine."]
     },
     convergence_ancestrale: "Le 'Pavot de Californie', utilisé par les Amérindiens pour apaiser les enfants et les douleurs.",
@@ -5405,7 +5285,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "L'infusion bouillante perd les huiles volatiles. L'extraction à 65°C capture les diterpènes protecteurs.",
       phase_A: { temp: "65°C", temps: "1h30", solvant: "Eau distillée", cible: "Acide rosmarinique" },
-      phase_B: { temp: "45°C", temps: "1h00", solvant: "Eau / Alcool", cible: "Huiles essentielles" },
+      phase_B: { temp: "45°C", temps: "1h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Huiles essentielles" },
       resultat: "Un tonique hépatique et cérébral majeur."
     },
     recette_pas_a_pas: {
@@ -5770,18 +5650,18 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Salicine se dégrade à haute température.",
       phase_A: { temp: "60°C", temps: "1h30", solvant: "Eau/Glycérine", cible: "Salicine, tannins" },
-      phase_B: { temp: "45°C", temps: "2h00", solvant: "Alcool 70°", cible: "Stabilisation" }
+      phase_B: { temp: "45°C", temps: "2h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Stabilisation" }
     },
     recette_pas_a_pas: {
       batch_standard: "750ml + 75g",
       ingredients: {
         phase_A: ["500ml Eau/Glycérine", "50g Écorce"],
-        phase_B: ["250ml Alcool 70°", "25g Écorce"]
+        phase_B: ["250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)", "25g Écorce"]
       },
       preparation: ["Pesez précisément les ingrédients."],
       phase_A_instructions: ["500ml Eau/Glycérine + 50g Écorce. 60°C, 1h30."],
-      transition: ["Repos 20 min. Test sensoriel ~40°C."],
-      phase_B_instructions: ["250ml Alcool 70° + 25g Écorce. 45°C, 2h."],
+      transition: ["Attendre le refroidissement complet cuve arrêtée avant toute manipulation."],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: ["Étamine. Flacon ambré."]
     },
     socle_synergique: {
@@ -5807,18 +5687,18 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Valépotriates se dégradent à la chaleur.",
       phase_A: { temp: "65°C", temps: "2h00", solvant: "Eau/Glycérine", cible: "Iridoïdes" },
-      phase_B: { temp: "45°C", temps: "3h00", solvant: "Alcool 96°", cible: "Acide valérénique" }
+      phase_B: { temp: "45°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Acide valérénique" }
     },
     recette_pas_a_pas: {
       batch_standard: "750ml + 75g",
       ingredients: {
         phase_A: ["500ml Eau/Glycérine", "50g Racine"],
-        phase_B: ["250ml Alcool", "25g Racine"]
+        phase_B: ["250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)", "25g Racine"]
       },
       preparation: ["Pesez précisément les ingrédients."],
       phase_A_instructions: ["500ml Eau/Glycérine + 50g Racine. 65°C, 2h."],
-      transition: ["Repos 20 min. Test sensoriel ~40°C."],
-      phase_B_instructions: ["250ml Alcool + 25g Racine. 45°C, 3h."],
+      transition: ["Attendre le refroidissement complet cuve arrêtée avant toute manipulation."],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: ["Étamine. Flacon bien fermé."]
     },
     socle_synergique: {
@@ -5844,18 +5724,18 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Cynarine sensible >65°C. Inuline nécessite eau chaude.",
       phase_A: { temp: "70°C", temps: "2h00", solvant: "Eau/Glycérine", cible: "Inuline" },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool 96°", cible: "Cynarine" }
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Cynarine" }
     },
     recette_pas_a_pas: {
       batch_standard: "750ml + 75g",
       ingredients: {
         phase_A: ["500ml Eau/Glycérine", "50g Feuilles"],
-        phase_B: ["250ml Alcool", "25g Feuilles"]
+        phase_B: ["250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)", "25g Feuilles"]
       },
       preparation: ["Pesez précisément les ingrédients."],
       phase_A_instructions: ["500ml Eau/Glycérine + 50g Feuilles. 70°C, 2h."],
-      transition: ["Repos 20 min. Test sensoriel ~40°C."],
-      phase_B_instructions: ["250ml Alcool + 25g Feuilles. 50°C, 3h."],
+      transition: ["Attendre le refroidissement complet cuve arrêtée avant toute manipulation."],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: ["Étamine. Flacon ambré."]
     },
     socle_synergique: {
@@ -5881,18 +5761,18 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Hyperforine se dégrade à la lumière et chaleur.",
       phase_A: { temp: "60°C", temps: "1h30", solvant: "Eau/Glycérine", cible: "Flavonoïdes" },
-      phase_B: { temp: "45°C", temps: "2h00", solvant: "Alcool 96°", cible: "Hyperforine" }
+      phase_B: { temp: "45°C", temps: "2h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Hyperforine" }
     },
     recette_pas_a_pas: {
       batch_standard: "750ml + 75g",
       ingredients: {
         phase_A: ["500ml Eau/Glycérine", "50g Plante"],
-        phase_B: ["250ml Alcool", "25g Plante"]
+        phase_B: ["250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)", "25g Plante"]
       },
       preparation: ["Pesez précisément les ingrédients."],
       phase_A_instructions: ["500ml Eau/Glycérine + 50g Plante. 60°C, 1h30."],
-      transition: ["Repos 20 min. Test sensoriel ~40°C."],
-      phase_B_instructions: ["250ml Alcool + 25g Plante. 45°C, 2h."],
+      transition: ["Attendre le refroidissement complet cuve arrêtée avant toute manipulation."],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: ["Étamine. Flacon verre violet (Miron)."]
     },
     socle_synergique: {
@@ -5919,13 +5799,13 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Une décoction brute respecte la tradition, mais BloomLab permet un protocole reproductible, stable et mieux contrôlé pour les fractions toniques hydrosolubles et les essences plus fragiles.",
       phase_A: { temp: "75°C", temps: "2h00", solvant: "Eau distillée + glycérine légère", cible: "Polysaccharides, saponines toniques, fondation Qi-Sang" },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 70°", cible: "Fraction aromatique et constituants plus lipophiles" }
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Fraction aromatique et constituants plus lipophiles" }
     },
     recette_pas_a_pas: {
       batch_standard: "Cible BloomLab : 750ml (A+B combinés)",
       ingredients: {
         phase_A: ["50 g de formule Shi Quan Da Bu", "600 ml d’eau distillée", "150 ml de glycérine végétale"],
-        phase_B: ["20 g de formule", "750 ml d’alcool bio 70°"]
+        phase_B: ["20 g de formule", "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"]
       },
       preparation: [
         "1. Faire tremper 50 g de formule Shi Quan Da Bu dans 600 ml d’eau distillée + 150 ml de glycérine végétale pendant 30 minutes."
@@ -5936,9 +5816,7 @@ export const plantsDatabase: PlantData[] = [
       transition: [
         "1. Laisser reposer 20 à 30 minutes, filtrer et presser fermement le marc."
       ],
-      phase_B_instructions: [
-        "1. Placer 20 g de formule dans 750 ml d’alcool bio 70°, mode manuel 50°C, 3h00."
-      ],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: [
         "1. Filtrer finement et assembler les deux fractions si un totum complet est souhaité."
       ]
@@ -5963,7 +5841,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Une infusion simple extrait surtout les sucres et une partie des polysaccharides, mais laisse de côté une partie de la fraction caroténoïde et du potentiel nourrissant complet.",
       phase_A: { temp: "72°C", temps: "2h00", solvant: "Eau distillée", cible: "Polysaccharides, bétaïne, fraction phénolique hydrosoluble" },
-      phase_B: { temp: "45°C", temps: "3h00", solvant: "Huile végétale légère ou alcool doux", cible: "Caroténoïdes et fraction lipophile" }
+      phase_B: { temp: "45°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Caroténoïdes et fraction lipophile" }
     },
     recette_pas_a_pas: {
       batch_standard: "Cible BloomLab : 750ml",
@@ -6007,13 +5885,13 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Une décoction agressive peut casser la dimension émolliente d’une formule Run-Fei. BloomLab permet une extraction plus douce, plus longue, mieux adaptée aux fractions muqueuses et polysaccharidiques.",
       phase_A: { temp: "72°C", temps: "2h00", solvant: "Eau distillée", cible: "Mucilages, polysaccharides, fraction adoucissante" },
-      phase_B: { temp: "45°C", temps: "2h30", solvant: "Glycérine renforcée ou alcool doux", cible: "Fraction aromatique légère, saponines douces, stabilisation" }
+      phase_B: { temp: "45°C", temps: "2h30", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Fraction aromatique légère, saponines douces, stabilisation" }
     },
     recette_pas_a_pas: {
       batch_standard: "Cible BloomLab : 750ml",
       ingredients: {
         phase_A: ["45 g de formule Run-Fei", "750 ml d’eau distillée"],
-        phase_B: ["15 g de formule", "750 ml de solvant doux (glycérine ou alcool)"]
+        phase_B: ["15 g de formule", "750 ml de solvant doux (glycérine végétale bio — protocole alcool chauffé suspendu)"]
       },
       preparation: [
         "1. Faire tremper 45 g de formule Run-Fei dans 750 ml d’eau distillée pendant 30 à 60 minutes si la formule contient fruits secs, graines ou tremelles."
@@ -6051,7 +5929,7 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Une infusion courte sous-exploite le potentiel polysaccharidique et nourrissant. Une chaleur trop forte peut alourdir le profil.",
       phase_A: { temp: "70°C", temps: "1h00", solvant: "Eau distillée", cible: "Polysaccharides, flavonoïdes, fraction adoucissante" },
-      phase_B: { temp: "45°C", temps: "2h30", solvant: "Alcool doux ou glycérine végétale renforcée", cible: "Saponines et triterpénoïdes doux" }
+      phase_B: { temp: "45°C", temps: "2h30", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Saponines et triterpénoïdes doux" }
     },
     recette_pas_a_pas: {
       batch_standard: "Cible BloomLab : 750ml",
@@ -6095,13 +5973,13 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les baies livrent une partie de leurs composés à l’eau, mais les lignanes signature demandent un solvant organique doux et un contrôle thermique strict.",
       phase_A: { temp: "70°C", temps: "1h30", solvant: "Eau distillée", cible: "Acides organiques et fraction hydrosoluble" },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 70°", cible: "Lignanes et fraction lipophile" }
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Lignanes et fraction lipophile" }
     },
     recette_pas_a_pas: {
       batch_standard: "Cible BloomLab : 750ml",
       ingredients: {
         phase_A: ["25 g de schisandra concassée", "750 ml d’eau distillée"],
-        phase_B: ["15 g de schisandra concassée", "750 ml d’alcool bio 70°"]
+        phase_B: ["15 g de schisandra concassée", "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"]
       },
       preparation: [
         "1. Concasser légèrement 25 g de schisandra et faire tremper 20 minutes dans 750 ml d’eau distillée."
@@ -6112,9 +5990,7 @@ export const plantsDatabase: PlantData[] = [
       transition: [
         "1. Filtrer puis laisser tiédir."
       ],
-      phase_B_instructions: [
-        "1. Phase B : placer 15 g de schisandra concassée dans 750 ml d’alcool bio 70°, mode manuel 50°C, 3h00."
-      ],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: [
         "1. Filtrer et conserver en flacon ambré."
       ]
@@ -6140,13 +6016,13 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Une infusion brève sous-extrait l’inuline et les fractions profondes de la racine. Pour une plante-terrain comme la bardane, le temps et la température comptent autant que la plante elle-même.",
       phase_A: { temp: "75°C", temps: "2h00", solvant: "Eau distillée", cible: "Inuline, acides phénoliques, fraction prébiotique" },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 70°", cible: "Lignanes et fraction mixte" }
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Lignanes et fraction mixte" }
     },
     recette_pas_a_pas: {
       batch_standard: "Cible BloomLab : 750ml",
       ingredients: {
         phase_A: ["40 g de racine de bardane coupée", "750 ml d’eau distillée"],
-        phase_B: ["20 g de racine en poudre grossière", "750 ml d’alcool bio 70°"]
+        phase_B: ["20 g de racine en poudre grossière", "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"]
       },
       preparation: [
         "1. Faire tremper 40 g de racine de bardane coupée dans 750 ml d’eau distillée pendant 2 à 8 heures si elle est très sèche."
@@ -6157,9 +6033,7 @@ export const plantsDatabase: PlantData[] = [
       transition: [
         "1. Laisser reposer 20 à 30 minutes, filtrer et presser fermement."
       ],
-      phase_B_instructions: [
-        "1. Phase B : placer 20 g de racine en poudre grossière dans 750 ml d’alcool bio 70°, mode manuel 50°C, 3h00."
-      ],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: [
         "1. Filtrer soigneusement."
       ]
@@ -6184,13 +6058,13 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Les racines épaisses demandent du temps pour livrer leurs polysaccharides. Une infusion trop courte donne un extrait appauvri.",
       phase_A: { temp: "75°C", temps: "2h00", solvant: "Eau distillée + glycérine légère", cible: "Polysaccharides et flavonoïdes" },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 70°", cible: "Astragalosides et fraction mixte" }
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Astragalosides et fraction mixte" }
     },
     recette_pas_a_pas: {
       batch_standard: "Cible BloomLab : 750ml",
       ingredients: {
         phase_A: ["35 g de racine d’astragale coupée", "600 ml d’eau distillée", "150 ml de glycérine végétale"],
-        phase_B: ["15 g de racine en coupe fine", "750 ml d’alcool bio 70°"]
+        phase_B: ["15 g de racine en coupe fine", "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"]
       },
       preparation: [
         "1. Faire tremper 35 g de racine d’astragale coupée dans 600 ml d’eau distillée + 150 ml de glycérine végétale pendant 30 à 60 minutes."
@@ -6201,9 +6075,7 @@ export const plantsDatabase: PlantData[] = [
       transition: [
         "1. Refroidir 20 minutes puis filtrer."
       ],
-      phase_B_instructions: [
-        "1. Phase B : placer 15 g de racine en coupe fine dans 750 ml d’alcool bio 70°, mode manuel 50°C, 3h00."
-      ],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: [
         "1. Filtrer et conserver en flacon ambré."
       ]
@@ -6228,13 +6100,13 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "Le champignon demande chaleur prolongée pour libérer les bêta-glucanes, tandis que les triterpènes bénéficient d’une phase alcoolique plus douce et plus ciblée.",
       phase_A: { temp: "80°C", temps: "3h00", solvant: "Eau distillée + glycérine légère", cible: "Bêta-glucanes et polysaccharides" },
-      phase_B: { temp: "50°C", temps: "3h00", solvant: "Alcool bio 70°", cible: "Triterpènes et fraction lipophile" }
+      phase_B: { temp: "50°C", temps: "3h00", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Triterpènes et fraction lipophile" }
     },
     recette_pas_a_pas: {
       batch_standard: "Cible BloomLab : 750ml",
       ingredients: {
         phase_A: ["35 g de reishi en poudre grossière", "600 ml d’eau distillée", "150 ml de glycérine végétale"],
-        phase_B: ["15 g de reishi en poudre fine", "750 ml d’alcool bio 70°"]
+        phase_B: ["15 g de reishi en poudre fine", "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"]
       },
       preparation: [
         "1. Utiliser 35 g de reishi en poudre grossière dans 600 ml d’eau distillée + 150 ml de glycérine végétale."
@@ -6245,9 +6117,7 @@ export const plantsDatabase: PlantData[] = [
       transition: [
         "1. Laisser redescendre en température puis filtrer."
       ],
-      phase_B_instructions: [
-        "1. Phase B : placer 15 g de reishi en poudre fine dans 750 ml d’alcool bio 70°, mode manuel 50°C, 3h00."
-      ],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: [
         "1. Filtrer à l’étamine double et conserver en flacon ambré."
       ]
@@ -6272,13 +6142,13 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "La réglisse extrait bien à l’eau, mais une extraction contrôlée permet de mieux calibrer son intensité et sa douceur, notamment pour les terrains sensibles ou hypertendus.",
       phase_A: { temp: "72°C", temps: "2h00", solvant: "Eau distillée", cible: "Glycyrrhizine, flavonoïdes, mucoprotection" },
-      phase_B: { temp: "50°C", temps: "2h30", solvant: "Alcool bio 70°", cible: "Fraction complémentaire et stabilisation" }
+      phase_B: { temp: "50°C", temps: "2h30", solvant: "Glycérine végétale bio ou Huile végétale vierge (protocole alcool chauffé suspendu)", cible: "Fraction complémentaire et stabilisation" }
     },
     recette_pas_a_pas: {
       batch_standard: "Cible BloomLab : 750ml",
       ingredients: {
         phase_A: ["30 g de racine de réglisse coupée", "750 ml d’eau distillée"],
-        phase_B: ["15 g de racine en coupe fine", "750 ml d’alcool bio 70°"]
+        phase_B: ["15 g de racine en coupe fine", "250ml de Glycérine végétale bio / Eau filtrée (phase alcool chauffé suspendue)"]
       },
       preparation: [
         "1. Faire tremper 30 g de racine de réglisse coupée dans 750 ml d’eau distillée pendant 30 minutes."
@@ -6289,9 +6159,7 @@ export const plantsDatabase: PlantData[] = [
       transition: [
         "1. Filtrer soigneusement."
       ],
-      phase_B_instructions: [
-        "1. Phase B : placer 15 g de racine en coupe fine dans 750 ml d’alcool bio 70°, mode manuel 50°C, 2h30."
-      ],
+      phase_B_instructions: ["⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® : utiliser un macérât huileux ou glycériné doux à 45°C pendant 2h00, ou réserver l'alcool exclusivement à froid hors appareil électrique."],
       filtration_et_finition: [
         "1. Filtrer et conserver en flacon ambré."
       ]

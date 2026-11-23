@@ -208,7 +208,7 @@ export const AxeA1EmonctoiresContent: React.FC<AxeA1EmonctoiresContentProps> = (
           title="Débloquez l'Axe A1 : Émonctoires & Élimination"
           subtitle="La question d'entrée et la définition des 5 émonctoires sont en accès libre. Débloquez les cascades biochimiques de phase II, le protocole du Laboratoire N=1, les cinétiques d'extraction et l'ensemble des modules systémiques avec votre abonnement."
           bulletPoints={[
-            "Tableau des cascades biologiques et niveaux de preuve clinique",
+            "Tableau des cascades biologiques et niveaux de documentation scientifique",
             "Laboratoire N=1 : protocole d'observation sur 7 jours",
             "Extraction de précision : solvants, cinétiques et températures",
             "Accès illimité aux 3 Protocoles Systémiques et 9 Axes"
@@ -236,7 +236,7 @@ export const AxeA1EmonctoiresContent: React.FC<AxeA1EmonctoiresContentProps> = (
                 Observatoire individuel de la perméabilité d'élimination
               </h3>
               <p className="text-sm text-[#FAF7F2]/80 leading-relaxed">
-                Suivez quotidiennement les marqueurs d'excrétion (clarté urinaire matinale, transit intestinal, sébum cutané, odeur de la sueur). Ce protocole d'observation permet de calibrer les temps de contact de l'infusion à l'eau pure versus hydro-alcoolique.
+                Suivez quotidiennement les marqueurs d'excrétion (clarté urinaire matinale, transit intestinal, sébum cutané, odeur de la sueur). Ce protocole d'observation permet de comparer des préparations aqueuses versus macérations huileuses ou glycérinées à température douce.
               </p>
             </div>
           </div>
