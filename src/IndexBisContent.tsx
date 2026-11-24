@@ -1,7 +1,7 @@
 import ExtractionKineticsChart from './components/ExtractionKineticsChart';
 import AmazonSocialProof, { AmazonRatingBadge } from './components/AmazonSocialProof';
 import SeoHead from './components/SeoHead';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PaymentBadges } from './components/PaymentBadges';
 import { TooltipLexique } from './components/TooltipLexique';
@@ -73,16 +73,36 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
   const [cartItem, setCartItem] = useState({ title: "Pack Signature — BloomLab® + Herbier Complet + Duo Argiles", price: 289 });
   const heroSlides = [heroImg1, heroImg2, heroImg3];
   const extendedHeroSlides = [...heroSlides, heroImg1];
+  const [heroIntroMode, setHeroIntroMode] = useState<'video' | 'carousel'>('video');
+  const [heroVideoAvailable, setHeroVideoAvailable] = useState(true);
+  const introVideoRef = useRef<HTMLVideoElement | null>(null);
   const [heroSlideIndex, setHeroSlideIndex] = useState(0);
   const [isHeroResetting, setIsHeroResetting] = useState(false);
 
   useEffect(() => {
+    if (heroIntroMode !== 'video') return;
+    const vid = introVideoRef.current;
+    if (!vid) return;
+    vid.muted = true;
+    vid.defaultMuted = true;
+    vid.volume = 0;
+    const playPromise = vid.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Si l'autoplay vidéo est bloqué par le navigateur, bascule sur le carrousel
+        setHeroIntroMode('carousel');
+      });
+    }
+  }, [heroIntroMode]);
+
+  useEffect(() => {
+    if (heroIntroMode !== 'carousel') return;
     const interval = setInterval(() => {
       setIsHeroResetting(false);
       setHeroSlideIndex((prev) => (prev >= heroSlides.length ? 1 : prev + 1));
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [heroIntroMode]);
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [newsletterSent, setNewsletterSent] = useState(false);
@@ -192,6 +212,110 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
     ? "Kreieren Sie Pflegeöle, Gesichtsseren, Balsame und Duftöle in 2 Std. selbst. 304-Edelstahlbehälter, präzise Temperatursteuerung und 100-Rezepte-Leitfaden."
     : "Create homemade skincare oils, face serums, balms, and scented oils in 2h. 304 stainless steel chamber, precise thermal control, and 100-recipe guide.";
 
+  const homeFaqItems = [
+    {
+      q: isFR
+        ? "En quoi la BloomLab® est-elle différente d'un simple bain-marie ?"
+        : isDE
+        ? "Wie unterscheidet sich die BloomLab® von einem einfachen Wasserbad?"
+        : "How is BloomLab® different from a simple double-boiler?",
+      a: isFR
+        ? "Le bain-marie traditionnel ne permet aucun réglage fin : l'eau atteint rapidement des températures fluctuantes dégradant les molécules thermosensibles. La BloomLab® intègre une sonde thermique régulée (spécification nominale fabricant ±0,5 °C, non certifiée indépendamment) combinée à un brassage cyclique doux en milieu clos."
+        : isDE
+        ? "Ein herkömmliches Wasserbad erlaubt keine Feinregelung: Schwankende Temperaturen schädigen hitzeempfindliche Moleküle. Die BloomLab® bietet eine Sensorsteuerung (Hersteller-Nennwert ±0,5 °C) mit sanftem zyklischem Rühren in geschlossener Kammer."
+        : "A traditional double-boiler lacks fine thermal control: fluctuating heat degrades heat-sensitive compounds. BloomLab® integrates a nominal ±0.5°C temperature sensor (manufacturer rating) with gentle cyclic stirring in a closed chamber."
+    },
+    {
+      q: isFR
+        ? "Faut-il être herboriste ou chimiste pour l'utiliser ?"
+        : isDE
+        ? "Muss man Kräuterkundler oder Chemiker sein, um sie zu bedienen?"
+        : "Do I need to be an herbalist or chemist to use it?",
+      a: isFR
+        ? "Absolument pas. L'appareil a été pensé pour une prise en main progressive. Vous disposez d'un guide pratique de 100 recettes et de l'Herbier en ligne qui détaillent chaque paramètre temps, température et solvant étape par étape."
+        : isDE
+        ? "Überhaupt nicht. Das Gerät wurde für eine einfache, schrittweise Nutzung konzipiert. Sie erhalten einen praktischen Leitfaden mit 100 Rezepten sowie unser Online-Herbarium mit genauen Zeit-, Temperatur- und Lösungsmittelangaben."
+        : "Not at all. The extractor is built for progressive, intuitive use. You receive a 100-recipe practical guide and full Herbarium access detailing time, temperature, and solvent parameters step by step."
+    },
+    {
+      q: isFR
+        ? "Quels solvants puis-je utiliser en toute sécurité ?"
+        : isDE
+        ? "Welche Lösungsmittel kann ich sicher verwenden?"
+        : "Which solvents can I use safely?",
+      a: isFR
+        ? "La cuve en Inox 304 de grade alimentaire fonctionne avec l'eau filtrée, les huiles végétales (jojoba, olive, amande douce, argan) et la glycérine végétale. Par mesure de sécurité, l'utilisation d'alcool chauffé dans la cuve BloomLab® est suspendue (toute macération alcoolique se réalise uniquement à froid, en bocal verre hors appareil)."
+        : isDE
+        ? "Der lebensmittelechte Behälter aus Edelstahl 304 eignet sich für gereinigtes Wasser, Pflanzenöle (Jojoba, Olive, Süßmandel, Argan) und pflanzliches Glycerin. Aus Sicherheitsgründen ist das Erhitzen von Alkohol im BloomLab®-Behälter ausgesetzt (alkoholische Mazerationen erfolgen ausschließlich kalt im Glas außerhalb des Geräts)."
+        : "The food-grade 304 stainless steel chamber operates with purified water, botanical oils (jojoba, olive, sweet almond, argan), and vegetable glycerin. As a precaution, heated alcohol extraction inside the BloomLab® chamber is suspended (any alcohol maceration must be done cold in a glass jar outside the appliance)."
+    },
+    {
+      q: isFR
+        ? "Combien de temps dure une extraction ?"
+        : isDE
+        ? "Wie lange dauert eine Extraktion?"
+        : "How long does an extraction take?",
+      a: isFR
+        ? "La durée varie entre 1h30 pour une huile infusée culinaire douce et 3h pour une extraction concentrée de racines denses, sans surveillance constante requise."
+        : isDE
+        ? "Die Dauer liegt zwischen 1,5 Stunden für ein mildes kulinarisches Kräuteröl und 3 Stunden für eine konzentrierte Wurzelextraktion – ganz ohne ständige Aufsicht."
+        : "Extraction cycles range from 1.5 hours for gentle culinary oils to 3 hours for dense root preparations, with no constant supervision required."
+    }
+  ];
+
+  const homeProductSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    '@id': 'https://bloombybotanik.com/bloomlab/#product',
+    name: 'BloomLab® — Extracteur Botanique de Précision',
+    image: [
+      'https://bloombybotanik.com/images/1.png',
+      'https://bloombybotanik.com/images/2.png',
+      'https://bloombybotanik.com/images/8.png',
+      'https://bloombybotanik.com/img/produit/bloomlab-face-1200x1200.jpg',
+    ],
+    description: homeSeoDescription,
+    sku: 'BLOOMLAB-V2',
+    brand: {
+      '@type': 'Brand',
+      name: 'Bloom by BotaniK',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.3',
+      reviewCount: '7',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    offers: {
+      '@type': 'Offer',
+      url: 'https://bloombybotanik.com/bloomlab/',
+      priceCurrency: 'EUR',
+      price: '229.00',
+      priceValidUntil: '2026-12-31',
+      itemCondition: 'https://schema.org/NewCondition',
+      availability: 'https://schema.org/InStock',
+      seller: {
+        '@type': 'Organization',
+        name: 'Bloom by BotaniK',
+      },
+    },
+  };
+
+  const homeFaqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': 'https://bloombybotanik.com/#faq',
+    mainEntity: homeFaqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
+  };
+
   return (
     <GlossaryProvider pageKey="home">
     <SeoHead
@@ -199,6 +323,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
       description={homeSeoDescription}
       canonical="https://bloombybotanik.com/"
       lang={isDE ? 'de' : isFR ? 'fr' : 'en'}
+      schemas={[homeProductSchema, homeFaqSchema]}
     />
     <div className="w-full overflow-x-clip bg-[#FAF7F2] text-slate-800 font-sans antialiased selection:bg-[#E8772E] selection:text-white">
 
@@ -229,48 +354,95 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
       <section className="relative pt-6 pb-16 md:pt-10 md:pb-24 overflow-hidden bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Galerie Visuelle Produit Réel — Carrousel continu sans titres */}
+          {/* Galerie Visuelle Produit Réel — Vidéo d'ouverture muette avant le défilement du carrousel */}
           <div className="relative max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-xl border border-[#E7DFD3] bg-[#FAF7F2] mb-10 sm:mb-12">
             <div className="relative w-full h-[340px] sm:h-[480px] md:h-[580px] lg:h-[640px] overflow-hidden">
-              <motion.div
-                className="flex w-full h-full"
-                animate={{ x: `-${heroSlideIndex * 100}%` }}
-                transition={isHeroResetting ? { duration: 0 } : { duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                onAnimationComplete={() => {
-                  if (heroSlideIndex >= heroSlides.length) {
-                    setIsHeroResetting(true);
+              {heroIntroMode === 'video' ? (
+                <video
+                  ref={introVideoRef}
+                  src="/Full_BloomLab_Serum.mp4"
+                  poster={heroImg1}
+                  autoPlay
+                  muted
+                  playsInline
+                  preload="auto"
+                  onLoadedMetadata={(e) => {
+                    e.currentTarget.muted = true;
+                    e.currentTarget.volume = 0;
+                  }}
+                  onVolumeChange={(e) => {
+                    if (!e.currentTarget.muted || e.currentTarget.volume > 0) {
+                      e.currentTarget.muted = true;
+                      e.currentTarget.volume = 0;
+                    }
+                  }}
+                  onEnded={() => {
+                    setIsHeroResetting(false);
                     setHeroSlideIndex(0);
-                  }
-                }}
-              >
-                {extendedHeroSlides.map((slideSrc, idx) => (
-                  <div key={idx} className="w-full h-full shrink-0">
-                    <img
-                      src={slideSrc}
-                      alt={t.seo.alt.extracteur}
-                      width={1200}
-                      height={880}
-                      loading={idx === 0 ? "eager" : "lazy"}
-                      fetchPriority={idx === 0 ? "high" : "auto"}
-                      className="w-full h-full object-cover object-[center_60%] brightness-105 contrast-105 filter"
-                    />
-                  </div>
-                ))}
-              </motion.div>
+                    setHeroIntroMode('carousel');
+                  }}
+                  onError={() => {
+                    setHeroVideoAvailable(false);
+                    setHeroIntroMode('carousel');
+                  }}
+                  aria-label={isFR ? "Vidéo de présentation BloomLab Sérum" : isDE ? "BloomLab Serum Präsentationsvideo" : "BloomLab Serum presentation video"}
+                  className="w-full h-full object-cover object-center"
+                />
+              ) : (
+                <motion.div
+                  className="flex w-full h-full"
+                  animate={{ x: `-${heroSlideIndex * 100}%` }}
+                  transition={isHeroResetting ? { duration: 0 } : { duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                  onAnimationComplete={() => {
+                    if (heroSlideIndex >= heroSlides.length) {
+                      setIsHeroResetting(true);
+                      setHeroSlideIndex(0);
+                    }
+                  }}
+                >
+                  {extendedHeroSlides.map((slideSrc, idx) => (
+                    <div key={idx} className="w-full h-full shrink-0">
+                      <img
+                        src={slideSrc}
+                        alt={t.seo.alt.extracteur}
+                        width={1200}
+                        height={880}
+                        loading={idx === 0 ? "eager" : "lazy"}
+                        decoding={idx === 0 ? "sync" : "async"}
+                        fetchPriority={idx === 0 ? "high" : "auto"}
+                        className="w-full h-full object-cover object-[center_60%] brightness-105 contrast-105 filter"
+                      />
+                    </div>
+                  ))}
+                </motion.div>
+              )}
             </div>
             {/* Scrim ciblé sur le coin supérieur gauche pour la lisibilité du titre sans assombrir le visage de la femme à droite */}
             <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/20 via-45% to-transparent pointer-events-none" />
             
-            {/* Indicateurs discrets du carrousel (sans titres) & badge stock */}
+            {/* Indicateurs discrets (vidéo + slides du carrousel) & badge stock */}
             <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 z-10 flex flex-wrap items-center justify-between gap-2 sm:gap-3">
               <div className="flex items-center gap-2 bg-black/45 backdrop-blur-xs border border-white/20 px-3 py-1.5 rounded-full">
+                {heroVideoAvailable && (
+                  <button
+                    type="button"
+                    onClick={() => setHeroIntroMode('video')}
+                    aria-label={isFR ? "Lire la vidéo" : isDE ? "Video abspielen" : "Play video"}
+                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                      heroIntroMode === 'video'
+                        ? 'w-6 bg-[#E8772E]'
+                        : 'w-2 bg-white/60 hover:bg-white'
+                    }`}
+                  />
+                )}
                 {heroSlides.map((_, idx) => {
-                  const isActive = (heroSlideIndex % heroSlides.length) === idx;
+                  const isActive = heroIntroMode === 'carousel' && (heroSlideIndex % heroSlides.length) === idx;
                   return (
                     <button
                       key={idx}
                       type="button"
                       onClick={() => {
+                        setHeroIntroMode('carousel');
                         setIsHeroResetting(false);
                         setHeroSlideIndex(idx);
                       }}
@@ -338,12 +510,12 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   ? "Der botanische Präzisionsextraktor aus Edelstahl 304"
                   : "The precision 304 stainless botanical extractor"}
               </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#1E2E25] leading-tight tracking-tight">
-                {isFR 
-                  ? "L'Extracteur Botanique de Précision qui Préserve le Totum Végétal" 
-                  : isDE 
-                  ? "Der botanische Präzisionsextraktor für das volle Pflanzen-Totum" 
-                  : "The Precision Botanical Extractor Preserving the Whole-Plant Totum"}
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-[#1E2E25] leading-snug tracking-tight">
+                {isFR
+                  ? "Vos huiles de soin, sérums et macérats botaniques maison, sans jamais brûler vos plantes."
+                  : isDE
+                  ? "Hausgemachte Pflegeöle, Seren und Pflanzenmazerate, ohne Ihre Kräuter zu verbrennen."
+                  : "Homemade skincare oils, serums, and botanical macerates, without ever scorching your herbs."}
               </h2>
               {/* Sous-titre Plain-language (Niveau 1 immédiat) */}
               <p className="text-base sm:text-lg md:text-xl text-[#1E2E25]/90 font-medium leading-relaxed">
@@ -416,6 +588,8 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   <img
                     src={heroImg2}
                     alt={isFR ? "Démonstration d'une huile de romarin & calendula" : isDE ? "Video-Demo: Rosmarin- & Calendula-Öl" : "Demo: rosemary & calendula infused oil"}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center gap-2 p-4 text-center">
@@ -1376,6 +1550,8 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               <img 
                 src={activeUniverse === 'culinaire' ? herbsImg : activeUniverse === 'cosmetique' ? bloomSoinsImg : shelvesImg} 
                 alt={activeUniverse === 'culinaire' ? "Infuseur végétal et herbes aromatiques pour gastronomie botanique" : activeUniverse === 'cosmetique' ? "Extracteur de plantes maison pour macérâts et cosmétique botanique" : "Atelier d'herboristerie maison et extraction de principes actifs"} 
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
@@ -1584,56 +1760,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
           </div>
 
           <div className="space-y-4">
-            {[
-              {
-                q: isFR
-                  ? "En quoi la BloomLab® est-elle différente d'un simple bain-marie ?"
-                  : isDE
-                  ? "Wie unterscheidet sich die BloomLab® von einem einfachen Wasserbad?"
-                  : "How is BloomLab® different from a simple double-boiler?",
-                a: isFR
-                  ? "Le bain-marie traditionnel ne permet aucun réglage fin : l'eau atteint rapidement des températures fluctuantes dégradant les molécules thermosensibles. La BloomLab® intègre une sonde thermique régulée (spécification nominale fabricant ±0,5 °C, non certifiée indépendamment) combinée à un brassage cyclique doux en milieu clos."
-                  : isDE
-                  ? "Ein herkömmliches Wasserbad erlaubt keine Feinregelung: Schwankende Temperaturen schädigen hitzeempfindliche Moleküle. Die BloomLab® bietet eine Sensorsteuerung (Hersteller-Nennwert ±0,5 °C) mit sanftem zyklischem Rühren in geschlossener Kammer."
-                  : "A traditional double-boiler lacks fine thermal control: fluctuating heat degrades heat-sensitive compounds. BloomLab® integrates a nominal ±0.5°C temperature sensor (manufacturer rating) with gentle cyclic stirring in a closed chamber."
-              },
-              {
-                q: isFR
-                  ? "Faut-il être herboriste ou chimiste pour l'utiliser ?"
-                  : isDE
-                  ? "Muss man Kräuterkundler oder Chemiker sein, um sie zu bedienen?"
-                  : "Do I need to be an herbalist or chemist to use it?",
-                a: isFR
-                  ? "Absolument pas. L'appareil a été pensé pour une prise en main progressive. Vous disposez d'un guide pratique de 100 recettes et de l'Herbier en ligne qui détaillent chaque paramètre temps, température et solvant étape par étape."
-                  : isDE
-                  ? "Überhaupt nicht. Das Gerät wurde für eine einfache, schrittweise Nutzung konzipiert. Sie erhalten einen praktischen Leitfaden mit 100 Rezepten sowie unser Online-Herbarium mit genauen Zeit-, Temperatur- und Lösungsmittelangaben."
-                  : "Not at all. The extractor is built for progressive, intuitive use. You receive a 100-recipe practical guide and full Herbarium access detailing time, temperature, and solvent parameters step by step."
-              },
-              {
-                q: isFR
-                  ? "Quels solvants puis-je utiliser en toute sécurité ?"
-                  : isDE
-                  ? "Welche Lösungsmittel kann ich sicher verwenden?"
-                  : "Which solvents can I use safely?",
-                a: isFR
-                  ? "La cuve en Inox 304 de grade alimentaire fonctionne avec l'eau filtrée, les huiles végétales (jojoba, olive, amande douce, argan) et la glycérine végétale. Par mesure de sécurité, l'utilisation d'alcool chauffé dans la cuve BloomLab® est suspendue (toute macération alcoolique se réalise uniquement à froid, en bocal verre hors appareil)."
-                  : isDE
-                  ? "Der lebensmittelechte Behälter aus Edelstahl 304 eignet sich für gereinigtes Wasser, Pflanzenöle (Jojoba, Olive, Süßmandel, Argan) und pflanzliches Glycerin. Aus Sicherheitsgründen ist das Erhitzen von Alkohol im BloomLab®-Behälter ausgesetzt (alkoholische Mazerationen erfolgen ausschließlich kalt im Glas außerhalb des Geräts)."
-                  : "The food-grade 304 stainless steel chamber operates with purified water, botanical oils (jojoba, olive, sweet almond, argan), and vegetable glycerin. As a precaution, heated alcohol extraction inside the BloomLab® chamber is suspended (any alcohol maceration must be done cold in a glass jar outside the appliance)."
-              },
-              {
-                q: isFR
-                  ? "Combien de temps dure une extraction ?"
-                  : isDE
-                  ? "Wie lange dauert eine Extraktion?"
-                  : "How long does an extraction take?",
-                a: isFR
-                  ? "La durée varie entre 1h30 pour une huile infusée culinaire douce et 3h pour une extraction concentrée de racines denses, sans surveillance constante requise."
-                  : isDE
-                  ? "Die Dauer liegt zwischen 1,5 Stunden für ein mildes kulinarisches Kräuteröl und 3 Stunden für eine konzentrierte Wurzelextraktion – ganz ohne ständige Aufsicht."
-                  : "Extraction cycles range from 1.5 hours for gentle culinary oils to 3 hours for dense root preparations, with no constant supervision required."
-              }
-            ].map((item, idx) => (
+            {homeFaqItems.map((item, idx) => (
               <div key={idx} className="border border-[#E7DFD3] rounded-2xl overflow-hidden transition-all bg-[#FAF7F2]">
                 <button
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
@@ -2161,6 +2288,8 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 <img 
                   src={shelvesImg} 
                   alt="Extraction du Totum végétal et herboristerie maison" 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                 />
               </div>
@@ -2199,6 +2328,8 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 <img 
                   src={herbsImg} 
                   alt="Plantes médicinales et infuseur botanique de précision" 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                 />
               </div>

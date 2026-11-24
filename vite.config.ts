@@ -157,6 +157,49 @@ function getFileMtimeIsoDate(rootDir: string, relPaths: string[], fallbackDate: 
   return latestMs > 0 ? new Date(latestMs).toISOString().slice(0, 10) : fallbackDate;
 }
 
+const ROBOTS_DISALLOWED_PREFIXES = [
+  '/admin',
+  '/panier',
+  '/commande',
+  '/checkout',
+  '/compte',
+  '/activation',
+  '/en-attente',
+  '/newsletter/',
+  '/api/',
+];
+
+function isIndexableSitemapRoute(route: string): boolean {
+  if (ROBOTS_DISALLOWED_PREFIXES.some((prefix) => route.startsWith(prefix))) {
+    return false;
+  }
+
+  // Exclure les variantes non-canoniques dont le <link rel="canonical"> pointe vers une URL cible
+  if (
+    route === '/boutique/bloomlab/' ||
+    route === '/produit/bloomlab/' ||
+    route === '/machine/' ||
+    route === '/infuseur-botanique/' ||
+    route === '/comprendre-le-corps/7-terrains/' ||
+    route === '/terrains/' ||
+    route === '/academie/comprendre-le-corps/reset-homeostasique/' ||
+    route === '/comprendre-le-corps/reset-homeostasique/' ||
+    route === '/reset-homeostasique/' ||
+    route === '/phytotherapie-reset/' ||
+    route === '/phytotherapie/' ||
+    route === '/protocoles/' ||
+    route.startsWith('/protocoles/') ||
+    route.startsWith('/protocoles-systemiques/') ||
+    route.startsWith('/phytotherapie-reset/') ||
+    route === '/votre-pratique/' ||
+    route === '/parcours/'
+  ) {
+    return false;
+  }
+
+  return true;
+}
+
 function getPriorityAndFreq(route: string): { changefreq: string; priority: string } {
   if (route === '/') return { changefreq: 'daily', priority: '1.0' };
   if (
@@ -166,21 +209,9 @@ function getPriorityAndFreq(route: string): { changefreq: string; priority: stri
     route === '/extraction-botanique/' ||
     route === '/infusion-botanique/' ||
     route === '/infusion-botanique-maison-comment-ca-marche/' ||
-    route === '/reset-homeostasique/' ||
     route === '/academie/reset-homeostasique/'
   ) {
     return { changefreq: 'weekly', priority: '0.9' };
-  }
-  if (
-    route.startsWith('/admin') ||
-    route === '/panier/' ||
-    route === '/checkout/' ||
-    route === '/compte/' ||
-    route === '/activation/' ||
-    route === '/en-attente/' ||
-    route.startsWith('/newsletter/')
-  ) {
-    return { changefreq: 'monthly', priority: '0.2' };
   }
   if (
     route === '/legal/' ||
@@ -195,7 +226,6 @@ function getPriorityAndFreq(route: string): { changefreq: string; priority: stri
   }
   if (
     route.startsWith('/academie/') ||
-    route.startsWith('/protocoles') ||
     route.startsWith('/boutique/') ||
     route.startsWith('/recettes/') ||
     route.startsWith('/blog/')
@@ -221,13 +251,19 @@ function generateDynamicSitemapXml(rootDir: string): { xml: string; routeCount: 
 
   if (viewPathsMatch) {
     for (const [view, rawPath] of parseKeyValuePairs(viewPathsMatch[1])) {
-      routeToView.set(normalizeCanonicalRoute(rawPath), view);
+      const normalizedRoute = normalizeCanonicalRoute(rawPath);
+      if (isIndexableSitemapRoute(normalizedRoute)) {
+        routeToView.set(normalizedRoute, view);
+      }
     }
   }
 
   if (pathViewsMatch) {
     for (const [rawPath, view] of parseKeyValuePairs(pathViewsMatch[1])) {
-      routeToView.set(normalizeCanonicalRoute(rawPath), view);
+      const normalizedRoute = normalizeCanonicalRoute(rawPath);
+      if (isIndexableSitemapRoute(normalizedRoute)) {
+        routeToView.set(normalizedRoute, view);
+      }
     }
   }
 

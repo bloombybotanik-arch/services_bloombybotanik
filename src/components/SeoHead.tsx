@@ -122,10 +122,42 @@ export function SeoHead({
       .forEach((node) => node.remove());
 
     if (schemas.length > 0) {
-      // Sur les sous-pages avec leurs propres schémas Product / FAQPage, évite les doublons issus du graphe racine
+      document.getElementById('bloom-ssr-schema')?.remove();
+      // Préserver Organization + WebSite site-wide tout en évitant les doublons Product/FAQPage issus du graphe racine
       const rootSchemaEl = document.getElementById('bloom-root-schema');
-      if (rootSchemaEl && resolvedCanonical !== `${DEFAULT_ORIGIN}/`) {
-        rootSchemaEl.remove();
+      if (rootSchemaEl) {
+        rootSchemaEl.textContent = JSON.stringify({
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'Organization',
+              '@id': 'https://bloombybotanik.com/#organization',
+              name: 'Bloom by BotaniK',
+              url: 'https://bloombybotanik.com',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://bloombybotanik.com/assets/img/logo-bloom-square-512.png',
+                width: 512,
+                height: 512,
+              },
+              sameAs: [
+                'https://www.instagram.com/bloombybotanik/',
+                'https://www.tiktok.com/@bloombybotanik',
+                'https://www.youtube.com/@BloomByBotanik',
+                'https://fr.pinterest.com/bloombybotanik',
+                'https://www.facebook.com/profile.php?id=61577892110122',
+                'https://www.amazon.fr/dp/B0F7GGTMNR',
+              ],
+            },
+            {
+              '@type': 'WebSite',
+              '@id': 'https://bloombybotanik.com/#website',
+              url: 'https://bloombybotanik.com',
+              name: 'Bloom by BotaniK',
+              publisher: { '@id': 'https://bloombybotanik.com/#organization' },
+            },
+          ],
+        });
       }
 
       schemas.forEach((schemaObj, index) => {

@@ -4,10 +4,10 @@ import bloomImg from './assets/images/bloomlab_main_1784887530345.jpeg';
 import { motion, AnimatePresence } from 'motion/react';
 import { VIEW_PATHS } from './types';
 
-import img1 from './assets/images/BloomLab_rosemary_infusion.png';
+import img1 from './assets/images/BloomLab_rosemary_infusion.webp';
 import img3 from './assets/images/lab_detail_cleaned_1786616788618.jpg';
 import img6 from './assets/images/extraction_precision_cleaned_1786616821723.jpg';
-import img8 from './assets/images/8.png';
+import img8 from './assets/images/8.webp';
 import img9 from './assets/images/home_lab_vibe_cleaned_1786616854146.jpg';
 
 import { translations, Language } from './translations';

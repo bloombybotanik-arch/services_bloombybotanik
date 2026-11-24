@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Search, ChevronDown, HelpCircle, Sparkles, ShieldCheck, Thermometer, FlaskConical, Package, ArrowRight, MessageCircle } from 'lucide-react';
 import { translations, Language } from './translations';
 
@@ -289,7 +289,7 @@ export default function FaqContent({ onNavigate, lang = 'fr' }: FaqContentProps)
     });
   }, [faqList, activeCategory, searchQuery]);
 
-  const faqSchema = {
+  const faqSchema = useMemo(() => ({
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     '@id': 'https://bloombybotanik.com/questions-frequentes/#faq',
@@ -301,14 +301,26 @@ export default function FaqContent({ onNavigate, lang = 'fr' }: FaqContentProps)
         text: item.a,
       },
     })),
-  };
+  }), [faqList]);
+
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    document.getElementById('bloom-ssr-schema')?.remove();
+    const existing = document.getElementById('bloom-faq-schema');
+    const script = (existing as HTMLScriptElement | null) || document.createElement('script');
+    script.id = 'bloom-faq-schema';
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(faqSchema);
+    if (!existing) {
+      document.head.appendChild(script);
+    }
+    return () => {
+      document.getElementById('bloom-faq-schema')?.remove();
+    };
+  }, [faqSchema]);
 
   return (
     <div className="animate-in fade-in duration-500 bg-[#F9F9F7] min-h-screen">
-      <script 
-        type="application/ld+json" 
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} 
-      />
       {/* Hero Header */}
       <section className="relative py-16 md:py-24 bg-[#3E4A3D] text-white overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none" />

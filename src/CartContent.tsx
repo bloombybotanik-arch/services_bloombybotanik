@@ -143,6 +143,8 @@ export default function CartContent({
                       <img 
                         src={item.image || `/products/${item.id}.jpg`} 
                         alt={item.name} 
+                        loading="lazy"
+                        decoding="async"
                         onError={(e) => {
                           const target = e.currentTarget;
                           if (!target.dataset.triedFallback) {

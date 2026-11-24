@@ -4,7 +4,7 @@ import { wrapTitle } from './lib/textUtils';
 import { unifiedBotanicalDatabase } from './data/unifiedBotanicalData';
 import { translations, Language } from './translations';
 import { PUBLIC_TERRAINS, TERRAIN_EDITORIAL_NOTICE, TERRAIN_PAGE_INTRO } from './data/terrainMapping';
-import rosemaryImg from './assets/images/BloomLab_rosemary_infusion.png';
+import rosemaryImg from './assets/images/BloomLab_rosemary_infusion.webp';
 
 export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view: any, id?: string) => void, lang: Language }) {
   const t = translations[lang].library;
@@ -128,6 +128,9 @@ export default function LibraryLanding({ onNavigate, lang }: { onNavigate: (view
                 <img 
                   src={rosemaryImg} 
                   alt={lang === 'fr' ? "BloomLab - Infusion de romarin" : lang === 'de' ? "BloomLab - Rosmarin-Infusion" : "BloomLab - Rosemary Infusion"} 
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
                   className="w-full h-full flex-1 object-cover opacity-100 group-hover:scale-105 transition-transform duration-700" 
                 />
                 <div className="absolute bottom-4 left-4 right-4 bg-[#3E4A3D]/85 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/20 shadow-lg flex items-center justify-between">

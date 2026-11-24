@@ -175,6 +175,9 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
                 alt={selectedPost.imageAlt || selectedPost.title[lang]} 
                 width="1200"
                 height="630"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="w-full aspect-[16/9] object-cover" 
               />
             </div>
@@ -344,6 +347,8 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
                   <img 
                     src={post.image} 
                     alt={post.title[lang]} 
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                   />
                 </div>
@@ -381,6 +386,8 @@ export default function ArticlesContent({ lang, onNavigate, initialSlug }: Artic
               <img 
                 src="/assets/images/modern_herbalist_shelves_1786699793560.jpg" 
                 alt="Blog Officiel Bloom by BotaniK - Tous les sujets traités" 
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover opacity-50 group-hover:scale-105 group-hover:opacity-60 transition-all duration-500" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#3E4A3D] via-transparent to-black/30" />

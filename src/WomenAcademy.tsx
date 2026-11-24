@@ -136,6 +136,9 @@ export default function WomenAcademy({
                 <img
                   src={heroManuscriptImg}
                   alt={copy.heroCaption}
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
                   referrerPolicy="no-referrer"
                   onError={() => setHeroImgError(true)}
                   className="w-full h-full object-cover"
@@ -522,6 +525,8 @@ export default function WomenAcademy({
                     <img
                       src={botanicalsStillLifeImg}
                       alt={copy.m3BotanicalCaption}
+                      loading="lazy"
+                      decoding="async"
                       referrerPolicy="no-referrer"
                       onError={() => setBotanicalImgError(true)}
                       className="w-full h-full object-cover"

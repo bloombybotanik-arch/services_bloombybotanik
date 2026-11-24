@@ -159,7 +159,11 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
       <SeoHead
         title={seoTitle}
         description={seoDescription}
-        canonical={`https://bloombybotanik.com/boutique/${productId}/`}
+        canonical={
+          productId === 'bloomlab'
+            ? 'https://bloombybotanik.com/bloomlab/'
+            : `https://bloombybotanik.com/boutique/${productId}/`
+        }
         ogType="product"
         lang={lang}
         schemas={[productSchema, breadcrumbSchema]}
@@ -243,6 +247,7 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
                 width={1200}
                 height={1200}
                 loading="eager"
+                decoding="async"
                 fetchPriority="high"
                 srcSet={`${gallery[activeImage].src} 600w, ${gallery[activeImage].src} 1200w`}
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -255,6 +260,7 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
                 width={1200}
                 height={1200}
                 loading="eager"
+                decoding="async"
                 fetchPriority="high"
                 srcSet={`${gallery[activeImage].src} 600w, ${gallery[activeImage].src} 1200w`}
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -1017,6 +1023,8 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
           <img 
             src={gallery[activeImage].src} 
             alt={gallery[activeImage].alt} 
+            loading="lazy"
+            decoding="async"
             className={`max-w-full max-h-full object-contain ${isArgiles ? 'max-w-[420px] max-h-[420px] bg-white p-6 rounded-3xl shadow-2xl' : ''} animate-in zoom-in-95 duration-300`}
           />
         </div>

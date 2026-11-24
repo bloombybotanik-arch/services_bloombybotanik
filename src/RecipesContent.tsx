@@ -179,6 +179,8 @@ export default function RecipesContent({ onBack, lang, t }: RecipesContentProps)
               <img 
                 src={recipe.image} 
                 alt={recipe.title} 
+                loading="lazy"
+                decoding="async"
                 onError={(e) => {
                   e.currentTarget.onerror = null;
                   e.currentTarget.src = '/images/illustrations/planche-botanique-default.jpg';
@@ -411,6 +413,8 @@ export default function RecipesContent({ onBack, lang, t }: RecipesContentProps)
                       <img 
                         src={selectedRecipe.image} 
                         alt={selectedRecipe.title} 
+                        loading="lazy"
+                        decoding="async"
                         onError={(e) => {
                           e.currentTarget.onerror = null;
                           e.currentTarget.src = '/images/illustrations/planche-botanique-default.jpg';

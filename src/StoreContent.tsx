@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Search, ShoppingCart, Info, Check, Filter, ChevronRight, ArrowRight, Star, ShieldCheck, Zap, Package, FlaskConical, Leaf, Heart, Wind, Flame, Droplets, User, FileText, Globe, ShoppingBag } from 'lucide-react';
 import { OptimizedImage } from './components/OptimizedImage';
 import { StoreSequencingSection } from './components/StoreSequencingSection';
-import packSignatureImg from './assets/images/BloomLab_pack_signature.png';
+import packSignatureImg from './assets/images/BloomLab_pack_signature.webp';
 // import bloomLabImg from './assets/images/bloomlab_main_1784887530345.jpeg';
 // import img05 from './assets/images/lifestyle_botanik_cleaned_1786616810137.jpg';
 // import labHeroImg from './assets/images/lab_detail_cleaned_1786616788618.jpg';

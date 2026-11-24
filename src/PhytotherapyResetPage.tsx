@@ -912,6 +912,8 @@ export default function PhytotherapyResetPage({
                     <img 
                       src={botanicalHeroImg} 
                       alt={tr('Planche I : Gentiane et Bardane avec racines profondes', 'Plate I: Gentian and Burdock deep roots', 'Tafel I: Enzian und Klette mit Tiefwurzeln')} 
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-contain filter contrast-110 group-hover:scale-105 transition-transform duration-500" 
                     />
                   </div>
@@ -962,6 +964,8 @@ export default function PhytotherapyResetPage({
                     <img 
                       src={botanicalEmonctoiresImg} 
                       alt={tr('Planche II : Prêle et Pissenlit avec chevelu racinaire', 'Plate II: Horsetail and Dandelion root fibers', 'Tafel II: Schachtelhalm und Löwenzahnwurzel')} 
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-contain filter contrast-110 group-hover:scale-105 transition-transform duration-500" 
                     />
                   </div>
@@ -1012,6 +1016,8 @@ export default function PhytotherapyResetPage({
                     <img 
                       src={botanicalHepaticImg} 
                       alt={tr('Planche III : Réglisse et Chardon-Marie avec rhizomes', 'Plate III: Licorice and Milk Thistle rhizomes', 'Tafel III: Süßholz und Mariendistel-Rhizome')} 
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-contain filter contrast-110 group-hover:scale-105 transition-transform duration-500" 
                     />
                   </div>
@@ -1062,6 +1068,8 @@ export default function PhytotherapyResetPage({
                     <img 
                       src={botanicalVitalityImg} 
                       alt={tr('Planche IV : Ashwagandha et Rhodiola avec racines adaptogènes', 'Plate IV: Ashwagandha and Rhodiola adaptogenic roots', 'Tafel IV: Ashwagandha und Rosenwurz als Adaptogene')} 
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-contain filter contrast-110 group-hover:scale-105 transition-transform duration-500" 
                     />
                   </div>
@@ -1213,6 +1221,7 @@ export default function PhytotherapyResetPage({
                       : 'Extraction liquide de phycocyanine de spiruline à 40 °C pour les Phases 2 et 3 du Reset Homéostasique'
                   }
                   loading="lazy"
+                  decoding="async"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"
                 />

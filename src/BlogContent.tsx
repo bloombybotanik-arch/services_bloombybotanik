@@ -90,7 +90,7 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
 
           {selectedPost.image && (
             <div className="relative group mb-16">
-              <img src={selectedPost.image} alt={selectedPost.title[lang]} className="w-full aspect-[21/9] object-cover rounded-[40px] shadow-2xl transition-transform duration-700 group-hover:scale-[1.01]" />
+              <img src={selectedPost.image} alt={selectedPost.title[lang]} loading="eager" decoding="async" fetchPriority="high" className="w-full aspect-[21/9] object-cover rounded-[40px] shadow-2xl transition-transform duration-700 group-hover:scale-[1.01]" />
               <div className="absolute inset-0 rounded-[40px] ring-1 ring-inset ring-black/10" />
             </div>
           )}
@@ -235,7 +235,7 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
           >
             {post.image && (
               <div className="aspect-[4/3] overflow-hidden">
-                <img src={post.image} alt={post.title[lang]} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <img src={post.image} alt={post.title[lang]} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
             )}
             <div className="p-8 flex flex-col flex-1">
@@ -271,6 +271,8 @@ export default function BlogContent({ lang, onNavigate, initialSlug }: { lang: L
             <img 
               src="/assets/images/modern_herbalist_shelves_1786699793560.jpg" 
               alt="Blog Officiel Bloom by BotaniK - Tous les sujets traités" 
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover opacity-50 group-hover:scale-105 group-hover:opacity-60 transition-all duration-700" 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0F261E] via-transparent to-black/30" />

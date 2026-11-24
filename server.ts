@@ -102,6 +102,49 @@ if (IS_PROD) {
 }
 
 /* ----------------------------------------------------------------------------
+ * NÉGOCIATION AUTOMATIQUE WEBP + CACHE IMAGE HAUTE PERFORMANCE (DEV & PROD)
+ * Sert automatiquement la variante .webp (~85 Ko) pour toute image .png/.jpg/.jpeg
+ * dans /images, /assets, /products, /img, /brand lorsque le navigateur supporte WebP.
+ * -------------------------------------------------------------------------- */
+const PUBLIC_ROOT = path.resolve(process.cwd(), "public");
+const WEBP_ELIGIBLE_RE = /^\/(?:images|assets\/images|assets\/img|products|img|brand|src\/assets\/images)\/.+\.(?:png|jpe?g)$|^\/BloomLab_rosemary_infusion\.png$/i;
+
+function webpNegotiationMiddleware(req: express.Request, res: express.Response, next: express.NextFunction) {
+  if (req.method !== "GET" && req.method !== "HEAD") return next();
+  const reqPath = req.path;
+  if (!WEBP_ELIGIBLE_RE.test(reqPath)) return next();
+  const lowPath = reqPath.toLowerCase();
+  if (lowPath.includes("/og/") || lowPath.includes("favicon") || lowPath.includes("apple-touch-icon")) {
+    return next();
+  }
+
+  let decodedPath: string;
+  try {
+    decodedPath = decodeURIComponent(reqPath);
+  } catch {
+    return next();
+  }
+  const relPath = decodedPath.replace(/^\/+/, "");
+  const absOrig = path.resolve(PUBLIC_ROOT, relPath);
+  if (!absOrig.startsWith(PUBLIC_ROOT + path.sep)) return next();
+
+  const accept = String(req.headers.accept || "").toLowerCase();
+  res.setHeader("Vary", "Accept");
+  res.setHeader("Cache-Control", "public, max-age=604800, stale-while-revalidate=86400");
+
+  if (accept.includes("image/webp")) {
+    const absWebp = absOrig.replace(/\.(png|jpe?g)$/i, ".webp");
+    if (absWebp.startsWith(PUBLIC_ROOT + path.sep) && fs.existsSync(absWebp)) {
+      res.setHeader("Content-Type", "image/webp");
+      return res.sendFile(absWebp);
+    }
+  }
+  return next();
+}
+
+app.use(webpNegotiationMiddleware);
+
+/* ----------------------------------------------------------------------------
  * RATE LIMITING maison
  * -------------------------------------------------------------------------- */
 const createRateLimiter = (windowMs: number, max: number) => {
@@ -2232,7 +2275,7 @@ function buildBreadcrumbItems(normalizedPath: string, canonical: string, title: 
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "BloomLab",
+        "name": "BloomLab®",
         "item": canonical
       }
     ];
@@ -2257,14 +2300,87 @@ function buildBreadcrumbItems(normalizedPath: string, canonical: string, title: 
   }
 
   if (normalizedPath.startsWith("/academie/") && normalizedPath !== "/academie/") {
+    const academieItem = {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Académie",
+      "item": "https://bloombybotanik.com/academie/"
+    };
+    if (normalizedPath.startsWith("/academie/comprendre-le-corps/") && normalizedPath !== "/academie/comprendre-le-corps/") {
+      return [
+        rootItem,
+        academieItem,
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Comprendre le Corps",
+          "item": "https://bloombybotanik.com/academie/comprendre-le-corps/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": cleanLabel || title,
+          "item": canonical
+        }
+      ];
+    }
+    if (normalizedPath.startsWith("/academie/protocoles/") && normalizedPath !== "/academie/protocoles/") {
+      return [
+        rootItem,
+        academieItem,
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Protocoles",
+          "item": "https://bloombybotanik.com/academie/protocoles/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": cleanLabel || title,
+          "item": canonical
+        }
+      ];
+    }
+    if (normalizedPath.startsWith("/academie/nutrition-et-micronutrition/") && normalizedPath !== "/academie/nutrition-et-micronutrition/") {
+      return [
+        rootItem,
+        academieItem,
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Nutrition & Micronutrition",
+          "item": "https://bloombybotanik.com/academie/nutrition-et-micronutrition/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": cleanLabel || title,
+          "item": canonical
+        }
+      ];
+    }
+    if (normalizedPath.startsWith("/academie/reset-homeostasique/") && normalizedPath !== "/academie/reset-homeostasique/") {
+      return [
+        rootItem,
+        academieItem,
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Reset Homéostasique",
+          "item": "https://bloombybotanik.com/academie/reset-homeostasique/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": cleanLabel || title,
+          "item": canonical
+        }
+      ];
+    }
     return [
       rootItem,
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Académie",
-        "item": "https://bloombybotanik.com/academie/"
-      },
+      academieItem,
       {
         "@type": "ListItem",
         "position": 3,
@@ -2335,7 +2451,15 @@ function stripHomepageSpecificSchemas(html: string, canonical: string, title: st
           "url": "https://bloombybotanik.com/assets/img/logo-bloom-square-512.png",
           "width": 512,
           "height": 512
-        }
+        },
+        "sameAs": [
+          "https://www.instagram.com/bloombybotanik/",
+          "https://www.tiktok.com/@bloombybotanik",
+          "https://www.youtube.com/@BloomByBotanik",
+          "https://fr.pinterest.com/bloombybotanik",
+          "https://www.facebook.com/profile.php?id=61577892110122",
+          "https://www.amazon.fr/dp/B0F7GGTMNR"
+        ]
       },
       {
         "@type": "WebSite",
@@ -2384,6 +2508,61 @@ function finalizeRecipeSsrHtml(
   );
   updated = updated.replace(/<div id=["']root["']>[\s\S]*?<\/div>/i, `<div id="root">${rendered.bodyHtml}</div>`);
   return updated;
+}
+
+function resolveCanonicalPath(normalizedPath: string, matchedPostSlug: string | null = null): string {
+  if (matchedPostSlug) {
+    return `/articles/${matchedPostSlug}/`;
+  }
+
+  // 1. BloomLab → canonique = /bloomlab/
+  if (
+    normalizedPath === "/bloomlab/" ||
+    normalizedPath === "/boutique/bloomlab/" ||
+    normalizedPath === "/produit/bloomlab/" ||
+    normalizedPath === "/machine/" ||
+    normalizedPath === "/infuseur-botanique/" ||
+    normalizedPath === "/bloomlab-extracteur-botanique-et-infuseur-dhuile-intelligent-6-en-1/"
+  ) {
+    return "/bloomlab/";
+  }
+
+  // 2. Terrains → canonique = /academie/comprendre-le-corps/7-terrains/
+  if (
+    normalizedPath === "/academie/comprendre-le-corps/7-terrains/" ||
+    normalizedPath === "/comprendre-le-corps/7-terrains/" ||
+    normalizedPath === "/terrains/"
+  ) {
+    return "/academie/comprendre-le-corps/7-terrains/";
+  }
+
+  // 3. Reset → canonique = /academie/reset-homeostasique/
+  if (
+    normalizedPath === "/academie/reset-homeostasique/" ||
+    normalizedPath === "/academie/comprendre-le-corps/reset-homeostasique/" ||
+    normalizedPath === "/comprendre-le-corps/reset-homeostasique/" ||
+    normalizedPath === "/reset-homeostasique/" ||
+    normalizedPath === "/phytotherapie-reset/" ||
+    normalizedPath === "/phytotherapie/"
+  ) {
+    return "/academie/reset-homeostasique/";
+  }
+
+  // 4. Protocoles → canonique = /academie/protocoles/
+  // Les variantes /protocoles/..., /protocoles-systemiques/..., /phytotherapie-reset/... pointent canonique dessus
+  if (
+    normalizedPath === "/academie/protocoles/" ||
+    normalizedPath === "/protocoles/" ||
+    normalizedPath.startsWith("/protocoles/") ||
+    normalizedPath.startsWith("/protocoles-systemiques/") ||
+    normalizedPath.startsWith("/phytotherapie-reset/") ||
+    normalizedPath === "/votre-pratique/" ||
+    normalizedPath === "/parcours/"
+  ) {
+    return "/academie/protocoles/";
+  }
+
+  return normalizedPath;
 }
 
 function injectServerSEO(html: string, reqPath: string): string {
@@ -2491,7 +2670,7 @@ function injectServerSEO(html: string, reqPath: string): string {
 
     const full1200 = `https://bloombybotanik.com${route.image1200}`;
     const full1080 = `https://bloombybotanik.com${route.image1080}`;
-    const canonicalPath = matchedPostSlug ? `/articles/${matchedPostSlug}/` : normalized;
+    const canonicalPath = resolveCanonicalPath(normalized, matchedPostSlug);
     const canonical = `https://bloombybotanik.com${canonicalPath}`;
 
     let updated = html;
@@ -2660,13 +2839,19 @@ function injectServerSEO(html: string, reqPath: string): string {
       schemaJson = JSON.stringify(articleData);
     } else if (route.type === "product") {
       const isBloomLabProduct = route.sku === "BLOOMLAB-V2";
+      const bloomLabImages = [
+        "https://bloombybotanik.com/images/1.png",
+        "https://bloombybotanik.com/images/2.png",
+        "https://bloombybotanik.com/images/8.png",
+        "https://bloombybotanik.com/img/produit/bloomlab-face-1200x1200.jpg"
+      ];
       const productPayload: Record<string, any> = {
         "@context": "https://schema.org",
         "@type": "Product",
         "@id": `${canonical}#product`,
         "name": isBloomLabProduct ? "BloomLab® — Extracteur Botanique de Précision" : route.title,
         "description": route.description,
-        "image": [full1080, full1200],
+        "image": isBloomLabProduct ? bloomLabImages : [full1080, full1200],
         "sku": route.sku || "BLOOM-PROD",
         "mpn": route.sku || "BLOOM-PROD",
         "brand": {
@@ -2725,13 +2910,158 @@ function injectServerSEO(html: string, reqPath: string): string {
       if (isBloomLabProduct) {
         productPayload.aggregateRating = {
           "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "128",
+          "ratingValue": "4.3",
+          "reviewCount": "7",
           "bestRating": "5",
           "worstRating": "1"
         };
       }
       schemaJson = JSON.stringify(productPayload);
+    } else if (normalized === "/questions-frequentes/" || normalized === "/faq/") {
+      const faqPageData = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://bloombybotanik.com/questions-frequentes/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Qu'est-ce que la charge allostatique ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La charge allostatique est l'usure biologique accumulée par le corps lorsqu'il doit s'adapter trop souvent, trop longtemps, à trop de stress à la fois (émotionnels, hormonaux, inflammatoires, toxiques, métaboliques). Quand cette charge dépasse sa capacité de récupération, le corps ne revient plus à l'équilibre : c'est là que les symptômes s'installent. Analogie : Le problème n'est pas la paille qui a fait plier le dos de l'âne, mais le fardeau déjà présent sur son dos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle différence entre stress et charge allostatique ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le stress est la réaction ponctuelle d'adaptation d'un organisme face à un défi immédiat. La charge allostatique est le prix cumulatif et silencieux de cette adaptation répétée dans le temps, lorsque les périodes de repos font défaut et que les systèmes de régulation finissent par s'épuiser."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Peut-on réduire sa charge allostatique ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, en accompagnant le terrain biologique (profil de vulnérabilité génétique, épigénétique et allostatique) par des gestes de décharge ciblés : respecter le sommeil circadien, soutenir les voies d'élimination émonctorielles (foie, reins, intestins), apaiser les cascades inflammatoires de bas grade par des synergies végétales de haute précision et restaurer la variabilité du système nerveux autonome. Cette démarche ne remplace pas un avis médical."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Faut-il des compétences particulières en herboristerie pour utiliser BloomLab® ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolument pas. BloomLab® a été conçu pour guider chaque étape avec une ergonomie intuitive. Nos protocoles documentés et notre bibliothèque de recettes indiquent la température, le solvant adapté (eau, huile végétale ou glycérine végétale) et la durée indicative pour chaque plante."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Pourquoi une régulation thermique douce est-elle importante ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Certains principes végétaux (flavonoïdes, terpènes, polyphénols) sont sensibles à la chaleur excessive : au-delà de seuils variables selon les espèces, ils se dénaturent ou s'évaporent. La BloomLab® utilise une régulation thermique dont la valeur nominale annoncée par le fabricant est de ±0,5°C (sans certification métrologique par laboratoire tiers)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment se déroule le nettoyage et l'entretien de l'appareil ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La cuve en acier Inoxydable 304 certifié contact alimentaire et le panier filtrant micro-perforé se nettoient en moins de deux minutes à l'eau tiède avec un savon doux naturel. Un cycle d'auto-nettoyage rapide à l'eau chaude permet également un rinçage impeccable entre deux préparations botaniques."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "La BloomLab presse-t-elle les graines pour extraire de l'huile ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non — c'est un infuseur/extracteur basse température qui aromatise et extrait par macération contrôlée ; elle ne remplace pas une presse à huile."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Faut-il un temps d'adaptation pour maîtriser les réglages ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, compter quelques préparations ; le guide 100 recettes, le démarrage rapide et les vidéos accompagnent les premiers cycles."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle est la différence entre une tisane classique, un bain-marie et BloomLab® ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "L'eau bouillante d'une tisane classique fragilise certains arômes volatils tout en laissant peu extraits les composés liposolubles. Le bain-marie traditionnel est difficile à stabiliser à basse température. BloomLab® régule en continu la température, la durée et l'agitation douce en chambre fermée sans ébullition."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quels solvants peut-on employer dans la cuve d'extraction ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Dans la cuve chauffante BloomLab®, utilisez uniquement des solvants non inflammables : eau pure osmosée ou minérale, huiles végétales biologiques de première pression à froid (jojoba, sésame, olive, argan...), glycérine végétale ou beurres végétaux. Par mesure de sécurité, les extractions à l'alcool chauffé à l'intérieur de la machine sont suspendues (les teintures alcooliques traditionnelles relèvent exclusivement de la macération à froid hors appareil)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qu'appelle-t-on la méthode séquentielle A/B ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Certaines plantes nécessitent des températures ou des solvants distincts pour révéler toutes leurs vertus. La méthode séquentielle A/B permet d'extraire d'abord la fraction la plus sensible (fleurs tendres ou composés volatils du Sachet A à basse température), puis la fraction dense (racines, écorces ou résines du Sachet B à température supérieure), avant réunion synergique du Totum."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelles sont les trois dimensions d'usage au quotidien ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "1. Culinaire : huiles infusées gastronomiques, vinaigres botaniques et beurres aromatiques d'exception. 2. Cosmétique : sérums visage purs, macérats régénérants sans conservateurs synthétiques. 3. Systémique : protocoles d'extraits concentrés pour soutenir le terrain biologique et la vitalité naturelle."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Peut-on utiliser ses propres plantes du jardin ou de cueillette locale ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, tout à fait ! BloomLab® est un instrument d'autonomie et de souveraineté. Vous pouvez utiliser vos propres récoltes séchées avec soin, des plantes d'herboristerie biologique certifiée, ou nos kits pré-dosés grade Totum."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quels sont les délais d'expédition et de livraison ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Toutes les commandes sont expédiées sous 24 à 48 heures ouvrées depuis notre atelier logistique en France métropolitaine. La livraison est effectuée via Colissimo suivi à domicile ou en point relais Mondial Relay avec numéro de suivi en temps réel."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle est la garantie de la machine BloomLab® ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "L'extracteur BloomLab® bénéficie de la garantie légale de conformité de 2 ans (UE) complétée par la garantie commerciale constructeur d'1 an, avec support et SAV basés en France."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quels modes de paiement sont proposés ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le règlement est traité par carte bancaire via Stripe et via PayPal selon les options affichées lors du passage en caisse (le paiement fractionné dépend de l'éligibilité PayPal proposée au checkout)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelles sont les conditions de rétractation et de retour ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vous bénéficiez du droit légal de rétractation de 14 jours à compter de la réception, ainsi que d'une fenêtre commerciale d'essai de 30 jours selon les conditions détaillées sur la page Livraison & Retours."
+            }
+          }
+        ]
+      };
+      schemaJson = JSON.stringify(faqPageData);
     }
 
     if (schemaJson) {

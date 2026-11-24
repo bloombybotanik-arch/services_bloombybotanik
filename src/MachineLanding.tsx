@@ -64,8 +64,8 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
   const productSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    '@id': 'https://bloombybotanik.com/bloomlab#product',
-    name: 'BloomLab®',
+    '@id': 'https://bloombybotanik.com/bloomlab/#product',
+    name: 'BloomLab® — Extracteur Botanique de Précision',
     description:
       lang === 'fr'
         ? "Extracteur botanique en acier inoxydable 304 pour cosmétique et cuisine maison. Cuve Inox 304 alimentaire, 6 programmes automatisés (0 à 121 °C, spécification nominale ±0,5 °C), brassage doux sans broyage, manuel complet et 100 recettes en français. Garantie légale 2 ans (UE) + commerciale 1 an."
@@ -73,17 +73,26 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         ? 'Botanischer Extraktor aus Edelstahl 304 für Naturkosmetik und Küche. 6 automatische Programme (0–121 °C, Nennwert ±0,5 °C), sanftes Rühren, Handbuch und 100 Rezepte. 2 Jahre gesetzl. Gewährleistung (EU) + 1 Jahr Garantie.'
         : '304 stainless steel botanical extractor for homemade cosmetics and culinary creations. 6 automated programs (0–121°C, nominal ±0.5°C), gentle stirring, complete manual and 100 recipes. 2-year EU legal warranty + 1-year commercial warranty.',
     image: [
+      'https://bloombybotanik.com/images/1.png',
+      'https://bloombybotanik.com/images/2.png',
+      'https://bloombybotanik.com/images/8.png',
       'https://bloombybotanik.com/img/produit/bloomlab-face-1200x1200.jpg',
-      'https://bloombybotanik.com/img/produit/bloomlab-3quarts-1200x1200.jpg',
     ],
     sku: 'BLOOMLAB-V2',
     brand: {
       '@type': 'Brand',
       name: 'Bloom by BotaniK',
     },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.3',
+      reviewCount: '7',
+      bestRating: '5',
+      worstRating: '1',
+    },
     offers: {
       '@type': 'Offer',
-      url: 'https://bloombybotanik.com/bloomlab',
+      url: 'https://bloombybotanik.com/bloomlab/',
       priceCurrency: 'EUR',
       price: '229.00',
       priceValidUntil: '2026-12-31',
@@ -94,13 +103,12 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         name: 'Bloom by BotaniK',
       },
     },
-    /* schema.org AggregateRating omis : avis externes hébergés sur Amazon.fr */
   };
 
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    '@id': 'https://bloombybotanik.com/bloomlab#faq',
+    '@id': 'https://bloombybotanik.com/bloomlab/#faq',
     mainEntity: faqItems.map((item: any) => ({
       '@type': 'Question',
       name: item.q,
@@ -109,6 +117,31 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
         text: item.a,
       },
     })),
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Accueil',
+        item: 'https://bloombybotanik.com/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Boutique',
+        item: 'https://bloombybotanik.com/boutique/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'BloomLab®',
+        item: 'https://bloombybotanik.com/bloomlab/',
+      },
+    ],
   };
 
   const bloomlabSeoTitle =
@@ -130,10 +163,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
       <SeoHead
         title={bloomlabSeoTitle}
         description={bloomlabSeoDescription}
-        canonical="https://bloombybotanik.com/bloomlab"
+        canonical="https://bloombybotanik.com/bloomlab/"
         ogType="product"
         lang={lang}
-        schemas={[productSchema, faqSchema]}
+        schemas={[productSchema, faqSchema, breadcrumbSchema]}
       />
       {/* Fullscreen Image Overlay */}
       <AnimatePresence>
@@ -831,6 +864,8 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 <img 
                   src={bloomSoinsImg} 
                   alt="Cosmétique Botanique Maison — Sérums, Huiles et Baumes" 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -902,6 +937,8 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 <img 
                   src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=800" 
                   alt="Application Culinaire" 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -968,6 +1005,8 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 <img 
                   src={fourMmImg} 
                   alt="Herboristerie Systémique" 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">

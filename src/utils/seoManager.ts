@@ -25,7 +25,7 @@ const PRODUCT_SEO_MAP: Record<string, SEOEntry> = {
   bloomlab: {
     title: "BloomLab® — Extracteur Botanique Inox 304 pour Cosmétique & Cuisine Maison",
     description: "Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie légale 2 ans (UE) + garantie commerciale 1 an, manuel FR et 100 recettes.",
-    path: "/bloomlab"
+    path: "/bloomlab/"
   },
   "pack-signature": {
     title: "Pack Signature BloomLab® + Trio Plantes | Bloom by BotaniK",
@@ -88,12 +88,12 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
   machine: {
     title: "BloomLab® — Extracteur Botanique Inox 304 pour Cosmétique & Cuisine Maison",
     description: "Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie légale 2 ans (UE) + garantie commerciale 1 an, manuel FR et 100 recettes.",
-    path: "/bloomlab"
+    path: "/bloomlab/"
   },
   bloomlab: {
     title: "BloomLab® — Extracteur Botanique Inox 304 pour Cosmétique & Cuisine Maison",
     description: "Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie légale 2 ans (UE) + garantie commerciale 1 an, manuel FR et 100 recettes.",
-    path: "/bloomlab"
+    path: "/bloomlab/"
   },
   'comment-ca-marche': {
     title: "Comment Ça Marche | Le Séquençage Actif BloomLab®",
@@ -1080,6 +1080,51 @@ const VIEW_SEO_I18N: Record<'en' | 'de', Record<string, { title: string; descrip
   }
 };
 
+function resolveClientCanonicalOverride(normalizedPath: string): string | null {
+  if (
+    normalizedPath === '/bloomlab/' ||
+    normalizedPath === '/boutique/bloomlab/' ||
+    normalizedPath === '/produit/bloomlab/' ||
+    normalizedPath === '/machine/' ||
+    normalizedPath === '/infuseur-botanique/'
+  ) {
+    return '/bloomlab/';
+  }
+
+  if (
+    normalizedPath === '/academie/comprendre-le-corps/7-terrains/' ||
+    normalizedPath === '/comprendre-le-corps/7-terrains/' ||
+    normalizedPath === '/terrains/'
+  ) {
+    return '/academie/comprendre-le-corps/7-terrains/';
+  }
+
+  if (
+    normalizedPath === '/academie/reset-homeostasique/' ||
+    normalizedPath === '/academie/comprendre-le-corps/reset-homeostasique/' ||
+    normalizedPath === '/comprendre-le-corps/reset-homeostasique/' ||
+    normalizedPath === '/reset-homeostasique/' ||
+    normalizedPath === '/phytotherapie-reset/' ||
+    normalizedPath === '/phytotherapie/'
+  ) {
+    return '/academie/reset-homeostasique/';
+  }
+
+  if (
+    normalizedPath === '/academie/protocoles/' ||
+    normalizedPath === '/protocoles/' ||
+    normalizedPath.startsWith('/protocoles/') ||
+    normalizedPath.startsWith('/protocoles-systemiques/') ||
+    normalizedPath.startsWith('/phytotherapie-reset/') ||
+    normalizedPath === '/votre-pratique/' ||
+    normalizedPath === '/parcours/'
+  ) {
+    return '/academie/protocoles/';
+  }
+
+  return null;
+}
+
 export function updateDocumentSEO(config?: any, _lang?: any, productId?: string, _slug?: string) {
   if (typeof document === 'undefined' || !config) return;
 
@@ -1104,10 +1149,45 @@ export function updateDocumentSEO(config?: any, _lang?: any, productId?: string,
       return;
     }
 
-    // Sur toute navigation client hors accueil, éviter de conserver le schéma Product/FAQ/HowTo de la home
+    if (config !== 'faq') {
+      document.getElementById('bloom-ssr-schema')?.remove();
+    }
+
+    // Sur toute navigation client hors accueil, préserver Organization + WebSite tout en retirant Product/FAQ/HowTo de la home
     const rootSchemaEl = document.getElementById('bloom-root-schema');
     if (rootSchemaEl && rootSchemaEl.textContent?.includes('FAQPage')) {
-      rootSchemaEl.remove();
+      rootSchemaEl.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'Organization',
+            '@id': 'https://bloombybotanik.com/#organization',
+            name: 'Bloom by BotaniK',
+            url: 'https://bloombybotanik.com',
+            logo: {
+              '@type': 'ImageObject',
+              url: 'https://bloombybotanik.com/assets/img/logo-bloom-square-512.png',
+              width: 512,
+              height: 512,
+            },
+            sameAs: [
+              'https://www.instagram.com/bloombybotanik/',
+              'https://www.tiktok.com/@bloombybotanik',
+              'https://www.youtube.com/@BloomByBotanik',
+              'https://fr.pinterest.com/bloombybotanik',
+              'https://www.facebook.com/profile.php?id=61577892110122',
+              'https://www.amazon.fr/dp/B0F7GGTMNR',
+            ],
+          },
+          {
+            '@type': 'WebSite',
+            '@id': 'https://bloombybotanik.com/#website',
+            url: 'https://bloombybotanik.com',
+            name: 'Bloom by BotaniK',
+            publisher: { '@id': 'https://bloombybotanik.com/#organization' },
+          },
+        ],
+      });
     }
 
     if (config === 'product-detail' && productId && PRODUCT_SEO_MAP[productId]) {
@@ -1173,7 +1253,7 @@ export function updateDocumentSEO(config?: any, _lang?: any, productId?: string,
       applySEOMetadata(
         resetSeo.title,
         resetSeo.description,
-        'https://bloombybotanik.com/reset-homeostasique/',
+        'https://bloombybotanik.com/academie/reset-homeostasique/',
         false
       );
       return;
@@ -1245,10 +1325,11 @@ export function updateDocumentSEO(config?: any, _lang?: any, productId?: string,
       }
     }
 
+    const canonicalOverride = resolveClientCanonicalOverride(normalizedCurrent);
     const mapped = VIEW_SEO_MAP[config];
     if (mapped) {
       const localizedMapped = langKey !== 'fr' ? VIEW_SEO_I18N[langKey][config] : undefined;
-      const targetPath = mapped.path || VIEW_PATHS[config] || normalizedCurrent || '/';
+      const targetPath = canonicalOverride || mapped.path || VIEW_PATHS[config] || normalizedCurrent || '/';
       const cleanPath = targetPath.endsWith('/') ? targetPath : `${targetPath}/`;
       const canonical = `https://bloombybotanik.com${cleanPath === '//' ? '/' : cleanPath}`;
       applySEOMetadata(localizedMapped?.title || mapped.title, localizedMapped?.description || mapped.description, canonical, isNoindex);
@@ -1256,7 +1337,7 @@ export function updateDocumentSEO(config?: any, _lang?: any, productId?: string,
     }
 
     if (VIEW_PATHS[config]) {
-      const targetPath = VIEW_PATHS[config];
+      const targetPath = canonicalOverride || VIEW_PATHS[config];
       const cleanPath = targetPath.endsWith('/') ? targetPath : `${targetPath}/`;
       const canonical = `https://bloombybotanik.com${cleanPath === '//' ? '/' : cleanPath}`;
       setCanonicalLink(canonical);

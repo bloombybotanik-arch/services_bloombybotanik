@@ -96,6 +96,8 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
                   <img
                     src="/images/botanical_roots_vitality_1790693881999.jpg"
                     alt={tr("Huile surchauffée au bain-marie", "Overheated double-boiler oil", "Überhitztes Öl aus dem Wasserbad")}
+                    loading="lazy"
+                    decoding="async"
                     className={styles.panelMedia}
                   />
                   <h4 className={styles.panelTitle}>
@@ -123,6 +125,8 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
                   <img
                     src="/images/herbs_close_up_cleaned_1786616800877.jpg"
                     alt={tr("Extrait pur doré BloomLab", "Pure golden BloomLab extract", "Reiner goldener BloomLab-Extrakt")}
+                    loading="lazy"
+                    decoding="async"
                     className={styles.panelMedia}
                   />
                   <h4 className={styles.panelTitle}>
@@ -154,6 +158,8 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
                   <img
                     src="/images/family_care_cleaned_1786616776823.jpg"
                     alt={tr("Soin industriel standard", "Standard commercial emulsion", "Standard-Kosmetik")}
+                    loading="lazy"
+                    decoding="async"
                     className={styles.panelMedia}
                   />
                   <h4 className={styles.panelTitle}>
@@ -181,6 +187,8 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
                   <img
                     src="/images/Bloom_Soins.jpg"
                     alt={tr("Soin cutané botanique pur", "Pure botanical skin oil", "Reines botanisches Hautöl")}
+                    loading="lazy"
+                    decoding="async"
                     className={styles.panelMedia}
                   />
                   <h4 className={styles.panelTitle}>
@@ -212,6 +220,8 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
                   <img
                     src="/images/natural_remedies_cleaned_1786616831671.jpg"
                     alt={tr("Infusion classique brûlée", "Overheated herbal tea", "Überbrühter Kräutertee")}
+                    loading="lazy"
+                    decoding="async"
                     className={styles.panelMedia}
                   />
                   <h4 className={styles.panelTitle}>
@@ -239,6 +249,8 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ lang
                   <img
                     src="/images/home_lab_vibe_cleaned_1786616854146.jpg"
                     alt={tr("Infusion aromatique du soir BloomLab", "Evening aromatic BloomLab infusion", "Aromatischer Abendaufguss BloomLab")}
+                    loading="lazy"
+                    decoding="async"
                     className={styles.panelMedia}
                   />
                   <h4 className={styles.panelTitle}>
