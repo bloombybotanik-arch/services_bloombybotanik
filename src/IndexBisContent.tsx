@@ -86,6 +86,9 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
     vid.muted = true;
     vid.defaultMuted = true;
     vid.volume = 0;
+    if (vid.ended) {
+      vid.currentTime = 0;
+    }
     const playPromise = vid.play();
     if (playPromise !== undefined) {
       playPromise.catch(() => {
@@ -106,7 +109,6 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [newsletterSent, setNewsletterSent] = useState(false);
-  const [showVideoPreview, setShowVideoPreview] = useState(false);
 
   // Sticky bar visible UNIQUEMENT après 60% de scroll
   useEffect(() => {
@@ -360,7 +362,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               {heroIntroMode === 'video' ? (
                 <video
                   ref={introVideoRef}
-                  src="/Full_BloomLab_Serum.mp4"
+                  src="/videos/Full_BloomLab_Serum.mp4"
                   poster={heroImg1}
                   autoPlay
                   muted
@@ -570,43 +572,29 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               </div>
             </div>
 
-            {/* Section 2 : Encart Vidéo & Démonstration (45 sec) */}
+            {/* Section 2 : Encart Vidéo & Démonstration */}
             <div className="rounded-3xl border border-[#D8CBB7] bg-[#1E2E25] text-white overflow-hidden shadow-xl">
               <div className="grid grid-cols-1 md:grid-cols-12 items-center">
-                <div
-                  onClick={() => setShowVideoPreview((v) => !v)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      setShowVideoPreview((v) => !v);
-                    }
-                  }}
-                  className="md:col-span-5 relative h-56 sm:h-64 bg-[#0F261E] cursor-pointer group overflow-hidden"
-                >
-                  <img
-                    src={heroImg2}
-                    alt={isFR ? "Démonstration d'une huile de romarin & calendula" : isDE ? "Video-Demo: Rosmarin- & Calendula-Öl" : "Demo: rosemary & calendula infused oil"}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center gap-2 p-4 text-center">
-                    <div className="w-14 h-14 rounded-full bg-[#E8772E] group-hover:bg-[#D4651F] text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">
-                      <svg className="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                    <span className="px-3 py-1 rounded-full bg-black/75 border border-white/20 text-[10px] font-black uppercase tracking-wider text-white">
-                      {isFR ? "Lecteur vidéo 45 secondes : Huile de romarin & calendula" : isDE ? "45-Sek.-Videoplayer: Rosmarin- & Calendula-Öl" : "45-sec Video Player: Rosemary & Calendula Oil"}
-                    </span>
+                <div className="md:col-span-5 bg-[#0F261E] p-4 sm:p-6 flex items-center justify-center">
+                  <div className="relative w-full max-w-[220px] sm:max-w-[240px] aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl border border-white/15 bg-black">
+                    <video
+                      src="/videos/Recette_Bloom.mp4"
+                      poster={heroImg2}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      controls
+                      preload="metadata"
+                      aria-label={isFR ? "Démonstration vidéo BloomLab® : de la plante brute au sérum doré" : isDE ? "BloomLab® Videodemonstration: von der Pflanze zum Serum" : "BloomLab® video demonstration: from raw plant to golden serum"}
+                      className="w-full h-full object-cover object-center"
+                    />
                   </div>
                 </div>
                 <div className="md:col-span-7 p-6 sm:p-8 space-y-3">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[#C8AB8A] text-[10px] font-black uppercase tracking-widest">
                     <Clock className="w-3.5 h-3.5 text-[#E8772E]" />
-                    <span>{isFR ? "Démonstration en 45 secondes" : isDE ? "Demonstration in 45 Sekunden" : "45-Second Demonstration"}</span>
+                    <span>{isFR ? "Démonstration en vidéo" : isDE ? "Videodemonstration" : "Video Demonstration"}</span>
                   </div>
                   <h3 className="text-lg sm:text-xl font-black text-white leading-snug">
                     {isFR
@@ -622,15 +610,13 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                       ? "Sie müssen weder Kräuterkundler noch Chemiker sein. Geben Sie trockene oder frische Pflanzen in den Edelstahlkorb, fügen Sie Pflanzenöl, Wasser oder Glycerin hinzu, wählen Sie die Temperatur und lassen Sie BloomLab® leise arbeiten."
                       : "No need to be an herbalist or chemist. Place your dried or fresh herbs in the stainless steel basket, pour your carrier oil, water, or vegetable glycerin, pick the temperature, and let BloomLab® work silently."}
                   </p>
-                  {showVideoPreview && (
-                    <div className="p-3 rounded-xl bg-black/30 border border-white/15 text-xs text-[#C8AB8A] font-medium">
-                      {isFR
-                        ? "Démonstration d'une huile de romarin & calendula : panier inox → palier 48 °C en milieu clos → filtration 90 µm."
-                        : isDE
-                        ? "Demonstration eines Rosmarin- & Calendula-Öls: Edelstahlkorb → 48 °C im geschlossenen System → 90-µm-Filtration."
-                        : "Rosemary & calendula oil demo: stainless basket → 48°C closed chamber → 90 µm filtration."}
-                    </div>
-                  )}
+                  <div className="p-3 rounded-xl bg-black/30 border border-white/15 text-xs text-[#C8AB8A] font-medium">
+                    {isFR
+                      ? "Extraction basse température en cuve inox 304 : plantes entières → palier maîtrisé → filtration 90 µm."
+                      : isDE
+                      ? "Niedrigtemperatur-Extraktion im Edelstahl-304-Behälter: ganze Pflanzen → kontrollierte Temperatur → 90-µm-Filtration."
+                      : "Low-temperature 304 stainless extraction: whole plants → controlled heat → 90 µm filtration."}
+                  </div>
                 </div>
               </div>
             </div>

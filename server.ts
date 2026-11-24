@@ -19,14 +19,8 @@ import express from "express";
 import path from "path";
 import fs from "fs";
 import cors from "cors";
-import multer from "multer";
-import nodemailer from "nodemailer";
-import { jsPDF } from "jspdf";
-import Stripe from "stripe";
-import { GoogleGenAI } from "@google/genai";
-import { initializeApp, getApps, cert, applicationDefault } from "firebase-admin/app";
-import { getFirestore, Firestore } from "firebase-admin/firestore";
-import { getAuth } from "firebase-admin/auth";
+import type Stripe from "stripe";
+import type { Firestore } from "firebase-admin/firestore";
 import { createRequire } from "module";
 import dotenv from "dotenv";
 
@@ -170,19 +164,25 @@ const createRateLimiter = (windowMs: number, max: number) => {
  * FIREBASE ADMIN (lazy)
  * -------------------------------------------------------------------------- */
 let db: Firestore | null = null;
-function getDb(): Firestore {
-  if (!db) {
-    if (!getApps().length) {
-      const projectId = process.env.FIREBASE_PROJECT_ID || "ai-studio-bloombybotanik";
-      const clientEmail = process.env.FIREBASE_CLIENT_EMAIL;
-      const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, "\n");
-      if (clientEmail && privateKey) {
-        initializeApp({ credential: cert({ projectId, clientEmail, privateKey }), projectId });
-      } else {
-        try { initializeApp({ credential: applicationDefault(), projectId }); }
-        catch { initializeApp({ projectId }); }
-      }
+async function ensureFirebaseAdminApp() {
+  const { initializeApp, getApps, cert, applicationDefault } = await import("firebase-admin/app");
+  if (!getApps().length) {
+    const projectId = process.env.FIREBASE_PROJECT_ID || "ai-studio-bloombybotanik";
+    const clientEmail = process.env.FIREBASE_CLIENT_EMAIL;
+    const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, "\n");
+    if (clientEmail && privateKey) {
+      initializeApp({ credential: cert({ projectId, clientEmail, privateKey }), projectId });
+    } else {
+      try { initializeApp({ credential: applicationDefault(), projectId }); }
+      catch { initializeApp({ projectId }); }
     }
+  }
+}
+
+async function getDb(): Promise<Firestore> {
+  if (!db) {
+    await ensureFirebaseAdminApp();
+    const { getFirestore } = await import("firebase-admin/firestore");
     db = getFirestore();
   }
   return db;
@@ -193,6 +193,8 @@ async function requireAdmin(req: express.Request, res: express.Response, next: e
   const token = header.startsWith("Bearer ") ? header.slice(7) : null;
   if (!token) return res.status(401).json({ error: "Authentification requise" });
   try {
+    await ensureFirebaseAdminApp();
+    const { getAuth } = await import("firebase-admin/auth");
     const decoded = await getAuth().verifyIdToken(token);
     if (decoded.email !== ADMIN_EMAIL) return res.status(403).json({ error: "Accès interdit" });
     next();
@@ -205,28 +207,37 @@ async function requireAdmin(req: express.Request, res: express.Response, next: e
  * STRIPE / SMTP / GEMINI (lazy singletons)
  * -------------------------------------------------------------------------- */
 let stripeInstance: Stripe | null = null;
-const getStripe = (): Stripe => {
+const getStripe = async (): Promise<Stripe> => {
   if (!stripeInstance) {
     const apiKey = process.env.STRIPE_SECRET_KEY;
     if (!apiKey) throw new Error("STRIPE_SECRET_KEY is missing");
-    stripeInstance = new Stripe(apiKey, { apiVersion: "2023-10-16" as any });
+    const { default: StripeCtor } = await import("stripe");
+    stripeInstance = new StripeCtor(apiKey, { apiVersion: "2023-10-16" as any });
   }
   return stripeInstance;
 };
 
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST || "smtp.gmail.com",
-  port: parseInt(process.env.SMTP_PORT || "587"),
-  secure: process.env.SMTP_SECURE === "true",
-  auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
-});
+let transporterInstance: any = null;
+const getTransporter = async () => {
+  if (!transporterInstance) {
+    const nodemailer = (await import("nodemailer")).default;
+    transporterInstance = nodemailer.createTransport({
+      host: process.env.SMTP_HOST || "smtp.gmail.com",
+      port: parseInt(process.env.SMTP_PORT || "587"),
+      secure: process.env.SMTP_SECURE === "true",
+      auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
+    });
+  }
+  return transporterInstance;
+};
 
 const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-1.5-flash";
-let aiInstance: GoogleGenAI | null = null;
-const getAi = (): GoogleGenAI => {
+let aiInstance: any = null;
+const getAi = async () => {
   if (!aiInstance) {
     const apiKey = process.env.GEMINI_API_KEY || "";
     if (!apiKey) throw new Error("GEMINI_API_KEY is missing");
+    const { GoogleGenAI } = await import("@google/genai");
     aiInstance = new GoogleGenAI({
       apiKey,
       httpOptions: { headers: { "User-Agent": "aistudio-build" } },
@@ -277,10 +288,14 @@ function ensureSsrModules() {
   return ssrModulesPromise;
 }
 
-const upload = multer({
-  storage: multer.memoryStorage(),
-  limits: { fileSize: 5 * 1024 * 1024 },
-});
+const lazyUploadInvoice: express.RequestHandler = async (req, res, next) => {
+  const { default: multer } = await import("multer");
+  const upload = multer({
+    storage: multer.memoryStorage(),
+    limits: { fileSize: 5 * 1024 * 1024 },
+  });
+  return (upload.single("invoice") as any)(req, res, next);
+};
 
 /* ----------------------------------------------------------------------------
  * SANTÉ & DEBUG
@@ -343,7 +358,7 @@ app.post("/api/webhooks/stripe", express.raw({ type: "application/json" }), asyn
   const sig = req.headers["stripe-signature"];
   let event: Stripe.Event;
   try {
-    event = getStripe().webhooks.constructEvent(req.body, sig as string, process.env.STRIPE_WEBHOOK_SECRET || "");
+    event = (await getStripe()).webhooks.constructEvent(req.body, sig as string, process.env.STRIPE_WEBHOOK_SECRET || "");
   } catch (err: any) {
     console.error(`[Stripe Webhook] Signature verification failed: ${err.message}`);
     return res.status(400).send(`Webhook Error: ${err.message}`);
@@ -353,7 +368,7 @@ app.post("/api/webhooks/stripe", express.raw({ type: "application/json" }), asyn
       const obj: any = event.data.object;
       const orderId = obj.metadata?.orderId;
       if (orderId) {
-        const orderDoc = await getDb().collection("orders").doc(orderId).get();
+        const orderDoc = await (await getDb()).collection("orders").doc(orderId).get();
         if (orderDoc.exists) await handleSuccessfulPayment(orderDoc.data(), orderId);
       }
     }
@@ -570,6 +585,7 @@ async function notifyOrderToBrevo(orderData: { email: string; customerName: stri
  * FACTURE PDF & PAIEMENT
  * -------------------------------------------------------------------------- */
 async function generateInvoicePDF(order: any, orderId: string) {
+  const { jsPDF } = await import("jspdf");
   const doc = new jsPDF();
   doc.setFontSize(22); doc.setTextColor(27, 48, 34);
   doc.text("Bloom by BotaniK", 20, 20);
@@ -617,7 +633,7 @@ async function generateInvoicePDF(order: any, orderId: string) {
 }
 
 async function handleSuccessfulPayment(orderData: any, orderId: string) {
-  const firestore = getDb();
+  const firestore = await getDb();
   await firestore.collection("orders").doc(orderId).update({
     status: "paid",
     updatedAt: new Date().toISOString(),
@@ -632,6 +648,7 @@ async function handleSuccessfulPayment(orderData: any, orderId: string) {
   }, { merge: true });
 
   const pdfBuffer = await generateInvoicePDF(orderData, orderId);
+  const transporter = await getTransporter();
 
   await Promise.allSettled([
     transporter.sendMail({
@@ -1023,7 +1040,7 @@ function registerAppRoutes(app: express.Express) {
     try {
       const { email, firstName, source } = req.body || {};
       if (!email) return res.status(400).json({ error: "Email requis" });
-      const firestore = getDb();
+      const firestore = await getDb();
       const normalized = String(email).toLowerCase().trim();
       const existing = await firestore.collection("subscribers").where("email", "==", normalized).get();
       let subscriberId: string;
@@ -1056,7 +1073,7 @@ function registerAppRoutes(app: express.Express) {
     try {
       const { id } = req.query;
       if (!id) return res.status(400).send("ID manquant");
-      const ref = getDb().collection("subscribers").doc(id as string);
+      const ref = (await getDb()).collection("subscribers").doc(id as string);
       const doc = await ref.get();
       if (!doc.exists) return res.status(404).send("Abonné non trouvé");
       await ref.update({ marketing_consent: true, consent_timestamp: new Date().toISOString(), updated_at: new Date().toISOString() });
@@ -1070,7 +1087,7 @@ function registerAppRoutes(app: express.Express) {
     try {
       const { id } = req.query;
       if (!id) return res.status(400).send("ID manquant");
-      await getDb().collection("subscribers").doc(id as string).update({
+      await (await getDb()).collection("subscribers").doc(id as string).update({
         marketing_consent: false, email_status: "unsubscribed", updated_at: new Date().toISOString(),
       });
       res.send("<h1>Désinscription réussie</h1><p>Vous ne recevrez plus de newsletters de notre part.</p>");
@@ -1095,7 +1112,7 @@ function registerAppRoutes(app: express.Express) {
       const { season, context_data } = req.body || {};
       const orchestrator = await getOrchestrator();
       const sharedMemory: any = await orchestrator.generateNewsletter({ season, ...(context_data || {}) });
-      const firestore = getDb();
+      const firestore = await getDb();
       const campaign = await firestore.collection("newsletter_campaigns").add({
         theme: sharedMemory.selected_topic?.selected_topic,
         subject: sharedMemory.editorial_draft?.subject,
@@ -1128,7 +1145,7 @@ function registerAppRoutes(app: express.Express) {
     try {
       const { campaignId } = req.body || {};
       if (!campaignId) return res.status(400).json({ error: "Campaign ID requis" });
-      await getDb().collection("newsletter_campaigns").doc(campaignId).update({
+      await (await getDb()).collection("newsletter_campaigns").doc(campaignId).update({
         status: "approved", approved_by: ADMIN_EMAIL, updated_at: new Date().toISOString(),
       });
       res.json({ success: true, message: "Campagne approuvée" });
@@ -1147,7 +1164,7 @@ function registerAppRoutes(app: express.Express) {
         ...(history || []).map((h: any) => ({ role: h.role === "user" ? "user" : "model", parts: [{ text: h.text }] })),
         { role: "user", parts: [{ text: message }] },
       ];
-      const result = await getAi().models.generateContent({
+      const result = await (await getAi()).models.generateContent({
         model: GEMINI_MODEL,
         contents,
         config: { systemInstruction: BOT_SYSTEM_INSTRUCTION, responseMimeType: "application/json" },
@@ -1157,7 +1174,7 @@ function registerAppRoutes(app: express.Express) {
       try { data = JSON.parse(responseText); }
       catch { data = { answer: responseText, concern: {} }; }
       try {
-        await getDb().collection("customer_concerns").add({
+        await (await getDb()).collection("customer_concerns").add({
           ...(data.concern || {}),
           userId: userId || null,
           anonymousSessionId: anonymousSessionId || null,
@@ -1176,7 +1193,7 @@ function registerAppRoutes(app: express.Express) {
   });
 
   /* --- ACTIVATION BLOOMLAB --- */
-  app.post("/api/activate-bloomlab", createRateLimiter(60_000, 5), upload.single("invoice") as any, async (req: express.Request, res: express.Response) => {
+  app.post("/api/activate-bloomlab", createRateLimiter(60_000, 5), lazyUploadInvoice, async (req: express.Request, res: express.Response) => {
     try {
       const { userId } = req.body || {};
       const file = req.file;
@@ -1196,14 +1213,14 @@ RÈGLES DE VÉRIFICATION STRICTES :
 - "est_bloomlab" est FALSE si c'est un kit de plantes, un binder ou un accessoire seul.
 - Si la date est supérieure à 30 jours par rapport à aujourd'hui, ajoute un champ "offre_expiree": true.
 - Ne retourne AUCUN texte explicatif, uniquement le JSON valide.`;
-      const result = await getAi().models.generateContent({
+      const result = await (await getAi()).models.generateContent({
         model: GEMINI_MODEL,
         contents: [{ parts: [imagePart, { text: prompt }] }],
         config: { responseMimeType: "application/json" },
       });
       const analysis: any = JSON.parse((result as any).text || "{}");
       if (analysis.est_bloomlab && !analysis.offre_expiree) {
-        const firestore = getDb();
+        const firestore = await getDb();
         const userRef = firestore.collection("users").doc(userId);
         const userDoc = await userRef.get();
         if (!userDoc.exists) return res.status(404).json({ error: "Utilisateur non trouvé dans la base de données." });
@@ -1216,6 +1233,7 @@ RÈGLES DE VÉRIFICATION STRICTES :
           updatedAt: new Date().toISOString(),
         });
         const userEmail = userDoc.data()?.email || userId;
+        const transporter = await getTransporter();
         await transporter.sendMail({
           from: `"Bloom Assistant" <${process.env.SMTP_USER}>`,
           to: ADMIN_EMAIL,
@@ -1250,7 +1268,7 @@ RÈGLES DE VÉRIFICATION STRICTES :
       });
       const shippingPrice = getShippingPrice(shippingMethod, validatedItems);
       const total = subtotal + shippingPrice;
-      const firestore = getDb();
+      const firestore = await getDb();
       const orderId = `BLM-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
       await firestore.collection("orders").doc(orderId).set({
         userId, email: userEmail,
@@ -1261,7 +1279,7 @@ RÈGLES DE VÉRIFICATION STRICTES :
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       });
-      const paymentIntent = await getStripe().paymentIntents.create({
+      const paymentIntent = await (await getStripe()).paymentIntents.create({
         amount: Math.round(total * 100),
         currency: "eur",
         metadata: { orderId, userId },
@@ -1287,7 +1305,7 @@ RÈGLES DE VÉRIFICATION STRICTES :
       const shippingPrice = getShippingPrice(shippingMethod, validatedItems);
       const total = subtotal + shippingPrice;
       const orderId = `BLM-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
-      await getDb().collection("orders").doc(orderId).set({
+      await (await getDb()).collection("orders").doc(orderId).set({
         userId, email: userEmail,
         customerName: `${formData?.firstName ?? ""} ${formData?.lastName ?? ""}`.trim(),
         address: `${formData?.address ?? ""}, ${formData?.zipCode ?? ""} ${formData?.city ?? ""}, ${formData?.country ?? ""}`,
@@ -1305,7 +1323,7 @@ RÈGLES DE VÉRIFICATION STRICTES :
   app.post("/api/checkout/paypal/capture", createRateLimiter(60_000, 20), async (req, res) => {
     try {
       const { orderId } = req.body || {};
-      const orderDoc = await getDb().collection("orders").doc(orderId).get();
+      const orderDoc = await (await getDb()).collection("orders").doc(orderId).get();
       if (orderDoc.exists) await handleSuccessfulPayment(orderDoc.data(), orderId);
       res.json({ success: true });
     } catch (error: any) {
@@ -1324,7 +1342,7 @@ RÈGLES DE VÉRIFICATION STRICTES :
     try {
       const { email, productId, orderId } = req.body || {};
       if (!email || !productId) return res.status(400).json({ error: "Données manquantes" });
-      const firestore = getDb();
+      const firestore = await getDb();
       const normalized = String(email).toLowerCase().trim();
       const existing = await firestore.collection("subscribers").where("email", "==", normalized).get();
       let subscriberId: string;
@@ -3259,7 +3277,7 @@ async function startServer() {
 
   const server = app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server listening on http://0.0.0.0:${PORT} (${IS_PROD ? "production" : "development"})`);
-    setImmediate(() => { ensureSsrModules(); });
+    setTimeout(() => { ensureSsrModules(); }, 4000).unref();
   });
 
   const shutdown = (signal: string) => {

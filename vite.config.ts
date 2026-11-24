@@ -360,7 +360,7 @@ export default defineConfig({
     allowedHosts: true,
     cors: true,
     watch: {
-      ignored: ['**/backups/**', '**/seo-audit/**', '**/app/**', '**/dist/**'],
+      ignored: ['**/backups/**', '**/seo-audit/**', '**/app/**', '**/dist/**', '**/public/**', '**/.checkpoint/**', '**/docs/**', '**/scripts/**'],
     },
   }
 });
