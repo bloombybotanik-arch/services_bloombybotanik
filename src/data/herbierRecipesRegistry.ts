@@ -114,7 +114,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
-    "tempSachetB": "55°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -154,15 +154,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Chaga (Diamant de la Forêt) (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "55°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (acide bétulinique et triterpènes fongiques ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Sclérote (corps stérile) réduit en poudre fine afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau purifiée. Activer le cycle thermo-cinétique à 80°C pendant 4h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -189,7 +189,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Utilisé depuis le XVIe siècle en Sibérie et dans les pays nordiques comme tonique universel et soutien immunitaire majeur.",
     "precautions": [
-      "Consultez un médecin en cas de prise d'anticoagulants ou de traitement contre le diabète (effet hypoglycémiant potentiel)."
+      "Consultez un médecin en cas de prise d'anticoagulants ou de traitement contre le diabète (effet hypoglycémiant potentiel).",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -199,7 +200,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -252,7 +253,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -292,15 +293,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Cordyceps (L'Or de l'Himalaya) (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "45°C",
-      "duration": "2h00"
+      "solvent": "Alcool alimentaire bio 70° (stérols et fraction triterpénique ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Mycélium et corps de fructification en poudre afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 65°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -327,7 +328,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Trésor de la médecine tibétaine, réservé autrefois aux empereurs pour la longévité et la vigueur.",
     "precautions": [
-      "Éviter en cas de maladies auto-immunes (stimulation immunitaire active)."
+      "Éviter en cas de maladies auto-immunes (stimulation immunitaire active).",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -337,7 +339,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -390,14 +392,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "55°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
       "period": "XIe siècle",
       "quote": "« Le médecin avisé soigne d’abord le terrain, puis fortifie l’organe avant de chasser l’humeur corrompue. » — Avicenne, Kitab al-Qanun fi al-Tibb",
-      "description": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux."
+      "description": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Mycélium interconnecté et sporophores adaptatifs croissant en symbiose avec les arbres séculaires.",
@@ -430,15 +432,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Hericium (Crinière de Lion) (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "55°C",
-      "duration": "2h30"
+      "solvent": "Alcool alimentaire bio 70° (héricénones et érinacines fongiques ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Corps de fructification séché et réduit en poudre afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine. Activer le cycle thermo-cinétique à 75°C pendant 3h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -460,7 +462,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Surnommé 'la nourriture du cerveau' par les moines bouddhistes pour approfondir la méditation et la concentration.",
     "precautions": [
-      "Généralement très sûr. Prudence en cas d'allergie aux champignons."
+      "Généralement très sûr. Prudence en cas d'allergie aux champignons.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -470,7 +473,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -523,7 +526,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "85°C",
-    "tempSachetB": "60°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -563,15 +566,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Reishi (Champignon de l'Immortalité) (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "60°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (acides ganodériques et triterpènes ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Corps de fructification tranché ou poudre afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau pure. Activer le cycle thermo-cinétique à 85°C pendant 4h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -593,7 +596,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Plante supérieure classée n°1 dans le Shennong Ben Cao Jing, considérée comme le secret de la jeunesse éternelle.",
     "precautions": [
-      "Prudence en cas de traitement anticoagulant ou de chirurgie prévue (effet antiagrégant)."
+      "Prudence en cas de traitement anticoagulant ou de chirurgie prévue (effet antiagrégant).",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -603,7 +607,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -656,7 +660,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -696,15 +700,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Curcuma et Poivre Noir (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (curcuminoïdes et pipérine lipophiles ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Rhizome séché en poudre ou tranches / Baies séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -731,7 +735,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Pilier de l'Ayurveda depuis 4000 ans pour 'purifier le sang' et traiter les troubles articulaires. En MTC, il 'invigore le sang et brise les stases'.",
     "precautions": [
-      "Contre-indiqué en cas de calculs biliaires obstructifs ou de traitement anticoagulant. Peut tacher les vêtements et les surfaces en marbre."
+      "Contre-indiqué en cas de calculs biliaires obstructifs ou de traitement anticoagulant. Peut tacher les vêtements et les surfaces en marbre.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -741,7 +746,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -834,15 +839,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Boswellia (Encens) (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "45°C",
-      "duration": "4h00"
+      "solvent": "Alcool alimentaire bio 90°–96° (sans eau) (résines et acides boswelliques anhydres)",
+      "temp": "45°C (Tincture ajusté / Sans chauffe)",
+      "duration": "2h30 (ou 4h–12h)"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Résine (gomme oléorésineuse) afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 60°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, ajouter la fraction B avec 250 ml d'alcool 90°–96° (sans eau) (pièce ventilée, zéro flamme, couvercle verrouillé, MIN/MAX) en mode Tincture ajusté à 45 °C (2h30) ou Sans chauffe.",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -864,7 +869,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Shallaki en Ayurveda, utilisé depuis 3000 ans pour les articulations et le 'feu digestif'.",
     "precautions": [
-      "Peut causer de légers reflux gastriques chez les sujets très sensibles. À prendre de préférence au milieu du repas."
+      "Peut causer de légers reflux gastriques chez les sujets très sensibles. À prendre de préférence au milieu du repas.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -874,7 +880,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -927,7 +933,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "50°C",
-    "tempSachetB": "40°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -967,15 +973,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Safran (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "40°C",
-      "duration": "2h00"
+      "solvent": "Alcool alimentaire bio 50° (crocines, picrocrocine et safranal ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Stigmates séchés (fils rouges) afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 50°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -997,7 +1003,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Utilisé par Cléopâtre pour ses bains. En MTC, il 'fait circuler le Qi et le Sang, dissipe les stases et calme l'esprit (Shen)'.",
     "precautions": [
-      "Ne pas dépasser 3g de safran par extraction. À haute dose (>5g), le safran devient toxique. Interdit aux femmes enceintes."
+      "Ne pas dépasser 3g de safran par extraction. À haute dose (>5g), le safran devient toxique. Interdit aux femmes enceintes.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -1007,7 +1014,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -1060,14 +1067,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
       "period": "Tradition millénaire",
       "quote": "« Les plantes maîtresses instruisent le corps par la saveur et la résonance du vivant. » — Mémoire amazonienne",
-      "description": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes."
+      "description": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Réseau racinaire pivotant et rhizomes denses ancrés profondément dans la terre minérale.",
@@ -1100,15 +1107,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Ortie (Feuille et Racine) (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 55° (lignanes, flavonoïdes et stérols d’ortie ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles séchées / Racines séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 55° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -1135,7 +1142,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Plante sacrée des druides. Utilisée depuis l'Antiquité pour 'nettoyer le sang' et fortifier les reins.",
     "precautions": [
-      "La feuille d'ortie a un effet diurétique. Bien s'hydrater. La racine peut interagir avec les médicaments pour la prostate ou l'hypertension."
+      "La feuille d'ortie a un effet diurétique. Bien s'hydrater. La racine peut interagir avec les médicaments pour la prostate ou l'hypertension.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -1145,7 +1153,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -1198,7 +1206,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -1238,15 +1246,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Prêle des champs (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "2h00"
+      "solvent": "Alcool alimentaire bio 55° (flavonoïdes et fraction minérale de prêle ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Tiges stériles séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 80°C pendant 2h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 55° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -1268,7 +1276,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Utilisée par les Romains pour souder les fractures osseuses. En Ayurveda, elle est connue sous le nom de 'Punarnava' (celle qui renouvelle le corps).",
     "precautions": [
-      "Contre-indiquée en cas d'insuffisance rénale ou cardiaque. Cure de 3 semaines max, suivie d'une pause d'une semaine."
+      "Contre-indiquée en cas d'insuffisance rénale ou cardiaque. Cure de 3 semaines max, suivie d'une pause d'une semaine.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -1278,7 +1287,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -1331,7 +1340,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -1371,15 +1380,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Gingembre (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "45°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (gingérols et shogaols de rhizome ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Rhizome séché en tranches ou poudre afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -1406,7 +1415,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Utilisé depuis 5000 ans en Ayurveda (Shunthi) pour allumer 'Agni' (le feu digestif) et en MTC pour réchauffer le Poumon et l'Estomac.",
     "precautions": [
-      "Déconseillé à haute dose en cas d'ulcère gastrique actif ou de traitement anticoagulant."
+      "Déconseillé à haute dose en cas d'ulcère gastrique actif ou de traitement anticoagulant.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -1416,7 +1426,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -1469,7 +1479,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -1509,15 +1519,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Scutellaire de Baïkal (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 60° (baïcaline et baïcaléine de racine ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 60° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -1539,7 +1549,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Huang Qin en MTC. Utilisée depuis 2000 ans pour 'purger la chaleur et le feu', particulièrement du Poumon et du Foie (colère/frustration).",
     "precautions": [
-      "Peut potentialiser les sédatifs. À éviter pendant la grossesse."
+      "Peut potentialiser les sédatifs. À éviter pendant la grossesse.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -1549,7 +1560,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -1602,7 +1613,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -1642,15 +1653,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Rhodiola Rosea (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "45°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (rosavines et salidroside de racine ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Rhizome et racine séchés afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -1672,7 +1683,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Plante sacrée des peuples sibériens et vikings pour l'endurance et la longévité. En MTC, elle tonifie le Qi et le Sang.",
     "precautions": [
-      "À prendre le matin ou midi (peut perturber le sommeil si prise le soir). Déconseillée en cas de troubles bipolaires."
+      "À prendre le matin ou midi (peut perturber le sommeil si prise le soir). Déconseillée en cas de troubles bipolaires.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -1682,7 +1694,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -1735,14 +1747,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
       "period": "XIe siècle",
       "quote": "« Le médecin avisé soigne d’abord le terrain, puis fortifie l’organe avant de chasser l’humeur corrompue. » — Avicenne, Kitab al-Qanun fi al-Tibb",
-      "description": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux."
+      "description": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -1775,15 +1787,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Griffonia (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (graines dures et fraction indole ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Graines séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -1800,7 +1812,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Plante d'Afrique de l'Ouest traditionnellement utilisée pour la guérison des plaies, mais aussi comme tonique psychique.",
     "precautions": [
-      "Interdiction absolue avec les antidépresseurs (IRS) : risque de syndrome sérotoninergique."
+      "Interdiction absolue avec les antidépresseurs (IRS) : risque de syndrome sérotoninergique.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -1810,7 +1823,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -1863,7 +1876,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -1903,15 +1916,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Gentiane Jaune (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (amarogentine et xanthones de racine ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -1933,7 +1946,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Utilisée depuis l'Antiquité européenne comme tonique amer majeur pour 'réveiller le feu digestif' et purifier le sang.",
     "precautions": [
-      "Contre-indiquée en cas d'ulcère gastrique ou duodénal actif, et d'obstruction des voies biliaires."
+      "Contre-indiquée en cas d'ulcère gastrique ou duodénal actif, et d'obstruction des voies biliaires.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -1943,7 +1957,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -1996,7 +2010,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -2036,15 +2050,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Radis Noir (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "45°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (glucosinolates et isothiocyanates de racine ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -2066,7 +2080,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Remède traditionnel européen de printemps pour 'nettoyer le foie' après les excès de l'hiver.",
     "precautions": [
-      "Contre-indiqué en cas de calculs biliaires obstructifs ou d'obstruction des voies biliaires. Peut irriter les muqueuses gastriques sensibles."
+      "Contre-indiqué en cas de calculs biliaires obstructifs ou d'obstruction des voies biliaires. Peut irriter les muqueuses gastriques sensibles.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -2076,7 +2091,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -2129,7 +2144,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -2169,15 +2184,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Chrysanthellum (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 50° (flavonoïdes et saponosides aériens ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -2199,7 +2214,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Utilisé en Amérique du Sud et en médecine traditionnelle pour les troubles hépatiques et la circulation.",
     "precautions": [
-      "Allergie aux Astéracées. Déconseillé en cas d'obstruction des voies biliaires."
+      "Allergie aux Astéracées. Déconseillé en cas d'obstruction des voies biliaires.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -2209,7 +2225,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -2262,7 +2278,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -2302,15 +2318,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Desmodium (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 50° (soyasaponines et alcaloïdes doux ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -2332,7 +2348,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Utilisé en médecine traditionnelle africaine et amazonienne pour les troubles hépatiques et les réactions allergiques.",
     "precautions": [
-      "Peut avoir un effet légèrement sédatif à haute dose. Déconseillé en cas d'obstruction des voies biliaires."
+      "Peut avoir un effet légèrement sédatif à haute dose. Déconseillé en cas d'obstruction des voies biliaires.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -2342,7 +2359,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -2395,14 +2412,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
       "period": "Tradition millénaire",
       "quote": "« Les plantes maîtresses instruisent le corps par la saveur et la résonance du vivant. » — Mémoire amazonienne",
-      "description": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes."
+      "description": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Réseau racinaire pivotant et rhizomes denses ancrés profondément dans la terre minérale.",
@@ -2435,15 +2452,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Bardane (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (polyacétylènes et lignanes de racine ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -2465,7 +2482,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Plante majeure de la médecine traditionnelle chinoise (Niu Bang Zi) et européenne pour 'purifier le sang' et traiter les affections cutanées.",
     "precautions": [
-      "Effet diurétique. Bien s'hydrater. Déconseillé en cas d'allergie aux Astéracées."
+      "Effet diurétique. Bien s'hydrater. Déconseillé en cas d'allergie aux Astéracées.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -2475,7 +2493,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -2528,7 +2546,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -2568,15 +2586,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Astragale (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (astragaloside IV et saponines de racine ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -2598,7 +2616,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Huang Qi en MTC. Utilisé depuis 2000 ans comme tonique majeur du 'Qi' et de l'immunité.",
     "precautions": [
-      "À éviter en cas de maladie auto-immune active (lupus, polyarthrite) ou de fièvre aiguë, car il stimule l'immunité."
+      "À éviter en cas de maladie auto-immune active (lupus, polyarthrite) ou de fièvre aiguë, car il stimule l'immunité.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -2608,7 +2627,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -2661,7 +2680,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -2701,15 +2720,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Eleuthérocoque (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (éleuthérosides B et E de racine ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -2726,7 +2745,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Utilisé en Russie soviétique pour les cosmonautes et les athlètes. En MTC, il tonifie le Qi et renforce la rate.",
     "precautions": [
-      "À éviter en cas d'hypertension sévère non contrôlée. À prendre le matin ou midi."
+      "À éviter en cas d'hypertension sévère non contrôlée. À prendre le matin ou midi.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -2736,7 +2756,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -2789,7 +2809,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -2827,15 +2847,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Bacopa (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 60° (bacosides triterpéniques A et B ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 60° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -2857,7 +2877,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Brahmi en Ayurveda. Utilisé depuis des millénaires par les érudits pour améliorer la mémoire et la concentration.",
     "precautions": [
-      "Peut causer des troubles digestifs légers au début. À prendre au milieu d'un repas. Déconseillé en cas de bradycardie."
+      "Peut causer des troubles digestifs légers au début. À prendre au milieu d'un repas. Déconseillé en cas de bradycardie.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -2867,7 +2888,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -2920,7 +2941,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -2960,15 +2981,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Reishi (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (acides ganodériques et triterpènes ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Fruit (champignon) séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 80°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -2985,7 +3006,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Ling Zhi en MTC, le 'champignon de l'immortalité'. Utilisé pour calmer l'esprit (Shen) et tonifier le Qi.",
     "precautions": [
-      "Peut fluidifier le sang. À utiliser avec prudence en cas de traitement anticoagulant ou avant une intervention chirurgicale."
+      "Peut fluidifier le sang. À utiliser avec prudence en cas de traitement anticoagulant ou avant une intervention chirurgicale.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -2995,7 +3017,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -3055,7 +3077,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
       "period": "XIe siècle",
       "quote": "« Le médecin avisé soigne d’abord le terrain, puis fortifie l’organe avant de chasser l’humeur corrompue. » — Avicenne, Kitab al-Qanun fi al-Tibb",
-      "description": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux."
+      "description": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Corolles radieuses, pétales délicats et fragrances volatiles apaisantes.",
@@ -3125,7 +3147,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -3178,7 +3200,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -3215,15 +3237,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Ginkgo (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 55° (ginkgolides et flavonol-glycosides ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 55° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -3245,7 +3267,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Utilisé en MTC depuis des millénaires pour 'nourrir le cerveau' et 'débloquer les méridiens'.",
     "precautions": [
-      "Contre-indiqué en cas de traitement anticoagulant ou antiagrégant plaquettaire. À arrêter 1 semaine avant toute intervention chirurgicale."
+      "Contre-indiqué en cas de traitement anticoagulant ou antiagrégant plaquettaire. À arrêter 1 semaine avant toute intervention chirurgicale.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -3255,7 +3278,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -3308,7 +3331,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -3345,15 +3368,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Fenugrec (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 60° (saponines stéroïdiennes de graines ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Graines séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 60° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -3375,7 +3398,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Utilisé en Égypte ancienne et en Ayurveda pour la vitalité, la digestion et la santé reproductive.",
     "precautions": [
-      "Déconseillé en cas de diabète sous traitement (risque d'hypoglycémie) et pendant la grossesse (effet utérotonique à haute dose)."
+      "Déconseillé en cas de diabète sous traitement (risque d'hypoglycémie) et pendant la grossesse (effet utérotonique à haute dose).",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -3385,7 +3409,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -3438,7 +3462,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -3475,15 +3499,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Plantain majeur (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "45°C",
-      "duration": "2h00"
+      "solvent": "Alcool alimentaire bio 50° (aucuboside, actéoside et flavonoïdes ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -3505,7 +3529,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Considéré comme la 'trace de pas du blanc' par les Amérindiens, utilisé universellement pour cicatriser les plaies et apaiser les inflammations.",
     "precautions": [
-      "Aucune contre-indication majeure. Peut ralentir légèrement l'absorption d'autres médicaments pris simultanément (prendre à distance)."
+      "Aucune contre-indication majeure. Peut ralentir légèrement l'absorption d'autres médicaments pris simultanément (prendre à distance).",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -3515,7 +3540,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -3568,7 +3593,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -3605,15 +3630,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Renouée du Japon (Racine) (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (trans-resvératrol de rhizome ligneux ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine et rhizome séchés afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -3635,7 +3660,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Utilisée en MTC (Hu Zhang) pour 'invigorer le sang, disperser les stases et clarifier la chaleur'.",
     "precautions": [
-      "Peut avoir un effet laxatif à haute dose (présence d'émodine). Déconseillé en cas de grossesse ou de traitement anticoagulant."
+      "Peut avoir un effet laxatif à haute dose (présence d'émodine). Déconseillé en cas de grossesse ou de traitement anticoagulant.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -3645,7 +3671,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -3698,14 +3724,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
       "period": "Tradition millénaire",
       "quote": "« Les plantes maîtresses instruisent le corps par la saveur et la résonance du vivant. » — Mémoire amazonienne",
-      "description": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes."
+      "description": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -3736,15 +3762,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Quassia amer (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (quassinoïdes de bois amer ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Bois séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -3761,7 +3787,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Utilisé en Amérique du Sud et en Afrique de l'Ouest comme tonique amer et vermifuge naturel.",
     "precautions": [
-      "Amertume extrême : commencer par de très petites doses. Déconseillé en cas d'ulcère gastrique ou de calculs biliaires."
+      "Amertume extrême : commencer par de très petites doses. Déconseillé en cas d'ulcère gastrique ou de calculs biliaires.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -3771,7 +3798,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -3824,7 +3851,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -3861,15 +3888,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Euphraise (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "45°C",
-      "duration": "2h00"
+      "solvent": "Alcool alimentaire bio 50° (iridoïdes et polyphénols délicats ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -3891,7 +3918,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Nommée 'l'herbe aux yeux' depuis le Moyen Âge, utilisée par Hildegarde de Bingen pour les affections oculaires et respiratoires.",
     "precautions": [
-      "Aucune contre-indication majeure connue. Peut causer une légère constipation à très haute dose (effet astringent des tanins)."
+      "Aucune contre-indication majeure connue. Peut causer une légère constipation à très haute dose (effet astringent des tanins).",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -3901,7 +3929,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -3954,7 +3982,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -3991,15 +4019,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Myrtille (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "45°C",
-      "duration": "2h00"
+      "solvent": "Alcool alimentaire bio 50° (anthocyanosides de myrtille ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Fruits séchés (ou feuilles pour usage spécifique) afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -4021,7 +4049,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Utilisée par les aviateurs de la RAF pendant la Seconde Guerre mondiale pour améliorer la vision nocturne.",
     "precautions": [
-      "Généralement sûre. Aucune contre-indication majeure."
+      "Généralement sûre. Aucune contre-indication majeure.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -4031,7 +4060,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -4084,7 +4113,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -4121,15 +4150,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Maca (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (macamides et glucosinolates de racine ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine (hypocotyle) séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -4151,7 +4180,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Cultivée depuis 2000 ans dans les Andes péruviennes comme 'viagra des Incas' et tonique de vitalité globale.",
     "precautions": [
-      "Déconseillée en cas de pathologies hormonales sensibles (sein, utérus, prostate) sans avis médical, bien qu'elle ne contienne pas d'hormones."
+      "Déconseillée en cas de pathologies hormonales sensibles (sein, utérus, prostate) sans avis médical, bien qu'elle ne contienne pas d'hormones.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -4161,7 +4191,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -4214,7 +4244,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -4251,15 +4281,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Alchémille (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 50° (tanins galliques et flavonoïdes ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -4281,7 +4311,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Plante sacrée des alchimistes du Moyen Âge, associée à la Vierge Marie pour ses vertus 'purificatrices' et gynécologiques.",
     "precautions": [
-      "En raison de sa teneur en tanins, une consommation excessive et prolongée peut causer de la constipation. Faire des pauses."
+      "En raison de sa teneur en tanins, une consommation excessive et prolongée peut causer de la constipation. Faire des pauses.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -4291,7 +4322,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -4344,14 +4375,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
       "period": "XIe siècle",
       "quote": "« Le médecin avisé soigne d’abord le terrain, puis fortifie l’organe avant de chasser l’humeur corrompue. » — Avicenne, Kitab al-Qanun fi al-Tibb",
-      "description": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux."
+      "description": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -4381,15 +4412,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Armoise annuelle (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "45°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 60° (artémisinine et flavonoïdes lipophiles ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 60° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -4411,7 +4442,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Qing Hao en MTC, utilisée depuis 1600 ans pour les 'fièvres'. Prix Nobel de Médecine 2015 pour la découverte de l'artémisinine.",
     "precautions": [
-      "Déconseillée pendant la grossesse et l'allaitement. Peut interagir avec certains médicaments métabolisés par le foie."
+      "Déconseillée pendant la grossesse et l'allaitement. Peut interagir avec certains médicaments métabolisés par le foie.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -4421,7 +4453,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -4474,7 +4506,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -4512,15 +4544,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Gattilier (Vitex) (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (diterpènes et casticine de fruits denses ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Fruits séchés afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -4542,7 +4574,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Herbe des 'veuves' et des moines au Moyen Âge. Utilisé depuis l'Antiquité pour l'équilibre féminin.",
     "precautions": [
-      "Contre-indiqué en cas de prise de contraceptifs oraux, de traitements dopaminergiques ou d'antécédents de cancers hormono-dépendants sans avis médical. Action lente (3 cycles minimum)."
+      "Contre-indiqué en cas de prise de contraceptifs oraux, de traitements dopaminergiques ou d'antécédents de cancers hormono-dépendants sans avis médical. Action lente (3 cycles minimum).",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -4552,7 +4585,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -4605,7 +4638,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -4642,15 +4675,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Nigelle (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "45°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (thymoquinone et lipides de graines ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Graines séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -4672,7 +4705,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "La 'graine de bénédiction' de l'Islam et de la médecine unani. Utilisée pour 'tout sauf la mort'.",
     "precautions": [
-      "Généralement très sûre. À haute dose peut avoir un léger effet fluidifiant sanguin."
+      "Généralement très sûre. À haute dose peut avoir un léger effet fluidifiant sanguin.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -4682,7 +4716,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -4735,7 +4769,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -4775,15 +4809,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Cordyceps (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (ergostérols et fraction dense ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Fruit (champignon) séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 80°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -4805,7 +4839,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Champignon de l'énergie en MTC, utilisé par les sherpas pour l'endurance en altitude.",
     "precautions": [
-      "Déconseillé en cas de maladies auto-immunes actives (stimulation immunitaire) ou de prise d'anticoagulants."
+      "Déconseillé en cas de maladies auto-immunes actives (stimulation immunitaire) ou de prise d'anticoagulants.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -4815,7 +4850,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -4868,7 +4903,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -4905,15 +4940,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Piloselle (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 50° (umbelliférone et acide chlorogénique ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Plante entière séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -4935,7 +4970,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Utilisée depuis le Moyen Âge en Europe pour les 'eaux' (œdèmes) et les infections urinaires.",
     "precautions": [
-      "Déconseillé en cas d'insuffisance rénale ou cardiaque sévère (nécessitant une restriction hydrique)."
+      "Déconseillé en cas d'insuffisance rénale ou cardiaque sévère (nécessitant une restriction hydrique).",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -4945,7 +4981,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -4998,14 +5034,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "50°C",
-    "tempSachetB": "40°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
       "period": "Tradition millénaire",
       "quote": "« Les plantes maîtresses instruisent le corps par la saveur et la résonance du vivant. » — Mémoire amazonienne",
-      "description": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes."
+      "description": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -5035,15 +5071,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Mauve (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "40°C",
-      "duration": "2h00"
+      "solvent": "Alcool alimentaire bio 45° (anthocyanes et mucilages des fleurs ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles et fleurs séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 50°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 45° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -5065,7 +5101,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "La 'mauvaise' (malva) d'Hildegarde de Bingen, utilisée pour adoucir toutes les inflammations internes et externes.",
     "precautions": [
-      "Généralement sûre. À haute dose peut avoir un léger effet laxatif."
+      "Généralement sûre. À haute dose peut avoir un léger effet laxatif.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -5075,7 +5112,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -5128,7 +5165,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -5165,15 +5202,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Shatavari (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (shatavarines de racine dense ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -5195,7 +5232,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "'Celle qui possède cent maris' en Ayurveda. Tonique féminin sacré pour la fertilité et la longévité.",
     "precautions": [
-      "Déconseillé en cas de cancers hormono-dépendants (sein, utérus) ou d'endométriose sévère sans avis médical (effet phyto-œstrogénique)."
+      "Déconseillé en cas de cancers hormono-dépendants (sein, utérus) ou d'endométriose sévère sans avis médical (effet phyto-œstrogénique).",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -5205,7 +5243,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -5258,7 +5296,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -5298,15 +5336,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Lion's Mane (Hydne hérisson) (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (héricénones et érinacines fongiques ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Fruit (champignon) séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 80°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -5328,7 +5366,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Champignon de la clarté mentale en MTC, utilisé par les moines bouddhistes pour la méditation.",
     "precautions": [
-      "Peut causer de légères démangeaisons chez les sujets très sensibles (stimulation du NGF). Déconseillé en cas d'allergie aux champignons."
+      "Peut causer de légères démangeaisons chez les sujets très sensibles (stimulation du NGF). Déconseillé en cas d'allergie aux champignons.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -5338,7 +5377,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -5391,7 +5430,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -5431,15 +5470,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Chaga (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (acide bétulinique et triterpènes fongiques ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Sclérote (champignon) séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -5461,7 +5500,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Champignon de l'immortalité en Sibérie et en MTC. Utilisé depuis des siècles pour la longévité.",
     "precautions": [
-      "Déconseillé en cas de maladies auto-immunes (stimulation immunitaire) ou de prise d'anticoagulants (acide bétulinique)."
+      "Déconseillé en cas de maladies auto-immunes (stimulation immunitaire) ou de prise d'anticoagulants (acide bétulinique).",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -5471,7 +5511,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -5524,7 +5564,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -5561,15 +5601,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Hamamélis (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 55° (hamamélitanins et proanthocyanidines ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles et écorce séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 55° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -5591,7 +5631,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Arbre magique des Amérindiens, utilisé pour les saignements et les inflammations.",
     "precautions": [
-      "En raison de sa teneur en tanins, une consommation excessive peut causer de la constipation. Faire des pauses."
+      "En raison de sa teneur en tanins, une consommation excessive peut causer de la constipation. Faire des pauses.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -5601,7 +5642,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -5654,14 +5695,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
       "period": "XIe siècle",
       "quote": "« Le médecin avisé soigne d’abord le terrain, puis fortifie l’organe avant de chasser l’humeur corrompue. » — Avicenne, Kitab al-Qanun fi al-Tibb",
-      "description": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux."
+      "description": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -5691,15 +5732,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Moringa (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "45°C",
-      "duration": "2h00"
+      "solvent": "Alcool alimentaire bio 50° (isothiocyanates et polyphénols foliaires ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -5721,7 +5762,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "L'arbre de vie en Ayurveda et en médecine traditionnelle africaine. Utilisé pour la malnutrition et la vitalité.",
     "precautions": [
-      "Déconseillé en début de grossesse (effet utérotonique léger des racines/écorces, moins les feuilles, mais prudence). Peut avoir un effet laxatif à haute dose."
+      "Déconseillé en début de grossesse (effet utérotonique léger des racines/écorces, moins les feuilles, mais prudence). Peut avoir un effet laxatif à haute dose.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -5731,7 +5773,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -5773,7 +5815,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/allium_sativum"
     ],
     "title": "Ail (Frais vs Noir vieilli — Protocole sans alcool)",
-    "subtitle": "Ail noir vieilli (S-allyl-cystéine) vs ail frais écrasé (allicine enzymatique) — protocole doux sans alcool chauffé.",
+    "subtitle": "Ail noir vieilli (S-allyl-cystéine) vs ail frais écrasé (allicine enzymatique) — protocole doux à basse température en cuve close inox 304.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -5784,7 +5826,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "35°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -5821,15 +5863,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Ail (Vieilli ou Noir) (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "45°C",
-      "duration": "2h00"
+      "solvent": "Alcool alimentaire bio 70° (composés organosoufrés (ail frais vs ail noir SAC) ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Gousses séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 35°C pendant 4h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -5851,7 +5893,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Pungent de la médecine égyptienne et grecque, utilisé pour 'nettoyer les artères' et combattre les infections.",
     "precautions": [
-      "Interactions possibles avec les anticoagulants."
+      "Interactions possibles avec les anticoagulants.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -5861,7 +5904,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -5914,7 +5957,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -5951,15 +5994,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Saule Blanc (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "2h00"
+      "solvent": "Alcool alimentaire bio 55° (dérivés salicylés et tanins d’écorce ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Écorce interne (Liber) afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine. Activer le cycle thermo-cinétique à 80°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 55° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -5976,7 +6019,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Remède ancestral contre la douleur et la fièvre, utilisé par Hippocrate et les peuples amérindiens.",
     "precautions": [
-      "Contre-indiqué en cas d'allergie aux salicylés ou de traitement anticoagulant."
+      "Contre-indiqué en cas d'allergie aux salicylés ou de traitement anticoagulant.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -5986,7 +6030,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -6039,7 +6083,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "60°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -6076,15 +6120,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Épine-vinette (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "60°C",
-      "duration": "4h00"
+      "solvent": "Alcool alimentaire bio 70° (berbérine et alcaloïdes d’écorce ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Écorce de racine ou de tige afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine. Activer le cycle thermo-cinétique à 75°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -6101,7 +6145,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Utilisé en médecine persane et chinoise pour 'nettoyer le foie' et rafraîchir le sang.",
     "precautions": [
-      "Ne pas utiliser pendant la grossesse. Peut interférer avec certains médicaments métabolisés par le foie (CYP450)."
+      "Ne pas utiliser pendant la grossesse. Peut interférer avec certains médicaments métabolisés par le foie (CYP450).",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -6111,7 +6156,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -6164,7 +6209,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -6201,15 +6246,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Aubépine (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "45°C",
-      "duration": "2h00"
+      "solvent": "Alcool alimentaire bio 50° (procyanidines et vitexine des sommités ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Sommités fleuries et fruits afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine. Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -6226,7 +6271,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Plante du cœur physique et émotionnel, utilisée depuis le Moyen Âge pour 'chasser les peines'.",
     "precautions": [
-      "Généralement très sûre. Prudence en cas de prise de digitaliques (digoxine)."
+      "Généralement très sûre. Prudence en cas de prise de digitaliques (digoxine).",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -6236,7 +6282,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -6289,14 +6335,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "85°C",
-    "tempSachetB": "60°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
       "period": "Tradition millénaire",
       "quote": "« Les plantes maîtresses instruisent le corps par la saveur et la résonance du vivant. » — Mémoire amazonienne",
-      "description": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes."
+      "description": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -6327,15 +6373,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Quinquina Rouge (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "60°C",
-      "duration": "4h00"
+      "solvent": "Alcool alimentaire bio 70° (alcaloïdes quinoléiques d’écorce ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Écorce séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau + Acide Citrique (léger). Activer le cycle thermo-cinétique à 85°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -6352,7 +6398,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Plante sacrée des Andes, introduite en Europe au XVIIe siècle pour sauver les têtes couronnées de la fièvre.",
     "precautions": [
-      "Interdit en cas de grossesse ou de troubles graves du rythme cardiaque."
+      "Interdit en cas de grossesse ou de troubles graves du rythme cardiaque.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -6362,7 +6409,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -6493,7 +6540,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -6624,7 +6671,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -6750,7 +6797,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -6792,7 +6839,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/passiflora_incarnata"
     ],
     "title": "Passiflore",
-    "subtitle": "Médiateur (Sédation Douce) — Augmentation des niveaux de GABA dans le cerveau, favorisant la détente musculaire et nerveuse sans accoutumance....",
+    "subtitle": "Médiateur (Sédation Douce) — Interactions étudiées en recherche exploratoire avec les récepteurs GABAergiques ; plante aromatique des rituels du soir...",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -6803,7 +6850,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -6840,15 +6887,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Passiflore (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "45°C",
-      "duration": "2h00"
+      "solvent": "Alcool alimentaire bio 45° (vitexine, chrysine et flavonoïdes délicats ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau. Activer le cycle thermo-cinétique à 60°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 45° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -6865,7 +6912,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Découverte par les missionnaires en Amérique, associée à la Passion pour sa structure florale unique.",
     "precautions": [
-      "Éviter avec d'autres sédatifs puissants ou antidépresseurs IMAO."
+      "Éviter avec d'autres sédatifs puissants ou antidépresseurs IMAO.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -6875,7 +6923,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -6927,15 +6975,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "prepTimeMinutes": 15,
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
-    "tempSachetA": "50°C",
-    "tempSachetB": "40°C",
+    "tempSachetA": "55°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
       "period": "XIe siècle",
       "quote": "« Le médecin avisé soigne d’abord le terrain, puis fortifie l’organe avant de chasser l’humeur corrompue. » — Avicenne, Kitab al-Qanun fi al-Tibb",
-      "description": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux."
+      "description": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -6957,23 +7005,23 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Racines et Rhizomes de Valériane (30g)"
       ],
-      "solvent": "Eau / Alcool 70°",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Eau purifiée + Glycérine végétale (70/30)",
+      "temp": "55°C",
+      "duration": "2h00"
     },
     "sachetB": {
       "composition": [
         "Fraction dense de Valériane (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "40°C",
-      "duration": "1h00"
+      "solvent": "Alcool alimentaire bio 70° (acides valéréniques et valépotriates ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racines et Rhizomes afin de rompre la cuticule cellulaire sans broyage excessif.",
-      "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau / Alcool 70°. Activer le cycle thermo-cinétique à 50°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau purifiée + Glycérine végétale (70/30). Activer le cycle thermo-cinétique à 55°C pendant 2h00.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -6990,7 +7038,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Le 'Phu' des Grecs anciens, utilisé pour calmer les nerfs et les spasmes.",
     "precautions": [
-      "Odeur caractéristique puissante. Éviter avant de conduire."
+      "Odeur caractéristique puissante. Éviter avant de conduire.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -7000,7 +7049,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -7053,7 +7102,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "55°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -7090,15 +7139,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Eschscholtzia (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "45°C",
-      "duration": "2h00"
+      "solvent": "Alcool alimentaire bio 50° (californidine, protopine et flavonoïdes ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes fleuries afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau / Glycérine. Activer le cycle thermo-cinétique à 55°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -7115,7 +7164,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Le 'Pavot de Californie', utilisé par les Amérindiens pour apaiser les enfants et les douleurs.",
     "precautions": [
-      "Généralement très sûr. Éviter en cas de glaucome."
+      "Généralement très sûr. Éviter en cas de glaucome.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -7125,7 +7175,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -7178,7 +7228,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -7215,15 +7265,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Romarin (15g)"
       ],
-      "solvent": "Eau / Alcool",
-      "temp": "45°C",
-      "duration": "1h00"
+      "solvent": "Alcool alimentaire bio 55° (acide carnosique et composés aromatiques ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles et Sommités fleuries afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 65°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Eau / Alcool pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 1h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 55° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -7245,7 +7295,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "L'herbe du souvenir et de la fidélité, utilisée pour 'éclaircir l'esprit' et fortifier le corps.",
     "precautions": [
-      "Éviter à haute dose en cas d'hypertension sévère le soir (stimulant)."
+      "Éviter à haute dose en cas d'hypertension sévère le soir (stimulant).",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -7255,7 +7306,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -7385,7 +7436,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -7520,7 +7571,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -7573,14 +7624,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
       "period": "Tradition millénaire",
       "quote": "« Les plantes maîtresses instruisent le corps par la saveur et la résonance du vivant. » — Mémoire amazonienne",
-      "description": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes."
+      "description": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -7612,15 +7663,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Saule Blanc (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "45°C",
-      "duration": "2h00"
+      "solvent": "Alcool alimentaire bio 55° (dérivés salicylés et polyphénols d’écorce ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Écorce afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau/Glycérine. Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 55° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -7637,7 +7688,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Grèce : calme la douleur.",
     "precautions": [
-      "Allergie aspirine, <16 ans."
+      "Allergie aspirine, <16 ans.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -7647,7 +7699,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -7700,7 +7752,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -7739,15 +7791,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Valériane (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "45°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (acides valéréniques de racine ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau/Glycérine. Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -7764,7 +7816,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Grèce antique.",
     "precautions": [
-      "Somnolence, grossesse."
+      "Somnolence, grossesse.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -7774,7 +7827,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -7827,7 +7880,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -7866,15 +7919,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Artichaut (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 50° (cynarine et lutéoline des feuilles ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau/Glycérine. Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -7891,7 +7944,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Égypte ancienne.",
     "precautions": [
-      "Calculs biliaires obstructifs."
+      "Calculs biliaires obstructifs.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -7901,7 +7955,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -7954,7 +8008,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -7991,15 +8045,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Millepertuis (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "45°C",
-      "duration": "2h00"
+      "solvent": "Alcool alimentaire bio 55° (hypéricine et hyperforine des sommités ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau/Glycérine. Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 55° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -8016,7 +8070,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Antiquité : protège l'âme.",
     "precautions": [
-      "PHOTOSENSIBILISANT. JAMAIS avec ISRS/pilule."
+      "PHOTOSENSIBILISANT. JAMAIS avec ISRS/pilule.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -8026,7 +8081,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -8079,7 +8134,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -8120,15 +8175,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Shi Quan Da Bu Tang — La Grande Formule de Reconstruction (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (complexe de racines, écorces et rhizomes ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Formule composée (racines, écorces, rhizomes) afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + glycérine légère. Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -8150,7 +8205,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Utilisée en Chine pour relever Qi et Sang, souvent dans les états de fatigue profonde et de convalescence.",
     "precautions": [
-      "À manier avec prudence en cas de terrain inflammatoire très actif, d’hypertension non contrôlée, de fièvre ou de surcharge digestive marquée."
+      "À manier avec prudence en cas de terrain inflammatoire très actif, d’hypertension non contrôlée, de fièvre ou de surcharge digestive marquée.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -8160,7 +8216,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -8213,14 +8269,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "72°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
       "period": "XIe siècle",
       "quote": "« Le médecin avisé soigne d’abord le terrain, puis fortifie l’organe avant de chasser l’humeur corrompue. » — Avicenne, Kitab al-Qanun fi al-Tibb",
-      "description": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux."
+      "description": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -8254,15 +8310,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Lycium barbarum — Le Goji, Nourrissant du Sang (15g)"
       ],
-      "solvent": "Huile végétale légère ou alcool doux",
-      "temp": "45°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 60° (caroténoïdes et fraction lipophile de baies ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Baies séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 72°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Huile végétale légère ou alcool doux pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 3h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 60° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -8284,7 +8340,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Fruit traditionnellement associé à la vision, à la longévité et au soutien du Sang.",
     "precautions": [
-      "Prudence en cas de traitement anticoagulant ou de terrain très chaud/agité. Surveiller la tolérance digestive."
+      "Prudence en cas de traitement anticoagulant ou de terrain très chaud/agité. Surveiller la tolérance digestive.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -8294,7 +8351,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -8347,7 +8404,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "72°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -8388,15 +8445,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Run Fei Tang — Formule Nourrissant le Poumon (15g)"
       ],
-      "solvent": "Glycérine renforcée ou alcool doux",
-      "temp": "45°C",
-      "duration": "2h30"
+      "solvent": "Alcool alimentaire bio 60° (mélange de racines, fruits et graines ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Formule composée (fruits, graines, racines, matières adoucissantes) afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 72°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter Glycérine renforcée ou alcool doux pour extraire la fraction lipophile et les principes actifs thermosensibles à 45°C pendant 2h30.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 60° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -8418,7 +8475,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Formule chinoise pour “humidifier les poumons et arrêter la toux”.",
     "precautions": [
-      "La composition exacte variant selon les écoles, vérifier chaque ingrédient en cas de grossesse, de diabète, d’allergies ou de traitement concomitant."
+      "La composition exacte variant selon les écoles, vérifier chaque ingrédient en cas de grossesse, de diabète, d’allergies ou de traitement concomitant.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -8428,7 +8486,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -8481,7 +8539,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -8522,15 +8580,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Ziziphus jujuba — Le Jujube, Harmonisateur des Muqueuses (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "45°C",
-      "duration": "2h30"
+      "solvent": "Alcool alimentaire bio 55° (triterpènes et flavonoïdes de jujube ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Fruit séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 70°C pendant 1h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 55° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -8552,7 +8610,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Fruit majeur des médecines chinoise, persane et islamique, relié à l’apaisement, au Sang et aux muqueuses.",
     "precautions": [
-      "Prudence en cas de diabète mal équilibré ou de sensibilité digestive aux fruits très concentrés."
+      "Prudence en cas de diabète mal équilibré ou de sensibilité digestive aux fruits très concentrés.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -8562,7 +8621,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -8615,7 +8674,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -8656,15 +8715,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Schisandra chinensis — La Baie des Cinq Saveurs (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (schisandrines et lignanes de baies ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Baies séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 70°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -8686,7 +8745,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Symbole de convergence organique, utilisée pour retenir et protéger la vitalité.",
     "precautions": [
-      "Prudence en cas de reflux sévère, d’ulcère actif ou de traitement hépatique spécifique."
+      "Prudence en cas de reflux sévère, d’ulcère actif ou de traitement hépatique spécifique.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -8696,7 +8756,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -8749,7 +8809,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -8790,15 +8850,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Arctium lappa — La Bardane, Grand Dépuratif (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (polyacétylènes et lignanes de racine ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -8825,7 +8885,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Utilisée en Europe et en Asie pour “purifier le sang” et traiter les affections cutanées.",
     "precautions": [
-      "Prudence en cas d’hypoglycémie, d’allergie aux Astéracées, de grossesse ou d’allaitement sans avis professionnel."
+      "Prudence en cas d’hypoglycémie, d’allergie aux Astéracées, de grossesse ou d’allaitement sans avis professionnel.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -8835,7 +8896,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -8888,14 +8949,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
       "period": "Tradition millénaire",
       "quote": "« Les plantes maîtresses instruisent le corps par la saveur et la résonance du vivant. » — Mémoire amazonienne",
-      "description": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes."
+      "description": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -8929,15 +8990,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Astragalus membranaceus — L’Astragale, Protecteur du Qi (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (astragaloside IV et saponines de racine ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + glycérine légère. Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -8959,7 +9020,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Grand tonique du Qi protecteur en médecine chinoise.",
     "precautions": [
-      "Prudence en cas de maladie auto-immune active, d’immunosuppresseurs ou d’hypertension mal contrôlée."
+      "Prudence en cas de maladie auto-immune active, d’immunosuppresseurs ou d’hypertension mal contrôlée.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -8969,7 +9031,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -9022,7 +9084,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -9063,15 +9125,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Ganoderma lucidum — Le Reishi, Champignon de Longévité (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool alimentaire bio 70° (acides ganodériques et triterpènes ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Champignon séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + glycérine légère. Activer le cycle thermo-cinétique à 80°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -9093,7 +9155,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "“Ling Zhi” en chinois, champignon de l’immortalité utilisé pour calmer l’esprit et tonifier le Qi.",
     "precautions": [
-      "Prudence en cas d’anticoagulants, de chirurgie proche, de maladie auto-immune active ou d’allergie aux champignons."
+      "Prudence en cas d’anticoagulants, de chirurgie proche, de maladie auto-immune active ou d’allergie aux champignons.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -9103,7 +9166,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -9156,7 +9219,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "72°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -9196,15 +9259,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Fraction dense de Glycyrrhiza glabra — La Réglisse, Catalyseur et Protecteur (15g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "2h30"
+      "solvent": "Alcool alimentaire bio 60° (glabridine et acide glycyrrhizique ; option sans alcool glycérine/huile possible)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 72°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après descente thermique contrôlée sous 50°C, ajouter la phase sans alcool (glycérine végétale bio ou huile végétale vierge, le chauffage d’alcool en cuve BloomLab® étant suspendu) à 45°C pendant 2h00.",
-      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox 304, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
+      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 60° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
     "molecularSignature": [
@@ -9226,7 +9289,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Utilisée depuis l’Antiquité pour adoucir et harmoniser les tissus irrités.",
     "precautions": [
-      "Contre-indiquée ou à surveiller étroitement en cas d’hypertension, d’hypokaliémie, d’insuffisance rénale, de grossesse ou de prise prolongée à dose élevée. Une consommation excessive peut entraîner une hypokaliémie et une hypertension artérielle."
+      "Contre-indiquée ou à surveiller étroitement en cas d’hypertension, d’hypokaliémie, d’insuffisance rénale, de grossesse ou de prise prolongée à dose élevée. Une consommation excessive peut entraîner une hypokaliémie et une hypertension artérielle.",
+      "Solvant alcoolique inflammable : manipuler en pièce ventilée loin de toute flamme, couvercle verrouillé et entre MIN/MAX."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -9236,7 +9300,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -9370,7 +9434,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -9423,7 +9487,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "N/A",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -9455,7 +9519,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "30g de Artichaut classique 750 ml séché de qualité herboristerie certifiée"
       ],
-      "solvent": "Eau purifiée osmosée (300ml)",
+      "solvent": "Eau purifiée (750 ml)",
       "temp": "80°C",
       "duration": "1h30"
     },
@@ -9463,9 +9527,9 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "10g de sommités florales et feuilles de soutien synergie"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "2h00"
+      "solvent": "Pas de Phase B alcoolique requise (infusion aqueuse)",
+      "temp": "N/A",
+      "duration": "N/A"
     },
     "instructions": [],
     "molecularSignature": [
@@ -9489,7 +9553,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -9542,14 +9606,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "N/A",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
       "period": "XIe siècle",
       "quote": "« Le médecin avisé soigne d’abord le terrain, puis fortifie l’organe avant de chasser l’humeur corrompue. » — Avicenne, Kitab al-Qanun fi al-Tibb",
-      "description": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux."
+      "description": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -9574,7 +9638,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "30g de Artichaut intense 750 ml séché de qualité herboristerie certifiée"
       ],
-      "solvent": "Eau purifiée osmosée (300ml)",
+      "solvent": "Eau purifiée (750 ml)",
       "temp": "80°C",
       "duration": "1h30"
     },
@@ -9582,9 +9646,9 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "10g de sommités florales et feuilles de soutien synergie"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "2h00"
+      "solvent": "Pas de Phase B alcoolique requise (infusion aqueuse)",
+      "temp": "N/A",
+      "duration": "N/A"
     },
     "instructions": [],
     "molecularSignature": [
@@ -9594,7 +9658,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Consensus pharmacopée internationale (OMS & Ph. Eur.)"
       }
     ],
-    "traditionalWisdom": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux. La tradition accorde à Artichaut intense 750 ml une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux. La tradition accorde à Artichaut intense 750 ml une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Ne pas dépasser le dosage journalier recommandé.",
       "Tenir hors de portée des jeunes enfants.",
@@ -9608,7 +9672,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -9661,7 +9725,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "N/A",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -9693,7 +9757,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "30g de Artichaut + citron 750 ml séché de qualité herboristerie certifiée"
       ],
-      "solvent": "Eau purifiée osmosée (300ml)",
+      "solvent": "Eau purifiée (750 ml)",
       "temp": "80°C",
       "duration": "1h30"
     },
@@ -9701,9 +9765,9 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "10g de sommités florales et feuilles de soutien synergie"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "2h00"
+      "solvent": "Jus de citron bio ajouté après cycle (hors chauffe)",
+      "temp": "N/A",
+      "duration": "N/A"
     },
     "instructions": [],
     "molecularSignature": [
@@ -9727,7 +9791,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -9780,7 +9844,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "N/A",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -9812,7 +9876,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "30g de Artichaut base quotidienne 24 h séché de qualité herboristerie certifiée"
       ],
-      "solvent": "Eau purifiée osmosée (300ml)",
+      "solvent": "Eau purifiée (750 ml)",
       "temp": "80°C",
       "duration": "1h30"
     },
@@ -9820,9 +9884,9 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "10g de sommités florales et feuilles de soutien synergie"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "2h00"
+      "solvent": "Pas de Phase B alcoolique requise (infusion aqueuse)",
+      "temp": "N/A",
+      "duration": "N/A"
     },
     "instructions": [],
     "molecularSignature": [
@@ -9846,7 +9910,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -9888,7 +9952,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-01"
     ],
     "title": "Infusion Sommeil Profond",
-    "subtitle": "Protocole Spécifique — Un mélange apaisant pour favoriser l'endormissement et un sommeil réparateur par extraction séquentielle des actifs....",
+    "subtitle": "Un mélange aromatique traditionnel du soir (valériane, passiflore, mélisse) préparé par extraction séquentielle douce.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -9898,8 +9962,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "prepTimeMinutes": 15,
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
-    "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetA": "85°C",
+    "tempSachetB": "70°C",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -9921,26 +9985,32 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "A7"
     ],
     "ingredients": [
-      "30g de Infusion Sommeil Profond séché de qualité herboristerie certifiée",
-      "10g de sommités florales et feuilles de soutien synergie"
+      "Valériane (racines)",
+      "Passiflore",
+      "Mélisse (feuilles)"
     ],
     "sachetA": {
       "composition": [
-        "30g de Infusion Sommeil Profond séché de qualité herboristerie certifiée"
+        "5g de Valériane (racines)"
       ],
-      "solvent": "Eau purifiée osmosée (300ml)",
-      "temp": "80°C",
-      "duration": "1h30"
+      "solvent": "Eau purifiée (300ml)",
+      "temp": "85°C",
+      "duration": "15 min"
     },
     "sachetB": {
       "composition": [
-        "10g de sommités florales et feuilles de soutien synergie"
+        "3g de Passiflore",
+        "2g de Mélisse"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "2h00"
+      "solvent": "Eau purifiée (déjà présente)",
+      "temp": "70°C",
+      "duration": "10 min"
     },
-    "instructions": [],
+    "instructions": [
+      "Préparez vos sachets A et B selon la composition.",
+      "Lancer le cycle de phase A à 85°C.",
+      "Lancer le cycle de phase B à 70°C."
+    ],
     "molecularSignature": [
       {
         "molecule": "Totum moléculaire actif",
@@ -9950,19 +10020,18 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Utilisation de solvants lipidiques nobles (ghee, huiles) pour transporter les principes actifs liposolubles à travers les sept tissus (Dhatus). La tradition accorde à Infusion Sommeil Profond une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
-      "Ne pas dépasser le dosage journalier recommandé.",
-      "Tenir hors de portée des jeunes enfants.",
-      "Femmes enceintes ou allaitantes : solliciter l’avis formel d’un professionnel de santé."
+      "Ne pas conduire après consommation.",
+      "Éviter l'association avec d'autres sédatifs."
     ],
     "contraindications": [
-      "Allergie avérée aux composants de la formule",
-      "Pathologies chroniques rénales ou hépatiques non compensées sans surveillance médicale"
+      "Grossesse et allaitement",
+      "Enfants de moins de 12 ans"
     ],
     "safetyWarning": "Avertissement réglementaire : Cette fiche de formulation botanique a une vocation strictement pédagogique et éducative. Elle ne constitue en aucun cas un diagnostic médical ni une prescription thérapeutique. En cas de pathologie ou de traitement en cours, demandez conseil à votre médecin.",
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -10005,7 +10074,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-02"
     ],
     "title": "Huile de Massage Articulaire",
-    "subtitle": "Protocole Spécifique — Une huile de soin concentrée pour soulager les tensions et l'inflammation par extraction liposoluble....",
+    "subtitle": "Une huile de soin concentrée pour soulager les tensions et l'inflammation par extraction liposoluble.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -10015,8 +10084,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "prepTimeMinutes": 15,
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
-    "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetA": "45°C",
+    "tempSachetB": "42°C",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -10038,26 +10107,29 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "A8"
     ],
     "ingredients": [
-      "30g de Huile de Massage Articulaire séché de qualité herboristerie certifiée",
-      "10g de sommités florales et feuilles de soutien synergie"
+      "Huile végétale d'Arnica (100ml)",
+      "Fleurs d'Hélichryse italienne (10g)"
     ],
     "sachetA": {
       "composition": [
-        "30g de Huile de Massage Articulaire séché de qualité herboristerie certifiée"
+        "Huile végétale d'Arnica (100ml)"
       ],
-      "solvent": "Eau purifiée osmosée (300ml)",
-      "temp": "80°C",
-      "duration": "1h30"
+      "solvent": "Huile végétale d'Arnica",
+      "temp": "45°C",
+      "duration": "30 min"
     },
     "sachetB": {
       "composition": [
-        "10g de sommités florales et feuilles de soutien synergie"
+        "10g de Fleurs d'Hélichryse italienne"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "2h00"
+      "solvent": "Huile végétale (déjà présente)",
+      "temp": "42°C",
+      "duration": "45 min"
     },
-    "instructions": [],
+    "instructions": [
+      "Préparez la phase A avec l'huile.",
+      "Ajoutez les fleurs en phase B."
+    ],
     "molecularSignature": [
       {
         "molecule": "Totum moléculaire actif",
@@ -10067,19 +10139,18 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Phytothérapie d’altitude et macérations d’arbustes xérophiles résistants aux amplitudes thermiques extrêmes pour fortifier l’immunité. La tradition accorde à Huile de Massage Articulaire une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
-      "Ne pas dépasser le dosage journalier recommandé.",
-      "Tenir hors de portée des jeunes enfants.",
-      "Femmes enceintes ou allaitantes : solliciter l’avis formel d’un professionnel de santé."
+      "Ne pas appliquer sur les plaies ouvertes.",
+      "Usage externe uniquement."
     ],
     "contraindications": [
-      "Allergie avérée aux composants de la formule",
-      "Pathologies chroniques rénales ou hépatiques non compensées sans surveillance médicale"
+      "Allergie aux Astéracées",
+      "Enfants de moins de 3 ans"
     ],
     "safetyWarning": "Avertissement réglementaire : Cette fiche de formulation botanique a une vocation strictement pédagogique et éducative. Elle ne constitue en aucun cas un diagnostic médical ni une prescription thérapeutique. En cas de pathologie ou de traitement en cours, demandez conseil à votre médecin.",
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -10122,7 +10193,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-03"
     ],
     "title": "Sérum Visage Éclat Botanique",
-    "subtitle": "Protocole Spécifique — Un sérum précieux régénérant, conçu pour une pénétration cutanée optimale des actifs végétaux....",
+    "subtitle": "Un sérum précieux régénérant, conçu pour une pénétration cutanée optimale des actifs végétaux.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -10132,15 +10203,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "prepTimeMinutes": 15,
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
-    "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetA": "35°C",
+    "tempSachetB": "35°C",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
       "period": "Tradition millénaire",
       "quote": "« Les plantes maîtresses instruisent le corps par la saveur et la résonance du vivant. » — Mémoire amazonienne",
-      "description": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes."
+      "description": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -10155,26 +10226,29 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "A9"
     ],
     "ingredients": [
-      "30g de Sérum Visage Éclat Botanique séché de qualité herboristerie certifiée",
-      "10g de sommités florales et feuilles de soutien synergie"
+      "Huile de Jojoba",
+      "Fleurs de Rose de Damas"
     ],
     "sachetA": {
       "composition": [
-        "30g de Sérum Visage Éclat Botanique séché de qualité herboristerie certifiée"
+        "Huile de Jojoba (50ml)"
       ],
-      "solvent": "Eau purifiée osmosée (300ml)",
-      "temp": "80°C",
-      "duration": "1h30"
+      "solvent": "Huile de Jojoba",
+      "temp": "35°C",
+      "duration": "20 min"
     },
     "sachetB": {
       "composition": [
-        "10g de sommités florales et feuilles de soutien synergie"
+        "5g de Pétales de Rose de Damas"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "2h00"
+      "solvent": "Huile de Jojoba",
+      "temp": "35°C",
+      "duration": "60 min"
     },
-    "instructions": [],
+    "instructions": [
+      "Phase A : Jojoba",
+      "Phase B : Rose"
+    ],
     "molecularSignature": [
       {
         "molecule": "Totum moléculaire actif",
@@ -10182,21 +10256,19 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Consensus pharmacopée internationale (OMS & Ph. Eur.)"
       }
     ],
-    "traditionalWisdom": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes. La tradition accorde à Sérum Visage Éclat Botanique une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques. La tradition accorde à Sérum Visage Éclat Botanique une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
-      "Ne pas dépasser le dosage journalier recommandé.",
-      "Tenir hors de portée des jeunes enfants.",
-      "Femmes enceintes ou allaitantes : solliciter l’avis formel d’un professionnel de santé."
+      "Usage externe uniquement.",
+      "Éviter le contact direct avec les yeux."
     ],
     "contraindications": [
-      "Allergie avérée aux composants de la formule",
-      "Pathologies chroniques rénales ou hépatiques non compensées sans surveillance médicale"
+      "Aucune connue aux doses recommandées"
     ],
     "safetyWarning": "Avertissement réglementaire : Cette fiche de formulation botanique a une vocation strictement pédagogique et éducative. Elle ne constitue en aucun cas un diagnostic médical ni une prescription thérapeutique. En cas de pathologie ou de traitement en cours, demandez conseil à votre médecin.",
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -10239,7 +10311,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-04"
     ],
     "title": "Baume à Lèvres au Calendula",
-    "subtitle": "Protocole Spécifique — Un baume protecteur et réparateur utilisant l'extraction par fusion contrôlée....",
+    "subtitle": "Un baume protecteur et réparateur utilisant l'extraction par fusion contrôlée.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -10249,8 +10321,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "prepTimeMinutes": 15,
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
-    "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetA": "65°C",
+    "tempSachetB": "45°C",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -10272,26 +10344,31 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "A1"
     ],
     "ingredients": [
-      "30g de Baume à Lèvres au Calendula séché de qualité herboristerie certifiée",
-      "10g de sommités florales et feuilles de soutien synergie"
+      "Cire d'abeille",
+      "Beurre de Karité",
+      "Fleurs de Calendula"
     ],
     "sachetA": {
       "composition": [
-        "30g de Baume à Lèvres au Calendula séché de qualité herboristerie certifiée"
+        "20g de Cire d'abeille",
+        "30g de Beurre de Karité"
       ],
-      "solvent": "Eau purifiée osmosée (300ml)",
-      "temp": "80°C",
-      "duration": "1h30"
+      "solvent": "Fusion lipidique",
+      "temp": "65°C",
+      "duration": "15 min"
     },
     "sachetB": {
       "composition": [
-        "10g de sommités florales et feuilles de soutien synergie"
+        "5g de Fleurs de Calendula"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "2h00"
+      "solvent": "Base lipidique (déjà présente)",
+      "temp": "45°C",
+      "duration": "20 min"
     },
-    "instructions": [],
+    "instructions": [
+      "Fusionner phase A",
+      "Extraire phase B"
+    ],
     "molecularSignature": [
       {
         "molecule": "Totum moléculaire actif",
@@ -10301,19 +10378,16 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Séquençage actif des trois principes (Sel, Soufre, Mercure) réconciliant minéraux solubles et essences volatiles en extraction douce. La tradition accorde à Baume à Lèvres au Calendula une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
-      "Ne pas dépasser le dosage journalier recommandé.",
-      "Tenir hors de portée des jeunes enfants.",
-      "Femmes enceintes ou allaitantes : solliciter l’avis formel d’un professionnel de santé."
+      "Usage externe uniquement."
     ],
     "contraindications": [
-      "Allergie avérée aux composants de la formule",
-      "Pathologies chroniques rénales ou hépatiques non compensées sans surveillance médicale"
+      "Allergie aux produits de la ruche"
     ],
     "safetyWarning": "Avertissement réglementaire : Cette fiche de formulation botanique a une vocation strictement pédagogique et éducative. Elle ne constitue en aucun cas un diagnostic médical ni une prescription thérapeutique. En cas de pathologie ou de traitement en cours, demandez conseil à votre médecin.",
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -10355,19 +10429,19 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-05/",
       "/herbier/extra-recipe-05"
     ],
-    "title": "Teinture de Propolis — Protocole alcool chauffé suspendu",
-    "subtitle": "Protocole Spécifique — Un concentré protecteur issu d'une extraction hydro-alcoolique assistée par vortex....",
+    "title": "Teinture Mère de Propolis Maison",
+    "subtitle": "Une teinture concentrée des résines et flavonoïdes de la propolis brute dans de l'alcool à 90°–96° (sans ajout d'eau) via le programme Tincture ajusté ou Sans chauffe de la BloomLab® (ou alternative douce sans alcool sur base glycérinée).",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
-    "subcategory": "Infusion & Dual-Extract Thérapeutique",
+    "subcategory": "Extrait Glycériné & Infusions",
     "difficultyLevel": 3,
     "difficultyLabel": "Intermédiaire",
     "prepTimeMinutes": 15,
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
-    "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetA": "45°C (ou défaut 71°C / Sans chauffe)",
+    "tempSachetB": "N/A",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -10389,26 +10463,23 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "A2"
     ],
     "ingredients": [
-      "30g de Teinture de Propolis Maison séché de qualité herboristerie certifiée",
-      "10g de sommités florales et feuilles de soutien synergie"
+      "Propolis brute (20g)",
+      "Alcool éthylique alimentaire bio 90°–96° (150ml, sans eau)"
     ],
     "sachetA": {
       "composition": [
-        "30g de Teinture de Propolis Maison séché de qualité herboristerie certifiée"
+        "20g de Propolis brute concassée"
       ],
-      "solvent": "Eau purifiée osmosée (300ml)",
-      "temp": "80°C",
-      "duration": "1h30"
+      "solvent": "Alcool éthylique bio 90°–96° (150ml, sans ajout d'eau)",
+      "temp": "45°C (ou défaut 71°C / Sans chauffe)",
+      "duration": "2h30 (ou 4h / 4h–12h)"
     },
-    "sachetB": {
-      "composition": [
-        "10g de sommités florales et feuilles de soutien synergie"
-      ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "2h00"
-    },
-    "instructions": [],
+    "instructions": [
+      "Congeler brièvement la propolis brute puis la concasser grossièrement.",
+      "Placer la propolis et 150 ml d'alcool 90°–96° (sans eau) dans la cuve propre et sèche (entre MIN et MAX ; pièce ventilée, aucune flamme).",
+      "Verrouiller le couvercle et lancer le programme Tincture (défaut 71 °C / 160 °F – 4 h, modifiable manuellement à 45 °C pendant 2h30 pour ménager la fraction aromatique) ou le mode Sans chauffe (4h à 12h).",
+      "Filtrer à froid à travers un filtre fin (la cire reste sur le filtre) et embouteiller en flacon ambré."
+    ],
     "molecularSignature": [
       {
         "molecule": "Totum moléculaire actif",
@@ -10416,21 +10487,23 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Consensus pharmacopée internationale (OMS & Ph. Eur.)"
       }
     ],
-    "traditionalWisdom": "Standardisation thermo-régulée et extraction vortex à basse température pour maximiser la biodisponibilité sans stress oxydatif. La tradition accorde à Teinture de Propolis Maison une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "En herboristerie traditionnelle, la teinture mère de propolis se prépare à froid en bocal fermé. Sur BloomLab®, l'extraction glycérinée basse température offre une alternative sans alcool.",
     "precautions": [
-      "Ne pas dépasser le dosage journalier recommandé.",
-      "Tenir hors de portée des jeunes enfants.",
-      "Femmes enceintes ou allaitantes : solliciter l’avis formel d’un professionnel de santé."
+      "Vapeurs hautement inflammables (point d'éclair de l'éthanol pur : 13 °C ; la pression de vapeur augmente avec la chaleur) : préparer impérativement en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre les repères MIN et MAX (ne pas ajouter d'eau ni de lécithine en cycle Tincture chauffé).",
+      "Option sans alcool disponible en glycérine végétale bio 80/20 (45 °C / 2h30).",
+      "La propolis tache durablement les vêtements et la cuve (nettoyer avec un peu d'alcool fort puis programme Nettoyage)."
     ],
     "contraindications": [
-      "Allergie avérée aux composants de la formule",
-      "Pathologies chroniques rénales ou hépatiques non compensées sans surveillance médicale"
+      "Grossesse et allaitement",
+      "Enfants",
+      "Sensibilité ou sevrage alcoolique",
+      "Allergie aux produits de la ruche"
     ],
     "safetyWarning": "Avertissement réglementaire : Cette fiche de formulation botanique a une vocation strictement pédagogique et éducative. Elle ne constitue en aucun cas un diagnostic médical ni une prescription thérapeutique. En cas de pathologie ou de traitement en cours, demandez conseil à votre médecin.",
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -10438,7 +10511,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "url": "/academie/comprendre-le-corps/"
       },
       "plantMonograph": {
-        "name": "Monographie Botanique Teinture de Propolis Maison",
+        "name": "Monographie Botanique Extrait de Propolis Maison",
         "url": "/academie/herbier/"
       },
       "blogArticle": {
@@ -10447,7 +10520,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       }
     },
     "image": "/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg",
-    "imageAlt": "Teinture de Propolis Maison — Protocole d'extraction botanique de précision BloomLab®",
+    "imageAlt": "Extrait Glycériné de Propolis Maison — Protocole sans alcool BloomLab®",
     "schemaType": "Recipe",
     "gscImpressions90d": 29,
     "gscClicks90d": 1,
@@ -10473,7 +10546,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-06"
     ],
     "title": "Sirop de Sureau Immunité",
-    "subtitle": "Protocole Spécifique — Un remède d'hiver traditionnel optimisé par une décoction basse température....",
+    "subtitle": "Un remède d'hiver traditionnel optimisé par une décoction basse température.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -10483,8 +10556,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "prepTimeMinutes": 15,
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
-    "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetA": "90°C",
+    "tempSachetB": "40°C",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -10506,26 +10579,31 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "A3"
     ],
     "ingredients": [
-      "30g de Sirop de Sureau Immunité séché de qualité herboristerie certifiée",
-      "10g de sommités florales et feuilles de soutien synergie"
+      "Baies de sureau séchées",
+      "Gingembre frais",
+      "Miel bio"
     ],
     "sachetA": {
       "composition": [
-        "30g de Sirop de Sureau Immunité séché de qualité herboristerie certifiée"
+        "30g de Baies de sureau",
+        "10g de Gingembre"
       ],
-      "solvent": "Eau purifiée osmosée (300ml)",
-      "temp": "80°C",
-      "duration": "1h30"
+      "solvent": "Eau (250ml)",
+      "temp": "90°C",
+      "duration": "25 min"
     },
     "sachetB": {
       "composition": [
-        "10g de sommités florales et feuilles de soutien synergie"
+        "50g de Miel bio"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "2h00"
+      "solvent": "Sirop chaud",
+      "temp": "40°C",
+      "duration": "5 min"
     },
-    "instructions": [],
+    "instructions": [
+      "Décoction phase A",
+      "Ajout miel phase B"
+    ],
     "molecularSignature": [
       {
         "molecule": "Totum moléculaire actif",
@@ -10535,19 +10613,17 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Usage des macérations aromatiques et résines médicinales pour purifier les conduits vitaux (metu) et rétablir l’équilibre des humeurs corporelles. La tradition accorde à Sirop de Sureau Immunité une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
-      "Ne pas dépasser le dosage journalier recommandé.",
-      "Tenir hors de portée des jeunes enfants.",
-      "Femmes enceintes ou allaitantes : solliciter l’avis formel d’un professionnel de santé."
+      "Contient beaucoup de sucre."
     ],
     "contraindications": [
-      "Allergie avérée aux composants de la formule",
-      "Pathologies chroniques rénales ou hépatiques non compensées sans surveillance médicale"
+      "Diabète non équilibré",
+      "Nourrissons"
     ],
     "safetyWarning": "Avertissement réglementaire : Cette fiche de formulation botanique a une vocation strictement pédagogique et éducative. Elle ne constitue en aucun cas un diagnostic médical ni une prescription thérapeutique. En cas de pathologie ou de traitement en cours, demandez conseil à votre médecin.",
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -10590,7 +10666,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-07"
     ],
     "title": "Décoction Détox & Soutien Hépatique",
-    "subtitle": "Protocole Spécifique — Une préparation traditionnelle de plantes amères pour accompagner le travail hépato-biliaire et la légèreté digestive (T...",
+    "subtitle": "Une préparation traditionnelle de plantes amères pour accompagner le travail hépato-biliaire et la légèreté digestive (Terrain T4).",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -10600,8 +10676,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "prepTimeMinutes": 15,
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
-    "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetA": "90°C",
+    "tempSachetB": "75°C",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -10624,26 +10700,31 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "A4"
     ],
     "ingredients": [
-      "30g de Décoction Détox & Soutien Hépatique séché de qualité herboristerie certifiée",
-      "10g de sommités florales et feuilles de soutien synergie"
+      "Artichaut (feuilles)",
+      "Romarin (sommités)",
+      "Radis Noir (racine)"
     ],
     "sachetA": {
       "composition": [
-        "30g de Décoction Détox & Soutien Hépatique séché de qualité herboristerie certifiée"
+        "5g de Feuilles d'Artichaut",
+        "5g de Racine de Radis Noir séchée"
       ],
-      "solvent": "Eau purifiée osmosée (300ml)",
-      "temp": "80°C",
-      "duration": "1h30"
+      "solvent": "Eau purifiée (350ml)",
+      "temp": "90°C",
+      "duration": "15 min"
     },
     "sachetB": {
       "composition": [
-        "10g de sommités florales et feuilles de soutien synergie"
+        "3g de Romarin sommités fleuries"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "2h00"
+      "solvent": "Eau (déjà présente)",
+      "temp": "75°C",
+      "duration": "10 min"
     },
-    "instructions": [],
+    "instructions": [
+      "Placer les racines de radis noir et les feuilles d'artichaut en phase A.",
+      "Ajouter les sommités fleuries de romarin en phase B pour préserver les arômes volatils."
+    ],
     "molecularSignature": [
       {
         "molecule": "Totum moléculaire actif",
@@ -10653,19 +10734,19 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Théorie des quatre éléments et régulation du terrain par des extractions tièdes préservant la quintessence active du végétal. La tradition accorde à Décoction Détox & Soutien Hépatique une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
-      "Ne pas dépasser le dosage journalier recommandé.",
-      "Tenir hors de portée des jeunes enfants.",
-      "Femmes enceintes ou allaitantes : solliciter l’avis formel d’un professionnel de santé."
+      "Saveur très amère caractéristique.",
+      "Bien s'hydrater tout au long de la journée."
     ],
     "contraindications": [
-      "Allergie avérée aux composants de la formule",
-      "Pathologies chroniques rénales ou hépatiques non compensées sans surveillance médicale"
+      "Obstruction des voies biliaires",
+      "Calculs biliaires avérés sans avis médical",
+      "Grossesse"
     ],
     "safetyWarning": "Avertissement réglementaire : Cette fiche de formulation botanique a une vocation strictement pédagogique et éducative. Elle ne constitue en aucun cas un diagnostic médical ni une prescription thérapeutique. En cas de pathologie ou de traitement en cours, demandez conseil à votre médecin.",
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -10708,7 +10789,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-08"
     ],
     "title": "Élixir Régulateur Métabolique",
-    "subtitle": "Protocole Spécifique — Synergie végétale aux graines de fenugrec et écorce d'épine-vinette pour accompagner l'équilibre métabolique et le rythm...",
+    "subtitle": "Synergie végétale aux graines de fenugrec et écorce d'épine-vinette pour accompagner l'équilibre métabolique et le rythme du quotidien (Terrain T5).",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -10718,15 +10799,15 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "prepTimeMinutes": 15,
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
-    "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetA": "85°C",
+    "tempSachetB": "70°C",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
       "period": "XIe siècle",
       "quote": "« Le médecin avisé soigne d’abord le terrain, puis fortifie l’organe avant de chasser l’humeur corrompue. » — Avicenne, Kitab al-Qanun fi al-Tibb",
-      "description": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux."
+      "description": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -10741,26 +10822,31 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "A5"
     ],
     "ingredients": [
-      "30g de Élixir Régulateur Métabolique séché de qualité herboristerie certifiée",
-      "10g de sommités florales et feuilles de soutien synergie"
+      "Épine-vinette (écorce de racine)",
+      "Fenugrec (graines)",
+      "Gingembre frais"
     ],
     "sachetA": {
       "composition": [
-        "30g de Élixir Régulateur Métabolique séché de qualité herboristerie certifiée"
+        "4g de Graines de Fenugrec concassées",
+        "3g d'Écorce d'Épine-vinette"
       ],
-      "solvent": "Eau purifiée osmosée (300ml)",
-      "temp": "80°C",
-      "duration": "1h30"
+      "solvent": "Eau purifiée (300ml)",
+      "temp": "85°C",
+      "duration": "20 min"
     },
     "sachetB": {
       "composition": [
-        "10g de sommités florales et feuilles de soutien synergie"
+        "2g de Gingembre en fines lamelles"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "2h00"
+      "solvent": "Eau (déjà présente)",
+      "temp": "70°C",
+      "duration": "10 min"
     },
-    "instructions": [],
+    "instructions": [
+      "Préparer la décoction douce des graines concassées de fenugrec.",
+      "Extraire les principes amers et les alcaloïdes d'épine-vinette à température contrôlée."
+    ],
     "molecularSignature": [
       {
         "molecule": "Totum moléculaire actif",
@@ -10768,21 +10854,19 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Consensus pharmacopée internationale (OMS & Ph. Eur.)"
       }
     ],
-    "traditionalWisdom": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux. La tradition accorde à Élixir Régulateur Métabolique une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux. La tradition accorde à Élixir Régulateur Métabolique une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
-      "Ne pas dépasser le dosage journalier recommandé.",
-      "Tenir hors de portée des jeunes enfants.",
-      "Femmes enceintes ou allaitantes : solliciter l’avis formel d’un professionnel de santé."
+      "Ne dispense pas d'une alimentation équilibrée et d'activité physique réguliere."
     ],
     "contraindications": [
-      "Allergie avérée aux composants de la formule",
-      "Pathologies chroniques rénales ou hépatiques non compensées sans surveillance médicale"
+      "Grossesse",
+      "Traitement antidiabétique lourd sans concertation médicale"
     ],
     "safetyWarning": "Avertissement réglementaire : Cette fiche de formulation botanique a une vocation strictement pédagogique et éducative. Elle ne constitue en aucun cas un diagnostic médical ni une prescription thérapeutique. En cas de pathologie ou de traitement en cours, demandez conseil à votre médecin.",
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -10825,7 +10909,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-09"
     ],
     "title": "Infusion Drainage & Élimination",
-    "subtitle": "Protocole Spécifique — Formule drainante aux sommités de reine des prés et racines de pissenlit pour accompagner les fonctions d'élimination de...",
+    "subtitle": "Formule drainante aux sommités de reine des prés et racines de pissenlit pour accompagner les fonctions d'élimination de l'eau et des émonctoires (Terrain T6).",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -10835,8 +10919,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "prepTimeMinutes": 15,
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
-    "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetA": "90°C",
+    "tempSachetB": "75°C",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -10859,26 +10943,31 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "A6"
     ],
     "ingredients": [
-      "30g de Infusion Drainage & Élimination séché de qualité herboristerie certifiée",
-      "10g de sommités florales et feuilles de soutien synergie"
+      "Pissenlit (feuilles et racines)",
+      "Reine des prés (sommités)",
+      "Prêle des champs"
     ],
     "sachetA": {
       "composition": [
-        "30g de Infusion Drainage & Élimination séché de qualité herboristerie certifiée"
+        "4g de Pissenlit racines",
+        "3g de Prêle des champs"
       ],
-      "solvent": "Eau purifiée osmosée (300ml)",
-      "temp": "80°C",
-      "duration": "1h30"
+      "solvent": "Eau purifiée (400ml)",
+      "temp": "90°C",
+      "duration": "15 min"
     },
     "sachetB": {
       "composition": [
-        "10g de sommités florales et feuilles de soutien synergie"
+        "4g de Sommités de Reine des prés"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "2h00"
+      "solvent": "Eau (déjà présente)",
+      "temp": "75°C",
+      "duration": "8 min"
     },
-    "instructions": [],
+    "instructions": [
+      "Extraction des racines de pissenlit et tiges de prêle en phase A.",
+      "Infusion courte de la reine des prés en phase B pour protéger les dérivés salicylés."
+    ],
     "molecularSignature": [
       {
         "molecule": "Totum moléculaire actif",
@@ -10888,19 +10977,18 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Approche monastique de la Viriditas végétale combinant principes amers, racines nobles et macérations vineuses pour réveiller la vitalité endormie. La tradition accorde à Infusion Drainage & Élimination une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
-      "Ne pas dépasser le dosage journalier recommandé.",
-      "Tenir hors de portée des jeunes enfants.",
-      "Femmes enceintes ou allaitantes : solliciter l’avis formel d’un professionnel de santé."
+      "Veiller à boire suffisamment d'eau pure en complément."
     ],
     "contraindications": [
-      "Allergie avérée aux composants de la formule",
-      "Pathologies chroniques rénales ou hépatiques non compensées sans surveillance médicale"
+      "Allergie aux dérivés salicylés (aspirine)",
+      "Insuffisance rénale sévère",
+      "Femmes enceintes"
     ],
     "safetyWarning": "Avertissement réglementaire : Cette fiche de formulation botanique a une vocation strictement pédagogique et éducative. Elle ne constitue en aucun cas un diagnostic médical ni une prescription thérapeutique. En cas de pathologie ou de traitement en cours, demandez conseil à votre médecin.",
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -10943,7 +11031,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-10"
     ],
     "title": "Remède Psoriasis — Émonctoires & Régulation Épidermique",
-    "subtitle": "Protocole Spécifique — Plaques squameuses, hyperprolifération kératinocytaire et surcharge hépato-cutanée...",
+    "subtitle": "Extraction séquentielle de Bardane, Pensée Sauvage et Mahonia ciblant la régulation kératinocytaire et le drainage hépato-cutané.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -10953,8 +11041,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "prepTimeMinutes": 15,
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
-    "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetA": "75°C",
+    "tempSachetB": "Ambiante (Sans chauffe / bocal)",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -10977,26 +11065,33 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "A7"
     ],
     "ingredients": [
-      "30g de Remède Psoriasis — Émonctoires & Régulation Épidermique séché de qualité herboristerie certifiée",
-      "10g de sommités florales et feuilles de soutien synergie"
+      "Racine de Bardane (30g)",
+      "Pensée Sauvage (25g)",
+      "Écorce de Mahonia (20g)"
     ],
     "sachetA": {
       "composition": [
-        "30g de Remède Psoriasis — Émonctoires & Régulation Épidermique séché de qualité herboristerie certifiée"
+        "30g Racine de Bardane",
+        "25g Pensée Sauvage"
       ],
-      "solvent": "Eau purifiée osmosée (300ml)",
-      "temp": "80°C",
-      "duration": "1h30"
+      "solvent": "Eau distillée + Glycérine végétale (500ml, 70/30)",
+      "temp": "75°C",
+      "duration": "2h00"
     },
     "sachetB": {
       "composition": [
-        "10g de sommités florales et feuilles de soutien synergie"
+        "20g Écorce de Mahonia concassée"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "2h00"
+      "solvent": "Alcool alimentaire 70° (250ml ; option sans alcool possible en glycérine)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h (ou 14–21j bocal)"
     },
-    "instructions": [],
+    "instructions": [
+      "Phase A : Extraction hydroglycérinée de la Bardane et de la Pensée Sauvage à 75°C pendant 2h00. Filtrer et réserver l'extrait A.",
+      "Transition obligatoire : Vider, rincer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
+      "Phase B : Macération hydro-alcoolique à 70° (titre optimal pour alcaloïdes isoquinoléiques et lignanes) du Mahonia en mode Sans chauffe (4h à 12h) ou en bocal hermétique (sans chauffe car dilution 70° contenant de l'eau ; alternatif 75° sans eau en Tincture possible).",
+      "Filtrer, presser le marc et réunir les fractions A et B hors appareil en flacons ambrés."
+    ],
     "molecularSignature": [
       {
         "molecule": "Totum moléculaire actif",
@@ -11006,19 +11101,21 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Équilibrage du Qi, tonification des méridiens du Rein et de la Rate, et combinaison impériale (Empereur, Ministre, Assistant, Ambassadeur). La tradition accorde à Remède Psoriasis — Émonctoires & Régulation Épidermique une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
-      "Ne pas dépasser le dosage journalier recommandé.",
-      "Tenir hors de portée des jeunes enfants.",
-      "Femmes enceintes ou allaitantes : solliciter l’avis formel d’un professionnel de santé."
+      "Ne se substitue pas à un suivi dermatologique médical.",
+      "Alcool inflammable dès 21 °C à 70 % (INRS) : travailler en pièce très ventilée loin de toute flamme ; ne pas chauffer une dilution contenant de l'eau en mode Tincture.",
+      "Éviter les savons décapants."
     ],
     "contraindications": [
-      "Allergie avérée aux composants de la formule",
-      "Pathologies chroniques rénales ou hépatiques non compensées sans surveillance médicale"
+      "Grossesse et allaitement",
+      "Enfants de moins de 12 ans",
+      "Sensibilité à l'alcool",
+      "Lithiase biliaire symptomatique"
     ],
     "safetyWarning": "Avertissement réglementaire : Cette fiche de formulation botanique a une vocation strictement pédagogique et éducative. Elle ne constitue en aucun cas un diagnostic médical ni une prescription thérapeutique. En cas de pathologie ou de traitement en cours, demandez conseil à votre médecin.",
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -11061,7 +11158,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-11"
     ],
     "title": "Remède Eczéma — Désamorçage Histaminique & Barrière",
-    "subtitle": "Protocole Spécifique — Dermatite atopique, réactivité cutanée, prurit intense et déficience de la barrière épidermique...",
+    "subtitle": "Formule protectrice thermo-régulée combinant Plantain, Camomille Matricaire et Fumeterre pour calmer le prurit et restaurer la matrice cutanée.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -11071,8 +11168,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "prepTimeMinutes": 15,
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
-    "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetA": "68°C",
+    "tempSachetB": "Ambiante (Sans chauffe / bocal)",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -11095,26 +11192,34 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "A8"
     ],
     "ingredients": [
-      "30g de Remède Eczéma — Désamorçage Histaminique & Barrière séché de qualité herboristerie certifiée",
-      "10g de sommités florales et feuilles de soutien synergie"
+      "Feuilles de Plantain lancéolé (25g)",
+      "Capitules de Camomille Matricaire (25g)",
+      "Fumeterre fleurie (25g)"
     ],
     "sachetA": {
       "composition": [
-        "30g de Remède Eczéma — Désamorçage Histaminique & Barrière séché de qualité herboristerie certifiée"
+        "25g Plantain lancéolé",
+        "15g Camomille matricaire"
       ],
-      "solvent": "Eau purifiée osmosée (300ml)",
-      "temp": "80°C",
-      "duration": "1h30"
+      "solvent": "Eau distillée + Glycérine végétale bio (500ml, 65/35)",
+      "temp": "68°C",
+      "duration": "1h45"
     },
     "sachetB": {
       "composition": [
-        "10g de sommités florales et feuilles de soutien synergie"
+        "10g Camomille matricaire (terpènes)",
+        "25g Fumeterre"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "2h00"
+      "solvent": "Alcool alimentaire 50° (250ml ; option sans alcool possible en glycérine/huile)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
-    "instructions": [],
+    "instructions": [
+      "Phase A : Extraction douce de l'aucuboside du Plantain et de l'apigénine de Camomille à 68°C pendant 1h45. Filtrer et réserver.",
+      "Transition obligatoire : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve.",
+      "Phase B : Captation hydro-alcoolique à 50° (degré doux adapté aux sommités fleuries et sesquiterpènes/protopine) en mode Sans chauffe (4h à 12h) ou en bocal hermétique.",
+      "Pressage doux sans broyer les tiges et réunion des fractions A et B."
+    ],
     "molecularSignature": [
       {
         "molecule": "Totum moléculaire actif",
@@ -11124,19 +11229,21 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Utilisation de solvants lipidiques nobles (ghee, huiles) pour transporter les principes actifs liposolubles à travers les sept tissus (Dhatus). La tradition accorde à Remède Eczéma — Désamorçage Histaminique & Barrière une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
-      "Ne pas dépasser le dosage journalier recommandé.",
-      "Tenir hors de portée des jeunes enfants.",
-      "Femmes enceintes ou allaitantes : solliciter l’avis formel d’un professionnel de santé."
+      "Alcool inflammable dès la température ambiante (point d'éclair ~21–24 °C entre 50° et 70°, INRS) : manipuler en pièce très ventilée loin de toute flamme ; ne jamais chauffer d'alcool dilué à l'eau en mode Tincture.",
+      "Demander un avis médical ou dermatologique en cas de lésion cutanée suintante ou persistante."
     ],
     "contraindications": [
-      "Allergie avérée aux composants de la formule",
-      "Pathologies chroniques rénales ou hépatiques non compensées sans surveillance médicale"
+      "Grossesse et allaitement",
+      "Enfants",
+      "Sensibilité à l'alcool",
+      "Allergie connue aux Astéracées",
+      "Calculs biliaires aigus"
     ],
     "safetyWarning": "Avertissement réglementaire : Cette fiche de formulation botanique a une vocation strictement pédagogique et éducative. Elle ne constitue en aucun cas un diagnostic médical ni une prescription thérapeutique. En cas de pathologie ou de traitement en cours, demandez conseil à votre médecin.",
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -11179,7 +11286,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-12"
     ],
     "title": "Remède Alopécie — Anti-DHT & Matrice Folliculaire",
-    "subtitle": "Protocole Spécifique — Alopécie androgénétique, excès de DHT, fibrose du bulbe et perte de densité capillaire...",
+    "subtitle": "Extraction lipophile et hydrosoluble de Palmier Nain, Racine d'Ortie et Ginkgo pour inhiber la 5-alpha-réductase et relancer la microcirculation capillaire.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -11189,8 +11296,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "prepTimeMinutes": 15,
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
-    "tempSachetA": "80°C",
-    "tempSachetB": "50°C",
+    "tempSachetA": "72°C",
+    "tempSachetB": "Ambiante (Sans chauffe) ou 71°C Tincture (≥75° sans eau)",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -11212,26 +11319,33 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "A9"
     ],
     "ingredients": [
-      "30g de Remède Alopécie — Anti-DHT & Matrice Folliculaire séché de qualité herboristerie certifiée",
-      "10g de sommités florales et feuilles de soutien synergie"
+      "Baies de Palmier Nain / Saw Palmetto (30g)",
+      "Racine d'Ortie concassée (25g)",
+      "Feuilles de Ginkgo Biloba (20g)"
     ],
     "sachetA": {
       "composition": [
-        "30g de Remède Alopécie — Anti-DHT & Matrice Folliculaire séché de qualité herboristerie certifiée"
+        "25g Racine d'Ortie",
+        "20g Feuilles de Ginkgo"
       ],
-      "solvent": "Eau purifiée osmosée (300ml)",
-      "temp": "80°C",
-      "duration": "1h30"
+      "solvent": "Eau distillée + Glycérine végétale (450ml, 70/30)",
+      "temp": "72°C",
+      "duration": "2h00"
     },
     "sachetB": {
       "composition": [
-        "10g de sommités florales et feuilles de soutien synergie"
+        "30g Baies de Palmier Nain (Saw Palmetto) concassées"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "50°C",
-      "duration": "2h00"
+      "solvent": "Alcool alimentaire 70° (ou ≥ 75 % vol. sans eau pour cycle Tincture) (300ml)",
+      "temp": "Ambiante (Sans chauffe) ou 71°C Tincture (≥75° sans eau)",
+      "duration": "4h à 12h (ou 4h Tincture)"
     },
-    "instructions": [],
+    "instructions": [
+      "Phase A : Extraction hydroglycérinée des lectines UDA, de la silice d'ortie et des flavonoïdes de Ginkgo à 72°C pendant 2h00. Filtrer et réserver.",
+      "Transition obligatoire : Vider, nettoyer et sécher intégralement la cuve.",
+      "Phase B : Extraction alcoolique du Palmier Nain (Saw Palmetto) concassé — titre optimal 70° en Sans chauffe (4h à 12h) ou bocal hermétique ; ou alcool ≥ 75 % vol. sans eau via programme Tincture en pièce ventilée sans flamme.",
+      "Conditionnement bimodal hors cuve : flacon compte-gouttes (oral) et flacon spray (lotion cuir chevelu)."
+    ],
     "molecularSignature": [
       {
         "molecule": "Totum moléculaire actif",
@@ -11241,19 +11355,21 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Phytothérapie d’altitude et macérations d’arbustes xérophiles résistants aux amplitudes thermiques extrêmes pour fortifier l’immunité. La tradition accorde à Remède Alopécie — Anti-DHT & Matrice Folliculaire une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
-      "Ne pas dépasser le dosage journalier recommandé.",
-      "Tenir hors de portée des jeunes enfants.",
-      "Femmes enceintes ou allaitantes : solliciter l’avis formel d’un professionnel de santé."
+      "Consulter un professionnel de santé en cas de prise simultanée d'anticoagulants (Ginkgo Biloba).",
+      "Vapeurs d'alcool inflammables dès 13–21 °C (INRS) : travailler en pièce très ventilée loin de toute flamme, couvercle verrouillé et entre MIN et MAX."
     ],
     "contraindications": [
-      "Allergie avérée aux composants de la formule",
-      "Pathologies chroniques rénales ou hépatiques non compensées sans surveillance médicale"
+      "Grossesse et allaitement",
+      "Femmes en âge de procréer sans contraception",
+      "Moins de 18 ans",
+      "Sensibilité à l'alcool",
+      "Antécédents hormonodépendants"
     ],
     "safetyWarning": "Avertissement réglementaire : Cette fiche de formulation botanique a une vocation strictement pédagogique et éducative. Elle ne constitue en aucun cas un diagnostic médical ni une prescription thérapeutique. En cas de pathologie ou de traitement en cours, demandez conseil à votre médecin.",
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -11314,7 +11430,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
       "period": "Tradition millénaire",
       "quote": "« Les plantes maîtresses instruisent le corps par la saveur et la résonance du vivant. » — Mémoire amazonienne",
-      "description": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes."
+      "description": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Nervures foliaires ramifiées rappelant le réseau capillaire et vasculaire pulmonaire.",
@@ -11367,7 +11483,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Monographie officielle EMA / Commission E"
       }
     ],
-    "traditionalWisdom": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes. La tradition accorde à Romarin à Cinéole (Huile) une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques. La tradition accorde à Romarin à Cinéole (Huile) une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Ne pas dépasser le dosage journalier recommandé.",
       "Tenir hors de portée des jeunes enfants.",
@@ -11381,7 +11497,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -11508,7 +11624,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -11635,7 +11751,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -11762,7 +11878,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -11889,7 +12005,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -11949,7 +12065,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
       "period": "XIe siècle",
       "quote": "« Le médecin avisé soigne d’abord le terrain, puis fortifie l’organe avant de chasser l’humeur corrompue. » — Avicenne, Kitab al-Qanun fi al-Tibb",
-      "description": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux."
+      "description": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -12002,7 +12118,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Monographie officielle EMA / Commission E"
       }
     ],
-    "traditionalWisdom": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux. La tradition accorde à Thym commun (Vinaigre) une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux. La tradition accorde à Thym commun (Vinaigre) une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Ne pas dépasser le dosage journalier recommandé.",
       "Tenir hors de portée des jeunes enfants.",
@@ -12016,7 +12132,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -12143,7 +12259,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -12270,7 +12386,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -12397,7 +12513,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -12524,7 +12640,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -12584,7 +12700,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
       "period": "Tradition millénaire",
       "quote": "« Les plantes maîtresses instruisent le corps par la saveur et la résonance du vivant. » — Mémoire amazonienne",
-      "description": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes."
+      "description": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -12637,7 +12753,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Monographie officielle EMA / Commission E"
       }
     ],
-    "traditionalWisdom": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes. La tradition accorde à Laurier sauce (Huile) une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques. La tradition accorde à Laurier sauce (Huile) une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Ne pas dépasser le dosage journalier recommandé.",
       "Tenir hors de portée des jeunes enfants.",
@@ -12651,7 +12767,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -12778,7 +12894,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -12905,7 +13021,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -13032,7 +13148,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -13160,7 +13276,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -13220,7 +13336,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
       "period": "XIe siècle",
       "quote": "« Le médecin avisé soigne d’abord le terrain, puis fortifie l’organe avant de chasser l’humeur corrompue. » — Avicenne, Kitab al-Qanun fi al-Tibb",
-      "description": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux."
+      "description": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Nervures foliaires ramifiées rappelant le réseau capillaire et vasculaire pulmonaire.",
@@ -13274,7 +13390,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Monographie officielle EMA / Commission E"
       }
     ],
-    "traditionalWisdom": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux. La tradition accorde à Menthe poivrée (Miel) une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux. La tradition accorde à Menthe poivrée (Miel) une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Ne pas dépasser le dosage journalier recommandé.",
       "Tenir hors de portée des jeunes enfants.",
@@ -13288,7 +13404,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -13415,7 +13531,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -13542,7 +13658,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -13669,7 +13785,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -13796,7 +13912,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -13856,7 +13972,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
       "period": "Tradition millénaire",
       "quote": "« Les plantes maîtresses instruisent le corps par la saveur et la résonance du vivant. » — Mémoire amazonienne",
-      "description": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes."
+      "description": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Réseau racinaire pivotant et rhizomes denses ancrés profondément dans la terre minérale.",
@@ -13909,7 +14025,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Monographie officielle EMA / Commission E"
       }
     ],
-    "traditionalWisdom": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes. La tradition accorde à Curcuma (Huile) une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques. La tradition accorde à Curcuma (Huile) une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Ne pas dépasser le dosage journalier recommandé.",
       "Tenir hors de portée des jeunes enfants.",
@@ -13923,7 +14039,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -14050,7 +14166,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -14177,7 +14293,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -14304,7 +14420,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -14431,7 +14547,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -14491,7 +14607,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
       "period": "XIe siècle",
       "quote": "« Le médecin avisé soigne d’abord le terrain, puis fortifie l’organe avant de chasser l’humeur corrompue. » — Avicenne, Kitab al-Qanun fi al-Tibb",
-      "description": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux."
+      "description": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -14544,7 +14660,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Monographie officielle EMA / Commission E"
       }
     ],
-    "traditionalWisdom": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux. La tradition accorde à Cardamome verte (Miel) une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux. La tradition accorde à Cardamome verte (Miel) une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Ne pas dépasser le dosage journalier recommandé.",
       "Tenir hors de portée des jeunes enfants.",
@@ -14558,7 +14674,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -14685,7 +14801,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -14812,7 +14928,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -14939,7 +15055,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -15066,7 +15182,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -15126,7 +15242,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
       "period": "Tradition millénaire",
       "quote": "« Les plantes maîtresses instruisent le corps par la saveur et la résonance du vivant. » — Mémoire amazonienne",
-      "description": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes."
+      "description": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -15179,7 +15295,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Monographie officielle EMA / Commission E"
       }
     ],
-    "traditionalWisdom": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes. La tradition accorde à Clou de girofle (Huile) une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques. La tradition accorde à Clou de girofle (Huile) une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Ne pas dépasser le dosage journalier recommandé.",
       "Tenir hors de portée des jeunes enfants.",
@@ -15193,7 +15309,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -15320,7 +15436,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -15447,7 +15563,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -15574,7 +15690,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -15701,7 +15817,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -15761,7 +15877,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
       "period": "XIe siècle",
       "quote": "« Le médecin avisé soigne d’abord le terrain, puis fortifie l’organe avant de chasser l’humeur corrompue. » — Avicenne, Kitab al-Qanun fi al-Tibb",
-      "description": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux."
+      "description": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Réseau racinaire pivotant et rhizomes denses ancrés profondément dans la terre minérale.",
@@ -15814,7 +15930,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Monographie officielle EMA / Commission E"
       }
     ],
-    "traditionalWisdom": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux. La tradition accorde à Bardane (Vinaigre) une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux. La tradition accorde à Bardane (Vinaigre) une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Ne pas dépasser le dosage journalier recommandé.",
       "Tenir hors de portée des jeunes enfants.",
@@ -15828,7 +15944,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -15955,7 +16071,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -16082,7 +16198,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -16209,7 +16325,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -16336,7 +16452,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -16396,7 +16512,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
       "period": "Tradition millénaire",
       "quote": "« Les plantes maîtresses instruisent le corps par la saveur et la résonance du vivant. » — Mémoire amazonienne",
-      "description": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes."
+      "description": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -16449,7 +16565,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Monographie officielle EMA / Commission E"
       }
     ],
-    "traditionalWisdom": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes. La tradition accorde à Haricot Adzuki (Huile) une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques. La tradition accorde à Haricot Adzuki (Huile) une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Ne pas dépasser le dosage journalier recommandé.",
       "Tenir hors de portée des jeunes enfants.",
@@ -16463,7 +16579,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -16590,7 +16706,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -16643,7 +16759,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "40°C",
+    "tempSachetB": "45°C",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 100,
     "heritage": {
@@ -16680,16 +16796,16 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "composition": [
         "Résine de Boswellia serrata & Résine de Myrrhe (65g)"
       ],
-      "solvent": "Glycérine végétale bio (protocole alcool chauffé suspendu)",
-      "temp": "40°C",
+      "solvent": "Alcool éthylique bio 90°–96° sans eau (titre optimal résines d'encens & myrrhe ; option huile végétale vierge possible)",
+      "temp": "45°C (Tincture ajusté / Sans chauffe)",
       "duration": "2h00"
     },
     "instructions": [
-      "Étape 1 : Préparation du macérat cutané — Peser avec précision les extraits botaniques sélectionnés pour l'application topique.",
-      "Étape 2 : Extraction lipidique douce (Sachet A) — Placer la matière dans la cuve inox 304 avec Eau distillée extra pure + Glycérine végétale (500 ml + 100 ml). Chauffer à 65°C sous vortex cinétique doux pour dissoudre les caroténoïdes et phytostérols.",
-      "Étape 3 : Stabilisation des principes volatils (Sachet B) — Ajouter la phase B à 40°C en chambre close étanche pour préserver les esters aromatiques protecteurs.",
-      "Étape 4 : Filtration clarifiante — Filtrer à travers une étamine fine en lin ou papier filtre non blanchi.",
-      "Étape 5 : Conditionnement & Conservation — Conditionner en flacon compte-gouttes teinté. Conserver à température ambiante à l’abri des rayons solaires directs."
+      "Étape 1 : Préparation — Congeler brièvement puis concasser les résines de Boswellia et Myrrhe ; peser les extraits de la Phase A.",
+      "Étape 2 : Extraction polaire (Sachet A) — Placer Centella et Aloe vera dans la cuve avec Eau distillée + Glycérine (65 °C, 1h30). Filtrer et réserver.",
+      "Étape 3 : Transition obligatoire — Vider, nettoyer (Nettoyage 5 min) et sécher intégralement la cuve.",
+      "Étape 4 : Extraction résineuse (Sachet B) — En cuve propre et sèche (pièce ventilée, aucune flamme, couvercle verrouillé, MIN/MAX), extraire les résines dans l'alcool 90°–96° sans ajout d'eau via Tincture ajusté (45 °C, 2h00) ou Sans chauffe.",
+      "Étape 5 : Filtration & Conditionnement — Filtrer finement à froid pour retenir les cires, assembler hors appareil en flacon ambré compte-gouttes et conserver au frais."
     ],
     "molecularSignature": [
       {
@@ -16700,9 +16816,9 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Standardisation thermo-régulée et extraction vortex à basse température pour maximiser la biodisponibilité sans stress oxydatif. La tradition accorde à Sérum Liftant Encens & Myrrhe une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
-      "Ne pas dépasser le dosage journalier recommandé.",
-      "Tenir hors de portée des jeunes enfants.",
-      "Femmes enceintes ou allaitantes : solliciter l’avis formel d’un professionnel de santé."
+      "Usage externe exclusif. Réaliser un test cutané dans le pli du coude 48 h avant usage.",
+      "Vapeurs d'alcool inflammables dès 13 °C pur (INRS) : travailler en pièce très ventilée loin de toute flamme ; ne pas ajouter d'eau ni de lécithine en cycle Tincture chauffé.",
+      "Tenir hors de portée des jeunes enfants. Femmes enceintes ou allaitantes : avis médical requis."
     ],
     "contraindications": [
       "Allergie avérée aux composants de la formule",
@@ -16712,7 +16828,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -16834,7 +16950,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -16956,7 +17072,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -17016,7 +17132,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
       "period": "XIe siècle",
       "quote": "« Le médecin avisé soigne d’abord le terrain, puis fortifie l’organe avant de chasser l’humeur corrompue. » — Avicenne, Kitab al-Qanun fi al-Tibb",
-      "description": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux."
+      "description": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -17064,7 +17180,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Consensus pharmacopée internationale (OMS & Ph. Eur.)"
       }
     ],
-    "traditionalWisdom": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux. La tradition accorde à Huile Corps Drainante & Fermeté une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux. La tradition accorde à Huile Corps Drainante & Fermeté une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Ne pas dépasser le dosage journalier recommandé.",
       "Tenir hors de portée des jeunes enfants.",
@@ -17078,7 +17194,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -17200,7 +17316,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -17322,7 +17438,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -17444,7 +17560,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -17566,7 +17682,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -17626,7 +17742,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
       "period": "Tradition millénaire",
       "quote": "« Les plantes maîtresses instruisent le corps par la saveur et la résonance du vivant. » — Mémoire amazonienne",
-      "description": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes."
+      "description": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -17674,7 +17790,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Consensus pharmacopée internationale (OMS & Ph. Eur.)"
       }
     ],
-    "traditionalWisdom": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes. La tradition accorde à Élixir Regard Frais une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques. La tradition accorde à Élixir Regard Frais une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Ne pas dépasser le dosage journalier recommandé.",
       "Tenir hors de portée des jeunes enfants.",
@@ -17688,7 +17804,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -17810,7 +17926,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -17932,7 +18048,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -18054,7 +18170,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -18176,7 +18292,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -18236,7 +18352,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
       "period": "XIe siècle",
       "quote": "« Le médecin avisé soigne d’abord le terrain, puis fortifie l’organe avant de chasser l’humeur corrompue. » — Avicenne, Kitab al-Qanun fi al-Tibb",
-      "description": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux."
+      "description": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -18284,7 +18400,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Consensus pharmacopée internationale (OMS & Ph. Eur.)"
       }
     ],
-    "traditionalWisdom": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux. La tradition accorde à Huile Jambes Légères une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux. La tradition accorde à Huile Jambes Légères une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Ne pas dépasser le dosage journalier recommandé.",
       "Tenir hors de portée des jeunes enfants.",
@@ -18298,7 +18414,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -18420,7 +18536,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -18542,7 +18658,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -18664,7 +18780,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -18786,7 +18902,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -18846,7 +18962,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "register": "Pharmacopée Amazonienne (Herboristerie des Peuples Premiers)",
       "period": "Tradition millénaire",
       "quote": "« Les plantes maîtresses instruisent le corps par la saveur et la résonance du vivant. » — Mémoire amazonienne",
-      "description": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes."
+      "description": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -18894,7 +19010,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Consensus pharmacopée internationale (OMS & Ph. Eur.)"
       }
     ],
-    "traditionalWisdom": "Extraction hydro-alcoolique de lianes denses, écorces et champignons adaptogènes stimulant les réponses immunitaires profondes. La tradition accorde à Sérum Hydratation une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Extraction séquentielle en phase aqueuse/glycérinée et phase lipophile des matières végétales denses et aromatiques. La tradition accorde à Sérum Hydratation une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Ne pas dépasser le dosage journalier recommandé.",
       "Tenir hors de portée des jeunes enfants.",
@@ -18908,7 +19024,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -19030,7 +19146,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -19152,7 +19268,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -19274,7 +19390,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -19396,7 +19512,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -19456,7 +19572,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "register": "Perse & Islam Doré (Avicenne, Le Canon de la Médecine, 1025)",
       "period": "XIe siècle",
       "quote": "« Le médecin avisé soigne d’abord le terrain, puis fortifie l’organe avant de chasser l’humeur corrompue. » — Avicenne, Kitab al-Qanun fi al-Tibb",
-      "description": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux."
+      "description": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux."
     },
     "doctrinaSignaturae": {
       "visualAspect": "Plante entière aux équilibres morphologiques harmonieux et réserves de résines protectrices.",
@@ -19504,7 +19620,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Consensus pharmacopée internationale (OMS & Ph. Eur.)"
       }
     ],
-    "traditionalWisdom": "Art raffiné des eaux distillées, macérats alcooliques doux et synergies polyvalentes régulant les tempéraments fondamentaux. La tradition accorde à Dentifrice Reminéralisant & Pubbling Coco une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux. La tradition accorde à Dentifrice Reminéralisant & Pubbling Coco une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Ne pas dépasser le dosage journalier recommandé.",
       "Tenir hors de portée des jeunes enfants.",
@@ -19518,7 +19634,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "observationsExpected": "L’utilisateur pourrait observer une sensation de légèreté digestive, un apaisement progressif du tonus nerveux et une meilleure régularité du rythme diurne après 10 à 14 jours d’utilisation régulière.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -19554,18 +19670,18 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/teinture-nez-libre-echinacee-gingembre"
     ],
     "title": "Rituel Nez Libre & Défenses Naturelles",
-    "subtitle": "Dual-Extract d'Échinacée pourpre & Gingembre pour accompagner le confort des voies aériennes supérieures dès les premiers signes de refroidissement.",
+    "subtitle": "Dual-Extract hydroalcoolique (Phase A eau/glycérine + Phase B alcool 70°) d'Échinacée pourpre & Gingembre pour accompagner le confort des voies aériennes supérieures dès les premiers signes de refroidissement.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
-    "subcategory": "Teinture Mère & Dual-Extract",
+    "subcategory": "Dual-Extract Hydroalcoolique (70°)",
     "difficultyLevel": 2,
     "difficultyLabel": "Facile",
     "prepTimeMinutes": 20,
     "machineTimeMinutes": 300,
     "totalTimeMinutes": 320,
     "tempSachetA": "70°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
@@ -19596,7 +19712,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "165 ml de Glycérine végétale biologique — Solvant A",
       "15 g d'Échinacée pourpre — Phase B",
       "10 g de Gingembre — Phase B",
-      "250 ml d'Alcool bio à 96° — Solvant B"
+      "250 ml d'Alcool éthylique alimentaire bio 70° — Solvant B (alkylamides d’échinacée et gingérols)"
     ],
     "sachetA": {
       "composition": [
@@ -19612,16 +19728,16 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "15 g d'Échinacée pourpre",
         "10 g de Gingembre"
       ],
-      "solvent": "250 ml d'Alcool bio à 96°",
-      "temp": "45°C",
-      "duration": "3h00"
+      "solvent": "Alcool éthylique bio 70° (250 ml — titre optimal pour alkylamides d’échinacée et gingérols)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Phase A (Hydro-glycérinée) — Déposer l'échinacée et le gingembre dans le panier inox BloomLab®. Verser eau distillée et glycérine. Lancer à 70°C pendant 2h00.",
-      "Étape 2 : Pause thermique sécurisée — Laisser refroidir naturellement cuve éteinte avant ouverture (protocole alcool chauffé suspendu ; ne pas tester la température à la main sur la paroi).",
-      "Étape 3 : Phase B (sans alcool chauffé) — ⚠️ Extraction à l'alcool chauffé suspendue dans BloomLab® : substituer par 250 ml de glycérine végétale bio ou huile végétale vierge à 45°C pendant 2h00.",
-      "Étape 4 : Extraction Phase B — Lancer à 45°C pendant 3h00 sous thermorégulation active.",
-      "Étape 5 : Filtration et Flaconnage — Filtrer à travers l'étamine fine BloomLab, presser doucement et conditionner en flacon verre ambré stérile."
+      "Étape 2 : Transition obligatoire — Laisser refroidir naturellement cuve éteinte, filtrer la Phase A, puis vider, nettoyer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
+      "Étape 3 : Phase B alcoolique (70°) — Placer les plantes de la Phase B en cuve propre et sèche avec 250 ml d'alcool alimentaire à 70° (entre MIN et MAX, pièce ventilée, aucune flamme).",
+      "Étape 4 : Extraction Phase B — Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) ou transférer en bocal hermétique (ne pas chauffer une dilution hydro-alcoolique contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+      "Étape 5 : Filtration et Assemblage — Filtrer sur étamine fine, assembler les fractions A et B hors appareil et embouteiller en flacon verre ambré."
     ],
     "molecularSignature": [
       {
@@ -19644,17 +19760,21 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "precautions": [
       "Déconseillé en cas de maladies auto-immunes évolutives (stimulation de l'immunité innée).",
       "Prudence en cas d'ulcère gastrique ou duodénal (gingembre).",
-      "Femmes enceintes ou allaitantes : solliciter un avis médical."
+      "Femmes enceintes ou allaitantes : solliciter un avis médical.",
+      "Alcool inflammable : préparer en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre MIN/MAX.",
+      "Ne jamais ajouter d'eau lors d'un cycle Tincture chauffé ; utiliser le mode Sans chauffe (ou bocal) pour les titres hydro-alcooliques (45°–70°).",
+      "Déconseillé aux femmes enceintes/allaitantes, aux enfants et en cas de sensibilité ou sevrage alcoolique."
     ],
     "contraindications": [
       "Maladies auto-immunes actives",
-      "Allergie aux Astéracées ou au gingembre"
+      "Allergie aux Astéracées ou au gingembre",
+      "Grossesse, allaitement, enfants et sensibilité à l'alcool"
     ],
     "safetyWarning": "Ce rituel relève du confort physiologique et du bien-être. Il ne remplace en aucun cas une consultation médicale.",
     "observationsExpected": "Dégagement progressif des voies aériennes supérieures, atténuation du mouchage clair et confort respiratoire dès 24 à 48 heures.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -19690,18 +19810,18 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/elixir-vitalite-recuperation-echinacee-astragale"
     ],
     "title": "Élixir Vitalité & Récupération Physique",
-    "subtitle": "Dual-Extract d'Échinacée & Astragale pour fortifier l'énergie adaptative et soutenir le corps en période de fatigue intense.",
+    "subtitle": "Dual-Extract hydroalcoolique (Phase A eau/glycérine + Phase B alcool 70°) d'Échinacée & Astragale pour fortifier l'énergie adaptative et soutenir le corps en période de fatigue intense.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
-    "subcategory": "Teinture Mère & Dual-Extract",
+    "subcategory": "Dual-Extract Hydroalcoolique (70°)",
     "difficultyLevel": 3,
     "difficultyLabel": "Intermédiaire",
     "prepTimeMinutes": 20,
     "machineTimeMinutes": 330,
     "totalTimeMinutes": 350,
     "tempSachetA": "75°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
@@ -19732,7 +19852,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "165 ml de Glycérine végétale bio — Solvant A",
       "15 g d'Échinacée pourpre — Phase B",
       "10 g d'Astragale — Phase B",
-      "250 ml d'Alcool bio à 96° — Solvant B"
+      "250 ml d'Alcool éthylique alimentaire bio 70° — Solvant B (astragalosides et alkylamides)"
     ],
     "sachetA": {
       "composition": [
@@ -19748,16 +19868,16 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "15 g d'Échinacée pourpre",
         "10 g d'Astragale"
       ],
-      "solvent": "250 ml d'Alcool bio à 96°",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool éthylique bio 70° (250 ml — titre optimal pour astragalosides et alkylamides)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Phase A — Insérer l'échinacée et l'astragale dans le panier inox. Verser eau et glycérine. Chauffer à 75°C pendant 2h30.",
-      "Étape 2 : Pause thermique sécurisée — Laisser refroidir naturellement cuve éteinte avant ouverture (protocole alcool chauffé suspendu ; ne pas tester la température à la main sur la paroi).",
-      "Étape 3 : Phase B — Ajouter les plantes Phase B et verser l'alcool 96°.",
-      "Étape 4 : Extraction Phase B — Lancer à 50°C pendant 3h00.",
-      "Étape 5 : Filtration — Passer sur étamine fine et embouteiller en flacon ambré."
+      "Étape 2 : Transition obligatoire — Laisser refroidir naturellement cuve éteinte, filtrer la Phase A, puis vider, nettoyer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
+      "Étape 3 : Phase B alcoolique (70°) — Placer les plantes de la Phase B en cuve propre et sèche avec 250 ml d'alcool alimentaire à 70° (entre MIN et MAX, pièce ventilée, aucune flamme).",
+      "Étape 4 : Extraction Phase B — Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) ou transférer en bocal hermétique (ne pas chauffer une dilution hydro-alcoolique contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+      "Étape 5 : Filtration et Assemblage — Filtrer sur étamine fine, assembler les fractions A et B hors appareil et embouteiller en flacon verre ambré."
     ],
     "molecularSignature": [
       {
@@ -19774,17 +19894,21 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "traditionalWisdom": "Grand remède de fond pour surmonter les fatigues d'hiver et restaurer la force vitale sans surexcitation.",
     "precautions": [
       "Déconseillé en cas de fièvre aiguë très élevée (l'astragale est un tonique de fond, pas un antipyrétique).",
-      "Contre-indiqué en cas de maladies auto-immunes."
+      "Contre-indiqué en cas de maladies auto-immunes.",
+      "Alcool inflammable : préparer en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre MIN/MAX.",
+      "Ne jamais ajouter d'eau lors d'un cycle Tincture chauffé ; utiliser le mode Sans chauffe (ou bocal) pour les titres hydro-alcooliques (45°–70°).",
+      "Déconseillé aux femmes enceintes/allaitantes, aux enfants et en cas de sensibilité ou sevrage alcoolique."
     ],
     "contraindications": [
       "Maladies auto-immunes actives",
-      "Traitements immunosuppresseurs"
+      "Traitements immunosuppresseurs",
+      "Grossesse, allaitement, enfants et sensibilité à l'alcool"
     ],
     "safetyWarning": "Ce protocole ne se substitue pas à un avis médical.",
     "observationsExpected": "Retour progressif du tonus matinal, meilleure tolérance à l'effort et atténuation des sensations de lassitude.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab® Précision Inox 304",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -19812,18 +19936,18 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/baume-douceur-gorge-reglisse-mauve"
     ],
     "title": "Baume Douceur pour Gorge Sensibilisée",
-    "subtitle": "Dual-Extract de Réglisse & Mauve pour envelopper les muqueuses irritées, adoucir le pharynx et faciliter la déglutition.",
+    "subtitle": "Dual-Extract hydroalcoolique (Phase A eau/glycérine + Phase B alcool 50°) de Réglisse & Mauve pour envelopper les muqueuses irritées, adoucir le pharynx et faciliter la déglutition.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
-    "subcategory": "Teinture Mère & Dual-Extract",
+    "subcategory": "Dual-Extract Hydroalcoolique (50°)",
     "difficultyLevel": 1,
     "difficultyLabel": "Très facile",
     "prepTimeMinutes": 15,
     "machineTimeMinutes": 300,
     "totalTimeMinutes": 315,
     "tempSachetA": "60°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
@@ -19854,7 +19978,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "165 ml de Glycérine végétale bio — Solvant A",
       "15 g de Réglisse — Phase B",
       "10 g de Mauve — Phase B",
-      "250 ml d'Alcool bio à 96° — Solvant B"
+      "250 ml d'Alcool éthylique alimentaire bio 50° — Solvant B (flavonoïdes de mauve et glabridine)"
     ],
     "sachetA": {
       "composition": [
@@ -19870,16 +19994,16 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "15 g de Réglisse",
         "10 g de Mauve sylvestre"
       ],
-      "solvent": "250 ml d'Alcool bio à 96°",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool éthylique bio 50° (250 ml — titre optimal pour flavonoïdes de mauve et glabridine)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Phase A — Mettre réglisse et mauve dans le panier inox. Verser eau et glycérine. Chauffer à 60°C pendant 2h00.",
-      "Étape 2 : Pause thermique sécurisée — Laisser refroidir naturellement cuve éteinte avant ouverture (protocole alcool chauffé suspendu ; ne pas tester la température à la main sur la paroi).",
-      "Étape 3 : Phase B — Ajouter mauve et réglisse Phase B puis l'alcool 96°.",
-      "Étape 4 : Extraction Phase B — Lancer à 50°C pendant 3h00.",
-      "Étape 5 : Filtration douce — Filtrer sur étamine fine et mettre en flacon ambré."
+      "Étape 2 : Transition obligatoire — Laisser refroidir naturellement cuve éteinte, filtrer la Phase A, puis vider, nettoyer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
+      "Étape 3 : Phase B alcoolique (50°) — Placer les plantes de la Phase B en cuve propre et sèche avec 250 ml d'alcool alimentaire à 50° (entre MIN et MAX, pièce ventilée, aucune flamme).",
+      "Étape 4 : Extraction Phase B — Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) ou transférer en bocal hermétique (ne pas chauffer une dilution hydro-alcoolique contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+      "Étape 5 : Filtration et Assemblage — Filtrer sur étamine fine, assembler les fractions A et B hors appareil et embouteiller en flacon verre ambré."
     ],
     "molecularSignature": [
       {
@@ -19896,17 +20020,21 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "traditionalWisdom": "Formule réconfortante des chanteurs et orateurs pour apaiser les gorges tiraillées.",
     "precautions": [
       "Contre-indiqué en cas d'hypertension artérielle ou d'hypokaliémie (réglisse).",
-      "Prendre à 2 heures d'intervalle de tout médicament oral (mucilages diminuant l'absorption digestive)."
+      "Prendre à 2 heures d'intervalle de tout médicament oral (mucilages diminuant l'absorption digestive).",
+      "Alcool inflammable : préparer en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre MIN/MAX.",
+      "Ne jamais ajouter d'eau lors d'un cycle Tincture chauffé ; utiliser le mode Sans chauffe (ou bocal) pour les titres hydro-alcooliques (45°–70°).",
+      "Déconseillé aux femmes enceintes/allaitantes, aux enfants et en cas de sensibilité ou sevrage alcoolique."
     ],
     "contraindications": [
       "Hypertension artérielle sévère",
-      "Insuffisance rénale"
+      "Insuffisance rénale",
+      "Grossesse, allaitement, enfants et sensibilité à l'alcool"
     ],
     "safetyWarning": "Ce protocole ne se substitue pas à un avis médical.",
     "observationsExpected": "Soulagement immédiat du picotement lors de la déglutition et apaisement durable de la gorge.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab®",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -19934,18 +20062,18 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/elixir-respiration-fluide-plantain-nigelle"
     ],
     "title": "Élixir Respiration Fluide & Confort Thoracique",
-    "subtitle": "Dual-Extract de Plantain lancéolé & Nigelle cultivée pour favoriser l'expectoration physiologique et clarifier les bronches encombrées.",
+    "subtitle": "Dual-Extract hydroalcoolique (Phase A eau/glycérine + Phase B alcool 60°) de Plantain lancéolé & Nigelle cultivée pour favoriser l'expectoration physiologique et clarifier les bronches encombrées.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
-    "subcategory": "Teinture Mère & Dual-Extract",
+    "subcategory": "Dual-Extract Hydroalcoolique (60°)",
     "difficultyLevel": 2,
     "difficultyLabel": "Facile",
     "prepTimeMinutes": 20,
     "machineTimeMinutes": 270,
     "totalTimeMinutes": 290,
     "tempSachetA": "60°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
@@ -19975,7 +20103,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "165 ml de Glycérine bio — Solvant A",
       "15 g de Plantain lancéolé — Phase B",
       "10 g de Graines de Nigelle — Phase B",
-      "250 ml d'Alcool bio à 96° — Solvant B"
+      "250 ml d'Alcool éthylique alimentaire bio 60° — Solvant B (thymoquinone et iridoïdes)"
     ],
     "sachetA": {
       "composition": [
@@ -19991,16 +20119,16 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "15 g de Plantain lancéolé",
         "10 g de Graines de Nigelle"
       ],
-      "solvent": "250 ml d'Alcool bio à 96°",
-      "temp": "45°C",
-      "duration": "3h00"
+      "solvent": "Alcool éthylique bio 60° (250 ml — titre optimal pour thymoquinone et iridoïdes)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Phase A — Concasser les graines de nigelle, placer avec le plantain dans le panier inox. Verser eau et glycérine. Chauffer à 60°C pendant 1h30.",
-      "Étape 2 : Pause thermique sécurisée — Laisser refroidir naturellement cuve éteinte avant ouverture (protocole alcool chauffé suspendu ; ne pas tester la température à la main sur la paroi).",
-      "Étape 3 : Phase B — Ajouter nigelle et plantain Phase B et verser l'alcool 96°.",
-      "Étape 4 : Extraction Phase B — Lancer à 45°C pendant 3h00.",
-      "Étape 5 : Filtration — Passer sur étamine fine et embouteiller en flacon ambré."
+      "Étape 2 : Transition obligatoire — Laisser refroidir naturellement cuve éteinte, filtrer la Phase A, puis vider, nettoyer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
+      "Étape 3 : Phase B alcoolique (60°) — Placer les plantes de la Phase B en cuve propre et sèche avec 250 ml d'alcool alimentaire à 60° (entre MIN et MAX, pièce ventilée, aucune flamme).",
+      "Étape 4 : Extraction Phase B — Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) ou transférer en bocal hermétique (ne pas chauffer une dilution hydro-alcoolique contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+      "Étape 5 : Filtration et Assemblage — Filtrer sur étamine fine, assembler les fractions A et B hors appareil et embouteiller en flacon verre ambré."
     ],
     "molecularSignature": [
       {
@@ -20018,17 +20146,21 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "precautions": [
       "La nigelle peut exercer un léger effet hypoglycémiant (surveillance chez les diabétiques traités).",
       "Prendre à distance de 2h des médicaments allopathiques.",
-      "Déconseillé chez la femme enceinte."
+      "Déconseillé chez la femme enceinte.",
+      "Alcool inflammable : préparer en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre MIN/MAX.",
+      "Ne jamais ajouter d'eau lors d'un cycle Tincture chauffé ; utiliser le mode Sans chauffe (ou bocal) pour les titres hydro-alcooliques (45°–70°).",
+      "Déconseillé aux femmes enceintes/allaitantes, aux enfants et en cas de sensibilité ou sevrage alcoolique."
     ],
     "contraindications": [
       "Grossesse",
-      "Allergie aux renonculacées"
+      "Allergie aux renonculacées",
+      "Grossesse, allaitement, enfants et sensibilité à l'alcool"
     ],
     "safetyWarning": "Ce protocole ne se substitue pas à un avis médical.",
     "observationsExpected": "Fluidification des mucosités et soulagement de l'oppression thoracique après 48 à 72 heures.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab®",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -20056,18 +20188,18 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/serum-apaisant-toux-seche-mauve-plantain"
     ],
     "title": "Sérum Apaisant pour Gorge Sèche & Chatouillements",
-    "subtitle": "Dual-Extract adouci de Mauve sylvestre & Plantain pour tapisser les voies respiratoires, calmer les quintes irritantes et envelopper les muqueuses sèches.",
+    "subtitle": "Dual-Extract hydroalcoolique (Phase A eau/glycérine + Phase B alcool 45°) adouci de Mauve sylvestre & Plantain pour tapisser les voies respiratoires, calmer les quintes irritantes et envelopper les muqueuses sèches.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
-    "subcategory": "Teinture Mère & Dual-Extract",
+    "subcategory": "Dual-Extract Hydroalcoolique (45°)",
     "difficultyLevel": 1,
     "difficultyLabel": "Très facile",
     "prepTimeMinutes": 15,
     "machineTimeMinutes": 210,
     "totalTimeMinutes": 225,
     "tempSachetA": "55°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
@@ -20097,7 +20229,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "165 ml de Glycérine bio — Solvant A",
       "15 g de Mauve sylvestre — Phase B",
       "10 g de Plantain lancéolé — Phase B",
-      "250 ml d'Alcool bio à 70° — Solvant B"
+      "250 ml d'Alcool éthylique alimentaire bio 45° — Solvant B (anthocyanes, iridoïdes et mucilages doux)"
     ],
     "sachetA": {
       "composition": [
@@ -20113,16 +20245,16 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "15 g de Mauve sylvestre",
         "10 g de Plantain"
       ],
-      "solvent": "250 ml d'Alcool bio à 70°",
-      "temp": "45°C",
-      "duration": "2h00"
+      "solvent": "Alcool éthylique bio 45° (250 ml — titre optimal pour anthocyanes, iridoïdes et mucilages doux)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Phase A — Placer mauve et plantain dans le panier inox. Verser eau et glycérine. Chauffer à 55°C pendant 1h30.",
-      "Étape 2 : Pause thermique sécurisée — Laisser refroidir naturellement cuve éteinte avant ouverture (protocole alcool chauffé suspendu ; ne pas tester la température à la main sur la paroi).",
-      "Étape 3 : Phase B — Ajouter mauve et plantain Phase B puis l'alcool 70° adouci.",
-      "Étape 4 : Extraction Phase B — Lancer à 45°C pendant 2h00.",
-      "Étape 5 : Filtration délicate — Filtrer sur étamine sans écraser excessivement la matière végétale."
+      "Étape 2 : Transition obligatoire — Laisser refroidir naturellement cuve éteinte, filtrer la Phase A, puis vider, nettoyer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
+      "Étape 3 : Phase B alcoolique (45°) — Placer les plantes de la Phase B en cuve propre et sèche avec 250 ml d'alcool alimentaire à 45° (entre MIN et MAX, pièce ventilée, aucune flamme).",
+      "Étape 4 : Extraction Phase B — Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) ou transférer en bocal hermétique (ne pas chauffer une dilution hydro-alcoolique contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+      "Étape 5 : Filtration et Assemblage — Filtrer sur étamine fine, assembler les fractions A et B hors appareil et embouteiller en flacon verre ambré."
     ],
     "molecularSignature": [
       {
@@ -20138,16 +20270,20 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     ],
     "traditionalWisdom": "Infusion douce et onctueuse calmant les accès de chatouillements nocturnes.",
     "precautions": [
-      "Respecter un délai d'au moins 2 heures entre la prise et vos médicaments habituels pour ne pas freiner leur absorption."
+      "Respecter un délai d'au moins 2 heures entre la prise et vos médicaments habituels pour ne pas freiner leur absorption.",
+      "Alcool inflammable : préparer en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre MIN/MAX.",
+      "Ne jamais ajouter d'eau lors d'un cycle Tincture chauffé ; utiliser le mode Sans chauffe (ou bocal) pour les titres hydro-alcooliques (45°–70°).",
+      "Déconseillé aux femmes enceintes/allaitantes, aux enfants et en cas de sensibilité ou sevrage alcoolique."
     ],
     "contraindications": [
-      "Allergie aux composants"
+      "Allergie aux composants",
+      "Grossesse, allaitement, enfants et sensibilité à l'alcool"
     ],
     "safetyWarning": "Ce protocole ne se substitue pas à un avis médical.",
     "observationsExpected": "Atténuation rapide des réflexes d'irritation trachéale et confort nocturne retrouvé.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab®",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -20175,18 +20311,18 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/rituel-tete-legere-sinus-nigelle-gingembre"
     ],
     "title": "Rituel Tête Légère & Dégagement des Sinus",
-    "subtitle": "Dual-Extract de Graines de Nigelle & Gingembre pour drainer la sphère ORL, désinfiltrer les cavités sinusiennes et soulager les sensations de pression faciale.",
+    "subtitle": "Dual-Extract hydroalcoolique (Phase A eau/glycérine + Phase B alcool 70°) de Graines de Nigelle & Gingembre pour drainer la sphère ORL, désinfiltrer les cavités sinusiennes et soulager les sensations de pression faciale.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
-    "subcategory": "Teinture Mère & Dual-Extract",
+    "subcategory": "Dual-Extract Hydroalcoolique (70°)",
     "difficultyLevel": 2,
     "difficultyLabel": "Facile",
     "prepTimeMinutes": 20,
     "machineTimeMinutes": 300,
     "totalTimeMinutes": 320,
     "tempSachetA": "65°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
@@ -20217,7 +20353,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "165 ml de Glycérine bio — Solvant A",
       "15 g de Graines de Nigelle — Phase B",
       "10 g de Gingembre — Phase B",
-      "250 ml d'Alcool bio à 96° — Solvant B"
+      "250 ml d'Alcool éthylique alimentaire bio 70° — Solvant B (thymoquinone et gingérols/shogaols)"
     ],
     "sachetA": {
       "composition": [
@@ -20233,16 +20369,16 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "15 g de Graines de Nigelle",
         "10 g de Gingembre"
       ],
-      "solvent": "250 ml d'Alcool bio à 96°",
-      "temp": "45°C",
-      "duration": "3h00"
+      "solvent": "Alcool éthylique bio 70° (250 ml — titre optimal pour thymoquinone et gingérols/shogaols)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Phase A — Mettre nigelle concassée et gingembre dans le panier inox. Verser eau et glycérine. Chauffer à 65°C pendant 2h00.",
-      "Étape 2 : Pause thermique sécurisée — Laisser refroidir naturellement cuve éteinte avant ouverture (protocole alcool chauffé suspendu ; ne pas tester la température à la main sur la paroi).",
-      "Étape 3 : Phase B — Ajouter nigelle et gingembre Phase B puis verser l'alcool 96°.",
-      "Étape 4 : Extraction Phase B — Lancer à 45°C pendant 3h00.",
-      "Étape 5 : Filtration fine — Passer sur étamine et conserver en flacon ambré."
+      "Étape 2 : Transition obligatoire — Laisser refroidir naturellement cuve éteinte, filtrer la Phase A, puis vider, nettoyer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
+      "Étape 3 : Phase B alcoolique (70°) — Placer les plantes de la Phase B en cuve propre et sèche avec 250 ml d'alcool alimentaire à 70° (entre MIN et MAX, pièce ventilée, aucune flamme).",
+      "Étape 4 : Extraction Phase B — Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) ou transférer en bocal hermétique (ne pas chauffer une dilution hydro-alcoolique contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+      "Étape 5 : Filtration et Assemblage — Filtrer sur étamine fine, assembler les fractions A et B hors appareil et embouteiller en flacon verre ambré."
     ],
     "molecularSignature": [
       {
@@ -20260,17 +20396,21 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "precautions": [
       "Attention en cas d'ulcère de l'estomac ou de gastrite aiguë.",
       "Surveillance recommandée chez les personnes diabétiques sous traitement.",
-      "Déconseillé chez la femme enceinte."
+      "Déconseillé chez la femme enceinte.",
+      "Alcool inflammable : préparer en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre MIN/MAX.",
+      "Ne jamais ajouter d'eau lors d'un cycle Tincture chauffé ; utiliser le mode Sans chauffe (ou bocal) pour les titres hydro-alcooliques (45°–70°).",
+      "Déconseillé aux femmes enceintes/allaitantes, aux enfants et en cas de sensibilité ou sevrage alcoolique."
     ],
     "contraindications": [
       "Ulcère gastrique actif",
-      "Grossesse"
+      "Grossesse",
+      "Grossesse, allaitement, enfants et sensibilité à l'alcool"
     ],
     "safetyWarning": "Ce protocole ne se substitue pas à un avis médical.",
     "observationsExpected": "Allègement notable de la sensation de casque lourd et réouverture de la respiration nasale.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab®",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -20298,18 +20438,18 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/baume-apaisant-contour-oreille-lavande-calendula"
     ],
     "title": "Baume Apaisant Contour d'Oreille & Tensions",
-    "subtitle": "Dual-Extract de Lavande vraie & Calendula pour moduler le terrain inflammatoire réactif et apaiser les tensions péri-auriculaires.",
+    "subtitle": "Dual-Extract hydroalcoolique (Phase A eau/glycérine + Phase B alcool 50°) de Lavande vraie & Calendula pour moduler le terrain inflammatoire réactif et apaiser les tensions péri-auriculaires.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
-    "subcategory": "Teinture Mère & Dual-Extract",
+    "subcategory": "Dual-Extract Hydroalcoolique (50°)",
     "difficultyLevel": 1,
     "difficultyLabel": "Très facile",
     "prepTimeMinutes": 15,
     "machineTimeMinutes": 300,
     "totalTimeMinutes": 315,
     "tempSachetA": "60°C",
-    "tempSachetB": "45°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
@@ -20339,7 +20479,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "165 ml de Glycérine bio — Solvant A",
       "15 g de Fleurs de Lavande — Phase B",
       "10 g de Fleurs de Calendula — Phase B",
-      "250 ml d'Alcool bio à 96° — Solvant B"
+      "250 ml d'Alcool éthylique alimentaire bio 50° — Solvant B (esters linalyliques et faradiol)"
     ],
     "sachetA": {
       "composition": [
@@ -20355,16 +20495,16 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "15 g de Lavande vraie",
         "10 g de Calendula"
       ],
-      "solvent": "250 ml d'Alcool bio à 96°",
-      "temp": "45°C",
-      "duration": "3h00"
+      "solvent": "Alcool éthylique bio 50° (250 ml — titre optimal pour esters linalyliques et faradiol)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Phase A — Déposer fleurs de lavande et souci dans le panier inox. Verser eau et glycérine. Chauffer à 60°C pendant 2h00.",
-      "Étape 2 : Pause thermique sécurisée — Laisser refroidir naturellement cuve éteinte avant ouverture (protocole alcool chauffé suspendu ; ne pas tester la température à la main sur la paroi).",
-      "Étape 3 : Phase B — Ajouter lavande et souci Phase B puis l'alcool 96°.",
-      "Étape 4 : Extraction Phase B — Lancer à 45°C pendant 3h00.",
-      "Étape 5 : Filtration et Flaconnage — Filtrer sur étamine fine et transférer en flacon ambré."
+      "Étape 2 : Transition obligatoire — Laisser refroidir naturellement cuve éteinte, filtrer la Phase A, puis vider, nettoyer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
+      "Étape 3 : Phase B alcoolique (50°) — Placer les plantes de la Phase B en cuve propre et sèche avec 250 ml d'alcool alimentaire à 50° (entre MIN et MAX, pièce ventilée, aucune flamme).",
+      "Étape 4 : Extraction Phase B — Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) ou transférer en bocal hermétique (ne pas chauffer une dilution hydro-alcoolique contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+      "Étape 5 : Filtration et Assemblage — Filtrer sur étamine fine, assembler les fractions A et B hors appareil et embouteiller en flacon verre ambré."
     ],
     "molecularSignature": [
       {
@@ -20382,17 +20522,21 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "precautions": [
       "NE JAMAIS INSTILLER DIRECTEMENT DANS LE CONDUIT AUDITIF (risque de douleur vive et de dommage au tympan).",
       "Usage oral systémique ou compresse tiède autour de l'oreille uniquement.",
-      "Contre-indiqué en cas d'allergie aux Astéracées (calendula)."
+      "Contre-indiqué en cas d'allergie aux Astéracées (calendula).",
+      "Alcool inflammable : préparer en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre MIN/MAX.",
+      "Ne jamais ajouter d'eau lors d'un cycle Tincture chauffé ; utiliser le mode Sans chauffe (ou bocal) pour les titres hydro-alcooliques (45°–70°).",
+      "Déconseillé aux femmes enceintes/allaitantes, aux enfants et en cas de sensibilité ou sevrage alcoolique."
     ],
     "contraindications": [
       "Instillation intra-auriculaire formellement interdite",
-      "Allergie aux Astéracées"
+      "Allergie aux Astéracées",
+      "Grossesse, allaitement, enfants et sensibilité à l'alcool"
     ],
     "safetyWarning": "Ce protocole ne se substitue pas à un avis médical. En cas d'écoulement auriculaire ou de vive douleur aiguë, consultez un médecin sans délai.",
     "observationsExpected": "Détente musculaire de la zone péri-auriculaire et soulagement de la pulsation douloureuse.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab®",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -20420,18 +20564,18 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/elixir-confort-vocal-plantain-reglisse"
     ],
     "title": "Élixir Confort Vocal & Voix Retrouvée",
-    "subtitle": "Dual-Extract de Plantain lancéolé & Racine de Réglisse pour soutenir la tonicité et l'hydratation des cordes vocales en cas d'enrouement ou de sursollicitation.",
+    "subtitle": "Dual-Extract hydroalcoolique (Phase A eau/glycérine + Phase B alcool 55°) de Plantain lancéolé & Racine de Réglisse pour soutenir la tonicité et l'hydratation des cordes vocales en cas d'enrouement ou de sursollicitation.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
-    "subcategory": "Teinture Mère & Dual-Extract",
+    "subcategory": "Dual-Extract Hydroalcoolique (55°)",
     "difficultyLevel": 1,
     "difficultyLabel": "Très facile",
     "prepTimeMinutes": 15,
     "machineTimeMinutes": 300,
     "totalTimeMinutes": 315,
     "tempSachetA": "65°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
@@ -20461,7 +20605,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "165 ml de Glycérine bio — Solvant A",
       "15 g de Plantain lancéolé — Phase B",
       "10 g de Racine de Réglisse — Phase B",
-      "250 ml d'Alcool bio à 96° — Solvant B"
+      "250 ml d'Alcool éthylique alimentaire bio 55° — Solvant B (acide glycyrrhizique et flavonoïdes)"
     ],
     "sachetA": {
       "composition": [
@@ -20477,16 +20621,16 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "15 g de Plantain lancéolé",
         "10 g de Racine de Réglisse"
       ],
-      "solvent": "250 ml d'Alcool bio à 96°",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool éthylique bio 55° (250 ml — titre optimal pour acide glycyrrhizique et flavonoïdes)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Phase A — Disposer plantain et réglisse dans le panier inox. Verser eau et glycérine. Chauffer à 65°C pendant 2h00.",
-      "Étape 2 : Pause thermique sécurisée — Laisser refroidir naturellement cuve éteinte avant ouverture (protocole alcool chauffé suspendu ; ne pas tester la température à la main sur la paroi).",
-      "Étape 3 : Phase B — Ajouter plantain et réglisse Phase B puis verser l'alcool 96°.",
-      "Étape 4 : Extraction Phase B — Lancer à 50°C pendant 3h00.",
-      "Étape 5 : Filtration — Passer sur étamine et conserver en flacon ambré."
+      "Étape 2 : Transition obligatoire — Laisser refroidir naturellement cuve éteinte, filtrer la Phase A, puis vider, nettoyer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
+      "Étape 3 : Phase B alcoolique (55°) — Placer les plantes de la Phase B en cuve propre et sèche avec 250 ml d'alcool alimentaire à 55° (entre MIN et MAX, pièce ventilée, aucune flamme).",
+      "Étape 4 : Extraction Phase B — Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) ou transférer en bocal hermétique (ne pas chauffer une dilution hydro-alcoolique contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+      "Étape 5 : Filtration et Assemblage — Filtrer sur étamine fine, assembler les fractions A et B hors appareil et embouteiller en flacon verre ambré."
     ],
     "molecularSignature": [
       {
@@ -20504,17 +20648,21 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "precautions": [
       "Contre-indiqué en cas d'hypertension artérielle ou de pathologie rénale (réglisse).",
       "Prendre à 2 heures d'intervalle des médicaments oraux.",
-      "Faire des pauses régulières entre les cures."
+      "Faire des pauses régulières entre les cures.",
+      "Alcool inflammable : préparer en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre MIN/MAX.",
+      "Ne jamais ajouter d'eau lors d'un cycle Tincture chauffé ; utiliser le mode Sans chauffe (ou bocal) pour les titres hydro-alcooliques (45°–70°).",
+      "Déconseillé aux femmes enceintes/allaitantes, aux enfants et en cas de sensibilité ou sevrage alcoolique."
     ],
     "contraindications": [
       "Hypertension artérielle",
-      "Insuffisance rénale sévère"
+      "Insuffisance rénale sévère",
+      "Grossesse, allaitement, enfants et sensibilité à l'alcool"
     ],
     "safetyWarning": "Ce protocole ne se substitue pas à un avis médical. Si l'enrouement persiste plus de 10 jours, un examen ORL des cordes vocales est impératif.",
     "observationsExpected": "Diminution de l'éraillement, lubrification de la gorge et confort vocal retrouvé dès 48 heures.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab®",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -20542,18 +20690,18 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/rituel-fraicheur-chaleur-echinacee-ortie"
     ],
     "title": "Rituel Fraîcheur & Soutien en cas d'Élévation Thermique",
-    "subtitle": "Dual-Extract d'Échinacée pourpre & Grande Ortie pour accompagner la thermorégulation physiologique, soutenir le drainage et reminéraliser l'organisme.",
+    "subtitle": "Dual-Extract hydroalcoolique (Phase A eau/glycérine + Phase B alcool 60°) d'Échinacée pourpre & Grande Ortie pour accompagner la thermorégulation physiologique, soutenir le drainage et reminéraliser l'organisme.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
-    "subcategory": "Teinture Mère & Dual-Extract",
+    "subcategory": "Dual-Extract Hydroalcoolique (60°)",
     "difficultyLevel": 2,
     "difficultyLabel": "Facile",
     "prepTimeMinutes": 20,
     "machineTimeMinutes": 300,
     "totalTimeMinutes": 320,
     "tempSachetA": "75°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
@@ -20584,7 +20732,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "165 ml de Glycérine bio — Solvant A",
       "15 g d'Échinacée pourpre — Phase B",
       "10 g de Feuilles d'Ortie dioïque — Phase B",
-      "250 ml d'Alcool bio à 96° — Solvant B"
+      "250 ml d'Alcool éthylique alimentaire bio 60° — Solvant B (alkylamides, lignanes et stérols)"
     ],
     "sachetA": {
       "composition": [
@@ -20600,16 +20748,16 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "15 g d'Échinacée pourpre",
         "10 g d'Ortie dioïque"
       ],
-      "solvent": "250 ml d'Alcool bio à 96°",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool éthylique bio 60° (250 ml — titre optimal pour alkylamides, lignanes et stérols)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Phase A — Mettre échinacée et ortie dans le panier inox. Verser eau et glycérine. Chauffer à 75°C pendant 2h00.",
-      "Étape 2 : Pause thermique sécurisée — Laisser refroidir naturellement cuve éteinte avant ouverture (protocole alcool chauffé suspendu ; ne pas tester la température à la main sur la paroi).",
-      "Étape 3 : Phase B — Ajouter échinacée et ortie Phase B et verser l'alcool 96°.",
-      "Étape 4 : Extraction Phase B — Lancer à 50°C pendant 3h00.",
-      "Étape 5 : Filtration et embouteillage — Filtrer sur étamine fine et conserver en flacon ambré."
+      "Étape 2 : Transition obligatoire — Laisser refroidir naturellement cuve éteinte, filtrer la Phase A, puis vider, nettoyer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
+      "Étape 3 : Phase B alcoolique (60°) — Placer les plantes de la Phase B en cuve propre et sèche avec 250 ml d'alcool alimentaire à 60° (entre MIN et MAX, pièce ventilée, aucune flamme).",
+      "Étape 4 : Extraction Phase B — Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) ou transférer en bocal hermétique (ne pas chauffer une dilution hydro-alcoolique contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+      "Étape 5 : Filtration et Assemblage — Filtrer sur étamine fine, assembler les fractions A et B hors appareil et embouteiller en flacon verre ambré."
     ],
     "molecularSignature": [
       {
@@ -20627,17 +20775,21 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "precautions": [
       "Ce protocole n'est pas un antipyrétique d'urgence. Une fièvre élevée (>38,5°C) persistante ou touchant un enfant impose une consultation médicale immédiate.",
       "Déconseillé en cas d'insuffisance rénale sévère ou d'insuffisance cardiaque avec œdèmes.",
-      "Déconseillé en cas de maladies auto-immunes."
+      "Déconseillé en cas de maladies auto-immunes.",
+      "Alcool inflammable : préparer en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre MIN/MAX.",
+      "Ne jamais ajouter d'eau lors d'un cycle Tincture chauffé ; utiliser le mode Sans chauffe (ou bocal) pour les titres hydro-alcooliques (45°–70°).",
+      "Déconseillé aux femmes enceintes/allaitantes, aux enfants et en cas de sensibilité ou sevrage alcoolique."
     ],
     "contraindications": [
       "Insuffisance rénale sévère",
-      "Maladies auto-immunes"
+      "Maladies auto-immunes",
+      "Grossesse, allaitement, enfants et sensibilité à l'alcool"
     ],
     "safetyWarning": "Ce protocole ne se substitue pas à un avis médical.",
     "observationsExpected": "Sensation de fraîcheur intérieure, meilleure transpiration physiologique et récupération minérale plus rapide.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab®",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {
@@ -20665,18 +20817,18 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/elixir-coup-de-fouet-energie-rhodiola-eleutherocoque"
     ],
     "title": "Élixir Coup de Fouet & Énergie Hivernale",
-    "subtitle": "Dual-Extract adaptogène de Rhodiola rosea & Éleuthérocoque pour dissiper la léthargie, tonifier l'endurance et soutenir la résistance au stress hivernal.",
+    "subtitle": "Dual-Extract hydroalcoolique (Phase A eau/glycérine + Phase B alcool 70°) adaptogène de Rhodiola rosea & Éleuthérocoque pour dissiper la léthargie, tonifier l'endurance et soutenir la résistance au stress hivernal.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
-    "subcategory": "Teinture Mère & Dual-Extract",
+    "subcategory": "Dual-Extract Hydroalcoolique (70°)",
     "difficultyLevel": 2,
     "difficultyLabel": "Facile",
     "prepTimeMinutes": 20,
     "machineTimeMinutes": 300,
     "totalTimeMinutes": 320,
     "tempSachetA": "75°C",
-    "tempSachetB": "50°C",
+    "tempSachetB": "Sans chauffe",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
@@ -20707,7 +20859,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "165 ml de Glycérine bio — Solvant A",
       "15 g de Racine de Rhodiola — Phase B",
       "10 g de Racine d'Éleuthérocoque — Phase B",
-      "250 ml d'Alcool bio à 96° — Solvant B"
+      "250 ml d'Alcool éthylique alimentaire bio 70° — Solvant B (rosavines et éleuthérosides B/E)"
     ],
     "sachetA": {
       "composition": [
@@ -20723,16 +20875,16 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "15 g de Racine de Rhodiola",
         "10 g de Racine d'Éleuthérocoque"
       ],
-      "solvent": "250 ml d'Alcool bio à 96°",
-      "temp": "50°C",
-      "duration": "3h00"
+      "solvent": "Alcool éthylique bio 70° (250 ml — titre optimal pour rosavines et éleuthérosides B/E)",
+      "temp": "Ambiante (Sans chauffe / bocal)",
+      "duration": "4h à 12h"
     },
     "instructions": [
       "Étape 1 : Phase A — Déposer rhodiola et éleuthérocoque dans le panier inox. Verser eau et glycérine. Chauffer à 75°C pendant 2h00.",
-      "Étape 2 : Pause thermique sécurisée — Laisser refroidir naturellement cuve éteinte avant ouverture (protocole alcool chauffé suspendu ; ne pas tester la température à la main sur la paroi).",
-      "Étape 3 : Phase B — Ajouter rhodiola et éleuthérocoque Phase B puis verser l'alcool 96°.",
-      "Étape 4 : Extraction Phase B — Lancer à 50°C pendant 3h00.",
-      "Étape 5 : Filtration et embouteillage — Filtrer sur étamine fine et conserver en flacon ambré anti-UV."
+      "Étape 2 : Transition obligatoire — Laisser refroidir naturellement cuve éteinte, filtrer la Phase A, puis vider, nettoyer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
+      "Étape 3 : Phase B alcoolique (70°) — Placer les plantes de la Phase B en cuve propre et sèche avec 250 ml d'alcool alimentaire à 70° (entre MIN et MAX, pièce ventilée, aucune flamme).",
+      "Étape 4 : Extraction Phase B — Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) ou transférer en bocal hermétique (ne pas chauffer une dilution hydro-alcoolique contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+      "Étape 5 : Filtration et Assemblage — Filtrer sur étamine fine, assembler les fractions A et B hors appareil et embouteiller en flacon verre ambré."
     ],
     "molecularSignature": [
       {
@@ -20750,17 +20902,21 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "precautions": [
       "Déconseillé en cas d'hypertension artérielle sévère (éleuthérocoque).",
       "Déconseillé en cas de troubles bipolaires ou d'insomnie nerveuse.",
-      "Prise impérativement le matin et avant 14h pour préserver l'endormissement."
+      "Prise impérativement le matin et avant 14h pour préserver l'endormissement.",
+      "Alcool inflammable : préparer en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre MIN/MAX.",
+      "Ne jamais ajouter d'eau lors d'un cycle Tincture chauffé ; utiliser le mode Sans chauffe (ou bocal) pour les titres hydro-alcooliques (45°–70°).",
+      "Déconseillé aux femmes enceintes/allaitantes, aux enfants et en cas de sensibilité ou sevrage alcoolique."
     ],
     "contraindications": [
       "Hypertension sévère non régulée",
-      "Troubles bipolaires"
+      "Troubles bipolaires",
+      "Grossesse, allaitement, enfants et sensibilité à l'alcool"
     ],
     "safetyWarning": "Ce protocole ne se substitue pas à un avis médical.",
     "observationsExpected": "Regain d'élan vital au réveil, meilleure concentration et résistance accrue à la fatigue dès le 5e jour de cure.",
     "contextualLinks": {
       "bloomLabKit": {
-        "name": "Extracteur BloomLab®",
+        "name": "Extracteur Botanique BloomLab®",
         "url": "/bloomlab/"
       },
       "academyProtocol": {

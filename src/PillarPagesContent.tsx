@@ -79,7 +79,7 @@ function PillarGuideExtraction({ onNavigate, lang }: { onNavigate: (v: View, p?:
       {
         "@type": "HowToStep",
         "name": "Thermorégulation contrôlée",
-        "text": "Chauffez entre 45°C et 60°C maximum en milieu hermétique avec agitation vortex pour éviter la dégradation thermique."
+        "text": "Programmez la température adaptée à la matrice et au solvant (par exemple 45 à 60 °C pour les infusions aqueuses ou macérats huileux doux de fleurs et feuilles fragiles, ou selon le programme retenu)."
       },
       {
         "@type": "HowToStep",
@@ -251,9 +251,9 @@ function PillarGuideExtraction({ onNavigate, lang }: { onNavigate: (v: View, p?:
                 </tr>
                 <tr className="bg-emerald-50/60 font-medium">
                   <td className="py-3.5 px-4 font-black text-[#3E4A3D]">{tr("Extraction Thermo-Cinétique A/B (BloomLab)", "Thermo-Kinetic A/B Extraction (BloomLab)", "Thermokinetische A/B-Extraktion (BloomLab)")}</td>
-                  <td className="py-3.5 px-4">{tr("Eau, Huile ou Glycérine", "Water, Oil, or Glycerin", "Wasser, Öl oder Glycerin")}</td>
+                  <td className="py-3.5 px-4">{tr("Eau, Huile végétale, Glycérine ou Alcool (selon programme)", "Water, Carrier Oil, Glycerin, or Alcohol (by program)", "Wasser, Pflanzenöl, Glycerin oder Alkohol (je Programm)")}</td>
                   <td className="py-3.5 px-4 text-emerald-700 font-black text-sm">{tr("Optimisé par conception (sans dosage labo certifié)", "Optimized by design (no lab assay claimed)", "Konzeptoptimiert (ohne Labormesswert)")}</td>
-                  <td className="py-3.5 px-4 text-emerald-800">{tr("Nécessite un matériel de régulation thermique en milieu clos (usage alcool chauffé suspendu).", "Requires sealed temperature-controlled instrumentation (heated alcohol suspended).", "Erfordert geschlossene Temperaturregelung (erhitzter Alkohol ausgesetzt).")}</td>
+                  <td className="py-3.5 px-4 text-emerald-800">{tr("Cuve fermée inox 304 avec 6 programmes (dont Tincture et Sans chauffe) et réglage manuel TEMP/TIME ; pour l'alcool, respect impératif des consignes sécurité (ventilation, zéro flamme, couvercle verrouillé).", "Sealed 304 stainless steel chamber with 6 modes (incl. Tincture and No heating) and manual TEMP/TIME control; follow strict alcohol ventilation and no-flame safety rules.", "Geschlossene 304-Edelstahlkammer mit 6 Modi (inkl. Tincture & Ohne Heizung) und manueller TEMP/TIME-Wahl; bei Alkohol strenge Sicherheitsregeln beachten.")}</td>
                 </tr>
               </tbody>
             </table>
@@ -277,8 +277,8 @@ function PillarGuideExtraction({ onNavigate, lang }: { onNavigate: (v: View, p?:
               <p className="text-xs text-[#1B3022]/80 leading-relaxed">{tr("Solvant amphiphile doux, sans alcool, qui capte les flavonoïdes tout en assurant une excellente conservation.", "Gentle alcohol-free solvent capturing water-soluble polyphenols while extending shelf stability.", "Sanftes, alkoholfreies Lösungsmittel für empfindliche Routinen mit langer Haltbarkeit.")}</p>
             </div>
             <div className="p-6 rounded-2xl bg-[#FAF7F2] border border-[#D8CBB7]/60 space-y-2">
-              <h3 className="font-bold text-[#3E4A3D] flex items-center gap-2"><Activity className="w-4 h-4 text-rose-600" /> {tr("L'Alcool Éthylique (Hors appareil à froid)", "Food-Grade Alcohol (Cold outside appliance)", "Speisealkohol (Kalt außerhalb des Geräts)")}</h3>
-              <p className="text-xs text-[#1B3022]/80 leading-relaxed">{tr("Solvant historique pour les résines, utilisé uniquement par macération à froid hors appareil électrique (l'extraction alcoolique chauffée en cuve BloomLab® est suspendue).", "Traditional resin solvent used strictly by ambient cold maceration outside electric appliances (heated alcohol inside BloomLab® is suspended).", "Traditionelles Harzlösungsmittel nur zur Kaltmazeration außerhalb elektrischer Geräte (erhitzter Alkohol im BloomLab® ausgesetzt).")} </p>
+              <h3 className="font-bold text-[#3E4A3D] flex items-center gap-2"><Activity className="w-4 h-4 text-rose-600" /> {tr("L'Alcool Éthylique (Teintures mères)", "Food-Grade Alcohol (Tinctures)", "Speisealkohol (Urtinkturen)")}</h3>
+              <p className="text-xs text-[#1B3022]/80 leading-relaxed">{tr("Solvant de référence (45° à 96° selon plante) pour résines, alcaloïdes et teintures mères. Sur BloomLab®, utilisez le programme Tincture (sans eau ajoutée) ou le mode Sans chauffe (30 min–12 h), ou la macération en bocal, dans une pièce ventilée loin de toute flamme nue.", "Benchmark solvent (45–96% ABV by plant) for resins, alkaloids, and mother tinctures. On BloomLab®, use Tincture mode (without added water) or No heating (30 min–12h), or glass-jar maceration, in a ventilated area away from open flames.", "Referenz-Lösungsmittel (45–96 % Vol. je Pflanze) für Harze, Alkaloide und Urtinkturen. Auf der BloomLab® über Tincture (ohne Wasserzusatz), Ohne Heizung (30 Min.–12 Std.) oder im Glas in gut belüftetem Raum ohne offene Flamme anwenden.")}</p>
             </div>
           </div>
         </section>
@@ -409,9 +409,9 @@ function PillarRemedesNaturels({ onNavigate, lang }: { onNavigate: (v: View, p?:
     {
       name: tr("1. Mélisse Officinale", "1. Lemon Balm (Melissa officinalis)", "1. Zitronenmelisse"),
       desc: tr(
-        "Apaise l'axe intestin-cerveau, calme les tensions digestives d'origine nerveuse et favorise l'endormissement.",
-        "Soothes the gut-brain axis, eases nervous digestive tension, and supports restful sleep.",
-        "Beruhigt die Darm-Hirn-Achse, entspannt nervöse Verdauungsbeschwerden und fördert das Einschlafen."
+        "Riche en acide rosmarinique et citral, traditionnellement utilisée en herboristerie aromatique pour les rituels du soir.",
+        "Rich in rosmarinic acid and citral, traditionally prepared in aromatic herbalism for evening rituals.",
+        "Reich an Rosmarinsäure und Citral, traditionell in der aromatischen Kräuterkunde für Abendrituale geschätzt."
       )
     },
     {
@@ -441,17 +441,17 @@ function PillarRemedesNaturels({ onNavigate, lang }: { onNavigate: (v: View, p?:
     {
       name: tr("5. Curcuma Longa", "5. Curcuma Longa (Turmeric)", "5. Kurkuma Longa"),
       desc: tr(
-        "Soutien de la souplesse articulaire et de l'équilibre de la barrière intestinale.",
-        "Supports joint flexibility, cellular antioxidant balance, and intestinal barrier integrity.",
-        "Unterstützt die Gelenkflexibilität und das Gleichgewicht der Darmbarriere."
+        "Rhizome riche en curcuminoïdes et huiles aromatiques, couramment extrait en phase lipidique dans les préparations culinaires et botaniques.",
+        "Rhizome rich in curcuminoids and aromatic oils, traditionally extracted in lipid media for culinary and botanical preparations.",
+        "Rhizom reich an Curcuminoiden und aromatischen Ölen, traditionell in Ölphase für kulinarische und botanische Zubereitungen genutzt."
       )
     },
     {
       name: tr("6. Valériane Officinale", "6. Valerian Root", "6. Echter Baldrian"),
       desc: tr(
-        "Favorise la détente musculaire et un sommeil profond sans somnolence diurne résiduelle.",
-        "Encourages muscular relaxation and deep sleep without residual daytime drowsiness.",
-        "Fördert Muskelentspannung und tiefen Schlaf ohne Tagesmüdigkeit."
+        "Racine riche en acides valéréniques et composés aromatiques, documentée dans la tradition herboriste pour les rituels du soir.",
+        "Root rich in valerenic acids and aromatic compounds, documented in herbal tradition for evening rituals.",
+        "Wurzel reich an Valerensäuren und aromatischen Stoffen, traditionell für abendliche Kräuterrituale dokumentiert."
       )
     },
     {
@@ -465,25 +465,25 @@ function PillarRemedesNaturels({ onNavigate, lang }: { onNavigate: (v: View, p?:
     {
       name: tr("8. Menthe Poivrée", "8. Peppermint", "8. Pfefferminze"),
       desc: tr(
-        "Confort digestif rapide grâce au menthol naturel et sensation de fraîcheur apaisante.",
-        "Fast digestive comfort via natural menthol and soothing cooling relief.",
-        "Schnelles Verdauungswohl durch natürliches Menthol und wohltuende Frische."
+        "Riche en menthol aromatique et flavonoïdes, appréciée en infusion après les repas dans la tradition herboriste.",
+        "Rich in aromatic menthol and flavonoids, traditionally brewed as an after-meal herbal infusion.",
+        "Reich an aromatischem Menthol und Flavonoiden, traditionell als aromatischer Kräuteraufguss nach dem Essen genutzt."
       )
     },
     {
       name: tr("9. Reine des Prés", "9. Meadowsweet", "9. Echtes Mädesüß"),
       desc: tr(
-        "Dérivés salicylés végétaux tamponnés par les tanins protecteurs pour le confort articulaire.",
-        "Natural salicylate precursors buffered by protective tannins for gentle joint comfort.",
-        "Natürliche Salicylat-Vorstufen, gepuffert durch schützende Gerbstoffe für Gelenkkomfort."
+        "Sommités fleuries riches en dérivés salicylés et tanins naturels, documentées dans la tradition botanique européenne.",
+        "Flowering tops rich in natural salicylate derivatives and tannins, documented in European herbal tradition.",
+        "Blütenkraut mit natürlichen Salicylat-Derivaten und Gerbstoffen aus der europäischen Kräutertradition."
       )
     },
     {
       name: tr("10. Sureau Noir (Baies & Fleurs)", "10. Black Elderberry (Berries & Flowers)", "10. Schwarzer Holunder (Beeren & Blüten)"),
       desc: tr(
-        "Allié traditionnel de l'immunité saisonnière et du confort respiratoire lors des premiers froids.",
-        "Traditional ally for seasonal immunity and respiratory comfort during cold weather.",
-        "Traditioneller Begleiter für die saisonale Abwehrkraft und Atemwegskomfort in der kalten Jahreszeit."
+        "Fleurs et baies riches en anthocyanes et polyphénols, traditionnellement préparées en sirop ou infusion hivernale.",
+        "Anthocyanin- and polyphenol-rich flowers and berries, traditionally prepared in winter syrups and infusions.",
+        "Anthocyan- und polyphenolreiche Blüten und Beeren, traditionell als Wintersirup oder Aufguss zubereitet."
       )
     }
   ];
@@ -508,7 +508,7 @@ function PillarRemedesNaturels({ onNavigate, lang }: { onNavigate: (v: View, p?:
       )
     },
     {
-      title: tr("Sphère Confort Articulaire", "Joint Comfort Sphere", "Bereich Gelenkkomfort"),
+      title: tr("Sphère Mouvement & Rhizomes", "Movement & Rhizomes Sphere", "Bereich Bewegung & Rhizome"),
       badge: tr("Extraction Séquentielle A/B", "Sequential A/B Extraction", "Sequentielle A/B-Extraktion"),
       text: tr(
         "Synergie : Curcuma rhizome + Poivre noir (pipérine) + Reine des Prés + Gingembre. Solvant : Huile vierge de cameline puis eau tiède.",

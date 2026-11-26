@@ -233,7 +233,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
         temp: "15°C à 25°C (ou tiédie 40°C)",
         duration: "Plusieurs heures à plusieurs semaines",
         parts: "Toutes parties végétales selon le solvant",
-        target: "Mucilages délicats, huiles infusées, macérats glycérinés (alcool chauffé suspendu)"
+        target: "Mucilages délicats, huiles infusées, macérats glycérinés et teintures mères hydroalcooliques"
       },
       synthesisTitle: "Synthèse :",
       synthesisText: "Le choix entre infusion, décoction et macération s'appuie sur la densité des tissus végétaux et la sensibilité thermique des molécules recherchées."
@@ -350,10 +350,18 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
           affinity: "Composés polaires et semi-polaires",
           examples: "Mauve, guimauve, lavande",
           shelfLife: "Au frais et à l'abri de la lumière (durée non certifiée sur extrait maison)"
+        },
+        {
+          title: "L'alcool alimentaire (45° à 96°)",
+          polarity: "Solvant amphiphile (Bipolaire)",
+          desc: "Indispensable pour extraire les résines (90–96°), racines denses/alcaloïdes (70°) ou sommités fleuries (45–60°). Compatible via les programmes Tincture (71 °C / 160 °F – 4 h par défaut, réglable manuellement en temps/température pour l'alcool sans eau ajoutée) ou Sans chauffe / bocal pour dilutions hydro-alcooliques.",
+          affinity: "Alcaloïdes, résines, polyphénols et principes peu hydrosolubles",
+          examples: "Propolis, boswellia, échinacée, valériane, passiflore",
+          shelfLife: "Flacon ambré hermétique à l'abri de la lumière et de la chaleur"
         }
       ],
       precautionTitle: "Précautions relatives aux solvants :",
-      precautionText: "Vérifiez toujours la pureté et la fraîcheur de vos huiles et solvants. Une huile rance ou une eau stagnante dégrade irrémédiablement le végétal."
+      precautionText: "Vérifiez toujours la pureté et la fraîcheur de vos huiles et solvants. Pour l'alcool (INRS) : le point d'éclair est de 13 °C pur (21 °C à 70 % vol.) — à 50 °C comme à 71 °C, les vapeurs sont déjà inflammables et leur pression augmente avec la chaleur. Travaillez en pièce ventilée, loin de toute flamme, couvercle verrouillé, entre MIN/MAX et sans ajouter d'eau en cycle Tincture chauffé (exemple ≥ 75 % vol.)."
     },
     section8: {
       badge: "Formulations guidées",
@@ -477,12 +485,12 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
           a: "Une eau bouillante à 100°C dégrade rapidement les composés thermolabiles (enzymes, vitamines, flavonoïdes) et évapore les molécules aromatiques volatiles. À l'inverse, une eau trop froide ralentit la diffusion cellulaire. Maîtriser la température entre 45°C et 85°C selon l'organe végétal optimise l'extraction du Totum."
         },
         {
-          q: "Comment faire une infusion avec un extracteur ?",
-          a: "Avec l'extracteur BloomLab® de Bloom by BotaniK, placez vos plantes sèches dans la cuve en acier inoxydable 304, ajoutez votre solvant (eau, huile végétale ou glycérine), puis réglez le programme thermique et la durée. Le vortex doux en milieu clos maintient la température au degré près et préserve les principes actifs."
+          q: "Comment faire une infusion ou extraction avec BloomLab® ?",
+          a: "Avec l'extracteur BloomLab® de Bloom by BotaniK, placez vos plantes dans la cuve en acier inoxydable, ajoutez votre solvant (eau, huile végétale, beurre, glycérine ou alcool alimentaire selon la fiche), puis choisissez l'un des 6 programmes (Butter, Oil, Tincture, Sans chauffe, Décarboxylation, Nettoyage) ou ajustez manuellement la température (0 °C à 121 °C sur modes réglables) et la durée."
         },
         {
           q: "Comment choisir un solvant ?",
-          a: "Le choix du solvant dépend de la nature des constituants recherchés : l'eau convient aux molécules hydrosolubles (mucilages, tanins, certains polyphénols) ; l'huile végétale est adaptée aux molécules liposolubles (caroténoïdes, arômes, principes actifs pour soins cutanés) ; la glycérine végétale permet des préparations douces sans alcool. Chaque solvant possède ses exigences d'hygiène et de conservation."
+          a: "Le choix du solvant dépend des constituants visés : l'eau capte les molécules hydrosolubles (mucilages, tanins) ; l'huile végétale et le beurre captent les actifs liposolubles ; la glycérine végétale offre une alternative douce sans alcool ; l'alcool alimentaire (45° à 96° selon l'organe végétal) extrait résines, alcaloïdes et teintures mères via les modes Tincture (alcool fort ≥ 75 % vol. sans eau, pièce ventilée) ou Sans chauffe."
         },
         {
           q: "BloomLab remplace-t-elle un bain-marie ?",
@@ -588,7 +596,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
         temp: "15°C to 25°C (or warmed 40°C)",
         duration: "Several hours to several weeks",
         parts: "All plant parts depending on solvent",
-        target: "Delicate mucilages, infused carrier oils, glycerin macerates (heated alcohol suspended)"
+        target: "Delicate mucilages, infused carrier oils, glycerin macerates, and hydroalcoholic mother tinctures"
       },
       synthesisTitle: "Summary:",
       synthesisText: "Choosing between infusion, decoction, and maceration depends on the density of plant tissues and the thermal sensitivity of desired actives."
@@ -696,7 +704,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
           desc: "Ideal for making body massage oils and culinary finishing oils. Solubilizes carotenoids and aromatic terpenes.",
           affinity: "Fat-soluble active principles",
           examples: "Calendula, St. John's wort, arnica, rosemary",
-          shelfLife: "6 to 12 months away from light"
+          shelfLife: "Dry amber bottle away from light; check odor and appearance (duration varies)"
         },
         {
           title: "Vegetable Glycerin",
@@ -704,11 +712,19 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
           desc: "Perfect for alcohol-free drops and extracts intended for sensitive skin or soothing oral syrups.",
           affinity: "Polar and semi-polar compounds",
           examples: "Mallow, marshmallow root, lavender",
-          shelfLife: "Several months in cool storage"
+          shelfLife: "Cool place away from light (homemade extract duration not lab-certified)"
+        },
+        {
+          title: "Food-Grade Alcohol (45% to 96% ABV)",
+          polarity: "Amphiphilic Solvent (Dual polarity)",
+          desc: "Essential for resins (90–96% ABV), dense roots/barks/alkaloids (70% ABV), or delicate flowers/leaves (45–60% ABV). Supported via BloomLab® Tincture mode (71°C / 160°F – 4h default, manually adjustable for waterless alcohol) or No heating / glass jar for water dilutions.",
+          affinity: "Alkaloids, resins, polyphenols, poorly water-soluble actives",
+          examples: "Propolis, boswellia, echinacea, valerian, passionflower",
+          shelfLife: "Airtight amber glass bottle away from light and heat"
         }
       ],
       precautionTitle: "Solvent Safety Notes:",
-      precautionText: "Always verify the freshness and grade of your oils. Rancid oils or stagnant water will spoil botanical extracts immediately."
+      precautionText: "Always verify oil freshness and solvent purity. When working with alcohol: ethanol flash points are 13°C pure (21°C at 70% ABV), so vapors are already flammable at both 50°C and 71°C. Ensure good ventilation, zero open flames or sparks, locked lid, MIN/MAX marks, and never add water in the heated Tincture program (≥ 75% ABV manual example)."
     },
     section8: {
       badge: "Guided Formulations",
@@ -833,7 +849,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
         },
         {
           q: "How do I choose the correct solvent?",
-          a: "Solvent choice depends on the biochemical nature of desired compounds: water dissolves polar molecules (mucilages, tannins, polyphenols); plant oils extract non-polar lipophilic principles (carotenoids, aromas, fat-soluble actives); vegetable glycerin creates soothing alcohol-free extracts."
+          a: "Solvent choice depends on target compounds: water dissolves polar molecules (mucilages, tannins); plant oils and butter extract lipophilic principles (carotenoids, aromas); vegetable glycerin suits alcohol-free formulas; and food-grade alcohol (45%–96% ABV tailored to plant density) extracts resins, alkaloids, and mother tinctures via Tincture (≥ 75% ABV without water, ventilated room) or No heating mode."
         },
         {
           q: "Does BloomLab replace a traditional double boiler (bain-marie)?",
@@ -1047,7 +1063,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
           desc: "Ideal für nährende Körperöle und Gourmet-Speiseöle. Bindet fettlösliche Carotinoide und Aromen.",
           affinity: "Fettlösliche Wirkstoffe",
           examples: "Ringelblume (Calendula), Johanniskraut, Arnika, Rosmarin",
-          shelfLife: "6 bis 12 Monate lichtgeschützt"
+          shelfLife: "Braunglasflasche kühl & lichtgeschützt; Geruch und Aussehen prüfen (Dauer variabel)"
         },
         {
           title: "Pflanzliches Glycerin",
@@ -1055,11 +1071,19 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
           desc: "Ideal für alkoholfreie Essenzen, die für empfindliche Haut oder sanfte Mundspülungen bestimmt sind.",
           affinity: "Polare und semipolare Verbindungen",
           examples: "Malve, Eibischwurzel, Lavendel",
-          shelfLife: "Mehrere Monate kühl gelagert"
+          shelfLife: "Kühl und lichtgeschützt (Haltbarkeit selbstgemachter Auszüge nicht laborzertifiziert)"
+        },
+        {
+          title: "Ansatzalkohol (45 bis 96 Vol.-%)",
+          polarity: "Amphiphiles Lösungsmittel (Bipolar)",
+          desc: "Unverzichtbar für Harze (90–96 %), dichte Wurzeln/Rinden/Alkaloide (70 %) oder zarte Blüten/Blätter (45–60 %). Verwendbar im BloomLab® Tincture-Programm (Standard 71 °C / 160 °F – 4 Std., manuell anpassbar für wasserfreien Alkohol) oder im Modus Ohne Erhitzen / Glasgefäß für wässrige Verdünnungen.",
+          affinity: "Alkaloide, Harze, Polyphenole und schwer wasserlösliche Wirkstoffe",
+          examples: "Propolis, Boswellia, Sonnenhut (Echinacea), Baldrian, Passionsblume",
+          shelfLife: "Luftdichtes Braunglas licht- und wärmegeschützt"
         }
       ],
       precautionTitle: "Hinweise zur Lösungsmittelqualität:",
-      precautionText: "Achten Sie stets auf frische, kaltgepresste Öle. Ranziges Öl oder verunreinigtes Wasser verdirbt den Pflanzenauszug sofort."
+      precautionText: "Achten Sie stets auf frische, kaltgepresste Öle und reine Lösungsmittel. Bei Alkohol: Flammpunkt 13 °C rein (21 °C bei 70 %) – sowohl bei 50 °C als auch bei 71 °C entstehen entzündliche Dämpfe. Raum gut lüften, keine Flammen/Funken, Deckel verriegeln, MIN/MAX einhalten und beim beheizten Tincture-Beispiel (≥ 75 Vol.-%) kein Wasser zugeben."
     },
     section8: {
       badge: "Geführte Rezepturen",
@@ -1184,7 +1208,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
         },
         {
           q: "Wie wählt man das richtige Lösungsmittel aus?",
-          a: "Die Wahl richtet sich nach den gewünschten Wirkstoffen: Wasser löst polare Stoffe (Schleimstoffe, Gerbstoffe, Flavonoide); Pflanzenöle lösen unpolare Stoffe (Carotinoide, ätherische Komponenten für die Hautpflege); pflanzliches Glycerin ermöglicht alkoholfreie Extrakte."
+          a: "Die Wahl richtet sich nach den gewünschten Wirkstoffen: Wasser löst polare Stoffe (Schleimstoffe, Gerbstoffe); Pflanzenöle und Butter lösen lipophile Verbindungen; pflanzliches Glycerin eignet sich für alkoholfreie Extrakte; Ansatzalkohol (45–96 Vol.-% je nach Pflanzenteil) löst Harze, Alkaloide und Urtinkturen über die Programme Tincture (≥ 75 Vol.-% ohne Wasser, belüftet) oder Ohne Erhitzen."
         },
         {
           q: "Ersetzt BloomLab ein traditionelles Wasserbad?",

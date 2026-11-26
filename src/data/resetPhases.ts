@@ -174,7 +174,7 @@ export const resetPhasesData: ResetPhaseDetail[] = [
     "optional_plants": [
       { "slug": "cassis", "nom": "Cassis", "partie": "feuille/bourgeon", "role": "Apaisant tissulaire, soutien des émonctoires, terrain sensible.", "depend_de_bilan": true },
       { "slug": "reglisse", "nom": "Réglisse", "partie": "racine", "role": "Modulation du cortisol, muqueuses, à utiliser selon axe HPA et tension.", "depend_de_bilan": true },
-      { "slug": "boswellia", "nom": "Boswellia", "partie": "résine", "role": "Inhibition NF‑κB, confort articulaire et équilibre tissulaire.", "depend_de_bilan": true }
+      { "slug": "boswellia", "nom": "Boswellia", "partie": "résine", "role": "Acides boswelliques résineux documentés dans la tradition ayurvédique.", "depend_de_bilan": true }
     ],
     "actions": [
       "Soutien du microbiote",

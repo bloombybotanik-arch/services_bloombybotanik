@@ -584,7 +584,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               <Microscope className="w-6 h-6 text-[#1C3F34]" />
               <div className="text-sm font-black text-[#0F261E]">Inox 304 Alimentaire</div>
               <div className="text-xs text-slate-500 leading-relaxed">
-                {isFR ? "Cuve neutre inerte, zéro transfert métallique ni relargage plastique." : "Food-grade 304 stainless steel inert tank."}
+                {isFR ? "Cuve en inox 304 (grade alimentaire), inerte et neutre." : "Food-grade 304 stainless steel inert chamber."}
               </div>
             </div>
 

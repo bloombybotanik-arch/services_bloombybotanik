@@ -248,9 +248,9 @@ export const blogPosts: BlogPost[] = [
       de: "Wie man Kräuteröle und Tinkturen zu Hause selbst herstellt"
     },
     excerpt: {
-      fr: "Maîtrisez la préparation d'un macérat huileux ou glycériné (protocoles à l'alcool chauffé suspendus en cuve électrique). Découvrez les règles d'or des solvants, des températures et de la cinétique pour créer vos remèdes maison.",
-      en: "Never ruin an infused oil or tincture again. Master solvent polarity, 45°C temperature control, and closed kinetic extraction for pristine home herbal preparations.",
-      de: "Meistern Sie die Kunst der Ölauszüge und Tinkturen: Lösungsmittel, 45°C Temperaturkontrolle und anaerobe Gefäße."
+      fr: "Maîtrisez la préparation de vos huiles infusées, macérats glycérinés et teintures mères avec la BloomLab® : solvants, titres alcooliques et sécurité pas à pas.",
+      en: "Master homemade infused oils, glycerin macerates, and mother tinctures with BloomLab®: solvents, alcohol strengths, and step-by-step safety.",
+      de: "Meistern Sie Ölauszüge, Glycerin-Mazerate und Urtinkturen mit BloomLab®: Lösungsmittel, Alkoholstärken und Sicherheitsregeln."
     },
     content: {
       fr: `
@@ -263,22 +263,23 @@ export const blogPosts: BlogPost[] = [
   <li><strong>La méthode de précision BloomLab (45°C - 50°C) :</strong> En plaçant les plantes sèches dans une huile stable sous vortex fermé à 45°C pendant 90 minutes, on extrait l'intégralité des principes liposolubles sans aucune oxydation.</li>
 </ul>
 
-<h3>2. Les teintures-mères (macération froide hors appareil électrique uniquement)</h3>
-<p>L'alcool éthylique mélangé à l'eau purifiée forme le solvant amphiphile par excellence : l'eau extrait les sucres, tanins et flavonoïdes hydrosolubles, tandis que l'alcool extrait les alcaloïdes, flavones et principes amers.</p>
+<h3>2. Les teintures-mères et extraits hydroalcooliques</h3>
+<p>L'alcool éthylique biologique (pur ou dilué à l'eau distillée selon la plante) constitue un solvant amphiphile de référence : la fraction aqueuse capte tanins et hétérosides polaires, tandis que l'éthanol solubilise alcaloïdes, résines et composés aromatiques.</p>
 <ol>
-  <li><strong>Le titre alcoolique adapté :</strong> 
+  <li><strong>Le titre alcoolique adapté à la plante :</strong> 
     <ul>
-      <li><em>Alcool à 45° :</em> Pour les fleurs tendres et feuilles fragiles (reine des prés, mélisse, camomille).</li>
-      <li><em>Alcool à 60° - 70° :</em> Pour les racines denses et résines (échinacée, propolis, gingembre).</li>
+      <li><em>Alcool à 45°–60° :</em> Pour les fleurs tendres, feuilles et parties aériennes (mélisse, camomille, passiflore, reine-des-prés).</li>
+      <li><em>Alcool à 70° :</em> Pour les racines denses, écorces et champignons médicinaux (échinacée, gingembre, chaga, mahonia).</li>
+      <li><em>Alcool à 90°–96° (sans eau) :</em> Pour les résines et gommes riches en cires (propolis, boswellia, myrrhe).</li>
     </ul>
   </li>
-  <li><strong>Le ratio plante/solvant :</strong> Le standard pharmacopée préconise un ratio de 1:5 pour la plante sèche (20g de plante pour 100ml de solvant) ou 1:2 pour la plante fraîche.</li>
-  <li><strong>L'extraction accélérée :</strong> Grâce à la cinétique vortex, une teinture qui prenait autrefois un mois de macération dans le noir s'obtient en 2 heures à température ambiante ou à 35°C sans perte d'éthanol par évaporation.</li>
+  <li><strong>Le ratio plante/solvant :</strong> Les ouvrages d'herboristerie citent classiquement un ratio de 1:5 pour la plante sèche (20 g de plante pour 100 ml de solvant) ou 1:2 pour la plante fraîche.</li>
+  <li><strong>Usage sur BloomLab® &amp; sécurité :</strong> L'appareil propose le programme <strong>Tincture</strong> (réglage par défaut 71 °C / 4 h sur exemple ≥ 75 % vol. sans ajout d'eau, ajustable en temps/température) ainsi que le mode <strong>Sans chauffe</strong> (30 min–12 h). En cas de mélange hydroalcoolique dilué à l'eau (45°–70°), privilégiez <strong>Sans chauffe</strong> ou la macération en bocal fermé. Dans tous les cas : solvant inflammable, pièce ventilée, aucune flamme nue ni cigarette, couvercle verrouillé et niveaux MIN–MAX respectés.</li>
 </ol>
 
 <h3>3. Règles d'hygiène et conservation</h3>
 <ul>
-  <li><strong>Matériel inerte :</strong> Utilisez exclusivement de l'acier inoxydable 304 de qualité alimentaire ou du verre borosilicate ambré. Évitez absolument les plastiques qui relarguent des phtalates dans l'alcool ou l'huile chaude.</li>
+  <li><strong>Matériel inerte :</strong> Utilisez de l'acier inoxydable 304 (pour eau, huiles, glycérine) ou du verre borosilicate ambré pour vos préparations et stockage. Évitez les plastiques inadaptés au contact prolongé des huiles ou solvants.</li>
   <li><strong>Plantes parfaitement déshydratées :</strong> L'eau résiduelle est la première cause de fermentation indésirable dans les huiles. Utilisez des plantes à moins de 8% d'humidité.</li>
   <li><strong>Flaconnage ambré :</strong> Conservez vos extraits dans des flacons ambrés propres à l'abri de la lumière et de la chaleur (les préparations maison sans analyse ne garantissent pas une durée fixe chiffrée), à l'abri de la lumière et de la chaleur.</li>
 </ul>
@@ -286,11 +287,11 @@ export const blogPosts: BlogPost[] = [
 <p>Retrouvez toutes les recettes pas à pas dans notre section <a href="/cosmetique-botanique">cosmétique botanique</a> et notre dossier sur les <a href="/huile-infusee">huiles infusées de précision</a>.</p>
       `,
       en: `
-<p>Mastering home herbalism requires understanding solvent polarity and thermal thresholds. Learn how to craft pristine infused oils at 45°C without lipid peroxidation, and how hydroalcoholic ratios unlock resins, alkaloids, and active flavonoids.</p>
+<p>Mastering home herbalism requires understanding solvent polarity, alcohol strengths, and thermal thresholds. Learn how to craft infused oils, glycerin macerates, and mother tinctures with BloomLab® (using Oil, Tincture, or No-heating modes under strict ventilation and flame-free safety rules).</p>
 <p>Discover our dedicated <a href="/cosmetique-botanique">botanical cosmetics</a> recipes.</p>
       `,
       de: `
-<p>Hausgemachte Ölauszüge und Tinkturen: Verstehen Sie Lösungsmittelpolarität und Temperaturschwellen. Erfahren Sie, wie Sie bei 45°C ohne Lipidoxidation extrahieren.</p>
+<p>Hausgemachte Ölauszüge und Tinkturen: Verstehen Sie Lösungsmittelpolarität, Alkoholstärken und Temperaturschwellen. Erfahren Sie, wie Sie Ölauszüge, Glycerinmazerate und Urtinkturen mit der BloomLab® (Modi Oil, Tincture oder Ohne Heizung unter strengen Sicherheitsregeln) zubereiten.</p>
       `
     }
   },
@@ -345,7 +346,7 @@ export const blogPosts: BlogPost[] = [
   <li><strong>Ashwagandha (Withania somnifera) — Le calmant régénérateur :</strong> Idéale pour les personnes anxieuses, surmenées, au sommeil haché. Elle diminue le cortisol du soir, facilite l'endormissement et nourrit la vitalité profonde sans exciter.</li>
   <li><strong>Rhodiola rosea — Le bouclier cognitif :</strong> Recommandée en période d'examens ou de charge mentale intense. Elle stimule la dopamine et la sérotonine, améliore la concentration et combat la fatigue psychique dès la première prise.</li>
   <li><strong>Éleuthérocoque (Ginseng sibérien) — L'endurance physique :</strong> Stimule l'immunité et augmente la capacité d'effort aérobie. Particulièrement adapté lors des convalescences ou des changements de saison.</li>
-  <li><strong>Basilic Sacré (Tulsi) — L'apaisant émotionnel :</strong> Plante reine de l'Ayurveda, riche en eugénol, elle dissipe le brouillard mental, soutient la digestion nerveuse et rétablit la clarté intérieure.</li>
+  <li><strong>Basilic Sacré (Tulsi) — L'aromatique ayurvédique :</strong> Plante reine de l'Ayurveda, riche en eugénol, traditionnellement préparée en infusion aromatique dans les rituels de fin de journée.</li>
 </ul>
 
 <h3>4. Pourquoi l'extraction du Totum est essentielle pour les adaptogènes</h3>

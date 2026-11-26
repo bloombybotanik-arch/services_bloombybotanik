@@ -69,7 +69,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <div class="prose prose-botanik max-w-none">
             <div class="bg-[#1B3022]/5 p-8 rounded-[32px] mb-12">
               <p class="text-xl leading-relaxed text-botanik-green/80">
-                La BloomLab® est l'<strong>infuseur botanique</strong> de référence, une machine 6-en-1 capable de réaliser à domicile des <strong>préparations botaniques</strong> complexes — huiles infusées, sérums, macérats glycérinés ou huileux — avec une <strong>extraction botanique séquencée</strong> (temps, température et brassage doux) sans recourir à l'alcool chauffé (protocole alcool suspendu).
+                La BloomLab® est l'<strong>infuseur botanique</strong> de référence, un appareil multi-programmes conçu pour réaliser à domicile des <strong>préparations botaniques</strong> variées — huiles infusées, sérums, macérats glycérinés et infusions concentrées — grâce au réglage du temps, de la température et du brassage doux en cuve inox 304 (grade alimentaire).
               </p>
             </div>
 
@@ -98,7 +98,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
               <p class="mt-4 text-sm font-medium text-red-900">Résultat : des extraits faibles, variables et une perte d'actifs.</p>
             </div>
 
-            <h3 class="text-2xl font-bold text-botanik-green mb-6">Une extraction optimisée automatiquement</h3>
+            <h3 class="text-2xl font-bold text-botanik-green mb-6">Une extraction à paramètres régulés</h3>
             <div class="grid md:grid-cols-3 gap-6 mb-12">
               <div class="p-6 bg-white border border-botanik-green/5 rounded-2xl shadow-sm">
                 <div class="text-botanik-orange font-bold mb-2">Température régulée</div>
@@ -114,7 +114,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
               </div>
             </div>
 
-            <h3 class="text-2xl font-bold text-botanik-green mb-6">Un protocole automatisé 6-en-1</h3>
+            <h3 class="text-2xl font-bold text-botanik-green mb-6">Un cycle guidé en 6 étapes</h3>
             <div class="space-y-4 mb-12">
               <div class="flex items-center gap-4 p-4 bg-[#1B3022]/5 rounded-xl">
                 <span class="w-8 h-8 bg-[#3E4A3D] text-white rounded-full flex items-center justify-center font-bold shadow-sm" style="background-color: #3E4A3D; color: #ffffff;">1</span>
@@ -215,8 +215,8 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             <div class="bg-[#1B3022]/5 p-8 rounded-[32px] mb-12">
               <p class="text-xl leading-relaxed text-botanik-green/80">
                 ${isDE
-                  ? "Die <strong>BloomLab®</strong> ist der Referenz-Kräuterextraktor für zu Hause: ein 6-in-1-Gerät für botanische Ölauszüge, Seren, wässrige Aufgüsse und Pflanzenmazerate mit geführter A/B-Temperatursteuerung (erhitzte Alkoholextraktionen derzeit ausgesetzt)."
-                  : "The <strong>BloomLab®</strong> is the benchmark 6-in-1 botanical extractor built for crafting complex home preparations—infused oils, serums, aqueous infusions, and oil or glycerin macerates—with guided control over temperature, timing, and A/B sequencing (heated alcohol extractions currently suspended)."}
+                  ? "Die <strong>BloomLab®</strong> ist ein vielseitiger Kräuterextraktor für zu Hause: ein Gerät mit 6 Programmen für botanische Ölauszüge, Seren, wässrige Aufgüsse und Glycerin-Mazerate mit geführter A/B-Temperatursteuerung in einem 304-Edelstahlbehälter (Lebensmittelqualität)."
+                  : "The <strong>BloomLab®</strong> is a versatile home botanical extractor built for crafting infused oils, serums, aqueous infusions, and vegetable glycerin macerates with guided control over temperature, timing, and A/B sequencing inside a food-grade 304 stainless steel chamber."}
               </p>
             </div>
 
@@ -284,10 +284,10 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <h3 class="text-xl font-bold mb-4">Contenu de l'offre :</h3>
           <ul class="space-y-2 mb-8">
             <li>• <strong>Duo Argiles :</strong> Zéolithe & Bentonite micronisées (6µm)</li>
-            <li>• <strong>Kit Sève Fondamentale :</strong> Vitalité et Structure</li>
-            <li>• <strong>Kit Nuit Profonde :</strong> Détente nocturne et Ancrage</li>
-            <li>• <strong>Kit Équilibre & Flux :</strong> Confort digestif</li>
-            <li>• <strong>Kit Mouvement Libre :</strong> Souplesse et Mobilité</li>
+            <li>• <strong>Kit Sève Fondamentale :</strong> Prêle, Ortie, Romarin & Ginkgo</li>
+            <li>• <strong>Kit Nuit Profonde :</strong> Valériane & Passiflore — Rituel du soir</li>
+            <li>• <strong>Kit Équilibre Botanique :</strong> Brou de Noix, Gingembre, Romarin & Ginkgo</li>
+            <li>• <strong>Kit Mouvement Libre :</strong> Reine des Prés, Gingembre & Boswellia</li>
           </ul>
         </div>
       ` : isDE ? `
@@ -296,10 +296,10 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <h3 class="text-xl font-bold mb-4">Inhalt des Angebots:</h3>
           <ul class="space-y-2 mb-8">
             <li>• <strong>Erden-Duo:</strong> Zeolith & Bentonit (6µm)</li>
-            <li>• <strong>Set Fundamentaler Saft:</strong> Vitalität und Struktur</li>
-            <li>• <strong>Set Tiefe Nacht:</strong> Entspannung und Erdung</li>
-            <li>• <strong>Set Verdauungskomfort:</strong> Darmgleichgewicht</li>
-            <li>• <strong>Set Freie Bewegung:</strong> Flexibilität und Mobilität</li>
+            <li>• <strong>Set Fundamentaler Saft:</strong> Ackerschachtelhalm, Brennnessel, Rosmarin & Ginkgo</li>
+            <li>• <strong>Set Tiefe Nacht:</strong> Baldrian & Passionsblume — Abendritual</li>
+            <li>• <strong>Set Botanisches Gleichgewicht:</strong> Walnussschale, Ingwer, Rosmarin & Ginkgo</li>
+            <li>• <strong>Set Freie Bewegung:</strong> Mädesüß, Ingwer & Boswellia</li>
           </ul>
         </div>
       ` : `
@@ -308,10 +308,10 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <h3 class="text-xl font-bold mb-4">Offer Content:</h3>
           <ul class="space-y-2 mb-8">
             <li>• <strong>Clay Duo:</strong> Micronized Zeolite & Bentonite (6µm)</li>
-            <li>• <strong>Fundamental Sap Kit:</strong> Vitality and Structure</li>
-            <li>• <strong>Deep Night Kit:</strong> Evening calm and Grounding</li>
-            <li>• <strong>Balance & Flow Kit:</strong> Digestive Comfort</li>
-            <li>• <strong>Free Movement Kit:</strong> Flexibility and Mobility</li>
+            <li>• <strong>Fundamental Sap Kit:</strong> Horsetail, Nettle, Rosemary & Ginkgo</li>
+            <li>• <strong>Deep Night Kit:</strong> Valerian & Passionflower — Evening Ritual</li>
+            <li>• <strong>Botanical Balance Kit:</strong> Walnut Hull, Ginger, Rosemary & Ginkgo</li>
+            <li>• <strong>Free Movement Kit:</strong> Meadowsweet, Ginger & Boswellia</li>
           </ul>
         </div>
       `,
@@ -555,19 +555,19 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </div>
 
           <div class="bg-white border border-botanik-green/10 p-10 rounded-[40px] mb-12">
-            <h3 class="text-2xl font-bold text-botanik-green mb-6">Bénéfices de l'Architecture Biologique</h3>
+            <h3 class="text-2xl font-bold text-botanik-green mb-6">Spécificités Botaniques de la Synergie</h3>
             <ul class="space-y-4">
               <li class="flex items-start gap-3 w-full">
                 <svg class="w-5 h-5 text-botanik-orange mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                <span class="flex-1"><strong>Soutien de la Structure Cutanée :</strong> Apport de silicium naturel pour une sensation de fermeté et d'élasticité des tissus.</span>
+                <span class="flex-1"><strong>Fraction Silice & Minéraux (Sachet A) :</strong> Extraction à haute température des parties fibreuses de prêle et d'ortie.</span>
               </li>
               <li class="flex items-start gap-3 w-full">
                 <svg class="w-5 h-5 text-botanik-orange mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                <span class="flex-1"><strong>Restauration des Phanères :</strong> Consolide la force des cheveux et des ongles à la racine.</span>
+                <span class="flex-1"><strong>Fraction Aromatique (Sachet B) :</strong> Macération douce des feuilles de romarin et de ginkgo pour préserver leurs notes volatiles.</span>
               </li>
               <li class="flex items-start gap-3 w-full">
                 <svg class="w-5 h-5 text-botanik-orange mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                <span class="flex-1"><strong>Optimisation des Flux :</strong> Soutient la micro-circulation pour une meilleure diffusion des ressources minérales.</span>
+                <span class="flex-1"><strong>Polyvalence d'Usage :</strong> Préparable en base aqueuse/glycérinée ou en macérat huileux cosmétique pour soins externes.</span>
               </li>
             </ul>
           </div>
@@ -632,68 +632,68 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
     },
     'kit-nuit': {
       name: isFR ? "NUIT PROFONDE" : isDE ? "TIEFE NACHT" : "DEEP NIGHT",
-      subtitle: isFR ? "SOMMEIL & ANCRAGE" : isDE ? "SCHLAF & ERDUNG" : "SLEEP & GROUNDING",
+      subtitle: isFR ? "RITUEL DU SOIR" : isDE ? "ABENDRITUAL" : "EVENING RITUAL",
       price: 9.90,
       images: [nuitProfondeImg, trioPouchesImg, "/assets/images/herbs_close_up_cleaned_1786616800877.jpg", "/assets/images/modern_herbalist_shelves_1786699793560.jpg"],
       description: isFR 
-        ? "Le CONCENTRÉ NUIT PROFONDE est une réponse structurelle à la charge mentale et à l'agitation nocturne."
+        ? "Le MÉLANGE NUIT PROFONDE associe racines de Valériane et parties aériennes de Passiflore pour vos rituels botaniques du soir."
         : isDE
-        ? "TIEFE NACHT kombiniert Baldrianwurzeln (Beutel A) und Passionsblume (Beutel B) in einer zweiphasigen Extraktion für abendliche Ruhe."
-        : "DEEP NIGHT pairs dense Valerian root (Pouch A) and delicate Passionflower aerial parts (Pouch B) for serene evening relaxation.",
+        ? "TIEFE NACHT kombiniert Baldrianwurzeln (Beutel A) und Passionsblume (Beutel B) in einer zweiphasigen Extraktion für Ihr Abendritual."
+        : "DEEP NIGHT pairs dense Valerian root (Pouch A) and delicate Passionflower aerial parts (Pouch B) for your evening botanical ritual.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <div class="bg-[#1B3022]/5 p-10 rounded-[40px] mb-12">
             <p class="text-xl leading-relaxed text-botanik-green">
-              Le CONCENTRÉ NUIT PROFONDE est une réponse structurelle à la charge mentale et à l'agitation nocturne. Ce n'est pas une simple tisane de détente, mais une intervention botanique séquencée conçue pour synchroniser votre horloge interne et apaiser l'axe du stress. Grâce à la technologie BloomLab, nous extrayons la puissance sédative des racines sans dégrader les molécules apaisantes des parties aériennes.
+              Le MÉLANGE NUIT PROFONDE associe deux plantes classiques des rituels herboristes de fin de journée : les racines de Valériane et les parties aériennes de Passiflore. Grâce au séquençage en deux paliers thermiques, les parties ligneuses et les sommités fleuries sont extraites séparément dans le respect de leur fragilité aromatique.
             </p>
           </div>
 
-          <h3 class="text-2xl font-bold text-botanik-green mb-6">La Technologie de Séquençage Nerveux</h3>
-          <p class="mb-12">Le défi du sommeil réside dans la dualité des plantes : les racines (Valériane) sont des "coffres-forts" moléculaires, tandis que les fleurs (Passiflore) sont des structures fragiles. Bloom est la seule méthode permettant d'épuiser l'une sans détruire l'autre.</p>
+          <h3 class="text-2xl font-bold text-botanik-green mb-6">La Technologie de Séquençage Botanique</h3>
+          <p class="mb-12">En herboristerie traditionnelle, les racines (Valériane) sont denses et fibreuses, tandis que les parties aériennes (Passiflore) sont plus délicates. Le double palier permet d'adapter la température à chaque matière végétale.</p>
 
           <div class="grid md:grid-cols-2 gap-8 mb-12">
             <div class="bg-white border border-botanik-green/10 p-8 rounded-3xl shadow-sm">
-              <h4 class="font-bold text-botanik-green mb-4">SACHET A : "L'Ancrage du Mental" (30g)</h4>
-              <p class="text-sm"><strong>Valériane (Racines) :</strong> Une structure ligneuse extrêmement dense. Elle exige une extraction thermique précise pour libérer les acides valéréniques, véritables régulateurs du système nerveux central.</p>
+              <h4 class="font-bold text-botanik-green mb-4">SACHET A : "Racines de Valériane" (30g)</h4>
+              <p class="text-sm"><strong>Valériane (Racines) :</strong> Une structure ligneuse dense. Elle reçoit un premier palier thermique adapté à la libération des acides valéréniques et composés aromatiques de la racine.</p>
             </div>
             <div class="bg-white border border-botanik-green/10 p-8 rounded-3xl shadow-sm">
-              <h4 class="font-bold text-botanik-green mb-4">SACHET B : "La Sérénité Volatile" (20g)</h4>
-              <p class="text-sm"><strong>Passiflore (Parties Aériennes) :</strong> Riche en flavonoïdes délicats. Elle agit sur la qualité du sommeil et la continuité de la nuit. Elle nécessite une température modérée pour préserver son intégrité moléculaire.</p>
+              <h4 class="font-bold text-botanik-green mb-4">SACHET B : "Sommités de Passiflore" (20g)</h4>
+              <p class="text-sm"><strong>Passiflore (Parties Aériennes) :</strong> Riche en flavonoïdes délicats (vitexine). Elle reçoit une température modérée pour préserver ses arômes et sa fraction florale.</p>
             </div>
           </div>
 
-          <h3 class="text-2xl font-bold text-botanik-green mb-6">Protocole de Relaxation (Mode d'Emploi)</h3>
+          <h3 class="text-2xl font-bold text-botanik-green mb-6">Protocole de Préparation (Mode d'Emploi)</h3>
           <div class="space-y-8 mb-12">
             <div class="flex gap-6">
               <div class="w-12 h-12 bg-[#C8AB8A] text-[#0F261E] rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #C8AB8A; color: #ffffff;">1</div>
               <div>
-                <h4 class="font-bold text-botanik-green">Étape 1 : Phase de Libération des Racines (80°C / 2h)</h4>
-                <p class="text-sm text-botanik-green/70">Ouvre les fibres de la Valériane pour en extraire la quintessence apaisante (Sachet A + 700ml base).</p>
+                <h4 class="font-bold text-botanik-green">Étape 1 : Phase Racines (80°C / 2h)</h4>
+                <p class="text-sm text-botanik-green/70">Extraction des racines de Valériane (Sachet A + 700ml base).</p>
               </div>
             </div>
             <div class="flex gap-6">
               <div class="w-12 h-12 bg-[#C8AB8A] text-[#0F261E] rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #C8AB8A; color: #ffffff;">2</div>
               <div>
-                <h4 class="font-bold text-botanik-green">Étape 2 : Phase d'Apaisement Moléculaire (55°C / 4h)</h4>
-                <p class="text-sm text-botanik-green/70">Fusionne la douceur de la Passiflore à la puissance de la Valériane sans altérer les composés fragiles.</p>
+                <h4 class="font-bold text-botanik-green">Étape 2 : Phase Parties Aériennes (55°C / 4h)</h4>
+                <p class="text-sm text-botanik-green/70">Ajout de la Passiflore à température modérée pour préserver les composés délicats.</p>
               </div>
             </div>
           </div>
 
           <div class="bg-[#1B3022]/5 p-10 rounded-[40px] mb-12">
-            <h3 class="text-2xl font-bold text-botanik-green mb-6">Bénéfices sur l'Habitacle Nerveux</h3>
+            <h3 class="text-2xl font-bold text-botanik-green mb-6">Atouts de la Préparation</h3>
             <ul class="space-y-4">
               <li class="flex items-start gap-3 w-full">
                 <svg class="w-5 h-5 text-botanik-orange mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                <span class="flex-1"><strong>Réduction de la Charge Mentale :</strong> Aide à stabiliser le flux des pensées pour un endormissement serein.</span>
+                <span class="flex-1"><strong>Double Extraction Ciblée :</strong> Séparation des paliers thermiques entre racines denses et parties aériennes.</span>
               </li>
               <li class="flex items-start gap-3 w-full">
                 <svg class="w-5 h-5 text-botanik-orange mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                <span class="flex-1"><strong>Architecture du Sommeil :</strong> Favorise une continuité nocturne sans réveils intempestifs.</span>
+                <span class="flex-1"><strong>Rituel Aromatique du Soir :</strong> Préparation sans additif pensée pour les routines calmes de fin de journée.</span>
               </li>
               <li class="flex items-start gap-3 w-full">
                 <svg class="w-5 h-5 text-botanik-orange mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                <span class="flex-1"><strong>Récupération Structurelle :</strong> Permet un réveil avec une sensation de clarté, sans somnolence résiduelle.</span>
+                <span class="flex-1"><strong>Usage Polyvalent :</strong> Boisson tiède aromatique ou macérat huileux de massage cosmétique.</span>
               </li>
             </ul>
           </div>
@@ -702,12 +702,12 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             <h4 class="font-bold mb-6 text-white text-xl">Usage du Concentré "NUIT PROFONDE"</h4>
             <div class="grid md:grid-cols-2 gap-8">
               <div>
-                <span class="block font-bold text-botanik-orange mb-2">Usage Interne (Souveraineté)</span>
-                <p class="text-sm text-white/80">50 gouttes dans une boisson tiède (type infusion) ou un peu d'eau, environ 30 à 45 minutes avant le coucher.</p>
+                <span class="block font-bold text-botanik-orange mb-2">Usage Interne (Rituel du soir)</span>
+                <p class="text-sm text-white/80">50 gouttes diluées dans une boisson tiède (type tisane) ou un peu d'eau en soirée.</p>
               </div>
               <div>
-                <span class="block font-bold text-botanik-orange mb-2">Usage Externe (Onction)</span>
-                <p class="text-sm text-white/80">Si réalisé avec une base Huileuse, massez le plexus solaire et l'intérieur des poignets pour un signal de détente immédiat.</p>
+                <span class="block font-bold text-botanik-orange mb-2">Usage Externe (Massage cosmétique)</span>
+                <p class="text-sm text-white/80">Si réalisé avec une base huileuse, massez doucement les poignets ou le plexus en soin aromatique du soir.</p>
               </div>
             </div>
           </div>
@@ -754,83 +754,83 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       specs: [{ label: isFR ? "Format" : isDE ? "Inhalt" : "Size", value: "50g", icon: Leaf }]
     },
     'kit-digestion': {
-      name: isFR ? "ÉQUILIBRE & FLUX" : isDE ? "GLEICHGEWICHT & FLUSS" : "BALANCE & FLOW",
-      subtitle: isFR ? "ÉQUILIBRE INTESTINAL" : isDE ? "DARMGLEICHGEWICHT" : "INTESTINAL BALANCE",
+      name: isFR ? "ÉQUILIBRE BOTANIQUE" : isDE ? "BOTANISCHES GLEICHGEWICHT" : "BOTANICAL BALANCE",
+      subtitle: isFR ? "AROMATES & INFUSIONS" : isDE ? "KRÄUTER & AUFGÜSSE" : "HERBS & INFUSIONS",
       price: 9.90,
       images: [digestionImg, trioPouchesImg, "/assets/images/herbs_close_up_cleaned_1786616800877.jpg", "/assets/images/natural_remedies_cleaned_1786616831671.jpg"],
       description: isFR 
-        ? "Le CONCENTRÉ ÉQUILIBRE & FLUX est un protocole de gestion des fluides et de maintenance des réseaux internes à base de Gingembre et Romarin."
+        ? "Le MÉLANGE ÉQUILIBRE BOTANIQUE associe Brou de Noix, Gingembre, Romarin et Ginkgo dans un rituel aromatique traditionnel d'après-repas."
         : isDE
-        ? "GLEICHGEWICHT & FLUSS kombiniert Walnussschale, Ingwer, Rosmarin und Ginkgo zur Unterstützung der Verdauungsbalance."
-        : "BALANCE & FLOW pairs Walnut Hull, Ginger, Rosemary, and Ginkgo via sequential extraction to support digestive comfort.",
+        ? "BOTANISCHES GLEICHGEWICHT kombiniert Walnussschale, Ingwer, Rosmarin und Ginkgo als klassische Kräutermischung nach dem Essen."
+        : "BOTANICAL BALANCE pairs Walnut Hull, Ginger, Rosemary, and Ginkgo via sequential extraction for traditional after-meal herbal infusions.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <div class="bg-[#1B3022]/5 p-10 rounded-[40px] mb-12">
             <p class="text-xl leading-relaxed text-botanik-green">
-              Le CONCENTRÉ ÉQUILIBRE & FLUX est un protocole de gestion des fluides et de maintenance des réseaux internes. Dans notre vision architecturale, la digestion est le centre de transformation énergétique de votre édifice. Ce mélange n'est pas une simple aide après-repas, mais une intervention botanique séquencée pour assainir les circuits, optimiser le drainage et restaurer la sensation de légèreté structurelle.
+              Le MÉLANGE ÉQUILIBRE BOTANIQUE réunit des plantes aromatiques et taniques issues de l'herboristerie traditionnelle (Brou de Noix, Gingembre, Romarin et Ginkgo). Préparé en deux paliers thermiques distincts, il permet d'extraire les fractions ligneuses puis les essences aromatiques dans un rituel d'infusion d'après-repas.
             </p>
           </div>
 
           <h3 class="text-2xl font-bold text-botanik-green mb-6">La Technologie de Séquençage des Tanins</h3>
-          <p class="mb-12">Le défi de ce mélange réside dans l'extraction du Brou de Noix, une structure ligneuse extrêmement riche en tanins purifiants, qui nécessite une énergie thermique élevée, tandis que le Romarin et le Ginkgo exigent une protection thermique pour conserver leurs molécules régulatrices.</p>
+          <p class="mb-12">Le Brou de Noix et le Gingembre sont des matières denses riches en tanins et oléorésines, tandis que le Romarin et le Ginkgo renferment des composés aromatiques volatils plus sensibles à la chaleur prolongée.</p>
 
           <div class="grid md:grid-cols-2 gap-8 mb-12">
             <div class="bg-white border border-botanik-green/10 p-8 rounded-3xl shadow-sm">
-              <h4 class="font-bold text-botanik-green mb-4">SACHET A : "La Purge Structurelle" (20g)</h4>
-              <p class="text-sm"><strong>Brou de Noix & <a href=\"/boutique\" class=\"text-botanik-orange font-bold hover:underline\">Gingembre</a> :</strong> Des composants denses et fibreux. Ils constituent les "filtres" naturels du mélange. Leur extraction à haute température (90°C) est indispensable pour libérer les principes purifiants.</p>
+              <h4 class="font-bold text-botanik-green mb-4">SACHET A : "Racines & Écorces" (20g)</h4>
+              <p class="text-sm"><strong>Brou de Noix & <a href=\"/boutique\" class=\"text-botanik-orange font-bold hover:underline\">Gingembre</a> :</strong> Des composants denses et fibreux nécessitant une extraction à 90°C pour libérer tanins et principes piquants.</p>
             </div>
             <div class="bg-white border border-botanik-green/10 p-8 rounded-3xl shadow-sm">
-              <h4 class="font-bold text-botanik-green mb-4">SACHET B : "La Régulation des Flux" (30g)</h4>
-              <p class="text-sm"><strong><a href=\"/boutique\" class=\"text-botanik-orange font-bold hover:underline\">Romarin</a> & Ginkgo Biloba :</strong> Les ingénieurs de votre circulation interne. Leurs feuilles contiennent des essences volatiles fragiles qui nécessitent une extraction douce et contrôlée (55°C).</p>
+              <h4 class="font-bold text-botanik-green mb-4">SACHET B : "Feuilles Aromatiques" (30g)</h4>
+              <p class="text-sm"><strong><a href=\"/boutique\" class=\"text-botanik-orange font-bold hover:underline\">Romarin</a> & Ginkgo Biloba :</strong> Des feuilles contenant des essences volatiles délicates qui bénéficient d'une extraction modérée à 55°C.</p>
             </div>
           </div>
 
-          <h3 class="text-2xl font-bold text-botanik-green mb-6">Protocole de Maintenance (Mode d'Emploi)</h3>
+          <h3 class="text-2xl font-bold text-botanik-green mb-6">Protocole de Préparation (Mode d'Emploi)</h3>
           <div class="space-y-8 mb-12">
             <div class="flex gap-6">
               <div class="w-12 h-12 bg-[#C8AB8A] text-[#0F261E] rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #C8AB8A; color: #ffffff;">1</div>
               <div>
-                <h4 class="font-bold text-botanik-green">Étape 1 : Phase de Dissolution Structurelle (90°C / 2h)</h4>
-                <p class="text-sm text-botanik-green/70">Épuise les fibres dures du Brou de Noix et active le <a href=\"/boutique\" class=\"text-botanik-orange font-bold hover:underline\">Gingembre</a> pour assainir le terrain (Sachet A + 700ml base).</p>
+                <h4 class="font-bold text-botanik-green">Étape 1 : Phase Tanins & Rhizomes (90°C / 2h)</h4>
+                <p class="text-sm text-botanik-green/70">Extraction du Brou de Noix et du <a href=\"/boutique\" class=\"text-botanik-orange font-bold hover:underline\">Gingembre</a> (Sachet A + 700ml base).</p>
               </div>
             </div>
             <div class="flex gap-6">
               <div class="w-12 h-12 bg-[#C8AB8A] text-[#0F261E] rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #C8AB8A; color: #ffffff;">2</div>
               <div>
-                <h4 class="font-bold text-botanik-green">Étape 2 : Phase d'Harmonisation des Fluides (55°C / 4h)</h4>
-                <p class="text-sm text-botanik-green/70">Fusionne les propriétés toniques du <a href=\"/boutique\" class=\"text-botanik-orange font-bold hover:underline\">Romarin</a> et du Ginkgo sans dénaturer leurs principes actifs.</p>
+                <h4 class="font-bold text-botanik-green">Étape 2 : Phase Aromatique (55°C / 4h)</h4>
+                <p class="text-sm text-botanik-green/70">Macération douce du <a href=\"/boutique\" class=\"text-botanik-orange font-bold hover:underline\">Romarin</a> et du Ginkgo pour préserver le profil aromatique.</p>
               </div>
             </div>
           </div>
 
           <div class="bg-[#1B3022]/5 p-10 rounded-[40px] mb-12">
-            <h3 class="text-2xl font-bold text-botanik-green mb-6">Bénéfices sur l'Habitacle Métabolique</h3>
+            <h3 class="text-2xl font-bold text-botanik-green mb-6">Spécificités de la Synergie</h3>
             <ul class="space-y-4">
               <li class="flex items-start gap-3 w-full">
                 <svg class="w-5 h-5 text-botanik-orange mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                <span class="flex-1"><strong>Assainissement des Réseaux :</strong> Favorise une sensation de pureté et de propreté intérieure après les repas.</span>
+                <span class="flex-1"><strong>Profil Aromatique Épicé & Boisé :</strong> Alliance de notes piquantes de gingembre, tanins de noyer et fraîcheur de romarin.</span>
               </li>
               <li class="flex items-start gap-3 w-full">
                 <svg class="w-5 h-5 text-botanik-orange mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                <span class="flex-1"><strong>Optimisation du Drainage :</strong> Accompagne les fonctions naturelles d'élimination pour éviter la stagnation des fluides.</span>
+                <span class="flex-1"><strong>Double Palier Thermique :</strong> Respecte la différence de structure entre coques/rhizomes et feuilles fines.</span>
               </li>
               <li class="flex items-start gap-3 w-full">
                 <svg class="w-5 h-5 text-botanik-orange mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                <span class="flex-1"><strong>Légèreté Structurelle :</strong> Aide à maintenir un ventre plat et une sensation de dynamisme global.</span>
+                <span class="flex-1"><strong>Tradition Herboriste :</strong> Formulation brute 100 % plantes sans conservateur ni arôme artificiel.</span>
               </li>
             </ul>
           </div>
 
           <div class="bg-[#3E4A3D] text-white p-10 rounded-[40px] mb-12 shadow-lg" style="background-color: #3E4A3D; color: #ffffff;">
-            <h4 class="font-bold mb-6 text-white text-xl">Usage du Concentré "ÉQUILIBRE & FLUX"</h4>
+            <h4 class="font-bold mb-6 text-white text-xl">Usage du Concentré "ÉQUILIBRE BOTANIQUE"</h4>
             <div class="grid md:grid-cols-2 gap-8">
               <div>
-                <span class="block font-bold text-botanik-orange mb-2">Usage Interne (Souveraineté)</span>
-                <p class="text-sm text-white/80">50 gouttes dans un verre d'eau, de préférence après les repas principaux ou le matin à jeun.</p>
+                <span class="block font-bold text-botanik-orange mb-2">Usage Interne (Rituel d'après-repas)</span>
+                <p class="text-sm text-white/80">50 gouttes diluées dans un verre d'eau ou une boisson tiède, après les repas.</p>
               </div>
               <div>
-                <span class="block font-bold text-botanik-orange mb-2">Usage Externe (Soin Abdominal)</span>
-                <p class="text-sm text-white/80">Si réalisé avec une base Huileuse, massez doucement la zone abdominale pour soutenir le mouvement interne.</p>
+                <span class="block font-bold text-botanik-orange mb-2">Usage Externe (Massage aromatique)</span>
+                <p class="text-sm text-white/80">Si réalisé avec une base huileuse, utilisable en huile de massage cosmétique réchauffante.</p>
               </div>
             </div>
           </div>
@@ -866,80 +866,80 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </div>
 
           <p class="text-center italic text-botanik-green/40 mt-12">
-            "Le système digestif est la chaudière de votre bâtiment biologique. Équilibre & Flux n'est pas un simple élixir de confort, c'est un agent de maintenance." — L'Architecte Bloom
+            "Respecter chaque matière végétale à sa juste température : c'est toute la logique de l'extraction séquencée." — Bloom by BotaniK
           </p>
         </div>
       ` : `
         <div class="prose prose-botanik max-w-none space-y-6">
-          <p class="text-lg">${isDE ? "Beutel A (Walnussschale & Ingwer, 90°C / 2h) gefolgt von Beutel B (Rosmarin & Ginkgo Biloba, 55°C / 4h) für ausgewogenen Verdauungskomfort." : "Pouch A (Black Walnut Hull & Ginger, 90°C / 2h) followed by Pouch B (Rosemary & Ginkgo Biloba, 55°C / 4h) for balanced digestive comfort."}</p>
+          <p class="text-lg">${isDE ? "Beutel A (Walnussschale & Ingwer, 90°C / 2h) gefolgt von Beutel B (Rosmarin & Ginkgo Biloba, 55°C / 4h) als traditioneller Kräuteraufguss nach dem Essen." : "Pouch A (Black Walnut Hull & Ginger, 90°C / 2h) followed by Pouch B (Rosemary & Ginkgo Biloba, 55°C / 4h) for traditional after-meal botanical infusions."}</p>
         </div>
       `,
       specs: [{ label: isFR ? "Format" : isDE ? "Inhalt" : "Size", value: "50g", icon: Leaf }]
     },
     'kit-articulaire': {
       name: isFR ? "MOUVEMENT LIBRE" : isDE ? "FREIE BEWEGUNG" : "FREE MOVEMENT",
-      subtitle: isFR ? "SOUPLESSE & MAINTENANCE ARTICULAIRE" : isDE ? "FLEXIBILITÄT & MOBILITÄT" : "FLEXIBILITY & MOBILITY",
+      subtitle: isFR ? "SYNERGIE RÉSINE & HERBORISTERIE" : isDE ? "HARZ & KRÄUTER-SYNERGIE" : "RESIN & HERBAL SYNERGY",
       price: 9.90,
       images: [feuArticulaireImg, trioPouchesImg, "/assets/images/herbs_close_up_cleaned_1786616800877.jpg", "/assets/images/extraction_precision_cleaned_1786616821723.jpg"],
       description: isFR 
-        ? "Le CONCENTRÉ MOUVEMENT LIBRE est une réponse technique aux besoins de flexibilité de votre édifice biologique grâce au Boswellia Serrata."
+        ? "Le MÉLANGE MOUVEMENT LIBRE associe Reine des Prés, Gingembre et résine de Boswellia Serrata dans une extraction séquencée en deux paliers."
         : isDE
-        ? "FREIE BEWEGUNG kombiniert Mädesüß, Ingwer und Boswellia Serrata Harz in sequenzieller Extraktion für geschmeidige Mobilität."
-        : "FREE MOVEMENT combines Meadowsweet, Ginger, and Boswellia Serrata resin in sequential extraction to support everyday joint flexibility.",
+        ? "FREIE BEWEGUNG kombiniert Mädesüß, Ingwer und Boswellia Serrata Harz in sequenzieller Extraktion."
+        : "FREE MOVEMENT combines Meadowsweet, Ginger, and Boswellia Serrata resin in a two-step sequential extraction.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <div class="bg-[#1B3022]/5 p-10 rounded-[40px] mb-12">
             <p class="text-xl leading-relaxed text-botanik-green">
-              Le CONCENTRÉ MOUVEMENT LIBRE est une réponse technique aux besoins de flexibilité de votre édifice biologique. Dans une architecture vivante, les zones de jonction (articulations) nécessitent une maintenance constante pour préserver la fluidité du mouvement. Ce protocole ne se contente pas d'apaiser ; il utilise une extraction séquentielle de haute précision pour libérer les acides boswelliques et les minéraux végétaux indispensables à la résilience de votre structure.
+              Le MÉLANGE MOUVEMENT LIBRE associe des sommités de Reine des Prés, du rhizome de Gingembre et de la gomme-résine de Boswellia Serrata. Grâce à l'extraction séquentielle en deux paliers, les dérivés aromatiques des plantes feuillées et la fraction résineuse du Boswellia sont extraits séparément selon leur solubilité.
             </p>
           </div>
 
-          <h3 class="text-2xl font-bold text-botanik-green mb-6">La Technologie de Séquençage Cinétique</h3>
-          <p class="mb-12">Le défi de ce mélange réside dans sa dualité : la Reine des Prés contient des molécules précieuses qui demandent une extraction rapide, tandis que la résine de Boswellia est un "coffre-fort" moléculaire qui nécessite du temps et une chaleur contrôlée pour libérer sa puissance protectrice.</p>
+          <h3 class="text-2xl font-bold text-botanik-green mb-6">La Technologie de Séquençage Botanique</h3>
+          <p class="mb-12">La Reine des Prés renferme des composés aromatiques délicats, tandis que la résine de Boswellia est une matière dense riche en acides boswelliques nécessitant un palier d'extraction adapté sous agitation.</p>
 
           <div class="grid md:grid-cols-2 gap-8 mb-12">
             <div class="bg-white border border-botanik-green/10 p-8 rounded-3xl shadow-sm">
-              <h4 class="font-bold text-botanik-green mb-4">SACHET A : "L'Ancrage Moléculaire" (30g)</h4>
-              <p class="text-sm"><strong>Reine des Prés & <a href=\"/boutique/\" class=\"text-botanik-orange font-bold hover:underline\">Gingembre</a> :</strong> Sélectionnés pour leur richesse en dérivés salicylés naturels et en catalyseurs thermiques. Cette phase prépare le "terrain" et amorce la fluidification des fluides internes.</p>
+              <h4 class="font-bold text-botanik-green mb-4">SACHET A : "Sommités & Rhizomes" (30g)</h4>
+              <p class="text-sm"><strong>Reine des Prés & <a href=\"/boutique/\" class=\"text-botanik-orange font-bold hover:underline\">Gingembre</a> :</strong> Sélectionnés pour leurs dérivés salicylés naturels et leur richesse aromatique.</p>
             </div>
             <div class="bg-white border border-botanik-green/10 p-8 rounded-3xl shadow-sm">
-              <h4 class="font-bold text-botanik-green mb-4">SACHET B : "La Cohésion Résineuse" (20g)</h4>
-              <p class="text-sm"><strong><a href=\"/boutique/kit-articulaire/\" class=\"text-botanik-orange font-bold hover:underline\">Boswellia Serrata</a> (Gomme-Résine) :</strong> Une substance millénaire et dense. Elle est le pilier de la souplesse structurelle. Sa structure exige une phase d'extraction spécifique pour rendre ses acides boswelliques biodisponibles.</p>
+              <h4 class="font-bold text-botanik-green mb-4">SACHET B : "Gomme-Résine de Boswellia" (20g)</h4>
+              <p class="text-sm"><strong><a href=\"/boutique/kit-articulaire/\" class=\"text-botanik-orange font-bold hover:underline\">Boswellia Serrata</a> (Gomme-Résine) :</strong> Substance résineuse traditionnelle riche en acides boswelliques, extraite lors du second palier.</p>
             </div>
           </div>
 
-          <h3 class="text-2xl font-bold text-botanik-green mb-6">Protocole de Flexibilité (Mode d'Emploi)</h3>
+          <h3 class="text-2xl font-bold text-botanik-green mb-6">Protocole de Préparation (Mode d'Emploi)</h3>
           <div class="space-y-8 mb-12">
             <div class="flex gap-6">
               <div class="w-12 h-12 bg-[#C8AB8A] text-[#0F261E] rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #C8AB8A; color: #ffffff;">1</div>
               <div>
-                <h4 class="font-bold text-botanik-green">Étape 1 : Phase de Libération des Actifs (80°C / 2h)</h4>
-                <p class="text-sm text-botanik-green/70">Libère les principes fluides de la Reine des Prés et activer la thermogenèse du Gingembre. (Sachet A + 700ml base).</p>
+                <h4 class="font-bold text-botanik-green">Étape 1 : Phase Végétale (80°C / 2h)</h4>
+                <p class="text-sm text-botanik-green/70">Extraction de la Reine des Prés et du Gingembre (Sachet A + 700ml base).</p>
               </div>
             </div>
             <div class="flex gap-6">
               <div class="w-12 h-12 bg-[#C8AB8A] text-[#0F261E] rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #C8AB8A; color: #ffffff;">2</div>
               <div>
-                <h4 class="font-bold text-botanik-green">Étape 2 : Phase d'Inclusion des Résines (55°C / 4h)</h4>
-                <p class="text-sm text-botanik-green/70">Permet à la résine de Boswellia de se dissoudre progressivement et de fusionner avec le concentré sans altérer les molécules de la phase A.</p>
+                <h4 class="font-bold text-botanik-green">Étape 2 : Phase Résineuse (55°C / 4h)</h4>
+                <p class="text-sm text-botanik-green/70">Dispersion et extraction de la gomme-résine de Boswellia sous agitation mécanique.</p>
               </div>
             </div>
           </div>
 
           <div class="bg-white border border-botanik-green/10 p-10 rounded-[40px] mb-12">
-            <h3 class="text-2xl font-bold text-botanik-green mb-6">Bénéfices sur l'Habitacle Articulaire</h3>
+            <h3 class="text-2xl font-bold text-botanik-green mb-6">Spécificités de la Synergie</h3>
             <ul class="space-y-4">
               <li class="flex items-start gap-3 w-full">
                 <svg class="w-5 h-5 text-botanik-orange mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                <span class="flex-1"><strong>Fluidité Structurelle :</strong> Accompagne la sensation de souplesse et de liberté dans les mouvements quotidiens.</span>
+                <span class="flex-1"><strong>Alliance Plante & Résine :</strong> Associe une plante européenne traditionnelle (Reine des Prés) et une résine aromatique (Boswellia).</span>
               </li>
               <li class="flex items-start gap-3 w-full">
                 <svg class="w-5 h-5 text-botanik-orange mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                <span class="flex-1"><strong>Confort des Zones Sollicitées :</strong> Idéal pour apaiser les zones sensibles après un effort ou lors de changements climatiques.</span>
+                <span class="flex-1"><strong>Base Huileuse Cosmétique :</strong> Adapté à la préparation d'huiles de massage aromatiques après l'effort.</span>
               </li>
               <li class="flex items-start gap-3 w-full">
                 <svg class="w-5 h-5 text-botanik-orange mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                <span class="flex-1"><strong>Maintenance du "Mouvement" :</strong> Soutient les fonctions de réparation naturelle des tissus conjonctifs.</span>
+                <span class="flex-1"><strong>Sans Additifs :</strong> Plantes et résine brutes sélectionnées sans conservateurs ajoutés.</span>
               </li>
             </ul>
           </div>
@@ -948,12 +948,12 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             <h4 class="font-bold mb-6 text-white text-xl">Usage du Concentré "MOUVEMENT LIBRE"</h4>
             <div class="grid md:grid-cols-2 gap-8">
               <div>
-                <span class="block font-bold text-botanik-orange mb-2">Usage Interne (Souveraineté)</span>
-                <p class="text-sm text-white/80">50 gouttes dans un verre d'eau, jusqu'à 3 fois par jour selon les besoins de votre structure.</p>
+                <span class="block font-bold text-botanik-orange mb-2">Usage Interne (Boisson botanique)</span>
+                <p class="text-sm text-white/80">50 gouttes diluées dans un verre d'eau, dans le respect des précautions d'emploi.</p>
               </div>
               <div>
-                <span class="block font-bold text-botanik-orange mb-2">Usage Externe (Baume de Mouvement)</span>
-                <p class="text-sm text-white/80">Si réalisé avec une base Huileuse, massez généreusement les zones de tension. La chaleur du massage combinée à la concentration du Boswellia favorise une pénétration optimale.</p>
+                <span class="block font-bold text-botanik-orange mb-2">Usage Externe (Huile de massage cosmétique)</span>
+                <p class="text-sm text-white/80">Si réalisé avec une base huileuse, massez localement pour un soin cutané aromatique et réchauffant.</p>
               </div>
             </div>
           </div>
@@ -967,19 +967,19 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
               </li>
               <li class="flex items-start gap-3 w-full">
                 <svg class="w-5 h-5 text-botanik-orange mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                <span class="flex-1"><strong>Boswellia Serrata :</strong> Certifié titré en acides boswelliques sélectionnée pour sa richesse naturelle en acides boswelliques.</span>
+                <span class="flex-1"><strong>Boswellia Serrata :</strong> Résine sélectionnée pour sa richesse naturelle en acides boswelliques.</span>
               </li>
               <li class="flex items-start gap-3 w-full">
                 <svg class="w-5 h-5 text-botanik-orange mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                <span class="flex-1"><strong>Gingembre :</strong> Frais et déshydraté à basse température (&lt;35°C) pour préserver les catalyseurs.</span>
+                <span class="flex-1"><strong>Gingembre :</strong> Frais et déshydraté à basse température (&lt;35°C) pour préserver ses composés aromatiques.</span>
               </li>
             </ul>
           </div>
 
           <div class="bg-botanik-orange/5 p-8 rounded-[32px] border border-botanik-orange/10 mb-12">
-            <h3 class="text-xl font-bold text-botanik-green mb-4">L'avis de l'Architecte Bloom</h3>
+            <h3 class="text-xl font-bold text-botanik-green mb-4">L'approche Bloom</h3>
             <p class="italic text-botanik-green/80 leading-relaxed">
-              "Une structure rigide est une structure fragile. Le Mouvement Libre agit comme un lubrifiant et un consolidateur de votre charpente. Sans l'agitation constante et le contrôle thermique de la BloomLab, la résine de Boswellia resterait inerte. Notre technologie permet d'intégrer cette résine au cœur de l'extrait, facilitant une mise en suspension homogène de la résine avec la fraction aqueuse."
+              "Grâce à l'agitation constante et au contrôle thermique de la BloomLab, la résine de Boswellia est dispersée de façon homogène dans la préparation selon votre choix de solvant."
             </p>
           </div>
 
@@ -993,7 +993,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </div>
 
           <p class="mt-8 text-[10px] text-botanik-green/40 leading-relaxed">
-            Note légale : Ce concentré de plantes est un produit de bien-être destiné à accompagner votre confort quotidien. Il ne constitue pas un médicament et ne peut se substituer à un avis médical. Les bénéfices décrits sont issus de l'usage traditionnel et de l'ingénierie botanique.
+            Note légale : Ce mélange de plantes est un produit alimentaire/cosmétique destiné à un usage culinaire et de soin maison. Il ne constitue pas un médicament et ne peut se substituer à un avis médical.
           </p>
         </div>
       ` : `
@@ -1005,33 +1005,33 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
     },
     'kit-bouclier-hiver': {
       name: isFR ? "BOUCLIER HIVER" : isDE ? "WINTERSCHUTZ" : "WINTER SHIELD",
-      subtitle: isFR ? "RÉSILIENCE SAISONNIÈRE" : isDE ? "SAISONALE RESILIENZ" : "SEASONAL RESILIENCE",
+      subtitle: isFR ? "BOTANIQUE DE SAISON" : isDE ? "SAISONALE KRÄUTERMISCHUNG" : "SEASONAL BOTANICALS",
       price: 9.90,
       images: [bouclierHiverImg, trioPouchesImg, "/assets/images/herbs_close_up_cleaned_1786616800877.jpg", "/assets/images/natural_remedies_cleaned_1786616831671.jpg"],
       description: isFR 
-        ? "L’élixir BOUCLIER TOTAL est un concentré de défense structurelle conçu selon une architecture moléculaire précise."
+        ? "Le MÉLANGE BOUCLIER HIVER associe Gingembre, Girofle, baies de Sureau, Thym et Romarin dans une extraction séquencée de saison."
         : isDE
-        ? "WINTERSCHUTZ kombiniert Ingwer, Nelken, Holunderbeeren, Thymian und Rosmarin für saisonale Vitalität."
-        : "WINTER SHIELD pairs Ginger, Clove, Elderberry, Thyme, and Rosemary in sequential extraction for seasonal resilience.",
+        ? "WINTERSCHUTZ kombiniert Ingwer, Nelken, Holunderbeeren, Thymian und Rosmarin als aromatische Wintermischung."
+        : "WINTER SHIELD pairs Ginger, Clove, Elderberry, Thyme, and Rosemary in sequential extraction for seasonal herbal infusions.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <div class="bg-[#1B3022]/5 p-10 rounded-[40px] mb-12">
             <p class="text-xl leading-relaxed text-botanik-green">
-              L’élixir BOUCLIER TOTAL n’est pas une simple infusion. C'est un concentré de défense structurelle conçu selon une architecture moléculaire précise. Pour la première fois, nous séparons les actifs par leur résistance thermique pour garantir une extraction séquencée à domicile.
+              Le MÉLANGE BOUCLIER HIVER réunit des épices et plantes aromatiques de la tradition hivernale (Gingembre, Girofle, baies de Sureau, Thym, Romarin). Le séquençage en deux paliers respecte la différence entre épices/baies denses et herbes aromatiques délicates.
             </p>
           </div>
 
           <h3 class="text-2xl font-bold text-botanik-green mb-6">La Technologie de Séquençage Bloom</h3>
-          <p class="mb-12">Certaines plantes (racines, épices) exigent une chaleur structurelle pour libérer leurs minéraux, tandis que d'autres (feuilles, fleurs) exigent une extraction douce pour préserver leurs essences volatiles. Bloom est la seule technologie capable de respecter cette hiérarchie.</p>
+          <p class="mb-12">Certaines matières (racines, épices, baies) nécessitent un palier plus chaud pour libérer leurs pigments et composés piquants, tandis que les herbes aromatiques (thym, romarin) demandent une extraction modérée pour conserver leurs notes volatiles.</p>
 
           <div class="grid md:grid-cols-2 gap-8 mb-12">
             <div class="bg-white border border-botanik-green/10 p-8 rounded-3xl shadow-sm">
-              <h4 class="font-bold text-botanik-green mb-4">SACHET A : "L'Ancrage Minéral" (25g)</h4>
-              <p class="text-sm"><strong>Gingembre & Girofle :</strong> Des structures denses qui exigent une température élevée pour libérer le gingérol et l'eugénol (actifs purifiants).<br/><strong>Sureau (Baies) :</strong> Nécessite une chaleur constante pour libérer ses pigments antioxydants profonds.</p>
+              <h4 class="font-bold text-botanik-green mb-4">SACHET A : "Épices & Baies" (25g)</h4>
+              <p class="text-sm"><strong>Gingembre & Girofle :</strong> Épices denses riches en gingérol et eugénol aromatiques.<br/><strong>Sureau (Baies) :</strong> Baies riches en anthocyanes et pigments sombres.</p>
             </div>
             <div class="bg-white border border-botanik-green/10 p-8 rounded-3xl shadow-sm">
-              <h4 class="font-bold text-botanik-green mb-4">SACHET B : "La Protection Volatile" (25g)</h4>
-              <p class="text-sm"><strong>Thym & Romarin :</strong> Des herbes délicates dont les huiles essentielles ne supportent pas les températures extrêmes. Elles apportent la clarté et le tonus.</p>
+              <h4 class="font-bold text-botanik-green mb-4">SACHET B : "Herbes Aromatiques" (25g)</h4>
+              <p class="text-sm"><strong>Thym & Romarin :</strong> Plantes aromatiques méditerranéennes dont les notes essentielles bénéficient d'une température modérée.</p>
             </div>
           </div>
 
@@ -1040,33 +1040,33 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             <div class="flex gap-6">
               <div class="w-12 h-12 bg-[#C8AB8A] text-[#0F261E] rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #C8AB8A; color: #ffffff;">1</div>
               <div>
-                <h4 class="font-bold text-botanik-green">Étape 1 : Phase d'Ancrage (90°C / 2h)</h4>
-                <p class="text-sm text-botanik-green/70">Casser la cellulose et libérer les molécules de défense lourdes (Sachet A + 700ml base).</p>
+                <h4 class="font-bold text-botanik-green">Étape 1 : Phase Épices & Baies (90°C / 2h)</h4>
+                <p class="text-sm text-botanik-green/70">Extraction des baies de Sureau, du Gingembre et du Girofle (Sachet A + 700ml base).</p>
               </div>
             </div>
             <div class="flex gap-6">
               <div class="w-12 h-12 bg-[#C8AB8A] text-[#0F261E] rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-md" style="background-color: #C8AB8A; color: #ffffff;">2</div>
               <div>
-                <h4 class="font-bold text-botanik-green">Étape 2 : Phase Moléculaire (55°C / 4h)</h4>
-                <p class="text-sm text-botanik-green/70">Capture les essences aromatiques fragiles sans les dénaturer (Sachet B + Sachet A déjà présent).</p>
+                <h4 class="font-bold text-botanik-green">Étape 2 : Phase Aromatique (55°C / 4h)</h4>
+                <p class="text-sm text-botanik-green/70">Capture des arômes de Thym et Romarin à température douce (Sachet B).</p>
               </div>
             </div>
           </div>
 
           <div class="bg-[#1B3022]/5 p-10 rounded-[40px] mb-12">
-            <h3 class="text-2xl font-bold text-botanik-green mb-6">Bénéfices de la Résilience Saisonnière</h3>
+            <h3 class="text-2xl font-bold text-botanik-green mb-6">Atouts de la Synergie</h3>
             <ul class="space-y-4">
               <li class="flex items-start gap-3">
                 <Check class="w-5 h-5 text-botanik-orange mt-1" />
-                <span><strong>Assainissement des flux :</strong> Favorise la sensation de clarté respiratoire et de pureté interne.</span>
+                <span><strong>Profil Aromatique Chaleureux :</strong> Mélange traditionnel d'épices hivernales et d'aromates méditerranéens.</span>
               </li>
               <li class="flex items-start gap-3">
                 <Check class="w-5 h-5 text-botanik-orange mt-1" />
-                <span><strong>Soutien de la structure :</strong> Aide l'organisme à maintenir ses barrières naturelles face aux agressions extérieures.</span>
+                <span><strong>Richesse en Pigments & Polyphénols :</strong> Baies de sureau et plantes brutes sans additifs.</span>
               </li>
               <li class="flex items-start gap-3">
                 <Check class="w-5 h-5 text-botanik-orange mt-1" />
-                <span><strong>Optimisation Énergétique :</strong> Apporte les cofacteurs minéraux nécessaires à la vitalité quotidienne.</span>
+                <span><strong>Polyvalence Maison :</strong> Boisson chaude aromatique ou macérat huileux de friction cosmétique.</span>
               </li>
             </ul>
           </div>
@@ -1272,7 +1272,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             </div>
             <div class="flex items-center gap-3 p-4 bg-[#1B3022]/5 rounded-xl">
               <span class="w-8 h-8 bg-[#3E4A3D] text-white rounded-full flex items-center justify-center font-bold text-xs shadow-sm" style="background-color: #3E4A3D; color: #ffffff;">05</span>
-              <span class="font-medium text-botanik-green">Teinture de Propolis (Protocole machine suspendu)</span>
+              <span class="font-medium text-botanik-green">Teinture Mère de Propolis (Extraction Hydroalcoolique)</span>
             </div>
             <div class="flex items-center gap-3 p-4 bg-[#1B3022]/5 rounded-xl">
               <span class="w-8 h-8 bg-[#3E4A3D] text-white rounded-full flex items-center justify-center font-bold text-xs shadow-sm" style="background-color: #3E4A3D; color: #ffffff;">06</span>

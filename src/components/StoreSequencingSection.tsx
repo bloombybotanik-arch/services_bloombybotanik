@@ -82,15 +82,15 @@ export const StoreSequencingSection: React.FC<StoreSequencingSectionProps> = ({ 
       ? 'Trennung der Polaritäten'
       : 'Polarity Separation',
     abTitle: isFR
-      ? "Le Séquençage A/B : Pourquoi séparer l'eau et l'alcool ?"
+      ? "Le Séquençage A/B : Pourquoi séparer les polarités hydrophile et lipophile ?"
       : isDE
-      ? 'A/B-Sequenzierung: Warum Wasser und Alkohol trennen?'
-      : 'A/B Sequencing: Why separate water and alcohol?',
+      ? 'A/B-Sequenzierung: Warum wasser- und fettlösliche Polaritäten trennen?'
+      : 'A/B Sequencing: Why separate hydrophilic and lipophilic polarities?',
     abIntro: isFR
-      ? "Toutes les plantes ne se comportent pas de la même façon face à la chaleur et aux solvants. Une racine dense (gentiane, bardane) nécessite une décoction chaude maîtrisée pour libérer ses composés amers hydrosolubles. Une résine ou une feuille riche en huiles essentielles (origan, romarin) se dégrade à haute température et requiert une extraction alcoolique ou glycérinée douce."
+      ? "Toutes les plantes ne se comportent pas de la même façon face à la chaleur et aux solvants. Une racine dense (gentiane, bardane) nécessite une phase aqueuse chaude maîtrisée pour libérer ses composés amers hydrosolubles. Une feuille aromatique ou une résine (origan, romarin, boswellia) libère mieux ses fractions fragiles dans une huile végétale vierge ou une glycérine végétale bio à température modérée (en dehors de la macération alcoolique traditionnelle en bocal, documentée à part)."
       : isDE
-      ? 'Nicht jede Pflanze reagiert gleich auf Wärme und Lösungsmittel. Harte Wurzeln (Enzian, Klette) benötigen einen kontrollierten warmen Auszug, um wasserlösliche Bitterstoffe freizusetzen. Harze oder ätherisch-ölreiche Blätter (Oregano, Rosmarin) verlieren bei starker Hitze ihre flüchtigen Terpene und profitieren von einer schonenden alkoholischen Extraktion.'
-      : 'Not every botanical responds the same way to heat and solvents. Dense roots (gentian, burdock) require controlled warm aqueous extraction to release water-soluble bitters. Resins or delicate aromatic leaves (oregano, rosemary) lose volatile terpenes at high heat and require gentle ethanolic extraction.',
+      ? 'Nicht jede Pflanze reagiert gleich auf Wärme und Lösungsmittel. Feste Wurzeln (Enzian, Klette) benötigen einen kontrollierten warmen Wasseraufzug, um wasserlösliche Bitterstoffe freizusetzen. Harze oder empfindliche Blätter (Oregano, Rosmarin) geben ihre flüchtigen Fraktionen besser an ein natives Pflanzenöl oder Bio-Glycerin bei moderater Temperatur ab.'
+      : 'Not every botanical responds the same way to heat and solvents. Dense roots (gentian, burdock) require controlled warm aqueous extraction to release water-soluble bitters. Resins or delicate aromatic leaves (oregano, rosemary) yield volatile terpenes and lipophilic fractions gently in virgin plant oil or vegetable glycerin at moderate temperature.',
     abSub: isFR
       ? 'C’est pourquoi nos kits séquencés sont organisés en deux sachets complémentaires :'
       : isDE
@@ -107,15 +107,15 @@ export const StoreSequencingSection: React.FC<StoreSequencingSectionProps> = ({ 
       ? 'Für Wurzeln, Rinden und feste Fasern. Geregelte Temperatur löst Tannine, Schleimstoffe und wasserlösliche Pflanzenstoffe ohne Zerstörung durch Kochen.'
       : 'For roots, barks, and dense fibers. Regulated temperature solubilizes tannins, mucilages, and water-soluble compounds without destructive boiling.',
     pouchBTitle: isFR
-      ? 'Sachet B (Extraction Alcoolique Douce)'
+      ? 'Sachet B (Extraction Lipophile / Glycérinée Douce)'
       : isDE
-      ? 'Beutel B (Schonender alkoholischer Auszug)'
-      : 'Pouch B (Gentle Ethanolic Extraction)',
+      ? 'Beutel B (Schonender Öl- oder Glycerin-Auszug)'
+      : 'Pouch B (Gentle Oil or Glycerin Extraction)',
     pouchBBody: isFR
-      ? "Pour feuilles délicates, résines et fleurs. Solvant éthanolique à température modérée préservant l'intégralité des terpènes volatils et composés aromatiques."
+      ? "Pour feuilles délicates, résines et fleurs. Macération en huile végétale vierge ou glycérine végétale bio à température modérée pour préserver les terpènes et composés liposolubles."
       : isDE
-      ? 'Für zarte Blätter, Harze und Blüten. Ethanolischer Auszug bei moderater Temperatur bewahrt flüchtige Terpene und empfindliche Aromastoffe.'
-      : 'For delicate leaves, resins, and blossoms. Moderate-temperature ethanol extraction preserves volatile terpenes and lipophilic botanical fractions.',
+      ? 'Für zarte Blätter, Harze und Blüten. Mazeration in nativem Pflanzenöl oder Bio-Glycerin bei moderater Temperatur bewahrt empfindliche Terpene und fettlösliche Fraktionen.'
+      : 'For delicate leaves, resins, and blossoms. Moderate-temperature maceration in virgin carrier oil or vegetable glycerin preserves volatile terpenes and lipophilic fractions.',
     evidenceTitle: isFR
       ? 'Ce qu’explore la littérature scientifique moderne'
       : isDE
@@ -168,9 +168,9 @@ export const StoreSequencingSection: React.FC<StoreSequencingSectionProps> = ({ 
       },
       {
         fn: isFR ? '3. NOURRIR' : isDE ? '3. NÄHREN' : '3. NOURISH',
-        role: isFR ? 'Apporter cofacteurs & apaiser les muqueuses' : isDE ? 'Cofaktoren liefern & Schleimhäute beruhigen' : 'Supply cofactors & soothe mucosal barriers',
+        role: isFR ? 'Apporter cofacteurs & mucilages doux' : isDE ? 'Cofaktoren & sanfte Schleimstoffe liefern' : 'Supply cofactors & gentle mucilages',
         plants: isFR ? 'Fenugrec, Lin, Chia, Mucilages' : isDE ? 'Bockshornklee, Leinsamen, Chia, Schleimstoffe' : 'Fenugreek, Flax, Chia, Mucilages',
-        benefit: isFR ? 'Confort digestif, minéraux & fibres douces' : isDE ? 'Verdauungskomfort, Mineralien & sanfte Ballaststoffe' : 'Digestive comfort, minerals & gentle fibers',
+        benefit: isFR ? 'Mucilages végétaux, minéraux & fibres douces' : isDE ? 'Pflanzliche Schleimstoffe, Mineralien & Ballaststoffe' : 'Plant mucilages, minerals & gentle fibers',
       },
       {
         fn: isFR ? '4. HARMONISER' : isDE ? '4. HARMONISIEREN' : '4. HARMONIZE',

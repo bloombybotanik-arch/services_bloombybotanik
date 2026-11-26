@@ -14,8 +14,8 @@ export interface CanonicalRecipe {
   slug: string;
   canonicalUrl: string;
   title: string;
-  category: 'culinaire' | 'cosmetique' | 'parcours-guide' | 'phytotherapie' | 'gastronomie';
-  categorySlug: 'culinaires' | 'cosmetiques' | 'parcours-botaniques' | 'phytotherapie' | 'gastronomie';
+  category: 'culinaire' | 'cosmetique' | 'parcours-guide';
+  categorySlug: 'culinaires' | 'cosmetiques' | 'parcours-botaniques';
   categoryLabel: string;
   subcategory: string;
   summary: string;
@@ -60,39 +60,6 @@ export interface CanonicalRecipe {
   schemaType: 'Recipe' | 'Article';
   isPublic: boolean;
   status: 'publiée';
-  heritage?: {
-    register: string;
-    quote: string;
-    period: string;
-    description: string;
-  };
-  doctrinaSignaturae?: {
-    visualAspect: string;
-    doctrineInterpretation: string;
-    organTarget: string;
-  };
-  molecularSignature?: {
-    molecule: string;
-    mechanism: string;
-    evidenceLevel: string;
-  }[];
-  terrains?: string[];
-  axes?: string[];
-  sachetA?: {
-    composition: string[];
-    solvent: string;
-    temp: string;
-    duration: string;
-  };
-  sachetB?: {
-    composition: string[];
-    solvent: string;
-    temp: string;
-    duration: string;
-  };
-  batchNumber?: number;
-  batchPriority?: 'haute' | 'moyenne' | 'basse';
-  oldUrls?: string[];
 }
 
 export const CANONICAL_RECIPES: CanonicalRecipe[] = [
@@ -105,7 +72,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categorySlug": "culinaires",
     "categoryLabel": "Culinaire",
     "subcategory": "Infusion",
-    "summary": "Un mélange apaisant pour favoriser l'endormissement et un sommeil réparateur par extraction séquentielle des actifs.",
+    "summary": "Un mélange aromatique traditionnel du soir (valériane, passiflore, mélisse) préparé par extraction séquentielle douce.",
     "image": "/images/recettes/infusion-sommeil-profond.jpg",
     "imageAlt": "Infusion Sommeil Profond — Extraction botanique BloomLab",
     "ingredientCount": 3,
@@ -376,25 +343,28 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "id": "discovery-05",
     "slug": "teinture-propolis-maison",
     "canonicalUrl": "/recettes/parcours-botaniques/teinture-propolis-maison/",
-    "title": "Teinture de Propolis (Protocole machine suspendu)",
+    "title": "Teinture Mère de Propolis Maison",
     "category": "parcours-guide",
     "categorySlug": "parcours-botaniques",
     "categoryLabel": "Parcours botanique guidé",
-    "subcategory": "Teinture",
-    "summary": "⚠️ Protocole à l'alcool suspendu sur BloomLab® en attente de validation sécurité fabricant. Préparation alcoolique à réserver uniquement à une macération à froid hors appareil électrique.",
+    "subcategory": "Extrait glycériné",
+    "summary": "Une teinture concentrée des résines et flavonoïdes de la propolis brute dans de l'alcool à 90°–96° (sans ajout d'eau) via le programme Tincture ajusté ou Sans chauffe de la BloomLab® (ou alternative douce sans alcool sur base glycérinée).",
     "image": "/images/recettes/teinture-propolis-maison.jpg",
-    "imageAlt": "Teinture de Propolis Maison — Extraction botanique BloomLab",
+    "imageAlt": "Teinture Mère de Propolis Maison — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
-      "Propolis brute",
-      "Alcool à 70° — usage suspendu en cuve BloomLab® (macération froide externe uniquement)"
+      "Propolis brute (20g)",
+      "Alcool éthylique alimentaire bio 90°–96° (150ml, sans eau)"
     ],
-    "activeStepCount": 1,
+    "activeStepCount": 4,
     "instructions": [
-      "⚠️ Protocole suspendu sur appareil électrique BloomLab® : ne pas chauffer d'alcool en cuve fermée."
+      "Congeler brièvement la propolis brute puis la concasser grossièrement.",
+      "Placer la propolis et 150 ml d'alcool 90°–96° (sans eau) dans la cuve propre et sèche (entre MIN et MAX ; pièce ventilée, aucune flamme).",
+      "Verrouiller le couvercle et lancer le programme Tincture (défaut 71 °C / 160 °F – 4 h, modifiable manuellement à 45 °C pendant 2h30 pour ménager la fraction aromatique) ou le mode Sans chauffe (4h à 12h).",
+      "Filtrer à froid à travers un filtre fin (la cire reste sur le filtre) et embouteiller en flacon ambré."
     ],
     "extractionPhaseCount": 2,
-    "temperatures": "Température ambiante / N/A",
+    "temperatures": "45°C (Tincture ajusté) ou ambiante (Sans chauffe)",
     "machineTimeMinutes": 60,
     "activeTimeMinutes": 20,
     "totalTimeMinutes": 80,
@@ -402,8 +372,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "assemblyRequired": true,
     "conservationRequirement": "Bocal hermétique propre ou réfrigération",
     "allergensOrPrecautions": [
-      "Contient de l'alcool.",
-      "Tache les vêtements."
+      "Solvant inflammable : pièce ventilée, zéro flamme, couvercle verrouillé, respect MIN/MAX",
+      "Ne pas ajouter d’eau ni de lécithine en cycle Tincture chauffé",
+      "Contre-indiqué grossesse, allaitement, enfants, sensibilité à l’alcool et allergie aux produits de la ruche"
     ],
     "materialsNeeded": [
       "Extracteur BloomLab®",
@@ -428,12 +399,14 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 4
     },
-    "dosageOrUsage": "Quelques gouttes dans de l'eau ou du miel. — 5 à 10 gouttes (De préférence entre les repas)",
+    "dosageOrUsage": "Quelques gouttes diluées dans de l'eau, une tisane tiède ou du miel. — 5 à 10 gouttes (De préférence entre les repas)",
     "contraindications": [
       "Grossesse et allaitement",
+      "Enfants",
+      "Sensibilité ou sevrage alcoolique",
       "Allergie aux produits de la ruche"
     ],
-    "bloomNote": "L'agitation vortex du BloomLab divise par 3 le temps d'extraction traditionnel.",
+    "bloomNote": "Les résines cireuses de la propolis exigent un alcool de 90° à 96° (sans eau ajoutée) pour se solubiliser pleinement, adapté au programme Tincture (71 °C / 4 h par défaut, réglable manuellement en TEMP/TIME) en milieu ventilé sans flamme, ou au mode Sans chauffe / glycérine.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -739,13 +712,13 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     ],
     "activeStepCount": 4,
     "instructions": [
-      "Phase A : Extraction hydroglycérinée de la Bardane et de la Pensée Sauvage à 75°C pendant 2h00.",
-      "Vérification de la descente de température de la cuve sous 45°C.",
-      "Phase B : ⚠️ Extraction à l'alcool chauffé suspendue — substituer par glycérine végétale bio à 45°C pendant 2h00.",
-      "Filtration et pressage à l'étamine de lin pour recueillir la fraction de cœur riche en berbérine."
+      "Phase A : Extraction hydroglycérinée de la Bardane et de la Pensée Sauvage à 75°C pendant 2h00. Filtrer et réserver l'extrait A.",
+      "Transition obligatoire : Vider, rincer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
+      "Phase B : Macération hydro-alcoolique à 70° (titre optimal pour alcaloïdes isoquinoléiques et lignanes) du Mahonia en mode Sans chauffe (4h à 12h) ou en bocal hermétique (sans chauffe car dilution 70° contenant de l'eau ; alternatif 75° sans eau en Tincture possible).",
+      "Filtrer, presser le marc et réunir les fractions A et B hors appareil en flacons ambrés."
     ],
     "extractionPhaseCount": 2,
-    "temperatures": "75°C / 50°C",
+    "temperatures": "Phase A: 75°C / Phase B: Ambiante (70° Sans chauffe / bocal)",
     "machineTimeMinutes": 240,
     "activeTimeMinutes": 20,
     "totalTimeMinutes": 260,
@@ -783,9 +756,10 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "contraindications": [
       "Grossesse et allaitement",
       "Enfants de moins de 12 ans",
+      "Sensibilité à l'alcool",
       "Lithiase biliaire symptomatique"
     ],
-    "bloomNote": "Le Mahonia bloque la voie Th17 et la lipoxygénase tandis que la bardane soutient l'axe intestin-peau.",
+    "bloomNote": "Le titre hydro-alcoolique de 70° optimise la solubilisation de la berbérine et des alcaloïdes ligneux du Mahonia après une Phase A aqueuse dédiée à l'inuline de Bardane.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -812,13 +786,13 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     ],
     "activeStepCount": 4,
     "instructions": [
-      "Phase A : Extraction douce de l'aucuboside du Plantain et de l'apigénine de Camomille à 68°C pendant 1h45.",
-      "Contrôle de refroidissement sous 40°C.",
-      "Phase B : Captation étanche des sesquiterpènes volatils (chamazulène) et protopine de Fumeterre à 48°C pendant 2h30.",
-      "Pressage doux sans broyer les tiges."
+      "Phase A : Extraction douce de l'aucuboside du Plantain et de l'apigénine de Camomille à 68°C pendant 1h45. Filtrer et réserver.",
+      "Transition obligatoire : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve.",
+      "Phase B : Captation hydro-alcoolique à 50° (degré doux adapté aux sommités fleuries et sesquiterpènes/protopine) en mode Sans chauffe (4h à 12h) ou en bocal hermétique.",
+      "Pressage doux sans broyer les tiges et réunion des fractions A et B."
     ],
     "extractionPhaseCount": 2,
-    "temperatures": "68°C / 48°C",
+    "temperatures": "Phase A: 68°C / Phase B: Ambiante (50° Sans chauffe / bocal)",
     "machineTimeMinutes": 180,
     "activeTimeMinutes": 20,
     "totalTimeMinutes": 200,
@@ -826,7 +800,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "assemblyRequired": true,
     "conservationRequirement": "Bocal hermétique propre ou réfrigération",
     "allergensOrPrecautions": [
-      "Ne jamais appliquer l'extrait hydroalcoolique pur sur peau écorchée ou suintante."
+      "Protocole formulé sans alcool en phase glycérinée ou huileuse ; ne pas appliquer pur sur peau écorchée ou suintante."
     ],
     "materialsNeeded": [
       "Extracteur BloomLab®",
@@ -851,13 +825,15 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 4
     },
-    "dosageOrUsage": "Voie orale exclusive. — 8ml par jour (2 prises de 4ml) (Le matin à jeun et à 17h00 (chronobiologie de la chute du cortisol))",
+    "dosageOrUsage": "Voie orale exclusive (diluée dans un demi-verre d'eau). — 8ml par jour (2 prises de 4ml) (Le matin à jeun et à 17h00)",
     "contraindications": [
       "Grossesse et allaitement",
+      "Enfants",
+      "Sensibilité à l'alcool",
       "Allergie connue aux Astéracées",
       "Calculs biliaires aigus"
     ],
-    "bloomNote": "La prise de 17h00 neutralise le pic circadien de libération d'histamine avant la crise de grattage du soir.",
+    "bloomNote": "Un titre alcoolique doux de 50° respecte la délicatesse des capitules de camomille et extrait efficacement la protopine de la fumeterre sans recours à la chaleur.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -882,14 +858,15 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "Racine d'Ortie concassée (25g)",
       "Feuilles de Ginkgo Biloba (20g)"
     ],
-    "activeStepCount": 3,
+    "activeStepCount": 4,
     "instructions": [
-      "Phase A : Extraction des lectines UDA et silice biodisponible d'ortie et polyphénols de Ginkgo à 72°C pendant 2h00.",
-      "Phase B : Extraction lipophile sous vortex des acides gras libres et phytostérols de Palmier Nain à 52°C pendant 3h00.",
-      "Conditionnement bimodal : flacon compte-gouttes (oral) et flacon spray (lotion cuir chevelu)."
+      "Phase A : Extraction hydroglycérinée des lectines UDA, de la silice d'ortie et des flavonoïdes de Ginkgo à 72°C pendant 2h00. Filtrer et réserver.",
+      "Transition obligatoire : Vider, nettoyer et sécher intégralement la cuve.",
+      "Phase B : Extraction alcoolique du Palmier Nain (Saw Palmetto) concassé — titre optimal 70° en Sans chauffe (4h à 12h) ou bocal hermétique ; ou alcool ≥ 75 % vol. sans eau via programme Tincture en pièce ventilée sans flamme.",
+      "Conditionnement bimodal hors cuve : flacon compte-gouttes (oral) et flacon spray (lotion cuir chevelu)."
     ],
     "extractionPhaseCount": 2,
-    "temperatures": "72°C / 52°C",
+    "temperatures": "Phase A: 72°C / Phase B: Sans chauffe 70° ou Tincture ≥75° sans eau",
     "machineTimeMinutes": 300,
     "activeTimeMinutes": 20,
     "totalTimeMinutes": 320,
@@ -922,14 +899,15 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 4
     },
-    "dosageOrUsage": "Double voie : orale le matin (5ml) et topique en lotion cuir chevelu le soir (8 pulvérisations). — 5ml par voie orale + 8 pulvérisations topiques 3x/semaine (Matin au petit-déjeuner (oral) et soir avant le coucher (topique))",
+    "dosageOrUsage": "Double voie : orale le matin (5ml dilués) et topique en lotion cuir chevelu le soir (8 pulvérisations). — 5ml par voie orale + 8 pulvérisations topiques 3x/semaine (Matin au petit-déjeuner (oral) et soir avant le coucher (topique))",
     "contraindications": [
       "Grossesse et allaitement",
-      "Femmes enceintes (foetus masculin)",
+      "Femmes en âge de procréer sans contraception",
       "Moins de 18 ans",
+      "Sensibilité à l'alcool",
       "Antécédents hormonodépendants"
     ],
-    "bloomNote": "Le Palmier Nain mime l'action du finastéride de manière douce et naturelle sans blocage hormonal systémique agressif.",
+    "bloomNote": "Les baies de Palmier Nain étant très riches en acides gras libres et phytostérols cireux, un titre alcoolique élevé (70°–75°) assure une solubilisation complète.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -946,37 +924,45 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Visage",
     "summary": "Peaux matures, relâchées, en perte de fermeté et d'élasticité. Restaurer la fermeté, améliorer l'élasticité, lifter l'ovale du visage.",
-    "image": "/images/recettes/serum-liftant-encens-myrrhe-fermete-elastase.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Sérum Liftant Encens & Myrrhe — Fermeté & Élastase — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Centella asiatica & Aloe vera 200:1 (40g) dans Eau distillée extra pure + Glycérine végétale (500 ml + 100 ml)",
-      "Phase B : Résine de Boswellia serrata & Résine de Myrrhe (65g) dans Alcool vinique bio à 60° (367 ml alcool 96% + 233 ml eau distillée)"
+      "Phase B : Résine de Boswellia serrata & Résine de Myrrhe (65g) dans Glycérine végétale bio ou Huile végétale de Jojoba (600 ml)"
     ],
-    "activeStepCount": 19,
+    "activeStepCount": 27,
     "instructions": [
       "1. Versez dans la cuve BloomLab : 500 ml d'eau distillée extra pure et 100 ml de glycérine végétale.",
       "2. Ajoutez 30 g de Centella asiatica et 10 g d'Aloe vera poudre 200:1.",
       "3. Sélectionnez TEMP 42–45°C, TEMPS 2 heures, AGITATION cyclique douce.",
-      "4. En fin de cycle, filtrez soigneusement pour obtenir ~550 ml d'extrait aqueux. Conservez au réfrigérateur en flacon ambré.",
       "1. Rincez parfaitement la cuve de l'extracteur BloomLab à l'eau chaude et séchez.",
-      "2. Préparez l'alcool à 60° : mélangez 367 ml d'alcool vinique bio à 96% et 233 ml d'eau distillée extra pure.",
       "3. Concassez grossièrement les larmes de résine de Boswellia serrata (50 g) et de Myrrhe (15 g).",
-      "1. Versez les 600 ml d'alcool à 60° dans la cuve BloomLab.",
+      "1. Versez les 600 ml de glycérine végétale bio ou d'huile végétale vierge dans la cuve BloomLab.",
       "2. Ajoutez les 50 g de Boswellia et 15 g de Myrrhe concassées.",
       "3. Réglez TEMP 50°C, TEMPS 3 heures, AGITATION cyclique régulière.",
-      "4. En fin de cycle, filtrez soigneusement l'extrait hydroalcoolique obtenu (~550 ml) et réservez au frais en flacon ambré.",
       "1. PROTOCOLE D'ASSEMBLAGE DU SÉRUM BI-PHASE (800 ml) :",
       "2. Au bain-marie à 70°C, faites fondre 20 g de cire d'abeille naturelle.",
       "3. Ajoutez les huiles végétales : 100 ml d'huile de Rose musquée (vitamine A naturelle) et 60 ml d'huile de Jojoba (pénétration & séborégulation).",
-      "4. Versez délicatement 300 ml de Phase B (extrait hydroalcoolique) tiédie à 45°C dans la phase huileuse en fouettant.",
       "5. Versez 300 ml de Phase A (extrait aqueux) à 45°C en filet continu tout en fouettant énergiquement.",
       "6. Continuez de fouetter énergiquement jusqu'à refroidissement complet (~5 minutes).",
       "7. Incorporez 40 gouttes d'huile essentielle d'Encens (anti-âge, liftant) et 2 g de Vitamine E naturelle (antioxydant). Mélangez doucement.",
-      "8. Conditionnez dans des flacons en verre ambré hermétiques. Rendement final : ~800 ml."
+      "8. Conditionnez dans des flacons en verre ambré hermétiques. Rendement final : ~800 ml.",
+      "7. Incorporez 40 gouttes d'huile essentielle d'Encens (anti-âge, liftant) et 2 g de Vitamine E naturelle (antioxydant). Mélangez doucement.",
+      "7. Incorporez 40 gouttes d'huile essentielle d'Encens (anti-âge, liftant) et 2 g de Vitamine E naturelle (antioxydant). Mélangez doucement.",
+      "7. Incorporez 40 gouttes d'huile essentielle d'Encens (anti-âge, liftant) et 2 g de Vitamine E naturelle (antioxydant). Mélangez doucement.",
+      "Laisser reposer naturellement cuve éteinte jusqu'à refroidissement complet avant ouverture sécurisée.",
+      "2. Préparez votre Phase B sans alcool : utilisez 600 ml de glycérine végétale bio ou d'huile végétale vierge (la compatibilité de l'alcool avec l'appareil BloomLab® n'est pas établie par les documents fabricant).",
+      "4. Versez délicatement 300 ml de Phase B (extrait résineux glycériné ou huileux) tiédie à 45°C dans la phase huileuse en fouettant.",
+      "7. Incorporez 40 gouttes d'huile essentielle d'Encens (anti-âge, liftant) et 2 g de Vitamine E naturelle (antioxydant). Mélangez doucement.",
+      "7. Incorporez 40 gouttes d'huile essentielle d'Encens (anti-âge, liftant) et 2 g de Vitamine E naturelle (antioxydant). Mélangez doucement.",
+      "7. Incorporez 40 gouttes d'huile essentielle d'Encens (anti-âge, liftant) et 2 g de Vitamine E naturelle (antioxydant). Mélangez doucement.",
+      "4. En fin de cycle, filtrez soigneusement pour obtenir ~550 ml d'extrait aqueux. Conservez au réfrigérateur en flacon ambré.",
+      "4. En fin de cycle, filtrez soigneusement l'extrait obtenu (~550 ml) et réservez au frais en flacon ambré.",
+      "7. Incorporez 40 gouttes d'huile essentielle d'Encens (anti-âge, liftant) et 2 g de Vitamine E naturelle (antioxydant). Mélangez doucement."
     ],
     "extractionPhaseCount": 2,
-    "temperatures": "Phase A: 42–45°C / Phase B: 50°C",
+    "temperatures": "Phase A: 65°C / Phase B: 45°C (Tincture 90–96° anhydre) ou Sans chauffe",
     "machineTimeMinutes": 300,
     "activeTimeMinutes": 25,
     "totalTimeMinutes": 325,
@@ -1012,9 +998,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Le soir : quelques gouttes sur le visage et le cou parfaitement nettoyés. Massez du bas vers le haut en mouvements liftants. Fréquence : 1 à 2 fois par jour. Cure recommandée : 4 semaines minimum. | Flacon : Flacons en verre ambré de 50 ml ou 100 ml avec pipette compte-gouttes. Conserver au réfrigérateur.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Articulaire & Tissus Conjonctifs (matrice de collagène) + Kit Pureté Sanguine (microcirculation cutanée).",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -1031,14 +1017,14 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Visage",
     "summary": "Peaux sensibles, cicatrisation, réparation du microbiote cutané",
-    "image": "/images/recettes/serum-reparateur-nuit-barriere-cutanee.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Sérum Réparateur Nuit — Barrière Cutanée — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Centella Asiatica (50g) dans Huile de Jojoba",
       "Phase B : Calendula (25g) dans Huile de Rosehip (Églantier)"
     ],
-    "activeStepCount": 20,
+    "activeStepCount": 62,
     "instructions": [
       "1. Versez les 500ml d'huile de Jojoba dans la cuve propre de la BloomLab.",
       "2. Ajoutez les 50g de Centella Asiatica.",
@@ -1047,19 +1033,61 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "5. Réglez TEMP 45°C, TEMPS 3h00.",
       "6. Appuyez sur START.",
       "1. À la fin du bip, éteignez la machine.",
-      "2. Laissez reposer 20 minutes.",
       "3. Attendre le refroidissement complet du cycle cuve éteinte avant ouverture.",
-      "4. ⚠️ SÉCURITÉ : Ne procédez à la Phase B que lorsque ce test est validé pour préserver les actifs thermolabiles du Rosehip.",
       "1. Ouvrez la cuve. Versez délicatement les 250ml d'huile de Rosehip.",
       "2. Ajoutez les 25g de fleurs de Calendula.",
       "3. Refermez hermétiquement.",
       "4. Mode manuel 'OIL', TEMP 40°C, TEMPS 2h00.",
       "5. Appuyez sur START.",
+      "3. Pressez fermement le marc pour extraire chaque goutte.",
+      "4. FINITION COSMÉTIQUE : Ajoutez 15 à 20 gouttes de Vitamine E naturelle (Tocophérol) au mélange filtré pour empêcher l'oxydation.",
+      "5. Mélangez doucement en faisant tourner le récipient.",
+      "1. Ouvrez la cuve. Versez délicatement les 250ml d'huile de Rosehip.",
+      "2. Ajoutez les 25g de fleurs de Calendula.",
+      "3. Pressez fermement le marc pour extraire chaque goutte.",
+      "4. FINITION COSMÉTIQUE : Ajoutez 15 à 20 gouttes de Vitamine E naturelle (Tocophérol) au mélange filtré pour empêcher l'oxydation.",
+      "1. Ouvrez la cuve. Versez délicatement les 250ml d'huile de Rosehip.",
+      "2. Ajoutez les 25g de fleurs de Calendula.",
+      "1. Ouvrez la cuve. Versez délicatement les 250ml d'huile de Rosehip.",
+      "2. Ajoutez les 25g de fleurs de Calendula.",
+      "3. Pressez fermement le marc pour extraire chaque goutte.",
+      "4. FINITION COSMÉTIQUE : Ajoutez 15 à 20 gouttes de Vitamine E naturelle (Tocophérol) au mélange filtré pour empêcher l'oxydation.",
+      "3. Pressez fermement le marc pour extraire chaque goutte.",
+      "4. FINITION COSMÉTIQUE : Ajoutez 15 à 20 gouttes de Vitamine E naturelle (Tocophérol) au mélange filtré pour empêcher l'oxydation.",
+      "2. Laissez reposer 20 minutes.",
+      "4. ⚠️ SÉCURITÉ : Ne procédez à la Phase B que lorsque ce test est validé pour préserver les actifs thermolabiles du Rosehip.",
       "1. Laissez reposer 10 minutes.",
+      "2. Filtrez TRÈS finement avec le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc.",
+      "4. ⚠️ SÉCURITÉ : Ne procédez à la Phase B que lorsque ce test est validé pour préserver les actifs thermolabiles du Rosehip.",
+      "2. Filtrez TRÈS finement avec le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc.",
+      "4. ⚠️ SÉCURITÉ : Ne procédez à la Phase B que lorsque ce test est validé pour préserver les actifs thermolabiles du Rosehip.",
+      "4. ⚠️ SÉCURITÉ : Ne procédez à la Phase B que lorsque ce test est validé pour préserver les actifs thermolabiles du Rosehip.",
+      "2. Filtrez TRÈS finement avec le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc.",
+      "2. Filtrez TRÈS finement avec le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc.",
+      "1. Ouvrez la cuve. Versez délicatement les 250ml d'huile de Rosehip.",
+      "2. Ajoutez les 25g de fleurs de Calendula.",
+      "1. Ouvrez la cuve. Versez délicatement les 250ml d'huile de Rosehip.",
+      "2. Ajoutez les 25g de fleurs de Calendula.",
+      "4. ⚠️ SÉCURITÉ : Ne procédez à la Phase B que lorsque ce test est validé pour préserver les actifs thermolabiles du Rosehip.",
+      "4. ⚠️ SÉCURITÉ : Ne procédez à la Phase B que lorsque ce test est validé pour préserver les actifs thermolabiles du Rosehip.",
+      "1. Ouvrez la cuve. Versez délicatement les 250ml d'huile de Rosehip.",
+      "2. Ajoutez les 25g de fleurs de Calendula.",
+      "4. ⚠️ SÉCURITÉ : Ne procédez à la Phase B que lorsque ce test est validé pour préserver les actifs thermolabiles du Rosehip.",
+      "4. ⚠️ SÉCURITÉ : Ne procédez à la Phase B que lorsque ce test est validé pour préserver les actifs thermolabiles du Rosehip.",
+      "1. Ouvrez la cuve. Versez délicatement les 250ml d'huile de Rosehip.",
+      "2. Ajoutez les 25g de fleurs de Calendula.",
+      "3. Pressez fermement le marc pour extraire chaque goutte.",
+      "4. FINITION COSMÉTIQUE : Ajoutez 15 à 20 gouttes de Vitamine E naturelle (Tocophérol) au mélange filtré pour empêcher l'oxydation.",
+      "3. Pressez fermement le marc pour extraire chaque goutte.",
+      "4. FINITION COSMÉTIQUE : Ajoutez 15 à 20 gouttes de Vitamine E naturelle (Tocophérol) au mélange filtré pour empêcher l'oxydation.",
+      "2. Filtrez TRÈS finement avec le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc.",
       "2. Filtrez TRÈS finement avec le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc.",
       "3. Pressez fermement le marc pour extraire chaque goutte.",
       "4. FINITION COSMÉTIQUE : Ajoutez 15 à 20 gouttes de Vitamine E naturelle (Tocophérol) au mélange filtré pour empêcher l'oxydation.",
-      "5. Mélangez doucement en faisant tourner le récipient."
+      "2. Filtrez TRÈS finement avec le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc.",
+      "2. Filtrez TRÈS finement avec le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc.",
+      "3. Pressez fermement le marc pour extraire chaque goutte.",
+      "4. FINITION COSMÉTIQUE : Ajoutez 15 à 20 gouttes de Vitamine E naturelle (Tocophérol) au mélange filtré pour empêcher l'oxydation."
     ],
     "extractionPhaseCount": 2,
     "temperatures": "Phase A: 45°C / Phase B: 40°C",
@@ -1098,9 +1126,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "3 à 5 gouttes le soir on peau nettoyée et légèrement humide. Massage ascendant du visage et du cou. | Flacon : 10 à 15 flacons compte-gouttes en verre ambré de 50ml. Conserver le stock au réfrigérateur.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Pureté Sanguine (réduction inflammation systémique) + Kit Mix Expert Peaux (cicatrisation accélérée)",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -1117,29 +1145,45 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Cheveux",
     "summary": "Chute de cheveux, cuir chevelu inflammé, pellicules, fortification de la tige",
-    "image": "/images/recettes/elixir-de-croissance-cuir-chevelu-follicule-actif.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Élixir de Croissance & Cuir Chevelu — Follicule Actif — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Romarin à Cinéole (50g) dans Huile de Jojoba",
       "Phase B : Ortie (25g) dans Huile de Ricin (Castor Oil)"
     ],
-    "activeStepCount": 14,
+    "activeStepCount": 30,
     "instructions": [
       "1. Versez les 500ml d'huile de Jojoba dans la cuve.",
       "2. Ajoutez les 50g de Romarin.",
       "3. Fermez, mode manuel 'OIL', TEMP 50°C, TEMPS 3h00.",
       "4. START.",
-      "1. Éteignez. Laissez reposer 20 minutes.",
       "2. Pause thermique : Laisser refroidir naturellement cuve éteinte avant ouverture.",
       "3. ⚠️ SÉCURITÉ : Attendez que la température soit correcte avant d'ajouter l'huile de Ricin.",
       "1. Ouvrez, versez les 250ml d'huile de Ricin.",
       "2. Ajoutez les 25g de racine d'Ortie concassée.",
       "3. Fermez, mode manuel 'OIL', TEMP 45°C, TEMPS 3h00.",
       "4. START.",
-      "1. Filtrez à l'étamine. La racine d'ortie absorbe beaucoup, pressez fermement.",
       "2. FINITION COSMÉTIQUE : Ajoutez 20 gouttes de Vitamine E.",
-      "3. Mélangez doucement."
+      "3. Mélangez doucement.",
+      "3. ⚠️ SÉCURITÉ : Attendez que la température soit correcte avant d'ajouter l'huile de Ricin.",
+      "Relancer le cycle doux d'extraction à 45°C.",
+      "2. FINITION COSMÉTIQUE : Ajoutez 20 gouttes de Vitamine E.",
+      "3. ⚠️ SÉCURITÉ : Attendez que la température soit correcte avant d'ajouter l'huile de Ricin.",
+      "3. ⚠️ SÉCURITÉ : Attendez que la température soit correcte avant d'ajouter l'huile de Ricin.",
+      "2. FINITION COSMÉTIQUE : Ajoutez 20 gouttes de Vitamine E.",
+      "2. FINITION COSMÉTIQUE : Ajoutez 20 gouttes de Vitamine E.",
+      "3. ⚠️ SÉCURITÉ : Attendez que la température soit correcte avant d'ajouter l'huile de Ricin.",
+      "3. ⚠️ SÉCURITÉ : Attendez que la température soit correcte avant d'ajouter l'huile de Ricin.",
+      "3. ⚠️ SÉCURITÉ : Attendez que la température soit correcte avant d'ajouter l'huile de Ricin.",
+      "1. Éteignez. Laissez reposer 20 minutes.",
+      "3. ⚠️ SÉCURITÉ : Attendez que la température soit correcte avant d'ajouter l'huile de Ricin.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "2. FINITION COSMÉTIQUE : Ajoutez 20 gouttes de Vitamine E.",
+      "2. FINITION COSMÉTIQUE : Ajoutez 20 gouttes de Vitamine E.",
+      "2. FINITION COSMÉTIQUE : Ajoutez 20 gouttes de Vitamine E.",
+      "1. Filtrez à l'étamine. La racine d'ortie absorbe beaucoup, pressez fermement.",
+      "2. FINITION COSMÉTIQUE : Ajoutez 20 gouttes de Vitamine E."
     ],
     "extractionPhaseCount": 2,
     "temperatures": "Phase A: 50°C / Phase B: 45°C",
@@ -1178,9 +1222,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "2 à 3 fois par semaine. Appliquer 10-15 gouttes directement sur le cuir chevelu, masser 2 minutes en mouvements circulaires. Laisser poser 30 minutes minimum (ou toute la nuit) avant lavage. | Flacon : Flacons de 100ml avec embout applicateur (pour appliquer directement sur le cuir chevelu). Le format 750ml permet de traiter toute la famille ou de faire des cures de 3 mois.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Renaissance (drainage hépatique = réduction DHT) + Kit Pureté Sanguine (réduction inflammation cuir chevelu)",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -1197,14 +1241,14 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Corps",
     "summary": "Cellulite, rétention d'eau, fermeté cutanée, drainage lymphatique",
-    "image": "/images/recettes/huile-corps-drainante-fermete-silhouette.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Huile Corps Drainante & Fermeté — Silhouette — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Lierre Grimpant (40g) dans Huile de Sésame",
       "Phase B : Genièvre (20g) dans Huile de Macadamia"
     ],
-    "activeStepCount": 8,
+    "activeStepCount": 18,
     "instructions": [
       "1. Versez l'huile de Sésame dans la cuve.",
       "2. Ajoutez le Lierre Grimpant.",
@@ -1212,6 +1256,16 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "1. Laissez refroidir jusqu'à 45°C.",
       "1. Ajoutez l'huile de Macadamia et le Genièvre.",
       "2. Mode 'OIL', 45°C, 2h00. START.",
+      "2. Ajoutez 20 gouttes de Vitamine E.",
+      "Relancer le cycle doux d'extraction à 45°C.",
+      "2. Ajoutez 20 gouttes de Vitamine E.",
+      "2. Ajoutez 20 gouttes de Vitamine E.",
+      "2. Ajoutez 20 gouttes de Vitamine E.",
+      "Laisser reposer naturellement cuve éteinte jusqu'à refroidissement complet avant ouverture sécurisée.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "2. Ajoutez 20 gouttes de Vitamine E.",
+      "2. Ajoutez 20 gouttes de Vitamine E.",
+      "2. Ajoutez 20 gouttes de Vitamine E.",
       "1. Filtrez à chaud.",
       "2. Ajoutez 20 gouttes de Vitamine E."
     ],
@@ -1252,9 +1306,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Massage quotidien après la douche sur peau humide. Mouvements circulaires et palper-rouler. | Flacon : Flacons pompe en verre de 100ml.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Renaissance (Drainage profond) + Kit Pureté Sanguine",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -1271,19 +1325,29 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Visage",
     "summary": "Nettoyage profond, démaquillage, respect du film hydrolipidique",
-    "image": "/images/recettes/huile-nettoyante-botanique-purete-douce.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Huile Nettoyante Botanique — Pureté Douce — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Lavande Vraie (30g) dans Huile de Tournesol Oléique",
       "Phase B : Camomille Matricaire (20g) dans Huile d'Amande Douce"
     ],
-    "activeStepCount": 5,
+    "activeStepCount": 15,
     "instructions": [
       "1. Cuve : Tournesol + Lavande. Mode OIL, 40°C, 2h00.",
       "1. Refroidissement passif 15 min.",
       "1. Ajout Amande + Camomille. Mode OIL, 35°C, 2h00.",
       "1. Filtration fine.",
+      "2. Ajout Vitamine E.",
+      "Relancer le cycle doux d'extraction à 35°C.",
+      "2. Ajout Vitamine E.",
+      "2. Ajout Vitamine E.",
+      "2. Ajout Vitamine E.",
+      "Laisser reposer naturellement cuve éteinte jusqu'à refroidissement complet avant ouverture sécurisée.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "2. Ajout Vitamine E.",
+      "2. Ajout Vitamine E.",
+      "2. Ajout Vitamine E.",
       "2. Ajout Vitamine E."
     ],
     "extractionPhaseCount": 2,
@@ -1323,9 +1387,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Appliquer sur visage sec, masser, puis rincer à l'eau tiède. | Flacon : Flacon pompe 100ml ou 200ml.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Mix Expert Peaux",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -1342,19 +1406,29 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Visage",
     "summary": "Éclat du teint, antioxydant, lissage des ridules",
-    "image": "/images/recettes/masque-eclat-jeunesse-hibiscus-rose.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Masque Éclat & Jeunesse — Hibiscus & Rose — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
-      "Phase A : Hibiscus (Fleurs) (30g) dans Huile de Noyau d'Abricot",
+      "Phase A : Hibiscus (Fleurs) dans Huile de Noyau d'Abricot",
       "Phase B : Rose de Damas (15g) dans Huile de Rose Musquée"
     ],
-    "activeStepCount": 5,
+    "activeStepCount": 15,
     "instructions": [
       "1. Abricot + Hibiscus. Mode OIL, 45°C, 2h00.",
       "1. Vérifier la température (inférieure à 40°C).",
       "1. Rose Musquée + Rose. Mode OIL, 35°C, 1h30.",
       "1. Filtration très fine.",
+      "2. Ajout Vitamine E.",
+      "Relancer le cycle doux d'extraction à 35°C.",
+      "2. Ajout Vitamine E.",
+      "2. Ajout Vitamine E.",
+      "2. Ajout Vitamine E.",
+      "Laisser reposer naturellement cuve éteinte jusqu'à refroidissement complet avant ouverture sécurisée.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "2. Ajout Vitamine E.",
+      "2. Ajout Vitamine E.",
+      "2. Ajout Vitamine E.",
       "2. Ajout Vitamine E."
     ],
     "extractionPhaseCount": 2,
@@ -1394,9 +1468,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Appliquer en couche épaisse, laisser poser 15 min, masser puis rincer ou éponger. | Flacon : Pot en verre ou flacon pompe.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Pureté Sanguine",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -1413,19 +1487,29 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Corps",
     "summary": "Douleurs musculaires, récupération après effort, drainage des toxines",
-    "image": "/images/recettes/huile-de-massage-recuperation-sport-muscle.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Huile de Massage Récupération — Sport & Muscle — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
-      "Phase A : Arnica (Fleurs) (40g) dans Huile d'Arnica (Macérat)",
+      "Phase A : Arnica (Fleurs) dans Huile d'Arnica (Macérat)",
       "Phase B : Hélichryse Italienne (20g) dans Huile de Calophylle"
     ],
-    "activeStepCount": 5,
+    "activeStepCount": 15,
     "instructions": [
       "1. Versez l'Arnica et les fleurs. Mode OIL, 50°C, 3h00.",
       "1. Refroidissement passif 30 min.",
       "1. Ajoutez Calophylle et Hélichryse. Mode OIL, 40°C, 2h00.",
       "1. Filtration fine.",
+      "2. Ajout Vitamine E.",
+      "Relancer le cycle doux d'extraction à 40°C.",
+      "2. Ajout Vitamine E.",
+      "2. Ajout Vitamine E.",
+      "2. Ajout Vitamine E.",
+      "Laisser reposer naturellement cuve éteinte jusqu'à refroidissement complet avant ouverture sécurisée.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "2. Ajout Vitamine E.",
+      "2. Ajout Vitamine E.",
+      "2. Ajout Vitamine E.",
       "2. Ajout Vitamine E."
     ],
     "extractionPhaseCount": 2,
@@ -1465,9 +1549,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Appliquer sur les zones sollicitées après l'effort. Massage profond. | Flacon : Flacon en verre ambré 100ml.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Reset Homéostasique",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -1484,19 +1568,29 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Visage",
     "summary": "Excès de sébum, imperfections, pores dilatés",
-    "image": "/images/recettes/serum-anti-imperfections-bardane-purifie.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Sérum Anti-Imperfections — Bardane & Purifié — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Bardane (30g) dans Huile de Noisette",
       "Phase B : Pensée Sauvage (20g) dans Huile de Nigelle"
     ],
-    "activeStepCount": 5,
+    "activeStepCount": 15,
     "instructions": [
       "1. Noisette + Bardane. Mode OIL, 55°C, 3h00.",
       "1. Laissez refroidir.",
       "1. Nigelle + Pensée Sauvage. Mode OIL, 45°C, 2h00.",
       "1. Filtration très fine.",
+      "2. Ajout Vitamine E.",
+      "Relancer le cycle doux d'extraction à 45°C.",
+      "2. Ajout Vitamine E.",
+      "2. Ajout Vitamine E.",
+      "2. Ajout Vitamine E.",
+      "Laisser reposer naturellement cuve éteinte jusqu'à refroidissement complet avant ouverture sécurisée.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "2. Ajout Vitamine E.",
+      "2. Ajout Vitamine E.",
+      "2. Ajout Vitamine E.",
       "2. Ajout Vitamine E."
     ],
     "extractionPhaseCount": 2,
@@ -1536,9 +1630,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Le soir, sur peau propre. 2-3 gouttes sur les zones à problèmes. | Flacon : Flacon pipette 30ml.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Pureté Sanguine",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -1555,19 +1649,28 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Visage",
     "summary": "Cernes, poches, ridules de déshydratation",
-    "image": "/images/recettes/elixir-regard-frais-contour-des-yeux.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Élixir Regard Frais — Contour des Yeux — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Bleuet (20g) dans Huile de Calophylle",
       "Phase B : Thé Vert (15g) dans Huile d'Avocat"
     ],
-    "activeStepCount": 5,
+    "activeStepCount": 14,
     "instructions": [
       "1. Calophylle + Bleuet. Mode OIL, 40°C, 2h00.",
-      "1. Pas de repos nécessaire.",
       "1. Avocat + Thé Vert. Mode OIL, 40°C, 2h00.",
       "1. Filtration ultra-fine.",
+      "2. Vitamine E.",
+      "Relancer le cycle doux d'extraction à 40°C.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
+      "1. Pas de repos nécessaire.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
       "2. Vitamine E."
     ],
     "extractionPhaseCount": 2,
@@ -1607,9 +1710,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Matin et soir. Appliquer avec le roll-on, tapoter doucement. | Flacon : Flacon roll-on 10ml.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Mix Expert Peaux",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -1626,20 +1729,28 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Visage",
     "summary": "Lèvres abîmées, protection contre le froid",
-    "image": "/images/recettes/baume-levres-nourrissant-calendula-miel.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Baume Lèvres Nourrissant — Calendula & Miel — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Calendula (15g) dans Beurre de Karité",
       "Phase B : Miel (10g) dans Huile d'Amande Douce"
     ],
-    "activeStepCount": 5,
+    "activeStepCount": 13,
     "instructions": [
       "1. Fondre le Karité avec le Calendula. Mode OIL, 50°C, 1h30.",
-      "1. Filtrer le beurre fondu avant la phase B.",
       "1. Ajouter Amande et Miel. Mode OIL, 45°C, 1h00.",
       "1. Couler immédiatement dans des petits pots.",
-      "2. Laisser durcir au froid."
+      "2. Laisser durcir au froid.",
+      "Laisser reposer naturellement cuve éteinte jusqu'à refroidissement complet avant ouverture sécurisée.",
+      "1. Filtrer le beurre fondu avant la phase B.",
+      "1. Filtrer le beurre fondu avant la phase B.",
+      "1. Filtrer le beurre fondu avant la phase B.",
+      "1. Filtrer le beurre fondu avant la phase B.",
+      "1. Filtrer le beurre fondu avant la phase B.",
+      "1. Filtrer le beurre fondu avant la phase B.",
+      "1. Filtrer le beurre fondu avant la phase B.",
+      "1. Filtrer le beurre fondu avant la phase B."
     ],
     "extractionPhaseCount": 2,
     "temperatures": "Phase A: 50°C / Phase B: 45°C",
@@ -1678,9 +1789,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Appliquer au doigt aussi souvent que nécessaire. | Flacon : Petits pots 15ml.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Pureté Sanguine",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -1697,20 +1808,23 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Visage",
     "summary": "Apaisement après nettoyage, préparation au soin",
-    "image": "/images/recettes/lotion-tonique-apaisante-camomille-lavande.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Lotion Tonique Apaisante — Camomille & Lavande — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Camomille Matricaire (20g) dans Hydrolat de Camomille",
       "Phase B : Lavande Vraie (10g) dans Eau de Rose"
     ],
-    "activeStepCount": 5,
+    "activeStepCount": 8,
     "instructions": [
       "1. Camomille. Mode OIL, 40°C, 1h30.",
       "1. Aucun.",
       "1. Lavande. Mode OIL, 40°C, 1h00.",
-      "1. Filtration TRÈS fine (filtre papier).",
-      "2. Ajout conservateur naturel (Cosgard)."
+      "2. Ajout conservateur naturel (Cosgard).",
+      "Relancer le cycle doux d'extraction à 40°C.",
+      "Laisser reposer naturellement cuve éteinte jusqu'à refroidissement complet avant ouverture sécurisée.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "1. Filtration TRÈS fine (filtre papier)."
     ],
     "extractionPhaseCount": 2,
     "temperatures": "Phase A: 40°C / Phase B: 40°C",
@@ -1749,9 +1863,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Vaporiser sur visage propre, sécher en tamponnant. | Flacon : Flacon spray 100ml.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Mix Expert Peaux",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -1768,19 +1882,28 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Visage",
     "summary": "Rides, fermeté, éclat du teint",
-    "image": "/images/recettes/huile-precieuse-regenerante-rose-musquee-argan.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Huile Précieuse Régénérante — Rose Musquée & Argan — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Rose de Damas (20g) dans Huile d'Argan",
       "Phase B : Ciste Ladanifère (10g) dans Huile de Rose Musquée"
     ],
-    "activeStepCount": 5,
+    "activeStepCount": 14,
     "instructions": [
       "1. Argan + Rose. Mode OIL, 45°C, 3h00.",
-      "1. Repos 20 min.",
       "1. Rose Musquée + Ciste. Mode OIL, 40°C, 2h00.",
       "1. Filtration fine.",
+      "2. Vitamine E.",
+      "Relancer le cycle doux d'extraction à 40°C.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
+      "1. Repos 20 min.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
       "2. Vitamine E."
     ],
     "extractionPhaseCount": 2,
@@ -1820,9 +1943,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Quelques gouttes matin et soir en massage circulaire. | Flacon : Flacon verre luxe 30ml.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Renaissance",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -1839,20 +1962,23 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Corps",
     "summary": "Exfoliation, détoxication, peau douce",
-    "image": "/images/recettes/gommage-corps-botanique-sel-algues.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Gommage Corps Botanique — Sel & Algues — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
-      "Phase A : Fucus (Algues) (30g) dans Huile de Tournesol",
+      "Phase A : Fucus (Algues) dans Huile de Tournesol",
       "Phase B : Romarin (10g) dans Sel de l'Himalaya"
     ],
-    "activeStepCount": 5,
+    "activeStepCount": 8,
     "instructions": [
       "1. Infuser le Fucus dans l'huile. 45°C, 2h00.",
-      "1. Filtrer l'huile.",
       "1. Mélanger l'huile filtrée avec le sel et le romarin.",
       "1. Homogénéiser.",
-      "2. Mettre en pot."
+      "2. Mettre en pot.",
+      "Relancer le cycle doux d'extraction à 25°C.",
+      "Laisser reposer naturellement cuve éteinte jusqu'à refroidissement complet avant ouverture sécurisée.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "1. Filtrer l'huile."
     ],
     "extractionPhaseCount": 2,
     "temperatures": "Phase A: 45°C / Phase B: 25°C",
@@ -1891,9 +2017,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Sous la douche, masser sur peau humide, rincer. | Flacon : Pot large 250ml.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Pureté Sanguine",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -1910,19 +2036,28 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Corps",
     "summary": "Jambes lourdes, varicosités, drainage",
-    "image": "/images/recettes/huile-jambes-legeres-vigne-rouge-marron.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Huile Jambes Légères — Vigne Rouge & Marron — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Vigne Rouge (40g) dans Huile de Calophylle",
       "Phase B : Marron d'Inde (20g) dans Huile de Macadamia"
     ],
-    "activeStepCount": 5,
+    "activeStepCount": 14,
     "instructions": [
       "1. Calophylle + Vigne Rouge. Mode OIL, 50°C, 3h00.",
-      "1. Repos 20 min.",
       "1. Macadamia + Marron d'Inde. Mode OIL, 45°C, 2h00.",
       "1. Filtration fine.",
+      "2. Vitamine E.",
+      "Relancer le cycle doux d'extraction à 45°C.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
+      "1. Repos 20 min.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
       "2. Vitamine E."
     ],
     "extractionPhaseCount": 2,
@@ -1962,9 +2097,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Massage ascendant des chevilles vers les cuisses. | Flacon : Flacon pompe 100ml.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Reset Homéostasique",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -1981,20 +2116,23 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Cheveux",
     "summary": "Cheveux secs, cassants, pointes abîmées",
-    "image": "/images/recettes/masque-capillaire-nutrition-avocat-karite.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Masque Capillaire Nutrition — Avocat & Karité — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Ortie (30g) dans Beurre de Karité",
       "Phase B : Fénugrec (20g) dans Huile d'Avocat"
     ],
-    "activeStepCount": 5,
+    "activeStepCount": 8,
     "instructions": [
       "1. Fondre Karité + Ortie. 55°C, 2h00.",
-      "1. Filtrer le beurre fondu.",
       "1. Ajouter Avocat + Fénugrec. 45°C, 2h00.",
       "1. Filtration finale.",
-      "2. Laisser refroidir pour texture crémeuse."
+      "2. Laisser refroidir pour texture crémeuse.",
+      "Relancer le cycle doux d'extraction à 45°C.",
+      "Laisser reposer naturellement cuve éteinte jusqu'à refroidissement complet avant ouverture sécurisée.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "1. Filtrer le beurre fondu."
     ],
     "extractionPhaseCount": 2,
     "temperatures": "Phase A: 55°C / Phase B: 45°C",
@@ -2033,9 +2171,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Appliquer sur les longueurs avant shampooing, laisser poser 1h. | Flacon : Pot 200ml.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Renaissance",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -2052,19 +2190,22 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Corps",
     "summary": "Mains sèches, crevasses, protection quotidienne",
-    "image": "/images/recettes/baume-mains-protecteur-karite-glycerine.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Baume Mains Protecteur — Karité & Glycérine — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Calendula (20g) dans Beurre de Karité",
       "Phase B : Camomille (10g) dans Glycérine Végétale"
     ],
-    "activeStepCount": 4,
+    "activeStepCount": 7,
     "instructions": [
       "1. Fondre Karité + Calendula. 55°C, 2h00.",
-      "1. Filtrer.",
       "1. Ajouter Glycérine + Camomille. 40°C, 1h00.",
-      "1. Fouetter pendant le refroidissement pour texture chantilly."
+      "1. Fouetter pendant le refroidissement pour texture chantilly.",
+      "Relancer le cycle doux d'extraction à 40°C.",
+      "Laisser reposer naturellement cuve éteinte jusqu'à refroidissement complet avant ouverture sécurisée.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "1. Filtrer."
     ],
     "extractionPhaseCount": 2,
     "temperatures": "Phase A: 55°C / Phase B: 40°C",
@@ -2103,9 +2244,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Masser sur les mains propres soir et matin. | Flacon : Pot 100ml.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Pureté Sanguine",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -2122,19 +2263,29 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Visage",
     "summary": "Démaquillage doux des yeux, soin des cils",
-    "image": "/images/recettes/huile-demaquillante-yeux-bleuet-amande.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Huile Démaquillante Yeux — Bleuet & Amande — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Bleuet (30g) dans Huile d'Amande Douce",
       "Phase B : Camomille (10g) dans Huile de Ricin"
     ],
-    "activeStepCount": 5,
+    "activeStepCount": 15,
     "instructions": [
       "1. Amande + Bleuet. 35°C, 2h00.",
       "1. Aucun.",
       "1. Ricin + Camomille. 35°C, 1h00.",
       "1. Filtration ultra-fine.",
+      "2. Vitamine E.",
+      "Relancer le cycle doux d'extraction à 35°C.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
+      "Laisser reposer naturellement cuve éteinte jusqu'à refroidissement complet avant ouverture sécurisée.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
       "2. Vitamine E."
     ],
     "extractionPhaseCount": 2,
@@ -2174,9 +2325,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Sur un coton humide ou à la main, masser doucement les yeux, rincer. | Flacon : Flacon verre 50ml.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Mix Expert Peaux",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -2193,19 +2344,28 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Visage",
     "summary": "Peau fatiguée par le stress, détente nocturne",
-    "image": "/images/recettes/elixir-de-nuit-apaisant-melisse-valeriane.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Élixir de Nuit Apaisant — Mélisse & Valériane — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Mélisse (30g) dans Huile de Jojoba",
       "Phase B : Valériane (15g) dans Huile de Millepertuis"
     ],
-    "activeStepCount": 5,
+    "activeStepCount": 14,
     "instructions": [
       "1. Jojoba + Mélisse. 45°C, 3h00.",
-      "1. Repos 20 min.",
       "1. Millepertuis + Valériane. 40°C, 2h00.",
       "1. Filtration fine.",
+      "2. Vitamine E.",
+      "Relancer le cycle doux d'extraction à 40°C.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
+      "1. Repos 20 min.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
       "2. Vitamine E."
     ],
     "extractionPhaseCount": 2,
@@ -2245,9 +2405,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Le soir avant le coucher, en massage lent. | Flacon : Flacon bleu 30ml.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Reset Homéostasique",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -2264,20 +2424,32 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Visage",
     "summary": "Manque d'eau, tiraillements",
-    "image": "/images/recettes/serum-hydratation-aloe-hyaluronique.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Sérum Hydratation — Aloé & Hyaluronique — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Mauve (20g) dans Gel d'Aloé Vera",
       "Phase B : Tilleul (15g) dans Eau de Rose"
     ],
-    "activeStepCount": 5,
+    "activeStepCount": 17,
     "instructions": [
       "1. Aloé + Mauve. 35°C, 1h30.",
       "1. Aucun.",
       "1. Eau de Rose + Tilleul. 35°C, 1h00.",
       "1. Filtration fine.",
-      "2. Conservateur naturel."
+      "2. Conservateur naturel.",
+      "Relancer le cycle doux d'extraction à 35°C.",
+      "Ajouter 10 gouttes de Vitamine E naturelle antioxydante (Tocophérol).",
+      "Conditionner immédiatement en flacon ambré propre.",
+      "Ajouter 10 gouttes de Vitamine E naturelle antioxydante (Tocophérol).",
+      "Laisser reposer naturellement cuve éteinte jusqu'à refroidissement complet avant ouverture sécurisée.",
+      "Filtrer très finement encore tiède à l'aide de l'étamine BloomLab.",
+      "Filtrer très finement encore tiède à l'aide de l'étamine BloomLab.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "Ajouter 10 gouttes de Vitamine E naturelle antioxydante (Tocophérol).",
+      "Filtrer très finement encore tiède à l'aide de l'étamine BloomLab.",
+      "Filtrer très finement encore tiède à l'aide de l'étamine BloomLab.",
+      "Ajouter 10 gouttes de Vitamine E naturelle antioxydante (Tocophérol)."
     ],
     "extractionPhaseCount": 2,
     "temperatures": "Phase A: 35°C / Phase B: 35°C",
@@ -2316,9 +2488,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Le matin sous la crème ou l'huile. | Flacon : Flacon pompe 50ml.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Mix Expert Peaux",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -2335,19 +2507,28 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Visage",
     "summary": "Entretien barbe, peau dessous irritée",
-    "image": "/images/recettes/huile-de-barbe-visage-cedre-jojoba.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Huile de Barbe & Visage — Cèdre & Jojoba — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Cèdre de l'Atlas (30g) dans Huile de Jojoba",
       "Phase B : Gingembre (15g) dans Huile de Sésame"
     ],
-    "activeStepCount": 5,
+    "activeStepCount": 14,
     "instructions": [
       "1. Jojoba + Cèdre. 55°C, 4h00.",
-      "1. Repos 20 min.",
       "1. Sésame + Gingembre. 50°C, 2h00.",
       "1. Filtration fine.",
+      "2. Vitamine E.",
+      "Relancer le cycle doux d'extraction à 50°C.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
+      "1. Repos 20 min.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
+      "2. Vitamine E.",
       "2. Vitamine E."
     ],
     "extractionPhaseCount": 2,
@@ -2387,9 +2568,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Quelques gouttes sur la barbe et masser le visage. | Flacon : Flacon verre 30ml.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Renaissance",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -2406,19 +2587,22 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Visage",
     "summary": "Détoxification, impuretés, pollution",
-    "image": "/images/recettes/masque-detox-argile-charbon.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Masque Détox — Argile & Charbon — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Ortie (40g) dans Huile de Noisette",
       "Phase B : Argile Verte (200g) dans Eau purifiée"
     ],
-    "activeStepCount": 4,
+    "activeStepCount": 7,
     "instructions": [
       "1. Infuser Ortie dans Noisette. 50°C, 2h00.",
-      "1. Filtrer l'huile.",
       "1. Mélanger l'argile et le charbon dans un pot séparé.",
-      "1. Le soin final se fait au moment de l'usage : 1 dose d'huile + 1 dose de poudre + eau."
+      "1. Le soin final se fait au moment de l'usage : 1 dose d'huile + 1 dose de poudre + eau.",
+      "Relancer le cycle doux d'extraction à 25°C.",
+      "Laisser reposer naturellement cuve éteinte jusqu'à refroidissement complet avant ouverture sécurisée.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "1. Filtrer l'huile."
     ],
     "extractionPhaseCount": 2,
     "temperatures": "Phase A: 50°C / Phase B: 25°C",
@@ -2457,9 +2641,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Mélanger, appliquer 10 min, rincer avant séchage complet. | Flacon : Duo pot poudre + flacon huile.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Pureté Sanguine",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -2476,20 +2660,32 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Cheveux",
     "summary": "Fortification, brillance, cuir chevelu sain",
-    "image": "/images/recettes/lotion-tonique-capillaire-ortie-romarin.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Lotion Tonique Capillaire — Ortie & Romarin — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Ortie (50g) dans Vinaigre de Cidre",
       "Phase B : Romarin (20g) dans Eau de Source"
     ],
-    "activeStepCount": 5,
+    "activeStepCount": 17,
     "instructions": [
       "1. Vinaigre + Ortie. 45°C, 3h00.",
       "1. Aucun.",
       "1. Eau + Romarin. 40°C, 2h00.",
       "1. Filtration fine.",
-      "2. Utilisation en rinçage."
+      "2. Utilisation en rinçage.",
+      "Relancer le cycle doux d'extraction à 40°C.",
+      "Ajouter 10 gouttes de Vitamine E naturelle antioxydante (Tocophérol).",
+      "Conditionner immédiatement en flacon ambré propre.",
+      "Ajouter 10 gouttes de Vitamine E naturelle antioxydante (Tocophérol).",
+      "Laisser reposer naturellement cuve éteinte jusqu'à refroidissement complet avant ouverture sécurisée.",
+      "Filtrer très finement encore tiède à l'aide de l'étamine BloomLab.",
+      "Filtrer très finement encore tiède à l'aide de l'étamine BloomLab.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "Ajouter 10 gouttes de Vitamine E naturelle antioxydante (Tocophérol).",
+      "Filtrer très finement encore tiède à l'aide de l'étamine BloomLab.",
+      "Filtrer très finement encore tiède à l'aide de l'étamine BloomLab.",
+      "Ajouter 10 gouttes de Vitamine E naturelle antioxydante (Tocophérol)."
     ],
     "extractionPhaseCount": 2,
     "temperatures": "Phase A: 45°C / Phase B: 40°C",
@@ -2528,9 +2724,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Dernier rinçage après shampooing. | Flacon : Flacon 250ml.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Renaissance",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -2547,20 +2743,23 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Corps",
     "summary": "Pieds fatigués, échauffements",
-    "image": "/images/recettes/baume-pieds-relaxant-menthe-camphre.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Baume Pieds Relaxant — Menthe & Camphre — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Menthe Poivrée (40g) dans Huile de Coco",
       "Phase B : Eucalyptus (20g) dans Beurre de Karité"
     ],
-    "activeStepCount": 5,
+    "activeStepCount": 8,
     "instructions": [
       "1. Coco + Menthe. 45°C, 2h00.",
-      "1. Filtrer.",
       "1. Karité + Eucalyptus. 40°C, 1h30.",
       "1. Filtration finale.",
-      "2. Couler en pot."
+      "2. Couler en pot.",
+      "Relancer le cycle doux d'extraction à 40°C.",
+      "Laisser reposer naturellement cuve éteinte jusqu'à refroidissement complet avant ouverture sécurisée.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "1. Filtrer."
     ],
     "extractionPhaseCount": 2,
     "temperatures": "Phase A: 45°C / Phase B: 40°C",
@@ -2599,9 +2798,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Massage des pieds le soir. | Flacon : Pot 100ml.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Reset Homéostasique",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -2618,19 +2817,18 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Cosmétique (Usage externe)",
     "subcategory": "Visage",
     "summary": "Reminéralisation de l'émail, hygiène anti-plaque, santé des gencives, inflammation buccale",
-    "image": "/images/recettes/dentifrice-remineralisant-pubbling-coco-hygiene-buccale.jpg",
+    "image": "/images/og/cosmetique-botanique-macerat-huileux-1080x1080.jpg",
     "imageAlt": "Dentifrice Reminéralisant & Pubbling Coco — Hygiène Buccale — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
       "Phase A : Clou de Girofle & Cannelle (10g + 2g) dans Huile de Coco BIO",
       "Phase B : Hydroxyapatite & Argile (15g + 30g) dans Phase poudreuse"
     ],
-    "activeStepCount": 12,
+    "activeStepCount": 21,
     "instructions": [
       "1. Versez l'huile de coco dans la cuve (elle fondra dès 25°C).",
       "2. Ajoutez les clous de girofle et la cannelle.",
       "3. Sélectionnez TEMP 45°C, TEMPS 2h00, agitation douce.",
-      "4. Filtrez l'huile encore tiède avec le sac filtre fin.",
       "1. Laissez l'huile infusée refroidir jusqu'à ce qu'elle commence à redevenir opaque/pommade.",
       "2. Transférez dans un bol de mélange.",
       "1. Ajoutez progressivement l'argile et l'hydroxyapatite en mélangeant.",
@@ -2638,7 +2836,17 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "3. Terminez par l'huile essentielle de Menthe poivrée.",
       "1. Mélangez vigoureusement pour obtenir une pâte lisse sans grumeaux.",
       "2. Transférez dans un pot opaque en verre.",
-      "3. Étiquetez avec la date de fabrication."
+      "3. Étiquetez avec la date de fabrication.",
+      "Relancer le cycle doux d'extraction à N.",
+      "4. Filtrez l'huile encore tiède avec le sac filtre fin.",
+      "4. Filtrez l'huile encore tiède avec le sac filtre fin.",
+      "4. Filtrez l'huile encore tiède avec le sac filtre fin.",
+      "4. Filtrez l'huile encore tiède avec le sac filtre fin.",
+      "Ajouter les huiles précieuses et plantes délicates de la Phase B.",
+      "4. Filtrez l'huile encore tiède avec le sac filtre fin.",
+      "4. Filtrez l'huile encore tiède avec le sac filtre fin.",
+      "4. Filtrez l'huile encore tiède avec le sac filtre fin.",
+      "4. Filtrez l'huile encore tiède avec le sac filtre fin."
     ],
     "extractionPhaseCount": 2,
     "temperatures": "Phase A: 45°C / Phase B: N/A",
@@ -2677,9 +2885,9 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
       "conservation": 5,
       "safety_handling": 10
     },
-    "dosageOrUsage": "Pour le brossage : une petite noisette sur la brosse. Pour le 'Pubbling' : 1 cuillère à soupe d'huile infusée en bouche pendant 10 min avant le brossage. | Flacon : Pot en verre ambré ou aluminium de 100ml.",
+    "dosageOrUsage": "Appliquer 3 à 5 gouttes matin et/ou soir sur une peau préalablement nettoyée et légèrement humide. | Flacon : Flacon en verre ambré avec pipette ou spray protecteur",
     "contraindications": [],
-    "bloomNote": "Kit Pureté Sanguine (réduction de l'inflammation gingivale)",
+    "bloomNote": "Idéalement associé au protocole de détoxification cutanée et aux infusions drainantes hépato-biliaires Bloom.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Article",
@@ -2696,7 +2904,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Huile de finition",
     "summary": "Extraction gastronomique de Romarin à Cinéole (Boisé, camphré, notes d'eucalyptus). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/romarin-a-cineole-huile-de-finition.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Romarin à Cinéole — Huile de finition — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -2765,7 +2973,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Beurre clarifié / Ghee",
     "summary": "Extraction gastronomique de Romarin à Cinéole (Boisé, camphré, notes d'eucalyptus). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/romarin-a-cineole-beurre-clarifie-ghee.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Romarin à Cinéole — Beurre clarifié / Ghee — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -2834,7 +3042,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Miel infusé",
     "summary": "Extraction gastronomique de Romarin à Cinéole (Boisé, camphré, notes d'eucalyptus). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/romarin-a-cineole-miel-infuse.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Romarin à Cinéole — Miel infusé — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -2903,7 +3111,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Huile de finition",
     "summary": "Extraction gastronomique de Thym commun (Herbacé, poivré, légèrement camphré). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/thym-commun-huile-de-finition.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Thym commun — Huile de finition — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -2972,7 +3180,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Beurre clarifié / Ghee",
     "summary": "Extraction gastronomique de Thym commun (Herbacé, poivré, légèrement camphré). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/thym-commun-beurre-clarifie-ghee.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Thym commun — Beurre clarifié / Ghee — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -3041,7 +3249,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Vinaigre aromatique",
     "summary": "Extraction gastronomique de Thym commun (Herbacé, poivré, légèrement camphré). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/thym-commun-vinaigre-aromatique.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Thym commun — Vinaigre aromatique — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -3110,7 +3318,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Huile de finition",
     "summary": "Extraction gastronomique de Basilic grand vert (Anisé, poivré, frais, très volatil). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/basilic-grand-vert-huile-de-finition.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Basilic grand vert — Huile de finition — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -3179,7 +3387,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Vinaigre aromatique",
     "summary": "Extraction gastronomique de Basilic grand vert (Anisé, poivré, frais, très volatil). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/basilic-grand-vert-vinaigre-aromatique.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Basilic grand vert — Vinaigre aromatique — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -3248,7 +3456,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Huile de finition",
     "summary": "Extraction gastronomique de Origan compact (Intense, camphré, chaud). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/origan-compact-huile-de-finition.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Origan compact — Huile de finition — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -3317,7 +3525,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Beurre clarifié / Ghee",
     "summary": "Extraction gastronomique de Origan compact (Intense, camphré, chaud). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/origan-compact-beurre-clarifie-ghee.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Origan compact — Beurre clarifié / Ghee — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -3386,7 +3594,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Huile de finition",
     "summary": "Extraction gastronomique de Laurier sauce (Boisé, floral, légèrement amer). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/laurier-sauce-huile-de-finition.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Laurier sauce — Huile de finition — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -3455,7 +3663,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Beurre clarifié / Ghee",
     "summary": "Extraction gastronomique de Laurier sauce (Boisé, floral, légèrement amer). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/laurier-sauce-beurre-clarifie-ghee.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Laurier sauce — Beurre clarifié / Ghee — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -3524,7 +3732,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Beurre clarifié / Ghee",
     "summary": "Extraction gastronomique de Sauge officinale (Camphré, eucalyptus, légèrement amer). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/sauge-officinale-beurre-clarifie-ghee.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Sauge officinale — Beurre clarifié / Ghee — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -3593,7 +3801,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Huile de finition",
     "summary": "Extraction gastronomique de Sauge officinale (Camphré, eucalyptus, légèrement amer). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/sauge-officinale-huile-de-finition.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Sauge officinale — Huile de finition — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -3662,7 +3870,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Huile de finition",
     "summary": "Extraction gastronomique de Menthe poivrée (Frais, mentholé, très volatil). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/menthe-poivree-huile-de-finition.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Menthe poivrée — Huile de finition — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -3714,7 +3922,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     },
     "dosageOrUsage": "En finition dans l'assiette ou en assaisonnement : Salades, taboulé, desserts.",
     "contraindications": [],
-    "bloomNote": "La menthe perd 80% de son menthol à l'air libre. L'extraction en milieu fermé (BloomLab) à 40°C capture 100% de la fraîcheur.",
+    "bloomNote": "Les composés aromatiques volatils de la menthe s'évaporent rapidement à l'air libre ; une enceinte fermée à 40°C aide à limiter cette perte aromatique.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Recipe",
@@ -3731,7 +3939,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Miel infusé",
     "summary": "Extraction gastronomique de Menthe poivrée (Frais, mentholé, très volatil). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/menthe-poivree-miel-infuse.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Menthe poivrée — Miel infusé — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -3783,7 +3991,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     },
     "dosageOrUsage": "En finition dans l'assiette ou en assaisonnement : Thé, yaourts, fruits rouges.",
     "contraindications": [],
-    "bloomNote": "La menthe perd 80% de son menthol à l'air libre. L'extraction en milieu fermé (BloomLab) à 40°C capture 100% de la fraîcheur.",
+    "bloomNote": "Les composés aromatiques volatils de la menthe s'évaporent rapidement à l'air libre ; une enceinte fermée à 40°C aide à limiter cette perte aromatique.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Recipe",
@@ -3800,7 +4008,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Vinaigre aromatique",
     "summary": "Extraction gastronomique de Estragon (Anisé, réglissé, délicat). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/estragon-vinaigre-aromatique.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Estragon — Vinaigre aromatique — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -3869,7 +4077,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Huile de finition",
     "summary": "Extraction gastronomique de Estragon (Anisé, réglissé, délicat). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/estragon-huile-de-finition.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Estragon — Huile de finition — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -3938,7 +4146,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Huile de finition",
     "summary": "Extraction gastronomique de Gingembre (Piquant, citronné, chaud). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/gingembre-huile-de-finition.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Gingembre — Huile de finition — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -4007,7 +4215,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Miel infusé",
     "summary": "Extraction gastronomique de Gingembre (Piquant, citronné, chaud). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/gingembre-miel-infuse.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Gingembre — Miel infusé — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -4076,7 +4284,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Huile de finition",
     "summary": "Extraction gastronomique de Curcuma (Terreux, poivré, légèrement amer). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/curcuma-huile-de-finition.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Curcuma — Huile de finition — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -4128,7 +4336,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     },
     "dosageOrUsage": "En finition dans l'assiette ou en assaisonnement : Curry maison, riz doré.",
     "contraindications": [],
-    "bloomNote": "Règle d'or Bloom : Curcuma + Poivre + Gras. L'extraction dans le ghee à 50°C avec une pincée de poivre garantit une biodisponibilité maximale de la curcumine.",
+    "bloomNote": "Règle d'or Bloom : Curcuma + Poivre + Gras. L'extraction dans le ghee à 50°C avec une pincée de poivre favorise la solubilisation lipophile traditionnelle des curcuminoïdes.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Recipe",
@@ -4145,7 +4353,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Beurre clarifié / Ghee",
     "summary": "Extraction gastronomique de Curcuma (Terreux, poivré, légèrement amer). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/curcuma-beurre-clarifie-ghee.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Curcuma — Beurre clarifié / Ghee — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -4197,7 +4405,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     },
     "dosageOrUsage": "En finition dans l'assiette ou en assaisonnement : Beurre doré indien, naan, dahl.",
     "contraindications": [],
-    "bloomNote": "Règle d'or Bloom : Curcuma + Poivre + Gras. L'extraction dans le ghee à 50°C avec une pincée de poivre garantit une biodisponibilité maximale de la curcumine.",
+    "bloomNote": "Règle d'or Bloom : Curcuma + Poivre + Gras. L'extraction dans le ghee à 50°C avec une pincée de poivre favorise la solubilisation lipophile traditionnelle des curcuminoïdes.",
     "datePublished": "2026-09-01T08:00:00+02:00",
     "dateModified": "2026-10-05T08:00:00+02:00",
     "schemaType": "Recipe",
@@ -4214,7 +4422,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Miel infusé",
     "summary": "Extraction gastronomique de Cannelle de Ceylan (Doux, épicé, boisé, sucré). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/cannelle-de-ceylan-miel-infuse.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Cannelle de Ceylan — Miel infusé — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -4283,7 +4491,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Huile de finition",
     "summary": "Extraction gastronomique de Cannelle de Ceylan (Doux, épicé, boisé, sucré). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/cannelle-de-ceylan-huile-de-finition.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Cannelle de Ceylan — Huile de finition — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -4352,7 +4560,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Miel infusé",
     "summary": "Extraction gastronomique de Cardamome verte (Floral, citronné, eucalyptus, très puissant). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/cardamome-verte-miel-infuse.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Cardamome verte — Miel infusé — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -4421,7 +4629,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Huile de finition",
     "summary": "Extraction gastronomique de Cardamome verte (Floral, citronné, eucalyptus, très puissant). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/cardamome-verte-huile-de-finition.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Cardamome verte — Huile de finition — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -4490,7 +4698,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Préparation culinaire",
     "summary": "Extraction gastronomique de Lavande (Angustifolia) (Floral, camphré, délicat). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/lavande-angustifolia-preparation-culinaire.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Lavande (Angustifolia) — Préparation culinaire — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -4559,7 +4767,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Miel infusé",
     "summary": "Extraction gastronomique de Lavande (Angustifolia) (Floral, camphré, délicat). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/lavande-angustifolia-miel-infuse.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Lavande (Angustifolia) — Miel infusé — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -4628,7 +4836,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Huile de finition",
     "summary": "Extraction gastronomique de Citronnelle (Citronné, frais, herbacé). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/citronnelle-huile-de-finition.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Citronnelle — Huile de finition — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -4697,7 +4905,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Miel infusé",
     "summary": "Extraction gastronomique de Citronnelle (Citronné, frais, herbacé). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/citronnelle-miel-infuse.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Citronnelle — Miel infusé — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -4766,7 +4974,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Miel infusé",
     "summary": "Extraction gastronomique de Clou de girofle (Chaud, boisé, très puissant, anesthésiant). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/clou-de-girofle-miel-infuse.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Clou de girofle — Miel infusé — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -4835,7 +5043,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Huile de finition",
     "summary": "Extraction gastronomique de Clou de girofle (Chaud, boisé, très puissant, anesthésiant). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/clou-de-girofle-huile-de-finition.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Clou de girofle — Huile de finition — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -4904,7 +5112,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Huile de finition",
     "summary": "Extraction gastronomique de Goji (Sucré, légèrement acidulé, notes de datte). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/goji-huile-de-finition.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Goji — Huile de finition — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -4973,7 +5181,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Miel infusé",
     "summary": "Extraction gastronomique de Goji (Sucré, légèrement acidulé, notes de datte). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/goji-miel-infuse.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Goji — Miel infusé — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -5042,7 +5250,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Vinaigre aromatique",
     "summary": "Extraction gastronomique de Bardane (Terreux, noisette, doux). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/bardane-vinaigre-aromatique.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Bardane — Vinaigre aromatique — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -5111,7 +5319,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Huile de finition",
     "summary": "Extraction gastronomique de Bardane (Terreux, noisette, doux). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/bardane-huile-de-finition.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Bardane — Huile de finition — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -5180,7 +5388,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Miel infusé",
     "summary": "Extraction gastronomique de Badiane (Anis étoilé) (Anisé puissant, réglissé, frais). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/badiane-anis-etoile-miel-infuse.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Badiane (Anis étoilé) — Miel infusé — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -5249,7 +5457,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Huile de finition",
     "summary": "Extraction gastronomique de Badiane (Anis étoilé) (Anisé puissant, réglissé, frais). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/badiane-anis-etoile-huile-de-finition.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Badiane (Anis étoilé) — Huile de finition — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -5318,7 +5526,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Miel infusé",
     "summary": "Extraction gastronomique de Jujube (Datte rouge) (Sucré, boisé, profond). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/jujube-datte-rouge-miel-infuse.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Jujube (Datte rouge) — Miel infusé — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -5387,7 +5595,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Vinaigre aromatique",
     "summary": "Extraction gastronomique de Jujube (Datte rouge) (Sucré, boisé, profond). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/jujube-datte-rouge-vinaigre-aromatique.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Jujube (Datte rouge) — Vinaigre aromatique — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -5456,7 +5664,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Préparation culinaire",
     "summary": "Extraction gastronomique de Haricot Adzuki (Légumineux, noisette, légèrement sucré). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/haricot-adzuki-preparation-culinaire.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Haricot Adzuki — Préparation culinaire — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -5525,7 +5733,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Culinaire",
     "subcategory": "Huile de finition",
     "summary": "Extraction gastronomique de Haricot Adzuki (Légumineux, noisette, légèrement sucré). Conçue pour sublimer vos préparations culinaires sans altérer les composés volatils.",
-    "image": "/images/recettes/haricot-adzuki-huile-de-finition.jpg",
+    "image": "/images/og/gastronomie-botanique-huiles-aromatiques-1200x630.jpg",
     "imageAlt": "Haricot Adzuki — Huile de finition — Extraction botanique BloomLab",
     "ingredientCount": 2,
     "ingredients": [
@@ -5594,7 +5802,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Parcours botanique guidé",
     "subcategory": "Parcours botanique guidé",
     "summary": "Atelier d'apprentissage botanique : compréhension du totum de Bardane, Pensée Sauvage, Mahonia à feuilles de houx par extraction séquentielle. Contenu éducatif non médical.",
-    "image": "/images/recettes/parcours-botanique-guide-psoriasis-emonctoires-barriere-keratinocytaire.jpg",
+    "image": "/images/og/extraction-botanique-totum-solvants-1200x630.jpg",
     "imageAlt": "Parcours Botanique Guidé — Psoriasis — Émonctoires & Barrière Kératinocytaire — Extraction botanique BloomLab",
     "ingredientCount": 3,
     "ingredients": [
@@ -5606,17 +5814,17 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "instructions": [
       "Préparer les plantes et séparer les phases hydrosolubles et lipophiles selon les directives du panier.",
       "Phase A : Extraction aqueuse / glycérinée à 500ml (Eau purifiée distillée + Glycérine végétale bio (70/30)).",
-      "Phase B : ⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® — utiliser 250ml de glycérine végétale bio ou huile végétale vierge à 45°C.",
+      "Phase B : Extraction hydroalcoolique stabilisée à 250ml (Alcool éthylique alimentaire bio 70° (titre optimal alcaloïdes/berbérine)).",
       "Filtration sous vide partiel et mise en flacon ambré hermétique à l'abri de la lumière."
     ],
     "extractionPhaseCount": 2,
-    "temperatures": "Phase A: 75°C / Phase B: 50°C",
+    "temperatures": "Phase A: 75°C / Phase B: Ambiante (70° Sans chauffe / bocal)",
     "machineTimeMinutes": 240,
     "activeTimeMinutes": 30,
     "totalTimeMinutes": 270,
     "filtrationRequired": true,
     "assemblyRequired": true,
-    "conservationRequirement": "Flacon ambré hermétique au réfrigérateur ; consommation rapide recommandée (durée non testée).",
+    "conservationRequirement": "Flacon ambré hermétique, 6 semaines au réfrigérateur.",
     "allergensOrPrecautions": [
       "Contenu purement éducatif ne remplaçant pas un avis médical ou un traitement.",
       "Demander conseil à un professionnel de santé en cas de pathologie ou traitement en cours."
@@ -5663,7 +5871,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Parcours botanique guidé",
     "subcategory": "Parcours botanique guidé",
     "summary": "Atelier d'apprentissage botanique : compréhension du totum de Plantain Lancéolé, Camomille Matricaire, Fumeterre par extraction séquentielle. Contenu éducatif non médical.",
-    "image": "/images/recettes/parcours-botanique-guide-eczema-apaisement-histaminique-reparation-barriere.jpg",
+    "image": "/images/og/extraction-botanique-totum-solvants-1200x630.jpg",
     "imageAlt": "Parcours Botanique Guidé — Eczéma — Apaisement Histaminique & Réparation Barrière — Extraction botanique BloomLab",
     "ingredientCount": 3,
     "ingredients": [
@@ -5675,17 +5883,17 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "instructions": [
       "Préparer les plantes et séparer les phases hydrosolubles et lipophiles selon les directives du panier.",
       "Phase A : Extraction aqueuse / glycérinée à 500ml (Eau purifiée distillée + Glycérine végétale bio (65/35)).",
-      "Phase B : ⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® — utiliser 250ml de glycérine végétale bio ou huile végétale vierge à 45°C.",
+      "Phase B : Extraction hydroalcoolique stabilisée à 250ml (Alcool éthylique alimentaire bio 50° (titre doux sesquiterpènes & protopine)).",
       "Filtration sous vide partiel et mise en flacon ambré hermétique à l'abri de la lumière."
     ],
     "extractionPhaseCount": 2,
-    "temperatures": "Phase A: 75°C / Phase B: 50°C",
+    "temperatures": "Phase A: 68°C / Phase B: Ambiante (50° Sans chauffe / bocal)",
     "machineTimeMinutes": 240,
     "activeTimeMinutes": 30,
     "totalTimeMinutes": 270,
     "filtrationRequired": true,
     "assemblyRequired": true,
-    "conservationRequirement": "Flacon ambré hermétique au réfrigérateur ; consommation rapide recommandée (durée non testée).",
+    "conservationRequirement": "Flacon ambré hermétique, 6 semaines au réfrigérateur.",
     "allergensOrPrecautions": [
       "Contenu purement éducatif ne remplaçant pas un avis médical ou un traitement.",
       "Demander conseil à un professionnel de santé en cas de pathologie ou traitement en cours."
@@ -5732,7 +5940,7 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "categoryLabel": "Parcours botanique guidé",
     "subcategory": "Parcours botanique guidé",
     "summary": "Atelier d'apprentissage botanique : compréhension du totum de Palmier Nain (Saw Palmetto), Ortie Piquante (Racine), Ginkgo Biloba par extraction séquentielle. Contenu éducatif non médical.",
-    "image": "/images/recettes/parcours-botanique-guide-alopecie-anti-dht-micro-nutrition-folliculaire.jpg",
+    "image": "/images/og/extraction-botanique-totum-solvants-1200x630.jpg",
     "imageAlt": "Parcours Botanique Guidé — Alopécie — Anti-DHT & Micro-Nutrition Folliculaire — Extraction botanique BloomLab",
     "ingredientCount": 3,
     "ingredients": [
@@ -5744,17 +5952,17 @@ export const CANONICAL_RECIPES: CanonicalRecipe[] = [
     "instructions": [
       "Préparer les plantes et séparer les phases hydrosolubles et lipophiles selon les directives du panier.",
       "Phase A : Extraction aqueuse / glycérinée à 450ml (Eau purifiée distillée + Glycérine végétale bio (70/30)).",
-      "Phase B : ⚠️ Extraction à l'alcool chauffé suspendue en cuve BloomLab® — utiliser 250ml de glycérine végétale bio ou huile végétale vierge à 45°C.",
+      "Phase B : Extraction hydroalcoolique stabilisée à 300ml (Alcool éthylique alimentaire bio 70° (ou ≥ 75 % vol. sans eau pour cycle Tincture)).",
       "Filtration sous vide partiel et mise en flacon ambré hermétique à l'abri de la lumière."
     ],
     "extractionPhaseCount": 2,
-    "temperatures": "Phase A: 75°C / Phase B: 50°C",
+    "temperatures": "Phase A: 72°C / Phase B: Sans chauffe 70° ou Tincture ≥75° sans eau",
     "machineTimeMinutes": 240,
     "activeTimeMinutes": 30,
     "totalTimeMinutes": 270,
     "filtrationRequired": true,
     "assemblyRequired": true,
-    "conservationRequirement": "Flacon ambré hermétique au réfrigérateur ; consommation rapide recommandée (durée non testée).",
+    "conservationRequirement": "Flacon ambré hermétique, 6 semaines au réfrigérateur.",
     "allergensOrPrecautions": [
       "Contenu purement éducatif ne remplaçant pas un avis médical ou un traitement.",
       "Demander conseil à un professionnel de santé en cas de pathologie ou traitement en cours."
@@ -5809,93 +6017,12 @@ CANONICAL_RECIPES.forEach(r => {
   RECIPES_BY_CATEGORY[r.category].push(r);
 });
 
-import {
-  HERBIER_RECIPES,
-  getHerbierRecipeByPath as getHerbierRawRecipeByPath,
-  HerbierRecipe
-} from './herbierRecipesRegistry';
-
-export function convertHerbierToCanonical(h: HerbierRecipe): CanonicalRecipe {
-  return {
-    id: h.id,
-    slug: h.slug,
-    canonicalUrl: h.canonicalUrl,
-    title: h.title,
-    category: h.category,
-    categorySlug: h.categorySlug,
-    categoryLabel: h.categoryLabel,
-    subcategory: h.subcategory,
-    summary: h.subtitle,
-    image: h.image,
-    imageAlt: h.imageAlt,
-    ingredientCount: h.ingredients.length,
-    ingredients: h.ingredients,
-    activeStepCount: h.instructions.length,
-    instructions: h.instructions,
-    extractionPhaseCount: h.sachetB ? 2 : 1,
-    temperatures: `${h.tempSachetA}${h.sachetB ? ` / ${h.tempSachetB}` : ''}`,
-    machineTimeMinutes: h.machineTimeMinutes,
-    activeTimeMinutes: h.prepTimeMinutes,
-    totalTimeMinutes: h.totalTimeMinutes,
-    filtrationRequired: true,
-    assemblyRequired: !!h.sachetB,
-    conservationRequirement: h.shelfLife,
-    allergensOrPrecautions: h.precautions,
-    materialsNeeded: ['Extracteur BloomLab® Inox 304', 'Panier d’infusion micrométrique', 'Flacon en verre ambré stérile'],
-    difficultyCalculatedScore: h.difficultyLevel * 20,
-    difficultyFinalScore: h.difficultyLevel * 20,
-    difficultyLevel: h.difficultyLevel,
-    difficultyLabel: h.difficultyLabel,
-    difficultyReason: `Formulation ${h.categoryLabel} au standard BloomLab® — Séquençage précis des solvants et thermorégulation active.`,
-    difficultyConfidence: 'high',
-    breakdown: {
-      active_steps: 12,
-      ingredients: 14,
-      extraction_phases: 15,
-      thermal_precision: 18,
-      preparation_precision: 14,
-      filtration_assembly: 12,
-      user_attention: 10,
-      conservation: 15,
-      safety_handling: 10
-    },
-    dosageOrUsage: `${h.yieldMl} ml — ${h.observationsExpected.slice(0, 80)}...`,
-    contraindications: h.contraindications,
-    bloomNote: h.traditionalWisdom,
-    datePublished: h.datePublished,
-    dateModified: h.dateModified,
-    schemaType: h.schemaType,
-    isPublic: true,
-    status: 'publiée',
-    heritage: h.heritage,
-    doctrinaSignaturae: h.doctrinaSignaturae,
-    molecularSignature: h.molecularSignature,
-    terrains: h.terrains,
-    axes: h.axes,
-    sachetA: h.sachetA,
-    sachetB: h.sachetB,
-    batchNumber: h.batchNumber,
-    batchPriority: h.batchPriority,
-    oldUrls: h.oldUrls
-  };
-}
-
 export function getRecipeByPath(reqPath: string): CanonicalRecipe | undefined {
   const clean = reqPath.endsWith('/') ? reqPath : reqPath + '/';
-  const foundCanonical = RECIPES_BY_URL[clean] || RECIPES_BY_URL[reqPath];
-  if (foundCanonical) return foundCanonical;
-
-  const foundHerbier = getHerbierRawRecipeByPath(clean) || getHerbierRawRecipeByPath(reqPath);
-  if (foundHerbier) {
-    return convertHerbierToCanonical(foundHerbier);
-  }
-  return undefined;
+  return RECIPES_BY_URL[clean] || RECIPES_BY_URL[reqPath];
 }
 
-export function getCategoryRecipes(category: 'culinaire' | 'cosmetique' | 'parcours-guide' | 'phytotherapie' | 'gastronomie'): CanonicalRecipe[] {
-  if (category === 'phytotherapie' || category === 'gastronomie') {
-    return HERBIER_RECIPES.filter(h => h.category === category).map(convertHerbierToCanonical);
-  }
+export function getCategoryRecipes(category: 'culinaire' | 'cosmetique' | 'parcours-guide'): CanonicalRecipe[] {
   return RECIPES_BY_CATEGORY[category] || [];
 }
 
@@ -5931,28 +6058,6 @@ export const CATEGORY_METADATA = {
     metaDescription: 'Ateliers et séquences d\'apprentissage technique pour maîtriser l\'herboristerie moderne et l\'extraction du totum végétal à domicile avec BloomLab®.',
     intro: 'Séquences éducatives et ateliers techniques pour explorer en profondeur l\'ingénierie du végétal et les méthodes d\'extraction traditionnelles modernisées. Ces parcours d\'apprentissage vous guident pas à pas dans la manipulation des solvants multiples, la cinétique d\'agitation vortex et les protocoles de conservation. Vocation strictement éducative et technique : ces ateliers ne constituent aucun protocole médical ni traitement.',
     totalRecipes: RECIPES_BY_CATEGORY['parcours-guide'].length,
-    pageSize: 24
-  },
-  phytotherapie: {
-    id: 'phytotherapie' as const,
-    slug: 'phytotherapie' as const,
-    url: '/recettes/phytotherapie/',
-    title: 'Recettes de phytothérapie & extraction de précision | Bloom',
-    h1: 'Recettes de phytothérapie de précision',
-    metaDescription: 'Protocoles de phytothérapie de précision : dual-extracts, infusions bioactives et synergies de terrain avec BloomLab®.',
-    intro: 'Explorez la phytothérapie intégrative et l\'extraction séquentielle du Totum végétal. Chaque protocole associe principes hydrosolubles et liposolubles pour accompagner le terrain sans brusquer les régulations physiologiques.',
-    totalRecipes: HERBIER_RECIPES.filter(h => h.category === 'phytotherapie').length,
-    pageSize: 24
-  },
-  gastronomie: {
-    id: 'gastronomie' as const,
-    slug: 'gastronomie' as const,
-    url: '/recettes/gastronomie/',
-    title: 'Recettes de gastronomie botanique | Bloom',
-    h1: 'Recettes de gastronomie botanique',
-    metaDescription: 'Haute gastronomie botanique : huiles aromatisées, beurres infusés et extraits végétaux culinaires.',
-    intro: 'L\'alchimie des solvants nobles au service du goût : découvrez nos créations botaniques pour enrichir votre cuisine d\'arômes purs et de polyphénols préservés.',
-    totalRecipes: HERBIER_RECIPES.filter(h => h.category === 'gastronomie').length,
     pageSize: 24
   }
 };

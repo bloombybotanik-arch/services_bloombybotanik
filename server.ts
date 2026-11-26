@@ -476,14 +476,22 @@ CROSS-SELLING SYSTÉMIQUE :
 À chaque recommandation de plantes, suggère d'associer le "Duo Argiles Bloom — Purification Systémique Zeolithe-Bentonite" (mélange Zéolithe/Bentonite 70:30).
 Argument : "Pour que votre organisme assimile parfaitement les extraits de ces plantes de haute qualité, il est primordial de détoxifier vos émonctoires au préalable grâce à la chélation minérale de notre Duo Argiles Bloom."
 
-MODULE D'EXPERTISE EN EXTRACTION (CALCULATEUR) :
-Si l'utilisateur interroge sur une extraction ou un dosage :
-1. Demande-lui systématiquement le volume final souhaité (en ml).
-2. Une fois le volume reçu, calcule et affiche les dosages précis selon ces règles (base alcool 96°) :
-   - Cible 45° (Fleurs, mucilages, parties tendres) : Alcool 96° = Volume * 0.469 | Eau distillée = Volume * 0.531
-   - Cible 55° (Racines, écorces, plantes aromatiques) : Alcool 96° = Volume * 0.573 | Eau distillée = Volume * 0.427
-   - Cible 60° (Résines, graines dures, huiles essentielles) : Alcool 96° = Volume * 0.625 | Eau distillée = Volume * 0.375
-3. Précise toujours que ces calculs sont optimisés pour l'infuseur BloomLab afin de préserver le Totum.
+MODULE D'EXPERTISE EN EXTRACTION (CALCULATEUR ET RÉGLAGES BLOOMLAB®) :
+Si l'utilisateur interroge sur une extraction, un calcul de degré alcoolique ou un réglage machine :
+1. Demande-lui systématiquement :
+   - Le volume final souhaité (en ml),
+   - Le titre de son alcool de départ (par défaut 96° s'il ne le précise pas ; accepte aussi 95°, 90°, 75° / 150 US proof, 70°),
+   - La plante visée (ou le degré cible souhaité parmi : 45° fleurs/feuilles tendres, 55° sommités aromatiques, 60° plantes semi-denses, 70° racines denses/écorces/champignons/alcaloïdes, 75° exemple fort du manuel, 90–96° résines pures sans eau).
+2. Une fois ces valeurs reçues, calcule et affiche les dosages exacts selon la formule linéaire :
+   - V_alcool (ml) = V_final × (C_cible / C_depart)
+   - V_eau (ml) = V_final − V_alcool
+   - Rappel US Proof (pour les utilisateurs anglophones du manuel) : Proof = 2 × % vol. (ex. 150 proof = 75°).
+   - Précise toujours que ce calcul linéaire sert de repère pratique (contraction de volume éthanol/eau d'environ 2 à 3 % en mélange réel ; compléter si besoin jusqu'au volume final).
+3. Rappelle fidèlement les réglages et précautions du manuel BloomLab® :
+   - 6 programmes prédéfinis : Butter (71 °C / 2h), Oil (71 °C / 1h), Tincture (160 °F / 71 °C et 4h par défaut), Sans chauffe (1h par défaut, 30 min à 12h réglable sans chauffe), Décarboxylation (121 °C / 1h30 par défaut, 71–121 °C et 30 min–4h + 15 min de refroidissement), Nettoyage (5 min fixe, non réglable).
+   - Mode manuel TEMP/TIME (+ / -) disponible de 0 °C à 121 °C et 30 min à 12h sur les fonctions réglables (sans chauffe ni nettoyage) : les valeurs de Tincture (71 °C / 4h) sont donc un point de départ modifiable librement selon les besoins de la plante ; la minuterie démarre une fois la température cible atteinte.
+   - RÈGLE DE SÉCURITÉ ALCOOL (données INRS & manuel) : le risque d'inflammation ne vient pas de l'ébullition (78 °C). L'éthanol pur a un point d'éclair de 13 °C (21 °C à 70 %, 49 °C à 10 %) : à 50 °C comme à 71 °C, les vapeurs sont déjà inflammables et la pression de vapeur augmente avec la chaleur. Travailler impérativement dans une pièce très bien ventilée, sans aucune flamme, cigarette ou source d'ignition, couvercle verrouillé, en respectant les repères MIN et MAX (et sans inventer de seuil arbitraire « max 60 °C » non présent dans les documents fabricant). L'exemple chauffé du manuel « Tincture » emploie un alcool ≥ 75 % vol. (150 proof) avec la consigne « Ne pas ajouter d'eau ni de lécithine » : pour une dilution hydro-alcoolique contenant de l'eau (45°–70°), utiliser le programme « Sans chauffe » ou un bocal hermétique. En extraction A/B, toujours vider, nettoyer et sécher intégralement la cuve avant la Phase B.
+   - RÈGLE RÉGLEMENTAIRE (Règlement CE n° 1924/2006) : ne formuler aucune allégation de santé non autorisée sur les plantes ou compléments (éviter « contribue au confort articulaire », « favorise la détente », « soutient la digestion », etc.) ; s'en tenir à l'usage botanique/traditionnel documenté et aux fiches de l'app.
 
 SÉCURITÉ ABSOLUE (PLANTES TOXIQUES) :
 Il est FORMELLEMENT INTERDIT de suggérer, vendre ou fournir un protocole pour des plantes toxiques ou dangereuses.
@@ -1450,7 +1458,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
   },
   "/guide-solvants/": {
     title: "Guide des Solvants d'Extraction : Eau, Huile, Alcool | Bloom by BotaniK",
-    description: "Eau, huile végétale, alcool, glycérine : choisissez le solvant adapté avec Bloom by BotaniK et BloomLab® pour libérer le Totum Végétal.",
+    description: "Eau, huile végétale, glycérine sur BloomLab®, et repères documentaires sur les teintures alcooliques en bocal à froid en herboristerie.",
     image1200: "/images/og/extraction-botanique-totum-solvants-1200x630.jpg",
     image1080: "/images/og/extraction-botanique-totum-solvants-1080x1080.jpg",
     alt: "Guide des solvants d'extraction botanique : eau, huile, alcool et glycérine",
@@ -1552,7 +1560,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     description: "Approche systémique du terrain digestif et de la motilité intestinale par extraction botanique de précision et séquençage A/B.",
     image1200: "/images/og/produit-kit-digestion-1200x630.jpg",
     image1080: "/images/og/produit-kit-digestion-1080x1080.jpg",
-    alt: "Protocole SIBO et confort digestif Bloom by BotaniK",
+    alt: "Protocole botanique SIBO et microbiome Bloom by BotaniK",
     type: "article",
     isPaywalled: true
   },
@@ -1738,7 +1746,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
   },
   "/teinture-mere/": {
     title: "Teinture-Mère Maison | Guide Extraits Hydroalcooliques",
-    description: "Fabrication de teintures mères maison : ratios 1:5, choix des titres alcooliques et extraction dynamique par vortex cinétique pour un concentré d'actifs.",
+    description: "Maîtrisez les teintures mères maison et degrés alcooliques (45° à 96°) avec les programmes Tincture et Sans chauffe de la BloomLab® ou en bocal, en toute sécurité.",
     image1200: "/images/og/teinture-mere-extraits-hydroalcooliques-1200x630.jpg",
     image1080: "/images/og/teinture-mere-extraits-hydroalcooliques-1080x1080.jpg",
     alt: "Guide de la teinture-mère et extraits hydroalcooliques de plantes médicinales",
@@ -1811,41 +1819,41 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
     sku: "KIT-SEVE"
   },
   "/boutique/kit-nuit/": {
-    title: "Kit Nuit Profonde | Sommeil & Plantes Bio | Bloom by BotaniK",
-    description: "Kit Nuit Profonde par Bloom by BotaniK : synergie de passiflore, mélisse et camomille matricaire bio calibrée pour l'extraction douce sur BloomLab®.",
+    title: "Kit Nuit Profonde | Rituel du Soir & Plantes Bio | Bloom by BotaniK",
+    description: "Kit Nuit Profonde par Bloom by BotaniK : synergie de valériane et passiflore bio calibrée pour l'extraction séquentielle sur BloomLab®.",
     image1200: "/images/og/produit-kit-nuit-1200x630.jpg",
     image1080: "/images/og/produit-kit-nuit-1080x1080.jpg",
-    alt: "Kit Nuit Profonde Bloom by BotaniK pour le sommeil et l'apaisement nerveux",
+    alt: "Kit Nuit Profonde Bloom by BotaniK — plantes aromatiques du soir",
     type: "product",
     price: "29.00",
     sku: "KIT-NUIT"
   },
   "/boutique/kit-digestion/": {
-    title: "Kit Feu Digestif | Confort & Plantes Bio | Bloom by BotaniK",
-    description: "Kit Feu Digestif Bloom by BotaniK : fenouil doux, menthe poivrée et gentiane bio calibrés pour une extraction botanique de précision.",
+    title: "Kit Équilibre Botanique | Aromates & Plantes Bio | Bloom by BotaniK",
+    description: "Kit Équilibre Botanique Bloom by BotaniK : brou de noix, gingembre, romarin et ginkgo calibrés pour une extraction botanique séquentielle.",
     image1200: "/images/og/produit-kit-digestion-1200x630.jpg",
     image1080: "/images/og/produit-kit-digestion-1080x1080.jpg",
-    alt: "Kit Feu Digestif Bloom by BotaniK pour le confort intestinal",
+    alt: "Kit Équilibre Botanique Bloom by BotaniK — synergie d'aromates et plantes bio",
     type: "product",
     price: "29.00",
     sku: "KIT-DIGESTION"
   },
   "/boutique/kit-articulaire/": {
-    title: "Kit Feu Articulaire | Mobilité & Plantes Bio | Bloom by BotaniK",
-    description: "Kit Feu Articulaire par Bloom by BotaniK : harpagophytum, reine-des-prés et cassis bio sélectionnés pour préserver le Totum végétal.",
+    title: "Kit Mouvement Libre | Résine & Plantes Bio | Bloom by BotaniK",
+    description: "Kit Mouvement Libre par Bloom by BotaniK : reine-des-prés, gingembre et résine de boswellia sélectionnés pour l'extraction séquentielle.",
     image1200: "/images/og/produit-kit-articulaire-1200x630.jpg",
     image1080: "/images/og/produit-kit-articulaire-1080x1080.jpg",
-    alt: "Kit Feu Articulaire Bloom by BotaniK pour la souplesse articulaire",
+    alt: "Kit Mouvement Libre Bloom by BotaniK — synergie reine-des-prés et boswellia",
     type: "product",
     price: "32.00",
     sku: "KIT-ARTICULAIRE"
   },
   "/boutique/kit-hiver/": {
-    title: "Kit Bouclier Hivernal | Plantes Bio | Bloom by BotaniK",
-    description: "Kit Bouclier Hivernal Bloom by BotaniK : échinacée pourpre, thym à linalol et sureau noir bio pour des infusions riches en polyphénols.",
+    title: "Kit Bouclier Hiver | Botanique de Saison | Bloom by BotaniK",
+    description: "Kit Bouclier Hiver Bloom by BotaniK : gingembre, girofle, sureau noir, thym et romarin pour des préparations aromatiques de saison.",
     image1200: "/images/og/produit-kit-hiver-1200x630.jpg",
     image1080: "/images/og/produit-kit-hiver-1080x1080.jpg",
-    alt: "Kit Bouclier Hivernal Bloom by BotaniK pour les défenses saisonnières",
+    alt: "Kit Bouclier Hiver Bloom by BotaniK — épices et aromates de saison",
     type: "product",
     price: "32.00",
     sku: "KIT-HIVER"
@@ -1886,7 +1894,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
   },
   "/articles/comment-fabriquer-huiles-infusees-teintures-maison/": {
     title: "Huiles Infusées & Teintures | Guide Fabrication Maison",
-    description: "Comment réussir vos huiles infusées, macérats huileux et teintures mères à la maison ? Solvants, températures de 45°C, ratios et extraction fermée expliqués pas à pas.",
+    description: "Huiles infusées et macérats glycérinés à basse température sur BloomLab®, et repères documentaires sur les teintures mères en bocal à froid.",
     image1200: "/images/og/article-fabriquer-huiles-infusees-teintures-1200x630.jpg",
     image1080: "/images/og/article-fabriquer-huiles-infusees-teintures-1080x1080.jpg",
     alt: "Fabrication domestique d huiles infusées et de teintures",
@@ -1926,7 +1934,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
   },
   "/blog/guide-solvants-naturels-huile-eau-alcool-vinaigre/": {
     title: "Guide Solvants Naturels | Journal Bloom",
-    description: "Eau, alcool de grain, huiles végétales et vinaigre de cidre : quel solvant choisir pour extraire les principes actifs de vos plantes.",
+    description: "Eau, alcool de grain, huiles végétales et vinaigre de cidre : quel solvant choisir en herboristerie selon vos préparations et l'usage documenté du BloomLab®.",
     image1200: "/images/og/huiles-infusees-maceration-plantes-1200x630.jpg",
     image1080: "/images/og/huiles-infusees-maceration-plantes-1080x1080.jpg",
     alt: "Guide des solvants naturels en phytothérapie",
@@ -1978,7 +1986,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
   },
   "/remedes-naturels/": {
     title: "Remèdes Naturels Maison | Guide d'Herboristerie Moderne",
-    description: "Guide structuré pour concevoir vos préparations végétales familiales : tisanes concentrées, sirops botaniques, baumes et extraits hydroalcooliques.",
+    description: "Guide structuré pour concevoir vos préparations végétales familiales : tisanes concentrées, sirops botaniques, baumes, macérats huileux et glycérinés.",
     image1200: "/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg",
     image1080: "/images/og/articles-savoirs-herboristerie-botanique-1080x1080.jpg",
     alt: "Guide pratique des remèdes naturels maison Bloom",
@@ -2209,7 +2217,7 @@ const SERVER_SEO_ROUTES: Record<string, ServerSEORoute> = {
   },
   "/maceration-plantes/": {
     title: "Macération de Plantes à Chaud & Froid : Protocoles Maison | Bloom",
-    description: "Maîtrisez la macération végétale (huileuse, alcoolique, glycérinée) à domicile sans oxydation grâce à l'extraction en cuve close.",
+    description: "Maîtrisez la macération végétale (huileuse et glycérinée en cuve inox 304 BloomLab®, ou macération alcoolique à froid en bocal).",
     image1200: "/images/og/huiles-infusees-maceration-plantes-1200x630.jpg",
     image1080: "/images/og/huiles-infusees-maceration-plantes-1080x1080.jpg",
     alt: "Macération de plantes médicinales maison Bloom",
@@ -3018,7 +3026,7 @@ function injectServerSEO(html: string, reqPath: string): string {
             "name": "Quels solvants peut-on employer dans la cuve d'extraction ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Dans la cuve chauffante BloomLab®, utilisez uniquement des solvants non inflammables : eau pure osmosée ou minérale, huiles végétales biologiques de première pression à froid (jojoba, sésame, olive, argan...), glycérine végétale ou beurres végétaux. Par mesure de sécurité, les extractions à l'alcool chauffé à l'intérieur de la machine sont suspendues (les teintures alcooliques traditionnelles relèvent exclusivement de la macération à froid hors appareil)."
+              "text": "Dans la cuve en acier inoxydable de la BloomLab®, vous pouvez employer de l'eau filtrée, des huiles végétales vierges, du beurre, de la glycérine végétale bio ainsi que de l'alcool alimentaire dans le respect strict du manuel : le programme prédéfini Tincture (71 °C / 160 °F et 4 h par défaut, réglable manuellement en température et durée selon la plante) s'applique aux préparations alcooliques (exemple du manuel ≥ 75 % vol. / 150 proof sans ajout d'eau ni de lécithine). Les vapeurs d'éthanol étant déjà inflammables à basse température (point d'éclair 13 °C pur, 21 °C à 70 %), travaillez uniquement en pièce bien ventilée, loin de toute flamme, couvercle verrouillé et entre MIN et MAX ; pour les dilutions hydro-alcooliques à l'eau (45° à 70°), privilégiez le programme Sans chauffe ou le bocal."
             }
           },
           {

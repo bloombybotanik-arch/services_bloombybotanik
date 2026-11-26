@@ -53,7 +53,7 @@ export class ErrorBoundary extends Component<Props, State> {
             </h1>
 
             <p className="text-sm md:text-base text-white/70 mb-8 leading-relaxed">
-              L'affichage a été temporairement suspendu suite à un événement imprévu. Vous pouvez relancer la session ou revenir à l'accueil en toute sécurité.
+              L'affichage a été temporairement interrompu suite à un événement imprévu. Vous pouvez relancer la session ou revenir à l'accueil en toute sécurité.
             </p>
 
             {/* Emergency Actions */}

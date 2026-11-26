@@ -176,7 +176,7 @@ export const WOMEN_ACADEMY_COPY: Record<'fr' | 'en' | 'de', WomenAcademyCopy> = 
         number: "Module 04",
         title: "Ménopause & Passage vers la Sagesse",
         subtitle: "Péréménopause, neurochimie & Femme Sage",
-        keyFocus: "Sauge sans thuyone 65°C, Shatavari, Maca & Rhodiola",
+        keyFocus: "Sauge dosée (limite thuyone EMA), Shatavari, Maca & Rhodiola",
       },
     ],
 
@@ -346,9 +346,9 @@ export const WOMEN_ACADEMY_COPY: Record<'fr' | 'en' | 'de', WomenAcademyCopy> = 
         plant: "Sauge Officinale (Salvia officinalis)",
         phase: "Phase A uniquement",
         temp: "65–70 °C",
-        solvent: "Eau pure (sans alcool)",
+        solvent: "Eau pure (dosage maîtrisé)",
         target: "Bouffées de chaleur et transpiration nocturne (phytoestrogènes doux et acide rosmarinique)",
-        vigilance: "L'extraction aqueuse contrôlée évite la thuyone lipophile concentrée dans l'huile essentielle. Déconseillée en cas d'antécédent de cancer hormonodépendant ou d'épilepsie.",
+        vigilance: "L'eau ne supprime pas la thuyone : environ 17,6 % de la thuyone passent dans 150 ml d'eau chaude (EMA). La quantité dépend de la sauge utilisée et peut dépasser la limite de 6 mg/jour ; usage oral limité à 2 semaines et à minimiser pendant la grossesse et chez l'enfant (déconseillée par l'EMA, ainsi qu'en cas d'antécédent hormonodépendant ou d'épilepsie).",
       },
       {
         plant: "Shatavari (Asparagus racemosus)",
@@ -383,9 +383,9 @@ export const WOMEN_ACADEMY_COPY: Record<'fr' | 'en' | 'de', WomenAcademyCopy> = 
         vigilance: "Prudence en cas d'hypertension sévère ou d'obstruction des voies biliaires.",
       },
     ],
-    m4TipTitle: "Conseil BloomLab · Comment extraire la Sauge sans thuyone ?",
+    m4TipTitle: "Conseil BloomLab · Sauge officinale, thuyone et maîtrise de la dose (EMA)",
     m4TipText:
-      "La Sauge officinale contient naturellement de la thuyone, un composé cétone lipophile neurotoxique à forte dose dans les huiles essentielles ou les macérats alcooliques forts. Avec la BloomLab en Phase A (eau filtrée pure, 65 à 70 °C, chambre close), vous extrayez les flavonoïdes et l'acide rosmarinique hydrosolubles qui apaisent le thermostat hypothalamique tout en laissant la fraction lipophile thuyonique à l'état de traces négligeables.",
+      "L'eau ne supprime pas la thuyone : selon l'EMA (Agence Européenne des Médicaments), environ 17,6 % de la thuyone passent dans 150 ml d'eau chaude. La quantité exacte dépend de la sauge utilisée et peut dépasser la limite de 6 mg/jour. Par mesure de sécurité, l'usage oral est limité à 2 semaines maximum et l'exposition doit être minimisée pendant la grossesse et chez l'enfant (non recommandée par l'EMA ; éviter également les huiles essentielles concentrées).",
     m4SafetyText:
       "Précaution essentielle : toute plante à action phyto-oestrogénique ou modulatrice endocrinienne (Sauge, Shatavari) nécessite l'avis préalable de votre médecin en cas d'antécédent personnel ou familial de cancer hormonodépendant ou de traitement hormonal substitutif.",
     m4CtaProtocols: "Découvrir le Reset Homéostasique & Dosages",
@@ -396,7 +396,7 @@ export const WOMEN_ACADEMY_COPY: Record<'fr' | 'en' | 'de', WomenAcademyCopy> = 
     concP1:
       "Sa biologie est une symphonie cyclique : elle renouvelle le sang chaque mois, orchestre une tolérance immunitaire et une plasticité cérébrale hors normes pour donner la vie, traverse l'hiver hormonal du post-partum puis transmute son énergie vers la sagesse de la ménopause. En croisant le Manuscrit de Voynich, les voix de Trotula et d'Hildegarde de Bingen avec l'endocrinologie contemporaine, chaque étape cesse d'être une faiblesse pour redevenir une invitation à s'accorder sur le rythme du vivant.",
     concP2:
-      "La BloomLab intervient ici comme un traducteur de précision : en maîtrisant au demi-degré près l'extraction des crocines du safran à 40 °C, des tanins de l'alchémille à 70 °C ou de l'acide rosmarinique de la sauge à 65 °C sans thuyone, elle met entre vos mains un savoir botanique clair, sûr et reproductible.",
+      "La BloomLab intervient ici comme un traducteur de précision : en maîtrisant l'extraction des crocines du safran à 40 °C, des tanins de l'alchémille à 70 °C ou des feuilles de sauge correctement dosées à 65 °C dans le respect des repères EMA, elle met entre vos mains un savoir botanique clair, mesuré et reproductible.",
     concCtaMachine: "Découvrir l'extracteur BloomLab®",
     concCtaProtocols: "Parcourir les Protocoles Systémiques",
     concCtaAlma: "Échanger avec ALMA",
@@ -454,7 +454,7 @@ export const WOMEN_ACADEMY_COPY: Record<'fr' | 'en' | 'de', WomenAcademyCopy> = 
         number: "Module 04",
         title: "Menopause & Passage to Wisdom",
         subtitle: "Perimenopause, neurochemistry & Wise Woman",
-        keyFocus: "Thujone-free Sage 65°C, Shatavari, Maca & Rhodiola",
+        keyFocus: "Dose-controlled Sage (EMA thujone limit), Shatavari, Maca & Rhodiola",
       },
     ],
     m1Tag: "Module 01 · Forgotten Lore & Ethnobotany",
@@ -610,9 +610,9 @@ export const WOMEN_ACADEMY_COPY: Record<'fr' | 'en' | 'de', WomenAcademyCopy> = 
         plant: "Garden Sage (Salvia officinalis)",
         phase: "Phase A only",
         temp: "65–70 °C",
-        solvent: "Pure water (alcohol-free)",
+        solvent: "Pure water (strictly dosed)",
         target: "Hot flashes & night sweats (rosmarinic acid & mild phytoestrogens)",
-        vigilance: "Aqueous extraction leaves lipophilic thujone behind. Avoid in hormone-dependent cancer history.",
+        vigilance: "Water does not eliminate thujone: approximately 17.6% of thujone passes into 150 ml of hot water (EMA). The actual amount depends on the sage used and can exceed the 6 mg/day limit; oral use is limited to 2 weeks and must be minimized during pregnancy and in children (not recommended per EMA monograph, nor in hormone-dependent history or epilepsy).",
       },
       {
         plant: "Shatavari",
@@ -647,9 +647,9 @@ export const WOMEN_ACADEMY_COPY: Record<'fr' | 'en' | 'de', WomenAcademyCopy> = 
         vigilance: "Caution in biliary obstruction or severe hypertension.",
       },
     ],
-    m4TipTitle: "BloomLab Tip · Thujone-Free Sage Extraction at 65–70 °C",
+    m4TipTitle: "BloomLab Tip · Garden Sage, Thujone & Dose Control (EMA)",
     m4TipText:
-      "Unlike essential oils or high-proof tinctures, Phase A pure water extraction at 65–70 °C captures soothing polyphenols and rosmarinic acid while avoiding concentrated lipophilic thujone.",
+      "Water does not eliminate thujone: per the EMA (European Medicines Agency), approximately 17.6% of plant thujone passes into 150 ml of hot water. Actual intake depends on the sage used and may exceed the 6 mg/day limit; oral use is therefore limited to 2 weeks maximum, and exposure must be minimized during pregnancy and in children (not recommended per EMA monograph; avoid concentrated essential oils).",
     m4SafetyText:
       "Always consult your doctor before using phytoestrogenic plants (Sage, Shatavari) if you have a personal or family history of hormone-sensitive conditions.",
     m4CtaProtocols: "Explore Homeostatic Reset Protocols",
@@ -659,7 +659,7 @@ export const WOMEN_ACADEMY_COPY: Record<'fr' | 'en' | 'de', WomenAcademyCopy> = 
     concP1:
       "From monthly renewal and pregnancy neuroplasticity to postpartum winter and menopausal wisdom, female physiology is an ever-evolving dialogue with light and plants.",
     concP2:
-      "BloomLab translates these herbal monographs into reproducible temperature-controlled infusions—40 °C saffron, 65 °C thujone-free sage, 70 °C lady's mantle.",
+      "BloomLab translates these herbal monographs into reproducible temperature-controlled infusions—40 °C saffron, 65 °C dose-controlled sage (within EMA thujone limits), 70 °C lady's mantle.",
     concCtaMachine: "Discover BloomLab®",
     concCtaProtocols: "Browse Systemic Protocols",
     concCtaAlma: "Chat with ALMA",
@@ -717,7 +717,7 @@ export const WOMEN_ACADEMY_COPY: Record<'fr' | 'en' | 'de', WomenAcademyCopy> = 
         number: "Modul 04",
         title: "Menopause & Wandel zur Weisheit",
         subtitle: "Perimenopause, Neurochemie & Weise Frau",
-        keyFocus: "Thujonfreier Salbei 65°C, Shatavari & Maca",
+        keyFocus: "Dosierter Salbei (EMA-Thujonlimit), Shatavari & Maca",
       },
     ],
     m1Tag: "Modul 01 · Vergessenes Wissen & Ethnobotanik",
@@ -873,9 +873,9 @@ export const WOMEN_ACADEMY_COPY: Record<'fr' | 'en' | 'de', WomenAcademyCopy> = 
         plant: "Salbei (Salvia officinalis)",
         phase: "Nur Phase A",
         temp: "65–70 °C",
-        solvent: "Reines Wasser (alkoholfrei)",
+        solvent: "Reines Wasser (streng dosiert)",
         target: "Hitzewallungen & Nachtschweiß",
-        vigilance: "Wässrige Extraktion vermeidet lipophiles Thujon. Nicht bei hormonabhängigen Tumoren.",
+        vigilance: "Wasser entfernt Thujon nicht: Etwa 17,6 % des Thujons gehen in 150 ml heißes Wasser über (EMA). Die Menge hängt vom verwendeten Salbei ab und kann das Limit von 6 mg/Tag überschreiten; orale Anwendung auf 2 Wochen begrenzen und in Schwangerschaft sowie bei Kindern minimieren (laut EMA nicht empfohlen; nicht bei hormonabhängigen Tumoren).",
       },
       {
         plant: "Shatavari",
@@ -910,9 +910,9 @@ export const WOMEN_ACADEMY_COPY: Record<'fr' | 'en' | 'de', WomenAcademyCopy> = 
         vigilance: "Vorsicht bei Gallengangsproblemen.",
       },
     ],
-    m4TipTitle: "BloomLab-Tipp · Salbei thujonfrei bei 65–70 °C extrahieren",
+    m4TipTitle: "BloomLab-Tipp · Salbei, Thujon und Dosierungssicherheit (EMA)",
     m4TipText:
-      "In Phase A mit reinem Wasser bei 65–70 °C werden schweißregulierende Polyphenole gelöst, während lipophiles Thujon praktisch nicht ins Wasser übergeht.",
+      "Wasser entfernt Thujon nicht: Laut EMA gehen rund 17,6 % des Thujons in 150 ml heißes Wasser über. Die tatsächliche Menge hängt vom verwendeten Salbei ab und kann das Tageslimit von 6 mg/Tag überschreiten. Die orale Anwendung ist auf maximal 2 Wochen zu begrenzen und die Exposition in der Schwangerschaft sowie bei Kindern zu minimieren (laut EMA-Monografie nicht empfohlen; konzentrierte ätherische Öle meiden).",
     m4SafetyText:
       "Bei hormonabhängigen Vorerkrankungen (Brust, Gebärmutter) vor Anwendung phytoöstrogener Pflanzen stets ärztlichen Rat einholen.",
     m4CtaProtocols: "Homöostatischen Reset entdecken",
@@ -922,7 +922,7 @@ export const WOMEN_ACADEMY_COPY: Record<'fr' | 'en' | 'de', WomenAcademyCopy> = 
     concP1:
       "Von der monatlichen Erneuerung über Schwangerschaft und Wochenbett bis zur Weisheit der Menopause bleibt die weibliche Biologie ein lebendiger Zyklus.",
     concP2:
-      "BloomLab übersetzt überliefertes Wissen durch gradgenaue Extraktion (40 °C Safran, 65 °C thujonfreier Salbei, 70 °C Frauenmantel) in eine sichere Alltagspraxis.",
+      "BloomLab übersetzt überliefertes Wissen durch gradgenaue Extraktion (40 °C Safran, 65 °C streng dosierter Salbei gemäß EMA, 70 °C Frauenmantel) in eine reproduzierbare Alltagspraxis.",
     concCtaMachine: "BloomLab® entdecken",
     concCtaProtocols: "Systemische Protokolle",
     concCtaAlma: "Mit ALMA sprechen",

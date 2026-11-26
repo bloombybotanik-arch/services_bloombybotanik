@@ -100,9 +100,9 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
         "Welches Lösungsmittel soll ich wählen: Wasser, Pflanzenöl oder Alkohol?"
       ),
       a: tr(
-        "L'eau extrait les composés hydrosolubles (mucilages, tanins, flavonoïdes polaires). L'huile végétale capte les actifs liposolubles (caroténoïdes, phytostérols, composés aromatiques). La glycérine végétale offre une alternative sans alcool pour extraire de nombreux polyphénols. L'usage d'alcool chauffé en cuve BloomLab® est actuellement suspendu.",
-        "Water extracts water-soluble compounds (mucilage, tannins, polar flavonoids). Vegetable oil captures fat-soluble actives (carotenoids, phytosterols, aromatic compounds). Vegetable glycerin offers an alcohol-free carrier for polyphenols. Heated alcohol extraction inside BloomLab® is currently suspended.",
-        "Wasser extrahiert wasserlösliche Stoffe (Schleimstoffe, Gerbstoffe, polare Flavonoide). Pflanzenöl bindet fettlösliche Wirkstoffe (Carotinoide, Phytosterole, Aromastoffe). Pflanzenglycerin bietet eine alkoholfreie Alternative für Polyphenole. Erhitzte Alkoholextraktionen in der BloomLab® sind derzeit ausgesetzt."
+        "L'eau extrait les composés hydrosolubles (mucilages, tanins, flavonoïdes polaires). L'huile végétale capte les actifs liposolubles (caroténoïdes, phytostérols, composés aromatiques). L'alcool alimentaire extrait les alcaloïdes, résines et polyphénols pour des teintures mères et extraits hydroalcooliques en cuve inox 304, tandis que la glycérine végétale offre une alternative douce sans éthanol.",
+        "Water extracts water-soluble compounds (mucilage, tannins, polar flavonoids). Vegetable oil captures fat-soluble actives (carotenoids, phytosterols, aromatic compounds). Food-grade alcohol extracts alkaloids, resins, and polyphenols for tinctures and hydroalcoholic extracts in the 304 stainless-steel chamber, while vegetable glycerin offers a gentle ethanol-free alternative.",
+        "Wasser extrahiert wasserlösliche Stoffe (Schleimstoffe, Gerbstoffe, polare Flavonoide). Pflanzenöl bindet fettlösliche Wirkstoffe (Carotinoide, Phytosterole, Aromastoffe). Ansatzalkohol extrahiert Alkaloide, Harze und Polyphenole für Tinkturen und hydroalkoholische Auszüge im 304-Edelstahlbehälter, während Pflanzenglycerin eine alkoholfreie Alternative bietet."
       )
     },
     {
@@ -176,13 +176,13 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
       limit: tr('Laisse de côté les polysaccharides et minéraux hydrosolubles', 'Leaves behind water-soluble polysaccharides and minerals', 'Erfasst keine wasserlöslichen Polysaccharide und Mineralien')
     },
     {
-      name: tr('Alcool alimentaire (hors BloomLab® chauffé)', 'Food-Grade Alcohol (outside heated BloomLab®)', 'Ansatzalkohol (außerhalb erhitzter BloomLab®)'),
+      name: tr('Alcool alimentaire (Teintures mères)', 'Food-Grade Alcohol (Mother Tinctures)', 'Ansatzalkohol (Urtinkturen)'),
       polarity: tr('Amphiphile (Bipolaire)', 'Amphiphilic (Dual polarity)', 'Amphiphil (Bipolar)'),
-      affinity: tr('Hydro-alcoolique (macération à froid hors appareil)', 'Hydroalcoholic (ambient maceration outside appliance)', 'Hydroalkoholisch (Kaltmazeration außerhalb des Geräts)'),
+      affinity: tr('Hydro-alcoolique (45° à 96° selon plante)', 'Hydroalcoholic (45% to 96% ABV by plant)', 'Hydroalkoholisch (45–96 Vol.-% je nach Pflanze)'),
       targets: tr('Alcaloïdes, résines denses, lactones sesquiterpéniques, polyphénols', 'Alkaloids, dense resins, sesquiterpene lactones, polyphenols', 'Alkaloide, dichte Harze, Sesquiterpenlactone, Polyphenole'),
-      temperature: tr('Température ambiante uniquement (chauffage en cuve suspendu)', 'Ambient temperature only (heated vessel protocol suspended)', 'Nur Raumtemperatur (Erhitzung im Gerät ausgesetzt)'),
-      conservation: tr('Flacon ambré hermétique à l’abri de la lumière', 'Airtight amber glass away from light', 'Luftdicht im Braunglas lichtgeschützt'),
-      limit: tr('Ne pas chauffer en cuve électrique sans validation ATEX/fabricant ; vigilance selon le terrain individuel', 'Do not heat in electric vessels; attention to individual contraindications', 'Nicht in elektrischen Gefäßen erhitzen; individuelle Gegenanzeigen beachten')
+      temperature: tr('Programme Tincture (71 °C / 4 h par défaut, réglable) pour alcool ≥ 75 % vol. sans ajout d’eau ; mode Sans chauffe (30 min–12 h) ou bocal pour dilutions hydro-alcooliques', 'Tincture mode (71 °C / 4 h default, adjustable) for ≥ 75% ABV alcohol without water; No heating mode (30 min–12 h) or jar for water dilutions', 'Tincture-Programm (Standard 71 °C / 4 Std., einstellbar) für ≥ 75 Vol.-% ohne Wasser; Sans-chauffe-Modus (30 Min.–12 Std.) oder Glas für wässrige Verdünnungen'),
+      conservation: tr('Flacon ambré hermétique à l’abri de la lumière et de la chaleur', 'Airtight amber glass away from light & heat', 'Luftdicht im Braunglas licht- und wärmegeschützt'),
+      limit: tr('Solvant inflammable : pièce ventilée, aucune flamme, couvercle verrouillé, respect MIN/MAX et règle manuel « Ne pas ajouter d’eau » dans l’exemple chauffé ≥ 75 % ; contre-indiqué grossesse, enfants et sensibilité à l’alcool', 'Flammable solvent: ventilated room, no open flame, locked lid, MIN/MAX levels, and manual “Do not add water” rule in the heated ≥ 75% example; contraindicated in pregnancy, children, and alcohol sensitivity', 'Entzündliches Lösungsmittel: gut lüften, keine offene Flamme, verriegelter Deckel, MIN/MAX-Füllstand und Handbuchhinweis „Kein Wasser hinzufügen“ beim beheizten ≥ 75 %-Beispiel beachten; kontraindiziert in Schwangerschaft, für Kinder und bei Alkoholunverträglichkeit')
     },
     {
       name: tr('Glycérine végétale bio', 'Organic Vegetable Glycerin', 'Bio-Pflanzenglycerin'),
@@ -210,15 +210,15 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
     },
     {
       id: 'alcool',
-      name: tr("L'Alcool (Protocole chauffé en cuve suspendu)", 'Alcohol (Heated vessel protocol suspended)', 'Alkohol (Erhitzung im Gerät ausgesetzt)'),
-      polarityTag: tr('Affinité Hydro-alcoolique (Macération à froid hors appareil)', 'Hydroalcoholic Affinity (Cold maceration outside appliance)', 'Hydroalkoholische Affinität (Kaltmazeration außerhalb des Geräts)'),
-      tempRange: tr('Température ambiante uniquement (pas de chauffe BloomLab®)', 'Ambient temperature only (no BloomLab® heating)', 'Nur Raumtemperatur (keine BloomLab®-Erhitzung)'),
-      ratio: tr('1:5 à 1:3 en bocal verre hermétique hors appareil', '1:5 to 1:3 in sealed glass jar outside appliance', '1:5 bis 1:3 im dichten Glas außerhalb des Geräts'),
-      duration: tr('Macération passive à froid hors BloomLab®', 'Ambient passive maceration outside BloomLab®', 'Passive Kaltmazeration außerhalb der BloomLab®'),
-      agitation: tr('Agitation manuelle en bocal fermé à température ambiante', 'Manual shaking in closed glass jar at room temp', 'Manuelles Schütteln im geschlossenen Glas bei Raumtemperatur'),
-      shelfLife: tr('Flacon ambré à l’abri de la lumière et chaleur', 'Amber glass away from light and heat', 'Braunglas licht- und wärmegeschützt'),
-      idealFor: tr('Usage documentaire sur les résines et alcaloïdes — en attente de validation matériel pour tout cycle chauffé.', 'Documentary reference for resins and alkaloids — awaiting hardware validation for heated cycles.', 'Dokumentarische Referenz für Harze und Alkaloide — Gerätevalidierung für erhitzte Zyklen ausstehend.'),
-      notes: tr('⚠️ Mesure de sécurité Bloom : ne pas introduire ni chauffer de solvant inflammable dans une cuve électrique tant qu’une validation fabricant explicite n’est pas délivrée.', '⚠️ Bloom safety measure: do not introduce or heat flammable alcohol inside electric appliances without explicit manufacturer certification.', '⚠️ Bloom-Sicherheitsmaßnahme: Keinen entzündlichen Alkohol in elektrischen Geräten erhitzen.')
+      name: tr("L'Alcool (Teintures mères & Résines)", 'Alcohol (Mother Tinctures & Resins)', 'Alkohol (Urtinkturen & Harze)'),
+      polarityTag: tr('Affinité Hydro-alcoolique (45° à 96° selon plante)', 'Hydroalcoholic Affinity (45–96% ABV by plant)', 'Hydroalkoholische Affinität (45–96 % Vol.)'),
+      tempRange: tr('Sans chauffe (30 min–12 h) ou Tincture (défaut 71 °C / 160 °F – 4 h, TEMP/TIME réglables selon plante)', 'No heating (30 min–12h) or Tincture (default 71°C / 160°F – 4h, TEMP/TIME adjustable per plant)', 'Ohne Heizung (30 Min.–12 Std.) oder Tincture (Standard 71 °C / 160 °F – 4 Std., TEMP/TIME anpassbar)'),
+      ratio: tr('1:5 (plantes sèches) à 1:2 (plantes fraîches) ; titre adapté (45–60° feuilles/fleurs, 70° racines/écorces, 90–96° résines)', '1:5 (dry) to 1:2 (fresh); adapted strength (45–60% leaves/flowers, 70% roots/barks, 90–96% resins)', '1:5 (Trocken) bis 1:2 (Frisch); angepasst (45–60 % Blüten/Blätter, 70 % Wurzeln, 90–96 % Harze)'),
+      duration: tr('Réglable (30 min–12 h ; défaut Tincture 4 h) · 2–4 sem. en bocal', 'Adjustable (30 min–12h; Tincture default 4h) · 2–4 wks in jar', 'Einstellbar (30 Min.–12 Std.; Tincture-Standard 4 Std.) · 2–4 Wo. im Glas'),
+      agitation: tr('Brassage cyclique en cuve fermée BloomLab® ou agitation manuelle en bocal', 'Cyclic stirring inside sealed BloomLab® or manual shaking in glass jar', 'Zyklisches Rühren in geschlossener BloomLab® oder Schütteln im Glas'),
+      shelfLife: tr('Flacon ambré hermétique à l’abri de la lumière et de la chaleur (vérifier limpidité)', 'Airtight amber glass away from light & heat (inspect clarity)', 'Luftdicht im Braunglas licht- & wärmegeschützt'),
+      idealFor: tr('Teintures mères, extraits hydroalcooliques, résines, propolis, écorces denses et alcaloïdes.', 'Mother tinctures, hydroalcoholic extracts, resins, propolis, dense barks, and alkaloids.', 'Urtinkturen, hydroalkoholische Extrakte, Harze, Propolis, Rinden und Alkaloide.'),
+      notes: tr('Le manuel BloomLab® indique 160 °F (71 °C) et 4 h par défaut pour Tincture (avec temps et température modifiables) et un mode Sans chauffe (30 min–12 h). Attention INRS : le point d’éclair de l’éthanol est de 13 °C pur (21 °C à 70 % vol., 49 °C à 10 % vol.) : à 50 °C comme à 71 °C, les vapeurs sont déjà inflammables et leur pression de vapeur augmente avec la chaleur. Pièce ventilée, aucune flamme, couvercle verrouillé, MIN–MAX ; en présence d’eau ajoutée (45°–70°), privilégiez Sans chauffe ou le bocal fermé (l’exemple chauffé du manuel est ≥ 75 % vol. sans eau ni lécithine).', 'The BloomLab® manual specifies 160°F (71°C) and 4h as the Tincture default (adjustable time and temperature) plus No heating (30 min–12h). Safety note: ethanol flash points are 13°C pure, 21°C at 70%, and 49°C at 10%—at both 50°C and 71°C vapors are already flammable and vapor pressure rises with temperature. Use a well-ventilated room, zero open flames, locked lid, MIN–MAX bounds; prefer No heating or a jar when water is added (the heated manual example uses ≥ 75% ABV with no water or lecithin).', 'Das BloomLab®-Handbuch nennt 160 °F (71 °C) und 4 Std. als Standard für Tincture (Zeit/Temperatur anpassbar) sowie Ohne Heizung (30 Min.–12 Std.). Hinweis: Ethanol-Flammpunkte liegen bei 13 °C (rein), 21 °C (70 %) bzw. 49 °C (10 %) – sowohl bei 50 °C als auch bei 71 °C sind Dämpfe bereits entzündlich. Nur gut belüftet, ohne Flammen, Deckel verriegelt, MIN–MAX verwenden; bei Wasserzusatz (45–70 %) Ohne Heizung oder Glas bevorzugen.')
     },
     {
       id: 'glycerine',
@@ -263,7 +263,7 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
       name: tr("Huile d'Avocat", 'Avocado Oil', 'Avocadoöl'),
       profile: tr('Riche en insaponifiables et vitamines', 'Rich in unsaponifiables and vitamins', 'Reich an Unverseifbarem und Vitaminen'),
       temp: '45°C',
-      usage: tr('Très pénétrante, parfaite pour les soins corporels et articulaires.', 'Deeply penetrating, ideal for body and joint comfort massages.', 'Sehr gut einziehend, ideal für Körper- und Gelenkpflege.')
+      usage: tr('Très pénétrante, parfaite pour les soins cosmétiques corporels et massages cutanés.', 'Deeply penetrating, ideal for nourishing cosmetic body oils and skin massages.', 'Sehr gut einziehend, ideal für pflegende Körperöle und Hautmassagen.')
     },
     {
       name: tr('Huile de Macadamia', 'Macadamia Oil', 'Macadamiaöl'),
@@ -287,7 +287,7 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
       name: tr('Huile de Sésame', 'Sesame Oil', 'Sesamöl'),
       profile: tr('Très stable, antioxydante', 'Very stable and antioxidant', 'Sehr stabil und antioxidativ'),
       temp: '45°C',
-      usage: tr('Parfaite pour les massages traditionnels et la souplesse articulaire.', 'Traditional choice for warming massages and joint suppleness.', 'Perfekt für Massagen und geschmeidige Gelenke.')
+      usage: tr('Parfaite pour les huiles de massage traditionnelles et l’entretien cosmétique de la peau.', 'Traditional choice for warming external body oils and cosmetic skin care.', 'Perfekt für traditionelle Massageöle und geschmeidige Hautpflege.')
     },
     {
       name: tr('Huile de Moutarde', 'Mustard Seed Oil', 'Senfsamenöl'),
@@ -315,18 +315,18 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
     },
     {
       id: 'teinture-propolis',
-      name: tr('Préparation de Propolis (Protocole alcool chauffé suspendu)', 'Propolis Preparation (Heated alcohol protocol suspended)', 'Propolis-Zubereitung (Erhitzter Alkohol ausgesetzt)'),
-      objective: tr('Documenter les flavonoïdes et résines de la propolis — hors cycle alcool chauffé en cuve BloomLab®.', 'Document propolis flavonoids and resins — outside heated BloomLab® alcohol cycles.', 'Propolis-Flavonoide und -Harze dokumentieren — ohne erhitzten Alkohol in der BloomLab®.'),
-      description: tr('⚠️ Protocole suspendu sur BloomLab® : le chauffage d’éthanol en appareil électrique est suspendu dans l’attente d’une validation sécurité fabricant. Privilégier une macération huileuse/glycérinée douce ou une macération alcoolique à froid en bocal verre hors appareil.', '⚠️ Suspended on BloomLab®: heating ethanol in electric vessels is suspended pending manufacturer safety validation. Use ambient glass maceration outside the appliance or an alcohol-free carrier.', '⚠️ Auf BloomLab® ausgesetzt: Das Erhitzen von Ethanol im Gerät ist bis zur Herstellerfreigabe ausgesetzt.'),
-      phaseLabel: tr('Protocole Suspendu (Alcool chauffé)', 'Suspended Protocol (Heated alcohol)', 'Ausgesetztes Protokoll (Erhitzter Alkohol)'),
-      composition: tr('30 g de propolis brute finement fragmentée', '30 g finely crushed raw propolis', '30 g fein zerkleinertes Rohpropolis'),
-      solvent: tr('Macération en bocal verre à température ambiante hors appareil (ne pas chauffer d’alcool en cuve)', 'Ambient sealed glass jar maceration outside appliance (do not heat alcohol in tank)', 'Kaltmazeration im geschlossenen Glas außerhalb des Geräts (keinen Alkohol erhitzen)'),
-      temperature: tr('Ambiante (hors BloomLab®)', 'Ambient (outside BloomLab®)', 'Raumtemperatur (außerhalb BloomLab®)'),
-      duration: tr('Macération passive à froid hors appareil', 'Ambient cold maceration outside appliance', 'Kaltmazeration außerhalb des Geräts'),
-      administration: tr('Usage documentaire uniquement ; vérifier l’absence d’allergie aux produits de la ruche et demander conseil à un professionnel de santé.', 'Educational reference only; verify absence of bee-product allergy and consult a healthcare professional.', 'Nur zu Bildungszwecken; Bienenprodukt-Allergien ausschließen und ärztlichen Rat einholen.'),
-      dosage: tr('Selon avis professionnel (préparation à l’éthanol suspendue sur appareil BloomLab®).', 'Per professional guidance (heated ethanol protocol suspended on BloomLab®).', 'Nach fachlicher Empfehlung (erhitztes Ethanol-Protokoll in BloomLab® ausgesetzt).'),
-      precautions: tr('Ne jamais chauffer d’éthanol ou de solvant inflammable dans une cuve électrique.', 'Never heat ethanol or flammable solvents inside an electric appliance.', 'Niemals Ethanol oder entzündliche Lösungsmittel im elektrischen Gerät erhitzen.'),
-      contraindications: tr('Contre-indiqué chez les femmes enceintes ou allaitantes, chez les enfants, en cas d’allergie aux produits de la ruche, d’asthme allergique ou de contre-indication à l’alcool.', 'Contraindicated during pregnancy, breastfeeding, in children, and in case of bee-product allergy, allergic asthma, or alcohol restriction.', 'Nicht geeignet in Schwangerschaft, Stillzeit, für Kinder sowie bei Bienenprodukt-Allergie, allergischem Asthma oder Alkoholunverträglichkeit.')
+      name: tr('Teinture Mère de Propolis (Alcool 90°–96° & Option Sans Alcool)', 'Propolis Mother Tincture (90–96% Alcohol & Alcohol-Free Option)', 'Propolis-Urtinktur (90–96 % Alkohol & alkoholfreie Option)'),
+      objective: tr('Solubiliser efficacement les résines, cires et flavonoïdes lipophiles de la propolis brute grâce au titre alcoolique optimal (90°–96°).', 'Efficiently dissolve raw propolis resins, waxes, and lipophilic flavonoids using optimal high-proof alcohol (90–96% ABV).', 'Harze, Wachse und lipophile Flavonoide von Rohpropolis mit optimalem Hochprozent-Alkohol (90–96 %) lösen.'),
+      description: tr('La propolis étant riche en résines cireuses insolubles dans l’eau, l’éthanol à 90°–96° sans ajout d’eau évite la précipitation résineuse. En BloomLab®, le programme Tincture (défaut 71 °C / 160 °F – 4 h) est réglable en temps et température : vous pouvez l’ajuster à 40–45 °C / 2h30 pour ménager les composés volatils de la propolis, ou utiliser le mode Sans chauffe, en respectant les consignes anti-flamme (vapeurs déjà inflammables dès 13 °C pur). Option sans alcool : macérat huileux ou glycériné à 45 °C.', 'Because propolis is rich in water-insoluble waxy resins, anhydrous 90–96% ABV ethanol prevents resin precipitation. On BloomLab®, the Tincture preset (71°C / 160°F – 4h default) allows manual TEMP/TIME programming (e.g., 40–45°C / 2.5h to preserve volatile resin fractions) or No heating under strict flame-free rules (ethanol vapors are already flammable at 13°C pure). Alcohol-free option: oil or glycerin macerate at 45°C.', 'Da Propolis reich an wasserunlöslichen Wachsen und Harzen ist, verhindert hochprozentiger Alkohol (90–96 % ohne Wasser) das Ausfällen. Auf der BloomLab® lässt sich das Tincture-Programm (Standard 71 °C / 160 °F – 4 Std.) manuell anpassen (z. B. 40–45 °C / 2,5 Std.) oder Ohne Heizung wählen – stets unter strengen Flammschutzregeln (Dämpfe bereits ab 13 °C entzündlich). Alkoholfrei: Öl- oder Glycerin-Mazerat bei 45 °C.'),
+      phaseLabel: tr('Extraction Résineuse · Haute Preuve Sans Eau (90°–96°)', 'Resin Extraction · Waterless High-Proof (90–96% ABV)', 'Harzextraktion · Ohne Wasserzusatz (90–96 %)'),
+      composition: tr('30 g de propolis brute finement concassée (préalablement durcie au froid)', '30 g finely crushed raw propolis (chilled beforehand for easy crushing)', '30 g fein zerkleinertes, vorgekühltes Rohpropolis'),
+      solvent: tr('300 ml d’alcool éthylique bio alimentaire à 90°–96° (sans eau) — respecter le niveau MIN de cuve', '300 ml organic food-grade 90–96% ABV ethanol (no water added) — meet tank MIN level', '300 ml Bio-Speisealkohol 90–96 % (ohne Wasser) — MIN-Markierung einhalten'),
+      temperature: tr('40–45 °C (réglage manuel sur Tincture, défaut 71 °C) ou Sans chauffe (4h–12h)', '40–45°C (manual setting on Tincture, 71°C default) or No heating (4h–12h)', '40–45 °C (manuell in Tincture, Standard 71 °C) oder Ohne Heizung (4–12 Std.)'),
+      duration: tr('2h30 (ou défaut 4h) · 4h–12h en Sans chauffe (couvercle verrouillé)', '2h30 (or 4h default) · 4h–12h No heating (locked lid)', '2,5 Std. (oder Standard 4 Std.) · 4–12 Std. Ohne Heizung (Deckel verriegelt)'),
+      administration: tr('Usage adulte dilué sur support (miel, mie de pain ou eau tiède) ou application locale externe diluée après décantation et filtration.', 'Adult use diluted in honey/warm drink or diluted topical application after settling and fine filtration.', 'Für Erwachsene verdünnt auf Honig/Wasser oder äußerlich nach Dekantieren und Filtration.'),
+      dosage: tr('Usage général adulte : 10 à 20 gouttes diluées, 1 à 2 fois par jour ; cure ponctuelle de 10 à 15 jours (avis professionnel si besoin).', 'General adult use: 10–20 diluted drops, 1–2 times daily for 10–15 days (seek professional guidance if needed).', 'Allgemein für Erwachsene: 10–20 verdünnte Tropfen, 1–2× täglich über 10–15 Tage.'),
+      precautions: tr('Vapeurs hautement inflammables (point d’éclair éthanol pur : 13 °C ; la pression de vapeur augmente avec la chaleur) : aucune flamme nue (gaz/briquet) ni cigarette à proximité, pièce très bien ventilée, couvercle verrouillé pendant tout le cycle, ne pas ajouter d’eau ni de lécithine en chauffe, respecter les repères MIN–MAX. Laisser refroidir avant ouverture et filtrer finement pour séparer les cires.', 'Highly flammable vapors (pure ethanol flash point: 13°C; vapor pressure increases with heat): zero open flames or smoking nearby, well-ventilated room, locked lid throughout cycle, do not add water or lecithin when heating, obey MIN–MAX lines. Cool before opening and filter finely to separate waxes.', 'Leicht entzündliche Dämpfe (Flammpunkt rein 13 °C, Dampfdruck steigt mit Wärme): keine offene Flamme/Rauchen, gut belüften, Deckel verriegelt halten, kein Wasser/Lecithin bei Erhitzung zugeben, MIN–MAX beachten. Vor dem Öffnen abkühlen lassen und Wachse abfiltrieren.'),
+      contraindications: tr('Allergie aux produits de la ruche, asthme allergique ; contre-indiqué grossesse, allaitement, enfants et sensibilité/restriction à l’alcool (préférer alors l’option glycérine/huile).', 'Bee-product allergy, allergic asthma; contraindicated during pregnancy, breastfeeding, in children, or with alcohol restrictions (use glycerin/oil option instead).', 'Allergie gegen Bienenprodukte, allergisches Asthma; nicht in Schwangerschaft, Stillzeit, bei Kindern oder Alkoholunverträglichkeit.')
     },
     {
       id: 'macerat-calendula',
@@ -349,7 +349,7 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
     {
       organ: tr('Foie', 'Liver', 'Leber'),
       polarity: tr('Amphiphile', 'Amphiphilic', 'Amphiphil'),
-      idealSolvent: tr('Glycérine ou Eau / Huile (hors alcool chauffé)', 'Glycerin or Water / Oil (no heated alcohol)', 'Glycerin oder Wasser / Öl (kein erhitzter Alkohol)'),
+      idealSolvent: tr('Alcool 45°, Glycérine ou Eau / Huile', '45% Alcohol, Glycerin or Water / Oil', 'Alkohol 45 %, Glycerin oder Wasser / Öl'),
       plants: tr('Chardon-Marie, Pissenlit', 'Milk Thistle, Dandelion', 'Mariendistel, Löwenzahn')
     },
     {
@@ -384,8 +384,8 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
       plantCategory: tr('Résines, Écorces & Bourgeons cireux', 'Resins, Barks & Waxy Buds', 'Harze, Rinden & wachsartige Knospen'),
       examples: tr('Propolis, Encens (Boswellia), Cannelle, Bourgeon de Peuplier', 'Propolis, Frankincense (Boswellia), Cinnamon, Poplar Bud', 'Propolis, Weihrauch (Boswellia), Zimt, Pappelknospe'),
       dominantPolarity: tr('Lipophile / Amphiphile dense', 'Dense Lipophilic / Amphiphilic', 'Dicht lipophil / amphiphil'),
-      recommendedSolvent: tr('Huile chaude 48 °C en BloomLab® (alcool chauffé suspendu)', 'Warm Oil at 48 °C in BloomLab® (heated alcohol suspended)', 'Warmes Öl bei 48 °C in BloomLab® (erhitzter Alkohol ausgesetzt)'),
-      sequenceTip: tr('L’eau seule est inefficace : seule la phase B huileuse (ou une macération alcoolique à froid hors appareil) capte les acides résiniques.', 'Water alone fails: only oil Phase B (or cold alcohol maceration outside the appliance) captures resinic acids.', 'Wasser allein reicht nicht: Nur Öl-Phase B oder Kaltmazeration außerhalb des Geräts löst Harzsäuren.')
+      recommendedSolvent: tr('Alcool 90–96° (résines pures) ou huile végétale (45–48 °C en BloomLab®)', '90–96% Alcohol (pure resins) or carrier oil (45–48°C in BloomLab®)', '90–96 % Alkohol (reine Harze) oder Pflanzenöl (45–48 °C in BloomLab®)'),
+      sequenceTip: tr('L’eau seule ne dissout pas les résines : privilégier l’alcool 90–96° (programme Tincture/Sans chauffe sans eau) ou la Phase B huileuse en BloomLab®.', 'Water alone cannot dissolve resins: use 90–96% alcohol (Tincture/No heating without water) or oil Phase B in BloomLab®.', 'Wasser allein löst keine Harze: 90–96 % Alkohol (Tincture/Ohne Heizung ohne Wasser) oder Öl-Phase B in der BloomLab® wählen.')
     },
     {
       plantCategory: tr('Racines fibreuses & Champignons adaptogènes', 'Fibrous Roots & Adaptogenic Mushrooms', 'Faserige Wurzeln & adaptogene Vitalpilze'),
@@ -681,7 +681,7 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
               bulletPoints={[
                 tr('Fiches techniques des 4 solvants (Températures, Ratios, Durées, Conservation)', 'Technical sheets for all 4 solvents (Temperatures, Ratios, Durations, Shelf Life)', 'Datenblätter aller 4 Lösungsmittel (Temperaturen, Verhältnisse, Dauer, Haltbarkeit)'),
                 tr('Recette Signature : Sérum Polyphénols à la Glycérine (sans alcool)', 'Signature Recipe: Alcohol-Free Glycerin Polyphenol Serum', 'Signatur-Rezept: Alkoholfreies Glyzerin-Polyphenol-Serum'),
-                tr('Note sécurité propolis & solvants (alcool chauffé en cuve suspendu)', 'Propolis & solvent safety note (heated alcohol in vessel suspended)', 'Sicherheitshinweis Propolis & Lösungsmittel (erhitzter Alkohol ausgesetzt)'),
+                tr('Teinture Mère de Propolis (90–96°) & règles de sécurité alcool / glycérine sur BloomLab®', 'Propolis Mother Tincture (90–96% ABV) & alcohol / glycerin safety guidelines on BloomLab®', 'Propolis-Urtinktur (90–96 %) & Sicherheitsregeln für Alkohol / Glycerin in der BloomLab®'),
                 tr('Matrice complète des associations organes végétaux / polarité / solvants', 'Complete plant organs / polarity / solvent pairing matrix', 'Vollständige Zuordnungsmatrix: Pflanzenorgane / Polarität / Lösungsmittel')
               ]}
               teaserContent={
@@ -915,7 +915,7 @@ export default function SolventsGuide({ lang = 'fr', onNavigate }: SolventsGuide
                       {tr('Module 3 · Fiches Recettes', 'Module 3 · Recipe Sheets', 'Modul 3 · Rezeptblätter')}
                     </span>
                     <h3 className="text-2xl font-black text-[#1E2E25]">
-                      {tr('Recettes Signatures sur BloomLab®', 'Signature Recipes on BloomLab®', 'Signatur-Rezepte auf der BloomLab®')}
+                      {tr('Fiches Recettes Signatures', 'Signature Recipe Sheets', 'Signatur-Rezeptblätter')}
                     </h3>
                   </div>
 

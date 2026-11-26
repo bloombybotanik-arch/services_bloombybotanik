@@ -34,16 +34,16 @@ export const PUBLIC_TERRAINS: PublicTerrainDefinition[] = [
       de: 'Mikrobiom'
     },
     publicDescription: {
-      fr: 'Explorer les plantes, recettes et méthodes liées au confort digestif, aux habitudes alimentaires et à la diversité végétale.',
-      en: 'Explore plants, recipes and methods related to digestive comfort, dietary habits and plant diversity.',
-      de: 'Erkunden Sie Pflanzen, Rezepte und Methoden rund um Verdauungskomfort, Ernährungsgewohnheiten und Pflanzenvielfalt.'
+      fr: 'Explorer les plantes, recettes aromatiques et habitudes alimentaires liées au microbiote et à la diversité végétale.',
+      en: 'Explore plants, aromatic recipes and dietary habits related to the microbiome and plant diversity.',
+      de: 'Erkunden Sie Pflanzen, aromatische Rezepte und Ernährungsgewohnheiten rund um Mikrobiom und Pflanzenvielfalt.'
     },
     icon: Droplets,
     colorKey: 'terrain_microbiome',
     gradient: 'from-blue-50 to-indigo-50',
     badgeColor: 'bg-blue-500',
     navigationPriority: 1,
-    publicKeywords: ['microbiome', 'digestion', 'plantes alimentaires', 'fibres', 'recettes', 'confort digestif'],
+    publicKeywords: ['microbiome', 'habitudes alimentaires', 'plantes alimentaires', 'fibres', 'recettes', 'diversité végétale'],
     productTags: ['Digestion', 'Détox', 'Microbiome', 'Intestin'],
     mustNotClaim: [
       'Traiter la dysbiose.',
@@ -314,9 +314,9 @@ export const PUBLIC_TERRAINS: PublicTerrainDefinition[] = [
       de: 'Schlaf'
     },
     publicDescription: {
-      fr: 'Explorer les routines du soir, les pratiques de récupération, les préparations aromatiques et les gestes qui favorisent un moment de détente.',
-      en: 'Explore evening routines, recovery practices, aromatic preparations and actions that encourage relaxation.',
-      de: 'Erkunden Sie Abendroutinen, Erholungspraktiken, aromatische Zubereitungen und Gesten zur Förderung der Entspannung.'
+      fr: 'Explorer les routines du soir, les préparations aromatiques et les rituels botaniques de fin de journée.',
+      en: 'Explore evening routines, aromatic preparations and end-of-day botanical rituals.',
+      de: 'Erkunden Sie Abendroutinen, aromatische Zubereitungen und botanische Rituale zum Tagesausklang.'
     },
     icon: Moon,
     colorKey: 'terrain_sleep',

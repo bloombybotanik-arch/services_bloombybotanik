@@ -133,8 +133,7 @@ export const cosmeticsRecipes: CosmeticRecipe[] = CANONICAL_RECIPES.filter(r => 
         `Lancer le cycle thermo-régulé à ${tempA}.`
       ],
       transition: transitionInstructions.length > 0 ? transitionInstructions : [
-        "Laisser reposer pour amener la température sous 40°C.",
-        "TEST SENSORIEL : Vérifier que la cuve est tiède au toucher avant d'introduire la Phase B."
+        "Laisser reposer naturellement cuve éteinte jusqu'à refroidissement complet avant ouverture sécurisée."
       ],
       phase_B_instructions: phaseBInstructions.length > 0 ? phaseBInstructions : [
         "Ajouter les huiles précieuses et plantes délicates de la Phase B.",

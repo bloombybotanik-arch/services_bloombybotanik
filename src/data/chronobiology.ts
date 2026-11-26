@@ -201,7 +201,7 @@ export const chronobiologyData: Record<string, ChronoPhase> = {
       {
         "slug": "melisse",
         "nom": "Mélisse",
-        "role": "Calme doux du système nerveux et soutien digestion du soir.",
+        "role": "Plante aromatique citronnée traditionnelle des rituels d'après-dîner et du soir.",
         "depend_de_bilan": false
       },
       {

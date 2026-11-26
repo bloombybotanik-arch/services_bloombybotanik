@@ -339,7 +339,7 @@ export default function CommentLireModeleBloomContent({ onNavigate, lang = 'fr' 
               </div>
               <h3 className="font-bold text-sm text-[#0F261E]">Extraction &amp; Totum</h3>
               <p className="text-xs text-[#4A5D4A] leading-relaxed">
-                Maîtriser la cinétique, la régulation thermique et les solvants (eau, lipides, alcools doux) pour préserver l'intégrité moléculaire.
+                Maîtriser la cinétique, la régulation thermique et les solvants documentés (eau, huiles végétales, glycérine) pour préserver l'intégrité moléculaire.
               </p>
             </div>
 

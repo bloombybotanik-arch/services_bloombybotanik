@@ -106,7 +106,7 @@ export const FloatingChat = ({ user, lang }: { user?: FirebaseUser | null, lang:
   };
 
   return (
-    <div className="fixed bottom-24 lg:bottom-6 right-6 z-[100] flex flex-col items-end gap-4">
+    <div className={`fixed bottom-24 lg:bottom-6 right-6 ${isOpen ? 'z-[100]' : 'z-[60]'} flex flex-col items-end gap-4`}>
       <AnimatePresence>
         {isOpen && (
           <motion.div

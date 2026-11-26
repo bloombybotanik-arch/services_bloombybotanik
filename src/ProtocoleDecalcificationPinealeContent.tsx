@@ -637,13 +637,13 @@ export default function ProtocoleDecalcificationPinealeContent({
                   <ul className="text-xs text-[#FAF7F2]/70 space-y-1">
                     <li>• Rhizome de Curcuma bio concassé : <strong>30 g</strong></li>
                     <li>• Rhizome de Gingembre frais haché : <strong>15 g</strong></li>
-                    <li>• Huile végétale vierge alimentaire (ou glycérine végétale sans alcool) : <strong>500 ml</strong></li>
-                    <li><em>(Note de sécurité : l'extraction à l'alcool chauffé dans la cuve BloomLab® est suspendue)</em></li>
+                    <li>• Huile végétale vierge alimentaire ou glycérine végétale bio : <strong>500 ml</strong> (ou variante teinture hydroalcoolique à 70° sur mode <em>Sans chauffe</em> après séchage complet de la cuve)</li>
+                    <li><em>(En cas d'option hydroalcoolique, respecter impérativement les consignes sécurité : aucune flamme nue, pièce ventilée, couvercle verrouillé, niveaux MIN–MAX.)</em></li>
                   </ul>
                   <div className="pt-2 border-t border-white/5 text-[11px] text-[#FAF7F2]/80 space-y-0.5">
-                    <p><strong>Température BloomLab :</strong> 45°C (huile) / 40°C (glycérine)</p>
+                    <p><strong>Température BloomLab :</strong> 45°C (huile végétale) / 40°C (glycérine) / Sans chauffe (option hydroalcoolique)</p>
                     <p><strong>Durée :</strong> 2 heures (Agitation régulière continue)</p>
-                    <p className="text-[#c9a84c]">Une macération hydroalcoolique traditionnelle s'effectue uniquement à froid, en bocal verre hors appareil électrique.</p>
+                    <p className="text-[#c9a84c]">La cuve en inox 304 permet de conduire séparément la Phase A puis la Phase B une fois la cuve vidée et séchée.</p>
                   </div>
                 </div>
               </div>

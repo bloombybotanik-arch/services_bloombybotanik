@@ -11,12 +11,17 @@ interface RecipesContentProps {
   onBack: () => void;
   lang: Language;
   t: any;
+  initialCategory?: string;
 }
 
-export default function RecipesContent({ onBack, lang, t }: RecipesContentProps) {
+export default function RecipesContent({ onBack, lang, t, initialCategory = 'All' }: RecipesContentProps) {
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [selectedCategory, setSelectedCategory] = useState<string>(initialCategory);
+
+  React.useEffect(() => {
+    setSelectedCategory(initialCategory || 'All');
+  }, [initialCategory]);
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>('All');
   const [sortBy, setSortBy] = useState<string>('default');
   const [activeArchitecture, setActiveArchitecture] = useState<string>('All');

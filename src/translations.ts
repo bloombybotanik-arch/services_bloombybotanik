@@ -101,8 +101,8 @@ export const translations = {
         intro: "Découvrez pourquoi l'intégralité des molécules d'une plante (le Totum) est plus efficace que la somme de ses parties pour votre santé et votre microbiome.",
       },
       solvants_extraction: {
-        title: "Solvants d'Extraction : Eau, Huile, Alcool | Guide Pratique",
-        description: "Comment choisir le bon solvant pour vos plantes ? Guide sur l'extraction aqueuse, huileuse et glycérinée avec le BloomLab® (extraction à l'alcool chauffé suspendue).",
+        title: "Solvants d'Extraction : Eau, Huile, Glycérine & Alcool | Guide Pratique",
+        description: "Comment choisir le bon solvant pour vos plantes ? Guide sur les préparations aqueuses, huileuses et glycérinées sur BloomLab®, ainsi que les teintures alcooliques en herboristerie.",
         h1: "Eau, Huile ou Glycérine : Choisir le Bon Vecteur d'Actifs",
         intro: "Chaque molécule végétale a son affinité. Apprenez à choisir le solvant idéal pour extraire les principes actifs dont votre terrain a besoin.",
       },
@@ -113,7 +113,7 @@ export const translations = {
         faq: [
           {
             q: "Quelle est la différence entre une tisane classique et une infusion botanique BloomLab ?",
-            a: "Contrairement à une tisane qui ébouillante les actifs, l'infusion botanique BloomLab® utilise la thermorégulation intelligente pour extraire le totum végétal sans le dénaturer. C'est l'outil indispensable pour un rééquilibrage de terrain profond."
+            a: "Contrairement à une tisane qui ébouillante les actifs, l'infusion botanique BloomLab® utilise une thermorégulation contrôlée pour extraire le totum végétal sans le dénaturer. C'est l'outil indispensable pour un rééquilibrage de terrain profond."
           },
           {
             q: "Comment l'extraction basse température favorise-t-elle l'homéostasie ?",
@@ -229,7 +229,7 @@ export const translations = {
     home2026: {
       hero: {
         h1: "Créez vos soins botaniques maison avec la précision d'un laboratoire. Sans chimie, sans dépendance, sans compromis.",
-        subtitle: "La BloomLab est conçue pour maximiser l'extraction des actifs de vos plantes en quelques heures. Huiles infusées, sérums et préparations aqueuses ou glycérinées : un outil polyvalent (protocoles alcool chauffé suspendus).",
+        subtitle: "La BloomLab est conçue pour structurer la préparation de vos plantes à domicile en quelques heures : huiles infusées, sérums et préparations aqueuses ou glycérinées.",
         cta_primary: "Je découvre la BloomLab",
         cta_secondary: "Voir les offres"
       },
@@ -257,7 +257,7 @@ export const translations = {
         },
         phytotherapie: {
           title: "Phytothérapie",
-          desc: "Macérats huileux, glycérinés et infusions concentrées (extraction à l'alcool chauffé suspendue).",
+          desc: "Macérats huileux, macérats glycérinés et infusions concentrées.",
           cta: "Explorer les protocoles"
         }
       },
@@ -304,7 +304,7 @@ export const translations = {
           },
           {
             q: "Que puis-je créer avec BloomLab ?",
-            a: "Tout ce qui nécessite une extraction : huiles de soin, sérums, beurres aromatiques, macérats glycérinés et aqueux et bien plus encore."
+            a: "Huiles de soin, sérums, beurres aromatiques, macérats aqueux ou glycérinés et teintures mères (programme Tincture ou Sans chauffe avec alcool adapté selon le manuel et les consignes de sécurité)."
           },
           {
             q: "Pourquoi c'est mieux qu'un bain-marie ?",
@@ -364,7 +364,7 @@ export const translations = {
       understandingInfusion: {
         sidebar_label: "I. Infuseur Botanique Maison",
         h2: "Extraction Botanique de Précision à la Maison : Comment ça marche ?",
-        intro: "Un extracteur botanique maison comme BloomLab® permet de capturer l'intégralité du Totum végétal via l'eau, l'huile végétale ou la glycérine (l'usage d'alcool chauffé en cuve BloomLab® étant suspendu). Maîtrisez l'art de l'infusion, de la décoction et de la macération avec une précision thermique inégalée.",
+        intro: "Un extracteur botanique maison comme BloomLab® permet de travailler avec de l'eau filtrée, des huiles végétales vierges, du beurre, de la glycérine végétale ou de l'alcool alimentaire (programmes Tincture et Sans chauffe selon les consignes du manuel). Maîtrisez l'infusion, la décoction, la teinture et la macération avec réglage de température et de durée.",
         cards: [
           {
             title: "Infusion",
@@ -801,23 +801,23 @@ export const translations = {
         },
         kit_nuit: {
           name: "Kit Nuit Profonde",
-          subtitle: "SOMMEIL & ANCRAGE",
-          description: "Une synergie végétale apaisante pour favoriser la détente du soir et des nuits sereines."
+          subtitle: "RITUEL DU SOIR",
+          description: "Une synergie aromatique traditionnelle de plantes du soir, sélectionnée pour les infusions calmes de fin de journée."
         },
         kit_digestion: {
-          name: "Kit Confort Digestif",
-          subtitle: "ÉQUILIBRE INTESTINAL",
-          description: "Mélange carminatif traditionnel formulé pour accompagner une digestion fluide et un ventre confortable après les repas."
+          name: "Kit Équilibre Botanique",
+          subtitle: "AROMATES & INFUSIONS",
+          description: "Mélange carminatif traditionnel d'herboristerie aromatique conçu pour les rituels d'infusion après les repas."
         },
         kit_articulaire: {
           name: "Kit Mouvement Libre",
-          subtitle: "SOUPLESSE & MOBILITÉ",
-          description: "Synergie botanique traditionnelle sélectionnée pour accompagner la souplesse et le confort articulaire au quotidien."
+          subtitle: "SYNERGIE BOTANIQUE",
+          description: "Synergie botanique traditionnelle de plantes résineuses et feuillées, sélectionnée dans la tradition herboriste."
         },
         kit_hiver: {
           name: "Kit Bouclier Hiver",
-          subtitle: "RÉSILIENCE SAISONNIÈRE",
-          description: "Synergie végétale de saison conçue pour accompagner la vitalité et le tonus naturel durant les mois froids."
+          subtitle: "BOTANIQUE DE SAISON",
+          description: "Synergie végétale aromatique de saison, préparée pour les rituels chauds et infusions hivernales."
         },
         kit_reset: {
           name: "Duo Argiles — Purification Systémique Zeolithe-Bentonite",
@@ -1346,8 +1346,8 @@ export const translations = {
             desc: "Aucune migration de métaux lourds. Adapté à vos macérats glycérinés et huiles de soin."
           },
           digital: {
-            title: "Infuseur d'Huile Intelligent",
-            desc: "Algorithmes de chauffe pour extraire le Totum sans dégrader les actifs fragiles."
+            title: "Extraction Thermorégulée",
+            desc: "Cycles thermiques programmés pour préserver les actifs fragiles lors de vos infusions et macérations huileuses ou glycérinées."
           }
         }
       },
@@ -1460,7 +1460,7 @@ export const translations = {
         },
         {
           q: "Est-ce que la machine presse les graines pour faire de l'huile ?",
-          a: "Non. BloomLab® est un extracteur/infuseur domestique qui transfère les principes actifs de vos plantes dans une huile végétale existante (olive, jojoba, tournesol, amande), dans l'eau ou dans la glycérine végétale (tout usage d'alcool chauffé en cuve est suspendu). Elle ne remplace pas une presse mécanique à graines."
+          a: "Non. BloomLab® est un extracteur/infuseur domestique qui transfère les principes actifs de vos plantes dans un solvant existant : huile végétale, beurre, eau filtrée, glycérine végétale ou alcool alimentaire (programmes Tincture et Sans chauffe selon le manuel et en pièce ventilée). Elle ne remplace pas une presse mécanique à graines."
         },
         {
           q: "J'ai acheté la machine sur Amazon, ai-je accès aux recettes ?",
@@ -1562,7 +1562,7 @@ export const translations = {
         title: "Principes d'Usage",
         p1: {
           title: "La Propreté Labo",
-          desc: "Nettoyez et rincez soigneusement la cuve à l'eau chaude savonneuse puis séchez-la avant chaque cycle (ne pas chauffer d'alcool en cuve)."
+          desc: "Nettoyez et rincez soigneusement la cuve en inox à l'eau chaude savonneuse (ou lancez le programme Nettoyage de 5 min), puis séchez-la intégralement entre la Phase A et la Phase B."
         },
         p2: {
           title: "Le Respect des Solvants",
@@ -1627,7 +1627,7 @@ export const translations = {
       title_accent: "\"L'Ingénierie au service du vivant.\"",
       subtitle: "Le protocole de régulation profonde par les plantes",
       quote: "Réinitialiser vos systèmes de régulation, pas “juste” détoxifier.",
-      intro_editorial: "Le Reset Homéostasique Bloom est un voyage botanique de 90 jours pensé pour accompagner en douceur vos fonctions naturelles et installer une routine de mieux‑être durable. Phase après phase, il invite à prendre soin de vos voies d’élimination et de votre digestion, à retrouver des sensations de légèreté, de confort corporel et de vitalité, tout en respectant les rythmes propres à votre organisme.\n\nGuidé par notre ingénierie botanique et la chronobiologie des organes, vous traversez un parcours structuré : ouverture des émonctoires, phases de mobilisation, conjugaison et capture des charges circulantes et de soutien digestif, temps de purification intérieure au sens du ressenti (clarité, énergie, qualité du sommeil), puis stabilisation et renforcement des ressources, rythmé par des pauses intégratives où vous laissez votre corps intégrer les changements.\n\nCe protocole s’inscrit dans une démarche globale d’hygiène de vie et de bien‑être et ne se substitue pas à un avis ni à un traitement médical ; il propose un cadre botanique pour mieux écouter votre terrain (profil de vulnérabilité génétique, épigénétique et allostatique) et soutenir vos sensations de régulation face au spectre de charges allostatiques accumulées.",
+      intro_editorial: "Le Reset Homéostasique Bloom est un parcours botanique pédagogique de 90 jours pensé pour structurer une routine végétale et d'hygiène de vie durable. Phase après phase, il propose un accompagnement botanique organisé autour de vos habitudes quotidiennes, de votre alimentation et de votre rythme de repos.\n\nGuidé par notre ingénierie botanique et la chronobiologie, vous traversez un parcours structuré : préparation progressive, mobilisation douce, pauses intégratives d'écoute des ressentis (clarté, rythme du soir, vitalité perçue), puis phase de stabilisation et de consolidation.\n\nCe protocole s'inscrit dans une démarche éducative d'hygiène de vie et de bien-être et ne se substitue pas à un avis ni à un traitement médical ; il ne constitue ni un diagnostic ni une allégation thérapeutique.",
       journey: {
         subtitle: "Un voyage de 90 jours en 5 temps",
         text: "Le Reset Homéostasique se déploie en phases successives, chacune avec une intention précise et des plantes ciblées :",
@@ -1723,7 +1723,7 @@ export const translations = {
       },
       shop: {
         title: "BloomLab Shop | Buy a Precision Botanical Extractor | Bloom",
-        description: "Get the best countertop botanical infuser. 304 stainless steel, manufacturer nominal spec precision, ideal for botanical oils, butters, and glycerin macerates (heated alcohol suspended).",
+        description: "Get the best countertop botanical infuser. Food-grade 304 stainless steel chamber, regulated thermoregulation, ideal for botanical oils, butters, infusions, and glycerin macerates.",
       },
       blog: {
         title: "Phytotherapy & Extraction Blog: The Art of Totum | Bloom",
@@ -1764,7 +1764,7 @@ export const translations = {
           },
           {
             q: "What sets BloomLab® apart for home preparation?",
-            a: "BloomLab® combines controlled heating, cyclic stirring, and a plastic-free 304 stainless steel chamber for repeatable home botanical preparation."
+            a: "BloomLab® combines controlled heating, cyclic stirring, and a food-grade 304 stainless steel chamber for repeatable home botanical preparation."
           }
         ]
       },
@@ -1864,7 +1864,7 @@ export const translations = {
     home2026: {
       hero: {
         h1: "Create your homemade botanical care with laboratory precision. No chemicals, no dependence, no compromise.",
-        subtitle: "The BloomLab is designed to maximize the extraction of your plants' active principles in just a few hours. Infused oils, serums, and aqueous or glycerin preparations: one versatile appliance (heated alcohol protocols suspended).",
+        subtitle: "The BloomLab is designed to prepare your plant-based extracts at home in a few hours: infused oils, serums, and aqueous or glycerin preparations.",
         cta_primary: "I discover the BloomLab",
         cta_secondary: "See offers"
       },
@@ -1892,7 +1892,7 @@ export const translations = {
         },
         phytotherapie: {
           title: "Phytotherapy",
-          desc: "Oil and glycerin macerates, and concentrated infusions (heated alcohol protocols suspended).",
+          desc: "Oil and glycerin macerates and concentrated infusions.",
           cta: "Explore protocols"
         }
       },
@@ -1939,7 +1939,7 @@ export const translations = {
           },
           {
             q: "What can I create with BloomLab?",
-            a: "Everything that requires extraction: care oils, serums, aromatic butters, glycerin and aqueous macerates and much more."
+            a: "Botanical care oils, serums, aromatic butters, glycerin and aqueous macerates, and alcohol mother tinctures (using Tincture or No heating modes per manual safety guidelines)."
           },
           {
             q: "Why is it better than a bain-marie?",
@@ -1999,7 +1999,7 @@ export const translations = {
       understandingInfusion: {
         sidebar_label: "I. Home Botanical Infuser",
         h2: "Botanical Infuser & Well-being: The Home Ritual",
-        intro: "A home botanical extractor like BloomLab® allows you to capture the full plant Totum using water, carrier oil, or glycerin (heated alcohol inside BloomLab® is suspended). Master the art of infusion, decoction, and maceration with unparalleled thermal precision.",
+        intro: "A home botanical extractor like BloomLab® works with filtered water, virgin carrier oils, butter, vegetable glycerin, and food-grade alcohol (via Tincture and No heating programs under manual safety rules). Master infusion, decoction, tinctures, and maceration with adjustable temperature and time.",
         cards: [
           {
             title: "Infusion",
@@ -2410,7 +2410,7 @@ export const translations = {
           subtitle: "BOTANICAL SOVEREIGNTY — PRECISION EXTRACTION 2026",
           description: "A precision botanical extractor for home preparation. Prepare whole-plant infusions, oil macerates, and glycerin extracts with guided thermoregulation (manufacturer nominal spec, not independently certified).",
           bullets: [
-            "Low-temperature plant Totum preparation (water, oil, glycerin — heated alcohol suspended)",
+            "Low-temperature plant Totum preparation (filtered water, carrier oils, and vegetable glycerin)",
             "Guided thermal sequencing (manufacturer nominal spec, 0°C to 121°C)",
             "Food-grade 304 Stainless Steel 1.2L chamber"
           ]
@@ -2432,23 +2432,23 @@ export const translations = {
         },
         kit_nuit: {
           name: "Deep Night Synergy",
-          subtitle: "SLEEP & GROUNDING",
-          description: "A soothing botanical blend for calm evenings and restful nights without morning grogginess."
+          subtitle: "EVENING RITUAL",
+          description: "A traditional aromatic botanical blend crafted for calm evening infusions at the end of the day."
         },
         kit_digestion: {
-          name: "Digestive Comfort Synergy",
-          subtitle: "INTESTINAL BALANCE",
-          description: "A traditional carminative plant blend designed for light, comfortable digestion after meals."
+          name: "Botanical Balance Synergy",
+          subtitle: "AROMATICS & INFUSIONS",
+          description: "A traditional aromatic herbal blend selected for warm post-meal botanical infusions."
         },
         kit_articulaire: {
-          name: "Joint Comfort Synergy",
-          subtitle: "FLEXIBILITY & MOBILITY",
-          description: "Traditional botanical synergy selected to support everyday flexibility and joint comfort."
+          name: "Free Movement Synergy",
+          subtitle: "BOTANICAL SYNERGY",
+          description: "Traditional botanical blend of resinous and leafy plants drawn from classic herbalist preparations."
         },
         kit_hiver: {
           name: "Winter Shield Synergy",
-          subtitle: "SEASONAL RESILIENCE",
-          description: "Seasonal botanical synergy designed to support the body's natural resilience during colder months."
+          subtitle: "SEASONAL BOTANICALS",
+          description: "Aromatic seasonal botanical synergy crafted for warming infusions during colder months."
         },
         kit_reset: {
           name: "Clays Duo — Systemic Purification Zeolite-Bentonite",
@@ -2863,8 +2863,8 @@ export const translations = {
             desc: "No heavy metal migration. Suitable for glycerin macerates and botanical skincare oils."
           },
           digital: {
-            title: "Smart Herbal Oil Infuser",
-            desc: "Intelligent heating algorithms to extract the Totum without degrading fragile active principles."
+            title: "Regulated Thermal Extraction",
+            desc: "Programmed thermal cycles designed to protect fragile plant compounds during infusions, oil, or glycerin macerations."
           }
         }
       },
@@ -2977,7 +2977,7 @@ export const translations = {
         },
         {
           q: "Does the machine press seeds to make oil?",
-          a: "No. BloomLab® is a precision extractor/infuser that transfers active plant compounds into an existing carrier oil (olive, jojoba, sunflower, sweet almond), water, or vegetable glycerin. It does not replace a mechanical seed press."
+          a: "No. BloomLab® is a precision extractor/infuser that transfers active plant compounds into an existing solvent: carrier oil (olive, jojoba, sunflower, sweet almond), butter, filtered water, vegetable glycerin, or food-grade alcohol (via Tincture and No heating programs under manual ventilation & safety rules). It does not replace a mechanical seed press."
         },
         {
           q: "I bought the machine on Amazon, do I get access to the recipes?",
@@ -3079,7 +3079,7 @@ export const translations = {
         title: "Usage Principles",
         p1: {
           title: "Lab Cleanliness",
-          desc: "Always wash, rinse, and dry the stainless steel tank with warm soapy water before each cycle (do not heat alcohol inside the chamber)."
+          desc: "Always wash, rinse, and thoroughly dry the stainless steel tank with warm soapy water (or run the 5-min Clean program) between Phase A and Phase B cycles."
         },
         p2: {
           title: "Respect of Solvents",
@@ -3240,7 +3240,7 @@ export const translations = {
       },
       shop: {
         title: "BloomLab Shop | Botanischen Extraktor kaufen | Bloom",
-        description: "Entdecken Sie unseren botanischen Infuser: Edelstahl 304, geführte Thermoregulation (Hersteller-Nennwert), ideal für Pflanzenöle, Butter und Glycerin-Mazerate (erhitzter Alkohol ausgesetzt).",
+        description: "Entdecken Sie unseren botanischen Infuser: Edelstahlbehälter in Lebensmittelqualität, geführte Thermoregulation, ideal für Pflanzenöle, Butter, Aufgüsse, Glycerin-Mazerate und Tinkturen.",
       },
       blog: {
         title: "Blog Kräuterkunde & Extraktion: Die Kunst des Totums | Bloom",
@@ -3381,7 +3381,7 @@ export const translations = {
     home2026: {
       hero: {
         h1: "Stellen Sie Ihre botanische Hauspflege mit Laborpräzision her. Ohne Chemie, ohne Abhängigkeit, ohne Kompromisse.",
-        subtitle: "Die BloomLab wurde entwickelt, um pflanzliche Öle, Seren, Glycerin-Mazerate und Aufgüsse in wenigen Stunden strukturiert zuzubereiten (erhitzter Alkohol im Gerät ausgesetzt).",
+        subtitle: "Die BloomLab wurde entwickelt, um pflanzliche Öle, Seren, Glycerin-Mazerate und Aufgüsse in wenigen Stunden strukturiert zuzubereiten.",
         cta_primary: "Ich entdecke die BloomLab",
         cta_secondary: "Angebote sehen"
       },
@@ -3409,7 +3409,7 @@ export const translations = {
         },
         phytotherapie: {
           title: "Phytotherapie",
-          desc: "Öl- und Glycerin-Mazerate sowie konzentrierte Aufgüsse (erhitzter Alkohol im Gerät ausgesetzt).",
+          desc: "Öl- und Glycerin-Mazerate sowie konzentrierte Aufgüsse.",
           cta: "Protokolle erkunden"
         }
       },
@@ -3456,7 +3456,7 @@ export const translations = {
           },
           {
             q: "Was kann ich mit BloomLab kreieren?",
-            a: "Alles, was eine Extraktion mit nicht brennbaren Lösungsmitteln erfordert: Pflegeöle, Seren, aromatische Butter, Glycerin- und wässrige Mazerate und vieles mehr (erhitzter Alkohol ausgesetzt)."
+            a: "Pflegeöle, Seren, aromatische Butter, wässrige und Glycerin-Mazerate sowie Urtinkturen mit Ansatzalkohol (über die Programme Tincture oder Ohne Erhitzen gemäß Handbuch-Sicherheitshinweisen)."
           },
           {
             q: "Warum ist es besser als ein Wasserbad?",
@@ -3516,7 +3516,7 @@ export const translations = {
       understandingInfusion: {
         sidebar_label: "I. Botanischer Infuser zu Hause",
         h2: "Botanischer Infuser & Wohlbefinden: Das Ritual zu Hause",
-        intro: "Ein botanischer Extraktor für zu Hause wie BloomLab® ermöglicht es Ihnen, das gesamte pflanzliche Totum über Wasser, Öl oder Alkohol einzufangen. Meistern Sie die Kunst der Infusion, des Dekokts und der Mazeration mit unübertroffener thermischer Präzision.",
+        intro: "Ein botanischer Extraktor für zu Hause wie BloomLab® arbeitet mit gefiltertem Wasser, nativem Pflanzenöl, Butter, Pflanzenglycerin und Ansatzalkohol (Programme Tincture und Ohne Erhitzen gemäß Sicherheitshinweisen). Meistern Sie Infusion, Dekokt, Tinkturen und Mazeration mit einstellbarer Temperatur und Dauer.",
         cards: [
           {
             title: "Aufguss",
@@ -3927,7 +3927,7 @@ export const translations = {
           subtitle: "BOTANISCHE SOUVERÄNITÄT — PRÄZISIONSEXTRAKTION 2026",
           description: "Der botanische Extraktor für Pflanzenzubereitungen zu Hause. Arbeiten Sie mit dem Totum-Ansatz bei geführter Thermoregulation (Hersteller-Nennwert, nicht unabhängig zertifiziert).",
           bullets: [
-            "Pflanzen-Totum-Zubereitungen, Öl- und Glycerin-Mazerate (erhitzter Alkohol ausgesetzt)",
+            "Pflanzen-Totum-Zubereitungen mit gefiltertem Wasser, Pflanzenölen und Glycerin",
             "Geführte thermische Sequenzierung (Hersteller-Nennwert, 0 °C bis 121 °C)",
             "Lebensmittelechter 304 Edelstahl, 1,2-L-Kammer"
           ]
@@ -3949,23 +3949,23 @@ export const translations = {
         },
         kit_nuit: {
           name: "Tiefe Nacht Synergie",
-          subtitle: "SCHLAF & ERDUNG",
-          description: "Eine beruhigende botanische Mischung für ruhige Abende und erholsame Nächte ohne morgendliche Müdigkeit."
+          subtitle: "ABENDRITUAL",
+          description: "Eine traditionelle aromatische Kräutermischung für ruhige Abendaufgüsse am Ende des Tages."
         },
         kit_digestion: {
-          name: "Verdauungskomfort Synergie",
-          subtitle: "DARMGLEICHGEWICHT",
-          description: "Traditionelle Pflanzenmischung für eine leichte, angenehme Verdauung und ein beruhigtes Bauchgefühl nach den Mahlzeiten."
+          name: "Botanische Balance Synergie",
+          subtitle: "AROMATEN & AUFGÜSSE",
+          description: "Traditionelle aromatische Kräutermischung für wohltuende Aufgüsse nach den Mahlzeiten."
         },
         kit_articulaire: {
-          name: "Gelenkkomfort Synergie",
-          subtitle: "FLEXIBILITÄT & MOBILITÄT",
-          description: "Traditionelle botanische Synergie zur Unterstützung alltäglicher Flexibilität und des Gelenkkomforts."
+          name: "Freie Bewegung Synergie",
+          subtitle: "BOTANISCHE SYNERGIE",
+          description: "Traditionelle botanische Mischung aus harzigen und blattreichen Pflanzen der klassischen Kräuterkunde."
         },
         kit_hiver: {
           name: "Winterschutz Synergie",
-          subtitle: "SAISONALE RESILIENZ",
-          description: "Saisonale botanische Synergie zur Unterstützung der natürlichen Widerstandskraft in den kälteren Monaten."
+          subtitle: "SAISONALE BOTANIK",
+          description: "Aromatische saisonale Pflanzenmischung für wärmende Aufgüsse in den kälteren Monaten."
         },
         kit_reset: {
           name: "Erden-Duo — Systemische Reinigung Zeolith-Bentonit",
@@ -4380,8 +4380,8 @@ export const translations = {
             desc: "Keine Schwermetallmigration. Ideal für wässrige Aufgüsse, Glycerin-Mazerate und botanische Hautpflegeöle."
           },
           digital: {
-            title: "Smarter Kräuteröl-Infusor",
-            desc: "Intelligente Heizalgorithmen zur Extraktion des Totums, ohne empfindliche Wirkstoffe zu schädigen."
+            title: "Geregelte Thermo-Extraktion",
+            desc: "Programmierte Heizzyklen zum Schutz empfindlicher Wirkstoffe bei Aufgüssen sowie Öl- und Glycerinmazeraten."
           }
         }
       },
@@ -4494,7 +4494,7 @@ export const translations = {
         },
         {
           q: "Presst das Gerät Samen, um Öl herzustellen?",
-          a: "Nein. BloomLab® ist ein Präzisionsextraktor/-infuser, der Pflanzenwirkstoffe in ein vorhandenes Pflanzenöl (Olive, Jojoba, Sonnenblume, Mandel) oder Wasser/Alkohol überträgt. Es ersetzt keine Ölmühle."
+          a: "Nein. BloomLab® ist ein Präzisionsextraktor/-infuser, der Pflanzenwirkstoffe in ein vorhandenes Lösungsmittel überträgt: Pflanzenöl, Butter, gefiltertes Wasser, pflanzliches Glycerin oder Ansatzalkohol (Tincture / Ohne Erhitzen bei guter Belüftung gemäß Handbuch). Es ersetzt keine Ölmühle."
         },
         {
           q: "Ich habe das Gerät auf Amazon gekauft – erhalte ich Zugang zu den Rezepten?",
@@ -4563,7 +4563,7 @@ export const translations = {
         },
         extraction: {
           title: "6-in-1 Extraktion",
-          desc: "Öle, Seren, Glycerin-Mazerate, Sirupe und komplexe Aufgüsse (erhitzter Alkohol ausgesetzt)."
+          desc: "Öle, Seren, wässrige Aufgüsse, Glycerin-Mazerate, Sirupe und komplexe Dekokte."
         },
         price_save: "Sparen Sie 49€"
       },
@@ -4596,7 +4596,7 @@ export const translations = {
         title: "Anwendungsprinzipien",
         p1: {
           title: "Labor-Sauberkeit",
-          desc: "Reinigen und trocknen Sie den Behälter vor jedem Zyklus gründlich mit warmem Wasser und mildem Spülmittel (keinen Alkohol im Gerät erhitzen)."
+          desc: "Reinigen, spülen und trocknen Sie den Edelstahlbehälter vor jedem Zyklus und zwischen Phase A und Phase B gründlich mit warmem Wasser (oder nutzen Sie das 5-Min.-Reinigungsprogramm)."
         },
         p2: {
           title: "Respekt vor Lösungsmitteln",

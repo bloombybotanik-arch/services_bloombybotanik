@@ -109,8 +109,8 @@
     <!-- 6. Kit Nuit Profonde -->
     <item>
       <g:id>kit-nuit</g:id>
-      <g:title>Kit Nuit Profonde — Sommeil Réparateur &amp; Ancrage</g:title>
-      <g:description>Plantes médicinales pour infusion et extraction du Totum favorisant l'endormissement et un sommeil profond sans accoutumance.</g:description>
+      <g:title>Kit Nuit Profonde — Synergie Aromatique du Soir</g:title>
+      <g:description>Mélange traditionnel de plantes médicinales bio sélectionnées pour les infusions aromatiques du soir et l'extraction du Totum.</g:description>
       <g:link>https://bloombybotanik.com/boutique/kit-nuit/</g:link>
       <g:image_link>https://bloombybotanik.com/products/kit-nuit.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
@@ -129,8 +129,8 @@
     <!-- 7. Kit Digestion -->
     <item>
       <g:id>kit-digestion</g:id>
-      <g:title>Kit Confort Digestif — Assimilation &amp; Légèreté</g:title>
-      <g:description>Plantes carminatives et digestives pour soutenir les fonctions biliaires et intestinales par extraction de précision.</g:description>
+      <g:title>Kit Équilibre Botanique — Plantes Aromatiques</g:title>
+      <g:description>Plantes carminatives et aromatiques de tradition herboriste préparées par extraction botanique de précision.</g:description>
       <g:link>https://bloombybotanik.com/boutique/kit-digestion/</g:link>
       <g:image_link>https://bloombybotanik.com/products/kit-digestion.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
@@ -149,8 +149,8 @@
     <!-- 8. Kit Feu Articulaire -->
     <item>
       <g:id>kit-articulaire</g:id>
-      <g:title>Kit Feu Articulaire — Confort Articulaire &amp; Tissulaire</g:title>
-      <g:description>Synergie botanique apaisante pour le confort articulaire et la souplesse tissulaire quotidienne.</g:description>
+      <g:title>Kit Feu Botanique — Synergie Résineuse &amp; Feuillée</g:title>
+      <g:description>Synergie botanique traditionnelle de plantes résineuses et aromatiques sélectionnée dans la tradition herboriste.</g:description>
       <g:link>https://bloombybotanik.com/boutique/kit-articulaire/</g:link>
       <g:image_link>https://bloombybotanik.com/products/kit-articulaire.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
@@ -169,8 +169,8 @@
     <!-- 9. Kit Bouclier Hiver -->
     <item>
       <g:id>kit-hiver</g:id>
-      <g:title>Kit Bouclier Hiver — Vitalité Hivernale &amp; Défenses Naturelles</g:title>
-      <g:description>Plantes aromatiques et toniques pour fortifier les défenses naturelles face aux rigueurs hivernales.</g:description>
+      <g:title>Kit Bouclier Hiver — Botanique de Saison</g:title>
+      <g:description>Plantes aromatiques de tradition herboriste sélectionnées pour les infusions chaudes des mois hivernaux.</g:description>
       <g:link>https://bloombybotanik.com/boutique/kit-hiver/</g:link>
       <g:image_link>https://bloombybotanik.com/products/kit-bouclier-hiver.jpg</g:image_link>
       <g:availability>in_stock</g:availability>

@@ -343,7 +343,7 @@ export const TREMELLA_RECIPE_COPY: Record<Language, TremellaRecipeCopy> = {
     fruitVariants: {
       eyebrow: 'Personnalisation du Terrain · Poire ou Pomme Tisane',
       heading: 'Variantes : Poire ou Pomme ?',
-      lead: 'Le choix du fruit oriente subtilement la personnalité de votre élixir : privilégiez la poire pour hydrater profondément le Yin et la peau, ou la pomme pour soutenir le confort digestif.',
+      lead: 'Le choix du fruit oriente subtilement la note aromatique de votre préparation culinaire : privilégiez la poire pour sa texture veloutée et sa douceur, ou la pomme pour une note plus légère et acidulée.',
       pear: {
         badge: 'La Reine du Yin · Recette Canonique',
         title: 'La Poire : L’Alliée de votre Peau (Nourrit le Yin)',

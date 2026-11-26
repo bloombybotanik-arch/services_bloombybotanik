@@ -19,7 +19,7 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
     ? [
         {
           q: "Quelle est la différence entre infusion, décoction et macération botanique ?",
-          a: "L'infusion extrait les parties tendres (fleurs, feuilles) entre 45°C et 80°C sans ébullition continue. La décoction concerne les parties ligneuses (racines, écorces) à frémissement prolongé. La macération s'effectue à froid ou à basse température (45°C dans la BloomLab®) dans de l'huile, de la glycérine ou de l'alcool pour capter les molécules liposolubles ou thermosensibles."
+          a: "L'infusion extrait les parties tendres (fleurs, feuilles) entre 45°C et 80°C sans ébullition continue. La décoction concerne les parties ligneuses (racines, écorces) à frémissement prolongé. La macération s'effectue à froid en bocal (huile, alcool) ou à température régulée (45°C dans la BloomLab® pour l'huile végétale et la glycérine) pour capter les molécules liposolubles ou thermosensibles."
         },
         {
           q: "Pourquoi le séquençage actif A/B préserve-t-il le Totum végétal ?",
@@ -31,44 +31,44 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
         },
         {
           q: "Quels solvants utiliser pour une extraction botanique maison ?",
-          a: "L'eau filtrée convient aux extraits aqueux consommables sous 24–48 h, les huiles végétales vierges (jojoba, olive, sésame) aux macérats cutanés et culinaires à 45°C, et la glycérine ou l'alcool alimentaire aux extraits longue conservation."
+          a: "L'eau filtrée convient aux extraits aqueux consommables sous 24–48 h, les huiles végétales vierges (jojoba, olive, sésame) aux macérats cutanés et culinaires à 45°C, et la glycérine végétale aux préparations sans alcool. En herboristerie générale, l'alcool est utilisé à froid en bocal pour les teintures mères ; sa compatibilité avec la cuve chauffée BloomLab® n'est pas établie par les documents fabricant disponibles."
         }
       ]
     : isDE
     ? [
         {
-          q: "Was ist der Unterschied zwischen Infusion, Dekoktion und Mazeration?",
-          a: "Bei der Infusion werden empfindliche Blätter und Blüten zwischen 45 °C und 80 °C ohne Kochen extrahiert. Die Dekoktion eignet sich für harte Wurzeln und Rinden durch sanftes Sieden. Die Mazeration erfasst fettlösliche oder hitzeempfindliche Moleküle bei niedriger Temperatur (45 °C in BloomLab®) in Öl, Glycerin oder Alkohol."
+          q: "Was ist der Unterschied zwischen Infusion, Dekokt und Mazeration?",
+          a: "Bei der Infusion werden empfindliche Blätter und Blüten zwischen 45 °C und 80 °C ohne Kochen extrahiert. Die Dekoktion eignet sich für harte Wurzeln und Rinden. Die Mazeration erfolgt kalt im Glas oder im Programm Ohne Erhitzen (30 Min.–12 Std.) bzw. temperaturgeregelt im BloomLab® (Programme Oil, Tincture oder manuelle TEMP/TIME-Einstellung von 0 °C bis 121 °C je nach Lösungsmittel)."
         },
         {
           q: "Warum bewahrt die sequenzielle A/B-Extraktion das pflanzliche Totum?",
-          a: "Pflanzen enthalten sowohl wasserlösliche (Phase A) als auch fettlösliche Verbindungen (Phase B). Durch die Abstimmung von Lösungsmittelpolarität, kontrollierter Temperatur und Zeit mit BloomLab® erfassen Sie das gesamte Synergiespektrum."
+          a: "Pflanzen enthalten sowohl wasserlösliche (Phase A) als auch fett- oder alkohollösliche Verbindungen (Phase B). Durch die Abstimmung von Lösungsmittelpolarität, Temperatur und Zeit mit BloomLab® (mit vollständiger Reinigung und Trocknung des Behälters zwischen Phase A und B) erfassen Sie das gesamte Synergiespektrum."
         },
         {
           q: "Wie verbessern Temperatur und Bewegung die botanische Extraktion?",
-          a: "Kochendes Wasser bei 100 °C verdampft flüchtige Aromen und baut empfindliche Polyphenole ab. BloomLab® hält die Temperatur in einer geschlossenen 304-Edelstahlkammer auf ±0,5 °C genau, während ein sanfter Vortex Sättigungsschichten verhindert."
+          a: "Kochendes Wasser bei 100 °C verdampft flüchtige Aromen und baut empfindliche Polyphenole ab. BloomLab® steuert die Temperatur im geschlossenen Edelstahlbehälter über voreingestellte Programme (Butter, Oil, Tincture, Decarboxylate) oder manuelle TEMP/TIME-Einstellung, während sanfte Bewegung Sättigungsschichten verhindert."
         },
         {
           q: "Welche Lösungsmittel eignen sich für die heimische Pflanzenextraktion?",
-          a: "Gefiltertes Wasser eignet sich für frische wässrige Auszüge, native Pflanzenöle für Haut- und Küchenmazerate bei 45 °C und pflanzliches Glycerin oder Lebensmittelalkohol für langzeitstabile Extrakte."
+          a: "Gefiltertes Wasser, native Pflanzenöle, Butter, pflanzliches Glycerin sowie Ansatzalkohol (45–96 Vol.-% je nach Pflanze). Für starken Alkohol ≥ 75 Vol.-% ohne Wasser steht das Programm Tincture (Standard 71 °C / 4 Std., einstellbar; nur in gut belüfteten Räumen, ohne Flamme, verriegelter Deckel, MIN/MAX beachten) zur Verfügung; für wässrige Verdünnungen (45–70 Vol.-%) nutzen Sie Ohne Erhitzen oder das Glasgefäß."
         }
       ]
     : [
         {
           q: "What is the difference between infusion, decoction, and maceration?",
-          a: "Infusion extracts delicate leaves and flowers between 45°C and 80°C without boiling. Decoction targets dense roots and barks via gentle simmering. Maceration extracts lipophilic or heat-sensitive compounds at low temperature (45°C in BloomLab®) using oil, glycerin, or alcohol."
+          a: "Infusion extracts delicate leaves and flowers between 45°C and 80°C without boiling. Decoction targets dense roots and barks. Maceration operates cold in glass jars or via No heating mode (30 min–12 h), or temperature-regulated in BloomLab® (Oil, Tincture, or manual TEMP/TIME from 0°C to 121°C depending on solvent)."
         },
         {
           q: "Why does A/B sequential extraction preserve the plant Totum?",
-          a: "Plants hold both water-soluble (Phase A) and fat-soluble (Phase B) compounds. Pairing solvent polarity, controlled temperature, and time with Bloom by BotaniK's BloomLab® captures the full synergistic spectrum."
+          a: "Plants hold both water-soluble (Phase A) and fat- or alcohol-soluble compounds (Phase B). Pairing solvent polarity, temperature, and time with BloomLab® (completely emptying and drying the tank between Phase A and Phase B) captures the full synergistic spectrum."
         },
         {
           q: "How do temperature and agitation improve botanical extraction?",
-          a: "Boiling water destroys fragile polyphenols and evaporates volatile aromatics. BloomLab® holds temperature within ±0.5°C in a closed 304 stainless steel chamber while gentle vortex motion prevents saturation layers."
+          a: "Boiling water destroys fragile polyphenols and evaporates volatile aromatics. BloomLab® manages temperature inside its closed stainless steel chamber via preset programs (Butter, Oil, Tincture, Decarboxylate) or manual TEMP/TIME control while gentle stirring prevents saturation layers."
         },
         {
           q: "Which natural solvents can be used at home?",
-          a: "Filtered water suits fresh aqueous infusions, virgin plant oils suit 45°C skin or culinary macerates, and vegetable glycerin or food-grade alcohol support stable multi-month extracts."
+          a: "Filtered water, virgin carrier oils, butter, vegetable glycerin, and food-grade alcohol (45%–96% ABV by plant density). High-proof alcohol (≥ 75% ABV without added water) uses the Tincture program (71°C / 4h default, adjustable; well-ventilated space, no flame, locked lid, MIN/MAX levels); water-diluted alcohol (45%–70% ABV) should use No heating mode or a sealed glass jar."
         }
       ];
 
@@ -376,13 +376,13 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
 
           <div className="space-y-4">
             <h3 className="text-xl font-bold" style={{ color: '#1E2E25' }}>
-              {tr("Solvants adaptés : alcool, huiles", "Suitable solvents: alcohol, oils", "Geeignete Lösungsmittel: Alkohol, Öle")}
+              {tr("Solvants adaptés : huiles végétales et polarités de référence", "Suitable solvents: carrier oils and polarity references", "Geeignete Lösungsmittel: Pflanzenöle und Polaritätsgrundlagen")}
             </h3>
             <p className="text-base leading-relaxed" style={{ color: '#1E2E25', opacity: 0.85 }}>
               {tr(
-                "La Phase B mobilise des solvants apolaires ou semi-polaires. Les huiles végétales stables (jojoba, sésame, olive) sont idéales pour ",
-                "Phase B leverages lipid or hydroalcoholic solvents. Stable vegetable oils are ideal to ",
-                "Phase B nutzt apolare oder semipolare Lösungsmittel. Stabile Pflanzenöle sind ideal, um "
+                "La Phase B en BloomLab® mobilise des solvants lipophiles stables comme les huiles végétales (jojoba, sésame, olive), idéales pour ",
+                "Phase B inside BloomLab® uses stable lipophilic solvents such as virgin carrier oils (jojoba, sesame, olive) to ",
+                "Phase B in der BloomLab® nutzt stabile lipophile Lösungsmittel wie Pflanzenöle (Jojoba, Sesam, Olive), ideal um "
               )}
               <button 
                 onClick={() => onNavigate('huile-infusee')}
@@ -392,18 +392,22 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
                 {tr("réussir une huile infusée maison", "succeed in making homemade infused oil", "ein selbstgemachtes infundiertes Öl herzustellen")}
               </button>
               {tr(
-                ". Quant aux préparations hydroalcooliques (teintures mères), leur réalisation à chaud dans BloomLab® est suspendue par mesure de sécurité ; hors appareil, seule la macération à froid documentée reste de mise pour ",
-                ". For hydroalcoholic preparations (mother tinctures), heated protocols inside BloomLab® are suspended as a safety measure; outside the appliance, traditional ambient cold maceration applies to ",
-                ". Für hydroalkoholische Urtinkturen sind erhitzte Zyklen in der BloomLab® aus Sicherheitsgründen ausgesetzt; außerhalb des Geräts erfolgt eine klassische Kaltmazeration für "
+                ". En parallèle, les fractions résineuses et alcaloïdes recourent à l'éthanol adapté pour ",
+                ". In parallel, resinous and alkaloid fractions use adapted ethanol to ",
+                ". Gleichzeitig nutzen harz- und alkaloidreiche Pflanzen passenden Alkohol, um "
               )}
               <button 
                 onClick={() => onNavigate('teinture-mere')}
                 className="font-bold underline hover:text-[#E8772E] transition-colors cursor-pointer"
                 style={{ color: '#1E2E25' }}
               >
-                {tr("comprendre la teinture mère hydroalcoolique", "understand hydroalcoholic mother tinctures", "hydroalkoholische Urtinkturen zu verstehen")}
+                {tr("réussir une teinture mère hydroalcoolique", "prepare a hydroalcoholic mother tincture", "eine hydroalkoholische Urtinktur herzustellen")}
               </button>
-              {tr(" et le comportement des résines.", " and how dense resins behave.", " und das Lösen von Harzen.")}
+              {tr(
+                " (avec les programmes Tincture [71 °C / 160 °F – 4 h par défaut, réglables] ou Sans chauffe de BloomLab® sous strictes consignes anti-flamme, ou en bocal).",
+                " (using BloomLab®'s Tincture [71°C / 160°F – 4h default, adjustable] or No-heating modes under strict flame-free safety rules, or in a sealed glass jar).",
+                " (mit den BloomLab®-Modi Tincture [Standard 71 °C / 160 °F – 4 Std., anpassbar] oder Ohne Heizung unter strengen Flammschutzregeln oder im Glas)."
+              )}
             </p>
           </div>
 
@@ -555,9 +559,9 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
 
           <p className="text-base text-white/90 leading-relaxed font-medium">
             {tr(
-              "La machine BloomLab® combine cuve en acier inoxydable 304 inerte et facile à nettoyer, régulation thermique suivie (spécification nominale annoncée par le fabricant, non certifiée indépendamment) et agitation vortex. Elle permet de conduire successivement la Phase A hydrosoluble (eau, glycérine) et la Phase B liposoluble (huiles végétales) directement dans votre cuisine (tout usage d'alcool chauffé en cuve est suspendu).",
-              "The BloomLab® appliance combines a food-grade 304 stainless steel vessel, regulated heating (manufacturer nominal specification, not independently certified), and vortex agitation. It enables sequential Phase A aqueous/glycerin extraction and Phase B oil extraction in your kitchen (heated alcohol protocols suspended).",
-              "Die BloomLab® kombiniert einen lebensmittelechten 304-Edelstahlbehälter, geregelte Erwärmung (Herstellerangabe, nicht unabhängig zertifiziert) und Vortex-Rührung für sequentielle Phase A (Wasser/Glycerin) und Phase B (Öle) zu Hause (erhitzter Alkohol ausgesetzt)."
+              "La machine BloomLab® combine cuve en inox 304 (grade alimentaire) et 6 fonctions (Butter, Oil, Tincture [71 °C / 160 °F – 4 h par défaut], Sans chauffe, Décarboxylation, Nettoyage 5 min) avec réglages manuels TEMP/TIME (0 à 121 °C, 30 min à 12 h sur les modes réglables). Vous conduisez séparément la Phase A aqueuse/glycérinée puis, cuve vidée et séchée, la Phase B (huile ou alcool en mode Tincture / Sans chauffe — vapeurs d’éthanol inflammables dès 13 °C pur, donc pièce ventilée, aucune flamme, couvercle verrouillé et niveaux MIN/MAX).",
+              "The BloomLab® appliance pairs a food-grade 304 stainless steel chamber with 6 functions (Butter, Oil, Tincture [71°C / 160°F – 4h default], No heating, Decarboxylate, 5-min Clean) plus manual TEMP/TIME control (0–121°C, 30 min–12h on adjustable modes). This allows separate Phase A aqueous/glycerin extraction and, after emptying and drying the tank, Phase B carrier-oil or alcohol extraction (ethanol vapors are flammable from 13°C pure—use ventilated room, zero flames, locked lid, MIN/MAX bounds).",
+              "Die BloomLab® kombiniert einen lebensmittelechten 304-Edelstahlbehälter mit 6 Programmen (Butter, Oil, Tincture [Standard 71 °C / 160 °F – 4 Std.], Ohne Heizung, Decarboxylierung, Reinigung 5 Min.) und manueller TEMP/TIME-Steuerung (0–121 °C, 30 Min.–12 Std.). Nach sauberem Entleeren und Trocknen nach Phase A folgt Phase B mit Öl oder Alkohol (Ethanoldämpfe ab 13 °C entzündlich: gut lüften, keine Flamme, verriegelter Deckel, MIN/MAX)."
             )}
           </p>
 
@@ -589,9 +593,9 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
               </h3>
               <p className="text-sm leading-relaxed" style={{ color: '#1E2E25', opacity: 0.85 }}>
                 {tr(
-                  "L'infusion est une forme particulière d'extraction n'utilisant que l'eau. L'extraction au sens large mobilise divers solvants (eau, glycérine, huile ; alcool hors appareil à froid uniquement) avec maîtrise du temps, de la température et de l'agitation pour approcher le Totum végétal.",
-                  "Infusion uses only water. Broad extraction utilizes various solvents (water, glycerin, carrier oil; cold alcohol outside electric vessels only) with controlled time, temperature, and agitation.",
-                  "Die Infusion nutzt nur Wasser. Extraktion im weiteren Sinne verwendet verschiedene Lösungsmittel (Wasser, Glycerin, Öl; kalten Alkohol nur außerhalb elektrischer Geräte)."
+                  "L'infusion est une forme particulière d'extraction n'utilisant que l'eau. L'extraction au sens large mobilise divers solvants documentés en botanique (eau, huile végétale, glycérine, ou alcool en macération froide traditionnelle hors appareil chauffé) avec maîtrise du temps, de la température et de l'agitation pour approcher le Totum végétal.",
+                  "Infusion uses only water. Broad botanical extraction relies on documented solvents (water, plant oil, glycerin, or alcohol in traditional cold off-appliance maceration) with controlled time, temperature, and agitation to approach the plant Totum.",
+                  "Die Infusion nutzt nur Wasser. Botanische Extraktion umfasst verschiedene dokumentierte Lösungsmittel (Wasser, Pflanzenöl, Glycerin oder Alkohol in traditioneller Kaltmazeration außerhalb beheizter Geräte)."
                 )}
               </p>
             </div>
@@ -602,9 +606,9 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
               </h3>
               <p className="text-sm leading-relaxed" style={{ color: '#1E2E25', opacity: 0.85 }}>
                 {tr(
-                  "C'est un procédé en deux étapes distinctes : la Phase A capture les principes hydrosolubles (eau, glycérine) à température douce, puis la Phase B capture les composés liposolubles dans une huile végétale adaptée sans chauffer l'alcool en cuve.",
-                  "It is a two-phase protocol: Phase A captures water-soluble compounds (water, glycerin), and Phase B extracts lipophilic fractions into carrier oils (heated alcohol suspended).",
-                  "Ein zweistufiges Protokoll: Phase A gewinnt wasserlösliche Stoffe (Wasser, Glycerin), Phase B extrahiert lipophile Fraktionen in Pflanzenöl (erhitzter Alkohol ausgesetzt)."
+                  "C'est un procédé en deux étapes distinctes : la Phase A capture les principes hydrosolubles (eau, glycérine) à température douce, puis la Phase B capture les composés liposolubles et résineux dans une huile végétale vierge à température modérée.",
+                  "It is a two-phase protocol: Phase A captures water-soluble compounds (water, glycerin), and Phase B extracts lipophilic and resinous fractions using virgin carrier oils at moderate temperature.",
+                  "Ein zweistufiges Protokoll: Phase A gewinnt wasserlösliche Stoffe (Wasser, Glycerin), Phase B extrahiert lipophile und harzige Fraktionen in nativem Pflanzenöl bei moderater Temperatur."
                 )}
               </p>
             </div>

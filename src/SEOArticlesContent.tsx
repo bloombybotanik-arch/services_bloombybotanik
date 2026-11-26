@@ -1359,7 +1359,7 @@ export const TotumDefinition = ({ lang, t, onNavigate }: SEOArticleProps) => {
                   icon: "🧪", 
                   title: isFR ? "Résines & Graines Dures" : isDE ? "Harze & harte Samen" : "Resins & Hard Seeds", 
                   sub: isFR ? "(Boswellia, Girofle)" : isDE ? "(Boswellia, Nelken)" : "(Boswellia, Clove)", 
-                  desc: isFR ? "Phase B huileuse en BloomLab® (45°C) ; alcool à froid hors appareil uniquement" : isDE ? "Ölige Phase B in BloomLab® (45°C); Alkohol nur kalt außerhalb des Geräts" : "Oil Phase B in BloomLab® (45°C); cold alcohol outside appliance only" 
+                  desc: isFR ? "Phase B huileuse ou glycérinée en BloomLab® (45°C)" : isDE ? "Öl- oder Glycerin-Phase B in BloomLab® (45°C)" : "Carrier oil or glycerin Phase B in BloomLab® (45°C)" 
                 },
                 { 
                   icon: "🌿", 
@@ -2150,7 +2150,7 @@ export const SolvantsExtraction = ({ lang, t, onNavigate, isPremium, onRequireAu
                   </div>
 
                   <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15 text-xs sm:text-sm text-white/95 mt-4">
-                    <strong className="text-[#C8AB8A]">{tr("La leçon Bloom pour la pratique domestique :", 'The Bloom takeaway for home practice:', 'Die Bloom-Erkenntnis für zu Hause:')}</strong> {tr("la température est tout aussi déterminante que le solvant. Dans BloomLab®, on travaille exclusivement à l'eau purifiée, à l'huile vierge ou à la glycérine/vinaigre sans chauffage d'alcool : par sécurité électrique domestique, toute extraction alcoolique (45–85°) reste suspendue dans la cuve chauffante et se réalise uniquement à froid en bocal fermé.", 'temperature matters just as much as solvent polarity. In BloomLab®, heated extractions use water, virgin oil, glycerin, or cider vinegar only — never heated alcohol inside the electrical chamber.', 'Die Temperatur ist ebenso entscheidend wie das Lösungsmittel. In der BloomLab® werden ausschließlich Wasser, Öl, Glycerin oder Essig erwärmt — Alkohol wird aus Sicherheitsgründen nie im beheizten Gerät verwendet.')}
+                    <strong className="text-[#C8AB8A]">{tr("La leçon Bloom pour la pratique domestique :", 'The Bloom takeaway for home practice:', 'Die Bloom-Erkenntnis für zu Hause:')}</strong> {tr("la température est tout aussi déterminante que le solvant. Dans BloomLab®, vous sélectionnez la température et la durée adaptées à chaque phase et solvant : eau, huiles végétales, glycérine ou alcool (via le programme Tincture pour l'alcool haute preuve sans eau ou Sans chauffe pour les macérations douces, dans le strict respect des consignes sécurité anti-flamme et ventilation du manuel).", 'temperature matters just as much as solvent polarity. In BloomLab®, you choose the temperature and duration suited to each phase and solvent: water, carrier oils, glycerin, or alcohol (using Tincture for waterless high-proof alcohol or No heating for gentle macerations, strictly following flame-free ventilation safety rules).', 'Die Temperatur ist ebenso entscheidend wie das Lösungsmittel. In der BloomLab® stellen Sie Temperatur und Zeit passend für Wasser, Pflanzenöl, Glycerin oder Alkohol ein (Tincture für hochprozentigen Alkohol ohne Wasserzusatz oder Ohne Heizung für sanfte Mazerationen gemäß Sicherheitshinweisen).')}
                   </div>
                 </div>
               </div>
@@ -2185,10 +2185,10 @@ export const SolvantsExtraction = ({ lang, t, onNavigate, isPremium, onRequireAu
                         <td className="p-3.5 sm:p-4 italic">{tr('Gentiane, Salsepareille, Angélique', 'Gentian, Sarsaparilla, Angelica', 'Enzian, Sarsaparille, Engelwurz')}</td>
                       </tr>
                       <tr className="hover:bg-[#FAF7F2]/60 transition-colors">
-                        <td className="p-3.5 sm:p-4 font-mono font-bold text-[#C8AB8A]">{tr('Alcool 70°–85°', '70–85% ABV', '70–85 % Vol.')}</td>
-                        <td className="p-3.5 sm:p-4 font-medium text-[#3E4A3D]">{tr('Résines dures, gommes, graines dures, propolis', 'Hard resins, gums, tough seeds, propolis', 'Harte Harze, Gummen, harte Samen, Propolis')}</td>
-                        <td className="p-3.5 sm:p-4 text-slate-600">{tr('Résines triterpéniques, acides boswelliques, huiles essentielles denses', 'Triterpene resins, boswellic acids, dense aromatics', 'Triterpenharze, Boswelliasäuren, dichte ätherische Öle')}</td>
-                        <td className="p-3.5 sm:p-4 italic">{tr('Boswellia (Encens), Myrrhe, Clou de girofle', 'Boswellia, Myrrh, Clove', 'Weihrauch (Boswellia), Myrrhe, Gewürznelke')}</td>
+                        <td className="p-3.5 sm:p-4 font-mono font-bold text-[#C8AB8A]">{tr('Alcool 70°–96°', '70–96% ABV', '70–96 % Vol.')}</td>
+                        <td className="p-3.5 sm:p-4 font-medium text-[#3E4A3D]">{tr('70° : champignons, racines ligneuses, alcaloïdes · 90–96° : résines pures, propolis', '70%: mushrooms, woody roots, alkaloids · 90–96%: pure resins, propolis', '70 %: Vitalpilze, holzige Wurzeln, Alkaloide · 90–96 %: reine Harze, Propolis')}</td>
+                        <td className="p-3.5 sm:p-4 text-slate-600">{tr('Résines triterpéniques, acides boswelliques, cires aromatiques, alcaloïdes denses', 'Triterpene resins, boswellic acids, aromatic waxes, dense alkaloids', 'Triterpenharze, Boswelliasäuren, Wachse, dichte Alkaloide')}</td>
+                        <td className="p-3.5 sm:p-4 italic">{tr('Boswellia (Encens), Myrrhe, Propolis (90–96°) · Chaga, Mahonia (70°)', 'Boswellia, Myrrh, Propolis (90–96%) · Chaga, Mahonia (70%)', 'Weihrauch, Myrrhe, Propolis (90–96 %) · Chaga, Mahonie (70 %)')}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -2311,12 +2311,12 @@ export const SolvantsExtraction = ({ lang, t, onNavigate, isPremium, onRequireAu
                     <tr className="hover:bg-[#FAF7F2]/60 transition-colors">
                       <td className="p-4 sm:p-5 font-bold text-[#3E4A3D] flex items-center gap-2">
                         <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 shrink-0" />
-                        {tr('Alcool bio (macération à froid uniquement)', 'Organic alcohol (cold maceration only)', 'Bio-Alkohol (nur Kaltmazeration)')}
+                        {tr('Alcool bio (45°–96°)', 'Organic alcohol (45–96% ABV)', 'Bio-Alkohol (45–96 % Vol.)')}
                       </td>
                       <td className="p-4 sm:p-5 font-mono text-xs">{tr('Intermédiaire (bipolaire)', 'Intermediate (bipolar)', 'Intermediär (bipolar)')}</td>
                       <td className="p-4 sm:p-5 text-slate-600">{tr('Alcaloïdes, résines, principes amers', 'Alkaloids, resins, bitter principles', 'Alkaloide, Harze, Bitterstoffe')}</td>
-                      <td className="p-4 sm:p-5 font-mono font-semibold text-[#C8AB8A]">{tr('Ambiante (hors appareil)', 'Ambient only (no device heating)', 'Raumtemperatur (ohne Gerät)')}</td>
-                      <td className="p-4 sm:p-5 text-slate-600">{tr('Macération traditionnelle en bocal fermé (suspendu dans BloomLab®)', 'Traditional jar maceration (suspended in BloomLab®)', 'Klassische Glasmazeration (in BloomLab® ausgesetzt)')}</td>
+                      <td className="p-4 sm:p-5 font-mono font-semibold text-[#C8AB8A]">{tr('Sans chauffe ou Tincture (ex. 40–55 °C, sans eau)', 'No heating or Tincture (e.g. 40–55°C without water)', 'Ohne Heizung oder Tincture (z. B. 40–55 °C ohne Wasser)')}</td>
+                      <td className="p-4 sm:p-5 text-slate-600">{tr('Teintures mères (en BloomLab® sous strictes consignes sécurité anti-flamme & ventilation, ou en bocal)', 'Mother tinctures (in BloomLab® under strict ventilation/flame-free safety rules, or glass jar)', 'Urtinkturen (in BloomLab® unter strengen Sicherheitsregeln oder im Glas)')}</td>
                       <td className="p-4 sm:p-5 text-slate-500">{tr("Flacon opaque fermé, à l'abri de la chaleur", 'Sealed opaque bottle away from heat', 'Licht- und wärmegeschützt lagern')}</td>
                     </tr>
 
@@ -2396,9 +2396,9 @@ export const SolvantsExtraction = ({ lang, t, onNavigate, isPremium, onRequireAu
                   <h4 className="font-bold text-[#3E4A3D] text-base">{tr('Extraction du complexe lipophile', 'Lipophilic Complex Extraction', 'Extraktion des lipophilen Komplexes')}</h4>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {tr(
-                      'Capture douce des terpènes aromatiques, résines, cires et pigments dans une huile vierge protectrice (en BloomLab®) ; macération alcoolique à froid hors appareil uniquement.',
-                      'Gently gathers aromatic terpenes, resins, waxes, and pigments in cold-pressed virgin oil (in BloomLab®); cold alcohol maceration outside the heated device only.',
-                      'Nimmt aromatische Terpene, Harze, Wachse und Pigmente schonend in nativem Öl auf (in der BloomLab®); Alkoholauszüge nur kalt außerhalb des Geräts.'
+                      'Capture douce des terpènes aromatiques, résines, cires et pigments avec une huile végétale vierge protectrice ou de la glycérine végétale en BloomLab®.',
+                      'Gently gathers aromatic terpenes, resins, waxes, and pigments in cold-pressed virgin oil or vegetable glycerin inside BloomLab®.',
+                      'Nimmt aromatische Terpene, Harze, Wachse und Pigmente schonend in nativem Pflanzenöl oder Pflanzenglycerin in der BloomLab® auf.'
                     )}
                   </p>
                 </div>

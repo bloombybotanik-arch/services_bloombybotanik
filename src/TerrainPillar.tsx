@@ -62,7 +62,7 @@ export const SEVEN_TERRAINS: SevenTerrainItem[] = [
     number: 1,
     title: 'Digestion & microbiome',
     subtitle: 'Le point de départ quotidien',
-    shortDescription: 'Comprendre les liens entre alimentation, diversité végétale, confort digestif et routines quotidiennes.',
+    shortDescription: 'Comprendre les liens entre alimentation, diversité végétale, microbiote et routines quotidiennes.',
     internalReference: 'Terrain intestinal, microbiome et barrière',
     icon: Droplets,
     gradient: 'from-blue-50 to-indigo-50/60',

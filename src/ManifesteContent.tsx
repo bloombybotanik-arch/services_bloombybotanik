@@ -524,7 +524,7 @@ export default function ManifesteContent({ onBack, onNavigate, lang }: Manifeste
                         </tr>
                         <tr className="hover:bg-[#FAF7F2]/50">
                           <td className="px-4 py-3 font-bold text-[#C8AB8A] whitespace-nowrap">Phase B</td>
-                          <td className="px-4 py-3 font-medium whitespace-nowrap">Alcool / Huile</td>
+                          <td className="px-4 py-3 font-medium whitespace-nowrap">Huile / Glycérine</td>
                           <td className="px-4 py-3 text-slate-600 whitespace-nowrap">40°C à 50°C</td>
                           <td className="px-4 py-3 text-slate-700">Composés liposolubles, résines &amp; volatils</td>
                         </tr>
@@ -731,7 +731,7 @@ export default function ManifesteContent({ onBack, onNavigate, lang }: Manifeste
                     </h2>
                   </div>
                   <p>
-                    BloomLab schützt das pflanzliche Totum durch thermische Präzisionszyklen und sequenzierte Extraktion (Phase A wässrig, Phase B fettlöslich/alkoholisch).
+                    BloomLab schützt das pflanzliche Totum durch thermische Präzisionszyklen und sequenzierte Extraktion (Phase A wässrig/Glycerin, Phase B lipophil mit Pflanzenöl).
                   </p>
                 </section>
               </>
@@ -788,7 +788,7 @@ export default function ManifesteContent({ onBack, onNavigate, lang }: Manifeste
                     </h2>
                   </div>
                   <p>
-                    BloomLab unlocks the vegetal Totum through ±0.5°C thermal precision cycles and dual A/B sequential extraction (water/glycerin Phase A, alcohol/oil Phase B).
+                    BloomLab unlocks the vegetal Totum through regulated thermal cycles and dual A/B sequential extraction (water/glycerin Phase A, carrier oil Phase B).
                   </p>
                 </section>
               </>

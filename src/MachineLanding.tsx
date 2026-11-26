@@ -352,10 +352,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                   <span className="shrink-0">✅</span>
                   <span>
                     {lang === 'fr'
-                      ? "Cuve 100 % Inox 304 alimentaire sans plastique + manuel complet et 100 recettes exclusives en français"
+                      ? "Cuve en inox 304 (grade alimentaire) + manuel complet et 100 recettes exclusives en français"
                       : lang === 'de'
-                      ? "100 % lebensmittelechter Edelstahl 304 ohne Kunststoff + vollständiges Handbuch & 100 exklusive Rezepte"
-                      : "100% food-grade 304 stainless steel chamber without plastic + complete manual and 100 exclusive recipes"}
+                      ? "Behälter aus Edelstahl 304 (Lebensmittelqualität) + vollständiges Handbuch & 100 exklusive Rezepte"
+                      : "Food-grade 304 stainless steel chamber + complete manual and 100 exclusive recipes"}
                   </span>
                 </li>
               </ul>
@@ -562,17 +562,17 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3E4A3D] leading-tight">
               {lang === 'fr' 
-                ? "Double Extraction Séquentielle (Eau + Huile / Glycérine) : préservez l'équilibre du Totum" 
+                ? "Double Extraction Séquentielle (Eau + Huile / Glycérine / Teinture) : préservez l'équilibre du Totum" 
                 : lang === 'de' 
-                ? "Sequenzielle Doppelextraktion (Wasser + Öl / Glycerin): das Pflanzen-Totum bewahren" 
-                : "Sequential Dual Extraction (Water + Oil / Glycerin): Preserve the Plant Totum"}
+                ? "Sequenzielle Doppelextraktion (Wasser + Öl / Glycerin / Tinktur): das Pflanzen-Totum bewahren" 
+                : "Sequential Dual Extraction (Water + Oil / Glycerin / Tincture): Preserve the Plant Totum"}
             </h2>
             <p className="text-base sm:text-lg text-[#3E4A3D]/70 leading-relaxed font-normal">
               {lang === 'fr'
-                ? "Préparez vos huiles de soin, sérums et infusions concentrées en 2 heures au lieu de 6 semaines. BloomLab adresse les 3 barrières physiques qui affaiblissent les préparations maison grâce au contrôle du temps, de la température et des solvants non inflammables (eau, huile, glycérine — alcool chauffé en cuve suspendu par sécurité)."
+                ? "Préparez vos huiles de soin, sérums, macérats glycérinés, teintures mères et infusions en quelques heures au lieu de plusieurs semaines. BloomLab® dispose de 6 fonctions prédéfinies (Butter, Oil, Tincture, Sans chauffe, Décarboxylation, Nettoyage 5 min) et d'un réglage manuel TEMP/TIME (0 à 121 °C, 30 min à 12 h sur les modes réglables) — vous paramétrez chaque cycle selon la plante et le solvant."
                 : lang === 'de'
-                ? "Stellen Sie Pflegeöle, Seren und konzentrierte Auszüge in 2 Stunden statt 6 Wochen her. BloomLab arbeitet mit nicht brennbaren Lösungsmitteln (Wasser, Öl, Glycerin — erhitzter Alkohol im Gerät ist aus Sicherheitsgründen ausgesetzt)."
-                : "Craft care oils, serums, and concentrated infusions in 2 hours instead of 6 weeks using non-flammable solvents (water, oil, glycerin — heated alcohol inside the chamber is suspended for safety)."}
+                ? "Stellen Sie Pflegeöle, Seren, Glycerin-Mazerate, Tinkturen und Aufgüsse in Stunden statt Wochen her. BloomLab® bietet 6 Programme (Butter, Oil, Tincture, Ohne Heizung, Decarboxylierung, Reinigung 5 Min.) sowie manuelle TEMP/TIME-Steuerung (0–121 °C, 30 Min.–12 Std. bei regelbaren Funktionen)."
+                : "Craft care oils, serums, glycerin macerates, tinctures, and infusions in hours instead of weeks. BloomLab® offers 6 functions (Butter, Oil, Tincture, No heating, Decarboxylate, 5-min Clean) plus manual TEMP/TIME control (0–121°C, 30 min–12h on adjustable modes) set by the user per herb and solvent."}
             </p>
             <details className="text-left max-w-2xl mx-auto rounded-2xl border border-[#3E4A3D]/15 bg-white p-4 shadow-xs">
               <summary className="cursor-pointer font-bold text-sm text-[#3E4A3D] select-none">
@@ -585,10 +585,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               <div className="mt-3 pt-3 border-t border-[#3E4A3D]/10 text-xs sm:text-sm text-[#3E4A3D]/80 space-y-2 leading-relaxed">
                 <p>
                   {lang === 'fr'
-                    ? "L'extraction obéit à la loi de diffusion de Fick et à la sélectivité de polarité des solvants : la phase hydrophile (eau ou glycérine, 75–90 °C sur racines et fibres denses) solubilise tanins, polyphénols et minéraux, tandis que la phase lipophile (huiles végétales ou beurres, 40–58 °C sur feuilles et sommités fleuries) capture les terpènes volatils et composés liposolubles. Par précaution technique, aucune extraction à l'alcool chauffé n'est conduite dans la cuve BloomLab®."
+                    ? "L'extraction obéit à la loi de diffusion de Fick et à la sélectivité de polarité des solvants : la phase hydrophile (eau ou glycérine, ex. 70–85 °C) solubilise tanins, polyphénols et minéraux, tandis que la phase lipophile ou hydroalcoolique (huiles végétales à 40–58 °C ; alcool sur programme Tincture ou Sans chauffe après vidage et séchage complets de la cuve) capte terpènes, résines et alcaloïdes. Respectez toujours les consignes sécurité du manuel (ventilation, aucune flamme nue, couvercle verrouillé, niveaux MIN–MAX ; utiliser Sans chauffe ou un bocal lors d'une dilution hydroalcoolique à l'eau)."
                     : lang === 'de'
-                    ? "Die Extraktion folgt dem Fickschen Diffusionsgesetz und der Lösungsmittelpolarität: Die hydrophile Phase (Wasser/Glycerin, 75–90 °C) löst Tannine und Mineralstoffe aus festen Wurzeln, während die lipophile Phase (Pflanzenöle, 40–58 °C) flüchtige Terpene und fettlösliche Moleküle aufnimmt. Aus Sicherheitsgründen erfolgt keine erhitzte Alkoholextraktion im BloomLab®."
-                    : "Extraction follows Fick's diffusion law and solvent polarity selectivity: the hydrophilic stage (water/glycerin, 75–90°C) solubilizes tannins and minerals from dense roots, while the lipophilic stage (carrier oils, 40–58°C) captures volatile terpenes and fat-soluble compounds. For safety, no heated alcohol extraction is performed inside BloomLab®."}
+                    ? "Die Extraktion folgt dem Fickschen Diffusionsgesetz und der Polarität: Die hydrophile Phase (Wasser/Glycerin) löst Tannine und Mineralstoffe, während die lipophile oder alkoholische Phase (Öle bei 40–58 °C; Alkohol mit Tincture oder Ohne Heizung nach vollständigem Entleeren und Trocknen des Behälters) Terpene, Harze und Alkaloide aufnimmt. Beachten Sie stets die Sicherheitshinweise (Belüftung, keine offene Flamme, geschlossener Deckel, MIN–MAX)."
+                    : "Extraction follows Fick's diffusion law and solvent polarity selectivity: the hydrophilic stage (water/glycerin) solubilizes tannins and minerals, while the lipophilic or hydroalcoholic stage (carrier oils at 40–58°C; alcohol via Tincture or No heating after emptying and drying the chamber) captures terpenes, resins, and alkaloids. Always follow the manual's safety warnings (ventilation, no open flame, locked lid, MIN–MAX limits; prefer No heating or jar maceration when diluting alcohol with water)."}
                 </p>
                 <p>
                   {lang === 'fr'
@@ -1104,18 +1104,18 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 {
                   step: "03",
                   text: lang === 'fr'
-                    ? "Ajoutez votre solvant non inflammable (eau filtrée, huile végétale vierge ou glycérine végétale — alcool chauffé suspendu)."
+                    ? "Ajoutez le solvant adapté à votre préparation (eau filtrée, huile végétale, beurre, glycérine végétale ou alcool alimentaire selon la fiche et les consignes de sécurité)."
                     : lang === 'de'
-                    ? "Fügen Sie Ihr nicht brennbares Lösungsmittel hinzu (gefiltertes Wasser, kaltgepresstes Öl oder pflanzliches Glycerin)."
-                    : "Add your non-flammable solvent (filtered water, virgin carrier oil, or vegetable glycerin — heated alcohol suspended)."
+                    ? "Fügen Sie das passende Lösungsmittel hinzu (gefiltertes Wasser, Pflanzenöl, Butter, pflanzliches Glycerin oder Ansatzalkohol gemäß Rezept und Sicherheitshinweisen)."
+                    : "Add the solvent suited to your preparation (filtered water, carrier oil, butter, vegetable glycerin, or food-grade alcohol per recipe and safety rules)."
                 },
                 {
                   step: "04",
                   text: lang === 'fr'
-                    ? "Sélectionnez le programme (température & durée) : la machine s'occupe du reste en silence."
+                    ? "Choisissez l’un des 6 programmes (Butter, Oil, Tincture, Sans chauffe, Décarboxylation, Nettoyage) ou ajustez température et durée via + / -."
                     : lang === 'de'
-                    ? "Wählen Sie Programm (Temperatur & Dauer): Das Gerät übernimmt den Rest leise."
-                    : "Select program (temperature & time): the machine quietly handles the rest."
+                    ? "Wählen Sie eines der 6 Programme (Butter, Oil, Tincture, Ohne Erhitzen, Decarboxylierung, Reinigung) oder passen Sie Temperatur und Dauer mit + / - an."
+                    : "Select one of the 6 programs (Butter, Oil, Tincture, No heating, Decarboxylate, Clean) or adjust temperature and time via + / -."
                 },
                 {
                   step: "05",
@@ -1174,10 +1174,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               </h4>
               <p className="text-xs text-[#3E4A3D]/80 leading-relaxed">
                 {lang === 'fr'
-                  ? "35 °C à 121 °C (régulation nominale fabricant ±0,5 °C, non certifiée par laboratoire tiers)"
+                  ? "0 °C à 121 °C (réglage manuel TEMP/TIME ; Sans chauffe sans consigne de température ; Nettoyage 5 min fixe)"
                   : lang === 'de'
-                  ? "35 °C bis 121 °C (Hersteller-Nennwert ±0,5 °C)"
-                  : "35°C to 121°C (nominal mfr. spec ±0.5°C)"}
+                  ? "0 °C bis 121 °C (manuelle TEMP/TIME-Steuerung; Ohne Heizung ohne Temperaturwahl; Reinigung 5 Min. fest)"
+                  : "0°C to 121°C (manual TEMP/TIME control; No heating temp fixed; Clean fixed at 5 min)"}
               </p>
             </div>
 

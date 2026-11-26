@@ -213,15 +213,15 @@
   },
   {
     "id": "discovery-05",
-    "title": "Teinture de Propolis Maison",
+    "title": "Teinture Mère de Propolis Maison",
     "url": "/recettes/#05",
     "status": "publiée",
     "category": "parcours-guide",
-    "subcategory": "Teinture",
+    "subcategory": "Extrait glycériné",
     "ingredientCount": 2,
     "activeStepCount": 2,
     "extractionPhaseCount": 2,
-    "temperatures": "Température ambiante / N/A",
+    "temperatures": "45°C (Tincture ajusté) ou ambiante (Sans chauffe)",
     "machineTimeMinutes": 60,
     "activeTimeMinutes": 20,
     "totalTimeMinutes": 80,
@@ -229,8 +229,9 @@
     "assemblyRequired": true,
     "conservationRequirement": "Bocal hermétique propre ou réfrigération",
     "allergensOrPrecautions": [
-      "Contient de l'alcool.",
-      "Tache les vêtements."
+      "Solvant inflammable : pièce ventilée, zéro flamme, couvercle verrouillé, respect MIN/MAX",
+      "Ne pas ajouter d’eau ni de lécithine en cycle Tincture chauffé",
+      "Contre-indiqué grossesse, allaitement, enfants, sensibilité à l’alcool et allergie aux produits de la ruche"
     ],
     "materialsNeeded": [
       "Extracteur BloomLab®",
@@ -239,7 +240,10 @@
       "Récipient propre"
     ],
     "keySteps": [
-      "Extraction vortex phase A"
+      "Congélation brève et concassage de la propolis brute",
+      "Extraction anhydre dans alcool bio 90°–96° (sans ajout d’eau, pièce ventilée, aucune flamme)",
+      "Cycle Tincture ajusté (45°C / 2h30) ou programme Sans chauffe (4h–12h)",
+      "Filtration à froid des cires et mise en flacon ambré"
     ],
     "difficultyCalculatedScore": 44,
     "difficultyFinalScore": 44,
@@ -482,7 +486,7 @@
     "ingredientCount": 3,
     "activeStepCount": 5,
     "extractionPhaseCount": 2,
-    "temperatures": "75°C / 50°C",
+    "temperatures": "Phase A: 75°C / Phase B: Ambiante (70° Sans chauffe / bocal)",
     "machineTimeMinutes": 240,
     "activeTimeMinutes": 20,
     "totalTimeMinutes": 260,
@@ -500,10 +504,10 @@
       "Récipient propre"
     ],
     "keySteps": [
-      "Phase A : Extraction hydroglycérinée de la Bardane et de la Pensée Sauvage à 75°C pendant 2h00.",
-      "Vérification de la descente de température de la cuve sous 45°C.",
-      "Phase B : Ajout du Mahonia et de l'alcool bio 96° à 50°C pendant 2h30.",
-      "Filtration et pressage à l'étamine de lin pour recueillir la fraction de cœur riche en berbérine."
+      "Extraction séquentielle Phase A (eau + glycérine 75°C)",
+      "Vidange, nettoyage (5 min) et séchage complet de la cuve",
+      "Phase B hydro-alcoolique 70° (Mahonia) en mode Sans chauffe (4h–12h) ou bocal hermétique",
+      "Filtration et assemblage hors appareil en flacons ambrés"
     ],
     "difficultyCalculatedScore": 54,
     "difficultyFinalScore": 54,
@@ -537,7 +541,7 @@
     "ingredientCount": 3,
     "activeStepCount": 5,
     "extractionPhaseCount": 2,
-    "temperatures": "68°C / 48°C",
+    "temperatures": "Phase A: 68°C / Phase B: Ambiante (50° Sans chauffe / bocal)",
     "machineTimeMinutes": 180,
     "activeTimeMinutes": 20,
     "totalTimeMinutes": 200,
@@ -545,7 +549,7 @@
     "assemblyRequired": true,
     "conservationRequirement": "Bocal hermétique propre ou réfrigération",
     "allergensOrPrecautions": [
-      "Ne jamais appliquer l'extrait hydroalcoolique pur sur peau écorchée ou suintante."
+      "Protocole formulé sans alcool en phase glycérinée ou huileuse ; ne pas appliquer pur sur peau écorchée ou suintante."
     ],
     "materialsNeeded": [
       "Extracteur BloomLab®",
@@ -554,10 +558,10 @@
       "Récipient propre"
     ],
     "keySteps": [
-      "Phase A : Extraction douce de l'aucuboside du Plantain et de l'apigénine de Camomille à 68°C pendant 1h45.",
-      "Contrôle de refroidissement sous 40°C.",
-      "Phase B : Captation étanche des sesquiterpènes volatils (chamazulène) et protopine de Fumeterre à 48°C pendant 2h30.",
-      "Pressage doux sans broyer les tiges."
+      "Extraction séquentielle Phase A (eau + glycérine 68°C)",
+      "Vidange, nettoyage (5 min) et séchage complet de la cuve",
+      "Phase B hydro-alcoolique 50° (Camomille & Fumeterre) en mode Sans chauffe (4h–12h) ou bocal",
+      "Pressage doux et assemblage hors appareil"
     ],
     "difficultyCalculatedScore": 54,
     "difficultyFinalScore": 54,
@@ -591,7 +595,7 @@
     "ingredientCount": 3,
     "activeStepCount": 4,
     "extractionPhaseCount": 2,
-    "temperatures": "72°C / 52°C",
+    "temperatures": "Phase A: 72°C / Phase B: Sans chauffe 70° ou Tincture ≥75° sans eau",
     "machineTimeMinutes": 300,
     "activeTimeMinutes": 20,
     "totalTimeMinutes": 320,
@@ -608,9 +612,10 @@
       "Récipient propre"
     ],
     "keySteps": [
-      "Phase A : Extraction des lectines UDA et silice biodisponible d'ortie et polyphénols de Ginkgo à 72°C pendant 2h00.",
-      "Phase B : Extraction lipophile sous vortex des acides gras libres et phytostérols de Palmier Nain à 52°C pendant 3h00.",
-      "Conditionnement bimodal : flacon compte-gouttes (oral) et flacon spray (lotion cuir chevelu)."
+      "Extraction séquentielle Phase A (eau + glycérine 72°C)",
+      "Vidange, nettoyage (5 min) et séchage complet de la cuve",
+      "Phase B alcoolique 70° (Sans chauffe) ou ≥75° sans eau (Tincture) pour baies de Palmier Nain",
+      "Filtration et conditionnement bimodal (oral + lotion)"
     ],
     "difficultyCalculatedScore": 49,
     "difficultyFinalScore": 49,
@@ -644,7 +649,7 @@
     "ingredientCount": 9,
     "activeStepCount": 19,
     "extractionPhaseCount": 2,
-    "temperatures": "Phase A: 42–45°C / Phase B: 50°C",
+    "temperatures": "Phase A: 65°C / Phase B: 45°C (Tincture 90–96° anhydre) ou Sans chauffe",
     "machineTimeMinutes": 300,
     "activeTimeMinutes": 25,
     "totalTimeMinutes": 325,
@@ -665,9 +670,9 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
-      "Filtration fine et pressage du marc",
-      "Assemblage, émulsion et ajout des conservateurs naturels"
+      "Vidange, nettoyage et séchage complet de la cuve",
+      "Extraction résineuse Phase B en alcool 90°–96° (Tincture ajusté ou Sans chauffe, sans eau) ou macérat huileux",
+      "Filtration fine, assemblage et conservation au frais en flacon ambré"
     ],
     "difficultyCalculatedScore": 94,
     "difficultyFinalScore": 94,
@@ -722,7 +727,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -779,7 +784,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -836,7 +841,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -893,7 +898,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -950,7 +955,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -1007,7 +1012,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -1064,7 +1069,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -1121,7 +1126,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -1178,7 +1183,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -1235,7 +1240,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -1292,7 +1297,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -1349,7 +1354,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -1406,7 +1411,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -1463,7 +1468,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -1520,7 +1525,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -1577,7 +1582,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -1634,7 +1639,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -1691,7 +1696,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -1748,7 +1753,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -1805,7 +1810,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -1862,7 +1867,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -1919,7 +1924,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -1976,7 +1981,7 @@
     ],
     "keySteps": [
       "Extraction aqueuse / polaire (Phase A)",
-      "Extraction hydroalcoolique ou lipophile (Phase B)",
+      "Macération glycérinée ou lipophile (Phase B, sans alcool)",
       "Filtration fine et pressage du marc",
       "Assemblage, émulsion et ajout des conservateurs naturels"
     ],
@@ -4322,7 +4327,7 @@
     "ingredientCount": 5,
     "activeStepCount": 6,
     "extractionPhaseCount": 2,
-    "temperatures": "Phase A: 75°C / Phase B: 50°C",
+    "temperatures": "Phase A: 75°C / Phase B: Ambiante (70° Sans chauffe / bocal)",
     "machineTimeMinutes": 240,
     "activeTimeMinutes": 30,
     "totalTimeMinutes": 270,
@@ -4340,10 +4345,10 @@
       "Flacon en verre ambré"
     ],
     "keySteps": [
-      "Extraction séquentielle Phase A (solvant polaire hydroglycériné)",
-      "Nettoyage et séchage de la cuve",
-      "Extraction séquentielle Phase B (solvant alcoolique doux)",
-      "Double filtration et assemblage"
+      "Extraction séquentielle Phase A (eau + glycérine 75°C)",
+      "Vidange, nettoyage (5 min) et séchage complet de la cuve",
+      "Phase B hydro-alcoolique 70° (Mahonia) en mode Sans chauffe (4h–12h) ou bocal hermétique",
+      "Filtration et assemblage hors appareil en flacons ambrés"
     ],
     "difficultyCalculatedScore": 76,
     "difficultyFinalScore": 76,
@@ -4377,7 +4382,7 @@
     "ingredientCount": 5,
     "activeStepCount": 6,
     "extractionPhaseCount": 2,
-    "temperatures": "Phase A: 75°C / Phase B: 50°C",
+    "temperatures": "Phase A: 68°C / Phase B: Ambiante (50° Sans chauffe / bocal)",
     "machineTimeMinutes": 240,
     "activeTimeMinutes": 30,
     "totalTimeMinutes": 270,
@@ -4395,10 +4400,10 @@
       "Flacon en verre ambré"
     ],
     "keySteps": [
-      "Extraction séquentielle Phase A (solvant polaire hydroglycériné)",
-      "Nettoyage et séchage de la cuve",
-      "Extraction séquentielle Phase B (solvant alcoolique doux)",
-      "Double filtration et assemblage"
+      "Extraction séquentielle Phase A (eau + glycérine 68°C)",
+      "Vidange, nettoyage (5 min) et séchage complet de la cuve",
+      "Phase B hydro-alcoolique 50° (Camomille & Fumeterre) en mode Sans chauffe (4h–12h) ou bocal",
+      "Pressage doux et assemblage hors appareil"
     ],
     "difficultyCalculatedScore": 76,
     "difficultyFinalScore": 76,
@@ -4432,7 +4437,7 @@
     "ingredientCount": 5,
     "activeStepCount": 6,
     "extractionPhaseCount": 2,
-    "temperatures": "Phase A: 75°C / Phase B: 50°C",
+    "temperatures": "Phase A: 72°C / Phase B: Sans chauffe 70° ou Tincture ≥75° sans eau",
     "machineTimeMinutes": 240,
     "activeTimeMinutes": 30,
     "totalTimeMinutes": 270,
@@ -4450,10 +4455,10 @@
       "Flacon en verre ambré"
     ],
     "keySteps": [
-      "Extraction séquentielle Phase A (solvant polaire hydroglycériné)",
-      "Nettoyage et séchage de la cuve",
-      "Extraction séquentielle Phase B (solvant alcoolique doux)",
-      "Double filtration et assemblage"
+      "Extraction séquentielle Phase A (eau + glycérine 72°C)",
+      "Vidange, nettoyage (5 min) et séchage complet de la cuve",
+      "Phase B alcoolique 70° (Sans chauffe) ou ≥75° sans eau (Tincture) pour baies de Palmier Nain",
+      "Filtration et conditionnement bimodal (oral + lotion)"
     ],
     "difficultyCalculatedScore": 76,
     "difficultyFinalScore": 76,

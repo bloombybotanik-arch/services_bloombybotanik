@@ -86,9 +86,6 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
     vid.muted = true;
     vid.defaultMuted = true;
     vid.volume = 0;
-    if (vid.ended) {
-      vid.currentTime = 0;
-    }
     const playPromise = vid.play();
     if (playPromise !== undefined) {
       playPromise.catch(() => {
@@ -109,6 +106,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [newsletterSent, setNewsletterSent] = useState(false);
+  const [showVideoPreview, setShowVideoPreview] = useState(false);
 
   // Sticky bar visible UNIQUEMENT après 60% de scroll
   useEffect(() => {
@@ -246,10 +244,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
         ? "Welche Lösungsmittel kann ich sicher verwenden?"
         : "Which solvents can I use safely?",
       a: isFR
-        ? "La cuve en Inox 304 de grade alimentaire fonctionne avec l'eau filtrée, les huiles végétales (jojoba, olive, amande douce, argan) et la glycérine végétale. Par mesure de sécurité, l'utilisation d'alcool chauffé dans la cuve BloomLab® est suspendue (toute macération alcoolique se réalise uniquement à froid, en bocal verre hors appareil)."
+        ? "La cuve en Inox 304 de grade alimentaire accepte l'eau filtrée, les huiles végétales (jojoba, olive, amande douce, argan) et la glycérine végétale. BloomLab® intègre aussi le programme Tincture (71 °C / 160 °F et 4 h par défaut, réglables manuellement selon la plante) et un mode Sans chauffe (30 min–12 h) : les vapeurs d'éthanol étant déjà inflammables dès 13 °C pur (21 °C à 70 %), respectez strictement le manuel (pièce ventilée, aucune flamme nue, couvercle verrouillé, MIN–MAX, et privilégier Sans chauffe ou bocal si dilution à l'eau)."
         : isDE
-        ? "Der lebensmittelechte Behälter aus Edelstahl 304 eignet sich für gereinigtes Wasser, Pflanzenöle (Jojoba, Olive, Süßmandel, Argan) und pflanzliches Glycerin. Aus Sicherheitsgründen ist das Erhitzen von Alkohol im BloomLab®-Behälter ausgesetzt (alkoholische Mazerationen erfolgen ausschließlich kalt im Glas außerhalb des Geräts)."
-        : "The food-grade 304 stainless steel chamber operates with purified water, botanical oils (jojoba, olive, sweet almond, argan), and vegetable glycerin. As a precaution, heated alcohol extraction inside the BloomLab® chamber is suspended (any alcohol maceration must be done cold in a glass jar outside the appliance)."
+        ? "Der Behälter aus Edelstahl 304 (Lebensmittelqualität) eignet sich für gefiltertes Wasser, Pflanzenöle (Jojoba, Olive, Süßmandel, Argan) und pflanzliches Glycerin. BloomLab® bietet zudem das Tincture-Programm (Standard 71 °C / 160 °F, 4 Std., manuell einstellbar) und Ohne Heizung (30 Min.–12 Std.): Da Ethanoldämpfe bereits ab 13 °C (rein) bzw. 21 °C (70 %) entzündlich sind, Handbuchregeln strikt einhalten (Belüftung, keine offene Flamme, verriegelter Deckel, MIN–MAX)."
+        : "The food-grade 304 stainless steel chamber accepts purified water, plant oils (jojoba, olive, sweet almond, argan), and vegetable glycerin. BloomLab® also includes a Tincture program (71°C / 160°F and 4h default, manually adjustable per plant) and a No-heating mode (30 min–12h): since ethanol vapors are already flammable at low temperatures (13°C pure, 21°C at 70%), strictly follow the manual's safety rules (ventilated area, no open flames, locked lid, MIN–MAX limits, and use No heating or cold jar when diluting with water)."
     },
     {
       q: isFR
@@ -362,7 +360,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               {heroIntroMode === 'video' ? (
                 <video
                   ref={introVideoRef}
-                  src="/videos/Full_BloomLab_Serum.mp4"
+                  src="/Full_BloomLab_Serum.mp4"
                   poster={heroImg1}
                   autoPlay
                   muted
@@ -522,10 +520,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               {/* Sous-titre Plain-language (Niveau 1 immédiat) */}
               <p className="text-base sm:text-lg md:text-xl text-[#1E2E25]/90 font-medium leading-relaxed">
                 {isFR 
-                  ? "La BloomLab® s'appuie sur des paramètres reproductibles (température guidée, durée et agitation douce) pour extraire les plantes sans les brûler. Préparez chez vous vos huiles de soin, sérums, macérats glycérinés et infusions concentrées (tout usage d'alcool chauffé en cuve est suspendu par précaution)." 
+                  ? "La BloomLab® s'appuie sur des paramètres reproductibles (température guidée, durée et agitation douce) pour extraire les plantes sans les brûler. Préparez chez vous vos huiles de soin, sérums, macérats glycérinés et infusions concentrées." 
                   : isDE 
-                  ? "Die BloomLab® arbeitet mit reproduzierbaren Parametern (geführte Temperatur, Dauer und sanftes Rühren), um Pflanzen ohne Verbrennen zu extrahieren. Bereiten Sie Pflegeöle, Seren, Glycerin-Mazerate und konzentrierte Aufgüsse zu Hause zu (erhitzter Alkohol im Behälter ausgesetzt)." 
-                  : "BloomLab® relies on repeatable parameters (guided temperature, duration, and gentle stirring) to extract herbs without scorching them. Prepare skincare oils, serums, glycerin macerates, and concentrated infusions at home (heated alcohol inside the chamber is suspended)."}
+                  ? "Die BloomLab® arbeitet mit reproduzierbaren Parametern (geführte Temperatur, Dauer und sanftes Rühren), um Pflanzen ohne Verbrennen zu extrahieren. Bereiten Sie Pflegeöle, Seren, Glycerin-Mazerate und konzentrierte Aufgüsse zu Hause zu." 
+                  : "BloomLab® relies on repeatable parameters (guided temperature, duration, and gentle stirring) to extract herbs without scorching them. Prepare skincare oils, serums, glycerin macerates, and concentrated infusions at home."}
               </p>
             </div>
 
@@ -572,29 +570,43 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               </div>
             </div>
 
-            {/* Section 2 : Encart Vidéo & Démonstration */}
+            {/* Section 2 : Encart Vidéo & Démonstration (45 sec) */}
             <div className="rounded-3xl border border-[#D8CBB7] bg-[#1E2E25] text-white overflow-hidden shadow-xl">
               <div className="grid grid-cols-1 md:grid-cols-12 items-center">
-                <div className="md:col-span-5 bg-[#0F261E] p-4 sm:p-6 flex items-center justify-center">
-                  <div className="relative w-full max-w-[220px] sm:max-w-[240px] aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl border border-white/15 bg-black">
-                    <video
-                      src="/videos/Recette_Bloom.mp4"
-                      poster={heroImg2}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      controls
-                      preload="metadata"
-                      aria-label={isFR ? "Démonstration vidéo BloomLab® : de la plante brute au sérum doré" : isDE ? "BloomLab® Videodemonstration: von der Pflanze zum Serum" : "BloomLab® video demonstration: from raw plant to golden serum"}
-                      className="w-full h-full object-cover object-center"
-                    />
+                <div
+                  onClick={() => setShowVideoPreview((v) => !v)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setShowVideoPreview((v) => !v);
+                    }
+                  }}
+                  className="md:col-span-5 relative h-56 sm:h-64 bg-[#0F261E] cursor-pointer group overflow-hidden"
+                >
+                  <img
+                    src={heroImg2}
+                    alt={isFR ? "Démonstration d'une huile de romarin & calendula" : isDE ? "Video-Demo: Rosmarin- & Calendula-Öl" : "Demo: rosemary & calendula infused oil"}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center gap-2 p-4 text-center">
+                    <div className="w-14 h-14 rounded-full bg-[#E8772E] group-hover:bg-[#D4651F] text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">
+                      <svg className="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                    <span className="px-3 py-1 rounded-full bg-black/75 border border-white/20 text-[10px] font-black uppercase tracking-wider text-white">
+                      {isFR ? "Lecteur vidéo 45 secondes : Huile de romarin & calendula" : isDE ? "45-Sek.-Videoplayer: Rosmarin- & Calendula-Öl" : "45-sec Video Player: Rosemary & Calendula Oil"}
+                    </span>
                   </div>
                 </div>
                 <div className="md:col-span-7 p-6 sm:p-8 space-y-3">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[#C8AB8A] text-[10px] font-black uppercase tracking-widest">
                     <Clock className="w-3.5 h-3.5 text-[#E8772E]" />
-                    <span>{isFR ? "Démonstration en vidéo" : isDE ? "Videodemonstration" : "Video Demonstration"}</span>
+                    <span>{isFR ? "Démonstration en 45 secondes" : isDE ? "Demonstration in 45 Sekunden" : "45-Second Demonstration"}</span>
                   </div>
                   <h3 className="text-lg sm:text-xl font-black text-white leading-snug">
                     {isFR
@@ -610,13 +622,15 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                       ? "Sie müssen weder Kräuterkundler noch Chemiker sein. Geben Sie trockene oder frische Pflanzen in den Edelstahlkorb, fügen Sie Pflanzenöl, Wasser oder Glycerin hinzu, wählen Sie die Temperatur und lassen Sie BloomLab® leise arbeiten."
                       : "No need to be an herbalist or chemist. Place your dried or fresh herbs in the stainless steel basket, pour your carrier oil, water, or vegetable glycerin, pick the temperature, and let BloomLab® work silently."}
                   </p>
-                  <div className="p-3 rounded-xl bg-black/30 border border-white/15 text-xs text-[#C8AB8A] font-medium">
-                    {isFR
-                      ? "Extraction basse température en cuve inox 304 : plantes entières → palier maîtrisé → filtration 90 µm."
-                      : isDE
-                      ? "Niedrigtemperatur-Extraktion im Edelstahl-304-Behälter: ganze Pflanzen → kontrollierte Temperatur → 90-µm-Filtration."
-                      : "Low-temperature 304 stainless extraction: whole plants → controlled heat → 90 µm filtration."}
-                  </div>
+                  {showVideoPreview && (
+                    <div className="p-3 rounded-xl bg-black/30 border border-white/15 text-xs text-[#C8AB8A] font-medium">
+                      {isFR
+                        ? "Démonstration d'une huile de romarin & calendula : panier inox → palier 48 °C en milieu clos → filtration 90 µm."
+                        : isDE
+                        ? "Demonstration eines Rosmarin- & Calendula-Öls: Edelstahlkorb → 48 °C im geschlossenen System → 90-µm-Filtration."
+                        : "Rosemary & calendula oil demo: stainless basket → 48°C closed chamber → 90 µm filtration."}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -635,7 +649,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 </span>
                 <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#FAF7F2] border border-[#D8CBB7] hover:border-[#E8772E] hover:bg-white transition-colors cursor-pointer text-xs font-semibold text-[#1E2E25]">
                   <TooltipLexique terme="sequencage-ab" force={true}>
-                    {isFR ? "Double Extraction Intelligente" : isDE ? "Intelligente Doppelextraktion" : "Smart Dual Extraction"}
+                    {isFR ? "Séquençage A/B en deux étapes" : isDE ? "Zweistufige A/B-Sequenzierung" : "Two-Step A/B Sequencing"}
                   </TooltipLexique>
                 </span>
                 <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#FAF7F2] border border-[#D8CBB7] hover:border-[#E8772E] hover:bg-white transition-colors cursor-pointer text-xs font-semibold text-[#1E2E25]">
@@ -756,10 +770,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               </h3>
                   <p className="text-[#1E2E25]/80 text-sm leading-relaxed">
                     {isFR 
-                      ? "Hydrosoluble (eau, glycérine) ou liposoluble (huiles végétales) : la température ciblée, la durée et le brassage continu orientent la capture des fractions aromatiques et végétales (l'alcool chauffé en cuve est suspendu)."
+                      ? "Hydrosoluble (eau, glycérine) ou liposoluble (huiles végétales) : le choix du solvant, la température ciblée, la durée et le brassage continu orientent la capture des fractions aromatiques et végétales."
                       : isDE 
-                      ? "Wasserlöslich oder fettlöslich: Gezielte Temperatur und Rühren bestimmen den Auszug (erhitzter Alkohol im Behälter ausgesetzt)."
-                      : "Water-soluble (water, glycerin) or fat-soluble (plant oils): targeted temperature and continuous stirring guide botanical extraction (heated alcohol inside chamber suspended)."}
+                      ? "Wasserlöslich (Wasser, Glycerin) oder fettlöslich (Pflanzenöle): Lösungsmittelwahl, gezielte Temperatur und Rühren bestimmen den Auszug."
+                      : "Water-soluble (water, glycerin) or fat-soluble (plant oils): solvent choice, targeted temperature, duration, and continuous stirring guide botanical extraction."}
                   </p>
                 </div>
               </div>
@@ -920,18 +934,18 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                     <FlaskConical className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
                     <span>
                       {isFR
-                        ? "Double Extraction Intelligente (Méthode A/B)"
+                        ? "Extraction Séquentielle A/B (Eau/Glycérine + Huile ou Teinture)"
                         : isDE
-                        ? "Intelligente Doppelextraktion (A/B-Methode)"
-                        : "Smart Dual Extraction (A/B Method)"}
+                        ? "Sequenzielle A/B-Extraktion (Wasser/Glycerin + Öl oder Tinktur)"
+                        : "Sequential A/B Extraction (Water/Glycerin + Oil or Tincture)"}
                     </span>
                   </div>
                   <p className="text-xs sm:text-sm text-[#1E2E25]/85 leading-relaxed font-medium">
                     {isFR
-                      ? "BloomLab® enchaîne ou adapte l'extraction à l'eau ou à la glycérine puis à l'huile végétale pour élargir le spectre extrait (extraction à l'alcool chauffé en cuve suspendue)."
+                      ? "Selon votre fiche, vous sélectionnez dans la BloomLab® les paramètres de la Phase A (eau ou glycérine) puis, cuve vidée et séchée, de la Phase B (huile végétale ou alcool selon le protocole) pour capter les deux polarités de la plante."
                       : isDE
-                      ? "BloomLab® kombiniert die Extraktion in Wasser oder Glycerin sowie anschließend in Pflanzenöl für ein breiteres Spektrum (erhitzter Alkohol im Behälter ausgesetzt)."
-                      : "BloomLab® sequences or adapts water or glycerin extraction followed by carrier oil to broaden extracted fractions (heated alcohol inside chamber suspended)."}
+                      ? "Je nach Rezept stellen Sie in der BloomLab® Phase A (Wasser oder Glycerin) ein und führen nach Entleeren und Trocknen Phase B (Pflanzenöl oder Alkohol laut Protokoll) durch, um beide Polaritäten der Pflanze zu erfassen."
+                      : "Following your protocol sheet, you set BloomLab® for Phase A (water or glycerin) and then, after emptying and drying the tank, Phase B (carrier oil or alcohol per the recipe) to capture both plant polarities."}
                   </p>
                 </div>
               </div>
@@ -953,17 +967,17 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1E2E25] tracking-tight">
               {isFR 
-                ? "Double Extraction Intelligente (Eau/Glycérine + Huile)" 
+                ? "Extraction Séquentielle en Deux Étapes (Eau/Glycérine + Huile / Teinture)" 
                 : isDE 
-                ? "Intelligente Doppelextraktion (Wasser/Glycerin + Öl)" 
-                : "Smart Dual Extraction (Water/Glycerin + Oil)"}
+                ? "Sequenzielle Zweistufen-Extraktion (Wasser/Glycerin + Öl / Tinktur)" 
+                : "Sequential Two-Step Extraction (Water/Glycerin + Oil / Tincture)"}
             </h2>
             <p className="text-[#4A5D4A] text-base sm:text-lg leading-relaxed font-medium">
               {isFR 
-                ? "La BloomLab adapte automatiquement la température et le solvant non inflammable à chaque plante : l'eau et la glycérine captent les composés hydrosolubles, l'huile végétale capte les lipides et arômes (alcool chauffé en cuve suspendu)." 
+                ? "La BloomLab® réunit 6 fonctions (Butter, Oil, Tincture, Sans chauffe, Décarboxylation, Nettoyage 5 min) et un réglage manuel complet de la température et de la durée (0 à 121 °C, 30 min à 12 h sur les modes réglables) : vous adaptez chaque phase à la plante et au solvant de votre fiche." 
                 : isDE 
-                ? "BloomLab passt Temperatur und Lösungsmittel an jede Pflanze an: Wasser und Glycerin lösen wasserlösliche Stoffe, Pflanzenöl bindet Lipide und Aromen (erhitzter Alkohol im Behälter ausgesetzt)." 
-                : "BloomLab adapts temperature and non-flammable solvent to each plant: water and glycerin capture water-soluble compounds while carrier oil captures lipids and aromas (heated alcohol suspended)."}
+                ? "Die BloomLab® bietet 6 Funktionen (Butter, Oil, Tincture, Ohne Heizung, Decarboxylierung, Reinigung 5 Min.) sowie eine manuelle Einstellung von Temperatur und Zeit (0–121 °C, 30 Min.–12 Std. bei regelbaren Programmen), passend zu Pflanze und Lösungsmittel Ihres Rezepts." 
+                : "BloomLab® provides 6 functions (Butter, Oil, Tincture, No heating, Decarboxylate, 5-min Clean) plus full manual time and temperature controls (0–121°C, 30 min–12h on adjustable modes) so you set the exact parameters for each phase and solvent in your recipe."}
             </p>
           </div>
 
@@ -985,29 +999,29 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
 
             <div className="bg-[#FAF7F2] p-8 rounded-[32px] border border-[#E7DFD3] space-y-3">
               <div className="text-xs font-black uppercase tracking-widest text-[#E8772E]">
-                {isFR ? "Phase B · Liposoluble" : isDE ? "Phase B · Fettlöslich" : "Phase B · Fat-Soluble"}
+                {isFR ? "Phase B · Liposoluble & Teintures" : isDE ? "Phase B · Fettlöslich & Tinkturen" : "Phase B · Fat-Soluble & Tinctures"}
               </div>
-              <div className="text-3xl font-black text-[#1E2E25]">45 - 55°C</div>
+              <div className="text-3xl font-black text-[#1E2E25]">0 - 71°C</div>
               <p className="text-slate-600 text-sm leading-relaxed">
                 {isFR 
-                  ? "Préservation des acides gras nobles, huiles essentielles et terpènes volatils dans les huiles végétales et beurres (usage d'alcool chauffé en cuve suspendu)." 
+                  ? "Huiles végétales, beurres, glycérine ou alcool : utilisez Oil, Tincture (défaut 71 °C / 160 °F – 4 h, réglable selon la plante), Sans chauffe (30 min–12 h) ou vos propres réglages manuels TEMP/TIME, dans le respect des règles anti-flamme." 
                   : isDE 
-                  ? "Erhalt wertvoller Fettsäuren, ätherischer Öle und flüchtiger Terpene in Pflanzenölen und Buttern (erhitzter Alkohol ausgesetzt)." 
-                  : "Preservation of noble fatty acids, essential oils, and volatile terpenes in plant oils and butters (heated alcohol suspended)."}
+                  ? "Pflanzenöle, Butter, Glycerin oder Alkohol: Nutzen Sie Oil, Tincture (Standard 71 °C / 160 °F – 4 Std., anpassbar), Ohne Heizung oder eigene TEMP/TIME-Werte unter Beachtung der Flammschutzregeln." 
+                  : "Plant oils, butters, glycerin, or alcohol: use Oil, Tincture (default 71°C / 160°F – 4h, adjustable per plant), No heating (30 min–12h), or manual TEMP/TIME settings per your recipe sheet and flammability safety rules."}
               </p>
             </div>
 
             <div className="bg-[#FAF7F2] p-8 rounded-[32px] border border-[#E7DFD3] space-y-3">
               <div className="text-xs font-black uppercase tracking-widest text-[#E8772E]">
-                {isFR ? "Activation Thermique Douce" : isDE ? "Sanfte Thermische Aktivierung" : "Gentle Thermal Activation"}
+                {isFR ? "Activation & Contrôle Manuel" : isDE ? "Aktivierung & Manuelle Steuerung" : "Activation & Manual Control"}
               </div>
               <div className="text-3xl font-black text-[#1E2E25]">121°C</div>
               <p className="text-slate-600 text-sm leading-relaxed">
                 {isFR 
-                  ? "Activation thermique douce des résines et aromates grâce aux 6 programmes automatisés (0 à 121 °C, spéc. nominale ±0,5 °C)." 
+                  ? "Programme Décarboxylation (défaut 121 °C / 1h30, réglable 71–121 °C + 15 min de refroidissement) et réglage manuel TEMP/TIME par l'utilisateur ; le décompte démarre une fois la température cible atteinte." 
                   : isDE 
-                  ? "Sanfte thermische Aktivierung von Harzen und Aromastoffen dank 6 automatischer Programme (0 bis 121 °C, Nennwert ±0,5 °C)." 
-                  : "Gentle thermal activation of resins and aromatics via 6 automated programs (0–121°C, nominal ±0.5°C spec)."}
+                  ? "Programm Decarboxylierung (Standard 121 °C / 1,5 Std., einstellbar 71–121 °C + 15 Min. Abkühlung) sowie manuelle TEMP/TIME-Wahl; der Timer startet erst bei Erreichen der Zieltemperatur." 
+                  : "Decarboxylate program (default 121°C / 1.5h, adjustable 71–121°C + 15-min cooling) and user TEMP/TIME adjustments; the timer starts once the chamber reaches target temperature."}
               </p>
             </div>
           </div>
@@ -1148,10 +1162,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 num: "03",
                 title: isFR ? "Régler les paramètres" : isDE ? "Parameter einstellen" : "Set parameters",
                 desc: isFR
-                  ? "Associez temps, température et solvant non inflammable (eau, huile végétale ou glycérine végétale — alcool chauffé suspendu) selon la fiche."
+                  ? "Sélectionnez un des programmes prédéfinis (Butter, Oil, Tincture, Sans chauffe, Décarboxylation, Nettoyage 5 min) ou ajustez manuellement temps et température selon la plante et le solvant de votre fiche."
                   : isDE
-                  ? "Kombinieren Sie Zeit, Temperatur und nicht brennbares Lösungsmittel (Wasser, Pflanzenöl oder Glycerin — erhitzter Alkohol ausgesetzt) laut Anleitung."
-                  : "Match time, temperature, and non-flammable solvent (water, plant oil, or vegetable glycerin — heated alcohol suspended) per the protocol sheet."
+                  ? "Wählen Sie eines der 6 Programme (Butter, Oil, Tincture, Ohne Heizung, Decarboxylierung, Reinigung 5 Min.) oder passen Sie Zeit und Temperatur manuell an Pflanze und Lösungsmittel an."
+                  : "Select one of the predefined functions (Butter, Oil, Tincture, No heating, Decarboxylate, 5-min Clean) or adjust temperature and time manually for your herb and solvent."
               },
               {
                 num: "04",
@@ -1695,7 +1709,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               <p>
                 {isFR ? (
                   <>
-                    Le drame de l'herboristerie occidentale moderne a été de tout réduire à l'eau bouillante, ignorant la <strong>polarité des solvants</strong> et la <strong>thermolabilité des enzymes</strong>. La BloomLab rapproche la sagesse empirique de l'Orient avec les méthodes de la biochimie moderne via la <strong>Double Extraction Intelligente A/B</strong> (extraction hydrophile puis lipophile, spécification nominale fabricant annoncée à ±0,5 °C).
+                    Le drame de l'herboristerie occidentale moderne a été de tout réduire à l'eau bouillante, ignorant la <strong>polarité des solvants</strong> et la <strong>thermolabilité des enzymes</strong>. La BloomLab rapproche la sagesse empirique de l'Orient avec les méthodes de la biochimie moderne via le <strong>Séquençage Actif A/B</strong> (extraction hydrophile puis lipophile, spécification nominale fabricant annoncée à ±0,5 °C).
                   </>
                 ) : isDE ? (
                   <>
@@ -1973,7 +1987,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               <div className="space-y-1.5">
                 <div className="text-sm font-black text-[#E8772E]">9,90 €</div>
                 <div className="font-black text-base text-[#1E2E25]">
-                  {isFR ? "Kits Nuit Profonde / Confort Digestif / Feu Articulaire" : isDE ? "Kits Tiefe Nacht / Verdauungskomfort / Gelenkkomfort" : "Deep Night / Digestive Comfort / Joint Kits"}
+                  {isFR ? "Kits Nuit Profonde / Équilibre Botanique / Mouvement Libre" : isDE ? "Kits Tiefe Nacht / Botanisches Gleichgewicht / Freie Bewegung" : "Deep Night / Botanical Balance / Free Movement Kits"}
                 </div>
                 <p className="text-xs text-[#1E2E25]/75">
                   {isFR ? "Mélanges de plantes ciblés prêts à infuser." : isDE ? "Gezielte Bio-Kräutermischungen." : "Targeted organic herbal blends ready to infuse."}
@@ -2326,10 +2340,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   </span>
                   <h3 className="text-xl font-black text-[#1E2E25] group-hover:text-[#E8772E] transition-colors">
                     {isFR
-                      ? "Le choix des solvants : eau, huile ou glycérine (alcool chauffé en cuve suspendu)"
+                      ? "Le choix des solvants : eau, huile, glycérine et teintures"
                       : isDE
-                      ? "Die Wahl der Lösungsmittel: Wasser, Öl oder Glycerin (erhitzter Alkohol ausgesetzt)"
-                      : "Choosing solvents: water, oil, or glycerin (heated alcohol suspended)"}
+                      ? "Die Wahl der Lösungsmittel: Wasser, Öl, Glycerin & Tinkturen"
+                      : "Choosing solvents: water, oil, glycerin, and tinctures"}
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed">
                     {isFR
@@ -2503,7 +2517,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed bottom-0 inset-x-0 z-40 bg-[#1E2E25]/95 backdrop-blur-md border-t border-[#C8AB8A]/30 text-white py-3 px-4 sm:px-8 shadow-2xl"
+            className="fixed bottom-0 left-0 md:left-[280px] lg:left-[320px] right-0 z-30 bg-[#1E2E25]/95 backdrop-blur-md border-t border-[#C8AB8A]/30 text-white py-3 px-4 sm:px-8 shadow-2xl"
           >
             <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
               <div className="flex items-center gap-3">

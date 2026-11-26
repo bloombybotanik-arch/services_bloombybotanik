@@ -839,7 +839,7 @@ export default function ProtocoleMyelineContent({
                           </td>
                           <td className="py-3.5 px-4 text-[#3E4A3D]/80">Introduction progressive et observation de la tolérance digestive</td>
                           <td className="py-3.5 px-4 font-bold text-[#3E4A3D]">Demi-dose Sachet A (150 ml) + 1 cuillère Sachet B le midi</td>
-                          <td className="py-3.5 px-4 text-[#3E4A3D]/80">Confort digestif et régularité de la routine du soir</td>
+                          <td className="py-3.5 px-4 text-[#3E4A3D]/80">Tolérance digestive personnelle et régularité de la routine du soir</td>
                         </tr>
                         <tr className="hover:bg-[#FAF7F2]">
                           <td className="py-3.5 px-4 font-bold text-[#C8AB8A]">

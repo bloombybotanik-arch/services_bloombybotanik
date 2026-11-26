@@ -118,11 +118,14 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
 
           {/* Mobile Menu Button */}
           <button
+            type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg bg-white/5 border border-white/10 text-white/80 hover:text-white shrink-0 whitespace-nowrap"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="academy-mobile-menu"
+            className="lg:hidden p-2 rounded-lg bg-white/5 border border-white/10 text-white/80 hover:text-white shrink-0 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8772E]"
             aria-label="Menu Académie"
           >
-            {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+            {mobileMenuOpen ? <X className="w-4 h-4" aria-hidden="true" /> : <Menu className="w-4 h-4" aria-hidden="true" />}
           </button>
         </div>
       </div>
@@ -142,7 +145,7 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
             }`}
           >
             <span className="whitespace-nowrap">
-              {lang === 'fr' ? 'Accueil Académie' : lang === 'de' ? 'Übersicht' : 'Academy Home'}
+              {lang === 'fr' ? 'Présentation de l’Académie' : lang === 'de' ? 'Akademie-Übersicht' : 'Academy Overview'}
             </span>
           </button>
           <button
@@ -246,7 +249,7 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
 
       {/* Mobile Drawer Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#0F261E] border-b border-white/10 px-4 py-4 space-y-3 animate-in slide-in-from-top-2 duration-200">
+        <div id="academy-mobile-menu" className="lg:hidden bg-[#0F261E] border-b border-white/10 px-4 py-4 space-y-3 animate-in slide-in-from-top-2 duration-200">
           <div className="text-[10px] font-mono uppercase tracking-wider text-[#c9a84c] font-bold px-2">
             Navigation Bloom Academy
           </div>
@@ -264,7 +267,7 @@ export const AcademyNavigation: React.FC<AcademyNavigationProps> = ({
             >
               <span className="flex items-center gap-2">
                 <Compass className="w-3.5 h-3.5 text-[#c9a84c]" />
-                <span>{lang === 'fr' ? 'Accueil Académie' : lang === 'de' ? 'Übersicht' : 'Academy Home'}</span>
+                <span>{lang === 'fr' ? 'Présentation de l’Académie' : lang === 'de' ? 'Akademie-Übersicht' : 'Academy Overview'}</span>
               </span>
               <span className="text-[9px] uppercase px-1.5 py-0.5 rounded bg-white/10 text-white/80">Hub</span>
             </button>

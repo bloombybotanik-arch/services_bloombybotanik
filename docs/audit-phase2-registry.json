@@ -243,8 +243,99 @@
       "correction": "Filtrage strict dans dynamicSitemapPlugin (vite.config.ts) excluant toutes les routes Disallow/noindex, les redirections 301/alias et les routes vides sans composant dédié (nutrition-et-micronutrition*), suppression des <lastmod> artificiels basés sur mtimeMs, et nettoyage cohérent de public/sitemap.xml et public/sitemap-fr.xml.",
       "justification": "Incohérence SEO majeure entre robots.txt (Disallow) / noindex et sitemap.xml, et dates lastmod trompeuses générées au moment du build.",
       "sources": ["vite.config.ts:148-265", "public/robots.txt", "public/sitemap.xml", "public/sitemap-fr.xml"],
-      "statut": "à_corriger",
-      "validation_requise": "Arbitrage SEO sur la conservation ou suppression de sitemap-en.xml / sitemap-de.xml (?lang=...) non déclarés dans robots.txt"
+      "statut": "arbitré_corrigé_en_préproduction",
+      "validation_requise": "Validation écrite fabricant (résistance joints/inox/vapeurs éthanol, politique sécurité alcool en cuve fermée)"
+    },
+    {
+      "id": "SAF-01B",
+      "date": "2026-11-25",
+      "type": "nettoyage_mentions_alcool_et_réexamen_teintures",
+      "fichier": "src/IndexBisContent.tsx; src/App.tsx; index.html; server.ts; src/MachineLanding.tsx; src/FaqContent.tsx; src/SolventsGuide.tsx; src/PillarExtraction.tsx; src/PillarPagesContent.tsx; src/SEOArticlesContent.tsx; src/ProtocolePsoriasisContent.tsx; src/ProtocoleDecalcificationPinealeContent.tsx; src/ManifesteContent.tsx; src/HerbariumContent.tsx; src/CommentLireModeleBloomContent.tsx; src/components/ExtractionCalculator.tsx; src/components/StoreSequencingSection.tsx; src/translations.ts; src/utils/seoManager.ts; src/data/productDetailsData.ts; src/data/blogPosts.ts; src/data/recipesData.ts; src/data/canonicalRecipesRegistry.ts; src/data/therapeuticData.ts; src/data/herbierRecipesRegistry.ts; src/data/recipes_difficulty_audit.json; public/data/recipes_difficulty_audit.json; public/recettes_remedes_pathologies.json; public/data/recettes_remedes_pathologies.json; public/recettes_163_ingredients_terrains.csv; public/data/recettes_163_ingredients_terrains.csv",
+      "route": "/; /bloomlab/; /boutique/bloomlab/; /guide-solvants/; /teinture-mere/; /extraction-botanique/; /maceration-plantes/; /faq/; /recettes/*; /academie/herbier/*",
+      "texte_original": "1) Mentions de suivi interne laissées dans les contenus publics : '(alcool chauffé en cuve suspendu)', '(alcohol heated in tank suspended)', '(erhitzter Alkohol im Behälter ausgesetzt)', '(protocole alcool chauffé suspendu)', '⚠️ Protocole alcool chauffé suspendu', 'Teinture de Propolis (Protocole machine suspendu)'. 2) Formulations antérieures retrouvées : IndexBisContent.GOLDEN_MASTER.tsx L426/559/661/722/1117/1512 ('solvant (eau, huile végétale ou alcool titré)', 'hydroalcoolique', 'Teintures végétales'); App.GOLDEN_MASTER.tsx L252 ('Inox 316L Chirurgical — résistant aux acides et alcools'); server.ts.backup.20261012_120415 L401-404 & L1477 ('extraction dynamique par vortex cinétique', calculateur 96° sans mention bocal à froid); src/data/recettes_remedes_pathologies.json ('Alcool éthylique de grain bio 96°', 'Versez les 250ml/300ml d'alcool bio 96°'); racine recettes_163_ingredients_terrains.csv ('Alcool bio 96°', 'Alcool de grain bio 96° ou glycérine végétale (150ml)'). 3) Résidus et contradictions non corrigés lors de la passe Phase 2 précédente : instructions Phase B 96° actives dans eczema_remede et alopecie_andro_remede de public/recettes_remedes_pathologies.json, contradiction interne allium_sativum ('Protocole sans alcool' + 'Ne pas introduire d'alcool' vs phase_B 42°C alcool), 10 fiches herbier-teinture-* à 96°/70° en cuve BloomLab®, Teinture Mère de Propolis 45°C/2h30 en inox 304 ('sans jamais bouillir l'alcool'), Sérum Liftant Encens & Myrrhe (600 ml alcool 60° à 50°C/3h), et durées non démontrées (3 à 5 ans) dans SolventsGuide.",
+      "correction": "Suppression intégrale de toutes les mentions internes 'suspendu/suspended/ausgesetzt' dans les fichiers publics, suppression de toutes les instructions prescrivant d'introduire ou de chauffer de l'alcool dans la cuve BloomLab®, requalification de la fiche Propolis et des 10 dual-extracts en alternatives sans alcool (glycérine végétale bio ou huile végétale vierge), correction de la contradiction allium_sativum et des fiches pathologies JSON/CSV, maintien strict des contenus documentaires sur les teintures en herboristerie traditionnelle (macération à froid en bocal en verre hors appareil, polarités phytochimiques, table historique Tu Youyou, calculateur de dilution documentaire) avec mention explicite que la compatibilité de l'alcool avec BloomLab® et sa chauffe n'est pas établie par les documents fabricant disponibles.",
+      "justification": "Aucun document constructeur (notice, manuel d'utilisation, fiche technique ATEX ou compatibilité chimique joints/cuve) n'est présent dans le dépôt /app/applet. Il faut donc distinguer strictement : (a) existence documentaire des teintures, (b) pertinence d'un solvant en herboristerie, (c) compatibilité matérielle de BloomLab® avec ce solvant, et (d) compatibilité avec sa chauffe — ces deux dernières n'étant pas établies par les pièces disponibles.",
+      "sources": ["src/IndexBisContent.GOLDEN_MASTER.tsx", "src/App.GOLDEN_MASTER.tsx", "server.ts.backup.20261012_120415", "src/data/recettes_remedes_pathologies.json", "recettes_163_ingredients_terrains.csv"],
+      "statut": "corrigé_en_préproduction_en_attente_notice_constructeur",
+      "validation_requise": "Fourniture et vérification de la notice constructeur officielle BloomLab® pour trancher définitivement la compatibilité ou l'interdiction formelle de l'alcool à froid comme à chaud."
+    },
+    {
+      "id": "CLA-03",
+      "date": "2026-11-25",
+      "type": "allégations_automatisation_non_vérifiées",
+      "fichier": "src/IndexBisContent.tsx; src/data/productDetailsData.ts; src/translations.ts",
+      "route": "/; /boutique/bloomlab/; /bloomlab/",
+      "texte_original": "'Double Extraction Intelligente (Eau/Glycérine + Huile)', 'La BloomLab adapte automatiquement la température et le solvant non inflammable à chaque plante', 'optimisée automatiquement', 'protocole automatisé 6-en-1', 'Infuseur d'Huile Intelligent / Algorithmes de chauffe'.",
+      "correction": "Remplacement par une description factuelle du paramétrage guidé par l'utilisateur selon chaque fiche : 'Extraction Séquentielle en Deux Étapes (Eau/Glycérine + Huile)', 'Extraction Séquentielle A/B (Eau/Glycérine + Huile)', 'Vous sélectionnez les paliers de température et la durée adaptés à votre préparation', 'Extraction Thermorégulée / Cycles thermiques programmés'.",
+      "justification": "Non justifié par une documentation technique : aucun système de reconnaissance automatique de plante ou d'adaptation autonome au solvant n'est établi.",
+      "sources": ["src/IndexBisContent.tsx", "src/data/productDetailsData.ts", "src/translations.ts"],
+      "statut": "corrigé_en_préproduction",
+      "validation_requise": "Validation sur la base de la notice constructeur si des programmes prédéfinis portent une dénomination officielle spécifique"
+    },
+    {
+      "id": "NAV-ACAD-01",
+      "date": "2026-11-26",
+      "type": "navigation_menu_academie",
+      "fichier": "src/data/navigationConfig.ts; src/components/NavigationMenuTree.tsx",
+      "route": "/* (menu global)",
+      "texte_original": "group-academie avait defaultOpen: true, ouvrant automatiquement le sous-menu Académie au chargement du site.",
+      "correction": "Passage de group-academie.defaultOpen à false et ajustement de NavigationMenuTree.tsx pour que le menu Académie reste fermé à l'ouverture du site et ne se déplie qu'au clic utilisateur.",
+      "justification": "Exigence UX utilisateur explicite.",
+      "sources": ["src/data/navigationConfig.ts:620", "src/components/NavigationMenuTree.tsx:299-307"],
+      "statut": "corrigé_en_préproduction",
+      "validation_requise": "Aucune"
+    },
+    {
+      "id": "REC-BL-01",
+      "date": "2026-11-26",
+      "type": "rectification_notice_bloomlab_programmes_et_manuel",
+      "fichier": "src/IndexBisContent.tsx; src/MachineLanding.tsx; src/FaqContent.tsx; src/SolventsGuide.tsx; src/PillarExtraction.tsx; src/PillarPagesContent.tsx; src/SEOArticlesContent.tsx; src/data/blogPosts.ts; src/data/pillarInfusionTranslations.ts; src/translations.ts; src/utils/seoManager.ts; index.html; server.ts",
+      "route": "/; /bloomlab/; /boutique/bloomlab/; /faq/; /guide-solvants/; /teinture-mere/; /extraction-botanique/; /infusion-botanique/",
+      "texte_original": "Assertions Phase 2 affirmant 'notice constructeur absente du dépôt' et 'compatibilité de l'alcool non établie par les documents fabricant'.",
+      "correction": "Analyse complète de la notice PDF jointe (public/assets/aistudio/S4508B_Manual_Recipe_compressed_d8c09eb7.pdf) ; suppression stricte de toute appellation non-BloomLab dans les contenus publics (appellation exclusive BloomLab / BloomLab®) ; distinction claire entre A) 6 programmes prédéfinis (Butter 71°C/2h, Oil 71°C/1h, Tincture 71°C/4h, Sans chauffe 1h par défaut [30 min–12h], Décarboxylation 121°C/1h30 [71–121°C, 30 min–4h + 15 min refroidissement], Nettoyage 5 min fixe), B) paramètres de départ, C) réglages manuels TEMP/TIME (+ / - de 0°C à 121°C et 30 min–12h, minuterie démarrant après atteinte température), D) protocole par plante, et E) limites sécurité (alcool inflammable, pièce ventilée, aucune flamme, couvercle verrouillé, MIN/MAX, 'Do not add water or lecithin' dans l'exemple Tincture ≥75 % vol.). Consignation des incohérences du livret (p.2 'five functions' vs 6 boutons, p.7 '1 hr' vs '4 Hours', p.8 'Function 5 - CLEAN').",
+      "justification": "La notice constructeur jointe documente explicitement le programme Tincture, le mode Sans chauffe, la Décarboxylation et les réglages manuels TEMP/TIME, mais ne mentionne aucune détection automatique de plante/solvant.",
+      "sources": ["public/assets/aistudio/S4508B_Manual_Recipe_compressed_d8c09eb7.pdf"],
+      "statut": "corrigé_en_préproduction",
+      "validation_requise": "Correction éventuelle par le fabricant des incohérences internes du livret (p.2/p.7/p.8)"
+    },
+    {
+      "id": "REC-TEINT-01",
+      "date": "2026-11-26",
+      "type": "rétablissement_recettes_teintures_degré_optimal",
+      "fichier": "src/data/recipesData.ts; src/data/therapeuticData.ts; src/data/herbierRecipesRegistry.ts; src/data/canonicalRecipesRegistry.ts; src/data/recettes_remedes_pathologies.json; public/recettes_remedes_pathologies.json; public/data/recettes_remedes_pathologies.json; src/data/recipes_difficulty_audit.json; public/data/recipes_difficulty_audit.json; src/ProtocolePsoriasisContent.tsx; src/ProtocoleDecalcificationPinealeContent.tsx; recettes_163_ingredients_terrains.csv; audit_herbier_163_recettes.csv; public/recettes_163_ingredients_terrains.csv; public/data/recettes_163_ingredients_terrains.csv",
+      "route": "/recettes/*; /academie/herbier/*; /protocoles/psoriasis/; /protocoles/decalcification-glande-pineale/",
+      "texte_original": "Substitution systématique des teintures et Phase B par 'glycérine végétale bio ou huile végétale vierge (sans alcool)' et pollution de recettes non alcooliques (01..04, 06..09, artichaut-*).",
+      "correction": "Rétablissement complet des recettes de teintures mères et extractions hydroalcooliques au meilleur degré botanique pour les principes actifs ciblés : 90–96° anhydre pour résines/cires (Propolis, Boswellia, Encens & Myrrhe via Tincture ajusté ou Sans chauffe) ; 70° pour racines denses, écorces, champignons, graines et alcaloïdes (Mahonia, Chaga, Reishi, Cordyceps, Hericium, Valériane, Bardane, Astragale, Renouée, Saw Palmetto, etc.) ; 45–60° pour fleurs, feuilles, anthocyanes et sommités fleuries (Passiflore, Mauve, Camomille, Fumeterre, Aubépine, Mélisse, Calendula, etc.) via Sans chauffe ou bocal hermétique après vidange, nettoyage (5 min) et séchage intégral de la cuve entre Phase A et Phase B. Préservation de SAF-02, SAF-03, SAF-04 (Allium sativum), CLA-01/CLA-02 et Sauge sans alcool (thuyone).",
+      "justification": "Conformité phytochimique et alignement strict avec la notice BloomLab® (ne pas ajouter d'eau en programme Tincture chauffé ≥75 % vol. -> mode Sans chauffe ou bocal pour dilutions 45°–70°).",
+      "sources": ["src/data/therapeuticData.ts", "src/data/herbierRecipesRegistry.ts", "src/data/recipesData.ts", "src/cosmeticsData.ts"],
+      "statut": "corrigé_en_préproduction",
+      "validation_requise": "Aucune"
+    },
+    {
+      "id": "REC-CALC-01",
+      "date": "2026-11-26",
+      "type": "mise_à_niveau_calculateur_extraction",
+      "fichier": "src/components/ExtractionCalculator.tsx; server.ts",
+      "route": "/guide-solvants/; /teinture-mere/; /api/alma/*",
+      "texte_original": "Calculateur verrouillé sur base alcool 96° et mention 'hors cuve / compatibilité non établie'.",
+      "correction": "Calculateur interactif ExtractionCalculator.tsx et module ALMA (server.ts) étendus : choix du degré de départ (96°, 95°, 90°, 75° / 150 US proof, 70° + saisie libre), degré cible (45°, 55°, 60°, 70°, 75° + saisie libre), affichage équivalent US proof (2 × % vol.), mention de contraction de volume (~2–3 %) et rappels de sécurité BloomLab® (Tincture ≥75 % sans eau vs Sans chauffe / bocal pour dilutions).",
+      "justification": "Précision mathématique C1*V1 = C2*V2 et cohérence avec la notice BloomLab®.",
+      "sources": ["src/components/ExtractionCalculator.tsx", "server.ts:479-500"],
+      "statut": "corrigé_en_préproduction",
+      "validation_requise": "Aucune"
+    },
+    {
+      "id": "REC-BL-02",
+      "date": "2026-11-26",
+      "type": "rectification_scientifique_notice_inrs_ema_ce1924",
+      "fichier": "src/components/ExtractionCalculator.tsx; src/SolventsGuide.tsx; src/FaqContent.tsx; src/IndexBisContent.tsx; src/PillarExtraction.tsx; src/PillarPagesContent.tsx; src/data/pillarInfusionTranslations.ts; src/data/womenAcademyData.ts; src/WomenAcademy.tsx; src/data/recipesData.ts; src/translations.ts; src/data/productDetailsData.ts; src/components/StoreSequencingSection.tsx; src/data/resetPhases.ts; src/data/blogPosts.ts; src/data/tremellaRecipeData.ts; src/data/terrainMapping.ts; src/TerrainPillar.tsx; src/data/chronobiology.ts; src/ProtocoleMyelineContent.tsx; src/data/therapeuticData.ts; src/data/herbierRecipesRegistry.ts; src/data/canonicalRecipesRegistry.ts; public/feed/google-merchant.xml; public/sitemap-images.xml; server.ts; recettes_163_ingredients_terrains.csv; audit_herbier_163_recettes.csv; public/recettes_163_ingredients_terrains.csv; public/data/recettes_163_ingredients_terrains.csv",
+      "route": "/; /bloomlab/; /guide-solvants/; /teinture-mere/; /faq/; /femme-cycles/; /boutique/*; /recettes/*; /academie/*",
+      "texte_original": "1) Présentation de 71 °C vs 40–45 °C comme contradiction ; 2) Allégation selon laquelle le manuel ne préciserait pas la température de Tincture ; 3) Affirmation erronée qu'une température ≤ 50 °C rendrait l'alcool sûr car inférieure au point d'ébullition (78 °C) ; 4) Seuil inventé « ne jamais dépasser 60 °C avec de l'alcool » ; 5) Mécanisme spéculatif d'explosion de couvercle ; 6) Allégation « Sauge sans thuyone 65 °C / Thujone-free Sage / thujonfreier Salbei » basée sur l'eau pure ; 7) Allégations de santé botaniques non autorisées (Règlement CE n° 1924/2006) sur fiches, kits et flux produits.",
+      "correction": "1) Distinction explicite entre programme Tincture par défaut (160 °F / 71 °C – 4 h) et programmation manuelle TEMP/TIME (+ / -) adaptée à la plante (ex. 40–45 °C) ; 2) Mention explicite des 160 °F (71 °C) du manuel ; 3) Remplacement par les données physico-chimiques INRS : point d'éclair de l'éthanol pur = 13 °C, à 70 % = 21 °C, à 10 % = 49 °C (vapeurs déjà inflammables à 50 °C comme à 71 °C et pression de vapeur croissante avec la chaleur) + ventilation, absence de flamme/étincelle, couvercle verrouillé et repères MIN–MAX ; 4) Suppression du plafond inventé « max 60 °C avec de l'alcool » et bascule des phases B hydroalcooliques à 70° vers le mode Sans chauffe ; 5) Suppression des spéculations d'explosion de couvercle, maintien des faits FDS/INRS (vapeurs inflammables, montée en pression en récipient chauffé) ; 6) Remplacement des mentions « Sauge sans thuyone » (FR/EN/DE) par les données EMA : l'eau n'élimine pas la thuyone (~3,8 mg par tasse de 3 g dans 150 ml d'eau bouillante, soit ~17 %, pour une limite EMA de 6 mg/jour) — la sécurité repose sur dosage strict, durée courte et éviction des HE concentrées ; 7) Suppression des allégations de santé non autorisées (Règlement CE n° 1924/2006 : confort articulaire, favorise la détente/endormissement, soutient la digestion, confort digestif, etc.) sur fiches, kits boutique, feed Google Merchant, sitemaps et prompt ALMA.",
+      "justification": "Alignement rigoureux sur la notice constructeur (160 °F / 71 °C), les fiches toxicologiques/physico-chimiques INRS sur l'éthanol, le rapport d'évaluation EMA sur Salvia officinalis (thuyone) et la conformité au Règlement (CE) n° 1924/2006.",
+      "sources": ["public/assets/aistudio/S4508B_Manual_Recipe_compressed_d8c09eb7.pdf", "INRS Fiche toxicologique éthanol", "EMA Salvia officinalis assessment report", "Règlement (CE) n° 1924/2006"],
+      "statut": "corrigé_en_préproduction",
+      "validation_requise": "Aucune"
     }
   ]
 }

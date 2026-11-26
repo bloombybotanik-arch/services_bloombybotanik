@@ -750,7 +750,7 @@ export default function WomenAcademy({
                 </div>
               </div>
 
-              {/* Encadré Conseil BloomLab Module 4 : Sauge sans thuyone */}
+              {/* Encadré Conseil BloomLab Module 4 : Sauge et limite EMA thuyone */}
               <div className="p-6 rounded-2xl bg-[#F5F0E6] border border-[#C8AB8A] space-y-2.5">
                 <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9E6B64]">
                   <FlaskConical className="w-4 h-4 text-[#9E6B64]" />

@@ -43,23 +43,23 @@ const PRODUCT_SEO_MAP: Record<string, SEOEntry> = {
     path: "/boutique/kit-starter/"
   },
   "kit-nuit": {
-    title: "Kit Nuit Profonde | Sommeil & Plantes Bio | Bloom by BotaniK",
-    description: "Kit Nuit Profonde par Bloom by BotaniK : synergie de passiflore, mélisse et camomille matricaire bio calibrée pour l'extraction douce sur BloomLab®.",
+    title: "Kit Nuit Profonde | Rituel du Soir & Plantes Bio | Bloom by BotaniK",
+    description: "Kit Nuit Profonde par Bloom by BotaniK : synergie de valériane et passiflore bio calibrée pour l'extraction séquentielle sur BloomLab®.",
     path: "/boutique/kit-nuit/"
   },
   "kit-digestion": {
-    title: "Kit Feu Digestif | Confort & Plantes Bio | Bloom by BotaniK",
-    description: "Kit Feu Digestif Bloom by BotaniK : fenouil doux, menthe poivrée et gentiane bio calibrés pour une extraction botanique de précision.",
+    title: "Kit Équilibre Botanique | Aromates & Plantes Bio | Bloom by BotaniK",
+    description: "Kit Équilibre Botanique Bloom by BotaniK : brou de noix, gingembre, romarin et ginkgo calibrés pour une extraction botanique séquentielle.",
     path: "/boutique/kit-digestion/"
   },
   "kit-articulaire": {
-    title: "Kit Feu Articulaire | Mobilité & Plantes Bio | Bloom by BotaniK",
-    description: "Kit Feu Articulaire par Bloom by BotaniK : harpagophytum, reine-des-prés et cassis bio sélectionnés pour préserver le Totum végétal.",
+    title: "Kit Mouvement Libre | Résine & Plantes Bio | Bloom by BotaniK",
+    description: "Kit Mouvement Libre par Bloom by BotaniK : reine-des-prés, gingembre et résine de boswellia sélectionnés pour l'extraction séquentielle.",
     path: "/boutique/kit-articulaire/"
   },
   "kit-hiver": {
-    title: "Kit Bouclier Hivernal | Plantes Bio | Bloom by BotaniK",
-    description: "Kit Bouclier Hivernal Bloom by BotaniK : échinacée pourpre, thym à linalol et sureau noir bio pour des infusions riches en polyphénols.",
+    title: "Kit Bouclier Hiver | Botanique de Saison | Bloom by BotaniK",
+    description: "Kit Bouclier Hiver Bloom by BotaniK : gingembre, girofle, sureau noir, thym et romarin pour des préparations aromatiques de saison.",
     path: "/boutique/kit-hiver/"
   },
   "duo-argiles": {
@@ -131,8 +131,8 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
     path: "/extraction-botanique/"
   },
   'guide-solvants': {
-    title: "Guide des Solvants d'Extraction : Eau, Huile, Glycérine | Bloom by BotaniK",
-    description: "Eau, huile végétale, glycérine, vinaigre : choisissez le solvant autorisé sur BloomLab® (extraction à l'alcool chauffé suspendue dans l'appareil).",
+    title: "Guide des Solvants d'Extraction : Eau, Huile, Alcool & Glycérine | Bloom by BotaniK",
+    description: "Eau, huile végétale, glycérine et teintures documentaires : choisissez le solvant adapté à chaque plante avec le guide Bloom.",
     path: "/guide-solvants/"
   },
   'guide-complet': {
@@ -151,8 +151,8 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
     path: "/huile-infusee/"
   },
   'teinture-mere': {
-    title: "Teinture-Mère Maison | Information & Suspension Alcool Chauffé | Bloom",
-    description: "Repères sur la macération hydroalcoolique à froid hors BloomLab® : l'extraction à l'alcool chauffé dans la cuve électrique est actuellement suspendue.",
+    title: "Teinture-Mère Maison | Guide Extraction Hydroalcoolique | Bloom",
+    description: "Maîtrisez les teintures mères maison et degrés alcooliques (45° à 96°) avec les programmes Tincture et Sans chauffe de la BloomLab® ou en bocal, en toute sécurité.",
     path: "/teinture-mere/"
   },
   academie: {
@@ -482,12 +482,12 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
   },
   'solvants-extraction': {
     title: "Solvants d'Extraction Botanique : Polarité & Usages | Bloom",
-    description: "Tableau des solvants naturels (eau, huiles, glycérine, vinaigre ; alcool chauffé suspendu sur BloomLab®) et températures d'extraction.",
+    description: "Tableau des solvants naturels (eau, huiles végétales, glycérine, alcool alimentaire 45°–96°), programmes BloomLab® et repères de température.",
     path: "/solvants-extraction/"
   },
   'maceration-plantes': {
-    title: "Macération de Plantes | Huileuse, Aqueuse & Glycérinée | Bloom",
-    description: "Maîtrisez la macération végétale (huileuse, glycérinée, aqueuse) en cuve close sur BloomLab® ; extraction à l'alcool chauffé suspendue.",
+    title: "Macération de Plantes | Huileuse, Aqueuse, Glycérinée & Alcoolique | Bloom",
+    description: "Maîtrisez la macération végétale (huileuse, glycérinée, aqueuse ou alcoolique sur BloomLab® via Oil, Tincture et Sans chauffe) pour préserver le totum.",
     path: "/maceration-plantes/"
   },
   'qu-est-ce-que-infusion': {
@@ -744,8 +744,8 @@ const VIEW_SEO_I18N: Record<'en' | 'de', Record<string, { title: string; descrip
       description: "Master botanical extraction at home: maceration, controlled infusion, and A/B sequencing to preserve delicate active compounds."
     },
     'guide-solvants': {
-      title: "Extraction Solvents Guide: Water, Oil, Glycerin | Bloom by BotaniK",
-      description: "Water, carrier oils, glycerin, vinegar: choose an authorized solvent for BloomLab® (heated alcohol extraction inside the unit is suspended)."
+      title: "Extraction Solvents Guide: Water, Oil, Alcohol & Glycerin | Bloom by BotaniK",
+      description: "Water, carrier oils, glycerin, and documentary tincture solvents: choose the right botanical solvent for every plant."
     },
     'guide-complet': {
       title: "Botanical Extraction: Maceration, Infusion & A/B Sequencing | Bloom",
@@ -760,8 +760,8 @@ const VIEW_SEO_I18N: Record<'en' | 'de', Record<string, { title: string; descrip
       description: "Practical guide to herbal infused oils: selecting virgin carrier oils, gentle 45°C maceration, and preserving lipophilic fractions."
     },
     'teinture-mere': {
-      title: "Mother Tinctures | Cold Maceration & Suspension Notice | Bloom",
-      description: "Information on ambient hydroalcoholic maceration outside BloomLab®: heated alcohol extraction inside the electrical unit is currently suspended."
+      title: "Mother Tinctures | Hydroalcoholic Extraction | Bloom",
+      description: "Understand hydroalcoholic mother tinctures in traditional herbalism (cold jar maceration, polarity, and alcohol-free glycerin alternatives on BloomLab®)."
     },
     academie: {
       title: "Bloom Academy — A/B Method, Totum & Educational Guides",
@@ -889,7 +889,7 @@ const VIEW_SEO_I18N: Record<'en' | 'de', Record<string, { title: string; descrip
     },
     'solvants-extraction': {
       title: "Botanical Extraction Solvents: Polarity & Carrier Oils | Bloom",
-      description: "Matrix of natural solvents (water, carrier oils, glycerin, cider vinegar; heated ethanol suspended on BloomLab®) and extraction temperatures."
+      description: "Matrix of natural solvents (water, carrier oils, glycerin, and cold jar alcohol) and botanical extraction temperature guides."
     }
   },
   de: {
@@ -930,8 +930,8 @@ const VIEW_SEO_I18N: Record<'en' | 'de', Record<string, { title: string; descrip
       description: "Beherrschen Sie Pflanzenextraktion zuhause: Mazeration, präziser Aufguss und A/B-Sequenzierung für empfindliche Pflanzenstoffe."
     },
     'guide-solvants': {
-      title: "Lösungsmittel-Leitfaden: Wasser, Öl, Glycerin | Bloom by BotaniK",
-      description: "Wasser, Pflanzenöl, Glycerin, Essig: Wählen Sie für die BloomLab® zugelassene Lösungsmittel (erhitzter Alkohol im Gerät ausgesetzt)."
+      title: "Lösungsmittel-Leitfaden: Wasser, Öl, Alkohol & Glycerin | Bloom by BotaniK",
+      description: "Wasser, Pflanzenöl, Glycerin und dokumentierte Tinktur-Grundlagen: Wählen Sie das passende Lösungsmittel für jede Pflanze."
     },
     'guide-complet': {
       title: "Pflanzenextraktion: Mazeration, Infusion & A/B-Sequenzierung | Bloom",
@@ -946,8 +946,8 @@ const VIEW_SEO_I18N: Record<'en' | 'de', Record<string, { title: string; descrip
       description: "Praxis-Leitfaden für Kräuteröle: Auswahl nativer Trägeröle, sanfte Mazeration bei 45°C und Schutz fettlöslicher Pflanzenstoffe."
     },
     'teinture-mere': {
-      title: "Urtinkturen | Hinweise zur Kalten Mazeration & Aussetzung | Bloom",
-      description: "Hinweise zur kalten Mazeration außerhalb der BloomLab®: Die erhitzte Alkoholextraktion im elektrischen Gerät ist derzeit ausgesetzt."
+      title: "Urtinkturen | Hydroalkoholische Extraktion | Bloom",
+      description: "Urtinkturen und hydroalkoholische Auszüge in der Kräuterkunde verstehen (Kaltmazeration im Glas und alkoholfreie Alternativen mit BloomLab®)."
     },
     academie: {
       title: "Bloom Academy — A/B-Methode, Totum & Wissensleitfäden",
@@ -1075,7 +1075,7 @@ const VIEW_SEO_I18N: Record<'en' | 'de', Record<string, { title: string; descrip
     },
     'solvants-extraction': {
       title: "Lösungsmittel der Pflanzenextraktion: Polarität & Öle | Bloom",
-      description: "Übersicht natürlicher Lösungsmittel (Wasser, Trägeröle, Glycerin, Apfelessig; erhitztes Ethanol in der BloomLab® ausgesetzt)."
+      description: "Übersicht natürlicher Lösungsmittel (Wasser, Trägeröle, Glycerin und Kaltmazeration mit Alkohol) und Extraktionstemperaturen."
     }
   }
 };
