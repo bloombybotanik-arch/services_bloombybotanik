@@ -39,7 +39,7 @@ export default function BloomAcademiePage({ onNavigate, lang }: BloomAcademiePag
   
   // Access control for paywalled sections ("Comprendre le Corps" through "Protocoles Systémiques")
   const [hasAccess, setHasAccess] = useState<boolean>(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
       return localStorage.getItem('bloom_subscriber') === 'true' || localStorage.getItem('bloom_access') === 'true';
     }
     return false;
@@ -53,7 +53,7 @@ export default function BloomAcademiePage({ onNavigate, lang }: BloomAcademiePag
     e.preventDefault();
     const clean = unlockCode.trim().toUpperCase();
     if (['BLOOMVIP', 'BLOOM2026', 'ABONNE', 'PREMIUM', 'ACADEMY', 'BOTANIK'].includes(clean)) {
-      if (typeof window !== 'undefined') {
+      if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
         localStorage.setItem('bloom_subscriber', 'true');
       }
       setHasAccess(true);

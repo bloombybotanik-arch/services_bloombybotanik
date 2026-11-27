@@ -244,10 +244,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
         ? "Welche Lösungsmittel kann ich sicher verwenden?"
         : "Which solvents can I use safely?",
       a: isFR
-        ? "La cuve en Inox 304 de grade alimentaire accepte l'eau filtrée, les huiles végétales (jojoba, olive, amande douce, argan) et la glycérine végétale. BloomLab® intègre aussi le programme Tincture (71 °C / 160 °F et 4 h par défaut, réglables manuellement selon la plante) et un mode Sans chauffe (30 min–12 h) : les vapeurs d'éthanol étant déjà inflammables dès 13 °C pur (21 °C à 70 %), respectez strictement le manuel (pièce ventilée, aucune flamme nue, couvercle verrouillé, MIN–MAX, et privilégier Sans chauffe ou bocal si dilution à l'eau)."
+        ? "La cuve en Inox 304 de grade alimentaire accepte l'eau filtrée, les huiles végétales (jojoba, olive, amande douce, argan) et la glycérine végétale. BloomLab® intègre aussi le programme Tincture (71 °C / 160 °F et 4 h par défaut, réglables manuellement pour l'alcool ≥ 75 % sans eau) : les vapeurs d'éthanol étant déjà inflammables dès 13 °C pur (21 °C à 70 %), respectez strictement le manuel (pièce ventilée, aucune flamme nue, couvercle verrouillé, MIN–MAX, bocal hermétique hors appareil pour les dilutions à l'eau, et ne jamais laisser l'appareil sans surveillance en fonctionnement ni lorsqu'il est branché)."
         : isDE
-        ? "Der Behälter aus Edelstahl 304 (Lebensmittelqualität) eignet sich für gefiltertes Wasser, Pflanzenöle (Jojoba, Olive, Süßmandel, Argan) und pflanzliches Glycerin. BloomLab® bietet zudem das Tincture-Programm (Standard 71 °C / 160 °F, 4 Std., manuell einstellbar) und Ohne Heizung (30 Min.–12 Std.): Da Ethanoldämpfe bereits ab 13 °C (rein) bzw. 21 °C (70 %) entzündlich sind, Handbuchregeln strikt einhalten (Belüftung, keine offene Flamme, verriegelter Deckel, MIN–MAX)."
-        : "The food-grade 304 stainless steel chamber accepts purified water, plant oils (jojoba, olive, sweet almond, argan), and vegetable glycerin. BloomLab® also includes a Tincture program (71°C / 160°F and 4h default, manually adjustable per plant) and a No-heating mode (30 min–12h): since ethanol vapors are already flammable at low temperatures (13°C pure, 21°C at 70%), strictly follow the manual's safety rules (ventilated area, no open flames, locked lid, MIN–MAX limits, and use No heating or cold jar when diluting with water)."
+        ? "Der Behälter aus Edelstahl 304 (Lebensmittelqualität) eignet sich für gefiltertes Wasser, Pflanzenöle (Jojoba, Olive, Süßmandel, Argan) und pflanzliches Glycerin. BloomLab® bietet zudem das Tincture-Programm (Standard 71 °C / 160 °F, 4 Std., manuell einstellbar für wasserfreien Alkohol ≥ 75 %): Da Ethanoldämpfe ab 13 °C (rein) bzw. 21 °C (70 %) entzündlich sind, Handbuchregeln strikt einhalten (Belüftung, keine offene Flamme, verriegelter Deckel, MIN–MAX, verschlossenes Glas außerhalb des Geräts bei Wasserverdünnung, Gerät niemals unbeaufsichtigt lassen)."
+        : "The food-grade 304 stainless steel chamber accepts purified water, plant oils (jojoba, olive, sweet almond, argan), and vegetable glycerin. BloomLab® also includes a Tincture program (71°C / 160°F and 4h default, manually adjustable for waterless alcohol ≥ 75% ABV): since ethanol vapors are flammable at low temperatures (13°C pure, 21°C at 70%), strictly follow the manual's safety rules (ventilated area, no open flames, locked lid, MIN–MAX limits, sealed glass jar outside appliance for water dilutions, and never leave the appliance unattended during operation or while plugged in)."
     },
     {
       q: isFR
@@ -256,10 +256,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
         ? "Wie lange dauert eine Extraktion?"
         : "How long does an extraction take?",
       a: isFR
-        ? "La durée varie entre 1h30 pour une huile infusée culinaire douce et 3h pour une extraction concentrée de racines denses, sans surveillance constante requise."
+        ? "La durée varie entre 1h30 pour une huile infusée culinaire douce et 3h pour une extraction concentrée de racines denses. Par sécurité, ne jamais laisser l'appareil sans surveillance en fonctionnement ni lorsqu'il est branché."
         : isDE
-        ? "Die Dauer liegt zwischen 1,5 Stunden für ein mildes kulinarisches Kräuteröl und 3 Stunden für eine konzentrierte Wurzelextraktion – ganz ohne ständige Aufsicht."
-        : "Extraction cycles range from 1.5 hours for gentle culinary oils to 3 hours for dense root preparations, with no constant supervision required."
+        ? "Die Dauer liegt zwischen 1,5 Stunden für ein mildes kulinarisches Kräuteröl und 3 Stunden für eine konzentrierte Wurzelextraktion. Das Gerät während des Betriebs und im eingesteckten Zustand niemals unbeaufsichtigt lassen."
+        : "Extraction cycles range from 1.5 hours for gentle culinary oils to 3 hours for dense root preparations. Never leave the appliance unattended during operation or while plugged in."
     }
   ];
 
@@ -974,10 +974,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             </h2>
             <p className="text-[#4A5D4A] text-base sm:text-lg leading-relaxed font-medium">
               {isFR 
-                ? "La BloomLab® réunit 6 fonctions (Butter, Oil, Tincture, Sans chauffe, Décarboxylation, Nettoyage 5 min) et un réglage manuel complet de la température et de la durée (0 à 121 °C, 30 min à 12 h sur les modes réglables) : vous adaptez chaque phase à la plante et au solvant de votre fiche." 
+                ? "La BloomLab® réunit 6 fonctions (Butter, Oil, Tincture, Sans chauffe — mode sans température réglable pour mélanges type vinaigrette —, Décarboxylation, Nettoyage 5 min) et un réglage manuel complet de la température et de la durée (0 à 121 °C, 30 min à 12 h sur les modes réglables) : vous adaptez chaque phase à la plante et au solvant de votre fiche." 
                 : isDE 
-                ? "Die BloomLab® bietet 6 Funktionen (Butter, Oil, Tincture, Ohne Heizung, Decarboxylierung, Reinigung 5 Min.) sowie eine manuelle Einstellung von Temperatur und Zeit (0–121 °C, 30 Min.–12 Std. bei regelbaren Programmen), passend zu Pflanze und Lösungsmittel Ihres Rezepts." 
-                : "BloomLab® provides 6 functions (Butter, Oil, Tincture, No heating, Decarboxylate, 5-min Clean) plus full manual time and temperature controls (0–121°C, 30 min–12h on adjustable modes) so you set the exact parameters for each phase and solvent in your recipe."}
+                ? "Die BloomLab® bietet 6 Funktionen (Butter, Oil, Tincture, Ohne Erwärmung — Modus ohne Temperaturregelung für kalte Mischungen wie Vinaigrette —, Decarboxylierung, Reinigung 5 Min.) sowie eine manuelle Einstellung von Temperatur und Zeit (0–121 °C, 30 Min.–12 Std.), passend zu Pflanze und Lösungsmittel." 
+                : "BloomLab® provides 6 functions (Butter, Oil, Tincture, No heating — non-adjustable cold-mixing mode exemplified by vinaigrette —, Decarboxylate, 5-min Clean) plus full manual time and temperature controls (0–121°C, 30 min–12h on adjustable modes) for each recipe phase."}
             </p>
           </div>
 
@@ -1004,10 +1004,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               <div className="text-3xl font-black text-[#1E2E25]">0 - 71°C</div>
               <p className="text-slate-600 text-sm leading-relaxed">
                 {isFR 
-                  ? "Huiles végétales, beurres, glycérine ou alcool : utilisez Oil, Tincture (défaut 71 °C / 160 °F – 4 h, réglable selon la plante), Sans chauffe (30 min–12 h) ou vos propres réglages manuels TEMP/TIME, dans le respect des règles anti-flamme." 
+                  ? "Huiles végétales, beurres, glycérine ou alcool ≥ 75 % sans eau : utilisez Oil, Tincture (défaut 71 °C / 160 °F – 4 h, réglable selon la plante) ou vos réglages manuels TEMP/TIME (dilutions hydroalcooliques à l'eau en bocal hors appareil), sous surveillance continue et règles anti-flamme." 
                   : isDE 
-                  ? "Pflanzenöle, Butter, Glycerin oder Alkohol: Nutzen Sie Oil, Tincture (Standard 71 °C / 160 °F – 4 Std., anpassbar), Ohne Heizung oder eigene TEMP/TIME-Werte unter Beachtung der Flammschutzregeln." 
-                  : "Plant oils, butters, glycerin, or alcohol: use Oil, Tincture (default 71°C / 160°F – 4h, adjustable per plant), No heating (30 min–12h), or manual TEMP/TIME settings per your recipe sheet and flammability safety rules."}
+                  ? "Pflanzenöle, Butter, Glycerin oder wasserfreier Alkohol ≥ 75 %: Nutzen Sie Oil, Tincture (Standard 71 °C / 160 °F – 4 Std., anpassbar) oder eigene TEMP/TIME-Werte (wässrige Alkoholverdünnungen im Glas außerhalb des Geräts), stets unter Aufsicht und Flammschutzregeln." 
+                  : "Plant oils, butters, glycerin, or waterless ≥ 75% alcohol: use Oil, Tincture (default 71°C / 160°F – 4h, adjustable per plant), or manual TEMP/TIME settings (water-diluted alcohol in a sealed jar outside the appliance), constantly attended under flammability rules."}
               </p>
             </div>
 
@@ -1162,19 +1162,19 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 num: "03",
                 title: isFR ? "Régler les paramètres" : isDE ? "Parameter einstellen" : "Set parameters",
                 desc: isFR
-                  ? "Sélectionnez un des programmes prédéfinis (Butter, Oil, Tincture, Sans chauffe, Décarboxylation, Nettoyage 5 min) ou ajustez manuellement temps et température selon la plante et le solvant de votre fiche."
+                  ? "Sélectionnez votre programme (Butter, Oil, Tincture, Décarboxylation, Nettoyage — Sans chauffe étant dédié aux mélanges froids type vinaigrette) ou ajustez manuellement temps et température selon la plante et le solvant de votre fiche."
                   : isDE
-                  ? "Wählen Sie eines der 6 Programme (Butter, Oil, Tincture, Ohne Heizung, Decarboxylierung, Reinigung 5 Min.) oder passen Sie Zeit und Temperatur manuell an Pflanze und Lösungsmittel an."
-                  : "Select one of the predefined functions (Butter, Oil, Tincture, No heating, Decarboxylate, 5-min Clean) or adjust temperature and time manually for your herb and solvent."
+                  ? "Wählen Sie Ihr Programm (Butter, Oil, Tincture, Decarboxylierung, Reinigung — Ohne Erwärmung nur für kalte Mischungen wie Vinaigrette) oder passen Sie Zeit und Temperatur manuell an."
+                  : "Select your preset (Butter, Oil, Tincture, Decarboxylate, Clean — No heating is strictly for cold mixes like vinaigrette) or adjust temperature and time manually for your herb and solvent."
               },
               {
                 num: "04",
                 title: isFR ? "Lancer le cycle" : isDE ? "Zyklus starten" : "Run cycle",
                 desc: isFR
-                  ? "BloomLab maintient la température exacte et l'agitation douce en continu de manière autonome."
+                  ? "BloomLab maintient la température exacte et l'agitation douce en continu tout au long du cycle programmé ; par sécurité, ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché."
                   : isDE
-                  ? "BloomLab hält die exakte Temperatur und rührt kontinuierlich und sanft — völlig selbstständig."
-                  : "BloomLab autonomously maintains exact temperature and continuous gentle stirring."
+                  ? "BloomLab hält die eingestellte Temperatur und rührt sanft während des gesamten Zyklus; das Gerät jedoch während des Betriebs und im eingesteckten Zustand niemals unbeaufsichtigt lassen."
+                  : "BloomLab holds exact temperature and continuous gentle stirring throughout the cycle; for safety, never leave the appliance unattended during operation or while plugged in."
               },
               {
                 num: "05",
@@ -2009,7 +2009,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   {isFR ? "Duo Argiles" : isDE ? "Tonerde-Duo" : "Clay Duo"}
                 </div>
                 <p className="text-xs text-[#1E2E25]/75">
-                  {isFR ? "Zéolithe-Bentonite 70:30 — Purification minérale externe/soin." : isDE ? "Zeolith-Bentonit 70:30 — Mineralische Reinigung/Pflege." : "Zeolite-Bentonite 70:30 — External/care mineral purification."}
+                  {isFR ? "Zéolithe-Bentonite 70:30 — Argiles minérales 6 µm pour préparations maison." : isDE ? "Zeolith-Bentonit 70:30 — Mineralerden 6 µm für Zubereitungen." : "Zeolite-Bentonite 70:30 — 6 µm mineral clays for home preparations."}
                 </p>
               </div>
               <span className="text-xs font-bold text-[#1E2E25] inline-flex items-center gap-1">

@@ -1,10 +1,10 @@
 [
   {
     "recette_id": "psoriasis_remede",
-    "nom_commun": "Remède Psoriasis — Émonctoires & Barrière Kératinocytaire",
+    "nom_commun": "Atelier Botanique — Bardane, Pensée Sauvage & Mahonia",
     "type_produit": "Extrait liquide multi-plantes à double extraction séquentielle",
-    "cible": "Psoriasis (plaques squameuses, hyperprolifération kératinocytaire, emballement Th17/IL-23 et surcharge hépato-cutanée)",
-    "description": "Formule phytothérapeutique d'exception ciblant la régulation de la prolifération des kératinocytes, le drainage du terrain hépato-rénal et la modulation de l'axe intestin-peau par extraction séquentielle sous vide partiel.",
+    "cible": "Étude éducative d'herboristerie sur la double polarité des racines amères et écorces (contenu non médical)",
+    "description": "Séquence pédagogique d'extraction séquentielle illustrant la séparation des polysaccharides hydrosolubles (Phase A) et des alcaloïdes d'écorce (Phase B en bocal hermétique hors appareil).",
     "solvants": {
       "phase_A": {
         "type": "Eau purifiée distillée + Glycérine végétale bio (70/30)",
@@ -12,9 +12,9 @@
         "role": "Extraction des polysaccharides immunitaires (inuline), mucilages apaisants, tanins doux et glycosides phénoliques hydrosolubles sans dégradation thermique."
       },
       "phase_B": {
-        "type": "Alcool éthylique alimentaire bio 70° (titre optimal alcaloïdes/berbérine)",
-        "volume": "250ml",
-        "role": "Extraction douce des alcaloïdes isoquinoléiques (berbérine), polyacétylènes et principes amers lipophiles à température modérée stabilisée."
+        "type": "Alcool éthylique alimentaire bio 70° en bocal hermétique hors appareil (ou option glycérine sans alcool)",
+        "volume": "250ml (hors appareil)",
+        "role": "Macération hydro-alcoolique traditionnelle hors appareil pour alcaloïdes isoquinoléiques et lignanes (ne pas chauffer de dilution à l'eau en Tincture)."
       }
     },
     "plantes": [
@@ -40,7 +40,7 @@
         ],
         "preuve_scientifique": "Draineur cutané et hépato-biliaire majeur. L'inuline nourrit le microbiote intestinal régulateur de l'axe intestin-peau. Les acides phénoliques inhibent la peroxydation lipidique et neutralisent les médiateurs pro-inflammatoires dans les kératinocytes.",
         "pourquoi_bloomlab": {
-          "probleme_traditionnel": "La racine de bardane est très dense et fibreuse. L'ébullition en décoction classique dégrade les acides phénoliques thermosensibles et caramélise l'inuline, tandis qu'une macération à froid ne parvient pas à fracturer la cuticule de la racine.",
+          "probleme_traditionnel": "La racine de bardane est dense et fibreuse. L'ébullition prolongée dégrade certains acides phénoliques thermosensibles ; BloomLab® permet de réguler la Phase A aqueuse à 75 °C.",
           "phase_A": {
             "temp": "75°C",
             "temps": "2h00",
@@ -48,9 +48,9 @@
             "cible": "Inuline, acide chlorogénique, mucilages"
           },
           "phase_B": {
-            "temp": "Ambiante (Sans chauffe / bocal) ou 71°C Tincture si ≥75° sans eau",
-            "temps": "4h à 12h (Sans chauffe) ou 14–21j bocal",
-            "solvant": "Alcool alimentaire bio 70°",
+            "temp": "Bocal hermétique hors appareil (70°)",
+            "temps": "Macération traditionnelle hors appareil",
+            "solvant": "Alcool alimentaire bio 70° hors appareil (ou Tincture ≥75° sans eau)",
             "cible": "Polyacétylènes et lignanes"
           }
         }
@@ -85,9 +85,9 @@
             "cible": "Mucilages, rutine, dérivés salicylés"
           },
           "phase_B": {
-            "temp": "Ambiante (Sans chauffe / bocal) ou 71°C Tincture si ≥75° sans eau",
-            "temps": "4h à 12h (Sans chauffe) ou 14–21j bocal",
-            "solvant": "Alcool alimentaire bio 70°",
+            "temp": "Bocal hermétique hors appareil (70°)",
+            "temps": "Macération traditionnelle hors appareil",
+            "solvant": "Alcool alimentaire bio 70° hors appareil (ou Tincture ≥75° sans eau)",
             "cible": "Caroténoïdes et flavones apolaires"
           }
         }
@@ -122,9 +122,9 @@
             "cible": "Glycosides et acides organiques précurseurs"
           },
           "phase_B": {
-            "temp": "Ambiante (Sans chauffe / bocal) ou 71°C Tincture si ≥75° sans eau",
-            "temps": "4h à 12h (Sans chauffe) ou 14–21j bocal",
-            "solvant": "Alcool alimentaire bio 70°",
+            "temp": "Bocal hermétique hors appareil (70°)",
+            "temps": "Macération traditionnelle hors appareil",
+            "solvant": "Alcool alimentaire bio 70° hors appareil (ou Tincture ≥75° sans eau)",
             "cible": "Berbérine, oxyacanthine, jatrorrhizine"
           }
         }
@@ -137,9 +137,9 @@
         "agitation": "Modérée continue (Programme OIL / DECOCTION)"
       },
       "phase_B": {
-        "temp": "Ambiante (Sans chauffe / bocal) ou 71°C Tincture si ≥75° sans eau",
-        "temps": "4h à 12h (Sans chauffe) ou 14–21j bocal",
-        "agitation": "Mode Sans chauffe (agitation mécanique douce sans chauffage) ou bocal hermétique"
+        "temp": "Bocal hermétique hors appareil (70°) ou Tincture ≥75° sans eau",
+        "temps": "Macération traditionnelle hors appareil (ou Tincture 4h réglable si ≥75° sans eau)",
+        "agitation": "Macération manuelle en bocal hermétique hors appareil (aucune chauffe d'alcool dilué à l'eau)"
       }
     },
     "recette_pas_a_pas": {
@@ -173,9 +173,9 @@
         "3. TRANSITION OBLIGATOIRE : Vider, rincer (programme Nettoyage 5 min) et sécher intégralement la cuve avant la Phase B."
       ],
       "phase_B_instructions": [
-        "1. Déposer les 20g d’écorce de Mahonia concassée dans la cuve propre et sèche (ou dans un bocal en verre hermétique).",
-        "2. Verser 250ml d’alcool alimentaire à 70° entre les repères MIN et MAX (pièce très bien ventilée, loin de toute flamme ou étincelle).",
-        "3. Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) — ne pas chauffer une dilution contenant de l’eau en mode Tincture.",
+        "1. Déposer les 20g d’écorce de Mahonia concassée dans un bocal en verre hermétique propre et sec (hors appareil).",
+        "2. Verser 250ml d’alcool alimentaire à 70° en pièce très bien ventilée, loin de toute flamme ou étincelle — ne pas chauffer une dilution contenant de l’eau en mode Tincture.",
+        "3. Laisser macérer en bocal hermétique hors appareil à l'abri de la lumière (ou utiliser uniquement dans BloomLab® un solvant ≥ 75 % sans eau ou de la glycérine/huile végétale sous surveillance continue ; ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché).",
         "4. Après macération et filtration fine, réunir les fractions A et B hors appareil en flacons ambrés."
       ],
       "filtration_et_finition": [
@@ -216,23 +216,7 @@
         }
       ]
     },
-    "posologie": {
-      "dose_quotidienne": "10ml par jour (divisés en 2 prises de 5ml, soit 1 cuillère à café diluée)",
-      "moments": [
-        {
-          "moment": "Matin à jeun (15 minutes avant le petit-déjeuner)",
-          "dose": "5ml dilués dans 100ml d'eau tiède",
-          "justification": "Déclenchement du réflexe cholérétique hépatique et captation optimale de l'inuline par le microbiote à jeun."
-        },
-        {
-          "moment": "Soir avant le dîner (15 minutes avant)",
-          "dose": "5ml dilués dans 100ml d'eau tiède",
-          "justification": "Action nocturne de régulation cellulaire et drainage émonctoriel durant la phase de régénération hépatique du sommeil."
-        }
-      ],
-      "duree_cure": "60 jours consécutifs, suivis d'une fenêtre thérapeutique de 10 jours. Renouvelable 2 fois par an.",
-      "chronobiologie": "Le pic de prolifération kératinocytaire se produit en début de nuit ; la prise du soir assure une concentration plasmatique optimale des alcaloïdes au moment de l'anomalie mitotique."
-    },
+    "posologie": "Contenu éducatif uniquement — ne constitue pas une recommandation posologique médicale. Consulter un professionnel de santé.",
     "contre_indications": [
       "Grossesse et allaitement (présence d'alcaloïdes de mahonia stimulant les contractions utérines).",
       "Enfants de moins de 12 ans.",
@@ -246,14 +230,14 @@
       "Kit Remède Détox Foie & Émonctoires Bloom",
       "Hydrolat pur d'Hélichryse Italienne en pulvérisation apaisante locale"
     ],
-    "precautions": "Ce remède s'inscrit dans une approche d'hygiène de vie et de soutien du terrain naturel. Il ne se substitue pas à un traitement médical dermatologique ni au suivi régulier par un médecin ou dermatologue. En cas de réaction cutanée inhabituelle, espacer les prises ou interrompre la cure. Alcool inflammable : travailler en pièce ventilée loin de toute flamme ; ne pas ajouter d’eau en mode Tincture chauffé (utiliser le mode Sans chauffe ou un bocal pour les dilutions à 70°)."
+    "precautions": "Cette fiche s'inscrit dans une démarche éducative d'herboristerie et d'hygiène de vie. Il ne se substitue pas à un traitement médical dermatologique ni au suivi régulier par un médecin ou dermatologue. En cas de réaction cutanée inhabituelle, espacer les prises ou interrompre la cure. Alcool inflammable : travailler en pièce ventilée loin de toute flamme ; ne pas ajouter d’eau en mode Tincture chauffé (utiliser exclusivement un bocal en verre hermétique hors appareil pour les dilutions hydro-alcooliques contenant de l'eau). Ne jamais laisser l'appareil BloomLab® sans surveillance en fonctionnement ni lorsqu'il est branché."
   },
   {
     "recette_id": "eczema_remede",
-    "nom_commun": "Remède Eczéma — Apaisement Histaminique & Réparation Barrière",
+    "nom_commun": "Atelier Botanique — Plantain, Camomille & Fumeterre",
     "type_produit": "Extrait liquide hydroglycériné et hydroalcoolique concentré",
-    "cible": "Eczéma atopique et de contact (prurit intense, dermatite réactive, rupture de barrière lipidique, hyperréactivité mastocytaire)",
-    "description": "Synergie botanique protectrice combinant des antihistaminiques naturels, des flavonoïdes anti-prurigineux et des stabilisateurs de membranes mastocytaires par extraction thermo-régulée sous atmosphère close.",
+    "cible": "Étude éducative d'extraction douce des plantes à mucilages et sesquiterpènes (contenu non médical)",
+    "description": "Séquence pédagogique combinant Phase A hydroglycérinée thermo-régulée et Phase B hydroalcoolique douce en bocal hermétique hors appareil.",
     "solvants": {
       "phase_A": {
         "type": "Eau purifiée distillée + Glycérine végétale bio (65/35)",
@@ -261,9 +245,9 @@
         "role": "Extraction des iridoïdes (aucuboside), mucilages émollients et flavones hydrosolubles (apigénine sous forme glucosée)."
       },
       "phase_B": {
-        "type": "Alcool éthylique alimentaire bio 50° (titre doux sesquiterpènes & protopine)",
-        "volume": "250ml",
-        "role": "Extraction des sesquiterpènes volatils (chamazulène, alpha-bisabolol) et des alcaloïdes stabilisateurs hépato-cutanés (protopine)."
+        "type": "Alcool alimentaire bio 50° en bocal hermétique hors appareil (ou option glycérine/huile dans BloomLab®)",
+        "volume": "250ml (hors appareil)",
+        "role": "Macération hydro-alcoolique traditionnelle à 50° hors appareil pour les sommités fleuries."
       }
     },
     "plantes": [
@@ -297,9 +281,9 @@
             "cible": "Aucuboside, actéoside, mucilages"
           },
           "phase_B": {
-            "temp": "Ambiante (Sans chauffe / bocal)",
-            "temps": "4h à 12h (Sans chauffe)",
-            "solvant": "Alcool alimentaire bio 50°",
+            "temp": "Bocal hermétique hors appareil (50°)",
+            "temps": "Macération traditionnelle hors appareil",
+            "solvant": "Alcool alimentaire bio 50° hors appareil",
             "cible": "Composés phénoliques apolaires résiduels"
           }
         }
@@ -334,9 +318,9 @@
             "cible": "Apigénine-7-glucoside et flavones"
           },
           "phase_B": {
-            "temp": "Ambiante (Sans chauffe / bocal)",
-            "temps": "4h à 12h (Sans chauffe)",
-            "solvant": "Alcool alimentaire bio 50°",
+            "temp": "Bocal hermétique hors appareil (50°)",
+            "temps": "Macération traditionnelle hors appareil",
+            "solvant": "Alcool alimentaire bio 50° hors appareil",
             "cible": "Chamazulène, alpha-bisabolol, spiroéthers"
           }
         }
@@ -371,9 +355,9 @@
             "cible": "Acide fumarique, flavonoïdes"
           },
           "phase_B": {
-            "temp": "Ambiante (Sans chauffe / bocal)",
-            "temps": "4h à 12h (Sans chauffe)",
-            "solvant": "Alcool alimentaire bio 50°",
+            "temp": "Bocal hermétique hors appareil (50°)",
+            "temps": "Macération traditionnelle hors appareil",
+            "solvant": "Alcool alimentaire bio 50° hors appareil",
             "cible": "Protopine et alcaloïdes isoquinoléiques"
           }
         }
@@ -386,9 +370,9 @@
         "agitation": "Douce intermittente (20s ON / 40s OFF)"
       },
       "phase_B": {
-        "temp": "Ambiante (Sans chauffe / bocal)",
-        "temps": "4h à 12h (Sans chauffe)",
-        "agitation": "Mode Sans chauffe (agitation douce sans chauffage pour préserver les fleurs)"
+        "temp": "Bocal hermétique hors appareil (50°)",
+        "temps": "Macération traditionnelle hors appareil",
+        "agitation": "Macération en bocal hermétique hors appareil (ou option sans alcool huile/glycérine dans BloomLab® sous surveillance)"
       }
     },
     "recette_pas_a_pas": {
@@ -423,9 +407,9 @@
         "3. TRANSITION OBLIGATOIRE : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant la Phase B."
       ],
       "phase_B_instructions": [
-        "1. Placer les 25g de fumeterre et 10g de camomille dans la cuve propre et sèche.",
-        "2. Verser 250ml d’alcool alimentaire à 50° (entre MIN et MAX, en pièce ventilée loin de toute flamme).",
-        "3. Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h ; ou bocal hermétique) — ne jamais chauffer d’alcool dilué à l’eau en cycle Tincture.",
+        "1. Placer les 25g de fumeterre et 10g de camomille dans un bocal en verre hermétique propre et sec (hors appareil).",
+        "2. Verser 250ml d’alcool alimentaire à 50° en pièce ventilée loin de toute flamme — ne jamais chauffer d’alcool dilué à l’eau en cycle Tincture.",
+        "3. Laisser macérer en bocal hermétique hors appareil (ou opter dans BloomLab® pour une alternative sans alcool en glycérine/huile végétale sous surveillance continue ; ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché).",
         "4. Filtrer, presser doucement sans broyer les tiges et assembler les fractions A et B hors cuve."
       ],
       "filtration_et_finition": [
@@ -466,23 +450,7 @@
         }
       ]
     },
-    "posologie": {
-      "dose_quotidienne": "8ml par jour (divisés en 2 prises de 4ml)",
-      "moments": [
-        {
-          "moment": "Matin à jeun",
-          "dose": "4ml dans un demi-verre d'eau de source",
-          "justification": "Modulation immunitaire matinale et soutien du drainage biliaire doux."
-        },
-        {
-          "moment": "Fin d'après-midi (17h - 18h)",
-          "dose": "4ml dans un demi-verre d'eau",
-          "justification": "Anticipation du pic circadien de libération d'histamine et de prurit nocturne qui s'intensifie classiquement au coucher."
-        }
-      ],
-      "duree_cure": "45 jours continus. Pause de 7 jours, puis reprise si terrain atopique chronique en période de changement de saison.",
-      "chronobiologie": "Le taux de cortisol endogène chute en fin d'après-midi, créant un créneau de vulnérabilité inflammatoire : la prise à 17h prévient la crise de grattage du début de soirée."
-    },
+    "posologie": "Contenu éducatif uniquement — ne se substitue à aucun avis dermatologique ou médical.",
     "contre_indications": [
       "Grossesse et allaitement.",
       "Allergie avérée aux plantes de la famille des Astéracées (camomille).",
@@ -495,14 +463,14 @@
       "Hydrolat pur de Camomille Romaine ou Lavande Vraie en brumisation apaisante",
       "Infusion Sommeil Profond Bloom (en cas d'insomnie de grattage)"
     ],
-    "precautions": "Usage réservé à l'adulte et à l'adolescent de plus de 12 ans. Ne jamais appliquer l'extrait hydroalcoolique directement pur sur des lésions suintantes ou écorchées (voie orale exclusive). En cas de surinfection cutanée (croûtes dorées, impétigo), consulter un médecin sans délai. Alcool inflammable : pièce ventilée, aucune flamme, couvercle verrouillé. Pour une version sans alcool, remplacer la Phase B par de la glycérine ou de l’huile végétale à 48°C."
+    "precautions": "Usage réservé à l'adulte et à l'adolescent de plus de 12 ans. Ne jamais appliquer l'extrait hydroalcoolique directement pur sur des lésions suintantes ou écorchées (voie orale exclusive). En cas de surinfection cutanée (croûtes dorées, impétigo), consulter un médecin sans délai. Alcool inflammable : pièce ventilée, aucune flamme, couvercle verrouillé. Pour une version sans alcool, remplacer la Phase B par de la glycérine ou de l’huile végétale à 48°C. Ne jamais laisser l'appareil BloomLab® sans surveillance en fonctionnement ni lorsqu'il est branché."
   },
   {
     "recette_id": "alopecie_andro_remede",
-    "nom_commun": "Remède Alopécie — Anti-DHT & Micro-Nutrition Folliculaire",
+    "nom_commun": "Atelier Botanique — Palmier Nain, Ortie & Ginkgo",
     "type_produit": "Extrait liquide synergique à double voie (orale et lotion topique cuir chevelu)",
-    "cible": "Alopécie androgénétique (miniaturisation du follicule pileux, sensibilité accrue à la DHT, inflammation périfolliculaire et perte de densité capillaire)",
-    "description": "Formule phytomoléculaire de pointe combinant des inhibiteurs naturels de la 5-alpha-réductase, des relanceurs de la microcirculation dermique de la papille pilaire et des minéralisants renforçant la kératine.",
+    "cible": "Étude éducative biphasique sur l'extraction des baies lipidiques, racines siliceuses et flavonoïdes",
+    "description": "Séquence pédagogique d'extraction séquentielle étudiant le profil en acides gras libres, phytostérols, silice et flavonoïdes (contenu non médical).",
     "solvants": {
       "phase_A": {
         "type": "Eau purifiée distillée + Glycérine végétale bio (70/30)",
@@ -510,9 +478,9 @@
         "role": "Solubilisation des acides phénoliques, flavonoïdes vasodilatateurs, lectines UDA et silice biodisponible hydrosoluble."
       },
       "phase_B": {
-        "type": "Alcool éthylique alimentaire bio 70° (ou ≥ 75 % vol. sans eau pour cycle Tincture)",
+        "type": "Alcool alimentaire ≥ 75 % vol. sans eau (cycle Tincture) ou alcool 70° en bocal hermétique hors appareil",
         "volume": "300ml",
-        "role": "Extraction lipophile poussée des acides gras libres actifs (laurique, myristique), phytostérols (bêta-sitostérol), ginkgolides et lignanes apolaires."
+        "role": "Solubilisation des acides gras libres et phytostérols cireux des baies de Palmier Nain."
       }
     },
     "plantes": [
@@ -546,9 +514,9 @@
             "cible": "Composés hydrosolubles d'amorçage"
           },
           "phase_B": {
-            "temp": "Ambiante (Sans chauffe 70°) ou 71°C Tincture (≥75° sans eau)",
-            "temps": "4h à 12h (Sans chauffe) ou 4h (Tincture)",
-            "solvant": "Alcool alimentaire bio 70° (ou ≥75° anhydre)",
+            "temp": "71°C Tincture (≥75° sans eau) ou Bocal hermétique hors appareil (70°)",
+            "temps": "4h Tincture (réglable) ou macération hors appareil",
+            "solvant": "Alcool ≥75° anhydre (Tincture) ou 70° hors appareil",
             "cible": "Acides gras libres, bêta-sitostérol, phytostérols"
           }
         }
@@ -583,9 +551,9 @@
             "cible": "Lectines UDA, silice, polysaccharides"
           },
           "phase_B": {
-            "temp": "Ambiante (Sans chauffe 70°) ou 71°C Tincture (≥75° sans eau)",
-            "temps": "4h à 12h (Sans chauffe) ou 4h (Tincture)",
-            "solvant": "Alcool alimentaire bio 70° (ou ≥75° anhydre)",
+            "temp": "71°C Tincture (≥75° sans eau) ou Bocal hermétique hors appareil (70°)",
+            "temps": "4h Tincture (réglable) ou macération hors appareil",
+            "solvant": "Alcool ≥75° anhydre (Tincture) ou 70° hors appareil",
             "cible": "Lignanes et stérols de racine"
           }
         }
@@ -620,9 +588,9 @@
             "cible": "Flavonol-glycosides, proanthocyanidols"
           },
           "phase_B": {
-            "temp": "Ambiante (Sans chauffe 70°) ou 71°C Tincture (≥75° sans eau)",
-            "temps": "4h à 12h (Sans chauffe) ou 4h (Tincture)",
-            "solvant": "Alcool alimentaire bio 70° (ou ≥75° anhydre)",
+            "temp": "71°C Tincture (≥75° sans eau) ou Bocal hermétique hors appareil (70°)",
+            "temps": "4h Tincture (réglable) ou macération hors appareil",
+            "solvant": "Alcool ≥75° anhydre (Tincture) ou 70° hors appareil",
             "cible": "Ginkgolides A, B, C et bilobalide"
           }
         }
@@ -635,9 +603,9 @@
         "agitation": "Modérée régulière (Programme OIL / STANDARD)"
       },
       "phase_B": {
-        "temp": "Ambiante (Sans chauffe 70°) ou 71°C Tincture (≥75° sans eau)",
-        "temps": "4h à 12h (Sans chauffe) ou 4h (Tincture)",
-        "agitation": "Mode Sans chauffe (70° hydro-alcoolique) ou Tincture (≥ 75° sans ajout d’eau)"
+        "temp": "71°C Tincture (≥75° sans eau) ou Bocal hermétique hors appareil (70°)",
+        "temps": "4h Tincture (réglable) ou macération hors appareil",
+        "agitation": "Tincture pour alcool ≥ 75 % sans eau (sous surveillance continue) ou bocal hermétique hors appareil à 70°"
       }
     },
     "recette_pas_a_pas": {
@@ -671,9 +639,9 @@
         "3. TRANSITION OBLIGATOIRE : Vider, nettoyer et sécher intégralement la cuve avant d’introduire l’alcool Phase B."
       ],
       "phase_B_instructions": [
-        "1. Ajouter les 30g de baies de palmier nain concassées dans la cuve propre et sèche.",
-        "2. Verser 300ml d’alcool alimentaire à 70° (mode Sans chauffe, 4h–12h) OU d’alcool ≥ 75 % vol. sans eau (programme Tincture, 4h par défaut ou température/durée ajustée), entre MIN et MAX, en pièce ventilée loin de toute flamme.",
-        "3. Verrouiller le couvercle et lancer le cycle adapté, puis assembler avec la fraction A hors appareil après filtration."
+        "1. Après vidange, nettoyage et séchage complet de la cuve, choisir soit un alcool ≥ 75 % vol. sans eau dans BloomLab® (300 ml entre MIN et MAX, pièce ventilée loin de toute flamme, couvercle verrouillé, appareil sous surveillance continue — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché), soit une macération à 70° en bocal hermétique hors appareil.",
+        "2. Pour l'option anhydre ≥ 75 % vol., lancer le programme Tincture (71 °C / 4 h par défaut, réglable manuellement via TEMP/TIME).",
+        "3. Filtrer puis assembler avec la fraction A hors appareil en flacons ambrés (usage cosmétique externe du cuir chevelu ou étude documentaire)."
       ],
       "filtration_et_finition": [
         "1. Laissez tiédir 45 minutes.",
@@ -713,23 +681,7 @@
         }
       ]
     },
-    "posologie": {
-      "dose_quotidienne": "En interne : 5ml par jour le matin. En externe : 8 à 10 pulvérisations 3 fois par semaine.",
-      "moments": [
-        {
-          "moment": "Matin au petit-déjeuner (Voie interne)",
-          "dose": "5ml dilués dans 1 verre d'eau ou un jus de légumes",
-          "justification": "Absorption optimale des stérols et inhibition systémique de l'enzyme 5-AR dès le démarrage de la journée hormonale."
-        },
-        {
-          "moment": "Soir avant le coucher (Voie externe topique)",
-          "dose": "8 à 10 pulvérisations sur cuir chevelu propre et sec, suivi d'un massage circulaire de 3 minutes sans rincer",
-          "justification": "Pénétration directe transfolliculaire des actifs durant le pic de régénération nocturne des cellules de la matrice pilaire."
-        }
-      ],
-      "duree_cure": "90 jours consécutifs (correspondant à la durée physiologique minimale d'un cycle anagène du follicule). À renouveler 2 fois par an (au printemps et en automne).",
-      "chronobiologie": "Le renouvellement cellulaire folliculaire et l'activité mitotique de la matrice pilaire atteignent leur acmé entre 23h et 4h du matin."
-    },
+    "posologie": "Usage pédagogique / soin cosmétique externe du cuir chevelu ; demander avis médical avant tout usage interne.",
     "contre_indications": [
       "Grossesse et allaitement (effet anti-androgénique contre-indiqué chez les femmes enceintes portant un fœtus masculin).",
       "Femmes en âge de procréer sans contraception efficace.",
@@ -744,6 +696,6 @@
       "Huile de Nigelle d'Égypte première pression à froid en bain d'huile hebdomadaire",
       "Pack Signature BloomLab avec extraction séquentielle A/B"
     ],
-    "precautions": "Prendre conseil auprès d'un professionnel de santé en cas de prise concomitante de médicaments anticoagulants ou fluidifiants sanguins en raison de la présence de Ginkgo. Ne pas dépasser la dose journalière recommandée. Alcool inflammable : pièce très bien ventilée, zéro flamme, couvercle verrouillé, respect MIN/MAX et règle manuel « Ne pas ajouter d’eau » dans le programme Tincture chauffé."
+    "precautions": "Prendre conseil auprès d'un professionnel de santé en cas de prise concomitante de médicaments anticoagulants ou fluidifiants sanguins en raison de la présence de Ginkgo. Ne pas dépasser la dose journalière recommandée. Alcool inflammable : pièce très bien ventilée, zéro flamme, couvercle verrouillé, respect MIN/MAX et règle manuel « Ne pas ajouter d’eau » dans le programme Tincture chauffé. Ne jamais laisser l'appareil BloomLab® sans surveillance en fonctionnement ni lorsqu'il est branché."
   }
 ]

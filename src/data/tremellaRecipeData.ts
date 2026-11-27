@@ -446,7 +446,7 @@ export const TREMELLA_RECIPE_COPY: Record<Language, TremellaRecipeCopy> = {
     cta: {
       eyebrow: 'Passez de la théorie à l’extraction de précision',
       heading: 'Réalisez cette Soupe de Beauté au degré près avec la BloomLab®',
-      body: 'Grâce au contrôle thermique à 80 °C et 70 °C sans surveillance ni ébullition destructrice, votre cuisine devient un véritable atelier d’herboristerie moderne.',
+      body: 'Grâce au contrôle thermique précis à 80 °C et 70 °C sans ébullition destructrice (toujours sous surveillance, sans jamais laisser l’appareil sans surveillance en fonctionnement ni branché), votre cuisine devient un véritable atelier d’herboristerie moderne.',
       primaryBtn: 'Découvrir l’extracteur BloomLab®',
       recipesBtn: 'Explorer toutes les recettes',
       academyBtn: 'Découvrir la Bloom Académie',

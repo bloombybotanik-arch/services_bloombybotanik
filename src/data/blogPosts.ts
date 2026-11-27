@@ -128,30 +128,29 @@ export const blogPosts: BlogPost[] = [
   <li><strong>Les protecteurs physiologiques :</strong> Mucilages et antioxydants qui atténuent les effets irritants de certains principes forts sur la muqueuse gastrique.</li>
 </ul>
 
-<h3>2. Les limites de l'extraction à froid stricte</h3>
-<p>L'extraction à froid (comme la macération aqueuse à 20°C pendant 12 heures) possède une qualité indéniable : elle préserve parfaitement les enzymes et les sucres complexes. Cependant, elle présente des lacunes physiques majeures :</p>
+<h3>2. Spécificités comparées de la macération à froid et de l'extraction thermique</h3>
+<p>La macération à froid (comme les macérations traditionnelles à température ambiante) fait partie des pratiques historiques de l'herboristerie. Selon la matrice végétale, le solvant utilisé et les objectifs de préparation, elle présente des caractéristiques distinctes de l'extraction thermo-régulée :</p>
 <ul>
-  <li><strong>Faible dissolution des résines et cires :</strong> Les parois cellulosiques des végétaux sont imperméabilisées par des cutines qui ne s'amollissent qu'avec un apport calorique modéré.</li>
-  <li><strong>Rendement moléculaire faible :</strong> Sans apport énergétique thermique, le coefficient de diffusion des molécules denses (polyphénols condensés, principes amers) reste extrêmement bas.</li>
-  <li><strong>Risque de développement microbien :</strong> Une macération aqueuse prolongée à température ambiante favorise la prolifération de levures et de bactéries.</li>
+  <li><strong>Enjeux pratiques de durée et d'hygiène :</strong> Une macération aqueuse prolongée à température ambiante demande une vigilance accrue vis-à-vis du développement microbien si le solvant ne contient pas de conservateur.</li>
+  <li><strong>Rôle de la chaleur maîtrisée :</strong> Un apport thermique modéré (45 °C à 60 °C sous agitation douce) permet d'accélérer la préparation domestique en quelques heures au lieu de plusieurs jours, tout en limitant les chocs thermiques de l'ébullition.</li>
 </ul>
 
-<h3>3. Le massacre de l'ébullition : pourquoi 100°C détruit le totum</h3>
-<p>À l'opposé, la décoction prolongée à 100°C fracture certes les tissus durs (racines, écorces), mais elle altère significativement de nombreux constituants thermolabiles. Le totum est décapité : vous n'obtenez que les tanins les plus lourds et les molécules les plus résistantes, souvent dégradées en sous-produits d'oxydation.</p>
+<h3>3. Les limites de l'ébullition prolongée à 100 °C</h3>
+<p>À l'opposé, la décoction prolongée à 100 °C ramollit les tissus durs (racines, écorces), mais expose de nombreux constituants aromatiques et polyphénols volatils à l'évaporation ou à l'oxydation.</p>
 
-<h3>4. La voie du milieu : l'extraction thermo-cinétique contrôlée</h3>
-<p>Pour extraire l'intégralité du totum végétal sans dénaturation, la science moderne a validé une fenêtre thérapeutique idéale : <strong>entre 45°C et 60°C sous agitation vortex continue</strong>.</p>
+<h3>4. La voie de la précision domestique : l'extraction thermo-cinétique régulée</h3>
+<p>Pour préserver le spectre aromatique et phytochimique du végétal sans ébullition brutale, la méthode Bloom privilégie une fenêtre thermique contrôlée <strong>entre 45 °C et 60 °C sous agitation douce continue</strong> :</p>
 <ol>
-  <li><strong>À 45°C :</strong> Les liaisons hydrogène faibles de la paroi cellulaire se relâchent sans altérer la conformation spatiale des flavonoïdes.</li>
-  <li><strong>Sous agitation cinétique :</strong> Le solvant pénètre les micro-fissures végétales par convection forcée, multipliant le transfert de masse sans avoir besoin d'augmenter la température.</li>
-  <li><strong>En cuve étanche :</strong> Les composés aromatiques volatils restent piégés dans la préparation.</li>
+  <li><strong>À 45 °C :</strong> Les composés sensibles et arômes volatils sont ménagés.</li>
+  <li><strong>Sous agitation cinétique :</strong> Le brassage régulier renouvelle le solvant au contact de la plante sans devoir monter à ébullition.</li>
+  <li><strong>En cuve fermée :</strong> Les fractions aromatiques restent mieux confinées pendant la préparation.</li>
 </ol>
-<p>Cette approche séquentielle et contrôlée permet de préserver l'harmonie du totum, garantissant une efficacité clinique sans effets secondaires indésirables.</p>
+<p>Cette approche séquentielle et contrôlée aide à obtenir des préparations botaniques maison constantes et fidèles au Totum de la plante (contenu à vocation éducative, sans promesse thérapeutique).</p>
 
-<p>Découvrez notre protocole complet dans notre <a href="/extraction-botanique">guide de l'extraction botanique</a> et notre dossier sur les <a href="/phytotherapie-reset">protocoles de reset homéostasique</a>.</p>
+<p>Découvrez notre protocole complet dans notre <a href="/extraction-botanique">guide de l'extraction botanique</a> et notre dossier sur les <a href="/academie/reset-homeostasique">approches botaniques documentaires</a>.</p>
       `,
       en: `
-<p>Should you extract plants cold or hot? Modern biochemistry demonstrates that extreme cold leaves dense actives locked inside plant fibers, while boiling water degrades delicate thermolabile molecules. The optimal solution is moderate thermo-kinetics (45°C to 60°C under continuous vortex) preserving the complete botanical totum.</p>
+<p>Should you extract plants cold or with gentle heat? While traditional cold maceration remains an established herbalism technique, excessive boiling degrades delicate aromatic molecules. Controlled domestic thermo-kinetics (45°C to 60°C under gentle closed-chamber stirring) offers repeatable home preparations preserving the plant Totum (educational content, not medical claims).</p>
 <p>Explore our research on the <a href="/extraction-botanique">botanical extraction pillar</a>.</p>
       `,
       de: `
@@ -209,7 +208,7 @@ export const blogPosts: BlogPost[] = [
 <p>Recommandée pour calmer la toux sèche et les irritations cutanées, la mauve contient des polysaccharides mucilagineux capables de former un film protecteur hydratant. Une extraction à chaleur très douce (40°C à 45°C) permet de libérer ces mucilages sans les coaguler.</p>
 
 <h3>De la tradition à la précision : l'herboristerie maison moderne</h3>
-<p>Pour tirer le plein bénéfice de ces <strong>recettes ancestrales</strong>, l'amateur éclairé d'aujourd'hui ne se fie plus au hasard du feu de bois. Grâce aux appareils d'extraction modernes, la tradition retrouve son efficacité clinique maximale, directement dans notre quotidien.</p>
+<p>Pour préparer ces <strong>recettes d'herboristerie traditionnelle</strong> avec régularité, l'amateur éclairé s'appuie sur la maîtrise des températures douces et du milieu fermé, directement au quotidien (contenu éducatif, sans allégation médicale).</p>
 
 <p>Découvrez nos fiches détaillées dans notre <a href="/herbier-botanique">herbier des plantes médicinales</a> et préparez vos propres macérats avec notre <a href="/extracteur-botanique">extracteur de plantes maison</a>.</p>
       `,
@@ -274,7 +273,7 @@ export const blogPosts: BlogPost[] = [
     </ul>
   </li>
   <li><strong>Le ratio plante/solvant :</strong> Les ouvrages d'herboristerie citent classiquement un ratio de 1:5 pour la plante sèche (20 g de plante pour 100 ml de solvant) ou 1:2 pour la plante fraîche.</li>
-  <li><strong>Usage sur BloomLab® &amp; sécurité :</strong> L'appareil propose le programme <strong>Tincture</strong> (réglage par défaut 71 °C / 4 h sur exemple ≥ 75 % vol. sans ajout d'eau, ajustable en temps/température) ainsi que le mode <strong>Sans chauffe</strong> (30 min–12 h). En cas de mélange hydroalcoolique dilué à l'eau (45°–70°), privilégiez <strong>Sans chauffe</strong> ou la macération en bocal fermé. Dans tous les cas : solvant inflammable, pièce ventilée, aucune flamme nue ni cigarette, couvercle verrouillé et niveaux MIN–MAX respectés.</li>
+  <li><strong>Usage sur BloomLab® &amp; sécurité :</strong> L'appareil propose le programme <strong>Tincture</strong> (réglage par défaut 71 °C / 4 h sur exemple ≥ 75 % vol. sans ajout d'eau, ajustable en temps et température via TEMP/TIME). En cas de mélange hydroalcoolique dilué à l'eau (45°–70°), utiliser exclusivement la macération en bocal en verre hermétique hors appareil. Dans tous les cas : solvant inflammable, pièce ventilée, aucune flamme nue ni cigarette, couvercle verrouillé, niveaux MIN–MAX respectés, et ne jamais laisser l'appareil sans surveillance en fonctionnement ni lorsqu'il est branché.</li>
 </ol>
 
 <h3>3. Règles d'hygiène et conservation</h3>
@@ -287,11 +286,11 @@ export const blogPosts: BlogPost[] = [
 <p>Retrouvez toutes les recettes pas à pas dans notre section <a href="/cosmetique-botanique">cosmétique botanique</a> et notre dossier sur les <a href="/huile-infusee">huiles infusées de précision</a>.</p>
       `,
       en: `
-<p>Mastering home herbalism requires understanding solvent polarity, alcohol strengths, and thermal thresholds. Learn how to craft infused oils, glycerin macerates, and mother tinctures with BloomLab® (using Oil, Tincture, or No-heating modes under strict ventilation and flame-free safety rules).</p>
+<p>Mastering home herbalism requires understanding solvent polarity, alcohol strengths, and thermal thresholds. Learn how to craft infused oils, glycerin macerates, and mother tinctures (using Oil or waterless ≥75% ABV Tincture modes in BloomLab® under strict ventilation, flame-free, and continuous attendance rules, or sealed glass jars for water-diluted tinctures).</p>
 <p>Discover our dedicated <a href="/cosmetique-botanique">botanical cosmetics</a> recipes.</p>
       `,
       de: `
-<p>Hausgemachte Ölauszüge und Tinkturen: Verstehen Sie Lösungsmittelpolarität, Alkoholstärken und Temperaturschwellen. Erfahren Sie, wie Sie Ölauszüge, Glycerinmazerate und Urtinkturen mit der BloomLab® (Modi Oil, Tincture oder Ohne Heizung unter strengen Sicherheitsregeln) zubereiten.</p>
+<p>Hausgemachte Ölauszüge und Tinkturen: Verstehen Sie Lösungsmittelpolarität, Alkoholstärken und Temperaturschwellen. Erfahren Sie, wie Sie Ölauszüge, Glycerinmazerate (Oil) und Urtinkturen mit wasserfreiem Alkohol ≥ 75 % im Tincture-Modus unter strengen Sicherheits- und Aufsichtsregeln oder im verschlossenen Glas außerhalb des Geräts zubereiten.</p>
       `
     }
   },
@@ -469,211 +468,211 @@ export const blogPosts: BlogPost[] = [
     readTime: '8 min',
     image: 'https://images.unsplash.com/photo-1512290900672-1f4864c39121?auto=format&fit=crop&w=1200&q=80',
     imageSquare: 'https://images.unsplash.com/photo-1512290900672-1f4864c39121?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Ashwagandha Withania somnifera pour réguler le cortisol et apaiser le système nerveux',
-    tags: ['ashwagandha cortisol', 'sommeil réparateur', 'withanolides', 'gaba'],
+    imageAlt: 'Ashwagandha Withania somnifera en phytothérapie ayurvédique et extraction du totum',
+    tags: ['ashwagandha', 'adaptogènes', 'withanolides', 'herboristerie'],
     metaTitle: {
-      fr: "Ashwagandha et Cortisol : Réduire le Stress Naturellement | Bloom",
-      en: "Ashwagandha and Cortisol: Lower Stress Naturally | Bloom",
-      de: "Ashwagandha und Cortisol: Stress natürlich senken | Bloom"
+      fr: "Ashwagandha (Withania somnifera) : Tradition & Extraction | Bloom",
+      en: "Ashwagandha (Withania somnifera): Tradition & Extraction | Bloom",
+      de: "Ashwagandha (Withania somnifera): Tradition & Extraktion | Bloom"
     },
     metaDescription: {
-      fr: "Comment l'Ashwagandha abaisse le taux de cortisol sérique de 27% et répare le système nerveux. Études cliniques, posologie et mode d'extraction du Totum.",
-      en: "How Ashwagandha lowers serum cortisol by 27% and restores the nervous system. Clinical studies and totum extraction.",
-      de: "Wie Ashwagandha Serum-Cortisol senkt und das Nervensystem regeneriert."
+      fr: "Histoire ayurvédique de l'Ashwagandha, profil en withanolides et paramètres d'extraction contrôlée du Totum à domicile (contenu éducatif).",
+      en: "Ayurvedic history of Ashwagandha, withanolide profile, and home Totum extraction parameters (educational content).",
+      de: "Ayurvedische Tradition von Ashwagandha, Withanolid-Profil und schonende Totum-Extraktion."
     },
     title: {
-      fr: "Ashwagandha : Réduire le Cortisol Naturellement",
-      en: "Ashwagandha: Lowering Cortisol Naturally",
-      de: "Ashwagandha: Cortisol natürlich senken"
+      fr: "Ashwagandha : Tradition Ayurvédique & Extraction du Totum",
+      en: "Ashwagandha: Ayurvedic Tradition & Totum Extraction",
+      de: "Ashwagandha: Ayurvedische Tradition & Totum-Extraktion"
     },
     excerpt: {
-      fr: "Études cliniques à l'appui : comment la Withania somnifera apaise le système nerveux hyperréactif et favorise la régénération surrénalienne.",
-      en: "Clinical evidence: how Withania somnifera calms an overreactive nervous system and aids adrenal recovery.",
-      de: "Klinische Beweise: Wie Withania somnifera ein überreaktives Nervensystem beruhigt."
+      fr: "Décryptage botanique et phytochimique de la racine de Withania somnifera et de son extraction séquentielle douce.",
+      en: "Botanical and phytochemical overview of Withania somnifera root and its gentle sequential extraction.",
+      de: "Botanischer Überblick zur Wurzel von Withania somnifera und ihrer schonenden Extraktion."
     },
     content: {
       fr: `
-<p>L'<strong>Ashwagandha (Withania somnifera)</strong> est le pilier de la pharmacopée ayurvédique pour rétablir la paix intérieure. Plusieurs études contemporaines explorent sa capacité unique à abaisser le cortisol circulatoire de 25% à 30% après 60 jours de cure régulière.</p>
+<p>L'<strong>Ashwagandha (Withania somnifera)</strong> est une racine majeure de l'Ayurveda traditionnel, souvent évoquée dans les monographies botaniques pour sa richesse en lactones stéroïdiennes appelées <em>withanolides</em> (contenu strictement documentaire, sans allégation de santé).</p>
 
-<h3>1. Le mode d'action sur les récepteurs GABA</h3>
-<p>Les withanolides agissent comme des modulateurs allostériques positifs des récepteurs GABA-A. Cela signifie qu'ils renforcent le frein naturel du cerveau sans causer l'anesthésie chimique des somnifères conventionnels.</p>
+<h3>1. Profil phytochimique des racines</h3>
+<p>La racine séchée associe des fractions hydrosolubles et des composés plus peu polaires étudiés dans la littérature phytochimique internationale.</p>
 
-<h3>2. Synergie idéale avec le Totum végétal</h3>
-<p>Dans notre guide sur <a href="/totum-vegetal-comprendre">le Totum végétal expliqué</a>, nous montrons que les racines entières d'Ashwagandha contiennent des composés protecteurs éliminant tout risque de toxicité hépatique lorsqu'elles sont extraites à température contrôlée.</p>
+<h3>2. Extraction respectueuse du Totum</h3>
+<p>Dans notre guide sur <a href="/totum-vegetal">le Totum végétal expliqué</a>, nous présentons les repères de température douce (sans ébullition prolongée) pour préparer des extraits aqueux ou glycérinés fidèles à la racine entière.</p>
       `,
-      en: `<p>Ashwagandha lowers cortisol and supports deep restorative sleep naturally.</p>`,
-      de: `<p>Ashwagandha senkt das Cortisol und fördert tiefen, erholsamen Schlaf.</p>`
+      en: `<p>Educational monograph on Ashwagandha (Withania somnifera) traditional botanical use and controlled temperature extraction.</p>`,
+      de: `<p>Dokumentarischer Überblick zu Ashwagandha (Withania somnifera) und kontrollierter Temperaturextraktion.</p>`
     }
   },
   {
     slug: 'plantes-dormir-profondement',
     date: '2026-09-16',
-    category: 'Sommeil',
+    category: 'Rituels du Soir',
     author: 'Collège Scientifique Bloom',
     readTime: '8 min',
     image: 'https://images.unsplash.com/photo-1511295742362-92c96b124e52?auto=format&fit=crop&w=1200&q=80',
     imageSquare: 'https://images.unsplash.com/photo-1511295742362-92c96b124e52?auto=format&fit=crop&w=800&q=80',
-    imageAlt: '5 plantes médicinales pour dormir profondément et réparer le cycle circadien',
-    tags: ['plantes pour dormir', 'sommeil profond', 'valériane', 'passiflore', 'mélisse'],
+    imageAlt: '5 plantes traditionnelles d herboristerie du soir (valériane, passiflore, mélisse)',
+    tags: ['plantes du soir', 'herboristerie', 'valériane', 'passiflore', 'mélisse'],
     metaTitle: {
-      fr: "5 Plantes pour Dormir Profondément (Preuves Scientifiques) | Bloom",
-      en: "5 Plants for Deep Sleep (Scientific Evidence) | Bloom",
-      de: "5 Pflanzen für tiefen Schlaf (Wissenschaftliche Beweise) | Bloom"
+      fr: "5 Plantes d'Herboristerie du Soir : Profil & Infusion | Bloom",
+      en: "5 Traditional Evening Botanicals: Profile & Infusion | Bloom",
+      de: "5 Traditionelle Abendkräuter: Profil & Aufguss | Bloom"
     },
     metaDescription: {
-      fr: "Retrouvez un sommeil profond et réparateur sans somnifère : les 5 plantes médicinales documentées en phytothérapie (Valériane, Passiflore, Mélisse, Eschscholtzia, Camomille).",
-      en: "Restore deep, restorative sleep without sleeping pills: 5 science-backed medicinal plants.",
-      de: "Tiefen und erholsamen Schlaf ohne Schlaftabletten wiederfinden: 5 wissenschaftlich geprüfte Pflanzen."
+      fr: "Découvrez 5 plantes d'herboristerie traditionnelle associées aux rituels du soir (Valériane, Passiflore, Mélisse, Eschscholtzia, Camomille) et leurs températures d'infusion.",
+      en: "Explore 5 traditional evening herbalism plants (Valerian, Passionflower, Lemon Balm, California Poppy, Chamomile) and gentle infusion settings.",
+      de: "5 traditionelle Abendpflanzen und ihre schonenden Aufgusstemperaturen."
     },
     title: {
-      fr: "5 Plantes pour Dormir Profondément (Preuves Scientifiques)",
-      en: "5 Plants for Deep Sleep (Scientific Evidence)",
-      de: "5 Pflanzen für tiefen Schlaf (Wissenschaftliche Beweise)"
+      fr: "5 Plantes Traditionnelles des Rituels du Soir",
+      en: "5 Traditional Evening Herbalism Botanicals",
+      de: "5 Traditionelle Pflanzen für das Abendritual"
     },
     excerpt: {
-      fr: "Quelles plantes permettent réellement d'allonger la phase de sommeil lent profond ? Méta-analyses et protocoles d'infusion du soir.",
-      en: "Which plants actually prolong deep slow-wave sleep? Meta-analyses and evening brewing protocols.",
-      de: "Welche Pflanzen verlängern tatsächlich den Tiefschlaf? Meta-Analysen und Abendprotokolle."
+      fr: "Repères phytochimiques et températures d'extraction douce pour les plantes aromatiques du soir en herboristerie.",
+      en: "Phytochemical benchmarks and gentle extraction temperatures for traditional evening herbs.",
+      de: "Phytochemische Richtwerte und sanfte Extraktionstemperaturen für Abendkräuter."
     },
     content: {
       fr: `
-<p>L'insomnie et les réveils nocturnes traduisent un déficit de désactivation corticale. Les 5 plantes fondamentales pour restaurer le sommeil lent profond sont :</p>
+<p>En herboristerie traditionnelle, cinq plantes de référence accompagnent historiquement les tisanes et rituels du soir (approche documentaire, sans allégation médicale) :</p>
 <ol>
-  <li><strong>La Valériane (Valeriana officinalis) :</strong> Augmente la disponibilité cérébrale du GABA et prolonge les phases de sommeil réparateur.</li>
-  <li><strong>La Passiflore (Passiflora incarnata) :</strong> Réduit l'activité cognitive incessante et les ruminations pré-sommeil.</li>
-  <li><strong>La Mélisse (Melissa officinalis) :</strong> Apaise les tensions viscérales et l'éréthisme cardiaque nocturne.</li>
-  <li><strong>L'Eschscholtzia (Pavot de Californie) :</strong> Antispasmodique neuromusculaire doux, parfait en cas de réveils entre 2h et 4h du matin.</li>
-  <li><strong>La Camomille Matricaire :</strong> L'apigénine traverse la barrière hémato-encéphalique pour préparer l'endormissement en douceur.</li>
+  <li><strong>La Valériane (Valeriana officinalis) :</strong> Racine aromatique riche en acides valéréniques, sensible aux températures excessives.</li>
+  <li><strong>La Passiflore (Passiflora incarnata) :</strong> Parties aériennes riches en flavonoïdes vitexine et isovitexine.</li>
+  <li><strong>La Mélisse (Melissa officinalis) :</strong> Feuilles citronnées contenant de l'acide rosmarinique et des citrals volatils.</li>
+  <li><strong>L'Eschscholtzia (Pavot de Californie) :</strong> Plante fleurie décrite dans les monographies traditionnelles d'herboristerie.</li>
+  <li><strong>La Camomille Matricaire :</strong> Capitules riches en apigénine, préparés à chaleur modérée sans ébullition.</li>
 </ol>
-<p>Découvrez notre synergie complète dans le <a href="/boutique/kit-nuit">Kit Nuit Profonde Bloom</a> et lisez notre <a href="/remedes-naturels-maison-guide">guide des remèdes naturels pour le sommeil</a>.</p>
+<p>Découvrez notre assemblage botanique dans le <a href="/boutique/kit-nuit">Kit Nuit Profonde Bloom</a> (mélange alimentaire traditionnel de plantes sèches).</p>
       `,
-      en: `<p>5 science-backed plants to restore deep slow-wave sleep naturally.</p>`,
-      de: `<p>5 wissenschaftlich belegte Pflanzen zur natürlichen Wiederherstellung des Tiefschlafs.</p>`
+      en: `<p>Educational overview of 5 traditional evening botanicals and their gentle brewing temperatures.</p>`,
+      de: `<p>Dokumentarischer Überblick zu 5 traditionellen Abendpflanzen und ihren Aufgusstemperaturen.</p>`
     }
   },
   {
     slug: 'melisse-valeriane-synergie',
     date: '2026-09-18',
-    category: 'Sommeil',
+    category: 'Rituels du Soir',
     author: 'Collège Scientifique Bloom',
     readTime: '6 min',
     image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=80',
     imageSquare: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Mélisse et valériane synergie contre l insomnie et les réveils nocturnes',
-    tags: ['mélisse valériane sommeil', 'synergie plantes', 'insomnie', 'phytothérapie'],
+    imageAlt: 'Mélisse et valériane en herboristerie traditionnelle du soir',
+    tags: ['mélisse valériane', 'herboristerie', 'infusion du soir', 'phytothérapie'],
     metaTitle: {
-      fr: "Mélisse + Valériane : La Synergie Recommandée contre l'Insomnie | Bloom",
-      en: "Lemon Balm + Valerian: The Proven Synergy for Insomnia | Bloom",
-      de: "Melisse + Baldrian: Die bewährte Synergie bei Schlaflosigkeit | Bloom"
+      fr: "Mélisse + Valériane : Duo Traditionnel du Soir | Bloom",
+      en: "Lemon Balm + Valerian: Traditional Evening Duo | Bloom",
+      de: "Melisse + Baldrian: Traditionelles Abend-Duo | Bloom"
     },
     metaDescription: {
-      fr: "Pourquoi l'association Mélisse et Valériane surpasse chacune des deux plantes isolées ? Décryptage de la synergie GABAergique et protocole d'infusion.",
-      en: "Why the combination of Lemon Balm and Valerian outperforms either plant alone. GABAergic synergy decrypted.",
-      de: "Warum die Kombination aus Melisse und Baldrian beide Pflanzen einzeln übertrifft."
+      fr: "Pourquoi l'herboristerie associe historiquement Mélisse et Valériane ? Profils phytochimiques complémentaires et température d'infusion douce.",
+      en: "Why traditional herbalism pairs Lemon Balm and Valerian: complementary phytochemical profiles and gentle infusion tips.",
+      de: "Warum traditionelle Kräuterkunde Melisse und Baldrian kombiniert: komplementäre Profile und Aufguss-Tipps."
     },
     title: {
-      fr: "Mélisse + Valériane : La Synergie pour l'Insomnie",
-      en: "Lemon Balm + Valerian: The Synergy for Insomnia",
-      de: "Melisse + Baldrian: Die Synergie bei Schlaflosigkeit"
+      fr: "Mélisse + Valériane : Un Duo Classique d'Herboristerie",
+      en: "Lemon Balm + Valerian: A Classic Herbalism Duo",
+      de: "Melisse + Baldrian: Ein Klassiker der Kräuterkunde"
     },
     excerpt: {
-      fr: "L'acide rosmarinique de la mélisse freine la dégradation du GABA tandis que les acides valéréniques stimulent sa libération. Une synergie d'école.",
-      en: "Lemon balm slows GABA breakdown while valerenic acids stimulate its release. A textbook botanical synergy.",
-      de: "Zitronenmelisse verlangsamt den GABA-Abbau, während Baldriansäuren seine Freisetzung stimulieren."
+      fr: "L'acide rosmarinique de la mélisse et les sesquiterpènes de la valériane forment un duo aromatique complémentaire en infusion tempérée.",
+      en: "Rosmarinic acid from lemon balm and valerian sesquiterpenes form a complementary duo in temperature-controlled infusions.",
+      de: "Rosmarinsäure der Melisse und Baldrian-Sesquiterpene bilden ein klassisches Kräuter-Duo."
     },
     content: {
       fr: `
-<p>L'association de la <strong>Mélisse</strong> et de la <strong>Valériane</strong> est l'exemple le plus éclatant de <em>synergie pharmacodynamique</em> en phytothérapie. La valériane stimule directement la libération du neurotransmetteur GABA, tandis que l'acide rosmarinique de la mélisse bloque l'enzyme responsable de sa destruction (la GABA-transaminase). Résultat : un taux de GABA protecteur maintenu tout au long de la nuit, éliminant les réveils précoces.</p>
-<p>Apprenez à calibrer cette infusion dans notre <a href="/guide-complet-extraction-botanique-maison">guide d'extraction à domicile</a>.</p>
+<p>L'association de la <strong>Mélisse</strong> et de la <strong>Valériane</strong> figure parmi les mélanges les plus anciens des herboristeries européennes. La valériane apporte ses acides valéréniques terreux tandis que la mélisse tempère son profil aromatique par ses notes citronnées et son acide rosmarinique (contenu documentaire, sans allégation thérapeutique).</p>
+<p>Apprenez à calibrer la température de cette infusion dans notre <a href="/extraction-botanique">guide d'extraction à domicile</a>.</p>
       `,
-      en: `<p>Lemon balm and valerian create a powerful GABAergic synergy that maintains deep restorative sleep.</p>`,
-      de: `<p>Melisse und Baldrian schaffen eine kraftvolle GABA-Synergie für durchgehenden Tiefschlaf.</p>`
+      en: `<p>Lemon balm and valerian represent a classic European botanical pairing suited to moderate infusion temperatures.</p>`,
+      de: `<p>Melisse und Baldrian bilden ein klassisches europäisches Kräuterpaar für schonende Aufgusstemperaturen.</p>`
     }
   },
   {
     slug: 'plantes-anti-inflammatoires-naturelles',
     date: '2026-09-20',
-    category: 'Inflammation',
-    author: 'Collège Scientifique Bloom',
+    category: 'Phytochimie',
+    author: 'Rédaction Bloom',
     readTime: '9 min',
     image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=1200&q=80',
     imageSquare: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Plantes anti-inflammatoires naturelles fondées sur la science',
-    tags: ['plantes anti-inflammatoires', 'inflammation silencieuse', 'curcuma', 'reine des prés', 'harpagophytum'],
+    imageAlt: 'Curcuma, boswellia et gingembre en herboristerie traditionnelle',
+    tags: ['curcuma', 'reine des prés', 'boswellia', 'gingembre', 'phytochimie'],
     metaTitle: {
-      fr: "Plantes Anti-Inflammatoires : Le Guide Fondé sur la Science | Bloom",
-      en: "Anti-Inflammatory Plants: Science-Backed Guide | Bloom",
-      de: "Entzündungshemmende Pflanzen: Wissenschaftlich fundierter Leitfaden | Bloom"
+      fr: "Curcuma, Boswellia & Gingembre : Solubilité & Extraction | Bloom",
+      en: "Turmeric, Boswellia & Ginger: Solubility & Extraction | Bloom",
+      de: "Kurkuma, Boswellia & Ingwer: Löslichkeit & Extraktion | Bloom"
     },
     metaDescription: {
-      fr: "Comment calmer l'inflammation silencieuse avec les plantes : Curcuma, Reine des Prés, Boswellia, Gingembre. Mécanismes d'inhibition des cytokines NF-kB.",
-      en: "How to soothe chronic low-grade inflammation naturally: Curcumin, Meadowsweet, Boswellia and Ginger.",
-      de: "Wie man chronische Entzündungen natürlich lindert: Kurkuma, Mädesüß, Boswellia und Ingwer."
+      fr: "Comprendre la polarité des composés du Curcuma, de la Reine des Prés, du Boswellia et du Gingembre pour l'extraction domestique. Contenu éducatif non médical.",
+      en: "Understanding the solubility and extraction profiles of Turmeric, Meadowsweet, Boswellia, and Ginger. Non-medical educational guide.",
+      de: "Löslichkeit und Extraktionsprofile von Kurkuma, Mädesüß, Boswellia und Ingwer im Überblick. Nicht-medizinischer Leitfaden."
     },
     title: {
-      fr: "Plantes Anti-Inflammatoires : Le Guide Basé sur la Science",
-      en: "Anti-Inflammatory Plants: The Science-Based Guide",
-      de: "Entzündungshemmende Pflanzen: Der wissenschaftlich fundierte Leitfaden"
+      fr: "Curcuma, Boswellia & Gingembre : Comprendre leur Extraction Botanique",
+      en: "Turmeric, Boswellia & Ginger: Understanding Botanical Extraction",
+      de: "Kurkuma, Boswellia & Ingwer: Botanische Extraktion verstehen"
     },
     excerpt: {
-      fr: "Les plantes ne masquent pas le signal douloureux : elles modulent les cascades pro-inflammatoires (COX-2, 5-LOX, NF-kB) sans détruire la paroi digestive.",
-      en: "Medicinal plants modulate pro-inflammatory pathways without harming gut mucosal lining.",
-      de: "Heilpflanzen modulieren entzündliche Kaskaden, ohne die Magen-Darm-Schleimhaut zu schädigen."
+      fr: "Curcuminoïdes, gingérols et acides boswelliques présentent des profils de solubilité distincts étudiés en phytochimie, hors toute promesse thérapeutique.",
+      en: "Curcuminoids, gingerols, and boswellic acids have distinct solubility profiles studied in phytochemistry, with no medical claims.",
+      de: "Curcuminoide, Gingerole und Boswelliasäuren zeigen unterschiedliche Löslichkeitsprofile in der Phytochemie."
     },
     content: {
       fr: `
-<p>L'inflammation de bas grade (silent inflammation) est le dénominateur commun de l'usure articulaire, de la résistance à l'insuline et du vieillissement prématuré. Les solutions chimiques anti-inflammatoires (AINS) présentent de lourds effets secondaires sur les reins et l'estomac. Les plantes médicinales apportent une modulation physiologique respectueuse du terrain.</p>
+<p>En phytochimie exploratoire, les rhizomes de curcuma et de gingembre ainsi que les résines de <em>Boswellia serrata</em> sont largement étudiés pour la diversité de leurs composés phénoliques et terpéniques. Ces contenus sont purement éducatifs et ne remplacent ni un avis médical ni un traitement.</p>
 
-<h3>1. Curcuma, Gingembre et Boswellia : le trio d'or</h3>
-<p>Le curcuma régule le facteur de transcription NF-kB, tandis que le gingembre inhibe la synthèse des prostaglandines inflammatoires et la boswellia bloque spécifiquement la 5-LOX (lipoxygénase). L'association de ces trois totums procure un soulagement profond des articulations raides.</p>
+<h3>1. Curcuma, Gingembre et Boswellia : des polarités différentes</h3>
+<p>Les curcuminoïdes du curcuma, les gingérols du gingembre et les acides boswelliques de la résine de boswellia sont majoritairement lipophiles ou hydroalcooliques selon le degré utilisé : une simple tisane à l'eau chaude n'en solubilise qu'une fraction limitée.</p>
 
-<p>Découvrez notre <a href="/phytotherapie-moderne-scientifique">dossier sur la phytothérapie moderne</a> et nos solutions minérales avec le <a href="/boutique/duo-argiles">Duo Argiles Bloom</a> pour les cataplasmes locaux.</p>
+<p>Découvrez notre <a href="/phytotherapie-moderne-scientifique">dossier sur la phytothérapie moderne</a> et nos minéraux volcaniques avec le <a href="/boutique/duo-argiles">Duo Argiles Bloom</a>.</p>
       `,
-      en: `<p>Natural anti-inflammatory herbs modulate cytokine pathways safely without NSAID side effects.</p>`,
-      de: `<p>Natürliche entzündungshemmende Kräuter modulieren Zytokine ohne NSAR-Nebenwirkungen.</p>`
+      en: `<p>Exploratory phytochemistry studies the lipophilic and hydroalcoholic solubility of turmeric, ginger, and boswellia compounds. Educational content only, non-medical.</p>`,
+      de: `<p>Die Phytochemie beschreibt die lipophile und hydroalkoholische Löslichkeit der Inhaltsstoffe von Kurkuma, Ingwer und Boswellia. Nur zu Bildungszwecken.</p>`
     }
   },
   {
     slug: 'curcuma-piperine-biodisponibilite',
     date: '2026-09-22',
-    category: 'Inflammation',
-    author: 'Collège Scientifique Bloom',
+    category: 'Phytochimie',
+    author: 'Rédaction Bloom',
     readTime: '7 min',
     image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=1200&q=80',
     imageSquare: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Curcuma et pipérine synergie de biodisponibilité par 20',
-    tags: ['curcuma biodisponibilité', 'pipérine', 'poivre noir', 'absorption', 'totum'],
+    imageAlt: 'Curcuma et poivre noir en extraction lipidique',
+    tags: ['curcuma', 'pipérine', 'poivre noir', 'solubilité lipidique', 'totum'],
     metaTitle: {
-      fr: "Curcuma + Poivre Noir : Multiplier la Biodisponibilité ×20 | Bloom",
-      en: "Turmeric + Black Pepper: Multiply Bioavailability ×20 | Bloom",
-      de: "Kurkuma + Schwarzer Pfeffer: Bioverfügbarkeit ×20 multiplizieren | Bloom"
+      fr: "Curcuma & Poivre Noir : Solubilité & Extraction Lipidique | Bloom",
+      en: "Turmeric & Black Pepper: Solubility & Lipid Extraction | Bloom",
+      de: "Kurkuma & Schwarzer Pfeffer: Löslichkeit & Lipidextraktion | Bloom"
     },
     metaDescription: {
-      fr: "Pourquoi le curcuma seul n'est presque pas absorbé par l'intestin ? Comment la pipérine et les corps gras multiplient son passage systémique par 20.",
-      en: "Why is curcumin poorly absorbed alone? How piperine and healthy lipids multiply systemic uptake by 20x.",
-      de: "Warum wird Kurkuma alleine kaum absorbiert? Wie Piperin die Bioverfügbarkeit verzwanzigfacht."
+      fr: "Pourquoi la curcumine est peu soluble dans l'eau et pourquoi la tradition culinaire et la littérature phytochimique l'associent aux corps gras et au poivre noir.",
+      en: "Why curcumin is poorly water-soluble and why traditional culinary preparations pair it with fats and black pepper.",
+      de: "Warum Curcumin kaum wasserlöslich ist und traditionell mit Fetten und schwarzem Pfeffer kombiniert wird."
     },
     title: {
-      fr: "Curcuma + Poivre Noir : Multiplier la Biodisponibilité ×20",
-      en: "Turmeric + Black Pepper: Multiply Bioavailability ×20",
-      de: "Kurkuma + Schwarzer Pfeffer: Bioverfügbarkeit ×20 multiplizieren"
+      fr: "Curcuma & Poivre Noir : Solubilité et Préparation Culinaire",
+      en: "Turmeric & Black Pepper: Solubility and Preparation",
+      de: "Kurkuma & Schwarzer Pfeffer: Löslichkeit und Zubereitung"
     },
     excerpt: {
-      fr: "Le foie élimine rapidement la curcumine libre par glucuronidation. La pipérine du poivre noir inhibe temporairement ce processus pour une efficacité maximale.",
-      en: "The liver rapidly clears free curcumin. Piperine temporarily inhibits glucuronidation, boosting uptake 20-fold.",
-      de: "Die Leber baut Curcumin rasch ab. Piperin hemmt diesen Prozess vorübergehend für maximale Wirksamkeit."
+      fr: "Peu soluble dans l'eau, la curcumine est traditionnellement associée à un corps gras et à une pincée de poivre noir — un usage étudié en pharmacocinétique.",
+      en: "Poorly soluble in water, turmeric is traditionally paired with dietary fats and black pepper, a combination studied in pharmacokinetics.",
+      de: "Da Curcumin kaum wasserlöslich ist, wird Kurkuma traditionell mit Speiseöl und schwarzem Pfeffer zubereitet."
     },
     content: {
       fr: `
-<p>La curcumine pure est célèbre pour ses bienfaits anti-oxydants, mais sa biodisponibilité orale est inférieure à 1% car elle est instantanément neutralisée dans l'intestin et le foie par <em>glucuronidation</em>. Pour libérer son plein potentiel, deux adjuvants naturels sont indispensables :</p>
+<p>La curcumine présente une très faible solubilité aqueuse et subit un métabolisme intestinal et hépatique rapide (glucuronidation). Dans la littérature pharmacocinétique (Shoba et al., 1998, menée sur curcumine pure isolée, non transposée directement aux tisanes maison), la co-administration avec de la pipérine a été étudiée sur le plan de l'absorption :</p>
 <ul>
-  <li><strong>La Pipérine du Poivre Noir :</strong> Inhibe temporairement la glucuronidation hépatique, augmentant la biodisponibilité de la curcumine de 2 000% (facteur 20 dans les études cliniques de Shoba et al.).</li>
-  <li><strong>Un Solvant Lipidique :</strong> La curcumine est lipophile. L'extraction dans une huile vierge ou un milieu tiède lipidique assure son passage trans-muqueux optimal.</li>
+  <li><strong>Association Culinaire au Poivre Noir :</strong> La pipérine interagit avec certaines voies enzymatiques ; par prudence, demander un avis médical en cas de traitement médicamenteux ou de sensibilité gastrique.</li>
+  <li><strong>Un Solvant Lipidique Alimentaire :</strong> Les curcuminoïdes étant lipophiles, une macération dans une huile vierge culinaire assure une meilleure dispersion physique que l'eau seule.</li>
 </ul>
-<p>Pour maîtriser ces ratios, consultez notre <a href="/guide-complet-extraction-botanique-maison">guide complet de l'extraction botanique à domicile</a>.</p>
+<p>Pour maîtriser ces paramètres, consultez notre <a href="/guide-complet-extraction-botanique-maison">guide complet de l'extraction botanique à domicile</a>.</p>
       `,
-      en: `<p>Piperine increases curcumin bioavailability by 2,000% by temporarily slowing hepatic glucuronidation.</p>`,
-      de: `<p>Piperin erhöht die Bioverfügbarkeit von Curcumin um 2.000%, indem es die hepatische Glukuronidierung verlangsamt.</p>`
+      en: `<p>Curcuminoids are lipophilic compounds poorly soluble in water, traditionally prepared with dietary oils and black pepper. Caution with medications (medical advice recommended).</p>`,
+      de: `<p>Curcuminoide sind lipophile Pflanzenstoffe und traditionell mit Speiseöl sowie schwarzem Pfeffer kombiniert. Bei Medikamenteneinnahme ärztlichen Rat einholen.</p>`
     }
   }
 ];

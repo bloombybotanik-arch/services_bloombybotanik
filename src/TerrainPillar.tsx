@@ -103,7 +103,7 @@ export const SEVEN_TERRAINS: SevenTerrainItem[] = [
       "La régularité des horaires de repas ;",
       "La réduction de la place des aliments ultra-transformés et des sucres rapides ;",
       "La modération stricte de la consommation d’alcool ;",
-      "La qualité et la durée du sommeil réparateur ;",
+      "La qualité et la régularité du sommeil ;",
       "La pratique d’une activité physique douce et régulière ;",
       "La variété de l’alimentation et l’apport en légumes amers ;",
       "L’organisation de périodes de repos digestif ;",

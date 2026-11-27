@@ -573,7 +573,7 @@ export default function ProtocolePsoriasisContent({
               Pourquoi cette synergie : Bardane et Salsepareille
             </div>
             <p className="text-sm text-[#3E4A3D]/80 leading-relaxed font-normal mb-3">
-              <strong>La Bardane (<em>Arctium lappa</em>)</strong> est le grand dépuratif royal du terrain psoriasique. Riche en inuline prébiotique, elle réensemence la flore anti-inflammatoire et favorise l'élimination des toxines par la voie hépato-biliaire.
+              <strong>La Bardane (<em>Arctium lappa</em>)</strong> est traditionnellement associée au terrain cutané. Riche en inuline prébiotique, elle nourrit la flore intestinale et accompagne traditionnellement les voies d'élimination.
             </p>
             <p className="text-sm text-[#3E4A3D]/80 leading-relaxed font-normal">
               <strong>La Salsepareille (<em>Smilax medica</em>)</strong> possède une affinité remarquable pour les endotoxines bactériennes circulantes (LPS), qu'elle complexe et neutralise avant qu'elles ne parviennent à l'épiderme.
@@ -769,10 +769,10 @@ export default function ProtocolePsoriasisContent({
                       <td className="py-3 px-3">Résine de Boswellia (15g) + Curcuma longa (10g)</td>
                       <td className="py-3 px-3">
                         <span className="inline-block px-2 py-0.5 rounded bg-[#FAF2E6] text-[#92400E] text-[11px] font-bold">
-                          Phase B : Macérât huileux (45 °C • 2 h) ou teinture alcoolique 90° sans eau (Tincture 40–45 °C / Sans chauffe)
+                          Phase B : Macérât huileux (45 °C • 2 h) ou teinture alcoolique 90° sans eau (Tincture réglé manuellement à 40–45 °C ou bocal hermétique hors appareil)
                         </span>
                       </td>
-                      <td className="py-3 px-3">Usage selon fiche (cuve vidée et séchée avant Phase B ; pour l'alcool : pièce ventilée, aucune flamme nue, couvercle verrouillé)</td>
+                      <td className="py-3 px-3">Usage selon fiche (cuve vidée et séchée avant Phase B ; pour l'alcool : pièce ventilée, aucune flamme nue, couvercle verrouillé, ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)</td>
                       <td className="py-3 px-3 text-[#A8B8A0] font-semibold">Au cours du petit-déjeuner</td>
                     </tr>
                     <tr>
@@ -797,7 +797,7 @@ export default function ProtocolePsoriasisContent({
                         </span>
                       </td>
                       <td className="py-3 px-3">200 ml</td>
-                      <td className="py-3 px-3 text-[#A8B8A0] font-semibold">Sommeil réparateur</td>
+                      <td className="py-3 px-3 text-[#A8B8A0] font-semibold">Rituel calme du soir</td>
                     </tr>
                   </tbody>
                 </table>

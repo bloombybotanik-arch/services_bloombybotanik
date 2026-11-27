@@ -48,7 +48,7 @@ export const translations = {
       },
       shop: {
         title: "Boutique BloomLab : Extracteur Botanique & Machine d'infusion de plantes",
-        description: "Équipez-vous du meilleur infuseur botanique de précision pour vos infusions aux plantes médicinales. Retrouvez aussi le Duo Argiles pour une purification systémique.",
+        description: "Équipez-vous de l'extracteur botanique de précision BloomLab® pour vos préparations végétales maison. Retrouvez aussi le Duo Argiles minérales.",
         h1: "La Boutique BloomLab : Ingénierie de la Vitalité et Souveraineté",
         intro: "Nos équipes vous accompagnent dans votre projet de soins sur mesure. Du BloomLab® aux infusions arômatiques, reprenez le contrôle de votre souveraineté sanitaire.",
       },
@@ -117,7 +117,7 @@ export const translations = {
           },
           {
             q: "Comment l'extraction basse température favorise-t-elle l'homéostasie ?",
-            a: "La précision thermique préserve les enzymes et molécules fragiles. L'extraction basse température garantit une assimilation optimale des principes actifs, soutenant naturellement l'homéostasie et la purification systémique."
+            a: "La précision thermique préserve les arômes et composés fragiles. L'extraction basse température respecte la richesse naturelle des plantes dans vos préparations botaniques."
           },
           {
             q: "Peut-on réaliser tous types de préparations avec l'extracteur botanique BloomLab ?",
@@ -304,7 +304,7 @@ export const translations = {
           },
           {
             q: "Que puis-je créer avec BloomLab ?",
-            a: "Huiles de soin, sérums, beurres aromatiques, macérats aqueux ou glycérinés et teintures mères (programme Tincture ou Sans chauffe avec alcool adapté selon le manuel et les consignes de sécurité)."
+            a: "Huiles de soin, sérums, beurres aromatiques, macérats aqueux ou glycérinés et teintures mères (programme Tincture avec alcool fort anhydre ≥ 75 % vol. sans ajout d'eau selon le manuel et en pièce ventilée, ou bocal hermétique hors appareil pour dilutions hydroalcooliques)."
           },
           {
             q: "Pourquoi c'est mieux qu'un bain-marie ?",
@@ -364,7 +364,7 @@ export const translations = {
       understandingInfusion: {
         sidebar_label: "I. Infuseur Botanique Maison",
         h2: "Extraction Botanique de Précision à la Maison : Comment ça marche ?",
-        intro: "Un extracteur botanique maison comme BloomLab® permet de travailler avec de l'eau filtrée, des huiles végétales vierges, du beurre, de la glycérine végétale ou de l'alcool alimentaire (programmes Tincture et Sans chauffe selon les consignes du manuel). Maîtrisez l'infusion, la décoction, la teinture et la macération avec réglage de température et de durée.",
+        intro: "Un extracteur botanique maison comme BloomLab® permet de travailler avec de l'eau filtrée, des huiles végétales vierges, du beurre, de la glycérine végétale ou de l'alcool fort anhydre (programme Tincture ≥ 75 % vol. sans eau selon les consignes du manuel ; les dilutions hydroalcooliques se font en bocal hors appareil). Maîtrisez l'infusion, la décoction, la teinture et la macération avec réglage de température et de durée.",
         cards: [
           {
             title: "Infusion",
@@ -638,10 +638,10 @@ export const translations = {
           kit_purete: { name: "Kit Pureté Minérale", desc: "Protocole complet · 10 plantes · 84 jours" },
           kit_nerveux: { name: "Élixir Système Nerveux", desc: "Séquençage Actif · 6 plantes" },
           reset_84: { name: "Protocole Reset 84 Jours", desc: "Systémique complète · 15 plantes" },
-          p1: { name: "Élixir Immunité", desc: "Extraction Biphasique · 4 plantes" },
-          p2: { name: "Tonique Digestif Profond", desc: "Extraction Aqueuse · 3 plantes" },
-          p3: { name: "Soutien Surrénalien", desc: "Séquençage Actif · 5 plantes" },
-          p4: { name: "Macérat Articulaire", desc: "Extraction Huileuse · 6 plantes" }
+          p1: { name: "Élixir Saisonnier", desc: "Extraction Biphasique · 4 plantes" },
+          p2: { name: "Aromates & Infusions", desc: "Extraction Aqueuse · 3 plantes" },
+          p3: { name: "Synergie Adaptogène", desc: "Séquençage Actif · 5 plantes" },
+          p4: { name: "Macérat Résine & Racines", desc: "Extraction Huileuse · 6 plantes" }
         }
       }
     },
@@ -820,9 +820,9 @@ export const translations = {
           description: "Synergie végétale aromatique de saison, préparée pour les rituels chauds et infusions hivernales."
         },
         kit_reset: {
-          name: "Duo Argiles — Purification Systémique Zeolithe-Bentonite",
-          subtitle: "CHÉLATION NATURELLE & RÉÉQUILIBRAGE DE TERRAIN",
-          description: "Le Duo Argiles associe Zéolithe et Bentonite (ratio 70:30) micronisées à 6µm, matière première minérale documentée de grade Pharmacopée."
+          name: "Duo Argiles — Zéolithe & Bentonite 6 µm",
+          subtitle: "ARGILES MINÉRALES VOLCANIQUES",
+          description: "Le Duo Argiles associe Zéolithe et Bentonite (ratio 70:30) micronisées à 6 µm pour vos préparations minérales et botaniques maison."
         },
         freemium_access: {
           name: "Accès Découverte — 10 Recettes Gratuites",
@@ -1460,7 +1460,7 @@ export const translations = {
         },
         {
           q: "Est-ce que la machine presse les graines pour faire de l'huile ?",
-          a: "Non. BloomLab® est un extracteur/infuseur domestique qui transfère les principes actifs de vos plantes dans un solvant existant : huile végétale, beurre, eau filtrée, glycérine végétale ou alcool alimentaire (programmes Tincture et Sans chauffe selon le manuel et en pièce ventilée). Elle ne remplace pas une presse mécanique à graines."
+          a: "Non. BloomLab® est un extracteur/infuseur domestique qui transfère les principes actifs de vos plantes dans un solvant existant : huile végétale, beurre, eau filtrée, glycérine végétale ou alcool fort anhydre (programme Tincture ≥ 75 % vol. sans eau en pièce ventilée selon le manuel ; les mélanges hydroalcooliques dilués se réalisent en bocal hors appareil). Elle ne remplace pas une presse mécanique à graines."
         },
         {
           q: "J'ai acheté la machine sur Amazon, ai-je accès aux recettes ?",
@@ -1577,7 +1577,7 @@ export const translations = {
         safety: {
           title: "Sécurité & Précautions",
           p1: "L'usage des plantes demande de la rigueur. Toujours respecter les dosages indiqués et vérifier les contre-indications.",
-          p2: "La BloomLab est un instrument de précision. Ne jamais laisser sans surveillance pendant une extraction à haute température."
+          p2: "La BloomLab est un instrument de précision. Ne jamais laisser l'appareil sans surveillance en fonctionnement ni lorsqu'il est branché."
         },
         maintenance: {
           title: "Entretien de votre BloomLab",
@@ -1634,8 +1634,8 @@ export const translations = {
         step0: { title: "Étape 0 – Anamnèse systémique", desc: "L’intelligence ALMA cartographie vos terrains biologiques (T1–T10) pour personnaliser le protocole : on ne lance pas un reset sans savoir où votre corps a besoin d’aide en priorité." },
         phase0: { title: "Phase 0 – Préparation des émonctoires", desc: "Ouverture douce des voies d’élimination (reins, lymphe, intestin, peau) pour que le corps puisse mobiliser, conjuguer et capturer les charges circulantes sans se fragiliser. C’est le socle sur lequel les phases suivantes peuvent agir en profondeur." },
         phase1: { title: "Phase 1 – Relance hépatique", desc: "Travail ciblé sur le foie et la bile pour mobiliser les toxines, relancer la filtration et fluidifier les sorties. Le terrain s'allège, les flux se réorganisent." },
-        phase2: { title: "Phase 2 – Pureté sanguine", desc: "Purification du sang et modulation de l’inflammation grâce aux plantes dépuratives et anti‑inflammatoires : le système circulatoire devient moins chargé, plus disponible pour le transport des ressources vitales." },
-        phase3: { title: "Phase 3 – Stabilisation & Renforcement", desc: "Régénération tissulaire, consolidation des barrières intestinale et cutanée, bouclier immunitaire : on ancre les résultats pour que les bénéfices ne s’évaporent pas au premier spectre de charges allostatiques venu." },
+        phase2: { title: "Phase 2 – Équilibre du terrain", desc: "Accompagnement botanique du terrain via des plantes traditionnelles sélectionnées dans le cadre d'une hygiène de vie globale, sans allégation médicale." },
+        phase3: { title: "Phase 3 – Stabilisation & Routines", desc: "Consolidation des routines végétales et alimentaires pour ancrer des habitudes quotidiennes durables dans le respect du rythme biologique." },
         pauses: { title: "Les Pauses intégratives", desc: "Entre chaque phase, des pauses de 7 jours permettent à la machinerie enzymatique d’intégrer le travail effectué. Ce ne sont pas des arrêts, mais des temps où votre corps stabilise, ajuste et mémorise : c’est là que le reset devient durable." },
         footer: "En suivant ces phases dans l’ordre, vous ne “faites pas une cure de plantes” : vous accompagnez votre biologie dans un vrai processus de régulation, en respectant ses rythmes, ses seuils et ses capacités d’auto‑réparation."
       },
@@ -1939,7 +1939,7 @@ export const translations = {
           },
           {
             q: "What can I create with BloomLab?",
-            a: "Botanical care oils, serums, aromatic butters, glycerin and aqueous macerates, and alcohol mother tinctures (using Tincture or No heating modes per manual safety guidelines)."
+            a: "Botanical care oils, serums, aromatic butters, glycerin and aqueous macerates, and alcohol mother tinctures (using Tincture mode with anhydrous ≥75% ABV in a ventilated room per manual safety rules, or sealed glass jar outside the machine for diluted hydroalcoholic mixtures)."
           },
           {
             q: "Why is it better than a bain-marie?",
@@ -1999,7 +1999,7 @@ export const translations = {
       understandingInfusion: {
         sidebar_label: "I. Home Botanical Infuser",
         h2: "Botanical Infuser & Well-being: The Home Ritual",
-        intro: "A home botanical extractor like BloomLab® works with filtered water, virgin carrier oils, butter, vegetable glycerin, and food-grade alcohol (via Tincture and No heating programs under manual safety rules). Master infusion, decoction, tinctures, and maceration with adjustable temperature and time.",
+        intro: "A home botanical extractor like BloomLab® works with filtered water, virgin carrier oils, butter, vegetable glycerin, and anhydrous food-grade alcohol (via Tincture ≥75% ABV without water under manual safety rules; diluted hydroalcoholic macerations are prepared in a sealed jar outside the device). Master infusion, decoction, tinctures, and maceration with adjustable temperature and time.",
         cards: [
           {
             title: "Infusion",
@@ -2269,10 +2269,10 @@ export const translations = {
           kit_purete: { name: "Blood Purity Kit", desc: "Full protocol · 10 plants · 84 days" },
           kit_nerveux: { name: "Nervous System Elixir", desc: "Active Sequencing · 6 plants" },
           reset_84: { name: "84-Day Reset Protocol", desc: "Full systemic · 15 plants" },
-          p1: { name: "Immunity Elixir", desc: "Biphasic Extraction · 4 plants" },
-          p2: { name: "Deep Digestive Tonic", desc: "Aqueous Extraction · 3 plants" },
-          p3: { name: "Adrenal Support", desc: "Active Sequencing · 5 plants" },
-          p4: { name: "Joint Macerate", desc: "Oily Extraction · 6 plants" }
+          p1: { name: "Seasonal Elixir", desc: "Biphasic Extraction · 4 plants" },
+          p2: { name: "Herbs & Infusions", desc: "Aqueous Extraction · 3 plants" },
+          p3: { name: "Adaptogenic Synergy", desc: "Active Sequencing · 5 plants" },
+          p4: { name: "Resin & Root Macerate", desc: "Oily Extraction · 6 plants" }
         }
       }
     },
@@ -2451,9 +2451,9 @@ export const translations = {
           description: "Aromatic seasonal botanical synergy crafted for warming infusions during colder months."
         },
         kit_reset: {
-          name: "Clays Duo — Systemic Purification Zeolite-Bentonite",
-          subtitle: "MINERAL SYNERGY & TERRAIN",
-          description: "Association of natural zeolites and bentonites (European Pharmacopoeia grade, 6µm) for documented botanical-mineral synergies."
+          name: "Clay Duo — Zeolite & Bentonite 6 µm",
+          subtitle: "VOLCANIC MINERAL CLAYS",
+          description: "Association of natural zeolites and bentonites (70:30, 6 µm micronized) for domestic mineral and botanical preparations."
         },
         freemium_access: {
           name: "Discovery Access — 10 Free Recipes",
@@ -2977,7 +2977,7 @@ export const translations = {
         },
         {
           q: "Does the machine press seeds to make oil?",
-          a: "No. BloomLab® is a precision extractor/infuser that transfers active plant compounds into an existing solvent: carrier oil (olive, jojoba, sunflower, sweet almond), butter, filtered water, vegetable glycerin, or food-grade alcohol (via Tincture and No heating programs under manual ventilation & safety rules). It does not replace a mechanical seed press."
+          a: "No. BloomLab® is a precision extractor/infuser that transfers active plant compounds into an existing solvent: carrier oil (olive, jojoba, sunflower, sweet almond), butter, filtered water, vegetable glycerin, or anhydrous food-grade alcohol (Tincture program ≥75% ABV without water under manual ventilation & safety rules; diluted hydroalcoholic mixtures are prepared in a sealed jar outside the unit). It does not replace a mechanical seed press."
         },
         {
           q: "I bought the machine on Amazon, do I get access to the recipes?",
@@ -3094,7 +3094,7 @@ export const translations = {
         safety: {
           title: "Safety & Precautions",
           p1: "Using plants requires rigor. Always respect indicated dosages and check contraindications.",
-          p2: "The BloomLab is a precision instrument. Never leave unattended during high-temperature extraction."
+          p2: "The BloomLab is a precision instrument. Never leave the appliance unattended while operating or plugged in."
         },
         maintenance: {
           title: "BloomLab Maintenance",
@@ -3151,8 +3151,8 @@ export const translations = {
         step0: { title: "Step 0 – Systemic anamnesis", desc: "ALMA intelligence maps your biological terrains (T1–T10) to personalize the protocol: we don't start a reset without knowing where your body needs help first." },
         phase0: { title: "Phase 0 – Emunctories preparation", desc: "Gentle opening of the elimination pathways (kidneys, lymph, intestine, skin) so that the body can drain without becoming fragile. This is the foundation on which the following phases can act in depth." },
         phase1: { title: "Phase 1 – Hepatic relaunch", desc: "Targeted work on the liver and bile to mobilize toxins, restart filtration and fluidize exits. The terrain is cleaned, flows are reorganized." },
-        phase2: { title: "Phase 2 – Blood purity", desc: "Blood purification and inflammation modulation thanks to depurative and anti-inflammatory plants: the circulatory system becomes less loaded, more available for transporting vital resources." },
-        phase3: { title: "Phase 3 – Stabilization & Strengthening", desc: "Tissue regeneration, consolidation of intestinal and skin barriers, immune shield: we anchor the results so that the benefits do not evaporate at the first stress." },
+        phase2: { title: "Phase 2 – Terrain balance", desc: "Educational botanical routines featuring traditional plants selected within a balanced lifestyle approach, with no medical or clinical claims." },
+        phase3: { title: "Phase 3 – Stabilization & Routines", desc: "Consolidation of botanical and nutritional daily habits while respecting natural biological rhythms." },
         pauses: { title: "Integrative Pauses", desc: "Between each phase, 7-day pauses allow the enzymatic machinery to integrate the work carried out. These are not stops, but times when your body stabilizes, adjusts and memorizes: this is where the reset becomes lasting." },
         footer: "By following these phases in order, you are not 'doing a plant cure': you are accompanying your biology in a real regulation process, respecting its rhythms, its thresholds and its self-repair capacities."
       },
@@ -3456,7 +3456,7 @@ export const translations = {
           },
           {
             q: "Was kann ich mit BloomLab kreieren?",
-            a: "Pflegeöle, Seren, aromatische Butter, wässrige und Glycerin-Mazerate sowie Urtinkturen mit Ansatzalkohol (über die Programme Tincture oder Ohne Erhitzen gemäß Handbuch-Sicherheitshinweisen)."
+            a: "Pflegeöle, Seren, aromatische Butter, wässrige und Glycerin-Mazerate sowie Urtinkturen (Tincture-Programm mit wasserfreiem Alkohol ≥75 % Vol. gut belüftet gemäß Handbuch, oder verschlossenes Glas außerhalb des Geräts für verdünnte hydroalkoholische Ansätze)."
           },
           {
             q: "Warum ist es besser als ein Wasserbad?",
@@ -3516,7 +3516,7 @@ export const translations = {
       understandingInfusion: {
         sidebar_label: "I. Botanischer Infuser zu Hause",
         h2: "Botanischer Infuser & Wohlbefinden: Das Ritual zu Hause",
-        intro: "Ein botanischer Extraktor für zu Hause wie BloomLab® arbeitet mit gefiltertem Wasser, nativem Pflanzenöl, Butter, Pflanzenglycerin und Ansatzalkohol (Programme Tincture und Ohne Erhitzen gemäß Sicherheitshinweisen). Meistern Sie Infusion, Dekokt, Tinkturen und Mazeration mit einstellbarer Temperatur und Dauer.",
+        intro: "Ein botanischer Extraktor für zu Hause wie BloomLab® arbeitet mit gefiltertem Wasser, nativem Pflanzenöl, Butter, Pflanzenglycerin und wasserfreiem Ansatzalkohol ≥75 % Vol. (Tincture-Programm ohne Wasserzugabe gemäß Sicherheitshinweisen; verdünnte hydroalkoholische Ansätze erfolgen im verschlossenen Glas außerhalb des Geräts). Meistern Sie Infusion, Dekokt, Tinkturen und Mazeration mit einstellbarer Temperatur und Dauer.",
         cards: [
           {
             title: "Aufguss",
@@ -3786,10 +3786,10 @@ export const translations = {
           kit_purete: { name: "Blutreinheits-Kit", desc: "Vollständiges Protokoll · 10 Pflanzen · 84 Tage" },
           kit_nerveux: { name: "Nervensystem-Elixier", desc: "Aktive Sequenzierung · 6 Pflanzen" },
           reset_84: { name: "84-Tage-Reset-Protokoll", desc: "Vollständig systemisch · 15 Pflanzen" },
-          p1: { name: "Immunitäts-Elixier", desc: "Biphasische Extraktion · 4 Pflanzen" },
-          p2: { name: "Tiefen-Verdauungstonic", desc: "Wässrige Extraktion · 3 Pflanzen" },
-          p3: { name: "Nebennieren-Unterstützung", desc: "Aktive Sequenzierung · 5 Pflanzen" },
-          p4: { name: "Gelenk-Mazerat", desc: "Ölige Extraktion · 6 Pflanzen" }
+          p1: { name: "Saisonal-Elixier", desc: "Biphasische Extraktion · 4 Pflanzen" },
+          p2: { name: "Kräuter & Aufgüsse", desc: "Wässrige Extraktion · 3 Pflanzen" },
+          p3: { name: "Adaptogene Synergie", desc: "Aktive Sequenzierung · 5 Pflanzen" },
+          p4: { name: "Harz- & Wurzelmazerat", desc: "Ölige Extraktion · 6 Pflanzen" }
         }
       }
     },
@@ -3968,9 +3968,9 @@ export const translations = {
           description: "Aromatische saisonale Pflanzenmischung für wärmende Aufgüsse in den kälteren Monaten."
         },
         kit_reset: {
-          name: "Erden-Duo — Systemische Reinigung Zeolith-Bentonit",
-          subtitle: "MINERALISCHE SYNERGIE & TERRAIN",
-          description: "Kombination aus natürlichen Zeolithen und Bentoniten (europäischer Arzneibuchgrad, 6µm) für dokumentierte botanisch-mineralische Synergien."
+          name: "Tonerde-Duo — Zeolith & Bentonit 6 µm",
+          subtitle: "VULKANISCHE MINERALERDEN",
+          description: "Kombination aus natürlichem Zeolith und Bentonit (70:30, 6 µm mikronisiert) für mineralische und botanische Zubereitungen zu Hause."
         },
         freemium_access: {
           name: "Entdecker-Zugang — 10 kostenlose Rezepte",
@@ -4494,7 +4494,7 @@ export const translations = {
         },
         {
           q: "Presst das Gerät Samen, um Öl herzustellen?",
-          a: "Nein. BloomLab® ist ein Präzisionsextraktor/-infuser, der Pflanzenwirkstoffe in ein vorhandenes Lösungsmittel überträgt: Pflanzenöl, Butter, gefiltertes Wasser, pflanzliches Glycerin oder Ansatzalkohol (Tincture / Ohne Erhitzen bei guter Belüftung gemäß Handbuch). Es ersetzt keine Ölmühle."
+          a: "Nein. BloomLab® ist ein Präzisionsextraktor/-infuser, der Pflanzenwirkstoffe in ein vorhandenes Lösungsmittel überträgt: Pflanzenöl, Butter, gefiltertes Wasser, pflanzliches Glycerin oder wasserfreier Ansatzalkohol ≥75 % Vol. (Tincture-Programm bei guter Belüftung gemäß Handbuch; verdünnte hydroalkoholische Mischungen im Glas außerhalb des Geräts). Es ersetzt keine Ölmühle."
         },
         {
           q: "Ich habe das Gerät auf Amazon gekauft – erhalte ich Zugang zu den Rezepten?",
@@ -4611,7 +4611,7 @@ export const translations = {
         safety: {
           title: "Sicherheit & Vorsichtsmaßnahmen",
           p1: "Der Umgang mit Pflanzen erfordert Strenge. Halten Sie sich immer an die angegebenen Dosierungen und prüfen Sie Gegenanzeigen.",
-          p2: "Das BloomLab ist ein Präzisionsinstrument. Lassen Sie es während einer Hochtemperaturextraktion niemals unbeaufsichtigt."
+          p2: "Das BloomLab ist ein Präzisionsinstrument. Lassen Sie das Gerät während des Betriebs oder im angeschlossenen Zustand niemals unbeaufsichtigt."
         },
         maintenance: {
           title: "Wartung Ihres BloomLab",
@@ -4668,8 +4668,8 @@ export const translations = {
         step0: { title: "Schritt 0 – Systemische Anamnese", desc: "Die ALMA-Intelligenz kartiert Ihr biologisches Terrain (T1–T10), um das Protokoll zu personalisieren: Wir starten keinen Reset, ohne zu wissen, wo Ihr Körper zuerst Hilfe benötigt." },
         phase0: { title: "Phase 0 – Vorbereitung der Emunktoren", desc: "Sanfte Öffnung der Ausscheidungswege (Nieren, Lymphe, Darm, Haut), damit der Körper ohne Schwächung entwässern kann. Dies ist das Fundament, auf dem die folgenden Phasen in der Tiefe wirken können." },
         phase1: { title: "Phase 1 – Hepatischer Neustart", desc: "Gezielte Arbeit an Leber und Galle, um Toxine zu mobilisieren, die Filtration wieder anzukurbeln und Ausgänge zu verflüssigen. Das Terrain wird gereinigt, Flüsse werden neu organisiert." },
-        phase2: { title: "Phase 2 – Blutreinheit", desc: "Blutreinigung und Modulations der Entzündung dank reinigender und entzündungshemmender Pflanzen: Das Kreislaufsystem wird weniger belastet und steht besser für den Transport lebenswichtiger Ressourcen zur Verfügung." },
-        phase3: { title: "Phase 3 – Stabilisierung & Stärkung", desc: "Geweberegeneration, Konsolidierung der Darm- und Hautbarrieren, Immunschild: Wir verankern die Ergebnisse, damit die Vorteile nicht beim ersten Stress verfliegen." },
+        phase2: { title: "Phase 2 – Terrain-Balance", desc: "Pädagogische Kräuterroutinen mit traditionellen Pflanzen im Rahmen eines ausgewogenen Lebensstils, ohne medizinische Heilversprechen." },
+        phase3: { title: "Phase 3 – Stabilisierung & Routinen", desc: "Festigung der täglichen Kräuter- und Ernährungsgewohnheiten im Einklang mit dem eigenen biologischen Rhythmus." },
         pauses: { title: "Integrative Pausen", desc: "Zwischen jeder Phase ermöglichen 7-tägige Pausen der enzymatischen Maschinerie, die geleistete Arbeit zu integrieren. Dies sind keine Stopps, sondern Zeiten, in denen Ihr Körper stabilisiert, anpasst und speichert: Hier wird der Reset nachhaltig." },
         footer: "Indem Sie diese Phasen in der richtigen Reihenfolge befolgen, machen Sie keine 'Pflanzenkur': Sie begleiten Ihre Biologie in einem echten Regulierungsprozess und respektieren dabei ihre Rhythmen, Schwellenwerte und Selbstreparaturkapazitäten."
       },

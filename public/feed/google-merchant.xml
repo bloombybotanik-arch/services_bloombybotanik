@@ -50,7 +50,7 @@
     <item>
       <g:id>bundle-apothicaire</g:id>
       <g:title>Bundle Apothicaire — Collection Intégrale Plantes Médicinales</g:title>
-      <g:description>Coffret complet réunissant tous les mélanges de plantes médicinales Bloom et le Duo Argiles pour un reset complet du terrain.</g:description>
+      <g:description>Coffret complet réunissant les mélanges de plantes médicinales bio Bloom et le Duo Argiles micronisé.</g:description>
       <g:link>https://bloombybotanik.com/boutique/bundle-apothicaire/</g:link>
       <g:image_link>https://bloombybotanik.com/products/bundle-apothicaire.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
@@ -70,7 +70,7 @@
     <item>
       <g:id>duo-argiles</g:id>
       <g:title>Duo Argiles Bloom — Zéolithe &amp; Bentonite</g:title>
-      <g:description>Synergie minérale d'adsorption microporeuse à 6 microns pour le soutien et l'équilibre du terrain biologique.</g:description>
+      <g:description>Association de zéolithe et bentonite volcaniques micronisées à 6 microns pour préparations minérales domestiques.</g:description>
       <g:link>https://bloombybotanik.com/boutique/duo-argiles/</g:link>
       <g:image_link>https://bloombybotanik.com/products/duo-argiles.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
@@ -89,8 +89,8 @@
     <!-- 5. Kit Starter Sève Fondamentale -->
     <item>
       <g:id>kit-starter</g:id>
-      <g:title>Kit Starter Sève Fondamentale — Vitalité &amp; Reminéralisation</g:title>
-      <g:description>Mélange botanique de plantes médicinales sélectionnées pour leur richesse minérale et leur action sur l'axe d'adaptation.</g:description>
+      <g:title>Kit Starter Sève Fondamentale — Prêle, Ortie, Romarin &amp; Ginkgo</g:title>
+      <g:description>Mélange de plantes médicinales bio (prêle, ortie racine, romarin, ginkgo) calibré pour l'extraction séquentielle domestique.</g:description>
       <g:link>https://bloombybotanik.com/boutique/kit-starter/</g:link>
       <g:image_link>https://bloombybotanik.com/products/kit-starter.jpg</g:image_link>
       <g:availability>in_stock</g:availability>

@@ -83,7 +83,7 @@ import ProtocolesSystemiquesContent from './ProtocolesSystemiquesContent';
 import Module0ChocParadigmeContent from './academie/Module0ChocParadigmeContent';
 import AxeA1EmonctoiresContent from './academie/AxeA1EmonctoiresContent';
 import PillarPagesContent from './PillarPagesContent';
-import { updateDocumentSEO } from './utils/seoManager';
+import { usePageSeo } from './hooks/usePageSeo';
 
 const PATH_VIEWS: Record<string, View> = {
   ...Object.fromEntries(
@@ -527,10 +527,13 @@ export default function App() {
 
   const mainScrollRef = React.useRef<HTMLDivElement | null>(null);
 
-  // Synchronize document SEO, Meta, Canonical & Hreflang
-  useEffect(() => {
-    updateDocumentSEO(currentView, selectedLanguage, selectedProduct, selectedSlug);
-  }, [currentView, selectedLanguage, selectedProduct, selectedSlug]);
+  // Synchronize document SEO, Meta, OG images, Canonical & Hreflang
+  usePageSeo({
+    view: currentView,
+    lang: selectedLanguage,
+    productId: selectedProduct,
+    slug: selectedSlug,
+  });
 
   // Ensure main Flexbox scroll container resets to top on view/route change
   useEffect(() => {

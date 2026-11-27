@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
+import { ROUTES_META } from './src/seo/routesMeta';
 
 const SITE_ORIGIN = 'https://bloombybotanik.com';
 
@@ -176,11 +177,31 @@ function isIndexableSitemapRoute(route: string): boolean {
 
   // Exclure les variantes non-canoniques dont le <link rel="canonical"> pointe vers une URL cible
   if (
+    route === '/indexbis/' ||
+    route === '/home/' ||
+    route === '/legal/' ||
     route === '/boutique/bloomlab/' ||
     route === '/produit/bloomlab/' ||
     route === '/machine/' ||
     route === '/infuseur-botanique/' ||
+    route === '/infusion-botanique/' ||
+    route === '/guide/' ||
+    route === '/how_it_works/' ||
+    route === '/bibliotheque/' ||
+    route === '/herbier/' ||
+    route === '/terrain/' ||
+    route === '/faq/' ||
+    route === '/cosmetique-botanique/' ||
+    route === '/abonnements-numeriques/' ||
+    route === '/academie/comprendre-le-corps/' ||
+    route === '/comprendre-le-corps/4-architectures/' ||
     route === '/comprendre-le-corps/7-terrains/' ||
+    route === '/comprendre-le-corps/9-axes-historiques/' ||
+    route === '/comprendre-le-corps/charge-allostatique/' ||
+    route === '/comprendre-le-corps/metabolisme-glucidique-insuline/' ||
+    route === '/comprendre-le-corps/comment-lire-le-modele-bloom/' ||
+    route === '/academie/comprendre-le-corps/comment-lire-le-modele-bloom/' ||
+    route === '/comprendre-le-modele-bloom/' ||
     route === '/terrains/' ||
     route === '/academie/comprendre-le-corps/reset-homeostasique/' ||
     route === '/comprendre-le-corps/reset-homeostasique/' ||
@@ -191,8 +212,13 @@ function isIndexableSitemapRoute(route: string): boolean {
     route.startsWith('/protocoles/') ||
     route.startsWith('/protocoles-systemiques/') ||
     route.startsWith('/phytotherapie-reset/') ||
+    route.startsWith('/blog/vieillissement-myeline-fgf17/') ||
+    route.startsWith('/blog/le-vieillissement-n-est-pas-une-fatalite/') ||
+    route === '/academie/axes/a1/' ||
     route === '/votre-pratique/' ||
-    route === '/parcours/'
+    route === '/parcours/' ||
+    route === '/boutique/kit-bouclier-hiver/' ||
+    route === '/boutique/kit-reset/'
   ) {
     return false;
   }
@@ -278,19 +304,42 @@ function generateDynamicSitemapXml(rootDir: string): { xml: string; routeCount: 
     const lastmod = getFileMtimeIsoDate(rootDir, sourceFiles, appMtimeDate);
     const { changefreq, priority } = getPriorityAndFreq(route);
     const loc = escapeXml(`${SITE_ORIGIN}${route}`);
+    const meta = ROUTES_META[route];
+    const imageNodes: string[] = [];
+    if (meta?.images && meta.images.length > 0) {
+      for (const img of meta.images) {
+        const imgLoc = escapeXml(img.url.startsWith('http') ? img.url : `${SITE_ORIGIN}${img.url}`);
+        const imgTitle = escapeXml(img.alt);
+        imageNodes.push(
+          '    <image:image>',
+          `      <image:loc>${imgLoc}</image:loc>`,
+          `      <image:title>${imgTitle}</image:title>`,
+          '    </image:image>'
+        );
+      }
+    } else if (meta?.image1200) {
+      imageNodes.push(
+        '    <image:image>',
+        `      <image:loc>${escapeXml(`${SITE_ORIGIN}${meta.image1200}`)}</image:loc>`,
+        `      <image:title>${escapeXml(meta.alt || meta.title)}</image:title>`,
+        '    </image:image>'
+      );
+    }
     return [
       '  <url>',
       `    <loc>${loc}</loc>`,
       `    <lastmod>${lastmod}</lastmod>`,
       `    <changefreq>${changefreq}</changefreq>`,
       `    <priority>${priority}</priority>`,
+      ...imageNodes,
       '  </url>',
     ].join('\n');
   });
 
   const xml = [
     '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+    '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">',
     ...urlNodes,
     '</urlset>',
     '',

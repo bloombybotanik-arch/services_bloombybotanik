@@ -334,7 +334,7 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
                 {lang === 'fr' ? 'Duo Argiles' : lang === 'de' ? 'Erden-Duo' : 'Clay Duo'}
               </h1>
               <p className="text-xs sm:text-sm font-medium text-[#1B3022]/70 mt-1">
-                {lang === 'fr' ? 'Purification Systémique Zéolithe-Bentonite (6μm)' : lang === 'de' ? 'Systemische Reinigung Zeolith-Bentonit (6μm)' : 'Systemic Zeolite-Bentonite Purification (6μm)'}
+                {lang === 'fr' ? 'Zéolithe & Bentonite micronisées (6 μm)' : lang === 'de' ? 'Mikronisiertes Zeolith-Bentonit (6 μm)' : 'Micronized Zeolite-Bentonite (6 μm)'}
               </p>
             </div>
           ) : isBloomLab ? (
@@ -794,7 +794,7 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
                       </li>
                       <li className="flex items-start gap-2.5 text-white !text-white">
                         <Check className="w-4 h-4 text-[#E8772E] shrink-0 mt-0.5" />
-                        <span className="text-white !text-white">{lang === 'fr' ? "+ Duo Argiles Bloom (Zeolithe & Bentonite documentées pour la purification)" : lang === 'de' ? "+ Bloom Tonerde-Duo (Zeolith & Bentonit für Reinigung)" : "+ Bloom Clay Duo (Zeolite & Bentonite for purification)"}</span>
+                        <span className="text-white !text-white">{lang === 'fr' ? "+ Duo Argiles Bloom (Zéolithe & Bentonite micronisées 6 µm)" : lang === 'de' ? "+ Bloom Tonerde-Duo (Zeolith & Bentonit 6 µm)" : "+ Bloom Clay Duo (Micronized Zeolite & Bentonite 6 µm)"}</span>
                       </li>
                       <li className="flex items-start gap-2.5 text-white !text-white">
                         <Check className="w-4 h-4 text-[#E8772E] shrink-0 mt-0.5" />

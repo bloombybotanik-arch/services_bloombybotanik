@@ -55,7 +55,7 @@
   },
   {
     "id": "discovery-02",
-    "title": "Huile de Massage Articulaire",
+    "title": "Huile Botanique de Massage",
     "url": "/recettes/#02",
     "status": "publiée",
     "category": "cosmetique",
@@ -221,7 +221,7 @@
     "ingredientCount": 2,
     "activeStepCount": 2,
     "extractionPhaseCount": 2,
-    "temperatures": "45°C (Tincture ajusté) ou ambiante (Sans chauffe)",
+    "temperatures": "45°C (Tincture réglé manuellement) ou défaut 71°C",
     "machineTimeMinutes": 60,
     "activeTimeMinutes": 20,
     "totalTimeMinutes": 80,
@@ -240,10 +240,10 @@
       "Récipient propre"
     ],
     "keySteps": [
-      "Congélation brève et concassage de la propolis brute",
-      "Extraction anhydre dans alcool bio 90°–96° (sans ajout d’eau, pièce ventilée, aucune flamme)",
-      "Cycle Tincture ajusté (45°C / 2h30) ou programme Sans chauffe (4h–12h)",
-      "Filtration à froid des cires et mise en flacon ambré"
+      "Concasser 20g de propolis brute",
+      "Extraction anhydre dans 150ml d'alcool 90°–96° sans eau",
+      "Cycle Tincture réglé manuellement (45°C / 2h30) ou bocal hermétique hors appareil",
+      "Filtration fine et flaconnage"
     ],
     "difficultyCalculatedScore": 44,
     "difficultyFinalScore": 44,
@@ -269,7 +269,7 @@
   },
   {
     "id": "discovery-06",
-    "title": "Sirop de Sureau Immunité",
+    "title": "Sirop Traditionnel de Sureau & Gingembre",
     "url": "/recettes/#06",
     "status": "publiée",
     "category": "culinaire",
@@ -321,7 +321,7 @@
   },
   {
     "id": "discovery-07",
-    "title": "Décoction Détox & Soutien Hépatique",
+    "title": "Décoction d'Herboristerie aux Plantes Amères",
     "url": "/recettes/#07",
     "status": "publiée",
     "category": "parcours-guide",
@@ -374,7 +374,7 @@
   },
   {
     "id": "discovery-08",
-    "title": "Élixir Régulateur Métabolique",
+    "title": "Élixir Traditionnel Fenugrec & Épine-Vinette",
     "url": "/recettes/#08",
     "status": "publiée",
     "category": "parcours-guide",
@@ -426,7 +426,7 @@
   },
   {
     "id": "discovery-09",
-    "title": "Infusion Drainage & Élimination",
+    "title": "Infusion Traditionnelle Pissenlit, Prêle & Reine des Prés",
     "url": "/recettes/#09",
     "status": "publiée",
     "category": "culinaire",
@@ -478,7 +478,7 @@
   },
   {
     "id": "discovery-10",
-    "title": "Remède Psoriasis — Émonctoires & Régulation Épidermique",
+    "title": "Atelier Botanique — Bardane, Pensée Sauvage & Mahonia",
     "url": "/recettes/#10",
     "status": "publiée",
     "category": "parcours-guide",
@@ -486,7 +486,7 @@
     "ingredientCount": 3,
     "activeStepCount": 5,
     "extractionPhaseCount": 2,
-    "temperatures": "Phase A: 75°C / Phase B: Ambiante (70° Sans chauffe / bocal)",
+    "temperatures": "Phase A: 75°C / Phase B: Bocal hermétique hors appareil (70°)",
     "machineTimeMinutes": 240,
     "activeTimeMinutes": 20,
     "totalTimeMinutes": 260,
@@ -504,10 +504,10 @@
       "Récipient propre"
     ],
     "keySteps": [
-      "Extraction séquentielle Phase A (eau + glycérine 75°C)",
-      "Vidange, nettoyage (5 min) et séchage complet de la cuve",
-      "Phase B hydro-alcoolique 70° (Mahonia) en mode Sans chauffe (4h–12h) ou bocal hermétique",
-      "Filtration et assemblage hors appareil en flacons ambrés"
+      "Phase A aqueuse/glycérinée Bardane & Pensée Sauvage à 75°C (2h)",
+      "Vidange, nettoyage (5 min) et séchage intégral de la cuve",
+      "Phase B hydro-alcoolique 70° (Mahonia) en bocal hermétique hors appareil",
+      "Filtration et assemblage final des fractions"
     ],
     "difficultyCalculatedScore": 54,
     "difficultyFinalScore": 54,
@@ -533,7 +533,7 @@
   },
   {
     "id": "discovery-11",
-    "title": "Remède Eczéma — Désamorçage Histaminique & Barrière",
+    "title": "Atelier Botanique — Plantain, Camomille & Fumeterre",
     "url": "/recettes/#11",
     "status": "publiée",
     "category": "parcours-guide",
@@ -541,7 +541,7 @@
     "ingredientCount": 3,
     "activeStepCount": 5,
     "extractionPhaseCount": 2,
-    "temperatures": "Phase A: 68°C / Phase B: Ambiante (50° Sans chauffe / bocal)",
+    "temperatures": "Phase A: 68°C / Phase B: Bocal hermétique hors appareil (50°)",
     "machineTimeMinutes": 180,
     "activeTimeMinutes": 20,
     "totalTimeMinutes": 200,
@@ -558,10 +558,10 @@
       "Récipient propre"
     ],
     "keySteps": [
-      "Extraction séquentielle Phase A (eau + glycérine 68°C)",
+      "Phase A hydro-glycérinée Plantain & Camomille à 68°C (1h45)",
       "Vidange, nettoyage (5 min) et séchage complet de la cuve",
-      "Phase B hydro-alcoolique 50° (Camomille & Fumeterre) en mode Sans chauffe (4h–12h) ou bocal",
-      "Pressage doux et assemblage hors appareil"
+      "Phase B hydro-alcoolique 50° (Camomille & Fumeterre) en bocal hermétique hors appareil",
+      "Pressage doux et assemblage final"
     ],
     "difficultyCalculatedScore": 54,
     "difficultyFinalScore": 54,
@@ -587,7 +587,7 @@
   },
   {
     "id": "discovery-12",
-    "title": "Remède Alopécie — Anti-DHT & Matrice Folliculaire",
+    "title": "Atelier Botanique — Palmier Nain, Ortie & Ginkgo",
     "url": "/recettes/#12",
     "status": "publiée",
     "category": "cosmetique",
@@ -595,7 +595,7 @@
     "ingredientCount": 3,
     "activeStepCount": 4,
     "extractionPhaseCount": 2,
-    "temperatures": "Phase A: 72°C / Phase B: Sans chauffe 70° ou Tincture ≥75° sans eau",
+    "temperatures": "Phase A: 72°C / Phase B: Tincture ≥75° sans eau ou Bocal hermétique hors appareil (70°)",
     "machineTimeMinutes": 300,
     "activeTimeMinutes": 20,
     "totalTimeMinutes": 320,
@@ -612,10 +612,10 @@
       "Récipient propre"
     ],
     "keySteps": [
-      "Extraction séquentielle Phase A (eau + glycérine 72°C)",
+      "Phase A hydro-glycérinée Ortie & Ginkgo à 72°C (2h)",
       "Vidange, nettoyage (5 min) et séchage complet de la cuve",
-      "Phase B alcoolique 70° (Sans chauffe) ou ≥75° sans eau (Tincture) pour baies de Palmier Nain",
-      "Filtration et conditionnement bimodal (oral + lotion)"
+      "Phase B Palmier Nain en alcool ≥75° sans eau (Tincture sous surveillance) ou 70° en bocal hermétique hors appareil",
+      "Conditionnement en flacons ambrés"
     ],
     "difficultyCalculatedScore": 49,
     "difficultyFinalScore": 49,
@@ -649,7 +649,7 @@
     "ingredientCount": 9,
     "activeStepCount": 19,
     "extractionPhaseCount": 2,
-    "temperatures": "Phase A: 65°C / Phase B: 45°C (Tincture 90–96° anhydre) ou Sans chauffe",
+    "temperatures": "Phase A: 65°C / Phase B: 45°C (Tincture 90–96° anhydre réglé manuellement)",
     "machineTimeMinutes": 300,
     "activeTimeMinutes": 25,
     "totalTimeMinutes": 325,
@@ -669,10 +669,10 @@
       "Bain-marie"
     ],
     "keySteps": [
-      "Extraction aqueuse / polaire (Phase A)",
-      "Vidange, nettoyage et séchage complet de la cuve",
-      "Extraction résineuse Phase B en alcool 90°–96° (Tincture ajusté ou Sans chauffe, sans eau) ou macérat huileux",
-      "Filtration fine, assemblage et conservation au frais en flacon ambré"
+      "Phase A hydro-glycérinée à 65°C",
+      "Vidange, nettoyage 5 min et séchage complet de la cuve",
+      "Extraction résineuse Phase B en alcool 90°–96° sans eau (Tincture réglé manuellement à 45°C sous surveillance) ou macérat huileux",
+      "Émulsion ou sérum biphasique"
     ],
     "difficultyCalculatedScore": 94,
     "difficultyFinalScore": 94,
@@ -4319,7 +4319,7 @@
   },
   {
     "id": "parcours-psoriasis_remede",
-    "title": "Parcours Botanique Guidé — Psoriasis — Émonctoires & Barrière Kératinocytaire",
+    "title": "Atelier Botanique Guidé — Bardane, Pensée Sauvage & Mahonia",
     "url": "/recettes/#psoriasis_remede",
     "status": "publiée",
     "category": "parcours-guide",
@@ -4327,7 +4327,7 @@
     "ingredientCount": 5,
     "activeStepCount": 6,
     "extractionPhaseCount": 2,
-    "temperatures": "Phase A: 75°C / Phase B: Ambiante (70° Sans chauffe / bocal)",
+    "temperatures": "Phase A: 75°C / Phase B: Bocal hermétique hors appareil (70°)",
     "machineTimeMinutes": 240,
     "activeTimeMinutes": 30,
     "totalTimeMinutes": 270,
@@ -4345,10 +4345,10 @@
       "Flacon en verre ambré"
     ],
     "keySteps": [
-      "Extraction séquentielle Phase A (eau + glycérine 75°C)",
-      "Vidange, nettoyage (5 min) et séchage complet de la cuve",
-      "Phase B hydro-alcoolique 70° (Mahonia) en mode Sans chauffe (4h–12h) ou bocal hermétique",
-      "Filtration et assemblage hors appareil en flacons ambrés"
+      "Phase A aqueuse/glycérinée Bardane & Pensée Sauvage à 75°C (2h)",
+      "Vidange, nettoyage (5 min) et séchage intégral de la cuve",
+      "Phase B hydro-alcoolique 70° (Mahonia) en bocal hermétique hors appareil",
+      "Filtration et assemblage final des fractions"
     ],
     "difficultyCalculatedScore": 76,
     "difficultyFinalScore": 76,
@@ -4374,7 +4374,7 @@
   },
   {
     "id": "parcours-eczema_remede",
-    "title": "Parcours Botanique Guidé — Eczéma — Apaisement Histaminique & Réparation Barrière",
+    "title": "Atelier Botanique Guidé — Plantain, Camomille & Fumeterre",
     "url": "/recettes/#eczema_remede",
     "status": "publiée",
     "category": "parcours-guide",
@@ -4382,7 +4382,7 @@
     "ingredientCount": 5,
     "activeStepCount": 6,
     "extractionPhaseCount": 2,
-    "temperatures": "Phase A: 68°C / Phase B: Ambiante (50° Sans chauffe / bocal)",
+    "temperatures": "Phase A: 68°C / Phase B: Bocal hermétique hors appareil (50°)",
     "machineTimeMinutes": 240,
     "activeTimeMinutes": 30,
     "totalTimeMinutes": 270,
@@ -4400,10 +4400,10 @@
       "Flacon en verre ambré"
     ],
     "keySteps": [
-      "Extraction séquentielle Phase A (eau + glycérine 68°C)",
+      "Phase A hydro-glycérinée Plantain & Camomille à 68°C (1h45)",
       "Vidange, nettoyage (5 min) et séchage complet de la cuve",
-      "Phase B hydro-alcoolique 50° (Camomille & Fumeterre) en mode Sans chauffe (4h–12h) ou bocal",
-      "Pressage doux et assemblage hors appareil"
+      "Phase B hydro-alcoolique 50° (Camomille & Fumeterre) en bocal hermétique hors appareil",
+      "Pressage doux et assemblage final"
     ],
     "difficultyCalculatedScore": 76,
     "difficultyFinalScore": 76,
@@ -4429,7 +4429,7 @@
   },
   {
     "id": "parcours-alopecie_andro_remede",
-    "title": "Parcours Botanique Guidé — Alopécie — Anti-DHT & Micro-Nutrition Folliculaire",
+    "title": "Atelier Botanique Guidé — Palmier Nain, Ortie & Ginkgo",
     "url": "/recettes/#alopecie_andro_remede",
     "status": "publiée",
     "category": "parcours-guide",
@@ -4437,7 +4437,7 @@
     "ingredientCount": 5,
     "activeStepCount": 6,
     "extractionPhaseCount": 2,
-    "temperatures": "Phase A: 72°C / Phase B: Sans chauffe 70° ou Tincture ≥75° sans eau",
+    "temperatures": "Phase A: 72°C / Phase B: Tincture ≥75° sans eau ou Bocal hermétique hors appareil (70°)",
     "machineTimeMinutes": 240,
     "activeTimeMinutes": 30,
     "totalTimeMinutes": 270,
@@ -4455,10 +4455,10 @@
       "Flacon en verre ambré"
     ],
     "keySteps": [
-      "Extraction séquentielle Phase A (eau + glycérine 72°C)",
+      "Phase A hydro-glycérinée Ortie & Ginkgo à 72°C (2h)",
       "Vidange, nettoyage (5 min) et séchage complet de la cuve",
-      "Phase B alcoolique 70° (Sans chauffe) ou ≥75° sans eau (Tincture) pour baies de Palmier Nain",
-      "Filtration et conditionnement bimodal (oral + lotion)"
+      "Phase B Palmier Nain en alcool ≥75° sans eau (Tincture sous surveillance) ou 70° en bocal hermétique hors appareil",
+      "Conditionnement en flacons ambrés"
     ],
     "difficultyCalculatedScore": 76,
     "difficultyFinalScore": 76,

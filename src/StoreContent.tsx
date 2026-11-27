@@ -91,7 +91,7 @@ export const getProducts = (lang: Language) => {
       price: 9.90,
       image: nuitProfondeImg,
       description: t.kit_nuit.description,
-      tags: ['Sommeil']
+      tags: ['Rituel du soir']
     },
     {
       id: 'kit-digestion',
@@ -100,7 +100,7 @@ export const getProducts = (lang: Language) => {
       price: 9.90,
       image: digestionImg,
       description: t.kit_digestion.description,
-      tags: ['Digestion']
+      tags: ['Aromates']
     },
     {
       id: 'kit-articulaire',
@@ -109,7 +109,7 @@ export const getProducts = (lang: Language) => {
       price: 9.90,
       image: feuArticulaireImg,
       description: t.kit_articulaire.description,
-      tags: ['Mobilité']
+      tags: ['Résine & Plantes']
     },
     {
       id: 'kit-hiver',
@@ -118,7 +118,7 @@ export const getProducts = (lang: Language) => {
       price: 9.90,
       image: bouclierHiverImg,
       description: t.kit_hiver.description,
-      tags: ['Immunité', 'Hiver']
+      tags: ['Saisonnier', 'Hiver']
     },
     {
       id: 'duo-argiles',
@@ -128,7 +128,7 @@ export const getProducts = (lang: Language) => {
       originalPrice: 49.00,
       image: duoArgilesImg,
       description: t.kit_reset.description,
-      tags: ['Duo Argiles', 'Purification Systémique', 'Reset Homéostatique']
+      tags: ['Duo Argiles', 'Minéraux 6 µm']
     },
     {
       id: 'abonnements-numeriques',

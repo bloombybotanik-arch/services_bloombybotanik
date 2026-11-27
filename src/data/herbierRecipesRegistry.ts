@@ -114,7 +114,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -155,13 +155,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Chaga (Diamant de la Forêt) (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (acide bétulinique et triterpènes fongiques ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Sclérote (corps stérile) réduit en poudre fine afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau purifiée. Activer le cycle thermo-cinétique à 80°C pendant 4h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -253,7 +253,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -294,13 +294,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Cordyceps (L'Or de l'Himalaya) (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (stérols et fraction triterpénique ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Mycélium et corps de fructification en poudre afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 65°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -392,7 +392,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -433,13 +433,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Hericium (Crinière de Lion) (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (héricénones et érinacines fongiques ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Corps de fructification séché et réduit en poudre afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine. Activer le cycle thermo-cinétique à 75°C pendant 3h30.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -526,7 +526,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "85°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -567,13 +567,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Reishi (Champignon de l'Immortalité) (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (acides ganodériques et triterpènes ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Corps de fructification tranché ou poudre afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau pure. Activer le cycle thermo-cinétique à 85°C pendant 4h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -660,7 +660,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -701,13 +701,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Curcuma et Poivre Noir (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (curcuminoïdes et pipérine lipophiles ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Rhizome séché en poudre ou tranches / Baies séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -840,13 +840,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Boswellia (Encens) (15g)"
       ],
       "solvent": "Alcool alimentaire bio 90°–96° (sans eau) (résines et acides boswelliques anhydres)",
-      "temp": "45°C (Tincture ajusté / Sans chauffe)",
-      "duration": "2h30 (ou 4h–12h)"
+      "temp": "45°C (Tincture réglé manuellement)",
+      "duration": "2h30"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Résine (gomme oléorésineuse) afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 60°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, ajouter la fraction B avec 250 ml d'alcool 90°–96° (sans eau) (pièce ventilée, zéro flamme, couvercle verrouillé, MIN/MAX) en mode Tincture ajusté à 45 °C (2h30) ou Sans chauffe.",
+      "Étape 3 : Séquençage Phase B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, ajouter la fraction B avec 250 ml d'alcool 90°–96° (sans eau) (pièce ventilée, zéro flamme, couvercle verrouillé, MIN/MAX ; ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché) en mode Tincture réglé manuellement à 45 °C (2h30) ou en bocal hermétique hors appareil.",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -933,7 +933,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "50°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -974,13 +974,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Safran (15g)"
       ],
       "solvent": "Alcool alimentaire bio 50° (crocines, picrocrocine et safranal ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Stigmates séchés (fils rouges) afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 50°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -1067,7 +1067,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -1108,13 +1108,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Ortie (Feuille et Racine) (15g)"
       ],
       "solvent": "Alcool alimentaire bio 55° (lignanes, flavonoïdes et stérols d’ortie ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles séchées / Racines séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 55° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 55° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -1206,7 +1206,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -1247,13 +1247,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Prêle des champs (15g)"
       ],
       "solvent": "Alcool alimentaire bio 55° (flavonoïdes et fraction minérale de prêle ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Tiges stériles séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 80°C pendant 2h30.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 55° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 55° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -1340,7 +1340,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -1381,13 +1381,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Gingembre (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (gingérols et shogaols de rhizome ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Rhizome séché en tranches ou poudre afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -1479,7 +1479,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -1520,13 +1520,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Scutellaire de Baïkal (15g)"
       ],
       "solvent": "Alcool alimentaire bio 60° (baïcaline et baïcaléine de racine ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 60° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 60° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -1613,7 +1613,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -1654,13 +1654,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Rhodiola Rosea (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (rosavines et salidroside de racine ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Rhizome et racine séchés afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -1747,7 +1747,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -1788,13 +1788,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Griffonia (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (graines dures et fraction indole ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Graines séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -1876,7 +1876,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -1917,13 +1917,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Gentiane Jaune (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (amarogentine et xanthones de racine ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -2010,7 +2010,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -2051,13 +2051,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Radis Noir (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (glucosinolates et isothiocyanates de racine ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -2144,7 +2144,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -2185,13 +2185,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Chrysanthellum (15g)"
       ],
       "solvent": "Alcool alimentaire bio 50° (flavonoïdes et saponosides aériens ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -2278,7 +2278,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -2319,13 +2319,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Desmodium (15g)"
       ],
       "solvent": "Alcool alimentaire bio 50° (soyasaponines et alcaloïdes doux ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -2412,7 +2412,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -2453,13 +2453,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Bardane (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (polyacétylènes et lignanes de racine ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h30.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -2546,7 +2546,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -2587,13 +2587,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Astragale (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (astragaloside IV et saponines de racine ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h30.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -2680,7 +2680,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -2721,13 +2721,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Eleuthérocoque (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (éleuthérosides B et E de racine ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -2809,7 +2809,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -2848,13 +2848,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Bacopa (15g)"
       ],
       "solvent": "Alcool alimentaire bio 60° (bacosides triterpéniques A et B ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 60° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 60° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -2941,7 +2941,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -2982,13 +2982,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Reishi (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (acides ganodériques et triterpènes ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Fruit (champignon) séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 80°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -3200,7 +3200,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -3238,13 +3238,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Ginkgo (15g)"
       ],
       "solvent": "Alcool alimentaire bio 55° (ginkgolides et flavonol-glycosides ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 55° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 55° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -3331,7 +3331,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -3369,13 +3369,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Fenugrec (15g)"
       ],
       "solvent": "Alcool alimentaire bio 60° (saponines stéroïdiennes de graines ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Graines séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 60° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 60° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -3462,7 +3462,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -3500,13 +3500,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Plantain majeur (15g)"
       ],
       "solvent": "Alcool alimentaire bio 50° (aucuboside, actéoside et flavonoïdes ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -3593,7 +3593,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -3631,13 +3631,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Renouée du Japon (Racine) (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (trans-resvératrol de rhizome ligneux ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine et rhizome séchés afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 2h30.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -3724,7 +3724,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -3763,13 +3763,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Quassia amer (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (quassinoïdes de bois amer ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Bois séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -3851,7 +3851,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -3889,13 +3889,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Euphraise (15g)"
       ],
       "solvent": "Alcool alimentaire bio 50° (iridoïdes et polyphénols délicats ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -3982,7 +3982,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -4020,13 +4020,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Myrtille (15g)"
       ],
       "solvent": "Alcool alimentaire bio 50° (anthocyanosides de myrtille ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Fruits séchés (ou feuilles pour usage spécifique) afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -4113,7 +4113,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -4151,13 +4151,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Maca (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (macamides et glucosinolates de racine ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine (hypocotyle) séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -4244,7 +4244,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -4282,13 +4282,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Alchémille (15g)"
       ],
       "solvent": "Alcool alimentaire bio 50° (tanins galliques et flavonoïdes ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -4375,7 +4375,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -4413,13 +4413,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Armoise annuelle (15g)"
       ],
       "solvent": "Alcool alimentaire bio 60° (artémisinine et flavonoïdes lipophiles ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 60° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 60° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -4506,7 +4506,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -4545,13 +4545,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Gattilier (Vitex) (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (diterpènes et casticine de fruits denses ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Fruits séchés afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -4638,7 +4638,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -4676,13 +4676,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Nigelle (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (thymoquinone et lipides de graines ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Graines séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -4769,7 +4769,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -4810,13 +4810,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Cordyceps (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (ergostérols et fraction dense ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Fruit (champignon) séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 80°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -4903,7 +4903,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -4941,13 +4941,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Piloselle (15g)"
       ],
       "solvent": "Alcool alimentaire bio 50° (umbelliférone et acide chlorogénique ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Plante entière séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -5034,7 +5034,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "50°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -5072,13 +5072,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Mauve (15g)"
       ],
       "solvent": "Alcool alimentaire bio 45° (anthocyanes et mucilages des fleurs ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles et fleurs séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 50°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 45° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 45° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -5165,7 +5165,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -5203,13 +5203,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Shatavari (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (shatavarines de racine dense ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -5296,7 +5296,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -5337,13 +5337,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Lion's Mane (Hydne hérisson) (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (héricénones et érinacines fongiques ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Fruit (champignon) séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 80°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -5430,7 +5430,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -5471,13 +5471,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Chaga (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (acide bétulinique et triterpènes fongiques ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Sclérote (champignon) séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 75°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -5564,7 +5564,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -5602,13 +5602,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Hamamélis (15g)"
       ],
       "solvent": "Alcool alimentaire bio 55° (hamamélitanins et proanthocyanidines ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles et écorce séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 55° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 55° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -5695,7 +5695,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -5733,13 +5733,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Moringa (15g)"
       ],
       "solvent": "Alcool alimentaire bio 50° (isothiocyanates et polyphénols foliaires ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -5826,7 +5826,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "35°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -5864,13 +5864,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Ail (Vieilli ou Noir) (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (composés organosoufrés (ail frais vs ail noir SAC) ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Gousses séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine (70/30). Activer le cycle thermo-cinétique à 35°C pendant 4h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -5957,7 +5957,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -5995,13 +5995,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Saule Blanc (15g)"
       ],
       "solvent": "Alcool alimentaire bio 55° (dérivés salicylés et tanins d’écorce ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Écorce interne (Liber) afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine. Activer le cycle thermo-cinétique à 80°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 55° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 55° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -6083,7 +6083,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -6121,13 +6121,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Épine-vinette (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (berbérine et alcaloïdes d’écorce ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Écorce de racine ou de tige afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine. Activer le cycle thermo-cinétique à 75°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -6209,7 +6209,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -6247,13 +6247,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Aubépine (15g)"
       ],
       "solvent": "Alcool alimentaire bio 50° (procyanidines et vitexine des sommités ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Sommités fleuries et fruits afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + Glycérine. Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -6335,7 +6335,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "85°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -6374,13 +6374,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Quinquina Rouge (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (alcaloïdes quinoléiques d’écorce ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Écorce séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau + Acide Citrique (léger). Activer le cycle thermo-cinétique à 85°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -6850,7 +6850,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -6888,13 +6888,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Passiflore (15g)"
       ],
       "solvent": "Alcool alimentaire bio 45° (vitexine, chrysine et flavonoïdes délicats ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau. Activer le cycle thermo-cinétique à 60°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 45° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 45° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -6976,7 +6976,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "55°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -7014,13 +7014,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Valériane (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (acides valéréniques et valépotriates ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racines et Rhizomes afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau purifiée + Glycérine végétale (70/30). Activer le cycle thermo-cinétique à 55°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -7102,7 +7102,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "55°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -7140,13 +7140,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Eschscholtzia (15g)"
       ],
       "solvent": "Alcool alimentaire bio 50° (californidine, protopine et flavonoïdes ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes fleuries afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau / Glycérine. Activer le cycle thermo-cinétique à 55°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -7228,7 +7228,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -7266,13 +7266,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Romarin (15g)"
       ],
       "solvent": "Alcool alimentaire bio 55° (acide carnosique et composés aromatiques ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles et Sommités fleuries afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 65°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 55° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 55° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -7624,7 +7624,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -7664,13 +7664,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Saule Blanc (15g)"
       ],
       "solvent": "Alcool alimentaire bio 55° (dérivés salicylés et polyphénols d’écorce ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Écorce afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau/Glycérine. Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 55° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 55° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -7752,7 +7752,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "65°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -7792,13 +7792,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Valériane (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (acides valéréniques de racine ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau/Glycérine. Activer le cycle thermo-cinétique à 65°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -7880,7 +7880,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -7920,13 +7920,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Artichaut (15g)"
       ],
       "solvent": "Alcool alimentaire bio 50° (cynarine et lutéoline des feuilles ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Feuilles afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau/Glycérine. Activer le cycle thermo-cinétique à 70°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 50° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -8008,7 +8008,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "60°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -8046,13 +8046,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Millepertuis (15g)"
       ],
       "solvent": "Alcool alimentaire bio 55° (hypéricine et hyperforine des sommités ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Parties aériennes afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau/Glycérine. Activer le cycle thermo-cinétique à 60°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 55° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 55° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -8134,7 +8134,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -8176,13 +8176,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Shi Quan Da Bu Tang — La Grande Formule de Reconstruction (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (complexe de racines, écorces et rhizomes ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Formule composée (racines, écorces, rhizomes) afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + glycérine légère. Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -8269,7 +8269,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "72°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -8311,13 +8311,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Lycium barbarum — Le Goji, Nourrissant du Sang (15g)"
       ],
       "solvent": "Alcool alimentaire bio 60° (caroténoïdes et fraction lipophile de baies ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Baies séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 72°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 60° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 60° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -8404,7 +8404,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "72°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -8446,13 +8446,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Run Fei Tang — Formule Nourrissant le Poumon (15g)"
       ],
       "solvent": "Alcool alimentaire bio 60° (mélange de racines, fruits et graines ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Formule composée (fruits, graines, racines, matières adoucissantes) afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 72°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 60° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 60° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -8539,7 +8539,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -8581,13 +8581,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Ziziphus jujuba — Le Jujube, Harmonisateur des Muqueuses (15g)"
       ],
       "solvent": "Alcool alimentaire bio 55° (triterpènes et flavonoïdes de jujube ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Fruit séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 70°C pendant 1h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 55° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 55° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -8674,7 +8674,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "70°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -8716,13 +8716,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Schisandra chinensis — La Baie des Cinq Saveurs (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (schisandrines et lignanes de baies ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Baies séchées afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 70°C pendant 1h30.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -8809,7 +8809,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -8851,13 +8851,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Arctium lappa — La Bardane, Grand Dépuratif (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (polyacétylènes et lignanes de racine ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -8949,7 +8949,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -8991,13 +8991,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Astragalus membranaceus — L’Astragale, Protecteur du Qi (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (astragaloside IV et saponines de racine ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + glycérine légère. Activer le cycle thermo-cinétique à 75°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -9084,7 +9084,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "80°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -9126,13 +9126,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Ganoderma lucidum — Le Reishi, Champignon de Longévité (15g)"
       ],
       "solvent": "Alcool alimentaire bio 70° (acides ganodériques et triterpènes ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Champignon séché afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée + glycérine légère. Activer le cycle thermo-cinétique à 80°C pendant 3h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 70° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -9219,7 +9219,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "72°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -9260,13 +9260,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Fraction dense de Glycyrrhiza glabra — La Réglisse, Catalyseur et Protecteur (15g)"
       ],
       "solvent": "Alcool alimentaire bio 60° (glabridine et acide glycyrrhizique ; option sans alcool glycérine/huile possible)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Préparation des matières premières — Concasser délicatement Racine séchée afin de rompre la cuticule cellulaire sans broyage excessif.",
       "Étape 2 : Séquençage Sachet A — Introduire la phase A dans le panier inox BloomLab® avec Eau distillée. Activer le cycle thermo-cinétique à 72°C pendant 2h00.",
-      "Étape 3 : Séquençage Sachet B — Après vidange, nettoyage (5 min) et séchage complet de la cuve, placer la fraction B en cuve sèche avec 250 ml d'alcool alimentaire à 60° en mode Sans chauffe (4h–12h) ou en bocal hermétique (ne pas chauffer de dilution à l'eau en mode Tincture ; option sans alcool glycérine possible).",
+      "Étape 3 : Séquençage Phase B — Pour cette fraction hydro-alcoolique à 60° (contenant de l'eau), réaliser la macération en bocal en verre hermétique hors appareil loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool glycérine/huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 4 : Filtration et conditionnement — Réaliser une filtration fine sur tamis inox, puis presser doucement la matière végétale. Transférer dans un flacon en verre violet Miron ou ambré stérile.",
       "Étape 5 : Conservation optimale — Conserver à l’abri de la lumière et des variations de température. Conservation courte au réfrigérateur ; consommer rapidement (durée de stabilité non testée spécifiquement)."
     ],
@@ -10193,7 +10193,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-03"
     ],
     "title": "Sérum Visage Éclat Botanique",
-    "subtitle": "Un sérum précieux régénérant, conçu pour une pénétration cutanée optimale des actifs végétaux.",
+    "subtitle": "Un sérum huileux précieux conçu pour un rituel cosmétique d'éclat et de douceur.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -10311,7 +10311,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-04"
     ],
     "title": "Baume à Lèvres au Calendula",
-    "subtitle": "Un baume protecteur et réparateur utilisant l'extraction par fusion contrôlée.",
+    "subtitle": "Un baume cosmétique protecteur utilisant l'extraction par fusion contrôlée.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -10430,7 +10430,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-05"
     ],
     "title": "Teinture Mère de Propolis Maison",
-    "subtitle": "Une teinture concentrée des résines et flavonoïdes de la propolis brute dans de l'alcool à 90°–96° (sans ajout d'eau) via le programme Tincture ajusté ou Sans chauffe de la BloomLab® (ou alternative douce sans alcool sur base glycérinée).",
+    "subtitle": "Une teinture concentrée des résines et flavonoïdes de la propolis brute dans de l'alcool à 90°–96° (sans ajout d'eau) via le programme Tincture de la BloomLab® réglé manuellement à 45 °C (ou en bocal hermétique hors appareil, ou base glycérinée sans alcool).",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -10440,7 +10440,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "prepTimeMinutes": 15,
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
-    "tempSachetA": "45°C (ou défaut 71°C / Sans chauffe)",
+    "tempSachetA": "45°C (Tincture réglé manuellement) ou défaut 71°C",
     "tempSachetB": "N/A",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
@@ -10471,13 +10471,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "20g de Propolis brute concassée"
       ],
       "solvent": "Alcool éthylique bio 90°–96° (150ml, sans ajout d'eau)",
-      "temp": "45°C (ou défaut 71°C / Sans chauffe)",
-      "duration": "2h30 (ou 4h / 4h–12h)"
+      "temp": "45°C (Tincture réglé manuellement) ou défaut 71°C",
+      "duration": "2h30 (ou 4h par défaut)"
     },
     "instructions": [
       "Congeler brièvement la propolis brute puis la concasser grossièrement.",
       "Placer la propolis et 150 ml d'alcool 90°–96° (sans eau) dans la cuve propre et sèche (entre MIN et MAX ; pièce ventilée, aucune flamme).",
-      "Verrouiller le couvercle et lancer le programme Tincture (défaut 71 °C / 160 °F – 4 h, modifiable manuellement à 45 °C pendant 2h30 pour ménager la fraction aromatique) ou le mode Sans chauffe (4h à 12h).",
+      "Verrouiller le couvercle et lancer le programme Tincture (défaut 71 °C / 160 °F – 4 h, modifiable manuellement via TEMP/TIME à 45 °C pendant 2h30 pour ménager la fraction aromatique, sous surveillance continue), ou réaliser la macération en bocal hermétique hors appareil.",
       "Filtrer à froid à travers un filtre fin (la cire reste sur le filtre) et embouteiller en flacon ambré."
     ],
     "molecularSignature": [
@@ -10545,8 +10545,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-06/",
       "/herbier/extra-recipe-06"
     ],
-    "title": "Sirop de Sureau Immunité",
-    "subtitle": "Un remède d'hiver traditionnel optimisé par une décoction basse température.",
+    "title": "Sirop Traditionnel de Sureau & Gingembre",
+    "subtitle": "Une recette d'hiver traditionnelle aux baies de sureau, gingembre et miel, préparée par décoction douce.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -10611,7 +10611,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Consensus pharmacopée internationale (OMS & Ph. Eur.)"
       }
     ],
-    "traditionalWisdom": "Usage des macérations aromatiques et résines médicinales pour purifier les conduits vitaux (metu) et rétablir l’équilibre des humeurs corporelles. La tradition accorde à Sirop de Sureau Immunité une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Usage des macérations aromatiques et résines médicinales pour purifier les conduits vitaux (metu) et rétablir l’équilibre des humeurs corporelles. La tradition accorde à Sirop Traditionnel de Sureau & Gingembre une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Contient beaucoup de sucre."
     ],
@@ -10631,7 +10631,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "url": "/academie/comprendre-le-corps/"
       },
       "plantMonograph": {
-        "name": "Monographie Botanique Sirop de Sureau Immunité",
+        "name": "Monographie Botanique Sirop Traditionnel de Sureau & Gingembre",
         "url": "/academie/herbier/"
       },
       "blogArticle": {
@@ -10640,7 +10640,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       }
     },
     "image": "/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg",
-    "imageAlt": "Sirop de Sureau Immunité — Protocole d'extraction botanique de précision BloomLab®",
+    "imageAlt": "Sirop Traditionnel de Sureau & Gingembre — Protocole d'extraction botanique de précision BloomLab®",
     "schemaType": "Recipe",
     "gscImpressions90d": 20,
     "gscClicks90d": 1,
@@ -10665,8 +10665,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-07/",
       "/herbier/extra-recipe-07"
     ],
-    "title": "Décoction Détox & Soutien Hépatique",
-    "subtitle": "Une préparation traditionnelle de plantes amères pour accompagner le travail hépato-biliaire et la légèreté digestive (Terrain T4).",
+    "title": "Décoction d'Herboristerie aux Plantes Amères",
+    "subtitle": "Une préparation traditionnelle de plantes amères inspirée des usages d'herboristerie de saison.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -10732,7 +10732,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Consensus pharmacopée internationale (OMS & Ph. Eur.)"
       }
     ],
-    "traditionalWisdom": "Théorie des quatre éléments et régulation du terrain par des extractions tièdes préservant la quintessence active du végétal. La tradition accorde à Décoction Détox & Soutien Hépatique une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Théorie des quatre éléments et régulation du terrain par des extractions tièdes préservant la quintessence active du végétal. La tradition accorde à Décoction d'Herboristerie aux Plantes Amères une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Saveur très amère caractéristique.",
       "Bien s'hydrater tout au long de la journée."
@@ -10754,7 +10754,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "url": "/academie/comprendre-le-corps/"
       },
       "plantMonograph": {
-        "name": "Monographie Botanique Décoction Détox & Soutien Hépatique",
+        "name": "Monographie Botanique Décoction d'Herboristerie aux Plantes Amères",
         "url": "/academie/herbier/"
       },
       "blogArticle": {
@@ -10763,7 +10763,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       }
     },
     "image": "/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg",
-    "imageAlt": "Décoction Détox & Soutien Hépatique — Protocole d'extraction botanique de précision BloomLab®",
+    "imageAlt": "Décoction d'Herboristerie aux Plantes Amères — Protocole d'extraction botanique de précision BloomLab®",
     "schemaType": "Recipe",
     "gscImpressions90d": 41,
     "gscClicks90d": 3,
@@ -10788,7 +10788,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-08/",
       "/herbier/extra-recipe-08"
     ],
-    "title": "Élixir Régulateur Métabolique",
+    "title": "Élixir Traditionnel Fenugrec & Épine-Vinette",
     "subtitle": "Synergie végétale aux graines de fenugrec et écorce d'épine-vinette pour accompagner l'équilibre métabolique et le rythme du quotidien (Terrain T5).",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
@@ -10854,7 +10854,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Consensus pharmacopée internationale (OMS & Ph. Eur.)"
       }
     ],
-    "traditionalWisdom": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux. La tradition accorde à Élixir Régulateur Métabolique une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Art raffiné des eaux distillées, macérats huileux et glycérinés doux et synergies polyvalentes régulant les tempéraments fondamentaux. La tradition accorde à Élixir Traditionnel Fenugrec & Épine-Vinette une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Ne dispense pas d'une alimentation équilibrée et d'activité physique réguliere."
     ],
@@ -10874,7 +10874,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "url": "/academie/comprendre-le-corps/"
       },
       "plantMonograph": {
-        "name": "Monographie Botanique Élixir Régulateur Métabolique",
+        "name": "Monographie Botanique Élixir Traditionnel Fenugrec & Épine-Vinette",
         "url": "/academie/herbier/"
       },
       "blogArticle": {
@@ -10883,7 +10883,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       }
     },
     "image": "/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg",
-    "imageAlt": "Élixir Régulateur Métabolique — Protocole d'extraction botanique de précision BloomLab®",
+    "imageAlt": "Élixir Traditionnel Fenugrec & Épine-Vinette — Protocole d'extraction botanique de précision BloomLab®",
     "schemaType": "Recipe",
     "gscImpressions90d": 42,
     "gscClicks90d": 4,
@@ -10908,7 +10908,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-09/",
       "/herbier/extra-recipe-09"
     ],
-    "title": "Infusion Drainage & Élimination",
+    "title": "Infusion Traditionnelle Pissenlit, Prêle & Reine des Prés",
     "subtitle": "Formule drainante aux sommités de reine des prés et racines de pissenlit pour accompagner les fonctions d'élimination de l'eau et des émonctoires (Terrain T6).",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
@@ -10975,7 +10975,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Consensus pharmacopée internationale (OMS & Ph. Eur.)"
       }
     ],
-    "traditionalWisdom": "Approche monastique de la Viriditas végétale combinant principes amers, racines nobles et macérations vineuses pour réveiller la vitalité endormie. La tradition accorde à Infusion Drainage & Élimination une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Approche monastique de la Viriditas végétale combinant principes amers, racines nobles et macérations vineuses pour réveiller la vitalité endormie. La tradition accorde à Infusion Traditionnelle Pissenlit, Prêle & Reine des Prés une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Veiller à boire suffisamment d'eau pure en complément."
     ],
@@ -10996,7 +10996,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "url": "/academie/comprendre-le-corps/"
       },
       "plantMonograph": {
-        "name": "Monographie Botanique Infusion Drainage & Élimination",
+        "name": "Monographie Botanique Infusion Traditionnelle Pissenlit, Prêle & Reine des Prés",
         "url": "/academie/herbier/"
       },
       "blogArticle": {
@@ -11005,7 +11005,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       }
     },
     "image": "/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg",
-    "imageAlt": "Infusion Drainage & Élimination — Protocole d'extraction botanique de précision BloomLab®",
+    "imageAlt": "Infusion Traditionnelle Pissenlit, Prêle & Reine des Prés — Protocole d'extraction botanique de précision BloomLab®",
     "schemaType": "Recipe",
     "gscImpressions90d": 43,
     "gscClicks90d": 5,
@@ -11030,8 +11030,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-10/",
       "/herbier/extra-recipe-10"
     ],
-    "title": "Remède Psoriasis — Émonctoires & Régulation Épidermique",
-    "subtitle": "Extraction séquentielle de Bardane, Pensée Sauvage et Mahonia ciblant la régulation kératinocytaire et le drainage hépato-cutané.",
+    "title": "Atelier Botanique — Bardane, Pensée Sauvage & Mahonia",
+    "subtitle": "Extraction séquentielle de Bardane, Pensée Sauvage et Mahonia illustrant la séparation des phases hydroglycérinée et hydroalcoolique.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -11042,7 +11042,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "75°C",
-    "tempSachetB": "Ambiante (Sans chauffe / bocal)",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -11083,13 +11083,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "20g Écorce de Mahonia concassée"
       ],
       "solvent": "Alcool alimentaire 70° (250ml ; option sans alcool possible en glycérine)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h (ou 14–21j bocal)"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Phase A : Extraction hydroglycérinée de la Bardane et de la Pensée Sauvage à 75°C pendant 2h00. Filtrer et réserver l'extrait A.",
       "Transition obligatoire : Vider, rincer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
-      "Phase B : Macération hydro-alcoolique à 70° (titre optimal pour alcaloïdes isoquinoléiques et lignanes) du Mahonia en mode Sans chauffe (4h à 12h) ou en bocal hermétique (sans chauffe car dilution 70° contenant de l'eau ; alternatif 75° sans eau en Tincture possible).",
+      "Phase B : Macération hydro-alcoolique à 70° (dilution contenant de l'eau) du Mahonia en bocal en verre hermétique hors appareil à l'abri de la lumière (ne pas chauffer une dilution à l'eau en mode Tincture ; alternatif ≥ 75 % vol. sans eau possible en Tincture sous surveillance).",
       "Filtrer, presser le marc et réunir les fractions A et B hors appareil en flacons ambrés."
     ],
     "molecularSignature": [
@@ -11099,7 +11099,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Consensus pharmacopée internationale (OMS & Ph. Eur.)"
       }
     ],
-    "traditionalWisdom": "Équilibrage du Qi, tonification des méridiens du Rein et de la Rate, et combinaison impériale (Empereur, Ministre, Assistant, Ambassadeur). La tradition accorde à Remède Psoriasis — Émonctoires & Régulation Épidermique une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Équilibrage du Qi, tonification des méridiens du Rein et de la Rate, et combinaison impériale (Empereur, Ministre, Assistant, Ambassadeur). La tradition accorde à Atelier Botanique — Bardane, Pensée Sauvage & Mahonia une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Ne se substitue pas à un suivi dermatologique médical.",
       "Alcool inflammable dès 21 °C à 70 % (INRS) : travailler en pièce très ventilée loin de toute flamme ; ne pas chauffer une dilution contenant de l'eau en mode Tincture.",
@@ -11123,7 +11123,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "url": "/academie/comprendre-le-corps/"
       },
       "plantMonograph": {
-        "name": "Monographie Botanique Remède Psoriasis — Émonctoires & Régulation Épidermique",
+        "name": "Monographie Botanique Atelier Botanique — Bardane, Pensée Sauvage & Mahonia",
         "url": "/academie/herbier/"
       },
       "blogArticle": {
@@ -11132,7 +11132,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       }
     },
     "image": "/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg",
-    "imageAlt": "Remède Psoriasis — Émonctoires & Régulation Épidermique — Protocole d'extraction botanique de précision BloomLab®",
+    "imageAlt": "Atelier Botanique — Bardane, Pensée Sauvage & Mahonia — Protocole d'extraction botanique de précision BloomLab®",
     "schemaType": "Recipe",
     "gscImpressions90d": 44,
     "gscClicks90d": 3,
@@ -11157,8 +11157,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-11/",
       "/herbier/extra-recipe-11"
     ],
-    "title": "Remède Eczéma — Désamorçage Histaminique & Barrière",
-    "subtitle": "Formule protectrice thermo-régulée combinant Plantain, Camomille Matricaire et Fumeterre pour calmer le prurit et restaurer la matrice cutanée.",
+    "title": "Atelier Botanique — Plantain, Camomille & Fumeterre",
+    "subtitle": "Formule protectrice thermo-régulée combinant Plantain, Camomille Matricaire et Fumeterre par extraction séquentielle douce (contenu éducatif).",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -11169,7 +11169,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "68°C",
-    "tempSachetB": "Ambiante (Sans chauffe / bocal)",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -11211,13 +11211,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "25g Fumeterre"
       ],
       "solvent": "Alcool alimentaire 50° (250ml ; option sans alcool possible en glycérine/huile)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Phase A : Extraction douce de l'aucuboside du Plantain et de l'apigénine de Camomille à 68°C pendant 1h45. Filtrer et réserver.",
       "Transition obligatoire : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve.",
-      "Phase B : Captation hydro-alcoolique à 50° (degré doux adapté aux sommités fleuries et sesquiterpènes/protopine) en mode Sans chauffe (4h à 12h) ou en bocal hermétique.",
+      "Phase B : Macération hydro-alcoolique à 50° (dilution contenant de l'eau) des sommités fleuries en bocal en verre hermétique hors appareil (ou option sans alcool en glycérine/huile dans BloomLab® sous surveillance).",
       "Pressage doux sans broyer les tiges et réunion des fractions A et B."
     ],
     "molecularSignature": [
@@ -11227,7 +11227,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Consensus pharmacopée internationale (OMS & Ph. Eur.)"
       }
     ],
-    "traditionalWisdom": "Utilisation de solvants lipidiques nobles (ghee, huiles) pour transporter les principes actifs liposolubles à travers les sept tissus (Dhatus). La tradition accorde à Remède Eczéma — Désamorçage Histaminique & Barrière une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Utilisation de solvants lipidiques nobles (ghee, huiles) pour transporter les principes actifs liposolubles à travers les sept tissus (Dhatus). La tradition accorde à Atelier Botanique — Plantain, Camomille & Fumeterre une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Alcool inflammable dès la température ambiante (point d'éclair ~21–24 °C entre 50° et 70°, INRS) : manipuler en pièce très ventilée loin de toute flamme ; ne jamais chauffer d'alcool dilué à l'eau en mode Tincture.",
       "Demander un avis médical ou dermatologique en cas de lésion cutanée suintante ou persistante."
@@ -11251,7 +11251,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "url": "/academie/comprendre-le-corps/"
       },
       "plantMonograph": {
-        "name": "Monographie Botanique Remède Eczéma — Désamorçage Histaminique & Barrière",
+        "name": "Monographie Botanique Atelier Botanique — Plantain, Camomille & Fumeterre",
         "url": "/academie/herbier/"
       },
       "blogArticle": {
@@ -11260,7 +11260,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       }
     },
     "image": "/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg",
-    "imageAlt": "Remède Eczéma — Désamorçage Histaminique & Barrière — Protocole d'extraction botanique de précision BloomLab®",
+    "imageAlt": "Atelier Botanique — Plantain, Camomille & Fumeterre — Protocole d'extraction botanique de précision BloomLab®",
     "schemaType": "Recipe",
     "gscImpressions90d": 45,
     "gscClicks90d": 4,
@@ -11285,8 +11285,8 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "/herbier/extra-recipe-12/",
       "/herbier/extra-recipe-12"
     ],
-    "title": "Remède Alopécie — Anti-DHT & Matrice Folliculaire",
-    "subtitle": "Extraction lipophile et hydrosoluble de Palmier Nain, Racine d'Ortie et Ginkgo pour inhiber la 5-alpha-réductase et relancer la microcirculation capillaire.",
+    "title": "Atelier Botanique — Palmier Nain, Ortie & Ginkgo",
+    "subtitle": "Extraction lipophile et hydrosoluble de Palmier Nain, Racine d'Ortie et Ginkgo étudiant le profil en phytostérols, silice et flavonoïdes.",
     "category": "phytotherapie",
     "categorySlug": "phytotherapie",
     "categoryLabel": "Phytothérapie",
@@ -11297,7 +11297,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 45,
     "totalTimeMinutes": 60,
     "tempSachetA": "72°C",
-    "tempSachetB": "Ambiante (Sans chauffe) ou 71°C Tincture (≥75° sans eau)",
+    "tempSachetB": "71°C Tincture (≥75° sans eau) ou Bocal hermétique hors appareil (70°)",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 300,
     "heritage": {
@@ -11337,13 +11337,13 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "30g Baies de Palmier Nain (Saw Palmetto) concassées"
       ],
       "solvent": "Alcool alimentaire 70° (ou ≥ 75 % vol. sans eau pour cycle Tincture) (300ml)",
-      "temp": "Ambiante (Sans chauffe) ou 71°C Tincture (≥75° sans eau)",
-      "duration": "4h à 12h (ou 4h Tincture)"
+      "temp": "71°C Tincture (≥75° sans eau) ou Bocal hermétique hors appareil (70°)",
+      "duration": "4h Tincture (réglable) ou macération hors appareil"
     },
     "instructions": [
       "Phase A : Extraction hydroglycérinée des lectines UDA, de la silice d'ortie et des flavonoïdes de Ginkgo à 72°C pendant 2h00. Filtrer et réserver.",
       "Transition obligatoire : Vider, nettoyer et sécher intégralement la cuve.",
-      "Phase B : Extraction alcoolique du Palmier Nain (Saw Palmetto) concassé — titre optimal 70° en Sans chauffe (4h à 12h) ou bocal hermétique ; ou alcool ≥ 75 % vol. sans eau via programme Tincture en pièce ventilée sans flamme.",
+      "Phase B : Macération du Palmier Nain concassé soit à 70° en bocal hermétique hors appareil, soit dans un alcool ≥ 75 % vol. sans eau via programme Tincture en pièce ventilée sans flamme et sous surveillance continue.",
       "Conditionnement bimodal hors cuve : flacon compte-gouttes (oral) et flacon spray (lotion cuir chevelu)."
     ],
     "molecularSignature": [
@@ -11353,7 +11353,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "evidenceLevel": "Consensus pharmacopée internationale (OMS & Ph. Eur.)"
       }
     ],
-    "traditionalWisdom": "Phytothérapie d’altitude et macérations d’arbustes xérophiles résistants aux amplitudes thermiques extrêmes pour fortifier l’immunité. La tradition accorde à Remède Alopécie — Anti-DHT & Matrice Folliculaire une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
+    "traditionalWisdom": "Phytothérapie d’altitude et macérations d’arbustes xérophiles résistants aux amplitudes thermiques extrêmes pour fortifier l’immunité. La tradition accorde à Atelier Botanique — Palmier Nain, Ortie & Ginkgo une place de choix pour moduler le terrain et fortifier la vitalité sans bousculer les équilibres intérieurs.",
     "precautions": [
       "Consulter un professionnel de santé en cas de prise simultanée d'anticoagulants (Ginkgo Biloba).",
       "Vapeurs d'alcool inflammables dès 13–21 °C (INRS) : travailler en pièce très ventilée loin de toute flamme, couvercle verrouillé et entre MIN et MAX."
@@ -11377,7 +11377,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "url": "/academie/comprendre-le-corps/"
       },
       "plantMonograph": {
-        "name": "Monographie Botanique Remède Alopécie — Anti-DHT & Matrice Folliculaire",
+        "name": "Monographie Botanique Atelier Botanique — Palmier Nain, Ortie & Ginkgo",
         "url": "/academie/herbier/"
       },
       "blogArticle": {
@@ -11386,7 +11386,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       }
     },
     "image": "/images/og/articles-savoirs-herboristerie-botanique-1200x630.jpg",
-    "imageAlt": "Remède Alopécie — Anti-DHT & Matrice Folliculaire — Protocole d'extraction botanique de précision BloomLab®",
+    "imageAlt": "Atelier Botanique — Palmier Nain, Ortie & Ginkgo — Protocole d'extraction botanique de précision BloomLab®",
     "schemaType": "Recipe",
     "gscImpressions90d": 46,
     "gscClicks90d": 5,
@@ -11466,7 +11466,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -11593,7 +11593,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -11720,7 +11720,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -11847,7 +11847,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -11974,7 +11974,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -12101,7 +12101,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -12228,7 +12228,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -12355,7 +12355,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -12482,7 +12482,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -12609,7 +12609,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -12736,7 +12736,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -12863,7 +12863,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -12990,7 +12990,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -13117,7 +13117,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -13245,7 +13245,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -13373,7 +13373,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -13500,7 +13500,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -13627,7 +13627,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -13754,7 +13754,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -13881,7 +13881,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -14008,7 +14008,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -14135,7 +14135,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -14262,7 +14262,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -14389,7 +14389,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -14516,7 +14516,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -14643,7 +14643,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -14770,7 +14770,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -14897,7 +14897,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -15024,7 +15024,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -15151,7 +15151,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -15278,7 +15278,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -15405,7 +15405,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -15532,7 +15532,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -15659,7 +15659,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -15786,7 +15786,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -15913,7 +15913,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -16040,7 +16040,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -16167,7 +16167,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -16294,7 +16294,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -16421,7 +16421,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -16548,7 +16548,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -16675,7 +16675,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     },
     "instructions": [
       "Étape 1 : Préparation de la matière gastronomique — Sélectionner les feuilles et sommités fraîches ou séchées à basse température pour préserver le profil terpénique.",
-      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans chauffer l’huile.",
+      "Étape 2 : Infusion lipidique sous vortex BloomLab® — Immerger la matière dans Huile d’olive vierge extra bio première pression à froid (350ml) et programmer le cycle à 45°C pendant 1h15 afin de saturer la matrice d'arômes nobles sans surchauffer l’huile.",
       "Étape 3 : Dynamisation des notes de cœur — Laisser tiédir en cuve étanche fermée pour éviter toute évaporation des arômes volatils délicats.",
       "Étape 4 : Filtration sous pression douce — Décanter lentement et filtrer pour obtenir une robe limpide sans micro-particules végétales en suspension.",
       "Étape 5 : Conditionnement d'exception — Mettre en bouteille en verre foncé bouchon liège ou verseur anti-goutte. Conserver au frais."
@@ -16797,14 +16797,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "Résine de Boswellia serrata & Résine de Myrrhe (65g)"
       ],
       "solvent": "Alcool éthylique bio 90°–96° sans eau (titre optimal résines d'encens & myrrhe ; option huile végétale vierge possible)",
-      "temp": "45°C (Tincture ajusté / Sans chauffe)",
+      "temp": "45°C (Tincture réglé manuellement)",
       "duration": "2h00"
     },
     "instructions": [
       "Étape 1 : Préparation — Congeler brièvement puis concasser les résines de Boswellia et Myrrhe ; peser les extraits de la Phase A.",
       "Étape 2 : Extraction polaire (Sachet A) — Placer Centella et Aloe vera dans la cuve avec Eau distillée + Glycérine (65 °C, 1h30). Filtrer et réserver.",
       "Étape 3 : Transition obligatoire — Vider, nettoyer (Nettoyage 5 min) et sécher intégralement la cuve.",
-      "Étape 4 : Extraction résineuse (Sachet B) — En cuve propre et sèche (pièce ventilée, aucune flamme, couvercle verrouillé, MIN/MAX), extraire les résines dans l'alcool 90°–96° sans ajout d'eau via Tincture ajusté (45 °C, 2h00) ou Sans chauffe.",
+      "Étape 4 : Extraction résineuse (Sachet B) — En cuve propre et sèche (pièce ventilée, aucune flamme, couvercle verrouillé, MIN/MAX, sous surveillance continue), extraire les résines dans l'alcool 90°–96° sans ajout d'eau via Tincture réglé manuellement (45 °C, 2h00) ou en bocal hermétique hors appareil.",
       "Étape 5 : Filtration & Conditionnement — Filtrer finement à froid pour retenir les cires, assembler hors appareil en flacon ambré compte-gouttes et conserver au frais."
     ],
     "molecularSignature": [
@@ -19681,7 +19681,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 300,
     "totalTimeMinutes": 320,
     "tempSachetA": "70°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
@@ -19729,14 +19729,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "10 g de Gingembre"
       ],
       "solvent": "Alcool éthylique bio 70° (250 ml — titre optimal pour alkylamides d’échinacée et gingérols)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Phase A (Hydro-glycérinée) — Déposer l'échinacée et le gingembre dans le panier inox BloomLab®. Verser eau distillée et glycérine. Lancer à 70°C pendant 2h00.",
       "Étape 2 : Transition obligatoire — Laisser refroidir naturellement cuve éteinte, filtrer la Phase A, puis vider, nettoyer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
       "Étape 3 : Phase B alcoolique (70°) — Placer les plantes de la Phase B en cuve propre et sèche avec 250 ml d'alcool alimentaire à 70° (entre MIN et MAX, pièce ventilée, aucune flamme).",
-      "Étape 4 : Extraction Phase B — Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) ou transférer en bocal hermétique (ne pas chauffer une dilution hydro-alcoolique contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+      "Étape 4 : Extraction Phase B — Pour cette dilution hydro-alcoolique contenant de l'eau, réaliser la macération en bocal hermétique hors appareil à l'abri de la lumière (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool en glycérine ou huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 5 : Filtration et Assemblage — Filtrer sur étamine fine, assembler les fractions A et B hors appareil et embouteiller en flacon verre ambré."
     ],
     "molecularSignature": [
@@ -19762,7 +19762,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "Prudence en cas d'ulcère gastrique ou duodénal (gingembre).",
       "Femmes enceintes ou allaitantes : solliciter un avis médical.",
       "Alcool inflammable : préparer en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre MIN/MAX.",
-      "Ne jamais ajouter d'eau lors d'un cycle Tincture chauffé ; utiliser le mode Sans chauffe (ou bocal) pour les titres hydro-alcooliques (45°–70°).",
+      "Ne jamais ajouter d'eau lors d'un cycle Tincture ; réaliser les macérations hydro-alcooliques diluées (45°–70°) en bocal hermétique hors appareil et ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché.",
       "Déconseillé aux femmes enceintes/allaitantes, aux enfants et en cas de sensibilité ou sevrage alcoolique."
     ],
     "contraindications": [
@@ -19821,7 +19821,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 330,
     "totalTimeMinutes": 350,
     "tempSachetA": "75°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
@@ -19869,14 +19869,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "10 g d'Astragale"
       ],
       "solvent": "Alcool éthylique bio 70° (250 ml — titre optimal pour astragalosides et alkylamides)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Phase A — Insérer l'échinacée et l'astragale dans le panier inox. Verser eau et glycérine. Chauffer à 75°C pendant 2h30.",
       "Étape 2 : Transition obligatoire — Laisser refroidir naturellement cuve éteinte, filtrer la Phase A, puis vider, nettoyer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
       "Étape 3 : Phase B alcoolique (70°) — Placer les plantes de la Phase B en cuve propre et sèche avec 250 ml d'alcool alimentaire à 70° (entre MIN et MAX, pièce ventilée, aucune flamme).",
-      "Étape 4 : Extraction Phase B — Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) ou transférer en bocal hermétique (ne pas chauffer une dilution hydro-alcoolique contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+      "Étape 4 : Extraction Phase B — Pour cette dilution hydro-alcoolique contenant de l'eau, réaliser la macération en bocal hermétique hors appareil à l'abri de la lumière (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool en glycérine ou huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 5 : Filtration et Assemblage — Filtrer sur étamine fine, assembler les fractions A et B hors appareil et embouteiller en flacon verre ambré."
     ],
     "molecularSignature": [
@@ -19896,7 +19896,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "Déconseillé en cas de fièvre aiguë très élevée (l'astragale est un tonique de fond, pas un antipyrétique).",
       "Contre-indiqué en cas de maladies auto-immunes.",
       "Alcool inflammable : préparer en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre MIN/MAX.",
-      "Ne jamais ajouter d'eau lors d'un cycle Tincture chauffé ; utiliser le mode Sans chauffe (ou bocal) pour les titres hydro-alcooliques (45°–70°).",
+      "Ne jamais ajouter d'eau lors d'un cycle Tincture ; réaliser les macérations hydro-alcooliques diluées (45°–70°) en bocal hermétique hors appareil et ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché.",
       "Déconseillé aux femmes enceintes/allaitantes, aux enfants et en cas de sensibilité ou sevrage alcoolique."
     ],
     "contraindications": [
@@ -19947,7 +19947,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 300,
     "totalTimeMinutes": 315,
     "tempSachetA": "60°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
@@ -19995,14 +19995,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "10 g de Mauve sylvestre"
       ],
       "solvent": "Alcool éthylique bio 50° (250 ml — titre optimal pour flavonoïdes de mauve et glabridine)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Phase A — Mettre réglisse et mauve dans le panier inox. Verser eau et glycérine. Chauffer à 60°C pendant 2h00.",
       "Étape 2 : Transition obligatoire — Laisser refroidir naturellement cuve éteinte, filtrer la Phase A, puis vider, nettoyer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
       "Étape 3 : Phase B alcoolique (50°) — Placer les plantes de la Phase B en cuve propre et sèche avec 250 ml d'alcool alimentaire à 50° (entre MIN et MAX, pièce ventilée, aucune flamme).",
-      "Étape 4 : Extraction Phase B — Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) ou transférer en bocal hermétique (ne pas chauffer une dilution hydro-alcoolique contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+      "Étape 4 : Extraction Phase B — Pour cette dilution hydro-alcoolique contenant de l'eau, réaliser la macération en bocal hermétique hors appareil à l'abri de la lumière (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool en glycérine ou huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 5 : Filtration et Assemblage — Filtrer sur étamine fine, assembler les fractions A et B hors appareil et embouteiller en flacon verre ambré."
     ],
     "molecularSignature": [
@@ -20022,7 +20022,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "Contre-indiqué en cas d'hypertension artérielle ou d'hypokaliémie (réglisse).",
       "Prendre à 2 heures d'intervalle de tout médicament oral (mucilages diminuant l'absorption digestive).",
       "Alcool inflammable : préparer en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre MIN/MAX.",
-      "Ne jamais ajouter d'eau lors d'un cycle Tincture chauffé ; utiliser le mode Sans chauffe (ou bocal) pour les titres hydro-alcooliques (45°–70°).",
+      "Ne jamais ajouter d'eau lors d'un cycle Tincture ; réaliser les macérations hydro-alcooliques diluées (45°–70°) en bocal hermétique hors appareil et ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché.",
       "Déconseillé aux femmes enceintes/allaitantes, aux enfants et en cas de sensibilité ou sevrage alcoolique."
     ],
     "contraindications": [
@@ -20073,7 +20073,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 270,
     "totalTimeMinutes": 290,
     "tempSachetA": "60°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
@@ -20120,14 +20120,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "10 g de Graines de Nigelle"
       ],
       "solvent": "Alcool éthylique bio 60° (250 ml — titre optimal pour thymoquinone et iridoïdes)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Phase A — Concasser les graines de nigelle, placer avec le plantain dans le panier inox. Verser eau et glycérine. Chauffer à 60°C pendant 1h30.",
       "Étape 2 : Transition obligatoire — Laisser refroidir naturellement cuve éteinte, filtrer la Phase A, puis vider, nettoyer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
       "Étape 3 : Phase B alcoolique (60°) — Placer les plantes de la Phase B en cuve propre et sèche avec 250 ml d'alcool alimentaire à 60° (entre MIN et MAX, pièce ventilée, aucune flamme).",
-      "Étape 4 : Extraction Phase B — Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) ou transférer en bocal hermétique (ne pas chauffer une dilution hydro-alcoolique contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+      "Étape 4 : Extraction Phase B — Pour cette dilution hydro-alcoolique contenant de l'eau, réaliser la macération en bocal hermétique hors appareil à l'abri de la lumière (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool en glycérine ou huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 5 : Filtration et Assemblage — Filtrer sur étamine fine, assembler les fractions A et B hors appareil et embouteiller en flacon verre ambré."
     ],
     "molecularSignature": [
@@ -20148,7 +20148,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "Prendre à distance de 2h des médicaments allopathiques.",
       "Déconseillé chez la femme enceinte.",
       "Alcool inflammable : préparer en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre MIN/MAX.",
-      "Ne jamais ajouter d'eau lors d'un cycle Tincture chauffé ; utiliser le mode Sans chauffe (ou bocal) pour les titres hydro-alcooliques (45°–70°).",
+      "Ne jamais ajouter d'eau lors d'un cycle Tincture ; réaliser les macérations hydro-alcooliques diluées (45°–70°) en bocal hermétique hors appareil et ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché.",
       "Déconseillé aux femmes enceintes/allaitantes, aux enfants et en cas de sensibilité ou sevrage alcoolique."
     ],
     "contraindications": [
@@ -20199,7 +20199,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 210,
     "totalTimeMinutes": 225,
     "tempSachetA": "55°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
@@ -20246,14 +20246,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "10 g de Plantain"
       ],
       "solvent": "Alcool éthylique bio 45° (250 ml — titre optimal pour anthocyanes, iridoïdes et mucilages doux)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Phase A — Placer mauve et plantain dans le panier inox. Verser eau et glycérine. Chauffer à 55°C pendant 1h30.",
       "Étape 2 : Transition obligatoire — Laisser refroidir naturellement cuve éteinte, filtrer la Phase A, puis vider, nettoyer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
       "Étape 3 : Phase B alcoolique (45°) — Placer les plantes de la Phase B en cuve propre et sèche avec 250 ml d'alcool alimentaire à 45° (entre MIN et MAX, pièce ventilée, aucune flamme).",
-      "Étape 4 : Extraction Phase B — Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) ou transférer en bocal hermétique (ne pas chauffer une dilution hydro-alcoolique contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+      "Étape 4 : Extraction Phase B — Pour cette dilution hydro-alcoolique contenant de l'eau, réaliser la macération en bocal hermétique hors appareil à l'abri de la lumière (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool en glycérine ou huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 5 : Filtration et Assemblage — Filtrer sur étamine fine, assembler les fractions A et B hors appareil et embouteiller en flacon verre ambré."
     ],
     "molecularSignature": [
@@ -20272,7 +20272,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "precautions": [
       "Respecter un délai d'au moins 2 heures entre la prise et vos médicaments habituels pour ne pas freiner leur absorption.",
       "Alcool inflammable : préparer en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre MIN/MAX.",
-      "Ne jamais ajouter d'eau lors d'un cycle Tincture chauffé ; utiliser le mode Sans chauffe (ou bocal) pour les titres hydro-alcooliques (45°–70°).",
+      "Ne jamais ajouter d'eau lors d'un cycle Tincture ; réaliser les macérations hydro-alcooliques diluées (45°–70°) en bocal hermétique hors appareil et ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché.",
       "Déconseillé aux femmes enceintes/allaitantes, aux enfants et en cas de sensibilité ou sevrage alcoolique."
     ],
     "contraindications": [
@@ -20322,7 +20322,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 300,
     "totalTimeMinutes": 320,
     "tempSachetA": "65°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
@@ -20370,14 +20370,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "10 g de Gingembre"
       ],
       "solvent": "Alcool éthylique bio 70° (250 ml — titre optimal pour thymoquinone et gingérols/shogaols)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Phase A — Mettre nigelle concassée et gingembre dans le panier inox. Verser eau et glycérine. Chauffer à 65°C pendant 2h00.",
       "Étape 2 : Transition obligatoire — Laisser refroidir naturellement cuve éteinte, filtrer la Phase A, puis vider, nettoyer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
       "Étape 3 : Phase B alcoolique (70°) — Placer les plantes de la Phase B en cuve propre et sèche avec 250 ml d'alcool alimentaire à 70° (entre MIN et MAX, pièce ventilée, aucune flamme).",
-      "Étape 4 : Extraction Phase B — Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) ou transférer en bocal hermétique (ne pas chauffer une dilution hydro-alcoolique contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+      "Étape 4 : Extraction Phase B — Pour cette dilution hydro-alcoolique contenant de l'eau, réaliser la macération en bocal hermétique hors appareil à l'abri de la lumière (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool en glycérine ou huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 5 : Filtration et Assemblage — Filtrer sur étamine fine, assembler les fractions A et B hors appareil et embouteiller en flacon verre ambré."
     ],
     "molecularSignature": [
@@ -20398,7 +20398,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "Surveillance recommandée chez les personnes diabétiques sous traitement.",
       "Déconseillé chez la femme enceinte.",
       "Alcool inflammable : préparer en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre MIN/MAX.",
-      "Ne jamais ajouter d'eau lors d'un cycle Tincture chauffé ; utiliser le mode Sans chauffe (ou bocal) pour les titres hydro-alcooliques (45°–70°).",
+      "Ne jamais ajouter d'eau lors d'un cycle Tincture ; réaliser les macérations hydro-alcooliques diluées (45°–70°) en bocal hermétique hors appareil et ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché.",
       "Déconseillé aux femmes enceintes/allaitantes, aux enfants et en cas de sensibilité ou sevrage alcoolique."
     ],
     "contraindications": [
@@ -20449,7 +20449,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 300,
     "totalTimeMinutes": 315,
     "tempSachetA": "60°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
@@ -20496,14 +20496,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "10 g de Calendula"
       ],
       "solvent": "Alcool éthylique bio 50° (250 ml — titre optimal pour esters linalyliques et faradiol)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Phase A — Déposer fleurs de lavande et souci dans le panier inox. Verser eau et glycérine. Chauffer à 60°C pendant 2h00.",
       "Étape 2 : Transition obligatoire — Laisser refroidir naturellement cuve éteinte, filtrer la Phase A, puis vider, nettoyer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
       "Étape 3 : Phase B alcoolique (50°) — Placer les plantes de la Phase B en cuve propre et sèche avec 250 ml d'alcool alimentaire à 50° (entre MIN et MAX, pièce ventilée, aucune flamme).",
-      "Étape 4 : Extraction Phase B — Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) ou transférer en bocal hermétique (ne pas chauffer une dilution hydro-alcoolique contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+      "Étape 4 : Extraction Phase B — Pour cette dilution hydro-alcoolique contenant de l'eau, réaliser la macération en bocal hermétique hors appareil à l'abri de la lumière (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool en glycérine ou huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 5 : Filtration et Assemblage — Filtrer sur étamine fine, assembler les fractions A et B hors appareil et embouteiller en flacon verre ambré."
     ],
     "molecularSignature": [
@@ -20524,7 +20524,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "Usage oral systémique ou compresse tiède autour de l'oreille uniquement.",
       "Contre-indiqué en cas d'allergie aux Astéracées (calendula).",
       "Alcool inflammable : préparer en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre MIN/MAX.",
-      "Ne jamais ajouter d'eau lors d'un cycle Tincture chauffé ; utiliser le mode Sans chauffe (ou bocal) pour les titres hydro-alcooliques (45°–70°).",
+      "Ne jamais ajouter d'eau lors d'un cycle Tincture ; réaliser les macérations hydro-alcooliques diluées (45°–70°) en bocal hermétique hors appareil et ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché.",
       "Déconseillé aux femmes enceintes/allaitantes, aux enfants et en cas de sensibilité ou sevrage alcoolique."
     ],
     "contraindications": [
@@ -20575,7 +20575,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 300,
     "totalTimeMinutes": 315,
     "tempSachetA": "65°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
@@ -20622,14 +20622,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "10 g de Racine de Réglisse"
       ],
       "solvent": "Alcool éthylique bio 55° (250 ml — titre optimal pour acide glycyrrhizique et flavonoïdes)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Phase A — Disposer plantain et réglisse dans le panier inox. Verser eau et glycérine. Chauffer à 65°C pendant 2h00.",
       "Étape 2 : Transition obligatoire — Laisser refroidir naturellement cuve éteinte, filtrer la Phase A, puis vider, nettoyer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
       "Étape 3 : Phase B alcoolique (55°) — Placer les plantes de la Phase B en cuve propre et sèche avec 250 ml d'alcool alimentaire à 55° (entre MIN et MAX, pièce ventilée, aucune flamme).",
-      "Étape 4 : Extraction Phase B — Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) ou transférer en bocal hermétique (ne pas chauffer une dilution hydro-alcoolique contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+      "Étape 4 : Extraction Phase B — Pour cette dilution hydro-alcoolique contenant de l'eau, réaliser la macération en bocal hermétique hors appareil à l'abri de la lumière (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool en glycérine ou huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 5 : Filtration et Assemblage — Filtrer sur étamine fine, assembler les fractions A et B hors appareil et embouteiller en flacon verre ambré."
     ],
     "molecularSignature": [
@@ -20650,7 +20650,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "Prendre à 2 heures d'intervalle des médicaments oraux.",
       "Faire des pauses régulières entre les cures.",
       "Alcool inflammable : préparer en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre MIN/MAX.",
-      "Ne jamais ajouter d'eau lors d'un cycle Tincture chauffé ; utiliser le mode Sans chauffe (ou bocal) pour les titres hydro-alcooliques (45°–70°).",
+      "Ne jamais ajouter d'eau lors d'un cycle Tincture ; réaliser les macérations hydro-alcooliques diluées (45°–70°) en bocal hermétique hors appareil et ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché.",
       "Déconseillé aux femmes enceintes/allaitantes, aux enfants et en cas de sensibilité ou sevrage alcoolique."
     ],
     "contraindications": [
@@ -20701,7 +20701,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 300,
     "totalTimeMinutes": 320,
     "tempSachetA": "75°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
@@ -20749,14 +20749,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "10 g d'Ortie dioïque"
       ],
       "solvent": "Alcool éthylique bio 60° (250 ml — titre optimal pour alkylamides, lignanes et stérols)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Phase A — Mettre échinacée et ortie dans le panier inox. Verser eau et glycérine. Chauffer à 75°C pendant 2h00.",
       "Étape 2 : Transition obligatoire — Laisser refroidir naturellement cuve éteinte, filtrer la Phase A, puis vider, nettoyer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
       "Étape 3 : Phase B alcoolique (60°) — Placer les plantes de la Phase B en cuve propre et sèche avec 250 ml d'alcool alimentaire à 60° (entre MIN et MAX, pièce ventilée, aucune flamme).",
-      "Étape 4 : Extraction Phase B — Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) ou transférer en bocal hermétique (ne pas chauffer une dilution hydro-alcoolique contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+      "Étape 4 : Extraction Phase B — Pour cette dilution hydro-alcoolique contenant de l'eau, réaliser la macération en bocal hermétique hors appareil à l'abri de la lumière (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool en glycérine ou huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 5 : Filtration et Assemblage — Filtrer sur étamine fine, assembler les fractions A et B hors appareil et embouteiller en flacon verre ambré."
     ],
     "molecularSignature": [
@@ -20777,7 +20777,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "Déconseillé en cas d'insuffisance rénale sévère ou d'insuffisance cardiaque avec œdèmes.",
       "Déconseillé en cas de maladies auto-immunes.",
       "Alcool inflammable : préparer en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre MIN/MAX.",
-      "Ne jamais ajouter d'eau lors d'un cycle Tincture chauffé ; utiliser le mode Sans chauffe (ou bocal) pour les titres hydro-alcooliques (45°–70°).",
+      "Ne jamais ajouter d'eau lors d'un cycle Tincture ; réaliser les macérations hydro-alcooliques diluées (45°–70°) en bocal hermétique hors appareil et ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché.",
       "Déconseillé aux femmes enceintes/allaitantes, aux enfants et en cas de sensibilité ou sevrage alcoolique."
     ],
     "contraindications": [
@@ -20828,7 +20828,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
     "machineTimeMinutes": 300,
     "totalTimeMinutes": 320,
     "tempSachetA": "75°C",
-    "tempSachetB": "Sans chauffe",
+    "tempSachetB": "Bocal hermétique hors appareil",
     "shelfLife": "Au réfrigérateur en flacon ambré propre ; consommation rapide recommandée (durée exacte non validée par étude spécifique)",
     "yieldMl": 500,
     "heritage": {
@@ -20876,14 +20876,14 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
         "10 g de Racine d'Éleuthérocoque"
       ],
       "solvent": "Alcool éthylique bio 70° (250 ml — titre optimal pour rosavines et éleuthérosides B/E)",
-      "temp": "Ambiante (Sans chauffe / bocal)",
-      "duration": "4h à 12h"
+      "temp": "Bocal hermétique hors appareil",
+      "duration": "Macération traditionnelle hors appareil"
     },
     "instructions": [
       "Étape 1 : Phase A — Déposer rhodiola et éleuthérocoque dans le panier inox. Verser eau et glycérine. Chauffer à 75°C pendant 2h00.",
       "Étape 2 : Transition obligatoire — Laisser refroidir naturellement cuve éteinte, filtrer la Phase A, puis vider, nettoyer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
       "Étape 3 : Phase B alcoolique (70°) — Placer les plantes de la Phase B en cuve propre et sèche avec 250 ml d'alcool alimentaire à 70° (entre MIN et MAX, pièce ventilée, aucune flamme).",
-      "Étape 4 : Extraction Phase B — Verrouiller le couvercle et lancer le programme « Sans chauffe » (4h à 12h) ou transférer en bocal hermétique (ne pas chauffer une dilution hydro-alcoolique contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+      "Étape 4 : Extraction Phase B — Pour cette dilution hydro-alcoolique contenant de l'eau, réaliser la macération en bocal hermétique hors appareil à l'abri de la lumière (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; option sans alcool en glycérine ou huile végétale possible dans BloomLab® sous surveillance).",
       "Étape 5 : Filtration et Assemblage — Filtrer sur étamine fine, assembler les fractions A et B hors appareil et embouteiller en flacon verre ambré."
     ],
     "molecularSignature": [
@@ -20904,7 +20904,7 @@ export const HERBIER_RECIPES: HerbierRecipe[] = [
       "Déconseillé en cas de troubles bipolaires ou d'insomnie nerveuse.",
       "Prise impérativement le matin et avant 14h pour préserver l'endormissement.",
       "Alcool inflammable : préparer en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre MIN/MAX.",
-      "Ne jamais ajouter d'eau lors d'un cycle Tincture chauffé ; utiliser le mode Sans chauffe (ou bocal) pour les titres hydro-alcooliques (45°–70°).",
+      "Ne jamais ajouter d'eau lors d'un cycle Tincture ; réaliser les macérations hydro-alcooliques diluées (45°–70°) en bocal hermétique hors appareil et ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché.",
       "Déconseillé aux femmes enceintes/allaitantes, aux enfants et en cas de sensibilité ou sevrage alcoolique."
     ],
     "contraindications": [

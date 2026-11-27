@@ -1,5 +1,9 @@
 User-agent: *
 Allow: /
+Allow: /images/
+Allow: /img/
+Allow: /products/
+Allow: /assets/
 Disallow: /admin
 Disallow: /panier
 Disallow: /commande

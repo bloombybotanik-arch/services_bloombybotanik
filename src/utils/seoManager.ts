@@ -63,8 +63,8 @@ const PRODUCT_SEO_MAP: Record<string, SEOEntry> = {
     path: "/boutique/kit-hiver/"
   },
   "duo-argiles": {
-    title: "Duo Argiles & Terres Rares | Purification | Bloom by BotaniK",
-    description: "Duo Argiles Zéolithe-Bentonite Bloom by BotaniK : argiles surfines ventilées pour vos préparations d'herboristerie et soins du terrain.",
+    title: "Duo Argiles & Terres Rares | Zéolithe & Bentonite 6 µm | Bloom by BotaniK",
+    description: "Duo Argiles Zéolithe-Bentonite Bloom by BotaniK : argiles surfines ventilées pour vos préparations minérales et botaniques maison.",
     path: "/boutique/duo-argiles/"
   },
   "abonnements-numeriques": {
@@ -152,7 +152,7 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
   },
   'teinture-mere': {
     title: "Teinture-Mère Maison | Guide Extraction Hydroalcoolique | Bloom",
-    description: "Maîtrisez les teintures mères maison et degrés alcooliques (45° à 96°) avec les programmes Tincture et Sans chauffe de la BloomLab® ou en bocal, en toute sécurité.",
+    description: "Maîtrisez les teintures mères maison et degrés alcooliques (45° à 96°) avec le programme Tincture réglable de la BloomLab® (alcool fort sans eau) ou en bocal hermétique hors appareil, en toute sécurité.",
     path: "/teinture-mere/"
   },
   academie: {
@@ -487,7 +487,7 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
   },
   'maceration-plantes': {
     title: "Macération de Plantes | Huileuse, Aqueuse, Glycérinée & Alcoolique | Bloom",
-    description: "Maîtrisez la macération végétale (huileuse, glycérinée, aqueuse ou alcoolique sur BloomLab® via Oil, Tincture et Sans chauffe) pour préserver le totum.",
+    description: "Maîtrisez la macération végétale (huileuse, glycérinée, aqueuse sur BloomLab® via Oil/Tincture ou hydro-alcoolique en bocal hors appareil) pour préserver le totum.",
     path: "/maceration-plantes/"
   },
   'qu-est-ce-que-infusion': {

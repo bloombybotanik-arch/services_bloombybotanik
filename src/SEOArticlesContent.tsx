@@ -268,7 +268,7 @@ export const InfusionPrecision = ({ lang, t, onNavigate }: SEOArticleProps) => {
                 <span className="font-mono text-xl font-black text-orange-700">{tr('Dès 50°C', 'From 50°C', 'Ab 50°C')}</span>
                 <Activity className="w-5 h-5 text-orange-600" />
               </div>
-              <h3 className="font-bold text-[#3E4A3D] text-sm">{tr('Inactivation anti-inflammatoire', 'Phenolic structure shifts', 'Veränderung von Phenolstrukturen')}</h3>
+              <h3 className="font-bold text-[#3E4A3D] text-sm">{tr('Altération phénolique', 'Phenolic structure shifts', 'Veränderung von Phenolstrukturen')}</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 {tr(
                   'Les composés phénoliques majeurs (romarin, curcuma) perdent leur structure tridimensionnelle active.',
@@ -393,7 +393,7 @@ export const InfusionPrecision = ({ lang, t, onNavigate }: SEOArticleProps) => {
                 <span className="w-2 h-2 rounded-full bg-[#C8AB8A] mt-1.5 shrink-0" />
                 <div>
                   <strong className="text-[#3E4A3D]">{tr('Les résines de boswellia', 'Boswellia resin', 'Weihrauchharz (Boswellia)')}</strong>{' '}
-                  {tr('(anti-inflammatoire majeur) : nécessitent une liquéfaction thermique précise pour libérer les acides boswelliques.', '(boswellic acids): require gentle thermal softening in lipid or hydroalcoholic media for proper release.', '(Boswelliasäuren): erfordern gezielte Erwärmung zur Verflüssigung der Harzfraktionen.')}
+                  {tr('(acides boswelliques) : nécessitent une liquéfaction thermique douce pour disperser les fractions résineuses.', '(boswellic acids): require gentle thermal softening in lipid or hydroalcoholic media for proper release.', '(Boswelliasäuren): erfordern gezielte Erwärmung zur Verflüssigung der Harzfraktionen.')}
                 </div>
               </div>
               <div className="flex items-start gap-2.5 p-3 rounded-xl bg-[#FAF7F2] border border-[#E7DFD3]">
@@ -2150,7 +2150,7 @@ export const SolvantsExtraction = ({ lang, t, onNavigate, isPremium, onRequireAu
                   </div>
 
                   <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15 text-xs sm:text-sm text-white/95 mt-4">
-                    <strong className="text-[#C8AB8A]">{tr("La leçon Bloom pour la pratique domestique :", 'The Bloom takeaway for home practice:', 'Die Bloom-Erkenntnis für zu Hause:')}</strong> {tr("la température est tout aussi déterminante que le solvant. Dans BloomLab®, vous sélectionnez la température et la durée adaptées à chaque phase et solvant : eau, huiles végétales, glycérine ou alcool (via le programme Tincture pour l'alcool haute preuve sans eau ou Sans chauffe pour les macérations douces, dans le strict respect des consignes sécurité anti-flamme et ventilation du manuel).", 'temperature matters just as much as solvent polarity. In BloomLab®, you choose the temperature and duration suited to each phase and solvent: water, carrier oils, glycerin, or alcohol (using Tincture for waterless high-proof alcohol or No heating for gentle macerations, strictly following flame-free ventilation safety rules).', 'Die Temperatur ist ebenso entscheidend wie das Lösungsmittel. In der BloomLab® stellen Sie Temperatur und Zeit passend für Wasser, Pflanzenöl, Glycerin oder Alkohol ein (Tincture für hochprozentigen Alkohol ohne Wasserzusatz oder Ohne Heizung für sanfte Mazerationen gemäß Sicherheitshinweisen).')}
+                    <strong className="text-[#C8AB8A]">{tr("La leçon Bloom pour la pratique domestique :", 'The Bloom takeaway for home practice:', 'Die Bloom-Erkenntnis für zu Hause:')}</strong> {tr("la température est tout aussi déterminante que le solvant. Dans BloomLab®, vous sélectionnez la température et la durée adaptées à chaque phase et solvant : eau, huiles végétales, glycérine ou alcool haute preuve sans eau (via le programme Tincture réglable en temps et température, sous surveillance continue et dans le strict respect des consignes anti-flamme du manuel ; les dilutions hydro-alcooliques à l'eau se font en bocal hors appareil).", 'temperature matters just as much as solvent polarity. In BloomLab®, you choose the temperature and duration suited to each phase and solvent: water, carrier oils, glycerin, or waterless high-proof alcohol (via the adjustable Tincture program under continuous supervision and flame-free safety rules; diluted hydroalcoholic macerations are kept in a sealed jar outside the appliance).', 'Die Temperatur ist ebenso entscheidend wie das Lösungsmittel. In der BloomLab® stellen Sie Temperatur und Zeit passend für Wasser, Pflanzenöl, Glycerin oder wasserfreien Hochprozent-Alkohol ein (über das anpassbare Tincture-Programm unter ständiger Aufsicht gemäß Sicherheitsregeln; wasserverdünnte Ansätze außerhalb des Geräts im Glas).')}
                   </div>
                 </div>
               </div>
@@ -2315,8 +2315,8 @@ export const SolvantsExtraction = ({ lang, t, onNavigate, isPremium, onRequireAu
                       </td>
                       <td className="p-4 sm:p-5 font-mono text-xs">{tr('Intermédiaire (bipolaire)', 'Intermediate (bipolar)', 'Intermediär (bipolar)')}</td>
                       <td className="p-4 sm:p-5 text-slate-600">{tr('Alcaloïdes, résines, principes amers', 'Alkaloids, resins, bitter principles', 'Alkaloide, Harze, Bitterstoffe')}</td>
-                      <td className="p-4 sm:p-5 font-mono font-semibold text-[#C8AB8A]">{tr('Sans chauffe ou Tincture (ex. 40–55 °C, sans eau)', 'No heating or Tincture (e.g. 40–55°C without water)', 'Ohne Heizung oder Tincture (z. B. 40–55 °C ohne Wasser)')}</td>
-                      <td className="p-4 sm:p-5 text-slate-600">{tr('Teintures mères (en BloomLab® sous strictes consignes sécurité anti-flamme & ventilation, ou en bocal)', 'Mother tinctures (in BloomLab® under strict ventilation/flame-free safety rules, or glass jar)', 'Urtinkturen (in BloomLab® unter strengen Sicherheitsregeln oder im Glas)')}</td>
+                      <td className="p-4 sm:p-5 font-mono font-semibold text-[#C8AB8A]">{tr('Tincture ≥75° sans eau (ex. 40–55 °C ou 71 °C) ou bocal hors appareil (<75°)', 'Waterless Tincture ≥75% (e.g. 40–55°C or 71°C) or jar (<75%)', 'Tincture ≥75 % ohne Wasser (z. B. 40–55 °C / 71 °C) oder Glas (<75 %)')}</td>
+                      <td className="p-4 sm:p-5 text-slate-600">{tr('Teintures mères (en BloomLab® uniquement sans eau sous surveillance et règles anti-flamme, ou en bocal hermétique hors appareil)', 'Mother tinctures (in BloomLab® waterless only under continuous supervision and flame-free rules, or sealed jar outside appliance)', 'Urtinkturen (in BloomLab® nur wasserfrei unter Aufsicht gemäß Flammschutzregeln oder im verschlossenen Glas)')}</td>
                       <td className="p-4 sm:p-5 text-slate-500">{tr("Flacon opaque fermé, à l'abri de la chaleur", 'Sealed opaque bottle away from heat', 'Licht- und wärmegeschützt lagern')}</td>
                     </tr>
 

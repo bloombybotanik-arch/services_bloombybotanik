@@ -339,13 +339,16 @@ export function renderCategoryPageHtml(categoryKey: 'culinaires' | 'cosmetiques'
   canonical: string;
   jsonLd: string;
   bodyHtml: string;
-} {
+} | null {
   const catMeta = CATEGORY_METADATA[categoryKey];
   const allRecipes = RECIPES_BY_CATEGORY[catMeta.id];
   const totalRecipes = allRecipes.length;
   const pageSize = catMeta.pageSize;
-  const totalPages = Math.ceil(totalRecipes / pageSize);
-  const currentPage = Math.max(1, Math.min(pageNumber, totalPages));
+  const totalPages = Math.ceil(totalRecipes / pageSize) || 1;
+  if (!Number.isFinite(pageNumber) || pageNumber < 1 || pageNumber > totalPages) {
+    return null;
+  }
+  const currentPage = pageNumber;
 
   const startIdx = (currentPage - 1) * pageSize;
   const pageRecipes = allRecipes.slice(startIdx, startIdx + pageSize);

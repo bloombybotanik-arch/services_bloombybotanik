@@ -519,7 +519,7 @@ export default function ProtocoleDecalcificationPinealeContent({
                   </p>
                   <div className="bg-white/5 rounded-xl p-3.5 text-xs text-[#FAF7F2]/80 space-y-1">
                     <p><strong className="text-[#d8b85c]">Plantes actives :</strong> Passiflore, Bacopa monnieri, extrait de Cerise de Montmorency (mélatonine végétale native).</p>
-                    <p><strong className="text-[#d8b85c]">Résultat attendu :</strong> Allongement des phases de sommeil réparateur, clarté mentale matinale nette.</p>
+                    <p><strong className="text-[#d8b85c]">Piste d'étude :</strong> Observation traditionnelle du cycle nocturne et de la détente en fin de journée (données documentaires, non thérapeutiques).</p>
                   </div>
                 </div>
 
@@ -637,12 +637,12 @@ export default function ProtocoleDecalcificationPinealeContent({
                   <ul className="text-xs text-[#FAF7F2]/70 space-y-1">
                     <li>• Rhizome de Curcuma bio concassé : <strong>30 g</strong></li>
                     <li>• Rhizome de Gingembre frais haché : <strong>15 g</strong></li>
-                    <li>• Huile végétale vierge alimentaire ou glycérine végétale bio : <strong>500 ml</strong> (ou variante teinture hydroalcoolique à 70° sur mode <em>Sans chauffe</em> après séchage complet de la cuve)</li>
-                    <li><em>(En cas d'option hydroalcoolique, respecter impérativement les consignes sécurité : aucune flamme nue, pièce ventilée, couvercle verrouillé, niveaux MIN–MAX.)</em></li>
+                    <li>• Huile végétale vierge alimentaire ou glycérine végétale bio : <strong>500 ml</strong> (ou macération hydroalcoolique à 70° en <em>bocal hermétique hors appareil</em>)</li>
+                    <li><em>(En cas d'option hydroalcoolique hors appareil : travailler en pièce très ventilée loin de toute flamme ; ne jamais chauffer d'alcool dilué à l'eau dans BloomLab® et ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché.)</em></li>
                   </ul>
                   <div className="pt-2 border-t border-white/5 text-[11px] text-[#FAF7F2]/80 space-y-0.5">
-                    <p><strong>Température BloomLab :</strong> 45°C (huile végétale) / 40°C (glycérine) / Sans chauffe (option hydroalcoolique)</p>
-                    <p><strong>Durée :</strong> 2 heures (Agitation régulière continue)</p>
+                    <p><strong>Température BloomLab :</strong> 45°C (huile végétale) / 40°C (glycérine)</p>
+                    <p><strong>Durée :</strong> 2 heures (Agitation régulière continue dans BloomLab®)</p>
                     <p className="text-[#c9a84c]">La cuve en inox 304 permet de conduire séparément la Phase A puis la Phase B une fois la cuve vidée et séchée.</p>
                   </div>
                 </div>
@@ -746,7 +746,7 @@ export default function ProtocoleDecalcificationPinealeContent({
                   Synthèse de la démarche Bloom
                 </h3>
                 <p className="text-[#FAF7F2]/80">
-                  En alliant l'éviction stricte du fluorure, la chélation sélective par les extraits concentrés de Tamarin et de Prêle réalisés avec l'extracteur BloomLab®, et l'alignement rigoureux des rythmes circadiens, vous permettez à votre pharmacie intérieure de restaurer son chef d'orchestre biologique le plus précieux : l'épiphyse.
+                  En alliant l'hygiène de vie globale, l'usage documenté des extraits de Tamarin et de Prêle réalisés avec l'extracteur BloomLab®, et l'alignement rigoureux des rythmes circadiens, cette approche s'inscrit dans une démarche d'accompagnement quotidien de votre terrain et de votre rythme veille-sommeil.
                 </p>
               </div>
 

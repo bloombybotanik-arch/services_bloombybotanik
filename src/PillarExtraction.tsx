@@ -38,7 +38,7 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
     ? [
         {
           q: "Was ist der Unterschied zwischen Infusion, Dekokt und Mazeration?",
-          a: "Bei der Infusion werden empfindliche Blätter und Blüten zwischen 45 °C und 80 °C ohne Kochen extrahiert. Die Dekoktion eignet sich für harte Wurzeln und Rinden. Die Mazeration erfolgt kalt im Glas oder im Programm Ohne Erhitzen (30 Min.–12 Std.) bzw. temperaturgeregelt im BloomLab® (Programme Oil, Tincture oder manuelle TEMP/TIME-Einstellung von 0 °C bis 121 °C je nach Lösungsmittel)."
+          a: "Bei der Infusion werden empfindliche Blätter und Blüten zwischen 45 °C und 80 °C ohne Kochen extrahiert. Die Dekoktion eignet sich für harte Wurzeln und Rinden. Die Mazeration erfolgt kalt im Glas oder temperaturgeregelt im BloomLab® (Programme Oil, Tincture oder manuelle TEMP/TIME-Einstellung von 0 °C bis 121 °C je nach Lösungsmittel; die Funktion Ohne Erwärmung ohne Temperaturregelung dient kalten Mischungen wie Vinaigrette, nicht unseren Extraktionen)."
         },
         {
           q: "Warum bewahrt die sequenzielle A/B-Extraktion das pflanzliche Totum?",
@@ -50,13 +50,13 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
         },
         {
           q: "Welche Lösungsmittel eignen sich für die heimische Pflanzenextraktion?",
-          a: "Gefiltertes Wasser, native Pflanzenöle, Butter, pflanzliches Glycerin sowie Ansatzalkohol (45–96 Vol.-% je nach Pflanze). Für starken Alkohol ≥ 75 Vol.-% ohne Wasser steht das Programm Tincture (Standard 71 °C / 4 Std., einstellbar; nur in gut belüfteten Räumen, ohne Flamme, verriegelter Deckel, MIN/MAX beachten) zur Verfügung; für wässrige Verdünnungen (45–70 Vol.-%) nutzen Sie Ohne Erhitzen oder das Glasgefäß."
+          a: "Gefiltertes Wasser, native Pflanzenöle, Butter, pflanzliches Glycerin sowie Ansatzalkohol (45–96 Vol.-% je nach Pflanze). Für starken Alkohol ≥ 75 Vol.-% ohne Wasser steht das Programm Tincture (Standard 71 °C / 4 Std., einstellbar; nur in gut belüfteten Räumen, ohne Flamme, verriegelter Deckel, MIN/MAX beachten, unter ständiger Aufsicht) zur Verfügung; für wässrige Verdünnungen (45–70 Vol.-%) nutzen Sie das verschlossene Glasgefäß außerhalb des Geräts."
         }
       ]
     : [
         {
           q: "What is the difference between infusion, decoction, and maceration?",
-          a: "Infusion extracts delicate leaves and flowers between 45°C and 80°C without boiling. Decoction targets dense roots and barks. Maceration operates cold in glass jars or via No heating mode (30 min–12 h), or temperature-regulated in BloomLab® (Oil, Tincture, or manual TEMP/TIME from 0°C to 121°C depending on solvent)."
+          a: "Infusion extracts delicate leaves and flowers between 45°C and 80°C without boiling. Decoction targets dense roots and barks. Maceration operates cold in sealed glass jars or temperature-regulated in BloomLab® (Oil, Tincture, or manual TEMP/TIME from 0°C to 121°C depending on solvent; the non-adjustable No heating button is for cold mixes like vinaigrette, not plant extraction)."
         },
         {
           q: "Why does A/B sequential extraction preserve the plant Totum?",
@@ -68,7 +68,7 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
         },
         {
           q: "Which natural solvents can be used at home?",
-          a: "Filtered water, virgin carrier oils, butter, vegetable glycerin, and food-grade alcohol (45%–96% ABV by plant density). High-proof alcohol (≥ 75% ABV without added water) uses the Tincture program (71°C / 4h default, adjustable; well-ventilated space, no flame, locked lid, MIN/MAX levels); water-diluted alcohol (45%–70% ABV) should use No heating mode or a sealed glass jar."
+          a: "Filtered water, virgin carrier oils, butter, vegetable glycerin, and food-grade alcohol (45%–96% ABV by plant density). High-proof alcohol (≥ 75% ABV without added water) uses the Tincture program (71°C / 4h default, adjustable; well-ventilated space, no flame, locked lid, MIN/MAX levels, constantly attended); water-diluted alcohol (45%–70% ABV) uses a sealed glass jar outside the appliance."
         }
       ];
 
@@ -404,9 +404,9 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
                 {tr("réussir une teinture mère hydroalcoolique", "prepare a hydroalcoholic mother tincture", "eine hydroalkoholische Urtinktur herzustellen")}
               </button>
               {tr(
-                " (avec les programmes Tincture [71 °C / 160 °F – 4 h par défaut, réglables] ou Sans chauffe de BloomLab® sous strictes consignes anti-flamme, ou en bocal).",
-                " (using BloomLab®'s Tincture [71°C / 160°F – 4h default, adjustable] or No-heating modes under strict flame-free safety rules, or in a sealed glass jar).",
-                " (mit den BloomLab®-Modi Tincture [Standard 71 °C / 160 °F – 4 Std., anpassbar] oder Ohne Heizung unter strengen Flammschutzregeln oder im Glas)."
+                " (avec le programme Tincture [71 °C / 160 °F – 4 h par défaut, réglable] pour alcool ≥ 75 % sans eau sous strictes consignes anti-flamme et surveillance continue, ou en bocal hermétique hors appareil pour les dilutions à l'eau).",
+                " (using BloomLab®'s Tincture [71°C / 160°F – 4h default, adjustable] for waterless alcohol ≥ 75% ABV under strict flame-free rules and continuous attendance, or in a sealed glass jar outside the appliance for water dilutions).",
+                " (mit BloomLab® Tincture [Standard 71 °C / 160 °F – 4 Std., anpassbar] für wasserfreien Alkohol ≥ 75 % unter strengen Flammschutzregeln und Aufsicht oder im verschlossenen Glas außerhalb des Geräts bei Wasserverdünnung)."
               )}
             </p>
           </div>
@@ -559,9 +559,9 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
 
           <p className="text-base text-white/90 leading-relaxed font-medium">
             {tr(
-              "La machine BloomLab® combine cuve en inox 304 (grade alimentaire) et 6 fonctions (Butter, Oil, Tincture [71 °C / 160 °F – 4 h par défaut], Sans chauffe, Décarboxylation, Nettoyage 5 min) avec réglages manuels TEMP/TIME (0 à 121 °C, 30 min à 12 h sur les modes réglables). Vous conduisez séparément la Phase A aqueuse/glycérinée puis, cuve vidée et séchée, la Phase B (huile ou alcool en mode Tincture / Sans chauffe — vapeurs d’éthanol inflammables dès 13 °C pur, donc pièce ventilée, aucune flamme, couvercle verrouillé et niveaux MIN/MAX).",
-              "The BloomLab® appliance pairs a food-grade 304 stainless steel chamber with 6 functions (Butter, Oil, Tincture [71°C / 160°F – 4h default], No heating, Decarboxylate, 5-min Clean) plus manual TEMP/TIME control (0–121°C, 30 min–12h on adjustable modes). This allows separate Phase A aqueous/glycerin extraction and, after emptying and drying the tank, Phase B carrier-oil or alcohol extraction (ethanol vapors are flammable from 13°C pure—use ventilated room, zero flames, locked lid, MIN/MAX bounds).",
-              "Die BloomLab® kombiniert einen lebensmittelechten 304-Edelstahlbehälter mit 6 Programmen (Butter, Oil, Tincture [Standard 71 °C / 160 °F – 4 Std.], Ohne Heizung, Decarboxylierung, Reinigung 5 Min.) und manueller TEMP/TIME-Steuerung (0–121 °C, 30 Min.–12 Std.). Nach sauberem Entleeren und Trocknen nach Phase A folgt Phase B mit Öl oder Alkohol (Ethanoldämpfe ab 13 °C entzündlich: gut lüften, keine Flamme, verriegelter Deckel, MIN/MAX)."
+              "La machine BloomLab® combine cuve en inox 304 (grade alimentaire) et 6 fonctions (Butter, Oil, Tincture [71 °C / 160 °F – 4 h par défaut], Sans chauffe [fonction à température non réglable pour mélanges à froid type vinaigrette], Décarboxylation, Nettoyage 5 min) avec réglages manuels TEMP/TIME (0 à 121 °C, 30 min à 12 h sur les modes réglables). Vous conduisez séparément la Phase A aqueuse/glycérinée puis, cuve vidée et séchée, la Phase B (huile ou alcool ≥ 75 % sans eau en mode Tincture — vapeurs d’éthanol inflammables dès 13 °C pur, donc pièce ventilée, aucune flamme, couvercle verrouillé, niveaux MIN/MAX, sans jamais laisser l'appareil sans surveillance en fonctionnement ni branché).",
+              "The BloomLab® appliance pairs a food-grade 304 stainless steel chamber with 6 functions (Butter, Oil, Tincture [71°C / 160°F – 4h default], No heating [non-adjustable cold mixing mode e.g. vinaigrette], Decarboxylate, 5-min Clean) plus manual TEMP/TIME control (0–121°C, 30 min–12h on adjustable modes). Conduct Phase A aqueous/glycerin extraction and, after emptying and drying the tank, Phase B carrier-oil or waterless ≥ 75% alcohol extraction (ethanol vapors flammable from 13°C pure—ventilated room, zero flames, locked lid, MIN/MAX bounds, never unattended during operation or plugged in).",
+              "Die BloomLab® kombiniert einen lebensmittelechten 304-Edelstahlbehälter mit 6 Programmen (Butter, Oil, Tincture [Standard 71 °C / 160 °F – 4 Std.], Ohne Erwärmung [nicht regelbar, z. B. Vinaigrette], Decarboxylierung, Reinigung 5 Min.) und manueller TEMP/TIME-Steuerung (0–121 °C, 30 Min.–12 Std.). Nach Entleeren und Trocknen nach Phase A folgt Phase B mit Öl oder wasserfreiem Alkohol ≥ 75 % (Ethanoldämpfe ab 13 °C entzündlich: gut lüften, keine Flamme, verriegelter Deckel, MIN/MAX, niemals unbeaufsichtigt im Betrieb oder eingesteckt lassen)."
             )}
           </p>
 

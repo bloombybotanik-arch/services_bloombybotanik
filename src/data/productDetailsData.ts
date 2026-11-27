@@ -364,7 +364,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
                 <li><strong>Découpe Adaptée :</strong> Des coupes de plantes calibrées pour le panier filtrant et l'extraction séquencée douce.</li>
                 <li><strong>Formule Simple :</strong> 0% conservateurs, 0% additifs, 0% chimie industrielle. Juste la plante, dans sa forme la plus noble.</li>
                 <li><strong>Autonomie Pratique :</strong> Chaque sachet de 50g permet de préparer un batch d'extraction domestique jusqu'à 700ml de solvant.</li>
-                <li><strong>Polyvalence Totale :</strong> Une seule préparation pour deux usages. Transformez votre mélange en huile de massage ou en gouttes à boire selon le solvant choisi.</li>
+                <li><strong>Polyvalence Totale :</strong> Préparez votre mélange en infusion aqueuse, en extrait glycériné ou en huile aromatique selon le solvant alimentaire choisi.</li>
               </ul>
             </div>
             <div class="bg-[#1B3022]/5 p-8 rounded-3xl">
@@ -470,8 +470,8 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
                 </div>
                 <div class="bg-white/10 p-6 rounded-3xl backdrop-blur-sm">
                   <svg class="w-6 h-6 mb-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
-                  <h4 class="font-bold mb-2">Reset Homéostasique</h4>
-                  <p class="text-xs text-white/70">Guides de rééquilibrage homéostatique et maintenance du terrain profond.</p>
+                  <h4 class="font-bold mb-2">Terrain & Pratiques Botaniques</h4>
+                  <p class="text-xs text-white/70">Guides éducatifs dédiés à l'équilibre du terrain et aux routines végétales.</p>
                 </div>
               </div>
             </div>
@@ -519,11 +519,11 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <div class="grid md:grid-cols-2 gap-8 mb-12">
             <div class="bg-white border border-botanik-green/10 p-8 rounded-3xl shadow-sm">
               <h4 class="font-bold text-botanik-green mb-4">SACHET A : "La Charpente Minérale" (30g)</h4>
-              <p class="text-sm"><strong>Prêle des Champs & Ortie Racine :</strong> Championnes du silicium et des minéraux structurels. Leurs fibres exigent une extraction thermique haute pour libérer leur potentiel de reminéralisation.</p>
+              <p class="text-sm"><strong>Prêle des Champs & Ortie Racine :</strong> Parties végétales fibreuses naturellement riches en silice et minéraux. Leurs fibres denses exigent une extraction thermique haute pour bien diffuser dans le solvant.</p>
             </div>
             <div class="bg-white border border-botanik-green/10 p-8 rounded-3xl shadow-sm">
-              <h4 class="font-bold text-botanik-green mb-4">SACHET B : "Le Flux Antioxydant" (20g)</h4>
-              <p class="text-sm"><strong>Romarin & Ginkgo Biloba :</strong> Des feuilles délicates conçues pour soutenir la micro-circulation et protéger les tissus. Elles exigent une extraction douce pour préserver leurs principes volatils.</p>
+              <h4 class="font-bold text-botanik-green mb-4">SACHET B : "Le Flux Aromatique" (20g)</h4>
+              <p class="text-sm"><strong>Romarin & Ginkgo Biloba :</strong> Des feuilles aromatiques délicates qui demandent une extraction douce pour préserver leurs composés volatils et flavonoïdes.</p>
             </div>
           </div>
 
@@ -550,7 +550,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             <div class="flex flex-col md:flex-row items-center justify-center gap-8">
               <div class="font-medium">de la plante brute</div>
               <ArrowRight class="hidden md:block w-6 h-6 text-botanik-orange" />
-              <div class="font-bold text-botanik-green">à un extrait cohérent, stable, biodisponible</div>
+              <div class="font-bold text-botanik-green">à une préparation botanique concentrée et homogène</div>
             </div>
           </div>
 
@@ -567,7 +567,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
               </li>
               <li class="flex items-start gap-3 w-full">
                 <svg class="w-5 h-5 text-botanik-orange mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                <span class="flex-1"><strong>Polyvalence d'Usage :</strong> Préparable en base aqueuse/glycérinée ou en macérat huileux cosmétique pour soins externes.</span>
+                <span class="flex-1"><strong>Usage Alimentaire Exclusif :</strong> Mélange de plantes sèches alimentaires destiné aux infusions aqueuses, extraits glycérinés ou macérats huileux culinaires.</span>
               </li>
             </ul>
           </div>
@@ -576,12 +576,12 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             <h4 class="font-bold mb-6 text-white text-xl">Usage du Concentré "SÈVE FONDAMENTALE"</h4>
             <div class="grid md:grid-cols-2 gap-8">
               <div>
-                <span class="block font-bold text-botanik-orange mb-2">Usage Interne (Souveraineté)</span>
-                <p class="text-sm text-white/80">50 gouttes dans un verre d'eau, 2 fois par jour, idéalement lors des changements de saison (Cure de 21 jours).</p>
+                <span class="block font-bold text-botanik-orange mb-2">Infusion & Extrait Aqueux/Glycériné</span>
+                <p class="text-sm text-white/80">50 gouttes d'extrait glycériné (ou 1 petite tasse d'infusion filtrée) dans un verre d'eau, jusqu'à 2 fois par jour dans le cadre de cures courtes espacées de pauses.</p>
               </div>
               <div>
-                <span class="block font-bold text-botanik-orange mb-2">Usage Externe (Soin Local)</span>
-                <p class="text-sm text-white/80">Si réalisé avec une base Huileuse, appliquez comme sérum fortifiant sur le visage, les ongles ou le cuir chevelu.</p>
+                <span class="block font-bold text-botanik-orange mb-2">Macérat Huileux Culinaire</span>
+                <p class="text-sm text-white/80">Si réalisé avec une huile végétale vierge alimentaire, utiliser en filet d'assaisonnement à froid et conserver à l'abri de la lumière.</p>
               </div>
             </div>
           </div>
@@ -617,7 +617,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </div>
 
           <p class="text-center italic text-botanik-green/40 mt-12">
-            "La Sève Fondamentale agit comme un renforcement de l'armature de votre édifice biologique. C'est le 'reset' minéral indispensable." — L'Architecte Bloom
+            "La Sève Fondamentale associe des plantes fibreuses et des feuilles aromatiques dans un séquençage thermique en deux temps." — Bloom by BotaniK
           </p>
         </div>
       ` : `
@@ -693,7 +693,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
               </li>
               <li class="flex items-start gap-3 w-full">
                 <svg class="w-5 h-5 text-botanik-orange mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                <span class="flex-1"><strong>Usage Polyvalent :</strong> Boisson tiède aromatique ou macérat huileux de massage cosmétique.</span>
+                <span class="flex-1"><strong>Usage Alimentaire :</strong> Mélange de plantes sèches alimentaire pour boisson tiède aromatique ou extrait glycériné du soir.</span>
               </li>
             </ul>
           </div>
@@ -702,12 +702,12 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             <h4 class="font-bold mb-6 text-white text-xl">Usage du Concentré "NUIT PROFONDE"</h4>
             <div class="grid md:grid-cols-2 gap-8">
               <div>
-                <span class="block font-bold text-botanik-orange mb-2">Usage Interne (Rituel du soir)</span>
-                <p class="text-sm text-white/80">50 gouttes diluées dans une boisson tiède (type tisane) ou un peu d'eau en soirée.</p>
+                <span class="block font-bold text-botanik-orange mb-2">Boisson Tiède du Soir</span>
+                <p class="text-sm text-white/80">50 gouttes d'extrait glycériné diluées dans une tisane ou un peu d'eau en soirée.</p>
               </div>
               <div>
-                <span class="block font-bold text-botanik-orange mb-2">Usage Externe (Massage cosmétique)</span>
-                <p class="text-sm text-white/80">Si réalisé avec une base huileuse, massez doucement les poignets ou le plexus en soin aromatique du soir.</p>
+                <span class="block font-bold text-botanik-orange mb-2">Infusion Aqueuse & Conservation</span>
+                <p class="text-sm text-white/80">En base aqueuse, conserver au réfrigérateur en flacon propre et consommer rapidement selon les précautions d'usage.</p>
               </div>
             </div>
           </div>
@@ -743,7 +743,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </div>
 
           <p class="text-center italic text-botanik-green/40 mt-12">
-            "Le séquençage thermique Bloom garantit que la Valériane libère sa force d'ancrage, offrant une profondeur de repos inaccessible avec une infusion classique." — L'Architecte Bloom
+            "Le séquençage thermique en deux paliers respecte la densité de la racine de valériane puis la finesse aromatique de la passiflore." — Bloom by BotaniK
           </p>
         </div>
       ` : `
@@ -825,12 +825,12 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             <h4 class="font-bold mb-6 text-white text-xl">Usage du Concentré "ÉQUILIBRE BOTANIQUE"</h4>
             <div class="grid md:grid-cols-2 gap-8">
               <div>
-                <span class="block font-bold text-botanik-orange mb-2">Usage Interne (Rituel d'après-repas)</span>
-                <p class="text-sm text-white/80">50 gouttes diluées dans un verre d'eau ou une boisson tiède, après les repas.</p>
+                <span class="block font-bold text-botanik-orange mb-2">Usage Alimentaire (Rituel d'après-repas)</span>
+                <p class="text-sm text-white/80">50 gouttes d'extrait glycériné diluées dans un verre d'eau ou une boisson tiède, après les repas.</p>
               </div>
               <div>
-                <span class="block font-bold text-botanik-orange mb-2">Usage Externe (Massage aromatique)</span>
-                <p class="text-sm text-white/80">Si réalisé avec une base huileuse, utilisable en huile de massage cosmétique réchauffante.</p>
+                <span class="block font-bold text-botanik-orange mb-2">Macérat Huileux Culinaire</span>
+                <p class="text-sm text-white/80">Si réalisé avec une huile végétale vierge alimentaire, 1 cuillère à café en assaisonnement à froid.</p>
               </div>
             </div>
           </div>
@@ -935,7 +935,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
               </li>
               <li class="flex items-start gap-3 w-full">
                 <svg class="w-5 h-5 text-botanik-orange mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                <span class="flex-1"><strong>Base Huileuse Cosmétique :</strong> Adapté à la préparation d'huiles de massage aromatiques après l'effort.</span>
+                <span class="flex-1"><strong>Base Huileuse ou Glycérinée Alimentaire :</strong> Adapté à la préparation de macérats aromatiques culinaires ou d'extraits glycérinés sans additif.</span>
               </li>
               <li class="flex items-start gap-3 w-full">
                 <svg class="w-5 h-5 text-botanik-orange mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
@@ -948,12 +948,12 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             <h4 class="font-bold mb-6 text-white text-xl">Usage du Concentré "MOUVEMENT LIBRE"</h4>
             <div class="grid md:grid-cols-2 gap-8">
               <div>
-                <span class="block font-bold text-botanik-orange mb-2">Usage Interne (Boisson botanique)</span>
-                <p class="text-sm text-white/80">50 gouttes diluées dans un verre d'eau, dans le respect des précautions d'emploi.</p>
+                <span class="block font-bold text-botanik-orange mb-2">Boisson Botanique & Extrait Glycériné</span>
+                <p class="text-sm text-white/80">50 gouttes d'extrait diluées dans un verre d'eau, dans le strict respect des précautions d'emploi.</p>
               </div>
               <div>
-                <span class="block font-bold text-botanik-orange mb-2">Usage Externe (Huile de massage cosmétique)</span>
-                <p class="text-sm text-white/80">Si réalisé avec une base huileuse, massez localement pour un soin cutané aromatique et réchauffant.</p>
+                <span class="block font-bold text-botanik-orange mb-2">Macérat Huileux Culinaire</span>
+                <p class="text-sm text-white/80">Si préparé dans une huile végétale vierge alimentaire filtrée, à utiliser en assaisonnement à froid.</p>
               </div>
             </div>
           </div>
@@ -993,7 +993,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </div>
 
           <p class="mt-8 text-[10px] text-botanik-green/40 leading-relaxed">
-            Note légale : Ce mélange de plantes est un produit alimentaire/cosmétique destiné à un usage culinaire et de soin maison. Il ne constitue pas un médicament et ne peut se substituer à un avis médical.
+            Note légale : Ce mélange de plantes sèches est un produit alimentaire destiné aux infusions et préparations culinaires maison. Il ne constitue pas un médicament et ne peut se substituer à un avis médical.
           </p>
         </div>
       ` : `
@@ -1066,7 +1066,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
               </li>
               <li class="flex items-start gap-3">
                 <Check class="w-5 h-5 text-botanik-orange mt-1" />
-                <span><strong>Polyvalence Maison :</strong> Boisson chaude aromatique ou macérat huileux de friction cosmétique.</span>
+                <span><strong>Usage Alimentaire Maison :</strong> Mélange d'épices et d'aromates pour boisson chaude, sirop maison ou macérat glycériné.</span>
               </li>
             </ul>
           </div>
@@ -1075,12 +1075,12 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             <h4 class="font-bold mb-6 text-white text-xl">Usage du Concentré "BOUCLIER HIVER"</h4>
             <div class="grid md:grid-cols-2 gap-8">
               <div>
-                <span class="block font-bold text-botanik-orange mb-2">Usage Interne (Éclaireur)</span>
-                <p class="text-sm text-white/80">1 cuillère à café diluée dans un verre d'eau, 2 fois par jour, pour soutenir le terrain durant 21 jours.</p>
+                <span class="block font-bold text-botanik-orange mb-2">Boisson Chaude & Extrait</span>
+                <p class="text-sm text-white/80">1 cuillère à café diluée dans un verre d'eau tiède ou une tisane, 1 à 2 fois par jour en rituel hivernal ponctuel.</p>
               </div>
               <div>
-                <span class="block font-bold text-botanik-orange mb-2">Usage Externe (Friction)</span>
-                <p class="text-sm text-white/80">Si réalisé avec une base Huileuse, massez le haut du dos et la plante des pieds pour une protection sensorielle immédiate.</p>
+                <span class="block font-bold text-botanik-orange mb-2">Macérat Culinaire (Huile ou Miel)</span>
+                <p class="text-sm text-white/80">En base de miel infusé ou d'huile vierge alimentaire filtrée, à utiliser en cuisine ou en boisson chaude aromatique.</p>
               </div>
             </div>
           </div>
@@ -1116,7 +1116,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </div>
 
           <p class="text-center italic text-botanik-green/40 mt-12">
-            "Ce kit est révolutionnaire car il s'inscrit en routine hivernale sans prétendre traiter une affection, mais comme un signal pour renforcer votre propre structure." — L'Architecte Bloom
+            "Ce mélange réunit épices, baies et aromates de saison dans une extraction séquencée en deux paliers." — Bloom by BotaniK
           </p>
         </div>
       ` : `
@@ -1127,29 +1127,29 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       specs: [{ label: isFR ? "Format" : isDE ? "Inhalt" : "Size", value: "50g", icon: Leaf }]
     },
     'kit-reset': {
-      name: isFR ? "Duo Argiles — Purification Systémique Zeolithe-Bentonite" : isDE ? "Erden-Duo — Systemische Reinigung Zeolith-Bentonit" : "Clays Duo — Systemic Purification Zeolite-Bentonite",
-      subtitle: isFR ? "CHÉLATION NATURELLE & RÉÉQUILIBRAGE DE TERRAIN" : isDE ? "MINERALISCHE SYNERGIE & TERRAIN" : "MINERAL SYNERGY & TERRAIN",
+      name: isFR ? "Duo Argiles — Synergie Minérale Zeolithe-Bentonite" : isDE ? "Erden-Duo — Mineralische Synergie Zeolith-Bentonit" : "Clays Duo — Mineral Synergy Zeolite-Bentonite",
+      subtitle: isFR ? "MINÉRAUX MICROPOREUX 6 µm" : isDE ? "MIKROPORÖSE MINERALIEN 6 µm" : "MICROPOROUS MINERALS 6 µm",
       price: 34.00,
       originalPrice: 49.00,
       images: [duoArgilesImg],
       description: isFR 
-        ? "Une association de zéolithes et bentonites naturelles sélectionnées pour leurs propriétés d'adsorption et leur structure microporeuse unique."
+        ? "Une association de zéolithe clinoptilolite et de bentonite montmorillonite naturelles sélectionnées pour leur structure microporeuse et leur granulométrie fine."
         : isDE
-        ? "Eine Kombination aus natürlichen Zeolithen und Bentoniten, ausgewählt aufgrund ihrer Adsorptionseigenschaften und ihrer einzigartigen mikroporösen Struktur."
-        : "An association of natural zeolites and bentonites selected for their adsorption properties and unique microporous structure.",
+        ? "Eine Kombination aus natürlichem Klinoptilolith-Zeolith und Montmorillonit-Bentonit, ausgewählt wegen ihrer mikroporösen Struktur und feinen Körnung."
+        : "An association of natural clinoptilolite zeolite and montmorillonite bentonite selected for their microporous structure and fine particle size.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none space-y-8">
           <div class="bg-[#FAF8F5] p-6 sm:p-8 rounded-3xl border border-[#1B3022]/10 text-center">
-            <h3 class="text-xl sm:text-2xl font-bold text-[#3E4A3D] mb-2.5">L'Ingénierie Minérale de Précision</h3>
+            <h3 class="text-xl sm:text-2xl font-bold text-[#3E4A3D] mb-2.5">Minéralogie & Structure Microporeuse</h3>
             <p class="text-xs sm:text-sm leading-relaxed text-[#1B3022]/75 max-w-xl mx-auto">
-              Le Duo Argiles repose sur l'affinité physico-chimique de minéraux volcaniques purs. Une approche rigoureuse du <strong>rééquilibrage du terrain</strong> par la maîtrise des polarités minérales.
+              Le Duo Argiles associe deux minéraux volcaniques bruts finement broyés, dans le cadre d'une démarche éducative et hygiéniste non médicale.
             </p>
           </div>
 
           <div>
-            <h3 class="text-lg sm:text-xl font-bold text-[#3E4A3D] mb-2.5">Propriétés Physico-Chimiques & Granulométrie</h3>
+            <h3 class="text-lg sm:text-xl font-bold text-[#3E4A3D] mb-2.5">Caractéristiques Physico-Chimiques & Granulométrie</h3>
             <p class="text-xs sm:text-sm text-[#1B3022]/75 leading-relaxed mb-6">
-              Grâce à une activation tribomécanique, ces minéraux atteignent une finesse optimale de <strong>6 microns</strong>. Cette réduction granulométrique démultiplie la surface d'échange active, permettant une dispersion homogène et une capture douce au sein du tractus digestif.
+              Le broyage micronisé à <strong>6 microns</strong> augmente la surface spécifique d'échange physique et favorise une mise en suspension homogène dans l'eau tempérée.
             </p>
           </div>
 
@@ -1157,13 +1157,13 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
             <div class="bg-white border border-[#1B3022]/10 p-5 sm:p-6 rounded-2xl shadow-xs">
               <h4 class="font-bold text-[#3E4A3D] text-sm sm:text-base mb-2">Zéolithe Clinoptilolite (6μm)</h4>
               <p class="text-xs sm:text-sm text-[#1B3022]/70 leading-relaxed">
-                Minéral à structure cristalline microporeuse agissant par échange cationique sélectif, piégeant les molécules indésirables sans franchir la barrière intestinale.
+                Minéral aluminosilicate à structure cristalline microporeuse reconnu en chimie minérale pour sa capacité physique d'échange cationique en suspension aqueuse.
               </p>
             </div>
             <div class="bg-white border border-[#1B3022]/10 p-5 sm:p-6 rounded-2xl shadow-xs">
               <h4 class="font-bold text-[#3E4A3D] text-sm sm:text-base mb-2">Bentonite Montmorillonite</h4>
               <p class="text-xs sm:text-sm text-[#1B3022]/70 leading-relaxed">
-                Argile smectite de haute pureté reconnue pour son pouvoir tapissant et sa capacité d'adsorption protectrice au niveau du film muqueux digestif.
+                Argile smectite naturelle en poudre fine reconnue pour sa capacité de gonflement hydrique et son pouvoir d'adsorption physique de surface.
               </p>
             </div>
           </div>
@@ -1175,14 +1175,14 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
                 <div class="w-7 h-7 bg-[#3E4A3D] text-[#C8AB8A] rounded-full flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</div>
                 <div>
                   <h4 class="font-bold text-xs sm:text-sm text-[#3E4A3D] mb-1">Mise en Suspension</h4>
-                  <p class="text-xs text-[#1B3022]/70 leading-relaxed">Diluez une dosette rase dans un grand verre d'eau tempérée. Privilégiez une cuillère en bois ou en verre pour respecter les polarités ioniques.</p>
+                  <p class="text-xs text-[#1B3022]/70 leading-relaxed">Diluez une dosette rase dans un grand verre d'eau tempérée avec une cuillère en bois ou en verre.</p>
                 </div>
               </div>
               <div class="flex items-start gap-3.5 bg-white border border-[#1B3022]/8 p-4 rounded-xl">
                 <div class="w-7 h-7 bg-[#3E4A3D] text-[#C8AB8A] rounded-full flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</div>
                 <div>
                   <h4 class="font-bold text-xs sm:text-sm text-[#3E4A3D] mb-1">Rythme & Espacement</h4>
-                  <p class="text-xs text-[#1B3022]/70 leading-relaxed">À consommer à jeun le matin ou au coucher, en respectant un intervalle minimum de 2 heures avec tout repas, complément ou traitement.</p>
+                  <p class="text-xs text-[#1B3022]/70 leading-relaxed">À consommer à distance des prises, en respectant un intervalle minimum de 2 heures avec tout repas, complément ou médicament.</p>
                 </div>
               </div>
             </div>
@@ -1191,16 +1191,16 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <div class="bg-[#3E4A3D] text-white p-6 sm:p-7 rounded-2xl sm:rounded-3xl shadow-sm text-center">
             <h4 class="font-semibold text-white text-base sm:text-lg mb-2">Sélection Minérale Rigoureuse</h4>
             <p class="text-xs sm:text-sm text-white/75 max-w-lg mx-auto leading-relaxed mb-0">
-              Minéraux volcaniques naturels sans conservateur ni irradiation. Sans conservateur, sans irradiation, sans nanoparticules. Une formulation transparente respectant l'intégrité biologique de votre organisme.
+              Minéraux volcaniques naturels sans conservateur, sans irradiation et sans additif. Une formulation brute documentée en toute transparence.
             </p>
           </div>
 
           <div class="bg-amber-50/70 border border-amber-200/50 p-4 rounded-xl text-xs text-amber-900/80 leading-relaxed">
-            <strong>Recommandations d'usage :</strong> Ce produit s'inscrit dans une démarche de bien-être et ne constitue pas un médicament ni un diagnostic médical. Femmes enceintes, allaitantes ou personnes sous traitement médical : demander conseil à un professionnel de santé.
+            <strong>Recommandations d'usage :</strong> Ce produit s'inscrit dans une démarche éducative et de bien-être général ; il ne constitue ni un médicament, ni un dispositif médical, ni un diagnostic. Femmes enceintes, allaitantes ou personnes sous traitement médical : demander conseil à un professionnel de santé.
           </div>
 
           <p class="text-center italic text-[11px] text-[#1B3022]/40 pt-2">
-            "L'Ingénierie minérale au service de l'équilibre homéostasique." — L'Architecte Bloom
+            "Une synergie minérale microporeuse brute sélectionnée avec rigueur." — Bloom by BotaniK
           </p>
         </div>
       ` : `

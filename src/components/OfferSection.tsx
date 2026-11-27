@@ -30,18 +30,18 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
   const plantOptions = [
     {
       id: 'nuit',
-      label: isFR ? "Kit Nuit Profonde (Mélisse & Passiflore)" : isDE ? "Tiefschlaf-Set (Melisse & Passionsblume)" : "Deep Night Set (Lemon Balm & Passionflower)",
-      benefit: isFR ? "Sommeil réparateur" : isDE ? "Erholsamer Schlaf" : "Restorative Sleep"
+      label: isFR ? "Kit Nuit Profonde (Valériane & Passiflore)" : isDE ? "Tiefschlaf-Set (Baldrian & Passionsblume)" : "Deep Night Set (Valerian & Passionflower)",
+      benefit: isFR ? "Rituel du soir" : isDE ? "Abendritual" : "Evening Ritual"
     },
     {
       id: 'digestion',
-      label: isFR ? "Kit Digestion Sereine (Menthe Poivrée & Romarin)" : isDE ? "Verdauungs-Set (Pfefferminze & Rosmarin)" : "Digestive Ease Set (Peppermint & Rosemary)",
-      benefit: isFR ? "Confort intestinal" : isDE ? "Darmkomfort" : "Gut Comfort"
+      label: isFR ? "Kit Équilibre Botanique (Gingembre & Romarin)" : isDE ? "Kräuter-Set (Ingwer & Rosmarin)" : "Botanical Balance Set (Ginger & Rosemary)",
+      benefit: isFR ? "Rituel d'après-repas" : isDE ? "Nach-dem-Essen-Ritual" : "After-Meal Ritual"
     },
     {
       id: 'articulaire',
-      label: isFR ? "Kit Feu Articulaire (Curcuma & Reine des Prés)" : isDE ? "Gelenk-Set (Kurkuma & Mädesüß)" : "Joint Mobility Set (Turmeric & Meadowsweet)",
-      benefit: isFR ? "Souplesse articulaire" : isDE ? "Gelenkbeweglichkeit" : "Joint Flexibility"
+      label: isFR ? "Kit Mouvement Libre (Reine des Prés & Boswellia)" : isDE ? "Bewegungs-Set (Mädesüß & Boswellia)" : "Free Movement Set (Meadowsweet & Boswellia)",
+      benefit: isFR ? "Synergie résine & plantes" : isDE ? "Harz & Kräuter" : "Resin & Herbs"
     }
   ];
 
@@ -257,15 +257,15 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
           <div className={styles.card}>
             <div>
               <span className={styles.tag}>
-                {isFR ? "Purification & Synergie" : isDE ? "Reinigung & Synergie" : "Purification & Synergy"}
+                {isFR ? "Minéraux & Synergie" : isDE ? "Mineralien & Synergie" : "Minerals & Synergy"}
               </span>
               <h3 className={styles.offerTitle}>{isFR ? "Pack Signature" : isDE ? "Signature-Paket" : "Signature Pack"}</h3>
               <p className={styles.offerDescription}>
                 {isFR 
-                  ? "BloomLab® v2 + Duo Argiles Minérales Bloom (Zéolithe & Bentonite) pour un reset systémique profond." 
+                  ? "BloomLab® v2 + Duo Argiles Minérales Bloom (Zéolithe & Bentonite) pour vos préparations minérales et botaniques maison." 
                   : isDE 
-                  ? "BloomLab® v2 + Bloom Erden-Duo (Zeolith & Bentonit) für einen tiefen systemischen Reset." 
-                  : "BloomLab® v2 + Bloom Clay Duo (Zeolite & Bentonite) for deep systemic reset."}
+                  ? "BloomLab® v2 + Bloom Erden-Duo (Zeolith & Bentonit) für Ihre hausgemachten Mineral- und Pflanzenzubereitungen." 
+                  : "BloomLab® v2 + Bloom Clay Duo (Zeolite & Bentonite) for homemade mineral and botanical preparations."}
               </p>
 
               <div className={styles.pricingBlock}>
@@ -285,7 +285,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
                 <li className={styles.featureItem}>
                   <Check className={styles.checkIcon} />
                   <span className="font-semibold text-[#A8B8A0]">
-                    {isFR ? "Duo Argiles Bloom — Purification Systémique" : isDE ? "Bloom Erden-Duo — Systemische Reinigung" : "Bloom Clay Duo — Systemic Purification"}
+                    {isFR ? "Duo Argiles Bloom — Zéolithe & Bentonite 6 µm" : isDE ? "Bloom Erden-Duo — Zeolith & Bentonit 6 µm" : "Bloom Clay Duo — Zeolite & Bentonite 6 µm"}
                   </span>
                 </li>
                 <li className={styles.featureItem}>

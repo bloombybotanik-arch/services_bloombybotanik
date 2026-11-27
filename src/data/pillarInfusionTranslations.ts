@@ -354,7 +354,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
         {
           title: "L'alcool alimentaire (45° à 96°)",
           polarity: "Solvant amphiphile (Bipolaire)",
-          desc: "Indispensable pour extraire les résines (90–96°), racines denses/alcaloïdes (70°) ou sommités fleuries (45–60°). Compatible via les programmes Tincture (71 °C / 160 °F – 4 h par défaut, réglable manuellement en temps/température pour l'alcool sans eau ajoutée) ou Sans chauffe / bocal pour dilutions hydro-alcooliques.",
+          desc: "Indispensable pour extraire les résines (90–96°), racines denses/alcaloïdes (70°) ou sommités fleuries (45–60°). Compatible via le programme Tincture (71 °C / 160 °F – 4 h par défaut, réglable manuellement en temps/température pour l'alcool ≥ 75 % sans eau ajoutée, appareil sous surveillance) ou en bocal hermétique hors appareil pour les dilutions hydro-alcooliques.",
           affinity: "Alcaloïdes, résines, polyphénols et principes peu hydrosolubles",
           examples: "Propolis, boswellia, échinacée, valériane, passiflore",
           shelfLife: "Flacon ambré hermétique à l'abri de la lumière et de la chaleur"
@@ -486,15 +486,15 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
         },
         {
           q: "Comment faire une infusion ou extraction avec BloomLab® ?",
-          a: "Avec l'extracteur BloomLab® de Bloom by BotaniK, placez vos plantes dans la cuve en acier inoxydable, ajoutez votre solvant (eau, huile végétale, beurre, glycérine ou alcool alimentaire selon la fiche), puis choisissez l'un des 6 programmes (Butter, Oil, Tincture, Sans chauffe, Décarboxylation, Nettoyage) ou ajustez manuellement la température (0 °C à 121 °C sur modes réglables) et la durée."
+          a: "Avec l'extracteur BloomLab® de Bloom by BotaniK, placez vos plantes dans la cuve en acier inoxydable, ajoutez votre solvant (eau, huile végétale, beurre, glycérine ou alcool fort ≥ 75 % vol. sans eau en mode Tincture selon la fiche), puis choisissez l'un des programmes d'extraction (Butter, Oil, Tincture, Décarboxylation, Nettoyage — Sans chauffe étant réservé aux mélanges froids sans extraction) ou ajustez manuellement la température (0 °C à 121 °C) et la durée."
         },
         {
           q: "Comment choisir un solvant ?",
-          a: "Le choix du solvant dépend des constituants visés : l'eau capte les molécules hydrosolubles (mucilages, tanins) ; l'huile végétale et le beurre captent les actifs liposolubles ; la glycérine végétale offre une alternative douce sans alcool ; l'alcool alimentaire (45° à 96° selon l'organe végétal) extrait résines, alcaloïdes et teintures mères via les modes Tincture (alcool fort ≥ 75 % vol. sans eau, pièce ventilée) ou Sans chauffe."
+          a: "Le choix du solvant dépend des constituants visés : l'eau capte les molécules hydrosolubles (mucilages, tanins) ; l'huile végétale et le beurre captent les actifs liposolubles ; la glycérine végétale offre une alternative douce sans alcool ; l'alcool fort anhydre (≥ 75 % vol. à 96°, sans ajout d'eau) s'emploie en programme Tincture dans une pièce ventilée sans flamme, tandis que les mélanges hydroalcooliques dilués (< 75 % vol., ex. 45°–70°) se réalisent en bocal hermétique hors appareil."
         },
         {
           q: "BloomLab remplace-t-elle un bain-marie ?",
-          a: "BloomLab remplit la fonction d'un bain-marie régulé avec une précision accrue : elle maintient une température stable au degré près, intègre une minuterie programmable et propose une agitation magnétique douce selon les programmes, évitant ainsi la surveillance manuelle et les risques de surchauffe locale propres au bain-marie traditionnel."
+          a: "BloomLab remplit la fonction d'un bain-marie régulé avec une précision accrue : elle maintient une température stable, intègre une minuterie programmable et propose une agitation douce selon les programmes, limitant les risques de surchauffe locale propres au bain-marie traditionnel. Par sécurité, ne jamais laisser l'appareil sans surveillance en fonctionnement ni lorsqu'il est branché."
         },
         {
           q: "Quelles plantes peut-on infuser ?",
@@ -717,7 +717,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
         {
           title: "Food-Grade Alcohol (45% to 96% ABV)",
           polarity: "Amphiphilic Solvent (Dual polarity)",
-          desc: "Essential for resins (90–96% ABV), dense roots/barks/alkaloids (70% ABV), or delicate flowers/leaves (45–60% ABV). Supported via BloomLab® Tincture mode (71°C / 160°F – 4h default, manually adjustable for waterless alcohol) or No heating / glass jar for water dilutions.",
+          desc: "Essential for resins (90–96% ABV), dense roots/barks/alkaloids (70% ABV), or delicate flowers/leaves (45–60% ABV). Supported via BloomLab® Tincture mode (71°C / 160°F – 4h default, manually adjustable for waterless alcohol ≥ 75% ABV under supervision) or sealed glass jar outside the appliance for water dilutions.",
           affinity: "Alkaloids, resins, polyphenols, poorly water-soluble actives",
           examples: "Propolis, boswellia, echinacea, valerian, passionflower",
           shelfLife: "Airtight amber glass bottle away from light and heat"
@@ -849,11 +849,11 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
         },
         {
           q: "How do I choose the correct solvent?",
-          a: "Solvent choice depends on target compounds: water dissolves polar molecules (mucilages, tannins); plant oils and butter extract lipophilic principles (carotenoids, aromas); vegetable glycerin suits alcohol-free formulas; and food-grade alcohol (45%–96% ABV tailored to plant density) extracts resins, alkaloids, and mother tinctures via Tincture (≥ 75% ABV without water, ventilated room) or No heating mode."
+          a: "Solvent choice depends on target compounds: water dissolves polar molecules (mucilages, tannins); plant oils and butter extract lipophilic principles (carotenoids, aromas); vegetable glycerin suits alcohol-free formulas; and food-grade alcohol (45%–96% ABV tailored to plant density) extracts resins, alkaloids, and mother tinctures via Tincture (≥ 75% ABV without water, ventilated room, constantly attended) or a sealed glass jar outside the appliance for water dilutions."
         },
         {
           q: "Does BloomLab replace a traditional double boiler (bain-marie)?",
-          a: "Yes, and with far higher accuracy: BloomLab holds temperature steady to the degree, incorporates automated timers, and provides continuous magnetic stirring, eliminating manual monitoring and the risk of hot-spot scorching inherent in double boilers."
+          a: "Yes, and with far higher accuracy: BloomLab holds temperature steady to the degree, incorporates automated timers, and provides continuous magnetic stirring, reducing the risk of hot-spot scorching inherent in double boilers (never leave the appliance unattended during operation or while plugged in)."
         },
         {
           q: "Which botanicals can be infused?",
@@ -1076,7 +1076,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
         {
           title: "Ansatzalkohol (45 bis 96 Vol.-%)",
           polarity: "Amphiphiles Lösungsmittel (Bipolar)",
-          desc: "Unverzichtbar für Harze (90–96 %), dichte Wurzeln/Rinden/Alkaloide (70 %) oder zarte Blüten/Blätter (45–60 %). Verwendbar im BloomLab® Tincture-Programm (Standard 71 °C / 160 °F – 4 Std., manuell anpassbar für wasserfreien Alkohol) oder im Modus Ohne Erhitzen / Glasgefäß für wässrige Verdünnungen.",
+          desc: "Unverzichtbar für Harze (90–96 %), dichte Wurzeln/Rinden/Alkaloide (70 %) oder zarte Blüten/Blätter (45–60 %). Verwendbar im BloomLab® Tincture-Programm (Standard 71 °C / 160 °F – 4 Std., manuell anpassbar für wasserfreien Alkohol ≥ 75 % unter Aufsicht) oder im verschlossenen Glasgefäß außerhalb des Geräts für wässrige Verdünnungen.",
           affinity: "Alkaloide, Harze, Polyphenole und schwer wasserlösliche Wirkstoffe",
           examples: "Propolis, Boswellia, Sonnenhut (Echinacea), Baldrian, Passionsblume",
           shelfLife: "Luftdichtes Braunglas licht- und wärmegeschützt"
@@ -1208,11 +1208,11 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
         },
         {
           q: "Wie wählt man das richtige Lösungsmittel aus?",
-          a: "Die Wahl richtet sich nach den gewünschten Wirkstoffen: Wasser löst polare Stoffe (Schleimstoffe, Gerbstoffe); Pflanzenöle und Butter lösen lipophile Verbindungen; pflanzliches Glycerin eignet sich für alkoholfreie Extrakte; Ansatzalkohol (45–96 Vol.-% je nach Pflanzenteil) löst Harze, Alkaloide und Urtinkturen über die Programme Tincture (≥ 75 Vol.-% ohne Wasser, belüftet) oder Ohne Erhitzen."
+          a: "Die Wahl richtet sich nach den gewünschten Wirkstoffen: Wasser löst polare Stoffe (Schleimstoffe, Gerbstoffe); Pflanzenöle und Butter lösen lipophile Verbindungen; pflanzliches Glycerin eignet sich für alkoholfreie Extrakte; Ansatzalkohol (45–96 Vol.-% je nach Pflanzenteil) löst Harze, Alkaloide und Urtinkturen über Tincture (≥ 75 Vol.-% ohne Wasser, belüftet, unter Aufsicht) oder im verschlossenen Glas außerhalb des Geräts."
         },
         {
           q: "Ersetzt BloomLab ein traditionelles Wasserbad?",
-          a: "Ja, und mit deutlich höherer Präzision: BloomLab hält die Temperatur gradgenau stabil, verfügt über integrierte Timer und rührt die Mischung sanft magnetisch – ohne Gefahr von Überhitzung oder Verbrennungen."
+          a: "Ja, und mit deutlich höherer Präzision: BloomLab hält die Temperatur gradgenau stabil, verfügt über integrierte Timer und rührt die Mischung sanft magnetisch – ohne Überhitzung oder Verbrennungen (das Gerät während des Betriebs und im eingesteckten Zustand jedoch niemals unbeaufsichtigt lassen)."
         },
         {
           q: "Welche Pflanzen können aufgegossen werden?",

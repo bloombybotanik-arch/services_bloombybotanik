@@ -77,13 +77,13 @@ export const discoveryRecipes: Recipe[] = [
   {
     id: '02',
     title: "Huile de Massage Articulaire",
-    description: "Une huile de soin concentrée pour soulager les tensions et l'inflammation par extraction liposoluble.",
+    description: "Une huile botanique aromatique d'Arnica et d'Hélichryse préparée par extraction liposoluble douce pour le massage externe.",
     ingredients: ["Huile végétale d'Arnica (100ml)", "Fleurs d'Hélichryse italienne (10g)"],
     instructions: [
       "Préparez la phase A avec l'huile.",
       "Ajoutez les fleurs en phase B."
     ],
-    benefits: ["Anti-inflammatoire", "Décongestionnant", "Souplesse articulaire"],
+    benefits: ["Usage externe en massage aromatique", "Extraction liposoluble douce", "Texture fluide de glisse"],
     image: "/images/recettes/huile-massage-articulaire.jpg",
     category: "Huile de soin",
     architectures: ["Fascia", "SEC"],
@@ -118,10 +118,10 @@ export const discoveryRecipes: Recipe[] = [
   {
     id: '03',
     title: "Sérum Visage Éclat Botanique",
-    description: "Un sérum précieux régénérant, conçu pour une pénétration cutanée optimale des actifs végétaux.",
+    description: "Un sérum huileux précieux à la rose de Damas et au jojoba, conçu pour un rituel cosmétique d'éclat et de douceur.",
     ingredients: ["Huile de Jojoba", "Fleurs de Rose de Damas"],
     instructions: ["Phase A : Jojoba", "Phase B : Rose"],
-    benefits: ["Régénérant", "Antioxydant", "Éclat du teint"],
+    benefits: ["Soin cosmétique quotidien", "Profil riche en lipides végétaux", "Éclat du teint"],
     image: "/images/recettes/serum-visage-eclat-botanique.jpg",
     category: "Sérum",
     architectures: ["Fascia", "SRA"],
@@ -156,10 +156,10 @@ export const discoveryRecipes: Recipe[] = [
   {
     id: '04',
     title: "Baume à Lèvres au Calendula",
-    description: "Un baume protecteur et réparateur utilisant l'extraction par fusion contrôlée.",
+    description: "Un baume cosmétique protecteur au calendula utilisant l'extraction par fusion contrôlée.",
     ingredients: ["Cire d'abeille", "Beurre de Karité", "Fleurs de Calendula"],
     instructions: ["Fusionner phase A", "Extraire phase B"],
-    benefits: ["Réparateur", "Protecteur", "Apaisant"],
+    benefits: ["Confort cosmétique des lèvres", "Film lipidique protecteur", "Texture fondante douce"],
     image: "/images/recettes/baume-levres-calendula.jpg",
     category: "Baume",
     architectures: ["Fascia", "SRA"],
@@ -194,25 +194,25 @@ export const discoveryRecipes: Recipe[] = [
   {
     id: '05',
     title: "Teinture Mère de Propolis Maison",
-    description: "Une teinture concentrée des résines et flavonoïdes de la propolis brute dans de l'alcool à 90°–96° (sans ajout d'eau) via le programme Tincture ajusté ou Sans chauffe de la BloomLab® (ou alternative douce sans alcool sur base glycérinée).",
+    description: "Une teinture concentrée des résines et flavonoïdes de la propolis brute dans de l'alcool à 90°–96° (sans ajout d'eau) via le programme Tincture de la BloomLab® réglé manuellement à 45 °C (ou en bocal hermétique hors appareil, ou base glycérinée sans alcool).",
     ingredients: ["Propolis brute (20g)", "Alcool éthylique alimentaire bio 90°–96° (150ml, sans eau)"],
     instructions: [
       "Congeler brièvement la propolis brute puis la concasser grossièrement.",
       "Placer la propolis et 150 ml d'alcool 90°–96° (sans eau) dans la cuve propre et sèche (entre MIN et MAX ; pièce ventilée, aucune flamme).",
-      "Verrouiller le couvercle et lancer le programme Tincture (défaut 71 °C / 160 °F – 4 h, modifiable manuellement à 45 °C pendant 2h30 pour ménager la fraction aromatique) ou le mode Sans chauffe (4h à 12h).",
+      "Verrouiller le couvercle et lancer le programme Tincture (défaut 71 °C / 160 °F – 4 h, modifiable manuellement via TEMP/TIME à 45 °C pendant 2h30 pour ménager la fraction aromatique), ou réaliser la macération en bocal hermétique hors appareil.",
       "Filtrer à froid à travers un filtre fin (la cire reste sur le filtre) et embouteiller en flacon ambré."
     ],
-    benefits: ["Concentration en flavonoïdes résineux", "Protection antioxydante des préparations", "Solubilisation complète des cires et résines"],
+    benefits: ["Concentration en flavonoïdes résineux", "Préservation aromatique de la fraction brute", "Solubilisation complète des cires et résines"],
     image: "/images/recettes/teinture-propolis-maison.jpg",
     category: "Teinture-mère",
     architectures: ["SRA", "HPA"],
-    terrains: ["T3 (Immunité innée)", "T1 (Digestion & microbiome)"],
-    axes: ["A2 (Barrière intestinale & muqueuses)", "A4 (Cascade de l'inflammation)"],
+    terrains: ["T3 (Protection saisonnière)", "T1 (Sphère digestive)"],
+    axes: ["A2 (Équilibre des muqueuses)", "A4 (Réponse oxydative)"],
     sachetA: {
       composition: ["20g de Propolis brute concassée"],
       solvant: "Alcool éthylique bio 90°–96° (150ml, sans ajout d'eau)",
-      temp: "45°C (ou défaut 71°C / Sans chauffe)",
-      duration: "2h30 (ou 4h / 4h–12h)"
+      temp: "45°C (Tincture réglé manuellement) ou défaut 71°C",
+      duration: "2h30 (ou 4h par défaut)"
     },
     sachetB: {
       composition: ["Aucun"],
@@ -220,36 +220,37 @@ export const discoveryRecipes: Recipe[] = [
       temp: "N/A",
       duration: "N/A"
     },
-    extractionOrder: "Cycle unique anhydre (alcool fort ≥ 75 % vol., sans eau) via programme Tincture (71 °C / 4 h par défaut, réglable) ou mode Sans chauffe",
+    extractionOrder: "Cycle unique anhydre (alcool fort ≥ 75 % vol., sans eau) via programme Tincture (71 °C / 4 h par défaut, réglable manuellement à 45 °C / 2h30) ou macération en bocal hermétique hors appareil",
     administration: {
       mode: "Quelques gouttes diluées dans de l'eau, une tisane tiède ou du miel.",
       dailyDose: "5 à 10 gouttes",
       maxDose: "15 gouttes par jour",
       frequency: "1 à 3 fois par jour",
       timing: "De préférence entre les repas",
-      usageDuration: "Cure ponctuelle de 10 jours recommandée."
+      usageDuration: "Usage ponctuel jusqu'à 10 jours."
     },
     precautions: [
-      "Vapeurs hautement inflammables (point d'éclair de l'éthanol pur : 13 °C ; la pression de vapeur augmente avec la chaleur) : préparer impérativement en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre les repères MIN et MAX (ne pas ajouter d'eau ni de lécithine en cycle Tincture chauffé).",
+      "Ne jamais laisser l'appareil sans surveillance en fonctionnement ni lorsqu'il est branché.",
+      "Vapeurs hautement inflammables (point d'éclair de l'éthanol pur : 13 °C ; la pression de vapeur augmente avec la chaleur) : préparer impérativement en pièce très bien ventilée, loin de toute flamme ou étincelle, couvercle verrouillé et entre les repères MIN et MAX (ne pas ajouter d'eau ni de lécithine en cycle Tincture).",
       "Option sans alcool disponible en glycérine végétale bio 80/20 (45 °C / 2h30).",
       "La propolis tache durablement les vêtements et la cuve (nettoyer avec un peu d'alcool fort puis programme Nettoyage)."
     ],
     contraindications: ["Grossesse et allaitement", "Enfants", "Sensibilité ou sevrage alcoolique", "Allergie aux produits de la ruche"],
     safetyMessage: "La propolis est un concentré résineux puissant : respecter les doses et les consignes de sécurité liées à l'alcool (vapeurs inflammables dès 13 °C).",
-    bloomNote: "Les résines cireuses de la propolis exigent un alcool de 90° à 96° (sans eau ajoutée) pour se solubiliser pleinement, adapté au programme Tincture (71 °C / 4 h par défaut, réglable manuellement en TEMP/TIME) en milieu ventilé sans flamme, ou au mode Sans chauffe / glycérine."
+    bloomNote: "Les résines cireuses de la propolis exigent un alcool de 90° à 96° (sans eau ajoutée) pour se solubiliser pleinement, adapté au programme Tincture (71 °C / 4 h par défaut, réglable manuellement en TEMP/TIME) en milieu ventilé sans flamme et sous surveillance, ou en bocal hermétique / glycérine."
   },
   {
     id: '06',
     title: "Sirop de Sureau Immunité",
-    description: "Un remède d'hiver traditionnel optimisé par une décoction basse température.",
+    description: "Une recette d'hiver traditionnelle aux baies de sureau, gingembre et miel, préparée par décoction douce.",
     ingredients: ["Baies de sureau séchées", "Gingembre frais", "Miel bio"],
     instructions: ["Décoction phase A", "Ajout miel phase B"],
-    benefits: ["Antiviral", "Riche en antioxydants", "Renforce l'immunité"],
+    benefits: ["Préparation hivernale traditionnelle", "Riche en pigments anthocyanes", "Saveur épicée et miellée"],
     image: "/images/recettes/sirop-sureau-immunite.jpg",
     category: "Sirop",
     architectures: ["SRA"],
-    terrains: ["T3 (Immunité & protection)", "T2 (Énergie & vitalité)"],
-    axes: ["A4 (Cascade de l'inflammation & Résolution)", "A5 (Énergie cellulaire & Mitochondries)"],
+    terrains: ["T3 (Saison froide)", "T2 (Tonus quotidien)"],
+    axes: ["A4 (Équilibre oxydatif)", "A5 (Vitalité générale)"],
     sachetA: {
       composition: ["30g de Baies de sureau", "10g de Gingembre"],
       solvant: "Eau (250ml)",
@@ -269,23 +270,23 @@ export const discoveryRecipes: Recipe[] = [
       maxDose: "3 cuillères par jour",
       frequency: "Matin et soir",
       timing: "Pendant les repas",
-      usageDuration: "Cure de 7 jours."
+      usageDuration: "Usage ponctuel de 7 jours."
     },
     precautions: ["Contient beaucoup de sucre."],
     contraindications: ["Diabète non équilibré", "Nourrissons"],
     safetyMessage: "Ne pas faire bouillir le miel.",
-    bloomNote: "La basse température préserve les anthocyanes antivirales."
+    bloomNote: "La température maîtrisée préserve l'intégrité des anthocyanes et les arômes du miel."
   },
   {
     id: '07',
-    title: "Décoction Détox & Soutien Hépatique",
-    description: "Une préparation traditionnelle de plantes amères pour accompagner le travail hépato-biliaire et la légèreté digestive (Terrain T4).",
+    title: "Décoction d'Herboristerie aux Plantes Amères",
+    description: "Une préparation traditionnelle de plantes amères (artichaut, romarin, radis noir) inspirée des usages culinaires et d'herboristerie de saison.",
     ingredients: ["Artichaut (feuilles)", "Romarin (sommités)", "Radis Noir (racine)"],
     instructions: [
       "Placer les racines de radis noir et les feuilles d'artichaut en phase A.",
       "Ajouter les sommités fleuries de romarin en phase B pour préserver les arômes volatils."
     ],
-    benefits: ["Soutien du confort biliaire", "Amertume digestive tonifiante", "Accompagnement des changements de saison"],
+    benefits: ["Plantes amères de tradition", "Amertume aromatique caractéristique", "Rituel culinaire aux changements de saison"],
     image: "/images/recettes/decoction-detox-soutien-hepatique.jpg",
     category: "Décoction",
     architectures: ["SRA", "HPA"],
@@ -319,14 +320,14 @@ export const discoveryRecipes: Recipe[] = [
   },
   {
     id: '08',
-    title: "Élixir Régulateur Métabolique",
-    description: "Synergie végétale aux graines de fenugrec et écorce d'épine-vinette pour accompagner l'équilibre métabolique et le rythme du quotidien (Terrain T5).",
+    title: "Élixir Traditionnel Fenugrec & Épine-Vinette",
+    description: "Préparation botanique traditionnelle aux graines de fenugrec et écorce d'épine-vinette étudiée pour son profil alcaloïdique et mucilagineux (contenu éducatif).",
     ingredients: ["Épine-vinette (écorce de racine)", "Fenugrec (graines)", "Gingembre frais"],
     instructions: [
       "Préparer la décoction douce des graines concassées de fenugrec.",
-      "Extraire les principes amers et les alcaloïdes d'épine-vinette à température contrôlée."
+      "Extraire les principes amers d'épine-vinette à température contrôlée."
     ],
-    benefits: ["Soutien du métabolisme glucidique", "Tonus digestif", "Régularité du rythme alimentaire"],
+    benefits: ["Profil riche en mucilages et principes amers", "Note épicée au gingembre", "Préparation botanique d'étude"],
     image: "/images/recettes/elixir-regulateur-metabolique.jpg",
     category: "Élixir",
     architectures: ["SRA", "HPA"],
@@ -360,14 +361,14 @@ export const discoveryRecipes: Recipe[] = [
   },
   {
     id: '09',
-    title: "Infusion Drainage & Élimination",
-    description: "Formule drainante aux sommités de reine des prés et racines de pissenlit pour accompagner les fonctions d'élimination de l'eau et des émonctoires (Terrain T6).",
+    title: "Infusion Traditionnelle Pissenlit, Prêle & Reine des Prés",
+    description: "Infusion végétale traditionnelle associant sommités de reine des prés, prêle et racines de pissenlit.",
     ingredients: ["Pissenlit (feuilles et racines)", "Reine des prés (sommités)", "Prêle des champs"],
     instructions: [
       "Extraction des racines de pissenlit et tiges de prêle en phase A.",
-      "Infusion courte de la reine des prés en phase B pour protéger les dérivés salicylés."
+      "Infusion courte de la reine des prés en phase B pour protéger les composés aromatiques."
     ],
-    benefits: ["Favorise l'élimination rénale de l'eau", "Reminéralisation douce grâce à la prêle", "Légèreté corporelle"],
+    benefits: ["Association botanique traditionnelle de printemps", "Apport végétal en silice de prêle", "Profil herbacé frais"],
     image: "/images/recettes/infusion-drainage-elimination.jpg",
     category: "Infusion",
     architectures: ["SRA", "Fascia"],
@@ -401,23 +402,23 @@ export const discoveryRecipes: Recipe[] = [
   },
   {
     id: '10',
-    title: "Remède Psoriasis — Émonctoires & Régulation Épidermique",
-    description: "Extraction séquentielle de Bardane, Pensée Sauvage et Mahonia ciblant la régulation kératinocytaire et le drainage hépato-cutané.",
+    title: "Atelier Botanique — Bardane, Pensée Sauvage & Mahonia",
+    description: "Séquence pédagogique d'extraction séquentielle (Bardane, Pensée Sauvage et Mahonia) illustrant la séparation des phases hydroglycérinée et hydroalcoolique.",
     ingredients: ["Racine de Bardane (30g)", "Pensée Sauvage (25g)", "Écorce de Mahonia (20g)"],
     instructions: [
-      "Phase A : Extraction hydroglycérinée de la Bardane et de la Pensée Sauvage à 75°C pendant 2h00. Filtrer et réserver l'extrait A.",
+      "Phase A : Extraction hydroglycérinée de la Bardane et de la Pensée Sauvage à 75°C pendant 2h00 dans BloomLab® (sous surveillance). Filtrer et réserver l'extrait A.",
       "Transition obligatoire : Vider, rincer (programme Nettoyage 5 min) et sécher intégralement la cuve.",
-      "Phase B : Macération hydro-alcoolique à 70° (titre optimal pour alcaloïdes isoquinoléiques et lignanes) du Mahonia en mode Sans chauffe (4h à 12h) ou en bocal hermétique (sans chauffe car dilution 70° contenant de l'eau ; alternatif 75° sans eau en Tincture possible).",
+      "Phase B : Macération hydro-alcoolique à 70° (dilution contenant de l'eau) du Mahonia en bocal en verre hermétique hors appareil à l'abri de la lumière (ne pas chauffer une dilution à l'eau en mode Tincture ; alternatif ≥ 75 % vol. sans eau possible en mode Tincture sous surveillance).",
       "Filtrer, presser le marc et réunir les fractions A et B hors appareil en flacons ambrés."
     ],
-    benefits: ["Régulation du renouvellement des kératinocytes", "Soutien du drainage émonctoriel hépato-rénal", "Apaisement des terrains squameux"],
+    benefits: ["Étude séquentielle inuline / alcaloïdes", "Séparation des polarités végétales", "Contenu éducatif non thérapeutique"],
     image: "/images/recettes/remede-psoriasis-emonctoires-regulation.jpg",
     category: "Extrait liquide",
     plant: { name: "Bardane & Mahonia" },
-    goal: "Plaques squameuses, hyperprolifération kératinocytaire et surcharge hépato-cutanée",
+    goal: "Étude d'herboristerie sur la double polarité des racines amères et écorces",
     architectures: ["SRA", "Fascia", "HPA"],
-    terrains: ["T6 (Émonctoires & élimination)", "T4 (Détoxication hépatique)", "T1 (Digestion & microbiome)"],
-    axes: ["A1 (Émonctoires & Élimination)", "A2 (Barrière intestinale & Jonctions serrées)", "A4 (Cascade de l'inflammation & Résolution)"],
+    terrains: ["T6 (Terrain cutané)", "T4 (Sphère hépato-biliaire)", "T1 (Sphère digestive)"],
+    axes: ["A1 (Équilibre cutané)", "A2 (Équilibre muqueux)", "A4 (Réponse oxydative)"],
     sachetA: {
       composition: ["30g Racine de Bardane", "25g Pensée Sauvage"],
       solvant: "Eau distillée + Glycérine végétale (500ml, 70/30)",
@@ -426,47 +427,48 @@ export const discoveryRecipes: Recipe[] = [
     },
     sachetB: {
       composition: ["20g Écorce de Mahonia concassée"],
-      solvant: "Alcool alimentaire 70° (250ml ; option sans alcool possible en glycérine)",
-      temp: "Ambiante (Sans chauffe / bocal)",
-      duration: "4h à 12h (ou 14–21j bocal)"
+      solvant: "Alcool alimentaire 70° en bocal hermétique hors appareil (ou option sans alcool en glycérine)",
+      temp: "Bocal hermétique hors appareil",
+      duration: "Macération traditionnelle hors appareil"
     },
-    extractionOrder: "Phase A aqueuse/glycérinée (inuline et mucilages) -> vidange & séchage complet -> Phase B hydro-alcoolique 70° (berbérine et alcaloïdes) en Sans chauffe ou bocal -> assemblage final",
+    extractionOrder: "Phase A aqueuse/glycérinée (inuline et mucilages) en BloomLab® -> vidange & séchage complet -> Phase B hydro-alcoolique 70° en bocal hermétique hors appareil -> assemblage final",
     administration: {
-      mode: "Voie orale, dilué dans 100ml d'eau tiède.",
-      dailyDose: "10ml par jour (2 prises de 5ml)",
-      maxDose: "10ml par jour",
-      frequency: "2 fois par jour",
-      timing: "15 min avant le petit-déjeuner et 15 min avant le dîner",
-      usageDuration: "Cure de 60 jours avec pause de 10 jours."
+      mode: "Usage pédagogique et éducatif. Pour tout usage interne, demander conseil à un professionnel de santé.",
+      dailyDose: "Usage éducatif uniquement",
+      maxDose: "Non applicable (fiche pédagogique)",
+      frequency: "Selon protocole encadré",
+      timing: "Hors repas",
+      usageDuration: "À valider avec un professionnel de santé."
     },
     precautions: [
-      "Ne se substitue pas à un suivi dermatologique médical.",
-      "Alcool inflammable dès 21 °C à 70 % (INRS) : travailler en pièce très ventilée loin de toute flamme ; ne pas chauffer une dilution contenant de l'eau en mode Tincture.",
+      "Fiche strictement éducative : ne constitue ni un avis médical ni un traitement d'une pathologie cutanée.",
+      "Ne jamais laisser l'appareil sans surveillance en fonctionnement ni lorsqu'il est branché.",
+      "Alcool inflammable dès 21 °C à 70 % (INRS) : manipuler loin de toute flamme ou étincelle en pièce très ventilée ; ne pas chauffer une dilution contenant de l'eau en mode Tincture.",
       "Éviter les savons décapants."
     ],
     contraindications: ["Grossesse et allaitement", "Enfants de moins de 12 ans", "Sensibilité à l'alcool", "Lithiase biliaire symptomatique"],
-    safetyMessage: "Respecter les dosages recommandés et conserver l'extrait en flacon ambré à l'abri de la lumière.",
-    bloomNote: "Le titre hydro-alcoolique de 70° optimise la solubilisation de la berbérine et des alcaloïdes ligneux du Mahonia après une Phase A aqueuse dédiée à l'inuline de Bardane."
+    safetyMessage: "Conserver l'extrait en flacon ambré à l'abri de la lumière et consulter un professionnel de santé avant tout usage.",
+    bloomNote: "Le titre hydro-alcoolique à 70° contenant de l'eau, il se travaille en bocal en verre hermétique hors appareil (aucune chauffe en mode Tincture pour les dilutions aqueuses) après une Phase A aqueuse en BloomLab®."
   },
   {
     id: '11',
-    title: "Remède Eczéma — Désamorçage Histaminique & Barrière",
-    description: "Formule protectrice thermo-régulée combinant Plantain, Camomille Matricaire et Fumeterre pour calmer le prurit et restaurer la matrice cutanée.",
+    title: "Atelier Botanique — Plantain, Camomille & Fumeterre",
+    description: "Séquence pédagogique combinant Plantain, Camomille Matricaire et Fumeterre par extraction séquentielle douce.",
     ingredients: ["Feuilles de Plantain lancéolé (25g)", "Capitules de Camomille Matricaire (25g)", "Fumeterre fleurie (25g)"],
     instructions: [
-      "Phase A : Extraction douce de l'aucuboside du Plantain et de l'apigénine de Camomille à 68°C pendant 1h45. Filtrer et réserver.",
+      "Phase A : Extraction douce de l'aucuboside du Plantain et de l'apigénine de Camomille à 68°C pendant 1h45 dans BloomLab® (sous surveillance). Filtrer et réserver.",
       "Transition obligatoire : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve.",
-      "Phase B : Captation hydro-alcoolique à 50° (degré doux adapté aux sommités fleuries et sesquiterpènes/protopine) en mode Sans chauffe (4h à 12h) ou en bocal hermétique.",
+      "Phase B : Macération hydro-alcoolique à 50° (dilution contenant de l'eau) des sommités fleuries en bocal en verre hermétique hors appareil (ou option sans alcool en glycérine/huile végétale dans BloomLab®).",
       "Pressage doux sans broyer les tiges et réunion des fractions A et B."
     ],
-    benefits: ["Soutien du confort cutané", "Équilibre de la réponse histaminique", "Préservation du film hydrolipidique"],
+    benefits: ["Étude phytochimique des iridoïdes et flavonoïdes", "Séparation des fractions hydrosolubles et aromatiques", "Contenu éducatif non thérapeutique"],
     image: "/images/recettes/remede-eczema-desamorcage-histaminique.jpg",
     category: "Extrait liquide",
     plant: { name: "Plantain & Camomille" },
-    goal: "Peaux réactives à tendance atopique, inconfort cutané et fragilité de la barrière épidermique",
+    goal: "Étude d'herboristerie sur les plantes douces à mucilages et sesquiterpènes",
     architectures: ["HPA", "SEC", "Fascia"],
-    terrains: ["T7 (Neuro-endocrinien & stress)", "T3 (Immunité innée)", "T6 (Émonctoires)"],
-    axes: ["A3 (Axe HPA & Neuro-surrénalien)", "A4 (Cascade de l'inflammation)", "A8 (Système EndoCannabinoïde)"],
+    terrains: ["T7 (Équilibre nerveux)", "T3 (Terrain sensible)", "T6 (Terrain cutané)"],
+    axes: ["A3 (Équilibre émotionnel)", "A4 (Réponse oxydative)", "A8 (Système endocannabinoïde)"],
     sachetA: {
       composition: ["25g Plantain lancéolé", "15g Camomille matricaire"],
       solvant: "Eau distillée + Glycérine végétale bio (500ml, 65/35)",
@@ -475,46 +477,48 @@ export const discoveryRecipes: Recipe[] = [
     },
     sachetB: {
       composition: ["10g Camomille matricaire (terpènes)", "25g Fumeterre"],
-      solvant: "Alcool alimentaire 50° (250ml ; option sans alcool possible en glycérine/huile)",
-      temp: "Ambiante (Sans chauffe / bocal)",
-      duration: "4h à 12h"
+      solvant: "Alcool alimentaire 50° en bocal hermétique hors appareil (ou option sans alcool glycérine/huile)",
+      temp: "Bocal hermétique hors appareil",
+      duration: "Macération traditionnelle hors appareil"
     },
-    extractionOrder: "Phase A hydroglycérinée sous 70°C -> vidange & séchage complet -> Phase B hydro-alcoolique 50° en Sans chauffe ou bocal pour sesquiterpènes et protopine -> assemblage",
+    extractionOrder: "Phase A hydroglycérinée sous 70°C en BloomLab® -> vidange & séchage complet -> Phase B hydro-alcoolique 50° en bocal hermétique hors appareil -> assemblage",
     administration: {
-      mode: "Voie orale exclusive (diluée dans un demi-verre d'eau).",
-      dailyDose: "8ml par jour (2 prises de 4ml)",
-      maxDose: "8ml par jour",
-      frequency: "2 fois par jour",
-      timing: "Le matin à jeun et à 17h00",
-      usageDuration: "Cure de 45 jours continus."
+      mode: "Usage pédagogique et éducatif. Pour tout usage, consulter un professionnel de santé.",
+      dailyDose: "Usage éducatif uniquement",
+      maxDose: "Non applicable (fiche pédagogique)",
+      frequency: "Selon avis qualifié",
+      timing: "Hors repas",
+      usageDuration: "À valider avec un professionnel de santé."
     },
     precautions: [
+      "Fiche strictement éducative : ne constitue ni un avis médical ni un traitement d'une affection cutanée.",
+      "Ne jamais laisser l'appareil sans surveillance en fonctionnement ni lorsqu'il est branché.",
       "Alcool inflammable dès la température ambiante (point d'éclair ~21–24 °C entre 50° et 70°, INRS) : manipuler en pièce très ventilée loin de toute flamme ; ne jamais chauffer d'alcool dilué à l'eau en mode Tincture.",
       "Demander un avis médical ou dermatologique en cas de lésion cutanée suintante ou persistante."
     ],
     contraindications: ["Grossesse et allaitement", "Enfants", "Sensibilité à l'alcool", "Allergie connue aux Astéracées", "Calculs biliaires aigus"],
-    safetyMessage: "Privilégier des douches tièdes (<34°C) pour préserver le film lipidique épidermique.",
-    bloomNote: "Un titre alcoolique doux de 50° respecte la délicatesse des capitules de camomille et extrait efficacement la protopine de la fumeterre sans recours à la chaleur."
+    safetyMessage: "Privilégier des douches tièdes (<34°C) et consulter un professionnel de santé en cas de peau sensible.",
+    bloomNote: "Un titre alcoolique à 50° contenant de l'eau, la Phase B s'effectue en bocal hermétique hors appareil (ou en glycérine/huile dans BloomLab®)."
   },
   {
     id: '12',
-    title: "Remède Alopécie — Anti-DHT & Matrice Folliculaire",
-    description: "Extraction lipophile et hydrosoluble de Palmier Nain, Racine d'Ortie et Ginkgo pour inhiber la 5-alpha-réductase et relancer la microcirculation capillaire.",
+    title: "Atelier Botanique — Palmier Nain, Ortie & Ginkgo",
+    description: "Extraction lipophile et hydrosoluble de Palmier Nain, Racine d'Ortie et Ginkgo étudiant le profil en phytostérols, silice et flavonoïdes.",
     ingredients: ["Baies de Palmier Nain / Saw Palmetto (30g)", "Racine d'Ortie concassée (25g)", "Feuilles de Ginkgo Biloba (20g)"],
     instructions: [
-      "Phase A : Extraction hydroglycérinée des lectines UDA, de la silice d'ortie et des flavonoïdes de Ginkgo à 72°C pendant 2h00. Filtrer et réserver.",
+      "Phase A : Extraction hydroglycérinée des composés hydrosolubles, de la silice d'ortie et des flavonoïdes de Ginkgo à 72°C pendant 2h00 dans BloomLab® (sous surveillance). Filtrer et réserver.",
       "Transition obligatoire : Vider, nettoyer et sécher intégralement la cuve.",
-      "Phase B : Extraction alcoolique du Palmier Nain (Saw Palmetto) concassé — titre optimal 70° en Sans chauffe (4h à 12h) ou bocal hermétique ; ou alcool ≥ 75 % vol. sans eau via programme Tincture en pièce ventilée sans flamme.",
-      "Conditionnement bimodal hors cuve : flacon compte-gouttes (oral) et flacon spray (lotion cuir chevelu)."
+      "Phase B : Macération du Palmier Nain concassé soit à 70° en bocal hermétique hors appareil, soit dans un alcool ≥ 75 % vol. sans eau via programme Tincture (71 °C / 4 h par défaut, réglable manuellement) en pièce ventilée loin de toute flamme et sous surveillance.",
+      "Conditionnement bimodal hors cuve en flacons ambrés hermétiques."
     ],
-    benefits: ["Soutien de la vitalité du bulbe pileux", "Microcirculation du cuir chevelu", "Apport en phytostérols et silice"],
+    benefits: ["Étude des phytostérols et flavonoïdes", "Extraction biphasique hydrophile / lipophile", "Apport documentaire sur le totum"],
     image: "/images/recettes/soin-alopecie-anti-dht-matrice-folliculaire.jpg",
     category: "Extrait double action",
     plant: { name: "Palmier Nain & Ortie" },
-    goal: "Perte de densité capillaire, microcirculation du cuir chevelu et équilibre des acides gras/stérols",
+    goal: "Étude de l'extraction séquentielle des baies riches en acides gras/phytostérols et racines siliceuses",
     architectures: ["SRA", "Fascia"],
-    terrains: ["T7 (Neuro-endocrinien)", "T6 (Émonctoires & microcirculation)", "T2 (Énergie & vitalité)"],
-    axes: ["A5 (Énergie cellulaire & Mitochondries)", "A7 (Matrice extracellulaire & Fascia)", "A9 (Flexibilité métabolique & Insuline)"],
+    terrains: ["T7 (Terrain hormonal/nerveux)", "T6 (Circulation périphérique)", "T2 (Vitalité)"],
+    axes: ["A5 (Métabolisme cellulaire)", "A7 (Matrice extracellulaire)", "A9 (Équilibre lipidique)"],
     sachetA: {
       composition: ["25g Racine d'Ortie", "20g Feuilles de Ginkgo"],
       solvant: "Eau distillée + Glycérine végétale (450ml, 70/30)",
@@ -523,26 +527,28 @@ export const discoveryRecipes: Recipe[] = [
     },
     sachetB: {
       composition: ["30g Baies de Palmier Nain (Saw Palmetto) concassées"],
-      solvant: "Alcool alimentaire 70° (ou ≥ 75 % vol. sans eau pour cycle Tincture) (300ml)",
-      temp: "Ambiante (Sans chauffe) ou 71°C Tincture (≥75° sans eau)",
-      duration: "4h à 12h (ou 4h Tincture)"
+      solvant: "Alcool ≥ 75 % vol. sans eau (cycle Tincture) ou alcool 70° en bocal hermétique hors appareil (300ml)",
+      temp: "71°C Tincture (≥75° sans eau) ou Bocal hermétique hors appareil (70°)",
+      duration: "4h Tincture (réglable) ou macération hors appareil"
     },
-    extractionOrder: "Phase A silice & flavonoïdes -> vidange & séchage complet -> Phase B alcoolique 70°/75° pour acides gras libres et bêta-sitostérol -> assemblage",
+    extractionOrder: "Phase A silice & flavonoïdes -> vidange & séchage complet -> Phase B soit alcool ≥75 % sans eau (Tincture) soit alcool 70° en bocal hermétique hors appareil -> assemblage",
     administration: {
-      mode: "Double voie : orale le matin (5ml dilués) et topique en lotion cuir chevelu le soir (8 pulvérisations).",
-      dailyDose: "5ml par voie orale + 8 pulvérisations topiques 3x/semaine",
-      maxDose: "5ml par voie orale",
-      frequency: "Quotidien le matin (oral), 3 fois par semaine le soir (lotion)",
-      timing: "Matin au petit-déjeuner (oral) et soir avant le coucher (topique)",
-      usageDuration: "Cure de 90 jours continus."
+      mode: "Usage pédagogique et cosmétique externe du cuir chevelu (pour tout usage interne, demander avis médical).",
+      dailyDose: "Usage pédagogique uniquement",
+      maxDose: "Non applicable (fiche pédagogique)",
+      frequency: "Selon protocole encadré",
+      timing: "Le soir en application externe",
+      usageDuration: "À valider avec un professionnel de santé."
     },
     precautions: [
+      "Fiche strictement éducative : ne constitue ni un avis médical ni un traitement d'une alopécie.",
+      "Ne jamais laisser l'appareil sans surveillance en fonctionnement ni lorsqu'il est branché.",
       "Consulter un professionnel de santé en cas de prise simultanée d'anticoagulants (Ginkgo Biloba).",
       "Vapeurs d'alcool inflammables dès 13–21 °C (INRS) : travailler en pièce très ventilée loin de toute flamme, couvercle verrouillé et entre MIN et MAX."
     ],
     contraindications: ["Grossesse et allaitement", "Femmes en âge de procréer sans contraception", "Moins de 18 ans", "Sensibilité à l'alcool", "Antécédents hormonodépendants"],
-    safetyMessage: "Le massage du cuir chevelu de 3 minutes le soir favorise la microcirculation locale.",
-    bloomNote: "Les baies de Palmier Nain étant très riches en acides gras libres et phytostérols cireux, un titre alcoolique élevé (70°–75°) assure une solubilisation complète."
+    safetyMessage: "Respecter les précautions de sécurité sur l'alcool et consulter un professionnel de santé avant tout usage.",
+    bloomNote: "Les baies de Palmier Nain étant riches en acides gras libres et phytostérols cireux, un alcool fort ≥ 75 % vol. sans eau convient au programme Tincture (ou alcool 70° en bocal hermétique hors appareil)."
   }
 ];
 

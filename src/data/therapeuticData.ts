@@ -389,7 +389,7 @@ export const plantsDatabase: PlantData[] = [
         "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
       ],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: [
         "1. À la fin du cycle, laissez reposer 10 min pour que les particules tombent au fond.",
         "2. Placez une étamine (tissu en coton fin) sur un grand saladier en verre.",
@@ -476,16 +476,16 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "La résine est insoluble dans l'eau. Une tisane ne donne qu'un liquide amer sans actifs. Chauffer la résine à 90°C dans l'alcool détruit les acides boswelliques thermolabiles.",
       phase_A: { temp: "60°C", temps: "2h00", solvant: "Eau distillée + Glycérine (70/30)", cible: "Polysaccharides apaisants pour les muqueuses", translations: { en: { cible: "Soothing polysaccharides for mucous membranes" }, de: { cible: "Beruhigende Polysaccharide für Schleimhäute" } } },
-      phase_B: { temp: "45°C (Tincture ajusté / Sans chauffe)", temps: "2h30 (ou 4h–12h)", solvant: "Alcool alimentaire bio 90°–96° (sans eau)", cible: "Acides boswelliques (AKBA) et résines", translations: { en: { cible: "Boswellic acids (AKBA) and resins" }, de: { cible: "Boswelliasäuren (AKBA) und Harze" } } },
-      resultat: "Capture des polysaccharides muqueux (Phase A) et des acides boswelliques AKBA dans l’alcool 90°–96° sans eau (Tincture ajusté 45 °C ou Sans chauffe) après séchage complet de la cuve.",
+      phase_B: { temp: "45°C (Tincture réglé manuellement)", temps: "2h30", solvant: "Alcool alimentaire bio 90°–96° (sans eau)", cible: "Acides boswelliques (AKBA) et résines", translations: { en: { cible: "Boswellic acids (AKBA) and resins" }, de: { cible: "Boswelliasäuren (AKBA) und Harze" } } },
+      resultat: "Capture des polysaccharides muqueux (Phase A) et des acides boswelliques AKBA dans l’alcool 90°–96° sans eau via Tincture réglé manuellement à 45 °C / 2h30 (ou bocal hermétique hors appareil) après séchage complet de la cuve.",
       translations: {
         en: {
           probleme_traditionnel: "Resin is insoluble in water. An herbal tea only gives a bitter liquid without actives. Heating resin to 90°C in alcohol destroys thermolabile boswellic acids.",
-          resultat: "Capture of soothing polysaccharides (Phase A) and boswellic acids in waterless 90–96% ABV alcohol (adjusted Tincture 45 °C or No heating) after emptying and drying the tank."
+          resultat: "Capture of soothing polysaccharides (Phase A) and boswellic acids in waterless 90–96% ABV alcohol via manually adjusted Tincture (45 °C / 2h30) or sealed glass jar outside appliance after emptying and drying the tank."
         },
         de: {
           probleme_traditionnel: "Harz ist in Wasser unlöslich. Ein Kräutertee ergibt nur eine bittere Flüssigkeit ohne Wirkstoffe. Das Erhitzen von Harz auf 90°C in Alkohol zerstört thermolabile Boswelliasäuren.",
-          resultat: "Erfassung der Schleimhaut-Polysaccharide (Phase A) und Boswelliasäuren in wasserfreiem 90–96 Vol.-% Alkohol (Tincture 45 °C oder Ohne Erhitzen) nach vollständigem Trocknen des Behälters."
+          resultat: "Erfassung der Schleimhaut-Polysaccharide (Phase A) und Boswelliasäuren in wasserfreiem 90–96 Vol.-% Alkohol (Tincture 45 °C oder Außerhalb des Geräts (Glas)) nach vollständigem Trocknen des Behälters."
         }
       }
     },
@@ -510,7 +510,7 @@ export const plantsDatabase: PlantData[] = [
         "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
       ],
-      phase_B_instructions: ["1. Cuve propre et sèche (pièce ventilée, zéro flamme, couvercle verrouillé, respect MIN/MAX) : verser 250 ml d'alcool 90°–96° sans ajout d'eau et lancer Tincture ajusté à 45 °C / 2h30 (ou Sans chauffe 4h–12h)."],
+      phase_B_instructions: ["1. Cuve propre et sèche (pièce ventilée, zéro flamme, couvercle verrouillé, respect MIN/MAX, surveillance continue — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché) : verser 250 ml d'alcool 90°–96° sans ajout d'eau et lancer Tincture réglé manuellement à 45 °C / 2h30 (ou macération en bocal hermétique hors appareil)."],
       filtration_et_finition: [
         "1. Le filtrage de la résine peut être collant. Utilisez une étamine fine et pressez le marc avec un peu d'huile végétale tiède ou de glycérine pour récupérer les derniers actifs.",
         "2. Pressez fermement. Mettez en flacon ambré."
@@ -617,7 +617,7 @@ export const plantsDatabase: PlantData[] = [
         "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
       ],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 50° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: [
         "1. Filtrez TRÈS finement avec le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc.",
         "2. Le liquide final aura une couleur rouge rubis profond. Conservez impérativement dans du verre violet (Miron) ou ambré, au réfrigérateur après ouverture."
@@ -743,7 +743,7 @@ export const plantsDatabase: PlantData[] = [
         "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
       ],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 55° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 55° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: [
         "1. Filtrez TRÈS finement with le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc. Pressez bien le marc de racines, c'est là que se concentrent les phytostérols.",
         "2. Le liquide aura une belle couleur vert-brun foncé. Mettez en flacon."
@@ -834,7 +834,7 @@ export const plantsDatabase: PlantData[] = [
         "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
       ],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 55° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 55° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: [
         "1. Filtrez TRÈS finement with le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc. La prêle laisse beaucoup de résidus siliceux (une fine poudre au fond).",
         "2. Laissez décanter le filtrat 2h au réfrigérateur, puis soutirez le liquide clair pour éviter les dépôts dans le flacon final."
@@ -944,7 +944,7 @@ export const plantsDatabase: PlantData[] = [
         "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
       ],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: [
         "1. Filtrez TRÈS finement with le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc.",
         "2. Pressez fermement le marc. Le liquide aura une couleur ambrée dorée et une odeur épicée puissante. Mettez en flacon ambré."
@@ -1052,7 +1052,7 @@ export const plantsDatabase: PlantData[] = [
         "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
       ],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 60° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 60° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: [
         "1. Filtrez TRÈS finement with le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc. La racine de scutellaire laisse un dépôt jaune caractéristique (la baicaline).",
         "2. Pressez bien. Le liquide final est d'un jaune intense. Mettez en flacon ambré."
@@ -1160,7 +1160,7 @@ export const plantsDatabase: PlantData[] = [
         "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
       ],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: [
         "1. Filtrez TRÈS finement with le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc. Pressez le marc.",
         "2. L'élixir aura une couleur brun-rouge et une odeur subtile de rose et de terre. Mettez en flacon."
@@ -1267,7 +1267,7 @@ export const plantsDatabase: PlantData[] = [
         "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
       ],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: [
         "1. Filtrez TRÈS finement with le sac filtre fournit, la préparation encore tiède. Pressez fermement le marc.",
         "2. Mettez en flacon ambré. À conserver à l'obscurité."
@@ -1346,7 +1346,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez fermement le marc de racine.",
           "Le liquide sera d'un brun-rouge profond, extrêmement amer. Mettez en flacon ambré."
@@ -1464,7 +1464,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. L'odeur sera soufrée et caractéristique.",
           "Pressez le marc. Mettez en flacon ambré."
@@ -1582,7 +1582,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 50° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez le marc.",
           "Le liquide sera vert-brun. Mettez en flacon ambré."
@@ -1700,7 +1700,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 50° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez le marc.",
           "Le liquide sera vert foncé. Mettez en flacon ambré."
@@ -1818,7 +1818,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez fermement le marc de racine.",
           "Le liquide sera brun-jaune. Mettez en flacon ambré."
@@ -1936,7 +1936,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez fermement le marc.",
           "Le liquide sera jaune pâle. Mettez en flacon ambré."
@@ -2053,7 +2053,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez le marc.",
           "Le liquide sera brun clair. Mettez en flacon ambré."
@@ -2171,7 +2171,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 60° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 60° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez le marc.",
           "Le liquide sera vert-brun. Mettez en flacon ambré."
@@ -2288,7 +2288,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine double épaisseur. Pressez très fermement.",
           "Le liquide sera brun foncé et amer. Mettez en flacon ambré."
@@ -2527,7 +2527,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 55° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 55° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez le marc.",
           "Le liquide sera jaune-vert. Mettez en flacon ambré."
@@ -2645,7 +2645,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 60° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 60° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Le mélange sera légèrement visqueux (mucilages). Pressez fermement.",
           "Mettez en flacon ambré."
@@ -2763,7 +2763,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 50° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez doucement pour éviter de troubler l'extrait avec trop de particules.",
           "Mettez en flacon ambré."
@@ -2881,7 +2881,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez fermement le marc de racine.",
           "Le liquide sera brun-rouge. Mettez en flacon ambré."
@@ -2998,7 +2998,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez fermement.",
           "Le liquide sera jaune pâle, d'une amertume extrême. Mettez en flacon ambré."
@@ -3116,7 +3116,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 50° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine fine. Pressez le marc.",
           "Le liquide sera brun-vert. Mettez en flacon ambré."
@@ -3234,7 +3234,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 50° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez doucement.",
           "Le liquide sera rouge-violet profond. Mettez en flacon ambré ou violet (Miron)."
@@ -3352,7 +3352,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez fermement (la poudre de maca absorbe beaucoup de liquide).",
           "Le liquide sera beige-brun, avec un goût de caramel/malt. Mettez en flacon ambré."
@@ -3470,7 +3470,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 50° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez le marc.",
           "Le liquide sera vert-brun, légèrement astringent. Mettez en flacon ambré."
@@ -3588,7 +3588,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 60° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 60° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez le marc.",
           "Le liquide sera vert foncé, très aromatique. Mettez en flacon ambré."
@@ -3706,7 +3706,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez fermement le marc.",
           "Le liquide sera brun foncé. Mettez en flacon ambré."
@@ -3824,7 +3824,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez fermement.",
           "Le liquide sera noir/brun très foncé, avec une odeur épicée. Mettez en flacon ambré."
@@ -3941,7 +3941,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine double épaisseur. Pressez très fermement.",
           "Le liquide sera brun doré. Mettez en flacon ambré."
@@ -4059,7 +4059,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 50° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez le marc.",
           "Le liquide sera vert-brun. Mettez en flacon ambré."
@@ -4177,7 +4177,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 45° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 45° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez doucement (le liquide sera visqueux).",
           "Mettez en flacon ambré."
@@ -4295,7 +4295,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez fermement le marc.",
           "Le liquide sera brun clair, légèrement visqueux. Mettez en flacon ambré."
@@ -4412,7 +4412,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine double épaisseur. Pressez très fermement.",
           "Le liquide sera brun ambré. Mettez en flacon ambré."
@@ -4505,7 +4505,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine double épaisseur. Pressez très fermement.",
           "Le liquide sera noir profond (mélanine). Mettez en flacon ambré ou violet (Miron)."
@@ -4623,7 +4623,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 55° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 55° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez le marc.",
           "Le liquide sera brun-rouge. Mettez en flacon ambré."
@@ -4741,7 +4741,7 @@ export const plantsDatabase: PlantData[] = [
           "Attendre le refroidissement naturel cuve éteinte, filtrer et réserver la Phase A.",
         "3. SÉCURITÉ : Vider, rincer (Nettoyage 5 min) et sécher intégralement la cuve avant d'introduire l'alcool de Phase B (pièce ventilée, aucune flamme)."
         ],
-        phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 50° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+        phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
         filtration_et_finition: [
           "Filtrez à l'étamine. Pressez le marc.",
           "Le liquide sera vert foncé. Mettez en flacon ambré."
@@ -4816,7 +4816,7 @@ export const plantsDatabase: PlantData[] = [
     "pourquoi_bloomlab": {
       "probleme_traditionnel": "L'allicine de l'ail frais est sensible à la chaleur (>40°C). Une régulation thermique douce (42°C max) en cuve close inox 304 préserve ses composés organosoufrés.",
       "phase_A": {"temp": "35°C", "temps": "2h00", "solvant": "Eau filtrée + Glycérine végétale (70/30)", "cible": "Extraction douce de la SAC (si ail noir/vieilli) ou fraction enzymatique tiède (si ail frais reposé 15 min)", "translations": { "en": { "cible": "Gentle extraction of SAC (aged/black garlic) or mild enzymatic fraction (fresh crushed garlic rested 15 min)" }, "de": { "cible": "Sanfte Extraktion von SAC (schwarzer Knoblauch) oder milde Fraktion (frischer Knoblauch nach 15 Min. Ruhezeit)" } } },
-      "phase_B": {"temp": "42°C", "temps": "2h00", "solvant": "Alcool alimentaire bio 70° (composés organosoufrés (ail frais vs ail noir SAC))", "cible": "Extraction des composés organosoufrés en alcool 70° (Sans chauffe / bocal) ou option huile/glycérine", "translations": { "en": { "cible": "Extraction of sulfur compounds in 70% ABV alcohol (No heating / jar) or carrier oil/glycerin option" }, "de": { "cible": "Extraktion der Schwefelverbindungen in 70 % Vol. Alkohol (Ohne Erhitzen / Glas) oder Öl-/Glycerin-Option" } } },
+      "phase_B": {"temp": "42°C (option huile/glycérine) · Hors appareil 70°", "temps": "2h00 (huile/glycérine)", "solvant": "Alcool alimentaire bio 70° en bocal hors appareil (ail frais vs ail noir SAC) ou option huile/glycérine", "cible": "Extraction des composés organosoufrés en bocal hermétique hors appareil (70°) ou option huile/glycérine (42 °C / 2h00)", "translations": { "en": { "cible": "Extraction of sulfur compounds in 70% ABV alcohol (sealed glass jar outside appliance) or carrier oil/glycerin option (42°C / 2h00)" }, "de": { "cible": "Extraktion der Schwefelverbindungen in 70 % Vol. Alkohol (verschlossenes Glas außerhalb des Geräts) oder Öl-/Glycerin-Option (42 °C / 2 Std.)" } } },
       "resultat": "Préparation douce en cuve close inox 304, distinguant clairement l'usage de l'ail frais écrasé et celui de l'ail noir vieilli.",
       "translations": {
         "en": {
@@ -4837,7 +4837,7 @@ export const plantsDatabase: PlantData[] = [
       },
       "preparation": [
         "1. Choisir une seule forme : ail frais écrasé laissé 15 min à l'air libre (formation d'allicine) OU ail noir vieilli coupé finement (riche en SAC).",
-        "2. Pour la Phase B hydro-alcoolique 70° : vider et sécher intégralement la cuve puis utiliser le mode Sans chauffe (4h–12h) ou un bocal hermétique en pièce ventilée (ne pas chauffer d'alcool dilué à l'eau)."
+        "2. Pour la Phase B hydro-alcoolique 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil en pièce ventilée (ou opter pour huile végétale / glycérine à 42 °C / 2h00 dans BloomLab® sous surveillance, sans jamais chauffer d'alcool dilué à l'eau)."
       ],
       "phase_A_instructions": [
         "1. Verser l'eau filtrée et la glycérine dans la cuve.",
@@ -4846,7 +4846,7 @@ export const plantsDatabase: PlantData[] = [
       ],
       "transition": ["Laisser refroidir naturellement cuve éteinte avant toute manipulation sans test tactile direct sur la paroi."],
       "phase_B_instructions": [
-        "1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible).",
+        "1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché).",
         "2. Option lipidique sans alcool : placer le marc avec 250ml d'huile végétale vierge à 42°C pendant 2h00, puis filtrer et réfrigérer."
       ],
       "filtration_et_finition": ["Filtration fine sur tamis inox. Mise en flacon ambré propre au réfrigérateur et consommation rapide recommandée."]
@@ -4934,7 +4934,7 @@ export const plantsDatabase: PlantData[] = [
     "pourquoi_bloomlab": {
       "probleme_traditionnel": "La berbérine est très amère et difficile à extraire à l'eau seule. Son absorption est naturellement faible.",
       "phase_A": {"temp": "75°C", "temps": "3h00", "solvant": "Eau distillée + Glycérine", "cible": "Glycosides et fraction aqueuse", "translations": { "en": { "cible": "Glycosides and aqueous fraction" }, "de": { "cible": "Glykoside und wässrige Fraktion" } } },
-      "phase_B": {"temp": "Ambiante (Sans chauffe)", "temps": "4h à 12h", "solvant": "Alcool alimentaire bio 70° (berbérine et alcaloïdes d’écorce)", "cible": "Concentration maximale de Berbérine et Berbamine", "translations": { "en": { "cible": "Maximum concentration of Berberine and Berbamine" }, "de": { "cible": "Maximale Konzentration von Berberin und Berbamin" } } },
+      "phase_B": {"temp": "Bocal hermétique hors appareil (révision clinique requise)", "temps": "Macération hors appareil (non chiffrée sans étude dédiée)", "solvant": "Alcool alimentaire bio 70° hors appareil (ou alternative glycérinée ; berbérine et alcaloïdes d’écorce)", "cible": "Solubilisation documentaire de la berbérine hors appareil (fiche à soumettre à validation toxicologique/clinique)", "translations": { "en": { "cible": "Documentary berberine solubilization in sealed jar outside appliance (flagged for toxicological/clinical review)" }, "de": { "cible": "Dokumentarische Berberin-Lösung im verschlossenen Glas außerhalb des Geräts (zur toxikologischen/klinischen Prüfung markiert)" } } },
       "resultat": "Un régulateur métabolique majeur, optimisant la sensibilité à l'insuline et la santé hépatique.",
       "translations": {
         "en": {
@@ -5030,7 +5030,7 @@ export const plantsDatabase: PlantData[] = [
     "pourquoi_bloomlab": {
       "probleme_traditionnel": "L'écorce est extrêmement dure. La quinine nécessite un milieu acide ou fortement alcoolisé pour être extraite efficacement. L'eau seule ne capture que les tanins.",
       "phase_A": {"temp": "85°C", "temps": "3h00", "solvant": "Eau + Acide Citrique (léger)", "cible": "Relargage des tanins et préparation de l'écorce", "translations": { "en": { "cible": "Release of tannins and preparation of the bark" }, "de": { "cible": "Freisetzung von Gerbstoffen und Vorbereitung der Rinde" } } },
-      "phase_B": {"temp": "Ambiante (Sans chauffe)", "temps": "4h à 12h", "solvant": "Alcool alimentaire bio 70° (alcaloïdes quinoléiques d’écorce)", "cible": "Extraction massive des alcaloïdes (Quinine)", "translations": { "en": { "cible": "Massive extraction of alkaloids (Quinine)" }, "de": { "cible": "Massive Extraktion von Alkaloiden (Chinin)" } } },
+      "phase_B": {"temp": "Bocal hermétique hors appareil (révision clinique requise)", "temps": "Macération hors appareil (non chiffrée sans étude dédiée)", "solvant": "Alcool alimentaire bio 70° hors appareil (alcaloïdes quinoléiques d’écorce)", "cible": "Étude documentaire des alcaloïdes quinoléiques hors appareil (fiche à soumettre à validation toxicologique/clinique)", "translations": { "en": { "cible": "Documentary quinoline alkaloids maceration in sealed jar outside appliance (flagged for toxicological/clinical review)" }, "de": { "cible": "Dokumentarische Chinolinalkaloid-Mazeration außerhalb des Geräts (zur toxikologischen/klinischen Prüfung markiert)" } } },
       "resultat": "Un élixir de vitalité 'Feu', idéal pour les convalescences et les états de fatigue profonde.",
       "translations": {
         "en": {
@@ -5194,7 +5194,7 @@ export const plantsDatabase: PlantData[] = [
       preparation: ["Tasser la plante dans la cuve."],
       phase_A_instructions: ["Extraire à 60°C."],
       transition: ["Laisser tiédir."],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 45° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 45° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: ["Filtre fin requis."]
     },
     convergence_ancestrale: "Découverte par les missionnaires en Amérique, associée à la Passion pour sa structure florale unique.",
@@ -5216,8 +5216,8 @@ export const plantsDatabase: PlantData[] = [
     pourquoi_bloomlab: {
       probleme_traditionnel: "L'odeur est forte et les actifs sont principalement lipophiles. L'extraction doit être hermétique.",
       phase_A: { temp: "55°C", temps: "2h00", solvant: "Eau purifiée + Glycérine végétale (70/30)", cible: "Polyphénols et acides phénoliques hydrosolubles" },
-      phase_B: { temp: "40°C (Sans chauffe 70°)", temps: "4h–12h", solvant: "Alcool alimentaire bio 70° (acides valéréniques et valépotriates)", cible: "Acides valéréniques et valépotriates" },
-      resultat: "Double extraction associant la fraction hydrosoluble (Phase A) aux acides valéréniques en alcool 70° (Sans chauffe ou bocal hermétique après séchage de la cuve)."
+      phase_B: { temp: "Bocal hermétique hors appareil (70° ; état antérieur 40 °C)", temps: "Macération hors appareil (état antérieur 1h00)", solvant: "Alcool alimentaire bio 70° hors appareil (acides valéréniques et valépotriates)", cible: "Acides valéréniques et valépotriates (macération hors appareil pour dilution 70°)" },
+      resultat: "Double extraction associant la fraction hydrosoluble (Phase A en BloomLab®) aux acides valéréniques en alcool 70° par macération en bocal hermétique hors appareil."
     },
     recette_pas_a_pas: {
       batch_standard: "750ml + 75g de racines",
@@ -5228,7 +5228,7 @@ export const plantsDatabase: PlantData[] = [
       preparation: ["Concasser les racines dures."],
       phase_A_instructions: ["Extraire à 50°C longuement."],
       transition: ["Maintenir l'étanchéité."],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: ["Filtrer et flaconner rapidement."]
     },
     convergence_ancestrale: "Le 'Phu' des Grecs anciens, utilisé pour calmer les nerfs et les spasmes.",
@@ -5262,7 +5262,7 @@ export const plantsDatabase: PlantData[] = [
       preparation: ["Plante séchée concassée."],
       phase_A_instructions: ["Extraire à 55°C."],
       transition: ["Laisser reposer."],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 50° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: ["Filtre étamine."]
     },
     convergence_ancestrale: "Le 'Pavot de Californie', utilisé par les Amérindiens pour apaiser les enfants et les douleurs.",
@@ -5297,7 +5297,7 @@ export const plantsDatabase: PlantData[] = [
       preparation: ["Feuilles sèches entières."],
       phase_A_instructions: ["Extraire à 65°C."],
       transition: ["Garder fermé."],
-      phase_B_instructions: ["Vider et sécher la cuve, puis lancer la Phase B avec 250 ml d'alcool à 55° en mode Sans chauffe (4h–12h) ou en bocal (option huile/glycérine possible à 45°C)."],
+      phase_B_instructions: ["Pour la Phase B hydro-alcoolique à 55° (contenant de l'eau) : réaliser la macération en bocal hermétique hors appareil à l'abri de la lumière (ou opter dans BloomLab® pour huile/glycérine à 45 °C sous surveillance continue)."],
       filtration_et_finition: ["Mise en flacon ambré."]
     },
     convergence_ancestrale: "L'herbe du souvenir et de la fidélité, utilisée pour 'éclaircir l'esprit' et fortifier le corps.",
@@ -5661,7 +5661,7 @@ export const plantsDatabase: PlantData[] = [
       preparation: ["Pesez précisément les ingrédients."],
       phase_A_instructions: ["500ml Eau/Glycérine + 50g Écorce. 60°C, 1h30."],
       transition: ["Attendre le refroidissement complet cuve arrêtée avant toute manipulation."],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 55° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 55° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: ["Étamine. Flacon ambré."]
     },
     socle_synergique: {
@@ -5698,7 +5698,7 @@ export const plantsDatabase: PlantData[] = [
       preparation: ["Pesez précisément les ingrédients."],
       phase_A_instructions: ["500ml Eau/Glycérine + 50g Racine. 65°C, 2h."],
       transition: ["Attendre le refroidissement complet cuve arrêtée avant toute manipulation."],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: ["Étamine. Flacon bien fermé."]
     },
     socle_synergique: {
@@ -5735,7 +5735,7 @@ export const plantsDatabase: PlantData[] = [
       preparation: ["Pesez précisément les ingrédients."],
       phase_A_instructions: ["500ml Eau/Glycérine + 50g Feuilles. 70°C, 2h."],
       transition: ["Attendre le refroidissement complet cuve arrêtée avant toute manipulation."],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 50° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 50° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: ["Étamine. Flacon ambré."]
     },
     socle_synergique: {
@@ -5772,7 +5772,7 @@ export const plantsDatabase: PlantData[] = [
       preparation: ["Pesez précisément les ingrédients."],
       phase_A_instructions: ["500ml Eau/Glycérine + 50g Plante. 60°C, 1h30."],
       transition: ["Attendre le refroidissement complet cuve arrêtée avant toute manipulation."],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 55° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 55° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: ["Étamine. Flacon verre violet (Miron)."]
     },
     socle_synergique: {
@@ -5816,7 +5816,7 @@ export const plantsDatabase: PlantData[] = [
       transition: [
         "1. Laisser reposer 20 à 30 minutes, filtrer et presser fermement le marc."
       ],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: [
         "1. Filtrer finement et assembler les deux fractions si un totum complet est souhaité."
       ]
@@ -5903,7 +5903,7 @@ export const plantsDatabase: PlantData[] = [
         "1. Laisser tiédir 20 minutes, filtrer sans presser trop brutalement."
       ],
       phase_B_instructions: [
-        "1. Phase B : placer 15 g de formule dans 250 ml d'alcool alimentaire à 60° après vidange et séchage complet de la cuve, mode Sans chauffe (4h–12h) ou macération en bocal (option huile/glycérine à 45°C possible)."
+        "1. Pour la Phase B hydro-alcoolique à 60° : réaliser la macération en bocal hermétique hors appareil avec 15 g de formule dans 250 ml d'alcool à 60° (ou opter dans BloomLab® pour huile/glycérine à 45 °C sous surveillance continue)."
       ],
       filtration_et_finition: [
         "1. Assembler les deux fractions si souhaité."
@@ -5947,7 +5947,7 @@ export const plantsDatabase: PlantData[] = [
         "1. Filtrer en pressant légèrement les fruits ramollis."
       ],
       phase_B_instructions: [
-        "1. Phase B : placer 15 g de jujubes coupés dans 250 ml d'alcool alimentaire à 55° après vidange et séchage complet de la cuve, mode Sans chauffe (4h–12h) ou macération en bocal (option huile/glycérine à 45°C possible)."
+        "1. Pour la Phase B hydro-alcoolique à 55° : réaliser la macération en bocal hermétique hors appareil avec 15 g de jujubes coupés dans 250 ml d'alcool à 55° (ou opter dans BloomLab® pour huile/glycérine à 45 °C sous surveillance continue)."
       ],
       filtration_et_finition: [
         "1. Filtrer à l’étamine."
@@ -5990,7 +5990,7 @@ export const plantsDatabase: PlantData[] = [
       transition: [
         "1. Filtrer puis laisser tiédir."
       ],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: [
         "1. Filtrer et conserver en flacon ambré."
       ]
@@ -6033,7 +6033,7 @@ export const plantsDatabase: PlantData[] = [
       transition: [
         "1. Laisser reposer 20 à 30 minutes, filtrer et presser fermement."
       ],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: [
         "1. Filtrer soigneusement."
       ]
@@ -6075,7 +6075,7 @@ export const plantsDatabase: PlantData[] = [
       transition: [
         "1. Refroidir 20 minutes puis filtrer."
       ],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: [
         "1. Filtrer et conserver en flacon ambré."
       ]
@@ -6117,7 +6117,7 @@ export const plantsDatabase: PlantData[] = [
       transition: [
         "1. Laisser redescendre en température puis filtrer."
       ],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 70° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 70° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: [
         "1. Filtrer à l’étamine double et conserver en flacon ambré."
       ]
@@ -6159,7 +6159,7 @@ export const plantsDatabase: PlantData[] = [
       transition: [
         "1. Filtrer soigneusement."
       ],
-      phase_B_instructions: ["1. Cuve vidée, nettoyée et séchée (pièce ventilée, aucune flamme, respect MIN/MAX) : verser 250 ml d'alcool à 60° et lancer le programme Sans chauffe (4h à 12h) ou macérer en bocal hermétique (ne pas chauffer une dilution contenant de l'eau en mode Tincture ; option sans alcool en glycérine possible)."],
+      phase_B_instructions: ["1. Pour cette fraction hydro-alcoolique à 60° (contenant de l'eau) : réaliser la macération en bocal en verre hermétique hors appareil à l'abri de la lumière et loin de toute flamme (ne pas chauffer d'alcool dilué à l'eau en mode Tincture ; alternative sans alcool en glycérine ou huile végétale dans BloomLab® — ne jamais laisser l'appareil sans surveillance en fonctionnement ni branché)."],
       filtration_et_finition: [
         "1. Filtrer et conserver en flacon ambré."
       ]

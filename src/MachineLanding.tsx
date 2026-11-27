@@ -569,10 +569,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
             </h2>
             <p className="text-base sm:text-lg text-[#3E4A3D]/70 leading-relaxed font-normal">
               {lang === 'fr'
-                ? "Préparez vos huiles de soin, sérums, macérats glycérinés, teintures mères et infusions en quelques heures au lieu de plusieurs semaines. BloomLab® dispose de 6 fonctions prédéfinies (Butter, Oil, Tincture, Sans chauffe, Décarboxylation, Nettoyage 5 min) et d'un réglage manuel TEMP/TIME (0 à 121 °C, 30 min à 12 h sur les modes réglables) — vous paramétrez chaque cycle selon la plante et le solvant."
+                ? "Préparez vos huiles de soin, sérums, macérats glycérinés, teintures mères et infusions en quelques heures au lieu de plusieurs semaines. BloomLab® dispose de 6 fonctions prédéfinies (Butter, Oil, Tincture, Sans chauffe — mode sans température réglable dédié aux mélanges à froid type vinaigrette —, Décarboxylation, Nettoyage 5 min) et d'un réglage manuel TEMP/TIME (0 à 121 °C, 30 min à 12 h sur les modes réglables). Ne jamais laisser l'appareil sans surveillance en fonctionnement ni lorsqu'il est branché."
                 : lang === 'de'
-                ? "Stellen Sie Pflegeöle, Seren, Glycerin-Mazerate, Tinkturen und Aufgüsse in Stunden statt Wochen her. BloomLab® bietet 6 Programme (Butter, Oil, Tincture, Ohne Heizung, Decarboxylierung, Reinigung 5 Min.) sowie manuelle TEMP/TIME-Steuerung (0–121 °C, 30 Min.–12 Std. bei regelbaren Funktionen)."
-                : "Craft care oils, serums, glycerin macerates, tinctures, and infusions in hours instead of weeks. BloomLab® offers 6 functions (Butter, Oil, Tincture, No heating, Decarboxylate, 5-min Clean) plus manual TEMP/TIME control (0–121°C, 30 min–12h on adjustable modes) set by the user per herb and solvent."}
+                ? "Stellen Sie Pflegeöle, Seren, Glycerin-Mazerate, Tinkturen und Aufgüsse in Stunden statt Wochen her. BloomLab® bietet 6 Programme (Butter, Oil, Tincture, Ohne Erwärmung — Modus ohne regelbare Temperatur für kalte Mischungen wie Vinaigrette —, Decarboxylierung, Reinigung 5 Min.) sowie manuelle TEMP/TIME-Steuerung (0–121 °C, 30 Min.–12 Std.). Das Gerät während des Betriebs und im eingesteckten Zustand niemals unbeaufsichtigt lassen."
+                : "Craft care oils, serums, glycerin macerates, tinctures, and infusions in hours instead of weeks. BloomLab® offers 6 functions (Butter, Oil, Tincture, No heating — non-adjustable cold-mixing mode exemplified by vinaigrette —, Decarboxylate, 5-min Clean) plus manual TEMP/TIME control (0–121°C, 30 min–12h on adjustable modes). Never leave the appliance unattended during operation or while plugged in."}
             </p>
             <details className="text-left max-w-2xl mx-auto rounded-2xl border border-[#3E4A3D]/15 bg-white p-4 shadow-xs">
               <summary className="cursor-pointer font-bold text-sm text-[#3E4A3D] select-none">
@@ -585,10 +585,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               <div className="mt-3 pt-3 border-t border-[#3E4A3D]/10 text-xs sm:text-sm text-[#3E4A3D]/80 space-y-2 leading-relaxed">
                 <p>
                   {lang === 'fr'
-                    ? "L'extraction obéit à la loi de diffusion de Fick et à la sélectivité de polarité des solvants : la phase hydrophile (eau ou glycérine, ex. 70–85 °C) solubilise tanins, polyphénols et minéraux, tandis que la phase lipophile ou hydroalcoolique (huiles végétales à 40–58 °C ; alcool sur programme Tincture ou Sans chauffe après vidage et séchage complets de la cuve) capte terpènes, résines et alcaloïdes. Respectez toujours les consignes sécurité du manuel (ventilation, aucune flamme nue, couvercle verrouillé, niveaux MIN–MAX ; utiliser Sans chauffe ou un bocal lors d'une dilution hydroalcoolique à l'eau)."
+                    ? "L'extraction obéit à la loi de diffusion de Fick et à la sélectivité de polarité des solvants : la phase hydrophile (eau ou glycérine, ex. 70–85 °C) solubilise tanins, polyphénols et minéraux, tandis que la phase lipophile ou hydroalcoolique (huiles végétales à 40–58 °C ; alcool ≥ 75 % sans eau sur programme Tincture après vidage et séchage complets de la cuve, ou macération en bocal hermétique hors appareil pour les titres dilués à l'eau < 75 %) capte terpènes, résines et alcaloïdes. Respectez toujours les consignes sécurité du manuel (ventilation, aucune flamme nue, couvercle verrouillé, niveaux MIN–MAX, appareil sous surveillance continue)."
                     : lang === 'de'
-                    ? "Die Extraktion folgt dem Fickschen Diffusionsgesetz und der Polarität: Die hydrophile Phase (Wasser/Glycerin) löst Tannine und Mineralstoffe, während die lipophile oder alkoholische Phase (Öle bei 40–58 °C; Alkohol mit Tincture oder Ohne Heizung nach vollständigem Entleeren und Trocknen des Behälters) Terpene, Harze und Alkaloide aufnimmt. Beachten Sie stets die Sicherheitshinweise (Belüftung, keine offene Flamme, geschlossener Deckel, MIN–MAX)."
-                    : "Extraction follows Fick's diffusion law and solvent polarity selectivity: the hydrophilic stage (water/glycerin) solubilizes tannins and minerals, while the lipophilic or hydroalcoholic stage (carrier oils at 40–58°C; alcohol via Tincture or No heating after emptying and drying the chamber) captures terpenes, resins, and alkaloids. Always follow the manual's safety warnings (ventilation, no open flame, locked lid, MIN–MAX limits; prefer No heating or jar maceration when diluting alcohol with water)."}
+                    ? "Die Extraktion folgt dem Fickschen Diffusionsgesetz und der Polarität: Die hydrophile Phase (Wasser/Glycerin) löst Tannine und Mineralstoffe, während die lipophile oder alkoholische Phase (Öle bei 40–58 °C; wasserfreier Alkohol ≥ 75 % mit Tincture nach Entleeren und Trocknen des Behälters oder verschlossenes Glas außerhalb des Geräts bei verdünntem Alkohol < 75 %) Terpene, Harze und Alkaloide aufnimmt. Sicherheitsregeln strikt einhalten (Belüftung, keine offene Flamme, verriegelter Deckel, MIN–MAX, ständige Aufsicht)."
+                    : "Extraction follows Fick's diffusion law and solvent polarity selectivity: the hydrophilic stage (water/glycerin) solubilizes tannins and minerals, while the lipophilic or hydroalcoholic stage (carrier oils at 40–58°C; waterless alcohol ≥ 75% ABV via Tincture after emptying and drying the chamber, or sealed jar maceration outside the appliance for water-diluted alcohol < 75%) captures terpenes, resins, and alkaloids. Always follow the manual's safety warnings (ventilation, no open flame, locked lid, MIN–MAX limits, continuous attendance)."}
                 </p>
                 <p>
                   {lang === 'fr'
@@ -1112,10 +1112,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 {
                   step: "04",
                   text: lang === 'fr'
-                    ? "Choisissez l’un des 6 programmes (Butter, Oil, Tincture, Sans chauffe, Décarboxylation, Nettoyage) ou ajustez température et durée via + / -."
+                    ? "Choisissez votre fonction (Butter, Oil, Tincture, Décarboxylation, Nettoyage — Sans chauffe étant réservé aux mélanges froids type vinaigrette) ou ajustez température et durée via + / -, sans jamais laisser l'appareil sans surveillance."
                     : lang === 'de'
-                    ? "Wählen Sie eines der 6 Programme (Butter, Oil, Tincture, Ohne Erhitzen, Decarboxylierung, Reinigung) oder passen Sie Temperatur und Dauer mit + / - an."
-                    : "Select one of the 6 programs (Butter, Oil, Tincture, No heating, Decarboxylate, Clean) or adjust temperature and time via + / -."
+                    ? "Wählen Sie Ihr Programm (Butter, Oil, Tincture, Decarboxylierung, Reinigung — Ohne Erwärmung nur für kalte Mischungen wie Vinaigrette) oder passen Sie Temperatur und Dauer mit + / - an, stets unter Aufsicht."
+                    : "Select your function (Butter, Oil, Tincture, Decarboxylate, Clean — No heating is strictly for unheated mixes like vinaigrette) or adjust temperature and time via + / -, never unattended."
                 },
                 {
                   step: "05",
@@ -1174,10 +1174,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               </h4>
               <p className="text-xs text-[#3E4A3D]/80 leading-relaxed">
                 {lang === 'fr'
-                  ? "0 °C à 121 °C (réglage manuel TEMP/TIME ; Sans chauffe sans consigne de température ; Nettoyage 5 min fixe)"
+                  ? "0 °C à 121 °C (réglage manuel TEMP/TIME ; bouton Sans chauffe non réglable en température, exemple manuel vinaigrette ; Nettoyage 5 min fixe)"
                   : lang === 'de'
-                  ? "0 °C bis 121 °C (manuelle TEMP/TIME-Steuerung; Ohne Heizung ohne Temperaturwahl; Reinigung 5 Min. fest)"
-                  : "0°C to 121°C (manual TEMP/TIME control; No heating temp fixed; Clean fixed at 5 min)"}
+                  ? "0 °C bis 121 °C (manuelle TEMP/TIME-Steuerung; Taste Ohne Erwärmung ohne Temperaturwahl, Handbuchbeispiel Vinaigrette; Reinigung 5 Min. fest)"
+                  : "0°C to 121°C (manual TEMP/TIME control; No heating button non-adjustable, manual example vinaigrette; Clean fixed at 5 min)"}
               </p>
             </div>
 
