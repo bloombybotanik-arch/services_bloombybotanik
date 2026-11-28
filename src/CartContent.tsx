@@ -352,7 +352,7 @@ export default function CartContent({
                 </div>
                 <h5 className="text-base sm:text-lg font-bold text-[#1B3022] mb-2 sm:mb-3">{t.recommended.premium_title}</h5>
                 <p className="text-xs sm:text-sm text-[#1B3022]/60 mb-6 sm:mb-8 leading-relaxed">{t.recommended.premium_desc}</p>
-                <button onClick={() => onNavigate('abonnement')} className="text-xs sm:text-sm font-bold text-[#1B3022] flex items-center gap-2 group-hover:gap-3 transition-all cursor-pointer py-1">
+                <button onClick={() => onNavigate('machine')} className="text-xs sm:text-sm font-bold text-[#1B3022] flex items-center gap-2 group-hover:gap-3 transition-all cursor-pointer py-1">
                   {t.recommended.premium_btn} <ChevronRight className="w-4 h-4" />
                 </button>
               </div>

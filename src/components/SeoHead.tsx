@@ -8,6 +8,7 @@ export interface SeoHeadProps {
   ogImage?: string;
   lang?: 'fr' | 'en' | 'de';
   noindex?: boolean;
+  nofollow?: boolean;
   schemas?: Record<string, any>[];
 }
 
@@ -45,15 +46,26 @@ function upsertLinkTag(rel: string, attrs: Record<string, string>) {
   return link;
 }
 
+function normalizeSeoPathname(rawPath: string): string {
+  const clean = (rawPath || '/').split('?')[0].split('#')[0];
+  if (!clean || clean === '/') return '/';
+  const withLeading = clean.startsWith('/') ? clean : `/${clean}`;
+  return withLeading.endsWith('/') ? withLeading : `${withLeading}/`;
+}
+
 function resolveSelfCanonical(explicitCanonical?: string): string {
   if (explicitCanonical) {
-    return explicitCanonical;
+    try {
+      const parsed = new URL(explicitCanonical, DEFAULT_ORIGIN);
+      return `${DEFAULT_ORIGIN}${normalizeSeoPathname(parsed.pathname)}`;
+    } catch {
+      return `${DEFAULT_ORIGIN}${normalizeSeoPathname(explicitCanonical)}`;
+    }
   }
   if (typeof window === 'undefined') {
     return `${DEFAULT_ORIGIN}/`;
   }
-  const cleanPathname = window.location.pathname || '/';
-  return `${window.location.origin}${cleanPathname}`;
+  return `${DEFAULT_ORIGIN}${normalizeSeoPathname(window.location.pathname || '/')}`;
 }
 
 export function SeoHead({
@@ -64,6 +76,7 @@ export function SeoHead({
   ogImage = DEFAULT_OG_IMAGE,
   lang = 'fr',
   noindex = false,
+  nofollow = false,
   schemas = [],
 }: SeoHeadProps) {
   const serializedSchemas = JSON.stringify(schemas);
@@ -72,9 +85,12 @@ export function SeoHead({
     if (typeof document === 'undefined') return;
 
     const resolvedCanonical = resolveSelfCanonical(canonical);
-    const isEnRoute =
-      typeof window !== 'undefined' && window.location.pathname.startsWith('/en/');
+    const rawPathname = typeof window !== 'undefined' ? window.location.pathname : '/';
+    const isEnRoute = rawPathname === '/en' || rawPathname.startsWith('/en/');
     const effectiveNoindex = noindex || isEnRoute;
+    const robotsContent = effectiveNoindex
+      ? `noindex, ${nofollow ? 'nofollow' : 'follow'}`
+      : 'index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1';
 
     // 1. Langue du document HTML
     document.documentElement.lang = lang;
@@ -92,13 +108,7 @@ export function SeoHead({
     upsertMetaTag('name', 'twitter:image', ogImage);
 
     // 3. Directive robots
-    upsertMetaTag(
-      'name',
-      'robots',
-      effectiveNoindex
-        ? 'noindex, follow'
-        : 'index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1'
-    );
+    upsertMetaTag('name', 'robots', robotsContent);
 
     // Marqueur indiquant à seoManager.ts que la route active est pilotée par <SeoHead />
     upsertMetaTag('name', 'seo-head-active', 'true');
@@ -107,12 +117,11 @@ export function SeoHead({
     const canonicalEl = upsertLinkTag('canonical', { href: resolvedCanonical });
     canonicalEl.setAttribute('data-seo-head', 'true');
 
-    // 5. Balises hreflang (fr / en / x-default)
-    const frHref = resolvedCanonical.replace(`${DEFAULT_ORIGIN}/en/`, `${DEFAULT_ORIGIN}/`);
-    const enHref = frHref.includes('?') ? `${frHref}&lang=en` : `${frHref}?lang=en`;
+    // 5. Balises hreflang propres (fr / x-default)
+    const frPath = normalizeSeoPathname(resolvedCanonical.replace(DEFAULT_ORIGIN, '').replace(/^\/en(?=\/|$)/, '') || '/');
+    const frHref = `${DEFAULT_ORIGIN}${frPath}`;
 
     upsertLinkTag('alternate', { hreflang: 'fr', href: frHref });
-    upsertLinkTag('alternate', { hreflang: 'en', href: enHref });
     upsertLinkTag('alternate', { hreflang: 'x-default', href: frHref });
 
     // 6. Données structurées JSON-LD dédiées à la route
@@ -176,7 +185,7 @@ export function SeoHead({
       if (marker) marker.remove();
       injectedScripts.forEach((script) => script.remove());
     };
-  }, [title, description, canonical, ogType, ogImage, lang, noindex, serializedSchemas]);
+  }, [title, description, canonical, ogType, ogImage, lang, noindex, nofollow, serializedSchemas]);
 
   return null;
 }

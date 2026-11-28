@@ -130,7 +130,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
             </div>
             <p className="text-xs text-white/70 mb-4 font-medium">
               {isFR
-                ? "Recevez nos synthèses exclusives de phytochimie clinique, protocoles saisonniers et monographies du Totum végétal."
+                ? "Recevez nos synthèses exclusives de phytochimie botanique, protocoles saisonniers et monographies du Totum végétal."
                 : isDE
                 ? "Erhalten Sie unsere exklusiven Zusammenfassungen zur Phytochemie, saisonale Protokolle und Monographien des Pflanzen-Totums."
                 : "Receive our exclusive phytochemistry syntheses, seasonal protocols, and Plant Totum monographs."}
@@ -226,9 +226,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang = 'fr' }) => {
             </h4>
             <ul className="space-y-2.5">
               <li><NavLink view="machine">BloomLab®</NavLink></li>
-              <li><NavLink view="boutique-kits">{isFR ? "Soins Botaniques" : isDE ? "Botanische Pflege" : "Botanical Care"}</NavLink></li>
-              <li><NavLink view="boutique">{isFR ? "Accessoires" : isDE ? "Zubehör" : "Accessories"}</NavLink></li>
-              <li><NavLink view="abonnement">{isFR ? "Abonnements" : isDE ? "Abonnements" : "Subscriptions"}</NavLink></li>
+              <li><NavLink view="boutique-kits">{isFR ? "Préparations Botaniques" : isDE ? "Botanische Mischungen" : "Botanical Blends"}</NavLink></li>
+              <li><NavLink view="boutique">{isFR ? "Accessoires & Argiles" : isDE ? "Zubehör & Tonerden" : "Accessories & Clays"}</NavLink></li>
             </ul>
           </div>
 

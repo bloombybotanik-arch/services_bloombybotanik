@@ -50,10 +50,10 @@ export default function ProtocolesSystemiquesContent({
 
   useEffect(() => {
     const title = lang === 'fr'
-      ? "Protocoles Systémiques | Psoriasis, SIBO & Clarté Mentale | Bloom Académie"
+      ? "Protocoles Systémiques & Clarté Mentale | Bloom Académie"
       : lang === 'de'
-      ? "Systemische Protokolle | Psoriasis, SIBO & Mentale Klarheit | Bloom Akademie"
-      : "Systemic Protocols | Psoriasis, SIBO & Mental Clarity | Bloom Academy";
+      ? "Systemische Protokolle & Mentale Klarheit | Bloom Akademie"
+      : "Systemic Protocols & Mental Clarity | Bloom Academy";
     document.title = title;
 
     if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
@@ -103,7 +103,7 @@ export default function ProtocolesSystemiquesContent({
         currentView="protocoles"
         onNavigate={onNavigate}
         currentPageTitle={lang === 'fr' ? 'Protocoles Systémiques' : lang === 'de' ? 'Systemische Protokolle' : 'Systemic Protocols'}
-        sectionName={lang === 'fr' ? 'Approche Thérapeutique Documentée' : lang === 'de' ? 'Dokumentierte Therapeutische Ansätze' : 'Documented Therapeutic Approaches'}
+        sectionName={lang === 'fr' ? 'Approche Botanique Documentée' : lang === 'de' ? 'Dokumentierte Botanische Ansätze' : 'Documented Botanical Approaches'}
         lang={lang}
       />
 
@@ -113,7 +113,7 @@ export default function ProtocolesSystemiquesContent({
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#c9a84c]/10 border border-[#c9a84c]/30 text-[#c9a84c] text-xs font-bold uppercase tracking-widest shadow-sm">
             <ShieldCheck className="w-4 h-4 text-[#c9a84c]" />
             <span>
-              {lang === 'fr' ? 'Phytothérapie Intégrale & Régulation de Terrain' : lang === 'de' ? 'Integrale Phytotherapie & Terrain-Regulation' : 'Integral Phytotherapy & Terrain Regulation'}
+              {lang === 'fr' ? 'Herboristerie Intégrale & Régulation de Terrain' : lang === 'de' ? 'Integrale Pflanzenkunde & Terrain-Regulation' : 'Integral Herbalism & Terrain Regulation'}
             </span>
           </div>
 
@@ -123,28 +123,14 @@ export default function ProtocolesSystemiquesContent({
 
           <p className="text-sm sm:text-base md:text-lg text-[#FAF7F2]/80 max-w-3xl mx-auto font-normal leading-relaxed">
             {lang === 'fr'
-              ? "Trois approches phytothérapeutiques de haute précision élaborées pour lever les verrous physiologiques profonds, désengorger les voies d'élimination et accompagner la régénération cellulaire sans isoler le symptôme."
+              ? "Une approche botanique structurée pour accompagner vos équilibres physiologiques (vitalité cellulaire, clarté mentale et hygiène de terrain) sans isoler un signal ponctuel."
               : lang === 'de'
-              ? "Drei hochpräzise phytotherapeutische Ansätze zur Lösung tiefer physiologischer Blockaden, Entlastung der Ausscheidungsorgane und Unterstützung der Zellregeneration."
-              : "Three high-precision phytotherapeutic approaches designed to unlock deep physiological barriers, clear elimination pathways, and support cellular regeneration without isolating symptoms."}
+              ? "Ein strukturierter botanischer Ansatz zur Begleitung Ihres physiologischen Gleichgewichts (Zellvitalität, mentale Klarheit und Terrain-Hygiene)."
+              : "A structured botanical approach to support physiological balance (cellular vitality, mental clarity, and terrain hygiene) without isolating individual signals."}
           </p>
 
           {/* Quick Shortcuts */}
           <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-            <a 
-              href="#psoriasis"
-              className="px-4 py-2 rounded-xl bg-[#16352B] hover:bg-[#A8B8A0] border border-white/10 hover:border-[#c9a84c] text-xs font-bold text-[#FAF7F2] transition-all flex items-center gap-2"
-            >
-              <Activity className="w-3.5 h-3.5 text-[#c9a84c]" />
-              <span>Protocole Psoriasis</span>
-            </a>
-            <a 
-              href="#sibo"
-              className="px-4 py-2 rounded-xl bg-[#16352B] hover:bg-[#A8B8A0] border border-white/10 hover:border-[#86efac] text-xs font-bold text-[#FAF7F2] transition-all flex items-center gap-2"
-            >
-              <ShieldCheck className="w-3.5 h-3.5 text-[#86efac]" />
-              <span>Protocole SIBO</span>
-            </a>
             <a 
               href="#myeline"
               className="px-4 py-2 rounded-xl bg-[#16352B] hover:bg-[#A8B8A0] border border-white/10 hover:border-[#93c5fd] text-xs font-bold text-[#FAF7F2] transition-all flex items-center gap-2"
@@ -171,10 +157,10 @@ export default function ProtocolesSystemiquesContent({
                 </div>
                 <h3 className="text-xl sm:text-2xl font-black text-[#FAF7F2]">
                   {lang === 'fr' 
-                    ? 'Débloquez l’accès exhaustif aux 3 Protocoles Systémiques' 
+                    ? 'Débloquez l’accès complet aux dossiers de l’Académie' 
                     : lang === 'de' 
-                    ? 'Schalten Sie den vollständigen Zugriff auf alle 3 Protokolle frei' 
-                    : 'Unlock full access to all 3 Systemic Protocols'}
+                    ? 'Schalten Sie den vollständigen Zugriff auf die Akademie-Dossiers frei' 
+                    : 'Unlock full access to Academy Dossiers'}
                 </h3>
                 <p className="text-xs sm:text-sm text-[#FAF7F2]/80 leading-relaxed">
                   {lang === 'fr'
@@ -228,10 +214,10 @@ export default function ProtocolesSystemiquesContent({
               <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
               <span>
                 {lang === 'fr'
-                  ? '✓ Accès Abonné Actif — Vous bénéficiez d’un accès illimité aux 3 protocoles thérapeutiques détaillés et aux paramètres d’extraction.'
+                  ? '✓ Accès Abonné Actif — Vous bénéficiez d’un accès illimité aux dossiers détaillés et aux paramètres d’extraction.'
                   : lang === 'de'
-                  ? '✓ Aktiver Abonnentenzugang — Sie haben unbegrenzten Zugriff auf alle 3 detaillierten Protokolle.'
-                  : '✓ Active Subscriber Access — You have full access to all 3 detailed therapeutic protocols.'}
+                  ? '✓ Aktiver Abonnentenzugang — Sie haben unbegrenzten Zugriff auf alle detaillierten Dossiers.'
+                  : '✓ Active Subscriber Access — You have full access to all detailed dossiers.'}
               </span>
             </div>
             <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
@@ -268,191 +254,6 @@ export default function ProtocolesSystemiquesContent({
           </div>
         </div>
 
-        {/* ======================================================== */}
-        {/* PROTOCOLE 1: PSORIASIS */}
-        {/* ======================================================== */}
-        <section id="psoriasis" className="scroll-mt-24 space-y-6">
-          <div className="p-6 sm:p-10 rounded-3xl bg-[#16352B] border-2 border-[#c9a84c]/40 hover:border-[#c9a84c] transition-all relative overflow-hidden shadow-xl">
-            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-8">
-              <div className="flex items-start gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-[#c9a84c]/20 text-[#c9a84c] flex items-center justify-center shrink-0 shadow-inner">
-                  <Activity className="w-7 h-7" />
-                </div>
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#c9a84c] bg-[#c9a84c]/10 px-2.5 py-0.5 rounded-full border border-[#c9a84c]/30 font-bold">
-                      Protocole Clinique Documenté
-                    </span>
-                    <span className="text-[10px] font-mono text-white/60">
-                      14 Semaines • Double Solvant
-                    </span>
-                  </div>
-                  <h2 className="text-2xl sm:text-3xl font-black text-[#FAF7F2]">
-                    Protocole Psoriasis
-                  </h2>
-                  <p className="text-xs sm:text-sm text-[#c9a84c] font-semibold">
-                    Désengorgement hépato-biliaire, perméabilité intestinale et modulation de l'axe Th17/IL-23
-                  </p>
-                </div>
-              </div>
-
-              <div className="shrink-0 flex items-center gap-3">
-                <button
-                  onClick={() => handleOpenProtocol('protocole-psoriasis')}
-                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#c9a84c] hover:bg-[#d8b85c] text-[#3E4A3D] font-black text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer"
-                >
-                  {!hasAccess && <Lock className="w-3.5 h-3.5 text-[#3E4A3D]" />}
-                  <span>{lang === 'fr' ? 'Accéder au protocole détaillé' : lang === 'de' ? 'Zum detaillierten Protokoll' : 'Access detailed protocol'}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-
-            <p className="text-sm text-[#FAF7F2]/80 leading-relaxed mb-8">
-              Le psoriasis n'est pas une simple anomalie cutanée : la peau sert d'émonctoire vicariant lorsque le foie et l'intestin sont saturés. Ce protocole agit en amont en réduisant l'emballement cytokinique (IL-17, IL-23), en restaurant la barrière intestinale et en drainant les émonctoires profonds sans agresser l'épiderme.
-            </p>
-
-            {/* Phases Grid */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-              <div className="p-4 rounded-2xl bg-[#3E4A3D] border border-white/10 space-y-2">
-                <div className="text-[10px] font-mono text-[#c9a84c] uppercase font-bold">Semaines 1–2</div>
-                <div className="text-xs font-bold text-[#FAF7F2]">Phase 0 : Ouverture Émonctorielle</div>
-                <p className="text-[11px] text-[#FAF7F2]/70 leading-relaxed">
-                  Drainage rénal et cutané doux pour ouvrir les voies de délestage sans déclencher d'effet rebond inflammatoire.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-[#3E4A3D] border border-white/10 space-y-2">
-                <div className="text-[10px] font-mono text-[#c9a84c] uppercase font-bold">Semaines 3–6</div>
-                <div className="text-xs font-bold text-[#FAF7F2]">Phase 1 : Désengorgement Hépatique</div>
-                <p className="text-[11px] text-[#FAF7F2]/70 leading-relaxed">
-                  Relance de la cholérèse, stimulation des cytochromes P450 et diminution de la translocation bactérienne (LPS).
-                </p>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-[#3E4A3D] border border-white/10 space-y-2">
-                <div className="text-[10px] font-mono text-[#c9a84c] uppercase font-bold">Semaines 7–10</div>
-                <div className="text-xs font-bold text-[#FAF7F2]">Phase 2 : Modulation Cytokinique</div>
-                <p className="text-[11px] text-[#FAF7F2]/70 leading-relaxed">
-                  Apaisement de la prolifération des kératinocytes et régulation des lymphocytes Th17 par synergie botanique polyphénolique.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-[#3E4A3D] border border-white/10 space-y-2">
-                <div className="text-[10px] font-mono text-[#c9a84c] uppercase font-bold">Semaines 11–14</div>
-                <div className="text-xs font-bold text-[#FAF7F2]">Phase 3 : Consolidation Épithéliale</div>
-                <p className="text-[11px] text-[#FAF7F2]/70 leading-relaxed">
-                  Régénération de la gaine cornée, relance des céramides endogènes et stabilisation de l'homéostasie cutanée.
-                </p>
-              </div>
-            </div>
-
-            {/* Extraction & Botanicals Highlights */}
-            <div className="p-5 rounded-2xl bg-[#3E4A3D]/80 border border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 text-xs font-mono">
-              <div className="space-y-1">
-                <span className="text-[#c9a84c] font-bold">Synergie Botanique Clé :</span>
-                <p className="text-[#FAF7F2]/70">
-                  Bardane (*Arctium lappa*), Pensée sauvage (*Viola tricolor*), Fumeterre (*Fumaria officinalis*), Huile de Bourrache &amp; Nigelle.
-                </p>
-              </div>
-              <div className="space-y-1 md:text-right shrink-0">
-                <span className="text-[#c9a84c] font-bold">Extraction BloomLab® :</span>
-                <p className="text-[#FAF7F2]/70">
-                  Double Solvant (Phase A : 58°C thermo-régulée • Phase B : Macération lipidique à froid).
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ======================================================== */}
-        {/* PROTOCOLE 2: SIBO */}
-        {/* ======================================================== */}
-        <section id="sibo" className="scroll-mt-24 space-y-6">
-          <div className="p-6 sm:p-10 rounded-3xl bg-[#16352B] border-2 border-[#86efac]/40 hover:border-[#86efac] transition-all relative overflow-hidden shadow-xl">
-            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-8">
-              <div className="flex items-start gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-[#86efac]/20 text-[#86efac] flex items-center justify-center shrink-0 shadow-inner">
-                  <ShieldCheck className="w-7 h-7" />
-                </div>
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#86efac] bg-[#86efac]/10 px-2.5 py-0.5 rounded-full border border-[#86efac]/30 font-bold">
-                      Protocole Gastro-Intestinal
-                    </span>
-                    <span className="text-[10px] font-mono text-white/60">
-                      3 Phases Chronobiologiques
-                    </span>
-                  </div>
-                  <h2 className="text-2xl sm:text-3xl font-black text-[#FAF7F2]">
-                    Protocole SIBO
-                  </h2>
-                  <p className="text-xs sm:text-sm text-[#86efac] font-semibold">
-                    Pullulation bactérienne du grêle, relance du Complexe Moteur Migrant (CMM) et étanchéité muqueuse
-                  </p>
-                </div>
-              </div>
-
-              <div className="shrink-0 flex items-center gap-3">
-                <button
-                  onClick={() => handleOpenProtocol('protocole-sibo')}
-                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#86efac] hover:bg-[#6ee7b7] text-[#3E4A3D] font-black text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer"
-                >
-                  {!hasAccess && <Lock className="w-3.5 h-3.5 text-[#3E4A3D]" />}
-                  <span>{lang === 'fr' ? 'Accéder au protocole détaillé' : lang === 'de' ? 'Zum detaillierten Protokoll' : 'Access detailed protocol'}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-
-            <p className="text-sm text-[#FAF7F2]/80 leading-relaxed mb-8">
-              Le SIBO (*Small Intestinal Bacterial Overgrowth*) résulte d'une panne du balai mécanique de l'intestin (le complexe moteur migrant), permettant aux bactéries coliques de refluer dans le grêle. Ce protocole ne détruit pas le microbiote : il assainit en douceur, relance la motilité gastrique et répare le mucus de protection sans gaz rebond.
-            </p>
-
-            {/* Phases Grid */}
-            <div className="grid sm:grid-cols-3 gap-4 mb-8">
-              <div className="p-4 rounded-2xl bg-[#3E4A3D] border border-white/10 space-y-2">
-                <div className="text-[10px] font-mono text-[#86efac] uppercase font-bold">Phase 1 • 3 à 4 Semaines</div>
-                <div className="text-xs font-bold text-[#FAF7F2]">Assainissement Antimicrobien Doux</div>
-                <p className="text-[11px] text-[#FAF7F2]/70 leading-relaxed">
-                  Inhibition ciblée des colonies bactériennes déplacées du grêle sans destruction de la flore commensale saine.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-[#3E4A3D] border border-white/10 space-y-2">
-                <div className="text-[10px] font-mono text-[#86efac] uppercase font-bold">Phase 2 • 4 Semaines</div>
-                <div className="text-xs font-bold text-[#FAF7F2]">Relance Procinétique &amp; CMM</div>
-                <p className="text-[11px] text-[#FAF7F2]/70 leading-relaxed">
-                  Stimulation des ondes péristaltiques interdigestives nocturnes via les principes amers et les gingérols actifs.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-[#3E4A3D] border border-white/10 space-y-2">
-                <div className="text-[10px] font-mono text-[#86efac] uppercase font-bold">Phase 3 • 4 Semaines</div>
-                <div className="text-xs font-bold text-[#FAF7F2]">Restauration du Mucus &amp; Jonctions</div>
-                <p className="text-[11px] text-[#FAF7F2]/70 leading-relaxed">
-                  Régénération du biofilm protecteur et resserrement des jonctions occludines/zonulines de la barrière grêle.
-                </p>
-              </div>
-            </div>
-
-            {/* Extraction & Botanicals Highlights */}
-            <div className="p-5 rounded-2xl bg-[#3E4A3D]/80 border border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 text-xs font-mono">
-              <div className="space-y-1">
-                <span className="text-[#86efac] font-bold">Synergie Botanique Clé :</span>
-                <p className="text-[#FAF7F2]/70">
-                  Gingembre bio (*Zingiber officinale* - gingérols), Gentiane jaune (*Gentiana lutea* - amarogentine), Épine-vinette (*Berberis*), Orme rouge.
-                </p>
-              </div>
-              <div className="space-y-1 md:text-right shrink-0">
-                <span className="text-[#86efac] font-bold">Extraction BloomLab® :</span>
-                <p className="text-[#FAF7F2]/70">
-                  Vortex cinétique à 58°C sous enceinte close (préservation des principes volatils sans amertume destructive).
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* ======================================================== */}
         {/* PROTOCOLE 3: CLARTÉ MENTALE & MYÉLINE */}
@@ -566,41 +367,6 @@ export default function ProtocolesSystemiquesContent({
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/10 font-sans">
-                <tr className="hover:bg-white/5 transition-colors">
-                  <td className="py-4 px-4 font-bold text-[#FAF7F2] flex items-center gap-2">
-                    <Activity className="w-4 h-4 text-[#c9a84c]" />
-                    <span>Psoriasis</span>
-                  </td>
-                  <td className="py-4 px-4 text-[#FAF7F2]/80">Axe Th17/IL-23, foie, barrière grêle</td>
-                  <td className="py-4 px-4 font-mono text-[#c9a84c]">14 semaines (4 phases)</td>
-                  <td className="py-4 px-4 font-mono text-[#FAF7F2]/70">Double Solvant (58°C + Huile)</td>
-                  <td className="py-4 px-4 text-right">
-                    <button
-                      onClick={() => handleOpenProtocol('protocole-psoriasis')}
-                      className="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-[#c9a84c] hover:text-[#3E4A3D] text-[#FAF7F2] font-bold transition-all"
-                    >
-                      Consulter &rarr;
-                    </button>
-                  </td>
-                </tr>
-
-                <tr className="hover:bg-white/5 transition-colors">
-                  <td className="py-4 px-4 font-bold text-[#FAF7F2] flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-[#86efac]" />
-                    <span>SIBO</span>
-                  </td>
-                  <td className="py-4 px-4 text-[#FAF7F2]/80">Complexe Moteur Migrant, mucus, motilité</td>
-                  <td className="py-4 px-4 font-mono text-[#86efac]">3 phases chronobiologiques</td>
-                  <td className="py-4 px-4 font-mono text-[#FAF7F2]/70">Vortex 58°C chambre close</td>
-                  <td className="py-4 px-4 text-right">
-                    <button
-                      onClick={() => handleOpenProtocol('protocole-sibo')}
-                      className="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-[#86efac] hover:text-[#3E4A3D] text-[#FAF7F2] font-bold transition-all"
-                    >
-                      Consulter &rarr;
-                    </button>
-                  </td>
-                </tr>
 
                 <tr className="hover:bg-white/5 transition-colors">
                   <td className="py-4 px-4 font-bold text-[#FAF7F2] flex items-center gap-2">

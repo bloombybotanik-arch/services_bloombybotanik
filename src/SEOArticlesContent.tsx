@@ -339,7 +339,7 @@ export const InfusionPrecision = ({ lang, t, onNavigate }: SEOArticleProps) => {
               {tr('Parce que certaines plantes ont besoin de ', 'Some botanicals require ', 'Einige Pflanzen benötigen ')}{' '}
               <strong className="font-semibold text-[#3E4A3D]">{tr('très fortes températures', 'calibrated high-heat cycles', 'präzise Hochtemperaturzyklen')}</strong>{' '}
               {tr("pour libérer leurs actifs. C'est ce qu'on appelle la ", 'to unlock dense matrices. This step is known as ', 'um gebundene Moleküle zu aktivieren. Man nennt das ')}{' '}
-              <strong className="text-[#C8AB8A] font-semibold">{tr('décarboxylation', 'decarboxylation', 'Decarboxylierung')}</strong>{' '}
+              <strong className="text-[#C8AB8A] font-semibold">{tr('activation thermique douce des résines et aromates', 'gentle thermal activation of resins and aromatics', 'sanfte thermische Aktivierung von Harzen und Aromaten')}</strong>{' '}
               {tr(
                 '— un processus qui « active » les molécules en les chauffant à température rigoureusement contrôlée.',
                 '— a controlled thermal transformation under strictly regulated timing.',
@@ -573,7 +573,7 @@ export const InfusionPrecision = ({ lang, t, onNavigate }: SEOArticleProps) => {
                   <td className="p-4 sm:p-5 text-emerald-800 font-semibold">{tr('Temps calibré scientifiquement pour chaque plante', 'Scientifically calibrated duration per plant', 'Wissenschaftlich kalibrierte Dauer je Pflanze')}</td>
                 </tr>
                 <tr className="hover:bg-[#FAF7F2]/60 transition-colors">
-                  <td className="p-4 sm:p-5 font-bold text-[#3E4A3D]">{tr('Pas de décarboxylation', 'No decarboxylation', 'Keine Decarboxylierung')}</td>
+                  <td className="p-4 sm:p-5 font-bold text-[#3E4A3D]">{tr("Pas d'activation thermique", 'No thermal activation', 'Keine thermische Aktivierung')}</td>
                   <td className="p-4 sm:p-5 text-red-700 font-medium">{tr('Les molécules restent inactives (chanvre, écorces)', 'Compounds remain in precursor state (hemp, barks)', 'Moleküle bleiben inaktiv (Hanf, Rinden)')}</td>
                   <td className="p-4 sm:p-5 text-emerald-800 font-semibold">{tr("Montée jusqu'à 121°C régulée pour activer", 'Regulated ramp up to 121°C for activation', 'Geregelter Anstieg bis 121°C zur Aktivierung')}</td>
                 </tr>
@@ -645,7 +645,7 @@ export const InfusionPrecision = ({ lang, t, onNavigate }: SEOArticleProps) => {
                 <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
                   <strong className="text-[#3E4A3D]">{tr('Activation thermique douce :', 'Calibrated thermal activation:', 'Gezielte Wärmeführung:')}</strong>{' '}
-                  {tr('adapter le palier thermique selon la matière végétale (décarboxylation spécifique des fleurs résineuses selon la réglementation locale, ou macération douce).', 'adapt thermal steps to dense botanicals (or specific decarboxylation protocols where legally applicable).', 'Anpassung der Wärmestufe an anspruchsvolle Pflanzenteile oder spezielle Protokolle im jeweiligen Rechtsrahmen.')}
+                  {tr('adapter le palier thermique selon la matière végétale (activation thermique douce des résines et aromates, ou macération douce).', 'adapt thermal steps to dense botanicals (gentle thermal activation of resins and aromatics, or gentle maceration).', 'Anpassung der Wärmestufe an anspruchsvolle Pflanzenteile oder sanfte thermische Aktivierung von Harzen und Aromaten.')}
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -913,14 +913,14 @@ export const TotumDefinition = ({ lang, t, onNavigate }: SEOArticleProps) => {
                   {isFR ? (
                     <>
                       <span className="block sm:inline">Science du Vivant &</span>
-                      <span className="block sm:inline sm:ml-1 whitespace-nowrap">Souveraineté Botanique</span>
+                      <span className="block sm:inline sm:ml-1 whitespace-nowrap">Autonomie Botanique</span>
                     </>
                   ) : isDE ? (
                     <span>Wissenschaft des Lebendigen</span>
                   ) : (
                     <>
                       <span className="block sm:inline">Living Systems &</span>
-                      <span className="block sm:inline sm:ml-1 whitespace-nowrap">Botanical Sovereignty</span>
+                      <span className="block sm:inline sm:ml-1 whitespace-nowrap">Botanical Autonomy</span>
                     </>
                   )}
                 </span>
@@ -928,10 +928,10 @@ export const TotumDefinition = ({ lang, t, onNavigate }: SEOArticleProps) => {
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
                 {isFR 
-                  ? "Le Totum Végétal : L'Intelligence Collective de la Plante" 
+                  ? "Le Totum Végétal : Comprendre la Synergie des Plantes" 
                   : isDE 
-                  ? "Das Pflanzen-Totum: Die kollektive Intelligenz der Pflanze" 
-                  : "The Plant Totum: The Collective Intelligence of the Plant"}
+                  ? "Das Pflanzen-Totum: Die Synergie der Pflanzen verstehen" 
+                  : "The Plant Totum: Understanding Botanical Synergy"}
               </h1>
 
               <p className="text-base sm:text-lg text-white/85 leading-relaxed font-light max-w-2xl">
@@ -1319,7 +1319,7 @@ export const TotumDefinition = ({ lang, t, onNavigate }: SEOArticleProps) => {
                     className="flex md:table-cell justify-between items-start gap-3 pt-2 pb-0 md:p-5 text-sm text-slate-600 text-left before:content-[attr(data-label)] before:font-semibold before:text-[#666666] before:mr-3 before:shrink-0 md:before:content-none"
                   >
                     <span className="text-right md:text-left break-normal">
-                      {isFR ? 'Transformations spécifiques (décarboxylation selon protocole)' : isDE ? 'Gezielte Umwandlungen (Decarboxylierung nach Protokoll)' : 'Specific transformations (decarboxylation per protocol)'}
+                      {isFR ? 'Transformations spécifiques (activation thermique douce des résines et aromates)' : isDE ? 'Gezielte Umwandlungen (sanfte thermische Aktivierung von Harzen und Aromaten)' : 'Specific transformations (gentle thermal activation of resins and aromatics)'}
                     </span>
                   </td>
                 </tr>
@@ -1913,7 +1913,7 @@ export const SolvantsExtraction = ({ lang, t, onNavigate, isPremium, onRequireAu
                     <td className="p-3.5 sm:p-4 font-bold text-[#3E4A3D]">{tr('Argan', 'Argan', 'Argan')}</td>
                     <td className="p-3.5 sm:p-4 text-slate-600">{tr('43–49% acide oléique', '43–49% oleic acid', '43–49 % Ölsäure')}</td>
                     <td className="p-3.5 sm:p-4 font-medium text-emerald-800">{tr('Rapide, non grasse', 'Fast & supple', 'Schnell, geschmeidig')}</td>
-                    <td className="p-3.5 sm:p-4">{tr('Anti-âge, psoriasis, eczéma', 'Elasticity & barrier comfort', 'Elastizität & Hautkomfort')}</td>
+                    <td className="p-3.5 sm:p-4">{tr('Soin des peaux sèches, souplesse et confort cutané', 'Elasticity & barrier comfort', 'Elastizität & Hautkomfort')}</td>
                     <td className="p-3.5 sm:p-4"><span className="px-2 py-0.5 rounded bg-slate-100 font-mono text-[11px]">{tr('Tous terrains', 'All skin types', 'Alle Hauttypen')}</span></td>
                   </tr>
                   <tr className="hover:bg-[#FAF7F2]/60 transition-colors">

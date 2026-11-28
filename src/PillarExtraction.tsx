@@ -46,7 +46,7 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
         },
         {
           q: "Wie verbessern Temperatur und Bewegung die botanische Extraktion?",
-          a: "Kochendes Wasser bei 100 °C verdampft flüchtige Aromen und baut empfindliche Polyphenole ab. BloomLab® steuert die Temperatur im geschlossenen Edelstahlbehälter über voreingestellte Programme (Butter, Oil, Tincture, Decarboxylate) oder manuelle TEMP/TIME-Einstellung, während sanfte Bewegung Sättigungsschichten verhindert."
+          a: "Kochendes Wasser bei 100 °C verdampft flüchtige Aromen und baut empfindliche Polyphenole ab. BloomLab® steuert die Temperatur im geschlossenen Edelstahlbehälter über voreingestellte Programme (Butter, Oil, Tincture, sanfte thermische Aktivierung von Harzen und Aromaten) oder manuelle TEMP/TIME-Einstellung, während sanfte Bewegung Sättigungsschichten verhindert."
         },
         {
           q: "Welche Lösungsmittel eignen sich für die heimische Pflanzenextraktion?",
@@ -64,7 +64,7 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
         },
         {
           q: "How do temperature and agitation improve botanical extraction?",
-          a: "Boiling water destroys fragile polyphenols and evaporates volatile aromatics. BloomLab® manages temperature inside its closed stainless steel chamber via preset programs (Butter, Oil, Tincture, Decarboxylate) or manual TEMP/TIME control while gentle stirring prevents saturation layers."
+          a: "Boiling water destroys fragile polyphenols and evaporates volatile aromatics. BloomLab® manages temperature inside its closed stainless steel chamber via preset programs (Butter, Oil, Tincture, gentle thermal activation of resins and aromatics) or manual TEMP/TIME control while gentle stirring prevents saturation layers."
         },
         {
           q: "Which natural solvents can be used at home?",
@@ -135,11 +135,11 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-8 font-sans tracking-tight leading-tight text-white"
           >
             {isFR ? (
-              <>Guide Complet : Extraction Botanique à Domicile | Bloom by BotaniK &amp; BloomLab®</>
+              <>Guide de l&apos;Extraction Botanique : Température, Temps &amp; Solvants</>
             ) : isDE ? (
-              <>Kompletter Guide: Botanische Extraktion | Bloom by BotaniK &amp; BloomLab®</>
+              <>Leitfaden der botanischen Extraktion: Temperatur, Zeit &amp; Lösungsmittel</>
             ) : (
-              <>Complete Guide: Botanical Extraction at Home | Bloom by BotaniK &amp; BloomLab®</>
+              <>Botanical Extraction Guide: Temperature, Time &amp; Solvents</>
             )}
           </motion.h1>
           <motion.div
@@ -559,9 +559,9 @@ export default function PillarExtraction({ lang, onNavigate }: { lang: Language,
 
           <p className="text-base text-white/90 leading-relaxed font-medium">
             {tr(
-              "La machine BloomLab® combine cuve en inox 304 (grade alimentaire) et 6 fonctions (Butter, Oil, Tincture [71 °C / 160 °F – 4 h par défaut], Sans chauffe [fonction à température non réglable pour mélanges à froid type vinaigrette], Décarboxylation, Nettoyage 5 min) avec réglages manuels TEMP/TIME (0 à 121 °C, 30 min à 12 h sur les modes réglables). Vous conduisez séparément la Phase A aqueuse/glycérinée puis, cuve vidée et séchée, la Phase B (huile ou alcool ≥ 75 % sans eau en mode Tincture — vapeurs d’éthanol inflammables dès 13 °C pur, donc pièce ventilée, aucune flamme, couvercle verrouillé, niveaux MIN/MAX, sans jamais laisser l'appareil sans surveillance en fonctionnement ni branché).",
-              "The BloomLab® appliance pairs a food-grade 304 stainless steel chamber with 6 functions (Butter, Oil, Tincture [71°C / 160°F – 4h default], No heating [non-adjustable cold mixing mode e.g. vinaigrette], Decarboxylate, 5-min Clean) plus manual TEMP/TIME control (0–121°C, 30 min–12h on adjustable modes). Conduct Phase A aqueous/glycerin extraction and, after emptying and drying the tank, Phase B carrier-oil or waterless ≥ 75% alcohol extraction (ethanol vapors flammable from 13°C pure—ventilated room, zero flames, locked lid, MIN/MAX bounds, never unattended during operation or plugged in).",
-              "Die BloomLab® kombiniert einen lebensmittelechten 304-Edelstahlbehälter mit 6 Programmen (Butter, Oil, Tincture [Standard 71 °C / 160 °F – 4 Std.], Ohne Erwärmung [nicht regelbar, z. B. Vinaigrette], Decarboxylierung, Reinigung 5 Min.) und manueller TEMP/TIME-Steuerung (0–121 °C, 30 Min.–12 Std.). Nach Entleeren und Trocknen nach Phase A folgt Phase B mit Öl oder wasserfreiem Alkohol ≥ 75 % (Ethanoldämpfe ab 13 °C entzündlich: gut lüften, keine Flamme, verriegelter Deckel, MIN/MAX, niemals unbeaufsichtigt im Betrieb oder eingesteckt lassen)."
+              "La machine BloomLab® combine cuve en inox 304 (grade alimentaire) et 6 fonctions (Butter, Oil, Tincture [71 °C / 160 °F – 4 h par défaut], Sans chauffe [fonction à température non réglable pour mélanges à froid type vinaigrette], Activation thermique douce des résines et aromates, Nettoyage 5 min) avec réglages manuels TEMP/TIME (0 à 121 °C, 30 min à 12 h sur les modes réglables). Vous conduisez séparément la Phase A aqueuse/glycérinée puis, cuve vidée et séchée, la Phase B (huile ou alcool ≥ 75 % sans eau en mode Tincture — vapeurs d'éthanol inflammables dès 13 °C pur, donc pièce ventilée, aucune flamme, couvercle verrouillé, niveaux MIN/MAX, sans jamais laisser l'appareil sans surveillance en fonctionnement ni branché).",
+              "The BloomLab® appliance pairs a food-grade 304 stainless steel chamber with 6 functions (Butter, Oil, Tincture [71°C / 160°F – 4h default], No heating [non-adjustable cold mixing mode e.g. vinaigrette], Gentle thermal activation of resins and aromatics, 5-min Clean) plus manual TEMP/TIME control (0–121°C, 30 min–12h on adjustable modes). Conduct Phase A aqueous/glycerin extraction and, after emptying and drying the tank, Phase B carrier-oil or waterless ≥ 75% alcohol extraction (ethanol vapors flammable from 13°C pure—ventilated room, zero flames, locked lid, MIN/MAX bounds, never unattended during operation or plugged in).",
+              "Die BloomLab® kombiniert einen lebensmittelechten 304-Edelstahlbehälter mit 6 Programmen (Butter, Oil, Tincture [Standard 71 °C / 160 °F – 4 Std.], Ohne Erwärmung [nicht regelbar, z. B. Vinaigrette], Sanfte thermische Aktivierung von Harzen und Aromaten, Reinigung 5 Min.) und manueller TEMP/TIME-Steuerung (0–121 °C, 30 Min.–12 Std.). Nach Entleeren und Trocknen nach Phase A folgt Phase B mit Öl oder wasserfreiem Alkohol ≥ 75 % (Ethanoldämpfe ab 13 °C entzündlich: gut lüften, keine Flamme, verriegelter Deckel, MIN/MAX, niemals unbeaufsichtigt im Betrieb oder eingesteckt lassen)."
             )}
           </p>
 

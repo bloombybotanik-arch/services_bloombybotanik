@@ -68,10 +68,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
     name: 'BloomLab® — Extracteur Botanique de Précision',
     description:
       lang === 'fr'
-        ? "Extracteur botanique en acier inoxydable 304 pour cosmétique et cuisine maison. Cuve Inox 304 alimentaire, 6 programmes automatisés (0 à 121 °C, spécification nominale ±0,5 °C), brassage doux sans broyage, manuel complet et 100 recettes en français. Garantie légale 2 ans (UE) + commerciale 1 an."
+        ? "Extracteur botanique en acier inoxydable 304 pour cosmétique et cuisine maison. Cuve Inox 304 alimentaire, 6 programmes automatisés (0 à 121 °C, spécification nominale ±0,5 °C), brassage doux sans broyage, manuel complet et 100 recettes en français. Garantie légale de conformité 2 ans."
         : lang === 'de'
-        ? 'Botanischer Extraktor aus Edelstahl 304 für Naturkosmetik und Küche. 6 automatische Programme (0–121 °C, Nennwert ±0,5 °C), sanftes Rühren, Handbuch und 100 Rezepte. 2 Jahre gesetzl. Gewährleistung (EU) + 1 Jahr Garantie.'
-        : '304 stainless steel botanical extractor for homemade cosmetics and culinary creations. 6 automated programs (0–121°C, nominal ±0.5°C), gentle stirring, complete manual and 100 recipes. 2-year EU legal warranty + 1-year commercial warranty.',
+        ? 'Botanischer Extraktor aus Edelstahl 304 für Naturkosmetik und Küche. 6 automatische Programme (0–121 °C, Nennwert ±0,5 °C), sanftes Rühren, Handbuch und 100 Rezepte. 2 Jahre gesetzliche Gewährleistung.'
+        : '304 stainless steel botanical extractor for homemade cosmetics and culinary creations. 6 automated programs (0–121°C, nominal ±0.5°C), gentle stirring, complete manual and 100 recipes. 2-Year Legal Conformity Warranty.',
     image: [
       'https://bloombybotanik.com/images/1.png',
       'https://bloombybotanik.com/images/2.png',
@@ -146,17 +146,17 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
   const bloomlabSeoTitle =
     lang === 'fr'
-      ? 'BloomLab® — Extracteur Botanique Inox 304 pour Cosmétique & Cuisine Maison'
+      ? 'BloomLab® — Extracteur Botanique Inox 304 & Recettes Maison'
       : lang === 'de'
-      ? 'BloomLab® — Botanischer Extraktor Edelstahl 304 für Kosmetik & Küche'
-      : 'BloomLab® — 304 Stainless Botanical Extractor for Homemade Cosmetics & Kitchen';
+      ? 'BloomLab® — Botanischer Extraktor Edelstahl 304 & Hausrezepte'
+      : 'BloomLab® — 304 Stainless Botanical Extractor & Home Recipes';
 
   const bloomlabSeoDescription =
     lang === 'fr'
-      ? 'Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie légale 2 ans (UE) + commerciale 1 an, manuel complet en français et 100 recettes.'
+      ? 'Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie légale de conformité 2 ans, manuel complet en français et 100 recettes.'
       : lang === 'de'
-      ? 'Bereiten Sie Ölmazerate, Balsame und Kräuterauszüge ohne Bitterkeit zu. 2 Jahre gesetzl. Gewährleistung (EU) + 1 Jahr Garantie, Handbuch und 100 Rezepte.'
-      : 'Prepare oil macerates, balms, and botanical infusions without bitterness. 2-year EU legal + 1-year commercial warranty, complete manual, and 100 recipes included.';
+      ? 'Bereiten Sie Ölmazerate, Balsame und Kräuterauszüge ohne Bitterkeit zu. 2 Jahre gesetzliche Gewährleistung, Handbuch und 100 Rezepte.'
+      : 'Prepare oil macerates, balms, and botanical infusions without bitterness. 2-Year Legal Conformity Warranty, complete manual, and 100 recipes included.';
 
   return (
     <div data-product-page="true" className="product-detail animate-in fade-in duration-700 bg-[#FAF7F2] text-[#3E4A3D] w-full max-w-full overflow-x-clip">
@@ -201,10 +201,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
       {/* Promotional Banner */}
       <div className="bg-[#D97706]/10 text-[#B45309] border-b border-[#D97706]/30 text-center py-2.5 px-4 text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
         {lang === 'fr' 
-          ? "🇫🇷 Conception française des protocoles • Expédition 24/48h • Garantie légale 2 ans (UE) + commerciale 1 an" 
+          ? "🇫🇷 Conception française des protocoles • Expédition 24/48h • Garantie légale de conformité 2 ans" 
           : lang === 'de'
-          ? "🇫🇷 Französische Protokoll-Entwicklung • Versand 24/48h • 2 Jahre gesetzl. Gewährleistung (EU) + 1 Jahr Garantie"
-          : "🇫🇷 Protocols crafted in France • 24/48h Shipping • 2-Year EU Legal Warranty + 1-Year Commercial"}
+          ? "🇫🇷 Französische Protokoll-Entwicklung • Versand 24/48h • 2 Jahre gesetzliche Gewährleistung"
+          : "🇫🇷 Protocols crafted in France • 24/48h Shipping • 2-Year Legal Conformity Warranty"}
       </div>
 
       {/* 1. HERO HEADER SECTION */}
@@ -308,10 +308,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               <div className="space-y-2.5">
                 <h1 className="text-2xl sm:text-3xl font-black text-white leading-tight tracking-tight">
                   {lang === 'fr'
-                    ? "BloomLab® — Extracteur Botanique de Précision Inox 304 pour Cosmétique & Cuisine Maison"
+                    ? "BloomLab® — Extracteur Botanique Inox 304 & Recettes Maison"
                     : lang === 'de'
-                    ? "BloomLab® — Botanischer Präzisionsextraktor Edelstahl 304 für Kosmetik & Küche"
-                    : "BloomLab® — 304 Stainless Precision Botanical Extractor for Cosmetics & Kitchen"}
+                    ? "BloomLab® — Botanischer Extraktor Edelstahl 304 & Hausrezepte"
+                    : "BloomLab® — 304 Stainless Botanical Extractor & Home Recipes"}
                 </h1>
                 <div className="pt-1">
                   <AmazonRatingBadge lang={lang} />
@@ -380,7 +380,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                         {lang === 'fr' ? "Option 1 : BloomLab® Solo" : lang === 'de' ? "Option 1: BloomLab® Solo" : "Option 1: BloomLab® Solo"}
                       </div>
                       <div className="text-[11px] text-white/70">
-                        {lang === 'fr' ? "Infuseur Inox 304 + Panier 90 µm + 5 accessoires offerts + Accès 3 mois (+160 recettes)" : lang === 'de' ? "Edelstahl-Infuser + 90-µm-Korb + 5 Gratis-Zubehörteile + 3 Mon. Zugang (+160 Rezepte)" : "304 Steel Infuser + 90µm basket + 5 free accessories + 3-mo access (160+ recipes)"}
+                        {lang === 'fr' ? "Infuseur Inox 304 + Panier 90 µm + 5 accessoires offerts + Bibliothèque numérique & 100 recettes incluses" : lang === 'de' ? "Edelstahl-Infuser + 90-µm-Korb + 5 Gratis-Zubehörteile + Digitale Bibliothek & 100 Rezepte inklusive" : "304 Steel Infuser + 90µm basket + 5 free accessories + Digital Library & 100 recipes included"}
                       </div>
                     </div>
                     <div className="text-right shrink-0">
@@ -406,7 +406,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                         </span>
                       </div>
                       <div className="text-[11px] text-white/70">
-                        {lang === 'fr' ? "Machine + Kit apothicaire + Herbier Complet + Duo Argiles + 3 mois Académie" : lang === 'de' ? "Maschine + Apotheker-Set + Herbarium + Tonerde-Duo + 3 Mon. Akademie" : "Machine + Apothecary Kit + Complete Herbarium + Clay Duo + 3 Mo Academy"}
+                        {lang === 'fr' ? "Machine + Kit apothicaire + Herbier Complet + Duo Argiles + Bibliothèque numérique & 100 recettes incluses" : lang === 'de' ? "Maschine + Apotheker-Set + Herbarium + Tonerde-Duo + Digitale Bibliothek & 100 Rezepte inklusive" : "Machine + Apothecary Kit + Complete Herbarium + Clay Duo + Digital Library & 100 recipes included"}
                       </div>
                     </div>
                     <div className="text-right shrink-0">
@@ -435,10 +435,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
 
               <p className="text-[11px] sm:text-xs text-white/80 text-center leading-relaxed">
                 {lang === 'fr'
-                  ? "🛡️ Rétractation légale 14 j • Essai commercial 30 j • ⚡ Garantie légale 2 ans (UE) + commerciale 1 an • 💳 Stripe & PayPal."
+                  ? "🛡️ Rétractation légale 14 j • Essai 30 jours satisfait ou remboursé • ⚡ Garantie légale de conformité 2 ans • 💳 Stripe & PayPal."
                   : lang === 'de'
-                  ? "🛡️ 14 Tage gesetzl. Widerruf • 30 Tage Test • ⚡ 2 Jahre gesetzl. Gewährleistung (EU) + 1 Jahr Garantie • 💳 Stripe & PayPal."
-                  : "🛡️ 14-day legal withdrawal • 30-day trial • ⚡ 2-Year EU Legal + 1-Year Commercial Warranty • 💳 Stripe & PayPal."}
+                  ? "🛡️ 14 Tage gesetzl. Widerruf • 30 Tage Test • ⚡ 2 Jahre gesetzliche Gewährleistung • 💳 Stripe & PayPal."
+                  : "🛡️ 14-day legal withdrawal • 30-day trial • ⚡ 2-Year Legal Conformity Warranty • 💳 Stripe & PayPal."}
               </p>
             </div>
           </div>
@@ -528,7 +528,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
               </div>
               <div className="flex items-center justify-center sm:justify-start gap-2 text-xs font-semibold text-white/90 bg-white/5 border border-white/10 px-4 py-3 rounded-xl">
                 <Award className="w-4 h-4 text-[#C8AB8A] shrink-0" />
-                <span>{lang === 'fr' ? "Garantie 2 ans UE + 1 an" : lang === 'de' ? "2 J. EU-Gewährl. + 1 J. Gar." : "2-Yr EU + 1-Yr Warranty"}</span>
+                <span>{lang === 'fr' ? "Garantie légale de conformité 2 ans" : lang === 'de' ? "2 Jahre gesetzliche Gewährleistung" : "2-Year Legal Conformity Warranty"}</span>
               </div>
             </div>
 
@@ -569,10 +569,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
             </h2>
             <p className="text-base sm:text-lg text-[#3E4A3D]/70 leading-relaxed font-normal">
               {lang === 'fr'
-                ? "Préparez vos huiles de soin, sérums, macérats glycérinés, teintures mères et infusions en quelques heures au lieu de plusieurs semaines. BloomLab® dispose de 6 fonctions prédéfinies (Butter, Oil, Tincture, Sans chauffe — mode sans température réglable dédié aux mélanges à froid type vinaigrette —, Décarboxylation, Nettoyage 5 min) et d'un réglage manuel TEMP/TIME (0 à 121 °C, 30 min à 12 h sur les modes réglables). Ne jamais laisser l'appareil sans surveillance en fonctionnement ni lorsqu'il est branché."
+                ? "Préparez vos huiles de soin, sérums, macérats glycérinés, teintures mères et infusions en quelques heures au lieu de plusieurs semaines. BloomLab® dispose de 6 fonctions prédéfinies (Butter, Oil, Tincture, Sans chauffe — mode sans température réglable dédié aux mélanges à froid type vinaigrette —, Activation thermique douce des résines et aromates, Nettoyage 5 min) et d'un réglage manuel TEMP/TIME (0 à 121 °C, 30 min à 12 h sur les modes réglables). Ne jamais laisser l'appareil sans surveillance en fonctionnement ni lorsqu'il est branché."
                 : lang === 'de'
-                ? "Stellen Sie Pflegeöle, Seren, Glycerin-Mazerate, Tinkturen und Aufgüsse in Stunden statt Wochen her. BloomLab® bietet 6 Programme (Butter, Oil, Tincture, Ohne Erwärmung — Modus ohne regelbare Temperatur für kalte Mischungen wie Vinaigrette —, Decarboxylierung, Reinigung 5 Min.) sowie manuelle TEMP/TIME-Steuerung (0–121 °C, 30 Min.–12 Std.). Das Gerät während des Betriebs und im eingesteckten Zustand niemals unbeaufsichtigt lassen."
-                : "Craft care oils, serums, glycerin macerates, tinctures, and infusions in hours instead of weeks. BloomLab® offers 6 functions (Butter, Oil, Tincture, No heating — non-adjustable cold-mixing mode exemplified by vinaigrette —, Decarboxylate, 5-min Clean) plus manual TEMP/TIME control (0–121°C, 30 min–12h on adjustable modes). Never leave the appliance unattended during operation or while plugged in."}
+                ? "Stellen Sie Pflegeöle, Seren, Glycerin-Mazerate, Tinkturen und Aufgüsse in Stunden statt Wochen her. BloomLab® bietet 6 Programme (Butter, Oil, Tincture, Ohne Erwärmung — Modus ohne regelbare Temperatur für kalte Mischungen wie Vinaigrette —, sanfte thermische Aktivierung von Harzen und Aromaten, Reinigung 5 Min.) sowie manuelle TEMP/TIME-Steuerung (0–121 °C, 30 Min.–12 Std.). Das Gerät während des Betriebs und im eingesteckten Zustand niemals unbeaufsichtigt lassen."
+                : "Craft care oils, serums, glycerin macerates, tinctures, and infusions in hours instead of weeks. BloomLab® offers 6 functions (Butter, Oil, Tincture, No heating — non-adjustable cold-mixing mode exemplified by vinaigrette —, gentle thermal activation of resins and aromatics, 5-min Clean) plus manual TEMP/TIME control (0–121°C, 30 min–12h on adjustable modes). Never leave the appliance unattended during operation or while plugged in."}
             </p>
             <details className="text-left max-w-2xl mx-auto rounded-2xl border border-[#3E4A3D]/15 bg-white p-4 shadow-xs">
               <summary className="cursor-pointer font-bold text-sm text-[#3E4A3D] select-none">
@@ -770,7 +770,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 <tr>
                   <td className="p-5 font-semibold text-[#3E4A3D]">{lang === 'fr' ? "Garanties" : lang === 'de' ? "Garantien" : "Warranties"}</td>
                   <td className="p-5 text-center text-slate-500">{lang === 'fr' ? "Variable" : lang === 'de' ? "Variabel" : "Variable"}</td>
-                  <td className="p-5 text-center font-bold text-emerald-700 bg-emerald-50/50">{lang === 'fr' ? "2 ans légale UE + 1 an commerciale" : lang === 'de' ? "2 Jahre gesetzl. (EU) + 1 Jahr Garantie" : "2-Year EU Legal + 1-Year Commercial"}</td>
+                  <td className="p-5 text-center font-bold text-emerald-700 bg-emerald-50/50">{lang === 'fr' ? "Garantie légale de conformité 2 ans" : lang === 'de' ? "2 Jahre gesetzliche Gewährleistung" : "2-Year Legal Conformity Warranty"}</td>
                 </tr>
               </tbody>
             </table>
@@ -1112,10 +1112,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 {
                   step: "04",
                   text: lang === 'fr'
-                    ? "Choisissez votre fonction (Butter, Oil, Tincture, Décarboxylation, Nettoyage — Sans chauffe étant réservé aux mélanges froids type vinaigrette) ou ajustez température et durée via + / -, sans jamais laisser l'appareil sans surveillance."
+                    ? "Choisissez votre fonction (Butter, Oil, Tincture, Activation thermique douce des résines et aromates, Nettoyage — Sans chauffe étant réservé aux mélanges froids type vinaigrette) ou ajustez température et durée via + / -, sans jamais laisser l'appareil sans surveillance."
                     : lang === 'de'
-                    ? "Wählen Sie Ihr Programm (Butter, Oil, Tincture, Decarboxylierung, Reinigung — Ohne Erwärmung nur für kalte Mischungen wie Vinaigrette) oder passen Sie Temperatur und Dauer mit + / - an, stets unter Aufsicht."
-                    : "Select your function (Butter, Oil, Tincture, Decarboxylate, Clean — No heating is strictly for unheated mixes like vinaigrette) or adjust temperature and time via + / -, never unattended."
+                    ? "Wählen Sie Ihr Programm (Butter, Oil, Tincture, sanfte thermische Aktivierung von Harzen und Aromaten, Reinigung — Ohne Erwärmung nur für kalte Mischungen wie Vinaigrette) oder passen Sie Temperatur und Dauer mit + / - an, stets unter Aufsicht."
+                    : "Select your function (Butter, Oil, Tincture, gentle thermal activation of resins and aromatics, Clean — No heating is strictly for unheated mixes like vinaigrette) or adjust temperature and time via + / -, never unattended."
                 },
                 {
                   step: "05",
@@ -1202,7 +1202,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 <ShieldCheck className="w-6 h-6 text-[#C8AB8A]" />
               </div>
               <h4 className="font-bold text-[#3E4A3D] mb-1">
-                {lang === 'fr' ? "Garantie 2 ans UE + 1 an" : lang === 'de' ? "2 Jahre EU + 1 Jahr Garantie" : "2-Yr EU + 1-Yr Warranty"}
+                {lang === 'fr' ? "Garantie légale de conformité 2 ans" : lang === 'de' ? "2 Jahre gesetzliche Gewährleistung" : "2-Year Legal Conformity Warranty"}
               </h4>
               <p className="text-xs text-[#3E4A3D]/80 leading-relaxed">
                 {lang === 'fr'
@@ -1278,15 +1278,15 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                     <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
                     <span>
                       {lang === 'fr'
-                        ? "Accès 3 mois à plus de 160 recettes (culinaire, cosmétique, plantes médicinales) + Manuel complet et 100 recettes exclusives en français"
+                        ? "Accès complet à la Bibliothèque numérique et aux 100 recettes inclus avec votre BloomLab® + Manuel complet en français"
                         : lang === 'de'
-                        ? "3 Monate Zugang zu über 160 Rezepten (Kulinarik, Kosmetik, Heilpflanzen) + Vollständiges Handbuch & 100 exklusive Rezepte"
-                        : "3-month access to 160+ recipes (culinary, cosmetics, medicinal plants) + Complete manual & 100 exclusive recipes"}
+                        ? "Vollständiger Zugang zur digitalen Bibliothek & 100 Rezepten im BloomLab® enthalten + Vollständiges Handbuch"
+                        : "Full access to the Digital Library and 100 recipes included with your BloomLab® + Complete manual"}
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
-                    <span className="font-bold text-[#3E4A3D]">{lang === 'fr' ? "Garantie légale 2 ans (UE) + commerciale 1 an" : lang === 'de' ? "2 Jahre gesetzl. Gewährl. (EU) + 1 Jahr Garantie" : "2-Year EU Legal + 1-Year Commercial Warranty"}</span>
+                    <span className="font-bold text-[#3E4A3D]">{lang === 'fr' ? "Garantie légale de conformité 2 ans" : lang === 'de' ? "2 Jahre gesetzliche Gewährleistung" : "2-Year Legal Conformity Warranty"}</span>
                   </li>
                 </ul>
               </div>
@@ -1312,10 +1312,10 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                 </h3>
                 <p className="text-xs text-[#3E4A3D]/70 mb-6 leading-relaxed">
                   {lang === 'fr'
-                    ? "Machine BloomLab® Inox 304, Kit accessoires apothicaire, L'Herbier Complet (4 mélanges), Duo Argiles et 3 mois d'accès Premium Académie."
+                    ? "Machine BloomLab® Inox 304, Kit accessoires apothicaire, L'Herbier Complet (4 mélanges), Duo Argiles et accès complet à la Bibliothèque numérique & 100 recettes inclus."
                     : lang === 'de'
-                    ? "BloomLab® 304-Edelstahl, Apotheker-Zubehör, Vollständiges Herbarium (4 Mischungen), Tonerde-Duo und 3 Monate Premium-Akademie."
-                    : "BloomLab® 304 Steel Machine, Apothecary Kit, Complete Herbarium (4 blends), Clay Duo, and 3 months Premium Academy access."}
+                    ? "BloomLab® 304-Edelstahl, Apotheker-Zubehör, Vollständiges Herbarium (4 Mischungen), Tonerde-Duo und voller Zugang zur digitalen Bibliothek & 100 Rezepten inklusive."
+                    : "BloomLab® 304 Steel Machine, Apothecary Kit, Complete Herbarium (4 blends), Clay Duo, and full access to the Digital Library & 100 recipes included."}
                 </p>
                 <div className="flex items-baseline gap-2 mb-6">
                   <span className="text-4xl font-black text-[#3E4A3D]">289€</span>
@@ -1337,7 +1337,7 @@ export default function MachineLanding({ onNavigate, lang }: { onNavigate: (view
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle className="w-4 h-4 text-[#C8AB8A] shrink-0 mt-0.5" />
-                    <span>{lang === 'fr' ? "3 mois d'accès Premium Académie inclus" : lang === 'de' ? "3 Monate Premium-Zugang zur Akademie inklusive" : "3 months Premium Academy access included"}</span>
+                    <span>{lang === 'fr' ? "Accès complet à la Bibliothèque numérique et aux 100 recettes inclus avec votre BloomLab®" : lang === 'de' ? "Voller Zugang zur digitalen Bibliothek & 100 Rezepten im BloomLab® enthalten" : "Full access to the Digital Library and 100 recipes included with your BloomLab®"}</span>
                   </li>
                 </ul>
               </div>

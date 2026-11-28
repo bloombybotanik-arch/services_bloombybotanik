@@ -209,9 +209,9 @@ export default function FaqContent({ onNavigate, lang = 'fr' }: FaqContentProps)
         ? "Kann man eigene Gartenkräuter oder gesammelte Wildkräuter verwenden?" 
         : "Can you use your own garden herbs or wild-foraged plants?",
       a: isFR 
-        ? "Oui, tout à fait ! BloomLab® est un instrument d'autonomie et de souveraineté. Vous pouvez utiliser vos propres récoltes séchées avec soin, des plantes d'herboristerie biologique certifiée, ou nos kits pré-dosés grade Totum." 
+        ? "Oui, tout à fait ! BloomLab® est un instrument d'autonomie botanique. Vous pouvez utiliser vos propres récoltes séchées avec soin, des plantes d'herboristerie biologique certifiée, ou nos kits pré-dosés grade Totum." 
         : isDE 
-        ? "Ja, absolut. BloomLab unterstützt Ihre botanische Souveränität mit eigenen Pflanzen oder zertifizierten Kräutern." 
+        ? "Ja, absolut. BloomLab unterstützt Ihre botanische Autonomie mit eigenen Pflanzen oder zertifizierten Kräutern." 
         : "Yes, absolutely! BloomLab® supports your botanical autonomy using your own harvests, organic herbs, or our Totum grade kits."
     },
     {
@@ -237,10 +237,10 @@ export default function FaqContent({ onNavigate, lang = 'fr' }: FaqContentProps)
         ? "Welche Garantie gilt für den BloomLab®?" 
         : "What is the warranty on BloomLab®?",
       a: isFR 
-        ? "L'extracteur BloomLab® bénéficie de la garantie légale de conformité de 2 ans (UE) complétée par la garantie commerciale constructeur d'1 an, avec support et SAV basés en France." 
+        ? "L'extracteur BloomLab® bénéficie de la garantie légale de conformité de 2 ans (UE), avec support et SAV basés en France." 
         : isDE 
-        ? "Für den BloomLab® gelten die 2-jährige gesetzliche Gewährleistung (EU) sowie 1 Jahr Herstellergarantie mit Kundenservice in Frankreich." 
-        : "BloomLab® is covered by the mandatory 2-year EU legal conformity warranty alongside a 1-year commercial manufacturer warranty with support based in France."
+        ? "Für den BloomLab® gilt die 2-jährige gesetzliche Gewährleistung (EU) mit Kundenservice in Frankreich." 
+        : "BloomLab® is covered by the 2-year EU legal conformity warranty with support based in France."
     },
     {
       id: 'q11',

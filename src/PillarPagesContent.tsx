@@ -380,25 +380,25 @@ function PillarRemedesNaturels({ onNavigate, lang }: { onNavigate: (v: View, p?:
         "acceptedAnswer": {
           "@type": "Answer",
           "text": tr(
-            "Les 5 piliers recommandés sont la camomille matricaire (système nerveux & digestion), le thym à linalol (sphère ORL), la mélisse (sommeil & stress), le romarin (foie & clarté mentale) et le curcuma (équilibre tissulaire).",
-            "The 5 recommended pillars are German chamomile (nervous system & digestion), linalool thyme (respiratory comfort), lemon balm (sleep & stress), rosemary (liver & mental clarity), and turmeric (cellular balance).",
-            "Die 5 empfohlenen Säulen sind Echte Kamille (Nervensystem & Verdauung), Linalool-Thymian (Atemwege), Zitronenmelisse (Schlaf & Stress), Rosmarin (Leber & geistige Klarheit) und Kurkuma (Gewebebalance)."
+            "Les 5 piliers recommandés sont la camomille matricaire (infusion douce d'après-repas), le thym à linalol (arômes chauds d'hiver), la mélisse (rituels aromatiques du soir), le romarin (notes résineuses et amères) et le curcuma (extraction en phase lipidique culinaire).",
+            "The 5 recommended pillars are German chamomile (gentle after-meal infusion), linalool thyme (warming winter aromatics), lemon balm (evening aromatic rituals), rosemary (resinous herbal notes), and turmeric (culinary lipid extraction).",
+            "Die 5 empfohlenen Säulen sind Echte Kamille (milder Aufguss nach dem Essen), Linalool-Thymian (wärmende Winteraromen), Zitronenmelisse (aromatische Abendrituale), Rosmarin (harzige Kräuternoten) und Kurkuma (kulinarische Ölextraktion)."
           )
         }
       },
       {
         "@type": "Question",
         "name": tr(
-          "Peut-on remplacer un traitement médical par des soins botaniques ?",
-          "Can botanical home care replace a prescribed medical treatment?",
-          "Können pflanzliche Hausmittel eine ärztliche Behandlung ersetzen?"
+          "Peut-on remplacer un traitement médical par des infusions ou macérats botaniques ?",
+          "Can botanical home infusions replace a prescribed medical treatment?",
+          "Können pflanzliche Aufgüsse eine ärztliche Behandlung ersetzen?"
         ),
         "acceptedAnswer": {
           "@type": "Answer",
           "text": tr(
-            "Non. Les préparations botaniques s'inscrivent dans une démarche éducative et d'hygiène de terrain. Elles ne se substituent jamais à un diagnostic ou une prescription médicale.",
-            "No. Botanical preparations are part of an educational and terrain-hygiene approach. They never replace a medical diagnosis or prescription.",
-            "Nein. Pflanzliche Zubereitungen dienen einem pädagogischen Ansatz zur Terrain-Pflege. Sie ersetzen niemals eine ärztliche Diagnose oder Verordnung."
+            "Non. Les préparations botaniques s'inscrivent dans une démarche éducative, culinaire et d'herboristerie domestique. Elles ne se substituent jamais à un diagnostic ou une prescription médicale.",
+            "No. Botanical preparations are part of an educational, culinary, and home herbalism approach. They never replace a medical diagnosis or prescription.",
+            "Nein. Pflanzliche Zubereitungen dienen einem pädagogischen und kulinarischen Ansatz der Hauskräuterkunde. Sie ersetzen niemals eine ärztliche Diagnose oder Verordnung."
           )
         }
       }
@@ -417,25 +417,25 @@ function PillarRemedesNaturels({ onNavigate, lang }: { onNavigate: (v: View, p?:
     {
       name: tr("2. Camomille Matricaire", "2. German Chamomile", "2. Echte Kamille"),
       desc: tr(
-        "Apigénine apaisante naturelle (affinité récepteurs GABA), douceur pour les muqueuses gastriques.",
-        "Natural apigenin (GABA receptor affinity) supporting calm and comfort for sensitive digestive mucosa.",
-        "Natürliches Apigenin (GABA-Rezeptor-Affinität) und milde Beruhigung für die Magenschleimhaut."
+        "Capitules floraux riches en apigénine et huiles essentielles bleues, appréciés en tisane douce tiède après les repas.",
+        "Floral heads rich in apigenin and volatile aromatics, traditionally brewed as a gentle warm infusion after meals.",
+        "Blütenköpfe reich an Apigenin und ätherischen Aromastoffen, traditionell als milder Aufguss nach dem Essen geschätzt."
       )
     },
     {
       name: tr("3. Thym à Linalol", "3. Linalool Thyme", "3. Linalool-Thymian"),
       desc: tr(
-        "Grand protecteur de la sphère respiratoire sans agressivité hépatique, idéal pour le confort hivernal.",
-        "Gentle respiratory ally with high liver tolerance, ideal for seasonal throat and airway comfort.",
-        "Sanfter Begleiter für die Atemwege mit hoher Leberverträglichkeit, ideal für die Winterzeit."
+        "Chémotype doux aromatique riche en linalol, apprécié dans les infusions chaudes et sirops culinaires d'hiver.",
+        "Gentle aromatic chemotype rich in linalool, traditionally prepared in warm seasonal infusions and syrups.",
+        "Sanfter aromatischer Chemotyp reich an Linalool, traditionell für wärmende Winteraufgüsse und Sirupe geschätzt."
       )
     },
     {
       name: tr("4. Romarin à Cinéole", "4. Cineole Rosemary", "4. Cineol-Rosmarin"),
       desc: tr(
-        "Soutien hépatobiliaire doux, clarté mentale et richesse en acide rosmarinique antioxydant.",
-        "Gentle hepatobiliary support, mental clarity, and rich in antioxidant rosmarinic acid.",
-        "Sanfte Leber-Galle-Unterstützung, geistige Klarheit und reich an antioxidativer Rosmarinsäure."
+        "Feuilles méditerranéennes aromatiques riches en acide rosmarinique et polyphénols, polyvalentes en infusion comme en macérat huileux.",
+        "Aromatic Mediterranean leaves rich in rosmarinic acid and polyphenols, versatile in aqueous infusions and culinary oils.",
+        "Aromatische mediterrane Blätter reich an Rosmarinsäure und Polyphenolen, vielseitig in Aufgüssen und Kräuterölen."
       )
     },
     {
@@ -457,9 +457,9 @@ function PillarRemedesNaturels({ onNavigate, lang }: { onNavigate: (v: View, p?:
     {
       name: tr("7. Ashwagandha (Withania)", "7. Ashwagandha (Withania somnifera)", "7. Ashwagandha (Schlafbeere)"),
       desc: tr(
-        "Plante adaptogène majeure pour accompagner l'équilibre nerveux face au stress chronique.",
-        "Major adaptogenic root traditionally used to support nervous balance and stress resilience.",
-        "Bedeutende adaptogene Wurzel zur Unterstützung der Stressresistenz und inneren Ruhe."
+        "Racine ligneuse traditionnelle issue des pharmacopées anciennes, étudiée pour sa richesse en withanolides (réservée à l'adulte).",
+        "Traditional woody root documented in botanical monographs for its withanolides (for adult educational preparation only).",
+        "Traditionelle Wurzel der Kräuterkunde, dokumentiert für ihre Withanolide (nur für Erwachsene)."
       )
     },
     {
@@ -490,25 +490,25 @@ function PillarRemedesNaturels({ onNavigate, lang }: { onNavigate: (v: View, p?:
 
   const protocols = [
     {
-      title: tr("Sphère Stress & Sérénité", "Stress & Serenity Sphere", "Bereich Stress & Gelassenheit"),
+      title: tr("Rituel Aromatique de Fin de Journée", "Late-Afternoon Aromatic Ritual", "Aromatisches Nachmittags- & Abendritual"),
       badge: tr("Infusion 50°C • 25 min", "Infusion 50°C • 25 min", "Aufguss 50°C • 25 Min."),
       text: tr(
-        "Synergie : Mélisse (40%) + Camomille (30%) + Ashwagandha (30%). Solvant : Eau faiblement minéralisée. Usage général : 2 tasses/jour entre 17h et 21h.",
-        "Synergy: Lemon Balm (40%) + Chamomile (30%) + Ashwagandha (30%). Solvent: Low-mineral water. General use: 2 cups/day between 5 PM and 9 PM.",
-        "Synergie: Melisse (40%) + Kamille (30%) + Ashwagandha (30%). Lösungsmittel: Mineralarmes Wasser. Anwendung: 2 Tassen/Tag zwischen 17 und 21 Uhr."
+        "Synergie : Mélisse (40%) + Camomille (30%) + Verveine (30%). Solvant : Eau faiblement minéralisée. Usage général : 1 à 2 tasses en fin de journée.",
+        "Synergy: Lemon Balm (40%) + Chamomile (30%) + Verbena (30%). Solvent: Low-mineral water. General use: 1 to 2 cups in the evening.",
+        "Synergie: Melisse (40%) + Kamille (30%) + Verbene (30%). Lösungsmittel: Mineralarmes Wasser. Anwendung: 1 bis 2 Tassen am Abend."
       )
     },
     {
-      title: tr("Sphère Sommeil Profond", "Deep Sleep Sphere", "Bereich Tiefer Schlaf"),
+      title: tr("Infusion Douceur du Soir", "Evening Calm Herbal Infusion", "Sanfter Kräuteraufguss am Abend"),
       badge: tr("Infusion 55°C • 30 min", "Infusion 55°C • 30 min", "Aufguss 55°C • 30 Min."),
       text: tr(
-        "Synergie : Valériane racine (40%) + Passiflore (30%) + Lavande vraie (30%). Solvant : Eau ou lait végétal d'avoine. Usage général : 1 tasse 45 minutes avant le coucher.",
-        "Synergy: Valerian root (40%) + Passionflower (30%) + True Lavender (30%). Solvent: Water or oat milk. General use: 1 cup 45 minutes before bedtime.",
-        "Synergie: Baldrianwurzel (40%) + Passionsblume (30%) + Echter Lavendel (30%). Lösungsmittel: Wasser oder Haferdrink. Anwendung: 1 Tasse 45 Min. vor dem Schlafengehen."
+        "Synergie : Valériane racine (40%) + Passiflore (30%) + Lavande vraie (30%). Solvant : Eau ou boisson végétale d'avoine. Usage général : 1 tasse le soir.",
+        "Synergy: Valerian root (40%) + Passionflower (30%) + True Lavender (30%). Solvent: Water or oat drink. General use: 1 cup in the evening.",
+        "Synergie: Baldrianwurzel (40%) + Passionsblume (30%) + Echter Lavendel (30%). Lösungsmittel: Wasser oder Haferdrink. Anwendung: 1 Tasse am Abend."
       )
     },
     {
-      title: tr("Sphère Mouvement & Rhizomes", "Movement & Rhizomes Sphere", "Bereich Bewegung & Rhizome"),
+      title: tr("Extraction Séquentielle Épicée & Boisée", "Spiced & Woody Sequential Extraction", "Würzig-holzige sequenzielle Extraktion"),
       badge: tr("Extraction Séquentielle A/B", "Sequential A/B Extraction", "Sequentielle A/B-Extraktion"),
       text: tr(
         "Synergie : Curcuma rhizome + Poivre noir (pipérine) + Reine des Prés + Gingembre. Solvant : Huile vierge de cameline puis eau tiède.",
@@ -529,26 +529,26 @@ function PillarRemedesNaturels({ onNavigate, lang }: { onNavigate: (v: View, p?:
             <span>/</span>
             <button onClick={() => onNavigate('guides')} className="hover:underline">{tr("Guides", "Guides", "Leitfäden")}</button>
             <span>/</span>
-            <span className="text-[#C8AB8A] font-medium">{tr("Soins Botaniques Maison", "Home Botanical Care", "Botanische Hauspflege")}</span>
+            <span className="text-[#C8AB8A] font-medium">{tr("Préparations & Infusions Botaniques Maison", "Home Botanical Infusions & Preparations", "Botanische Hauszubereitungen & Aufgüsse")}</span>
           </nav>
 
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#C8AB8A]/20 border border-[#C8AB8A]/40 text-[#C8AB8A] text-xs font-bold uppercase tracking-widest mb-6">
             <Leaf className="w-4 h-4" />
-            <span>{tr("Guide Pratique Débutants • Herboristerie Familiale", "Beginner's Practical Guide • Home Herbalism", "Praxisleitfaden für Einsteiger • Hauskräuterkunde")}</span>
+            <span>{tr("Guide Pratique Débutants • Herboristerie Domestique", "Beginner's Practical Guide • Home Herbalism", "Praxisleitfaden für Einsteiger • Hauskräuterkunde")}</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-6">
             {tr(
-              "Soins Botaniques Maison : Guide Pratique pour Débutants — Bloom by BotaniK",
-              "Home Botanical Care: Practical Guide for Beginners — Bloom by BotaniK",
-              "Botanische Hauspflege: Praxisleitfaden für Einsteiger — Bloom by BotaniK"
+              "Préparations & Infusions Botaniques Maison : Guide Pratique — Bloom by BotaniK",
+              "Home Botanical Infusions & Preparations: Practical Guide — Bloom by BotaniK",
+              "Botanische Hauszubereitungen & Aufgüsse: Praxisleitfaden — Bloom by BotaniK"
             )}
           </h1>
           <p className="text-lg sm:text-xl text-[#FAF7F2]/90 leading-relaxed max-w-3xl">
             {tr(
-              "Comment préparer vos propres extraits botaniques sécurisés pour accompagner le stress, le sommeil, la récupération et la digestion. Les 10 plantes fondamentales, les ratios d'extraction et les règles de prudence indispensables.",
-              "How to prepare safe botanical extracts at home to support stress balance, sleep, recovery, and digestion. The 10 foundational plants, extraction ratios, and essential safety rules.",
-              "Wie Sie sichere Pflanzenextrakte für Zuhause zubereiten, um Stressabbau, Schlaf, Regeneration und Verdauung zu begleiten. Die 10 Basispflanzen, Extraktionsverhältnisse und Sicherheitsregeln."
+              "Comment concevoir vos tisanes concentrées, macérats huileux et infusions aromatiques maison avec méthode. Les 10 plantes fondamentales, les repères de température et les règles de prudence indispensables.",
+              "How to craft concentrated herbal infusions, oil macerates, and aromatic botanical preparations at home. The 10 foundational plants, thermal benchmarks, and essential safety rules.",
+              "Wie Sie aromatische Kräuteraufgüsse, Ölmazerate und pflanzliche Hauszubereitungen methodisch herstellen. Die 10 Basispflanzen, Temperaturrichtwerte und Sicherheitsregeln."
             )}
           </p>
 
@@ -576,7 +576,7 @@ function PillarRemedesNaturels({ onNavigate, lang }: { onNavigate: (v: View, p?:
 
         <section className="bg-white p-8 sm:p-12 rounded-3xl border border-[#D8CBB7]/60 shadow-sm space-y-6">
           <h2 className="text-2xl sm:text-3xl font-black text-[#3E4A3D]">
-            {tr("Protocoles Éducatifs par Sphère", "Educational Protocols by Sphere", "Pädagogische Protokolle nach Wirkbereich")}
+            {tr("Repères Éducatifs de Préparation", "Educational Preparation Benchmarks", "Pädagogische Zubereitungs-Richtwerte")}
           </h2>
           <div className="space-y-4 text-xs">
             {protocols.map((proto, idx) => (
@@ -608,11 +608,11 @@ function PillarRemedesNaturels({ onNavigate, lang }: { onNavigate: (v: View, p?:
           <h2 className="text-sm font-bold text-[#3E4A3D] uppercase tracking-wider">{tr("Articles & Recettes associés", "Related Articles & Recipes", "Zugehörige Artikel & Rezepte")}</h2>
           <div className="grid sm:grid-cols-2 gap-3 text-xs font-semibold">
             <button onClick={() => onNavigate('blog', 'plantes-adaptogenes-stress')} className="p-3 bg-white rounded-xl border border-[#D8CBB7]/60 text-left hover:text-[#C8AB8A] transition-colors flex items-center justify-between">
-              <span>{tr("Plantes adaptogènes pour le stress", "Adaptogenic plants for stress", "Adaptogene Pflanzen bei Stress")}</span>
+              <span>{tr("Plantes adaptogènes : monographies & usages", "Adaptogenic plants: monographs & uses", "Adaptogene Pflanzen: Monografien & Anwendungen")}</span>
               <ArrowRight className="w-4 h-4 text-[#C8AB8A]" />
             </button>
             <button onClick={() => onNavigate('blog', 'plantes-dormir-profondement')} className="p-3 bg-white rounded-xl border border-[#D8CBB7]/60 text-left hover:text-[#C8AB8A] transition-colors flex items-center justify-between">
-              <span>{tr("5 plantes pour un sommeil profond", "5 plants for deep sleep", "5 Pflanzen für tiefen Schlaf")}</span>
+              <span>{tr("5 plantes traditionnelles du soir", "5 traditional evening botanicals", "5 traditionelle Abendpflanzen")}</span>
               <ArrowRight className="w-4 h-4 text-[#C8AB8A]" />
             </button>
           </div>

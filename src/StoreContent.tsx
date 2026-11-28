@@ -50,7 +50,7 @@ export const getProducts = (lang: Language) => {
       image: bloomLabImg,
       description: t.bloomlab.description,
       bullets: t.bloomlab.bullets,
-      tags: ['Best-Seller', 'Inox 304', 'Souveraineté'],
+      tags: ['Best-Seller', 'Inox 304', 'Autonomie Botanique'],
       featured: true
     },
     {
@@ -131,30 +131,6 @@ export const getProducts = (lang: Language) => {
       tags: ['Duo Argiles', 'Minéraux 6 µm']
     },
     {
-      id: 'abonnements-numeriques',
-      name: lang === 'fr' 
-        ? "Abonnements Numériques Bloom" 
-        : lang === 'de' 
-        ? "Digitale Abonnements Bloom" 
-        : "Bloom Digital Subscriptions",
-      subtitle: lang === 'fr' 
-        ? "Académie & Protocoles Systémiques" 
-        : lang === 'de' 
-        ? "Akademie & Systemische Protokolle" 
-        : "Academy & Systemic Protocols",
-      price: 9.00,
-      originalPrice: 12.00,
-      image: modernShelvesImg,
-      description: lang === 'fr'
-        ? "Accès illimité à l'ensemble des modules de la Bloom Academy, fiches détaillées, architectures cellulaires et protocoles systémiques complets."
-        : lang === 'de'
-        ? "Unbegrenzter Zugang zu allen Modulen der Bloom Academy, detaillierten Leitfäden, zellulären Architekturen und systemischen Protokollen."
-        : "Unlimited access to all Bloom Academy modules, detailed guides, cellular architectures, and complete systemic protocols.",
-      tags: ['Abonnement', 'Digital', 'Académie'],
-      isSpecial: false,
-      isDigital: true
-    },
-    {
       id: 'freemium-access',
       name: t.freemium_access.name,
       subtitle: t.freemium_access.subtitle,
@@ -162,17 +138,6 @@ export const getProducts = (lang: Language) => {
       image: herbsCloseUpImg,
       description: t.freemium_access.description,
       tags: ['Gratuit', 'Digital', 'Découverte'],
-      isSpecial: true,
-      isDigital: true
-    },
-    {
-      id: 'premium-access',
-      name: t.premium_access.name,
-      subtitle: t.premium_access.subtitle,
-      price: 9.00,
-      image: modernShelvesImg,
-      description: t.premium_access.description,
-      tags: ['Abonnement', 'Digital', 'Annuel'],
       isSpecial: true,
       isDigital: true
     }
@@ -190,8 +155,8 @@ interface StoreContentProps {
 
 export default function StoreContent({ currentView, onNavigate, onNavigatePending, onNavigateDetail, onAddToCart, lang }: StoreContentProps) {
   const handleNavigateDetail = (id: string) => {
-    if (id === 'abonnements-numeriques' || id === 'abonnement') {
-      if (onNavigate) onNavigate('abonnement');
+    if (id === 'abonnements-numeriques' || id === 'abonnement' || id === 'bloomlab') {
+      if (onNavigate) onNavigate('machine');
       return;
     }
     if (onNavigateDetail) onNavigateDetail(id);
@@ -267,71 +232,6 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
     }
   };
 
-  const productsSchema = {
-    "@context": "https://schema.org",
-    "@graph": filteredProducts.map((p) => ({
-      "@type": "Product",
-      "@id": `https://bloombybotanik.com/boutique/${p.id}/#product`,
-      "name": p.name,
-      "description": p.description,
-      "image": `https://bloombybotanik.com${p.image}`,
-      "sku": p.id,
-      "mpn": `BLOOM-${p.id.toUpperCase()}`,
-      "brand": {
-        "@type": "Brand",
-        "name": "Bloom by BotaniK"
-      },
-      "offers": {
-        "@type": "Offer",
-        "url": `https://bloombybotanik.com/boutique/${p.id}/`,
-        "priceCurrency": "EUR",
-        "price": p.price.toFixed(2),
-        "priceValidUntil": "2026-12-31",
-        "itemCondition": "https://schema.org/NewCondition",
-        "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "Organization",
-          "name": "Bloom by BotaniK"
-        },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": p.id === 'bloomlab' ? "7.90" : "5.90",
-            "currency": "EUR"
-          },
-          "shippingDestination": {
-            "@type": "DefinedRegion",
-            "addressCountry": "FR"
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 1,
-              "maxValue": 2,
-              "unitCode": "DAY"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 2,
-              "maxValue": 4,
-              "unitCode": "DAY"
-            }
-          }
-        },
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "FR",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-          "merchantReturnDays": 14,
-          "returnMethod": "https://schema.org/ReturnByMail",
-          "returnFees": "https://schema.org/ReturnShippingFees"
-        }
-      }
-    }))
-  };
-
   return (
     <div data-product-page="true" className="product-detail pb-20">
       <script type="application/ld+json">
@@ -340,17 +240,14 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
       <script type="application/ld+json">
         {JSON.stringify(collectionSchema)}
       </script>
-      <script type="application/ld+json">
-        {JSON.stringify(productsSchema)}
-      </script>
 
       {/* Promotional Banner */}
       <div className="bg-[#D97706]/10 text-[#B45309] border-y border-[#D97706]/30 text-center py-2.5 px-4 text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
         {isFR 
-          ? "🇫🇷 Conception Bloom by BotaniK • Expédition 24/48h • Garantie légale 2 ans (UE) + commerciale 1 an" 
+          ? "🇫🇷 Conception Bloom by BotaniK • Expédition 24/48h • Garantie légale de conformité 2 ans" 
           : isDE
-          ? "🇫🇷 Entwicklung Bloom by BotaniK • Versand 24/48h • 2 Jahre gesetzl. Gewährleistung (EU) + 1 Jahr Garantie"
-          : "🇫🇷 Engineered by Bloom by BotaniK • 24/48h Shipping • 2-Year EU Legal Warranty + 1-Year Commercial"}
+          ? "🇫🇷 Entwicklung Bloom by BotaniK • Versand 24/48h • 2 Jahre gesetzliche Gewährleistung"
+          : "🇫🇷 Engineered by Bloom by BotaniK • 24/48h Shipping • 2-Year Legal Conformity Warranty"}
       </div>
       
       {/* Search & Filter Header (App Style) */}
@@ -535,21 +432,21 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="max-w-md">
                 <h3 className="text-2xl md:text-3xl font-bold text-botanik-green mb-4">
-                  {lang === 'fr' ? "L'Écosystème Digital" : lang === 'en' ? 'The Digital Ecosystem' : 'Das digitale Ökosystem'}
+                  {lang === 'fr' ? "L'Écosystème Digital Inclus" : lang === 'en' ? 'Included Digital Ecosystem' : 'Inkludiertes Digital-Ökosystem'}
                 </h3>
-                <p className="text-sm sm:text-base text-botanik-green/60 leading-relaxed mb-6">
+                <p className="text-sm sm:text-base text-botanik-green/75 leading-relaxed mb-6">
                   {lang === 'fr' 
-                    ? "Accédez à notre bibliothèque de savoirs et à nos protocoles experts pour transformer votre pratique de l'herboristerie."
+                    ? "Accès complet à la Bibliothèque numérique et aux 100 recettes inclus avec votre BloomLab® — sans aucun abonnement payant séparé."
                     : lang === 'en'
-                    ? "Access our knowledge library and expert protocols to transform your herbal practice."
-                    : "Greifen Sie auf unsere Wissensbibliothek und Expertenprotokolle zu, um Ihre Kräuterpraxis zu transformieren."}
+                    ? "Full access to the Digital Library and 100 recipes included with your BloomLab® — with no separate paid subscription."
+                    : "Vollzugang zur digitalen Bibliothek und den 100 Rezepten in Ihrer BloomLab® inbegriffen — ohne separates Bezahl-Abo."}
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <div className="flex items-center gap-2 text-[10px] font-bold text-botanik-orange uppercase tracking-widest">
                     <Check className="w-4 h-4" /> {isFR ? "10 recettes gratuites" : isDE ? "10 kostenlose Rezepte" : "10 free recipes"}
                   </div>
                   <div className="flex items-center gap-2 text-[10px] font-bold text-botanik-orange uppercase tracking-widest">
-                    <Check className="w-4 h-4" /> {isFR ? "Protocoles experts" : isDE ? "Expertenprotokolle" : "Expert protocols"}
+                    <Check className="w-4 h-4" /> {isFR ? "Bibliothèque & 100 recettes incluses" : isDE ? "Bibliothek & 100 Rezepte inklusive" : "Library & 100 recipes included"}
                   </div>
                 </div>
               </div>
@@ -580,7 +477,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                       </div>
                       <div className="flex items-center justify-between gap-4 pt-1 sm:mt-auto">
                         <span className="text-lg sm:text-xl font-bold text-botanik-green">
-                          {product.price === 0 ? (lang === 'fr' ? 'Gratuit' : lang === 'en' ? 'Free' : 'Gratis') : formatPrice(product.price)}
+                          {lang === 'fr' ? 'Gratuit' : lang === 'en' ? 'Free' : 'Gratis'}
                         </span>
                         <div 
                           className="w-10 h-10 bg-[#3E4A3D] text-white rounded-xl flex items-center justify-center group-hover:bg-botanik-orange transition-colors shrink-0"
@@ -592,6 +489,45 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                     </div>
                   </a>
                 ))}
+                <a
+                  href="/bloomlab/"
+                  onClick={(e) => {
+                    if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                      e.preventDefault();
+                      if (onNavigate) onNavigate('machine');
+                    }
+                  }}
+                  className="block sm:flex sm:flex-col bg-white rounded-3xl sm:rounded-[32px] shadow-sm hover:shadow-xl transition-all cursor-pointer group border border-botanik-green/5 overflow-hidden"
+                >
+                  <div className="relative w-full aspect-video overflow-hidden bg-[#F9F9F7] sm:shrink-0">
+                    <OptimizedImage
+                      src={modernShelvesImg}
+                      alt={isFR ? "Bibliothèque numérique et 100 recettes incluses avec BloomLab®" : isDE ? "Digitale Bibliothek & 100 Rezepte inklusive mit BloomLab®" : "Digital Library & 100 recipes included with BloomLab®"}
+                      className="absolute inset-0 w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="p-5 sm:p-6 flex flex-col gap-4 sm:flex-1">
+                    <div>
+                      <div className="text-[10px] font-bold text-botanik-orange uppercase tracking-widest mb-1">
+                        {isFR ? "INCLUS AVEC BLOOMLAB®" : isDE ? "INKLUSIVE MIT BLOOMLAB®" : "INCLUDED WITH BLOOMLAB®"}
+                      </div>
+                      <h4 className="text-base sm:text-lg font-bold text-botanik-green leading-tight">
+                        {isFR ? "Bibliothèque numérique & 100 recettes" : isDE ? "Digitale Bibliothek & 100 Rezepte" : "Digital Library & 100 Recipes"}
+                      </h4>
+                    </div>
+                    <div className="flex items-center justify-between gap-4 pt-1 sm:mt-auto">
+                      <span className="text-sm sm:text-base font-bold text-emerald-700">
+                        {isFR ? "Inclus avec la machine" : isDE ? "Mit Gerät inklusive" : "Included with BloomLab®"}
+                      </span>
+                      <div
+                        className="w-10 h-10 bg-[#3E4A3D] text-white rounded-xl flex items-center justify-center group-hover:bg-botanik-orange transition-colors shrink-0"
+                        aria-label={isFR ? "Découvrir BloomLab®" : isDE ? "BloomLab® entdecken" : "Discover BloomLab®"}
+                      >
+                        <ArrowRight className="w-5 h-5" />
+                      </div>
+                    </div>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -653,7 +589,7 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
               >
                 <div className="text-xs font-black text-botanik-orange">9,90 € / 12,90 €</div>
                 <div className="font-bold text-sm text-botanik-green">{isFR ? "Kits Plantes Bio" : isDE ? "Bio-Pflanzen-Kits" : "Organic Plant Kits"}</div>
-                <div className="text-[11px] text-botanik-green/60">{isFR ? "Sève, Nuit, Digestion, Articulaire, Hiver" : isDE ? "Saft, Nacht, Verdauung, Gelenke, Winter" : "Sap, Night, Digestion, Joint, Winter"}</div>
+                <div className="text-[11px] text-botanik-green/60">{isFR ? "Sève, Douceur du Soir, Fraîcheur, Souplesse, Hiver" : isDE ? "Saft, Sanfter Abend, Frische, Geschmeidigkeit, Winter" : "Sap, Evening Smoothness, Freshness, Suppleness, Winter"}</div>
               </button>
               <button
                 type="button"
@@ -675,12 +611,12 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
               </button>
               <button
                 type="button"
-                onClick={() => handleNavigateDetail('abonnements-numeriques')}
+                onClick={() => { if (onNavigate) onNavigate('machine'); }}
                 className="p-4 rounded-2xl bg-white border border-[#E7DFD3] hover:border-botanik-orange text-left transition-all cursor-pointer space-y-1 shadow-2xs"
               >
-                <div className="text-xs font-black text-botanik-orange">9,00 €/mois</div>
-                <div className="font-bold text-sm text-botanik-green">{isFR ? "Abonnement Numérique Académie" : isDE ? "Akademie Digital-Abo" : "Academy Digital Membership"}</div>
-                <div className="text-[11px] text-botanik-green/60">{isFR ? "+100 recettes & protocoles guidés" : isDE ? "+100 Rezepte & Protokolle" : "+100 recipes & guided protocols"}</div>
+                <div className="text-xs font-black text-emerald-700">{isFR ? "Inclus avec BloomLab®" : isDE ? "Mit BloomLab® inklusive" : "Included with BloomLab®"}</div>
+                <div className="font-bold text-sm text-botanik-green">{isFR ? "Bibliothèque numérique & 100 recettes" : isDE ? "Digitale Bibliothek & 100 Rezepte" : "Digital Library & 100 Recipes"}</div>
+                <div className="text-[11px] text-botanik-green/60">{isFR ? "Accès complet inclus sans abonnement payant" : isDE ? "Vollzugang inklusive ohne Bezahl-Abo" : "Full access included with no paid subscription"}</div>
               </button>
             </div>
           </div>
@@ -718,20 +654,12 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
                     onClick={(e) => { 
                       e.preventDefault(); 
                       e.stopPropagation(); 
-                      if (product.id === 'abonnements-numeriques') {
-                        if (onNavigate) onNavigate('abonnement');
-                      } else {
-                        onAddToCart(product); 
-                      }
+                      onAddToCart(product); 
                     }}
                     className="absolute bottom-3 right-3 w-10 h-10 sm:w-11 sm:h-11 bg-[#D97706] hover:bg-[#B45309] text-white rounded-xl flex items-center justify-center shadow-lg shadow-orange-900/20 transition-all cursor-pointer"
-                    aria-label={product.id === 'abonnements-numeriques' ? (isFR ? 'Découvrir les abonnements' : isDE ? 'Abonnements entdecken' : 'Discover subscriptions') : `${isFR ? 'Ajouter au panier' : isDE ? 'In den Warenkorb' : 'Add to cart'} ${product.name}`}
+                    aria-label={`${isFR ? 'Ajouter au panier' : isDE ? 'In den Warenkorb' : 'Add to cart'} ${product.name}`}
                   >
-                    {product.id === 'abonnements-numeriques' ? (
-                      <Star className="w-4 h-4 sm:w-5 sm:h-5 text-white fill-white" />
-                    ) : (
-                      <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
-                    )}
+                    <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
                   </button>
                 </div>
                 <div className="p-5 flex flex-col flex-1 justify-between">
@@ -834,10 +762,10 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
             </summary>
             <p className="mt-2 text-xs sm:text-sm leading-relaxed">
               {isFR
-                ? "La BloomLab® Solo inclut la machine BloomLab® Inox 304, le panier filtrant micrométrique, le guide digital de 100 recettes, la garantie 1 an, le programme auto-nettoyant 5 minutes ainsi que 5 accessoires offerts."
+                ? "La BloomLab® Solo inclut la machine BloomLab® Inox 304, le panier filtrant micrométrique, le guide digital de 100 recettes, la garantie légale de conformité 2 ans, le programme auto-nettoyant 5 minutes ainsi que 5 accessoires offerts."
                 : isDE
-                ? "Die BloomLab® Solo umfasst die BloomLab® 304-Edelstahl-Maschine, den mikrometrischen Filterkorb, den digitalen 100-Rezepte-Leitfaden, 1 Jahr Garantie, die 5-Minuten-Selbstreinigung sowie 5 Gratis-Zubehörteile."
-                : "BloomLab® Solo includes the BloomLab® 304 stainless steel machine, micrometric filter basket, 100-recipe digital guide, 1-year warranty, 5-minute self-clean program, and 5 complimentary accessories."}
+                ? "Die BloomLab® Solo umfasst die BloomLab® 304-Edelstahl-Maschine, den mikrometrischen Filterkorb, den digitalen 100-Rezepte-Leitfaden, 2 Jahre gesetzliche Gewährleistung, die 5-Minuten-Selbstreinigung sowie 5 Gratis-Zubehörteile."
+                : "BloomLab® Solo includes the BloomLab® 304 stainless steel machine, micrometric filter basket, 100-recipe digital guide, 2-Year Legal Conformity Warranty, 5-minute self-clean program, and 5 complimentary accessories."}
             </p>
           </details>
           <details className="rounded-xl border border-[#E7DFD3] p-4 bg-[#FAF8F5]">
@@ -846,10 +774,10 @@ export default function StoreContent({ currentView, onNavigate, onNavigatePendin
             </summary>
             <p className="mt-2 text-xs sm:text-sm leading-relaxed">
               {isFR
-                ? "Le Pack Signature (289 € au lieu de 349 €) associe la machine BloomLab® Inox 304 au Kit accessoires apothicaire, à L'Herbier Complet (4 mélanges de plantes), au Duo Argiles (Zéolithe-Bentonite) et à 3 mois d'accès Premium à l'Académie."
+                ? "Le Pack Signature (289 € au lieu de 349 €) associe la machine BloomLab® Inox 304 au Kit accessoires apothicaire, à L'Herbier Complet (4 mélanges de plantes), au Duo Argiles (Zéolithe-Bentonite) et à l'accès complet à la Bibliothèque numérique et aux 100 recettes inclus avec votre BloomLab®."
                 : isDE
-                ? "Das Pack Signature (289 € statt 349 €) kombiniert die BloomLab® 304-Edelstahl-Maschine mit dem Apotheker-Zubehörset, dem Vollständigen Herbarium (4 Mischungen), dem Tonerde-Duo (Zeolith-Bentonit) und 3 Monaten Premium-Zugang zur Akademie."
-                : "Pack Signature (289 € instead of 349 €) pairs the BloomLab® 304 stainless steel machine with the apothecary kit, Complete Herbarium (4 plant blends), Clay Duo (Zeolite-Bentonite), and 3 months Premium Academy access."}
+                ? "Das Pack Signature (289 € statt 349 €) kombiniert die BloomLab® 304-Edelstahl-Maschine mit dem Apotheker-Zubehörset, dem Vollständigen Herbarium (4 Mischungen), dem Tonerde-Duo (Zeolith-Bentonit) sowie dem vollständigen Zugang zur digitalen Bibliothek und den 100 Rezepten im Lieferumfang Ihres BloomLab®."
+                : "Pack Signature (289 € instead of 349 €) pairs the BloomLab® 304 stainless steel machine with the apothecary kit, Complete Herbarium (4 plant blends), Clay Duo (Zeolite-Bentonite), and full access to the Digital Library and 100 recipes included with your BloomLab®."}
             </p>
           </details>
           <details className="rounded-xl border border-[#E7DFD3] p-4 bg-[#FAF8F5]">

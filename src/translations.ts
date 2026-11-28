@@ -35,10 +35,10 @@ export const translations = {
         intro: "Réalisez vos propres préparations botaniques et infusions aux plantes. Notre technologie d'extraction du totum végétal respecte les équilibres délicats de la santé du terrain.",
       },
       pillar: {
-        title: "Guide Expert : Extracteur Botanique, Totum et Souveraineté Sanitaire",
-        description: "Tout savoir sur l'infuseur botanique BloomLab®. Comparatif extracteurs, macération et décarboxylation pour un rééquilibrage de terrain souverain.",
+        title: "Guide Expert : Extracteur Botanique, Totum et Autonomie Botanique",
+        description: "Tout savoir sur l'infuseur botanique BloomLab®. Comparatif extracteurs, macération et activation thermique douce des résines et aromates pour une pratique botanique maîtrisée.",
         h1: "Le Guide de l'Extraction Botanique de Précision et du Totum",
-        intro: "La souveraineté sanitaire commence par la connaissance. Découvrez comment l'extraction du totum végétal transforme votre pharmacie intérieure en un levier de vitalité.",
+        intro: "L'autonomie botanique commence par la connaissance. Découvrez comment l'extraction du totum végétal enrichit votre pratique quotidienne.",
       },
       herbarium: {
         title: "Herbier Systémique : Guide des Plantes et Biodisponibilité | BloomLab",
@@ -49,20 +49,20 @@ export const translations = {
       shop: {
         title: "Boutique BloomLab : Extracteur Botanique & Machine d'infusion de plantes",
         description: "Équipez-vous de l'extracteur botanique de précision BloomLab® pour vos préparations végétales maison. Retrouvez aussi le Duo Argiles minérales.",
-        h1: "La Boutique BloomLab : Ingénierie de la Vitalité et Souveraineté",
-        intro: "Nos équipes vous accompagnent dans votre projet de soins sur mesure. Du BloomLab® aux infusions arômatiques, reprenez le contrôle de votre souveraineté sanitaire.",
+        h1: "La Boutique BloomLab : Ingénierie Botanique et Autonomie",
+        intro: "Nos équipes vous accompagnent dans votre projet de préparations sur mesure. Du BloomLab® aux infusions aromatiques, gagnez en autonomie botanique.",
       },
       blog: {
         title: "Journal Botanique : Savoirs et Transmissions | Bloom by BotaniK",
         description: "Dossiers sur l'extraction botanique maison, la cosmétique naturelle et les soins DIY. Une approche documentée pour comprendre le vivant.",
         h1: "Le Journal Botanique : Savoirs et Transmissions",
-        intro: "Approfondissez vos connaissances avec nos guides thématiques, études de cas et actualités sur le monde végétal et la souveraineté sanitaire.",
+        intro: "Approfondissez vos connaissances avec nos guides thématiques, études de cas et actualités sur le monde végétal et l'autonomie botanique.",
       },
       how_it_works: {
         title: "Infusion Botanique Maison : Comment ça marche ? | BloomLab®",
         description: "Guide complet sur le fonctionnement de l'infusion botanique de précision. Maîtrisez la température et le temps d'extraction pour vos préparations naturelles.",
         h1: "Comment utiliser votre Infuseur Botanique ?",
-        intro: "Maîtrisez la BloomLab en quelques étapes simples. De la décarboxylation à l'émulsion, découvrez comment transformer vos plantes en préparations botaniques d'exception.",
+        intro: "Maîtrisez la BloomLab en quelques étapes simples. De l'activation thermique douce des résines et aromates à l'émulsion, découvrez comment transformer vos plantes en préparations botaniques d'exception.",
       },
       manifesto: {
         title: "Notre Vision | Bloom by BotaniK : Plantes et Extraction",
@@ -107,8 +107,8 @@ export const translations = {
         intro: "Chaque molécule végétale a son affinité. Apprenez à choisir le solvant idéal pour extraire les principes actifs dont votre terrain a besoin.",
       },
       infusion_guide: {
-        title: "Infusion Botanique : Le Guide Complet des Remèdes Naturels",
-        summary: "Bienvenue dans l'ère de la phytothérapie de précision. Chez Bloom by BotaniK, nous croyons que votre corps n'est pas cassé, il est simplement verrouillé. L'infusion botanique n'est plus une simple boisson, mais un outil de souveraineté sanitaire. Grâce au BloomLab®, premier extracteur botanique de précision en France, vous accédez au Totum absolu des plantes médicinales. Notre technologie d'extraction basse température préserve l'intégrité biochimique de chaque feuille, racine ou fleur pour transformer vos plantes en véritables alliés de votre homéostasie.",
+        title: "Préparations & Infusions Botaniques Maison : Guide Pratique",
+        summary: "Bienvenue dans l'ère de la botanique de précision. Chez Bloom by BotaniK, nous croyons que votre corps n'est pas cassé, il est simplement verrouillé. L'infusion botanique devient un véritable outil d'autonomie botanique au quotidien. Grâce au BloomLab®, extracteur botanique de précision en France, vous accédez au Totum des plantes sélectionnées. Notre technologie d'extraction à température maîtrisée préserve l'intégrité biochimique de chaque feuille, racine ou fleur.",
         faq_title: "Questions fréquentes sur l'infusion botanique",
         faq: [
           {
@@ -142,17 +142,17 @@ export const translations = {
       adaptogens: {
         title: "Plantes Adaptogènes : Résilience et Équilibre Systémique | Bloom",
         description: "Guide expert sur les plantes adaptogènes : Ashwagandha, Rhodiola, Ginseng. Comment extraire leur totum pour soutenir l'homéostasie face au stress.",
-        h1: "Les Plantes Adaptogènes : Souveraineté et Résilience",
+        h1: "Les Plantes Adaptogènes : Autonomie et Résilience",
         intro: "Donnez à votre corps les outils pour s'adapter. Découvrez comment l'extraction de précision des plantes adaptogènes déverrouille votre potentiel de vitalité.",
       },
-      keywords: "infuseur botanique, extracteur botanique, BloomLab, extraction botanique de précision, préparations botaniques, phytothérapie, plantes médicinales, extraction basse température, extraction du totum, macération, infusion, décarboxylation, émulsion, huiles végétales, sérums, baumes, soins naturels, travail du terrain, microbiome, précision thermique, Bloom by BotaniK",
+      keywords: "infuseur botanique, extracteur botanique, BloomLab, extraction botanique de précision, préparations botaniques, phytothérapie, plantes médicinales, extraction basse température, extraction du totum, macération, infusion, activation thermique douce des résines et aromates, émulsion, huiles végétales, sérums, baumes, soins naturels, travail du terrain, microbiome, précision thermique, Bloom by BotaniK",
       alt: {
         bloomlab: "La BloomLab, extracteur botanique réalisant une macération huileuse à basse température pour extraire le totum végétal",
         extracteur: "L'extracteur botanique BloomLab - Appareil de phytothérapie maison pour infusion et macération de précision en France",
         herbs: "Plantes médicinales pour infusion botanique et extraction du totum - Guide d'herboristerie moderne Bloom by BotaniK",
         lab: "Laboratoire botanique Bloom - Recherche en médecine des systèmes, protocoles systémiques et extraction de précision",
         reset_hero: "Protocoles Systémiques Bloom by BotaniK - Protocole de phytothérapie pour soutenir l'équilibre du terrain biologique",
-        phase0: "Phase 0 : Reset Émonctoires - Extraction botanique et tisanes médicinales pour la souveraineté sanitaire",
+        phase0: "Phase 0 : Reset Émonctoires - Extraction botanique et tisanes pour l'autonomie botanique",
         phase1: "Phase 1 : Reset Terrain Hépatique - Remèdes naturels de plantes médicinales extraits à basse température",
         phase2: "Phase 2 : Pureté Sanguine - Infuseur botanique BloomLab pour extraction du totum apaisant et protecteur",
         phase3: "Phase 3 : Reset Immunitaire - Remèdes de grand mère et expertise en extraction botanique de précision",
@@ -319,7 +319,7 @@ export const translations = {
       }
     },
     universes: {
-      title: "Une Seule Machine. Trois Univers de soin Souverain au Quotidien.",
+      title: "Une Seule Machine. Trois Univers de Pratique Botanique au Quotidien.",
       subtitle_part1: "La BloomLab est l'alternative concrète que vous attendiez : une machine qui transforme vos plantes en soins actifs, sans chimie, sans déchets, sans dépendance. En 2026, il ne s'agit plus seulement de consommer, mais de (re)devenir acteur de sa santé. Et ça commence par la bonne extraction.",
       subtitle_part2: "🔬 L'Extraction Précise, Clé de l'Efficacité\nAvec les méthodes traditionnelles (infusion libre, bain-marie, macération non régulée), une grande partie des principes actifs reste prisonnière des fibres végétales ou se dégrade à la chaleur.\n\nLa BloomLab change la donne. Grâce au contrôle millimétré de la température, du temps et de l'agitation, elle libère le totum végétal – l'intégralité du spectre d'action de la plante, en préservant les composés thermo-sensibles.",
       tabs: { culinaire: "Culinaire", cosmetique: "Cosmétique", phytotherapie: "Phytothérapie" },
@@ -350,10 +350,10 @@ export const translations = {
         intro: "Introduction",
         onboarding: "Onboarding",
         title: "L’Expertise de l’Infusion et de l’Extraction Botanique", 
-        description: "Bienvenue dans l'ère de la phytothérapie de précision. Bloom by BotaniK est la référence de l'infusion et de l'extraction botanique à domicile, alliant sagesses anciennes et technologie moderne pour votre souveraineté sanitaire.",
+        description: "Bienvenue dans l'ère de la botanique de précision. Bloom by BotaniK est la référence de l'infusion et de l'extraction botanique à domicile, alliant sagesses anciennes et technologie moderne pour votre autonomie botanique.",
       },
       extractionGuide: {
-        badge: "Méthode A/B — Souveraineté Botanique",
+        badge: "Méthode A/B — Autonomie Botanique",
         title: "Infuseur Botanique & Préparations de Plantes :",
         subtitle: "Le Guide Expert du Totum",
         description: "Maîtrisez les solvants, les températures précises et les protocoles d'infusion botanique pour révéler la puissance du Totum végétal chez vous avec l'extracteur BloomLab®.",
@@ -389,7 +389,7 @@ export const translations = {
         safety_note: "Les préparations botaniques sont à utiliser selon la recette concernée. Les contenus Bloom sont pédagogiques et ne remplacent pas un avis médical."
       },
       manifesto: {
-        h2: "Souveraineté Sanitaire et Précision",
+        h2: "Autonomie Botanique et Précision",
         text: "Nos équipes vous accompagnent dans votre projet de soins sur mesure. Une place pour chaque plante et chaque plante à sa place."
       },
       cards: {
@@ -444,8 +444,8 @@ export const translations = {
           description: "Face à la fragmentation des routines modernes qui s'épuisent à masquer les signaux, nous proposons de revenir à la source : la régulation des systèmes biologiques profonds."
         },
         q2: {
-          title: "La souveraineté",
-          description: "La souveraineté n'est pas l'isolement, c'est l'autonomie par la connaissance. Comprendre son corps et maîtriser ses propres outils de soin est l'acte de liberté ultime."
+          title: "L'autonomie botanique",
+          description: "L'autonomie n'est pas l'isolement, c'est la maîtrise par la connaissance. Comprendre son rythme biologique et maîtriser ses propres préparations est un véritable acte de liberté."
         },
         q3: {
           title: "La différence Bloom",
@@ -453,7 +453,7 @@ export const translations = {
         },
         q4: {
           title: "Une vision profonde",
-          description: "Le soin est un dialogue. Nous vous apprenons à lire les messages de votre peau, de votre énergie et de vos rythmes pour y répondre avec une justesse souveraine."
+          description: "Le soin quotidien est un dialogue. Nous vous apprenons à lire les messages de votre peau, de votre énergie et de vos rythmes pour y répondre avec justesse."
         }
       },
       way: {
@@ -508,7 +508,7 @@ export const translations = {
       section1: {
         title: "Notre ADN",
         p1: "Bloom by BotaniK est né d'une conviction profonde : la santé n'est pas l'absence de symptômes, mais la présence de vitalité. Nous traçons une troisième voie entre l'herboristerie traditionnelle et la science moderne.",
-        p2: "Nous croyons en l'intelligence du Totum végétal — cette synergie complexe de molécules qu'aucune chimie de synthèse ne peut égaler. Notre mission est de vous rendre cette souveraineté.",
+        p2: "Nous croyons en l'intelligence du Totum végétal — cette synergie complexe de molécules qu'aucune chimie de synthèse ne peut égaler. Notre mission est de vous redonner cette autonomie botanique.",
         box: "L'alliance des sagesses ancestrales et de l'ingénierie de précision."
       },
       section2: {
@@ -531,8 +531,8 @@ export const translations = {
           description: "Chaque plante a son rythme. Notre technologie respecte la structure moléculaire pour extraire le totum intégral, sans dégradation thermique."
         },
         phaseB: {
-          title: "La Souveraineté par l'Outil",
-          description: "Avoir une BloomLab chez soi, c'est posséder un laboratoire de précision accessible, transformant votre cuisine en un sanctuaire de santé."
+          title: "L'Autonomie par l'Outil",
+          description: "Avoir une BloomLab chez soi, c'est posséder une station d'extraction de précision accessible pour vos préparations botaniques, culinaires et cosmétiques."
         },
         footer: "Une place pour chaque plante et chaque plante à sa place."
       },
@@ -771,12 +771,12 @@ export const translations = {
       trust: {
         payment: "Paiement 100% Sécurisé",
         lab: "Qualité Laboratoire Certifiée",
-        guarantee: "Garantie commerciale 1 an (+ 2 ans légale UE)"
+        guarantee: "Garantie légale de conformité 2 ans (UE)"
       },
       products: {
         bloomlab: {
           name: "BloomLab® — Extracteur Botanique de Précision & Infuseur",
-          subtitle: "SOUVERAINETÉ SANITAIRE — INGÉNIERIE DE LA VITALITÉ",
+          subtitle: "AUTONOMIE BOTANIQUE — INGÉNIERIE DE PRÉCISION",
           description: "L'extracteur botanique conçu pour préparer vos extraits végétaux avec une thermorégulation suivie (spécification nominale fabricant). Réalisez vos préparations botaniques et cosmétiques à domicile.",
           bullets: [
             "Extraction du Totum végétal à basse température",
@@ -785,14 +785,14 @@ export const translations = {
           ]
         },
         pack_signature: {
-          name: "Pack Signature — BloomLab® + Herbier Complet + 3 Mois Premium Académie",
+          name: "Pack Signature — BloomLab® + Herbier Complet + Bibliothèque numérique & 100 recettes incluses",
           subtitle: "LE PLUS POPULAIRE",
-          description: "Machine BloomLab® Inox 304, Kit accessoires apothicaire, L'Herbier Complet (4 mélanges), Duo Argiles et 3 mois d'accès Premium Académie."
+          description: "Machine BloomLab® Inox 304, Kit accessoires apothicaire, L'Herbier Complet (4 mélanges), Duo Argiles et accès complet à la Bibliothèque numérique & 100 recettes inclus."
         },
         bundle_apothicaire: {
           name: "Pack Herbier Complet — 4 Mélanges + Duo Argiles",
           subtitle: "4 MÉLANGES DE PLANTES + DUO ARGILES",
-          description: "Le coffret complet regroupant nos 4 mélanges de plantes (Sève, Nuit, Digestion, Articulaire) et le Duo Argiles (Zéolithe-Bentonite)."
+          description: "Le coffret complet regroupant nos 4 mélanges (Sève, Douceur du Soir, Fraîcheur & Légèreté, Souplesse & Détente) et le Duo Argiles (Zéolithe-Bentonite)."
         },
         kit_starter: {
           name: "Kit Sève Fondamentale",
@@ -800,22 +800,22 @@ export const translations = {
           description: "Le mélange signature pour accompagner la vitalité quotidienne. Une synergie de plantes adaptogènes pour soutenir la structure."
         },
         kit_nuit: {
-          name: "Kit Nuit Profonde",
+          name: "Infusion Douceur du Soir — Valériane & Passiflore Bio",
           subtitle: "RITUEL DU SOIR",
-          description: "Une synergie aromatique traditionnelle de plantes du soir, sélectionnée pour les infusions calmes de fin de journée."
+          description: "Une synergie aromatique traditionnelle de valériane et passiflore bio, sélectionnée pour les infusions calmes de fin de journée."
         },
         kit_digestion: {
-          name: "Kit Équilibre Botanique",
+          name: "Infusion Fraîcheur & Légèreté — Aromates & Plantes Bio",
           subtitle: "AROMATES & INFUSIONS",
-          description: "Mélange carminatif traditionnel d'herboristerie aromatique conçu pour les rituels d'infusion après les repas."
+          description: "Mélange aromatique traditionnel d'herboristerie (brou de noix, gingembre, romarin, ginkgo) conçu pour les rituels d'infusion après les repas."
         },
         kit_articulaire: {
-          name: "Kit Mouvement Libre",
+          name: "Infusion Souplesse & Détente — Reine-des-Prés, Gingembre & Boswellia",
           subtitle: "SYNERGIE BOTANIQUE",
-          description: "Synergie botanique traditionnelle de plantes résineuses et feuillées, sélectionnée dans la tradition herboriste."
+          description: "Synergie botanique traditionnelle de reine-des-prés, gingembre et résine de boswellia, sélectionnée dans la tradition herboriste."
         },
         kit_hiver: {
-          name: "Kit Bouclier Hiver",
+          name: "Infusion Épicée d'Hiver — Gingembre, Girofle, Sureau & Thym",
           subtitle: "BOTANIQUE DE SAISON",
           description: "Synergie végétale aromatique de saison, préparée pour les rituels chauds et infusions hivernales."
         },
@@ -830,9 +830,9 @@ export const translations = {
           description: "Explorez l'univers Bloom avec une sélection de 10 recettes guidées pour débuter vos premières infusions."
         },
         premium_access: {
-          name: "Abonnement Mensuel Premium — Accès Illimité",
-          subtitle: "TOUT L'HERBIER & PROTOCOLES",
-          description: "Accédez à plus de 100 recettes, protocoles experts et mises à jour mensuelles. 1 mois offert pour les clients BloomLab."
+          name: "Bibliothèque Numérique & 100 Recettes — Incluse avec BloomLab®",
+          subtitle: "INCLUS AVEC VOTRE APPAREIL",
+          description: "L'accès complet à la Bibliothèque numérique et aux 100 recettes est inclus directement avec votre BloomLab®, sans abonnement séparé."
         }
       }
     },
@@ -937,35 +937,35 @@ export const translations = {
     cart: {
       empty: {
         title: "Votre panier est vide",
-        subtitle: "Explorez notre boutique et découvrez nos solutions de souveraineté santé.",
+        subtitle: "Explorez notre boutique et découvrez nos solutions d'autonomie botanique.",
         button: "Retour à la boutique"
       },
       header: {
         badge: "Votre Sélection",
         title: "La Cohérence de votre Terrain.",
-        subtitle: "Chaque élément de votre panier a été choisi pour dialoguer avec votre biologie. Voici comment votre sélection s'articule pour votre souveraineté."
+        subtitle: "Chaque élément de votre panier a été choisi pour dialoguer avec votre pratique botanique et votre équilibre quotidien."
       },
       why_works: {
         title: "Pourquoi cet ensemble fonctionne ?",
-        bloomlab: "L'acquisition de la BloomLab est le pilier de votre autonomie. Dès réception, activez votre Mois Premium Offert pour accéder à l'intégralité des 56 protocoles experts.",
-        remedies: "Votre sélection de remèdes botaniques cible des dimensions complémentaires de votre terrain. Chaque plante a été sourcée pour sa qualité botanique et sa capacité à relancer vos fonctions vitales en douceur.",
-        offer_badge: "Offre BloomLab Incluse",
-        offer_desc: "Votre achat inclut 1 mois d'accès Premium offert. Vous pourrez l'activer via votre facture dans votre espace membre.",
-        lab_grade: "Protocoles structurée pour la cuisine botanique"
+        bloomlab: "L'acquisition de la BloomLab® vous donne automatiquement l'accès complet à la Bibliothèque numérique et aux 100 recettes incluses.",
+        remedies: "Votre sélection d'infusions et mélanges botaniques bio s'adapte à vos préparations quotidiennes. Chaque plante a été sourcée pour sa qualité aromatique et botanique.",
+        offer_badge: "Bibliothèque Numérique Incluse",
+        offer_desc: "L'accès complet à la Bibliothèque numérique et aux 100 recettes est inclus avec votre BloomLab® dès votre commande.",
+        lab_grade: "Protocoles structurés pour la cuisine botanique"
       },
       upsell: {
-        title: "Optimisez votre Souveraineté",
-        description: "Le prix de l'abonnement annuel (79€) est inférieur au prix de deux Kits Renaissance. Accédez à l'intégralité de la bibliothèque sans limite.",
-        button: "Découvrir le Premium"
+        title: "Bibliothèque Numérique Incluse avec BloomLab®",
+        description: "Accès complet à la Bibliothèque numérique et aux 100 recettes inclus avec votre BloomLab®, sans aucun abonnement payant séparé.",
+        button: "Découvrir BloomLab®"
       },
       recommended: {
         title: "Compléments Recommandés",
-        bloomlab_title: "La BloomLab",
-        bloomlab_desc: "Passez de spectateur à acteur. Extrayez vous-même vos principes actifs pour une puissance multipliée par 4.",
+        bloomlab_title: "La BloomLab®",
+        bloomlab_desc: "Préparez vous-même vos infusions, macérats huileux et glycérinés en cuve inox 304 avec régulation thermique précise.",
         bloomlab_btn: "Découvrir l'instrument",
-        premium_title: "L'Abonnement Premium",
-        premium_desc: "Accédez à l'intégralité des 56 kits de précision et aux protocoles de Protocoles Systémiques.",
-        premium_btn: "Voir les avantages"
+        premium_title: "Bibliothèque Numérique & 100 Recettes Incluses",
+        premium_desc: "Accès complet à la Bibliothèque numérique et aux 100 recettes inclus avec votre BloomLab®.",
+        premium_btn: "Découvrir BloomLab®"
       },
       shipping: {
         title: "Mode de livraison",
@@ -991,7 +991,7 @@ export const translations = {
         total: "Total",
         checkout: "Procéder au paiement",
         secure: "Paiement 100% sécurisé",
-        guarantee: "Garantie Souveraineté",
+        guarantee: "Garantie légale de conformité 2 ans",
         guarantee_desc: "Chaque BloomLab est certifiée Inox 304 Grade Alimentaire et testée individuellement.",
         shipping_24h: "Expédition 24h",
         shipping_desc: "Préparé avec soin dans notre atelier en France. Numéro de suivi communiqué dès l'envoi."
@@ -1295,29 +1295,29 @@ export const translations = {
         orders: "Commandes"
       },
       plans: {
-        title: "Accédez à l'Expérience Totale",
-        subtitle: "Débloquez l'Herbier complet, les 56 kits de précision et le suivi de progression.",
+        title: "Accès Bibliothèque Numérique Inclus avec BloomLab®",
+        subtitle: "L'accès complet à la Bibliothèque numérique et aux 100 recettes est inclus avec votre BloomLab®.",
         monthly: {
-          name: "Abonnement Mensuel",
-          price: "9€",
-          period: "/mois",
-          features: ["Accès illimité à l'Herbier", "56 Kits de Précision", "Bibliothèque Premium", "Sans engagement"],
-          button: "Choisir Mensuel"
+          name: "Bibliothèque Numérique & 100 Recettes",
+          price: "Inclus",
+          period: "avec BloomLab®",
+          features: ["Accès illimité à l'Herbier", "100 fiches recettes documentées", "Bibliothèque Numérique incluse", "Aucun abonnement séparé"],
+          button: "Découvrir BloomLab®"
         },
         yearly: {
-          name: "Abonnement Annuel",
-          price: "79€",
-          period: "/an",
-          save: "2 mois offerts",
-          features: ["Tout le contenu Premium", "Support prioritaire", "Accès anticipé nouveautés", "La meilleure valeur"],
-          button: "Choisir Annuel"
+          name: "Bloom Complet (Envoi Mensuel)",
+          price: "59€",
+          period: "/mois",
+          save: "Sans engagement",
+          features: ["1 préparation botanique 100 ml/mois", "Guide imprimé d'utilisation", "Accès Bibliothèque inclus", "Orientation avec Alma"],
+          button: "Choisir Bloom Complet"
         },
         back: "Retour à mon compte"
       }
     },
     machine: {
       hero: {
-        badge: "Souveraineté Botanique — Méthode A/B",
+        badge: "Autonomie Botanique — Méthode A/B",
         title: "BloomLab® :",
         title_accent: "L'Extracteur botanique de précision pour maîtriser vos préparations maison",
         history_badge: "Héritage Millénaire & Rigueur Botanique",
@@ -1358,7 +1358,7 @@ export const translations = {
         check2: "<strong>Précision Botanique :</strong> Adaptez chaque gramme, chaque minute, chaque degré à vos préférences."
       },
       levels: {
-        badge: "Parcours de Souveraineté",
+        badge: "Parcours d'Autonomie Botanique",
         title: "Un Seul Instrument. 3 Voies d'Expertise.",
         description: "La BloomLab est un outil évolutif qui s'adapte à votre cheminement.",
         lvl1: {
@@ -1396,47 +1396,45 @@ export const translations = {
         }
       },
       pricing: {
-        title: "Choisissez Votre Niveau d'Autonomie",
-        subtitle: "La voie qui correspond à votre pratique botanique et cosmétique.",
+        title: "Bibliothèque Numérique Incluse & Accompagnement",
+        subtitle: "L'accès complet à la Bibliothèque numérique et aux 100 recettes est inclus avec votre BloomLab®.",
         discovery: {
-          name: "Bloom Découverte",
-          price: "4,90€",
-          period: "/mois",
-          tagline: "Le premier pas pour sécuriser ta pratique des plantes.",
+          name: "Accès Libre",
+          price: "0€",
+          period: "",
+          tagline: "Pour découvrir les bases de l'extraction botanique.",
           bullets: [
-            "Accès à toutes les recettes freemium (9 par catégorie) + quelques recettes signature supplémentaires.",
-            "Accès aux fiches complètes des recettes : solvants, températures, séquençage, mode d'administration, doses journalières et maximales, précautions et contre-indications.",
-            "Accès au bot Bloom pour poser des questions sur la méthode, les recettes et l'usage général (dans les limites légales)."
+            "Accès aux articles et guides fondamentaux de l'Académie.",
+            "Découverte des principes du totum végétal et du séquençage A/B.",
+            "Accès à l'assistant Alma pour vos questions d'usage général."
           ],
-          cta: "Commencer Bloom Découverte"
+          cta: "Explorer librement"
         },
         method: {
-          name: "Bloom Méthode",
-          price: "9€",
-          period: "/mois",
-          tagline: "Pour suivre la méthode Bloom, pas seulement consulter des recettes.",
+          name: "Bibliothèque Numérique BloomLab®",
+          price: "Inclus",
+          period: "avec BloomLab®",
+          tagline: "Accès complet à la Bibliothèque numérique et aux 100 recettes inclus avec votre BloomLab®.",
           bullets: [
-            "Tout Bloom Découverte.",
-            "Accès à la bibliothèque complète des recettes de plantes.",
-            "Accès aux protocoles structurés : séquences, phases, ordre d'extraction.",
-            "Accès aux contenus pédagogiques premium (guides, vidéos, décryptages du terrain).",
-            "Accès à la communauté et aux sessions Q&A Bloom."
+            "Bibliothèque complète et 100 recettes documentées incluses sans surcoût.",
+            "Paramètres précis de température, temps et solvants.",
+            "Fiches botaniques détaillées et précautions d'emploi."
           ],
-          cta: "S'abonner à Bloom Méthode",
-          badge: "Recommandé"
+          cta: "Découvrir BloomLab®",
+          badge: "Inclus avec la machine"
         },
         annual: {
-          name: "Bloom Méthode Annuel",
-          price: "79€",
-          period: "/an",
-          tagline: "L'option la plus intelligente si tu veux vraiment suivre la méthode Bloom.",
+          name: "Bloom Complet",
+          price: "59€",
+          period: "/mois",
+          tagline: "Recevez chaque mois une préparation botanique prête à découvrir, sans machine.",
           bullets: [
-            "Tout Bloom Méthode.",
-            "2 mois offerts (équivalent ~6,6€/mois).",
-            "Accès continu à la bibliothèque, aux protocoles et aux contenus premium pendant 12 mois."
+            "1 préparation botanique Bloom (100 ml) livrée chaque mois.",
+            "Guide papier et accès complet aux ressources numériques inclus.",
+            "Sans engagement — résiliable à tout moment."
           ],
-          cta: "S'engager pour l'année",
-          highlight: "Le plus avantageux"
+          cta: "Découvrir Bloom Complet",
+          highlight: "Sans équipement"
         }
       },
       final_cta: {
@@ -1512,9 +1510,9 @@ export const translations = {
       hero: {
         badge: "Ingénierie du Vivant",
         title: "Guide d'Usage",
-        subtitle: "Maîtriser la Souveraineté Botanique",
+        subtitle: "Maîtriser l'Autonomie Botanique",
         description: "Apprenez à utiliser votre BloomLab et à suivre nos protocoles pour une régulation systémique optimale.",
-        tags: ["Souveraineté", "Transmission", "Extraction"],
+        tags: ["Autonomie", "Transmission", "Extraction"],
         main_title: "Infusion botanique :",
         main_title_accent: "de la macération à l’extraction de précision",
         main_desc: "Faites fleurir toutes vos envies de bien-être végétal.",
@@ -1522,14 +1520,14 @@ export const translations = {
         cta_levels: "Découvrir les Niveaux"
       },
       machine: {
-        title: "BloomLab® : L'Instrument de votre Souveraineté Sanitaire",
+        title: "BloomLab® : L'Instrument de votre Autonomie Botanique",
         precision: {
           title: "Thermorégulation suivie (spéc. nominale)",
           desc: "Une régulation thermique guidée pour conduire vos extractions végétales maison sans brûler la plante."
         },
         extraction: {
           title: "Extraction Intégrale",
-          desc: "Maîtrisez l'infusion, la décarboxylation et la macération pour vos sérums et baumes maison."
+          desc: "Maîtrisez l'infusion, l'activation thermique douce des résines et aromates et la macération pour vos sérums et baumes maison."
         },
         price_save: "Économisez 49€"
       },
@@ -1587,7 +1585,7 @@ export const translations = {
       }
     },
     activation: {
-      badge: "Souveraineté Activée",
+      badge: "Accès Activé",
       title: "Activez votre Accès Premium Bloom",
       subtitle: "Téléversez votre facture d'achat de la BloomLab. Notre système vérifie votre achat instantanément et active votre accès aux protocoles experts.",
       form: {
@@ -1622,7 +1620,7 @@ export const translations = {
       }
     },
     phytotherapyReset: {
-      badge: "Souveraineté Biologique & Sanitaire",
+      badge: "Autonomie Botanique",
       title: "Phytothérapie & Reset Homéostasique",
       title_accent: "\"L'Ingénierie au service du vivant.\"",
       subtitle: "Le protocole de régulation profonde par les plantes",
@@ -1660,10 +1658,10 @@ export const translations = {
       description: "Nous vous recommandons de débuter par un bilan personnalisé avec ALMA pour identifier vos besoins prioritaires ou de plonger dans la Science du Totum pour comprendre notre vision.",
       cta_primary: "Faire mon bilan",
       cta_secondary: "Science du Totum",
-      quote: "Retrouvez votre souveraineté par la compréhension de votre terrain."
+      quote: "Retrouvez votre autonomie botanique par la compréhension de votre terrain."
     },
     newsletter: {
-      title: "Rejoignez la souveraineté",
+      title: "Rejoignez la communauté Bloom",
       subtitle: "Recevez nos protocoles saisonniers, conseils de terrain et exclusivités botaniques.",
       placeholder: "votre@email.com",
       button: "S'inscrire",
@@ -1715,7 +1713,7 @@ export const translations = {
       },
       pillar: {
         title: "Botanical Extractor & Totum: The Ultimate Precision Extraction Guide",
-        description: "Everything about the BloomLab® botanical infuser. Extractors comparison, maceration, and decarboxylation for exceptionally pure natural care.",
+        description: "Everything about the BloomLab® botanical infuser. Extractors comparison, maceration, and gentle thermal activation of resins and aromatics for pure natural care.",
       },
       herbarium: {
         title: "Herbalism & Plant Remedies | The Bloom Systemic Herbarium",
@@ -1735,7 +1733,7 @@ export const translations = {
       },
       manifesto: {
         title: "Our Botanical Precision Laboratory | Bloom by BotaniK",
-        description: "The Bloom vision: bridging traditional herbalism and modern science. Your botanical extractor for restored health sovereignty.",
+        description: "The Bloom vision: bridging traditional herbalism and modern science. Your botanical extractor for daily botanical autonomy.",
       },
       reset: {
         title: "Systemic Protocols & Terrain | Precision Phytotherapy",
@@ -1777,10 +1775,10 @@ export const translations = {
       adaptogens: {
         title: "Adaptogenic Plants: Resilience and Systemic Balance | Bloom",
         description: "Expert guide on adaptogenic plants: Ashwagandha, Rhodiola, Ginseng. How to extract their totum to support homeostasis against stress.",
-        h1: "Adaptogenic Plants: Sovereignty and Resilience",
+        h1: "Adaptogenic Plants: Autonomy and Resilience",
         intro: "Give your body the tools to adapt. Discover how precision extraction of adaptogenic plants unlocks your vitality potential.",
       },
-      keywords: "totum extraction, botanical laboratory, health sovereignty, botanical infusion, art of extraction, medicinal plants, natural remedies, herbal teas, home remedies, medicinal plant remedies, phytotherapy, BloomLab",
+      keywords: "totum extraction, botanical laboratory, botanical autonomy, botanical infusion, art of extraction, medicinal plants, natural remedies, herbal teas, home remedies, medicinal plant remedies, phytotherapy, BloomLab",
       alt: {
         bloomlab: "BloomLab Machine - Botanical Infusion, Herbal Teas, Natural Medicinal Plant Remedies",
         extracteur: "BloomLab Botanical Extractor - #1 in France for botanical infusion, herbal teas, home remedies, and homemade cosmetics",
@@ -1954,7 +1952,7 @@ export const translations = {
       }
     },
     universes: {
-      title: "One Single Machine. Three Universes of Sovereign Care Every Day.",
+      title: "One Single Machine. Three Universes of Botanical Practice Every Day.",
       subtitle_part1: "The BloomLab is the concrete alternative you've been waiting for: a machine that transforms your plants into active botanical care, without chemistry, without waste, without dependence. In 2026, it is no longer just about consuming, but about taking an active role in your well-being. And it starts with the right extraction.",
       subtitle_part2: "🔬 Precise Extraction, the Key to Efficacy\nWith traditional methods (open infusion, bain-marie, unregulated maceration), a large portion of active compounds stays trapped in the plant fibers or degrades under uncontrolled heat.\n\nThe BloomLab changes the game. Thanks to millimetric control of temperature, time, and agitation, it releases the plant totum – the full spectrum of the plant's delicate compounds, while preserving heat-sensitive actives.",
       tabs: { culinaire: "Culinary", cosmetique: "Cosmetic", phytotherapie: "Phytotherapy" },
@@ -1988,7 +1986,7 @@ export const translations = {
         description: "Master the art of botanical infusion with precision. Discover how the BloomLab® botanical extractor allows you to control temperature, time, and solvents for your natural remedies.",
       },
       extractionGuide: {
-        badge: "Reference Guide — Botanical Sovereignty",
+        badge: "Reference Guide — Botanical Autonomy",
         title: "Precision Botanical Extraction:",
         subtitle: "The BloomLab Expert Guide",
         description: "Master solvents, precise temperatures, and botanical infusion protocols to reveal the power of the plant Totum at home with BloomLab® extractor.",
@@ -2038,7 +2036,7 @@ export const translations = {
         },
         start: {
           title: "Where to start?",
-          description: "Discover BloomLab's 3 levels of expertise: culinary, cosmetic, and expert protocol. Learn to master the machine and its levels to reveal your sovereignty.",
+          description: "Discover BloomLab's 3 levels of expertise: culinary, cosmetic, and expert protocol. Learn to master the machine and its levels to unlock your botanical autonomy.",
           cta: "See the machine"
         }
       },
@@ -2075,8 +2073,8 @@ export const translations = {
           description: "Faced with the fragmentation of modern routines that exhaust themselves masking signals, we propose to return to the source: the regulation of deep biological systems."
         },
         q2: {
-          title: "Sovereignty",
-          description: "Sovereignty is not isolation; it is autonomy through knowledge. Understanding your body and mastering your own care tools is the ultimate act of freedom."
+          title: "Botanical Autonomy",
+          description: "Autonomy is not isolation; it is mastery through knowledge. Understanding your body and mastering your own botanical tools is the ultimate act of freedom."
         },
         q3: {
           title: "The Bloom difference",
@@ -2084,7 +2082,7 @@ export const translations = {
         },
         q4: {
           title: "A deep vision",
-          description: "Care is a dialogue. We teach you to read the messages of your skin, your energy, and your rhythms to respond to them with sovereign accuracy."
+          description: "Daily botanical care is a dialogue. We teach you to read the messages of your skin, your energy, and your rhythms to respond with clarity and precision."
         }
       },
       way: {
@@ -2139,7 +2137,7 @@ export const translations = {
       section1: {
         title: "Our DNA",
         p1: "Bloom by BotaniK was born from a deep conviction: health is not the absence of symptoms, but the presence of vitality. We trace a third way between traditional herbalism and modern science.",
-        p2: "We believe in the intelligence of the plant Totum — this complex synergy of molecules that no synthetic chemistry can match. Our mission is to restore this sovereignty to you.",
+        p2: "We believe in the intelligence of the plant Totum — this complex synergy of molecules that no synthetic chemistry can match. Our mission is to restore this botanical autonomy to you.",
         box: "The alliance of ancestral wisdom and precision engineering."
       },
       section2: {
@@ -2162,7 +2160,7 @@ export const translations = {
           description: "Every plant has its rhythm. Controlled parameters respect the molecular structure to help preserve heat-sensitive compounds."
         },
         phaseB: {
-          title: "Sovereignty through the Tool",
+          title: "Autonomy through the Tool",
           description: "Having a BloomLab at home gives you a structured home extraction station for culinary and cosmetic rituals."
         },
         footer: "A place for each plant and each plant in its place."
@@ -2390,8 +2388,8 @@ export const translations = {
       },
       hero: {
         badge: "Totum Extractor",
-        title: "BloomLab® Shop — Your Home Phytotherapy Laboratory",
-        description: "Explore our selection of botanical extractors and plant kits for total health autonomy. Get 1 month of premium access free with any BloomLab purchase.",
+        title: "BloomLab® Shop — Your Home Botanical Laboratory",
+        description: "Explore our botanical extractors and organic plant infusions. Full access to the Digital Library and 100 recipes is included with your BloomLab®.",
         price_from: "Starting from",
         cta: "Discover"
       },
@@ -2402,12 +2400,12 @@ export const translations = {
       trust: {
         payment: "100% Secure Payment",
         lab: "Certified Laboratory Quality",
-        guarantee: "1-Yr Commercial + 2-Yr EU Legal Warranty"
+        guarantee: "2-Yr EU Legal Conformity Warranty"
       },
       products: {
         bloomlab: {
           name: "BloomLab® — Precision Botanical Extractor & Infuser",
-          subtitle: "BOTANICAL SOVEREIGNTY — PRECISION EXTRACTION 2026",
+          subtitle: "BOTANICAL AUTONOMY — PRECISION EXTRACTION 2026",
           description: "A precision botanical extractor for home preparation. Prepare whole-plant infusions, oil macerates, and glycerin extracts with guided thermoregulation (manufacturer nominal spec, not independently certified).",
           bullets: [
             "Low-temperature plant Totum preparation (filtered water, carrier oils, and vegetable glycerin)",
@@ -2416,14 +2414,14 @@ export const translations = {
           ]
         },
         pack_signature: {
-          name: "Signature Pack — BloomLab® + Complete Herbarium + 3 Months Premium Academy",
+          name: "Signature Pack — BloomLab® + Complete Herbarium + Digital Library & 100 Recipes Included",
           subtitle: "MOST POPULAR",
-          description: "BloomLab® 304 steel machine, Apothecary accessory kit, Complete Herbarium (4 blends), Clay Duo, and 3 months Premium Academy access."
+          description: "BloomLab® 304 steel machine, Apothecary accessory kit, Complete Herbarium (4 blends), Clay Duo, and full access to the Digital Library & 100 recipes included."
         },
         bundle_apothicaire: {
           name: "Complete Herbarium Pack — 4 Blends + Clay Duo",
           subtitle: "4 ORGANIC PLANT BLENDS + CLAYS DUO",
-          description: "Complete bundle bringing together all 4 organic plant blends (Sap, Night, Digestion, Joint) and the Zeolite-Bentonite Clay Duo."
+          description: "Complete bundle bringing together all 4 organic plant blends (Sap, Evening Calm, Freshness & Lightness, Suppleness & Relaxation) and the Zeolite-Bentonite Clay Duo."
         },
         kit_starter: {
           name: "Fundamental Sap Kit",
@@ -2431,24 +2429,24 @@ export const translations = {
           description: "The signature plant blend to support deep vitality. An adaptogenic synergy to accompany daily resilience."
         },
         kit_nuit: {
-          name: "Deep Night Synergy",
+          name: "Evening Calm Infusion — Organic Valerian & Passionflower",
           subtitle: "EVENING RITUAL",
-          description: "A traditional aromatic botanical blend crafted for calm evening infusions at the end of the day."
+          description: "A traditional aromatic blend of organic valerian root and passionflower crafted for calm evening infusions."
         },
         kit_digestion: {
-          name: "Botanical Balance Synergy",
+          name: "Freshness & Lightness Infusion — Organic Herbs & Aromatics",
           subtitle: "AROMATICS & INFUSIONS",
-          description: "A traditional aromatic herbal blend selected for warm post-meal botanical infusions."
+          description: "A traditional aromatic herbal blend (walnut hull, ginger, rosemary, ginkgo) selected for warm post-meal infusions."
         },
         kit_articulaire: {
-          name: "Free Movement Synergy",
+          name: "Suppleness & Relaxation Infusion — Meadowsweet, Ginger & Boswellia",
           subtitle: "BOTANICAL SYNERGY",
-          description: "Traditional botanical blend of resinous and leafy plants drawn from classic herbalist preparations."
+          description: "Traditional botanical blend of meadowsweet, ginger, and boswellia resin drawn from classic herbalist preparations."
         },
         kit_hiver: {
-          name: "Winter Shield Synergy",
+          name: "Spiced Winter Infusion — Ginger, Clove, Elderberry & Thyme",
           subtitle: "SEASONAL BOTANICALS",
-          description: "Aromatic seasonal botanical synergy crafted for warming infusions during colder months."
+          description: "Aromatic seasonal spice and herbal blend crafted for warming infusions during colder months."
         },
         kit_reset: {
           name: "Clay Duo — Zeolite & Bentonite 6 µm",
@@ -2461,9 +2459,9 @@ export const translations = {
           description: "Explore the Bloom universe with a selection of 10 guided recipes to start your first infusions."
         },
         premium_access: {
-          name: "Premium Subscription — Unlimited Access",
-          subtitle: "FULL HERBARIUM & PROTOCOLS",
-          description: "Access over 100 recipes, expert protocols, and monthly updates. 1 month free for BloomLab customers."
+          name: "Digital Library & 100 Recipes — Included with BloomLab®",
+          subtitle: "INCLUDED WITH YOUR MACHINE",
+          description: "Full access to the Digital Library and 100 recipes is included directly with your BloomLab® with no separate subscription."
         }
       }
     },
@@ -2568,35 +2566,35 @@ export const translations = {
     cart: {
       empty: {
         title: "Your cart is empty",
-        subtitle: "Explore our shop and discover our health sovereignty solutions.",
+        subtitle: "Explore our shop and discover our botanical autonomy solutions.",
         button: "Back to shop"
       },
       header: {
         badge: "Your Selection",
         title: "The Coherence of your Terrain.",
-        subtitle: "Each element of your cart has been chosen to dialogue with your biology. Here is how your selection articulates for your sovereignty."
+        subtitle: "Each element of your cart has been chosen to enrich your daily botanical practice and autonomy."
       },
       why_works: {
         title: "Why does this set work?",
-        bloomlab: "Acquiring BloomLab is the pillar of your autonomy. Upon receipt, activate your Free Premium Month to access all 56 expert protocols.",
-        remedies: "Your selection of organic botanical blends targets complementary dimensions of your terrain. Each plant has been sourced for its purity and gentle daily support.",
-        offer_badge: "BloomLab Offer Included",
-        offer_desc: "Your purchase includes 1 free month of Premium access. You can activate it via your invoice in your member area.",
+        bloomlab: "Acquiring BloomLab® includes full access to the Digital Library and 100 recipes at no extra subscription fee.",
+        remedies: "Your selection of organic botanical blends pairs smoothly with your daily culinary and aromatic infusions.",
+        offer_badge: "Digital Library Included",
+        offer_desc: "Full access to the Digital Library and 100 recipes is included with your BloomLab® purchase.",
         lab_grade: "Laboratory grade protocols"
       },
       upsell: {
-        title: "Optimize your Sovereignty",
-        description: "The price of the annual subscription (79€) is lower than the price of two Renaissance Kits. Access the entire library without limit.",
-        button: "Discover Premium"
+        title: "Digital Library Included with BloomLab®",
+        description: "Full access to the Digital Library and 100 recipes is included with your BloomLab® with no separate paid subscription.",
+        button: "Discover BloomLab®"
       },
       recommended: {
         title: "Recommended Complements",
-        bloomlab_title: "The BloomLab",
-        bloomlab_desc: "Go from spectator to actor. Extract your own active principles for a power multiplied by 4.",
+        bloomlab_title: "The BloomLab®",
+        bloomlab_desc: "Prepare your own whole-plant infusions, oil macerates, and glycerin extracts in food-grade 304 steel.",
         bloomlab_btn: "Discover the instrument",
-        premium_title: "Premium Subscription",
-        premium_desc: "Access all 56 precision kits and Systemic Protocols protocols.",
-        premium_btn: "See advantages"
+        premium_title: "Digital Library & 100 Recipes Included",
+        premium_desc: "Full access to the Digital Library and 100 recipes is included directly with your BloomLab®.",
+        premium_btn: "Discover BloomLab®"
       },
       shipping: {
         title: "Shipping method",
@@ -2622,7 +2620,7 @@ export const translations = {
         total: "Total",
         checkout: "Proceed to checkout",
         secure: "100% secure payment",
-        guarantee: "Sovereignty Guarantee",
+        guarantee: "2-Year Legal Conformity Warranty",
         guarantee_desc: "Each BloomLab is certified Food Grade 304 Stainless Steel and individually tested.",
         shipping_24h: "24h Shipping",
         shipping_desc: "Carefully prepared in our workshop in France. Tracking number sent upon shipping."
@@ -2696,7 +2694,7 @@ export const translations = {
       back: "Back",
       cgv: {
         title: "General Terms of Sale",
-        intro: "These conditions govern the acquisition of Bloom by Botanik instruments and remedies. They embody our commitment to transparency and sovereignty.",
+        intro: "These conditions govern the acquisition of Bloom by Botanik instruments and preparations. They embody our commitment to transparency and botanical autonomy.",
         sections: [
           {
             title: "1. Philosophy of the Offer",
@@ -2711,8 +2709,8 @@ export const translations = {
             text: "We take extreme care in the preparation of your packages. Botanical remedies, by their precious nature, are subject to specific logistical treatment. Delivery times are given as an indication according to partner carriers."
           },
           {
-            title: "4. Sovereignty Guarantee",
-            text: "The BloomLab appliance includes a 1-year commercial warranty alongside the mandatory 2-year EU legal conformity guarantee for European consumers."
+            title: "4. Legal Conformity Warranty",
+            text: "The BloomLab appliance is covered by the mandatory 2-year EU legal conformity guarantee for European consumers."
           },
           {
             title: "5. Right of Withdrawal",
@@ -2812,29 +2810,29 @@ export const translations = {
         orders: "Orders"
       },
       plans: {
-        title: "Access the Total Experience",
-        subtitle: "Unlock the full Herbarium, the 56 precision kits and progress tracking.",
+        title: "Digital Library Included with BloomLab®",
+        subtitle: "Full access to the Digital Library and 100 recipes is included with your BloomLab®.",
         monthly: {
-          name: "Monthly Subscription",
-          price: "9€",
-          period: "/month",
-          features: ["Unlimited Herbarium access", "56 Precision Kits", "Premium Library", "No commitment"],
-          button: "Choose Monthly"
+          name: "Digital Library & 100 Recipes",
+          price: "Included",
+          period: "with BloomLab®",
+          features: ["Unlimited Herbarium access", "100 documented recipe sheets", "Digital Library included", "No separate subscription"],
+          button: "Discover BloomLab®"
         },
         yearly: {
-          name: "Annual Subscription",
-          price: "79€",
-          period: "/year",
-          save: "2 months free",
-          features: ["All Premium content", "Priority support", "Early access to novelties", "Best value"],
-          button: "Choose Annual"
+          name: "Bloom Complete (Monthly Box)",
+          price: "59€",
+          period: "/month",
+          save: "Cancel anytime",
+          features: ["1 monthly botanical blend (100 ml)", "Printed discovery guide", "Full Library access included", "Alma orientation"],
+          button: "Choose Bloom Complete"
         },
         back: "Back to my account"
       }
     },
     machine: {
       hero: {
-        badge: "Expertise France — Botanical Sovereignty",
+        badge: "Expertise France — Botanical Autonomy",
         title: "BloomLab® :",
         title_accent: "The precision botanical extractor to master your homemade preparations",
         history_badge: "Millenary Heritage & Botanical Rigor",
@@ -2872,10 +2870,10 @@ export const translations = {
         quote: "\"Engineering for life.\"",
         p1: "We created Bloom to give everyone back the key to their own interior pharmacy. The current industrial system standardizes remedies, forgetting that each biological terrain is unique.",
         check1: "<strong>Get out of dependency:</strong> No longer suffer from generic commercial formulations.",
-        check2: "<strong>Therapeutic Precision:</strong> Adapt every gram, every minute, every degree to your real needs."
+        check2: "<strong>Botanical Precision:</strong> Adapt every gram, every minute, every degree to your preferences."
       },
       levels: {
-        badge: "Sovereignty Path",
+        badge: "Autonomy Path",
         title: "One Instrument. 3 Expertise Paths.",
         description: "The BloomLab is an evolving tool that adapts to your journey.",
         lvl1: {
@@ -2913,47 +2911,45 @@ export const translations = {
         }
       },
       pricing: {
-        title: "Sovereign Pricing",
-        subtitle: "Choose the path that matches your learning pace.",
+        title: "Included Digital Library & Monthly Guidance",
+        subtitle: "Full access to the Digital Library and 100 recipes is included with your BloomLab®.",
         discovery: {
-          name: "Bloom Discovery",
-          price: "4.90€",
-          period: "/month",
-          tagline: "The first step to secure your plant practice.",
+          name: "Open Discovery",
+          price: "0€",
+          period: "",
+          tagline: "Explore the foundations of botanical extraction.",
           bullets: [
-            "Access to all freemium recipes (9 per category) + some additional signature recipes.",
-            "Access to full recipe details: solvents, temperatures, sequencing, administration mode, daily and maximum doses, precautions, and contraindications.",
-            "Access to the Bloom bot to ask questions about the method, recipes, and general use (within legal limits)."
+            "Open access to Academy articles and introductory guides.",
+            "Overview of the botanical totum and A/B sequencing.",
+            "Access to Alma for general educational guidance."
           ],
-          cta: "Start Bloom Discovery"
+          cta: "Explore freely"
         },
         method: {
-          name: "Bloom Method",
-          price: "9€",
-          period: "/month",
-          tagline: "To follow the Bloom method, not just consult recipes.",
+          name: "BloomLab® Digital Library",
+          price: "Included",
+          period: "with BloomLab®",
+          tagline: "Full access to the Digital Library and 100 recipes included with your BloomLab®.",
           bullets: [
-            "Everything in Bloom Discovery.",
-            "Access to the full library of plant recipes.",
-            "Access to structured protocols: sequences, phases, extraction order.",
-            "Access to premium educational content (guides, videos, terrain decryptions).",
-            "Access to the community and Bloom Q&A sessions."
+            "Complete Digital Library and 100 documented recipes included at no extra charge.",
+            "Exact temperature, timing, and solvent parameters.",
+            "Detailed botanical monographs and usage precautions."
           ],
-          cta: "Subscribe to Bloom Method",
-          badge: "Recommended"
+          cta: "Discover BloomLab®",
+          badge: "Included with machine"
         },
         annual: {
-          name: "Bloom Method Annual",
-          price: "79€",
-          period: "/year",
-          tagline: "The smartest option if you really want to follow the Bloom method.",
+          name: "Bloom Complete",
+          price: "59€",
+          period: "/month",
+          tagline: "Receive a ready-to-explore botanical preparation every month, no hardware required.",
           bullets: [
-            "Everything in Bloom Method.",
-            "2 months free (equivalent to ~6.6€/month).",
-            "Continuous access to the library, protocols, and premium content for 12 months."
+            "1 Bloom botanical preparation (100 ml) delivered monthly.",
+            "Printed guide and full Digital Library access included.",
+            "No commitment — cancel anytime."
           ],
-          cta: "Commit for the year",
-          highlight: "Best Value"
+          cta: "Discover Bloom Complete",
+          highlight: "No hardware needed"
         }
       },
       final_cta: {
@@ -3029,11 +3025,11 @@ export const translations = {
       hero: {
         badge: "Engineering of Life",
         title: "Usage Guide",
-        subtitle: "Mastering Botanical Sovereignty",
+        subtitle: "Mastering Botanical Autonomy",
         description: "Learn how to use your BloomLab and follow our protocols for optimal systemic regulation.",
-        tags: ["Sovereignty", "Transmission", "Extraction"],
+        tags: ["Autonomy", "Transmission", "Extraction"],
         main_title: "The Bloom Ecosystem.",
-        main_title_accent: "Sovereignty & Precision.",
+        main_title_accent: "Autonomy & Precision.",
         main_desc: "Discover the BloomLab, our integral Totum extractor, as well as our range of expert botanical synergies to support your daily balance.",
         cta_shop: "See the Shop",
         cta_levels: "Discover the Levels"
@@ -3104,7 +3100,7 @@ export const translations = {
       }
     },
     activation: {
-      badge: "Sovereignty Activated",
+      badge: "Access Activated",
       title: "Activate your Premium Bloom Access",
       subtitle: "Upload your BloomLab purchase invoice. Our system verifies your purchase instantly and activates your access to expert protocols.",
       form: {
@@ -3139,7 +3135,7 @@ export const translations = {
       }
     },
     phytotherapyReset: {
-      badge: "Biological Sovereignty",
+      badge: "Botanical Autonomy",
       title: "Phytotherapy & Systemic Protocols",
       title_accent: "\"Engineering at the service of life.\"",
       subtitle: "Deep regulation protocol by plants",
@@ -3177,10 +3173,10 @@ export const translations = {
       description: "We recommend starting with a personalized assessment with ALMA to identify your priority needs or diving into the Science of Totum to understand our vision.",
       cta_primary: "Take my assessment",
       cta_secondary: "Science of Totum",
-      quote: "Regain your sovereignty through understanding your biological terrain."
+      quote: "Regain your botanical autonomy through understanding your biological terrain."
     },
     newsletter: {
-      title: "Join the Sovereignty",
+      title: "Join the Bloom Community",
       subtitle: "Receive our seasonal protocols, terrain advice, and botanical exclusives.",
       placeholder: "your@email.com",
       button: "Subscribe",
@@ -3294,10 +3290,10 @@ export const translations = {
       adaptogens: {
         title: "Adaptogene Pflanzen: Resilienz und systemisches Gleichgewicht | Bloom",
         description: "Expertenleitfaden zu adaptogenen Pflanzen: Ashwagandha, Rhodiola, Ginseng. Wie man ihr Totum extrahiert, um die Homöostase gegen Stress zu unterstützen.",
-        h1: "Adaptogene Pflanzen: Souveränität und Resilienz",
+        h1: "Adaptogene Pflanzen: Autonomie und Resilienz",
         intro: "Geben Sie Ihrem Körper die Werkzeuge zur Anpassung. Entdecken Sie, wie die Präzisionsextraktion adaptogener Pflanzen Ihr Vitalitätspotenzial freisetzt.",
       },
-      keywords: "Totum-Extraktion, botanisches Labor, Gesundheitssouveränität, botanische Infusion, Kunst der Extraktion, Heilpflanzen, natürliche Heilmittel, Kräutertees, Hausmittel, Heilpflanzen-Heilmittel, Phytotherapie, BloomLab",
+      keywords: "Totum-Extraktion, botanisches Labor, botanische Autonomie, botanische Infusion, Kunst der Extraktion, Heilpflanzen, natürliche Heilmittel, Kräutertees, Hausmittel, Heilpflanzen-Heilmittel, Phytotherapie, BloomLab",
       alt: {
         bloomlab: "BloomLab Maschine - Botanische Infusion, Kräutertees, natürliche Heilpflanzen-Heilmittel",
         extracteur: "BloomLab Botanischer Extraktor - Nr. 1 in Frankreich für botanische Infusion, Kräutertees, Hausmittel und selbstgemachte Kosmetik",
@@ -3471,7 +3467,7 @@ export const translations = {
       }
     },
     universes: {
-      title: "Eine einzige Maschine. Drei Universen souveräner Pflege im Alltag.",
+      title: "Eine einzige Maschine. Drei Universen botanischer Praxis im Alltag.",
       subtitle_part1: "Die BloomLab ist die konkrete Alternative, auf die Sie gewartet haben: eine Maschine, die Ihre Pflanzen in aktive botanische Zubereitungen verwandelt – ohne Chemie, ohne Abfall, ohne Abhängigkeit. Im Jahr 2026 geht es nicht mehr nur um Konsum, sondern darum, Ihre eigene botanische Praxis aktiv zu gestalten. Und das beginnt mit der richtigen Extraktion.",
       subtitle_part2: "🔬 Präzise Extraktion, der Schlüssel zur Wirksamkeit\nBei herkömmlichen Methoden (offener Aufguss, Wasserbad, ungeregelte Mazeration) bleibt ein großer Teil der Wirkstoffe in den Pflanzenfasern eingeschlossen oder wird durch unkontrollierte Hitze abgebaut.\n\nDie BloomLab ändert alles. Dank der millimetergenauen Kontrolle von Temperatur, Zeit und Rühren setzt sie das pflanzliche Totum frei – das gesamte Spektrum der empfindlichen Pflanzenstoffe unter Schonung hitzeempfindlicher Verbindungen.",
       tabs: { culinaire: "Kulinarik", cosmetique: "Kosmetik", phytotherapie: "Phytotherapie" },
@@ -3505,7 +3501,7 @@ export const translations = {
         description: "Meistern Sie die Kunst der botanischen Infusion mit Präzision. Entdecken Sie, wie der BloomLab® Extraktor Temperatur, Zeit und Lösungsmittel für Ihre Naturheilmittel steuert.",
       },
       extractionGuide: {
-        badge: "Referenz-Leitfaden — Botanische Souveränität",
+        badge: "Referenz-Leitfaden — Botanische Autonomie",
         title: "Präzise botanische Extraktion:",
         subtitle: "Der BloomLab Experten-Leitfaden",
         description: "Meistern Sie Lösungsmittel, präzise Temperaturen und Protokolle für die botanische Infusion, um die Kraft des pflanzlichen Totums zu Hause mit dem BloomLab®-Extraktor zu enthüllen.",
@@ -3555,7 +3551,7 @@ export const translations = {
         },
         start: {
           title: "Wo soll ich anfangen?",
-          description: "Entdecken Sie die 3 Expertenstufen des BloomLab: Kulinarik, Kosmetik und Expertenprotokoll. Lernen Sie, die Maschine und ihre Stufen zu beherrschen, um Ihre Souveränität zu entfalten.",
+          description: "Entdecken Sie die 3 Expertenstufen des BloomLab: Kulinarik, Kosmetik und Expertenprotokoll. Lernen Sie, die Maschine und ihre Stufen zu beherrschen, um Ihre botanische Autonomie zu entfalten.",
           cta: "Maschine ansehen"
         }
       },
@@ -3592,8 +3588,8 @@ export const translations = {
           description: "Angesichts der Fragmentierung moderner Routinen, die sich darin erschöpfen, Signale zu maskieren, schlagen wir vor, zur Quelle zurückzukehren: zur Regulierung der tiefen biologischen Systeme."
         },
         q2: {
-          title: "Souveränität",
-          description: "Souveränität ist keine Isolation; sie ist Autonomie durch Wissen. Den eigenen Körper zu verstehen und die eigenen Pflegewerkzeuge zu beherrschen, ist der ultimative Akt der Freiheit."
+          title: "Botanische Autonomie",
+          description: "Autonomie bedeutet Eigenständigkeit durch Wissen. Den eigenen Körper zu verstehen und die eigenen botanischen Werkzeuge zu beherrschen, ist der ultimative Akt der Freiheit."
         },
         q3: {
           title: "Der Bloom-Unterschied",
@@ -3601,7 +3597,7 @@ export const translations = {
         },
         q4: {
           title: "Eine tiefe Vision",
-          description: "Pflege ist ein Dialog. Wir lehren Sie, die Botschaften Ihrer Haut, Ihrer Energie und Ihrer Rhythmen zu lesen, um mit souveräner Genauigkeit darauf zu reagieren."
+          description: "Die botanische Praxis ist ein Dialog. Wir lehren Sie, die Botschaften Ihrer Haut, Ihrer Energie und Ihrer Rhythmen zu lesen, um mit präziser Klarheit darauf zu reagieren."
         }
       },
       way: {
@@ -3656,7 +3652,7 @@ export const translations = {
       section1: {
         title: "Unsere DNA",
         p1: "Bloom by BotaniK entstand aus einer tiefen Überzeugung: Gesundheit ist nicht das Fehlen von Symptomen, sondern das Vorhandensein von Vitalität. Wir beschreiten einen dritten Weg zwischen traditioneller Kräuterkunde und moderner Wissenschaft.",
-        p2: "Wir glauben an die Intelligenz des pflanzlichen Totums — diese komplexe Synergie von Molekülen, die keine synthetische Chemie erreichen kann. Unsere Mission ist es, Ihnen diese Souveränität zurückzugeben.",
+        p2: "Wir glauben an die Intelligenz des pflanzlichen Totums — diese komplexe Synergie von Molekülen, die keine synthetische Chemie erreichen kann. Unsere Mission ist es, Ihnen diese botanische Autonomie zurückzugeben.",
         box: "Die Allianz aus überlieferter Weisheit und Präzisionstechnik."
       },
       section2: {
@@ -3679,7 +3675,7 @@ export const translations = {
           description: "Jede Pflanze hat ihren Rhythmus. Kontrollierte Parameter schonen die Pflanzenstruktur bei niedriger Temperatur."
         },
         phaseB: {
-          title: "Souveränität durch das Werkzeug",
+          title: "Autonomie durch das Werkzeug",
           description: "Eine BloomLab zu Hause zu haben bedeutet, eine strukturierte Extraktionsstation für Küche und Naturkosmetik zu besitzen."
         },
         footer: "Ein Platz für jede Pflanze und jede Pflanze an ihrem Platz."
@@ -3907,8 +3903,8 @@ export const translations = {
       },
       hero: {
         badge: "Totum-Extraktor",
-        title: "BloomLab® Shop — Ihr Phytotherapie-Labor für zu Hause",
-        description: "Entdecken Sie unsere Auswahl an botanischen Extraktoren und Pflanzen-Sets für totale Gesundheitsautonomie. Erhalten Sie 1 Monat Premium-Zugang kostenlos beim Kauf eines BloomLab.",
+        title: "BloomLab® Shop — Ihr Botanisches Labor für zu Hause",
+        description: "Entdecken Sie unsere botanischen Extraktoren und Bio-Kräutermischungen. Vollständiger Zugang zur digitalen Bibliothek & 100 Rezepten ist im BloomLab® enthalten.",
         price_from: "Ab",
         cta: "Entdecken"
       },
@@ -3919,12 +3915,12 @@ export const translations = {
       trust: {
         payment: "100% sichere Zahlung",
         lab: "Zertifizierte Labor-Qualität",
-        guarantee: "1 J. Hersteller- + 2 J. gesetzl. Gewährleistung"
+        guarantee: "2 Jahre gesetzliche Gewährleistung (EU)"
       },
       products: {
         bloomlab: {
           name: "BloomLab® — Botanischer Präzisionsextraktor & Infuser",
-          subtitle: "BOTANISCHE SOUVERÄNITÄT — PRÄZISIONSEXTRAKTION 2026",
+          subtitle: "BOTANISCHE AUTONOMIE — PRÄZISIONSEXTRAKTION 2026",
           description: "Der botanische Extraktor für Pflanzenzubereitungen zu Hause. Arbeiten Sie mit dem Totum-Ansatz bei geführter Thermoregulation (Hersteller-Nennwert, nicht unabhängig zertifiziert).",
           bullets: [
             "Pflanzen-Totum-Zubereitungen mit gefiltertem Wasser, Pflanzenölen und Glycerin",
@@ -3933,14 +3929,14 @@ export const translations = {
           ]
         },
         pack_signature: {
-          name: "Signatur-Paket — BloomLab® + Vollständiges Herbarium + 3 Monate Premium Akademie",
+          name: "Signatur-Paket — BloomLab® + Vollständiges Herbarium + Digitale Bibliothek & 100 Rezepte inklusive",
           subtitle: "AM BELIEBTESTEN",
-          description: "BloomLab® 304-Edelstahl, Apotheker-Zubehör, Vollständiges Herbarium (4 Mischungen), Tonerde-Duo und 3 Monate Premium-Zugang."
+          description: "BloomLab® 304-Edelstahl, Apotheker-Zubehör, Vollständiges Herbarium (4 Mischungen), Tonerde-Duo und voller Zugang zur digitalen Bibliothek & 100 Rezepten inklusive."
         },
         bundle_apothicaire: {
           name: "Vollständiges Herbarium — 4 Mischungen + Tonerde-Duo",
           subtitle: "4 BIO-PFLANZENMISCHUNGEN + TONERDEN-DUO",
-          description: "Das komplette Set mit unseren 4 Pflanzenmischungen (Saft, Nacht, Verdauung, Gelenke) und dem Zeolith-Bentonit-Duo."
+          description: "Das komplette Set mit unseren 4 Pflanzenmischungen (Saft, Abendaufguss, Frische & Leichtigkeit, Geschmeidigkeit) und dem Zeolith-Bentonit-Duo."
         },
         kit_starter: {
           name: "Set Fundamentaler Saft",
@@ -3948,24 +3944,24 @@ export const translations = {
           description: "Die Signatur-Pflanzenmischung zur Unterstützung tiefer Vitalität. Eine adaptogene Synergie für die tägliche Resilienz."
         },
         kit_nuit: {
-          name: "Tiefe Nacht Synergie",
+          name: "Sanfter Abendaufguss — Bio-Baldrian & Passionsblume",
           subtitle: "ABENDRITUAL",
-          description: "Eine traditionelle aromatische Kräutermischung für ruhige Abendaufgüsse am Ende des Tages."
+          description: "Traditionelle aromatische Bio-Mischung aus Baldrianwurzel und Passionsblume für ruhige Abendaufgüsse."
         },
         kit_digestion: {
-          name: "Botanische Balance Synergie",
+          name: "Frische- & Leichtigkeit-Aufguss — Aromaten & Bio-Kräuter",
           subtitle: "AROMATEN & AUFGÜSSE",
-          description: "Traditionelle aromatische Kräutermischung für wohltuende Aufgüsse nach den Mahlzeiten."
+          description: "Traditionelle aromatische Kräutermischung (Walnussschale, Ingwer, Rosmarin, Ginkgo) für wohltuende Aufgüsse nach den Mahlzeiten."
         },
         kit_articulaire: {
-          name: "Freie Bewegung Synergie",
+          name: "Geschmeidigkeits- & Entspannungsaufguss — Mädesüß, Ingwer & Boswellia",
           subtitle: "BOTANISCHE SYNERGIE",
-          description: "Traditionelle botanische Mischung aus harzigen und blattreichen Pflanzen der klassischen Kräuterkunde."
+          description: "Traditionelle botanische Mischung aus Mädesüß, Ingwer und Boswellia-Harz aus der klassischen Kräuterkunde."
         },
         kit_hiver: {
-          name: "Winterschutz Synergie",
+          name: "Würziger Winteraufguss — Ingwer, Nelke, Holunder & Thymian",
           subtitle: "SAISONALE BOTANIK",
-          description: "Aromatische saisonale Pflanzenmischung für wärmende Aufgüsse in den kälteren Monaten."
+          description: "Aromatische saisonale Gewürz- und Kräutermischung für wärmende Aufgüsse in den kälteren Monaten."
         },
         kit_reset: {
           name: "Tonerde-Duo — Zeolith & Bentonit 6 µm",
@@ -3978,9 +3974,9 @@ export const translations = {
           description: "Erkunden Sie das Bloom-Universum mit einer Auswahl von 10 geführten Rezepten, um mit Ihren ersten Infusionen zu beginnen."
         },
         premium_access: {
-          name: "Premium-Abonnement — Unbegrenzter Zugang",
-          subtitle: "GESAMTES HERBARIUM & PROTOKOLLE",
-          description: "Greifen Sie auf über 100 Rezepte, Expertenprotokolle und monatliche Updates zu. 1 Monat kostenlos für BloomLab-Kunden."
+          name: "Digitale Bibliothek & 100 Rezepte — Im BloomLab® enthalten",
+          subtitle: "IM GERÄT INKLUSIVE",
+          description: "Der vollständige Zugang zur digitalen Bibliothek und zu den 100 Rezepten ist ohne separates Abo direkt im BloomLab® enthalten."
         }
       }
     },
@@ -4085,35 +4081,35 @@ export const translations = {
     cart: {
       empty: {
         title: "Ihr Warenkorb ist leer",
-        subtitle: "Erkunden Sie unseren Shop und entdecken Sie unsere Lösungen für Gesundheitssouveränität.",
+        subtitle: "Erkunden Sie unseren Shop und entdecken Sie unsere Lösungen für botanische Autonomie.",
         button: "Zurück zum Shop"
       },
       header: {
         badge: "Ihre Auswahl",
         title: "Die Kohärenz Ihres Terrains.",
-        subtitle: "Jedes Element in Ihrem Warenkorb wurde ausgewählt, um mit Ihrer Biologie in Dialog zu treten. Hier sehen Sie, wie sich Ihre Auswahl für Ihre Souveränität artikuliert."
+        subtitle: "Jedes Element in Ihrem Warenkorb wurde ausgewählt, um Ihre botanische Praxis und Autonomie zu unterstützen."
       },
       why_works: {
         title: "Warum funktioniert dieses Set?",
-        bloomlab: "Der Erwerb des BloomLab ist die Säule Ihrer Autonomie. Aktivieren Sie nach Erhalt Ihren kostenlosen Premium-Monat, um auf alle 56 Expertenprotokolle zuzugreifen.",
-        remedies: "Ihre Auswahl an Bio-Pflanzenmischungen zielt auf komplementäre Dimensionen Ihres Terrains. Jede Pflanze wurde aufgrund ihrer Reinheit für Ihre tägliche Routine ausgewählt.",
-        offer_badge: "BloomLab-Angebot enthalten",
-        offer_desc: "Ihr Kauf beinhaltet 1 kostenlosen Monat Premium-Zugang. Sie können diesen über Ihre Rechnung in Ihrem Mitgliederbereich aktivieren.",
+        bloomlab: "Der Erwerb des BloomLab® beinhaltet den vollständigen Zugang zur digitalen Bibliothek und zu den 100 Rezepten.",
+        remedies: "Ihre Auswahl an Bio-Kräuteraufgüssen passt ideal zu Ihren täglichen kulinarischen und aromatischen Zubereitungen.",
+        offer_badge: "Digitale Bibliothek inklusive",
+        offer_desc: "Vollständiger Zugang zur digitalen Bibliothek und zu den 100 Rezepten ist im BloomLab® enthalten.",
         lab_grade: "Protokolle in Laborqualität"
       },
       upsell: {
-        title: "Optimieren Sie Ihre Souveränität",
-        description: "Der Preis für das Jahresabonnement (79 €) liegt unter dem Preis von zwei Renaissance-Kits. Greifen Sie unbegrenzt auf die gesamte Bibliothek zu.",
-        button: "Premium entdecken"
+        title: "Digitale Bibliothek im BloomLab® enthalten",
+        description: "Vollständiger Zugang zur digitalen Bibliothek und zu den 100 Rezepten ist im BloomLab® ohne separates Digital-Abo enthalten.",
+        button: "BloomLab® entdecken"
       },
       recommended: {
         title: "Empfohlene Ergänzungen",
-        bloomlab_title: "Das BloomLab",
-        bloomlab_desc: "Vom Zuschauer zum Akteur. Extrahieren Sie Ihre Wirkstoffe selbst für eine vierfache Kraft.",
+        bloomlab_title: "Das BloomLab®",
+        bloomlab_desc: "Stellen Sie Aufgüsse, Ölauszüge und Glycerin-Extrakte selbst im 304-Edelstahlbehälter her.",
         bloomlab_btn: "Instrument entdecken",
-        premium_title: "Premium-Abonnement",
-        premium_desc: "Greifen Sie auf alle 56 Präzisionskits und homöostatischen Reset-Protokolle zu.",
-        premium_btn: "Vorteile ansehen"
+        premium_title: "Digitale Bibliothek & 100 Rezepte inklusive",
+        premium_desc: "Vollständiger Zugang zur digitalen Bibliothek und 100 Rezepten direkt im BloomLab® enthalten.",
+        premium_btn: "BloomLab® entdecken"
       },
       shipping: {
         title: "Versandart",
@@ -4139,7 +4135,7 @@ export const translations = {
         total: "Gesamt",
         checkout: "Zur Kasse gehen",
         secure: "100% sichere Zahlung",
-        guarantee: "Souveränitätsgarantie",
+        guarantee: "2 Jahre gesetzliche Gewährleistung",
         guarantee_desc: "Jedes BloomLab ist nach Lebensmittelqualität 304 Edelstahl zertifiziert und einzeln getestet.",
         shipping_24h: "24h Versand",
         shipping_desc: "Sorgfältig in unserer Werkstatt in Frankreich vorbereitet. Sendungsnummer wird nach dem Versand mitgeteilt."
@@ -4213,7 +4209,7 @@ export const translations = {
       back: "Zurück",
       cgv: {
         title: "Allgemeine Verkaufsbedingungen",
-        intro: "Diese Bedingungen regeln den Erwerb von Bloom by Botanik Instrumenten und Heilmitteln. Sie verkörpern unser Engagement für Transparenz und Souveränität.",
+        intro: "Diese Bedingungen regeln den Erwerb von Bloom by Botanik Instrumenten und Zubereitungen. Sie verkörpern unser Engagement für Transparenz und botanische Autonomie.",
         sections: [
           {
             title: "1. Philosophie des Angebots",
@@ -4228,8 +4224,8 @@ export const translations = {
             text: "Wir lassen bei der Vorbereitung Ihrer Pakete äußerste Sorgfalt walten. Botanische Heilmittel unterliegen aufgrund ihrer kostbaren Natur einer spezifischen logistischen Behandlung. Lieferzeiten werden als Richtwerte gemäß den Partner-Transportunternehmen angegeben."
           },
           {
-            title: "4. Souveränitätsgarantie",
-            text: "Für das BloomLab-Gerät gilt neben der gesetzlichen 2-jährigen EU-Gewährleistung für Verbraucher eine 1-jährige kommerzielle Garantie gemäß den Bloom-Nutzungsbedingungen."
+            title: "4. Gesetzliche Gewährleistung",
+            text: "Für das BloomLab-Gerät gilt die gesetzliche 2-jährige EU-Gewährleistung für Verbraucher gemäß den Bloom-Nutzungsbedingungen."
           },
           {
             title: "5. Widerrufsrecht",
@@ -4329,29 +4325,29 @@ export const translations = {
         orders: "Bestellungen"
       },
       plans: {
-        title: "Erleben Sie die Gesamterfahrung",
-        subtitle: "Schalten Sie das vollständige Herbarium, die 56 Präzisionskits und die Fortschrittsverfolgung frei.",
+        title: "Digitale Bibliothek im BloomLab® Enthalten",
+        subtitle: "Vollständiger Zugang zur digitalen Bibliothek und den 100 Rezepten im BloomLab® enthalten.",
         monthly: {
-          name: "Monatliches Abonnement",
-          price: "9€",
-          period: "/Monat",
-          features: ["Unbegrenzter Herbariumszugriff", "56 Präzisionskits", "Premium-Bibliothek", "Keine Bindung"],
-          button: "Monatlich wählen"
+          name: "Digitale Bibliothek & 100 Rezepte",
+          price: "Inklusive",
+          period: "mit BloomLab®",
+          features: ["Unbegrenzter Herbariumszugriff", "100 dokumentierte Rezepte", "Digitale Bibliothek inklusive", "Kein separates Abo"],
+          button: "BloomLab® entdecken"
         },
         yearly: {
-          name: "Jahresabonnement",
-          price: "79€",
-          period: "/Jahr",
-          save: "2 Monate geschenkt",
-          features: ["Alle Premium-Inhalte", "Prioritärer Support", "Frühzeitiger Zugang zu Neuheiten", "Bester Wert"],
-          button: "Jährlich wählen"
+          name: "Bloom Komplett (Monatspaket)",
+          price: "59€",
+          period: "/Monat",
+          save: "Jederzeit kündbar",
+          features: ["1 botanische Zubereitung 100 ml/Monat", "Gedruckter Leitfaden", "Bibliothekszugang inklusive", "Orientierung mit Alma"],
+          button: "Bloom Komplett wählen"
         },
         back: "Zurück zu meinem Konto"
       }
     },
     machine: {
       hero: {
-        badge: "Expertise Frankreich — Botanische Souveränität",
+        badge: "Expertise Frankreich — Botanische Autonomie",
         title: "BloomLab® :",
         title_accent: "Der botanische Präzisionsextraktor für Ihre hausgemachten Zubereitungen",
         history_badge: "Jahrtausendealtes Erbe & Botanische Strenge",
@@ -4389,10 +4385,10 @@ export const translations = {
         quote: "\"Ingenieurwesen im Dienste des Lebens.\"",
         p1: "Wir haben Bloom geschaffen, um jedem den Schlüssel zu seiner eigenen inneren Apotheke zurückzugeben. Das aktuelle industrielle System standardisiert Heilmittel und vergisst dabei, dass jedes biologische Terrain einzigartig ist.",
         check1: "<strong>Raus aus der Abhängigkeit:</strong> Leiden Sie nicht länger unter generischen kommerziellen Formulierungen.",
-        check2: "<strong>Therapeutische Präzision:</strong> Passen Sie jedes Gramm, jede Minute, jeden Grad an Ihre tatsächlichen Bedürfnisse an."
+        check2: "<strong>Botanische Präzision:</strong> Passen Sie jedes Gramm, jede Minute, jeden Grad an Ihre Bedürfnisse an."
       },
       levels: {
-        badge: "Weg der Souveränität",
+        badge: "Weg der Autonomie",
         title: "Ein Instrument. 3 Fachbereiche.",
         description: "Das BloomLab ist ein sich entwickelndes Werkzeug, das sich Ihrer Reise anpasst.",
         lvl1: {
@@ -4430,47 +4426,45 @@ export const translations = {
         }
       },
       pricing: {
-        title: "Souveräne Preisgestaltung",
-        subtitle: "Wählen Sie den Weg, der Ihrem Lerntempo entspricht.",
+        title: "Inkludierte Digitale Bibliothek & Begleitung",
+        subtitle: "Vollständiger Zugang zur digitalen Bibliothek und den 100 Rezepten im BloomLab® enthalten.",
         discovery: {
-          name: "Bloom Entdeckung",
-          price: "4,90€",
-          period: "/Monat",
-          tagline: "Der erste Schritt, um Ihre Pflanzenpraxis zu sichern.",
+          name: "Freier Zugang",
+          price: "0€",
+          period: "",
+          tagline: "Grundlagen der botanischen Extraktion entdecken.",
           bullets: [
-            "Zugang zu allen Freemium-Rezepten (9 pro Kategorie) + einige zusätzliche Signature-Rezepte.",
-            "Zugang zu vollständigen Rezeptdetails: Lösungsmittel, Temperaturen, Sequenzierung, Verabreichungsmodus, Tages- und Maximaldosen, Vorsichtsmaßnahmen und Kontraindikationen.",
-            "Zugang zum Bloom-Bot, um Fragen zur Methode, zu Rezepten und zur allgemeinen Verwendung zu stellen (innerhalb gesetzlicher Grenzen)."
+            "Zugang zu einführenden Artikeln und Leitfäden der Akademie.",
+            "Einblick in das Pflanzentotum und die A/B-Sequenzierung.",
+            "Zugang zu Alma für allgemeine Orientierungsfragen."
           ],
-          cta: "Bloom Entdeckung starten"
+          cta: "Frei entdecken"
         },
         method: {
-          name: "Bloom Methode",
-          price: "9€",
-          period: "/Monat",
-          tagline: "Um der Bloom-Methode zu folgen, nicht nur Rezepte zu konsultieren.",
+          name: "BloomLab® Digitale Bibliothek",
+          price: "Inklusive",
+          period: "mit BloomLab®",
+          tagline: "Vollständiger Zugang zur digitalen Bibliothek und den 100 Rezepten im BloomLab® enthalten.",
           bullets: [
-            "Alles in Bloom Entdeckung.",
-            "Zugang zur vollständigen Bibliothek der Pflanzenrezepte.",
-            "Zugang zu strukturierten Protokollen: Sequenzen, Phasen, Extraktionsreihenfolge.",
-            "Zugang zu Premium-Bildungsinhalten (Leitfäden, Videos, Terrain-Entschlüsselungen).",
-            "Zugang zur Community und Bloom Q&A-Sitzungen."
+            "Digitale Bibliothek & 100 Rezepte ohne Aufpreis enthalten.",
+            "Exakte Parameter zu Temperatur, Zeit und Lösungsmitteln.",
+            "Ausführliche Monografien und Vorsichtshinweise."
           ],
-          cta: "Bloom Methode abonnieren",
-          badge: "Empfohlen"
+          cta: "BloomLab® entdecken",
+          badge: "Im Gerät enthalten"
         },
         annual: {
-          name: "Bloom Methode Jährlich",
-          price: "79€",
-          period: "/Jahr",
-          tagline: "Die intelligenteste Option, wenn Sie der Bloom-Methode wirklich folgen wollen.",
+          name: "Bloom Komplett",
+          price: "59€",
+          period: "/Monat",
+          tagline: "Erhalten Sie jeden Monat eine fertige botanische Zubereitung ganz ohne Gerät.",
           bullets: [
-            "Alles in Bloom Methode.",
-            "2 Monate geschenkt (entspricht ~6,6€/Monat).",
-            "Kontinuierlicher Zugriff auf die Bibliothek, Protokolle und Premium-Inhalte für 12 Monate."
+            "1 botanische Zubereitung (100 ml) monatlich geliefert.",
+            "Gedruckter Leitfaden & voller Zugang zur Bibliothek inklusive.",
+            "Ohne Mindestlaufzeit — jederzeit kündbar."
           ],
-          cta: "Für das Jahr verpflichten",
-          highlight: "Bestes Angebot"
+          cta: "Bloom Komplett entdecken",
+          highlight: "Ohne Gerät"
         }
       },
       final_cta: {
@@ -4546,11 +4540,11 @@ export const translations = {
       hero: {
         badge: "Ingenieurwesen des Lebendigen",
         title: "Gebrauchsanweisung",
-        subtitle: "Botanische Souveränität meistern",
+        subtitle: "Botanische Autonomie meistern",
         description: "Lernen Sie, Ihr BloomLab zu bedienen und unsere Protokolle für eine optimale systemische Regulierung zu befolgen.",
-        tags: ["Souveränität", "Transmission", "Extraktion"],
+        tags: ["Autonomie", "Transmission", "Extraktion"],
         main_title: "Das Bloom-Ökosystem.",
-        main_title_accent: "Souveränität & Präzision.",
+        main_title_accent: "Autonomie & Präzision.",
         main_desc: "Entdecken Sie das BloomLab, unseren integralen Totum-Extraktor, sowie unser Sortiment an botanischen Experten-Synergien für Ihr tägliches Gleichgewicht.",
         cta_shop: "Shop ansehen",
         cta_levels: "Ebenen entdecken"
@@ -4621,7 +4615,7 @@ export const translations = {
       }
     },
     activation: {
-      badge: "Souveränität Aktiviert",
+      badge: "Zugang Aktiviert",
       title: "Aktivieren Sie Ihren Premium Bloom Zugang",
       subtitle: "Laden Sie Ihre Kaufrechnung für das BloomLab hoch. Unser System überprüft Ihren Kauf sofort und aktiviert Ihren Zugang zu Expertenprotokollen.",
       form: {
@@ -4656,7 +4650,7 @@ export const translations = {
       }
     },
     phytotherapyReset: {
-      badge: "Biologische Souveränität",
+      badge: "Botanische Autonomie",
       title: "Phytotherapie & Homöostatischer Reset",
       title_accent: "\"Engineering im Dienste des Lebens.\"",
       subtitle: "Protokoll zur tiefen Regulierung durch Pflanzen",
@@ -4694,10 +4688,10 @@ export const translations = {
       description: "Wir empfehlen, mit einer persönlichen Bewertung durch ALMA zu beginnen, um Ihre vordringlichen Bedürfnisse zu ermitteln, oder in die Wissenschaft des Totum einzutauchen, um unsere Vision zu verstehen.",
       cta_primary: "Meine Bewertung machen",
       cta_secondary: "Wissenschaft des Totum",
-      quote: "Gewinnen Sie Ihre Souveränität zurück, indem Sie Ihr biologisches Terrain verstehen."
+      quote: "Gewinnen Sie Ihre botanische Autonomie zurück, indem Sie Ihr biologisches Terrain verstehen."
     },
     newsletter: {
-      title: "Werden Sie Teil der Souveränität",
+      title: "Werden Sie Teil der Bloom-Community",
       subtitle: "Erhalten Sie unsere saisonalen Protokolle, Terrain-Ratschläge und botanischen Exklusivitäten.",
       placeholder: "ihre@email.com",
       button: "Abonnieren",

@@ -761,7 +761,7 @@ export const Les4ArchitecturesContent: React.FC<Les4ArchitecturesContentProps> =
           <div className="flex items-center gap-3">
             <span className="text-3xl">💡</span>
             <div>
-              <div className="text-[10px] font-mono text-[#c9a84c] uppercase tracking-widest font-bold">Implication Thérapeutique</div>
+              <div className="text-[10px] font-mono text-[#c9a84c] uppercase tracking-widest font-bold">Implication Systémique</div>
               <h2 className="text-2xl sm:text-3xl font-black text-[#FAF7F2] tracking-tight">
                 Ce que cela change pour vous
               </h2>
@@ -770,16 +770,16 @@ export const Les4ArchitecturesContent: React.FC<Les4ArchitecturesContentProps> =
 
           <div className="space-y-4 text-base sm:text-lg text-[#FAF7F2]/90 leading-relaxed font-light">
             <p>
-              Si vous souffrez d'une condition chronique — <strong className="text-[#FAF7F2]">psoriasis, eczéma, SIBO, fatigue profonde, douleurs erratiques ou anxiété</strong> — vous ne souffrez pas d'un problème isolé. Vous souffrez d'un <strong className="text-[#c9a84c] font-semibold">déséquilibre interconnecté des 4 architectures</strong>.
+              Si vous observez un déséquilibre persistant — <strong className="text-[#FAF7F2]">inconfort cutané, sensibilité digestive, fatigue profonde, tension diffuse ou baisse de sérénité</strong> — il s'agit rarement d'un phénomène isolé, mais souvent d'un <strong className="text-[#c9a84c] font-semibold">déséquilibre interconnecté des 4 architectures</strong>.
             </p>
             <p className="text-[#FAF7F2]/80">
-              C'est pour cela que les traitements symptomatiques ne fonctionnent pas durablement. Ils traitent la conséquence superficielle, jamais la cause systémique.
+              C'est pour cela qu'une approche purement ponctuelle reste limitée. Elle n'aborde que la manifestation superficielle, sans tenir compte du terrain global.
             </p>
           </div>
 
           <div className="p-6 rounded-xl bg-[#2d5016]/30 border border-[#86efac]/30 text-center sm:text-left space-y-2">
             <p className="text-lg sm:text-xl font-bold text-[#86efac]">
-              Bloom ne traite pas les symptômes isolés. Bloom restaure les 4 architectures.
+              La démarche Bloom n'isole pas un signal ponctuel : elle accompagne les 4 architectures dans leur ensemble.
             </p>
             <p className="text-xs sm:text-sm text-[#FAF7F2]/80 font-light">
               Par l'extraction du Totum végétal, le séquençage A/B et le reset des terrains biologiques.

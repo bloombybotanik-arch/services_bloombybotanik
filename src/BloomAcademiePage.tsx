@@ -204,7 +204,7 @@ export default function BloomAcademiePage({ onNavigate, lang }: BloomAcademiePag
               </div>
               <p className="text-xs sm:text-sm text-white/85 leading-relaxed font-light">
                 {lang === 'fr'
-                  ? "Faire évoluer ces connaissances en donnant à chacun des méthodes reproductibles, précises et sans dogme pour une souveraineté biologique retrouvée."
+                  ? "Faire évoluer ces connaissances en donnant à chacun des méthodes reproductibles, précises et sans dogme pour une autonomie botanique retrouvée."
                   : "Advancing knowledge with reproducible, precise, dogma-free tools for personal biological autonomy."}
               </p>
             </div>
@@ -790,10 +790,10 @@ export default function BloomAcademiePage({ onNavigate, lang }: BloomAcademiePag
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
                   {lang === 'fr'
-                    ? 'Découvrez nos protocoles phytothérapeutiques précis : Décalcification Pinéale, Psoriasis, SIBO, Clarté Mentale & Myéline avec posologies et chronobiologie.'
+                    ? 'Découvrez nos dossiers botaniques structurés : Clarté Mentale & Myéline, Reset Homéostasique en 6 phases et hygiène chronobiologique.'
                     : lang === 'de'
-                    ? 'Entdecken Sie unsere präzisen Protokolle: Zirbeldrüsen-Entkalkung, Psoriasis, SIBO, Geistige Klarheit & Myelin mit Dosierungen und Chronobiologie.'
-                    : 'Discover our targeted phytotherapeutic protocols: Pineal Decalcification, Psoriasis, SIBO, Mental Clarity & Myelin with precise chronobiology.'}
+                    ? 'Entdecken Sie unsere strukturierten Botanik-Dossiers: Geistige Klarheit & Myelin, Homöostatischer Reset und Chronobiologie.'
+                    : 'Discover our structured botanical dossiers: Mental Clarity & Myelin, 6-phase Homeostatic Reset, and chronobiology.'}
                 </p>
               </div>
               <span className="text-xs font-bold text-[#C8AB8A] group-hover:text-[#3E4A3D] flex items-center gap-1 pt-3 border-t border-[#E7DFD3] transition-colors">
@@ -946,7 +946,7 @@ export default function BloomAcademiePage({ onNavigate, lang }: BloomAcademiePag
                       Obscurité progressive + Décoction Bloom
                     </td>
                     <td className="py-4 px-4 text-[#4A5D4A]">
-                      Sécrétion de mélatonine, régénération pinéale
+                      Sécrétion de mélatonine, régénération circadienne
                     </td>
                   </tr>
                 </tbody>
@@ -960,7 +960,7 @@ export default function BloomAcademiePage({ onNavigate, lang }: BloomAcademiePag
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
             <div>
               <div className="text-[10px] font-black uppercase tracking-[0.25em] text-[#E8772E] mb-2 font-mono flex items-center gap-2">
-                <span>Approche Thérapeutique Documentée</span>
+                <span>Approche Botanique Documentée</span>
                 {!hasAccess && (
                   <span className="text-[9px] uppercase font-bold text-[#E8772E] bg-[#E8772E]/15 border border-[#E8772E]/30 px-2 py-0.5 rounded-full flex items-center gap-1">
                     <Lock className="w-3 h-3" />
@@ -985,92 +985,62 @@ export default function BloomAcademiePage({ onNavigate, lang }: BloomAcademiePag
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {/* Carte Psoriasis */}
+            {/* Carte Reset Homéostasique */}
             <div className="bg-white rounded-3xl border border-[#E7DFD3] hover:border-[#C8AB8A]/70 p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-xs hover:shadow-md group relative overflow-hidden">
               <div>
                 <div className="flex items-center justify-between mb-5">
                   <div className="w-12 h-12 rounded-2xl bg-[#FAF7F2] border border-[#E7DFD3] text-[#C8AB8A] flex items-center justify-center group-hover:scale-105 transition-transform">
                     <Activity className="w-6 h-6" />
                   </div>
-                  {!hasAccess && (
-                    <span className="text-[9px] uppercase font-bold text-[#D97706] bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full flex items-center gap-1">
-                      <Lock className="w-3 h-3" />
-                      <span>{lang === 'fr' ? 'Abonnement' : lang === 'de' ? 'Abo' : 'Subscription'}</span>
-                    </span>
-                  )}
                 </div>
                 <div className="text-[10px] font-mono text-[#C8AB8A] uppercase tracking-wider mb-2 font-bold">
-                  14 Semaines • Double Solvant
+                  6 Phases • Approche Éducative
                 </div>
                 <h3 className="text-xl font-black text-[#3E4A3D] mb-3 group-hover:text-[#C8AB8A] transition-colors">
-                  Protocole Psoriasis
+                  Reset Homéostasique
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
-                  Désengorgement hépato-biliaire, perméabilité intestinale et modulation de l'axe Th17/IL-23 pour restaurer l'intégrité cutanée.
+                  Comprendre l'ordre physiologique du terrain : hydratation, émonctoires, régulation rythmique et séquençage botanique A/B.
                 </p>
               </div>
 
               <div className="pt-4 border-t border-[#E7DFD3]/80">
                 <button
-                  onClick={() => handleRestrictedClick('protocole-psoriasis')}
+                  onClick={() => onNavigate('phytotherapie-reset')}
                   className="w-full py-3 rounded-2xl bg-[#FAF7F2] hover:bg-[#3E4A3D] hover:text-white text-[#3E4A3D] text-xs font-bold border border-[#E7DFD3] hover:border-[#3E4A3D] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
                 >
-                  {!hasAccess ? (
-                    <>
-                      <Lock className="w-3.5 h-3.5 text-[#D97706]" />
-                      <span>{lang === 'fr' ? 'Débloquer le protocole' : lang === 'de' ? 'Protokoll freischalten' : 'Unlock protocol'}</span>
-                    </>
-                  ) : (
-                    <>
-                      <span>Découvrir le protocole</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </>
-                  )}
+                  <span>Découvrir l'approche</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             </div>
 
-            {/* Carte SIBO */}
+            {/* Carte Phycocyanine & Extraction Douce */}
             <div className="bg-white rounded-3xl border border-[#E7DFD3] hover:border-[#C8AB8A]/70 p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-xs hover:shadow-md group relative overflow-hidden">
               <div>
                 <div className="flex items-center justify-between mb-5">
                   <div className="w-12 h-12 rounded-2xl bg-[#FAF7F2] border border-[#E7DFD3] text-[#2D5016] flex items-center justify-center group-hover:scale-105 transition-transform">
                     <ShieldCheck className="w-6 h-6" />
                   </div>
-                  {!hasAccess && (
-                    <span className="text-[9px] uppercase font-bold text-[#D97706] bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full flex items-center gap-1">
-                      <Lock className="w-3 h-3" />
-                      <span>{lang === 'fr' ? 'Abonnement' : lang === 'de' ? 'Abo' : 'Subscription'}</span>
-                    </span>
-                  )}
                 </div>
                 <div className="text-[10px] font-mono text-[#2D5016] uppercase tracking-wider mb-2 font-bold">
-                  3 Phases • Motilité &amp; Grêle
+                  40°C • Pigments &amp; Vitalité
                 </div>
                 <h3 className="text-xl font-black text-[#3E4A3D] mb-3 group-hover:text-[#2D5016] transition-colors">
-                  Protocole SIBO
+                  Phycocyanine &amp; Spiruline
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
-                  Assainissement antimicrobien doux du grêle, relance du Complexe Moteur Migrant (CMM) et restauration du mucus protecteur.
+                  Extraction aqueuse basse température (40°C) pour préserver les pigments hydrosolubles sensibles à la chaleur.
                 </p>
               </div>
 
               <div className="pt-4 border-t border-[#E7DFD3]/80">
                 <button
-                  onClick={() => handleRestrictedClick('protocole-sibo')}
+                  onClick={() => onNavigate('recette-phycocyanine')}
                   className="w-full py-3 rounded-2xl bg-[#FAF7F2] hover:bg-[#3E4A3D] hover:text-white text-[#3E4A3D] text-xs font-bold border border-[#E7DFD3] hover:border-[#3E4A3D] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
                 >
-                  {!hasAccess ? (
-                    <>
-                      <Lock className="w-3.5 h-3.5 text-[#D97706]" />
-                      <span>{lang === 'fr' ? 'Débloquer le protocole' : lang === 'de' ? 'Protokoll freischalten' : 'Unlock protocol'}</span>
-                    </>
-                  ) : (
-                    <>
-                      <span>Découvrir le protocole</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </>
-                  )}
+                  <span>Découvrir le dossier</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             </div>
@@ -1139,7 +1109,7 @@ export default function BloomAcademiePage({ onNavigate, lang }: BloomAcademiePag
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {/* Les Solvants */}
             <div 
-              onClick={() => onNavigate('solvants-extraction')}
+              onClick={() => onNavigate('guide-solvants')}
               className="bg-white rounded-3xl border border-[#E7DFD3] hover:border-[#C8AB8A]/70 p-6 cursor-pointer transition-all duration-300 hover:-translate-y-1 shadow-xs hover:shadow-md flex flex-col justify-between group"
             >
               <div>
@@ -1160,7 +1130,7 @@ export default function BloomAcademiePage({ onNavigate, lang }: BloomAcademiePag
 
             {/* Les Températures */}
             <div 
-              onClick={() => onNavigate('infusion-precision')}
+              onClick={() => onNavigate('infusion-botanique-maison-comment-ca-marche')}
               className="bg-white rounded-3xl border border-[#E7DFD3] hover:border-[#C8AB8A]/70 p-6 cursor-pointer transition-all duration-300 hover:-translate-y-1 shadow-xs hover:shadow-md flex flex-col justify-between group"
             >
               <div>
@@ -1234,7 +1204,7 @@ export default function BloomAcademiePage({ onNavigate, lang }: BloomAcademiePag
                 Bibliothèque Scientifique
               </h2>
               <p className="text-sm text-slate-600 max-w-xl mt-1">
-                Articles de fond, monographies botaniques, études cliniques et traductions d'ouvrages pionniers.
+                Articles de fond, monographies botaniques, revues phytochimiques et traductions d'ouvrages pionniers.
               </p>
             </div>
             <button
@@ -1302,7 +1272,7 @@ export default function BloomAcademiePage({ onNavigate, lang }: BloomAcademiePag
             >
               <div className="space-y-1.5 max-w-2xl">
                 <div className="flex items-center gap-2 text-[10px] font-mono text-[#3E4A3D] uppercase font-bold">
-                  <span>Botanique Clinique</span>
+                  <span>Botanique Appliquée</span>
                   <span>•</span>
                   <span>L'Herbier</span>
                 </div>

@@ -171,7 +171,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
                 </li>
                 <li class="flex items-center gap-3 text-botanik-green">
                   <span class="w-2 h-2 rounded-full bg-botanik-orange shrink-0"></span>
-                  <span class="font-medium text-sm md:text-base">Accès Bloom Academy</span>
+                  <span class="font-medium text-sm md:text-base">Accès complet à la Bibliothèque numérique & 100 recettes inclus</span>
                 </li>
               </ul>
             </div>
@@ -201,7 +201,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
                 </div>
                 <div class="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/10">
                   <div class="w-1.5 h-1.5 rounded-full bg-botanik-orange shrink-0"></div>
-                  <span class="text-sm font-medium">Garantie commerciale 1 an (+ garantie légale de conformité 2 ans UE)</span>
+                  <span class="text-sm font-medium">Garantie légale de conformité 2 ans (UE)</span>
                 </div>
               </div>
             </div>
@@ -239,7 +239,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
                 <li class="flex items-center gap-3 text-botanik-green"><span class="w-2 h-2 rounded-full bg-botanik-orange shrink-0"></span><span class="font-medium text-sm md:text-base">${isDE ? "100-ml-Pipettenflasche (Bambusverschluss)" : "100ml opaque glass dropper bottle"}</span></li>
                 <li class="flex items-center gap-3 text-botanik-green"><span class="w-2 h-2 rounded-full bg-botanik-orange shrink-0"></span><span class="font-medium text-sm md:text-base">${isDE ? "Kopfhaut-Serum-Spender" : "Scalp serum dispenser"}</span></li>
                 <li class="flex items-center gap-3 text-botanik-green"><span class="w-2 h-2 rounded-full bg-botanik-orange shrink-0"></span><span class="font-medium text-sm md:text-base">${isDE ? "50-g-Cremetiegel mit Bambusdeckel" : "50g bamboo-lid cream jar"}</span></li>
-                <li class="flex items-center gap-3 text-botanik-green"><span class="w-2 h-2 rounded-full bg-botanik-orange shrink-0"></span><span class="font-medium text-sm md:text-base">${isDE ? "Rezeptbuch & Bloom Academy Zugang" : "Recipe guide & Bloom Academy access"}</span></li>
+                <li class="flex items-center gap-3 text-botanik-green"><span class="w-2 h-2 rounded-full bg-botanik-orange shrink-0"></span><span class="font-medium text-sm md:text-base">${isDE ? "Digitale Bibliothek & 100 Rezepte inklusive" : "Digital Library & 100 recipes included"}</span></li>
               </ul>
             </div>
 
@@ -249,7 +249,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
                 <div class="p-3.5 bg-white/5 rounded-2xl border border-white/10">${isDE ? "Edelstahlkammer SU304 (1,2 L)" : "Food-grade SU304 steel tank (1.2 L)"}</div>
                 <div class="p-3.5 bg-white/5 rounded-2xl border border-white/10">${isDE ? "0 °C bis 121 °C (Herstellerangabe, nicht extern zertifiziert)" : "0 °C to 121 °C (nominal manufacturer spec, uncertified)"}</div>
                 <div class="p-3.5 bg-white/5 rounded-2xl border border-white/10">${isDE ? "6 Automatikprogramme + Selbstreinigung (5 Min.)" : "6 automatic modes + 5-min self-cleaning"}</div>
-                <div class="p-3.5 bg-white/5 rounded-2xl border border-white/10">${isDE ? "1 J. + 2 J. gesetzlich-Garantie (zzgl. 2 Jahre gesetzliche Gewährleistung)" : "1-year commercial warranty (+ 2-year EU legal conformity warranty)"}</div>
+                <div class="p-3.5 bg-white/5 rounded-2xl border border-white/10">${isDE ? "2 Jahre gesetzliche Gewährleistung (EU)" : "2-year EU legal conformity warranty"}</div>
               </div>
             </div>
 
@@ -263,7 +263,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
         specs: [
           { label: isFR ? "Contrôle" : isDE ? "Steuerung" : "Control", value: isFR ? "0 °C à 121 °C (spécification fabricant)" : isDE ? "0 °C bis 121 °C (Herstellerangabe)" : "0 °C to 121 °C (manufacturer spec)", icon: Thermometer },
           { label: isFR ? "Matériau" : isDE ? "Material" : "Material", value: isFR ? "Inox 304 Alimentaire" : isDE ? "Lebensmittel-Edelstahl 304" : "Food-Grade 304 Steel", icon: FlaskConical },
-          { label: isFR ? "Garantie" : isDE ? "Garantie" : "Warranty", value: isFR ? "1 an commerciale + 2 ans légale" : isDE ? "1 J. + 2 J. gesetzlich" : "1-Yr Commercial + 2-Yr Legal", icon: ShieldCheck }
+          { label: isFR ? "Garantie" : isDE ? "Garantie" : "Warranty", value: isFR ? "Garantie légale de conformité 2 ans" : isDE ? "2 Jahre gesetzliche Gewährleistung" : "2-Yr Legal Conformity Warranty", icon: ShieldCheck }
         ]
       };
     })(),
@@ -274,10 +274,10 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       originalPrice: 87.50,
       images: [trioPouchesImg, duoArgilesImg, seveFondamentaleImg],
       description: isFR 
-        ? "Le coffret complet réunissant l'intégralité de nos 4 mélanges de plantes (Sève, Nuit, Digestion, Articulaire) et le Duo Argiles."
+        ? "Le coffret complet réunissant l'intégralité de nos 4 mélanges (Sève, Douceur du Soir, Fraîcheur & Légèreté, Souplesse & Détente) et le Duo Argiles."
         : isDE
-        ? "Das Komplett-Set mit allen 4 Bio-Pflanzenmischungen (Saft, Nacht, Verdauung, Gelenke) und dem Erden-Duo."
-        : "Our complete botanical bundle bringing together all 4 organic plant blends (Sap, Night, Digestion, Joint) and the Clay Duo.",
+        ? "Das Komplett-Set mit allen 4 Bio-Pflanzenmischungen (Saft, Abendaufguss, Frische & Leichtigkeit, Geschmeidigkeit) und dem Erden-Duo."
+        : "Our complete botanical bundle bringing together all 4 organic plant blends (Sap, Evening Calm, Freshness & Lightness, Suppleness & Relaxation) and the Clay Duo.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <p class="text-lg mb-8">Ce pack complet regroupe l'expertise botanique et minérale de Bloom dans un coffret prêt à extraire.</p>
@@ -285,9 +285,9 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <ul class="space-y-2 mb-8">
             <li>• <strong>Duo Argiles :</strong> Zéolithe & Bentonite micronisées (6µm)</li>
             <li>• <strong>Kit Sève Fondamentale :</strong> Prêle, Ortie, Romarin & Ginkgo</li>
-            <li>• <strong>Kit Nuit Profonde :</strong> Valériane & Passiflore — Rituel du soir</li>
-            <li>• <strong>Kit Équilibre Botanique :</strong> Brou de Noix, Gingembre, Romarin & Ginkgo</li>
-            <li>• <strong>Kit Mouvement Libre :</strong> Reine des Prés, Gingembre & Boswellia</li>
+            <li>• <strong>Infusion Douceur du Soir :</strong> Valériane & Passiflore Bio</li>
+            <li>• <strong>Infusion Fraîcheur & Légèreté :</strong> Aromates & Plantes Bio</li>
+            <li>• <strong>Infusion Souplesse & Détente :</strong> Reine-des-Prés, Gingembre & Boswellia</li>
           </ul>
         </div>
       ` : isDE ? `
@@ -297,9 +297,9 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <ul class="space-y-2 mb-8">
             <li>• <strong>Erden-Duo:</strong> Zeolith & Bentonit (6µm)</li>
             <li>• <strong>Set Fundamentaler Saft:</strong> Ackerschachtelhalm, Brennnessel, Rosmarin & Ginkgo</li>
-            <li>• <strong>Set Tiefe Nacht:</strong> Baldrian & Passionsblume — Abendritual</li>
-            <li>• <strong>Set Botanisches Gleichgewicht:</strong> Walnussschale, Ingwer, Rosmarin & Ginkgo</li>
-            <li>• <strong>Set Freie Bewegung:</strong> Mädesüß, Ingwer & Boswellia</li>
+            <li>• <strong>Sanfter Abendaufguss:</strong> Bio-Baldrian & Passionsblume</li>
+            <li>• <strong>Frische- & Leichtigkeit-Aufguss:</strong> Aromaten & Bio-Kräuter</li>
+            <li>• <strong>Geschmeidigkeits- & Entspannungsaufguss:</strong> Mädesüß, Ingwer & Boswellia</li>
           </ul>
         </div>
       ` : `
@@ -309,9 +309,9 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           <ul class="space-y-2 mb-8">
             <li>• <strong>Clay Duo:</strong> Micronized Zeolite & Bentonite (6µm)</li>
             <li>• <strong>Fundamental Sap Kit:</strong> Horsetail, Nettle, Rosemary & Ginkgo</li>
-            <li>• <strong>Deep Night Kit:</strong> Valerian & Passionflower — Evening Ritual</li>
-            <li>• <strong>Botanical Balance Kit:</strong> Walnut Hull, Ginger, Rosemary & Ginkgo</li>
-            <li>• <strong>Free Movement Kit:</strong> Meadowsweet, Ginger & Boswellia</li>
+            <li>• <strong>Evening Calm Infusion:</strong> Organic Valerian & Passionflower</li>
+            <li>• <strong>Freshness & Lightness Infusion:</strong> Organic Herbs & Aromatics</li>
+            <li>• <strong>Suppleness & Relaxation Infusion:</strong> Meadowsweet, Ginger & Boswellia</li>
           </ul>
         </div>
       `,
@@ -321,16 +321,16 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       ]
     },
     'pack-signature': {
-      name: isFR ? "PACK SIGNATURE — BloomLab® + Herbier Complet + 3 Mois Premium Académie" : isDE ? "SIGNATURE-PAKET — BloomLab® + Vollständiges Herbarium + 3 Monate Premium" : "SIGNATURE PACK — BloomLab® + Complete Herbarium + 3 Months Premium Academy",
+      name: isFR ? "PACK SIGNATURE — BloomLab® + Herbier Complet + Bibliothèque numérique incluse" : isDE ? "SIGNATURE-PAKET — BloomLab® + Vollständiges Herbarium + Digitale Bibliothek inklusive" : "SIGNATURE PACK — BloomLab® + Complete Herbarium + Digital Library Included",
       subtitle: isFR ? "LE PLUS POPULAIRE — L'AUTONOMIE BOTANIQUE TOTALE" : isDE ? "AM BELIEBTESTEN — VOLLE BOTANISCHE AUTONOMIE" : "MOST POPULAR — TOTAL BOTANICAL AUTONOMY",
       price: 289.00,
       originalPrice: 349.00,
       images: ["/img/produit/pack-signature-1200x1200.jpg", bloomLabImg, trioPouchesImg, duoArgilesImg, seveFondamentaleImg, nuitProfondeImg],
       description: isFR 
-        ? "Machine BloomLab® Inox 304, Kit accessoires apothicaire, L'Herbier Complet (4 mélanges), Duo Argiles (Zéolithe-Bentonite) et 3 mois d'accès Premium Académie."
+        ? "Machine BloomLab® Inox 304, Kit accessoires apothicaire, L'Herbier Complet (4 mélanges), Duo Argiles (Zéolithe-Bentonite) et accès complet à la Bibliothèque numérique & 100 recettes inclus."
         : isDE
-        ? "BloomLab® 304-Edelstahl, Apotheker-Zubehörset, Vollständiges Herbarium (4 Mischungen), Erden-Duo (Zeolith-Bentonit) und 3 Monate Premium-Zugang zur Akademie."
-        : "BloomLab® 304 Steel Machine, Apothecary Kit, Complete Herbarium (4 blends), Clay Duo (Zeolite-Bentonite), and 3 months Premium Academy access.",
+        ? "BloomLab® 304-Edelstahl, Apotheker-Zubehörset, Vollständiges Herbarium (4 Mischungen), Erden-Duo (Zeolith-Bentonit) und voller Zugang zur digitalen Bibliothek & 100 Rezepten inklusive."
+        : "BloomLab® 304 Steel Machine, Apothecary Kit, Complete Herbarium (4 blends), Clay Duo (Zeolite-Bentonite), and full access to the Digital Library & 100 recipes included.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <div class="bg-[#3E4A3D] text-white p-8 rounded-[40px] mb-12 shadow-lg" style="background-color: #3E4A3D; color: #ffffff;">
@@ -415,27 +415,27 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
               </div>
               <div class="text-center group">
                 <div class="aspect-square bg-white rounded-2xl mb-3 overflow-hidden border border-botanik-green/10 shadow-sm group-hover:border-botanik-orange transition-colors">
-                  <img src="${nuitProfondeImg}" alt="Nuit Profonde" class="w-full h-full object-cover p-2" />
+                  <img src="${nuitProfondeImg}" alt="Infusion Douceur du Soir" class="w-full h-full object-cover p-2" />
                 </div>
-                <span class="text-[10px] font-bold text-botanik-green uppercase tracking-tighter">NUIT PROFONDE</span>
+                <span class="text-[10px] font-bold text-botanik-green uppercase tracking-tighter">DOUCEUR DU SOIR</span>
               </div>
               <div class="text-center group">
                 <div class="aspect-square bg-white rounded-2xl mb-3 overflow-hidden border border-botanik-green/10 shadow-sm group-hover:border-botanik-orange transition-colors">
-                  <img src="${digestionImg}" alt="Équilibre & Flux" class="w-full h-full object-cover p-2" />
+                  <img src="${digestionImg}" alt="Infusion Fraîcheur & Légèreté" class="w-full h-full object-cover p-2" />
                 </div>
-                <span class="text-[10px] font-bold text-botanik-green uppercase tracking-tighter">ÉQUILIBRE & FLUX</span>
+                <span class="text-[10px] font-bold text-botanik-green uppercase tracking-tighter">FRAÎCHEUR & LÉGÈRETÉ</span>
               </div>
               <div class="text-center group">
                 <div class="aspect-square bg-white rounded-2xl mb-3 overflow-hidden border border-botanik-green/10 shadow-sm group-hover:border-botanik-orange transition-colors">
-                  <img src="${feuArticulaireImg}" alt="Mouvement Libre" class="w-full h-full object-cover p-2" />
+                  <img src="${feuArticulaireImg}" alt="Infusion Souplesse & Détente" class="w-full h-full object-cover p-2" />
                 </div>
-                <span class="text-[10px] font-bold text-botanik-green uppercase tracking-tighter">MOUVEMENT LIBRE</span>
+                <span class="text-[10px] font-bold text-botanik-green uppercase tracking-tighter">SOUPLESSE & DÉTENTE</span>
               </div>
               <div class="text-center group">
                 <div class="aspect-square bg-white rounded-2xl mb-3 overflow-hidden border border-botanik-green/10 shadow-sm group-hover:border-botanik-orange transition-colors">
-                  <img src="${bouclierHiverImg}" alt="Bouclier Hiver" class="w-full h-full object-cover p-2" />
+                  <img src="${bouclierHiverImg}" alt="Infusion Épicée d'Hiver" class="w-full h-full object-cover p-2" />
                 </div>
-                <span class="text-[10px] font-bold text-botanik-green uppercase tracking-tighter">BOUCLIER HIVER</span>
+                <span class="text-[10px] font-bold text-botanik-green uppercase tracking-tighter">ÉPICÉE D'HIVER</span>
               </div>
               <div class="text-center group">
                 <div class="aspect-square bg-white rounded-2xl mb-3 overflow-hidden border border-botanik-green/10 shadow-sm group-hover:border-botanik-orange transition-colors">
@@ -484,15 +484,15 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
         <div class="prose prose-botanik max-w-none space-y-6">
           <div class="bg-[#3E4A3D] text-white p-8 rounded-[32px] shadow-lg" style="background-color: #3E4A3D; color: #ffffff;">
             <h2 class="text-2xl font-bold text-white mb-2 text-center">${isDE ? "SIGNATURE-PAKET 2026" : "2026 SIGNATURE PACK"}</h2>
-            <p class="text-base text-white/90 text-center">${isDE ? "BloomLab® + Vollständiges Herbarium + Erden-Duo + 3 Monate Premium Akademie" : "BloomLab® + Complete Herbarium + Clay Duo + 3 Months Premium Academy"}</p>
+            <p class="text-base text-white/90 text-center">${isDE ? "BloomLab® + Vollständiges Herbarium + Erden-Duo + Digitale Bibliothek & 100 Rezepte inklusive" : "BloomLab® + Complete Herbarium + Clay Duo + Digital Library & 100 Recipes Included"}</p>
           </div>
-          <p class="text-lg">${isDE ? "Das umfassende Komplettpaket: Extrahieren Sie das volle pflanzliche Totum zu Hause mit präziser A/B-Temperatursteuerung, dem Zeolith-Bentonit-Erden-Duo und 4 Bio-Pflanzenmischungen." : "The complete autonomy pack including the BloomLab® 304 steel extractor, apothecary kit, Complete Herbarium (4 blends), Clay Duo, and 3 months Premium Academy access."}</p>
+          <p class="text-lg">${isDE ? "Das umfassende Komplettpaket: Extrahieren Sie das volle pflanzliche Totum zu Hause mit präziser A/B-Temperatursteuerung, dem Zeolith-Bentonit-Erden-Duo und 4 Bio-Pflanzenmischungen." : "The complete autonomy pack including the BloomLab® 304 steel extractor, apothecary kit, Complete Herbarium (4 blends), Clay Duo, and full access to the Digital Library & 100 recipes included."}</p>
         </div>
       `,
       specs: [
         { label: isFR ? "Économie" : isDE ? "Ersparnis" : "Savings", value: "60€", icon: Award },
         { label: isFR ? "Plantes" : isDE ? "Pflanzen" : "Botanicals", value: isFR ? "L'Herbier Complet" : isDE ? "Vollständiges Herbarium" : "Complete Herbarium", icon: Leaf },
-        { label: isFR ? "Accès" : isDE ? "Zugang" : "Access", value: isFR ? "3 mois Premium Académie" : isDE ? "3 Monate Premium" : "3 Months Premium Academy", icon: ShieldCheck }
+        { label: isFR ? "Accès" : isDE ? "Zugang" : "Access", value: isFR ? "Bibliothèque numérique & 100 recettes incluses" : isDE ? "Digitale Bibliothek & 100 Rezepte inklusive" : "Digital Library & 100 Recipes Included", icon: ShieldCheck }
       ]
     },
     'kit-starter': {
@@ -631,20 +631,20 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       specs: [{ label: isFR ? "Format" : isDE ? "Inhalt" : "Size", value: "50g", icon: Leaf }]
     },
     'kit-nuit': {
-      name: isFR ? "NUIT PROFONDE" : isDE ? "TIEFE NACHT" : "DEEP NIGHT",
-      subtitle: isFR ? "RITUEL DU SOIR" : isDE ? "ABENDRITUAL" : "EVENING RITUAL",
+      name: isFR ? "Infusion Douceur du Soir — Valériane & Passiflore Bio" : isDE ? "Sanfter Abendaufguss — Bio-Baldrian & Passionsblume" : "Evening Calm Infusion — Organic Valerian & Passionflower",
+      subtitle: isFR ? "INFUSION DOUCEUR DU SOIR" : isDE ? "ABENDRITUAL" : "EVENING RITUAL",
       price: 9.90,
       images: [nuitProfondeImg, trioPouchesImg, "/assets/images/herbs_close_up_cleaned_1786616800877.jpg", "/assets/images/modern_herbalist_shelves_1786699793560.jpg"],
       description: isFR 
-        ? "Le MÉLANGE NUIT PROFONDE associe racines de Valériane et parties aériennes de Passiflore pour vos rituels botaniques du soir."
+        ? "L'INFUSION DOUCEUR DU SOIR associe racines de Valériane et parties aériennes de Passiflore bio pour vos rituels botaniques du soir."
         : isDE
-        ? "TIEFE NACHT kombiniert Baldrianwurzeln (Beutel A) und Passionsblume (Beutel B) in einer zweiphasigen Extraktion für Ihr Abendritual."
-        : "DEEP NIGHT pairs dense Valerian root (Pouch A) and delicate Passionflower aerial parts (Pouch B) for your evening botanical ritual.",
+        ? "SANFTER ABENDAUFGUSS kombiniert Bio-Baldrianwurzeln (Beutel A) und Passionsblume (Beutel B) für Ihr Abendritual."
+        : "EVENING CALM INFUSION pairs organic Valerian root (Pouch A) and delicate Passionflower aerial parts (Pouch B) for your evening botanical ritual.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <div class="bg-[#1B3022]/5 p-10 rounded-[40px] mb-12">
             <p class="text-xl leading-relaxed text-botanik-green">
-              Le MÉLANGE NUIT PROFONDE associe deux plantes classiques des rituels herboristes de fin de journée : les racines de Valériane et les parties aériennes de Passiflore. Grâce au séquençage en deux paliers thermiques, les parties ligneuses et les sommités fleuries sont extraites séparément dans le respect de leur fragilité aromatique.
+              L'INFUSION DOUCEUR DU SOIR associe deux plantes classiques des rituels herboristes de fin de journée : les racines de Valériane et les parties aériennes de Passiflore. Grâce au séquençage en deux paliers thermiques, les parties ligneuses et les sommités fleuries sont extraites séparément dans le respect de leur fragilité aromatique.
             </p>
           </div>
 
@@ -699,7 +699,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </div>
 
           <div class="bg-[#3E4A3D] text-white p-10 rounded-[40px] mb-12 shadow-lg" style="background-color: #3E4A3D; color: #ffffff;">
-            <h4 class="font-bold mb-6 text-white text-xl">Usage du Concentré "NUIT PROFONDE"</h4>
+            <h4 class="font-bold mb-6 text-white text-xl">Usage de l'Infusion "Douceur du Soir"</h4>
             <div class="grid md:grid-cols-2 gap-8">
               <div>
                 <span class="block font-bold text-botanik-orange mb-2">Boisson Tiède du Soir</span>
@@ -754,20 +754,20 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       specs: [{ label: isFR ? "Format" : isDE ? "Inhalt" : "Size", value: "50g", icon: Leaf }]
     },
     'kit-digestion': {
-      name: isFR ? "ÉQUILIBRE BOTANIQUE" : isDE ? "BOTANISCHES GLEICHGEWICHT" : "BOTANICAL BALANCE",
-      subtitle: isFR ? "AROMATES & INFUSIONS" : isDE ? "KRÄUTER & AUFGÜSSE" : "HERBS & INFUSIONS",
+      name: isFR ? "Infusion Fraîcheur & Légèreté — Aromates & Plantes Bio" : isDE ? "Frische- & Leichtigkeit-Aufguss — Aromaten & Bio-Kräuter" : "Freshness & Lightness Infusion — Organic Herbs & Aromatics",
+      subtitle: isFR ? "INFUSION FRAÎCHEUR & LÉGÈRETÉ" : isDE ? "KRÄUTER & AUFGÜSSE" : "HERBS & INFUSIONS",
       price: 9.90,
       images: [digestionImg, trioPouchesImg, "/assets/images/herbs_close_up_cleaned_1786616800877.jpg", "/assets/images/natural_remedies_cleaned_1786616831671.jpg"],
       description: isFR 
-        ? "Le MÉLANGE ÉQUILIBRE BOTANIQUE associe Brou de Noix, Gingembre, Romarin et Ginkgo dans un rituel aromatique traditionnel d'après-repas."
+        ? "L'INFUSION FRAÎCHEUR & LÉGÈRETÉ associe Brou de Noix, Gingembre, Romarin et Ginkgo bio dans un rituel aromatique traditionnel d'après-repas."
         : isDE
-        ? "BOTANISCHES GLEICHGEWICHT kombiniert Walnussschale, Ingwer, Rosmarin und Ginkgo als klassische Kräutermischung nach dem Essen."
-        : "BOTANICAL BALANCE pairs Walnut Hull, Ginger, Rosemary, and Ginkgo via sequential extraction for traditional after-meal herbal infusions.",
+        ? "FRISCHE- & LEICHTIGKEIT-AUFGUSS kombiniert Walnussschale, Ingwer, Rosmarin und Ginkgo als klassische Kräutermischung nach dem Essen."
+        : "FRESHNESS & LIGHTNESS INFUSION pairs Walnut Hull, Ginger, Rosemary, and Ginkgo via sequential extraction for traditional after-meal herbal infusions.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <div class="bg-[#1B3022]/5 p-10 rounded-[40px] mb-12">
             <p class="text-xl leading-relaxed text-botanik-green">
-              Le MÉLANGE ÉQUILIBRE BOTANIQUE réunit des plantes aromatiques et taniques issues de l'herboristerie traditionnelle (Brou de Noix, Gingembre, Romarin et Ginkgo). Préparé en deux paliers thermiques distincts, il permet d'extraire les fractions ligneuses puis les essences aromatiques dans un rituel d'infusion d'après-repas.
+              L'INFUSION FRAÎCHEUR & LÉGÈRETÉ réunit des aromates et plantes bio issus de l'herboristerie traditionnelle (Brou de Noix, Gingembre, Romarin et Ginkgo). Préparée en deux paliers thermiques distincts, elle permet d'extraire les fractions ligneuses puis les essences aromatiques dans un rituel d'infusion d'après-repas.
             </p>
           </div>
 
@@ -822,7 +822,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </div>
 
           <div class="bg-[#3E4A3D] text-white p-10 rounded-[40px] mb-12 shadow-lg" style="background-color: #3E4A3D; color: #ffffff;">
-            <h4 class="font-bold mb-6 text-white text-xl">Usage du Concentré "ÉQUILIBRE BOTANIQUE"</h4>
+            <h4 class="font-bold mb-6 text-white text-xl">Usage de l'Infusion "Fraîcheur & Légèreté"</h4>
             <div class="grid md:grid-cols-2 gap-8">
               <div>
                 <span class="block font-bold text-botanik-orange mb-2">Usage Alimentaire (Rituel d'après-repas)</span>
@@ -877,20 +877,20 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       specs: [{ label: isFR ? "Format" : isDE ? "Inhalt" : "Size", value: "50g", icon: Leaf }]
     },
     'kit-articulaire': {
-      name: isFR ? "MOUVEMENT LIBRE" : isDE ? "FREIE BEWEGUNG" : "FREE MOVEMENT",
-      subtitle: isFR ? "SYNERGIE RÉSINE & HERBORISTERIE" : isDE ? "HARZ & KRÄUTER-SYNERGIE" : "RESIN & HERBAL SYNERGY",
+      name: isFR ? "Infusion Souplesse & Détente — Reine-des-Prés, Gingembre & Boswellia" : isDE ? "Geschmeidigkeits- & Entspannungsaufguss — Mädesüß, Ingwer & Boswellia" : "Suppleness & Relaxation Infusion — Meadowsweet, Ginger & Boswellia",
+      subtitle: isFR ? "INFUSION SOUPLESSE & DÉTENTE" : isDE ? "HARZ & KRÄUTER-SYNERGIE" : "RESIN & HERBAL SYNERGY",
       price: 9.90,
       images: [feuArticulaireImg, trioPouchesImg, "/assets/images/herbs_close_up_cleaned_1786616800877.jpg", "/assets/images/extraction_precision_cleaned_1786616821723.jpg"],
       description: isFR 
-        ? "Le MÉLANGE MOUVEMENT LIBRE associe Reine des Prés, Gingembre et résine de Boswellia Serrata dans une extraction séquencée en deux paliers."
+        ? "L'INFUSION SOUPLESSE & DÉTENTE associe Reine-des-Prés, Gingembre et résine de Boswellia Serrata dans une extraction séquencée en deux paliers."
         : isDE
-        ? "FREIE BEWEGUNG kombiniert Mädesüß, Ingwer und Boswellia Serrata Harz in sequenzieller Extraktion."
-        : "FREE MOVEMENT combines Meadowsweet, Ginger, and Boswellia Serrata resin in a two-step sequential extraction.",
+        ? "GESCHMEIDIGKEITS- & ENTSPANNUNGSAUFGUSS kombiniert Mädesüß, Ingwer und Boswellia Serrata Harz in sequenzieller Extraktion."
+        : "SUPPLENESS & RELAXATION INFUSION combines Meadowsweet, Ginger, and Boswellia Serrata resin in a two-step sequential extraction.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <div class="bg-[#1B3022]/5 p-10 rounded-[40px] mb-12">
             <p class="text-xl leading-relaxed text-botanik-green">
-              Le MÉLANGE MOUVEMENT LIBRE associe des sommités de Reine des Prés, du rhizome de Gingembre et de la gomme-résine de Boswellia Serrata. Grâce à l'extraction séquentielle en deux paliers, les dérivés aromatiques des plantes feuillées et la fraction résineuse du Boswellia sont extraits séparément selon leur solubilité.
+              L'INFUSION SOUPLESSE & DÉTENTE associe des sommités de Reine-des-Prés, du rhizome de Gingembre et de la gomme-résine de Boswellia Serrata. Grâce à l'extraction séquentielle en deux paliers, les dérivés aromatiques des plantes feuillées et la fraction résineuse du Boswellia sont extraits séparément selon leur solubilité.
             </p>
           </div>
 
@@ -945,7 +945,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </div>
 
           <div class="bg-[#3E4A3D] text-white p-10 rounded-[40px] mb-12 shadow-lg" style="background-color: #3E4A3D; color: #ffffff;">
-            <h4 class="font-bold mb-6 text-white text-xl">Usage du Concentré "MOUVEMENT LIBRE"</h4>
+            <h4 class="font-bold mb-6 text-white text-xl">Usage de l'Infusion "Souplesse & Détente"</h4>
             <div class="grid md:grid-cols-2 gap-8">
               <div>
                 <span class="block font-bold text-botanik-orange mb-2">Boisson Botanique & Extrait Glycériné</span>
@@ -985,7 +985,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
 
           <div class="bg-[#1B3022]/5 p-6 rounded-2xl mb-8">
             <div class="text-[#F97316] font-bold text-sm mb-2 uppercase tracking-widest">Offre Privilège</div>
-            <p class="text-sm font-bold text-botanik-green">SOUVERAINETÉ TOTALE : L'achat de 3 mélanges séquentiels (au choix) active la LIVRAISON OFFERTE.</p>
+            <p class="text-sm font-bold text-botanik-green">AUTONOMIE BOTANIQUE : L'achat de 3 mélanges séquentiels (au choix) active la LIVRAISON OFFERTE.</p>
           </div>
 
           <div class="bg-red-50 p-6 rounded-2xl mt-8 text-xs text-red-900 italic">
@@ -1004,20 +1004,20 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
       specs: [{ label: isFR ? "Format" : isDE ? "Inhalt" : "Size", value: "50g", icon: Leaf }]
     },
     'kit-bouclier-hiver': {
-      name: isFR ? "BOUCLIER HIVER" : isDE ? "WINTERSCHUTZ" : "WINTER SHIELD",
-      subtitle: isFR ? "BOTANIQUE DE SAISON" : isDE ? "SAISONALE KRÄUTERMISCHUNG" : "SEASONAL BOTANICALS",
+      name: isFR ? "Infusion Épicée d'Hiver — Gingembre, Girofle, Sureau & Thym" : isDE ? "Würziger Winteraufguss — Ingwer, Nelke, Holunder & Thymian" : "Spiced Winter Infusion — Ginger, Clove, Elderberry & Thyme",
+      subtitle: isFR ? "INFUSION ÉPICÉE D'HIVER" : isDE ? "SAISONALE KRÄUTERMISCHUNG" : "SEASONAL BOTANICALS",
       price: 9.90,
       images: [bouclierHiverImg, trioPouchesImg, "/assets/images/herbs_close_up_cleaned_1786616800877.jpg", "/assets/images/natural_remedies_cleaned_1786616831671.jpg"],
       description: isFR 
-        ? "Le MÉLANGE BOUCLIER HIVER associe Gingembre, Girofle, baies de Sureau, Thym et Romarin dans une extraction séquencée de saison."
+        ? "L'INFUSION ÉPICÉE D'HIVER associe Gingembre, Girofle, baies de Sureau, Thym et Romarin dans une extraction séquencée de saison."
         : isDE
-        ? "WINTERSCHUTZ kombiniert Ingwer, Nelken, Holunderbeeren, Thymian und Rosmarin als aromatische Wintermischung."
-        : "WINTER SHIELD pairs Ginger, Clove, Elderberry, Thyme, and Rosemary in sequential extraction for seasonal herbal infusions.",
+        ? "WÜRZIGER WINTERAUFGUSS kombiniert Ingwer, Nelken, Holunderbeeren, Thymian und Rosmarin als aromatische Wintermischung."
+        : "SPICED WINTER INFUSION pairs Ginger, Clove, Elderberry, Thyme, and Rosemary in sequential extraction for seasonal herbal infusions.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
           <div class="bg-[#1B3022]/5 p-10 rounded-[40px] mb-12">
             <p class="text-xl leading-relaxed text-botanik-green">
-              Le MÉLANGE BOUCLIER HIVER réunit des épices et plantes aromatiques de la tradition hivernale (Gingembre, Girofle, baies de Sureau, Thym, Romarin). Le séquençage en deux paliers respecte la différence entre épices/baies denses et herbes aromatiques délicates.
+              L'INFUSION ÉPICÉE D'HIVER réunit des épices et plantes aromatiques de la tradition hivernale (Gingembre, Girofle, baies de Sureau, Thym, Romarin). Le séquençage en deux paliers respecte la différence entre épices/baies denses et herbes aromatiques délicates.
             </p>
           </div>
 
@@ -1072,7 +1072,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
           </div>
 
           <div class="bg-[#3E4A3D] text-white p-10 rounded-[40px] mb-12 shadow-lg" style="background-color: #3E4A3D; color: #ffffff;">
-            <h4 class="font-bold mb-6 text-white text-xl">Usage du Concentré "BOUCLIER HIVER"</h4>
+            <h4 class="font-bold mb-6 text-white text-xl">Usage de l'Infusion "Épicée d'Hiver"</h4>
             <div class="grid md:grid-cols-2 gap-8">
               <div>
                 <span class="block font-bold text-botanik-orange mb-2">Boisson Chaude & Extrait</span>
@@ -1315,7 +1315,7 @@ export const getProductSheets = (lang: Language): Record<string, any> => {
         : "Unlimited access to all Bloom protocols, guides, and the complete recipe library.",
       fullDescription: isFR ? `
         <div class="prose prose-botanik max-w-none">
-          <p class="text-lg mb-8">Rejoignez les membres Bloom Précision et débloquez tout le potentiel de votre souveraineté botanique.</p>
+          <p class="text-lg mb-8">Rejoignez les membres Bloom Précision et débloquez tout le potentiel de votre autonomie botanique.</p>
           <div class="bg-botanik-orange/5 border border-botanik-orange/20 p-6 rounded-2xl mb-8">
             <h4 class="font-bold text-botanik-green mb-4">Conditions & Réglementations :</h4>
             <ul class="space-y-3 text-sm text-botanik-green/80">

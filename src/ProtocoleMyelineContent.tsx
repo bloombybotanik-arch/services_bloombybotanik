@@ -993,14 +993,14 @@ export default function ProtocoleMyelineContent({
                     </div>
 
                     <div 
-                      onClick={() => onNavigate('protocole-sibo')}
+                      onClick={() => onNavigate('phytotherapie-reset')}
                       className="p-5 rounded-2xl bg-[#FAF7F2] border border-[#E7DFD3] hover:border-[#C8AB8A] transition-all cursor-pointer group"
                     >
                       <h4 className="text-sm font-bold text-[#3E4A3D] group-hover:text-[#C8AB8A] mb-1">
-                        Protocole SIBO
+                        Reset Homéostasique
                       </h4>
                       <p className="text-xs text-[#3E4A3D]/70 mb-3">
-                        Assainissement doux du grêle, motilité intestinale et barrière muqueuse.
+                        Approche éducative en 6 phases pour accompagner l'équilibre physiologique du terrain.
                       </p>
                       <span className="text-xs text-[#C8AB8A] font-bold flex items-center gap-1">
                         Découvrir &rarr;
@@ -1008,14 +1008,14 @@ export default function ProtocoleMyelineContent({
                     </div>
 
                     <div 
-                      onClick={() => onNavigate('protocole-psoriasis')}
+                      onClick={() => onNavigate('7-terrains')}
                       className="p-5 rounded-2xl bg-[#FAF7F2] border border-[#E7DFD3] hover:border-[#C8AB8A] transition-all cursor-pointer group"
                     >
                       <h4 className="text-sm font-bold text-[#3E4A3D] group-hover:text-[#C8AB8A] mb-1">
-                        Protocole Psoriasis
+                        Les 7 Terrains Biologiques
                       </h4>
                       <p className="text-xs text-[#3E4A3D]/70 mb-3">
-                        14 semaines de drainage émonctoriel, modulation de l'inflammation et régénération.
+                        Comprendre la dynamique des émonctoires, du rythme circadien et de l'adaptation globale.
                       </p>
                       <span className="text-xs text-[#C8AB8A] font-bold flex items-center gap-1">
                         Découvrir &rarr;

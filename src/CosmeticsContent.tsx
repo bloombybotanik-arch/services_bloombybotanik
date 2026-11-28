@@ -85,7 +85,7 @@ export default function CosmeticsContent({
       <PageIntroHeader
         breadcrumb="Accueil / Votre Pratique / Cosmétique Maison"
         badge="VOTRE PRATIQUE • SOINS TOPIQUES"
-        title={lang === 'fr' ? "Créez votre cosmétique maison à base de plantes" : lang === 'de' ? "Die lebendige botanische Kosmetik" : "Living Botanical Cosmetics"}
+        title={lang === 'fr' ? "Cosmétique Botanique Maison : Macérâts, Sérums & Baumes" : lang === 'de' ? "Botanische Hauskosmetik: Mazerate, Seren & Balsame" : "Homemade Botanical Cosmetics: Macerates, Serums & Balms"}
         subtitle="Nourrir la peau et la barrière cutanée par le Totum médicinal"
         context="Vous êtes dans l'espace formulatoire cosmétique de Bloom by BotaniK. Apprenez à réaliser des baumes, sérums huileux, huiles précieuses et soins d'argiles pures sans perturbateurs endocriniens ni conservateurs chimiques de synthèse."
       />

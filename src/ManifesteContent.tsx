@@ -142,7 +142,7 @@ export default function ManifesteContent({ onBack, onNavigate, lang }: Manifeste
               <div className="relative w-full aspect-[4/3] overflow-hidden rounded-[24px] border border-[#E7DFD3] bg-[#FAF7F2] shadow-sm">
                 <img
                   src="/img/produit/bloomlab-face-1200x1200.jpg"
-                  alt={isFR ? "L'instrument BloomLab® — Rigueur d'extraction et souveraineté du terrain" : isDE ? "Das BloomLab®-Instrument — Extraktionspräzision und Terrainsouveränität" : "The BloomLab® instrument — Extraction rigor and terrain sovereignty"}
+                  alt={isFR ? "L'instrument BloomLab® — Rigueur d'extraction et autonomie botanique" : isDE ? "Das BloomLab®-Instrument — Extraktionspräzision und botanische Autonomie" : "The BloomLab® instrument — Extraction rigor and botanical autonomy"}
                   width={1200}
                   height={1200}
                   loading="eager"
@@ -152,7 +152,7 @@ export default function ManifesteContent({ onBack, onNavigate, lang }: Manifeste
               </div>
               <div className="p-3 bg-white rounded-xl border border-[#E7DFD3] flex items-center justify-between text-xs text-[#3E4A3D]/80 shadow-xs">
                 <span className="font-semibold">{isFR ? "BloomLab® — Instrument d'autonomie" : isDE ? "BloomLab® — Instrument der Autonomie" : "BloomLab® — Autonomy instrument"}</span>
-                <span className="text-[10px] text-[#C8AB8A] font-bold uppercase tracking-wider">{isFR ? "Souveraineté" : isDE ? "Souveränität" : "Sovereignty"}</span>
+                <span className="text-[10px] text-[#C8AB8A] font-bold uppercase tracking-wider">{isFR ? "Autonomie" : isDE ? "Autonomie" : "Autonomy"}</span>
               </div>
             </div>
 
@@ -655,7 +655,7 @@ export default function ManifesteContent({ onBack, onNavigate, lang }: Manifeste
                   </div>
 
                   <p>
-                    Nous mettons entre vos mains la connaissance, la technologie de précision et les matières premières les plus pures pour vous redonner une souveraineté authentique sur votre pratique botanique.
+                    Nous mettons entre vos mains la connaissance, la technologie de précision et les matières premières les plus pures pour vous redonner une véritable autonomie dans votre pratique botanique.
                   </p>
                 </section>
 

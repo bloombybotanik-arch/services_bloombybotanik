@@ -63,7 +63,6 @@ function getLinkedPagesForEntry(id: string, categorie: LexiqueCategory): Lexique
     case 'jarisch-herxheimer':
       return [
         { title: "Le Protocole Reset Homéostatique", url: "/phytotherapie-reset/", view: "phytotherapie-reset" },
-        { title: "Protocole Psoriasis & Terrain", url: "/phytotherapie-reset/protocole-psoriasis/", view: "protocole-psoriasis" },
         { title: "L'Herbier des plantes", url: "/herbier/", view: "herbier" }
       ];
     case 'axe-hpa':

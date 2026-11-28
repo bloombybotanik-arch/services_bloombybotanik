@@ -28,6 +28,7 @@ import { View } from './types';
 import { Language } from './translations';
 import { AcademyNavigation } from './components/AcademyNavigation';
 import { TooltipLexique } from './components/TooltipLexique';
+import SeoHead from './components/SeoHead';
 
 interface ProtocoleDecalcificationPinealeContentProps {
   isPremium?: boolean;
@@ -135,6 +136,14 @@ export default function ProtocoleDecalcificationPinealeContent({
 
   return (
     <div className="min-h-screen bg-[#3E4A3D] text-[#FAF7F2] selection:bg-[#c9a84c]/20 selection:text-white pb-24 font-sans">
+      <SeoHead
+        title="Dossier Éducatif Chronobiologie | Bloom by BotaniK"
+        description="Document d'étude botanique et chronobiologique réservé aux membres — ne remplace pas un avis médical."
+        canonical="https://bloombybotanik.com/academie/protocoles/decalcification-pineale/"
+        lang={lang}
+        noindex
+        nofollow
+      />
       
       {/* 1. Header / Navigation Académie */}
       <AcademyNavigation

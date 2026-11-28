@@ -393,12 +393,12 @@ export default function HomeContent({ onNavigate, lang }: HomeContentProps) {
               <p className="text-xl text-botanik-green font-medium mb-6">{h.guarantee_faq.guarantee}</p>
               <div className="flex items-center gap-4 text-botanik-green/60">
                 <ShieldCheck className="w-6 h-6 text-botanik-orange" />
-                <span>{isFR ? "Garantie légale de conformité 2 ans (UE) + garantie commerciale 1 an" : (lang === 'de' ? "2 Jahre gesetzliche Gewährleistung (EU) + 1 Jahr Herstellergarantie" : "2-year EU legal conformity warranty + 1-year commercial warranty")}</span>
+                <span>{isFR ? "Garantie légale de conformité 2 ans (UE)" : (lang === 'de' ? "2 Jahre gesetzliche Gewährleistung (EU)" : "2-year EU legal conformity warranty")}</span>
               </div>
             </div>
             
             <div className="rounded-[40px] overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
-              <OptimizedImage src={img8} className="w-full aspect-video object-cover" alt="Souveraineté Sanitaire" />
+              <OptimizedImage src={img8} className="w-full aspect-video object-cover" alt={isFR ? "Autonomie Botanique" : lang === 'de' ? "Botanische Autonomie" : "Botanical Autonomy"} />
             </div>
           </div>
           

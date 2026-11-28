@@ -33,69 +33,34 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
     pricingRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleSubscribe = (type: 'monthly' | 'annual' | 'complet') => {
-    if (type === 'complet') {
-      const bloomCompletProduct = {
-        id: 'bloom-complet',
-        name: isFR
-          ? "Bloom Complet — L'accompagnement botanique mensuel"
-          : isDE
-          ? 'Bloom Komplett — Monatliche botanische Begleitung'
-          : 'Bloom Complete — Monthly Botanical Guidance',
-        subtitle: isFR
-          ? 'Préparation botanique mensuelle + guide + accès inclus (59 €/mois)'
-          : isDE
-          ? 'Monatliche botanische Zubereitung + Leitfaden + Zugang inklusive (59 €/Monat)'
-          : 'Monthly botanical blend + guide + included access (59 €/month)',
-        price: 59,
-        image: '/assets/images/bloomlab_main_1784887530345.jpeg',
-        description: isFR
-          ? "Une préparation botanique Bloom livrée chaque mois, accompagnée de son guide d'utilisation, de vos accès aux recettes et méthodes, et d'Alma pour votre orientation."
-          : isDE
-          ? 'Eine monatlich gelieferte botanische Zubereitung von Bloom samt Anwendungsleitfaden, Zugang zu Rezepten & Methoden und Orientierung mit Alma.'
-          : 'A guided botanical preparation delivered monthly, with discovery guide, recipe & method access, and Alma guidance.',
-        isDigital: false,
-        isSubscription: true,
-        quantity: 1,
-      };
-      if (onAddToCart) {
-        onAddToCart(bloomCompletProduct);
-      }
-      onNavigate('cart');
-      return;
-    }
-
-    const premiumProduct = {
-      id: 'premium-access',
+  const handleSubscribe = () => {
+    const bloomCompletProduct = {
+      id: 'bloom-complet',
       name: isFR
-        ? type === 'annual'
-          ? 'Abonnement Annuel Premium'
-          : 'Abonnement Mensuel Premium'
+        ? "Bloom Complet — L'accompagnement botanique mensuel"
         : isDE
-        ? type === 'annual'
-          ? 'Jährliches Premium-Abo'
-          : 'Monatliches Premium-Abo'
-        : type === 'annual'
-        ? 'Annual Premium Subscription'
-        : 'Monthly Premium Subscription',
-      price: type === 'annual' ? 79 : 9,
+        ? 'Bloom Komplett — Monatliche botanische Begleitung'
+        : 'Bloom Complete — Monthly Botanical Guidance',
+      subtitle: isFR
+        ? 'Préparation botanique mensuelle + guide + accès inclus (59 €/mois)'
+        : isDE
+        ? 'Monatliche botanische Zubereitung + Leitfaden + Zugang inklusive (59 €/Monat)'
+        : 'Monthly botanical blend + guide + included access (59 €/month)',
+      price: 59,
       image: '/assets/images/bloomlab_main_1784887530345.jpeg',
       description: isFR
-        ? "Accès illimité à l'intégralité des 60+ protocoles experts Bloom, fiches plantes et mises à jour continues."
+        ? "Une préparation botanique Bloom livrée chaque mois, accompagnée de son guide d'utilisation, de vos accès aux recettes et méthodes, et d'Alma pour votre orientation."
         : isDE
-        ? 'Unbegrenzter Zugang zu allen über 60 Bloom-Expertenprotokollen, Pflanzenmonografien und laufenden Updates.'
-        : 'Unlimited access to all 60+ Bloom expert protocols, plant monographs, and continuous updates.',
-      isDigital: true,
+        ? 'Eine monatlich gelieferte botanische Zubereitung von Bloom samt Anwendungsleitfaden, Zugang zu Rezepten & Methoden und Orientierung mit Alma.'
+        : 'A guided botanical preparation delivered monthly, with discovery guide, recipe & method access, and Alma guidance.',
+      isDigital: false,
       isSubscription: true,
       quantity: 1,
     };
-
     if (onAddToCart) {
-      onAddToCart(premiumProduct);
-      onNavigate('cart');
-    } else {
-      onNavigate('cart');
+      onAddToCart(bloomCompletProduct);
     }
+    onNavigate('cart');
   };
 
   const idealProfileItems = isFR
@@ -340,10 +305,10 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
       {/* Promotional Banner */}
       <div className="bg-[#D97706]/10 text-[#B45309] border-b border-[#D97706]/30 text-center py-2.5 px-4 text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
         {isFR
-          ? '🇫🇷 Ingénierie Botanique Française • Expédition 24/48h • Garantie 1 an • Paiement en 3x sans frais'
+          ? '🇫🇷 Ingénierie Botanique Française • Expédition 24/48h • Garantie légale 2 ans • Paiement en 3x sans frais'
           : isDE
-          ? '🇫🇷 Französische Botanik-Ingenieurskunst • Versand 24/48h • 1 Jahr Garantie • 3x zinsfrei'
-          : '🇫🇷 French Botanical Engineering • 24/48h Shipping • 1-Year Warranty • 3x Fee-Free'}
+          ? '🇫🇷 Französische Botanik-Ingenieurskunst • Versand 24/48h • 2 Jahre gesetzliche Gewährleistung • 3x zinsfrei'
+          : '🇫🇷 French Botanical Engineering • 24/48h Shipping • 2-Year Legal Conformity Warranty • 3x Fee-Free'}
       </div>
 
       {/* 1. Breadcrumb */}
@@ -364,7 +329,7 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
           </button>
           <span className="text-white/40">/</span>
           <span className="text-white font-bold" aria-current="page">
-            {isFR ? 'Abonnement Numérique & Bloom Complet' : isDE ? 'Digital-Abo & Bloom Komplett' : 'Digital Plan & Bloom Complete'}
+            {isFR ? 'Bloom Complet' : isDE ? 'Bloom Komplett' : 'Bloom Complete'}
           </span>
         </nav>
       </div>
@@ -435,7 +400,7 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <button
-              onClick={() => handleSubscribe('complet')}
+              onClick={() => handleSubscribe()}
               className="w-full sm:w-auto px-8 py-4 bg-[#3E4A3D] hover:bg-[#2D372C] text-white rounded-2xl font-bold text-sm transition-all shadow-xl cursor-pointer flex items-center justify-center gap-2"
             >
               <span>
@@ -458,33 +423,33 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
       </section>
 
       {/* 2. Pricing Cards */}
-      <section ref={pricingRef} className="max-w-6xl mx-auto px-6 -mt-10 mb-20 relative z-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-          {/* Formule 1: Digitale Mensuelle */}
+      <section ref={pricingRef} className="max-w-5xl mx-auto px-6 -mt-10 mb-20 relative z-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+          {/* Formule 1: Bibliothèque numérique incluse avec BloomLab® */}
           <div
             className="rounded-3xl p-8 border border-[#E7DFD3] shadow-lg flex flex-col justify-between"
             style={{ backgroundColor: '#FAF7F2', color: '#3E4A3D' }}
           >
             <div>
               <div className="text-xs uppercase font-bold tracking-widest text-[#3E4A3D]/70 mb-2">
-                {isFR ? 'Formule Essentielle' : isDE ? 'Basis-Tarif' : 'Essential Formula'}
+                {isFR ? 'Inclus avec votre machine' : isDE ? 'Im Gerät enthalten' : 'Included with your machine'}
               </div>
               <h3 className="text-2xl font-bold text-[#3E4A3D] mb-2" style={{ color: '#3E4A3D' }}>
-                {isFR ? 'Digital Mensuel' : isDE ? 'Digital Monatlich' : 'Monthly Digital'}
+                {isFR ? 'Bibliothèque Numérique & 100 Recettes' : isDE ? 'Digitale Bibliothek & 100 Rezepte' : 'Digital Library & 100 Recipes'}
               </h3>
               <p className="text-sm text-[#3E4A3D]/80 mb-6 leading-relaxed">
                 {isFR
-                  ? 'Pour explorer à votre rythme, sans engagement de durée.'
+                  ? "Accès complet à la Bibliothèque numérique et aux 100 recettes inclus avec votre BloomLab®, sans abonnement séparé."
                   : isDE
-                  ? 'Entdecken Sie die Bibliothek in Ihrem Tempo, jederzeit kündbar.'
-                  : 'Explore at your own pace, cancel anytime.'}
+                  ? 'Vollständiger Zugang zur digitalen Bibliothek und den 100 Rezepten im BloomLab® enthalten – ohne separates Abo.'
+                  : 'Full access to the Digital Library and 100 recipes included with your BloomLab®, with no separate subscription.'}
               </p>
-              <div className="mb-6 flex items-baseline gap-1">
+              <div className="mb-6 flex items-baseline gap-2">
                 <span className="text-4xl font-black text-[#3E4A3D]" style={{ color: '#3E4A3D' }}>
-                  9€
+                  {isFR ? 'Inclus' : isDE ? 'Inklusive' : 'Included'}
                 </span>
                 <span className="text-sm text-[#3E4A3D]/70">
-                  {isFR ? '/mois' : isDE ? '/Monat' : '/month'}
+                  {isFR ? 'avec BloomLab® (dès 229 €)' : isDE ? 'mit BloomLab® (ab 229 €)' : 'with BloomLab® (from 229 €)'}
                 </span>
               </div>
               <ul className="space-y-3 text-sm text-[#3E4A3D]/85 mb-8">
@@ -492,49 +457,49 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
                   <Check className="w-4 h-4 text-emerald-700 flex-shrink-0" />
                   <span>
                     {isFR
-                      ? 'Accès aux 60+ fiches recettes et méthodes'
+                      ? 'Accès complet à la Bibliothèque numérique et aux 100 recettes'
                       : isDE
-                      ? 'Zugang zu 60+ Rezepten & Extraktionsmethoden'
-                      : 'Access to 60+ recipe sheets & methods'}
+                      ? 'Vollständiger Zugang zur digitalen Bibliothek & 100 Rezepten'
+                      : 'Full access to Digital Library & 100 recipes'}
                   </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Check className="w-4 h-4 text-emerald-700 flex-shrink-0" />
                   <span>
                     {isFR
-                      ? 'Paramètres précis (t°, temps, solvants)'
+                      ? 'Paramètres précis (température, temps, solvants)'
                       : isDE
-                      ? 'Exakte Parameter (Temp., Zeit, Lösungsmittel)'
-                      : 'Exact parameters (temp., timing, solvents)'}
+                      ? 'Exakte Parameter (Temperatur, Zeit, Lösungsmittel)'
+                      : 'Exact parameters (temperature, timing, solvents)'}
                   </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Check className="w-4 h-4 text-emerald-700 flex-shrink-0" />
                   <span>
                     {isFR
-                      ? 'Résiliable en 1 clic à tout moment'
+                      ? 'Aucun abonnement numérique payant requis'
                       : isDE
-                      ? 'Jederzeit mit 1 Klick kündbar'
-                      : 'Cancel in 1 click anytime'}
+                      ? 'Kein kostenpflichtiges Digital-Abo erforderlich'
+                      : 'No separate paid digital subscription required'}
                   </span>
                 </li>
               </ul>
             </div>
             <button
-              onClick={() => handleSubscribe('monthly')}
+              onClick={() => onNavigate('machine')}
               className="w-full py-3.5 px-6 rounded-2xl border-2 border-[#3E4A3D] text-[#3E4A3D] font-bold text-sm hover:bg-[#3E4A3D] hover:text-white transition-all cursor-pointer"
             >
-              {isFR ? 'Choisir la formule mensuelle' : isDE ? 'Monatstarif wählen' : 'Select Monthly Plan'}
+              {isFR ? 'Découvrir la BloomLab®' : isDE ? 'BloomLab® entdecken' : 'Discover BloomLab®'}
             </button>
           </div>
 
           {/* Formule 2: Bloom Complet */}
           <div
-            className="rounded-3xl p-8 shadow-2xl border-2 border-[#C8AB8A] relative flex flex-col justify-between transform md:-translate-y-4"
+            className="rounded-3xl p-8 shadow-2xl border-2 border-[#C8AB8A] relative flex flex-col justify-between"
             style={{ backgroundColor: '#3E4A3D', color: '#ffffff' }}
           >
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#C8AB8A] text-[#0F261E] text-[11px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md">
-              {isFR ? 'Recommandé • Offre Complète' : isDE ? 'Empfohlen • Komplettpaket' : 'Recommended • Best Value'}
+              {isFR ? 'Accompagnement Mensuel' : isDE ? 'Monatliche Begleitung' : 'Monthly Guidance'}
             </div>
             <div>
               <div
@@ -648,7 +613,7 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
 
             <div>
               <button
-                onClick={() => handleSubscribe('complet')}
+                onClick={() => handleSubscribe()}
                 className="w-full py-4 px-6 rounded-2xl bg-[#3E4A3D] hover:bg-[#2D372C] text-white font-bold text-sm transition-all shadow-lg cursor-pointer mb-4"
                 style={{ backgroundColor: '#C8AB8A', color: '#ffffff' }}
               >
@@ -666,75 +631,6 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
                 </span>
               </div>
             </div>
-          </div>
-
-          {/* Formule 3: Digitale Annuelle */}
-          <div
-            className="rounded-3xl p-8 border border-[#E7DFD3] shadow-lg flex flex-col justify-between"
-            style={{ backgroundColor: '#FAF7F2', color: '#3E4A3D' }}
-          >
-            <div>
-              <div className="text-xs uppercase font-bold tracking-widest text-[#3E4A3D]/70 mb-2">
-                {isFR ? 'Souveraineté Annuelle' : isDE ? 'Jahres-Zugang' : 'Annual Sovereignty'}
-              </div>
-              <h3 className="text-2xl font-bold text-[#3E4A3D] mb-2" style={{ color: '#3E4A3D' }}>
-                {isFR ? 'Digital Annuel' : isDE ? 'Digital Jährlich' : 'Annual Digital'}
-              </h3>
-              <p className="text-sm text-[#3E4A3D]/80 mb-6 leading-relaxed">
-                {isFR
-                  ? "L'accès illimité pendant 1 an avec 2 mois offerts inclus."
-                  : isDE
-                  ? '1 Jahr unbegrenzter Zugang inklusive 2 Gratismonaten.'
-                  : 'Unlimited access for 1 full year with 2 months free.'}
-              </p>
-              <div className="mb-6 flex items-baseline gap-1">
-                <span className="text-4xl font-black text-[#3E4A3D]" style={{ color: '#3E4A3D' }}>
-                  79€
-                </span>
-                <span className="text-sm text-[#3E4A3D]/70">{isFR ? '/an' : isDE ? '/Jahr' : '/year'}</span>
-                <span className="ml-2 text-xs bg-[#C8AB8A]/10 text-[#C8AB8A] font-bold px-2 py-0.5 rounded-full border border-[#C8AB8A]/20">
-                  {isFR ? '2 mois offerts' : isDE ? '2 Monate gratis' : '2 months free'}
-                </span>
-              </div>
-              <ul className="space-y-3 text-sm text-[#3E4A3D]/85 mb-8">
-                <li className="flex items-center gap-3">
-                  <Check className="w-4 h-4 text-emerald-700 flex-shrink-0" />
-                  <span>
-                    {isFR
-                      ? "Tout le catalogue de protocoles d'extraction"
-                      : isDE
-                      ? 'Der gesamte Katalog an Extraktionsprotokollen'
-                      : 'Complete catalog of extraction protocols'}
-                  </span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Check className="w-4 h-4 text-emerald-700 flex-shrink-0" />
-                  <span>
-                    {isFR
-                      ? 'Mises à jour mensuelles des nouvelles recettes'
-                      : isDE
-                      ? 'Monatliche Updates mit neuen Rezepten'
-                      : 'Monthly new recipe & monograph updates'}
-                  </span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Check className="w-4 h-4 text-emerald-700 flex-shrink-0" />
-                  <span>
-                    {isFR
-                      ? 'Économie de plus de 28% par rapport au mensuel'
-                      : isDE
-                      ? 'Über 28% Ersparnis gegenüber dem Monatstarif'
-                      : 'Over 28% savings compared to monthly'}
-                  </span>
-                </li>
-              </ul>
-            </div>
-            <button
-              onClick={() => handleSubscribe('annual')}
-              className="w-full py-3.5 px-6 rounded-2xl border-2 border-[#3E4A3D] text-[#3E4A3D] font-bold text-sm hover:bg-[#3E4A3D] hover:text-white transition-all cursor-pointer"
-            >
-              {isFR ? 'Choisir la formule annuelle (79€)' : isDE ? 'Jahrestarif wählen (79€)' : 'Select Annual Plan (79€)'}
-            </button>
           </div>
         </div>
       </section>
@@ -1255,17 +1151,17 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
             <div className="pt-4">
               <h4 className="font-bold text-[#3E4A3D] text-base mb-2">
                 {isFR
-                  ? 'Quelle est la différence entre Bloom Complet (59€) et le Digital (9€) ?'
+                  ? 'La Bibliothèque numérique est-elle payante en plus de la BloomLab® ?'
                   : isDE
-                  ? 'Was ist der Unterschied zwischen Bloom Komplett (59€) und Digital (9€)?'
-                  : 'Difference between Bloom Complete (59€) and Digital (9€)?'}
+                  ? 'Kostet die digitale Bibliothek zusätzlich zum BloomLab® extra?'
+                  : 'Does the Digital Library cost extra with BloomLab®?'}
               </h4>
               <p className="text-sm text-[#3E4A3D]/80 leading-relaxed">
                 {isFR
-                  ? "L'abonnement Digital (9€/mois) vous donne accès aux ressources numériques (recettes et méthodes). Bloom Complet (59€/mois) inclut en plus la réception à domicile chaque mois de votre préparation botanique Bloom (100 ml) accompagnée de son guide imprimé de découverte."
+                  ? "Non. L'accès complet à la Bibliothèque numérique et aux 100 recettes est inclus avec votre BloomLab®, sans abonnement numérique séparé. Bloom Complet (59 €/mois) correspond quant à lui à l'envoi mensuel à domicile d'une préparation botanique physique (100 ml) et de son guide imprimé."
                   : isDE
-                  ? 'Das Digital-Abo (9€/Monat) gewährt Zugriff auf die Online-Ressourcen (Rezepte und Methoden). Bloom Komplett (59€/Monat) umfasst zusätzlich die monatliche physische Lieferung einer 100-ml-Zubereitung samt gedrucktem Leitfaden.'
-                  : 'The digital plan (9€/month) gives access to online resources. Bloom Complete (59€/month) adds a monthly physical botanical preparation (100 ml) with its printed discovery guide.'}
+                  ? 'Nein. Der vollständige Zugang zur digitalen Bibliothek und zu den 100 Rezepten ist im BloomLab® enthalten – ohne separates Digital-Abo. Bloom Komplett (59 €/Monat) steht für die monatliche Lieferung einer physischen botanischen Zubereitung (100 ml) samt gedrucktem Leitfaden.'
+                  : 'No. Full access to the Digital Library and 100 recipes is included with your BloomLab® with no separate paid digital subscription. Bloom Complete (€59/month) covers monthly delivery of a physical botanical preparation (100 ml) with its printed discovery guide.'}
               </p>
             </div>
 
@@ -1312,7 +1208,7 @@ export default function PremiumInfoContent({ onNavigate, onAddToCart, lang }: Pr
             </p>
             <div className="pt-4">
               <button
-                onClick={() => handleSubscribe('complet')}
+                onClick={() => handleSubscribe()}
                 className="px-8 py-4 bg-[#3E4A3D] hover:bg-[#2D372C] text-white rounded-2xl font-bold text-base transition-all shadow-xl cursor-pointer border border-white/25"
               >
                 {isFR ? 'Rejoindre Bloom Complet' : isDE ? 'Bloom Komplett beitreten' : 'Join Bloom Complete'}

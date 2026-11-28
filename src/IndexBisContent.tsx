@@ -142,7 +142,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
     setCartItem({
       title: type === 'solo' 
         ? (isFR ? "BloomLab® Solo — Inox 304 + Panier micrométrique + Guide 100 recettes" : isDE ? "BloomLab® Solo — Edelstahl 304 + Korb + 100-Rezepte-Leitfaden" : "BloomLab® Solo — 304 Steel + Filter Basket + 100-Recipe Guide") 
-        : (isFR ? "Pack Signature — BloomLab® + Kit apothicaire + Herbier Complet + Duo Argiles + 3 mois Académie" : isDE ? "Signature-Paket — BloomLab® + Apotheker-Set + Herbarium + Tonerde-Duo + 3 Mon. Akademie" : "Signature Pack — BloomLab® + Apothecary Kit + Full Herbarium + Clay Duo + 3 Mo Academy"),
+        : (isFR ? "Pack Signature — BloomLab® + Kit apothicaire + Herbier Complet + Duo Argiles + Bibliothèque numérique & 100 recettes incluses" : isDE ? "Signature-Paket — BloomLab® + Apotheker-Set + Herbarium + Tonerde-Duo + Digitale Bibliothek & 100 Rezepte inklusive" : "Signature Pack — BloomLab® + Apothecary Kit + Full Herbarium + Clay Duo + Digital Library & 100 recipes included"),
       price: price
     });
     setIsCartOpen(true);
@@ -183,28 +183,28 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
     ? [
         "🇫🇷 Marque française • Conception des protocoles & kits botaniques en France",
         "Expédition sous 24/48h",
-        "Garantie légale 2 ans (UE) + commerciale 1 an",
+        "Garantie légale de conformité 2 ans",
         "Paiement en 3x sans frais"
       ]
     : isDE
     ? [
         "🇫🇷 Französische Marke • Protokolle & Botanik-Kits aus Frankreich",
         "Versand in 24/48h",
-        "2 J. gesetzl. Gewährleistung (EU) + 1 J. Garantie",
+        "2 Jahre gesetzliche Gewährleistung",
         "3x zinsfreie Ratenzahlung"
       ]
     : [
         "🇫🇷 French Brand • Protocols & botanical kits crafted in France",
         "24/48h Shipping",
-        "2-Yr EU Legal + 1-Yr Commercial Warranty",
+        "2-Year Legal Conformity Warranty",
         "3x Fee-Free Payment"
       ];
 
   const homeSeoTitle = isFR
-    ? "BloomLab® — Extracteur Botanique de Précision & Totum Végétal | Bloom by BotaniK"
+    ? "BloomLab® — Extracteur Botanique de Précision | Bloom by BotaniK"
     : isDE
-    ? "BloomLab® — Botanischer Präzisionsextraktor & Pflanzen-Totum | Bloom by BotaniK"
-    : "BloomLab® — Precision Botanical Extractor & Whole-Plant Totum | Bloom by BotaniK";
+    ? "BloomLab® — Botanischer Präzisionsextraktor | Bloom by BotaniK"
+    : "BloomLab® — Precision Botanical Extractor | Bloom by BotaniK";
 
   const homeSeoDescription = isFR
     ? "Créez vos huiles de soin, sérums visage, baumes et huiles parfumées maison en 2h. Cuve Inox 304, contrôle thermique précis et guide de 100 recettes en français."
@@ -263,43 +263,20 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
     }
   ];
 
-  const homeProductSchema = {
+  const homeVideoSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Product',
-    '@id': 'https://bloombybotanik.com/bloomlab/#product',
-    name: 'BloomLab® — Extracteur Botanique de Précision',
-    image: [
-      'https://bloombybotanik.com/images/1.png',
-      'https://bloombybotanik.com/images/2.png',
-      'https://bloombybotanik.com/images/8.png',
-      'https://bloombybotanik.com/img/produit/bloomlab-face-1200x1200.jpg',
-    ],
+    '@type': 'VideoObject',
+    '@id': 'https://bloombybotanik.com/#video',
+    name: isFR
+      ? 'BloomLab® — Préparation de sérum botanique à la maison'
+      : isDE
+      ? 'BloomLab® — Herstellung eines botanischen Serums zu Hause'
+      : 'BloomLab® — Homemade Botanical Serum Preparation',
     description: homeSeoDescription,
-    sku: 'BLOOMLAB-V2',
-    brand: {
-      '@type': 'Brand',
-      name: 'Bloom by BotaniK',
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.3',
-      reviewCount: '7',
-      bestRating: '5',
-      worstRating: '1',
-    },
-    offers: {
-      '@type': 'Offer',
-      url: 'https://bloombybotanik.com/bloomlab/',
-      priceCurrency: 'EUR',
-      price: '229.00',
-      priceValidUntil: '2026-12-31',
-      itemCondition: 'https://schema.org/NewCondition',
-      availability: 'https://schema.org/InStock',
-      seller: {
-        '@type': 'Organization',
-        name: 'Bloom by BotaniK',
-      },
-    },
+    thumbnailUrl: ['https://bloombybotanik.com/images/1.png'],
+    uploadDate: '2026-10-01T08:00:00+02:00',
+    contentUrl: 'https://bloombybotanik.com/videos/Full_BloomLab_Serum.mp4',
+    embedUrl: 'https://bloombybotanik.com/',
   };
 
   const homeFaqSchema = {
@@ -323,7 +300,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
       description={homeSeoDescription}
       canonical="https://bloombybotanik.com/"
       lang={isDE ? 'de' : isFR ? 'fr' : 'en'}
-      schemas={[homeProductSchema, homeFaqSchema]}
+      schemas={[homeVideoSchema, homeFaqSchema]}
     />
     <div className="w-full overflow-x-clip bg-[#FAF7F2] text-slate-800 font-sans antialiased selection:bg-[#E8772E] selection:text-white">
 
@@ -360,7 +337,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               {heroIntroMode === 'video' ? (
                 <video
                   ref={introVideoRef}
-                  src="/Full_BloomLab_Serum.mp4"
+                  src="/videos/Full_BloomLab_Serum.mp4"
                   poster={heroImg1}
                   autoPlay
                   muted
@@ -487,14 +464,12 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   <>
                     BloomLab®
                     <br />
-                    L'Extracteur Botanique de Précision
-                    <br />
-                    qui Préserve le Totum Végétal
+                    Extracteur Botanique de Précision
                   </>
                 ) : isDE ? (
-                  "BloomLab®: Der botanische Präzisionsextraktor für das volle Pflanzen-Totum"
+                  "BloomLab® — Botanischer Präzisionsextraktor"
                 ) : (
-                  "BloomLab®: The Precision Botanical Extractor Preserving the Whole-Plant Totum"
+                  "BloomLab® — Precision Botanical Extractor"
                 )}
               </h1>
             </div>
@@ -974,10 +949,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             </h2>
             <p className="text-[#4A5D4A] text-base sm:text-lg leading-relaxed font-medium">
               {isFR 
-                ? "La BloomLab® réunit 6 fonctions (Butter, Oil, Tincture, Sans chauffe — mode sans température réglable pour mélanges type vinaigrette —, Décarboxylation, Nettoyage 5 min) et un réglage manuel complet de la température et de la durée (0 à 121 °C, 30 min à 12 h sur les modes réglables) : vous adaptez chaque phase à la plante et au solvant de votre fiche." 
+                ? "La BloomLab® réunit 6 fonctions (Butter, Oil, Tincture, Sans chauffe — mode sans température réglable pour mélanges type vinaigrette —, activation thermique douce des résines et aromates, Nettoyage 5 min) et un réglage manuel complet de la température et de la durée (0 à 121 °C, 30 min à 12 h sur les modes réglables) : vous adaptez chaque phase à la plante et au solvant de votre fiche." 
                 : isDE 
-                ? "Die BloomLab® bietet 6 Funktionen (Butter, Oil, Tincture, Ohne Erwärmung — Modus ohne Temperaturregelung für kalte Mischungen wie Vinaigrette —, Decarboxylierung, Reinigung 5 Min.) sowie eine manuelle Einstellung von Temperatur und Zeit (0–121 °C, 30 Min.–12 Std.), passend zu Pflanze und Lösungsmittel." 
-                : "BloomLab® provides 6 functions (Butter, Oil, Tincture, No heating — non-adjustable cold-mixing mode exemplified by vinaigrette —, Decarboxylate, 5-min Clean) plus full manual time and temperature controls (0–121°C, 30 min–12h on adjustable modes) for each recipe phase."}
+                ? "Die BloomLab® bietet 6 Funktionen (Butter, Oil, Tincture, Ohne Erwärmung — Modus ohne Temperaturregelung für kalte Mischungen wie Vinaigrette —, sanfte thermische Aktivierung von Harzen und Aromaten, Reinigung 5 Min.) sowie eine manuelle Einstellung von Temperatur und Zeit (0–121 °C, 30 Min.–12 Std.), passend zu Pflanze und Lösungsmittel." 
+                : "BloomLab® provides 6 functions (Butter, Oil, Tincture, No heating — non-adjustable cold-mixing mode exemplified by vinaigrette —, gentle thermal activation of resins and aromatics, 5-min Clean) plus full manual time and temperature controls (0–121°C, 30 min–12h on adjustable modes) for each recipe phase."}
             </p>
           </div>
 
@@ -1018,10 +993,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               <div className="text-3xl font-black text-[#1E2E25]">121°C</div>
               <p className="text-slate-600 text-sm leading-relaxed">
                 {isFR 
-                  ? "Programme Décarboxylation (défaut 121 °C / 1h30, réglable 71–121 °C + 15 min de refroidissement) et réglage manuel TEMP/TIME par l'utilisateur ; le décompte démarre une fois la température cible atteinte." 
+                  ? "Programme d'activation thermique douce des résines et aromates (défaut 121 °C / 1h30, réglable 71–121 °C + 15 min de refroidissement) et réglage manuel TEMP/TIME par l'utilisateur ; le décompte démarre une fois la température cible atteinte." 
                   : isDE 
-                  ? "Programm Decarboxylierung (Standard 121 °C / 1,5 Std., einstellbar 71–121 °C + 15 Min. Abkühlung) sowie manuelle TEMP/TIME-Wahl; der Timer startet erst bei Erreichen der Zieltemperatur." 
-                  : "Decarboxylate program (default 121°C / 1.5h, adjustable 71–121°C + 15-min cooling) and user TEMP/TIME adjustments; the timer starts once the chamber reaches target temperature."}
+                  ? "Programm zur sanften thermischen Aktivierung von Harzen und Aromaten (Standard 121 °C / 1,5 Std., einstellbar 71–121 °C + 15 Min. Abkühlung) sowie manuelle TEMP/TIME-Wahl; der Timer startet erst bei Erreichen der Zieltemperatur." 
+                  : "Gentle thermal activation of resins and aromatics program (default 121°C / 1.5h, adjustable 71–121°C + 15-min cooling) and user TEMP/TIME adjustments; the timer starts once the chamber reaches target temperature."}
               </p>
             </div>
           </div>
@@ -1162,10 +1137,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 num: "03",
                 title: isFR ? "Régler les paramètres" : isDE ? "Parameter einstellen" : "Set parameters",
                 desc: isFR
-                  ? "Sélectionnez votre programme (Butter, Oil, Tincture, Décarboxylation, Nettoyage — Sans chauffe étant dédié aux mélanges froids type vinaigrette) ou ajustez manuellement temps et température selon la plante et le solvant de votre fiche."
+                  ? "Sélectionnez votre programme (Butter, Oil, Tincture, activation thermique douce des résines et aromates, Nettoyage — Sans chauffe étant dédié aux mélanges froids type vinaigrette) ou ajustez manuellement temps et température selon la plante et le solvant de votre fiche."
                   : isDE
-                  ? "Wählen Sie Ihr Programm (Butter, Oil, Tincture, Decarboxylierung, Reinigung — Ohne Erwärmung nur für kalte Mischungen wie Vinaigrette) oder passen Sie Zeit und Temperatur manuell an."
-                  : "Select your preset (Butter, Oil, Tincture, Decarboxylate, Clean — No heating is strictly for cold mixes like vinaigrette) or adjust temperature and time manually for your herb and solvent."
+                  ? "Wählen Sie Ihr Programm (Butter, Oil, Tincture, sanfte thermische Aktivierung von Harzen und Aromaten, Reinigung — Ohne Erwärmung nur für kalte Mischungen wie Vinaigrette) oder passen Sie Zeit und Temperatur manuell an."
+                  : "Select your preset (Butter, Oil, Tincture, gentle thermal activation of resins and aromatics, Clean — No heating is strictly for cold mixes like vinaigrette) or adjust temperature and time manually for your herb and solvent."
               },
               {
                 num: "04",
@@ -1890,10 +1865,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                 </h3>
                 <p className="text-xs text-[#F9F6F0]/80 font-medium leading-relaxed">
                   {isFR
-                    ? "Commandez votre BloomLab® Inox 304 (expédition 24/48h, garantie légale 2 ans UE + commerciale 1 an) et démarrez dès cette semaine."
+                    ? "Commandez votre BloomLab® Inox 304 (expédition 24/48h, garantie légale de conformité 2 ans) et démarrez dès cette semaine."
                     : isDE
-                    ? "Bestellen Sie Ihre BloomLab® (Versand in 24/48h, 2 J. gesetzl. Gewährleistung EU + 1 J. Garantie) und starten Sie diese Woche."
-                    : "Order your BloomLab® (24/48h shipping, 2-year EU legal + 1-year commercial warranty) and get started this week."}
+                    ? "Bestellen Sie Ihre BloomLab® (Versand in 24/48h, 2 Jahre gesetzliche Gewährleistung) und starten Sie diese Woche."
+                    : "Order your BloomLab® (24/48h shipping, 2-year legal conformity warranty) and get started this week."}
                 </p>
               </div>
               <button
@@ -2081,10 +2056,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
             </h2>
             <p className="text-[#1E2E25]/80 text-base sm:text-lg">
               {isFR 
-                ? "Expédition sous 24/48h • Garantie légale 2 ans (UE) + commerciale 1 an • Paiement en 3x sans frais." 
+                ? "Expédition sous 24/48h • Garantie légale de conformité 2 ans • Paiement en 3x sans frais." 
                 : isDE
-                ? "Versand in 24/48h • 2 J. gesetzl. Gewährleistung (EU) + 1 J. Garantie • 3x zinsfreie Ratenzahlung."
-                : "24/48h Shipping • 2-Yr EU Legal + 1-Yr Commercial Warranty • 3x fee-free payment."}
+                ? "Versand in 24/48h • 2 Jahre gesetzliche Gewährleistung • 3x zinsfreie Ratenzahlung."
+                : "24/48h Shipping • 2-Year Legal Conformity Warranty • 3x fee-free payment."}
             </p>
           </div>
 
@@ -2134,11 +2109,11 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   </li>
                   <li className="flex items-start gap-3 text-sm font-medium text-[#1E2E25]/90">
                     <Check className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>{isFR ? "Manuel complet et 100 recettes exclusives en français" : isDE ? "Vollständiges Handbuch & 100 exklusive Rezepte" : "Complete manual and 100 exclusive recipes"}</span>
+                    <span>{isFR ? "Accès complet à la Bibliothèque numérique et aux 100 recettes inclus avec votre BloomLab®" : isDE ? "Vollständiger Zugang zur digitalen Bibliothek & 100 Rezepten im BloomLab® enthalten" : "Full access to the Digital Library and 100 recipes included with your BloomLab®"}</span>
                   </li>
                   <li className="flex items-start gap-3 text-sm font-medium text-[#1E2E25]/90">
                     <Check className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>{isFR ? "Garantie légale 2 ans (UE) + commerciale 1 an" : isDE ? "2 J. gesetzl. Gewährleistung (EU) + 1 J. Garantie" : "2-Yr EU Legal + 1-Yr Commercial Warranty"}</span>
+                    <span>{isFR ? "Garantie légale de conformité 2 ans" : isDE ? "2 Jahre gesetzliche Gewährleistung" : "2-Year Legal Conformity Warranty"}</span>
                   </li>
                 </ul>
               </div>
@@ -2197,7 +2172,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   </li>
                   <li className="flex items-start gap-3 text-sm font-medium text-white/90">
                     <Check className="w-5 h-5 text-[#C8AB8A] shrink-0 mt-0.5" />
-                    <span>{isFR ? "3 mois d'accès complet à la Bloom Academy" : isDE ? "3 Monate Vollzugang zur Bloom Academy" : "3 months full access to Bloom Academy"}</span>
+                    <span>{isFR ? "Accès complet à la Bibliothèque numérique et aux 100 recettes inclus avec votre BloomLab®" : isDE ? "Vollständiger Zugang zur digitalen Bibliothek & 100 Rezepten im BloomLab® enthalten" : "Full access to the Digital Library and 100 recipes included with your BloomLab®"}</span>
                   </li>
                 </ul>
 
@@ -2236,7 +2211,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
               </div>
               <div className="flex items-center justify-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-[#C8AB8A]" />
-                <span>{isFR ? "Garantie légale 2 ans (UE) + 1 an" : isDE ? "2 J. Gewährleistung (EU) + 1 J." : "2-Yr EU Legal + 1-Yr Warranty"}</span>
+                <span>{isFR ? "Garantie légale de conformité 2 ans" : isDE ? "2 Jahre gesetzliche Gewährleistung" : "2-Year Legal Conformity Warranty"}</span>
               </div>
               <div className="flex items-center justify-center gap-2">
                 <Sparkles className="w-4 h-4 text-[#C8AB8A]" />
@@ -2532,7 +2507,7 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                     </span>
                   </div>
                   <div className="text-[10px] sm:text-xs text-white/60 hidden sm:block">
-                    {isFR ? 'Garantie légale 2 ans (UE) + 1 an • Paiement en 3x sans frais' : isDE ? '2 J. Gewährleistung (EU) + 1 J. • 3x zinsfrei' : '2-Yr EU Legal + 1-Yr Warranty • 3x fee-free'}
+                    {isFR ? 'Garantie légale de conformité 2 ans • Paiement en 3x sans frais' : isDE ? '2 Jahre gesetzliche Gewährleistung • 3x zinsfrei' : '2-Year Legal Conformity Warranty • 3x fee-free'}
                   </div>
                 </div>
               </div>
@@ -2600,10 +2575,10 @@ export default function IndexBisContent({ onNavigate, lang = 'fr', scrollToId }:
                   </div>
                   <div className="text-emerald-700/80">
                     {isFR
-                      ? "Garantie légale 2 ans (UE) + 1 an • Rétractation 14 j + essai 30 j."
+                      ? "Garantie légale de conformité 2 ans • Rétractation 14 j + essai 30 j."
                       : isDE
-                      ? "2 J. gesetzl. Gewährleistung (EU) + 1 J. • 14 T. Widerruf + 30 T. Testphase."
-                      : "2-yr EU legal + 1-yr warranty • 14-day withdrawal + 30-day trial."}
+                      ? "2 Jahre gesetzliche Gewährleistung • 14 T. Widerruf + 30 T. Testphase."
+                      : "2-Year Legal Conformity Warranty • 14-day withdrawal + 30-day trial."}
                   </div>
                 </div>
 

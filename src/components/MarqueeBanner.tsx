@@ -13,23 +13,23 @@ export const MarqueeBanner: React.FC<MarqueeBannerProps> = ({ lang = 'fr', items
     ? [
         "🇫🇷 Marque Botanique Française",
         "🚚 Expédition Prioritaire sous 24/48h",
-        "🛡️ Garantie Satisfait ou Remboursé 30 Jours",
-        "⚡ Garantie Constructeur 1 An",
+        "🛡️ Essai Satisfait ou Remboursé 30 Jours",
+        "⚡ Garantie Légale de Conformité 2 Ans",
         "🔒 Paiement 3x Sans Frais Sécurisé"
       ]
     : isDE
     ? [
         "🇫🇷 Französische botanische Marke",
         "🚚 Prioritärer Versand in 24/48h",
-        "🛡️ 30-Tage-Geld-zurück-Garantie",
-        "⚡ 1 Jahr Herstellergarantie",
+        "🛡️ 30-Tage-Zufriedenheits-Test",
+        "⚡ 2 Jahre gesetzliche Gewährleistung",
         "🔒 Sichere 3x Ratenzahlung"
       ]
     : [
         "🇫🇷 French Botanical Brand",
         "🚚 Priority Shipping in 24/48h",
-        "🛡️ 30-Day Money Back Guarantee",
-        "⚡ 1-Year Manufacturer Warranty",
+        "🛡️ 30-Day Satisfaction Trial",
+        "⚡ 2-Year Legal Conformity Warranty",
         "🔒 Secure 3x Fee-Free Payment"
       ]);
 

@@ -106,11 +106,11 @@
       </g:shipping>
     </item>
 
-    <!-- 6. Kit Nuit Profonde -->
+    <!-- 6. Infusion Douceur du Soir -->
     <item>
       <g:id>kit-nuit</g:id>
-      <g:title>Kit Nuit Profonde — Synergie Aromatique du Soir</g:title>
-      <g:description>Mélange traditionnel de plantes médicinales bio sélectionnées pour les infusions aromatiques du soir et l'extraction du Totum.</g:description>
+      <g:title>Infusion Douceur du Soir — Valériane &amp; Passiflore Bio</g:title>
+      <g:description>Mélange traditionnel de plantes bio (valériane et passiflore) sélectionnées pour les infusions aromatiques du soir.</g:description>
       <g:link>https://bloombybotanik.com/boutique/kit-nuit/</g:link>
       <g:image_link>https://bloombybotanik.com/products/kit-nuit.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
@@ -118,7 +118,7 @@
       <g:brand>Bloom by BotaniK</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Alternative Medicine</g:google_product_category>
+      <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Beverages &gt; Tea &amp; Infusions</g:google_product_category>
       <g:shipping>
         <g:country>FR</g:country>
         <g:service>Livraison 48h France Métropolitaine</g:service>
@@ -126,11 +126,11 @@
       </g:shipping>
     </item>
 
-    <!-- 7. Kit Digestion -->
+    <!-- 7. Infusion Fraîcheur & Légèreté -->
     <item>
       <g:id>kit-digestion</g:id>
-      <g:title>Kit Équilibre Botanique — Plantes Aromatiques</g:title>
-      <g:description>Plantes carminatives et aromatiques de tradition herboriste préparées par extraction botanique de précision.</g:description>
+      <g:title>Infusion Fraîcheur &amp; Légèreté — Aromates &amp; Plantes Bio</g:title>
+      <g:description>Aromates et plantes bio de tradition herboriste préparés en infusion après les repas.</g:description>
       <g:link>https://bloombybotanik.com/boutique/kit-digestion/</g:link>
       <g:image_link>https://bloombybotanik.com/products/kit-digestion.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
@@ -138,7 +138,7 @@
       <g:brand>Bloom by BotaniK</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Alternative Medicine</g:google_product_category>
+      <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Beverages &gt; Tea &amp; Infusions</g:google_product_category>
       <g:shipping>
         <g:country>FR</g:country>
         <g:service>Livraison 48h France Métropolitaine</g:service>
@@ -146,11 +146,11 @@
       </g:shipping>
     </item>
 
-    <!-- 8. Kit Feu Articulaire -->
+    <!-- 8. Infusion Souplesse & Détente -->
     <item>
       <g:id>kit-articulaire</g:id>
-      <g:title>Kit Feu Botanique — Synergie Résineuse &amp; Feuillée</g:title>
-      <g:description>Synergie botanique traditionnelle de plantes résineuses et aromatiques sélectionnée dans la tradition herboriste.</g:description>
+      <g:title>Infusion Souplesse &amp; Détente — Reine-des-Prés, Gingembre &amp; Boswellia</g:title>
+      <g:description>Synergie botanique traditionnelle de reine-des-prés, gingembre et résine de boswellia sélectionnée dans la tradition herboriste.</g:description>
       <g:link>https://bloombybotanik.com/boutique/kit-articulaire/</g:link>
       <g:image_link>https://bloombybotanik.com/products/kit-articulaire.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
@@ -158,7 +158,7 @@
       <g:brand>Bloom by BotaniK</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Alternative Medicine</g:google_product_category>
+      <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Beverages &gt; Tea &amp; Infusions</g:google_product_category>
       <g:shipping>
         <g:country>FR</g:country>
         <g:service>Livraison 48h France Métropolitaine</g:service>
@@ -166,11 +166,11 @@
       </g:shipping>
     </item>
 
-    <!-- 9. Kit Bouclier Hiver -->
+    <!-- 9. Infusion Épicée d'Hiver -->
     <item>
       <g:id>kit-hiver</g:id>
-      <g:title>Kit Bouclier Hiver — Botanique de Saison</g:title>
-      <g:description>Plantes aromatiques de tradition herboriste sélectionnées pour les infusions chaudes des mois hivernaux.</g:description>
+      <g:title>Infusion Épicée d'Hiver — Gingembre, Girofle, Sureau &amp; Thym</g:title>
+      <g:description>Plantes aromatiques et épices de tradition herboriste sélectionnées pour les infusions chaudes des mois hivernaux.</g:description>
       <g:link>https://bloombybotanik.com/boutique/kit-hiver/</g:link>
       <g:image_link>https://bloombybotanik.com/products/kit-bouclier-hiver.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
@@ -178,7 +178,7 @@
       <g:brand>Bloom by BotaniK</g:brand>
       <g:condition>new</g:condition>
       <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Alternative Medicine</g:google_product_category>
+      <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Beverages &gt; Tea &amp; Infusions</g:google_product_category>
       <g:shipping>
         <g:country>FR</g:country>
         <g:service>Livraison 48h France Métropolitaine</g:service>

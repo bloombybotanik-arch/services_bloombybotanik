@@ -28,6 +28,7 @@ import { Language } from './translations';
 import { TooltipLexique } from './components/TooltipLexique';
 import { GlossaryProvider } from './context/GlossaryContext';
 import { siboTranslations } from './data/translations/siboTranslations';
+import SeoHead from './components/SeoHead';
 
 interface ProtocoleSiboContentProps {
   isPremium: boolean;
@@ -115,6 +116,14 @@ export default function ProtocoleSiboContent({
 
   return (
     <GlossaryProvider pageKey="protocole-sibo">
+      <SeoHead
+        title="Dossier Éducatif Équilibre Digestif | Bloom by BotaniK"
+        description="Document d'étude botanique réservé aux membres — ne remplace pas un avis médical."
+        canonical="https://bloombybotanik.com/academie/protocoles/sibo/"
+        lang={lang || 'fr'}
+        noindex
+        nofollow
+      />
       <article 
         className="min-h-screen bg-[#FAF7F2] text-[#3E4A3D] pb-24 selection:bg-[#C8AB8A]/20 selection:text-[#3E4A3D]"
         data-bloom-academie="true"

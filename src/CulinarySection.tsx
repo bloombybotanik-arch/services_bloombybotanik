@@ -278,7 +278,7 @@ export default function CulinarySection({
       <PageIntroHeader
         breadcrumb="Accueil / Votre Pratique / Atelier Culinaire"
         badge="VOTRE PRATIQUE • EXTRACTION CULINAIRE"
-        title="La Gastronomie Botanique Vivante"
+        title={lang === 'fr' ? "Gastronomie Botanique : Huiles Parfumées & Infusions Culinaires" : lang === 'de' ? "Botanische Gastronomie: Aromatisierte Öle & Kulinarische Auszüge" : "Botanical Gastronomy: Aromatic Oils & Culinary Infusions"}
         subtitle="Révéler les arômes et les bienfaits par le Totum culinaire"
         context="Vous êtes dans l'espace culinaire de Bloom by BotaniK. De la simple infusion d'herbes aux bouillons médicinaux complexes, apprenez à utiliser la BloomLab pour extraire le meilleur des plantes, en respectant la progression logique de nos protocoles : du plus accessible au plus technique."
       />
@@ -292,7 +292,7 @@ export default function CulinarySection({
           <span>•</span>
           <span>{t.header.badge_alt}</span>
         </div>
-        <h1 className="leading-[1.1] tracking-tight text-[#3E4A3D] mb-8">
+        <h2 className="leading-[1.1] tracking-tight text-[#3E4A3D] mb-8">
           <span className="block text-3xl md:text-5xl font-extrabold mb-2 text-[#3E4A3D]">
             {lang === 'fr'
               ? "Gastronomie Botanique — Extractions Culinaires & Bouillons"
@@ -303,7 +303,7 @@ export default function CulinarySection({
           <span className="block text-2xl md:text-4xl text-[#3E4A3D] font-bold">
             {wrapTitle(t.header.subtitle)}
           </span>
-        </h1>
+        </h2>
         <div className="text-base md:text-lg text-[#3E4A3D] w-full leading-relaxed space-y-4">
           {t.header.description.split('\n\n').map((paragraph, idx) => (
             <p key={idx}>{paragraph}</p>

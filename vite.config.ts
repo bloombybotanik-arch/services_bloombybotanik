@@ -185,6 +185,13 @@ function isIndexableSitemapRoute(route: string): boolean {
     route === '/machine/' ||
     route === '/infuseur-botanique/' ||
     route === '/infusion-botanique/' ||
+    route === '/infusion-precision/' ||
+    route === '/totum-definition/' ||
+    route === '/solvants-extraction/' ||
+    route === '/qu-est-ce-que-l-infusion-botanique/' ||
+    route === '/academie/protocoles/psoriasis/' ||
+    route === '/academie/protocoles/sibo/' ||
+    route === '/academie/protocoles/decalcification-pineale/' ||
     route === '/guide/' ||
     route === '/how_it_works/' ||
     route === '/bibliotheque/' ||

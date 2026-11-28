@@ -172,7 +172,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
       breadcrumbHome: "Accueil",
       breadcrumbCurrent: "Infusion botanique maison",
       badge: "Guide Méthode & Pratique Domestique",
-      h1: "Infusion botanique maison : la méthode BloomLab® de Bloom by BotaniK",
+      h1: "L'Infusion Botanique Maîtrisée : Principes & Préparations",
       p1: "L’infusion botanique ne se limite pas à verser de l’eau chaude sur une plante. Elle repose sur un équilibre entre la plante choisie, le solvant utilisé, la température, la durée et le mouvement du mélange.",
       p2: "Avec Bloom by BotaniK, vous découvrez une approche plus précise de la préparation botanique à domicile : comprendre les plantes, suivre des recettes guidées, préparer des huiles infusées et progresser avec BloomLab.",
       legalNotice: "BloomLab est un outil de préparation botanique domestique. Il ne remplace pas un avis médical, un diagnostic ou un traitement. Les informations proposées sont pédagogiques.",
@@ -486,7 +486,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
         },
         {
           q: "Comment faire une infusion ou extraction avec BloomLab® ?",
-          a: "Avec l'extracteur BloomLab® de Bloom by BotaniK, placez vos plantes dans la cuve en acier inoxydable, ajoutez votre solvant (eau, huile végétale, beurre, glycérine ou alcool fort ≥ 75 % vol. sans eau en mode Tincture selon la fiche), puis choisissez l'un des programmes d'extraction (Butter, Oil, Tincture, Décarboxylation, Nettoyage — Sans chauffe étant réservé aux mélanges froids sans extraction) ou ajustez manuellement la température (0 °C à 121 °C) et la durée."
+          a: "Avec l'extracteur BloomLab® de Bloom by BotaniK, placez vos plantes dans la cuve en acier inoxydable, ajoutez votre solvant (eau, huile végétale, beurre, glycérine ou alcool fort ≥ 75 % vol. sans eau en mode Tincture selon la fiche), puis choisissez l'un des programmes d'extraction (Butter, Oil, Tincture, activation thermique douce des résines et aromates, Nettoyage — Sans chauffe étant réservé aux mélanges froids sans extraction) ou ajustez manuellement la température (0 °C à 121 °C) et la durée."
         },
         {
           q: "Comment choisir un solvant ?",
@@ -535,7 +535,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
       breadcrumbHome: "Home",
       breadcrumbCurrent: "Homemade Botanical Infusion",
       badge: "Method & Domestic Practice Guide",
-      h1: "Homemade Botanical Infusion: The BloomLab® Method by Bloom by BotaniK",
+      h1: "Controlled Botanical Infusion: Principles & Preparations",
       p1: "Botanical infusion is far more than pouring hot water over a dried plant. It relies on a delicate balance between the selected botanical part, chosen solvent, precise temperature, duration, and controlled agitation.",
       p2: "With Bloom by BotaniK, discover an exacting method for domestic herbal preparations: understand plant profiles, follow step-by-step recipes, formulate infused oils, and elevate your practice with the BloomLab extractor.",
       legalNotice: "BloomLab is a domestic botanical preparation tool. It does not replace medical advice, diagnosis, or prescribed treatments. All content is educational.",
@@ -894,7 +894,7 @@ export const pillarInfusionTranslations: Record<Language, PillarInfusionTranslat
       breadcrumbHome: "Startseite",
       breadcrumbCurrent: "Botanischer Hausaufguss",
       badge: "Methoden- & Praxisleitfaden für zu Hause",
-      h1: "Botanischer Hausaufguss: Die BloomLab®-Methode von Bloom by BotaniK",
+      h1: "Kontrollierter botanischer Aufguss: Prinzipien & Zubereitungen",
       p1: "Ein botanischer Aufguss ist weit mehr als das einfache Übergießen von Kräutern mit kochendem Wasser. Er beruht auf einem exakten Gleichgewicht aus gewählten Pflanzenteilen, Lösungsmittel, Temperatur, Extraktionszeit und sanfter Bewegung.",
       p2: "Mit Bloom by BotaniK entdecken Sie eine präzise Methode für die häusliche Kräuterkunde: verstehen Sie Pflanzenprofile, folgen Sie geführten Rezepten, stellen Sie wirksame Ölauszüge her und perfektionieren Sie Ihre Zubereitungen mit dem BloomLab.",
       legalNotice: "BloomLab ist ein Haushaltsgerät für botanische Zubereitungen. Es ersetzt weder ärztliche Diagnosen noch medizinische Behandlungen. Alle Angaben dienen der Aufklärung.",

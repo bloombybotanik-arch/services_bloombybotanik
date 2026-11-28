@@ -20,7 +20,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   onClose,
   onCheckout,
   cartItem = {
-    title: "Kit de Démarrage Souveraineté — BloomLab® + 1 Kit Plantes",
+    title: "Kit Démarrage Autonomie Botanique — BloomLab® + 1 Kit Plantes",
     price: 299,
   },
   lang = 'fr',
@@ -78,10 +78,10 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             </div>
             <div className="text-emerald-700/80">
               {isFR 
-                ? "Garantie constructeur 1 an & Satisfait ou remboursé 30 jours." 
+                ? "Garantie légale de conformité 2 ans & Essai satisfait ou remboursé 30 jours." 
                 : isDE
-                ? "1 Jahr Herstellergarantie & 30 Tage Geld-zurück-Garantie."
-                : "1-year warranty & 30-day money-back guarantee."}
+                ? "2 Jahre gesetzliche Gewährleistung & 30 Tage Zufriedenheits-Test."
+                : "2-year legal conformity warranty & 30-day satisfaction trial."}
             </div>
           </div>
 

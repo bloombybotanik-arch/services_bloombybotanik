@@ -91,9 +91,7 @@ const STRATEGIC_FREE_SLUGS = [
   'thym-commun-huile',
   'thym-commun-miel',
   'sirop-sureau-immunite',
-  'sirop-de-sureau-immunite',
-  'remede-psoriasis-emonctoires-regulation',
-  'remede-psoriasis-emonctoires-regulation-epidermique'
+  'sirop-de-sureau-immunite'
 ];
 
 function getPrimaryPlantKey(plant: UnifiedPlant): string {

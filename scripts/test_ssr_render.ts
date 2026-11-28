@@ -33,14 +33,32 @@ const TEST_CASES: SsrTestCase[] = [
   {
     name: 'Accueil /',
     route: '/',
-    requiredSubstrings: ['BloomLab®', 'Extracteur Botanique de Précision', 'Totum Végétal'],
-    forbiddenSubstrings: ['comprendre-infusion-botanique', 'Recette introuvable', '~3,8 mg', 'alcool chauffé en cuve suspendu']
+    requiredSubstrings: ['BloomLab®', 'Extracteur Botanique de Précision', 'Totum végétal', 'Garantie légale de conformité 2 ans'],
+    forbiddenSubstrings: ['comprendre-infusion-botanique', 'Recette introuvable', '~3,8 mg', 'alcool chauffé en cuve suspendu', 'garantie constructeur 1 an', 'Kit Démarrage Souveraineté', 'souveraineté sanitaire', 'décarboxylation', 'Souveraineté']
   },
   {
     name: 'Guide /infusion-botanique-maison-comment-ca-marche/',
     route: '/infusion-botanique-maison-comment-ca-marche/',
-    requiredSubstrings: ['Infusion botanique maison', 'BloomLab®'],
-    forbiddenSubstrings: ['Recette introuvable', '~3,8 mg', 'Sans chauffe 4']
+    requiredSubstrings: ["L'Infusion Botanique Maîtrisée : Principes & Préparations", 'BloomLab®'],
+    forbiddenSubstrings: ['Recette introuvable', '~3,8 mg', 'Sans chauffe 4', 'Décarboxylation']
+  },
+  {
+    name: 'Totum Végétal /totum-vegetal/',
+    route: '/totum-vegetal/',
+    requiredSubstrings: ['Le Totum Végétal : Comprendre la Synergie des Plantes', 'Autonomie Botanique'],
+    forbiddenSubstrings: ['Recette introuvable', 'Souveraineté Botanique', 'décarboxylation', 'psoriasis']
+  },
+  {
+    name: 'Cosmétiques DIY /cosmetiques-naturels-diy/',
+    route: '/cosmetiques-naturels-diy/',
+    requiredSubstrings: ['Cosmétique Botanique Maison : Macérâts, Sérums & Baumes'],
+    forbiddenSubstrings: ['Recette introuvable', '~3,8 mg', 'décarboxylation']
+  },
+  {
+    name: 'Gastronomie Botanique /gastronomie-botanique/',
+    route: '/gastronomie-botanique/',
+    requiredSubstrings: ['Gastronomie Botanique : Huiles Parfumées & Infusions Culinaires'],
+    forbiddenSubstrings: ['Recette introuvable', '~3,8 mg', 'décarboxylation']
   },
   {
     name: 'Boutique /boutique/',
@@ -64,7 +82,7 @@ const TEST_CASES: SsrTestCase[] = [
     name: 'Machine /bloomlab/',
     route: '/bloomlab/',
     requiredSubstrings: ['BloomLab', 'Totum'],
-    forbiddenSubstrings: ['Recette introuvable', 'sans surveillance pendant', 'fonctionnement autonome']
+    forbiddenSubstrings: ['Recette introuvable', 'sans surveillance pendant', 'fonctionnement autonome', 'garantie constructeur 1 an']
   },
   {
     name: 'Guide Solvants /guide-solvants/',
@@ -75,8 +93,8 @@ const TEST_CASES: SsrTestCase[] = [
   {
     name: 'Extraction Botanique /extraction-botanique/',
     route: '/extraction-botanique/',
-    requiredSubstrings: ['Guide Complet : Extraction Botanique', 'BloomLab'],
-    forbiddenSubstrings: ['Recette introuvable', '~3,8 mg', '3,8 mg par tasse', 'Sans chauffe 4']
+    requiredSubstrings: ["Guide de l'Extraction Botanique : Température, Temps & Solvants", 'BloomLab'],
+    forbiddenSubstrings: ['Recette introuvable', '~3,8 mg', '3,8 mg par tasse', 'Sans chauffe 4', 'Décarboxylation']
   },
   {
     name: 'Académie Femme /academie/pouvoir-cyclique-femme/ (EMA Sauge)',
@@ -112,7 +130,19 @@ const TEST_CASES: SsrTestCase[] = [
     name: 'Académie /academie/',
     route: '/academie/',
     requiredSubstrings: ['La méthode Bloom', 'Comprendre le Corps'],
-    forbiddenSubstrings: ['Recette introuvable']
+    forbiddenSubstrings: ['Recette introuvable', 'psoriasis', 'décalcification pinéale', 'SIBO']
+  },
+  {
+    name: 'Guide /remedes-naturels/',
+    route: '/remedes-naturels/',
+    requiredSubstrings: ['Préparations & Infusions Botaniques Maison : Guide Pratique'],
+    forbiddenSubstrings: ['sphère ORL', 'récepteurs GABA', 'muqueuses gastriques', 'hépatobiliaire', 'stress chronique']
+  },
+  {
+    name: 'Produit Kit Nuit /boutique/kit-nuit/',
+    route: '/boutique/kit-nuit/',
+    requiredSubstrings: ['Infusion Douceur du Soir'],
+    forbiddenSubstrings: ['Recette introuvable', "3 mois d'accès"]
   }
 ];
 
@@ -158,7 +188,12 @@ async function runSsrRenderTests() {
       const appModule = await vite.ssrLoadModule('/src/App.tsx');
       const App = appModule.default;
       const rawHtml = ReactDOMServer.renderToString(React.createElement(App));
-      const html = rawHtml.replace(/<!-- -->/g, '');
+      const html = rawHtml
+        .replace(/<!-- -->/g, '')
+        .replace(/&#x27;/g, "'")
+        .replace(/&#39;/g, "'")
+        .replace(/&apos;/g, "'")
+        .replace(/&amp;/g, '&');
 
       for (const required of tc.requiredSubstrings) {
         if (!html.includes(required)) {

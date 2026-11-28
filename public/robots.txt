@@ -4,6 +4,7 @@ Allow: /images/
 Allow: /img/
 Allow: /products/
 Allow: /assets/
+Allow: /videos/
 Disallow: /admin
 Disallow: /panier
 Disallow: /commande

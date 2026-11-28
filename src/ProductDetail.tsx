@@ -30,10 +30,10 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
 
   const seoTitle = isBloomLab
     ? (lang === 'fr'
-        ? "BloomLab® — L'Extracteur Botanique de Précision pour vos Soins Maison | Bloom by BotaniK"
+        ? "BloomLab® — Extracteur Botanique Inox 304 & Recettes Maison"
         : lang === 'de'
-        ? "BloomLab® — Botanischer Präzisionsextraktor für Ihre Naturkosmetik | Bloom by BotaniK"
-        : "BloomLab® — The Precision Botanical Extractor for Homemade Care | Bloom by BotaniK")
+        ? "BloomLab® — Botanischer Extraktor Edelstahl 304 & Hausrezepte"
+        : "BloomLab® — 304 Stainless Botanical Extractor & Home Recipes")
     : `${sheet.name} | Bloom by BotaniK`;
 
   const seoDescription = isBloomLab
@@ -160,21 +160,21 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
         title={seoTitle}
         description={seoDescription}
         canonical={
-          productId === 'bloomlab'
+          isBloomLab
             ? 'https://bloombybotanik.com/bloomlab/'
             : `https://bloombybotanik.com/boutique/${productId}/`
         }
-        ogType="product"
+        ogType={isBloomLab ? "product" : "website"}
         lang={lang}
-        schemas={[productSchema, breadcrumbSchema]}
+        schemas={isBloomLab ? [productSchema, breadcrumbSchema] : [breadcrumbSchema]}
       />
       {/* Promotional Banner */}
       <div className="bg-[#D97706]/10 text-[#B45309] border-b border-[#D97706]/30 text-center py-2.5 px-4 text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
         {lang === 'fr' 
-          ? "🇫🇷 Conception française des protocoles • Expédition 24/48h • Garantie légale 2 ans (UE) + commerciale 1 an" 
+          ? "🇫🇷 Conception française des protocoles • Expédition 24/48h • Garantie légale de conformité 2 ans" 
           : lang === 'de'
-          ? "🇫🇷 Französische Protokoll-Entwicklung • Versand 24/48h • 2 Jahre gesetzl. Gewährleistung (EU) + 1 Jahr Garantie"
-          : "🇫🇷 Protocols crafted in France • 24/48h Shipping • 2-Year EU Legal Warranty + 1-Year Commercial"}
+          ? "🇫🇷 Französische Protokoll-Entwicklung • Versand 24/48h • 2 Jahre gesetzliche Gewährleistung"
+          : "🇫🇷 Protocols crafted in France • 24/48h Shipping • 2-Year Legal Conformity Warranty"}
       </div>
 
       <article data-product-page="true" className="product-detail w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
@@ -410,10 +410,10 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
                       </div>
                       <div className="text-[11px] text-[#1B3022]/65">
                         {lang === 'fr'
-                          ? "5 accessoires offerts + Accès 3 mois (+160 recettes) • Prix Black Friday"
+                          ? "5 accessoires offerts + Accès complet Bibliothèque numérique & 100 recettes inclus • Prix Black Friday"
                           : lang === 'de'
-                          ? "5 Gratis-Zubehörteile + 3 Mon. Zugang (+160 Rezepte) • Black-Friday-Preis"
-                          : "5 free accessories + 3-mo access (160+ recipes) • Black Friday Price"}
+                          ? "5 Gratis-Zubehörteile + Voller Zugang zur digitalen Bibliothek & 100 Rezepte inklusive • Black-Friday-Preis"
+                          : "5 free accessories + Full Digital Library & 100 recipes included • Black Friday Price"}
                       </div>
                     </div>
                     <div className="text-right shrink-0">
@@ -439,7 +439,7 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
                         </span>
                       </div>
                       <div className="text-[11px] text-[#1B3022]/65">
-                        {lang === 'fr' ? "Le protocole complet (3 mois de pratique)" : lang === 'de' ? "Das Komplettprotokoll (3 Monate)" : "The complete protocol (3 months)"}
+                        {lang === 'fr' ? "Le coffret complet + Bibliothèque numérique & 100 recettes incluses" : lang === 'de' ? "Komplettpaket + Digitale Bibliothek & 100 Rezepte inklusive" : "Complete kit + Digital Library & 100 recipes included"}
                       </div>
                     </div>
                     <div className="text-right shrink-0">
@@ -465,10 +465,10 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
                   <ShieldCheck className="w-3.5 h-3.5 shrink-0 text-[#1B3022]/60" />
                   <span>
                     {lang === 'fr'
-                      ? "Rétractation légale 14 j • Essai commercial 30 j • Garantie légale 2 ans (UE) + commerciale 1 an • Stripe & PayPal"
+                      ? "Rétractation légale 14 j • Essai 30 jours satisfait ou remboursé • Garantie légale de conformité 2 ans • Stripe & PayPal"
                       : lang === 'de'
-                      ? "14 Tage gesetzl. Widerruf • 30 Tage Test • 2 Jahre gesetzl. Gewährleistung (EU) + 1 Jahr Garantie • Stripe & PayPal"
-                      : "14-day legal withdrawal • 30-day trial • 2-year EU legal + 1-year commercial warranty • Stripe & PayPal"}
+                      ? "14 Tage gesetzl. Widerruf • 30 Tage Test • 2 Jahre gesetzliche Gewährleistung • Stripe & PayPal"
+                      : "14-day legal withdrawal • 30-day trial • 2-Year Legal Conformity Warranty • Stripe & PayPal"}
                   </span>
                 </p>
               </div>
@@ -721,10 +721,10 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
                         <Check className="w-4 h-4 text-[#D97706] shrink-0 mt-0.5" />
                         <span>
                           {lang === 'fr'
-                            ? "Accès 3 mois à plus de 160 recettes (culinaire, cosmétique, plantes médicinales)"
+                            ? "Accès complet à la Bibliothèque numérique et aux 100 recettes inclus avec votre BloomLab®"
                             : lang === 'de'
-                            ? "3 Monate Zugang zu über 160 Rezepten (Kulinarik, Kosmetik, Heilpflanzen)"
-                            : "3-month access to 160+ recipes (culinary, cosmetics, medicinal plants)"}
+                            ? "Vollständiger Zugang zur digitalen Bibliothek und zu den 100 Rezepten in Ihrer BloomLab® enthalten"
+                            : "Full access to the Digital Library and 100 recipes included with your BloomLab®"}
                         </span>
                       </li>
                       <li className="flex items-start gap-2.5">
@@ -776,10 +776,10 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
                       </h3>
                       <p className="text-sm text-white !text-white mt-1">
                         {lang === 'fr'
-                          ? "Économisez 60 € et démarrez avec tout ce qu'il faut pour 3 mois de pratique."
+                          ? "Économisez 60 € et démarrez avec le coffret complet et la Bibliothèque numérique incluse."
                           : lang === 'de'
-                          ? "Sparen Sie 60 € und starten Sie mit allem, was Sie für 3 Monate Praxis benötigen."
-                          : "Save €60 and start with everything you need for 3 months of practice."}
+                          ? "Sparen Sie 60 € und starten Sie mit dem Komplettpaket inklusive digitaler Bibliothek."
+                          : "Save €60 and start with the complete kit and Digital Library included."}
                       </p>
                     </div>
 
@@ -798,7 +798,7 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
                       </li>
                       <li className="flex items-start gap-2.5 text-white !text-white">
                         <Check className="w-4 h-4 text-[#E8772E] shrink-0 mt-0.5" />
-                        <span className="text-white !text-white">{lang === 'fr' ? "+ Accès Premium 3 mois à l'Académie (Vidéos de formation et fiches techniques avancées)" : lang === 'de' ? "+ 3 Monate Premium-Akademie-Zugang (Schulungsvideos & technische Datenblätter)" : "+ 3 Months Premium Academy Access (Training videos & advanced datasheets)"}</span>
+                        <span className="text-white !text-white">{lang === 'fr' ? "+ Accès complet à la Bibliothèque numérique et aux 100 recettes inclus avec votre BloomLab®" : lang === 'de' ? "+ Vollständiger Zugang zur digitalen Bibliothek & 100 Rezepten inklusive" : "+ Full access to the Digital Library and 100 recipes included with your BloomLab®"}</span>
                       </li>
                     </ul>
                   </div>
@@ -863,14 +863,14 @@ export default function ProductDetail({ onBack, onAddToCart, onNavigate, product
                 </div>
                 <div className="bg-white rounded-2xl p-5 border border-[#1B3022]/10 space-y-1">
                   <div className="font-bold text-[#1B3022]">
-                    {lang === 'fr' ? "⚡ Garanties Légale & Commerciale" : lang === 'de' ? "⚡ Gewährleistung & Garantie" : "⚡ Legal & Commercial Warranty"}
+                    {lang === 'fr' ? "⚡ Garantie Légale" : lang === 'de' ? "⚡ Gesetzliche Gewährleistung" : "⚡ Legal Warranty"}
                   </div>
                   <p className="text-sm text-[#1B3022]/75">
                     {lang === 'fr'
-                      ? "Garantie légale de conformité de 2 ans (UE) complétée par la garantie commerciale constructeur d'1 an sur l'électronique et la cuve."
+                      ? "Garantie légale de conformité 2 ans sur l'électronique et la cuve."
                       : lang === 'de'
-                      ? "2 Jahre gesetzliche Gewährleistung (EU) plus 1 Jahr kommerzielle Herstellergarantie auf Elektronik und Behälter."
-                      : "Mandatory 2-year EU legal conformity warranty plus 1-year commercial manufacturer warranty on electronics and tank."}
+                      ? "2 Jahre gesetzliche Gewährleistung auf Elektronik und Behälter."
+                      : "2-Year Legal Conformity Warranty on electronics and tank."}
                   </p>
                 </div>
                 <div className="bg-white rounded-2xl p-5 border border-[#1B3022]/10 space-y-1">

@@ -253,7 +253,7 @@ export const blogPosts: BlogPost[] = [
     },
     content: {
       fr: `
-<p>Fabriquer ses propres préparations d'<strong>herboristerie maison</strong> est l'un des actes les plus gratifiants de la souveraineté quotidienne. Pourtant, de nombreux passionnés constatent l'échec de leurs préparations artisanales : huiles qui rancissent au soleil, moisissures au fond du bocal, ou teintures trop faibles pour produire un effet notable. Avec la bonne méthode et un <strong>appareil d'extraction de plantes maison</strong>, ces écueils disparaissent.</p>
+<p>Fabriquer ses propres préparations d'<strong>herboristerie maison</strong> est l'un des actes les plus gratifiants de l'autonomie botanique au quotidien. Pourtant, de nombreux passionnés constatent l'échec de leurs préparations artisanales : huiles qui rancissent au soleil, moisissures au fond du bocal, ou teintures trop faibles pour produire un effet notable. Avec la bonne méthode et un <strong>appareil d'extraction de plantes maison</strong>, ces écueils disparaissent.</p>
 
 <h3>1. Les huiles infusées et macérats huileux : capturer les composés liposolubles</h3>
 <p>Les huiles végétales (jojoba, amande douce, sésame, olive vierge) sont des solvants apolaires. Elles dissolvent les caroténoïdes, les acides gras essentiels, les résines et les terpènes.</p>
@@ -544,7 +544,7 @@ export const blogPosts: BlogPost[] = [
   <li><strong>L'Eschscholtzia (Pavot de Californie) :</strong> Plante fleurie décrite dans les monographies traditionnelles d'herboristerie.</li>
   <li><strong>La Camomille Matricaire :</strong> Capitules riches en apigénine, préparés à chaleur modérée sans ébullition.</li>
 </ol>
-<p>Découvrez notre assemblage botanique dans le <a href="/boutique/kit-nuit">Kit Nuit Profonde Bloom</a> (mélange alimentaire traditionnel de plantes sèches).</p>
+<p>Découvrez notre assemblage botanique dans l'<a href="/boutique/kit-nuit">Infusion Douceur du Soir Bloom</a> (mélange alimentaire traditionnel de plantes sèches).</p>
       `,
       en: `<p>Educational overview of 5 traditional evening botanicals and their gentle brewing temperatures.</p>`,
       de: `<p>Dokumentarischer Überblick zu 5 traditionellen Abendpflanzen und ihren Aufgusstemperaturen.</p>`

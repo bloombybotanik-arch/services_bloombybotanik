@@ -30,6 +30,7 @@ import { Language } from './translations';
 import { TooltipLexique } from './components/TooltipLexique';
 import { GlossaryProvider } from './context/GlossaryContext';
 import { psoriasisTranslations } from './data/translations/psoriasisTranslations';
+import SeoHead from './components/SeoHead';
 
 interface ProtocolePsoriasisContentProps {
   isPremium: boolean;
@@ -113,6 +114,14 @@ export default function ProtocolePsoriasisContent({
 
   return (
     <GlossaryProvider pageKey="protocole-psoriasis">
+      <SeoHead
+        title="Dossier Éducatif Terrain Cutané | Bloom by BotaniK"
+        description="Document d'étude botanique réservé aux membres — ne remplace pas un avis médical."
+        canonical="https://bloombybotanik.com/academie/protocoles/psoriasis/"
+        lang={lang || 'fr'}
+        noindex
+        nofollow
+      />
       <article 
         className="min-h-screen bg-[#FAF7F2] text-[#3E4A3D] pb-24 selection:bg-[#C8AB8A]/20 selection:text-[#3E4A3D]"
         data-bloom-academie="true"

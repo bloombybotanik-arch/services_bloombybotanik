@@ -7,7 +7,7 @@ interface SEOEntry {
   path?: string;
 }
 
-const HOME_TITLE = "BloomLab® — Extracteur Botanique de Précision & Totum Végétal | Bloom by BotaniK";
+const HOME_TITLE = "BloomLab® — Extracteur Botanique de Précision | Bloom by BotaniK";
 const HOME_DESCRIPTION = "Créez vos huiles de soin, sérums visage, baumes et huiles parfumées maison en 2h. Cuve Inox 304, contrôle thermique précis et guide de 100 recettes en français.";
 
 const HOME_SEO_I18N: Record<'en' | 'de', SEOEntry> = {
@@ -23,18 +23,18 @@ const HOME_SEO_I18N: Record<'en' | 'de', SEOEntry> = {
 
 const PRODUCT_SEO_MAP: Record<string, SEOEntry> = {
   bloomlab: {
-    title: "BloomLab® — Extracteur Botanique Inox 304 pour Cosmétique & Cuisine Maison",
-    description: "Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie légale 2 ans (UE) + garantie commerciale 1 an, manuel FR et 100 recettes.",
+    title: "BloomLab® — Extracteur Botanique Inox 304 & Recettes Maison",
+    description: "Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Accès complet à la Bibliothèque numérique et aux 100 recettes inclus.",
     path: "/bloomlab/"
   },
   "pack-signature": {
-    title: "Pack Signature BloomLab® + Trio Plantes | Bloom by BotaniK",
-    description: "Pack Signature Bloom by BotaniK : l'extracteur BloomLab®, nos sélections de plantes médicinales bio et les protocoles d'extraction guidés.",
+    title: "Pack Signature BloomLab® + Herbier Complet | Bloom by BotaniK",
+    description: "Pack Signature Bloom by BotaniK : l'extracteur BloomLab®, nos sélections de plantes bio et l'accès complet à la Bibliothèque numérique & 100 recettes inclus.",
     path: "/boutique/pack-signature/"
   },
   "bundle-apothicaire": {
     title: "Trio Apothicaire | 3 Kits Plantes Bio | Bloom by BotaniK",
-    description: "Trio Apothicaire par Bloom by BotaniK : formules botaniques calibrées pour BloomLab® (Sève Fondamentale, Nuit Profonde et Feu Digestif).",
+    description: "Trio Apothicaire par Bloom by BotaniK : formules botaniques calibrées pour BloomLab® (Sève Fondamentale, Infusion Douceur du Soir et Infusion Fraîcheur & Légèreté).",
     path: "/boutique/bundle-apothicaire/"
   },
   "kit-starter": {
@@ -43,23 +43,23 @@ const PRODUCT_SEO_MAP: Record<string, SEOEntry> = {
     path: "/boutique/kit-starter/"
   },
   "kit-nuit": {
-    title: "Kit Nuit Profonde | Rituel du Soir & Plantes Bio | Bloom by BotaniK",
-    description: "Kit Nuit Profonde par Bloom by BotaniK : synergie de valériane et passiflore bio calibrée pour l'extraction séquentielle sur BloomLab®.",
+    title: "Infusion Douceur du Soir — Valériane & Passiflore Bio | Bloom by BotaniK",
+    description: "Infusion Douceur du Soir par Bloom by BotaniK : synergie alimentaire de valériane et passiflore bio calibrée pour l'extraction séquentielle sur BloomLab®.",
     path: "/boutique/kit-nuit/"
   },
   "kit-digestion": {
-    title: "Kit Équilibre Botanique | Aromates & Plantes Bio | Bloom by BotaniK",
-    description: "Kit Équilibre Botanique Bloom by BotaniK : brou de noix, gingembre, romarin et ginkgo calibrés pour une extraction botanique séquentielle.",
+    title: "Infusion Fraîcheur & Légèreté — Aromates & Plantes Bio | Bloom by BotaniK",
+    description: "Infusion Fraîcheur & Légèreté Bloom by BotaniK : brou de noix, gingembre, romarin et ginkgo calibrés pour une extraction botanique séquentielle.",
     path: "/boutique/kit-digestion/"
   },
   "kit-articulaire": {
-    title: "Kit Mouvement Libre | Résine & Plantes Bio | Bloom by BotaniK",
-    description: "Kit Mouvement Libre par Bloom by BotaniK : reine-des-prés, gingembre et résine de boswellia sélectionnés pour l'extraction séquentielle.",
+    title: "Infusion Souplesse & Détente — Reine-des-Prés, Gingembre & Boswellia | Bloom by BotaniK",
+    description: "Infusion Souplesse & Détente par Bloom by BotaniK : reine-des-prés, gingembre et résine de boswellia sélectionnés pour l'extraction séquentielle.",
     path: "/boutique/kit-articulaire/"
   },
   "kit-hiver": {
-    title: "Kit Bouclier Hiver | Botanique de Saison | Bloom by BotaniK",
-    description: "Kit Bouclier Hiver Bloom by BotaniK : gingembre, girofle, sureau noir, thym et romarin pour des préparations aromatiques de saison.",
+    title: "Infusion Épicée d'Hiver — Gingembre, Girofle, Sureau & Thym | Bloom by BotaniK",
+    description: "Infusion Épicée d'Hiver Bloom by BotaniK : gingembre, girofle, sureau noir, thym et romarin pour des préparations aromatiques de saison.",
     path: "/boutique/kit-hiver/"
   },
   "duo-argiles": {
@@ -68,9 +68,9 @@ const PRODUCT_SEO_MAP: Record<string, SEOEntry> = {
     path: "/boutique/duo-argiles/"
   },
   "abonnements-numeriques": {
-    title: "Abonnements Numériques Bloom Académie & ALMA | Bloom by BotaniK",
-    description: "Accédez aux protocoles systémiques Bloom by BotaniK, fiches d'extraction BloomLab® avancées et suivi personnalisé ALMA.",
-    path: "/boutique/abonnements-numeriques/"
+    title: "BloomLab® — Bibliothèque Numérique & 100 Recettes Incluses",
+    description: "L'accès complet à la Bibliothèque numérique et aux 100 recettes est inclus avec votre BloomLab®.",
+    path: "/bloomlab/"
   }
 };
 
@@ -86,13 +86,13 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
     path: "/"
   },
   machine: {
-    title: "BloomLab® — Extracteur Botanique Inox 304 pour Cosmétique & Cuisine Maison",
-    description: "Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie légale 2 ans (UE) + garantie commerciale 1 an, manuel FR et 100 recettes.",
+    title: "BloomLab® — Extracteur Botanique Inox 304 & Recettes Maison",
+    description: "Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie légale de conformité 2 ans, manuel FR et 100 recettes.",
     path: "/bloomlab/"
   },
   bloomlab: {
-    title: "BloomLab® — Extracteur Botanique Inox 304 pour Cosmétique & Cuisine Maison",
-    description: "Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie légale 2 ans (UE) + garantie commerciale 1 an, manuel FR et 100 recettes.",
+    title: "BloomLab® — Extracteur Botanique Inox 304 & Recettes Maison",
+    description: "Préparez vos macérâts huileux, baumes et infusions botaniques sans amertume. Garantie légale de conformité 2 ans, manuel FR et 100 recettes.",
     path: "/bloomlab/"
   },
   'comment-ca-marche': {
@@ -106,27 +106,27 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
     path: "/comment-ca-marche/"
   },
   guide: {
-    title: "Infusion Botanique Maison : Guide Complet & Bienfaits | Bloom",
-    description: "Découvrez l'art de l'infusion botanique de précision. Températures, solvants et recettes pour préserver le Totum végétal et booster vos bienfaits.",
+    title: "L'Infusion Botanique Maîtrisée : Principes & Préparations",
+    description: "Découvrez l'art de l'infusion botanique de précision. Températures, solvants et recettes pour préserver le Totum végétal à la maison.",
     path: "/infusion-botanique-maison-comment-ca-marche/"
   },
   'infusion-botanique': {
-    title: "Infusion Botanique Maison | Principes Actifs & Méthode",
+    title: "L'Infusion Botanique Maîtrisée : Principes & Préparations",
     description: "Comprendre la dynamique d'infusion en chambre close : seuils thermiques maîtrisés, agitation douce et protection des flavonoïdes thermosensibles.",
     path: "/infusion-botanique-maison-comment-ca-marche/"
   },
   'infusion-botanique-maison-comment-ca-marche': {
-    title: "Infusion Botanique Maison | Principes Actifs & Méthode",
+    title: "L'Infusion Botanique Maîtrisée : Principes & Préparations",
     description: "Comprendre la dynamique d'infusion en chambre close : seuils thermiques maîtrisés, agitation douce et protection des flavonoïdes thermosensibles.",
     path: "/infusion-botanique-maison-comment-ca-marche/"
   },
   'pillar-extraction': {
-    title: "Extraction Botanique : Méthodes & Séquençage A/B | Bloom",
+    title: "Guide de l'Extraction Botanique : Température, Temps & Solvants",
     description: "Maîtrisez l'extraction végétale : macération, infusion, séquençage A/B. Découvrez comment la BloomLab préserve les principes actifs.",
     path: "/extraction-botanique/"
   },
   'extraction-botanique': {
-    title: "Extraction Botanique : Méthodes & Séquençage A/B | Bloom",
+    title: "Guide de l'Extraction Botanique : Température, Temps & Solvants",
     description: "Maîtrisez l'extraction végétale : macération, infusion, séquençage A/B. Découvrez comment la BloomLab préserve les principes actifs.",
     path: "/extraction-botanique/"
   },
@@ -136,12 +136,12 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
     path: "/guide-solvants/"
   },
   'guide-complet': {
-    title: "Extraction Botanique : Méthodes & Séquençage A/B | Bloom",
+    title: "Guide de l'Extraction Botanique : Température, Temps & Solvants",
     description: "Maîtrisez l'extraction végétale : macération, infusion, séquençage A/B. Découvrez comment la BloomLab préserve les principes actifs.",
     path: "/extraction-botanique/"
   },
   'guide-complet-extraction-botanique-maison': {
-    title: "Extraction Botanique : Méthodes & Séquençage A/B | Bloom",
+    title: "Guide de l'Extraction Botanique : Température, Temps & Solvants",
     description: "Maîtrisez l'extraction végétale : macération, infusion, séquençage A/B. Découvrez comment la BloomLab préserve les principes actifs.",
     path: "/extraction-botanique/"
   },
@@ -226,23 +226,23 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
     path: "/academie/reset-homeostasique/"
   },
   'protocole-psoriasis': {
-    title: "Protocole Psoriasis | Reset Terrain Cutané | Bloom by BotaniK",
-    description: "Protocole complet d'accompagnement du terrain cutané par la phytothérapie intégrale et l'extraction botanique de précision.",
+    title: "Dossier Terrain Cutané | Bloom by BotaniK",
+    description: "Dossier documentaire sur l'extraction botanique de précision.",
     path: "/academie/protocoles/psoriasis/"
   },
   'protocole-sibo': {
-    title: "Protocole SIBO & Équilibre Intestinal | Bloom by BotaniK",
-    description: "Approche systémique du terrain digestif et de la motilité intestinale par extraction botanique de précision et séquençage A/B.",
+    title: "Dossier Terrain Digestif | Bloom by BotaniK",
+    description: "Dossier documentaire sur l'extraction botanique de précision et le séquençage A/B.",
     path: "/academie/protocoles/sibo/"
   },
   'protocole-myeline': {
-    title: "Protocole Clarté Mentale & Myéline | Bloom by BotaniK",
-    description: "Soutenir le système glymphatique, la neuroprotection et la clarté cognitive grâce aux synergies végétales extraites sur BloomLab®.",
+    title: "Dossier Clarté Mentale & Myéline | Bloom by BotaniK",
+    description: "Explorer les connaissances autour du système glymphatique et des synergies végétales documentées.",
     path: "/academie/protocoles/clarte-mentale/"
   },
   'protocole-decalcification-pineale': {
-    title: "Protocole Glande Pinéale & Rythme Circadien | Bloom",
-    description: "Accompagner la vitalité neuro-endocrinienne et le cycle mélatonine/sommeil profond par l'extraction botanique maîtrisée.",
+    title: "Dossier Rythme Circadien & Botanique | Bloom",
+    description: "Dossier documentaire sur la chronobiologie et l'extraction botanique maîtrisée.",
     path: "/academie/protocoles/decalcification-pineale/"
   },
   herbier: {
@@ -291,13 +291,13 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
     path: "/boutique/kits/"
   },
   abonnement: {
-    title: "Abonnement Bloom by BotaniK | Protocoles & Suivi ALMA",
-    description: "Abonnement Bloom by BotaniK : accédez aux protocoles de reset homéostatique, au suivi d'anamnèse ALMA et aux formules d'extraction BloomLab®.",
-    path: "/abonnement/"
+    title: "BloomLab® — Bibliothèque Numérique & 100 Recettes Incluses",
+    description: "Accès complet à la Bibliothèque numérique et aux 100 recettes inclus avec votre BloomLab®.",
+    path: "/bloomlab/"
   },
   manifeste: {
-    title: "Manifeste Bloom | Souveraineté Sanitaire & Plantes",
-    description: "Manifeste Bloom by BotaniK : souveraineté sanitaire, ingénierie biologique et réconciliation entre rigueur scientifique et sagesse végétale ancestrale.",
+    title: "Manifeste Bloom | Autonomie Botanique & Exigence",
+    description: "Manifeste Bloom by BotaniK : autonomie botanique, ingénierie domestique et alliance entre rigueur scientifique et savoirs végétaux.",
     path: "/manifeste/"
   },
   'la-marque': {
@@ -307,7 +307,7 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
   },
   'questions-frequentes': {
     title: "FAQ Extracteur Botanique | Questions Fréquentes | Bloom",
-    description: "Foire aux questions BloomLab® : garanties, entretien de l'inox 304, protocoles d'extraction, solvants autorisés et délais d'expédition sous 24 à 48 heures.",
+    description: "Foire aux questions BloomLab® : garantie légale de conformité 2 ans, entretien de l'inox 304, protocoles d'extraction, solvants autorisés et expédition 24–48h.",
     path: "/questions-frequentes/"
   },
   faq: {
@@ -316,48 +316,48 @@ const VIEW_SEO_MAP: Record<string, SEOEntry> = {
     path: "/questions-frequentes/"
   },
   'totum-vegetal': {
-    title: "Totum Végétal vs Molécules Isolées | Synergie des Plantes",
-    description: "Pourquoi le Totum végétal surpasse les isolats : synergie biochimique, biodisponibilité accrue et effet tampon des principes actifs entiers.",
+    title: "Le Totum Végétal : Comprendre la Synergie des Plantes",
+    description: "Pourquoi le Totum végétal diffère des isolats : synergie phytochimique, biodisponibilité et effet tampon des composés entiers.",
     path: "/totum-vegetal/"
   },
   'plantes-adaptogenes': {
-    title: "Plantes Adaptogènes | Axe HPA, Cortisol & Résilience",
-    description: "Ashwagandha, Rhodiola, Éleuthérocoque : guide pratique des plantes adaptogènes pour moduler le cortisol et soutenir l'axe neuro-endocrinien.",
+    title: "Plantes Adaptogènes | Botanique & Modes d'Extraction",
+    description: "Ashwagandha, Rhodiola, Éleuthérocoque : guide pédagogique des plantes adaptogènes et de leur extraction sur BloomLab®.",
     path: "/plantes-adaptogenes/"
   },
   cosmetiques: {
-    title: "Cosmétique Maison au Botanique | Recettes & Protocoles",
+    title: "Cosmétique Botanique Maison : Macérâts, Sérums & Baumes",
     description: "Sérums, huiles et soins capillaires à base de romarin, gingembre et fenugrec, préparés avec votre BloomLab®.",
     path: "/cosmetiques-naturels-diy/"
   },
   'cosmetique-botanique': {
-    title: "Cosmétique Maison au Botanique | Recettes & Protocoles",
+    title: "Cosmétique Botanique Maison : Macérâts, Sérums & Baumes",
     description: "Sérums, huiles et soins capillaires à base de romarin, gingembre et fenugrec, préparés avec votre BloomLab®.",
     path: "/cosmetiques-naturels-diy/"
   },
   'cosmetiques-naturels-diy': {
-    title: "Cosmétique Maison au Botanique | Recettes & Protocoles",
+    title: "Cosmétique Botanique Maison : Macérâts, Sérums & Baumes",
     description: "Sérums, huiles et soins capillaires à base de romarin, gingembre et fenugrec, préparés avec votre BloomLab®.",
     path: "/cosmetiques-naturels-diy/"
   },
   culinaire: {
-    title: "Gastronomie Botanique | Huiles Aromatisées & Bouillons",
-    description: "Gastronomie botanique de précision : créez des huiles infusées d'exception, vinaigres botaniques et bouillons actifs grâce au vortex cinétique BloomLab.",
+    title: "Gastronomie Botanique : Huiles Parfumées & Infusions Culinaires",
+    description: "Gastronomie botanique de précision : créez des huiles infusées d'exception, vinaigres botaniques et bouillons aromatiques avec BloomLab®.",
     path: "/gastronomie-botanique/"
   },
   'gastronomie-botanique': {
-    title: "Gastronomie Botanique | Huiles Aromatisées & Bouillons",
-    description: "Gastronomie botanique de précision : créez des huiles infusées d'exception, vinaigres botaniques et bouillons actifs grâce au vortex cinétique BloomLab.",
+    title: "Gastronomie Botanique : Huiles Parfumées & Infusions Culinaires",
+    description: "Gastronomie botanique de précision : créez des huiles infusées d'exception, vinaigres botaniques et bouillons aromatiques avec BloomLab®.",
     path: "/gastronomie-botanique/"
   },
   'remedes-naturels': {
-    title: "Remèdes Naturels Maison | Guide d'Herboristerie Moderne",
-    description: "Guide structuré pour concevoir vos préparations végétales familiales : tisanes concentrées, sirops botaniques, baumes et macérats aqueux ou huileux.",
+    title: "Préparations & Infusions Botaniques Maison : Guide Pratique — Bloom by BotaniK",
+    description: "Guide pratique pour concevoir vos tisanes concentrées, macérats huileux et infusions botaniques maison en toute sécurité.",
     path: "/remedes-naturels/"
   },
   'remedes-naturels-maison-guide': {
-    title: "Remèdes Naturels Maison | Guide d'Herboristerie Moderne",
-    description: "Guide structuré pour concevoir vos préparations végétales familiales : tisanes concentrées, sirops botaniques, baumes et macérats aqueux ou huileux.",
+    title: "Préparations & Infusions Botaniques Maison : Guide Pratique — Bloom by BotaniK",
+    description: "Guide pratique pour concevoir vos tisanes concentrées, macérats huileux et infusions botaniques maison en toute sécurité.",
     path: "/remedes-naturels/"
   },
   lexique: {
@@ -566,8 +566,18 @@ const NOINDEX_VIEWS = new Set([
   'pending',
   'activation',
   'activate-bloomlab',
-  'newsletter-preferences'
+  'newsletter-preferences',
+  'protocole-psoriasis',
+  'protocole-sibo',
+  'protocole-decalcification-pineale'
 ]);
+
+function normalizeSeoPath(rawPath: string): string {
+  const withoutQuery = (rawPath || '/').split('?')[0].split('#')[0];
+  if (!withoutQuery || withoutQuery === '/') return '/';
+  const withLeading = withoutQuery.startsWith('/') ? withoutQuery : `/${withoutQuery}`;
+  return withLeading.endsWith('/') ? withLeading : `${withLeading}/`;
+}
 
 function setMetaTag(attrName: 'name' | 'property', attrValue: string, content: string) {
   let meta = document.querySelector(`meta[${attrName}="${attrValue}"]`);
@@ -584,35 +594,54 @@ function setMetaDescription(description: string) {
 }
 
 function setCanonicalLink(canonical: string) {
+  let cleanCanonical = canonical;
+  try {
+    const parsed = new URL(canonical, 'https://bloombybotanik.com');
+    cleanCanonical = `https://bloombybotanik.com${normalizeSeoPath(parsed.pathname)}`;
+  } catch {
+    cleanCanonical = `https://bloombybotanik.com${normalizeSeoPath(canonical)}`;
+  }
+
   let linkCanonical = document.querySelector('link[rel="canonical"]');
   if (!linkCanonical) {
     linkCanonical = document.createElement('link');
     linkCanonical.setAttribute('rel', 'canonical');
     document.head.appendChild(linkCanonical);
   }
-  linkCanonical.setAttribute('href', canonical);
+  linkCanonical.setAttribute('href', cleanCanonical);
 
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => {
     const hreflang = el.getAttribute('hreflang');
     if (hreflang === 'fr' || hreflang === 'x-default') {
-      el.setAttribute('href', canonical);
+      el.setAttribute('href', cleanCanonical);
     }
   });
 }
 
-function applySEOMetadata(title: string, description: string, canonical: string, noindex: boolean) {
+function applySEOMetadata(
+  title: string,
+  description: string,
+  canonical: string,
+  noindex: boolean,
+  nofollow: boolean = false
+) {
+  const rawPathname = typeof window !== 'undefined' ? window.location.pathname : '/';
+  const isEnRoute = rawPathname === '/en' || rawPathname.startsWith('/en/');
+  const effectiveNoindex = noindex || isEnRoute;
+  const effectiveNofollow = noindex ? nofollow : false;
+
   document.title = title;
   setMetaDescription(description);
   setMetaTag('property', 'og:title', title);
   setMetaTag('property', 'og:description', description);
-  setMetaTag('property', 'og:url', canonical);
+  setMetaTag('property', 'og:url', canonical.split('?')[0].split('#')[0]);
   setMetaTag('name', 'twitter:title', title);
   setMetaTag('name', 'twitter:description', description);
   setMetaTag(
     'name',
     'robots',
-    noindex
-      ? 'noindex, nofollow'
+    effectiveNoindex
+      ? `noindex, ${effectiveNofollow ? 'nofollow' : 'follow'}`
       : 'index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1'
   );
   setCanonicalLink(canonical);
@@ -1199,7 +1228,7 @@ export function updateDocumentSEO(config?: any, _lang?: any, productId?: string,
     }
 
     const currentPathRaw = typeof window !== 'undefined' ? window.location.pathname : '/';
-    const normalizedCurrent = currentPathRaw.endsWith('/') ? currentPathRaw : `${currentPathRaw}/`;
+    const normalizedCurrent = normalizeSeoPath(currentPathRaw);
 
     // Résolution dynamique articles / blog avec slug : préserver titre, description et canonical propre !
     if ((config === 'articles' || config === 'blog') && (_slug || normalizedCurrent.startsWith('/articles/') || normalizedCurrent.startsWith('/blog/'))) {
@@ -1222,8 +1251,18 @@ export function updateDocumentSEO(config?: any, _lang?: any, productId?: string,
       normalizedCurrent !== '/recettes/' &&
       normalizedCurrent !== '/recettes/culinaires/soupe-beaute-tremella/'
     ) {
+      const isPsoriasisRecipe = normalizedCurrent.includes('psoriasis');
+      const isEn = normalizedCurrent === '/en/' || normalizedCurrent.startsWith('/en/');
       setCanonicalLink(`https://bloombybotanik.com${normalizedCurrent}`);
-      setMetaTag('name', 'robots', 'index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1');
+      setMetaTag(
+        'name',
+        'robots',
+        isPsoriasisRecipe
+          ? 'noindex, nofollow'
+          : isEn
+            ? 'noindex, follow'
+            : 'index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1'
+      );
       return;
     }
 
@@ -1326,34 +1365,60 @@ export function updateDocumentSEO(config?: any, _lang?: any, productId?: string,
     }
 
     const canonicalOverride = resolveClientCanonicalOverride(normalizedCurrent);
+    const isEnPath = normalizedCurrent === '/en/' || normalizedCurrent.startsWith('/en/');
+    const isStrictNoindexPath =
+      isNoindex ||
+      normalizedCurrent.includes('psoriasis') ||
+      normalizedCurrent.startsWith('/academie/protocoles/sibo/') ||
+      normalizedCurrent.startsWith('/academie/protocoles/decalcification-pineale/');
     const mapped = VIEW_SEO_MAP[config];
     if (mapped) {
       const localizedMapped = langKey !== 'fr' ? VIEW_SEO_I18N[langKey][config] : undefined;
-      const targetPath = canonicalOverride || mapped.path || VIEW_PATHS[config] || normalizedCurrent || '/';
-      const cleanPath = targetPath.endsWith('/') ? targetPath : `${targetPath}/`;
-      const canonical = `https://bloombybotanik.com${cleanPath === '//' ? '/' : cleanPath}`;
-      applySEOMetadata(localizedMapped?.title || mapped.title, localizedMapped?.description || mapped.description, canonical, isNoindex);
+      const targetPath = isEnPath
+        ? normalizedCurrent
+        : canonicalOverride || mapped.path || VIEW_PATHS[config] || normalizedCurrent || '/';
+      const cleanPath = normalizeSeoPath(targetPath);
+      const canonical = `https://bloombybotanik.com${cleanPath}`;
+      applySEOMetadata(
+        localizedMapped?.title || mapped.title,
+        localizedMapped?.description || mapped.description,
+        canonical,
+        isStrictNoindexPath || isEnPath,
+        isStrictNoindexPath
+      );
       return;
     }
 
-    if (VIEW_PATHS[config]) {
+    if (VIEW_PATHS[config] && !isEnPath) {
       const targetPath = canonicalOverride || VIEW_PATHS[config];
-      const cleanPath = targetPath.endsWith('/') ? targetPath : `${targetPath}/`;
-      const canonical = `https://bloombybotanik.com${cleanPath === '//' ? '/' : cleanPath}`;
+      const cleanPath = normalizeSeoPath(targetPath);
+      const canonical = `https://bloombybotanik.com${cleanPath}`;
       setCanonicalLink(canonical);
       setMetaTag(
         'name',
         'robots',
-        isNoindex
+        isStrictNoindexPath
           ? 'noindex, nofollow'
           : 'index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1'
       );
       return;
     }
 
-    if (!document.title || document.title === 'indexbis') {
-      document.title = HOME_TITLE;
-    }
+    // Fallback dynamique auto-canonique (jamais de fallback vers /)
+    const segments = normalizedCurrent.split('/').filter(Boolean);
+    const lastSeg = segments[segments.length - 1] || 'bloom';
+    const derivedLabel = lastSeg
+      .replace(/[-_]+/g, ' ')
+      .replace(/\b\w/g, (c) => c.toUpperCase());
+    const fallbackTitle = `${derivedLabel} | Bloom by BotaniK`;
+    const fallbackDesc = `${derivedLabel} — Ressources et extraction botanique de précision Bloom by BotaniK.`;
+    applySEOMetadata(
+      fallbackTitle,
+      fallbackDesc,
+      `https://bloombybotanik.com${normalizedCurrent}`,
+      isStrictNoindexPath || isEnPath,
+      isStrictNoindexPath
+    );
     return;
   }
 

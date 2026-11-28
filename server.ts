@@ -488,7 +488,7 @@ Si l'utilisateur interroge sur une extraction, un calcul de degré alcoolique ou
    - Rappel US Proof (pour les utilisateurs anglophones du manuel) : Proof = 2 × % vol. (ex. 150 proof = 75°).
    - Précise toujours que ce calcul linéaire sert de repère pratique (contraction de volume éthanol/eau d'environ 2 à 3 % en mélange réel ; compléter si besoin jusqu'au volume final).
 3. Rappelle fidèlement les réglages et précautions du manuel BloomLab® :
-   - 6 programmes prédéfinis : Butter (71 °C / 2h), Oil (71 °C / 1h), Tincture (160 °F / 71 °C et 4h par défaut), Sans chauffe (fonction à température non réglable réservée aux mélanges froids type vinaigrette, jamais utilisée pour nos extractions), Décarboxylation (121 °C / 1h30 par défaut, 71–121 °C et 30 min–4h + 15 min de refroidissement), Nettoyage (5 min fixe, non réglable).
+   - 6 programmes prédéfinis : Butter (71 °C / 2h), Oil (71 °C / 1h), Tincture (160 °F / 71 °C et 4h par défaut), Sans chauffe (fonction à température non réglable réservée aux mélanges froids type vinaigrette, jamais utilisée pour nos extractions), Activation thermique douce des résines et aromates (121 °C / 1h30 par défaut, 71–121 °C et 30 min–4h + 15 min de refroidissement), Nettoyage (5 min fixe, non réglable).
    - Mode manuel TEMP/TIME (+ / -) disponible de 0 °C à 121 °C et 30 min à 12h sur les modes réglables : les valeurs de Tincture (71 °C / 4h) sont donc un point de départ modifiable librement selon les besoins de la plante ; la minuterie démarre une fois la température cible atteinte.
    - RÈGLE DE SÉCURITÉ ALCOOL (données INRS & manuel) : le risque d'inflammation ne vient pas de l'ébullition (78 °C). L'éthanol pur a un point d'éclair de 13 °C (21 °C à 70 %, 49 °C à 10 %) : à 50 °C comme à 71 °C, les vapeurs sont déjà inflammables et la pression de vapeur augmente avec la chaleur. Travailler impérativement dans une pièce très bien ventilée, sans aucune flamme, cigarette ou source d'ignition, couvercle verrouillé, en respectant les repères MIN et MAX (et sans inventer de seuil arbitraire « max 60 °C » non présent dans les documents fabricant), et ne jamais laisser l'appareil sans surveillance en fonctionnement ni lorsqu'il est branché. L'exemple chauffé du manuel « Tincture » emploie un alcool ≥ 75 % vol. (150 proof) avec la consigne « Ne pas ajouter d'eau ni de lécithine » : pour une dilution hydro-alcoolique contenant de l'eau (45°–70°), utiliser un bocal hermétique hors appareil à l'abri de la chaleur et de toute flamme (ne pas chauffer d'alcool dilué à l'eau dans BloomLab®). En extraction A/B, toujours vider, nettoyer et sécher intégralement la cuve avant la Phase B.
    - RÈGLE RÉGLEMENTAIRE (Règlement CE n° 1924/2006) : ne formuler aucune allégation de santé non autorisée sur les plantes ou compléments (éviter « contribue au confort articulaire », « favorise la détente », « soutient la digestion », « sommeil réparateur », etc.) ; s'en tenir à l'usage botanique/traditionnel documenté et aux fiches de l'app.
@@ -810,7 +810,9 @@ function registerAppRoutes(app: express.Express) {
     "/protocoles/clarte-mentale": "/academie/protocoles/clarte-mentale/",
     "/protocoles/clarte-mentale/": "/academie/protocoles/clarte-mentale/",
     "/academie/comprendre-le-corps/comment-lire-le-modele-bloom": "/academie/comprendre-le-modele-bloom/",
-    "/abonnement": "/abonnement/",
+    "/abonnement": "/bloomlab/",
+    "/abonnements-numeriques": "/bloomlab/",
+    "/boutique/abonnements-numeriques": "/bloomlab/",
     "/herbier/phytotherapie": "/academie/reset-homeostasique/",
     "/herbier/phytotherapie/": "/academie/reset-homeostasique/",
     "/herbier/therapeutic": "/academie/reset-homeostasique/",
@@ -1026,6 +1028,19 @@ function registerAppRoutes(app: express.Express) {
     "/herbier/extra-recipe-12": "/recettes/phytotherapie/remede-alopecie-anti-dht-matrice-folliculaire/",
     "/herbier/gastronomie": "/recettes/gastronomie/",
     "/herbier/gastronomie/": "/recettes/gastronomie/",
+    // --- Chantier 2 : Doublons éditoriaux & anciens chemins Académie ---
+    "/totum-definition": "/totum-vegetal/",
+    "/solvants-extraction": "/guide-solvants/",
+    "/infusion-precision": "/infusion-botanique-maison-comment-ca-marche/",
+    "/infusion-botanique": "/infusion-botanique-maison-comment-ca-marche/",
+    "/comprendre-le-corps/4-architectures": "/academie/comprendre-le-corps/4-architectures/",
+    "/comprendre-le-corps/7-terrains": "/academie/comprendre-le-corps/7-terrains/",
+    "/comprendre-le-corps/9-axes-historiques": "/academie/comprendre-le-corps/9-axes-historiques/",
+    "/comprendre-le-corps/charge-allostatique": "/academie/comprendre-le-corps/charge-allostatique/",
+    "/comprendre-le-corps/metabolisme-glucidique-insuline": "/academie/comprendre-le-corps/metabolisme-glucidique-insuline/",
+    "/comprendre-le-corps/reset-homeostasique": "/academie/reset-homeostasique/",
+    "/academie/comprendre-le-corps/reset-homeostasique": "/academie/reset-homeostasique/",
+    "/comprendre-le-corps/comment-lire-le-modele-bloom": "/academie/comprendre-le-modele-bloom/",
   };
 
   Object.entries(redirects301).forEach(([from, to]) => {
@@ -1636,11 +1651,53 @@ function stripHomepageSpecificSchemas(html: string, canonical: string, title: st
   );
 }
 
+function isPathologyNoindexPath(normalizedPath: string): boolean {
+  const clean = normalizedPath.toLowerCase();
+  return (
+    clean === "/academie/protocoles/psoriasis/" ||
+    clean === "/academie/protocoles/sibo/" ||
+    clean === "/academie/protocoles/decalcification-pineale/" ||
+    clean === "/phytotherapie-reset/protocole-psoriasis/" ||
+    clean === "/phytotherapie-reset/protocole-sibo/" ||
+    clean.includes("psoriasis")
+  );
+}
+
+function isEnLocalePath(normalizedPath: string): boolean {
+  return normalizedPath === "/en/" || normalizedPath.startsWith("/en/");
+}
+
+function buildFallbackRoute(normalizedPath: string): ServerSEORoute {
+  const slug = normalizedPath
+    .replace(/^\/+|\/+$/g, "")
+    .split("/")
+    .filter(Boolean)
+    .pop() || "accueil";
+  const readable = slug
+    .replace(/[-_]+/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+  const title = `${readable} | Bloom by BotaniK`;
+  const description = `${readable} — Documentation botanique et méthode d'extraction Bloom by BotaniK.`;
+  return {
+    path: normalizedPath,
+    canonical: normalizedPath,
+    title,
+    h1: readable,
+    description,
+    image1200: "/images/og/bloomlab-extracteur-botanique-1200x630.jpg",
+    image1080: "/images/og/bloomlab-extracteur-botanique-1080x1080.jpg",
+    alt: `${readable} — Bloom by BotaniK`,
+    type: "website",
+    images: [{ url: "/images/og/bloomlab-extracteur-botanique-1200x630.jpg", alt: `${readable} — Bloom by BotaniK` }],
+  };
+}
+
 function finalizeRecipeSsrHtml(
   html: string,
   rendered: { title: string; metaDescription: string; canonical: string; jsonLd: string; bodyHtml: string },
   ogType: string = 'website',
-  isNotFound: boolean = false
+  isNotFound: boolean = false,
+  isStrictNoindex: boolean = isNotFound
 ): string {
   let updated = stripHomepageSpecificSchemas(html, rendered.canonical, rendered.title);
   updated = updated.replace(/<title>.*?<\/title>/i, `<title>${rendered.title}</title>`);
@@ -1652,7 +1709,7 @@ function finalizeRecipeSsrHtml(
   updated = updated.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, `<link rel="canonical" href="${rendered.canonical}" />`);
   updated = updated.replace(/<meta\s+name=["']twitter:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:title" content="${rendered.title}">`);
   updated = updated.replace(/<meta\s+name=["']twitter:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta name="twitter:description" content="${rendered.metaDescription}">`);
-  const robotsVal = isNotFound
+  const robotsVal = isNotFound || isStrictNoindex
     ? "noindex, nofollow"
     : "index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1";
   if (/<meta\s+name=["']robots["'][^>]*>/i.test(updated)) {
@@ -1661,22 +1718,31 @@ function finalizeRecipeSsrHtml(
     updated = updated.replace("</head>", `  <meta name="robots" content="${robotsVal}" />\n  </head>`);
   }
   updated = updated.replace(/<link\s+rel=["']alternate["']\s+hreflang=["'].*?["']\s+href=["'].*?["']\s*\/?>\s*/gi, "");
+  const jsonLdBlock = isStrictNoindex && !isNotFound ? "" : rendered.jsonLd;
   updated = updated.replace(
     "</head>",
-    `  <link rel="alternate" hreflang="fr" href="${rendered.canonical}" />\n  <link rel="alternate" hreflang="x-default" href="${rendered.canonical}" />\n  ${rendered.jsonLd}\n  </head>`
+    `  <link rel="alternate" hreflang="fr" href="${rendered.canonical}" />\n  <link rel="alternate" hreflang="x-default" href="${rendered.canonical}" />\n  ${jsonLdBlock}\n  </head>`
   );
-  const hasImg = /<img[\s\S]*?src=/i.test(rendered.bodyHtml);
-  const safeAlt = rendered.title.replace(/"/g, '&quot;');
-  const figureHtml = hasImg
-    ? ''
-    : `\n      <figure><img src="https://bloombybotanik.com/images/bloomlab_main_1784887530345.png" alt="${safeAlt}" width="1200" height="900" loading="eager" /></figure>`;
-  updated = updated.replace(/<div id=["']root["']>[\s\S]*?<\/div>/i, `<div id="root">${rendered.bodyHtml}${figureHtml}</div>`);
+  if (isStrictNoindex && !isNotFound) {
+    updated = updated.replace(/<div id=["']root["']>[\s\S]*?<\/div>/i, `<div id="root"></div>`);
+  } else {
+    const hasImg = /<img[\s\S]*?src=/i.test(rendered.bodyHtml);
+    const safeAlt = rendered.title.replace(/"/g, '&quot;');
+    const figureHtml = hasImg
+      ? ''
+      : `\n      <figure><img src="https://bloombybotanik.com/images/bloomlab_main_1784887530345.png" alt="${safeAlt}" width="1200" height="900" loading="eager" /></figure>`;
+    updated = updated.replace(/<div id=["']root["']>[\s\S]*?<\/div>/i, `<div id="root">${rendered.bodyHtml}${figureHtml}</div>`);
+  }
   return updated;
 }
 
 function resolveCanonicalPath(normalizedPath: string, matchedPostSlug: string | null = null): string {
   if (matchedPostSlug) {
     return `/articles/${matchedPostSlug}/`;
+  }
+
+  if (isPathologyNoindexPath(normalizedPath)) {
+    return normalizedPath;
   }
 
   const routeMeta = getRouteMeta(normalizedPath);
@@ -1736,24 +1802,26 @@ function resolveCanonicalPath(normalizedPath: string, matchedPostSlug: string | 
 
 function injectServerSEO(html: string, reqPath: string): { html: string; statusCode: number } {
   try {
-    const clean = reqPath.replace(/\/$/, "") + "/";
+    const pathOnly = (reqPath || "/").split("?")[0].split("#")[0] || "/";
+    const clean = pathOnly.replace(/\/$/, "") + "/";
     const normalized = clean === "//" ? "/" : clean;
 
     const ssrMods = ssrModulesCache;
     // 0. Recettes publiques crawlables (Hub, Catégories, Pagination & Fiches individuelles)
     if (
       ssrMods &&
-      (reqPath.startsWith("/recettes") || reqPath.startsWith("/recettes/")) &&
+      (pathOnly.startsWith("/recettes") || pathOnly.startsWith("/recettes/")) &&
       normalized !== "/recettes/culinaires/soupe-beaute-tremella/"
     ) {
-      const cleanRecipePath = reqPath.endsWith("/") ? reqPath : reqPath + "/";
+      const cleanRecipePath = pathOnly.endsWith("/") ? pathOnly : pathOnly + "/";
+      const isRecipeNoindex = isPathologyNoindexPath(cleanRecipePath);
 
       // 0.1 Fiche Recette Herbier Migrée
       const herbierRecipe = ssrMods.getHerbierRecipeByPath(cleanRecipePath);
       if (herbierRecipe) {
         const rendered = ssrMods.renderHerbierRecipePageHtml(herbierRecipe);
         return {
-          html: finalizeRecipeSsrHtml(html, rendered, herbierRecipe.schemaType === 'Recipe' ? 'website' : 'article'),
+          html: finalizeRecipeSsrHtml(html, rendered, herbierRecipe.schemaType === 'Recipe' ? 'website' : 'article', false, isRecipeNoindex),
           statusCode: 200,
         };
       }
@@ -1763,7 +1831,7 @@ function injectServerSEO(html: string, reqPath: string): { html: string; statusC
       if (recipe) {
         const rendered = ssrMods.renderRecipePageHtml(recipe);
         return {
-          html: finalizeRecipeSsrHtml(html, rendered, recipe.schemaType === 'Recipe' ? 'website' : 'article'),
+          html: finalizeRecipeSsrHtml(html, rendered, recipe.schemaType === 'Recipe' ? 'website' : 'article', false, isRecipeNoindex),
           statusCode: 200,
         };
       }
@@ -1814,7 +1882,7 @@ function injectServerSEO(html: string, reqPath: string): { html: string; statusC
       };
     }
 
-    let route: ServerSEORoute | undefined = getRouteMeta(normalized) || SERVER_SEO_ROUTES[normalized] || SERVER_SEO_ROUTES[reqPath];
+    let route: ServerSEORoute | undefined = getRouteMeta(normalized) || SERVER_SEO_ROUTES[normalized] || SERVER_SEO_ROUTES[pathOnly];
     let matchedPostSlug: string | null = null;
 
     // Résolution dynamique des articles & billets de blog depuis blogPosts.ts
@@ -1853,7 +1921,7 @@ function injectServerSEO(html: string, reqPath: string): { html: string; statusC
     }
 
     if (!route) {
-      route = SERVER_SEO_ROUTES["/"];
+      route = buildFallbackRoute(normalized);
     }
 
     const full1200 = `https://bloombybotanik.com${route.image1200}`;
@@ -1876,7 +1944,7 @@ function injectServerSEO(html: string, reqPath: string): { html: string; statusC
     updated = updated.replace(/<meta\s+property=["']og:title["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:title" content="${route.title}">`);
     updated = updated.replace(/<meta\s+property=["']og:description["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:description" content="${route.description}">`);
     updated = updated.replace(/<meta\s+property=["']og:url["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:url" content="${canonical}">`);
-    updated = updated.replace(/<meta\s+property=["']og:type["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:type" content="${route.type}">`);
+    updated = updated.replace(/<meta\s+property=["']og:type["']\s+content=["'].*?["']\s*\/?>/i, `<meta property="og:type" content="${canonicalPath === "/bloomlab/" ? route.type : (route.type === "article" ? "article" : "website")}">`);
 
     // 4. Update OG Images Block cleanly
     const ogBlockRegex = /<!-- Primary OG Image[\s\S]*?<!-- Twitter Card -->/i;
@@ -1888,13 +1956,18 @@ function injectServerSEO(html: string, reqPath: string): { html: string; statusC
     }
 
     // 5. Update Canonical link, Robots & Self-Referencing Hreflang
-    const isNoindexRoute = [
+    const isPrivateNoindex = [
       "/admin/", "/panier/", "/checkout/", "/commande/", "/compte/", "/activation/", "/en-attente/"
     ].some((prefix) => normalized.startsWith(prefix)) || normalized.startsWith("/newsletter/");
+    const isPathologyNoindex = isPathologyNoindexPath(normalized) || Boolean(route.noindex);
+    const isEnRoute = isEnLocalePath(normalized);
+    const isNoindexRoute = isPrivateNoindex || isPathologyNoindex;
 
     const robotsValue = isNoindexRoute
       ? "noindex, nofollow"
-      : "index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1";
+      : isEnRoute
+        ? "noindex, follow"
+        : "index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1";
     if (/<meta\s+name=["']robots["'][^>]*>/i.test(updated)) {
       updated = updated.replace(/<meta\s+name=["']robots["'][^>]*>/i, `<meta name="robots" content="${robotsValue}" />`);
     } else {
@@ -2025,7 +2098,7 @@ function injectServerSEO(html: string, reqPath: string): { html: string; statusC
       }
 
       schemaJson = JSON.stringify(articleData);
-    } else if (route.type === "product") {
+    } else if (route.type === "product" && canonicalPath === "/bloomlab/") {
       const isBloomLabProduct = route.sku === "BLOOMLAB-V2";
       const bloomLabImages = [
         "https://bloombybotanik.com/images/1.png",
@@ -2212,7 +2285,7 @@ function injectServerSEO(html: string, reqPath: string): { html: string; statusC
             "name": "Peut-on utiliser ses propres plantes du jardin ou de cueillette locale ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui, tout à fait ! BloomLab® est un instrument d'autonomie et de souveraineté. Vous pouvez utiliser vos propres récoltes séchées avec soin, des plantes d'herboristerie biologique certifiée, ou nos kits pré-dosés grade Totum."
+              "text": "Oui, tout à fait ! BloomLab® est un instrument d'autonomie botanique. Vous pouvez utiliser vos propres récoltes séchées avec soin, des plantes d'herboristerie biologique certifiée, ou nos kits pré-dosés grade Totum."
             }
           },
           {
@@ -2228,7 +2301,7 @@ function injectServerSEO(html: string, reqPath: string): { html: string; statusC
             "name": "Quelle est la garantie de la machine BloomLab® ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "L'extracteur BloomLab® bénéficie de la garantie légale de conformité de 2 ans (UE) complétée par la garantie commerciale constructeur d'1 an, avec support et SAV basés en France."
+              "text": "L'extracteur BloomLab® bénéficie de la garantie légale de conformité de 2 ans (UE), avec support et SAV basés en France."
             }
           },
           {
@@ -2265,7 +2338,7 @@ function injectServerSEO(html: string, reqPath: string): { html: string; statusC
           .replace(/</g, "&lt;")
           .replace(/>/g, "&gt;")
           .replace(/"/g, "&quot;");
-      const productSnippet = route.type === "product" && route.price
+      const productSnippet = canonicalPath === "/bloomlab/" && route.type === "product" && route.price
         ? `<p><strong>Marque :</strong> Bloom by BotaniK · <strong>Prix :</strong> ${escapeHtml(route.price)} EUR · <strong>Disponibilité :</strong> En stock (expédition 24-48h depuis la France)</p>`
         : "";
       const summaryHtml = route.ssrSummaryHtml
@@ -2367,13 +2440,17 @@ function registerCatchAll(app: express.Express, isProd: boolean) {
         return next();
       }
 
-      const normCatch = req.path.replace(/\/$/, "") + "/";
+      const normCatch = (req.path.replace(/\/$/, "") + "/").replace(/^\/\/$/, "/");
       const isPrivateRoute = [
         "/admin/", "/panier/", "/checkout/", "/commande/", "/compte/", "/activation/", "/en-attente/", "/newsletter/"
       ].some((prefix) => normCatch.startsWith(prefix));
-      const xRobotsTag = isPrivateRoute
+      const catchRouteMeta = getRouteMeta(normCatch);
+      const isStrictNoindexCatch = isPrivateRoute || isPathologyNoindexPath(normCatch) || Boolean(catchRouteMeta?.noindex);
+      const xRobotsTag = isStrictNoindexCatch
         ? "noindex, nofollow"
-        : "index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1";
+        : isEnLocalePath(normCatch)
+          ? "noindex, follow"
+          : "index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1";
 
       if (req.path.startsWith("/recettes") || req.path.startsWith("/articles/") || req.path.startsWith("/blog/")) {
         await ensureSsrModules();

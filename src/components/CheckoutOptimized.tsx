@@ -523,7 +523,7 @@ export const CheckoutOptimized: React.FC<CheckoutOptimizedProps> = ({
               <PaymentBadges />
               <div className="text-[11px] text-slate-400 text-center space-y-1">
                 <p>✓ {tr("Expédition garantie sous 24/48h", "Guaranteed dispatch within 24/48h", "Garantierter Versand in 24/48 Std.")}</p>
-                <p>✓ {tr("Garantie 30 jours satisfait ou remboursé", "30-day money-back guarantee", "30 Tage Geld-zurück-Garantie")}</p>
+                <p>✓ {tr("Essai 30 jours satisfait ou remboursé", "30-day satisfaction trial", "30 Tage Zufriedenheits-Test")}</p>
                 <p>✓ {tr("Support client réactif par email", "Responsive customer support via email", "Reaktiver Kundensupport per E-Mail")}</p>
               </div>
             </div>

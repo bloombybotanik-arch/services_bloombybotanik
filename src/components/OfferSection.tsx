@@ -24,32 +24,32 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
   const isFR = lang === 'fr';
 
   const [selectedPlantOption, setSelectedPlantOption] = useState<string>(
-    isFR ? "Kit Nuit Profonde (Mélisse & Passiflore)" : isDE ? "Tiefschlaf-Set (Melisse & Passionsblume)" : "Deep Night Set (Lemon Balm & Passionflower)"
+    isFR ? "Infusion Douceur du Soir (Valériane & Passiflore)" : isDE ? "Sanfter Abendaufguss (Baldrian & Passionsblume)" : "Evening Calm Infusion (Valerian & Passionflower)"
   );
 
   const plantOptions = [
     {
       id: 'nuit',
-      label: isFR ? "Kit Nuit Profonde (Valériane & Passiflore)" : isDE ? "Tiefschlaf-Set (Baldrian & Passionsblume)" : "Deep Night Set (Valerian & Passionflower)",
+      label: isFR ? "Infusion Douceur du Soir (Valériane & Passiflore)" : isDE ? "Sanfter Abendaufguss (Baldrian & Passionsblume)" : "Evening Calm Infusion (Valerian & Passionflower)",
       benefit: isFR ? "Rituel du soir" : isDE ? "Abendritual" : "Evening Ritual"
     },
     {
       id: 'digestion',
-      label: isFR ? "Kit Équilibre Botanique (Gingembre & Romarin)" : isDE ? "Kräuter-Set (Ingwer & Rosmarin)" : "Botanical Balance Set (Ginger & Rosemary)",
+      label: isFR ? "Infusion Fraîcheur & Légèreté (Aromates & Plantes Bio)" : isDE ? "Frische- & Leichtigkeit-Aufguss (Aromaten & Bio-Kräuter)" : "Freshness & Lightness Infusion (Organic Herbs)",
       benefit: isFR ? "Rituel d'après-repas" : isDE ? "Nach-dem-Essen-Ritual" : "After-Meal Ritual"
     },
     {
       id: 'articulaire',
-      label: isFR ? "Kit Mouvement Libre (Reine des Prés & Boswellia)" : isDE ? "Bewegungs-Set (Mädesüß & Boswellia)" : "Free Movement Set (Meadowsweet & Boswellia)",
+      label: isFR ? "Infusion Souplesse & Détente (Reine-des-Prés & Boswellia)" : isDE ? "Geschmeidigkeits-Aufguss (Mädesüß & Boswellia)" : "Suppleness & Relaxation Infusion (Meadowsweet & Boswellia)",
       benefit: isFR ? "Synergie résine & plantes" : isDE ? "Harz & Kräuter" : "Resin & Herbs"
     }
   ];
 
   const microCopyText = isFR
-    ? "Paiement 3x sans frais • Garantie 30 jours satisfait ou remboursé • Expédition sous 24/48h"
+    ? "Paiement 3x sans frais • Essai 30 jours satisfait ou remboursé • Expédition sous 24/48h"
     : isDE
-    ? "3x zinsfreie Raten • 30 Tage Geld-zurück-Garantie • Versand in 24/48h"
-    : "3x fee-free installments • 30-day money-back guarantee • 24/48h shipping";
+    ? "3x zinsfreie Raten • 30 Tage Zufriedenheits-Test • Versand in 24/48h"
+    : "3x fee-free installments • 30-day satisfaction trial • 24/48h shipping";
 
   return (
     <section id="offres" className={styles.offerSection} aria-label="Configurations et offres BloomLab">
@@ -119,7 +119,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
                 </li>
                 <li className={styles.featureItem}>
                   <Check className={styles.checkIcon} />
-                  <span>{isFR ? "Garantie constructeur 1 an pièces et main d'œuvre" : isDE ? "1 Jahr Herstellergarantie (Teile & Arbeit)" : "1-Year Manufacturer Warranty"}</span>
+                  <span>{isFR ? "Garantie légale de conformité 2 ans" : isDE ? "2 Jahre gesetzliche Gewährleistung" : "2-Year Legal Conformity Warranty"}</span>
                 </li>
                 <li className={styles.featureItem}>
                   <Check className={styles.checkIcon} />
@@ -147,7 +147,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
             </div>
           </div>
 
-          {/* 2. Kit de Démarrage Souveraineté (299€ au lieu de 350€) - FEATURED */}
+          {/* 2. Kit Démarrage Autonomie Botanique (299€ au lieu de 350€) - FEATURED */}
           <div className={`${styles.card} ${styles.cardFeatured}`}>
             <div className={styles.popularRibbon}>
               {isFR ? "★ OFFRE PRINCIPALE · MEILLEURE VENTE" : isDE ? "★ EMPFOHLEN · BESTSELLER" : "★ BEST VALUE · MOST POPULAR"}
@@ -158,7 +158,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
                 {isFR ? "Autonomie Immédiate" : isDE ? "Sofortige Autonomie" : "Instant Herbal Autonomy"}
               </span>
               <h3 className={`${styles.offerTitle} ${styles.offerTitleFeatured}`}>
-                {isFR ? "Kit Démarrage Souveraineté" : isDE ? "Souveränitäts-Starterset" : "Sovereignty Starter Kit"}
+                {isFR ? "Kit Démarrage Autonomie Botanique" : isDE ? "Starterset Botanische Autonomie" : "Botanical Autonomy Starter Kit"}
               </h3>
               <p className={`${styles.offerDescription} ${styles.offerDescriptionFeatured}`}>
                 {isFR 
@@ -227,7 +227,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
                 </li>
                 <li className={`${styles.featureItem} ${styles.featureItemFeatured}`}>
                   <Check className={`${styles.checkIcon} ${styles.checkIconFeatured}`} />
-                  <span>{isFR ? "Garantie 1 an constructeur + Expédition prioritaire 24h" : isDE ? "1 Jahr Garantie & 24h Prioritätsversand" : "1-Year Warranty & Priority 24h shipping"}</span>
+                  <span>{isFR ? "Garantie légale de conformité 2 ans + Expédition prioritaire 24h" : isDE ? "2 Jahre gesetzliche Gewährleistung & 24h Prioritätsversand" : "2-Year Legal Conformity Warranty & Priority 24h shipping"}</span>
                 </li>
               </ul>
             </div>
@@ -237,13 +237,13 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
                 type="button"
                 onClick={() => onSelectOffer({
                   id: 'kit-souverainete',
-                  name: isFR ? "Kit de Démarrage Souveraineté — BloomLab® + 1 Kit Plantes" : isDE ? "Souveränitäts-Starterset — BloomLab® + 1 Pflanzen-Set" : "Sovereignty Starter Kit — BloomLab® + 1 Herbal Blend",
+                  name: isFR ? "Kit Démarrage Autonomie Botanique — BloomLab® + 1 Kit Plantes" : isDE ? "Starterset Botanische Autonomie — BloomLab® + 1 Pflanzen-Set" : "Botanical Autonomy Starter Kit — BloomLab® + 1 Herbal Blend",
                   price: 299,
                   originalPrice: 350,
                   selectedKitOption: selectedPlantOption
                 })}
                 className={`${styles.orderButton} ${styles.orderButtonFeatured}`}
-                aria-label={isFR ? "Commander le Kit Souveraineté à 299€" : isDE ? "Souveränitäts-Starterset für 299€ bestellen" : "Order Sovereignty Starter Kit for 299€"}
+                aria-label={isFR ? "Commander le Kit Démarrage Autonomie Botanique à 299€" : isDE ? "Starterset Botanische Autonomie für 299€ bestellen" : "Order Botanical Autonomy Starter Kit for 299€"}
               >
                 <ShoppingBag className="w-5 h-5 text-white" />
                 <span>{isFR ? "Choisir ce kit — 299€" : isDE ? "Dieses Set wählen — 299€" : "Choose this kit — 299€"}</span>
@@ -298,7 +298,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
                 </li>
                 <li className={styles.featureItem}>
                   <Check className={styles.checkIcon} />
-                  <span>{isFR ? "Garantie constructeur 1 an" : isDE ? "1 Jahr Herstellergarantie" : "1-Year Manufacturer Warranty"}</span>
+                  <span>{isFR ? "Garantie légale de conformité 2 ans" : isDE ? "2 Jahre gesetzliche Gewährleistung" : "2-Year Legal Conformity Warranty"}</span>
                 </li>
               </ul>
             </div>
@@ -333,7 +333,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
             </div>
             <div className={styles.guaranteeItem}>
               <ShieldCheck className="w-5 h-5 text-[#C8AB8A]" />
-              <span>{isFR ? "Garantie 30 jours satisfait ou remboursé" : isDE ? "30 Tage Geld-zurück-Garantie" : "30-day money back guarantee"}</span>
+              <span>{isFR ? "Essai 30 jours satisfait ou remboursé" : isDE ? "30 Tage Zufriedenheits-Test" : "30-day satisfaction trial"}</span>
             </div>
             <div className={styles.guaranteeItem}>
               <Sparkles className="w-5 h-5 text-[#C8AB8A]" />
